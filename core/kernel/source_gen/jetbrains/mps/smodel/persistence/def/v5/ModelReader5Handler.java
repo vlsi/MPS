@@ -38,6 +38,7 @@ public class ModelReader5Handler extends DefaultHandler {
   private SModelVersionsInfo fieldversionsInfo;
   private ArrayList<IReferencePersister> fieldreferenceDescriptors;
   private SAXVisibleModelElements fieldvisibleModelElements;
+  private SModel fieldmodel;
 
   public ModelReader5Handler() {
   }
@@ -152,10 +153,10 @@ public class ModelReader5Handler extends DefaultHandler {
       fieldversionsInfo = new SModelVersionsInfo();
       fieldreferenceDescriptors = new ArrayList<IReferencePersister>();
       fieldvisibleModelElements = new SAXVisibleModelElements();
-      SModel m = new SModel(SModelReference.fromString(attrs.getValue("modelUID")));
-      m.setPersistenceVersion(5);
-      m.setLoading(true);
-      return m;
+      fieldmodel = new SModel(SModelReference.fromString(attrs.getValue("modelUID")));
+      fieldmodel.setPersistenceVersion(5);
+      fieldmodel.setLoading(true);
+      return fieldmodel;
     }
 
     @Override
@@ -426,7 +427,7 @@ public class ModelReader5Handler extends DefaultHandler {
     protected SNode createObject(Attributes attrs) {
       String rawFqName = attrs.getValue("type");
       String conceptFQName = VersionUtil.getConceptFQName(rawFqName);
-      SNode node = new SNode(null, conceptFQName);
+      SNode node = new SNode(fieldmodel, conceptFQName);
       VersionUtil.fetchConceptVersion(rawFqName, node, fieldversionsInfo);
       return node;
     }

@@ -177,6 +177,27 @@ public class ModelPersistence {
     // the model FQ name ...
     String modelName = extractModelName(file.getName());
     String modelStereotype = extractModelStereotype(file.getName());
+//    int version = getModelPersistenceVersion(file);
+//    long saxTime = 0;
+//    loadModelDocument(file);
+//    if(version == 5) {
+//      try {
+//        saxTime = System.nanoTime();
+//        SAXParser parser = JDOMUtil.createSAXParser();
+//        ModelReader5Handler handler = new ModelReader5Handler();
+//        parser.parse(JDOMUtil.loadSource(file), handler);
+//        saxTime = System.nanoTime() - saxTime;
+//        //return handler.getResult();
+//      } catch (SAXException e) {
+//        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+//      } catch (ParserConfigurationException e) {
+//        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+//      } catch (IOException e) {
+//        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+//      }
+//    }
+//    long start = System.nanoTime();
+//    try {
     Document document = loadModelDocument(file);
     int modelPersistenceVersion = getModelPersistenceVersion(document);
     IModelReader reader = modelReaders.get(modelPersistenceVersion);
@@ -184,6 +205,12 @@ public class ModelPersistence {
       return handleNullReaderForPersistence(" file " + file.getPath());
     }
     return reader.readModel(document, modelName, modelStereotype);
+//    } finally {
+//      long end = System.nanoTime();
+//      if(saxTime > 0) {
+//        System.out.println("sax vs dom: " + saxTime/1000000/1000. + "ms vs " + (end-start)/1000000/1000. + "ms (" + file.getAbsolutePath() + ")");
+//      }
+//    }
   }
 
   private static SModel handleNullReaderForPersistence(String modelTitle) {
@@ -281,7 +308,7 @@ public class ModelPersistence {
       parser.parse(new InputSource(file.openReader()), new DefaultHandler() {
         @Override
         public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-          if(MODEL.equals(qName)) {
+          if(version[0] == -1 && MODEL.equals(qName)) {
             version[0] = 0;
           } else if(version[0] == 0 && PERSISTENCE.equals(qName) ) {
             String s = attributes.getValue(PERSISTENCE_VERSION);
@@ -291,8 +318,9 @@ public class ModelPersistence {
               } catch(NumberFormatException ex) {
               }
             }
+          } else {
+            throw new SAXException();
           }
-          throw new SAXException();
         }
 
         @Override
@@ -356,7 +384,7 @@ public class ModelPersistence {
     // upgrade?
     if (canUpgrade) {
       int modelPersistenceVersion = model.getPersistenceVersion();
-      if (needsUpgrade(modelPersistenceVersion)) {
+      if (modelPersistenceVersion != PersistenceSettings.VERSION_UNDEFINED && needsUpgrade(modelPersistenceVersion)) {
         return upgradePersistence(file, model, modelPersistenceVersion, getCurrentPersistenceVersion());
       }
     }

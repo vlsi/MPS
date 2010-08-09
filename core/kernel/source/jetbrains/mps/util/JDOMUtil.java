@@ -44,6 +44,10 @@ public class JDOMUtil {
     return factory.newSAXParser();
   }
 
+  public static InputSource loadSource(IFile file) throws IOException {
+    return new InputSource(new InputStreamReader(file.openInputStream(), ENCODING));
+  }
+
   public static Document loadDocument(IFile file) throws JDOMException, IOException {
     SAXBuilder saxBuilder = createBuilder();
     try {
