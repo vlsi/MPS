@@ -775,7 +775,7 @@
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1219654007817">
                       <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1219654007818">
                         <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1219654007819">
-                          <link role="baseMethodDeclaration:3" targetNodeId="5.~Language.getStructureModelDescriptor():jetbrains.mps.smodel.descriptor.RegularSModelDescriptor" resolveInfo="getStructureModelDescriptor" />
+                          <link role="baseMethodDeclaration:3" targetNodeId="5.~Language.getStructureModelDescriptor():jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" resolveInfo="getStructureModelDescriptor" />
                         </node>
                         <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1219654007820">
                           <link role="variableDeclaration:3" targetNodeId="1219418299303" resolveInfo="language" />
@@ -1122,7 +1122,7 @@
             </node>
             <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="199149364782675591">
               <link role="classConcept:3" targetNodeId="5.~ProjectModels" resolveInfo="ProjectModels" />
-              <link role="baseMethodDeclaration:3" targetNodeId="5.~ProjectModels.createDescriptorFor(jetbrains.mps.smodel.ModelOwner):jetbrains.mps.smodel.descriptor.RegularSModelDescriptor" resolveInfo="createDescriptorFor" />
+              <link role="baseMethodDeclaration:3" targetNodeId="5.~ProjectModels.createDescriptorFor(jetbrains.mps.smodel.ModelOwner):jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" resolveInfo="createDescriptorFor" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204254">
                 <link role="variableDeclaration:3" targetNodeId="1219413493008" resolveInfo="myOwner" />
               </node>

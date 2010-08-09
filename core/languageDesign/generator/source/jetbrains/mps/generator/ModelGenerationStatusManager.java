@@ -33,7 +33,7 @@ import jetbrains.mps.generator.index.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.vfs.IFile;
@@ -55,13 +55,13 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
   private static final String DO_NOT_GENERATE = "doNotGenerate";
 
   public static boolean isDoNotGenerate(SModelDescriptor sm) {
-    if (!(sm instanceof RegularSModelDescriptor)) return false;
-    return Boolean.parseBoolean(((RegularSModelDescriptor) sm).getAttribute(DO_NOT_GENERATE));
+    if (!(sm instanceof EditableSModelDescriptor)) return false;
+    return Boolean.parseBoolean(((EditableSModelDescriptor) sm).getAttribute(DO_NOT_GENERATE));
   }
 
   public static void setDoNotGenerate(SModelDescriptor sm, boolean value) {
-    if (!(sm instanceof RegularSModelDescriptor)) return;
-    ((RegularSModelDescriptor) sm).setAttribute(DO_NOT_GENERATE, "" + value);
+    if (!(sm instanceof EditableSModelDescriptor)) return;
+    ((EditableSModelDescriptor) sm).setAttribute(DO_NOT_GENERATE, "" + value);
   }
 
   public static ModelGenerationStatusManager getInstance() {

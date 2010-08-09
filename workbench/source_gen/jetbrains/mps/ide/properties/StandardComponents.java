@@ -75,7 +75,7 @@ import com.intellij.openapi.util.Disposer;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
-import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.actions.RefactoringPanel;
@@ -426,7 +426,7 @@ public class StandardComponents {
     return panel;
   }
 
-  private static JComponent createRefactoringItemComponent(final RegularSModelDescriptor modelDescriptor, final IOperationContext context) {
+  private static JComponent createRefactoringItemComponent(final EditableSModelDescriptor modelDescriptor, final IOperationContext context) {
     final Wrappers._T<RefactoringPanel> refactoringPanel = new Wrappers._T<RefactoringPanel>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -441,7 +441,7 @@ public class StandardComponents {
     return refactoringPanel.value.getComponent();
   }
 
-  public static JComponent createRefactoringHistoryComponent(RegularSModelDescriptor modelDescriptor, final IOperationContext context) {
+  public static JComponent createRefactoringHistoryComponent(EditableSModelDescriptor modelDescriptor, final IOperationContext context) {
     JComponent component = StandardComponents.createRefactoringItemComponent(modelDescriptor, context);
     if (component == null) {
       return new JPanel();
@@ -455,10 +455,10 @@ public class StandardComponents {
     gridBagConstraints.weighty = 0;
     gridBagConstraints.gridy = GridBagConstraints.RELATIVE;
     for (SModelDescriptor modelDescriptor : module.getOwnModelDescriptors()) {
-      if (!(modelDescriptor instanceof RegularSModelDescriptor)) {
+      if (!(modelDescriptor instanceof EditableSModelDescriptor)) {
         continue;
       }
-      JComponent component = StandardComponents.createRefactoringItemComponent(((RegularSModelDescriptor) modelDescriptor), context);
+      JComponent component = StandardComponents.createRefactoringItemComponent(((EditableSModelDescriptor) modelDescriptor), context);
       if (component == null) {
         continue;
       }

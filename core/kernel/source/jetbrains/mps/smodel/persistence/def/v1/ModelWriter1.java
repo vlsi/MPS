@@ -19,7 +19,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
-import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.def.*;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -104,8 +104,8 @@ public class ModelWriter1 implements IModelWriter {
 
       int version = -1;
       SModelDescriptor importedModelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
-      if (importedModelDescriptor instanceof RegularSModelDescriptor) {
-        version = ((RegularSModelDescriptor) importedModelDescriptor).getVersion();
+      if (importedModelDescriptor instanceof EditableSModelDescriptor) {
+        version = ((EditableSModelDescriptor) importedModelDescriptor).getVersion();
       }
       if (version > -1) {
         importElem.setAttribute(ModelPersistence.VERSION, version + "");

@@ -356,7 +356,7 @@
                   <link role="variableDeclaration:3" targetNodeId="6895093993902312305" resolveInfo="language" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6895093993902312762">
-                  <link role="baseMethodDeclaration:3" targetNodeId="6.~Language.getEditorModelDescriptor():jetbrains.mps.smodel.descriptor.RegularSModelDescriptor" resolveInfo="getEditorModelDescriptor" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="6.~Language.getEditorModelDescriptor():jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" resolveInfo="getEditorModelDescriptor" />
                 </node>
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6895093993902312763">

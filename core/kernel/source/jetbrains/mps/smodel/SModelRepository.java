@@ -20,7 +20,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
@@ -541,7 +541,7 @@ public class SModelRepository implements ApplicationComponent {
     }
   }
 
-  public void setModelFile(RegularSModelDescriptor md, IFile dest) {
+  public void setModelFile(EditableSModelDescriptor md, IFile dest) {
     fireBeforeModelFileChangedEvent(md);
     IFile source = md.getModelFile();
     removeModelFromFileCache(md);

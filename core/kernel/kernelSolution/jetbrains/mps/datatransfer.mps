@@ -530,7 +530,7 @@
                     <link role="variableDeclaration:3" targetNodeId="1058093769519026211" resolveInfo="language" />
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1058093769519026219">
-                    <link role="baseMethodDeclaration:3" targetNodeId="1.~Language.getActionsModelDescriptor():jetbrains.mps.smodel.descriptor.RegularSModelDescriptor" resolveInfo="getActionsModelDescriptor" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="1.~Language.getActionsModelDescriptor():jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" resolveInfo="getActionsModelDescriptor" />
                   </node>
                 </node>
               </node>

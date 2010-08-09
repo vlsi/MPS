@@ -26,7 +26,7 @@ import jetbrains.mps.refactoring.framework.AbstractLoggableRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.OldRefactoringAdapter;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vcs.MPSVCSManager;
 
@@ -77,7 +77,7 @@ public class LanguageRenamer {
       root.setPrefix(myNewName);
     }
 
-    RegularSModelDescriptor structure = myLanguage.getStructureModelDescriptor();
+    EditableSModelDescriptor structure = myLanguage.getStructureModelDescriptor();
     for (AbstractConceptDeclaration concept : structure.getSModel().allAdapters(AbstractConceptDeclaration.class)) {
       myContext.changeFeatureName(concept.getNode(), myNewName + ".structure." + concept.getName(), concept.getName());
     }
@@ -122,7 +122,7 @@ public class LanguageRenamer {
 
   public void update() {
     updateReferences();
-    RegularSModelDescriptor structure = myLanguage.getStructureModelDescriptor();
+    EditableSModelDescriptor structure = myLanguage.getStructureModelDescriptor();
     myProcessor.updateLoadedModels(structure.getSModelReference(), structure, myContext);
   }
 
@@ -176,7 +176,7 @@ public class LanguageRenamer {
     List<File> result = new ArrayList<File>();
     File sourceDir = myLanguage.getSourceDir();
 
-    List<RegularSModelDescriptor> inputModels = GeneratorConfigUtil.getLanguageModels(myLanguage);
+    List<EditableSModelDescriptor> inputModels = GeneratorConfigUtil.getLanguageModels(myLanguage);
 
     for (SModelDescriptor d : inputModels) {
       result.add(FileGenerationUtil.getDefaultOutputDir(d, sourceDir));

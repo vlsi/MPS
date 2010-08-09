@@ -20,7 +20,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.PersistenceSettings;
 import jetbrains.mps.vfs.IFile;
 
@@ -31,8 +31,8 @@ import java.util.List;
 import java.util.Set;
 
 public class PersistenceUpdater {
-  public void upgradePersistence(List<RegularSModelDescriptor> modelDescriptors, final int toVersion) {
-    for (final RegularSModelDescriptor modelDescriptor : modelDescriptors) {
+  public void upgradePersistence(List<EditableSModelDescriptor> modelDescriptors, final int toVersion) {
+    for (final EditableSModelDescriptor modelDescriptor : modelDescriptors) {
       boolean wasInitialized = modelDescriptor.isInitialized();
       IFile file = modelDescriptor.getModelFile();
       if (file == null || file.isReadOnly()) continue;
@@ -59,7 +59,7 @@ public class PersistenceUpdater {
   }
 
   public void upgradePersistenceInUnit(final IScope scope, String unitDescription, Frame mainframe) {
-    final List<RegularSModelDescriptor> modelDescriptors = new ArrayList<RegularSModelDescriptor>();
+    final List<EditableSModelDescriptor> modelDescriptors = new ArrayList<EditableSModelDescriptor>();
     final List<SModelDescriptor> scopeModelDescriptors = new ArrayList<SModelDescriptor>();
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
@@ -82,7 +82,7 @@ public class PersistenceUpdater {
         }
       }
       if (version != -1 && version < PersistenceSettings.MAX_VERSION) {
-        modelDescriptors.add((RegularSModelDescriptor) modelDescriptor);
+        modelDescriptors.add((EditableSModelDescriptor) modelDescriptor);
       }
     }
 

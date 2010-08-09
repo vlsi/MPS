@@ -16,7 +16,7 @@
 package jetbrains.mps.ide.genconf;
 
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.transformation.TemplateLanguageGenerationUtil;
 
 import java.util.ArrayList;
@@ -25,10 +25,10 @@ import java.util.List;
 import java.util.Set;
 
 public class GeneratorConfigUtil {
-  public static List<RegularSModelDescriptor> getLanguageModels(Language lang) {
-    List<RegularSModelDescriptor> inputModels = new ArrayList<RegularSModelDescriptor>();
+  public static List<EditableSModelDescriptor> getLanguageModels(Language lang) {
+    List<EditableSModelDescriptor> inputModels = new ArrayList<EditableSModelDescriptor>();
     for (LanguageAspect aspect : LanguageAspect.values()) {
-      RegularSModelDescriptor model = aspect.get(lang);
+      EditableSModelDescriptor model = aspect.get(lang);
       if (model != null) {
         inputModels.add(model);
       }
@@ -38,10 +38,10 @@ public class GeneratorConfigUtil {
     Set<SModelDescriptor> ownModels = new HashSet<SModelDescriptor>(lang.getOwnModelDescriptors());
     for (SModelDescriptor sm : lang.getAccessoryModels()) {
       if (!SModelStereotype.isUserModel(sm)) continue;
-      if (!(sm instanceof RegularSModelDescriptor)) continue;
+      if (!(sm instanceof EditableSModelDescriptor)) continue;
 
       if (ownModels.contains(sm)) {
-        inputModels.add(((RegularSModelDescriptor) sm));
+        inputModels.add(((EditableSModelDescriptor) sm));
       }
     }
 

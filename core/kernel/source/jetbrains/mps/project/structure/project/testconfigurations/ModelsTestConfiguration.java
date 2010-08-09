@@ -25,7 +25,7 @@ import jetbrains.mps.project.ProjectScope;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
 import java.util.*;
 
@@ -70,12 +70,12 @@ public class ModelsTestConfiguration extends BaseTestConfiguration {
       throw new IllegalGeneratorConfigurationException("there is no module that can be used to generate models " + modelDescriptors);
     }
 
-    List<RegularSModelDescriptor> models = new ArrayList<RegularSModelDescriptor>();
+    List<EditableSModelDescriptor> models = new ArrayList<EditableSModelDescriptor>();
     for (SModelDescriptor sm : modelDescriptors) {
       if (!fullRegeneration && !ModelGenerationStatusManager.getInstance().generationRequired(sm, project, NoCachesStrategy.createBuildCachesStrategy())) {
         continue;
       }
-      models.add(((RegularSModelDescriptor) sm));
+      models.add(((EditableSModelDescriptor) sm));
     }
 
     return new GenParameters(models, module);

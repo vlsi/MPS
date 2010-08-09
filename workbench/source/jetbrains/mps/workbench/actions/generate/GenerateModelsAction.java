@@ -23,7 +23,7 @@ import jetbrains.mps.ide.actions.ModelCheckerTool_Tool;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NotNull;
@@ -32,7 +32,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class GenerateModelsAction extends BaseAction {
-  private List<RegularSModelDescriptor> myModels;
+  private List<EditableSModelDescriptor> myModels;
   private IOperationContext myContext;
   private GeneratorManager myGenManager;
   private ProjectPluginManager myPluginManager;
@@ -90,19 +90,19 @@ public abstract class GenerateModelsAction extends BaseAction {
     myGenManager = project.getComponent(GeneratorManager.class);
     List<SModelDescriptor> models = e.getData(MPSDataKeys.MODELS);
 
-    myModels = new ArrayList<RegularSModelDescriptor>();
+    myModels = new ArrayList<EditableSModelDescriptor>();
 
     if (models!=null){
       for (SModelDescriptor model:models){
-        if (!(model instanceof RegularSModelDescriptor)) continue;
-        myModels.add(((RegularSModelDescriptor) model));
+        if (!(model instanceof EditableSModelDescriptor)) continue;
+        myModels.add(((EditableSModelDescriptor) model));
       }
     }
 
     if (myModels.isEmpty()) {
       SModelDescriptor model = e.getData(MPSDataKeys.CONTEXT_MODEL);
-      if (model instanceof RegularSModelDescriptor) {
-        myModels.add(((RegularSModelDescriptor) model));
+      if (model instanceof EditableSModelDescriptor) {
+        myModels.add(((EditableSModelDescriptor) model));
       }
     }
     if (myModels.isEmpty()) return false;

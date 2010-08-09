@@ -27,7 +27,7 @@ import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.VFileSystem;
 
 import java.util.ArrayList;
@@ -36,7 +36,7 @@ import java.util.List;
 
 public abstract class GenerateFromChangeListAction extends AbstractVcsAction {
   protected void actionPerformed(VcsContext vcsContext) {
-    List<RegularSModelDescriptor> modelsToGenerate = getModelsToGenerate(vcsContext);
+    List<EditableSModelDescriptor> modelsToGenerate = getModelsToGenerate(vcsContext);
     Project project = vcsContext.getProject();
     IOperationContext context = ProjectOperationContext.get(project);
     project.getComponent(GeneratorManager.class).generateModelsFromDifferentModules(context, modelsToGenerate, getGenerationHandler());
@@ -44,14 +44,14 @@ public abstract class GenerateFromChangeListAction extends AbstractVcsAction {
 
   protected abstract IGenerationHandler getGenerationHandler();
 
-  private List<RegularSModelDescriptor> getModelsToGenerate(VcsContext vcsContext) {
+  private List<EditableSModelDescriptor> getModelsToGenerate(VcsContext vcsContext) {
     Collection<VirtualFile> filesCollection = vcsContext.getSelectedFilesCollection();
-    List<RegularSModelDescriptor> modelsToGenerate = new ArrayList<RegularSModelDescriptor>();
+    List<EditableSModelDescriptor> modelsToGenerate = new ArrayList<EditableSModelDescriptor>();
     for (VirtualFile f : filesCollection) {
       if (f.exists() && !f.isDirectory()) {
         SModelDescriptor model = SModelRepository.getInstance().findModel(VFileSystem.toIFile(f));
-        if (model instanceof RegularSModelDescriptor) {
-          modelsToGenerate.add(((RegularSModelDescriptor) model));
+        if (model instanceof EditableSModelDescriptor) {
+          modelsToGenerate.add(((EditableSModelDescriptor) model));
         }
       }
     }
@@ -59,7 +59,7 @@ public abstract class GenerateFromChangeListAction extends AbstractVcsAction {
   }
 
   protected void update(VcsContext vcsContext, Presentation presentation) {
-    List<RegularSModelDescriptor> modelsToGenerate = getModelsToGenerate(vcsContext);
+    List<EditableSModelDescriptor> modelsToGenerate = getModelsToGenerate(vcsContext);
     if (modelsToGenerate.isEmpty()) {
       enable(presentation, false);
       presentation.setText("Generate " + getWhatToGenerateName());

@@ -1220,7 +1220,7 @@
                 <link role="variableDeclaration:3" targetNodeId="8360039740498072793" resolveInfo="aspect" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8360039740498072816">
-                <link role="baseMethodDeclaration:3" targetNodeId="3.~LanguageAspect.get(jetbrains.mps.smodel.Language):jetbrains.mps.smodel.descriptor.RegularSModelDescriptor" resolveInfo="get" />
+                <link role="baseMethodDeclaration:3" targetNodeId="3.~LanguageAspect.get(jetbrains.mps.smodel.Language):jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" resolveInfo="get" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8360039740498072817">
                   <link role="variableDeclaration:3" targetNodeId="8360039740498072799" resolveInfo="language" />
                 </node>

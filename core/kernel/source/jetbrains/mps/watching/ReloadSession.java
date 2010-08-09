@@ -25,15 +25,13 @@ import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.watching.ModelChangesWatcher.IReloadListener;
-import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 
 import java.io.File;
 import java.util.HashSet;
@@ -42,7 +40,7 @@ import java.util.Set;
 
 class ReloadSession {
   private final static Logger LOG = Logger.getLogger(ReloadSession.class);
-  private final Set<RegularSModelDescriptor> myChangedModels = new LinkedHashSet<RegularSModelDescriptor>();
+  private final Set<EditableSModelDescriptor> myChangedModels = new LinkedHashSet<EditableSModelDescriptor>();
   private final Set<VirtualFile> myNewModelVFiles = new LinkedHashSet<VirtualFile>();
   private final Set<IModule> myChangedModules = new LinkedHashSet<IModule>();
   private final Set<VirtualFile> myNewModuleVFiles = new LinkedHashSet<VirtualFile>();
@@ -120,7 +118,7 @@ class ReloadSession {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         progressIndicator.setText("Reloading updated models... Please wait.");
-        for (final RegularSModelDescriptor model : myChangedModels) {
+        for (final EditableSModelDescriptor model : myChangedModels) {
           try {
             String text = "Reloading " + model.getSModelReference().getSModelFqName();
             LOG.info(text);
@@ -216,7 +214,7 @@ class ReloadSession {
       && myDeletedModules.isEmpty());
   }
 
-  public void addChangedModel(RegularSModelDescriptor model) {
+  public void addChangedModel(EditableSModelDescriptor model) {
     myChangedModels.add(model);
   }
 

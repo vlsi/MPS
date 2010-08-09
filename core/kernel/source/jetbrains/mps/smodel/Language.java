@@ -39,7 +39,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
@@ -477,13 +477,13 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return struc.getSModel().allAdapters(ConceptDeclaration.class);
   }
 
-  public List<RegularSModelDescriptor> getUtilModels() {
-    List<RegularSModelDescriptor> result = new ArrayList<RegularSModelDescriptor>();
+  public List<EditableSModelDescriptor> getUtilModels() {
+    List<EditableSModelDescriptor> result = new ArrayList<EditableSModelDescriptor>();
     for (SModelDescriptor md : getOwnModelDescriptors()) {
       if (md.getStereotype().equals(SModelStereotype.NONE)
         && getAspectForModel(md) == null
         && !isAccessoryModel(md.getSModelReference())) {
-        result.add(((RegularSModelDescriptor) md));
+        result.add(((EditableSModelDescriptor) md));
       }
     }
     return result;
@@ -538,62 +538,62 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return result;
   }
 
-  public RegularSModelDescriptor getStructureModelDescriptor() {
+  public EditableSModelDescriptor getStructureModelDescriptor() {
     return LanguageAspect.STRUCTURE.get(this);
   }
 
-  public RegularSModelDescriptor getTypesystemModelDescriptor() {
+  public EditableSModelDescriptor getTypesystemModelDescriptor() {
     return LanguageAspect.TYPESYSTEM.get(this);
   }
 
-  public RegularSModelDescriptor getActionsModelDescriptor() {
+  public EditableSModelDescriptor getActionsModelDescriptor() {
     return LanguageAspect.ACTIONS.get(this);
   }
 
-  public RegularSModelDescriptor getConstraintsModelDescriptor() {
+  public EditableSModelDescriptor getConstraintsModelDescriptor() {
     return LanguageAspect.CONSTRAINTS.get(this);
   }
 
-  public RegularSModelDescriptor getBehaviorModelDescriptor() {
+  public EditableSModelDescriptor getBehaviorModelDescriptor() {
     return LanguageAspect.BEHAVIOR.get(this);
   }
 
-  public RegularSModelDescriptor getDataFlowModelDescriptor() {
+  public EditableSModelDescriptor getDataFlowModelDescriptor() {
     return LanguageAspect.DATA_FLOW.get(this);
   }
 
-  public RegularSModelDescriptor getIntentionsModelDescriptor() {
+  public EditableSModelDescriptor getIntentionsModelDescriptor() {
     return LanguageAspect.INTENTIONS.get(this);
   }
 
-  public RegularSModelDescriptor getFindUsagesModelDescriptor() {
+  public EditableSModelDescriptor getFindUsagesModelDescriptor() {
     return LanguageAspect.FIND_USAGES.get(this);
   }
 
-  public RegularSModelDescriptor getPluginModelDescriptor() {
+  public EditableSModelDescriptor getPluginModelDescriptor() {
     return LanguageAspect.PLUGIN.get(this);
   }
 
-  public RegularSModelDescriptor getRefactoringsModelDescriptor() {
+  public EditableSModelDescriptor getRefactoringsModelDescriptor() {
     return LanguageAspect.REFACTORINGS.get(this);
   }
 
-  public RegularSModelDescriptor getScriptsModelDescriptor() {
+  public EditableSModelDescriptor getScriptsModelDescriptor() {
     return LanguageAspect.SCRIPTS.get(this);
   }
 
-  public RegularSModelDescriptor getEditorModelDescriptor() {
+  public EditableSModelDescriptor getEditorModelDescriptor() {
     return LanguageAspect.EDITOR.get(this);
   }
 
-  public RegularSModelDescriptor getTextgenModelDescriptor() {
+  public EditableSModelDescriptor getTextgenModelDescriptor() {
     return LanguageAspect.TEXT_GEN.get(this);
   }
 
-  public Set<RegularSModelDescriptor> getAspectModelDescriptors() {
-    Set<RegularSModelDescriptor> result = new HashSet<RegularSModelDescriptor>();
+  public Set<EditableSModelDescriptor> getAspectModelDescriptors() {
+    Set<EditableSModelDescriptor> result = new HashSet<EditableSModelDescriptor>();
     for (LanguageAspect aspect : LanguageAspect.values()) {
-      RegularSModelDescriptor asp = aspect.get(this);
+      EditableSModelDescriptor asp = aspect.get(this);
       if (asp != null) {
         result.add(asp);
       }

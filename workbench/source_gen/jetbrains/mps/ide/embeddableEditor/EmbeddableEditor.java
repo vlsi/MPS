@@ -4,7 +4,7 @@ package jetbrains.mps.ide.embeddableEditor;
 
 import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.ModelOwner;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ProjectModels;
@@ -36,7 +36,7 @@ public class EmbeddableEditor {
   private MPSFileNodeEditor myFileNodeEditor;
   private EmbeddableEditorPanel myPanel;
   private final IOperationContext myContext;
-  private final RegularSModelDescriptor myModel;
+  private final EditableSModelDescriptor myModel;
   private final ModelOwner myOwner;
   private SNode myNode;
   private SNode myRootNode;
@@ -136,11 +136,11 @@ public class EmbeddableEditor {
         return false;
       }
     };
-    boolean successful = manager.generateModelsWithProgressWindow(ListSequence.fromListAndArray(new ArrayList<RegularSModelDescriptor>(), myModel), myContext, handler, false);
+    boolean successful = manager.generateModelsWithProgressWindow(ListSequence.fromListAndArray(new ArrayList<EditableSModelDescriptor>(), myModel), myContext, handler, false);
     return new GenerationResult(myRootNode, myContext, myModel, handler, successful);
   }
 
-  public RegularSModelDescriptor getModel() {
+  public EditableSModelDescriptor getModel() {
     return myModel;
   }
 

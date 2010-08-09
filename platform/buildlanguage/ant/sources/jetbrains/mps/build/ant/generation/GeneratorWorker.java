@@ -21,7 +21,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Pair;
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.ProjectComponent;
@@ -142,7 +142,7 @@ public class GeneratorWorker extends MpsWorker {
 
   protected List<Cycle> computeGenerationOrder(MPSProject project, ObjectsToProcess go) {
 
-    final Map<IModule, List<RegularSModelDescriptor>> moduleToModels = new LinkedHashMap<IModule, List<RegularSModelDescriptor>>();
+    final Map<IModule, List<EditableSModelDescriptor>> moduleToModels = new LinkedHashMap<IModule, List<EditableSModelDescriptor>>();
     extractModels(go.getProjects(), go.getModules(), (Set)go.getModels(), (Map)moduleToModels);
 
     // calculate order
@@ -214,21 +214,21 @@ public class GeneratorWorker extends MpsWorker {
   protected static class SimpleModuleCycle implements Cycle {
     private final Set<IModule> myModules;
     private final MPSProject myProject;
-    private final Map<IModule, List<RegularSModelDescriptor>> myModuleToModels;
+    private final Map<IModule, List<EditableSModelDescriptor>> myModuleToModels;
 
-    public SimpleModuleCycle(MPSProject project, Set<IModule> modules, Map<IModule, List<RegularSModelDescriptor>> moduleToModels) {
+    public SimpleModuleCycle(MPSProject project, Set<IModule> modules, Map<IModule, List<EditableSModelDescriptor>> moduleToModels) {
       myModules = modules;
       myProject = project;
       myModuleToModels = moduleToModels;
     }
 
     public void generate(GeneratorManager gm, IGenerationHandler generationHandler, IMessageHandler messageHandler) {
-      List<Pair<RegularSModelDescriptor, IOperationContext>> modelsToContext = new ArrayList<Pair<RegularSModelDescriptor, IOperationContext>>();
+      List<Pair<EditableSModelDescriptor, IOperationContext>> modelsToContext = new ArrayList<Pair<EditableSModelDescriptor, IOperationContext>>();
       for (IModule module : myModules) {
         ModuleContext moduleContext = new ModuleContext(module, myProject);
-        List<RegularSModelDescriptor> modelsToGenerateNow = myModuleToModels.get(module);
-        for (RegularSModelDescriptor model : modelsToGenerateNow) {
-          modelsToContext.add(new Pair<RegularSModelDescriptor, IOperationContext>(model, moduleContext));
+        List<EditableSModelDescriptor> modelsToGenerateNow = myModuleToModels.get(module);
+        for (EditableSModelDescriptor model : modelsToGenerateNow) {
+          modelsToContext.add(new Pair<EditableSModelDescriptor, IOperationContext>(model, moduleContext));
         }
       }
       gm.generateModels(modelsToContext, generationHandler, new EmptyProgressIndicator(), messageHandler, false, true);

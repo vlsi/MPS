@@ -16,7 +16,7 @@
 package jetbrains.mps.vcs;
 
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.UnzipUtil;
@@ -27,8 +27,6 @@ import jetbrains.mps.logging.Logger;
 
 import java.io.*;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.TreeSet;
 
 import org.jdom.Document;
 import org.jdom.JDOMException;
@@ -75,7 +73,7 @@ public class ModelUtils {
   }
 
   public static void replaceModelWithBytes(VirtualFile modelFile, byte[] bytesToReplaceWith) {
-    final RegularSModelDescriptor modelDescriptor = (RegularSModelDescriptor) SModelRepository.getInstance().findModel(VFileSystem.toIFile(modelFile));
+    final EditableSModelDescriptor modelDescriptor = (EditableSModelDescriptor) SModelRepository.getInstance().findModel(VFileSystem.toIFile(modelFile));
     if (modelDescriptor == null) return;
 
     try {

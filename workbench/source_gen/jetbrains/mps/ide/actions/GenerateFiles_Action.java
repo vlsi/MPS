@@ -15,7 +15,7 @@ import jetbrains.mps.ide.projectPane.NamespaceTextNode;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -87,11 +87,11 @@ public class GenerateFiles_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       IOperationContext projectContext = ProjectOperationContext.get(GenerateFiles_Action.this.project);
-      List<RegularSModelDescriptor> models = new ArrayList<RegularSModelDescriptor>();
+      List<EditableSModelDescriptor> models = new ArrayList<EditableSModelDescriptor>();
       for (TreeNode ppNode : ListSequence.fromList(GenerateFiles_Action.this.ppNodes)) {
         for (SModelDescriptor model : ListSequence.fromList(((NamespaceTextNode) ppNode).getModelsUnder())) {
-          if (!(model.isTransient()) && model instanceof RegularSModelDescriptor) {
-            models.add(((RegularSModelDescriptor) model));
+          if (!(model.isTransient()) && model instanceof EditableSModelDescriptor) {
+            models.add(((EditableSModelDescriptor) model));
           }
         }
       }

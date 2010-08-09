@@ -23,7 +23,7 @@ import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
-import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.EventUtil;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -38,7 +38,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-public class DefaultSModelDescriptor extends BaseSModelDescriptor implements RegularSModelDescriptor {
+public class DefaultSModelDescriptor extends BaseSModelDescriptor implements EditableSModelDescriptor {
   private static final String VERSION = "version";
   private static final String NAME_VERSION = "nameVersion";
 
@@ -223,8 +223,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Reg
       do {
         played = false;
         for (SModelDescriptor usedModelDescriptor : model.getDependenciesModels()) {
-          if (!(usedModelDescriptor instanceof RegularSModelDescriptor)) continue;
-          if (playUsedModelDescriptorsRefactoring(model, (RegularSModelDescriptor) usedModelDescriptor)) {
+          if (!(usedModelDescriptor instanceof EditableSModelDescriptor)) continue;
+          if (playUsedModelDescriptorsRefactoring(model, (EditableSModelDescriptor) usedModelDescriptor)) {
             played = true;
           }
         }
@@ -254,7 +254,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Reg
 
   //true if any refactoring was played
 
-  private boolean playUsedModelDescriptorsRefactoring(SModel model, RegularSModelDescriptor usedModelDescriptor) {
+  private boolean playUsedModelDescriptorsRefactoring(SModel model, EditableSModelDescriptor usedModelDescriptor) {
     int currentVersion = usedModelDescriptor.getVersion();
     int usedVersion = model.getUsedVersion(usedModelDescriptor.getSModelReference());
     if (myIsTestRefactoringMode) {
@@ -296,7 +296,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Reg
 
       //user might have forgotten to commit .metadata file
       if (currentVersion == -1) {
-        if (usedModelDescriptor instanceof RegularSModelDescriptor) {
+        if (usedModelDescriptor instanceof EditableSModelDescriptor) {
           usedModelDescriptor.getSModel();
         }
 

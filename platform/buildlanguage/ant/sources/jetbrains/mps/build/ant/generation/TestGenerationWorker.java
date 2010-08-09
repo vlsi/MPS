@@ -31,7 +31,7 @@ import jetbrains.mps.reloading.FileClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.reloading.JarFileClassPathItem;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.AbstractClassLoader;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.Pair;
@@ -184,17 +184,17 @@ public class TestGenerationWorker extends GeneratorWorker {
     if (isGeneratePerfomanceReport()) {
       return new GenerationAdapter() {
         @Override
-        public void beforeGeneration(List<Pair<RegularSModelDescriptor, IOperationContext>> inputModels) {
+        public void beforeGeneration(List<Pair<EditableSModelDescriptor, IOperationContext>> inputModels) {
           Long startTime = System.currentTimeMillis();
-          for (Pair<RegularSModelDescriptor, IOperationContext> pair : inputModels) {
+          for (Pair<EditableSModelDescriptor, IOperationContext> pair : inputModels) {
             myPerfomanceMap.put(pair.o1, startTime);
           }
         }
 
         @Override
-        public void afterGeneration(List<Pair<RegularSModelDescriptor, IOperationContext>> inputModels) {
+        public void afterGeneration(List<Pair<EditableSModelDescriptor, IOperationContext>> inputModels) {
           Long finishTime = System.currentTimeMillis();
-          for (Pair<RegularSModelDescriptor, IOperationContext> pair : inputModels) {
+          for (Pair<EditableSModelDescriptor, IOperationContext> pair : inputModels) {
             Long startTime = myPerfomanceMap.get(pair.o1);
             myPerfomanceMap.put(pair.o1, finishTime - startTime);
           }
@@ -403,13 +403,13 @@ public class TestGenerationWorker extends GeneratorWorker {
   @Override
   protected List<Cycle> computeGenerationOrder(MPSProject project, ObjectsToProcess go) {
     List<Cycle> cycles = new ArrayList<Cycle>();
-    Map<IModule, List<RegularSModelDescriptor>> moduleToModels = new LinkedHashMap<IModule, List<RegularSModelDescriptor>>();
+    Map<IModule, List<EditableSModelDescriptor>> moduleToModels = new LinkedHashMap<IModule, List<EditableSModelDescriptor>>();
 
     extractModels(go.getProjects(), go.getModules(), go.getModels(), (Map) moduleToModels);
 
     for (IModule module : moduleToModels.keySet()) {
-      List<RegularSModelDescriptor> modelsForModule = moduleToModels.get(module);
-      for (RegularSModelDescriptor smodel : modelsForModule) {
+      List<EditableSModelDescriptor> modelsForModule = moduleToModels.get(module);
+      for (EditableSModelDescriptor smodel : modelsForModule) {
         cycles.add(new ModelCycle(smodel, module, project));
       }
     }
@@ -503,9 +503,9 @@ public class TestGenerationWorker extends GeneratorWorker {
   private class ModelCycle implements Cycle {
     private final IModule myModule;
     private final MPSProject myProject;
-    private final RegularSModelDescriptor mySModel;
+    private final EditableSModelDescriptor mySModel;
 
-    public ModelCycle(RegularSModelDescriptor sModel, IModule module, MPSProject project) {
+    public ModelCycle(EditableSModelDescriptor sModel, IModule module, MPSProject project) {
       mySModel = sModel;
       myProject = project;
       myModule = module;

@@ -80,7 +80,7 @@
                       <link role="enumConstantDeclaration:3" targetNodeId="2.~LanguageAspect.STRUCTURE" resolveInfo="STRUCTURE" />
                     </node>
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2838654975957288996">
-                      <link role="baseMethodDeclaration:3" targetNodeId="2.~LanguageAspect.get(jetbrains.mps.smodel.Language):jetbrains.mps.smodel.descriptor.RegularSModelDescriptor" resolveInfo="get" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="2.~LanguageAspect.get(jetbrains.mps.smodel.Language):jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" resolveInfo="get" />
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="2838654975957288997">
                         <link role="variable:7" targetNodeId="2838654975957288986" resolveInfo="language" />
                       </node>

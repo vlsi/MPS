@@ -22,14 +22,13 @@ import jetbrains.mps.generator.NoCachesStrategy;
 import jetbrains.mps.ide.genconf.GenParameters;
 import jetbrains.mps.ide.genconf.GeneratorConfigUtil;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -59,7 +58,7 @@ public class ModuleTestConfiguration extends BaseTestConfiguration {
     if (module instanceof Solution) {
       Solution solution = (Solution) module;
 
-      List<RegularSModelDescriptor> models = new ArrayList<RegularSModelDescriptor>();
+      List<EditableSModelDescriptor> models = new ArrayList<EditableSModelDescriptor>();
       for (SModelDescriptor sm : solution.getOwnModelDescriptors()) {
         if (!fullRegeneration && !ModelGenerationStatusManager.getInstance().generationRequired(sm, project, NoCachesStrategy.createBuildCachesStrategy())) {
           continue;
@@ -70,8 +69,8 @@ public class ModuleTestConfiguration extends BaseTestConfiguration {
         }
 
 
-        if (SModelStereotype.isUserModel(sm) && (sm instanceof RegularSModelDescriptor)) {
-          models.add(((RegularSModelDescriptor) sm));
+        if (SModelStereotype.isUserModel(sm) && (sm instanceof EditableSModelDescriptor)) {
+          models.add(((EditableSModelDescriptor) sm));
         }
       }
 
@@ -79,9 +78,9 @@ public class ModuleTestConfiguration extends BaseTestConfiguration {
     } else if (module instanceof Language) {
       Language lang = (Language) module;
 
-      List<RegularSModelDescriptor> inputModels = GeneratorConfigUtil.getLanguageModels(lang);
+      List<EditableSModelDescriptor> inputModels = GeneratorConfigUtil.getLanguageModels(lang);
 
-      Iterator<RegularSModelDescriptor> it = inputModels.iterator();
+      Iterator<EditableSModelDescriptor> it = inputModels.iterator();
       while (it.hasNext()) {
         SModelDescriptor model = it.next();
         if ((!fullRegeneration && !ModelGenerationStatusManager.getInstance().generationRequired(model, project, NoCachesStrategy.createBuildCachesStrategy())) ||

@@ -17,7 +17,7 @@ import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
-import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
@@ -95,13 +95,13 @@ public class GenerateTemplateQueries_Action extends GeneratedAction {
     try {
       GeneratorManager manager = GenerateTemplateQueries_Action.this.context.getComponent(GeneratorManager.class);
       IGenerationHandler genHandler = manager.getDefaultGenerationHandler();
-      final Wrappers._T<List<RegularSModelDescriptor>> models = new Wrappers._T<List<RegularSModelDescriptor>>(ListSequence.fromList(new ArrayList<RegularSModelDescriptor>()));
+      final Wrappers._T<List<EditableSModelDescriptor>> models = new Wrappers._T<List<EditableSModelDescriptor>>(ListSequence.fromList(new ArrayList<EditableSModelDescriptor>()));
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           ListSequence.fromList(models.value).addSequence(ListSequence.fromList(TemplateLanguageGenerationUtil.getGeneratorModels((Generator) GenerateTemplateQueries_Action.this.module)));
           if (!(GenerateTemplateQueries_Action.this.regenerate)) {
-            models.value = ListSequence.fromList(models.value).where(new IWhereFilter<RegularSModelDescriptor>() {
-              public boolean accept(RegularSModelDescriptor it) {
+            models.value = ListSequence.fromList(models.value).where(new IWhereFilter<EditableSModelDescriptor>() {
+              public boolean accept(EditableSModelDescriptor it) {
                 return ModelGenerationStatusManager.getInstance().generationRequired(it, GenerateTemplateQueries_Action.this.project, NoCachesStrategy.createBuildCachesStrategy());
               }
             }).toListSequence();

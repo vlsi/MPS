@@ -32,7 +32,7 @@ import jetbrains.mps.refactoring.RefactoringView;
 import jetbrains.mps.refactoring.RefactoringViewAction;
 import jetbrains.mps.refactoring.RefactoringViewItem;
 import jetbrains.mps.refactoring.framework.*;
-import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.annotations.NotNull;
 
@@ -223,7 +223,7 @@ public class RefactoringProcessor {
     final RefactoringNodeMembersAccessModifier modifier = new RefactoringNodeMembersAccessModifier();
 
     try {
-      final List<RegularSModelDescriptor> descriptors = new ArrayList<RegularSModelDescriptor>();
+      final List<EditableSModelDescriptor> descriptors = new ArrayList<EditableSModelDescriptor>();
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
           refactoringContext.setUpMembersAccessModifier(modifier);
@@ -231,7 +231,7 @@ public class RefactoringProcessor {
           SNode.setNodeMemeberAccessModifier(modifier);
 
           for (SModel model : sourceModels) {
-            descriptors.add(((RegularSModelDescriptor) model.getModelDescriptor()));
+            descriptors.add(((EditableSModelDescriptor) model.getModelDescriptor()));
           }
         }
       });
@@ -249,8 +249,8 @@ public class RefactoringProcessor {
     SearchResults usages = refactoringContext.getUsages();
 
     if (!refactoringContext.isLocal()) {
-      writeIntoLog((RegularSModelDescriptor) modelDescriptor, refactoringContext);
-      updateLoadedModels(initialModelReference, (RegularSModelDescriptor)modelDescriptor, refactoringContext);
+      writeIntoLog((EditableSModelDescriptor) modelDescriptor, refactoringContext);
+      updateLoadedModels(initialModelReference, (EditableSModelDescriptor)modelDescriptor, refactoringContext);
     } else {
       Set<SModel> modelsToProcess = new LinkedHashSet<SModel>();
       if (usages != null) {
@@ -263,7 +263,7 @@ public class RefactoringProcessor {
     }
   }
 
-  public void updateLoadedModels(SModelReference initialModelReference, RegularSModelDescriptor model, RefactoringContext refactoringContext) {
+  public void updateLoadedModels(SModelReference initialModelReference, EditableSModelDescriptor model, RefactoringContext refactoringContext) {
     for (SModelDescriptor anotherDescriptor : SModelRepository.getInstance().getModelDescriptors()) {
       if (!SModelStereotype.isUserModel(anotherDescriptor)) continue;
       if (!anotherDescriptor.isInitialized()) continue;
@@ -287,14 +287,14 @@ public class RefactoringProcessor {
         }
 
         if (!refactoringContext.isLocal()){
-          model.updateImportedModelUsedVersion(usedModel.getSModelReference(), ((RegularSModelDescriptor) usedModel).getVersion());
+          model.updateImportedModelUsedVersion(usedModel.getSModelReference(), ((EditableSModelDescriptor) usedModel).getVersion());
         }
         SModelRepository.getInstance().markChanged(model);
       }
     });
   }
 
-  public void writeIntoLog(RegularSModelDescriptor model, RefactoringContext refactoringContext) {
+  public void writeIntoLog(EditableSModelDescriptor model, RefactoringContext refactoringContext) {
     assert !refactoringContext.isLocal();
     assert refactoringContext.getRefactoring() instanceof ILoggableRefactoring;
 

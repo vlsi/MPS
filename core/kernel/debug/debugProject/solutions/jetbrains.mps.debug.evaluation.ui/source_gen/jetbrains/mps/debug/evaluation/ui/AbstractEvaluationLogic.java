@@ -6,7 +6,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.debug.runtime.JavaUiState;
 import jetbrains.mps.debug.runtime.DebugSession;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import java.util.List;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -59,7 +59,7 @@ public abstract class AbstractEvaluationLogic {
   protected JavaUiState myUiState;
   protected final DebugSession myDebugSession;
   protected final IOperationContext myContext;
-  protected RegularSModelDescriptor myAuxModel;
+  protected EditableSModelDescriptor myAuxModel;
   protected final EvaluationAuxModule myAuxModule;
   private final List<Language> myLanguages = ListSequence.fromListAndArray(new LinkedList<Language>(), MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.debug.evaluation"));
   protected SNode myEvaluator;
@@ -118,7 +118,7 @@ public abstract class AbstractEvaluationLogic {
     return myAuxModule;
   }
 
-  public void setModel(RegularSModelDescriptor model) {
+  public void setModel(EditableSModelDescriptor model) {
     myAuxModel = model;
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
@@ -170,7 +170,7 @@ public abstract class AbstractEvaluationLogic {
       Project ideaProject = this.myAuxModule.getMPSProject().getProject();
       DefaultMessageHandler messageHandler = new DefaultMessageHandler(ideaProject);
       ProgressWindow progressWindow = new ProgressWindow(false, ideaProject);
-      boolean successful = manager.generateModels(ListSequence.fromListAndArray(new ArrayList<RegularSModelDescriptor>(), this.myAuxModel), myContext, handler, progressWindow, messageHandler, true);
+      boolean successful = manager.generateModels(ListSequence.fromListAndArray(new ArrayList<EditableSModelDescriptor>(), this.myAuxModel), myContext, handler, progressWindow, messageHandler, true);
 
       Disposer.dispose(progressWindow);
 

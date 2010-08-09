@@ -4,8 +4,8 @@
     <nodeInfo nodeId="1220438174600" fileName="EmbeddableEditor.java" startLine="35" startPosition="31" endLine="36" endPosition="45" />
     <nodeInfo nodeId="1220433430382" fileName="EmbeddableEditor.java" startLine="36" startPosition="45" endLine="37" endPosition="40" />
     <nodeInfo nodeId="1219408662419" fileName="EmbeddableEditor.java" startLine="37" startPosition="40" endLine="38" endPosition="44" />
-    <nodeInfo nodeId="1219408476932" fileName="EmbeddableEditor.java" startLine="38" startPosition="44" endLine="39" endPosition="48" />
-    <nodeInfo nodeId="1219413493008" fileName="EmbeddableEditor.java" startLine="39" startPosition="48" endLine="40" endPosition="35" />
+    <nodeInfo nodeId="1219408476932" fileName="EmbeddableEditor.java" startLine="38" startPosition="44" endLine="39" endPosition="49" />
+    <nodeInfo nodeId="1219413493008" fileName="EmbeddableEditor.java" startLine="39" startPosition="49" endLine="40" endPosition="35" />
     <nodeInfo nodeId="1219408375970" fileName="EmbeddableEditor.java" startLine="40" startPosition="35" endLine="41" endPosition="23" />
     <nodeInfo nodeId="199149364782660330" fileName="EmbeddableEditor.java" startLine="41" startPosition="23" endLine="42" endPosition="27" />
     <nodeInfo nodeId="5367124414732056014" fileName="EmbeddableEditor.java" startLine="42" startPosition="27" endLine="43" endPosition="37" />
@@ -42,9 +42,9 @@
     <nodeInfo nodeId="7865481948248722480" fileName="EmbeddableEditor.java" startLine="128" startPosition="57" endLine="129" endPosition="27" />
     <nodeInfo nodeId="7865481948248722488" fileName="EmbeddableEditor.java" startLine="130" startPosition="9" endLine="131" endPosition="22" />
     <nodeInfo nodeId="7865481948248727698" fileName="EmbeddableEditor.java" startLine="135" startPosition="48" endLine="136" endPosition="21" />
-    <nodeInfo nodeId="7865481948248727707" fileName="EmbeddableEditor.java" startLine="138" startPosition="6" endLine="139" endPosition="175" />
-    <nodeInfo nodeId="7865481948248727724" fileName="EmbeddableEditor.java" startLine="139" startPosition="175" endLine="140" endPosition="85" />
-    <nodeInfo nodeId="6483976992294521820" fileName="EmbeddableEditor.java" startLine="143" startPosition="45" endLine="144" endPosition="19" />
+    <nodeInfo nodeId="7865481948248727707" fileName="EmbeddableEditor.java" startLine="138" startPosition="6" endLine="139" endPosition="176" />
+    <nodeInfo nodeId="7865481948248727724" fileName="EmbeddableEditor.java" startLine="139" startPosition="176" endLine="140" endPosition="85" />
+    <nodeInfo nodeId="6483976992294521820" fileName="EmbeddableEditor.java" startLine="143" startPosition="46" endLine="144" endPosition="19" />
     <nodeInfo nodeId="1219418302105" fileName="EmbeddableEditor.java" startLine="149" startPosition="25" endLine="150" endPosition="106" />
     <nodeInfo nodeId="1227605624919" fileName="EmbeddableEditor.java" startLine="157" startPosition="25" endLine="158" endPosition="50" />
     <nodeInfo nodeId="8119021187637935511" fileName="EmbeddableEditor.java" startLine="165" startPosition="25" endLine="166" endPosition="52" />
@@ -104,7 +104,7 @@
     <scopeInfo nodeId="7865481948248722460" fileName="EmbeddableEditor.java" startLine="121" startPosition="61" endLine="122" endPosition="34" />
     <scopeInfo nodeId="7865481948248722479" fileName="EmbeddableEditor.java" startLine="128" startPosition="57" endLine="129" endPosition="27" />
     <scopeInfo nodeId="7865481948248727697" fileName="EmbeddableEditor.java" startLine="135" startPosition="48" endLine="136" endPosition="21" />
-    <scopeInfo nodeId="6483976992294511269" fileName="EmbeddableEditor.java" startLine="143" startPosition="45" endLine="144" endPosition="19" />
+    <scopeInfo nodeId="6483976992294511269" fileName="EmbeddableEditor.java" startLine="143" startPosition="46" endLine="144" endPosition="19" />
     <scopeInfo nodeId="1219418302104" fileName="EmbeddableEditor.java" startLine="149" startPosition="25" endLine="150" endPosition="106" />
     <scopeInfo nodeId="1227605620575" fileName="EmbeddableEditor.java" startLine="157" startPosition="25" endLine="158" endPosition="50" />
     <scopeInfo nodeId="8119021187637935510" fileName="EmbeddableEditor.java" startLine="165" startPosition="25" endLine="166" endPosition="52" />

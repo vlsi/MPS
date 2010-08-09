@@ -13585,7 +13585,7 @@
                         <link role="classConcept:3" targetNodeId="19.~BootstrapLanguages" resolveInfo="BootstrapLanguages" />
                       </node>
                       <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6163353915142352554">
-                        <link role="baseMethodDeclaration:3" targetNodeId="19.~Language.getStructureModelDescriptor():jetbrains.mps.smodel.descriptor.RegularSModelDescriptor" resolveInfo="getStructureModelDescriptor" />
+                        <link role="baseMethodDeclaration:3" targetNodeId="19.~Language.getStructureModelDescriptor():jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" resolveInfo="getStructureModelDescriptor" />
                       </node>
                     </node>
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6163353915142352555">

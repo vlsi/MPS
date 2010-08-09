@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.List;
 import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
@@ -28,14 +28,14 @@ public class RunUtil {
 
   public static void makeBeforeRun(final Project project, List<SNode> nodes) {
     GeneratorManager genManager = project.getComponent(GeneratorManager.class);
-    final List<RegularSModelDescriptor> models = ListSequence.fromList(new ArrayList<RegularSModelDescriptor>());
+    final List<EditableSModelDescriptor> models = ListSequence.fromList(new ArrayList<EditableSModelDescriptor>());
     for (final SNode node : nodes) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           SModelDescriptor md = SNodeOperations.getModel(node).getModelDescriptor();
-          if (md instanceof RegularSModelDescriptor) {
-            if (!(ListSequence.fromList(models).contains((RegularSModelDescriptor) md)) && ModelGenerationStatusManager.getInstance().generationRequired(md, project, NoCachesStrategy.createBuildCachesStrategy())) {
-              ListSequence.fromList(models).addElement((RegularSModelDescriptor) md);
+          if (md instanceof EditableSModelDescriptor) {
+            if (!(ListSequence.fromList(models).contains((EditableSModelDescriptor) md)) && ModelGenerationStatusManager.getInstance().generationRequired(md, project, NoCachesStrategy.createBuildCachesStrategy())) {
+              ListSequence.fromList(models).addElement((EditableSModelDescriptor) md);
             }
 
           }

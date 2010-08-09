@@ -21,7 +21,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.def.ModelFileReadException;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.PersistenceVersionNotFoundException;
@@ -59,7 +59,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
 
   @NotNull
   public SModel loadModel(final @NotNull SModelDescriptor modelDescriptor) {
-    assert modelDescriptor instanceof RegularSModelDescriptor;
+    assert modelDescriptor instanceof EditableSModelDescriptor;
 
     if (!modelDescriptor.getModelFile().isReadOnly()) {
       final File file = FileSystem.toFile(modelDescriptor.getModelFile());
@@ -73,7 +73,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     try {
       model = ModelPersistence.readModel(modelDescriptor.getModelFile());
     } catch (ModelFileReadException t) {
-      return handleExceptionDuringModelRead(((RegularSModelDescriptor) modelDescriptor), t, false);
+      return handleExceptionDuringModelRead(((EditableSModelDescriptor) modelDescriptor), t, false);
     } catch (PersistenceVersionNotFoundException e) {
       LOG.error(e);
       return new StubModel(modelDescriptor.getSModelReference());
@@ -116,7 +116,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
 
   @Override
   public void saveModelRefactorings(@NotNull SModelDescriptor modelDescriptor, @NotNull RefactoringHistory history) {
-    int persistence = ((RegularSModelDescriptor) modelDescriptor).getPersistenceVersion();
+    int persistence = ((EditableSModelDescriptor) modelDescriptor).getPersistenceVersion();
     if(persistence >= 5) {
       RefactoringsPersistence.save(modelDescriptor.getModelFile(), history);
     }
@@ -129,13 +129,13 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
       return refactorings;
     }
     
-    if(((RegularSModelDescriptor) modelDescriptor).getPersistenceVersion() < 5) {
+    if(((EditableSModelDescriptor) modelDescriptor).getPersistenceVersion() < 5) {
       return RefactoringsPersistence.loadFromModel(modelDescriptor.getModelFile());
     }
     return null;
   }
 
-  private SModel handleExceptionDuringModelRead(RegularSModelDescriptor modelDescriptor, RuntimeException exception, boolean isConflictStateFixed) {
+  private SModel handleExceptionDuringModelRead(EditableSModelDescriptor modelDescriptor, RuntimeException exception, boolean isConflictStateFixed) {
     SuspiciousModelIndex.instance().addModel(modelDescriptor, isConflictStateFixed);
     SModel newModel = new StubModel(modelDescriptor.getSModelReference());
     LOG.error(exception.getMessage(), newModel);
@@ -352,8 +352,8 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
   }
 
   public void saveMetadata(@NotNull SModelDescriptor modelDescriptor) {
-    assert modelDescriptor instanceof RegularSModelDescriptor;
-    Map<String, String> metadata = ((RegularSModelDescriptor) modelDescriptor).getMetaData();
+    assert modelDescriptor instanceof EditableSModelDescriptor;
+    Map<String, String> metadata = ((EditableSModelDescriptor) modelDescriptor).getMetaData();
     if (metadata.isEmpty()) return;
 
     IFile metadataFile = getMetadataFile(modelDescriptor.getModelFile());

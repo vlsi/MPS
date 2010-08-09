@@ -29,7 +29,7 @@ import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
@@ -266,9 +266,9 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   private class GenerationWatcher implements GenerationListener {
-    public void beforeGeneration(List<Pair<RegularSModelDescriptor, IOperationContext>> inputModels) {
-      for (Pair<RegularSModelDescriptor, IOperationContext> pair : inputModels) {
-        RegularSModelDescriptor smodelDescriptor = pair.o1;
+    public void beforeGeneration(List<Pair<EditableSModelDescriptor, IOperationContext>> inputModels) {
+      for (Pair<EditableSModelDescriptor, IOperationContext> pair : inputModels) {
+        EditableSModelDescriptor smodelDescriptor = pair.o1;
         if (smodelDescriptor != null && smodelDescriptor.needsReloading()) {
           smodelDescriptor.reloadFromDisk();
           LOG.info("Model " + smodelDescriptor + " reloaded from disk.");
@@ -278,11 +278,11 @@ public class MPSVCSManager implements ProjectComponent {
       myRemoveOperationScheduler.banProcessing();
     }
 
-    public void modelsGenerated(List<Pair<RegularSModelDescriptor, IOperationContext>> models, boolean success) {
+    public void modelsGenerated(List<Pair<EditableSModelDescriptor, IOperationContext>> models, boolean success) {
 
     }
 
-    public void afterGeneration(List<Pair<RegularSModelDescriptor, IOperationContext>> inputModels) {
+    public void afterGeneration(List<Pair<EditableSModelDescriptor, IOperationContext>> inputModels) {
       myAddOperationScheduler.removeProcessingBan();
       myRemoveOperationScheduler.removeProcessingBan();
     }
@@ -290,11 +290,11 @@ public class MPSVCSManager implements ProjectComponent {
 
   private class CompilationWatcher implements CompilationListener {
 
-    public void beforeModelsCompiled(List<Pair<RegularSModelDescriptor, IOperationContext>> models, boolean success) {
+    public void beforeModelsCompiled(List<Pair<EditableSModelDescriptor, IOperationContext>> models, boolean success) {
       myRemoveOperationScheduler.removeAllProcessingBans();
     }
 
-    public void afterModelsCompiled(List<Pair<RegularSModelDescriptor, IOperationContext>> models, boolean success) {
+    public void afterModelsCompiled(List<Pair<EditableSModelDescriptor, IOperationContext>> models, boolean success) {
 
     }
   }

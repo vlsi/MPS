@@ -7,19 +7,19 @@
     <nodeInfo nodeId="1218726094722" fileName="GenerateMPSBuildAction_Action.java" startLine="25" startPosition="0" endLine="26" endPosition="26" />
     <nodeInfo nodeId="1218726094723" fileName="GenerateMPSBuildAction_Action.java" startLine="26" startPosition="26" endLine="27" endPosition="45" />
     <nodeInfo nodeId="1218726094724" fileName="GenerateMPSBuildAction_Action.java" startLine="27" startPosition="45" endLine="28" endPosition="43" />
-    <nodeInfo nodeId="1224852070071" fileName="GenerateMPSBuildAction_Action.java" startLine="41" startPosition="52" endLine="42" endPosition="158" />
+    <nodeInfo nodeId="1224852070071" fileName="GenerateMPSBuildAction_Action.java" startLine="41" startPosition="52" endLine="42" endPosition="159" />
     <nodeInfo nodeId="7376433222636454155" fileName="GenerateMPSBuildAction_Action.java" startLine="84" startPosition="9" endLine="85" endPosition="31" />
     <nodeInfo nodeId="1219145705662" fileName="GenerateMPSBuildAction_Action.java" startLine="85" startPosition="31" endLine="86" endPosition="77" />
     <nodeInfo nodeId="1240839661434" fileName="GenerateMPSBuildAction_Action.java" startLine="86" startPosition="77" endLine="87" endPosition="72" />
     <nodeInfo nodeId="1240839675879" fileName="GenerateMPSBuildAction_Action.java" startLine="89" startPosition="27" endLine="90" endPosition="121" />
-    <nodeInfo nodeId="1224851254697" fileName="GenerateMPSBuildAction_Action.java" startLine="92" startPosition="9" endLine="93" endPosition="241" />
+    <nodeInfo nodeId="1224851254697" fileName="GenerateMPSBuildAction_Action.java" startLine="92" startPosition="9" endLine="93" endPosition="242" />
     <nodeInfo nodeId="2307546287432038933" fileName="GenerateMPSBuildAction_Action.java" startLine="101" startPosition="30" endLine="102" endPosition="99" />
     <nodeInfo nodeId="1240839664656" fileName="GenerateMPSBuildAction_Action.java" startLine="88" startPosition="59" endLine="92" endPosition="0" />
     <nodeInfo nodeId="2307546287432038929" fileName="GenerateMPSBuildAction_Action.java" startLine="100" startPosition="73" endLine="104" endPosition="0" />
     <nodeInfo nodeId="1240839664655" fileName="GenerateMPSBuildAction_Action.java" startLine="87" startPosition="72" endLine="92" endPosition="9" />
     <nodeInfo nodeId="2307546287432038920" fileName="GenerateMPSBuildAction_Action.java" startLine="99" startPosition="32" endLine="104" endPosition="7" />
     <nodeInfo nodeId="2307546287432036320" fileName="GenerateMPSBuildAction_Action.java" startLine="98" startPosition="0" endLine="106" endPosition="0" />
-    <scopeInfo nodeId="1224174040640" fileName="GenerateMPSBuildAction_Action.java" startLine="41" startPosition="52" endLine="42" endPosition="158" />
+    <scopeInfo nodeId="1224174040640" fileName="GenerateMPSBuildAction_Action.java" startLine="41" startPosition="52" endLine="42" endPosition="159" />
     <scopeInfo nodeId="1240839664657" fileName="GenerateMPSBuildAction_Action.java" startLine="89" startPosition="27" endLine="90" endPosition="121" />
     <scopeInfo nodeId="2307546287432038932" fileName="GenerateMPSBuildAction_Action.java" startLine="101" startPosition="30" endLine="102" endPosition="99" />
     <scopeInfo nodeId="1240839664656" fileName="GenerateMPSBuildAction_Action.java" startLine="88" startPosition="59" endLine="92" endPosition="0" />
@@ -1854,8 +1854,8 @@
     <nodeInfo nodeId="689680155166286341" fileName="GenerateTextFromBuild.java" startLine="46" startPosition="68" endLine="47" endPosition="52" />
     <nodeInfo nodeId="6053328609845221196" fileName="GenerateTextFromBuild.java" startLine="47" startPosition="52" endLine="48" endPosition="49" />
     <nodeInfo nodeId="6053328609845221856" fileName="GenerateTextFromBuild.java" startLine="49" startPosition="122" endLine="50" endPosition="32" />
-    <nodeInfo nodeId="1224851586289" fileName="GenerateTextFromBuild.java" startLine="54" startPosition="21" endLine="55" endPosition="175" />
-    <nodeInfo nodeId="1240233989442" fileName="GenerateTextFromBuild.java" startLine="56" startPosition="12" endLine="57" endPosition="217" />
+    <nodeInfo nodeId="1224851586289" fileName="GenerateTextFromBuild.java" startLine="54" startPosition="21" endLine="55" endPosition="176" />
+    <nodeInfo nodeId="1240233989442" fileName="GenerateTextFromBuild.java" startLine="56" startPosition="12" endLine="57" endPosition="218" />
     <nodeInfo nodeId="1224866649458" fileName="GenerateTextFromBuild.java" startLine="58" startPosition="5" endLine="59" endPosition="24" />
     <nodeInfo nodeId="1224851995311" fileName="GenerateTextFromBuild.java" startLine="62" startPosition="62" endLine="63" endPosition="64" />
     <nodeInfo nodeId="1224851995322" fileName="GenerateTextFromBuild.java" startLine="63" startPosition="64" endLine="64" endPosition="63" />
@@ -1867,7 +1867,7 @@
     <nodeInfo nodeId="6053328609845221791" fileName="GenerateTextFromBuild.java" startLine="48" startPosition="49" endLine="51" endPosition="9" />
     <nodeInfo nodeId="1224851586136" fileName="GenerateTextFromBuild.java" startLine="35" startPosition="90" endLine="39" endPosition="0" />
     <nodeInfo nodeId="1224851995332" fileName="GenerateTextFromBuild.java" startLine="67" startPosition="57" endLine="71" endPosition="11" />
-    <nodeInfo nodeId="1224851586126" fileName="GenerateTextFromBuild.java" startLine="34" startPosition="158" endLine="39" endPosition="7" />
+    <nodeInfo nodeId="1224851586126" fileName="GenerateTextFromBuild.java" startLine="34" startPosition="159" endLine="39" endPosition="7" />
     <nodeInfo nodeId="1240233965580" fileName="GenerateTextFromBuild.java" startLine="53" startPosition="6" endLine="58" endPosition="5" />
     <nodeInfo nodeId="1224851995328" fileName="GenerateTextFromBuild.java" startLine="66" startPosition="25" endLine="72" endPosition="9" />
     <nodeInfo nodeId="1224851995326" fileName="GenerateTextFromBuild.java" startLine="65" startPosition="57" endLine="74" endPosition="0" />
@@ -1879,8 +1879,8 @@
     <scopeInfo nodeId="1224851548028" fileName="GenerateTextFromBuild.java" startLine="31" startPosition="34" endLine="31" endPosition="34" />
     <scopeInfo nodeId="1224851586139" fileName="GenerateTextFromBuild.java" startLine="36" startPosition="31" endLine="37" endPosition="141" />
     <scopeInfo nodeId="6053328609845221792" fileName="GenerateTextFromBuild.java" startLine="49" startPosition="122" endLine="50" endPosition="32" />
-    <scopeInfo nodeId="1240233965581" fileName="GenerateTextFromBuild.java" startLine="54" startPosition="21" endLine="55" endPosition="175" />
-    <scopeInfo nodeId="1240233985406" fileName="GenerateTextFromBuild.java" startLine="56" startPosition="12" endLine="57" endPosition="217" />
+    <scopeInfo nodeId="1240233965581" fileName="GenerateTextFromBuild.java" startLine="54" startPosition="21" endLine="55" endPosition="176" />
+    <scopeInfo nodeId="1240233985406" fileName="GenerateTextFromBuild.java" startLine="56" startPosition="12" endLine="57" endPosition="218" />
     <scopeInfo nodeId="1224851548025" fileName="GenerateTextFromBuild.java" startLine="30" startPosition="0" endLine="32" endPosition="3" />
     <scopeInfo nodeId="1224851995333" fileName="GenerateTextFromBuild.java" startLine="68" startPosition="104" endLine="70" endPosition="19" />
     <scopeInfo nodeId="1224851586136" fileName="GenerateTextFromBuild.java" startLine="35" startPosition="90" endLine="39" endPosition="0" />
@@ -1903,7 +1903,7 @@
     <scopeInfo nodeId="1224851981654" fileName="GenerateTextFromBuild.java" startLine="61" startPosition="0" endLine="77" endPosition="0">
       <varInfo nodeId="1224852008512" varName="descriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="1224851567260" fileName="GenerateTextFromBuild.java" startLine="34" startPosition="158" endLine="59" endPosition="24">
+    <scopeInfo nodeId="1224851567260" fileName="GenerateTextFromBuild.java" startLine="34" startPosition="159" endLine="59" endPosition="24">
       <varInfo nodeId="6053328609845221842" varName="fileToRun" />
       <varInfo nodeId="6053328609845219935" varName="generationHandler" />
       <varInfo nodeId="1224851586127" varName="basedir" />
@@ -2003,10 +2003,10 @@
     <nodeInfo nodeId="2047676454991375225" fileName="DefaultPackagingLanguageApplication_Configuration.java" startLine="157" startPosition="118" endLine="158" endPosition="0" />
     <nodeInfo nodeId="2864298211886201550" fileName="DefaultPackagingLanguageApplication_Configuration.java" startLine="159" startPosition="46" endLine="160" endPosition="83" />
     <nodeInfo nodeId="2047676454991375226" fileName="DefaultPackagingLanguageApplication_Configuration.java" startLine="161" startPosition="19" endLine="162" endPosition="0" />
-    <nodeInfo nodeId="4462513030603845571" fileName="DefaultPackagingLanguageApplication_Configuration.java" startLine="162" startPosition="0" endLine="163" endPosition="112" />
-    <nodeInfo nodeId="5171649595115889398" fileName="DefaultPackagingLanguageApplication_Configuration.java" startLine="163" startPosition="112" endLine="164" endPosition="94" />
-    <nodeInfo nodeId="4462513030603881528" fileName="DefaultPackagingLanguageApplication_Configuration.java" startLine="166" startPosition="39" endLine="167" endPosition="116" />
-    <nodeInfo nodeId="5171649595115889395" fileName="DefaultPackagingLanguageApplication_Configuration.java" startLine="167" startPosition="116" endLine="168" endPosition="99" />
+    <nodeInfo nodeId="4462513030603845571" fileName="DefaultPackagingLanguageApplication_Configuration.java" startLine="162" startPosition="0" endLine="163" endPosition="114" />
+    <nodeInfo nodeId="5171649595115889398" fileName="DefaultPackagingLanguageApplication_Configuration.java" startLine="163" startPosition="114" endLine="164" endPosition="94" />
+    <nodeInfo nodeId="4462513030603881528" fileName="DefaultPackagingLanguageApplication_Configuration.java" startLine="166" startPosition="39" endLine="167" endPosition="117" />
+    <nodeInfo nodeId="5171649595115889395" fileName="DefaultPackagingLanguageApplication_Configuration.java" startLine="167" startPosition="117" endLine="168" endPosition="99" />
     <nodeInfo nodeId="2864298211886201452" fileName="DefaultPackagingLanguageApplication_Configuration.java" startLine="170" startPosition="21" endLine="171" endPosition="128" />
     <nodeInfo nodeId="2047676454991375227" fileName="DefaultPackagingLanguageApplication_Configuration.java" startLine="171" startPosition="128" endLine="172" endPosition="0" />
     <nodeInfo nodeId="2864298211886201879" fileName="DefaultPackagingLanguageApplication_Configuration.java" startLine="173" startPosition="37" endLine="174" endPosition="87" />

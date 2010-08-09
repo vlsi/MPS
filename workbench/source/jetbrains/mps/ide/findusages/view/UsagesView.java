@@ -39,7 +39,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
@@ -133,10 +133,10 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
 
   private void regenerate() {
     GeneratorManager manager = myProject.getComponent(GeneratorManager.class);
-    List<RegularSModelDescriptor> models = new ArrayList<RegularSModelDescriptor>();
+    List<EditableSModelDescriptor> models = new ArrayList<EditableSModelDescriptor>();
     for (SModelDescriptor modelDescriptor : myTreeComponent.getIncludedModels()) {
-      if (!modelDescriptor.isTransient() && (modelDescriptor instanceof RegularSModelDescriptor)) {
-        models.add((RegularSModelDescriptor) modelDescriptor);
+      if (!modelDescriptor.isTransient() && (modelDescriptor instanceof EditableSModelDescriptor)) {
+        models.add((EditableSModelDescriptor) modelDescriptor);
       }
     }
     manager.generateModelsFromDifferentModules(ProjectOperationContext.get(myProject), models, new JavaGenerationHandler());

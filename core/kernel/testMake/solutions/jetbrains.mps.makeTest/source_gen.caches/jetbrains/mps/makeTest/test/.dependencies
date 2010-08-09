@@ -2,7 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.makeTest.test.ChangeModel" file="ChangeModel.java">
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.descriptor.RegularSModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ModelPersistence" />
   </dependency>
   <dependency className="jetbrains.mps.makeTest.test.ChangeModelProcessor" file="ChangeModelProcessor.java">
@@ -28,7 +28,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
-    <classNode dependClassName="jetbrains.mps.smodel.descriptor.RegularSModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
   </dependency>

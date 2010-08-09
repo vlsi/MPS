@@ -1057,7 +1057,7 @@
                 <link role="variableDeclaration:3" targetNodeId="3068114543317978958" resolveInfo="sourceLanguage" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3068114543317978998">
-                <link role="baseMethodDeclaration:3" targetNodeId="5.~Language.getEditorModelDescriptor():jetbrains.mps.smodel.descriptor.RegularSModelDescriptor" resolveInfo="getEditorModelDescriptor" />
+                <link role="baseMethodDeclaration:3" targetNodeId="5.~Language.getEditorModelDescriptor():jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" resolveInfo="getEditorModelDescriptor" />
               </node>
             </node>
           </node>
@@ -1155,7 +1155,7 @@
                 <link role="variableDeclaration:3" targetNodeId="3068114543317978958" resolveInfo="sourceLanguage" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3068114543317979035">
-                <link role="baseMethodDeclaration:3" targetNodeId="5.~Language.getBehaviorModelDescriptor():jetbrains.mps.smodel.descriptor.RegularSModelDescriptor" resolveInfo="getBehaviorModelDescriptor" />
+                <link role="baseMethodDeclaration:3" targetNodeId="5.~Language.getBehaviorModelDescriptor():jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" resolveInfo="getBehaviorModelDescriptor" />
               </node>
             </node>
           </node>
@@ -1253,7 +1253,7 @@
                 <link role="variableDeclaration:3" targetNodeId="3068114543317978958" resolveInfo="sourceLanguage" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3068114543317979072">
-                <link role="baseMethodDeclaration:3" targetNodeId="5.~Language.getConstraintsModelDescriptor():jetbrains.mps.smodel.descriptor.RegularSModelDescriptor" resolveInfo="getConstraintsModelDescriptor" />
+                <link role="baseMethodDeclaration:3" targetNodeId="5.~Language.getConstraintsModelDescriptor():jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" resolveInfo="getConstraintsModelDescriptor" />
               </node>
             </node>
           </node>
@@ -1347,7 +1347,7 @@
                 <link role="variableDeclaration:3" targetNodeId="3068114543317978958" resolveInfo="sourceLanguage" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3068114543317979110">
-                <link role="baseMethodDeclaration:3" targetNodeId="5.~Language.getDataFlowModelDescriptor():jetbrains.mps.smodel.descriptor.RegularSModelDescriptor" resolveInfo="getDataFlowModelDescriptor" />
+                <link role="baseMethodDeclaration:3" targetNodeId="5.~Language.getDataFlowModelDescriptor():jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" resolveInfo="getDataFlowModelDescriptor" />
               </node>
             </node>
           </node>
@@ -1530,7 +1530,7 @@
                     <link role="variableDeclaration:3" targetNodeId="3068114543317978963" resolveInfo="targetLanguage" />
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3068114543317979180">
-                    <link role="baseMethodDeclaration:3" targetNodeId="5.~Language.getEditorModelDescriptor():jetbrains.mps.smodel.descriptor.RegularSModelDescriptor" resolveInfo="getEditorModelDescriptor" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="5.~Language.getEditorModelDescriptor():jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" resolveInfo="getEditorModelDescriptor" />
                   </node>
                 </node>
               </node>
@@ -1624,7 +1624,7 @@
                     <link role="variableDeclaration:3" targetNodeId="3068114543317978963" resolveInfo="targetLanguage" />
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3068114543317979219">
-                    <link role="baseMethodDeclaration:3" targetNodeId="5.~Language.getBehaviorModelDescriptor():jetbrains.mps.smodel.descriptor.RegularSModelDescriptor" resolveInfo="getBehaviorModelDescriptor" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="5.~Language.getBehaviorModelDescriptor():jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" resolveInfo="getBehaviorModelDescriptor" />
                   </node>
                 </node>
               </node>
@@ -1718,7 +1718,7 @@
                     <link role="variableDeclaration:3" targetNodeId="3068114543317978963" resolveInfo="targetLanguage" />
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3068114543317979258">
-                    <link role="baseMethodDeclaration:3" targetNodeId="5.~Language.getConstraintsModelDescriptor():jetbrains.mps.smodel.descriptor.RegularSModelDescriptor" resolveInfo="getConstraintsModelDescriptor" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="5.~Language.getConstraintsModelDescriptor():jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" resolveInfo="getConstraintsModelDescriptor" />
                   </node>
                 </node>
               </node>
@@ -1812,7 +1812,7 @@
                     <link role="variableDeclaration:3" targetNodeId="3068114543317978963" resolveInfo="targetLanguage" />
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3068114543317979297">
-                    <link role="baseMethodDeclaration:3" targetNodeId="5.~Language.getDataFlowModelDescriptor():jetbrains.mps.smodel.descriptor.RegularSModelDescriptor" resolveInfo="getDataFlowModelDescriptor" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="5.~Language.getDataFlowModelDescriptor():jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" resolveInfo="getDataFlowModelDescriptor" />
                   </node>
                 </node>
               </node>

@@ -22,8 +22,7 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
-import jetbrains.mps.smodel.persistence.PersistenceSettings;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
 import javax.swing.*;
 import java.util.List;
@@ -56,7 +55,7 @@ public class UpdatePersistenceDialog extends BaseDialog {
     }
   };
 
-  public UpdatePersistenceDialog(List<RegularSModelDescriptor> modelDescriptors, Frame mainFrame, String unitDescription, boolean needsAskToSetVersion) {
+  public UpdatePersistenceDialog(List<EditableSModelDescriptor> modelDescriptors, Frame mainFrame, String unitDescription, boolean needsAskToSetVersion) {
     super(mainFrame, "Upgrade Model Persistence In " + unitDescription);
     myUnitDescription = unitDescription;
     myModelDescriptors = new ArrayList<SModelDescriptor>(modelDescriptors);

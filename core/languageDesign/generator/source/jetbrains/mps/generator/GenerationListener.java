@@ -16,16 +16,15 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Pair;
 
 import java.util.List;
 
 public interface GenerationListener {
-  void beforeGeneration(List<Pair<RegularSModelDescriptor, IOperationContext>> inputModels);
+  void beforeGeneration(List<Pair<EditableSModelDescriptor, IOperationContext>> inputModels);
 
-  void modelsGenerated(List<Pair<RegularSModelDescriptor,IOperationContext>> models, boolean success);
+  void modelsGenerated(List<Pair<EditableSModelDescriptor,IOperationContext>> models, boolean success);
 
-  void afterGeneration(List<Pair<RegularSModelDescriptor, IOperationContext>> inputModels);
+  void afterGeneration(List<Pair<EditableSModelDescriptor, IOperationContext>> inputModels);
 }

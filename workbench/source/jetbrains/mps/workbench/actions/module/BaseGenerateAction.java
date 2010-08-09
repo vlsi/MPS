@@ -32,7 +32,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
 import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NotNull;
@@ -89,7 +89,7 @@ public abstract class BaseGenerateAction extends BaseAction {
   }
 
   protected void doExecute(AnActionEvent e) {
-    final List<RegularSModelDescriptor> modelsToGenerate = new ArrayList<RegularSModelDescriptor>();
+    final List<EditableSModelDescriptor> modelsToGenerate = new ArrayList<EditableSModelDescriptor>();
 
     IOperationContext invocationContext = myOperationContext;
     for (IModule module : myModules) {
@@ -140,7 +140,7 @@ public abstract class BaseGenerateAction extends BaseAction {
   }
 
   @NotNull
-  private List<RegularSModelDescriptor> getModelsToGenerate(final IModule module) {
+  private List<EditableSModelDescriptor> getModelsToGenerate(final IModule module) {
     GenParameters params = ModelAccess.instance().runReadAction(new Computable<GenParameters>() {
       public GenParameters compute() {
         SModel tmp = new SModel(SModelReference.fromString("test.model"));
@@ -174,7 +174,7 @@ public abstract class BaseGenerateAction extends BaseAction {
       }
     });
 
-    if (params == null) return new ArrayList<RegularSModelDescriptor>();
+    if (params == null) return new ArrayList<EditableSModelDescriptor>();
     return params.getModelDescriptors();
   }
 }

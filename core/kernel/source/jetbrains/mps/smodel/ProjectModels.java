@@ -15,16 +15,13 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.project.AbstractModule.StubPath;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.persistence.BaseMPSModelRootManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.List;
 
 public class ProjectModels {
   private static long ourProjectModelDescriptorCount = 0;
@@ -49,9 +46,9 @@ public class ProjectModels {
   };
 
   @NotNull
-  public static RegularSModelDescriptor createDescriptorFor(@NotNull ModelOwner owner) {
+  public static EditableSModelDescriptor createDescriptorFor(@NotNull ModelOwner owner) {
     SModelFqName fqName = new SModelFqName("projectModel" + ourProjectModelDescriptorCount++, SModelStereotype.INTERNAL); // "$internal$"
-    RegularSModelDescriptor result = new DefaultSModelDescriptor(ourModelRootManager, null, new SModelReference(fqName, SModelId.generate()));
+    EditableSModelDescriptor result = new DefaultSModelDescriptor(ourModelRootManager, null, new SModelReference(fqName, SModelId.generate()));
     SModelRepository.getInstance().registerModelDescriptor(result, owner);
     return result;
   }

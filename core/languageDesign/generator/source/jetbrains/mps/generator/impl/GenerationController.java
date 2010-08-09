@@ -24,8 +24,6 @@ import jetbrains.mps.generator.GenerationSettings;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.GeneratorManager.GeneratorNotifierHelper;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
@@ -33,12 +31,10 @@ import jetbrains.mps.ide.progress.TaskProgressHelper;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.plugin.IProjectHandler;
-import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
@@ -53,7 +49,7 @@ public class GenerationController {
   protected static Logger LOG = Logger.getLogger(GenerationController.class);
 
   private GeneratorNotifierHelper myNotifierHelper;
-  private List<Pair<RegularSModelDescriptor, IOperationContext>> myInputModels;
+  private List<Pair<EditableSModelDescriptor, IOperationContext>> myInputModels;
   protected final IGenerationHandler myGenerationHandler;
   protected ProgressIndicator myProgress;
   protected GeneratorLoggerAdapter myLogger;
@@ -64,7 +60,7 @@ public class GenerationController {
 
   public GenerationController(GeneratorNotifierHelper notifierHelper,
                               GenerationSettings settings,
-                              List<Pair<RegularSModelDescriptor, IOperationContext>> _inputModels,
+                              List<Pair<EditableSModelDescriptor, IOperationContext>> _inputModels,
                               IGenerationHandler generationHandler,
                               IGenerationTracer generationTracer,
                               ProgressIndicator progress,
@@ -86,7 +82,7 @@ public class GenerationController {
   private void initMaps() {
     IModule current = null;
     ArrayList<SModelDescriptor> currentList = null;
-    for (Pair<RegularSModelDescriptor, IOperationContext> inputModel : myInputModels) {
+    for (Pair<EditableSModelDescriptor, IOperationContext> inputModel : myInputModels) {
       IModule newModule = inputModel.o2.getModule();
       if (current == null || newModule != current) {
         current = newModule;
