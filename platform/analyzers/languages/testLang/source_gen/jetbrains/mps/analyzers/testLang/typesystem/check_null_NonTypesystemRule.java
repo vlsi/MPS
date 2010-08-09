@@ -21,6 +21,7 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_null_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -32,21 +33,53 @@ public class check_null_NonTypesystemRule extends AbstractNonTypesystemRule_Runt
     AnalysisResult<Map<SNode, NullableState>> result = nullableRunner.analyze();
     for (ProgramState state : result.getStates()) {
       Instruction instruction = state.getInstruction();
+      SNode source = (SNode) instruction.getSource();
       if (instruction instanceof ReadInstruction) {
         ReadInstruction read = (ReadInstruction) instruction;
-        SNode variable = (SNode) read.getSource();
-        if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(variable), "jetbrains.mps.baseLanguage.structure.DotExpression")) {
-          SNode dot = SNodeOperations.cast(SNodeOperations.getParent(variable), "jetbrains.mps.baseLanguage.structure.DotExpression");
-          if (SLinkOperations.getTarget(dot, "operand", true) == variable && !(IOperation_Behavior.call_operandCanBeNull_323410281720656291(SLinkOperations.getTarget(dot, "operation", true)))) {
-            if (NullableState.NULLABLE.equals(result.get(state).get((SNode) read.getVariable()))) {
+        NullableState varState = result.get(state).get((SNode) read.getVariable());
+        if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(source), "jetbrains.mps.baseLanguage.structure.DotExpression")) {
+          SNode dot = SNodeOperations.cast(SNodeOperations.getParent(source), "jetbrains.mps.baseLanguage.structure.DotExpression");
+          if (SLinkOperations.getTarget(dot, "operand", true) == source && !(IOperation_Behavior.call_operandCanBeNull_323410281720656291(SLinkOperations.getTarget(dot, "operation", true)))) {
+            if (varState.canBeNull()) {
               {
                 BaseIntentionProvider intentionProvider = null;
                 IErrorTarget errorTarget = new NodeErrorTarget();
-                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(variable, "Instance can be null", "r:99bede3e-9630-4889-aa58-4a993e3d8995(jetbrains.mps.analyzers.testLang.typesystem)", "323410281720718309", intentionProvider, errorTarget);
+                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(source, "Instance can be null", "r:99bede3e-9630-4889-aa58-4a993e3d8995(jetbrains.mps.analyzers.testLang.typesystem)", "323410281720718309", intentionProvider, errorTarget);
               }
             }
           }
         }
+        if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(source), "jetbrains.mps.baseLanguage.structure.EqualsExpression") || SNodeOperations.isInstanceOf(SNodeOperations.getParent(source), "jetbrains.mps.baseLanguage.structure.NotEqualsExpression")) {
+          boolean inCondition = false;
+          boolean equals = SNodeOperations.isInstanceOf(SNodeOperations.getParent(source), "jetbrains.mps.baseLanguage.structure.EqualsExpression");
+          boolean isNull = NullableState.NULL.equals(varState);
+          boolean isNotNull = NullableState.NOTNULL.equals(varState);
+          if (SNodeOperations.getDescendants(SNodeOperations.getParent(source), "jetbrains.mps.baseLanguage.structure.NullLiteral", false, new String[]{}) != null) {
+            if (SNodeOperations.getAncestor(source, "jetbrains.mps.baseLanguage.structure.IfStatement", false, false) != null && ListSequence.fromList(SNodeOperations.getAncestors(source, null, false)).contains(SLinkOperations.getTarget(SNodeOperations.getAncestor(source, "jetbrains.mps.baseLanguage.structure.IfStatement", false, false), "condition", true))) {
+              inCondition = true;
+            }
+            if (SNodeOperations.getAncestor(source, "jetbrains.mps.baseLanguage.structure.WhileStatement", false, false) != null && ListSequence.fromList(SNodeOperations.getAncestors(source, null, false)).contains(SLinkOperations.getTarget(SNodeOperations.getAncestor(source, "jetbrains.mps.baseLanguage.structure.WhileStatement", false, false), "condition", true))) {
+              inCondition = true;
+            }
+            if (inCondition) {
+              if (equals && isNotNull || !(equals) && isNull) {
+                {
+                  BaseIntentionProvider intentionProvider = null;
+                  IErrorTarget errorTarget = new NodeErrorTarget();
+                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SNodeOperations.getParent(source), "This condition is always false", "r:99bede3e-9630-4889-aa58-4a993e3d8995(jetbrains.mps.analyzers.testLang.typesystem)", "7552345430539285105", intentionProvider, errorTarget);
+                }
+              }
+              if (equals && isNull || !(equals) && isNotNull) {
+                {
+                  BaseIntentionProvider intentionProvider = null;
+                  IErrorTarget errorTarget = new NodeErrorTarget();
+                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SNodeOperations.getParent(source), "This condition is always true", "r:99bede3e-9630-4889-aa58-4a993e3d8995(jetbrains.mps.analyzers.testLang.typesystem)", "7552345430539285118", intentionProvider, errorTarget);
+                }
+              }
+            }
+          }
+        }
+
       }
     }
     System.out.println(result);

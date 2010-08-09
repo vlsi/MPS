@@ -13,6 +13,7 @@
     <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.NullableState" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IOperation_Behavior" />
     <classNode dependClassName="jetbrains.mps.intentions.BaseIntentionProvider" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.AnalysisResult" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.AnalyzerRunner" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.ProgramState" />

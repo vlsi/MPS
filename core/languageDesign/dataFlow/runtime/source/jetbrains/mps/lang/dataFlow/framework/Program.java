@@ -97,7 +97,9 @@ public class Program {
 
   public void insert(Instruction instruction, int position, boolean update) {
     instruction.setProgram(this);
-    instruction.setSource(myInstructions.get(position-1).getSource());
+    if (instruction.getSource() == null) {
+      instruction.setSource(myInstructions.get(position-1).getSource());
+    }
     instruction.setIndex(position);
     for (Instruction i : myInstructions.subList(position,myInstructions.size())) {
         i.setIndex(i.getIndex()+1);

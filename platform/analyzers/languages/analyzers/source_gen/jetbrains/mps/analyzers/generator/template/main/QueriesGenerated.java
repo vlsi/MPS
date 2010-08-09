@@ -138,7 +138,7 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "instruction", false), "instructionClassifier");
   }
 
-  public static Object referenceMacro_GetReferent_4943044633102126558(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_4016718966623924565(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "instructionRef", true), "instruction", false), "instructionConstructor");
   }
 
@@ -164,7 +164,7 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "position", true), "jetbrains.mps.analyzers.structure.InsertBeforePosition");
   }
 
-  public static boolean ifMacro_Condition_4943044633102126498(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_4016718966623920890(final IOperationContext operationContext, final IfMacroContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "position", true), "jetbrains.mps.analyzers.structure.InsertBeforePosition");
   }
 
@@ -244,7 +244,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "actions", true);
   }
 
-  public static SNode sourceNodeQuery_375746805846271388(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_4016718966623920855(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     if (SLinkOperations.getTarget(_context.getNode(), "target", true) != null) {
       return SLinkOperations.getTarget(_context.getNode(), "target", true);
     }
@@ -253,7 +253,7 @@ public class QueriesGenerated {
     return reference;
   }
 
-  public static SNode sourceNodeQuery_375746805846306890(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_4016718966623920909(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     if (SLinkOperations.getTarget(_context.getNode(), "target", true) != null) {
       return SLinkOperations.getTarget(_context.getNode(), "target", true);
     }
@@ -262,8 +262,14 @@ public class QueriesGenerated {
     return reference;
   }
 
-  public static SNode sourceNodeQuery_4943044633102126553(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_4016718966623924560(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return _context.getNode();
+  }
+
+  public static SNode sourceNodeQuery_4016718966623924590(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    SNode reference = SConceptOperations.createNewNode("jetbrains.mps.analyzers.structure.ApplicableNodeReference", null);
+    SLinkOperations.setTarget(reference, "applicableNode", SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.analyzers.structure.Rule", false, false), "condition", true), "jetbrains.mps.analyzers.structure.ConceptCondition"), false);
+    return reference;
   }
 
   public static Iterable sourceNodesQuery_752944717341742059(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -318,7 +324,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "instructionRef", true), "argument", true);
   }
 
-  public static Iterable sourceNodesQuery_4943044633102126544(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_4016718966623924551(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "instructionRef", true), "argument", true);
   }
 }
