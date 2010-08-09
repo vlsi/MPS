@@ -38,8 +38,6 @@ public interface SModelDescriptor {
 
   //------
 
-  boolean isPackaged();
-
   boolean isReadOnly();
 
   boolean isEmpty();
@@ -96,21 +94,6 @@ public interface SModelDescriptor {
 
   //------
   //------
-  //------todo move to ModelWithFile
-
-  void save();
-
-  @Nullable
-  IFile getModelFile();
-
-  void setModelFile(IFile file);
-
-  long lastChangeTime();
-
-  boolean isChanged();
-  
-  void setChanged(boolean changed);
-
   //------todo get rid of
 
   boolean isInitialized();

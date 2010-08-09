@@ -31,7 +31,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
 
   protected SModelReference myModelReference;
   protected Map<String, Object> myUserObjects;
-  protected IFile myModelFile;
   protected IModelRootManager myModelRootManager;
 
   //it should be possible to add listeners from any thread so we use lock here
@@ -41,7 +40,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   private SModelListener[] myModelListenersCopy;
   private Set<SModelCommandListener> myModelCommandListeners = new LinkedHashSet<SModelCommandListener>(0);
   private SModelCommandListener[] myModelCommandListenersCopy;
-  private boolean myIsChanged = false;
 
   protected BaseSModelDescriptor(IModelRootManager manager, IFile modelFile, @NotNull SModelReference modelReference, boolean checkDup) {
     myModelReference = modelReference;
@@ -53,28 +51,8 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     }
   }
 
-  public boolean isChanged() {
-    return myIsChanged;
-  }
-
-  public void setChanged(boolean changed) {
-    myIsChanged = changed;
-  }
-
   public IModelRootManager getModelRootManager() {
     return myModelRootManager;
-  }
-
-  public IFile getModelFile() {
-    return myModelFile;
-  }
-
-  public void setModelFile(IFile file) {
-    myModelFile = file;
-  }
-
-  public boolean isPackaged() {
-    return getModelFile() instanceof JarFileEntryFile;
   }
 
   public SModelReference getSModelReference() {

@@ -123,10 +123,6 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptor implemen
     return result;
   }
 
-  public void save() {
-
-  }
-
   public void refresh() {
     ModelAccess.assertLegalWrite();
 
@@ -163,11 +159,6 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptor implemen
     }
   }
 
-
-  public long lastChangeTime() {
-    //todo: maybe more meaningful time?
-    return -1;
-  }
 
   protected SModel loadModel() {
     SModel model = myModelRootManager.loadModel(this);

@@ -32,6 +32,7 @@ import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vcs.VcsHelper;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.JarFileEntryFile;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
@@ -59,6 +60,10 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   private long myDiskTimestamp = -1;
   private boolean myIsTestRefactoringMode = false;
 
+  private IFile myModelFile;
+  private boolean myIsChanged = false;
+
+
   public DefaultSModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference) {
     this(manager, modelFile, modelReference, true);
   }
@@ -77,6 +82,24 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
       }
     });
   }
+
+
+  public IFile getModelFile() {
+    return myModelFile;
+  }
+
+  public void setModelFile(IFile file) {
+    myModelFile = file;
+  }
+
+  public boolean isChanged() {
+    return myIsChanged;
+  }
+
+  public void setChanged(boolean changed) {
+    myIsChanged = changed;
+  }
+
 
   protected SModel loadModel() {
     SModel result = myModelRootManager.loadModel(this);
@@ -402,6 +425,10 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
 
     if (!isInitialized()) return;
     replaceModel(myModelRootManager.refresh(this));
+  }
+
+  public boolean isPackaged() {
+    return getModelFile() instanceof JarFileEntryFile;
   }
 
   public void replaceModel(SModel newModel) {

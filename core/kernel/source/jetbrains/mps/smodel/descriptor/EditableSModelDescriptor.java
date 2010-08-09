@@ -9,14 +9,6 @@ import jetbrains.mps.smodel.SModelDescriptor;
  * This kind of model also can be refactored and can contain some metadata.
  * Maybe this kind of descriptor will be splitted to a number of descriptors in future.
  */
-public interface EditableSModelDescriptor extends SModelDescriptor, Refactorable,MetadataContainer {
-  int getPersistenceVersion();
-
-  boolean needsReloading();
-
-  void reloadFromDisk();
-
-  void reloadFromDiskSafe();
-
+public interface EditableSModelDescriptor extends SModelDescriptor, EditableDescriptor, Refactorable, MetadataContainer {
   void replaceModel(SModel newModel);
 }
