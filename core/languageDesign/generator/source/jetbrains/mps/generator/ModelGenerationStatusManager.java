@@ -118,13 +118,14 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
   }
 
   public boolean generationRequired(SModelDescriptor sm, Project project) {
-    if (sm.isPackaged()) return false;
+    if (!(sm instanceof EditableSModelDescriptor)) return false;
+    EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
+    if (esm.isPackaged()) return false;
     if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) return false;
-    IFile modelFile = sm.getModelFile();
-    if (modelFile == null) return false;
+    IFile modelFile = esm.getModelFile();
     if (isDoNotGenerate(sm)) return false;
-    if (SModelRepository.getInstance().isChanged(sm)) return true;
-    if (isEmpty(sm)) return false;
+    if (SModelRepository.getInstance().isChanged(esm)) return true;
+    if (isEmpty(esm)) return false;
 
     String generatedHash = getGenerationHash(sm);
     if (generatedHash == null) return true;
@@ -146,7 +147,7 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     return !(generatedHash.equals(valueArray[0]));
   }
 
-  private boolean isEmpty(SModelDescriptor sm) {
+  private boolean isEmpty(EditableSModelDescriptor sm) {
     if (myEmptyStatus.containsKey(sm) && myEmptyStatusRetrievalTime.get(sm) >= sm.lastChangeTime()) {
       return myEmptyStatus.get(sm);
     }
@@ -214,9 +215,8 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
   private File generateHashFile(CacheGenerationContext context) {
     File outputDir = context.getOutputDir();
 
-    SModelDescriptor descriptor = context.getOriginalInputModel();
+    EditableSModelDescriptor descriptor = context.getOriginalInputModel();
     IFile file = descriptor.getModelFile();
-    assert file != null;
     byte[] content = new byte[(int) file.length()];
 
     InputStream is = null;

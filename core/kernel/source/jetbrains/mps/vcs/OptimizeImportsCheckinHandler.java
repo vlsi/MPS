@@ -96,7 +96,6 @@ public class OptimizeImportsCheckinHandler extends CheckinHandler {
       ThreadUtils.assertLogIsEDT();
       try {
         ModelAccess.instance().runCommandInEDT(new Runnable() {
-          @Override
           public void run() {
             new OptimizeImportsHelper(operationContext).optimizeModelsImports(affectedModels);
             for (SModelDescriptor affectedModel : affectedModels) {

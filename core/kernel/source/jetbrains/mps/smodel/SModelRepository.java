@@ -145,7 +145,7 @@ public class SModelRepository implements ApplicationComponent {
     fireModelWillBeDeletedEvent(modelDescriptor);
     removeModelDescriptor(modelDescriptor);
 
-    if (modelDescriptor instanceof EditableSModelDescriptor){
+    if (modelDescriptor instanceof EditableSModelDescriptor) {
       IFile modelFile = ((EditableSModelDescriptor) modelDescriptor).getModelFile();
       if (modelFile.exists()) {
         modelFile.delete();
@@ -335,28 +335,23 @@ public class SModelRepository implements ApplicationComponent {
 
   private void addModelToFileCache(EditableSModelDescriptor modelDescriptor) {
     IFile modelFile = modelDescriptor.getModelFile();
-    if (modelFile != null) {
-      myCanonicalPathsToModelDescriptorMap.put(modelFile.getCanonicalPath(), modelDescriptor);
-    }
+    myCanonicalPathsToModelDescriptorMap.put(modelFile.getCanonicalPath(), modelDescriptor);
   }
 
   private boolean removeModelFromFileCache(EditableSModelDescriptor modelDescriptor) {
     IFile modelFile = modelDescriptor.getModelFile();
-    if (modelFile != null) {
-      SModelDescriptor sd = myCanonicalPathsToModelDescriptorMap.remove(modelFile.getCanonicalPath());
-      return sd == modelDescriptor;
-    }
-    return true;
+    SModelDescriptor sd = myCanonicalPathsToModelDescriptorMap.remove(modelFile.getCanonicalPath());
+    return sd == modelDescriptor;
   }
 
-  public void markChanged(SModelDescriptor descriptor, boolean b) {
+  public void markChanged(EditableSModelDescriptor descriptor, boolean b) {
     synchronized (myModelsLock) {
       if (!myModelDescriptors.contains(descriptor)) return;
       descriptor.setChanged(b);
     }
   }
 
-  public boolean isChanged(SModelDescriptor descriptor) {
+  public boolean isChanged(EditableSModelDescriptor descriptor) {
     return descriptor.isChanged();
   }
 
@@ -364,7 +359,8 @@ public class SModelRepository implements ApplicationComponent {
     synchronized (myModelsLock) {
       Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
       for (SModelDescriptor md : myModelDescriptors) {
-        if (md.getModelFile() != null && md.isChanged()) result.add(md);
+        if (!(md instanceof EditableSModelDescriptor)) continue;
+        if (((EditableSModelDescriptor) md).isChanged()) result.add(md);
       }
       return result;
     }
@@ -378,7 +374,7 @@ public class SModelRepository implements ApplicationComponent {
       if (!(md instanceof EditableSModelDescriptor)) continue;
       EditableSModelDescriptor emd = ((EditableSModelDescriptor) md);
       if (!emd.isChanged()) continue;
-      
+
       try {
         emd.save();
         emd.setChanged(false);
@@ -394,18 +390,9 @@ public class SModelRepository implements ApplicationComponent {
     for (SModelDescriptor sm : getModelDescriptors()) {
       if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) continue;
 
-      boolean needSaving = false;
 
-      if (sm.getSModel().updateSModelReferences() && sm.getModelFile() != null && !sm.isReadOnly()) {
-        needSaving = true;
-      }
-
-      if (sm.getSModel().updateModuleReferences() && sm.getModelFile() != null && !sm.isReadOnly()) {
-        needSaving = true;
-      }
-
-      if (needSaving) {
-        markChanged(sm, true);
+      if (sm.getSModel().updateSModelReferences() && (sm instanceof EditableSModelDescriptor) && !sm.isReadOnly()) {
+        markChanged(((EditableSModelDescriptor) sm), true);
       }
     }
   }

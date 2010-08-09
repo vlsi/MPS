@@ -22,6 +22,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.workbench.action.BaseAction;
 
 import java.util.ArrayList;
@@ -66,7 +67,8 @@ public abstract class AbstractMigrationScriptHelper {
 
     public void addModel(SModelDescriptor model) {
       if (model.isTransient()) return;
-      if (model.isPackaged()) return;
+      if (!(model instanceof EditableSModelDescriptor)) return;
+      if (((EditableSModelDescriptor) model).isPackaged()) return;
       if (model.getStereotype() != null) {
         if (model.getStereotype().equals(SModelStereotype.INTERNAL) ||
           model.getStereotype().equals(SModelStereotype.INTERNAL_COPY) ||
