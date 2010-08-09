@@ -167,7 +167,7 @@ public class RefactoringProcessor {
 
   private void doExecute(final @NotNull RefactoringContext refactoringContext) {
     final IRefactoring refactoring = refactoringContext.getRefactoring();
-    final RegularSModelDescriptor modelDescriptor = (RegularSModelDescriptor) refactoringContext.getSelectedModel();
+    final SModelDescriptor modelDescriptor = refactoringContext.getSelectedModel();
     final SModelReference initialModelReference = modelDescriptor.getSModelReference();
     Runnable runnable = new Runnable() {
       public void run() {
@@ -218,7 +218,7 @@ public class RefactoringProcessor {
   }
 
   private void generateModels(final @NotNull List<SModel> sourceModels, final @NotNull RefactoringContext refactoringContext) {
-    if (sourceModels.isEmpty())  return;
+    if (sourceModels.isEmpty()) return;
 
     final RefactoringNodeMembersAccessModifier modifier = new RefactoringNodeMembersAccessModifier();
 
@@ -242,21 +242,20 @@ public class RefactoringProcessor {
     }
   }
 
-  private void updateModels(RegularSModelDescriptor modelDescriptor, RefactoringContext refactoringContext, ILoggableRefactoring refactoring, SModelReference initialModelReference) {
+  private void updateModels(SModelDescriptor modelDescriptor, RefactoringContext refactoringContext, ILoggableRefactoring refactoring, SModelReference initialModelReference) {
     assert refactoringContext.getRefactoring() instanceof ILoggableRefactoring;
 
     refactoringContext.computeCaches();
     SearchResults usages = refactoringContext.getUsages();
 
     if (!refactoringContext.isLocal()) {
-      writeIntoLog(modelDescriptor, refactoringContext);
-      updateAllModels(initialModelReference, modelDescriptor, refactoringContext);
+      writeIntoLog((RegularSModelDescriptor) modelDescriptor, refactoringContext);
+      updateLoadedModels(initialModelReference, (RegularSModelDescriptor)modelDescriptor, refactoringContext);
     } else {
       Set<SModel> modelsToProcess = new LinkedHashSet<SModel>();
       if (usages != null) {
         modelsToProcess.addAll(usages.getModelsWithResults());
       }
-      //modelsToProcess.addAll(refactoring.getModelsToUpdate(refactoringContext));
 
       for (SModel anotherModel : modelsToProcess) {
         updateModel(anotherModel, modelDescriptor, refactoringContext);
@@ -264,9 +263,7 @@ public class RefactoringProcessor {
     }
   }
 
-  public void updateAllModels(SModelReference initialModelReference, RegularSModelDescriptor model, RefactoringContext refactoringContext) {
-    assert refactoringContext.getRefactoring() instanceof ILoggableRefactoring;
-
+  public void updateLoadedModels(SModelReference initialModelReference, RegularSModelDescriptor model, RefactoringContext refactoringContext) {
     for (SModelDescriptor anotherDescriptor : SModelRepository.getInstance().getModelDescriptors()) {
       if (!SModelStereotype.isUserModel(anotherDescriptor)) continue;
       if (!anotherDescriptor.isInitialized()) continue;
@@ -279,9 +276,7 @@ public class RefactoringProcessor {
     }
   }
 
-  private void updateModel(final SModel model, final RegularSModelDescriptor usedModel, final RefactoringContext refactoringContext) {
-    assert refactoringContext.getRefactoring() instanceof ILoggableRefactoring;
-
+  private void updateModel(final SModel model, final SModelDescriptor usedModel, final RefactoringContext refactoringContext) {
     model.runLoadingAction(new Runnable() {
       public void run() {
         IRefactoring refactoring = refactoringContext.getRefactoring();
@@ -290,7 +285,10 @@ public class RefactoringProcessor {
         } catch (Throwable t) {
           LOG.error("An exception was thrown by refactoring " + refactoring.getUserFriendlyName() + " while updating model " + model.getLongName() + ". Models could have been corrupted.");
         }
-        model.updateImportedModelUsedVersion(usedModel.getSModelReference(), usedModel.getVersion());
+
+        if (!refactoringContext.isLocal()){
+          model.updateImportedModelUsedVersion(usedModel.getSModelReference(), ((RegularSModelDescriptor) usedModel).getVersion());
+        }
         SModelRepository.getInstance().markChanged(model);
       }
     });

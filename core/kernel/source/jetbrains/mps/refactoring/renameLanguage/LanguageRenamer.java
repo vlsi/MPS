@@ -123,7 +123,7 @@ public class LanguageRenamer {
   public void update() {
     updateReferences();
     RegularSModelDescriptor structure = myLanguage.getStructureModelDescriptor();
-    myProcessor.updateAllModels(structure.getSModelReference(), structure, myContext);
+    myProcessor.updateLoadedModels(structure.getSModelReference(), structure, myContext);
   }
 
   private void updateReferences() {
