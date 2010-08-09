@@ -18,6 +18,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelListener;
+import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -70,6 +71,8 @@ public interface SModelDescriptor {
   void rename(SModelFqName newModelFqName, boolean changeFile);
 
   SModelDescriptor resolveModel(SModelReference reference);
+
+  IModelRootManager getModelRootManager();
 
   //--------------user objects (unused!)-------------
 

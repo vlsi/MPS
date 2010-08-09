@@ -52,6 +52,10 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     }
   }
 
+  public IModelRootManager getModelRootManager() {
+    return myModelRootManager;
+  }
+
   public IFile getModelFile() {
     return myModelFile;
   }

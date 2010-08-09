@@ -20,8 +20,7 @@ public class ModelFindOperations {
 
   public ModelFindOperations(SModelDescriptor modelDescriptor) {
     myModelDescriptor = modelDescriptor;
-    //todo cleanup this line
-    myModelRootManager = ((BaseSModelDescriptor) myModelDescriptor).myModelRootManager;
+    myModelRootManager = myModelDescriptor.getModelRootManager();
     myFindUsagesSupported = myModelRootManager.isFindUsagesSupported();
     myNeedSearchForStrings = !myModelDescriptor.isInitialized() || !SModelRepository.getInstance().isChanged(myModelDescriptor.getSModel());
   }
