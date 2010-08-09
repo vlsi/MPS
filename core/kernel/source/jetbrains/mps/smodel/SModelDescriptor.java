@@ -23,7 +23,6 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
 import java.util.Set;
 
 public interface SModelDescriptor {
@@ -60,8 +59,6 @@ public interface SModelDescriptor {
 
   //------
 
-  void save();
-
   void dispose();
 
   void refresh();
@@ -71,28 +68,6 @@ public interface SModelDescriptor {
   void rename(SModelFqName newModelFqName, boolean changeFile);
 
   SModelDescriptor resolveModel(SModelReference reference);
-
-  //------todo move to ModelWithFile
-
-  @Nullable
-  IFile getModelFile();
-  void setModelFile(IFile file);
-  long lastChangeTime();
-
-  //------todo get rid of
-
-  boolean isInitialized();
-
-  @Deprecated
-  Set<IModule> getModules();
-
-  //--------------user objects (unused!)-------------
-
-  Object getUserObject(String key);
-
-  void putUserObject(String key, Object value);
-
-  void removeUserObject(String key);
 
   //--------------model listeners--------------------
 
@@ -115,4 +90,32 @@ public interface SModelDescriptor {
   SModelCommandListener[] getModelCommandListeners();
 
   boolean hasModelCommandListener(@NotNull SModelCommandListener listener);
+
+  //------
+  //------
+  //------todo move to ModelWithFile
+
+  void save();
+
+  @Nullable
+  IFile getModelFile();
+
+  void setModelFile(IFile file);
+
+  long lastChangeTime();
+
+  //------todo get rid of
+
+  boolean isInitialized();
+
+  @Deprecated
+  Set<IModule> getModules();
+
+  //--------------user objects (todo unused!)-------------
+
+  Object getUserObject(String key);
+
+  void putUserObject(String key, Object value);
+
+  void removeUserObject(String key);
 }
