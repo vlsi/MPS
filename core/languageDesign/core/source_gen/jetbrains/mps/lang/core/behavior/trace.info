@@ -76,5 +76,25 @@
   <root nodeId="201537367881074471">
     <scopeInfo nodeId="201537367881074473" fileName="IMetaLevelChanger_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
   </root>
+  <root nodeId="2565736246230026577">
+    <nodeInfo nodeId="2565736246230026598" fileName="ExportScope_Behavior.java" startLine="19" startPosition="102" endLine="20" endPosition="87" />
+    <nodeInfo nodeId="2565736246230031453" fileName="ExportScope_Behavior.java" startLine="20" startPosition="87" endLine="21" endPosition="70" />
+    <nodeInfo nodeId="2565736246230026657" fileName="ExportScope_Behavior.java" startLine="24" startPosition="69" endLine="25" endPosition="102" />
+    <nodeInfo nodeId="2565736246230031515" fileName="ExportScope_Behavior.java" startLine="30" startPosition="39" endLine="31" endPosition="119" />
+    <nodeInfo nodeId="2565736246230031511" fileName="ExportScope_Behavior.java" startLine="29" startPosition="149" endLine="33" endPosition="0" />
+    <nodeInfo nodeId="2565736246230031544" fileName="ExportScope_Behavior.java" startLine="33" startPosition="72" endLine="37" endPosition="6" />
+    <nodeInfo nodeId="2565736246230031493" fileName="ExportScope_Behavior.java" startLine="28" startPosition="100" endLine="33" endPosition="72" />
+    <scopeInfo nodeId="2565736246230026579" fileName="ExportScope_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
+    <scopeInfo nodeId="2565736246230026652" fileName="ExportScope_Behavior.java" startLine="24" startPosition="69" endLine="25" endPosition="102" />
+    <scopeInfo nodeId="2565736246230031512" fileName="ExportScope_Behavior.java" startLine="30" startPosition="39" endLine="31" endPosition="119" />
+    <scopeInfo nodeId="2565736246230026587" fileName="ExportScope_Behavior.java" startLine="19" startPosition="102" endLine="21" endPosition="70">
+      <varInfo nodeId="2565736246230026599" varName="namespace" />
+    </scopeInfo>
+    <scopeInfo nodeId="2565736246230031511" fileName="ExportScope_Behavior.java" startLine="29" startPosition="149" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="2565736246230031482" fileName="ExportScope_Behavior.java" startLine="28" startPosition="100" endLine="37" endPosition="6">
+      <varInfo nodeId="2565736246230031494" varName="exp" />
+    </scopeInfo>
+    <unitInfo nodeId="2565736246230031511" fileName="ExportScope_Behavior.java" startLine="29" startPosition="126" endLine="33" endPosition="5" unitName="jetbrains.mps.lang.core.behavior.ExportScope_Behavior$1" />
+  </root>
 </debugInfo>
 

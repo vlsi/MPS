@@ -11,28 +11,28 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
-public class ExportScope_Editor extends DefaultNodeEditor {
+public class ExportScopePublic_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_20se06_a(editorContext, node);
+    return this.createCollection_pjxymp_a(editorContext, node);
   }
 
-  private EditorCell createCollection_20se06_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_pjxymp_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_20se06_a");
-    editorCell.addEditorCell(this.createConstant_20se06_a0(editorContext, node));
-    editorCell.addEditorCell(this.createAttributedNodeCell_20se06_b0(editorContext, node));
+    editorCell.setCellId("Collection_pjxymp_a");
+    editorCell.addEditorCell(this.createConstant_pjxymp_a0(editorContext, node));
+    editorCell.addEditorCell(this.createAttributedNodeCell_pjxymp_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_20se06_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@export");
-    editorCell.setCellId("Constant_20se06_a0");
+  private EditorCell createConstant_pjxymp_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@export(public)");
+    editorCell.setCellId("Constant_pjxymp_a0");
     DeleteExportScope.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createAttributedNodeCell_20se06_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createAttributedNodeCell_pjxymp_b0(EditorContext editorContext, SNode node) {
     IOperationContext opContext = editorContext.getOperationContext();
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);
     EditorCell editorCell = manager.getCurrentAttributedNodeCell();

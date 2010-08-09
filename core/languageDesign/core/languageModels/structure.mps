@@ -31,6 +31,7 @@
     </refactoringContext>
   </refactoringHistory>
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
+  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="1" />
@@ -125,16 +126,56 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="376024488709656960">
     <property name="name:0" value="IExportable" />
+    <property name="package:0" value="export" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration:0" id="376024488709664661">
     <property name="role:0" value="export" />
     <property name="stereotype:0" value="node" />
+    <property name="package:0" value="export" />
     <link role="source:0" targetNodeId="1133920641626:0" resolveInfo="BaseConcept" />
     <link role="target:0" targetNodeId="5425021671150136555:0" resolveInfo="ExportScope" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5425021671150136555">
     <property name="name:0" value="ExportScope" />
+    <property name="package:0" value="export" />
     <link role="extends:0" targetNodeId="1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="4075196924244385128">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1137473854053:0" resolveInfo="abstract" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="2565736246230036150">
+    <property name="name:0" value="ExportScopePublic" />
+    <property name="package:0" value="export" />
+    <link role="extends:0" targetNodeId="5425021671150136555:0" resolveInfo="ExportScope" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="4075196924244376958">
+      <property name="value:0" value="public" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1137473891462:0" resolveInfo="alias" />
+    </node>
+    <node role="export$attribute:0" type="jetbrains.mps.lang.core.structure.ExportScopePublic:0" id="4075196924244431954" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="2565736246230036151">
+    <property name="name:0" value="ExportScopeNamespace" />
+    <property name="package:0" value="export" />
+    <link role="extends:0" targetNodeId="5425021671150136555:0" resolveInfo="ExportScope" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="4075196924244376960">
+      <property name="value:0" value="namespace" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1137473891462:0" resolveInfo="alias" />
+    </node>
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="2565736246230036153">
+      <property name="name:0" value="namespace" />
+      <link role="dataType:0" targetNodeId="1082983041843:0" resolveInfo="string" />
+    </node>
+    <node role="export$attribute:0" type="jetbrains.mps.lang.core.structure.ExportScopePublic:0" id="4075196924244431953" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="2565736246230036154">
+    <property name="name:0" value="ExportScopeModule" />
+    <property name="package:0" value="export" />
+    <link role="extends:0" targetNodeId="5425021671150136555:0" resolveInfo="ExportScope" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="4075196924244376956">
+      <property name="value:0" value="module" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1137473891462:0" resolveInfo="alias" />
+    </node>
+    <node role="export$attribute:0" type="jetbrains.mps.lang.core.structure.ExportScopePublic:0" id="4075196924244431952" />
   </node>
 </model>
 
