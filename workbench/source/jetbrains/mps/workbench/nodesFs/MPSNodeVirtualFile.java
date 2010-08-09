@@ -21,6 +21,7 @@ import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.openapi.util.Computable;
 import com.intellij.util.LocalTimeCounter;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -34,7 +35,7 @@ public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
   private String myPath;
   private String myName;
   private long myModificationStamp = LocalTimeCounter.currentTime();
-  private long myTimeStamp;
+  private long myTimeStamp = -1;
 
   MPSNodeVirtualFile(@NotNull SNode node) {
     this(new SNodePointer(node));
@@ -43,8 +44,8 @@ public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
   MPSNodeVirtualFile(@NotNull SNodePointer nodePointer) {
     myNode = nodePointer;
     SModelDescriptor modelDescriptor = nodePointer.getModel();
-    if (modelDescriptor != null) {
-      myTimeStamp = modelDescriptor.lastChangeTime();
+    if (modelDescriptor instanceof EditableSModelDescriptor) {
+      myTimeStamp = ((EditableSModelDescriptor) modelDescriptor).lastChangeTime();
     }
     updateFields();
   }

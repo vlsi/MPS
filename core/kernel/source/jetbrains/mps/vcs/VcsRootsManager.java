@@ -25,6 +25,7 @@ import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.util.containers.ConcurrentHashSet;
 
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vcs.ui.VcsIdeSettings.VcsRootsDiscoveryPolicy;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
@@ -55,8 +56,8 @@ public class VcsRootsManager implements ProjectComponent {
         return;
       }
       try {
-        IFile modelFile = sm.getModelFile();
-        if (modelFile == null) return;
+        if (!(sm instanceof EditableSModelDescriptor)) return;
+        IFile modelFile = ((EditableSModelDescriptor) sm).getModelFile();
         VirtualFile file = VFileSystem.getFile(modelFile.getParent());
         if (file == null) return;
         AbstractVcs vcs = myVcsManager.findVersioningVcs(file);
