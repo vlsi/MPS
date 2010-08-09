@@ -2101,7 +2101,7 @@
     <nodeInfo nodeId="8492459591399163219" fileName="InlineMethodRefactoringAnalyzer.java" startLine="59" startPosition="5" endLine="60" endPosition="29" />
     <nodeInfo nodeId="8492459591399163234" fileName="InlineMethodRefactoringAnalyzer.java" startLine="63" startPosition="75" endLine="64" endPosition="68" />
     <nodeInfo nodeId="8492459591399163240" fileName="InlineMethodRefactoringAnalyzer.java" startLine="64" startPosition="68" endLine="65" endPosition="37" />
-    <nodeInfo nodeId="8492459591399163289" fileName="InlineMethodRefactoringAnalyzer.java" startLine="69" startPosition="94" endLine="70" endPosition="35" />
+    <nodeInfo nodeId="8492459591399163289" fileName="InlineMethodRefactoringAnalyzer.java" startLine="69" startPosition="263" endLine="70" endPosition="35" />
     <nodeInfo nodeId="8492459591399163300" fileName="InlineMethodRefactoringAnalyzer.java" startLine="72" startPosition="105" endLine="73" endPosition="35" />
     <nodeInfo nodeId="8492459591399163314" fileName="InlineMethodRefactoringAnalyzer.java" startLine="75" startPosition="115" endLine="76" endPosition="44" />
     <nodeInfo nodeId="8492459591399163322" fileName="InlineMethodRefactoringAnalyzer.java" startLine="77" startPosition="5" endLine="78" endPosition="16" />
@@ -2142,7 +2142,7 @@
     <scopeInfo nodeId="8492459591399163141" fileName="InlineMethodRefactoringAnalyzer.java" startLine="40" startPosition="93" endLine="41" endPosition="100" />
     <scopeInfo nodeId="8492459591399163154" fileName="InlineMethodRefactoringAnalyzer.java" startLine="43" startPosition="16" endLine="44" endPosition="126" />
     <scopeInfo nodeId="8492459591399163188" fileName="InlineMethodRefactoringAnalyzer.java" startLine="55" startPosition="80" endLine="56" endPosition="118" />
-    <scopeInfo nodeId="8492459591399163288" fileName="InlineMethodRefactoringAnalyzer.java" startLine="69" startPosition="94" endLine="70" endPosition="35" />
+    <scopeInfo nodeId="8492459591399163288" fileName="InlineMethodRefactoringAnalyzer.java" startLine="69" startPosition="263" endLine="70" endPosition="35" />
     <scopeInfo nodeId="8492459591399163299" fileName="InlineMethodRefactoringAnalyzer.java" startLine="72" startPosition="105" endLine="73" endPosition="35" />
     <scopeInfo nodeId="8492459591399163313" fileName="InlineMethodRefactoringAnalyzer.java" startLine="75" startPosition="115" endLine="76" endPosition="44" />
     <scopeInfo nodeId="8492459591399163338" fileName="InlineMethodRefactoringAnalyzer.java" startLine="84" startPosition="75" endLine="85" endPosition="22" />

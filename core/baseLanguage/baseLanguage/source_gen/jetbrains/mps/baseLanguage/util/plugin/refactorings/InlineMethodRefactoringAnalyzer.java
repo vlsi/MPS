@@ -66,7 +66,7 @@ public class InlineMethodRefactoringAnalyzer {
   }
 
   public static String getErrors(InlineMethodDialogModel methodModel) {
-    if (SLinkOperations.getTarget(methodModel.getMethodDeclaration(), "body", true) == null) {
+    if ((SLinkOperations.getTarget(methodModel.getMethodDeclaration(), "body", true) == null) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(methodModel.getMethodDeclaration(), "body", true), "jetbrains.mps.baseLanguage.structure.StubStatementList")) {
       return "No sources attached";
     }
     if (methodModel.getMethodCall() == null && isContainsSelfCalls(methodModel.getMethodDeclaration())) {

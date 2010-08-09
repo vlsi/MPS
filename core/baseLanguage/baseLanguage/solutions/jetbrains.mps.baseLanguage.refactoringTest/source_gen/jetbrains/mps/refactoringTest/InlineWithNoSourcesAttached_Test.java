@@ -23,7 +23,6 @@ public class InlineWithNoSourcesAttached_Test extends BaseTransformationTest {
   public static class TestBody extends BaseTestBody {
     public void test_InlineWithNoSourcesAttached() throws Exception {
       this.addNodeById("1230052989307");
-      this.addNodeById("1230052989320");
       Assert.assertTrue(InlineMethodRefactoringAnalyzer.getErrors(new InlineMethodDialogModel(SNodeOperations.cast(this.getNodeById("1230052989317"), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), null)) != null);
     }
   }

@@ -3765,21 +3765,43 @@
               </node>
             </node>
           </node>
-          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="8492459591399163291">
-            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8492459591399163292">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8492459591399163293">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="8492459591399163294">
-                  <link role="variableDeclaration:3" targetNodeId="8492459591399163325" resolveInfo="methodModel" />
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.OrExpression:3" id="4752394095315097351">
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4752394095315097346">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8492459591399163292">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8492459591399163293">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="8492459591399163294">
+                    <link role="variableDeclaration:3" targetNodeId="8492459591399163325" resolveInfo="methodModel" />
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8492459591399163295">
+                    <link role="baseMethodDeclaration:3" targetNodeId="8492459591399169930" resolveInfo="getMethodDeclaration" />
+                  </node>
                 </node>
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8492459591399163295">
-                  <link role="baseMethodDeclaration:3" targetNodeId="8492459591399169930" resolveInfo="getMethodDeclaration" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="8492459591399163296">
+                  <link role="link:16" targetNodeId="1.1068580123135:3" />
                 </node>
               </node>
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="8492459591399163296">
-                <link role="link:16" targetNodeId="1.1068580123135:3" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation:16" id="4752394095315097350" />
+            </node>
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4752394095315097354">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4752394095315097355">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4752394095315097356">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4752394095315097362">
+                    <link role="variableDeclaration:3" targetNodeId="8492459591399163325" resolveInfo="methodModel" />
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4752394095315097358">
+                    <link role="baseMethodDeclaration:3" targetNodeId="8492459591399169930" resolveInfo="getMethodDeclaration" />
+                  </node>
+                </node>
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="4752394095315097364">
+                  <link role="link:16" targetNodeId="1.1068580123135:3" />
+                </node>
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="4752394095315097360">
+                <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="4752394095315097365">
+                  <link role="conceptDeclaration:16" targetNodeId="1.5293379017992965193:3" resolveInfo="StubStatementList" />
+                </node>
               </node>
             </node>
-            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="8492459591399163297" />
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="8492459591399163298">

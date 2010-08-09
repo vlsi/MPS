@@ -7766,9 +7766,6 @@
         </node>
       </node>
     </node>
-    <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230052989320">
-      <node role="nodeToCheck:4" type="jetbrains.mps.lang.core.structure.BaseConcept:0" id="1230052989321" />
-    </node>
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="1230052989322">
       <property name="name:4" value="InlineWithNoSourcesAttached" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1230052989323" />
