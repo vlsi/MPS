@@ -182,7 +182,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Reg
     return ModelPersistence.getModelPersistenceVersion(getModelFile());
   }
 
-  @Override
   @NotNull
   public RefactoringHistory getRefactoringHistory() {
     synchronized (myRefactoringHistoryLock) {
@@ -203,7 +202,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Reg
     return myRefactoringHistory;
   }
 
-  @Override
   public void saveRefactoringHistory() {
     RefactoringHistory toSave = myRefactoringHistory;
     if (toSave != null) {
@@ -225,8 +223,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Reg
       do {
         played = false;
         for (SModelDescriptor usedModelDescriptor : model.getDependenciesModels()) {
-          if (!(usedModelDescriptor instanceof DefaultSModelDescriptor)) continue;
-          if (playUsedModelDescriptorsRefactoring(model, (DefaultSModelDescriptor) usedModelDescriptor)) {
+          if (!(usedModelDescriptor instanceof RegularSModelDescriptor)) continue;
+          if (playUsedModelDescriptorsRefactoring(model, (RegularSModelDescriptor) usedModelDescriptor)) {
             played = true;
           }
         }
@@ -256,7 +254,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Reg
 
   //true if any refactoring was played
 
-  private boolean playUsedModelDescriptorsRefactoring(SModel model, DefaultSModelDescriptor usedModelDescriptor) {
+  private boolean playUsedModelDescriptorsRefactoring(SModel model, RegularSModelDescriptor usedModelDescriptor) {
     int currentVersion = usedModelDescriptor.getVersion();
     int usedVersion = model.getUsedVersion(usedModelDescriptor.getSModelReference());
     if (myIsTestRefactoringMode) {
@@ -298,7 +296,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Reg
 
       //user might have forgotten to commit .metadata file
       if (currentVersion == -1) {
-        if (usedModelDescriptor instanceof DefaultSModelDescriptor) {
+        if (usedModelDescriptor instanceof RegularSModelDescriptor) {
           usedModelDescriptor.getSModel();
         }
 
@@ -421,7 +419,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Reg
     SModelRepository.getInstance().markChanged(this, true);
     MPSModuleRepository.getInstance().invalidateCaches();
     Runnable modelReplacedNotifier = new Runnable() {
-      @Override
       public void run() {
         fireModelReplaced();
         if (oldSModel != null) {
@@ -522,19 +519,11 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Reg
     setAttribute(VERSION, "" + newNameVersion);
   }
 
-  /*package*/
-
   void changeSModelUID(SModelReference newModelReference) {
     myModelReference = newModelReference;
     getSModel().changeModelReference(newModelReference);
   }
 
-  /*package*/
-  public void setModelFile(IFile file) {
-    myModelFile = file;
-  }
-
-  @Override
   protected void updateDiskTimestamp() {
     myDiskTimestamp = fileTimestamp();
   }

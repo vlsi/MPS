@@ -60,6 +60,10 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     return myModelFile;
   }
 
+  public void setModelFile(IFile file) {
+    myModelFile = file;
+  }
+
   public boolean isPackaged() {
     return getModelFile() instanceof JarFileEntryFile;
   }

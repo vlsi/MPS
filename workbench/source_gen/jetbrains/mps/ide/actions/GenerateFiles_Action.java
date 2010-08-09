@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.descriptor.RegularSModelDescriptor;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
 import jetbrains.mps.generator.GeneratorManager;
 
@@ -91,7 +90,7 @@ public class GenerateFiles_Action extends GeneratedAction {
       List<RegularSModelDescriptor> models = new ArrayList<RegularSModelDescriptor>();
       for (TreeNode ppNode : ListSequence.fromList(GenerateFiles_Action.this.ppNodes)) {
         for (SModelDescriptor model : ListSequence.fromList(((NamespaceTextNode) ppNode).getModelsUnder())) {
-          if (!(model.isTransient()) && model instanceof DefaultSModelDescriptor) {
+          if (!(model.isTransient()) && model instanceof RegularSModelDescriptor) {
             models.add(((RegularSModelDescriptor) model));
           }
         }

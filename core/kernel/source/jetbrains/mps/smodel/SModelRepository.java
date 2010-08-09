@@ -571,13 +571,13 @@ public class SModelRepository implements ApplicationComponent {
     }
   }
 
-  public void setModelFile(DefaultSModelDescriptor defaultSModelDescriptor, IFile dest) {
-    fireBeforeModelFileChangedEvent(defaultSModelDescriptor);
-    IFile source = defaultSModelDescriptor.getModelFile();
-    removeModelFromFileCache(defaultSModelDescriptor);
-    defaultSModelDescriptor.setModelFile(dest);
-    addModelToFileCache(defaultSModelDescriptor);
-    fireModelFileChanged(defaultSModelDescriptor, source);
+  public void setModelFile(RegularSModelDescriptor md, IFile dest) {
+    fireBeforeModelFileChangedEvent(md);
+    IFile source = md.getModelFile();
+    removeModelFromFileCache(md);
+    md.setModelFile(dest);
+    addModelToFileCache(md);
+    fireModelFileChanged(md, source);
   }
 
   private class ModelChangeListener extends SModelAdapter {

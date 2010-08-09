@@ -198,12 +198,10 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
         return new TransientSModel(getSModelReference());
       }
 
-      @Override
       public IModule getModule() {
         return TransientModelsModule.this;
       }
 
-      @Override
       public Set<IModule> getModules() {
         return Collections.<IModule>singleton(TransientModelsModule.this);
       }
@@ -212,12 +210,10 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
         return false;
       }
 
-      @Override
       public boolean isTransient() {
         return true;
       }
 
-      @Override
       public SModelDescriptor resolveModel(SModelReference reference) {
         if(reference.getLongName().equals(longName)) {
           SModelDescriptor descriptor = myModels.get(reference.getSModelFqName());
@@ -234,29 +230,23 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
     return result;
   }
 
-  @Override
   public List<String> validate() {
     return Collections.emptyList();
   }
 
-  @NotNull
   public String toString() {
     return "Transient models [" + myProject.getPresentableUrl() + "]";
   }
 
-  @Override
   public List<SModelDescriptor> getOwnModelDescriptors() {
     return new ArrayList<SModelDescriptor>(myModels.values());
   }
 
-  @Override
   protected ModuleScope createScope() {
     return new TransientModuleScope();
   }
 
   public class TransientModuleScope extends ModuleScope {
-
-    @Override
     protected Set<IModule> getInitialModules() {
       Set<IModule> result = new HashSet<IModule>();
       result.add(TransientModelsModule.this);

@@ -32,6 +32,22 @@ public interface SModelDescriptor {
    */
   SModel getSModel();
 
+  IModule getModule();
+
+  //------
+
+  boolean isPackaged();
+
+  boolean isReadOnly();
+
+  boolean isEmpty();
+
+  boolean isTransient();
+
+  //------
+
+  IModelRootManager getModelRootManager();
+
   SModelReference getSModelReference();
 
   SModelId getSModelId();
@@ -42,7 +58,7 @@ public interface SModelDescriptor {
 
   String getStereotype();
 
-  boolean isInitialized();
+  //------
 
   void save();
 
@@ -50,29 +66,25 @@ public interface SModelDescriptor {
 
   void refresh();
 
-  @Nullable
-  IFile getModelFile();
-
-  boolean isPackaged();
-
-  long lastChangeTime();
-
-  boolean isReadOnly();
-
-  boolean isEmpty();
-
-  boolean isTransient();
-
-  @Deprecated
-  Set<IModule> getModules();
-
-  IModule getModule();
+  //------
 
   void rename(SModelFqName newModelFqName, boolean changeFile);
 
   SModelDescriptor resolveModel(SModelReference reference);
 
-  IModelRootManager getModelRootManager();
+  //------todo move to ModelWithFile
+
+  @Nullable
+  IFile getModelFile();
+  void setModelFile(IFile file);
+  long lastChangeTime();
+
+  //------todo get rid of
+
+  boolean isInitialized();
+
+  @Deprecated
+  Set<IModule> getModules();
 
   //--------------user objects (unused!)-------------
 
