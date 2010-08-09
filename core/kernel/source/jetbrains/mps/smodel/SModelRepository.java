@@ -54,9 +54,11 @@ public class SModelRepository implements ApplicationComponent {
   private SModelListener myModelsListener = new ModelChangeListener();
 
   public SModelRepository() {
+
   }
 
   public void initComponent() {
+
   }
 
   @NonNls
@@ -403,14 +405,6 @@ public class SModelRepository implements ApplicationComponent {
     }
   }
 
-//  public void reloadAll() {
-//    synchronized(myModelsLock) {
-//      for (SModelDescriptor modelDescriptor : new HashSet<SModelDescriptor>(myModelDescriptors)) {
-//        modelDescriptor.reloadFromDisk();
-//      }
-//    }
-//  }
-
   public boolean hasOwners(SModelDescriptor modelDescriptor) {
     synchronized (myModelsLock) {
       return !myModelsToOwners.getByFirst(modelDescriptor).isEmpty();
@@ -561,22 +555,18 @@ public class SModelRepository implements ApplicationComponent {
       super(SModelListenerPriority.PLATFORM);
     }
 
-    @Override
     public void modelChanged(SModel model) {
       markChanged(model);
     }
 
-    @Override
     public void modelChangedDramatically(SModel model) {
       markChanged(model);
     }
 
-    @Override
     public void beforeModelRenamed(SModelRenamedEvent event) {
       removeModelFromFileCache(event.getModelDescriptor());
     }
 
-    @Override
     public void modelRenamed(SModelRenamedEvent event) {
       synchronized (myModelsLock) {
         myFqNameToModelDescriptorMap.remove(event.getOldName());
@@ -589,12 +579,10 @@ public class SModelRepository implements ApplicationComponent {
       MPSModuleRepository.getInstance().invalidateCaches();
     }
 
-    @Override
     public void beforeModelFileChanged(SModelFileChangedEvent event) {
       removeModelFromFileCache(event.getModelDescriptor());
     }
 
-    @Override
     public void modelFileChanged(SModelFileChangedEvent event) {
       addModelToFileCache(event.getModelDescriptor());
     }
