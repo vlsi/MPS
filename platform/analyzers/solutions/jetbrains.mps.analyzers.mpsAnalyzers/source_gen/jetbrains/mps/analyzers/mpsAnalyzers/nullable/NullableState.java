@@ -32,7 +32,10 @@ public enum NullableState {
     return NullableState.NULLABLE;
   }
 
-  public boolean canBeNull() {
-    return this.equals(NullableState.NULL) || this.equals(NullableState.NULLABLE);
+  public static boolean canBeNull(NullableState state) {
+    if (state == null) {
+      return false;
+    }
+    return state.equals(NullableState.NULL) || state.equals(NullableState.NULLABLE);
   }
 }

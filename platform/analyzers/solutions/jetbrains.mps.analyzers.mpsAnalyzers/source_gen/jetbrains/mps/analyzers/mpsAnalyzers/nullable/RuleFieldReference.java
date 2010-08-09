@@ -30,18 +30,24 @@ public class RuleFieldReference extends DataFlowConstructor {
         String name = SPropertyOperations.getString(SLinkOperations.getTarget(annotation, "annotation", false), "name");
         if (SLinkOperations.getTarget(annotation, "annotation", false) == SNodeOperations.getNode("f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)", "~Nullable")) {
           {
-            int position = ((Program) (o)).getEnd(node);
-            Instruction instruction = new nullableInstruction(SLinkOperations.getTarget(node, "variableDeclaration", false));
-            instruction.setSource(node);
-            ((Program) (o)).insert(instruction, position, true);
+            Object object = node;
+            if (((Program) o).contains(object)) {
+              int position = ((Program) (o)).getEnd(object);
+              Instruction instruction = new nullableInstruction(SLinkOperations.getTarget(node, "variableDeclaration", false));
+              instruction.setSource(node);
+              ((Program) (o)).insert(instruction, position, true);
+            }
           }
         }
         if (SLinkOperations.getTarget(annotation, "annotation", false) == SNodeOperations.getNode("f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)", "~NotNull")) {
           {
-            int position = ((Program) (o)).getEnd(node);
-            Instruction instruction = new notNullInstruction(SLinkOperations.getTarget(node, "variableDeclaration", false));
-            instruction.setSource(node);
-            ((Program) (o)).insert(instruction, position, true);
+            Object object = node;
+            if (((Program) o).contains(object)) {
+              int position = ((Program) (o)).getEnd(object);
+              Instruction instruction = new notNullInstruction(SLinkOperations.getTarget(node, "variableDeclaration", false));
+              instruction.setSource(node);
+              ((Program) (o)).insert(instruction, position, true);
+            }
           }
         }
       }

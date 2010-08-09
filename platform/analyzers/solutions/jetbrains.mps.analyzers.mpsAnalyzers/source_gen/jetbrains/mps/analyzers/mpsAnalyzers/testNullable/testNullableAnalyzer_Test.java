@@ -25,6 +25,12 @@ public class testNullableAnalyzer_Test extends BaseTransformationTest {
   }
 
   @Test
+  public void test_DataFlow3380610091175370524() throws Throwable {
+    this.initTest("${mps_home}/platform/analyzers/analyzers.mpr", "r:3cb515b9-4069-45fc-8f0a-1dc50acbaef5(jetbrains.mps.analyzers.mpsAnalyzers.testNullable)");
+    this.runTest("jetbrains.mps.analyzers.mpsAnalyzers.testNullable.testNullableAnalyzer_Test$TestBody", "test_DataFlow3380610091175370524", true);
+  }
+
+  @Test
   public void test_DataFlow680562289607955901() throws Throwable {
     this.initTest("${mps_home}/platform/analyzers/analyzers.mpr", "r:3cb515b9-4069-45fc-8f0a-1dc50acbaef5(jetbrains.mps.analyzers.mpsAnalyzers.testNullable)");
     this.runTest("jetbrains.mps.analyzers.mpsAnalyzers.testNullable.testNullableAnalyzer_Test$TestBody", "test_DataFlow680562289607955901", true);
@@ -40,6 +46,11 @@ public class testNullableAnalyzer_Test extends BaseTransformationTest {
     public void test_DataFlow680562289607969230() throws Exception {
       SNode operation = SNodeOperations.cast(this.getRealNodeById("680562289607969230"), "jetbrains.mps.lang.test.structure.NodeOperation");
       NodeOperation_Behavior.call_perform_1215601182156(operation, this.getRealNodeById("680562289607955767"));
+    }
+
+    public void test_DataFlow3380610091175370524() throws Exception {
+      SNode operation = SNodeOperations.cast(this.getRealNodeById("3380610091175370524"), "jetbrains.mps.lang.test.structure.NodeOperation");
+      NodeOperation_Behavior.call_perform_1215601182156(operation, this.getRealNodeById("680562289607978368"));
     }
 
     public void test_DataFlow680562289607955901() throws Exception {

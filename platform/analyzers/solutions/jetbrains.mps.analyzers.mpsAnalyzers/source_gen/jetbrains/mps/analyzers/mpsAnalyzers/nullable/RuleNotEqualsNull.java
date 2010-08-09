@@ -23,9 +23,9 @@ public class RuleNotEqualsNull extends DataFlowConstructor {
   }
 
   public static class Pattern_yrsk32_a0a extends GeneratedMatchingPattern implements IMatchingPattern {
+    /*package*/ SNode PatternVar_ifStatement;
     /*package*/ SNode PatternVar_p;
     /*package*/ SNode PatternVar_ifTrue;
-    /*package*/ SNode PatternVar_ifStatement;
 
     public Pattern_yrsk32_a0a() {
     }
@@ -107,21 +107,21 @@ public class RuleNotEqualsNull extends DataFlowConstructor {
 
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
+        this.PatternVar_ifStatement = (SNode) pattern.getFieldValue("PatternVar_ifStatement");
         this.PatternVar_p = (SNode) pattern.getFieldValue("PatternVar_p");
         this.PatternVar_ifTrue = (SNode) pattern.getFieldValue("PatternVar_ifTrue");
-        this.PatternVar_ifStatement = (SNode) pattern.getFieldValue("PatternVar_ifStatement");
       }
     }
 
     public Object getFieldValue(String fieldName) {
+      if ("PatternVar_ifStatement".equals(fieldName)) {
+        return this.PatternVar_ifStatement;
+      }
       if ("PatternVar_p".equals(fieldName)) {
         return this.PatternVar_p;
       }
       if ("PatternVar_ifTrue".equals(fieldName)) {
         return this.PatternVar_ifTrue;
-      }
-      if ("PatternVar_ifStatement".equals(fieldName)) {
-        return this.PatternVar_ifStatement;
       }
       return null;
     }
@@ -130,13 +130,19 @@ public class RuleNotEqualsNull extends DataFlowConstructor {
 
       {
         int position = 0;
-        position = ((Program) (o)).getStart(getFieldValue("PatternVar_ifTrue"));
-        ((Program) (o)).insert(new notNullInstruction((SNode) getFieldValue("PatternVar_p")), position, true);
+        Object object = getFieldValue("PatternVar_ifStatement");
+        if (((Program) o).contains(object)) {
+          position = ((Program) (o)).getEnd(object);
+          ((Program) (o)).insert(new nullableInstruction((SNode) getFieldValue("PatternVar_p")), position, true);
+        }
       }
       {
         int position = 0;
-        position = ((Program) (o)).getEnd(getFieldValue("PatternVar_ifStatement"));
-        ((Program) (o)).insert(new nullableInstruction((SNode) getFieldValue("PatternVar_p")), position, true);
+        Object object = getFieldValue("PatternVar_ifTrue");
+        if (((Program) o).contains(object)) {
+          position = ((Program) (o)).getStart(getFieldValue("PatternVar_ifTrue"));
+          ((Program) (o)).insert(new notNullInstruction((SNode) getFieldValue("PatternVar_p")), position, true);
+        }
       }
     }
   }

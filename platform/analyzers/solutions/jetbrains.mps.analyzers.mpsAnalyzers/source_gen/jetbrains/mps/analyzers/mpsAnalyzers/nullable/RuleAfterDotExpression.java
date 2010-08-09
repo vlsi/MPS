@@ -27,10 +27,13 @@ public class RuleAfterDotExpression extends DataFlowConstructor {
   public void performActions(Program o, SNode node) {
     if (!(IOperation_Behavior.call_operandCanBeNull_323410281720656291(SLinkOperations.getTarget(node, "operation", true)))) {
       {
-        int position = ((Program) (o)).getEnd(SLinkOperations.getTarget(node, "operand", true));
-        Instruction instruction = new notNullInstruction(SLinkOperations.getTarget(node, "operand", true));
-        instruction.setSource(node);
-        ((Program) (o)).insert(instruction, position, true);
+        Object object = SLinkOperations.getTarget(node, "operand", true);
+        if (((Program) o).contains(object)) {
+          int position = ((Program) (o)).getEnd(object);
+          Instruction instruction = new notNullInstruction(SLinkOperations.getTarget(node, "operand", true));
+          instruction.setSource(node);
+          ((Program) (o)).insert(instruction, position, true);
+        }
       }
     }
   }

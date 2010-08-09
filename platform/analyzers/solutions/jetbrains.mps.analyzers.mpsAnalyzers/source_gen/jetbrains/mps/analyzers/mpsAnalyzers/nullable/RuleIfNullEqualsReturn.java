@@ -140,8 +140,11 @@ public class RuleIfNullEqualsReturn extends DataFlowConstructor {
 
       {
         int position = 0;
-        position = ((Program) (o)).getEnd(getFieldValue("PatternVar_ifStatement"));
-        ((Program) (o)).insert(new notNullInstruction((SNode) getFieldValue("PatternVar_p")), position, true);
+        Object object = getFieldValue("PatternVar_ifStatement");
+        if (((Program) o).contains(object)) {
+          position = ((Program) (o)).getEnd(object);
+          ((Program) (o)).insert(new notNullInstruction((SNode) getFieldValue("PatternVar_p")), position, true);
+        }
       }
     }
   }

@@ -10,8 +10,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 
-public class RuleNullLiteral extends DataFlowConstructor {
-  public RuleNullLiteral() {
+public class RuleCreator extends DataFlowConstructor {
+  public RuleCreator() {
   }
 
   public boolean isApplicable(SNode node) {
@@ -19,7 +19,7 @@ public class RuleNullLiteral extends DataFlowConstructor {
   }
 
   public String getApplicableConceptFqName() {
-    return "jetbrains.mps.baseLanguage.structure.NullLiteral";
+    return "jetbrains.mps.baseLanguage.structure.AbstractCreator";
   }
 
   public void performActions(Program o, SNode node) {
@@ -27,7 +27,7 @@ public class RuleNullLiteral extends DataFlowConstructor {
       Object object = node;
       if (((Program) o).contains(object)) {
         int position = ((Program) (o)).getEnd(object);
-        Instruction instruction = new nullInstruction(node);
+        Instruction instruction = new notNullInstruction(node);
         instruction.setSource(node);
         ((Program) (o)).insert(instruction, position, true);
       }

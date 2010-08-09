@@ -130,13 +130,19 @@ public class RuleNullNotEquals extends DataFlowConstructor {
 
       {
         int position = 0;
-        position = ((Program) (o)).getStart(getFieldValue("PatternVar_ifTrue"));
-        ((Program) (o)).insert(new notNullInstruction((SNode) getFieldValue("PatternVar_p")), position, true);
+        Object object = getFieldValue("PatternVar_ifTrue");
+        if (((Program) o).contains(object)) {
+          position = ((Program) (o)).getStart(getFieldValue("PatternVar_ifTrue"));
+          ((Program) (o)).insert(new notNullInstruction((SNode) getFieldValue("PatternVar_p")), position, true);
+        }
       }
       {
         int position = 0;
-        position = ((Program) (o)).getEnd(getFieldValue("PatternVar_node"));
-        ((Program) (o)).insert(new nullableInstruction((SNode) getFieldValue("PatternVar_p")), position, true);
+        Object object = getFieldValue("PatternVar_node");
+        if (((Program) o).contains(object)) {
+          position = ((Program) (o)).getEnd(object);
+          ((Program) (o)).insert(new nullableInstruction((SNode) getFieldValue("PatternVar_p")), position, true);
+        }
       }
     }
   }

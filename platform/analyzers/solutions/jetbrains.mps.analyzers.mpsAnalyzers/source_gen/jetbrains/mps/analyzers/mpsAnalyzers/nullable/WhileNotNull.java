@@ -124,8 +124,11 @@ public class WhileNotNull extends DataFlowConstructor {
 
       {
         int position = 0;
-        position = ((Program) (o)).getStart(getFieldValue("PatternVar_body"));
-        ((Program) (o)).insert(new notNullInstruction((SNode) getFieldValue("PatternVar_p")), position, true);
+        Object object = getFieldValue("PatternVar_body");
+        if (((Program) o).contains(object)) {
+          position = ((Program) (o)).getStart(getFieldValue("PatternVar_body"));
+          ((Program) (o)).insert(new notNullInstruction((SNode) getFieldValue("PatternVar_p")), position, true);
+        }
       }
     }
   }
