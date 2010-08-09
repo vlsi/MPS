@@ -1,6 +1,7 @@
 package jetbrains.mps.smodel.descriptor;
 
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public interface EditableDescriptor {
@@ -14,7 +15,7 @@ public interface EditableDescriptor {
 
   int getPersistenceVersion();
 
-  @Nullable
+  @NotNull
   IFile getModelFile();
 
   void setModelFile(IFile file);

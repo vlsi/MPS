@@ -84,7 +84,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     });
   }
 
-
+  @NotNull
   public IFile getModelFile() {
     return myModelFile;
   }
@@ -187,7 +187,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
 
   public long fileTimestamp() {
     IFile file = getModelFile();
-    if (file == null || !file.exists()) return -1;
+    if (!file.exists()) return -1;
     return file.lastModified();
   }
 
@@ -419,7 +419,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     updateDiskTimestamp();
 
     IFile modelFile = getModelFile();
-    if (modelFile != null && !modelFile.isReadOnly()) {
+    if (!modelFile.isReadOnly()) {
       MPSFileSynchronizer.getInstance().requestSync(modelFile);
     }
 

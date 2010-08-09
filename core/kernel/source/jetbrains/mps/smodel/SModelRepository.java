@@ -144,9 +144,12 @@ public class SModelRepository implements ApplicationComponent {
 
     fireModelWillBeDeletedEvent(modelDescriptor);
     removeModelDescriptor(modelDescriptor);
-    IFile modelFile = modelDescriptor.getModelFile();
-    if (modelFile != null && modelFile.exists()) {
-      modelFile.delete();
+
+    if (modelDescriptor instanceof EditableSModelDescriptor){
+      IFile modelFile = ((EditableSModelDescriptor) modelDescriptor).getModelFile();
+      if (modelFile.exists()) {
+        modelFile.delete();
+      }
     }
     SModelRepository.getInstance().fireModelDeletedEvent(modelDescriptor);
   }
@@ -330,14 +333,14 @@ public class SModelRepository implements ApplicationComponent {
     markChanged(model, false);
   }
 
-  private void addModelToFileCache(SModelDescriptor modelDescriptor) {
+  private void addModelToFileCache(EditableSModelDescriptor modelDescriptor) {
     IFile modelFile = modelDescriptor.getModelFile();
     if (modelFile != null) {
       myCanonicalPathsToModelDescriptorMap.put(modelFile.getCanonicalPath(), modelDescriptor);
     }
   }
 
-  private boolean removeModelFromFileCache(SModelDescriptor modelDescriptor) {
+  private boolean removeModelFromFileCache(EditableSModelDescriptor modelDescriptor) {
     IFile modelFile = modelDescriptor.getModelFile();
     if (modelFile != null) {
       SModelDescriptor sd = myCanonicalPathsToModelDescriptorMap.remove(modelFile.getCanonicalPath());
@@ -371,14 +374,16 @@ public class SModelRepository implements ApplicationComponent {
     LOG.assertInCommand();
     ModelAccess.assertLegalWrite();
 
-    for (SModelDescriptor modelDescriptor : myModelDescriptors) {
-      if (modelDescriptor.isChanged()) {
-        try {
-          modelDescriptor.save();
-          modelDescriptor.setChanged(false);
-        } catch (Throwable t) {
-          LOG.error(t);
-        }
+    for (SModelDescriptor md : myModelDescriptors) {
+      if (!(md instanceof EditableSModelDescriptor)) continue;
+      EditableSModelDescriptor emd = ((EditableSModelDescriptor) md);
+      if (!emd.isChanged()) continue;
+      
+      try {
+        emd.save();
+        emd.setChanged(false);
+      } catch (Throwable t) {
+        LOG.error(t);
       }
     }
   }
