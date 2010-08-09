@@ -43,7 +43,6 @@ public class SModelRepository implements ApplicationComponent {
 
   private final Object myModelsLock = new Object();
   private final Set<SModelDescriptor> myModelDescriptors = new LinkedHashSet<SModelDescriptor>();
-  private final Map<SModelDescriptor, Long> myChangedModels = new LinkedHashMap<SModelDescriptor, Long>();
   private final Set<SModelDescriptor> myModelsWithNoOwners = new LinkedHashSet<SModelDescriptor>();
   private final Map<SModelId, SModelDescriptor> myIdToModelDescriptorMap = new LinkedHashMap<SModelId, SModelDescriptor>();
   private final Map<SModelFqName, SModelDescriptor> myFqNameToModelDescriptorMap = new LinkedHashMap<SModelFqName, SModelDescriptor>();
@@ -231,7 +230,6 @@ public class SModelRepository implements ApplicationComponent {
     }
     myFqNameToModelDescriptorMap.remove(modelDescriptor.getSModelReference().getSModelFqName());
 
-    myChangedModels.remove(modelDescriptor);
     myModelsWithNoOwners.remove(modelDescriptor);
 
     removeListeners(modelDescriptor);
@@ -348,45 +346,22 @@ public class SModelRepository implements ApplicationComponent {
 
   public void markChanged(SModelDescriptor descriptor, boolean b) {
     synchronized (myModelsLock) {
-      if (!myModelDescriptors.contains(descriptor)) {
-        return;
-      }
-      if (b) {
-        myChangedModels.put(descriptor, System.currentTimeMillis());
-      } else {
-        myChangedModels.remove(descriptor);
-      }
+      if (!myModelDescriptors.contains(descriptor)) return;
+      descriptor.setChanged(b);
     }
-  }
-
-  public boolean isChanged(SModel model) {
-    synchronized (myModelsLock) {
-      for (SModelDescriptor m : myChangedModels.keySet()) {
-        if (m.getSModel() == model) return true;
-      }
-    }
-    return false;
   }
 
   public boolean isChanged(SModelDescriptor descriptor) {
-    synchronized (myModelsLock) {
-      return myChangedModels.keySet().contains(descriptor);
-    }
+    return descriptor.isChanged();
   }
 
   public Set<SModelDescriptor> getChangedModels() {
     synchronized (myModelsLock) {
       Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
-      for (SModelDescriptor md : myChangedModels.keySet()) {
-        if (md.getModelFile() != null) result.add(md);
+      for (SModelDescriptor md : myModelDescriptors) {
+        if (md.getModelFile() != null && md.isChanged()) result.add(md);
       }
       return result;
-    }
-  }
-
-  public Set<SModelDescriptor> getMaybeTransientChangedModels() {
-    synchronized (myModelsLock) {
-      return new HashSet<SModelDescriptor>(myChangedModels.keySet());
     }
   }
 
@@ -394,15 +369,16 @@ public class SModelRepository implements ApplicationComponent {
     LOG.assertInCommand();
     ModelAccess.assertLegalWrite();
 
-    List<SModelDescriptor> descriptors = new ArrayList(myChangedModels.keySet());
-    for (SModelDescriptor modelDescriptor : descriptors) {
-      try {
-        modelDescriptor.save();
-      } catch (Throwable t) {
-        LOG.error(t);
+    for (SModelDescriptor modelDescriptor : myModelDescriptors) {
+      if (modelDescriptor.isChanged()) {
+        try {
+          modelDescriptor.save();
+          modelDescriptor.setChanged(false);
+        } catch (Throwable t) {
+          LOG.error(t);
+        }
       }
     }
-    myChangedModels.clear();
   }
 
   public void updateReferences() {

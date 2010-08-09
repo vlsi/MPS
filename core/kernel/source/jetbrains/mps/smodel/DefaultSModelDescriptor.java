@@ -54,7 +54,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Reg
 
   private final Object myLoadingLock = new Object();
 
-  private long myLastChange;
+  private long myLastChange;       
 
   private long myDiskTimestamp = -1;
   private boolean myIsTestRefactoringMode = false;

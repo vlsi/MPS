@@ -166,7 +166,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor,
   public boolean isModified() {
     return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
       public Boolean compute() {
-        return SModelRepository.getInstance().isChanged(myFile.getNode().getModel());
+        return SModelRepository.getInstance().isChanged(myFile.getNode().getModel().getModelDescriptor());
       }
     });
   }

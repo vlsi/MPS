@@ -104,6 +104,10 @@ public interface SModelDescriptor {
 
   long lastChangeTime();
 
+  boolean isChanged();
+  
+  void setChanged(boolean changed);
+
   //------todo get rid of
 
   boolean isInitialized();

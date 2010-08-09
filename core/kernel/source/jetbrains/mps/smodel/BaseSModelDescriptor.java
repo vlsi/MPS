@@ -41,6 +41,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   private SModelListener[] myModelListenersCopy;
   private Set<SModelCommandListener> myModelCommandListeners = new LinkedHashSet<SModelCommandListener>(0);
   private SModelCommandListener[] myModelCommandListenersCopy;
+  private boolean myIsChanged = false;
 
   protected BaseSModelDescriptor(IModelRootManager manager, IFile modelFile, @NotNull SModelReference modelReference, boolean checkDup) {
     myModelReference = modelReference;
@@ -50,6 +51,14 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     if (checkDup) {
       checkModelDuplication();
     }
+  }
+
+  public boolean isChanged() {
+    return myIsChanged;
+  }
+
+  public void setChanged(boolean changed) {
+    myIsChanged = changed;
   }
 
   public IModelRootManager getModelRootManager() {

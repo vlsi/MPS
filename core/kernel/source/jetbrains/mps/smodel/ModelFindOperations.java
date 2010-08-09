@@ -22,7 +22,7 @@ public class ModelFindOperations {
     myModelDescriptor = modelDescriptor;
     myModelRootManager = myModelDescriptor.getModelRootManager();
     myFindUsagesSupported = myModelRootManager.isFindUsagesSupported();
-    myNeedSearchForStrings = !myModelDescriptor.isInitialized() || !SModelRepository.getInstance().isChanged(myModelDescriptor.getSModel());
+    myNeedSearchForStrings = !myModelDescriptor.isInitialized() || !SModelRepository.getInstance().isChanged(myModelDescriptor);
   }
 
   public Set<SReference> findUsages(Set<SNode> nodes) {
@@ -101,7 +101,7 @@ public class ModelFindOperations {
 
   public Set<AbstractConceptDeclaration> findDescendants(AbstractConceptDeclaration node, Set<AbstractConceptDeclaration> descendantsKnownInModel) {
     if (!myFindUsagesSupported) return new HashSet<AbstractConceptDeclaration>();
-    if (myModelDescriptor.isInitialized() && !SModelRepository.getInstance().isChanged(myModelDescriptor.getSModel()) && !descendantsKnownInModel.isEmpty())
+    if (myModelDescriptor.isInitialized() && !SModelRepository.getInstance().isChanged(myModelDescriptor) && !descendantsKnownInModel.isEmpty())
       return descendantsKnownInModel;
     if (myNeedSearchForStrings && !myModelRootManager.containsString(myModelDescriptor, node.getId()))
       return descendantsKnownInModel;
