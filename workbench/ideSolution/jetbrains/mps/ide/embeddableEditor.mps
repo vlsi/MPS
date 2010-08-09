@@ -683,8 +683,8 @@
                 <link role="baseMethodDeclaration:3" targetNodeId="11.~GeneratorManager.generateModelsWithProgressWindow(java.util.List,jetbrains.mps.smodel.IOperationContext,jetbrains.mps.generator.generationTypes.IGenerationHandler,boolean):boolean" resolveInfo="generateModelsWithProgressWindow" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="7865481948248727713">
                   <node role="creator:3" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit:7" id="7865481948248727714">
-                    <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1201295565039912106">
-                      <link role="classifier:3" targetNodeId="36.~RegularSModelDescriptor" resolveInfo="RegularSModelDescriptor" />
+                    <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="9094453971530657550">
+                      <link role="classifier:3" targetNodeId="36.~EditableSModelDescriptor" resolveInfo="EditableSModelDescriptor" />
                     </node>
                     <node role="initValue:7" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204739">
                       <link role="variableDeclaration:3" targetNodeId="1219408476932" resolveInfo="myModel" />
@@ -740,8 +740,8 @@
     </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="6483976992294511266">
       <property name="name:3" value="getModel" />
-      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1201295565039912105">
-        <link role="classifier:3" targetNodeId="36.~RegularSModelDescriptor" resolveInfo="RegularSModelDescriptor" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="9094453971530657552">
+        <link role="classifier:3" targetNodeId="36.~EditableSModelDescriptor" resolveInfo="EditableSModelDescriptor" />
       </node>
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="6483976992294511268" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6483976992294511269">
@@ -971,8 +971,8 @@
       <property name="name:3" value="myModel" />
       <property name="isFinal:3" value="true" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1219408476933" />
-      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1201295565039912107">
-        <link role="classifier:3" targetNodeId="36.~RegularSModelDescriptor" resolveInfo="RegularSModelDescriptor" />
+      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="9094453971530657554">
+        <link role="classifier:3" targetNodeId="36.~EditableSModelDescriptor" resolveInfo="EditableSModelDescriptor" />
       </node>
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1219413493008">

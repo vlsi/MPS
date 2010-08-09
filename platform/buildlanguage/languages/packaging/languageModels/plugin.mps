@@ -245,8 +245,8 @@
                     <link role="member:23" targetNodeId="1218726094724" resolveInfo="modelDescriptor" />
                   </node>
                 </node>
-                <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1156074714687741666">
-                  <link role="classifier:3" targetNodeId="97.~RegularSModelDescriptor" resolveInfo="RegularSModelDescriptor" />
+                <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="9094453971530545155">
+                  <link role="classifier:3" targetNodeId="97.~EditableSModelDescriptor" resolveInfo="EditableSModelDescriptor" />
                 </node>
               </node>
             </node>
@@ -286,8 +286,8 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1224852070071">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="1156074714687741651">
             <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression:3" id="1156074714687741657">
-              <node role="classType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1156074714687741660">
-                <link role="classifier:3" targetNodeId="97.~RegularSModelDescriptor" resolveInfo="RegularSModelDescriptor" />
+              <node role="classType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="9094453971530545157">
+                <link role="classifier:3" targetNodeId="97.~EditableSModelDescriptor" resolveInfo="EditableSModelDescriptor" />
               </node>
               <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1156074714687741654">
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="1156074714687741655" />
@@ -11635,8 +11635,8 @@
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1224851621498">
         <property name="name:3" value="descriptor" />
-        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1156074714687732102">
-          <link role="classifier:3" targetNodeId="97.~RegularSModelDescriptor" resolveInfo="RegularSModelDescriptor" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="9094453971530503642">
+          <link role="classifier:3" targetNodeId="97.~EditableSModelDescriptor" resolveInfo="EditableSModelDescriptor" />
         </node>
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1224851629352">
@@ -11914,8 +11914,8 @@
                   <link role="baseMethodDeclaration:3" targetNodeId="3.~GeneratorManager.generateModelsWithProgressWindow(java.util.List,jetbrains.mps.smodel.IOperationContext,jetbrains.mps.generator.generationTypes.IGenerationHandler,boolean):boolean" resolveInfo="generateModelsWithProgressWindow" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1224851586293">
                     <node role="creator:3" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit:7" id="1224851586294">
-                      <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1156074714687732100">
-                        <link role="classifier:3" targetNodeId="97.~RegularSModelDescriptor" resolveInfo="RegularSModelDescriptor" />
+                      <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="9094453971530503710">
+                        <link role="classifier:3" targetNodeId="97.~EditableSModelDescriptor" resolveInfo="EditableSModelDescriptor" />
                       </node>
                       <node role="initValue:7" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1224851586296">
                         <link role="variableDeclaration:3" targetNodeId="1224851621498" resolveInfo="descriptor" />
@@ -11949,8 +11949,8 @@
                     <link role="baseMethodDeclaration:3" targetNodeId="3.~GeneratorManager.generateModels(java.util.List,jetbrains.mps.smodel.IOperationContext,jetbrains.mps.generator.generationTypes.IGenerationHandler,com.intellij.openapi.progress.ProgressIndicator,jetbrains.mps.ide.messages.IMessageHandler):boolean" resolveInfo="generateModels" />
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1240233989446">
                       <node role="creator:3" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit:7" id="1240233989447">
-                        <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1156074714687732101">
-                          <link role="classifier:3" targetNodeId="97.~RegularSModelDescriptor" resolveInfo="RegularSModelDescriptor" />
+                        <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="9094453971530503711">
+                          <link role="classifier:3" targetNodeId="97.~EditableSModelDescriptor" resolveInfo="EditableSModelDescriptor" />
                         </node>
                         <node role="initValue:7" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1240233989449">
                           <link role="variableDeclaration:3" targetNodeId="1224851621498" resolveInfo="descriptor" />
@@ -12226,8 +12226,8 @@
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="4462513030603845571">
             <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="4462513030603845572">
               <property name="name:3" value="model" />
-              <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1156074714687746106">
-                <link role="classifier:3" targetNodeId="97.~RegularSModelDescriptor" resolveInfo="RegularSModelDescriptor" />
+              <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="9094453971530545146">
+                <link role="classifier:3" targetNodeId="97.~EditableSModelDescriptor" resolveInfo="EditableSModelDescriptor" />
               </node>
             </node>
           </node>
@@ -12257,8 +12257,8 @@
                             <link role="baseMethodDeclaration:3" targetNodeId="4.~SModel.getModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
                           </node>
                         </node>
-                        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1156074714687746115">
-                          <link role="classifier:3" targetNodeId="97.~RegularSModelDescriptor" resolveInfo="RegularSModelDescriptor" />
+                        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="9094453971530545150">
+                          <link role="classifier:3" targetNodeId="97.~EditableSModelDescriptor" resolveInfo="EditableSModelDescriptor" />
                         </node>
                       </node>
                     </node>
