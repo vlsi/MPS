@@ -37,8 +37,8 @@ import jetbrains.mps.smodel.persistence.def.v3.ModelWriter3;
 import jetbrains.mps.smodel.persistence.def.v4.ModelReader4;
 import jetbrains.mps.smodel.persistence.def.v4.ModelWriter4;
 import jetbrains.mps.smodel.persistence.def.v5.ModelReader5;
+import jetbrains.mps.smodel.persistence.def.v5.ModelReader5Handler;
 import jetbrains.mps.smodel.persistence.def.v5.ModelWriter5;
-import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
@@ -177,27 +177,21 @@ public class ModelPersistence {
     // the model FQ name ...
     String modelName = extractModelName(file.getName());
     String modelStereotype = extractModelStereotype(file.getName());
-//    int version = getModelPersistenceVersion(file);
-//    long saxTime = 0;
-//    loadModelDocument(file);
-//    if(version == 5) {
-//      try {
-//        saxTime = System.nanoTime();
-//        SAXParser parser = JDOMUtil.createSAXParser();
-//        ModelReader5Handler handler = new ModelReader5Handler();
-//        parser.parse(JDOMUtil.loadSource(file), handler);
-//        saxTime = System.nanoTime() - saxTime;
-//        //return handler.getResult();
-//      } catch (SAXException e) {
-//        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-//      } catch (ParserConfigurationException e) {
-//        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-//      } catch (IOException e) {
-//        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-//      }
-//    }
-//    long start = System.nanoTime();
-//    try {
+    int version = getModelPersistenceVersion(file);
+    if (version == 5) {
+      try {
+        SAXParser parser = JDOMUtil.createSAXParser();
+        ModelReader5Handler handler = new ModelReader5Handler();
+        parser.parse(JDOMUtil.loadSource(file), handler);
+        return handler.getResult();
+      } catch (SAXException e) {
+        e.printStackTrace();
+      } catch (ParserConfigurationException e) {
+        e.printStackTrace();
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+    }
     Document document = loadModelDocument(file);
     int modelPersistenceVersion = getModelPersistenceVersion(document);
     IModelReader reader = modelReaders.get(modelPersistenceVersion);
@@ -205,12 +199,6 @@ public class ModelPersistence {
       return handleNullReaderForPersistence(" file " + file.getPath());
     }
     return reader.readModel(document, modelName, modelStereotype);
-//    } finally {
-//      long end = System.nanoTime();
-//      if(saxTime > 0) {
-//        System.out.println("sax vs dom: " + saxTime/1000000/1000. + "ms vs " + (end-start)/1000000/1000. + "ms (" + file.getAbsolutePath() + ")");
-//      }
-//    }
   }
 
   private static SModel handleNullReaderForPersistence(String modelTitle) {
