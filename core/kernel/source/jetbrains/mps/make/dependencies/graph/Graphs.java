@@ -34,6 +34,9 @@ public class Graphs {
   }
 
   public <V extends IVertex> List<Set<V>> findStronglyConnectedComponents(Graph<V> graph) {
+
+    // TODO use GraphUtil
+
     // compute exit times
     SCCMarkerWalker<V> firstStageWalker = new SCCMarkerWalker<V>();
     graph.dfsValk(firstStageWalker);

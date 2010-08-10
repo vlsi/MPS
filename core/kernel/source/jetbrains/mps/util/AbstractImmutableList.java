@@ -116,7 +116,7 @@ public abstract class AbstractImmutableList<T> extends AbstractCollection<T> imp
     if(fromIndex < toIndex) {
       return subList(get(fromIndex), toIndex - fromIndex);
     } else {
-      return Collections.<T>emptyList();
+      return Collections.emptyList();
     }
   }
 

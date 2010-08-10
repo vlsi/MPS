@@ -248,7 +248,9 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   private void clearListeners() {
     synchronized (myListenersLock) {
       myModelListeners.clear();
+      myModelListenersCopy = null;
       myModelCommandListeners.clear();
+      myModelCommandListenersCopy = null;
     }
   }
 

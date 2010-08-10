@@ -75,7 +75,7 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
     if (nodeConcept instanceof InterfaceConceptDeclaration) {
       return new SNode(model, NameUtil.nodeFQName(nodeConcept));
     }
-    SNode newNode = BaseAdapter.fromAdapter(SModelUtil_new.instantiateConceptDeclaration((ConceptDeclaration) nodeConcept, model, false));
+    SNode newNode = BaseAdapter.fromAdapter(SModelUtil_new.instantiateConceptDeclaration(nodeConcept, model, false));
     if (newNode == null) return null;
     BehaviorManager.getInstance().initNode(newNode);
     if (sampleNode != null) {

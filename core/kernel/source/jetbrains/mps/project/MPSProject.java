@@ -218,10 +218,10 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent,
 
   public boolean isProjectModule(@NotNull IModule module) {
     if (module instanceof Language) {
-      return getProjectLanguages().contains((Language) module);
+      return getProjectLanguages().contains(module);
     }
     if (module instanceof Solution) {
-      return getProjectSolutions().contains((Solution) module);
+      return getProjectSolutions().contains(module);
     }
     if (module instanceof DevKit) {
       return myDevKits.contains((DevKit) module);
