@@ -16,6 +16,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.application.ModalityState;
 import java.util.Arrays;
@@ -24,6 +25,7 @@ import java.io.File;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.Macros;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -76,7 +78,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
                 for (ModuleReference ref : ListSequence.fromList(moduleReferencesToAdd)) {
                   descriptor.getSModel().addLanguage(ref);
                 }
-                runnable.value = BuildGeneratorImpl.this.generate(descriptor, projectName, projectBasedirPath, modules);
+                runnable.value = BuildGeneratorImpl.this.generate(((EditableSModelDescriptor) descriptor), projectName, projectBasedirPath, modules);
               }
             });
             runnable.value.run();
@@ -135,7 +137,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     this.setNewSolutionName(solutionName);
   }
 
-  public Runnable generate(final SModelDescriptor targetModelDescriptor, String name, String basedir, List<NodeData> selectedData) {
+  public Runnable generate(final EditableSModelDescriptor targetModelDescriptor, String name, String basedir, List<NodeData> selectedData) {
     final SNode mpsLayout = this.createMPSLayout(targetModelDescriptor, name, basedir, selectedData);
     return new Runnable() {
       public void run() {
@@ -149,7 +151,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     SNode mpsLayout = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.MPSLayout", null);
     // add mps layout to the target model 
     SModel targetSModel = targetModelDescriptor.getSModel();
-    targetSModel.addRoot(mpsLayout);
+    SModelOperations.addRootNode(targetSModel, mpsLayout);
     // set properties 
     SPropertyOperations.set(mpsLayout, "name", name);
     // create basedir path 
@@ -178,7 +180,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     return mpsLayout;
   }
 
-  protected void finishGeneration(final SModelDescriptor targetModelDescriptor, SNode mpsLayout) {
+  protected void finishGeneration(final EditableSModelDescriptor targetModelDescriptor, SNode mpsLayout) {
     targetModelDescriptor.getModule().save();
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
