@@ -43,6 +43,21 @@
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="4822352154126332458">
     <property name="name:3" value="check_null" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4822352154126332459">
+      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="4623726889382011132">
+        <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4623726889382011133">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="4623726889382011137" />
+        </node>
+        <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4623726889382011139">
+          <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="4623726889382011138">
+            <link role="applicableNode:3" targetNodeId="4822352154126332461" resolveInfo="iMethodLike" />
+          </node>
+          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="4623726889382011143">
+            <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="4623726889382011145">
+              <link role="conceptDeclaration:16" targetNodeId="8.1239354281271:3" resolveInfo="IMethodLike" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="4822352154126340351">
         <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="4822352154126340352">
           <property name="name:3" value="nullableRunner" />

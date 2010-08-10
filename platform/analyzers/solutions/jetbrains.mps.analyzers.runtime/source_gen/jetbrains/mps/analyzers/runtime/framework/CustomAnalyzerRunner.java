@@ -17,4 +17,8 @@ public abstract class CustomAnalyzerRunner<E> extends AnalyzerRunner<E> {
   public CustomAnalyzerRunner() {
     super(null, null);
   }
+
+  public Program getProgram() {
+    return myProgram;
+  }
 }

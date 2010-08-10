@@ -26,6 +26,7 @@ public class RuleNotEqualsNullAnd extends DataFlowConstructor {
     /*package*/ SNode PatternVar_body;
     /*package*/ SNode PatternVar_ifTrue;
     /*package*/ SNode PatternVar_p;
+    /*package*/ SNode PatternVar_notEquals;
 
     public Pattern_ehdml9_a0a() {
     }
@@ -108,6 +109,7 @@ public class RuleNotEqualsNullAnd extends DataFlowConstructor {
                       }
                     }
                   }
+                  this.PatternVar_notEquals = childVar_ehdml9_a0a0a;
                 }
               }
               {
@@ -135,6 +137,7 @@ public class RuleNotEqualsNullAnd extends DataFlowConstructor {
         this.PatternVar_body = (SNode) pattern.getFieldValue("PatternVar_body");
         this.PatternVar_ifTrue = (SNode) pattern.getFieldValue("PatternVar_ifTrue");
         this.PatternVar_p = (SNode) pattern.getFieldValue("PatternVar_p");
+        this.PatternVar_notEquals = (SNode) pattern.getFieldValue("PatternVar_notEquals");
       }
     }
 
@@ -147,6 +150,9 @@ public class RuleNotEqualsNullAnd extends DataFlowConstructor {
       }
       if ("PatternVar_p".equals(fieldName)) {
         return this.PatternVar_p;
+      }
+      if ("PatternVar_notEquals".equals(fieldName)) {
+        return this.PatternVar_notEquals;
       }
       return null;
     }
@@ -166,6 +172,14 @@ public class RuleNotEqualsNullAnd extends DataFlowConstructor {
         Object object = getFieldValue("PatternVar_ifTrue");
         if (((Program) o).contains(object)) {
           position = ((Program) (o)).getStart(getFieldValue("PatternVar_ifTrue"));
+          ((Program) (o)).insert(new notNullInstruction((SNode) getFieldValue("PatternVar_p")), position, true);
+        }
+      }
+      {
+        int position = 0;
+        Object object = getFieldValue("PatternVar_notEquals");
+        if (((Program) o).contains(object)) {
+          position = ((Program) (o)).getEnd(object);
           ((Program) (o)).insert(new notNullInstruction((SNode) getFieldValue("PatternVar_p")), position, true);
         }
       }

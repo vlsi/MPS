@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.analyzers.mpsAnalyzers.nullable.NullableAnalyzerRunner" file="NullableAnalyzerRunner.java">
+  <dependency className="jetbrains.mps.analyzers.mpsAnalyzers.nullable.NullableAnalyzerRules" file="NullableAnalyzerRules.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.LinkedList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.NullableState" />
+    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.RuleAfterDotExpression" />
     <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.RuleFieldReference" />
     <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.RuleIfNullEqualsReturn" />
@@ -18,10 +19,25 @@
     <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.RuleNullNotEquals" />
     <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.RuleVariableDeclaration" />
     <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.WhileNotNull" />
+    <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.WhileNullNot" />
+    <classNode dependClassName="jetbrains.mps.analyzers.runtime.framework.DataFlowConstructor" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.Program" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.analyzers.mpsAnalyzers.nullable.NullableAnalyzerRunner" file="NullableAnalyzerRunner.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.LinkedList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.NullableAnalyzerRules" />
+    <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.NullableState" />
     <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.notNullInstruction" />
     <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.nullInstruction" />
     <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.nullableInstruction" />
     <classNode dependClassName="jetbrains.mps.analyzers.runtime.framework.DataFlowConstructor" />
+    <classNode dependClassName="jetbrains.mps.analyzers.runtime.framework.GeneratedInstruction" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowManager" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.MPSProgramBuilder" />
@@ -33,7 +49,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.framework.AnalyzerRunner" />
+    <classNode extendsClassName="jetbrains.mps.analyzers.runtime.framework.CustomAnalyzerRunner" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.framework.DataFlowAnalyzer" />
   </dependency>
   <dependency className="jetbrains.mps.analyzers.mpsAnalyzers.nullable.NullableState" file="NullableState.java" />
@@ -182,26 +198,36 @@
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.IMatchingPattern" />
   </dependency>
+  <dependency className="jetbrains.mps.analyzers.mpsAnalyzers.nullable.WhileNullNot" file="WhileNullNot.java">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.notNullInstruction" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.Program" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.analyzers.runtime.framework.DataFlowConstructor" />
+    <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
+    <classNode extendsClassName="jetbrains.mps.lang.pattern.IMatchingPattern" />
+  </dependency>
   <dependency className="jetbrains.mps.analyzers.mpsAnalyzers.nullable.notNullInstruction" file="notNullInstruction.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuilder" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.framework.instructions.Instruction" />
+    <classNode extendsClassName="jetbrains.mps.analyzers.runtime.framework.GeneratedInstruction" />
   </dependency>
   <dependency className="jetbrains.mps.analyzers.mpsAnalyzers.nullable.nullInstruction" file="nullInstruction.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuilder" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.framework.instructions.Instruction" />
+    <classNode extendsClassName="jetbrains.mps.analyzers.runtime.framework.GeneratedInstruction" />
   </dependency>
   <dependency className="jetbrains.mps.analyzers.mpsAnalyzers.nullable.nullableInstruction" file="nullableInstruction.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuilder" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.framework.instructions.Instruction" />
+    <classNode extendsClassName="jetbrains.mps.analyzers.runtime.framework.GeneratedInstruction" />
   </dependency>
 </dependenciesRoot>
 

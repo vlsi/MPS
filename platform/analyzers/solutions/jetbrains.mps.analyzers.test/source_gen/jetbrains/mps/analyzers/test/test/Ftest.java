@@ -26,15 +26,27 @@ public class Ftest {
   public void f(@Nullable String s4) {
     String s = nulFunc();
     String s3 = "";
-    if (null != s) {         
+    if (null != s) {
       String s2 = s;
       s2.charAt(2);
       s3 = null;
+    }
+    if (s3 == null) {
+
+    } else {
     }
     nulFunc().charAt(2);
     s.charAt(2);
     s3.charAt(2);
     @NotNull String s5;
     s5 = s4;
+  }
+
+  public void sf(String s2) {
+    String s = s2;
+    if (s != null) {
+
+    }
+    s.concat("");
   }
 }

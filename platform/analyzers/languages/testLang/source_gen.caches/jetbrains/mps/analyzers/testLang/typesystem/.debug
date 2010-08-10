@@ -1,113 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="4822352154126332458">
-    <nodeInfo nodeId="4822352154126340351" fileName="check_null_NonTypesystemRule.java" startLine="35" startPosition="97" endLine="36" endPosition="103" />
-    <nodeInfo nodeId="6424669011230751801" fileName="check_null_NonTypesystemRule.java" startLine="36" startPosition="103" endLine="37" endPosition="80" />
-    <nodeInfo nodeId="6424669011230755439" fileName="check_null_NonTypesystemRule.java" startLine="38" startPosition="51" endLine="39" endPosition="55" />
-    <nodeInfo nodeId="7552345430539281067" fileName="check_null_NonTypesystemRule.java" startLine="39" startPosition="55" endLine="40" endPosition="53" />
-    <nodeInfo nodeId="3380610091175407172" fileName="check_null_NonTypesystemRule.java" startLine="40" startPosition="53" endLine="41" endPosition="30" />
-    <nodeInfo nodeId="3380610091175407177" fileName="check_null_NonTypesystemRule.java" startLine="42" startPosition="107" endLine="43" endPosition="163" />
-    <nodeInfo nodeId="3380610091175407204" fileName="check_null_NonTypesystemRule.java" startLine="44" startPosition="7" endLine="45" endPosition="63" />
-    <nodeInfo nodeId="3380610091175407391" fileName="check_null_NonTypesystemRule.java" startLine="45" startPosition="63" endLine="46" endPosition="55" />
-    <nodeInfo nodeId="3380610091175407216" fileName="check_null_NonTypesystemRule.java" startLine="47" startPosition="103" endLine="48" endPosition="103" />
-    <nodeInfo nodeId="3380610091175407227" fileName="check_null_NonTypesystemRule.java" startLine="51" startPosition="13" endLine="52" endPosition="61" />
-    <nodeInfo nodeId="3380610091175407227" fileName="check_null_NonTypesystemRule.java" startLine="52" startPosition="61" endLine="53" endPosition="63" />
-    <nodeInfo nodeId="3380610091175407227" fileName="check_null_NonTypesystemRule.java" startLine="53" startPosition="63" endLine="54" endPosition="298" />
-    <nodeInfo nodeId="3380610091175407251" fileName="check_null_NonTypesystemRule.java" startLine="58" startPosition="7" endLine="59" endPosition="60" />
-    <nodeInfo nodeId="3380610091175407255" fileName="check_null_NonTypesystemRule.java" startLine="60" startPosition="250" endLine="61" endPosition="36" />
-    <nodeInfo nodeId="3380610091175407259" fileName="check_null_NonTypesystemRule.java" startLine="61" startPosition="36" endLine="62" endPosition="119" />
-    <nodeInfo nodeId="3380610091175407268" fileName="check_null_NonTypesystemRule.java" startLine="62" startPosition="119" endLine="63" endPosition="61" />
-    <nodeInfo nodeId="3380610091175407275" fileName="check_null_NonTypesystemRule.java" startLine="63" startPosition="61" endLine="64" endPosition="67" />
-    <nodeInfo nodeId="3380610091175407286" fileName="check_null_NonTypesystemRule.java" startLine="66" startPosition="360" endLine="67" endPosition="31" />
-    <nodeInfo nodeId="3380610091175407312" fileName="check_null_NonTypesystemRule.java" startLine="69" startPosition="366" endLine="70" endPosition="31" />
-    <nodeInfo nodeId="3380610091175407340" fileName="check_null_NonTypesystemRule.java" startLine="74" startPosition="15" endLine="75" endPosition="63" />
-    <nodeInfo nodeId="3380610091175407340" fileName="check_null_NonTypesystemRule.java" startLine="75" startPosition="63" endLine="76" endPosition="65" />
-    <nodeInfo nodeId="3380610091175407340" fileName="check_null_NonTypesystemRule.java" startLine="76" startPosition="65" endLine="77" endPosition="274" />
-    <nodeInfo nodeId="3380610091175407355" fileName="check_null_NonTypesystemRule.java" startLine="81" startPosition="15" endLine="82" endPosition="63" />
-    <nodeInfo nodeId="3380610091175407355" fileName="check_null_NonTypesystemRule.java" startLine="82" startPosition="63" endLine="83" endPosition="65" />
-    <nodeInfo nodeId="3380610091175407355" fileName="check_null_NonTypesystemRule.java" startLine="83" startPosition="65" endLine="84" endPosition="273" />
-    <nodeInfo nodeId="7962250936070463724" fileName="check_null_NonTypesystemRule.java" startLine="90" startPosition="52" endLine="91" endPosition="64" />
-    <nodeInfo nodeId="7962250936070463766" fileName="check_null_NonTypesystemRule.java" startLine="91" startPosition="64" endLine="92" endPosition="111" />
-    <nodeInfo nodeId="7962250936070464375" fileName="check_null_NonTypesystemRule.java" startLine="101" startPosition="137" endLine="102" endPosition="49" />
-    <nodeInfo nodeId="7962250936070464399" fileName="check_null_NonTypesystemRule.java" startLine="103" startPosition="110" endLine="104" endPosition="163" />
-    <nodeInfo nodeId="7962250936070464012" fileName="check_null_NonTypesystemRule.java" startLine="107" startPosition="13" endLine="108" endPosition="61" />
-    <nodeInfo nodeId="7962250936070464012" fileName="check_null_NonTypesystemRule.java" startLine="108" startPosition="61" endLine="109" endPosition="63" />
-    <nodeInfo nodeId="7962250936070464012" fileName="check_null_NonTypesystemRule.java" startLine="109" startPosition="63" endLine="110" endPosition="360" />
-    <nodeInfo nodeId="7962250936070463703" fileName="check_null_NonTypesystemRule.java" startLine="114" startPosition="7" endLine="115" endPosition="0" />
-    <nodeInfo nodeId="6424669011230751810" fileName="check_null_NonTypesystemRule.java" startLine="116" startPosition="5" endLine="117" endPosition="31" />
-    <nodeInfo nodeId="3380610091175407159" fileName="check_null_NonTypesystemRule.java" startLine="41" startPosition="30" endLine="44" endPosition="7" />
-    <nodeInfo nodeId="3380610091175407284" fileName="check_null_NonTypesystemRule.java" startLine="65" startPosition="163" endLine="68" endPosition="11" />
-    <nodeInfo nodeId="3380610091175407310" fileName="check_null_NonTypesystemRule.java" startLine="68" startPosition="11" endLine="71" endPosition="11" />
-    <nodeInfo nodeId="7962250936070464387" fileName="check_null_NonTypesystemRule.java" startLine="102" startPosition="49" endLine="105" endPosition="11" />
-    <nodeInfo nodeId="7962250936070463791" fileName="check_null_NonTypesystemRule.java" startLine="93" startPosition="101" endLine="97" endPosition="0" />
-    <nodeInfo nodeId="7962250936070463791" fileName="check_null_NonTypesystemRule.java" startLine="97" startPosition="49" endLine="101" endPosition="0" />
-    <nodeInfo nodeId="3380610091175407227" fileName="check_null_NonTypesystemRule.java" startLine="50" startPosition="50" endLine="55" endPosition="13" />
-    <nodeInfo nodeId="3380610091175407340" fileName="check_null_NonTypesystemRule.java" startLine="73" startPosition="61" endLine="78" endPosition="15" />
-    <nodeInfo nodeId="3380610091175407355" fileName="check_null_NonTypesystemRule.java" startLine="80" startPosition="61" endLine="85" endPosition="15" />
-    <nodeInfo nodeId="7962250936070464012" fileName="check_null_NonTypesystemRule.java" startLine="106" startPosition="70" endLine="111" endPosition="13" />
-    <nodeInfo nodeId="3380610091175407225" fileName="check_null_NonTypesystemRule.java" startLine="49" startPosition="190" endLine="56" endPosition="11" />
-    <nodeInfo nodeId="3380610091175407338" fileName="check_null_NonTypesystemRule.java" startLine="72" startPosition="28" endLine="79" endPosition="13" />
-    <nodeInfo nodeId="3380610091175407353" fileName="check_null_NonTypesystemRule.java" startLine="79" startPosition="13" endLine="86" endPosition="13" />
-    <nodeInfo nodeId="7962250936070463974" fileName="check_null_NonTypesystemRule.java" startLine="105" startPosition="11" endLine="112" endPosition="11" />
-    <nodeInfo nodeId="3380610091175407223" fileName="check_null_NonTypesystemRule.java" startLine="48" startPosition="103" endLine="57" endPosition="9" />
-    <nodeInfo nodeId="3380610091175407214" fileName="check_null_NonTypesystemRule.java" startLine="46" startPosition="55" endLine="58" endPosition="7" />
-    <nodeInfo nodeId="3380610091175407336" fileName="check_null_NonTypesystemRule.java" startLine="71" startPosition="11" endLine="87" endPosition="11" />
-    <nodeInfo nodeId="7962250936070463778" fileName="check_null_NonTypesystemRule.java" startLine="92" startPosition="111" endLine="113" endPosition="9" />
-    <nodeInfo nodeId="3380610091175407282" fileName="check_null_NonTypesystemRule.java" startLine="64" startPosition="67" endLine="88" endPosition="9" />
-    <nodeInfo nodeId="7962250936070463704" fileName="check_null_NonTypesystemRule.java" startLine="89" startPosition="7" endLine="114" endPosition="7" />
-    <nodeInfo nodeId="3380610091175407253" fileName="check_null_NonTypesystemRule.java" startLine="59" startPosition="60" endLine="89" endPosition="7" />
-    <nodeInfo nodeId="6424669011230755420" fileName="check_null_NonTypesystemRule.java" startLine="37" startPosition="80" endLine="116" endPosition="5" />
-    <scopeInfo nodeId="3380610091175407160" fileName="check_null_NonTypesystemRule.java" startLine="42" startPosition="107" endLine="43" endPosition="163" />
-    <scopeInfo nodeId="3380610091175407285" fileName="check_null_NonTypesystemRule.java" startLine="66" startPosition="360" endLine="67" endPosition="31" />
-    <scopeInfo nodeId="3380610091175407311" fileName="check_null_NonTypesystemRule.java" startLine="69" startPosition="366" endLine="70" endPosition="31" />
-    <scopeInfo nodeId="7962250936070463791" fileName="check_null_NonTypesystemRule.java" startLine="94" startPosition="43" endLine="95" endPosition="80" />
-    <scopeInfo nodeId="7962250936070463791" fileName="check_null_NonTypesystemRule.java" startLine="98" startPosition="41" endLine="99" endPosition="70" />
-    <scopeInfo nodeId="7962250936070464388" fileName="check_null_NonTypesystemRule.java" startLine="103" startPosition="110" endLine="104" endPosition="163" />
-    <scopeInfo nodeId="3380610091175407227" fileName="check_null_NonTypesystemRule.java" startLine="51" startPosition="13" endLine="54" endPosition="298" />
-    <scopeInfo nodeId="3380610091175407340" fileName="check_null_NonTypesystemRule.java" startLine="74" startPosition="15" endLine="77" endPosition="274" />
-    <scopeInfo nodeId="3380610091175407355" fileName="check_null_NonTypesystemRule.java" startLine="81" startPosition="15" endLine="84" endPosition="273" />
-    <scopeInfo nodeId="7962250936070464012" fileName="check_null_NonTypesystemRule.java" startLine="107" startPosition="13" endLine="110" endPosition="360" />
-    <scopeInfo nodeId="7962250936070463791" fileName="check_null_NonTypesystemRule.java" startLine="93" startPosition="101" endLine="97" endPosition="0" />
-    <scopeInfo nodeId="7962250936070463791" fileName="check_null_NonTypesystemRule.java" startLine="97" startPosition="49" endLine="101" endPosition="0" />
-    <scopeInfo nodeId="3380610091175407226" fileName="check_null_NonTypesystemRule.java" startLine="50" startPosition="50" endLine="55" endPosition="13" />
-    <scopeInfo nodeId="3380610091175407339" fileName="check_null_NonTypesystemRule.java" startLine="73" startPosition="61" endLine="78" endPosition="15" />
-    <scopeInfo nodeId="3380610091175407354" fileName="check_null_NonTypesystemRule.java" startLine="80" startPosition="61" endLine="85" endPosition="15" />
-    <scopeInfo nodeId="7962250936070463975" fileName="check_null_NonTypesystemRule.java" startLine="106" startPosition="70" endLine="111" endPosition="13" />
-    <scopeInfo nodeId="3380610091175407224" fileName="check_null_NonTypesystemRule.java" startLine="49" startPosition="190" endLine="56" endPosition="11" />
-    <scopeInfo nodeId="3380610091175407215" fileName="check_null_NonTypesystemRule.java" startLine="47" startPosition="103" endLine="57" endPosition="9">
+    <nodeInfo nodeId="4623726889382011137" fileName="check_null_NonTypesystemRule.java" startLine="36" startPosition="104" endLine="37" endPosition="13" />
+    <nodeInfo nodeId="4822352154126340351" fileName="check_null_NonTypesystemRule.java" startLine="38" startPosition="5" endLine="39" endPosition="103" />
+    <nodeInfo nodeId="6424669011230751801" fileName="check_null_NonTypesystemRule.java" startLine="39" startPosition="103" endLine="40" endPosition="80" />
+    <nodeInfo nodeId="6424669011230755439" fileName="check_null_NonTypesystemRule.java" startLine="41" startPosition="51" endLine="42" endPosition="55" />
+    <nodeInfo nodeId="7552345430539281067" fileName="check_null_NonTypesystemRule.java" startLine="42" startPosition="55" endLine="43" endPosition="53" />
+    <nodeInfo nodeId="3380610091175407172" fileName="check_null_NonTypesystemRule.java" startLine="43" startPosition="53" endLine="44" endPosition="30" />
+    <nodeInfo nodeId="3380610091175407177" fileName="check_null_NonTypesystemRule.java" startLine="45" startPosition="107" endLine="46" endPosition="163" />
+    <nodeInfo nodeId="3380610091175407204" fileName="check_null_NonTypesystemRule.java" startLine="47" startPosition="7" endLine="48" endPosition="63" />
+    <nodeInfo nodeId="3380610091175407391" fileName="check_null_NonTypesystemRule.java" startLine="48" startPosition="63" endLine="49" endPosition="55" />
+    <nodeInfo nodeId="3380610091175407216" fileName="check_null_NonTypesystemRule.java" startLine="50" startPosition="103" endLine="51" endPosition="103" />
+    <nodeInfo nodeId="3380610091175407227" fileName="check_null_NonTypesystemRule.java" startLine="54" startPosition="13" endLine="55" endPosition="61" />
+    <nodeInfo nodeId="3380610091175407227" fileName="check_null_NonTypesystemRule.java" startLine="55" startPosition="61" endLine="56" endPosition="63" />
+    <nodeInfo nodeId="3380610091175407227" fileName="check_null_NonTypesystemRule.java" startLine="56" startPosition="63" endLine="57" endPosition="298" />
+    <nodeInfo nodeId="3380610091175407251" fileName="check_null_NonTypesystemRule.java" startLine="61" startPosition="7" endLine="62" endPosition="60" />
+    <nodeInfo nodeId="3380610091175407255" fileName="check_null_NonTypesystemRule.java" startLine="63" startPosition="250" endLine="64" endPosition="36" />
+    <nodeInfo nodeId="3380610091175407259" fileName="check_null_NonTypesystemRule.java" startLine="64" startPosition="36" endLine="65" endPosition="119" />
+    <nodeInfo nodeId="3380610091175407268" fileName="check_null_NonTypesystemRule.java" startLine="65" startPosition="119" endLine="66" endPosition="61" />
+    <nodeInfo nodeId="3380610091175407275" fileName="check_null_NonTypesystemRule.java" startLine="66" startPosition="61" endLine="67" endPosition="67" />
+    <nodeInfo nodeId="3380610091175407286" fileName="check_null_NonTypesystemRule.java" startLine="69" startPosition="360" endLine="70" endPosition="31" />
+    <nodeInfo nodeId="3380610091175407312" fileName="check_null_NonTypesystemRule.java" startLine="72" startPosition="366" endLine="73" endPosition="31" />
+    <nodeInfo nodeId="3380610091175407340" fileName="check_null_NonTypesystemRule.java" startLine="77" startPosition="15" endLine="78" endPosition="63" />
+    <nodeInfo nodeId="3380610091175407340" fileName="check_null_NonTypesystemRule.java" startLine="78" startPosition="63" endLine="79" endPosition="65" />
+    <nodeInfo nodeId="3380610091175407340" fileName="check_null_NonTypesystemRule.java" startLine="79" startPosition="65" endLine="80" endPosition="274" />
+    <nodeInfo nodeId="3380610091175407355" fileName="check_null_NonTypesystemRule.java" startLine="84" startPosition="15" endLine="85" endPosition="63" />
+    <nodeInfo nodeId="3380610091175407355" fileName="check_null_NonTypesystemRule.java" startLine="85" startPosition="63" endLine="86" endPosition="65" />
+    <nodeInfo nodeId="3380610091175407355" fileName="check_null_NonTypesystemRule.java" startLine="86" startPosition="65" endLine="87" endPosition="273" />
+    <nodeInfo nodeId="7962250936070463724" fileName="check_null_NonTypesystemRule.java" startLine="93" startPosition="52" endLine="94" endPosition="64" />
+    <nodeInfo nodeId="7962250936070463766" fileName="check_null_NonTypesystemRule.java" startLine="94" startPosition="64" endLine="95" endPosition="111" />
+    <nodeInfo nodeId="7962250936070464375" fileName="check_null_NonTypesystemRule.java" startLine="104" startPosition="137" endLine="105" endPosition="49" />
+    <nodeInfo nodeId="7962250936070464399" fileName="check_null_NonTypesystemRule.java" startLine="106" startPosition="110" endLine="107" endPosition="163" />
+    <nodeInfo nodeId="7962250936070464012" fileName="check_null_NonTypesystemRule.java" startLine="110" startPosition="13" endLine="111" endPosition="61" />
+    <nodeInfo nodeId="7962250936070464012" fileName="check_null_NonTypesystemRule.java" startLine="111" startPosition="61" endLine="112" endPosition="63" />
+    <nodeInfo nodeId="7962250936070464012" fileName="check_null_NonTypesystemRule.java" startLine="112" startPosition="63" endLine="113" endPosition="360" />
+    <nodeInfo nodeId="7962250936070463703" fileName="check_null_NonTypesystemRule.java" startLine="117" startPosition="7" endLine="118" endPosition="0" />
+    <nodeInfo nodeId="6424669011230751810" fileName="check_null_NonTypesystemRule.java" startLine="119" startPosition="5" endLine="120" endPosition="31" />
+    <nodeInfo nodeId="4623726889382011132" fileName="check_null_NonTypesystemRule.java" startLine="35" startPosition="97" endLine="38" endPosition="5" />
+    <nodeInfo nodeId="3380610091175407159" fileName="check_null_NonTypesystemRule.java" startLine="44" startPosition="30" endLine="47" endPosition="7" />
+    <nodeInfo nodeId="3380610091175407284" fileName="check_null_NonTypesystemRule.java" startLine="68" startPosition="163" endLine="71" endPosition="11" />
+    <nodeInfo nodeId="3380610091175407310" fileName="check_null_NonTypesystemRule.java" startLine="71" startPosition="11" endLine="74" endPosition="11" />
+    <nodeInfo nodeId="7962250936070464387" fileName="check_null_NonTypesystemRule.java" startLine="105" startPosition="49" endLine="108" endPosition="11" />
+    <nodeInfo nodeId="7962250936070463791" fileName="check_null_NonTypesystemRule.java" startLine="96" startPosition="101" endLine="100" endPosition="0" />
+    <nodeInfo nodeId="7962250936070463791" fileName="check_null_NonTypesystemRule.java" startLine="100" startPosition="49" endLine="104" endPosition="0" />
+    <nodeInfo nodeId="3380610091175407227" fileName="check_null_NonTypesystemRule.java" startLine="53" startPosition="50" endLine="58" endPosition="13" />
+    <nodeInfo nodeId="3380610091175407340" fileName="check_null_NonTypesystemRule.java" startLine="76" startPosition="61" endLine="81" endPosition="15" />
+    <nodeInfo nodeId="3380610091175407355" fileName="check_null_NonTypesystemRule.java" startLine="83" startPosition="61" endLine="88" endPosition="15" />
+    <nodeInfo nodeId="7962250936070464012" fileName="check_null_NonTypesystemRule.java" startLine="109" startPosition="70" endLine="114" endPosition="13" />
+    <nodeInfo nodeId="3380610091175407225" fileName="check_null_NonTypesystemRule.java" startLine="52" startPosition="190" endLine="59" endPosition="11" />
+    <nodeInfo nodeId="3380610091175407338" fileName="check_null_NonTypesystemRule.java" startLine="75" startPosition="28" endLine="82" endPosition="13" />
+    <nodeInfo nodeId="3380610091175407353" fileName="check_null_NonTypesystemRule.java" startLine="82" startPosition="13" endLine="89" endPosition="13" />
+    <nodeInfo nodeId="7962250936070463974" fileName="check_null_NonTypesystemRule.java" startLine="108" startPosition="11" endLine="115" endPosition="11" />
+    <nodeInfo nodeId="3380610091175407223" fileName="check_null_NonTypesystemRule.java" startLine="51" startPosition="103" endLine="60" endPosition="9" />
+    <nodeInfo nodeId="3380610091175407214" fileName="check_null_NonTypesystemRule.java" startLine="49" startPosition="55" endLine="61" endPosition="7" />
+    <nodeInfo nodeId="3380610091175407336" fileName="check_null_NonTypesystemRule.java" startLine="74" startPosition="11" endLine="90" endPosition="11" />
+    <nodeInfo nodeId="7962250936070463778" fileName="check_null_NonTypesystemRule.java" startLine="95" startPosition="111" endLine="116" endPosition="9" />
+    <nodeInfo nodeId="3380610091175407282" fileName="check_null_NonTypesystemRule.java" startLine="67" startPosition="67" endLine="91" endPosition="9" />
+    <nodeInfo nodeId="7962250936070463704" fileName="check_null_NonTypesystemRule.java" startLine="92" startPosition="7" endLine="117" endPosition="7" />
+    <nodeInfo nodeId="3380610091175407253" fileName="check_null_NonTypesystemRule.java" startLine="62" startPosition="60" endLine="92" endPosition="7" />
+    <nodeInfo nodeId="6424669011230755420" fileName="check_null_NonTypesystemRule.java" startLine="40" startPosition="80" endLine="119" endPosition="5" />
+    <scopeInfo nodeId="4623726889382011133" fileName="check_null_NonTypesystemRule.java" startLine="36" startPosition="104" endLine="37" endPosition="13" />
+    <scopeInfo nodeId="3380610091175407160" fileName="check_null_NonTypesystemRule.java" startLine="45" startPosition="107" endLine="46" endPosition="163" />
+    <scopeInfo nodeId="3380610091175407285" fileName="check_null_NonTypesystemRule.java" startLine="69" startPosition="360" endLine="70" endPosition="31" />
+    <scopeInfo nodeId="3380610091175407311" fileName="check_null_NonTypesystemRule.java" startLine="72" startPosition="366" endLine="73" endPosition="31" />
+    <scopeInfo nodeId="7962250936070463791" fileName="check_null_NonTypesystemRule.java" startLine="97" startPosition="43" endLine="98" endPosition="80" />
+    <scopeInfo nodeId="7962250936070463791" fileName="check_null_NonTypesystemRule.java" startLine="101" startPosition="41" endLine="102" endPosition="70" />
+    <scopeInfo nodeId="7962250936070464388" fileName="check_null_NonTypesystemRule.java" startLine="106" startPosition="110" endLine="107" endPosition="163" />
+    <scopeInfo nodeId="3380610091175407227" fileName="check_null_NonTypesystemRule.java" startLine="54" startPosition="13" endLine="57" endPosition="298" />
+    <scopeInfo nodeId="3380610091175407340" fileName="check_null_NonTypesystemRule.java" startLine="77" startPosition="15" endLine="80" endPosition="274" />
+    <scopeInfo nodeId="3380610091175407355" fileName="check_null_NonTypesystemRule.java" startLine="84" startPosition="15" endLine="87" endPosition="273" />
+    <scopeInfo nodeId="7962250936070464012" fileName="check_null_NonTypesystemRule.java" startLine="110" startPosition="13" endLine="113" endPosition="360" />
+    <scopeInfo nodeId="7962250936070463791" fileName="check_null_NonTypesystemRule.java" startLine="96" startPosition="101" endLine="100" endPosition="0" />
+    <scopeInfo nodeId="7962250936070463791" fileName="check_null_NonTypesystemRule.java" startLine="100" startPosition="49" endLine="104" endPosition="0" />
+    <scopeInfo nodeId="3380610091175407226" fileName="check_null_NonTypesystemRule.java" startLine="53" startPosition="50" endLine="58" endPosition="13" />
+    <scopeInfo nodeId="3380610091175407339" fileName="check_null_NonTypesystemRule.java" startLine="76" startPosition="61" endLine="81" endPosition="15" />
+    <scopeInfo nodeId="3380610091175407354" fileName="check_null_NonTypesystemRule.java" startLine="83" startPosition="61" endLine="88" endPosition="15" />
+    <scopeInfo nodeId="7962250936070463975" fileName="check_null_NonTypesystemRule.java" startLine="109" startPosition="70" endLine="114" endPosition="13" />
+    <scopeInfo nodeId="3380610091175407224" fileName="check_null_NonTypesystemRule.java" startLine="52" startPosition="190" endLine="59" endPosition="11" />
+    <scopeInfo nodeId="3380610091175407215" fileName="check_null_NonTypesystemRule.java" startLine="50" startPosition="103" endLine="60" endPosition="9">
       <varInfo nodeId="3380610091175407217" varName="dot" />
     </scopeInfo>
-    <scopeInfo nodeId="7962250936070463779" fileName="check_null_NonTypesystemRule.java" startLine="101" startPosition="137" endLine="112" endPosition="11">
+    <scopeInfo nodeId="7962250936070463779" fileName="check_null_NonTypesystemRule.java" startLine="104" startPosition="137" endLine="115" endPosition="11">
       <varInfo nodeId="7962250936070464376" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="3380610091175407337" fileName="check_null_NonTypesystemRule.java" startLine="72" startPosition="28" endLine="86" endPosition="13" />
-    <scopeInfo nodeId="3380610091175407283" fileName="check_null_NonTypesystemRule.java" startLine="65" startPosition="163" endLine="87" endPosition="11" />
-    <scopeInfo nodeId="7962250936070463705" fileName="check_null_NonTypesystemRule.java" startLine="90" startPosition="52" endLine="113" endPosition="9">
+    <scopeInfo nodeId="3380610091175407337" fileName="check_null_NonTypesystemRule.java" startLine="75" startPosition="28" endLine="89" endPosition="13" />
+    <scopeInfo nodeId="3380610091175407283" fileName="check_null_NonTypesystemRule.java" startLine="68" startPosition="163" endLine="90" endPosition="11" />
+    <scopeInfo nodeId="7962250936070463705" fileName="check_null_NonTypesystemRule.java" startLine="93" startPosition="52" endLine="116" endPosition="9">
       <varInfo nodeId="7962250936070463767" varName="annotation" />
       <varInfo nodeId="7962250936070463725" varName="write" />
     </scopeInfo>
-    <scopeInfo nodeId="3380610091175407254" fileName="check_null_NonTypesystemRule.java" startLine="60" startPosition="250" endLine="88" endPosition="9">
+    <scopeInfo nodeId="3380610091175407254" fileName="check_null_NonTypesystemRule.java" startLine="63" startPosition="250" endLine="91" endPosition="9">
       <varInfo nodeId="3380610091175407276" varName="isNotNull" />
       <varInfo nodeId="3380610091175407269" varName="isNull" />
       <varInfo nodeId="3380610091175407260" varName="equals" />
       <varInfo nodeId="3380610091175407256" varName="inCondition" />
     </scopeInfo>
-    <scopeInfo nodeId="6424669011230755422" fileName="check_null_NonTypesystemRule.java" startLine="38" startPosition="51" endLine="115" endPosition="0">
+    <scopeInfo nodeId="6424669011230755422" fileName="check_null_NonTypesystemRule.java" startLine="41" startPosition="51" endLine="118" endPosition="0">
       <varInfo nodeId="7552345430539281068" varName="source" />
       <varInfo nodeId="3380610091175407205" varName="varState" />
       <varInfo nodeId="3380610091175407392" varName="parent" />
       <varInfo nodeId="6424669011230755440" varName="instruction" />
       <varInfo nodeId="3380610091175407173" varName="variable" />
     </scopeInfo>
-    <scopeInfo nodeId="6424669011230755420" fileName="check_null_NonTypesystemRule.java" startLine="37" startPosition="80" endLine="116" endPosition="5">
+    <scopeInfo nodeId="6424669011230755420" fileName="check_null_NonTypesystemRule.java" startLine="40" startPosition="80" endLine="119" endPosition="5">
       <varInfo nodeId="6424669011230755421" varName="state" />
     </scopeInfo>
-    <scopeInfo nodeId="4822352154126332459" fileName="check_null_NonTypesystemRule.java" startLine="35" startPosition="97" endLine="117" endPosition="31">
+    <scopeInfo nodeId="4822352154126332459" fileName="check_null_NonTypesystemRule.java" startLine="35" startPosition="97" endLine="120" endPosition="31">
       <varInfo nodeId="6424669011230751802" varName="result" />
       <varInfo nodeId="4822352154126340352" varName="nullableRunner" />
     </scopeInfo>
-    <unitInfo nodeId="7962250936070463791" fileName="check_null_NonTypesystemRule.java" startLine="93" startPosition="78" endLine="97" endPosition="9" unitName="jetbrains.mps.analyzers.testLang.typesystem.check_null_NonTypesystemRule$1" />
-    <unitInfo nodeId="7962250936070463791" fileName="check_null_NonTypesystemRule.java" startLine="97" startPosition="22" endLine="101" endPosition="9" unitName="jetbrains.mps.analyzers.testLang.typesystem.check_null_NonTypesystemRule$2" />
+    <unitInfo nodeId="7962250936070463791" fileName="check_null_NonTypesystemRule.java" startLine="96" startPosition="78" endLine="100" endPosition="9" unitName="jetbrains.mps.analyzers.testLang.typesystem.check_null_NonTypesystemRule$1" />
+    <unitInfo nodeId="7962250936070463791" fileName="check_null_NonTypesystemRule.java" startLine="100" startPosition="22" endLine="104" endPosition="9" unitName="jetbrains.mps.analyzers.testLang.typesystem.check_null_NonTypesystemRule$2" />
   </root>
 </debugInfo>
 
