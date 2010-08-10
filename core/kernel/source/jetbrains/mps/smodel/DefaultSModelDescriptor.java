@@ -179,7 +179,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   public void save() {
     ModelAccess.assertLegalWrite();
 
-    if (mySModel == null) return;
+    if (!isInitialized()) return;
 
     if (!ApplicationManager.getApplication().isDispatchThread()) {
       /*
@@ -264,6 +264,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
       oldSModel.setModelDescritor(null);
     }
     mySModel = newModel;
+    myLoadingState = mySModel==null? ModelLoadingState.NOT_LOADED : ModelLoadingState.FULLY_LOADED;
+
     myRefactoringHistory = null;
     if (mySModel != null) {
       mySModel.setModelDescritor(this);

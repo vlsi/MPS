@@ -28,6 +28,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   private static final Logger LOG = Logger.getLogger(BaseSModelDescriptor.class);
 
   protected SModel mySModel = null;
+  protected ModelLoadingState myLoadingState = ModelLoadingState.NOT_LOADED;
   private final Object myLoadingLock = new Object();
 
   protected SModelReference myModelReference;
@@ -51,24 +52,20 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   }
 
   public SModel getSModel() {
-    // ModelAccess.assertLegalRead();
-
-    SModel result;
     boolean fireInitialized = false;
-
     synchronized (myLoadingLock) {
       if (!isInitialized()) {
         SModel model = loadModel();
         model.setModelDescritor(this);
         mySModel = model;
+        myLoadingState = ModelLoadingState.FULLY_LOADED;
         fireInitialized = true;
       }
-      result = mySModel;
     }
     if (fireInitialized) {
       fireModelInitialized();
     }
-    return result;
+    return mySModel;
   }
 
   public void refresh() {
@@ -81,8 +78,12 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
 
   protected abstract SModel loadModel();
 
+  public ModelLoadingState getLoadingState(){
+    return myLoadingState;
+  }
+
   public boolean isInitialized() {
-    return mySModel != null;
+    return getLoadingState()== ModelLoadingState.FULLY_LOADED;
   }
 
   public IModelRootManager getModelRootManager() {
