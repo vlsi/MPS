@@ -132,38 +132,13 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptor implemen
     ModelAccess.assertLegalWrite();
 
     if (!isInitialized()) return;
-    replaceModel(myModelRootManager.refresh(this));
-  }
 
-  public void replaceModel(SModel newModel) {
-    ModelAccess.assertLegalWrite();
-
-    if (newModel == mySModel) return;
-    final SModel oldSModel = mySModel;
-    if (oldSModel != null) {
-      oldSModel.setModelDescritor(null);
-    }
-    mySModel = newModel;
-    if (mySModel != null) {
-      mySModel.setModelDescritor(this);
-    }
-    SModelRepository.getInstance().markChanged(this, true);
-    MPSModuleRepository.getInstance().invalidateCaches();
-    Runnable modelReplacedNotifier = new Runnable() {
-      public void run() {
-        fireModelReplaced();
-        if (oldSModel != null) {
-          oldSModel.dispose();
-        }
+    if (!myNeedsReloading && isInitialized()) {
+      for (SNode node : getSModel().getAllNodesWithIds()) {
+        node.removeAllUserObjects();
       }
-    };
-    if (ModelAccess.instance().isInEDT()) {
-      modelReplacedNotifier.run();
-    } else {
-      ModelAccess.instance().runReadInEDT(modelReplacedNotifier);
     }
   }
-
 
   protected SModel loadModel() {
     SModel model = myModelRootManager.loadModel(this);

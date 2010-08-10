@@ -5,6 +5,7 @@ import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.InterfaceConceptReference;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.NameUtil;
 
@@ -22,7 +23,10 @@ public class ModelFindOperations {
     myModelDescriptor = modelDescriptor;
     myModelRootManager = myModelDescriptor.getModelRootManager();
     myFindUsagesSupported = myModelRootManager.isFindUsagesSupported();
-    myNeedSearchForStrings = !myModelDescriptor.isInitialized() || !SModelRepository.getInstance().isChanged(myModelDescriptor);
+    myNeedSearchForStrings = !myModelDescriptor.isInitialized();
+    if (!myNeedSearchForStrings && myModelDescriptor instanceof EditableSModelDescriptor){
+      myNeedSearchForStrings = !SModelRepository.getInstance().isChanged(((EditableSModelDescriptor) myModelDescriptor));
+    }
   }
 
   public Set<SReference> findUsages(Set<SNode> nodes) {
@@ -101,7 +105,11 @@ public class ModelFindOperations {
 
   public Set<AbstractConceptDeclaration> findDescendants(AbstractConceptDeclaration node, Set<AbstractConceptDeclaration> descendantsKnownInModel) {
     if (!myFindUsagesSupported) return new HashSet<AbstractConceptDeclaration>();
-    if (myModelDescriptor.isInitialized() && !SModelRepository.getInstance().isChanged(myModelDescriptor) && !descendantsKnownInModel.isEmpty())
+    boolean changed = false;
+    if (myModelDescriptor instanceof EditableSModelDescriptor){
+      changed = SModelRepository.getInstance().isChanged(((EditableSModelDescriptor) myModelDescriptor));
+    }
+    if (myModelDescriptor.isInitialized() && !changed && !descendantsKnownInModel.isEmpty())
       return descendantsKnownInModel;
     if (myNeedSearchForStrings && !myModelRootManager.containsString(myModelDescriptor, node.getId()))
       return descendantsKnownInModel;
