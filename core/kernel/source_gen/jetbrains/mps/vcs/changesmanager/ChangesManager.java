@@ -38,6 +38,7 @@ import java.util.Collection;
 import com.intellij.openapi.vcs.changes.ChangeList;
 import jetbrains.mps.vcs.MPSVCSManager;
 import jetbrains.mps.smodel.SModelAdapter;
+import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.ide.ThreadUtils;
@@ -241,13 +242,11 @@ public class ChangesManager extends AbstractProjectComponent {
     public MyGlobalSModelListener() {
     }
 
-    @Override
     public void modelReplaced(SModelDescriptor md) {
       updateModelStatus(md, null);
     }
 
-    @Override
-    public void modelInitialized(SModelDescriptor md) {
+    public void modelLoadingStateChanged(SModelDescriptor md, ModelLoadingState oldState, ModelLoadingState newState) {
       updateModelStatus(md, null);
     }
   }

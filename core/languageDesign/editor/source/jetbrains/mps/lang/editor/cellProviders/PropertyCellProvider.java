@@ -72,12 +72,10 @@ public class PropertyCellProvider extends CellProviderWithRole {
     return node.getPropertyAttribute(myPropertyName);
   }
 
-
   // gets a kind of attributes possibly hanging on this provider's role
   public Class getRoleAttributeClass() {
     return PropertyAttributeConcept.class;
   }
-
 
   public NodeSubstituteInfo createDefaultSubstituteInfo() {
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<NodeSubstituteInfo>() {

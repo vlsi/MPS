@@ -63,7 +63,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
       }
     }
     if (fireInitialized) {
-      fireModelInitialized();
+      fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
     }
     return mySModel;
   }
@@ -78,12 +78,12 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
 
   protected abstract SModel loadModel();
 
-  public ModelLoadingState getLoadingState(){
+  public ModelLoadingState getLoadingState() {
     return myLoadingState;
   }
 
   public boolean isInitialized() {
-    return getLoadingState()== ModelLoadingState.FULLY_LOADED;
+    return getLoadingState() == ModelLoadingState.FULLY_LOADED;
   }
 
   public IModelRootManager getModelRootManager() {
@@ -282,10 +282,10 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     }
   }
 
-  protected void fireModelInitialized() {
+  protected void fireModelStateChanged(ModelLoadingState oldState, ModelLoadingState newState) {
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.modelInitialized(this);
+        sModelListener.modelLoadingStateChanged(this, oldState, newState);
       } catch (Throwable t) {
         LOG.error(t);
       }
