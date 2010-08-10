@@ -20,6 +20,7 @@ import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.vcs.FileStatus;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.Nullable;
 
 public abstract class BaseModelItem implements NavigationItem {
@@ -43,7 +44,10 @@ public abstract class BaseModelItem implements NavigationItem {
   }
 
   public FileStatus getFileStatus() {
-    boolean changed = SModelRepository.getInstance().isChanged(myModelDescriptor);
+    boolean changed = false;
+    if (myModelDescriptor instanceof EditableSModelDescriptor){
+      changed = SModelRepository.getInstance().isChanged(((EditableSModelDescriptor) myModelDescriptor));
+    }
     return changed ? FileStatus.MODIFIED : FileStatus.NOT_CHANGED;
   }
 

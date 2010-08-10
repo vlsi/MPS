@@ -233,27 +233,23 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   public List<VirtualFile> getUnversionedFilesFromChangeListManager() {
-    return ChangeListManagerImpl.getInstanceImpl(myProject).getUnversionedFiles(); 
+    return ChangeListManagerImpl.getInstanceImpl(myProject).getUnversionedFiles();
   }
 
   private class NewModelSavedListener extends SModelAdapter {
-    @Override
     public void modelSaved(SModelDescriptor sm) {
-      final IFile modelFile = sm.getModelFile();
-      if (modelFile != null) {
-        addFilesToVcs(Collections.singletonList(modelFile.toFile()), false, false);
-        sm.removeModelListener(this);
-      }
+      if (!(sm instanceof EditableSModelDescriptor)) return;
+      final IFile modelFile = ((EditableSModelDescriptor) sm).getModelFile();
+      addFilesToVcs(Collections.singletonList(modelFile.toFile()), false, false);
+      sm.removeModelListener(this);
     }
   }
 
   private class GlobalModelSavedListener extends SModelAdapter {
-    @Override
     public void modelSaved(SModelDescriptor sm) {
-      IFile modeFile = sm.getModelFile();
-      if (modeFile != null) {
-        VcsDirtyScopeManager.getInstance(myProject).fileDirty(VFileSystem.refreshAndGetFile(modeFile));
-      }
+      if (!(sm instanceof EditableSModelDescriptor)) return;
+      final IFile modelFile = ((EditableSModelDescriptor) sm).getModelFile();
+        VcsDirtyScopeManager.getInstance(myProject).fileDirty(VFileSystem.refreshAndGetFile(modelFile));
     }
   }
 

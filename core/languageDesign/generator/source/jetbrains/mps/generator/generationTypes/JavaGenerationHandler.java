@@ -35,6 +35,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Pair;
 
@@ -50,10 +51,9 @@ import java.util.Set;
  * Evgeny Gryaznov, Jan 21, 2010
  */
 public class JavaGenerationHandler extends GenerationHandlerBase {
-
   @Override
   public boolean canHandle(SModelDescriptor inputModel) {
-    return SModelStereotype.isUserModel(inputModel) && !inputModel.isPackaged();
+    return SModelStereotype.isUserModel(inputModel);
   }
 
   @Override
@@ -80,7 +80,7 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
     return true;
   }
 
-  public void startModule(IModule module, List<SModelDescriptor> inputModels, Project project, ITaskProgressHelper progressHelper) {
+  public void startModule(IModule module, List<EditableSModelDescriptor> inputModels, Project project, ITaskProgressHelper progressHelper) {
     progressHelper.setText2("module " + module);
 
     String outputFolder = module != null ? module.getGeneratorOutputPath() : null;
@@ -102,7 +102,7 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
   }
 
   @Override
-  public boolean compile(Project p, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException {
+  public boolean compile(Project p, GenerationInput input, boolean generationOK, ITaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException {
     boolean compiledSuccessfully = generationOK;
     boolean[] ideaIsFresh = new boolean[] { false };
 
@@ -113,7 +113,7 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
       boolean needToReload = false;
 
       Set<SModelDescriptor> toInvalidate = new HashSet<SModelDescriptor>();
-      for (Pair<IModule, List<SModelDescriptor>> moduleListPair : input) {
+      for (Pair<IModule, List<EditableSModelDescriptor>> moduleListPair : input) {
         IModule module = moduleListPair.o1;
         if (module != null && module.reloadClassesAfterGeneration()) {
           needToReload = true;
@@ -214,9 +214,9 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
   }
 
   @Override
-  public long estimateCompilationMillis(List<Pair<IModule, List<SModelDescriptor>>> input) {
+  public long estimateCompilationMillis(GenerationInput input) {
     long totalJob = 0;
-    for (Pair<IModule, List<SModelDescriptor>> pair : input) {
+    for (Pair<IModule, List<EditableSModelDescriptor>> pair : input) {
       IModule module = pair.o1;
       if (module != null) {
         long jobTime = ModelsProgressUtil.estimateCompilationMillis(!module.isCompileInMPS());
@@ -227,7 +227,7 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
     return totalJob;
   }
 
-  protected final boolean containsTestModels(List<SModelDescriptor> sms) {
+  protected final boolean containsTestModels(List<EditableSModelDescriptor> sms) {
     for (SModelDescriptor sm : sms) {
       if (SModelStereotype.isTestModel(sm)) return true;
     }

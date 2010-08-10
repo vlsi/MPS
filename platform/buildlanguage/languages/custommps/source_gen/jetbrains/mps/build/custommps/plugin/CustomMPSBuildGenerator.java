@@ -10,7 +10,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import java.util.Arrays;
 import jetbrains.mps.build.packaging.plugin.BuildGeneratorUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.build.packaging.plugin.NodeData;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -46,7 +46,7 @@ public class CustomMPSBuildGenerator extends BuildGeneratorImpl {
     return Arrays.asList(BuildGeneratorUtil.getPackagingLanguageReference(), MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.build.custommps").getModuleReference());
   }
 
-  public Runnable generate(final SModelDescriptor targetModelDescriptor, String name, String basedir, List<NodeData> selectedData) {
+  public Runnable generate(final EditableSModelDescriptor targetModelDescriptor, String name, String basedir, List<NodeData> selectedData) {
     final SNode mpsLayout = this.createMPSLayout(targetModelDescriptor, name, basedir, selectedData);
 
     SNode zipNode = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(mpsLayout, "component", true)).first(), "jetbrains.mps.build.packaging.structure.Zip");

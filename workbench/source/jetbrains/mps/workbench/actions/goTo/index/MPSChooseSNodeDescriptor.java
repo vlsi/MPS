@@ -26,6 +26,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
@@ -60,8 +61,9 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
         continue;
       }
 
-      IFile modelFile = sm.getModelFile();
-      if (modelFile == null) continue; // e.g. model was deleted
+      if (!(sm instanceof EditableSModelDescriptor)) continue;
+      EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
+      IFile modelFile = esm.getModelFile();
       VirtualFile vf = modelFile.toVirtualFile();
       if (vf == null) continue; // e.g. model was deleted
       

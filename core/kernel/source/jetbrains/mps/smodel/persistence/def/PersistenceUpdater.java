@@ -35,7 +35,7 @@ public class PersistenceUpdater {
     for (final EditableSModelDescriptor modelDescriptor : modelDescriptors) {
       boolean wasInitialized = modelDescriptor.isInitialized();
       IFile file = modelDescriptor.getModelFile();
-      if (file == null || file.isReadOnly()) continue;
+      if (file.isReadOnly()) continue;
       if (wasInitialized) {
         ModelAccess.instance().executeCommand(new Runnable() {
           @Override
@@ -76,8 +76,8 @@ public class PersistenceUpdater {
       if (modelDescriptor.isInitialized()) {
         version = modelDescriptor.getSModel().getPersistenceVersion();
       } else {
-        IFile file = modelDescriptor.getModelFile();
-        if (file != null) {
+        if (modelDescriptor instanceof EditableSModelDescriptor) {
+          IFile file = ((EditableSModelDescriptor) modelDescriptor).getModelFile();
           version = ModelPersistence.getModelPersistenceVersion(file);
         }
       }

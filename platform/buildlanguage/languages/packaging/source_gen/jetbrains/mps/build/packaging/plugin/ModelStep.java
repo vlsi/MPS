@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -67,10 +68,10 @@ public class ModelStep extends TwoOptionsStep<SModelDescriptor> {
         public List<SModelDescriptor> compute() {
           return CollectionUtil.filter(modelDescriptors, new Condition<SModelDescriptor>() {
             public boolean met(SModelDescriptor modelDescriptor) {
-              IFile modelFile = modelDescriptor.getModelFile();
-              if (modelFile == null) {
+              if (!(modelDescriptor instanceof EditableSModelDescriptor)) {
                 return false;
               }
+              IFile modelFile = ((EditableSModelDescriptor) modelDescriptor).getModelFile();
               for (SModelRoot root : ListSequence.fromList(solution.getSModelRoots())) {
                 if (modelFile.getAbsolutePath().startsWith(root.getPath())) {
                   return true;

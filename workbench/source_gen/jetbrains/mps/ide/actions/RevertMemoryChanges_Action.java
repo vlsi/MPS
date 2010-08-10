@@ -30,7 +30,7 @@ public class RevertMemoryChanges_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return (RevertMemoryChanges_Action.this.model instanceof EditableSModelDescriptor) && !(RevertMemoryChanges_Action.this.model.isTransient());
+    return RevertMemoryChanges_Action.this.model instanceof EditableSModelDescriptor;
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

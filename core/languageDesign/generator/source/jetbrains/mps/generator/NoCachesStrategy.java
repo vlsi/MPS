@@ -19,6 +19,7 @@ import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.index.ModelDigestIndex;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.Nullable;
@@ -48,9 +49,9 @@ public abstract class NoCachesStrategy {
   public static NoCachesStrategy createBuildCachesStrategy() {
     return new NoCachesStrategy() {
       public boolean compute(Project project, SModelDescriptor sm, String generatedHash) {
-        IFile file = sm.getModelFile();
-        if (file == null) return false;
+        if (!(sm instanceof EditableSModelDescriptor))  return false;
 
+        IFile file = ((EditableSModelDescriptor) sm).getModelFile();
         FileInputStream in = null;
         try {
           in = new FileInputStream(file.toFile());

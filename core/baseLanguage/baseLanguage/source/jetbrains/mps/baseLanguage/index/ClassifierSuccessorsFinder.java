@@ -9,6 +9,7 @@ import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.indexing.FileBasedIndex;
 import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.misc.hash.HashMap;
 import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.vfs.IFile;
@@ -31,13 +32,12 @@ public class ClassifierSuccessorsFinder {
     Set<VirtualFile> notModifiedModelFiles = new HashSet();
     List<ClassConcept> modifiedClasses = new ArrayList();
     List<Interface> modifiedInterfaces = new ArrayList();
-    for (SModelDescriptor modelDescriptor : scope.getModelDescriptors()) {
-      IFile modelFile = modelDescriptor.getModelFile();
-      if (modelFile == null) {
-        continue;
-      }
-      if (SModelRepository.getInstance().isChanged(modelDescriptor)) {
-        for (SNode sNode : modelDescriptor.getSModel().allNodes()) {
+    for (SModelDescriptor md : scope.getModelDescriptors()) {
+      if (!(md instanceof EditableSModelDescriptor)) continue;
+      EditableSModelDescriptor emd = (EditableSModelDescriptor) md;
+      IFile modelFile = emd.getModelFile();
+      if (SModelRepository.getInstance().isChanged(emd)) {
+        for (SNode sNode : md.getSModel().allNodes()) {
           BaseAdapter adapter = sNode.getAdapter();
           if (adapter instanceof ClassConcept) {
             modifiedClasses.add((ClassConcept) adapter);

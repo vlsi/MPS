@@ -10,6 +10,7 @@ import com.intellij.util.indexing.FileBasedIndex.ValueProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -120,12 +121,12 @@ public class ModelDigestUtil {
   }
 
   public static Map<String, String> getGenerationHashes(SModelDescriptor sm, Project project) {
-    if (sm.isPackaged()) return null;
+    if (!(sm instanceof EditableSModelDescriptor)) return null;
+    EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
+    if (esm.isPackaged()) return null;
     if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) return null;
 
-    IFile modelFile = sm.getModelFile();
-    if (modelFile == null) return null;
-
+    IFile modelFile = esm.getModelFile();
     VirtualFile file = modelFile.toVirtualFile();
     if (file == null) return null;
 

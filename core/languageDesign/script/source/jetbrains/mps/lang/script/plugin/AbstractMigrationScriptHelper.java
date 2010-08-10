@@ -22,7 +22,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
@@ -34,7 +34,7 @@ public abstract class AbstractMigrationScriptHelper {
     context.getComponent(MigrationScriptsTool.class).startMigration(scripts, scope, context);
   }
 
-  public static IScope createMigrationScope(List<SModelDescriptor> models, List<IModule> modules,boolean applyToSelection) {
+  public static IScope createMigrationScope(List<SModelDescriptor> models, List<IModule> modules, boolean applyToSelection) {
     MigrationScope migrationScope = new MigrationScope();
     if (applyToSelection) {
       for (SModelDescriptor model : models) {
@@ -65,8 +65,8 @@ public abstract class AbstractMigrationScriptHelper {
     private Set<SModelDescriptor> myModels = new LinkedHashSet<SModelDescriptor>();
 
     public void addModel(SModelDescriptor model) {
-      if (model.isTransient()) return;
-      if (model.isPackaged()) return;
+      if (!(model instanceof EditableSModelDescriptor)) return;
+      if (((EditableSModelDescriptor) model).isPackaged()) return;
       if (model.getStereotype() != null) {
         if (model.getStereotype().equals(SModelStereotype.INTERNAL) ||
           model.getStereotype().equals(SModelStereotype.INTERNAL_COPY) ||

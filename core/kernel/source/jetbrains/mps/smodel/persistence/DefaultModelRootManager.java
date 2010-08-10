@@ -58,32 +58,32 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
   }
 
   @NotNull
-  public SModel loadModel(final @NotNull SModelDescriptor modelDescriptor) {
-    assert modelDescriptor instanceof EditableSModelDescriptor;
+  public SModel loadModel(final @NotNull SModelDescriptor sm) {
+    DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
 
-    if (!modelDescriptor.getModelFile().isReadOnly()) {
-      final File file = FileSystem.toFile(modelDescriptor.getModelFile());
+    if (!dsm.getModelFile().isReadOnly()) {
+      final File file = FileSystem.toFile(dsm.getModelFile());
 
       if (!file.exists()) {
-        return new SModel(modelDescriptor.getSModelReference());
+        return new SModel(dsm.getSModelReference());
       }
     }
 
     SModel model;
     try {
-      model = ModelPersistence.readModel(modelDescriptor.getModelFile());
+      model = ModelPersistence.readModel(dsm.getModelFile());
     } catch (ModelFileReadException t) {
-      return handleExceptionDuringModelRead(((EditableSModelDescriptor) modelDescriptor), t, false);
+      return handleExceptionDuringModelRead(dsm, t, false);
     } catch (PersistenceVersionNotFoundException e) {
       LOG.error(e);
-      return new StubModel(modelDescriptor.getSModelReference());
+      return new StubModel(dsm.getSModelReference());
     }
 
     try {
       model.setLoading(true);
       boolean needToSave = false;
       if (model.getSModelReference().getSModelId() == null) {
-        model.changeModelReference(modelDescriptor.getSModelReference());
+        model.changeModelReference(dsm.getSModelReference());
         // FIXME update on save?
         needToSave = true;
       }
@@ -98,16 +98,16 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
         needToSave = true;
       }
 
-      if (needToSave && !modelDescriptor.getModelFile().isReadOnly()) {
-        ModelPersistence.saveModel(model, modelDescriptor.getModelFile(), false, false);
+      if (needToSave && !dsm.getModelFile().isReadOnly()) {
+        ModelPersistence.saveModel(model, dsm.getModelFile(), false, false);
       }
     } finally {
       model.setLoading(false);
     }
 
-    LOG.assertLog(model.getSModelReference().equals(modelDescriptor.getSModelReference()),
-      "\nError loading model from file: \"" + modelDescriptor.getModelFile() + "\"\n" +
-        "expected model UID     : \"" + modelDescriptor.getSModelReference() + "\"\n" +
+    LOG.assertLog(model.getSModelReference().equals(dsm.getSModelReference()),
+      "\nError loading model from file: \"" + dsm.getModelFile() + "\"\n" +
+        "expected model UID     : \"" + dsm.getSModelReference() + "\"\n" +
         "but was UID            : \"" + model.getSModelReference() + "\"\n" +
         "the model will not be available.\n" +
         "Make sure that all project's roots and/or the model namespace is correct");
@@ -115,22 +115,24 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
   }
 
   @Override
-  public void saveModelRefactorings(@NotNull SModelDescriptor modelDescriptor, @NotNull RefactoringHistory history) {
-    int persistence = ((EditableSModelDescriptor) modelDescriptor).getPersistenceVersion();
-    if(persistence >= 5) {
-      RefactoringsPersistence.save(modelDescriptor.getModelFile(), history);
+  public void saveModelRefactorings(@NotNull SModelDescriptor sm, @NotNull RefactoringHistory history) {
+    DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
+    int persistence = dsm.getPersistenceVersion();
+    if (persistence >= 5) {
+      RefactoringsPersistence.save(dsm.getModelFile(), history);
     }
   }
 
   @Override
-  public RefactoringHistory loadModelRefactorings(@NotNull SModelDescriptor modelDescriptor) {
-    RefactoringHistory refactorings = RefactoringsPersistence.load(modelDescriptor.getModelFile());
-    if(refactorings != null) {
+  public RefactoringHistory loadModelRefactorings(@NotNull SModelDescriptor sm) {
+    DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
+    RefactoringHistory refactorings = RefactoringsPersistence.load(dsm.getModelFile());
+    if (refactorings != null) {
       return refactorings;
     }
-    
-    if(((EditableSModelDescriptor) modelDescriptor).getPersistenceVersion() < 5) {
-      return RefactoringsPersistence.loadFromModel(modelDescriptor.getModelFile());
+
+    if (((EditableSModelDescriptor) dsm).getPersistenceVersion() < 5) {
+      return RefactoringsPersistence.loadFromModel(dsm.getModelFile());
     }
     return null;
   }
@@ -146,11 +148,12 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     return true;
   }
 
-  public boolean containsSomeString(@NotNull SModelDescriptor modelDescriptor, @NotNull Set<String> strings) {
-    if (SModelRepository.getInstance().isChanged(modelDescriptor)) return true;
+  public boolean containsSomeString(@NotNull SModelDescriptor sm, @NotNull Set<String> strings) {
+    DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
+    if (SModelRepository.getInstance().isChanged(dsm)) return true;
 
-    IFile modelFile = modelDescriptor.getModelFile();
-    if (modelFile == null || !modelFile.exists()) return true;
+    IFile modelFile = dsm.getModelFile();
+    if (!modelFile.exists()) return true;
     BufferedReader r = null;
     try {
       r = new BufferedReader(modelFile.openReader());
@@ -179,11 +182,10 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     return true;
   }
 
-  public boolean isEmpty(SModelDescriptor modelDescriptor) {
-    IFile modelFile = modelDescriptor.getModelFile();
-    if (modelFile == null || !modelFile.exists()) {
-      return true;
-    }
+  public boolean isEmpty(SModelDescriptor sm) {
+    DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
+    IFile modelFile = dsm.getModelFile();
+    if (!modelFile.exists()) return true;
     Reader reader = null;
     try {
       reader = modelFile.openReader();
@@ -213,19 +215,17 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
   }
 
   /**
-   *  returns upgraded model, or null
+   * returns upgraded model, or null
    */
-  public SModel saveModel(@NotNull SModelDescriptor modelDescriptor, boolean canUpgrade) {
-    SModel smodel = modelDescriptor.getSModel();
+  public SModel saveModel(@NotNull SModelDescriptor sm, boolean canUpgrade) {
+    DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
+    SModel smodel = dsm.getSModel();
     if (smodel instanceof StubModel) {
       // we do not save stub model to do not owerwrite the real model
       return null;
     }
-    IFile modelFile = modelDescriptor.getModelFile();
-    if (modelFile != null) {
-      return ModelPersistence.saveModel(smodel, modelFile, true, true);
-    }
-    return null;
+    IFile modelFile = dsm.getModelFile();
+    return ModelPersistence.saveModel(smodel, modelFile, true, true);
   }
 
   private void readModelDescriptors(IFile dir, SModelRoot modelRoot, ModelOwner owner) {
@@ -317,24 +317,25 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
 
     SModelRepository modelRepository = SModelRepository.getInstance();
     SModelDescriptor modelDescriptor = modelRepository.getModelDescriptor(modelReference);
-    if (modelDescriptor != null) {
-      IFile newFile = FileSystem.getFile(fileName);
-      if (!newFile.equals(modelDescriptor.getModelFile())) {
-        // file might be not the same if user, for example, moved model file using external file manager
-        ((DefaultSModelDescriptor)modelDescriptor).changeModelFile(newFile);
-      }
-      modelRepository.addOwnerForDescriptor(modelDescriptor, owner);
-      return modelDescriptor;
-    } else {
+    if (modelDescriptor == null) {
       IFile modelFile = FileSystem.getFile(fileName);
-      modelDescriptor = new DefaultSModelDescriptor(manager, modelFile, modelReference);
+      DefaultSModelDescriptor md = new DefaultSModelDescriptor(manager, modelFile, modelReference);
       if (fireModelCreated) {
-        modelRepository.createNewModel(modelDescriptor, owner);
+        modelRepository.createNewModel(md, owner);
       } else {
-        modelRepository.registerModelDescriptor(modelDescriptor, owner);
+        modelRepository.registerModelDescriptor(md, owner);
       }
-      return modelDescriptor;
+      return md;
     }
+
+    IFile newFile = FileSystem.getFile(fileName);
+    DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) modelDescriptor;
+    if (!newFile.equals(dsm.getModelFile())) {
+      // file might be not the same if user, for example, moved model file using external file manager
+      ((DefaultSModelDescriptor) modelDescriptor).changeModelFile(newFile);
+    }
+    modelRepository.addOwnerForDescriptor(modelDescriptor, owner);
+    return modelDescriptor;
   }
 
   private static SModelDescriptor createModel(IModelRootManager manager, String fileName, SModelFqName modelUID, ModelOwner owner) {
@@ -345,18 +346,19 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
       LOG.error("Couldn't create new model \"" + modelUID.getLongName() + "\" because such model exists");
     }
 
-    SModelDescriptor modelDescriptor = new DefaultSModelDescriptor(manager, FileSystem.getFile(fileName), new SModelReference(modelUID, SModelId.generate()));
+    DefaultSModelDescriptor modelDescriptor = new DefaultSModelDescriptor(manager, FileSystem.getFile(fileName), new SModelReference(modelUID, SModelId.generate()));
     SModelRepository.getInstance().createNewModel(modelDescriptor, owner);
     modelDescriptor.getSModel();
     return modelDescriptor;
   }
 
-  public void saveMetadata(@NotNull SModelDescriptor modelDescriptor) {
-    assert modelDescriptor instanceof EditableSModelDescriptor;
-    Map<String, String> metadata = ((EditableSModelDescriptor) modelDescriptor).getMetaData();
+  public void saveMetadata(@NotNull SModelDescriptor sm) {
+    DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
+
+    Map<String, String> metadata = dsm.getMetaData();
     if (metadata.isEmpty()) return;
 
-    IFile metadataFile = getMetadataFile(modelDescriptor.getModelFile());
+    IFile metadataFile = getMetadataFile(dsm.getModelFile());
     if (!metadataFile.exists()) {
       metadataFile.createNewFile();
       ModelChangesWatcher.instance().fireDataFileCreated(metadataFile);
@@ -366,8 +368,9 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
   }
 
   @Nullable
-  public Map<String, String> loadMetadata(@NotNull SModelDescriptor modelDescriptor) {
-    IFile metadataFile = getMetadataFile(modelDescriptor.getModelFile());
+  public Map<String, String> loadMetadata(@NotNull SModelDescriptor sm) {
+    DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
+    IFile metadataFile = getMetadataFile(dsm.getModelFile());
     if (!metadataFile.exists()) {
       return new HashMap<String, String>();
     }
@@ -381,31 +384,29 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
   }
 
   public void rename(SModelDescriptor sm, SModelFqName modelFqName, boolean changeFile) {
+    DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
     if (!changeFile) {
-      sm.save();
+      dsm.save();
       return;
     }
-    IFile oldFile = sm.getModelFile();
+    IFile oldFile = dsm.getModelFile();
     SModelRoot root = ModelRootUtil.getSModelRoot(sm);
     IFile newFile = createFileForModelUID(root, modelFqName);
     newFile.getParent().mkdirs();
     newFile.createNewFile();
-    ((DefaultSModelDescriptor) sm).changeModelFile(newFile);
-    sm.save();
-    if (oldFile != null) {
-      oldFile.delete();
-    }
+    dsm.changeModelFile(newFile);
+    dsm.save();
+    oldFile.delete();
     fileRenamed(oldFile, newFile);
   }
 
   public void changeSModelRoot(SModelDescriptor sm, SModelRoot modelRoot) {
-    IFile oldFile = sm.getModelFile();
+    DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
+    IFile oldFile = dsm.getModelFile();
     IFile newFile = createFileForModelUID(modelRoot, sm.getSModelFqName());
-    ((DefaultSModelDescriptor) sm).changeModelFile(newFile);
-    sm.save();
-    if (oldFile != null) {
-      oldFile.delete();
-    }
+    dsm.changeModelFile(newFile);
+    dsm.save();
+    oldFile.delete();
     fileRenamed(oldFile, newFile);
   }
 

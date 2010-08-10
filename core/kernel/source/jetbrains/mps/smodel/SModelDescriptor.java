@@ -38,16 +38,6 @@ public interface SModelDescriptor {
 
   //------
 
-  boolean isPackaged();
-
-  boolean isReadOnly();
-
-  boolean isEmpty();
-
-  boolean isTransient();
-
-  //------
-
   IModelRootManager getModelRootManager();
 
   SModelReference getSModelReference();
@@ -68,6 +58,8 @@ public interface SModelDescriptor {
 
   //------
 
+  boolean isEmpty();
+  
   void rename(SModelFqName newModelFqName, boolean changeFile);
 
   SModelDescriptor resolveModel(SModelReference reference);
@@ -94,35 +86,11 @@ public interface SModelDescriptor {
 
   boolean hasModelCommandListener(@NotNull SModelCommandListener listener);
 
-  //------
-  //------
-  //------todo move to ModelWithFile
-
-  void save();
-
-  @Nullable
-  IFile getModelFile();
-
-  void setModelFile(IFile file);
-
-  long lastChangeTime();
-
-  boolean isChanged();
-  
-  void setChanged(boolean changed);
-
   //------todo get rid of
 
   boolean isInitialized();
 
+
   @Deprecated
   Set<IModule> getModules();
-
-  //--------------user objects (todo unused!)-------------
-
-  Object getUserObject(String key);
-
-  void putUserObject(String key, Object value);
-
-  void removeUserObject(String key);
 }

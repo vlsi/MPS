@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.typesystem.inference;
 
+import jetbrains.mps.generator.UtilModelDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.RuntimeSupport;
 import jetbrains.mps.lang.typesystem.runtime.performance.RuntimeSupport_Tracer;
 import jetbrains.mps.lang.typesystem.runtime.performance.SubtypingManager_Tracer;
@@ -326,17 +327,7 @@ public class TypeChecker implements ApplicationComponent {
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(fqName);
 
     if (modelDescriptor == null) { // then create and register model descriptor
-      modelDescriptor = new DefaultSModelDescriptor(IModelRootManager.NULL_MANAGER, null, new SModelReference(fqName, SModelId.generate())) {
-        protected SModel loadModel() {
-          SModel result = new SModel(getSModelReference());
-          result.setLoading(true);
-          return result;
-        }
-
-        public void save() {
-          //do-nothing
-        }
-      };
+      modelDescriptor = new RuntimeTypesModelDescriptor(fqName);
       SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, RUNTIME_TYPES_MODEL_OWNER);
     }
 
@@ -425,6 +416,18 @@ public class TypeChecker implements ApplicationComponent {
   private void fireNodeTypeAccessed(SNode term) {
     for (TypesReadListener typesReadListener : copyTypesReadListeners()) {
       typesReadListener.nodeTypeAccessed(term);
+    }
+  }
+
+  private static class RuntimeTypesModelDescriptor extends UtilModelDescriptor {
+    public RuntimeTypesModelDescriptor(SModelFqName fqName) {
+      super(new SModelReference(fqName, SModelId.generate()));
+    }
+
+    protected SModel loadModel() {
+      SModel result = new SModel(getSModelReference());
+      result.setLoading(true);
+      return result;
     }
   }
 }

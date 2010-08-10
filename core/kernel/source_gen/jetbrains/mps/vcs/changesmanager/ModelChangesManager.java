@@ -46,6 +46,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.util.Arrays;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
@@ -581,11 +582,11 @@ __switch__:
     removeAllChanges();
     clearCaches();
 
-    IFile modelFile = myModelDescriptor.getModelFile();
-    VirtualFile modelVFile = check_fh1co9_a0f0eb(modelFile);
-    if (modelVFile == null) {
+    if (!(myModelDescriptor instanceof EditableSModelDescriptor)) {
       return;
     }
+    IFile modelFile = ((EditableSModelDescriptor) myModelDescriptor).getModelFile();
+    VirtualFile modelVFile = modelFile.toVirtualFile();
 
     assert myProject.getComponent(VcsFileStatusProvider.class) != null;
 
@@ -971,13 +972,6 @@ __switch__:
       return null;
     }
     return p.getSNodeId();
-  }
-
-  private static VirtualFile check_fh1co9_a0f0eb(IFile p) {
-    if (null == p) {
-      return null;
-    }
-    return p.toVirtualFile();
   }
 
   private static SNodeId check_fh1co9_a1a43(SNode p) {

@@ -32,6 +32,7 @@ import com.intellij.openapi.vcs.history.VcsRevisionNumber;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vcs.ui.VcsIdeSettings;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
@@ -227,7 +228,8 @@ public class ApplicationLevelVcsManager implements ApplicationComponent, Persist
   }
 
   public boolean isInConflict(final SModelDescriptor modelDescriptor, boolean synchronously) {
-    return isInConflict(modelDescriptor.getModelFile(), synchronously);
+    if (!(modelDescriptor instanceof EditableSModelDescriptor)) return false;
+    return isInConflict(((EditableSModelDescriptor) modelDescriptor).getModelFile(), synchronously);
   }
 
   public void addToVcsLater(File file) {

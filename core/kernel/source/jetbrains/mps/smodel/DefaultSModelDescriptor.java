@@ -32,6 +32,7 @@ import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vcs.VcsHelper;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.JarFileEntryFile;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
@@ -44,27 +45,29 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
 
   private static final Logger LOG = Logger.getLogger(DefaultSModelDescriptor.class);
 
-  private SModel mySModel = null;
-
   private Map<String, String> myMetadata;
   private boolean myMetadataLoaded;
 
   private Object myRefactoringHistoryLock = new Object();
   private RefactoringHistory myRefactoringHistory;
 
-  private final Object myLoadingLock = new Object();
 
   private long myLastChange;       
 
   private long myDiskTimestamp = -1;
   private boolean myIsTestRefactoringMode = false;
 
-  public DefaultSModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference) {
+  private IFile myModelFile;
+  private boolean myIsChanged = false;
+
+
+  public DefaultSModelDescriptor(IModelRootManager manager, @NotNull IFile modelFile, SModelReference modelReference) {
     this(manager, modelFile, modelReference, true);
   }
 
-  protected DefaultSModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference, boolean checkDup) {
-    super(manager, modelFile, modelReference, checkDup);
+  protected DefaultSModelDescriptor(IModelRootManager manager,@NotNull IFile modelFile, SModelReference modelReference, boolean checkDup) {
+    super(manager, modelReference, checkDup);
+    myModelFile = modelFile;
     updateLastChange();
   }
 
@@ -76,6 +79,38 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
         }
       }
     });
+  }
+
+  @NotNull
+  public IFile getModelFile() {
+    return myModelFile;
+  }
+
+  public void setModelFile(IFile file) {
+    myModelFile = file;
+  }
+
+  public boolean isChanged() {
+    return myIsChanged;
+  }
+
+  public void setChanged(boolean changed) {
+    myIsChanged = changed;
+  }
+
+  protected void checkModelDuplication() {
+    SModelDescriptor anotherModel = SModelRepository.getInstance().getModelDescriptor(myModelReference);
+    if (anotherModel != null) {
+      String message = "Model already registered: " + myModelReference + "\n";
+      message += "file = " + myModelFile + "\n";
+
+      if (anotherModel instanceof EditableSModelDescriptor){
+        message += "another model's file = " + ((EditableSModelDescriptor) anotherModel).getModelFile();
+      } else{
+        message += "another model is non-editable";
+      }
+      LOG.error(message);
+    }
   }
 
   protected SModel loadModel() {
@@ -143,35 +178,10 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     updateLastChange();
   }
 
-  public boolean isReadOnly() {
-    return false;
-  }
-
   public long fileTimestamp() {
     IFile file = getModelFile();
-    if (file == null || !file.exists()) return -1;
+    if (!file.exists()) return -1;
     return file.lastModified();
-  }
-
-  public SModel getSModel() {
-    // ModelAccess.assertLegalRead();
-
-    SModel result;
-    boolean fireInitialized = false;
-
-    synchronized (myLoadingLock) {
-      if (mySModel == null) {
-        SModel model = loadModel();
-        model.setModelDescritor(this);
-        mySModel = model;
-        fireInitialized = true;
-      }
-      result = mySModel;
-    }
-    if (fireInitialized) {
-      fireModelInitialized();
-    }
-    return result;
   }
 
   public int getPersistenceVersion() {
@@ -381,7 +391,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     updateDiskTimestamp();
 
     IFile modelFile = getModelFile();
-    if (modelFile != null && !modelFile.isReadOnly()) {
+    if (!modelFile.isReadOnly()) {
       MPSFileSynchronizer.getInstance().requestSync(modelFile);
     }
 
@@ -402,6 +412,10 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
 
     if (!isInitialized()) return;
     replaceModel(myModelRootManager.refresh(this));
+  }
+
+  public boolean isPackaged() {
+    return getModelFile() instanceof JarFileEntryFile;
   }
 
   public void replaceModel(SModel newModel) {
@@ -445,10 +459,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
 
   public String toString() {
     return getSModelReference().toString();
-  }
-
-  public boolean isTransient() {
-    return false;
   }
 
   private synchronized Map<String, String> getMetaData_internal() {

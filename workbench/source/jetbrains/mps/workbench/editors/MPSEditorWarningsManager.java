@@ -24,10 +24,7 @@ import com.intellij.openapi.fileEditor.FileEditorManagerListener;
 import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
-import jetbrains.mps.generator.ModelGenerationStatusManager;
-import jetbrains.mps.generator.NoCachesStrategy;
+import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.IdeMain;
@@ -124,7 +121,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
     final SModelDescriptor model = smodel.getModelDescriptor();
     if (model == null) return;
 
-    if (model.isTransient()) {
+    if (model instanceof TransientModelDescriptor) {
       addWarningPanel(editor, "Warning: the node is in a transient model. Your changes won't be saved.");
     }
 

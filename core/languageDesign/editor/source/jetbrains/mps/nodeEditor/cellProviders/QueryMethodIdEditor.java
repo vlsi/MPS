@@ -35,6 +35,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
 import javax.swing.*;
 import java.awt.Dimension;
@@ -230,7 +231,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
           IProjectHandler projectHandler = getProjectHandlerForContext(context);
           SModelDescriptor modelDescriptor = getSNode().getModel().getModelDescriptor();
           assert modelDescriptor != null;
-          String modelPath = modelDescriptor.getModelFile().getAbsolutePath();
+          String modelPath = ((EditableSModelDescriptor) modelDescriptor).getModelFile().getAbsolutePath();
           assert projectHandler != null;
           projectHandler.createAspectMethod(modelPath, getNamespace(), getQueryMethodPrefix() + id, getQueryMethodReturnType(), getQueryMethodParameterList());
           for (Class cls : getImportedClasses()) {

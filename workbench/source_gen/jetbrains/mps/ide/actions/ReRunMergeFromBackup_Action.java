@@ -11,6 +11,7 @@ import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -24,6 +25,7 @@ import java.io.IOException;
 import jetbrains.mps.vcs.diff.ui.ModelDiffTool;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.generator.index.ModelDigestIndex;
+import jetbrains.mps.vfs.IFile;
 
 public class ReRunMergeFromBackup_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -48,7 +50,10 @@ public class ReRunMergeFromBackup_Action extends GeneratedAction {
     if (manager.getAllVersionedRoots().length == 0) {
       return false;
     }
-    VirtualFile file = VFileSystem.getFile(ReRunMergeFromBackup_Action.this.model.getModelFile());
+    if (!(ReRunMergeFromBackup_Action.this.model instanceof EditableSModelDescriptor)) {
+      return false;
+    }
+    VirtualFile file = VFileSystem.getFile(ReRunMergeFromBackup_Action.this.getModelFile());
     if (file == null) {
       return false;
     }
@@ -129,16 +134,20 @@ public class ReRunMergeFromBackup_Action extends GeneratedAction {
     if (mineModel == null) {
       return;
     }
-    VcsHelper.showMergeDialog(base, mineModel, repository, ReRunMergeFromBackup_Action.this.model.getModelFile(), ReRunMergeFromBackup_Action.this.project);
+    VcsHelper.showMergeDialog(base, mineModel, repository, ReRunMergeFromBackup_Action.this.getModelFile(), ReRunMergeFromBackup_Action.this.project);
   }
 
   private File[] getBackupFiles() {
-    return ModelUtils.findZipFileNameForModelFile(ReRunMergeFromBackup_Action.this.model.getModelFile().getPath());
+    return ModelUtils.findZipFileNameForModelFile(ReRunMergeFromBackup_Action.this.getModelFile().getPath());
   }
 
   private String getHash(SModel model) {
     byte[] currentBytes = ModelUtils.modelToBytes(model);
     return ModelDigestIndex.hash(currentBytes);
+  }
+
+  private IFile getModelFile() {
+    return ((EditableSModelDescriptor) ReRunMergeFromBackup_Action.this.model).getModelFile();
   }
 
   private SModel whichMineModel(SModel currentModel, SModel backUpModel) {

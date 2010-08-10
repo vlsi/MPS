@@ -15,10 +15,8 @@
  */
 package jetbrains.mps.findUsages;
 
-import com.intellij.ide.DataManager;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.module.Module;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.impl.cache.impl.id.FileTypeIdIndexer;
 import com.intellij.psi.impl.cache.impl.id.IdIndex;
 import com.intellij.psi.impl.cache.impl.id.IdIndexEntry;
@@ -30,16 +28,16 @@ import com.intellij.util.text.CharArrayUtil;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.workbench.MPSDataKeys;
-import org.jetbrains.annotations.NotNull;
 import org.apache.commons.lang.StringEscapeUtils;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
@@ -70,7 +68,7 @@ class FastFindUsagesManager extends FindUsagesManager {
     for (SModelDescriptor model : scope.getModelDescriptors()) {
       String taskName = ModelsProgressUtil.findInstancesModelTaskName(model);
       if (manageTasks) progress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_FIND_INSTANCES);
-      if (SModelRepository.getInstance().isChanged(model)) {
+      if ((model instanceof EditableSModelDescriptor) && SModelRepository.getInstance().isChanged(((EditableSModelDescriptor) model))) {
         result.addAll(new ModelFindOperations(model).findInstances(concept, scope));
       }
       if (progress.isCanceled()) {
@@ -94,7 +92,7 @@ class FastFindUsagesManager extends FindUsagesManager {
     for (SModelDescriptor model : scope.getModelDescriptors()) {
       String taskName = ModelsProgressUtil.findExactInstancesModelTaskName(model);
       if (manageTasks) progress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_FIND_EXACT_INSTANCES);
-      if (SModelRepository.getInstance().isChanged(model)) {
+      if ((model instanceof EditableSModelDescriptor) && SModelRepository.getInstance().isChanged(((EditableSModelDescriptor) model))) {
         result.addAll(new ModelFindOperations(model).findExactInstances(concept, scope));
       }
       if (progress.isCanceled()) {
@@ -135,9 +133,10 @@ class FastFindUsagesManager extends FindUsagesManager {
       result.addAll(findUsagesOfNodeInCache(node, scope));
     }
     for (SModelDescriptor sm : scope.getModelDescriptors()) {
-      if (SModelRepository.getInstance().isChanged(sm)) {
-        IFile modelFile = sm.getModelFile();
-        if (modelFile == null) continue;
+      if (!(sm instanceof EditableSModelDescriptor)) continue;
+      EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
+      if (SModelRepository.getInstance().isChanged(esm)) {
+        IFile modelFile = esm.getModelFile();
         sm.getSModel();
         result.addAll(new ModelFindOperations(sm).findUsages(nodes));
       }
@@ -166,8 +165,8 @@ class FastFindUsagesManager extends FindUsagesManager {
   private Set<VirtualFile> getScopeFiles(IScope scope) {
     final Set<VirtualFile> scopeFiles = new HashSet<VirtualFile>();
     for (SModelDescriptor sm : scope.getModelDescriptors()) {
-      IFile modelFile = sm.getModelFile();
-      if (modelFile == null) continue;
+      if (!(sm instanceof EditableSModelDescriptor)) continue;
+      IFile modelFile = ((EditableSModelDescriptor) sm).getModelFile();
       scopeFiles.add(modelFile.toVirtualFile());
     }
     return scopeFiles;
@@ -313,7 +312,7 @@ class FastFindUsagesManager extends FindUsagesManager {
           result[1] = i;
           return result;
         }
-        if (chars[i] == ':' && (i+1 < charsLength) && chars[i+1] >= '0' && chars[i+1] <= '9') {
+        if (chars[i] == ':' && (i + 1 < charsLength) && chars[i + 1] >= '0' && chars[i + 1] <= '9') {
           result[0] = i;
         }
         if (chars[i] == '\n') {

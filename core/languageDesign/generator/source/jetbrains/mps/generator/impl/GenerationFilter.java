@@ -5,7 +5,11 @@ import jetbrains.mps.generator.dependencies.*;
 import jetbrains.mps.generator.dependencies.DependenciesBuilder.NullDependenciesBuilder;
 import jetbrains.mps.generator.index.ModelDigestUtil;
 import jetbrains.mps.generator.plan.ConnectedComponentPartitioner;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -101,7 +105,7 @@ public class GenerationFilter {
       String oldHash = entry.getValue();
       if (oldHash == null) {
         // TODO hash for packaged models
-        if (!sm.isPackaged() && !SModelStereotype.isStubModelStereotype(sm.getStereotype())) {
+        if ((sm instanceof EditableSModelDescriptor) && !((EditableSModelDescriptor) sm).isPackaged()) {
           changedModels.add(modelReference);
         }
         continue;
