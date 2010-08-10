@@ -86,14 +86,7 @@ public interface SModelDescriptor {
 
   boolean hasModelCommandListener(@NotNull SModelCommandListener listener);
 
-  //------
-  //------
-
-
-
   //------todo get rid of
-
-  boolean isReadOnly();
 
   boolean isInitialized();
 

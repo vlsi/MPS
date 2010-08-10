@@ -20,8 +20,4 @@ public abstract class UtilModelDescriptor extends BaseSModelDescriptor{
   public boolean isInitialized() {
     return mySModel != null;
   }
-
-  public boolean isReadOnly() {
-    return false;
-  }  
 }

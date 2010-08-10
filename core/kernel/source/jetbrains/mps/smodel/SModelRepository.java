@@ -395,7 +395,7 @@ public class SModelRepository implements ApplicationComponent {
       if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) continue;
 
 
-      if (sm.getSModel().updateSModelReferences() && (sm instanceof EditableSModelDescriptor) && !sm.isReadOnly()) {
+      if (sm.getSModel().updateSModelReferences() && (sm instanceof EditableSModelDescriptor)) {
         markChanged(((EditableSModelDescriptor) sm), true);
       }
     }

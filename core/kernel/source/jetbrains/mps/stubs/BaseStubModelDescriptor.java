@@ -125,10 +125,4 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptor implemen
     }
     return model;
   }
-
-  //------------common model descriptor stuff------------
-
-  public boolean isReadOnly() {
-    return true;
-  }
 }

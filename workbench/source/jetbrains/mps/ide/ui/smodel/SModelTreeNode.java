@@ -119,7 +119,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     myLabel = label;
     myNodesCondition = condition;
     myCountAdditionalNamePart = countNamePart;
-    if (getSModelDescriptor() != null && !getSModelDescriptor().isReadOnly()) {
+    if (getSModelDescriptor() instanceof EditableSModelDescriptor) {
       myTreeUpdater = new MySNodeTreeUpdater(operationContext.getProject(), this);
       myTreeUpdater.setDependencyRecorder(myDependencyRecorder);
     }

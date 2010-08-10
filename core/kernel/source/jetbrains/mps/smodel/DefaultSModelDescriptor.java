@@ -178,10 +178,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     updateLastChange();
   }
 
-  public boolean isReadOnly() {
-    return false;
-  }
-
   public long fileTimestamp() {
     IFile file = getModelFile();
     if (!file.exists()) return -1;
