@@ -206,12 +206,7 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
     }
 
     SModelFqName fqName = new SModelFqName(longName, stereotype);
-    SModelDescriptor result = new EditorTestModelDescriptor(this, fqName, longName){
-
-      protected SModel loadModel() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
-      }
-    };
+    SModelDescriptor result = new EditorTestModelDescriptor(this, fqName, longName);
 
     myModels.put(result.getSModelReference().getSModelFqName(), result);
     invalidateCaches();
