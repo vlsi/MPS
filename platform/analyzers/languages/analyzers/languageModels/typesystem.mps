@@ -28,10 +28,11 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
   <languageAspect modelUID="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.analyzers.structure)" version="0" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="4" />
+  <maxImportIndex value="5" />
   <import index="1" modelUID="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.analyzers.structure)" version="0" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.lang.dataFlow.framework(jetbrains.mps.lang.dataFlow.framework@java_stub)" version="-1" />
   <import index="4" modelUID="f:java_stub#jetbrains.mps.lang.dataFlow.framework.instructions(jetbrains.mps.lang.dataFlow.framework.instructions@java_stub)" version="-1" />
+  <import index="5" modelUID="r:fc94574f-a075-45e6-9927-48e7e87153e6(jetbrains.mps.analyzers.runtime.framework)" version="-1" />
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="9177062368042317188">
     <property name="name:3" value="typeof_AnalyzerFunParameterProgramState" />
     <property name="package:3" value="Analyzer.AnalyzerFunctions" />
@@ -247,7 +248,7 @@
         <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="4072414341992344846">
           <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="4072414341992344847">
             <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4072414341992344849">
-              <link role="classifier:3" targetNodeId="2.~AnalyzerRunner" resolveInfo="AnalyzerRunner" />
+              <link role="classifier:3" targetNodeId="5.178770917832659559" resolveInfo="CustomAnalyzerRunner" />
               <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.Type:3" id="4072414341992344850">
                 <node role="_attr_$attribute:3" type="jetbrains.mps.lang.quotation.structure.Antiquotation:0" id="4072414341992344851">
                   <node role="expression:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4072414341992346223">
