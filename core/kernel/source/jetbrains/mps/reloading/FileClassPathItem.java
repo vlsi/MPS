@@ -15,12 +15,14 @@
  */
 package jetbrains.mps.reloading;
 
+import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
+import org.objectweb.asm.ClassReader;
 
 import java.io.File;
 import java.io.IOException;
@@ -76,6 +78,24 @@ public class FileClassPathItem extends RealClassPathItem {
       }
 
       return result;
+    } catch (IOException e) {
+      return null;
+    }
+  }
+
+  public ClassifierKind getClassifierKind(String name) {
+    String path = myClassPath + File.separatorChar + name.replace('.', File.separatorChar) + MPSExtentions.DOT_CLASSFILE;
+    IFile file = FileSystem.getFile(path);
+    try {
+      InputStream inp = null;
+      try {
+        inp = file.openInputStream();
+        return ClassifierKind.getClassifierKind(inp);
+      } finally {
+        if (inp != null) {
+          inp.close();
+        }
+      }
     } catch (IOException e) {
       return null;
     }

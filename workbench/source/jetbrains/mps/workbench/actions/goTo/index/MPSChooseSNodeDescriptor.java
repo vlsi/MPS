@@ -31,6 +31,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -44,7 +45,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
   }
 
   public SNodeDescriptor[] find(final IScope scope) {
-    final Set<SNodeDescriptor> keys = new HashSet<SNodeDescriptor>();
+    final List<SNodeDescriptor> keys = new ArrayList<SNodeDescriptor>();
 
     final ID<Integer, List<SNodeDescriptor>> indexName = myIndex.getName();
     final ModelConstraintsManager cm = ModelConstraintsManager.getInstance();
@@ -105,7 +106,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
     return keys.toArray(new SNodeDescriptor[keys.size()]);
   }
 
-  private void addJavaStubs(Set<SNodeDescriptor> result, IScope scope) {
+  private void addJavaStubs(List<SNodeDescriptor> result, IScope scope) {
     for (IModule m : scope.getVisibleModules()) {
       result.addAll(StubsNodeDescriptorsCache.getInstance().getSNodeDescritpors(m));
     }
