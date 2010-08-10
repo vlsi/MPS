@@ -102,12 +102,4 @@ public interface SModelDescriptor {
 
   @Deprecated
   Set<IModule> getModules();
-
-  //--------------user objects (todo unused!)-------------
-
-  Object getUserObject(String key);
-
-  void putUserObject(String key, Object value);
-
-  void removeUserObject(String key);
 }

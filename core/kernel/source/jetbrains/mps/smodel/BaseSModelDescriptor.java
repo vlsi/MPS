@@ -34,7 +34,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   private final Object myLoadingLock = new Object();
 
   protected SModelReference myModelReference;
-  protected Map<String, Object> myUserObjects;
   protected IModelRootManager myModelRootManager;
 
   //it should be possible to add listeners from any thread so we use lock here
@@ -102,29 +101,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     return myModelReference.getStereotype();
   }
 
-  public Object getUserObject(String key) {
-    return myUserObjects == null ? null : myUserObjects.get(key);
-  }
-
-  public void putUserObject(String key, Object value) {
-    if (myUserObjects == null) {
-      myUserObjects = new HashMap<String, Object>();
-    }
-    myUserObjects.put(key, value);
-  }
-
-  public void removeUserObject(String key) {
-    if (myUserObjects == null) return;
-    myUserObjects.remove(key);
-  }
-
-  private void clearUserObjects() {
-    if (myUserObjects != null) {
-      myUserObjects.clear();
-      myUserObjects = null;
-    }
-  }
-
   public Set<IModule> getModules() {
     return SModelRepository.getInstance().getModules(this);
   }
@@ -183,7 +159,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   public void dispose() {
     ModelAccess.assertLegalWrite();
     clearListeners();
-    clearUserObjects();
   }
 
   public void addModelListener(@NotNull SModelListener listener) {
