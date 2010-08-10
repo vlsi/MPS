@@ -99,9 +99,6 @@ public interface SModelDescriptor {
 
   boolean isInitialized();
 
-  boolean isTransient();
-
-
 
   @Deprecated
   Set<IModule> getModules();

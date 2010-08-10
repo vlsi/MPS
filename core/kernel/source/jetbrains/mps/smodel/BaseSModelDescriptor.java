@@ -54,10 +54,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     }
   }
 
-  public boolean isTransient() {
-    return this instanceof TransientModelDescriptor;
-  }
-
   public SModel getSModel() {
     // ModelAccess.assertLegalRead();
 
