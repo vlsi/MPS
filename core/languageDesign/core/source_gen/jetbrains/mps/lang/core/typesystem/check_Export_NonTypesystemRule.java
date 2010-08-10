@@ -6,93 +6,61 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.core.behavior.ExportScope_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.ReferenceErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModel;
 
 public class check_Export_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_Export_NonTypesystemRule() {
   }
 
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext) {
+    String namespace = ExportScope_Behavior.getNamespace_2565736246230026649(node);
     // getModuleNamespace() doesn't work for transient models 
-    String namespace = check_fy6mn3_a0b0a(check_fy6mn3_a0a1a0(typeCheckingContext.getOperationContext()));
     if (namespace == null) {
       return;
     }
-    // check instance of unexported concept 
-    SNode exp = SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getAncestors(((SNode) SNodeOperations.getConceptDeclaration(node)), null, true)).findFirst(new IWhereFilter<SNode>() {
-      public boolean accept(SNode n) {
-        return (SLinkOperations.getTarget(n, AttributesRolesUtil.childRoleFromAttributeRole("export"), true) != null);
-      }
-    }), AttributesRolesUtil.childRoleFromAttributeRole("export"), true);
-    if ((exp == null)) {
-      // for concepts default export is public 
-    } else if (namespace.equals(check_fy6mn3_a0a0f0a(check_fy6mn3_a0a0a5a0(check_fy6mn3_a0a0a0f0a(SNodeOperations.getModel(SNodeOperations.getConceptDeclaration(node))))))) {
-      // the same module 
-    } else if (SNodeOperations.isInstanceOf(exp, "jetbrains.mps.lang.core.structure.ExportScopeModule")) {
+    // check concept of the node 
+    if (!(ExportScope_Behavior.checkExport_2565736246230031479(true, SNodeOperations.getConceptDeclaration(node), namespace))) {
       {
         BaseIntentionProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "usage of nonpublic API", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "4075196924244387032", intentionProvider, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "usage of nonpublic API", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "402007580867616197", intentionProvider, errorTarget);
       }
-    } else if (SNodeOperations.isInstanceOf(exp, "jetbrains.mps.lang.core.structure.ExportScopeNamespace") && !(namespace.startsWith(SPropertyOperations.getString(SNodeOperations.cast(exp, "jetbrains.mps.lang.core.structure.ExportScopeNamespace"), "namespace")))) {
+    }
+    // just check this to understand situation 
+    if (ExportScope_Behavior.getNamespace_2565736246230026649(SNodeOperations.getConceptDeclaration(node)) == null) {
       {
         BaseIntentionProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "usage of nonpublic API", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "4075196924244387095", intentionProvider, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "no target namespace", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "402007580867616297", intentionProvider, errorTarget);
       }
     }
     // check references 
     for (SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(node))) {
-      SNode target = SLinkOperations.getTargetNode(ref);
-      String targNamespace = check_fy6mn3_a0b0h0a(check_fy6mn3_a0a1a7a0(check_fy6mn3_a0a0b0h0a(SNodeOperations.getModel(target))));
-      if (targNamespace == null || targNamespace.equals(namespace)) {
-        continue;
+      if (!(ExportScope_Behavior.checkExport_2565736246230031479(false, SLinkOperations.getTargetNode(ref), namespace))) {
+        {
+          BaseIntentionProvider intentionProvider = null;
+          IErrorTarget errorTarget = new NodeErrorTarget();
+          errorTarget = new ReferenceErrorTarget(SLinkOperations.getRole(ref));
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "usage of nonpublic API", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "402007580867616261", intentionProvider, errorTarget);
+        }
       }
-      exp = SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getAncestors(SLinkOperations.getTargetNode(ref), null, true)).findFirst(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return (SLinkOperations.getTarget(it, AttributesRolesUtil.childRoleFromAttributeRole("export"), true) != null);
-        }
-      }), AttributesRolesUtil.childRoleFromAttributeRole("export"), true);
-      if ((exp == null)) {
-        // for references default export is module if the namespace is jetbrains.mps 
-        if (targNamespace.startsWith("jetbrains.mps")) {
-          {
-            BaseIntentionProvider intentionProvider = null;
-            IErrorTarget errorTarget = new NodeErrorTarget();
-            errorTarget = new ReferenceErrorTarget(SLinkOperations.getRole(ref));
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "usage of nonpublic API", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "5425021671150237358", intentionProvider, errorTarget);
-          }
-        }
-      } else if (SNodeOperations.isInstanceOf(exp, "jetbrains.mps.lang.core.structure.ExportScopeModule")) {
+      // just check this to understand situation 
+      if (ExportScope_Behavior.getNamespace_2565736246230026649(SLinkOperations.getTargetNode(ref)) == null) {
         {
           BaseIntentionProvider intentionProvider = null;
           IErrorTarget errorTarget = new NodeErrorTarget();
           errorTarget = new ReferenceErrorTarget(SLinkOperations.getRole(ref));
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "usage of nonpublic API", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "4075196924244387112", intentionProvider, errorTarget);
-        }
-      } else if (SNodeOperations.isInstanceOf(exp, "jetbrains.mps.lang.core.structure.ExportScopeNamespace") && !(targNamespace.startsWith(SPropertyOperations.getString(SNodeOperations.cast(exp, "jetbrains.mps.lang.core.structure.ExportScopeNamespace"), "namespace")))) {
-        {
-          BaseIntentionProvider intentionProvider = null;
-          IErrorTarget errorTarget = new NodeErrorTarget();
-          errorTarget = new ReferenceErrorTarget(SLinkOperations.getRole(ref));
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "usage of nonpublic API", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "4075196924244387149", intentionProvider, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "no target namespace", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "4075196924244459916", intentionProvider, errorTarget);
         }
       }
     }
@@ -108,61 +76,5 @@ public class check_Export_NonTypesystemRule extends AbstractNonTypesystemRule_Ru
 
   public boolean overrides() {
     return false;
-  }
-
-  private static String check_fy6mn3_a0b0a(IModule p) {
-    if (null == p) {
-      return null;
-    }
-    return p.getModuleNamespace();
-  }
-
-  private static IModule check_fy6mn3_a0a1a0(IOperationContext p) {
-    if (null == p) {
-      return null;
-    }
-    return p.getModule();
-  }
-
-  private static String check_fy6mn3_a0a0f0a(IModule p) {
-    if (null == p) {
-      return null;
-    }
-    return p.getModuleNamespace();
-  }
-
-  private static IModule check_fy6mn3_a0a0a5a0(SModelDescriptor p) {
-    if (null == p) {
-      return null;
-    }
-    return p.getModule();
-  }
-
-  private static SModelDescriptor check_fy6mn3_a0a0a0f0a(SModel p) {
-    if (null == p) {
-      return null;
-    }
-    return p.getModelDescriptor();
-  }
-
-  private static String check_fy6mn3_a0b0h0a(IModule p) {
-    if (null == p) {
-      return null;
-    }
-    return p.getModuleNamespace();
-  }
-
-  private static IModule check_fy6mn3_a0a1a7a0(SModelDescriptor p) {
-    if (null == p) {
-      return null;
-    }
-    return p.getModule();
-  }
-
-  private static SModelDescriptor check_fy6mn3_a0a0b0h0a(SModel p) {
-    if (null == p) {
-      return null;
-    }
-    return p.getModelDescriptor();
   }
 }

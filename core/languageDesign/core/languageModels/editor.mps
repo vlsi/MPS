@@ -113,16 +113,5 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="5425021671150136577">
-    <link role="conceptDeclaration:32" targetNodeId="1.5425021671150136555:0" resolveInfo="ExportScope" />
-    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="5425021671150136579">
-      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="5425021671150136580" />
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="5425021671150136583">
-        <property name="text:32" value="@export" />
-        <link role="actionMap:32" targetNodeId="2565736246230068875" resolveInfo="DeleteExport" />
-      </node>
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell:32" id="5425021671150136585" />
-    </node>
-  </node>
 </model>
 
