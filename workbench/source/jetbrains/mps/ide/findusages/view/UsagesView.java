@@ -136,7 +136,7 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
     GeneratorManager manager = myProject.getComponent(GeneratorManager.class);
     List<EditableSModelDescriptor> models = new ArrayList<EditableSModelDescriptor>();
     for (SModelDescriptor modelDescriptor : myTreeComponent.getIncludedModels()) {
-      if (!(modelDescriptor instanceof TransientModelDescriptor) && (modelDescriptor instanceof EditableSModelDescriptor)) {
+      if (modelDescriptor instanceof EditableSModelDescriptor) {
         models.add((EditableSModelDescriptor) modelDescriptor);
       }
     }

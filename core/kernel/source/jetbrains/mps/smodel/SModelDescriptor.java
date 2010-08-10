@@ -38,10 +38,6 @@ public interface SModelDescriptor {
 
   //------
 
-  boolean isEmpty();
-
-  //------
-
   IModelRootManager getModelRootManager();
 
   SModelReference getSModelReference();
@@ -62,6 +58,8 @@ public interface SModelDescriptor {
 
   //------
 
+  boolean isEmpty();
+  
   void rename(SModelFqName newModelFqName, boolean changeFile);
 
   SModelDescriptor resolveModel(SModelReference reference);
