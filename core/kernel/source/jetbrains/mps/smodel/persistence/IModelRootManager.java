@@ -41,9 +41,6 @@ public interface IModelRootManager {
   SModel saveModel(@NotNull SModelDescriptor modelDescriptor, boolean canUpgrade);
 
   @Nullable
-  SModel refresh(@NotNull SModelDescriptor modelDescriptor);
-
-  @Nullable
   Map<String, String> loadMetadata(@NotNull SModelDescriptor modelDescriptor);
 
   void saveMetadata(@NotNull SModelDescriptor modelDescriptor);

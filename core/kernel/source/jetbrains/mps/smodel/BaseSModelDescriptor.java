@@ -71,6 +71,16 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     return result;
   }
 
+  public void refresh() {
+    ModelAccess.assertLegalWrite();
+
+    if (mySModel == null) return;
+    if (!isInitialized()) return;
+
+    mySModel.clearAdaptersAndUserObjects();
+    mySModel.refreshRefactoringHistory();
+  }
+
   protected abstract SModel loadModel();
 
   public IModelRootManager getModelRootManager() {

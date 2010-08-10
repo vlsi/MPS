@@ -104,18 +104,6 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptor implemen
     return mySModel != null && myModelRootManager != null;
   }
 
-  public void refresh() {
-    ModelAccess.assertLegalWrite();
-
-    if (!isInitialized()) return;
-
-    if (!myNeedsReloading && isInitialized()) {
-      for (SNode node : getSModel().getAllNodesWithIds()) {
-        node.removeAllUserObjects();
-      }
-    }
-  }
-
   protected SModel loadModel() {
     SModel model = myModelRootManager.loadModel(this);
     try {

@@ -134,12 +134,6 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
     return null;
   }
 
-  @Nullable
-  public final SModel refresh(@NotNull SModelDescriptor modelDescriptor) {
-    //actually, this is not needed
-    return null;
-  }
-
   public final void dispose() {
     for (BaseStubModelDescriptor sm : myDescriptorsWithListener) {
       sm.removeModelUpdater(myInitializationListener);

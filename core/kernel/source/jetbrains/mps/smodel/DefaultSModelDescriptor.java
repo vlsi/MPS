@@ -407,13 +407,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     return mySModel != null;
   }
 
-  public void refresh() {
-    ModelAccess.assertLegalWrite();
-
-    if (!isInitialized()) return;
-    replaceModel(myModelRootManager.refresh(this));
-  }
-
   public boolean isPackaged() {
     return getModelFile() instanceof JarFileEntryFile;
   }
