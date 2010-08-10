@@ -200,6 +200,24 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
     return result;
   }
 
+  public SModelDescriptor createTestModel(final String longName, String stereotype) {
+    while (!isValidName(longName, stereotype)) {
+      stereotype += "_";
+    }
+
+    SModelFqName fqName = new SModelFqName(longName, stereotype);
+    SModelDescriptor result = new EditorTestModelDescriptor(this, fqName, longName){
+
+      protected SModel loadModel() {
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
+      }
+    };
+
+    myModels.put(result.getSModelReference().getSModelFqName(), result);
+    invalidateCaches();
+    return result;
+  }
+
   public List<String> validate() {
     return Collections.emptyList();
   }
