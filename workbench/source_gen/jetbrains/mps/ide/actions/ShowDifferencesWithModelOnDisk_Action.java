@@ -37,7 +37,6 @@ public class ShowDifferencesWithModelOnDisk_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    // todo the second condition could be deleted when transient models will not be editable 
     return ShowDifferencesWithModelOnDisk_Action.this.modelDescriptor instanceof EditableSModelDescriptor;
   }
 

@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -39,7 +40,7 @@ public class AddModelImportByRoot_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return !(AddModelImportByRoot_Action.this.model.isReadOnly());
+    return AddModelImportByRoot_Action.this.model instanceof EditableSModelDescriptor;
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
