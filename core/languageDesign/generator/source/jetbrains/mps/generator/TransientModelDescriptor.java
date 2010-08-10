@@ -7,12 +7,12 @@ import jetbrains.mps.smodel.persistence.IModelRootManager;
 import java.util.Collections;
 import java.util.Set;
 
-public class TransientModelDescriptor extends BaseSModelDescriptor {
+public class TransientModelDescriptor extends UtilModelDescriptor {
   private final String myLongName;
   private TransientModelsModule myTransientModelsModule;
 
   public TransientModelDescriptor(TransientModelsModule transientModelsModule, SModelFqName fqName, String longName) {
-    super(IModelRootManager.NULL_MANAGER, new SModelReference(fqName, SModelId.generate()), true);
+    super(new SModelReference(fqName, SModelId.generate()));
     myTransientModelsModule = transientModelsModule;
     myLongName = longName;
   }
@@ -25,22 +25,8 @@ public class TransientModelDescriptor extends BaseSModelDescriptor {
     return myTransientModelsModule;
   }
 
-  public void refresh() {
-    ModelAccess.assertLegalWrite();
-
-    myModelRootManager.refresh(this);
-  }
-
   public Set<IModule> getModules() {
     return Collections.<IModule>singleton(myTransientModelsModule);
-  }
-
-  public boolean isReadOnly() {
-    return false;
-  }
-
-  public boolean isInitialized() {
-    return mySModel != null;
   }
 
   public SModelDescriptor resolveModel(SModelReference reference) {

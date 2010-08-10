@@ -16,6 +16,7 @@
 package jetbrains.mps.project;
 
 import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.generator.UtilModelDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 
@@ -42,19 +43,19 @@ public class AuxilaryRuntimeModel implements ModelOwner {
   private synchronized SModelDescriptor getDescriptor_internal() {
     SModelDescriptor modelDescriptor = (SModelRepository.getInstance().getModelDescriptor(MY_MODEL_REFERENCE));
     if (modelDescriptor == null) {
-      modelDescriptor = new DefaultSModelDescriptor(IModelRootManager.NULL_MANAGER, null, MY_MODEL_REFERENCE) {
-        protected SModel loadModel() {
-          SModel model = new SModel(getSModelReference());
-//          model.setLoading(true);
-          return model;
-        }
-
-        public void save() {
-          //do-nothing
-        }
-      };
+      modelDescriptor = new AuxModelDescriptor();
       SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, this);
     }
     return modelDescriptor;
+  }
+
+  private static class AuxModelDescriptor extends UtilModelDescriptor {
+    public AuxModelDescriptor() {
+      super(AuxilaryRuntimeModel.MY_MODEL_REFERENCE);
+    }
+
+    protected SModel loadModel() {
+      return new SModel(getSModelReference());
+    }
   }
 }
