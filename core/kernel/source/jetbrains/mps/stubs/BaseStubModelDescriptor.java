@@ -93,16 +93,16 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptor implemen
     return myManagerClass;
   }
 
-  public boolean isInitialized() {
-    return mySModel != null && myModelRootManager != null;
-  }
-
   private void updateManagerId() {
     if (myModelRootManager == null) return;
     myManagerClass = myModelRootManager.getClass().getName();
   }
 
-  //------------common reloading stuff-------------------
+  //------------common descriptor stuff-------------------
+
+  public boolean isInitialized() {
+    return mySModel != null && myModelRootManager != null;
+  }
 
   public void refresh() {
     ModelAccess.assertLegalWrite();
