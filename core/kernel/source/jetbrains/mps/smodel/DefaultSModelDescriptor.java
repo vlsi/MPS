@@ -403,10 +403,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     return fileTimestamp() != myDiskTimestamp;
   }
 
-  public boolean isInitialized() {
-    return mySModel != null;
-  }
-
   public boolean isPackaged() {
     return getModelFile() instanceof JarFileEntryFile;
   }

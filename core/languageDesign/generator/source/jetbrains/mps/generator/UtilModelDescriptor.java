@@ -25,8 +25,4 @@ public abstract class UtilModelDescriptor extends BaseSModelDescriptor{
   protected UtilModelDescriptor(@NotNull SModelReference modelReference) {
     super(IModelRootManager.NULL_MANAGER, modelReference, false);
   }
-
-  public boolean isInitialized() {
-    return mySModel != null;
-  }
 }

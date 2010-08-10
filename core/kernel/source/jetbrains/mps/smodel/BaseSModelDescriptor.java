@@ -57,7 +57,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     boolean fireInitialized = false;
 
     synchronized (myLoadingLock) {
-      if (mySModel == null) {
+      if (!isInitialized()) {
         SModel model = loadModel();
         model.setModelDescritor(this);
         mySModel = model;
@@ -73,8 +73,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
 
   public void refresh() {
     ModelAccess.assertLegalWrite();
-
-    if (mySModel == null) return;
     if (!isInitialized()) return;
 
     mySModel.clearAdaptersAndUserObjects();
@@ -82,6 +80,10 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   }
 
   protected abstract SModel loadModel();
+
+  public boolean isInitialized() {
+    return mySModel != null;
+  }
 
   public IModelRootManager getModelRootManager() {
     return myModelRootManager;

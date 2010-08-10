@@ -101,7 +101,7 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptor implemen
   //------------common descriptor stuff-------------------
 
   public boolean isInitialized() {
-    return mySModel != null && myModelRootManager != null;
+    return super.isInitialized() && myModelRootManager != null;
   }
 
   protected SModel loadModel() {
