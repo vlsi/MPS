@@ -9,6 +9,7 @@ import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.workbench.MPSDataKeys;
 
 public class SaveModel_Action extends GeneratedAction {
@@ -28,9 +29,16 @@ public class SaveModel_Action extends GeneratedAction {
     return "";
   }
 
+  public boolean isApplicable(AnActionEvent event) {
+    return SaveModel_Action.this.model instanceof EditableSModelDescriptor;
+  }
+
   public void doUpdate(@NotNull AnActionEvent event) {
     try {
-      this.enable(event.getPresentation());
+      {
+        boolean enabled = this.isApplicable(event);
+        this.setEnabledState(event.getPresentation(), enabled);
+      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "SaveModel", t);
@@ -57,7 +65,7 @@ public class SaveModel_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      SaveModel_Action.this.model.save();
+      ((EditableSModelDescriptor) SaveModel_Action.this.model).save();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "SaveModel", t);

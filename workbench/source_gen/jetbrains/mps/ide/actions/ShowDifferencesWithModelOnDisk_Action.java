@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import java.awt.Frame;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
@@ -36,7 +37,8 @@ public class ShowDifferencesWithModelOnDisk_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return (ShowDifferencesWithModelOnDisk_Action.this.modelDescriptor != null) && !(ShowDifferencesWithModelOnDisk_Action.this.modelDescriptor.isTransient());
+    // todo the second condition could be deleted when transient models will not be editable 
+    return ShowDifferencesWithModelOnDisk_Action.this.modelDescriptor instanceof EditableSModelDescriptor && !(ShowDifferencesWithModelOnDisk_Action.this.modelDescriptor.isTransient());
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
@@ -77,7 +79,7 @@ public class ShowDifferencesWithModelOnDisk_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final SModel memory = ShowDifferencesWithModelOnDisk_Action.this.modelDescriptor.getSModel();
-      final SModel disk = ModelPersistence.readModel(ShowDifferencesWithModelOnDisk_Action.this.modelDescriptor.getModelFile());
+      final SModel disk = ModelPersistence.readModel(((EditableSModelDescriptor) ShowDifferencesWithModelOnDisk_Action.this.modelDescriptor).getModelFile());
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
           String[] titles = new String[]{"Disk", "Memory"};
