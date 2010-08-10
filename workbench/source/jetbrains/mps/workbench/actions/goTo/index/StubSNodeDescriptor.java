@@ -23,43 +23,43 @@ import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
+import jetbrains.mps.util.InternUtil;
 
 public class StubSNodeDescriptor extends SNodeDescriptor {
-private final String myCls;
-private final String myPack;
-private final IClassPathItem myItem;
+  private final String myCls;
+  private final String myPack;
+  private final IClassPathItem myItem;
 
-public StubSNodeDescriptor(String cls, String pack, IClassPathItem item) {
-  super(cls, null, 0, 0, -1);
-  myCls = cls;
-  myPack = pack;
-  myItem = item;
-}
-
-protected SModelReference calculateModelReference() {
-  return StubHelper.uidForPackageInStubs(myPack);
-}
-
-public String getConceptFqName() {
-  if (myConceptFqName==null){
-    ClassifierKind kind = myItem.getClassifierKind(("".equals(myPack) ?
-      myCls :
-      myPack + "." + myCls
-    ));
-    if (kind == ClassifierKind.CLASS) {
-      myConceptFqName =  ClassConcept.concept;
-    } else if (kind == ClassifierKind.INTERFACE) {
-      myConceptFqName =  Interface.concept;
-    } else if (kind == ClassifierKind.ANNOTATIONS) {
-      myConceptFqName =  Annotation.concept;
-    } else if (kind == ClassifierKind.ENUM) {
-      return EnumClass.concept;
-    } else {
-      myConceptFqName =  ClassConcept.concept;
-    }
-
-
+  public StubSNodeDescriptor(String cls, String pack, IClassPathItem item) {
+    super(cls, null, 0, 0, -1);
+    myCls = cls;
+    myPack = pack;
+    myItem = item;
   }
-  return myConceptFqName;
-}
+
+  protected SModelReference calculateModelReference() {
+    return StubHelper.uidForPackageInStubs(myPack);
+  }
+
+  public String getConceptFqName() {
+    if (myConceptFqName == null) {
+      ClassifierKind kind = myItem.getClassifierKind(("".equals(myPack) ?
+        myCls :
+        myPack + "." + myCls
+      ));
+      if (kind == ClassifierKind.CLASS) {
+        myConceptFqName = ClassConcept.concept;
+      } else if (kind == ClassifierKind.INTERFACE) {
+        myConceptFqName = Interface.concept;
+      } else if (kind == ClassifierKind.ANNOTATIONS) {
+        myConceptFqName = Annotation.concept;
+      } else if (kind == ClassifierKind.ENUM) {
+        return EnumClass.concept;
+      } else {
+        myConceptFqName = ClassConcept.concept;
+      }
+      myConceptFqName = InternUtil.intern(myConceptFqName);
+    }
+    return myConceptFqName;
+  }
 }
