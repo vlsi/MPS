@@ -18,6 +18,7 @@ package jetbrains.mps.project.listener;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
 public class LanguageAspectCreationListener extends ModelCreationListener {
   public boolean isApplicable(SModelDescriptor m) {
@@ -25,6 +26,7 @@ public class LanguageAspectCreationListener extends ModelCreationListener {
   }
 
   public void onCreate(final SModelDescriptor model) {
+    final EditableSModelDescriptor emd = ((EditableSModelDescriptor) model);
     Language language = (Language) model.getModule();
     LanguageAspect aspect = language.getAspectForModel(model);
 
@@ -33,11 +35,11 @@ public class LanguageAspectCreationListener extends ModelCreationListener {
     }
 
     if (ThreadUtils.isEventDispatchThread()) {
-      model.save();
+      emd.save();
     } else {
       ModelAccess.instance().runCommandInEDT(new Runnable() {
         public void run() {
-          model.save();
+          emd.save();
         }
       });
     }

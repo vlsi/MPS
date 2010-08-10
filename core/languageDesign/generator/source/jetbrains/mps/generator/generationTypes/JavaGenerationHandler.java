@@ -50,10 +50,9 @@ import java.util.Set;
  * Evgeny Gryaznov, Jan 21, 2010
  */
 public class JavaGenerationHandler extends GenerationHandlerBase {
-
   @Override
   public boolean canHandle(SModelDescriptor inputModel) {
-    return SModelStereotype.isUserModel(inputModel) && !inputModel.isPackaged();
+    return SModelStereotype.isUserModel(inputModel);
   }
 
   @Override

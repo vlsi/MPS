@@ -38,11 +38,7 @@ public interface SModelDescriptor {
 
   //------
 
-  boolean isReadOnly();
-
   boolean isEmpty();
-
-  boolean isTransient();
 
   //------
 
@@ -94,9 +90,18 @@ public interface SModelDescriptor {
 
   //------
   //------
+
+
+
   //------todo get rid of
 
+  boolean isReadOnly();
+
   boolean isInitialized();
+
+  boolean isTransient();
+
+  
 
   @Deprecated
   Set<IModule> getModules();

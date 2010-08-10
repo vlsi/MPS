@@ -131,7 +131,7 @@ public class SModelRepository implements ApplicationComponent {
   /**
    * do not call this method unless you do it from some ModelRootManager
    */
-  public void createNewModel(SModelDescriptor modelDescriptor, ModelOwner owner) {
+  public void createNewModel(EditableSModelDescriptor modelDescriptor, ModelOwner owner) {
     ModelAccess.assertLegalWrite();
 
     registerModelDescriptor(modelDescriptor, owner);
@@ -197,21 +197,23 @@ public class SModelRepository implements ApplicationComponent {
       myFqNameToModelDescriptorMap.put(modelReference.getSModelFqName(), modelDescriptor);
 
       myModelDescriptors.add(modelDescriptor);
-      addModelToFileCache(modelDescriptor);
+      if (modelDescriptor instanceof EditableSModelDescriptor) {
+        addModelToFileCache(((EditableSModelDescriptor) modelDescriptor));
+      }
       myModelsWithNoOwners.remove(modelDescriptor);
       addListeners(modelDescriptor);
     }
     fireModelAdded(modelDescriptor);
   }
 
-  public void unRegisterModelDescriptor(SModelDescriptor modelDescriptor, ModelOwner owner) {
+  public void unRegisterModelDescriptor(SModelDescriptor md, ModelOwner owner) {
     synchronized (myModelsLock) {
-      myModelsToOwners.removeLink(modelDescriptor, owner);
-      if (!hasOwners(modelDescriptor)) {
-        myModelsWithNoOwners.add(modelDescriptor);
+      myModelsToOwners.removeLink(md, owner);
+      if (!hasOwners(md)) {
+        myModelsWithNoOwners.add(md);
       }
     }
-    fireModelOwnerRemoved(modelDescriptor, owner);
+    fireModelOwnerRemoved(md, owner);
   }
 
   public void unRegisterModelDescriptors(ModelOwner owner) {
@@ -220,26 +222,28 @@ public class SModelRepository implements ApplicationComponent {
     }
   }
 
-  public void removeModelDescriptor(@NotNull SModelDescriptor modelDescriptor) {
+  public void removeModelDescriptor(@NotNull SModelDescriptor md) {
     ModelAccess.assertLegalWrite();
 
-    fireBeforeModelRemoved(modelDescriptor);
+    fireBeforeModelRemoved(md);
 
-    myModelsToOwners.clearFirst(modelDescriptor);
+    myModelsToOwners.clearFirst(md);
 
-    myModelDescriptors.remove(modelDescriptor);
-    boolean result = removeModelFromFileCache(modelDescriptor);
-    LOG.assertLog(result, "model " + modelDescriptor + " do not have a path in file cache");
-    if (modelDescriptor.getSModelReference().getSModelId() != null) {
-      myIdToModelDescriptorMap.remove(modelDescriptor.getSModelReference().getSModelId());
+    myModelDescriptors.remove(md);
+    if (md instanceof EditableSModelDescriptor) {
+      boolean result = removeModelFromFileCache(((EditableSModelDescriptor) md));
+      LOG.assertLog(result, "model " + md + " do not have a path in file cache");
     }
-    myFqNameToModelDescriptorMap.remove(modelDescriptor.getSModelReference().getSModelFqName());
+    if (md.getSModelReference().getSModelId() != null) {
+      myIdToModelDescriptorMap.remove(md.getSModelReference().getSModelId());
+    }
+    myFqNameToModelDescriptorMap.remove(md.getSModelReference().getSModelFqName());
 
-    myModelsWithNoOwners.remove(modelDescriptor);
+    myModelsWithNoOwners.remove(md);
 
-    removeListeners(modelDescriptor);
-    fireModelRemoved(modelDescriptor);
-    modelDescriptor.dispose();
+    removeListeners(md);
+    fireModelRemoved(md);
+    md.dispose();
   }
 
   private void addListeners(SModelDescriptor modelDescriptor) {
@@ -320,8 +324,8 @@ public class SModelRepository implements ApplicationComponent {
 
   private void markChanged(SModel model, boolean changed) {
     SModelDescriptor modelDescriptor = getModelDescriptor(model.getSModelReference());
-    if (modelDescriptor != null) { //i.e project model
-      markChanged(modelDescriptor, changed);
+    if (modelDescriptor instanceof EditableSModelDescriptor) {
+      markChanged(((EditableSModelDescriptor) modelDescriptor), changed);
     }
   }
 
@@ -556,7 +560,9 @@ public class SModelRepository implements ApplicationComponent {
     }
 
     public void beforeModelRenamed(SModelRenamedEvent event) {
-      removeModelFromFileCache(event.getModelDescriptor());
+      SModelDescriptor md = event.getModelDescriptor();
+      if (!(md instanceof EditableSModelDescriptor)) return;
+      removeModelFromFileCache(((EditableSModelDescriptor) md));
     }
 
     public void modelRenamed(SModelRenamedEvent event) {
@@ -564,19 +570,28 @@ public class SModelRepository implements ApplicationComponent {
         myFqNameToModelDescriptorMap.remove(event.getOldName());
         myFqNameToModelDescriptorMap.put(event.getNewName(), event.getModelDescriptor());
       }
-      addModelToFileCache(event.getModelDescriptor());
-      fireModelRenamed(event.getModelDescriptor());
+      SModelDescriptor md = event.getModelDescriptor();
+      if (md instanceof EditableSModelDescriptor) {
+        addModelToFileCache(((EditableSModelDescriptor) md));
+      }
+      fireModelRenamed(md);
 
       CleanupManager.getInstance().cleanup();
       MPSModuleRepository.getInstance().invalidateCaches();
     }
 
     public void beforeModelFileChanged(SModelFileChangedEvent event) {
-      removeModelFromFileCache(event.getModelDescriptor());
+      SModelDescriptor md = event.getModelDescriptor();
+      if (md instanceof EditableSModelDescriptor) {
+        removeModelFromFileCache(((EditableSModelDescriptor) md));
+      }
     }
 
     public void modelFileChanged(SModelFileChangedEvent event) {
-      addModelToFileCache(event.getModelDescriptor());
+      SModelDescriptor md = event.getModelDescriptor();
+      if (md instanceof EditableSModelDescriptor) {
+        addModelToFileCache(((EditableSModelDescriptor) md));
+      }
     }
   }
 }
