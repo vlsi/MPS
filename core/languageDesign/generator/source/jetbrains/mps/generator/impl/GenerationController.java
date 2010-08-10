@@ -23,6 +23,7 @@ import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.generator.GenerationSettings;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.GeneratorManager.GeneratorNotifierHelper;
+import jetbrains.mps.generator.generationTypes.GenerationInput;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.MessagesViewTool;
@@ -33,7 +34,6 @@ import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.NameUtil;
@@ -55,7 +55,7 @@ public class GenerationController {
   protected GeneratorLoggerAdapter myLogger;
   private GenerationProcessContext myGenerationContext;
 
-  protected List<Pair<IModule, List<SModelDescriptor>>> myModuleSequence = new ArrayList<Pair<IModule, List<SModelDescriptor>>>();
+  protected GenerationInput myModuleSequence = new GenerationInput();
   protected Map<IModule, IOperationContext> myModulesToContexts = new HashMap<IModule, IOperationContext>();
 
   public GenerationController(GeneratorNotifierHelper notifierHelper,
@@ -81,13 +81,13 @@ public class GenerationController {
 
   private void initMaps() {
     IModule current = null;
-    ArrayList<SModelDescriptor> currentList = null;
+    ArrayList<EditableSModelDescriptor> currentList = null;
     for (Pair<EditableSModelDescriptor, IOperationContext> inputModel : myInputModels) {
       IModule newModule = inputModel.o2.getModule();
       if (current == null || newModule != current) {
         current = newModule;
-        currentList = new ArrayList<SModelDescriptor>();
-        myModuleSequence.add(new Pair<IModule, List<SModelDescriptor>>(current, currentList));
+        currentList = new ArrayList<EditableSModelDescriptor>();
+        myModuleSequence.add(new Pair<IModule, List<EditableSModelDescriptor>>(current, currentList));
         myModulesToContexts.put(current, inputModel.o2);
       }
       currentList.add(inputModel.o1);
@@ -105,7 +105,7 @@ public class GenerationController {
     try {
       boolean generationOK = true;
       try {
-        for (Pair<IModule, List<SModelDescriptor>> moduleAndDescriptors : myModuleSequence) {
+        for (Pair<IModule, List<EditableSModelDescriptor>> moduleAndDescriptors : myModuleSequence) {
           boolean result = generateModelsInModule(moduleAndDescriptors.o1, moduleAndDescriptors.o2, progressHelper);
           generationOK = generationOK && result;
         }
@@ -144,7 +144,7 @@ public class GenerationController {
     return generationOK;
   }
 
-  protected boolean generateModelsInModule(IModule module, List<SModelDescriptor> inputModels, ITaskProgressHelper progressHelper) throws Exception {
+  protected boolean generateModelsInModule(IModule module, List<EditableSModelDescriptor> inputModels, ITaskProgressHelper progressHelper) throws Exception {
     boolean currentGenerationOK = true;
 
     IOperationContext invocationContext = myModulesToContexts.get(module);
@@ -157,7 +157,7 @@ public class GenerationController {
         wasLoggingThreshold = Logger.setThreshold("ERROR");
       }
 
-      for (SModelDescriptor inputModel : inputModels) {
+      for (EditableSModelDescriptor inputModel : inputModels) {
         currentGenerationOK = currentGenerationOK && generateModel(inputModel, module, invocationContext, progressHelper);
       }
     } finally {
@@ -175,7 +175,7 @@ public class GenerationController {
     return currentGenerationOK;
   }
 
-  private boolean generateModel(final SModelDescriptor inputModel, final IModule module, final IOperationContext invocationContext, final ITaskProgressHelper progressHelper) throws GenerationCanceledException {
+  private boolean generateModel(final EditableSModelDescriptor inputModel, final IModule module, final IOperationContext invocationContext, final ITaskProgressHelper progressHelper) throws GenerationCanceledException {
     boolean currentGenerationOK = false;
 
     IPerformanceTracer ttrace = myGenerationContext.getTracingMode() != GenerationSettings.TRACE_OFF
@@ -223,7 +223,7 @@ public class GenerationController {
             checkMonitorCanceled();
 
             currentGenerationOK = currentGenerationOK && myGenerationHandler.handleOutput(module, inputModel, status, invocationContext, progressHelper);
-            
+
             return currentGenerationOK;
           }
         });
@@ -254,10 +254,10 @@ public class GenerationController {
   private long estimateGenerationTime() {
     long totalJob = myGenerationHandler.estimateCompilationMillis(myModuleSequence);
 
-    for (Pair<IModule, List<SModelDescriptor>> pair : myModuleSequence) {
+    for (Pair<IModule, List<EditableSModelDescriptor>> pair : myModuleSequence) {
       IModule module = pair.o1;
       if (module != null) {
-        long jobTime = ModelsProgressUtil.estimateGenerationTimeMillis(pair.o2);
+        long jobTime = ModelsProgressUtil.estimateGenerationTimeMillis((List) pair.o2);
         totalJob += jobTime;
       }
     }
