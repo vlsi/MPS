@@ -11,9 +11,6 @@ import java.util.*;
 public final class BaseStubModelDescriptor extends BaseSModelDescriptor implements Cloneable {
   private static final Logger LOG = Logger.getLogger(BaseStubModelDescriptor.class);
 
-  private SModel mySModel = null;
-  private final Object myLoadingLock = new Object();
-
   private List<StubPath> myStubPaths;
   private boolean myNeedsReloading = true;
   private String myManagerClass;
@@ -107,27 +104,6 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptor implemen
 
   //------------common reloading stuff-------------------
 
-  public SModel getSModel() {
-    // ModelAccess.assertLegalRead();
-
-    SModel result;
-    boolean fireInitialized = false;
-
-    synchronized (myLoadingLock) {
-      if (mySModel == null) {
-        SModel model = loadModel();
-        model.setModelDescritor(this);
-        mySModel = model;
-        fireInitialized = true;
-      }
-      result = mySModel;
-    }
-    if (fireInitialized) {
-      fireModelInitialized();
-    }
-    return result;
-  }
-
   public void refresh() {
     ModelAccess.assertLegalWrite();
 
@@ -154,9 +130,5 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptor implemen
 
   public boolean isReadOnly() {
     return true;
-  }
-
-  public boolean isTransient() {
-    return false;
   }
 }

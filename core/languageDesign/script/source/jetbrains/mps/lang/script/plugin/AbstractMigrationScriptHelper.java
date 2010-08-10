@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.lang.script.plugin;
 
+import jetbrains.mps.generator.TransientModelDescriptor;
 import jetbrains.mps.lang.script.plugin.migrationtool.MigrationScriptsTool;
 import jetbrains.mps.lang.script.structure.MigrationScript;
 import jetbrains.mps.project.DevKit;
@@ -66,7 +67,7 @@ public abstract class AbstractMigrationScriptHelper {
     private Set<SModelDescriptor> myModels = new LinkedHashSet<SModelDescriptor>();
 
     public void addModel(SModelDescriptor model) {
-      if (model.isTransient()) return;
+      if (model instanceof TransientModelDescriptor) return;
       if (!(model instanceof EditableSModelDescriptor)) return;
       if (((EditableSModelDescriptor) model).isPackaged()) return;
       if (model.getStereotype() != null) {

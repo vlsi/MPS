@@ -21,6 +21,7 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.generator.TransientModelDescriptor;
 import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
@@ -135,7 +136,7 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
     GeneratorManager manager = myProject.getComponent(GeneratorManager.class);
     List<EditableSModelDescriptor> models = new ArrayList<EditableSModelDescriptor>();
     for (SModelDescriptor modelDescriptor : myTreeComponent.getIncludedModels()) {
-      if (!modelDescriptor.isTransient() && (modelDescriptor instanceof EditableSModelDescriptor)) {
+      if (!(modelDescriptor instanceof TransientModelDescriptor) && (modelDescriptor instanceof EditableSModelDescriptor)) {
         models.add((EditableSModelDescriptor) modelDescriptor);
       }
     }

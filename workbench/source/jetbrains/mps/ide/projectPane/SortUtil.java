@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.projectPane;
 
+import jetbrains.mps.generator.TransientModelDescriptor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
@@ -36,7 +37,7 @@ public class SortUtil {
         if (result != 0) return result;
         String str = o.getStereotype();
         String str1 = o1.getStereotype();
-        if (o.isTransient() && o1.isTransient()) {
+        if ((o instanceof TransientModelDescriptor) && (o1 instanceof TransientModelDescriptor)) {
           String[] part = str.split("_");
           String[] part1 = str1.split("_");
           for (int i = 0; i < part.length; i++) {

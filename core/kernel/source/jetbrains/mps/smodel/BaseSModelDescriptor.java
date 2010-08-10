@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.generator.TransientModelDescriptor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.event.*;
@@ -28,6 +29,9 @@ import java.util.*;
 
 public abstract class BaseSModelDescriptor implements SModelDescriptor {
   private static final Logger LOG = Logger.getLogger(BaseSModelDescriptor.class);
+
+  protected SModel mySModel = null;
+  private final Object myLoadingLock = new Object();
 
   protected SModelReference myModelReference;
   protected Map<String, Object> myUserObjects;
@@ -49,6 +53,33 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
       checkModelDuplication();
     }
   }
+
+  public boolean isTransient() {
+    return this instanceof TransientModelDescriptor;
+  }
+
+  public SModel getSModel() {
+    // ModelAccess.assertLegalRead();
+
+    SModel result;
+    boolean fireInitialized = false;
+
+    synchronized (myLoadingLock) {
+      if (mySModel == null) {
+        SModel model = loadModel();
+        model.setModelDescritor(this);
+        mySModel = model;
+        fireInitialized = true;
+      }
+      result = mySModel;
+    }
+    if (fireInitialized) {
+      fireModelInitialized();
+    }
+    return result;
+  }
+
+  protected abstract SModel loadModel();
 
   public IModelRootManager getModelRootManager() {
     return myModelRootManager;

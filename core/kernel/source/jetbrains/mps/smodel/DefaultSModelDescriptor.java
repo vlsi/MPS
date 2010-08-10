@@ -45,15 +45,12 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
 
   private static final Logger LOG = Logger.getLogger(DefaultSModelDescriptor.class);
 
-  private SModel mySModel = null;
-
   private Map<String, String> myMetadata;
   private boolean myMetadataLoaded;
 
   private Object myRefactoringHistoryLock = new Object();
   private RefactoringHistory myRefactoringHistory;
 
-  private final Object myLoadingLock = new Object();
 
   private long myLastChange;       
 
@@ -64,11 +61,11 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   private boolean myIsChanged = false;
 
 
-  public DefaultSModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference) {
+  public DefaultSModelDescriptor(IModelRootManager manager, @NotNull IFile modelFile, SModelReference modelReference) {
     this(manager, modelFile, modelReference, true);
   }
 
-  protected DefaultSModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference, boolean checkDup) {
+  protected DefaultSModelDescriptor(IModelRootManager manager,@NotNull IFile modelFile, SModelReference modelReference, boolean checkDup) {
     super(manager, modelReference, checkDup);
     myModelFile = modelFile;
     updateLastChange();
@@ -189,27 +186,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     IFile file = getModelFile();
     if (!file.exists()) return -1;
     return file.lastModified();
-  }
-
-  public SModel getSModel() {
-    // ModelAccess.assertLegalRead();
-
-    SModel result;
-    boolean fireInitialized = false;
-
-    synchronized (myLoadingLock) {
-      if (mySModel == null) {
-        SModel model = loadModel();
-        model.setModelDescritor(this);
-        mySModel = model;
-        fireInitialized = true;
-      }
-      result = mySModel;
-    }
-    if (fireInitialized) {
-      fireModelInitialized();
-    }
-    return result;
   }
 
   public int getPersistenceVersion() {
@@ -487,10 +463,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
 
   public String toString() {
     return getSModelReference().toString();
-  }
-
-  public boolean isTransient() {
-    return false;
   }
 
   private synchronized Map<String, String> getMetaData_internal() {
