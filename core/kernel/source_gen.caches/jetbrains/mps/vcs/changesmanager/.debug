@@ -640,287 +640,289 @@
     <unitInfo nodeId="2253323551303625635" fileName="VCSUtils.java" startLine="18" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.VCSUtils" />
   </root>
   <root nodeId="23553604208246606">
-    <nodeInfo nodeId="591225141044085659" fileName="ChangesManager.java" startLine="45" startPosition="62" endLine="46" endPosition="93" />
-    <nodeInfo nodeId="5569581551640544232" fileName="ChangesManager.java" startLine="46" startPosition="93" endLine="47" endPosition="94" />
-    <nodeInfo nodeId="1552342397249028030" fileName="ChangesManager.java" startLine="47" startPosition="94" endLine="48" endPosition="148" />
-    <nodeInfo nodeId="209997191345281388" fileName="ChangesManager.java" startLine="48" startPosition="148" endLine="49" endPosition="82" />
-    <nodeInfo nodeId="6003305288819068529" fileName="ChangesManager.java" startLine="49" startPosition="82" endLine="50" endPosition="111" />
-    <nodeInfo nodeId="3722815385094376477" fileName="ChangesManager.java" startLine="50" startPosition="111" endLine="51" endPosition="101" />
-    <nodeInfo nodeId="2815554480688664915" fileName="ChangesManager.java" startLine="53" startPosition="51" endLine="54" endPosition="19" />
-    <nodeInfo nodeId="5267577397386455556" fileName="ChangesManager.java" startLine="58" startPosition="22" endLine="59" endPosition="74" />
-    <nodeInfo nodeId="8895936060423613102" fileName="ChangesManager.java" startLine="59" startPosition="74" endLine="60" endPosition="92" />
-    <nodeInfo nodeId="4912291546802911462" fileName="ChangesManager.java" startLine="60" startPosition="92" endLine="61" endPosition="91" />
-    <nodeInfo nodeId="6003305288819116078" fileName="ChangesManager.java" startLine="61" startPosition="91" endLine="62" endPosition="91" />
-    <nodeInfo nodeId="5643745088231019998" fileName="ChangesManager.java" startLine="62" startPosition="91" endLine="63" endPosition="0" />
-    <nodeInfo nodeId="3413696006745761893" fileName="ChangesManager.java" startLine="63" startPosition="0" endLine="64" endPosition="34" />
-    <nodeInfo nodeId="5267577397386455547" fileName="ChangesManager.java" startLine="68" startPosition="31" endLine="69" endPosition="75" />
-    <nodeInfo nodeId="8895936060423613856" fileName="ChangesManager.java" startLine="69" startPosition="75" endLine="70" endPosition="93" />
-    <nodeInfo nodeId="5569581551640544308" fileName="ChangesManager.java" startLine="70" startPosition="93" endLine="71" endPosition="92" />
-    <nodeInfo nodeId="6003305288819116102" fileName="ChangesManager.java" startLine="71" startPosition="92" endLine="72" endPosition="92" />
-    <nodeInfo nodeId="5569581551640544294" fileName="ChangesManager.java" startLine="72" startPosition="92" endLine="73" endPosition="0" />
-    <nodeInfo nodeId="5962623969496447670" fileName="ChangesManager.java" startLine="76" startPosition="125" endLine="77" endPosition="40" />
-    <nodeInfo nodeId="1848579765482163875" fileName="ChangesManager.java" startLine="78" startPosition="9" endLine="79" endPosition="52" />
-    <nodeInfo nodeId="6669546492594119363" fileName="ChangesManager.java" startLine="79" startPosition="52" endLine="80" endPosition="33" />
-    <nodeInfo nodeId="2190647295030885203" fileName="ChangesManager.java" startLine="88" startPosition="63" endLine="89" endPosition="17" />
-    <nodeInfo nodeId="1552342397249029518" fileName="ChangesManager.java" startLine="90" startPosition="9" endLine="91" endPosition="72" />
-    <nodeInfo nodeId="2253323551303615513" fileName="ChangesManager.java" startLine="92" startPosition="72" endLine="93" endPosition="79" />
-    <nodeInfo nodeId="2253323551303615584" fileName="ChangesManager.java" startLine="93" startPosition="79" endLine="94" endPosition="17" />
-    <nodeInfo nodeId="2253323551303615595" fileName="ChangesManager.java" startLine="95" startPosition="9" endLine="96" endPosition="102" />
-    <nodeInfo nodeId="2253323551303615647" fileName="ChangesManager.java" startLine="96" startPosition="102" endLine="97" endPosition="79" />
-    <nodeInfo nodeId="5917222806358140700" fileName="ChangesManager.java" startLine="103" startPosition="23" endLine="104" endPosition="13" />
-    <nodeInfo nodeId="891158202133120888" fileName="ChangesManager.java" startLine="105" startPosition="5" endLine="106" endPosition="44" />
-    <nodeInfo nodeId="891158202133120908" fileName="ChangesManager.java" startLine="107" startPosition="24" endLine="108" endPosition="13" />
-    <nodeInfo nodeId="891158202133120914" fileName="ChangesManager.java" startLine="109" startPosition="5" endLine="110" endPosition="87" />
-    <nodeInfo nodeId="891158202133120935" fileName="ChangesManager.java" startLine="111" startPosition="72" endLine="112" endPosition="13" />
-    <nodeInfo nodeId="891158202133120937" fileName="ChangesManager.java" startLine="113" startPosition="5" endLine="114" endPosition="51" />
-    <nodeInfo nodeId="6058514296621167620" fileName="ChangesManager.java" startLine="119" startPosition="67" endLine="120" endPosition="36" />
-    <nodeInfo nodeId="5962623969496447622" fileName="ChangesManager.java" startLine="128" startPosition="78" endLine="129" endPosition="76" />
-    <nodeInfo nodeId="5962623969496447630" fileName="ChangesManager.java" startLine="129" startPosition="76" endLine="130" endPosition="72" />
-    <nodeInfo nodeId="8639616537809463291" fileName="ChangesManager.java" startLine="137" startPosition="96" endLine="138" endPosition="49" />
-    <nodeInfo nodeId="5643745088231031185" fileName="ChangesManager.java" startLine="138" startPosition="49" endLine="139" endPosition="68" />
-    <nodeInfo nodeId="5643745088231031161" fileName="ChangesManager.java" startLine="140" startPosition="71" endLine="141" endPosition="109" />
-    <nodeInfo nodeId="3935103675993747856" fileName="ChangesManager.java" startLine="142" startPosition="5" endLine="143" endPosition="61" />
-    <nodeInfo nodeId="2859527253109744416" fileName="ChangesManager.java" startLine="147" startPosition="76" endLine="148" endPosition="62" />
-    <nodeInfo nodeId="8477273007880816991" fileName="ChangesManager.java" startLine="155" startPosition="29" endLine="156" endPosition="41" />
-    <nodeInfo nodeId="8477273007880816995" fileName="ChangesManager.java" startLine="156" startPosition="41" endLine="157" endPosition="0" />
-    <nodeInfo nodeId="8477273007880817005" fileName="ChangesManager.java" startLine="159" startPosition="87" endLine="160" endPosition="85" />
-    <nodeInfo nodeId="8477273007880817017" fileName="ChangesManager.java" startLine="162" startPosition="17" endLine="163" endPosition="58" />
-    <nodeInfo nodeId="8477273007880817028" fileName="ChangesManager.java" startLine="163" startPosition="58" endLine="164" endPosition="0" />
-    <nodeInfo nodeId="8477273007880817037" fileName="ChangesManager.java" startLine="165" startPosition="95" endLine="166" endPosition="36" />
-    <nodeInfo nodeId="8477273007880817042" fileName="ChangesManager.java" startLine="167" startPosition="15" endLine="168" endPosition="0" />
-    <nodeInfo nodeId="8477273007880817043" fileName="ChangesManager.java" startLine="168" startPosition="0" endLine="169" endPosition="28" />
-    <nodeInfo nodeId="8477273007880817047" fileName="ChangesManager.java" startLine="170" startPosition="13" endLine="171" endPosition="26" />
-    <nodeInfo nodeId="8477273007880817051" fileName="ChangesManager.java" startLine="171" startPosition="26" endLine="172" endPosition="48" />
-    <nodeInfo nodeId="8477273007880817065" fileName="ChangesManager.java" startLine="174" startPosition="87" endLine="175" endPosition="107" />
-    <nodeInfo nodeId="8477273007880817076" fileName="ChangesManager.java" startLine="177" startPosition="17" endLine="178" endPosition="51" />
-    <nodeInfo nodeId="1741994337989997226" fileName="ChangesManager.java" startLine="179" startPosition="13" endLine="180" endPosition="26" />
-    <nodeInfo nodeId="1741994337989997199" fileName="ChangesManager.java" startLine="182" startPosition="87" endLine="183" endPosition="110" />
-    <nodeInfo nodeId="3722815385094377378" fileName="ChangesManager.java" startLine="193" startPosition="47" endLine="194" endPosition="26" />
-    <nodeInfo nodeId="15936038984552681" fileName="ChangesManager.java" startLine="197" startPosition="61" endLine="198" endPosition="54" />
-    <nodeInfo nodeId="5267577397386524188" fileName="ChangesManager.java" startLine="201" startPosition="37" endLine="202" endPosition="89" />
-    <nodeInfo nodeId="5569581551640544141" fileName="ChangesManager.java" startLine="210" startPosition="93" endLine="211" endPosition="75" />
-    <nodeInfo nodeId="5569581551640544164" fileName="ChangesManager.java" startLine="216" startPosition="110" endLine="217" endPosition="30" />
-    <nodeInfo nodeId="6276661785379536160" fileName="ChangesManager.java" startLine="222" startPosition="93" endLine="223" endPosition="57" />
-    <nodeInfo nodeId="5569581551640544216" fileName="ChangesManager.java" startLine="228" startPosition="131" endLine="229" endPosition="30" />
-    <nodeInfo nodeId="5752539231810518963" fileName="ChangesManager.java" startLine="234" startPosition="142" endLine="235" endPosition="45" />
+    <nodeInfo nodeId="591225141044085659" fileName="ChangesManager.java" startLine="46" startPosition="62" endLine="47" endPosition="93" />
+    <nodeInfo nodeId="5569581551640544232" fileName="ChangesManager.java" startLine="47" startPosition="93" endLine="48" endPosition="94" />
+    <nodeInfo nodeId="1552342397249028030" fileName="ChangesManager.java" startLine="48" startPosition="94" endLine="49" endPosition="148" />
+    <nodeInfo nodeId="209997191345281388" fileName="ChangesManager.java" startLine="49" startPosition="148" endLine="50" endPosition="82" />
+    <nodeInfo nodeId="6003305288819068529" fileName="ChangesManager.java" startLine="50" startPosition="82" endLine="51" endPosition="111" />
+    <nodeInfo nodeId="3722815385094376477" fileName="ChangesManager.java" startLine="51" startPosition="111" endLine="52" endPosition="101" />
+    <nodeInfo nodeId="2815554480688664915" fileName="ChangesManager.java" startLine="54" startPosition="51" endLine="55" endPosition="19" />
+    <nodeInfo nodeId="5267577397386455556" fileName="ChangesManager.java" startLine="59" startPosition="22" endLine="60" endPosition="74" />
+    <nodeInfo nodeId="8895936060423613102" fileName="ChangesManager.java" startLine="60" startPosition="74" endLine="61" endPosition="92" />
+    <nodeInfo nodeId="4912291546802911462" fileName="ChangesManager.java" startLine="61" startPosition="92" endLine="62" endPosition="91" />
+    <nodeInfo nodeId="6003305288819116078" fileName="ChangesManager.java" startLine="62" startPosition="91" endLine="63" endPosition="91" />
+    <nodeInfo nodeId="5643745088231019998" fileName="ChangesManager.java" startLine="63" startPosition="91" endLine="64" endPosition="0" />
+    <nodeInfo nodeId="3413696006745761893" fileName="ChangesManager.java" startLine="64" startPosition="0" endLine="65" endPosition="34" />
+    <nodeInfo nodeId="5267577397386455547" fileName="ChangesManager.java" startLine="69" startPosition="31" endLine="70" endPosition="75" />
+    <nodeInfo nodeId="8895936060423613856" fileName="ChangesManager.java" startLine="70" startPosition="75" endLine="71" endPosition="93" />
+    <nodeInfo nodeId="5569581551640544308" fileName="ChangesManager.java" startLine="71" startPosition="93" endLine="72" endPosition="92" />
+    <nodeInfo nodeId="6003305288819116102" fileName="ChangesManager.java" startLine="72" startPosition="92" endLine="73" endPosition="92" />
+    <nodeInfo nodeId="5569581551640544294" fileName="ChangesManager.java" startLine="73" startPosition="92" endLine="74" endPosition="0" />
+    <nodeInfo nodeId="5962623969496447670" fileName="ChangesManager.java" startLine="77" startPosition="125" endLine="78" endPosition="40" />
+    <nodeInfo nodeId="1848579765482163875" fileName="ChangesManager.java" startLine="79" startPosition="9" endLine="80" endPosition="52" />
+    <nodeInfo nodeId="6669546492594119363" fileName="ChangesManager.java" startLine="80" startPosition="52" endLine="81" endPosition="33" />
+    <nodeInfo nodeId="2190647295030885203" fileName="ChangesManager.java" startLine="89" startPosition="63" endLine="90" endPosition="17" />
+    <nodeInfo nodeId="1552342397249029518" fileName="ChangesManager.java" startLine="91" startPosition="9" endLine="92" endPosition="72" />
+    <nodeInfo nodeId="2253323551303615513" fileName="ChangesManager.java" startLine="93" startPosition="72" endLine="94" endPosition="79" />
+    <nodeInfo nodeId="2253323551303615584" fileName="ChangesManager.java" startLine="94" startPosition="79" endLine="95" endPosition="17" />
+    <nodeInfo nodeId="2253323551303615595" fileName="ChangesManager.java" startLine="96" startPosition="9" endLine="97" endPosition="102" />
+    <nodeInfo nodeId="2253323551303615647" fileName="ChangesManager.java" startLine="97" startPosition="102" endLine="98" endPosition="79" />
+    <nodeInfo nodeId="5917222806358140700" fileName="ChangesManager.java" startLine="104" startPosition="23" endLine="105" endPosition="13" />
+    <nodeInfo nodeId="891158202133120888" fileName="ChangesManager.java" startLine="106" startPosition="5" endLine="107" endPosition="44" />
+    <nodeInfo nodeId="891158202133120908" fileName="ChangesManager.java" startLine="108" startPosition="24" endLine="109" endPosition="13" />
+    <nodeInfo nodeId="891158202133120914" fileName="ChangesManager.java" startLine="110" startPosition="5" endLine="111" endPosition="87" />
+    <nodeInfo nodeId="891158202133120935" fileName="ChangesManager.java" startLine="112" startPosition="72" endLine="113" endPosition="13" />
+    <nodeInfo nodeId="891158202133120937" fileName="ChangesManager.java" startLine="114" startPosition="5" endLine="115" endPosition="51" />
+    <nodeInfo nodeId="6058514296621167620" fileName="ChangesManager.java" startLine="120" startPosition="67" endLine="121" endPosition="36" />
+    <nodeInfo nodeId="5962623969496447622" fileName="ChangesManager.java" startLine="129" startPosition="78" endLine="130" endPosition="76" />
+    <nodeInfo nodeId="5962623969496447630" fileName="ChangesManager.java" startLine="130" startPosition="76" endLine="131" endPosition="72" />
+    <nodeInfo nodeId="8639616537809463291" fileName="ChangesManager.java" startLine="138" startPosition="96" endLine="139" endPosition="49" />
+    <nodeInfo nodeId="5643745088231031185" fileName="ChangesManager.java" startLine="139" startPosition="49" endLine="140" endPosition="68" />
+    <nodeInfo nodeId="5643745088231031161" fileName="ChangesManager.java" startLine="141" startPosition="71" endLine="142" endPosition="109" />
+    <nodeInfo nodeId="3935103675993747856" fileName="ChangesManager.java" startLine="143" startPosition="5" endLine="144" endPosition="61" />
+    <nodeInfo nodeId="2859527253109744416" fileName="ChangesManager.java" startLine="148" startPosition="76" endLine="149" endPosition="62" />
+    <nodeInfo nodeId="8477273007880816991" fileName="ChangesManager.java" startLine="156" startPosition="29" endLine="157" endPosition="41" />
+    <nodeInfo nodeId="8477273007880816995" fileName="ChangesManager.java" startLine="157" startPosition="41" endLine="158" endPosition="0" />
+    <nodeInfo nodeId="8477273007880817005" fileName="ChangesManager.java" startLine="160" startPosition="87" endLine="161" endPosition="85" />
+    <nodeInfo nodeId="8477273007880817017" fileName="ChangesManager.java" startLine="163" startPosition="17" endLine="164" endPosition="58" />
+    <nodeInfo nodeId="8477273007880817028" fileName="ChangesManager.java" startLine="164" startPosition="58" endLine="165" endPosition="0" />
+    <nodeInfo nodeId="8477273007880817037" fileName="ChangesManager.java" startLine="166" startPosition="95" endLine="167" endPosition="36" />
+    <nodeInfo nodeId="8477273007880817042" fileName="ChangesManager.java" startLine="168" startPosition="15" endLine="169" endPosition="0" />
+    <nodeInfo nodeId="8477273007880817043" fileName="ChangesManager.java" startLine="169" startPosition="0" endLine="170" endPosition="28" />
+    <nodeInfo nodeId="8477273007880817047" fileName="ChangesManager.java" startLine="171" startPosition="13" endLine="172" endPosition="26" />
+    <nodeInfo nodeId="8477273007880817051" fileName="ChangesManager.java" startLine="172" startPosition="26" endLine="173" endPosition="48" />
+    <nodeInfo nodeId="8477273007880817065" fileName="ChangesManager.java" startLine="175" startPosition="87" endLine="176" endPosition="107" />
+    <nodeInfo nodeId="8477273007880817076" fileName="ChangesManager.java" startLine="178" startPosition="17" endLine="179" endPosition="51" />
+    <nodeInfo nodeId="1741994337989997226" fileName="ChangesManager.java" startLine="180" startPosition="13" endLine="181" endPosition="26" />
+    <nodeInfo nodeId="1741994337989997199" fileName="ChangesManager.java" startLine="183" startPosition="87" endLine="184" endPosition="110" />
+    <nodeInfo nodeId="3722815385094377378" fileName="ChangesManager.java" startLine="194" startPosition="47" endLine="195" endPosition="26" />
+    <nodeInfo nodeId="15936038984552681" fileName="ChangesManager.java" startLine="198" startPosition="61" endLine="199" endPosition="54" />
+    <nodeInfo nodeId="5267577397386524188" fileName="ChangesManager.java" startLine="202" startPosition="37" endLine="203" endPosition="89" />
+    <nodeInfo nodeId="5569581551640544141" fileName="ChangesManager.java" startLine="211" startPosition="93" endLine="212" endPosition="75" />
+    <nodeInfo nodeId="5569581551640544164" fileName="ChangesManager.java" startLine="217" startPosition="110" endLine="218" endPosition="30" />
+    <nodeInfo nodeId="6276661785379536160" fileName="ChangesManager.java" startLine="223" startPosition="93" endLine="224" endPosition="57" />
+    <nodeInfo nodeId="5569581551640544216" fileName="ChangesManager.java" startLine="229" startPosition="131" endLine="230" endPosition="30" />
+    <nodeInfo nodeId="5752539231810518963" fileName="ChangesManager.java" startLine="235" startPosition="142" endLine="236" endPosition="45" />
     <nodeInfo nodeId="4912291546802911414" fileName="ChangesManager.java" startLine="245" startPosition="52" endLine="246" endPosition="34" />
-    <nodeInfo nodeId="4912291546802911433" fileName="ChangesManager.java" startLine="250" startPosition="55" endLine="251" endPosition="34" />
-    <nodeInfo nodeId="209997191345316862" fileName="ChangesManager.java" startLine="260" startPosition="33" endLine="261" endPosition="34" />
-    <nodeInfo nodeId="3555722951728565725" fileName="ChangesManager.java" startLine="273" startPosition="57" endLine="274" endPosition="72" />
-    <nodeInfo nodeId="5569581551640537987" fileName="ChangesManager.java" startLine="205" startPosition="64" endLine="207" endPosition="5" />
-    <nodeInfo nodeId="4912291546802908729" fileName="ChangesManager.java" startLine="240" startPosition="62" endLine="242" endPosition="5" />
-    <nodeInfo nodeId="209997191345281328" fileName="ChangesManager.java" startLine="255" startPosition="56" endLine="257" endPosition="5" />
-    <nodeInfo nodeId="6003305288819068443" fileName="ChangesManager.java" startLine="265" startPosition="76" endLine="267" endPosition="5" />
-    <nodeInfo nodeId="23553604208248975" fileName="ChangesManager.java" startLine="52" startPosition="0" endLine="55" endPosition="3" />
-    <nodeInfo nodeId="5962623969496447662" fileName="ChangesManager.java" startLine="75" startPosition="25" endLine="78" endPosition="9" />
-    <nodeInfo nodeId="2190647295030883777" fileName="ChangesManager.java" startLine="87" startPosition="25" endLine="90" endPosition="9" />
-    <nodeInfo nodeId="5917222806358140691" fileName="ChangesManager.java" startLine="102" startPosition="95" endLine="105" endPosition="5" />
-    <nodeInfo nodeId="891158202133120895" fileName="ChangesManager.java" startLine="106" startPosition="44" endLine="109" endPosition="5" />
-    <nodeInfo nodeId="891158202133120922" fileName="ChangesManager.java" startLine="110" startPosition="87" endLine="113" endPosition="5" />
-    <nodeInfo nodeId="6058514296621167608" fileName="ChangesManager.java" startLine="118" startPosition="109" endLine="121" endPosition="7" />
-    <nodeInfo nodeId="5643745088231031128" fileName="ChangesManager.java" startLine="139" startPosition="68" endLine="142" endPosition="5" />
-    <nodeInfo nodeId="8477273007880817029" fileName="ChangesManager.java" startLine="164" startPosition="0" endLine="167" endPosition="15" />
-    <nodeInfo nodeId="5569581551640544132" fileName="ChangesManager.java" startLine="209" startPosition="94" endLine="212" endPosition="7" />
-    <nodeInfo nodeId="6276661785379535590" fileName="ChangesManager.java" startLine="221" startPosition="114" endLine="224" endPosition="7" />
-    <nodeInfo nodeId="5752539231810518951" fileName="ChangesManager.java" startLine="233" startPosition="46" endLine="236" endPosition="7" />
-    <nodeInfo nodeId="3555722951728565723" fileName="ChangesManager.java" startLine="272" startPosition="27" endLine="275" endPosition="11" />
-    <nodeInfo nodeId="1552342397249028055" fileName="ChangesManager.java" startLine="91" startPosition="72" endLine="95" endPosition="9" />
-    <nodeInfo nodeId="5962623969496447620" fileName="ChangesManager.java" startLine="127" startPosition="25" endLine="131" endPosition="9" />
-    <nodeInfo nodeId="8477273007880817003" fileName="ChangesManager.java" startLine="158" startPosition="187" endLine="162" endPosition="0" />
-    <nodeInfo nodeId="8477273007880817063" fileName="ChangesManager.java" startLine="173" startPosition="187" endLine="177" endPosition="0" />
-    <nodeInfo nodeId="1741994337989997195" fileName="ChangesManager.java" startLine="181" startPosition="134" endLine="185" endPosition="0" />
-    <nodeInfo nodeId="15936038984552262" fileName="ChangesManager.java" startLine="196" startPosition="0" endLine="200" endPosition="0" />
-    <nodeInfo nodeId="5267577397386524129" fileName="ChangesManager.java" startLine="200" startPosition="0" endLine="204" endPosition="0" />
-    <nodeInfo nodeId="6058514296621167602" fileName="ChangesManager.java" startLine="117" startPosition="43" endLine="122" endPosition="5" />
-    <nodeInfo nodeId="2859527253109744351" fileName="ChangesManager.java" startLine="145" startPosition="0" endLine="150" endPosition="0" />
-    <nodeInfo nodeId="1741994337989997182" fileName="ChangesManager.java" startLine="180" startPosition="26" endLine="185" endPosition="45" />
-    <nodeInfo nodeId="3722815385094377319" fileName="ChangesManager.java" startLine="191" startPosition="0" endLine="196" endPosition="0" />
-    <nodeInfo nodeId="5569581551640544148" fileName="ChangesManager.java" startLine="214" startPosition="0" endLine="219" endPosition="0" />
-    <nodeInfo nodeId="5569581551640544192" fileName="ChangesManager.java" startLine="226" startPosition="0" endLine="231" endPosition="0" />
-    <nodeInfo nodeId="4912291546802911401" fileName="ChangesManager.java" startLine="243" startPosition="0" endLine="248" endPosition="0" />
-    <nodeInfo nodeId="4912291546802911420" fileName="ChangesManager.java" startLine="248" startPosition="0" endLine="253" endPosition="0" />
-    <nodeInfo nodeId="209997191345281381" fileName="ChangesManager.java" startLine="258" startPosition="0" endLine="263" endPosition="0" />
-    <nodeInfo nodeId="5569581551640544125" fileName="ChangesManager.java" startLine="208" startPosition="0" endLine="214" endPosition="0" />
-    <nodeInfo nodeId="3555722951728565721" fileName="ChangesManager.java" startLine="271" startPosition="54" endLine="277" endPosition="0" />
-    <nodeInfo nodeId="5962623969496447618" fileName="ChangesManager.java" startLine="126" startPosition="43" endLine="133" endPosition="0" />
-    <nodeInfo nodeId="8477273007880817056" fileName="ChangesManager.java" startLine="172" startPosition="48" endLine="179" endPosition="13" />
-    <nodeInfo nodeId="5569581551640544170" fileName="ChangesManager.java" startLine="219" startPosition="0" endLine="226" endPosition="0" />
-    <nodeInfo nodeId="5752539231810454519" fileName="ChangesManager.java" startLine="231" startPosition="0" endLine="238" endPosition="0" />
-    <nodeInfo nodeId="3555722951728565718" fileName="ChangesManager.java" startLine="270" startPosition="71" endLine="277" endPosition="9" />
-    <nodeInfo nodeId="5267577397386524717" fileName="ChangesManager.java" startLine="57" startPosition="31" endLine="65" endPosition="5" />
-    <nodeInfo nodeId="5962623969496447659" fileName="ChangesManager.java" startLine="74" startPosition="43" endLine="82" endPosition="0" />
-    <nodeInfo nodeId="6058514296621167572" fileName="ChangesManager.java" startLine="116" startPosition="0" endLine="124" endPosition="0" />
-    <nodeInfo nodeId="5962623969496447609" fileName="ChangesManager.java" startLine="125" startPosition="90" endLine="133" endPosition="7" />
-    <nodeInfo nodeId="5962623969496447650" fileName="ChangesManager.java" startLine="73" startPosition="0" endLine="82" endPosition="7" />
-    <nodeInfo nodeId="5186220276475231268" fileName="ChangesManager.java" startLine="135" startPosition="0" endLine="145" endPosition="0" />
-    <nodeInfo nodeId="23553604208247412" fileName="ChangesManager.java" startLine="56" startPosition="0" endLine="67" endPosition="0" />
-    <nodeInfo nodeId="6003305288819000319" fileName="ChangesManager.java" startLine="124" startPosition="0" endLine="135" endPosition="0" />
-    <nodeInfo nodeId="6003305288819068505" fileName="ChangesManager.java" startLine="268" startPosition="0" endLine="279" endPosition="0" />
-    <nodeInfo nodeId="8386680215811366511" fileName="ChangesManager.java" startLine="86" startPosition="43" endLine="99" endPosition="0" />
-    <nodeInfo nodeId="8477273007880816996" fileName="ChangesManager.java" startLine="157" startPosition="0" endLine="170" endPosition="13" />
-    <nodeInfo nodeId="8386680215811366504" fileName="ChangesManager.java" startLine="85" startPosition="122" endLine="99" endPosition="7" />
-    <nodeInfo nodeId="5392440913055405811" fileName="ChangesManager.java" startLine="101" startPosition="0" endLine="116" endPosition="0" />
-    <nodeInfo nodeId="23553604208247408" fileName="ChangesManager.java" startLine="67" startPosition="0" endLine="84" endPosition="0" />
-    <nodeInfo nodeId="1552342397249028021" fileName="ChangesManager.java" startLine="84" startPosition="0" endLine="101" endPosition="0" />
-    <nodeInfo nodeId="8680220358160029437" fileName="ChangesManager.java" startLine="154" startPosition="61" endLine="187" endPosition="0" />
-    <nodeInfo nodeId="8680220358160029436" fileName="ChangesManager.java" startLine="153" startPosition="25" endLine="187" endPosition="11" />
-    <nodeInfo nodeId="5962623969496398596" fileName="ChangesManager.java" startLine="152" startPosition="43" endLine="189" endPosition="0" />
-    <nodeInfo nodeId="5962623969496398384" fileName="ChangesManager.java" startLine="151" startPosition="22" endLine="189" endPosition="7" />
-    <nodeInfo nodeId="4709697229103733136" fileName="ChangesManager.java" startLine="150" startPosition="0" endLine="191" endPosition="0" />
-    <scopeInfo nodeId="5569581551640537990" fileName="ChangesManager.java" startLine="206" startPosition="35" endLine="206" endPosition="35" />
-    <scopeInfo nodeId="4912291546802908732" fileName="ChangesManager.java" startLine="241" startPosition="37" endLine="241" endPosition="37" />
-    <scopeInfo nodeId="209997191345281331" fileName="ChangesManager.java" startLine="256" startPosition="31" endLine="256" endPosition="31" />
-    <scopeInfo nodeId="6003305288819068446" fileName="ChangesManager.java" startLine="266" startPosition="41" endLine="266" endPosition="41" />
-    <scopeInfo nodeId="23553604208248979" fileName="ChangesManager.java" startLine="53" startPosition="51" endLine="54" endPosition="19" />
-    <scopeInfo nodeId="5962623969496447669" fileName="ChangesManager.java" startLine="76" startPosition="125" endLine="77" endPosition="40" />
-    <scopeInfo nodeId="2190647295030883778" fileName="ChangesManager.java" startLine="88" startPosition="63" endLine="89" endPosition="17" />
-    <scopeInfo nodeId="5917222806358140692" fileName="ChangesManager.java" startLine="103" startPosition="23" endLine="104" endPosition="13" />
-    <scopeInfo nodeId="891158202133120896" fileName="ChangesManager.java" startLine="107" startPosition="24" endLine="108" endPosition="13" />
-    <scopeInfo nodeId="891158202133120923" fileName="ChangesManager.java" startLine="111" startPosition="72" endLine="112" endPosition="13" />
-    <scopeInfo nodeId="6058514296621167612" fileName="ChangesManager.java" startLine="119" startPosition="67" endLine="120" endPosition="36" />
-    <scopeInfo nodeId="5643745088231031129" fileName="ChangesManager.java" startLine="140" startPosition="71" endLine="141" endPosition="109" />
-    <scopeInfo nodeId="2859527253109744354" fileName="ChangesManager.java" startLine="147" startPosition="76" endLine="148" endPosition="62" />
-    <scopeInfo nodeId="8477273007880817004" fileName="ChangesManager.java" startLine="159" startPosition="87" endLine="160" endPosition="85" />
-    <scopeInfo nodeId="8477273007880817036" fileName="ChangesManager.java" startLine="165" startPosition="95" endLine="166" endPosition="36" />
-    <scopeInfo nodeId="8477273007880817064" fileName="ChangesManager.java" startLine="174" startPosition="87" endLine="175" endPosition="107" />
-    <scopeInfo nodeId="8477273007880817075" fileName="ChangesManager.java" startLine="177" startPosition="17" endLine="178" endPosition="51" />
-    <scopeInfo nodeId="1741994337989997196" fileName="ChangesManager.java" startLine="182" startPosition="87" endLine="183" endPosition="110" />
-    <scopeInfo nodeId="3722815385094377322" fileName="ChangesManager.java" startLine="193" startPosition="47" endLine="194" endPosition="26" />
-    <scopeInfo nodeId="15936038984552265" fileName="ChangesManager.java" startLine="197" startPosition="61" endLine="198" endPosition="54" />
-    <scopeInfo nodeId="5267577397386524132" fileName="ChangesManager.java" startLine="201" startPosition="37" endLine="202" endPosition="89" />
-    <scopeInfo nodeId="5569581551640544135" fileName="ChangesManager.java" startLine="210" startPosition="93" endLine="211" endPosition="75" />
-    <scopeInfo nodeId="5569581551640544156" fileName="ChangesManager.java" startLine="216" startPosition="110" endLine="217" endPosition="30" />
-    <scopeInfo nodeId="6276661785379535593" fileName="ChangesManager.java" startLine="222" startPosition="93" endLine="223" endPosition="57" />
-    <scopeInfo nodeId="5569581551640544202" fileName="ChangesManager.java" startLine="228" startPosition="131" endLine="229" endPosition="30" />
-    <scopeInfo nodeId="5752539231810518954" fileName="ChangesManager.java" startLine="234" startPosition="142" endLine="235" endPosition="45" />
+    <nodeInfo nodeId="8096178926743441905" fileName="ChangesManager.java" startLine="249" startPosition="119" endLine="250" endPosition="34" />
+    <nodeInfo nodeId="209997191345316862" fileName="ChangesManager.java" startLine="259" startPosition="33" endLine="260" endPosition="34" />
+    <nodeInfo nodeId="3555722951728565725" fileName="ChangesManager.java" startLine="272" startPosition="57" endLine="273" endPosition="72" />
+    <nodeInfo nodeId="5569581551640537987" fileName="ChangesManager.java" startLine="206" startPosition="64" endLine="208" endPosition="5" />
+    <nodeInfo nodeId="4912291546802908729" fileName="ChangesManager.java" startLine="241" startPosition="62" endLine="243" endPosition="5" />
+    <nodeInfo nodeId="209997191345281328" fileName="ChangesManager.java" startLine="254" startPosition="56" endLine="256" endPosition="5" />
+    <nodeInfo nodeId="6003305288819068443" fileName="ChangesManager.java" startLine="264" startPosition="76" endLine="266" endPosition="5" />
+    <nodeInfo nodeId="23553604208248975" fileName="ChangesManager.java" startLine="53" startPosition="0" endLine="56" endPosition="3" />
+    <nodeInfo nodeId="5962623969496447662" fileName="ChangesManager.java" startLine="76" startPosition="25" endLine="79" endPosition="9" />
+    <nodeInfo nodeId="2190647295030883777" fileName="ChangesManager.java" startLine="88" startPosition="25" endLine="91" endPosition="9" />
+    <nodeInfo nodeId="5917222806358140691" fileName="ChangesManager.java" startLine="103" startPosition="95" endLine="106" endPosition="5" />
+    <nodeInfo nodeId="891158202133120895" fileName="ChangesManager.java" startLine="107" startPosition="44" endLine="110" endPosition="5" />
+    <nodeInfo nodeId="891158202133120922" fileName="ChangesManager.java" startLine="111" startPosition="87" endLine="114" endPosition="5" />
+    <nodeInfo nodeId="6058514296621167608" fileName="ChangesManager.java" startLine="119" startPosition="109" endLine="122" endPosition="7" />
+    <nodeInfo nodeId="5643745088231031128" fileName="ChangesManager.java" startLine="140" startPosition="68" endLine="143" endPosition="5" />
+    <nodeInfo nodeId="8477273007880817029" fileName="ChangesManager.java" startLine="165" startPosition="0" endLine="168" endPosition="15" />
+    <nodeInfo nodeId="5569581551640544132" fileName="ChangesManager.java" startLine="210" startPosition="94" endLine="213" endPosition="7" />
+    <nodeInfo nodeId="6276661785379535590" fileName="ChangesManager.java" startLine="222" startPosition="114" endLine="225" endPosition="7" />
+    <nodeInfo nodeId="5752539231810518951" fileName="ChangesManager.java" startLine="234" startPosition="46" endLine="237" endPosition="7" />
+    <nodeInfo nodeId="3555722951728565723" fileName="ChangesManager.java" startLine="271" startPosition="27" endLine="274" endPosition="11" />
+    <nodeInfo nodeId="1552342397249028055" fileName="ChangesManager.java" startLine="92" startPosition="72" endLine="96" endPosition="9" />
+    <nodeInfo nodeId="5962623969496447620" fileName="ChangesManager.java" startLine="128" startPosition="25" endLine="132" endPosition="9" />
+    <nodeInfo nodeId="8477273007880817003" fileName="ChangesManager.java" startLine="159" startPosition="187" endLine="163" endPosition="0" />
+    <nodeInfo nodeId="8477273007880817063" fileName="ChangesManager.java" startLine="174" startPosition="187" endLine="178" endPosition="0" />
+    <nodeInfo nodeId="1741994337989997195" fileName="ChangesManager.java" startLine="182" startPosition="134" endLine="186" endPosition="0" />
+    <nodeInfo nodeId="15936038984552262" fileName="ChangesManager.java" startLine="197" startPosition="0" endLine="201" endPosition="0" />
+    <nodeInfo nodeId="5267577397386524129" fileName="ChangesManager.java" startLine="201" startPosition="0" endLine="205" endPosition="0" />
+    <nodeInfo nodeId="4912291546802911401" fileName="ChangesManager.java" startLine="244" startPosition="0" endLine="248" endPosition="0" />
+    <nodeInfo nodeId="8096178926743427291" fileName="ChangesManager.java" startLine="248" startPosition="0" endLine="252" endPosition="0" />
+    <nodeInfo nodeId="6058514296621167602" fileName="ChangesManager.java" startLine="118" startPosition="43" endLine="123" endPosition="5" />
+    <nodeInfo nodeId="2859527253109744351" fileName="ChangesManager.java" startLine="146" startPosition="0" endLine="151" endPosition="0" />
+    <nodeInfo nodeId="1741994337989997182" fileName="ChangesManager.java" startLine="181" startPosition="26" endLine="186" endPosition="45" />
+    <nodeInfo nodeId="3722815385094377319" fileName="ChangesManager.java" startLine="192" startPosition="0" endLine="197" endPosition="0" />
+    <nodeInfo nodeId="5569581551640544148" fileName="ChangesManager.java" startLine="215" startPosition="0" endLine="220" endPosition="0" />
+    <nodeInfo nodeId="5569581551640544192" fileName="ChangesManager.java" startLine="227" startPosition="0" endLine="232" endPosition="0" />
+    <nodeInfo nodeId="209997191345281381" fileName="ChangesManager.java" startLine="257" startPosition="0" endLine="262" endPosition="0" />
+    <nodeInfo nodeId="5569581551640544125" fileName="ChangesManager.java" startLine="209" startPosition="0" endLine="215" endPosition="0" />
+    <nodeInfo nodeId="3555722951728565721" fileName="ChangesManager.java" startLine="270" startPosition="54" endLine="276" endPosition="0" />
+    <nodeInfo nodeId="5962623969496447618" fileName="ChangesManager.java" startLine="127" startPosition="43" endLine="134" endPosition="0" />
+    <nodeInfo nodeId="8477273007880817056" fileName="ChangesManager.java" startLine="173" startPosition="48" endLine="180" endPosition="13" />
+    <nodeInfo nodeId="5569581551640544170" fileName="ChangesManager.java" startLine="220" startPosition="0" endLine="227" endPosition="0" />
+    <nodeInfo nodeId="5752539231810454519" fileName="ChangesManager.java" startLine="232" startPosition="0" endLine="239" endPosition="0" />
+    <nodeInfo nodeId="3555722951728565718" fileName="ChangesManager.java" startLine="269" startPosition="71" endLine="276" endPosition="9" />
+    <nodeInfo nodeId="5267577397386524717" fileName="ChangesManager.java" startLine="58" startPosition="31" endLine="66" endPosition="5" />
+    <nodeInfo nodeId="5962623969496447659" fileName="ChangesManager.java" startLine="75" startPosition="43" endLine="83" endPosition="0" />
+    <nodeInfo nodeId="6058514296621167572" fileName="ChangesManager.java" startLine="117" startPosition="0" endLine="125" endPosition="0" />
+    <nodeInfo nodeId="5962623969496447609" fileName="ChangesManager.java" startLine="126" startPosition="90" endLine="134" endPosition="7" />
+    <nodeInfo nodeId="5962623969496447650" fileName="ChangesManager.java" startLine="74" startPosition="0" endLine="83" endPosition="7" />
+    <nodeInfo nodeId="5186220276475231268" fileName="ChangesManager.java" startLine="136" startPosition="0" endLine="146" endPosition="0" />
+    <nodeInfo nodeId="23553604208247412" fileName="ChangesManager.java" startLine="57" startPosition="0" endLine="68" endPosition="0" />
+    <nodeInfo nodeId="6003305288819000319" fileName="ChangesManager.java" startLine="125" startPosition="0" endLine="136" endPosition="0" />
+    <nodeInfo nodeId="6003305288819068505" fileName="ChangesManager.java" startLine="267" startPosition="0" endLine="278" endPosition="0" />
+    <nodeInfo nodeId="8386680215811366511" fileName="ChangesManager.java" startLine="87" startPosition="43" endLine="100" endPosition="0" />
+    <nodeInfo nodeId="8477273007880816996" fileName="ChangesManager.java" startLine="158" startPosition="0" endLine="171" endPosition="13" />
+    <nodeInfo nodeId="8386680215811366504" fileName="ChangesManager.java" startLine="86" startPosition="122" endLine="100" endPosition="7" />
+    <nodeInfo nodeId="5392440913055405811" fileName="ChangesManager.java" startLine="102" startPosition="0" endLine="117" endPosition="0" />
+    <nodeInfo nodeId="23553604208247408" fileName="ChangesManager.java" startLine="68" startPosition="0" endLine="85" endPosition="0" />
+    <nodeInfo nodeId="1552342397249028021" fileName="ChangesManager.java" startLine="85" startPosition="0" endLine="102" endPosition="0" />
+    <nodeInfo nodeId="8680220358160029437" fileName="ChangesManager.java" startLine="155" startPosition="61" endLine="188" endPosition="0" />
+    <nodeInfo nodeId="8680220358160029436" fileName="ChangesManager.java" startLine="154" startPosition="25" endLine="188" endPosition="11" />
+    <nodeInfo nodeId="5962623969496398596" fileName="ChangesManager.java" startLine="153" startPosition="43" endLine="190" endPosition="0" />
+    <nodeInfo nodeId="5962623969496398384" fileName="ChangesManager.java" startLine="152" startPosition="22" endLine="190" endPosition="7" />
+    <nodeInfo nodeId="4709697229103733136" fileName="ChangesManager.java" startLine="151" startPosition="0" endLine="192" endPosition="0" />
+    <scopeInfo nodeId="5569581551640537990" fileName="ChangesManager.java" startLine="207" startPosition="35" endLine="207" endPosition="35" />
+    <scopeInfo nodeId="4912291546802908732" fileName="ChangesManager.java" startLine="242" startPosition="37" endLine="242" endPosition="37" />
+    <scopeInfo nodeId="209997191345281331" fileName="ChangesManager.java" startLine="255" startPosition="31" endLine="255" endPosition="31" />
+    <scopeInfo nodeId="6003305288819068446" fileName="ChangesManager.java" startLine="265" startPosition="41" endLine="265" endPosition="41" />
+    <scopeInfo nodeId="23553604208248979" fileName="ChangesManager.java" startLine="54" startPosition="51" endLine="55" endPosition="19" />
+    <scopeInfo nodeId="5962623969496447669" fileName="ChangesManager.java" startLine="77" startPosition="125" endLine="78" endPosition="40" />
+    <scopeInfo nodeId="2190647295030883778" fileName="ChangesManager.java" startLine="89" startPosition="63" endLine="90" endPosition="17" />
+    <scopeInfo nodeId="5917222806358140692" fileName="ChangesManager.java" startLine="104" startPosition="23" endLine="105" endPosition="13" />
+    <scopeInfo nodeId="891158202133120896" fileName="ChangesManager.java" startLine="108" startPosition="24" endLine="109" endPosition="13" />
+    <scopeInfo nodeId="891158202133120923" fileName="ChangesManager.java" startLine="112" startPosition="72" endLine="113" endPosition="13" />
+    <scopeInfo nodeId="6058514296621167612" fileName="ChangesManager.java" startLine="120" startPosition="67" endLine="121" endPosition="36" />
+    <scopeInfo nodeId="5643745088231031129" fileName="ChangesManager.java" startLine="141" startPosition="71" endLine="142" endPosition="109" />
+    <scopeInfo nodeId="2859527253109744354" fileName="ChangesManager.java" startLine="148" startPosition="76" endLine="149" endPosition="62" />
+    <scopeInfo nodeId="8477273007880817004" fileName="ChangesManager.java" startLine="160" startPosition="87" endLine="161" endPosition="85" />
+    <scopeInfo nodeId="8477273007880817036" fileName="ChangesManager.java" startLine="166" startPosition="95" endLine="167" endPosition="36" />
+    <scopeInfo nodeId="8477273007880817064" fileName="ChangesManager.java" startLine="175" startPosition="87" endLine="176" endPosition="107" />
+    <scopeInfo nodeId="8477273007880817075" fileName="ChangesManager.java" startLine="178" startPosition="17" endLine="179" endPosition="51" />
+    <scopeInfo nodeId="1741994337989997196" fileName="ChangesManager.java" startLine="183" startPosition="87" endLine="184" endPosition="110" />
+    <scopeInfo nodeId="3722815385094377322" fileName="ChangesManager.java" startLine="194" startPosition="47" endLine="195" endPosition="26" />
+    <scopeInfo nodeId="15936038984552265" fileName="ChangesManager.java" startLine="198" startPosition="61" endLine="199" endPosition="54" />
+    <scopeInfo nodeId="5267577397386524132" fileName="ChangesManager.java" startLine="202" startPosition="37" endLine="203" endPosition="89" />
+    <scopeInfo nodeId="5569581551640544135" fileName="ChangesManager.java" startLine="211" startPosition="93" endLine="212" endPosition="75" />
+    <scopeInfo nodeId="5569581551640544156" fileName="ChangesManager.java" startLine="217" startPosition="110" endLine="218" endPosition="30" />
+    <scopeInfo nodeId="6276661785379535593" fileName="ChangesManager.java" startLine="223" startPosition="93" endLine="224" endPosition="57" />
+    <scopeInfo nodeId="5569581551640544202" fileName="ChangesManager.java" startLine="229" startPosition="131" endLine="230" endPosition="30" />
+    <scopeInfo nodeId="5752539231810518954" fileName="ChangesManager.java" startLine="235" startPosition="142" endLine="236" endPosition="45" />
     <scopeInfo nodeId="4912291546802911406" fileName="ChangesManager.java" startLine="245" startPosition="52" endLine="246" endPosition="34" />
-    <scopeInfo nodeId="4912291546802911425" fileName="ChangesManager.java" startLine="250" startPosition="55" endLine="251" endPosition="34" />
-    <scopeInfo nodeId="209997191345281384" fileName="ChangesManager.java" startLine="260" startPosition="33" endLine="261" endPosition="34" />
-    <scopeInfo nodeId="3555722951728565724" fileName="ChangesManager.java" startLine="273" startPosition="57" endLine="274" endPosition="72" />
-    <scopeInfo nodeId="1552342397249028057" fileName="ChangesManager.java" startLine="92" startPosition="72" endLine="94" endPosition="17" />
-    <scopeInfo nodeId="5962623969496447621" fileName="ChangesManager.java" startLine="128" startPosition="78" endLine="130" endPosition="72" />
-    <scopeInfo nodeId="5569581551640537987" fileName="ChangesManager.java" startLine="205" startPosition="64" endLine="207" endPosition="5" />
-    <scopeInfo nodeId="4912291546802908729" fileName="ChangesManager.java" startLine="240" startPosition="62" endLine="242" endPosition="5" />
-    <scopeInfo nodeId="209997191345281328" fileName="ChangesManager.java" startLine="255" startPosition="56" endLine="257" endPosition="5" />
-    <scopeInfo nodeId="6003305288819068443" fileName="ChangesManager.java" startLine="265" startPosition="76" endLine="267" endPosition="5" />
-    <scopeInfo nodeId="23553604208248975" fileName="ChangesManager.java" startLine="52" startPosition="0" endLine="55" endPosition="3">
+    <scopeInfo nodeId="8096178926743427298" fileName="ChangesManager.java" startLine="249" startPosition="119" endLine="250" endPosition="34" />
+    <scopeInfo nodeId="209997191345281384" fileName="ChangesManager.java" startLine="259" startPosition="33" endLine="260" endPosition="34" />
+    <scopeInfo nodeId="3555722951728565724" fileName="ChangesManager.java" startLine="272" startPosition="57" endLine="273" endPosition="72" />
+    <scopeInfo nodeId="1552342397249028057" fileName="ChangesManager.java" startLine="93" startPosition="72" endLine="95" endPosition="17" />
+    <scopeInfo nodeId="5962623969496447621" fileName="ChangesManager.java" startLine="129" startPosition="78" endLine="131" endPosition="72" />
+    <scopeInfo nodeId="5569581551640537987" fileName="ChangesManager.java" startLine="206" startPosition="64" endLine="208" endPosition="5" />
+    <scopeInfo nodeId="4912291546802908729" fileName="ChangesManager.java" startLine="241" startPosition="62" endLine="243" endPosition="5" />
+    <scopeInfo nodeId="209997191345281328" fileName="ChangesManager.java" startLine="254" startPosition="56" endLine="256" endPosition="5" />
+    <scopeInfo nodeId="6003305288819068443" fileName="ChangesManager.java" startLine="264" startPosition="76" endLine="266" endPosition="5" />
+    <scopeInfo nodeId="23553604208248975" fileName="ChangesManager.java" startLine="53" startPosition="0" endLine="56" endPosition="3">
       <varInfo nodeId="23553604208248980" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="5962623969496447662" fileName="ChangesManager.java" startLine="75" startPosition="25" endLine="78" endPosition="9" />
-    <scopeInfo nodeId="6058514296621167607" fileName="ChangesManager.java" startLine="118" startPosition="109" endLine="121" endPosition="7" />
-    <scopeInfo nodeId="8477273007880817029" fileName="ChangesManager.java" startLine="164" startPosition="0" endLine="167" endPosition="15" />
-    <scopeInfo nodeId="5569581551640544131" fileName="ChangesManager.java" startLine="209" startPosition="94" endLine="212" endPosition="7" />
-    <scopeInfo nodeId="5569581551640544132" fileName="ChangesManager.java" startLine="209" startPosition="94" endLine="212" endPosition="7" />
-    <scopeInfo nodeId="5569581551640544178" fileName="ChangesManager.java" startLine="221" startPosition="114" endLine="224" endPosition="7" />
-    <scopeInfo nodeId="6276661785379535590" fileName="ChangesManager.java" startLine="221" startPosition="114" endLine="224" endPosition="7" />
-    <scopeInfo nodeId="5752539231810454522" fileName="ChangesManager.java" startLine="233" startPosition="46" endLine="236" endPosition="7" />
-    <scopeInfo nodeId="5752539231810518951" fileName="ChangesManager.java" startLine="233" startPosition="46" endLine="236" endPosition="7" />
-    <scopeInfo nodeId="3555722951728565722" fileName="ChangesManager.java" startLine="272" startPosition="27" endLine="275" endPosition="11" />
-    <scopeInfo nodeId="5962623969496447619" fileName="ChangesManager.java" startLine="127" startPosition="25" endLine="131" endPosition="9" />
-    <scopeInfo nodeId="8477273007880817003" fileName="ChangesManager.java" startLine="158" startPosition="187" endLine="162" endPosition="0" />
-    <scopeInfo nodeId="8477273007880817063" fileName="ChangesManager.java" startLine="173" startPosition="187" endLine="177" endPosition="0" />
-    <scopeInfo nodeId="1741994337989997195" fileName="ChangesManager.java" startLine="181" startPosition="134" endLine="185" endPosition="0" />
-    <scopeInfo nodeId="15936038984552262" fileName="ChangesManager.java" startLine="196" startPosition="0" endLine="200" endPosition="0">
+    <scopeInfo nodeId="5962623969496447662" fileName="ChangesManager.java" startLine="76" startPosition="25" endLine="79" endPosition="9" />
+    <scopeInfo nodeId="6058514296621167607" fileName="ChangesManager.java" startLine="119" startPosition="109" endLine="122" endPosition="7" />
+    <scopeInfo nodeId="8477273007880817029" fileName="ChangesManager.java" startLine="165" startPosition="0" endLine="168" endPosition="15" />
+    <scopeInfo nodeId="5569581551640544131" fileName="ChangesManager.java" startLine="210" startPosition="94" endLine="213" endPosition="7" />
+    <scopeInfo nodeId="5569581551640544132" fileName="ChangesManager.java" startLine="210" startPosition="94" endLine="213" endPosition="7" />
+    <scopeInfo nodeId="5569581551640544178" fileName="ChangesManager.java" startLine="222" startPosition="114" endLine="225" endPosition="7" />
+    <scopeInfo nodeId="6276661785379535590" fileName="ChangesManager.java" startLine="222" startPosition="114" endLine="225" endPosition="7" />
+    <scopeInfo nodeId="5752539231810454522" fileName="ChangesManager.java" startLine="234" startPosition="46" endLine="237" endPosition="7" />
+    <scopeInfo nodeId="5752539231810518951" fileName="ChangesManager.java" startLine="234" startPosition="46" endLine="237" endPosition="7" />
+    <scopeInfo nodeId="3555722951728565722" fileName="ChangesManager.java" startLine="271" startPosition="27" endLine="274" endPosition="11" />
+    <scopeInfo nodeId="5962623969496447619" fileName="ChangesManager.java" startLine="128" startPosition="25" endLine="132" endPosition="9" />
+    <scopeInfo nodeId="8477273007880817003" fileName="ChangesManager.java" startLine="159" startPosition="187" endLine="163" endPosition="0" />
+    <scopeInfo nodeId="8477273007880817063" fileName="ChangesManager.java" startLine="174" startPosition="187" endLine="178" endPosition="0" />
+    <scopeInfo nodeId="1741994337989997195" fileName="ChangesManager.java" startLine="182" startPosition="134" endLine="186" endPosition="0" />
+    <scopeInfo nodeId="15936038984552262" fileName="ChangesManager.java" startLine="197" startPosition="0" endLine="201" endPosition="0">
       <varInfo nodeId="15936038984552679" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="5267577397386524129" fileName="ChangesManager.java" startLine="200" startPosition="0" endLine="204" endPosition="0" />
-    <scopeInfo nodeId="5962623969496447660" fileName="ChangesManager.java" startLine="75" startPosition="25" endLine="80" endPosition="33" />
-    <scopeInfo nodeId="6058514296621167575" fileName="ChangesManager.java" startLine="117" startPosition="43" endLine="122" endPosition="5" />
-    <scopeInfo nodeId="6058514296621167602" fileName="ChangesManager.java" startLine="117" startPosition="43" endLine="122" endPosition="5" />
-    <scopeInfo nodeId="2859527253109744351" fileName="ChangesManager.java" startLine="145" startPosition="0" endLine="150" endPosition="0">
+    <scopeInfo nodeId="5267577397386524129" fileName="ChangesManager.java" startLine="201" startPosition="0" endLine="205" endPosition="0" />
+    <scopeInfo nodeId="4912291546802911401" fileName="ChangesManager.java" startLine="244" startPosition="0" endLine="248" endPosition="0">
+      <varInfo nodeId="4912291546802911404" varName="md" />
+    </scopeInfo>
+    <scopeInfo nodeId="8096178926743427291" fileName="ChangesManager.java" startLine="248" startPosition="0" endLine="252" endPosition="0">
+      <varInfo nodeId="8096178926743427294" varName="oldState" />
+      <varInfo nodeId="8096178926743465753" varName="md" />
+      <varInfo nodeId="8096178926743427296" varName="newState" />
+    </scopeInfo>
+    <scopeInfo nodeId="5962623969496447660" fileName="ChangesManager.java" startLine="76" startPosition="25" endLine="81" endPosition="33" />
+    <scopeInfo nodeId="6058514296621167575" fileName="ChangesManager.java" startLine="118" startPosition="43" endLine="123" endPosition="5" />
+    <scopeInfo nodeId="6058514296621167602" fileName="ChangesManager.java" startLine="118" startPosition="43" endLine="123" endPosition="5" />
+    <scopeInfo nodeId="2859527253109744351" fileName="ChangesManager.java" startLine="146" startPosition="0" endLine="151" endPosition="0">
       <varInfo nodeId="2859527253109744412" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="3722815385094377319" fileName="ChangesManager.java" startLine="191" startPosition="0" endLine="196" endPosition="0" />
-    <scopeInfo nodeId="5569581551640544148" fileName="ChangesManager.java" startLine="214" startPosition="0" endLine="219" endPosition="0">
+    <scopeInfo nodeId="3722815385094377319" fileName="ChangesManager.java" startLine="192" startPosition="0" endLine="197" endPosition="0" />
+    <scopeInfo nodeId="5569581551640544148" fileName="ChangesManager.java" startLine="215" startPosition="0" endLine="220" endPosition="0">
       <varInfo nodeId="5569581551640544154" varName="toList" />
       <varInfo nodeId="5569581551640544151" varName="changes" />
     </scopeInfo>
-    <scopeInfo nodeId="5569581551640544192" fileName="ChangesManager.java" startLine="226" startPosition="0" endLine="231" endPosition="0">
+    <scopeInfo nodeId="5569581551640544192" fileName="ChangesManager.java" startLine="227" startPosition="0" endLine="232" endPosition="0">
       <varInfo nodeId="5569581551640544200" varName="toList" />
       <varInfo nodeId="5569581551640544198" varName="fromList" />
       <varInfo nodeId="5569581551640544195" varName="changes" />
     </scopeInfo>
-    <scopeInfo nodeId="4912291546802911401" fileName="ChangesManager.java" startLine="243" startPosition="0" endLine="248" endPosition="0">
-      <varInfo nodeId="4912291546802911404" varName="md" />
-    </scopeInfo>
-    <scopeInfo nodeId="4912291546802911420" fileName="ChangesManager.java" startLine="248" startPosition="0" endLine="253" endPosition="0">
-      <varInfo nodeId="4912291546802911423" varName="md" />
-    </scopeInfo>
-    <scopeInfo nodeId="209997191345281381" fileName="ChangesManager.java" startLine="258" startPosition="0" endLine="263" endPosition="0" />
-    <scopeInfo nodeId="5267577397386524719" fileName="ChangesManager.java" startLine="58" startPosition="22" endLine="64" endPosition="34" />
-    <scopeInfo nodeId="5186220276475231271" fileName="ChangesManager.java" startLine="137" startPosition="96" endLine="143" endPosition="61">
+    <scopeInfo nodeId="209997191345281381" fileName="ChangesManager.java" startLine="257" startPosition="0" endLine="262" endPosition="0" />
+    <scopeInfo nodeId="5267577397386524719" fileName="ChangesManager.java" startLine="59" startPosition="22" endLine="65" endPosition="34" />
+    <scopeInfo nodeId="5186220276475231271" fileName="ChangesManager.java" startLine="138" startPosition="96" endLine="144" endPosition="61">
       <varInfo nodeId="5643745088231031186" varName="modelRef" />
     </scopeInfo>
-    <scopeInfo nodeId="5569581551640544125" fileName="ChangesManager.java" startLine="208" startPosition="0" endLine="214" endPosition="0">
+    <scopeInfo nodeId="5569581551640544125" fileName="ChangesManager.java" startLine="209" startPosition="0" endLine="215" endPosition="0">
       <varInfo nodeId="5569581551640544126" varName="changes" />
     </scopeInfo>
-    <scopeInfo nodeId="3555722951728565721" fileName="ChangesManager.java" startLine="271" startPosition="54" endLine="277" endPosition="0" />
-    <scopeInfo nodeId="5962623969496447618" fileName="ChangesManager.java" startLine="126" startPosition="43" endLine="133" endPosition="0" />
-    <scopeInfo nodeId="8477273007880817016" fileName="ChangesManager.java" startLine="162" startPosition="17" endLine="169" endPosition="28" />
-    <scopeInfo nodeId="8477273007880817056" fileName="ChangesManager.java" startLine="172" startPosition="48" endLine="179" endPosition="13" />
-    <scopeInfo nodeId="5569581551640544170" fileName="ChangesManager.java" startLine="219" startPosition="0" endLine="226" endPosition="0">
+    <scopeInfo nodeId="3555722951728565721" fileName="ChangesManager.java" startLine="270" startPosition="54" endLine="276" endPosition="0" />
+    <scopeInfo nodeId="5962623969496447618" fileName="ChangesManager.java" startLine="127" startPosition="43" endLine="134" endPosition="0" />
+    <scopeInfo nodeId="8477273007880817016" fileName="ChangesManager.java" startLine="163" startPosition="17" endLine="170" endPosition="28" />
+    <scopeInfo nodeId="8477273007880817056" fileName="ChangesManager.java" startLine="173" startPosition="48" endLine="180" endPosition="13" />
+    <scopeInfo nodeId="5569581551640544170" fileName="ChangesManager.java" startLine="220" startPosition="0" endLine="227" endPosition="0">
       <varInfo nodeId="5569581551640544176" varName="fromList" />
       <varInfo nodeId="5569581551640544173" varName="changes" />
     </scopeInfo>
-    <scopeInfo nodeId="5752539231810454519" fileName="ChangesManager.java" startLine="231" startPosition="0" endLine="238" endPosition="0" />
-    <scopeInfo nodeId="6003305288819068510" fileName="ChangesManager.java" startLine="270" startPosition="71" endLine="277" endPosition="9" />
-    <scopeInfo nodeId="23553604208247415" fileName="ChangesManager.java" startLine="57" startPosition="31" endLine="65" endPosition="5" />
-    <scopeInfo nodeId="5962623969496447659" fileName="ChangesManager.java" startLine="74" startPosition="43" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="6058514296621167572" fileName="ChangesManager.java" startLine="116" startPosition="0" endLine="124" endPosition="0" />
-    <scopeInfo nodeId="6003305288819000322" fileName="ChangesManager.java" startLine="125" startPosition="90" endLine="133" endPosition="7" />
-    <scopeInfo nodeId="8386680215811366512" fileName="ChangesManager.java" startLine="87" startPosition="25" endLine="97" endPosition="79">
+    <scopeInfo nodeId="5752539231810454519" fileName="ChangesManager.java" startLine="232" startPosition="0" endLine="239" endPosition="0" />
+    <scopeInfo nodeId="6003305288819068510" fileName="ChangesManager.java" startLine="269" startPosition="71" endLine="276" endPosition="9" />
+    <scopeInfo nodeId="23553604208247415" fileName="ChangesManager.java" startLine="58" startPosition="31" endLine="66" endPosition="5" />
+    <scopeInfo nodeId="5962623969496447659" fileName="ChangesManager.java" startLine="75" startPosition="43" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="6058514296621167572" fileName="ChangesManager.java" startLine="117" startPosition="0" endLine="125" endPosition="0" />
+    <scopeInfo nodeId="6003305288819000322" fileName="ChangesManager.java" startLine="126" startPosition="90" endLine="134" endPosition="7" />
+    <scopeInfo nodeId="8386680215811366512" fileName="ChangesManager.java" startLine="88" startPosition="25" endLine="98" endPosition="79">
       <varInfo nodeId="2253323551303615596" varName="modelChangesManager" />
       <varInfo nodeId="1552342397249029519" varName="modelRef" />
     </scopeInfo>
-    <scopeInfo nodeId="5186220276475231268" fileName="ChangesManager.java" startLine="135" startPosition="0" endLine="145" endPosition="0">
+    <scopeInfo nodeId="5186220276475231268" fileName="ChangesManager.java" startLine="136" startPosition="0" endLine="146" endPosition="0">
       <varInfo nodeId="5186220276475231323" varName="modelDescriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="23553604208247412" fileName="ChangesManager.java" startLine="56" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="6003305288819000319" fileName="ChangesManager.java" startLine="124" startPosition="0" endLine="135" endPosition="0">
+    <scopeInfo nodeId="23553604208247412" fileName="ChangesManager.java" startLine="57" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="6003305288819000319" fileName="ChangesManager.java" startLine="125" startPosition="0" endLine="136" endPosition="0">
       <varInfo nodeId="6003305288819008798" varName="modelReference" />
     </scopeInfo>
-    <scopeInfo nodeId="6003305288819068505" fileName="ChangesManager.java" startLine="268" startPosition="0" endLine="279" endPosition="0">
+    <scopeInfo nodeId="6003305288819068505" fileName="ChangesManager.java" startLine="267" startPosition="0" endLine="278" endPosition="0">
       <varInfo nodeId="6003305288819068508" varName="descriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="5392440913055405814" fileName="ChangesManager.java" startLine="102" startPosition="95" endLine="114" endPosition="51">
+    <scopeInfo nodeId="5392440913055405814" fileName="ChangesManager.java" startLine="103" startPosition="95" endLine="115" endPosition="51">
       <varInfo nodeId="891158202133120915" varName="modelDescriptor" />
       <varInfo nodeId="891158202133120889" varName="iFile" />
     </scopeInfo>
-    <scopeInfo nodeId="8386680215811366511" fileName="ChangesManager.java" startLine="86" startPosition="43" endLine="99" endPosition="0" />
-    <scopeInfo nodeId="8477273007880816996" fileName="ChangesManager.java" startLine="157" startPosition="0" endLine="170" endPosition="13" />
-    <scopeInfo nodeId="23553604208247411" fileName="ChangesManager.java" startLine="68" startPosition="31" endLine="82" endPosition="7" />
-    <scopeInfo nodeId="1552342397249028024" fileName="ChangesManager.java" startLine="85" startPosition="122" endLine="99" endPosition="7" />
-    <scopeInfo nodeId="5392440913055405811" fileName="ChangesManager.java" startLine="101" startPosition="0" endLine="116" endPosition="0">
+    <scopeInfo nodeId="8386680215811366511" fileName="ChangesManager.java" startLine="87" startPosition="43" endLine="100" endPosition="0" />
+    <scopeInfo nodeId="8477273007880816996" fileName="ChangesManager.java" startLine="158" startPosition="0" endLine="171" endPosition="13" />
+    <scopeInfo nodeId="23553604208247411" fileName="ChangesManager.java" startLine="69" startPosition="31" endLine="83" endPosition="7" />
+    <scopeInfo nodeId="1552342397249028024" fileName="ChangesManager.java" startLine="86" startPosition="122" endLine="100" endPosition="7" />
+    <scopeInfo nodeId="5392440913055405811" fileName="ChangesManager.java" startLine="102" startPosition="0" endLine="117" endPosition="0">
       <varInfo nodeId="3645216862591272454" varName="fileStatus" />
       <varInfo nodeId="891158202133117057" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="23553604208247408" fileName="ChangesManager.java" startLine="67" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="1552342397249028021" fileName="ChangesManager.java" startLine="84" startPosition="0" endLine="101" endPosition="0">
+    <scopeInfo nodeId="23553604208247408" fileName="ChangesManager.java" startLine="68" startPosition="0" endLine="85" endPosition="0" />
+    <scopeInfo nodeId="1552342397249028021" fileName="ChangesManager.java" startLine="85" startPosition="0" endLine="102" endPosition="0">
       <varInfo nodeId="1552342397249028028" varName="modelDescriptor" />
       <varInfo nodeId="3645216862591272442" varName="fileStatus" />
     </scopeInfo>
-    <scopeInfo nodeId="8680220358160029438" fileName="ChangesManager.java" startLine="155" startPosition="29" endLine="185" endPosition="45">
+    <scopeInfo nodeId="8680220358160029438" fileName="ChangesManager.java" startLine="156" startPosition="29" endLine="186" endPosition="45">
       <varInfo nodeId="8477273007880816992" varName="out" />
     </scopeInfo>
-    <scopeInfo nodeId="8680220358160029437" fileName="ChangesManager.java" startLine="154" startPosition="61" endLine="187" endPosition="0" />
-    <scopeInfo nodeId="5962623969496398597" fileName="ChangesManager.java" startLine="153" startPosition="25" endLine="187" endPosition="11" />
-    <scopeInfo nodeId="5962623969496398596" fileName="ChangesManager.java" startLine="152" startPosition="43" endLine="189" endPosition="0" />
-    <scopeInfo nodeId="4709697229103733139" fileName="ChangesManager.java" startLine="151" startPosition="22" endLine="189" endPosition="7" />
-    <scopeInfo nodeId="4709697229103733136" fileName="ChangesManager.java" startLine="150" startPosition="0" endLine="191" endPosition="0" />
-    <unitInfo nodeId="8477273007880817003" fileName="ChangesManager.java" startLine="158" startPosition="123" endLine="162" endPosition="13" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$6" />
-    <unitInfo nodeId="8477273007880817063" fileName="ChangesManager.java" startLine="173" startPosition="123" endLine="177" endPosition="13" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$6" />
-    <unitInfo nodeId="1741994337989997195" fileName="ChangesManager.java" startLine="181" startPosition="70" endLine="185" endPosition="13" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$6" />
-    <unitInfo nodeId="3555722951728565721" fileName="ChangesManager.java" startLine="271" startPosition="42" endLine="277" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$1" />
-    <unitInfo nodeId="5962623969496447618" fileName="ChangesManager.java" startLine="126" startPosition="31" endLine="133" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$3" />
-    <unitInfo nodeId="5962623969496447659" fileName="ChangesManager.java" startLine="74" startPosition="31" endLine="82" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$1" />
-    <unitInfo nodeId="209997191345281326" fileName="ChangesManager.java" startLine="255" startPosition="0" endLine="264" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$MyReloadListener" />
-    <unitInfo nodeId="8386680215811366511" fileName="ChangesManager.java" startLine="86" startPosition="31" endLine="99" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$2" />
-    <unitInfo nodeId="4912291546802908727" fileName="ChangesManager.java" startLine="240" startPosition="0" endLine="254" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$MyGlobalSModelListener" />
-    <unitInfo nodeId="6003305288819068441" fileName="ChangesManager.java" startLine="265" startPosition="0" endLine="280" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$MySModelRepositoryListener" />
-    <unitInfo nodeId="8680220358160029437" fileName="ChangesManager.java" startLine="154" startPosition="49" endLine="187" endPosition="9" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$5" />
-    <unitInfo nodeId="5569581551640537985" fileName="ChangesManager.java" startLine="205" startPosition="0" endLine="239" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$MyChangeListListener" />
-    <unitInfo nodeId="5962623969496398596" fileName="ChangesManager.java" startLine="152" startPosition="31" endLine="189" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$4" />
-    <unitInfo nodeId="23553604208246606" fileName="ChangesManager.java" startLine="45" startPosition="0" endLine="281" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager" />
+    <scopeInfo nodeId="8680220358160029437" fileName="ChangesManager.java" startLine="155" startPosition="61" endLine="188" endPosition="0" />
+    <scopeInfo nodeId="5962623969496398597" fileName="ChangesManager.java" startLine="154" startPosition="25" endLine="188" endPosition="11" />
+    <scopeInfo nodeId="5962623969496398596" fileName="ChangesManager.java" startLine="153" startPosition="43" endLine="190" endPosition="0" />
+    <scopeInfo nodeId="4709697229103733139" fileName="ChangesManager.java" startLine="152" startPosition="22" endLine="190" endPosition="7" />
+    <scopeInfo nodeId="4709697229103733136" fileName="ChangesManager.java" startLine="151" startPosition="0" endLine="192" endPosition="0" />
+    <unitInfo nodeId="8477273007880817003" fileName="ChangesManager.java" startLine="159" startPosition="123" endLine="163" endPosition="13" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$6" />
+    <unitInfo nodeId="8477273007880817063" fileName="ChangesManager.java" startLine="174" startPosition="123" endLine="178" endPosition="13" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$6" />
+    <unitInfo nodeId="1741994337989997195" fileName="ChangesManager.java" startLine="182" startPosition="70" endLine="186" endPosition="13" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$6" />
+    <unitInfo nodeId="3555722951728565721" fileName="ChangesManager.java" startLine="270" startPosition="42" endLine="276" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$1" />
+    <unitInfo nodeId="5962623969496447618" fileName="ChangesManager.java" startLine="127" startPosition="31" endLine="134" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$3" />
+    <unitInfo nodeId="5962623969496447659" fileName="ChangesManager.java" startLine="75" startPosition="31" endLine="83" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$1" />
+    <unitInfo nodeId="209997191345281326" fileName="ChangesManager.java" startLine="254" startPosition="0" endLine="263" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$MyReloadListener" />
+    <unitInfo nodeId="4912291546802908727" fileName="ChangesManager.java" startLine="241" startPosition="0" endLine="253" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$MyGlobalSModelListener" />
+    <unitInfo nodeId="8386680215811366511" fileName="ChangesManager.java" startLine="87" startPosition="31" endLine="100" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$2" />
+    <unitInfo nodeId="6003305288819068441" fileName="ChangesManager.java" startLine="264" startPosition="0" endLine="279" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$MySModelRepositoryListener" />
+    <unitInfo nodeId="8680220358160029437" fileName="ChangesManager.java" startLine="155" startPosition="49" endLine="188" endPosition="9" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$5" />
+    <unitInfo nodeId="5569581551640537985" fileName="ChangesManager.java" startLine="206" startPosition="0" endLine="240" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$MyChangeListListener" />
+    <unitInfo nodeId="5962623969496398596" fileName="ChangesManager.java" startLine="153" startPosition="31" endLine="190" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager$4" />
+    <unitInfo nodeId="23553604208246606" fileName="ChangesManager.java" startLine="46" startPosition="0" endLine="280" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.ChangesManager" />
   </root>
   <root nodeId="2698665420347342210">
     <nodeInfo nodeId="1998279847126749414" fileName="LongestCommonSubsequenceFinder.java" startLine="94" startPosition="27" endLine="94" endPosition="27" />

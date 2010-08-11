@@ -184,7 +184,7 @@ public class ModelRepositoryComponent {
     };
 
     private SModelListener myModelListener = new SModelAdapter(){
-      public void modelInitialized(SModelDescriptor modelDescriptor) {
+      public void modelLoadingStateChanged(SModelDescriptor sm,ModelLoadingState oldState, ModelLoadingState newState) {
         requestUpdate();
       }
     };

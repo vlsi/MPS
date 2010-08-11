@@ -124,7 +124,7 @@ public class SModelAdapter implements SModelListener {
   public void loadingStateChanged(SModelDescriptor model, boolean isLoading) {
   }
 
-  public void modelInitialized(SModelDescriptor sm) {
+  public void modelLoadingStateChanged(SModelDescriptor sm, ModelLoadingState oldState, ModelLoadingState newState) {
   }
 
   public void beforeModelDisposed(SModel sm) {

@@ -16,12 +16,14 @@
 package jetbrains.mps.reloading;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
+import org.objectweb.asm.ClassReader;
 
 import java.io.*;
 import java.net.MalformedURLException;
@@ -85,6 +87,28 @@ public class JarFileClassPathItem extends RealClassPathItem {
       ReadUtil.read(result, inp);
 
       return result;
+    } catch (IOException e) {
+      return null;
+    } finally {
+      if (inp != null) {
+        try {
+          inp.close();
+        } catch (IOException e) {
+          LOG.error(e);
+        }
+      }
+    }
+  }
+
+  public ClassifierKind getClassifierKind(String name) {
+    checkValidity();
+    ensureInitialized();
+    ZipEntry entry = myEntries.get(name);
+    if (entry == null) return null;
+    InputStream inp = null;
+    try {
+      inp = myZipFile.getInputStream(entry);
+      return ClassifierKind.getClassifierKind(inp);
     } catch (IOException e) {
       return null;
     } finally {

@@ -23,7 +23,6 @@ import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.util.NodeNameUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
-import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.logging.Logger;
 
 import java.util.*;

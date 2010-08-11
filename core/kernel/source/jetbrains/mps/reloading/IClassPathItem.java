@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.reloading;
 
+import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -28,6 +29,9 @@ import java.util.Set;
 public interface IClassPathItem {
   @Nullable
   byte[] getClass(String name);
+
+  @Nullable
+  ClassifierKind getClassifierKind(String name);
 
   @Nullable
   URL getResource(String name);
