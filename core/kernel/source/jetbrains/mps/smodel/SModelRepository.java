@@ -235,15 +235,17 @@ public class SModelRepository implements ApplicationComponent {
       LOG.assertLog(result, "model " + md + " do not have a path in file cache");
     }
     if (md.getSModelReference().getSModelId() != null) {
-      myIdToModelDescriptorMap.remove(md.getSModelReference().getSModelId());
+      if (md.getSModelReference().getSModelId() != null) {
+        myIdToModelDescriptorMap.remove(md.getSModelReference().getSModelId());
+      }
+      myFqNameToModelDescriptorMap.remove(md.getSModelReference().getSModelFqName());
+
+      myModelsWithNoOwners.remove(md);
+
+      removeListeners(md);
+      fireModelRemoved(md);
+      md.dispose();
     }
-    myFqNameToModelDescriptorMap.remove(md.getSModelReference().getSModelFqName());
-
-    myModelsWithNoOwners.remove(md);
-
-    removeListeners(md);
-    fireModelRemoved(md);
-    md.dispose();
   }
 
   private void addListeners(SModelDescriptor modelDescriptor) {
@@ -345,7 +347,7 @@ public class SModelRepository implements ApplicationComponent {
 
   private boolean removeModelFromFileCache(EditableSModelDescriptor modelDescriptor) {
     IFile modelFile = modelDescriptor.getModelFile();
-    if (modelFile == null) return false;
+    if (modelFile == null) return true;
     SModelDescriptor sd = myCanonicalPathsToModelDescriptorMap.remove(modelFile.getCanonicalPath());
     return sd == modelDescriptor;
   }
