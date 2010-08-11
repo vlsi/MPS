@@ -15,17 +15,24 @@
  */
 package jetbrains.mps.workbench.actions.goTo.index;
 
+import jetbrains.mps.baseLanguage.structure.Annotation;
+import jetbrains.mps.baseLanguage.structure.ClassConcept;
+import jetbrains.mps.baseLanguage.structure.EnumClass;
+import jetbrains.mps.baseLanguage.structure.Interface;
+import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
+import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.util.InternUtil;
 
 import java.util.UUID;
 
 public class SNodeDescriptor {
   private String myNodeName;
-  private String myConceptFqName;
+  protected String myConceptFqName;
   private long myMostSignificantBits;
   private long myLeastSignificantBits;
   private int myNumberInModel;
@@ -86,7 +93,7 @@ public class SNodeDescriptor {
   public boolean equals(Object obj) {
     if (!(obj instanceof SNodeDescriptor)) return false;
     SNodeDescriptor sd = (SNodeDescriptor) obj;
-    return sd.myConceptFqName.equals(myConceptFqName)
+    return sd.getConceptFqName().equals(getConceptFqName())
       && sd.myNodeName.equals(myNodeName)
       && sd.myNumberInModel == myNumberInModel
       && sd.getModelReference().equals(getModelReference());
@@ -95,4 +102,5 @@ public class SNodeDescriptor {
   public int hashCode() {
     return getNodeName().hashCode();
   }
+
 }

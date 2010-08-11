@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.reloading;
 
+import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
+
 import java.net.URL;
 import java.util.*;
 
@@ -36,6 +38,14 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
   public byte[] getClass(String name) {
     for (IClassPathItem item : myChildren) {
       byte[] result = item.getClass(name);
+      if (result != null) return result;
+    }
+    return null;
+  }
+
+  public ClassifierKind getClassifierKind(String name) {
+    for (IClassPathItem item : myChildren) {
+      ClassifierKind result = item.getClassifierKind(name);
       if (result != null) return result;
     }
     return null;

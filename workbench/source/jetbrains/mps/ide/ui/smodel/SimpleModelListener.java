@@ -1,9 +1,6 @@
 package jetbrains.mps.ide.ui.smodel;
 
-import jetbrains.mps.smodel.SModelAdapter;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTree;
 
@@ -46,11 +43,10 @@ public abstract class SimpleModelListener extends SModelAdapter {
     updateNodePresentation(false, true);
   }
 
-  public void modelInitialized(SModelDescriptor sm) {
+  public void modelLoadingStateChanged(SModelDescriptor sm, ModelLoadingState oldState, ModelLoadingState newState) {
     updateNodePresentation(false, false);
   }
 
-  @Override
   public void modelReplaced(SModelDescriptor sm) {
     updateNodePresentation(true, true);
   }

@@ -22,7 +22,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <maxImportIndex value="12" />
+  <maxImportIndex value="13" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.logging(jetbrains.mps.logging@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.reloading(jetbrains.mps.reloading@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
@@ -30,11 +30,11 @@
   <import index="5" modelUID="f:java_stub#jetbrains.mps.baseLanguage.structure(jetbrains.mps.baseLanguage.structure@java_stub)" version="-1" />
   <import index="6" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="7" modelUID="f:java_stub#org.objectweb.asm(org.objectweb.asm@java_stub)" version="-1" />
-  <import index="8" modelUID="r:95236d12-ace0-455d-a686-31c68ba00021(jetbrains.mps.stubs.javastub.classpath)" version="-1" />
   <import index="9" modelUID="r:eafb5d8e-2952-4826-b4ad-be2b9011f598(jetbrains.mps.stubs.javastub.asm)" version="-1" />
   <import index="10" modelUID="f:java_stub#jetbrains.mps.stubs.javastub.asm(jetbrains.mps.stubs.javastub.asm@java_stub)" version="-1" />
   <import index="11" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="12" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
+  <import index="13" modelUID="f:java_stub#jetbrains.mps.stubs.javastub.classpath(jetbrains.mps.stubs.javastub.classpath@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="7241381882860001930">
     <property name="abstractClass:3" value="true" />
     <property name="name:3" value="ASMModelLoader" />
@@ -555,11 +555,11 @@
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7241381882860002488">
             <property name="name:3" value="kind" />
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7241381882860002489">
-              <link role="classifier:3" targetNodeId="8.7241381882860010164" resolveInfo="ClassifierKind" />
+              <link role="classifier:3" targetNodeId="13.~ClassifierKind" resolveInfo="ClassifierKind" />
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7241381882860002490">
-              <link role="classConcept:3" targetNodeId="8.7241381882860010164" resolveInfo="ClassifierKind" />
-              <link role="baseMethodDeclaration:3" targetNodeId="8.7241381882860010197" resolveInfo="getClassifierKind" />
+              <link role="classConcept:3" targetNodeId="13.~ClassifierKind" resolveInfo="ClassifierKind" />
+              <link role="baseMethodDeclaration:3" targetNodeId="13.~ClassifierKind.getClassifierKind(org.objectweb.asm.ClassReader):jetbrains.mps.stubs.javastub.classpath.ClassifierKind" resolveInfo="getClassifierKind" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="7241381882860002491">
                 <link role="variableDeclaration:3" targetNodeId="7241381882860002480" resolveInfo="reader" />
               </node>
@@ -601,8 +601,8 @@
               <link role="variableDeclaration:3" targetNodeId="7241381882860002488" resolveInfo="kind" />
             </node>
             <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="6097239920157937737">
-              <link role="enumConstantDeclaration:3" targetNodeId="8.7241381882860010166" resolveInfo="CLASS" />
-              <link role="enumClass:3" targetNodeId="8.7241381882860010164" resolveInfo="ClassifierKind" />
+              <link role="enumClass:3" targetNodeId="13.~ClassifierKind" resolveInfo="ClassifierKind" />
+              <link role="enumConstantDeclaration:3" targetNodeId="13.~ClassifierKind.CLASS" resolveInfo="CLASS" />
             </node>
           </node>
           <node role="elsifClauses:3" type="jetbrains.mps.baseLanguage.structure.ElsifClause:3" id="6097239920157937779">
@@ -627,8 +627,8 @@
                 <link role="variableDeclaration:3" targetNodeId="7241381882860002488" resolveInfo="kind" />
               </node>
               <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="6097239920157937809">
-                <link role="enumConstantDeclaration:3" targetNodeId="8.7241381882860010167" resolveInfo="INTERFACE" />
-                <link role="enumClass:3" targetNodeId="8.7241381882860010164" resolveInfo="ClassifierKind" />
+                <link role="enumClass:3" targetNodeId="13.~ClassifierKind" resolveInfo="ClassifierKind" />
+                <link role="enumConstantDeclaration:3" targetNodeId="13.~ClassifierKind.INTERFACE" resolveInfo="INTERFACE" />
               </node>
             </node>
           </node>
@@ -654,8 +654,8 @@
                 <link role="variableDeclaration:3" targetNodeId="7241381882860002488" resolveInfo="kind" />
               </node>
               <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="6097239920157937944">
-                <link role="enumConstantDeclaration:3" targetNodeId="8.7241381882860010168" resolveInfo="ANNOTATIONS" />
-                <link role="enumClass:3" targetNodeId="8.7241381882860010164" resolveInfo="ClassifierKind" />
+                <link role="enumClass:3" targetNodeId="13.~ClassifierKind" resolveInfo="ClassifierKind" />
+                <link role="enumConstantDeclaration:3" targetNodeId="13.~ClassifierKind.ANNOTATIONS" resolveInfo="ANNOTATIONS" />
               </node>
             </node>
           </node>
@@ -681,8 +681,8 @@
                 <link role="variableDeclaration:3" targetNodeId="7241381882860002488" resolveInfo="kind" />
               </node>
               <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="6097239920157937957">
-                <link role="enumConstantDeclaration:3" targetNodeId="8.7241381882860010169" resolveInfo="ENUM" />
-                <link role="enumClass:3" targetNodeId="8.7241381882860010164" resolveInfo="ClassifierKind" />
+                <link role="enumClass:3" targetNodeId="13.~ClassifierKind" resolveInfo="ClassifierKind" />
+                <link role="enumConstantDeclaration:3" targetNodeId="13.~ClassifierKind.ENUM" resolveInfo="ENUM" />
               </node>
             </node>
           </node>
@@ -697,8 +697,8 @@
                 <link role="variableDeclaration:3" targetNodeId="7241381882860002488" resolveInfo="kind" />
               </node>
               <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="6097239920157937970">
-                <link role="enumConstantDeclaration:3" targetNodeId="8.7241381882860010170" resolveInfo="UNKNOWN" />
-                <link role="enumClass:3" targetNodeId="8.7241381882860010164" resolveInfo="ClassifierKind" />
+                <link role="enumClass:3" targetNodeId="13.~ClassifierKind" resolveInfo="ClassifierKind" />
+                <link role="enumConstantDeclaration:3" targetNodeId="13.~ClassifierKind.UNKNOWN" resolveInfo="UNKNOWN" />
               </node>
             </node>
           </node>

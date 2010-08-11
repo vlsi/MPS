@@ -25,11 +25,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.structure.ClassConcept;
-import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
-import jetbrains.mps.baseLanguage.structure.Interface;
-import jetbrains.mps.baseLanguage.structure.Annotation;
-import jetbrains.mps.baseLanguage.structure.EnumClass;
+import jetbrains.mps.workbench.actions.goTo.index.StubSNodeDescriptor;
 import jetbrains.mps.smodel.LanguageID;
 
 public class JavaStubs extends BaseStubModelRootManager {
@@ -120,28 +116,7 @@ public class JavaStubs extends BaseStubModelRootManager {
       if (cls.contains("$")) {
         continue;
       }
-      byte[] content = item.getClass(("".equals(pack) ?
-        cls :
-        pack + "." + cls
-      ));
-      String conceptFqName = ClassConcept.concept;
-      ClassifierKind kind = ClassifierKind.getClassifierKind(content);
-      if (kind == ClassifierKind.CLASS) {
-        conceptFqName = ClassConcept.concept;
-      } else if (kind == ClassifierKind.INTERFACE) {
-        conceptFqName = Interface.concept;
-      } else if (kind == ClassifierKind.ANNOTATIONS) {
-        conceptFqName = Annotation.concept;
-      } else if (kind == ClassifierKind.ENUM) {
-        conceptFqName = EnumClass.concept;
-      } else if (kind == ClassifierKind.UNKNOWN) {
-        continue;
-      }
-      result.add(new SNodeDescriptor(cls, conceptFqName, 0, 0, -1) {
-        protected SModelReference calculateModelReference() {
-          return StubHelper.uidForPackageInStubs(pack);
-        }
-      });
+      result.add(new StubSNodeDescriptor(cls, pack, item));
     }
     for (String subpack : item.getSubpackages(pack)) {
       JavaStubs.this.iterateClasspath(item, result, subpack);

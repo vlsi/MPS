@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.event;
 
+import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.annotations.NotNull;
@@ -70,7 +71,7 @@ public interface SModelListener {
 
   void modelSaved(SModelDescriptor sm);
 
-  void modelInitialized(SModelDescriptor sm);
+  void modelLoadingStateChanged(SModelDescriptor sm,ModelLoadingState oldState, ModelLoadingState newState);
 
   /**
    * This method will be called by SModelDescriptor to notify clients that underlying
