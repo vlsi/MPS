@@ -211,30 +211,14 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
     }
 
     SModelFqName fqName = new SModelFqName(longName, stereotype);
-    SModelDescriptor result = new DefaultSModelDescriptor(IModelRootManager.NULL_MANAGER, null, new SModelReference(fqName, SModelId.generate())) {
+    SModelDescriptor result = new TransientSModelDescriptor(fqName, longName) {
       protected SModel loadModel() {
-        return new TransientSModel(getSModelReference());
-      }
-
-      @Override
-      public IModule getModule() {
-        return TransientModelsModule.this;
-      }
-
-      @Override
-      public Set<IModule> getModules() {
-        return Collections.<IModule>singleton(TransientModelsModule.this);
-      }
-
-      @Override
-      public SModelDescriptor resolveModel(SModelReference reference) {
-        if(reference.getLongName().equals(longName)) {
-          SModelDescriptor descriptor = myModels.get(reference.getSModelFqName());
-          if(descriptor != null) {
-            return descriptor;
+        return new TransientSModel(getSModelReference()) {
+          @Override
+          public boolean isNotEditable() {
+            return false;
           }
-        }
-        return super.resolveModel(reference);
+        };
       }
     };
     myModels.put(result.getSModelReference().getSModelFqName(), result);
