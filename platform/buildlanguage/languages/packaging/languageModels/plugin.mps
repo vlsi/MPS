@@ -2994,7 +2994,7 @@
                     <link role="variableDeclaration:3" targetNodeId="1241461908115" resolveInfo="targetModelDescriptor" />
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8683696394982846678">
-                    <link role="baseMethodDeclaration:3" targetNodeId="97.~EditableDescriptor.save():void" resolveInfo="save" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="97.~EditableSModelDescriptor.save():void" resolveInfo="save" />
                   </node>
                 </node>
               </node>
@@ -11416,7 +11416,7 @@
                                                       </node>
                                                     </node>
                                                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1224163184141">
-                                                      <link role="baseMethodDeclaration:3" targetNodeId="97.~EditableDescriptor.getModelFile():jetbrains.mps.vfs.IFile" resolveInfo="getModelFile" />
+                                                      <link role="baseMethodDeclaration:3" targetNodeId="97.~EditableSModelDescriptor.getModelFile():jetbrains.mps.vfs.IFile" resolveInfo="getModelFile" />
                                                     </node>
                                                   </node>
                                                 </node>

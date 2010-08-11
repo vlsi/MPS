@@ -142,257 +142,257 @@
     <nodeInfo nodeId="1221153772444" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="18" startPosition="65" endLine="19" endPosition="170" />
   </root>
   <root nodeId="1222854011172">
-    <nodeInfo nodeId="1222949660688" fileName="BuildGeneratorImpl.java" startLine="39" startPosition="64" endLine="40" endPosition="34" />
-    <nodeInfo nodeId="1222949688158" fileName="BuildGeneratorImpl.java" startLine="42" startPosition="46" endLine="43" endPosition="29" />
-    <nodeInfo nodeId="1224777806214" fileName="BuildGeneratorImpl.java" startLine="43" startPosition="29" endLine="44" endPosition="50" />
-    <nodeInfo nodeId="1224777996115" fileName="BuildGeneratorImpl.java" startLine="45" startPosition="62" endLine="46" endPosition="108" />
-    <nodeInfo nodeId="1224170485232" fileName="BuildGeneratorImpl.java" startLine="47" startPosition="5" endLine="48" endPosition="37" />
-    <nodeInfo nodeId="1225196270615" fileName="BuildGeneratorImpl.java" startLine="48" startPosition="37" endLine="49" endPosition="50" />
-    <nodeInfo nodeId="6979612000521479887" fileName="BuildGeneratorImpl.java" startLine="54" startPosition="69" endLine="55" endPosition="49" />
-    <nodeInfo nodeId="6979612000521479962" fileName="BuildGeneratorImpl.java" startLine="55" startPosition="49" endLine="56" endPosition="50" />
-    <nodeInfo nodeId="6979612000521479967" fileName="BuildGeneratorImpl.java" startLine="56" startPosition="50" endLine="57" endPosition="107" />
-    <nodeInfo nodeId="6979612000521479974" fileName="BuildGeneratorImpl.java" startLine="57" startPosition="107" endLine="58" endPosition="76" />
-    <nodeInfo nodeId="6979612000521479980" fileName="BuildGeneratorImpl.java" startLine="58" startPosition="76" endLine="59" endPosition="80" />
-    <nodeInfo nodeId="6979612000521479990" fileName="BuildGeneratorImpl.java" startLine="59" startPosition="80" endLine="60" endPosition="76" />
-    <nodeInfo nodeId="6979612000521479997" fileName="BuildGeneratorImpl.java" startLine="60" startPosition="76" endLine="61" endPosition="56" />
-    <nodeInfo nodeId="6979612000521481991" fileName="BuildGeneratorImpl.java" startLine="61" startPosition="56" endLine="62" endPosition="111" />
-    <nodeInfo nodeId="6979612000521480020" fileName="BuildGeneratorImpl.java" startLine="64" startPosition="29" endLine="65" endPosition="79" />
-    <nodeInfo nodeId="8683696394983855211" fileName="BuildGeneratorImpl.java" startLine="65" startPosition="79" endLine="66" endPosition="72" />
-    <nodeInfo nodeId="6979612000521482038" fileName="BuildGeneratorImpl.java" startLine="69" startPosition="90" endLine="70" endPosition="79" />
-    <nodeInfo nodeId="6979612000521480032" fileName="BuildGeneratorImpl.java" startLine="76" startPosition="90" endLine="77" endPosition="58" />
-    <nodeInfo nodeId="6979612000521480039" fileName="BuildGeneratorImpl.java" startLine="78" startPosition="17" endLine="79" endPosition="120" />
-    <nodeInfo nodeId="6979612000521480049" fileName="BuildGeneratorImpl.java" startLine="81" startPosition="15" endLine="82" endPosition="33" />
-    <nodeInfo nodeId="8683696394983855000" fileName="BuildGeneratorImpl.java" startLine="82" startPosition="33" endLine="83" endPosition="104" />
-    <nodeInfo nodeId="8683696394983855109" fileName="BuildGeneratorImpl.java" startLine="83" startPosition="104" endLine="84" endPosition="103" />
-    <nodeInfo nodeId="6979612000521479937" fileName="BuildGeneratorImpl.java" startLine="86" startPosition="77" endLine="87" endPosition="57" />
-    <nodeInfo nodeId="6979612000521479942" fileName="BuildGeneratorImpl.java" startLine="87" startPosition="57" endLine="88" endPosition="78" />
-    <nodeInfo nodeId="8683696394983855230" fileName="BuildGeneratorImpl.java" startLine="90" startPosition="37" endLine="91" endPosition="37" />
-    <nodeInfo nodeId="1068566623012681020" fileName="BuildGeneratorImpl.java" startLine="102" startPosition="62" endLine="103" endPosition="77" />
-    <nodeInfo nodeId="1223991390036" fileName="BuildGeneratorImpl.java" startLine="107" startPosition="32" endLine="108" endPosition="24" />
-    <nodeInfo nodeId="1223991390045" fileName="BuildGeneratorImpl.java" startLine="109" startPosition="37" endLine="110" endPosition="65" />
-    <nodeInfo nodeId="7376433222636454485" fileName="BuildGeneratorImpl.java" startLine="110" startPosition="65" endLine="111" endPosition="25" />
-    <nodeInfo nodeId="1223991390054" fileName="BuildGeneratorImpl.java" startLine="111" startPosition="25" endLine="112" endPosition="56" />
-    <nodeInfo nodeId="1223991390060" fileName="BuildGeneratorImpl.java" startLine="112" startPosition="56" endLine="113" endPosition="121" />
-    <nodeInfo nodeId="1223991390075" fileName="BuildGeneratorImpl.java" startLine="113" startPosition="121" endLine="114" endPosition="78" />
-    <nodeInfo nodeId="1240394407338" fileName="BuildGeneratorImpl.java" startLine="114" startPosition="78" endLine="115" endPosition="50" />
-    <nodeInfo nodeId="1223991390086" fileName="BuildGeneratorImpl.java" startLine="115" startPosition="50" endLine="116" endPosition="96" />
-    <nodeInfo nodeId="1223991390095" fileName="BuildGeneratorImpl.java" startLine="117" startPosition="14" endLine="118" endPosition="38" />
-    <nodeInfo nodeId="1240394428626" fileName="BuildGeneratorImpl.java" startLine="119" startPosition="7" endLine="120" endPosition="45" />
-    <nodeInfo nodeId="1223991404543" fileName="BuildGeneratorImpl.java" startLine="120" startPosition="45" endLine="121" endPosition="78" />
-    <nodeInfo nodeId="1223991364734" fileName="BuildGeneratorImpl.java" startLine="122" startPosition="12" endLine="123" endPosition="29" />
-    <nodeInfo nodeId="1225196493706" fileName="BuildGeneratorImpl.java" startLine="127" startPosition="64" endLine="128" endPosition="55" />
-    <nodeInfo nodeId="1225196279763" fileName="BuildGeneratorImpl.java" startLine="128" startPosition="55" endLine="129" endPosition="45" />
-    <nodeInfo nodeId="1225196513298" fileName="BuildGeneratorImpl.java" startLine="129" startPosition="45" endLine="130" endPosition="18" />
-    <nodeInfo nodeId="1225196502478" fileName="BuildGeneratorImpl.java" startLine="131" startPosition="55" endLine="132" endPosition="48" />
-    <nodeInfo nodeId="1225196535576" fileName="BuildGeneratorImpl.java" startLine="132" startPosition="48" endLine="133" endPosition="14" />
-    <nodeInfo nodeId="1225196270604" fileName="BuildGeneratorImpl.java" startLine="134" startPosition="5" endLine="135" endPosition="42" />
-    <nodeInfo nodeId="1222854358083" fileName="BuildGeneratorImpl.java" startLine="138" startPosition="132" endLine="139" endPosition="101" />
-    <nodeInfo nodeId="1241461908144" fileName="BuildGeneratorImpl.java" startLine="141" startPosition="25" endLine="142" endPosition="83" />
-    <nodeInfo nodeId="7376433222636454165" fileName="BuildGeneratorImpl.java" startLine="147" startPosition="133" endLine="148" endPosition="25" />
-    <nodeInfo nodeId="1241461839329" fileName="BuildGeneratorImpl.java" startLine="148" startPosition="25" endLine="149" endPosition="114" />
-    <nodeInfo nodeId="7376433222636454055" fileName="BuildGeneratorImpl.java" startLine="149" startPosition="114" endLine="150" endPosition="42" />
-    <nodeInfo nodeId="1241461839336" fileName="BuildGeneratorImpl.java" startLine="150" startPosition="42" endLine="151" endPosition="60" />
-    <nodeInfo nodeId="1241461839342" fileName="BuildGeneratorImpl.java" startLine="151" startPosition="60" endLine="152" endPosition="36" />
-    <nodeInfo nodeId="7376433222636453105" fileName="BuildGeneratorImpl.java" startLine="152" startPosition="36" endLine="153" endPosition="22" />
-    <nodeInfo nodeId="1241461839348" fileName="BuildGeneratorImpl.java" startLine="153" startPosition="22" endLine="154" endPosition="53" />
-    <nodeInfo nodeId="7376433222636453651" fileName="BuildGeneratorImpl.java" startLine="154" startPosition="53" endLine="155" endPosition="27" />
-    <nodeInfo nodeId="1241528543663" fileName="BuildGeneratorImpl.java" startLine="155" startPosition="27" endLine="156" endPosition="22" />
-    <nodeInfo nodeId="1241461839355" fileName="BuildGeneratorImpl.java" startLine="156" startPosition="22" endLine="157" endPosition="107" />
-    <nodeInfo nodeId="1241461839369" fileName="BuildGeneratorImpl.java" startLine="157" startPosition="107" endLine="158" endPosition="40" />
-    <nodeInfo nodeId="1241461839378" fileName="BuildGeneratorImpl.java" startLine="159" startPosition="21" endLine="160" endPosition="70" />
-    <nodeInfo nodeId="1241528578910" fileName="BuildGeneratorImpl.java" startLine="160" startPosition="70" endLine="161" endPosition="101" />
-    <nodeInfo nodeId="1241528596524" fileName="BuildGeneratorImpl.java" startLine="162" startPosition="12" endLine="163" endPosition="78" />
-    <nodeInfo nodeId="1241461839410" fileName="BuildGeneratorImpl.java" startLine="164" startPosition="5" endLine="165" endPosition="77" />
-    <nodeInfo nodeId="7376433222636454123" fileName="BuildGeneratorImpl.java" startLine="165" startPosition="77" endLine="166" endPosition="7" />
-    <nodeInfo nodeId="1241461839419" fileName="BuildGeneratorImpl.java" startLine="166" startPosition="7" endLine="167" endPosition="63" />
-    <nodeInfo nodeId="1241461839426" fileName="BuildGeneratorImpl.java" startLine="167" startPosition="63" endLine="168" endPosition="140" />
-    <nodeInfo nodeId="7376433222636453377" fileName="BuildGeneratorImpl.java" startLine="168" startPosition="140" endLine="169" endPosition="18" />
-    <nodeInfo nodeId="1241461839438" fileName="BuildGeneratorImpl.java" startLine="169" startPosition="18" endLine="170" endPosition="102" />
-    <nodeInfo nodeId="1241461839445" fileName="BuildGeneratorImpl.java" startLine="170" startPosition="102" endLine="171" endPosition="112" />
-    <nodeInfo nodeId="1241461839455" fileName="BuildGeneratorImpl.java" startLine="171" startPosition="112" endLine="172" endPosition="100" />
-    <nodeInfo nodeId="7376433222636454381" fileName="BuildGeneratorImpl.java" startLine="172" startPosition="100" endLine="173" endPosition="32" />
-    <nodeInfo nodeId="1241461839463" fileName="BuildGeneratorImpl.java" startLine="173" startPosition="32" endLine="174" endPosition="65" />
-    <nodeInfo nodeId="1241461839468" fileName="BuildGeneratorImpl.java" startLine="174" startPosition="65" endLine="175" endPosition="93" />
-    <nodeInfo nodeId="7376433222636453303" fileName="BuildGeneratorImpl.java" startLine="175" startPosition="93" endLine="176" endPosition="29" />
-    <nodeInfo nodeId="1241461839476" fileName="BuildGeneratorImpl.java" startLine="176" startPosition="29" endLine="177" endPosition="73" />
-    <nodeInfo nodeId="1241461839481" fileName="BuildGeneratorImpl.java" startLine="177" startPosition="73" endLine="178" endPosition="21" />
-    <nodeInfo nodeId="1241542919460" fileName="BuildGeneratorImpl.java" startLine="181" startPosition="98" endLine="182" endPosition="45" />
-    <nodeInfo nodeId="8683696394982846675" fileName="BuildGeneratorImpl.java" startLine="184" startPosition="25" endLine="185" endPosition="37" />
-    <nodeInfo nodeId="1241461908124" fileName="BuildGeneratorImpl.java" startLine="187" startPosition="7" endLine="188" endPosition="86" />
-    <nodeInfo nodeId="1241461908133" fileName="BuildGeneratorImpl.java" startLine="188" startPosition="86" endLine="189" endPosition="37" />
-    <nodeInfo nodeId="1224166925335" fileName="BuildGeneratorImpl.java" startLine="193" startPosition="37" endLine="194" endPosition="86" />
-    <nodeInfo nodeId="1224166994495" fileName="BuildGeneratorImpl.java" startLine="195" startPosition="47" endLine="196" endPosition="58" />
-    <nodeInfo nodeId="1224167076395" fileName="BuildGeneratorImpl.java" startLine="196" startPosition="58" endLine="197" endPosition="64" />
-    <nodeInfo nodeId="1224167095658" fileName="BuildGeneratorImpl.java" startLine="198" startPosition="5" endLine="199" endPosition="16" />
-    <nodeInfo nodeId="1224167163196" fileName="BuildGeneratorImpl.java" startLine="202" startPosition="101" endLine="203" endPosition="96" />
-    <nodeInfo nodeId="1224167471720" fileName="BuildGeneratorImpl.java" startLine="203" startPosition="96" endLine="204" endPosition="74" />
-    <nodeInfo nodeId="7376433222636453081" fileName="BuildGeneratorImpl.java" startLine="205" startPosition="63" endLine="206" endPosition="28" />
-    <nodeInfo nodeId="1224167141123" fileName="BuildGeneratorImpl.java" startLine="206" startPosition="28" endLine="207" endPosition="60" />
-    <nodeInfo nodeId="1224167141131" fileName="BuildGeneratorImpl.java" startLine="208" startPosition="30" endLine="209" endPosition="17" />
-    <nodeInfo nodeId="1224167197687" fileName="BuildGeneratorImpl.java" startLine="210" startPosition="7" endLine="211" endPosition="65" />
-    <nodeInfo nodeId="1224169995613" fileName="BuildGeneratorImpl.java" startLine="211" startPosition="65" endLine="212" endPosition="58" />
-    <nodeInfo nodeId="7376433222636453163" fileName="BuildGeneratorImpl.java" startLine="212" startPosition="58" endLine="213" endPosition="31" />
-    <nodeInfo nodeId="1224167666678" fileName="BuildGeneratorImpl.java" startLine="214" startPosition="115" endLine="215" endPosition="53" />
-    <nodeInfo nodeId="1224167666695" fileName="BuildGeneratorImpl.java" startLine="217" startPosition="73" endLine="218" endPosition="84" />
-    <nodeInfo nodeId="1224167666701" fileName="BuildGeneratorImpl.java" startLine="218" startPosition="84" endLine="219" endPosition="200" />
-    <nodeInfo nodeId="1224167774438" fileName="BuildGeneratorImpl.java" startLine="220" startPosition="73" endLine="221" endPosition="74" />
-    <nodeInfo nodeId="7376433222636453149" fileName="BuildGeneratorImpl.java" startLine="225" startPosition="7" endLine="226" endPosition="29" />
-    <nodeInfo nodeId="1224168796641" fileName="BuildGeneratorImpl.java" startLine="226" startPosition="29" endLine="227" endPosition="41" />
-    <nodeInfo nodeId="1224168807854" fileName="BuildGeneratorImpl.java" startLine="228" startPosition="27" endLine="229" endPosition="14" />
-    <nodeInfo nodeId="1224168859747" fileName="BuildGeneratorImpl.java" startLine="231" startPosition="70" endLine="232" endPosition="231" />
-    <nodeInfo nodeId="1224169030806" fileName="BuildGeneratorImpl.java" startLine="232" startPosition="231" endLine="233" endPosition="63" />
-    <nodeInfo nodeId="7376433222636454201" fileName="BuildGeneratorImpl.java" startLine="235" startPosition="5" endLine="236" endPosition="7" />
-    <nodeInfo nodeId="1224167850019" fileName="BuildGeneratorImpl.java" startLine="237" startPosition="67" endLine="238" endPosition="109" />
-    <nodeInfo nodeId="1223991390093" fileName="BuildGeneratorImpl.java" startLine="117" startPosition="12" endLine="119" endPosition="7" />
-    <nodeInfo nodeId="1223991361194" fileName="BuildGeneratorImpl.java" startLine="122" startPosition="10" endLine="124" endPosition="5" />
-    <nodeInfo nodeId="1241461839408" fileName="BuildGeneratorImpl.java" startLine="162" startPosition="10" endLine="164" endPosition="5" />
-    <nodeInfo nodeId="1224777888496" fileName="BuildGeneratorImpl.java" startLine="44" startPosition="50" endLine="47" endPosition="5" />
-    <nodeInfo nodeId="6979612000521482027" fileName="BuildGeneratorImpl.java" startLine="68" startPosition="33" endLine="71" endPosition="17" />
-    <nodeInfo nodeId="6979612000521480026" fileName="BuildGeneratorImpl.java" startLine="75" startPosition="33" endLine="78" endPosition="17" />
-    <nodeInfo nodeId="1224167141129" fileName="BuildGeneratorImpl.java" startLine="207" startPosition="60" endLine="210" endPosition="7" />
-    <nodeInfo nodeId="1224167759857" fileName="BuildGeneratorImpl.java" startLine="219" startPosition="200" endLine="222" endPosition="13" />
-    <nodeInfo nodeId="1224168798684" fileName="BuildGeneratorImpl.java" startLine="227" startPosition="41" endLine="230" endPosition="7" />
-    <nodeInfo nodeId="1224167835664" fileName="BuildGeneratorImpl.java" startLine="236" startPosition="7" endLine="239" endPosition="5" />
-    <nodeInfo nodeId="8683696394984066699" fileName="BuildGeneratorImpl.java" startLine="89" startPosition="70" endLine="93" endPosition="0" />
-    <nodeInfo nodeId="1068566623012681009" fileName="BuildGeneratorImpl.java" startLine="101" startPosition="0" endLine="105" endPosition="0" />
-    <nodeInfo nodeId="1225196315041" fileName="BuildGeneratorImpl.java" startLine="130" startPosition="18" endLine="134" endPosition="5" />
-    <nodeInfo nodeId="7819841746799321430" fileName="BuildGeneratorImpl.java" startLine="140" startPosition="27" endLine="144" endPosition="0" />
-    <nodeInfo nodeId="8683696394982846673" fileName="BuildGeneratorImpl.java" startLine="183" startPosition="67" endLine="187" endPosition="0" />
-    <nodeInfo nodeId="1224168814055" fileName="BuildGeneratorImpl.java" startLine="230" startPosition="7" endLine="234" endPosition="7" />
-    <nodeInfo nodeId="8683696394984066698" fileName="BuildGeneratorImpl.java" startLine="88" startPosition="78" endLine="93" endPosition="19" />
-    <nodeInfo nodeId="7819841746799321421" fileName="BuildGeneratorImpl.java" startLine="139" startPosition="101" endLine="144" endPosition="6" />
-    <nodeInfo nodeId="8683696394982846672" fileName="BuildGeneratorImpl.java" startLine="182" startPosition="45" endLine="187" endPosition="7" />
-    <nodeInfo nodeId="6979612000521482025" fileName="BuildGeneratorImpl.java" startLine="67" startPosition="66" endLine="73" endPosition="0" />
-    <nodeInfo nodeId="1241461839376" fileName="BuildGeneratorImpl.java" startLine="158" startPosition="40" endLine="164" endPosition="5" />
-    <nodeInfo nodeId="1224166837677" fileName="BuildGeneratorImpl.java" startLine="192" startPosition="75" endLine="198" endPosition="5" />
-    <nodeInfo nodeId="6979612000521482024" fileName="BuildGeneratorImpl.java" startLine="66" startPosition="72" endLine="73" endPosition="15" />
-    <nodeInfo nodeId="6979612000521480024" fileName="BuildGeneratorImpl.java" startLine="74" startPosition="75" endLine="81" endPosition="0" />
-    <nodeInfo nodeId="1224167666689" fileName="BuildGeneratorImpl.java" startLine="216" startPosition="64" endLine="223" endPosition="11" />
-    <nodeInfo nodeId="6979612000521480023" fileName="BuildGeneratorImpl.java" startLine="73" startPosition="15" endLine="81" endPosition="15" />
-    <nodeInfo nodeId="1222863546137" fileName="BuildGeneratorImpl.java" startLine="41" startPosition="0" endLine="50" endPosition="3" />
-    <nodeInfo nodeId="1225396780423" fileName="BuildGeneratorImpl.java" startLine="137" startPosition="0" endLine="146" endPosition="0" />
-    <nodeInfo nodeId="1224167666685" fileName="BuildGeneratorImpl.java" startLine="215" startPosition="53" endLine="224" endPosition="9" />
-    <nodeInfo nodeId="6979612000521479930" fileName="BuildGeneratorImpl.java" startLine="85" startPosition="125" endLine="95" endPosition="0" />
-    <nodeInfo nodeId="1224166787164" fileName="BuildGeneratorImpl.java" startLine="191" startPosition="0" endLine="201" endPosition="0" />
-    <nodeInfo nodeId="6979612000521479917" fileName="BuildGeneratorImpl.java" startLine="84" startPosition="103" endLine="95" endPosition="15" />
-    <nodeInfo nodeId="1223991390040" fileName="BuildGeneratorImpl.java" startLine="108" startPosition="24" endLine="119" endPosition="7" />
-    <nodeInfo nodeId="1225196270598" fileName="BuildGeneratorImpl.java" startLine="126" startPosition="0" endLine="137" endPosition="0" />
-    <nodeInfo nodeId="1241461908112" fileName="BuildGeneratorImpl.java" startLine="180" startPosition="0" endLine="191" endPosition="0" />
-    <nodeInfo nodeId="1224167651025" fileName="BuildGeneratorImpl.java" startLine="213" startPosition="31" endLine="225" endPosition="7" />
-    <nodeInfo nodeId="1223991352200" fileName="BuildGeneratorImpl.java" startLine="106" startPosition="76" endLine="124" endPosition="5" />
-    <nodeInfo nodeId="1223991159398" fileName="BuildGeneratorImpl.java" startLine="105" startPosition="0" endLine="126" endPosition="0" />
-    <nodeInfo nodeId="1224167141119" fileName="BuildGeneratorImpl.java" startLine="204" startPosition="74" endLine="235" endPosition="5" />
-    <nodeInfo nodeId="6979612000521479909" fileName="BuildGeneratorImpl.java" startLine="63" startPosition="72" endLine="97" endPosition="0" />
-    <nodeInfo nodeId="1241461839315" fileName="BuildGeneratorImpl.java" startLine="146" startPosition="0" endLine="180" endPosition="0" />
-    <nodeInfo nodeId="6979612000521479901" fileName="BuildGeneratorImpl.java" startLine="62" startPosition="111" endLine="97" endPosition="36" />
-    <nodeInfo nodeId="1224167141110" fileName="BuildGeneratorImpl.java" startLine="201" startPosition="0" endLine="241" endPosition="0" />
-    <nodeInfo nodeId="6979612000521479880" fileName="BuildGeneratorImpl.java" startLine="53" startPosition="123" endLine="99" endPosition="0" />
-    <nodeInfo nodeId="6979612000521479867" fileName="BuildGeneratorImpl.java" startLine="52" startPosition="26" endLine="99" endPosition="7" />
-    <nodeInfo nodeId="1222854026109" fileName="BuildGeneratorImpl.java" startLine="51" startPosition="0" endLine="101" endPosition="0" />
-    <scopeInfo nodeId="1224777888497" fileName="BuildGeneratorImpl.java" startLine="45" startPosition="62" endLine="46" endPosition="108" />
-    <scopeInfo nodeId="6979612000521482030" fileName="BuildGeneratorImpl.java" startLine="69" startPosition="90" endLine="70" endPosition="79" />
-    <scopeInfo nodeId="6979612000521480031" fileName="BuildGeneratorImpl.java" startLine="76" startPosition="90" endLine="77" endPosition="58" />
-    <scopeInfo nodeId="8683696394984066700" fileName="BuildGeneratorImpl.java" startLine="90" startPosition="37" endLine="91" endPosition="37" />
-    <scopeInfo nodeId="1068566623012681012" fileName="BuildGeneratorImpl.java" startLine="102" startPosition="62" endLine="103" endPosition="77" />
-    <scopeInfo nodeId="1223991390094" fileName="BuildGeneratorImpl.java" startLine="117" startPosition="14" endLine="118" endPosition="38" />
-    <scopeInfo nodeId="1223991361195" fileName="BuildGeneratorImpl.java" startLine="122" startPosition="12" endLine="123" endPosition="29" />
-    <scopeInfo nodeId="7819841746799321433" fileName="BuildGeneratorImpl.java" startLine="141" startPosition="25" endLine="142" endPosition="83" />
-    <scopeInfo nodeId="1241461839409" fileName="BuildGeneratorImpl.java" startLine="162" startPosition="12" endLine="163" endPosition="78" />
-    <scopeInfo nodeId="8683696394982846674" fileName="BuildGeneratorImpl.java" startLine="184" startPosition="25" endLine="185" endPosition="37" />
-    <scopeInfo nodeId="1224166837679" fileName="BuildGeneratorImpl.java" startLine="193" startPosition="37" endLine="194" endPosition="86" />
-    <scopeInfo nodeId="1224167141130" fileName="BuildGeneratorImpl.java" startLine="208" startPosition="30" endLine="209" endPosition="17" />
-    <scopeInfo nodeId="1224167759858" fileName="BuildGeneratorImpl.java" startLine="220" startPosition="73" endLine="221" endPosition="74" />
-    <scopeInfo nodeId="1224168798685" fileName="BuildGeneratorImpl.java" startLine="228" startPosition="27" endLine="229" endPosition="14" />
-    <scopeInfo nodeId="1224167835667" fileName="BuildGeneratorImpl.java" startLine="237" startPosition="67" endLine="238" endPosition="109" />
-    <scopeInfo nodeId="1225196315043" fileName="BuildGeneratorImpl.java" startLine="131" startPosition="55" endLine="133" endPosition="14" />
-    <scopeInfo nodeId="1241461839377" fileName="BuildGeneratorImpl.java" startLine="159" startPosition="21" endLine="161" endPosition="101">
+    <nodeInfo nodeId="1222949660688" fileName="BuildGeneratorImpl.java" startLine="41" startPosition="64" endLine="42" endPosition="34" />
+    <nodeInfo nodeId="1222949688158" fileName="BuildGeneratorImpl.java" startLine="44" startPosition="46" endLine="45" endPosition="29" />
+    <nodeInfo nodeId="1224777806214" fileName="BuildGeneratorImpl.java" startLine="45" startPosition="29" endLine="46" endPosition="50" />
+    <nodeInfo nodeId="1224777996115" fileName="BuildGeneratorImpl.java" startLine="47" startPosition="62" endLine="48" endPosition="108" />
+    <nodeInfo nodeId="1224170485232" fileName="BuildGeneratorImpl.java" startLine="49" startPosition="5" endLine="50" endPosition="37" />
+    <nodeInfo nodeId="1225196270615" fileName="BuildGeneratorImpl.java" startLine="50" startPosition="37" endLine="51" endPosition="50" />
+    <nodeInfo nodeId="6979612000521479887" fileName="BuildGeneratorImpl.java" startLine="56" startPosition="69" endLine="57" endPosition="49" />
+    <nodeInfo nodeId="6979612000521479962" fileName="BuildGeneratorImpl.java" startLine="57" startPosition="49" endLine="58" endPosition="50" />
+    <nodeInfo nodeId="6979612000521479967" fileName="BuildGeneratorImpl.java" startLine="58" startPosition="50" endLine="59" endPosition="107" />
+    <nodeInfo nodeId="6979612000521479974" fileName="BuildGeneratorImpl.java" startLine="59" startPosition="107" endLine="60" endPosition="76" />
+    <nodeInfo nodeId="6979612000521479980" fileName="BuildGeneratorImpl.java" startLine="60" startPosition="76" endLine="61" endPosition="80" />
+    <nodeInfo nodeId="6979612000521479990" fileName="BuildGeneratorImpl.java" startLine="61" startPosition="80" endLine="62" endPosition="76" />
+    <nodeInfo nodeId="6979612000521479997" fileName="BuildGeneratorImpl.java" startLine="62" startPosition="76" endLine="63" endPosition="56" />
+    <nodeInfo nodeId="6979612000521481991" fileName="BuildGeneratorImpl.java" startLine="63" startPosition="56" endLine="64" endPosition="111" />
+    <nodeInfo nodeId="6979612000521480020" fileName="BuildGeneratorImpl.java" startLine="66" startPosition="29" endLine="67" endPosition="79" />
+    <nodeInfo nodeId="8683696394983855211" fileName="BuildGeneratorImpl.java" startLine="67" startPosition="79" endLine="68" endPosition="72" />
+    <nodeInfo nodeId="6979612000521482038" fileName="BuildGeneratorImpl.java" startLine="71" startPosition="90" endLine="72" endPosition="79" />
+    <nodeInfo nodeId="6979612000521480032" fileName="BuildGeneratorImpl.java" startLine="78" startPosition="90" endLine="79" endPosition="58" />
+    <nodeInfo nodeId="6979612000521480039" fileName="BuildGeneratorImpl.java" startLine="80" startPosition="17" endLine="81" endPosition="149" />
+    <nodeInfo nodeId="6979612000521480049" fileName="BuildGeneratorImpl.java" startLine="83" startPosition="15" endLine="84" endPosition="33" />
+    <nodeInfo nodeId="8683696394983855000" fileName="BuildGeneratorImpl.java" startLine="84" startPosition="33" endLine="85" endPosition="104" />
+    <nodeInfo nodeId="8683696394983855109" fileName="BuildGeneratorImpl.java" startLine="85" startPosition="104" endLine="86" endPosition="103" />
+    <nodeInfo nodeId="6979612000521479937" fileName="BuildGeneratorImpl.java" startLine="88" startPosition="77" endLine="89" endPosition="57" />
+    <nodeInfo nodeId="6979612000521479942" fileName="BuildGeneratorImpl.java" startLine="89" startPosition="57" endLine="90" endPosition="78" />
+    <nodeInfo nodeId="8683696394983855230" fileName="BuildGeneratorImpl.java" startLine="92" startPosition="37" endLine="93" endPosition="37" />
+    <nodeInfo nodeId="1068566623012681020" fileName="BuildGeneratorImpl.java" startLine="104" startPosition="62" endLine="105" endPosition="77" />
+    <nodeInfo nodeId="1223991390036" fileName="BuildGeneratorImpl.java" startLine="109" startPosition="32" endLine="110" endPosition="24" />
+    <nodeInfo nodeId="1223991390045" fileName="BuildGeneratorImpl.java" startLine="111" startPosition="37" endLine="112" endPosition="65" />
+    <nodeInfo nodeId="7376433222636454485" fileName="BuildGeneratorImpl.java" startLine="112" startPosition="65" endLine="113" endPosition="25" />
+    <nodeInfo nodeId="1223991390054" fileName="BuildGeneratorImpl.java" startLine="113" startPosition="25" endLine="114" endPosition="56" />
+    <nodeInfo nodeId="1223991390060" fileName="BuildGeneratorImpl.java" startLine="114" startPosition="56" endLine="115" endPosition="121" />
+    <nodeInfo nodeId="1223991390075" fileName="BuildGeneratorImpl.java" startLine="115" startPosition="121" endLine="116" endPosition="78" />
+    <nodeInfo nodeId="1240394407338" fileName="BuildGeneratorImpl.java" startLine="116" startPosition="78" endLine="117" endPosition="50" />
+    <nodeInfo nodeId="1223991390086" fileName="BuildGeneratorImpl.java" startLine="117" startPosition="50" endLine="118" endPosition="96" />
+    <nodeInfo nodeId="1223991390095" fileName="BuildGeneratorImpl.java" startLine="119" startPosition="14" endLine="120" endPosition="38" />
+    <nodeInfo nodeId="1240394428626" fileName="BuildGeneratorImpl.java" startLine="121" startPosition="7" endLine="122" endPosition="45" />
+    <nodeInfo nodeId="1223991404543" fileName="BuildGeneratorImpl.java" startLine="122" startPosition="45" endLine="123" endPosition="78" />
+    <nodeInfo nodeId="1223991364734" fileName="BuildGeneratorImpl.java" startLine="124" startPosition="12" endLine="125" endPosition="29" />
+    <nodeInfo nodeId="1225196493706" fileName="BuildGeneratorImpl.java" startLine="129" startPosition="64" endLine="130" endPosition="55" />
+    <nodeInfo nodeId="1225196279763" fileName="BuildGeneratorImpl.java" startLine="130" startPosition="55" endLine="131" endPosition="45" />
+    <nodeInfo nodeId="1225196513298" fileName="BuildGeneratorImpl.java" startLine="131" startPosition="45" endLine="132" endPosition="18" />
+    <nodeInfo nodeId="1225196502478" fileName="BuildGeneratorImpl.java" startLine="133" startPosition="55" endLine="134" endPosition="48" />
+    <nodeInfo nodeId="1225196535576" fileName="BuildGeneratorImpl.java" startLine="134" startPosition="48" endLine="135" endPosition="14" />
+    <nodeInfo nodeId="1225196270604" fileName="BuildGeneratorImpl.java" startLine="136" startPosition="5" endLine="137" endPosition="42" />
+    <nodeInfo nodeId="1222854358083" fileName="BuildGeneratorImpl.java" startLine="140" startPosition="140" endLine="141" endPosition="101" />
+    <nodeInfo nodeId="1241461908144" fileName="BuildGeneratorImpl.java" startLine="143" startPosition="25" endLine="144" endPosition="83" />
+    <nodeInfo nodeId="7376433222636454165" fileName="BuildGeneratorImpl.java" startLine="149" startPosition="133" endLine="150" endPosition="25" />
+    <nodeInfo nodeId="1241461839329" fileName="BuildGeneratorImpl.java" startLine="150" startPosition="25" endLine="151" endPosition="114" />
+    <nodeInfo nodeId="7376433222636454055" fileName="BuildGeneratorImpl.java" startLine="151" startPosition="114" endLine="152" endPosition="42" />
+    <nodeInfo nodeId="1241461839336" fileName="BuildGeneratorImpl.java" startLine="152" startPosition="42" endLine="153" endPosition="60" />
+    <nodeInfo nodeId="1241461839342" fileName="BuildGeneratorImpl.java" startLine="153" startPosition="60" endLine="154" endPosition="58" />
+    <nodeInfo nodeId="7376433222636453105" fileName="BuildGeneratorImpl.java" startLine="154" startPosition="58" endLine="155" endPosition="22" />
+    <nodeInfo nodeId="1241461839348" fileName="BuildGeneratorImpl.java" startLine="155" startPosition="22" endLine="156" endPosition="53" />
+    <nodeInfo nodeId="7376433222636453651" fileName="BuildGeneratorImpl.java" startLine="156" startPosition="53" endLine="157" endPosition="27" />
+    <nodeInfo nodeId="1241528543663" fileName="BuildGeneratorImpl.java" startLine="157" startPosition="27" endLine="158" endPosition="22" />
+    <nodeInfo nodeId="1241461839355" fileName="BuildGeneratorImpl.java" startLine="158" startPosition="22" endLine="159" endPosition="107" />
+    <nodeInfo nodeId="1241461839369" fileName="BuildGeneratorImpl.java" startLine="159" startPosition="107" endLine="160" endPosition="40" />
+    <nodeInfo nodeId="1241461839378" fileName="BuildGeneratorImpl.java" startLine="161" startPosition="21" endLine="162" endPosition="70" />
+    <nodeInfo nodeId="1241528578910" fileName="BuildGeneratorImpl.java" startLine="162" startPosition="70" endLine="163" endPosition="101" />
+    <nodeInfo nodeId="1241528596524" fileName="BuildGeneratorImpl.java" startLine="164" startPosition="12" endLine="165" endPosition="78" />
+    <nodeInfo nodeId="1241461839410" fileName="BuildGeneratorImpl.java" startLine="166" startPosition="5" endLine="167" endPosition="77" />
+    <nodeInfo nodeId="7376433222636454123" fileName="BuildGeneratorImpl.java" startLine="167" startPosition="77" endLine="168" endPosition="7" />
+    <nodeInfo nodeId="1241461839419" fileName="BuildGeneratorImpl.java" startLine="168" startPosition="7" endLine="169" endPosition="63" />
+    <nodeInfo nodeId="1241461839426" fileName="BuildGeneratorImpl.java" startLine="169" startPosition="63" endLine="170" endPosition="140" />
+    <nodeInfo nodeId="7376433222636453377" fileName="BuildGeneratorImpl.java" startLine="170" startPosition="140" endLine="171" endPosition="18" />
+    <nodeInfo nodeId="1241461839438" fileName="BuildGeneratorImpl.java" startLine="171" startPosition="18" endLine="172" endPosition="102" />
+    <nodeInfo nodeId="1241461839445" fileName="BuildGeneratorImpl.java" startLine="172" startPosition="102" endLine="173" endPosition="112" />
+    <nodeInfo nodeId="1241461839455" fileName="BuildGeneratorImpl.java" startLine="173" startPosition="112" endLine="174" endPosition="100" />
+    <nodeInfo nodeId="7376433222636454381" fileName="BuildGeneratorImpl.java" startLine="174" startPosition="100" endLine="175" endPosition="32" />
+    <nodeInfo nodeId="1241461839463" fileName="BuildGeneratorImpl.java" startLine="175" startPosition="32" endLine="176" endPosition="65" />
+    <nodeInfo nodeId="1241461839468" fileName="BuildGeneratorImpl.java" startLine="176" startPosition="65" endLine="177" endPosition="93" />
+    <nodeInfo nodeId="7376433222636453303" fileName="BuildGeneratorImpl.java" startLine="177" startPosition="93" endLine="178" endPosition="29" />
+    <nodeInfo nodeId="1241461839476" fileName="BuildGeneratorImpl.java" startLine="178" startPosition="29" endLine="179" endPosition="73" />
+    <nodeInfo nodeId="1241461839481" fileName="BuildGeneratorImpl.java" startLine="179" startPosition="73" endLine="180" endPosition="21" />
+    <nodeInfo nodeId="1241542919460" fileName="BuildGeneratorImpl.java" startLine="183" startPosition="106" endLine="184" endPosition="45" />
+    <nodeInfo nodeId="8683696394982846675" fileName="BuildGeneratorImpl.java" startLine="186" startPosition="25" endLine="187" endPosition="37" />
+    <nodeInfo nodeId="1241461908124" fileName="BuildGeneratorImpl.java" startLine="189" startPosition="7" endLine="190" endPosition="86" />
+    <nodeInfo nodeId="1241461908133" fileName="BuildGeneratorImpl.java" startLine="190" startPosition="86" endLine="191" endPosition="37" />
+    <nodeInfo nodeId="1224166925335" fileName="BuildGeneratorImpl.java" startLine="195" startPosition="37" endLine="196" endPosition="86" />
+    <nodeInfo nodeId="1224166994495" fileName="BuildGeneratorImpl.java" startLine="197" startPosition="47" endLine="198" endPosition="58" />
+    <nodeInfo nodeId="1224167076395" fileName="BuildGeneratorImpl.java" startLine="198" startPosition="58" endLine="199" endPosition="64" />
+    <nodeInfo nodeId="1224167095658" fileName="BuildGeneratorImpl.java" startLine="200" startPosition="5" endLine="201" endPosition="16" />
+    <nodeInfo nodeId="1224167163196" fileName="BuildGeneratorImpl.java" startLine="204" startPosition="101" endLine="205" endPosition="96" />
+    <nodeInfo nodeId="1224167471720" fileName="BuildGeneratorImpl.java" startLine="205" startPosition="96" endLine="206" endPosition="74" />
+    <nodeInfo nodeId="7376433222636453081" fileName="BuildGeneratorImpl.java" startLine="207" startPosition="63" endLine="208" endPosition="28" />
+    <nodeInfo nodeId="1224167141123" fileName="BuildGeneratorImpl.java" startLine="208" startPosition="28" endLine="209" endPosition="60" />
+    <nodeInfo nodeId="1224167141131" fileName="BuildGeneratorImpl.java" startLine="210" startPosition="30" endLine="211" endPosition="17" />
+    <nodeInfo nodeId="1224167197687" fileName="BuildGeneratorImpl.java" startLine="212" startPosition="7" endLine="213" endPosition="65" />
+    <nodeInfo nodeId="1224169995613" fileName="BuildGeneratorImpl.java" startLine="213" startPosition="65" endLine="214" endPosition="58" />
+    <nodeInfo nodeId="7376433222636453163" fileName="BuildGeneratorImpl.java" startLine="214" startPosition="58" endLine="215" endPosition="31" />
+    <nodeInfo nodeId="1224167666678" fileName="BuildGeneratorImpl.java" startLine="216" startPosition="115" endLine="217" endPosition="53" />
+    <nodeInfo nodeId="1224167666695" fileName="BuildGeneratorImpl.java" startLine="219" startPosition="73" endLine="220" endPosition="84" />
+    <nodeInfo nodeId="1224167666701" fileName="BuildGeneratorImpl.java" startLine="220" startPosition="84" endLine="221" endPosition="200" />
+    <nodeInfo nodeId="1224167774438" fileName="BuildGeneratorImpl.java" startLine="222" startPosition="73" endLine="223" endPosition="74" />
+    <nodeInfo nodeId="7376433222636453149" fileName="BuildGeneratorImpl.java" startLine="227" startPosition="7" endLine="228" endPosition="29" />
+    <nodeInfo nodeId="1224168796641" fileName="BuildGeneratorImpl.java" startLine="228" startPosition="29" endLine="229" endPosition="41" />
+    <nodeInfo nodeId="1224168807854" fileName="BuildGeneratorImpl.java" startLine="230" startPosition="27" endLine="231" endPosition="14" />
+    <nodeInfo nodeId="1224168859747" fileName="BuildGeneratorImpl.java" startLine="233" startPosition="70" endLine="234" endPosition="231" />
+    <nodeInfo nodeId="1224169030806" fileName="BuildGeneratorImpl.java" startLine="234" startPosition="231" endLine="235" endPosition="63" />
+    <nodeInfo nodeId="7376433222636454201" fileName="BuildGeneratorImpl.java" startLine="237" startPosition="5" endLine="238" endPosition="7" />
+    <nodeInfo nodeId="1224167850019" fileName="BuildGeneratorImpl.java" startLine="239" startPosition="67" endLine="240" endPosition="109" />
+    <nodeInfo nodeId="1223991390093" fileName="BuildGeneratorImpl.java" startLine="119" startPosition="12" endLine="121" endPosition="7" />
+    <nodeInfo nodeId="1223991361194" fileName="BuildGeneratorImpl.java" startLine="124" startPosition="10" endLine="126" endPosition="5" />
+    <nodeInfo nodeId="1241461839408" fileName="BuildGeneratorImpl.java" startLine="164" startPosition="10" endLine="166" endPosition="5" />
+    <nodeInfo nodeId="1224777888496" fileName="BuildGeneratorImpl.java" startLine="46" startPosition="50" endLine="49" endPosition="5" />
+    <nodeInfo nodeId="6979612000521482027" fileName="BuildGeneratorImpl.java" startLine="70" startPosition="33" endLine="73" endPosition="17" />
+    <nodeInfo nodeId="6979612000521480026" fileName="BuildGeneratorImpl.java" startLine="77" startPosition="33" endLine="80" endPosition="17" />
+    <nodeInfo nodeId="1224167141129" fileName="BuildGeneratorImpl.java" startLine="209" startPosition="60" endLine="212" endPosition="7" />
+    <nodeInfo nodeId="1224167759857" fileName="BuildGeneratorImpl.java" startLine="221" startPosition="200" endLine="224" endPosition="13" />
+    <nodeInfo nodeId="1224168798684" fileName="BuildGeneratorImpl.java" startLine="229" startPosition="41" endLine="232" endPosition="7" />
+    <nodeInfo nodeId="1224167835664" fileName="BuildGeneratorImpl.java" startLine="238" startPosition="7" endLine="241" endPosition="5" />
+    <nodeInfo nodeId="8683696394984066699" fileName="BuildGeneratorImpl.java" startLine="91" startPosition="70" endLine="95" endPosition="0" />
+    <nodeInfo nodeId="1068566623012681009" fileName="BuildGeneratorImpl.java" startLine="103" startPosition="0" endLine="107" endPosition="0" />
+    <nodeInfo nodeId="1225196315041" fileName="BuildGeneratorImpl.java" startLine="132" startPosition="18" endLine="136" endPosition="5" />
+    <nodeInfo nodeId="7819841746799321430" fileName="BuildGeneratorImpl.java" startLine="142" startPosition="27" endLine="146" endPosition="0" />
+    <nodeInfo nodeId="8683696394982846673" fileName="BuildGeneratorImpl.java" startLine="185" startPosition="67" endLine="189" endPosition="0" />
+    <nodeInfo nodeId="1224168814055" fileName="BuildGeneratorImpl.java" startLine="232" startPosition="7" endLine="236" endPosition="7" />
+    <nodeInfo nodeId="8683696394984066698" fileName="BuildGeneratorImpl.java" startLine="90" startPosition="78" endLine="95" endPosition="19" />
+    <nodeInfo nodeId="7819841746799321421" fileName="BuildGeneratorImpl.java" startLine="141" startPosition="101" endLine="146" endPosition="6" />
+    <nodeInfo nodeId="8683696394982846672" fileName="BuildGeneratorImpl.java" startLine="184" startPosition="45" endLine="189" endPosition="7" />
+    <nodeInfo nodeId="6979612000521482025" fileName="BuildGeneratorImpl.java" startLine="69" startPosition="66" endLine="75" endPosition="0" />
+    <nodeInfo nodeId="1241461839376" fileName="BuildGeneratorImpl.java" startLine="160" startPosition="40" endLine="166" endPosition="5" />
+    <nodeInfo nodeId="1224166837677" fileName="BuildGeneratorImpl.java" startLine="194" startPosition="75" endLine="200" endPosition="5" />
+    <nodeInfo nodeId="6979612000521482024" fileName="BuildGeneratorImpl.java" startLine="68" startPosition="72" endLine="75" endPosition="15" />
+    <nodeInfo nodeId="6979612000521480024" fileName="BuildGeneratorImpl.java" startLine="76" startPosition="75" endLine="83" endPosition="0" />
+    <nodeInfo nodeId="1224167666689" fileName="BuildGeneratorImpl.java" startLine="218" startPosition="64" endLine="225" endPosition="11" />
+    <nodeInfo nodeId="6979612000521480023" fileName="BuildGeneratorImpl.java" startLine="75" startPosition="15" endLine="83" endPosition="15" />
+    <nodeInfo nodeId="1222863546137" fileName="BuildGeneratorImpl.java" startLine="43" startPosition="0" endLine="52" endPosition="3" />
+    <nodeInfo nodeId="1225396780423" fileName="BuildGeneratorImpl.java" startLine="139" startPosition="0" endLine="148" endPosition="0" />
+    <nodeInfo nodeId="1224167666685" fileName="BuildGeneratorImpl.java" startLine="217" startPosition="53" endLine="226" endPosition="9" />
+    <nodeInfo nodeId="6979612000521479930" fileName="BuildGeneratorImpl.java" startLine="87" startPosition="125" endLine="97" endPosition="0" />
+    <nodeInfo nodeId="1224166787164" fileName="BuildGeneratorImpl.java" startLine="193" startPosition="0" endLine="203" endPosition="0" />
+    <nodeInfo nodeId="6979612000521479917" fileName="BuildGeneratorImpl.java" startLine="86" startPosition="103" endLine="97" endPosition="15" />
+    <nodeInfo nodeId="1223991390040" fileName="BuildGeneratorImpl.java" startLine="110" startPosition="24" endLine="121" endPosition="7" />
+    <nodeInfo nodeId="1225196270598" fileName="BuildGeneratorImpl.java" startLine="128" startPosition="0" endLine="139" endPosition="0" />
+    <nodeInfo nodeId="1241461908112" fileName="BuildGeneratorImpl.java" startLine="182" startPosition="0" endLine="193" endPosition="0" />
+    <nodeInfo nodeId="1224167651025" fileName="BuildGeneratorImpl.java" startLine="215" startPosition="31" endLine="227" endPosition="7" />
+    <nodeInfo nodeId="1223991352200" fileName="BuildGeneratorImpl.java" startLine="108" startPosition="76" endLine="126" endPosition="5" />
+    <nodeInfo nodeId="1223991159398" fileName="BuildGeneratorImpl.java" startLine="107" startPosition="0" endLine="128" endPosition="0" />
+    <nodeInfo nodeId="1224167141119" fileName="BuildGeneratorImpl.java" startLine="206" startPosition="74" endLine="237" endPosition="5" />
+    <nodeInfo nodeId="6979612000521479909" fileName="BuildGeneratorImpl.java" startLine="65" startPosition="72" endLine="99" endPosition="0" />
+    <nodeInfo nodeId="1241461839315" fileName="BuildGeneratorImpl.java" startLine="148" startPosition="0" endLine="182" endPosition="0" />
+    <nodeInfo nodeId="6979612000521479901" fileName="BuildGeneratorImpl.java" startLine="64" startPosition="111" endLine="99" endPosition="36" />
+    <nodeInfo nodeId="1224167141110" fileName="BuildGeneratorImpl.java" startLine="203" startPosition="0" endLine="243" endPosition="0" />
+    <nodeInfo nodeId="6979612000521479880" fileName="BuildGeneratorImpl.java" startLine="55" startPosition="123" endLine="101" endPosition="0" />
+    <nodeInfo nodeId="6979612000521479867" fileName="BuildGeneratorImpl.java" startLine="54" startPosition="26" endLine="101" endPosition="7" />
+    <nodeInfo nodeId="1222854026109" fileName="BuildGeneratorImpl.java" startLine="53" startPosition="0" endLine="103" endPosition="0" />
+    <scopeInfo nodeId="1224777888497" fileName="BuildGeneratorImpl.java" startLine="47" startPosition="62" endLine="48" endPosition="108" />
+    <scopeInfo nodeId="6979612000521482030" fileName="BuildGeneratorImpl.java" startLine="71" startPosition="90" endLine="72" endPosition="79" />
+    <scopeInfo nodeId="6979612000521480031" fileName="BuildGeneratorImpl.java" startLine="78" startPosition="90" endLine="79" endPosition="58" />
+    <scopeInfo nodeId="8683696394984066700" fileName="BuildGeneratorImpl.java" startLine="92" startPosition="37" endLine="93" endPosition="37" />
+    <scopeInfo nodeId="1068566623012681012" fileName="BuildGeneratorImpl.java" startLine="104" startPosition="62" endLine="105" endPosition="77" />
+    <scopeInfo nodeId="1223991390094" fileName="BuildGeneratorImpl.java" startLine="119" startPosition="14" endLine="120" endPosition="38" />
+    <scopeInfo nodeId="1223991361195" fileName="BuildGeneratorImpl.java" startLine="124" startPosition="12" endLine="125" endPosition="29" />
+    <scopeInfo nodeId="7819841746799321433" fileName="BuildGeneratorImpl.java" startLine="143" startPosition="25" endLine="144" endPosition="83" />
+    <scopeInfo nodeId="1241461839409" fileName="BuildGeneratorImpl.java" startLine="164" startPosition="12" endLine="165" endPosition="78" />
+    <scopeInfo nodeId="8683696394982846674" fileName="BuildGeneratorImpl.java" startLine="186" startPosition="25" endLine="187" endPosition="37" />
+    <scopeInfo nodeId="1224166837679" fileName="BuildGeneratorImpl.java" startLine="195" startPosition="37" endLine="196" endPosition="86" />
+    <scopeInfo nodeId="1224167141130" fileName="BuildGeneratorImpl.java" startLine="210" startPosition="30" endLine="211" endPosition="17" />
+    <scopeInfo nodeId="1224167759858" fileName="BuildGeneratorImpl.java" startLine="222" startPosition="73" endLine="223" endPosition="74" />
+    <scopeInfo nodeId="1224168798685" fileName="BuildGeneratorImpl.java" startLine="230" startPosition="27" endLine="231" endPosition="14" />
+    <scopeInfo nodeId="1224167835667" fileName="BuildGeneratorImpl.java" startLine="239" startPosition="67" endLine="240" endPosition="109" />
+    <scopeInfo nodeId="1225196315043" fileName="BuildGeneratorImpl.java" startLine="133" startPosition="55" endLine="135" endPosition="14" />
+    <scopeInfo nodeId="1241461839377" fileName="BuildGeneratorImpl.java" startLine="161" startPosition="21" endLine="163" endPosition="101">
       <varInfo nodeId="1241461839379" varName="macro" />
     </scopeInfo>
-    <scopeInfo nodeId="1224166956300" fileName="BuildGeneratorImpl.java" startLine="195" startPosition="47" endLine="197" endPosition="64">
+    <scopeInfo nodeId="1224166956300" fileName="BuildGeneratorImpl.java" startLine="197" startPosition="47" endLine="199" endPosition="64">
       <varInfo nodeId="1224166994496" varName="namespace" />
     </scopeInfo>
-    <scopeInfo nodeId="1224168814056" fileName="BuildGeneratorImpl.java" startLine="231" startPosition="70" endLine="233" endPosition="63" />
-    <scopeInfo nodeId="6979612000521482026" fileName="BuildGeneratorImpl.java" startLine="68" startPosition="33" endLine="71" endPosition="17" />
-    <scopeInfo nodeId="6979612000521482027" fileName="BuildGeneratorImpl.java" startLine="68" startPosition="33" endLine="71" endPosition="17" />
-    <scopeInfo nodeId="6979612000521480026" fileName="BuildGeneratorImpl.java" startLine="75" startPosition="33" endLine="78" endPosition="17" />
-    <scopeInfo nodeId="1224167835664" fileName="BuildGeneratorImpl.java" startLine="236" startPosition="7" endLine="239" endPosition="5" />
-    <scopeInfo nodeId="6979612000521480025" fileName="BuildGeneratorImpl.java" startLine="75" startPosition="33" endLine="79" endPosition="120" />
-    <scopeInfo nodeId="8683696394984066699" fileName="BuildGeneratorImpl.java" startLine="89" startPosition="70" endLine="93" endPosition="0" />
-    <scopeInfo nodeId="1068566623012681009" fileName="BuildGeneratorImpl.java" startLine="101" startPosition="0" endLine="105" endPosition="0" />
-    <scopeInfo nodeId="7819841746799321430" fileName="BuildGeneratorImpl.java" startLine="140" startPosition="27" endLine="144" endPosition="0" />
-    <scopeInfo nodeId="8683696394982846673" fileName="BuildGeneratorImpl.java" startLine="183" startPosition="67" endLine="187" endPosition="0" />
-    <scopeInfo nodeId="1224167666694" fileName="BuildGeneratorImpl.java" startLine="217" startPosition="73" endLine="222" endPosition="13">
+    <scopeInfo nodeId="1224168814056" fileName="BuildGeneratorImpl.java" startLine="233" startPosition="70" endLine="235" endPosition="63" />
+    <scopeInfo nodeId="6979612000521482026" fileName="BuildGeneratorImpl.java" startLine="70" startPosition="33" endLine="73" endPosition="17" />
+    <scopeInfo nodeId="6979612000521482027" fileName="BuildGeneratorImpl.java" startLine="70" startPosition="33" endLine="73" endPosition="17" />
+    <scopeInfo nodeId="6979612000521480026" fileName="BuildGeneratorImpl.java" startLine="77" startPosition="33" endLine="80" endPosition="17" />
+    <scopeInfo nodeId="1224167835664" fileName="BuildGeneratorImpl.java" startLine="238" startPosition="7" endLine="241" endPosition="5" />
+    <scopeInfo nodeId="6979612000521480025" fileName="BuildGeneratorImpl.java" startLine="77" startPosition="33" endLine="81" endPosition="149" />
+    <scopeInfo nodeId="8683696394984066699" fileName="BuildGeneratorImpl.java" startLine="91" startPosition="70" endLine="95" endPosition="0" />
+    <scopeInfo nodeId="1068566623012681009" fileName="BuildGeneratorImpl.java" startLine="103" startPosition="0" endLine="107" endPosition="0" />
+    <scopeInfo nodeId="7819841746799321430" fileName="BuildGeneratorImpl.java" startLine="142" startPosition="27" endLine="146" endPosition="0" />
+    <scopeInfo nodeId="8683696394982846673" fileName="BuildGeneratorImpl.java" startLine="185" startPosition="67" endLine="189" endPosition="0" />
+    <scopeInfo nodeId="1224167666694" fileName="BuildGeneratorImpl.java" startLine="219" startPosition="73" endLine="224" endPosition="13">
       <varInfo nodeId="1224167666696" varName="childComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="6979612000521482025" fileName="BuildGeneratorImpl.java" startLine="67" startPosition="66" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="1222854358081" fileName="BuildGeneratorImpl.java" startLine="138" startPosition="132" endLine="144" endPosition="6">
+    <scopeInfo nodeId="6979612000521482025" fileName="BuildGeneratorImpl.java" startLine="69" startPosition="66" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="1222854358081" fileName="BuildGeneratorImpl.java" startLine="140" startPosition="140" endLine="146" endPosition="6">
       <varInfo nodeId="1222854358084" varName="mpsLayout" />
     </scopeInfo>
-    <scopeInfo nodeId="1222863546140" fileName="BuildGeneratorImpl.java" startLine="42" startPosition="46" endLine="49" endPosition="50">
+    <scopeInfo nodeId="1222863546140" fileName="BuildGeneratorImpl.java" startLine="44" startPosition="46" endLine="51" endPosition="50">
       <varInfo nodeId="1224777806215" varName="projectName" />
     </scopeInfo>
-    <scopeInfo nodeId="6979612000521480024" fileName="BuildGeneratorImpl.java" startLine="74" startPosition="75" endLine="81" endPosition="0" />
-    <scopeInfo nodeId="6979612000521479936" fileName="BuildGeneratorImpl.java" startLine="86" startPosition="77" endLine="93" endPosition="19" />
-    <scopeInfo nodeId="1223991390044" fileName="BuildGeneratorImpl.java" startLine="109" startPosition="37" endLine="116" endPosition="96">
+    <scopeInfo nodeId="6979612000521480024" fileName="BuildGeneratorImpl.java" startLine="76" startPosition="75" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="6979612000521479936" fileName="BuildGeneratorImpl.java" startLine="88" startPosition="77" endLine="95" endPosition="19" />
+    <scopeInfo nodeId="1223991390044" fileName="BuildGeneratorImpl.java" startLine="111" startPosition="37" endLine="118" endPosition="96">
       <varInfo nodeId="1223991390046" varName="projectBaseDir" />
       <varInfo nodeId="1223991390076" varName="mpsProject" />
       <varInfo nodeId="1223991390055" varName="solutionName" />
       <varInfo nodeId="1223991390061" varName="solutionBaseDir" />
     </scopeInfo>
-    <scopeInfo nodeId="1224166787167" fileName="BuildGeneratorImpl.java" startLine="192" startPosition="75" endLine="199" endPosition="16" />
-    <scopeInfo nodeId="1224167666688" fileName="BuildGeneratorImpl.java" startLine="216" startPosition="64" endLine="223" endPosition="11" />
-    <scopeInfo nodeId="1225196270603" fileName="BuildGeneratorImpl.java" startLine="127" startPosition="64" endLine="135" endPosition="42">
+    <scopeInfo nodeId="1224166787167" fileName="BuildGeneratorImpl.java" startLine="194" startPosition="75" endLine="201" endPosition="16" />
+    <scopeInfo nodeId="1224167666688" fileName="BuildGeneratorImpl.java" startLine="218" startPosition="64" endLine="225" endPosition="11" />
+    <scopeInfo nodeId="1225196270603" fileName="BuildGeneratorImpl.java" startLine="129" startPosition="64" endLine="137" endPosition="42">
       <varInfo nodeId="1225196493707" varName="solutionNamePrefix" />
       <varInfo nodeId="1225196513299" varName="count" />
       <varInfo nodeId="1225196279764" varName="solutionName" />
     </scopeInfo>
-    <scopeInfo nodeId="1241461908119" fileName="BuildGeneratorImpl.java" startLine="181" startPosition="98" endLine="189" endPosition="37">
+    <scopeInfo nodeId="1241461908119" fileName="BuildGeneratorImpl.java" startLine="183" startPosition="106" endLine="191" endPosition="37">
       <varInfo nodeId="1241461908125" varName="editorOpener" />
     </scopeInfo>
-    <scopeInfo nodeId="1222863546137" fileName="BuildGeneratorImpl.java" startLine="41" startPosition="0" endLine="50" endPosition="3">
+    <scopeInfo nodeId="1222863546137" fileName="BuildGeneratorImpl.java" startLine="43" startPosition="0" endLine="52" endPosition="3">
       <varInfo nodeId="1222949647138" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="1225396780423" fileName="BuildGeneratorImpl.java" startLine="137" startPosition="0" endLine="146" endPosition="0">
+    <scopeInfo nodeId="1225396780423" fileName="BuildGeneratorImpl.java" startLine="139" startPosition="0" endLine="148" endPosition="0">
       <varInfo nodeId="1222854358067" varName="targetModelDescriptor" />
       <varInfo nodeId="1222854358069" varName="name" />
       <varInfo nodeId="1222854358073" varName="selectedData" />
       <varInfo nodeId="1222854358071" varName="basedir" />
     </scopeInfo>
-    <scopeInfo nodeId="1224167666685" fileName="BuildGeneratorImpl.java" startLine="215" startPosition="53" endLine="224" endPosition="9" />
-    <scopeInfo nodeId="6979612000521479930" fileName="BuildGeneratorImpl.java" startLine="85" startPosition="125" endLine="95" endPosition="0">
+    <scopeInfo nodeId="1224167666685" fileName="BuildGeneratorImpl.java" startLine="217" startPosition="53" endLine="226" endPosition="9" />
+    <scopeInfo nodeId="6979612000521479930" fileName="BuildGeneratorImpl.java" startLine="87" startPosition="125" endLine="97" endPosition="0">
       <varInfo nodeId="6979612000521479933" varName="progressIndicator" />
     </scopeInfo>
-    <scopeInfo nodeId="1224166787164" fileName="BuildGeneratorImpl.java" startLine="191" startPosition="0" endLine="201" endPosition="0">
+    <scopeInfo nodeId="1224166787164" fileName="BuildGeneratorImpl.java" startLine="193" startPosition="0" endLine="203" endPosition="0">
       <varInfo nodeId="1224166834601" varName="data" />
       <varInfo nodeId="1224166879916" varName="targetSModel" />
     </scopeInfo>
-    <scopeInfo nodeId="1224167651026" fileName="BuildGeneratorImpl.java" startLine="214" startPosition="115" endLine="224" endPosition="9">
+    <scopeInfo nodeId="1224167651026" fileName="BuildGeneratorImpl.java" startLine="216" startPosition="115" endLine="226" endPosition="9">
       <varInfo nodeId="1224167666679" varName="children" />
     </scopeInfo>
-    <scopeInfo nodeId="1225196270598" fileName="BuildGeneratorImpl.java" startLine="126" startPosition="0" endLine="137" endPosition="0">
+    <scopeInfo nodeId="1225196270598" fileName="BuildGeneratorImpl.java" startLine="128" startPosition="0" endLine="139" endPosition="0">
       <varInfo nodeId="1225196270601" varName="projectName" />
     </scopeInfo>
-    <scopeInfo nodeId="1241461908112" fileName="BuildGeneratorImpl.java" startLine="180" startPosition="0" endLine="191" endPosition="0">
+    <scopeInfo nodeId="1241461908112" fileName="BuildGeneratorImpl.java" startLine="182" startPosition="0" endLine="193" endPosition="0">
       <varInfo nodeId="1241461908115" varName="targetModelDescriptor" />
       <varInfo nodeId="1241461908117" varName="mpsLayout" />
     </scopeInfo>
-    <scopeInfo nodeId="1223991352201" fileName="BuildGeneratorImpl.java" startLine="107" startPosition="32" endLine="121" endPosition="78">
+    <scopeInfo nodeId="1223991352201" fileName="BuildGeneratorImpl.java" startLine="109" startPosition="32" endLine="123" endPosition="78">
       <varInfo nodeId="1223991390037" varName="solution" />
     </scopeInfo>
-    <scopeInfo nodeId="1223991159402" fileName="BuildGeneratorImpl.java" startLine="106" startPosition="76" endLine="124" endPosition="5" />
-    <scopeInfo nodeId="1223991159398" fileName="BuildGeneratorImpl.java" startLine="105" startPosition="0" endLine="126" endPosition="0">
+    <scopeInfo nodeId="1223991159402" fileName="BuildGeneratorImpl.java" startLine="108" startPosition="76" endLine="126" endPosition="5" />
+    <scopeInfo nodeId="1223991159398" fileName="BuildGeneratorImpl.java" startLine="107" startPosition="0" endLine="128" endPosition="0">
       <varInfo nodeId="1240394372601" varName="indicator" />
     </scopeInfo>
-    <scopeInfo nodeId="1224167141122" fileName="BuildGeneratorImpl.java" startLine="205" startPosition="63" endLine="234" endPosition="7">
+    <scopeInfo nodeId="1224167141122" fileName="BuildGeneratorImpl.java" startLine="207" startPosition="63" endLine="236" endPosition="7">
       <varInfo nodeId="1224167141124" varName="component" />
       <varInfo nodeId="1224168796642" varName="parent" />
     </scopeInfo>
-    <scopeInfo nodeId="6979612000521479912" fileName="BuildGeneratorImpl.java" startLine="64" startPosition="29" endLine="95" endPosition="15">
+    <scopeInfo nodeId="6979612000521479912" fileName="BuildGeneratorImpl.java" startLine="66" startPosition="29" endLine="97" endPosition="15">
       <varInfo nodeId="8683696394983855001" varName="project" />
       <varInfo nodeId="6979612000521480021" varName="runnable" />
       <varInfo nodeId="8683696394983855212" varName="solution" />
     </scopeInfo>
-    <scopeInfo nodeId="1241461839327" fileName="BuildGeneratorImpl.java" startLine="147" startPosition="133" endLine="178" endPosition="21">
+    <scopeInfo nodeId="1241461839327" fileName="BuildGeneratorImpl.java" startLine="149" startPosition="133" endLine="180" endPosition="21">
       <varInfo nodeId="1241461839464" varName="folder" />
       <varInfo nodeId="1241461839439" varName="zip" />
       <varInfo nodeId="1241461839356" varName="result" />
@@ -401,44 +401,44 @@
       <varInfo nodeId="1241528543664" varName="basedirPath" />
       <varInfo nodeId="1241461839337" varName="targetSModel" />
     </scopeInfo>
-    <scopeInfo nodeId="1224167141119" fileName="BuildGeneratorImpl.java" startLine="204" startPosition="74" endLine="235" endPosition="5" />
-    <scopeInfo nodeId="6979612000521479909" fileName="BuildGeneratorImpl.java" startLine="63" startPosition="72" endLine="97" endPosition="0" />
-    <scopeInfo nodeId="1241461839315" fileName="BuildGeneratorImpl.java" startLine="146" startPosition="0" endLine="180" endPosition="0">
+    <scopeInfo nodeId="1224167141119" fileName="BuildGeneratorImpl.java" startLine="206" startPosition="74" endLine="237" endPosition="5" />
+    <scopeInfo nodeId="6979612000521479909" fileName="BuildGeneratorImpl.java" startLine="65" startPosition="72" endLine="99" endPosition="0" />
+    <scopeInfo nodeId="1241461839315" fileName="BuildGeneratorImpl.java" startLine="148" startPosition="0" endLine="182" endPosition="0">
       <varInfo nodeId="1241461839318" varName="targetModelDescriptor" />
       <varInfo nodeId="1241461839320" varName="name" />
       <varInfo nodeId="1241461839324" varName="selectedData" />
       <varInfo nodeId="1241461839322" varName="basedir" />
     </scopeInfo>
-    <scopeInfo nodeId="1224167141118" fileName="BuildGeneratorImpl.java" startLine="202" startPosition="101" endLine="239" endPosition="5">
+    <scopeInfo nodeId="1224167141118" fileName="BuildGeneratorImpl.java" startLine="204" startPosition="101" endLine="241" endPosition="5">
       <varInfo nodeId="1224167163197" varName="createdComponent" />
       <varInfo nodeId="1224167471721" varName="topLevel" />
     </scopeInfo>
-    <scopeInfo nodeId="1224167141110" fileName="BuildGeneratorImpl.java" startLine="201" startPosition="0" endLine="241" endPosition="0">
+    <scopeInfo nodeId="1224167141110" fileName="BuildGeneratorImpl.java" startLine="203" startPosition="0" endLine="243" endPosition="0">
       <varInfo nodeId="1224167818490" varName="folder" />
       <varInfo nodeId="1224167141113" varName="selectedData" />
       <varInfo nodeId="1224167141116" varName="targetSModel" />
     </scopeInfo>
-    <scopeInfo nodeId="6979612000521479886" fileName="BuildGeneratorImpl.java" startLine="54" startPosition="69" endLine="97" endPosition="36">
+    <scopeInfo nodeId="6979612000521479886" fileName="BuildGeneratorImpl.java" startLine="56" startPosition="69" endLine="99" endPosition="36">
       <varInfo nodeId="6979612000521479981" varName="projectBasedirPath" />
       <varInfo nodeId="6979612000521481992" varName="moduleReferencesToAdd" />
       <varInfo nodeId="6979612000521479968" varName="descriptor" />
       <varInfo nodeId="6979612000521479991" varName="modules" />
       <varInfo nodeId="6979612000521479975" varName="projectName" />
     </scopeInfo>
-    <scopeInfo nodeId="6979612000521479880" fileName="BuildGeneratorImpl.java" startLine="53" startPosition="123" endLine="99" endPosition="0">
+    <scopeInfo nodeId="6979612000521479880" fileName="BuildGeneratorImpl.java" startLine="55" startPosition="123" endLine="101" endPosition="0">
       <varInfo nodeId="6979612000521479883" varName="progressIndicator" />
     </scopeInfo>
-    <scopeInfo nodeId="1222854026112" fileName="BuildGeneratorImpl.java" startLine="52" startPosition="26" endLine="99" endPosition="7" />
-    <scopeInfo nodeId="1222854026109" fileName="BuildGeneratorImpl.java" startLine="51" startPosition="0" endLine="101" endPosition="0" />
-    <unitInfo nodeId="8683696394984066699" fileName="BuildGeneratorImpl.java" startLine="89" startPosition="58" endLine="93" endPosition="17" unitName="jetbrains.mps.build.packaging.plugin.BuildGeneratorImpl$4" />
-    <unitInfo nodeId="7819841746799321428" fileName="BuildGeneratorImpl.java" startLine="140" startPosition="15" endLine="144" endPosition="5" unitName="jetbrains.mps.build.packaging.plugin.BuildGeneratorImpl$2" />
-    <unitInfo nodeId="8683696394982846673" fileName="BuildGeneratorImpl.java" startLine="183" startPosition="55" endLine="187" endPosition="5" unitName="jetbrains.mps.build.packaging.plugin.BuildGeneratorImpl$3" />
-    <unitInfo nodeId="6979612000521482025" fileName="BuildGeneratorImpl.java" startLine="67" startPosition="54" endLine="73" endPosition="13" unitName="jetbrains.mps.build.packaging.plugin.BuildGeneratorImpl$3" />
-    <unitInfo nodeId="6979612000521480024" fileName="BuildGeneratorImpl.java" startLine="74" startPosition="63" endLine="81" endPosition="13" unitName="jetbrains.mps.build.packaging.plugin.BuildGeneratorImpl$3" />
-    <unitInfo nodeId="6979612000521479923" fileName="BuildGeneratorImpl.java" startLine="85" startPosition="50" endLine="95" endPosition="13" unitName="jetbrains.mps.build.packaging.plugin.BuildGeneratorImpl$3" />
-    <unitInfo nodeId="6979612000521479907" fileName="BuildGeneratorImpl.java" startLine="63" startPosition="60" endLine="97" endPosition="9" unitName="jetbrains.mps.build.packaging.plugin.BuildGeneratorImpl$2" />
-    <unitInfo nodeId="6979612000521479873" fileName="BuildGeneratorImpl.java" startLine="53" startPosition="42" endLine="99" endPosition="5" unitName="jetbrains.mps.build.packaging.plugin.BuildGeneratorImpl$1" />
-    <unitInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="39" startPosition="0" endLine="242" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.BuildGeneratorImpl" />
+    <scopeInfo nodeId="1222854026112" fileName="BuildGeneratorImpl.java" startLine="54" startPosition="26" endLine="101" endPosition="7" />
+    <scopeInfo nodeId="1222854026109" fileName="BuildGeneratorImpl.java" startLine="53" startPosition="0" endLine="103" endPosition="0" />
+    <unitInfo nodeId="8683696394984066699" fileName="BuildGeneratorImpl.java" startLine="91" startPosition="58" endLine="95" endPosition="17" unitName="jetbrains.mps.build.packaging.plugin.BuildGeneratorImpl$4" />
+    <unitInfo nodeId="7819841746799321428" fileName="BuildGeneratorImpl.java" startLine="142" startPosition="15" endLine="146" endPosition="5" unitName="jetbrains.mps.build.packaging.plugin.BuildGeneratorImpl$2" />
+    <unitInfo nodeId="8683696394982846673" fileName="BuildGeneratorImpl.java" startLine="185" startPosition="55" endLine="189" endPosition="5" unitName="jetbrains.mps.build.packaging.plugin.BuildGeneratorImpl$3" />
+    <unitInfo nodeId="6979612000521482025" fileName="BuildGeneratorImpl.java" startLine="69" startPosition="54" endLine="75" endPosition="13" unitName="jetbrains.mps.build.packaging.plugin.BuildGeneratorImpl$3" />
+    <unitInfo nodeId="6979612000521480024" fileName="BuildGeneratorImpl.java" startLine="76" startPosition="63" endLine="83" endPosition="13" unitName="jetbrains.mps.build.packaging.plugin.BuildGeneratorImpl$3" />
+    <unitInfo nodeId="6979612000521479923" fileName="BuildGeneratorImpl.java" startLine="87" startPosition="50" endLine="97" endPosition="13" unitName="jetbrains.mps.build.packaging.plugin.BuildGeneratorImpl$3" />
+    <unitInfo nodeId="6979612000521479907" fileName="BuildGeneratorImpl.java" startLine="65" startPosition="60" endLine="99" endPosition="9" unitName="jetbrains.mps.build.packaging.plugin.BuildGeneratorImpl$2" />
+    <unitInfo nodeId="6979612000521479873" fileName="BuildGeneratorImpl.java" startLine="55" startPosition="42" endLine="101" endPosition="5" unitName="jetbrains.mps.build.packaging.plugin.BuildGeneratorImpl$1" />
+    <unitInfo nodeId="1222854011172" fileName="BuildGeneratorImpl.java" startLine="41" startPosition="0" endLine="244" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.BuildGeneratorImpl" />
   </root>
   <root nodeId="1222950292812">
     <nodeInfo nodeId="1222950820920" fileName="BuildGeneratorUtil.java" startLine="30" startPosition="89" endLine="31" endPosition="75" />
@@ -1719,123 +1719,123 @@
     <unitInfo nodeId="1223998310209" fileName="TwoOptionsStep.java" startLine="25" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.TwoOptionsStep" />
   </root>
   <root nodeId="1224007565785">
-    <nodeInfo nodeId="1224008187284" fileName="ModelStep.java" startLine="20" startPosition="99" endLine="21" endPosition="44" />
-    <nodeInfo nodeId="1224007679894" fileName="ModelStep.java" startLine="24" startPosition="46" endLine="25" endPosition="45" />
-    <nodeInfo nodeId="1224007636041" fileName="ModelStep.java" startLine="28" startPosition="34" endLine="29" endPosition="45" />
-    <nodeInfo nodeId="1224007691964" fileName="ModelStep.java" startLine="32" startPosition="38" endLine="33" endPosition="33" />
-    <nodeInfo nodeId="1417797419759367327" fileName="ModelStep.java" startLine="36" startPosition="65" endLine="37" endPosition="63" />
-    <nodeInfo nodeId="1224007810885" fileName="ModelStep.java" startLine="40" startPosition="39" endLine="41" endPosition="46" />
-    <nodeInfo nodeId="1224007829578" fileName="ModelStep.java" startLine="44" startPosition="48" endLine="45" endPosition="43" />
-    <nodeInfo nodeId="1224007854459" fileName="ModelStep.java" startLine="48" startPosition="38" endLine="49" endPosition="30" />
-    <nodeInfo nodeId="1224007878476" fileName="ModelStep.java" startLine="52" startPosition="49" endLine="53" endPosition="33" />
-    <nodeInfo nodeId="1224007890269" fileName="ModelStep.java" startLine="56" startPosition="39" endLine="57" endPosition="29" />
-    <nodeInfo nodeId="1224159016728" fileName="ModelStep.java" startLine="60" startPosition="46" endLine="61" endPosition="61" />
-    <nodeInfo nodeId="1224159030902" fileName="ModelStep.java" startLine="62" startPosition="27" endLine="63" endPosition="37" />
-    <nodeInfo nodeId="1224159920740" fileName="ModelStep.java" startLine="64" startPosition="12" endLine="65" endPosition="115" />
-    <nodeInfo nodeId="1224163184136" fileName="ModelStep.java" startLine="69" startPosition="66" endLine="70" endPosition="63" />
-    <nodeInfo nodeId="1224163184144" fileName="ModelStep.java" startLine="71" startPosition="38" endLine="72" endPosition="29" />
-    <nodeInfo nodeId="1224163112057" fileName="ModelStep.java" startLine="75" startPosition="77" endLine="76" endPosition="30" />
-    <nodeInfo nodeId="1224163112069" fileName="ModelStep.java" startLine="78" startPosition="15" endLine="79" endPosition="27" />
-    <nodeInfo nodeId="1224159924724" fileName="ModelStep.java" startLine="83" startPosition="9" endLine="84" endPosition="95" />
-    <nodeInfo nodeId="1224007995618" fileName="ModelStep.java" startLine="88" startPosition="34" endLine="89" endPosition="50" />
-    <nodeInfo nodeId="1224008648758" fileName="ModelStep.java" startLine="92" startPosition="41" endLine="93" endPosition="51" />
-    <nodeInfo nodeId="1224845460452" fileName="ModelStep.java" startLine="96" startPosition="42" endLine="97" endPosition="51" />
-    <nodeInfo nodeId="1224787386780" fileName="ModelStep.java" startLine="101" startPosition="26" endLine="102" endPosition="45" />
-    <nodeInfo nodeId="1224787292293" fileName="ModelStep.java" startLine="103" startPosition="5" endLine="104" endPosition="69" />
-    <nodeInfo nodeId="1224007565787" fileName="ModelStep.java" startLine="19" startPosition="65" endLine="22" endPosition="3" />
-    <nodeInfo nodeId="1224163184142" fileName="ModelStep.java" startLine="70" startPosition="63" endLine="73" endPosition="15" />
-    <nodeInfo nodeId="1224163112055" fileName="ModelStep.java" startLine="74" startPosition="88" endLine="77" endPosition="17" />
-    <nodeInfo nodeId="1224787292285" fileName="ModelStep.java" startLine="100" startPosition="48" endLine="103" endPosition="5" />
-    <nodeInfo nodeId="1224007626874" fileName="ModelStep.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
-    <nodeInfo nodeId="1224007626880" fileName="ModelStep.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <nodeInfo nodeId="1224007626884" fileName="ModelStep.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
-    <nodeInfo nodeId="1224007626889" fileName="ModelStep.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <nodeInfo nodeId="1224007626895" fileName="ModelStep.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
-    <nodeInfo nodeId="1224007626900" fileName="ModelStep.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <nodeInfo nodeId="1224007626906" fileName="ModelStep.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
-    <nodeInfo nodeId="1224007626911" fileName="ModelStep.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <nodeInfo nodeId="1224007626917" fileName="ModelStep.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
-    <nodeInfo nodeId="1224007981020" fileName="ModelStep.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
-    <nodeInfo nodeId="1224008644241" fileName="ModelStep.java" startLine="91" startPosition="0" endLine="95" endPosition="0" />
-    <nodeInfo nodeId="1224785935824" fileName="ModelStep.java" startLine="95" startPosition="0" endLine="99" endPosition="0" />
-    <nodeInfo nodeId="1224163112049" fileName="ModelStep.java" startLine="73" startPosition="15" endLine="78" endPosition="15" />
-    <nodeInfo nodeId="1224787292281" fileName="ModelStep.java" startLine="99" startPosition="0" endLine="106" endPosition="0" />
-    <nodeInfo nodeId="1224163112043" fileName="ModelStep.java" startLine="68" startPosition="92" endLine="81" endPosition="0" />
-    <nodeInfo nodeId="1224163112036" fileName="ModelStep.java" startLine="67" startPosition="49" endLine="81" endPosition="13" />
-    <nodeInfo nodeId="1224163112033" fileName="ModelStep.java" startLine="66" startPosition="130" endLine="83" endPosition="0" />
-    <nodeInfo nodeId="1224162760191" fileName="ModelStep.java" startLine="65" startPosition="115" endLine="83" endPosition="9" />
-    <nodeInfo nodeId="1224159045547" fileName="ModelStep.java" startLine="64" startPosition="10" endLine="85" endPosition="5" />
-    <nodeInfo nodeId="1224159019628" fileName="ModelStep.java" startLine="61" startPosition="61" endLine="85" endPosition="5" />
-    <nodeInfo nodeId="1224007626921" fileName="ModelStep.java" startLine="59" startPosition="0" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="1224007565790" fileName="ModelStep.java" startLine="20" startPosition="99" endLine="21" endPosition="44" />
-    <scopeInfo nodeId="1224007626879" fileName="ModelStep.java" startLine="24" startPosition="46" endLine="25" endPosition="45" />
-    <scopeInfo nodeId="1224007626883" fileName="ModelStep.java" startLine="28" startPosition="34" endLine="29" endPosition="45" />
-    <scopeInfo nodeId="1224007626887" fileName="ModelStep.java" startLine="32" startPosition="38" endLine="33" endPosition="33" />
-    <scopeInfo nodeId="1224007626894" fileName="ModelStep.java" startLine="36" startPosition="65" endLine="37" endPosition="63" />
-    <scopeInfo nodeId="1224007626898" fileName="ModelStep.java" startLine="40" startPosition="39" endLine="41" endPosition="46" />
-    <scopeInfo nodeId="1224007626905" fileName="ModelStep.java" startLine="44" startPosition="48" endLine="45" endPosition="43" />
-    <scopeInfo nodeId="1224007626909" fileName="ModelStep.java" startLine="48" startPosition="38" endLine="49" endPosition="30" />
-    <scopeInfo nodeId="1224007626916" fileName="ModelStep.java" startLine="52" startPosition="49" endLine="53" endPosition="33" />
-    <scopeInfo nodeId="1224007626920" fileName="ModelStep.java" startLine="56" startPosition="39" endLine="57" endPosition="29" />
-    <scopeInfo nodeId="1224159019629" fileName="ModelStep.java" startLine="62" startPosition="27" endLine="63" endPosition="37" />
-    <scopeInfo nodeId="1224163184143" fileName="ModelStep.java" startLine="71" startPosition="38" endLine="72" endPosition="29" />
-    <scopeInfo nodeId="1224163112056" fileName="ModelStep.java" startLine="75" startPosition="77" endLine="76" endPosition="30" />
-    <scopeInfo nodeId="1224007981023" fileName="ModelStep.java" startLine="88" startPosition="34" endLine="89" endPosition="50" />
-    <scopeInfo nodeId="1224008644244" fileName="ModelStep.java" startLine="92" startPosition="41" endLine="93" endPosition="51" />
-    <scopeInfo nodeId="1224785935829" fileName="ModelStep.java" startLine="96" startPosition="42" endLine="97" endPosition="51" />
-    <scopeInfo nodeId="1224787292286" fileName="ModelStep.java" startLine="101" startPosition="26" endLine="102" endPosition="45" />
-    <scopeInfo nodeId="1224007565787" fileName="ModelStep.java" startLine="19" startPosition="65" endLine="22" endPosition="3">
+    <nodeInfo nodeId="1224008187284" fileName="ModelStep.java" startLine="21" startPosition="99" endLine="22" endPosition="44" />
+    <nodeInfo nodeId="1224007679894" fileName="ModelStep.java" startLine="25" startPosition="46" endLine="26" endPosition="45" />
+    <nodeInfo nodeId="1224007636041" fileName="ModelStep.java" startLine="29" startPosition="34" endLine="30" endPosition="45" />
+    <nodeInfo nodeId="1224007691964" fileName="ModelStep.java" startLine="33" startPosition="38" endLine="34" endPosition="33" />
+    <nodeInfo nodeId="1417797419759367327" fileName="ModelStep.java" startLine="37" startPosition="65" endLine="38" endPosition="63" />
+    <nodeInfo nodeId="1224007810885" fileName="ModelStep.java" startLine="41" startPosition="39" endLine="42" endPosition="46" />
+    <nodeInfo nodeId="1224007829578" fileName="ModelStep.java" startLine="45" startPosition="48" endLine="46" endPosition="43" />
+    <nodeInfo nodeId="1224007854459" fileName="ModelStep.java" startLine="49" startPosition="38" endLine="50" endPosition="30" />
+    <nodeInfo nodeId="1224007878476" fileName="ModelStep.java" startLine="53" startPosition="49" endLine="54" endPosition="33" />
+    <nodeInfo nodeId="1224007890269" fileName="ModelStep.java" startLine="57" startPosition="39" endLine="58" endPosition="29" />
+    <nodeInfo nodeId="1224159016728" fileName="ModelStep.java" startLine="61" startPosition="46" endLine="62" endPosition="61" />
+    <nodeInfo nodeId="1224159030902" fileName="ModelStep.java" startLine="63" startPosition="27" endLine="64" endPosition="37" />
+    <nodeInfo nodeId="1224159920740" fileName="ModelStep.java" startLine="65" startPosition="12" endLine="66" endPosition="115" />
+    <nodeInfo nodeId="7793469387662666311" fileName="ModelStep.java" startLine="71" startPosition="75" endLine="72" endPosition="29" />
+    <nodeInfo nodeId="1224163184136" fileName="ModelStep.java" startLine="73" startPosition="15" endLine="74" endPosition="92" />
+    <nodeInfo nodeId="1224163112057" fileName="ModelStep.java" startLine="76" startPosition="77" endLine="77" endPosition="30" />
+    <nodeInfo nodeId="1224163112069" fileName="ModelStep.java" startLine="79" startPosition="15" endLine="80" endPosition="27" />
+    <nodeInfo nodeId="1224159924724" fileName="ModelStep.java" startLine="84" startPosition="9" endLine="85" endPosition="95" />
+    <nodeInfo nodeId="1224007995618" fileName="ModelStep.java" startLine="89" startPosition="34" endLine="90" endPosition="50" />
+    <nodeInfo nodeId="1224008648758" fileName="ModelStep.java" startLine="93" startPosition="41" endLine="94" endPosition="51" />
+    <nodeInfo nodeId="1224845460452" fileName="ModelStep.java" startLine="97" startPosition="42" endLine="98" endPosition="51" />
+    <nodeInfo nodeId="1224787386780" fileName="ModelStep.java" startLine="102" startPosition="26" endLine="103" endPosition="45" />
+    <nodeInfo nodeId="1224787292293" fileName="ModelStep.java" startLine="104" startPosition="5" endLine="105" endPosition="69" />
+    <nodeInfo nodeId="1224007565787" fileName="ModelStep.java" startLine="20" startPosition="65" endLine="23" endPosition="3" />
+    <nodeInfo nodeId="7793469387662666300" fileName="ModelStep.java" startLine="70" startPosition="66" endLine="73" endPosition="15" />
+    <nodeInfo nodeId="1224163112055" fileName="ModelStep.java" startLine="75" startPosition="88" endLine="78" endPosition="17" />
+    <nodeInfo nodeId="1224787292285" fileName="ModelStep.java" startLine="101" startPosition="48" endLine="104" endPosition="5" />
+    <nodeInfo nodeId="1224007626874" fileName="ModelStep.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <nodeInfo nodeId="1224007626880" fileName="ModelStep.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <nodeInfo nodeId="1224007626884" fileName="ModelStep.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <nodeInfo nodeId="1224007626889" fileName="ModelStep.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <nodeInfo nodeId="1224007626895" fileName="ModelStep.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <nodeInfo nodeId="1224007626900" fileName="ModelStep.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
+    <nodeInfo nodeId="1224007626906" fileName="ModelStep.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
+    <nodeInfo nodeId="1224007626911" fileName="ModelStep.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
+    <nodeInfo nodeId="1224007626917" fileName="ModelStep.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
+    <nodeInfo nodeId="1224007981020" fileName="ModelStep.java" startLine="88" startPosition="0" endLine="92" endPosition="0" />
+    <nodeInfo nodeId="1224008644241" fileName="ModelStep.java" startLine="92" startPosition="0" endLine="96" endPosition="0" />
+    <nodeInfo nodeId="1224785935824" fileName="ModelStep.java" startLine="96" startPosition="0" endLine="100" endPosition="0" />
+    <nodeInfo nodeId="1224163112049" fileName="ModelStep.java" startLine="74" startPosition="92" endLine="79" endPosition="15" />
+    <nodeInfo nodeId="1224787292281" fileName="ModelStep.java" startLine="100" startPosition="0" endLine="107" endPosition="0" />
+    <nodeInfo nodeId="1224163112043" fileName="ModelStep.java" startLine="69" startPosition="92" endLine="82" endPosition="0" />
+    <nodeInfo nodeId="1224163112036" fileName="ModelStep.java" startLine="68" startPosition="49" endLine="82" endPosition="13" />
+    <nodeInfo nodeId="1224163112033" fileName="ModelStep.java" startLine="67" startPosition="130" endLine="84" endPosition="0" />
+    <nodeInfo nodeId="1224162760191" fileName="ModelStep.java" startLine="66" startPosition="115" endLine="84" endPosition="9" />
+    <nodeInfo nodeId="1224159045547" fileName="ModelStep.java" startLine="65" startPosition="10" endLine="86" endPosition="5" />
+    <nodeInfo nodeId="1224159019628" fileName="ModelStep.java" startLine="62" startPosition="61" endLine="86" endPosition="5" />
+    <nodeInfo nodeId="1224007626921" fileName="ModelStep.java" startLine="60" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="1224007565790" fileName="ModelStep.java" startLine="21" startPosition="99" endLine="22" endPosition="44" />
+    <scopeInfo nodeId="1224007626879" fileName="ModelStep.java" startLine="25" startPosition="46" endLine="26" endPosition="45" />
+    <scopeInfo nodeId="1224007626883" fileName="ModelStep.java" startLine="29" startPosition="34" endLine="30" endPosition="45" />
+    <scopeInfo nodeId="1224007626887" fileName="ModelStep.java" startLine="33" startPosition="38" endLine="34" endPosition="33" />
+    <scopeInfo nodeId="1224007626894" fileName="ModelStep.java" startLine="37" startPosition="65" endLine="38" endPosition="63" />
+    <scopeInfo nodeId="1224007626898" fileName="ModelStep.java" startLine="41" startPosition="39" endLine="42" endPosition="46" />
+    <scopeInfo nodeId="1224007626905" fileName="ModelStep.java" startLine="45" startPosition="48" endLine="46" endPosition="43" />
+    <scopeInfo nodeId="1224007626909" fileName="ModelStep.java" startLine="49" startPosition="38" endLine="50" endPosition="30" />
+    <scopeInfo nodeId="1224007626916" fileName="ModelStep.java" startLine="53" startPosition="49" endLine="54" endPosition="33" />
+    <scopeInfo nodeId="1224007626920" fileName="ModelStep.java" startLine="57" startPosition="39" endLine="58" endPosition="29" />
+    <scopeInfo nodeId="1224159019629" fileName="ModelStep.java" startLine="63" startPosition="27" endLine="64" endPosition="37" />
+    <scopeInfo nodeId="7793469387662666301" fileName="ModelStep.java" startLine="71" startPosition="75" endLine="72" endPosition="29" />
+    <scopeInfo nodeId="1224163112056" fileName="ModelStep.java" startLine="76" startPosition="77" endLine="77" endPosition="30" />
+    <scopeInfo nodeId="1224007981023" fileName="ModelStep.java" startLine="89" startPosition="34" endLine="90" endPosition="50" />
+    <scopeInfo nodeId="1224008644244" fileName="ModelStep.java" startLine="93" startPosition="41" endLine="94" endPosition="51" />
+    <scopeInfo nodeId="1224785935829" fileName="ModelStep.java" startLine="97" startPosition="42" endLine="98" endPosition="51" />
+    <scopeInfo nodeId="1224787292286" fileName="ModelStep.java" startLine="102" startPosition="26" endLine="103" endPosition="45" />
+    <scopeInfo nodeId="1224007565787" fileName="ModelStep.java" startLine="20" startPosition="65" endLine="23" endPosition="3">
       <varInfo nodeId="1224008171704" varName="project" />
       <varInfo nodeId="1224008174419" varName="buildGenerator" />
       <varInfo nodeId="1224788857001" varName="handler" />
     </scopeInfo>
-    <scopeInfo nodeId="1224163112054" fileName="ModelStep.java" startLine="74" startPosition="88" endLine="77" endPosition="17" />
-    <scopeInfo nodeId="1224007626874" fileName="ModelStep.java" startLine="23" startPosition="0" endLine="27" endPosition="0">
+    <scopeInfo nodeId="1224163112054" fileName="ModelStep.java" startLine="75" startPosition="88" endLine="78" endPosition="17" />
+    <scopeInfo nodeId="1224007626874" fileName="ModelStep.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="1224007626877" varName="checked" />
     </scopeInfo>
-    <scopeInfo nodeId="1224007626880" fileName="ModelStep.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="1224007626884" fileName="ModelStep.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="1224007626889" fileName="ModelStep.java" startLine="35" startPosition="0" endLine="39" endPosition="0">
+    <scopeInfo nodeId="1224007626880" fileName="ModelStep.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="1224007626884" fileName="ModelStep.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="1224007626889" fileName="ModelStep.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="1224007626892" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="1224007626895" fileName="ModelStep.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="1224007626900" fileName="ModelStep.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
+    <scopeInfo nodeId="1224007626895" fileName="ModelStep.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="1224007626900" fileName="ModelStep.java" startLine="44" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="1224007626903" varName="text" />
     </scopeInfo>
-    <scopeInfo nodeId="1224007626906" fileName="ModelStep.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="1224007626911" fileName="ModelStep.java" startLine="51" startPosition="0" endLine="55" endPosition="0">
+    <scopeInfo nodeId="1224007626906" fileName="ModelStep.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="1224007626911" fileName="ModelStep.java" startLine="52" startPosition="0" endLine="56" endPosition="0">
       <varInfo nodeId="1224007626914" varName="m" />
     </scopeInfo>
-    <scopeInfo nodeId="1224007626917" fileName="ModelStep.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="1224007981020" fileName="ModelStep.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="1224008644241" fileName="ModelStep.java" startLine="91" startPosition="0" endLine="95" endPosition="0" />
-    <scopeInfo nodeId="1224785935824" fileName="ModelStep.java" startLine="95" startPosition="0" endLine="99" endPosition="0">
+    <scopeInfo nodeId="1224007626917" fileName="ModelStep.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="1224007981020" fileName="ModelStep.java" startLine="88" startPosition="0" endLine="92" endPosition="0" />
+    <scopeInfo nodeId="1224008644241" fileName="ModelStep.java" startLine="92" startPosition="0" endLine="96" endPosition="0" />
+    <scopeInfo nodeId="1224785935824" fileName="ModelStep.java" startLine="96" startPosition="0" endLine="100" endPosition="0">
       <varInfo nodeId="1224785935827" varName="text" />
     </scopeInfo>
-    <scopeInfo nodeId="1224787292284" fileName="ModelStep.java" startLine="100" startPosition="48" endLine="104" endPosition="69" />
-    <scopeInfo nodeId="1224163112049" fileName="ModelStep.java" startLine="73" startPosition="15" endLine="78" endPosition="15" />
-    <scopeInfo nodeId="1224787292281" fileName="ModelStep.java" startLine="99" startPosition="0" endLine="106" endPosition="0">
+    <scopeInfo nodeId="1224787292284" fileName="ModelStep.java" startLine="101" startPosition="48" endLine="105" endPosition="69" />
+    <scopeInfo nodeId="1224163112049" fileName="ModelStep.java" startLine="74" startPosition="92" endLine="79" endPosition="15" />
+    <scopeInfo nodeId="1224787292281" fileName="ModelStep.java" startLine="100" startPosition="0" endLine="107" endPosition="0">
       <varInfo nodeId="1224787292299" varName="text" />
     </scopeInfo>
-    <scopeInfo nodeId="1224163112048" fileName="ModelStep.java" startLine="69" startPosition="66" endLine="79" endPosition="27">
+    <scopeInfo nodeId="1224163112048" fileName="ModelStep.java" startLine="70" startPosition="66" endLine="80" endPosition="27">
       <varInfo nodeId="1224163184137" varName="modelFile" />
     </scopeInfo>
-    <scopeInfo nodeId="1224163112043" fileName="ModelStep.java" startLine="68" startPosition="92" endLine="81" endPosition="0">
+    <scopeInfo nodeId="1224163112043" fileName="ModelStep.java" startLine="69" startPosition="92" endLine="82" endPosition="0">
       <varInfo nodeId="1224163112046" varName="modelDescriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="1224163112035" fileName="ModelStep.java" startLine="67" startPosition="49" endLine="81" endPosition="13" />
-    <scopeInfo nodeId="1224163112033" fileName="ModelStep.java" startLine="66" startPosition="130" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="1224159045548" fileName="ModelStep.java" startLine="64" startPosition="12" endLine="84" endPosition="95">
+    <scopeInfo nodeId="1224163112035" fileName="ModelStep.java" startLine="68" startPosition="49" endLine="82" endPosition="13" />
+    <scopeInfo nodeId="1224163112033" fileName="ModelStep.java" startLine="67" startPosition="130" endLine="84" endPosition="0" />
+    <scopeInfo nodeId="1224159045548" fileName="ModelStep.java" startLine="65" startPosition="12" endLine="85" endPosition="95">
       <varInfo nodeId="1224159920741" varName="modelDescriptors" />
       <varInfo nodeId="1224162760192" varName="filteredDescriptors" />
     </scopeInfo>
-    <scopeInfo nodeId="1224007626925" fileName="ModelStep.java" startLine="60" startPosition="46" endLine="85" endPosition="5">
+    <scopeInfo nodeId="1224007626925" fileName="ModelStep.java" startLine="61" startPosition="46" endLine="86" endPosition="5">
       <varInfo nodeId="1224159016729" varName="solution" />
     </scopeInfo>
-    <scopeInfo nodeId="1224007626921" fileName="ModelStep.java" startLine="59" startPosition="0" endLine="87" endPosition="0" />
-    <unitInfo nodeId="1224163112041" fileName="ModelStep.java" startLine="68" startPosition="61" endLine="81" endPosition="11" unitName="jetbrains.mps.build.packaging.plugin.Condition$anonymous" />
-    <unitInfo nodeId="1224163112031" fileName="ModelStep.java" startLine="66" startPosition="92" endLine="83" endPosition="7" unitName="jetbrains.mps.build.packaging.plugin.ModelStep$1" />
-    <unitInfo nodeId="1224007565785" fileName="ModelStep.java" startLine="19" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.ModelStep" />
+    <scopeInfo nodeId="1224007626921" fileName="ModelStep.java" startLine="60" startPosition="0" endLine="88" endPosition="0" />
+    <unitInfo nodeId="1224163112041" fileName="ModelStep.java" startLine="69" startPosition="61" endLine="82" endPosition="11" unitName="jetbrains.mps.build.packaging.plugin.Condition$anonymous" />
+    <unitInfo nodeId="1224163112031" fileName="ModelStep.java" startLine="67" startPosition="92" endLine="84" endPosition="7" unitName="jetbrains.mps.build.packaging.plugin.ModelStep$1" />
+    <unitInfo nodeId="1224007565785" fileName="ModelStep.java" startLine="20" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.ModelStep" />
   </root>
   <root nodeId="1224788773266">
     <nodeInfo nodeId="1224788785255" fileName="IErrorHandler.java" startLine="6" startPosition="32" endLine="7" endPosition="40" />

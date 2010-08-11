@@ -5585,7 +5585,7 @@
                 </node>
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1281598945698463483">
-                <link role="baseMethodDeclaration:3" targetNodeId="72.~EditableDescriptor.getModelFile():jetbrains.mps.vfs.IFile" resolveInfo="getModelFile" />
+                <link role="baseMethodDeclaration:3" targetNodeId="72.~EditableSModelDescriptor.getModelFile():jetbrains.mps.vfs.IFile" resolveInfo="getModelFile" />
               </node>
             </node>
           </node>
