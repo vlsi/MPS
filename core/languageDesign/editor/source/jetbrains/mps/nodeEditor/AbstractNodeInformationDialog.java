@@ -32,7 +32,9 @@ public abstract class AbstractNodeInformationDialog extends JDialog {
   private FocusListener myOwnerFocusListener = new FocusAdapter() {
     @Override
     public void focusLost(FocusEvent focusEvent) {
-      dispose();
+      if (focusEvent.getOppositeComponent() != myTextArea) {
+        dispose();
+      }
     }
   };
 
@@ -60,7 +62,6 @@ public abstract class AbstractNodeInformationDialog extends JDialog {
 
     setUndecorated(true);
     setModal(false);
-    setFocusableWindowState(false);
 
     myTextArea = new JTextArea();
     myTextArea.setEditable(false);
