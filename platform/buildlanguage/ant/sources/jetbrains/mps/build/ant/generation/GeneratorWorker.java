@@ -20,7 +20,6 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.build.ant.MpsWorker;
 import jetbrains.mps.build.ant.WhatToDo;
 import jetbrains.mps.generator.*;
-import jetbrains.mps.generator.generationTypes.GenerationInput;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
 import jetbrains.mps.ide.messages.IMessageHandler;
@@ -130,7 +129,7 @@ public class GeneratorWorker extends MpsWorker {
         info("Start " + cycle);
         cycle.generate(gm, new JavaGenerationHandler() {
           @Override
-          public long estimateCompilationMillis(GenerationInput input) {
+          public long estimateCompilationMillis(List<Pair<IModule,List<SModelDescriptor>>> input) {
             if(requiresCompilationAfterGeneration()) {
               return super.estimateCompilationMillis(input);
             }
@@ -239,12 +238,12 @@ public class GeneratorWorker extends MpsWorker {
     }
 
     public void generate(GeneratorManager gm, IGenerationHandler generationHandler, IMessageHandler messageHandler) {
-      List<Pair<EditableSModelDescriptor, IOperationContext>> modelsToContext = new ArrayList<Pair<EditableSModelDescriptor, IOperationContext>>();
+      List<Pair<SModelDescriptor, IOperationContext>> modelsToContext = new ArrayList<Pair<SModelDescriptor, IOperationContext>>();
       for (IModule module : myModules) {
         ModuleContext moduleContext = new ModuleContext(module, myProject);
         List<EditableSModelDescriptor> modelsToGenerateNow = myModuleToModels.get(module);
         for (EditableSModelDescriptor model : modelsToGenerateNow) {
-          modelsToContext.add(new Pair<EditableSModelDescriptor, IOperationContext>(model, moduleContext));
+          modelsToContext.add(new Pair<SModelDescriptor, IOperationContext>(model, moduleContext));
         }
       }
       gm.generateModels(modelsToContext, generationHandler, new EmptyProgressIndicator(), messageHandler, false, true);

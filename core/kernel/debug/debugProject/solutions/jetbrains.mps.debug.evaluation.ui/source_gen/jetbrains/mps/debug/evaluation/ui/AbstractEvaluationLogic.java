@@ -41,10 +41,10 @@ import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import com.intellij.openapi.progress.util.ProgressWindow;
+import jetbrains.mps.smodel.SModelDescriptor;
 import com.intellij.openapi.util.Disposer;
 import org.apache.commons.lang.StringUtils;
 import java.lang.reflect.InvocationTargetException;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.generator.GenerationStatus;
@@ -170,7 +170,7 @@ public abstract class AbstractEvaluationLogic {
       Project ideaProject = this.myAuxModule.getMPSProject().getProject();
       DefaultMessageHandler messageHandler = new DefaultMessageHandler(ideaProject);
       ProgressWindow progressWindow = new ProgressWindow(false, ideaProject);
-      boolean successful = manager.generateModels(ListSequence.fromListAndArray(new ArrayList<EditableSModelDescriptor>(), this.myAuxModel), myContext, handler, progressWindow, messageHandler, true);
+      boolean successful = manager.generateModels(ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), this.myAuxModel), myContext, handler, progressWindow, messageHandler, true);
 
       Disposer.dispose(progressWindow);
 

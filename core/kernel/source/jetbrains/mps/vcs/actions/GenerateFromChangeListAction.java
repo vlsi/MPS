@@ -36,7 +36,7 @@ import java.util.List;
 
 public abstract class GenerateFromChangeListAction extends AbstractVcsAction {
   protected void actionPerformed(VcsContext vcsContext) {
-    List<EditableSModelDescriptor> modelsToGenerate = getModelsToGenerate(vcsContext);
+    List<SModelDescriptor> modelsToGenerate = getModelsToGenerate(vcsContext);
     Project project = vcsContext.getProject();
     IOperationContext context = ProjectOperationContext.get(project);
     project.getComponent(GeneratorManager.class).generateModelsFromDifferentModules(context, modelsToGenerate, getGenerationHandler());
@@ -44,14 +44,14 @@ public abstract class GenerateFromChangeListAction extends AbstractVcsAction {
 
   protected abstract IGenerationHandler getGenerationHandler();
 
-  private List<EditableSModelDescriptor> getModelsToGenerate(VcsContext vcsContext) {
+  private List<SModelDescriptor> getModelsToGenerate(VcsContext vcsContext) {
     Collection<VirtualFile> filesCollection = vcsContext.getSelectedFilesCollection();
-    List<EditableSModelDescriptor> modelsToGenerate = new ArrayList<EditableSModelDescriptor>();
+    List<SModelDescriptor> modelsToGenerate = new ArrayList<SModelDescriptor>();
     for (VirtualFile f : filesCollection) {
       if (f.exists() && !f.isDirectory()) {
         SModelDescriptor model = SModelRepository.getInstance().findModel(VFileSystem.toIFile(f));
-        if (model instanceof EditableSModelDescriptor) {
-          modelsToGenerate.add(((EditableSModelDescriptor) model));
+        if(model != null) {
+          modelsToGenerate.add(model);
         }
       }
     }
@@ -59,7 +59,7 @@ public abstract class GenerateFromChangeListAction extends AbstractVcsAction {
   }
 
   protected void update(VcsContext vcsContext, Presentation presentation) {
-    List<EditableSModelDescriptor> modelsToGenerate = getModelsToGenerate(vcsContext);
+    List<SModelDescriptor> modelsToGenerate = getModelsToGenerate(vcsContext);
     if (modelsToGenerate.isEmpty()) {
       enable(presentation, false);
       presentation.setText("Generate " + getWhatToGenerateName());

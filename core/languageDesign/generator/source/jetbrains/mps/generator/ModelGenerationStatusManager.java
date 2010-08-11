@@ -147,8 +147,12 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     return !(generatedHash.equals(valueArray[0]));
   }
 
-  private boolean isEmpty(EditableSModelDescriptor sm) {
-    if (myEmptyStatus.containsKey(sm) && myEmptyStatusRetrievalTime.get(sm) >= sm.lastChangeTime()) {
+  private boolean isEmpty(SModelDescriptor sm) {
+    if(!(sm instanceof EditableSModelDescriptor)) {
+      return sm.isEmpty();
+    }
+
+    if (myEmptyStatus.containsKey(sm) && myEmptyStatusRetrievalTime.get(sm) >= ((EditableSModelDescriptor)sm).lastChangeTime()) {
       return myEmptyStatus.get(sm);
     }
 
@@ -215,8 +219,12 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
   private File generateHashFile(CacheGenerationContext context) {
     File outputDir = context.getOutputDir();
 
-    EditableSModelDescriptor descriptor = context.getOriginalInputModel();
-    IFile file = descriptor.getModelFile();
+    SModelDescriptor descriptor = context.getOriginalInputModel();
+    if(!(descriptor instanceof EditableSModelDescriptor)) {
+      return null;
+    }
+
+    IFile file = ((EditableSModelDescriptor)descriptor).getModelFile();
     byte[] content = new byte[(int) file.length()];
 
     InputStream is = null;

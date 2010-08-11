@@ -199,17 +199,17 @@ public class TestGenerationWorker extends GeneratorWorker {
     if (isGeneratePerfomanceReport()) {
       return new GenerationAdapter() {
         @Override
-        public void beforeGeneration(List<Pair<EditableSModelDescriptor, IOperationContext>> inputModels) {
+        public void beforeGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
           Long startTime = System.currentTimeMillis();
-          for (Pair<EditableSModelDescriptor, IOperationContext> pair : inputModels) {
+          for (Pair<SModelDescriptor, IOperationContext> pair : inputModels) {
             myPerfomanceMap.put(pair.o1, startTime);
           }
         }
 
         @Override
-        public void afterGeneration(List<Pair<EditableSModelDescriptor, IOperationContext>> inputModels) {
+        public void afterGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
           Long finishTime = System.currentTimeMillis();
-          for (Pair<EditableSModelDescriptor, IOperationContext> pair : inputModels) {
+          for (Pair<SModelDescriptor, IOperationContext> pair : inputModels) {
             Long startTime = myPerfomanceMap.get(pair.o1);
             myPerfomanceMap.put(pair.o1, finishTime - startTime);
           }
@@ -527,7 +527,7 @@ public class TestGenerationWorker extends GeneratorWorker {
     }
 
     public void generate(GeneratorManager gm, IGenerationHandler generationHandler, IMessageHandler messageHandler) {
-      gm.generateModels(Collections.singletonList(mySModel),
+      gm.generateModels(Collections.<SModelDescriptor>singletonList(mySModel),
         new ModuleContext(myModule, myProject),
         generationHandler,
         new EmptyProgressIndicator(),

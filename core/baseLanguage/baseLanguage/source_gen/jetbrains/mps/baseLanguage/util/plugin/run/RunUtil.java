@@ -7,12 +7,12 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.List;
 import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.generator.NoCachesStrategy;
 import jetbrains.mps.project.ProjectOperationContext;
@@ -28,7 +28,7 @@ public class RunUtil {
 
   public static void makeBeforeRun(final Project project, List<SNode> nodes) {
     GeneratorManager genManager = project.getComponent(GeneratorManager.class);
-    final List<EditableSModelDescriptor> models = ListSequence.fromList(new ArrayList<EditableSModelDescriptor>());
+    final List<SModelDescriptor> models = ListSequence.fromList(new ArrayList<SModelDescriptor>());
     for (final SNode node : nodes) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {

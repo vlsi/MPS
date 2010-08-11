@@ -223,7 +223,7 @@ public class RefactoringProcessor {
     final RefactoringNodeMembersAccessModifier modifier = new RefactoringNodeMembersAccessModifier();
 
     try {
-      final List<EditableSModelDescriptor> descriptors = new ArrayList<EditableSModelDescriptor>();
+      final List<SModelDescriptor> descriptors = new ArrayList<SModelDescriptor>();
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
           refactoringContext.setUpMembersAccessModifier(modifier);
@@ -231,7 +231,7 @@ public class RefactoringProcessor {
           SNode.setNodeMemeberAccessModifier(modifier);
 
           for (SModel model : sourceModels) {
-            descriptors.add(((EditableSModelDescriptor) model.getModelDescriptor()));
+            descriptors.add(model.getModelDescriptor());
           }
         }
       });

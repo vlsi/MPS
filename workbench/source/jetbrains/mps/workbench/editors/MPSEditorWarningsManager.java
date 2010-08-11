@@ -143,7 +143,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
         "Generate",
         new Runnable() {
           public void run() {
-            final List<EditableSModelDescriptor> models = new ArrayList<EditableSModelDescriptor>();
+            final List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
             ModelAccess.instance().runReadAction(new Runnable() {
               public void run() {
                 for (Language l : outdatedLanguages) {

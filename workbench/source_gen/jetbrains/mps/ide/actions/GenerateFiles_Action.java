@@ -15,10 +15,9 @@ import jetbrains.mps.ide.projectPane.NamespaceTextNode;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
 import jetbrains.mps.generator.GeneratorManager;
 
@@ -87,12 +86,10 @@ public class GenerateFiles_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       IOperationContext projectContext = ProjectOperationContext.get(GenerateFiles_Action.this.project);
-      List<EditableSModelDescriptor> models = new ArrayList<EditableSModelDescriptor>();
+      List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
       for (TreeNode ppNode : ListSequence.fromList(GenerateFiles_Action.this.ppNodes)) {
         for (SModelDescriptor model : ListSequence.fromList(((NamespaceTextNode) ppNode).getModelsUnder())) {
-          if (model instanceof EditableSModelDescriptor) {
-            models.add(((EditableSModelDescriptor) model));
-          }
+          models.add(model);
         }
       }
       GenerateFiles_Action.this.getGenManager().generateModelsFromDifferentModules(projectContext, models, new JavaGenerationHandler());

@@ -25,15 +25,15 @@ import java.util.Collections;
 import java.util.List;
 
 public class GenParameters {
-  private List<EditableSModelDescriptor> myModelDescriptors = new ArrayList<EditableSModelDescriptor>();
+  private List<SModelDescriptor> myModelDescriptors = new ArrayList<SModelDescriptor>();
   private IModule myModule;
 
-  public GenParameters(List<EditableSModelDescriptor> models, IModule module) {
+  public GenParameters(List<SModelDescriptor> models, IModule module) {
     myModelDescriptors.addAll(models);
     myModule = module;
   }
 
-  public List<EditableSModelDescriptor> getModelDescriptors() {
+  public List<SModelDescriptor> getModelDescriptors() {
     return Collections.unmodifiableList(myModelDescriptors);
   }
 
