@@ -586,6 +586,9 @@ __switch__:
       return;
     }
     IFile modelFile = ((EditableSModelDescriptor) myModelDescriptor).getModelFile();
+    if (modelFile == null) {
+      return;
+    }
     VirtualFile modelVFile = modelFile.toVirtualFile();
 
     assert myProject.getComponent(VcsFileStatusProvider.class) != null;

@@ -52,6 +52,8 @@ public abstract class NoCachesStrategy {
         if (!(sm instanceof EditableSModelDescriptor))  return false;
 
         IFile file = ((EditableSModelDescriptor) sm).getModelFile();
+        if (file == null) return false;
+
         FileInputStream in = null;
         try {
           in = new FileInputStream(file.toFile());

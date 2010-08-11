@@ -227,9 +227,11 @@ public class ApplicationLevelVcsManager implements ApplicationComponent, Persist
     }
   }
 
-  public boolean isInConflict(final SModelDescriptor modelDescriptor, boolean synchronously) {
-    if (!(modelDescriptor instanceof EditableSModelDescriptor)) return false;
-    return isInConflict(((EditableSModelDescriptor) modelDescriptor).getModelFile(), synchronously);
+  public boolean isInConflict(final SModelDescriptor md, boolean synchronously) {
+    if (!(md instanceof EditableSModelDescriptor)) return false;
+    EditableSModelDescriptor emd = (EditableSModelDescriptor) md;
+    if (emd.getModelFile() == null) return false;
+    return isInConflict(emd.getModelFile(), synchronously);
   }
 
   public void addToVcsLater(File file) {

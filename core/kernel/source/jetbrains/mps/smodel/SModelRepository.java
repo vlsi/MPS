@@ -147,7 +147,7 @@ public class SModelRepository implements ApplicationComponent {
 
     if (modelDescriptor instanceof EditableSModelDescriptor) {
       IFile modelFile = ((EditableSModelDescriptor) modelDescriptor).getModelFile();
-      if (modelFile.exists()) {
+      if (modelFile != null && modelFile.exists()) {
         modelFile.delete();
       }
     }
@@ -339,11 +339,13 @@ public class SModelRepository implements ApplicationComponent {
 
   private void addModelToFileCache(EditableSModelDescriptor modelDescriptor) {
     IFile modelFile = modelDescriptor.getModelFile();
+    if (modelFile == null) return;
     myCanonicalPathsToModelDescriptorMap.put(modelFile.getCanonicalPath(), modelDescriptor);
   }
 
   private boolean removeModelFromFileCache(EditableSModelDescriptor modelDescriptor) {
     IFile modelFile = modelDescriptor.getModelFile();
+    if (modelFile == null) return false;
     SModelDescriptor sd = myCanonicalPathsToModelDescriptorMap.remove(modelFile.getCanonicalPath());
     return sd == modelDescriptor;
   }

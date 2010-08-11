@@ -72,6 +72,9 @@ public class ModelStep extends TwoOptionsStep<SModelDescriptor> {
                 return false;
               }
               IFile modelFile = ((EditableSModelDescriptor) modelDescriptor).getModelFile();
+              if (modelFile == null) {
+                return false;
+              }
               for (SModelRoot root : ListSequence.fromList(solution.getSModelRoots())) {
                 if (modelFile.getAbsolutePath().startsWith(root.getPath())) {
                   return true;

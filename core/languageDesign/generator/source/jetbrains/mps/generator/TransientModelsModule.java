@@ -25,7 +25,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -194,36 +193,24 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
     }
 
     SModelFqName fqName = new SModelFqName(longName, stereotype);
-    SModelDescriptor result = new TransientSModelDescriptor(fqName, longName);
+    SModelDescriptor result = new TransientModelDescriptor(this, fqName, longName);
 
     myModels.put(result.getSModelReference().getSModelFqName(), result);
     invalidateCaches();
     return result;
   }
 
-  /**
-   * @deprecated
-   */
-  @Deprecated
   public SModelDescriptor createTestModel(final String longName, String stereotype) {
     while (!isValidName(longName, stereotype)) {
       stereotype += "_";
     }
 
     SModelFqName fqName = new SModelFqName(longName, stereotype);
-    SModelDescriptor result = new TransientSModelDescriptor(fqName, longName) {
-      protected SModel loadModel() {
-        return new TransientSModel(getSModelReference()) {
-          @Override
-          public boolean isNotEditable() {
-            return false;
-          }
-        };
-      }
-    };
+    SModelDescriptor result = new EditorTestModelDescriptor(this, fqName, longName);
+    SModelRepository.getInstance().registerModelDescriptor(result, this);
+
     myModels.put(result.getSModelReference().getSModelFqName(), result);
     invalidateCaches();
-    SModelRepository.getInstance().registerModelDescriptor(result, this);
     return result;
   }
 
@@ -243,6 +230,10 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
     return new TransientModuleScope();
   }
 
+  public SModelDescriptor getModel(SModelFqName fqName) {
+    return myModels.get(fqName);
+  }
+
   public class TransientModuleScope extends ModuleScope {
     protected Set<IModule> getInitialModules() {
       Set<IModule> result = new HashSet<IModule>();
@@ -256,37 +247,4 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
     }
   }
 
-  public class TransientSModelDescriptor extends BaseSModelDescriptor {
-    private final String myLongName;
-
-    private TransientSModelDescriptor(SModelFqName fqName, String longName) {
-      super(IModelRootManager.NULL_MANAGER, new SModelReference(fqName, SModelId.generate()), false);
-      myLongName = longName;
-    }
-
-    protected SModel loadModel() {
-      return new TransientSModel(getSModelReference());
-    }
-
-    @Override
-    public IModule getModule() {
-      return TransientModelsModule.this;
-    }
-
-    @Override
-    public Set<IModule> getModules() {
-      return Collections.<IModule>singleton(TransientModelsModule.this);
-    }
-
-    @Override
-    public SModelDescriptor resolveModel(SModelReference reference) {
-      if(reference.getLongName().equals(myLongName)) {
-        SModelDescriptor descriptor = myModels.get(reference.getSModelFqName());
-        if(descriptor != null) {
-          return descriptor;
-        }
-      }
-      return super.resolveModel(reference);
-    }
-  }
 }

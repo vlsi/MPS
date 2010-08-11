@@ -136,7 +136,6 @@ class FastFindUsagesManager extends FindUsagesManager {
       if (!(sm instanceof EditableSModelDescriptor)) continue;
       EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
       if (SModelRepository.getInstance().isChanged(esm)) {
-        IFile modelFile = esm.getModelFile();
         sm.getSModel();
         result.addAll(new ModelFindOperations(sm).findUsages(nodes));
       }
@@ -167,6 +166,7 @@ class FastFindUsagesManager extends FindUsagesManager {
     for (SModelDescriptor sm : scope.getModelDescriptors()) {
       if (!(sm instanceof EditableSModelDescriptor)) continue;
       IFile modelFile = ((EditableSModelDescriptor) sm).getModelFile();
+      if (modelFile == null) continue;
       scopeFiles.add(modelFile.toVirtualFile());
     }
     return scopeFiles;

@@ -1,6 +1,5 @@
 package jetbrains.mps.baseLanguage.index;
 
-import com.intellij.ide.DataManager;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
@@ -13,7 +12,6 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.misc.hash.HashMap;
 import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -36,6 +34,7 @@ public class ClassifierSuccessorsFinder {
       if (!(md instanceof EditableSModelDescriptor)) continue;
       EditableSModelDescriptor emd = (EditableSModelDescriptor) md;
       IFile modelFile = emd.getModelFile();
+      if (modelFile == null) continue;
       if (SModelRepository.getInstance().isChanged(emd)) {
         for (SNode sNode : md.getSModel().allNodes()) {
           BaseAdapter adapter = sNode.getAdapter();
@@ -99,7 +98,7 @@ public class ClassifierSuccessorsFinder {
       } else {
         return;
       }
-      
+
       List<Classifier> successors = mySuccessorsMap.get((Classifier) adapter);
       if (successors != null) {
         for (Classifier successor : successors) {

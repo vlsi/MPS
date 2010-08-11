@@ -11421,6 +11421,21 @@
                                                   </node>
                                                 </node>
                                               </node>
+                                              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="7205601457219803694">
+                                                <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7205601457219803695">
+                                                  <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="7205601457219803703">
+                                                    <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="7205601457219803705">
+                                                      <property name="value:3" value="false" />
+                                                    </node>
+                                                  </node>
+                                                </node>
+                                                <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="7205601457219803699">
+                                                  <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="7205601457219803702" />
+                                                  <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7205601457219803698">
+                                                    <link role="variableDeclaration:3" targetNodeId="1224163184137" resolveInfo="modelFile" />
+                                                  </node>
+                                                </node>
+                                              </node>
                                               <node role="statement:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement:7" id="1224163112049">
                                                 <node role="variable:7" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable:7" id="1224163112050">
                                                   <property name="name:7" value="root" />

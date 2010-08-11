@@ -127,6 +127,7 @@ public class ModelDigestUtil {
     if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) return null;
 
     IFile modelFile = esm.getModelFile();
+    if (modelFile == null) return null;
     VirtualFile file = modelFile.toVirtualFile();
     if (file == null) return null;
 

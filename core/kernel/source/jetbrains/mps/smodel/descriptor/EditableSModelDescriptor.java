@@ -4,6 +4,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This kind of descriptor is proposed to use for regular MPS models.
@@ -22,7 +23,7 @@ public interface EditableSModelDescriptor extends SModelDescriptor, Refactorable
 
   int getPersistenceVersion();
 
-  @NotNull
+  @Nullable
   IFile getModelFile();
 
   void setModelFile(IFile file);

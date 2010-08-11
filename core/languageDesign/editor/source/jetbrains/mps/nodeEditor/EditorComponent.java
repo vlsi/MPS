@@ -2625,7 +2625,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           if (md == null) return null;
           if (!(md instanceof EditableSModelDescriptor)) return null;
           IFile ifile = ((EditableSModelDescriptor) md).getModelFile();
-          if (!ifile.exists()) return null;
+          if (ifile == null ||!ifile.exists()) return null;
           VirtualFile vfile = VFileSystem.getFile(ifile);
           if (vfile == null) return null;
           return new VirtualFile[]{vfile};

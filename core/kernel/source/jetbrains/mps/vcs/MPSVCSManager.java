@@ -240,6 +240,7 @@ public class MPSVCSManager implements ProjectComponent {
     public void modelSaved(SModelDescriptor sm) {
       if (!(sm instanceof EditableSModelDescriptor)) return;
       final IFile modelFile = ((EditableSModelDescriptor) sm).getModelFile();
+      if (modelFile == null) return;
       addFilesToVcs(Collections.singletonList(modelFile.toFile()), false, false);
       sm.removeModelListener(this);
     }
@@ -249,7 +250,8 @@ public class MPSVCSManager implements ProjectComponent {
     public void modelSaved(SModelDescriptor sm) {
       if (!(sm instanceof EditableSModelDescriptor)) return;
       final IFile modelFile = ((EditableSModelDescriptor) sm).getModelFile();
-        VcsDirtyScopeManager.getInstance(myProject).fileDirty(VFileSystem.refreshAndGetFile(modelFile));
+      if (modelFile == null) return;
+      VcsDirtyScopeManager.getInstance(myProject).fileDirty(VFileSystem.refreshAndGetFile(modelFile));
     }
   }
 
@@ -265,8 +267,8 @@ public class MPSVCSManager implements ProjectComponent {
     public void beforeGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
       for (Pair<SModelDescriptor, IOperationContext> pair : inputModels) {
         SModelDescriptor smodelDescriptor = pair.o1;
-        if (smodelDescriptor instanceof EditableSModelDescriptor && ((EditableSModelDescriptor)smodelDescriptor).needsReloading()) {
-          ((EditableSModelDescriptor)smodelDescriptor).reloadFromDisk();
+        if (smodelDescriptor instanceof EditableSModelDescriptor && ((EditableSModelDescriptor) smodelDescriptor).needsReloading()) {
+          ((EditableSModelDescriptor) smodelDescriptor).reloadFromDisk();
           LOG.info("Model " + smodelDescriptor + " reloaded from disk.");
         }
       }

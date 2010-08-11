@@ -122,7 +122,6 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
     if (esm.isPackaged()) return false;
     if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) return false;
-    IFile modelFile = esm.getModelFile();
     if (isDoNotGenerate(sm)) return false;
     if (SModelRepository.getInstance().isChanged(esm)) return true;
     if (isEmpty(esm)) return false;
@@ -130,6 +129,8 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     String generatedHash = getGenerationHash(sm);
     if (generatedHash == null) return true;
 
+    IFile modelFile = esm.getModelFile();
+    if (modelFile==null) return true;
     VirtualFile file = modelFile.toVirtualFile();
     if (file == null) return true;
 
@@ -220,11 +221,11 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     File outputDir = context.getOutputDir();
 
     SModelDescriptor descriptor = context.getOriginalInputModel();
-    if(!(descriptor instanceof EditableSModelDescriptor)) {
-      return null;
-    }
+    if(!(descriptor instanceof EditableSModelDescriptor)) return null;
 
     IFile file = ((EditableSModelDescriptor)descriptor).getModelFile();
+    if (file == null) return null;
+
     byte[] content = new byte[(int) file.length()];
 
     InputStream is = null;
