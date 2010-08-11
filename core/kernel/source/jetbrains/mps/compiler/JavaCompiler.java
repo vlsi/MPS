@@ -121,10 +121,7 @@ public class JavaCompiler {
   }
 
   private byte[] getClass(String name) {
-    byte[] bytes = myClasses.get(name);
-    byte[] result = new byte[bytes.length];
-    System.arraycopy(bytes, 0, result, 0, bytes.length);
-    return bytes;
+    return myClasses.get(name);
   }
 
   private class MapClassLoader extends AbstractClassLoader {
