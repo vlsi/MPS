@@ -35,8 +35,6 @@ import java.util.*;
 public class JavaCompiler {
   private static final Logger LOG = Logger.getLogger(JavaCompiler.class);
 
-  private static final int MAX_RESULTS = 100;
-
   private Map<String, CompilationUnit> myCompilationUnits = new HashMap<String, CompilationUnit>();
   private List<CompilationResult> myCompilationResults = new LinkedList<CompilationResult>();
   private Map<String, byte[]> myClasses = new HashMap<String, byte[]>();
@@ -182,9 +180,7 @@ public class JavaCompiler {
         myClasses.put(name, file.getBytes());
       }
 
-      if (myCompilationResults.size() <= MAX_RESULTS){
-        myCompilationResults.add(result);
-      }
+      myCompilationResults.add(result);
     }
   }
 }
