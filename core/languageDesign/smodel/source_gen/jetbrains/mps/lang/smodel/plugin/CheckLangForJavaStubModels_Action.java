@@ -7,8 +7,6 @@ import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import java.awt.Frame;
-
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.smodel.Language;
@@ -16,7 +14,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelStereotype;

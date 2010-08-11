@@ -19,8 +19,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.JarFileEntryFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -29,9 +27,10 @@ import java.util.*;
 public abstract class BaseSModelDescriptor implements SModelDescriptor {
   private static final Logger LOG = Logger.getLogger(BaseSModelDescriptor.class);
 
+  protected SModel mySModel = null;
+  private final Object myLoadingLock = new Object();
+
   protected SModelReference myModelReference;
-  protected Map<String, Object> myUserObjects;
-  protected IFile myModelFile;
   protected IModelRootManager myModelRootManager;
 
   //it should be possible to add listeners from any thread so we use lock here
@@ -41,11 +40,9 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   private SModelListener[] myModelListenersCopy;
   private Set<SModelCommandListener> myModelCommandListeners = new LinkedHashSet<SModelCommandListener>(0);
   private SModelCommandListener[] myModelCommandListenersCopy;
-  private boolean myIsChanged = false;
 
-  protected BaseSModelDescriptor(IModelRootManager manager, IFile modelFile, @NotNull SModelReference modelReference, boolean checkDup) {
+  protected BaseSModelDescriptor(IModelRootManager manager, @NotNull SModelReference modelReference, boolean checkDup) {
     myModelReference = modelReference;
-    myModelFile = modelFile;
     myModelRootManager = manager;
 
     if (checkDup) {
@@ -53,28 +50,43 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     }
   }
 
-  public boolean isChanged() {
-    return myIsChanged;
+  public SModel getSModel() {
+    // ModelAccess.assertLegalRead();
+
+    SModel result;
+    boolean fireInitialized = false;
+
+    synchronized (myLoadingLock) {
+      if (!isInitialized()) {
+        SModel model = loadModel();
+        model.setModelDescritor(this);
+        mySModel = model;
+        fireInitialized = true;
+      }
+      result = mySModel;
+    }
+    if (fireInitialized) {
+      fireModelInitialized();
+    }
+    return result;
   }
 
-  public void setChanged(boolean changed) {
-    myIsChanged = changed;
+  public void refresh() {
+    ModelAccess.assertLegalWrite();
+    if (!isInitialized()) return;
+
+    mySModel.clearAdaptersAndUserObjects();
+    mySModel.refreshRefactoringHistory();
+  }
+
+  protected abstract SModel loadModel();
+
+  public boolean isInitialized() {
+    return mySModel != null;
   }
 
   public IModelRootManager getModelRootManager() {
     return myModelRootManager;
-  }
-
-  public IFile getModelFile() {
-    return myModelFile;
-  }
-
-  public void setModelFile(IFile file) {
-    myModelFile = file;
-  }
-
-  public boolean isPackaged() {
-    return getModelFile() instanceof JarFileEntryFile;
   }
 
   public SModelReference getSModelReference() {
@@ -96,29 +108,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   @NotNull
   public String getStereotype() {
     return myModelReference.getStereotype();
-  }
-
-  public Object getUserObject(String key) {
-    return myUserObjects == null ? null : myUserObjects.get(key);
-  }
-
-  public void putUserObject(String key, Object value) {
-    if (myUserObjects == null) {
-      myUserObjects = new HashMap<String, Object>();
-    }
-    myUserObjects.put(key, value);
-  }
-
-  public void removeUserObject(String key) {
-    if (myUserObjects == null) return;
-    myUserObjects.remove(key);
-  }
-
-  private void clearUserObjects() {
-    if (myUserObjects != null) {
-      myUserObjects.clear();
-      myUserObjects = null;
-    }
   }
 
   public Set<IModule> getModules() {
@@ -152,8 +141,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     SModelDescriptor anotherModel = SModelRepository.getInstance().getModelDescriptor(myModelReference);
     if (anotherModel != null) {
       String message = "Model already registered: " + myModelReference + "\n";
-      message += "file = " + myModelFile + "\n";
-      message += "another model's file = " + anotherModel.getModelFile();
       LOG.error(message);
     }
   }
@@ -181,7 +168,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   public void dispose() {
     ModelAccess.assertLegalWrite();
     clearListeners();
-    clearUserObjects();
   }
 
   public void addModelListener(@NotNull SModelListener listener) {

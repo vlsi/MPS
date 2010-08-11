@@ -33,6 +33,7 @@ import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.EqualUtil;
@@ -414,7 +415,7 @@ public abstract class AbstractModule implements IModule {
     return result;
   }
 
-  public final SModelDescriptor createModel(SModelFqName name, SModelRoot root) {
+  public final EditableSModelDescriptor createModel(SModelFqName name, SModelRoot root) {
     IModelRootManager manager = root.getManager();
 
     if (!manager.isNewModelsSupported()) {
@@ -422,7 +423,7 @@ public abstract class AbstractModule implements IModule {
       return null;
     }
 
-    SModelDescriptor model = manager.createNewModel(root, name, this);
+    EditableSModelDescriptor model = (EditableSModelDescriptor) manager.createNewModel(root, name, this);
     SModelRepository.getInstance().markChanged(model, true);
 
     for (ModelCreationListener listener : ourModelCreationListeners) {

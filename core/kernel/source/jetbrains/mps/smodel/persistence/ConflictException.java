@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.persistence;
 
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 
 public class ConflictException extends RuntimeException {
@@ -24,7 +25,7 @@ public class ConflictException extends RuntimeException {
       " If merge dialog does not appear automatically, select action \"Subversion\"->\"Resolve Text Conflict\" from file popup menu.");
   }
 
-  public ConflictException(SModelDescriptor modelDescriptor) {
+  public ConflictException(EditableSModelDescriptor modelDescriptor) {
     this(modelDescriptor.getModelFile());
   }
 }

@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
 public class CloneModelUtil {
   public static SModel cloneModel(final SModel model, final SModel modelCopy, IScope scope) {
@@ -28,7 +29,7 @@ public class CloneModelUtil {
           modelCopy.addRoot(root);
         }
         // fix MPS-3829: save model in order to ensure it was added to vcs (new models are added on first save event)
-        modelCopy.getModelDescriptor().save();
+        ((EditableSModelDescriptor) modelCopy.getModelDescriptor()).save();
       }
     });
     return modelCopy;

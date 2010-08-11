@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.workbench.actions.model.OptimizeImportsHelper;
 
@@ -87,20 +88,18 @@ public class OptimizeImportsCheckinHandler extends CheckinHandler {
       SModelRepository modelRepository = SModelRepository.getInstance();
       for (File file : affectedFiles) {
         SModelDescriptor model = modelRepository.findModel(new FileSystemFile(file));
-        if (model != null) {
-          affectedModels.add(model);
-        }
+        if (model == null) continue;
+        affectedModels.add(model);
       }
 
       final IOperationContext operationContext = ProjectOperationContext.get(myProject);
       ThreadUtils.assertLogIsEDT();
       try {
         ModelAccess.instance().runCommandInEDT(new Runnable() {
-          @Override
           public void run() {
             new OptimizeImportsHelper(operationContext).optimizeModelsImports(affectedModels);
             for (SModelDescriptor affectedModel : affectedModels) {
-              affectedModel.save();
+              ((EditableSModelDescriptor) affectedModel).save();
             }
           }
         });

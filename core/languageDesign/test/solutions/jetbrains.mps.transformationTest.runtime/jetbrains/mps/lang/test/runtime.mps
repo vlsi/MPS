@@ -1562,7 +1562,7 @@
                 <link role="variableDeclaration:3" targetNodeId="1224595559044" resolveInfo="module" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1224595559057">
-                <link role="baseMethodDeclaration:3" targetNodeId="40.~TransientModelsModule.createTransientModel(java.lang.String,java.lang.String):jetbrains.mps.smodel.SModelDescriptor" resolveInfo="createTransientModel" />
+                <link role="baseMethodDeclaration:3" targetNodeId="40.~TransientModelsModule.createTestModel(java.lang.String,java.lang.String):jetbrains.mps.smodel.SModelDescriptor" resolveInfo="createTestModel" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1224595559058">
                   <property name="value:3" value="testTransidentModel" />
                 </node>

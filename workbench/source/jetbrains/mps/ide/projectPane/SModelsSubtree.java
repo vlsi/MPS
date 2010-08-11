@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.projectPane;
 
+import jetbrains.mps.generator.TransientModelDescriptor;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.StereotypeProvider;
@@ -154,7 +155,7 @@ public class SModelsSubtree {
 
   public static int getCountNamePart(SModelDescriptor md, String baseName) {
     String modelLongName = md.getLongName();
-    String shortName = (md.isTransient())? modelLongName : modelLongName.replace(baseName + '.', "");
+    String shortName = (md instanceof TransientModelDescriptor)? modelLongName : modelLongName.replace(baseName + '.', "");
     return shortName.split("\\.").length - 1;
   }
 

@@ -20,6 +20,7 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.build.ant.MpsWorker;
 import jetbrains.mps.build.ant.WhatToDo;
 import jetbrains.mps.generator.*;
+import jetbrains.mps.generator.generationTypes.GenerationInput;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
 import jetbrains.mps.ide.messages.IMessageHandler;
@@ -129,7 +130,7 @@ public class GeneratorWorker extends MpsWorker {
         info("Start " + cycle);
         cycle.generate(gm, new JavaGenerationHandler() {
           @Override
-          public long estimateCompilationMillis(List<Pair<IModule, List<SModelDescriptor>>> input) {
+          public long estimateCompilationMillis(GenerationInput input) {
             if(requiresCompilationAfterGeneration()) {
               return super.estimateCompilationMillis(input);
             }

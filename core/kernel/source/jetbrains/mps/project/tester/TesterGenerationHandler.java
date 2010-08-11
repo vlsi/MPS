@@ -19,11 +19,13 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
+import jetbrains.mps.generator.generationTypes.GenerationInput;
 import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
@@ -53,12 +55,12 @@ public class TesterGenerationHandler extends InMemoryJavaGenerationHandler {
   }
 
   @Override
-  public boolean compile(Project p, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException {
+  public boolean compile(Project p, GenerationInput input, boolean generationOK, ITaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException {
     return true;
   }
 
   @Override
-  public long estimateCompilationMillis(List<Pair<IModule, List<SModelDescriptor>>> input) {
+  public long estimateCompilationMillis(GenerationInput input) {
     return 0;
   }
 

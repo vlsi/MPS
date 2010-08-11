@@ -61,6 +61,7 @@ import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.CollectionUtil;
@@ -2620,12 +2621,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       return ModelAccess.instance().runReadAction(new Computable<Object>() {
         public Object compute() {
           if (myNode == null) return null;
-          SModelDescriptor sModelDescriptor = myNode.getModel().getModelDescriptor();
-          if (sModelDescriptor == null) {
-            return null;
-          }
-          IFile ifile = sModelDescriptor.getModelFile();
-          if (ifile == null || !ifile.exists()) return null;
+          SModelDescriptor md = myNode.getModel().getModelDescriptor();
+          if (md == null) return null;
+          if (!(md instanceof EditableSModelDescriptor)) return null;
+          IFile ifile = ((EditableSModelDescriptor) md).getModelFile();
+          if (!ifile.exists()) return null;
           VirtualFile vfile = VFileSystem.getFile(ifile);
           if (vfile == null) return null;
           return new VirtualFile[]{vfile};

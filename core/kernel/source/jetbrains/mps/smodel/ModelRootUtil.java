@@ -2,6 +2,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -20,8 +21,8 @@ public class ModelRootUtil {
   public static Set<SModelRoot> findAllModelRoots(SModelDescriptor model) {
     Set<SModelRoot> result = new HashSet<SModelRoot>();
 
-    IFile modelFile = model.getModelFile();
-    if (modelFile == null) return result; 
+    if (!(model instanceof EditableSModelDescriptor)) return result;
+    IFile modelFile = ((EditableSModelDescriptor) model).getModelFile();
 
     for (IModule module : model.getModules()) {
       for (SModelRoot modelRoot : module.getSModelRoots()) {
@@ -36,7 +37,7 @@ public class ModelRootUtil {
     return result;
   }
 
-  public static boolean isCorrectNamespace(SModelRoot root, SModelDescriptor model){
+  public static boolean isCorrectNamespace(SModelRoot root, EditableSModelDescriptor model){
     String modelFqName = model.getSModelFqName().toString();
     String expectedName = PathManager.getModelUIDString(model.getModelFile(), FileSystem.getFile(root.getPath()), root.getPrefix());
 

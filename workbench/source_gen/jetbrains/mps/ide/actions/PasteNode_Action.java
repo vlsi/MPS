@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.datatransfer.PasteNodeData;
 import jetbrains.mps.datatransfer.CopyPasteUtil;
@@ -51,7 +52,7 @@ public class PasteNode_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return !(PasteNode_Action.this.contextModel.isReadOnly()) && PasteNode_Action.this.getPasteData() != null;
+    return PasteNode_Action.this.contextModel instanceof EditableSModelDescriptor && PasteNode_Action.this.getPasteData() != null;
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

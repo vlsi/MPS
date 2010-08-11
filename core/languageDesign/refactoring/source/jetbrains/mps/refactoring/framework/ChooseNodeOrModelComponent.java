@@ -23,6 +23,7 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Condition;
 
 import javax.swing.JComponent;
@@ -41,7 +42,8 @@ import java.util.Set;
 import static java.awt.GridBagConstraints.BOTH;
 import static java.awt.GridBagConstraints.HORIZONTAL;
 
-@Deprecated //left for compatibility with old refactorings
+@Deprecated
+//left for compatibility with old refactorings
 public class ChooseNodeOrModelComponent extends JPanel implements IChooseComponent<Object> {
   private String myCaption;
   private String myPropertyName;
@@ -122,9 +124,11 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
   private Set<SModelDescriptor> getModelsFrom(IOperationContext context, Condition condition) {
     Set<SModelDescriptor> models = new HashSet<SModelDescriptor>(SModelRepository.getInstance().getModelDescriptors());
     for (SModelDescriptor model : new ArrayList<SModelDescriptor>(models)) {
-      if (!SModelStereotype.isUserModel(model)) {
+      if (!(model instanceof EditableSModelDescriptor)) {
         models.remove(model);
-      } else if (model.isPackaged()) {
+      } else if (!SModelStereotype.isUserModel(model)) {
+        models.remove(model);
+      } else if (((EditableSModelDescriptor) model).isPackaged()) {
         models.remove(model);
       } else if (myReturnLoadedModels && !condition.met(model.getSModel())) {
         models.remove(model);

@@ -32,6 +32,7 @@ import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vcs.VcsHelper;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.JarFileEntryFile;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
@@ -44,27 +45,29 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
 
   private static final Logger LOG = Logger.getLogger(DefaultSModelDescriptor.class);
 
-  private SModel mySModel = null;
-
   private Map<String, String> myMetadata;
   private boolean myMetadataLoaded;
 
   private Object myRefactoringHistoryLock = new Object();
   private RefactoringHistory myRefactoringHistory;
 
-  private final Object myLoadingLock = new Object();
 
   private long myLastChange;       
 
   private long myDiskTimestamp = -1;
   private boolean myIsTestRefactoringMode = false;
 
-  public DefaultSModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference) {
+  private IFile myModelFile;
+  private boolean myIsChanged = false;
+
+
+  public DefaultSModelDescriptor(IModelRootManager manager, @NotNull IFile modelFile, SModelReference modelReference) {
     this(manager, modelFile, modelReference, true);
   }
 
-  protected DefaultSModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference, boolean checkDup) {
-    super(manager, modelFile, modelReference, checkDup);
+  protected DefaultSModelDescriptor(IModelRootManager manager,@NotNull IFile modelFile, SModelReference modelReference, boolean checkDup) {
+    super(manager, modelReference, checkDup);
+    myModelFile = modelFile;
     updateLastChange();
   }
 
@@ -78,32 +81,23 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     });
   }
 
-  protected SModel loadModel() {
-    SModel result = myModelRootManager.loadModel(this);
-    updateModelWithRefactorings(result);
-
-    myRefactoringHistory = null;
-    tryFixingVersion();
-    updateDiskTimestamp();
-    return result;
+  @NotNull
+  public IFile getModelFile() {
+    return myModelFile;
   }
 
-
-  public void changeModelFile(IFile newModelFile) {
-    ModelAccess.assertLegalWrite();
-
-    IFile oldFile = myModelFile;
-    if (oldFile.getAbsolutePath().equals(newModelFile.getAbsolutePath())) {
-      return;
-    }
-
-    SModel model = getSModel();
-    fireBeforeModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
-    myModelFile = newModelFile;
-    updateDiskTimestamp();
-    fireModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
+  public void setModelFile(IFile file) {
+    myModelFile = file;
   }
-  
+
+  public boolean isChanged() {
+    return myIsChanged;
+  }
+
+  public void setChanged(boolean changed) {
+    myIsChanged = changed;
+  }
+
   public void reloadFromDiskSafe() {
     if (SModelRepository.getInstance().isChanged(this)) {
       ApplicationManager.getApplication().invokeLater(new Runnable() {
@@ -143,37 +137,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     updateLastChange();
   }
 
-  public boolean isReadOnly() {
-    return false;
-  }
-
-  public long fileTimestamp() {
-    IFile file = getModelFile();
-    if (file == null || !file.exists()) return -1;
-    return file.lastModified();
-  }
-
-  public SModel getSModel() {
-    // ModelAccess.assertLegalRead();
-
-    SModel result;
-    boolean fireInitialized = false;
-
-    synchronized (myLoadingLock) {
-      if (mySModel == null) {
-        SModel model = loadModel();
-        model.setModelDescritor(this);
-        mySModel = model;
-        fireInitialized = true;
-      }
-      result = mySModel;
-    }
-    if (fireInitialized) {
-      fireModelInitialized();
-    }
-    return result;
-  }
-
   public int getPersistenceVersion() {
     SModel model = mySModel; // do not use getSModel() to avoid lock
     if (model != null) {
@@ -207,110 +170,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     if (toSave != null) {
       myModelRootManager.saveModelRefactorings(this, toSave);
     }
-  }
-
-  private void updateModelWithRefactorings(SModel model) {
-    assert model != null;
-    if (!PlayRefactoringsFlag.refactoringsPlaybackEnabled()) {
-      return;
-    }
-    if (!SModelStereotype.isUserModel(model)) {
-      return;
-    }
-    boolean wasLoading = model.setLoading(true);
-    try {
-      boolean played;
-      do {
-        played = false;
-        for (SModelDescriptor usedModelDescriptor : model.getDependenciesModels()) {
-          if (!(usedModelDescriptor instanceof EditableSModelDescriptor)) continue;
-          if (playUsedModelDescriptorsRefactoring(model, (EditableSModelDescriptor) usedModelDescriptor)) {
-            played = true;
-          }
-        }
-      } while (played);
-    } finally {
-      model.setLoading(wasLoading);
-    }
-  }
-
-  public void setTestRefactoringMode(boolean isTestRefactoringMode) {
-    myIsTestRefactoringMode = isTestRefactoringMode;
-  }
-
-  private void tryFixingVersion() {
-    if (getVersion() != -1) return;
-
-    int maxVersion = -1;
-    for (RefactoringContext context : getRefactoringHistory().getRefactoringContexts()) {
-      maxVersion = Math.max(maxVersion, context.getModelVersion());
-    }
-
-    if (maxVersion != -1) {
-      setVersion(maxVersion);
-      LOG.error("Metadata file for model " + getSModelFqName() + " wasn't present. Recreated a new one.");
-    }
-  }
-
-  //true if any refactoring was played
-
-  private boolean playUsedModelDescriptorsRefactoring(SModel model, EditableSModelDescriptor usedModelDescriptor) {
-    int currentVersion = usedModelDescriptor.getVersion();
-    int usedVersion = model.getUsedVersion(usedModelDescriptor.getSModelReference());
-    if (myIsTestRefactoringMode) {
-      System.err.println(this + ": current version of used model " + usedModelDescriptor.getLongName() + " is " + currentVersion + ", used version is " + usedVersion);
-    }
-
-    if (currentVersion > usedVersion) {
-      boolean result = false;
-      if (myIsTestRefactoringMode) {
-        System.err.println("updating a model " + this);
-      }
-      RefactoringHistory refactoringHistory = usedModelDescriptor.getRefactoringHistory();
-      for (RefactoringContext refactoringContext : refactoringHistory.getRefactoringContexts()) {
-        if (refactoringContext.getModelVersion() <= usedVersion) continue;
-        result = true;
-
-
-        IRefactoring refactoring = refactoringContext.getRefactoring();
-        if (!(refactoring instanceof ILoggableRefactoring)) {
-          LOG.error("Non-loggable refactoring was logged: " + refactoring.getClass().getName());
-        } else {
-          try {
-            ((ILoggableRefactoring) refactoring).updateModel(model, refactoringContext);
-          } catch (Throwable t) {
-            LOG.error("An exception was thrown by refactoring " + refactoring.getUserFriendlyName() + " while updating model " + model.getLongName() + ". Models could have been corrupted.");
-          }
-        }
-      }
-      model.updateImportedModelUsedVersion(usedModelDescriptor.getSModelReference(), currentVersion);
-      IFile modelFile = getModelFile();
-      if (modelFile != null && !modelFile.isReadOnly()) {
-        SModelRepository.getInstance().markChanged(this, true);
-      }
-      return result;
-    }
-
-    // broken model fixing code
-    if (currentVersion < usedVersion) {
-
-      //user might have forgotten to commit .metadata file
-      if (currentVersion == -1) {
-        if (usedModelDescriptor instanceof EditableSModelDescriptor) {
-          usedModelDescriptor.getSModel();
-        }
-
-        if (usedModelDescriptor.getVersion() == usedVersion) return false;
-      }
-
-      LOG.error("Model version mismatch for import " + usedModelDescriptor.getSModelFqName() + " in model " + getSModelFqName());
-      LOG.error("Used version = " + usedVersion + ", current version = " + currentVersion);
-      model.updateImportedModelUsedVersion(usedModelDescriptor.getSModelReference(), currentVersion);
-      SModelRepository.getInstance().markChanged(this, true);
-      LOG.error("Mismatch fixed");
-    }
-
-    return false;
   }
 
   public long lastChangeTime() {
@@ -371,7 +230,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
 
     // Paranoid check to avoid saving model during update (hack for MPS-6772)
     if (needsReloading()) return;
-    
+
     SModelRepository.getInstance().markUnchanged(mySModel);
     SModel newData = myModelRootManager.saveModel(this, true);
     if (newData != null) {
@@ -381,7 +240,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     updateDiskTimestamp();
 
     IFile modelFile = getModelFile();
-    if (modelFile != null && !modelFile.isReadOnly()) {
+    if (!modelFile.isReadOnly()) {
       MPSFileSynchronizer.getInstance().requestSync(modelFile);
     }
 
@@ -393,15 +252,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     return fileTimestamp() != myDiskTimestamp;
   }
 
-  public boolean isInitialized() {
-    return mySModel != null;
-  }
-
-  public void refresh() {
-    ModelAccess.assertLegalWrite();
-
-    if (!isInitialized()) return;
-    replaceModel(myModelRootManager.refresh(this));
+  public boolean isPackaged() {
+    return getModelFile() instanceof JarFileEntryFile;
   }
 
   public void replaceModel(SModel newModel) {
@@ -441,23 +293,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
       mySModel.dispose();
     }
     super.dispose();
-  }
-
-  public String toString() {
-    return getSModelReference().toString();
-  }
-
-  public boolean isTransient() {
-    return false;
-  }
-
-  private synchronized Map<String, String> getMetaData_internal() {
-    if (myMetadataLoaded) {
-      return myMetadata;
-    }
-    myMetadata = myModelRootManager.loadMetadata(this);
-    myMetadataLoaded = true;
-    return myMetadata;
   }
 
   public String getAttribute(String key) {
@@ -515,6 +350,172 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     setAttribute(VERSION, "" + newVersion);
   }
 
+  protected void checkModelDuplication() {
+    SModelDescriptor anotherModel = SModelRepository.getInstance().getModelDescriptor(myModelReference);
+    if (anotherModel != null) {
+      String message = "Model already registered: " + myModelReference + "\n";
+      message += "file = " + myModelFile + "\n";
+
+      if (anotherModel instanceof EditableSModelDescriptor){
+        message += "another model's file = " + ((EditableSModelDescriptor) anotherModel).getModelFile();
+      } else{
+        message += "another model is non-editable";
+      }
+      LOG.error(message);
+    }
+  }
+
+  protected SModel loadModel() {
+    SModel result = myModelRootManager.loadModel(this);
+    updateModelWithRefactorings(result);
+
+    myRefactoringHistory = null;
+    tryFixingVersion();
+    updateDiskTimestamp();
+    return result;
+  }
+
+  protected void updateDiskTimestamp() {
+    myDiskTimestamp = fileTimestamp();
+  }
+
+  public void changeModelFile(IFile newModelFile) {
+    ModelAccess.assertLegalWrite();
+
+    IFile oldFile = myModelFile;
+    if (oldFile.getAbsolutePath().equals(newModelFile.getAbsolutePath())) {
+      return;
+    }
+
+    SModel model = getSModel();
+    fireBeforeModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
+    myModelFile = newModelFile;
+    updateDiskTimestamp();
+    fireModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
+  }
+
+  private long fileTimestamp() {
+    IFile file = getModelFile();
+    if (!file.exists()) return -1;
+    return file.lastModified();
+  }
+
+  private void updateModelWithRefactorings(SModel model) {
+    assert model != null;
+    if (!PlayRefactoringsFlag.refactoringsPlaybackEnabled()) {
+      return;
+    }
+    if (!SModelStereotype.isUserModel(model)) {
+      return;
+    }
+    boolean wasLoading = model.setLoading(true);
+    try {
+      boolean played;
+      do {
+        played = false;
+        for (SModelDescriptor usedModelDescriptor : model.getDependenciesModels()) {
+          if (!(usedModelDescriptor instanceof EditableSModelDescriptor)) continue;
+          if (playUsedModelDescriptorsRefactoring(model, (EditableSModelDescriptor) usedModelDescriptor)) {
+            played = true;
+          }
+        }
+      } while (played);
+    } finally {
+      model.setLoading(wasLoading);
+    }
+  }
+
+  public void setTestRefactoringMode(boolean isTestRefactoringMode) {
+    myIsTestRefactoringMode = isTestRefactoringMode;
+  }
+
+  private void tryFixingVersion() {
+    if (getVersion() != -1) return;
+
+    int maxVersion = -1;
+    for (RefactoringContext context : getRefactoringHistory().getRefactoringContexts()) {
+      maxVersion = Math.max(maxVersion, context.getModelVersion());
+    }
+
+    if (maxVersion != -1) {
+      setVersion(maxVersion);
+      LOG.error("Metadata file for model " + getSModelFqName() + " wasn't present. Recreated a new one.");
+    }
+  }
+
+  //true if any refactoring was played
+  private boolean playUsedModelDescriptorsRefactoring(SModel model, EditableSModelDescriptor usedModelDescriptor) {
+    int currentVersion = usedModelDescriptor.getVersion();
+    int usedVersion = model.getUsedVersion(usedModelDescriptor.getSModelReference());
+    if (myIsTestRefactoringMode) {
+      System.err.println(this + ": current version of used model " + usedModelDescriptor.getLongName() + " is " + currentVersion + ", used version is " + usedVersion);
+    }
+
+    if (currentVersion > usedVersion) {
+      boolean result = false;
+      if (myIsTestRefactoringMode) {
+        System.err.println("updating a model " + this);
+      }
+      RefactoringHistory refactoringHistory = usedModelDescriptor.getRefactoringHistory();
+      for (RefactoringContext refactoringContext : refactoringHistory.getRefactoringContexts()) {
+        if (refactoringContext.getModelVersion() <= usedVersion) continue;
+        result = true;
+
+
+        IRefactoring refactoring = refactoringContext.getRefactoring();
+        if (!(refactoring instanceof ILoggableRefactoring)) {
+          LOG.error("Non-loggable refactoring was logged: " + refactoring.getClass().getName());
+        } else {
+          try {
+            ((ILoggableRefactoring) refactoring).updateModel(model, refactoringContext);
+          } catch (Throwable t) {
+            LOG.error("An exception was thrown by refactoring " + refactoring.getUserFriendlyName() + " while updating model " + model.getLongName() + ". Models could have been corrupted.");
+          }
+        }
+      }
+      model.updateImportedModelUsedVersion(usedModelDescriptor.getSModelReference(), currentVersion);
+      IFile modelFile = getModelFile();
+      if (modelFile != null && !modelFile.isReadOnly()) {
+        SModelRepository.getInstance().markChanged(this, true);
+      }
+      return result;
+    }
+
+    // broken model fixing code
+    if (currentVersion < usedVersion) {
+
+      //user might have forgotten to commit .metadata file
+      if (currentVersion == -1) {
+        if (usedModelDescriptor instanceof EditableSModelDescriptor) {
+          usedModelDescriptor.getSModel();
+        }
+
+        if (usedModelDescriptor.getVersion() == usedVersion) return false;
+      }
+
+      LOG.error("Model version mismatch for import " + usedModelDescriptor.getSModelFqName() + " in model " + getSModelFqName());
+      LOG.error("Used version = " + usedVersion + ", current version = " + currentVersion);
+      model.updateImportedModelUsedVersion(usedModelDescriptor.getSModelReference(), currentVersion);
+      SModelRepository.getInstance().markChanged(this, true);
+      LOG.error("Mismatch fixed");
+    }
+
+    return false;
+  }
+
+  public String toString() {
+    return getSModelReference().toString();
+  }
+
+  private synchronized Map<String, String> getMetaData_internal() {
+    if (myMetadataLoaded) {
+      return myMetadata;
+    }
+    myMetadata = myModelRootManager.loadMetadata(this);
+    myMetadataLoaded = true;
+    return myMetadata;
+  }
+
   public void setNameVersion(int newNameVersion) {
     setAttribute(VERSION, "" + newNameVersion);
   }
@@ -522,10 +523,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   void changeSModelUID(SModelReference newModelReference) {
     myModelReference = newModelReference;
     getSModel().changeModelReference(newModelReference);
-  }
-
-  protected void updateDiskTimestamp() {
-    myDiskTimestamp = fileTimestamp();
   }
 
   private void updateLastChange() {

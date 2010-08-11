@@ -4,6 +4,7 @@ import jetbrains.mps.ide.ui.smodel.SModelEventsDispatcher.SModelEventsListener;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.Condition;
 
@@ -70,7 +71,7 @@ public class UpdatableSNodeTreeNode extends SNodeTreeNode {
         return !getSNode().isDisposed();
       }
     };
-    if (!getModelDescriptor().isReadOnly()) {
+    if (getModelDescriptor() instanceof EditableSModelDescriptor) {
       myTreeUpdater = new MySNodeTreeUpdater(getOperationContext().getProject(), this);
     }
     addListeners();

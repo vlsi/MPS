@@ -1052,8 +1052,8 @@
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1241461874403">
         <property name="name:3" value="targetModelDescriptor" />
         <property name="isFinal:3" value="true" />
-        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1241461874404">
-          <link role="classifier:3" targetNodeId="21.~SModelDescriptor" resolveInfo="SModelDescriptor" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7793469387662679026">
+          <link role="classifier:3" targetNodeId="40.~EditableSModelDescriptor" resolveInfo="EditableSModelDescriptor" />
         </node>
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1241461874405">

@@ -11,6 +11,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.actions.imports.ImportHelper;
 
@@ -34,7 +35,7 @@ public class AddLanguageImport_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return !(AddLanguageImport_Action.this.model.isReadOnly());
+    return AddLanguageImport_Action.this.model instanceof EditableSModelDescriptor;
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

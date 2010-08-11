@@ -29,6 +29,7 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -120,7 +121,8 @@ public class ModelRepositoryComponent {
 
       protected void doUpdatePresentation() {
         setIcon(IconManager.getIconFor(myModelDescriptor));
-        if (SModelRepository.getInstance().isChanged(myModelDescriptor)) {
+        if ((myModelDescriptor instanceof EditableSModelDescriptor) &&
+        SModelRepository.getInstance().isChanged(((EditableSModelDescriptor) myModelDescriptor))) {
           setFontStyle(getFontStyle() | Font.BOLD);
           //setColor(new Color(0x00, 0x00, 0x90));
         }

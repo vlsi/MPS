@@ -35,6 +35,7 @@ import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -245,7 +246,7 @@ public class NewGeneratorDialog extends BaseDialog {
       }
     }
     if (!alreadyOwnsTemplateModel) {
-      SModelDescriptor templateModelDescriptor = newGenerator.createModel(
+      EditableSModelDescriptor templateModelDescriptor = newGenerator.createModel(
         new SModelFqName(getTemplateModelPrefix(sourceLanguage), "main", SModelStereotype.GENERATOR),
         newGenerator.getSModelRoots().get(0));
 

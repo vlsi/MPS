@@ -90,7 +90,7 @@ public class GenerateFiles_Action extends GeneratedAction {
       List<EditableSModelDescriptor> models = new ArrayList<EditableSModelDescriptor>();
       for (TreeNode ppNode : ListSequence.fromList(GenerateFiles_Action.this.ppNodes)) {
         for (SModelDescriptor model : ListSequence.fromList(((NamespaceTextNode) ppNode).getModelsUnder())) {
-          if (!(model.isTransient()) && model instanceof EditableSModelDescriptor) {
+          if (model instanceof EditableSModelDescriptor) {
             models.add(((EditableSModelDescriptor) model));
           }
         }

@@ -524,7 +524,7 @@
                         <link role="variableDeclaration:3" targetNodeId="3365295161441051162" resolveInfo="runtime" />
                       </node>
                       <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3365295161441051144">
-                        <link role="baseMethodDeclaration:3" targetNodeId="2.~AbstractModule.createModel(jetbrains.mps.smodel.SModelFqName,jetbrains.mps.project.SModelRoot):jetbrains.mps.smodel.SModelDescriptor" resolveInfo="createModel" />
+                        <link role="baseMethodDeclaration:3" targetNodeId="2.~AbstractModule.createModel(jetbrains.mps.smodel.SModelFqName,jetbrains.mps.project.SModelRoot):jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" resolveInfo="createModel" />
                         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3365295161441051145">
                           <link role="baseMethodDeclaration:3" targetNodeId="5.~SModelFqName.fromString(java.lang.String):jetbrains.mps.smodel.SModelFqName" resolveInfo="fromString" />
                           <link role="classConcept:3" targetNodeId="5.~SModelFqName" resolveInfo="SModelFqName" />
@@ -597,7 +597,7 @@
                             <link role="variableDeclaration:3" targetNodeId="495282313485074360" resolveInfo="sandbox" />
                           </node>
                           <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3365295161441049329">
-                            <link role="baseMethodDeclaration:3" targetNodeId="2.~AbstractModule.createModel(jetbrains.mps.smodel.SModelFqName,jetbrains.mps.project.SModelRoot):jetbrains.mps.smodel.SModelDescriptor" resolveInfo="createModel" />
+                            <link role="baseMethodDeclaration:3" targetNodeId="2.~AbstractModule.createModel(jetbrains.mps.smodel.SModelFqName,jetbrains.mps.project.SModelRoot):jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" resolveInfo="createModel" />
                             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3365295161441049330">
                               <link role="baseMethodDeclaration:3" targetNodeId="5.~SModelFqName.fromString(java.lang.String):jetbrains.mps.smodel.SModelFqName" resolveInfo="fromString" />
                               <link role="classConcept:3" targetNodeId="5.~SModelFqName" resolveInfo="SModelFqName" />

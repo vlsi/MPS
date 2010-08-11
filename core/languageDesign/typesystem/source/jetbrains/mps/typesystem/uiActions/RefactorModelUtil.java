@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement;
 import jetbrains.mps.lang.typesystem.structure.NormalTypeClause;
 import jetbrains.mps.baseLanguage.structure.Expression;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
 public class RefactorModelUtil {
   public static void refactorModel(SModelDescriptor modelDescriptor) {
@@ -46,7 +47,7 @@ public class RefactorModelUtil {
         }
       }
       if (modified) {
-        modelDescriptor.save();
+        ((EditableSModelDescriptor) modelDescriptor).save();
       }
     } finally {
       model.setLoading(wasLoading);

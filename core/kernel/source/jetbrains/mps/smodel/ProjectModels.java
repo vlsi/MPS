@@ -38,11 +38,6 @@ public class ProjectModels {
     public SModel saveModel(@NotNull SModelDescriptor modelDescriptor, boolean canUpgrade) {
       return null;
     }
-
-    @Nullable
-    public SModel refresh(@NotNull SModelDescriptor modelDescriptor) {
-      return modelDescriptor.getSModel();
-    }
   };
 
   @NotNull

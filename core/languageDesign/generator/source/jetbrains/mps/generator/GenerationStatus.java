@@ -21,6 +21,7 @@ import jetbrains.mps.generator.dependencies.GenerationDependencies;
 import jetbrains.mps.ide.Status;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.Nullable;
 
 /**
@@ -36,7 +37,7 @@ public class GenerationStatus extends Status {
   private GenerationDependencies myDependencies;
   private ModelDependencies myBLDependencies;
 
-  private SModelDescriptor myOriginalInputModel;
+  private EditableSModelDescriptor myOriginalInputModel;
 
   public GenerationStatus(SModel inputModel, SModel outputModel, GenerationDependencies dependencies, boolean errors, boolean warnings, boolean canceled) {
     super(errors ? Code.ERROR : Code.OK, null);
@@ -88,11 +89,11 @@ public class GenerationStatus extends Status {
     myBLDependencies = dependencies;
   }
 
-  public SModelDescriptor getOriginalInputModel() {
+  public EditableSModelDescriptor getOriginalInputModel() {
     return myOriginalInputModel;
   }
 
-  public void setOriginalInputModel(SModelDescriptor originalInputModel) {
+  public void setOriginalInputModel(EditableSModelDescriptor originalInputModel) {
     myOriginalInputModel = originalInputModel;
   }
 

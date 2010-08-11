@@ -10,6 +10,7 @@ import jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFacto
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.Set;
 import java.util.HashSet;
@@ -67,6 +68,9 @@ public class ModelProperties extends BaseBean {
   }
 
   public void saveChanges() {
+    if (!(myModelDescriptor instanceof EditableSModelDescriptor)) {
+      return;
+    }
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         addNewModels();
@@ -80,7 +84,7 @@ public class ModelProperties extends BaseBean {
         if (ModelGenerationStatusManager.isDoNotGenerate(myModelDescriptor) != myDoNotGenerate) {
           ModelGenerationStatusManager.setDoNotGenerate(myModelDescriptor, myDoNotGenerate);
         }
-        myModelDescriptor.save();
+        ((EditableSModelDescriptor) myModelDescriptor).save();
       }
     });
   }

@@ -21,6 +21,7 @@ import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.dependencies.GenerationDependencies;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
 import java.io.File;
 
@@ -33,7 +34,7 @@ public class CacheGenerationContext {
     myOutputDir = outputDir;
   }
 
-  public SModelDescriptor getOriginalInputModel() {
+  public EditableSModelDescriptor getOriginalInputModel() {
     return myStatus.getOriginalInputModel();
   }
 

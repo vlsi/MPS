@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.generator.EditorTestModelDescriptor;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.logging.Logger;
@@ -924,9 +925,7 @@ public class SModel implements Iterable<SNode> {
 
   public boolean isNotEditable() {
     assert !isDisposed();
-    SModelDescriptor modelDescriptor = getModelDescriptor();
-//    assert modelDescriptor != null;
-    return modelDescriptor == null || modelDescriptor.isReadOnly();
+    return !(getModelDescriptor() instanceof EditableSModelDescriptor || getModelDescriptor() instanceof EditorTestModelDescriptor);
   }
 
   public void clear() {

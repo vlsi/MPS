@@ -35,6 +35,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NonNls;
@@ -166,7 +167,9 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor,
   public boolean isModified() {
     return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
       public Boolean compute() {
-        return SModelRepository.getInstance().isChanged(myFile.getNode().getModel().getModelDescriptor());
+        SModelDescriptor md = myFile.getNode().getModel().getModelDescriptor();
+        if (!(md instanceof EditableSModelDescriptor)) return false;
+        return SModelRepository.getInstance().isChanged(((EditableSModelDescriptor) md));
       }
     });
   }

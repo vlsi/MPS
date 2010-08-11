@@ -134,17 +134,6 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
     return null;
   }
 
-  @Nullable
-  public final SModel refresh(@NotNull SModelDescriptor modelDescriptor) {
-    boolean needsReloading = ((BaseStubModelDescriptor) modelDescriptor).isNeedsReloading();
-    if (!needsReloading && modelDescriptor.isInitialized()) {
-      for (SNode node : modelDescriptor.getSModel().getAllNodesWithIds()) {
-        node.removeAllUserObjects();
-      }
-    }
-    return needsReloading ? null : modelDescriptor.getSModel();
-  }
-
   public final void dispose() {
     for (BaseStubModelDescriptor sm : myDescriptorsWithListener) {
       sm.removeModelUpdater(myInitializationListener);

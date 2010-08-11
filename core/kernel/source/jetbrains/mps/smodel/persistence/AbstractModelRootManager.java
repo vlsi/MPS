@@ -28,14 +28,6 @@ import java.util.Map;
 import java.util.Set;
 
 public abstract class AbstractModelRootManager implements IModelRootManager {
-  @Nullable
-  public SModel refresh(@NotNull SModelDescriptor modelDescriptor) {
-    SModel model = modelDescriptor.getSModel();
-    model.clearAdaptersAndUserObjects();
-    model.refreshRefactoringHistory();
-    return model;
-  }
-
   public boolean isFindUsagesSupported() {
     return false;
   }

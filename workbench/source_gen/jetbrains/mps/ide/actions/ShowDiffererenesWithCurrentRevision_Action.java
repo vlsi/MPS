@@ -15,12 +15,12 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.FileStatus;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.vfs.IFile;
 
 public class ShowDiffererenesWithCurrentRevision_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/diff.png", "jetbrains.mps.ide"), true);
@@ -44,8 +44,11 @@ public class ShowDiffererenesWithCurrentRevision_Action extends GeneratedAction 
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    VirtualFile virtualFile = check_4tx4z1_a0a0a(ShowDiffererenesWithCurrentRevision_Action.this.model.getModelFile());
-    if (ShowDiffererenesWithCurrentRevision_Action.this.node.isRoot() && virtualFile != null && ProjectLevelVcsManager.getInstance(ShowDiffererenesWithCurrentRevision_Action.this.project).getVcsFor(virtualFile) != null) {
+    if (!(ShowDiffererenesWithCurrentRevision_Action.this.model instanceof EditableSModelDescriptor)) {
+      return false;
+    }
+    VirtualFile virtualFile = ((EditableSModelDescriptor) ShowDiffererenesWithCurrentRevision_Action.this.model).getModelFile().toVirtualFile();
+    if (ShowDiffererenesWithCurrentRevision_Action.this.node.isRoot() && ProjectLevelVcsManager.getInstance(ShowDiffererenesWithCurrentRevision_Action.this.project).getVcsFor(virtualFile) != null) {
       FileStatus fileStatus = ShowDiffererenesWithCurrentRevision_Action.this.project.getComponent(VcsFileStatusProvider.class).getFileStatus(virtualFile);
       return FileStatus.ADDED != fileStatus && FileStatus.UNKNOWN != fileStatus;
     }
@@ -110,12 +113,5 @@ public class ShowDiffererenesWithCurrentRevision_Action extends GeneratedAction 
         log.error("User's action execute method failed. Action:" + "ShowDiffererenesWithCurrentRevision", t);
       }
     }
-  }
-
-  private static VirtualFile check_4tx4z1_a0a0a(IFile p) {
-    if (null == p) {
-      return null;
-    }
-    return p.toVirtualFile();
   }
 }

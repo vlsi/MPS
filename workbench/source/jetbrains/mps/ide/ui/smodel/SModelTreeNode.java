@@ -33,6 +33,7 @@ import jetbrains.mps.ide.ui.smodel.SModelEventsDispatcher.SModelEventsListener;
 import jetbrains.mps.lang.annotations.structure.AttributeConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.*;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -118,7 +119,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     myLabel = label;
     myNodesCondition = condition;
     myCountAdditionalNamePart = countNamePart;
-    if (getSModelDescriptor() != null && !getSModelDescriptor().isReadOnly()) {
+    if (getSModelDescriptor() instanceof EditableSModelDescriptor) {
       myTreeUpdater = new MySNodeTreeUpdater(operationContext.getProject(), this);
       myTreeUpdater.setDependencyRecorder(myDependencyRecorder);
     }
@@ -133,7 +134,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     if (getSModelDescriptor() != null) {
       icon = IconManager.getIconFor(getSModelDescriptor());
     }
-    if (sm != null && sm.isInitialized() && SModelRepository.getInstance().isChanged(sm)) {
+    if ((sm instanceof EditableSModelDescriptor) && sm.isInitialized() && SModelRepository.getInstance().isChanged(((EditableSModelDescriptor) sm))) {
       icon = new LayeredIcon(icon, Icons.MODIFIED_ICON);
     }
     setIcon(icon);
@@ -376,16 +377,12 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   private boolean isPackaged() {
-    if (getSModelDescriptor() == null) return false;
-
-    return getSModelDescriptor().isPackaged();
+    if (!(myModelDescriptor instanceof EditableSModelDescriptor)) return false;
+    return ((EditableSModelDescriptor) myModelDescriptor).isPackaged();
   }
 
   private boolean isDoNotGenerate() {
-    if (getSModelDescriptor() == null) {
-      return false;
-    }
-
+    if (getSModelDescriptor() == null) return false;
     return ModelGenerationStatusManager.isDoNotGenerate(getSModelDescriptor());
   }
 
