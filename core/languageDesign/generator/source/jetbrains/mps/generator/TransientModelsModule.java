@@ -207,6 +207,8 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
 
     SModelFqName fqName = new SModelFqName(longName, stereotype);
     SModelDescriptor result = new EditorTestModelDescriptor(this, fqName, longName);
+    SModelRepository.getInstance().unRegisterModelDescriptors(this);
+    SModelRepository.getInstance().registerModelDescriptor(result, this);
 
     myModels.put(result.getSModelReference().getSModelFqName(), result);
     invalidateCaches();
