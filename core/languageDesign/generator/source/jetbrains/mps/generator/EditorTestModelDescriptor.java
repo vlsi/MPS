@@ -21,6 +21,10 @@ import jetbrains.mps.smodel.*;
 import java.util.Collections;
 import java.util.Set;
 
+/**
+ * @deprecated TODO remove it hahren from generator  
+ */
+@Deprecated
 public class EditorTestModelDescriptor extends TransientModelDescriptor {
   public EditorTestModelDescriptor(TransientModelsModule transientModelsModule, SModelFqName fqName, String longName) {
     super(transientModelsModule, fqName, longName);
