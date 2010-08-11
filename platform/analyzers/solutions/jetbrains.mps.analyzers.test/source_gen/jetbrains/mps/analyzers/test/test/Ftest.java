@@ -44,9 +44,11 @@ public class Ftest {
 
   public void sf(String s2) {
     String s = s2;
-    if (s != null) {
+    s = null;
+    if (s == null) {
 
+    } else {
+      s.charAt(2);
     }
-    s.concat("");
   }
 }

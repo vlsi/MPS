@@ -77,6 +77,22 @@ public class NullableAnalyzerRules {
       }
       myApplicableMap.get(conceptName).add(rule);
     }
+    {
+      DataFlowConstructor rule = new RuleNullEquals();
+      String conceptName = "jetbrains.mps.baseLanguage.structure.IfStatement";
+      if (!(myApplicableMap.containsKey(conceptName))) {
+        myApplicableMap.put(conceptName, new LinkedList<DataFlowConstructor>());
+      }
+      myApplicableMap.get(conceptName).add(rule);
+    }
+    {
+      DataFlowConstructor rule = new RuleEqualsNull();
+      String conceptName = "jetbrains.mps.baseLanguage.structure.IfStatement";
+      if (!(myApplicableMap.containsKey(conceptName))) {
+        myApplicableMap.put(conceptName, new LinkedList<DataFlowConstructor>());
+      }
+      myApplicableMap.get(conceptName).add(rule);
+    }
     myConceptRules.add(new RuleMethodCall());
     myConceptRules.add(new RuleNullLiteral());
     myConceptRules.add(new RuleFieldReference());

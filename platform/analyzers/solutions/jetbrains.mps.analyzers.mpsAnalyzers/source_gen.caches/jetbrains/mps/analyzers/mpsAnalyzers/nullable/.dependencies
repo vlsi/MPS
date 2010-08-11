@@ -9,12 +9,14 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.RuleAfterDotExpression" />
+    <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.RuleEqualsNull" />
     <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.RuleFieldReference" />
     <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.RuleIfNullEqualsReturn" />
     <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.RuleIfNullReturn" />
     <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.RuleMethodCall" />
     <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.RuleNotEqualsNull" />
     <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.RuleNotEqualsNullAnd" />
+    <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.RuleNullEquals" />
     <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.RuleNullLiteral" />
     <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.RuleNullNotEquals" />
     <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.RuleVariableDeclaration" />
@@ -78,6 +80,18 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.analyzers.runtime.framework.DataFlowConstructor" />
+  </dependency>
+  <dependency className="jetbrains.mps.analyzers.mpsAnalyzers.nullable.RuleEqualsNull" file="RuleEqualsNull.java">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.notNullInstruction" />
+    <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.nullInstruction" />
+    <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.nullableInstruction" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.Program" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.analyzers.runtime.framework.DataFlowConstructor" />
+    <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
+    <classNode extendsClassName="jetbrains.mps.lang.pattern.IMatchingPattern" />
   </dependency>
   <dependency className="jetbrains.mps.analyzers.mpsAnalyzers.nullable.RuleFieldReference" file="RuleFieldReference.java">
     <classNode dependClassName="java.lang.Object" />
@@ -143,6 +157,18 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.notNullInstruction" />
+    <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.nullableInstruction" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.Program" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.analyzers.runtime.framework.DataFlowConstructor" />
+    <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
+    <classNode extendsClassName="jetbrains.mps.lang.pattern.IMatchingPattern" />
+  </dependency>
+  <dependency className="jetbrains.mps.analyzers.mpsAnalyzers.nullable.RuleNullEquals" file="RuleNullEquals.java">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.notNullInstruction" />
+    <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.nullInstruction" />
     <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.nullableInstruction" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.Program" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />

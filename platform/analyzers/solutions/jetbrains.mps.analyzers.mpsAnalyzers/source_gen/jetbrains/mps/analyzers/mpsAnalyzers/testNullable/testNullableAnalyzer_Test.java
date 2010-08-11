@@ -14,31 +14,31 @@ import jetbrains.mps.lang.test.behavior.NodeOperation_Behavior;
 public class testNullableAnalyzer_Test extends BaseTransformationTest {
   @Test
   public void testDot() throws Throwable {
-    this.initTest("${mps_home}/platform/analyzers/analyzers.mpr", "r:3cb515b9-4069-45fc-8f0a-1dc50acbaef5(jetbrains.mps.analyzers.mpsAnalyzers.testNullable)");
+    this.initTest("${mps_home}/core/languageDesign/pattern/pattern.mpr", "r:3cb515b9-4069-45fc-8f0a-1dc50acbaef5(jetbrains.mps.analyzers.mpsAnalyzers.testNullable)");
     this.runTest("jetbrains.mps.analyzers.mpsAnalyzers.testNullable.testNullableAnalyzer_Test$TestBody", "testDot", true);
   }
 
   @Test
   public void testAnnotationField() throws Throwable {
-    this.initTest("${mps_home}/platform/analyzers/analyzers.mpr", "r:3cb515b9-4069-45fc-8f0a-1dc50acbaef5(jetbrains.mps.analyzers.mpsAnalyzers.testNullable)");
+    this.initTest("${mps_home}/core/languageDesign/pattern/pattern.mpr", "r:3cb515b9-4069-45fc-8f0a-1dc50acbaef5(jetbrains.mps.analyzers.mpsAnalyzers.testNullable)");
     this.runTest("jetbrains.mps.analyzers.mpsAnalyzers.testNullable.testNullableAnalyzer_Test$TestBody", "testAnnotationField", true);
   }
 
   @Test
   public void testWhile() throws Throwable {
-    this.initTest("${mps_home}/platform/analyzers/analyzers.mpr", "r:3cb515b9-4069-45fc-8f0a-1dc50acbaef5(jetbrains.mps.analyzers.mpsAnalyzers.testNullable)");
+    this.initTest("${mps_home}/core/languageDesign/pattern/pattern.mpr", "r:3cb515b9-4069-45fc-8f0a-1dc50acbaef5(jetbrains.mps.analyzers.mpsAnalyzers.testNullable)");
     this.runTest("jetbrains.mps.analyzers.mpsAnalyzers.testNullable.testNullableAnalyzer_Test$TestBody", "testWhile", true);
   }
 
   @Test
   public void testWrite() throws Throwable {
-    this.initTest("${mps_home}/platform/analyzers/analyzers.mpr", "r:3cb515b9-4069-45fc-8f0a-1dc50acbaef5(jetbrains.mps.analyzers.mpsAnalyzers.testNullable)");
+    this.initTest("${mps_home}/core/languageDesign/pattern/pattern.mpr", "r:3cb515b9-4069-45fc-8f0a-1dc50acbaef5(jetbrains.mps.analyzers.mpsAnalyzers.testNullable)");
     this.runTest("jetbrains.mps.analyzers.mpsAnalyzers.testNullable.testNullableAnalyzer_Test$TestBody", "testWrite", true);
   }
 
   @Test
   public void testAnnotationParam() throws Throwable {
-    this.initTest("${mps_home}/platform/analyzers/analyzers.mpr", "r:3cb515b9-4069-45fc-8f0a-1dc50acbaef5(jetbrains.mps.analyzers.mpsAnalyzers.testNullable)");
+    this.initTest("${mps_home}/core/languageDesign/pattern/pattern.mpr", "r:3cb515b9-4069-45fc-8f0a-1dc50acbaef5(jetbrains.mps.analyzers.mpsAnalyzers.testNullable)");
     this.runTest("jetbrains.mps.analyzers.mpsAnalyzers.testNullable.testNullableAnalyzer_Test$TestBody", "testAnnotationParam", true);
   }
 
