@@ -4335,8 +4335,10 @@
   </root>
   <root nodeId="4639644606316590225">
     <nodeInfo nodeId="4639644606316590261" fileName="ReloadStubs_Action.java" startLine="19" startPosition="0" endLine="20" endPosition="26" />
-    <nodeInfo nodeId="2331419152225746778" fileName="ReloadStubs_Action.java" startLine="61" startPosition="9" endLine="62" endPosition="51" />
-    <nodeInfo nodeId="5220578927949260965" fileName="ReloadStubs_Action.java" startLine="62" startPosition="51" endLine="63" endPosition="47" />
+    <nodeInfo nodeId="879779804771828656" fileName="ReloadStubs_Action.java" startLine="33" startPosition="52" endLine="34" endPosition="17" />
+    <nodeInfo nodeId="2331419152225746778" fileName="ReloadStubs_Action.java" startLine="68" startPosition="9" endLine="69" endPosition="51" />
+    <nodeInfo nodeId="5220578927949260965" fileName="ReloadStubs_Action.java" startLine="69" startPosition="51" endLine="70" endPosition="47" />
+    <scopeInfo nodeId="879779804771595245" fileName="ReloadStubs_Action.java" startLine="33" startPosition="52" endLine="34" endPosition="17" />
   </root>
   <root nodeId="4709697229103750690">
     <nodeInfo nodeId="4709697229103772196" fileName="DumpChangesManager_Action.java" startLine="18" startPosition="0" endLine="19" endPosition="26" />
