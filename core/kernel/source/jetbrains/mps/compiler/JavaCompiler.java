@@ -67,6 +67,15 @@ public class JavaCompiler {
     return new MapClassLoader(parent);
   }
 
+  protected void onCompilationResult(CompilationResult r){
+
+  }
+
+  protected void onClass(ClassFile f){
+
+  }
+
+
   public List<CompilationResult> getCompilationResults() {
     return myCompilationResults;
   }
@@ -119,19 +128,26 @@ public class JavaCompiler {
     }
   }
 
+  public static String getClassName(ClassFile file){
+    StringBuilder sb = new StringBuilder(100);
+    for (int i = 0; i < file.getCompoundName().length; i++) {
+      sb.append(file.getCompoundName()[i]);
+      if (i != file.getCompoundName().length - 1) {
+        sb.append('.');
+      }
+    }
+
+    return sb.toString();
+  }
+
   private class MyCompilerRequestor implements ICompilerRequestor {
     public void acceptResult(CompilationResult result) {
       for (ClassFile file : result.getClassFiles()) {
-        StringBuilder sb = new StringBuilder(100);
-        for (int i = 0; i < file.getCompoundName().length; i++) {
-          sb.append(file.getCompoundName()[i]);
-          if (i != file.getCompoundName().length - 1) {
-            sb.append('.');
-          }
-        }
-        myClasses.put(sb.toString(), file.getBytes());
+        onClass(file);
+        myClasses.put(getClassName(file), file.getBytes());
       }
 
+      onCompilationResult(result);
       myCompilationResults.add(result);
     }
   }
