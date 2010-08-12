@@ -130,6 +130,7 @@ public class CommonPaths {
     addIfExists(result, "/lib/commons-lang/commons-lang-2.1.jar");
     addIfExists(result, "/lib/picocontainer/picocontainer.jar");
     addIfExists(result, "/lib/jdom/jdom.jar");
+    addIfExists(result, "/lib/eclipse-compiler/ecj.jar");
 
     addIfExists(result, "/lib/jetbrains-ideframework/annotations.jar");
 

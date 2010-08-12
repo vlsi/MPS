@@ -16,6 +16,7 @@
 package jetbrains.mps.make;
 
 import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.compiler.CompilationResultAdapter;
 import jetbrains.mps.compiler.JavaCompiler;
 import jetbrains.mps.ide.messages.FileWithPosition;
 import jetbrains.mps.logging.Logger;
@@ -148,95 +149,17 @@ public class ModuleMaker {
       }
     }
 
+    //todo:do we need this invalidation?
     invalidateClasspath(modulesWithRemovals);
 
     IClassPathItem classPathItems = computeDependenciesClassPath(modules);
+    MyCompilationResultAdapter listener = new MyCompilationResultAdapter(modules,classPathItems);
+    compiler.addCompilationResultListener(listener);
     compiler.compile(classPathItems);
+    compiler.removeCompilationResultListener(listener);
 
     invalidateClasspath(modules);
 
-    int errorCount = 0;
-    int outputtedErrors = 0;
-
-    for (CompilationResult cr : compiler.getCompilationResults()) {
-      Set<String> classesWithErrors = new HashSet<String>();
-      if (cr.getErrors() != null) {
-        for (final CategorizedProblem cp : cr.getErrors()) {
-          String fileName = new String(cp.getOriginatingFileName());
-          final String fqName = fileName.substring(0, fileName.length() - MPSExtentions.DOT_JAVAFILE.length()).replace(File.separatorChar, '.');
-          classesWithErrors.add(fqName);
-
-          IModule containingModule = myContainingModules.get(fqName);
-          assert containingModule != null;
-          JavaFile javaFile = myModuleSources.get(containingModule).getJavaFile(fqName);
-
-          String messageStirng = new String(cp.getOriginatingFileName()) + " : " + cp.getMessage();
-
-          //final SNode nodeToShow = getNodeByLine(cp, fqName);
-
-          Object hintObject = new FileWithPosition(javaFile.getFile(), cp.getSourceStart());
-
-          if (cp.isWarning()) {
-            LOG.warning(messageStirng + " (line: " + cp.getSourceLineNumber() + ")", hintObject);
-          } else {
-            if (outputtedErrors == 0) {
-              LOG.error("Errors encountered:\nModules: " + modules.toString() + "\nClasspath: " + classPathItems + "\n");
-            }
-            if (outputtedErrors < MAX_ERRORS) {
-              outputtedErrors++;
-              LOG.error(messageStirng + " (line: " + cp.getSourceLineNumber() + ")", hintObject);
-            }
-          }
-        }
-
-        errorCount += cr.getErrors().length;
-      }
-
-      for (ClassFile cf : cr.getClassFiles()) {
-        String fqName = getName(cf.getCompoundName());
-        String containerClassName = fqName;
-        if (containerClassName.contains("$")) {
-          int index = containerClassName.indexOf('$');
-          containerClassName = containerClassName.substring(0, index);
-        }
-        if (myContainingModules.containsKey(containerClassName)) {
-          IModule m = myContainingModules.get(containerClassName);
-          File classesGen = m.getClassesGen().toFile();
-          String packageName = NameUtil.namespaceFromLongName(fqName);
-          File outputDir = new File(classesGen + File.separator + packageName.replace('.', File.separatorChar));
-          if (!outputDir.exists()) {
-            if (!outputDir.mkdirs()) {
-              throw new RuntimeException("Can't create " + outputDir.getPath() + " directory");
-            }
-          }
-          String className = NameUtil.shortNameFromLongName(fqName);
-          File output = new File(outputDir, className + ".class");
-          if (!classesWithErrors.contains(containerClassName)) {
-            FileOutputStream os = null;
-            try {
-              os = new FileOutputStream(output);
-              os.write(cf.getBytes());
-            } catch (IOException e) {
-              LOG.error("Can't write to " + output.getAbsolutePath());
-            } finally {
-              if (os != null) {
-                try {
-                  os.close();
-                } catch (IOException e) {
-                  LOG.error(e);
-                }
-              }
-            }
-          } else {
-            if (output.exists() && !(output.delete())) {
-              LOG.error("Can't delete " + output.getPath());
-            }
-          }
-        } else {
-          LOG.error("I don't know in which module's output path I should place class file for " + fqName);
-        }
-      }
-    }
 
     for (IModule module : modules) {
       ModuleSources sources = getModuleSources(module);
@@ -257,7 +180,7 @@ public class ModuleMaker {
       module.updateClassPath();
     }
 
-    return new jetbrains.mps.plugin.CompilationResult(errorCount, 0, false);
+    return new jetbrains.mps.plugin.CompilationResult(listener.getErrorCount(), 0, false);
   }
 
   private String getName(char[][] compoundName) {
@@ -361,6 +284,102 @@ public class ModuleMaker {
     }
     for (IModule m: MPSModuleRepository.getInstance().getAllModules()){
       m.updateClassPath();
+    }
+  }
+
+  private class MyCompilationResultAdapter extends CompilationResultAdapter {
+    private int myErrorCount = 0;
+    private int myOutputtedErrors = 0;
+    private final Set<IModule> myModules;
+    private IClassPathItem myClassPathItems;
+
+    public MyCompilationResultAdapter(Set<IModule> modules, IClassPathItem classPathItems) {
+      myModules = modules;
+      myClassPathItems = classPathItems;
+    }
+
+    public void onCompilationResult(CompilationResult cr) {
+      Set<String> classesWithErrors = new HashSet<String>();
+      if (cr.getErrors() != null) {
+        for (final CategorizedProblem cp : cr.getErrors()) {
+          String fileName = new String(cp.getOriginatingFileName());
+          final String fqName = fileName.substring(0, fileName.length() - MPSExtentions.DOT_JAVAFILE.length()).replace(File.separatorChar, '.');
+          classesWithErrors.add(fqName);
+
+          IModule containingModule = myContainingModules.get(fqName);
+          assert containingModule != null;
+          JavaFile javaFile = myModuleSources.get(containingModule).getJavaFile(fqName);
+
+          String messageStirng = new String(cp.getOriginatingFileName()) + " : " + cp.getMessage();
+
+          //final SNode nodeToShow = getNodeByLine(cp, fqName);
+
+          Object hintObject = new FileWithPosition(javaFile.getFile(), cp.getSourceStart());
+
+          if (cp.isWarning()) {
+            LOG.warning(messageStirng + " (line: " + cp.getSourceLineNumber() + ")", hintObject);
+          } else {
+            if (myOutputtedErrors == 0) {
+              LOG.error("Errors encountered:\nModules: " + myModules.toString() + "\nClasspath: " + myClassPathItems + "\n");
+            }
+            if (myOutputtedErrors < MAX_ERRORS) {
+              myOutputtedErrors++;
+              LOG.error(messageStirng + " (line: " + cp.getSourceLineNumber() + ")", hintObject);
+            }
+          }
+        }
+
+        myErrorCount += cr.getErrors().length;
+      }
+
+      for (ClassFile cf : cr.getClassFiles()) {
+        String fqName = getName(cf.getCompoundName());
+        String containerClassName = fqName;
+        if (containerClassName.contains("$")) {
+          int index = containerClassName.indexOf('$');
+          containerClassName = containerClassName.substring(0, index);
+        }
+        if (myContainingModules.containsKey(containerClassName)) {
+          IModule m = myContainingModules.get(containerClassName);
+          File classesGen = m.getClassesGen().toFile();
+          String packageName = NameUtil.namespaceFromLongName(fqName);
+          File outputDir = new File(classesGen + File.separator + packageName.replace('.', File.separatorChar));
+          if (!outputDir.exists()) {
+            if (!outputDir.mkdirs()) {
+              throw new RuntimeException("Can't create " + outputDir.getPath() + " directory");
+            }
+          }
+          String className = NameUtil.shortNameFromLongName(fqName);
+          File output = new File(outputDir, className + ".class");
+          if (!classesWithErrors.contains(containerClassName)) {
+            FileOutputStream os = null;
+            try {
+              os = new FileOutputStream(output);
+              os.write(cf.getBytes());
+            } catch (IOException e) {
+              LOG.error("Can't write to " + output.getAbsolutePath());
+            } finally {
+              if (os != null) {
+                try {
+                  os.close();
+                } catch (IOException e) {
+                  LOG.error(e);
+                }
+              }
+            }
+          } else {
+            if (output.exists() && !(output.delete())) {
+              LOG.error("Can't delete " + output.getPath());
+            }
+          }
+        } else {
+          LOG.error("I don't know in which module's output path I should place class file for " + fqName);
+        }
+      }
+    }
+
+    public int getErrorCount() {
+      return myErrorCount;
     }
   }
 }

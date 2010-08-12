@@ -72,6 +72,4 @@ public abstract class AbstractClassLoader extends ClassLoader {
       definePackage(pack, null, null, null, null, null, null, null);
     }
   }
-
-
 }

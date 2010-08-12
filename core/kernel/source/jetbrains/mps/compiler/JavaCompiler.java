@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.compiler;
 
+import jetbrains.mps.generator.CompilationListener;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.util.AbstractClassLoader;
@@ -60,23 +61,6 @@ public class JavaCompiler {
 
   public ClassLoader getClassLoader(ClassLoader parent) {
     return new MapClassLoader(parent);
-  }
-
-  protected void onCompilationResult(CompilationResult r){
-
-  }
-
-  protected void onClass(ClassFile f){
-
-  }
-
-
-  public List<CompilationResult> getCompilationResults() {
-    return myCompilationResults;
-  }
-
-  public Map<String, byte[]> getClasses() {
-    return Collections.unmodifiableMap(myClasses);
   }
 
   private class MapClassLoader extends AbstractClassLoader {
@@ -145,5 +129,29 @@ public class JavaCompiler {
       onCompilationResult(result);
       myCompilationResults.add(result);
     }
+  }
+
+  //-----------event handling------------
+
+  private void onCompilationResult(CompilationResult r){
+    for (CompilationResultListener l :myCompilationResultListeners){
+      l.onCompilationResult(r);
+    }
+  }
+
+  private void onClass(ClassFile f){
+    for (CompilationResultListener l :myCompilationResultListeners){
+      l.onClass(f);
+    }
+  }
+
+  private ArrayList<CompilationResultListener> myCompilationResultListeners = new ArrayList<CompilationResultListener>();
+
+  public void addCompilationResultListener(CompilationResultListener l){
+    myCompilationResultListeners.add(l);
+  }
+
+  public void removeCompilationResultListener(CompilationResultListener l){
+    myCompilationResultListeners.remove(l);
   }
 }

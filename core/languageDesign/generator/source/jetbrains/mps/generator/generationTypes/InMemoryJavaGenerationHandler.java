@@ -6,6 +6,7 @@ import jetbrains.mps.baseLanguage.structure.Annotation;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.structure.EnumClass;
 import jetbrains.mps.baseLanguage.structure.Interface;
+import jetbrains.mps.compiler.CompilationResultAdapter;
 import jetbrains.mps.compiler.JavaCompiler;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationStatus;
@@ -14,7 +15,6 @@ import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil.TextGenerationResult;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
-import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -80,15 +80,12 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
     return true;
   }
 
-  @Override
   public void startModule(IModule module, List<SModelDescriptor> inputModels, Project project, ITaskProgressHelper progressHelper) {
     progressHelper.setText2("module " + module);
   }
 
-  @Override
   public boolean compile(Project p, List<Pair<IModule,List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException {
-    myResult = compile(progressHelper);
-    return myResult != null;
+    return compile(progressHelper);
   }
 
   @Override
@@ -141,7 +138,7 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
       outputNode.getClass() == (Class) EnumClass.class || outputNode.getClass() == Annotation.class;
   }
 
-  public List<CompilationResult> compile(ITaskProgressHelper progress) {
+  public boolean compile(ITaskProgressHelper progress) {
     myCompiler = createJavaCompiler();
 
     for (String key : myJavaSources) {
@@ -149,22 +146,11 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
     }
 
     progress.setText2("Compiling...");
+    MyCompilationResultListener listener = new MyCompilationResultListener();
+    myCompiler.addCompilationResultListener(listener);
     myCompiler.compile(getClassPath(myContextModules));
+    myCompiler.removeCompilationResultListener(listener);
     progress.setText2("Compilation finished.");
-
-    List<CompilationResult> result = myCompiler.getCompilationResults();
-    boolean hasErrors = false;
-    for (CompilationResult cr : result) {
-      if (cr.hasErrors()) {
-        hasErrors = true;
-        CategorizedProblem[] categorizedProblems = cr.getErrors();
-        for (int i = 0; i < 3 && i < categorizedProblems.length; i++) {
-          error("" + categorizedProblems[i]);
-        }
-        info("Compilation finished with errors.");
-        break;
-      }
-    }
 
     if (!myKeepSources) {
       mySources.clear();
@@ -173,11 +159,11 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
     myContextModules.clear();
 
     progress.setText2("reloading MPS classes...");
-    if (myReloadClasses && !hasErrors) {
+    if (myReloadClasses && !listener.hasErrors()) {
       ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
     }
 
-    return hasErrors ? null : result;
+    return listener.hasErrors();
   }
 
   public List<CompilationResult> getCompilationResult() {
@@ -223,5 +209,23 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
     myJavaSources.clear();
     myContextModules.clear();
     myResult = null;
+  }
+
+  private class MyCompilationResultListener extends CompilationResultAdapter{
+    private boolean myHasErrors = false;
+
+    public void onCompilationResult(CompilationResult cr) {
+      if (!cr.hasErrors()) return;
+      myHasErrors = true;
+      CategorizedProblem[] categorizedProblems = cr.getErrors();
+      for (int i = 0; i < 3 && i < categorizedProblems.length; i++) {
+        error("" + categorizedProblems[i]);
+      }
+      info("Compilation finished with errors.");
+    }
+
+    public boolean hasErrors() {
+      return myHasErrors;
+    }
   }
 }

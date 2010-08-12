@@ -38,12 +38,16 @@ import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.GenerationSettings;
 import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
+import jetbrains.mps.compiler.CompilationResultAdapter;
+import org.eclipse.jdt.internal.compiler.ClassFile;
+import jetbrains.mps.compiler.JavaCompiler;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import com.intellij.openapi.progress.util.ProgressWindow;
 import jetbrains.mps.smodel.SModelDescriptor;
 import com.intellij.openapi.util.Disposer;
 import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.util.TrivialClassLoader;
 import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.project.IModule;
@@ -166,7 +170,16 @@ public abstract class AbstractEvaluationLogic {
         }
       };
 
+      final String fullClassName = this.myAuxModel.getLongName() + "." + EVALUATOR_NAME;
+      final byte[][] src = new byte[1][1];
       InMemoryJavaGenerationHandler handler = new AbstractEvaluationLogic.MyInMemoryJavaGenerationHandler(false, true, classpaths);
+      handler.getCompiler().addCompilationResultListener(new CompilationResultAdapter() {
+        public void onClass(ClassFile file) {
+          if (JavaCompiler.getClassName(file).equals(fullClassName)) {
+            src[0] = file.getBytes();
+          }
+        }
+      });
       Project ideaProject = this.myAuxModule.getMPSProject().getProject();
       DefaultMessageHandler messageHandler = new DefaultMessageHandler(ideaProject);
       ProgressWindow progressWindow = new ProgressWindow(false, ideaProject);
@@ -174,15 +187,14 @@ public abstract class AbstractEvaluationLogic {
 
       Disposer.dispose(progressWindow);
 
-      String fullClassName = this.myAuxModel.getLongName() + "." + EVALUATOR_NAME;
       String source = handler.getSources().get(fullClassName);
 
       if (successful || StringUtils.isNotEmpty(source)) {
         if (isDeveloperMode()) {
           System.err.println(source);
         }
-        ClassLoader loader = handler.getCompiler().getClassLoader(this.myUiState.getClass().getClassLoader());
-        Class clazz = Class.forName(fullClassName, true, loader);
+        ClassLoader parentClassLoader = this.myUiState.getClass().getClassLoader();
+        Class clazz = Class.forName(fullClassName, true, new TrivialClassLoader(parentClassLoader, fullClassName, src[0]));
         Evaluator evaluator;
         try {
           evaluator = (Evaluator) clazz.getConstructor(JavaUiState.class).newInstance(this.myUiState);
