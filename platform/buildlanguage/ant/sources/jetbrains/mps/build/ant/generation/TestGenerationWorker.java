@@ -266,9 +266,7 @@ public class TestGenerationWorker extends GeneratorWorker {
               compilationResult.add(r);
             }
           };
-          myGenerationHandler.getCompiler().addCompilationResultListener(listener);
-          myGenerationHandler.compile(ITaskProgressHelper.EMPTY);
-          myGenerationHandler.getCompiler().removeCompilationResultListener(listener);
+          myGenerationHandler.compile(ITaskProgressHelper.EMPTY, listener);
         }
       });
     }

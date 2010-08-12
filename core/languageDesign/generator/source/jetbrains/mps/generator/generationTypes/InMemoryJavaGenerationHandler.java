@@ -7,6 +7,7 @@ import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.structure.EnumClass;
 import jetbrains.mps.baseLanguage.structure.Interface;
 import jetbrains.mps.compiler.CompilationResultAdapter;
+import jetbrains.mps.compiler.CompilationResultListener;
 import jetbrains.mps.compiler.JavaCompiler;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationStatus;
@@ -137,7 +138,12 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
       outputNode.getClass() == (Class) EnumClass.class || outputNode.getClass() == Annotation.class;
   }
 
+  @Deprecated
   public boolean compile(ITaskProgressHelper progress) {
+    return compile(progress, null);
+  }
+
+  public boolean compile(ITaskProgressHelper progress, CompilationResultListener listener) {
     myCompiler = createJavaCompiler();
 
     for (String key : myJavaSources) {
@@ -145,10 +151,12 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
     }
 
     progress.setText2("Compiling...");
-    MyCompilationResultListener listener = new MyCompilationResultListener();
+    MyCompilationResultListener innerListener = new MyCompilationResultListener();
+    myCompiler.addCompilationResultListener(innerListener);
     myCompiler.addCompilationResultListener(listener);
     myCompiler.compile(getClassPath(myContextModules));
     myCompiler.removeCompilationResultListener(listener);
+    myCompiler.removeCompilationResultListener(innerListener);
     progress.setText2("Compilation finished.");
 
     if (!myKeepSources) {
@@ -158,11 +166,11 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
     myContextModules.clear();
 
     progress.setText2("reloading MPS classes...");
-    if (myReloadClasses && !listener.hasErrors()) {
+    if (myReloadClasses && !innerListener.hasErrors()) {
       ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
     }
 
-    return listener.hasErrors();
+    return innerListener.hasErrors();
   }
 
   public List<CompilationResult> getCompilationResult() {

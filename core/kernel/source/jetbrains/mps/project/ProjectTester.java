@@ -244,9 +244,7 @@ public class ProjectTester {
                   compilationResultList.add(r);
                 }
               };
-              generationHandler.getCompiler().addCompilationResultListener(listener);
-              generationHandler.compile(ITaskProgressHelper.EMPTY);
-              generationHandler.getCompiler().removeCompilationResultListener(listener);
+              generationHandler.compile(ITaskProgressHelper.EMPTY,listener);
 
               System.out.println("Compiled " + compilationResultList.size() + " compilation units in " + (System.currentTimeMillis() - start));
               compilationResults.addAll(createCompilationProblemsList(compilationResultList));
