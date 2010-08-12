@@ -34,10 +34,9 @@ import java.util.*;
  * Evgeny Gryaznov, Jan 21, 2010
  */
 public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
-
   private final boolean myReloadClasses;
   private final boolean myKeepSources;
-  private JavaCompiler myCompiler;
+  private JavaCompiler myCompiler = createJavaCompiler();
   private List<CompilationResult> myResult;
 
   private final Map<String, String> mySources = new HashMap<String, String>();
@@ -139,8 +138,6 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
   }
 
   public boolean compile(ITaskProgressHelper progress) {
-    myCompiler = createJavaCompiler();
-
     for (String key : myJavaSources) {
       myCompiler.addSource(getJavaNameFromKey(key), mySources.get(key));
     }

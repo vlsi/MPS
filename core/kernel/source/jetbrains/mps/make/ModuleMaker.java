@@ -160,7 +160,6 @@ public class ModuleMaker {
 
     invalidateClasspath(modules);
 
-
     for (IModule module : modules) {
       ModuleSources sources = getModuleSources(module);
       for (ResourceFile toCopy : sources.getResourcesToCopy()) {
