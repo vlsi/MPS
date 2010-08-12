@@ -36,7 +36,7 @@ import java.util.*;
 public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
   private final boolean myReloadClasses;
   private final boolean myKeepSources;
-  private JavaCompiler myCompiler = createJavaCompiler();
+  private JavaCompiler myCompiler;
   private List<CompilationResult> myResult;
 
   private final Map<String, String> mySources = new HashMap<String, String>();
@@ -83,12 +83,12 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
     progressHelper.setText2("module " + module);
   }
 
-  public boolean compile(Project p, List<Pair<IModule,List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException {
+  public boolean compile(Project p, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException {
     return compile(progressHelper);
   }
 
   @Override
-  public long estimateCompilationMillis(List<Pair<IModule,List<SModelDescriptor>>> input) {
+  public long estimateCompilationMillis(List<Pair<IModule, List<SModelDescriptor>>> input) {
     long totalJob = 0;
     for (Pair<IModule, List<SModelDescriptor>> pair : input) {
       IModule module = pair.o1;
@@ -108,7 +108,7 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
 
     myContextModules.add(context.getModule());
     for (SNode root : outputModel.getRoots()) {
-      if(root.getName() == null) {
+      if (root.getName() == null) {
         continue;
       }
       INodeAdapter outputNode = BaseAdapter.fromNode(root);
@@ -138,6 +138,8 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
   }
 
   public boolean compile(ITaskProgressHelper progress) {
+    myCompiler = createJavaCompiler();
+
     for (String key : myJavaSources) {
       myCompiler.addSource(getJavaNameFromKey(key), mySources.get(key));
     }
@@ -208,7 +210,7 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
     myResult = null;
   }
 
-  private class MyCompilationResultListener extends CompilationResultAdapter{
+  private class MyCompilationResultListener extends CompilationResultAdapter {
     private boolean myHasErrors = false;
 
     public void onCompilationResult(CompilationResult cr) {
