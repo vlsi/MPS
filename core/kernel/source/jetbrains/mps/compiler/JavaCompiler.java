@@ -33,8 +33,6 @@ import java.io.IOException;
 import java.util.*;
 
 public class JavaCompiler {
-  private static final Logger LOG = Logger.getLogger(JavaCompiler.class);
-
   private Map<String, CompilationUnit> myCompilationUnits = new HashMap<String, CompilationUnit>();
   private List<CompilationResult> myCompilationResults = new ArrayList<CompilationResult>();
   private Map<String, byte[]> myClasses = new HashMap<String, byte[]>();
@@ -73,59 +71,11 @@ public class JavaCompiler {
     return myCompilationResults;
   }
 
-  public void putResultToDir(String packName, File baseClassesDir) {
-    String packPath = packName.replace('.', File.separatorChar);
-    File outputDir = new File(baseClassesDir.getAbsolutePath() + File.separator + packPath);
-
-    if (outputDir.exists()) {
-      for (File file : outputDir.listFiles()) {
-        if (file.isFile()) {
-          file.delete();
-        }
-      }
-    } else {
-      outputDir.mkdirs();
-    }
-
-    for (String clsName : getCompiledClasses()) {
-      if (clsName.startsWith(packName)) {
-        String name = clsName.substring(packName.length() + 1);
-        File outputFile = new File(outputDir, name + ".class");
-        FileOutputStream output = null;
-        try {
-          output = new FileOutputStream(outputFile);
-          output.write(getClass(clsName));
-        } catch (IOException e) {
-          LOG.error(e);
-        } finally {
-          if (output != null) {
-            try {
-              output.close();
-            } catch (IOException e) {
-              LOG.error(e);
-            }
-          }
-        }
-      } else {
-        LOG.warning("WARNING : Class to be put has a wrong package");
-      }
-    }
-  }
-
   public Map<String, byte[]> getClasses() {
     return Collections.unmodifiableMap(myClasses);
   }
 
-  private Set<String> getCompiledClasses() {
-    return new HashSet<String>(myClasses.keySet());
-  }
-
-  private byte[] getClass(String name) {
-    return myClasses.get(name);
-  }
-
   private class MapClassLoader extends AbstractClassLoader {
-
     private MapClassLoader(ClassLoader parent) {
       super(parent);
     }
@@ -172,14 +122,14 @@ public class JavaCompiler {
   private class MyCompilerRequestor implements ICompilerRequestor {
     public void acceptResult(CompilationResult result) {
       for (ClassFile file : result.getClassFiles()) {
-        String name = "";
+        StringBuilder sb = new StringBuilder(100);
         for (int i = 0; i < file.getCompoundName().length; i++) {
-          name += new String(file.getCompoundName()[i]);
+          sb.append(file.getCompoundName()[i]);
           if (i != file.getCompoundName().length - 1) {
-            name += ".";
+            sb.append('.');
           }
         }
-        myClasses.put(name, file.getBytes());
+        myClasses.put(sb.toString(), file.getBytes());
       }
 
       myCompilationResults.add(result);
