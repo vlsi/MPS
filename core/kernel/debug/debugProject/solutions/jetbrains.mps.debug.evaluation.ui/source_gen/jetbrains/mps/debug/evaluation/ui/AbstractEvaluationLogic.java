@@ -47,7 +47,6 @@ import com.intellij.openapi.progress.util.ProgressWindow;
 import jetbrains.mps.smodel.SModelDescriptor;
 import com.intellij.openapi.util.Disposer;
 import org.apache.commons.lang.StringUtils;
-import jetbrains.mps.util.TrivialClassLoader;
 import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.project.IModule;
@@ -173,13 +172,14 @@ public abstract class AbstractEvaluationLogic {
       final String fullClassName = this.myAuxModel.getLongName() + "." + EVALUATOR_NAME;
       final byte[][] src = new byte[1][1];
       InMemoryJavaGenerationHandler handler = new AbstractEvaluationLogic.MyInMemoryJavaGenerationHandler(false, true, classpaths);
-      handler.getCompiler().addCompilationResultListener(new CompilationResultAdapter() {
+      CompilationResultAdapter listener = new CompilationResultAdapter() {
         public void onClass(ClassFile file) {
           if (JavaCompiler.getClassName(file).equals(fullClassName)) {
             src[0] = file.getBytes();
           }
         }
-      });
+      };
+      handler.getCompiler().addCompilationResultListener(listener);
       Project ideaProject = this.myAuxModule.getMPSProject().getProject();
       DefaultMessageHandler messageHandler = new DefaultMessageHandler(ideaProject);
       ProgressWindow progressWindow = new ProgressWindow(false, ideaProject);
@@ -194,7 +194,7 @@ public abstract class AbstractEvaluationLogic {
           System.err.println(source);
         }
         ClassLoader parentClassLoader = this.myUiState.getClass().getClassLoader();
-        Class clazz = Class.forName(fullClassName, true, new TrivialClassLoader(parentClassLoader, fullClassName, src[0]));
+        Class clazz = Class.forName(fullClassName, true, handler.getCompiler().getClassLoader(parentClassLoader));
         Evaluator evaluator;
         try {
           evaluator = (Evaluator) clazz.getConstructor(JavaUiState.class).newInstance(this.myUiState);

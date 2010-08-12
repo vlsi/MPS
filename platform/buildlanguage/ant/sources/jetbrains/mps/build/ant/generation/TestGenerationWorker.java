@@ -364,7 +364,6 @@ public class TestGenerationWorker extends GeneratorWorker {
         }
         ClassLoader classLoader = generationHandler.getCompiler().getClassLoader(baseClassLoader);
         Boolean isNotClassConcept = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-          @Override
           public Boolean compute() {
             return !outputRoot.isInstanceOfConcept(ClassConcept.concept);
           }
@@ -374,7 +373,6 @@ public class TestGenerationWorker extends GeneratorWorker {
         }
         try {
           String className = ModelAccess.instance().runReadAction(new Computable<String>() {
-            @Override
             public String compute() {
               return model.getLongName() + "." + outputRoot.getName();
             }

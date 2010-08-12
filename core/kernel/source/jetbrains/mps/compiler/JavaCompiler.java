@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.compiler;
 
-import jetbrains.mps.generator.CompilationListener;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.util.AbstractClassLoader;
 import jetbrains.mps.vfs.MPSExtentions;
@@ -29,13 +27,13 @@ import org.eclipse.jdt.internal.compiler.impl.CompilerOptions;
 import org.eclipse.jdt.internal.compiler.problem.DefaultProblemFactory;
 
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 public class JavaCompiler {
   private Map<String, CompilationUnit> myCompilationUnits = new HashMap<String, CompilationUnit>();
-  private List<CompilationResult> myCompilationResults = new LinkedList<CompilationResult>();
   private Map<String, byte[]> myClasses = new HashMap<String, byte[]>();
 
   public JavaCompiler() {
@@ -61,6 +59,10 @@ public class JavaCompiler {
 
   public ClassLoader getClassLoader(ClassLoader parent) {
     return new MapClassLoader(parent);
+  }
+
+  public Map<String, byte[]> getClasses() {
+    return Collections.unmodifiableMap(myClasses);
   }
 
   private class MapClassLoader extends AbstractClassLoader {
@@ -107,7 +109,7 @@ public class JavaCompiler {
     }
   }
 
-  public static String getClassName(ClassFile file){
+  public static String getClassName(ClassFile file) {
     StringBuilder sb = new StringBuilder(100);
     for (int i = 0; i < file.getCompoundName().length; i++) {
       sb.append(file.getCompoundName()[i]);
@@ -127,31 +129,30 @@ public class JavaCompiler {
       }
 
       onCompilationResult(result);
-      myCompilationResults.add(result);
     }
   }
 
   //-----------event handling------------
 
-  private void onCompilationResult(CompilationResult r){
-    for (CompilationResultListener l :myCompilationResultListeners){
+  private void onCompilationResult(CompilationResult r) {
+    for (CompilationResultListener l : myCompilationResultListeners) {
       l.onCompilationResult(r);
     }
   }
 
-  private void onClass(ClassFile f){
-    for (CompilationResultListener l :myCompilationResultListeners){
+  private void onClass(ClassFile f) {
+    for (CompilationResultListener l : myCompilationResultListeners) {
       l.onClass(f);
     }
   }
 
   private ArrayList<CompilationResultListener> myCompilationResultListeners = new ArrayList<CompilationResultListener>();
 
-  public void addCompilationResultListener(CompilationResultListener l){
+  public void addCompilationResultListener(CompilationResultListener l) {
     myCompilationResultListeners.add(l);
   }
 
-  public void removeCompilationResultListener(CompilationResultListener l){
+  public void removeCompilationResultListener(CompilationResultListener l) {
     myCompilationResultListeners.remove(l);
   }
 }

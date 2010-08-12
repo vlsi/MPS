@@ -58,7 +58,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="jetbrains.mps.util.PathManager" />
-    <classNode dependClassName="jetbrains.mps.util.TrivialClassLoader" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ClassFile" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
