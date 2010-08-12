@@ -5,7 +5,7 @@ package jetbrains.mps.build.packaging.plugin;
 import jetbrains.mps.logging.Logger;
 import java.io.File;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
@@ -20,7 +20,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
-import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.List;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -31,7 +30,7 @@ public class GenerateTextFromBuild {
   public GenerateTextFromBuild() {
   }
 
-  public static File generate(final SNode configuration, EditableSModelDescriptor descriptor, IOperationContext context, Project project, boolean showWindow) {
+  public static File generate(final SNode configuration, SModelDescriptor descriptor, IOperationContext context, Project project, boolean showWindow) {
     final String basedir = ModelAccess.instance().runReadAction(new Computable<String>() {
       public String compute() {
         return MPSLayout_Behavior.call_getFolderToGenerate_1229522949966(Configuration_Behavior.call_getLayout_1213877261819(configuration));
@@ -52,9 +51,9 @@ public class GenerateTextFromBuild {
       }
     };
     if (showWindow) {
-      generatorManager.generateModelsWithProgressWindow(ListSequence.fromListAndArray(new ArrayList<EditableSModelDescriptor>(), descriptor), context, generationHandler, true);
+      generatorManager.generateModelsWithProgressWindow(ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor), context, generationHandler, true);
     } else {
-      generatorManager.generateModels(ListSequence.fromListAndArray(new ArrayList<EditableSModelDescriptor>(), descriptor), context, generationHandler, new EmptyProgressIndicator(), new DefaultMessageHandler(project));
+      generatorManager.generateModels(ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor), context, generationHandler, new EmptyProgressIndicator(), new DefaultMessageHandler(project));
     }
     return fileToRun[0];
   }
