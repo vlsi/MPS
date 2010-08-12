@@ -27,6 +27,7 @@ import jetbrains.mps.build.ant.WhatToDo;
 import jetbrains.mps.build.ant.generation.unittest.UnitTestAdapter;
 import jetbrains.mps.build.ant.generation.unittest.UnitTestOutputReader;
 import jetbrains.mps.build.ant.generation.unittest.UnitTestRunner;
+import jetbrains.mps.compiler.CompilationResultAdapter;
 import jetbrains.mps.compiler.JavaCompiler;
 import jetbrains.mps.generator.GenerationAdapter;
 import jetbrains.mps.generator.GenerationListener;
@@ -256,16 +257,20 @@ public class TestGenerationWorker extends GeneratorWorker {
     outputModels.addAll(myGenerationHandler.getOutputModels());
 
     // compile
-    List<CompilationResult> compilationResult = null;
+    final List<CompilationResult> compilationResult = new ArrayList<CompilationResult>();
     if (generationOk && isCompileSet()) {
-      compilationResult = ModelAccess.instance().runReadAction(new Computable<List<CompilationResult>>() {
-        public List<CompilationResult> compute() {
-          return myGenerationHandler.compile(ITaskProgressHelper.EMPTY);
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          CompilationResultAdapter listener = new CompilationResultAdapter() {
+            public void onCompilationResult(CompilationResult r) {
+              compilationResult.add(r);
+            }
+          };
+          myGenerationHandler.getCompiler().addCompilationResultListener(listener);
+          myGenerationHandler.compile(ITaskProgressHelper.EMPTY);
+          myGenerationHandler.getCompiler().removeCompilationResultListener(listener);
         }
       });
-    }
-    if (compilationResult == null) {
-      compilationResult = Collections.EMPTY_LIST;
     }
 
     boolean compilatonOk = true;

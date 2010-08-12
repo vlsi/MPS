@@ -21,6 +21,7 @@ import com.intellij.openapi.util.Computable;
 
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch;
+import jetbrains.mps.compiler.CompilationResultAdapter;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
 import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
@@ -236,7 +237,17 @@ public class ProjectTester {
               System.out.println("There were generation errors, cancelling compilation");
             } else {
               long start = System.currentTimeMillis();
-              List<CompilationResult> compilationResultList = generationHandler.compile(ITaskProgressHelper.EMPTY);
+
+              final List<CompilationResult> compilationResultList = new ArrayList<CompilationResult>();
+              CompilationResultAdapter listener = new CompilationResultAdapter() {
+                public void onCompilationResult(CompilationResult r) {
+                  compilationResultList.add(r);
+                }
+              };
+              generationHandler.getCompiler().addCompilationResultListener(listener);
+              generationHandler.compile(ITaskProgressHelper.EMPTY);
+              generationHandler.getCompiler().removeCompilationResultListener(listener);
+
               System.out.println("Compiled " + compilationResultList.size() + " compilation units in " + (System.currentTimeMillis() - start));
               compilationResults.addAll(createCompilationProblemsList(compilationResultList));
               if (compilationResults.isEmpty()) {
