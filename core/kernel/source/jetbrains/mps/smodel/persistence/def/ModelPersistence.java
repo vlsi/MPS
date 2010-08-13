@@ -22,10 +22,7 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.PersistenceSettings;
 import jetbrains.mps.smodel.persistence.def.v0.ModelReader0;
 import jetbrains.mps.smodel.persistence.def.v1.ModelReader1;
@@ -393,12 +390,24 @@ public class ModelPersistence {
     //model persistence level update is performed on startup;
     // here model's persistence level is used, if a model has persistence level bigger than user-selected
     // (consider BL or third-party models which have a level 4 while user uses level 3 in his application)
+    assertLoaded(sourceModel);
 
     if (sourceModel.getPersistenceVersion() == -1) {
       sourceModel.setPersistenceVersion(getCurrentPersistenceVersion());
     }
 
     return modelWriters.get(sourceModel.getPersistenceVersion()).saveModel(sourceModel, validate);
+  }
+
+  //todo replace this check with an assertion when refactoring is completed
+  private static void assertLoaded(SModel sourceModel) {
+    boolean loaded = sourceModel.getModelDescriptor().getLoadingState() == ModelLoadingState.FULLY_LOADED;
+    LOG.assertLog(loaded,"saving model that is not completely loaded");
+    if (!loaded){
+      //temporary hack to load model fully
+      sourceModel.getModelDescriptor().getSModel().getAllNodesWithIds();
+      assert sourceModel.getModelDescriptor().getLoadingState() == ModelLoadingState.FULLY_LOADED:"not loaded after getAllNodesWithIds";
+    }
   }
 
   public static void saveNode(Element container, SNode node) {
