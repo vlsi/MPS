@@ -16,11 +16,11 @@
 package jetbrains.mps.refactoring.framework.tests;
 
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.lang.structure.scripts.MoveConcepts;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.lang.structure.scripts.MoveConcepts;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.OldRefactoringAdapter;
+import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 
@@ -61,7 +61,7 @@ public class MoveConceptRefactoringTester implements IRefactoringTester {
           public void run() {
             try {
               System.err.println("checking a model");
-              if (sandbox1.isInitialized()) {
+              if (sandbox1.getLoadingState() != ModelLoadingState.NOT_LOADED) {
                 System.err.println("test environment is invalid: model sandbox1 is already initialized, should be not");
                 result[0] = false;
                 return;
