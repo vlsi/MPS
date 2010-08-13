@@ -391,22 +391,11 @@ public class ModelPersistence {
     //model persistence level update is performed on startup;
     // here model's persistence level is used, if a model has persistence level bigger than user-selected
     // (consider BL or third-party models which have a level 4 while user uses level 3 in his application)
-    assertLoaded(sourceModel);
-
     if (sourceModel.getPersistenceVersion() == -1) {
       sourceModel.setPersistenceVersion(getCurrentPersistenceVersion());
     }
 
     return modelWriters.get(sourceModel.getPersistenceVersion()).saveModel(sourceModel, validate);
-  }
-
-  //todo replace this check with an assertion when refactoring is completed
-  private static void assertLoaded(SModel sourceModel) {
-    boolean loaded = sourceModel.getModelDescriptor().getLoadingState() == ModelLoadingState.FULLY_LOADED;
-    LOG.assertLog(loaded,"saving model that is not completely loaded");
-    if (!loaded){
-      ((EditableSModelDescriptor) sourceModel.getModelDescriptor()).loadFully();
-    }
   }
 
   public static void saveNode(Element container, SNode node) {

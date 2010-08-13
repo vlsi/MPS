@@ -38,10 +38,6 @@ public class PersistenceUpdater {
 
       boolean wasInitialized = modelDescriptor.getLoadingState() != ModelLoadingState.NOT_LOADED;
       if (wasInitialized) {
-        modelDescriptor.loadFully();
-      }
-
-      if (wasInitialized) {
         ModelAccess.instance().executeCommand(new Runnable() {
           public void run() {
             modelDescriptor.save();

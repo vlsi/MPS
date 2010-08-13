@@ -52,21 +52,27 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   }
 
   public SModel getSModel() {
-    boolean fireInitialized = false;
+    boolean fireInitialized;
     synchronized (myLoadingLock) {
-      if (!(getLoadingState() == ModelLoadingState.FULLY_LOADED)) {
-        SModel model = loadModel();
-        model.setModelDescritor(this);
-        mySModel = model;
-        setLoadingState(ModelLoadingState.FULLY_LOADED);
-        fireInitialized = true;
-      }
+      fireInitialized = loadTo(ModelLoadingState.FULLY_LOADED);
     }
     if (fireInitialized) {
       fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
     }
     return mySModel;
   }
+
+  protected boolean loadTo(ModelLoadingState state) {
+    if (getLoadingState() == ModelLoadingState.FULLY_LOADED) return false;
+    
+    SModel model = loadModel();
+    model.setModelDescritor(this);
+    mySModel = model;
+    setLoadingState(ModelLoadingState.FULLY_LOADED);
+    return true;
+  }
+
+  protected abstract SModel loadModel();
 
   public void refresh() {
     ModelAccess.assertLegalWrite();
@@ -75,8 +81,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     mySModel.clearAdaptersAndUserObjects();
     mySModel.refreshRefactoringHistory();
   }
-
-  protected abstract SModel loadModel();
 
   public ModelLoadingState getLoadingState() {
     return myLoadingState;

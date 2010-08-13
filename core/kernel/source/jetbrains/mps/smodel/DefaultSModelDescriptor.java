@@ -93,11 +93,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     return myIsChanged;
   }
 
-  public void loadFully() {
-    //todo
-    assert getLoadingState() == ModelLoadingState.FULLY_LOADED : "not loaded after getAllNodesWithIds";
-  }
-
   public void setChanged(boolean changed) {
     myIsChanged = changed;
   }
