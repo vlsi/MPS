@@ -200,20 +200,19 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
 
   private class MyModelRepositoryListener extends SModelRepositoryAdapter {
     public void beforeModelRemoved(SModelDescriptor modelDescriptor) {
-      if (!modelDescriptor.isInitialized()) return;
+      if (modelDescriptor.getLoadingState() != ModelLoadingState.NOT_LOADED) return;
 
       for (final SNode root : modelDescriptor.getSModel().getRoots()) {
         final SNodePointer pointer = new SNodePointer(root);
         final VirtualFile vf = myVirtualFiles.get(pointer);
-        if (vf != null) {
-          ModelAccess.instance().runCommandInEDT(new Runnable() {
-            public void run() {
-              fireBeforeFileDeletion(this, vf);
-              fireFileDeleted(this, vf, vf.getName(), null);
-              myVirtualFiles.remove(pointer);
-            }
-          });
-        }
+        if (vf == null) continue;
+        ModelAccess.instance().runCommandInEDT(new Runnable() {
+          public void run() {
+            fireBeforeFileDeletion(this, vf);
+            fireFileDeleted(this, vf, vf.getName(), null);
+            myVirtualFiles.remove(pointer);
+          }
+        });
       }
     }
   }

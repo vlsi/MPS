@@ -109,7 +109,8 @@ public class ModelFindOperations {
     if (myModelDescriptor instanceof EditableSModelDescriptor) {
       changed = SModelRepository.getInstance().isChanged(((EditableSModelDescriptor) myModelDescriptor));
     }
-    if (myModelDescriptor.isInitialized() && !changed && !descendantsKnownInModel.isEmpty())
+    boolean atLeastRootsLoaded = myModelDescriptor.getLoadingState().compareTo(ModelLoadingState.ROOTS_LOADED) >= 0;
+    if (atLeastRootsLoaded && !changed && !descendantsKnownInModel.isEmpty())
       return descendantsKnownInModel;
     if (myNeedSearchForStrings && !myModelRootManager.containsString(myModelDescriptor, node.getId()))
       return descendantsKnownInModel;
