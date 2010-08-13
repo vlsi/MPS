@@ -930,13 +930,17 @@
               </node>
               <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="891158202133120934" />
             </node>
-            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="5643745088231019987">
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5643745088231019988">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5643745088231019989">
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="98094142735579003">
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="98094142735641838">
+                <link role="enumConstantDeclaration:3" targetNodeId="7.~ModelLoadingState.NOT_LOADED" resolveInfo="NOT_LOADED" />
+                <link role="enumClass:3" targetNodeId="7.~ModelLoadingState" resolveInfo="ModelLoadingState" />
+              </node>
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="98094142735578998">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="98094142735578997">
                   <link role="variableDeclaration:3" targetNodeId="891158202133120915" resolveInfo="modelDescriptor" />
                 </node>
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5643745088231019990">
-                  <link role="baseMethodDeclaration:3" targetNodeId="7.~SModelDescriptor.isInitialized():boolean" resolveInfo="isInitialized" />
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="98094142735579002">
+                  <link role="baseMethodDeclaration:3" targetNodeId="7.~SModelDescriptor.getLoadingState():jetbrains.mps.smodel.ModelLoadingState" resolveInfo="getLoadingState" />
                 </node>
               </node>
             </node>
@@ -993,20 +997,26 @@
           </node>
           <node role="body:7" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6058514296621167607">
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="6058514296621167608">
-              <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="7333062366064336377">
+              <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="98094142735641843">
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="98094142735641852">
+                  <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="98094142735641856">
+                    <link role="enumConstantDeclaration:3" targetNodeId="7.~ModelLoadingState.NOT_LOADED" resolveInfo="NOT_LOADED" />
+                    <link role="enumClass:3" targetNodeId="7.~ModelLoadingState" resolveInfo="ModelLoadingState" />
+                  </node>
+                  <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="98094142735641847">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="98094142735641846">
+                      <link role="variable:7" targetNodeId="6058514296621167603" resolveInfo="md" />
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="98094142735641851">
+                      <link role="baseMethodDeclaration:3" targetNodeId="7.~SModelDescriptor.getLoadingState():jetbrains.mps.smodel.ModelLoadingState" resolveInfo="getLoadingState" />
+                    </node>
+                  </node>
+                </node>
                 <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7333062366064446776">
                   <link role="classConcept:3" targetNodeId="7.~SModelStereotype" resolveInfo="SModelStereotype" />
                   <link role="baseMethodDeclaration:3" targetNodeId="7.~SModelStereotype.isUserModel(jetbrains.mps.smodel.SModelDescriptor):boolean" resolveInfo="isUserModel" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="7333062366064446778">
                     <link role="variable:7" targetNodeId="6058514296621167603" resolveInfo="md" />
-                  </node>
-                </node>
-                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6058514296621167609">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="6058514296621167610">
-                    <link role="variable:7" targetNodeId="6058514296621167603" resolveInfo="md" />
-                  </node>
-                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6058514296621167611">
-                    <link role="baseMethodDeclaration:3" targetNodeId="7.~SModelDescriptor.isInitialized():boolean" resolveInfo="isInitialized" />
                   </node>
                 </node>
               </node>

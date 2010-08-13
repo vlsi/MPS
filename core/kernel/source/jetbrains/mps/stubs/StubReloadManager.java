@@ -166,7 +166,7 @@ public class StubReloadManager implements ApplicationComponent {
 
   private void markNewStubs() {
     for (BaseStubModelDescriptor m : getAllStubModels()) {
-      if (m.isInitialized()) {
+      if (m.getLoadingState() != ModelLoadingState.NOT_LOADED) {
         m.unmarkReload();
       }
     }

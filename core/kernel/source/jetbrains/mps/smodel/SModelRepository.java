@@ -324,21 +324,6 @@ public class SModelRepository implements ApplicationComponent {
     }
   }
 
-  private void markChanged(SModel model, boolean changed) {
-    SModelDescriptor modelDescriptor = getModelDescriptor(model.getSModelReference());
-    if (modelDescriptor instanceof EditableSModelDescriptor) {
-      markChanged(((EditableSModelDescriptor) modelDescriptor), changed);
-    }
-  }
-
-  public void markChanged(SModel model) {
-    markChanged(model, true);
-  }
-
-  public void markUnchanged(SModel model) {
-    markChanged(model, false);
-  }
-
   private void addModelToFileCache(EditableSModelDescriptor modelDescriptor) {
     IFile modelFile = modelDescriptor.getModelFile();
     if (modelFile == null) return;
@@ -350,28 +335,6 @@ public class SModelRepository implements ApplicationComponent {
     if (modelFile == null) return true;
     SModelDescriptor sd = myCanonicalPathsToModelDescriptorMap.remove(modelFile.getCanonicalPath());
     return sd == modelDescriptor;
-  }
-
-  public void markChanged(EditableSModelDescriptor descriptor, boolean b) {
-    synchronized (myModelsLock) {
-      if (!myModelDescriptors.contains(descriptor)) return;
-      descriptor.setChanged(b);
-    }
-  }
-
-  public boolean isChanged(EditableSModelDescriptor descriptor) {
-    return descriptor.isChanged();
-  }
-
-  public Set<SModelDescriptor> getChangedModels() {
-    synchronized (myModelsLock) {
-      Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
-      for (SModelDescriptor md : myModelDescriptors) {
-        if (!(md instanceof EditableSModelDescriptor)) continue;
-        if (((EditableSModelDescriptor) md).isChanged()) result.add(md);
-      }
-      return result;
-    }
   }
 
   public void saveAll() {
@@ -548,6 +511,45 @@ public class SModelRepository implements ApplicationComponent {
     md.setModelFile(dest);
     addModelToFileCache(md);
     fireModelFileChanged(md, source);
+  }
+
+  //-------todo: changed functionality - is better to be moved to SModelDescriptor fully
+
+  private void markChanged(SModel model, boolean changed) {
+    SModelDescriptor modelDescriptor = getModelDescriptor(model.getSModelReference());
+    if (modelDescriptor instanceof EditableSModelDescriptor) {
+      markChanged(((EditableSModelDescriptor) modelDescriptor), changed);
+    }
+  }
+
+  public void markChanged(SModel model) {
+    markChanged(model, true);
+  }
+
+  public void markUnchanged(SModel model) {
+    markChanged(model, false);
+  }
+
+  public void markChanged(EditableSModelDescriptor descriptor, boolean b) {
+    synchronized (myModelsLock) {
+      if (!myModelDescriptors.contains(descriptor)) return;
+      descriptor.setChanged(b);
+    }
+  }
+
+  public boolean isChanged(EditableSModelDescriptor descriptor) {
+    return descriptor.isChanged();
+  }
+
+  public Set<SModelDescriptor> getChangedModels() {
+    synchronized (myModelsLock) {
+      Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
+      for (SModelDescriptor md : myModelDescriptors) {
+        if (!(md instanceof EditableSModelDescriptor)) continue;
+        if (((EditableSModelDescriptor) md).isChanged()) result.add(md);
+      }
+      return result;
+    }
   }
 
   private class ModelChangeListener extends SModelAdapter {

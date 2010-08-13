@@ -38,16 +38,14 @@ public class PersistenceUpdater {
       if (file != null && file.isReadOnly()) continue;
       if (wasInitialized) {
         ModelAccess.instance().executeCommand(new Runnable() {
-          @Override
           public void run() {
             modelDescriptor.save();
           }
         });
       }
       if (modelDescriptor.getPersistenceVersion() < toVersion) {
-        SModel model = wasInitialized
-          ? modelDescriptor.getSModel()
-          : ModelPersistence.readModel(file);
+        assert file != null;
+        SModel model = wasInitialized ? modelDescriptor.getSModel() : ModelPersistence.readModel(file);
         if (model.getPersistenceVersion() < toVersion) {
           ModelPersistence.upgradePersistence(file, model, model.getPersistenceVersion(), toVersion);
           if (wasInitialized) {
@@ -78,7 +76,7 @@ public class PersistenceUpdater {
       } else {
         if (modelDescriptor instanceof EditableSModelDescriptor) {
           IFile file = ((EditableSModelDescriptor) modelDescriptor).getModelFile();
-          if (file!=null){
+          if (file != null) {
             version = ModelPersistence.getModelPersistenceVersion(file);
           }
         }

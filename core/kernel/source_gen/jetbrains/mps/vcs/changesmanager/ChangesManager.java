@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
+import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.ModelAccess;
@@ -38,7 +39,6 @@ import java.util.Collection;
 import com.intellij.openapi.vcs.changes.ChangeList;
 import jetbrains.mps.vcs.MPSVCSManager;
 import jetbrains.mps.smodel.SModelAdapter;
-import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.ide.ThreadUtils;
@@ -109,7 +109,7 @@ public class ChangesManager extends AbstractProjectComponent {
       return;
     }
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().findModel(iFile);
-    if (modelDescriptor == null || !(modelDescriptor.isInitialized())) {
+    if (modelDescriptor == null || modelDescriptor.getLoadingState() == ModelLoadingState.NOT_LOADED) {
       return;
     }
     updateModelStatus(modelDescriptor, fileStatus);
@@ -117,7 +117,7 @@ public class ChangesManager extends AbstractProjectComponent {
 
   public void updateLoadedModelStatuses() {
     for (SModelDescriptor md : ListSequence.fromList(SModelRepository.getInstance().getModelDescriptors())) {
-      if (md.isInitialized() && SModelStereotype.isUserModel(md)) {
+      if (md.getLoadingState() != ModelLoadingState.NOT_LOADED && SModelStereotype.isUserModel(md)) {
         updateModelStatus(md, null);
       }
     }
