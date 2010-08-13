@@ -250,7 +250,7 @@ public class RefactoringProcessor {
 
     if (!refactoringContext.isLocal()) {
       writeIntoLog((EditableSModelDescriptor) modelDescriptor, refactoringContext);
-      updateLoadedModels(initialModelReference, (EditableSModelDescriptor)modelDescriptor, refactoringContext);
+      updateLoadedModels(initialModelReference, (EditableSModelDescriptor) modelDescriptor, refactoringContext);
     } else {
       Set<SModel> modelsToProcess = new LinkedHashSet<SModel>();
       if (usages != null) {
@@ -266,7 +266,7 @@ public class RefactoringProcessor {
   public void updateLoadedModels(SModelReference initialModelReference, EditableSModelDescriptor model, RefactoringContext refactoringContext) {
     for (SModelDescriptor anotherDescriptor : SModelRepository.getInstance().getModelDescriptors()) {
       if (!SModelStereotype.isUserModel(anotherDescriptor)) continue;
-      if (!anotherDescriptor.isInitialized()) continue;
+      if (anotherDescriptor.getLoadingState() == ModelLoadingState.NOT_LOADED) continue;
       SModel anotherModel = anotherDescriptor.getSModel();
 
       Set<SModelReference> dependenciesModels = anotherModel.getDependenciesModelUIDs();
@@ -286,7 +286,7 @@ public class RefactoringProcessor {
           LOG.error("An exception was thrown by refactoring " + refactoring.getUserFriendlyName() + " while updating model " + model.getLongName() + ". Models could have been corrupted.");
         }
 
-        if (!refactoringContext.isLocal()){
+        if (!refactoringContext.isLocal()) {
           model.updateImportedModelUsedVersion(usedModel.getSModelReference(), ((EditableSModelDescriptor) usedModel).getVersion());
         }
         SModelRepository.getInstance().markChanged(model);

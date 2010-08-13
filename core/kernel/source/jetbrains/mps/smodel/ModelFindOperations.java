@@ -23,8 +23,8 @@ public class ModelFindOperations {
     myModelDescriptor = modelDescriptor;
     myModelRootManager = myModelDescriptor.getModelRootManager();
     myFindUsagesSupported = myModelRootManager.isFindUsagesSupported();
-    myNeedSearchForStrings = !myModelDescriptor.isInitialized();
-    if (!myNeedSearchForStrings && myModelDescriptor instanceof EditableSModelDescriptor){
+    myNeedSearchForStrings = myModelDescriptor.getLoadingState() != ModelLoadingState.FULLY_LOADED;
+    if (!myNeedSearchForStrings && myModelDescriptor instanceof EditableSModelDescriptor) {
       myNeedSearchForStrings = !SModelRepository.getInstance().isChanged(((EditableSModelDescriptor) myModelDescriptor));
     }
   }
@@ -106,7 +106,7 @@ public class ModelFindOperations {
   public Set<AbstractConceptDeclaration> findDescendants(AbstractConceptDeclaration node, Set<AbstractConceptDeclaration> descendantsKnownInModel) {
     if (!myFindUsagesSupported) return new HashSet<AbstractConceptDeclaration>();
     boolean changed = false;
-    if (myModelDescriptor instanceof EditableSModelDescriptor){
+    if (myModelDescriptor instanceof EditableSModelDescriptor) {
       changed = SModelRepository.getInstance().isChanged(((EditableSModelDescriptor) myModelDescriptor));
     }
     if (myModelDescriptor.isInitialized() && !changed && !descendantsKnownInModel.isEmpty())
