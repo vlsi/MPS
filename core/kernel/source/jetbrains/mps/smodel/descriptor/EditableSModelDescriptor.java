@@ -37,4 +37,6 @@ public interface EditableSModelDescriptor extends SModelDescriptor, Refactorable
   boolean isPackaged();
 
   void replaceModel(SModel newModel);
+
+  void loadFully();
 }

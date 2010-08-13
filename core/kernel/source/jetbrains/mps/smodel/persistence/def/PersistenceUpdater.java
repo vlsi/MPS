@@ -36,7 +36,11 @@ public class PersistenceUpdater {
       IFile file = modelDescriptor.getModelFile();
       if (file != null && file.isReadOnly()) continue;
 
-      boolean wasInitialized = modelDescriptor.isInitialized();
+      boolean wasInitialized = modelDescriptor.getLoadingState() != ModelLoadingState.NOT_LOADED;
+      if (wasInitialized) {
+        modelDescriptor.loadFully();
+      }
+
       if (wasInitialized) {
         ModelAccess.instance().executeCommand(new Runnable() {
           public void run() {
@@ -44,16 +48,16 @@ public class PersistenceUpdater {
           }
         });
       }
-      if (modelDescriptor.getPersistenceVersion() < toVersion) {
-        assert file != null;
-        SModel model = wasInitialized ? modelDescriptor.getSModel() : ModelPersistence.readModel(file);
-        if (model.getPersistenceVersion() < toVersion) {
-          ModelPersistence.upgradePersistence(file, model, model.getPersistenceVersion(), toVersion);
-          if (wasInitialized) {
-            modelDescriptor.reloadFromDisk();
-          }
-        }
-      }
+      if (modelDescriptor.getPersistenceVersion() >= toVersion) continue;
+      assert file != null;
+
+      SModel model = wasInitialized ? modelDescriptor.getSModel() : ModelPersistence.readModel(file);
+      if (model.getPersistenceVersion() >= toVersion) continue;
+
+      ModelPersistence.upgradePersistence(file, model, model.getPersistenceVersion(), toVersion);
+      if (!wasInitialized) continue;
+
+      modelDescriptor.reloadFromDisk();
     }
   }
 
@@ -61,18 +65,16 @@ public class PersistenceUpdater {
     final List<EditableSModelDescriptor> modelDescriptors = new ArrayList<EditableSModelDescriptor>();
     final List<SModelDescriptor> scopeModelDescriptors = new ArrayList<SModelDescriptor>();
     ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
       public void run() {
         scopeModelDescriptors.addAll(scope.getOwnModelDescriptors());
       }
     });
 
     for (SModelDescriptor modelDescriptor : scopeModelDescriptors) {
-      if (!SModelStereotype.isUserModel(modelDescriptor)) {
-        continue;
-      }
+      if (!SModelStereotype.isUserModel(modelDescriptor)) continue;
+
       int version = -1;
-      if (modelDescriptor.isInitialized()) {
+      if (modelDescriptor.getLoadingState() != ModelLoadingState.NOT_LOADED) {
         version = modelDescriptor.getSModel().getPersistenceVersion();
       } else {
         if (modelDescriptor instanceof EditableSModelDescriptor) {
@@ -102,7 +104,6 @@ public class PersistenceUpdater {
 
     if (updatePersistenceDialog.getAnswer()) {
       ModelAccess.instance().runWriteAction(new Runnable() {
-        @Override
         public void run() {
           upgradePersistence(modelDescriptors, PersistenceSettings.MAX_VERSION);
         }

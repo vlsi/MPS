@@ -23,6 +23,7 @@ import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.PersistenceSettings;
 import jetbrains.mps.smodel.persistence.def.v0.ModelReader0;
 import jetbrains.mps.smodel.persistence.def.v1.ModelReader1;
@@ -404,9 +405,7 @@ public class ModelPersistence {
     boolean loaded = sourceModel.getModelDescriptor().getLoadingState() == ModelLoadingState.FULLY_LOADED;
     LOG.assertLog(loaded,"saving model that is not completely loaded");
     if (!loaded){
-      //temporary hack to load model fully
-      sourceModel.getModelDescriptor().getSModel().getAllNodesWithIds();
-      assert sourceModel.getModelDescriptor().getLoadingState() == ModelLoadingState.FULLY_LOADED:"not loaded after getAllNodesWithIds";
+      ((EditableSModelDescriptor) sourceModel.getModelDescriptor()).loadFully();
     }
   }
 
