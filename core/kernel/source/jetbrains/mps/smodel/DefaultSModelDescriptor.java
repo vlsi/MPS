@@ -261,7 +261,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
       oldSModel.setModelDescritor(null);
     }
     mySModel = newModel;
-    myLoadingState = mySModel == null ? ModelLoadingState.NOT_LOADED : ModelLoadingState.FULLY_LOADED;
+    setLoadingState(mySModel == null ? ModelLoadingState.NOT_LOADED : ModelLoadingState.FULLY_LOADED);
 
     myRefactoringHistory = null;
     if (mySModel != null) {

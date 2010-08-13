@@ -33,9 +33,10 @@ import java.util.Set;
 public class PersistenceUpdater {
   public void upgradePersistence(List<EditableSModelDescriptor> modelDescriptors, final int toVersion) {
     for (final EditableSModelDescriptor modelDescriptor : modelDescriptors) {
-      boolean wasInitialized = modelDescriptor.isInitialized();
       IFile file = modelDescriptor.getModelFile();
       if (file != null && file.isReadOnly()) continue;
+
+      boolean wasInitialized = modelDescriptor.isInitialized();
       if (wasInitialized) {
         ModelAccess.instance().executeCommand(new Runnable() {
           public void run() {
