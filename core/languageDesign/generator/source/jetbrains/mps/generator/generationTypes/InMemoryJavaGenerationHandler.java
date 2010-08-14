@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
+import org.jetbrains.annotations.Nullable;
 
 import java.rmi.RemoteException;
 import java.util.*;
@@ -143,7 +144,7 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
     return compile(progress, null);
   }
 
-  public boolean compile(ITaskProgressHelper progress, CompilationResultListener listener) {
+  public boolean compile(ITaskProgressHelper progress, @Nullable CompilationResultListener listener) {
     myCompiler = createJavaCompiler();
 
     for (String key : myJavaSources) {
@@ -153,9 +154,13 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
     progress.setText2("Compiling...");
     MyCompilationResultListener innerListener = new MyCompilationResultListener();
     myCompiler.addCompilationResultListener(innerListener);
-    myCompiler.addCompilationResultListener(listener);
+    if (listener != null) {
+      myCompiler.addCompilationResultListener(listener);
+    }
     myCompiler.compile(getClassPath(myContextModules));
-    myCompiler.removeCompilationResultListener(listener);
+    if (listener != null) {
+      myCompiler.removeCompilationResultListener(listener);
+    }
     myCompiler.removeCompilationResultListener(innerListener);
     progress.setText2("Compilation finished.");
 
@@ -170,7 +175,7 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
       ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
     }
 
-    return innerListener.hasErrors();
+    return !innerListener.hasErrors();
   }
 
   public List<CompilationResult> getCompilationResult() {

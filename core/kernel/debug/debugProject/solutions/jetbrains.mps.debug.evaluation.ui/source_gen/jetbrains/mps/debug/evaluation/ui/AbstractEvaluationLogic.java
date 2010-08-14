@@ -38,9 +38,6 @@ import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.GenerationSettings;
 import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
-import jetbrains.mps.compiler.CompilationResultAdapter;
-import org.eclipse.jdt.internal.compiler.ClassFile;
-import jetbrains.mps.compiler.JavaCompiler;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import com.intellij.openapi.progress.util.ProgressWindow;
@@ -170,16 +167,7 @@ public abstract class AbstractEvaluationLogic {
       };
 
       final String fullClassName = this.myAuxModel.getLongName() + "." + EVALUATOR_NAME;
-      final byte[][] src = new byte[1][1];
       InMemoryJavaGenerationHandler handler = new AbstractEvaluationLogic.MyInMemoryJavaGenerationHandler(false, true, classpaths);
-      CompilationResultAdapter listener = new CompilationResultAdapter() {
-        public void onClass(ClassFile file) {
-          if (JavaCompiler.getClassName(file).equals(fullClassName)) {
-            src[0] = file.getBytes();
-          }
-        }
-      };
-      handler.getCompiler().addCompilationResultListener(listener);
       Project ideaProject = this.myAuxModule.getMPSProject().getProject();
       DefaultMessageHandler messageHandler = new DefaultMessageHandler(ideaProject);
       ProgressWindow progressWindow = new ProgressWindow(false, ideaProject);
@@ -189,7 +177,7 @@ public abstract class AbstractEvaluationLogic {
 
       String source = handler.getSources().get(fullClassName);
 
-      if (successful || StringUtils.isNotEmpty(source)) {
+      if (successful && StringUtils.isNotEmpty(source)) {
         if (isDeveloperMode()) {
           System.err.println(source);
         }
@@ -204,6 +192,8 @@ public abstract class AbstractEvaluationLogic {
           evaluator = (Evaluator) clazz.getConstructor(JavaUiState.class).newInstance(this.myUiState);
         }
         return evaluator;
+      } else if (StringUtils.isNotEmpty(source) && !(successful)) {
+        throw new EvaluationException("Errors during compilation.");
       } else {
         throw new EvaluationException("Errors during generation.");
       }
