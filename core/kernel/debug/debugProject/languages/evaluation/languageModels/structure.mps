@@ -125,5 +125,16 @@
       <link role="target:0" targetNodeId="6036237525966182694" resolveInfo="LowLevelVariable" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration:0" id="5816417461675171489">
+    <property name="package:0" value="annotations" />
+    <property name="role:0" value="unprocessedAnnotation" />
+    <link role="source:0" targetNodeId="2v.1133920641626:0" resolveInfo="BaseConcept" />
+    <link role="target:0" targetNodeId="5816417461675171490" resolveInfo="UnprocessedAnnotation" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5816417461675171490">
+    <property name="package:0" value="annotations" />
+    <property name="name:0" value="UnprocessedAnnotation" />
+    <link role="extends:0" targetNodeId="1707366700950402060" resolveInfo="GenerationHelperAnnotation" />
+  </node>
 </model>
 

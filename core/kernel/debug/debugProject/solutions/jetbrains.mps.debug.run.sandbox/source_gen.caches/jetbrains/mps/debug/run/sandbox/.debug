@@ -31,71 +31,74 @@
     <nodeInfo nodeId="3756818665386150650" fileName="Main.java" startLine="52" startPosition="18" endLine="53" endPosition="18" />
     <nodeInfo nodeId="607759879653683989" fileName="Main.java" startLine="53" startPosition="18" endLine="54" endPosition="25" />
     <nodeInfo nodeId="9010565462999112811" fileName="Main.java" startLine="54" startPosition="25" endLine="55" endPosition="15" />
-    <nodeInfo nodeId="9010565462999112821" fileName="Main.java" startLine="56" startPosition="19" endLine="57" endPosition="10" />
-    <nodeInfo nodeId="3602708221906295571" fileName="Main.java" startLine="59" startPosition="8" endLine="60" endPosition="41" />
-    <nodeInfo nodeId="3602708221906295576" fileName="Main.java" startLine="60" startPosition="41" endLine="61" endPosition="0" />
-    <nodeInfo nodeId="9010565462999112834" fileName="Main.java" startLine="61" startPosition="0" endLine="62" endPosition="10" />
-    <nodeInfo nodeId="607759879653900374" fileName="Main.java" startLine="62" startPosition="10" endLine="63" endPosition="17" />
-    <nodeInfo nodeId="5281182607624261034" fileName="Main.java" startLine="65" startPosition="18" endLine="66" endPosition="31" />
-    <nodeInfo nodeId="3756818665386149938" fileName="Main.java" startLine="70" startPosition="36" endLine="71" endPosition="45" />
-    <nodeInfo nodeId="3756818665387406557" fileName="Main.java" startLine="71" startPosition="45" endLine="72" endPosition="56" />
+    <nodeInfo nodeId="6196179103670406761" fileName="Main.java" startLine="55" startPosition="15" endLine="56" endPosition="25" />
+    <nodeInfo nodeId="9010565462999112821" fileName="Main.java" startLine="57" startPosition="19" endLine="58" endPosition="10" />
+    <nodeInfo nodeId="6196179103670406767" fileName="Main.java" startLine="58" startPosition="10" endLine="59" endPosition="15" />
+    <nodeInfo nodeId="3602708221906295571" fileName="Main.java" startLine="61" startPosition="8" endLine="62" endPosition="41" />
+    <nodeInfo nodeId="3602708221906295576" fileName="Main.java" startLine="62" startPosition="41" endLine="63" endPosition="0" />
+    <nodeInfo nodeId="9010565462999112834" fileName="Main.java" startLine="63" startPosition="0" endLine="64" endPosition="10" />
+    <nodeInfo nodeId="607759879653900374" fileName="Main.java" startLine="64" startPosition="10" endLine="65" endPosition="17" />
+    <nodeInfo nodeId="5281182607624261034" fileName="Main.java" startLine="67" startPosition="18" endLine="68" endPosition="31" />
+    <nodeInfo nodeId="3756818665386149938" fileName="Main.java" startLine="72" startPosition="36" endLine="73" endPosition="45" />
+    <nodeInfo nodeId="3756818665387406557" fileName="Main.java" startLine="73" startPosition="45" endLine="74" endPosition="56" />
     <nodeInfo nodeId="774465993226016888" fileName="Main.java" startLine="29" startPosition="32" endLine="31" endPosition="37" />
     <nodeInfo nodeId="1876713722539579912" fileName="Main.java" startLine="10" startPosition="0" endLine="13" endPosition="3" />
     <nodeInfo nodeId="3376730230379816897" fileName="Main.java" startLine="21" startPosition="16" endLine="24" endPosition="0" />
     <nodeInfo nodeId="3376730230379816916" fileName="Main.java" startLine="40" startPosition="16" endLine="43" endPosition="0" />
     <nodeInfo nodeId="3756818665386149944" fileName="Main.java" startLine="44" startPosition="32" endLine="47" endPosition="5" />
-    <nodeInfo nodeId="9010565462999112807" fileName="Main.java" startLine="55" startPosition="15" endLine="58" endPosition="5" />
-    <nodeInfo nodeId="5281182607624261030" fileName="Main.java" startLine="64" startPosition="20" endLine="67" endPosition="5" />
+    <nodeInfo nodeId="5281182607624261030" fileName="Main.java" startLine="66" startPosition="20" endLine="69" endPosition="5" />
     <nodeInfo nodeId="4060685206781455314" fileName="Main.java" startLine="20" startPosition="42" endLine="24" endPosition="6" />
     <nodeInfo nodeId="6814978825597950772" fileName="Main.java" startLine="33" startPosition="10" endLine="37" endPosition="9" />
     <nodeInfo nodeId="3376730230379816911" fileName="Main.java" startLine="39" startPosition="15" endLine="43" endPosition="6" />
+    <nodeInfo nodeId="9010565462999112807" fileName="Main.java" startLine="56" startPosition="25" endLine="60" endPosition="5" />
     <nodeInfo nodeId="4210312560528450743" fileName="Main.java" startLine="14" startPosition="0" endLine="19" endPosition="0" />
     <nodeInfo nodeId="774465993226016886" fileName="Main.java" startLine="28" startPosition="74" endLine="33" endPosition="0" />
-    <nodeInfo nodeId="3756818665386149934" fileName="Main.java" startLine="69" startPosition="0" endLine="74" endPosition="0" />
+    <nodeInfo nodeId="3756818665386149934" fileName="Main.java" startLine="71" startPosition="0" endLine="76" endPosition="0" />
     <nodeInfo nodeId="774465993226012619" fileName="Main.java" startLine="27" startPosition="18" endLine="33" endPosition="10" />
-    <nodeInfo nodeId="9010565462999112826" fileName="Main.java" startLine="58" startPosition="5" endLine="64" endPosition="20" />
+    <nodeInfo nodeId="9010565462999112826" fileName="Main.java" startLine="60" startPosition="5" endLine="66" endPosition="20" />
     <nodeInfo nodeId="6814978825597950763" fileName="Main.java" startLine="25" startPosition="31" endLine="39" endPosition="0" />
     <nodeInfo nodeId="6814978825597945492" fileName="Main.java" startLine="24" startPosition="6" endLine="39" endPosition="15" />
-    <nodeInfo nodeId="1876713722539579916" fileName="Main.java" startLine="19" startPosition="0" endLine="69" endPosition="0" />
+    <nodeInfo nodeId="1876713722539579916" fileName="Main.java" startLine="19" startPosition="0" endLine="71" endPosition="0" />
     <scopeInfo nodeId="3376730230379816900" fileName="Main.java" startLine="22" startPosition="25" endLine="22" endPosition="25" />
     <scopeInfo nodeId="3376730230379816919" fileName="Main.java" startLine="41" startPosition="25" endLine="41" endPosition="25" />
     <scopeInfo nodeId="1876713722539579915" fileName="Main.java" startLine="11" startPosition="17" endLine="12" endPosition="25" />
     <scopeInfo nodeId="3756818665386149945" fileName="Main.java" startLine="45" startPosition="33" endLine="46" endPosition="20" />
-    <scopeInfo nodeId="9010565462999112809" fileName="Main.java" startLine="56" startPosition="19" endLine="57" endPosition="10" />
-    <scopeInfo nodeId="5281182607624261032" fileName="Main.java" startLine="65" startPosition="18" endLine="66" endPosition="31" />
+    <scopeInfo nodeId="5281182607624261032" fileName="Main.java" startLine="67" startPosition="18" endLine="68" endPosition="31" />
     <scopeInfo nodeId="4210312560528450746" fileName="Main.java" startLine="15" startPosition="21" endLine="17" endPosition="31" />
     <scopeInfo nodeId="774465993226016887" fileName="Main.java" startLine="29" startPosition="32" endLine="31" endPosition="37" />
     <scopeInfo nodeId="774465993226016889" fileName="Main.java" startLine="29" startPosition="32" endLine="31" endPosition="37" />
     <scopeInfo nodeId="6814978825597950774" fileName="Main.java" startLine="34" startPosition="22" endLine="36" endPosition="22" />
-    <scopeInfo nodeId="3756818665386149937" fileName="Main.java" startLine="70" startPosition="36" endLine="72" endPosition="56" />
+    <scopeInfo nodeId="9010565462999112809" fileName="Main.java" startLine="57" startPosition="19" endLine="59" endPosition="15" />
+    <scopeInfo nodeId="3756818665386149937" fileName="Main.java" startLine="72" startPosition="36" endLine="74" endPosition="56" />
     <scopeInfo nodeId="1876713722539579912" fileName="Main.java" startLine="10" startPosition="0" endLine="13" endPosition="3" />
     <scopeInfo nodeId="3376730230379816897" fileName="Main.java" startLine="21" startPosition="16" endLine="24" endPosition="0" />
     <scopeInfo nodeId="3376730230379816916" fileName="Main.java" startLine="40" startPosition="16" endLine="43" endPosition="0" />
     <scopeInfo nodeId="3756818665386149944" fileName="Main.java" startLine="44" startPosition="32" endLine="47" endPosition="5">
       <varInfo nodeId="3756818665386149951" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="9010565462999112828" fileName="Main.java" startLine="59" startPosition="8" endLine="63" endPosition="17" />
+    <scopeInfo nodeId="9010565462999112828" fileName="Main.java" startLine="61" startPosition="8" endLine="65" endPosition="17" />
     <scopeInfo nodeId="4210312560528450743" fileName="Main.java" startLine="14" startPosition="0" endLine="19" endPosition="0" />
     <scopeInfo nodeId="774465993226016886" fileName="Main.java" startLine="28" startPosition="74" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="3756818665386149934" fileName="Main.java" startLine="69" startPosition="0" endLine="74" endPosition="0" />
+    <scopeInfo nodeId="3756818665386149934" fileName="Main.java" startLine="71" startPosition="0" endLine="76" endPosition="0" />
     <scopeInfo nodeId="6814978825597950766" fileName="Main.java" startLine="26" startPosition="25" endLine="37" endPosition="9">
       <varInfo nodeId="774465993226012620" varName="cl" />
       <varInfo nodeId="6814978825597953742" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="6814978825597950763" fileName="Main.java" startLine="25" startPosition="31" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="1876713722539579918" fileName="Main.java" startLine="20" startPosition="42" endLine="67" endPosition="5">
+    <scopeInfo nodeId="1876713722539579918" fileName="Main.java" startLine="20" startPosition="42" endLine="69" endPosition="5">
+      <varInfo nodeId="6196179103670406762" varName="intVar" />
       <varInfo nodeId="5281182607624261012" varName="n" />
       <varInfo nodeId="9010565462999112812" varName="j" />
       <varInfo nodeId="607759879653683990" varName="array" />
     </scopeInfo>
-    <scopeInfo nodeId="1876713722539579916" fileName="Main.java" startLine="19" startPosition="0" endLine="69" endPosition="0">
+    <scopeInfo nodeId="1876713722539579916" fileName="Main.java" startLine="19" startPosition="0" endLine="71" endPosition="0">
       <varInfo nodeId="1876713722539579920" varName="args" />
     </scopeInfo>
     <unitInfo nodeId="3376730230379816894" fileName="Main.java" startLine="21" startPosition="8" endLine="24" endPosition="5" unitName="jetbrains.mps.debug.run.sandbox.Main$1" />
     <unitInfo nodeId="3376730230379816914" fileName="Main.java" startLine="40" startPosition="8" endLine="43" endPosition="5" unitName="jetbrains.mps.debug.run.sandbox.Main$3" />
     <unitInfo nodeId="774465993226016886" fileName="Main.java" startLine="28" startPosition="44" endLine="33" endPosition="9" unitName="jetbrains.mps.debug.run.sandbox.Main$3" />
     <unitInfo nodeId="6814978825597950761" fileName="Main.java" startLine="25" startPosition="19" endLine="39" endPosition="5" unitName="jetbrains.mps.debug.run.sandbox.Main$2" />
-    <unitInfo nodeId="1876713722539579910" fileName="Main.java" startLine="8" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.debug.run.sandbox.Main" />
+    <unitInfo nodeId="1876713722539579910" fileName="Main.java" startLine="8" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.debug.run.sandbox.Main" />
   </root>
   <root nodeId="236633587817012660">
     <nodeInfo nodeId="236633587817012671" fileName="BaseC.java" startLine="10" startPosition="31" endLine="11" endPosition="15" />
