@@ -4423,7 +4423,7 @@
       <property name="name:3" value="IS_DEVELOPER_MODE" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="672360099287494395" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="672360099287494396" />
-      <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="1931206442265284099">
+      <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="6869847302418436744">
         <property name="value:3" value="false" />
       </node>
     </node>
