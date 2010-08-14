@@ -52,6 +52,7 @@ public class Transformator {
     TransformationUtil.replaceThis(myWhatToEvaluate);
     TransformationUtil.replaceSuper(myWhatToEvaluate);
     TransformationUtil.replaceLowLevelVariableReferences(myWhatToEvaluate);
+    TransformationUtil.replaceAssignments(myWhatToEvaluate);
     TransformationUtil.replaceClassExpressions(myWhatToEvaluate);
     TransformationUtil.replaceLocalMemberReferences(myWhatToEvaluate);
     TransformationUtil.wrapMemberReferencesInCycle(myWhatToEvaluate);
