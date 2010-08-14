@@ -224,6 +224,35 @@ public abstract class Evaluator {
     throw new UnsupportedOperationException("Cant box " + primitiveValue);
   }
 
+  protected PrimitiveValueProxy unbox(IObjectValueProxy valueProxy) throws EvaluationException {
+    Type type = valueProxy.getJDIValue().type();
+    if (type.name().equals(Boolean.class.getName())) {
+      return (PrimitiveValueProxy) valueProxy.invokeMethod("booleanValue", "()Z");
+    }
+    if (type.name().equals(Short.class.getName())) {
+      return (PrimitiveValueProxy) valueProxy.invokeMethod("shortValue", "()S");
+    }
+    if (type.name().equals(Byte.class.getName())) {
+      return (PrimitiveValueProxy) valueProxy.invokeMethod("byteValue", "()B");
+    }
+    if (type.name().equals(Character.class.getName())) {
+      return (PrimitiveValueProxy) valueProxy.invokeMethod("charValue", "()C");
+    }
+    if (type.name().equals(Double.class.getName())) {
+      return (PrimitiveValueProxy) valueProxy.invokeMethod("doubleValue", "()D");
+    }
+    if (type.name().equals(Float.class.getName())) {
+      return (PrimitiveValueProxy) valueProxy.invokeMethod("floatValue", "()F");
+    }
+    if (type.name().equals(Integer.class.getName())) {
+      return (PrimitiveValueProxy) valueProxy.invokeMethod("intValue", "()I");
+    }
+    if (type.name().equals(Long.class.getName())) {
+      return (PrimitiveValueProxy) valueProxy.invokeMethod("longValue", "()J");
+    }
+    throw new UnsupportedOperationException("Cant unbox value of type" + type);
+  }
+
   public static interface Invocatable<T> {
     T invoke() throws InvocationException, InvalidTypeException, ClassNotLoadedException, IncompatibleThreadStateException, EvaluationException;
   }
