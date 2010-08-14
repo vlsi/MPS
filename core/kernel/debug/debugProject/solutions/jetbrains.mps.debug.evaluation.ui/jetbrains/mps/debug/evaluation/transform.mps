@@ -6617,16 +6617,6 @@
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="7289900034067606421" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="7289900034067606422" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7289900034067606423">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="7289900034067606427">
-          <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="7289900034067606428">
-            <property name="text:3" value="deal with assignments" />
-          </node>
-        </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="7289900034067606429">
-          <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="7289900034067606430">
-            <property name="text:3" value="todo git rid duplication between assignmets and local vars" />
-          </node>
-        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement:7" id="7289900034067606431">
           <node role="variable:7" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable:7" id="7289900034067606417">
             <property name="name:7" value="assignment" />

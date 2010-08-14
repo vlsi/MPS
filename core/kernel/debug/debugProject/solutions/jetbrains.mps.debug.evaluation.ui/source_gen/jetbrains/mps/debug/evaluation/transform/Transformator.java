@@ -356,8 +356,6 @@ public class Transformator {
   }
 
   private boolean replaceAssignments() {
-    // deal with assignments 
-    // todo git rid duplication between assignmets and local vars 
     for (SNode assignment : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.AssignmentExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it);
