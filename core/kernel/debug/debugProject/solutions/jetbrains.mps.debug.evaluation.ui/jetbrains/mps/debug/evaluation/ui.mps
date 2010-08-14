@@ -42,7 +42,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
-  <maxImportIndex value="80" />
+  <maxImportIndex value="83" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.ide.dialogs(jetbrains.mps.ide.dialogs@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.ide.ui(jetbrains.mps.ide.ui@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.debug.evaluation(jetbrains.mps.debug.evaluation@java_stub)" version="-1" />
@@ -93,6 +93,9 @@
   <import index="76" modelUID="f:java_stub#jetbrains.mps.debug.evaluation.ui(jetbrains.mps.debug.evaluation.ui@java_stub)" version="-1" />
   <import index="77" modelUID="f:java_stub#jetbrains.mps.debug.evaluation.structure(jetbrains.mps.debug.evaluation.structure@java_stub)" version="-1" />
   <import index="78" modelUID="f:java_stub#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
+  <import index="81" modelUID="r:b4456070-b665-4c03-b3d3-15a7362ba239(jetbrains.mps.debug.evaluation.transform)" version="-1" />
+  <import index="82" modelUID="f:java_stub#jetbrains.mps.smodel.descriptor(jetbrains.mps.smodel.descriptor@java_stub)" version="-1" />
+  <import index="83" modelUID="f:java_stub#jetbrains.mps.stubs.javastub.classpath(jetbrains.mps.stubs.javastub.classpath@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5849716370568348282">
     <property name="name:3" value="EvaluationDialog" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5849716370568348283" />
@@ -1417,7 +1420,7 @@
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="4995402009321952229">
             <property name="name:3" value="d" />
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="9094453971530445152">
-              <link role="classifier:3" targetNodeId="79.~EditableSModelDescriptor" resolveInfo="EditableSModelDescriptor" />
+              <link role="classifier:3" targetNodeId="82.~EditableSModelDescriptor" resolveInfo="EditableSModelDescriptor" />
             </node>
           </node>
         </node>
@@ -2947,14 +2950,14 @@
                         <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="9146569226295786489">
                           <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="9146569226295784544">
                             <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="9146569226295786487">
-                              <link role="baseMethodDeclaration:3" targetNodeId="79.4422953018422059816" resolveInfo="Transformator" />
-                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="9146569226295786488">
+                              <link role="baseMethodDeclaration:3" targetNodeId="81.4422953018422059816" resolveInfo="Transformator" />
+                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8315769857064346492">
                                 <link role="variableDeclaration:3" targetNodeId="6185141366360333775" resolveInfo="evaluator" />
                               </node>
                             </node>
                           </node>
                           <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="9146569226295786493">
-                            <link role="baseMethodDeclaration:3" targetNodeId="79.4422953018422199168" resolveInfo="transform" />
+                            <link role="baseMethodDeclaration:3" targetNodeId="81.4422953018422199168" resolveInfo="transform" />
                           </node>
                         </node>
                       </node>
@@ -3297,7 +3300,7 @@
       <property name="isFinal:3" value="false" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility:3" id="4592086915999584304" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="9094453971530424635">
-        <link role="classifier:3" targetNodeId="79.~EditableSModelDescriptor" resolveInfo="EditableSModelDescriptor" />
+        <link role="classifier:3" targetNodeId="82.~EditableSModelDescriptor" resolveInfo="EditableSModelDescriptor" />
       </node>
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="6185141366360320956">
@@ -3609,7 +3612,7 @@
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="6185141366360330489">
         <property name="name:3" value="model" />
         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="9094453971530424741">
-          <link role="classifier:3" targetNodeId="79.~EditableSModelDescriptor" resolveInfo="EditableSModelDescriptor" />
+          <link role="classifier:3" targetNodeId="82.~EditableSModelDescriptor" resolveInfo="EditableSModelDescriptor" />
         </node>
       </node>
     </node>
@@ -5180,7 +5183,7 @@
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="6424253054950090790">
         <property name="name:3" value="model" />
         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="9094453971530446910">
-          <link role="classifier:3" targetNodeId="79.~EditableSModelDescriptor" resolveInfo="EditableSModelDescriptor" />
+          <link role="classifier:3" targetNodeId="82.~EditableSModelDescriptor" resolveInfo="EditableSModelDescriptor" />
         </node>
       </node>
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6424253054950090792">
@@ -5250,8 +5253,8 @@
               <link role="classifier:3" targetNodeId="9.~SModelReference" resolveInfo="SModelReference" />
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="4592086915999591141">
-              <link role="classConcept:3" targetNodeId="80.~StubHelper" resolveInfo="StubHelper" />
-              <link role="baseMethodDeclaration:3" targetNodeId="80.~StubHelper.uidForPackageInStubs(java.lang.String):jetbrains.mps.smodel.SModelReference" resolveInfo="uidForPackageInStubs" />
+              <link role="classConcept:3" targetNodeId="83.~StubHelper" resolveInfo="StubHelper" />
+              <link role="baseMethodDeclaration:3" targetNodeId="83.~StubHelper.uidForPackageInStubs(java.lang.String,java.lang.String):jetbrains.mps.smodel.SModelReference" resolveInfo="uidForPackageInStubs" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4592086915999591142">
                 <link role="variableDeclaration:3" targetNodeId="4592086915999591133" resolveInfo="smodelFqName" />
               </node>
@@ -6795,8 +6798,8 @@
                     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="634073782578831605">
                       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="634073782578831612">
                         <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="634073782578831614">
-                          <link role="classConcept:3" targetNodeId="80.~StubHelper" resolveInfo="StubHelper" />
-                          <link role="baseMethodDeclaration:3" targetNodeId="80.~StubHelper.uidForPackageInStubs(java.lang.String,java.lang.String):jetbrains.mps.smodel.SModelReference" resolveInfo="uidForPackageInStubs" />
+                          <link role="classConcept:3" targetNodeId="83.~StubHelper" resolveInfo="StubHelper" />
+                          <link role="baseMethodDeclaration:3" targetNodeId="83.~StubHelper.uidForPackageInStubs(java.lang.String,java.lang.String):jetbrains.mps.smodel.SModelReference" resolveInfo="uidForPackageInStubs" />
                           <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="634073782578831615">
                             <link role="variableDeclaration:3" targetNodeId="634073782578831603" resolveInfo="packageName" />
                           </node>
