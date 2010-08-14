@@ -385,18 +385,22 @@ public class TransformationUtil {
         }
       }
 
+      // deal with assignments 
+      // todo git rid duplication! 
       for (SNode assignment : ListSequence.fromList(SNodeOperations.getDescendants(whatToEvaluate, "jetbrains.mps.baseLanguage.structure.AssignmentExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return isUnprocessed(it);
         }
       })) {
         SNode variableDeclaration = RulesFunctions_BaseLanguage.getVariableDeclaration(SLinkOperations.getTarget(assignment, "lValue", true));
-        if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(assignment, "rValue", true)), new TransformationUtil.QuotationClass_crriw5_a1a0a1a42a5a9().createNode()) && !(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(variableDeclaration), new TransformationUtil.QuotationClass_crriw5_a1a0a0b0y0f0j().createNode()))) {
-          SLinkOperations.setTarget(variableDeclaration, "type", new TransformationUtil.QuotationClass_crriw5_a0a0a0b0y0f0j().createNode(getValueProxyTypeFromType(SLinkOperations.getTarget(variableDeclaration, "type", true))), true);
+        if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(variableDeclaration), new TransformationUtil.QuotationClass_crriw5_a1a0a0b0ab0f0j().createNode())) && TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(assignment, "rValue", true)), new TransformationUtil.QuotationClass_crriw5_a1a0a1a62a5a9().createNode())) {
+          SLinkOperations.setTarget(variableDeclaration, "type", new TransformationUtil.QuotationClass_crriw5_a0a0a0b0ab0f0j().createNode(getValueProxyTypeFromType(SLinkOperations.getTarget(variableDeclaration, "type", true))), true);
           finished = false;
-        } else if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(assignment, "rValue", true)), new TransformationUtil.QuotationClass_crriw5_a1a0a0a1a42a5a9().createNode())) && TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(variableDeclaration), new TransformationUtil.QuotationClass_crriw5_a1a0a0b0y0f0j_0().createNode())) {
-          SLinkOperations.setTarget(assignment, "rValue", new TransformationUtil.QuotationClass_crriw5_a0a0a0a1a42a5a9().createNode(SLinkOperations.getTarget(assignment, "rValue", true)), true);
+        } else if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(variableDeclaration), new TransformationUtil.QuotationClass_crriw5_a1a0a0b0ab0f0j_0().createNode()) && !(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(assignment, "rValue", true)), new TransformationUtil.QuotationClass_crriw5_a1a0a0a1a62a5a9().createNode()))) {
+          SLinkOperations.setTarget(assignment, "rValue", new TransformationUtil.QuotationClass_crriw5_a0a0a0a1a62a5a9().createNode(SLinkOperations.getTarget(assignment, "rValue", true)), true);
           finished = false;
+        } else if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(variableDeclaration), new TransformationUtil.QuotationClass_crriw5_a1a0a1b0ab0f0j().createNode()) && TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(assignment, "rValue", true)), new TransformationUtil.QuotationClass_crriw5_a1a0a1b0ab0f0j_0().createNode())) {
+          SLinkOperations.setTarget(assignment, "rValue", new TransformationUtil.QuotationClass_crriw5_a0a0a0b1a62a5a9().createNode(SLinkOperations.getTarget(assignment, "rValue", true)), true);
         }
       }
       for (SNode localVariableDeclaration : ListSequence.fromList(SNodeOperations.getDescendants(whatToEvaluate, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false, new String[]{})).where(new IWhereFilter<SNode>() {
@@ -404,12 +408,14 @@ public class TransformationUtil {
           return isUnprocessed(it) && (SLinkOperations.getTarget(it, "initializer", true) != null);
         }
       })) {
-        if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(localVariableDeclaration, "initializer", true)), new TransformationUtil.QuotationClass_crriw5_a1a0a0a52a5a9().createNode()) && !(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(localVariableDeclaration), new TransformationUtil.QuotationClass_crriw5_a1a0a0a0z0f0j().createNode()))) {
-          SLinkOperations.setTarget(localVariableDeclaration, "type", new TransformationUtil.QuotationClass_crriw5_a0a0a0a0z0f0j().createNode(getValueProxyTypeFromType(SLinkOperations.getTarget(localVariableDeclaration, "type", true))), true);
+        if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(localVariableDeclaration), new TransformationUtil.QuotationClass_crriw5_a1a0a0a0bb0f0j().createNode())) && TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(localVariableDeclaration, "initializer", true)), new TransformationUtil.QuotationClass_crriw5_a1a0a0a72a5a9().createNode())) {
+          SLinkOperations.setTarget(localVariableDeclaration, "type", new TransformationUtil.QuotationClass_crriw5_a0a0a0a0bb0f0j().createNode(getValueProxyTypeFromType(SLinkOperations.getTarget(localVariableDeclaration, "type", true))), true);
           finished = false;
-        } else if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(localVariableDeclaration, "initializer", true)), new TransformationUtil.QuotationClass_crriw5_a1a0a0a0a52a5a9().createNode())) && TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(localVariableDeclaration), new TransformationUtil.QuotationClass_crriw5_a1a0a0a0z0f0j_0().createNode())) {
-          SLinkOperations.setTarget(localVariableDeclaration, "initializer", new TransformationUtil.QuotationClass_crriw5_a0a0a0a0a52a5a9().createNode(SLinkOperations.getTarget(localVariableDeclaration, "initializer", true)), true);
+        } else if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(localVariableDeclaration), new TransformationUtil.QuotationClass_crriw5_a1a0a0a0bb0f0j_0().createNode()) && !(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(localVariableDeclaration, "initializer", true)), new TransformationUtil.QuotationClass_crriw5_a1a0a0a0a72a5a9().createNode()))) {
+          SLinkOperations.setTarget(localVariableDeclaration, "initializer", new TransformationUtil.QuotationClass_crriw5_a0a0a0a0a72a5a9().createNode(SLinkOperations.getTarget(localVariableDeclaration, "initializer", true)), true);
           finished = false;
+        } else if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(localVariableDeclaration), new TransformationUtil.QuotationClass_crriw5_a1a0a1a0bb0f0j().createNode()) && TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(localVariableDeclaration, "initializer", true)), new TransformationUtil.QuotationClass_crriw5_a1a0a1a0bb0f0j_0().createNode())) {
+          SLinkOperations.setTarget(localVariableDeclaration, "initializer", new TransformationUtil.QuotationClass_crriw5_a0a0a0b0a72a5a9().createNode(SLinkOperations.getTarget(localVariableDeclaration, "initializer", true)), true);
         }
       }
     }
@@ -1502,8 +1508,8 @@ public class TransformationUtil {
     }
   }
 
-  public static class QuotationClass_crriw5_a0a0a0b0y0f0j {
-    public QuotationClass_crriw5_a0a0a0b0y0f0j() {
+  public static class QuotationClass_crriw5_a0a0a0b0ab0f0j {
+    public QuotationClass_crriw5_a0a0a0b0ab0f0j() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -1527,8 +1533,8 @@ public class TransformationUtil {
     }
   }
 
-  public static class QuotationClass_crriw5_a1a0a0b0y0f0j {
-    public QuotationClass_crriw5_a1a0a0b0y0f0j() {
+  public static class QuotationClass_crriw5_a1a0a0b0ab0f0j {
+    public QuotationClass_crriw5_a1a0a0b0ab0f0j() {
     }
 
     public SNode createNode() {
@@ -1545,8 +1551,8 @@ public class TransformationUtil {
     }
   }
 
-  public static class QuotationClass_crriw5_a1a0a1a42a5a9 {
-    public QuotationClass_crriw5_a1a0a1a42a5a9() {
+  public static class QuotationClass_crriw5_a1a0a1a62a5a9 {
+    public QuotationClass_crriw5_a1a0a1a62a5a9() {
     }
 
     public SNode createNode() {
@@ -1563,8 +1569,8 @@ public class TransformationUtil {
     }
   }
 
-  public static class QuotationClass_crriw5_a0a0a0a1a42a5a9 {
-    public QuotationClass_crriw5_a0a0a0a1a42a5a9() {
+  public static class QuotationClass_crriw5_a0a0a0a1a62a5a9 {
+    public QuotationClass_crriw5_a0a0a0a1a62a5a9() {
     }
 
     public SNode createNode(Object parameter_11) {
@@ -1616,8 +1622,8 @@ public class TransformationUtil {
     }
   }
 
-  public static class QuotationClass_crriw5_a1a0a0b0y0f0j_0 {
-    public QuotationClass_crriw5_a1a0a0b0y0f0j_0() {
+  public static class QuotationClass_crriw5_a1a0a0b0ab0f0j_0 {
+    public QuotationClass_crriw5_a1a0a0b0ab0f0j_0() {
     }
 
     public SNode createNode() {
@@ -1634,8 +1640,8 @@ public class TransformationUtil {
     }
   }
 
-  public static class QuotationClass_crriw5_a1a0a0a1a42a5a9 {
-    public QuotationClass_crriw5_a1a0a0a1a42a5a9() {
+  public static class QuotationClass_crriw5_a1a0a0a1a62a5a9 {
+    public QuotationClass_crriw5_a1a0a0a1a62a5a9() {
     }
 
     public SNode createNode() {
@@ -1652,8 +1658,89 @@ public class TransformationUtil {
     }
   }
 
-  public static class QuotationClass_crriw5_a0a0a0a0z0f0j {
-    public QuotationClass_crriw5_a0a0a0a0z0f0j() {
+  public static class QuotationClass_crriw5_a1a0a1b0ab0f0j {
+    public QuotationClass_crriw5_a1a0a1b0ab0f0j() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.debug.evaluation.proxies(jetbrains.mps.debug.evaluation.proxies@java_stub)"), SNodeId.fromString("~IObjectValueProxy")));
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_crriw5_a1a0a1b0ab0f0j_0 {
+    public QuotationClass_crriw5_a1a0a1b0ab0f0j_0() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.debug.evaluation.proxies(jetbrains.mps.debug.evaluation.proxies@java_stub)"), SNodeId.fromString("~PrimitiveValueProxy")));
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_crriw5_a0a0a0b1a62a5a9 {
+    public QuotationClass_crriw5_a0a0a0b1a62a5a9() {
+    }
+
+    public SNode createNode(Object parameter_9) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
+      SNode quotedNode_4 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_5 = quotedNode_1;
+        quotedNode1_5.setProperty("methodName", "box");
+        {
+          quotedNode_2 = (SNode) parameter_9;
+          SNode quotedNode1_6;
+          if (_parameterValues_129834374.contains(quotedNode_2)) {
+            quotedNode1_6 = CopyUtil.copy(quotedNode_2);
+          } else {
+            _parameterValues_129834374.add(quotedNode_2);
+            quotedNode1_6 = quotedNode_2;
+          }
+          if (quotedNode1_6 != null) {
+            quotedNode_1.addChild("actualArgument", HUtil.copyIfNecessary(quotedNode1_6));
+          }
+        }
+        {
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+          SNode quotedNode1_7 = quotedNode_3;
+          quotedNode1_7.addReference(SReference.create("classifier", quotedNode1_7, SModelReference.fromString("f:java_stub#jetbrains.mps.debug.evaluation.proxies(jetbrains.mps.debug.evaluation.proxies@java_stub)"), SNodeId.fromString("~IObjectValueProxy")));
+          quotedNode_1.addChild("returnType", quotedNode1_7);
+        }
+        {
+          quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression", null, GlobalScope.getInstance(), false);
+          SNode quotedNode1_8 = quotedNode_4;
+          quotedNode_1.addChild("instance", quotedNode1_8);
+        }
+        result = quotedNode1_5;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_crriw5_a0a0a0a0bb0f0j {
+    public QuotationClass_crriw5_a0a0a0a0bb0f0j() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -1677,8 +1764,8 @@ public class TransformationUtil {
     }
   }
 
-  public static class QuotationClass_crriw5_a1a0a0a0z0f0j {
-    public QuotationClass_crriw5_a1a0a0a0z0f0j() {
+  public static class QuotationClass_crriw5_a1a0a0a0bb0f0j {
+    public QuotationClass_crriw5_a1a0a0a0bb0f0j() {
     }
 
     public SNode createNode() {
@@ -1695,8 +1782,8 @@ public class TransformationUtil {
     }
   }
 
-  public static class QuotationClass_crriw5_a1a0a0a52a5a9 {
-    public QuotationClass_crriw5_a1a0a0a52a5a9() {
+  public static class QuotationClass_crriw5_a1a0a0a72a5a9 {
+    public QuotationClass_crriw5_a1a0a0a72a5a9() {
     }
 
     public SNode createNode() {
@@ -1713,8 +1800,8 @@ public class TransformationUtil {
     }
   }
 
-  public static class QuotationClass_crriw5_a0a0a0a0a52a5a9 {
-    public QuotationClass_crriw5_a0a0a0a0a52a5a9() {
+  public static class QuotationClass_crriw5_a0a0a0a0a72a5a9 {
+    public QuotationClass_crriw5_a0a0a0a0a72a5a9() {
     }
 
     public SNode createNode(Object parameter_11) {
@@ -1766,8 +1853,8 @@ public class TransformationUtil {
     }
   }
 
-  public static class QuotationClass_crriw5_a1a0a0a0z0f0j_0 {
-    public QuotationClass_crriw5_a1a0a0a0z0f0j_0() {
+  public static class QuotationClass_crriw5_a1a0a0a0bb0f0j_0 {
+    public QuotationClass_crriw5_a1a0a0a0bb0f0j_0() {
     }
 
     public SNode createNode() {
@@ -1784,8 +1871,8 @@ public class TransformationUtil {
     }
   }
 
-  public static class QuotationClass_crriw5_a1a0a0a0a52a5a9 {
-    public QuotationClass_crriw5_a1a0a0a0a52a5a9() {
+  public static class QuotationClass_crriw5_a1a0a0a0a72a5a9 {
+    public QuotationClass_crriw5_a1a0a0a0a72a5a9() {
     }
 
     public SNode createNode() {
@@ -1796,6 +1883,87 @@ public class TransformationUtil {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.debug.evaluation.proxies(jetbrains.mps.debug.evaluation.proxies@java_stub)"), SNodeId.fromString("~IValueProxy")));
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_crriw5_a0a0a0b0a72a5a9 {
+    public QuotationClass_crriw5_a0a0a0b0a72a5a9() {
+    }
+
+    public SNode createNode(Object parameter_9) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
+      SNode quotedNode_4 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_5 = quotedNode_1;
+        quotedNode1_5.setProperty("methodName", "box");
+        {
+          quotedNode_2 = (SNode) parameter_9;
+          SNode quotedNode1_6;
+          if (_parameterValues_129834374.contains(quotedNode_2)) {
+            quotedNode1_6 = CopyUtil.copy(quotedNode_2);
+          } else {
+            _parameterValues_129834374.add(quotedNode_2);
+            quotedNode1_6 = quotedNode_2;
+          }
+          if (quotedNode1_6 != null) {
+            quotedNode_1.addChild("actualArgument", HUtil.copyIfNecessary(quotedNode1_6));
+          }
+        }
+        {
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+          SNode quotedNode1_7 = quotedNode_3;
+          quotedNode1_7.addReference(SReference.create("classifier", quotedNode1_7, SModelReference.fromString("f:java_stub#jetbrains.mps.debug.evaluation.proxies(jetbrains.mps.debug.evaluation.proxies@java_stub)"), SNodeId.fromString("~IObjectValueProxy")));
+          quotedNode_1.addChild("returnType", quotedNode1_7);
+        }
+        {
+          quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression", null, GlobalScope.getInstance(), false);
+          SNode quotedNode1_8 = quotedNode_4;
+          quotedNode_1.addChild("instance", quotedNode1_8);
+        }
+        result = quotedNode1_5;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_crriw5_a1a0a1a0bb0f0j {
+    public QuotationClass_crriw5_a1a0a1a0bb0f0j() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.debug.evaluation.proxies(jetbrains.mps.debug.evaluation.proxies@java_stub)"), SNodeId.fromString("~IObjectValueProxy")));
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_crriw5_a1a0a1a0bb0f0j_0 {
+    public QuotationClass_crriw5_a1a0a1a0bb0f0j_0() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.debug.evaluation.proxies(jetbrains.mps.debug.evaluation.proxies@java_stub)"), SNodeId.fromString("~PrimitiveValueProxy")));
         result = quotedNode1_2;
       }
       return result;
