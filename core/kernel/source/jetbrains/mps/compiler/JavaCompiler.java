@@ -25,6 +25,7 @@ import org.eclipse.jdt.internal.compiler.classfmt.ClassFileConstants;
 import org.eclipse.jdt.internal.compiler.env.NameEnvironmentAnswer;
 import org.eclipse.jdt.internal.compiler.impl.CompilerOptions;
 import org.eclipse.jdt.internal.compiler.problem.DefaultProblemFactory;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -148,7 +149,7 @@ public class JavaCompiler {
 
   private ArrayList<CompilationResultListener> myCompilationResultListeners = new ArrayList<CompilationResultListener>();
 
-  public void addCompilationResultListener(CompilationResultListener l) {
+  public void addCompilationResultListener(@NotNull CompilationResultListener l) {
     myCompilationResultListeners.add(l);
   }
 
