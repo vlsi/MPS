@@ -251,7 +251,7 @@ public abstract class AbstractEvaluationLogic {
 
         if (evaluator != null) {
           try {
-            new Transformator(evaluator).transform();
+            new Transformator(evaluator, true).transformEvaluator();
             if (AbstractEvaluationLogic.IS_DEVELOPER_MODE) {
               for (_FunctionTypes._void_P1_E0<? super SNode> listener : ListSequence.fromList(myGenerationListeners)) {
                 listener.invoke(evaluator);

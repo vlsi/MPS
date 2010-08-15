@@ -245,7 +245,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("4693929676428713077");
       this.addNodeById("8441349676536441170");
       this.addNodeById("8441349676536441158");
-      new Transformator(SNodeOperations.cast(this.getNodeById("5543996881668550173"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), true).transform();
+      new Transformator(SNodeOperations.cast(this.getNodeById("5543996881668550173"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), false).transformEvaluator();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550173"), "jetbrains.mps.baseLanguage.structure.BlockStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550179"), "jetbrains.mps.baseLanguage.structure.BlockStatement"))));
     }
 
@@ -300,7 +300,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("4693929676428713077");
       this.addNodeById("8441349676536441170");
       this.addNodeById("8441349676536441158");
-      new Transformator(SNodeOperations.cast(this.getNodeById("1454920206667908425"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), true).transform();
+      new Transformator(SNodeOperations.cast(this.getNodeById("1454920206667908425"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), false).transformEvaluator();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1454920206667908425"), "jetbrains.mps.baseLanguage.structure.BlockStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1454920206667908410"), "jetbrains.mps.baseLanguage.structure.BlockStatement"))));
     }
 
@@ -355,7 +355,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("4693929676428713077");
       this.addNodeById("8441349676536441170");
       this.addNodeById("8441349676536441158");
-      new Transformator(SNodeOperations.cast(this.getNodeById("5543996881668550219"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), true).transform();
+      new Transformator(SNodeOperations.cast(this.getNodeById("5543996881668550219"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), false).transformEvaluator();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550219"), "jetbrains.mps.baseLanguage.structure.BlockStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550226"), "jetbrains.mps.baseLanguage.structure.BlockStatement"))));
     }
 
@@ -410,7 +410,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("4693929676428713077");
       this.addNodeById("8441349676536441170");
       this.addNodeById("8441349676536441158");
-      new Transformator(SNodeOperations.cast(this.getNodeById("1454920206667900339"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), true).transform();
+      new Transformator(SNodeOperations.cast(this.getNodeById("1454920206667900339"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), false).transformEvaluator();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1454920206667900339"), "jetbrains.mps.baseLanguage.structure.BlockStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1454920206667900330"), "jetbrains.mps.baseLanguage.structure.BlockStatement"))));
     }
 
@@ -465,7 +465,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("4693929676428713077");
       this.addNodeById("8441349676536441170");
       this.addNodeById("8441349676536441158");
-      new Transformator(SNodeOperations.cast(this.getNodeById("5543996881668550235"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), true).transform();
+      new Transformator(SNodeOperations.cast(this.getNodeById("5543996881668550235"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), false).transformEvaluator();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550235"), "jetbrains.mps.baseLanguage.structure.BlockStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550245"), "jetbrains.mps.baseLanguage.structure.BlockStatement"))));
     }
 
@@ -520,7 +520,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("4693929676428713077");
       this.addNodeById("8441349676536441170");
       this.addNodeById("8441349676536441158");
-      new Transformator(SNodeOperations.cast(this.getNodeById("1454920206667900363"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), true).transform();
+      new Transformator(SNodeOperations.cast(this.getNodeById("1454920206667900363"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), false).transformEvaluator();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1454920206667900363"), "jetbrains.mps.baseLanguage.structure.BlockStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1454920206667900348"), "jetbrains.mps.baseLanguage.structure.BlockStatement"))));
     }
 
@@ -579,7 +579,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       SNode instanceFieldReference = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", null);
       SLinkOperations.setTarget(instanceFieldReference, "variableDeclaration", fieldDeclaration, false);
       SNodeOperations.replaceWithAnother(SNodeOperations.cast(this.getNodeById("5543996881668550238"), "jetbrains.mps.baseLanguage.structure.DotExpression"), instanceFieldReference);
-      new Transformator(SNodeOperations.cast(this.getNodeById("5543996881668550235"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), true).transform();
+      new Transformator(SNodeOperations.cast(this.getNodeById("5543996881668550235"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), false).transformEvaluator();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550235"), "jetbrains.mps.baseLanguage.structure.BlockStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550245"), "jetbrains.mps.baseLanguage.structure.BlockStatement"))));
     }
 
@@ -634,7 +634,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("4693929676428713077");
       this.addNodeById("8441349676536441170");
       this.addNodeById("8441349676536441158");
-      new Transformator(SNodeOperations.cast(this.getNodeById("5543996881668550260"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), true).transform();
+      new Transformator(SNodeOperations.cast(this.getNodeById("5543996881668550260"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), false).transformEvaluator();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550260"), "jetbrains.mps.baseLanguage.structure.BlockStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550269"), "jetbrains.mps.baseLanguage.structure.BlockStatement"))));
     }
 
@@ -689,7 +689,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("4693929676428713077");
       this.addNodeById("8441349676536441170");
       this.addNodeById("8441349676536441158");
-      new Transformator(SNodeOperations.cast(this.getNodeById("1454920206667900393"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), true).transform();
+      new Transformator(SNodeOperations.cast(this.getNodeById("1454920206667900393"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), false).transformEvaluator();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1454920206667900393"), "jetbrains.mps.baseLanguage.structure.BlockStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1454920206667900377"), "jetbrains.mps.baseLanguage.structure.BlockStatement"))));
     }
 
@@ -749,7 +749,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       SLinkOperations.setTarget(staticFieldReference, "variableDeclaration", fieldDeclaration, false);
       SNodeOperations.replaceWithAnother(SNodeOperations.cast(this.getNodeById("5543996881668550263"), "jetbrains.mps.baseLanguage.structure.StaticFieldReference"), staticFieldReference);
 
-      new Transformator(SNodeOperations.cast(this.getNodeById("5543996881668550260"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), true).transform();
+      new Transformator(SNodeOperations.cast(this.getNodeById("5543996881668550260"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), false).transformEvaluator();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550260"), "jetbrains.mps.baseLanguage.structure.BlockStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550269"), "jetbrains.mps.baseLanguage.structure.BlockStatement"))));
     }
 
@@ -804,7 +804,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("4693929676428713077");
       this.addNodeById("8441349676536441170");
       this.addNodeById("8441349676536441158");
-      new Transformator(SNodeOperations.cast(this.getNodeById("5543996881668550285"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), true).transform();
+      new Transformator(SNodeOperations.cast(this.getNodeById("5543996881668550285"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), false).transformEvaluator();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550285"), "jetbrains.mps.baseLanguage.structure.BlockStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550296"), "jetbrains.mps.baseLanguage.structure.BlockStatement"))));
     }
 
@@ -859,7 +859,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("4693929676428713077");
       this.addNodeById("8441349676536441170");
       this.addNodeById("8441349676536441158");
-      new Transformator(SNodeOperations.cast(this.getNodeById("1454920206667908300"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), true).transform();
+      new Transformator(SNodeOperations.cast(this.getNodeById("1454920206667908300"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), false).transformEvaluator();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1454920206667908300"), "jetbrains.mps.baseLanguage.structure.BlockStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1454920206667908281"), "jetbrains.mps.baseLanguage.structure.BlockStatement"))));
     }
 
@@ -919,7 +919,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       SNode localInstanceMethodCall = new TransformationUtil_Expressions_Test.TestBody.QuotationClass_n7zrdh_a0a25a21a().createNode(arguments);
       SLinkOperations.setTarget(localInstanceMethodCall, "baseMethodDeclaration", instanceMethodDeclaration, false);
       SNodeOperations.replaceWithAnother(SNodeOperations.cast(this.getNodeById("5543996881668550288"), "jetbrains.mps.baseLanguage.structure.DotExpression"), localInstanceMethodCall);
-      new Transformator(SNodeOperations.cast(this.getNodeById("5543996881668550285"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), true).transform();
+      new Transformator(SNodeOperations.cast(this.getNodeById("5543996881668550285"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), false).transformEvaluator();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550285"), "jetbrains.mps.baseLanguage.structure.BlockStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("5543996881668550296"), "jetbrains.mps.baseLanguage.structure.BlockStatement"))));
     }
 
@@ -974,7 +974,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("4693929676428713077");
       this.addNodeById("8441349676536441170");
       this.addNodeById("8441349676536441158");
-      new Transformator(SNodeOperations.cast(this.getNodeById("607759879653675043"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), true).transform();
+      new Transformator(SNodeOperations.cast(this.getNodeById("607759879653675043"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), false).transformEvaluator();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("607759879653675043"), "jetbrains.mps.baseLanguage.structure.BlockStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("607759879653675024"), "jetbrains.mps.baseLanguage.structure.BlockStatement"))));
     }
 
@@ -1029,7 +1029,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("4693929676428713077");
       this.addNodeById("8441349676536441170");
       this.addNodeById("8441349676536441158");
-      new Transformator(SNodeOperations.cast(this.getNodeById("1454920206667908337"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), true).transform();
+      new Transformator(SNodeOperations.cast(this.getNodeById("1454920206667908337"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), false).transformEvaluator();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1454920206667908337"), "jetbrains.mps.baseLanguage.structure.BlockStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1454920206667908318"), "jetbrains.mps.baseLanguage.structure.BlockStatement"))));
     }
 
@@ -1089,7 +1089,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       SNode localStaticMethodCall = new TransformationUtil_Expressions_Test.TestBody.QuotationClass_n7zrdh_a0a25a51a().createNode(arguments);
       SLinkOperations.setTarget(localStaticMethodCall, "baseMethodDeclaration", staticMethodDeclaration, false);
       SNodeOperations.replaceWithAnother(SNodeOperations.cast(this.getNodeById("607759879653675061"), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), localStaticMethodCall);
-      new Transformator(SNodeOperations.cast(this.getNodeById("607759879653675043"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), true).transform();
+      new Transformator(SNodeOperations.cast(this.getNodeById("607759879653675043"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), false).transformEvaluator();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("607759879653675043"), "jetbrains.mps.baseLanguage.structure.BlockStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("607759879653675024"), "jetbrains.mps.baseLanguage.structure.BlockStatement"))));
     }
 
@@ -1144,7 +1144,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("4693929676428713077");
       this.addNodeById("8441349676536441170");
       this.addNodeById("8441349676536441158");
-      new Transformator(SNodeOperations.cast(this.getNodeById("607759879653679933"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), true).transform();
+      new Transformator(SNodeOperations.cast(this.getNodeById("607759879653679933"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), false).transformEvaluator();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("607759879653679933"), "jetbrains.mps.baseLanguage.structure.BlockStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("607759879653679961"), "jetbrains.mps.baseLanguage.structure.BlockStatement"))));
     }
 
@@ -1199,7 +1199,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("4693929676428713077");
       this.addNodeById("8441349676536441170");
       this.addNodeById("8441349676536441158");
-      new Transformator(SNodeOperations.cast(this.getNodeById("607759879653679947"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), true).transform();
+      new Transformator(SNodeOperations.cast(this.getNodeById("607759879653679947"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), false).transformEvaluator();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("607759879653679947"), "jetbrains.mps.baseLanguage.structure.BlockStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("607759879653680037"), "jetbrains.mps.baseLanguage.structure.BlockStatement"))));
     }
 
@@ -1254,7 +1254,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("4693929676428713077");
       this.addNodeById("8441349676536441170");
       this.addNodeById("8441349676536441158");
-      new Transformator(SNodeOperations.cast(this.getNodeById("2932187755699707954"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), true).transform();
+      new Transformator(SNodeOperations.cast(this.getNodeById("2932187755699707954"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), false).transformEvaluator();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("2932187755699707954"), "jetbrains.mps.baseLanguage.structure.BlockStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("2932187755699710926"), "jetbrains.mps.baseLanguage.structure.BlockStatement"))));
     }
 
@@ -1309,7 +1309,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("4693929676428713077");
       this.addNodeById("8441349676536441170");
       this.addNodeById("8441349676536441158");
-      new Transformator(SNodeOperations.cast(this.getNodeById("2932187755699923976"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), true).transform();
+      new Transformator(SNodeOperations.cast(this.getNodeById("2932187755699923976"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), false).transformEvaluator();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("2932187755699923976"), "jetbrains.mps.baseLanguage.structure.BlockStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("2932187755699923960"), "jetbrains.mps.baseLanguage.structure.BlockStatement"))));
     }
 
@@ -1364,7 +1364,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("4693929676428713077");
       this.addNodeById("8441349676536441170");
       this.addNodeById("8441349676536441158");
-      new Transformator(SNodeOperations.cast(this.getNodeById("2932187755699930363"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), true).transform();
+      new Transformator(SNodeOperations.cast(this.getNodeById("2932187755699930363"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), false).transformEvaluator();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("2932187755699930363"), "jetbrains.mps.baseLanguage.structure.BlockStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("2932187755699930348"), "jetbrains.mps.baseLanguage.structure.BlockStatement"))));
     }
 
@@ -1419,7 +1419,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("4693929676428713077");
       this.addNodeById("8441349676536441170");
       this.addNodeById("8441349676536441158");
-      new Transformator(SNodeOperations.cast(this.getNodeById("8441349676536412413"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), true).transform();
+      new Transformator(SNodeOperations.cast(this.getNodeById("8441349676536412413"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), false).transformEvaluator();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("8441349676536412413"), "jetbrains.mps.baseLanguage.structure.BlockStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("8441349676536412400"), "jetbrains.mps.baseLanguage.structure.BlockStatement"))));
     }
 
@@ -1474,7 +1474,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("4693929676428713077");
       this.addNodeById("8441349676536441170");
       this.addNodeById("8441349676536441158");
-      new Transformator(SNodeOperations.cast(this.getNodeById("2932187755699941129"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), true).transform();
+      new Transformator(SNodeOperations.cast(this.getNodeById("2932187755699941129"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), false).transformEvaluator();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("2932187755699941129"), "jetbrains.mps.baseLanguage.structure.BlockStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("2932187755699941139"), "jetbrains.mps.baseLanguage.structure.BlockStatement"))));
     }
 
@@ -1529,7 +1529,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("4693929676428713077");
       this.addNodeById("8441349676536441170");
       this.addNodeById("8441349676536441158");
-      new Transformator(SNodeOperations.cast(this.getNodeById("6721540366799618944"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), true).transform();
+      new Transformator(SNodeOperations.cast(this.getNodeById("6721540366799618944"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), false).transformEvaluator();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("6721540366799618944"), "jetbrains.mps.baseLanguage.structure.BlockStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("6721540366799618957"), "jetbrains.mps.baseLanguage.structure.BlockStatement"))));
     }
 
@@ -1584,7 +1584,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("4693929676428713077");
       this.addNodeById("8441349676536441170");
       this.addNodeById("8441349676536441158");
-      new Transformator(SNodeOperations.cast(this.getNodeById("6721540366799622803"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), true).transform();
+      new Transformator(SNodeOperations.cast(this.getNodeById("6721540366799622803"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), false).transformEvaluator();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("6721540366799622803"), "jetbrains.mps.baseLanguage.structure.BlockStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("6721540366799622777"), "jetbrains.mps.baseLanguage.structure.BlockStatement"))));
     }
 
@@ -1639,7 +1639,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("4693929676428713077");
       this.addNodeById("8441349676536441170");
       this.addNodeById("8441349676536441158");
-      new Transformator(SNodeOperations.cast(this.getNodeById("6721540366799627029"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), true).transform();
+      new Transformator(SNodeOperations.cast(this.getNodeById("6721540366799627029"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), false).transformEvaluator();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("6721540366799627029"), "jetbrains.mps.baseLanguage.structure.BlockStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("6721540366799627002"), "jetbrains.mps.baseLanguage.structure.BlockStatement"))));
     }
 
@@ -1694,7 +1694,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("4693929676428713077");
       this.addNodeById("8441349676536441170");
       this.addNodeById("8441349676536441158");
-      new Transformator(SNodeOperations.cast(this.getNodeById("4693929676428713099"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), true).transform();
+      new Transformator(SNodeOperations.cast(this.getNodeById("4693929676428713099"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), false).transformEvaluator();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("4693929676428713099"), "jetbrains.mps.baseLanguage.structure.BlockStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("4693929676428713078"), "jetbrains.mps.baseLanguage.structure.BlockStatement"))));
     }
 
@@ -1749,7 +1749,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("4693929676428713077");
       this.addNodeById("8441349676536441170");
       this.addNodeById("8441349676536441158");
-      new Transformator(SNodeOperations.cast(this.getNodeById("8441349676536441172"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), true).transform();
+      new Transformator(SNodeOperations.cast(this.getNodeById("8441349676536441172"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), false).transformEvaluator();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("8441349676536441172"), "jetbrains.mps.baseLanguage.structure.BlockStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("8441349676536441159"), "jetbrains.mps.baseLanguage.structure.BlockStatement"))));
     }
 
