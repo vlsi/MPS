@@ -99,6 +99,11 @@ public abstract class AbstractModule implements IModule {
     return myModuleReference;
   }
 
+  //todo remove at least one of the two following methods
+  public String getModuleFqName() {
+    return myModuleReference.getModuleFqName();
+  }
+
   @Nullable
   public String getModuleNamespace() {
     //transient models module
@@ -799,11 +804,6 @@ public abstract class AbstractModule implements IModule {
   //todo remove this method
   public ModuleId getModuleId() {
     return myModuleReference.getModuleId();
-  }
-
-  //todo remove this method
-  public String getModuleFqName() {
-    return myModuleReference.getModuleFqName();
   }
 
   //todo remove this method

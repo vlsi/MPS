@@ -55,9 +55,4 @@ public class TemporaryModelOwner extends AbstractModule implements ModelOwner {
   public IScope getScope() {
     return GlobalScope.getInstance();
   }
-
-  @Override
-  public String getModuleFqName() {
-    return super.getModuleFqName();
-  }
 }

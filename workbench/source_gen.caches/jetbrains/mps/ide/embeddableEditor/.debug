@@ -310,7 +310,6 @@
     <nodeInfo nodeId="3939031372534978413" fileName="TemporaryModelOwner.java" startLine="45" startPosition="75" endLine="46" endPosition="46" />
     <nodeInfo nodeId="3939031372534978402" fileName="TemporaryModelOwner.java" startLine="49" startPosition="49" endLine="50" endPosition="16" />
     <nodeInfo nodeId="3939031372534978958" fileName="TemporaryModelOwner.java" startLine="55" startPosition="28" endLine="56" endPosition="37" />
-    <nodeInfo nodeId="8916327863979041169" fileName="TemporaryModelOwner.java" startLine="60" startPosition="35" endLine="61" endPosition="35" />
     <nodeInfo nodeId="3939031372534978374" fileName="TemporaryModelOwner.java" startLine="33" startPosition="0" endLine="36" endPosition="0" />
     <nodeInfo nodeId="4027972386116228903" fileName="TemporaryModelOwner.java" startLine="19" startPosition="58" endLine="23" endPosition="0" />
     <nodeInfo nodeId="4027972386116228907" fileName="TemporaryModelOwner.java" startLine="27" startPosition="58" endLine="31" endPosition="0" />
@@ -320,7 +319,6 @@
     <nodeInfo nodeId="3939031372534978394" fileName="TemporaryModelOwner.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
     <nodeInfo nodeId="4027972386116228902" fileName="TemporaryModelOwner.java" startLine="18" startPosition="108" endLine="23" endPosition="7" />
     <nodeInfo nodeId="4027972386116228906" fileName="TemporaryModelOwner.java" startLine="26" startPosition="38" endLine="31" endPosition="7" />
-    <nodeInfo nodeId="8916327863979041164" fileName="TemporaryModelOwner.java" startLine="58" startPosition="0" endLine="63" endPosition="0" />
     <nodeInfo nodeId="3939031372534978952" fileName="TemporaryModelOwner.java" startLine="52" startPosition="0" endLine="58" endPosition="0" />
     <nodeInfo nodeId="3939031372534916904" fileName="TemporaryModelOwner.java" startLine="16" startPosition="79" endLine="24" endPosition="3" />
     <nodeInfo nodeId="3939031372534977711" fileName="TemporaryModelOwner.java" startLine="25" startPosition="0" endLine="33" endPosition="0" />
@@ -332,7 +330,6 @@
     <scopeInfo nodeId="3939031372534978393" fileName="TemporaryModelOwner.java" startLine="45" startPosition="75" endLine="46" endPosition="46" />
     <scopeInfo nodeId="3939031372534978397" fileName="TemporaryModelOwner.java" startLine="49" startPosition="49" endLine="50" endPosition="16" />
     <scopeInfo nodeId="3939031372534978956" fileName="TemporaryModelOwner.java" startLine="55" startPosition="28" endLine="56" endPosition="37" />
-    <scopeInfo nodeId="8916327863979041167" fileName="TemporaryModelOwner.java" startLine="60" startPosition="35" endLine="61" endPosition="35" />
     <scopeInfo nodeId="3939031372534978374" fileName="TemporaryModelOwner.java" startLine="33" startPosition="0" endLine="36" endPosition="0" />
     <scopeInfo nodeId="4027972386116228903" fileName="TemporaryModelOwner.java" startLine="19" startPosition="58" endLine="23" endPosition="0" />
     <scopeInfo nodeId="4027972386116228907" fileName="TemporaryModelOwner.java" startLine="27" startPosition="58" endLine="31" endPosition="0" />
@@ -344,7 +341,6 @@
     </scopeInfo>
     <scopeInfo nodeId="3939031372534978394" fileName="TemporaryModelOwner.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
     <scopeInfo nodeId="3939031372534977714" fileName="TemporaryModelOwner.java" startLine="26" startPosition="38" endLine="31" endPosition="7" />
-    <scopeInfo nodeId="8916327863979041164" fileName="TemporaryModelOwner.java" startLine="58" startPosition="0" endLine="63" endPosition="0" />
     <scopeInfo nodeId="3939031372534916907" fileName="TemporaryModelOwner.java" startLine="17" startPosition="32" endLine="23" endPosition="7" />
     <scopeInfo nodeId="3939031372534978952" fileName="TemporaryModelOwner.java" startLine="52" startPosition="0" endLine="58" endPosition="0" />
     <scopeInfo nodeId="3939031372534916904" fileName="TemporaryModelOwner.java" startLine="16" startPosition="79" endLine="24" endPosition="3" />
@@ -352,7 +348,7 @@
     <unitInfo nodeId="3939031372534978371" fileName="TemporaryModelOwner.java" startLine="21" startPosition="82" endLine="21" endPosition="101" unitName="jetbrains.mps.ide.embeddableEditor.TemporaryModelOwner$3" />
     <unitInfo nodeId="4027972386116228903" fileName="TemporaryModelOwner.java" startLine="19" startPosition="46" endLine="23" endPosition="5" unitName="jetbrains.mps.ide.embeddableEditor.TemporaryModelOwner$2" />
     <unitInfo nodeId="4027972386116228907" fileName="TemporaryModelOwner.java" startLine="27" startPosition="46" endLine="31" endPosition="5" unitName="jetbrains.mps.ide.embeddableEditor.TemporaryModelOwner$1" />
-    <unitInfo nodeId="3939031372534916902" fileName="TemporaryModelOwner.java" startLine="16" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.ide.embeddableEditor.TemporaryModelOwner" />
+    <unitInfo nodeId="3939031372534916902" fileName="TemporaryModelOwner.java" startLine="16" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.ide.embeddableEditor.TemporaryModelOwner" />
   </root>
 </debugInfo>
 
