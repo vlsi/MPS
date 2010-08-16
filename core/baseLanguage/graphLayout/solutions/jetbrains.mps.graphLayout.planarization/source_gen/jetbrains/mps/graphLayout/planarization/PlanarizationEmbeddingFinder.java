@@ -12,6 +12,6 @@ public class PlanarizationEmbeddingFinder implements IEmbeddingFinder {
   }
 
   public EmbeddedGraph find(Graph graph) {
-    return new PQPlanarityTest().testPlanarity(graph, GraphOrientation.orientST(graph, ListSequence.fromList(graph.getNodes()).first(), ListSequence.fromList(graph.getNodes()).last()));
+    return new PQPlanarityTest().getEmbedding(graph, GraphOrientation.orientST(graph, ListSequence.fromList(graph.getNodes()).first(), ListSequence.fromList(graph.getNodes()).last()));
   }
 }
