@@ -114,6 +114,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   //todo remove at least one of the two following methods
+  //todo are these really one object?
   public String getModuleFqName() {
     return myModuleReference.getModuleFqName();
   }
@@ -152,27 +153,6 @@ public abstract class AbstractModule implements IModule {
     descriptor.getUsedDevkits().add(devkitRef);
     setModuleDescriptor(descriptor, true);
     save();
-  }
-
-  public void addUsedLanguage(final String languageNamespace) {
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      public void run() {
-        ModuleDescriptor md = getModuleDescriptor();
-        if (md == null) return;
-
-        for (ModuleReference r : md.getUsedLanguages()) {
-          if (languageNamespace.equals(r.getModuleFqName())) {
-            return;
-          }
-        }
-
-        ModuleReference ref = ModuleReference.fromString(languageNamespace);
-        md.getUsedLanguages().add(ref);
-
-        setModuleDescriptor(md, true);
-        save();
-      }
-    });
   }
 
   //----model roots
