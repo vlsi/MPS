@@ -100,8 +100,10 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptor implemen
 
   //------------common descriptor stuff-------------------
 
-  public boolean isInitialized() {
-    return super.isInitialized() && myModelRootManager != null;
+
+  protected void setLoadingState(ModelLoadingState state) {
+    assert state != ModelLoadingState.ROOTS_LOADED : "this state can't be used for stub models for now";
+    super.setLoadingState(state);
   }
 
   protected SModel loadModel() {

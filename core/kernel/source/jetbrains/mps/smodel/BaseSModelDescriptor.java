@@ -28,7 +28,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   private static final Logger LOG = Logger.getLogger(BaseSModelDescriptor.class);
 
   protected SModel mySModel = null;
-  protected ModelLoadingState myLoadingState = ModelLoadingState.NOT_LOADED;
+  private ModelLoadingState myLoadingState = ModelLoadingState.NOT_LOADED;
   private final Object myLoadingLock = new Object();
 
   protected SModelReference myModelReference;
@@ -52,15 +52,9 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   }
 
   public SModel getSModel() {
-    boolean fireInitialized = false;
+    boolean fireInitialized;
     synchronized (myLoadingLock) {
-      if (!isInitialized()) {
-        SModel model = loadModel();
-        model.setModelDescritor(this);
-        mySModel = model;
-        myLoadingState = ModelLoadingState.FULLY_LOADED;
-        fireInitialized = true;
-      }
+      fireInitialized = loadTo(ModelLoadingState.FULLY_LOADED);
     }
     if (fireInitialized) {
       fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
@@ -68,22 +62,32 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     return mySModel;
   }
 
+  protected boolean loadTo(ModelLoadingState state) {
+    if (getLoadingState() == ModelLoadingState.FULLY_LOADED) return false;
+    
+    SModel model = loadModel();
+    model.setModelDescritor(this);
+    mySModel = model;
+    setLoadingState(ModelLoadingState.FULLY_LOADED);
+    return true;
+  }
+
+  protected abstract SModel loadModel();
+
   public void refresh() {
     ModelAccess.assertLegalWrite();
-    if (!isInitialized()) return;
+    if (getLoadingState() == ModelLoadingState.NOT_LOADED) return;
 
     mySModel.clearAdaptersAndUserObjects();
     mySModel.refreshRefactoringHistory();
   }
 
-  protected abstract SModel loadModel();
-
   public ModelLoadingState getLoadingState() {
     return myLoadingState;
   }
 
-  public boolean isInitialized() {
-    return getLoadingState() == ModelLoadingState.FULLY_LOADED;
+  protected void setLoadingState(ModelLoadingState state) {
+    myLoadingState = state;
   }
 
   public IModelRootManager getModelRootManager() {
@@ -131,7 +135,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   }
 
   public boolean isEmpty() {
-    if (isInitialized()) {
+    if (getLoadingState().compareTo(ModelLoadingState.ROOTS_LOADED) >= 0) {
       return getSModel().getRoots().isEmpty();
     }
 

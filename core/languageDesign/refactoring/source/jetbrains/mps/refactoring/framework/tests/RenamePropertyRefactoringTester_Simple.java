@@ -59,7 +59,7 @@ public class RenamePropertyRefactoringTester_Simple implements IRefactoringTeste
           public void run() {
             try {
               System.err.println("checking a model");
-              if (sandbox1.isInitialized()) {
+              if (sandbox1.getLoadingState() != ModelLoadingState.NOT_LOADED) {
                 System.err.println("test environment is invalid: model sandbox1 is already initialized, should be not");
                 result[0] = false;
                 return;

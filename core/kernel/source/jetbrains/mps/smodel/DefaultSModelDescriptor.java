@@ -52,7 +52,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   private RefactoringHistory myRefactoringHistory;
 
 
-  private long myLastChange;       
+  private long myLastChange;
 
   private long myDiskTimestamp = -1;
   private boolean myIsTestRefactoringMode = false;
@@ -65,7 +65,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     this(manager, modelFile, modelReference, true);
   }
 
-  protected DefaultSModelDescriptor(IModelRootManager manager,IFile modelFile, SModelReference modelReference, boolean checkDup) {
+  protected DefaultSModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference, boolean checkDup) {
     super(manager, modelReference, checkDup);
     myModelFile = modelFile;
     updateLastChange();
@@ -128,9 +128,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
    */
   public void reloadFromDisk() {
     ModelAccess.assertLegalWrite();
-    if (!isInitialized()) {
-      return;
-    }
+    if (getLoadingState() == ModelLoadingState.NOT_LOADED) return;
     SModel newModel = loadModel();
     replaceModel(newModel);
     updateLastChange();
@@ -178,7 +176,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   public void save() {
     ModelAccess.assertLegalWrite();
 
-    if (!isInitialized()) return;
+    if (getLoadingState() == ModelLoadingState.NOT_LOADED) return;
 
     if (!ApplicationManager.getApplication().isDispatchThread()) {
       /*
@@ -230,7 +228,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     // Paranoid check to avoid saving model during update (hack for MPS-6772)
     if (needsReloading()) return;
 
-    SModelRepository.getInstance().markUnchanged(mySModel);
+    SModelRepository.getInstance().markChanged(this, false);
     SModel newData = myModelRootManager.saveModel(this, true);
     if (newData != null) {
       replaceModel(newData);
@@ -239,7 +237,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     updateDiskTimestamp();
 
     IFile modelFile = getModelFile();
-    if (modelFile!=null && !modelFile.isReadOnly()) {
+    if (modelFile != null && !modelFile.isReadOnly()) {
       MPSFileSynchronizer.getInstance().requestSync(modelFile);
     }
 
@@ -263,7 +261,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
       oldSModel.setModelDescritor(null);
     }
     mySModel = newModel;
-    myLoadingState = mySModel==null? ModelLoadingState.NOT_LOADED : ModelLoadingState.FULLY_LOADED;
+    setLoadingState(mySModel == null ? ModelLoadingState.NOT_LOADED : ModelLoadingState.FULLY_LOADED);
 
     myRefactoringHistory = null;
     if (mySModel != null) {
@@ -357,9 +355,9 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
       String message = "Model already registered: " + myModelReference + "\n";
       message += "file = " + myModelFile + "\n";
 
-      if (anotherModel instanceof EditableSModelDescriptor){
+      if (anotherModel instanceof EditableSModelDescriptor) {
         message += "another model's file = " + ((EditableSModelDescriptor) anotherModel).getModelFile();
-      } else{
+      } else {
         message += "another model is non-editable";
       }
       LOG.error(message);
@@ -397,7 +395,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
 
   private long fileTimestamp() {
     IFile file = getModelFile();
-    if (file==null || !file.exists()) return -1;
+    if (file == null || !file.exists()) return -1;
     return file.lastModified();
   }
 
@@ -445,6 +443,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   }
 
   //true if any refactoring was played
+
   private boolean playUsedModelDescriptorsRefactoring(SModel model, EditableSModelDescriptor usedModelDescriptor) {
     int currentVersion = usedModelDescriptor.getVersion();
     int usedVersion = model.getUsedVersion(usedModelDescriptor.getSModelReference());

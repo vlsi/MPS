@@ -90,9 +90,6 @@ public interface SModelDescriptor {
 
   //------todo get rid of
 
-  boolean isInitialized();
-
-
   @Deprecated
   Set<IModule> getModules();
 }

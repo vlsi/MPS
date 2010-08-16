@@ -57,7 +57,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
     for (SModelDescriptor sm : scope.getModelDescriptors()) {
       if (!SModelStereotype.isUserModel(sm)) continue;
 
-      if (sm.isInitialized()) {
+      if (sm.getLoadingState() == ModelLoadingState.FULLY_LOADED) {
         findDirectly.add(sm);
         continue;
       }
