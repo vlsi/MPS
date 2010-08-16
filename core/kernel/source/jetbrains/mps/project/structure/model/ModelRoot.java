@@ -19,12 +19,10 @@ public class ModelRoot {
   public static final String PATH = "path";
   public static final String PREFIX = "prefix";
   public static final String MANAGER = "manager";
-  public static final String OLD_MANAGER = "handlerClass";
 
   private String myPath;
   private String myPrefix;
   private ModelRootManager myManager;
-  private String myHandlerClass;
 
   public String getPath() {
     return myPath;
@@ -40,14 +38,6 @@ public class ModelRoot {
 
   public void setPrefix(String prefix) {
     myPrefix = prefix;
-  }
-
-  public String getHandlerClass() {
-    return myHandlerClass;
-  }
-
-  public void setHandlerClass(String handlerClass) {
-    myHandlerClass = handlerClass;
   }
 
   public ModelRootManager getManager() {
@@ -66,5 +56,19 @@ public class ModelRoot {
     result.myManager = myManager == null ? null : myManager.getCopy();
 
     return result;
+  }
+
+  //-------todo:remove
+
+  public static final String OLD_MANAGER = "handlerClass";
+
+  private String myHandlerClass;
+
+  public String getHandlerClass() {
+    return myHandlerClass;
+  }
+
+  public void setHandlerClass(String handlerClass) {
+    myHandlerClass = handlerClass;
   }
 }
