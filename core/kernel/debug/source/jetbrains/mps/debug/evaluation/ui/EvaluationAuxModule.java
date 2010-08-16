@@ -28,7 +28,7 @@ public class EvaluationAuxModule extends AbstractModule {
   public EvaluationAuxModule(Project project) {
     this.myProject = project;
     ModuleReference reference = ModuleReference.fromString(UUID.randomUUID() + "(Debug Evaluation Aux Module)");
-    this.setModulePointer(reference);
+    this.setModuleReference(reference);
     this.init();
   }
 

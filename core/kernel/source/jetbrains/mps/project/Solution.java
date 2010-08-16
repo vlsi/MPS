@@ -128,7 +128,7 @@ public class Solution extends AbstractModule {
       mp = new ModuleReference(FileUtil.getCanonicalPath(myDescriptorFile.getAbsolutePath()), mySolutionDescriptor.getUUID());
     }
 
-    setModulePointer(mp);
+    setModuleReference(mp);
 
     reloadAfterDescriptorChange();
 

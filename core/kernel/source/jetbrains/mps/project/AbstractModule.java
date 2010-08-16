@@ -79,7 +79,9 @@ public abstract class AbstractModule implements IModule {
 
   private ModuleReference myModuleReference;
 
-  protected void setModulePointer(@NotNull ModuleReference reference) {
+  //----reference
+
+  protected void setModuleReference(@NotNull ModuleReference reference) {
     LOG.assertLog(myModuleReference == null || ObjectUtils.equals(myModuleReference.getModuleId(), reference.getModuleId()), reference.getModuleFqName());
 
     ModuleReference oldValue = myModuleReference;
@@ -91,8 +93,6 @@ public abstract class AbstractModule implements IModule {
       MPSModuleRepository.getInstance().moduleFqNameChanged(this, oldValue.getModuleFqName());
     }
   }
-
-  //----reference
 
   @NotNull
   public ModuleReference getModuleReference() {

@@ -54,7 +54,7 @@ public class Generator extends AbstractModule{
       save();
     }
     ModuleReference mp = new ModuleReference(myGeneratorDescriptor.getGeneratorUID(), ModuleId.fromString(uuid));
-    setModulePointer(mp);
+    setModuleReference(mp);
 
     upgradeGeneratorDescriptor();
     reloadAfterDescriptorChange();

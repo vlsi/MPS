@@ -1607,7 +1607,7 @@
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3939031372534916907">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8916327863979127770">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="8916327863979127771">
-            <link role="baseMethodDeclaration:3" targetNodeId="2v.~AbstractModule.setModulePointer(jetbrains.mps.project.structure.modules.ModuleReference):void" resolveInfo="setModulePointer" />
+            <link role="baseMethodDeclaration:3" targetNodeId="2v.~AbstractModule.setModuleReference(jetbrains.mps.project.structure.modules.ModuleReference):void" resolveInfo="setModuleReference" />
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8916327863979127774">
               <link role="baseMethodDeclaration:3" targetNodeId="35.~ModuleReference.fromString(java.lang.String):jetbrains.mps.project.structure.modules.ModuleReference" resolveInfo="fromString" />
               <link role="classConcept:3" targetNodeId="35.~ModuleReference" resolveInfo="ModuleReference" />
