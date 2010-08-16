@@ -50,13 +50,22 @@ import java.util.*;
 public abstract class AbstractModule implements IModule {
   private static final Logger LOG = Logger.getLogger(AbstractModule.class);
 
-  @Deprecated
-  public static final String RUNTIME_JAR_SUFFIX = MPSExtentions.RUNTIME_ARCH;
-  @Deprecated
-  public static final String PACKAGE_SUFFIX = MPSExtentions.MPS_ARCH;
-
   public static final String MODULE_DIR = "module";
   public static final String CACHES_DIR = "caches";
+
+  private boolean myModelsRead = false;
+  private boolean myInitialized = false;
+
+  protected IFile myDescriptorFile;
+  private ModuleReference myModuleReference;
+  private List<SModelRoot> mySModelRoots = new ArrayList<SModelRoot>();
+  private Set<String> myIncludedStubPaths;
+  private ModuleScope myScope = createScope();
+
+  private CompositeClassPathItem myCachedClassPathItem;
+  private List<IModule> myCachedExplicitlyDependentModules;
+
+  //-----model creation 
 
   private static Set<ModelCreationListener> ourModelCreationListeners = new HashSet<ModelCreationListener>();
 
@@ -64,20 +73,25 @@ public abstract class AbstractModule implements IModule {
     ourModelCreationListeners.add(listener);
   }
 
-  private boolean myModelsRead = false;
-  private boolean myInitialized = false;
-  protected IFile myDescriptorFile;
+  public final EditableSModelDescriptor createModel(SModelFqName name, SModelRoot root) {
+    IModelRootManager manager = root.getManager();
 
-  private ModuleScope myScope = createScope();
+    if (!manager.isNewModelsSupported()) {
+      LOG.error("Trying to create model root manager in root which doesn't support new models");
+      return null;
+    }
 
-  private List<SModelRoot> mySModelRoots = new ArrayList<SModelRoot>();
+    EditableSModelDescriptor model = (EditableSModelDescriptor) manager.createNewModel(root, name, this);
+    SModelRepository.getInstance().markChanged(model, true);
 
-  private Set<String> myIncludedStubPaths;
-  private CompositeClassPathItem myCachedClassPathItem;
+    for (ModelCreationListener listener : ourModelCreationListeners) {
+      if (listener.isApplicable(model)) {
+        listener.onCreate(model);
+      }
+    }
 
-  private List<IModule> myExplicitlyDependentModules;
-
-  private ModuleReference myModuleReference;
+    return model;
+  }
 
   //----reference
 
@@ -214,20 +228,20 @@ public abstract class AbstractModule implements IModule {
   }
 
   public List<IModule> getExplicitlyDependOnModules(boolean includeBootstrap) {
-    if (myExplicitlyDependentModules == null) {
+    if (myCachedExplicitlyDependentModules == null) {
       Set<IModule> res = new LinkedHashSet<IModule>();
       addExplicitlyDependendOnModules(res);
-      myExplicitlyDependentModules = new ArrayList<IModule>(res);
+      myCachedExplicitlyDependentModules = new ArrayList<IModule>(res);
     }
 
 
     if (includeBootstrap) {
-      List<IModule> result = new ArrayList<IModule>(myExplicitlyDependentModules);
+      List<IModule> result = new ArrayList<IModule>(myCachedExplicitlyDependentModules);
       result.addAll(LibraryManager.getInstance().getBootstrapModules(Language.class));
       return result;
     }
 
-    return Collections.unmodifiableList(myExplicitlyDependentModules);
+    return Collections.unmodifiableList(myCachedExplicitlyDependentModules);
   }
 
   protected void addExplicitlyDependendOnModules(Set<IModule> result) {
@@ -553,26 +567,6 @@ public abstract class AbstractModule implements IModule {
     }
   }
 
-  public final EditableSModelDescriptor createModel(SModelFqName name, SModelRoot root) {
-    IModelRootManager manager = root.getManager();
-
-    if (!manager.isNewModelsSupported()) {
-      LOG.error("Trying to create model root manager in root which doesn't support new models");
-      return null;
-    }
-
-    EditableSModelDescriptor model = (EditableSModelDescriptor) manager.createNewModel(root, name, this);
-    SModelRepository.getInstance().markChanged(model, true);
-
-    for (ModelCreationListener listener : ourModelCreationListeners) {
-      if (listener.isApplicable(model)) {
-        listener.onCreate(model);
-      }
-    }
-
-    return model;
-  }
-
   public Set<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm) {
     return new LinkedHashSet<SModelDescriptor>();
   }
@@ -746,7 +740,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   protected void invalidateDependencies() {
-    myExplicitlyDependentModules = null;
+    myCachedExplicitlyDependentModules = null;
   }
 
   protected ModuleDescriptor loadDescriptor() {
@@ -760,6 +754,10 @@ public abstract class AbstractModule implements IModule {
   }
 
   public class ModuleScope extends DefaultScope {
+    protected ModuleScope() {
+
+    }
+
     public AbstractModule getModule() {
       return AbstractModule.this;
     }
@@ -811,4 +809,10 @@ public abstract class AbstractModule implements IModule {
   public String getModuleUID() {
     return getModuleFqName();
   }
+
+  @Deprecated
+  public static final String RUNTIME_JAR_SUFFIX = MPSExtentions.RUNTIME_ARCH;
+
+  @Deprecated
+  public static final String PACKAGE_SUFFIX = MPSExtentions.MPS_ARCH;
 }
