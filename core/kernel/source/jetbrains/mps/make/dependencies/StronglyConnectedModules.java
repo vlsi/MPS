@@ -25,7 +25,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import java.util.*;
 
 public class StronglyConnectedModules {
-
   private static final StronglyConnectedModules INSTANCE = new StronglyConnectedModules();
 
   private StronglyConnectedModules() {
@@ -35,12 +34,8 @@ public class StronglyConnectedModules {
     return INSTANCE;
   }
 
-  public <M extends IModule> List<Set<M>> getStronglyConnectedComponents(Set<M> modules, boolean includeBootstrap) {
-    return getStronglyConnectedComponents(modules, new DefaultModuleDecoratorBuilder<M>(includeBootstrap));
-  }
-
   public <M extends IModule> List<Set<M>> getStronglyConnectedComponents(Set<M> modules) {
-    return getStronglyConnectedComponents(modules, new DefaultModuleDecoratorBuilder<M>(false));
+    return getStronglyConnectedComponents(modules, new DefaultModuleDecoratorBuilder<M>());
   }
 
   public <M extends IModule, D extends IModuleDecorator<M>> List<Set<M>> getStronglyConnectedComponents(Set<M> modules, IModuleDecoratorBuilder<M, D> decoratorBuilder) {
@@ -84,30 +79,22 @@ public class StronglyConnectedModules {
   }
 
   private static class DefaultModuleDecoratorBuilder<M extends IModule> implements IModuleDecoratorBuilder<M, DefaultModuleDecorator<M>> {
-    private final boolean myIncludeBootstrap;
-
-    public DefaultModuleDecoratorBuilder(boolean includeBootstrap) {
-      myIncludeBootstrap = includeBootstrap;
-    }
 
     public DefaultModuleDecorator<M> decorate(M module) {
-      return new DefaultModuleDecorator<M>(module, myIncludeBootstrap);
+      return new DefaultModuleDecorator<M>(module);
     }
   }
 
   private static class DefaultModuleDecorator<M extends IModule> implements IModuleDecorator<M> {
-
     private final M myModule;
     private final Set<DefaultModuleDecorator> myNext = new LinkedHashSet<DefaultModuleDecorator>();
-    private boolean myIncludeBootstrap;
 
-    public DefaultModuleDecorator(M module, boolean includeBootstrap) {
+    public DefaultModuleDecorator(M module) {
       myModule = module;
-      myIncludeBootstrap = includeBootstrap;
     }
 
     public void fill(Map<IModule, IModuleDecorator<M>> map) {
-      List<IModule> dependency = myModule.getExplicitlyDependOnModules(myIncludeBootstrap);
+      List<IModule> dependency = myModule.getExplicitlyDependOnModules();
       List<IModule> dependencyCopy = new ArrayList<IModule>();
       dependencyCopy.addAll(dependency);
       Collections.sort(dependencyCopy, new Comparator<IModule>() {

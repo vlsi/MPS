@@ -90,7 +90,7 @@ public class ModuleMaker {
       int errorCount = 0;
       int warnCount = 0;
       boolean compiled = false;
-      List<Set<IModule>> schedule = StronglyConnectedModules.getInstance().getStronglyConnectedComponents(toCompile, false);
+      List<Set<IModule>> schedule = StronglyConnectedModules.getInstance().getStronglyConnectedComponents(toCompile);
 
       for (Set<IModule> cycle : schedule) {
         if (indicator.isCanceled()) {
