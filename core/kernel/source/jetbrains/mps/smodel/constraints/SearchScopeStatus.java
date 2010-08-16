@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel.constraints;
 
-import jetbrains.mps.ide.Status;
+import jetbrains.mps.util.Status;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.search.ISearchScope;
