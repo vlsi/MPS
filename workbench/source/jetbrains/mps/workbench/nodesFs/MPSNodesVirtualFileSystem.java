@@ -201,7 +201,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
 
   private class MyModelRepositoryListener extends SModelRepositoryAdapter {
     public void beforeModelRemoved(SModelDescriptor modelDescriptor) {
-      if (modelDescriptor.getLoadingState() != ModelLoadingState.NOT_LOADED) return;
+      if (modelDescriptor.getLoadingState() == ModelLoadingState.NOT_LOADED) return;
 
       for (final SNode root : modelDescriptor.getSModel().getRoots()) {
         final SNodePointer pointer = new SNodePointer(root);
