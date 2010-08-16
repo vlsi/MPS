@@ -81,8 +81,6 @@ public interface IModule extends ModelOwner {
 
   Set<Language> getImplicitlyImportedLanguages(SModelDescriptor sm);
 
-  <T extends IModule> Set<T> getAllDependOnModules(Class<T> cls);
-
   IFile getDescriptorFile();
 
   ModuleDescriptor getModuleDescriptor();

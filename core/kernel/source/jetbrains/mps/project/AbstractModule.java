@@ -176,24 +176,6 @@ public abstract class AbstractModule implements IModule {
 
   //----get deps
 
-  public <T extends IModule> Set<T> getAllDependOnModules(Class<T> cls) {
-    Set<T> modules = new DependencyCollector(this, cls).collect();
-
-    // add bootstrap languages
-    if (Language.class.isAssignableFrom(cls)) {
-      Set<Language> languages = LibraryManager.getInstance().getBootstrapModules(Language.class);
-      for (Language language : languages) {
-        //noinspection SuspiciousMethodCalls
-        if (!modules.contains(language)) {
-          modules.add((T) language);
-          modules.addAll(new DependencyCollector(this, cls).collect());
-        }
-      }
-    }
-
-    return modules;
-  }
-
   public List<Dependency> getDependOn() {
     List<Dependency> result = new ArrayList<Dependency>();
     ModuleDescriptor descriptor = getModuleDescriptor();
