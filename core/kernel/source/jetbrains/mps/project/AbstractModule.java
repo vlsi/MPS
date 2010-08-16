@@ -185,6 +185,7 @@ public abstract class AbstractModule implements IModule {
     return result;
   }
 
+  //todo remove at least one of the two following methods
   public final List<IModule> getExplicitlyDependOnModules() {
     if (myCachedExplicitlyDependentModules == null) {
       Set<IModule> res = new LinkedHashSet<IModule>();
@@ -193,6 +194,12 @@ public abstract class AbstractModule implements IModule {
     }
 
     return Collections.unmodifiableList(myCachedExplicitlyDependentModules);
+  }
+
+  public List<IModule> getExplicitlyDependOnModulesWithBootstrap() {
+    List<IModule> result = new ArrayList<IModule>(getExplicitlyDependOnModules());
+    result.addAll(LibraryManager.getInstance().getBootstrapModules(Language.class));
+    return result;
   }
 
   protected void addExplicitlyDependendOnModules(Set<IModule> result) {
@@ -747,13 +754,6 @@ public abstract class AbstractModule implements IModule {
   }
 
   //----to remove
-
-  @Deprecated
-  public List<IModule> getExplicitlyDependOnModulesWithBootstrap() {
-    List<IModule> result = new ArrayList<IModule>(getExplicitlyDependOnModules());
-    result.addAll(LibraryManager.getInstance().getBootstrapModules(Language.class));
-    return result;
-  }
 
   @Deprecated
   public ModuleId getModuleId() {
