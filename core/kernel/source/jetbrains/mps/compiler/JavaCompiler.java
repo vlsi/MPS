@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.compiler;
 
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.util.AbstractClassLoader;
 import jetbrains.mps.vfs.MPSExtentions;
@@ -26,19 +25,16 @@ import org.eclipse.jdt.internal.compiler.classfmt.ClassFileConstants;
 import org.eclipse.jdt.internal.compiler.env.NameEnvironmentAnswer;
 import org.eclipse.jdt.internal.compiler.impl.CompilerOptions;
 import org.eclipse.jdt.internal.compiler.problem.DefaultProblemFactory;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 public class JavaCompiler {
-  private static final Logger LOG = Logger.getLogger(JavaCompiler.class);
-
-  private static final int MAX_RESULTS = 100;
-
   private Map<String, CompilationUnit> myCompilationUnits = new HashMap<String, CompilationUnit>();
-  private List<CompilationResult> myCompilationResults = new LinkedList<CompilationResult>();
   private Map<String, byte[]> myClasses = new HashMap<String, byte[]>();
 
   public JavaCompiler() {
@@ -66,66 +62,11 @@ public class JavaCompiler {
     return new MapClassLoader(parent);
   }
 
-  public List<CompilationResult> getCompilationResults() {
-    return myCompilationResults;
-  }
-
-  public void putResultToDir(String packName, File baseClassesDir) {
-    String packPath = packName.replace('.', File.separatorChar);
-    File outputDir = new File(baseClassesDir.getAbsolutePath() + File.separator + packPath);
-
-    if (outputDir.exists()) {
-      for (File file : outputDir.listFiles()) {
-        if (file.isFile()) {
-          file.delete();
-        }
-      }
-    } else {
-      outputDir.mkdirs();
-    }
-
-    for (String clsName : getCompiledClasses()) {
-      if (clsName.startsWith(packName)) {
-        String name = clsName.substring(packName.length() + 1);
-        File outputFile = new File(outputDir, name + ".class");
-        FileOutputStream output = null;
-        try {
-          output = new FileOutputStream(outputFile);
-          output.write(getClass(clsName));
-        } catch (IOException e) {
-          LOG.error(e);
-        } finally {
-          if (output != null) {
-            try {
-              output.close();
-            } catch (IOException e) {
-              LOG.error(e);
-            }
-          }
-        }
-      } else {
-        LOG.warning("WARNING : Class to be put has a wrong package");
-      }
-    }
-  }
-
   public Map<String, byte[]> getClasses() {
     return Collections.unmodifiableMap(myClasses);
   }
 
-  private Set<String> getCompiledClasses() {
-    return new HashSet<String>(myClasses.keySet());
-  }
-
-  private byte[] getClass(String name) {
-    byte[] bytes = myClasses.get(name);
-    byte[] result = new byte[bytes.length];
-    System.arraycopy(bytes, 0, result, 0, bytes.length);
-    return bytes;
-  }
-
   private class MapClassLoader extends AbstractClassLoader {
-
     private MapClassLoader(ClassLoader parent) {
       super(parent);
     }
@@ -169,22 +110,50 @@ public class JavaCompiler {
     }
   }
 
+  public static String getClassName(ClassFile file) {
+    StringBuilder sb = new StringBuilder(100);
+    for (int i = 0; i < file.getCompoundName().length; i++) {
+      sb.append(file.getCompoundName()[i]);
+      if (i != file.getCompoundName().length - 1) {
+        sb.append('.');
+      }
+    }
+
+    return sb.toString();
+  }
+
   private class MyCompilerRequestor implements ICompilerRequestor {
     public void acceptResult(CompilationResult result) {
       for (ClassFile file : result.getClassFiles()) {
-        String name = "";
-        for (int i = 0; i < file.getCompoundName().length; i++) {
-          name += new String(file.getCompoundName()[i]);
-          if (i != file.getCompoundName().length - 1) {
-            name += ".";
-          }
-        }
-        myClasses.put(name, file.getBytes());
+        onClass(file);
+        myClasses.put(getClassName(file), file.getBytes());
       }
 
-      if (myCompilationResults.size() <= MAX_RESULTS){
-        myCompilationResults.add(result);
-      }
+      onCompilationResult(result);
     }
+  }
+
+  //-----------event handling------------
+
+  private void onCompilationResult(CompilationResult r) {
+    for (CompilationResultListener l : myCompilationResultListeners) {
+      l.onCompilationResult(r);
+    }
+  }
+
+  private void onClass(ClassFile f) {
+    for (CompilationResultListener l : myCompilationResultListeners) {
+      l.onClass(f);
+    }
+  }
+
+  private ArrayList<CompilationResultListener> myCompilationResultListeners = new ArrayList<CompilationResultListener>();
+
+  public void addCompilationResultListener(@NotNull CompilationResultListener l) {
+    myCompilationResultListeners.add(l);
+  }
+
+  public void removeCompilationResultListener(CompilationResultListener l) {
+    myCompilationResultListeners.remove(l);
   }
 }

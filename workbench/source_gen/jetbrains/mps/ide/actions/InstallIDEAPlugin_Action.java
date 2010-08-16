@@ -12,7 +12,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import java.io.File;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.ide.SystemInfo;
+import jetbrains.mps.util.SystemInfo;
 import jetbrains.mps.util.FileUtil;
 import javax.swing.JOptionPane;
 import java.io.IOException;

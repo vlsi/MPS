@@ -25,10 +25,10 @@ import java.util.List;
 import java.util.Set;
 
 public class GeneratorConfigUtil {
-  public static List<EditableSModelDescriptor> getLanguageModels(Language lang) {
-    List<EditableSModelDescriptor> inputModels = new ArrayList<EditableSModelDescriptor>();
+  public static List<SModelDescriptor> getLanguageModels(Language lang) {
+    List<SModelDescriptor> inputModels = new ArrayList<SModelDescriptor>();
     for (LanguageAspect aspect : LanguageAspect.values()) {
-      EditableSModelDescriptor model = aspect.get(lang);
+      SModelDescriptor model = aspect.get(lang);
       if (model != null) {
         inputModels.add(model);
       }

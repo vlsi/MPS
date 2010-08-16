@@ -61,11 +61,11 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   private boolean myIsChanged = false;
 
 
-  public DefaultSModelDescriptor(IModelRootManager manager, @NotNull IFile modelFile, SModelReference modelReference) {
+  public DefaultSModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference) {
     this(manager, modelFile, modelReference, true);
   }
 
-  protected DefaultSModelDescriptor(IModelRootManager manager,@NotNull IFile modelFile, SModelReference modelReference, boolean checkDup) {
+  protected DefaultSModelDescriptor(IModelRootManager manager,IFile modelFile, SModelReference modelReference, boolean checkDup) {
     super(manager, modelReference, checkDup);
     myModelFile = modelFile;
     updateLastChange();
@@ -81,7 +81,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     });
   }
 
-  @NotNull
   public IFile getModelFile() {
     return myModelFile;
   }
@@ -240,7 +239,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     updateDiskTimestamp();
 
     IFile modelFile = getModelFile();
-    if (!modelFile.isReadOnly()) {
+    if (modelFile!=null && !modelFile.isReadOnly()) {
       MPSFileSynchronizer.getInstance().requestSync(modelFile);
     }
 
@@ -398,7 +397,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
 
   private long fileTimestamp() {
     IFile file = getModelFile();
-    if (!file.exists()) return -1;
+    if (file==null || !file.exists()) return -1;
     return file.lastModified();
   }
 

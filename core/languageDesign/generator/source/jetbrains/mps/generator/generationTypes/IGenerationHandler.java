@@ -24,7 +24,6 @@ import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Pair;
 
 import java.rmi.RemoteException;
@@ -44,7 +43,7 @@ public interface IGenerationHandler {
   /*
    * Next module started.
    */
-  void startModule(IModule module, List<EditableSModelDescriptor> inputModels, Project project, ITaskProgressHelper progressHelper);
+  void startModule(IModule module, List<SModelDescriptor> inputModels, Project project, ITaskProgressHelper progressHelper);
 
   /*
    * Handle generation result of a model.
@@ -54,10 +53,10 @@ public interface IGenerationHandler {
   /*
    * Estimates execution time of compile() method in milliseconds.
    */
-  long estimateCompilationMillis(GenerationInput input);
+  long estimateCompilationMillis(List<Pair<IModule,List<SModelDescriptor>>> input);
 
   /*
    * Post-process generated output: compile, reload, etc. Once per generation cycle. 
    */
-  boolean compile(Project p, GenerationInput input, boolean generationOK, ITaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException;
+  boolean compile(Project p, List<Pair<IModule,List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException;
 }

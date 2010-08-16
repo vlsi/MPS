@@ -58,7 +58,7 @@ public class ModuleTestConfiguration extends BaseTestConfiguration {
     if (module instanceof Solution) {
       Solution solution = (Solution) module;
 
-      List<EditableSModelDescriptor> models = new ArrayList<EditableSModelDescriptor>();
+      List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
       for (SModelDescriptor sm : solution.getOwnModelDescriptors()) {
         if (!fullRegeneration && !ModelGenerationStatusManager.getInstance().generationRequired(sm, project, NoCachesStrategy.createBuildCachesStrategy())) {
           continue;
@@ -78,9 +78,9 @@ public class ModuleTestConfiguration extends BaseTestConfiguration {
     } else if (module instanceof Language) {
       Language lang = (Language) module;
 
-      List<EditableSModelDescriptor> inputModels = GeneratorConfigUtil.getLanguageModels(lang);
+      List<SModelDescriptor> inputModels = GeneratorConfigUtil.getLanguageModels(lang);
 
-      Iterator<EditableSModelDescriptor> it = inputModels.iterator();
+      Iterator<SModelDescriptor> it = inputModels.iterator();
       while (it.hasNext()) {
         SModelDescriptor model = it.next();
         if ((!fullRegeneration && !ModelGenerationStatusManager.getInstance().generationRequired(model, project, NoCachesStrategy.createBuildCachesStrategy())) ||

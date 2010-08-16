@@ -70,12 +70,12 @@ public class ModelsTestConfiguration extends BaseTestConfiguration {
       throw new IllegalGeneratorConfigurationException("there is no module that can be used to generate models " + modelDescriptors);
     }
 
-    List<EditableSModelDescriptor> models = new ArrayList<EditableSModelDescriptor>();
+    List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
     for (SModelDescriptor sm : modelDescriptors) {
       if (!fullRegeneration && !ModelGenerationStatusManager.getInstance().generationRequired(sm, project, NoCachesStrategy.createBuildCachesStrategy())) {
         continue;
       }
-      models.add(((EditableSModelDescriptor) sm));
+      models.add(sm);
     }
 
     return new GenParameters(models, module);

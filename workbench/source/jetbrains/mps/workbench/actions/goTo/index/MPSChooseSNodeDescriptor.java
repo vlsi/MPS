@@ -65,9 +65,10 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
       if (!(sm instanceof EditableSModelDescriptor)) continue;
       EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
       IFile modelFile = esm.getModelFile();
+      if (modelFile == null) continue;
       VirtualFile vf = modelFile.toVirtualFile();
       if (vf == null) continue; // e.g. model was deleted
-      
+
       int fileId = FileBasedIndex.getFileId(vf);
 
       List<List<SNodeDescriptor>> descriptors = fileBasedIndex.getValues(indexName, fileId, GlobalSearchScope.fileScope(getProject(), vf));

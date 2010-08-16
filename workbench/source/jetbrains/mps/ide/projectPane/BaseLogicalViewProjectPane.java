@@ -69,14 +69,14 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   };
 
   private GenerationListener myGenerationListener = new GenerationListener() {
-    public void beforeGeneration(List<Pair<EditableSModelDescriptor, IOperationContext>> inputModels) {
+    public void beforeGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
 
     }
 
-    public void modelsGenerated(List<Pair<EditableSModelDescriptor, IOperationContext>> models, boolean success) {
+    public void modelsGenerated(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
     }
 
-    public void afterGeneration(List<Pair<EditableSModelDescriptor, IOperationContext>> inputModels) {
+    public void afterGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
       // rebuild tree in case of 'cancel' too (need to get 'transient models' node rebuilt)
       ModelAccess.instance().runReadInEDT(new Runnable() {
         public void run() {
@@ -371,7 +371,9 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     if (descriptors != null) {
       for (SModelDescriptor descriptor : descriptors) {
         if (!(descriptor instanceof EditableSModelDescriptor)) continue;
-        IFile ifile = ((EditableSModelDescriptor) descriptor).getModelFile();
+        EditableSModelDescriptor emd = (EditableSModelDescriptor) descriptor;
+        IFile ifile = emd.getModelFile();
+        if (ifile == null) continue;
         VirtualFile vfile = VFileSystem.getFile(ifile);
         if (vfile == null) continue;
         selectedFilesList.add(vfile);

@@ -32,7 +32,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class GenerateModelsAction extends BaseAction {
-  private List<EditableSModelDescriptor> myModels;
+  private List<SModelDescriptor> myModels;
   private IOperationContext myContext;
   private GeneratorManager myGenManager;
   private ProjectPluginManager myPluginManager;
@@ -90,19 +90,16 @@ public abstract class GenerateModelsAction extends BaseAction {
     myGenManager = project.getComponent(GeneratorManager.class);
     List<SModelDescriptor> models = e.getData(MPSDataKeys.MODELS);
 
-    myModels = new ArrayList<EditableSModelDescriptor>();
+    myModels = new ArrayList<SModelDescriptor>();
 
     if (models!=null){
-      for (SModelDescriptor model:models){
-        if (!(model instanceof EditableSModelDescriptor)) continue;
-        myModels.add(((EditableSModelDescriptor) model));
-      }
+      myModels.addAll(models);
     }
 
     if (myModels.isEmpty()) {
       SModelDescriptor model = e.getData(MPSDataKeys.CONTEXT_MODEL);
-      if (model instanceof EditableSModelDescriptor) {
-        myModels.add(((EditableSModelDescriptor) model));
+      if (model != null) {
+        myModels.add(model);
       }
     }
     if (myModels.isEmpty()) return false;

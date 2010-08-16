@@ -12,6 +12,7 @@ import jetbrains.mps.make.ModuleMaker;
 import java.util.Collections;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import java.util.List;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.generator.GeneratorManager;
@@ -19,7 +20,6 @@ import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.SModelRepository;
@@ -97,9 +97,9 @@ public class ChangeModelProcessor {
     return this.generate(this.myModelToChange, generationHandler);
   }
 
-  private List<String> generate(EditableSModelDescriptor model, IGenerationHandler generationHandler) {
+  private List<String> generate(SModelDescriptor model, IGenerationHandler generationHandler) {
     final List<String> results = ListSequence.fromList(new ArrayList<String>());
-    List<EditableSModelDescriptor> models = Collections.singletonList(model);
+    List<SModelDescriptor> models = Collections.singletonList(model);
     GeneratorManager gm = this.myProject.getComponent(GeneratorManager.class);
     IMessageHandler handler = new IMessageHandler() {
       public void handle(Message msg) {

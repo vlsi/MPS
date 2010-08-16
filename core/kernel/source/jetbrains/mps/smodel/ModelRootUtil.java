@@ -23,6 +23,7 @@ public class ModelRootUtil {
 
     if (!(model instanceof EditableSModelDescriptor)) return result;
     IFile modelFile = ((EditableSModelDescriptor) model).getModelFile();
+    if (modelFile == null) return result;
 
     for (IModule module : model.getModules()) {
       for (SModelRoot modelRoot : module.getSModelRoots()) {

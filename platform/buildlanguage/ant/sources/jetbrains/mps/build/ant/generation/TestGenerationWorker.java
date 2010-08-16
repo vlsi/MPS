@@ -27,6 +27,7 @@ import jetbrains.mps.build.ant.WhatToDo;
 import jetbrains.mps.build.ant.generation.unittest.UnitTestAdapter;
 import jetbrains.mps.build.ant.generation.unittest.UnitTestOutputReader;
 import jetbrains.mps.build.ant.generation.unittest.UnitTestRunner;
+import jetbrains.mps.compiler.CompilationResultAdapter;
 import jetbrains.mps.compiler.JavaCompiler;
 import jetbrains.mps.generator.GenerationAdapter;
 import jetbrains.mps.generator.GenerationListener;
@@ -199,17 +200,17 @@ public class TestGenerationWorker extends GeneratorWorker {
     if (isGeneratePerfomanceReport()) {
       return new GenerationAdapter() {
         @Override
-        public void beforeGeneration(List<Pair<EditableSModelDescriptor, IOperationContext>> inputModels) {
+        public void beforeGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
           Long startTime = System.currentTimeMillis();
-          for (Pair<EditableSModelDescriptor, IOperationContext> pair : inputModels) {
+          for (Pair<SModelDescriptor, IOperationContext> pair : inputModels) {
             myPerfomanceMap.put(pair.o1, startTime);
           }
         }
 
         @Override
-        public void afterGeneration(List<Pair<EditableSModelDescriptor, IOperationContext>> inputModels) {
+        public void afterGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
           Long finishTime = System.currentTimeMillis();
-          for (Pair<EditableSModelDescriptor, IOperationContext> pair : inputModels) {
+          for (Pair<SModelDescriptor, IOperationContext> pair : inputModels) {
             Long startTime = myPerfomanceMap.get(pair.o1);
             myPerfomanceMap.put(pair.o1, finishTime - startTime);
           }
@@ -256,16 +257,18 @@ public class TestGenerationWorker extends GeneratorWorker {
     outputModels.addAll(myGenerationHandler.getOutputModels());
 
     // compile
-    List<CompilationResult> compilationResult = null;
+    final List<CompilationResult> compilationResult = new ArrayList<CompilationResult>();
     if (generationOk && isCompileSet()) {
-      compilationResult = ModelAccess.instance().runReadAction(new Computable<List<CompilationResult>>() {
-        public List<CompilationResult> compute() {
-          return myGenerationHandler.compile(ITaskProgressHelper.EMPTY);
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          CompilationResultAdapter listener = new CompilationResultAdapter() {
+            public void onCompilationResult(CompilationResult r) {
+              compilationResult.add(r);
+            }
+          };
+          myGenerationHandler.compile(ITaskProgressHelper.EMPTY, listener);
         }
       });
-    }
-    if (compilationResult == null) {
-      compilationResult = Collections.EMPTY_LIST;
     }
 
     boolean compilatonOk = true;
@@ -364,7 +367,6 @@ public class TestGenerationWorker extends GeneratorWorker {
         }
         ClassLoader classLoader = generationHandler.getCompiler().getClassLoader(baseClassLoader);
         Boolean isNotClassConcept = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-          @Override
           public Boolean compute() {
             return !outputRoot.isInstanceOfConcept(ClassConcept.concept);
           }
@@ -374,7 +376,6 @@ public class TestGenerationWorker extends GeneratorWorker {
         }
         try {
           String className = ModelAccess.instance().runReadAction(new Computable<String>() {
-            @Override
             public String compute() {
               return model.getLongName() + "." + outputRoot.getName();
             }
@@ -527,7 +528,7 @@ public class TestGenerationWorker extends GeneratorWorker {
     }
 
     public void generate(GeneratorManager gm, IGenerationHandler generationHandler, IMessageHandler messageHandler) {
-      gm.generateModels(Collections.singletonList(mySModel),
+      gm.generateModels(Collections.<SModelDescriptor>singletonList(mySModel),
         new ModuleContext(myModule, myProject),
         generationHandler,
         new EmptyProgressIndicator(),

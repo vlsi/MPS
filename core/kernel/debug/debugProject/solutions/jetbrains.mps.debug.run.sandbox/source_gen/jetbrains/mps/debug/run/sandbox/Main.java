@@ -53,8 +53,10 @@ public class Main {
     doSomething();
     int[] array = {1 ,2};
     int j = 50;
+    Integer intVar = 200;
     while (j > 0) {
       j--;
+      intVar--;
     }
     do {
       System.err.println("do ... while");

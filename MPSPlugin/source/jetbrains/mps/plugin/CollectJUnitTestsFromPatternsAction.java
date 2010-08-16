@@ -13,10 +13,8 @@ import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.ModuleRootManager;
-import com.intellij.openapi.ui.ComboBox;
 import com.intellij.openapi.ui.InputValidator;
 import com.intellij.openapi.ui.Messages;
-import com.intellij.openapi.ui.MultiLineLabelUI;
 import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -27,16 +25,15 @@ import com.intellij.ui.DocumentAdapter;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.util.Icons;
 import org.jetbrains.annotations.Nls;
-import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
-import java.awt.BorderLayout;
-import java.awt.Container;
+import java.awt.*;
 import java.io.File;
 import java.net.URI;
 import java.util.*;
+import java.util.List;
 import java.util.regex.Pattern;
 
 /**
@@ -235,7 +232,7 @@ public class CollectJUnitTestsFromPatternsAction extends AnAction {
     }
 
     public static FilePattern fromString (String ptn) throws FilePatternParseException {
-      if (ptn.isEmpty()) throw new FilePatternParseException("Empty pattern");
+      if (ptn.length() == 0) throw new FilePatternParseException("Empty pattern");
 
       boolean include = true;
       char sign = ptn.charAt(0);
@@ -251,7 +248,7 @@ public class CollectJUnitTestsFromPatternsAction extends AnAction {
         ptn = ptn.substring(si+1);
       }
 
-      if (ptn.isEmpty()) throw new FilePatternParseException("Empty file pattern");
+      if (ptn.length() == 0) throw new FilePatternParseException("Empty file pattern");
 
       return new FilePattern(include, modulePtn, ptn);
     }
@@ -259,7 +256,7 @@ public class CollectJUnitTestsFromPatternsAction extends AnAction {
     public String toString () {
       return
         (include ? "+" : "-") +
-        (modulePtn.isEmpty() ? "" : modulePtn+":") +
+        (modulePtn.length() == 0 ? "" : modulePtn+":") +
         filePtn;
     }
   }
@@ -311,7 +308,7 @@ public class CollectJUnitTestsFromPatternsAction extends AnAction {
 
     private static Iterable<Module> getModules (String namePattern, Project prj) {
       List<Module> mdls = new ArrayList<Module>();
-      if (namePattern == null || namePattern.isEmpty()) {
+      if (namePattern == null || namePattern.length() == 0) {
         namePattern = ".*";
       }
       else {

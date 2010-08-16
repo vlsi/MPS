@@ -24,7 +24,11 @@ import com.intellij.openapi.fileEditor.FileEditorManagerListener;
 import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.generator.*;
+import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
+import jetbrains.mps.generator.ModelGenerationStatusManager;
+import jetbrains.mps.generator.NoCachesStrategy;
+import jetbrains.mps.generator.TransientModelsModule.TransientSModelDescriptor;
 import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.IdeMain;
@@ -38,7 +42,6 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -121,7 +124,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
     final SModelDescriptor model = smodel.getModelDescriptor();
     if (model == null) return;
 
-    if (model instanceof TransientModelDescriptor) {
+    if (model instanceof TransientSModelDescriptor) {
       addWarningPanel(editor, "Warning: the node is in a transient model. Your changes won't be saved.");
     }
 
@@ -143,7 +146,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
         "Generate",
         new Runnable() {
           public void run() {
-            final List<EditableSModelDescriptor> models = new ArrayList<EditableSModelDescriptor>();
+            final List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
             ModelAccess.instance().runReadAction(new Runnable() {
               public void run() {
                 for (Language l : outdatedLanguages) {

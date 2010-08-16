@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.ide.projectPane;
 
-import jetbrains.mps.generator.TransientModelDescriptor;
+import jetbrains.mps.generator.TransientModelsModule.TransientSModelDescriptor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.util.Comparing;
+import jetbrains.mps.util.ToStringComparator;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -37,7 +37,7 @@ public class SortUtil {
         if (result != 0) return result;
         String str = o.getStereotype();
         String str1 = o1.getStereotype();
-        if ((o instanceof TransientModelDescriptor) && (o1 instanceof TransientModelDescriptor)) {
+        if ((o instanceof TransientSModelDescriptor) && (o1 instanceof TransientSModelDescriptor)) {
           String[] part = str.split("_");
           String[] part1 = str1.split("_");
           for (int i = 0; i < part.length; i++) {

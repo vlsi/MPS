@@ -924,7 +924,7 @@ public class SModel implements Iterable<SNode> {
 
   public boolean isNotEditable() {
     assert !isDisposed();
-    return !(getModelDescriptor() instanceof EditableSModelDescriptor || getModelDescriptor() instanceof EditorTestModelDescriptor);
+    return !(getModelDescriptor() instanceof EditableSModelDescriptor);
   }
 
   public void clear() {

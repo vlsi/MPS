@@ -240,6 +240,7 @@ public class MPSVCSManager implements ProjectComponent {
     public void modelSaved(SModelDescriptor sm) {
       if (!(sm instanceof EditableSModelDescriptor)) return;
       final IFile modelFile = ((EditableSModelDescriptor) sm).getModelFile();
+      if (modelFile == null) return;
       addFilesToVcs(Collections.singletonList(modelFile.toFile()), false, false);
       sm.removeModelListener(this);
     }
@@ -249,7 +250,8 @@ public class MPSVCSManager implements ProjectComponent {
     public void modelSaved(SModelDescriptor sm) {
       if (!(sm instanceof EditableSModelDescriptor)) return;
       final IFile modelFile = ((EditableSModelDescriptor) sm).getModelFile();
-        VcsDirtyScopeManager.getInstance(myProject).fileDirty(VFileSystem.refreshAndGetFile(modelFile));
+      if (modelFile == null) return;
+      VcsDirtyScopeManager.getInstance(myProject).fileDirty(VFileSystem.refreshAndGetFile(modelFile));
     }
   }
 
@@ -262,11 +264,11 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   private class GenerationWatcher implements GenerationListener {
-    public void beforeGeneration(List<Pair<EditableSModelDescriptor, IOperationContext>> inputModels) {
-      for (Pair<EditableSModelDescriptor, IOperationContext> pair : inputModels) {
-        EditableSModelDescriptor smodelDescriptor = pair.o1;
-        if (smodelDescriptor != null && smodelDescriptor.needsReloading()) {
-          smodelDescriptor.reloadFromDisk();
+    public void beforeGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
+      for (Pair<SModelDescriptor, IOperationContext> pair : inputModels) {
+        SModelDescriptor smodelDescriptor = pair.o1;
+        if (smodelDescriptor instanceof EditableSModelDescriptor && ((EditableSModelDescriptor) smodelDescriptor).needsReloading()) {
+          ((EditableSModelDescriptor) smodelDescriptor).reloadFromDisk();
           LOG.info("Model " + smodelDescriptor + " reloaded from disk.");
         }
       }
@@ -274,11 +276,11 @@ public class MPSVCSManager implements ProjectComponent {
       myRemoveOperationScheduler.banProcessing();
     }
 
-    public void modelsGenerated(List<Pair<EditableSModelDescriptor, IOperationContext>> models, boolean success) {
+    public void modelsGenerated(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
 
     }
 
-    public void afterGeneration(List<Pair<EditableSModelDescriptor, IOperationContext>> inputModels) {
+    public void afterGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
       myAddOperationScheduler.removeProcessingBan();
       myRemoveOperationScheduler.removeProcessingBan();
     }
@@ -286,11 +288,11 @@ public class MPSVCSManager implements ProjectComponent {
 
   private class CompilationWatcher implements CompilationListener {
 
-    public void beforeModelsCompiled(List<Pair<EditableSModelDescriptor, IOperationContext>> models, boolean success) {
+    public void beforeModelsCompiled(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
       myRemoveOperationScheduler.removeAllProcessingBans();
     }
 
-    public void afterModelsCompiled(List<Pair<EditableSModelDescriptor, IOperationContext>> models, boolean success) {
+    public void afterModelsCompiled(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
 
     }
   }

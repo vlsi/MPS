@@ -15,18 +15,15 @@
  */
 package jetbrains.mps.vcs;
 
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.VcsDirectoryMapping;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.startup.StartupManager;
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.util.containers.ConcurrentHashSet;
-
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.vcs.ui.VcsIdeSettings.VcsRootsDiscoveryPolicy;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
@@ -34,6 +31,8 @@ import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.vcs.ui.VcsIdeSettings.VcsRootsDiscoveryPolicy;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.NonNls;
@@ -58,6 +57,7 @@ public class VcsRootsManager implements ProjectComponent {
       try {
         if (!(sm instanceof EditableSModelDescriptor)) return;
         IFile modelFile = ((EditableSModelDescriptor) sm).getModelFile();
+        if (modelFile == null) return;
         VirtualFile file = VFileSystem.getFile(modelFile.getParent());
         if (file == null) return;
         AbstractVcs vcs = myVcsManager.findVersioningVcs(file);

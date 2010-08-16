@@ -15,10 +15,9 @@
  */
 package jetbrains.mps.reloading;
 
-import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.vfs.FileSystemFile;
+import jetbrains.mps.util.SystemInfo;
 import sun.misc.Launcher;
 
 import java.io.File;
@@ -130,6 +129,7 @@ public class CommonPaths {
     addIfExists(result, "/lib/commons-lang/commons-lang-2.1.jar");
     addIfExists(result, "/lib/picocontainer/picocontainer.jar");
     addIfExists(result, "/lib/jdom/jdom.jar");
+    addIfExists(result, "/lib/eclipse-compiler/ecj.jar");
 
     addIfExists(result, "/lib/jetbrains-ideframework/annotations.jar");
 
@@ -230,7 +230,7 @@ public class CommonPaths {
 
   private static IClassPathItem getMPSSupportClassPath() {
     String supportClasses = PathManager.getHomePath() + File.separator + "MPSPlugin"
-      + File.separator + "MPSSupport" + File.separator + "classes";
+      + File.separator + "apiclasses";
     if (new File(supportClasses).exists()) {
       return ClassPathFactory.getInstance().createFromPath(supportClasses);
     }

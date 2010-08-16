@@ -38,7 +38,7 @@ import jetbrains.mps.lang.generator.plugin.debug.NullGenerationTracer;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.util.Pair;
 
 import org.jetbrains.annotations.NotNull;
@@ -83,29 +83,29 @@ public class GeneratorManager {
 
   @Deprecated
   public void generateModelsFromDifferentModules(final IOperationContext operationContext,
-                                                 final List<EditableSModelDescriptor> inputModels,
+                                                 final List<SModelDescriptor> inputModels,
                                                  final IGenerationHandler generationHandler) {
     generateModelsFromDifferentModules(operationContext, inputModels, generationHandler, true);
   }
 
 
   public void generateModelsFromDifferentModules(final IOperationContext operationContext,
-                                                 final List<EditableSModelDescriptor> inputModels,
+                                                 final List<SModelDescriptor> inputModels,
                                                  final IGenerationHandler generationHandler,
                                                  boolean rebuildAll) {
     try {
       GeneratorManager generatorManager = operationContext.getComponent(GeneratorManager.class);
-      List<Pair<EditableSModelDescriptor, IOperationContext>> modelsWithContext = new ArrayList<Pair<EditableSModelDescriptor, IOperationContext>>();
+      List<Pair<SModelDescriptor, IOperationContext>> modelsWithContext = new ArrayList<Pair<SModelDescriptor, IOperationContext>>();
       MessagesViewTool messagesTool = operationContext.getProject().getComponent(MessagesViewTool.class);
       messagesTool.resetAutoscrollOption();
-      for (EditableSModelDescriptor model : inputModels) {
+      for (SModelDescriptor model : inputModels) {
         assert model != null;
         ModuleContext moduleContext = ModuleContext.create(model, operationContext.getProject(), false);
         if (moduleContext == null) {
           messagesTool.add(new Message(MessageKind.WARNING, GeneratorManager.class, "Model " + model.getLongName() + " won't be generated"));
           continue;
         }
-        modelsWithContext.add(new Pair<EditableSModelDescriptor, IOperationContext>(model, moduleContext));
+        modelsWithContext.add(new Pair<SModelDescriptor, IOperationContext>(model, moduleContext));
       }
 
       generatorManager.generateModelsWithProgressWindow(
@@ -119,7 +119,7 @@ public class GeneratorManager {
   }
 
   @Deprecated
-  public boolean generateModelsWithProgressWindow(final List<EditableSModelDescriptor> inputModels,
+  public boolean generateModelsWithProgressWindow(final List<SModelDescriptor> inputModels,
                                                   final IOperationContext invocationContext,
                                                   final IGenerationHandler generationHandler,
                                                   boolean closeOnExit) {
@@ -128,14 +128,14 @@ public class GeneratorManager {
   /**
    * @return false if canceled
    */
-  public boolean generateModelsWithProgressWindow(final List<EditableSModelDescriptor> inputModels,
+  public boolean generateModelsWithProgressWindow(final List<SModelDescriptor> inputModels,
                                                   final IOperationContext invocationContext,
                                                   final IGenerationHandler generationHandler,
                                                   boolean closeOnExit, boolean rebuildAll) {
-    List<Pair<EditableSModelDescriptor, IOperationContext>> inputModelPairs = new ArrayList<Pair<EditableSModelDescriptor, IOperationContext>>();
+    List<Pair<SModelDescriptor, IOperationContext>> inputModelPairs = new ArrayList<Pair<SModelDescriptor, IOperationContext>>();
 
-    for (EditableSModelDescriptor model : inputModels) {
-      inputModelPairs.add(new Pair<EditableSModelDescriptor, IOperationContext>(model, invocationContext));
+    for (SModelDescriptor model : inputModels) {
+      inputModelPairs.add(new Pair<SModelDescriptor, IOperationContext>(model, invocationContext));
     }
 
     return generateModelsWithProgressWindow(
@@ -148,7 +148,7 @@ public class GeneratorManager {
   /**
    * @return false if canceled
    */
-  private boolean generateModelsWithProgressWindow(final List<Pair<EditableSModelDescriptor, IOperationContext>> inputModels,
+  private boolean generateModelsWithProgressWindow(final List<Pair<SModelDescriptor, IOperationContext>> inputModels,
                                                    final IGenerationHandler generationHandler,
                                                    final boolean rebuildAll
   ) {
@@ -199,16 +199,16 @@ public class GeneratorManager {
       boolean wasSaveTransientModels = mySettings.isSaveTransientModels();
       myGeneratingRequirements = true;
       try {
-        final Set<EditableSModelDescriptor> requirements = new LinkedHashSet<EditableSModelDescriptor>();
+        final Set<SModelDescriptor> requirements = new LinkedHashSet<SModelDescriptor>();
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            for (Pair<EditableSModelDescriptor, IOperationContext> inputModel : inputModels) {
+            for (Pair<SModelDescriptor, IOperationContext> inputModel : inputModels) {
               requirements.addAll(getModelsToGenerateBeforeGeneration(inputModel.o1, inputModel.o2));
             }
           }
         });
 
-        for (Pair<EditableSModelDescriptor, IOperationContext> inputModel : inputModels) {
+        for (Pair<SModelDescriptor, IOperationContext> inputModel : inputModels) {
           requirements.remove(inputModel.o1);
         }
 
@@ -227,7 +227,7 @@ public class GeneratorManager {
           //idea don't have constants for YES/NO
           if (result == -1 || result == 2) return false;
           if (result == 0) {
-            generateModelsFromDifferentModules(invocationContext, new ArrayList<EditableSModelDescriptor>(requirements), new JavaGenerationHandler());
+            generateModelsFromDifferentModules(invocationContext, new ArrayList<SModelDescriptor>(requirements), new JavaGenerationHandler());
           }
         }
       } finally {
@@ -265,20 +265,20 @@ public class GeneratorManager {
     return !myGeneratingRequirements && mySettings.isGenerateRequirements();
   }
 
-  private List<EditableSModelDescriptor> getModelsToGenerateBeforeGeneration(SModelDescriptor model, IOperationContext context) {
-    List<EditableSModelDescriptor> result = new ArrayList<EditableSModelDescriptor>();
+  private List<SModelDescriptor> getModelsToGenerateBeforeGeneration(SModelDescriptor model, IOperationContext context) {
+    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
 
     ModelGenerationStatusManager statusManager = ModelGenerationStatusManager.getInstance();
     for (Generator g : GenerationPartitioningUtil.getAllPossiblyEngagedGenerators(model.getSModel(), context.getScope())) {
       for (SModelDescriptor sm : g.getOwnModelDescriptors()) {
         if (SModelStereotype.isUserModel(sm) && statusManager.generationRequired(sm, context.getProject(), NoCachesStrategy.createBuildCachesStrategy())) {
-          result.add(((EditableSModelDescriptor) sm));
+          result.add(sm);
         }
       }
 
       for (SModelDescriptor sm : g.getSourceLanguage().getAspectModelDescriptors()) {
         if (statusManager.generationRequired(sm, context.getProject(), NoCachesStrategy.createBuildCachesStrategy())) {
-          result.add(((EditableSModelDescriptor) sm));
+          result.add(sm);
         }
       }
     }
@@ -289,7 +289,7 @@ public class GeneratorManager {
   /**
    * @return false if canceled
    */
-  public boolean generateModels(final List<EditableSModelDescriptor> inputModels,
+  public boolean generateModels(final List<SModelDescriptor> inputModels,
                                 final IOperationContext invocationContext,
                                 final IGenerationHandler generationHandler,
                                 final ProgressIndicator progress,
@@ -301,7 +301,7 @@ public class GeneratorManager {
    * @return false if canceled
    */
   @Deprecated
-  public boolean generateModels(final List<EditableSModelDescriptor> inputModels,
+  public boolean generateModels(final List<SModelDescriptor> inputModels,
                                 final IOperationContext invocationContext,
                                 final IGenerationHandler generationHandler,
                                 final ProgressIndicator progress,
@@ -313,16 +313,16 @@ public class GeneratorManager {
   /**
    * @return false if canceled
    */
-  public boolean generateModels(final List<EditableSModelDescriptor> inputModels,
+  public boolean generateModels(final List<SModelDescriptor> inputModels,
                                 final IOperationContext invocationContext,
                                 final IGenerationHandler generationHandler,
                                 final ProgressIndicator progress,
                                 final IMessageHandler messages,
                                 boolean saveTransientModels,
                                 boolean rebuildAll) {
-    List<Pair<EditableSModelDescriptor, IOperationContext>> inputModelPairs = new ArrayList<Pair<EditableSModelDescriptor, IOperationContext>>();
-    for (EditableSModelDescriptor model : inputModels) {
-      inputModelPairs.add(new Pair<EditableSModelDescriptor, IOperationContext>(model, invocationContext));
+    List<Pair<SModelDescriptor, IOperationContext>> inputModelPairs = new ArrayList<Pair<SModelDescriptor, IOperationContext>>();
+    for (SModelDescriptor model : inputModels) {
+      inputModelPairs.add(new Pair<SModelDescriptor, IOperationContext>(model, invocationContext));
     }
     return generateModels(
       inputModelPairs,
@@ -334,7 +334,7 @@ public class GeneratorManager {
   }
 
   @Deprecated
-  public boolean generateModels(final List<Pair<EditableSModelDescriptor, IOperationContext>> inputModels,
+  public boolean generateModels(final List<Pair<SModelDescriptor, IOperationContext>> inputModels,
                                 final IGenerationHandler generationHandler,
                                 final ProgressIndicator progress,
                                 final IMessageHandler messages,
@@ -345,7 +345,7 @@ public class GeneratorManager {
   /**
    * @return false if canceled
    */
-  public boolean generateModels(final List<Pair<EditableSModelDescriptor, IOperationContext>> inputModels,
+  public boolean generateModels(final List<Pair<SModelDescriptor, IOperationContext>> inputModels,
                                 final IGenerationHandler generationHandler,
                                 final ProgressIndicator progress,
                                 final IMessageHandler messages,
@@ -379,7 +379,7 @@ public class GeneratorManager {
     return result[0];
   }
 
-  private void fireBeforeGeneration(List<Pair<EditableSModelDescriptor, IOperationContext>> inputModels) {
+  private void fireBeforeGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
     for (GenerationListener l : myGenerationListeners) {
       try {
         l.beforeGeneration(inputModels);
@@ -389,7 +389,7 @@ public class GeneratorManager {
     }
   }
 
-  private void fireAfterGeneration(List<Pair<EditableSModelDescriptor, IOperationContext>> inputModels) {
+  private void fireAfterGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
     for (GenerationListener l : myGenerationListeners) {
       try {
         l.afterGeneration(inputModels);
@@ -401,7 +401,7 @@ public class GeneratorManager {
 
   public class GeneratorNotifierHelper {
 
-    public void fireModelsGenerated(List<Pair<EditableSModelDescriptor, IOperationContext>> models, boolean success) {
+    public void fireModelsGenerated(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
       for (GenerationListener l : myGenerationListeners) {
         try {
           l.modelsGenerated(models, success);
@@ -411,7 +411,7 @@ public class GeneratorManager {
       }
     }
 
-    public void fireBeforeModelsCompiled(List<Pair<EditableSModelDescriptor, IOperationContext>> models, boolean success) {
+    public void fireBeforeModelsCompiled(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
       for (CompilationListener l : myCompilationListeners) {
         try {
           l.beforeModelsCompiled(models, success);
@@ -421,7 +421,7 @@ public class GeneratorManager {
       }
     }
 
-    public void fireAfterModelsCompiled(List<Pair<EditableSModelDescriptor, IOperationContext>> models, boolean success) {
+    public void fireAfterModelsCompiled(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
       for (CompilationListener l : myCompilationListeners) {
         try {
           l.afterModelsCompiled(models, success);

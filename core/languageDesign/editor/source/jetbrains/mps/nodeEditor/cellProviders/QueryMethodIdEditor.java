@@ -28,7 +28,6 @@ import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -36,9 +35,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.vfs.IFile;
 
 import javax.swing.*;
-import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
@@ -190,7 +189,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
         protected String createNodeInfo(SNode node) {
           return methodText;
         }
-        
+
       }.setVisible(true);
 
     } catch (IOException e) {
@@ -231,7 +230,9 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
           IProjectHandler projectHandler = getProjectHandlerForContext(context);
           SModelDescriptor modelDescriptor = getSNode().getModel().getModelDescriptor();
           assert modelDescriptor != null;
-          String modelPath = ((EditableSModelDescriptor) modelDescriptor).getModelFile().getAbsolutePath();
+          IFile file = ((EditableSModelDescriptor) modelDescriptor).getModelFile();
+          assert file != null;
+          String modelPath = file.getAbsolutePath();
           assert projectHandler != null;
           projectHandler.createAspectMethod(modelPath, getNamespace(), getQueryMethodPrefix() + id, getQueryMethodReturnType(), getQueryMethodParameterList());
           for (Class cls : getImportedClasses()) {

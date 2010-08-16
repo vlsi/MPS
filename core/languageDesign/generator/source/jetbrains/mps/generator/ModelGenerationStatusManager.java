@@ -122,7 +122,6 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
     if (esm.isPackaged()) return false;
     if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) return false;
-    IFile modelFile = esm.getModelFile();
     if (isDoNotGenerate(sm)) return false;
     if (SModelRepository.getInstance().isChanged(esm)) return true;
     if (isEmpty(esm)) return false;
@@ -130,6 +129,8 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     String generatedHash = getGenerationHash(sm);
     if (generatedHash == null) return true;
 
+    IFile modelFile = esm.getModelFile();
+    if (modelFile==null) return true;
     VirtualFile file = modelFile.toVirtualFile();
     if (file == null) return true;
 
@@ -147,8 +148,12 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     return !(generatedHash.equals(valueArray[0]));
   }
 
-  private boolean isEmpty(EditableSModelDescriptor sm) {
-    if (myEmptyStatus.containsKey(sm) && myEmptyStatusRetrievalTime.get(sm) >= sm.lastChangeTime()) {
+  private boolean isEmpty(SModelDescriptor sm) {
+    if(!(sm instanceof EditableSModelDescriptor)) {
+      return sm.isEmpty();
+    }
+
+    if (myEmptyStatus.containsKey(sm) && myEmptyStatusRetrievalTime.get(sm) >= ((EditableSModelDescriptor)sm).lastChangeTime()) {
       return myEmptyStatus.get(sm);
     }
 
@@ -215,8 +220,12 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
   private File generateHashFile(CacheGenerationContext context) {
     File outputDir = context.getOutputDir();
 
-    EditableSModelDescriptor descriptor = context.getOriginalInputModel();
-    IFile file = descriptor.getModelFile();
+    SModelDescriptor descriptor = context.getOriginalInputModel();
+    if(!(descriptor instanceof EditableSModelDescriptor)) return null;
+
+    IFile file = ((EditableSModelDescriptor)descriptor).getModelFile();
+    if (file == null) return null;
+
     byte[] content = new byte[(int) file.length()];
 
     InputStream is = null;

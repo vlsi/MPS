@@ -234,7 +234,7 @@
       <fileset dir="${mps_home}/core/runtime/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
-      <fileset dir="${mps_home}/MPSPlugin/MPSSupport/classes" />
+      <fileset dir="${mps_home}/MPSPlugin/apiclasses" />
     </copy>
     <jar destfile="${deploy.dir}/MPS/lib/mps.jar" duplicate="preserve" filesonly="true">
       <fileset dir="${deploy.dir}/MPS/lib/mps.jar.tmp" />
@@ -352,7 +352,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.xmlUnitTest_q6a" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.regexp_r6a" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.regexp.examples_s6a" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.methodExtension_t6a" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.extensionMethods_t6a" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.collections.trove_u6a" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.contracts_v6a" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.overloadedOperators_w6a" />

@@ -4,6 +4,7 @@ import com.sun.jdi.*;
 import jetbrains.mps.debug.evaluation.proxies.IObjectValueProxy;
 import jetbrains.mps.debug.evaluation.proxies.IValueProxy;
 import jetbrains.mps.debug.evaluation.proxies.MirrorUtil;
+import jetbrains.mps.debug.evaluation.proxies.PrimitiveValueProxy;
 import jetbrains.mps.debug.runtime.JavaUiState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -192,6 +193,64 @@ public abstract class Evaluator {
         return false; 
       }
     });
+  }
+
+  protected IValueProxy box(PrimitiveValueProxy primitiveValueProxy) throws EvaluationException {
+    PrimitiveValue primitiveValue = primitiveValueProxy.getPrimitiveValue();
+    if (primitiveValue instanceof BooleanValue) {
+      return invokeStatic(Boolean.class.getName(), "valueOf", "(Z)Ljava/lang/Boolean;", primitiveValue.booleanValue());
+    }
+    if (primitiveValue instanceof ShortValue) {
+      return invokeStatic(Short.class.getName(), "valueOf", "(S)Ljava/lang/Short;", primitiveValue.shortValue());
+    }
+    if (primitiveValue instanceof ByteValue) {
+      return invokeStatic(Byte.class.getName(), "valueOf", "(B)Ljava/lang/Byte;", primitiveValue.byteValue());
+    }
+    if (primitiveValue instanceof CharValue) {
+      return invokeStatic(Character.class.getName(), "valueOf", "(C)Ljava/lang/Character;", primitiveValue.charValue());
+    }
+    if (primitiveValue instanceof DoubleValue) {
+      return invokeStatic(Double.class.getName(), "valueOf", "(D)Ljava/lang/Double;", primitiveValue.doubleValue());
+    }
+    if (primitiveValue instanceof FloatValue) {
+      return invokeStatic(Float.class.getName(), "valueOf", "(F)Ljava/lang/Float;", primitiveValue.floatValue());
+    }
+    if (primitiveValue instanceof IntegerValue) {
+      return invokeStatic(Integer.class.getName(), "valueOf", "(I)Ljava/lang/Integer;", primitiveValue.intValue());
+    }
+    if (primitiveValue instanceof LongValue) {
+      return invokeStatic(Long.class.getName(), "valueOf", "(J)Ljava/lang/Long;", primitiveValue.longValue());
+    }
+    throw new UnsupportedOperationException("Cant box " + primitiveValue);
+  }
+
+  protected PrimitiveValueProxy unbox(IObjectValueProxy valueProxy) throws EvaluationException {
+    Type type = valueProxy.getJDIValue().type();
+    if (type.name().equals(Boolean.class.getName())) {
+      return (PrimitiveValueProxy) valueProxy.invokeMethod("booleanValue", "()Z");
+    }
+    if (type.name().equals(Short.class.getName())) {
+      return (PrimitiveValueProxy) valueProxy.invokeMethod("shortValue", "()S");
+    }
+    if (type.name().equals(Byte.class.getName())) {
+      return (PrimitiveValueProxy) valueProxy.invokeMethod("byteValue", "()B");
+    }
+    if (type.name().equals(Character.class.getName())) {
+      return (PrimitiveValueProxy) valueProxy.invokeMethod("charValue", "()C");
+    }
+    if (type.name().equals(Double.class.getName())) {
+      return (PrimitiveValueProxy) valueProxy.invokeMethod("doubleValue", "()D");
+    }
+    if (type.name().equals(Float.class.getName())) {
+      return (PrimitiveValueProxy) valueProxy.invokeMethod("floatValue", "()F");
+    }
+    if (type.name().equals(Integer.class.getName())) {
+      return (PrimitiveValueProxy) valueProxy.invokeMethod("intValue", "()I");
+    }
+    if (type.name().equals(Long.class.getName())) {
+      return (PrimitiveValueProxy) valueProxy.invokeMethod("longValue", "()J");
+    }
+    throw new UnsupportedOperationException("Cant unbox value of type" + type);
   }
 
   public static interface Invocatable<T> {

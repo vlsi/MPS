@@ -21,6 +21,10 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * @deprecated TODO get rid of it, substitute  
+ */
+@Deprecated
 public abstract class UtilModelDescriptor extends BaseSModelDescriptor{
   protected UtilModelDescriptor(@NotNull SModelReference modelReference) {
     super(IModelRootManager.NULL_MANAGER, modelReference, false);

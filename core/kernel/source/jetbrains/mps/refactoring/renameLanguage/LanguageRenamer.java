@@ -176,7 +176,7 @@ public class LanguageRenamer {
     List<File> result = new ArrayList<File>();
     File sourceDir = myLanguage.getSourceDir();
 
-    List<EditableSModelDescriptor> inputModels = GeneratorConfigUtil.getLanguageModels(myLanguage);
+    List<SModelDescriptor> inputModels = GeneratorConfigUtil.getLanguageModels(myLanguage);
 
     for (SModelDescriptor d : inputModels) {
       result.add(FileGenerationUtil.getDefaultOutputDir(d, sourceDir));

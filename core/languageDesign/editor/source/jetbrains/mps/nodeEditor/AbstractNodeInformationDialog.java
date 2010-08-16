@@ -32,7 +32,9 @@ public abstract class AbstractNodeInformationDialog extends JDialog {
   private FocusListener myOwnerFocusListener = new FocusAdapter() {
     @Override
     public void focusLost(FocusEvent focusEvent) {
-      dispose();
+      if (focusEvent.getOppositeComponent() != myTextArea) {
+        dispose();
+      }
     }
   };
 
@@ -50,6 +52,15 @@ public abstract class AbstractNodeInformationDialog extends JDialog {
     }
   };
 
+  private KeyListener myInformationDialogKeyListener = new KeyAdapter() {
+    @Override
+    public void keyPressed(KeyEvent e) {
+      if (e.getKeyChar() == KeyEvent.VK_ESCAPE) {
+        dispose();
+      }
+    }
+  };
+
   public AbstractNodeInformationDialog(Frame owner, Point location, SNode node) {
     super(owner);
 
@@ -60,7 +71,6 @@ public abstract class AbstractNodeInformationDialog extends JDialog {
 
     setUndecorated(true);
     setModal(false);
-    setFocusableWindowState(false);
 
     myTextArea = new JTextArea();
     myTextArea.setEditable(false);
@@ -94,6 +104,7 @@ public abstract class AbstractNodeInformationDialog extends JDialog {
     prevFocusOwner.addFocusListener(myOwnerFocusListener);
     prevFocusOwner.addKeyListener(myOwnerKeyListener);
     prevFocusOwner.addMouseListener(myOwnerMouseListener);
+    myTextArea.addKeyListener(myInformationDialogKeyListener);
   }
 
 
@@ -103,6 +114,15 @@ public abstract class AbstractNodeInformationDialog extends JDialog {
     prevFocusOwner.removeKeyListener(myOwnerKeyListener);
     prevFocusOwner.removeMouseListener(myOwnerMouseListener);
     super.dispose();
+  }
+  
+  @Override
+  public void setVisible(boolean b) {
+    super.setVisible(b);
+    // focusing prevFocusOvner to redirect all keyboard events there by default
+    if (b) {
+      prevFocusOwner.requestFocus();
+    }
   }
 
   protected abstract String createNodeInfo(SNode node);
