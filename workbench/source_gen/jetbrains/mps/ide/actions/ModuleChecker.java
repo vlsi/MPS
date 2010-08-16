@@ -5,6 +5,7 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.project.IModule;
 import java.util.List;
+import jetbrains.mps.project.validation.ModuleValidatorFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.util.NameUtil;
 
@@ -22,7 +23,7 @@ public class ModuleChecker {
 
     // TODO:  Provide the full list of errors when usages view framework supports multiple 
     // TODO:  search results for one module 
-    List<String> errors = module.validate();
+    List<String> errors = ModuleValidatorFactory.createValidator(module).getErrors();
     if (!(ListSequence.fromList(errors).isEmpty())) {
       String extraMessage = ListSequence.fromList(errors).getElement(0);
       if (ListSequence.fromList(errors).count() == 2) {

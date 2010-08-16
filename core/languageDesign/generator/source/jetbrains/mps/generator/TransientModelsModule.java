@@ -227,10 +227,6 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
     return result;
   }
 
-  public List<String> validate() {
-    return Collections.emptyList();
-  }
-
   public String toString() {
     return "Transient models [" + myProject.getPresentableUrl() + "]";
   }

@@ -27,6 +27,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.validation.ModuleValidatorFactory;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 
@@ -129,7 +130,7 @@ public class ReferencesTest extends BaseMPSTest {
   }
 
   private void checkModule(IModule m) {
-    List<String> messages = m.validate();
+    List<String> messages = ModuleValidatorFactory.createValidator(m).getErrors();
     for (String msg : messages) {
       LOG.error("Error in module " + m + " : " + msg);
     }

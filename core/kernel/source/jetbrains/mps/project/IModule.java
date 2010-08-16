@@ -130,10 +130,6 @@ public interface IModule extends ModelOwner {
 
   void dispose();
 
-  boolean isValid();
-
-  List<String> validate();
-
   void reloadFromDisk(boolean reloadClasses);
 
   boolean needReloading();

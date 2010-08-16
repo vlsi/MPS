@@ -264,32 +264,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return result;
   }
 
-  public List<String> validate() {
-    List<String> errors = new ArrayList<String>(super.validate());
-    for (ModuleReference lang : getExtendedLanguageNamespaces()) {
-      if (MPSModuleRepository.getInstance().getModule(lang) == null) {
-        errors.add("Can't find extended language: " + lang.getModuleFqName());
-      }
-    }
-    for (SModelReference accessory : getModuleDescriptor().getAccessoryModels()) {
-      if (getScope().getModelDescriptor(accessory) == null) {
-        errors.add("Can't find accessory model: " + accessory.getLongName());
-      }
-    }
-    for (Dependency runtimeModule : getModuleDescriptor().getRuntimeModules()) {
-      if (MPSModuleRepository.getInstance().getModule(runtimeModule.getModuleRef()) == null) {
-        errors.add("Can't find runtime module: " + runtimeModule.getModuleRef().getModuleFqName());
-      }
-    }
-    for (StubModelsEntry stubModelsEntry : getModuleDescriptor().getRuntimeStubModels()) {
-      VirtualFile vfile = VFileSystem.getFile(stubModelsEntry.getPath());
-      if (vfile == null || !vfile.exists()) {
-        errors.add("Can't find runtime library: " + stubModelsEntry.getPath());
-      }
-    }
-    return errors;
-  }
-
   protected ModuleDescriptor loadDescriptor() {
     return LanguageDescriptorPersistence.loadLanguageDescriptor(getDescriptorFile());
   }

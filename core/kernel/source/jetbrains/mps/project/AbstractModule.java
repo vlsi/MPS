@@ -166,49 +166,6 @@ public abstract class AbstractModule implements IModule {
     return getDescriptorFile().isReadOnly();
   }
 
-  public List<String> validate() {
-    List<String> errors = new ArrayList<String>();
-    for (Dependency dep : getDependOn()) {
-      ModuleReference moduleRef = dep.getModuleRef();
-      if (MPSModuleRepository.getInstance().getModule(moduleRef) == null) {
-        errors.add("Can't find dependency: " + moduleRef.getModuleFqName());
-      }
-    }
-    for (ModuleReference reference : getUsedLanguagesReferences()) {
-      if (MPSModuleRepository.getInstance().getLanguage(reference) == null) {
-        errors.add("Can't find used language: " + reference.getModuleFqName());
-      }
-    }
-    for (ModuleReference reference : getUsedDevkitReferences()) {
-      if (MPSModuleRepository.getInstance().getModule(reference) == null) {
-        errors.add("Can't find used devkit: " + reference.getModuleFqName());
-      }
-    }
-    if (getModuleDescriptor() != null) {
-      if (getModuleDescriptor().getSourcePaths() != null && !isPackaged()) {
-        for (String sourcePath : getModuleDescriptor().getSourcePaths()) {
-          VirtualFile vfile = VFileSystem.getFile(sourcePath);
-          if (vfile == null || !vfile.exists()) {
-            errors.add("Can't find source path: " + sourcePath);
-          }
-        }
-      }
-      if (getModuleDescriptor().getStubModelEntries() != null) {
-        for (StubModelsEntry stubModelsEntry : getModuleDescriptor().getStubModelEntries()) {
-          VirtualFile vfile = VFileSystem.getFile(stubModelsEntry.getPath());
-          if (vfile == null || !vfile.exists()) {
-            errors.add("Can't find library: " + stubModelsEntry.getPath());
-          }
-        }
-      }
-    }
-    return errors;
-  }
-
-  public final boolean isValid() {
-    return validate().isEmpty();
-  }
-
   public void addDependency(@NotNull ModuleReference moduleRef, boolean reexport) {
     ModuleDescriptor descriptor = getModuleDescriptor();
     Dependency dep = new Dependency();
@@ -233,24 +190,6 @@ public abstract class AbstractModule implements IModule {
     descriptor.getUsedDevkits().add(devkitRef);
     setModuleDescriptor(descriptor, true);
     save();
-  }
-
-  public <T extends IModule> Set<T> getAllDependOnModules(Class<T> cls) {
-    Set<T> modules = new DependencyCollector(this, cls).collect();
-
-    // add bootstrap languages
-    if (Language.class.isAssignableFrom(cls)) {
-      Set<Language> languages = LibraryManager.getInstance().getBootstrapModules(Language.class);
-      for (Language language : languages) {
-        //noinspection SuspiciousMethodCalls
-        if (!modules.contains(language)) {
-          modules.add((T) language);
-          modules.addAll(new DependencyCollector(this, cls).collect());
-        }
-      }
-    }
-
-    return modules;
   }
 
   public List<SModelDescriptor> getOwnModelDescriptors() {
@@ -292,6 +231,26 @@ public abstract class AbstractModule implements IModule {
       if (path.equals(root.getPath())) return root;
     }
     return null;
+  }
+
+  //---get deps
+
+  public <T extends IModule> Set<T> getAllDependOnModules(Class<T> cls) {
+    Set<T> modules = new DependencyCollector(this, cls).collect();
+
+    // add bootstrap languages
+    if (Language.class.isAssignableFrom(cls)) {
+      Set<Language> languages = LibraryManager.getInstance().getBootstrapModules(Language.class);
+      for (Language language : languages) {
+        //noinspection SuspiciousMethodCalls
+        if (!modules.contains(language)) {
+          modules.add((T) language);
+          modules.addAll(new DependencyCollector(this, cls).collect());
+        }
+      }
+    }
+
+    return modules;
   }
 
   public List<Dependency> getDependOn() {
@@ -356,6 +315,8 @@ public abstract class AbstractModule implements IModule {
     return new ArrayList<IModule>(result);
   }
 
+  //---languages
+
   public List<ModuleReference> getUsedLanguagesReferences() {
     List<ModuleReference> result = new ArrayList<ModuleReference>();
     ModuleDescriptor descriptor = getModuleDescriptor();
@@ -391,6 +352,8 @@ public abstract class AbstractModule implements IModule {
     return new ArrayList<Language>(result);
   }
 
+  //---devkits
+
   public List<ModuleReference> getUsedDevkitReferences() {
     List<ModuleReference> result = new ArrayList<ModuleReference>();
     ModuleDescriptor descriptor = getModuleDescriptor();
@@ -414,6 +377,8 @@ public abstract class AbstractModule implements IModule {
 
     return result;
   }
+
+  //-----
 
   public final EditableSModelDescriptor createModel(SModelFqName name, SModelRoot root) {
     IModelRootManager manager = root.getManager();

@@ -8392,47 +8392,47 @@
     <unitInfo nodeId="8300784086089115201" fileName="MethodsToOverrideStrategy.java" startLine="12" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.ide.actions.MethodsToOverrideStrategy" />
   </root>
   <root nodeId="8384703546664367372">
-    <nodeInfo nodeId="8384703546664367378" fileName="ModuleChecker.java" startLine="11" startPosition="28" endLine="12" endPosition="44" />
-    <nodeInfo nodeId="8384703546664399582" fileName="ModuleChecker.java" startLine="12" startPosition="44" endLine="13" endPosition="94" />
-    <nodeInfo nodeId="8384703546664372514" fileName="ModuleChecker.java" startLine="15" startPosition="57" endLine="16" endPosition="40" />
-    <nodeInfo nodeId="8384703546664399649" fileName="ModuleChecker.java" startLine="19" startPosition="43" endLine="20" endPosition="119" />
-    <nodeInfo nodeId="8384703546664399662" fileName="ModuleChecker.java" startLine="20" startPosition="119" endLine="21" endPosition="58" />
-    <nodeInfo nodeId="7631643806634296262" fileName="ModuleChecker.java" startLine="21" startPosition="58" endLine="22" endPosition="0" />
-    <nodeInfo nodeId="5941846869273042069" fileName="ModuleChecker.java" startLine="22" startPosition="0" endLine="23" endPosition="91" />
-    <nodeInfo nodeId="5941846869273042073" fileName="ModuleChecker.java" startLine="23" startPosition="91" endLine="24" endPosition="44" />
-    <nodeInfo nodeId="2566730485027038334" fileName="ModuleChecker.java" startLine="24" startPosition="44" endLine="25" endPosition="44" />
-    <nodeInfo nodeId="5941846869273042005" fileName="ModuleChecker.java" startLine="26" startPosition="53" endLine="27" endPosition="72" />
-    <nodeInfo nodeId="5941846869273042052" fileName="ModuleChecker.java" startLine="28" startPosition="55" endLine="29" endPosition="75" />
-    <nodeInfo nodeId="5941846869273163242" fileName="ModuleChecker.java" startLine="30" startPosition="61" endLine="31" endPosition="32" />
-    <nodeInfo nodeId="6136455079799733368" fileName="ModuleChecker.java" startLine="32" startPosition="7" endLine="33" endPosition="328" />
-    <nodeInfo nodeId="8384703546664399566" fileName="ModuleChecker.java" startLine="37" startPosition="62" endLine="38" endPosition="21" />
-    <nodeInfo nodeId="8384703546664399572" fileName="ModuleChecker.java" startLine="41" startPosition="32" endLine="42" endPosition="65" />
-    <nodeInfo nodeId="8384703546664372507" fileName="ModuleChecker.java" startLine="14" startPosition="0" endLine="17" endPosition="3" />
-    <nodeInfo nodeId="8384703546664399561" fileName="ModuleChecker.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <nodeInfo nodeId="8384703546664399568" fileName="ModuleChecker.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
-    <nodeInfo nodeId="5941846869273041999" fileName="ModuleChecker.java" startLine="27" startPosition="72" endLine="32" endPosition="7" />
-    <nodeInfo nodeId="2566730485027038324" fileName="ModuleChecker.java" startLine="25" startPosition="44" endLine="34" endPosition="5" />
-    <nodeInfo nodeId="8384703546664399578" fileName="ModuleChecker.java" startLine="18" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="8384703546664372511" fileName="ModuleChecker.java" startLine="15" startPosition="57" endLine="16" endPosition="40" />
-    <scopeInfo nodeId="5941846869273042000" fileName="ModuleChecker.java" startLine="28" startPosition="55" endLine="29" endPosition="75" />
-    <scopeInfo nodeId="5941846869273163241" fileName="ModuleChecker.java" startLine="30" startPosition="61" endLine="31" endPosition="32" />
-    <scopeInfo nodeId="8384703546664399565" fileName="ModuleChecker.java" startLine="37" startPosition="62" endLine="38" endPosition="21" />
-    <scopeInfo nodeId="8384703546664399571" fileName="ModuleChecker.java" startLine="41" startPosition="32" endLine="42" endPosition="65" />
-    <scopeInfo nodeId="8384703546664372507" fileName="ModuleChecker.java" startLine="14" startPosition="0" endLine="17" endPosition="3">
+    <nodeInfo nodeId="8384703546664367378" fileName="ModuleChecker.java" startLine="12" startPosition="28" endLine="13" endPosition="44" />
+    <nodeInfo nodeId="8384703546664399582" fileName="ModuleChecker.java" startLine="13" startPosition="44" endLine="14" endPosition="94" />
+    <nodeInfo nodeId="8384703546664372514" fileName="ModuleChecker.java" startLine="16" startPosition="57" endLine="17" endPosition="40" />
+    <nodeInfo nodeId="8384703546664399649" fileName="ModuleChecker.java" startLine="20" startPosition="43" endLine="21" endPosition="119" />
+    <nodeInfo nodeId="8384703546664399662" fileName="ModuleChecker.java" startLine="21" startPosition="119" endLine="22" endPosition="58" />
+    <nodeInfo nodeId="7631643806634296262" fileName="ModuleChecker.java" startLine="22" startPosition="58" endLine="23" endPosition="0" />
+    <nodeInfo nodeId="5941846869273042069" fileName="ModuleChecker.java" startLine="23" startPosition="0" endLine="24" endPosition="91" />
+    <nodeInfo nodeId="5941846869273042073" fileName="ModuleChecker.java" startLine="24" startPosition="91" endLine="25" endPosition="44" />
+    <nodeInfo nodeId="2566730485027038334" fileName="ModuleChecker.java" startLine="25" startPosition="44" endLine="26" endPosition="85" />
+    <nodeInfo nodeId="5941846869273042005" fileName="ModuleChecker.java" startLine="27" startPosition="53" endLine="28" endPosition="72" />
+    <nodeInfo nodeId="5941846869273042052" fileName="ModuleChecker.java" startLine="29" startPosition="55" endLine="30" endPosition="75" />
+    <nodeInfo nodeId="5941846869273163242" fileName="ModuleChecker.java" startLine="31" startPosition="61" endLine="32" endPosition="32" />
+    <nodeInfo nodeId="6136455079799733368" fileName="ModuleChecker.java" startLine="33" startPosition="7" endLine="34" endPosition="328" />
+    <nodeInfo nodeId="8384703546664399566" fileName="ModuleChecker.java" startLine="38" startPosition="62" endLine="39" endPosition="21" />
+    <nodeInfo nodeId="8384703546664399572" fileName="ModuleChecker.java" startLine="42" startPosition="32" endLine="43" endPosition="65" />
+    <nodeInfo nodeId="8384703546664372507" fileName="ModuleChecker.java" startLine="15" startPosition="0" endLine="18" endPosition="3" />
+    <nodeInfo nodeId="8384703546664399561" fileName="ModuleChecker.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
+    <nodeInfo nodeId="8384703546664399568" fileName="ModuleChecker.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
+    <nodeInfo nodeId="5941846869273041999" fileName="ModuleChecker.java" startLine="28" startPosition="72" endLine="33" endPosition="7" />
+    <nodeInfo nodeId="2566730485027038324" fileName="ModuleChecker.java" startLine="26" startPosition="85" endLine="35" endPosition="5" />
+    <nodeInfo nodeId="8384703546664399578" fileName="ModuleChecker.java" startLine="19" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="8384703546664372511" fileName="ModuleChecker.java" startLine="16" startPosition="57" endLine="17" endPosition="40" />
+    <scopeInfo nodeId="5941846869273042000" fileName="ModuleChecker.java" startLine="29" startPosition="55" endLine="30" endPosition="75" />
+    <scopeInfo nodeId="5941846869273163241" fileName="ModuleChecker.java" startLine="31" startPosition="61" endLine="32" endPosition="32" />
+    <scopeInfo nodeId="8384703546664399565" fileName="ModuleChecker.java" startLine="38" startPosition="62" endLine="39" endPosition="21" />
+    <scopeInfo nodeId="8384703546664399571" fileName="ModuleChecker.java" startLine="42" startPosition="32" endLine="43" endPosition="65" />
+    <scopeInfo nodeId="8384703546664372507" fileName="ModuleChecker.java" startLine="15" startPosition="0" endLine="18" endPosition="3">
       <varInfo nodeId="8384703546664372512" varName="progressContext" />
     </scopeInfo>
-    <scopeInfo nodeId="8384703546664399561" fileName="ModuleChecker.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="8384703546664399568" fileName="ModuleChecker.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="2566730485027038325" fileName="ModuleChecker.java" startLine="26" startPosition="53" endLine="33" endPosition="328">
+    <scopeInfo nodeId="8384703546664399561" fileName="ModuleChecker.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="8384703546664399568" fileName="ModuleChecker.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="2566730485027038325" fileName="ModuleChecker.java" startLine="27" startPosition="53" endLine="34" endPosition="328">
       <varInfo nodeId="5941846869273042006" varName="extraMessage" />
     </scopeInfo>
-    <scopeInfo nodeId="8384703546664399581" fileName="ModuleChecker.java" startLine="19" startPosition="43" endLine="34" endPosition="5">
+    <scopeInfo nodeId="8384703546664399581" fileName="ModuleChecker.java" startLine="20" startPosition="43" endLine="35" endPosition="5">
       <varInfo nodeId="2566730485027038335" varName="errors" />
     </scopeInfo>
-    <scopeInfo nodeId="8384703546664399578" fileName="ModuleChecker.java" startLine="18" startPosition="0" endLine="36" endPosition="0">
+    <scopeInfo nodeId="8384703546664399578" fileName="ModuleChecker.java" startLine="19" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="8384703546664399588" varName="module" />
     </scopeInfo>
-    <unitInfo nodeId="8384703546664367372" fileName="ModuleChecker.java" startLine="11" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.ide.actions.ModuleChecker" />
+    <unitInfo nodeId="8384703546664367372" fileName="ModuleChecker.java" startLine="12" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.ide.actions.ModuleChecker" />
   </root>
   <root nodeId="8387004208513848316">
     <nodeInfo nodeId="304332558009438889" fileName="VcsActionsHelper.java" startLine="132" startPosition="27" endLine="132" endPosition="27" />

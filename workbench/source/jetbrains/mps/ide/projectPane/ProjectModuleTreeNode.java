@@ -26,9 +26,12 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.validation.ModuleValidatorFactory;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
+
+import java.util.List;
 
 public abstract class ProjectModuleTreeNode extends MPSTreeNode {
   public static ProjectModuleTreeNode createFor(MPSProject project, IModule module) {
@@ -61,17 +64,19 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
     }
     setText(getModulePresentation());
 
-    boolean valid = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-      public Boolean compute() {
-        return getModule().isValid();
+    List<String> errors = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
+      public List<String> compute() {
+        return ModuleValidatorFactory.createValidator(getModule()).getErrors();
       }
     });
+    boolean valid = errors.isEmpty();
+
     setErrorState(valid ? ErrorState.NONE : ErrorState.ERROR);
-    if (getModule().validate().isEmpty()) {
+    if (valid) {
       setTooltipText(null);
     } else {
       String result = "<html>";
-      for (String error : getModule().validate()) {
+      for (String error : errors) {
         result += error + "<br>";
       }
       setTooltipText(result);

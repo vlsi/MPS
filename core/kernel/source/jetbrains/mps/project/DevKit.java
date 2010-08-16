@@ -240,25 +240,4 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
   public String getDevKitPluginClass() {
     return myDescriptor.getPlugin();
   }
-
-  @Override
-  public List<String> validate() {
-    List<String> errors = new ArrayList<String>(super.validate());
-    for (ModuleReference extDevkit : getModuleDescriptor().getExtendedDevkits()) {
-      if (MPSModuleRepository.getInstance().getModule(extDevkit) == null) {
-        errors.add("Can't find extended devkit: " + extDevkit.getModuleFqName());
-      }
-    }
-    for (ModuleReference expLang : getModuleDescriptor().getExportedLanguages()) {
-      if (MPSModuleRepository.getInstance().getModule(expLang) == null) {
-        errors.add("Can't find exported language: " + expLang.getModuleFqName());
-      }
-    }
-    for (ModuleReference expSol : getModuleDescriptor().getExportedSolutions()) {
-      if (MPSModuleRepository.getInstance().getModule(expSol) == null) {
-        errors.add("Can't find exported language: " + expSol.getModuleFqName());
-      }
-    }
-    return errors;
-  }
 }
