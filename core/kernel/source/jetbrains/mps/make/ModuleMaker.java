@@ -206,7 +206,7 @@ public class ModuleMaker {
     Map<IModule, Set<IModule>> backDependencies = new HashMap<IModule, Set<IModule>>();
 
     for (IModule m : modules) {
-      for (IModule dep : m.getExplicitlyDependOnModules(true)) {
+      for (IModule dep : m.getExplicitlyDependOnModulesWithBootstrap()) {
         if (!backDependencies.containsKey(dep)) {
           backDependencies.put(dep, new HashSet<IModule>());
         }

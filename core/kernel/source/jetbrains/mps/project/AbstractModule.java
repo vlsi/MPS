@@ -715,7 +715,7 @@ public abstract class AbstractModule implements IModule {
   protected ModuleDescriptor loadDescriptor() {
     return null;
   }
-  
+
   protected ModuleScope createScope() {
     return new ModuleScope();
   }
@@ -767,21 +767,10 @@ public abstract class AbstractModule implements IModule {
   //----to remove
 
   @Deprecated
-  public List<IModule> getExplicitlyDependOnModules(boolean includeBootstrap) {
-    if (myCachedExplicitlyDependentModules == null) {
-      Set<IModule> res = new LinkedHashSet<IModule>();
-      addExplicitlyDependendOnModules(res);
-      myCachedExplicitlyDependentModules = new ArrayList<IModule>(res);
-    }
-
-
-    if (includeBootstrap) {
-      List<IModule> result = new ArrayList<IModule>(myCachedExplicitlyDependentModules);
-      result.addAll(LibraryManager.getInstance().getBootstrapModules(Language.class));
-      return result;
-    }
-
-    return Collections.unmodifiableList(myCachedExplicitlyDependentModules);
+  public List<IModule> getExplicitlyDependOnModulesWithBootstrap() {
+    List<IModule> result = new ArrayList<IModule>(getExplicitlyDependOnModules());
+    result.addAll(LibraryManager.getInstance().getBootstrapModules(Language.class));
+    return result;
   }
 
   @Deprecated
