@@ -1,7 +1,7 @@
 package jetbrains.mps.stubs;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.AbstractModule.StubPath;
+import jetbrains.mps.project.StubPath;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.vfs.IFile;

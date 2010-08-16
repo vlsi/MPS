@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel.persistence;
 
-import jetbrains.mps.project.AbstractModule.StubPath;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
@@ -26,7 +25,6 @@ import jetbrains.mps.smodel.SModelFqName;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 

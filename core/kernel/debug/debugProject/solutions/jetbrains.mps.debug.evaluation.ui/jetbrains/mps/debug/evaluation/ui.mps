@@ -5590,14 +5590,14 @@
                   <property name="name:3" value="pathsToAdd" />
                   <property name="isFinal:3" value="true" />
                   <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.SetType:7" id="6785881341670047508">
-                    <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6785881341670047510">
-                      <link role="classifier:3" targetNodeId="15.~AbstractModule$StubPath" resolveInfo="AbstractModule.StubPath" />
+                    <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6155185640278220479">
+                      <link role="classifier:3" targetNodeId="15.~StubPath" resolveInfo="StubPath" />
                     </node>
                   </node>
                   <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6785881341670047512">
                     <node role="creator:3" type="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator:7" id="6785881341670047513">
-                      <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6785881341670047514">
-                        <link role="classifier:3" targetNodeId="15.~AbstractModule$StubPath" resolveInfo="AbstractModule.StubPath" />
+                      <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6155185640278220481">
+                        <link role="classifier:3" targetNodeId="15.~StubPath" resolveInfo="StubPath" />
                       </node>
                     </node>
                   </node>
@@ -5652,15 +5652,15 @@
                               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="6785881341670047545">
                                 <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="6785881341670047546">
                                   <property name="name:3" value="stubPath" />
-                                  <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6785881341670047547">
-                                    <link role="classifier:3" targetNodeId="15.~AbstractModule$StubPath" resolveInfo="AbstractModule.StubPath" />
+                                  <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6155185640278220482">
+                                    <link role="classifier:3" targetNodeId="15.~StubPath" resolveInfo="StubPath" />
                                   </node>
                                   <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6785881341670047549">
                                     <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="6785881341670047550">
                                       <link role="variableDeclaration:3" targetNodeId="6185141366360320956" resolveInfo="myAuxModule" />
                                     </node>
                                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6785881341670047551">
-                                      <link role="baseMethodDeclaration:3" targetNodeId="76.~EvaluationAuxModule.addStubPath(java.lang.String):jetbrains.mps.project.AbstractModule$StubPath" resolveInfo="addStubPath" />
+                                      <link role="baseMethodDeclaration:3" targetNodeId="76.~EvaluationAuxModule.addStubPath(java.lang.String):jetbrains.mps.project.StubPath" resolveInfo="addStubPath" />
                                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6785881341670047552">
                                         <link role="variableDeclaration:3" targetNodeId="6785881341670047482" resolveInfo="path" />
                                       </node>
@@ -5725,15 +5725,15 @@
                               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="6785881341670047561">
                                 <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="6785881341670047562">
                                   <property name="name:3" value="stubPath" />
-                                  <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6785881341670047563">
-                                    <link role="classifier:3" targetNodeId="15.~AbstractModule$StubPath" resolveInfo="AbstractModule.StubPath" />
+                                  <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6155185640278220483">
+                                    <link role="classifier:3" targetNodeId="15.~StubPath" resolveInfo="StubPath" />
                                   </node>
                                   <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6785881341670047564">
                                     <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="6785881341670047565">
                                       <link role="variableDeclaration:3" targetNodeId="6185141366360320956" resolveInfo="myAuxModule" />
                                     </node>
                                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6785881341670047566">
-                                      <link role="baseMethodDeclaration:3" targetNodeId="76.~EvaluationAuxModule.addStubPath(java.lang.String):jetbrains.mps.project.AbstractModule$StubPath" resolveInfo="addStubPath" />
+                                      <link role="baseMethodDeclaration:3" targetNodeId="76.~EvaluationAuxModule.addStubPath(java.lang.String):jetbrains.mps.project.StubPath" resolveInfo="addStubPath" />
                                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6785881341670047567">
                                         <link role="variableDeclaration:3" targetNodeId="6785881341670047500" resolveInfo="path" />
                                       </node>

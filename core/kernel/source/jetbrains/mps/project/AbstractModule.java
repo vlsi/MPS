@@ -25,7 +25,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.listener.ModelCreationListener;
 import jetbrains.mps.project.persistence.ModuleReadException;
 import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ClassPathFactory;
@@ -786,54 +785,6 @@ public abstract class AbstractModule implements IModule {
   }
 
   //----------------------------------
-
-  public static class StubPath {
-    private String myPath;
-    private ModelRootManager myManager;
-
-    public StubPath(String path, ModelRootManager manager) {
-      myPath = path;
-      myManager = manager;
-    }
-
-    public String getPath() {
-      return myPath;
-    }
-
-    public void setPath(String path) {
-      myPath = path;
-    }
-
-    public ModelRootManager getManager() {
-      return myManager;
-    }
-
-    public void setManager(ModelRootManager manager) {
-      myManager = manager;
-    }
-
-    public boolean equals(Object o) {
-      if (this == o) return true;
-      if (o == null || getClass() != o.getClass()) return false;
-
-      StubPath stubPath = (StubPath) o;
-
-      if (myManager != null ? !myManager.equals(stubPath.myManager) : stubPath.myManager != null) return false;
-      if (myPath != null ? !myPath.equals(stubPath.myPath) : stubPath.myPath != null) return false;
-
-      return true;
-    }
-
-    public int hashCode() {
-      int result = myPath != null ? myPath.hashCode() : 0;
-      result = 31 * result + (myManager != null ? myManager.hashCode() : 0);
-      return result;
-    }
-
-    public String toString() {
-      return myPath + "{" + myManager.getClassName() + '}';
-    }
-  }
 
   protected ModuleScope createScope() {
     return new ModuleScope();

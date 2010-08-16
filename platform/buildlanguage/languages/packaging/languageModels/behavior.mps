@@ -4121,8 +4121,8 @@
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1480356222699429452">
             <property name="name:3" value="paths" />
             <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="1480356222699429471">
-              <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1480356222699429479">
-                <link role="classifier:3" targetNodeId="6.~AbstractModule$StubPath" resolveInfo="AbstractModule.StubPath" />
+              <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6155185640278245020">
+                <link role="classifier:3" targetNodeId="6.~StubPath" resolveInfo="StubPath" />
               </node>
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1480356222699429455">
@@ -4164,7 +4164,7 @@
                               <link role="variableDeclaration:3" targetNodeId="1480356222699429499" resolveInfo="it" />
                             </node>
                             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1480356222699429535">
-                              <link role="baseMethodDeclaration:3" targetNodeId="6.~AbstractModule$StubPath.getPath():java.lang.String" resolveInfo="getPath" />
+                              <link role="baseMethodDeclaration:3" targetNodeId="6.~StubPath.getPath():java.lang.String" resolveInfo="getPath" />
                             </node>
                           </node>
                         </node>
@@ -4229,8 +4229,8 @@
                   </node>
                 </node>
                 <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="1480356222699429661">
-                  <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1480356222699429678">
-                    <link role="classifier:3" targetNodeId="6.~AbstractModule$StubPath" resolveInfo="AbstractModule.StubPath" />
+                  <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6155185640278245035">
+                    <link role="classifier:3" targetNodeId="6.~StubPath" resolveInfo="StubPath" />
                   </node>
                 </node>
               </node>
@@ -4256,7 +4256,7 @@
                                       <link role="variableDeclaration:3" targetNodeId="1480356222699429716" resolveInfo="it" />
                                     </node>
                                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1480356222699429770">
-                                      <link role="baseMethodDeclaration:3" targetNodeId="6.~AbstractModule$StubPath.getPath():java.lang.String" resolveInfo="getPath" />
+                                      <link role="baseMethodDeclaration:3" targetNodeId="6.~StubPath.getPath():java.lang.String" resolveInfo="getPath" />
                                     </node>
                                   </node>
                                 </node>

@@ -20,6 +20,7 @@ import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.project.StubPath;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
@@ -121,9 +122,9 @@ public class Module_Behavior {
   }
 
   public static List<SNode> call_getClassPath_1213877515083(SNode thisNode) {
-    List<AbstractModule.StubPath> paths = ((AbstractModule) Module_Behavior.call_getModule_1213877515148(thisNode)).getAllStubPaths();
-    return Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(paths).select(new ISelector<AbstractModule.StubPath, String>() {
-      public String select(AbstractModule.StubPath it) {
+    List<StubPath> paths = ((AbstractModule) Module_Behavior.call_getModule_1213877515148(thisNode)).getAllStubPaths();
+    return Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(paths).select(new ISelector<StubPath, String>() {
+      public String select(StubPath it) {
         return it.getPath();
       }
     }).toListSequence(), true);
@@ -132,9 +133,9 @@ public class Module_Behavior {
   public static List<SNode> call_getRuntimeClassPath_1213877515098(SNode thisNode) {
     IModule module = Module_Behavior.call_getModule_1213877515148(thisNode);
     if (module instanceof Language) {
-      List<AbstractModule.StubPath> paths = ((Language) module).getRuntimeStubPaths();
-      return ListSequence.fromList(Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(paths).select(new ISelector<AbstractModule.StubPath, String>() {
-        public String select(AbstractModule.StubPath it) {
+      List<StubPath> paths = ((Language) module).getRuntimeStubPaths();
+      return ListSequence.fromList(Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(paths).select(new ISelector<StubPath, String>() {
+        public String select(StubPath it) {
           return it.getPath();
         }
       }).toListSequence(), true)).subtract(ListSequence.fromList(Module_Behavior.call_getClassPath_1213877515083(thisNode))).toListSequence();

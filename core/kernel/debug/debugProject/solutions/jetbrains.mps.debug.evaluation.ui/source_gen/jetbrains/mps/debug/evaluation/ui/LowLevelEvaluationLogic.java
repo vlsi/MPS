@@ -21,6 +21,7 @@ import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.project.AbstractModule;
 import java.util.Collections;
 import java.util.Set;
+import jetbrains.mps.project.StubPath;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.reloading.EachClassPathItemVisitor;
@@ -87,12 +88,12 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
       public void run() {
         IModule locationModule = getLocationModel().getModelDescriptor().getModule();
         IClassPathItem classPath = AbstractModule.getDependenciesClasspath(Collections.singleton(locationModule), true);
-        final Set<AbstractModule.StubPath> pathsToAdd = SetSequence.fromSet(new HashSet<AbstractModule.StubPath>());
+        final Set<StubPath> pathsToAdd = SetSequence.fromSet(new HashSet<StubPath>());
         classPath.accept(new EachClassPathItemVisitor() {
           @Override
           public void visit(JarFileClassPathItem item) {
             String path = item.getFile().getAbsolutePath();
-            AbstractModule.StubPath stubPath = myAuxModule.addStubPath(path);
+            StubPath stubPath = myAuxModule.addStubPath(path);
             if (stubPath != null) {
               SetSequence.fromSet(pathsToAdd).addElement(stubPath);
             }
@@ -101,7 +102,7 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
           @Override
           public void visit(FileClassPathItem item) {
             String path = item.getClassPath();
-            AbstractModule.StubPath stubPath = myAuxModule.addStubPath(path);
+            StubPath stubPath = myAuxModule.addStubPath(path);
             if (stubPath != null) {
               SetSequence.fromSet(pathsToAdd).addElement(stubPath);
             }

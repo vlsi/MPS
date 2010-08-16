@@ -16,11 +16,8 @@
 package jetbrains.mps.stubs;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.AbstractModule.StubPath;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.project.SModelRoot;
+import jetbrains.mps.project.*;
+import jetbrains.mps.project.StubPath;
 import jetbrains.mps.project.SModelRoot.ManagerNotFoundException;
 import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.smodel.*;

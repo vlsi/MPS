@@ -21,6 +21,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.project.StubPath;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.project.structure.modules.mappingpriorities.*;
 import jetbrains.mps.runtime.BytecodeLocator;
