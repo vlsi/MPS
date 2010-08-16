@@ -93,15 +93,19 @@ public abstract class AbstractModule implements IModule {
     }
   }
 
+  //----reference
+
   @NotNull
   public ModuleReference getModuleReference() {
     return myModuleReference;
   }
 
+  //todo remove this method
   public ModuleId getModuleId() {
     return myModuleReference.getModuleId();
   }
 
+  //todo remove this method
   public String getModuleFqName() {
     return myModuleReference.getModuleFqName();
   }
@@ -114,10 +118,13 @@ public abstract class AbstractModule implements IModule {
     return getModuleDescriptor().getNamespace();
   }
 
+  //todo remove this method
   @Deprecated
   public String getModuleUID() {
     return getModuleFqName();
   }
+
+  //---------
 
   protected void reloadAfterDescriptorChange() {
     rereadModels();

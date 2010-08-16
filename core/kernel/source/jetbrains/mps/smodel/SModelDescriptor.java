@@ -42,8 +42,7 @@ public interface SModelDescriptor {
 
   SModelReference getSModelReference();
 
-  SModelId getSModelId();
-
+  //todo remove this method
   SModelFqName getSModelFqName();
 
   String getLongName();

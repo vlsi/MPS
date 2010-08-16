@@ -102,10 +102,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     return getSModelReference().getSModelFqName();
   }
 
-  public SModelId getSModelId() {
-    return getSModelReference().getSModelId();
-  }
-
   public String getLongName() {
     return myModelReference.getLongName();
   }
