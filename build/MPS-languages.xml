@@ -1050,10 +1050,10 @@
       <zipfileset dir="platform/regexp/solutions/jetbrains.mps.regexp.examples/classes_gen" />
     </jar>
   </target>
-  <target name="pack.jetbrains.mps.baseLanguage.methodExtension_t6a">
+  <target name="pack.jetbrains.mps.baseLanguage.extensionMethods_t6a">
     <mkdir dir="platform/extensionMethod/classes_gen" />
     <mkdir dir="platform/extensionMethod/source_gen.caches" />
-    <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.baseLanguage.methodExtension.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+    <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.baseLanguage.extensionMethods.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="platform/extensionMethod/methodExtension.mpl" prefix="module" />
       <zipfileset dir="platform/extensionMethod/source_gen.caches" prefix="source_gen.caches" />
       <zipfileset dir="platform/extensionMethod" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
