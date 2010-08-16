@@ -1,3 +1,4 @@
+import junit.framework.TestSuite;
 import org.apache.tools.ant.Main;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
@@ -360,5 +361,7 @@ import java.lang.reflect.Method;
   jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Union_Test.class})
 
 @RunWith(Suite.class)
-public class GlobalTestSuite {
+public class GlobalTestSuite extends TestSuite {
+
+
 }
