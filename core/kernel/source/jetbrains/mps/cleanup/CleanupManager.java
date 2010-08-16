@@ -16,12 +16,8 @@
 package jetbrains.mps.cleanup;
 
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.command.CommandAdapter;
-import com.intellij.openapi.command.CommandEvent;
-import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -30,6 +26,7 @@ import java.util.List;
 
 public class CleanupManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(CleanupManager.class);
+
   public static CleanupManager getInstance() {
     return ApplicationManager.getApplication().getComponent(CleanupManager.class);
   }
