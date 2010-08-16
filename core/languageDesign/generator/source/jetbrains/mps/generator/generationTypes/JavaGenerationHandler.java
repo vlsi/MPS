@@ -19,9 +19,9 @@ import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationStatus;
+import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.generator.fileGenerator.FileGenerationManager;
-import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
@@ -46,7 +46,7 @@ import java.util.Set;
 
 /**
  * Stores files on disk, compiles and reloads classes.
- *
+ * <p/>
  * Evgeny Gryaznov, Jan 21, 2010
  */
 public class JavaGenerationHandler extends GenerationHandlerBase {
@@ -90,7 +90,7 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
       prepareOutputFolder(testsOutputFolder);
     }
 
-    if(myLogger.needsInfo()) {
+    if (myLogger.needsInfo()) {
       myLogger.info("module " + module + "; folder = " + outputFolder + "");
     }
   }
@@ -101,13 +101,13 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
   }
 
   @Override
-  public boolean compile(Project p, List<Pair<IModule,List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException {
+  public boolean compile(Project p, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException {
     boolean compiledSuccessfully = generationOK;
-    boolean[] ideaIsFresh = new boolean[] { false };
+    boolean[] ideaIsFresh = new boolean[]{false};
 
     IProjectHandler projectHandler = getProjectHandler(p);
 
-    if(generationOK) {
+    if (generationOK) {
       long compilationStart = System.currentTimeMillis();
       boolean needToReload = false;
 
@@ -193,7 +193,7 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
   }
 
   protected void reloadClasses(ITaskProgressHelper progressHelper) {
-    if(IdeMain.getTestMode() != TestMode.NO_TEST) {
+    if (IdeMain.getTestMode() != TestMode.NO_TEST) {
       return;
     }
 
@@ -213,7 +213,7 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
   }
 
   @Override
-  public long estimateCompilationMillis(List<Pair<IModule,List<SModelDescriptor>>> input) {
+  public long estimateCompilationMillis(List<Pair<IModule, List<SModelDescriptor>>> input) {
     long totalJob = 0;
     for (Pair<IModule, List<SModelDescriptor>> pair : input) {
       IModule module = pair.o1;
@@ -238,7 +238,7 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
       new File(outputFolder).mkdirs();
     }
   }
-  
+
   @Override
   public String toString() {
     return "Generate Files";
