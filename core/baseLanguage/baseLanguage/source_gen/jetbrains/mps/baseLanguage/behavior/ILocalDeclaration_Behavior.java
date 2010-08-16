@@ -26,8 +26,14 @@ public class ILocalDeclaration_Behavior {
         ref = ref_iterator.next();
         if (ILocalReference_Behavior.call_getDeclaration_3262277503800831941(ref) == thisNode) {
           SNode referenceContainer = SNodeOperations.getAncestor(ref, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
-          if (referenceContainer != container && IStatementListContainer_Behavior.call_isClosure_3262277503800835439(SNodeOperations.getAncestor(referenceContainer, "jetbrains.mps.baseLanguage.structure.IStatementListContainer", false, false))) {
-            return true;
+          while (referenceContainer != null) {
+            if (referenceContainer == container) {
+              return false;
+            }
+            if (IStatementListContainer_Behavior.call_isClosure_3262277503800835439(SNodeOperations.getAncestor(referenceContainer, "jetbrains.mps.baseLanguage.structure.IStatementListContainer", false, false))) {
+              return true;
+            }
+            referenceContainer = SNodeOperations.getAncestor(referenceContainer, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
           }
         }
       }
