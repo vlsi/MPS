@@ -99,16 +99,6 @@ public abstract class AbstractModule implements IModule {
     return myModuleReference;
   }
 
-  //todo remove this method
-  public ModuleId getModuleId() {
-    return myModuleReference.getModuleId();
-  }
-
-  //todo remove this method
-  public String getModuleFqName() {
-    return myModuleReference.getModuleFqName();
-  }
-
   @Nullable
   public String getModuleNamespace() {
     //transient models module
@@ -117,60 +107,7 @@ public abstract class AbstractModule implements IModule {
     return getModuleDescriptor().getNamespace();
   }
 
-  //todo remove this method
-  @Deprecated
-  public String getModuleUID() {
-    return getModuleFqName();
-  }
-
-  //---------
-
-  protected void reloadAfterDescriptorChange() {
-    rereadModels();
-
-    updatePackagedDescriptorClasspath();
-    updateClassPath();
-  }
-
-  public void onModuleLoad() {
-    boolean needToSave = false;
-
-    if (updateSModelReferences()) {
-      needToSave = true;
-    }
-
-    if (updateModuleReferences()) {
-      needToSave = true;
-    }
-
-    if (isPackaged()) {
-      updatePackagedDescriptorClasspath();
-    } else {
-      Set<StubModelsEntry> visited = new HashSet<StubModelsEntry>();
-      List<StubModelsEntry> remove = new ArrayList<StubModelsEntry>();
-      for (StubModelsEntry e : getModuleDescriptor().getStubModelEntries()) {
-        if (visited.contains(e)) {
-          remove.add(e);
-          needToSave = true;
-        }
-
-        visited.add(e);
-      }
-
-      getModuleDescriptor().getStubModelEntries().removeAll(remove);
-    }
-
-    if (needToSave && !isPackaged()) {
-      save();
-    }
-  }
-
-  public boolean isPackaged() {
-    if (getDescriptorFile() == null) {
-      return false;
-    }
-    return getDescriptorFile().isReadOnly();
-  }
+  //---------adding different deps
 
   public void addDependency(@NotNull ModuleReference moduleRef, boolean reexport) {
     ModuleDescriptor descriptor = getModuleDescriptor();
@@ -185,7 +122,7 @@ public abstract class AbstractModule implements IModule {
   public void addUsedLanguage(ModuleReference langRef) {
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor.getUsedLanguages().contains(langRef)) return;
-    
+
     descriptor.getUsedLanguages().add(langRef);
     setModuleDescriptor(descriptor, true);
     save();
@@ -198,29 +135,28 @@ public abstract class AbstractModule implements IModule {
     save();
   }
 
-  public List<SModelDescriptor> getOwnModelDescriptors() {
-    return SModelRepository.getInstance().getModelDescriptors(this);
+  public void addUsedLanguage(final String languageNamespace) {
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      public void run() {
+        ModuleDescriptor md = getModuleDescriptor();
+        if (md == null) return;
+
+        for (ModuleReference r : md.getUsedLanguages()) {
+          if (languageNamespace.equals(r.getModuleFqName())) {
+            return;
+          }
+        }
+
+        ModuleReference ref = ModuleReference.fromString(languageNamespace);
+        md.getUsedLanguages().add(ref);
+
+        setModuleDescriptor(md, true);
+        save();
+      }
+    });
   }
 
-  public IFile getClassesGen() {
-    IFile classesDir = getClassesDirParent();
-    if (classesDir == null) return null;
-    if (isPackaged()) return classesDir;
-
-    return classesDir.child("classes_gen");
-  }
-
-  private IFile getClassesDirParent() {
-    if (isPackaged()) {
-      String filename = getBundleHome().getAbsolutePath() + "!";
-      VirtualFile file = VFileSystem.getFile(filename);
-      if (file == null) return null;
-      return VFileSystem.toIFile(file);
-    } else {
-      if (getDescriptorFile() == null) return null;
-      return getDescriptorFile().getParent();
-    }
-  }
+  //-----model roots
 
   private List<ModelRoot> getModelRoots() {
     ModuleDescriptor descriptor = getModuleDescriptor();
@@ -384,251 +320,6 @@ public abstract class AbstractModule implements IModule {
     return result;
   }
 
-  //-----
-
-  public final EditableSModelDescriptor createModel(SModelFqName name, SModelRoot root) {
-    IModelRootManager manager = root.getManager();
-
-    if (!manager.isNewModelsSupported()) {
-      LOG.error("Trying to create model root manager in root which doesn't support new models");
-      return null;
-    }
-
-    EditableSModelDescriptor model = (EditableSModelDescriptor) manager.createNewModel(root, name, this);
-    SModelRepository.getInstance().markChanged(model, true);
-
-    for (ModelCreationListener listener : ourModelCreationListeners) {
-      if (listener.isApplicable(model)) {
-        listener.onCreate(model);
-      }
-    }
-
-    return model;
-  }
-
-  public Set<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm) {
-    return new LinkedHashSet<SModelDescriptor>();
-  }
-
-  public Set<Language> getImplicitlyImportedLanguages(SModelDescriptor sm) {
-    LinkedHashSet<Language> result = new LinkedHashSet<Language>();
-    if (SModelStereotype.isGeneratorModel(sm)) {
-      result.add(Generator_Language.get());
-    }
-    return result;
-  }
-
-  public IFile getDescriptorFile() {
-    return myDescriptorFile;
-  }
-
-  @NotNull
-  public IScope getScope() {
-    return myScope;
-  }
-
-  protected void readModels() {
-    if (!myModelsRead) {
-      myModelsRead = true;
-
-      for (SModelRoot root : mySModelRoots) {
-        root.dispose();
-      }
-      mySModelRoots.clear();
-
-      for (ModelRoot modelRoot : getModelRoots()) {
-        try {
-          SModelRoot root = new SModelRoot(this, modelRoot);
-          mySModelRoots.add(root);
-          IModelRootManager manager = root.getManager();
-          manager.updateModels(root, this);
-        } catch (Exception e) {
-          LOG.error("Error loading models from root: prefix: \"" + modelRoot.getPrefix() + "\" path: \"" + modelRoot.getPath() + "\". Requested by: " + this, e);
-        }
-      }
-
-      myInitialized = true;
-    }
-  }
-
-  public void dispose() {
-    for (SModelRoot root : mySModelRoots) {
-      root.dispose();
-    }
-    mySModelRoots.clear();
-  }
-
-  public List<String> getSourcePaths() {
-    List<String> result = new ArrayList<String>();
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor != null) {
-      for (String p : descriptor.getSourcePaths()) {
-        result.add(p);
-      }
-    }
-    if (getGeneratorOutputPath() != null) {
-      result.add(getGeneratorOutputPath());
-    }
-    if (getTestsGeneratorOutputPath() != null) {
-      result.add(getTestsGeneratorOutputPath());
-    }
-    return result;
-  }
-
-  protected void rereadModels() {
-    myModelsRead = false;
-    myInitialized = false;
-    readModels();
-  }
-
-  protected boolean isInitialized() {
-    return myInitialized;
-  }
-
-  protected void fireModuleInitialized() {
-    MPSModuleRepository.getInstance().fireModuleInitialized(this);
-  }
-
-  public Class getClass(String fqName) {
-    try {
-      return ClassLoaderManager.getInstance().getClassFor(this, fqName);
-    } catch (Throwable t) {
-      LOG.error(t);
-      return null;
-    }
-  }
-
-  public File getBundleHome() {
-    IFile descriptorFile = getDescriptorFile();
-
-    if (descriptorFile != null) {
-      if (descriptorFile instanceof JarFileEntryFile) {
-        return ((JarFileEntryFile) descriptorFile).getJarFile();
-      }
-
-      return FileSystem.toFile(descriptorFile.getParent());
-    }
-
-    return null;
-  }
-
-  public boolean isCompileInMPS() {
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    return descriptor != null && descriptor.getCompileInMPS();
-  }
-
-  public boolean reloadClassesAfterGeneration() {
-    return true;
-  }
-
-  public void addModuleImport(@NotNull final ModuleReference moduleRef) {
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      public void run() {
-        ModuleDescriptor md = getModuleDescriptor();
-        if (md == null) return;
-
-        for (Dependency dependency : md.getDependencies()) {
-          if (moduleRef.equals(dependency.getModuleRef())) {
-            return;
-          }
-        }
-
-        Dependency dep = new Dependency();
-        dep.setModuleRef(moduleRef);
-        md.getDependencies().add(dep);
-
-        setModuleDescriptor(md, true);
-        save();
-      }
-    });
-  }
-
-  public void addUsedLanguage(final String languageNamespace) {
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      public void run() {
-        ModuleDescriptor md = getModuleDescriptor();
-        if (md == null) return;
-
-        for (ModuleReference r : md.getUsedLanguages()) {
-          if (languageNamespace.equals(r.getModuleFqName())) {
-            return;
-          }
-        }
-
-        ModuleReference ref = ModuleReference.fromString(languageNamespace);
-        md.getUsedLanguages().add(ref);
-
-        setModuleDescriptor(md, true);
-        save();
-      }
-    });
-  }
-
-  public void invalidateCaches() {
-    myScope.invalidateCaches();
-  }
-
-  public boolean needReloading() {
-    if ((myDescriptorFile == null) || !myDescriptorFile.exists()) {
-      return false;
-    }
-    String timestampString;
-    if (ModelAccess.instance().canRead()) {
-      timestampString = getModuleDescriptor().getTimestamp();
-    } else {
-      timestampString = ModelAccess.instance().runReadAction(new Computable<String>() {
-        public String compute() {
-          return getModuleDescriptor().getTimestamp();
-        }
-      });
-    }
-    if (timestampString == null) return true;
-    long timestamp = Long.decode(timestampString);
-    return timestamp != myDescriptorFile.lastModified();
-  }
-
-  public String getOutputFor(SModelDescriptor model) {
-    if (SModelStereotype.isTestModel(model)) {
-      return getTestsGeneratorOutputPath();
-    } else {
-      return getGeneratorOutputPath();
-    }
-  }
-
-  public final void reloadFromDisk(boolean reloadClasses) {
-    ModelAccess.instance().checkWriteAccess();
-    try {
-      ModuleDescriptor descriptor = loadDescriptor();
-      setModuleDescriptor(descriptor, reloadClasses);
-    } catch (ModuleReadException e) {
-      handleReadProblem(e, false);
-    }
-  }
-
-  private void handleReadProblem(Exception e, boolean isInConflict) {
-    SuspiciousModelIndex.instance().addModule(this, isInConflict);
-    LOG.error(e.getMessage());
-    e.printStackTrace();
-  }
-
-  public boolean updateSModelReferences() {
-    if (getModuleDescriptor() == null) return false;
-    return getModuleDescriptor().updateModelRefs();
-  }
-
-  public boolean updateModuleReferences() {
-    if (getModuleDescriptor() == null) return false;
-    return getModuleDescriptor().updateModuleRefs();
-  }
-
-  protected void invalidateDependencies() {
-    myExplicitlyDependentModules = null;
-  }
-
-  protected ModuleDescriptor loadDescriptor() {
-    return null;
-  }
-
   //-----------stubs--------------
 
   public boolean areJavaStubsEnabled() {
@@ -784,12 +475,285 @@ public abstract class AbstractModule implements IModule {
     return new ModuleBytecodeLocator();
   }
 
+  //-----
+
+  protected void reloadAfterDescriptorChange() {
+    rereadModels();
+
+    updatePackagedDescriptorClasspath();
+    updateClassPath();
+  }
+
+  public void onModuleLoad() {
+    boolean needToSave = false;
+
+    if (updateSModelReferences()) {
+      needToSave = true;
+    }
+
+    if (updateModuleReferences()) {
+      needToSave = true;
+    }
+
+    if (isPackaged()) {
+      updatePackagedDescriptorClasspath();
+    } else {
+      Set<StubModelsEntry> visited = new HashSet<StubModelsEntry>();
+      List<StubModelsEntry> remove = new ArrayList<StubModelsEntry>();
+      for (StubModelsEntry e : getModuleDescriptor().getStubModelEntries()) {
+        if (visited.contains(e)) {
+          remove.add(e);
+          needToSave = true;
+        }
+
+        visited.add(e);
+      }
+
+      getModuleDescriptor().getStubModelEntries().removeAll(remove);
+    }
+
+    if (needToSave && !isPackaged()) {
+      save();
+    }
+  }
+
+  public boolean isPackaged() {
+    if (getDescriptorFile() == null) {
+      return false;
+    }
+    return getDescriptorFile().isReadOnly();
+  }
+
+  public List<SModelDescriptor> getOwnModelDescriptors() {
+    return SModelRepository.getInstance().getModelDescriptors(this);
+  }
+
+  public IFile getClassesGen() {
+    IFile classesDir = getClassesDirParent();
+    if (classesDir == null) return null;
+    if (isPackaged()) return classesDir;
+
+    return classesDir.child("classes_gen");
+  }
+
+  private IFile getClassesDirParent() {
+    if (isPackaged()) {
+      String filename = getBundleHome().getAbsolutePath() + "!";
+      VirtualFile file = VFileSystem.getFile(filename);
+      if (file == null) return null;
+      return VFileSystem.toIFile(file);
+    } else {
+      if (getDescriptorFile() == null) return null;
+      return getDescriptorFile().getParent();
+    }
+  }
+
+  public final EditableSModelDescriptor createModel(SModelFqName name, SModelRoot root) {
+    IModelRootManager manager = root.getManager();
+
+    if (!manager.isNewModelsSupported()) {
+      LOG.error("Trying to create model root manager in root which doesn't support new models");
+      return null;
+    }
+
+    EditableSModelDescriptor model = (EditableSModelDescriptor) manager.createNewModel(root, name, this);
+    SModelRepository.getInstance().markChanged(model, true);
+
+    for (ModelCreationListener listener : ourModelCreationListeners) {
+      if (listener.isApplicable(model)) {
+        listener.onCreate(model);
+      }
+    }
+
+    return model;
+  }
+
+  public Set<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm) {
+    return new LinkedHashSet<SModelDescriptor>();
+  }
+
+  public Set<Language> getImplicitlyImportedLanguages(SModelDescriptor sm) {
+    LinkedHashSet<Language> result = new LinkedHashSet<Language>();
+    if (SModelStereotype.isGeneratorModel(sm)) {
+      result.add(Generator_Language.get());
+    }
+    return result;
+  }
+
+  public IFile getDescriptorFile() {
+    return myDescriptorFile;
+  }
+
+  @NotNull
+  public IScope getScope() {
+    return myScope;
+  }
+
+  protected void readModels() {
+    if (!myModelsRead) {
+      myModelsRead = true;
+
+      for (SModelRoot root : mySModelRoots) {
+        root.dispose();
+      }
+      mySModelRoots.clear();
+
+      for (ModelRoot modelRoot : getModelRoots()) {
+        try {
+          SModelRoot root = new SModelRoot(this, modelRoot);
+          mySModelRoots.add(root);
+          IModelRootManager manager = root.getManager();
+          manager.updateModels(root, this);
+        } catch (Exception e) {
+          LOG.error("Error loading models from root: prefix: \"" + modelRoot.getPrefix() + "\" path: \"" + modelRoot.getPath() + "\". Requested by: " + this, e);
+        }
+      }
+
+      myInitialized = true;
+    }
+  }
+
+  public void dispose() {
+    for (SModelRoot root : mySModelRoots) {
+      root.dispose();
+    }
+    mySModelRoots.clear();
+  }
+
+  public List<String> getSourcePaths() {
+    List<String> result = new ArrayList<String>();
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor != null) {
+      for (String p : descriptor.getSourcePaths()) {
+        result.add(p);
+      }
+    }
+    if (getGeneratorOutputPath() != null) {
+      result.add(getGeneratorOutputPath());
+    }
+    if (getTestsGeneratorOutputPath() != null) {
+      result.add(getTestsGeneratorOutputPath());
+    }
+    return result;
+  }
+
+  protected void rereadModels() {
+    myModelsRead = false;
+    myInitialized = false;
+    readModels();
+  }
+
+  protected boolean isInitialized() {
+    return myInitialized;
+  }
+
+  protected void fireModuleInitialized() {
+    MPSModuleRepository.getInstance().fireModuleInitialized(this);
+  }
+
+  public Class getClass(String fqName) {
+    try {
+      return ClassLoaderManager.getInstance().getClassFor(this, fqName);
+    } catch (Throwable t) {
+      LOG.error(t);
+      return null;
+    }
+  }
+
+  public File getBundleHome() {
+    IFile descriptorFile = getDescriptorFile();
+
+    if (descriptorFile != null) {
+      if (descriptorFile instanceof JarFileEntryFile) {
+        return ((JarFileEntryFile) descriptorFile).getJarFile();
+      }
+
+      return FileSystem.toFile(descriptorFile.getParent());
+    }
+
+    return null;
+  }
+
+  public boolean isCompileInMPS() {
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    return descriptor != null && descriptor.getCompileInMPS();
+  }
+
+  public boolean reloadClassesAfterGeneration() {
+    return true;
+  }
+
+  public void invalidateCaches() {
+    myScope.invalidateCaches();
+  }
+
+  public boolean needReloading() {
+    if ((myDescriptorFile == null) || !myDescriptorFile.exists()) {
+      return false;
+    }
+    String timestampString;
+    if (ModelAccess.instance().canRead()) {
+      timestampString = getModuleDescriptor().getTimestamp();
+    } else {
+      timestampString = ModelAccess.instance().runReadAction(new Computable<String>() {
+        public String compute() {
+          return getModuleDescriptor().getTimestamp();
+        }
+      });
+    }
+    if (timestampString == null) return true;
+    long timestamp = Long.decode(timestampString);
+    return timestamp != myDescriptorFile.lastModified();
+  }
+
+  public String getOutputFor(SModelDescriptor model) {
+    if (SModelStereotype.isTestModel(model)) {
+      return getTestsGeneratorOutputPath();
+    } else {
+      return getGeneratorOutputPath();
+    }
+  }
+
+  public final void reloadFromDisk(boolean reloadClasses) {
+    ModelAccess.instance().checkWriteAccess();
+    try {
+      ModuleDescriptor descriptor = loadDescriptor();
+      setModuleDescriptor(descriptor, reloadClasses);
+    } catch (ModuleReadException e) {
+      handleReadProblem(e, false);
+    }
+  }
+
+  private void handleReadProblem(Exception e, boolean isInConflict) {
+    SuspiciousModelIndex.instance().addModule(this, isInConflict);
+    LOG.error(e.getMessage());
+    e.printStackTrace();
+  }
+
+  public boolean updateSModelReferences() {
+    if (getModuleDescriptor() == null) return false;
+    return getModuleDescriptor().updateModelRefs();
+  }
+
+  public boolean updateModuleReferences() {
+    if (getModuleDescriptor() == null) return false;
+    return getModuleDescriptor().updateModuleRefs();
+  }
+
+  protected void invalidateDependencies() {
+    myExplicitlyDependentModules = null;
+  }
+
+  protected ModuleDescriptor loadDescriptor() {
+    return null;
+  }
+  
   //----------------------------------
 
   protected ModuleScope createScope() {
     return new ModuleScope();
   }
-  
+
   public class ModuleScope extends DefaultScope {
     public AbstractModule getModule() {
       return AbstractModule.this;
@@ -828,5 +792,23 @@ public abstract class AbstractModule implements IModule {
     public URL findResource(String name) {
       return getClassPathItem().getResource(name);
     }
+  }
+
+  //------------------
+
+  //todo remove this method
+  public ModuleId getModuleId() {
+    return myModuleReference.getModuleId();
+  }
+
+  //todo remove this method
+  public String getModuleFqName() {
+    return myModuleReference.getModuleFqName();
+  }
+
+  //todo remove this method
+  @Deprecated
+  public String getModuleUID() {
+    return getModuleFqName();
   }
 }
