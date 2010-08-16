@@ -65,7 +65,7 @@ public abstract class AbstractModule implements IModule {
   private CompositeClassPathItem myCachedClassPathItem;
   private List<IModule> myCachedExplicitlyDependentModules;
 
-  //-----model creation 
+  //----model creation
 
   private static Set<ModelCreationListener> ourModelCreationListeners = new HashSet<ModelCreationListener>();
 
@@ -126,7 +126,7 @@ public abstract class AbstractModule implements IModule {
     return getModuleDescriptor().getNamespace();
   }
 
-  //---------adding different deps
+  //----adding different deps
 
   public void addDependency(@NotNull ModuleReference moduleRef, boolean reexport) {
     ModuleDescriptor descriptor = getModuleDescriptor();
@@ -175,7 +175,7 @@ public abstract class AbstractModule implements IModule {
     });
   }
 
-  //-----model roots
+  //----model roots
 
   private List<ModelRoot> getModelRoots() {
     ModuleDescriptor descriptor = getModuleDescriptor();
@@ -194,7 +194,7 @@ public abstract class AbstractModule implements IModule {
     return null;
   }
 
-  //---get deps
+  //----get deps
 
   public <T extends IModule> Set<T> getAllDependOnModules(Class<T> cls) {
     Set<T> modules = new DependencyCollector(this, cls).collect();
@@ -276,7 +276,7 @@ public abstract class AbstractModule implements IModule {
     return new ArrayList<IModule>(result);
   }
 
-  //---languages
+  //----languages
 
   public List<ModuleReference> getUsedLanguagesReferences() {
     List<ModuleReference> result = new ArrayList<ModuleReference>();
@@ -313,7 +313,7 @@ public abstract class AbstractModule implements IModule {
     return new ArrayList<Language>(result);
   }
 
-  //---devkits
+  //----devkits
 
   public List<ModuleReference> getUsedDevkitReferences() {
     List<ModuleReference> result = new ArrayList<ModuleReference>();
@@ -339,7 +339,7 @@ public abstract class AbstractModule implements IModule {
     return result;
   }
 
-  //-----------stubs--------------
+  //----stubs
 
   public boolean areJavaStubsEnabled() {
     return true;
@@ -413,7 +413,7 @@ public abstract class AbstractModule implements IModule {
     return changed;
   }
 
-  //-----------classpath--------------
+  //----classpath
 
   public void updateClassPath() {
     myCachedClassPathItem = null;
@@ -494,7 +494,7 @@ public abstract class AbstractModule implements IModule {
     return new ModuleBytecodeLocator();
   }
 
-  //-----
+  //----
 
   protected void reloadAfterDescriptorChange() {
     rereadModels();
@@ -747,8 +747,6 @@ public abstract class AbstractModule implements IModule {
     return null;
   }
   
-  //----------------------------------
-
   protected ModuleScope createScope() {
     return new ModuleScope();
   }
@@ -797,7 +795,7 @@ public abstract class AbstractModule implements IModule {
     }
   }
 
-  //------------------
+  //----to remove
 
   //todo remove this method
   public ModuleId getModuleId() {
