@@ -14,7 +14,7 @@
         <mkdir dir="build/classes"/>
         <javac destdir="build/classes" source="1.5" target="1.5">
             <src path="source"/>
-            <src path="MPSSupport/source"/>
+            <src path="source-api"/>
             <classpath>
                 <fileset dir="${idea_home}/lib">
                     <include name="**/*.jar"/>
