@@ -79,7 +79,6 @@ public class StronglyConnectedModules {
   }
 
   private static class DefaultModuleDecoratorBuilder<M extends IModule> implements IModuleDecoratorBuilder<M, DefaultModuleDecorator<M>> {
-
     public DefaultModuleDecorator<M> decorate(M module) {
       return new DefaultModuleDecorator<M>(module);
     }
@@ -98,7 +97,6 @@ public class StronglyConnectedModules {
       List<IModule> dependencyCopy = new ArrayList<IModule>();
       dependencyCopy.addAll(dependency);
       Collections.sort(dependencyCopy, new Comparator<IModule>() {
-        @Override
         public int compare(IModule o1, IModule o2) {
           return o1.getModuleFqName().compareTo(o2.getModuleFqName());
         }
@@ -124,10 +122,8 @@ public class StronglyConnectedModules {
       return this.hashCode() - o.hashCode();
     }
 
-    @Override
     public String toString() {
       return ModelAccess.instance().runReadAction(new Computable<String>() {
-        @Override
         public String compute() {
           return myModule.toString();
         }

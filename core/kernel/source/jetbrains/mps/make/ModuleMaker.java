@@ -52,6 +52,7 @@ public class ModuleMaker {
   private Dependencies myDependencies;
 
   public ModuleMaker() {
+    
   }
 
   public void clean(final Set<IModule> modules, @NotNull final ProgressIndicator indicator) {
@@ -61,9 +62,8 @@ public class ModuleMaker {
       indicator.setText("Cleaning...");
       for (IModule m : modules) {
         if (isExcluded(m)) continue;
-        if (indicator.isCanceled()) {
-          break;
-        }
+        if (indicator.isCanceled()) break;
+        
         indicator.setText2("Cleaning " + m.getModuleFqName() + "...");
         FileUtil.delete(m.getClassesGen().toFile());
       }
@@ -93,9 +93,7 @@ public class ModuleMaker {
       List<Set<IModule>> schedule = StronglyConnectedModules.getInstance().getStronglyConnectedComponents(toCompile);
 
       for (Set<IModule> cycle : schedule) {
-        if (indicator.isCanceled()) {
-          break;
-        }
+        if (indicator.isCanceled()) break;
 
         indicator.setText2("Compiling modules " + cycle + "...");
         jetbrains.mps.plugin.CompilationResult result = compile(cycle);
@@ -127,9 +125,7 @@ public class ModuleMaker {
 
     Set<IModule> modulesWithRemovals = new HashSet<IModule>();
     for (IModule m : modules) {
-      if (areClassesUpToDate(m)) {
-        continue;
-      }
+      if (areClassesUpToDate(m)) continue;
 
       if (!m.isCompileInMPS()) {
         LOG.warning("Module which compiled in IDEA depend on module which has to be compiled in MPS:" + m.getModuleFqName(), m);
@@ -243,13 +239,8 @@ public class ModuleMaker {
   }
 
   private boolean areClassesUpToDate(IModule m) {
-    if (isExcluded(m)) {
-      return true;
-    }
-
-    if (!m.isCompileInMPS()) {
-      return true;
-    }
+    if (isExcluded(m)) return true;
+    if (!m.isCompileInMPS()) return true;
 
     return getModuleSources(m).isUpToDate();
   }
@@ -262,18 +253,10 @@ public class ModuleMaker {
   }
 
   private boolean isExcluded(IModule m) {
-    if (!(m instanceof Solution) && !(m instanceof Language)) {
-      return true;
-    }
-
-    if (m.isPackaged()) {
-      return true;
-    }
-
-    if (!m.isCompileInMPS()) {
-      return true;
-    }
-
+    if (!(m instanceof Solution) && !(m instanceof Language)) return true;
+    if (m.isPackaged()) return true;
+    if (!m.isCompileInMPS())return true;
+    
     return false;
   }
 
