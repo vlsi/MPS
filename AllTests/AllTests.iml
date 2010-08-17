@@ -22,6 +22,8 @@
     <orderEntry type="module" module-name="Tuples" />
     <orderEntry type="module" module-name="baseLanguage.test" />
     <orderEntry type="library" name="ant-1.7.0" level="project" />
+    <orderEntry type="module" module-name="analyzers" />
+    <orderEntry type="module" module-name="debugTests" />
   </component>
 </module>
 
