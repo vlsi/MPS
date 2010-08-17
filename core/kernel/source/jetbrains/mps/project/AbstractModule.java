@@ -113,18 +113,8 @@ public abstract class AbstractModule implements IModule {
     return myModuleReference;
   }
 
-  //todo remove at least one of the two following methods
-  //todo are these really one object?
   public String getModuleFqName() {
     return myModuleReference.getModuleFqName();
-  }
-
-  @Nullable
-  public String getModuleNamespace() {
-    //transient models module
-    if (getModuleDescriptor() == null) return null;
-
-    return getModuleDescriptor().getNamespace();
   }
 
   //----adding different deps
@@ -153,12 +143,6 @@ public abstract class AbstractModule implements IModule {
     descriptor.getUsedDevkits().add(devkitRef);
     setModuleDescriptor(descriptor, true);
     save();
-  }
-
-  //----model roots
-
-  public List<SModelRoot> getSModelRoots() {
-    return Collections.unmodifiableList(mySModelRoots);
   }
 
   //----get deps
@@ -384,6 +368,10 @@ public abstract class AbstractModule implements IModule {
 
   //----
 
+  public List<SModelRoot> getSModelRoots() {
+    return Collections.unmodifiableList(mySModelRoots);
+  }
+  
   protected void reloadAfterDescriptorChange() {
     rereadModels();
 

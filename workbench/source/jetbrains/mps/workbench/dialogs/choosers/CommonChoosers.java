@@ -23,7 +23,6 @@ import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -193,11 +192,11 @@ public class CommonChoosers {
 
     BaseMPSChooseModel<T> goToModuleModel = new BaseMPSChooseModel<T>(project, entityString) {
       public String doGetFullName(Object element) {
-        return ((BaseModuleItem) element).getModule().getModuleNamespace();
+        return ((BaseModuleItem) element).getModule().getModuleFqName();
       }
 
       public String doGetObjectName(T module) {
-        return module.getModuleNamespace();
+        return module.getModuleFqName();
       }
 
       public NavigationItem doGetNavigationItem(final T module) {

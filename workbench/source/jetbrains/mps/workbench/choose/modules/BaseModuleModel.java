@@ -17,7 +17,6 @@ package jetbrains.mps.workbench.choose.modules;
 
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.smodel.Generator;
 
@@ -36,6 +35,6 @@ public abstract class BaseModuleModel extends BaseMPSChooseModel<IModule> {
       Generator gen = (Generator) module;
       return gen.getAlias();
     }
-    return module.getModuleNamespace();
+    return module.getModuleFqName();
   }
 }

@@ -121,7 +121,7 @@ public class PersistenceUpdater {
 
   public void upgradePersistenceInModule(IModule module, Frame mainFrame) {
     String typeString = module.getClass().getName();
-    upgradePersistenceInUnit(module.getScope(), typeString + " " + module.getModuleNamespace(), mainFrame);
+    upgradePersistenceInUnit(module.getScope(), typeString + " " + module.getModuleFqName(), mainFrame);
   }
 
   public void upgradePersistenceInModel(SModelDescriptor modelDescriptor, Frame mainFrame) {

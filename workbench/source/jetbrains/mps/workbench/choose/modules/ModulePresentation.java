@@ -35,7 +35,7 @@ public class ModulePresentation extends BasePresentation {
     if (myModule instanceof Generator) {
       return ((Generator) myModule).getAlias();
     }
-    return myModule.getModuleNamespace();
+    return myModule.getModuleFqName();
   }
 
   public String doGetLocationString() {

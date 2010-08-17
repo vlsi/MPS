@@ -206,7 +206,7 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     public String getNamespace() {
       if (getParent() == null || !(getParent() instanceof ProjectLanguageTreeNode)) return "";
       ProjectLanguageTreeNode parent = (ProjectLanguageTreeNode) getParent();
-      return parent.getModule().getModuleNamespace();
+      return parent.getModule().getModuleFqName();
     }
 
     @Override

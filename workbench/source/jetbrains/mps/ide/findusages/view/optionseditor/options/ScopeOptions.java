@@ -21,7 +21,6 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScopeMinusTransient;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectScope;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
@@ -108,7 +107,7 @@ public class ScopeOptions extends BaseOptions {
         if (module == null) {
           LOG.error("Module is not found for " + myModule + ". Using current module.");
           module = operationContext.getModule();
-          myModule = module.getModuleNamespace();
+          myModule = module.getModuleFqName();
         }
         scope = new OnlyModuleScope(module);
       }
@@ -139,7 +138,7 @@ public class ScopeOptions extends BaseOptions {
     if (result != null) return result;
 
     for (IModule module : repo.getAllModules()) {
-      String moduleNamespace = module.getModuleNamespace();
+      String moduleNamespace = module.getModuleFqName();
       if (moduleNamespace == null) continue;
       if (moduleNamespace.equals(namespace)) return module;
     }
