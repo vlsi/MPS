@@ -65,7 +65,7 @@ public class BootstrapScope extends BaseScope {
   public Language getLanguage(ModuleReference moduleReference) {
     for (Language l : getModules(Language.class)) {
       if (moduleReference.getModuleId() != null) {
-        if (l.getModuleId().equals(moduleReference.getModuleId())) {
+        if (l.getModuleReference().getModuleId().equals(moduleReference.getModuleId())) {
           return l;
         }
       } else {
@@ -80,7 +80,7 @@ public class BootstrapScope extends BaseScope {
   public DevKit getDevKit(ModuleReference moduleReference) {
     for (DevKit d : getModules(DevKit.class)) {
       if (moduleReference.getModuleId() != null) {
-        if (d.getModuleId().equals(moduleReference.getModuleId())) {
+        if (d.getModuleReference().getModuleId().equals(moduleReference.getModuleId())) {
           return d;
         }
       } else {

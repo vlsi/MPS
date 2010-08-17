@@ -34,7 +34,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_8178231612784878176(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SModelDescriptor model = _context.getOriginalInputModel().getModelDescriptor();
-    return Language.getLanguageForLanguageAspect(model).getModuleId().toString();
+    return Language.getLanguageForLanguageAspect(model).getModuleReference().getModuleId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_5553449326502993530(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -50,7 +50,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_2974122604715183884(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Language.getLanguageFor(_context.getOriginalInputModel().getModelDescriptor()).getModuleId().toString();
+    return Language.getLanguageFor(_context.getOriginalInputModel().getModelDescriptor()).getModuleReference().getModuleId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_2974122604715183887(final IOperationContext operationContext, final PropertyMacroContext _context) {

@@ -32,8 +32,6 @@ public interface IModule extends ModelOwner {
   @NotNull
   ModuleReference getModuleReference();
 
-  ModuleId getModuleId();
-
   String getModuleFqName();
 
   String getModuleNamespace();

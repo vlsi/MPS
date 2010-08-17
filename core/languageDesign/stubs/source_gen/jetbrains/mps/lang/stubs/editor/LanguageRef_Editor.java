@@ -54,7 +54,7 @@ public class LanguageRef_Editor extends DefaultNodeEditor {
       List<Language> langList = MPSModuleRepository.getInstance().getAllLanguages();
       return ListSequence.fromList(langList).select(new ISelector<Language, String>() {
         public String select(Language it) {
-          return ((String) it.getModuleId().toString());
+          return ((String) it.getModuleReference().getModuleId().toString());
         }
       }).toListSequence();
     }

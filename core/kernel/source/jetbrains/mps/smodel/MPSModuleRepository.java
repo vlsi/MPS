@@ -310,13 +310,13 @@ public class MPSModuleRepository implements ApplicationComponent {
 
     myFqNameToModulesMap.put(moduleFqName, module);
 
-    ModuleId moduleId = module.getModuleId();
+    ModuleId moduleId = module.getModuleReference().getModuleId();
     if (moduleId != null) {
       if (myIdToModuleMap.containsKey(moduleId)) {
         LOG.warning("duplicate module name " + module.getModuleReference() + " module with the same id already exists " + myIdToModuleMap.get(moduleId).getModuleReference());
       }
 
-      myIdToModuleMap.put(module.getModuleId(), module);
+      myIdToModuleMap.put(module.getModuleReference().getModuleId(), module);
     }
 
     myModuleToOwners.addLink(module, owner);
@@ -414,8 +414,8 @@ public class MPSModuleRepository implements ApplicationComponent {
     myModuleToOwners.clearFirst(module);
     myModules.remove(module);
     myFqNameToModulesMap.remove(module.getModuleFqName());
-    if (module.getModuleId() != null) {
-      myIdToModuleMap.remove(module.getModuleId());
+    if (module.getModuleReference().getModuleId() != null) {
+      myIdToModuleMap.remove(module.getModuleReference().getModuleId());
     }
 
     if (descriptorFile != null) {

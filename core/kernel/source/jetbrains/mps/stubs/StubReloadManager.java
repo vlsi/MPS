@@ -56,7 +56,7 @@ public class StubReloadManager implements ApplicationComponent {
   public List<SNodeDescriptor> getRootNodeDescriptors(AbstractModule module) {
     List<SNodeDescriptor> result = new ArrayList<SNodeDescriptor>();
 
-    for (StubPath path : myLoadedStubPaths.get(module.getModuleId())) {
+    for (StubPath path : myLoadedStubPaths.get(module.getModuleReference().getModuleId())) {
       PathData pd = myPath2Data.get(path);
       StubLocation location = new StubLocation(path.getPath(), "", module);
       result.addAll(pd.getModelRootManager().getRootNodeDescriptors(location));
@@ -308,7 +308,7 @@ public class StubReloadManager implements ApplicationComponent {
       // TODO: fixme
       // while loading a language we can't refer to it by ID, since it hasn't been created yet
       // fortunately, we don't have to
-      if (m.getModuleId().equals(ModuleId.fromString(moduleId))) {
+      if (m.getModuleReference().getModuleId().equals(ModuleId.fromString(moduleId))) {
         // well, that's weird... this causes an NPE in ClassLoaderManager
         return (BaseStubModelRootManager) BaseStubModelRootManager.create((AbstractModule) m, className);
       }
@@ -352,13 +352,13 @@ public class StubReloadManager implements ApplicationComponent {
     }
 
     public void add(AbstractModule m, StubPath sp) {
-      List<StubPath> oldList = get(m.getModuleId());
+      List<StubPath> oldList = get(m.getModuleReference().getModuleId());
       if (oldList == null) {
         oldList = new ArrayList<StubPath>();
       }
 
       oldList.add(sp);
-      put(m.getModuleId(), oldList);
+      put(m.getModuleReference().getModuleId(), oldList);
     }
   }
 

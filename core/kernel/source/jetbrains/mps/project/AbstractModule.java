@@ -686,12 +686,4 @@ public abstract class AbstractModule implements IModule {
       return getClassPathItem().getResource(name);
     }
   }
-
-  //----to remove
-
-  @Deprecated
-  public ModuleId getModuleId() {
-    return myModuleReference.getModuleId();
-  }
-
 }

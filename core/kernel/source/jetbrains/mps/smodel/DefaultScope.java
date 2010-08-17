@@ -211,16 +211,16 @@ public abstract class DefaultScope extends BaseScope {
     myFqNameToDevKit = new HashMap<String, DevKit>();
     for (DevKit dk : usedDevkits) {
       myFqNameToDevKit.put(dk.getModuleFqName(), dk);
-      if (dk.getModuleId() != null) {
-        myIdToDevKit.put(dk.getModuleId(), dk);
+      if (dk.getModuleReference().getModuleId() != null) {
+        myIdToDevKit.put(dk.getModuleReference().getModuleId(), dk);
       }
     }
 
     myFqNameToLanguage = new HashMap<String, Language>();
     for (Language l : usedLanguages) {
       myFqNameToLanguage.put(l.getNamespace(), l);
-      if (l.getModuleId() != null) {
-        myIdToLanguage.put(l.getModuleId(), l);
+      if (l.getModuleReference().getModuleId() != null) {
+        myIdToLanguage.put(l.getModuleReference().getModuleId(), l);
       }
     }
 
