@@ -482,8 +482,8 @@
                     <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1235136692891">
                       <link role="variableDeclaration:3" targetNodeId="1235136293836" resolveInfo="language" />
                     </node>
-                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1235136698135">
-                      <link role="baseMethodDeclaration:3" targetNodeId="12.~Language.getNamespace():java.lang.String" resolveInfo="getNamespace" />
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5699776870187153317">
+                      <link role="baseMethodDeclaration:3" targetNodeId="13.~AbstractModule.getModuleFqName():java.lang.String" resolveInfo="getModuleFqName" />
                     </node>
                   </node>
                   <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1235136589377">
@@ -505,8 +505,8 @@
                             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1235136567050">
                               <link role="variableDeclaration:3" targetNodeId="1235136450724" resolveInfo="conceptLanguage" />
                             </node>
-                            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1235136578647">
-                              <link role="baseMethodDeclaration:3" targetNodeId="12.~Language.getNamespace():java.lang.String" resolveInfo="getNamespace" />
+                            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5699776870187153319">
+                              <link role="baseMethodDeclaration:3" targetNodeId="13.~AbstractModule.getModuleFqName():java.lang.String" resolveInfo="getModuleFqName" />
                             </node>
                           </node>
                         </node>

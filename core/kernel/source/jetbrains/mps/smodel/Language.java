@@ -258,7 +258,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     boolean changed = false;
     List<ModuleReference> remove = new ArrayList<ModuleReference>();
     for (ModuleReference ref : myLanguageDescriptor.getExtendedLanguages()) {
-      if (getNamespace().equals(ref.getModuleFqName())) {
+      if (getModuleFqName().equals(ref.getModuleFqName())) {
         remove.add(ref);
         changed = true;
       }
@@ -381,14 +381,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   public List<Generator> getGenerators() {
     return new ArrayList<Generator>(myGenerators);
-  }
-
-  public String getNamespace() {
-    return getModuleFqName();
-  }
-
-  public String getShortName() {
-    return NameUtil.shortNameFromLongName(getNamespace());
   }
 
   public void rename(String newNamespace) {
@@ -758,7 +750,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     ModelRoot modelRoot = new ModelRoot();
     File languageAccessories = new File(getDescriptorFile().getParent().toFile(), LANGUAGE_ACCESSORIES);
     modelRoot.setPath(languageAccessories.getAbsolutePath());
-    modelRoot.setPrefix(getNamespace());
+    modelRoot.setPrefix(getModuleFqName());
     return modelRoot;
   }
 
@@ -891,12 +883,10 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       super(SModelListenerPriority.PLATFORM);
     }
 
-    @Override
     public void modelChanged(SModel model) {
       invalidateCaches();
     }
 
-    @Override
     public void modelChangedDramatically(SModel model) {
       invalidateCaches();
     }

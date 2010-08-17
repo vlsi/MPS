@@ -104,7 +104,7 @@
     <nodeInfo nodeId="6060783635544711535" fileName="check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule.java" startLine="35" startPosition="36" endLine="36" endPosition="17" />
     <nodeInfo nodeId="1235136520823" fileName="check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule.java" startLine="39" startPosition="9" endLine="40" endPosition="57" />
     <nodeInfo nodeId="1235136520823" fileName="check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule.java" startLine="40" startPosition="57" endLine="41" endPosition="59" />
-    <nodeInfo nodeId="1235136520823" fileName="check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule.java" startLine="41" startPosition="59" endLine="42" endPosition="388" />
+    <nodeInfo nodeId="1235136520823" fileName="check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule.java" startLine="41" startPosition="59" endLine="42" endPosition="394" />
     <nodeInfo nodeId="1235136868149" fileName="check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule.java" startLine="43" startPosition="9" endLine="44" endPosition="14" />
     <nodeInfo nodeId="1237222084073" fileName="check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule.java" startLine="27" startPosition="87" endLine="30" endPosition="5" />
     <nodeInfo nodeId="6060783635544711525" fileName="check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule.java" startLine="34" startPosition="106" endLine="37" endPosition="7" />
@@ -113,7 +113,7 @@
     <nodeInfo nodeId="1235136403640" fileName="check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule.java" startLine="32" startPosition="74" endLine="46" endPosition="5" />
     <scopeInfo nodeId="1237222084074" fileName="check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule.java" startLine="28" startPosition="27" endLine="29" endPosition="13" />
     <scopeInfo nodeId="6060783635544711526" fileName="check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule.java" startLine="35" startPosition="36" endLine="36" endPosition="17" />
-    <scopeInfo nodeId="1235136520823" fileName="check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule.java" startLine="39" startPosition="9" endLine="42" endPosition="388" />
+    <scopeInfo nodeId="1235136520823" fileName="check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule.java" startLine="39" startPosition="9" endLine="42" endPosition="394" />
     <scopeInfo nodeId="1235136478709" fileName="check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule.java" startLine="38" startPosition="113" endLine="44" endPosition="14" />
     <scopeInfo nodeId="1235136403641" fileName="check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule.java" startLine="33" startPosition="46" endLine="45" endPosition="7">
       <varInfo nodeId="1235136450724" varName="conceptLanguage" />

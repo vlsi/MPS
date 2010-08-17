@@ -12,7 +12,6 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.CollectionUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -69,7 +68,7 @@ public class CustomViewersManager implements ApplicationComponent {
   }
 
   public boolean loadLanguage(final Language l) {
-    if (myLoadedLanguages.contains(l.getNamespace())) {
+    if (myLoadedLanguages.contains(l.getModuleFqName())) {
       return true;
     }
     SModelDescriptor pluginModelDescriptor = l.getPluginModelDescriptor();
@@ -89,7 +88,7 @@ public class CustomViewersManager implements ApplicationComponent {
     } catch (Throwable t) {
       return false;
     } finally {
-      myLoadedLanguages.add(l.getNamespace());
+      myLoadedLanguages.add(l.getModuleFqName());
     }
   }
 

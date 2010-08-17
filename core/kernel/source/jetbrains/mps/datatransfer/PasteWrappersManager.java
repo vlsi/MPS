@@ -94,7 +94,7 @@ public class PasteWrappersManager implements ApplicationComponent {
   private void load() {
     for (Language language : MPSModuleRepository.getInstance().getAllLanguages()) {
       try {
-        String pasteWrappersClass = language.getNamespace() + "." + LanguageAspect.ACTIONS.getName() + "." + PASTE_WRAPPER_CLASS_NAME;
+        String pasteWrappersClass = language.getModuleFqName() + "." + LanguageAspect.ACTIONS.getName() + "." + PASTE_WRAPPER_CLASS_NAME;
         Class cls = language.getClass(pasteWrappersClass);
         if (cls == null) continue;
 

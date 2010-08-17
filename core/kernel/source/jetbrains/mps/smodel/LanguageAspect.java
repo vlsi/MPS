@@ -116,7 +116,7 @@ public enum LanguageAspect {
       SModelDescriptor result = super.get(l);
       if (result == null) {
         //todo backward compatibility
-        result = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(l.getNamespace() + ".helgins"));
+        result = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(l.getModuleFqName() + ".helgins"));
       }
       return (EditableSModelDescriptor) result;
     }
@@ -284,7 +284,7 @@ public enum LanguageAspect {
   }
 
   public EditableSModelDescriptor get(Language l) {
-    return (EditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(new SModelReference(l.getNamespace() + "." + myName, null), l);
+    return (EditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(new SModelReference(l.getModuleFqName() + "." + myName, null), l);
   }
 
   public SModelReference get(ModuleReference l) {
@@ -327,6 +327,6 @@ public enum LanguageAspect {
   public abstract ModuleReference getMainLanguage();
 
   private SModelFqName getModuleUID(Language l) {
-    return new SModelFqName(l.getNamespace() + "." + getName(), "");
+    return new SModelFqName(l.getModuleFqName() + "." + getName(), "");
   }
 }

@@ -627,7 +627,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1225099518029(final IOperationContext operationContext, final PropertyMacroContext _context) {
     Language lang = QueriesUtil.getInputLanguage(_context.getOriginalInputModel());
-    String capitalizedName = NameUtil.capitalize(NameUtil.shortNameFromLongName(lang.getNamespace()));
+    String capitalizedName = NameUtil.capitalize(NameUtil.shortNameFromLongName(lang.getModuleFqName()));
     return capitalizedName + "_Language";
   }
 

@@ -66,8 +66,8 @@ public class RenameAspects_Action extends GeneratedAction {
   }
 
   private void renameAspect(Language l, String oldName, String newName) {
-    SModelFqName oldFqName = SModelFqName.fromString(l.getNamespace() + "." + oldName);
-    SModelFqName newFqName = SModelFqName.fromString(l.getNamespace() + "." + newName);
+    SModelFqName oldFqName = SModelFqName.fromString(l.getModuleFqName() + "." + oldName);
+    SModelFqName newFqName = SModelFqName.fromString(l.getModuleFqName() + "." + newName);
     SModelDescriptor model = l.getScope().getModelDescriptor(oldFqName);
     if (model == null) {
       return;

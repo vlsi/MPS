@@ -218,7 +218,7 @@ public abstract class DefaultScope extends BaseScope {
 
     myFqNameToLanguage = new HashMap<String, Language>();
     for (Language l : usedLanguages) {
-      myFqNameToLanguage.put(l.getNamespace(), l);
+      myFqNameToLanguage.put(l.getModuleFqName(), l);
       if (l.getModuleReference().getModuleId() != null) {
         myIdToLanguage.put(l.getModuleReference().getModuleId(), l);
       }

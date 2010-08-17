@@ -654,8 +654,8 @@
                                           <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5948027493682788201">
                                             <link role="variableDeclaration:3" targetNodeId="1058093769519026211" resolveInfo="language" />
                                           </node>
-                                          <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5948027493682788202">
-                                            <link role="baseMethodDeclaration:3" targetNodeId="1.~Language.getNamespace():java.lang.String" resolveInfo="getNamespace" />
+                                          <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5699776870187152879">
+                                            <link role="baseMethodDeclaration:3" targetNodeId="5.~AbstractModule.getModuleFqName():java.lang.String" resolveInfo="getModuleFqName" />
                                           </node>
                                         </node>
                                         <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="5948027493682788203">
@@ -726,8 +726,8 @@
                                           <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1058093769519031724">
                                             <link role="variableDeclaration:3" targetNodeId="1058093769519026211" resolveInfo="language" />
                                           </node>
-                                          <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1058093769519031725">
-                                            <link role="baseMethodDeclaration:3" targetNodeId="1.~Language.getNamespace():java.lang.String" resolveInfo="getNamespace" />
+                                          <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5699776870187152885">
+                                            <link role="baseMethodDeclaration:3" targetNodeId="5.~AbstractModule.getModuleFqName():java.lang.String" resolveInfo="getModuleFqName" />
                                           </node>
                                         </node>
                                         <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1058093769519031726">

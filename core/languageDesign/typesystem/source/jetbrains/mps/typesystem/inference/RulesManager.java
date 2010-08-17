@@ -97,7 +97,7 @@ public class RulesManager {
 
   public boolean loadLanguage(final Language l) {
     synchronized (RULES_LOCK) {
-      if (myLoadedLanguages.contains(l.getNamespace())) {
+      if (myLoadedLanguages.contains(l.getModuleFqName())) {
         return true;
       }
       SModelDescriptor helginsModelDescriptor = l.getTypesystemModelDescriptor();
@@ -138,7 +138,7 @@ public class RulesManager {
         //     LOG.error("fail to instantiate HelginsDescriptor for language " + l.getNamespace());
         return false;
       } finally {
-        myLoadedLanguages.add(l.getNamespace());
+        myLoadedLanguages.add(l.getModuleFqName());
       }
     }
   }

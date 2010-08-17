@@ -6925,8 +6925,8 @@
                     <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1225099572929">
                       <link role="variableDeclaration:3" targetNodeId="1225099533730" resolveInfo="lang" />
                     </node>
-                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1225099572930">
-                      <link role="baseMethodDeclaration:3" targetNodeId="5.~Language.getNamespace():java.lang.String" resolveInfo="getNamespace" />
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5699776870187153321">
+                      <link role="baseMethodDeclaration:3" targetNodeId="24.~AbstractModule.getModuleFqName():java.lang.String" resolveInfo="getModuleFqName" />
                     </node>
                   </node>
                 </node>

@@ -60,7 +60,7 @@ public class GenerationPartitioningUtil {
       if (generators.size() == 0) continue;
       Generator generator = generators.get(0);
       if (generators.size() > 1) {
-        LOG.warning("LANG '" + language.getNamespace() + "' has " + generators.size() + " generators. use 1st: '" + generator.getName() + "'");
+        LOG.warning("LANG '" + language.getModuleFqName() + "' has " + generators.size() + " generators. use 1st: '" + generator.getName() + "'");
       }
       collectGenerators(generator, scanTemplates, collectedGenerators, processedLanguages);
     }

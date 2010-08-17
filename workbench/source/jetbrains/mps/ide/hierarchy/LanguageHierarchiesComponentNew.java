@@ -488,7 +488,7 @@ public class LanguageHierarchiesComponentNew extends JComponent implements Scrol
       myOperationContext = myComponent.myOperationContext;
       myRootable = conceptDeclaration instanceof ConceptDeclaration && ((ConceptDeclaration) conceptDeclaration).getRootable();
       myIsAbstract = conceptDeclaration.getConceptProperty("abstract") != null;
-      myNamespace = SModelUtil_new.getDeclaringLanguage(conceptDeclaration, myOperationContext.getScope()).getNamespace();
+      myNamespace = SModelUtil_new.getDeclaringLanguage(conceptDeclaration, myOperationContext.getScope()).getModuleFqName();
       myNodePointer = new SNodePointer(conceptDeclaration);
       addMouseListener(new MouseAdapter() {
         public void mousePressed(MouseEvent e) {

@@ -428,7 +428,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   private void ensureLanguageAdded(Language language) {
-    String namespace = language.getNamespace();
+    String namespace = language.getModuleFqName();
     synchronized (myLock) {
       if (myAddedLanguageNamespaces.containsKey(namespace)) {
         return;
@@ -441,7 +441,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   private void processLanguageRemoved(Language language) {
-    String namespace = language.getNamespace();
+    String namespace = language.getModuleFqName();
     synchronized (myLock) {
       if (!myAddedLanguageNamespaces.containsKey(namespace)) {
         return;

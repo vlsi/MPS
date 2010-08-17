@@ -93,7 +93,7 @@ public class LanguagePaths_Action extends GeneratedAction {
         }
 
         JPanel panel = new JPanel(new BorderLayout());
-        panel.setBorder(BorderFactory.createTitledBorder(lang.getNamespace()));
+        panel.setBorder(BorderFactory.createTitledBorder(lang.getModuleFqName()));
         mainp.add(panel);
         JList list1 = new JList(cpu.toArray());
         JList list2 = new JList(rcpu.toArray());

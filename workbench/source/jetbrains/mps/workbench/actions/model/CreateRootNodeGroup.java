@@ -25,7 +25,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.IEditor;
-import jetbrains.mps.ide.actions.AddLanguageImport_Action;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.smodel.PackageNode;
@@ -135,8 +134,8 @@ public class CreateRootNodeGroup extends BaseGroup {
     boolean plain = myPlain || (languagesWithRoots.size() == 1 && aspect == null);
 
     for (final Language language : languagesWithRoots) {
-      String name = language.getNamespace();
-      Icon icon = IconManager.getIconForNamespace(language.getNamespace());
+      String name = language.getModuleFqName();
+      Icon icon = IconManager.getIconForNamespace(language.getModuleFqName());
       BaseGroup langRootsGroup;
 
       if (!plain) {

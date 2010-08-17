@@ -176,9 +176,7 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
   }
 
   private void collectDevKits(List<DevKit> result) {
-    if (result.contains(this)) {
-      return;
-    }
+    if (result.contains(this)) return;
     result.add(this);
     for (DevKit dk : getExtendedDevKits()) {
       dk.collectDevKits(result);
@@ -190,9 +188,8 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
     for (ModuleReference ref : myDescriptor.getExportedSolutions()) {
       String uid = ref.getModuleFqName();
       Solution solution = MPSModuleRepository.getInstance().getSolution(uid);
-      if (solution != null) {
-        result.add(solution);
-      }
+      if (solution == null) continue;
+      result.add(solution);
     }
     return result;
   }
@@ -201,9 +198,8 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
     List<Solution> result = new ArrayList<Solution>();
     for (DevKit dk : getAllExtendedDevkits()) {
       for (Solution s : dk.getExportedSolutions()) {
-        if (!result.contains(s)) {
-          result.add(s);
-        }
+        if (result.contains(s)) continue;
+        result.add(s);
       }
     }
     return result;
@@ -212,7 +208,7 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
   public List<String> getLanguageNamespaces() {
     List<String> result = new ArrayList<String>();
     for (Language l : getExportedLanguages()) {
-      result.add(l.getNamespace());
+      result.add(l.getModuleFqName());
     }
     return result;
   }

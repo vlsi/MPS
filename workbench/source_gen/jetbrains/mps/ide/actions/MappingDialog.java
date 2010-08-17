@@ -5,7 +5,6 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
-
 import jetbrains.mps.smodel.Language;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SNode;

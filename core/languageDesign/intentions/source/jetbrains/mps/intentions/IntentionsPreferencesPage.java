@@ -12,7 +12,6 @@ import org.jetbrains.annotations.Nls;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.Component;
-import java.awt.Dimension;
 import java.util.*;
 
 public class IntentionsPreferencesPage implements Configurable {
@@ -54,7 +53,7 @@ public class IntentionsPreferencesPage implements Configurable {
           languagePanel = new JPanel();
           languagePanel.setLayout(new BoxLayout(languagePanel, BoxLayout.Y_AXIS));
           languagePanel.add(Box.createHorizontalGlue());
-          languagePanel.setBorder(new TitledBorder(language.getNamespace()));
+          languagePanel.setBorder(new TitledBorder(language.getModuleFqName()));
           languagePanel.setBackground(UIManager.getLookAndFeel().getDefaults().getColor("TextArea.background"));
           languagePanel.setAlignmentX(Component.CENTER_ALIGNMENT);
 

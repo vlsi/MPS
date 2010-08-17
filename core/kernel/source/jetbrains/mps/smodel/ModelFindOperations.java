@@ -94,7 +94,7 @@ public class ModelFindOperations {
   public boolean hasLanguage(Language language) {
     if (!myFindUsagesSupported) return false;
 
-    if (myNeedSearchForStrings && !myModelRootManager.containsString(myModelDescriptor, language.getNamespace()))
+    if (myNeedSearchForStrings && !myModelRootManager.containsString(myModelDescriptor, language.getModuleFqName()))
       return false;
 
     SModel model = myModelDescriptor.getSModel();

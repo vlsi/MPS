@@ -228,10 +228,10 @@ public class TemplateProcessor {
             Language outputNodeLang = outputNode.getNodeLanguage();
             if (!myGenerator.getGeneratorSessionContext().getGenerationPlan().isCountedLanguage(outputNodeLang)) {
               if (!outputNodeLang.getGenerators().isEmpty()) {
-                myGenerator.getLogger().error(outputNode, "language of output node is '" + outputNodeLang.getNamespace() + "' - this language did not show up when computing generation steps!");
+                myGenerator.getLogger().error(outputNode, "language of output node is '" + outputNodeLang.getModuleFqName() + "' - this language did not show up when computing generation steps!");
                 myGenerator.getLogger().error(templateContext.getInput(), " -- was input: " + templateContext.getInput().getDebugText());
                 myGenerator.getLogger().error(nodeMacro.getNode(), " -- was template: " + nodeMacro.getDebugText());
-                myGenerator.getLogger().error(null, " -- workaround: add the language '" + outputNodeLang.getNamespace() + "' to list of 'Languages Engaged On Generation' in model '" + myGenerator.getGeneratorSessionContext().getOriginalInputModel().getSModelFqName() + "'");
+                myGenerator.getLogger().error(null, " -- workaround: add the language '" + outputNodeLang.getModuleFqName() + "' to list of 'Languages Engaged On Generation' in model '" + myGenerator.getGeneratorSessionContext().getOriginalInputModel().getSModelFqName() + "'");
               }
             }
           }

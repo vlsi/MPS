@@ -36,8 +36,8 @@ public class MPSLanguageVirtualFile extends DeprecatedVirtualFile {
 
   public MPSLanguageVirtualFile(@NotNull Language language) {
     myLanguage = language;
-    myPath = myLanguage.getNamespace();
-    myName = myLanguage.getNamespace();
+    myPath = myLanguage.getModuleFqName();
+    myName = myLanguage.getModuleFqName();
   }
 
   public String getPath() {

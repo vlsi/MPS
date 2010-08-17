@@ -233,7 +233,7 @@ public class NewGeneratorDialog extends BaseDialog {
   }
 
   private String getTemplateModelPrefix(Language sourceLanguage) {
-    return sourceLanguage.getNamespace() +
+    return sourceLanguage.getModuleFqName() +
       ".generator.template";
   }
 

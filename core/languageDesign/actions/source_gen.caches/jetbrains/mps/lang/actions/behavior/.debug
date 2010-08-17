@@ -238,6 +238,7 @@
   <root nodeId="5270353093116089375">
     <nodeInfo nodeId="5270353093116089621" fileName="NodeFactories_Behavior.java" startLine="21" startPosition="98" endLine="22" endPosition="48" />
     <nodeInfo nodeId="5270353093116089635" fileName="NodeFactories_Behavior.java" startLine="23" startPosition="89" endLine="24" endPosition="115" />
+    <nodeInfo nodeId="5270353093116089633" fileName="NodeFactories_Behavior.java" startLine="25" startPosition="5" endLine="26" endPosition="18" />
     <nodeInfo nodeId="6261424444345978420" fileName="NodeFactories_Behavior.java" startLine="29" startPosition="100" endLine="30" endPosition="115" />
     <nodeInfo nodeId="6261424444345978428" fileName="NodeFactories_Behavior.java" startLine="30" startPosition="115" endLine="31" endPosition="84" />
     <nodeInfo nodeId="6261424444345978445" fileName="NodeFactories_Behavior.java" startLine="31" startPosition="84" endLine="32" endPosition="109" />
@@ -257,6 +258,7 @@
   <root nodeId="5270353093116089661">
     <nodeInfo nodeId="5270353093116089672" fileName="NodeSubstituteActions_Behavior.java" startLine="21" startPosition="98" endLine="22" endPosition="48" />
     <nodeInfo nodeId="5270353093116089680" fileName="NodeSubstituteActions_Behavior.java" startLine="23" startPosition="92" endLine="24" endPosition="115" />
+    <nodeInfo nodeId="5270353093116089692" fileName="NodeSubstituteActions_Behavior.java" startLine="25" startPosition="5" endLine="26" endPosition="18" />
     <nodeInfo nodeId="6261424444345978479" fileName="NodeSubstituteActions_Behavior.java" startLine="29" startPosition="100" endLine="30" endPosition="135" />
     <nodeInfo nodeId="6261424444345978487" fileName="NodeSubstituteActions_Behavior.java" startLine="30" startPosition="135" endLine="31" endPosition="87" />
     <nodeInfo nodeId="6261424444345978504" fileName="NodeSubstituteActions_Behavior.java" startLine="31" startPosition="87" endLine="32" endPosition="115" />
@@ -276,6 +278,7 @@
   <root nodeId="5270353093116089914">
     <nodeInfo nodeId="5270353093116090135" fileName="PasteWrappers_Behavior.java" startLine="21" startPosition="98" endLine="22" endPosition="48" />
     <nodeInfo nodeId="5270353093116090143" fileName="PasteWrappers_Behavior.java" startLine="23" startPosition="85" endLine="24" endPosition="111" />
+    <nodeInfo nodeId="5270353093116090155" fileName="PasteWrappers_Behavior.java" startLine="25" startPosition="5" endLine="26" endPosition="18" />
     <nodeInfo nodeId="6261424444345978541" fileName="PasteWrappers_Behavior.java" startLine="29" startPosition="100" endLine="30" endPosition="117" />
     <nodeInfo nodeId="6261424444345978549" fileName="PasteWrappers_Behavior.java" startLine="30" startPosition="117" endLine="31" endPosition="81" />
     <nodeInfo nodeId="6261424444345978566" fileName="PasteWrappers_Behavior.java" startLine="31" startPosition="81" endLine="32" endPosition="106" />
@@ -295,6 +298,7 @@
   <root nodeId="5270353093116090174">
     <nodeInfo nodeId="5270353093116090192" fileName="SideTransformHintSubstituteActions_Behavior.java" startLine="21" startPosition="98" endLine="22" endPosition="48" />
     <nodeInfo nodeId="5270353093116090200" fileName="SideTransformHintSubstituteActions_Behavior.java" startLine="23" startPosition="92" endLine="24" endPosition="115" />
+    <nodeInfo nodeId="5270353093116090212" fileName="SideTransformHintSubstituteActions_Behavior.java" startLine="25" startPosition="5" endLine="26" endPosition="18" />
     <nodeInfo nodeId="6261424444345978600" fileName="SideTransformHintSubstituteActions_Behavior.java" startLine="29" startPosition="100" endLine="30" endPosition="148" />
     <nodeInfo nodeId="6261424444345978608" fileName="SideTransformHintSubstituteActions_Behavior.java" startLine="30" startPosition="148" endLine="31" endPosition="87" />
     <nodeInfo nodeId="6261424444345978625" fileName="SideTransformHintSubstituteActions_Behavior.java" startLine="31" startPosition="87" endLine="32" endPosition="115" />
@@ -313,6 +317,7 @@
   </root>
   <root nodeId="5457641811177522082">
     <nodeInfo nodeId="5457641811177522111" fileName="PastePostProcessor_Behavior.java" startLine="13" startPosition="78" endLine="14" endPosition="63" />
+    <nodeInfo nodeId="5457641811177522291" fileName="PastePostProcessor_Behavior.java" startLine="14" startPosition="63" endLine="15" endPosition="127" />
     <scopeInfo nodeId="5457641811177522084" fileName="PastePostProcessor_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
     <scopeInfo nodeId="5457641811177522088" fileName="PastePostProcessor_Behavior.java" startLine="13" startPosition="78" endLine="15" endPosition="127">
       <varInfo nodeId="5457641811177522112" varName="parent" />
@@ -320,47 +325,53 @@
   </root>
   <root nodeId="5948027493682347858">
     <nodeInfo nodeId="5948027493682347867" fileName="CopyPreProcessor_Behavior.java" startLine="13" startPosition="78" endLine="14" endPosition="63" />
+    <nodeInfo nodeId="5948027493682347875" fileName="CopyPreProcessor_Behavior.java" startLine="14" startPosition="63" endLine="15" endPosition="125" />
     <scopeInfo nodeId="5948027493682347860" fileName="CopyPreProcessor_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
     <scopeInfo nodeId="5948027493682347864" fileName="CopyPreProcessor_Behavior.java" startLine="13" startPosition="78" endLine="15" endPosition="125">
       <varInfo nodeId="5948027493682347868" varName="parent" />
     </scopeInfo>
   </root>
   <root nodeId="5948027493682405566">
+    <nodeInfo nodeId="5948027493682405573" fileName="ConceptFunctionParameter_nodeToCopyPreProcess_Behavior.java" startLine="12" startPosition="80" endLine="13" endPosition="120" />
     <scopeInfo nodeId="5948027493682405568" fileName="ConceptFunctionParameter_nodeToCopyPreProcess_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
     <scopeInfo nodeId="5948027493682405572" fileName="ConceptFunctionParameter_nodeToCopyPreProcess_Behavior.java" startLine="12" startPosition="80" endLine="13" endPosition="120" />
   </root>
   <root nodeId="5948027493682405580">
+    <nodeInfo nodeId="5948027493682405587" fileName="ConceptFunctionParameter_nodeToCopyPreProcessOriginal_Behavior.java" startLine="12" startPosition="80" endLine="13" endPosition="120" />
     <scopeInfo nodeId="5948027493682405582" fileName="ConceptFunctionParameter_nodeToCopyPreProcessOriginal_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
     <scopeInfo nodeId="5948027493682405586" fileName="ConceptFunctionParameter_nodeToCopyPreProcessOriginal_Behavior.java" startLine="12" startPosition="80" endLine="13" endPosition="120" />
   </root>
   <root nodeId="5948027493682791347">
-    <nodeInfo nodeId="5948027493682791358" fileName="CopyPasteHandlers_Behavior.java" startLine="25" startPosition="98" endLine="26" endPosition="54" />
-    <nodeInfo nodeId="5948027493682791389" fileName="CopyPasteHandlers_Behavior.java" startLine="28" startPosition="35" endLine="29" endPosition="98" />
-    <nodeInfo nodeId="5948027493682791372" fileName="CopyPasteHandlers_Behavior.java" startLine="33" startPosition="35" endLine="34" endPosition="98" />
-    <nodeInfo nodeId="5948027493682791398" fileName="CopyPasteHandlers_Behavior.java" startLine="36" startPosition="7" endLine="37" endPosition="18" />
-    <nodeInfo nodeId="6261424444345978369" fileName="CopyPasteHandlers_Behavior.java" startLine="40" startPosition="100" endLine="41" endPosition="129" />
-    <nodeInfo nodeId="6261424444345978388" fileName="CopyPasteHandlers_Behavior.java" startLine="41" startPosition="129" endLine="42" endPosition="81" />
-    <nodeInfo nodeId="6261424444345978355" fileName="CopyPasteHandlers_Behavior.java" startLine="42" startPosition="81" endLine="43" endPosition="118" />
-    <nodeInfo nodeId="590757823759260315" fileName="CopyPasteHandlers_Behavior.java" startLine="43" startPosition="118" endLine="44" endPosition="157" />
-    <nodeInfo nodeId="5948027493682791387" fileName="CopyPasteHandlers_Behavior.java" startLine="27" startPosition="118" endLine="31" endPosition="0" />
-    <nodeInfo nodeId="5948027493682791370" fileName="CopyPasteHandlers_Behavior.java" startLine="32" startPosition="119" endLine="36" endPosition="0" />
-    <nodeInfo nodeId="5948027493682791381" fileName="CopyPasteHandlers_Behavior.java" startLine="26" startPosition="54" endLine="31" endPosition="7" />
-    <nodeInfo nodeId="5948027493682791364" fileName="CopyPasteHandlers_Behavior.java" startLine="31" startPosition="7" endLine="36" endPosition="7" />
-    <scopeInfo nodeId="5948027493682791349" fileName="CopyPasteHandlers_Behavior.java" startLine="22" startPosition="43" endLine="22" endPosition="43" />
-    <scopeInfo nodeId="5948027493682791388" fileName="CopyPasteHandlers_Behavior.java" startLine="28" startPosition="35" endLine="29" endPosition="98" />
-    <scopeInfo nodeId="5948027493682791371" fileName="CopyPasteHandlers_Behavior.java" startLine="33" startPosition="35" endLine="34" endPosition="98" />
-    <scopeInfo nodeId="5948027493682791387" fileName="CopyPasteHandlers_Behavior.java" startLine="27" startPosition="118" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="5948027493682791370" fileName="CopyPasteHandlers_Behavior.java" startLine="32" startPosition="119" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="6261424444345978346" fileName="CopyPasteHandlers_Behavior.java" startLine="40" startPosition="100" endLine="44" endPosition="157">
+    <nodeInfo nodeId="5948027493682791358" fileName="CopyPasteHandlers_Behavior.java" startLine="26" startPosition="98" endLine="27" endPosition="54" />
+    <nodeInfo nodeId="5948027493682791389" fileName="CopyPasteHandlers_Behavior.java" startLine="29" startPosition="35" endLine="30" endPosition="98" />
+    <nodeInfo nodeId="5948027493682791372" fileName="CopyPasteHandlers_Behavior.java" startLine="34" startPosition="35" endLine="35" endPosition="98" />
+    <nodeInfo nodeId="5948027493682791398" fileName="CopyPasteHandlers_Behavior.java" startLine="37" startPosition="7" endLine="38" endPosition="18" />
+    <nodeInfo nodeId="6261424444345978369" fileName="CopyPasteHandlers_Behavior.java" startLine="41" startPosition="100" endLine="42" endPosition="129" />
+    <nodeInfo nodeId="6261424444345978388" fileName="CopyPasteHandlers_Behavior.java" startLine="42" startPosition="129" endLine="43" endPosition="81" />
+    <nodeInfo nodeId="6261424444345978355" fileName="CopyPasteHandlers_Behavior.java" startLine="43" startPosition="81" endLine="44" endPosition="118" />
+    <nodeInfo nodeId="5699776870187306049" fileName="CopyPasteHandlers_Behavior.java" startLine="44" startPosition="118" endLine="45" endPosition="108" />
+    <nodeInfo nodeId="590757823759260315" fileName="CopyPasteHandlers_Behavior.java" startLine="45" startPosition="108" endLine="46" endPosition="107" />
+    <nodeInfo nodeId="5948027493682791387" fileName="CopyPasteHandlers_Behavior.java" startLine="28" startPosition="118" endLine="32" endPosition="0" />
+    <nodeInfo nodeId="5948027493682791370" fileName="CopyPasteHandlers_Behavior.java" startLine="33" startPosition="119" endLine="37" endPosition="0" />
+    <nodeInfo nodeId="5948027493682791381" fileName="CopyPasteHandlers_Behavior.java" startLine="27" startPosition="54" endLine="32" endPosition="7" />
+    <nodeInfo nodeId="5948027493682791364" fileName="CopyPasteHandlers_Behavior.java" startLine="32" startPosition="7" endLine="37" endPosition="7" />
+    <scopeInfo nodeId="5948027493682791349" fileName="CopyPasteHandlers_Behavior.java" startLine="23" startPosition="43" endLine="23" endPosition="43" />
+    <scopeInfo nodeId="5948027493682791388" fileName="CopyPasteHandlers_Behavior.java" startLine="29" startPosition="35" endLine="30" endPosition="98" />
+    <scopeInfo nodeId="5948027493682791371" fileName="CopyPasteHandlers_Behavior.java" startLine="34" startPosition="35" endLine="35" endPosition="98" />
+    <scopeInfo nodeId="5948027493682791387" fileName="CopyPasteHandlers_Behavior.java" startLine="28" startPosition="118" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="5948027493682791370" fileName="CopyPasteHandlers_Behavior.java" startLine="33" startPosition="119" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="6261424444345978346" fileName="CopyPasteHandlers_Behavior.java" startLine="41" startPosition="100" endLine="46" endPosition="107">
       <varInfo nodeId="6261424444345978370" varName="pastePostProcessor" />
+      <varInfo nodeId="5699776870187306050" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="5948027493682791352" fileName="CopyPasteHandlers_Behavior.java" startLine="25" startPosition="98" endLine="37" endPosition="18">
+    <scopeInfo nodeId="5948027493682791352" fileName="CopyPasteHandlers_Behavior.java" startLine="26" startPosition="98" endLine="38" endPosition="18">
       <varInfo nodeId="5948027493682791359" varName="result" />
     </scopeInfo>
-    <unitInfo nodeId="5948027493682791387" fileName="CopyPasteHandlers_Behavior.java" startLine="27" startPosition="99" endLine="31" endPosition="5" unitName="jetbrains.mps.lang.actions.behavior.CopyPasteHandlers_Behavior$1" />
-    <unitInfo nodeId="5948027493682791370" fileName="CopyPasteHandlers_Behavior.java" startLine="32" startPosition="100" endLine="36" endPosition="5" unitName="jetbrains.mps.lang.actions.behavior.CopyPasteHandlers_Behavior$2" />
+    <unitInfo nodeId="5948027493682791387" fileName="CopyPasteHandlers_Behavior.java" startLine="28" startPosition="99" endLine="32" endPosition="5" unitName="jetbrains.mps.lang.actions.behavior.CopyPasteHandlers_Behavior$1" />
+    <unitInfo nodeId="5948027493682791370" fileName="CopyPasteHandlers_Behavior.java" startLine="33" startPosition="100" endLine="37" endPosition="5" unitName="jetbrains.mps.lang.actions.behavior.CopyPasteHandlers_Behavior$2" />
   </root>
   <root nodeId="6026743057587447967">
+    <nodeInfo nodeId="6026743057587447975" fileName="ConceptFunctionParameter_nodeToPastePostProcess_Behavior.java" startLine="12" startPosition="81" endLine="13" endPosition="122" />
     <scopeInfo nodeId="6026743057587447969" fileName="ConceptFunctionParameter_nodeToPastePostProcess_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
     <scopeInfo nodeId="6026743057587447973" fileName="ConceptFunctionParameter_nodeToPastePostProcess_Behavior.java" startLine="12" startPosition="81" endLine="13" endPosition="122" />
   </root>

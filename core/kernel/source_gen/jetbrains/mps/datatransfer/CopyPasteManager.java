@@ -102,10 +102,10 @@ public class CopyPasteManager extends AbstractManager implements ApplicationComp
           }
         })) {
           for (SNode preProcessor : ListSequence.fromList(SLinkOperations.getTargets(copyPasteHandlers, "preProcessor", true))) {
-            MapSequence.fromMap(myPreProcessors).put(SLinkOperations.getTarget(preProcessor, "concept", false), new AbstractManager.Descriptor<CopyPreProcessor>(language.getNamespace() + "." + LanguageAspect.ACTIONS.getName() + "." + CopyPreProcessor_Behavior.call_getClassName_5948027493682347861(preProcessor), language, LOG));
+            MapSequence.fromMap(myPreProcessors).put(SLinkOperations.getTarget(preProcessor, "concept", false), new AbstractManager.Descriptor<CopyPreProcessor>(language.getModuleFqName() + "." + LanguageAspect.ACTIONS.getName() + "." + CopyPreProcessor_Behavior.call_getClassName_5948027493682347861(preProcessor), language, LOG));
           }
           for (SNode postProcessor : ListSequence.fromList(SLinkOperations.getTargets(copyPasteHandlers, "postProcessor", true))) {
-            MapSequence.fromMap(myPostProcessors).put(SLinkOperations.getTarget(postProcessor, "concept", false), new AbstractManager.Descriptor<PastePostProcessor>(language.getNamespace() + "." + LanguageAspect.ACTIONS.getName() + "." + PastePostProcessor_Behavior.call_getClassName_5457641811177522085(postProcessor), language, LOG));
+            MapSequence.fromMap(myPostProcessors).put(SLinkOperations.getTarget(postProcessor, "concept", false), new AbstractManager.Descriptor<PastePostProcessor>(language.getModuleFqName() + "." + LanguageAspect.ACTIONS.getName() + "." + PastePostProcessor_Behavior.call_getClassName_5457641811177522085(postProcessor), language, LOG));
           }
         }
       }

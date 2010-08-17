@@ -122,7 +122,7 @@ public class ScriptsActionGroupHelper {
     if (scriptsModel == null) return;
     List<MigrationScript> migrationScripts = scriptsModel.getSModel().getRootsAdapters(MigrationScript.class);
     if (migrationScripts.isEmpty()) return;
-    BaseGroup languageScriptsGroup = new BaseGroup(language.getNamespace(), "");
+    BaseGroup languageScriptsGroup = new BaseGroup(language.getModuleFqName(), "");
     for (MigrationScript script : migrationScripts) {
       languageScriptsGroup.add(new RunMigrationScriptAction(script,
         makeScriptActionName(script.getCategory(), script.getTitle(), script.getMigrationFromBuild()), applyToSelection));

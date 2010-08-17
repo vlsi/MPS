@@ -708,8 +708,8 @@
   <root nodeId="1225099204495">
     <nodeInfo nodeId="1225099631048" fileName="QueriesGenerated.java" startLine="624" startPosition="148" endLine="625" endPosition="106" />
     <nodeInfo nodeId="1225099533729" fileName="QueriesGenerated.java" startLine="628" startPosition="148" endLine="629" endPosition="83" />
-    <nodeInfo nodeId="1225099547320" fileName="QueriesGenerated.java" startLine="629" startPosition="83" endLine="630" endPosition="102" />
-    <nodeInfo nodeId="1225099575166" fileName="QueriesGenerated.java" startLine="630" startPosition="102" endLine="631" endPosition="41" />
+    <nodeInfo nodeId="1225099547320" fileName="QueriesGenerated.java" startLine="629" startPosition="83" endLine="630" endPosition="105" />
+    <nodeInfo nodeId="1225099575166" fileName="QueriesGenerated.java" startLine="630" startPosition="105" endLine="631" endPosition="41" />
     <scopeInfo nodeId="1225099631047" fileName="QueriesGenerated.java" startLine="624" startPosition="148" endLine="625" endPosition="106" />
     <scopeInfo nodeId="1225099518030" fileName="QueriesGenerated.java" startLine="628" startPosition="148" endLine="631" endPosition="41">
       <varInfo nodeId="1225099547321" varName="capitalizedName" />

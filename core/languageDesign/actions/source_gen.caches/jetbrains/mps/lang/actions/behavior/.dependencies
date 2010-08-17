@@ -32,6 +32,7 @@
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
+    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
   </dependency>
   <dependency className="jetbrains.mps.lang.actions.behavior.CopyPreProcessor_Behavior" file="CopyPreProcessor_Behavior.java">
     <classNode dependClassName="java.lang.String" />

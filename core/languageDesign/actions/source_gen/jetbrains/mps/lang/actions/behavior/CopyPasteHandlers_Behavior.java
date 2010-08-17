@@ -9,9 +9,10 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -41,7 +42,8 @@ public class CopyPasteHandlers_Behavior {
     SNode pastePostProcessor = SConceptOperations.createNewNode("jetbrains.mps.lang.actions.structure.PastePostProcessor", null);
     SLinkOperations.setTarget(pastePostProcessor, "concept", baseConcept, false);
     ListSequence.fromList(SLinkOperations.getTargets(thisNode, "postProcessor", true)).addElement(pastePostProcessor);
-    SPropertyOperations.set(thisNode, "name", SModelUtil.getDeclaringLanguage(baseConcept, GlobalScope.getInstance()).getShortName() + "_CopyPasteHandlers");
+    String name = SModelUtil.getDeclaringLanguage(baseConcept, GlobalScope.getInstance()).getModuleFqName();
+    SPropertyOperations.set(thisNode, "name", NameUtil.shortNameFromLongName(name) + "_CopyPasteHandlers");
   }
 
   public static List<SNode> call_getBaseConceptCollection_5948027493682791350(SNode thisNode) {

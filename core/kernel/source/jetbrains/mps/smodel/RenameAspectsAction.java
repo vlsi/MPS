@@ -32,9 +32,9 @@ public class RenameAspectsAction extends BaseAction {
   }
 
   private void renameAspect(Language l, String oldName, String newName) {
-    SModelDescriptor sm = l.getScope().getModelDescriptor(SModelFqName.fromString(l.getNamespace() + "." + oldName));
+    SModelDescriptor sm = l.getScope().getModelDescriptor(SModelFqName.fromString(l.getModuleFqName() + "." + oldName));
     if (sm != null) {
-      new ModelRenamer(sm, SModelFqName.fromString(l.getNamespace() + "." + newName), false).rename();
+      new ModelRenamer(sm, SModelFqName.fromString(l.getModuleFqName() + "." + newName), false).rename();
     }
   }
 }

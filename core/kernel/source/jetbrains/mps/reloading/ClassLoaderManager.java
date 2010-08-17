@@ -313,7 +313,7 @@ public class ClassLoaderManager implements ApplicationComponent {
           continue;
         }
         String fqName_language = descriptor.getLongName() + "." +
-          NameUtil.capitalize(NameUtil.shortNameFromLongName(language.getNamespace())) + "_Language";
+          NameUtil.capitalize(NameUtil.shortNameFromLongName(language.getModuleFqName())) + "_Language";
         try {
           Class.forName(fqName_language);
           LOG.error("Non-bootstrap language class is available in application classpath: " + fqName_language);
