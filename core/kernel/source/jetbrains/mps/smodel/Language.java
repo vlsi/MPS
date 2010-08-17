@@ -238,14 +238,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   public List<IModule> getRuntimeDependOnModules() {
-    List<IModule> result = new ArrayList<IModule>();
-    for (Dependency d : getRuntimeDependOn()) {
-      IModule module = MPSModuleRepository.getInstance().getModule(d.getModuleRef());
-      if (module != null) {
-        result.add(module);
-      }
-    }
-    return result;
+    return ModuleUtil.getDependOnModules(getRuntimeDependOn());
   }
 
   protected ModuleDescriptor loadDescriptor() {
@@ -253,9 +246,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   private void collectExtendedLanguages(Set<Language> result) {
-    if (result.contains(this)) {
-      return;
-    }
+    if (result.contains(this)) return;
 
     result.add(this);
     for (Language l : getExtendedLanguages()) {
