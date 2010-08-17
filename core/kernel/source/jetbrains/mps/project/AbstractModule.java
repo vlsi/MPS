@@ -185,7 +185,6 @@ public abstract class AbstractModule implements IModule {
     return result;
   }
 
-  //todo remove at least one of the two following methods
   public final List<IModule> getExplicitlyDependOnModules() {
     if (myCachedExplicitlyDependentModules == null) {
       Set<IModule> res = new LinkedHashSet<IModule>();
@@ -203,9 +202,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   public List<IModule> getDesignTimeDependOnModules() {
-    Set<IModule> result = new LinkedHashSet<IModule>();
-    result.addAll(getAllDependOnModules());
-    return new ArrayList<IModule>(result);
+    return getAllDependOnModules();
   }
 
   public List<IModule> getDependOnModules() {
