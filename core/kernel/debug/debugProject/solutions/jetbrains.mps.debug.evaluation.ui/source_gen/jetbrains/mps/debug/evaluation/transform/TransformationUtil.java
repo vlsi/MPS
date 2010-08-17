@@ -20,6 +20,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.Set;
@@ -274,7 +275,21 @@ public class TransformationUtil {
       }
       SNode classifier = SLinkOperations.getTarget(SNodeOperations.cast(typeCopy, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false);
       assert classifier != null;
-      return "L" + (INamedConcept_Behavior.call_getFqName_1213877404258(classifier).replace(".", "/")) + ";";
+      // we have to deal with the fact that inners in stubs are not inners 
+      String realFqName;
+      if (SPropertyOperations.getString(classifier, "name").contains(".")) {
+        String fqName = INamedConcept_Behavior.call_getFqName_1213877404258(classifier);
+        realFqName = fqName.substring(0, fqName.length() - SPropertyOperations.getString(classifier, "name").length()) + SPropertyOperations.getString(classifier, "name").replace(".", "$");
+      } else {
+        SNode rootClassifier = classifier;
+        String suffix = "";
+        while (Classifier_Behavior.call_isInner_521412098689998677(rootClassifier)) {
+          suffix = "$" + SPropertyOperations.getString(rootClassifier, "name");
+          rootClassifier = SNodeOperations.cast(SNodeOperations.getParent(rootClassifier), "jetbrains.mps.baseLanguage.structure.Classifier");
+        }
+        realFqName = (INamedConcept_Behavior.call_getFqName_1213877404258(rootClassifier).replace(".", "/")) + suffix;
+      }
+      return "L" + realFqName + ";";
     } else if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
       return getJniSignatureFromType(Type_Behavior.call_getJavaType_1213877337345(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")));
     } else {
