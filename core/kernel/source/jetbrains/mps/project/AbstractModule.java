@@ -17,10 +17,7 @@ package jetbrains.mps.project;
 
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.baseLanguage.collections.structure.Collections_Language;
-import jetbrains.mps.baseLanguage.structure.BaseLanguage_Language;
 import jetbrains.mps.lang.generator.structure.Generator_Language;
-import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.listener.ModelCreationListener;
 import jetbrains.mps.project.persistence.ModuleReadException;
@@ -37,7 +34,10 @@ import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.vcs.SuspiciousModelIndex;
-import jetbrains.mps.vfs.*;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.JarFileEntryFile;
+import jetbrains.mps.vfs.VFileSystem;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -156,12 +156,6 @@ public abstract class AbstractModule implements IModule {
   }
 
   //----model roots
-
-  private List<ModelRoot> getModelRoots() {
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor != null) return descriptor.getModelRoots();
-    return new ArrayList<ModelRoot>();
-  }
 
   public List<SModelRoot> getSModelRoots() {
     return Collections.unmodifiableList(mySModelRoots);
@@ -491,14 +485,18 @@ public abstract class AbstractModule implements IModule {
       }
       mySModelRoots.clear();
 
-      for (ModelRoot modelRoot : getModelRoots()) {
-        try {
-          SModelRoot root = new SModelRoot(this, modelRoot);
-          mySModelRoots.add(root);
-          IModelRootManager manager = root.getManager();
-          manager.updateModels(root, this);
-        } catch (Exception e) {
-          LOG.error("Error loading models from root: prefix: \"" + modelRoot.getPrefix() + "\" path: \"" + modelRoot.getPath() + "\". Requested by: " + this, e);
+      ModuleDescriptor descriptor = getModuleDescriptor();
+      if (descriptor != null) {
+        List<ModelRoot> roots = descriptor.getModelRoots();
+        for (ModelRoot modelRoot : roots) {
+          try {
+            SModelRoot root = new SModelRoot(this, modelRoot);
+            mySModelRoots.add(root);
+            IModelRootManager manager = root.getManager();
+            manager.updateModels(root, this);
+          } catch (Exception e) {
+            LOG.error("Error loading models from root: prefix: \"" + modelRoot.getPrefix() + "\" path: \"" + modelRoot.getPath() + "\". Requested by: " + this, e);
+          }
         }
       }
 
