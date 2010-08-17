@@ -185,6 +185,16 @@ public abstract class AbstractModule implements IModule {
     return result;
   }
 
+  public List<IModule> getDependOnModules() {
+    List<IModule> result = new ArrayList<IModule>();
+    for (Dependency dep : getDependOn()) {
+      IModule m = MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
+      if (m == null) continue;
+      result.add(m);
+    }
+    return result;
+  }
+
   public final List<IModule> getExplicitlyDependOnModules() {
     if (myCachedExplicitlyDependentModules == null) {
       Set<IModule> res = new LinkedHashSet<IModule>();
@@ -205,17 +215,6 @@ public abstract class AbstractModule implements IModule {
     return getAllDependOnModules();
   }
 
-  public List<IModule> getDependOnModules() {
-    List<IModule> result = new ArrayList<IModule>();
-    for (Dependency dep : getDependOn()) {
-      IModule m = MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
-      if (m != null) {
-        result.add(m);
-      }
-    }
-    return result;
-  }
-
   public List<IModule> getAllDependOnModules() {
     Set<IModule> result = new LinkedHashSet<IModule>();
     result.addAll(getDependOnModules());
@@ -228,25 +227,18 @@ public abstract class AbstractModule implements IModule {
   //----languages
 
   public List<ModuleReference> getUsedLanguagesReferences() {
-    List<ModuleReference> result = new ArrayList<ModuleReference>();
     ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor != null) {
-      result.addAll(descriptor.getUsedLanguages());
-    }
-    return result;
+    if (descriptor == null) return new ArrayList<ModuleReference>();
+    return new ArrayList<ModuleReference>(descriptor.getUsedLanguages());
   }
 
   public List<Language> getUsedLanguages() {
     List<Language> result = new ArrayList<Language>();
     for (ModuleReference ref : getUsedLanguagesReferences()) {
       Language l = MPSModuleRepository.getInstance().getLanguage(ref);
-      if (l != null) {
-        result.add(l);
-      }
+      if (l == null) continue;
+      result.add(l);
     }
-
-    result.add(BaseLanguage_Language.get());
-    result.add(Collections_Language.get());
     return result;
   }
 
