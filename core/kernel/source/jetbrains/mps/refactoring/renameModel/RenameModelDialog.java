@@ -55,7 +55,7 @@ public class RenameModelDialog extends BaseDialog {
     myMainPanel.add(new JLabel("Model Name"), cLabel);
 
     GridBagConstraints cNameField = new GridBagConstraints(1, 0, 1, 1, 1, 0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0);
-    myModelNameField = new JTextField(myModelDescriptor.getSModelFqName().toString(), 30);
+    myModelNameField = new JTextField(myModelDescriptor.getSModelReference().getSModelFqName().toString(), 30);
     myMainPanel.add(myModelNameField, cNameField);
 
     GridBagConstraints cUpdateCheckbox = new GridBagConstraints(0, 2, 2, 1, 1, 1, GridBagConstraints.NORTHWEST, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0);
@@ -81,7 +81,7 @@ public class RenameModelDialog extends BaseDialog {
       return;
     }
 
-    if (!(fqName.equals(myModelDescriptor.getSModelFqName()))) {
+    if (!(fqName.equals(myModelDescriptor.getSModelReference().getSModelFqName()))) {
       DeleteModelHelper.deleteGeneratedFiles(myProject, myModelDescriptor);
 
       final ModelRenamer renamer = new ModelRenamer(myModelDescriptor, fqName, !myUpdateAllReferences.getModel().isSelected());

@@ -8979,11 +8979,16 @@
                                   <property name="value:3" value="Model " />
                                 </node>
                                 <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5687497293128274390">
-                                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="5687497293128274391">
-                                    <link role="variableDeclaration:3" targetNodeId="8006781392765204435" resolveInfo="myModelDescriptor" />
+                                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7755274343641445585">
+                                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="5687497293128274391">
+                                      <link role="variableDeclaration:3" targetNodeId="8006781392765204435" resolveInfo="myModelDescriptor" />
+                                    </node>
+                                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7755274343641445589">
+                                      <link role="baseMethodDeclaration:3" targetNodeId="7.~SModelDescriptor.getSModelReference():jetbrains.mps.smodel.SModelReference" resolveInfo="getSModelReference" />
+                                    </node>
                                   </node>
                                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5687497293128274392">
-                                    <link role="baseMethodDeclaration:3" targetNodeId="7.~SModelDescriptor.getSModelFqName():jetbrains.mps.smodel.SModelFqName" resolveInfo="getSModelFqName" />
+                                    <link role="baseMethodDeclaration:3" targetNodeId="7.~SModelReference.getSModelFqName():jetbrains.mps.smodel.SModelFqName" resolveInfo="getSModelFqName" />
                                   </node>
                                 </node>
                               </node>

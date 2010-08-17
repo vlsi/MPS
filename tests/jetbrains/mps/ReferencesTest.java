@@ -106,12 +106,12 @@ public class ReferencesTest extends BaseMPSTest {
       }
     });
     for (String item : validationResult) {
-      LOG.error("Error in model " + sm.getSModelFqName() + " : " + item);
+      LOG.error("Error in model " + sm.getSModelReference().getSModelFqName() + " : " + item);
     }
 
     for (SNode node : sm.getSModel().allNodes()) {
       if (SModelUtil_new.findConceptDeclaration(node.getConceptFqName(), GlobalScope.getInstance()) == null) {
-        LOG.error("Error in model " + sm.getSModelFqName() + " : Unknown concept " + node.getConceptFqName());
+        LOG.error("Error in model " + sm.getSModelReference().getSModelFqName() + " : Unknown concept " + node.getConceptFqName());
       }
     }
 
@@ -123,7 +123,7 @@ public class ReferencesTest extends BaseMPSTest {
         }                      
 
         if (ref.getTargetNode() == null) {
-          LOG.error("Error in model " + sm.getSModelFqName() + " : Broken reference in node " + node);
+          LOG.error("Error in model " + sm.getSModelReference().getSModelFqName() + " : Broken reference in node " + node);
         }
       }
     }

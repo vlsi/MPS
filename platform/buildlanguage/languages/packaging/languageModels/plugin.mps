@@ -3107,11 +3107,16 @@
               </node>
               <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1222950820947">
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1222950820948">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="1222950820949">
-                    <link role="variable:7" targetNodeId="1222950820937" resolveInfo="descriptor" />
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7755274343641200258">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="1222950820949">
+                      <link role="variable:7" targetNodeId="1222950820937" resolveInfo="descriptor" />
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7755274343641200262">
+                      <link role="baseMethodDeclaration:3" targetNodeId="4.~SModelDescriptor.getSModelReference():jetbrains.mps.smodel.SModelReference" resolveInfo="getSModelReference" />
+                    </node>
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1222950820950">
-                    <link role="baseMethodDeclaration:3" targetNodeId="4.~SModelDescriptor.getSModelFqName():jetbrains.mps.smodel.SModelFqName" resolveInfo="getSModelFqName" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="4.~SModelReference.getSModelFqName():jetbrains.mps.smodel.SModelFqName" resolveInfo="getSModelFqName" />
                   </node>
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1222950820951">

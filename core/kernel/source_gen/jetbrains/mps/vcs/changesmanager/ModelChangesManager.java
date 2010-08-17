@@ -942,7 +942,7 @@ __switch__:
           node.addReference(newReference);
         } else {
           if (log.isErrorEnabled()) {
-            log.error("Model " + myModelDescriptor.getSModelFqName() + " has non-static references");
+            log.error("Model " + myModelDescriptor.getSModelReference().getSModelFqName() + " has non-static references");
           }
         }
       }

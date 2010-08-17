@@ -3,9 +3,7 @@ package jetbrains.mps.debug.api;
 import jetbrains.mps.debug.api.info.BLDebugInfoCache;
 import jetbrains.mps.debug.api.info.DebugInfo;
 import jetbrains.mps.debug.api.info.PositionInfo;
-import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.*;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 
@@ -183,9 +181,9 @@ public abstract class AbstractMPSBreakpoint {
         SNode node = myNodePointer.getNode();
         if (node != null) {
           SNode root = node.getContainingRoot();
-          return node + " in " + root + " (" + myNodePointer.getModel().getSModelFqName() + ")";
+          return node + " in " + root + " (" + myNodePointer.getModel().getSModelReference().getSModelFqName() + ")";
         } else {
-          return myNodePointer.getNodeId() + " (" + myNodePointer.getModel().getSModelFqName() + ")";
+          return myNodePointer.getNodeId() + " (" + myNodePointer.getModel().getSModelReference().getSModelFqName() + ")";
         }
       }
     });

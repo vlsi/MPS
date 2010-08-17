@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1347577327951781517">
+    <nodeInfo nodeId="1347577327951781527" fileName="RenameConcept_newName_Settings.java" startLine="17" startPosition="35" endLine="18" endPosition="125" />
     <nodeInfo nodeId="8292108433549550607" fileName="RenameConcept.java" startLine="45" startPosition="68" endLine="46" endPosition="87" />
     <nodeInfo nodeId="8292108433549550613" fileName="RenameConcept.java" startLine="48" startPosition="184" endLine="49" endPosition="21" />
     <nodeInfo nodeId="8292108433549550618" fileName="RenameConcept.java" startLine="50" startPosition="7" endLine="51" endPosition="106" />
@@ -11,6 +12,7 @@
     <nodeInfo nodeId="1347577327951781573" fileName="RenameConcept.java" startLine="62" startPosition="74" endLine="63" endPosition="139" />
     <nodeInfo nodeId="1347577327951781590" fileName="RenameConcept.java" startLine="65" startPosition="180" endLine="66" endPosition="80" />
     <nodeInfo nodeId="1347577327951781605" fileName="RenameConcept.java" startLine="68" startPosition="5" endLine="69" endPosition="18" />
+    <nodeInfo nodeId="1347577327951781619" fileName="RenameConcept.java" startLine="72" startPosition="86" endLine="73" endPosition="275" />
     <nodeInfo nodeId="1347577327951781628" fileName="RenameConcept.java" startLine="76" startPosition="92" endLine="77" endPosition="50" />
     <nodeInfo nodeId="8292108433549550611" fileName="RenameConcept.java" startLine="47" startPosition="74" endLine="50" endPosition="7" />
     <nodeInfo nodeId="1347577327951781587" fileName="RenameConcept.java" startLine="64" startPosition="33" endLine="67" endPosition="7" />
@@ -34,6 +36,7 @@
     </scopeInfo>
   </root>
   <root nodeId="1347577327951781638">
+    <nodeInfo nodeId="1347577327951781647" fileName="RenameLink_newName_Settings.java" startLine="17" startPosition="35" endLine="18" endPosition="122" />
     <nodeInfo nodeId="8292108433549528138" fileName="RenameLink.java" startLine="49" startPosition="68" endLine="50" endPosition="87" />
     <nodeInfo nodeId="8292108433549528144" fileName="RenameLink.java" startLine="52" startPosition="178" endLine="53" endPosition="21" />
     <nodeInfo nodeId="8292108433549528149" fileName="RenameLink.java" startLine="54" startPosition="7" endLine="55" endPosition="106" />
@@ -47,6 +50,7 @@
     <nodeInfo nodeId="1347577327951781721" fileName="RenameLink.java" startLine="71" startPosition="5" endLine="72" endPosition="156" />
     <nodeInfo nodeId="1347577327951781735" fileName="RenameLink.java" startLine="73" startPosition="77" endLine="74" endPosition="82" />
     <nodeInfo nodeId="1347577327951781743" fileName="RenameLink.java" startLine="75" startPosition="5" endLine="76" endPosition="18" />
+    <nodeInfo nodeId="1347577327951781757" fileName="RenameLink.java" startLine="79" startPosition="86" endLine="80" endPosition="272" />
     <nodeInfo nodeId="1347577327951781763" fileName="RenameLink.java" startLine="83" startPosition="92" endLine="84" endPosition="50" />
     <nodeInfo nodeId="8292108433549528142" fileName="RenameLink.java" startLine="51" startPosition="74" endLine="54" endPosition="7" />
     <nodeInfo nodeId="1347577327951781714" fileName="RenameLink.java" startLine="68" startPosition="93" endLine="71" endPosition="5" />
@@ -72,6 +76,7 @@
     </scopeInfo>
   </root>
   <root nodeId="1347577327951781764">
+    <nodeInfo nodeId="7845864677499788638" fileName="RenameProperty_newName_Settings.java" startLine="17" startPosition="35" endLine="18" endPosition="126" />
     <nodeInfo nodeId="8292108433549521602" fileName="RenameProperty.java" startLine="44" startPosition="68" endLine="45" endPosition="87" />
     <nodeInfo nodeId="7845864677499819214" fileName="RenameProperty.java" startLine="47" startPosition="186" endLine="48" endPosition="21" />
     <nodeInfo nodeId="7845864677499819222" fileName="RenameProperty.java" startLine="49" startPosition="7" endLine="50" endPosition="106" />
@@ -112,6 +117,7 @@
     </scopeInfo>
   </root>
   <root nodeId="3068114543317961454">
+    <nodeInfo nodeId="3068114543317961959" fileName="MoveConcepts_targetModel_Settings.java" startLine="19" startPosition="53" endLine="20" endPosition="71" />
     <nodeInfo nodeId="3068114543317978809" fileName="MoveConcepts.java" startLine="56" startPosition="187" endLine="57" endPosition="19" />
     <nodeInfo nodeId="3068114543317978818" fileName="MoveConcepts.java" startLine="58" startPosition="5" endLine="59" endPosition="0" />
     <nodeInfo nodeId="3068114543317978824" fileName="MoveConcepts.java" startLine="59" startPosition="0" endLine="60" endPosition="66" />
@@ -143,7 +149,7 @@
     <nodeInfo nodeId="3068114543317979115" fileName="MoveConcepts.java" startLine="116" startPosition="64" endLine="117" endPosition="157" />
     <nodeInfo nodeId="3068114543317979126" fileName="MoveConcepts.java" startLine="118" startPosition="31" endLine="119" endPosition="64" />
     <nodeInfo nodeId="3068114543317979140" fileName="MoveConcepts.java" startLine="122" startPosition="5" endLine="123" endPosition="26" />
-    <nodeInfo nodeId="3068114543317979446" fileName="MoveConcepts.java" startLine="124" startPosition="62" endLine="125" endPosition="244" />
+    <nodeInfo nodeId="3068114543317979446" fileName="MoveConcepts.java" startLine="124" startPosition="62" endLine="125" endPosition="265" />
     <nodeInfo nodeId="3068114543317979163" fileName="MoveConcepts.java" startLine="126" startPosition="5" endLine="127" endPosition="160" />
     <nodeInfo nodeId="3068114543317979171" fileName="MoveConcepts.java" startLine="128" startPosition="54" endLine="129" endPosition="41" />
     <nodeInfo nodeId="3068114543317979171" fileName="MoveConcepts.java" startLine="129" startPosition="41" endLine="130" endPosition="80" />
@@ -239,7 +245,7 @@
     <scopeInfo nodeId="3068114543317979050" fileName="MoveConcepts.java" startLine="98" startPosition="31" endLine="99" endPosition="64" />
     <scopeInfo nodeId="3068114543317979088" fileName="MoveConcepts.java" startLine="108" startPosition="33" endLine="109" endPosition="68" />
     <scopeInfo nodeId="3068114543317979125" fileName="MoveConcepts.java" startLine="118" startPosition="31" endLine="119" endPosition="64" />
-    <scopeInfo nodeId="3068114543317979143" fileName="MoveConcepts.java" startLine="124" startPosition="62" endLine="125" endPosition="244" />
+    <scopeInfo nodeId="3068114543317979143" fileName="MoveConcepts.java" startLine="124" startPosition="62" endLine="125" endPosition="265" />
     <scopeInfo nodeId="3068114543317979182" fileName="MoveConcepts.java" startLine="132" startPosition="48" endLine="133" endPosition="86" />
     <scopeInfo nodeId="3068114543317979221" fileName="MoveConcepts.java" startLine="144" startPosition="50" endLine="145" endPosition="90" />
     <scopeInfo nodeId="3068114543317979260" fileName="MoveConcepts.java" startLine="156" startPosition="53" endLine="157" endPosition="96" />
@@ -347,6 +353,7 @@
     <unitInfo nodeId="3068114543317978821" fileName="MoveConcepts.java" startLine="61" startPosition="45" endLine="71" endPosition="5" unitName="jetbrains.mps.lang.structure.refactorings.MoveConcepts$1" />
   </root>
   <root nodeId="3068114543317979887">
+    <nodeInfo nodeId="2893383476258745372" fileName="MoveLinkUp_mergeLinks_Settings.java" startLine="16" startPosition="36" endLine="17" endPosition="16" />
     <nodeInfo nodeId="6188135140808824102" fileName="MoveLinkUp_targetConcept_Chooser.java" startLine="33" startPosition="58" endLine="34" endPosition="101" />
     <nodeInfo nodeId="6188135140808824135" fileName="MoveLinkUp_targetConcept_Chooser.java" startLine="35" startPosition="35" endLine="36" endPosition="74" />
     <nodeInfo nodeId="6188135140808824121" fileName="MoveLinkUp_targetConcept_Chooser.java" startLine="37" startPosition="5" endLine="38" endPosition="112" />
@@ -375,6 +382,7 @@
     <nodeInfo nodeId="3068114543317980357" fileName="MoveLinkUp.java" startLine="108" startPosition="72" endLine="109" endPosition="94" />
     <nodeInfo nodeId="3068114543317980411" fileName="MoveLinkUp.java" startLine="111" startPosition="5" endLine="112" endPosition="0" />
     <nodeInfo nodeId="3068114543317980368" fileName="MoveLinkUp.java" startLine="112" startPosition="0" endLine="113" endPosition="18" />
+    <nodeInfo nodeId="3068114543317979975" fileName="MoveLinkUp.java" startLine="116" startPosition="86" endLine="117" endPosition="208" />
     <nodeInfo nodeId="3068114543317979980" fileName="MoveLinkUp.java" startLine="120" startPosition="92" endLine="121" endPosition="50" />
     <nodeInfo nodeId="3068114543317979938" fileName="MoveLinkUp.java" startLine="89" startPosition="10" endLine="91" endPosition="5" />
     <nodeInfo nodeId="6188135140808824125" fileName="MoveLinkUp_targetConcept_Chooser.java" startLine="34" startPosition="101" endLine="37" endPosition="5" />
@@ -443,6 +451,7 @@
     <nodeInfo nodeId="3068114543317980531" fileName="MovePropertyUp.java" startLine="54" startPosition="25" endLine="55" endPosition="173" />
     <nodeInfo nodeId="3068114543317980543" fileName="MovePropertyUp.java" startLine="58" startPosition="34" endLine="59" endPosition="19" />
     <nodeInfo nodeId="3068114543317980548" fileName="MovePropertyUp.java" startLine="60" startPosition="5" endLine="61" endPosition="0" />
+    <nodeInfo nodeId="3068114543317980549" fileName="MovePropertyUp.java" startLine="61" startPosition="0" endLine="62" endPosition="117" />
     <nodeInfo nodeId="3068114543317980668" fileName="MovePropertyUp.java" startLine="65" startPosition="69" endLine="66" endPosition="54" />
     <nodeInfo nodeId="3068114543317980456" fileName="MovePropertyUp.java" startLine="67" startPosition="6" endLine="68" endPosition="122" />
     <nodeInfo nodeId="3068114543317980466" fileName="MovePropertyUp.java" startLine="69" startPosition="36" endLine="70" endPosition="74" />
@@ -460,6 +469,7 @@
     <nodeInfo nodeId="3068114543317980645" fileName="MovePropertyUp.java" startLine="93" startPosition="72" endLine="94" endPosition="94" />
     <nodeInfo nodeId="3068114543317980656" fileName="MovePropertyUp.java" startLine="96" startPosition="5" endLine="97" endPosition="0" />
     <nodeInfo nodeId="3068114543317980657" fileName="MovePropertyUp.java" startLine="97" startPosition="0" endLine="98" endPosition="18" />
+    <nodeInfo nodeId="3068114543317980554" fileName="MovePropertyUp.java" startLine="101" startPosition="86" endLine="102" endPosition="208" />
     <nodeInfo nodeId="3068114543317980559" fileName="MovePropertyUp.java" startLine="105" startPosition="92" endLine="106" endPosition="50" />
     <nodeInfo nodeId="3068114543317980475" fileName="MovePropertyUp.java" startLine="71" startPosition="12" endLine="73" endPosition="7" />
     <nodeInfo nodeId="6188135140808824153" fileName="MovePropertyUp_targetConcept_Chooser.java" startLine="34" startPosition="105" endLine="37" endPosition="5" />
@@ -523,6 +533,10 @@
     <nodeInfo nodeId="6188135140809479888" fileName="NodeHierarchyChooser.java" startLine="60" startPosition="30" endLine="61" endPosition="45" />
     <nodeInfo nodeId="6188135140809514249" fileName="NodeHierarchyChooser.java" startLine="64" startPosition="46" endLine="65" endPosition="78" />
     <nodeInfo nodeId="6188135140809517409" fileName="NodeHierarchyChooser.java" startLine="68" startPosition="70" endLine="69" endPosition="62" />
+    <nodeInfo nodeId="6188135140809517391" fileName="NodeHierarchyChooser.java" startLine="69" startPosition="62" endLine="70" endPosition="60" />
+    <nodeInfo nodeId="6188135140809479921" fileName="NodeHierarchyChooser.java" startLine="73" startPosition="60" endLine="74" endPosition="18" />
+    <nodeInfo nodeId="6188135140809514233" fileName="NodeHierarchyChooser.java" startLine="77" startPosition="66" endLine="78" endPosition="27" />
+    <nodeInfo nodeId="6188135140809514231" fileName="NodeHierarchyChooser.java" startLine="81" startPosition="37" endLine="82" endPosition="23" />
     <nodeInfo nodeId="5278386773476806924" fileName="NodeHierarchyChooser.java" startLine="40" startPosition="118" endLine="43" endPosition="5" />
     <nodeInfo nodeId="6188135140809447967" fileName="NodeHierarchyChooser.java" startLine="59" startPosition="0" endLine="62" endPosition="5" />
     <nodeInfo nodeId="5187166430600698212" fileName="NodeHierarchyChooser.java" startLine="26" startPosition="57" endLine="30" endPosition="0" />

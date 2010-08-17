@@ -125,7 +125,7 @@ public class PersistenceUpdater {
   }
 
   public void upgradePersistenceInModel(SModelDescriptor modelDescriptor, Frame mainFrame) {
-    upgradePersistenceInUnit(new OnlyModelScope(modelDescriptor), "Model " + modelDescriptor.getSModelFqName().toString(), mainFrame);
+    upgradePersistenceInUnit(new OnlyModelScope(modelDescriptor), "Model " + modelDescriptor.getSModelReference().getSModelFqName().toString(), mainFrame);
   }
 
 

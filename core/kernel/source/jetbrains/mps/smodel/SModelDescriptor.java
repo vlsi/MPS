@@ -51,6 +51,7 @@ public interface SModelDescriptor {
 
   //------
 
+
   ModelLoadingState getLoadingState();
 
   void dispose();

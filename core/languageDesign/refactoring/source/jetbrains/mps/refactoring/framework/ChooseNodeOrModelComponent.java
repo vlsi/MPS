@@ -235,7 +235,7 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
     }
 
     protected String getItemPresentation(SModelDescriptor sm) {
-      return sm.getSModelFqName().toString();
+      return sm.getSModelReference().getSModelFqName().toString();
     }
 
     public void doChoose(SModelDescriptor sModelDescriptor) {
@@ -247,7 +247,7 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
       getNames().clear();
       getItemsMap().clear();
       for (SModelDescriptor modelDescriptor : myModels) {
-        putItem(modelDescriptor.getSModelFqName().toString(), modelDescriptor);
+        putItem(modelDescriptor.getSModelReference().getSModelFqName().toString(), modelDescriptor);
       }
       makeNamesConsistent();
     }

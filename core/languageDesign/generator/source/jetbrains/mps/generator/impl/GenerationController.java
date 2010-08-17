@@ -190,7 +190,7 @@ public class GenerationController {
     try {
       Logger.addLoggingHandler(generationSession.getLoggingHandler());
       if (!myGenerationHandler.canHandle(inputModel)) {
-        LOG.error("Can't generate " + inputModel.getSModelFqName());
+        LOG.error("Can't generate " + inputModel.getSModelReference().getSModelFqName());
         return true;
       }
 
@@ -198,10 +198,10 @@ public class GenerationController {
         myLogger.info("");
       }
       String taskName = ModelsProgressUtil.generationModelTaskName(inputModel);
-      progressHelper.setText2("model " + inputModel.getSModelFqName());
+      progressHelper.setText2("model " + inputModel.getSModelReference().getSModelFqName());
       progressHelper.startLeafTask(taskName);
       if (myLogger.needsInfo()) {
-        myLogger.info("[model " + inputModel.getSModelFqName() +
+        myLogger.info("[model " + inputModel.getSModelReference().getSModelFqName() +
           (myGenerationContext.isRebuildAll()
             ? ", rebuilding"
             : "") +

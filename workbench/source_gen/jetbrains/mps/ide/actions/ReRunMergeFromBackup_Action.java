@@ -121,7 +121,7 @@ public class ReRunMergeFromBackup_Action extends GeneratedAction {
           continue;
         }
       }
-      Messages.showInfoMessage("No suitable backup files for " + ReRunMergeFromBackup_Action.this.model.getSModelFqName() + "was not found.", "No Backup Files Found");
+      Messages.showInfoMessage("No suitable backup files for " + ReRunMergeFromBackup_Action.this.model.getSModelReference().getSModelFqName() + "was not found.", "No Backup Files Found");
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ReRunMergeFromBackup", t);

@@ -16,7 +16,6 @@
 package jetbrains.mps.workbench.choose.models;
 
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 
@@ -27,7 +26,7 @@ public abstract class BaseModelModel extends BaseMPSChooseModel<SModelDescriptor
 
   public String doGetFullName(Object element) {
     BaseModelItem navigationItem = (BaseModelItem) element;
-    return navigationItem.getModelDescriptor().getSModelFqName().toString();
+    return navigationItem.getModelDescriptor().getSModelReference().getSModelFqName().toString();
   }
 
   public String doGetObjectName(SModelDescriptor modelDescriptor) {

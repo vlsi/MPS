@@ -37,7 +37,7 @@ public class NodePresentation extends BasePresentation {
     if (myModelName == null) {
       myModelName = ModelAccess.instance().runReadAction(new Computable<String>() {
         public String compute() {
-          return myNode.getModel().getModelDescriptor().getSModelFqName().toString();
+          return myNode.getModel().getModelDescriptor().getSModelReference().getSModelFqName().toString();
         }
       });
     }

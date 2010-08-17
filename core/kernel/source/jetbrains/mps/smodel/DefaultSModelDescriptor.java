@@ -438,7 +438,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
 
     if (maxVersion != -1) {
       setVersion(maxVersion);
-      LOG.error("Metadata file for model " + getSModelFqName() + " wasn't present. Recreated a new one.");
+      LOG.error("Metadata file for model " + getSModelReference().getSModelFqName() + " wasn't present. Recreated a new one.");
     }
   }
 
@@ -493,7 +493,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
         if (usedModelDescriptor.getVersion() == usedVersion) return false;
       }
 
-      LOG.error("Model version mismatch for import " + usedModelDescriptor.getSModelFqName() + " in model " + getSModelFqName());
+      LOG.error("Model version mismatch for import " + usedModelDescriptor.getSModelReference().getSModelFqName() + " in model " + getSModelReference().getSModelFqName());
       LOG.error("Used version = " + usedVersion + ", current version = " + currentVersion);
       model.updateImportedModelUsedVersion(usedModelDescriptor.getSModelReference(), currentVersion);
       SModelRepository.getInstance().markChanged(this, true);

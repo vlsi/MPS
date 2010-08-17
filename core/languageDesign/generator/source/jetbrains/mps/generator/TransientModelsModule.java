@@ -164,7 +164,7 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
   }
 
   public boolean publishTransientModel(SModelDescriptor model) {
-    if (myModels.containsKey(model.getSModelFqName())) {
+    if (myModels.containsKey(model.getSModelReference().getSModelFqName())) {
       if (myPublished.add(model)) {
         SModelRepository.getInstance().registerModelDescriptor(model, this);
         return true;
@@ -174,7 +174,7 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
   }
 
   public void removeModel(SModelDescriptor md) {
-    if (myModels.remove(md.getSModelFqName()) != null) {
+    if (myModels.remove(md.getSModelReference().getSModelFqName()) != null) {
       if (myPublished.remove(md)) {
         SModelRepository.getInstance().removeModelDescriptor(md);
       }

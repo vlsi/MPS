@@ -51,6 +51,12 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     }
   }
 
+
+  @Override
+  public SModelFqName getSModelFqName() {
+    return null;
+  }
+
   public SModel getSModel() {
     boolean fireInitialized;
     synchronized (myLoadingLock) {
@@ -96,10 +102,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
 
   public SModelReference getSModelReference() {
     return myModelReference;
-  }
-
-  public SModelFqName getSModelFqName() {
-    return getSModelReference().getSModelFqName();
   }
 
   public String getLongName() {
@@ -149,7 +151,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   public void rename(SModelFqName newModelFqName, boolean changeFile) {
     ModelAccess.assertLegalWrite();
 
-    SModelFqName oldFqName = getSModelFqName();
+    SModelFqName oldFqName = getSModelReference().getSModelFqName();
     SModel model = getSModel();
     fireBeforeModelRenamed(new SModelRenamedEvent(model, oldFqName, newModelFqName));
 
