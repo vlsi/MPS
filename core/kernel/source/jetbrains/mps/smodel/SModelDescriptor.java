@@ -68,8 +68,6 @@ public interface SModelDescriptor {
 
   void removeModelListener(@NotNull SModelListener listener);
 
-  boolean hasModelListener(@NotNull SModelListener listener);
-
   //--------------model command listeners-------------
 
   void addModelCommandListener(@NotNull SModelCommandListener listener);

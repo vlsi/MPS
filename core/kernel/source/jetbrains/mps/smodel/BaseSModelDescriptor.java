@@ -174,12 +174,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     }
   }
 
-  public boolean hasModelListener(@NotNull SModelListener listener) {
-    synchronized (myListenersLock) {
-      return myModelListeners.contains(listener);
-    }
-  }
-
   public void removeModelListener(@NotNull SModelListener listener) {
     synchronized (myListenersLock) {
       myModelListeners.remove(listener);

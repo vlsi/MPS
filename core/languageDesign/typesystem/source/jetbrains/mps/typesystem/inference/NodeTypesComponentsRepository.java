@@ -15,24 +15,24 @@
  */
 package jetbrains.mps.typesystem.inference;
 
-import jetbrains.mps.lang.typesystem.runtime.performance.TypeCheckingContext_Tracer;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.event.SModelListener;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadAdapter;
-
-import java.util.*;
-
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.util.Computable;
+import jetbrains.mps.lang.typesystem.runtime.performance.TypeCheckingContext_Tracer;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.*;
+
 public class NodeTypesComponentsRepository implements ApplicationComponent {
 
   private Map<SNode, TypeCheckingContext> myNodesToContexts = new HashMap<SNode, TypeCheckingContext>();
+  private Set<SModelDescriptor> myListeningForModels = new HashSet<SModelDescriptor>();
 
   private TypeChecker myTypeChecker;
   private ClassLoaderManager myClassLoaderManager;
@@ -57,7 +57,6 @@ public class NodeTypesComponentsRepository implements ApplicationComponent {
       }
     }
 
-    @Override
     public void modelReplaced(SModelDescriptor md) {
       SModelReference modelRef = md.getSModelReference();
       synchronized (myLock) {
@@ -124,15 +123,15 @@ public class NodeTypesComponentsRepository implements ApplicationComponent {
 
         synchronized (myLock) {
           TypeCheckingContext typeCheckingContext = getTypeCheckingContext(root);
-          if (typeCheckingContext != null) {
-            return typeCheckingContext;
-          }
+          if (typeCheckingContext != null) return typeCheckingContext;
+
           typeCheckingContext = new TypeCheckingContext(root, myTypeChecker);
-          myNodesToContexts.put(typeCheckingContext.getNode(), typeCheckingContext);
+          myNodesToContexts.put(root, typeCheckingContext);
           SModel sModel = root.getModel();
           SModelDescriptor descriptor = sModel.getModelDescriptor();
-          if (descriptor != null && !descriptor.hasModelListener(myModelListener)) {
+          if (descriptor != null && !myListeningForModels.contains(descriptor)) {
             descriptor.addModelListener(myModelListener);
+            myListeningForModels.add(descriptor);
           }
           return typeCheckingContext;
         }
@@ -156,8 +155,11 @@ public class NodeTypesComponentsRepository implements ApplicationComponent {
         typeCheckingContext.dispose();
       }
       myNodesToContexts.clear();
+
+      for (SModelDescriptor d : myListeningForModels) {
+        d.removeModelListener(myModelListener);
+      }
+      myListeningForModels.clear();
     }
   }
-
-
 }
