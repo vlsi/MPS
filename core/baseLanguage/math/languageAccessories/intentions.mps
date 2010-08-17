@@ -34,9 +34,34 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)" version="2" />
+  <languageAspect modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" version="11" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590377(jetbrains.mps.lang.dataFlow.constraints)" version="4" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590358(jetbrains.mps.lang.findUsages.constraints)" version="4" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d2(jetbrains.mps.baseLanguage.unitTest.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590313(jetbrains.mps.lang.refactoring.constraints)" version="4" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590382(jetbrains.mps.lang.test.constraints)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959031e(jetbrains.mps.lang.script.constraints)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="8" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)" version="16" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
+  <languageAspect modelUID="r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)" version="5" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="1" />
+  <maxImportIndex value="3" />
   <import index="1" modelUID="r:cb1a36c8-1ffb-415a-aba8-afb9dc042d1b(jetbrains.mps.baseLanguage.math.structure)" version="-1" />
+  <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
+  <import index="3" modelUID="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)" version="-1" />
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="1237104496404">
     <property name="package:8" value="operations.arithmetic" />
     <property name="name:8" value="DivExpressionFractionToDiv" />
@@ -86,11 +111,10 @@
       </node>
     </node>
   </node>
-  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="1237104500799">
     <property name="package:8" value="operations.arithmetic" />
     <property name="name:8" value="DivExpressionDivToFraction" />
-    <link role="forConcept:8" targetNodeId="2v.1095950406618:3" resolveInfo="DivExpression" />
+    <link role="forConcept:8" targetNodeId="2.1095950406618:3" resolveInfo="DivExpression" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1237104500800">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1237104500801">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1237104548275">
@@ -113,7 +137,7 @@
                       <node role="expression:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1237104734301">
                         <node role="operand:3" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node:8" id="1237104733894" />
                         <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1237104736283">
-                          <link role="link:16" targetNodeId="2v.1081773367580:3" />
+                          <link role="link:16" targetNodeId="2.1081773367580:3" />
                         </node>
                       </node>
                     </node>
@@ -123,7 +147,7 @@
                       <node role="expression:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1237104738145">
                         <node role="operand:3" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node:8" id="1237104738050" />
                         <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1237104740539">
-                          <link role="link:16" targetNodeId="2v.1081773367579:3" />
+                          <link role="link:16" targetNodeId="2.1081773367579:3" />
                         </node>
                       </node>
                     </node>
@@ -136,10 +160,9 @@
       </node>
     </node>
   </node>
-  <visible index="3" modelUID="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)" />
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="1238402928175">
     <property name="name:8" value="SpecifyMathContext" />
-    <link role="forConcept:8" targetNodeId="2v.1068431790191:3" resolveInfo="Expression" />
+    <link role="forConcept:8" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1238402928176">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1238402928177">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1238402935919">
@@ -156,10 +179,10 @@
             <node role="operand:3" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node:8" id="1238939673073" />
             <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation:16" id="1238939684204">
               <node role="replacementNode:16" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1238942970980">
-                <link role="baseMethodDeclaration:3" targetNodeId="3v.1238942053978" resolveInfo="convert2" />
-                <link role="classConcept:3" targetNodeId="3v.1238406290274" resolveInfo="MathUtil" />
+                <link role="baseMethodDeclaration:3" targetNodeId="3.1238942053978" resolveInfo="convert2" />
+                <link role="classConcept:3" targetNodeId="3.1238406290274" resolveInfo="MathUtil" />
                 <node role="actualArgument:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="1238942970981">
-                  <link role="concept:16" targetNodeId="2v.1081773326031:3" resolveInfo="BinaryOperation" />
+                  <link role="concept:16" targetNodeId="2.1081773326031:3" resolveInfo="BinaryOperation" />
                   <node role="leftExpression:16" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node:8" id="1238942970982" />
                 </node>
               </node>
@@ -172,8 +195,8 @@
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1238402953460">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1238406535875">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1238406536737">
-            <link role="baseMethodDeclaration:3" targetNodeId="3v.1238406301498" resolveInfo="applicable" />
-            <link role="classConcept:3" targetNodeId="3v.1238406290274" resolveInfo="MathUtil" />
+            <link role="baseMethodDeclaration:3" targetNodeId="3.1238406301498" resolveInfo="applicable" />
+            <link role="classConcept:3" targetNodeId="3.1238406290274" resolveInfo="MathUtil" />
             <node role="actualArgument:3" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node:8" id="1238406539003" />
           </node>
         </node>
@@ -199,8 +222,8 @@
             <node role="operand:3" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node:8" id="1238942949581" />
             <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation:16" id="1238942951820">
               <node role="replacementNode:16" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1238942956089">
-                <link role="baseMethodDeclaration:3" targetNodeId="3v.1238942002669" resolveInfo="convert1" />
-                <link role="classConcept:3" targetNodeId="3v.1238406290274" resolveInfo="MathUtil" />
+                <link role="baseMethodDeclaration:3" targetNodeId="3.1238942002669" resolveInfo="convert1" />
+                <link role="classConcept:3" targetNodeId="3.1238406290274" resolveInfo="MathUtil" />
                 <node role="actualArgument:3" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node:8" id="1238942957699" />
               </node>
             </node>

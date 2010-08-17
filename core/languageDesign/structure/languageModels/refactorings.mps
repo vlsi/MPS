@@ -40,8 +40,23 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
+  <languageAspect modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" version="11" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590377(jetbrains.mps.lang.dataFlow.constraints)" version="4" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d2(jetbrains.mps.baseLanguage.unitTest.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590382(jetbrains.mps.lang.test.constraints)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959031e(jetbrains.mps.lang.script.constraints)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)" version="16" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
+  <languageAspect modelUID="r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)" version="5" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" version="0" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="25" />
+  <maxImportIndex value="27" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)" version="-1" />
   <import index="4" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
@@ -65,12 +80,13 @@
   <import index="23" modelUID="f:java_stub#com.intellij.openapi.components(com.intellij.openapi.components@java_stub)" version="-1" />
   <import index="24" modelUID="f:java_stub#com.intellij.openapi.application(com.intellij.openapi.application@java_stub)" version="-1" />
   <import index="25" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
-  <visible index="2" modelUID="r:d9efd362-28b8-4f70-9bcd-fb582528d11c(jetbrains.mps.lang.core.refactorings)" />
-  <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+  <import index="26" modelUID="r:d9efd362-28b8-4f70-9bcd-fb582528d11c(jetbrains.mps.lang.core.refactorings)" version="-1" />
+  <import index="27" modelUID="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" version="-1" />
+  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.refactoring.structure.Refactoring:1" id="1347577327951781517">
     <property name="name:1" value="RenameConcept" />
     <property name="userFriendlyName:1" value="Rename Concept" />
-    <link role="overrides:1" targetNodeId="2v.1347577327951770664" resolveInfo="Rename" />
+    <link role="overrides:1" targetNodeId="26.1347577327951770664" resolveInfo="Rename" />
     <node role="field:1" type="jetbrains.mps.lang.refactoring.structure.RefactoringField:1" id="8292108433549550603">
       <property name="name:1" value="myNewName" />
       <node role="type:1" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="8292108433549550605" />
@@ -89,7 +105,7 @@
                   <node role="operation:3" type="jetbrains.mps.lang.refactoring.structure.NodeOperation:1" id="1347577327951781531" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1347577327951781532">
-                  <link role="property:16" targetNodeId="3v.1169194664001:0" resolveInfo="name" />
+                  <link role="property:16" targetNodeId="2v.1169194664001:0" resolveInfo="name" />
                 </node>
               </node>
             </node>
@@ -318,7 +334,7 @@
   <node type="jetbrains.mps.lang.refactoring.structure.Refactoring:1" id="1347577327951781638">
     <property name="name:1" value="RenameLink" />
     <property name="userFriendlyName:1" value="Rename Link" />
-    <link role="overrides:1" targetNodeId="2v.1347577327951770664" resolveInfo="Rename" />
+    <link role="overrides:1" targetNodeId="26.1347577327951770664" resolveInfo="Rename" />
     <node role="field:1" type="jetbrains.mps.lang.refactoring.structure.RefactoringField:1" id="8292108433549524282">
       <property name="name:1" value="myNewName" />
       <node role="type:1" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="8292108433549524284" />
@@ -381,7 +397,7 @@
                   <link role="variableDeclaration:3" targetNodeId="1347577327951781662" resolveInfo="concept" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1347577327951781677">
-                  <link role="property:16" targetNodeId="3v.1169194664001:0" resolveInfo="name" />
+                  <link role="property:16" targetNodeId="2v.1169194664001:0" resolveInfo="name" />
                 </node>
               </node>
               <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1347577327951781678">
@@ -602,7 +618,7 @@
   <node type="jetbrains.mps.lang.refactoring.structure.Refactoring:1" id="1347577327951781764">
     <property name="name:1" value="RenameProperty" />
     <property name="userFriendlyName:1" value="Rename Property" />
-    <link role="overrides:1" targetNodeId="2v.1347577327951770664" resolveInfo="Rename" />
+    <link role="overrides:1" targetNodeId="26.1347577327951770664" resolveInfo="Rename" />
     <node role="field:1" type="jetbrains.mps.lang.refactoring.structure.RefactoringField:1" id="2165772098013756965">
       <property name="name:1" value="myNewName" />
       <node role="type:1" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="2165772098013777084" />
@@ -621,7 +637,7 @@
                   <node role="operation:3" type="jetbrains.mps.lang.refactoring.structure.NodeOperation:1" id="7845864677499788642" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="7845864677499788643">
-                  <link role="property:16" targetNodeId="3v.1169194664001:0" resolveInfo="name" />
+                  <link role="property:16" targetNodeId="2v.1169194664001:0" resolveInfo="name" />
                 </node>
               </node>
             </node>
@@ -665,7 +681,7 @@
                   <link role="variableDeclaration:3" targetNodeId="1347577327951781798" resolveInfo="concept" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1347577327951781813">
-                  <link role="property:16" targetNodeId="3v.1169194664001:0" resolveInfo="name" />
+                  <link role="property:16" targetNodeId="2v.1169194664001:0" resolveInfo="name" />
                 </node>
               </node>
               <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1347577327951781814">
@@ -886,11 +902,10 @@
       </node>
     </node>
   </node>
-  <visible index="4" modelUID="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" />
   <node type="jetbrains.mps.lang.refactoring.structure.Refactoring:1" id="3068114543317961454">
     <property name="name:1" value="MoveConcepts" />
     <property name="userFriendlyName:1" value="Move Concepts" />
-    <link role="overrides:1" targetNodeId="2v.7012097027058633272" resolveInfo="MoveNodes" />
+    <link role="overrides:1" targetNodeId="26.7012097027058633272" resolveInfo="MoveNodes" />
     <node role="field:1" type="jetbrains.mps.lang.refactoring.structure.RefactoringField:1" id="3068114543317978751">
       <property name="name:1" value="sourceModel" />
       <node role="type:1" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3068114543317978753">
@@ -1079,7 +1094,7 @@
                             <link role="variableDeclaration:3" targetNodeId="3068114543317979023" resolveInfo="node" />
                           </node>
                           <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="3068114543317979471">
-                            <link role="baseMethodDeclaration:16" targetNodeId="4v.8360039740498069412" resolveInfo="findConceptAspect" />
+                            <link role="baseMethodDeclaration:16" targetNodeId="27.8360039740498069412" resolveInfo="findConceptAspect" />
                             <node role="actualArgument:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3068114543317979472">
                               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3068114543317979473">
                                 <link role="variableDeclaration:3" targetNodeId="3068114543317978994" resolveInfo="editorModelDescriptor" />
@@ -1177,7 +1192,7 @@
                             <link role="variableDeclaration:3" targetNodeId="3068114543317979060" resolveInfo="node" />
                           </node>
                           <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="3068114543317979480">
-                            <link role="baseMethodDeclaration:16" targetNodeId="4v.8360039740498069412" resolveInfo="findConceptAspect" />
+                            <link role="baseMethodDeclaration:16" targetNodeId="27.8360039740498069412" resolveInfo="findConceptAspect" />
                             <node role="actualArgument:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3068114543317979481">
                               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3068114543317979482">
                                 <link role="variableDeclaration:3" targetNodeId="3068114543317979031" resolveInfo="behaviorModelDescriptor" />
@@ -1275,7 +1290,7 @@
                           <link role="variableDeclaration:3" targetNodeId="3068114543317979098" resolveInfo="node" />
                         </node>
                         <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="3068114543317979083">
-                          <link role="baseMethodDeclaration:16" targetNodeId="4v.8360039740498069412" resolveInfo="findConceptAspect" />
+                          <link role="baseMethodDeclaration:16" targetNodeId="27.8360039740498069412" resolveInfo="findConceptAspect" />
                           <node role="actualArgument:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3068114543317979084">
                             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3068114543317979085">
                               <link role="variableDeclaration:3" targetNodeId="3068114543317979068" resolveInfo="constraintsModelDescriptor" />
@@ -1369,7 +1384,7 @@
                             <link role="variableDeclaration:3" targetNodeId="3068114543317979135" resolveInfo="node" />
                           </node>
                           <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="3068114543317979489">
-                            <link role="baseMethodDeclaration:16" targetNodeId="4v.8360039740498069412" resolveInfo="findConceptAspect" />
+                            <link role="baseMethodDeclaration:16" targetNodeId="27.8360039740498069412" resolveInfo="findConceptAspect" />
                             <node role="actualArgument:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3068114543317979490">
                               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3068114543317979491">
                                 <link role="variableDeclaration:3" targetNodeId="3068114543317979106" resolveInfo="dataflowModelDescriptor" />
@@ -1447,7 +1462,7 @@
                       <link role="variableDeclaration:3" targetNodeId="3068114543317979161" resolveInfo="node" />
                     </node>
                     <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="3068114543317979455">
-                      <link role="property:16" targetNodeId="3v.1169194664001:0" resolveInfo="name" />
+                      <link role="property:16" targetNodeId="2v.1169194664001:0" resolveInfo="name" />
                     </node>
                   </node>
                   <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="3068114543317979456">
@@ -1479,7 +1494,7 @@
                     <link role="variableDeclaration:3" targetNodeId="3068114543317979161" resolveInfo="node" />
                   </node>
                   <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="3068114543317979466">
-                    <link role="property:16" targetNodeId="3v.1169194664001:0" resolveInfo="name" />
+                    <link role="property:16" targetNodeId="2v.1169194664001:0" resolveInfo="name" />
                   </node>
                 </node>
               </node>
@@ -2257,7 +2272,7 @@
   <node type="jetbrains.mps.lang.refactoring.structure.Refactoring:1" id="3068114543317979887">
     <property name="name:1" value="MoveLinkUp" />
     <property name="userFriendlyName:1" value="Move Link Up" />
-    <link role="overrides:1" targetNodeId="2v.7012097027058633272" resolveInfo="MoveNodes" />
+    <link role="overrides:1" targetNodeId="26.7012097027058633272" resolveInfo="MoveNodes" />
     <node role="field:1" type="jetbrains.mps.lang.refactoring.structure.RefactoringField:1" id="2893383476258745405">
       <property name="name:1" value="linkToReplace" />
       <node role="type:1" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="2893383476258780598">
@@ -2369,7 +2384,7 @@
                   <link role="refactoringParameter:1" targetNodeId="3068114543317980044" resolveInfo="targetConcept" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="600920621286180449">
-                  <link role="property:16" targetNodeId="3v.1169194664001:0" resolveInfo="name" />
+                  <link role="property:16" targetNodeId="2v.1169194664001:0" resolveInfo="name" />
                 </node>
               </node>
               <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="600920621286180450">
@@ -2832,7 +2847,7 @@
   <node type="jetbrains.mps.lang.refactoring.structure.Refactoring:1" id="3068114543317980424">
     <property name="name:1" value="MovePropertyUp" />
     <property name="userFriendlyName:1" value="Move Property Up" />
-    <link role="overrides:1" targetNodeId="2v.7012097027058633272" resolveInfo="MoveNodes" />
+    <link role="overrides:1" targetNodeId="26.7012097027058633272" resolveInfo="MoveNodes" />
     <node role="parameter:1" type="jetbrains.mps.lang.refactoring.structure.RefactoringParameter:1" id="3068114543317980425">
       <property name="name:1" value="targetConcept" />
       <node role="chooser:1" type="jetbrains.mps.lang.refactoring.structure.CustomParameterChooser:1" id="6188135140808824140">
@@ -2993,7 +3008,7 @@
                 <link role="variableDeclaration:3" targetNodeId="3068114543317980669" resolveInfo="node" />
               </node>
               <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="3068114543317980695">
-                <link role="property:16" targetNodeId="3v.1169194664001:0" resolveInfo="name" />
+                <link role="property:16" targetNodeId="2v.1169194664001:0" resolveInfo="name" />
               </node>
             </node>
             <node role="feature:1" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3068114543317980688">
@@ -3005,7 +3020,7 @@
                   <link role="refactoringParameter:1" targetNodeId="3068114543317980425" resolveInfo="targetConcept" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="3068114543317980514">
-                  <link role="property:16" targetNodeId="3v.1169194664001:0" resolveInfo="name" />
+                  <link role="property:16" targetNodeId="2v.1169194664001:0" resolveInfo="name" />
                 </node>
               </node>
               <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="3068114543317980515">

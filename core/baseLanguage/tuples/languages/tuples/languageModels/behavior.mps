@@ -31,18 +31,46 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)" version="2" />
+  <languageAspect modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" version="11" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590377(jetbrains.mps.lang.dataFlow.constraints)" version="4" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590358(jetbrains.mps.lang.findUsages.constraints)" version="4" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.lang.intentions.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d2(jetbrains.mps.baseLanguage.unitTest.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590313(jetbrains.mps.lang.refactoring.constraints)" version="4" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590382(jetbrains.mps.lang.test.constraints)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959031e(jetbrains.mps.lang.script.constraints)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="8" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="8" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)" version="16" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
+  <languageAspect modelUID="r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)" version="5" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" version="0" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="4" />
+  <maxImportIndex value="8" />
   <import index="1" modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
   <import index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
-  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
-  <visible index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-  <visible index="4" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
+  <import index="5" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
+  <import index="6" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
+  <import index="7" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
+  <import index="8" modelUID="r:3d04bd03-b6d9-4be1-8a52-d7b756e1d85b(jetbrains.mps.baseLanguage.tuples.constraints)" version="-1" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1238852249419">
     <link role="concept" targetNodeId="1.1238852151516:2" resolveInfo="IndexedTupleType" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1238852661525">
       <property name="name" value="getPresentation" />
-      <link role="overriddenMethod" targetNodeId="2v.1213877396640" resolveInfo="getPresentation" />
+      <link role="overriddenMethod" targetNodeId="5.1213877396640" resolveInfo="getPresentation" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1238852661526" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1238852661528">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1238852742863">
@@ -103,7 +131,7 @@
                       <link role="variableDeclaration:3" targetNodeId="1238852772710" resolveInfo="mt" />
                     </node>
                     <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1238852894346">
-                      <link role="baseMethodDeclaration:16" targetNodeId="2v.1213877396640" resolveInfo="getPresentation" />
+                      <link role="baseMethodDeclaration:16" targetNodeId="5.1213877396640" resolveInfo="getPresentation" />
                     </node>
                   </node>
                 </node>
@@ -129,7 +157,7 @@
           <node role="variable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1238852772710">
             <property name="name:3" value="mt" />
             <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1238852774614">
-              <link role="concept:16" targetNodeId="3v.1068431790189:3" resolveInfo="Type" />
+              <link role="concept:16" targetNodeId="6.1068431790189:3" resolveInfo="Type" />
             </node>
           </node>
         </node>
@@ -164,7 +192,7 @@
     </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1238853000861">
       <property name="name" value="getVariableSuffixes" />
-      <link role="overriddenMethod" targetNodeId="4v.1213877337304" resolveInfo="getVariableSuffixes" />
+      <link role="overriddenMethod" targetNodeId="7.1213877337304" resolveInfo="getVariableSuffixes" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1238853000862" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1238853000864">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1238853507542">
@@ -343,7 +371,7 @@
     <link role="concept" targetNodeId="1.1238853782547:2" resolveInfo="IndexedTupleLiteral" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1238855621286">
       <property name="name" value="isLValue" />
-      <link role="overriddenMethod" targetNodeId="4v.1213877519786" resolveInfo="isLValue" />
+      <link role="overriddenMethod" targetNodeId="7.1213877519786" resolveInfo="isLValue" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1238855621287" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1238855621289">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ForeachStatement:3" id="1238855631404">
@@ -356,7 +384,7 @@
           <node role="variable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1238855631406">
             <property name="name:3" value="mexp" />
             <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1238855633137">
-              <link role="concept:16" targetNodeId="3v.1068431790191:3" resolveInfo="Expression" />
+              <link role="concept:16" targetNodeId="6.1068431790191:3" resolveInfo="Expression" />
             </node>
           </node>
           <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1238855631408">
@@ -374,7 +402,7 @@
                     <link role="variableDeclaration:3" targetNodeId="1238855631406" resolveInfo="mexp" />
                   </node>
                   <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1238855652300">
-                    <link role="baseMethodDeclaration:16" targetNodeId="4v.1213877519786" resolveInfo="isLValue" />
+                    <link role="baseMethodDeclaration:16" targetNodeId="7.1213877519786" resolveInfo="isLValue" />
                   </node>
                 </node>
               </node>
@@ -393,12 +421,12 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1238855618944" />
     </node>
   </node>
-  <visible index="5" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1239537338572">
     <link role="concept" targetNodeId="1.1239360506533:2" resolveInfo="NamedTupleDeclaration" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1239537340703">
       <property name="name" value="getPresentation" />
-      <link role="overriddenMethod" targetNodeId="2v.1213877396640" resolveInfo="getPresentation" />
+      <link role="overriddenMethod" targetNodeId="5.1213877396640" resolveInfo="getPresentation" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1239537340706">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1239546071767">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1239546071768">
@@ -450,7 +478,7 @@
                       <link role="variableDeclaration:3" targetNodeId="1239546142334" resolveInfo="cmp" />
                     </node>
                     <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1239546580193">
-                      <link role="property:16" targetNodeId="5v.1169194664001:0" resolveInfo="name" />
+                      <link role="property:16" targetNodeId="2v.1169194664001:0" resolveInfo="name" />
                     </node>
                   </node>
                 </node>
@@ -510,7 +538,7 @@
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1239559887777">
                   <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1239559887611" />
                   <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1239559890603">
-                    <link role="property:16" targetNodeId="3v.1211504562189:3" resolveInfo="nestedName" />
+                    <link role="property:16" targetNodeId="6.1211504562189:3" resolveInfo="nestedName" />
                   </node>
                 </node>
               </node>
@@ -532,7 +560,7 @@
     <link role="concept" targetNodeId="1.1239531918181:2" resolveInfo="NamedTupleType" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1239617400193">
       <property name="name" value="getPresentation" />
-      <link role="overriddenMethod" targetNodeId="2v.1213877396640" resolveInfo="getPresentation" />
+      <link role="overriddenMethod" targetNodeId="5.1213877396640" resolveInfo="getPresentation" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1239617400196">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1239617445677">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1239617445678">
@@ -591,7 +619,7 @@
                           </node>
                         </node>
                         <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1239617967203">
-                          <link role="baseMethodDeclaration:16" targetNodeId="2v.1213877396640" resolveInfo="getPresentation" />
+                          <link role="baseMethodDeclaration:16" targetNodeId="5.1213877396640" resolveInfo="getPresentation" />
                         </node>
                       </node>
                     </node>
@@ -610,7 +638,7 @@
                       <link role="variableDeclaration:3" targetNodeId="1239617445706" resolveInfo="ntcd" />
                     </node>
                     <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1239617445698">
-                      <link role="property:16" targetNodeId="5v.1169194664001:0" resolveInfo="name" />
+                      <link role="property:16" targetNodeId="2v.1169194664001:0" resolveInfo="name" />
                     </node>
                   </node>
                 </node>
@@ -679,7 +707,7 @@
                   </node>
                 </node>
                 <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1239617993993">
-                  <link role="property:16" targetNodeId="5v.1169194664001:0" resolveInfo="name" />
+                  <link role="property:16" targetNodeId="2v.1169194664001:0" resolveInfo="name" />
                 </node>
               </node>
             </node>
@@ -726,7 +754,7 @@
                       <link role="variableDeclaration:3" targetNodeId="1239883610751" resolveInfo="t" />
                     </node>
                     <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1239883769335">
-                      <link role="baseMethodDeclaration:16" targetNodeId="2v.1213877396640" resolveInfo="getPresentation" />
+                      <link role="baseMethodDeclaration:16" targetNodeId="5.1213877396640" resolveInfo="getPresentation" />
                     </node>
                   </node>
                 </node>
@@ -762,7 +790,7 @@
           <node role="variable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1239883610751">
             <property name="name:3" value="t" />
             <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1239883612289">
-              <link role="concept:16" targetNodeId="3v.1068431790189:3" resolveInfo="Type" />
+              <link role="concept:16" targetNodeId="6.1068431790189:3" resolveInfo="Type" />
             </node>
           </node>
         </node>
@@ -796,7 +824,7 @@
     <link role="concept" targetNodeId="1.1238857743184:2" resolveInfo="IndexedTupleMemberAccessExpression" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1239700193439">
       <property name="name" value="isLValue" />
-      <link role="overriddenMethod" targetNodeId="4v.1213877519786" resolveInfo="isLValue" />
+      <link role="overriddenMethod" targetNodeId="7.1213877519786" resolveInfo="isLValue" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1239700193442">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1239700239027">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="1239700239028">
@@ -847,7 +875,7 @@
     <link role="concept" targetNodeId="1.1239576519914:2" resolveInfo="NamedTupleComponentAccessOperation" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1240402237482">
       <property name="name" value="isLValue" />
-      <link role="overriddenMethod" targetNodeId="4v.1213877410080" resolveInfo="isLValue" />
+      <link role="overriddenMethod" targetNodeId="7.1213877410080" resolveInfo="isLValue" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1240402237485">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1240402258514">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="1240402258515">
@@ -872,12 +900,11 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1240402235408" />
     </node>
   </node>
-  <visible index="6" modelUID="r:3d04bd03-b6d9-4be1-8a52-d7b756e1d85b(jetbrains.mps.baseLanguage.tuples.constraints)" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1240700522950">
     <link role="concept" targetNodeId="1.1240683407958:2" resolveInfo="InterfaceTupleType" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1240700524563">
       <property name="name" value="getPresentation" />
-      <link role="overriddenMethod" targetNodeId="2v.1213877396640" resolveInfo="getPresentation" />
+      <link role="overriddenMethod" targetNodeId="5.1213877396640" resolveInfo="getPresentation" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1240700524566">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1240700538539">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1240700567814">
@@ -929,7 +956,7 @@
                                       <link role="variableDeclaration:3" targetNodeId="1240702301849" resolveInfo="pt" />
                                     </node>
                                     <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1240702307295">
-                                      <link role="baseMethodDeclaration:16" targetNodeId="2v.1213877396640" resolveInfo="getPresentation" />
+                                      <link role="baseMethodDeclaration:16" targetNodeId="5.1213877396640" resolveInfo="getPresentation" />
                                     </node>
                                   </node>
                                 </node>
@@ -964,8 +991,8 @@
                 <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1240700555577">
                   <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1240700555578">
                     <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1240700555579">
-                      <link role="classConcept:3" targetNodeId="6v.1240488415103" resolveInfo="TupleIntefaceUtils" />
-                      <link role="baseMethodDeclaration:3" targetNodeId="6v.1240573211676" resolveInfo="analyzeTupleInterface" />
+                      <link role="classConcept:3" targetNodeId="8.1240488415103" resolveInfo="TupleIntefaceUtils" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="8.1240573211676" resolveInfo="analyzeTupleInterface" />
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1240700555582">
                         <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1240701303724">
                           <link role="link:16" targetNodeId="1.1240701281430:2" />
@@ -983,7 +1010,7 @@
                                   <link role="variableDeclaration:3" targetNodeId="4669427367459133281" resolveInfo="p" />
                                 </node>
                                 <node role="operation:3" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation:2" id="1240700555594">
-                                  <link role="component:2" targetNodeId="6v.1240488571077" resolveInfo="name" />
+                                  <link role="component:2" targetNodeId="8.1240488571077" resolveInfo="name" />
                                 </node>
                               </node>
                               <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1240700555590">
@@ -993,11 +1020,11 @@
                                       <link role="variableDeclaration:3" targetNodeId="4669427367459133281" resolveInfo="p" />
                                     </node>
                                     <node role="operation:3" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation:2" id="1240700555599">
-                                      <link role="component:2" targetNodeId="6v.1240488581873" resolveInfo="type" />
+                                      <link role="component:2" targetNodeId="8.1240488581873" resolveInfo="type" />
                                     </node>
                                   </node>
                                   <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1240700555600">
-                                    <link role="baseMethodDeclaration:16" targetNodeId="2v.1213877396640" resolveInfo="getPresentation" />
+                                    <link role="baseMethodDeclaration:16" targetNodeId="5.1213877396640" resolveInfo="getPresentation" />
                                   </node>
                                 </node>
                                 <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1240700555595">
@@ -1010,7 +1037,7 @@
                         <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4669427367459133281">
                           <property name="name:3" value="p" />
                           <node role="type:3" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType:2" id="4669427367459133321">
-                            <link role="classifier:2" targetNodeId="6v.1240488553401" resolveInfo="(isfinal, name, type) TupleIntefaceUtils.Property" />
+                            <link role="classifier:2" targetNodeId="8.1240488553401" resolveInfo="(isfinal, name, type) TupleIntefaceUtils.Property" />
                           </node>
                         </node>
                       </node>

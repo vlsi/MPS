@@ -40,8 +40,34 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
   <languageAspect modelUID="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)" version="0" />
   <languageAspect modelUID="r:4bcef4e7-5bde-4076-8e02-73a0681ac6a3(jetbrains.mps.ui.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)" version="2" />
+  <languageAspect modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" version="11" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590377(jetbrains.mps.lang.dataFlow.constraints)" version="4" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590358(jetbrains.mps.lang.findUsages.constraints)" version="4" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.lang.intentions.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d2(jetbrains.mps.baseLanguage.unitTest.constraints)" version="1" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590313(jetbrains.mps.lang.refactoring.constraints)" version="4" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590382(jetbrains.mps.lang.test.constraints)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959031e(jetbrains.mps.lang.script.constraints)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="8" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="8" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)" version="16" />
+  <languageAspect modelUID="r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)" version="5" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="17" />
+  <maxImportIndex value="19" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="r:fecd6787-578a-4191-9c12-15978df95924(jetbrains.mps.ui.generator.template.helper)" version="-1" />
   <import index="5" modelUID="r:ba1d89ed-800e-4d0a-ad09-221b1011fbd1(jetbrains.mps.ui.modeling.structure)" version="2" />
@@ -52,8 +78,8 @@
   <import index="13" modelUID="f:java_stub#com.google.gwt.dom.client(com.google.gwt.dom.client@java_stub)" version="-1" />
   <import index="15" modelUID="r:86ee6b4b-6b14-4232-a964-c35c292583ac(jetbrains.mps.ui.gwt.generator.template.helper)" version="-1" />
   <import index="17" modelUID="r:c33653ee-1be0-4ff5-9822-83365da4e9b7(jetbrains.mps.ui.modeling.behavior)" version="-1" />
-  <visible index="2" modelUID="r:36693452-2637-4608-8caa-ab32ee7c1be3(jetbrains.mps.ui.multiplexing)" />
-  <visible index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+  <import index="18" modelUID="r:36693452-2637-4608-8caa-ab32ee7c1be3(jetbrains.mps.ui.multiplexing)" version="-1" />
+  <import index="19" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="9106854556042143982">
     <property name="name" value="main" />
     <node role="createRootRule" type="jetbrains.mps.lang.generator.structure.CreateRootRule" id="8568902829141360915">
@@ -141,7 +167,7 @@
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4587250023234508404">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="4587250023234508403" />
                 <node role="operation" type="jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodCall" id="4587250023234508408">
-                  <link role="baseMethodDeclaration" targetNodeId="2v.8590671622326856493" resolveInfo="isWithinVariant" />
+                  <link role="baseMethodDeclaration" targetNodeId="18.8590671622326856493" resolveInfo="isWithinVariant" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4587250023234508409">
                     <property name="value" value="GWT" />
                   </node>
@@ -164,7 +190,7 @@
                   <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="6991444902044104893" />
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="6991444902044104898">
                     <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="6991444902044104900">
-                      <link role="conceptDeclaration" targetNodeId="3v.1068431790189" resolveInfo="Type" />
+                      <link role="conceptDeclaration" targetNodeId="19.1068431790189" resolveInfo="Type" />
                     </node>
                   </node>
                 </node>
@@ -232,7 +258,7 @@
                   <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="6991444902044104936" />
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="6991444902044104941">
                     <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="6991444902044104943">
-                      <link role="conceptDeclaration" targetNodeId="3v.1068431790191" resolveInfo="Expression" />
+                      <link role="conceptDeclaration" targetNodeId="19.1068431790191" resolveInfo="Expression" />
                     </node>
                   </node>
                 </node>
@@ -300,7 +326,7 @@
                   <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="6991444902044104980" />
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="6991444902044104985">
                     <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="6991444902044104987">
-                      <link role="conceptDeclaration" targetNodeId="3v.1068580123157" resolveInfo="Statement" />
+                      <link role="conceptDeclaration" targetNodeId="19.1068580123157" resolveInfo="Statement" />
                     </node>
                   </node>
                 </node>
@@ -383,7 +409,7 @@
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6991444902044104269">
                 <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="6991444902044104270" />
                 <node role="operation" type="jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodCall" id="6991444902044104271">
-                  <link role="baseMethodDeclaration" targetNodeId="2v.8590671622326856493" resolveInfo="isWithinVariant" />
+                  <link role="baseMethodDeclaration" targetNodeId="18.8590671622326856493" resolveInfo="isWithinVariant" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6991444902044104272">
                     <property name="value" value="GWT" />
                   </node>
@@ -2047,11 +2073,11 @@
     <node role="mappingLabel" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" id="8508807536212351101">
       <property name="name" value="applyConstraints_xcell" />
       <link role="sourceConcept" targetNodeId="5.7617727720684733989" resolveInfo="ApplyConstraintStatement" />
-      <link role="targetConcept" targetNodeId="3v.1068581242863" resolveInfo="LocalVariableDeclaration" />
+      <link role="targetConcept" targetNodeId="19.1068581242863" resolveInfo="LocalVariableDeclaration" />
     </node>
     <node role="mappingLabel" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" id="8508807536212351103">
       <property name="name" value="applyConstraints_ycell" />
-      <link role="targetConcept" targetNodeId="3v.1068581242863" resolveInfo="LocalVariableDeclaration" />
+      <link role="targetConcept" targetNodeId="19.1068581242863" resolveInfo="LocalVariableDeclaration" />
       <link role="sourceConcept" targetNodeId="5.7617727720684733989" resolveInfo="ApplyConstraintStatement" />
     </node>
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="6030013275785840135">
@@ -2134,7 +2160,7 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6030013275785842000">
               <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="6030013275785842001" />
               <node role="operation" type="jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodCall" id="6030013275785842002">
-                <link role="baseMethodDeclaration" targetNodeId="2v.8590671622326856493" resolveInfo="isWithinVariant" />
+                <link role="baseMethodDeclaration" targetNodeId="18.8590671622326856493" resolveInfo="isWithinVariant" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6030013275785842003">
                   <property name="value" value="GWT" />
                 </node>
