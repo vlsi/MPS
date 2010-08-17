@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.ui.plugin.Variants;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleUtil;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -67,7 +68,8 @@ public class Classifier_add_GenerateVariant_Intention extends BaseIntention impl
     ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(ann, "value", true)).first(), "value", true), "jetbrains.mps.baseLanguage.structure.ArrayLiteral"), "item", true)).addElement(new Classifier_add_GenerateVariant_Intention.QuotationClass_iyz6y8_a0a0d0f().createNode(this.myParameter));
     Language langToDep = Variants.languageToGenerate(this.myParameter);
     ModuleReference langRefToEng = langToDep.getModuleReference();
-    for (IModule depOn : SNodeOperations.getModel(node).getModelDescriptor().getModule().getDependOnModules()) {
+    IModule module = SNodeOperations.getModel(node).getModelDescriptor().getModule();
+    for (IModule depOn : ModuleUtil.getDependOnModules(module.getDependOn())) {
       if (depOn.equals(langToDep)) {
         langToDep = null;
         break;

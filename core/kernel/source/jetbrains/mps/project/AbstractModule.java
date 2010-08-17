@@ -185,16 +185,6 @@ public abstract class AbstractModule implements IModule {
     return result;
   }
 
-  public List<IModule> getDependOnModules() {
-    List<IModule> result = new ArrayList<IModule>();
-    for (Dependency dep : getDependOn()) {
-      IModule m = MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
-      if (m == null) continue;
-      result.add(m);
-    }
-    return result;
-  }
-
   public final List<IModule> getExplicitlyDependOnModules() {
     if (myCachedExplicitlyDependentModules == null) {
       Set<IModule> res = new LinkedHashSet<IModule>();
@@ -206,7 +196,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   protected void addExplicitlyDependendOnModules(Set<IModule> result) {
-    result.addAll(getDependOnModules());
+    result.addAll(ModuleUtil.getDependOnModules(getDependOn()));
     result.addAll(ModuleUtil.getLanguages(getUsedLanguagesReferences()));
     result.addAll(ModuleUtil.getUsedDevkits(getUsedDevkitReferences()));
   }
@@ -217,14 +207,14 @@ public abstract class AbstractModule implements IModule {
 
   public List<IModule> getAllDependOnModules() {
     Set<IModule> result = new LinkedHashSet<IModule>();
-    result.addAll(getDependOnModules());
+    result.addAll(ModuleUtil.getDependOnModules(getDependOn()));
     for (DevKit dk : ModuleUtil.getUsedDevkits(getUsedDevkitReferences())) {
       result.addAll(dk.getAllExportedSolutions());
     }
     return new ArrayList<IModule>(result);
   }
 
-  //----languages
+  //----languages & devkits
 
   public List<ModuleReference> getUsedLanguagesReferences() {
     ModuleDescriptor descriptor = getModuleDescriptor();
@@ -243,8 +233,6 @@ public abstract class AbstractModule implements IModule {
     }
     return new ArrayList<Language>(result);
   }
-
-  //----devkits
 
   public List<ModuleReference> getUsedDevkitReferences() {
     List<ModuleReference> result = new ArrayList<ModuleReference>();

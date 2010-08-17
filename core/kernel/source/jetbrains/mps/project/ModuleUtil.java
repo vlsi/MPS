@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -42,6 +43,16 @@ public class ModuleUtil {
       result.add(dk);
     }
 
+    return result;
+  }
+
+  public static List<IModule> getDependOnModules(List<Dependency> deps) {
+    List<IModule> result = new ArrayList<IModule>();
+    for (Dependency dep : deps) {
+      IModule m = MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
+      if (m == null) continue;
+      result.add(m);
+    }
     return result;
   }
 }

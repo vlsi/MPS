@@ -24,6 +24,7 @@ import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.ide.findusages.model.holders.ModuleHolder;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.*;
 
@@ -64,7 +65,7 @@ public class LanguageUsagesFinder implements IFinder {
   }
 
   private void collectUsagesInSolution(Language searchedLanguage, Solution solution, SearchResults searchResults) {
-    if (solution.getDependOnModules().contains(searchedLanguage)) {
+    if (ModuleUtil.getDependOnModules(solution.getDependOn()).contains(searchedLanguage)) {
       searchResults.getSearchResults().add(new SearchResult<Solution>(solution, DEPENDENT_MODULES));
     }
     if (solution.getAllUsedLanguages().contains(searchedLanguage)) {
@@ -81,7 +82,7 @@ public class LanguageUsagesFinder implements IFinder {
       searchResults.getSearchResults().add(new SearchResult<Language>(language, USED_BY));
       collectUsagesInModels(searchedLanguage, language, searchResults);
     }
-    if (language.getDependOnModules().contains(searchedLanguage)) {
+    if (ModuleUtil.getDependOnModules(language.getDependOn()).contains(searchedLanguage)) {
       searchResults.getSearchResults().add(new SearchResult<Language>(language, DEPENDENT_MODULES));
     }
   }
@@ -90,7 +91,7 @@ public class LanguageUsagesFinder implements IFinder {
     if (devKit.getExportedLanguages().contains(searchedLanguage)) {
       searchResults.getSearchResults().add(new SearchResult<DevKit>(devKit, EXPORTED_BY));
     }
-    if (devKit.getDependOnModules().contains(searchedLanguage)) {
+    if (ModuleUtil.getDependOnModules(devKit.getDependOn()).contains(searchedLanguage)) {
       searchResults.getSearchResults().add(new SearchResult<DevKit>(devKit, DEPENDENT_MODULES));
     }
   }
