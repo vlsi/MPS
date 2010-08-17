@@ -168,10 +168,6 @@ public abstract class AbstractModule implements IModule {
     return res;
   }
 
-  public Set<IModule> getDesignTimeDependOnModules() {
-    return ModuleUtil.getAllDependOnModules(this);
-  }
-
   //----languages & devkits
 
   public List<ModuleReference> getUsedLanguagesReferences() {

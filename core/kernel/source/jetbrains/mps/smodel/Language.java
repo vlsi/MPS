@@ -221,20 +221,9 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   public List<Dependency> getRuntimeDependOn() {
-    List<Dependency> result = new ArrayList<Dependency>();
     LanguageDescriptor descriptor = getModuleDescriptor();
-    if (descriptor != null) {
-      for (Dependency dep : descriptor.getRuntimeModules()) {
-        result.add(dep);
-      }
-    }
-    return result;
-  }
-
-  public Set<IModule> getDesignTimeDependOnModules() {
-    Set<IModule> result = super.getDesignTimeDependOnModules();
-    result.addAll(getExtendedLanguages());
-    return result;
+    if (descriptor == null) return new ArrayList<Dependency>();
+    return Collections.unmodifiableList(descriptor.getRuntimeModules());
   }
 
   public List<IModule> getRuntimeDependOnModules() {

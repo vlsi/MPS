@@ -22,6 +22,7 @@ import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.runtime.RBundle;
@@ -176,7 +177,8 @@ public class ClassLoaderManager implements ApplicationComponent {
         RBundle<ModuleReference> b = myRuntimeEnvironment.get(m.getModuleReference());
         assert b != null : "There is no budle for module " + m.getModuleFqName();
         b.clearDependencies();
-        for (IModule dep : m.getDesignTimeDependOnModules()) {
+
+        for (IModule dep : ModuleUtil.getDesignTimeDeps(m)) {
           b.addDependency(dep.getModuleReference());
         }
       }

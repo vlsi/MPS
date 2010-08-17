@@ -62,7 +62,6 @@ public class ModuleUtil {
     return null;
   }
 
-  //todo check usages
   public static List<Language> getAllUsedLanguages(IModule m) {
     Set<Language> result = new LinkedHashSet<Language>();
     result.addAll(refsToLanguages(m.getUsedLanguagesReferences()));
@@ -83,5 +82,14 @@ public class ModuleUtil {
       result.addAll(dk.getAllExportedSolutions());
     }
     return result;
+  }
+
+  //todo review
+  public static Set<IModule> getDesignTimeDeps(IModule m) {
+    Set<IModule> res = ModuleUtil.getAllDependOnModules(m);
+    if (m instanceof Language) {
+      res.addAll(((Language) m).getExtendedLanguages());
+    }
+    return res;
   }
 }

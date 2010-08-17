@@ -47,9 +47,6 @@ public interface IModule extends ModelOwner {
 
   List<IModule> getDependOnModules();
 
-  //returns modules that can not be unloaded if this module is not unloaded
-  Set<IModule> getDesignTimeDependOnModules();
-
   void addDependency(ModuleReference moduleRef, boolean reexport);
 
   void addUsedLanguage(ModuleReference langRef);
