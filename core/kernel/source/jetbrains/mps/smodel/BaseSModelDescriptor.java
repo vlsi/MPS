@@ -40,6 +40,8 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   private Set<SModelListener> myModelListeners = new HashSet<SModelListener>(0);
   private SModelListener[] myModelListenersCopy;
   private Set<SModelCommandListener> myModelCommandListeners = new LinkedHashSet<SModelCommandListener>(0);
+
+  //todo replace this with CopyOnWriteArrayList or similar
   private SModelCommandListener[] myModelCommandListenersCopy;
 
   protected BaseSModelDescriptor(IModelRootManager manager, @NotNull SModelReference modelReference, boolean checkDup) {
@@ -206,16 +208,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     }
   }
 
-  @NotNull
-  private SModelCommandListener[] getModelCommandListeners() {
-    synchronized (myListenersLock) {
-      if (myModelCommandListenersCopy == null) {
-        myModelCommandListenersCopy = myModelCommandListeners.toArray(new SModelCommandListener[myModelCommandListeners.size()]);
-      }
-      return myModelCommandListenersCopy;
-    }
-  }
-
   private void clearListeners() {
     synchronized (myListenersLock) {
       myModelListeners.clear();
@@ -309,7 +301,13 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   void fireSModelChangedInCommandEvent(@NotNull final List<SModelEvent> events) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (SModelCommandListener l : getModelCommandListeners()) {
+        synchronized (myListenersLock) {
+          if (myModelCommandListenersCopy == null) {
+            myModelCommandListenersCopy = myModelCommandListeners.toArray(new SModelCommandListener[myModelCommandListeners.size()]);
+          }
+        }
+
+        for (SModelCommandListener l : myModelCommandListenersCopy) {
           try {
             l.eventsHappenedInCommand(events);
           } catch (Exception e) {
