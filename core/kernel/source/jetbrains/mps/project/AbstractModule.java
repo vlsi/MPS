@@ -207,7 +207,7 @@ public abstract class AbstractModule implements IModule {
 
   protected void addExplicitlyDependendOnModules(Set<IModule> result) {
     result.addAll(getDependOnModules());
-    result.addAll(getUsedLanguages());
+    result.addAll(ModuleUtil.getLanguages(getUsedLanguagesReferences()));
     result.addAll(getUsedDevkits());
   }
 
@@ -232,19 +232,10 @@ public abstract class AbstractModule implements IModule {
     return new ArrayList<ModuleReference>(descriptor.getUsedLanguages());
   }
 
-  public List<Language> getUsedLanguages() {
-    List<Language> result = new ArrayList<Language>();
-    for (ModuleReference ref : getUsedLanguagesReferences()) {
-      Language l = MPSModuleRepository.getInstance().getLanguage(ref);
-      if (l == null) continue;
-      result.add(l);
-    }
-    return result;
-  }
 
   public List<Language> getAllUsedLanguages() {
     Set<Language> result = new LinkedHashSet<Language>();
-    result.addAll(getUsedLanguages());
+    result.addAll(ModuleUtil.getLanguages(getUsedLanguagesReferences()));
     for (DevKit dk : getUsedDevkits()) {
       result.addAll(dk.getAllExportedLanguages());
     }
@@ -708,7 +699,7 @@ public abstract class AbstractModule implements IModule {
     }
 
     protected Set<Language> getInitialUsedLanguages() {
-      HashSet<Language> result = new HashSet<Language>(getUsedLanguages());
+      HashSet<Language> result = new HashSet<Language>(ModuleUtil.getLanguages(getUsedLanguagesReferences()));
 
       if (AbstractModule.this instanceof Language) {
         result.add((Language) AbstractModule.this);

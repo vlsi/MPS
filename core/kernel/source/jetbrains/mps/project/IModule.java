@@ -55,8 +55,6 @@ public interface IModule extends ModelOwner {
 
   List<ModuleReference> getUsedLanguagesReferences();
 
-  List<Language> getUsedLanguages();
-
   List<Language> getAllUsedLanguages();
 
   List<ModuleReference> getUsedDevkitReferences();
