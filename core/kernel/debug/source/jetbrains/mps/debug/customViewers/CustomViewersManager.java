@@ -71,7 +71,7 @@ public class CustomViewersManager implements ApplicationComponent {
     if (myLoadedLanguages.contains(l.getModuleFqName())) {
       return true;
     }
-    SModelDescriptor pluginModelDescriptor = l.getPluginModelDescriptor();
+    SModelDescriptor pluginModelDescriptor = LanguageAspect.PLUGIN.get(l);
     if (pluginModelDescriptor == null) return false;
     String packageName = pluginModelDescriptor.getLongName();
     String classname = "CustomViewersDescriptor";

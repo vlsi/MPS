@@ -41,6 +41,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import org.jdom.Element;
@@ -212,11 +213,11 @@ public class RunConfigManager implements ProjectComponent {
     languages.addAll(LibraryManager.getInstance().getGlobalModules(Language.class));
 
     for (Language language : languages) {
-      if (language.getPluginModelDescriptor() != null) {
-        SModel model = language.getPluginModelDescriptor().getSModel();
+      if (LanguageAspect.PLUGIN.get(language) != null) {
+        SModel model = LanguageAspect.PLUGIN.get(language).getSModel();
         for (RunConfigurationTypeDeclaration rcTypeDecl : model.getRootsAdapters(RunConfigurationTypeDeclaration.class)) {
           String configName = rcTypeDecl.getName() + "_ConfigurationType";
-          String confName = language.getPluginModelDescriptor().getLongName() + "." + configName;
+          String confName = LanguageAspect.PLUGIN.get(language).getLongName() + "." + configName;
           ConfigurationType configurationType = createConfig(language, confName);
           if (configurationType == null) continue;
           conTypes.add(configurationType);
@@ -252,18 +253,18 @@ public class RunConfigManager implements ProjectComponent {
     languages.addAll(LibraryManager.getInstance().getGlobalModules(Language.class));
 
     for (Language language : languages) {
-      if (language.getPluginModelDescriptor() != null) {
-        SModel model = language.getPluginModelDescriptor().getSModel();
+      if (LanguageAspect.PLUGIN.get(language) != null) {
+        SModel model = LanguageAspect.PLUGIN.get(language).getSModel();
 
         for (RunConfigCreator creator : model.getRootsAdapters(RunConfigCreator.class)) {
-          String creatorClassName = language.getPluginModelDescriptor().getLongName() + "." + creator.getName();
+          String creatorClassName = LanguageAspect.PLUGIN.get(language).getLongName() + "." + creator.getName();
           BaseConfigCreator configCreator = createCreator(language, creatorClassName);
           if (configCreator == null) continue;
           register(configCreator);
         }
 
         for (UniversalRunConfigCreator creator : model.getRootsAdapters(UniversalRunConfigCreator.class)) {
-          String creatorClassName = language.getPluginModelDescriptor().getLongName() + "." + creator.getName();
+          String creatorClassName = LanguageAspect.PLUGIN.get(language).getLongName() + "." + creator.getName();
           BaseConfigCreator configCreator = createCreator(language, creatorClassName);
           if (configCreator == null) continue;
           register(configCreator);

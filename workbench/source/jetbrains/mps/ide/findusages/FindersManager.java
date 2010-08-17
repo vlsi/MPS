@@ -114,7 +114,7 @@ public class FindersManager implements ApplicationComponent {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (Language l : MPSModuleRepository.getInstance().getAllLanguages()) {
-          SModelDescriptor findUsagesModelDescriptor = l.getFindUsagesModelDescriptor();
+          SModelDescriptor findUsagesModelDescriptor = LanguageAspect.FIND_USAGES.get(l);
           if (findUsagesModelDescriptor != null) {
             SModel smodel = findUsagesModelDescriptor.getSModel();
             for (FinderDeclaration finderDeclaration : smodel.getRootsAdapters(FinderDeclaration.class)) {

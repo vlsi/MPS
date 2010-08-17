@@ -61,8 +61,8 @@ public class GoToRulesHelper {
   public static List<SNode> getHelginsRules(final AbstractConceptDeclaration conceptDeclaration, final IScope scope, final boolean exactConcept) {
     Language language = SModelUtil_new.getDeclaringLanguage(conceptDeclaration, scope);
     List<SNode> rules = new ArrayList<SNode>();
-    if (language != null && language.getTypesystemModelDescriptor() != null) {
-      SModelDescriptor helginsDescriptor = language.getTypesystemModelDescriptor();
+    if (language != null && LanguageAspect.TYPESYSTEM.get(language) != null) {
+      SModelDescriptor helginsDescriptor = LanguageAspect.TYPESYSTEM.get(language);
       if (helginsDescriptor != null) {
         rules.addAll(helginsDescriptor.getSModel().getRoots(new Condition<SNode>() {
           public boolean met(SNode n) {

@@ -17,6 +17,7 @@ package jetbrains.mps.lang.script.plugin;
 
 import jetbrains.mps.lang.script.structure.MigrationScript;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.workbench.action.BaseGroup;
 
@@ -53,7 +54,7 @@ public class ScriptsActionGroupHelper {
   public static List<MigrationScript> getMigrationScripts(List<Language> languages) {
     List<MigrationScript> migrationScripts = new ArrayList<MigrationScript>();
     for (Language language : languages) {
-      SModelDescriptor scriptsModel = language.getScriptsModelDescriptor();
+      SModelDescriptor scriptsModel = LanguageAspect.SCRIPTS.get(language);
       if (scriptsModel == null) continue;
       migrationScripts.addAll(scriptsModel.getSModel().getRootsAdapters(MigrationScript.class));
     }
@@ -118,7 +119,7 @@ public class ScriptsActionGroupHelper {
   }
 
   public static void populateByLanguageGroup(Language language, BaseGroup ownerGroup, boolean applyToSelection) {
-    SModelDescriptor scriptsModel = language.getScriptsModelDescriptor();
+    SModelDescriptor scriptsModel = LanguageAspect.SCRIPTS.get(language);
     if (scriptsModel == null) return;
     List<MigrationScript> migrationScripts = scriptsModel.getSModel().getRootsAdapters(MigrationScript.class);
     if (migrationScripts.isEmpty()) return;

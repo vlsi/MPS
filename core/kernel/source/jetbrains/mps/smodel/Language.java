@@ -372,11 +372,11 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   public String getGeneratedPluginClassLongName() {
-    return getPluginModelDescriptor().getLongName() + "." + PluginNameUtils.getPluginName(this);
+    return LanguageAspect.PLUGIN.get(this).getLongName() + "." + PluginNameUtils.getPluginName(this);
   }
 
   public String getGeneratedApplicationPluginClassLongName() {
-    return getPluginModelDescriptor().getLongName() + "." + PluginNameUtils.getApplicationPluginName(this);
+    return LanguageAspect.PLUGIN.get(this).getLongName() + "." + PluginNameUtils.getApplicationPluginName(this);
   }
 
   public List<Generator> getGenerators() {
@@ -483,10 +483,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return LanguageAspect.STRUCTURE.get(this);
   }
 
-  public EditableSModelDescriptor getTypesystemModelDescriptor() {
-    return LanguageAspect.TYPESYSTEM.get(this);
-  }
-
   public EditableSModelDescriptor getActionsModelDescriptor() {
     return LanguageAspect.ACTIONS.get(this);
   }
@@ -501,26 +497,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   public EditableSModelDescriptor getDataFlowModelDescriptor() {
     return LanguageAspect.DATA_FLOW.get(this);
-  }
-
-  public EditableSModelDescriptor getIntentionsModelDescriptor() {
-    return LanguageAspect.INTENTIONS.get(this);
-  }
-
-  public EditableSModelDescriptor getFindUsagesModelDescriptor() {
-    return LanguageAspect.FIND_USAGES.get(this);
-  }
-
-  public EditableSModelDescriptor getPluginModelDescriptor() {
-    return LanguageAspect.PLUGIN.get(this);
-  }
-
-  public EditableSModelDescriptor getRefactoringsModelDescriptor() {
-    return LanguageAspect.REFACTORINGS.get(this);
-  }
-
-  public EditableSModelDescriptor getScriptsModelDescriptor() {
-    return LanguageAspect.SCRIPTS.get(this);
   }
 
   public EditableSModelDescriptor getEditorModelDescriptor() {
@@ -631,7 +607,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
     //todo {begin} for compatibility with old refactorings
     {
-      SModelDescriptor scriptsModelDescriptor = getScriptsModelDescriptor();
+      SModelDescriptor scriptsModelDescriptor = LanguageAspect.SCRIPTS.get(this);
       if (scriptsModelDescriptor != null) {
         SModel scriptsModel = scriptsModelDescriptor.getSModel();
         String packageName = scriptsModel.getLongName();
@@ -659,7 +635,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     }
     //todo {--end} for compatibility with old refactorings
 
-    SModelDescriptor refModelDescriptor = getRefactoringsModelDescriptor();
+    SModelDescriptor refModelDescriptor = LanguageAspect.REFACTORINGS.get(this);
     if (refModelDescriptor != null) {
       SModel refactoringsModel = refModelDescriptor.getSModel();
       String packageName = refactoringsModel.getLongName();

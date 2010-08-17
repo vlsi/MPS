@@ -100,7 +100,7 @@ public class RulesManager {
       if (myLoadedLanguages.contains(l.getModuleFqName())) {
         return true;
       }
-      SModelDescriptor helginsModelDescriptor = l.getTypesystemModelDescriptor();
+      SModelDescriptor helginsModelDescriptor = LanguageAspect.TYPESYSTEM.get(l);
       if (helginsModelDescriptor == null) return false;
       String packageName = helginsModelDescriptor.getLongName();
       String oldClassname = "HelginsDescriptor";

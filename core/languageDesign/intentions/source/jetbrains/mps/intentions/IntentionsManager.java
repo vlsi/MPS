@@ -301,7 +301,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   }
 
   private void addMigrationsFromLanguage(Language language) {
-    SModelDescriptor scriptsModel = language.getScriptsModelDescriptor();
+    SModelDescriptor scriptsModel = LanguageAspect.SCRIPTS.get(language);
     if (scriptsModel == null) return;
 
     List<MigrationScript> migrationScripts = scriptsModel.getSModel().getRootsAdapters(MigrationScript.class);
@@ -328,7 +328,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   }
 
   private void addIntentionsFromLanguage(Language l) {
-    SModelDescriptor intentionsModelDescriptor = l.getIntentionsModelDescriptor();
+    SModelDescriptor intentionsModelDescriptor = LanguageAspect.INTENTIONS.get(l);
     if (intentionsModelDescriptor != null) {
       SModel smodel = intentionsModelDescriptor.getSModel();
       for (BaseIntentionDeclaration intentionDeclaration : smodel.getRootsAdapters(BaseIntentionDeclaration.class)) {

@@ -28,6 +28,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.Nullable;
 
@@ -99,7 +100,7 @@ public class PluginUtil {
     public final String getPlugin(IModule module) {
       if (module instanceof Language) {
         Language language = (Language) module;
-        if (language.getPluginModelDescriptor() == null) return null;
+        if (LanguageAspect.PLUGIN.get(language) == null) return null;
         return getPlugin(language);
       } else if (module instanceof Solution) {
         Solution solution = (Solution) module;
