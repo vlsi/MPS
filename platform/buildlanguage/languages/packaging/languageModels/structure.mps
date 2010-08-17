@@ -969,6 +969,9 @@
       <property name="sourceCardinality:0" value="0..n" />
       <link role="target:0" targetNodeId="7857794759871898774:7" resolveInfo="ModuleCycleReference" />
     </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="4460123876060673128">
+      <link role="intfc:0" targetNodeId="3.1169194658468:0" resolveInfo="INamedConcept" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1217524754911">
     <property name="name:0" value="NewModuleReference" />

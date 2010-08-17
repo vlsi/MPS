@@ -229,7 +229,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1217517606639(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("cycle." + SPropertyOperations.getString(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "moduleReference", true)).first(), "module", false), "name"), null);
+    return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1220028043245(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -812,11 +812,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1217505538283(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "cycle", true)).sort(new ISelector<SNode, Comparable<?>>() {
-      public Comparable<?> select(SNode it) {
-        return SPropertyOperations.getString(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(it, "moduleReference", true)).first(), "module", false), "name");
-      }
-    }, true);
+    return SLinkOperations.getTargets(_context.getNode(), "cycle", true);
   }
 
   public static Iterable sourceNodesQuery_1220033533879(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -900,12 +896,13 @@ public class QueriesGenerated {
           return it.getModuleFqName();
         }
       }, true));
-      List<Set<IModule>> sm = StronglyConnectedModules.getInstance().getStronglyConnectedComponents(modulesCopy);
+      List<Set<IModule>> sm = (List<Set<IModule>>) StronglyConnectedModules.getInstance().getStronglyConnectedComponents(modulesCopy);
       // say to all modules it's cycle 
       SNode lastCycle = null;
+      List<SNode> result = ListSequence.fromList(new ArrayList<SNode>(ListSequence.fromList(sm).count()));
       for (Set<IModule> moduleSet : ListSequence.fromList(sm)) {
         SNode cycle = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.ModuleCycle", null);
-        SLinkOperations.addChild(layout, "cycle", cycle);
+        ListSequence.fromList(result).addElement(cycle);
         // add dependency to the previous cycle so that compilation order would be preserved 
         if (lastCycle != null) {
           SNode ref = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.ModuleCycleReference", null);
@@ -918,6 +915,7 @@ public class QueriesGenerated {
             return it.getModuleFqName();
           }
         }, true);
+        SPropertyOperations.set(cycle, "name", _context.createUniqueName("cycle." + Sequence.fromIterable(sortedModuleSet).first().getModuleFqName(), layout));
         for (IModule imodule : Sequence.fromIterable(sortedModuleSet)) {
           List<SNode> modulesForIModule = MapSequence.fromMap(map).get(imodule);
           for (SNode module : ListSequence.fromList(modulesForIModule)) {
@@ -927,6 +925,11 @@ public class QueriesGenerated {
           }
         }
       }
+      ListSequence.fromList(SLinkOperations.getTargets(layout, "cycle", true)).addSequence(ListSequence.fromList(result).sort(new ISelector<SNode, Comparable<?>>() {
+        public Comparable<?> select(SNode it) {
+          return SPropertyOperations.getString(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(it, "moduleReference", true)).first(), "module", false), "name");
+        }
+      }, true));
     }
   }
 
