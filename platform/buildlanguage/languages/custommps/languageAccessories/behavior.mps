@@ -67,7 +67,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
   <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="10" />
+  <maxImportIndex value="11" />
   <import index="1" modelUID="r:896f64dd-7cfe-4bc4-b401-38e2a027e9ae(jetbrains.mps.build.custommps.structure)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
@@ -77,6 +77,7 @@
   <import index="8" modelUID="r:3ffa047e-f111-477c-9b1d-805bb060825a(jetbrains.mps.build.distrib.structure)" version="0" />
   <import index="9" modelUID="r:00000000-0000-4000-0000-011c895904d3(jetbrains.mps.build.packaging.behavior)" version="-1" />
   <import index="10" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="7" />
+  <import index="11" modelUID="f:java_stub#jetbrains.mps.vfs(jetbrains.mps.vfs@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1233155892819">
     <link role="concept" targetNodeId="1.1233149592028" resolveInfo="MPSBuild" />
     <node role="staticMethod" type="jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration" id="1234294616845">
@@ -580,9 +581,9 @@
                         <property name="value:3" value="." />
                       </node>
                     </node>
-                    <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1238504189337">
-                      <link role="classifier:3" targetNodeId="3.~AbstractModule" resolveInfo="AbstractModule" />
-                      <link role="variableDeclaration:3" targetNodeId="3.~AbstractModule.PACKAGE_SUFFIX" resolveInfo="PACKAGE_SUFFIX" />
+                    <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="4560166711357320118">
+                      <link role="classifier:3" targetNodeId="11.~MPSExtentions" resolveInfo="MPSExtentions" />
+                      <link role="variableDeclaration:3" targetNodeId="11.~MPSExtentions.MPS_ARCH" resolveInfo="MPS_ARCH" />
                     </node>
                   </node>
                 </node>
@@ -699,9 +700,9 @@
                                 <property name="value:3" value="." />
                               </node>
                             </node>
-                            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1238504189387">
-                              <link role="classifier:3" targetNodeId="3.~AbstractModule" resolveInfo="AbstractModule" />
-                              <link role="variableDeclaration:3" targetNodeId="3.~AbstractModule.RUNTIME_JAR_SUFFIX" resolveInfo="RUNTIME_JAR_SUFFIX" />
+                            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="4560166711357320120">
+                              <link role="classifier:3" targetNodeId="11.~MPSExtentions" resolveInfo="MPSExtentions" />
+                              <link role="variableDeclaration:3" targetNodeId="11.~MPSExtentions.RUNTIME_ARCH" resolveInfo="RUNTIME_ARCH" />
                             </node>
                           </node>
                         </node>

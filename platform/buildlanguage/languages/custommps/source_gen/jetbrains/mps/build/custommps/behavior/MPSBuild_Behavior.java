@@ -23,7 +23,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.build.packaging.behavior.Module_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.project.StubPath;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
@@ -79,7 +79,7 @@ public class MPSBuild_Behavior {
     for (IModule module : SetSequence.fromSet(modulesInClasspath)) {
       String moduleProperName = Module_Behavior.extractModuleProperName_1235487584035(module);
       SNode path = SConceptOperations.createNewNode("jetbrains.mps.build.distrib.structure.SimplePath", null);
-      SPropertyOperations.set(path, "path", prefix + "/" + moduleProperName + "." + AbstractModule.PACKAGE_SUFFIX);
+      SPropertyOperations.set(path, "path", prefix + "/" + moduleProperName + "." + MPSExtentions.MPS_ARCH);
       ListSequence.fromList(paths).addElement(path);
       if (module instanceof Language) {
         Language language = (Language) module;
@@ -87,7 +87,7 @@ public class MPSBuild_Behavior {
         ListSequence.fromList(runtimeCP).removeSequence(ListSequence.fromList(language.getAllStubPaths()));
         if (!(ListSequence.fromList(runtimeCP).isEmpty())) {
           path = SConceptOperations.createNewNode("jetbrains.mps.build.distrib.structure.SimplePath", null);
-          SPropertyOperations.set(path, "path", prefix + "/" + moduleProperName + "." + AbstractModule.RUNTIME_JAR_SUFFIX);
+          SPropertyOperations.set(path, "path", prefix + "/" + moduleProperName + "." + MPSExtentions.RUNTIME_ARCH);
           ListSequence.fromList(paths).addElement(path);
         }
       }

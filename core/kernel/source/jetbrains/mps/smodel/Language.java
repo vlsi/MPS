@@ -52,7 +52,6 @@ import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.util.*;
 
-
 public class Language extends AbstractModule implements MPSModuleOwner {
   private static final Logger LOG = Logger.getLogger(Language.class);
 
@@ -848,7 +847,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       myLanguageDescriptor.getRuntimeStubModels().removeAll(remove);
 
       File bundleParent = getBundleHome().getParentFile();
-      String jarName = getModuleFqName() + "." + RUNTIME_JAR_SUFFIX;
+      String jarName = getModuleFqName() + "." + MPSExtentions.RUNTIME_ARCH;
       File jarFile = new File(bundleParent, jarName);
       String path = jarFile.getPath();
 

@@ -144,11 +144,11 @@ public class Module_Behavior {
   }
 
   public static String call_getRuntimeJarPath_1213877515126(SNode thisNode) {
-    return AbstractProjectComponent_Behavior.call_getPath_1213877333777(thisNode) + "." + AbstractModule.RUNTIME_JAR_SUFFIX;
+    return AbstractProjectComponent_Behavior.call_getPath_1213877333777(thisNode) + "." + MPSExtentions.RUNTIME_ARCH;
   }
 
   public static String call_getModuleJarPath_1213877515137(SNode thisNode) {
-    return AbstractProjectComponent_Behavior.call_getPath_1213877333777(thisNode) + "." + AbstractModule.PACKAGE_SUFFIX;
+    return AbstractProjectComponent_Behavior.call_getPath_1213877333777(thisNode) + "." + MPSExtentions.MPS_ARCH;
   }
 
   public static IModule call_getModule_1213877515148(SNode thisNode) {

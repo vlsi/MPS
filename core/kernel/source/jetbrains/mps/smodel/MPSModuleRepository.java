@@ -473,7 +473,7 @@ public class MPSModuleRepository implements ApplicationComponent {
       if (hasModuleExtension(childDir.getName())) continue;
       if (excludes.contains(childDir)) continue;
 
-      if (childDir.getName().endsWith(AbstractModule.PACKAGE_SUFFIX)) {
+      if (childDir.getName().endsWith(MPSExtentions.MPS_ARCH)) {
         IFile dirInJar = FileSystem.getFile(childDir.getAbsolutePath() + "!/" + AbstractModule.MODULE_DIR);
         result.addAll(readModuleDescriptors(dirInJar, owner, excludes));
       }

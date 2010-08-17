@@ -764,10 +764,4 @@ public abstract class AbstractModule implements IModule {
   public String getModuleUID() {
     return getModuleFqName();
   }
-
-  @Deprecated
-  public static final String RUNTIME_JAR_SUFFIX = MPSExtentions.RUNTIME_ARCH;
-
-  @Deprecated
-  public static final String PACKAGE_SUFFIX = MPSExtentions.MPS_ARCH;
 }

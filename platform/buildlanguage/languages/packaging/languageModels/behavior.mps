@@ -4316,9 +4316,9 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877515128">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1213877515129">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1213877515131">
-            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1213877515132">
-              <link role="classifier:3" targetNodeId="6.~AbstractModule" resolveInfo="AbstractModule" />
-              <link role="variableDeclaration:3" targetNodeId="6.~AbstractModule.RUNTIME_JAR_SUFFIX" resolveInfo="RUNTIME_JAR_SUFFIX" />
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="4560166711357363535">
+              <link role="classifier:3" targetNodeId="7.~MPSExtentions" resolveInfo="MPSExtentions" />
+              <link role="variableDeclaration:3" targetNodeId="7.~MPSExtentions.RUNTIME_ARCH" resolveInfo="RUNTIME_ARCH" />
             </node>
             <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1213877515130">
               <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1213877515134">
@@ -4343,9 +4343,9 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877515139">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1213877515140">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1213877515142">
-            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1213877515143">
-              <link role="classifier:3" targetNodeId="6.~AbstractModule" resolveInfo="AbstractModule" />
-              <link role="variableDeclaration:3" targetNodeId="6.~AbstractModule.PACKAGE_SUFFIX" resolveInfo="PACKAGE_SUFFIX" />
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="4560166711357363533">
+              <link role="classifier:3" targetNodeId="7.~MPSExtentions" resolveInfo="MPSExtentions" />
+              <link role="variableDeclaration:3" targetNodeId="7.~MPSExtentions.MPS_ARCH" resolveInfo="MPS_ARCH" />
             </node>
             <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1213877515141">
               <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1213877515145">
