@@ -177,12 +177,9 @@ public abstract class AbstractModule implements IModule {
   //----get deps
 
   public List<Dependency> getDependOn() {
-    List<Dependency> result = new ArrayList<Dependency>();
     ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor != null) {
-      result.addAll(descriptor.getDependencies());
-    }
-    return result;
+    if (descriptor == null) return new ArrayList<Dependency>();
+    return new ArrayList<Dependency>(descriptor.getDependencies());
   }
 
   public final List<IModule> getExplicitlyDependOnModules() {
