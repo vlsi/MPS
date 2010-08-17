@@ -380,11 +380,16 @@
             <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation:16" id="1222852463985">
               <node role="value:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1222852487239">
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1222852487240">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1222852487241">
-                    <link role="variableDeclaration:3" targetNodeId="1220378010251" resolveInfo="module" />
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="9002858624978343048">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1222852487241">
+                      <link role="variableDeclaration:3" targetNodeId="1220378010251" resolveInfo="module" />
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="9002858624978343052">
+                      <link role="baseMethodDeclaration:3" targetNodeId="2.~IModule.getModuleReference():jetbrains.mps.project.structure.modules.ModuleReference" resolveInfo="getModuleReference" />
+                    </node>
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1222852487242">
-                    <link role="baseMethodDeclaration:3" targetNodeId="2.~IModule.getModuleId():jetbrains.mps.project.ModuleId" resolveInfo="getModuleId" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="82.~ModuleReference.getModuleId():jetbrains.mps.project.ModuleId" resolveInfo="getModuleId" />
                   </node>
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1222852487243">

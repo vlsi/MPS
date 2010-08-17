@@ -485,9 +485,14 @@
                     <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation:16" id="1222447288725">
                       <node role="value:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1222447300230">
                         <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1222447292200">
-                          <node role="operand:3" type="jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_parameterObject:32" id="1222447291027" />
+                          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="9002858624978342867">
+                            <node role="operand:3" type="jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_parameterObject:32" id="1222447291027" />
+                            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="9002858624978342871">
+                              <link role="baseMethodDeclaration:3" targetNodeId="8.~IModule.getModuleReference():jetbrains.mps.project.structure.modules.ModuleReference" resolveInfo="getModuleReference" />
+                            </node>
+                          </node>
                           <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1222447298852">
-                            <link role="baseMethodDeclaration:3" targetNodeId="8.~IModule.getModuleId():jetbrains.mps.project.ModuleId" resolveInfo="getModuleId" />
+                            <link role="baseMethodDeclaration:3" targetNodeId="17.~ModuleReference.getModuleId():jetbrains.mps.project.ModuleId" resolveInfo="getModuleId" />
                           </node>
                         </node>
                         <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1222447300984">

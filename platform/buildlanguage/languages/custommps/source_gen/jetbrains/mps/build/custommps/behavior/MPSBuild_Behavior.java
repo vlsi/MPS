@@ -57,11 +57,11 @@ public class MPSBuild_Behavior {
 
   public static boolean isInCustomMPSLanguage_1238403397946(IOperationContext operationContext) {
     Language language = MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.build.custommps");
-    ModuleId moduleId = operationContext.getModule().getModuleId();
+    ModuleId moduleId = operationContext.getModule().getModuleReference().getModuleId();
     if (moduleId == null) {
       return false;
     }
-    return moduleId.equals(language.getModuleId());
+    return moduleId.equals(language.getModuleReference().getModuleId());
   }
 
   public static Iterable<SNode> getClassPathModules_1238502072959(String prefix) {

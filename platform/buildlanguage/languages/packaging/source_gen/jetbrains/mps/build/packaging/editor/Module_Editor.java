@@ -105,7 +105,7 @@ public class Module_Editor extends DefaultNodeEditor {
     }
 
     public void handleAction_impl(IModule parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, "id", parameterObject.getModuleId().toString());
+      SPropertyOperations.set(node, "id", parameterObject.getModuleReference().getModuleId().toString());
       SPropertyOperations.set(node, "name", parameterObject.getModuleReference().getModuleFqName());
     }
 

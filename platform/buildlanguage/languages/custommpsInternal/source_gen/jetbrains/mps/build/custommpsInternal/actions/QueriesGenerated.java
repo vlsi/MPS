@@ -42,7 +42,7 @@ public class QueriesGenerated {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode newNode = SConceptOperations.createNewNode("jetbrains.mps.build.custommpsInternal.structure.MPSModule", null);
-                SPropertyOperations.set(newNode, "id", (item).getModuleId().toString());
+                SPropertyOperations.set(newNode, "id", (item).getModuleReference().getModuleId().toString());
                 SPropertyOperations.set(newNode, "name", Module_Behavior.extractModuleProperName_1235487584035((item)));
                 return newNode;
               }
