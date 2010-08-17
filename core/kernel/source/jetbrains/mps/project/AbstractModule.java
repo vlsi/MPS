@@ -167,13 +167,6 @@ public abstract class AbstractModule implements IModule {
     return Collections.unmodifiableList(mySModelRoots);
   }
 
-  public SModelRoot findModelRoot(String path) {
-    for (SModelRoot root : mySModelRoots) {
-      if (path.equals(root.getPath())) return root;
-    }
-    return null;
-  }
-
   //----get deps
 
   public List<Dependency> getDependOn() {

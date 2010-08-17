@@ -45,8 +45,6 @@ public interface IModule extends ModelOwner {
 
   List<SModelRoot> getSModelRoots();
 
-  SModelRoot findModelRoot(String path);
-
   List<Dependency> getDependOn();
 
   List<IModule> getAllDependOnModules();

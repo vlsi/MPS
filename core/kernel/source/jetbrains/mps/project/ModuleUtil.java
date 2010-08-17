@@ -55,4 +55,11 @@ public class ModuleUtil {
     }
     return result;
   }
+
+  public static SModelRoot findModelRoot(IModule module, String path) {
+    for (SModelRoot root : module.getSModelRoots()) {
+      if (path.equals(root.getPath())) return root;
+    }
+    return null;
+  }
 }

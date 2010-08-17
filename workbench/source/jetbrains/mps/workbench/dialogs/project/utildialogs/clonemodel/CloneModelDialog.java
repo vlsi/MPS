@@ -15,20 +15,15 @@
  */
 package jetbrains.mps.workbench.dialogs.project.utildialogs.clonemodel;
 
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.progress.ProgressIndicator;
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.datatransfer.CloneModelUtil;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.model.RootReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -36,7 +31,6 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.dialogs.project.BaseStretchingBindedDialog;
 import org.jdesktop.beansbinding.*;
 import org.jdesktop.beansbinding.AutoBinding.UpdateStrategy;
-import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import java.awt.GridBagConstraints;
@@ -181,7 +175,7 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
       }
     }
 
-    final SModelRoot modelRoot = module.findModelRoot(reference.getPath());
+    final SModelRoot modelRoot = ModuleUtil.findModelRoot(module, reference.getPath());
     final SModelDescriptor modelDescriptor = ModelAccess.instance().runWriteActionInCommand(
       new Computable<SModelDescriptor>() {
         public SModelDescriptor compute() {
