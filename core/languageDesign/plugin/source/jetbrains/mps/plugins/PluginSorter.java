@@ -16,6 +16,7 @@
 package jetbrains.mps.plugins;
 
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleUtil;
 
 import java.util.*;
 
@@ -46,7 +47,7 @@ public class PluginSorter {
 
   private static int init(Item item, Map<IModule, Item> module2Item, int initIndex) {
     item.myInitIndex =-2;
-    for (IModule dependency:item.myModule.getAllDependOnModules()){
+    for (IModule dependency: ModuleUtil.getAllDependOnModules(item.myModule)){
       Item depItem = module2Item.get(dependency);
       if (depItem !=null) {
         if (depItem.myInitIndex ==-1){

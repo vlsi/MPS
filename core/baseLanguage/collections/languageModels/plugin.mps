@@ -528,16 +528,15 @@
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="7602110602933086905">
               <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7602110602933086906">
                 <property name="name:3" value="allDependOnModules" />
-                <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7602110602933086909">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7602110602933086910">
+                <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5699776870187350221">
+                  <link role="baseMethodDeclaration:3" targetNodeId="3.~ModuleUtil.getAllDependOnModules(jetbrains.mps.project.IModule):java.util.Set" resolveInfo="getAllDependOnModules" />
+                  <link role="classConcept:3" targetNodeId="3.~ModuleUtil" resolveInfo="ModuleUtil" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5699776870187354424">
                     <link role="variableDeclaration:3" targetNodeId="7602110602933086886" resolveInfo="om" />
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7602110602933086911">
-                    <link role="baseMethodDeclaration:3" targetNodeId="3.~IModule.getAllDependOnModules():java.util.List" resolveInfo="getAllDependOnModules" />
-                  </node>
                 </node>
-                <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="7602110602933086912">
-                  <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7602110602933086914">
+                <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.SetType:7" id="5699776870187354425">
+                  <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5699776870187354426">
                     <link role="classifier:3" targetNodeId="3.~IModule" resolveInfo="IModule" />
                   </node>
                 </node>

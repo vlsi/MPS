@@ -73,4 +73,14 @@ public class ModuleUtil {
     }
     return new ArrayList<Language>(result);
   }
+
+  public static Set<IModule> getAllDependOnModules(IModule m) {
+    Set<IModule> result = new LinkedHashSet<IModule>();
+    result.addAll(getDependOnModules(m.getDependOn()));
+    for (DevKit dk : getUsedDevkits(m.getUsedDevkitReferences())) {
+      result.addAll(dk.getAllExportedSolutions());
+    }
+    return result;
+  }
+
 }

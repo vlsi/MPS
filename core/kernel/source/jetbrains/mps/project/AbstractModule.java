@@ -40,7 +40,6 @@ import jetbrains.mps.vfs.JarFileEntryFile;
 import jetbrains.mps.vfs.VFileSystem;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.io.IOException;
@@ -170,16 +169,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   public Set<IModule> getDesignTimeDependOnModules() {
-    return new HashSet<IModule>(getAllDependOnModules());
-  }
-
-  public List<IModule> getAllDependOnModules() {
-    Set<IModule> result = new LinkedHashSet<IModule>();
-    result.addAll(ModuleUtil.getDependOnModules(getDependOn()));
-    for (DevKit dk : ModuleUtil.getUsedDevkits(getUsedDevkitReferences())) {
-      result.addAll(dk.getAllExportedSolutions());
-    }
-    return new ArrayList<IModule>(result);
+    return new HashSet<IModule>(ModuleUtil.getAllDependOnModules(this));
   }
 
   //----languages & devkits

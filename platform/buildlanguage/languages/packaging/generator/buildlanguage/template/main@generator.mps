@@ -7172,17 +7172,16 @@
                 <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1238427056786">
                   <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1238427056787">
                     <property name="name:3" value="dependency" />
-                    <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="1238670949266">
-                      <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1238670949267">
+                    <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.SetType:7" id="5699776870187364744">
+                      <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5699776870187364745">
                         <link role="classifier:3" targetNodeId="16.~IModule" resolveInfo="IModule" />
                       </node>
                     </node>
-                    <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1238427056790">
-                      <node role="operand:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="1238427056791">
+                    <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5699776870187364742">
+                      <link role="baseMethodDeclaration:3" targetNodeId="16.~ModuleUtil.getAllDependOnModules(jetbrains.mps.project.IModule):java.util.Set" resolveInfo="getAllDependOnModules" />
+                      <link role="classConcept:3" targetNodeId="16.~ModuleUtil" resolveInfo="ModuleUtil" />
+                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="5699776870187364743">
                         <link role="variable:7" targetNodeId="1238426996049" resolveInfo="module" />
-                      </node>
-                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1238427056792">
-                        <link role="baseMethodDeclaration:3" targetNodeId="16.~IModule.getAllDependOnModules():java.util.List" resolveInfo="getAllDependOnModules" />
                       </node>
                     </node>
                   </node>

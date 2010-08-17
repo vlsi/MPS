@@ -12,10 +12,12 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.Language;
+import java.util.Set;
 import jetbrains.mps.project.ModuleUtil;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.SModelDescriptor;
 
 public class CustomContainersRegistry {
@@ -41,13 +43,13 @@ public class CustomContainersRegistry {
     List<SNode> res = new ArrayList<SNode>();
     IModule om = this.getOwningModule(fromModel);
     if (om != null) {
-      final List<IModule> allDependOnModules = om.getAllDependOnModules();
+      final Set<IModule> allDependOnModules = ModuleUtil.getAllDependOnModules(om);
       final List<Language> allUsedLanguages = ModuleUtil.getAllUsedLanguages(om);
       Iterable<SNode> allCustomContainers = this.primAllCustomContainers();
       ListSequence.fromList(res).addSequence(Sequence.fromIterable(allCustomContainers).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode cc) {
           IModule owner = CustomContainersRegistry.this.getOwningModule(SNodeOperations.getModel(cc));
-          return ListSequence.fromList(allDependOnModules).contains(owner) || ListSequence.fromList(allUsedLanguages).contains(owner);
+          return SetSequence.fromSet(allDependOnModules).contains(owner) || ListSequence.fromList(allUsedLanguages).contains(owner);
         }
       }).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode cc) {

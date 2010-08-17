@@ -17,6 +17,7 @@ package jetbrains.mps.workbench.dialogs.project.utildialogs.addmodelimport;
 
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -119,9 +120,9 @@ public class ImportProperties {
     SModelDescriptor model = SModelRepository.getInstance().getModelDescriptor(modelRef);
 
     Set<IModule> modules = new HashSet<IModule>(model.getModules());
-    modules.retainAll(mySourceModule.getAllDependOnModules());
+    modules.retainAll(ModuleUtil.getAllDependOnModules(mySourceModule));
     modules.add(mySourceModule);
-    modules.removeAll(myTargetModule.getAllDependOnModules());
+    modules.removeAll(ModuleUtil.getAllDependOnModules(myTargetModule));
     modules.remove(myTargetModule);
 
     List<ModuleReference> result = new ArrayList<ModuleReference>();
@@ -157,7 +158,7 @@ public class ImportProperties {
     Set<IModule> owners = model.getModules();
 
     if (owners.contains(myTargetModule)) return null;
-    List<IModule> deps = myTargetModule.getAllDependOnModules();
+    Set<IModule> deps = ModuleUtil.getAllDependOnModules(myTargetModule);
     for (IModule owner : owners) {
       if (deps.contains(owner)) return null;
     }
@@ -165,7 +166,7 @@ public class ImportProperties {
       return mySourceModule.getModuleReference();
     }
     for (IModule owner : owners) {
-      if (mySourceModule.getAllDependOnModules().contains(owner)) return owner.getModuleReference();
+      if (ModuleUtil.getAllDependOnModules(mySourceModule).contains(owner)) return owner.getModuleReference();
     }
 
     return null;

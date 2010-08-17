@@ -41,8 +41,6 @@ public interface IModule extends ModelOwner {
 
   List<Dependency> getDependOn();
 
-  List<IModule> getAllDependOnModules();
-
   List<ModuleReference> getUsedLanguagesReferences();
 
   List<ModuleReference> getUsedDevkitReferences();
