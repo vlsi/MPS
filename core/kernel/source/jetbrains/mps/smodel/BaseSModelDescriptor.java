@@ -198,12 +198,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     }
   }
 
-  public boolean hasModelCommandListener(@NotNull SModelCommandListener listener) {
-    synchronized (myListenersLock) {
-      return myModelCommandListeners.contains(listener);
-    }
-  }
-
   public void addModelCommandListener(@NotNull SModelCommandListener listener) {
     synchronized (myListenersLock) {
       myModelCommandListeners.add(listener);
@@ -219,7 +213,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   }
 
   @NotNull
-  public SModelCommandListener[] getModelCommandListeners() {
+  private SModelCommandListener[] getModelCommandListeners() {
     synchronized (myListenersLock) {
       if (myModelCommandListenersCopy == null) {
         myModelCommandListenersCopy = myModelCommandListeners.toArray(new SModelCommandListener[myModelCommandListeners.size()]);

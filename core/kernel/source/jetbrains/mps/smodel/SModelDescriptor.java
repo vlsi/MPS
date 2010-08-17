@@ -48,7 +48,6 @@ public interface SModelDescriptor {
 
   //------
 
-
   ModelLoadingState getLoadingState();
 
   void dispose();
@@ -79,11 +78,6 @@ public interface SModelDescriptor {
   void addModelCommandListener(@NotNull SModelCommandListener listener);
 
   void removeModelCommandListener(@NotNull SModelCommandListener listener);
-
-  @NotNull
-  SModelCommandListener[] getModelCommandListeners();
-
-  boolean hasModelCommandListener(@NotNull SModelCommandListener listener);
 
   //------todo get rid of
 
