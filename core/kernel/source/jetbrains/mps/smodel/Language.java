@@ -41,7 +41,6 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
@@ -229,20 +228,20 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   public List<Dependency> getDependOn() {
-      List<Dependency> result = super.getDependOn();
-      for (ModuleReference ref : getExtendedLanguageRefs()) {
-        Dependency dep = new Dependency();
-        dep.setModuleRef(ref);
-        dep.setReexport(true);
-        result.add(dep);
-      }
-
-      for (Generator g : getGenerators()) {
-        result.addAll(g.getDependOn());
-      }
-
-      return result;
+    List<Dependency> result = super.getDependOn();
+    for (ModuleReference ref : getExtendedLanguageRefs()) {
+      Dependency dep = new Dependency();
+      dep.setModuleRef(ref);
+      dep.setReexport(true);
+      result.add(dep);
     }
+
+    for (Generator g : getGenerators()) {
+      result.addAll(g.getDependOn());
+    }
+
+    return result;
+  }
 
   public List<Dependency> getRuntimeDependOn() {
     LanguageDescriptor descriptor = getModuleDescriptor();
@@ -657,16 +656,13 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   public static LanguageAspect getModelAspect(SModelDescriptor sm) {
-    Set<ModelOwner> owners = SModelRepository.getInstance().getOwners(sm);
-    for (ModelOwner modelOwner : owners) {
-      if (modelOwner instanceof Language) {
-        Language l = (Language) modelOwner;
-        if (l.getAspectForModel(sm) != null) {
-          return l.getAspectForModel(sm);
-        }
-      }
-    }
-    return null;
+    IModule module = sm.getModule();
+    if (!(module instanceof Language)) return null;
+
+    Language l = (Language) module;
+    if (l.getAspectForModel(sm) == null) return null;
+
+    return l.getAspectForModel(sm);
   }
 
   public static boolean isLanguageOwnedAccessoryModel(SModelDescriptor sm) {
