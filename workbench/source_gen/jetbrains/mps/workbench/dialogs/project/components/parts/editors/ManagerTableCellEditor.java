@@ -4,7 +4,6 @@ package jetbrains.mps.workbench.dialogs.project.components.parts.editors;
 
 import javax.swing.DefaultCellEditor;
 import javax.swing.JComboBox;
-
 import jetbrains.mps.workbench.dialogs.project.IBindedDialog;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.structure.model.ModelRootManager;

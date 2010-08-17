@@ -2,9 +2,12 @@
 <debugInfo>
   <root nodeId="368569065472988631">
     <nodeInfo nodeId="562112407432160036" fileName="LanguageRef_Editor.java" startLine="53" startPosition="105" endLine="54" endPosition="84" />
+    <nodeInfo nodeId="562112407432160050" fileName="LanguageRef_Editor.java" startLine="56" startPosition="43" endLine="57" endPosition="77" />
     <nodeInfo nodeId="562112407432160182" fileName="LanguageRef_Editor.java" startLine="66" startPosition="164" endLine="67" endPosition="67" />
+    <nodeInfo nodeId="562112407432160082" fileName="LanguageRef_Editor.java" startLine="78" startPosition="68" endLine="79" endPosition="117" />
     <nodeInfo nodeId="562112407432160048" fileName="LanguageRef_Editor.java" startLine="55" startPosition="87" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="562112407432160049" fileName="LanguageRef_Editor.java" startLine="56" startPosition="43" endLine="57" endPosition="56" />
+    <nodeInfo nodeId="562112407432160043" fileName="LanguageRef_Editor.java" startLine="54" startPosition="84" endLine="59" endPosition="26" />
+    <scopeInfo nodeId="562112407432160049" fileName="LanguageRef_Editor.java" startLine="56" startPosition="43" endLine="57" endPosition="77" />
     <scopeInfo nodeId="562112407432160033" fileName="LanguageRef_Editor.java" startLine="66" startPosition="164" endLine="67" endPosition="67" />
     <scopeInfo nodeId="562112407432160072" fileName="LanguageRef_Editor.java" startLine="78" startPosition="68" endLine="79" endPosition="117" />
     <scopeInfo nodeId="562112407432160048" fileName="LanguageRef_Editor.java" startLine="55" startPosition="87" endLine="59" endPosition="0" />
@@ -70,7 +73,9 @@
     <unitInfo nodeId="4293145514664530016" fileName="StubSolutionCreateHelper.java" startLine="19" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.lang.stubs.editor.StubSolutionCreateHelper" />
   </root>
   <root nodeId="8529737993487833472">
+    <nodeInfo nodeId="4293145514664537354" fileName="LibraryStubDescriptor_Editor.java" startLine="294" startPosition="105" endLine="295" endPosition="70" />
     <nodeInfo nodeId="7076427504342074873" fileName="LibraryStubDescriptor_Editor.java" startLine="302" startPosition="170" endLine="303" endPosition="84" />
+    <nodeInfo nodeId="2295084792488055978" fileName="LibraryStubDescriptor_Editor.java" startLine="314" startPosition="74" endLine="315" endPosition="39" />
     <nodeInfo nodeId="4293145514664643870" fileName="LibraryStubDescriptor_Editor.java" startLine="323" startPosition="106" endLine="324" endPosition="77" />
     <scopeInfo nodeId="7076427504342074844" fileName="LibraryStubDescriptor_Editor.java" startLine="294" startPosition="105" endLine="295" endPosition="70" />
     <scopeInfo nodeId="7076427504342074872" fileName="LibraryStubDescriptor_Editor.java" startLine="302" startPosition="170" endLine="303" endPosition="84" />

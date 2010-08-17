@@ -1719,11 +1719,16 @@
                           <link role="baseMethodDeclaration:3" targetNodeId="21.~ModelRootManager.&lt;init&gt;(java.lang.String,java.lang.String)" resolveInfo="ModelRootManager" />
                           <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4256903895781786867">
                             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4256903895781786868">
-                              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4256903895781786869">
-                                <link role="variableDeclaration:3" targetNodeId="4256903895781786778" resolveInfo="language" />
+                              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3795703495655736715">
+                                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4256903895781786869">
+                                  <link role="variableDeclaration:3" targetNodeId="4256903895781786778" resolveInfo="language" />
+                                </node>
+                                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3795703495655736719">
+                                  <link role="baseMethodDeclaration:3" targetNodeId="19.~AbstractModule.getModuleReference():jetbrains.mps.project.structure.modules.ModuleReference" resolveInfo="getModuleReference" />
+                                </node>
                               </node>
                               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4256903895781786870">
-                                <link role="baseMethodDeclaration:3" targetNodeId="19.~AbstractModule.getModuleId():jetbrains.mps.project.ModuleId" resolveInfo="getModuleId" />
+                                <link role="baseMethodDeclaration:3" targetNodeId="5.~ModuleReference.getModuleId():jetbrains.mps.project.ModuleId" resolveInfo="getModuleId" />
                               </node>
                             </node>
                             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4256903895781786871">
