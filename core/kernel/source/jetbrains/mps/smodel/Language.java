@@ -716,13 +716,13 @@ public class Language extends AbstractModule implements MPSModuleOwner {
         try {
           IFile file = FileSystem.getFile(s);
           if (!file.exists()) {
-            LOG.error("Can't find " + s);
+            LOG.debug("Can't find " + s);
             continue;
           }
 
           result.add(ClassPathFactory.getInstance().createFromPath(s, this));
         } catch (IOException e) {
-          LOG.error(e.getMessage());
+          LOG.debug(e.getMessage());
         }
       }
 

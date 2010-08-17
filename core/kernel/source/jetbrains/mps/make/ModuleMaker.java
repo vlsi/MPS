@@ -298,7 +298,8 @@ public class ModuleMaker {
             LOG.warning(messageStirng + " (line: " + cp.getSourceLineNumber() + ")", hintObject);
           } else {
             if (myOutputtedErrors == 0) {
-              LOG.error("Errors encountered:\nModules: " + myModules.toString() + "\nClasspath: " + myClassPathItems + "\n");
+              LOG.error("Errors encountered");
+              LOG.debug("Modules: " + myModules.toString() + "\nClasspath: " + myClassPathItems + "\n");
             }
             if (myOutputtedErrors < MAX_ERRORS) {
               myOutputtedErrors++;
