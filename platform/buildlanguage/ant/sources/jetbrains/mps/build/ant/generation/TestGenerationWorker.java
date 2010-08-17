@@ -313,7 +313,7 @@ public class TestGenerationWorker extends GeneratorWorker {
 
     final List<File> classPaths = new ArrayList<File>(moduleClassPath);
     classPaths.add(new File(com.intellij.openapi.application.PathManager.getResourceRoot(getClass(), "/" + getClass().getName().replace('.', '/') + ".class")).getAbsoluteFile());
-    classPaths.add(new File(PathManager.getHomePath() + File.separator + "lib" + File.separator + "junit4" + File.separator + "junit-4.1.jar")); // herovo
+    classPaths.add(new File(PathManager.getHomePath() + File.separator + "lib" + File.separator + "junit4" + File.separator + "junit-4.8.2.jar")); // herovo
 
     StringBuffer sb = new StringBuffer();
     String pathSeparator = System.getProperty("path.separator");

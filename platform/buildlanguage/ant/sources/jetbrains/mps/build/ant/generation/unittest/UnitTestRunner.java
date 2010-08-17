@@ -66,7 +66,7 @@ public class UnitTestRunner extends BaseTestRunner {
         int index = s.lastIndexOf('.');
         String testCase = s.substring(0, index);
         String method = s.substring(index + 1);
-        Class<? extends TestCase> testClass = this.loadSuiteClass(testCase);
+        Class<? extends TestCase> testClass = (Class<? extends TestCase>) this.loadSuiteClass(testCase);
         Test test = TestSuite.createTest(testClass, method);
         tests.add(test);
       }
