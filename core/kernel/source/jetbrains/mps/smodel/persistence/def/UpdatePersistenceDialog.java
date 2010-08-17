@@ -130,7 +130,7 @@ public class UpdatePersistenceDialog extends BaseDialog {
 
       };
       newNode.setIcon(IconManager.getIconFor(modelDescriptor));
-      newNode.setText(modelDescriptor.getSModelFqName().toString());
+      newNode.setText(modelDescriptor.getSModelReference().getSModelFqName().toString());
       root.add(newNode);
     }
     return root;

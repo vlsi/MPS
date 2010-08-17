@@ -1,7 +1,7 @@
 package jetbrains.mps.stubs;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.AbstractModule.StubPath;
+import jetbrains.mps.project.StubPath;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.vfs.IFile;
@@ -100,8 +100,10 @@ public final class BaseStubModelDescriptor extends BaseSModelDescriptor implemen
 
   //------------common descriptor stuff-------------------
 
-  public boolean isInitialized() {
-    return super.isInitialized() && myModelRootManager != null;
+
+  protected void setLoadingState(ModelLoadingState state) {
+    assert state != ModelLoadingState.ROOTS_LOADED : "this state can't be used for stub models for now";
+    super.setLoadingState(state);
   }
 
   protected SModel loadModel() {

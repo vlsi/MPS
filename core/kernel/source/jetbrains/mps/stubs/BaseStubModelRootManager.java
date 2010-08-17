@@ -16,11 +16,8 @@
 package jetbrains.mps.stubs;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.AbstractModule.StubPath;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.project.SModelRoot;
+import jetbrains.mps.project.*;
+import jetbrains.mps.project.StubPath;
 import jetbrains.mps.project.SModelRoot.ManagerNotFoundException;
 import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.smodel.*;
@@ -29,7 +26,6 @@ import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.workbench.actions.goTo.index.SNodeDescriptor;
 import jetbrains.mps.workbench.tools.InvalidUsageException;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -93,7 +89,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
       }
 
       descriptor.setModelRootManager(this);
-      if (!descriptor.isInitialized()) {
+      if (descriptor.getLoadingState() == ModelLoadingState.NOT_LOADED) {
         if (!myDescriptorsWithListener.contains(descriptor)) {
           descriptor.addModelUpdater(myInitializationListener);
           myDescriptorsWithListener.add(descriptor);

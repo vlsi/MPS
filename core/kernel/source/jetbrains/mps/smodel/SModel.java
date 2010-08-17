@@ -245,7 +245,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   private SModelListener[] getModelListeners() {
-    SModelDescriptor modelDescriptor = getModelDescriptor();
+    BaseSModelDescriptor modelDescriptor = (BaseSModelDescriptor) getModelDescriptor();
     return modelDescriptor != null ? modelDescriptor.getModelListeners() : EMPTY_LISTENERS;
   }
 

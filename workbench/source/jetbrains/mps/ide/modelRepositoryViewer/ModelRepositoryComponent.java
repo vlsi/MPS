@@ -128,7 +128,7 @@ public class ModelRepositoryComponent {
         }
         setColor(Color.BLACK);
         setNodeIdentifier(myModelDescriptor.getLongName());
-        setText(myModelDescriptor.getLongName() + (myModelDescriptor.isInitialized() ? " (initialized)" : " (not initialized)"));
+        setText(myModelDescriptor.getLongName() + ("("+myModelDescriptor.getLoadingState().toString()+")"));
       }
     }
 

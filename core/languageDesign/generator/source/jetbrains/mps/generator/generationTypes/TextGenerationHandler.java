@@ -3,11 +3,10 @@ package jetbrains.mps.generator.generationTypes;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationStatus;
-import jetbrains.mps.generator.generationTypes.TextGenerationUtil.TextGenerationResult;
 import jetbrains.mps.generator.IGeneratorLogger;
+import jetbrains.mps.generator.generationTypes.TextGenerationUtil.TextGenerationResult;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.textGen.TextGenManager;
@@ -43,7 +42,7 @@ public class TextGenerationHandler extends GenerationHandlerBase {
     for (SNode output : ListSequence.fromList(roots)) {
       String fileName = output.getName() + "." + TextGenManager.instance().getExtension(output);
       TextGenerationResult result = TextGenerationUtil.generateText(ocontext, output);
-      if(result.hasErrors()) {
+      if (result.hasErrors()) {
         warning("cannot generate " + fileName);
         generatedOk = false;
       } else {
@@ -66,12 +65,12 @@ public class TextGenerationHandler extends GenerationHandlerBase {
   }
 
   @Override
-  public long estimateCompilationMillis(List<Pair<IModule,List<SModelDescriptor>>> input) {
+  public long estimateCompilationMillis(List<Pair<IModule, List<SModelDescriptor>>> input) {
     return 0;
   }
 
   @Override
-  public boolean compile(Project p, List<Pair<IModule,List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException {
+  public boolean compile(Project p, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException {
     return true;
   }
 

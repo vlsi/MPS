@@ -102,7 +102,7 @@
     <nodeInfo nodeId="1241460480370" fileName="CustomMPSBuildGenerator.java" startLine="37" startPosition="39" endLine="38" endPosition="35" />
     <nodeInfo nodeId="1241530183517" fileName="CustomMPSBuildGenerator.java" startLine="41" startPosition="28" endLine="42" endPosition="78" />
     <nodeInfo nodeId="1068566623012711115" fileName="CustomMPSBuildGenerator.java" startLine="45" startPosition="62" endLine="46" endPosition="178" />
-    <nodeInfo nodeId="1241461874413" fileName="CustomMPSBuildGenerator.java" startLine="49" startPosition="132" endLine="50" endPosition="101" />
+    <nodeInfo nodeId="1241461874413" fileName="CustomMPSBuildGenerator.java" startLine="49" startPosition="140" endLine="50" endPosition="101" />
     <nodeInfo nodeId="6696460285989678931" fileName="CustomMPSBuildGenerator.java" startLine="50" startPosition="101" endLine="51" endPosition="0" />
     <nodeInfo nodeId="1241513427963" fileName="CustomMPSBuildGenerator.java" startLine="51" startPosition="0" endLine="52" endPosition="177" />
     <nodeInfo nodeId="1241462457541" fileName="CustomMPSBuildGenerator.java" startLine="52" startPosition="177" endLine="53" endPosition="177" />
@@ -182,7 +182,7 @@
       <varInfo nodeId="1241462336068" varName="prototypeFolder" />
     </scopeInfo>
     <scopeInfo nodeId="1241462111814" fileName="CustomMPSBuildGenerator.java" startLine="58" startPosition="58" endLine="68" endPosition="5" />
-    <scopeInfo nodeId="1241461874412" fileName="CustomMPSBuildGenerator.java" startLine="49" startPosition="132" endLine="90" endPosition="6">
+    <scopeInfo nodeId="1241461874412" fileName="CustomMPSBuildGenerator.java" startLine="49" startPosition="140" endLine="90" endPosition="6">
       <varInfo nodeId="1241528711531" varName="buildToolsPath" />
       <varInfo nodeId="1241528703987" varName="result" />
       <varInfo nodeId="1241528704002" varName="index" />

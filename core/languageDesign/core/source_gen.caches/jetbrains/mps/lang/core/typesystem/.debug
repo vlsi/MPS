@@ -21,6 +21,7 @@
   </root>
   <root nodeId="1556973682253867610">
     <nodeInfo nodeId="1556973682253868839" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="26" startPosition="90" endLine="27" endPosition="0" />
+    <nodeInfo nodeId="1556973682253868747" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="29" startPosition="39" endLine="30" endPosition="50" />
     <nodeInfo nodeId="1556973682253868867" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="32" startPosition="9" endLine="33" endPosition="71" />
     <nodeInfo nodeId="1556973682253868925" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="35" startPosition="9" endLine="36" endPosition="57" />
     <nodeInfo nodeId="1556973682253868925" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="36" startPosition="57" endLine="37" endPosition="132" />
@@ -59,6 +60,7 @@
     <unitInfo nodeId="1556973682253868745" fileName="check_UnknownLinks_NonTypesystemRule.java" startLine="28" startPosition="90" endLine="32" endPosition="5" unitName="jetbrains.mps.lang.core.typesystem.check_UnknownLinks_NonTypesystemRule$1" />
   </root>
   <root nodeId="1556973682253870204">
+    <nodeInfo nodeId="1556973682253870214" fileName="RemoveUnknownChildren_QuickFix.java" startLine="14" startPosition="34" endLine="15" endPosition="117" />
     <nodeInfo nodeId="1556973682253873262" fileName="RemoveUnknownChildren_QuickFix.java" startLine="20" startPosition="132" endLine="21" endPosition="42" />
     <nodeInfo nodeId="1556973682253873230" fileName="RemoveUnknownChildren_QuickFix.java" startLine="19" startPosition="82" endLine="22" endPosition="7" />
     <nodeInfo nodeId="1556973682253873222" fileName="RemoveUnknownChildren_QuickFix.java" startLine="18" startPosition="35" endLine="23" endPosition="5" />
@@ -69,6 +71,7 @@
     <scopeInfo nodeId="1556973682253873222" fileName="RemoveUnknownChildren_QuickFix.java" startLine="18" startPosition="35" endLine="23" endPosition="5" />
   </root>
   <root nodeId="1556973682253873271">
+    <nodeInfo nodeId="1556973682253873279" fileName="RemoveUnknownReference_QuickFix.java" startLine="12" startPosition="34" endLine="13" endPosition="122" />
     <nodeInfo nodeId="1556973682253873308" fileName="RemoveUnknownReference_QuickFix.java" startLine="16" startPosition="35" endLine="17" endPosition="93" />
     <scopeInfo nodeId="1556973682253873278" fileName="RemoveUnknownReference_QuickFix.java" startLine="12" startPosition="34" endLine="13" endPosition="122" />
     <scopeInfo nodeId="1556973682253873273" fileName="RemoveUnknownReference_QuickFix.java" startLine="16" startPosition="35" endLine="17" endPosition="93" />
@@ -123,6 +126,7 @@
     </scopeInfo>
   </root>
   <root nodeId="1556973682253891011">
+    <nodeInfo nodeId="1556973682253891019" fileName="RemoveUnnecessaryChildrenInSingleRole_QuickFix.java" startLine="16" startPosition="34" endLine="17" endPosition="189" />
     <nodeInfo nodeId="1556973682253891054" fileName="RemoveUnnecessaryChildrenInSingleRole_QuickFix.java" startLine="22" startPosition="38" endLine="23" endPosition="42" />
     <nodeInfo nodeId="1556973682253891052" fileName="RemoveUnnecessaryChildrenInSingleRole_QuickFix.java" startLine="21" startPosition="201" endLine="25" endPosition="0" />
     <nodeInfo nodeId="1556973682253891038" fileName="RemoveUnnecessaryChildrenInSingleRole_QuickFix.java" startLine="20" startPosition="35" endLine="25" endPosition="7" />
@@ -133,6 +137,7 @@
     <unitInfo nodeId="1556973682253891052" fileName="RemoveUnnecessaryChildrenInSingleRole_QuickFix.java" startLine="21" startPosition="182" endLine="25" endPosition="5" unitName="jetbrains.mps.lang.core.typesystem.RemoveUnnecessaryChildrenInSingleRole_QuickFix$1" />
   </root>
   <root nodeId="3618120580763130707">
+    <nodeInfo nodeId="5476035322658116507" fileName="RemoveUndeclaredProperty_QuickFix.java" startLine="12" startPosition="34" endLine="13" endPosition="130" />
     <nodeInfo nodeId="3618120580763130713" fileName="RemoveUndeclaredProperty_QuickFix.java" startLine="16" startPosition="35" endLine="17" endPosition="113" />
     <scopeInfo nodeId="5476035322658116506" fileName="RemoveUndeclaredProperty_QuickFix.java" startLine="12" startPosition="34" endLine="13" endPosition="130" />
     <scopeInfo nodeId="3618120580763130709" fileName="RemoveUndeclaredProperty_QuickFix.java" startLine="16" startPosition="35" endLine="17" endPosition="113" />
@@ -342,15 +347,15 @@
     </scopeInfo>
   </root>
   <root nodeId="7283836008113024215">
-    <nodeInfo nodeId="7283836008113027561" fileName="check_InstanceOfAbstract_NonTypesystemRule.java" startLine="21" startPosition="97" endLine="22" endPosition="71" />
-    <nodeInfo nodeId="7283836008113027554" fileName="check_InstanceOfAbstract_NonTypesystemRule.java" startLine="24" startPosition="7" endLine="25" endPosition="55" />
-    <nodeInfo nodeId="7283836008113027554" fileName="check_InstanceOfAbstract_NonTypesystemRule.java" startLine="25" startPosition="55" endLine="26" endPosition="57" />
-    <nodeInfo nodeId="7283836008113027554" fileName="check_InstanceOfAbstract_NonTypesystemRule.java" startLine="26" startPosition="57" endLine="27" endPosition="300" />
-    <nodeInfo nodeId="7283836008113027554" fileName="check_InstanceOfAbstract_NonTypesystemRule.java" startLine="23" startPosition="69" endLine="28" endPosition="7" />
-    <nodeInfo nodeId="7283836008113027507" fileName="check_InstanceOfAbstract_NonTypesystemRule.java" startLine="22" startPosition="71" endLine="29" endPosition="5" />
-    <scopeInfo nodeId="7283836008113027554" fileName="check_InstanceOfAbstract_NonTypesystemRule.java" startLine="24" startPosition="7" endLine="27" endPosition="300" />
-    <scopeInfo nodeId="7283836008113027508" fileName="check_InstanceOfAbstract_NonTypesystemRule.java" startLine="23" startPosition="69" endLine="28" endPosition="7" />
-    <scopeInfo nodeId="7283836008113024216" fileName="check_InstanceOfAbstract_NonTypesystemRule.java" startLine="21" startPosition="97" endLine="29" endPosition="5">
+    <nodeInfo nodeId="7283836008113027561" fileName="check_InstanceOfAbstract_NonTypesystemRule.java" startLine="22" startPosition="97" endLine="23" endPosition="71" />
+    <nodeInfo nodeId="7283836008113027554" fileName="check_InstanceOfAbstract_NonTypesystemRule.java" startLine="25" startPosition="7" endLine="26" endPosition="55" />
+    <nodeInfo nodeId="7283836008113027554" fileName="check_InstanceOfAbstract_NonTypesystemRule.java" startLine="26" startPosition="55" endLine="27" endPosition="57" />
+    <nodeInfo nodeId="7283836008113027554" fileName="check_InstanceOfAbstract_NonTypesystemRule.java" startLine="27" startPosition="57" endLine="28" endPosition="402" />
+    <nodeInfo nodeId="7283836008113027554" fileName="check_InstanceOfAbstract_NonTypesystemRule.java" startLine="24" startPosition="69" endLine="29" endPosition="7" />
+    <nodeInfo nodeId="7283836008113027507" fileName="check_InstanceOfAbstract_NonTypesystemRule.java" startLine="23" startPosition="71" endLine="30" endPosition="5" />
+    <scopeInfo nodeId="7283836008113027554" fileName="check_InstanceOfAbstract_NonTypesystemRule.java" startLine="25" startPosition="7" endLine="28" endPosition="402" />
+    <scopeInfo nodeId="7283836008113027508" fileName="check_InstanceOfAbstract_NonTypesystemRule.java" startLine="24" startPosition="69" endLine="29" endPosition="7" />
+    <scopeInfo nodeId="7283836008113024216" fileName="check_InstanceOfAbstract_NonTypesystemRule.java" startLine="22" startPosition="97" endLine="30" endPosition="5">
       <varInfo nodeId="7283836008113027562" varName="concept" />
     </scopeInfo>
   </root>

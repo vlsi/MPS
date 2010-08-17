@@ -392,7 +392,6 @@
     <node role="property:21" type="jetbrains.mps.buildlanguage.structure.ExternalPropertyDeclaration:21" id="1219229617369">
       <property name="name:21" value="macro.name" />
       <property name="checkOnStart:21" value="false" />
-      <node role="propertyValue:21" type="jetbrains.mps.buildlanguage.structure.PropertyValueExpression:21" id="1219229617370" />
       <node role="type:21" type="jetbrains.mps.buildlanguage.structure.FileType:21" id="1219229629189" />
       <node role="nodeMacro$attribute:21" type="jetbrains.mps.lang.generator.structure.CopySrcListMacro:2" id="1234978171535">
         <node role="sourceNodesQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery:2" id="1234978171536">
@@ -417,7 +416,6 @@
     <node role="property:21" type="jetbrains.mps.buildlanguage.structure.ExternalPropertyDeclaration:21" id="1219156675528">
       <property name="name:21" value="variable.name" />
       <property name="checkOnStart:21" value="true" />
-      <node role="propertyValue:21" type="jetbrains.mps.buildlanguage.structure.PropertyValueExpression:21" id="1219156675529" />
       <node role="type:21" type="jetbrains.mps.buildlanguage.structure.StringType:21" id="1219156716422" />
       <node role="nodeMacro$attribute:21" type="jetbrains.mps.lang.generator.structure.LoopMacro:2" id="1219156680506">
         <node role="sourceNodesQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery:2" id="1219156680507">
@@ -2562,13 +2560,11 @@
     <node role="property:21" type="jetbrains.mps.buildlanguage.structure.ExternalPropertyDeclaration:21" id="1219160370052">
       <property name="name:21" value="deploy.dir" />
       <property name="checkOnStart:21" value="true" />
-      <node role="propertyValue:21" type="jetbrains.mps.buildlanguage.structure.PropertyValueExpression:21" id="1219160370053" />
       <node role="type:21" type="jetbrains.mps.buildlanguage.structure.FileType:21" id="1219160378549" />
     </node>
     <node role="property:21" type="jetbrains.mps.buildlanguage.structure.ExternalPropertyDeclaration:21" id="1239193117872">
       <property name="name:21" value="macro.name" />
       <property name="checkOnStart:21" value="false" />
-      <node role="propertyValue:21" type="jetbrains.mps.buildlanguage.structure.PropertyValueExpression:21" id="1239193117873" />
       <node role="type:21" type="jetbrains.mps.buildlanguage.structure.FileType:21" id="1239193117874" />
       <node role="nodeMacro$attribute:21" type="jetbrains.mps.lang.generator.structure.CopySrcListMacro:2" id="1239193117875">
         <node role="sourceNodesQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery:2" id="1239193117876">
@@ -6993,7 +6989,6 @@
       <property name="name:21" value="some" />
       <node role="property:21" type="jetbrains.mps.buildlanguage.structure.ExternalPropertyDeclaration:21" id="1234978051914">
         <property name="name:21" value="macro" />
-        <node role="propertyValue:21" type="jetbrains.mps.buildlanguage.structure.PropertyValueExpression:21" id="1234978051915" />
         <node role="type:21" type="jetbrains.mps.buildlanguage.structure.FileType:21" id="1234978060349" />
         <node role="templateFragment$attribute:21" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="1234978063090" />
         <node role="propertyMacro$property_attribute$name:21" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1234978065504">

@@ -45,6 +45,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import com.intellij.openapi.util.Disposer;
 import org.apache.commons.lang.StringUtils;
 import java.lang.reflect.InvocationTargetException;
+import jetbrains.mps.debug.evaluation.InvocationTargetEvaluationException;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.generator.GenerationStatus;

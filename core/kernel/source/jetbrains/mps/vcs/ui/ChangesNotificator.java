@@ -39,7 +39,6 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JEditorPane;
 import javax.swing.JComponent;
-import javax.swing.JFrame;
 import javax.swing.text.html.HTMLEditorKit;
 import javax.swing.event.HyperlinkListener;
 import javax.swing.event.HyperlinkEvent;
@@ -162,7 +161,7 @@ public class ChangesNotificator implements ProjectComponent {
       int size = myDescriptors.size();
       assert size > 0;
       if (size == 1) {
-        return getExactMessage("Model", myDescriptors.iterator().next().getSModelFqName().toString(), "is");
+        return getExactMessage("Model", myDescriptors.iterator().next().getSModelReference().getSModelFqName().toString(), "is");
       } else {
         return getExactMessage("Models", getModelsList(true), "are");
       }
@@ -177,7 +176,7 @@ public class ChangesNotificator implements ProjectComponent {
       int size = myDescriptors.size();
       assert size > 0;
       if (size == 1) {
-        return getExactDialogMessage("Model", myDescriptors.iterator().next().getSModelFqName().toString(), vcsRoot);
+        return getExactDialogMessage("Model", myDescriptors.iterator().next().getSModelReference().getSModelFqName().toString(), vcsRoot);
       } else {
         return getExactDialogMessage("Models", getModelsList(false), vcsRoot);
       }
@@ -186,7 +185,7 @@ public class ChangesNotificator implements ProjectComponent {
     private String getModelsList(boolean html) {
       StringBuffer sb = new StringBuffer();
       for (SModelDescriptor sm : myDescriptors) {
-        sb.append(sm.getSModelFqName().toString());
+        sb.append(sm.getSModelReference().getSModelFqName().toString());
         sb.append(html ? "<br>" : "\n");
       }
       return sb.toString();

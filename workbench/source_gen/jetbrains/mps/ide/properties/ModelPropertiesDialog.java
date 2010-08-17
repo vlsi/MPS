@@ -42,7 +42,7 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
   public SModelDescriptor myModel;
 
   /*package*/ ModelPropertiesDialog(final SModelDescriptor sm, final IOperationContext context) {
-    super("Model Properties for " + sm.getSModelFqName(), context);
+    super("Model Properties for " + sm.getSModelReference().getSModelFqName(), context);
     myModel = sm;
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:5e2666e0-c7c7-4002-9ed9-38805719453d(jetbrains.mps.build.custommps.generator.template.main@generator)">
-  <persistence version="4" />
-  <refactoringHistory />
+  <persistence version="5" />
   <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)" />
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
@@ -1429,27 +1428,22 @@
     <property name="name:21" value="help-build" />
     <node role="property:21" type="jetbrains.mps.buildlanguage.structure.ExternalPropertyDeclaration:21" id="1233673101173">
       <property name="name:21" value="input.dir" />
-      <node role="propertyValue:21" type="jetbrains.mps.buildlanguage.structure.PropertyValueExpression:21" id="1233673101174" />
       <node role="type:21" type="jetbrains.mps.buildlanguage.structure.FileType:21" id="1233673110081" />
     </node>
     <node role="property:21" type="jetbrains.mps.buildlanguage.structure.ExternalPropertyDeclaration:21" id="1233673111665">
       <property name="name:21" value="output.dir" />
-      <node role="propertyValue:21" type="jetbrains.mps.buildlanguage.structure.PropertyValueExpression:21" id="1233673111666" />
       <node role="type:21" type="jetbrains.mps.buildlanguage.structure.FileType:21" id="1233673111667" />
     </node>
     <node role="property:21" type="jetbrains.mps.buildlanguage.structure.ExternalPropertyDeclaration:21" id="1234275070591">
       <property name="name:21" value="deploy.dir" />
-      <node role="propertyValue:21" type="jetbrains.mps.buildlanguage.structure.PropertyValueExpression:21" id="1234275070592" />
       <node role="type:21" type="jetbrains.mps.buildlanguage.structure.FileType:21" id="1234275077008" />
     </node>
     <node role="property:21" type="jetbrains.mps.buildlanguage.structure.ExternalPropertyDeclaration:21" id="1234274900438">
       <property name="name:21" value="version" />
-      <node role="propertyValue:21" type="jetbrains.mps.buildlanguage.structure.PropertyValueExpression:21" id="1234274900439" />
       <node role="type:21" type="jetbrains.mps.buildlanguage.structure.StringType:21" id="1234274900440" />
     </node>
     <node role="property:21" type="jetbrains.mps.buildlanguage.structure.ExternalPropertyDeclaration:21" id="1234274988321">
       <property name="name:21" value="build.number" />
-      <node role="propertyValue:21" type="jetbrains.mps.buildlanguage.structure.PropertyValueExpression:21" id="1234274988322" />
       <node role="type:21" type="jetbrains.mps.buildlanguage.structure.StringType:21" id="1234274988323" />
     </node>
     <node role="property:21" type="jetbrains.mps.buildlanguage.structure.PropertyDeclaration:21" id="1234275006952">
@@ -1604,7 +1598,6 @@
       </node>
       <node role="propertyList:21" type="jetbrains.mps.buildlanguage.structure.ExternalPropertyDeclaration:21" id="1234285436031">
         <property name="name:21" value="mps_home" />
-        <node role="propertyValue:21" type="jetbrains.mps.buildlanguage.structure.PropertyValueExpression:21" id="1234285436032" />
         <node role="type:21" type="jetbrains.mps.buildlanguage.structure.FileType:21" id="1234285436034" />
       </node>
     </node>
@@ -1626,7 +1619,6 @@
       </node>
       <node role="propertyList:21" type="jetbrains.mps.buildlanguage.structure.ExternalPropertyDeclaration:21" id="1233753788424">
         <property name="name:21" value="mps_home" />
-        <node role="propertyValue:21" type="jetbrains.mps.buildlanguage.structure.PropertyValueExpression:21" id="1233753788425" />
         <node role="type:21" type="jetbrains.mps.buildlanguage.structure.FileType:21" id="1233753795643" />
       </node>
       <node role="taskCall:21" type="jetbrains.mps.build.generictasks.structure.TaskCall:22" id="1233753749191">
@@ -1945,7 +1937,6 @@
       <property name="name:21" value="unpack.buildtools.zip" />
       <node role="propertyList:21" type="jetbrains.mps.buildlanguage.structure.ExternalPropertyDeclaration:21" id="1236885260507">
         <property name="name:21" value="mps_home" />
-        <node role="propertyValue:21" type="jetbrains.mps.buildlanguage.structure.PropertyValueExpression:21" id="1236885260508" />
         <node role="type:21" type="jetbrains.mps.buildlanguage.structure.FileType:21" id="1236885260509" />
       </node>
       <node role="taskCall:21" type="jetbrains.mps.build.generictasks.structure.TaskCall:22" id="1239974200488">
@@ -2125,7 +2116,6 @@
       </node>
       <node role="propertyList:21" type="jetbrains.mps.buildlanguage.structure.ExternalPropertyDeclaration:21" id="1233676721245">
         <property name="name:21" value="mps_home" />
-        <node role="propertyValue:21" type="jetbrains.mps.buildlanguage.structure.PropertyValueExpression:21" id="1233676721246" />
         <node role="type:21" type="jetbrains.mps.buildlanguage.structure.FileType:21" id="1233676727803" />
       </node>
       <node role="taskCall:21" type="jetbrains.mps.build.generictasks.structure.TaskCall:22" id="1233673214521">

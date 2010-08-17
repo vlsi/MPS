@@ -248,7 +248,7 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
         new File(myMpsHome.getAbsolutePath() + File.separator + "core" + File.separator + "kernel" + File.separator + "xmlQuery" + File.separator + "runtime"),
 //        new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "gtext"),
 //        new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "builders"),
-        new File(myMpsHome.getAbsolutePath() + File.separator + "MPSPlugin" + File.separator + "MPSSupport")};
+        new File(myMpsHome.getAbsolutePath() + File.separator + "MPSPlugin" + File.separator + "apiclasses")};
     } else {
       pathsToLook = new File[]{new File(myMpsHome.getAbsolutePath() + File.separator + "lib"),
         new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "generate.ant.task.jar"),
@@ -275,7 +275,7 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
   protected abstract Class<? extends MpsWorker> getWorkerClass();
 
   private void gatherAllClassesAndJarsUnder(File dir, Set<File> result) {
-    if (dir.getName().equals("classes") || dir.getName().equals("classes_gen")) {
+    if (dir.getName().equals("classes") || dir.getName().equals("classes_gen") || dir.getName().equals("apiclasses")) {
       result.add(dir);
       return;
     }

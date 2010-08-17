@@ -225,6 +225,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
       return null;
     }
     IFile modelFile = dsm.getModelFile();
+    assert modelFile != null;
     return ModelPersistence.saveModel(smodel, modelFile, true, true);
   }
 
@@ -403,7 +404,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
   public void changeSModelRoot(SModelDescriptor sm, SModelRoot modelRoot) {
     DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
     IFile oldFile = dsm.getModelFile();
-    IFile newFile = createFileForModelUID(modelRoot, sm.getSModelFqName());
+    IFile newFile = createFileForModelUID(modelRoot, sm.getSModelReference().getSModelFqName());
     dsm.changeModelFile(newFile);
     dsm.save();
     oldFile.delete();

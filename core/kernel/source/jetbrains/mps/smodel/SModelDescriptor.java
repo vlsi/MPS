@@ -42,10 +42,6 @@ public interface SModelDescriptor {
 
   SModelReference getSModelReference();
 
-  SModelId getSModelId();
-
-  SModelFqName getSModelFqName();
-
   String getLongName();
 
   String getStereotype();
@@ -72,9 +68,6 @@ public interface SModelDescriptor {
 
   void removeModelListener(@NotNull SModelListener listener);
 
-  @NotNull
-  SModelListener[] getModelListeners();
-
   boolean hasModelListener(@NotNull SModelListener listener);
 
   //--------------model command listeners-------------
@@ -83,15 +76,7 @@ public interface SModelDescriptor {
 
   void removeModelCommandListener(@NotNull SModelCommandListener listener);
 
-  @NotNull
-  SModelCommandListener[] getModelCommandListeners();
-
-  boolean hasModelCommandListener(@NotNull SModelCommandListener listener);
-
   //------todo get rid of
-
-  boolean isInitialized();
-
 
   @Deprecated
   Set<IModule> getModules();

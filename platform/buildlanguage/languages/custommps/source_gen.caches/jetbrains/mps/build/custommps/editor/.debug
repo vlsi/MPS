@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1233149986967">
+    <nodeInfo nodeId="1236884902200" fileName="MPSBuild_Editor.java" startLine="195" startPosition="111" endLine="196" endPosition="103" />
     <scopeInfo nodeId="1236884802695" fileName="MPSBuild_Editor.java" startLine="195" startPosition="111" endLine="196" endPosition="103" />
   </root>
   <root nodeId="1233937590204">
+    <nodeInfo nodeId="1233937959751" fileName="CustomMpsStyles_StyleSheet.java" startLine="31" startPosition="108" endLine="32" endPosition="16" />
     <scopeInfo nodeId="1233937956201" fileName="CustomMpsStyles_StyleSheet.java" startLine="31" startPosition="108" endLine="32" endPosition="16" />
   </root>
 </debugInfo>

@@ -35,7 +35,7 @@ public class ForceRefreshModelChanges_Action extends GeneratedAction {
 
   public void doUpdate(@NotNull AnActionEvent event) {
     try {
-      event.getPresentation().setText("Force Refresh Model Changes for " + ForceRefreshModelChanges_Action.this.model.getModelDescriptor().getSModelFqName().getShortName());
+      event.getPresentation().setText("Force Refresh Model Changes for " + ForceRefreshModelChanges_Action.this.model.getModelDescriptor().getSModelReference().getSModelFqName().getShortName());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "ForceRefreshModelChanges", t);

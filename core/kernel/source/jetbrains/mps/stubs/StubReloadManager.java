@@ -6,12 +6,9 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.Processor;
 import jetbrains.mps.lang.stubs.structure.LibraryStubDescriptor;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.AbstractModule.StubPath;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.project.*;
+import jetbrains.mps.project.StubPath;
 import jetbrains.mps.project.SModelRoot.ManagerNotFoundException;
-import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.StubModelsEntry;
@@ -166,7 +163,7 @@ public class StubReloadManager implements ApplicationComponent {
 
   private void markNewStubs() {
     for (BaseStubModelDescriptor m : getAllStubModels()) {
-      if (m.isInitialized()) {
+      if (m.getLoadingState() != ModelLoadingState.NOT_LOADED) {
         m.unmarkReload();
       }
     }

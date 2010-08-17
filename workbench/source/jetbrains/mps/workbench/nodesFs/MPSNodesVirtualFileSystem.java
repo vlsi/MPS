@@ -122,31 +122,32 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
   }
 
   @Nullable
-  public VirtualFile refreshAndFindFileByPath(String path) {
+  public VirtualFile refreshAndFindFileByPath(@NotNull String path) {
     return null;
   }
 
-  protected void deleteFile(Object requestor, VirtualFile vFile) throws IOException {
+  protected void deleteFile(Object requestor, @NotNull VirtualFile vFile) throws IOException {
     throw new UnsupportedOperationException();
   }
 
-  protected void moveFile(Object requestor, VirtualFile vFile, VirtualFile newParent) throws IOException {
+  protected void moveFile(Object requestor, @NotNull VirtualFile vFile, @NotNull VirtualFile newParent) throws IOException {
     throw new UnsupportedOperationException();
   }
 
-  protected void renameFile(Object requestor, VirtualFile vFile, String newName) throws IOException {
+  protected void renameFile(Object requestor, @NotNull VirtualFile vFile, @NotNull String newName) throws IOException {
     throw new UnsupportedOperationException();
   }
 
-  protected VirtualFile createChildFile(Object requestor, VirtualFile vDir, String fileName) throws IOException {
+  protected VirtualFile createChildFile(Object requestor, @NotNull VirtualFile vDir, @NotNull String fileName) throws IOException {
     throw new UnsupportedOperationException();
   }
 
-  protected VirtualFile createChildDirectory(Object requestor, VirtualFile vDir, String dirName) throws IOException {
+  @NotNull
+  protected VirtualFile createChildDirectory(Object requestor, @NotNull VirtualFile vDir, @NotNull String dirName) throws IOException {
     throw new UnsupportedOperationException();
   }
 
-  protected VirtualFile copyFile(Object requestor, VirtualFile virtualFile, VirtualFile newParent, String copyName) throws IOException {
+  protected VirtualFile copyFile(Object requestor, @NotNull VirtualFile virtualFile, @NotNull VirtualFile newParent, @NotNull String copyName) throws IOException {
     throw new UnsupportedOperationException();
   }
 
@@ -200,20 +201,19 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
 
   private class MyModelRepositoryListener extends SModelRepositoryAdapter {
     public void beforeModelRemoved(SModelDescriptor modelDescriptor) {
-      if (!modelDescriptor.isInitialized()) return;
+      if (modelDescriptor.getLoadingState() == ModelLoadingState.NOT_LOADED) return;
 
       for (final SNode root : modelDescriptor.getSModel().getRoots()) {
         final SNodePointer pointer = new SNodePointer(root);
         final VirtualFile vf = myVirtualFiles.get(pointer);
-        if (vf != null) {
-          ModelAccess.instance().runCommandInEDT(new Runnable() {
-            public void run() {
-              fireBeforeFileDeletion(this, vf);
-              fireFileDeleted(this, vf, vf.getName(), null);
-              myVirtualFiles.remove(pointer);
-            }
-          });
-        }
+        if (vf == null) continue;
+        ModelAccess.instance().runCommandInEDT(new Runnable() {
+          public void run() {
+            fireBeforeFileDeletion(this, vf);
+            fireFileDeleted(this, vf, vf.getName(), null);
+            myVirtualFiles.remove(pointer);
+          }
+        });
       }
     }
   }

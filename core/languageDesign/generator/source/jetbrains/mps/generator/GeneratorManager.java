@@ -216,7 +216,7 @@ public class GeneratorManager {
           String message = "The following models might be required for generation\n" +
             "but aren't generated. Do you want to generate them?\n";
           for (SModelDescriptor sm : requirements) {
-            message += "\n" + sm.getSModelFqName();
+            message += "\n" + sm.getSModelReference().getSModelFqName();
           }
 
           int result = 1;

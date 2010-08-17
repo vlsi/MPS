@@ -153,6 +153,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory" />
     <classNode extendsClassName="jetbrains.mps.uiLanguage.runtime.BaseBean" />
   </dependency>

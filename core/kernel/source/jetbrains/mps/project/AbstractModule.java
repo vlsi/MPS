@@ -25,7 +25,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.listener.ModelCreationListener;
 import jetbrains.mps.project.persistence.ModuleReadException;
 import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ClassPathFactory;
@@ -51,13 +50,22 @@ import java.util.*;
 public abstract class AbstractModule implements IModule {
   private static final Logger LOG = Logger.getLogger(AbstractModule.class);
 
-  @Deprecated
-  public static final String RUNTIME_JAR_SUFFIX = MPSExtentions.RUNTIME_ARCH;
-  @Deprecated
-  public static final String PACKAGE_SUFFIX = MPSExtentions.MPS_ARCH;
-
   public static final String MODULE_DIR = "module";
   public static final String CACHES_DIR = "caches";
+
+  private boolean myModelsRead = false;
+  private boolean myInitialized = false;
+
+  protected IFile myDescriptorFile;
+  private ModuleReference myModuleReference;
+  private List<SModelRoot> mySModelRoots = new ArrayList<SModelRoot>();
+  private Set<String> myIncludedStubPaths;
+  private ModuleScope myScope = createScope();
+
+  private CompositeClassPathItem myCachedClassPathItem;
+  private List<IModule> myCachedExplicitlyDependentModules;
+
+  //----model creation
 
   private static Set<ModelCreationListener> ourModelCreationListeners = new HashSet<ModelCreationListener>();
 
@@ -65,22 +73,29 @@ public abstract class AbstractModule implements IModule {
     ourModelCreationListeners.add(listener);
   }
 
-  private boolean myModelsRead = false;
-  private boolean myInitialized = false;
-  protected IFile myDescriptorFile;
+  public final EditableSModelDescriptor createModel(SModelFqName name, SModelRoot root) {
+    IModelRootManager manager = root.getManager();
 
-  private ModuleScope myScope = createScope();
+    if (!manager.isNewModelsSupported()) {
+      LOG.error("Trying to create model root manager in root which doesn't support new models");
+      return null;
+    }
 
-  private List<SModelRoot> mySModelRoots = new ArrayList<SModelRoot>();
+    EditableSModelDescriptor model = (EditableSModelDescriptor) manager.createNewModel(root, name, this);
+    SModelRepository.getInstance().markChanged(model, true);
 
-  private Set<String> myIncludedStubPaths;
-  private CompositeClassPathItem myCachedClassPathItem;
+    for (ModelCreationListener listener : ourModelCreationListeners) {
+      if (listener.isApplicable(model)) {
+        listener.onCreate(model);
+      }
+    }
 
-  private List<IModule> myExplicitlyDependentModules;
+    return model;
+  }
 
-  private ModuleReference myModuleReference;
+  //----reference
 
-  protected void setModulePointer(@NotNull ModuleReference reference) {
+  protected void setModuleReference(@NotNull ModuleReference reference) {
     LOG.assertLog(myModuleReference == null || ObjectUtils.equals(myModuleReference.getModuleId(), reference.getModuleId()), reference.getModuleFqName());
 
     ModuleReference oldValue = myModuleReference;
@@ -98,10 +113,8 @@ public abstract class AbstractModule implements IModule {
     return myModuleReference;
   }
 
-  public ModuleId getModuleId() {
-    return myModuleReference.getModuleId();
-  }
-
+  //todo remove at least one of the two following methods
+  //todo are these really one object?
   public String getModuleFqName() {
     return myModuleReference.getModuleFqName();
   }
@@ -114,10 +127,332 @@ public abstract class AbstractModule implements IModule {
     return getModuleDescriptor().getNamespace();
   }
 
-  @Deprecated
-  public String getModuleUID() {
-    return getModuleFqName();
+  //----adding different deps
+
+  public void addDependency(@NotNull ModuleReference moduleRef, boolean reexport) {
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    Dependency dep = new Dependency();
+    dep.setModuleRef(moduleRef);
+    dep.setReexport(reexport);
+    descriptor.getDependencies().add(dep);
+    setModuleDescriptor(descriptor, true);
+    save();
   }
+
+  public void addUsedLanguage(ModuleReference langRef) {
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor.getUsedLanguages().contains(langRef)) return;
+
+    descriptor.getUsedLanguages().add(langRef);
+    setModuleDescriptor(descriptor, true);
+    save();
+  }
+
+  public void addUsedDevkit(ModuleReference devkitRef) {
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    descriptor.getUsedDevkits().add(devkitRef);
+    setModuleDescriptor(descriptor, true);
+    save();
+  }
+
+  //----model roots
+
+  private List<ModelRoot> getModelRoots() {
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor != null) return descriptor.getModelRoots();
+    return new ArrayList<ModelRoot>();
+  }
+
+  public List<SModelRoot> getSModelRoots() {
+    return Collections.unmodifiableList(mySModelRoots);
+  }
+
+  public SModelRoot findModelRoot(String path) {
+    for (SModelRoot root : mySModelRoots) {
+      if (path.equals(root.getPath())) return root;
+    }
+    return null;
+  }
+
+  //----get deps
+
+  public List<Dependency> getDependOn() {
+    List<Dependency> result = new ArrayList<Dependency>();
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor != null) {
+      result.addAll(descriptor.getDependencies());
+    }
+    return result;
+  }
+
+  //todo remove at least one of the two following methods
+  public final List<IModule> getExplicitlyDependOnModules() {
+    if (myCachedExplicitlyDependentModules == null) {
+      Set<IModule> res = new LinkedHashSet<IModule>();
+      addExplicitlyDependendOnModules(res);
+      myCachedExplicitlyDependentModules = new ArrayList<IModule>(res);
+    }
+
+    return Collections.unmodifiableList(myCachedExplicitlyDependentModules);
+  }
+
+  public List<IModule> getExplicitlyDependOnModulesWithBootstrap() {
+    List<IModule> result = new ArrayList<IModule>(getExplicitlyDependOnModules());
+    result.addAll(LibraryManager.getInstance().getBootstrapModules(Language.class));
+    return result;
+  }
+
+  protected void addExplicitlyDependendOnModules(Set<IModule> result) {
+    result.addAll(getDependOnModules());
+    result.addAll(getUsedLanguages());
+    result.addAll(getUsedDevkits());
+  }
+
+  public List<IModule> getDesignTimeDependOnModules() {
+    Set<IModule> result = new LinkedHashSet<IModule>();
+    result.addAll(getAllDependOnModules());
+    return new ArrayList<IModule>(result);
+  }
+
+  public List<IModule> getDependOnModules() {
+    List<IModule> result = new ArrayList<IModule>();
+    for (Dependency dep : getDependOn()) {
+      IModule m = MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
+      if (m != null) {
+        result.add(m);
+      }
+    }
+    return result;
+  }
+
+  public List<IModule> getAllDependOnModules() {
+    Set<IModule> result = new LinkedHashSet<IModule>();
+    result.addAll(getDependOnModules());
+    for (DevKit dk : getUsedDevkits()) {
+      result.addAll(dk.getAllExportedSolutions());
+    }
+    return new ArrayList<IModule>(result);
+  }
+
+  //----languages
+
+  public List<ModuleReference> getUsedLanguagesReferences() {
+    List<ModuleReference> result = new ArrayList<ModuleReference>();
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor != null) {
+      result.addAll(descriptor.getUsedLanguages());
+    }
+    return result;
+  }
+
+  public List<Language> getUsedLanguages() {
+    List<Language> result = new ArrayList<Language>();
+    for (ModuleReference ref : getUsedLanguagesReferences()) {
+      Language l = MPSModuleRepository.getInstance().getLanguage(ref);
+      if (l != null) {
+        result.add(l);
+      }
+    }
+
+    result.add(BaseLanguage_Language.get());
+    result.add(Collections_Language.get());
+    return result;
+  }
+
+  public List<Language> getAllUsedLanguages() {
+    Set<Language> result = new LinkedHashSet<Language>();
+    result.addAll(getUsedLanguages());
+    for (DevKit dk : getUsedDevkits()) {
+      result.addAll(dk.getAllExportedLanguages());
+    }
+    for (Language l : new HashSet<Language>(result)) {
+      result.addAll(l.getAllExtendedLanguages());
+    }
+    return new ArrayList<Language>(result);
+  }
+
+  //----devkits
+
+  public List<ModuleReference> getUsedDevkitReferences() {
+    List<ModuleReference> result = new ArrayList<ModuleReference>();
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor != null) {
+      result.addAll(descriptor.getUsedDevkits());
+    }
+    return result;
+  }
+
+  public List<DevKit> getUsedDevkits() {
+    List<DevKit> result = new ArrayList<DevKit>();
+
+    for (ModuleReference ref : getUsedDevkitReferences()) {
+      DevKit dk = MPSModuleRepository.getInstance().getDevKit(ref);
+      if (dk != null) {
+        result.add(dk);
+      } else {
+        LOG.error("Can't load devkit " + ref.getModuleFqName() + " from " + this);
+      }
+    }
+
+    return result;
+  }
+
+  //----stubs
+
+  public boolean areJavaStubsEnabled() {
+    return true;
+  }
+
+  public List<StubPath> getAllStubPaths() {
+    ArrayList<StubPath> result = new ArrayList<StubPath>();
+    result.addAll(getStubPaths());
+    result.addAll(getOwnStubPaths());
+    return result;
+  }
+
+  public List<StubPath> getOwnStubPaths() {
+    ArrayList<StubPath> result = new ArrayList<StubPath>();
+    if (isCompileInMPS() && getClassesGen() != null && getClassesGen().exists()) {
+      result.add(new StubPath(getClassesGen().getCanonicalPath(), LanguageID.JAVA_MANAGER));
+    }
+    return result;
+  }
+
+  public List<StubPath> getStubPaths() {
+    ArrayList<StubPath> result = new ArrayList<StubPath>();
+
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor != null) {
+      for (StubModelsEntry entry : getModuleDescriptor().getStubModelEntries()) {
+        result.add(new StubPath(entry.getPath(), entry.getManager()));
+      }
+    }
+
+    return result;
+  }
+
+  protected List<StubModelsEntry> getStubModelEntriesToIncludeOrExclude() {
+    return getModuleDescriptor().getStubModelEntries();
+  }
+
+  private Set<String> getIncludedStubPaths() {
+    LinkedHashSet<String> result = new LinkedHashSet<String>();
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor != null) {
+      for (StubModelsEntry entry : getStubModelEntriesToIncludeOrExclude()) {
+        if (entry.isIncludedInVCS()) result.add(entry.getPath());
+      }
+    }
+    return result;
+  }
+
+  private void setIncludedStubPath() {
+    for (StubModelsEntry entry : getStubModelEntriesToIncludeOrExclude()) {
+      if (myIncludedStubPaths.contains(entry.getPath())) {
+        entry.setIncludedInVCS(true);
+      } else {
+        entry.setIncludedInVCS(false);
+      }
+    }
+  }
+
+  public boolean isStubPathExcluded(String path) {
+    return !myIncludedStubPaths.contains(path);
+  }
+
+  public boolean setStubPathExcluded(String path, boolean exclude) {
+    boolean changed = exclude ? myIncludedStubPaths.remove(path) : myIncludedStubPaths.add(path);
+
+    setIncludedStubPath();
+    if (changed) {
+      save();
+    }
+
+    return changed;
+  }
+
+  //----classpath
+
+  public void updateClassPath() {
+    myCachedClassPathItem = null;
+    myIncludedStubPaths = getIncludedStubPaths();
+  }
+
+  public void invalidateClassPath() {
+    Set<String> invalidate = new HashSet<String>();
+    for (StubPath path : getAllStubPaths()) {
+      if (!ObjectUtils.equals(path.getManager().getClassName(), LanguageID.JAVA_MANAGER.getClassName())) continue;
+      invalidate.add(path.getPath());
+    }
+    ClassPathFactory.getInstance().invalidate(invalidate);
+  }
+
+  //todo check this code. Wy not to do it where we add jars?
+  protected void updatePackagedDescriptorClasspath() {
+    if (!isPackaged()) return;
+
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor == null) return;
+
+    Set<StubModelsEntry> visited = new HashSet<StubModelsEntry>();
+    List<StubModelsEntry> remove = new ArrayList<StubModelsEntry>();
+    for (StubModelsEntry entry : descriptor.getStubModelEntries()) {
+      IFile cp = FileSystem.getFile(entry.getPath());
+      if ((!cp.exists()) || cp.isDirectory() || visited.contains(entry)) {
+        remove.add(entry);
+      }
+      visited.add(entry);
+    }
+    descriptor.getStubModelEntries().removeAll(remove);
+
+    File bundleHomeFile = getBundleHome();
+    if (bundleHomeFile == null) return;
+
+    String bundleHomePath = bundleHomeFile.getPath();
+    boolean contains = false;
+    for (StubModelsEntry v : visited) {
+      if (EqualUtil.equals(v.getPath(), bundleHomePath)) {
+        contains = true;
+      }
+    }
+    if (contains) return;
+
+    ClassPathEntry bundleHome = new ClassPathEntry();
+    bundleHome.setPath(bundleHomePath);
+    descriptor.getStubModelEntries().add(StubModelsEntry.fromClassPathEntry(bundleHome));
+  }
+
+  public IClassPathItem getClassPathItem() {
+    if (myCachedClassPathItem == null) {
+      myCachedClassPathItem = new CompositeClassPathItem();
+      for (StubPath path : getAllStubPaths()) {
+        //look for classes only in stub dirs with JavaStub manager
+        if (!ObjectUtils.equals(path.getManager().getClassName(), LanguageID.JAVA_MANAGER.getClassName())) continue;
+
+        try {
+          IClassPathItem pathItem = ClassPathFactory.getInstance().createFromPath(path.getPath(), this);
+          myCachedClassPathItem.add(pathItem);
+        } catch (IOException e) {
+          LOG.error(e.getMessage());
+        }
+      }
+    }
+    return myCachedClassPathItem;
+  }
+
+  public IClassPathItem getModuleWithDependenciesClassPathItem() {
+    return getDependenciesClasspath(CollectionUtil.set((IModule) this), false);
+  }
+
+  public static IClassPathItem getDependenciesClasspath(Set<IModule> modules, boolean includeStubSolutions) {
+    return new ClasspathCollector(modules).collect(includeStubSolutions);
+  }
+
+  public BytecodeLocator getBytecodeLocator() {
+    return new ModuleBytecodeLocator();
+  }
+
+  //----
 
   protected void reloadAfterDescriptorChange() {
     rereadModels();
@@ -166,93 +501,6 @@ public abstract class AbstractModule implements IModule {
     return getDescriptorFile().isReadOnly();
   }
 
-  public List<String> validate() {
-    List<String> errors = new ArrayList<String>();
-    for (Dependency dep : getDependOn()) {
-      ModuleReference moduleRef = dep.getModuleRef();
-      if (MPSModuleRepository.getInstance().getModule(moduleRef) == null) {
-        errors.add("Can't find dependency: " + moduleRef.getModuleFqName());
-      }
-    }
-    for (ModuleReference reference : getUsedLanguagesReferences()) {
-      if (MPSModuleRepository.getInstance().getLanguage(reference) == null) {
-        errors.add("Can't find used language: " + reference.getModuleFqName());
-      }
-    }
-    for (ModuleReference reference : getUsedDevkitReferences()) {
-      if (MPSModuleRepository.getInstance().getModule(reference) == null) {
-        errors.add("Can't find used devkit: " + reference.getModuleFqName());
-      }
-    }
-    if (getModuleDescriptor() != null) {
-      if (getModuleDescriptor().getSourcePaths() != null && !isPackaged()) {
-        for (String sourcePath : getModuleDescriptor().getSourcePaths()) {
-          VirtualFile vfile = VFileSystem.getFile(sourcePath);
-          if (vfile == null || !vfile.exists()) {
-            errors.add("Can't find source path: " + sourcePath);
-          }
-        }
-      }
-      if (getModuleDescriptor().getStubModelEntries() != null) {
-        for (StubModelsEntry stubModelsEntry : getModuleDescriptor().getStubModelEntries()) {
-          VirtualFile vfile = VFileSystem.getFile(stubModelsEntry.getPath());
-          if (vfile == null || !vfile.exists()) {
-            errors.add("Can't find library: " + stubModelsEntry.getPath());
-          }
-        }
-      }
-    }
-    return errors;
-  }
-
-  public final boolean isValid() {
-    return validate().isEmpty();
-  }
-
-  public void addDependency(@NotNull ModuleReference moduleRef, boolean reexport) {
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    Dependency dep = new Dependency();
-    dep.setModuleRef(moduleRef);
-    dep.setReexport(reexport);
-    descriptor.getDependencies().add(dep);
-    setModuleDescriptor(descriptor, true);
-    save();
-  }
-
-  public void addUsedLanguage(ModuleReference langRef) {
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor.getUsedLanguages().contains(langRef)) return;
-    
-    descriptor.getUsedLanguages().add(langRef);
-    setModuleDescriptor(descriptor, true);
-    save();
-  }
-
-  public void addUsedDevkit(ModuleReference devkitRef) {
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    descriptor.getUsedDevkits().add(devkitRef);
-    setModuleDescriptor(descriptor, true);
-    save();
-  }
-
-  public <T extends IModule> Set<T> getAllDependOnModules(Class<T> cls) {
-    Set<T> modules = new DependencyCollector(this, cls).collect();
-
-    // add bootstrap languages
-    if (Language.class.isAssignableFrom(cls)) {
-      Set<Language> languages = LibraryManager.getInstance().getBootstrapModules(Language.class);
-      for (Language language : languages) {
-        //noinspection SuspiciousMethodCalls
-        if (!modules.contains(language)) {
-          modules.add((T) language);
-          modules.addAll(new DependencyCollector(this, cls).collect());
-        }
-      }
-    }
-
-    return modules;
-  }
-
   public List<SModelDescriptor> getOwnModelDescriptors() {
     return SModelRepository.getInstance().getModelDescriptors(this);
   }
@@ -275,164 +523,6 @@ public abstract class AbstractModule implements IModule {
       if (getDescriptorFile() == null) return null;
       return getDescriptorFile().getParent();
     }
-  }
-
-  private List<ModelRoot> getModelRoots() {
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor != null) return descriptor.getModelRoots();
-    return new ArrayList<ModelRoot>();
-  }
-
-  public List<SModelRoot> getSModelRoots() {
-    return Collections.unmodifiableList(mySModelRoots);
-  }
-
-  public SModelRoot findModelRoot(String path) {
-    for (SModelRoot root : mySModelRoots) {
-      if (path.equals(root.getPath())) return root;
-    }
-    return null;
-  }
-
-  public List<Dependency> getDependOn() {
-    List<Dependency> result = new ArrayList<Dependency>();
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor != null) {
-      result.addAll(descriptor.getDependencies());
-    }
-    return result;
-  }
-
-  public final List<IModule> getExplicitlyDependOnModules() {
-    return getExplicitlyDependOnModules(false);
-  }
-
-  public List<IModule> getExplicitlyDependOnModules(boolean includeBootstrap) {
-    if (myExplicitlyDependentModules == null) {
-      Set<IModule> res = new LinkedHashSet<IModule>();
-      addExplicitlyDependendOnModules(res);
-      myExplicitlyDependentModules = new ArrayList<IModule>(res);
-    }
-
-
-    if (includeBootstrap) {
-      List<IModule> result = new ArrayList<IModule>(myExplicitlyDependentModules);
-      result.addAll(LibraryManager.getInstance().getBootstrapModules(Language.class));
-      return result;
-    }
-
-    return Collections.unmodifiableList(myExplicitlyDependentModules);
-  }
-
-  protected void addExplicitlyDependendOnModules(Set<IModule> result) {
-    result.addAll(getDependOnModules());
-    result.addAll(getUsedLanguages());
-    result.addAll(getUsedDevkits());
-  }
-
-  public List<IModule> getDesignTimeDependOnModules() {
-    Set<IModule> result = new LinkedHashSet<IModule>();
-    result.addAll(getAllDependOnModules());
-    return new ArrayList<IModule>(result);
-  }
-
-  public List<IModule> getDependOnModules() {
-    List<IModule> result = new ArrayList<IModule>();
-    for (Dependency dep : getDependOn()) {
-      IModule m = MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
-      if (m != null) {
-        result.add(m);
-      }
-    }
-    return result;
-  }
-
-  public List<IModule> getAllDependOnModules() {
-    Set<IModule> result = new LinkedHashSet<IModule>();
-    result.addAll(getDependOnModules());
-    for (DevKit dk : getUsedDevkits()) {
-      result.addAll(dk.getAllExportedSolutions());
-    }
-    return new ArrayList<IModule>(result);
-  }
-
-  public List<ModuleReference> getUsedLanguagesReferences() {
-    List<ModuleReference> result = new ArrayList<ModuleReference>();
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor != null) {
-      result.addAll(descriptor.getUsedLanguages());
-    }
-    return result;
-  }
-
-  public List<Language> getUsedLanguages() {
-    List<Language> result = new ArrayList<Language>();
-    for (ModuleReference ref : getUsedLanguagesReferences()) {
-      Language l = MPSModuleRepository.getInstance().getLanguage(ref);
-      if (l != null) {
-        result.add(l);
-      }
-    }
-
-    result.add(BaseLanguage_Language.get());
-    result.add(Collections_Language.get());
-    return result;
-  }
-
-  public List<Language> getAllUsedLanguages() {
-    Set<Language> result = new LinkedHashSet<Language>();
-    result.addAll(getUsedLanguages());
-    for (DevKit dk : getUsedDevkits()) {
-      result.addAll(dk.getAllExportedLanguages());
-    }
-    for (Language l : new HashSet<Language>(result)) {
-      result.addAll(l.getAllExtendedLanguages());
-    }
-    return new ArrayList<Language>(result);
-  }
-
-  public List<ModuleReference> getUsedDevkitReferences() {
-    List<ModuleReference> result = new ArrayList<ModuleReference>();
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor != null) {
-      result.addAll(descriptor.getUsedDevkits());
-    }
-    return result;
-  }
-
-  public List<DevKit> getUsedDevkits() {
-    List<DevKit> result = new ArrayList<DevKit>();
-
-    for (ModuleReference ref : getUsedDevkitReferences()) {
-      DevKit dk = MPSModuleRepository.getInstance().getDevKit(ref);
-      if (dk != null) {
-        result.add(dk);
-      } else {
-        LOG.error("Can't load devkit " + ref.getModuleFqName() + " from " + this);
-      }
-    }
-
-    return result;
-  }
-
-  public final EditableSModelDescriptor createModel(SModelFqName name, SModelRoot root) {
-    IModelRootManager manager = root.getManager();
-
-    if (!manager.isNewModelsSupported()) {
-      LOG.error("Trying to create model root manager in root which doesn't support new models");
-      return null;
-    }
-
-    EditableSModelDescriptor model = (EditableSModelDescriptor) manager.createNewModel(root, name, this);
-    SModelRepository.getInstance().markChanged(model, true);
-
-    for (ModelCreationListener listener : ourModelCreationListeners) {
-      if (listener.isApplicable(model)) {
-        listener.onCreate(model);
-      }
-    }
-
-    return model;
   }
 
   public Set<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm) {
@@ -550,49 +640,6 @@ public abstract class AbstractModule implements IModule {
     return true;
   }
 
-  public void addModuleImport(@NotNull final ModuleReference moduleRef) {
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      public void run() {
-        ModuleDescriptor md = getModuleDescriptor();
-        if (md == null) return;
-
-        for (Dependency dependency : md.getDependencies()) {
-          if (moduleRef.equals(dependency.getModuleRef())) {
-            return;
-          }
-        }
-
-        Dependency dep = new Dependency();
-        dep.setModuleRef(moduleRef);
-        md.getDependencies().add(dep);
-
-        setModuleDescriptor(md, true);
-        save();
-      }
-    });
-  }
-
-  public void addUsedLanguage(final String languageNamespace) {
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      public void run() {
-        ModuleDescriptor md = getModuleDescriptor();
-        if (md == null) return;
-
-        for (ModuleReference r : md.getUsedLanguages()) {
-          if (languageNamespace.equals(r.getModuleFqName())) {
-            return;
-          }
-        }
-
-        ModuleReference ref = ModuleReference.fromString(languageNamespace);
-        md.getUsedLanguages().add(ref);
-
-        setModuleDescriptor(md, true);
-        save();
-      }
-    });
-  }
-
   public void invalidateCaches() {
     myScope.invalidateCaches();
   }
@@ -651,223 +698,22 @@ public abstract class AbstractModule implements IModule {
   }
 
   protected void invalidateDependencies() {
-    myExplicitlyDependentModules = null;
+    myCachedExplicitlyDependentModules = null;
   }
 
   protected ModuleDescriptor loadDescriptor() {
     return null;
   }
 
-  //-----------stubs--------------
-
-  public boolean areJavaStubsEnabled() {
-    return true;
-  }
-
-  public List<StubPath> getAllStubPaths() {
-    ArrayList<StubPath> result = new ArrayList<StubPath>();
-    result.addAll(getStubPaths());
-    result.addAll(getOwnStubPaths());
-    return result;
-  }
-
-  public List<StubPath> getOwnStubPaths() {
-    ArrayList<StubPath> result = new ArrayList<StubPath>();
-    if (isCompileInMPS() && getClassesGen() != null && getClassesGen().exists()) {
-      result.add(new StubPath(getClassesGen().getCanonicalPath(), LanguageID.JAVA_MANAGER));
-    }
-    return result;
-  }
-
-  public List<StubPath> getStubPaths() {
-    ArrayList<StubPath> result = new ArrayList<StubPath>();
-
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor != null) {
-      for (StubModelsEntry entry : getModuleDescriptor().getStubModelEntries()) {
-        result.add(new StubPath(entry.getPath(), entry.getManager()));
-      }
-    }
-
-    return result;
-  }
-
-  protected List<StubModelsEntry> getStubModelEntriesToIncludeOrExclude() {
-    return getModuleDescriptor().getStubModelEntries();
-  }
-
-  private Set<String> getIncludedStubPaths() {
-    LinkedHashSet<String> result = new LinkedHashSet<String>();
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor != null) {
-      for (StubModelsEntry entry : getStubModelEntriesToIncludeOrExclude()) {
-        if (entry.isIncludedInVCS()) result.add(entry.getPath());
-      }
-    }
-    return result;
-  }
-
-  private void setIncludedStubPath() {
-    for (StubModelsEntry entry : getStubModelEntriesToIncludeOrExclude()) {
-      if (myIncludedStubPaths.contains(entry.getPath())) {
-        entry.setIncludedInVCS(true);
-      } else {
-        entry.setIncludedInVCS(false);
-      }
-    }
-  }
-
-  public boolean isStubPathExcluded(String path) {
-    return !myIncludedStubPaths.contains(path);
-  }
-
-  public boolean setStubPathExcluded(String path, boolean exclude) {
-    boolean changed = exclude ? myIncludedStubPaths.remove(path) : myIncludedStubPaths.add(path);
-
-    setIncludedStubPath();
-    if (changed) {
-      save();
-    }
-
-    return changed;
-  }
-
-  //-----------classpath--------------
-
-  public void updateClassPath() {
-    myCachedClassPathItem = null;
-    myIncludedStubPaths = getIncludedStubPaths();
-  }
-
-  public void invalidateClassPath() {
-    Set<String> invalidate = new HashSet<String>();
-    for (StubPath path : getAllStubPaths()) {
-      if (!ObjectUtils.equals(path.getManager().getClassName(), LanguageID.JAVA_MANAGER.getClassName())) continue;
-      invalidate.add(path.getPath());
-    }
-    ClassPathFactory.getInstance().invalidate(invalidate);
-  }
-
-  //todo check this code. Wy not to do it where we add jars?
-  protected void updatePackagedDescriptorClasspath() {
-    if (!isPackaged()) return;
-
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor == null) return;
-
-    Set<StubModelsEntry> visited = new HashSet<StubModelsEntry>();
-    List<StubModelsEntry> remove = new ArrayList<StubModelsEntry>();
-    for (StubModelsEntry entry : descriptor.getStubModelEntries()) {
-      IFile cp = FileSystem.getFile(entry.getPath());
-      if ((!cp.exists()) || cp.isDirectory() || visited.contains(entry)) {
-        remove.add(entry);
-      }
-      visited.add(entry);
-    }
-    descriptor.getStubModelEntries().removeAll(remove);
-
-    File bundleHomeFile = getBundleHome();
-    if (bundleHomeFile == null) return;
-
-    String bundleHomePath = bundleHomeFile.getPath();
-    boolean contains = false;
-    for (StubModelsEntry v : visited) {
-      if (EqualUtil.equals(v.getPath(), bundleHomePath)) {
-        contains = true;
-      }
-    }
-    if (contains) return;
-
-    ClassPathEntry bundleHome = new ClassPathEntry();
-    bundleHome.setPath(bundleHomePath);
-    descriptor.getStubModelEntries().add(StubModelsEntry.fromClassPathEntry(bundleHome));
-  }
-
-  public IClassPathItem getClassPathItem() {
-    if (myCachedClassPathItem == null) {
-      myCachedClassPathItem = new CompositeClassPathItem();
-      for (StubPath path : getAllStubPaths()) {
-        //look for classes only in stub dirs with JavaStub manager
-        if (!ObjectUtils.equals(path.getManager().getClassName(), LanguageID.JAVA_MANAGER.getClassName())) continue;
-
-        try {
-          IClassPathItem pathItem = ClassPathFactory.getInstance().createFromPath(path.getPath(), this);
-          myCachedClassPathItem.add(pathItem);
-        } catch (IOException e) {
-          LOG.error(e.getMessage());
-        }
-      }
-    }
-    return myCachedClassPathItem;
-  }
-
-  public IClassPathItem getModuleWithDependenciesClassPathItem() {
-    return getDependenciesClasspath(CollectionUtil.set((IModule) this), false);
-  }
-
-  public static IClassPathItem getDependenciesClasspath(Set<IModule> modules, boolean includeStubSolutions) {
-    return new ClasspathCollector(modules).collect(includeStubSolutions);
-  }
-
-  public BytecodeLocator getBytecodeLocator() {
-    return new ModuleBytecodeLocator();
-  }
-
-  //----------------------------------
-
-  public static class StubPath {
-    private String myPath;
-    private ModelRootManager myManager;
-
-    public StubPath(String path, ModelRootManager manager) {
-      myPath = path;
-      myManager = manager;
-    }
-
-    public String getPath() {
-      return myPath;
-    }
-
-    public void setPath(String path) {
-      myPath = path;
-    }
-
-    public ModelRootManager getManager() {
-      return myManager;
-    }
-
-    public void setManager(ModelRootManager manager) {
-      myManager = manager;
-    }
-
-    public boolean equals(Object o) {
-      if (this == o) return true;
-      if (o == null || getClass() != o.getClass()) return false;
-
-      StubPath stubPath = (StubPath) o;
-
-      if (myManager != null ? !myManager.equals(stubPath.myManager) : stubPath.myManager != null) return false;
-      if (myPath != null ? !myPath.equals(stubPath.myPath) : stubPath.myPath != null) return false;
-
-      return true;
-    }
-
-    public int hashCode() {
-      int result = myPath != null ? myPath.hashCode() : 0;
-      result = 31 * result + (myManager != null ? myManager.hashCode() : 0);
-      return result;
-    }
-
-    public String toString() {
-      return myPath + "{" + myManager.getClassName() + '}';
-    }
-  }
-
   protected ModuleScope createScope() {
     return new ModuleScope();
   }
-  
+
   public class ModuleScope extends DefaultScope {
+    protected ModuleScope() {
+
+    }
+
     public AbstractModule getModule() {
       return AbstractModule.this;
     }
@@ -906,4 +752,22 @@ public abstract class AbstractModule implements IModule {
       return getClassPathItem().getResource(name);
     }
   }
+
+  //----to remove
+
+  @Deprecated
+  public ModuleId getModuleId() {
+    return myModuleReference.getModuleId();
+  }
+
+  @Deprecated
+  public String getModuleUID() {
+    return getModuleFqName();
+  }
+
+  @Deprecated
+  public static final String RUNTIME_JAR_SUFFIX = MPSExtentions.RUNTIME_ARCH;
+
+  @Deprecated
+  public static final String PACKAGE_SUFFIX = MPSExtentions.MPS_ARCH;
 }

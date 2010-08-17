@@ -33,7 +33,7 @@ import java.util.List;
 
 /**
  * Prints all generated files in output view.
- *
+ * <p/>
  * Evgeny Gryaznov, Jan 21, 2010
  */
 public class OutputViewGenerationHandler extends TextGenerationHandler {

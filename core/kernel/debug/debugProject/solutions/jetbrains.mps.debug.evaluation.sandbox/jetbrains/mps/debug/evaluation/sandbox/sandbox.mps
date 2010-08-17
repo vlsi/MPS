@@ -143,29 +143,5 @@
       <link role="classifier:3" targetNodeId="6036237525966667270" resolveInfo="AClass" />
     </node>
   </node>
-  <node type="jetbrains.mps.debug.evaluation.structure.EvaluatorConcept" id="3551783886728564466">
-    <node role="thisType" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3551783886728564467">
-      <link role="classifier:3" targetNodeId="6036237525966667270" resolveInfo="AClass" />
-    </node>
-    <node role="evaluatedStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="3551783886728564468">
-      <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3551783886728564469">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="3551783886728573749">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3551783886728573751">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3551783886728573752">
-              <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="3551783886728573753">
-                <link role="baseMethodDeclaration:3" targetNodeId="6036237525966667272" resolveInfo="AClass" />
-              </node>
-            </node>
-            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="3551783886728573754">
-              <link role="fieldDeclaration:3" targetNodeId="3551783886728564471" resolveInfo="myI" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="staticContextType" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3551783886728564470">
-      <link role="classifier:3" targetNodeId="6036237525966667270" resolveInfo="AClass" />
-    </node>
-  </node>
 </model>
 

@@ -2,17 +2,17 @@ package jetbrains.mps.debug.evaluation.proxies;
 
 import com.sun.jdi.*;
 import jetbrains.mps.debug.evaluation.EvaluationException;
+import jetbrains.mps.debug.evaluation.EvaluationUtils;
 import jetbrains.mps.debug.evaluation.Evaluator;
-import jetbrains.mps.debug.evaluation.Evaluator.Invocatable;
+import jetbrains.mps.debug.evaluation.EvaluationUtils.Invocatable;
 import jetbrains.mps.debug.evaluation.InvalidEvaluatedExpressionException;
-import jetbrains.mps.debug.evaluation.TargetVMEvaluationException;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-import static jetbrains.mps.debug.evaluation.Evaluator.handleInvocationExceptions;
+import static jetbrains.mps.debug.evaluation.EvaluationUtils.handleInvocationExceptions;
 
 class ObjectValueProxy extends ValueProxy implements IObjectValueProxy {
   private static final Logger LOG = Logger.getLogger(ObjectValueProxy.class);
@@ -31,7 +31,7 @@ class ObjectValueProxy extends ValueProxy implements IObjectValueProxy {
   @Nullable
   public IValueProxy getFieldValue(String fieldName) throws InvalidEvaluatedExpressionException {
     ObjectReference value = getObjectValue();
-    Field f = Evaluator.findField(myReferenceType, fieldName);
+    Field f = EvaluationUtils.findField(myReferenceType, fieldName);
     Value result = value.getValue(f);
     return MirrorUtil.getValueProxy(result, myThreadReference);
   }

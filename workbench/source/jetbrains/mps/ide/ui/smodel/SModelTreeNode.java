@@ -64,7 +64,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
     public boolean isValid() {
       if (!super.isValid()) return false;
-      return !(myModelDescriptor.isInitialized() && myModelDescriptor.getSModel().isDisposed());
+      return !(myModelDescriptor.getLoadingState() != ModelLoadingState.NOT_LOADED && myModelDescriptor.getSModel().isDisposed());
     }
   };
   private MyGenerationStatusListener myStatusListener = new MyGenerationStatusListener();
@@ -134,7 +134,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     if (getSModelDescriptor() != null) {
       icon = IconManager.getIconFor(getSModelDescriptor());
     }
-    if ((sm instanceof EditableSModelDescriptor) && sm.isInitialized() && SModelRepository.getInstance().isChanged(((EditableSModelDescriptor) sm))) {
+    if ((sm instanceof EditableSModelDescriptor) && sm.getLoadingState() != ModelLoadingState.NOT_LOADED && SModelRepository.getInstance().isChanged(((EditableSModelDescriptor) sm))) {
       icon = new LayeredIcon(icon, Icons.MODIFIED_ICON);
     }
     setIcon(icon);
@@ -148,7 +148,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       setNodeIdentifier("");
     }
 
-    if (checkForErrors() && myModelDescriptor != null && myModelDescriptor.isInitialized()) {
+    if (checkForErrors() && myModelDescriptor != null && myModelDescriptor.getLoadingState() != ModelLoadingState.NOT_LOADED) {
       final IScope scope = getOperationContext().getScope();
       List<String> errors = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
         public List<String> compute() {

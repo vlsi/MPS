@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
-import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.lang.core.structure.Core_Language;
 import jetbrains.mps.lang.plugin.generator.baseLanguage.template.util.PluginNameUtils;
 import jetbrains.mps.lang.refactoring.structure.OldRefactoring;
@@ -25,10 +24,7 @@ import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.*;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.*;
@@ -47,7 +43,6 @@ import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
-import jetbrains.mps.vfs.VFileSystem;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -264,32 +259,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return result;
   }
 
-  public List<String> validate() {
-    List<String> errors = new ArrayList<String>(super.validate());
-    for (ModuleReference lang : getExtendedLanguageNamespaces()) {
-      if (MPSModuleRepository.getInstance().getModule(lang) == null) {
-        errors.add("Can't find extended language: " + lang.getModuleFqName());
-      }
-    }
-    for (SModelReference accessory : getModuleDescriptor().getAccessoryModels()) {
-      if (getScope().getModelDescriptor(accessory) == null) {
-        errors.add("Can't find accessory model: " + accessory.getLongName());
-      }
-    }
-    for (Dependency runtimeModule : getModuleDescriptor().getRuntimeModules()) {
-      if (MPSModuleRepository.getInstance().getModule(runtimeModule.getModuleRef()) == null) {
-        errors.add("Can't find runtime module: " + runtimeModule.getModuleRef().getModuleFqName());
-      }
-    }
-    for (StubModelsEntry stubModelsEntry : getModuleDescriptor().getRuntimeStubModels()) {
-      VirtualFile vfile = VFileSystem.getFile(stubModelsEntry.getPath());
-      if (vfile == null || !vfile.exists()) {
-        errors.add("Can't find runtime library: " + stubModelsEntry.getPath());
-      }
-    }
-    return errors;
-  }
-
   protected ModuleDescriptor loadDescriptor() {
     return LanguageDescriptorPersistence.loadLanguageDescriptor(getDescriptorFile());
   }
@@ -396,7 +365,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     myLanguageDescriptor = newDescriptor;
 
     ModuleReference reference = new ModuleReference(myLanguageDescriptor.getNamespace(), myLanguageDescriptor.getUUID());
-    setModulePointer(reference);
+    setModuleReference(reference);
 
     reloadAfterDescriptorChange();
     MPSModuleRepository.getInstance().fireModuleChanged(this);

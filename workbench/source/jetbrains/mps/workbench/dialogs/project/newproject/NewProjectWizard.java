@@ -218,7 +218,7 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
   }
 
   private void addLanguageImportToSolution(final Language language, final Solution solution) {
-    solution.addUsedLanguage(language.getNamespace());
+    solution.addUsedLanguage(language.getModuleReference());
     EditableSModelDescriptor model = solution.createModel(SModelFqName.fromString(solution.getModuleReference().getModuleFqName() + ".sandbox"), solution.getSModelRoots().get(0));
     model.getSModel().addLanguage(language);
     model.save();

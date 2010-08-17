@@ -83,8 +83,8 @@ public class SModelRoot {
     myModelRoot.setPrefix(newPrefix);
     for (SModelDescriptor sm : myModule.getOwnModelDescriptors()) {
       if (!SModelStereotype.isUserModel(sm)) continue;
-      if (sm.getSModelFqName().toString().startsWith(oldPrefix + ".")) {
-        String suffix = sm.getSModelFqName().toString().substring(oldPrefix.length());
+      if (sm.getSModelReference().getSModelFqName().toString().startsWith(oldPrefix + ".")) {
+        String suffix = sm.getSModelReference().getSModelFqName().toString().substring(oldPrefix.length());
         sm.rename(SModelFqName.fromString(newPrefix + suffix), false);
       }
     }

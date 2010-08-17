@@ -20,7 +20,6 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
-import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -40,23 +39,23 @@ public interface IGenerationHandler {
 
   boolean canHandle(SModelDescriptor inputModel);
 
-  /*
+  /**
    * Next module started.
    */
   void startModule(IModule module, List<SModelDescriptor> inputModels, Project project, ITaskProgressHelper progressHelper);
 
-  /*
+  /**
    * Handle generation result of a model.
    */
   boolean handleOutput(IModule module, SModelDescriptor inputModel, GenerationStatus status, IOperationContext invocationContext, ITaskProgressHelper progressHelper);
 
-  /*
+  /**
    * Estimates execution time of compile() method in milliseconds.
    */
-  long estimateCompilationMillis(List<Pair<IModule,List<SModelDescriptor>>> input);
+  long estimateCompilationMillis(List<Pair<IModule, List<SModelDescriptor>>> input);
 
-  /*
-   * Post-process generated output: compile, reload, etc. Once per generation cycle. 
+  /**
+   * Post-process generated output: compile, reload, etc. Once per generation cycle.
    */
-  boolean compile(Project p, List<Pair<IModule,List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException;
+  boolean compile(Project p, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException;
 }

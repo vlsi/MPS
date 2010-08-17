@@ -15,16 +15,14 @@
  */
 package jetbrains.mps.datatransfer;
 
-import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.structure.structure.*;
-import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
-import jetbrains.mps.kernel.model.SModelUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -82,7 +80,7 @@ public class NodePaster {
   public void pasteAsRoots(SModel model, String dstPackage) {
     pasteAsRoots(model);
     for (SNode node : myPasteNodes) {
-      node.setProperty(SModelTreeNode.PACK, dstPackage);
+      node.setProperty(SNode.PACK, dstPackage);
     }
   }
 

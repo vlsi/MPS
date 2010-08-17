@@ -1607,7 +1607,7 @@
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3939031372534916907">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8916327863979127770">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="8916327863979127771">
-            <link role="baseMethodDeclaration:3" targetNodeId="2v.~AbstractModule.setModulePointer(jetbrains.mps.project.structure.modules.ModuleReference):void" resolveInfo="setModulePointer" />
+            <link role="baseMethodDeclaration:3" targetNodeId="2v.~AbstractModule.setModuleReference(jetbrains.mps.project.structure.modules.ModuleReference):void" resolveInfo="setModuleReference" />
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8916327863979127774">
               <link role="baseMethodDeclaration:3" targetNodeId="35.~ModuleReference.fromString(java.lang.String):jetbrains.mps.project.structure.modules.ModuleReference" resolveInfo="fromString" />
               <link role="classConcept:3" targetNodeId="35.~ModuleReference" resolveInfo="ModuleReference" />
@@ -1740,23 +1740,6 @@
         </node>
       </node>
       <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="3939031372534978957">
-        <link role="annotation:3" targetNodeId="6.~Override" />
-      </node>
-    </node>
-    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="8916327863979041164">
-      <property name="name:3" value="getModuleFqName" />
-      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8916327863979041165" />
-      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8916327863979041166">
-        <link role="classifier:3" targetNodeId="6.~String" resolveInfo="String" />
-      </node>
-      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8916327863979041167">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8916327863979041169">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.SuperMethodCall:3" id="8916327863979041170">
-            <link role="baseMethodDeclaration:3" targetNodeId="2v.~AbstractModule.getModuleFqName():java.lang.String" resolveInfo="getModuleFqName" />
-          </node>
-        </node>
-      </node>
-      <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="8916327863979041168">
         <link role="annotation:3" targetNodeId="6.~Override" />
       </node>
     </node>

@@ -594,8 +594,8 @@
                   <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1238504189354">
                     <property name="name:3" value="runtimeCP" />
                     <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="1238669911998">
-                      <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1431837068638106854">
-                        <link role="classifier:3" targetNodeId="3.~AbstractModule$StubPath" resolveInfo="AbstractModule.StubPath" />
+                      <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6155185640278240290">
+                        <link role="classifier:3" targetNodeId="3.~StubPath" resolveInfo="StubPath" />
                       </node>
                     </node>
                     <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1238504189357">

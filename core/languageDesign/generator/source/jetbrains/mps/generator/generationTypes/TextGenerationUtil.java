@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.textGen.TextGenManager;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 

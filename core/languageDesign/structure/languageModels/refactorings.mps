@@ -1453,11 +1453,16 @@
                   <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="3068114543317979456">
                     <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3068114543317979457">
                       <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3068114543317979458">
-                        <node role="operand:3" type="jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference:1" id="3068114543317979460">
-                          <link role="refactoringParameter:1" targetNodeId="3068114543317961952" resolveInfo="targetModel" />
+                        <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7755274343641446060">
+                          <node role="operand:3" type="jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference:1" id="3068114543317979460">
+                            <link role="refactoringParameter:1" targetNodeId="3068114543317961952" resolveInfo="targetModel" />
+                          </node>
+                          <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7755274343641446064">
+                            <link role="baseMethodDeclaration:3" targetNodeId="5.~SModelDescriptor.getSModelReference():jetbrains.mps.smodel.SModelReference" resolveInfo="getSModelReference" />
+                          </node>
                         </node>
                         <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3068114543317979461">
-                          <link role="baseMethodDeclaration:3" targetNodeId="5.~SModelDescriptor.getSModelFqName():jetbrains.mps.smodel.SModelFqName" resolveInfo="getSModelFqName" />
+                          <link role="baseMethodDeclaration:3" targetNodeId="5.~SModelReference.getSModelFqName():jetbrains.mps.smodel.SModelFqName" resolveInfo="getSModelFqName" />
                         </node>
                       </node>
                       <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3068114543317979462">

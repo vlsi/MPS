@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1198085953023">
+    <nodeInfo nodeId="6528618226609613322" fileName="RenameConcept.java" startLine="62" startPosition="86" endLine="63" endPosition="275" />
     <nodeInfo nodeId="1198088569528" fileName="RenameConcept.java" startLine="66" startPosition="71" endLine="67" endPosition="278" />
     <nodeInfo nodeId="1240394867786" fileName="RenameConcept.java" startLine="70" startPosition="102" endLine="71" endPosition="127" />
     <nodeInfo nodeId="1240394867797" fileName="RenameConcept.java" startLine="71" startPosition="127" endLine="72" endPosition="139" />
     <nodeInfo nodeId="1240926401388" fileName="RenameConcept.java" startLine="73" startPosition="33" endLine="74" endPosition="159" />
     <nodeInfo nodeId="6528618226609613262" fileName="RenameConcept.java" startLine="75" startPosition="5" endLine="76" endPosition="18" />
     <nodeInfo nodeId="1198088940952" fileName="RenameConcept.java" startLine="79" startPosition="86" endLine="80" endPosition="50" />
+    <nodeInfo nodeId="6528618226609779068" fileName="RenameConcept.java" startLine="91" startPosition="83" endLine="92" endPosition="87" />
     <nodeInfo nodeId="1240475863182" fileName="RenameConcept.java" startLine="72" startPosition="139" endLine="75" endPosition="5" />
     <scopeInfo nodeId="1201531772167" fileName="RenameConcept.java" startLine="62" startPosition="86" endLine="63" endPosition="275" />
     <scopeInfo nodeId="1198086296188" fileName="RenameConcept.java" startLine="66" startPosition="71" endLine="67" endPosition="278" />
@@ -51,7 +53,7 @@
     <nodeInfo nodeId="1238259428602" fileName="MoveConcepts.java" startLine="131" startPosition="32" endLine="132" endPosition="147" />
     <nodeInfo nodeId="1225272186248" fileName="MoveConcepts.java" startLine="133" startPosition="31" endLine="134" endPosition="64" />
     <nodeInfo nodeId="7376433222636453311" fileName="MoveConcepts.java" startLine="137" startPosition="5" endLine="138" endPosition="26" />
-    <nodeInfo nodeId="1198174041135" fileName="MoveConcepts.java" startLine="139" startPosition="30" endLine="140" endPosition="244" />
+    <nodeInfo nodeId="1198174041135" fileName="MoveConcepts.java" startLine="139" startPosition="30" endLine="140" endPosition="265" />
     <nodeInfo nodeId="1199622881357" fileName="MoveConcepts.java" startLine="141" startPosition="5" endLine="142" endPosition="128" />
     <nodeInfo nodeId="1470666820232676970" fileName="MoveConcepts.java" startLine="143" startPosition="54" endLine="144" endPosition="41" />
     <nodeInfo nodeId="1470666820232676970" fileName="MoveConcepts.java" startLine="144" startPosition="41" endLine="145" endPosition="80" />
@@ -93,6 +95,7 @@
     <nodeInfo nodeId="1240926338253" fileName="MoveConcepts.java" startLine="201" startPosition="33" endLine="202" endPosition="159" />
     <nodeInfo nodeId="1198174394687" fileName="MoveConcepts.java" startLine="203" startPosition="5" endLine="204" endPosition="18" />
     <nodeInfo nodeId="1198173866787" fileName="MoveConcepts.java" startLine="207" startPosition="86" endLine="208" endPosition="50" />
+    <nodeInfo nodeId="1198678065703" fileName="MoveConcepts.java" startLine="244" startPosition="99" endLine="245" endPosition="75" />
     <nodeInfo nodeId="1470666820232676970" fileName="MoveConcepts.java" startLine="143" startPosition="54" endLine="145" endPosition="80" />
     <nodeInfo nodeId="1198578300606" fileName="MoveConcepts.java" startLine="151" startPosition="64" endLine="153" endPosition="58" />
     <nodeInfo nodeId="1470666820232677354" fileName="MoveConcepts.java" startLine="155" startPosition="56" endLine="157" endPosition="82" />
@@ -135,7 +138,7 @@
     <scopeInfo nodeId="1198521676537" fileName="MoveConcepts.java" startLine="113" startPosition="31" endLine="114" endPosition="64" />
     <scopeInfo nodeId="1224506339421" fileName="MoveConcepts.java" startLine="123" startPosition="33" endLine="124" endPosition="68" />
     <scopeInfo nodeId="1225272186239" fileName="MoveConcepts.java" startLine="133" startPosition="31" endLine="134" endPosition="64" />
-    <scopeInfo nodeId="1198173949295" fileName="MoveConcepts.java" startLine="139" startPosition="30" endLine="140" endPosition="244" />
+    <scopeInfo nodeId="1198173949295" fileName="MoveConcepts.java" startLine="139" startPosition="30" endLine="140" endPosition="265" />
     <scopeInfo nodeId="1198523148218" fileName="MoveConcepts.java" startLine="147" startPosition="48" endLine="148" endPosition="86" />
     <scopeInfo nodeId="1198523135255" fileName="MoveConcepts.java" startLine="159" startPosition="50" endLine="160" endPosition="90" />
     <scopeInfo nodeId="1224506544501" fileName="MoveConcepts.java" startLine="171" startPosition="53" endLine="172" endPosition="96" />
@@ -230,6 +233,7 @@
     </scopeInfo>
   </root>
   <root nodeId="1198587937318">
+    <nodeInfo nodeId="6528618226609613309" fileName="RenameLink.java" startLine="62" startPosition="86" endLine="63" endPosition="272" />
     <nodeInfo nodeId="1198588083689" fileName="RenameLink.java" startLine="66" startPosition="71" endLine="67" endPosition="169" />
     <nodeInfo nodeId="1198588513346" fileName="RenameLink.java" startLine="67" startPosition="169" endLine="68" endPosition="242" />
     <nodeInfo nodeId="1240394909188" fileName="RenameLink.java" startLine="71" startPosition="102" endLine="72" endPosition="127" />
@@ -237,6 +241,7 @@
     <nodeInfo nodeId="1240926416285" fileName="RenameLink.java" startLine="74" startPosition="33" endLine="75" endPosition="159" />
     <nodeInfo nodeId="6528618226609613268" fileName="RenameLink.java" startLine="76" startPosition="5" endLine="77" endPosition="18" />
     <nodeInfo nodeId="1198588648536" fileName="RenameLink.java" startLine="80" startPosition="86" endLine="81" endPosition="50" />
+    <nodeInfo nodeId="6528618226609779064" fileName="RenameLink.java" startLine="92" startPosition="83" endLine="93" endPosition="87" />
     <nodeInfo nodeId="1240475874758" fileName="RenameLink.java" startLine="73" startPosition="139" endLine="76" endPosition="5" />
     <scopeInfo nodeId="1201533901846" fileName="RenameLink.java" startLine="62" startPosition="86" endLine="63" endPosition="272" />
     <scopeInfo nodeId="1240475874759" fileName="RenameLink.java" startLine="74" startPosition="33" endLine="75" endPosition="159" />
@@ -255,6 +260,7 @@
     <nodeInfo nodeId="8941943470987180062" fileName="MoveLinkUp.java" startLine="57" startPosition="169" endLine="58" endPosition="0" />
     <nodeInfo nodeId="1198593102801" fileName="MoveLinkUp.java" startLine="59" startPosition="26" endLine="60" endPosition="19" />
     <nodeInfo nodeId="1198593708178" fileName="MoveLinkUp.java" startLine="61" startPosition="5" endLine="62" endPosition="210" />
+    <nodeInfo nodeId="6528618226609777088" fileName="MoveLinkUp.java" startLine="73" startPosition="86" endLine="74" endPosition="208" />
     <nodeInfo nodeId="1709900160195163099" fileName="MoveLinkUp.java" startLine="78" startPosition="6" endLine="79" endPosition="150" />
     <nodeInfo nodeId="1709900160195163106" fileName="MoveLinkUp.java" startLine="80" startPosition="36" endLine="81" endPosition="106" />
     <nodeInfo nodeId="1709900160195163114" fileName="MoveLinkUp.java" startLine="82" startPosition="14" endLine="83" endPosition="189" />
@@ -303,6 +309,7 @@
     <nodeInfo nodeId="1240926428969" fileName="RenameProperty.java" startLine="62" startPosition="33" endLine="63" endPosition="159" />
     <nodeInfo nodeId="6528618226609613274" fileName="RenameProperty.java" startLine="64" startPosition="5" endLine="65" endPosition="18" />
     <nodeInfo nodeId="1198764939011" fileName="RenameProperty.java" startLine="68" startPosition="86" endLine="69" endPosition="50" />
+    <nodeInfo nodeId="6528618226609779094" fileName="RenameProperty.java" startLine="80" startPosition="83" endLine="81" endPosition="87" />
     <nodeInfo nodeId="1240475883444" fileName="RenameProperty.java" startLine="61" startPosition="139" endLine="64" endPosition="5" />
     <scopeInfo nodeId="1240475883445" fileName="RenameProperty.java" startLine="62" startPosition="33" endLine="63" endPosition="159" />
     <scopeInfo nodeId="1198764936760" fileName="RenameProperty.java" startLine="68" startPosition="86" endLine="69" endPosition="50" />
@@ -433,12 +440,14 @@
     <nodeInfo nodeId="4975090607137727009" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="38" startPosition="66" endLine="39" endPosition="23" />
     <nodeInfo nodeId="4975090607137662194" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="41" startPosition="87" endLine="42" endPosition="23" />
     <nodeInfo nodeId="4975090607137662199" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="43" startPosition="9" endLine="44" endPosition="162" />
+    <nodeInfo nodeId="9161136784551155313" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="49" startPosition="43" endLine="50" endPosition="327" />
     <nodeInfo nodeId="9161136784551302798" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="52" startPosition="84" endLine="53" endPosition="141" />
     <nodeInfo nodeId="9161136784551302536" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="74" startPosition="70" endLine="75" endPosition="23" />
     <nodeInfo nodeId="9161136784551302540" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="77" startPosition="66" endLine="78" endPosition="23" />
     <nodeInfo nodeId="9161136784551302557" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="79" startPosition="9" endLine="80" endPosition="88" />
     <nodeInfo nodeId="9161136784551302566" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="83" startPosition="52" endLine="84" endPosition="47" />
     <nodeInfo nodeId="9161136784551302574" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="85" startPosition="120" endLine="86" endPosition="61" />
+    <nodeInfo nodeId="9161136784551302771" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="89" startPosition="43" endLine="90" endPosition="327" />
     <nodeInfo nodeId="9161136784551302587" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="92" startPosition="84" endLine="93" endPosition="78" />
     <nodeInfo nodeId="4975090607137661806" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="34" startPosition="59" endLine="37" endPosition="9" />
     <nodeInfo nodeId="4975090607137725253" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="37" startPosition="9" endLine="40" endPosition="9" />

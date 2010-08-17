@@ -27,6 +27,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.validation.ModuleValidatorFactory;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 
@@ -105,12 +106,12 @@ public class ReferencesTest extends BaseMPSTest {
       }
     });
     for (String item : validationResult) {
-      LOG.error("Error in model " + sm.getSModelFqName() + " : " + item);
+      LOG.error("Error in model " + sm.getSModelReference().getSModelFqName() + " : " + item);
     }
 
     for (SNode node : sm.getSModel().allNodes()) {
       if (SModelUtil_new.findConceptDeclaration(node.getConceptFqName(), GlobalScope.getInstance()) == null) {
-        LOG.error("Error in model " + sm.getSModelFqName() + " : Unknown concept " + node.getConceptFqName());
+        LOG.error("Error in model " + sm.getSModelReference().getSModelFqName() + " : Unknown concept " + node.getConceptFqName());
       }
     }
 
@@ -122,14 +123,14 @@ public class ReferencesTest extends BaseMPSTest {
         }                      
 
         if (ref.getTargetNode() == null) {
-          LOG.error("Error in model " + sm.getSModelFqName() + " : Broken reference in node " + node);
+          LOG.error("Error in model " + sm.getSModelReference().getSModelFqName() + " : Broken reference in node " + node);
         }
       }
     }
   }
 
   private void checkModule(IModule m) {
-    List<String> messages = m.validate();
+    List<String> messages = ModuleValidatorFactory.createValidator(m).getErrors();
     for (String msg : messages) {
       LOG.error("Error in module " + m + " : " + msg);
     }

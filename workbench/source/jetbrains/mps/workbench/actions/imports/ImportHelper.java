@@ -26,7 +26,6 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.impl.FakePsiElement;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
@@ -269,7 +268,7 @@ public class ImportHelper {
 
       if (moduleToImport != null) {
         int res = JOptionPane.showConfirmDialog(getFrame(),
-          "<html>Model <b>" + getModelDescriptor().getSModelFqName() + "</b> is owned by module <b>" + moduleToImport.getModuleFqName() + "</b> which is not imported.</html>\n\n" +
+          "<html>Model <b>" + getModelDescriptor().getSModelReference().getSModelFqName() + "</b> is owned by module <b>" + moduleToImport.getModuleFqName() + "</b> which is not imported.</html>\n\n" +
 
             "Importing the module will take some time.\n" +
             "Do you want to automatically import the module?",

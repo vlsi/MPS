@@ -15,7 +15,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class TemporaryModelOwner extends AbstractModule implements ModelOwner {
   public TemporaryModelOwner() {
-    setModulePointer(ModuleReference.fromString("TemporaryModelOwner #" + System.identityHashCode(this)));
+    setModuleReference(ModuleReference.fromString("TemporaryModelOwner #" + System.identityHashCode(this)));
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         MPSModuleRepository.getInstance().addModule(TemporaryModelOwner.this, new MPSModuleOwner() {});
@@ -54,10 +54,5 @@ public class TemporaryModelOwner extends AbstractModule implements ModelOwner {
   @Override
   public IScope getScope() {
     return GlobalScope.getInstance();
-  }
-
-  @Override
-  public String getModuleFqName() {
-    return super.getModuleFqName();
   }
 }

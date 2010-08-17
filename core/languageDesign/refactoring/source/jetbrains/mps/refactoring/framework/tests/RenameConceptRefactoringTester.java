@@ -58,7 +58,7 @@ public class RenameConceptRefactoringTester implements IRefactoringTester {
           public void run() {
             try {
               System.err.println("checking a model");
-              if (sandbox1.isInitialized()) {
+              if (sandbox1.getLoadingState() != ModelLoadingState.NOT_LOADED) {
                 System.err.println("test environment is invalid: model sandbox1 is already initialized, should be not");
                 result[0] = false;
                 return;
@@ -68,7 +68,7 @@ public class RenameConceptRefactoringTester implements IRefactoringTester {
               String conceptFqName = sModel.getRoots().get(0).getConceptFqName();
               System.err.println("Inspected concept FQ name = " + conceptFqName);
               SModelDescriptor structureModelDescriptor = (SModelDescriptor) refactoringContext.getParameter(STRMD);
-              result[0] = conceptFqName.equals(structureModelDescriptor.getSModelFqName() + "." + newConceptName);
+              result[0] = conceptFqName.equals(structureModelDescriptor.getSModelReference().getSModelFqName() + "." + newConceptName);
             } catch (Throwable t) {
               t.printStackTrace();
               result[0] = false;

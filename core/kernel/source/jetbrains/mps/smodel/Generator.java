@@ -21,6 +21,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.project.StubPath;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.project.structure.modules.mappingpriorities.*;
 import jetbrains.mps.runtime.BytecodeLocator;
@@ -53,7 +54,7 @@ public class Generator extends AbstractModule{
       save();
     }
     ModuleReference mp = new ModuleReference(myGeneratorDescriptor.getGeneratorUID(), ModuleId.fromString(uuid));
-    setModulePointer(mp);
+    setModuleReference(mp);
 
     upgradeGeneratorDescriptor();
     reloadAfterDescriptorChange();
@@ -253,17 +254,6 @@ public class Generator extends AbstractModule{
       }
     }
     return result;
-  }
-
-  @Override
-  public List<String> validate() {
-    List<String> errors = new ArrayList<String>(super.validate());
-    for (ModuleReference gen : getModuleDescriptor().getDepGenerators()) {
-      if (MPSModuleRepository.getInstance().getModule(gen) == null) {
-        errors.add("Can't find generator dependency: " + gen.getModuleFqName());
-      }
-    }
-    return errors;
   }
 
   public String getGeneratorOutputPath() {

@@ -65,7 +65,7 @@ public interface IModule extends ModelOwner {
 
   List<IModule> getExplicitlyDependOnModules();
 
-  List<IModule> getExplicitlyDependOnModules(boolean includeBootstrap);
+  List<IModule> getExplicitlyDependOnModulesWithBootstrap();
 
   List<IModule> getDesignTimeDependOnModules();
 
@@ -80,8 +80,6 @@ public interface IModule extends ModelOwner {
   Set<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm);
 
   Set<Language> getImplicitlyImportedLanguages(SModelDescriptor sm);
-
-  <T extends IModule> Set<T> getAllDependOnModules(Class<T> cls);
 
   IFile getDescriptorFile();
 
@@ -129,10 +127,6 @@ public interface IModule extends ModelOwner {
   boolean isPackaged();
 
   void dispose();
-
-  boolean isValid();
-
-  List<String> validate();
 
   void reloadFromDisk(boolean reloadClasses);
 

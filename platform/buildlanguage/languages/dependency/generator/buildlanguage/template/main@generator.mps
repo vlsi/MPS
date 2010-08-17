@@ -112,7 +112,6 @@
     <node role="property:21" type="jetbrains.mps.buildlanguage.structure.ExternalPropertyDeclaration:21" id="1219773202894">
       <property name="name:21" value="macro" />
       <property name="checkOnStart:21" value="false" />
-      <node role="propertyValue:21" type="jetbrains.mps.buildlanguage.structure.PropertyValueExpression:21" id="1219773202895" />
       <node role="type:21" type="jetbrains.mps.buildlanguage.structure.FileType:21" id="1219773202896" />
       <node role="nodeMacro$attribute:21" type="jetbrains.mps.lang.generator.structure.LoopMacro:2" id="1219773202897">
         <link role="mappingLabel:2" targetNodeId="1219772315512" resolveInfo="MacroToExternalProperty" />
@@ -1035,7 +1034,6 @@
       <property name="name:21" value="project" />
       <node role="property:21" type="jetbrains.mps.buildlanguage.structure.ExternalPropertyDeclaration:21" id="1219772456841">
         <property name="name:21" value="macro" />
-        <node role="propertyValue:21" type="jetbrains.mps.buildlanguage.structure.PropertyValueExpression:21" id="1219772456842" />
         <node role="type:21" type="jetbrains.mps.buildlanguage.structure.FileType:21" id="1219772460274" />
       </node>
       <node role="property:21" type="jetbrains.mps.buildlanguage.structure.PropertyDeclaration:21" id="1219772422381">

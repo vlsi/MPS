@@ -137,11 +137,11 @@ public class GenerationSession {
     } catch (GenerationFailureException gfe) {
       // FIXME
       myLogger.error(gfe.getMessage());
-      myLogger.error("model \"" + myOriginalInputModel.getSModelFqName() + "\" generation failed : " + gfe);
+      myLogger.error("model \"" + myOriginalInputModel.getSModelReference().getSModelFqName() + "\" generation failed : " + gfe);
       return new GenerationStatus.ERROR(myOriginalInputModel.getSModel());
     } catch (Throwable e) {
       myLogger.handleException(e);
-      myLogger.error("model \"" + myOriginalInputModel.getSModelFqName() + "\" generation failed : " + e);
+      myLogger.error("model \"" + myOriginalInputModel.getSModelReference().getSModelFqName() + "\" generation failed : " + e);
       return new GenerationStatus.ERROR(myOriginalInputModel.getSModel());
     }
   }
