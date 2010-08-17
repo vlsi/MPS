@@ -169,8 +169,8 @@ public abstract class AbstractModule implements IModule {
     result.addAll(ModuleUtil.getUsedDevkits(getUsedDevkitReferences()));
   }
 
-  public List<IModule> getDesignTimeDependOnModules() {
-    return getAllDependOnModules();
+  public Set<IModule> getDesignTimeDependOnModules() {
+    return new HashSet<IModule>(getAllDependOnModules());
   }
 
   public List<IModule> getAllDependOnModules() {

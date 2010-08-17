@@ -25,6 +25,7 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
+import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
@@ -48,7 +49,7 @@ public interface IModule extends ModelOwner {
 
   List<IModule> getExplicitlyDependOnModules();
 
-  List<IModule> getDesignTimeDependOnModules();
+  Set<IModule> getDesignTimeDependOnModules();
 
   void addDependency(ModuleReference moduleRef, boolean reexport);
 

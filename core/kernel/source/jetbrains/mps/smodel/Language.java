@@ -231,10 +231,10 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return result;
   }
 
-  public List<IModule> getDesignTimeDependOnModules() {
-    Set<IModule> result = new LinkedHashSet<IModule>(super.getDesignTimeDependOnModules());
+  public Set<IModule> getDesignTimeDependOnModules() {
+    Set<IModule> result = super.getDesignTimeDependOnModules();
     result.addAll(getExtendedLanguages());
-    return new ArrayList<IModule>(result);
+    return result;
   }
 
   public List<IModule> getRuntimeDependOnModules() {
