@@ -188,7 +188,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   }
 
   @NotNull
-  public SModelListener[] getModelListeners() {
+  SModelListener[] getModelListeners() {
     synchronized (myListenersLock) {
       if (myModelListenersCopy == null) {
         myModelListenersCopy = myModelListeners.toArray(new SModelListener[myModelListeners.size()]);
