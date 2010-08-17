@@ -175,16 +175,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     result.addAll(getRuntimeDependOnModules());
   }
 
-  public List<ModuleReference> getUsedLanguagesReferences() {
-    List<ModuleReference> result = super.getUsedLanguagesReferences();
-    for (Language l : LibraryManager.getInstance().getBootstrapModules(Language.class)) {
-      if (!result.contains(l.getModuleReference())) {
-        result.add(l.getModuleReference());
-      }
-    }
-    return result;
-  }
-
   IFile newDescriptorFileByNewName(String newNamespace) {
     IFile dir = myDescriptorFile.getParent();
     String oldShortFileName = NameUtil.shortNameFromLongName(myDescriptorFile.getAbsolutePath());
