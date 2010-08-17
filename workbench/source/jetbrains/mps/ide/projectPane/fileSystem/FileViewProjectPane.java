@@ -405,7 +405,10 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
             return nodeVirtualFile.getNode().getModel();
           }
         });
-        VirtualFile realFile = VFileSystem.getFile(((EditableSModelDescriptor) smodel.getModelDescriptor()).getModelFile());
+        SModelDescriptor d = smodel.getModelDescriptor();
+        if (!(d instanceof EditableSModelDescriptor)) return false;
+        
+        VirtualFile realFile = VFileSystem.getFile(((EditableSModelDescriptor) d).getModelFile());
 
         myFile = realFile;
         if ((realFile == null) || (isInitialized() && getNode(realFile) == null)) return false;
