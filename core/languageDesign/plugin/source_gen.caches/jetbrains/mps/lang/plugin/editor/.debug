@@ -120,7 +120,7 @@
     <nodeInfo nodeId="1208974878798" fileName="ToolDeclaration_Editor.java" startLine="574" startPosition="114" endLine="575" endPosition="81" />
     <nodeInfo nodeId="1214668866251" fileName="ToolDeclaration_Editor.java" startLine="578" startPosition="114" endLine="579" endPosition="23" />
     <nodeInfo nodeId="1214668852847" fileName="ToolDeclaration_Editor.java" startLine="579" startPosition="23" endLine="580" endPosition="55" />
-    <nodeInfo nodeId="1214668880593" fileName="ToolDeclaration_Editor.java" startLine="581" startPosition="25" endLine="582" endPosition="103" />
+    <nodeInfo nodeId="1214668880593" fileName="ToolDeclaration_Editor.java" startLine="581" startPosition="25" endLine="582" endPosition="106" />
     <nodeInfo nodeId="1208950262051" fileName="ToolDeclaration_Editor.java" startLine="583" startPosition="5" endLine="584" endPosition="61" />
     <nodeInfo nodeId="8849278392331870283" fileName="ToolDeclaration_Editor.java" startLine="587" startPosition="113" endLine="588" endPosition="72" />
     <nodeInfo nodeId="8849278392331870297" fileName="ToolDeclaration_Editor.java" startLine="591" startPosition="113" endLine="592" endPosition="75" />
@@ -129,7 +129,7 @@
     <scopeInfo nodeId="1208950262064" fileName="ToolDeclaration_Editor.java" startLine="347" startPosition="30" endLine="348" endPosition="59" />
     <scopeInfo nodeId="1226062536881" fileName="ToolDeclaration_Editor.java" startLine="358" startPosition="31" endLine="359" endPosition="70" />
     <scopeInfo nodeId="1208974878797" fileName="ToolDeclaration_Editor.java" startLine="574" startPosition="114" endLine="575" endPosition="81" />
-    <scopeInfo nodeId="1214668871038" fileName="ToolDeclaration_Editor.java" startLine="581" startPosition="25" endLine="582" endPosition="103" />
+    <scopeInfo nodeId="1214668871038" fileName="ToolDeclaration_Editor.java" startLine="581" startPosition="25" endLine="582" endPosition="106" />
     <scopeInfo nodeId="8849278392331870282" fileName="ToolDeclaration_Editor.java" startLine="587" startPosition="113" endLine="588" endPosition="72" />
     <scopeInfo nodeId="8849278392331870296" fileName="ToolDeclaration_Editor.java" startLine="591" startPosition="113" endLine="592" endPosition="75" />
     <scopeInfo nodeId="1208950262072" fileName="ToolDeclaration_Editor.java" startLine="599" startPosition="110" endLine="600" endPosition="74" />
@@ -164,12 +164,12 @@
     <nodeInfo nodeId="1210687257456" fileName="PreferencePage_Editor.java" startLine="273" startPosition="30" endLine="274" endPosition="59" />
     <nodeInfo nodeId="1217681682193" fileName="PreferencePage_Editor.java" startLine="405" startPosition="114" endLine="406" endPosition="23" />
     <nodeInfo nodeId="1217681682197" fileName="PreferencePage_Editor.java" startLine="406" startPosition="23" endLine="407" endPosition="55" />
-    <nodeInfo nodeId="1217681682204" fileName="PreferencePage_Editor.java" startLine="408" startPosition="25" endLine="409" endPosition="103" />
+    <nodeInfo nodeId="1217681682204" fileName="PreferencePage_Editor.java" startLine="408" startPosition="25" endLine="409" endPosition="106" />
     <nodeInfo nodeId="1217681682217" fileName="PreferencePage_Editor.java" startLine="410" startPosition="5" endLine="411" endPosition="61" />
     <nodeInfo nodeId="1210687257464" fileName="PreferencePage_Editor.java" startLine="418" startPosition="110" endLine="419" endPosition="74" />
     <nodeInfo nodeId="1217681682202" fileName="PreferencePage_Editor.java" startLine="407" startPosition="55" endLine="410" endPosition="5" />
     <scopeInfo nodeId="1210687257455" fileName="PreferencePage_Editor.java" startLine="273" startPosition="30" endLine="274" endPosition="59" />
-    <scopeInfo nodeId="1217681682203" fileName="PreferencePage_Editor.java" startLine="408" startPosition="25" endLine="409" endPosition="103" />
+    <scopeInfo nodeId="1217681682203" fileName="PreferencePage_Editor.java" startLine="408" startPosition="25" endLine="409" endPosition="106" />
     <scopeInfo nodeId="1210687257463" fileName="PreferencePage_Editor.java" startLine="418" startPosition="110" endLine="419" endPosition="74" />
     <scopeInfo nodeId="1210687257430" fileName="PreferencePage_Editor.java" startLine="405" startPosition="114" endLine="411" endPosition="61">
       <varInfo nodeId="1217681682198" varName="module" />
@@ -218,14 +218,14 @@
     <nodeInfo nodeId="5896642449625989576" fileName="TabbedToolDeclaration_Editor.java" startLine="507" startPosition="114" endLine="508" endPosition="81" />
     <nodeInfo nodeId="5896642449625989590" fileName="TabbedToolDeclaration_Editor.java" startLine="511" startPosition="114" endLine="512" endPosition="23" />
     <nodeInfo nodeId="5896642449625989594" fileName="TabbedToolDeclaration_Editor.java" startLine="512" startPosition="23" endLine="513" endPosition="55" />
-    <nodeInfo nodeId="5896642449625989601" fileName="TabbedToolDeclaration_Editor.java" startLine="514" startPosition="25" endLine="515" endPosition="103" />
+    <nodeInfo nodeId="5896642449625989601" fileName="TabbedToolDeclaration_Editor.java" startLine="514" startPosition="25" endLine="515" endPosition="106" />
     <nodeInfo nodeId="5896642449625989614" fileName="TabbedToolDeclaration_Editor.java" startLine="516" startPosition="5" endLine="517" endPosition="61" />
     <nodeInfo nodeId="5896642449625989639" fileName="TabbedToolDeclaration_Editor.java" startLine="524" startPosition="110" endLine="525" endPosition="74" />
     <nodeInfo nodeId="5896642449625989599" fileName="TabbedToolDeclaration_Editor.java" startLine="513" startPosition="55" endLine="516" endPosition="5" />
     <scopeInfo nodeId="5896642449625989628" fileName="TabbedToolDeclaration_Editor.java" startLine="331" startPosition="30" endLine="332" endPosition="59" />
     <scopeInfo nodeId="5896642449625989562" fileName="TabbedToolDeclaration_Editor.java" startLine="342" startPosition="31" endLine="343" endPosition="70" />
     <scopeInfo nodeId="5896642449625989575" fileName="TabbedToolDeclaration_Editor.java" startLine="507" startPosition="114" endLine="508" endPosition="81" />
-    <scopeInfo nodeId="5896642449625989600" fileName="TabbedToolDeclaration_Editor.java" startLine="514" startPosition="25" endLine="515" endPosition="103" />
+    <scopeInfo nodeId="5896642449625989600" fileName="TabbedToolDeclaration_Editor.java" startLine="514" startPosition="25" endLine="515" endPosition="106" />
     <scopeInfo nodeId="5896642449625989638" fileName="TabbedToolDeclaration_Editor.java" startLine="524" startPosition="110" endLine="525" endPosition="74" />
     <scopeInfo nodeId="5896642449625989589" fileName="TabbedToolDeclaration_Editor.java" startLine="511" startPosition="114" endLine="517" endPosition="61">
       <varInfo nodeId="5896642449625989595" varName="module" />
@@ -255,12 +255,12 @@
     <nodeInfo nodeId="8415911927033050401" fileName="RunConfigurationTypeDeclaration_Editor.java" startLine="223" startPosition="30" endLine="224" endPosition="63" />
     <nodeInfo nodeId="8415911927033050362" fileName="RunConfigurationTypeDeclaration_Editor.java" startLine="321" startPosition="114" endLine="322" endPosition="23" />
     <nodeInfo nodeId="8415911927033050366" fileName="RunConfigurationTypeDeclaration_Editor.java" startLine="322" startPosition="23" endLine="323" endPosition="55" />
-    <nodeInfo nodeId="8415911927033050373" fileName="RunConfigurationTypeDeclaration_Editor.java" startLine="324" startPosition="25" endLine="325" endPosition="107" />
+    <nodeInfo nodeId="8415911927033050373" fileName="RunConfigurationTypeDeclaration_Editor.java" startLine="324" startPosition="25" endLine="325" endPosition="110" />
     <nodeInfo nodeId="8415911927033050386" fileName="RunConfigurationTypeDeclaration_Editor.java" startLine="326" startPosition="5" endLine="327" endPosition="61" />
     <nodeInfo nodeId="8415911927033050411" fileName="RunConfigurationTypeDeclaration_Editor.java" startLine="334" startPosition="110" endLine="335" endPosition="78" />
     <nodeInfo nodeId="8415911927033050371" fileName="RunConfigurationTypeDeclaration_Editor.java" startLine="323" startPosition="55" endLine="326" endPosition="5" />
     <scopeInfo nodeId="8415911927033050400" fileName="RunConfigurationTypeDeclaration_Editor.java" startLine="223" startPosition="30" endLine="224" endPosition="63" />
-    <scopeInfo nodeId="8415911927033050372" fileName="RunConfigurationTypeDeclaration_Editor.java" startLine="324" startPosition="25" endLine="325" endPosition="107" />
+    <scopeInfo nodeId="8415911927033050372" fileName="RunConfigurationTypeDeclaration_Editor.java" startLine="324" startPosition="25" endLine="325" endPosition="110" />
     <scopeInfo nodeId="8415911927033050410" fileName="RunConfigurationTypeDeclaration_Editor.java" startLine="334" startPosition="110" endLine="335" endPosition="78" />
     <scopeInfo nodeId="8415911927033050361" fileName="RunConfigurationTypeDeclaration_Editor.java" startLine="321" startPosition="114" endLine="327" endPosition="61">
       <varInfo nodeId="8415911927033050367" varName="module" />
@@ -271,12 +271,12 @@
     <nodeInfo nodeId="8456022385895659172" fileName="RunConfigurationPresentation.java" startLine="152" startPosition="30" endLine="153" endPosition="63" />
     <nodeInfo nodeId="8456022385895659133" fileName="RunConfigurationPresentation.java" startLine="221" startPosition="112" endLine="222" endPosition="23" />
     <nodeInfo nodeId="8456022385895659137" fileName="RunConfigurationPresentation.java" startLine="222" startPosition="23" endLine="223" endPosition="55" />
-    <nodeInfo nodeId="8456022385895659144" fileName="RunConfigurationPresentation.java" startLine="224" startPosition="25" endLine="225" endPosition="107" />
+    <nodeInfo nodeId="8456022385895659144" fileName="RunConfigurationPresentation.java" startLine="224" startPosition="25" endLine="225" endPosition="110" />
     <nodeInfo nodeId="8456022385895659157" fileName="RunConfigurationPresentation.java" startLine="226" startPosition="5" endLine="227" endPosition="61" />
     <nodeInfo nodeId="8456022385895659182" fileName="RunConfigurationPresentation.java" startLine="230" startPosition="108" endLine="231" endPosition="78" />
     <nodeInfo nodeId="8456022385895659142" fileName="RunConfigurationPresentation.java" startLine="223" startPosition="55" endLine="226" endPosition="5" />
     <scopeInfo nodeId="8456022385895659171" fileName="RunConfigurationPresentation.java" startLine="152" startPosition="30" endLine="153" endPosition="63" />
-    <scopeInfo nodeId="8456022385895659143" fileName="RunConfigurationPresentation.java" startLine="224" startPosition="25" endLine="225" endPosition="107" />
+    <scopeInfo nodeId="8456022385895659143" fileName="RunConfigurationPresentation.java" startLine="224" startPosition="25" endLine="225" endPosition="110" />
     <scopeInfo nodeId="8456022385895659181" fileName="RunConfigurationPresentation.java" startLine="230" startPosition="108" endLine="231" endPosition="78" />
     <scopeInfo nodeId="8456022385895659132" fileName="RunConfigurationPresentation.java" startLine="221" startPosition="112" endLine="227" endPosition="61">
       <varInfo nodeId="8456022385895659138" varName="module" />

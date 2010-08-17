@@ -80,7 +80,7 @@ public class ClassPathViewerTool extends BaseProjectTool {
         return new TextTreeNode("No Module");
       }
 
-      TextTreeNode root = new TextTreeNode("ClassPath of module " + myInspectedModule.getModuleUID());
+      TextTreeNode root = new TextTreeNode("ClassPath of module " + myInspectedModule.getModuleFqName());
       ClasspathCollector collector = new ClasspathCollector(CollectionUtil.set(myInspectedModule));
       collector.collect(false);
 
@@ -108,9 +108,9 @@ public class ClassPathViewerTool extends BaseProjectTool {
       }
 
       protected void doUpdatePresentation() {
-        setText(myModule.getModuleUID());
+        setText(myModule.getModuleFqName());
         setIcon(IconManager.getIconFor(myModule));
-        setNodeIdentifier(myModule.getModuleUID());
+        setNodeIdentifier(myModule.getModuleFqName());
       }
 
       public boolean isLeaf() {

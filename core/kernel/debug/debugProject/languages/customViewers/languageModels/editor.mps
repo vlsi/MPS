@@ -158,7 +158,7 @@
                             <link role="variableDeclaration:3" targetNodeId="5117350825036256265" resolveInfo="module" />
                           </node>
                           <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5117350825036256279">
-                            <link role="baseMethodDeclaration:3" targetNodeId="5.~IModule.getModuleUID():java.lang.String" resolveInfo="getModuleUID" />
+                            <link role="baseMethodDeclaration:3" targetNodeId="5.~IModule.getModuleFqName():java.lang.String" resolveInfo="getModuleFqName" />
                           </node>
                         </node>
                       </node>

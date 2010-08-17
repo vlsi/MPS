@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1213878920295">
-    <nodeInfo nodeId="1218029314781" fileName="PluginNameUtils.java" startLine="9" startPosition="59" endLine="10" endPosition="45" />
-    <nodeInfo nodeId="1218029314803" fileName="PluginNameUtils.java" startLine="10" startPosition="45" endLine="11" endPosition="65" />
+    <nodeInfo nodeId="1218029314781" fileName="PluginNameUtils.java" startLine="9" startPosition="59" endLine="10" endPosition="48" />
+    <nodeInfo nodeId="1218029314803" fileName="PluginNameUtils.java" startLine="10" startPosition="48" endLine="11" endPosition="65" />
     <nodeInfo nodeId="1218029314808" fileName="PluginNameUtils.java" startLine="11" startPosition="65" endLine="12" endPosition="67" />
     <nodeInfo nodeId="1218029320798" fileName="PluginNameUtils.java" startLine="12" startPosition="67" endLine="13" endPosition="48" />
     <nodeInfo nodeId="1213879243298" fileName="PluginNameUtils.java" startLine="16" startPosition="54" endLine="17" endPosition="57" />

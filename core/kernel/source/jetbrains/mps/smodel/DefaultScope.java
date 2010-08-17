@@ -20,6 +20,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.util.CollectionUtil;
@@ -145,9 +146,7 @@ public abstract class DefaultScope extends BaseScope {
         usedDevkits.add(dk);
       }
 
-      for (DevKit dk : m.getUsedDevkits()) {
-        usedDevkits.add(dk);
-      }
+      usedDevkits.addAll(ModuleUtil.getUsedDevkits(m.getUsedDevkitReferences()));
     }
 
     for (DevKit dk : usedDevkits) {

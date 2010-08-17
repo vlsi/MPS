@@ -19,12 +19,8 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.scripts.RefUtil;
-import jetbrains.mps.lang.findUsages.structure.FinderDeclaration;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.kernel.model.SModelUtil;
 
 import javax.swing.JOptionPane;
 import java.util.List;
@@ -66,7 +62,7 @@ public class GoToEditorDeclarationHelper {
     if (languageEditor != null) return languageEditor;
 
     //ask...
-    String message = "Language \"" + language.getModuleUID() + "\" has no editor model.\n" + "Create new editor model?";
+    String message = "Language \"" + language.getModuleFqName() + "\" has no editor model.\n" + "Create new editor model?";
     int option = JOptionPane.showConfirmDialog(null, message, "Editor not found",
       JOptionPane.YES_NO_OPTION,
       JOptionPane.QUESTION_MESSAGE);

@@ -29,9 +29,6 @@ import java.util.List;
 import java.util.Set;
 
 public interface IModule extends ModelOwner {
-  @Deprecated
-  String getModuleUID();
-
   @NotNull
   ModuleReference getModuleReference();
 
@@ -45,27 +42,17 @@ public interface IModule extends ModelOwner {
 
   List<SModelRoot> getSModelRoots();
 
-  SModelRoot findModelRoot(String path);
-
   List<Dependency> getDependOn();
-
-  List<IModule> getDependOnModules();
 
   List<IModule> getAllDependOnModules();
 
   List<ModuleReference> getUsedLanguagesReferences();
 
-  List<Language> getUsedLanguages();
-
   List<Language> getAllUsedLanguages();
 
   List<ModuleReference> getUsedDevkitReferences();
 
-  List<DevKit> getUsedDevkits();
-
   List<IModule> getExplicitlyDependOnModules();
-
-  List<IModule> getExplicitlyDependOnModulesWithBootstrap();
 
   List<IModule> getDesignTimeDependOnModules();
 

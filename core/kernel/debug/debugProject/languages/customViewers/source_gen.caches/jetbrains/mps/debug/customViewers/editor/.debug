@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="5117350825036235733">
+    <nodeInfo nodeId="5117350825036256299" fileName="CustomWatchable_Editor.java" startLine="123" startPosition="30" endLine="124" endPosition="63" />
     <nodeInfo nodeId="5117350825036256260" fileName="CustomWatchable_Editor.java" startLine="174" startPosition="112" endLine="175" endPosition="23" />
     <nodeInfo nodeId="5117350825036256264" fileName="CustomWatchable_Editor.java" startLine="175" startPosition="23" endLine="176" endPosition="55" />
-    <nodeInfo nodeId="5117350825036256271" fileName="CustomWatchable_Editor.java" startLine="177" startPosition="25" endLine="178" endPosition="107" />
+    <nodeInfo nodeId="5117350825036256271" fileName="CustomWatchable_Editor.java" startLine="177" startPosition="25" endLine="178" endPosition="110" />
+    <nodeInfo nodeId="5117350825036256284" fileName="CustomWatchable_Editor.java" startLine="179" startPosition="5" endLine="180" endPosition="61" />
     <nodeInfo nodeId="5117350825036256309" fileName="CustomWatchable_Editor.java" startLine="183" startPosition="108" endLine="184" endPosition="78" />
     <nodeInfo nodeId="5117350825036256269" fileName="CustomWatchable_Editor.java" startLine="176" startPosition="55" endLine="179" endPosition="5" />
     <scopeInfo nodeId="5117350825036256298" fileName="CustomWatchable_Editor.java" startLine="123" startPosition="30" endLine="124" endPosition="63" />
-    <scopeInfo nodeId="5117350825036256270" fileName="CustomWatchable_Editor.java" startLine="177" startPosition="25" endLine="178" endPosition="107" />
+    <scopeInfo nodeId="5117350825036256270" fileName="CustomWatchable_Editor.java" startLine="177" startPosition="25" endLine="178" endPosition="110" />
     <scopeInfo nodeId="5117350825036256308" fileName="CustomWatchable_Editor.java" startLine="183" startPosition="108" endLine="184" endPosition="78" />
     <scopeInfo nodeId="5117350825036256259" fileName="CustomWatchable_Editor.java" startLine="174" startPosition="112" endLine="180" endPosition="61">
       <varInfo nodeId="5117350825036256265" varName="module" />

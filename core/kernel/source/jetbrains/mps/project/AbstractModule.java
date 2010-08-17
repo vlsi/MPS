@@ -17,10 +17,7 @@ package jetbrains.mps.project;
 
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.baseLanguage.collections.structure.Collections_Language;
-import jetbrains.mps.baseLanguage.structure.BaseLanguage_Language;
 import jetbrains.mps.lang.generator.structure.Generator_Language;
-import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.listener.ModelCreationListener;
 import jetbrains.mps.project.persistence.ModuleReadException;
@@ -37,7 +34,10 @@ import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.vcs.SuspiciousModelIndex;
-import jetbrains.mps.vfs.*;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.JarFileEntryFile;
+import jetbrains.mps.vfs.VFileSystem;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -157,35 +157,18 @@ public abstract class AbstractModule implements IModule {
 
   //----model roots
 
-  private List<ModelRoot> getModelRoots() {
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor != null) return descriptor.getModelRoots();
-    return new ArrayList<ModelRoot>();
-  }
-
   public List<SModelRoot> getSModelRoots() {
     return Collections.unmodifiableList(mySModelRoots);
-  }
-
-  public SModelRoot findModelRoot(String path) {
-    for (SModelRoot root : mySModelRoots) {
-      if (path.equals(root.getPath())) return root;
-    }
-    return null;
   }
 
   //----get deps
 
   public List<Dependency> getDependOn() {
-    List<Dependency> result = new ArrayList<Dependency>();
     ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor != null) {
-      result.addAll(descriptor.getDependencies());
-    }
-    return result;
+    if (descriptor == null) return new ArrayList<Dependency>();
+    return new ArrayList<Dependency>(descriptor.getDependencies());
   }
 
-  //todo remove at least one of the two following methods
   public final List<IModule> getExplicitlyDependOnModules() {
     if (myCachedExplicitlyDependentModules == null) {
       Set<IModule> res = new LinkedHashSet<IModule>();
@@ -196,73 +179,37 @@ public abstract class AbstractModule implements IModule {
     return Collections.unmodifiableList(myCachedExplicitlyDependentModules);
   }
 
-  public List<IModule> getExplicitlyDependOnModulesWithBootstrap() {
-    List<IModule> result = new ArrayList<IModule>(getExplicitlyDependOnModules());
-    result.addAll(LibraryManager.getInstance().getBootstrapModules(Language.class));
-    return result;
-  }
-
   protected void addExplicitlyDependendOnModules(Set<IModule> result) {
-    result.addAll(getDependOnModules());
-    result.addAll(getUsedLanguages());
-    result.addAll(getUsedDevkits());
+    result.addAll(ModuleUtil.getDependOnModules(getDependOn()));
+    result.addAll(ModuleUtil.getLanguages(getUsedLanguagesReferences()));
+    result.addAll(ModuleUtil.getUsedDevkits(getUsedDevkitReferences()));
   }
 
   public List<IModule> getDesignTimeDependOnModules() {
-    Set<IModule> result = new LinkedHashSet<IModule>();
-    result.addAll(getAllDependOnModules());
-    return new ArrayList<IModule>(result);
-  }
-
-  public List<IModule> getDependOnModules() {
-    List<IModule> result = new ArrayList<IModule>();
-    for (Dependency dep : getDependOn()) {
-      IModule m = MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
-      if (m != null) {
-        result.add(m);
-      }
-    }
-    return result;
+    return getAllDependOnModules();
   }
 
   public List<IModule> getAllDependOnModules() {
     Set<IModule> result = new LinkedHashSet<IModule>();
-    result.addAll(getDependOnModules());
-    for (DevKit dk : getUsedDevkits()) {
+    result.addAll(ModuleUtil.getDependOnModules(getDependOn()));
+    for (DevKit dk : ModuleUtil.getUsedDevkits(getUsedDevkitReferences())) {
       result.addAll(dk.getAllExportedSolutions());
     }
     return new ArrayList<IModule>(result);
   }
 
-  //----languages
+  //----languages & devkits
 
   public List<ModuleReference> getUsedLanguagesReferences() {
-    List<ModuleReference> result = new ArrayList<ModuleReference>();
     ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor != null) {
-      result.addAll(descriptor.getUsedLanguages());
-    }
-    return result;
-  }
-
-  public List<Language> getUsedLanguages() {
-    List<Language> result = new ArrayList<Language>();
-    for (ModuleReference ref : getUsedLanguagesReferences()) {
-      Language l = MPSModuleRepository.getInstance().getLanguage(ref);
-      if (l != null) {
-        result.add(l);
-      }
-    }
-
-    result.add(BaseLanguage_Language.get());
-    result.add(Collections_Language.get());
-    return result;
+    if (descriptor == null) return new ArrayList<ModuleReference>();
+    return new ArrayList<ModuleReference>(descriptor.getUsedLanguages());
   }
 
   public List<Language> getAllUsedLanguages() {
     Set<Language> result = new LinkedHashSet<Language>();
-    result.addAll(getUsedLanguages());
-    for (DevKit dk : getUsedDevkits()) {
+    result.addAll(ModuleUtil.getLanguages(getUsedLanguagesReferences()));
+    for (DevKit dk : ModuleUtil.getUsedDevkits(getUsedDevkitReferences())) {
       result.addAll(dk.getAllExportedLanguages());
     }
     for (Language l : new HashSet<Language>(result)) {
@@ -271,29 +218,12 @@ public abstract class AbstractModule implements IModule {
     return new ArrayList<Language>(result);
   }
 
-  //----devkits
-
   public List<ModuleReference> getUsedDevkitReferences() {
     List<ModuleReference> result = new ArrayList<ModuleReference>();
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor != null) {
       result.addAll(descriptor.getUsedDevkits());
     }
-    return result;
-  }
-
-  public List<DevKit> getUsedDevkits() {
-    List<DevKit> result = new ArrayList<DevKit>();
-
-    for (ModuleReference ref : getUsedDevkitReferences()) {
-      DevKit dk = MPSModuleRepository.getInstance().getDevKit(ref);
-      if (dk != null) {
-        result.add(dk);
-      } else {
-        LOG.error("Can't load devkit " + ref.getModuleFqName() + " from " + this);
-      }
-    }
-
     return result;
   }
 
@@ -555,14 +485,18 @@ public abstract class AbstractModule implements IModule {
       }
       mySModelRoots.clear();
 
-      for (ModelRoot modelRoot : getModelRoots()) {
-        try {
-          SModelRoot root = new SModelRoot(this, modelRoot);
-          mySModelRoots.add(root);
-          IModelRootManager manager = root.getManager();
-          manager.updateModels(root, this);
-        } catch (Exception e) {
-          LOG.error("Error loading models from root: prefix: \"" + modelRoot.getPrefix() + "\" path: \"" + modelRoot.getPath() + "\". Requested by: " + this, e);
+      ModuleDescriptor descriptor = getModuleDescriptor();
+      if (descriptor != null) {
+        List<ModelRoot> roots = descriptor.getModelRoots();
+        for (ModelRoot modelRoot : roots) {
+          try {
+            SModelRoot root = new SModelRoot(this, modelRoot);
+            mySModelRoots.add(root);
+            IModelRootManager manager = root.getManager();
+            manager.updateModels(root, this);
+          } catch (Exception e) {
+            LOG.error("Error loading models from root: prefix: \"" + modelRoot.getPrefix() + "\" path: \"" + modelRoot.getPath() + "\". Requested by: " + this, e);
+          }
         }
       }
 
@@ -725,7 +659,7 @@ public abstract class AbstractModule implements IModule {
     }
 
     protected Set<Language> getInitialUsedLanguages() {
-      HashSet<Language> result = new HashSet<Language>(getUsedLanguages());
+      HashSet<Language> result = new HashSet<Language>(ModuleUtil.getLanguages(getUsedLanguagesReferences()));
 
       if (AbstractModule.this instanceof Language) {
         result.add((Language) AbstractModule.this);
@@ -760,8 +694,4 @@ public abstract class AbstractModule implements IModule {
     return myModuleReference.getModuleId();
   }
 
-  @Deprecated
-  public String getModuleUID() {
-    return getModuleFqName();
-  }
 }

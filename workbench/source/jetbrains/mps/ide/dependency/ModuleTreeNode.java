@@ -20,7 +20,8 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ModuleUtil;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 
@@ -67,7 +68,7 @@ public class ModuleTreeNode extends MPSTreeNode {
     forwardDependencies.add(dependOn);
 
     TextTreeNode used = new TextTreeNode("Uses:");
-    addModules(used, myModule.getUsedLanguages());
+    addModules(used, ModuleUtil.getLanguages(myModule.getUsedLanguagesReferences()));
     forwardDependencies.add(used);
 
     if (myModule instanceof Language) {
@@ -107,7 +108,7 @@ public class ModuleTreeNode extends MPSTreeNode {
 
   protected void doUpdatePresentation() {
     super.doUpdatePresentation();
-    String uid = myModule.getModuleUID();
+    String uid = myModule.getModuleFqName();
     setText(uid);
     setNodeIdentifier(uid);
     setIcon(IconManager.getIconFor(myModule));
@@ -133,8 +134,9 @@ public class ModuleTreeNode extends MPSTreeNode {
 
   private List<IModule> getUsedBy(Language l) {
     List<IModule> result = new ArrayList<IModule>();
+    ModuleReference ref = l.getModuleReference();
     for (IModule m : MPSModuleRepository.getInstance().getAllModules()) {
-      if (m.getUsedLanguages().contains(l)) {
+      if (m.getUsedLanguagesReferences().contains(ref)) {
         result.add(m);
       }
     }

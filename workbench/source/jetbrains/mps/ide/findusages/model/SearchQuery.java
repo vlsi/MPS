@@ -110,7 +110,7 @@ public class SearchQuery implements IExternalizeable {
         LOG.warning("Owner is not found for module");
         throw new CantSaveSomethingException("Module is not found for module. Maybe the module was deleted.");
       }
-      scopeXML.setAttribute(MODULE_ID, abstractModule.getModuleUID());
+      scopeXML.setAttribute(MODULE_ID, abstractModule.getModuleFqName());
     } else if (myScope instanceof ModelsScope) {
       scopeXML.setAttribute(SCOPE_TYPE, SCOPE_TYPE_MODELS);
       Element modelsXML = new Element(MODELS);
@@ -148,7 +148,7 @@ public class SearchQuery implements IExternalizeable {
       String moduleUID = scopeXML.getAttribute(MODULE_ID).getValue();
       myScope = null;
       for (IModule module : MPSModuleRepository.getInstance().getAllModules()) {
-        if (module.getModuleUID().equals(moduleUID)) {
+        if (module.getModuleFqName().equals(moduleUID)) {
           myScope = module.getScope();
         }
       }
