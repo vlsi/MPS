@@ -59,7 +59,7 @@
   <languageAspect modelUID="r:1e7ada09-c25e-41ea-a9b5-398e142ef533(jetbrains.mps.build.generictasks.structure)" version="22" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <maxImportIndex value="32" />
+  <maxImportIndex value="33" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="7" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
@@ -76,6 +76,7 @@
   <import index="30" modelUID="r:7a6a35c6-e369-4565-b91b-c7c8dfa2c8d7(jetbrains.mps.build.generictasks.generated)" version="-1" />
   <import index="31" modelUID="f:java_stub#jetbrains.mps.make.dependencies(jetbrains.mps.make.dependencies@java_stub)" version="-1" />
   <import index="32" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
+  <import index="33" modelUID="f:java_stub#jetbrains.mps.project.dependency(jetbrains.mps.project.dependency@java_stub)" version="-1" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895904e2(jetbrains.mps.build.property.structure)" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration:2" id="1202918622135">
     <property name="name:2" value="main" />
@@ -7177,11 +7178,17 @@
                         <link role="classifier:3" targetNodeId="16.~IModule" resolveInfo="IModule" />
                       </node>
                     </node>
-                    <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5699776870187364742">
-                      <link role="baseMethodDeclaration:3" targetNodeId="16.~ModuleUtil.getAllDependOnModules(jetbrains.mps.project.IModule):java.util.Set" resolveInfo="getAllDependOnModules" />
-                      <link role="classConcept:3" targetNodeId="16.~ModuleUtil" resolveInfo="ModuleUtil" />
-                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="5699776870187364743">
-                        <link role="variable:7" targetNodeId="1238426996049" resolveInfo="module" />
+                    <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6791246587134145357">
+                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6791246587134145352">
+                        <node role="operand:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="6791246587134145351">
+                          <link role="variable:7" targetNodeId="1238426996049" resolveInfo="module" />
+                        </node>
+                        <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6791246587134145356">
+                          <link role="baseMethodDeclaration:3" targetNodeId="16.~IModule.getDependenciesManager():jetbrains.mps.project.dependency.DependencyManager" resolveInfo="getDependenciesManager" />
+                        </node>
+                      </node>
+                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6791246587134145361">
+                        <link role="baseMethodDeclaration:3" targetNodeId="33.~DependencyManager.getAllDependOnModules():java.util.Set" resolveInfo="getAllDependOnModules" />
                       </node>
                     </node>
                   </node>

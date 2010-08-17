@@ -83,9 +83,6 @@ public class ChangeMethodSignatureDialog extends BaseDialog {
           ChangeMethodSignatureDialog.this.myEditor.addLanguageStructureModel((Language) module);
         }
         IModule m = ChangeMethodSignatureDialog.this.myOperationContext.getModule();
-        for (Language language : ListSequence.fromList(ModuleUtil.getAllUsedLanguages(m))) {
-          ChangeMethodSignatureDialog.this.myEditor.addLanguage(language);
-        }
         for (SModelReference imported : ListSequence.fromList(ChangeMethodSignatureDialog.this.myDeclaration.getModel().getImportedModelUIDs())) {
           ChangeMethodSignatureDialog.this.myEditor.addModel(imported);
         }

@@ -13,7 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.IModule;
 import java.util.Set;
-import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -43,8 +42,8 @@ public class CustomContainersRegistry {
     List<SNode> res = new ArrayList<SNode>();
     IModule om = this.getOwningModule(fromModel);
     if (om != null) {
-      final Set<IModule> allDependOnModules = ModuleUtil.getAllDependOnModules(om);
-      final List<Language> allUsedLanguages = ModuleUtil.getAllUsedLanguages(om);
+      final Set<IModule> allDependOnModules = om.getDependenciesManager().getAllDependOnModules();
+      final List<Language> allUsedLanguages = om.getDependenciesManager().getAllUsedLanguages();
       Iterable<SNode> allCustomContainers = this.primAllCustomContainers();
       ListSequence.fromList(res).addSequence(Sequence.fromIterable(allCustomContainers).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode cc) {
