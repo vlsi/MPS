@@ -152,15 +152,15 @@ public abstract class AbstractModule implements IModule {
     return new ArrayList<Dependency>(descriptor.getDependencies());
   }
 
-  public final List<IModule> getExplicitlyDependOnModules() {
+  public final List<IModule> getDependOnModules() {
     if (myCachedExplicitlyDependentModules == null) {
-      myCachedExplicitlyDependentModules = getExplicitlyDependendOnModules();
+      myCachedExplicitlyDependentModules = doGetDependOnModules();
     }
 
     return Collections.unmodifiableList(myCachedExplicitlyDependentModules);
   }
 
-  protected List<IModule> getExplicitlyDependendOnModules() {
+  protected List<IModule> doGetDependOnModules() {
     List<IModule> res = new LinkedList();
     res.addAll(ModuleUtil.getDependOnModules(getDependOn()));
     res.addAll(ModuleUtil.getLanguages(getUsedLanguagesReferences()));

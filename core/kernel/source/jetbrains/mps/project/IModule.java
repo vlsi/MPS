@@ -45,7 +45,7 @@ public interface IModule extends ModelOwner {
 
   List<ModuleReference> getUsedDevkitReferences();
 
-  List<IModule> getExplicitlyDependOnModules();
+  List<IModule> getDependOnModules();
 
   //returns modules that can not be unloaded if this module is not unloaded
   Set<IModule> getDesignTimeDependOnModules();

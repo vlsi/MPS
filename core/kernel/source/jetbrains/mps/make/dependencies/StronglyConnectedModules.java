@@ -93,7 +93,7 @@ public class StronglyConnectedModules {
     }
 
     public void fill(Map<IModule, IModuleDecorator<M>> map) {
-      List<IModule> dependency = myModule.getExplicitlyDependOnModules();
+      List<IModule> dependency = myModule.getDependOnModules();
       List<IModule> dependencyCopy = new ArrayList<IModule>();
       dependencyCopy.addAll(dependency);
       Collections.sort(dependencyCopy, new Comparator<IModule>() {

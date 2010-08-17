@@ -167,8 +167,8 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     revalidateGenerators();
   }
 
-  protected List<IModule> getExplicitlyDependendOnModules() {
-    List<IModule> res = super.getExplicitlyDependendOnModules();
+  protected List<IModule> doGetDependOnModules() {
+    List<IModule> res = super.doGetDependOnModules();
     res.addAll(getExtendedLanguages());
     res.addAll(getRuntimeDependOnModules());
     return res;

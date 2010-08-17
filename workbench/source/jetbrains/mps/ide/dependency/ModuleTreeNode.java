@@ -64,7 +64,7 @@ public class ModuleTreeNode extends MPSTreeNode {
     TextTreeNode forwardDependencies = new TextTreeNode("Forward");
 
     TextTreeNode dependOn = new TextTreeNode("Depend On:");
-    addModules(dependOn, myModule.getExplicitlyDependOnModules());
+    addModules(dependOn, myModule.getDependOnModules());
     forwardDependencies.add(dependOn);
 
     TextTreeNode used = new TextTreeNode("Uses:");
@@ -125,7 +125,7 @@ public class ModuleTreeNode extends MPSTreeNode {
   private List<IModule> getDependents(IModule module) {
     List<IModule> result = new ArrayList<IModule>();
     for (IModule m : MPSModuleRepository.getInstance().getAllModules()) {
-      if (m.getExplicitlyDependOnModules().contains(module)) {
+      if (m.getDependOnModules().contains(module)) {
         result.add(m);
       }
     }

@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import java.util.*;
 
 public class ModuleUtil {
+  //todo rename to languagesByRefs
   public static List<Language> getLanguages(List<ModuleReference> refs) {
     List<Language> result = new ArrayList<Language>();
     for (ModuleReference ref : refs) {
@@ -33,6 +34,7 @@ public class ModuleUtil {
     return result;
   }
 
+  //todo rename to devkitsByRefs
   public static List<DevKit> getUsedDevkits(List<ModuleReference> refs) {
     List<DevKit> result = new ArrayList<DevKit>();
 
@@ -45,6 +47,7 @@ public class ModuleUtil {
     return result;
   }
 
+  //todo rename to modulesByDeps
   public static List<IModule> getDependOnModules(List<Dependency> deps) {
     List<IModule> result = new ArrayList<IModule>();
     for (Dependency dep : deps) {
@@ -74,7 +77,6 @@ public class ModuleUtil {
     return new ArrayList<Language>(result);
   }
 
-
   //todo review
   public static Set<IModule> getAllDependOnModules(IModule m) {
     Set<IModule> result = new LinkedHashSet<IModule>();
@@ -84,5 +86,4 @@ public class ModuleUtil {
     }
     return result;
   }
-
 }
