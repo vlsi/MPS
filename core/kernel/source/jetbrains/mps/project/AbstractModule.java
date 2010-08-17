@@ -149,7 +149,7 @@ public abstract class AbstractModule implements IModule {
   //----get deps
 
   public final DependencyManager getDependenciesManager() {
-    if (myDepsManager==null){
+    if (myDepsManager == null) {
       myDepsManager = createDepsManager();
     }
     return myDepsManager;
@@ -342,7 +342,7 @@ public abstract class AbstractModule implements IModule {
   public List<SModelRoot> getSModelRoots() {
     return Collections.unmodifiableList(mySModelRoots);
   }
-  
+
   protected void reloadAfterDescriptorChange() {
     rereadModels();
 

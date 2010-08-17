@@ -51,7 +51,6 @@ public class ModuleDepsManager<T extends AbstractModule> implements DependencyMa
     return new ArrayList<Language>(result);
   }
 
-
   public Set<IModule> getAllDependOnModules() {
     Set<IModule> result = new LinkedHashSet<IModule>();
     result.addAll(ModuleUtil.depsToModules(myModule.getDependOn()));

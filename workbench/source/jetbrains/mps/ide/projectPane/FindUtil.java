@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.ide.projectPane;
 
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.dependency.LanguageDepsManager;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -40,7 +40,7 @@ public class FindUtil {
 
     //runtime models in languages
     for (Language l : project.getProjectLanguages()) {
-      for (IModule depModule : l.getRuntimeDependOnModules()) {
+      for (IModule depModule : ((LanguageDepsManager) l.getDependenciesManager()).getRuntimeDependOnModules()) {
         for (IModule owner : model.getModules()) {
           IModule mainModule = owner instanceof Generator ? ((Generator) owner).getSourceLanguage() : owner;
           if (depModule.getModuleReference().equals(mainModule.getModuleReference())) return owner;

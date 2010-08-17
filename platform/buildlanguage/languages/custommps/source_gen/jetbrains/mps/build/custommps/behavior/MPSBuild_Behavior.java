@@ -21,6 +21,7 @@ import jetbrains.mps.project.IModule;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.project.dependency.LanguageDepsManager;
 import jetbrains.mps.build.packaging.behavior.Module_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.vfs.MPSExtentions;
@@ -73,7 +74,7 @@ public class MPSBuild_Behavior {
       if (module instanceof Language) {
         Language language = (Language) module;
         SetSequence.fromSet(modulesInClasspath).addElement(language);
-        SetSequence.fromSet(modulesInClasspath).addSequence(ListSequence.fromList(language.getRuntimeDependOnModules()));
+        SetSequence.fromSet(modulesInClasspath).addSequence(ListSequence.fromList(((LanguageDepsManager) language.getDependenciesManager()).getRuntimeDependOnModules()));
       }
     }
     for (IModule module : SetSequence.fromSet(modulesInClasspath)) {

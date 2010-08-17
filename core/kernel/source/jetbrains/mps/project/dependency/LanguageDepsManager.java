@@ -16,6 +16,7 @@
 package jetbrains.mps.project.dependency;
 
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.smodel.Language;
 
 import java.util.List;
@@ -29,7 +30,7 @@ public class LanguageDepsManager extends ModuleDepsManager<Language> {
   protected List<IModule> doGetDependOnModules() {
     List<IModule> res = super.doGetDependOnModules();
     res.addAll(myModule.getExtendedLanguages());
-    res.addAll(myModule.getRuntimeDependOnModules());
+    res.addAll(((LanguageDepsManager) myModule.getDependenciesManager()).getRuntimeDependOnModules());
     return res;
   }
 
@@ -37,5 +38,9 @@ public class LanguageDepsManager extends ModuleDepsManager<Language> {
     Set<IModule> res = super.getDesignTimeDeps();
     res.addAll(((Language) m).getExtendedLanguages());
     return res;
+  }
+
+  public List<IModule> getRuntimeDependOnModules() {
+    return ModuleUtil.depsToModules(myModule.getRuntimeDependOn());
   }
 }

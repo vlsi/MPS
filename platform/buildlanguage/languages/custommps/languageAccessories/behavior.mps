@@ -67,7 +67,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
   <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="12" />
+  <maxImportIndex value="13" />
   <import index="1" modelUID="r:896f64dd-7cfe-4bc4-b401-38e2a027e9ae(jetbrains.mps.build.custommps.structure)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
@@ -79,6 +79,7 @@
   <import index="10" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="7" />
   <import index="11" modelUID="f:java_stub#jetbrains.mps.vfs(jetbrains.mps.vfs@java_stub)" version="-1" />
   <import index="12" modelUID="f:java_stub#jetbrains.mps.project.structure.modules(jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
+  <import index="13" modelUID="f:java_stub#jetbrains.mps.project.dependency(jetbrains.mps.project.dependency@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1233155892819">
     <link role="concept" targetNodeId="1.1233149592028" resolveInfo="MPSBuild" />
     <node role="staticMethod" type="jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration" id="1234294616845">
@@ -507,11 +508,23 @@
                     </node>
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddAllSetElementsOperation:7" id="1238669948460">
                       <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1238669948461">
-                        <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1238669948462">
-                          <link role="variableDeclaration:3" targetNodeId="1238504045864" resolveInfo="language" />
+                        <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="6388955611097328225">
+                          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="6388955611097328226">
+                            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6388955611097328227">
+                              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6388955611097328228">
+                                <link role="variableDeclaration:3" targetNodeId="1238504045864" resolveInfo="language" />
+                              </node>
+                              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6388955611097328229">
+                                <link role="baseMethodDeclaration:3" targetNodeId="3.~AbstractModule.getDependenciesManager():jetbrains.mps.project.dependency.DependencyManager" resolveInfo="getDependenciesManager" />
+                              </node>
+                            </node>
+                            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6388955611097328230">
+                              <link role="classifier:3" targetNodeId="13.~LanguageDepsManager" resolveInfo="LanguageDepsManager" />
+                            </node>
+                          </node>
                         </node>
                         <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1238669948463">
-                          <link role="baseMethodDeclaration:3" targetNodeId="7.~Language.getRuntimeDependOnModules():java.util.List" resolveInfo="getRuntimeDependOnModules" />
+                          <link role="baseMethodDeclaration:3" targetNodeId="13.~LanguageDepsManager.getRuntimeDependOnModules():java.util.List" resolveInfo="getRuntimeDependOnModules" />
                         </node>
                       </node>
                     </node>
