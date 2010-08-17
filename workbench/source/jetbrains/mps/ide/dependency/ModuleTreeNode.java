@@ -68,7 +68,7 @@ public class ModuleTreeNode extends MPSTreeNode {
     forwardDependencies.add(dependOn);
 
     TextTreeNode used = new TextTreeNode("Uses:");
-    addModules(used, ModuleUtil.getLanguages(myModule.getUsedLanguagesReferences()));
+    addModules(used, ModuleUtil.refsToLanguages(myModule.getUsedLanguagesReferences()));
     forwardDependencies.add(used);
 
     if (myModule instanceof Language) {

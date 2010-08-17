@@ -23,8 +23,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import java.util.*;
 
 public class ModuleUtil {
-  //todo rename to languagesByRefs
-  public static List<Language> getLanguages(List<ModuleReference> refs) {
+  public static List<Language> refsToLanguages(List<ModuleReference> refs) {
     List<Language> result = new ArrayList<Language>();
     for (ModuleReference ref : refs) {
       Language l = MPSModuleRepository.getInstance().getLanguage(ref);
@@ -34,8 +33,7 @@ public class ModuleUtil {
     return result;
   }
 
-  //todo rename to devkitsByRefs
-  public static List<DevKit> getUsedDevkits(List<ModuleReference> refs) {
+  public static List<DevKit> refsToDevkits(List<ModuleReference> refs) {
     List<DevKit> result = new ArrayList<DevKit>();
 
     for (ModuleReference ref : refs) {
@@ -67,8 +65,8 @@ public class ModuleUtil {
   //todo check usages
   public static List<Language> getAllUsedLanguages(IModule m) {
     Set<Language> result = new LinkedHashSet<Language>();
-    result.addAll(getLanguages(m.getUsedLanguagesReferences()));
-    for (DevKit dk : getUsedDevkits(m.getUsedDevkitReferences())) {
+    result.addAll(refsToLanguages(m.getUsedLanguagesReferences()));
+    for (DevKit dk : refsToDevkits(m.getUsedDevkitReferences())) {
       result.addAll(dk.getAllExportedLanguages());
     }
     for (Language l : new HashSet<Language>(result)) {
@@ -81,7 +79,7 @@ public class ModuleUtil {
   public static Set<IModule> getAllDependOnModules(IModule m) {
     Set<IModule> result = new LinkedHashSet<IModule>();
     result.addAll(depsToModules(m.getDependOn()));
-    for (DevKit dk : getUsedDevkits(m.getUsedDevkitReferences())) {
+    for (DevKit dk : refsToDevkits(m.getUsedDevkitReferences())) {
       result.addAll(dk.getAllExportedSolutions());
     }
     return result;

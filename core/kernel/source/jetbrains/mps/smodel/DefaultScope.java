@@ -146,7 +146,7 @@ public abstract class DefaultScope extends BaseScope {
         usedDevkits.add(dk);
       }
 
-      usedDevkits.addAll(ModuleUtil.getUsedDevkits(m.getUsedDevkitReferences()));
+      usedDevkits.addAll(ModuleUtil.refsToDevkits(m.getUsedDevkitReferences()));
     }
 
     for (DevKit dk : usedDevkits) {

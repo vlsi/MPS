@@ -163,8 +163,8 @@ public abstract class AbstractModule implements IModule {
   protected List<IModule> doGetDependOnModules() {
     List<IModule> res = new LinkedList();
     res.addAll(ModuleUtil.depsToModules(getDependOn()));
-    res.addAll(ModuleUtil.getLanguages(getUsedLanguagesReferences()));
-    res.addAll(ModuleUtil.getUsedDevkits(getUsedDevkitReferences()));
+    res.addAll(ModuleUtil.refsToLanguages(getUsedLanguagesReferences()));
+    res.addAll(ModuleUtil.refsToDevkits(getUsedDevkitReferences()));
     return res;
   }
 
@@ -625,7 +625,7 @@ public abstract class AbstractModule implements IModule {
     }
 
     protected Set<Language> getInitialUsedLanguages() {
-      HashSet<Language> result = new HashSet<Language>(ModuleUtil.getLanguages(getUsedLanguagesReferences()));
+      HashSet<Language> result = new HashSet<Language>(ModuleUtil.refsToLanguages(getUsedLanguagesReferences()));
 
       if (AbstractModule.this instanceof Language) {
         result.add((Language) AbstractModule.this);
