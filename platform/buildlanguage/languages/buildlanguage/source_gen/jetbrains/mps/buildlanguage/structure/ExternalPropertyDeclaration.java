@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ExternalPropertyDeclaration extends PropertyDeclaration {
+public class ExternalPropertyDeclaration extends AbstractPropertyDeclaration {
   public static final String concept = "jetbrains.mps.buildlanguage.structure.ExternalPropertyDeclaration";
   public static final String CHECK_ON_START = "checkOnStart";
 
