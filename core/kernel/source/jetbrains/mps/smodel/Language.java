@@ -696,15 +696,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return null;
   }
 
-  //todo move to LanguageDescriptor
-  public ModelRoot createAccessoriesRoot() {
-    ModelRoot modelRoot = new ModelRoot();
-    File languageAccessories = new File(getDescriptorFile().getParent().toFile(), LANGUAGE_ACCESSORIES);
-    modelRoot.setPath(languageAccessories.getAbsolutePath());
-    modelRoot.setPrefix(getModuleFqName());
-    return modelRoot;
-  }
-
   //-----------stubs--------------
 
   public boolean areJavaStubsEnabled() {
