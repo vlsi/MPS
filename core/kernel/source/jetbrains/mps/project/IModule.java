@@ -65,8 +65,6 @@ public interface IModule extends ModelOwner {
 
   List<IModule> getExplicitlyDependOnModules();
 
-  List<IModule> getExplicitlyDependOnModulesWithBootstrap();
-
   List<IModule> getDesignTimeDependOnModules();
 
   void addDependency(ModuleReference moduleRef, boolean reexport);

@@ -314,7 +314,7 @@ public class GeneratorWorker extends MpsWorker {
     }
 
     public void fill(Map<IModule, IModuleDecorator<IModule>> map) {
-      for (IModule m : myModule.getExplicitlyDependOnModulesWithBootstrap()) {
+      for (IModule m : myModule.getExplicitlyDependOnModules()) {
         ModuleDecorator next = (ModuleDecorator) map.get(m);
         if (next != null) myNext.add(next);
       }
