@@ -118,19 +118,19 @@ public class TargetDeclaration extends BaseConcept implements IProjectComponent,
     return this.getChildCount(TargetDeclaration.PROPERTY_LIST);
   }
 
-  public Iterator<PropertyDeclaration> propertyLists() {
-    return this.children(PropertyDeclaration.class, TargetDeclaration.PROPERTY_LIST);
+  public Iterator<AbstractPropertyDeclaration> propertyLists() {
+    return this.children(AbstractPropertyDeclaration.class, TargetDeclaration.PROPERTY_LIST);
   }
 
-  public List<PropertyDeclaration> getPropertyLists() {
-    return this.getChildren(PropertyDeclaration.class, TargetDeclaration.PROPERTY_LIST);
+  public List<AbstractPropertyDeclaration> getPropertyLists() {
+    return this.getChildren(AbstractPropertyDeclaration.class, TargetDeclaration.PROPERTY_LIST);
   }
 
-  public void addPropertyList(PropertyDeclaration node) {
+  public void addPropertyList(AbstractPropertyDeclaration node) {
     this.addChild(TargetDeclaration.PROPERTY_LIST, node);
   }
 
-  public void insertPropertyList(PropertyDeclaration prev, PropertyDeclaration node) {
+  public void insertPropertyList(AbstractPropertyDeclaration prev, AbstractPropertyDeclaration node) {
     this.insertChild(prev, TargetDeclaration.PROPERTY_LIST, node);
   }
 
