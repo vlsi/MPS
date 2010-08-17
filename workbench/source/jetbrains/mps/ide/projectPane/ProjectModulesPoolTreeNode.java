@@ -112,10 +112,10 @@ public class ProjectModulesPoolTreeNode extends TextTreeNode {
       }
 
       if (node.getModule() instanceof Language) {
-        return NameUtil.namespaceFromLongName(node.getModule().getModuleUID());
+        return NameUtil.namespaceFromLongName(node.getModule().getModuleFqName());
       }
 
-      return "Others." + node.getModule().getModuleUID();
+      return "Others." + node.getModule().getModuleFqName();
     }
   }
 }

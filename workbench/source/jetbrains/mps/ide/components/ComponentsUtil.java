@@ -73,7 +73,7 @@ public class ComponentsUtil {
     Element nodeElement = new Element(NODE);
     SModel model = node.getModel();
     nodeElement.setAttribute(MODEL, model.getSModelReference().toString());
-    String module_uid = module.getModuleUID();
+    String module_uid = module.getModuleFqName();
     nodeElement.setAttribute(MODULE_UID, module_uid);
     nodeElement.setAttribute(ID, node.getId());
     return nodeElement;

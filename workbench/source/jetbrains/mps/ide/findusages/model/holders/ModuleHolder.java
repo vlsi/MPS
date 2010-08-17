@@ -20,7 +20,6 @@ import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -37,7 +36,7 @@ public class ModuleHolder implements IHolder<IModule> {
   }
 
   public ModuleHolder(IModule module) {
-    myModuleUID = module.getModuleUID();
+    myModuleUID = module.getModuleFqName();
   }
 
   public IModule getObject() {

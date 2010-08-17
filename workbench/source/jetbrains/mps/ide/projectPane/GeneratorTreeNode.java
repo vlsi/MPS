@@ -84,7 +84,7 @@ class GeneratorTreeNode extends ProjectModuleTreeNode implements StereotypeProvi
   public String calculateNodeIdenifier() {
     Generator generator = getGenerator();
     if (generator == null) return "null";
-    return generator.getModuleUID();
+    return generator.getModuleFqName();
   }
 
   public String getStereotype() {

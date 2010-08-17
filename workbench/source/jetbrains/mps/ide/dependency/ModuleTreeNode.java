@@ -20,7 +20,6 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
@@ -109,7 +108,7 @@ public class ModuleTreeNode extends MPSTreeNode {
 
   protected void doUpdatePresentation() {
     super.doUpdatePresentation();
-    String uid = myModule.getModuleUID();
+    String uid = myModule.getModuleFqName();
     setText(uid);
     setNodeIdentifier(uid);
     setIcon(IconManager.getIconFor(myModule));

@@ -406,7 +406,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
     String path = null;
     IModule module = EditorUtil.findAnchorModule(node);
     if (module != null) {
-      path = MacrosUtil.expandPath(SPropertyOperations.getString(node, "icon"), module.getModuleUID());
+      path = MacrosUtil.expandPath(SPropertyOperations.getString(node, "icon"), module.getModuleFqName());
     }
     return path != null && FileSystem.getFile(path).exists();
   }

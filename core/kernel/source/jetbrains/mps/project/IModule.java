@@ -29,9 +29,6 @@ import java.util.List;
 import java.util.Set;
 
 public interface IModule extends ModelOwner {
-  @Deprecated
-  String getModuleUID();
-
   @NotNull
   ModuleReference getModuleReference();
 

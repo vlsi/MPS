@@ -1260,7 +1260,7 @@
                               <link role="variableDeclaration:3" targetNodeId="1214668852848" resolveInfo="module" />
                             </node>
                             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1214668880601">
-                              <link role="baseMethodDeclaration:3" targetNodeId="21.~IModule.getModuleUID():java.lang.String" resolveInfo="getModuleUID" />
+                              <link role="baseMethodDeclaration:3" targetNodeId="21.~IModule.getModuleFqName():java.lang.String" resolveInfo="getModuleFqName" />
                             </node>
                           </node>
                         </node>
@@ -2442,7 +2442,7 @@
                               <link role="variableDeclaration:3" targetNodeId="1217681682198" resolveInfo="module" />
                             </node>
                             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1217681682212">
-                              <link role="baseMethodDeclaration:3" targetNodeId="21.~IModule.getModuleUID():java.lang.String" resolveInfo="getModuleUID" />
+                              <link role="baseMethodDeclaration:3" targetNodeId="21.~IModule.getModuleFqName():java.lang.String" resolveInfo="getModuleFqName" />
                             </node>
                           </node>
                         </node>
@@ -3337,7 +3337,7 @@
                               <link role="variableDeclaration:3" targetNodeId="8415911927033050367" resolveInfo="module" />
                             </node>
                             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8415911927033050381">
-                              <link role="baseMethodDeclaration:3" targetNodeId="21.~IModule.getModuleUID():java.lang.String" resolveInfo="getModuleUID" />
+                              <link role="baseMethodDeclaration:3" targetNodeId="21.~IModule.getModuleFqName():java.lang.String" resolveInfo="getModuleFqName" />
                             </node>
                           </node>
                         </node>
@@ -4982,7 +4982,7 @@
                               <link role="variableDeclaration:3" targetNodeId="5896642449625989595" resolveInfo="module" />
                             </node>
                             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5896642449625989609">
-                              <link role="baseMethodDeclaration:3" targetNodeId="21.~IModule.getModuleUID():java.lang.String" resolveInfo="getModuleUID" />
+                              <link role="baseMethodDeclaration:3" targetNodeId="21.~IModule.getModuleFqName():java.lang.String" resolveInfo="getModuleFqName" />
                             </node>
                           </node>
                         </node>
@@ -5767,7 +5767,7 @@
                             <link role="variableDeclaration:3" targetNodeId="8456022385895659138" resolveInfo="module" />
                           </node>
                           <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8456022385895659152">
-                            <link role="baseMethodDeclaration:3" targetNodeId="21.~IModule.getModuleUID():java.lang.String" resolveInfo="getModuleUID" />
+                            <link role="baseMethodDeclaration:3" targetNodeId="21.~IModule.getModuleFqName():java.lang.String" resolveInfo="getModuleFqName" />
                           </node>
                         </node>
                       </node>

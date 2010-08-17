@@ -7,7 +7,7 @@ import jetbrains.mps.util.NameUtil;
 
 public class PluginNameUtils {
   public static String getModuleShortName(IModule module) {
-    String moduleUID = module.getModuleUID();
+    String moduleUID = module.getModuleFqName();
     String shortName = NameUtil.shortNameFromLongName(moduleUID);
     String normalShortName = NameUtil.toValidIdentifier(shortName);
     return NameUtil.capitalize(normalShortName);

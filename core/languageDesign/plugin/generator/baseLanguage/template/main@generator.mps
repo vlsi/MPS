@@ -9753,7 +9753,7 @@
                                     <link role="variableDeclaration:3" targetNodeId="1217679691890" resolveInfo="module" />
                                   </node>
                                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1217679691904">
-                                    <link role="baseMethodDeclaration:3" targetNodeId="35.~IModule.getModuleUID():java.lang.String" resolveInfo="getModuleUID" />
+                                    <link role="baseMethodDeclaration:3" targetNodeId="35.~IModule.getModuleFqName():java.lang.String" resolveInfo="getModuleFqName" />
                                   </node>
                                 </node>
                                 <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="1217679691905">
@@ -12738,7 +12738,7 @@
                               <link role="variableDeclaration:3" targetNodeId="5508914264443135834" resolveInfo="module" />
                             </node>
                             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5508914264443135850">
-                              <link role="baseMethodDeclaration:3" targetNodeId="35.~IModule.getModuleUID():java.lang.String" resolveInfo="getModuleUID" />
+                              <link role="baseMethodDeclaration:3" targetNodeId="35.~IModule.getModuleFqName():java.lang.String" resolveInfo="getModuleFqName" />
                             </node>
                           </node>
                           <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="5508914264443135851">

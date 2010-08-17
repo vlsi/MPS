@@ -694,8 +694,4 @@ public abstract class AbstractModule implements IModule {
     return myModuleReference.getModuleId();
   }
 
-  @Deprecated
-  public String getModuleUID() {
-    return getModuleFqName();
-  }
 }

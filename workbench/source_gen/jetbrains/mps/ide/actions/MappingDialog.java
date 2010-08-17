@@ -5,6 +5,7 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
+
 import jetbrains.mps.smodel.Language;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SNode;
@@ -90,7 +91,7 @@ public class MappingDialog extends BaseDialog {
     TextTreeNode root = new TextTreeNode("Generators");
     for (final Generator generator : myLanguage.getGenerators()) {
       ModuleContext moduleContext = new ModuleContext(generator, myProject);
-      MPSTreeNode generatorTreeNode = new MappingDialog.MyTreeNode(moduleContext, Icons.GENERATORS_ICON, generator.getModuleUID(), "generator/" + generator.getName());
+      MPSTreeNode generatorTreeNode = new MappingDialog.MyTreeNode(moduleContext, Icons.GENERATORS_ICON, generator.getModuleFqName(), "generator/" + generator.getName());
       root.add(generatorTreeNode);
       for (SModelDescriptor md : generator.getOwnTemplateModels()) {
         MPSTreeNode modelTreeNode = new MappingDialog.MyTreeNode(moduleContext, IconManager.getIconFor(md), md.toString(), md.getLongName() + "@" + md.getStereotype());

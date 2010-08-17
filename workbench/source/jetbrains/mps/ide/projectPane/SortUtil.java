@@ -60,8 +60,8 @@ public class SortUtil {
         if (o1 == o2) {
           return 0;
         }
-        String name1 = ((IModule) o1).getModuleUID();
-        String name2 = ((IModule) o2).getModuleUID();
+        String name1 = ((IModule) o1).getModuleFqName();
+        String name2 = ((IModule) o2).getModuleFqName();
         return name1.compareTo(name2);
       }
     });
