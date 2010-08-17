@@ -13430,10 +13430,24 @@
                   </node>
                 </node>
               </node>
-              <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="1223640343639">
-                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1223640343640" />
-                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1223640343641">
-                  <link role="variableDeclaration:3" targetNodeId="1223640343643" resolveInfo="n" />
+              <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="1563914226485019709">
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="1563914226485019720">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1563914226485019713">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1563914226485019712">
+                      <link role="variableDeclaration:3" targetNodeId="1223640343643" resolveInfo="n" />
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="1563914226485019717">
+                      <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="1563914226485019719">
+                        <link role="conceptDeclaration:16" targetNodeId="1.1153952380246:3" resolveInfo="TryStatement" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="1223640343639">
+                  <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1223640343641">
+                    <link role="variableDeclaration:3" targetNodeId="1223640343643" resolveInfo="n" />
+                  </node>
+                  <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1223640343640" />
                 </node>
               </node>
             </node>

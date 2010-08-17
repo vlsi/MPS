@@ -56,7 +56,7 @@ public class DataFlowUtil {
   public static void checkReturns(final TypeCheckingContext typeCheckingContext, Program program) {
     Set<SNode> expectedReturns = DataFlow.getExpectedReturns(program);
     for (SNode n : expectedReturns) {
-      if (n != null) {
+      if (n != null && !(SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.structure.TryStatement"))) {
         SNode nodeToSelect;
         SNode sl = SNodeOperations.getAncestor(n, "jetbrains.mps.baseLanguage.structure.StatementList", true, false);
         if ((sl != null) && ListSequence.fromList(SLinkOperations.getTargets(sl, "statement", true)).isNotEmpty()) {
