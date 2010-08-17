@@ -2793,7 +2793,7 @@
     <path refid="common.classpath" />
   </path>
   <target name="compile.all" depends="compile.cycle.collections_trove.runtime_tjc,compile.cycle.jetbrains.mps.analyzers_tjc,compile.cycle.jetbrains.mps.analyzers.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.builders_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc,compile.cycle.jetbrains.mps.baseLanguage.unitTest.lib_tjc,compile.cycle.jetbrains.mps.bash_tjc,compile.cycle.jetbrains.mps.build.custommps_tjc,compile.cycle.jetbrains.mps.build.dependency_tjc,compile.cycle.jetbrains.mps.build.distrib_tjc,compile.cycle.jetbrains.mps.build.generictasks_tjc,compile.cycle.jetbrains.mps.editor.runtime_tjc,compile.cycle.jetbrains.mps.gtext_tjc,compile.cycle.jetbrains.mps.gtext.runtime_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage.runtime_tjc,compile.cycle.jetbrains.mps.lang.test.runtime_tjc,compile.cycle.jetbrains.mps.quickQueryLanguage_tjc,compile.cycle.jetbrains.mps.ui_tjc,compile.cycle.jetbrains.mps.ui.gwt_tjc,compile.cycle.jetbrains.mps.ui.swing_tjc,compile.cycle.jetbrains.mps.ui.swing.runtime_tjc,compile.cycle.jetbrains.mps.xml_tjc,compile.cycle.jetbrains.mps.xml.deprecated_tjc,compile.cycle.jetbrains.mps.xmlQuery_tjc,compile.cycle.jetbrains.mps.xmlUnitTest_tjc,compile.cycle.jetbrains.mps.ypath_tjc,compile.cycle.ypath.main_tjc,compile.cycle.ypath.test_tjc" />
-  <target name="compile.cycle.collections_trove.runtime_tjc" depends="compile.cycle.jetbrains.mps.baseLanguage.unitTest.lib_tjc">
+  <target name="compile.cycle.collections_trove.runtime_tjc" depends="compile.cycle.jetbrains.mps.ide.uiLanguage.runtime_tjc">
     <property name="classes.dump" value="${collections_trove.runtime.classes}.tmp" />
     <mkdir dir="core/baseLanguage/collections/languages/trove/runtime/source_gen" />
     <mkdir dir="core/baseLanguage/collections/languages/trove/runtime/test_gen" />
@@ -2933,7 +2933,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.analyzers_tjc" depends="compile.cycle.jetbrains.mps.editor.runtime_tjc">
+  <target name="compile.cycle.jetbrains.mps.analyzers_tjc" depends="compile.cycle.jetbrains.mps.analyzers.runtime_tjc">
     <property name="classes.dump" value="${jetbrains.mps.analyzers.classes}.tmp" />
     <mkdir dir="platform/analyzers/languages/analyzers/source_gen" />
     <mkdir dir="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/source_gen" />
@@ -2957,7 +2957,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.analyzers.runtime_tjc" depends="compile.cycle.jetbrains.mps.ide.uiLanguage.runtime_tjc">
+  <target name="compile.cycle.jetbrains.mps.analyzers.runtime_tjc" depends="compile.cycle.collections_trove.runtime_tjc">
     <property name="classes.dump" value="${jetbrains.mps.analyzers.runtime.classes}.tmp" />
     <mkdir dir="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/source_gen" />
     <mkdir dir="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/test_gen" />
@@ -2989,7 +2989,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.baseLanguage.dates.runtime_tjc" depends="compile.cycle.jetbrains.mps.analyzers.runtime_tjc">
+  <target name="compile.cycle.jetbrains.mps.baseLanguage.dates.runtime_tjc">
     <property name="classes.dump" value="${jetbrains.mps.baseLanguage.dates.runtime.classes}.tmp" />
     <mkdir dir="core/baseLanguage/dates/runtime/source_gen" />
     <mkdir dir="core/baseLanguage/dates/runtime/src" />
@@ -3008,7 +3008,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc" depends="compile.cycle.jetbrains.mps.build.dependency_tjc">
+  <target name="compile.cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc" depends="compile.cycle.jetbrains.mps.baseLanguage.builders_tjc">
     <property name="classes.dump" value="${jetbrains.mps.baseLanguage.extensionMethods.classes}.tmp" />
     <mkdir dir="platform/extensionMethod/source_gen" />
     <mkdir dir="${classes.dump}" />
@@ -3023,7 +3023,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc" depends="compile.cycle.jetbrains.mps.ui.gwt_tjc">
+  <target name="compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc" depends="compile.cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc">
     <property name="classes.dump" value="${jetbrains.mps.baseLanguage.regexp.examples.classes}.tmp" />
     <mkdir dir="platform/regexp/solutions/jetbrains.mps.regexp.examples/source_gen" />
     <mkdir dir="platform/regexp/solutions/jetbrains.mps.regexp.examples/test_gen" />
@@ -3057,7 +3057,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.bash_tjc" depends="compile.cycle.jetbrains.mps.ui_tjc">
+  <target name="compile.cycle.jetbrains.mps.bash_tjc" depends="compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc">
     <property name="classes.dump" value="${jetbrains.mps.bash.classes}.tmp" />
     <mkdir dir="platform/bash/languages/bash/source_gen" />
     <mkdir dir="${classes.dump}" />
@@ -3072,7 +3072,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.build.custommps_tjc" depends="compile.cycle.jetbrains.mps.xmlUnitTest_tjc">
+  <target name="compile.cycle.jetbrains.mps.build.custommps_tjc" depends="compile.cycle.jetbrains.mps.build.distrib_tjc">
     <property name="classes.dump" value="${jetbrains.mps.build.custommps.classes}.tmp" />
     <mkdir dir="platform/buildlanguage/languages/custommps/source_gen" />
     <mkdir dir="platform/buildlanguage/languages/custommpsInternal/source_gen" />
@@ -3116,7 +3116,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.build.distrib_tjc" depends="compile.cycle.jetbrains.mps.ui.swing.runtime_tjc">
+  <target name="compile.cycle.jetbrains.mps.build.distrib_tjc" depends="compile.cycle.jetbrains.mps.gtext_tjc">
     <property name="classes.dump" value="${jetbrains.mps.build.distrib.classes}.tmp" />
     <mkdir dir="platform/buildlanguage/languages/distrib/source_gen" />
     <mkdir dir="platform/buildlanguage/languages/distrib/source_gen" />
@@ -3162,7 +3162,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.editor.runtime_tjc" depends="compile.cycle.jetbrains.mps.quickQueryLanguage_tjc">
+  <target name="compile.cycle.jetbrains.mps.editor.runtime_tjc" depends="compile.cycle.jetbrains.mps.build.custommps_tjc">
     <property name="classes.dump" value="${jetbrains.mps.editor.runtime.classes}.tmp" />
     <mkdir dir="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/source_gen" />
     <mkdir dir="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/test_gen" />
@@ -3194,7 +3194,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.gtext.runtime_tjc" depends="compile.cycle.collections_trove.runtime_tjc">
+  <target name="compile.cycle.jetbrains.mps.gtext.runtime_tjc" depends="compile.cycle.jetbrains.mps.build.dependency_tjc">
     <property name="classes.dump" value="${jetbrains.mps.gtext.runtime.classes}.tmp" />
     <mkdir dir="platform/gtext/runtime/source" />
     <mkdir dir="platform/gtext/runtime/source_gen" />
@@ -3213,7 +3213,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.ide.uiLanguage_tjc" depends="compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc">
+  <target name="compile.cycle.jetbrains.mps.ide.uiLanguage_tjc" depends="compile.cycle.jetbrains.mps.editor.runtime_tjc">
     <property name="classes.dump" value="${jetbrains.mps.ide.uiLanguage.classes}.tmp" />
     <mkdir dir="workbench/ideUiLanguage/source_gen" />
     <mkdir dir="${classes.dump}" />
@@ -3228,7 +3228,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.ide.uiLanguage.runtime_tjc">
+  <target name="compile.cycle.jetbrains.mps.ide.uiLanguage.runtime_tjc" depends="compile.cycle.jetbrains.mps.baseLanguage.unitTest.lib_tjc">
     <property name="classes.dump" value="${jetbrains.mps.ide.uiLanguage.runtime.classes}.tmp" />
     <mkdir dir="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/source_gen" />
     <mkdir dir="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/test_gen" />
@@ -3245,7 +3245,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.lang.test.runtime_tjc" depends="compile.cycle.jetbrains.mps.build.distrib_tjc">
+  <target name="compile.cycle.jetbrains.mps.lang.test.runtime_tjc" depends="compile.cycle.jetbrains.mps.ide.uiLanguage_tjc">
     <property name="classes.dump" value="${jetbrains.mps.lang.test.runtime.classes}.tmp" />
     <mkdir dir="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/source_gen" />
     <mkdir dir="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/test_gen" />
@@ -3262,7 +3262,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.quickQueryLanguage_tjc" depends="compile.cycle.jetbrains.mps.xml_tjc">
+  <target name="compile.cycle.jetbrains.mps.quickQueryLanguage_tjc" depends="compile.cycle.jetbrains.mps.lang.test.runtime_tjc">
     <property name="classes.dump" value="${jetbrains.mps.quickQueryLanguage.classes}.tmp" />
     <mkdir dir="platform/quickQueryLanguage/source_gen" />
     <mkdir dir="${classes.dump}" />
@@ -3277,7 +3277,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.ui_tjc" depends="compile.cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc">
+  <target name="compile.cycle.jetbrains.mps.ui_tjc" depends="compile.cycle.jetbrains.mps.quickQueryLanguage_tjc">
     <property name="classes.dump" value="${jetbrains.mps.ui.classes}.tmp" />
     <mkdir dir="platform/ui/languages/ui/source_gen" />
     <mkdir dir="platform/ui/languages/internal/source_gen" />
@@ -3322,7 +3322,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.ui.gwt_tjc" depends="compile.cycle.jetbrains.mps.build.custommps_tjc">
+  <target name="compile.cycle.jetbrains.mps.ui.gwt_tjc" depends="compile.cycle.jetbrains.mps.ui.swing_tjc">
     <property name="classes.dump" value="${jetbrains.mps.ui.gwt.classes}.tmp" />
     <mkdir dir="platform/ui/languages/gwt/source_gen" />
     <mkdir dir="${classes.dump}" />
@@ -3337,7 +3337,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.ui.swing_tjc" depends="compile.cycle.ypath.test_tjc">
+  <target name="compile.cycle.jetbrains.mps.ui.swing_tjc" depends="compile.cycle.jetbrains.mps.ui.swing.runtime_tjc">
     <property name="classes.dump" value="${jetbrains.mps.ui.swing.classes}.tmp" />
     <mkdir dir="platform/ui/languages/swing/source_gen" />
     <mkdir dir="${classes.dump}" />
@@ -3352,7 +3352,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.ui.swing.runtime_tjc" depends="compile.cycle.jetbrains.mps.bash_tjc">
+  <target name="compile.cycle.jetbrains.mps.ui.swing.runtime_tjc" depends="compile.cycle.jetbrains.mps.ui_tjc">
     <property name="classes.dump" value="${jetbrains.mps.ui.swing.runtime.classes}.tmp" />
     <mkdir dir="platform/ui/languages/swing/runtime/source_gen" />
     <mkdir dir="platform/ui/languages/swing/runtime/test_gen" />
@@ -3369,7 +3369,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.xml_tjc" depends="compile.cycle.jetbrains.mps.gtext_tjc">
+  <target name="compile.cycle.jetbrains.mps.xml_tjc" depends="compile.cycle.jetbrains.mps.ui.gwt_tjc">
     <property name="classes.dump" value="${jetbrains.mps.xml.classes}.tmp" />
     <mkdir dir="platform/xml/xml/source_gen" />
     <mkdir dir="platform/xml/xmlInternal/source_gen" />
@@ -3398,7 +3398,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.xml.deprecated_tjc" depends="compile.cycle.jetbrains.mps.xmlQuery_tjc">
+  <target name="compile.cycle.jetbrains.mps.xml.deprecated_tjc" depends="compile.cycle.jetbrains.mps.bash_tjc">
     <property name="classes.dump" value="${jetbrains.mps.xml.deprecated.classes}.tmp" />
     <mkdir dir="platform/xmlDeprecated/source_gen" />
     <mkdir dir="${classes.dump}" />
@@ -3413,7 +3413,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.xmlQuery_tjc" depends="compile.cycle.jetbrains.mps.baseLanguage.builders_tjc">
+  <target name="compile.cycle.jetbrains.mps.xmlQuery_tjc" depends="compile.cycle.jetbrains.mps.xml_tjc">
     <property name="classes.dump" value="${jetbrains.mps.xmlQuery.classes}.tmp" />
     <mkdir dir="platform/xml/xmlQuery/source_gen" />
     <mkdir dir="${classes.dump}" />
@@ -3428,7 +3428,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.xmlUnitTest_tjc" depends="compile.cycle.jetbrains.mps.ui.swing_tjc">
+  <target name="compile.cycle.jetbrains.mps.xmlUnitTest_tjc" depends="compile.cycle.jetbrains.mps.xmlQuery_tjc">
     <property name="classes.dump" value="${jetbrains.mps.xmlUnitTest.classes}.tmp" />
     <mkdir dir="platform/xmlUnitTest/languages/xmlUnitTest/source_gen" />
     <mkdir dir="${classes.dump}" />
@@ -3443,7 +3443,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.ypath_tjc" depends="compile.cycle.jetbrains.mps.lang.test.runtime_tjc">
+  <target name="compile.cycle.jetbrains.mps.ypath_tjc" depends="compile.cycle.jetbrains.mps.xmlUnitTest_tjc">
     <property name="classes.dump" value="${jetbrains.mps.ypath.classes}.tmp" />
     <mkdir dir="platform/ypath/source" />
     <mkdir dir="platform/ypath/source_gen" />

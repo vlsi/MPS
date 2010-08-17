@@ -119,7 +119,7 @@ public class StronglyConnectedModules {
     }
 
     public int compareTo(IModuleDecorator<M> o) {
-      return this.hashCode() - o.hashCode();
+      return myModule.getModuleFqName().compareTo(o.getModule().getModuleFqName());
     }
 
     public String toString() {

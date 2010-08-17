@@ -336,7 +336,7 @@ public class GeneratorWorker extends MpsWorker {
     }
 
     public int compareTo(IModuleDecorator<IModule> o) {
-      return hashCode() - ((ModuleDecorator) o).hashCode();
+      return myModule.getModuleFqName().compareTo(o.getModule().getModuleFqName());
     }
   }
 }
