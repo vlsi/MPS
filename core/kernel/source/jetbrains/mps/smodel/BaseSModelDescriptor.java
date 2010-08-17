@@ -51,12 +51,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     }
   }
 
-
-  @Override
-  public SModelFqName getSModelFqName() {
-    return null;
-  }
-
   public SModel getSModel() {
     boolean fireInitialized;
     synchronized (myLoadingLock) {

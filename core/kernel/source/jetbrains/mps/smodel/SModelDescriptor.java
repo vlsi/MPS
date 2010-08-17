@@ -42,9 +42,6 @@ public interface SModelDescriptor {
 
   SModelReference getSModelReference();
 
-  //todo remove this method
-  SModelFqName getSModelFqName();
-
   String getLongName();
 
   String getStereotype();
