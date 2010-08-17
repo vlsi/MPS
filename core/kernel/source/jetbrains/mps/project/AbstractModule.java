@@ -162,7 +162,7 @@ public abstract class AbstractModule implements IModule {
 
   protected List<IModule> doGetDependOnModules() {
     List<IModule> res = new LinkedList();
-    res.addAll(ModuleUtil.getDependOnModules(getDependOn()));
+    res.addAll(ModuleUtil.depsToModules(getDependOn()));
     res.addAll(ModuleUtil.getLanguages(getUsedLanguagesReferences()));
     res.addAll(ModuleUtil.getUsedDevkits(getUsedDevkitReferences()));
     return res;

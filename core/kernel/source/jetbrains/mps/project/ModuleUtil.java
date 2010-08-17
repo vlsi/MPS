@@ -47,8 +47,7 @@ public class ModuleUtil {
     return result;
   }
 
-  //todo rename to modulesByDeps
-  public static List<IModule> getDependOnModules(List<Dependency> deps) {
+  public static List<IModule> depsToModules(List<Dependency> deps) {
     List<IModule> result = new ArrayList<IModule>();
     for (Dependency dep : deps) {
       IModule m = MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
@@ -65,6 +64,7 @@ public class ModuleUtil {
     return null;
   }
 
+  //todo check usages
   public static List<Language> getAllUsedLanguages(IModule m) {
     Set<Language> result = new LinkedHashSet<Language>();
     result.addAll(getLanguages(m.getUsedLanguagesReferences()));
@@ -80,7 +80,7 @@ public class ModuleUtil {
   //todo review
   public static Set<IModule> getAllDependOnModules(IModule m) {
     Set<IModule> result = new LinkedHashSet<IModule>();
-    result.addAll(getDependOnModules(m.getDependOn()));
+    result.addAll(depsToModules(m.getDependOn()));
     for (DevKit dk : getUsedDevkits(m.getUsedDevkitReferences())) {
       result.addAll(dk.getAllExportedSolutions());
     }

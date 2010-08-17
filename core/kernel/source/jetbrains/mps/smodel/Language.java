@@ -238,7 +238,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   public List<IModule> getRuntimeDependOnModules() {
-    return ModuleUtil.getDependOnModules(getRuntimeDependOn());
+    return ModuleUtil.depsToModules(getRuntimeDependOn());
   }
 
   protected ModuleDescriptor loadDescriptor() {

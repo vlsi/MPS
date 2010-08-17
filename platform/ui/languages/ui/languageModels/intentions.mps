@@ -504,14 +504,14 @@
               <link role="classifier" targetNodeId="7.~IModule" resolveInfo="IModule" />
             </node>
           </node>
-          <node role="iterable" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="2077411504100709402">
-            <link role="baseMethodDeclaration" targetNodeId="7.~ModuleUtil.getDependOnModules(java.util.List):java.util.List" resolveInfo="getDependOnModules" />
+          <node role="iterable" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="6279635646560168055">
+            <link role="baseMethodDeclaration" targetNodeId="7.~ModuleUtil.depsToModules(java.util.List):java.util.List" resolveInfo="depsToModules" />
             <link role="classConcept" targetNodeId="7.~ModuleUtil" resolveInfo="ModuleUtil" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2077411504100709403">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="2077411504100709404">
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6279635646560168056">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6279635646560168057">
                 <link role="variableDeclaration" targetNodeId="2077411504100695931" resolveInfo="module" />
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2077411504100709405">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6279635646560168058">
                 <link role="baseMethodDeclaration" targetNodeId="7.~IModule.getDependOn():java.util.List" resolveInfo="getDependOn" />
               </node>
             </node>
