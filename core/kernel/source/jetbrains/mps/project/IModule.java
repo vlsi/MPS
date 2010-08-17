@@ -59,8 +59,6 @@ public interface IModule extends ModelOwner {
 
   List<ModuleReference> getUsedDevkitReferences();
 
-  List<DevKit> getUsedDevkits();
-
   List<IModule> getExplicitlyDependOnModules();
 
   List<IModule> getDesignTimeDependOnModules();

@@ -23,7 +23,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ModuleUtil {
-  //getUsedLR
   public static List<Language> getLanguages(List<ModuleReference> refs) {
     List<Language> result = new ArrayList<Language>();
     for (ModuleReference ref : refs) {
@@ -31,6 +30,18 @@ public class ModuleUtil {
       if (l == null) continue;
       result.add(l);
     }
+    return result;
+  }
+
+  public static List<DevKit> getUsedDevkits(List<ModuleReference> refs) {
+    List<DevKit> result = new ArrayList<DevKit>();
+
+    for (ModuleReference ref : refs) {
+      DevKit dk = MPSModuleRepository.getInstance().getDevKit(ref);
+      if (dk == null) continue;
+      result.add(dk);
+    }
+
     return result;
   }
 }

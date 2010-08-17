@@ -208,7 +208,7 @@ public abstract class AbstractModule implements IModule {
   protected void addExplicitlyDependendOnModules(Set<IModule> result) {
     result.addAll(getDependOnModules());
     result.addAll(ModuleUtil.getLanguages(getUsedLanguagesReferences()));
-    result.addAll(getUsedDevkits());
+    result.addAll(ModuleUtil.getUsedDevkits(getUsedDevkitReferences()));
   }
 
   public List<IModule> getDesignTimeDependOnModules() {
@@ -218,7 +218,7 @@ public abstract class AbstractModule implements IModule {
   public List<IModule> getAllDependOnModules() {
     Set<IModule> result = new LinkedHashSet<IModule>();
     result.addAll(getDependOnModules());
-    for (DevKit dk : getUsedDevkits()) {
+    for (DevKit dk : ModuleUtil.getUsedDevkits(getUsedDevkitReferences())) {
       result.addAll(dk.getAllExportedSolutions());
     }
     return new ArrayList<IModule>(result);
@@ -232,11 +232,10 @@ public abstract class AbstractModule implements IModule {
     return new ArrayList<ModuleReference>(descriptor.getUsedLanguages());
   }
 
-
   public List<Language> getAllUsedLanguages() {
     Set<Language> result = new LinkedHashSet<Language>();
     result.addAll(ModuleUtil.getLanguages(getUsedLanguagesReferences()));
-    for (DevKit dk : getUsedDevkits()) {
+    for (DevKit dk : ModuleUtil.getUsedDevkits(getUsedDevkitReferences())) {
       result.addAll(dk.getAllExportedLanguages());
     }
     for (Language l : new HashSet<Language>(result)) {
@@ -253,21 +252,6 @@ public abstract class AbstractModule implements IModule {
     if (descriptor != null) {
       result.addAll(descriptor.getUsedDevkits());
     }
-    return result;
-  }
-
-  public List<DevKit> getUsedDevkits() {
-    List<DevKit> result = new ArrayList<DevKit>();
-
-    for (ModuleReference ref : getUsedDevkitReferences()) {
-      DevKit dk = MPSModuleRepository.getInstance().getDevKit(ref);
-      if (dk != null) {
-        result.add(dk);
-      } else {
-        LOG.error("Can't load devkit " + ref.getModuleFqName() + " from " + this);
-      }
-    }
-
     return result;
   }
 
