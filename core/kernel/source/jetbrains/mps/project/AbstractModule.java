@@ -117,7 +117,7 @@ public abstract class AbstractModule implements IModule {
     return myModuleReference.getModuleFqName();
   }
 
-  //----adding different deps
+//----adding different deps
 
   public void addDependency(@NotNull ModuleReference moduleRef, boolean reexport) {
     ModuleDescriptor descriptor = getModuleDescriptor();
@@ -188,18 +188,6 @@ public abstract class AbstractModule implements IModule {
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return new ArrayList<ModuleReference>();
     return new ArrayList<ModuleReference>(descriptor.getUsedLanguages());
-  }
-
-  public List<Language> getAllUsedLanguages() {
-    Set<Language> result = new LinkedHashSet<Language>();
-    result.addAll(ModuleUtil.getLanguages(getUsedLanguagesReferences()));
-    for (DevKit dk : ModuleUtil.getUsedDevkits(getUsedDevkitReferences())) {
-      result.addAll(dk.getAllExportedLanguages());
-    }
-    for (Language l : new HashSet<Language>(result)) {
-      result.addAll(l.getAllExtendedLanguages());
-    }
-    return new ArrayList<Language>(result);
   }
 
   public List<ModuleReference> getUsedDevkitReferences() {

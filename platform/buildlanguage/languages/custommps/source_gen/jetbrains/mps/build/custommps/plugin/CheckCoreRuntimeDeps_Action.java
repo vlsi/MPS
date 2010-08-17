@@ -19,6 +19,7 @@ import jetbrains.mps.build.packaging.behavior.Module_Behavior;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class CheckCoreRuntimeDeps_Action extends GeneratedAction {
@@ -85,7 +86,7 @@ public class CheckCoreRuntimeDeps_Action extends GeneratedAction {
         }
 
         // if we are here, this means this solution is a part of MPS core 
-        for (Language language : ListSequence.fromList(solution.getAllUsedLanguages())) {
+        for (Language language : ListSequence.fromList(ModuleUtil.getAllUsedLanguages(solution))) {
           for (IModule module : ListSequence.fromList(language.getRuntimeDependOnModules())) {
             // check that this module is in classpath on build startup 
             if (!(Sequence.fromIterable(coreModules).contains(module))) {

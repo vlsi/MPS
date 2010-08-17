@@ -21,6 +21,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -1003,10 +1004,9 @@ public class SModel implements Iterable<SNode> {
       }
       ModuleReference ref = lang.getModuleReference();
       if (!usedLanguages.contains(ref)) {
-
         if (module != null) {
-          if (respectModulesScopes && !module.getAllUsedLanguages().contains(lang)) {
-              module.addUsedLanguage(ref);
+          if (respectModulesScopes && !ModuleUtil.getAllUsedLanguages(module).contains(lang)) {
+            module.addUsedLanguage(ref);
           }
         }
 

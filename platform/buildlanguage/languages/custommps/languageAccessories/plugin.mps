@@ -3141,12 +3141,11 @@
                   </node>
                 </node>
               </node>
-              <node role="inputSequence:7" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7482942963842016962">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="7482942963842016963">
+              <node role="inputSequence:7" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8325114318987718994">
+                <link role="baseMethodDeclaration:3" targetNodeId="22.~ModuleUtil.getAllUsedLanguages(jetbrains.mps.project.IModule):java.util.List" resolveInfo="getAllUsedLanguages" />
+                <link role="classConcept:3" targetNodeId="22.~ModuleUtil" resolveInfo="ModuleUtil" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="8325114318987718995">
                   <link role="variable:7" targetNodeId="7482942963841969137" resolveInfo="solution" />
-                </node>
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7482942963842016964">
-                  <link role="baseMethodDeclaration:3" targetNodeId="22.~AbstractModule.getAllUsedLanguages():java.util.List" resolveInfo="getAllUsedLanguages" />
                 </node>
               </node>
             </node>

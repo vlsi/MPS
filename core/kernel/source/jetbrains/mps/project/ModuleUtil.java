@@ -20,8 +20,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class ModuleUtil {
   public static List<Language> getLanguages(List<ModuleReference> refs) {
@@ -61,5 +60,17 @@ public class ModuleUtil {
       if (path.equals(root.getPath())) return root;
     }
     return null;
+  }
+
+  public static List<Language> getAllUsedLanguages(IModule m) {
+    Set<Language> result = new LinkedHashSet<Language>();
+    result.addAll(getLanguages(m.getUsedLanguagesReferences()));
+    for (DevKit dk : getUsedDevkits(m.getUsedDevkitReferences())) {
+      result.addAll(dk.getAllExportedLanguages());
+    }
+    for (Language l : new HashSet<Language>(result)) {
+      result.addAll(l.getAllExtendedLanguages());
+    }
+    return new ArrayList<Language>(result);
   }
 }

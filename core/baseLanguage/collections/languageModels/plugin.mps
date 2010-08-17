@@ -551,12 +551,11 @@
                     <link role="classifier:3" targetNodeId="4.~Language" resolveInfo="Language" />
                   </node>
                 </node>
-                <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7602110602933787609">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7602110602933787608">
+                <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8325114318987675591">
+                  <link role="baseMethodDeclaration:3" targetNodeId="3.~ModuleUtil.getAllUsedLanguages(jetbrains.mps.project.IModule):java.util.List" resolveInfo="getAllUsedLanguages" />
+                  <link role="classConcept:3" targetNodeId="3.~ModuleUtil" resolveInfo="ModuleUtil" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8325114318987675592">
                     <link role="variableDeclaration:3" targetNodeId="7602110602933086886" resolveInfo="om" />
-                  </node>
-                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7602110602933787613">
-                    <link role="baseMethodDeclaration:3" targetNodeId="3.~IModule.getAllUsedLanguages():java.util.List" resolveInfo="getAllUsedLanguages" />
                   </node>
                 </node>
               </node>

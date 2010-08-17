@@ -84,7 +84,7 @@ public class ClasspathCollector {
         doCollect(dep, includeStubSolutions);
       }
 
-      for (Language l : current.getAllUsedLanguages()) {
+      for (Language l : ModuleUtil.getAllUsedLanguages(current)) {
         myStack.push(l);
         addPart(l.getLanguageRuntimeClasspath());
         for (IModule runtimeModule : l.getRuntimeDependOnModules()) {
