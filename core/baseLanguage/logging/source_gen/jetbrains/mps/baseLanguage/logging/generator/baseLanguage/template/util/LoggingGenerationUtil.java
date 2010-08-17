@@ -28,7 +28,7 @@ public class LoggingGenerationUtil {
   }
 
   public static boolean isDesignTimeModel(SModel sm) {
-    return Language.isLanguageModel(sm);
+    return Language.getLanguageFor(sm.getModelDescriptor()) != null;
   }
 
   public static class QuotationClass_gd2srw_a0a0a1a1a0 {

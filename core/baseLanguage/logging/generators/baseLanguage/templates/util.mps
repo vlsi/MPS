@@ -144,11 +144,21 @@
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1232620450178" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1232620450179">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1232620462439">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1232620635920">
-            <link role="baseMethodDeclaration:3" targetNodeId="23.~Language.isLanguageModel(jetbrains.mps.smodel.SModel):boolean" resolveInfo="isLanguageModel" />
-            <link role="classConcept:3" targetNodeId="23.~Language" resolveInfo="Language" />
-            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1232620635921">
-              <link role="variableDeclaration:3" targetNodeId="1232620459891" resolveInfo="sm" />
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="3546243053781791655">
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="3546243053781791658" />
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3546243053781790864">
+              <link role="baseMethodDeclaration:3" targetNodeId="23.~Language.getLanguageFor(jetbrains.mps.smodel.SModelDescriptor):jetbrains.mps.smodel.Language" resolveInfo="getLanguageFor" />
+              <link role="classConcept:3" targetNodeId="23.~Language" resolveInfo="Language" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3546243053781791648">
+                <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="3546243053781791652">
+                  <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3546243053781790865">
+                    <link role="variableDeclaration:3" targetNodeId="1232620459891" resolveInfo="sm" />
+                  </node>
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3546243053781791654">
+                  <link role="baseMethodDeclaration:3" targetNodeId="23.~SModel.getModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
+                </node>
+              </node>
             </node>
           </node>
         </node>

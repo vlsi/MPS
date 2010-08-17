@@ -56,7 +56,6 @@ import java.util.*;
 public class Language extends AbstractModule implements MPSModuleOwner {
   private static final Logger LOG = Logger.getLogger(Language.class);
 
-  private static final String LANGUAGE_ACCESSORIES = "languageAccessories";
   private static final String LANGUAGE_MODELS = "languageModels";
 
   private LanguageDescriptor myLanguageDescriptor;
@@ -549,12 +548,8 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   public boolean isAccessoryModel(SModelReference modelReference) {
-    Iterator<SModelReference> accessoryModels = getModuleDescriptor().getAccessoryModels().iterator();
-    while (accessoryModels.hasNext()) {
-      SModelReference model = accessoryModels.next();
-      if (ObjectUtils.equals(model, modelReference)) {
-        return true;
-      }
+    for (SModelReference model : getModuleDescriptor().getAccessoryModels()) {
+      if (ObjectUtils.equals(model, modelReference)) return true;
     }
     return false;
   }
@@ -676,14 +671,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       }
     }
     return false;
-  }
-
-  public static boolean isLanguageModel(SModelDescriptor sm) {
-    return getLanguageFor(sm) != null;
-  }
-
-  public static boolean isLanguageModel(SModel sm) {
-    return isLanguageModel(sm.getModelDescriptor());
   }
 
   public static Language getLanguageFor(SModelDescriptor sm) {
