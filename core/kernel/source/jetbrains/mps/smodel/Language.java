@@ -25,6 +25,9 @@ import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
+import jetbrains.mps.project.dependency.DependencyManager;
+import jetbrains.mps.project.dependency.LanguageDepsManager;
+import jetbrains.mps.project.dependency.ModuleDepsManager;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.*;
@@ -150,6 +153,10 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     }
   }
 
+  protected ModuleDepsManager createDepsManager() {
+    return new LanguageDepsManager(this);
+  }
+
   protected void reloadAfterDescriptorChange() {
     MPSModuleRepository.getInstance().unRegisterModules(this, new Condition<IModule>() {
       public boolean met(IModule m) {
@@ -165,13 +172,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     updatePackagedDescriptorClasspath();
     updateClassPath();
     revalidateGenerators();
-  }
-
-  protected List<IModule> doGetDependOnModules() {
-    List<IModule> res = super.doGetDependOnModules();
-    res.addAll(getExtendedLanguages());
-    res.addAll(getRuntimeDependOnModules());
-    return res;
   }
 
   IFile newDescriptorFileByNewName(String newNamespace) {

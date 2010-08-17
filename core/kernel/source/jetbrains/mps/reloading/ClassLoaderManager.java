@@ -178,7 +178,7 @@ public class ClassLoaderManager implements ApplicationComponent {
         assert b != null : "There is no budle for module " + m.getModuleFqName();
         b.clearDependencies();
 
-        for (IModule dep : ModuleUtil.getDesignTimeDeps(m)) {
+        for (IModule dep : m.getDependenciesManager().getDesignTimeDeps()) {
           b.addDependency(dep.getModuleReference());
         }
       }

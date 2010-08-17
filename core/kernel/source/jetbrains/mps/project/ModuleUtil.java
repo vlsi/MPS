@@ -61,35 +61,4 @@ public class ModuleUtil {
     }
     return null;
   }
-
-  public static List<Language> getAllUsedLanguages(IModule m) {
-    Set<Language> result = new LinkedHashSet<Language>();
-    result.addAll(refsToLanguages(m.getUsedLanguagesReferences()));
-    for (DevKit dk : refsToDevkits(m.getUsedDevkitReferences())) {
-      result.addAll(dk.getAllExportedLanguages());
-    }
-    for (Language l : new HashSet<Language>(result)) {
-      result.addAll(l.getAllExtendedLanguages());
-    }
-    return new ArrayList<Language>(result);
-  }
-
-  //todo review
-  public static Set<IModule> getAllDependOnModules(IModule m) {
-    Set<IModule> result = new LinkedHashSet<IModule>();
-    result.addAll(depsToModules(m.getDependOn()));
-    for (DevKit dk : refsToDevkits(m.getUsedDevkitReferences())) {
-      result.addAll(dk.getAllExportedSolutions());
-    }
-    return result;
-  }
-
-  //todo review
-  public static Set<IModule> getDesignTimeDeps(IModule m) {
-    Set<IModule> res = ModuleUtil.getAllDependOnModules(m);
-    if (m instanceof Language) {
-      res.addAll(((Language) m).getExtendedLanguages());
-    }
-    return res;
-  }
 }

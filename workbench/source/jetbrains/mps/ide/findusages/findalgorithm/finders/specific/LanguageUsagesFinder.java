@@ -68,7 +68,7 @@ public class LanguageUsagesFinder implements IFinder {
     if (ModuleUtil.depsToModules(solution.getDependOn()).contains(searchedLanguage)) {
       searchResults.getSearchResults().add(new SearchResult<Solution>(solution, DEPENDENT_MODULES));
     }
-    if (ModuleUtil.getAllUsedLanguages(solution).contains(searchedLanguage)) {
+    if (solution.getDependenciesManager().getAllUsedLanguages().contains(searchedLanguage)) {
       searchResults.getSearchResults().add(new SearchResult<Solution>(solution, USED_BY));
       collectUsagesInModels(searchedLanguage, solution, searchResults);
     }

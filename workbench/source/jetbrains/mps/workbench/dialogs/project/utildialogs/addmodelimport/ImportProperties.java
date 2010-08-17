@@ -120,9 +120,9 @@ public class ImportProperties {
     SModelDescriptor model = SModelRepository.getInstance().getModelDescriptor(modelRef);
 
     Set<IModule> modules = new HashSet<IModule>(model.getModules());
-    modules.retainAll(ModuleUtil.getAllDependOnModules(mySourceModule));
+    modules.retainAll(mySourceModule.getDependenciesManager().getAllDependOnModules());
     modules.add(mySourceModule);
-    modules.removeAll(ModuleUtil.getAllDependOnModules(myTargetModule));
+    modules.removeAll(myTargetModule.getDependenciesManager().getAllDependOnModules());
     modules.remove(myTargetModule);
 
     List<ModuleReference> result = new ArrayList<ModuleReference>();
@@ -158,7 +158,7 @@ public class ImportProperties {
     Set<IModule> owners = model.getModules();
 
     if (owners.contains(myTargetModule)) return null;
-    Set<IModule> deps = ModuleUtil.getAllDependOnModules(myTargetModule);
+    Set<IModule> deps = myTargetModule.getDependenciesManager().getAllDependOnModules();
     for (IModule owner : owners) {
       if (deps.contains(owner)) return null;
     }
@@ -166,7 +166,7 @@ public class ImportProperties {
       return mySourceModule.getModuleReference();
     }
     for (IModule owner : owners) {
-      if (ModuleUtil.getAllDependOnModules(mySourceModule).contains(owner)) return owner.getModuleReference();
+      if (mySourceModule.getDependenciesManager().getAllDependOnModules().contains(owner)) return owner.getModuleReference();
     }
 
     return null;

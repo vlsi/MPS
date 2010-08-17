@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.project.dependency.DependencyManager;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -39,13 +40,13 @@ public interface IModule extends ModelOwner {
 
   List<SModelRoot> getSModelRoots();
 
+  DependencyManager getDependenciesManager();
+
   List<Dependency> getDependOn();
 
   List<ModuleReference> getUsedLanguagesReferences();
 
   List<ModuleReference> getUsedDevkitReferences();
-
-  List<IModule> getDependOnModules();
 
   void addDependency(ModuleReference moduleRef, boolean reexport);
 

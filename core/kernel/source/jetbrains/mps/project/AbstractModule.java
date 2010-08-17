@@ -19,6 +19,8 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.lang.generator.structure.Generator_Language;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.dependency.DependencyManager;
+import jetbrains.mps.project.dependency.ModuleDepsManager;
 import jetbrains.mps.project.listener.ModelCreationListener;
 import jetbrains.mps.project.persistence.ModuleReadException;
 import jetbrains.mps.project.structure.model.ModelRoot;
@@ -62,7 +64,7 @@ public abstract class AbstractModule implements IModule {
   private ModuleScope myScope = createScope();
 
   private CompositeClassPathItem myCachedClassPathItem;
-  private List<IModule> myCachedExplicitlyDependentModules;
+  private DependencyManager myDepsManager;
 
   //----model creation
 
@@ -146,26 +148,21 @@ public abstract class AbstractModule implements IModule {
 
   //----get deps
 
+  public final DependencyManager getDependenciesManager() {
+    if (myDepsManager==null){
+      myDepsManager = createDepsManager();
+    }
+    return myDepsManager;
+  }
+
+  protected ModuleDepsManager createDepsManager() {
+    return new ModuleDepsManager(this);
+  }
+
   public List<Dependency> getDependOn() {
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return new ArrayList<Dependency>();
     return new ArrayList<Dependency>(descriptor.getDependencies());
-  }
-
-  public final List<IModule> getDependOnModules() {
-    if (myCachedExplicitlyDependentModules == null) {
-      myCachedExplicitlyDependentModules = doGetDependOnModules();
-    }
-
-    return Collections.unmodifiableList(myCachedExplicitlyDependentModules);
-  }
-
-  protected List<IModule> doGetDependOnModules() {
-    List<IModule> res = new LinkedList();
-    res.addAll(ModuleUtil.depsToModules(getDependOn()));
-    res.addAll(ModuleUtil.refsToLanguages(getUsedLanguagesReferences()));
-    res.addAll(ModuleUtil.refsToDevkits(getUsedDevkitReferences()));
-    return res;
   }
 
   //----languages & devkits
@@ -594,7 +591,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   protected void invalidateDependencies() {
-    myCachedExplicitlyDependentModules = null;
+    myDepsManager = null;
   }
 
   protected ModuleDescriptor loadDescriptor() {

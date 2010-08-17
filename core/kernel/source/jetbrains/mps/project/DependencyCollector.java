@@ -53,7 +53,7 @@ public class DependencyCollector<T extends IModule> {
   }
 
   private void doCollect(IModule current) {
-    for (IModule module : current.getDependOnModules()) {
+    for (IModule module : current.getDependenciesManager().getDependOnModules()) {
       if (myResult.add(module)) {
         doCollect(module);
       }
