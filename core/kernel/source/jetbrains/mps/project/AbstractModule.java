@@ -154,22 +154,22 @@ public abstract class AbstractModule implements IModule {
 
   public final List<IModule> getExplicitlyDependOnModules() {
     if (myCachedExplicitlyDependentModules == null) {
-      Set<IModule> res = new LinkedHashSet<IModule>();
-      addExplicitlyDependendOnModules(res);
-      myCachedExplicitlyDependentModules = new ArrayList<IModule>(res);
+      myCachedExplicitlyDependentModules = getExplicitlyDependendOnModules();
     }
 
     return Collections.unmodifiableList(myCachedExplicitlyDependentModules);
   }
 
-  protected void addExplicitlyDependendOnModules(Set<IModule> result) {
-    result.addAll(ModuleUtil.getDependOnModules(getDependOn()));
-    result.addAll(ModuleUtil.getLanguages(getUsedLanguagesReferences()));
-    result.addAll(ModuleUtil.getUsedDevkits(getUsedDevkitReferences()));
+  protected List<IModule> getExplicitlyDependendOnModules() {
+    List<IModule> res = new LinkedList();
+    res.addAll(ModuleUtil.getDependOnModules(getDependOn()));
+    res.addAll(ModuleUtil.getLanguages(getUsedLanguagesReferences()));
+    res.addAll(ModuleUtil.getUsedDevkits(getUsedDevkitReferences()));
+    return res;
   }
 
   public Set<IModule> getDesignTimeDependOnModules() {
-    return new HashSet<IModule>(ModuleUtil.getAllDependOnModules(this));
+    return ModuleUtil.getAllDependOnModules(this);
   }
 
   //----languages & devkits

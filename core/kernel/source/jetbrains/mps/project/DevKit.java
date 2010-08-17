@@ -213,12 +213,12 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
     return result;
   }
 
-  @Override
-  protected void addExplicitlyDependendOnModules(Set<IModule> result) {
-    super.addExplicitlyDependendOnModules(result);
-    result.addAll(getExtendedDevKits());
-    result.addAll(getExportedLanguages());
-    result.addAll(getExportedSolutions());
+  protected List<IModule> getExplicitlyDependendOnModules() {
+    List<IModule> res = super.getExplicitlyDependendOnModules();
+    res.addAll(getExtendedDevKits());
+    res.addAll(getExportedLanguages());
+    res.addAll(getExportedSolutions());
+    return res;
   }
 
   public void save() {

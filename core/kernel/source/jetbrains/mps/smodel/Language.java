@@ -167,11 +167,11 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     revalidateGenerators();
   }
 
-  @Override
-  protected void addExplicitlyDependendOnModules(Set<IModule> result) {
-    super.addExplicitlyDependendOnModules(result);
-    result.addAll(getExtendedLanguages());
-    result.addAll(getRuntimeDependOnModules());
+  protected List<IModule> getExplicitlyDependendOnModules() {
+    List<IModule> res = super.getExplicitlyDependendOnModules();
+    res.addAll(getExtendedLanguages());
+    res.addAll(getRuntimeDependOnModules());
+    return res;
   }
 
   IFile newDescriptorFileByNewName(String newNamespace) {

@@ -74,6 +74,8 @@ public class ModuleUtil {
     return new ArrayList<Language>(result);
   }
 
+
+  //todo review
   public static Set<IModule> getAllDependOnModules(IModule m) {
     Set<IModule> result = new LinkedHashSet<IModule>();
     result.addAll(getDependOnModules(m.getDependOn()));
