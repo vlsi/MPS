@@ -191,15 +191,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   public List<Language> getExtendedLanguages() {
-    List<Language> result = new ArrayList<Language>();
-    for (jetbrains.mps.project.structure.modules.ModuleReference ref : getExtendedLanguageRefs()) {
-      Language language = GlobalScope.getInstance().getLanguage(ref);
-      if (language != null) {
-        result.add(language);
-      } else {
-        LOG.error("Can't find language " + ref.getModuleFqName() + " which is referenced in " + this);
-      }
-    }
+    List<Language> result = ModuleUtil.refsToLanguages(getExtendedLanguageRefs());
 
     if (!result.contains(Core_Language.get())) {
       result.add(Core_Language.get());
@@ -637,10 +629,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return result;
   }
 
-  public static Language getLanguageForLanguageAspect(SModelDescriptor modelDescriptor) {
-    return getLanguageFor(modelDescriptor);
-  }
-
   public LanguageAspect getAspectForModel(@NotNull SModelDescriptor sm) {
     for (LanguageAspect la : LanguageAspect.values()) {
       if (la.get(this) == sm) {
@@ -648,6 +636,10 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       }
     }
     return null;
+  }
+
+  public static Language getLanguageForLanguageAspect(SModelDescriptor modelDescriptor) {
+    return getLanguageFor(modelDescriptor);
   }
 
   public static LanguageAspect getModelAspect(SModelDescriptor sm) {
@@ -782,8 +774,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   public boolean isGenerateAdapters() {
     return !myLanguageDescriptor.isDoNotGenerateAdapters();
   }
-
-  //-----------stubs--------------
 
   protected List<StubModelsEntry> getStubModelEntriesToIncludeOrExclude() {
     return CollectionUtil.union(super.getStubModelEntriesToIncludeOrExclude(), getRuntimeModelsEntries());
