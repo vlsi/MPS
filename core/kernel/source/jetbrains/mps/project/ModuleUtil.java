@@ -21,7 +21,6 @@ import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.util.annotation.Hack;
 
 import java.util.*;
 
@@ -33,6 +32,9 @@ public class ModuleUtil {
       if (l == null) continue;
       result.add(l);
     }
+
+    result.add(BaseLanguage_Language.get());
+    result.add(Collections_Language.get());
 
     return result;
   }
