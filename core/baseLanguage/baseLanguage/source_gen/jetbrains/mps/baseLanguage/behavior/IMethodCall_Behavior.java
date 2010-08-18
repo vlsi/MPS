@@ -202,7 +202,6 @@ public class IMethodCall_Behavior {
     }
 
     public void performActions(Object o) {
-
     }
   }
 

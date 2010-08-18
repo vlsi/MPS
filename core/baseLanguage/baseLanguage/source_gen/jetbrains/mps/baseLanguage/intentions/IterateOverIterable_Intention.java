@@ -128,7 +128,6 @@ public class IterateOverIterable_Intention extends BaseIntention implements Inte
     }
 
     public void performActions(Object o) {
-
     }
   }
 
@@ -184,7 +183,6 @@ public class IterateOverIterable_Intention extends BaseIntention implements Inte
     }
 
     public void performActions(Object o) {
-
     }
   }
 }

@@ -16,10 +16,6 @@
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Annotation" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.ClassConcept" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.EnumClass" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Interface" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
@@ -37,9 +33,9 @@
     <classNode dependClassName="jetbrains.mps.stubs.BaseStubModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.stubs.StubLocation" />
     <classNode dependClassName="jetbrains.mps.stubs.javastub.ASMModelLoader" />
-    <classNode dependClassName="jetbrains.mps.stubs.javastub.classpath.ClassifierKind" />
     <classNode dependClassName="jetbrains.mps.stubs.javastub.classpath.StubHelper" />
     <classNode dependClassName="jetbrains.mps.workbench.actions.goTo.index.SNodeDescriptor" />
+    <classNode dependClassName="jetbrains.mps.workbench.actions.goTo.index.StubSNodeDescriptor" />
     <classNode extendsClassName="jetbrains.mps.stubs.BaseStubModelRootManager" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.stubs.MPS_StubDescriptor" file="MPS_StubDescriptor.java">

@@ -136,7 +136,6 @@ public class TestCoercion_Keymap extends EditorCellKeyMap {
       }
 
       public void performActions(Object o) {
-
       }
     }
 
@@ -174,7 +173,6 @@ public class TestCoercion_Keymap extends EditorCellKeyMap {
       }
 
       public void performActions(Object o) {
-
       }
     }
   }

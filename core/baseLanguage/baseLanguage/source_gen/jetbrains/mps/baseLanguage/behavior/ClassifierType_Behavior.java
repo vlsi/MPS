@@ -251,7 +251,6 @@ public class ClassifierType_Behavior {
     }
 
     public void performActions(Object o) {
-
     }
   }
 
@@ -313,7 +312,6 @@ public class ClassifierType_Behavior {
     }
 
     public void performActions(Object o) {
-
     }
   }
 

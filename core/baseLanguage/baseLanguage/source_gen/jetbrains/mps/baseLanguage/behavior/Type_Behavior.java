@@ -300,7 +300,6 @@ public class Type_Behavior {
     }
 
     public void performActions(Object o) {
-
     }
   }
 }
