@@ -210,7 +210,6 @@ public class PatternTest_v1 extends BaseTransformationTest {
       }
 
       public void performActions(Object o) {
-
       }
     }
 

@@ -23,14 +23,14 @@ import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 @MPSLaunch
-public class PatternTest_v4 extends BaseTransformationTest {
-  public PatternTest_v4() {
+public class PatternTest_ListPattern extends BaseTransformationTest {
+  public PatternTest_ListPattern() {
   }
 
   @Test
   public void testMethod() throws Throwable {
     this.initTest("${mps_home}/core/languageDesign/pattern/pattern.mpr", "r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)");
-    this.runTest("jetbrains.mps.lang.pattern.test.PatternTest_v4$TestBody", "testv4", true);
+    this.runTest("jetbrains.mps.lang.pattern.test.PatternTest_ListPattern$TestBody", "testListPattern", true);
   }
 
   @MPSLaunch
@@ -38,14 +38,14 @@ public class PatternTest_v4 extends BaseTransformationTest {
     public TestBody() {
     }
 
-    public void testv4() {
+    public void testListPattern() {
       assertTrue(match());
 
     }
 
     public boolean match() {
-      SNode nodeToMatch = new PatternTest_v4.TestBody.QuotationClass_8lasd_a0a0a1a_0().createNode();
-      GeneratedMatchingPattern pattern = new PatternTest_v4.TestBody.Pattern_8lasd_a0a1a1a_0();
+      SNode nodeToMatch = new PatternTest_ListPattern.TestBody.QuotationClass_akkoq2_a0a0a1a().createNode();
+      GeneratedMatchingPattern pattern = new PatternTest_ListPattern.TestBody.Pattern_akkoq2_a0a1a1a();
       boolean matchNeeded = true;
       boolean matches = pattern.match(nodeToMatch);
       if (matchNeeded != matches) {
@@ -57,16 +57,16 @@ public class PatternTest_v4 extends BaseTransformationTest {
       {
         List<SNode> list = (List<SNode>) pattern.getFieldValue("PatternVar_list");
         int i = 0;
-        Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), list.get(i)), ListSequence.fromListAndArray(new ArrayList<SNode>(), new PatternTest_v4.TestBody.QuotationClass_8lasd_a1b0a0c0g0b0().createNode())));
+        Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), list.get(i)), ListSequence.fromListAndArray(new ArrayList<SNode>(), new PatternTest_ListPattern.TestBody.QuotationClass_akkoq2_a1b0a0c0g0b0().createNode())));
         i++;
-        Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), list.get(i)), ListSequence.fromListAndArray(new ArrayList<SNode>(), new PatternTest_v4.TestBody.QuotationClass_8lasd_a1b0a0d0g0b0().createNode())));
+        Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), list.get(i)), ListSequence.fromListAndArray(new ArrayList<SNode>(), new PatternTest_ListPattern.TestBody.QuotationClass_akkoq2_a1b0a0d0g0b0().createNode())));
         i++;
       }
       return true;
     }
 
-    public static class QuotationClass_8lasd_a0a0a1a_0 {
-      public QuotationClass_8lasd_a0a0a1a_0() {
+    public static class QuotationClass_akkoq2_a0a0a1a {
+      public QuotationClass_akkoq2_a0a0a1a() {
       }
 
       public SNode createNode() {
@@ -111,42 +111,42 @@ public class PatternTest_v4 extends BaseTransformationTest {
       }
     }
 
-    public static class Pattern_8lasd_a0a1a1a_0 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public static class Pattern_akkoq2_a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
       /*package*/ List<SNode> PatternVar_list;
       /*package*/ SNode PatternVar_ignore;
       /*package*/ SNode PatternVar_field;
       /*package*/ SNode PatternVar_className;
       /*package*/ SNode PatternVar_method;
 
-      public Pattern_8lasd_a0a1a1a_0() {
+      public Pattern_akkoq2_a0a1a1a() {
       }
 
       public boolean match(SNode nodeToMatch) {
         {
-          SNode nodeToMatch_1fj_a0;
-          nodeToMatch_1fj_a0 = nodeToMatch;
-          if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_1fj_a0.getConceptFqName()))) {
+          SNode nodeToMatch_9twfax_a0;
+          nodeToMatch_9twfax_a0 = nodeToMatch;
+          if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_9twfax_a0.getConceptFqName()))) {
             return false;
           }
           {
-            String childRole_1fj_ = "operation";
-            if (nodeToMatch_1fj_a0.getChildCount(childRole_1fj_) != 1) {
+            String childRole_9twfax_ = "operation";
+            if (nodeToMatch_9twfax_a0.getChildCount(childRole_9twfax_) != 1) {
               return false;
             }
             {
-              SNode childVar_1fj_a0a = nodeToMatch_1fj_a0.getChildren(childRole_1fj_).get(0);
+              SNode childVar_9twfax_a0a = nodeToMatch_9twfax_a0.getChildren(childRole_9twfax_).get(0);
               {
-                SNode nodeToMatch_1fj_a0a;
-                nodeToMatch_1fj_a0a = childVar_1fj_a0a;
-                if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_1fj_a0a.getConceptFqName()))) {
+                SNode nodeToMatch_9twfax_a0a;
+                nodeToMatch_9twfax_a0a = childVar_9twfax_a0a;
+                if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_9twfax_a0a.getConceptFqName()))) {
                   return false;
                 }
-                this.PatternVar_method = nodeToMatch_1fj_a0a.getReferent("baseMethodDeclaration");
+                this.PatternVar_method = nodeToMatch_9twfax_a0a.getReferent("baseMethodDeclaration");
                 {
-                  String childRole_1fj__0 = "actualArgument";
+                  String childRole_9twfax__0 = "actualArgument";
                   this.PatternVar_list = ListSequence.fromList(new ArrayList<SNode>());
                   this.PatternVar_ignore = null;
-                  for (SNode childVar : nodeToMatch_1fj_a0a.getChildren(childRole_1fj__0)) {
+                  for (SNode childVar : nodeToMatch_9twfax_a0a.getChildren(childRole_9twfax__0)) {
                     this.PatternVar_ignore = childVar;
                     ListSequence.fromList(this.PatternVar_list).addElement(childVar);
                   }
@@ -155,20 +155,20 @@ public class PatternTest_v4 extends BaseTransformationTest {
             }
           }
           {
-            String childRole_1fj__1 = "operand";
-            if (nodeToMatch_1fj_a0.getChildCount(childRole_1fj__1) != 1) {
+            String childRole_9twfax__1 = "operand";
+            if (nodeToMatch_9twfax_a0.getChildCount(childRole_9twfax__1) != 1) {
               return false;
             }
             {
-              SNode childVar_1fj_a0a_0 = nodeToMatch_1fj_a0.getChildren(childRole_1fj__1).get(0);
+              SNode childVar_9twfax_a0a_0 = nodeToMatch_9twfax_a0.getChildren(childRole_9twfax__1).get(0);
               {
-                SNode nodeToMatch_1fj_a0a_0;
-                nodeToMatch_1fj_a0a_0 = childVar_1fj_a0a_0;
-                if (!("jetbrains.mps.baseLanguage.structure.StaticFieldReference".equals(nodeToMatch_1fj_a0a_0.getConceptFqName()))) {
+                SNode nodeToMatch_9twfax_a0a_0;
+                nodeToMatch_9twfax_a0a_0 = childVar_9twfax_a0a_0;
+                if (!("jetbrains.mps.baseLanguage.structure.StaticFieldReference".equals(nodeToMatch_9twfax_a0a_0.getConceptFqName()))) {
                   return false;
                 }
-                this.PatternVar_field = nodeToMatch_1fj_a0a_0.getReferent("variableDeclaration");
-                this.PatternVar_className = nodeToMatch_1fj_a0a_0.getReferent("classifier");
+                this.PatternVar_field = nodeToMatch_9twfax_a0a_0.getReferent("variableDeclaration");
+                this.PatternVar_className = nodeToMatch_9twfax_a0a_0.getReferent("classifier");
               }
             }
           }
@@ -210,12 +210,11 @@ public class PatternTest_v4 extends BaseTransformationTest {
       }
 
       public void performActions(Object o) {
-
       }
     }
 
-    public static class QuotationClass_8lasd_a1b0a0c0g0b0 {
-      public QuotationClass_8lasd_a1b0a0c0g0b0() {
+    public static class QuotationClass_akkoq2_a1b0a0c0g0b0 {
+      public QuotationClass_akkoq2_a1b0a0c0g0b0() {
       }
 
       public SNode createNode() {
@@ -232,8 +231,8 @@ public class PatternTest_v4 extends BaseTransformationTest {
       }
     }
 
-    public static class QuotationClass_8lasd_a1b0a0d0g0b0 {
-      public QuotationClass_8lasd_a1b0a0d0g0b0() {
+    public static class QuotationClass_akkoq2_a1b0a0d0g0b0 {
+      public QuotationClass_akkoq2_a1b0a0d0g0b0() {
       }
 
       public SNode createNode() {

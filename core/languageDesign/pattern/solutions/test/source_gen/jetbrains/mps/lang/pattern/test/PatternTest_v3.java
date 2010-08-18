@@ -191,7 +191,6 @@ public class PatternTest_v3 extends BaseTransformationTest {
       }
 
       public void performActions(Object o) {
-
       }
     }
 
