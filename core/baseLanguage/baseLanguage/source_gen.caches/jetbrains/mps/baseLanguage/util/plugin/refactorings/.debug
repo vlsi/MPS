@@ -703,146 +703,146 @@
     <unitInfo nodeId="5142438244426402999" fileName="BasicMoveRefactoring.java" startLine="11" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.BasicMoveRefactoring" />
   </root>
   <root nodeId="5161277940733353446">
-    <nodeInfo nodeId="5161277940733353664" fileName="ChangeMethodSignatureDialog.java" startLine="35" startPosition="61" endLine="36" endPosition="25" />
-    <nodeInfo nodeId="5161277940733353667" fileName="ChangeMethodSignatureDialog.java" startLine="36" startPosition="25" endLine="37" endPosition="30" />
-    <nodeInfo nodeId="5161277940733353670" fileName="ChangeMethodSignatureDialog.java" startLine="37" startPosition="30" endLine="38" endPosition="55" />
-    <nodeInfo nodeId="5161277940733353677" fileName="ChangeMethodSignatureDialog.java" startLine="38" startPosition="55" endLine="39" endPosition="47" />
-    <nodeInfo nodeId="5161277940733353680" fileName="ChangeMethodSignatureDialog.java" startLine="39" startPosition="47" endLine="40" endPosition="36" />
-    <nodeInfo nodeId="5161277940733382733" fileName="ChangeMethodSignatureDialog.java" startLine="40" startPosition="36" endLine="41" endPosition="71" />
-    <nodeInfo nodeId="5161277940733353688" fileName="ChangeMethodSignatureDialog.java" startLine="43" startPosition="86" endLine="44" endPosition="70" />
-    <nodeInfo nodeId="5161277940733353693" fileName="ChangeMethodSignatureDialog.java" startLine="44" startPosition="70" endLine="45" endPosition="51" />
-    <nodeInfo nodeId="5161277940733353699" fileName="ChangeMethodSignatureDialog.java" startLine="45" startPosition="51" endLine="46" endPosition="47" />
-    <nodeInfo nodeId="5161277940733353705" fileName="ChangeMethodSignatureDialog.java" startLine="46" startPosition="47" endLine="47" endPosition="51" />
-    <nodeInfo nodeId="5161277940733353714" fileName="ChangeMethodSignatureDialog.java" startLine="47" startPosition="51" endLine="48" endPosition="30" />
-    <nodeInfo nodeId="5161277940733353720" fileName="ChangeMethodSignatureDialog.java" startLine="48" startPosition="30" endLine="49" endPosition="39" />
-    <nodeInfo nodeId="5161277940733353725" fileName="ChangeMethodSignatureDialog.java" startLine="49" startPosition="39" endLine="50" endPosition="44" />
-    <nodeInfo nodeId="5161277940733353732" fileName="ChangeMethodSignatureDialog.java" startLine="50" startPosition="44" endLine="51" endPosition="52" />
-    <nodeInfo nodeId="5161277940733353737" fileName="ChangeMethodSignatureDialog.java" startLine="51" startPosition="52" endLine="52" endPosition="37" />
-    <nodeInfo nodeId="5161277940733353743" fileName="ChangeMethodSignatureDialog.java" startLine="52" startPosition="37" endLine="53" endPosition="38" />
-    <nodeInfo nodeId="5161277940733353754" fileName="ChangeMethodSignatureDialog.java" startLine="53" startPosition="38" endLine="54" endPosition="16" />
-    <nodeInfo nodeId="5161277940733353760" fileName="ChangeMethodSignatureDialog.java" startLine="54" startPosition="16" endLine="55" endPosition="16" />
-    <nodeInfo nodeId="5161277940733353766" fileName="ChangeMethodSignatureDialog.java" startLine="55" startPosition="16" endLine="56" endPosition="18" />
-    <nodeInfo nodeId="5161277940733353772" fileName="ChangeMethodSignatureDialog.java" startLine="56" startPosition="18" endLine="57" endPosition="18" />
-    <nodeInfo nodeId="5161277940733353778" fileName="ChangeMethodSignatureDialog.java" startLine="57" startPosition="18" endLine="58" endPosition="54" />
-    <nodeInfo nodeId="5161277940733353801" fileName="ChangeMethodSignatureDialog.java" startLine="60" startPosition="49" endLine="61" endPosition="66" />
-    <nodeInfo nodeId="5161277940733353454" fileName="ChangeMethodSignatureDialog.java" startLine="68" startPosition="25" endLine="69" endPosition="105" />
-    <nodeInfo nodeId="5161277940733353468" fileName="ChangeMethodSignatureDialog.java" startLine="74" startPosition="46" endLine="75" endPosition="50" />
-    <nodeInfo nodeId="5161277940733353478" fileName="ChangeMethodSignatureDialog.java" startLine="77" startPosition="25" endLine="78" endPosition="101" />
-    <nodeInfo nodeId="5161277940733353486" fileName="ChangeMethodSignatureDialog.java" startLine="78" startPosition="101" endLine="79" endPosition="165" />
-    <nodeInfo nodeId="5161277940733353494" fileName="ChangeMethodSignatureDialog.java" startLine="79" startPosition="165" endLine="80" endPosition="214" />
-    <nodeInfo nodeId="5161277940733353510" fileName="ChangeMethodSignatureDialog.java" startLine="80" startPosition="214" endLine="81" endPosition="89" />
-    <nodeInfo nodeId="5161277940733353520" fileName="ChangeMethodSignatureDialog.java" startLine="82" startPosition="41" endLine="83" endPosition="97" />
-    <nodeInfo nodeId="8325114318987656411" fileName="ChangeMethodSignatureDialog.java" startLine="84" startPosition="9" endLine="85" endPosition="84" />
-    <nodeInfo nodeId="5161277940733353535" fileName="ChangeMethodSignatureDialog.java" startLine="86" startPosition="92" endLine="87" endPosition="74" />
-    <nodeInfo nodeId="5161277940733353560" fileName="ChangeMethodSignatureDialog.java" startLine="89" startPosition="146" endLine="90" endPosition="71" />
-    <nodeInfo nodeId="5161277940733353567" fileName="ChangeMethodSignatureDialog.java" startLine="93" startPosition="7" endLine="94" endPosition="58" />
-    <nodeInfo nodeId="5161277940733353574" fileName="ChangeMethodSignatureDialog.java" startLine="94" startPosition="58" endLine="95" endPosition="45" />
-    <nodeInfo nodeId="5161277940733353583" fileName="ChangeMethodSignatureDialog.java" startLine="95" startPosition="45" endLine="96" endPosition="17" />
-    <nodeInfo nodeId="5161277940733353589" fileName="ChangeMethodSignatureDialog.java" startLine="100" startPosition="22" endLine="101" endPosition="132" />
-    <nodeInfo nodeId="5161277940733382827" fileName="ChangeMethodSignatureDialog.java" startLine="101" startPosition="132" endLine="102" endPosition="71" />
-    <nodeInfo nodeId="5161277940733382921" fileName="ChangeMethodSignatureDialog.java" startLine="102" startPosition="71" endLine="103" endPosition="94" />
-    <nodeInfo nodeId="5161277940733431417" fileName="ChangeMethodSignatureDialog.java" startLine="104" startPosition="67" endLine="105" endPosition="120" />
-    <nodeInfo nodeId="5161277940733353615" fileName="ChangeMethodSignatureDialog.java" startLine="106" startPosition="5" endLine="107" endPosition="19" />
-    <nodeInfo nodeId="5161277940733353632" fileName="ChangeMethodSignatureDialog.java" startLine="111" startPosition="26" endLine="112" endPosition="19" />
-    <nodeInfo nodeId="5161277940733382739" fileName="ChangeMethodSignatureDialog.java" startLine="115" startPosition="70" endLine="116" endPosition="26" />
-    <nodeInfo nodeId="5161277940733353648" fileName="ChangeMethodSignatureDialog.java" startLine="119" startPosition="39" endLine="120" endPosition="24" />
-    <nodeInfo nodeId="5161277940733353656" fileName="ChangeMethodSignatureDialog.java" startLine="123" startPosition="82" endLine="124" endPosition="77" />
-    <nodeInfo nodeId="5161277940733353904" fileName="ChangeMethodSignatureDialog.java" startLine="127" startPosition="58" endLine="128" endPosition="67" />
-    <nodeInfo nodeId="5161277940733353907" fileName="ChangeMethodSignatureDialog.java" startLine="128" startPosition="67" endLine="129" endPosition="68" />
-    <nodeInfo nodeId="5161277940733353914" fileName="ChangeMethodSignatureDialog.java" startLine="131" startPosition="25" endLine="132" endPosition="187" />
-    <nodeInfo nodeId="5161277940733353923" fileName="ChangeMethodSignatureDialog.java" startLine="133" startPosition="39" endLine="134" endPosition="256" />
-    <nodeInfo nodeId="5161277940733353943" fileName="ChangeMethodSignatureDialog.java" startLine="134" startPosition="256" endLine="135" endPosition="85" />
-    <nodeInfo nodeId="5161277940733353952" fileName="ChangeMethodSignatureDialog.java" startLine="139" startPosition="35" endLine="140" endPosition="116" />
-    <nodeInfo nodeId="5161277940733353966" fileName="ChangeMethodSignatureDialog.java" startLine="141" startPosition="24" endLine="142" endPosition="46" />
-    <nodeInfo nodeId="5161277940733353518" fileName="ChangeMethodSignatureDialog.java" startLine="81" startPosition="89" endLine="84" endPosition="9" />
-    <nodeInfo nodeId="5161277940733353532" fileName="ChangeMethodSignatureDialog.java" startLine="85" startPosition="84" endLine="88" endPosition="9" />
-    <nodeInfo nodeId="5161277940733353549" fileName="ChangeMethodSignatureDialog.java" startLine="88" startPosition="9" endLine="91" endPosition="9" />
-    <nodeInfo nodeId="5161277940733431367" fileName="ChangeMethodSignatureDialog.java" startLine="103" startPosition="94" endLine="106" endPosition="5" />
-    <nodeInfo nodeId="5161277940733353964" fileName="ChangeMethodSignatureDialog.java" startLine="140" startPosition="116" endLine="143" endPosition="7" />
-    <nodeInfo nodeId="5161277940733353795" fileName="ChangeMethodSignatureDialog.java" startLine="59" startPosition="48" endLine="63" endPosition="0" />
-    <nodeInfo nodeId="5161277940733353452" fileName="ChangeMethodSignatureDialog.java" startLine="67" startPosition="57" endLine="71" endPosition="0" />
-    <nodeInfo nodeId="5161277940733353980" fileName="ChangeMethodSignatureDialog.java" startLine="114" startPosition="0" endLine="118" endPosition="0" />
-    <nodeInfo nodeId="5161277940733353645" fileName="ChangeMethodSignatureDialog.java" startLine="118" startPosition="0" endLine="122" endPosition="0" />
-    <nodeInfo nodeId="5161277940733353653" fileName="ChangeMethodSignatureDialog.java" startLine="122" startPosition="0" endLine="126" endPosition="0" />
-    <nodeInfo nodeId="5161277940733353921" fileName="ChangeMethodSignatureDialog.java" startLine="132" startPosition="187" endLine="136" endPosition="9" />
-    <nodeInfo nodeId="5161277940733353788" fileName="ChangeMethodSignatureDialog.java" startLine="58" startPosition="54" endLine="63" endPosition="7" />
-    <nodeInfo nodeId="5161277940733353451" fileName="ChangeMethodSignatureDialog.java" startLine="66" startPosition="56" endLine="71" endPosition="7" />
-    <nodeInfo nodeId="5161277940733353628" fileName="ChangeMethodSignatureDialog.java" startLine="109" startPosition="0" endLine="114" endPosition="0" />
-    <nodeInfo nodeId="5161277940733353950" fileName="ChangeMethodSignatureDialog.java" startLine="138" startPosition="7" endLine="144" endPosition="5" />
-    <nodeInfo nodeId="5161277940733353447" fileName="ChangeMethodSignatureDialog.java" startLine="65" startPosition="0" endLine="73" endPosition="0" />
-    <nodeInfo nodeId="5161277940733353912" fileName="ChangeMethodSignatureDialog.java" startLine="130" startPosition="57" endLine="138" endPosition="0" />
-    <nodeInfo nodeId="5161277940733353911" fileName="ChangeMethodSignatureDialog.java" startLine="129" startPosition="68" endLine="138" endPosition="7" />
-    <nodeInfo nodeId="5161277940733353585" fileName="ChangeMethodSignatureDialog.java" startLine="98" startPosition="0" endLine="109" endPosition="0" />
-    <nodeInfo nodeId="5161277940733353476" fileName="ChangeMethodSignatureDialog.java" startLine="76" startPosition="67" endLine="93" endPosition="0" />
-    <nodeInfo nodeId="5161277940733353475" fileName="ChangeMethodSignatureDialog.java" startLine="75" startPosition="50" endLine="93" endPosition="7" />
-    <nodeInfo nodeId="5161277940733353900" fileName="ChangeMethodSignatureDialog.java" startLine="126" startPosition="0" endLine="146" endPosition="0" />
-    <nodeInfo nodeId="5161277940733353684" fileName="ChangeMethodSignatureDialog.java" startLine="42" startPosition="0" endLine="64" endPosition="3" />
-    <nodeInfo nodeId="5161277940733353464" fileName="ChangeMethodSignatureDialog.java" startLine="73" startPosition="0" endLine="98" endPosition="0" />
-    <scopeInfo nodeId="5161277940733353800" fileName="ChangeMethodSignatureDialog.java" startLine="60" startPosition="49" endLine="61" endPosition="66" />
-    <scopeInfo nodeId="5161277940733353453" fileName="ChangeMethodSignatureDialog.java" startLine="68" startPosition="25" endLine="69" endPosition="105" />
-    <scopeInfo nodeId="5161277940733353519" fileName="ChangeMethodSignatureDialog.java" startLine="82" startPosition="41" endLine="83" endPosition="97" />
-    <scopeInfo nodeId="5161277940733353534" fileName="ChangeMethodSignatureDialog.java" startLine="86" startPosition="92" endLine="87" endPosition="74" />
-    <scopeInfo nodeId="5161277940733353559" fileName="ChangeMethodSignatureDialog.java" startLine="89" startPosition="146" endLine="90" endPosition="71" />
-    <scopeInfo nodeId="5161277940733431370" fileName="ChangeMethodSignatureDialog.java" startLine="104" startPosition="67" endLine="105" endPosition="120" />
-    <scopeInfo nodeId="5161277940733353631" fileName="ChangeMethodSignatureDialog.java" startLine="111" startPosition="26" endLine="112" endPosition="19" />
-    <scopeInfo nodeId="5161277940733353983" fileName="ChangeMethodSignatureDialog.java" startLine="115" startPosition="70" endLine="116" endPosition="26" />
-    <scopeInfo nodeId="5161277940733353647" fileName="ChangeMethodSignatureDialog.java" startLine="119" startPosition="39" endLine="120" endPosition="24" />
-    <scopeInfo nodeId="5161277940733353655" fileName="ChangeMethodSignatureDialog.java" startLine="123" startPosition="82" endLine="124" endPosition="77" />
-    <scopeInfo nodeId="5161277940733353965" fileName="ChangeMethodSignatureDialog.java" startLine="141" startPosition="24" endLine="142" endPosition="46" />
-    <scopeInfo nodeId="5161277940733353922" fileName="ChangeMethodSignatureDialog.java" startLine="133" startPosition="39" endLine="135" endPosition="85" />
-    <scopeInfo nodeId="5161277940733353532" fileName="ChangeMethodSignatureDialog.java" startLine="85" startPosition="84" endLine="88" endPosition="9" />
-    <scopeInfo nodeId="5161277940733353549" fileName="ChangeMethodSignatureDialog.java" startLine="88" startPosition="9" endLine="91" endPosition="9" />
-    <scopeInfo nodeId="5161277940733431367" fileName="ChangeMethodSignatureDialog.java" startLine="103" startPosition="94" endLine="106" endPosition="5" />
-    <scopeInfo nodeId="5161277940733353795" fileName="ChangeMethodSignatureDialog.java" startLine="59" startPosition="48" endLine="63" endPosition="0">
+    <nodeInfo nodeId="5161277940733353664" fileName="ChangeMethodSignatureDialog.java" startLine="34" startPosition="61" endLine="35" endPosition="25" />
+    <nodeInfo nodeId="5161277940733353667" fileName="ChangeMethodSignatureDialog.java" startLine="35" startPosition="25" endLine="36" endPosition="30" />
+    <nodeInfo nodeId="5161277940733353670" fileName="ChangeMethodSignatureDialog.java" startLine="36" startPosition="30" endLine="37" endPosition="55" />
+    <nodeInfo nodeId="5161277940733353677" fileName="ChangeMethodSignatureDialog.java" startLine="37" startPosition="55" endLine="38" endPosition="47" />
+    <nodeInfo nodeId="5161277940733353680" fileName="ChangeMethodSignatureDialog.java" startLine="38" startPosition="47" endLine="39" endPosition="36" />
+    <nodeInfo nodeId="5161277940733382733" fileName="ChangeMethodSignatureDialog.java" startLine="39" startPosition="36" endLine="40" endPosition="71" />
+    <nodeInfo nodeId="5161277940733353688" fileName="ChangeMethodSignatureDialog.java" startLine="42" startPosition="86" endLine="43" endPosition="70" />
+    <nodeInfo nodeId="5161277940733353693" fileName="ChangeMethodSignatureDialog.java" startLine="43" startPosition="70" endLine="44" endPosition="51" />
+    <nodeInfo nodeId="5161277940733353699" fileName="ChangeMethodSignatureDialog.java" startLine="44" startPosition="51" endLine="45" endPosition="47" />
+    <nodeInfo nodeId="5161277940733353705" fileName="ChangeMethodSignatureDialog.java" startLine="45" startPosition="47" endLine="46" endPosition="51" />
+    <nodeInfo nodeId="5161277940733353714" fileName="ChangeMethodSignatureDialog.java" startLine="46" startPosition="51" endLine="47" endPosition="30" />
+    <nodeInfo nodeId="5161277940733353720" fileName="ChangeMethodSignatureDialog.java" startLine="47" startPosition="30" endLine="48" endPosition="39" />
+    <nodeInfo nodeId="5161277940733353725" fileName="ChangeMethodSignatureDialog.java" startLine="48" startPosition="39" endLine="49" endPosition="44" />
+    <nodeInfo nodeId="5161277940733353732" fileName="ChangeMethodSignatureDialog.java" startLine="49" startPosition="44" endLine="50" endPosition="52" />
+    <nodeInfo nodeId="5161277940733353737" fileName="ChangeMethodSignatureDialog.java" startLine="50" startPosition="52" endLine="51" endPosition="37" />
+    <nodeInfo nodeId="5161277940733353743" fileName="ChangeMethodSignatureDialog.java" startLine="51" startPosition="37" endLine="52" endPosition="38" />
+    <nodeInfo nodeId="5161277940733353754" fileName="ChangeMethodSignatureDialog.java" startLine="52" startPosition="38" endLine="53" endPosition="16" />
+    <nodeInfo nodeId="5161277940733353760" fileName="ChangeMethodSignatureDialog.java" startLine="53" startPosition="16" endLine="54" endPosition="16" />
+    <nodeInfo nodeId="5161277940733353766" fileName="ChangeMethodSignatureDialog.java" startLine="54" startPosition="16" endLine="55" endPosition="18" />
+    <nodeInfo nodeId="5161277940733353772" fileName="ChangeMethodSignatureDialog.java" startLine="55" startPosition="18" endLine="56" endPosition="18" />
+    <nodeInfo nodeId="5161277940733353778" fileName="ChangeMethodSignatureDialog.java" startLine="56" startPosition="18" endLine="57" endPosition="54" />
+    <nodeInfo nodeId="5161277940733353801" fileName="ChangeMethodSignatureDialog.java" startLine="59" startPosition="49" endLine="60" endPosition="66" />
+    <nodeInfo nodeId="5161277940733353454" fileName="ChangeMethodSignatureDialog.java" startLine="67" startPosition="25" endLine="68" endPosition="105" />
+    <nodeInfo nodeId="5161277940733353468" fileName="ChangeMethodSignatureDialog.java" startLine="73" startPosition="46" endLine="74" endPosition="50" />
+    <nodeInfo nodeId="5161277940733353478" fileName="ChangeMethodSignatureDialog.java" startLine="76" startPosition="25" endLine="77" endPosition="101" />
+    <nodeInfo nodeId="5161277940733353486" fileName="ChangeMethodSignatureDialog.java" startLine="77" startPosition="101" endLine="78" endPosition="165" />
+    <nodeInfo nodeId="5161277940733353494" fileName="ChangeMethodSignatureDialog.java" startLine="78" startPosition="165" endLine="79" endPosition="214" />
+    <nodeInfo nodeId="5161277940733353510" fileName="ChangeMethodSignatureDialog.java" startLine="79" startPosition="214" endLine="80" endPosition="89" />
+    <nodeInfo nodeId="5161277940733353520" fileName="ChangeMethodSignatureDialog.java" startLine="81" startPosition="41" endLine="82" endPosition="97" />
+    <nodeInfo nodeId="8325114318987656411" fileName="ChangeMethodSignatureDialog.java" startLine="83" startPosition="9" endLine="84" endPosition="84" />
+    <nodeInfo nodeId="5161277940733353535" fileName="ChangeMethodSignatureDialog.java" startLine="85" startPosition="107" endLine="86" endPosition="74" />
+    <nodeInfo nodeId="5161277940733353560" fileName="ChangeMethodSignatureDialog.java" startLine="88" startPosition="146" endLine="89" endPosition="71" />
+    <nodeInfo nodeId="5161277940733353567" fileName="ChangeMethodSignatureDialog.java" startLine="92" startPosition="7" endLine="93" endPosition="58" />
+    <nodeInfo nodeId="5161277940733353574" fileName="ChangeMethodSignatureDialog.java" startLine="93" startPosition="58" endLine="94" endPosition="45" />
+    <nodeInfo nodeId="5161277940733353583" fileName="ChangeMethodSignatureDialog.java" startLine="94" startPosition="45" endLine="95" endPosition="17" />
+    <nodeInfo nodeId="5161277940733353589" fileName="ChangeMethodSignatureDialog.java" startLine="99" startPosition="22" endLine="100" endPosition="132" />
+    <nodeInfo nodeId="5161277940733382827" fileName="ChangeMethodSignatureDialog.java" startLine="100" startPosition="132" endLine="101" endPosition="71" />
+    <nodeInfo nodeId="5161277940733382921" fileName="ChangeMethodSignatureDialog.java" startLine="101" startPosition="71" endLine="102" endPosition="94" />
+    <nodeInfo nodeId="5161277940733431417" fileName="ChangeMethodSignatureDialog.java" startLine="103" startPosition="67" endLine="104" endPosition="120" />
+    <nodeInfo nodeId="5161277940733353615" fileName="ChangeMethodSignatureDialog.java" startLine="105" startPosition="5" endLine="106" endPosition="19" />
+    <nodeInfo nodeId="5161277940733353632" fileName="ChangeMethodSignatureDialog.java" startLine="110" startPosition="26" endLine="111" endPosition="19" />
+    <nodeInfo nodeId="5161277940733382739" fileName="ChangeMethodSignatureDialog.java" startLine="114" startPosition="70" endLine="115" endPosition="26" />
+    <nodeInfo nodeId="5161277940733353648" fileName="ChangeMethodSignatureDialog.java" startLine="118" startPosition="39" endLine="119" endPosition="24" />
+    <nodeInfo nodeId="5161277940733353656" fileName="ChangeMethodSignatureDialog.java" startLine="122" startPosition="82" endLine="123" endPosition="77" />
+    <nodeInfo nodeId="5161277940733353904" fileName="ChangeMethodSignatureDialog.java" startLine="126" startPosition="58" endLine="127" endPosition="67" />
+    <nodeInfo nodeId="5161277940733353907" fileName="ChangeMethodSignatureDialog.java" startLine="127" startPosition="67" endLine="128" endPosition="68" />
+    <nodeInfo nodeId="5161277940733353914" fileName="ChangeMethodSignatureDialog.java" startLine="130" startPosition="25" endLine="131" endPosition="187" />
+    <nodeInfo nodeId="5161277940733353923" fileName="ChangeMethodSignatureDialog.java" startLine="132" startPosition="39" endLine="133" endPosition="256" />
+    <nodeInfo nodeId="5161277940733353943" fileName="ChangeMethodSignatureDialog.java" startLine="133" startPosition="256" endLine="134" endPosition="85" />
+    <nodeInfo nodeId="5161277940733353952" fileName="ChangeMethodSignatureDialog.java" startLine="138" startPosition="35" endLine="139" endPosition="116" />
+    <nodeInfo nodeId="5161277940733353966" fileName="ChangeMethodSignatureDialog.java" startLine="140" startPosition="24" endLine="141" endPosition="46" />
+    <nodeInfo nodeId="5161277940733353518" fileName="ChangeMethodSignatureDialog.java" startLine="80" startPosition="89" endLine="83" endPosition="9" />
+    <nodeInfo nodeId="5161277940733353532" fileName="ChangeMethodSignatureDialog.java" startLine="84" startPosition="84" endLine="87" endPosition="9" />
+    <nodeInfo nodeId="5161277940733353549" fileName="ChangeMethodSignatureDialog.java" startLine="87" startPosition="9" endLine="90" endPosition="9" />
+    <nodeInfo nodeId="5161277940733431367" fileName="ChangeMethodSignatureDialog.java" startLine="102" startPosition="94" endLine="105" endPosition="5" />
+    <nodeInfo nodeId="5161277940733353964" fileName="ChangeMethodSignatureDialog.java" startLine="139" startPosition="116" endLine="142" endPosition="7" />
+    <nodeInfo nodeId="5161277940733353795" fileName="ChangeMethodSignatureDialog.java" startLine="58" startPosition="48" endLine="62" endPosition="0" />
+    <nodeInfo nodeId="5161277940733353452" fileName="ChangeMethodSignatureDialog.java" startLine="66" startPosition="57" endLine="70" endPosition="0" />
+    <nodeInfo nodeId="5161277940733353980" fileName="ChangeMethodSignatureDialog.java" startLine="113" startPosition="0" endLine="117" endPosition="0" />
+    <nodeInfo nodeId="5161277940733353645" fileName="ChangeMethodSignatureDialog.java" startLine="117" startPosition="0" endLine="121" endPosition="0" />
+    <nodeInfo nodeId="5161277940733353653" fileName="ChangeMethodSignatureDialog.java" startLine="121" startPosition="0" endLine="125" endPosition="0" />
+    <nodeInfo nodeId="5161277940733353921" fileName="ChangeMethodSignatureDialog.java" startLine="131" startPosition="187" endLine="135" endPosition="9" />
+    <nodeInfo nodeId="5161277940733353788" fileName="ChangeMethodSignatureDialog.java" startLine="57" startPosition="54" endLine="62" endPosition="7" />
+    <nodeInfo nodeId="5161277940733353451" fileName="ChangeMethodSignatureDialog.java" startLine="65" startPosition="56" endLine="70" endPosition="7" />
+    <nodeInfo nodeId="5161277940733353628" fileName="ChangeMethodSignatureDialog.java" startLine="108" startPosition="0" endLine="113" endPosition="0" />
+    <nodeInfo nodeId="5161277940733353950" fileName="ChangeMethodSignatureDialog.java" startLine="137" startPosition="7" endLine="143" endPosition="5" />
+    <nodeInfo nodeId="5161277940733353447" fileName="ChangeMethodSignatureDialog.java" startLine="64" startPosition="0" endLine="72" endPosition="0" />
+    <nodeInfo nodeId="5161277940733353912" fileName="ChangeMethodSignatureDialog.java" startLine="129" startPosition="57" endLine="137" endPosition="0" />
+    <nodeInfo nodeId="5161277940733353911" fileName="ChangeMethodSignatureDialog.java" startLine="128" startPosition="68" endLine="137" endPosition="7" />
+    <nodeInfo nodeId="5161277940733353585" fileName="ChangeMethodSignatureDialog.java" startLine="97" startPosition="0" endLine="108" endPosition="0" />
+    <nodeInfo nodeId="5161277940733353476" fileName="ChangeMethodSignatureDialog.java" startLine="75" startPosition="67" endLine="92" endPosition="0" />
+    <nodeInfo nodeId="5161277940733353475" fileName="ChangeMethodSignatureDialog.java" startLine="74" startPosition="50" endLine="92" endPosition="7" />
+    <nodeInfo nodeId="5161277940733353900" fileName="ChangeMethodSignatureDialog.java" startLine="125" startPosition="0" endLine="145" endPosition="0" />
+    <nodeInfo nodeId="5161277940733353684" fileName="ChangeMethodSignatureDialog.java" startLine="41" startPosition="0" endLine="63" endPosition="3" />
+    <nodeInfo nodeId="5161277940733353464" fileName="ChangeMethodSignatureDialog.java" startLine="72" startPosition="0" endLine="97" endPosition="0" />
+    <scopeInfo nodeId="5161277940733353800" fileName="ChangeMethodSignatureDialog.java" startLine="59" startPosition="49" endLine="60" endPosition="66" />
+    <scopeInfo nodeId="5161277940733353453" fileName="ChangeMethodSignatureDialog.java" startLine="67" startPosition="25" endLine="68" endPosition="105" />
+    <scopeInfo nodeId="5161277940733353519" fileName="ChangeMethodSignatureDialog.java" startLine="81" startPosition="41" endLine="82" endPosition="97" />
+    <scopeInfo nodeId="5161277940733353534" fileName="ChangeMethodSignatureDialog.java" startLine="85" startPosition="107" endLine="86" endPosition="74" />
+    <scopeInfo nodeId="5161277940733353559" fileName="ChangeMethodSignatureDialog.java" startLine="88" startPosition="146" endLine="89" endPosition="71" />
+    <scopeInfo nodeId="5161277940733431370" fileName="ChangeMethodSignatureDialog.java" startLine="103" startPosition="67" endLine="104" endPosition="120" />
+    <scopeInfo nodeId="5161277940733353631" fileName="ChangeMethodSignatureDialog.java" startLine="110" startPosition="26" endLine="111" endPosition="19" />
+    <scopeInfo nodeId="5161277940733353983" fileName="ChangeMethodSignatureDialog.java" startLine="114" startPosition="70" endLine="115" endPosition="26" />
+    <scopeInfo nodeId="5161277940733353647" fileName="ChangeMethodSignatureDialog.java" startLine="118" startPosition="39" endLine="119" endPosition="24" />
+    <scopeInfo nodeId="5161277940733353655" fileName="ChangeMethodSignatureDialog.java" startLine="122" startPosition="82" endLine="123" endPosition="77" />
+    <scopeInfo nodeId="5161277940733353965" fileName="ChangeMethodSignatureDialog.java" startLine="140" startPosition="24" endLine="141" endPosition="46" />
+    <scopeInfo nodeId="5161277940733353922" fileName="ChangeMethodSignatureDialog.java" startLine="132" startPosition="39" endLine="134" endPosition="85" />
+    <scopeInfo nodeId="5161277940733353532" fileName="ChangeMethodSignatureDialog.java" startLine="84" startPosition="84" endLine="87" endPosition="9" />
+    <scopeInfo nodeId="5161277940733353549" fileName="ChangeMethodSignatureDialog.java" startLine="87" startPosition="9" endLine="90" endPosition="9" />
+    <scopeInfo nodeId="5161277940733431367" fileName="ChangeMethodSignatureDialog.java" startLine="102" startPosition="94" endLine="105" endPosition="5" />
+    <scopeInfo nodeId="5161277940733353795" fileName="ChangeMethodSignatureDialog.java" startLine="58" startPosition="48" endLine="62" endPosition="0">
       <varInfo nodeId="5161277940733353798" varName="p0" />
     </scopeInfo>
-    <scopeInfo nodeId="5161277940733353452" fileName="ChangeMethodSignatureDialog.java" startLine="67" startPosition="57" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="5161277940733353980" fileName="ChangeMethodSignatureDialog.java" startLine="114" startPosition="0" endLine="118" endPosition="0" />
-    <scopeInfo nodeId="5161277940733353645" fileName="ChangeMethodSignatureDialog.java" startLine="118" startPosition="0" endLine="122" endPosition="0" />
-    <scopeInfo nodeId="5161277940733353653" fileName="ChangeMethodSignatureDialog.java" startLine="122" startPosition="0" endLine="126" endPosition="0" />
-    <scopeInfo nodeId="5161277940733353951" fileName="ChangeMethodSignatureDialog.java" startLine="139" startPosition="35" endLine="143" endPosition="7">
+    <scopeInfo nodeId="5161277940733353452" fileName="ChangeMethodSignatureDialog.java" startLine="66" startPosition="57" endLine="70" endPosition="0" />
+    <scopeInfo nodeId="5161277940733353980" fileName="ChangeMethodSignatureDialog.java" startLine="113" startPosition="0" endLine="117" endPosition="0" />
+    <scopeInfo nodeId="5161277940733353645" fileName="ChangeMethodSignatureDialog.java" startLine="117" startPosition="0" endLine="121" endPosition="0" />
+    <scopeInfo nodeId="5161277940733353653" fileName="ChangeMethodSignatureDialog.java" startLine="121" startPosition="0" endLine="125" endPosition="0" />
+    <scopeInfo nodeId="5161277940733353951" fileName="ChangeMethodSignatureDialog.java" startLine="138" startPosition="35" endLine="142" endPosition="7">
       <varInfo nodeId="5161277940733353953" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="5161277940733353450" fileName="ChangeMethodSignatureDialog.java" startLine="66" startPosition="56" endLine="71" endPosition="7" />
-    <scopeInfo nodeId="5161277940733353628" fileName="ChangeMethodSignatureDialog.java" startLine="109" startPosition="0" endLine="114" endPosition="0" />
-    <scopeInfo nodeId="5161277940733353913" fileName="ChangeMethodSignatureDialog.java" startLine="131" startPosition="25" endLine="136" endPosition="9" />
-    <scopeInfo nodeId="5161277940733353588" fileName="ChangeMethodSignatureDialog.java" startLine="100" startPosition="22" endLine="107" endPosition="19">
+    <scopeInfo nodeId="5161277940733353450" fileName="ChangeMethodSignatureDialog.java" startLine="65" startPosition="56" endLine="70" endPosition="7" />
+    <scopeInfo nodeId="5161277940733353628" fileName="ChangeMethodSignatureDialog.java" startLine="108" startPosition="0" endLine="113" endPosition="0" />
+    <scopeInfo nodeId="5161277940733353913" fileName="ChangeMethodSignatureDialog.java" startLine="130" startPosition="25" endLine="135" endPosition="9" />
+    <scopeInfo nodeId="5161277940733353588" fileName="ChangeMethodSignatureDialog.java" startLine="99" startPosition="22" endLine="106" endPosition="19">
       <varInfo nodeId="5161277940733353590" varName="methodsToRefactor" />
     </scopeInfo>
-    <scopeInfo nodeId="5161277940733353447" fileName="ChangeMethodSignatureDialog.java" startLine="65" startPosition="0" endLine="73" endPosition="0">
+    <scopeInfo nodeId="5161277940733353447" fileName="ChangeMethodSignatureDialog.java" startLine="64" startPosition="0" endLine="72" endPosition="0">
       <varInfo nodeId="5161277940733353462" varName="declaration" />
     </scopeInfo>
-    <scopeInfo nodeId="5161277940733353912" fileName="ChangeMethodSignatureDialog.java" startLine="130" startPosition="57" endLine="138" endPosition="0" />
-    <scopeInfo nodeId="5161277940733353585" fileName="ChangeMethodSignatureDialog.java" startLine="98" startPosition="0" endLine="109" endPosition="0" />
-    <scopeInfo nodeId="5161277940733353477" fileName="ChangeMethodSignatureDialog.java" startLine="77" startPosition="25" endLine="91" endPosition="9">
+    <scopeInfo nodeId="5161277940733353912" fileName="ChangeMethodSignatureDialog.java" startLine="129" startPosition="57" endLine="137" endPosition="0" />
+    <scopeInfo nodeId="5161277940733353585" fileName="ChangeMethodSignatureDialog.java" startLine="97" startPosition="0" endLine="108" endPosition="0" />
+    <scopeInfo nodeId="5161277940733353477" fileName="ChangeMethodSignatureDialog.java" startLine="76" startPosition="25" endLine="90" endPosition="9">
       <varInfo nodeId="5161277940733353511" varName="module" />
       <varInfo nodeId="5161277940733353479" varName="baseMethodDecalration" />
       <varInfo nodeId="8325114318987656412" varName="m" />
     </scopeInfo>
-    <scopeInfo nodeId="5161277940733353476" fileName="ChangeMethodSignatureDialog.java" startLine="76" startPosition="67" endLine="93" endPosition="0" />
-    <scopeInfo nodeId="5161277940733353903" fileName="ChangeMethodSignatureDialog.java" startLine="127" startPosition="58" endLine="144" endPosition="5">
+    <scopeInfo nodeId="5161277940733353476" fileName="ChangeMethodSignatureDialog.java" startLine="75" startPosition="67" endLine="92" endPosition="0" />
+    <scopeInfo nodeId="5161277940733353903" fileName="ChangeMethodSignatureDialog.java" startLine="126" startPosition="58" endLine="143" endPosition="5">
       <varInfo nodeId="5161277940733353908" varName="message" />
       <varInfo nodeId="5161277940733353905" varName="baseMethod" />
     </scopeInfo>
-    <scopeInfo nodeId="5161277940733353687" fileName="ChangeMethodSignatureDialog.java" startLine="43" startPosition="86" endLine="63" endPosition="7">
+    <scopeInfo nodeId="5161277940733353687" fileName="ChangeMethodSignatureDialog.java" startLine="42" startPosition="86" endLine="62" endPosition="7">
       <varInfo nodeId="5161277940733353733" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="5161277940733353900" fileName="ChangeMethodSignatureDialog.java" startLine="126" startPosition="0" endLine="146" endPosition="0">
+    <scopeInfo nodeId="5161277940733353900" fileName="ChangeMethodSignatureDialog.java" startLine="125" startPosition="0" endLine="145" endPosition="0">
       <varInfo nodeId="5161277940733353901" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5161277940733353684" fileName="ChangeMethodSignatureDialog.java" startLine="42" startPosition="0" endLine="64" endPosition="3">
+    <scopeInfo nodeId="5161277940733353684" fileName="ChangeMethodSignatureDialog.java" startLine="41" startPosition="0" endLine="63" endPosition="3">
       <varInfo nodeId="5161277940733353808" varName="node" />
       <varInfo nodeId="5161277940733353810" varName="operationContext" />
     </scopeInfo>
-    <scopeInfo nodeId="5161277940733353467" fileName="ChangeMethodSignatureDialog.java" startLine="74" startPosition="46" endLine="96" endPosition="17">
+    <scopeInfo nodeId="5161277940733353467" fileName="ChangeMethodSignatureDialog.java" startLine="73" startPosition="46" endLine="95" endPosition="17">
       <varInfo nodeId="5161277940733353469" varName="panel" />
     </scopeInfo>
-    <scopeInfo nodeId="5161277940733353464" fileName="ChangeMethodSignatureDialog.java" startLine="73" startPosition="0" endLine="98" endPosition="0" />
-    <unitInfo nodeId="5161277940733353793" fileName="ChangeMethodSignatureDialog.java" startLine="59" startPosition="31" endLine="63" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureDialog$3" />
-    <unitInfo nodeId="5161277940733353452" fileName="ChangeMethodSignatureDialog.java" startLine="67" startPosition="45" endLine="71" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureDialog$1" />
-    <unitInfo nodeId="5161277940733353912" fileName="ChangeMethodSignatureDialog.java" startLine="130" startPosition="45" endLine="138" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureDialog$4" />
-    <unitInfo nodeId="5161277940733353476" fileName="ChangeMethodSignatureDialog.java" startLine="76" startPosition="55" endLine="93" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureDialog$2" />
-    <unitInfo nodeId="5161277940733353446" fileName="ChangeMethodSignatureDialog.java" startLine="35" startPosition="0" endLine="147" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureDialog" />
+    <scopeInfo nodeId="5161277940733353464" fileName="ChangeMethodSignatureDialog.java" startLine="72" startPosition="0" endLine="97" endPosition="0" />
+    <unitInfo nodeId="5161277940733353793" fileName="ChangeMethodSignatureDialog.java" startLine="58" startPosition="31" endLine="62" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureDialog$3" />
+    <unitInfo nodeId="5161277940733353452" fileName="ChangeMethodSignatureDialog.java" startLine="66" startPosition="45" endLine="70" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureDialog$1" />
+    <unitInfo nodeId="5161277940733353912" fileName="ChangeMethodSignatureDialog.java" startLine="129" startPosition="45" endLine="137" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureDialog$4" />
+    <unitInfo nodeId="5161277940733353476" fileName="ChangeMethodSignatureDialog.java" startLine="75" startPosition="55" endLine="92" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureDialog$2" />
+    <unitInfo nodeId="5161277940733353446" fileName="ChangeMethodSignatureDialog.java" startLine="34" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureDialog" />
   </root>
   <root nodeId="7425580205971833185">
     <nodeInfo nodeId="7425580205971833188" fileName="BaseChooseNodeDialog.java" startLine="31" startPosition="63" endLine="32" endPosition="38" />
