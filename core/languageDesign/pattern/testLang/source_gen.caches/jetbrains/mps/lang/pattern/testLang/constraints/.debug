@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="1563914226484898755">
+    <nodeInfo nodeId="1563914226484898759" fileName="TestPropertyVariableReference_declaration_ReferentConstraint.java" startLine="25" startPosition="132" endLine="26" endPosition="273" />
+    <scopeInfo nodeId="1563914226484898758" fileName="TestPropertyVariableReference_declaration_ReferentConstraint.java" startLine="25" startPosition="132" endLine="26" endPosition="273" />
+  </root>
+  <root nodeId="8707387027762047794">
+    <nodeInfo nodeId="8707387027762047798" fileName="TestVariableReference_declaration_ReferentConstraint.java" startLine="25" startPosition="132" endLine="26" endPosition="265" />
+    <scopeInfo nodeId="8707387027762047797" fileName="TestVariableReference_declaration_ReferentConstraint.java" startLine="25" startPosition="132" endLine="26" endPosition="265" />
+  </root>
+</debugInfo>
+
