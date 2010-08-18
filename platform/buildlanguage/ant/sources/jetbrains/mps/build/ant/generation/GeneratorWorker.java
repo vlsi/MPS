@@ -26,7 +26,6 @@ import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
-import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.make.dependencies.StronglyConnectedModules;
 import jetbrains.mps.make.dependencies.StronglyConnectedModules.IModuleDecorator;
 import jetbrains.mps.make.dependencies.StronglyConnectedModules.IModuleDecoratorBuilder;
@@ -42,7 +41,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.annotation.Hack;
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.ProjectComponent;
 
@@ -320,7 +318,7 @@ public class GeneratorWorker extends MpsWorker {
     }
 
     public void fill(Map<IModule, IModuleDecorator<IModule>> map) {
-      for (IModule m : getAllDeps()) {
+      for (IModule m : myModule.getDependOnModules()) {
         ModuleDecorator next = (ModuleDecorator) map.get(m);
         if (next != null) myNext.add(next);
       }
@@ -335,13 +333,6 @@ public class GeneratorWorker extends MpsWorker {
           }
         }
       }
-    }
-
-    @Hack
-    private List<IModule> getAllDeps() {
-      ArrayList<IModule> res = new ArrayList<IModule>(myModule.getDependOnModules());
-      res.addAll(LibraryManager.getInstance().getBootstrapModules(Language.class));
-      return res;
     }
 
     public Set<? extends IVertex> getNexts() {
