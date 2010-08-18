@@ -26,9 +26,37 @@
     <scopeInfo nodeId="1213877344251" fileName="LinkPatternVariableDeclaration_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
   </root>
   <root nodeId="534621188390792429">
-    <nodeInfo nodeId="201537367881178498" fileName="PatternExpression_Behavior.java" startLine="11" startPosition="83" endLine="12" endPosition="14" />
-    <scopeInfo nodeId="534621188390792431" fileName="PatternExpression_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="201537367881178493" fileName="PatternExpression_Behavior.java" startLine="11" startPosition="83" endLine="12" endPosition="14" />
+    <nodeInfo nodeId="201537367881178498" fileName="PatternExpression_Behavior.java" startLine="18" startPosition="83" endLine="19" endPosition="14" />
+    <nodeInfo nodeId="4855904478357072970" fileName="PatternExpression_Behavior.java" startLine="22" startPosition="83" endLine="23" endPosition="51" />
+    <nodeInfo nodeId="4855904478357072976" fileName="PatternExpression_Behavior.java" startLine="23" startPosition="51" endLine="24" endPosition="204" />
+    <nodeInfo nodeId="4855904478357072985" fileName="PatternExpression_Behavior.java" startLine="24" startPosition="204" endLine="25" endPosition="208" />
+    <nodeInfo nodeId="4855904478357072994" fileName="PatternExpression_Behavior.java" startLine="25" startPosition="208" endLine="26" endPosition="212" />
+    <nodeInfo nodeId="4855904478357073013" fileName="PatternExpression_Behavior.java" startLine="26" startPosition="212" endLine="27" endPosition="21" />
+    <nodeInfo nodeId="4855904478357073023" fileName="PatternExpression_Behavior.java" startLine="30" startPosition="89" endLine="31" endPosition="103" />
+    <nodeInfo nodeId="4855904478357073034" fileName="PatternExpression_Behavior.java" startLine="31" startPosition="103" endLine="32" endPosition="48" />
+    <nodeInfo nodeId="4855904478357073045" fileName="PatternExpression_Behavior.java" startLine="32" startPosition="48" endLine="33" endPosition="38" />
+    <nodeInfo nodeId="4855904478357073081" fileName="PatternExpression_Behavior.java" startLine="35" startPosition="74" endLine="36" endPosition="54" />
+    <nodeInfo nodeId="4855904478357073091" fileName="PatternExpression_Behavior.java" startLine="36" startPosition="54" endLine="37" endPosition="62" />
+    <nodeInfo nodeId="4855904478357073041" fileName="PatternExpression_Behavior.java" startLine="39" startPosition="5" endLine="40" endPosition="18" />
+    <nodeInfo nodeId="4855904478357089512" fileName="PatternExpression_Behavior.java" startLine="43" startPosition="78" endLine="44" endPosition="17" />
+    <nodeInfo nodeId="4855904478357073063" fileName="PatternExpression_Behavior.java" startLine="34" startPosition="33" endLine="38" endPosition="7" />
+    <nodeInfo nodeId="4855904478357073055" fileName="PatternExpression_Behavior.java" startLine="33" startPosition="38" endLine="39" endPosition="5" />
+    <scopeInfo nodeId="534621188390792431" fileName="PatternExpression_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="201537367881178493" fileName="PatternExpression_Behavior.java" startLine="18" startPosition="83" endLine="19" endPosition="14" />
+    <scopeInfo nodeId="4855904478357073123" fileName="PatternExpression_Behavior.java" startLine="43" startPosition="78" endLine="44" endPosition="17" />
+    <scopeInfo nodeId="4855904478357073064" fileName="PatternExpression_Behavior.java" startLine="35" startPosition="74" endLine="37" endPosition="62" />
+    <scopeInfo nodeId="4855904478357073057" fileName="PatternExpression_Behavior.java" startLine="34" startPosition="33" endLine="38" endPosition="7" />
+    <scopeInfo nodeId="4855904478357072960" fileName="PatternExpression_Behavior.java" startLine="22" startPosition="83" endLine="27" endPosition="21">
+      <varInfo nodeId="4855904478357072971" varName="variables" />
+    </scopeInfo>
+    <scopeInfo nodeId="4855904478357073055" fileName="PatternExpression_Behavior.java" startLine="33" startPosition="38" endLine="39" endPosition="5">
+      <varInfo nodeId="4855904478357073056" varName="var" />
+    </scopeInfo>
+    <scopeInfo nodeId="4855904478357073021" fileName="PatternExpression_Behavior.java" startLine="30" startPosition="89" endLine="40" endPosition="18">
+      <varInfo nodeId="4855904478357073035" varName="result" />
+      <varInfo nodeId="4855904478357073046" varName="names" />
+      <varInfo nodeId="4855904478357073024" varName="variables" />
+    </scopeInfo>
   </root>
   <root nodeId="5830155447075815036">
     <nodeInfo nodeId="5830155447075815609" fileName="PatternVarsUtil.java" startLine="13" startPosition="55" endLine="14" endPosition="34" />

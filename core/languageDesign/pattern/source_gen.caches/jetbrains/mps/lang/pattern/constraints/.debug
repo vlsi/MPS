@@ -31,6 +31,12 @@
       <varInfo nodeId="2248628811136243827" varName="result" />
     </scopeInfo>
   </root>
+  <root nodeId="3455673273918959509">
+    <nodeInfo nodeId="3455673273919007846" fileName="PatternVariableDeclarationCopy_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="137" />
+    <nodeInfo nodeId="3455673273918960165" fileName="PatternVariableDeclarationCopy_declaration_ReferentConstraint.java" startLine="25" startPosition="132" endLine="26" endPosition="254" />
+    <scopeInfo nodeId="3455673273919007845" fileName="PatternVariableDeclarationCopy_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="137" />
+    <scopeInfo nodeId="3455673273918959512" fileName="PatternVariableDeclarationCopy_declaration_ReferentConstraint.java" startLine="25" startPosition="132" endLine="26" endPosition="254" />
+  </root>
   <root nodeId="4217760266503599759">
     <nodeInfo nodeId="1483902774837520828" fileName="ActionAsPattern_Constraints.java" startLine="10" startPosition="116" endLine="11" endPosition="129" />
     <scopeInfo nodeId="1483902774837520156" fileName="ActionAsPattern_Constraints.java" startLine="10" startPosition="116" endLine="11" endPosition="129" />
