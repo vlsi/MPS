@@ -137,7 +137,6 @@ public class RuleIfNullReturn extends DataFlowConstructor {
     }
 
     public void performActions(Object o) {
-
       {
         int position = 0;
         Object object = getFieldValue("PatternVar_body");
