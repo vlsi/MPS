@@ -36,6 +36,7 @@ import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
@@ -320,7 +321,7 @@ public class GeneratorWorker extends MpsWorker {
     }
 
     public void fill(Map<IModule, IModuleDecorator<IModule>> map) {
-      for (IModule m : getModules(myModule)) {
+      for (IModule m : ModuleUtil.getModules(myModule)) {
         ModuleDecorator next = (ModuleDecorator) map.get(m);
         if (next != null) myNext.add(next);
       }
@@ -335,14 +336,6 @@ public class GeneratorWorker extends MpsWorker {
           }
         }
       }
-    }
-
-    @Hack
-    private List<IModule> getModules(IModule m) {
-      ArrayList<IModule> res = new ArrayList<IModule>(m.getDependenciesManager().getDependOnModules());
-      res.add(BaseLanguage_Language.get());
-      res.add(Collections_Language.get());
-      return res;
     }
 
     public Set<? extends IVertex> getNexts() {

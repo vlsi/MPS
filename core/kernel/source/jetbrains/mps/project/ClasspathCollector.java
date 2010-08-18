@@ -81,7 +81,7 @@ public class ClasspathCollector {
         addPart(current.getClassPathItem());
       }
 
-      for (IModule dep : current.getDependenciesManager().getAllDependOnModules()) {
+      for (IModule dep : ModuleUtil.getModules(current)) {
         doCollect(dep, includeStubSolutions);
       }
 

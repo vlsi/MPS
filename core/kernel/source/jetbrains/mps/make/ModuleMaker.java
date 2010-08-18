@@ -23,10 +23,7 @@ import jetbrains.mps.compiler.JavaCompiler;
 import jetbrains.mps.ide.messages.FileWithPosition;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.make.dependencies.StronglyConnectedModules;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.DependencyCollector;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.*;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -209,7 +206,7 @@ public class ModuleMaker {
     Map<IModule, Set<IModule>> backDependencies = new HashMap<IModule, Set<IModule>>();
 
     for (IModule m : modules) {
-      for (IModule dep : getModules(m)) {
+      for (IModule dep : ModuleUtil.getModules(m)) {
         if (!backDependencies.containsKey(dep)) {
           backDependencies.put(dep, new HashSet<IModule>());
         }
@@ -224,14 +221,6 @@ public class ModuleMaker {
     }
 
     return toCompile;
-  }
-
-  @Hack
-  private List<IModule> getModules(IModule m) {
-    ArrayList<IModule> res = new ArrayList<IModule>(m.getDependenciesManager().getDependOnModules());
-    res.add(BaseLanguage_Language.get());
-    res.add(Collections_Language.get());
-    return res;
   }
 
   private void collectToCompile(IModule current, Set<IModule> result, Map<IModule, Set<IModule>> deps) {

@@ -15,11 +15,12 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.baseLanguage.collections.structure.Collections_Language;
+import jetbrains.mps.baseLanguage.structure.BaseLanguage_Language;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.annotation.Hack;
 
-import java.util.HashSet;
-import java.util.Set;
-import java.util.Collections;
+import java.util.*;
 
 public class DependencyCollector<T extends IModule> {
   private Set<IModule> myStart;
@@ -53,11 +54,10 @@ public class DependencyCollector<T extends IModule> {
   }
 
   private void doCollect(IModule current) {
-    for (IModule module : current.getDependenciesManager().getDependOnModules()) {
+    for (IModule module : ModuleUtil.getModules(current)) {
       if (myResult.add(module)) {
         doCollect(module);
       }
     }
   }
-
 }
