@@ -26,6 +26,7 @@ import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
+import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.make.dependencies.StronglyConnectedModules;
 import jetbrains.mps.make.dependencies.StronglyConnectedModules.IModuleDecorator;
 import jetbrains.mps.make.dependencies.StronglyConnectedModules.IModuleDecoratorBuilder;
@@ -35,9 +36,13 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.annotation.Hack;
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.ProjectComponent;
 
@@ -129,8 +134,8 @@ public class GeneratorWorker extends MpsWorker {
         info("Start " + cycle);
         cycle.generate(gm, new JavaGenerationHandler() {
           @Override
-          public long estimateCompilationMillis(List<Pair<IModule,List<SModelDescriptor>>> input) {
-            if(requiresCompilationAfterGeneration()) {
+          public long estimateCompilationMillis(List<Pair<IModule, List<SModelDescriptor>>> input) {
+            if (requiresCompilationAfterGeneration()) {
               return super.estimateCompilationMillis(input);
             }
             return ModelsProgressUtil.estimateReloadAllTimeMillis();
@@ -138,7 +143,7 @@ public class GeneratorWorker extends MpsWorker {
 
           @Override
           protected boolean compileModule(IModule module, IProjectHandler projectHandler, boolean[] ideaIsFresh, ITaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException {
-            return 
+            return
               requiresCompilationAfterGeneration()
                 ? super.compileModule(module, projectHandler, ideaIsFresh, progressHelper)
                 : true;
@@ -158,7 +163,7 @@ public class GeneratorWorker extends MpsWorker {
   protected List<Cycle> computeGenerationOrder(MPSProject project, ObjectsToProcess go) {
 
     final Map<IModule, List<EditableSModelDescriptor>> moduleToModels = new LinkedHashMap<IModule, List<EditableSModelDescriptor>>();
-    extractModels(go.getProjects(), go.getModules(), (Set)go.getModels(), (Map)moduleToModels);
+    extractModels(go.getProjects(), go.getModules(), (Set) go.getModels(), (Map) moduleToModels);
 
     // calculate order
     List<Set<IModule>> modulesOrder = ModelAccess.instance().runReadAction(new Computable<List<Set<IModule>>>() {
@@ -223,6 +228,7 @@ public class GeneratorWorker extends MpsWorker {
 
   protected static interface Cycle {
     void generate(GeneratorManager gm, IGenerationHandler generationHandler, IMessageHandler messageHandler);
+
     List<File> getClassPath();
   }
 
@@ -314,7 +320,7 @@ public class GeneratorWorker extends MpsWorker {
     }
 
     public void fill(Map<IModule, IModuleDecorator<IModule>> map) {
-      for (IModule m : myModule.getDependOnModules()) {
+      for (IModule m : getAllDeps()) {
         ModuleDecorator next = (ModuleDecorator) map.get(m);
         if (next != null) myNext.add(next);
       }
@@ -329,6 +335,13 @@ public class GeneratorWorker extends MpsWorker {
           }
         }
       }
+    }
+
+    @Hack
+    private List<IModule> getAllDeps() {
+      ArrayList<IModule> res = new ArrayList<IModule>(myModule.getDependOnModules());
+      res.addAll(LibraryManager.getInstance().getBootstrapModules(Language.class));
+      return res;
     }
 
     public Set<? extends IVertex> getNexts() {

@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.baseLanguage.collections.structure.Collections_Language;
+import jetbrains.mps.baseLanguage.structure.BaseLanguage_Language;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
@@ -30,6 +32,10 @@ public class ModuleUtil {
       if (l == null) continue;
       result.add(l);
     }
+
+    result.add(BaseLanguage_Language.get());
+    result.add(Collections_Language.get());
+
     return result;
   }
 
