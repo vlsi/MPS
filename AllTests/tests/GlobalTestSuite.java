@@ -1,18 +1,8 @@
-import jetbrains.mps.junit.SuiteWithRules;
+import jetbrains.mps.junit.WatchingSuite;
 import junit.framework.TestSuite;
-import org.apache.tools.ant.Main;
-import org.junit.BeforeClass;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.MethodRule;
-import org.junit.rules.Verifier;
 import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
-import org.junit.runners.model.FrameworkMethod;
-import org.junit.runners.model.Statement;
-
-import java.lang.reflect.Method;
 
 
 @SuiteClasses({jetbrains.mps.baseLanguage.closures.test.ClosureLiteralDataFlow_Test.class,
@@ -370,30 +360,8 @@ jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Contains_Test.
 jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Concat_Test_Test.class,
 jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Distinct_Test.class,
 jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Union_Test.class})
-@RunWith(SuiteWithRules.class)
+@RunWith(WatchingSuite.class)
 public class GlobalTestSuite extends TestSuite {
-
-  @Rule
-  public MethodRule verifier = new MethodRule() {
-    protected void verify(String name) throws Throwable {
-       System.out.println("**** VERIFIED ***** "+name);
-    }
-
-    @Override
-    public Statement apply(final Statement base, final FrameworkMethod method, Object target) {
-      return new Statement() {
-        @Override
-        public void evaluate() throws Throwable {
-          base.evaluate();
-          verify(method.getName());
-        }
-      };
-    }
-  };
-
-  @Test
-  public void foo () {}
-
 
 
 }
