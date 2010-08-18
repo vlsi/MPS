@@ -17,6 +17,8 @@ package jetbrains.mps.build.ant.generation;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.util.Computable;
+import jetbrains.mps.baseLanguage.collections.structure.Collections_Language;
+import jetbrains.mps.baseLanguage.structure.BaseLanguage_Language;
 import jetbrains.mps.build.ant.MpsWorker;
 import jetbrains.mps.build.ant.WhatToDo;
 import jetbrains.mps.generator.*;
@@ -41,6 +43,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.annotation.Hack;
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.ProjectComponent;
 
@@ -317,7 +320,7 @@ public class GeneratorWorker extends MpsWorker {
     }
 
     public void fill(Map<IModule, IModuleDecorator<IModule>> map) {
-      for (IModule m : myModule.getDependenciesManager().getDependOnModules()) {
+      for (IModule m : getModules(myModule)) {
         ModuleDecorator next = (ModuleDecorator) map.get(m);
         if (next != null) myNext.add(next);
       }
@@ -332,6 +335,14 @@ public class GeneratorWorker extends MpsWorker {
           }
         }
       }
+    }
+
+    @Hack
+    private List<IModule> getModules(IModule m) {
+      ArrayList<IModule> res = new ArrayList<IModule>(m.getDependenciesManager().getDependOnModules());
+      res.add(BaseLanguage_Language.get());
+      res.add(Collections_Language.get());
+      return res;
     }
 
     public Set<? extends IVertex> getNexts() {

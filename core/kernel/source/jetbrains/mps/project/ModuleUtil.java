@@ -33,9 +33,6 @@ public class ModuleUtil {
       result.add(l);
     }
 
-    result.add(BaseLanguage_Language.get());
-    result.add(Collections_Language.get());
-
     return result;
   }
 
