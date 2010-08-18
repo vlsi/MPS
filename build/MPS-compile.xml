@@ -895,18 +895,8 @@
   <path id="cycle.jetbrains.mps.baseLanguage.dates.runtime_tjc.classpaths">
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/closures/runtime/classes" />
-    <path path="core/baseLanguage/closures/runtime/source" />
-    <path path="core/baseLanguage/closures/runtime/source_gen" />
-    <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
-    <path path="core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
-    <path path="core/baseLanguage/collections/runtime/classes" />
-    <path path="core/baseLanguage/collections/runtime/classes_gen" />
-    <path path="core/baseLanguage/collections/runtime/source_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/joda-time/joda-time-1.6.jar" />
-    <path path="platform/gtext/runtime/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc.classpaths">
@@ -1375,14 +1365,6 @@
     <path path="platform/regexp/solutions/jetbrains.mps.regexp.examples/classes_gen" />
     <path path="MPSPlugin/apiclasses" />
     <path path="classes" />
-    <path path="core/baseLanguage/closures/runtime/classes" />
-    <path path="core/baseLanguage/closures/runtime/source" />
-    <path path="core/baseLanguage/closures/runtime/source_gen" />
-    <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
-    <path path="core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
-    <path path="core/baseLanguage/collections/runtime/classes" />
-    <path path="core/baseLanguage/collections/runtime/classes_gen" />
-    <path path="core/baseLanguage/collections/runtime/source_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
@@ -1400,7 +1382,6 @@
     <path path="lib/junit4/junit-4.1.jar" />
     <path path="lib/log4j/log4j.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
-    <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/regexp/runtime/classes" />
     <path path="platform/regexp/solutions/jetbrains.mps.regexp.examples/classes_gen" />
     <path path="workbench/classes" />
@@ -1593,17 +1574,7 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.unitTest.lib_tjc.classpaths">
-    <path path="core/baseLanguage/closures/runtime/classes" />
-    <path path="core/baseLanguage/closures/runtime/source" />
-    <path path="core/baseLanguage/closures/runtime/source_gen" />
-    <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
-    <path path="core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
-    <path path="core/baseLanguage/collections/runtime/classes" />
-    <path path="core/baseLanguage/collections/runtime/classes_gen" />
-    <path path="core/baseLanguage/collections/runtime/source_gen" />
-    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/junit4/junit-4.1.jar" />
-    <path path="platform/gtext/runtime/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.bash_tjc.classpaths">
@@ -2300,14 +2271,6 @@
   <path id="cycle.jetbrains.mps.gtext.runtime_tjc.classpaths">
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
-    <path path="core/baseLanguage/closures/runtime/classes" />
-    <path path="core/baseLanguage/closures/runtime/source" />
-    <path path="core/baseLanguage/closures/runtime/source_gen" />
-    <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
-    <path path="core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
-    <path path="core/baseLanguage/collections/runtime/classes" />
-    <path path="core/baseLanguage/collections/runtime/classes_gen" />
-    <path path="core/baseLanguage/collections/runtime/source_gen" />
     <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="platform/gtext/runtime/classes_gen" />
     <path refid="common.classpath" />
@@ -2506,16 +2469,6 @@
   </path>
   <path id="cycle.jetbrains.mps.ide.uiLanguage.runtime_tjc.classpaths">
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="core/baseLanguage/closures/runtime/classes" />
-    <path path="core/baseLanguage/closures/runtime/source" />
-    <path path="core/baseLanguage/closures/runtime/source_gen" />
-    <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
-    <path path="core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
-    <path path="core/baseLanguage/collections/runtime/classes" />
-    <path path="core/baseLanguage/collections/runtime/classes_gen" />
-    <path path="core/baseLanguage/collections/runtime/source_gen" />
-    <path path="lib/commons-lang/commons-lang-2.1.jar" />
-    <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -3220,16 +3173,6 @@
   <path id="cycle.jetbrains.mps.ui.swing.runtime_tjc.classpaths">
     <path path="platform/ui/languages/swing/lib/swingx-1.6.jar" />
     <path path="platform/ui/languages/swing/runtime/classes_gen" />
-    <path path="core/baseLanguage/closures/runtime/classes" />
-    <path path="core/baseLanguage/closures/runtime/source" />
-    <path path="core/baseLanguage/closures/runtime/source_gen" />
-    <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
-    <path path="core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
-    <path path="core/baseLanguage/collections/runtime/classes" />
-    <path path="core/baseLanguage/collections/runtime/classes_gen" />
-    <path path="core/baseLanguage/collections/runtime/source_gen" />
-    <path path="lib/commons-lang/commons-lang-2.1.jar" />
-    <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/ui/languages/swing/lib/swingx-1.6.jar" />
     <path path="platform/ui/languages/swing/runtime/classes_gen" />
     <path refid="common.classpath" />
