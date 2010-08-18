@@ -76,7 +76,6 @@ public class MapSrcListMacro_Behavior {
     }
 
     public void performActions(Object o) {
-
     }
   }
 }

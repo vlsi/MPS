@@ -123,7 +123,6 @@ public class MacroIntentionsUtil {
     }
 
     public void performActions(Object o) {
-
     }
   }
 
@@ -179,7 +178,6 @@ public class MacroIntentionsUtil {
     }
 
     public void performActions(Object o) {
-
     }
   }
 }

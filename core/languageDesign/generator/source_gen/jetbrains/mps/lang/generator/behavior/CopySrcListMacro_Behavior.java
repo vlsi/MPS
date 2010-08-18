@@ -77,7 +77,6 @@ public class CopySrcListMacro_Behavior {
     }
 
     public void performActions(Object o) {
-
     }
   }
 }

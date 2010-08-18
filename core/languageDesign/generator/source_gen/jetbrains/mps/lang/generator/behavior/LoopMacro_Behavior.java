@@ -76,7 +76,6 @@ public class LoopMacro_Behavior {
     }
 
     public void performActions(Object o) {
-
     }
   }
 }

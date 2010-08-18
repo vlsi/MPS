@@ -150,7 +150,6 @@ public class set_weakSupertypeOf_ClassifierType_Set_SubtypingRule extends Subtyp
     }
 
     public void performActions(Object o) {
-
     }
   }
 }

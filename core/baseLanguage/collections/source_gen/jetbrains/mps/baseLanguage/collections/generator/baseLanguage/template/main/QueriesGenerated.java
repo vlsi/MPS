@@ -2459,7 +2459,6 @@ public class QueriesGenerated {
     }
 
     public void performActions(Object o) {
-
     }
   }
 
@@ -2497,7 +2496,6 @@ public class QueriesGenerated {
     }
 
     public void performActions(Object o) {
-
     }
   }
 
@@ -2535,7 +2533,6 @@ public class QueriesGenerated {
     }
 
     public void performActions(Object o) {
-
     }
   }
 
@@ -2573,7 +2570,6 @@ public class QueriesGenerated {
     }
 
     public void performActions(Object o) {
-
     }
   }
 
@@ -2611,7 +2607,6 @@ public class QueriesGenerated {
     }
 
     public void performActions(Object o) {
-
     }
   }
 
@@ -2649,7 +2644,6 @@ public class QueriesGenerated {
     }
 
     public void performActions(Object o) {
-
     }
   }
 
@@ -2687,7 +2681,6 @@ public class QueriesGenerated {
     }
 
     public void performActions(Object o) {
-
     }
   }
 
@@ -2725,7 +2718,6 @@ public class QueriesGenerated {
     }
 
     public void performActions(Object o) {
-
     }
   }
 
@@ -2763,7 +2755,6 @@ public class QueriesGenerated {
     }
 
     public void performActions(Object o) {
-
     }
   }
 
@@ -2801,7 +2792,6 @@ public class QueriesGenerated {
     }
 
     public void performActions(Object o) {
-
     }
   }
 
@@ -2839,7 +2829,6 @@ public class QueriesGenerated {
     }
 
     public void performActions(Object o) {
-
     }
   }
 

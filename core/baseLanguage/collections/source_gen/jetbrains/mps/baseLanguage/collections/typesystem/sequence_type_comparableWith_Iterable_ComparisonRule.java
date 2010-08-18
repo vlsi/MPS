@@ -94,7 +94,6 @@ public class sequence_type_comparableWith_Iterable_ComparisonRule extends Compar
     }
 
     public void performActions(Object o) {
-
     }
   }
 }

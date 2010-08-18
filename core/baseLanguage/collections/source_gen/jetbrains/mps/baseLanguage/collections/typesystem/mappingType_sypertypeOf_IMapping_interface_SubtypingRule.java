@@ -187,7 +187,6 @@ public class mappingType_sypertypeOf_IMapping_interface_SubtypingRule extends Su
     }
 
     public void performActions(Object o) {
-
     }
   }
 }

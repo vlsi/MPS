@@ -187,7 +187,6 @@ public class SortedMap_comparableTo_sorted_map_SubtypingRule extends SubtypingRu
     }
 
     public void performActions(Object o) {
-
     }
   }
 }

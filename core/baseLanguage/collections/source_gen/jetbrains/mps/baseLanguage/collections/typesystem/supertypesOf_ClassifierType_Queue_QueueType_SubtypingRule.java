@@ -150,7 +150,6 @@ public class supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule extends S
     }
 
     public void performActions(Object o) {
-
     }
   }
 }

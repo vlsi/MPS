@@ -155,6 +155,7 @@
     <nodeInfo nodeId="1213877354977" fileName="MappingConfiguration_Behavior.java" startLine="28" startPosition="132" endLine="29" endPosition="134" />
     <nodeInfo nodeId="1213877354984" fileName="MappingConfiguration_Behavior.java" startLine="29" startPosition="134" endLine="30" endPosition="135" />
     <nodeInfo nodeId="1213877354991" fileName="MappingConfiguration_Behavior.java" startLine="30" startPosition="135" endLine="31" endPosition="130" />
+    <nodeInfo nodeId="1213877354998" fileName="MappingConfiguration_Behavior.java" startLine="31" startPosition="130" endLine="32" endPosition="19" />
     <nodeInfo nodeId="3166264919334429469" fileName="MappingConfiguration_Behavior.java" startLine="36" startPosition="137" endLine="37" endPosition="139" />
     <nodeInfo nodeId="3166264919334429477" fileName="MappingConfiguration_Behavior.java" startLine="37" startPosition="139" endLine="38" endPosition="243" />
     <nodeInfo nodeId="3166264919334429484" fileName="MappingConfiguration_Behavior.java" startLine="38" startPosition="243" endLine="39" endPosition="145" />
@@ -166,6 +167,7 @@
     <nodeInfo nodeId="8360039740498071331" fileName="MappingConfiguration_Behavior.java" startLine="49" startPosition="98" endLine="50" endPosition="48" />
     <nodeInfo nodeId="8360039740498071279" fileName="MappingConfiguration_Behavior.java" startLine="52" startPosition="113" endLine="53" endPosition="198" />
     <nodeInfo nodeId="8360039740498071355" fileName="MappingConfiguration_Behavior.java" startLine="54" startPosition="117" endLine="55" endPosition="195" />
+    <nodeInfo nodeId="8360039740498071374" fileName="MappingConfiguration_Behavior.java" startLine="57" startPosition="5" endLine="58" endPosition="18" />
     <nodeInfo nodeId="390427525177435250" fileName="MappingConfiguration_Behavior.java" startLine="61" startPosition="99" endLine="62" endPosition="17" />
     <nodeInfo nodeId="8360039740498071275" fileName="MappingConfiguration_Behavior.java" startLine="51" startPosition="70" endLine="56" endPosition="7" />
     <nodeInfo nodeId="8360039740498071273" fileName="MappingConfiguration_Behavior.java" startLine="50" startPosition="48" endLine="57" endPosition="5" />
@@ -335,6 +337,8 @@
     <scopeInfo nodeId="1722980698497626493" fileName="ITemplateCall_Behavior.java" startLine="17" startPosition="90" endLine="27" endPosition="16" />
   </root>
   <root nodeId="1805153994417064760">
+    <nodeInfo nodeId="1805153994417123447" fileName="PatternReduction_MappingRule_Behavior.java" startLine="20" startPosition="80" endLine="21" endPosition="16" />
+    <nodeInfo nodeId="1805153994417121163" fileName="PatternReduction_MappingRule_Behavior.java" startLine="13" startPosition="75" endLine="17" endPosition="6" />
     <scopeInfo nodeId="1805153994417064762" fileName="PatternReduction_MappingRule_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
     <scopeInfo nodeId="1805153994417123444" fileName="PatternReduction_MappingRule_Behavior.java" startLine="20" startPosition="80" endLine="21" endPosition="16" />
     <scopeInfo nodeId="1805153994417064766" fileName="PatternReduction_MappingRule_Behavior.java" startLine="13" startPosition="75" endLine="17" endPosition="6" />
@@ -360,6 +364,7 @@
   <root nodeId="8360039740498070952">
     <nodeInfo nodeId="8360039740498071156" fileName="TemplateSwitch_Behavior.java" startLine="21" startPosition="98" endLine="22" endPosition="48" />
     <nodeInfo nodeId="8360039740498071170" fileName="TemplateSwitch_Behavior.java" startLine="23" startPosition="98" endLine="24" endPosition="115" />
+    <nodeInfo nodeId="8360039740498071163" fileName="TemplateSwitch_Behavior.java" startLine="25" startPosition="5" endLine="26" endPosition="18" />
     <nodeInfo nodeId="7656801780400897415" fileName="TemplateSwitch_Behavior.java" startLine="29" startPosition="100" endLine="30" endPosition="120" />
     <nodeInfo nodeId="7656801780400897423" fileName="TemplateSwitch_Behavior.java" startLine="30" startPosition="120" endLine="31" endPosition="77" />
     <nodeInfo nodeId="7656801780400913197" fileName="TemplateSwitch_Behavior.java" startLine="31" startPosition="77" endLine="32" endPosition="111" />
@@ -377,6 +382,7 @@
     </scopeInfo>
   </root>
   <root nodeId="8952337903384729124">
+    <nodeInfo nodeId="8952337903384730541" fileName="TemplateDeclaration_Behavior.java" startLine="18" startPosition="82" endLine="19" endPosition="75" />
     <nodeInfo nodeId="390427525177559645" fileName="TemplateDeclaration_Behavior.java" startLine="22" startPosition="100" endLine="23" endPosition="81" />
     <nodeInfo nodeId="390427525177684459" fileName="TemplateDeclaration_Behavior.java" startLine="23" startPosition="81" endLine="24" endPosition="110" />
     <scopeInfo nodeId="8952337903384729126" fileName="TemplateDeclaration_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />

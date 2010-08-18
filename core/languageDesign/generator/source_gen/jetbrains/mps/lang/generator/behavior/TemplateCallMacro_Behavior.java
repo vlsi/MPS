@@ -60,7 +60,6 @@ public class TemplateCallMacro_Behavior {
     }
 
     public void performActions(Object o) {
-
     }
   }
 }

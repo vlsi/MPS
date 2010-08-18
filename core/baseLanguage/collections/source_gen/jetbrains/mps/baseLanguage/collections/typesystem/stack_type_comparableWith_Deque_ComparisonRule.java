@@ -94,7 +94,6 @@ public class stack_type_comparableWith_Deque_ComparisonRule extends ComparisonRu
     }
 
     public void performActions(Object o) {
-
     }
   }
 }

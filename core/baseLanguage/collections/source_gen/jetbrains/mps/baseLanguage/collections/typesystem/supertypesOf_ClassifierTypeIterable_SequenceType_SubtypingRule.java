@@ -150,7 +150,6 @@ public class supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule exte
     }
 
     public void performActions(Object o) {
-
     }
   }
 }

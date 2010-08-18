@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1115463791055875289">
+    <nodeInfo nodeId="1115463791055875333" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="20" startPosition="39" endLine="21" endPosition="110" />
+    <nodeInfo nodeId="1115463791055875308" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="24" startPosition="39" endLine="25" endPosition="110" />
     <nodeInfo nodeId="1115463791055875364" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="30" startPosition="157" endLine="31" endPosition="53" />
     <nodeInfo nodeId="1115463791055875364" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="35" startPosition="35" endLine="36" endPosition="53" />
     <nodeInfo nodeId="1115463791055875331" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="19" startPosition="106" endLine="23" endPosition="0" />
     <nodeInfo nodeId="1115463791055875306" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="23" startPosition="102" endLine="27" endPosition="0" />
+    <nodeInfo nodeId="1115463791055875299" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="18" startPosition="69" endLine="27" endPosition="7" />
     <scopeInfo nodeId="1115463791055875332" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="20" startPosition="39" endLine="21" endPosition="110" />
     <scopeInfo nodeId="1115463791055875307" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="24" startPosition="39" endLine="25" endPosition="110" />
     <scopeInfo nodeId="1115463791055875291" fileName="listType_with_vars_subtypeOf_listType_InequationReplacementRule.java" startLine="30" startPosition="157" endLine="31" endPosition="53" />
@@ -396,6 +399,7 @@
     <nodeInfo nodeId="1184847107857" fileName="typeof_SkipOperation_InferenceRule.java" startLine="25" startPosition="222" endLine="26" endPosition="54" />
     <nodeInfo nodeId="1184847107857" fileName="typeof_SkipOperation_InferenceRule.java" startLine="26" startPosition="54" endLine="27" endPosition="368" />
     <nodeInfo nodeId="1184847124916" fileName="typeof_SkipOperation_InferenceRule.java" startLine="28" startPosition="5" endLine="29" endPosition="81" />
+    <nodeInfo nodeId="1193828208997" fileName="TypesystemDescriptor.java" startLine="668" startPosition="54" endLine="669" endPosition="66" />
     <nodeInfo nodeId="1184847107857" fileName="typeof_SkipOperation_InferenceRule.java" startLine="21" startPosition="88" endLine="28" endPosition="5" />
     <scopeInfo nodeId="1193828208996" fileName="TypesystemDescriptor.java" startLine="668" startPosition="54" endLine="669" endPosition="66" />
     <scopeInfo nodeId="1184847107857" fileName="typeof_SkipOperation_InferenceRule.java" startLine="22" startPosition="5" endLine="27" endPosition="368" />
@@ -408,6 +412,7 @@
     <nodeInfo nodeId="1184847269142" fileName="typeof_TakeOperation_InferenceRule.java" startLine="25" startPosition="53" endLine="26" endPosition="222" />
     <nodeInfo nodeId="1184847269142" fileName="typeof_TakeOperation_InferenceRule.java" startLine="26" startPosition="222" endLine="27" endPosition="54" />
     <nodeInfo nodeId="1184847269142" fileName="typeof_TakeOperation_InferenceRule.java" startLine="27" startPosition="54" endLine="28" endPosition="368" />
+    <nodeInfo nodeId="1193828223196" fileName="TypesystemDescriptor.java" startLine="700" startPosition="54" endLine="701" endPosition="66" />
     <nodeInfo nodeId="1184847269142" fileName="typeof_TakeOperation_InferenceRule.java" startLine="22" startPosition="81" endLine="29" endPosition="5" />
     <scopeInfo nodeId="1193828223195" fileName="TypesystemDescriptor.java" startLine="700" startPosition="54" endLine="701" endPosition="66" />
     <scopeInfo nodeId="1184847269142" fileName="typeof_TakeOperation_InferenceRule.java" startLine="23" startPosition="5" endLine="28" endPosition="368" />
@@ -425,6 +430,7 @@
     <nodeInfo nodeId="1184784267337" fileName="typeof_PageOperation_InferenceRule.java" startLine="32" startPosition="53" endLine="33" endPosition="222" />
     <nodeInfo nodeId="1184784267337" fileName="typeof_PageOperation_InferenceRule.java" startLine="33" startPosition="222" endLine="34" endPosition="54" />
     <nodeInfo nodeId="1184784267337" fileName="typeof_PageOperation_InferenceRule.java" startLine="34" startPosition="54" endLine="35" endPosition="368" />
+    <nodeInfo nodeId="1193828214768" fileName="TypesystemDescriptor.java" startLine="684" startPosition="54" endLine="685" endPosition="66" />
     <nodeInfo nodeId="1184784238570" fileName="typeof_PageOperation_InferenceRule.java" startLine="22" startPosition="81" endLine="29" endPosition="5" />
     <nodeInfo nodeId="1184784267337" fileName="typeof_PageOperation_InferenceRule.java" startLine="29" startPosition="5" endLine="36" endPosition="5" />
     <scopeInfo nodeId="1193828214767" fileName="TypesystemDescriptor.java" startLine="684" startPosition="54" endLine="685" endPosition="66" />
@@ -444,6 +450,7 @@
     <nodeInfo nodeId="1184850973959" fileName="typeof_ToListOperation_InferenceRule.java" startLine="33" startPosition="44" endLine="34" endPosition="53" />
     <nodeInfo nodeId="1184850973959" fileName="typeof_ToListOperation_InferenceRule.java" startLine="34" startPosition="53" endLine="35" endPosition="222" />
     <nodeInfo nodeId="1184850973959" fileName="typeof_ToListOperation_InferenceRule.java" startLine="35" startPosition="222" endLine="36" endPosition="447" />
+    <nodeInfo nodeId="1193827622269" fileName="TypesystemDescriptor.java" startLine="652" startPosition="54" endLine="653" endPosition="66" />
     <nodeInfo nodeId="1184850973959" fileName="typeof_ToListOperation_InferenceRule.java" startLine="31" startPosition="5" endLine="37" endPosition="5" />
     <nodeInfo nodeId="1184850943303" fileName="typeof_ToListOperation_InferenceRule.java" startLine="24" startPosition="104" endLine="31" endPosition="5" />
     <scopeInfo nodeId="1193827557956" fileName="TypesystemDescriptor.java" startLine="652" startPosition="54" endLine="653" endPosition="66" />
@@ -534,6 +541,7 @@
     <nodeInfo nodeId="1184772002733" fileName="typeof_ForEachStatement_InferenceRule.java" startLine="36" startPosition="52" endLine="37" endPosition="55" />
     <nodeInfo nodeId="1184772002733" fileName="typeof_ForEachStatement_InferenceRule.java" startLine="37" startPosition="55" endLine="38" endPosition="224" />
     <nodeInfo nodeId="1184772002733" fileName="typeof_ForEachStatement_InferenceRule.java" startLine="38" startPosition="224" endLine="39" endPosition="344" />
+    <nodeInfo nodeId="1193738075893" fileName="TypesystemDescriptor.java" startLine="636" startPosition="54" endLine="637" endPosition="55" />
     <nodeInfo nodeId="1184772002733" fileName="typeof_ForEachStatement_InferenceRule.java" startLine="34" startPosition="7" endLine="40" endPosition="7" />
     <nodeInfo nodeId="1184772149777" fileName="typeof_ForEachStatement_InferenceRule.java" startLine="27" startPosition="106" endLine="34" endPosition="7" />
     <nodeInfo nodeId="1178732133842" fileName="typeof_ForEachStatement_InferenceRule.java" startLine="25" startPosition="93" endLine="41" endPosition="5" />
@@ -856,6 +864,7 @@
   </root>
   <root nodeId="1178899814661">
     <nodeInfo nodeId="1184785386681" fileName="typeof_DistinctOperation_InferenceRule.java" startLine="15" startPosition="88" endLine="16" endPosition="81" />
+    <nodeInfo nodeId="1193828244817" fileName="TypesystemDescriptor.java" startLine="716" startPosition="54" endLine="717" endPosition="66" />
     <scopeInfo nodeId="1178899814662" fileName="typeof_DistinctOperation_InferenceRule.java" startLine="15" startPosition="88" endLine="16" endPosition="81" />
     <scopeInfo nodeId="1193828244816" fileName="TypesystemDescriptor.java" startLine="716" startPosition="54" endLine="717" endPosition="66" />
   </root>
@@ -2685,6 +2694,8 @@
     <scopeInfo nodeId="1279588871815200405" fileName="typeof_CustomContainerDeclaration_InferenceRule.java" startLine="18" startPosition="89" endLine="27" endPosition="5" />
   </root>
   <root nodeId="1434634659123637361">
+    <nodeInfo nodeId="1434634659123639431" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="23" startPosition="38" endLine="24" endPosition="109" />
+    <nodeInfo nodeId="1434634659123639517" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="27" startPosition="38" endLine="28" endPosition="109" />
     <nodeInfo nodeId="1434634659123763982" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="35" startPosition="7" endLine="36" endPosition="75" />
     <nodeInfo nodeId="1434634659123763982" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="36" startPosition="75" endLine="37" endPosition="55" />
     <nodeInfo nodeId="1434634659123763982" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="37" startPosition="55" endLine="38" endPosition="230" />
@@ -2703,6 +2714,7 @@
     <nodeInfo nodeId="1434634659123639505" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="26" startPosition="102" endLine="30" endPosition="0" />
     <nodeInfo nodeId="1434634659123763982" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="34" startPosition="157" endLine="41" endPosition="7" />
     <nodeInfo nodeId="1434634659123764077" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="43" startPosition="159" endLine="50" endPosition="7" />
+    <nodeInfo nodeId="1434634659123639366" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="21" startPosition="69" endLine="30" endPosition="7" />
     <nodeInfo nodeId="1434634659123763893" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="33" startPosition="157" endLine="42" endPosition="5" />
     <nodeInfo nodeId="1434634659123764044" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="42" startPosition="5" endLine="51" endPosition="5" />
     <scopeInfo nodeId="1434634659123639430" fileName="mapWithTypeVars_subtypeOf_map_InequationReplacementRule.java" startLine="23" startPosition="38" endLine="24" endPosition="109" />
@@ -2965,10 +2977,13 @@
     <scopeInfo nodeId="3524442294805830748" fileName="supertypesOf_QueueType_QueueType_withWildcard_SubtypingRule.java" startLine="18" startPosition="92" endLine="19" endPosition="137" />
   </root>
   <root nodeId="4498918741262504537">
+    <nodeInfo nodeId="4498918741262504608" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="22" startPosition="39" endLine="23" endPosition="110" />
+    <nodeInfo nodeId="4498918741262504730" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="26" startPosition="39" endLine="27" endPosition="110" />
     <nodeInfo nodeId="4498918741262504778" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="32" startPosition="157" endLine="33" endPosition="53" />
     <nodeInfo nodeId="4498918741262504778" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="37" startPosition="35" endLine="38" endPosition="53" />
     <nodeInfo nodeId="4498918741262504599" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="21" startPosition="262" endLine="25" endPosition="0" />
     <nodeInfo nodeId="4498918741262504716" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="25" startPosition="102" endLine="29" endPosition="0" />
+    <nodeInfo nodeId="4498918741262504545" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="20" startPosition="69" endLine="29" endPosition="7" />
     <scopeInfo nodeId="4498918741262504600" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="22" startPosition="39" endLine="23" endPosition="110" />
     <scopeInfo nodeId="4498918741262504717" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="26" startPosition="39" endLine="27" endPosition="110" />
     <scopeInfo nodeId="4498918741262504539" fileName="setType_with_vars_subtypeOf_setType_InequationReplacementRule.java" startLine="32" startPosition="157" endLine="33" endPosition="53" />

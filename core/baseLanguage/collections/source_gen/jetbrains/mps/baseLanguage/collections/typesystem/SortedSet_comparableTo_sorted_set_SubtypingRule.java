@@ -150,7 +150,6 @@ public class SortedSet_comparableTo_sorted_set_SubtypingRule extends SubtypingRu
     }
 
     public void performActions(Object o) {
-
     }
   }
 }

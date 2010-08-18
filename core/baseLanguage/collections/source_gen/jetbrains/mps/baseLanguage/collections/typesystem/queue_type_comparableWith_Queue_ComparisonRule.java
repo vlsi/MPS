@@ -94,7 +94,6 @@ public class queue_type_comparableWith_Queue_ComparisonRule extends ComparisonRu
     }
 
     public void performActions(Object o) {
-
     }
   }
 }

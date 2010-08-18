@@ -150,7 +150,6 @@ public class supertypesOf_ClassifierTypeList_ListType_SubtypingRule extends Subt
     }
 
     public void performActions(Object o) {
-
     }
   }
 }

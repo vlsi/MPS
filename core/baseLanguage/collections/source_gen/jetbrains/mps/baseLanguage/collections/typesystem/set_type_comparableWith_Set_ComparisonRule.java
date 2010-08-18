@@ -94,7 +94,6 @@ public class set_type_comparableWith_Set_ComparisonRule extends ComparisonRule_R
     }
 
     public void performActions(Object o) {
-
     }
   }
 }

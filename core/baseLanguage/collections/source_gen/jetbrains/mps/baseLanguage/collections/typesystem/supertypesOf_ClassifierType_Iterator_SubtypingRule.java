@@ -150,7 +150,6 @@ public class supertypesOf_ClassifierType_Iterator_SubtypingRule extends Subtypin
     }
 
     public void performActions(Object o) {
-
     }
   }
 }

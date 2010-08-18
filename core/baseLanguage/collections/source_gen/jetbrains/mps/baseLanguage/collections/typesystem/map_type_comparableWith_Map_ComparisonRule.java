@@ -103,7 +103,6 @@ public class map_type_comparableWith_Map_ComparisonRule extends ComparisonRule_R
     }
 
     public void performActions(Object o) {
-
     }
   }
 }

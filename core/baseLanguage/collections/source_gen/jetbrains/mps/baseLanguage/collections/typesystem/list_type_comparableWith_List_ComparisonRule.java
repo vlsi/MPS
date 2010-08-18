@@ -94,7 +94,6 @@ public class list_type_comparableWith_List_ComparisonRule extends ComparisonRule
     }
 
     public void performActions(Object o) {
-
     }
   }
 }

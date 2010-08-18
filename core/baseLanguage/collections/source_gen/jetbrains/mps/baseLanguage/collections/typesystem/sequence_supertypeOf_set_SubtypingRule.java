@@ -140,7 +140,6 @@ public class sequence_supertypeOf_set_SubtypingRule extends SubtypingRule_Runtim
     }
 
     public void performActions(Object o) {
-
     }
   }
 }

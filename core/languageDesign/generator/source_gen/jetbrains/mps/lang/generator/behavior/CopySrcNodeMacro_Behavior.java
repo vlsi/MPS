@@ -60,7 +60,6 @@ public class CopySrcNodeMacro_Behavior {
     }
 
     public void performActions(Object o) {
-
     }
   }
 }

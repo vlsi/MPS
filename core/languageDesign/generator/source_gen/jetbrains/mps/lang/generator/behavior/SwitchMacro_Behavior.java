@@ -60,7 +60,6 @@ public class SwitchMacro_Behavior {
     }
 
     public void performActions(Object o) {
-
     }
   }
 }

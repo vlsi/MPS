@@ -187,7 +187,6 @@ public class java_util_Map_extends_map_SubtypingRule extends SubtypingRule_Runti
     }
 
     public void performActions(Object o) {
-
     }
   }
 }

@@ -60,7 +60,6 @@ public class IncludeMacro_Behavior {
     }
 
     public void performActions(Object o) {
-
     }
   }
 }

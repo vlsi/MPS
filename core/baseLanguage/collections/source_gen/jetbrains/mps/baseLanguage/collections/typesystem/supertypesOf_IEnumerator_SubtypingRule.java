@@ -150,7 +150,6 @@ public class supertypesOf_IEnumerator_SubtypingRule extends SubtypingRule_Runtim
     }
 
     public void performActions(Object o) {
-
     }
   }
 }
