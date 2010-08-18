@@ -62,7 +62,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
   <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="50" />
+  <maxImportIndex value="51" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="2" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
@@ -107,6 +107,7 @@
   <import index="48" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="49" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="50" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
+  <import index="51" modelUID="f:java_stub#jetbrains.mps.project.dependency(jetbrains.mps.project.dependency@java_stub)" version="-1" />
   <visible index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399162125">
     <property name="package:3" value="introduceVariable" />
@@ -40544,11 +40545,17 @@
                     </node>
                   </node>
                 </node>
-                <node role="inputSequence:7" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8325114318987675970">
-                  <link role="baseMethodDeclaration:3" targetNodeId="50.~ModuleUtil.getAllUsedLanguages(jetbrains.mps.project.IModule):java.util.List" resolveInfo="getAllUsedLanguages" />
-                  <link role="classConcept:3" targetNodeId="50.~ModuleUtil" resolveInfo="ModuleUtil" />
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8325114318987681151">
-                    <link role="variableDeclaration:3" targetNodeId="8325114318987656412" resolveInfo="m" />
+                <node role="inputSequence:7" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2236929734875959717">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2236929734875959632">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2236929734875959631">
+                      <link role="variableDeclaration:3" targetNodeId="8325114318987656412" resolveInfo="m" />
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2236929734875959636">
+                      <link role="baseMethodDeclaration:3" targetNodeId="50.~IModule.getDependenciesManager():jetbrains.mps.project.dependency.DependencyManager" resolveInfo="getDependenciesManager" />
+                    </node>
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2236929734875959721">
+                    <link role="baseMethodDeclaration:3" targetNodeId="51.~DependencyManager.getAllUsedLanguages():java.util.List" resolveInfo="getAllUsedLanguages" />
                   </node>
                 </node>
               </node>

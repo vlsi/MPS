@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.project.dependency.DependencyManager;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -33,11 +34,15 @@ public interface IModule extends ModelOwner {
   @NotNull
   ModuleReference getModuleReference();
 
-  String getModuleFqName();
+  ModuleDescriptor getModuleDescriptor();
 
-  List<SModelDescriptor> getOwnModelDescriptors();
+  void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses);
 
-  List<SModelRoot> getSModelRoots();
+  IFile getDescriptorFile();
+
+  //----deps
+
+  DependencyManager getDependenciesManager();
 
   List<Dependency> getDependOn();
 
@@ -45,29 +50,19 @@ public interface IModule extends ModelOwner {
 
   List<ModuleReference> getUsedDevkitReferences();
 
-  List<IModule> getDependOnModules();
-
   void addDependency(ModuleReference moduleRef, boolean reexport);
 
   void addUsedLanguage(ModuleReference langRef);
 
   void addUsedDevkit(ModuleReference devkitRef);
 
+  //----
+
   SModelDescriptor createModel(SModelFqName fqName, SModelRoot root);
 
-  Set<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm);
+  List<SModelDescriptor> getOwnModelDescriptors();
 
-  Set<Language> getImplicitlyImportedLanguages(SModelDescriptor sm);
-
-  IFile getDescriptorFile();
-
-  ModuleDescriptor getModuleDescriptor();
-
-  void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses);
-
-  String getGeneratorOutputPath();
-
-  String getTestsGeneratorOutputPath();
+  List<SModelRoot> getSModelRoots();
 
   String getOutputFor(SModelDescriptor model);
 
@@ -113,4 +108,19 @@ public interface IModule extends ModelOwner {
   boolean isStubPathExcluded(String path);
 
   boolean setStubPathExcluded(String path, boolean b);
+
+  //-----todo ret rid of
+  String getModuleFqName();
+
+  //todo move to model
+  Set<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm);
+
+  //todo move to model
+  Set<Language> getImplicitlyImportedLanguages(SModelDescriptor sm);
+
+  //todo used only in language,generator,solution
+  String getGeneratorOutputPath();
+
+  //todo used only in solution
+  String getTestsGeneratorOutputPath();
 }

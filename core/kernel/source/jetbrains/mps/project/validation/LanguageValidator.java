@@ -34,7 +34,7 @@ public class LanguageValidator extends BaseModuleValidator<Language>{
 
   public List<String> getErrors() {
     List<String> errors = new ArrayList<String>(super.getErrors());
-    for (ModuleReference lang : myModule.getExtendedLanguageNamespaces()) {
+    for (ModuleReference lang : myModule.getExtendedLanguageRefs()) {
       if (MPSModuleRepository.getInstance().getModule(lang) == null) {
         errors.add("Can't find extended language: " + lang.getModuleFqName());
       }

@@ -25,6 +25,7 @@ import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.dependency.LanguageDepsManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -132,7 +133,7 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     }
 
     TextTreeNode languageRuntime = new RuntimeModulesTreeNode();
-    for (IModule m : myLanguage.getRuntimeDependOnModules()) {
+    for (IModule m : ((LanguageDepsManager) myLanguage.getDependenciesManager()).getRuntimeDependOnModules()) {
       languageRuntime.add(createFor(myProject, m));
     }
     add(languageRuntime);

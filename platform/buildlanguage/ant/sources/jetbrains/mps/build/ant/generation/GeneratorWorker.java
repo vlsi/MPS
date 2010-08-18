@@ -49,7 +49,6 @@ import java.rmi.RemoteException;
 import java.util.*;
 
 public class GeneratorWorker extends MpsWorker {
-
   protected final MyMessageHandler myMessageHandler = new MyMessageHandler();
 
   public static void main(String[] args) {
@@ -318,7 +317,7 @@ public class GeneratorWorker extends MpsWorker {
     }
 
     public void fill(Map<IModule, IModuleDecorator<IModule>> map) {
-      for (IModule m : myModule.getDependOnModules()) {
+      for (IModule m : myModule.getDependenciesManager().getDependOnModules()) {
         ModuleDecorator next = (ModuleDecorator) map.get(m);
         if (next != null) myNext.add(next);
       }

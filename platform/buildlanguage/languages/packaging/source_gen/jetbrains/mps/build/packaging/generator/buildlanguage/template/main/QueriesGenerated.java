@@ -55,7 +55,6 @@ import jetbrains.mps.make.dependencies.StronglyConnectedModules;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.HashSet;
-import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.CopyUtil;
 
@@ -959,7 +958,7 @@ public class QueriesGenerated {
         SetSequence.fromSet(modules).addElement(Module_Behavior.call_getModule_1213877515148(m));
       }
       for (IModule module : SetSequence.fromSet(modules)) {
-        Set<IModule> dependency = ModuleUtil.getAllDependOnModules(module);
+        Set<IModule> dependency = module.getDependenciesManager().getAllDependOnModules();
         for (IModule dependent : SetSequence.fromSet(dependency)) {
           if (!(dependent instanceof Generator) && !(SetSequence.fromSet(modules).contains(dependent)) && !(dependent.isPackaged()) && dependent.getDescriptorFile() != null) {
             String errorText = "Required module " + dependent.getModuleFqName() + " is absent. Used by module " + module.getModuleFqName() + ".";

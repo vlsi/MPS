@@ -1005,7 +1005,7 @@ public class SModel implements Iterable<SNode> {
       ModuleReference ref = lang.getModuleReference();
       if (!usedLanguages.contains(ref)) {
         if (module != null) {
-          if (respectModulesScopes && !ModuleUtil.getAllUsedLanguages(module).contains(lang)) {
+          if (respectModulesScopes && !module.getDependenciesManager().getAllUsedLanguages().contains(lang)) {
             module.addUsedLanguage(ref);
           }
         }
@@ -1022,7 +1022,7 @@ public class SModel implements Iterable<SNode> {
             if (respectModulesScopes && module != null) {
               SModelDescriptor targetModelDescriptor = SModelRepository.getInstance().getModelDescriptor(targetModelReference);
               IModule targetModule = targetModelDescriptor == null ? null : targetModelDescriptor.getModule();
-              if (targetModule != null && !ModuleUtil.getAllDependOnModules(module).contains(targetModule)) {
+              if (targetModule != null && !module.getDependenciesManager().getAllDependOnModules().contains(targetModule)) {
                 module.addDependency(targetModule.getModuleReference(), false); // cannot decide re-export or not here!
               }
             }

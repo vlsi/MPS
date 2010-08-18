@@ -17,6 +17,8 @@ package jetbrains.mps.project;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.dependency.DevkitDepsManager;
+import jetbrains.mps.project.dependency.ModuleDepsManager;
 import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -213,12 +215,8 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
     return result;
   }
 
-  protected List<IModule> doGetDependOnModules() {
-    List<IModule> res = super.doGetDependOnModules();
-    res.addAll(getExtendedDevKits());
-    res.addAll(getExportedLanguages());
-    res.addAll(getExportedSolutions());
-    return res;
+  protected ModuleDepsManager createDepsManager() {
+    return new DevkitDepsManager(this);
   }
 
   public void save() {
