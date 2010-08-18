@@ -4,6 +4,7 @@ import com.sun.jdi.ArrayReference;
 import com.sun.jdi.ThreadReference;
 import com.sun.jdi.Value;
 import jetbrains.mps.debug.api.programState.IWatchable;
+import jetbrains.mps.debug.evaluation.EvaluationUtils;
 import jetbrains.mps.debug.integration.Icons;
 import jetbrains.mps.debug.runtime.java.programState.watchables.JavaArrayItem;
 
@@ -57,9 +58,7 @@ public class JavaArrayValue extends JavaValue {
   }
 
   public JavaValue getElementValue(int index) {
-    ArrayReference arrayReference = (ArrayReference) myValue;
-    if (index >= arrayReference.length()) return null;
-    return JavaValue.fromJDIValueRaw(arrayReference.getValue(index), myClassFQName, myThreadReference);
+    return JavaValue.fromJDIValueRaw(EvaluationUtils.getElementAt((ArrayReference) myValue, index), myClassFQName, myThreadReference);
   }
 
   public int getSize() {

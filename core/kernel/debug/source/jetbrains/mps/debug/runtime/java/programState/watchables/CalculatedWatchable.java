@@ -18,10 +18,10 @@ import javax.swing.Icon;
  * Time: 21:40:25
  * To change this template use File | Settings | File Templates.
  */
-public class CalculatedValue extends JavaBreakpointWatchable implements IWatchable {
+public class CalculatedWatchable extends JavaBreakpointWatchable implements IWatchable {
   private final JavaValue myValue;
 
-  public CalculatedValue(Value value, String classFqName, ThreadReference threadReference) {
+  public CalculatedWatchable(Value value, String classFqName, ThreadReference threadReference) {
     super(classFqName, threadReference);
     myValue = JavaValue.fromJDIValue(value, myClassFQName, threadReference);
   }

@@ -2,10 +2,15 @@ package jetbrains.mps.debug.runtime.java.programState.proxies;
 
 import com.sun.jdi.*;
 import jetbrains.mps.debug.api.programState.IWatchable;
+import jetbrains.mps.debug.evaluation.EvaluationException;
+import jetbrains.mps.debug.evaluation.EvaluationUtils;
+import jetbrains.mps.debug.evaluation.InvalidEvaluatedExpressionException;
+import jetbrains.mps.debug.evaluation.proxies.IObjectValueProxy;
 import jetbrains.mps.debug.evaluation.proxies.MirrorUtil;
 import jetbrains.mps.debug.integration.Icons;
 import jetbrains.mps.debug.runtime.java.programState.watchables.JavaField;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 import java.util.ArrayList;
@@ -59,11 +64,16 @@ public class JavaObjectValue extends JavaValue {
     return ("{" + myValue.type().name() + "} ") + myValue.toString();
   }
 
+  @Nullable
   public JavaValue getFieldValue(String fieldName) {
-    ObjectReference ref = (ObjectReference) myValue;
-    Field field = ref.referenceType().fieldByName(fieldName);
-    if (field == null) return null;
-    return JavaValue.fromJDIValueRaw(ref.getValue(field), myClassFQName, myThreadReference);
+    try {
+      ObjectReference ref = (ObjectReference) myValue;
+      Field field = EvaluationUtils.findField((ClassType) ref.referenceType(), fieldName);
+      return JavaValue.fromJDIValueRaw(ref.getValue(field), myClassFQName, myThreadReference);
+    } catch (InvalidEvaluatedExpressionException e) {
+      // we get NPE instead
+      return null;
+    }
   }
 
   public List<JavaValue> getFieldValues() {
@@ -76,19 +86,16 @@ public class JavaObjectValue extends JavaValue {
     return result;
   }
 
+  private IObjectValueProxy createValueProxy(){
+    return (IObjectValueProxy) MirrorUtil.getValueProxy(myValue, myThreadReference);
+  }
+
+  @Nullable
   public JavaValue executeMethod(String methodName, String jniSignature, Object... args) {
-    ObjectReference ref = (ObjectReference) myValue;
-    ClassType classType = (ClassType) ref.referenceType();
-    Method method = classType.concreteMethodByName(methodName, jniSignature);
-    if (method == null) {
-      return null; //todo
-    }
-    final List<Value> argValues = MirrorUtil.getValues(myThreadReference, args);
     try {
-      Value value = ref.invokeMethod(myThreadReference, method, argValues, 0);
-      return JavaValue.fromJDIValueRaw(value, jniSignature, myThreadReference);
-    } catch (Throwable t) {
-      return null; //todo
+      return JavaValue.fromJDIValueRaw(createValueProxy().invokeMethod(methodName, jniSignature, args).getJDIValue(), myClassFQName, myThreadReference);
+    } catch (EvaluationException e) {
+      return null;
     }
   }
 
@@ -101,21 +108,10 @@ public class JavaObjectValue extends JavaValue {
   }
 
   public boolean isInstanceOf(String className) {
-    ClassType whatClassType = (ClassType) ((ObjectReference)myValue).referenceType();
-
-    List<ReferenceType> classes = myThreadReference.virtualMachine().classesByName(className);
-    if (classes.isEmpty()) return false;
-
-    ReferenceType type = classes.get(0);
-
-    if (type instanceof InterfaceType) {
-      return whatClassType.allInterfaces().contains((InterfaceType)type);
+    try {
+      return createValueProxy().isInstanceOf(className);
+    } catch (EvaluationException e) {
+      return false;
     }
-
-    do {
-      if (type.equals(whatClassType)) return true;
-      whatClassType = whatClassType.superclass();
-    } while (whatClassType != null);
-    return false;
   }
 }

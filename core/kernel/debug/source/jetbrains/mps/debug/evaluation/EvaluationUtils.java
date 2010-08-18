@@ -1,3 +1,18 @@
+/*
+ * Copyright 2003-2010 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package jetbrains.mps.debug.evaluation;
 
 import com.sun.jdi.*;
@@ -7,6 +22,10 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 public class EvaluationUtils {
+
+  public static Value getElementAt(ArrayReference array, int index) {
+    return array.getValue(index);
+  }
 
   @NotNull
   public static Value invokeStatic(@NotNull final ThreadReference threadReference, String className, String name, String jniSignature, Object... args) throws EvaluationException {
@@ -55,6 +74,10 @@ public class EvaluationUtils {
     return field;
   }
 
+  public static List<Field> findFields(ClassType referenceType) {
+    return referenceType.fields();
+  }
+
   public static Method findConstructor(ClassType referenceType, String jniSignature) throws InvalidEvaluatedExpressionException {
     List<Method> methods = referenceType.methodsByName("<init>", jniSignature);
     if (methods.size() == 0) {
@@ -89,21 +112,21 @@ public class EvaluationUtils {
     return classes.get(0);
   }
 
-  public static boolean isInstanceOf(final Type what, final String ofWhat, final VirtualMachine machine) throws EvaluationException {
-    if (ofWhat.equals("Ljava/lang/Object;")) return true;
+  public static boolean isInstanceOf(final Type what, final String jniSignature, final VirtualMachine machine) throws EvaluationException {
+    if (jniSignature.equals("Ljava/lang/Object;")) return true;
     return EvaluationUtils.handleInvocationExceptions(new Invocatable<Boolean>() {
       @Override
       public Boolean invoke() throws InvocationException, InvalidTypeException, ClassNotLoadedException, IncompatibleThreadStateException, EvaluationException {
-        if (ofWhat.startsWith("[")) {
+        if (jniSignature.startsWith("[")) {
           if (!(what instanceof ArrayType)) {
             return false;
           }
-          return isInstanceOf(((ArrayType) what).componentType(), ofWhat.substring(1), machine);
-        } else if (ofWhat.startsWith("L")) {
+          return isInstanceOf(((ArrayType) what).componentType(), jniSignature.substring(1), machine);
+        } else if (jniSignature.startsWith("L")) {
           if (!(what instanceof ClassType)) {
             return false;
           }
-          ReferenceType type = findClassType(ofWhat.substring(1, ofWhat.length() - 1), machine);
+          ReferenceType type = findClassType(jniSignature.substring(1, jniSignature.length() - 1), machine);
 
           ClassType whatClassType = (ClassType) what;
           if (type instanceof InterfaceType) {

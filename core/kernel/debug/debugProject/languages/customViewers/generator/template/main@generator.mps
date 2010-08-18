@@ -64,9 +64,10 @@
   <languageAspect modelUID="r:550fbd90-c9f2-4576-a8a6-223eca16d68b(jetbrains.mps.baseLanguage.runConfigurations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" />
   <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
+  <languageAspect modelUID="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debug.customViewers.structure)" version="0" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <maxImportIndex value="8" />
-  <import index="1" modelUID="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debug.customViewers.structure)" version="-1" />
+  <import index="1" modelUID="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debug.customViewers.structure)" version="0" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.debug.runtime.java.programState.proxies(jetbrains.mps.debug.runtime.java.programState.proxies@java_stub)" version="-1" />
   <import index="4" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
@@ -88,7 +89,7 @@
                   <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel:0" id="2844414625304365739" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Model_RootsOperation:16" id="2844414625304365744">
-                  <link role="concept:16" targetNodeId="1.5117350825036256331" resolveInfo="CustomViewer" />
+                  <link role="concept:16" targetNodeId="1.5117350825036256331:0" resolveInfo="CustomViewer" />
                 </node>
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation:7" id="2844414625304365749" />
@@ -99,67 +100,69 @@
     </node>
     <node role="mappingLabel:2" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration:2" id="4089989733346843340">
       <property name="name:2" value="watchable" />
-      <link role="sourceConcept:2" targetNodeId="1.5117350825036234483" resolveInfo="CustomWatchable" />
+      <link role="sourceConcept:2" targetNodeId="1.5117350825036234483:0" resolveInfo="CustomWatchable" />
       <link role="targetConcept:2" targetNodeId="8.1068390468198:3" resolveInfo="ClassConcept" />
     </node>
     <node role="mappingLabel:2" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration:2" id="2844414625304421808">
       <property name="name:2" value="viewer" />
-      <link role="sourceConcept:2" targetNodeId="1.5117350825036256331" resolveInfo="CustomViewer" />
+      <link role="sourceConcept:2" targetNodeId="1.5117350825036256331:0" resolveInfo="CustomViewer" />
       <link role="targetConcept:2" targetNodeId="8.1068390468198:3" resolveInfo="ClassConcept" />
     </node>
     <node role="rootMappingRule:2" type="jetbrains.mps.lang.generator.structure.Root_MappingRule:2" id="4089989733346806814">
-      <link role="applicableConcept:2" targetNodeId="1.5117350825036256331" resolveInfo="CustomViewer" />
+      <property name="package:2" value="lowLevel" />
+      <link role="applicableConcept:2" targetNodeId="1.5117350825036256331:0" resolveInfo="CustomViewer" />
       <link role="template:2" targetNodeId="4089989733346808997" resolveInfo="map_CustomViewer" />
       <link role="labelDeclaration:2" targetNodeId="2844414625304421808" resolveInfo="viewer" />
     </node>
     <node role="rootMappingRule:2" type="jetbrains.mps.lang.generator.structure.Root_MappingRule:2" id="4089989733346843062">
-      <link role="applicableConcept:2" targetNodeId="1.5117350825036256317" resolveInfo="CustomWatchablesContainer" />
+      <link role="applicableConcept:2" targetNodeId="1.5117350825036256317:0" resolveInfo="CustomWatchablesContainer" />
       <link role="template:2" targetNodeId="4089989733346843063" resolveInfo="map_CustomWatchablesContainer" />
     </node>
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="4089989733346842884">
-      <property name="package:2" value="operations.arrays" />
-      <link role="applicableConcept:2" targetNodeId="1.2488554353950312745" resolveInfo="ElementOperation" />
+      <property name="package:2" value="lowLevel.operations.array" />
+      <link role="applicableConcept:2" targetNodeId="1.2488554353950312745:0" resolveInfo="ElementOperation" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="4089989733346842886">
         <link role="template:2" targetNodeId="4089989733346842882" resolveInfo="reduce_ElementOperation" />
       </node>
     </node>
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="4089989733346842912">
-      <property name="package:2" value="operations.object" />
-      <link role="applicableConcept:2" targetNodeId="1.2488554353950312668" resolveInfo="FieldOperation" />
+      <property name="package:2" value="lowLevel.operations.object" />
+      <link role="applicableConcept:2" targetNodeId="1.2488554353950312668:0" resolveInfo="FieldOperation" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="4089989733346842914">
         <link role="template:2" targetNodeId="4089989733346842910" resolveInfo="reduce_FieldOperation" />
       </node>
     </node>
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="4089989733346842939">
-      <property name="package:2" value="types" />
-      <link role="applicableConcept:2" targetNodeId="1.5117350825036234462" resolveInfo="ValueType" />
+      <property name="package:2" value="lowLevel.types" />
+      <link role="applicableConcept:2" targetNodeId="1.5117350825036234462:0" resolveInfo="ValueType" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="4089989733346842941">
         <link role="template:2" targetNodeId="4089989733346842937" resolveInfo="reduce_ValueType" />
       </node>
     </node>
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="4089989733346842947">
-      <property name="package:2" value="types" />
-      <link role="applicableConcept:2" targetNodeId="1.5117350825036234478" resolveInfo="PrimitiveValueType" />
+      <property name="package:2" value="lowLevel.types" />
+      <link role="applicableConcept:2" targetNodeId="1.5117350825036234478:0" resolveInfo="PrimitiveValueType" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="4089989733346842949">
         <link role="template:2" targetNodeId="4089989733346842945" resolveInfo="reduce_PrimitiveValueType" />
       </node>
     </node>
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="4089989733346842955">
-      <property name="package:2" value="types" />
-      <link role="applicableConcept:2" targetNodeId="1.5117350825036234467" resolveInfo="ArrayValueType" />
+      <property name="package:2" value="lowLevel.types" />
+      <link role="applicableConcept:2" targetNodeId="1.5117350825036234467:0" resolveInfo="ArrayValueType" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="4089989733346842957">
         <link role="template:2" targetNodeId="4089989733346842953" resolveInfo="reduce_ArrayValueType" />
       </node>
     </node>
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="4089989733346842963">
-      <property name="package:2" value="types" />
-      <link role="applicableConcept:2" targetNodeId="1.5117350825036234473" resolveInfo="ObjectValueType" />
+      <property name="package:2" value="lowLevel.types" />
+      <link role="applicableConcept:2" targetNodeId="1.5117350825036234473:0" resolveInfo="ObjectValueType" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="4089989733346842965">
         <link role="template:2" targetNodeId="4089989733346842961" resolveInfo="reduce_ObjectValueType" />
       </node>
     </node>
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="8236382033128530263">
-      <link role="applicableConcept:2" targetNodeId="1.5264817233616809557" resolveInfo="OriginalValue_ConceptFunctionParameter" />
+      <property name="package:2" value="lowLevel" />
+      <link role="applicableConcept:2" targetNodeId="1.5264817233616809557:0" resolveInfo="OriginalValue_ConceptFunctionParameter" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="8236382033128530276">
         <node role="templateNode:2" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference:1" id="8236382033128530280">
           <property name="name:1" value="value" />
@@ -184,7 +187,7 @@
               </node>
               <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="8236382033128530274">
                 <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="8236382033128530275">
-                  <link role="conceptDeclaration:16" targetNodeId="1.4089989733346839773" resolveInfo="CanWrapValue_ConceptFunction" />
+                  <link role="conceptDeclaration:16" targetNodeId="1.4089989733346839773:0" resolveInfo="CanWrapValue_ConceptFunction" />
                 </node>
               </node>
             </node>
@@ -193,7 +196,8 @@
       </node>
     </node>
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="4089989733346842971">
-      <link role="applicableConcept:2" targetNodeId="1.5264817233616809557" resolveInfo="OriginalValue_ConceptFunctionParameter" />
+      <property name="package:2" value="lowLevel" />
+      <link role="applicableConcept:2" targetNodeId="1.5264817233616809557:0" resolveInfo="OriginalValue_ConceptFunctionParameter" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="4089989733346842973">
         <link role="template:2" targetNodeId="4089989733346842969" resolveInfo="reduce_OriginalValue_ConceptFunctionParameter" />
       </node>
@@ -214,7 +218,7 @@
                 </node>
                 <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="8236382033128530261">
                   <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="8236382033128530262">
-                    <link role="conceptDeclaration:16" targetNodeId="1.4089989733346839773" resolveInfo="CanWrapValue_ConceptFunction" />
+                    <link role="conceptDeclaration:16" targetNodeId="1.4089989733346839773:0" resolveInfo="CanWrapValue_ConceptFunction" />
                   </node>
                 </node>
               </node>
@@ -225,90 +229,91 @@
     </node>
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="4089989733346843349">
       <property name="package:2" value="types" />
-      <link role="applicableConcept:2" targetNodeId="1.5117350825036256333" resolveInfo="WatchableType" />
+      <link role="applicableConcept:2" targetNodeId="1.5117350825036256333:0" resolveInfo="WatchableType" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="4089989733346843351">
         <link role="template:2" targetNodeId="4089989733346843347" resolveInfo="reduce_WatchableType" />
       </node>
     </node>
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="4089989733346843357">
-      <property name="package:2" value="types" />
-      <link role="applicableConcept:2" targetNodeId="1.5117350825036256338" resolveInfo="WatchableCreator" />
+      <property name="package:2" value="lowLevel.types" />
+      <link role="applicableConcept:2" targetNodeId="1.5117350825036256338:0" resolveInfo="WatchableCreator" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="4089989733346843359">
         <link role="template:2" targetNodeId="4089989733346843355" resolveInfo="reduce_WatchableCreator" />
       </node>
     </node>
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="399126674726706719">
-      <property name="package:2" value="operations.object" />
-      <link role="applicableConcept:2" targetNodeId="1.2488554353950280317" resolveInfo="FieldsListOperation" />
+      <property name="package:2" value="lowLevel.operations.object" />
+      <link role="applicableConcept:2" targetNodeId="1.2488554353950280317:0" resolveInfo="FieldsListOperation" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="399126674726706721">
         <link role="template:2" targetNodeId="399126674726706717" resolveInfo="reduce_FieldsListOperation" />
       </node>
     </node>
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="1843851250586699827">
-      <property name="package:2" value="operations.arrays" />
-      <link role="applicableConcept:2" targetNodeId="1.1843851250586694559" resolveInfo="SizeOperation" />
+      <property name="package:2" value="lowLevel.operations.array" />
+      <link role="applicableConcept:2" targetNodeId="1.1843851250586694559:0" resolveInfo="SizeOperation" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="1843851250586699829">
         <link role="template:2" targetNodeId="1843851250586699825" resolveInfo="reduce_SizeOperation" />
       </node>
     </node>
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="1843851250586701065">
-      <property name="package:2" value="operations.arrays" />
-      <link role="applicableConcept:2" targetNodeId="1.1843851250586697564" resolveInfo="ElementsRangeOperation" />
+      <property name="package:2" value="lowLevel.operations.array" />
+      <link role="applicableConcept:2" targetNodeId="1.1843851250586697564:0" resolveInfo="ElementsRangeOperation" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="1843851250586701067">
         <link role="template:2" targetNodeId="1843851250586701063" resolveInfo="reduce_ElementsRangeOperation" />
       </node>
     </node>
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="1843851250586701108">
-      <property name="package:2" value="operations.object" />
-      <link role="applicableConcept:2" targetNodeId="1.1843851250586690702" resolveInfo="ClassNameOperation" />
+      <property name="package:2" value="lowLevel.operations.object" />
+      <link role="applicableConcept:2" targetNodeId="1.1843851250586690702:0" resolveInfo="ClassNameOperation" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="1843851250586701110">
         <link role="template:2" targetNodeId="1843851250586701106" resolveInfo="reduce_ClassNameOperation" />
       </node>
     </node>
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="1843851250586701123">
-      <property name="package:2" value="operations.object" />
-      <link role="applicableConcept:2" targetNodeId="1.1843851250586694536" resolveInfo="ClassFqNameOperation" />
+      <property name="package:2" value="lowLevel.operations.object" />
+      <link role="applicableConcept:2" targetNodeId="1.1843851250586694536:0" resolveInfo="ClassFqNameOperation" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="1843851250586701125">
         <link role="template:2" targetNodeId="1843851250586701121" resolveInfo="reduce_ClassFqNameOperation" />
       </node>
     </node>
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="1843851250586701138">
-      <property name="package:2" value="operations.object" />
-      <link role="applicableConcept:2" targetNodeId="1.1843851250586697538" resolveInfo="AllElementsOperation" />
+      <property name="package:2" value="lowLevel.operations.object" />
+      <link role="applicableConcept:2" targetNodeId="1.1843851250586697538:0" resolveInfo="AllElementsOperation" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="1843851250586701140">
         <link role="template:2" targetNodeId="1843851250586701136" resolveInfo="reduce_AllElementsOperation" />
       </node>
     </node>
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="7744028807303023790">
-      <property name="package:2" value="operations.object" />
-      <link role="applicableConcept:2" targetNodeId="1.7744028807303021417" resolveInfo="CallMethodOperation" />
+      <property name="package:2" value="lowLevel.operations.object" />
+      <link role="applicableConcept:2" targetNodeId="1.7744028807303021417:0" resolveInfo="CallMethodOperation" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="7744028807303023792">
         <link role="template:2" targetNodeId="7744028807303023788" resolveInfo="reduce_CallMethodOperation" />
       </node>
     </node>
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="7744028807303050631">
-      <property name="package:2" value="operations.primitive" />
-      <link role="applicableConcept:2" targetNodeId="1.7744028807303050605" resolveInfo="JavaValueOperation" />
+      <property name="package:2" value="lowLevel.operations.primitive" />
+      <link role="applicableConcept:2" targetNodeId="1.7744028807303050605:0" resolveInfo="JavaValueOperation" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="7744028807303050633">
         <link role="template:2" targetNodeId="7744028807303050629" resolveInfo="reduce_JavaValueOperation" />
       </node>
     </node>
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="7430908097350531698">
-      <property name="package:2" value="types" />
-      <link role="applicableConcept:2" targetNodeId="1.7430908097350531683" resolveInfo="StringValueType" />
+      <property name="package:2" value="lowLevel.types" />
+      <link role="applicableConcept:2" targetNodeId="1.7430908097350531683:0" resolveInfo="StringValueType" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="7430908097350531700">
         <link role="template:2" targetNodeId="7430908097350531696" resolveInfo="reduce_StringValueType" />
       </node>
     </node>
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="7471356136626023335">
-      <property name="package:2" value="operations.string" />
-      <link role="applicableConcept:2" targetNodeId="1.7471356136625957315" resolveInfo="StringValueOperation" />
+      <property name="package:2" value="lowLevel.operations.string" />
+      <link role="applicableConcept:2" targetNodeId="1.7471356136625957315:0" resolveInfo="StringValueOperation" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="7471356136626023337">
         <link role="template:2" targetNodeId="7471356136626023333" resolveInfo="reduce_StringValueOperation" />
       </node>
     </node>
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="111018263013071704">
-      <link role="applicableConcept:2" targetNodeId="1.929171734855789933" resolveInfo="IsInstanceOfOperation" />
+      <property name="package:2" value="lowLevel.operations.object" />
+      <link role="applicableConcept:2" targetNodeId="1.929171734855789933:0" resolveInfo="IsInstanceOfOperation" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="111018263013071708">
         <link role="template:2" targetNodeId="111018263013071706" resolveInfo="reduce_IsInstanceOfOperation" />
       </node>
@@ -317,6 +322,7 @@
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4089989733346808997">
     <property name="name:3" value="map_CustomViewer" />
+    <property name="package:3" value="lowLevel" />
     <node role="staticInnerClassifiers:3" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4089989733346809174">
       <property name="nonStatic:3" value="false" />
       <property name="name:3" value="MyWrapper" />
@@ -360,7 +366,7 @@
                     <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4089989733346809285">
                       <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="4089989733346809284" />
                       <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="4089989733346830604">
-                        <link role="link:16" targetNodeId="1.5264817233616809563" />
+                        <link role="link:16" targetNodeId="1.5264817233616809563:0" />
                       </node>
                     </node>
                     <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="4089989733346830609">
@@ -388,7 +394,7 @@
                     <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4089989733346839747">
                       <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="4089989733346839746" />
                       <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="4089989733346839751">
-                        <link role="link:16" targetNodeId="1.4089989733346803665" />
+                        <link role="link:16" targetNodeId="1.4089989733346803665:0" />
                       </node>
                     </node>
                     <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="4089989733346839756">
@@ -411,7 +417,7 @@
                   <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4089989733346839763">
                     <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="4089989733346839762" />
                     <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="4089989733346839767">
-                      <link role="link:16" targetNodeId="1.4089989733346803665" />
+                      <link role="link:16" targetNodeId="1.4089989733346803665:0" />
                     </node>
                   </node>
                   <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation:16" id="4089989733346839772" />
@@ -448,7 +454,7 @@
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4089989733346809002" />
     </node>
     <node role="rootTemplateAnnotation$attribute:3" type="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation:2" id="4089989733346809003">
-      <link role="applicableConcept:2" targetNodeId="1.5117350825036256331" resolveInfo="CustomViewer" />
+      <link role="applicableConcept:2" targetNodeId="1.5117350825036256331:0" resolveInfo="CustomViewer" />
     </node>
     <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4089989733346809171">
       <link role="classifier:3" targetNodeId="3.~ValueWrapperFactory" resolveInfo="ValueWrapperFactory" />
@@ -497,7 +503,7 @@
                   <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4089989733346841380">
                     <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="4089989733346841379" />
                     <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="4089989733346841384">
-                      <link role="link:16" targetNodeId="1.4089989733346839779" />
+                      <link role="link:16" targetNodeId="1.4089989733346839779:0" />
                     </node>
                   </node>
                   <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="4089989733346841389">
@@ -535,8 +541,8 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="4089989733346842882">
     <property name="name:2" value="reduce_ElementOperation" />
-    <property name="package:2" value="operations.arrays" />
-    <link role="applicableConcept:2" targetNodeId="1.2488554353950312745" resolveInfo="ElementOperation" />
+    <property name="package:2" value="lowLevel.operations.array" />
+    <link role="applicableConcept:2" targetNodeId="1.2488554353950312745:0" resolveInfo="ElementOperation" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4089989733346842887">
       <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="4089989733346842890">
         <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="4089989733346842891">
@@ -557,7 +563,7 @@
                   <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4089989733346842905">
                     <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="4089989733346842904" />
                     <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="4089989733346842909">
-                      <link role="link:16" targetNodeId="1.2488554353950312753" />
+                      <link role="link:16" targetNodeId="1.2488554353950312753:0" />
                     </node>
                   </node>
                 </node>
@@ -571,8 +577,8 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="4089989733346842910">
     <property name="name:2" value="reduce_FieldOperation" />
-    <property name="package:2" value="operations.object" />
-    <link role="applicableConcept:2" targetNodeId="1.2488554353950312668" resolveInfo="FieldOperation" />
+    <property name="package:2" value="lowLevel.operations.object" />
+    <link role="applicableConcept:2" targetNodeId="1.2488554353950312668:0" resolveInfo="FieldOperation" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4089989733346842915">
       <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="4089989733346842918">
         <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="4089989733346842919">
@@ -593,7 +599,7 @@
                   <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4089989733346842932">
                     <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="4089989733346842931" />
                     <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="4089989733346842936">
-                      <link role="link:16" targetNodeId="1.2488554353950312694" />
+                      <link role="link:16" targetNodeId="1.2488554353950312694:0" />
                     </node>
                   </node>
                 </node>
@@ -607,8 +613,8 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="4089989733346842937">
     <property name="name:2" value="reduce_ValueType" />
-    <property name="package:2" value="types" />
-    <link role="applicableConcept:2" targetNodeId="1.5117350825036234462" resolveInfo="ValueType" />
+    <property name="package:2" value="lowLevel.types" />
+    <link role="applicableConcept:2" targetNodeId="1.5117350825036234462:0" resolveInfo="ValueType" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4089989733346842943">
       <link role="classifier:3" targetNodeId="3.~JavaValue" resolveInfo="JavaValue" />
       <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="4089989733346842944" />
@@ -616,8 +622,8 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="4089989733346842945">
     <property name="name:2" value="reduce_PrimitiveValueType" />
-    <property name="package:2" value="types" />
-    <link role="applicableConcept:2" targetNodeId="1.5117350825036234478" resolveInfo="PrimitiveValueType" />
+    <property name="package:2" value="lowLevel.types" />
+    <link role="applicableConcept:2" targetNodeId="1.5117350825036234478:0" resolveInfo="PrimitiveValueType" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4089989733346842951">
       <link role="classifier:3" targetNodeId="3.~JavaPrimitiveValue" resolveInfo="JavaPrimitiveValue" />
       <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="4089989733346842952" />
@@ -625,8 +631,8 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="4089989733346842953">
     <property name="name:2" value="reduce_ArrayValueType" />
-    <property name="package:2" value="types" />
-    <link role="applicableConcept:2" targetNodeId="1.5117350825036234467" resolveInfo="ArrayValueType" />
+    <property name="package:2" value="lowLevel.types" />
+    <link role="applicableConcept:2" targetNodeId="1.5117350825036234467:0" resolveInfo="ArrayValueType" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4089989733346842959">
       <link role="classifier:3" targetNodeId="3.~JavaArrayValue" resolveInfo="JavaArrayValue" />
       <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="4089989733346842960" />
@@ -634,8 +640,8 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="4089989733346842961">
     <property name="name:2" value="reduce_ObjectValueType" />
-    <property name="package:2" value="types" />
-    <link role="applicableConcept:2" targetNodeId="1.5117350825036234473" resolveInfo="ObjectValueType" />
+    <property name="package:2" value="lowLevel.types" />
+    <link role="applicableConcept:2" targetNodeId="1.5117350825036234473:0" resolveInfo="ObjectValueType" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4089989733346842967">
       <link role="classifier:3" targetNodeId="3.~JavaObjectValue" resolveInfo="JavaObjectValue" />
       <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="4089989733346842968" />
@@ -643,7 +649,8 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="4089989733346842969">
     <property name="name:2" value="reduce_OriginalValue_ConceptFunctionParameter" />
-    <link role="applicableConcept:2" targetNodeId="1.5264817233616809557" resolveInfo="OriginalValue_ConceptFunctionParameter" />
+    <property name="package:2" value="lowLevel" />
+    <link role="applicableConcept:2" targetNodeId="1.5264817233616809557:0" resolveInfo="OriginalValue_ConceptFunctionParameter" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4089989733346842974">
       <property name="nonStatic:3" value="true" />
       <property name="name:3" value="Wrapper" />
@@ -781,7 +788,7 @@
                   <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4089989733346843279">
                     <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="4089989733346843278" />
                     <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="4089989733346843296">
-                      <link role="property:16" targetNodeId="1.5117350825036235732" resolveInfo="iconPath" />
+                      <link role="property:16" targetNodeId="1.5117350825036235732:0" resolveInfo="iconPath" />
                     </node>
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation:3" id="4089989733346843307" />
@@ -813,7 +820,7 @@
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4089989733346843289">
                 <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="4089989733346843288" />
                 <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="4089989733346843293">
-                  <link role="link:16" targetNodeId="1.5117350825036256318" />
+                  <link role="link:16" targetNodeId="1.5117350825036256318:0" />
                 </node>
               </node>
             </node>
@@ -847,7 +854,7 @@
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4089989733346843068" />
     </node>
     <node role="rootTemplateAnnotation$attribute:3" type="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation:2" id="4089989733346843069">
-      <link role="applicableConcept:2" targetNodeId="1.5117350825036256317" resolveInfo="CustomWatchablesContainer" />
+      <link role="applicableConcept:2" targetNodeId="1.5117350825036256317:0" resolveInfo="CustomWatchablesContainer" />
     </node>
     <node role="propertyMacro$property_attribute$name:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="4089989733346843070">
       <node role="propertyValueFunction:2" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue:2" id="4089989733346843071">
@@ -867,7 +874,7 @@
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="4089989733346843347">
     <property name="name:2" value="reduce_WatchableType" />
     <property name="package:2" value="types" />
-    <link role="applicableConcept:2" targetNodeId="1.5117350825036256333" resolveInfo="WatchableType" />
+    <link role="applicableConcept:2" targetNodeId="1.5117350825036256333:0" resolveInfo="WatchableType" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4089989733346843353">
       <link role="classifier:3" targetNodeId="6.~CustomJavaWatchable" resolveInfo="CustomJavaWatchable" />
       <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="4089989733346843354" />
@@ -875,8 +882,8 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="4089989733346843355">
     <property name="name:2" value="reduce_WatchableCreator" />
-    <property name="package:2" value="types" />
-    <link role="applicableConcept:2" targetNodeId="1.5117350825036256338" resolveInfo="WatchableCreator" />
+    <property name="package:2" value="lowLevel.types" />
+    <link role="applicableConcept:2" targetNodeId="1.5117350825036256338:0" resolveInfo="WatchableCreator" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="4089989733346843360">
       <link role="baseMethodDeclaration:3" targetNodeId="4089989733346843248" resolveInfo="MyWatchable" />
       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2608445015225430985">
@@ -890,7 +897,7 @@
                   <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2608445015225430994">
                     <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="2608445015225430995" />
                     <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="2608445015225430996">
-                      <link role="link:16" targetNodeId="1.5117350825036256341" />
+                      <link role="link:16" targetNodeId="1.5117350825036256341:0" />
                     </node>
                   </node>
                 </node>
@@ -909,7 +916,7 @@
                   <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4089989733346844067">
                     <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="4089989733346844066" />
                     <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="4089989733346844071">
-                      <link role="link:16" targetNodeId="1.5264817233616806010" />
+                      <link role="link:16" targetNodeId="1.5264817233616806010:0" />
                     </node>
                   </node>
                   <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="4089989733346844076">
@@ -935,7 +942,7 @@
                       <node role="inputNode:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4089989733346844089">
                         <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="4089989733346844088" />
                         <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="4089989733346844093">
-                          <link role="link:16" targetNodeId="1.5264817233616806010" />
+                          <link role="link:16" targetNodeId="1.5264817233616806010:0" />
                         </node>
                       </node>
                     </node>
@@ -954,8 +961,8 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="399126674726706717">
     <property name="name:2" value="reduce_FieldsListOperation" />
-    <property name="package:2" value="operations.object" />
-    <link role="applicableConcept:2" targetNodeId="1.2488554353950280317" resolveInfo="FieldsListOperation" />
+    <property name="package:2" value="lowLevel.operations.object" />
+    <link role="applicableConcept:2" targetNodeId="1.2488554353950280317:0" resolveInfo="FieldsListOperation" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="399126674726706722">
       <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="399126674726707396">
         <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="399126674726707397">
@@ -973,8 +980,8 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1843851250586699825">
     <property name="name:2" value="reduce_SizeOperation" />
-    <property name="package:2" value="operations.arrays" />
-    <link role="applicableConcept:2" targetNodeId="1.1843851250586694559" resolveInfo="SizeOperation" />
+    <property name="package:2" value="lowLevel.operations.array" />
+    <link role="applicableConcept:2" targetNodeId="1.1843851250586694559:0" resolveInfo="SizeOperation" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1843851250586699830">
       <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="1843851250586699833">
         <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="1843851250586699834">
@@ -992,8 +999,8 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1843851250586701063">
     <property name="name:2" value="reduce_ElementsRangeOperation" />
-    <property name="package:2" value="operations.arrays" />
-    <link role="applicableConcept:2" targetNodeId="1.1843851250586697564" resolveInfo="ElementsRangeOperation" />
+    <property name="package:2" value="lowLevel.operations.array" />
+    <link role="applicableConcept:2" targetNodeId="1.1843851250586697564:0" resolveInfo="ElementsRangeOperation" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1843851250586701068">
       <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="1843851250586701071">
         <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="1843851250586701072">
@@ -1014,7 +1021,7 @@
                   <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1843851250586701087">
                     <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="1843851250586701086" />
                     <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1843851250586701091">
-                      <link role="link:16" targetNodeId="1.1843851250586697565" />
+                      <link role="link:16" targetNodeId="1.1843851250586697565:0" />
                     </node>
                   </node>
                 </node>
@@ -1031,7 +1038,7 @@
                   <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1843851250586701101">
                     <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="1843851250586701100" />
                     <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1843851250586701105">
-                      <link role="link:16" targetNodeId="1.1843851250586697568" />
+                      <link role="link:16" targetNodeId="1.1843851250586697568:0" />
                     </node>
                   </node>
                 </node>
@@ -1045,8 +1052,8 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1843851250586701106">
     <property name="name:2" value="reduce_ClassNameOperation" />
-    <property name="package:2" value="operations.object" />
-    <link role="applicableConcept:2" targetNodeId="1.1843851250586690702" resolveInfo="ClassNameOperation" />
+    <property name="package:2" value="lowLevel.operations.object" />
+    <link role="applicableConcept:2" targetNodeId="1.1843851250586690702:0" resolveInfo="ClassNameOperation" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1843851250586701111">
       <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="1843851250586701114">
         <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="1843851250586701115">
@@ -1064,8 +1071,8 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1843851250586701121">
     <property name="name:2" value="reduce_ClassFqNameOperation" />
-    <property name="package:2" value="operations.object" />
-    <link role="applicableConcept:2" targetNodeId="1.1843851250586694536" resolveInfo="ClassFqNameOperation" />
+    <property name="package:2" value="lowLevel.operations.object" />
+    <link role="applicableConcept:2" targetNodeId="1.1843851250586694536:0" resolveInfo="ClassFqNameOperation" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1843851250586701126">
       <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="1843851250586701129">
         <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="1843851250586701130">
@@ -1083,8 +1090,8 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1843851250586701136">
     <property name="name:2" value="reduce_AllElementsOperation" />
-    <property name="package:2" value="operations.object" />
-    <link role="applicableConcept:2" targetNodeId="1.1843851250586697538" resolveInfo="AllElementsOperation" />
+    <property name="package:2" value="lowLevel.operations.object" />
+    <link role="applicableConcept:2" targetNodeId="1.1843851250586697538:0" resolveInfo="AllElementsOperation" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1843851250586701141">
       <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="1843851250586701144">
         <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="1843851250586701145">
@@ -1169,7 +1176,7 @@
                       <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel:0" id="2844414625304366128" />
                     </node>
                     <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Model_RootsOperation:16" id="2844414625304366133">
-                      <link role="concept:16" targetNodeId="1.5117350825036256331" resolveInfo="CustomViewer" />
+                      <link role="concept:16" targetNodeId="1.5117350825036256331:0" resolveInfo="CustomViewer" />
                     </node>
                   </node>
                 </node>
@@ -1186,8 +1193,8 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="7744028807303023788">
     <property name="name:2" value="reduce_CallMethodOperation" />
-    <property name="package:2" value="operations.object" />
-    <link role="applicableConcept:2" targetNodeId="1.7744028807303021417" resolveInfo="CallMethodOperation" />
+    <property name="package:2" value="lowLevel.operations.object" />
+    <link role="applicableConcept:2" targetNodeId="1.7744028807303021417:0" resolveInfo="CallMethodOperation" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7744028807303024890">
       <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="7744028807303024891">
         <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="7744028807303024892">
@@ -1208,7 +1215,7 @@
                   <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7744028807303024901">
                     <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="7744028807303024902" />
                     <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="7744028807303024905">
-                      <link role="link:16" targetNodeId="1.7744028807303021420" />
+                      <link role="link:16" targetNodeId="1.7744028807303021420:0" />
                     </node>
                   </node>
                 </node>
@@ -1225,7 +1232,7 @@
                   <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7744028807303028969">
                     <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="7744028807303028968" />
                     <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="7744028807303028973">
-                      <link role="link:16" targetNodeId="1.7744028807303028944" />
+                      <link role="link:16" targetNodeId="1.7744028807303028944:0" />
                     </node>
                   </node>
                 </node>
@@ -1241,7 +1248,7 @@
                   <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7744028807303024916">
                     <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="7744028807303024915" />
                     <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="7744028807303024920">
-                      <link role="link:16" targetNodeId="1.7744028807303021419" />
+                      <link role="link:16" targetNodeId="1.7744028807303021419:0" />
                     </node>
                   </node>
                 </node>
@@ -1264,8 +1271,8 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="7744028807303050629">
     <property name="name:2" value="reduce_JavaValueOperation" />
-    <property name="package:2" value="operations.primitive" />
-    <link role="applicableConcept:2" targetNodeId="1.7744028807303050605" resolveInfo="JavaValueOperation" />
+    <property name="package:2" value="lowLevel.operations.primitive" />
+    <link role="applicableConcept:2" targetNodeId="1.7744028807303050605:0" resolveInfo="JavaValueOperation" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7744028807303050634">
       <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="7744028807303050635">
         <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="7744028807303050636">
@@ -1283,8 +1290,8 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="7430908097350531696">
     <property name="name:2" value="reduce_StringValueType" />
-    <property name="package:2" value="types" />
-    <link role="applicableConcept:2" targetNodeId="1.7430908097350531683" resolveInfo="StringValueType" />
+    <property name="package:2" value="lowLevel.types" />
+    <link role="applicableConcept:2" targetNodeId="1.7430908097350531683:0" resolveInfo="StringValueType" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7430908097350533923">
       <link role="classifier:3" targetNodeId="3.~JavaStringValue" resolveInfo="JavaStringValue" />
       <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="7430908097350533924" />
@@ -1292,8 +1299,8 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="7471356136626023333">
     <property name="name:2" value="reduce_StringValueOperation" />
-    <property name="package:2" value="operations.string" />
-    <link role="applicableConcept:2" targetNodeId="1.7471356136625957315" resolveInfo="StringValueOperation" />
+    <property name="package:2" value="lowLevel.operations.string" />
+    <link role="applicableConcept:2" targetNodeId="1.7471356136625957315:0" resolveInfo="StringValueOperation" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7471356136626023338">
       <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="7471356136626023339">
         <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="7471356136626023340">
@@ -1311,8 +1318,8 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="111018263013071706">
     <property name="name:2" value="reduce_IsInstanceOfOperation" />
-    <property name="package:2" value="operations.object" />
-    <link role="applicableConcept:2" targetNodeId="1.929171734855789933" resolveInfo="IsInstanceOfOperation" />
+    <property name="package:2" value="lowLevel.operations.object" />
+    <link role="applicableConcept:2" targetNodeId="1.929171734855789933:0" resolveInfo="IsInstanceOfOperation" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="111018263013072381">
       <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="111018263013072389">
         <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="111018263013072387">
@@ -1335,7 +1342,7 @@
                     <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="111018263013073631">
                       <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="111018263013073630" />
                       <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="111018263013073635">
-                        <link role="link:16" targetNodeId="1.929171734855790188" />
+                        <link role="link:16" targetNodeId="1.929171734855790188:0" />
                       </node>
                     </node>
                   </node>

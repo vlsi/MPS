@@ -61,33 +61,34 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" />
   <languageAspect modelUID="r:550fbd90-c9f2-4576-a8a6-223eca16d68b(jetbrains.mps.baseLanguage.runConfigurations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
+  <languageAspect modelUID="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debug.customViewers.structure)" version="0" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <maxImportIndex value="2" />
   <import index="1" modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
-  <node type="jetbrains.mps.debug.customViewers.structure.CustomWatchablesContainer" id="4712912993948287708">
-    <property name="name" value="TuplesWatchables" />
-    <node role="watchable" type="jetbrains.mps.debug.customViewers.structure.CustomWatchable" id="4712912993948287846">
-      <property name="name" value="element" />
+  <node type="jetbrains.mps.debug.customViewers.structure.CustomWatchablesContainer:0" id="4712912993948287708">
+    <property name="name:0" value="TuplesWatchables" />
+    <node role="watchable:0" type="jetbrains.mps.debug.customViewers.structure.CustomWatchable:0" id="4712912993948287846">
+      <property name="name:0" value="element" />
     </node>
   </node>
-  <node type="jetbrains.mps.debug.customViewers.structure.CustomViewer" id="4712912993948287709">
-    <property name="name" value="IndexedTupleViewer" />
-    <node role="getWatchables" type="jetbrains.mps.debug.customViewers.structure.GetWatchablesBlock_ConceptFunction" id="4712912993948287710">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4712912993948287711">
+  <node type="jetbrains.mps.debug.customViewers.structure.CustomViewer:0" id="4712912993948287709">
+    <property name="name:0" value="IndexedTupleViewer" />
+    <node role="getWatchables:0" type="jetbrains.mps.debug.customViewers.structure.GetWatchablesBlock_ConceptFunction:0" id="4712912993948287710">
+      <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4712912993948287711">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="4712912993948287782">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="4712912993948287783">
             <property name="name:3" value="value" />
-            <node role="type:3" type="jetbrains.mps.debug.customViewers.structure.ValueType" id="4712912993948287784" />
+            <node role="type:3" type="jetbrains.mps.debug.customViewers.structure.ValueType:0" id="4712912993948287784" />
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4712912993948287785">
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="4712912993948287786">
                 <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="4712912993948287787">
-                  <node role="expression:3" type="jetbrains.mps.debug.customViewers.structure.OriginalValue_ConceptFunctionParameter" id="4712912993948287788" />
-                  <node role="type:3" type="jetbrains.mps.debug.customViewers.structure.ObjectValueType" id="4712912993948287789" />
+                  <node role="expression:3" type="jetbrains.mps.debug.customViewers.structure.OriginalValue_ConceptFunctionParameter:0" id="4712912993948287788" />
+                  <node role="type:3" type="jetbrains.mps.debug.customViewers.structure.ObjectValueType:0" id="4712912993948287789" />
                 </node>
               </node>
-              <node role="operation:3" type="jetbrains.mps.debug.customViewers.structure.FieldOperation" id="4712912993948287790">
-                <node role="fieldName" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4712912993948287791">
+              <node role="operation:3" type="jetbrains.mps.debug.customViewers.structure.FieldOperation:0" id="4712912993948287790">
+                <node role="fieldName:0" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4712912993948287791">
                   <property name="value:3" value="values" />
                 </node>
               </node>
@@ -97,9 +98,9 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="4712912993948287793">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="4712912993948287794">
             <property name="name:3" value="values" />
-            <node role="type:3" type="jetbrains.mps.debug.customViewers.structure.ArrayValueType" id="4712912993948287795" />
+            <node role="type:3" type="jetbrains.mps.debug.customViewers.structure.ArrayValueType:0" id="4712912993948287795" />
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="4712912993948287797">
-              <node role="type:3" type="jetbrains.mps.debug.customViewers.structure.ArrayValueType" id="4712912993948287798" />
+              <node role="type:3" type="jetbrains.mps.debug.customViewers.structure.ArrayValueType:0" id="4712912993948287798" />
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4712912993948287800">
                 <link role="variableDeclaration:3" targetNodeId="4712912993948287783" resolveInfo="value" />
               </node>
@@ -110,11 +111,11 @@
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="4712912993948287825">
             <property name="name:3" value="result" />
             <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="4712912993948287826">
-              <node role="elementType:7" type="jetbrains.mps.debug.customViewers.structure.WatchableType" id="4712912993948287828" />
+              <node role="elementType:7" type="jetbrains.mps.debug.customViewers.structure.WatchableType:0" id="4712912993948287828" />
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="4712912993948287830">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit:7" id="4712912993948287831">
-                <node role="elementType:7" type="jetbrains.mps.debug.customViewers.structure.WatchableType" id="4712912993948287832" />
+                <node role="elementType:7" type="jetbrains.mps.debug.customViewers.structure.WatchableType:0" id="4712912993948287832" />
               </node>
             </node>
           </node>
@@ -128,9 +129,9 @@
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="4712912993948287839">
                   <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="4712912993948287842">
-                    <node role="creator:3" type="jetbrains.mps.debug.customViewers.structure.WatchableCreator" id="4712912993948287844">
-                      <link role="watchable" targetNodeId="4712912993948287846" resolveInfo="element" />
-                      <node role="value" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4712912993948287847">
+                    <node role="creator:3" type="jetbrains.mps.debug.customViewers.structure.WatchableCreator:0" id="4712912993948287844">
+                      <link role="watchable:0" targetNodeId="4712912993948287846" resolveInfo="element" />
+                      <node role="value:0" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4712912993948287847">
                         <link role="variableDeclaration:3" targetNodeId="4712912993948287818" resolveInfo="elementValue" />
                       </node>
                     </node>
@@ -141,13 +142,13 @@
           </node>
           <node role="variable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="4712912993948287818">
             <property name="name:3" value="elementValue" />
-            <node role="type:3" type="jetbrains.mps.debug.customViewers.structure.ValueType" id="4712912993948287819" />
+            <node role="type:3" type="jetbrains.mps.debug.customViewers.structure.ValueType:0" id="4712912993948287819" />
           </node>
           <node role="iterable:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4712912993948287820">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4712912993948287821">
               <link role="variableDeclaration:3" targetNodeId="4712912993948287794" resolveInfo="values" />
             </node>
-            <node role="operation:3" type="jetbrains.mps.debug.customViewers.structure.AllElementsOperation" id="4712912993948287822" />
+            <node role="operation:3" type="jetbrains.mps.debug.customViewers.structure.AllElementsOperation:0" id="4712912993948287822" />
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="4712912993948287849">
@@ -157,12 +158,12 @@
         </node>
       </node>
     </node>
-    <node role="canWrapBlock" type="jetbrains.mps.debug.customViewers.structure.CanWrapValue_ConceptFunction" id="4712912993948287712">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4712912993948287713">
+    <node role="canWrapBlock:0" type="jetbrains.mps.debug.customViewers.structure.CanWrapValue_ConceptFunction:0" id="4712912993948287712">
+      <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4712912993948287713">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="4712912993948287746">
           <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression:3" id="4712912993948287747">
-            <node role="classType:3" type="jetbrains.mps.debug.customViewers.structure.ObjectValueType" id="4712912993948287748" />
-            <node role="leftExpression:3" type="jetbrains.mps.debug.customViewers.structure.OriginalValue_ConceptFunctionParameter" id="4712912993948287749" />
+            <node role="classType:3" type="jetbrains.mps.debug.customViewers.structure.ObjectValueType:0" id="4712912993948287748" />
+            <node role="leftExpression:3" type="jetbrains.mps.debug.customViewers.structure.OriginalValue_ConceptFunctionParameter:0" id="4712912993948287749" />
           </node>
           <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4712912993948287750">
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="4712912993948287752">
@@ -170,11 +171,11 @@
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4712912993948287754">
                   <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="4712912993948287755">
                     <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="4712912993948287756">
-                      <node role="type:3" type="jetbrains.mps.debug.customViewers.structure.ObjectValueType" id="4712912993948287757" />
-                      <node role="expression:3" type="jetbrains.mps.debug.customViewers.structure.OriginalValue_ConceptFunctionParameter" id="4712912993948287758" />
+                      <node role="type:3" type="jetbrains.mps.debug.customViewers.structure.ObjectValueType:0" id="4712912993948287757" />
+                      <node role="expression:3" type="jetbrains.mps.debug.customViewers.structure.OriginalValue_ConceptFunctionParameter:0" id="4712912993948287758" />
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.debug.customViewers.structure.ClassFqNameOperation" id="4712912993948287759" />
+                  <node role="operation:3" type="jetbrains.mps.debug.customViewers.structure.ClassFqNameOperation:0" id="4712912993948287759" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4712912993948287760">
                   <link role="baseMethodDeclaration:3" targetNodeId="2.~String.startsWith(java.lang.String):boolean" resolveInfo="startsWith" />
@@ -193,8 +194,8 @@
         </node>
       </node>
     </node>
-    <node role="getPresentation" type="jetbrains.mps.debug.customViewers.structure.GetValuePresentation_ConceptFunction" id="4712912993948287852">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4712912993948287853">
+    <node role="getPresentation:0" type="jetbrains.mps.debug.customViewers.structure.GetValuePresentation_ConceptFunction:0" id="4712912993948287852">
+      <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4712912993948287853">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="4712912993948287856">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="4712912993948287857">
             <property name="name:3" value="sb" />
@@ -214,16 +215,16 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="4712912993948287864">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="4712912993948287865">
             <property name="name:3" value="value" />
-            <node role="type:3" type="jetbrains.mps.debug.customViewers.structure.ValueType" id="4712912993948287866" />
+            <node role="type:3" type="jetbrains.mps.debug.customViewers.structure.ValueType:0" id="4712912993948287866" />
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4712912993948287867">
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="4712912993948287868">
                 <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="4712912993948287869">
-                  <node role="expression:3" type="jetbrains.mps.debug.customViewers.structure.OriginalValue_ConceptFunctionParameter" id="4712912993948287870" />
-                  <node role="type:3" type="jetbrains.mps.debug.customViewers.structure.ObjectValueType" id="4712912993948287871" />
+                  <node role="expression:3" type="jetbrains.mps.debug.customViewers.structure.OriginalValue_ConceptFunctionParameter:0" id="4712912993948287870" />
+                  <node role="type:3" type="jetbrains.mps.debug.customViewers.structure.ObjectValueType:0" id="4712912993948287871" />
                 </node>
               </node>
-              <node role="operation:3" type="jetbrains.mps.debug.customViewers.structure.FieldOperation" id="4712912993948287872">
-                <node role="fieldName" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4712912993948287873">
+              <node role="operation:3" type="jetbrains.mps.debug.customViewers.structure.FieldOperation:0" id="4712912993948287872">
+                <node role="fieldName:0" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4712912993948287873">
                   <property name="value:3" value="values" />
                 </node>
               </node>
@@ -233,9 +234,9 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="4712912993948287875">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="4712912993948287876">
             <property name="name:3" value="values" />
-            <node role="type:3" type="jetbrains.mps.debug.customViewers.structure.ArrayValueType" id="4712912993948287877" />
+            <node role="type:3" type="jetbrains.mps.debug.customViewers.structure.ArrayValueType:0" id="4712912993948287877" />
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="4712912993948287878">
-              <node role="type:3" type="jetbrains.mps.debug.customViewers.structure.ArrayValueType" id="4712912993948287879" />
+              <node role="type:3" type="jetbrains.mps.debug.customViewers.structure.ArrayValueType:0" id="4712912993948287879" />
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4712912993948287880">
                 <link role="variableDeclaration:3" targetNodeId="4712912993948287865" resolveInfo="value" />
               </node>
@@ -259,7 +260,7 @@
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4712912993948288065">
                 <link role="variableDeclaration:3" targetNodeId="4712912993948287876" resolveInfo="values" />
               </node>
-              <node role="operation:3" type="jetbrains.mps.debug.customViewers.structure.SizeOperation" id="4712912993948288070" />
+              <node role="operation:3" type="jetbrains.mps.debug.customViewers.structure.SizeOperation:0" id="4712912993948288070" />
             </node>
           </node>
         </node>
@@ -267,7 +268,7 @@
           <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4712912993948287884">
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="4712912993948287897">
               <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression:3" id="4712912993948287901">
-                <node role="classType:3" type="jetbrains.mps.debug.customViewers.structure.PrimitiveValueType" id="4712912993948287904" />
+                <node role="classType:3" type="jetbrains.mps.debug.customViewers.structure.PrimitiveValueType:0" id="4712912993948287904" />
                 <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4712912993948287918">
                   <link role="variableDeclaration:3" targetNodeId="4712912993948287892" resolveInfo="elementValue" />
                 </node>
@@ -283,13 +284,13 @@
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4712912993948287924">
                         <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="4712912993948287920">
                           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="4712912993948287921">
-                            <node role="type:3" type="jetbrains.mps.debug.customViewers.structure.PrimitiveValueType" id="4712912993948287922" />
+                            <node role="type:3" type="jetbrains.mps.debug.customViewers.structure.PrimitiveValueType:0" id="4712912993948287922" />
                             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4712912993948287923">
                               <link role="variableDeclaration:3" targetNodeId="4712912993948287892" resolveInfo="elementValue" />
                             </node>
                           </node>
                         </node>
-                        <node role="operation:3" type="jetbrains.mps.debug.customViewers.structure.JavaValueOperation" id="4712912993948287928" />
+                        <node role="operation:3" type="jetbrains.mps.debug.customViewers.structure.JavaValueOperation:0" id="4712912993948287928" />
                       </node>
                     </node>
                   </node>
@@ -297,7 +298,7 @@
               </node>
               <node role="elsifClauses:3" type="jetbrains.mps.baseLanguage.structure.ElsifClause:3" id="4712912993948287929">
                 <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression:3" id="4712912993948287933">
-                  <node role="classType:3" type="jetbrains.mps.debug.customViewers.structure.StringValueType" id="4712912993948287936" />
+                  <node role="classType:3" type="jetbrains.mps.debug.customViewers.structure.StringValueType:0" id="4712912993948287936" />
                   <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4712912993948287932">
                     <link role="variableDeclaration:3" targetNodeId="4712912993948287892" resolveInfo="elementValue" />
                   </node>
@@ -326,13 +327,13 @@
                         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4712912993948287967">
                           <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="4712912993948287963">
                             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="4712912993948287964">
-                              <node role="type:3" type="jetbrains.mps.debug.customViewers.structure.StringValueType" id="4712912993948287965" />
+                              <node role="type:3" type="jetbrains.mps.debug.customViewers.structure.StringValueType:0" id="4712912993948287965" />
                               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4712912993948287966">
                                 <link role="variableDeclaration:3" targetNodeId="4712912993948287892" resolveInfo="elementValue" />
                               </node>
                             </node>
                           </node>
-                          <node role="operation:3" type="jetbrains.mps.debug.customViewers.structure.StringValueOperation" id="4712912993948287971" />
+                          <node role="operation:3" type="jetbrains.mps.debug.customViewers.structure.StringValueOperation:0" id="4712912993948287971" />
                         </node>
                       </node>
                     </node>
@@ -354,7 +355,7 @@
               </node>
               <node role="elsifClauses:3" type="jetbrains.mps.baseLanguage.structure.ElsifClause:3" id="4712912993948287972">
                 <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression:3" id="4712912993948287976">
-                  <node role="classType:3" type="jetbrains.mps.debug.customViewers.structure.ObjectValueType" id="4712912993948287979" />
+                  <node role="classType:3" type="jetbrains.mps.debug.customViewers.structure.ObjectValueType:0" id="4712912993948287979" />
                   <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4712912993948287975">
                     <link role="variableDeclaration:3" targetNodeId="4712912993948287892" resolveInfo="elementValue" />
                   </node>
@@ -363,21 +364,21 @@
                   <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="4712912993948288005">
                     <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="4712912993948288006">
                       <property name="name:3" value="tostring" />
-                      <node role="type:3" type="jetbrains.mps.debug.customViewers.structure.ValueType" id="4712912993948288007" />
+                      <node role="type:3" type="jetbrains.mps.debug.customViewers.structure.ValueType:0" id="4712912993948288007" />
                       <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4712912993948288008">
                         <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="4712912993948288009">
                           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="4712912993948288010">
-                            <node role="type:3" type="jetbrains.mps.debug.customViewers.structure.ObjectValueType" id="4712912993948288011" />
+                            <node role="type:3" type="jetbrains.mps.debug.customViewers.structure.ObjectValueType:0" id="4712912993948288011" />
                             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4712912993948288012">
                               <link role="variableDeclaration:3" targetNodeId="4712912993948287892" resolveInfo="elementValue" />
                             </node>
                           </node>
                         </node>
-                        <node role="operation:3" type="jetbrains.mps.debug.customViewers.structure.CallMethodOperation" id="4712912993948288013">
-                          <node role="methodName" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4712912993948288014">
+                        <node role="operation:3" type="jetbrains.mps.debug.customViewers.structure.CallMethodOperation:0" id="4712912993948288013">
+                          <node role="methodName:0" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4712912993948288014">
                             <property name="value:3" value="toString" />
                           </node>
-                          <node role="signature" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4712912993948288015">
+                          <node role="signature:0" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4712912993948288015">
                             <property name="value:3" value="()Ljava/lang/String;" />
                           </node>
                         </node>
@@ -394,13 +395,13 @@
                         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4712912993948288025">
                           <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="4712912993948288021">
                             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="4712912993948288022">
-                              <node role="type:3" type="jetbrains.mps.debug.customViewers.structure.StringValueType" id="4712912993948288023" />
+                              <node role="type:3" type="jetbrains.mps.debug.customViewers.structure.StringValueType:0" id="4712912993948288023" />
                               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4712912993948288024">
                                 <link role="variableDeclaration:3" targetNodeId="4712912993948288006" resolveInfo="tostring" />
                               </node>
                             </node>
                           </node>
-                          <node role="operation:3" type="jetbrains.mps.debug.customViewers.structure.StringValueOperation" id="4712912993948288029" />
+                          <node role="operation:3" type="jetbrains.mps.debug.customViewers.structure.StringValueOperation:0" id="4712912993948288029" />
                         </node>
                       </node>
                     </node>
@@ -465,13 +466,13 @@
           </node>
           <node role="variable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="4712912993948287892">
             <property name="name:3" value="elementValue" />
-            <node role="type:3" type="jetbrains.mps.debug.customViewers.structure.ValueType" id="4712912993948287893" />
+            <node role="type:3" type="jetbrains.mps.debug.customViewers.structure.ValueType:0" id="4712912993948287893" />
           </node>
           <node role="iterable:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4712912993948287894">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4712912993948287895">
               <link role="variableDeclaration:3" targetNodeId="4712912993948287876" resolveInfo="values" />
             </node>
-            <node role="operation:3" type="jetbrains.mps.debug.customViewers.structure.AllElementsOperation" id="4712912993948287896" />
+            <node role="operation:3" type="jetbrains.mps.debug.customViewers.structure.AllElementsOperation:0" id="4712912993948287896" />
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4712912993948289522">
