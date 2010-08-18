@@ -10,6 +10,7 @@ import jetbrains.mps.debug.evaluation.proxies.MirrorUtil;
 import jetbrains.mps.debug.integration.Icons;
 import jetbrains.mps.debug.runtime.java.programState.watchables.JavaField;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
@@ -86,6 +87,7 @@ public class JavaObjectValue extends JavaValue {
     return result;
   }
 
+  @NotNull
   private IObjectValueProxy createValueProxy(){
     return (IObjectValueProxy) MirrorUtil.getValueProxy(myValue, myThreadReference);
   }
@@ -109,7 +111,7 @@ public class JavaObjectValue extends JavaValue {
 
   public boolean isInstanceOf(String className) {
     try {
-      return createValueProxy().isInstanceOf(className);
+      return createValueProxy().isInstanceOf("L" + className + ";");
     } catch (EvaluationException e) {
       return false;
     }

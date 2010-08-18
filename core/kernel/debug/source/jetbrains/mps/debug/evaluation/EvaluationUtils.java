@@ -105,6 +105,10 @@ public class EvaluationUtils {
   }
 
   public static ReferenceType findClassType(String className, VirtualMachine virtualMachine) throws InvalidEvaluatedExpressionException {
+    // apparently, classesByName works for both dot and slash (ie for java.lang.String and for java/lang/String)
+    // even for java.lang/String
+    // seriously
+    // amazing
     List<ReferenceType> classes = virtualMachine.classesByName(className);
     if (classes.size() == 0) {
       throw new InvalidEvaluatedExpressionException("Could not find class " + className + ".");
