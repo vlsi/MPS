@@ -192,11 +192,6 @@
       <link role="target:0" targetNodeId="4413230749907802464:0" resolveInfo="ActionStatement" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration:0" id="4413230749907733335">
-    <property name="role:0" value="actionAsPattern" />
-    <link role="source:0" targetNodeId="1.1133920641626:0" resolveInfo="BaseConcept" />
-    <link role="target:0" targetNodeId="4413230749907733332:0" resolveInfo="ActionAsPattern" />
-  </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4413230749907802464">
     <property name="name:0" value="ActionStatement" />
     <link role="extends:0" targetNodeId="5.1068580123157:3" resolveInfo="Statement" />

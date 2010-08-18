@@ -39,16 +39,16 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
-  <maxImportIndex value="8" />
+  <maxImportIndex value="9" />
   <import index="5" modelUID="f:java_stub#jetbrains.mps.lang.pattern.util(jetbrains.mps.lang.pattern.util@java_stub)" version="-1" />
   <import index="6" modelUID="f:java_stub#jetbrains.mps.nodeEditor.cells(jetbrains.mps.nodeEditor.cells@java_stub)" version="-1" />
   <import index="7" modelUID="f:java_stub#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <import index="8" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
-  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" />
+  <import index="9" modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="3514655265371682052">
     <property name="name:8" value="CreatePatternVariable" />
     <property name="isAvailableInChildNodes:8" value="true" />
-    <link role="forConcept:8" targetNodeId="2v.1136720037777:0" resolveInfo="PatternExpression" />
+    <link role="forConcept:8" targetNodeId="9.1136720037777:0" resolveInfo="PatternExpression" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="3514655265371682053">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3514655265371682054">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3514655265371691619">
@@ -84,7 +84,7 @@
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="3514655265371724198">
     <property name="name:8" value="CreatePropertyPatternVariable" />
     <property name="isAvailableInChildNodes:8" value="true" />
-    <link role="forConcept:8" targetNodeId="2v.1136720037777:0" resolveInfo="PatternExpression" />
+    <link role="forConcept:8" targetNodeId="9.1136720037777:0" resolveInfo="PatternExpression" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="3514655265371724199">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3514655265371724200">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3514655265371753275">
@@ -162,7 +162,7 @@
                   <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation:16" id="3514655265371756816" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation:16" id="3514655265371756817">
-                  <link role="concept:16" targetNodeId="2v.1136720037781:0" resolveInfo="PropertyPatternVariableDeclaration" />
+                  <link role="concept:16" targetNodeId="9.1136720037781:0" resolveInfo="PropertyPatternVariableDeclaration" />
                 </node>
               </node>
             </node>
@@ -200,7 +200,7 @@
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="3514655265371785881">
     <property name="name:8" value="CreateListPattern" />
     <property name="isAvailableInChildNodes:8" value="true" />
-    <link role="forConcept:8" targetNodeId="2v.1136720037777:0" resolveInfo="PatternExpression" />
+    <link role="forConcept:8" targetNodeId="9.1136720037777:0" resolveInfo="PatternExpression" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="3514655265371785882">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3514655265371785883">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3514655265371789393">
@@ -244,12 +244,12 @@
               </node>
               <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation:16" id="3514655265371789422">
                 <node role="attributeQualifier:16" type="jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier:16" id="3514655265371789423">
-                  <link role="annotationLink:16" targetNodeId="2v.1152030745648:0" resolveInfo="asPattern" />
+                  <link role="annotationLink:16" targetNodeId="9.1152030745648:0" resolveInfo="asPattern" />
                 </node>
               </node>
             </node>
             <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation:16" id="3514655265371789424">
-              <link role="concept:16" targetNodeId="2v.1136727061274:0" resolveInfo="ListPattern" />
+              <link role="concept:16" targetNodeId="9.1136727061274:0" resolveInfo="ListPattern" />
             </node>
           </node>
         </node>
@@ -312,7 +312,7 @@
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="3514655265371789444">
     <property name="name:8" value="CreateWildcardPattern" />
     <property name="isAvailableInChildNodes:8" value="true" />
-    <link role="forConcept:8" targetNodeId="2v.1136720037777:0" resolveInfo="PatternExpression" />
+    <link role="forConcept:8" targetNodeId="9.1136720037777:0" resolveInfo="PatternExpression" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="3514655265371789445">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3514655265371789446">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3514655265371789449">
@@ -353,7 +353,7 @@
                   <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation:16" id="3514655265371789464" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation:16" id="3514655265371789465">
-                  <link role="concept:16" targetNodeId="2v.1136720037783:0" resolveInfo="WildcardPattern" />
+                  <link role="concept:16" targetNodeId="9.1136720037783:0" resolveInfo="WildcardPattern" />
                 </node>
               </node>
             </node>
@@ -375,7 +375,7 @@
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="3514655265371789469">
     <property name="name:8" value="CreateAsPattern" />
-    <link role="forConcept:8" targetNodeId="2v.1136720037777:0" resolveInfo="PatternExpression" />
+    <link role="forConcept:8" targetNodeId="9.1136720037777:0" resolveInfo="PatternExpression" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="3514655265371789470">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3514655265371789471">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3514655265371789474">
@@ -407,12 +407,12 @@
               </node>
               <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation:16" id="3514655265371789485">
                 <node role="attributeQualifier:16" type="jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier:16" id="3514655265371789486">
-                  <link role="annotationLink:16" targetNodeId="2v.1152030745648:0" resolveInfo="asPattern" />
+                  <link role="annotationLink:16" targetNodeId="9.1152030745648:0" resolveInfo="asPattern" />
                 </node>
               </node>
             </node>
             <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation:16" id="3514655265371789487">
-              <link role="concept:16" targetNodeId="2v.1136720037773:0" resolveInfo="AsPattern" />
+              <link role="concept:16" targetNodeId="9.1136720037773:0" resolveInfo="AsPattern" />
             </node>
           </node>
         </node>
@@ -433,7 +433,7 @@
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="4413230749907735528">
     <property name="name:8" value="CreateActionAsPattern" />
     <property name="isAvailableInChildNodes:8" value="true" />
-    <link role="forConcept:8" targetNodeId="2v.1136720037777:0" resolveInfo="PatternExpression" />
+    <link role="forConcept:8" targetNodeId="9.1136720037777:0" resolveInfo="PatternExpression" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="4413230749907735529">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4413230749907735530">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4413230749907743482">
@@ -465,12 +465,12 @@
               </node>
               <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation:16" id="4413230749907743495">
                 <node role="attributeQualifier:16" type="jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier:16" id="6672886161226170439">
-                  <link role="annotationLink:16" targetNodeId="2v.1152030745648:0" resolveInfo="asPattern" />
+                  <link role="annotationLink:16" targetNodeId="9.1152030745648:0" resolveInfo="asPattern" />
                 </node>
               </node>
             </node>
             <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation:16" id="4413230749907743497">
-              <link role="concept:16" targetNodeId="2v.4413230749907733332:0" resolveInfo="ActionAsPattern" />
+              <link role="concept:16" targetNodeId="9.4413230749907733332:0" resolveInfo="ActionAsPattern" />
             </node>
           </node>
         </node>
