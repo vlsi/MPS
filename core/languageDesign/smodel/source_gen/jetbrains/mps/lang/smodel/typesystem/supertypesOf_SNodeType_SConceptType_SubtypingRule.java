@@ -102,7 +102,6 @@ public class supertypesOf_SNodeType_SConceptType_SubtypingRule extends Subtyping
     }
 
     public void performActions(Object o) {
-
     }
   }
 }

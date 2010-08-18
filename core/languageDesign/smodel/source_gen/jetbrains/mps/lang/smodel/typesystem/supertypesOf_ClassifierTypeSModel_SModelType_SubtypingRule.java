@@ -102,7 +102,6 @@ public class supertypesOf_ClassifierTypeSModel_SModelType_SubtypingRule extends 
     }
 
     public void performActions(Object o) {
-
     }
   }
 }

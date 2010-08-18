@@ -899,7 +899,6 @@ public class QueriesGenerated {
     }
 
     public void performActions(Object o) {
-
     }
   }
 

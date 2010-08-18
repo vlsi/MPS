@@ -119,7 +119,6 @@ public class supertypesOf_ListType_SNodeListType_SubtypingRule extends Subtyping
     }
 
     public void performActions(Object o) {
-
     }
   }
 }

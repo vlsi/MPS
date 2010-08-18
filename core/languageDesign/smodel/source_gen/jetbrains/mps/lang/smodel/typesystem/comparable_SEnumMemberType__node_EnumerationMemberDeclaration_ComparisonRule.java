@@ -76,7 +76,6 @@ public class comparable_SEnumMemberType__node_EnumerationMemberDeclaration_Compa
     }
 
     public void performActions(Object o) {
-
     }
   }
 }
