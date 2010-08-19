@@ -65,13 +65,4 @@ public class ModuleUtil {
     }
     return null;
   }
-
-  @Hack
-  public static List<IModule> getModules(IModule m) {
-    ArrayList<IModule> res = new ArrayList<IModule>(m.getDependenciesManager().getDependOnModules());
-    res.add(BaseLanguage_Language.get());
-    res.add(Collections_Language.get());
-    return res;
-  }
-
 }

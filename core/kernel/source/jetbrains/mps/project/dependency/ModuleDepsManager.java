@@ -15,11 +15,14 @@
  */
 package jetbrains.mps.project.dependency;
 
+import jetbrains.mps.baseLanguage.collections.structure.Collections_Language;
+import jetbrains.mps.baseLanguage.structure.BaseLanguage_Language;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.util.annotation.Hack;
 
 import java.util.*;
 
@@ -69,6 +72,14 @@ public class ModuleDepsManager<T extends AbstractModule> implements DependencyMa
     res.addAll(ModuleUtil.depsToModules(myModule.getDependOn()));
     res.addAll(ModuleUtil.refsToLanguages(myModule.getUsedLanguagesReferences()));
     res.addAll(ModuleUtil.refsToDevkits(myModule.getUsedDevkitReferences()));
+    return res;
+  }
+
+  @Hack
+  public static List<IModule> getModules(IModule m) {
+    ArrayList<IModule> res = new ArrayList<IModule>(m.getDependenciesManager().getDependOnModules());
+    res.add(BaseLanguage_Language.get());
+    res.add(Collections_Language.get());
     return res;
   }
 }
