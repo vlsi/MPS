@@ -21,42 +21,36 @@ import jetbrains.mps.util.GraphUtil;
 import java.util.*;
 
 public class Graphs {
-  private static final Graphs INSTANCE = new Graphs();
-
-  private Graphs() {
-  }
-
-  public static Graphs getInstance() {
-    return INSTANCE;
-  }
 
   public static int[][] graphToIntInt(IVertex[] vertices) {
     int count = vertices.length;
     int[] temparray = new int[count];
     int[][] result = new int[count][];
 
-    Map<IVertex, Integer> rootIndex = new HashMap<IVertex, Integer>();
+    Map<IVertex, Integer> rootIndex = new HashMap<IVertex, Integer>(vertices.length);
     for(int i = 0; i < vertices.length; i++) {
       rootIndex.put(vertices[i], i);
     }
 
     for(int index = 0; index < count; index++) {
-      IVertex root = vertices[index];
-      Arrays.fill(temparray, 0);
-      for(IVertex node : root.getNexts()) {
+      IVertex vertex = vertices[index];
+      int tsize = 0;
+      for(IVertex node : vertex.getNexts()) {
         Integer targetIndex = rootIndex.get(node);
-        if(targetIndex != null) {
-          temparray[targetIndex] = 1;
+        if(targetIndex != null && targetIndex != index) {
+          temparray[tsize++] = targetIndex;
         }
       }
-      temparray[index] = 0;
-      result[index] = GraphUtil.setToList(temparray);
+      result[index] = new int[tsize];
+      if(tsize > 0) {
+        System.arraycopy(temparray, 0, result[index], 0, tsize);
+      }
     }
     return result;
   }
 
 
-  public <V extends IVertex> List<List<V>> findStronglyConnectedComponents(Graph<V> graph0) {
+  public static <V extends IVertex> List<List<V>> findStronglyConnectedComponents(Graph<V> graph0) {
     IVertex[] vertices = graph0.getData().toArray(new IVertex[graph0.getNVertexes()]);
     int[][] graph = graphToIntInt(vertices);
     int[][] partitions = GraphUtil.tarjan(graph);
@@ -70,6 +64,5 @@ public class Graphs {
       result.add(proots);
     }
     return result;
-
   }
 }

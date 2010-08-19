@@ -33,7 +33,7 @@ public class FindStronglyConnectedComponentsTestCase {
   @Test
   public void oneItem() {
     IntGraph g = new IntGraph(2);
-    List<List<IVertex>> condensation = Graphs.getInstance().findStronglyConnectedComponents(g.getGraph());
+    List<List<IVertex>> condensation = Graphs.findStronglyConnectedComponents(g.getGraph());
     Assert.assertEquals(
       CollectionUtil.list(
         CollectionUtil.list(new IntVertex(1)),
@@ -47,7 +47,7 @@ public class FindStronglyConnectedComponentsTestCase {
     IntGraph g = new IntGraph(2);
     g.addEdges(1, 0);
 
-    List<List<IVertex>> condensation = Graphs.getInstance().findStronglyConnectedComponents(g.getGraph());
+    List<List<IVertex>> condensation = Graphs.findStronglyConnectedComponents(g.getGraph());
     Assert.assertEquals(
       CollectionUtil.list(
         CollectionUtil.list(new IntVertex(1)),
@@ -61,7 +61,7 @@ public class FindStronglyConnectedComponentsTestCase {
     IntGraph g = new IntGraph(2);
     g.addEdges(0, 1);
 
-    List<List<IVertex>> condensation = Graphs.getInstance().findStronglyConnectedComponents(g.getGraph());
+    List<List<IVertex>> condensation = Graphs.findStronglyConnectedComponents(g.getGraph());
     Assert.assertEquals(
       CollectionUtil.list(
         CollectionUtil.list(new IntVertex(0)),
@@ -76,7 +76,7 @@ public class FindStronglyConnectedComponentsTestCase {
     g.addEdges(0, 1);
     g.addEdges(1, 0);
 
-    List<List<IVertex>> condensation = Graphs.getInstance().findStronglyConnectedComponents(g.getGraph());
+    List<List<IVertex>> condensation = Graphs.findStronglyConnectedComponents(g.getGraph());
     Assert.assertEquals(
       CollectionUtil.list(
         CollectionUtil.list(new IntVertex(0), new IntVertex(1))
@@ -90,7 +90,7 @@ public class FindStronglyConnectedComponentsTestCase {
     g.addEdges(1, 0);
     g.addEdges(2, 0);
 
-    List<List<IVertex>> condensation = Graphs.getInstance().findStronglyConnectedComponents(g.getGraph());
+    List<List<IVertex>> condensation = Graphs.findStronglyConnectedComponents(g.getGraph());
     Assert.assertEquals(
       CollectionUtil.list(
         CollectionUtil.list(new IntVertex(2)),
@@ -109,7 +109,7 @@ public class FindStronglyConnectedComponentsTestCase {
     g.addEdges(2, 1);
     g.addEdges(1, 0);
 
-    List<List<IVertex>> condensation = Graphs.getInstance().findStronglyConnectedComponents(g.getGraph());
+    List<List<IVertex>> condensation = Graphs.findStronglyConnectedComponents(g.getGraph());
     Assert.assertEquals(
       CollectionUtil.list(
         CollectionUtil.list(new IntVertex(0), new IntVertex(1), new IntVertex(2))

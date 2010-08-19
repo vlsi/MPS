@@ -61,7 +61,7 @@ public class GraphTestCase extends TestCase {
 
   public void testStronglyConnectedComponents1() {
     myGraph.addEdges(5, 0);
-    List<List<IntVertex>> components = Graphs.getInstance().findStronglyConnectedComponents(myGraph.getGraph());
+    List<List<IntVertex>> components = Graphs.findStronglyConnectedComponents(myGraph.getGraph());
 
     assertEquals(N, components.size());
 
@@ -88,7 +88,7 @@ public class GraphTestCase extends TestCase {
     myGraph.addEdges(5, 4);
     myGraph.addEdges(4, 0);
     myGraph.addEdges(2, 0);
-    List<List<Integer>> components = Graphs.getInstance().findStronglyConnectedComponents(myGraph.getGraph());
+    List<List<Integer>> components = Graphs.findStronglyConnectedComponents(myGraph.getGraph());
 
     assertEquals(2, components.size());
 

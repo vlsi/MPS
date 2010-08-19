@@ -54,7 +54,7 @@ public class StronglyConnectedModules {
       decorator.fill(moduleToDecorator);
     }
 
-    List<List<IModuleDecorator<M>>> cycles = Graphs.getInstance().findStronglyConnectedComponents(graph);
+    List<List<IModuleDecorator<M>>> cycles = Graphs.findStronglyConnectedComponents(graph);
 
     for (List<IModuleDecorator<M>> cycle : cycles) {
       Set<M> mset = new LinkedHashSet<M>();
