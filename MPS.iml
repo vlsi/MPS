@@ -52,16 +52,12 @@
     <orderEntry type="library" exported="" name="Commons-codec" level="project" />
     <orderEntry type="library" exported="" name="Commons-net" level="project" />
     <orderEntry type="library" exported="" name="Commons-collections" level="project" />
-    <orderEntry type="library" exported="" name="JavaHelp" level="project" />
     <orderEntry type="library" exported="" name="Log4j" level="project" />
-    <orderEntry type="library" exported="" name="NanoXML" level="project" />
     <orderEntry type="library" exported="" name="PicoContainer" level="project" />
     <orderEntry type="library" exported="" name="Trove4j" level="project" />
     <orderEntry type="library" exported="" name="XmlRpc" level="project" />
     <orderEntry type="library" exported="" name="XStream" level="project" />
-    <orderEntry type="library" exported="" name="YJP" level="project" />
     <orderEntry type="library" exported="" name="jfcUnit" level="project" />
-    <orderEntry type="library" name="jakarta regexp" level="project" />
     <orderEntry type="module" module-name="debug-api" exported="" />
     <orderEntry type="module" module-name="debug" exported="" />
   </component>
