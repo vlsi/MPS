@@ -395,27 +395,6 @@
       <link role="conceptPropertyDeclaration:0" targetNodeId="5.1137473891462:0" resolveInfo="alias" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1235406864909">
-    <property name="package:0" value="Instructions" />
-    <property name="name:0" value="EmitVariableValueIs" />
-    <link role="extends:0" targetNodeId="1206443583064:0" resolveInfo="EmitStatement" />
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1235406884693">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="variable" />
-      <property name="sourceCardinality:0" value="1" />
-      <link role="target:0" targetNodeId="3.1068431790191:3" resolveInfo="Expression" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1235406895876">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="value" />
-      <property name="sourceCardinality:0" value="1" />
-      <link role="target:0" targetNodeId="3.1068431790191:3" resolveInfo="Expression" />
-    </node>
-    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1235408100257">
-      <property name="value:0" value="variable value is" />
-      <link role="conceptPropertyDeclaration:0" targetNodeId="5.1137473891462:0" resolveInfo="alias" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="8486807419021026914">
     <property name="name:0" value="InsertAfter" />
     <property name="package:0" value="InsertPositions" />

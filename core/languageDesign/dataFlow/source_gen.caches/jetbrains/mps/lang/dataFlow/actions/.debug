@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="137546700134038987">
+    <nodeInfo nodeId="137546700134039056" fileName="QueriesGenerated.java" startLine="22" startPosition="51" endLine="23" endPosition="183" />
     <scopeInfo nodeId="137546700134038995" fileName="QueriesGenerated.java" startLine="22" startPosition="51" endLine="23" endPosition="183" />
   </root>
 </debugInfo>
