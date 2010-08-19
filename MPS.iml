@@ -54,7 +54,6 @@
     <orderEntry type="library" exported="" name="Commons-collections" level="project" />
     <orderEntry type="library" exported="" name="JavaHelp" level="project" />
     <orderEntry type="library" exported="" name="JGoodies Forms" level="project" />
-    <orderEntry type="library" exported="" name="JNA" level="project" />
     <orderEntry type="library" exported="" name="Log4j" level="project" />
     <orderEntry type="library" exported="" name="NanoXML" level="project" />
     <orderEntry type="library" exported="" name="OROMatcher" level="project" />
