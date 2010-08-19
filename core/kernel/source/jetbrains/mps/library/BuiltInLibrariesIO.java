@@ -39,7 +39,7 @@ public class BuiltInLibrariesIO {
   public static final String LIBRARY_PATH_TAG = "path";
 
   public static void readBuiltInLibraries(Map<String, Library> libraryMap) {
-    URL resource = LibraryManager.class.getResource(CONFIG_FILE_WHOLE_NAME);
+    URL resource = BuiltInLibrariesIO.class.getResource(CONFIG_FILE_WHOLE_NAME);
     if (resource == null) return;
 
     try {
