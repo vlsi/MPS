@@ -126,6 +126,10 @@ public class QueriesGenerated {
     return _context.createUniqueName("AntiquotationField", _context.getNode());
   }
 
+  public static Object propertyMacro_GetPropertyValue_8263735385373582118(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.createUniqueName("myOrPattern", _context.getNode());
+  }
+
   public static Object propertyMacro_GetPropertyValue_412500033819201041(final IOperationContext operationContext, final PropertyMacroContext _context) {
     for (SNode child : SNodeOperations.getDescendants(_context.getNode(), null, false, new String[]{})) {
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation")) {

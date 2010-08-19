@@ -102,7 +102,6 @@ public class short_unboxing_SubtypingRule extends SubtypingRule_Runtime implemen
     }
 
     public void performActions(Object o) {
-
     }
   }
 }

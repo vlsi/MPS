@@ -18,7 +18,6 @@ public class DFAActions_ActionGroup extends GeneratedActionGroup {
       DFAActions_ActionGroup.this.addAction("jetbrains.mps.lang.dataFlow.plugin.PrintDFAResult_Action", "jetbrains.mps.lang.dataFlow");
       DFAActions_ActionGroup.this.addAction("jetbrains.mps.lang.dataFlow.plugin.PrintInitializationInformation_Action", "jetbrains.mps.lang.dataFlow");
       DFAActions_ActionGroup.this.addAction("jetbrains.mps.lang.dataFlow.plugin.PrintReachingDefinintionsInformation_Action", "jetbrains.mps.lang.dataFlow");
-      DFAActions_ActionGroup.this.addAction("jetbrains.mps.lang.dataFlow.plugin.PrintNullableInformation_Action", "jetbrains.mps.lang.dataFlow");
       DFAActions_ActionGroup.this.addAction("jetbrains.mps.lang.dataFlow.plugin.ShowDFA_Action", "jetbrains.mps.lang.dataFlow");
     } catch (Throwable t) {
       LOG.error("User group error", t);

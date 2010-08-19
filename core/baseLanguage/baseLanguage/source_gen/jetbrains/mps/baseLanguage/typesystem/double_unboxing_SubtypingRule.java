@@ -102,7 +102,6 @@ public class double_unboxing_SubtypingRule extends SubtypingRule_Runtime impleme
     }
 
     public void performActions(Object o) {
-
     }
   }
 }

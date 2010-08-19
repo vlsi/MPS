@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
-import jetbrains.mps.dataFlow.runtime.NullableVariableState;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
@@ -13,7 +12,6 @@ public class Expression_Behavior {
   private static Class[] PARAMETERS_1213877519769 = {SNode.class ,IModule.class};
   private static Class[] PARAMETERS_1213877519781 = {SNode.class};
   private static Class[] PARAMETERS_1213877519786 = {SNode.class};
-  private static Class[] PARAMETERS_1230540989695 = {SNode.class};
   private static Class[] PARAMETERS_1238860258777 = {SNode.class};
   private static Class[] PARAMETERS_1238860310638 = {SNode.class ,IModule.class};
   private static Class[] PARAMETERS_1239211900844 = {SNode.class};
@@ -31,10 +29,6 @@ public class Expression_Behavior {
 
   public static boolean virtual_isLValue_1213877519786(SNode thisNode) {
     return SConceptPropertyOperations.getBoolean(thisNode, "lvalue");
-  }
-
-  public static NullableVariableState virtual_getNullableState_1230540989695(SNode thisNode) {
-    return NullableVariableState.UNKNOWN;
   }
 
   public static boolean virtual_isCompileTimeConstant_1238860258777(SNode thisNode) {
@@ -64,10 +58,6 @@ public class Expression_Behavior {
     return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Expression"), "virtual_isLValue_1213877519786", PARAMETERS_1213877519786);
   }
 
-  public static NullableVariableState call_getNullableState_1230540989695(SNode thisNode) {
-    return (NullableVariableState) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Expression"), "virtual_getNullableState_1230540989695", PARAMETERS_1230540989695);
-  }
-
   public static boolean call_isCompileTimeConstant_1238860258777(SNode thisNode) {
     return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Expression"), "virtual_isCompileTimeConstant_1238860258777", PARAMETERS_1238860258777);
   }
@@ -90,10 +80,6 @@ public class Expression_Behavior {
 
   public static boolean callSuper_isLValue_1213877519786(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Expression"), callerConceptFqName, "virtual_isLValue_1213877519786", PARAMETERS_1213877519786);
-  }
-
-  public static NullableVariableState callSuper_getNullableState_1230540989695(SNode thisNode, String callerConceptFqName) {
-    return (NullableVariableState) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Expression"), callerConceptFqName, "virtual_getNullableState_1230540989695", PARAMETERS_1230540989695);
   }
 
   public static boolean callSuper_isCompileTimeConstant_1238860258777(SNode thisNode, String callerConceptFqName) {

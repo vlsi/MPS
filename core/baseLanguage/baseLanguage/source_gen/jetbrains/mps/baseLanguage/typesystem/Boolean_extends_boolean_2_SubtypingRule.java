@@ -102,7 +102,6 @@ public class Boolean_extends_boolean_2_SubtypingRule extends SubtypingRule_Runti
     }
 
     public void performActions(Object o) {
-
     }
   }
 }

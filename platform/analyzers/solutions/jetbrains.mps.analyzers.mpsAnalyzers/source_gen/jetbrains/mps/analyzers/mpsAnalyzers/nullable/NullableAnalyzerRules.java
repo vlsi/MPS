@@ -30,14 +30,6 @@ public class NullableAnalyzerRules {
       myApplicableMap.get(conceptName).add(rule);
     }
     {
-      DataFlowConstructor rule = new RuleNullNotEquals();
-      String conceptName = "jetbrains.mps.baseLanguage.structure.IfStatement";
-      if (!(myApplicableMap.containsKey(conceptName))) {
-        myApplicableMap.put(conceptName, new LinkedList<DataFlowConstructor>());
-      }
-      myApplicableMap.get(conceptName).add(rule);
-    }
-    {
       DataFlowConstructor rule = new RuleNotEqualsNullAnd();
       String conceptName = "jetbrains.mps.baseLanguage.structure.IfStatement";
       if (!(myApplicableMap.containsKey(conceptName))) {
@@ -54,32 +46,8 @@ public class NullableAnalyzerRules {
       myApplicableMap.get(conceptName).add(rule);
     }
     {
-      DataFlowConstructor rule = new RuleIfNullEqualsReturn();
-      String conceptName = "jetbrains.mps.baseLanguage.structure.IfStatement";
-      if (!(myApplicableMap.containsKey(conceptName))) {
-        myApplicableMap.put(conceptName, new LinkedList<DataFlowConstructor>());
-      }
-      myApplicableMap.get(conceptName).add(rule);
-    }
-    {
       DataFlowConstructor rule = new WhileNotNull();
       String conceptName = "jetbrains.mps.baseLanguage.structure.WhileStatement";
-      if (!(myApplicableMap.containsKey(conceptName))) {
-        myApplicableMap.put(conceptName, new LinkedList<DataFlowConstructor>());
-      }
-      myApplicableMap.get(conceptName).add(rule);
-    }
-    {
-      DataFlowConstructor rule = new WhileNullNot();
-      String conceptName = "jetbrains.mps.baseLanguage.structure.WhileStatement";
-      if (!(myApplicableMap.containsKey(conceptName))) {
-        myApplicableMap.put(conceptName, new LinkedList<DataFlowConstructor>());
-      }
-      myApplicableMap.get(conceptName).add(rule);
-    }
-    {
-      DataFlowConstructor rule = new RuleNullEquals();
-      String conceptName = "jetbrains.mps.baseLanguage.structure.IfStatement";
       if (!(myApplicableMap.containsKey(conceptName))) {
         myApplicableMap.put(conceptName, new LinkedList<DataFlowConstructor>());
       }

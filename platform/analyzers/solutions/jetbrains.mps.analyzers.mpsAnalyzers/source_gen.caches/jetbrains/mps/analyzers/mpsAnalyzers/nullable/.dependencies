@@ -11,17 +11,13 @@
     <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.RuleAfterDotExpression" />
     <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.RuleEqualsNull" />
     <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.RuleFieldReference" />
-    <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.RuleIfNullEqualsReturn" />
     <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.RuleIfNullReturn" />
     <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.RuleMethodCall" />
     <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.RuleNotEqualsNull" />
     <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.RuleNotEqualsNullAnd" />
-    <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.RuleNullEquals" />
     <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.RuleNullLiteral" />
-    <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.RuleNullNotEquals" />
     <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.RuleVariableDeclaration" />
     <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.WhileNotNull" />
-    <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.WhileNullNot" />
     <classNode dependClassName="jetbrains.mps.analyzers.runtime.framework.DataFlowConstructor" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.Program" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -108,16 +104,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.analyzers.runtime.framework.DataFlowConstructor" />
   </dependency>
-  <dependency className="jetbrains.mps.analyzers.mpsAnalyzers.nullable.RuleIfNullEqualsReturn" file="RuleIfNullEqualsReturn.java">
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.notNullInstruction" />
-    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.Program" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.analyzers.runtime.framework.DataFlowConstructor" />
-    <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
-    <classNode extendsClassName="jetbrains.mps.lang.pattern.IMatchingPattern" />
-  </dependency>
   <dependency className="jetbrains.mps.analyzers.mpsAnalyzers.nullable.RuleIfNullReturn" file="RuleIfNullReturn.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -164,18 +150,6 @@
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.IMatchingPattern" />
   </dependency>
-  <dependency className="jetbrains.mps.analyzers.mpsAnalyzers.nullable.RuleNullEquals" file="RuleNullEquals.java">
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.notNullInstruction" />
-    <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.nullInstruction" />
-    <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.nullableInstruction" />
-    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.Program" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.analyzers.runtime.framework.DataFlowConstructor" />
-    <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
-    <classNode extendsClassName="jetbrains.mps.lang.pattern.IMatchingPattern" />
-  </dependency>
   <dependency className="jetbrains.mps.analyzers.mpsAnalyzers.nullable.RuleNullLiteral" file="RuleNullLiteral.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -187,17 +161,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.analyzers.runtime.framework.DataFlowConstructor" />
-  </dependency>
-  <dependency className="jetbrains.mps.analyzers.mpsAnalyzers.nullable.RuleNullNotEquals" file="RuleNullNotEquals.java">
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.notNullInstruction" />
-    <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.nullableInstruction" />
-    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.Program" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.analyzers.runtime.framework.DataFlowConstructor" />
-    <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
-    <classNode extendsClassName="jetbrains.mps.lang.pattern.IMatchingPattern" />
   </dependency>
   <dependency className="jetbrains.mps.analyzers.mpsAnalyzers.nullable.RuleVariableDeclaration" file="RuleVariableDeclaration.java">
     <classNode dependClassName="java.lang.Object" />
@@ -215,16 +178,6 @@
     <classNode extendsClassName="jetbrains.mps.analyzers.runtime.framework.DataFlowConstructor" />
   </dependency>
   <dependency className="jetbrains.mps.analyzers.mpsAnalyzers.nullable.WhileNotNull" file="WhileNotNull.java">
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.notNullInstruction" />
-    <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.Program" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.analyzers.runtime.framework.DataFlowConstructor" />
-    <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
-    <classNode extendsClassName="jetbrains.mps.lang.pattern.IMatchingPattern" />
-  </dependency>
-  <dependency className="jetbrains.mps.analyzers.mpsAnalyzers.nullable.WhileNullNot" file="WhileNullNot.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.notNullInstruction" />

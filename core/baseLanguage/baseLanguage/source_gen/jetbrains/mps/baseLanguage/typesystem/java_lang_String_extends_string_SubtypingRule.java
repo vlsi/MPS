@@ -102,7 +102,6 @@ public class java_lang_String_extends_string_SubtypingRule extends SubtypingRule
     }
 
     public void performActions(Object o) {
-
     }
   }
 }

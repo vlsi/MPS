@@ -20,11 +20,5 @@
     <nodeInfo nodeId="1207048275699" fileName="RelativePosition_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" />
     <scopeInfo nodeId="1207048273260" fileName="RelativePosition_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" />
   </root>
-  <root nodeId="1235412233700">
-    <nodeInfo nodeId="1235412261406" fileName="EmitVariableValueIs_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="105" />
-    <nodeInfo nodeId="1235412295529" fileName="EmitVariableValueIs_DataFlow.java" startLine="16" startPosition="105" endLine="17" endPosition="36" />
-    <nodeInfo nodeId="1235412277713" fileName="EmitVariableValueIs_DataFlow.java" startLine="17" startPosition="36" endLine="18" endPosition="102" />
-    <scopeInfo nodeId="1235412233702" fileName="EmitVariableValueIs_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="102" />
-  </root>
 </debugInfo>
 

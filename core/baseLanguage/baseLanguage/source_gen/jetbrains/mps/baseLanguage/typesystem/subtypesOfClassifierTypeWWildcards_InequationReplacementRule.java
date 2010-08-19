@@ -240,7 +240,6 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
     }
 
     public void performActions(Object o) {
-
     }
   }
 
@@ -302,7 +301,6 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
     }
 
     public void performActions(Object o) {
-
     }
   }
 }

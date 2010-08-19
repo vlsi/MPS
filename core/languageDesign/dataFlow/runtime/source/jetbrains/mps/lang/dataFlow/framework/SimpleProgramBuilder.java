@@ -16,7 +16,6 @@
 package jetbrains.mps.lang.dataFlow.framework;
 
 import jetbrains.mps.lang.dataFlow.framework.instructions.*;
-import jetbrains.mps.dataFlow.runtime.NullableVariableState;
 
 public class SimpleProgramBuilder {
   private Program myProgram = new Program();
@@ -28,11 +27,6 @@ public class SimpleProgramBuilder {
 
   public SimpleProgramBuilder emitWrite(final Object var) {
     myProgram.add(new WriteInstruction(var, null));
-    return this;
-  }
-
-  public SimpleProgramBuilder emitWrite(final Object var, NullableVariableState state) {
-    myProgram.add(new WriteInstruction(var, state));
     return this;
   }
 
@@ -82,21 +76,5 @@ public class SimpleProgramBuilder {
   public Program buildProgram() {
     myProgram.init();
     return myProgram;
-  }
-
-  public SimpleProgramBuilder emitVarEqulas(Object var, NullableVariableState value) {
-    VariableValueInstruction instruction = new VariableValueInstruction();    
-    instruction.setVariable(var);
-    instruction.setValue(value);
-    myProgram.add(instruction);
-    return this;
-  }
-
-  public SimpleProgramBuilder emitVarNotEqulas(String var, NullableVariableState value) {
-    VariableValueInstruction instruction = new VariableValueInstruction();
-    instruction.setVariable(var);
-    instruction.setValue(value.not());
-    myProgram.add(instruction);
-    return this;
   }
 }

@@ -117,7 +117,6 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
     }
 
     public void performActions(Object o) {
-
     }
   }
 

@@ -3,6 +3,7 @@
   <root nodeId="5822086619725599106">
     <nodeInfo nodeId="5822086619725599149" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="34" startPosition="132" endLine="35" endPosition="45" />
     <nodeInfo nodeId="5822086619725599234" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="41" startPosition="71" endLine="42" endPosition="169" />
+    <nodeInfo nodeId="5822086619725599160" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="44" startPosition="5" endLine="45" endPosition="15" />
     <nodeInfo nodeId="5822086619725599125" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="57" startPosition="33" endLine="58" endPosition="239" />
     <nodeInfo nodeId="5822086619725599137" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="60" startPosition="32" endLine="61" endPosition="152" />
     <nodeInfo nodeId="5822086619725599145" fileName="ExtractStaticInnerClassCreator_constructorDeclaration_ReferentConstraint.java" startLine="62" startPosition="12" endLine="63" endPosition="80" />
@@ -27,16 +28,20 @@
     </scopeInfo>
   </root>
   <root nodeId="5857910569715972120">
+    <nodeInfo nodeId="5857910569715993769" fileName="ExtractStaticMethod_CallExpression_staticMethodDeclaration_ReferentConstraint.java" startLine="25" startPosition="132" endLine="29" endPosition="7" />
     <scopeInfo nodeId="5857910569715972165" fileName="ExtractStaticMethod_CallExpression_staticMethodDeclaration_ReferentConstraint.java" startLine="25" startPosition="132" endLine="29" endPosition="7" />
   </root>
   <root nodeId="8733626498296461355">
+    <nodeInfo nodeId="8733626498296472739" fileName="ExtractStatementListInnerExpression_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="145" />
     <scopeInfo nodeId="8733626498296461357" fileName="ExtractStatementListInnerExpression_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="145" />
   </root>
   <root nodeId="9034046336081513337">
     <nodeInfo nodeId="9034046336081513343" fileName="InternalPartialInstanceMethodCall_Constraints.java" startLine="9" startPosition="114" endLine="10" endPosition="38" />
+    <nodeInfo nodeId="9034046336081513340" fileName="InternalPartialInstanceMethodCall_Constraints.java" startLine="10" startPosition="38" endLine="11" endPosition="16" />
     <scopeInfo nodeId="9034046336081513339" fileName="InternalPartialInstanceMethodCall_Constraints.java" startLine="9" startPosition="114" endLine="11" endPosition="16" />
   </root>
   <root nodeId="937236280924494203">
+    <nodeInfo nodeId="937236280924494207" fileName="ExtractStaticInnerClassConcept_resolveInfo_PropertyConstraint.java" startLine="24" startPosition="80" endLine="25" endPosition="55" />
     <scopeInfo nodeId="937236280924494206" fileName="ExtractStaticInnerClassConcept_resolveInfo_PropertyConstraint.java" startLine="24" startPosition="80" endLine="25" endPosition="55" />
   </root>
 </debugInfo>

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1229871155083">
+    <nodeInfo nodeId="1229871173583" fileName="add_parameter_to_InternalClassifierType_Intention.java" startLine="32" startPosition="85" endLine="33" endPosition="33" />
+    <nodeInfo nodeId="1229871180015" fileName="add_parameter_to_InternalClassifierType_Intention.java" startLine="43" startPosition="90" endLine="44" endPosition="99" />
     <nodeInfo nodeId="1229871192693" fileName="add_parameter_to_InternalClassifierType_Intention.java" startLine="47" startPosition="76" endLine="48" endPosition="96" />
     <scopeInfo nodeId="1229871155085" fileName="add_parameter_to_InternalClassifierType_Intention.java" startLine="32" startPosition="85" endLine="33" endPosition="33" />
     <scopeInfo nodeId="1229871178687" fileName="add_parameter_to_InternalClassifierType_Intention.java" startLine="43" startPosition="90" endLine="44" endPosition="99" />

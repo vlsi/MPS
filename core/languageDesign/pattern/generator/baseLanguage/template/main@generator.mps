@@ -5137,6 +5137,23 @@
               </node>
             </node>
           </node>
+          <node role="propertyMacro$property_attribute$name:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="8263735385373582117">
+            <node role="propertyValueFunction:2" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue:2" id="8263735385373582118">
+              <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8263735385373582119">
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8263735385373582122">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8263735385373582123">
+                    <node role="operand:3" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext:0" id="8263735385373582124" />
+                    <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName:0" id="8263735385373582125">
+                      <node role="baseName:0" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="8263735385373582126">
+                        <property name="value:3" value="myOrPattern" />
+                      </node>
+                      <node role="contextNode:0" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="8263735385373582127" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node role="method:1" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="412500033819201012">
           <property name="name:3" value="match" />

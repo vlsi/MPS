@@ -5,8 +5,24 @@
     <scopeInfo nodeId="1563914226484898758" fileName="TestPropertyVariableReference_declaration_ReferentConstraint.java" startLine="25" startPosition="132" endLine="26" endPosition="273" />
   </root>
   <root nodeId="8707387027762047794">
-    <nodeInfo nodeId="8707387027762047798" fileName="TestVariableReference_declaration_ReferentConstraint.java" startLine="25" startPosition="132" endLine="26" endPosition="265" />
-    <scopeInfo nodeId="8707387027762047797" fileName="TestVariableReference_declaration_ReferentConstraint.java" startLine="25" startPosition="132" endLine="26" endPosition="265" />
+    <nodeInfo nodeId="8297918475033223157" fileName="TestVariableReference_declaration_ReferentConstraint.java" startLine="32" startPosition="132" endLine="33" endPosition="282" />
+    <nodeInfo nodeId="8297918475033223176" fileName="TestVariableReference_declaration_ReferentConstraint.java" startLine="33" startPosition="282" endLine="34" endPosition="48" />
+    <nodeInfo nodeId="8297918475033223192" fileName="TestVariableReference_declaration_ReferentConstraint.java" startLine="34" startPosition="48" endLine="35" endPosition="38" />
+    <nodeInfo nodeId="8297918475033230469" fileName="TestVariableReference_declaration_ReferentConstraint.java" startLine="37" startPosition="74" endLine="38" endPosition="54" />
+    <nodeInfo nodeId="8297918475033230479" fileName="TestVariableReference_declaration_ReferentConstraint.java" startLine="38" startPosition="54" endLine="39" endPosition="62" />
+    <nodeInfo nodeId="8297918475033230451" fileName="TestVariableReference_declaration_ReferentConstraint.java" startLine="41" startPosition="5" endLine="42" endPosition="18" />
+    <nodeInfo nodeId="8297918475033230446" fileName="TestVariableReference_declaration_ReferentConstraint.java" startLine="36" startPosition="33" endLine="40" endPosition="7" />
+    <nodeInfo nodeId="8297918475033223170" fileName="TestVariableReference_declaration_ReferentConstraint.java" startLine="35" startPosition="38" endLine="41" endPosition="5" />
+    <scopeInfo nodeId="8297918475033230447" fileName="TestVariableReference_declaration_ReferentConstraint.java" startLine="37" startPosition="74" endLine="39" endPosition="62" />
+    <scopeInfo nodeId="8297918475033223172" fileName="TestVariableReference_declaration_ReferentConstraint.java" startLine="36" startPosition="33" endLine="40" endPosition="7" />
+    <scopeInfo nodeId="8297918475033223170" fileName="TestVariableReference_declaration_ReferentConstraint.java" startLine="35" startPosition="38" endLine="41" endPosition="5">
+      <varInfo nodeId="8297918475033223171" varName="var" />
+    </scopeInfo>
+    <scopeInfo nodeId="8707387027762047797" fileName="TestVariableReference_declaration_ReferentConstraint.java" startLine="32" startPosition="132" endLine="42" endPosition="18">
+      <varInfo nodeId="8297918475033223177" varName="result" />
+      <varInfo nodeId="8297918475033223193" varName="names" />
+      <varInfo nodeId="8297918475033223158" varName="variables" />
+    </scopeInfo>
   </root>
 </debugInfo>
 

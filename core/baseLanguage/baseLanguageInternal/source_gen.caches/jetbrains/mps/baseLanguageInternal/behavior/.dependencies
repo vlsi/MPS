@@ -26,7 +26,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguageInternal.behavior.InternalNewExpression_Behavior" file="InternalNewExpression_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.dataFlow.runtime.NullableVariableState" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
 </dependenciesRoot>
