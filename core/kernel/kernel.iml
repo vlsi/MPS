@@ -22,6 +22,7 @@
     <orderEntry type="library" name="Beansbinding" level="project" />
     <orderEntry type="module" module-name="xmlQuery-runtime" />
     <orderEntry type="library" name="asm" level="project" />
+    <orderEntry type="library" name="OROMatcher" level="project" />
   </component>
 </module>
 

@@ -11,6 +11,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="MPS" />
     <orderEntry type="module" module-name="kernel" />
+    <orderEntry type="library" name="OROMatcher" level="project" />
   </component>
 </module>
 
