@@ -56,7 +56,6 @@
     <orderEntry type="library" exported="" name="JGoodies Forms" level="project" />
     <orderEntry type="library" exported="" name="JNA" level="project" />
     <orderEntry type="library" exported="" name="Log4j" level="project" />
-    <orderEntry type="library" exported="" name="Microba" level="project" />
     <orderEntry type="library" exported="" name="NanoXML" level="project" />
     <orderEntry type="library" exported="" name="OROMatcher" level="project" />
     <orderEntry type="library" exported="" name="PicoContainer" level="project" />
