@@ -1218,12 +1218,6 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1220340024969" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877354547">
-    <link role="concept" targetNodeId="1.1176750487975:32" resolveInfo="QueryMethodIdEditorProviderExpression" />
-    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877354548">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877354549" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877372456">
     <link role="concept" targetNodeId="1.1080736578640:32" resolveInfo="BaseEditorComponent" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877372457">

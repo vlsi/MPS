@@ -166,6 +166,7 @@
     <nodeInfo nodeId="98380422617954491" fileName="ExtractComponent_Action.java" startLine="19" startPosition="0" endLine="20" endPosition="21" />
     <nodeInfo nodeId="98380422617954498" fileName="ExtractComponent_Action.java" startLine="20" startPosition="21" endLine="21" endPosition="38" />
     <nodeInfo nodeId="3993568175834622690" fileName="ExtractComponent_Action.java" startLine="21" startPosition="38" endLine="22" endPosition="42" />
+    <nodeInfo nodeId="3993568175834621563" fileName="ExtractComponent_Action.java" startLine="35" startPosition="52" endLine="36" endPosition="72" />
     <nodeInfo nodeId="98380422618935585" fileName="ExtractComponent_Action.java" startLine="86" startPosition="9" endLine="87" endPosition="123" />
     <scopeInfo nodeId="3993568175834620251" fileName="ExtractComponent_Action.java" startLine="35" startPosition="52" endLine="36" endPosition="72" />
   </root>

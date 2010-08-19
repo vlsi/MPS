@@ -228,6 +228,7 @@
     </scopeInfo>
   </root>
   <root nodeId="3302086321380659367">
+    <nodeInfo nodeId="3302086321380661388" fileName="fix_Braces_QuickFix.java" startLine="13" startPosition="34" endLine="14" endPosition="31" />
     <nodeInfo nodeId="3302086321380661401" fileName="fix_Braces_QuickFix.java" startLine="17" startPosition="35" endLine="18" endPosition="120" />
     <scopeInfo nodeId="3302086321380659372" fileName="fix_Braces_QuickFix.java" startLine="13" startPosition="34" endLine="14" endPosition="31" />
     <scopeInfo nodeId="3302086321380659369" fileName="fix_Braces_QuickFix.java" startLine="17" startPosition="35" endLine="18" endPosition="120" />

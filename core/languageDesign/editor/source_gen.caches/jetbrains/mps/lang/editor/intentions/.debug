@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1216916605972">
+    <nodeInfo nodeId="1216916627674" fileName="SurrondWithVerticalCollection_Intention.java" startLine="35" startPosition="85" endLine="36" endPosition="47" />
     <nodeInfo nodeId="1216916735133" fileName="SurrondWithVerticalCollection_Intention.java" startLine="46" startPosition="90" endLine="47" endPosition="96" />
     <nodeInfo nodeId="1216916676429" fileName="SurrondWithVerticalCollection_Intention.java" startLine="50" startPosition="76" endLine="51" endPosition="118" />
     <nodeInfo nodeId="1216916676435" fileName="SurrondWithVerticalCollection_Intention.java" startLine="51" startPosition="118" endLine="52" endPosition="157" />
@@ -20,6 +21,7 @@
     </scopeInfo>
   </root>
   <root nodeId="1216916774011">
+    <nodeInfo nodeId="1216916774014" fileName="SurrondWithHorizontalCollection_Intention.java" startLine="35" startPosition="85" endLine="36" endPosition="49" />
     <nodeInfo nodeId="1216916774058" fileName="SurrondWithHorizontalCollection_Intention.java" startLine="46" startPosition="90" endLine="47" endPosition="96" />
     <nodeInfo nodeId="1216916831748" fileName="SurrondWithHorizontalCollection_Intention.java" startLine="50" startPosition="76" endLine="51" endPosition="118" />
     <nodeInfo nodeId="1216916831754" fileName="SurrondWithHorizontalCollection_Intention.java" startLine="51" startPosition="118" endLine="52" endPosition="159" />
@@ -75,6 +77,7 @@
   <root nodeId="1223387565994">
     <nodeInfo nodeId="1223387604204" fileName="BooleanQuery_Intention.java" startLine="34" startPosition="67" endLine="35" endPosition="25" />
     <nodeInfo nodeId="1223387604213" fileName="BooleanQuery_Intention.java" startLine="36" startPosition="12" endLine="37" endPosition="28" />
+    <nodeInfo nodeId="1223387977772" fileName="BooleanQuery_Intention.java" startLine="48" startPosition="90" endLine="49" endPosition="76" />
     <nodeInfo nodeId="1223387877633" fileName="BooleanQuery_Intention.java" startLine="53" startPosition="67" endLine="54" endPosition="110" />
     <nodeInfo nodeId="1223387877646" fileName="BooleanQuery_Intention.java" startLine="55" startPosition="12" endLine="56" endPosition="81" />
     <nodeInfo nodeId="1223387604211" fileName="BooleanQuery_Intention.java" startLine="36" startPosition="10" endLine="38" endPosition="5" />
@@ -90,6 +93,7 @@
     <scopeInfo nodeId="1223387565998" fileName="BooleanQuery_Intention.java" startLine="52" startPosition="76" endLine="57" endPosition="5" />
   </root>
   <root nodeId="1224529494087">
+    <nodeInfo nodeId="1224529572359" fileName="SplitConstantCellIntoWords_Intention.java" startLine="35" startPosition="85" endLine="36" endPosition="44" />
     <nodeInfo nodeId="1224529883409" fileName="SplitConstantCellIntoWords_Intention.java" startLine="47" startPosition="52" endLine="48" endPosition="19" />
     <nodeInfo nodeId="1224538588536" fileName="SplitConstantCellIntoWords_Intention.java" startLine="49" startPosition="5" endLine="50" endPosition="62" />
     <nodeInfo nodeId="1224538614437" fileName="SplitConstantCellIntoWords_Intention.java" startLine="51" startPosition="45" endLine="52" endPosition="19" />
@@ -163,6 +167,7 @@
     </scopeInfo>
   </root>
   <root nodeId="1224530037892">
+    <nodeInfo nodeId="1224530058088" fileName="TrimConstantCell_Intention.java" startLine="31" startPosition="85" endLine="32" endPosition="32" />
     <nodeInfo nodeId="1224530107190" fileName="TrimConstantCell_Intention.java" startLine="42" startPosition="90" endLine="43" endPosition="62" />
     <nodeInfo nodeId="1224538636574" fileName="TrimConstantCell_Intention.java" startLine="44" startPosition="45" endLine="45" endPosition="19" />
     <nodeInfo nodeId="1224530165672" fileName="TrimConstantCell_Intention.java" startLine="47" startPosition="73" endLine="48" endPosition="18" />
@@ -179,9 +184,11 @@
     </scopeInfo>
   </root>
   <root nodeId="1227110056528">
+    <nodeInfo nodeId="1239870685644" fileName="ChangeOrientationCollection_Intention.java" startLine="48" startPosition="90" endLine="49" endPosition="298" />
     <nodeInfo nodeId="1239870801133" fileName="ChangeOrientationCollection_Intention.java" startLine="53" startPosition="76" endLine="54" endPosition="159" />
     <nodeInfo nodeId="1239870824776" fileName="ChangeOrientationCollection_Intention.java" startLine="55" startPosition="12" endLine="56" endPosition="157" />
     <nodeInfo nodeId="1239870821662" fileName="ChangeOrientationCollection_Intention.java" startLine="55" startPosition="10" endLine="57" endPosition="5" />
+    <nodeInfo nodeId="1227110185595" fileName="ChangeOrientationCollection_Intention.java" startLine="34" startPosition="85" endLine="38" endPosition="6" />
     <nodeInfo nodeId="1239870782499" fileName="ChangeOrientationCollection_Intention.java" startLine="52" startPosition="76" endLine="57" endPosition="5" />
     <scopeInfo nodeId="1239870680535" fileName="ChangeOrientationCollection_Intention.java" startLine="48" startPosition="90" endLine="49" endPosition="298" />
     <scopeInfo nodeId="1239870782500" fileName="ChangeOrientationCollection_Intention.java" startLine="53" startPosition="76" endLine="54" endPosition="159" />
@@ -190,9 +197,11 @@
     <scopeInfo nodeId="1227110056532" fileName="ChangeOrientationCollection_Intention.java" startLine="52" startPosition="76" endLine="57" endPosition="5" />
   </root>
   <root nodeId="1227111401175">
+    <nodeInfo nodeId="1239874824261" fileName="ChangeOrientationList_Intention.java" startLine="48" startPosition="90" endLine="49" endPosition="298" />
     <nodeInfo nodeId="1239874881741" fileName="ChangeOrientationList_Intention.java" startLine="53" startPosition="78" endLine="54" endPosition="159" />
     <nodeInfo nodeId="1239874902961" fileName="ChangeOrientationList_Intention.java" startLine="55" startPosition="12" endLine="56" endPosition="157" />
     <nodeInfo nodeId="1239874900022" fileName="ChangeOrientationList_Intention.java" startLine="55" startPosition="10" endLine="57" endPosition="5" />
+    <nodeInfo nodeId="1227111516509" fileName="ChangeOrientationList_Intention.java" startLine="34" startPosition="85" endLine="38" endPosition="6" />
     <nodeInfo nodeId="1239874871110" fileName="ChangeOrientationList_Intention.java" startLine="52" startPosition="76" endLine="57" endPosition="5" />
     <scopeInfo nodeId="1239874821363" fileName="ChangeOrientationList_Intention.java" startLine="48" startPosition="90" endLine="49" endPosition="298" />
     <scopeInfo nodeId="1239874871112" fileName="ChangeOrientationList_Intention.java" startLine="53" startPosition="78" endLine="54" endPosition="159" />
@@ -202,10 +211,12 @@
   </root>
   <root nodeId="1227111553026">
     <nodeInfo nodeId="1227111571687" fileName="ChangeOrientationAlternation_Intention.java" startLine="38" startPosition="76" endLine="39" endPosition="104" />
+    <nodeInfo nodeId="1227111581290" fileName="ChangeOrientationAlternation_Intention.java" startLine="31" startPosition="85" endLine="35" endPosition="6" />
     <scopeInfo nodeId="1227111553030" fileName="ChangeOrientationAlternation_Intention.java" startLine="38" startPosition="76" endLine="39" endPosition="104" />
     <scopeInfo nodeId="1227111553028" fileName="ChangeOrientationAlternation_Intention.java" startLine="31" startPosition="85" endLine="35" endPosition="6" />
   </root>
   <root nodeId="1235489867936">
+    <nodeInfo nodeId="1235489910446" fileName="ChangeProperty_Intention.java" startLine="37" startPosition="85" endLine="38" endPosition="64" />
     <nodeInfo nodeId="1235490274981" fileName="ChangeProperty_Intention.java" startLine="41" startPosition="76" endLine="42" endPosition="136" />
     <nodeInfo nodeId="1235498534586" fileName="ChangeProperty_Intention.java" startLine="42" startPosition="136" endLine="43" endPosition="127" />
     <nodeInfo nodeId="1235498542505" fileName="ChangeProperty_Intention.java" startLine="43" startPosition="127" endLine="44" endPosition="72" />
@@ -232,6 +243,7 @@
     </scopeInfo>
   </root>
   <root nodeId="1235490923121">
+    <nodeInfo nodeId="1235490962260" fileName="ChangeTransactionalProperty_Intention.java" startLine="37" startPosition="85" endLine="38" endPosition="64" />
     <nodeInfo nodeId="1235490990293" fileName="ChangeTransactionalProperty_Intention.java" startLine="41" startPosition="76" endLine="42" endPosition="123" />
     <nodeInfo nodeId="1235490990299" fileName="ChangeTransactionalProperty_Intention.java" startLine="42" startPosition="123" endLine="43" endPosition="127" />
     <nodeInfo nodeId="1235498475175" fileName="ChangeTransactionalProperty_Intention.java" startLine="43" startPosition="127" endLine="44" endPosition="61" />
@@ -291,6 +303,8 @@
     <scopeInfo nodeId="1237386846762" fileName="UseIndentLayoutInRefNodeList_Intention.java" startLine="40" startPosition="76" endLine="45" endPosition="5" />
   </root>
   <root nodeId="1237395176004">
+    <nodeInfo nodeId="1237395184869" fileName="AddNewLine_Intention.java" startLine="36" startPosition="85" endLine="37" endPosition="26" />
+    <nodeInfo nodeId="1237395189732" fileName="AddNewLine_Intention.java" startLine="47" startPosition="90" endLine="48" endPosition="495" />
     <nodeInfo nodeId="1237395274235" fileName="AddNewLine_Intention.java" startLine="51" startPosition="76" endLine="52" endPosition="132" />
     <nodeInfo nodeId="1237395285665" fileName="AddNewLine_Intention.java" startLine="52" startPosition="132" endLine="53" endPosition="58" />
     <nodeInfo nodeId="1237395266360" fileName="AddNewLine_Intention.java" startLine="53" startPosition="58" endLine="54" endPosition="99" />
@@ -301,6 +315,8 @@
     </scopeInfo>
   </root>
   <root nodeId="1237395366590">
+    <nodeInfo nodeId="1237395366593" fileName="AddIndent_Intention.java" startLine="36" startPosition="85" endLine="37" endPosition="24" />
+    <nodeInfo nodeId="1237395366619" fileName="AddIndent_Intention.java" startLine="47" startPosition="90" endLine="48" endPosition="496" />
     <nodeInfo nodeId="1237395366597" fileName="AddIndent_Intention.java" startLine="51" startPosition="76" endLine="52" endPosition="131" />
     <nodeInfo nodeId="1237395366603" fileName="AddIndent_Intention.java" startLine="52" startPosition="131" endLine="53" endPosition="58" />
     <nodeInfo nodeId="1237395366610" fileName="AddIndent_Intention.java" startLine="53" startPosition="58" endLine="54" endPosition="99" />
@@ -311,6 +327,8 @@
     </scopeInfo>
   </root>
   <root nodeId="1237395444116">
+    <nodeInfo nodeId="1237395444119" fileName="AddOnNewLine_Intention.java" startLine="36" startPosition="85" endLine="37" endPosition="29" />
+    <nodeInfo nodeId="1237395444145" fileName="AddOnNewLine_Intention.java" startLine="47" startPosition="90" endLine="48" endPosition="495" />
     <nodeInfo nodeId="1237395444123" fileName="AddOnNewLine_Intention.java" startLine="51" startPosition="76" endLine="52" endPosition="134" />
     <nodeInfo nodeId="1237395444129" fileName="AddOnNewLine_Intention.java" startLine="52" startPosition="134" endLine="53" endPosition="58" />
     <nodeInfo nodeId="1237395444136" fileName="AddOnNewLine_Intention.java" startLine="53" startPosition="58" endLine="54" endPosition="99" />
@@ -321,24 +339,31 @@
     </scopeInfo>
   </root>
   <root nodeId="1237403857170">
+    <nodeInfo nodeId="1237403874931" fileName="RemoveIndent_Intention.java" startLine="35" startPosition="85" endLine="36" endPosition="27" />
+    <nodeInfo nodeId="1237403880107" fileName="RemoveIndent_Intention.java" startLine="46" startPosition="90" endLine="47" endPosition="72" />
     <nodeInfo nodeId="1237403929477" fileName="RemoveIndent_Intention.java" startLine="50" startPosition="76" endLine="51" endPosition="242" />
     <scopeInfo nodeId="1237403857172" fileName="RemoveIndent_Intention.java" startLine="35" startPosition="85" endLine="36" endPosition="27" />
     <scopeInfo nodeId="1237403878590" fileName="RemoveIndent_Intention.java" startLine="46" startPosition="90" endLine="47" endPosition="72" />
     <scopeInfo nodeId="1237403857174" fileName="RemoveIndent_Intention.java" startLine="50" startPosition="76" endLine="51" endPosition="242" />
   </root>
   <root nodeId="1237403993138">
+    <nodeInfo nodeId="1237403993141" fileName="RemoveNewLine_Intention.java" startLine="35" startPosition="85" endLine="36" endPosition="29" />
+    <nodeInfo nodeId="1237403993156" fileName="RemoveNewLine_Intention.java" startLine="46" startPosition="90" endLine="47" endPosition="71" />
     <nodeInfo nodeId="1237403993145" fileName="RemoveNewLine_Intention.java" startLine="50" startPosition="76" endLine="51" endPosition="243" />
     <scopeInfo nodeId="1237403993140" fileName="RemoveNewLine_Intention.java" startLine="35" startPosition="85" endLine="36" endPosition="29" />
     <scopeInfo nodeId="1237403993155" fileName="RemoveNewLine_Intention.java" startLine="46" startPosition="90" endLine="47" endPosition="71" />
     <scopeInfo nodeId="1237403993144" fileName="RemoveNewLine_Intention.java" startLine="50" startPosition="76" endLine="51" endPosition="243" />
   </root>
   <root nodeId="1237404019413">
+    <nodeInfo nodeId="1237404019416" fileName="RemoveOnNewLine_Intention.java" startLine="35" startPosition="85" endLine="36" endPosition="32" />
+    <nodeInfo nodeId="1237404019431" fileName="RemoveOnNewLine_Intention.java" startLine="46" startPosition="90" endLine="47" endPosition="73" />
     <nodeInfo nodeId="1237404019420" fileName="RemoveOnNewLine_Intention.java" startLine="50" startPosition="76" endLine="51" endPosition="245" />
     <scopeInfo nodeId="1237404019415" fileName="RemoveOnNewLine_Intention.java" startLine="35" startPosition="85" endLine="36" endPosition="32" />
     <scopeInfo nodeId="1237404019430" fileName="RemoveOnNewLine_Intention.java" startLine="46" startPosition="90" endLine="47" endPosition="73" />
     <scopeInfo nodeId="1237404019419" fileName="RemoveOnNewLine_Intention.java" startLine="50" startPosition="76" endLine="51" endPosition="245" />
   </root>
   <root nodeId="1237485920293">
+    <nodeInfo nodeId="1237485977546" fileName="MigrateToIndentLayout_Intention.java" startLine="30" startPosition="85" endLine="31" endPosition="38" />
     <nodeInfo nodeId="1237486655331" fileName="MigrateToIndentLayout_Intention.java" startLine="34" startPosition="76" endLine="35" endPosition="46" />
     <scopeInfo nodeId="1237485920295" fileName="MigrateToIndentLayout_Intention.java" startLine="30" startPosition="85" endLine="31" endPosition="38" />
     <scopeInfo nodeId="1237485920297" fileName="MigrateToIndentLayout_Intention.java" startLine="34" startPosition="76" endLine="35" endPosition="46" />
@@ -450,6 +475,7 @@
     <unitInfo nodeId="1237486188245" fileName="IndentLayoutUtil.java" startLine="17" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.editor.intentions.IndentLayoutUtil" />
   </root>
   <root nodeId="1239368960873">
+    <nodeInfo nodeId="1239369042712" fileName="GenerateDefaultEditor_Intention.java" startLine="30" startPosition="85" endLine="31" endPosition="37" />
     <nodeInfo nodeId="1239371238011" fileName="GenerateDefaultEditor_Intention.java" startLine="34" startPosition="76" endLine="35" endPosition="50" />
     <scopeInfo nodeId="1239368960875" fileName="GenerateDefaultEditor_Intention.java" startLine="30" startPosition="85" endLine="31" endPosition="37" />
     <scopeInfo nodeId="1239368960877" fileName="GenerateDefaultEditor_Intention.java" startLine="34" startPosition="76" endLine="35" endPosition="50" />
@@ -566,6 +592,7 @@
     <unitInfo nodeId="1239370629160" fileName="DefaultEditorBuilder.java" startLine="16" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.editor.intentions.DefaultEditorBuilder" />
   </root>
   <root nodeId="1239735706419">
+    <nodeInfo nodeId="1239735906186" fileName="AddExtendsClause_Intention.java" startLine="32" startPosition="85" endLine="33" endPosition="32" />
     <nodeInfo nodeId="1239735904489" fileName="AddExtendsClause_Intention.java" startLine="36" startPosition="76" endLine="37" endPosition="163" />
     <scopeInfo nodeId="1239735706421" fileName="AddExtendsClause_Intention.java" startLine="32" startPosition="85" endLine="33" endPosition="32" />
     <scopeInfo nodeId="1239735706423" fileName="AddExtendsClause_Intention.java" startLine="36" startPosition="76" endLine="37" endPosition="163" />
@@ -602,6 +629,8 @@
     <scopeInfo nodeId="1445505956982045021" fileName="AddRemoveNewLineForChildren_Intention.java" startLine="51" startPosition="90" endLine="61" endPosition="17" />
   </root>
   <root nodeId="5137527105084909325">
+    <nodeInfo nodeId="5137527105084909347" fileName="ChangePropertyWithNonEmpty_Intention.java" startLine="37" startPosition="85" endLine="38" endPosition="52" />
+    <nodeInfo nodeId="5137527105085267287" fileName="ChangePropertyWithNonEmpty_Intention.java" startLine="48" startPosition="90" endLine="49" endPosition="158" />
     <nodeInfo nodeId="5137527105084909354" fileName="ChangePropertyWithNonEmpty_Intention.java" startLine="52" startPosition="76" endLine="53" endPosition="126" />
     <nodeInfo nodeId="5137527105084909361" fileName="ChangePropertyWithNonEmpty_Intention.java" startLine="53" startPosition="126" endLine="54" endPosition="133" />
     <nodeInfo nodeId="5137527105084909369" fileName="ChangePropertyWithNonEmpty_Intention.java" startLine="54" startPosition="133" endLine="55" endPosition="72" />
@@ -629,6 +658,7 @@
     </scopeInfo>
   </root>
   <root nodeId="5137527105085214125">
+    <nodeInfo nodeId="5137527105085214130" fileName="ChangeNonEmptyProperty_Intention.java" startLine="37" startPosition="85" endLine="38" endPosition="60" />
     <nodeInfo nodeId="5137527105085214149" fileName="ChangeNonEmptyProperty_Intention.java" startLine="41" startPosition="76" endLine="42" endPosition="118" />
     <nodeInfo nodeId="5137527105085214155" fileName="ChangeNonEmptyProperty_Intention.java" startLine="42" startPosition="118" endLine="43" endPosition="133" />
     <nodeInfo nodeId="5137527105085214163" fileName="ChangeNonEmptyProperty_Intention.java" startLine="43" startPosition="133" endLine="44" endPosition="72" />
@@ -655,6 +685,7 @@
     </scopeInfo>
   </root>
   <root nodeId="8868282734708519353">
+    <nodeInfo nodeId="8868282734708519358" fileName="SurrondWithIndentCollection_Intention.java" startLine="35" startPosition="85" endLine="36" endPosition="45" />
     <nodeInfo nodeId="8868282734708519362" fileName="SurrondWithIndentCollection_Intention.java" startLine="46" startPosition="90" endLine="47" endPosition="96" />
     <nodeInfo nodeId="8868282734708519375" fileName="SurrondWithIndentCollection_Intention.java" startLine="50" startPosition="76" endLine="51" endPosition="118" />
     <nodeInfo nodeId="8868282734708519381" fileName="SurrondWithIndentCollection_Intention.java" startLine="51" startPosition="118" endLine="52" endPosition="155" />
@@ -674,6 +705,7 @@
     </scopeInfo>
   </root>
   <root nodeId="98380422618971761">
+    <nodeInfo nodeId="98380422619028561" fileName="ExtractComponent_Intention.java" startLine="31" startPosition="85" endLine="32" endPosition="31" />
     <nodeInfo nodeId="98380422619028563" fileName="ExtractComponent_Intention.java" startLine="35" startPosition="76" endLine="36" endPosition="63" />
     <scopeInfo nodeId="98380422618971763" fileName="ExtractComponent_Intention.java" startLine="31" startPosition="85" endLine="32" endPosition="31" />
     <scopeInfo nodeId="98380422618971765" fileName="ExtractComponent_Intention.java" startLine="35" startPosition="76" endLine="36" endPosition="63" />

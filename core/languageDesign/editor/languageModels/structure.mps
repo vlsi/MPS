@@ -2818,45 +2818,6 @@
       <link role="target:0" targetNodeId="1161622981231:32" resolveInfo="ConceptFunctionParameter_editorContext" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1176750487975">
-    <property name="name:0" value="QueryMethodIdEditorProviderExpression" />
-    <link role="extends:0" targetNodeId="4.1068431790191:3" />
-    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1176795885088">
-      <property name="value:0" value="query method cell provider" />
-      <link role="conceptPropertyDeclaration:0" targetNodeId="3.1137473891462:0" />
-    </node>
-    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1176750736379">
-      <property name="name:0" value="notSetString" />
-      <link role="dataType:0" targetNodeId="3.1082983041843:0" />
-    </node>
-    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1176750922515">
-      <property name="name:0" value="prefix" />
-      <link role="dataType:0" targetNodeId="3.1082983041843:0" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1176750512039">
-      <property name="sourceCardinality:0" value="1" />
-      <property name="role:0" value="queryIdProperty" />
-      <link role="target:0" targetNodeId="1.1071489288299:0" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1176750789991">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="sourceCardinality:0" value="1" />
-      <property name="role:0" value="returnType" />
-      <link role="target:0" targetNodeId="4.1068431790189:3" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1176750796710">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="sourceCardinality:0" value="0..n" />
-      <property name="role:0" value="parameter" />
-      <link role="target:0" targetNodeId="4.1068498886292:3" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1176750816680">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="sourceCardinality:0" value="0..n" />
-      <property name="role:0" value="additionalImport" />
-      <link role="target:0" targetNodeId="4.1068431790189:3" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1176809959526">
     <property name="name:0" value="QueryFunction_Color" />
     <property name="package:0" value="QueryFunction.Style" />

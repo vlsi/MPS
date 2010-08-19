@@ -203,25 +203,6 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     return result[0];
   }
 
-  public List<String> getAspectMethodIds(final String namespace, final String prefix) {
-    final List<String> list = new ArrayList<String>();
-    ApplicationManager.getApplication().runReadAction(new Runnable() {
-      public void run() {
-        final JavaPsiFacade javaPsi = JavaPsiFacade.getInstance(myProject);
-        if (!isQueriesClassExist(namespace)) return;
-        PsiClass aspects = javaPsi.findClass(namespace + ".Queries", GlobalSearchScope.projectScope(myProject));
-        if (aspects == null) return;
-        PsiMethod[] methods = aspects.getAllMethods();
-        for (PsiMethod method : methods) {
-          if (!method.hasModifierProperty(PsiModifier.STATIC)) continue;
-          if (!method.getName().startsWith(prefix)) continue;
-          list.add(method.getName().substring(prefix.length()));
-        }
-      }
-    });
-    return list;
-  }
-
   public List<String> findInheritors(final String fqName) {
     final List<String> list = new ArrayList<String>();
     ApplicationManager.getApplication().runReadAction(new Runnable() {
@@ -251,84 +232,6 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
         activateProjectWindow();
       }
     });
-  }
-
-  public void addImport(final String namespace, final String fqName) {
-    if (!isQueriesClassExist(namespace)) return;
-    executeWriteAction(new Runnable() {
-      public void run() {
-        JavaPsiFacade javaPsi = JavaPsiFacade.getInstance(myProject);
-        PsiClass aspectClass = getQueriesClass(namespace);
-        PsiJavaFile file = (PsiJavaFile) aspectClass.getContainingFile();
-        try {
-          PsiImportList importList = file.getImportList();
-          if (importList == null) return;
-          if (importList.findSingleClassImportStatement(fqName) != null) return;
-          PsiClass cls = javaPsi.findClass(fqName, GlobalSearchScope.allScope(myProject));
-          if (cls == null) return;
-          PsiImportStatement importStatement = getPsiElementFactory().createImportStatement(cls);
-          importList.add(importStatement);
-        } catch (IncorrectOperationException e) {
-          e.printStackTrace();
-        }
-      }
-    });
-  }
-
-  public void openQueryMethod(final String namespace, final String name) {
-    if (!isQueriesClassExist(namespace)) return;
-    executeWriteAction(new Runnable() {
-      public void run() {
-        PsiClass queries = getQueriesClass(namespace);
-        PsiMethod[] methods = queries.getAllMethods();
-        for (PsiMethod method : methods) {
-          if (method.getName().equals(name)) {
-            method.navigate(true);
-            activateProjectWindow();
-            return;
-          }
-        }
-      }
-    });
-  }
-
-
-  public String getQueryMethodText(final String namespace, final String name) {
-    if (!isQueriesClassExist(namespace)) return null;
-    final String[] result = new String[]{null};
-    executeWriteAction(new Runnable() {
-      public void run() {
-        PsiClass queries = getQueriesClass(namespace);
-        PsiMethod[] methods = queries.getAllMethods();
-        for (PsiMethod method : methods) {
-          if (method.getName().equals(name)) {
-
-            String text = method.getText();
-
-            PsiElement parent = method.getParent();
-            PsiElement[] children = parent.getChildren();
-            int index = Arrays.asList(children).indexOf(method) - 1;
-
-            while (true) {
-              if (index == -1) break;
-
-              if (children[index].getText().contains("\n")) {
-                String childText = children[index].getText();
-                text = childText.substring(childText.lastIndexOf("\n")) + text;
-                break;
-              }
-
-              text = children[index].getText() + text;
-              index--;
-            }
-
-            result[0] = text;
-            return;
-          }
-        }
-      }
-    });
-    return result[0];
   }
 
   public void openMethod(final String className, final String name, final int parameterCount) {
@@ -386,26 +289,6 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     });
   }
 
-  public void createAspectMethod(final String path, final String namespace, final String name, final String returnType, final String params) {
-    if (!isQueriesClassExist(namespace)) {
-      createAspectClass(path, namespace);
-    }
-
-    executeWriteAction(new Runnable() {
-      public void run() {
-        PsiClass cls = getQueriesClass(namespace);
-        try {
-          PsiMethod method = getPsiElementFactory().createMethodFromText("public static " + returnType + " " + name + "(" + params + ")  { }", cls);
-          method = (PsiMethod) cls.add(method);
-          method.navigate(true);
-          activateProjectWindow();
-        } catch (IncorrectOperationException e) {
-          e.printStackTrace();
-        }
-      }
-    });
-  }
-
   private void activateProjectWindow() {
     if (SystemInfo.isLinux) return;
 
@@ -423,49 +306,6 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
       }
     });
   }
-
-  public void createAspectClass(final String path, final String namespace) {
-    executeWriteAction(new Runnable() {
-      public void run() {
-        final PsiManager psiManager = PsiManager.getInstance(myProject);
-        VirtualFile sourceDir = null;
-
-        Module module = findModule(path);
-        if (module == null) {
-          System.err.println("I can't find suitable module");
-          return;
-        }
-
-        ModuleRootManager rootManager = ModuleRootManager.getInstance(module);
-
-
-        VirtualFile[] sourceRoots = rootManager.getSourceRoots();
-        for (VirtualFile file : sourceRoots) {
-          if (file.getName().equals("source")) {
-            sourceDir = file;
-            break;
-          }
-          if (file.getName().equals("src")) {
-            sourceDir = file;
-            break;
-          }
-          sourceDir = file;
-        }
-        if (sourceDir == null) {
-          System.out.println("I can't find directory with sources.");
-          return;
-        }
-        PsiDirectory rootDir = psiManager.findDirectory(sourceDir);
-        try {
-          activateProjectWindow();
-          JavaDirectoryService.getInstance().createClass(createPackagesForNamespace(rootDir, namespace), "Queries");
-        } catch (IncorrectOperationException e) {
-          e.printStackTrace();
-        }
-      }
-    });
-  }
-
 
   public void addIdeHandler(IMPSIDEHandler handler) throws RemoteException {
     myIDEHandlers.add(handler);
@@ -495,10 +335,6 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     return current;
   }
 
-  private PsiClass getQueriesClass(final String namespace) {
-    return findClass(namespace + ".Queries");
-  }
-
   private PsiClass findClass(final String className) {
     final PsiClass[] cls = new PsiClass[1];
     ApplicationManager.getApplication().runReadAction(new Runnable() {
@@ -508,10 +344,6 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
       }
     });
     return cls[0];
-  }
-
-  public boolean isQueriesClassExist(final String namespace) {
-    return getQueriesClass(namespace) != null;
   }
 
   private void executeWriteAction(final Runnable runnable) {

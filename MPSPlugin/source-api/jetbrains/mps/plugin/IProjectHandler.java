@@ -30,17 +30,9 @@ public interface IProjectHandler extends Remote {
 
   CompilationResult buildModule(final String path) throws RemoteException;
 
-  List<String> getAspectMethodIds(final String namespace, final String prefix) throws RemoteException;
-
   List<String> findInheritors(final String fqName) throws RemoteException;
 
   void openClass(final String fqName) throws RemoteException;
-
-  void addImport(final String namespace, final String fqName) throws RemoteException;
-
-  void openQueryMethod(final String namespace, final String name) throws RemoteException;
-
-  String getQueryMethodText(final String namespace, final String name) throws RemoteException;
 
   void openMethod(final String className, final String name, final int parameterCount) throws RemoteException;
 
@@ -48,11 +40,7 @@ public interface IProjectHandler extends Remote {
 
   void openConstructor(final String className, final int parameterCount) throws RemoteException;
 
-  void createAspectMethod(final String path, final String namespace, final String name, final String returnType, final String params) throws RemoteException;
-
   void addLanguageRoot(String path) throws RemoteException;
-
-  void createAspectClass(final String path, final String namespace) throws RemoteException;
 
   List<String> getModuleClassPath(final String path) throws RemoteException;
 

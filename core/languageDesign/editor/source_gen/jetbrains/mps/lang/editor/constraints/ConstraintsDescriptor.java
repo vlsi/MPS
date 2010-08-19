@@ -15,7 +15,6 @@ public class ConstraintsDescriptor implements IModelConstraints {
     ListSequence.fromList(this.myConstraints).addElement(new ConceptEditorDeclaration_name_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new RGBColor_value_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new CellModel_Component_editorComponent_ReferentConstraint());
-    ListSequence.fromList(this.myConstraints).addElement(new QueryMethodIdEditorProviderExpression_queryIdProperty_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new CellMenuComponentFeature_Link_linkDeclaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new CellModel_RefCell_linkDeclaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new CellModel_Property_propertyDeclaration_ReferentConstraint());
