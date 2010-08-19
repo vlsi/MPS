@@ -54,12 +54,12 @@ public class StronglyConnectedModules {
       decorator.fill(moduleToDecorator);
     }
 
-    List<Set<IModuleDecorator<M>>> sets = Graphs.getInstance().findStronglyConnectedComponents(graph);
+    List<List<IModuleDecorator<M>>> cycles = Graphs.getInstance().findStronglyConnectedComponents(graph);
 
-    for (Set<IModuleDecorator<M>> set : sets) {
+    for (List<IModuleDecorator<M>> cycle : cycles) {
       Set<M> mset = new LinkedHashSet<M>();
       result.add(mset);
-      for (IModuleDecorator<M> decorator : set) {
+      for (IModuleDecorator<M> decorator : cycle) {
         mset.add(decorator.getModule());
       }
     }

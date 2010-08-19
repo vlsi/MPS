@@ -16,14 +16,14 @@
 package jetbrains.mps.make.dependencies;
 
 import jetbrains.mps.make.dependencies.IntGraph.IntVertex;
-import jetbrains.mps.make.dependencies.graph.Graph.IDFSWalker;
 import jetbrains.mps.make.dependencies.graph.Graph;
 import jetbrains.mps.make.dependencies.graph.Graphs;
+import jetbrains.mps.make.dependencies.graph.IVertex;
+import jetbrains.mps.util.GraphUtil;
 import junit.framework.TestCase;
-import org.jetbrains.annotations.NotNull;
 
-import java.util.Comparator;
-import java.util.LinkedList;
+import java.util.Collections;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -49,14 +49,8 @@ public class GraphTestCase extends TestCase {
       "5 -> \n", myGraph.getGraph().toString());
   }
 
-  public void testDfs1() {
-    TestWalker testWalker = new TestWalker();
-    myGraph.getGraph().dfsValk(testWalker);
-    assertEquals("Should visit all vertexes 1 time.", N * (N - 1) / 2, testWalker.getSum());
-  }
-
   public void testTranspose1() {
-    Graph transposed = Graphs.getInstance().getTransposed(myGraph.getGraph());
+    Graph transposed = getTransposed(myGraph.getGraph());
     assertEquals("0 -> \n" +
       "1 -> 0\n" +
       "2 -> 0, 3\n" +
@@ -67,7 +61,7 @@ public class GraphTestCase extends TestCase {
 
   public void testStronglyConnectedComponents1() {
     myGraph.addEdges(5, 0);
-    List<Set<IntVertex>> components = Graphs.getInstance().findStronglyConnectedComponents(myGraph.getGraph());
+    List<List<IntVertex>> components = Graphs.getInstance().findStronglyConnectedComponents(myGraph.getGraph());
 
     assertEquals(N, components.size());
 
@@ -94,7 +88,7 @@ public class GraphTestCase extends TestCase {
     myGraph.addEdges(5, 4);
     myGraph.addEdges(4, 0);
     myGraph.addEdges(2, 0);
-    List<Set<Integer>> components = Graphs.getInstance().findStronglyConnectedComponents(myGraph.getGraph());
+    List<List<Integer>> components = Graphs.getInstance().findStronglyConnectedComponents(myGraph.getGraph());
 
     assertEquals(2, components.size());
 
@@ -109,39 +103,64 @@ public class GraphTestCase extends TestCase {
     assertTrue(components.get(1).contains(new IntVertex(3)));
   }
 
-  private class TestWalker implements IDFSWalker<IntVertex> {
+  public <V extends IVertex> Graph<VertexDecorator<V>> getTransposed(Graph<V> graph0) {
+    IVertex[] vertices = graph0.getData().toArray(new IVertex[graph0.getNVertexes()]);
+    int[][] graph = Graphs.graphToIntInt(vertices);
+    int[][] transposed = GraphUtil.transpose(graph);
 
-    private int myLastTreeRoot = -1;
-    private final List<Integer> myStack = new LinkedList<Integer>();
-    private int mySum = 0;
-
-    public Comparator<IntVertex> getVertexComparator() {
-      return null;
+    Graph result = new Graph();
+    VertexDecorator<V>[] vertices_ = new VertexDecorator[vertices.length];
+    for(int i = 0; i < vertices.length; i++) {
+      vertices_[i] = new VertexDecorator<V>((V) vertices[i]);
+      result.add(vertices_[i]);
     }
 
-    public void enterTree(@NotNull IntVertex v) {
-      assertTrue("Not natural vertex order : " + v + " <= " + myLastTreeRoot, myLastTreeRoot < v.getID());
-      myLastTreeRoot = v.getID();
+    for(int i = 0; i < vertices.length; i++) {
+      for(int t : transposed[i]) {
+        vertices_[i].addNext(vertices_[t]);
+      }
     }
-
-    public void leaveTree(@NotNull IntVertex v) {
-      assertEquals(v.getID().intValue(), myLastTreeRoot);
-    }
-
-    public void enter(@NotNull IntVertex v) {
-      assertFalse("Can not enter same vertex twice.", myStack.contains(v.getID()));
-      myStack.add(v.getID());
-      mySum += v.getID();
-    }
-
-    public void leave(@NotNull IntVertex v) {
-      assertEquals("Is not valid bracket sequence.", myStack.get(myStack.size() - 1), v.getID());
-      myStack.remove(myStack.size() - 1);
-    }
-
-    public int getSum() {
-      return mySum;
-    }
+    return result;
   }
 
+  public static class VertexDecorator<V extends IVertex> implements IVertex, Comparable<VertexDecorator<V>> {
+    private final V myVertex;
+    private final Set<VertexDecorator<V>> myNext = new LinkedHashSet<VertexDecorator<V>>();
+
+    public VertexDecorator(V vertex) {
+      myVertex = vertex;
+    }
+
+    private void addNext(VertexDecorator v) {
+      myNext.add(v);
+    }
+
+    public Set<VertexDecorator<V>> getNexts() {
+      return Collections.unmodifiableSet(myNext);
+    }
+
+    public V getVertex() {
+      return myVertex;
+    }
+
+    @Override
+    public String toString() {
+      return myVertex.toString();
+    }
+
+    public boolean equals(Object obj) {
+      if (obj instanceof VertexDecorator) {
+        return myVertex.equals(((VertexDecorator) obj).getVertex());
+      }
+      return false;
+    }
+
+    public int hashCode() {
+      return myVertex.hashCode();
+    }
+
+    public int compareTo(VertexDecorator<V> o) {
+      return ((Comparable<V>) myVertex).compareTo(o.getVertex());
+    }
+  }
 }
