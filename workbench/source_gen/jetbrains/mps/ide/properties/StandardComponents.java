@@ -102,7 +102,7 @@ import jetbrains.mps.project.structure.project.Path;
 import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.workbench.dialogs.project.components.parts.creators.ModulePathChooser;
 import jetbrains.mps.workbench.dialogs.project.components.parts.renderers.PathRenderer;
-import jetbrains.mps.workbench.InternalFlag;
+import jetbrains.mps.InternalFlag;
 import javax.swing.JCheckBox;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
 

@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import javax.swing.JPanel;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.workbench.InternalFlag;
+import jetbrains.mps.InternalFlag;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.ThreadUtils;
 import com.intellij.openapi.project.Project;

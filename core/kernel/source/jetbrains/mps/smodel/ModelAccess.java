@@ -23,7 +23,7 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.util.containers.ConcurrentHashSet;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.workbench.InternalFlag;
+import jetbrains.mps.InternalFlag;
 
 import javax.swing.SwingUtilities;
 import java.util.ArrayList;

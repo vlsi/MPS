@@ -25,7 +25,7 @@ import com.intellij.openapi.application.impl.ApplicationInfoImpl;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.util.SystemInfo;
 import com.intellij.ui.AppUIUtil;
-import jetbrains.mps.workbench.InternalFlag;
+import jetbrains.mps.InternalFlag;
 import org.jetbrains.annotations.NonNls;
 
 import javax.swing.JOptionPane;

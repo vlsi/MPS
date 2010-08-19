@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.findusages.view.optionseditor.components;
 
+import jetbrains.mps.InternalFlag;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import jetbrains.mps.ide.ui.DefaultCompletionTextField;
 import jetbrains.mps.project.IModule;
@@ -22,7 +23,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.workbench.InternalFlag;
 
 import javax.swing.*;
 import java.awt.BorderLayout;

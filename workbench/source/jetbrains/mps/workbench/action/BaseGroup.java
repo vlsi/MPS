@@ -19,14 +19,13 @@ import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.Presentation;
+import jetbrains.mps.InternalFlag;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.ActionPlace;
-import jetbrains.mps.workbench.InternalFlag;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 

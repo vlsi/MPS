@@ -23,7 +23,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
-  <maxImportIndex value="81" />
+  <maxImportIndex value="82" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" />
   <import index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="4" modelUID="f:java_stub#jetbrains.mps.project.structure.modules.mappingpriorities(jetbrains.mps.project.structure.modules.mappingpriorities@java_stub)" version="-1" />
@@ -80,6 +80,7 @@
   <import index="79" modelUID="f:java_stub#javax.swing.tree(javax.swing.tree@java_stub)" version="-1" />
   <import index="80" modelUID="f:java_stub#jetbrains.mps.lang.generator.structure(jetbrains.mps.lang.generator.structure@java_stub)" version="-1" />
   <import index="81" modelUID="f:java_stub#jetbrains.mps.smodel.descriptor(jetbrains.mps.smodel.descriptor@java_stub)" version="-1" />
+  <import index="82" modelUID="f:java_stub#jetbrains.mps(jetbrains.mps@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4060390951635972879">
     <property name="name:3" value="StandardComponents" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4060390951635972880" />
@@ -4512,9 +4513,9 @@
                   </node>
                 </node>
                 <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="4060390951635974783">
-                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="4060390951635974784">
-                    <link role="baseMethodDeclaration:3" targetNodeId="20.~InternalFlag.isInternalMode():boolean" />
-                    <link role="classConcept:3" targetNodeId="20.~InternalFlag" />
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1964468829787312341">
+                    <link role="baseMethodDeclaration:3" targetNodeId="82.~InternalFlag.isInternalMode():boolean" resolveInfo="isInternalMode" />
+                    <link role="classConcept:3" targetNodeId="82.~InternalFlag" resolveInfo="InternalFlag" />
                   </node>
                 </node>
               </node>
@@ -9164,9 +9165,9 @@
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="5923576889075041872">
-          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5923576889075041873">
-            <link role="classConcept:3" targetNodeId="20.~InternalFlag" resolveInfo="InternalFlag" />
-            <link role="baseMethodDeclaration:3" targetNodeId="20.~InternalFlag.isInternalMode():boolean" resolveInfo="isInternalMode" />
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1964468829787254844">
+            <link role="baseMethodDeclaration:3" targetNodeId="82.~InternalFlag.isInternalMode():boolean" resolveInfo="isInternalMode" />
+            <link role="classConcept:3" targetNodeId="82.~InternalFlag" resolveInfo="InternalFlag" />
           </node>
           <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5923576889075041874">
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5923576889075041875">
@@ -9249,9 +9250,9 @@
               </node>
             </node>
           </node>
-          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7168227884262510665">
-            <link role="baseMethodDeclaration:3" targetNodeId="20.~InternalFlag.isInternalMode():boolean" resolveInfo="isInternalMode" />
-            <link role="classConcept:3" targetNodeId="20.~InternalFlag" resolveInfo="InternalFlag" />
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1964468829787254845">
+            <link role="baseMethodDeclaration:3" targetNodeId="82.~InternalFlag.isInternalMode():boolean" resolveInfo="isInternalMode" />
+            <link role="classConcept:3" targetNodeId="82.~InternalFlag" resolveInfo="InternalFlag" />
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="5923576889075041908">
@@ -11355,9 +11356,9 @@
               </node>
             </node>
           </node>
-          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7168227884262507355">
-            <link role="baseMethodDeclaration:3" targetNodeId="20.~InternalFlag.isInternalMode():boolean" resolveInfo="isInternalMode" />
-            <link role="classConcept:3" targetNodeId="20.~InternalFlag" resolveInfo="InternalFlag" />
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1964468829787254846">
+            <link role="baseMethodDeclaration:3" targetNodeId="82.~InternalFlag.isInternalMode():boolean" resolveInfo="isInternalMode" />
+            <link role="classConcept:3" targetNodeId="82.~InternalFlag" resolveInfo="InternalFlag" />
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="5923576889075042775">

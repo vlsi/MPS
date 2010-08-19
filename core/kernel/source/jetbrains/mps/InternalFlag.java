@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench;
+package jetbrains.mps;
 
 public class InternalFlag {
 
