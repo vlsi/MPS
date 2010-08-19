@@ -18,7 +18,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.ypath.design.IFeatureDesign;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.generator.JavaNameUtil;
+import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.ypath.plugin.DesignPartLoader;
 
 public class FeatureUtil {

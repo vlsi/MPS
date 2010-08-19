@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.reloading;
 
-import jetbrains.mps.generator.JavaNameUtil;
+import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SNode;
 

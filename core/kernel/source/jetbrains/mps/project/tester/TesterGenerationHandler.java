@@ -17,19 +17,15 @@ package jetbrains.mps.project.tester;
 
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.generator.JavaNameUtil;
+import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
-import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
-import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;

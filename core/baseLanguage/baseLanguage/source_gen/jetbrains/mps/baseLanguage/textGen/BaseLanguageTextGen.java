@@ -18,7 +18,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.textGen.TextGenBuffer;
 import java.util.HashSet;
 import jetbrains.mps.util.InternUtil;
-import jetbrains.mps.generator.JavaNameUtil;
+import jetbrains.mps.util.JavaNameUtil;
 
 public abstract class BaseLanguageTextGen {
   public static void typeParameters(List<SNode> types, final SNodeTextGen textGen) {

@@ -17,7 +17,6 @@ package jetbrains.mps.util;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.util.containers.ConcurrentHashSet;
-import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;

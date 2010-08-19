@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.textGen;
 
-import jetbrains.mps.generator.JavaNameUtil;
+import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;

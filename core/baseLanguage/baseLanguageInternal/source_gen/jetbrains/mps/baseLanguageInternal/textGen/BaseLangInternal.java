@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguageInternal.textGen;
 
 import jetbrains.mps.baseLanguage.textGen.BaseLanguageTextGen;
 import jetbrains.mps.textGen.SNodeTextGen;
-import jetbrains.mps.generator.JavaNameUtil;
+import jetbrains.mps.util.JavaNameUtil;
 
 public abstract class BaseLangInternal extends BaseLanguageTextGen {
   public static void className(String fqClassName, final SNodeTextGen textGen) {

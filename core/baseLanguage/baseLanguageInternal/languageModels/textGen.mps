@@ -190,10 +190,10 @@
                   <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1236701501695">
                     <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1236701506056">
                       <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="1236701508308">
-                        <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1236701547127">
-                          <link role="baseMethodDeclaration:3" targetNodeId="3.~JavaNameUtil.packageName(java.lang.String):java.lang.String" resolveInfo="packageName" />
-                          <link role="classConcept:3" targetNodeId="3.~JavaNameUtil" resolveInfo="JavaNameUtil" />
-                          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1236701549613">
+                        <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="546903586015374830">
+                          <link role="baseMethodDeclaration:3" targetNodeId="4.~JavaNameUtil.packageName(java.lang.String):java.lang.String" resolveInfo="packageName" />
+                          <link role="classConcept:3" targetNodeId="4.~JavaNameUtil" resolveInfo="JavaNameUtil" />
+                          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="546903586015374831">
                             <link role="variableDeclaration:3" targetNodeId="1236701356754" resolveInfo="fqClassName" />
                           </node>
                         </node>
@@ -204,10 +204,10 @@
                     </node>
                     <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1236701552381">
                       <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="1236701554570">
-                        <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1236701559262">
-                          <link role="baseMethodDeclaration:3" targetNodeId="3.~JavaNameUtil.shortName(java.lang.String):java.lang.String" resolveInfo="shortName" />
-                          <link role="classConcept:3" targetNodeId="3.~JavaNameUtil" resolveInfo="JavaNameUtil" />
-                          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1236701561732">
+                        <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="546903586015374832">
+                          <link role="baseMethodDeclaration:3" targetNodeId="4.~JavaNameUtil.shortName(java.lang.String):java.lang.String" resolveInfo="shortName" />
+                          <link role="classConcept:3" targetNodeId="4.~JavaNameUtil" resolveInfo="JavaNameUtil" />
+                          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="546903586015374833">
                             <link role="variableDeclaration:3" targetNodeId="1236701356754" resolveInfo="fqClassName" />
                           </node>
                         </node>

@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
-import jetbrains.mps.generator.JavaNameUtil;
+import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.ypath.behavior.IFeature_Behavior;
 import jetbrains.mps.ypath.behavior.TreeNodeKind_Behavior;
 import jetbrains.mps.ypath.behavior.MatchKindOperation_Behavior;

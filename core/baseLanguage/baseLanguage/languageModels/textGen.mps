@@ -562,10 +562,10 @@
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1236686502939">
                   <link role="baseMethodDeclaration:3" targetNodeId="2.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1236686502940">
-                    <link role="classConcept:3" targetNodeId="5.~JavaNameUtil" resolveInfo="JavaNameUtil" />
-                    <link role="baseMethodDeclaration:3" targetNodeId="5.~JavaNameUtil.shortName(java.lang.String):java.lang.String" resolveInfo="shortName" />
-                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1236686502941">
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="546903586015341047">
+                    <link role="baseMethodDeclaration:3" targetNodeId="16.~JavaNameUtil.shortName(java.lang.String):java.lang.String" resolveInfo="shortName" />
+                    <link role="classConcept:3" targetNodeId="16.~JavaNameUtil" resolveInfo="JavaNameUtil" />
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="546903586015341048">
                       <link role="variableDeclaration:3" targetNodeId="1236686502943" resolveInfo="importedName" />
                     </node>
                   </node>
@@ -1945,12 +1945,12 @@
             <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6520006750514030320">
               <node role="statement:3" type="jetbrains.mps.lang.textGen.structure.AppendOperation:11" id="6520006750514030321">
                 <node role="part:11" type="jetbrains.mps.lang.textGen.structure.NodeAppendPart:11" id="6520006750514030323">
-                  <node role="value:11" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6520006750514030324">
-                    <link role="classConcept:3" targetNodeId="5.~JavaNameUtil" resolveInfo="JavaNameUtil" />
-                    <link role="baseMethodDeclaration:3" targetNodeId="5.~JavaNameUtil.shortName(java.lang.String):java.lang.String" resolveInfo="shortName" />
-                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6520006750514030325">
-                      <node role="operand:3" type="jetbrains.mps.lang.textGen.structure.NodeParameter:11" id="6520006750514030326" />
-                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="6520006750514030327">
+                  <node role="value:11" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="546903586015341034">
+                    <link role="baseMethodDeclaration:3" targetNodeId="16.~JavaNameUtil.shortName(java.lang.String):java.lang.String" resolveInfo="shortName" />
+                    <link role="classConcept:3" targetNodeId="16.~JavaNameUtil" resolveInfo="JavaNameUtil" />
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="546903586015341035">
+                      <node role="operand:3" type="jetbrains.mps.lang.textGen.structure.NodeParameter:11" id="546903586015341036" />
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="546903586015341037">
                         <link role="property:16" targetNodeId="3v.1169194664001:0" resolveInfo="name" />
                       </node>
                     </node>
@@ -4530,12 +4530,12 @@
             <property name="withIndent:11" value="false" />
           </node>
           <node role="part:11" type="jetbrains.mps.lang.textGen.structure.NodeAppendPart:11" id="1237463993201">
-            <node role="value:11" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1235129854250">
-              <link role="baseMethodDeclaration:3" targetNodeId="5.~JavaNameUtil.shortName(java.lang.String):java.lang.String" resolveInfo="shortName" />
-              <link role="classConcept:3" targetNodeId="5.~JavaNameUtil" resolveInfo="JavaNameUtil" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1235129856705">
-                <node role="operand:3" type="jetbrains.mps.lang.textGen.structure.NodeParameter:11" id="1235129856063" />
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1235129857768">
+            <node role="value:11" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="546903586015341042">
+              <link role="baseMethodDeclaration:3" targetNodeId="16.~JavaNameUtil.shortName(java.lang.String):java.lang.String" resolveInfo="shortName" />
+              <link role="classConcept:3" targetNodeId="16.~JavaNameUtil" resolveInfo="JavaNameUtil" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="546903586015341043">
+                <node role="operand:3" type="jetbrains.mps.lang.textGen.structure.NodeParameter:11" id="546903586015341044" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="546903586015341045">
                   <link role="property:16" targetNodeId="3v.1169194664001:0" resolveInfo="name" />
                 </node>
               </node>
@@ -8054,12 +8054,12 @@
             <property name="withIndent:11" value="true" />
           </node>
           <node role="part:11" type="jetbrains.mps.lang.textGen.structure.NodeAppendPart:11" id="1237463992828">
-            <node role="value:11" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1235740623791">
-              <link role="baseMethodDeclaration:3" targetNodeId="5.~JavaNameUtil.shortName(java.lang.String):java.lang.String" resolveInfo="shortName" />
-              <link role="classConcept:3" targetNodeId="5.~JavaNameUtil" resolveInfo="JavaNameUtil" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1235740626652">
-                <node role="operand:3" type="jetbrains.mps.lang.textGen.structure.NodeParameter:11" id="1235740626183" />
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1235740627875">
+            <node role="value:11" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="546903586015341038">
+              <link role="baseMethodDeclaration:3" targetNodeId="16.~JavaNameUtil.shortName(java.lang.String):java.lang.String" resolveInfo="shortName" />
+              <link role="classConcept:3" targetNodeId="16.~JavaNameUtil" resolveInfo="JavaNameUtil" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="546903586015341039">
+                <node role="operand:3" type="jetbrains.mps.lang.textGen.structure.NodeParameter:11" id="546903586015341040" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="546903586015341041">
                   <link role="property:16" targetNodeId="3v.1169194664001:0" resolveInfo="name" />
                 </node>
               </node>

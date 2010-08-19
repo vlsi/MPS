@@ -53,6 +53,7 @@
     <nodeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="21" startPosition="38" endLine="74" endPosition="0" />
     <nodeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="20" startPosition="56" endLine="74" endPosition="10" />
     <nodeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="19" startPosition="134" endLine="76" endPosition="0" />
+    <nodeInfo nodeId="1213877241849" fileName="TreePathAspect_Behavior.java" startLine="18" startPosition="77" endLine="76" endPosition="15" />
     <scopeInfo nodeId="1213877241877" fileName="TreePathAspect_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
     <scopeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="57" startPosition="27" endLine="57" endPosition="27" />
     <scopeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="60" startPosition="27" endLine="60" endPosition="27" />
@@ -97,6 +98,7 @@
     <scopeInfo nodeId="1213877253693" fileName="ToStringFun_Behavior.java" startLine="15" startPosition="83" endLine="16" endPosition="79" />
   </root>
   <root nodeId="1213877259422">
+    <nodeInfo nodeId="1213877259426" fileName="VisitChildrenExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="107" />
     <scopeInfo nodeId="1213877259432" fileName="VisitChildrenExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
     <scopeInfo nodeId="1213877259425" fileName="VisitChildrenExpression_Behavior.java" startLine="12" startPosition="90" endLine="13" endPosition="107" />
   </root>
@@ -159,6 +161,7 @@
     </scopeInfo>
   </root>
   <root nodeId="1213877340241">
+    <nodeInfo nodeId="1213877340244" fileName="IParamFeature_Behavior.java" startLine="14" startPosition="100" endLine="15" endPosition="63" />
     <nodeInfo nodeId="1213877340257" fileName="IParamFeature_Behavior.java" startLine="18" startPosition="86" endLine="19" endPosition="249" />
     <scopeInfo nodeId="1213877340270" fileName="IParamFeature_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
     <scopeInfo nodeId="1213877340243" fileName="IParamFeature_Behavior.java" startLine="14" startPosition="100" endLine="15" endPosition="63" />
@@ -183,6 +186,7 @@
     <nodeInfo nodeId="1213877375206" fileName="TreeNodeKind_Behavior.java" startLine="17" startPosition="81" endLine="18" endPosition="95" />
     <nodeInfo nodeId="1213877375214" fileName="TreeNodeKind_Behavior.java" startLine="18" startPosition="95" endLine="19" endPosition="167" />
     <nodeInfo nodeId="1213877375223" fileName="TreeNodeKind_Behavior.java" startLine="19" startPosition="167" endLine="20" endPosition="99" />
+    <nodeInfo nodeId="1213877375229" fileName="TreeNodeKind_Behavior.java" startLine="20" startPosition="99" endLine="21" endPosition="69" />
     <scopeInfo nodeId="1213877375240" fileName="TreeNodeKind_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
     <scopeInfo nodeId="1213877375196" fileName="TreeNodeKind_Behavior.java" startLine="13" startPosition="79" endLine="14" endPosition="80" />
     <scopeInfo nodeId="1213877375205" fileName="TreeNodeKind_Behavior.java" startLine="17" startPosition="81" endLine="21" endPosition="69">
@@ -204,6 +208,7 @@
     <scopeInfo nodeId="1213877397372" fileName="LambdaMethodParameter_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="54" />
   </root>
   <root nodeId="1213877409256">
+    <nodeInfo nodeId="1225096927525" fileName="TreePathOperationExpression_Behavior.java" startLine="16" startPosition="39" endLine="17" endPosition="107" />
     <nodeInfo nodeId="1213877409278" fileName="TreePathOperationExpression_Behavior.java" startLine="19" startPosition="15" endLine="20" endPosition="180" />
     <nodeInfo nodeId="1225096927521" fileName="TreePathOperationExpression_Behavior.java" startLine="15" startPosition="143" endLine="19" endPosition="0" />
     <nodeInfo nodeId="1213877409260" fileName="TreePathOperationExpression_Behavior.java" startLine="14" startPosition="70" endLine="19" endPosition="15" />
@@ -219,6 +224,7 @@
     <nodeInfo nodeId="1213877411666" fileName="TreePathAdapterExpression_Behavior.java" startLine="16" startPosition="70" endLine="17" endPosition="130" />
     <nodeInfo nodeId="1213877411677" fileName="TreePathAdapterExpression_Behavior.java" startLine="19" startPosition="143" endLine="20" endPosition="266" />
     <nodeInfo nodeId="1213877411696" fileName="TreePathAdapterExpression_Behavior.java" startLine="22" startPosition="5" endLine="23" endPosition="134" />
+    <nodeInfo nodeId="1225096929129" fileName="TreePathAdapterExpression_Behavior.java" startLine="25" startPosition="39" endLine="26" endPosition="100" />
     <nodeInfo nodeId="1213877411675" fileName="TreePathAdapterExpression_Behavior.java" startLine="18" startPosition="25" endLine="21" endPosition="7" />
     <nodeInfo nodeId="1225096929125" fileName="TreePathAdapterExpression_Behavior.java" startLine="24" startPosition="76" endLine="28" endPosition="0" />
     <nodeInfo nodeId="1213877411673" fileName="TreePathAdapterExpression_Behavior.java" startLine="17" startPosition="130" endLine="22" endPosition="5" />
@@ -238,7 +244,10 @@
     <scopeInfo nodeId="1213877412814" fileName="TreeNodeKindOccurrence_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
   </root>
   <root nodeId="1213877442100">
+    <nodeInfo nodeId="1213877442104" fileName="ChildrenBlock_Behavior.java" startLine="19" startPosition="73" endLine="20" endPosition="137" />
+    <nodeInfo nodeId="1213877442114" fileName="ChildrenBlock_Behavior.java" startLine="23" startPosition="76" endLine="24" endPosition="237" />
     <nodeInfo nodeId="1228297762147" fileName="ChildrenBlock_Behavior.java" startLine="27" startPosition="83" endLine="28" endPosition="168" />
+    <nodeInfo nodeId="1228297712249" fileName="ChildrenBlock_Behavior.java" startLine="28" startPosition="168" endLine="29" endPosition="105" />
     <scopeInfo nodeId="1213877442137" fileName="ChildrenBlock_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
     <scopeInfo nodeId="1213877442103" fileName="ChildrenBlock_Behavior.java" startLine="19" startPosition="73" endLine="20" endPosition="137" />
     <scopeInfo nodeId="1213877442113" fileName="ChildrenBlock_Behavior.java" startLine="23" startPosition="76" endLine="24" endPosition="237" />
@@ -277,8 +286,11 @@
     <scopeInfo nodeId="1213877496590" fileName="GFCardinalFun_Behavior.java" startLine="15" startPosition="83" endLine="16" endPosition="81" />
   </root>
   <root nodeId="1213877496972">
+    <nodeInfo nodeId="1225096925339" fileName="ITreePathExpression_Behavior.java" startLine="18" startPosition="39" endLine="19" endPosition="107" />
     <nodeInfo nodeId="1213877496993" fileName="ITreePathExpression_Behavior.java" startLine="21" startPosition="7" endLine="22" endPosition="98" />
+    <nodeInfo nodeId="1225096925086" fileName="ITreePathExpression_Behavior.java" startLine="25" startPosition="41" endLine="26" endPosition="108" />
     <nodeInfo nodeId="1213877497022" fileName="ITreePathExpression_Behavior.java" startLine="29" startPosition="56" endLine="30" endPosition="200" />
+    <nodeInfo nodeId="1225096929237" fileName="ITreePathExpression_Behavior.java" startLine="32" startPosition="43" endLine="33" endPosition="111" />
     <nodeInfo nodeId="1213877497047" fileName="ITreePathExpression_Behavior.java" startLine="35" startPosition="11" endLine="36" endPosition="70" />
     <nodeInfo nodeId="1213877497058" fileName="ITreePathExpression_Behavior.java" startLine="37" startPosition="14" endLine="38" endPosition="14" />
     <nodeInfo nodeId="1213877497059" fileName="ITreePathExpression_Behavior.java" startLine="40" startPosition="5" endLine="41" endPosition="54" />
@@ -327,11 +339,15 @@
     <nodeInfo nodeId="1213877499684" fileName="IFeature_Behavior.java" startLine="41" startPosition="75" endLine="42" endPosition="113" />
     <nodeInfo nodeId="1213877499696" fileName="IFeature_Behavior.java" startLine="43" startPosition="5" endLine="44" endPosition="65" />
     <nodeInfo nodeId="1213877499706" fileName="IFeature_Behavior.java" startLine="47" startPosition="80" endLine="48" endPosition="39" />
+    <nodeInfo nodeId="1225096924881" fileName="IFeature_Behavior.java" startLine="50" startPosition="39" endLine="51" endPosition="100" />
     <nodeInfo nodeId="1213877499713" fileName="IFeature_Behavior.java" startLine="53" startPosition="9" endLine="54" endPosition="62" />
+    <nodeInfo nodeId="1213877499744" fileName="IFeature_Behavior.java" startLine="58" startPosition="78" endLine="59" endPosition="192" />
     <nodeInfo nodeId="1213877499763" fileName="IFeature_Behavior.java" startLine="63" startPosition="75" endLine="64" endPosition="19" />
     <nodeInfo nodeId="1213877499770" fileName="IFeature_Behavior.java" startLine="65" startPosition="5" endLine="66" endPosition="39" />
+    <nodeInfo nodeId="1225096928952" fileName="IFeature_Behavior.java" startLine="68" startPosition="39" endLine="69" endPosition="100" />
     <nodeInfo nodeId="1213877499804" fileName="IFeature_Behavior.java" startLine="75" startPosition="75" endLine="76" endPosition="59" />
     <nodeInfo nodeId="1213877499813" fileName="IFeature_Behavior.java" startLine="77" startPosition="5" endLine="78" endPosition="39" />
+    <nodeInfo nodeId="1225096924839" fileName="IFeature_Behavior.java" startLine="80" startPosition="39" endLine="81" endPosition="100" />
     <nodeInfo nodeId="1213877499632" fileName="IFeature_Behavior.java" startLine="25" startPosition="104" endLine="28" endPosition="5" />
     <nodeInfo nodeId="1213877499649" fileName="IFeature_Behavior.java" startLine="30" startPosition="69" endLine="33" endPosition="5" />
     <nodeInfo nodeId="1213877499663" fileName="IFeature_Behavior.java" startLine="34" startPosition="72" endLine="37" endPosition="5" />
@@ -341,6 +357,8 @@
     <nodeInfo nodeId="1225096924877" fileName="IFeature_Behavior.java" startLine="49" startPosition="229" endLine="53" endPosition="0" />
     <nodeInfo nodeId="1225096928948" fileName="IFeature_Behavior.java" startLine="67" startPosition="219" endLine="71" endPosition="0" />
     <nodeInfo nodeId="1225096924835" fileName="IFeature_Behavior.java" startLine="79" startPosition="219" endLine="83" endPosition="0" />
+    <nodeInfo nodeId="1213877499774" fileName="IFeature_Behavior.java" startLine="66" startPosition="39" endLine="71" endPosition="20" />
+    <nodeInfo nodeId="1213877499817" fileName="IFeature_Behavior.java" startLine="78" startPosition="39" endLine="83" endPosition="7" />
     <nodeInfo nodeId="1213877499710" fileName="IFeature_Behavior.java" startLine="48" startPosition="39" endLine="55" endPosition="5" />
     <scopeInfo nodeId="1213877499840" fileName="IFeature_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
     <scopeInfo nodeId="1213877499610" fileName="IFeature_Behavior.java" startLine="17" startPosition="71" endLine="18" endPosition="72" />
@@ -376,9 +394,11 @@
     <unitInfo nodeId="1225096924835" fileName="IFeature_Behavior.java" startLine="79" startPosition="196" endLine="83" endPosition="5" unitName="jetbrains.mps.ypath.behavior.IWhereFilter$anonymous" />
   </root>
   <root nodeId="1213877513202">
+    <nodeInfo nodeId="1213877513206" fileName="TreeNodeKindProperty_Behavior.java" startLine="13" startPosition="72" endLine="14" endPosition="224" />
     <nodeInfo nodeId="1213877513224" fileName="TreeNodeKindProperty_Behavior.java" startLine="17" startPosition="74" endLine="18" endPosition="95" />
     <nodeInfo nodeId="1213877513235" fileName="TreeNodeKindProperty_Behavior.java" startLine="18" startPosition="95" endLine="19" endPosition="167" />
     <nodeInfo nodeId="1213877513245" fileName="TreeNodeKindProperty_Behavior.java" startLine="19" startPosition="167" endLine="20" endPosition="100" />
+    <nodeInfo nodeId="1213877513251" fileName="TreeNodeKindProperty_Behavior.java" startLine="20" startPosition="100" endLine="21" endPosition="69" />
     <scopeInfo nodeId="1213877513262" fileName="TreeNodeKindProperty_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
     <scopeInfo nodeId="1213877513205" fileName="TreeNodeKindProperty_Behavior.java" startLine="13" startPosition="72" endLine="14" endPosition="224" />
     <scopeInfo nodeId="1213877513223" fileName="TreeNodeKindProperty_Behavior.java" startLine="17" startPosition="74" endLine="21" endPosition="69">
@@ -388,6 +408,7 @@
     </scopeInfo>
   </root>
   <root nodeId="1213877514017">
+    <nodeInfo nodeId="1213877514020" fileName="GFGetterFun_Behavior.java" startLine="18" startPosition="83" endLine="19" endPosition="79" />
     <scopeInfo nodeId="1213877514025" fileName="GFGetterFun_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
     <scopeInfo nodeId="1213877514019" fileName="GFGetterFun_Behavior.java" startLine="18" startPosition="83" endLine="19" endPosition="79" />
   </root>
@@ -395,6 +416,7 @@
     <nodeInfo nodeId="1213877517067" fileName="TreePathType_Behavior.java" startLine="15" startPosition="78" endLine="16" endPosition="142" />
     <nodeInfo nodeId="1213877517080" fileName="TreePathType_Behavior.java" startLine="19" startPosition="80" endLine="20" endPosition="108" />
     <nodeInfo nodeId="1213877517086" fileName="TreePathType_Behavior.java" startLine="20" startPosition="108" endLine="21" endPosition="97" />
+    <nodeInfo nodeId="1213877517095" fileName="TreePathType_Behavior.java" startLine="21" startPosition="97" endLine="22" endPosition="19" />
     <scopeInfo nodeId="1213877517099" fileName="TreePathType_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
     <scopeInfo nodeId="1213877517066" fileName="TreePathType_Behavior.java" startLine="15" startPosition="78" endLine="16" endPosition="142" />
     <scopeInfo nodeId="1213877517079" fileName="TreePathType_Behavior.java" startLine="19" startPosition="80" endLine="22" endPosition="19">
@@ -429,6 +451,7 @@
     <nodeInfo nodeId="4581582910845362221" fileName="FeatureUtil.java" startLine="90" startPosition="13" endLine="91" endPosition="77" />
     <nodeInfo nodeId="4581582910845362231" fileName="FeatureUtil.java" startLine="91" startPosition="77" endLine="92" endPosition="25" />
     <nodeInfo nodeId="4581582910845362240" fileName="FeatureUtil.java" startLine="96" startPosition="5" endLine="97" endPosition="57" />
+    <nodeInfo nodeId="4581582910845927483" fileName="FeatureUtil.java" startLine="100" startPosition="64" endLine="101" endPosition="47" />
     <nodeInfo nodeId="4581582910845927369" fileName="FeatureUtil.java" startLine="104" startPosition="79" endLine="105" endPosition="185" />
     <nodeInfo nodeId="4581582910845927381" fileName="FeatureUtil.java" startLine="105" startPosition="185" endLine="106" endPosition="162" />
     <nodeInfo nodeId="4581582910845927390" fileName="FeatureUtil.java" startLine="106" startPosition="162" endLine="107" endPosition="99" />
