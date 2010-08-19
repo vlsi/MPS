@@ -24,34 +24,16 @@ public abstract class Evaluator {
     }
   }
 
-  // TODO might wanna move all this stuff out
-  @NotNull
-  protected IValueProxy getValue(String varName) throws EvaluationException {
-    StackFrame stackFrame = myUiState.getStackFrame().getStackFrame();
-    assert stackFrame != null;
-    LocalVariable localVariable;
-    try {
-      localVariable = stackFrame.visibleVariableByName(varName);
-    } catch (AbsentInformationException ex) {
-      throw new EvaluationException(ex);
-    }
-    if (localVariable == null) {
-      throw new EvaluationException("variable not found: " + varName);
-    }
-    Value v = stackFrame.getValue(localVariable);
-    return MirrorUtil.getValueProxy(v, myUiState.getThread().getThread());
-  }
-
-  protected <T extends IValueProxy> Iterable<T> toIterable(IObjectValueProxy valueProxy) {
-    return new IterableProxy<T>(valueProxy);     
-  }
-
   protected IObjectValueProxy getThisObject() {
     return myThisObject;
   }
 
   public ThreadReference getThreadReference() {
     return myUiState.getThread().getThread();
+  }
+
+  public StackFrame getStackFrame() {
+    return myUiState.getStackFrame().getStackFrame();
   }
 
   public VirtualMachine getVM() {
@@ -62,25 +44,6 @@ public abstract class Evaluator {
   protected String getThisFQName() {
     Location location = this.myUiState.getStackFrame().getLocation().getLocation();
     return location.declaringType().name();
-  }
-
-  @NotNull
-  protected IValueProxy invokeStatic(String className, String name, String jniSignature, Object... args) throws EvaluationException {
-    return MirrorUtil.getValueProxy(EvaluationUtils.invokeStatic(getThreadReference(), className, name, jniSignature, args), getThreadReference());
-  }
-
-  @NotNull
-  protected IValueProxy getStaticFieldValue(String className, String fieldName) throws InvalidEvaluatedExpressionException {
-    return MirrorUtil.getValueProxy(EvaluationUtils.getStaticFieldValue(getThreadReference(), className, fieldName), getThreadReference());
-  }
-
-  @NotNull
-  protected IObjectValueProxy invokeConstructor(String className, String jniSignature, Object... args) throws EvaluationException {
-    return (IObjectValueProxy) MirrorUtil.getValueProxy(EvaluationUtils.invokeConstructor(getThreadReference(), className, jniSignature, args), getThreadReference());
-  }
-
-  public static boolean isInstanceOf(final Type what, final String ofWhat, final VirtualMachine machine) throws EvaluationException {
-    return EvaluationUtils.isInstanceOf(what, ofWhat, machine);
   }
 
   public abstract IValueProxy evaluate() throws EvaluationException;

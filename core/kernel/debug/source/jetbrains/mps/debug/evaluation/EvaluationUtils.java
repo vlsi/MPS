@@ -16,7 +16,7 @@
 package jetbrains.mps.debug.evaluation;
 
 import com.sun.jdi.*;
-import jetbrains.mps.debug.evaluation.proxies.MirrorUtil;
+import jetbrains.mps.debug.evaluation.proxies.*;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -43,7 +43,7 @@ public class EvaluationUtils {
   }
 
   @NotNull
-  public static Value getStaticFieldValue(@NotNull final ThreadReference threadReference, String className, String fieldName) throws InvalidEvaluatedExpressionException {
+  private static Value getStaticFieldValueInternal(String className, String fieldName, @NotNull final ThreadReference threadReference) throws InvalidEvaluatedExpressionException {
     ClassType referenceType = (ClassType) findClassType(className, threadReference.virtualMachine());
     Field field = findField(referenceType, fieldName);
     assert field.isStatic();
@@ -146,6 +146,105 @@ public class EvaluationUtils {
         return false;
       }
     });
+  }
+
+  @NotNull
+  public static IValueProxy getValue(String varName, StackFrame stackFrame, ThreadReference reference) throws EvaluationException {
+    assert stackFrame != null;
+    LocalVariable localVariable;
+    try {
+      localVariable = stackFrame.visibleVariableByName(varName);
+    } catch (AbsentInformationException ex) {
+      throw new EvaluationException(ex);
+    }
+    if (localVariable == null) {
+      throw new EvaluationException("variable not found: " + varName);
+    }
+    Value v = stackFrame.getValue(localVariable);
+    return MirrorUtil.getValueProxy(v, reference);
+  }
+
+  public static <T extends IValueProxy> Iterable<T> toIterable(IObjectValueProxy valueProxy) {
+    return new IterableProxy<T>(valueProxy);
+  }
+
+  @NotNull
+  public static IValueProxy invokeStatic(String className, String name, String jniSignature, ThreadReference threadReference, Object... args) throws EvaluationException {
+    return MirrorUtil.getValueProxy(EvaluationUtils.invokeStatic(threadReference, className, name, jniSignature, args), threadReference);
+  }
+
+  @NotNull
+  public static IValueProxy getStaticFieldValue(String className, String fieldName, ThreadReference threadReference) throws InvalidEvaluatedExpressionException {
+    return MirrorUtil.getValueProxy(EvaluationUtils.getStaticFieldValueInternal(className, fieldName, threadReference), threadReference);
+  }
+
+  @NotNull
+  public static IObjectValueProxy invokeConstructor(String className, String jniSignature, ThreadReference threadReference, Object... args) throws EvaluationException {
+    return (IObjectValueProxy) MirrorUtil.getValueProxy(EvaluationUtils.invokeConstructor(threadReference, className, jniSignature, args), threadReference);
+  }
+
+  public static IValueProxy getClassValue(String className, ThreadReference threadReference) throws InvalidEvaluatedExpressionException {
+    ClassType referenceType = (ClassType)findClassType(className, threadReference.virtualMachine());
+    ClassObjectReference classObject = referenceType.classObject();
+    return MirrorUtil.getValueProxy(classObject, threadReference);
+  }
+
+  public static IObjectValueProxy box(PrimitiveValueProxy primitiveValueProxy, ThreadReference threadReference) throws EvaluationException {
+    PrimitiveValue primitiveValue = primitiveValueProxy.getPrimitiveValue();
+    if (primitiveValue instanceof BooleanValue) {
+      return (IObjectValueProxy) invokeStatic(Boolean.class.getName(), "valueOf", "(Z)Ljava/lang/Boolean;", threadReference, primitiveValue.booleanValue());
+    }
+    if (primitiveValue instanceof ShortValue) {
+      return (IObjectValueProxy) invokeStatic(Short.class.getName(), "valueOf", "(S)Ljava/lang/Short;", threadReference, primitiveValue.shortValue());
+    }
+    if (primitiveValue instanceof ByteValue) {
+      return (IObjectValueProxy) invokeStatic(Byte.class.getName(), "valueOf", "(B)Ljava/lang/Byte;", threadReference, primitiveValue.byteValue());
+    }
+    if (primitiveValue instanceof CharValue) {
+      return (IObjectValueProxy) invokeStatic(Character.class.getName(), "valueOf", "(C)Ljava/lang/Character;", threadReference, primitiveValue.charValue());
+    }
+    if (primitiveValue instanceof DoubleValue) {
+      return (IObjectValueProxy) invokeStatic(Double.class.getName(), "valueOf", "(D)Ljava/lang/Double;", threadReference, primitiveValue.doubleValue());
+    }
+    if (primitiveValue instanceof FloatValue) {
+      return (IObjectValueProxy) invokeStatic(Float.class.getName(), "valueOf", "(F)Ljava/lang/Float;", threadReference, primitiveValue.floatValue());
+    }
+    if (primitiveValue instanceof IntegerValue) {
+      return (IObjectValueProxy) invokeStatic(Integer.class.getName(), "valueOf", "(I)Ljava/lang/Integer;", threadReference, primitiveValue.intValue());
+    }                                                 
+    if (primitiveValue instanceof LongValue) {
+      return (IObjectValueProxy) invokeStatic(Long.class.getName(), "valueOf", "(J)Ljava/lang/Long;", threadReference, primitiveValue.longValue());
+    }
+    throw new UnsupportedOperationException("Cant box " + primitiveValue);
+  }
+
+  public static PrimitiveValueProxy unbox(IObjectValueProxy valueProxy) throws EvaluationException {
+    Type type = valueProxy.getJDIValue().type();
+    if (type.name().equals(Boolean.class.getName())) {
+      return (PrimitiveValueProxy) valueProxy.invokeMethod("booleanValue", "()Z");
+    }
+    if (type.name().equals(Short.class.getName())) {
+      return (PrimitiveValueProxy) valueProxy.invokeMethod("shortValue", "()S");
+    }
+    if (type.name().equals(Byte.class.getName())) {
+      return (PrimitiveValueProxy) valueProxy.invokeMethod("byteValue", "()B");
+    }
+    if (type.name().equals(Character.class.getName())) {
+      return (PrimitiveValueProxy) valueProxy.invokeMethod("charValue", "()C");
+    }
+    if (type.name().equals(Double.class.getName())) {
+      return (PrimitiveValueProxy) valueProxy.invokeMethod("doubleValue", "()D");
+    }
+    if (type.name().equals(Float.class.getName())) {
+      return (PrimitiveValueProxy) valueProxy.invokeMethod("floatValue", "()F");
+    }
+    if (type.name().equals(Integer.class.getName())) {
+      return (PrimitiveValueProxy) valueProxy.invokeMethod("intValue", "()I");
+    }
+    if (type.name().equals(Long.class.getName())) {
+      return (PrimitiveValueProxy) valueProxy.invokeMethod("longValue", "()J");
+    }
+    throw new UnsupportedOperationException("Cant unbox value of type" + type);
   }
 
   public static <T> T handleInvocationExceptions(Invocatable<T> invocatable) throws EvaluationException {
