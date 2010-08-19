@@ -68,7 +68,11 @@
     <nodeInfo nodeId="1447676209063491390" fileName="FieldWithPathChooseDialog.java" startLine="31" startPosition="7" endLine="32" endPosition="48" />
     <nodeInfo nodeId="1447676209063491238" fileName="FieldWithPathChooseDialog.java" startLine="35" startPosition="45" endLine="36" endPosition="39" />
     <nodeInfo nodeId="1447676209063491245" fileName="FieldWithPathChooseDialog.java" startLine="36" startPosition="39" endLine="37" endPosition="50" />
+    <nodeInfo nodeId="1447676209063491260" fileName="FieldWithPathChooseDialog.java" startLine="40" startPosition="32" endLine="41" endPosition="37" />
     <nodeInfo nodeId="1447676209063491270" fileName="FieldWithPathChooseDialog.java" startLine="44" startPosition="38" endLine="45" endPosition="35" />
+    <nodeInfo nodeId="1447676209063491283" fileName="FieldWithPathChooseDialog.java" startLine="48" startPosition="28" endLine="49" endPosition="37" />
+    <nodeInfo nodeId="1447676209063491293" fileName="FieldWithPathChooseDialog.java" startLine="52" startPosition="36" endLine="53" endPosition="39" />
+    <nodeInfo nodeId="1447676209063491303" fileName="FieldWithPathChooseDialog.java" startLine="57" startPosition="46" endLine="58" endPosition="24" />
     <nodeInfo nodeId="1447676209063491365" fileName="FieldWithPathChooseDialog.java" startLine="26" startPosition="64" endLine="29" endPosition="9" />
     <nodeInfo nodeId="1447676209063491256" fileName="FieldWithPathChooseDialog.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
     <nodeInfo nodeId="1447676209063491266" fileName="FieldWithPathChooseDialog.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
@@ -118,8 +122,11 @@
     <nodeInfo nodeId="1447676209063499988" fileName="RawLineEditorComponent.java" startLine="29" startPosition="48" endLine="30" endPosition="45" />
     <nodeInfo nodeId="1447676209063499994" fileName="RawLineEditorComponent.java" startLine="31" startPosition="23" endLine="32" endPosition="39" />
     <nodeInfo nodeId="1447676209063500001" fileName="RawLineEditorComponent.java" startLine="32" startPosition="39" endLine="33" endPosition="31" />
+    <nodeInfo nodeId="1447676209063499882" fileName="RawLineEditorComponent.java" startLine="37" startPosition="36" endLine="38" endPosition="39" />
     <nodeInfo nodeId="1447676209063499892" fileName="RawLineEditorComponent.java" startLine="41" startPosition="46" endLine="42" endPosition="33" />
+    <nodeInfo nodeId="1447676209063499904" fileName="RawLineEditorComponent.java" startLine="45" startPosition="36" endLine="46" endPosition="32" />
     <nodeInfo nodeId="1447676209063499912" fileName="RawLineEditorComponent.java" startLine="49" startPosition="63" endLine="50" endPosition="68" />
+    <nodeInfo nodeId="1447676209063499926" fileName="RawLineEditorComponent.java" startLine="54" startPosition="46" endLine="55" endPosition="24" />
     <nodeInfo nodeId="1447676209063499992" fileName="RawLineEditorComponent.java" startLine="30" startPosition="45" endLine="34" endPosition="5" />
     <nodeInfo nodeId="1447676209063499878" fileName="RawLineEditorComponent.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
     <nodeInfo nodeId="1447676209063499888" fileName="RawLineEditorComponent.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
@@ -157,9 +164,11 @@
   </root>
   <root nodeId="1447676209063503972">
     <nodeInfo nodeId="1447676209063504033" fileName="BaseChooserComponent.java" startLine="11" startPosition="72" endLine="12" endPosition="136" />
+    <nodeInfo nodeId="1447676209063503982" fileName="BaseChooserComponent.java" startLine="17" startPosition="36" endLine="18" endPosition="52" />
     <nodeInfo nodeId="1447676209063503994" fileName="BaseChooserComponent.java" startLine="21" startPosition="57" endLine="22" endPosition="95" />
     <nodeInfo nodeId="1447676209063504004" fileName="BaseChooserComponent.java" startLine="22" startPosition="95" endLine="23" endPosition="39" />
     <nodeInfo nodeId="1447676209063504010" fileName="BaseChooserComponent.java" startLine="23" startPosition="39" endLine="24" endPosition="61" />
+    <nodeInfo nodeId="1447676209063504026" fileName="BaseChooserComponent.java" startLine="28" startPosition="46" endLine="29" endPosition="37" />
     <nodeInfo nodeId="1447676209063503973" fileName="BaseChooserComponent.java" startLine="13" startPosition="0" endLine="15" endPosition="3" />
     <nodeInfo nodeId="1447676209063503978" fileName="BaseChooserComponent.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
     <nodeInfo nodeId="1447676209063504022" fileName="BaseChooserComponent.java" startLine="26" startPosition="0" endLine="31" endPosition="0" />
@@ -205,6 +214,7 @@
     <nodeInfo nodeId="1447676209063504173" fileName="BaseFieldWithButtonComponent.java" startLine="75" startPosition="29" endLine="76" endPosition="13" />
     <nodeInfo nodeId="1447676209063504177" fileName="BaseFieldWithButtonComponent.java" startLine="77" startPosition="5" endLine="78" endPosition="33" />
     <nodeInfo nodeId="1447676209063504184" fileName="BaseFieldWithButtonComponent.java" startLine="81" startPosition="36" endLine="82" endPosition="28" />
+    <nodeInfo nodeId="1447676209063504191" fileName="BaseFieldWithButtonComponent.java" startLine="85" startPosition="46" endLine="86" endPosition="16" />
     <nodeInfo nodeId="1447676209063504200" fileName="BaseFieldWithButtonComponent.java" startLine="21" startPosition="0" endLine="23" endPosition="3" />
     <nodeInfo nodeId="1447676209063504096" fileName="BaseFieldWithButtonComponent.java" startLine="44" startPosition="27" endLine="47" endPosition="5" />
     <nodeInfo nodeId="1447676209063504171" fileName="BaseFieldWithButtonComponent.java" startLine="74" startPosition="58" endLine="77" endPosition="5" />
@@ -271,9 +281,17 @@
   </root>
   <root nodeId="3225885096401341897">
     <nodeInfo nodeId="3225885096401356791" fileName="GlobalFileteredScope.java" startLine="22" startPosition="55" endLine="23" endPosition="56" />
+    <nodeInfo nodeId="3225885096401366383" fileName="GlobalFileteredScope.java" startLine="30" startPosition="43" endLine="31" endPosition="65" />
+    <nodeInfo nodeId="3225885096401445244" fileName="GlobalFileteredScope.java" startLine="35" startPosition="41" endLine="36" endPosition="58" />
     <nodeInfo nodeId="3225885096401445344" fileName="GlobalFileteredScope.java" startLine="41" startPosition="73" endLine="42" endPosition="95" />
     <nodeInfo nodeId="3225885096401445405" fileName="GlobalFileteredScope.java" startLine="43" startPosition="39" endLine="44" endPosition="24" />
     <nodeInfo nodeId="3225885096401445436" fileName="GlobalFileteredScope.java" startLine="45" startPosition="5" endLine="46" endPosition="16" />
+    <nodeInfo nodeId="3225885096401445625" fileName="GlobalFileteredScope.java" startLine="51" startPosition="52" endLine="52" endPosition="88" />
+    <nodeInfo nodeId="3225885096401445685" fileName="GlobalFileteredScope.java" startLine="55" startPosition="50" endLine="56" endPosition="57" />
+    <nodeInfo nodeId="3225885096401445815" fileName="GlobalFileteredScope.java" startLine="63" startPosition="52" endLine="64" endPosition="68" />
+    <nodeInfo nodeId="3225885096401445823" fileName="GlobalFileteredScope.java" startLine="67" startPosition="50" endLine="68" endPosition="57" />
+    <nodeInfo nodeId="3225885096401363094" fileName="GlobalFileteredScope.java" startLine="73" startPosition="62" endLine="74" endPosition="166" />
+    <nodeInfo nodeId="3225885096401367910" fileName="GlobalFileteredScope.java" startLine="77" startPosition="45" endLine="78" endPosition="78" />
     <nodeInfo nodeId="3225885096401356813" fileName="GlobalFileteredScope.java" startLine="81" startPosition="52" endLine="82" endPosition="23" />
     <nodeInfo nodeId="3225885096401356801" fileName="GlobalFileteredScope.java" startLine="85" startPosition="10" endLine="86" endPosition="45" />
     <nodeInfo nodeId="3225885096401341899" fileName="GlobalFileteredScope.java" startLine="24" startPosition="0" endLine="26" endPosition="3" />
@@ -288,7 +306,10 @@
     <nodeInfo nodeId="3225885096401366454" fileName="GlobalFileteredScope.java" startLine="76" startPosition="0" endLine="80" endPosition="0" />
     <nodeInfo nodeId="3225885096401356808" fileName="GlobalFileteredScope.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
     <nodeInfo nodeId="3225885096401366368" fileName="GlobalFileteredScope.java" startLine="28" startPosition="43" endLine="33" endPosition="7" />
+    <nodeInfo nodeId="3225885096401368783" fileName="GlobalFileteredScope.java" startLine="33" startPosition="7" endLine="38" endPosition="8" />
     <nodeInfo nodeId="3225885096401363053" fileName="GlobalFileteredScope.java" startLine="40" startPosition="0" endLine="48" endPosition="0" />
+    <nodeInfo nodeId="3225885096401445466" fileName="GlobalFileteredScope.java" startLine="49" startPosition="77" endLine="58" endPosition="24" />
+    <nodeInfo nodeId="3225885096401445807" fileName="GlobalFileteredScope.java" startLine="61" startPosition="55" endLine="70" endPosition="24" />
     <nodeInfo nodeId="3225885096401363062" fileName="GlobalFileteredScope.java" startLine="48" startPosition="0" endLine="60" endPosition="0" />
     <nodeInfo nodeId="3225885096401363073" fileName="GlobalFileteredScope.java" startLine="60" startPosition="0" endLine="72" endPosition="0" />
     <nodeInfo nodeId="3225885096401356816" fileName="GlobalFileteredScope.java" startLine="27" startPosition="0" endLine="40" endPosition="0" />
@@ -359,6 +380,7 @@
     <nodeInfo nodeId="6937689104170748752" fileName="MainNodeChooser.java" startLine="52" startPosition="0" endLine="53" endPosition="85" />
     <nodeInfo nodeId="1053283424753659279" fileName="MainNodeChooser.java" startLine="55" startPosition="29" endLine="56" endPosition="197" />
     <nodeInfo nodeId="1053283424753661078" fileName="MainNodeChooser.java" startLine="57" startPosition="58" endLine="58" endPosition="142" />
+    <nodeInfo nodeId="1053283424753661235" fileName="MainNodeChooser.java" startLine="61" startPosition="49" endLine="62" endPosition="68" />
     <nodeInfo nodeId="6937689104170748784" fileName="MainNodeChooser.java" startLine="67" startPosition="11" endLine="68" endPosition="0" />
     <nodeInfo nodeId="6937689104170748785" fileName="MainNodeChooser.java" startLine="68" startPosition="0" endLine="69" endPosition="108" />
     <nodeInfo nodeId="6937689104170748791" fileName="MainNodeChooser.java" startLine="69" startPosition="108" endLine="70" endPosition="51" />
@@ -379,6 +401,7 @@
     <nodeInfo nodeId="5908604687501295838" fileName="MainNodeChooser.java" startLine="107" startPosition="24" endLine="108" endPosition="64" />
     <nodeInfo nodeId="4041819447319315360" fileName="MainNodeChooser.java" startLine="115" startPosition="7" endLine="116" endPosition="0" />
     <nodeInfo nodeId="7247071346992922014" fileName="MainNodeChooser.java" startLine="116" startPosition="0" endLine="117" endPosition="14" />
+    <nodeInfo nodeId="6937689104170748809" fileName="MainNodeChooser.java" startLine="120" startPosition="26" endLine="121" endPosition="23" />
     <nodeInfo nodeId="2178855608171473744" fileName="MainNodeChooser.java" startLine="125" startPosition="30" endLine="126" endPosition="13" />
     <nodeInfo nodeId="6937689104170748821" fileName="MainNodeChooser.java" startLine="129" startPosition="32" endLine="130" endPosition="27" />
     <nodeInfo nodeId="3416915311942187052" fileName="MainNodeChooser.java" startLine="130" startPosition="27" endLine="131" endPosition="15" />
@@ -529,22 +552,16 @@
     <unitInfo nodeId="6937689104170748691" fileName="MainNodeChooser.java" startLine="31" startPosition="0" endLine="174" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser" />
   </root>
   <root nodeId="8255351389869681567">
-    <nodeInfo nodeId="8255351389869715942" fileName="JavaRunProfileState.java" startLine="15" startPosition="81" endLine="16" endPosition="34" />
-    <nodeInfo nodeId="339708350960886837" fileName="JavaRunProfileState.java" startLine="19" startPosition="52" endLine="20" endPosition="16" />
-    <nodeInfo nodeId="8255351389869681569" fileName="JavaRunProfileState.java" startLine="11" startPosition="71" endLine="13" endPosition="3" />
-    <nodeInfo nodeId="8255351389869712693" fileName="JavaRunProfileState.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
-    <nodeInfo nodeId="339708350960860574" fileName="JavaRunProfileState.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="8255351389869681572" fileName="JavaRunProfileState.java" startLine="12" startPosition="32" endLine="12" endPosition="32" />
-    <scopeInfo nodeId="8255351389869712696" fileName="JavaRunProfileState.java" startLine="15" startPosition="81" endLine="16" endPosition="34" />
-    <scopeInfo nodeId="339708350960860577" fileName="JavaRunProfileState.java" startLine="19" startPosition="52" endLine="20" endPosition="16" />
-    <scopeInfo nodeId="8255351389869681569" fileName="JavaRunProfileState.java" startLine="11" startPosition="71" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="8255351389869712693" fileName="JavaRunProfileState.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+    <nodeInfo nodeId="8255351389869715942" fileName="JavaRunProfileState.java" startLine="14" startPosition="81" endLine="15" endPosition="34" />
+    <nodeInfo nodeId="8255351389869681569" fileName="JavaRunProfileState.java" startLine="10" startPosition="71" endLine="12" endPosition="3" />
+    <nodeInfo nodeId="8255351389869712693" fileName="JavaRunProfileState.java" startLine="13" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="8255351389869681572" fileName="JavaRunProfileState.java" startLine="11" startPosition="32" endLine="11" endPosition="32" />
+    <scopeInfo nodeId="8255351389869712696" fileName="JavaRunProfileState.java" startLine="14" startPosition="81" endLine="15" endPosition="34" />
+    <scopeInfo nodeId="8255351389869681569" fileName="JavaRunProfileState.java" startLine="10" startPosition="71" endLine="12" endPosition="3" />
+    <scopeInfo nodeId="8255351389869712693" fileName="JavaRunProfileState.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="8255351389869715940" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="339708350960860574" fileName="JavaRunProfileState.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
-      <varInfo nodeId="339708350960886835" varName="project" />
-    </scopeInfo>
-    <unitInfo nodeId="8255351389869681567" fileName="JavaRunProfileState.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.JavaRunProfileState" />
+    <unitInfo nodeId="8255351389869681567" fileName="JavaRunProfileState.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.JavaRunProfileState" />
   </root>
 </debugInfo>
 
