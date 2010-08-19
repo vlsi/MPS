@@ -4,6 +4,7 @@ import com.sun.jdi.*;
 import jetbrains.mps.debug.evaluation.EvaluationUtils.Invocatable;
 import jetbrains.mps.debug.evaluation.proxies.IObjectValueProxy;
 import jetbrains.mps.debug.evaluation.proxies.IValueProxy;
+import jetbrains.mps.debug.evaluation.proxies.IterableProxy;
 import jetbrains.mps.debug.evaluation.proxies.MirrorUtil;
 import jetbrains.mps.debug.runtime.JavaUiState;
 import org.jetbrains.annotations.NotNull;
@@ -39,6 +40,10 @@ public abstract class Evaluator {
     }
     Value v = stackFrame.getValue(localVariable);
     return MirrorUtil.getValueProxy(v, myUiState.getThread().getThread());
+  }
+
+  protected <T extends IValueProxy> Iterable<T> toIterable(IObjectValueProxy valueProxy) {
+    return new IterableProxy<T>(valueProxy);     
   }
 
   protected IObjectValueProxy getThisObject() {
