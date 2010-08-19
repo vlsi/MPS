@@ -7,7 +7,7 @@ import com.intellij.openapi.fileEditor.TextEditor;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.ide.messages.FileWithPosition;
+import jetbrains.mps.make.FileWithPosition;
 
 import java.io.File;
 

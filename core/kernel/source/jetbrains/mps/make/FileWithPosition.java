@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.messages;
+package jetbrains.mps.make;
 
 import jetbrains.mps.vfs.IFile;
 

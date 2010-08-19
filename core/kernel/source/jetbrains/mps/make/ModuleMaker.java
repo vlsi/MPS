@@ -18,7 +18,6 @@ package jetbrains.mps.make;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.compiler.CompilationResultAdapter;
 import jetbrains.mps.compiler.JavaCompiler;
-import jetbrains.mps.ide.messages.FileWithPosition;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.make.dependencies.StronglyConnectedModules;
 import jetbrains.mps.project.*;
