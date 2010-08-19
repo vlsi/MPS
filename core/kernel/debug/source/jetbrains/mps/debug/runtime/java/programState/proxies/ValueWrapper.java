@@ -1,5 +1,8 @@
 package jetbrains.mps.debug.runtime.java.programState.proxies;
 
+import com.sun.jdi.IncompatibleThreadStateException;
+import com.sun.jdi.StackFrame;
+import com.sun.jdi.ThreadReference;
 import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.debug.evaluation.proxies.IValueProxy;
@@ -9,6 +12,7 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -48,11 +52,30 @@ public abstract class ValueWrapper extends JavaValue implements IValue {
     return result;
   }
 
-  protected abstract List<CustomJavaWatchable> getSubvaluesImpl();
+  protected List<CustomJavaWatchable> getSubvaluesImpl() {
+    return getSubvaluesImpl(myValueProxy);
+  }
+
+  protected List<CustomJavaWatchable> getSubvaluesImpl(IValueProxy valueProxy) {
+    return Collections.EMPTY_LIST;
+  }
 
   @Override
   public boolean isStructure() {
     return true;
+  }
+
+  protected ThreadReference getThreadReference() {
+    return myThreadReference;
+  }
+
+  protected StackFrame getStackFrame() {
+    try {
+      return myThreadReference.frame(0); // todo
+    } catch (IncompatibleThreadStateException e) {
+      //todo
+    }
+    return null;
   }
 
 }
