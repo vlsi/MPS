@@ -16,8 +16,6 @@
 package jetbrains.mps.make;
 
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.baseLanguage.collections.structure.Collections_Language;
-import jetbrains.mps.baseLanguage.structure.BaseLanguage_Language;
 import jetbrains.mps.compiler.CompilationResultAdapter;
 import jetbrains.mps.compiler.JavaCompiler;
 import jetbrains.mps.logging.Logger;
@@ -28,7 +26,6 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
@@ -205,11 +202,7 @@ public class ModuleMaker {
     Map<IModule, Set<IModule>> backDependencies = new HashMap<IModule, Set<IModule>>();
 
     for (IModule m : modules) {
-<<<<<<< HEAD
       for (IModule dep : (List<IModule>) new ArrayList<IModule>(m.getDependenciesManager().getDependOnModules())) {
-=======
-      for (IModule dep : getModules(m)) {
->>>>>>> fix tests
         if (!backDependencies.containsKey(dep)) {
           backDependencies.put(dep, new HashSet<IModule>());
         }
@@ -224,14 +217,6 @@ public class ModuleMaker {
     }
 
     return toCompile;
-  }
-
-  @Hack
-  private List<IModule> getModules(IModule m) {
-    ArrayList<IModule> res = new ArrayList<IModule>(m.getDependenciesManager().getDependOnModules());
-    res.add(BaseLanguage_Language.get());
-    res.add(Collections_Language.get());
-    return res;
   }
 
   private void collectToCompile(IModule current, Set<IModule> result, Map<IModule, Set<IModule>> deps) {
@@ -313,8 +298,7 @@ public class ModuleMaker {
             LOG.warning(messageStirng + " (line: " + cp.getSourceLineNumber() + ")", hintObject);
           } else {
             if (myOutputtedErrors == 0) {
-              LOG.error("Errors encountered");
-              LOG.debug("Modules: " + myModules.toString() + "\nClasspath: " + myClassPathItems + "\n");
+              LOG.error("Errors encountered:\nModules: " + myModules.toString() + "\nClasspath: " + myClassPathItems + "\n");
             }
             if (myOutputtedErrors < MAX_ERRORS) {
               myOutputtedErrors++;
