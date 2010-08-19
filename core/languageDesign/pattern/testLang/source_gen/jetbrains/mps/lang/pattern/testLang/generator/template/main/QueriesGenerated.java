@@ -9,6 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.test.generator.baseLanguage.template.util.TestsUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.pattern.testLang.behavior.PatternTest_Behavior;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -40,7 +41,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_602731281382637757(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SModelOperations.getModelName(SNodeOperations.getModel(_context.getNode())) + ".PatternTest_" + SPropertyOperations.getString(_context.getNode(), "name") + "$TestBody";
+    return SModelOperations.getModelName(SNodeOperations.getModel(_context.getNode())) + "." + PatternTest_Behavior.call_getPatternTestName_394224946578869064(_context.getNode()) + "$TestBody";
   }
 
   public static Object propertyMacro_GetPropertyValue_602731281382637766(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -48,7 +49,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_815823070325289644(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "PatternTest_" + SPropertyOperations.getString(_context.getNode(), "name");
+    return PatternTest_Behavior.call_getPatternTestName_394224946578869064(_context.getNode());
   }
 
   public static boolean ifMacro_Condition_1563914226484976394(final IOperationContext operationContext, final IfMacroContext _context) {

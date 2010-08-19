@@ -7,7 +7,14 @@ import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
+import java.util.List;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.ArrayList;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class TestVariableReference_declaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
@@ -23,7 +30,16 @@ public class TestVariableReference_declaration_ReferentConstraint extends BaseNo
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    return SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.pattern.testLang.structure.PatternTest", false, false), "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", false, new String[]{});
+    List<SNode> variables = SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.pattern.testLang.structure.PatternTest", false, false), "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", false, new String[]{});
+    List<SNode> result = new ArrayList<SNode>();
+    Set<String> names = new HashSet();
+    for (SNode var : variables) {
+      if (!(names.contains(SPropertyOperations.getString(var, "name")))) {
+        ListSequence.fromList(result).addElement(var);
+        names.add(SPropertyOperations.getString(var, "name"));
+      }
+    }
+    return result;
   }
 
   public SNodePointer getSearchScopeValidatorNodePointer() {
