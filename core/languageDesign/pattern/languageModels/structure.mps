@@ -249,7 +249,7 @@
       <property name="sourceCardinality:0" value="0..1" />
       <property name="role:0" value="expression" />
       <link role="specializedLink:0" targetNodeId="1136720037778:0" />
-      <link role="target:0" targetNodeId="5.1068431790191:3" resolveInfo="Expression" />
+      <link role="target:0" targetNodeId="1.1133920641626:0" resolveInfo="BaseConcept" />
     </node>
   </node>
 </model>

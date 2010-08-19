@@ -1239,6 +1239,9 @@
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="4855904478356991136">
         <link role="relationDeclaration:32" targetNodeId="1.4855904478356877905:0" />
       </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="8297918475033200132">
+        <property name="text:32" value="" />
+      </node>
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="4855904478356991131" />
     </node>
   </node>
