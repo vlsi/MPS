@@ -19,14 +19,14 @@ import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 @MPSLaunch
-public class PatternTest_Property extends BaseTransformationTest {
-  public PatternTest_Property() {
+public class PatternProperty_Test extends BaseTransformationTest {
+  public PatternProperty_Test() {
   }
 
   @Test
   public void testMethod() throws Throwable {
     this.initTest("${mps_home}/core/languageDesign/pattern/pattern.mpr", "r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)");
-    this.runTest("jetbrains.mps.lang.pattern.test.PatternTest_Property$TestBody", "testProperty", true);
+    this.runTest("jetbrains.mps.lang.pattern.test.PatternProperty_Test$TestBody", "testProperty", true);
   }
 
   @MPSLaunch
@@ -40,8 +40,8 @@ public class PatternTest_Property extends BaseTransformationTest {
     }
 
     public boolean match() {
-      SNode nodeToMatch = new PatternTest_Property.TestBody.QuotationClass_nzkp15_a0a0a1a().createNode();
-      GeneratedMatchingPattern pattern = new PatternTest_Property.TestBody.Pattern_nzkp15_a0a1a1a();
+      SNode nodeToMatch = new PatternProperty_Test.TestBody.QuotationClass_xihehy_a0a0a1a().createNode();
+      GeneratedMatchingPattern pattern = new PatternProperty_Test.TestBody.Pattern_xihehy_a0a1a1a();
       boolean matchNeeded = true;
       boolean matches = pattern.match(nodeToMatch);
       if (matchNeeded != matches) {
@@ -54,8 +54,8 @@ public class PatternTest_Property extends BaseTransformationTest {
       return true;
     }
 
-    public static class QuotationClass_nzkp15_a0a0a1a {
-      public QuotationClass_nzkp15_a0a0a1a() {
+    public static class QuotationClass_xihehy_a0a0a1a {
+      public QuotationClass_xihehy_a0a0a1a() {
       }
 
       public SNode createNode() {
@@ -93,13 +93,13 @@ public class PatternTest_Property extends BaseTransformationTest {
       }
     }
 
-    public static class Pattern_nzkp15_a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
+    public static class Pattern_xihehy_a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
       /*package*/ SNode PatternVar_field;
       /*package*/ SNode PatternVar_className;
       /*package*/ SNode PatternVar_method;
       /*package*/ String PatternVar_printed;
 
-      public Pattern_nzkp15_a0a1a1a() {
+      public Pattern_xihehy_a0a1a1a() {
       }
 
       public boolean match(SNode nodeToMatch) {

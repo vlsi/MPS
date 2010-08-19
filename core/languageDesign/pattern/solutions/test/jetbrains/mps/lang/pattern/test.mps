@@ -442,5 +442,95 @@
       <property name="value:3" value="true" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.pattern.testLang.structure.PatternTest" id="8263735385373599995">
+    <property name="name" value="MultipleOr" />
+    <node role="variable" type="jetbrains.mps.lang.pattern.testLang.structure.VariableValue" id="8297918475033210051">
+      <node role="variable" type="jetbrains.mps.lang.pattern.testLang.structure.TestVariableReference" id="8297918475033210054">
+        <link role="declaration" targetNodeId="8297918475033209967" resolveInfo="#s" />
+      </node>
+      <node role="value" type="jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression:3" id="8297918475033210055">
+        <node role="primitiveType:3" type="jetbrains.mps.baseLanguage.structure.DoubleType:3" id="8297918475033210056" />
+      </node>
+    </node>
+    <node role="pattern" type="jetbrains.mps.lang.pattern.structure.PatternExpression:0" id="8263735385373599997">
+      <node role="patternNode:0" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="8263735385373599999">
+        <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8263735385373600001" />
+        <node role="condition:3" type="jetbrains.mps.lang.pattern.structure.OrPattern:0" id="8297918475033171167">
+          <node role="clause:0" type="jetbrains.mps.lang.pattern.structure.OrPatternClause:0" id="8297918475033171168">
+            <node role="patternNode:0" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="8297918475033209961">
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="8297918475033209962">
+                <node role="_attr_$attribute:3" type="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration:0" id="8297918475033209967">
+                  <property name="varName:0" value="s" />
+                </node>
+              </node>
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="8297918475033209966" />
+            </node>
+          </node>
+          <node role="clause:0" type="jetbrains.mps.lang.pattern.structure.OrPatternClause:0" id="8297918475033171173">
+            <node role="patternNode:0" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="8297918475033209958">
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="8297918475033209965" />
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="8297918475033209960">
+                <node role="_attr_$attribute:3" type="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration:0" id="8297918475033209964">
+                  <property name="varName:0" value="s" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="clause:0" type="jetbrains.mps.lang.pattern.structure.OrPatternClause:0" id="8297918475033174780">
+            <node role="patternNode:0" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="8297918475033209968">
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="8297918475033209969">
+                <node role="_attr_$attribute:3" type="jetbrains.mps.lang.pattern.structure.WildcardPattern:0" id="8297918475033209976" />
+              </node>
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="8297918475033209971">
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="8297918475033209975" />
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="8297918475033209973">
+                  <node role="_attr_$attribute:3" type="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration:0" id="8297918475033209974">
+                    <property name="varName:0" value="s" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="clause:0" type="jetbrains.mps.lang.pattern.structure.OrPatternClause:0" id="8297918475033210020">
+            <node role="patternNode:0" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="8297918475033210021">
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="8297918475033210022">
+                <node role="_attr_$attribute:3" type="jetbrains.mps.lang.pattern.structure.WildcardPattern:0" id="8297918475033210033" />
+              </node>
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="8297918475033210024">
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="8297918475033210025">
+                  <node role="_attr_$attribute:3" type="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration:0" id="8297918475033210031">
+                    <property name="varName:0" value="s" />
+                  </node>
+                </node>
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="8297918475033210032" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="matches" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="8263735385373599998">
+      <property name="value:3" value="true" />
+    </node>
+    <node role="nodeToMatch" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="8297918475033210034">
+      <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="8297918475033210043">
+        <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="8297918475033210047">
+          <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="8297918475033210050">
+            <property name="value:3" value="3" />
+          </node>
+          <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="8297918475033210046">
+            <property name="value:3" value="4" />
+          </node>
+        </node>
+        <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="8297918475033210038">
+          <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="8297918475033210037" />
+          <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression:3" id="8297918475033210041">
+            <node role="primitiveType:3" type="jetbrains.mps.baseLanguage.structure.DoubleType:3" id="8297918475033210042" />
+          </node>
+        </node>
+      </node>
+      <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8297918475033210036" />
+    </node>
+  </node>
 </model>
 

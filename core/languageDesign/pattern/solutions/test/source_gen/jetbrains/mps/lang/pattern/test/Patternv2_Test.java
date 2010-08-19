@@ -22,14 +22,14 @@ import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 @MPSLaunch
-public class PatternTest_v2 extends BaseTransformationTest {
-  public PatternTest_v2() {
+public class Patternv2_Test extends BaseTransformationTest {
+  public Patternv2_Test() {
   }
 
   @Test
   public void testMethod() throws Throwable {
     this.initTest("${mps_home}/core/languageDesign/pattern/pattern.mpr", "r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)");
-    this.runTest("jetbrains.mps.lang.pattern.test.PatternTest_v2$TestBody", "testv2", true);
+    this.runTest("jetbrains.mps.lang.pattern.test.Patternv2_Test$TestBody", "testv2", true);
   }
 
   @MPSLaunch
@@ -43,8 +43,8 @@ public class PatternTest_v2 extends BaseTransformationTest {
     }
 
     public boolean match() {
-      SNode nodeToMatch = new PatternTest_v2.TestBody.QuotationClass_8lasc_a0a0a1a().createNode();
-      GeneratedMatchingPattern pattern = new PatternTest_v2.TestBody.Pattern_8lasc_a0a1a1a();
+      SNode nodeToMatch = new Patternv2_Test.TestBody.QuotationClass_ofki36_a0a0a1a().createNode();
+      GeneratedMatchingPattern pattern = new Patternv2_Test.TestBody.Pattern_ofki36_a0a1a1a();
       boolean matchNeeded = true;
       boolean matches = pattern.match(nodeToMatch);
       if (matchNeeded != matches) {
@@ -53,12 +53,12 @@ public class PatternTest_v2 extends BaseTransformationTest {
       if (!(matchNeeded)) {
         return true;
       }
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), new PatternTest_v2.TestBody.QuotationClass_8lasc_a1a0g0b0().createNode()), ListSequence.fromListAndArray(new ArrayList<SNode>(), (SNode) pattern.getFieldValue("PatternVar_ifbody"))));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), new Patternv2_Test.TestBody.QuotationClass_ofki36_a1a0g0b0().createNode()), ListSequence.fromListAndArray(new ArrayList<SNode>(), (SNode) pattern.getFieldValue("PatternVar_ifbody"))));
       return true;
     }
 
-    public static class QuotationClass_8lasc_a0a0a1a {
-      public QuotationClass_8lasc_a0a0a1a() {
+    public static class QuotationClass_ofki36_a0a0a1a {
+      public QuotationClass_ofki36_a0a0a1a() {
       }
 
       public SNode createNode() {
@@ -170,11 +170,11 @@ public class PatternTest_v2 extends BaseTransformationTest {
       }
     }
 
-    public static class Pattern_8lasc_a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
+    public static class Pattern_ofki36_a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
       /*package*/ SNode PatternVar_p;
       /*package*/ SNode PatternVar_ifbody;
 
-      public Pattern_8lasc_a0a1a1a() {
+      public Pattern_ofki36_a0a1a1a() {
       }
 
       public boolean match(SNode nodeToMatch) {
@@ -287,8 +287,8 @@ public class PatternTest_v2 extends BaseTransformationTest {
       }
     }
 
-    public static class QuotationClass_8lasc_a1a0g0b0 {
-      public QuotationClass_8lasc_a1a0g0b0() {
+    public static class QuotationClass_ofki36_a1a0g0b0 {
+      public QuotationClass_ofki36_a1a0g0b0() {
       }
 
       public SNode createNode() {

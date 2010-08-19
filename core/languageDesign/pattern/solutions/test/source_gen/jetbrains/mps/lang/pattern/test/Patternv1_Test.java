@@ -23,14 +23,14 @@ import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 @MPSLaunch
-public class PatternTest_v1 extends BaseTransformationTest {
-  public PatternTest_v1() {
+public class Patternv1_Test extends BaseTransformationTest {
+  public Patternv1_Test() {
   }
 
   @Test
   public void testMethod() throws Throwable {
     this.initTest("${mps_home}/core/languageDesign/pattern/pattern.mpr", "r:ef0e231b-e6bd-436f-9003-b53de4081716(jetbrains.mps.lang.pattern.test)");
-    this.runTest("jetbrains.mps.lang.pattern.test.PatternTest_v1$TestBody", "testv1", true);
+    this.runTest("jetbrains.mps.lang.pattern.test.Patternv1_Test$TestBody", "testv1", true);
   }
 
   @MPSLaunch
@@ -44,8 +44,8 @@ public class PatternTest_v1 extends BaseTransformationTest {
     }
 
     public boolean match() {
-      SNode nodeToMatch = new PatternTest_v1.TestBody.QuotationClass_8lasc_a0a0a1a_0().createNode();
-      GeneratedMatchingPattern pattern = new PatternTest_v1.TestBody.Pattern_8lasc_a0a1a1a_0();
+      SNode nodeToMatch = new Patternv1_Test.TestBody.QuotationClass_o71ow3_a0a0a1a().createNode();
+      GeneratedMatchingPattern pattern = new Patternv1_Test.TestBody.Pattern_o71ow3_a0a1a1a();
       boolean matchNeeded = true;
       boolean matches = pattern.match(nodeToMatch);
       if (matchNeeded != matches) {
@@ -57,16 +57,16 @@ public class PatternTest_v1 extends BaseTransformationTest {
       {
         List<SNode> list = (List<SNode>) pattern.getFieldValue("PatternVar_list");
         int i = 0;
-        Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), list.get(i)), ListSequence.fromListAndArray(new ArrayList<SNode>(), new PatternTest_v1.TestBody.QuotationClass_8lasc_a1b0a0c0g0b0().createNode())));
+        Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), list.get(i)), ListSequence.fromListAndArray(new ArrayList<SNode>(), new Patternv1_Test.TestBody.QuotationClass_o71ow3_a1b0a0c0g0b0().createNode())));
         i++;
-        Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), list.get(i)), ListSequence.fromListAndArray(new ArrayList<SNode>(), new PatternTest_v1.TestBody.QuotationClass_8lasc_a1b0a0d0g0b0().createNode())));
+        Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), list.get(i)), ListSequence.fromListAndArray(new ArrayList<SNode>(), new Patternv1_Test.TestBody.QuotationClass_o71ow3_a1b0a0d0g0b0().createNode())));
         i++;
       }
       return true;
     }
 
-    public static class QuotationClass_8lasc_a0a0a1a_0 {
-      public QuotationClass_8lasc_a0a0a1a_0() {
+    public static class QuotationClass_o71ow3_a0a0a1a {
+      public QuotationClass_o71ow3_a0a0a1a() {
       }
 
       public SNode createNode() {
@@ -111,14 +111,14 @@ public class PatternTest_v1 extends BaseTransformationTest {
       }
     }
 
-    public static class Pattern_8lasc_a0a1a1a_0 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public static class Pattern_o71ow3_a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
       /*package*/ List<SNode> PatternVar_list;
       /*package*/ SNode PatternVar_ignore;
       /*package*/ SNode PatternVar_field;
       /*package*/ SNode PatternVar_className;
       /*package*/ SNode PatternVar_method;
 
-      public Pattern_8lasc_a0a1a1a_0() {
+      public Pattern_o71ow3_a0a1a1a() {
       }
 
       public boolean match(SNode nodeToMatch) {
@@ -213,8 +213,8 @@ public class PatternTest_v1 extends BaseTransformationTest {
       }
     }
 
-    public static class QuotationClass_8lasc_a1b0a0c0g0b0 {
-      public QuotationClass_8lasc_a1b0a0c0g0b0() {
+    public static class QuotationClass_o71ow3_a1b0a0c0g0b0 {
+      public QuotationClass_o71ow3_a1b0a0c0g0b0() {
       }
 
       public SNode createNode() {
@@ -231,8 +231,8 @@ public class PatternTest_v1 extends BaseTransformationTest {
       }
     }
 
-    public static class QuotationClass_8lasc_a1b0a0d0g0b0 {
-      public QuotationClass_8lasc_a1b0a0d0g0b0() {
+    public static class QuotationClass_o71ow3_a1b0a0d0g0b0 {
+      public QuotationClass_o71ow3_a1b0a0d0g0b0() {
       }
 
       public SNode createNode() {
