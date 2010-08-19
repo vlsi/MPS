@@ -188,7 +188,6 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
     }
 
     public void performActions(Object o) {
-
     }
   }
 }
