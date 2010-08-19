@@ -5326,7 +5326,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.baseLanguage.unitTest.lib_tjc" depends="compile.cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc">
+  <target name="compile.cycle.jetbrains.mps.baseLanguage.unitTest.lib_tjc" depends="compile.cycle.jetbrains.mps.baseLanguage.tuples_tjc">
     <property name="classes.dump" value="${jetbrains.mps.baseLanguage.unitTest.lib.classes}.tmp" />
     <mkdir dir="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/source_gen" />
     <mkdir dir="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/test_gen" />
@@ -5343,7 +5343,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.bash_tjc" depends="compile.cycle.jetbrains.mps.baseLanguage.tuples_tjc">
+  <target name="compile.cycle.jetbrains.mps.bash_tjc" depends="compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc">
     <property name="classes.dump" value="${jetbrains.mps.bash.classes}.tmp" />
     <mkdir dir="platform/bash/languages/bash/source_gen" />
     <mkdir dir="${classes.dump}" />
@@ -5499,7 +5499,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.gwt.client_tjc" depends="compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc">
+  <target name="compile.cycle.jetbrains.mps.gwt.client_tjc" depends="compile.cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc">
     <property name="classes.dump" value="${jetbrains.mps.gwt.client.classes}.tmp" />
     <mkdir dir="platform/gwtsupport/languages/client/source_gen" />
     <mkdir dir="${classes.dump}" />
