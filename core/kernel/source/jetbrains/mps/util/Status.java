@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.util;
 
-import jetbrains.mps.ide.IStatus;
-
 public class Status implements IStatus {
   public static final Status NO_ERRORS = new OK();
 
