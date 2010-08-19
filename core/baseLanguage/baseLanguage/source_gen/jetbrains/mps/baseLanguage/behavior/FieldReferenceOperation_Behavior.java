@@ -5,8 +5,6 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.dataFlow.runtime.NullableVariableState;
-import jetbrains.mps.dataFlow.runtime.NullableUtil;
 
 public class FieldReferenceOperation_Behavior {
   public static void init(SNode thisNode) {
@@ -18,10 +16,6 @@ public class FieldReferenceOperation_Behavior {
       expectedName = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "fieldDeclaration", false), "name");
     }
     return expectedName;
-  }
-
-  public static NullableVariableState virtual_getNullableState_1230555106620(SNode thisNode) {
-    return NullableUtil.getVariableStateByAnnotation(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "fieldDeclaration", false), "annotation", true));
   }
 
   public static boolean virtual_isDotExpressionLegalAsStatement_1239212437413(SNode thisNode) {

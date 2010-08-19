@@ -62,26 +62,10 @@
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <maxImportIndex value="9" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
-  <import index="2" modelUID="r:6fb1beb5-17d5-44c1-a541-c95672dc4233(jetbrains.mps.dataFlow.runtime)" version="-1" />
   <import index="8" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="9" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1230552150899">
     <link role="concept" targetNodeId="1.1173996401517:1" resolveInfo="InternalNewExpression" />
-    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1230552157527">
-      <property name="name" value="getNullableState" />
-      <link role="overriddenMethod" targetNodeId="8.1230540989695" resolveInfo="getNullableState" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1230552157529">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1230552552733">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="1230553259698">
-            <link role="enumConstantDeclaration:3" targetNodeId="2.1230550705523" resolveInfo="NOT_NULL" />
-            <link role="enumClass:3" targetNodeId="2.1230466569958" resolveInfo="NullableVariableState" />
-          </node>
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1230552163467">
-        <link role="classifier:3" targetNodeId="2.1230466569958" resolveInfo="NullableVariableState" />
-      </node>
-    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1230552150900">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1230552150901" />
     </node>

@@ -21,7 +21,6 @@ import jetbrains.mps.baseLanguage.behavior.ILocalReference_Behavior;
 import jetbrains.mps.baseLanguage.behavior.IVariableAssignment_Behavior;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.dataFlow.runtime.NullableAnalysisResult;
 
 public class DataFlowUtil {
   public DataFlowUtil() {
@@ -46,7 +45,6 @@ public class DataFlowUtil {
       if (checkReturns) {
         checkReturns(typeCheckingContext, program);
       }
-      // <node> 
     } catch (DataflowBuilderException e) {
       throw new RuntimeException("Building dataflow for node: " + statementList.getId() + " model: " + statementList.getModel(), e);
     }
@@ -184,26 +182,6 @@ public class DataFlowUtil {
             IErrorTarget errorTarget = new NodeErrorTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(var, "Unused variable", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8937659523942275424", intentionProvider, errorTarget);
           }
-        }
-      }
-    }
-  }
-
-  @CheckingMethod
-  public static void checkNullable(final TypeCheckingContext typeCheckingContext, SNode statementList) {
-    NullableAnalysisResult result = new NullableAnalysisResult(statementList);
-    for (SNode problemNode : ListSequence.fromList(result.checkNodes(statementList))) {
-      if (SNodeOperations.isInstanceOf(problemNode, "jetbrains.mps.baseLanguage.structure.AssignmentExpression")) {
-        {
-          BaseIntentionProvider intentionProvider = null;
-          IErrorTarget errorTarget = new NodeErrorTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(problemNode, "Assign nullable value to not nullable.", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1235234110878", intentionProvider, errorTarget);
-        }
-      } else if (SNodeOperations.isInstanceOf(problemNode, "jetbrains.mps.baseLanguage.structure.Expression")) {
-        {
-          BaseIntentionProvider intentionProvider = null;
-          IErrorTarget errorTarget = new NodeErrorTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(problemNode, "Expression may be null.", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1235234157876", intentionProvider, errorTarget);
         }
       }
     }
