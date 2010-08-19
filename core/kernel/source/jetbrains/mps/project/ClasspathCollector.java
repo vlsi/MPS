@@ -17,7 +17,6 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.lang.core.structure.Core_Language;
 import jetbrains.mps.project.dependency.LanguageDepsManager;
-import jetbrains.mps.project.dependency.ModuleDepsManager;
 import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
@@ -82,7 +81,7 @@ public class ClasspathCollector {
         addPart(current.getClassPathItem());
       }
 
-      for (IModule dep : ModuleDepsManager.getModules(current)) {
+      for (IModule dep : (List<IModule>) new ArrayList<IModule>(current.getDependenciesManager().getDependOnModules())) {
         doCollect(dep, includeStubSolutions);
       }
 

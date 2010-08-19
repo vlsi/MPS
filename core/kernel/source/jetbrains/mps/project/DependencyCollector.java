@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.project.dependency.ModuleDepsManager;
 import jetbrains.mps.util.CollectionUtil;
 
 import java.util.*;
@@ -52,7 +51,7 @@ public class DependencyCollector<T extends IModule> {
   }
 
   private void doCollect(IModule current) {
-    for (IModule module : ModuleDepsManager.getModules(current)) {
+    for (IModule module : (List<IModule>) new ArrayList<IModule>(current.getDependenciesManager().getDependOnModules())) {
       if (myResult.add(module)) {
         doCollect(module);
       }
