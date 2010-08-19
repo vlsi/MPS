@@ -22,7 +22,6 @@ import jetbrains.mps.ide.messages.FileWithPosition;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.make.dependencies.StronglyConnectedModules;
 import jetbrains.mps.project.*;
-import jetbrains.mps.project.dependency.ModuleDepsManager;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -204,7 +203,7 @@ public class ModuleMaker {
     Map<IModule, Set<IModule>> backDependencies = new HashMap<IModule, Set<IModule>>();
 
     for (IModule m : modules) {
-      for (IModule dep : ModuleDepsManager.getModules(m)) {
+      for (IModule dep : (List<IModule>) new ArrayList<IModule>(m.getDependenciesManager().getDependOnModules())) {
         if (!backDependencies.containsKey(dep)) {
           backDependencies.put(dep, new HashSet<IModule>());
         }

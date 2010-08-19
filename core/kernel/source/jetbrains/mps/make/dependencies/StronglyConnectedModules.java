@@ -20,7 +20,6 @@ import jetbrains.mps.make.dependencies.graph.Graph;
 import jetbrains.mps.make.dependencies.graph.Graphs;
 import jetbrains.mps.make.dependencies.graph.IVertex;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.dependency.ModuleDepsManager;
 import jetbrains.mps.smodel.ModelAccess;
 
 import java.util.*;
@@ -94,7 +93,7 @@ public class StronglyConnectedModules {
     }
 
     public void fill(Map<IModule, IModuleDecorator<M>> map) {
-      List<IModule> dependency = ModuleDepsManager.getModules(myModule);
+      List<IModule> dependency = new ArrayList<IModule>(myModule.getDependenciesManager().getDependOnModules());
       List<IModule> dependencyCopy = new ArrayList<IModule>();
       dependencyCopy.addAll(dependency);
       Collections.sort(dependencyCopy, new Comparator<IModule>() {
