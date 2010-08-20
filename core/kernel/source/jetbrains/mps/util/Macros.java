@@ -34,7 +34,10 @@ public abstract class Macros {
 
   public static final String MPS_HOME_NAKED = "mps_home";
   public static final String MPS_HOME = "${" + MPS_HOME_NAKED + "}";
+
+  // TODO remove
   public static final String SAMPLES_HOME = "${samples_home}";
+
   public static final String LANGUAGE_DESCRIPTOR = "${language_descriptor}";
   public static final String SOLUTION_DESCRIPTOR = "${solution_descriptor}";
   public static final String DEVKIT_DESCRIPTOR = "${devkit_descriptor}";

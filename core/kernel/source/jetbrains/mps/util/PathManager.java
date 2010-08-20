@@ -155,6 +155,7 @@ public class PathManager {
     return getHomePath() + File.separator + "core";
   }
 
+  // TODO remove
   public static String getSamplesPath() {
     return SamplesExtractor.getInstance().getSamplesPath();
   }
