@@ -261,7 +261,7 @@ public class IntelligentInputUtil {
       if (yetNewNode != null) {
         EditorComponent editor = editorContext.getNodeEditorComponent();
         EditorCell yetNewNodeCell = editor.findNodeCell(yetNewNode);
-        assert yetNewNodeCell != null;
+        assert yetNewNodeCell != null : "Unable to find editor cell for newly created by RT: " + rtItem.toString() + ", node: " + yetNewNode.toString() + ". Check if this node is visible in current editor!";
         EditorCell errorOrEditableCell = yetNewNodeCell.findChild(CellFinders.or(CellFinders.FIRST_ERROR, CellFinders.LAST_EDITABLE), true);
         if (errorOrEditableCell != null) {
           editor.changeSelectionWRTFocusPolicy(errorOrEditableCell);
