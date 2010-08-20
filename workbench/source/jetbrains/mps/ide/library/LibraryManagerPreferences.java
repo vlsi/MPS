@@ -13,9 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.library;
+package jetbrains.mps.ide.library;
 
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
+import jetbrains.mps.library.BaseLibraryManager;
+import jetbrains.mps.library.Library;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.vfs.IFile;

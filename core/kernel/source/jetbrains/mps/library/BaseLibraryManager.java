@@ -15,21 +15,16 @@
  */
 package jetbrains.mps.library;
 
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.BaseComponent;
-import com.intellij.util.xmlb.annotations.Transient;
+import jetbrains.mps.ide.library.LibraryManagerPreferences;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
-import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.Macros;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.library.BaseLibraryManager.MyState;
 
@@ -38,7 +33,6 @@ import java.util.Map.Entry;
 
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
