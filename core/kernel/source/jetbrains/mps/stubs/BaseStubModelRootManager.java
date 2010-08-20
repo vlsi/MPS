@@ -17,14 +17,12 @@ package jetbrains.mps.stubs;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
-import jetbrains.mps.project.StubPath;
 import jetbrains.mps.project.SModelRoot.ManagerNotFoundException;
 import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.AbstractModelRootManager;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.workbench.actions.goTo.index.SNodeDescriptor;
-import jetbrains.mps.workbench.tools.InvalidUsageException;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
@@ -52,7 +50,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
   }
 
   public final void updateModels(@NotNull SModelRoot root, @NotNull IModule module) {
-    throw new InvalidUsageException("stub manager is called on module load");
+    throw new IllegalStateException("stub manager is called on module load");
   }
 
   public final Set<BaseStubModelDescriptor> updateModels(String path, String prefix, @NotNull IModule module) {
