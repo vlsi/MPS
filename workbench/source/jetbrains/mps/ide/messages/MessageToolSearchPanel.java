@@ -137,7 +137,7 @@ class MessageToolSearchPanel extends AbstractSearchPanel {
       component.setBackground(isSelected ? Color.LIGHT_GRAY : Color.WHITE);
       component.setBorder(new EmptyBorder(0, 0, 0, 0));
 
-      if (message.canNavigate()) {
+      if (message.getHintObject() != null) {
         component.setText(message.getCreationTimeString() + "\t: " + message);
         component.setForeground(Color.BLUE);
       } else {

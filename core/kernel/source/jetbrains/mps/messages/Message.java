@@ -37,6 +37,7 @@ public class Message {
   private Throwable myException;
   private String myHelpUrl;
   private long myCreationTime = System.currentTimeMillis();
+  private Object myHintObject;
 
   public Message(MessageKind kind, @Nullable String sender, String text) {
     myKind = kind;
@@ -98,10 +99,6 @@ public class Message {
     return s;
   }
 
-  //----------navigation------------
-
-  private Object myHintObject;
-
   public void setHintObject(Object obj) {
     boolean error = true;
     if (obj instanceof SNode) {
@@ -124,16 +121,7 @@ public class Message {
     }
   }
 
-  public boolean canNavigate() {
-    return myHintObject != null;
-  }
-
-  public void navigate(final Project project) {
-    /* temp hack: write action instead of read, TODO remove lock*/
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        NavigationManager.getInstance().navigateTo(project, myHintObject, true, true);
-      }
-    });
+  public Object getHintObject() {
+    return myHintObject;
   }
 }

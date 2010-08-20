@@ -41,6 +41,7 @@ import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -201,7 +202,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
           item = (Message) myModel.getElementAt(index);
         }
 
-        if (item != null && item.canNavigate() && myAutoscrollToSourceAction.isSelected(null)) {
+        if (item != null && item.getHintObject() != null && myAutoscrollToSourceAction.isSelected(null)) {
           myList.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         } else {
           myList.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
@@ -389,8 +390,15 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
 
   private void openCurrentMessageNodeIfPossible() {
     final Message selectedMessage = (Message) myList.getSelectedValue();
-    if (selectedMessage == null || !selectedMessage.canNavigate()) return;
-    selectedMessage.navigate(getProject());
+    if (selectedMessage == null || selectedMessage.getHintObject() == null) return;
+
+    /* temp hack: write action instead of read, TODO remove lock*/
+    final Project project = getProject();
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        NavigationManager.getInstance().navigateTo(project, selectedMessage.getHintObject(), true, true);
+      }
+    });
   }
 
   private boolean isVisible(Message m) {
@@ -495,7 +503,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
         if (m.getKind() == MessageKind.INFORMATION) {
           myInfos += delta;
         }
-        if (m.canNavigate()) {
+        if (m.getHintObject() != null) {
           myHintObjects += delta;
         }
       }
@@ -569,7 +577,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
 
       public boolean tryNavigate(int index) {
         Message msg = ((Message) myModel.getElementAt(index));
-        if (!msg.canNavigate()) return false;
+        if (msg.getHintObject() == null) return false;
         myList.setSelectedIndex(index);
         myList.ensureIndexIsVisible(index);
         openCurrentMessageNodeIfPossible();
