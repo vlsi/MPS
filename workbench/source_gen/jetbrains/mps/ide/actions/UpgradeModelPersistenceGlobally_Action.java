@@ -10,7 +10,7 @@ import java.awt.Frame;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.smodel.persistence.def.PersistenceUpdater;
+import jetbrains.mps.smodel.persistence.ui.PersistenceUpdater;
 
 public class UpgradeModelPersistenceGlobally_Action extends GeneratedAction {
   private static final Icon ICON = null;
