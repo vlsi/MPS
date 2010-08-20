@@ -270,6 +270,7 @@
     <nodeInfo nodeId="1202745678705" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="30" startPosition="92" endLine="31" endPosition="75" />
     <nodeInfo nodeId="1202212965865" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="31" startPosition="75" endLine="32" endPosition="74" />
     <nodeInfo nodeId="1202741408806" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="33" startPosition="237" endLine="34" endPosition="83" />
+    <nodeInfo nodeId="4616312228468046977" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="36" startPosition="40" endLine="37" endPosition="129" />
     <nodeInfo nodeId="1983923772552990131" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="39" startPosition="9" endLine="40" endPosition="67" />
     <nodeInfo nodeId="1202741469355" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="45" startPosition="45" endLine="46" endPosition="79" />
     <nodeInfo nodeId="1202741511689" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="47" startPosition="76" endLine="48" endPosition="135" />
@@ -312,6 +313,7 @@
     <nodeInfo nodeId="100821637069109890" fileName="FunctionType_subtypeOf_ClassifierType_InequationReplacementRule.java" startLine="40" startPosition="86" endLine="41" endPosition="183" />
     <nodeInfo nodeId="100821637069109908" fileName="FunctionType_subtypeOf_ClassifierType_InequationReplacementRule.java" startLine="43" startPosition="83" endLine="44" endPosition="122" />
     <nodeInfo nodeId="1202742329268" fileName="FunctionType_subtypeOf_ClassifierType_InequationReplacementRule.java" startLine="47" startPosition="237" endLine="48" endPosition="83" />
+    <nodeInfo nodeId="4616312228468046915" fileName="FunctionType_subtypeOf_ClassifierType_InequationReplacementRule.java" startLine="50" startPosition="40" endLine="51" endPosition="129" />
     <nodeInfo nodeId="1983923772552993243" fileName="FunctionType_subtypeOf_ClassifierType_InequationReplacementRule.java" startLine="53" startPosition="9" endLine="54" endPosition="67" />
     <nodeInfo nodeId="4616312228468046832" fileName="FunctionType_subtypeOf_ClassifierType_InequationReplacementRule.java" startLine="59" startPosition="25" endLine="60" endPosition="53" />
     <nodeInfo nodeId="1202742329278" fileName="FunctionType_subtypeOf_ClassifierType_InequationReplacementRule.java" startLine="61" startPosition="31" endLine="62" endPosition="64" />
@@ -359,6 +361,7 @@
     <nodeInfo nodeId="100821637069109890" fileName="FunctionType_subtypeOf_ClassifierType_InequationReplacementRule.java" startLine="133" startPosition="88" endLine="134" endPosition="185" />
     <nodeInfo nodeId="100821637069109908" fileName="FunctionType_subtypeOf_ClassifierType_InequationReplacementRule.java" startLine="136" startPosition="85" endLine="137" endPosition="124" />
     <nodeInfo nodeId="1202742329268" fileName="FunctionType_subtypeOf_ClassifierType_InequationReplacementRule.java" startLine="140" startPosition="239" endLine="141" endPosition="85" />
+    <nodeInfo nodeId="4616312228468046915" fileName="FunctionType_subtypeOf_ClassifierType_InequationReplacementRule.java" startLine="143" startPosition="42" endLine="144" endPosition="131" />
     <nodeInfo nodeId="1983923772552993243" fileName="FunctionType_subtypeOf_ClassifierType_InequationReplacementRule.java" startLine="146" startPosition="11" endLine="147" endPosition="69" />
     <nodeInfo nodeId="4616312228468046832" fileName="FunctionType_subtypeOf_ClassifierType_InequationReplacementRule.java" startLine="152" startPosition="27" endLine="153" endPosition="55" />
     <nodeInfo nodeId="1202742329278" fileName="FunctionType_subtypeOf_ClassifierType_InequationReplacementRule.java" startLine="154" startPosition="33" endLine="155" endPosition="66" />
@@ -602,6 +605,7 @@
     <nodeInfo nodeId="1221579075599" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="78" startPosition="111" endLine="79" endPosition="56" />
     <nodeInfo nodeId="1221579075612" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="81" startPosition="104" endLine="82" endPosition="101" />
     <nodeInfo nodeId="1221579075613" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="83" startPosition="11" endLine="84" endPosition="175" />
+    <nodeInfo nodeId="1227198974515" fileName="TypesystemDescriptor.java" startLine="84" startPosition="54" endLine="85" endPosition="55" />
     <nodeInfo nodeId="1221579075613" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="84" startPosition="175" endLine="85" endPosition="59" />
     <nodeInfo nodeId="1221579075613" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="85" startPosition="59" endLine="86" endPosition="225" />
     <nodeInfo nodeId="1221579075613" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="86" startPosition="225" endLine="87" endPosition="336" />

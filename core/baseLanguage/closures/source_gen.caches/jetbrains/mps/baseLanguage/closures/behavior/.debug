@@ -6,12 +6,15 @@
     <nodeInfo nodeId="1213877338517" fileName="ClosureLiteral_Behavior.java" startLine="33" startPosition="78" endLine="34" endPosition="89" />
     <nodeInfo nodeId="1213877338527" fileName="ClosureLiteral_Behavior.java" startLine="34" startPosition="89" endLine="35" endPosition="17" />
     <nodeInfo nodeId="1213877338536" fileName="ClosureLiteral_Behavior.java" startLine="36" startPosition="5" endLine="37" endPosition="48" />
+    <nodeInfo nodeId="1213877338547" fileName="ClosureLiteral_Behavior.java" startLine="40" startPosition="84" endLine="41" endPosition="53" />
+    <nodeInfo nodeId="1229718192190" fileName="ClosureLiteral_Behavior.java" startLine="44" startPosition="170" endLine="45" endPosition="117" />
     <nodeInfo nodeId="1237540583054" fileName="ClosureLiteral_Behavior.java" startLine="48" startPosition="90" endLine="49" endPosition="73" />
     <nodeInfo nodeId="1239707798336" fileName="ClosureLiteral_Behavior.java" startLine="52" startPosition="69" endLine="53" endPosition="61" />
     <nodeInfo nodeId="7376433222636453369" fileName="ClosureLiteral_Behavior.java" startLine="56" startPosition="80" endLine="57" endPosition="54" />
     <nodeInfo nodeId="7376433222636453345" fileName="ClosureLiteral_Behavior.java" startLine="57" startPosition="54" endLine="58" endPosition="52" />
     <nodeInfo nodeId="1239707831830" fileName="ClosureLiteral_Behavior.java" startLine="58" startPosition="52" endLine="59" endPosition="82" />
     <nodeInfo nodeId="6204026822017058574" fileName="ClosureLiteral_Behavior.java" startLine="62" startPosition="91" endLine="63" endPosition="34" />
+    <nodeInfo nodeId="3262277503800835457" fileName="ClosureLiteral_Behavior.java" startLine="66" startPosition="79" endLine="67" endPosition="16" />
     <nodeInfo nodeId="1213877338515" fileName="ClosureLiteral_Behavior.java" startLine="32" startPosition="21" endLine="36" endPosition="5" />
     <scopeInfo nodeId="1213877338557" fileName="ClosureLiteral_Behavior.java" startLine="27" startPosition="43" endLine="27" endPosition="43" />
     <scopeInfo nodeId="1213877338546" fileName="ClosureLiteral_Behavior.java" startLine="40" startPosition="84" endLine="41" endPosition="53" />
@@ -41,12 +44,14 @@
     <nodeInfo nodeId="1213877404892" fileName="FunctionType_Behavior.java" startLine="41" startPosition="89" endLine="42" endPosition="16" />
     <nodeInfo nodeId="1213877404901" fileName="FunctionType_Behavior.java" startLine="43" startPosition="5" endLine="44" endPosition="141" />
     <nodeInfo nodeId="1213877404913" fileName="FunctionType_Behavior.java" startLine="44" startPosition="141" endLine="45" endPosition="37" />
+    <nodeInfo nodeId="1213877404923" fileName="FunctionType_Behavior.java" startLine="48" startPosition="80" endLine="49" endPosition="80" />
     <nodeInfo nodeId="1213877404947" fileName="FunctionType_Behavior.java" startLine="52" startPosition="82" endLine="53" endPosition="43" />
     <nodeInfo nodeId="1213877404953" fileName="FunctionType_Behavior.java" startLine="54" startPosition="85" endLine="55" endPosition="27" />
     <nodeInfo nodeId="1213877404973" fileName="FunctionType_Behavior.java" startLine="56" startPosition="12" endLine="57" endPosition="25" />
     <nodeInfo nodeId="1215424323427" fileName="FunctionType_Behavior.java" startLine="58" startPosition="5" endLine="59" endPosition="119" />
     <nodeInfo nodeId="1215424361328" fileName="FunctionType_Behavior.java" startLine="59" startPosition="119" endLine="60" endPosition="141" />
     <nodeInfo nodeId="1213877405043" fileName="FunctionType_Behavior.java" startLine="60" startPosition="141" endLine="61" endPosition="25" />
+    <nodeInfo nodeId="1230473002751" fileName="FunctionType_Behavior.java" startLine="64" startPosition="82" endLine="65" endPosition="28" />
     <nodeInfo nodeId="1230630466256" fileName="FunctionType_Behavior.java" startLine="68" startPosition="75" endLine="69" endPosition="71" />
     <nodeInfo nodeId="1237318635411" fileName="FunctionType_Behavior.java" startLine="69" startPosition="71" endLine="70" endPosition="97" />
     <nodeInfo nodeId="1891437680216334805" fileName="FunctionType_Behavior.java" startLine="71" startPosition="92" endLine="72" endPosition="18" />
@@ -60,6 +65,7 @@
     <nodeInfo nodeId="1237318813527" fileName="FunctionType_Behavior.java" startLine="94" startPosition="30" endLine="95" endPosition="80" />
     <nodeInfo nodeId="1237318813534" fileName="FunctionType_Behavior.java" startLine="96" startPosition="22" endLine="97" endPosition="52" />
     <nodeInfo nodeId="1237318813549" fileName="FunctionType_Behavior.java" startLine="100" startPosition="5" endLine="101" endPosition="15" />
+    <nodeInfo nodeId="1232032207246" fileName="FunctionType_Behavior.java" startLine="104" startPosition="78" endLine="105" endPosition="16" />
     <nodeInfo nodeId="1230320773889" fileName="FunctionType_Behavior.java" startLine="108" startPosition="84" endLine="109" endPosition="169" />
     <nodeInfo nodeId="1231429540279" fileName="FunctionType_Behavior.java" startLine="109" startPosition="169" endLine="110" endPosition="88" />
     <nodeInfo nodeId="3841277577643007442" fileName="FunctionType_Behavior.java" startLine="111" startPosition="22" endLine="112" endPosition="65" />
@@ -67,6 +73,7 @@
     <nodeInfo nodeId="1230320773910" fileName="FunctionType_Behavior.java" startLine="115" startPosition="85" endLine="116" endPosition="253" />
     <nodeInfo nodeId="1232032614231" fileName="FunctionType_Behavior.java" startLine="118" startPosition="88" endLine="119" endPosition="256" />
     <nodeInfo nodeId="1230320773937" fileName="FunctionType_Behavior.java" startLine="121" startPosition="82" endLine="122" endPosition="192" />
+    <nodeInfo nodeId="7854901761081666374" fileName="FunctionType_Behavior.java" startLine="125" startPosition="44" endLine="126" endPosition="125" />
     <nodeInfo nodeId="1230320773954" fileName="FunctionType_Behavior.java" startLine="128" startPosition="15" endLine="129" endPosition="140" />
     <nodeInfo nodeId="1230320773968" fileName="FunctionType_Behavior.java" startLine="130" startPosition="5" endLine="131" endPosition="14" />
     <nodeInfo nodeId="1230319160722" fileName="FunctionType_Behavior.java" startLine="134" startPosition="73" endLine="135" endPosition="169" />
@@ -76,6 +83,7 @@
     <nodeInfo nodeId="1230319160742" fileName="FunctionType_Behavior.java" startLine="141" startPosition="85" endLine="142" endPosition="247" />
     <nodeInfo nodeId="1232032636596" fileName="FunctionType_Behavior.java" startLine="144" startPosition="88" endLine="145" endPosition="250" />
     <nodeInfo nodeId="1230319160768" fileName="FunctionType_Behavior.java" startLine="147" startPosition="82" endLine="148" endPosition="185" />
+    <nodeInfo nodeId="7854901761081666414" fileName="FunctionType_Behavior.java" startLine="151" startPosition="44" endLine="152" endPosition="125" />
     <nodeInfo nodeId="1230319160784" fileName="FunctionType_Behavior.java" startLine="154" startPosition="15" endLine="155" endPosition="134" />
     <nodeInfo nodeId="1230319160797" fileName="FunctionType_Behavior.java" startLine="156" startPosition="5" endLine="157" endPosition="14" />
     <nodeInfo nodeId="811905832257074304" fileName="FunctionType_Behavior.java" startLine="160" startPosition="103" endLine="161" endPosition="169" />
@@ -89,6 +97,7 @@
     <nodeInfo nodeId="7854901761081594305" fileName="FunctionType_Behavior.java" startLine="176" startPosition="94" endLine="177" endPosition="81" />
     <nodeInfo nodeId="811905832257074356" fileName="FunctionType_Behavior.java" startLine="178" startPosition="7" endLine="179" endPosition="191" />
     <nodeInfo nodeId="811905832257074374" fileName="FunctionType_Behavior.java" startLine="181" startPosition="80" endLine="182" endPosition="192" />
+    <nodeInfo nodeId="7854901761081666396" fileName="FunctionType_Behavior.java" startLine="185" startPosition="44" endLine="186" endPosition="125" />
     <nodeInfo nodeId="811905832257074388" fileName="FunctionType_Behavior.java" startLine="188" startPosition="15" endLine="189" endPosition="140" />
     <nodeInfo nodeId="811905832257074401" fileName="FunctionType_Behavior.java" startLine="190" startPosition="5" endLine="191" endPosition="14" />
     <nodeInfo nodeId="3448422702164431428" fileName="FunctionType_Behavior.java" startLine="208" startPosition="95" endLine="209" endPosition="45" />
@@ -130,6 +139,8 @@
     <nodeInfo nodeId="7854901761081666369" fileName="FunctionType_Behavior.java" startLine="124" startPosition="169" endLine="128" endPosition="0" />
     <nodeInfo nodeId="7854901761081666409" fileName="FunctionType_Behavior.java" startLine="150" startPosition="169" endLine="154" endPosition="0" />
     <nodeInfo nodeId="7854901761081666391" fileName="FunctionType_Behavior.java" startLine="184" startPosition="167" endLine="188" endPosition="0" />
+    <nodeInfo nodeId="1230631617907" fileName="FunctionType_Behavior.java" startLine="194" startPosition="82" endLine="198" endPosition="6" />
+    <nodeInfo nodeId="1232036666464" fileName="FunctionType_Behavior.java" startLine="201" startPosition="85" endLine="205" endPosition="6" />
     <nodeInfo nodeId="3448422702164431486" fileName="FunctionType_Behavior.java" startLine="214" startPosition="65" endLine="218" endPosition="11" />
     <nodeInfo nodeId="1213877405263" fileName="FunctionType_Behavior.java" startLine="229" startPosition="168" endLine="233" endPosition="7" />
     <nodeInfo nodeId="1213877404951" fileName="FunctionType_Behavior.java" startLine="53" startPosition="43" endLine="58" endPosition="5" />
@@ -284,12 +295,15 @@
     <unitInfo nodeId="7854901761081666391" fileName="FunctionType_Behavior.java" startLine="184" startPosition="132" endLine="188" endPosition="5" unitName="jetbrains.mps.baseLanguage.closures.behavior.FunctionType_Behavior$3" />
   </root>
   <root nodeId="1225799468871">
+    <nodeInfo nodeId="1225799494507" fileName="InvokeFunctionExpression_Behavior.java" startLine="11" startPosition="76" endLine="12" endPosition="16" />
     <scopeInfo nodeId="1225799468873" fileName="InvokeFunctionExpression_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
     <scopeInfo nodeId="1225799470494" fileName="InvokeFunctionExpression_Behavior.java" startLine="11" startPosition="76" endLine="12" endPosition="16" />
   </root>
   <root nodeId="1229600742436">
     <nodeInfo nodeId="1229600786292" fileName="ControlAbstractionContainer_Behavior.java" startLine="15" startPosition="78" endLine="16" endPosition="174" />
     <nodeInfo nodeId="1229600788713" fileName="ControlAbstractionContainer_Behavior.java" startLine="16" startPosition="174" endLine="17" endPosition="136" />
+    <nodeInfo nodeId="1229600940405" fileName="ControlAbstractionContainer_Behavior.java" startLine="17" startPosition="136" endLine="18" endPosition="19" />
+    <nodeInfo nodeId="1229600932027" fileName="ControlAbstractionContainer_Behavior.java" startLine="21" startPosition="81" endLine="22" endPosition="16" />
     <scopeInfo nodeId="1229600742438" fileName="ControlAbstractionContainer_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
     <scopeInfo nodeId="1229600902380" fileName="ControlAbstractionContainer_Behavior.java" startLine="21" startPosition="81" endLine="22" endPosition="16" />
     <scopeInfo nodeId="1229600760881" fileName="ControlAbstractionContainer_Behavior.java" startLine="15" startPosition="78" endLine="18" endPosition="19">
@@ -333,12 +347,16 @@
     <nodeInfo nodeId="1229639481426" fileName="ControlMethodUtil.java" startLine="85" startPosition="40" endLine="86" endPosition="37" />
     <nodeInfo nodeId="1229639492561" fileName="ControlMethodUtil.java" startLine="86" startPosition="37" endLine="87" endPosition="39" />
     <nodeInfo nodeId="1229707812344" fileName="ControlMethodUtil.java" startLine="87" startPosition="39" endLine="88" endPosition="40" />
+    <nodeInfo nodeId="613856071337170867" fileName="ControlMethodUtil.java" startLine="93" startPosition="36" endLine="94" endPosition="30" />
     <nodeInfo nodeId="1229707658937" fileName="ControlMethodUtil.java" startLine="97" startPosition="50" endLine="98" endPosition="18" />
     <nodeInfo nodeId="1229707663316" fileName="ControlMethodUtil.java" startLine="98" startPosition="18" endLine="99" endPosition="66" />
     <nodeInfo nodeId="1229707688278" fileName="ControlMethodUtil.java" startLine="102" startPosition="47" endLine="103" endPosition="18" />
     <nodeInfo nodeId="1229707690048" fileName="ControlMethodUtil.java" startLine="103" startPosition="18" endLine="104" endPosition="63" />
     <nodeInfo nodeId="1229707712613" fileName="ControlMethodUtil.java" startLine="107" startPosition="53" endLine="108" endPosition="18" />
     <nodeInfo nodeId="1229707714321" fileName="ControlMethodUtil.java" startLine="108" startPosition="18" endLine="109" endPosition="65" />
+    <nodeInfo nodeId="1236263398705" fileName="ControlMethodUtil.java" startLine="112" startPosition="49" endLine="113" endPosition="54" />
+    <nodeInfo nodeId="1236263410968" fileName="ControlMethodUtil.java" startLine="116" startPosition="46" endLine="117" endPosition="51" />
+    <nodeInfo nodeId="1236263422004" fileName="ControlMethodUtil.java" startLine="120" startPosition="48" endLine="121" endPosition="53" />
     <nodeInfo nodeId="1236263383192" fileName="ControlMethodUtil.java" startLine="125" startPosition="25" endLine="126" endPosition="61" />
     <nodeInfo nodeId="1236263390094" fileName="ControlMethodUtil.java" startLine="127" startPosition="7" endLine="128" endPosition="18" />
     <nodeInfo nodeId="1229707613184" fileName="ControlMethodUtil.java" startLine="132" startPosition="32" endLine="133" endPosition="77" />
@@ -464,6 +482,7 @@
     <nodeInfo nodeId="1229716696604" fileName="UnrestrictedFunctionType_Behavior.java" startLine="23" startPosition="89" endLine="24" endPosition="16" />
     <nodeInfo nodeId="1229716696613" fileName="UnrestrictedFunctionType_Behavior.java" startLine="25" startPosition="5" endLine="26" endPosition="145" />
     <nodeInfo nodeId="1229716696625" fileName="UnrestrictedFunctionType_Behavior.java" startLine="26" startPosition="145" endLine="27" endPosition="37" />
+    <nodeInfo nodeId="1230473327345" fileName="UnrestrictedFunctionType_Behavior.java" startLine="30" startPosition="82" endLine="31" endPosition="40" />
     <nodeInfo nodeId="3841277577642912763" fileName="UnrestrictedFunctionType_Behavior.java" startLine="34" startPosition="82" endLine="35" endPosition="43" />
     <nodeInfo nodeId="3841277577642912770" fileName="UnrestrictedFunctionType_Behavior.java" startLine="36" startPosition="85" endLine="37" endPosition="27" />
     <nodeInfo nodeId="3841277577642912777" fileName="UnrestrictedFunctionType_Behavior.java" startLine="38" startPosition="12" endLine="39" endPosition="25" />
@@ -472,6 +491,7 @@
     <nodeInfo nodeId="3841277577642912787" fileName="UnrestrictedFunctionType_Behavior.java" startLine="45" startPosition="5" endLine="46" endPosition="119" />
     <nodeInfo nodeId="3841277577642912799" fileName="UnrestrictedFunctionType_Behavior.java" startLine="46" startPosition="119" endLine="47" endPosition="141" />
     <nodeInfo nodeId="3841277577642912811" fileName="UnrestrictedFunctionType_Behavior.java" startLine="47" startPosition="141" endLine="48" endPosition="25" />
+    <nodeInfo nodeId="1231423654891" fileName="UnrestrictedFunctionType_Behavior.java" startLine="51" startPosition="86" endLine="52" endPosition="35" />
     <nodeInfo nodeId="1232031823290" fileName="UnrestrictedFunctionType_Behavior.java" startLine="55" startPosition="78" endLine="56" endPosition="74" />
     <nodeInfo nodeId="1232031823298" fileName="UnrestrictedFunctionType_Behavior.java" startLine="57" startPosition="95" endLine="58" endPosition="148" />
     <nodeInfo nodeId="1232031823306" fileName="UnrestrictedFunctionType_Behavior.java" startLine="58" startPosition="148" endLine="59" endPosition="53" />
@@ -479,6 +499,7 @@
     <nodeInfo nodeId="3841277577642915020" fileName="UnrestrictedFunctionType_Behavior.java" startLine="43" startPosition="10" endLine="45" endPosition="5" />
     <nodeInfo nodeId="1229716696592" fileName="UnrestrictedFunctionType_Behavior.java" startLine="21" startPosition="20" endLine="25" endPosition="5" />
     <nodeInfo nodeId="1232031823296" fileName="UnrestrictedFunctionType_Behavior.java" startLine="56" startPosition="74" endLine="60" endPosition="5" />
+    <nodeInfo nodeId="1232031823317" fileName="UnrestrictedFunctionType_Behavior.java" startLine="60" startPosition="5" endLine="64" endPosition="6" />
     <nodeInfo nodeId="3841277577642912768" fileName="UnrestrictedFunctionType_Behavior.java" startLine="35" startPosition="43" endLine="40" endPosition="5" />
     <nodeInfo nodeId="3841277577642915005" fileName="UnrestrictedFunctionType_Behavior.java" startLine="40" startPosition="5" endLine="45" endPosition="5" />
     <scopeInfo nodeId="1229716601303" fileName="UnrestrictedFunctionType_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
@@ -507,11 +528,13 @@
     </scopeInfo>
   </root>
   <root nodeId="1229718424142">
+    <nodeInfo nodeId="1232126761619" fileName="UnrestrictedClosureLiteral_Behavior.java" startLine="18" startPosition="170" endLine="19" endPosition="139" />
     <scopeInfo nodeId="1229718424144" fileName="UnrestrictedClosureLiteral_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
     <scopeInfo nodeId="1229718428853" fileName="UnrestrictedClosureLiteral_Behavior.java" startLine="18" startPosition="170" endLine="19" endPosition="139" />
   </root>
   <root nodeId="1231426116476">
     <nodeInfo nodeId="1231426287306" fileName="RuntimeUtils.java" startLine="24" startPosition="27" endLine="25" endPosition="62" />
+    <nodeInfo nodeId="1231426192438" fileName="RuntimeUtils.java" startLine="30" startPosition="42" endLine="31" endPosition="147" />
     <nodeInfo nodeId="1231426508378" fileName="RuntimeUtils.java" startLine="36" startPosition="39" endLine="37" endPosition="79" />
     <nodeInfo nodeId="1231429345360" fileName="RuntimeUtils.java" startLine="38" startPosition="123" endLine="39" endPosition="103" />
     <nodeInfo nodeId="1231426672459" fileName="RuntimeUtils.java" startLine="43" startPosition="47" endLine="44" endPosition="53" />
@@ -573,6 +596,8 @@
     <scopeInfo nodeId="1237548259222" fileName="YieldStatement_Behavior.java" startLine="11" startPosition="86" endLine="12" endPosition="16" />
   </root>
   <root nodeId="2857237956452412448">
+    <nodeInfo nodeId="2857237956452413113" fileName="FunctionMethodDeclaration_Behavior.java" startLine="24" startPosition="37" endLine="25" endPosition="85" />
+    <nodeInfo nodeId="2857237956452412610" fileName="FunctionMethodDeclaration_Behavior.java" startLine="27" startPosition="24" endLine="28" endPosition="182" />
     <nodeInfo nodeId="2857237956452413111" fileName="FunctionMethodDeclaration_Behavior.java" startLine="23" startPosition="142" endLine="27" endPosition="0" />
     <nodeInfo nodeId="2857237956452413101" fileName="FunctionMethodDeclaration_Behavior.java" startLine="22" startPosition="77" endLine="27" endPosition="24" />
     <scopeInfo nodeId="2857237956452412450" fileName="FunctionMethodDeclaration_Behavior.java" startLine="19" startPosition="43" endLine="19" endPosition="43" />

@@ -67,7 +67,10 @@
     <nodeInfo nodeId="1213877254533" fileName="LinkDeclaration_Behavior.java" startLine="19" startPosition="5" endLine="20" endPosition="58" />
     <nodeInfo nodeId="1213877254550" fileName="LinkDeclaration_Behavior.java" startLine="24" startPosition="27" endLine="25" endPosition="18" />
     <nodeInfo nodeId="1213877254552" fileName="LinkDeclaration_Behavior.java" startLine="26" startPosition="5" endLine="27" endPosition="51" />
+    <nodeInfo nodeId="1213877254560" fileName="LinkDeclaration_Behavior.java" startLine="30" startPosition="71" endLine="31" endPosition="163" />
+    <nodeInfo nodeId="1213877254576" fileName="LinkDeclaration_Behavior.java" startLine="34" startPosition="78" endLine="35" endPosition="59" />
     <nodeInfo nodeId="3386205146661103653" fileName="LinkDeclaration_Behavior.java" startLine="38" startPosition="90" endLine="39" endPosition="93" />
+    <nodeInfo nodeId="3386205146661103661" fileName="LinkDeclaration_Behavior.java" startLine="39" startPosition="93" endLine="40" endPosition="169" />
     <nodeInfo nodeId="3129341680481886014" fileName="LinkDeclaration_Behavior.java" startLine="45" startPosition="38" endLine="46" endPosition="15" />
     <nodeInfo nodeId="3129341680481885956" fileName="LinkDeclaration_Behavior.java" startLine="47" startPosition="7" endLine="48" endPosition="132" />
     <nodeInfo nodeId="3129341680481885968" fileName="LinkDeclaration_Behavior.java" startLine="49" startPosition="44" endLine="50" endPosition="15" />
@@ -168,6 +171,7 @@
     <nodeInfo nodeId="2165772098013610090" fileName="AbstractConceptDeclaration_Behavior.java" startLine="102" startPosition="60" endLine="103" endPosition="34" />
     <nodeInfo nodeId="2165772098013610153" fileName="AbstractConceptDeclaration_Behavior.java" startLine="105" startPosition="454" endLine="106" endPosition="59" />
     <nodeInfo nodeId="8292108433549671083" fileName="AbstractConceptDeclaration_Behavior.java" startLine="107" startPosition="11" endLine="108" endPosition="29" />
+    <nodeInfo nodeId="8292108433549490743" fileName="AbstractConceptDeclaration_Behavior.java" startLine="110" startPosition="45" endLine="111" endPosition="506" />
     <nodeInfo nodeId="2165772098013610415" fileName="AbstractConceptDeclaration_Behavior.java" startLine="116" startPosition="5" endLine="117" endPosition="18" />
     <nodeInfo nodeId="6409339300305625105" fileName="AbstractConceptDeclaration_Behavior.java" startLine="120" startPosition="114" endLine="121" endPosition="126" />
     <nodeInfo nodeId="7754459869734028950" fileName="AbstractConceptDeclaration_Behavior.java" startLine="124" startPosition="99" endLine="125" endPosition="48" />
@@ -210,7 +214,9 @@
     <nodeInfo nodeId="1213877394483" fileName="AbstractConceptDeclaration_Behavior.java" startLine="225" startPosition="84" endLine="226" endPosition="140" />
     <nodeInfo nodeId="1213877394491" fileName="AbstractConceptDeclaration_Behavior.java" startLine="226" startPosition="140" endLine="227" endPosition="52" />
     <nodeInfo nodeId="1213877394499" fileName="AbstractConceptDeclaration_Behavior.java" startLine="230" startPosition="93" endLine="231" endPosition="109" />
+    <nodeInfo nodeId="1227876798189" fileName="AbstractConceptDeclaration_Behavior.java" startLine="233" startPosition="39" endLine="234" endPosition="87" />
     <nodeInfo nodeId="1213877394524" fileName="AbstractConceptDeclaration_Behavior.java" startLine="239" startPosition="95" endLine="240" endPosition="109" />
+    <nodeInfo nodeId="1227876804103" fileName="AbstractConceptDeclaration_Behavior.java" startLine="242" startPosition="39" endLine="243" endPosition="89" />
     <nodeInfo nodeId="1213877394549" fileName="AbstractConceptDeclaration_Behavior.java" startLine="248" startPosition="88" endLine="249" endPosition="153" />
     <nodeInfo nodeId="1213877394557" fileName="AbstractConceptDeclaration_Behavior.java" startLine="249" startPosition="153" endLine="250" endPosition="57" />
     <nodeInfo nodeId="1219835776363" fileName="AbstractConceptDeclaration_Behavior.java" startLine="253" startPosition="95" endLine="254" endPosition="144" />
@@ -469,6 +475,10 @@
   </root>
   <root nodeId="1216822949793">
     <nodeInfo nodeId="1216822968618" fileName="PropertyDeclaration_Behavior.java" startLine="14" startPosition="69" endLine="15" endPosition="73" />
+    <nodeInfo nodeId="1229468601370" fileName="PropertyDeclaration_Behavior.java" startLine="18" startPosition="78" endLine="19" endPosition="187" />
+    <nodeInfo nodeId="1229468978696" fileName="PropertyDeclaration_Behavior.java" startLine="22" startPosition="79" endLine="23" endPosition="187" />
+    <nodeInfo nodeId="1229468962968" fileName="PropertyDeclaration_Behavior.java" startLine="26" startPosition="79" endLine="27" endPosition="187" />
+    <nodeInfo nodeId="3254710223377179845" fileName="PropertyDeclaration_Behavior.java" startLine="30" startPosition="86" endLine="31" endPosition="132" />
     <scopeInfo nodeId="1216822949795" fileName="PropertyDeclaration_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
     <scopeInfo nodeId="1216822951267" fileName="PropertyDeclaration_Behavior.java" startLine="14" startPosition="69" endLine="15" endPosition="73" />
     <scopeInfo nodeId="1229468583976" fileName="PropertyDeclaration_Behavior.java" startLine="18" startPosition="78" endLine="19" endPosition="187" />
@@ -520,6 +530,7 @@
     </scopeInfo>
   </root>
   <root nodeId="2621449412040133765">
+    <nodeInfo nodeId="5270353093116089371" fileName="IConceptAspect_Behavior.java" startLine="21" startPosition="82" endLine="22" endPosition="16" />
     <nodeInfo nodeId="5270353093116018701" fileName="IConceptAspect_Behavior.java" startLine="25" startPosition="98" endLine="26" endPosition="48" />
     <nodeInfo nodeId="8360039740498068540" fileName="IConceptAspect_Behavior.java" startLine="26" startPosition="48" endLine="27" endPosition="91" />
     <nodeInfo nodeId="5270353093116018709" fileName="IConceptAspect_Behavior.java" startLine="28" startPosition="25" endLine="29" endPosition="122" />
