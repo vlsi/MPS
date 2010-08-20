@@ -5,7 +5,7 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
-import jetbrains.mps.generator.generationTypes.OutputViewGenerationHandler;
+import jetbrains.mps.ide.generator.OutputViewGenerationHandler;
 
 public class ModelActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(ModelActions_ActionGroup.class);

@@ -21,7 +21,7 @@ import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConf
 import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
 import javax.swing.JOptionPane;
 import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.generator.generationTypes.OutputViewGenerationHandler;
+import jetbrains.mps.ide.generator.OutputViewGenerationHandler;
 
 public class GenerateTextFromSolution_Action extends GeneratedAction {
   private static final Icon ICON = null;

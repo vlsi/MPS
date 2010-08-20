@@ -16,7 +16,7 @@
 package jetbrains.mps.vcs.actions;
 
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
-import jetbrains.mps.generator.generationTypes.OutputViewGenerationHandler;
+import jetbrains.mps.ide.generator.OutputViewGenerationHandler;
 
 public class GenerateTextFromChangeListAction extends GenerateFromChangeListAction {
 

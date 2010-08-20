@@ -1465,7 +1465,7 @@
     <classNode dependClassName="jetbrains.mps.generator.GenParameters" />
     <classNode dependClassName="jetbrains.mps.generator.GeneratorManager" />
     <classNode dependClassName="jetbrains.mps.generator.IllegalGeneratorConfigurationException" />
-    <classNode dependClassName="jetbrains.mps.generator.generationTypes.OutputViewGenerationHandler" />
+    <classNode dependClassName="jetbrains.mps.ide.generator.OutputViewGenerationHandler" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.project.Solution" />
     <classNode dependClassName="jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration" />
@@ -2563,7 +2563,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.generator.generationTypes.JavaGenerationHandler" />
-    <classNode dependClassName="jetbrains.mps.generator.generationTypes.OutputViewGenerationHandler" />
+    <classNode dependClassName="jetbrains.mps.ide.generator.OutputViewGenerationHandler" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
