@@ -18,8 +18,7 @@ package jetbrains.mps.project.structure.project.testconfigurations;
 import com.intellij.openapi.project.Project;
 
 import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
-import jetbrains.mps.ide.genconf.GenParameters;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.generator.GenParameters;
 
 public abstract class BaseTestConfiguration {
   public static final String PROPERTY_NAME = "name";

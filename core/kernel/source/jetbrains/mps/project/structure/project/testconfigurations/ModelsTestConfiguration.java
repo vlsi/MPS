@@ -19,13 +19,12 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.generator.NoCachesStrategy;
-import jetbrains.mps.ide.genconf.GenParameters;
+import jetbrains.mps.generator.GenParameters;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ProjectScope;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
 import java.util.*;
 

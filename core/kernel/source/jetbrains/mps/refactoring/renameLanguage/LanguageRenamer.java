@@ -17,7 +17,7 @@ package jetbrains.mps.refactoring.renameLanguage;
 
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
-import jetbrains.mps.ide.genconf.GeneratorConfigUtil;
+import jetbrains.mps.generator.GeneratorConfigUtil;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;

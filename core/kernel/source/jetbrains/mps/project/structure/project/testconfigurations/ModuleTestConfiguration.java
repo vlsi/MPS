@@ -16,11 +16,7 @@
 package jetbrains.mps.project.structure.project.testconfigurations;
 
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
-import jetbrains.mps.generator.ModelGenerationStatusManager;
-import jetbrains.mps.generator.NoCachesStrategy;
-import jetbrains.mps.ide.genconf.GenParameters;
-import jetbrains.mps.ide.genconf.GeneratorConfigUtil;
+import jetbrains.mps.generator.*;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleReference;

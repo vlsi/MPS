@@ -341,4 +341,18 @@ public class Generator extends AbstractModule{
     }
     return descriptorChanged[0];
   }
+
+  public List<SModelDescriptor> getGeneratorModels() {
+    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
+    List<SModelDescriptor> ownModels = this.getOwnModelDescriptors();
+    for (SModelDescriptor ownModel : ownModels) {
+      if (SModelStereotype.isGeneratorModel(ownModel)) {
+        result.add((ownModel));
+      } else if (SModelStereotype.isUserModel(ownModel)) {
+        // normal model goes first
+        result.add(0, ownModel);
+      }
+    }
+    return result;
+  }
 }

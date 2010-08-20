@@ -15,7 +15,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.ide.genconf.GenParameters;
+import jetbrains.mps.generator.GenParameters;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
 import jetbrains.mps.generator.IllegalGeneratorConfigurationException;

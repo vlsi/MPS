@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.transformation.TemplateLanguageGenerationUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.generator.NoCachesStrategy;
@@ -98,7 +97,7 @@ public class GenerateTemplateQueries_Action extends GeneratedAction {
       final Wrappers._T<List<SModelDescriptor>> models = new Wrappers._T<List<SModelDescriptor>>(ListSequence.fromList(new ArrayList<SModelDescriptor>()));
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          ListSequence.fromList(models.value).addSequence(ListSequence.fromList(TemplateLanguageGenerationUtil.getGeneratorModels((Generator) GenerateTemplateQueries_Action.this.module)));
+          ListSequence.fromList(models.value).addSequence(ListSequence.fromList(((Generator) GenerateTemplateQueries_Action.this.module).getGeneratorModels()));
           if (!(GenerateTemplateQueries_Action.this.regenerate)) {
             models.value = ListSequence.fromList(models.value).where(new IWhereFilter<SModelDescriptor>() {
               public boolean accept(SModelDescriptor it) {

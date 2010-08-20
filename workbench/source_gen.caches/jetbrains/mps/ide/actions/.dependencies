@@ -1432,7 +1432,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
-    <classNode dependClassName="jetbrains.mps.transformation.TemplateLanguageGenerationUtil" />
     <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
@@ -1463,10 +1462,10 @@
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.JOptionPane" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.generator.GenParameters" />
     <classNode dependClassName="jetbrains.mps.generator.GeneratorManager" />
     <classNode dependClassName="jetbrains.mps.generator.IllegalGeneratorConfigurationException" />
     <classNode dependClassName="jetbrains.mps.generator.generationTypes.OutputViewGenerationHandler" />
-    <classNode dependClassName="jetbrains.mps.ide.genconf.GenParameters" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.project.Solution" />
     <classNode dependClassName="jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration" />
