@@ -21,7 +21,6 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
@@ -36,10 +35,10 @@ import jetbrains.mps.ide.findusages.view.icons.Icons;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTreeComponent;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
+import jetbrains.mps.ide.generator.IdeaAwareJavaGenerationHandler;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
@@ -137,7 +136,7 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
     for (SModelDescriptor modelDescriptor : myTreeComponent.getIncludedModels()) {
       models.add(modelDescriptor);
     }
-    manager.generateModelsFromDifferentModules(ProjectOperationContext.get(myProject), models, new JavaGenerationHandler());
+    manager.generateModelsFromDifferentModules(ProjectOperationContext.get(myProject), models, new IdeaAwareJavaGenerationHandler());
   }
 
   public void goToNext() {

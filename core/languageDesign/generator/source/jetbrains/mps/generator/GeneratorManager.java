@@ -26,12 +26,13 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
-import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
 import jetbrains.mps.generator.impl.GenerationController;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
-import jetbrains.mps.ide.messages.*;
+import jetbrains.mps.ide.generator.IdeaAwareJavaGenerationHandler;
+import jetbrains.mps.ide.messages.DefaultMessageHandler;
+import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.lang.generator.plugin.debug.GenerationTracer;
 import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
 import jetbrains.mps.lang.generator.plugin.debug.NullGenerationTracer;
@@ -41,9 +42,7 @@ import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.util.Pair;
-
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JOptionPane;
@@ -81,7 +80,7 @@ public class GeneratorManager {
   }
 
   public IGenerationHandler getDefaultGenerationHandler() {
-    return new JavaGenerationHandler();
+    return new IdeaAwareJavaGenerationHandler();
   }
 
   @Deprecated
@@ -230,7 +229,7 @@ public class GeneratorManager {
           //idea don't have constants for YES/NO
           if (result == -1 || result == 2) return false;
           if (result == 0) {
-            generateModelsFromDifferentModules(invocationContext, new ArrayList<SModelDescriptor>(requirements), new JavaGenerationHandler());
+            generateModelsFromDifferentModules(invocationContext, new ArrayList<SModelDescriptor>(requirements), getDefaultGenerationHandler());
           }
         }
       } finally {

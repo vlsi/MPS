@@ -29,10 +29,10 @@ import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.generator.NoCachesStrategy;
 import jetbrains.mps.generator.TransientModelsModule.TransientSModelDescriptor;
-import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
+import jetbrains.mps.ide.generator.IdeaAwareJavaGenerationHandler;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.project.GlobalScope;
@@ -165,7 +165,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
             myProject.getComponent(GeneratorManager.class).generateModelsFromDifferentModules(
               editor.getNodeEditor().getOperationContext(),
               models,
-              new JavaGenerationHandler()
+              new IdeaAwareJavaGenerationHandler()
             );
           }
         });

@@ -13,7 +13,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.refactoring.renameLanguage.RenameLanguageDialog;
+import jetbrains.mps.ide.refactoring.RenameLanguageDialog;
 
 public class RenameLanguage_Action extends GeneratedAction {
   private static final Icon ICON = null;

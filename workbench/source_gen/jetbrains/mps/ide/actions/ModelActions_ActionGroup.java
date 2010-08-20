@@ -4,7 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
+import jetbrains.mps.ide.generator.IdeaAwareJavaGenerationHandler;
 import jetbrains.mps.ide.generator.OutputViewGenerationHandler;
 
 public class ModelActions_ActionGroup extends GeneratedActionGroup {
@@ -39,8 +39,8 @@ public class ModelActions_ActionGroup extends GeneratedActionGroup {
       ModelActions_ActionGroup.this.addSeparator();
       ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CheckModel_Action", "jetbrains.mps.ide");
       ModelActions_ActionGroup.this.addSeparator();
-      ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateModel_Action", "jetbrains.mps.ide", new JavaGenerationHandler(), false);
-      ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateModel_Action", "jetbrains.mps.ide", new JavaGenerationHandler(), true);
+      ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateModel_Action", "jetbrains.mps.ide", new IdeaAwareJavaGenerationHandler(), false);
+      ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateModel_Action", "jetbrains.mps.ide", new IdeaAwareJavaGenerationHandler(), true);
       ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateModel_Action", "jetbrains.mps.ide", new OutputViewGenerationHandler(), false);
       ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowMappingsPartitioning_Action", "jetbrains.mps.ide");
       ModelActions_ActionGroup.this.addSeparator();

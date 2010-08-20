@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.generator.NoCachesStrategy;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
+import jetbrains.mps.ide.generator.IdeaAwareJavaGenerationHandler;
 
 public class RunUtil {
   public RunUtil() {
@@ -43,7 +43,7 @@ public class RunUtil {
       });
     }
     if (ListSequence.fromList(models).isNotEmpty()) {
-      genManager.generateModelsFromDifferentModules(ProjectOperationContext.get(project), models, new JavaGenerationHandler());
+      genManager.generateModelsFromDifferentModules(ProjectOperationContext.get(project), models, new IdeaAwareJavaGenerationHandler());
     }
   }
 }
