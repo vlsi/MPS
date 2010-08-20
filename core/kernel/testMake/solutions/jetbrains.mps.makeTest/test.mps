@@ -1489,7 +1489,6 @@
       <link role="annotation:3" targetNodeId="28.8492459591399146889" resolveInfo="MPSLaunch" />
     </node>
   </node>
-  <visible index="2" modelUID="f:java_stub#jetbrains.mps.plugin(jetbrains.mps.plugin@java_stub)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="7196776143116381095">
     <property name="name:3" value="ChangeModelProcessor" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="7196776143116385016">
@@ -1679,15 +1678,15 @@
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7196776143116382576">
             <property name="name:3" value="cr" />
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ArrayType:3" id="7196776143116382577">
-              <node role="componentType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7196776143116382578">
-                <link role="classifier:3" targetNodeId="2v.~CompilationResult" resolveInfo="CompilationResult" />
+              <node role="componentType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3788808196639446404">
+                <link role="classifier:3" targetNodeId="24.~CompilationResult" resolveInfo="CompilationResult" />
               </node>
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="7196776143116382579">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer:3" id="7196776143116382580">
                 <node role="initValue:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="7196776143116382581" />
-                <node role="componentType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7196776143116382582">
-                  <link role="classifier:3" targetNodeId="2v.~CompilationResult" resolveInfo="CompilationResult" />
+                <node role="componentType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3788808196639446405">
+                  <link role="classifier:3" targetNodeId="24.~CompilationResult" resolveInfo="CompilationResult" />
                 </node>
               </node>
             </node>
@@ -1713,7 +1712,7 @@
                       </node>
                     </node>
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7196776143116382594">
-                      <link role="baseMethodDeclaration:3" targetNodeId="24.~ModuleMaker.make(java.util.Set,com.intellij.openapi.progress.ProgressIndicator):jetbrains.mps.plugin.CompilationResult" resolveInfo="make" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="24.~ModuleMaker.make(java.util.Set,com.intellij.openapi.progress.ProgressIndicator):jetbrains.mps.make.CompilationResult" resolveInfo="make" />
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7196776143116382595">
                         <link role="baseMethodDeclaration:3" targetNodeId="8.~Collections.singleton(java.lang.Object):java.util.Set" resolveInfo="singleton" />
                         <link role="classConcept:3" targetNodeId="8.~Collections" resolveInfo="Collections" />
@@ -1786,7 +1785,7 @@
               </node>
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7196776143116382622">
-              <link role="baseMethodDeclaration:3" targetNodeId="2v.~CompilationResult.isOk():boolean" resolveInfo="isOk" />
+              <link role="baseMethodDeclaration:3" targetNodeId="24.~CompilationResult.isOk():boolean" resolveInfo="isOk" />
             </node>
           </node>
         </node>
@@ -1854,7 +1853,7 @@
               </node>
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7196776143116382646">
-              <link role="baseMethodDeclaration:3" targetNodeId="2v.~CompilationResult.isOk():boolean" resolveInfo="isOk" />
+              <link role="baseMethodDeclaration:3" targetNodeId="24.~CompilationResult.isOk():boolean" resolveInfo="isOk" />
             </node>
           </node>
         </node>

@@ -172,7 +172,7 @@ public class TestGenerationWorker extends GeneratorWorker {
   }
 
   @Override
-  protected void finishMake(Set<Library> compiledLibraries, @NotNull jetbrains.mps.plugin.CompilationResult result) {
+  protected void finishMake(Set<Library> compiledLibraries, @NotNull jetbrains.mps.make.CompilationResult result) {
     String testName = myBuildServerMessageFormat.escapeBuildMessage("make " + compiledLibraries);
     if (!result.isOk()) {
       System.out.println(myBuildServerMessageFormat.formatTestFailure(testName, "Compilation Errors", result.toString()));

@@ -21,7 +21,7 @@ import jetbrains.mps.build.ant.MpsWorker;
 import jetbrains.mps.build.ant.WhatToDo;
 import jetbrains.mps.library.Library;
 import jetbrains.mps.make.ModuleMaker;
-import jetbrains.mps.plugin.CompilationResult;
+import jetbrains.mps.make.CompilationResult;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.MPSModuleRepository;

@@ -27,7 +27,7 @@ import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.make.ModuleMaker;
-import jetbrains.mps.plugin.CompilationResult;
+import jetbrains.mps.make.CompilationResult;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.IOperationContext;

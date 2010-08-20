@@ -36,7 +36,7 @@ import jetbrains.mps.util.misc.hash.LinkedHashSet;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.TestMain;
-import jetbrains.mps.plugin.CompilationResult;
+import jetbrains.mps.make.CompilationResult;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.vfs.*;

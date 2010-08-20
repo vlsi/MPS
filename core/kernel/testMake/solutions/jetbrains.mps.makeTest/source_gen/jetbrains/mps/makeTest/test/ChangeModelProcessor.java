@@ -6,7 +6,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.plugin.CompilationResult;
+import jetbrains.mps.make.CompilationResult;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.make.ModuleMaker;
 import java.util.Collections;

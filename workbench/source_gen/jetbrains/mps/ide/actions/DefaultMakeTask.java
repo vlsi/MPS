@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.make.ModuleMaker;
-import jetbrains.mps.plugin.CompilationResult;
+import jetbrains.mps.make.CompilationResult;
 import jetbrains.mps.reloading.ClassLoaderManager;
 
 public class DefaultMakeTask extends Task.Modal {
