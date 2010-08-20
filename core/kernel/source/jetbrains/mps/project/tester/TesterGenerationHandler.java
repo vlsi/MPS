@@ -50,7 +50,7 @@ public class TesterGenerationHandler extends InMemoryJavaGenerationHandler {
   }
 
   @Override
-  public boolean compile(Project p, List<Pair<IModule,List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException {
+  public boolean compile(Project p, List<Pair<IModule,List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) {
     return true;
   }
 

@@ -25,7 +25,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.util.Pair;
 
-import java.rmi.RemoteException;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -57,5 +57,5 @@ public interface IGenerationHandler {
   /**
    * Post-process generated output: compile, reload, etc. Once per generation cycle.
    */
-  boolean compile(Project p, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException;
+  boolean compile(Project p, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws GenerationCanceledException, IOException;
 }

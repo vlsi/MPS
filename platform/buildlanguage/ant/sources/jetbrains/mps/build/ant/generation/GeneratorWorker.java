@@ -45,6 +45,7 @@ import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.ProjectComponent;
 
 import java.io.File;
+import java.io.IOException;
 import java.rmi.RemoteException;
 import java.util.*;
 
@@ -139,10 +140,10 @@ public class GeneratorWorker extends MpsWorker {
           }
 
           @Override
-          protected boolean compileModule(IModule module, IProjectHandler projectHandler, boolean[] ideaIsFresh, ITaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException {
+          protected boolean compileModuleInMPS(IModule module, ITaskProgressHelper progressHelper) throws IOException, GenerationCanceledException {
             return
               requiresCompilationAfterGeneration()
-                ? super.compileModule(module, projectHandler, ideaIsFresh, progressHelper)
+                ? super.compileModuleInMPS(module, progressHelper)
                 : true;
           }
 

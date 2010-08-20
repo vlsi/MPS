@@ -22,11 +22,6 @@ import java.util.GregorianCalendar;
 public class IdeMain {
   private static TestMode ourTestMode = TestMode.NO_TEST;
 
-  public static Date expirationDate() {
-    GregorianCalendar calendar = new GregorianCalendar(2008, Calendar.OCTOBER, 31);
-    return new Date(calendar.getTimeInMillis());
-  }
-
   public static TestMode getTestMode() {
     return ourTestMode;
   }

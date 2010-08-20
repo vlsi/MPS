@@ -24,13 +24,13 @@ import jetbrains.mps.generator.GenerationSettings;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.GeneratorManager.GeneratorNotifierHelper;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
-import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.ide.progress.TaskProgressHelper;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -41,7 +41,7 @@ import jetbrains.mps.util.performance.IPerformanceTracer;
 import jetbrains.mps.util.performance.IPerformanceTracer.NullPerformanceTracer;
 import jetbrains.mps.util.performance.PerformanceTracer;
 
-import java.rmi.RemoteException;
+import java.io.IOException;
 import java.util.*;
 
 public class GenerationController {
@@ -136,7 +136,7 @@ public class GenerationController {
     }
   }
 
-  private boolean compile(ITaskProgressHelper progressHelper, boolean generationOK) throws RemoteException, GenerationCanceledException {
+  private boolean compile(ITaskProgressHelper progressHelper, boolean generationOK) throws IOException, GenerationCanceledException {
     fireBeforeModelsCompiled(generationOK);
     generationOK = generationOK && myGenerationHandler.compile(getProject(), myModuleSequence, generationOK, progressHelper);
     fireAfterModelsCompiled(generationOK);

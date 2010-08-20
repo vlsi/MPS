@@ -12,7 +12,6 @@ import jetbrains.mps.compiler.JavaCompiler;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.IGeneratorLogger;
-import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil.TextGenerationResult;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
@@ -22,12 +21,13 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.util.Pair;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.jetbrains.annotations.Nullable;
 
-import java.rmi.RemoteException;
+import java.io.IOException;
 import java.util.*;
 
 /**
@@ -85,7 +85,7 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
     progressHelper.setText2("module " + module);
   }
 
-  public boolean compile(Project p, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException {
+  public boolean compile(Project p, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws IOException, GenerationCanceledException {
     return compile(progressHelper);
   }
 
