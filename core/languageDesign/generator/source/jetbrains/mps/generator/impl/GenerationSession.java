@@ -20,7 +20,7 @@ import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.plan.GenerationPlan;
-import jetbrains.mps.ide.messages.NodeWithContext;
+import jetbrains.mps.messages.NodeWithContext;
 import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
 import jetbrains.mps.lang.generator.structure.MappingScript;
 import jetbrains.mps.lang.generator.structure.MappingScriptKind;

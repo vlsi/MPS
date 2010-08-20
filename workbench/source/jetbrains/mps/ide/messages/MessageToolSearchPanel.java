@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.messages;
 
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.messages.Message;
 import jetbrains.mps.workbench.search.AbstractSearchPanel;
 import jetbrains.mps.workbench.search.SearchHistoryComponent;
 

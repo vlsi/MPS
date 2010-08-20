@@ -16,7 +16,8 @@
 package jetbrains.mps.ide.messages;
 
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.messages.Message;
 
 /**
  * Igor Alshannikov

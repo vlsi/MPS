@@ -21,6 +21,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.messages.navigation.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.make.FileWithPosition;
+import jetbrains.mps.messages.NodeWithContext;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.INodeAdapter;

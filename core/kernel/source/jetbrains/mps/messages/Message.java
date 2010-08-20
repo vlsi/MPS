@@ -13,9 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.messages;
+package jetbrains.mps.messages;
 
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.messages.NavigationManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;

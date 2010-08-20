@@ -35,7 +35,7 @@ import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.ide.genconf.GenParameters;
-import jetbrains.mps.ide.messages.IMessageHandler;
+import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.library.Library;
 import jetbrains.mps.project.*;

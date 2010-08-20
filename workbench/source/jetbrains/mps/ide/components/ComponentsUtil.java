@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.ide.components;
 
-import jetbrains.mps.ide.messages.NodeWithContext;
+import jetbrains.mps.messages.NodeWithContext;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;

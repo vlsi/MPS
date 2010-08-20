@@ -24,7 +24,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)" version="0" />
-  <maxImportIndex value="31" />
+  <maxImportIndex value="32" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.smodel.persistence.def(jetbrains.mps.smodel.persistence.def@java_stub)" version="-1" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
@@ -52,6 +52,7 @@
   <import index="29" modelUID="f:java_stub#com.intellij.openapi.project(com.intellij.openapi.project@java_stub)" version="-1" />
   <import index="30" modelUID="f:java_stub#com.intellij.openapi.components(com.intellij.openapi.components@java_stub)" version="-1" />
   <import index="31" modelUID="f:java_stub#jetbrains.mps.smodel.descriptor(jetbrains.mps.smodel.descriptor@java_stub)" version="-1" />
+  <import index="32" modelUID="f:java_stub#jetbrains.mps.messages(jetbrains.mps.messages@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1957199320903967681">
     <property name="name:3" value="ChangeModel" />
     <property name="abstractClass:3" value="true" />
@@ -1998,15 +1999,15 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="7196776143116382707">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7196776143116382708">
             <property name="name:3" value="handler" />
-            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7196776143116382709">
-              <link role="classifier:3" targetNodeId="10.~IMessageHandler" resolveInfo="IMessageHandler" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5376195255466640983">
+              <link role="classifier:3" targetNodeId="32.~IMessageHandler" resolveInfo="IMessageHandler" />
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="7196776143116382710">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="7196776143116382711">
                 <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="7196776143116382712">
                   <property name="nonStatic:3" value="true" />
-                  <link role="classifier:3" targetNodeId="10.~IMessageHandler" resolveInfo="IMessageHandler" />
                   <link role="baseMethodDeclaration:3" targetNodeId="4.~Object.&lt;init&gt;()" resolveInfo="Object" />
+                  <link role="classifier:3" targetNodeId="32.~IMessageHandler" resolveInfo="IMessageHandler" />
                   <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7196776143116382713" />
                   <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="7196776143116382714">
                     <property name="isAbstract:3" value="false" />
@@ -2015,23 +2016,23 @@
                     <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="7196776143116382716" />
                     <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="7196776143116382717">
                       <property name="name:3" value="msg" />
-                      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7196776143116382718">
-                        <link role="classifier:3" targetNodeId="10.~Message" resolveInfo="Message" />
+                      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5376195255466640986">
+                        <link role="classifier:3" targetNodeId="32.~Message" resolveInfo="Message" />
                       </node>
                     </node>
                     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7196776143116382719">
                       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="7196776143116382720">
                         <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="7196776143116382721">
-                          <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="7196776143116382722">
-                            <link role="enumClass:3" targetNodeId="10.~MessageKind" resolveInfo="MessageKind" />
-                            <link role="enumConstantDeclaration:3" targetNodeId="10.~MessageKind.ERROR" resolveInfo="ERROR" />
+                          <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="5376195255466640987">
+                            <link role="enumConstantDeclaration:3" targetNodeId="32.~MessageKind.ERROR" resolveInfo="ERROR" />
+                            <link role="enumClass:3" targetNodeId="32.~MessageKind" resolveInfo="MessageKind" />
                           </node>
                           <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7196776143116382723">
                             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="7196776143116382724">
                               <link role="variableDeclaration:3" targetNodeId="7196776143116382717" resolveInfo="msg" />
                             </node>
                             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7196776143116382725">
-                              <link role="baseMethodDeclaration:3" targetNodeId="10.~Message.getKind():jetbrains.mps.ide.messages.MessageKind" resolveInfo="getKind" />
+                              <link role="baseMethodDeclaration:3" targetNodeId="32.~Message.getKind():jetbrains.mps.messages.MessageKind" resolveInfo="getKind" />
                             </node>
                           </node>
                         </node>
@@ -2047,7 +2048,7 @@
                                     <link role="variableDeclaration:3" targetNodeId="7196776143116382717" resolveInfo="msg" />
                                   </node>
                                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7196776143116382733">
-                                    <link role="baseMethodDeclaration:3" targetNodeId="10.~Message.getText():java.lang.String" resolveInfo="getText" />
+                                    <link role="baseMethodDeclaration:3" targetNodeId="32.~Message.getText():java.lang.String" resolveInfo="getText" />
                                   </node>
                                 </node>
                               </node>
@@ -2091,7 +2092,7 @@
               <link role="variableDeclaration:3" targetNodeId="7196776143116382701" resolveInfo="gm" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7196776143116382746">
-              <link role="baseMethodDeclaration:3" targetNodeId="12.~GeneratorManager.generateModels(java.util.List,jetbrains.mps.smodel.IOperationContext,jetbrains.mps.generator.generationTypes.IGenerationHandler,com.intellij.openapi.progress.ProgressIndicator,jetbrains.mps.ide.messages.IMessageHandler):boolean" resolveInfo="generateModels" />
+              <link role="baseMethodDeclaration:3" targetNodeId="12.~GeneratorManager.generateModels(java.util.List,jetbrains.mps.smodel.IOperationContext,jetbrains.mps.generator.generationTypes.IGenerationHandler,com.intellij.openapi.progress.ProgressIndicator,jetbrains.mps.messages.IMessageHandler):boolean" resolveInfo="generateModels" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7196776143116382747">
                 <link role="variableDeclaration:3" targetNodeId="7196776143116382695" resolveInfo="models" />
               </node>
