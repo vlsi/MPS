@@ -125,7 +125,7 @@ public class MPSEditorOpener{
     //todo why later?
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        ModuleContext context = ModuleContext.create(node, myProject, false);
+        ModuleContext context = ModuleContext.create(node, myProject);
         if (context == null) return;
         boolean select = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
           public Boolean compute() {

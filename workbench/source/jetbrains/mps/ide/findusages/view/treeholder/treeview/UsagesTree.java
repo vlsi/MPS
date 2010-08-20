@@ -673,7 +673,7 @@ public class UsagesTree extends MPSTree {
   }
 
   public void navigateToNode(final SNode node, boolean focus) {
-    ModuleContext context = ModuleContext.create(node, myProject, false);
+    ModuleContext context = ModuleContext.create(node, myProject);
     boolean select = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
       public Boolean compute() {
         return !node.isRoot();

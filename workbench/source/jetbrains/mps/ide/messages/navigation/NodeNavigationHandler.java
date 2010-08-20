@@ -14,7 +14,7 @@ public class NodeNavigationHandler implements INavigationHandler<SNode> {
     if (node.getModel().getModelDescriptor() == null) return;
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        ModuleContext context = ModuleContext.create(node, project, false);
+        ModuleContext context = ModuleContext.create(node, project);
         if (context == null) return;
 
         if (node.isRegistered()) {

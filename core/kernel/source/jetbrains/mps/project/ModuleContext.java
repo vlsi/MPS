@@ -81,31 +81,27 @@ public class ModuleContext extends StandaloneMPSContext {
   }
 
   @Nullable
-  public static ModuleContext create(final SNode node, Project project, boolean askIfMany) {
+  public static ModuleContext create(final SNode node, Project project) {
     SModel model = ModelAccess.instance().runReadAction(new Computable<SModel>() {
       public SModel compute() {
         return node.getModel();
       }
     });
-    return create(model, project, askIfMany);
+    return create(model, project);
   }
 
   @Nullable
-  public static ModuleContext create(final SModel model, Project project, boolean askIfMany) {
+  public static ModuleContext create(final SModel model, Project project) {
     SModelDescriptor modelDescriptor = ModelAccess.instance().runReadAction(new Computable<SModelDescriptor>() {
       public SModelDescriptor compute() {
         return model.getModelDescriptor();
       }
     });
-    return create(modelDescriptor, project, askIfMany);
+    return create(modelDescriptor, project);
   }
 
   @Nullable
-  public static ModuleContext create(@NotNull final SModelDescriptor model, Project project, boolean askIfMany) {
-
-    if (askIfMany && (ModelAccess.instance().canRead() || ModelAccess.instance().canWrite())) {
-      LOG.errorWithTrace("Invocation of operations which might show dialog with lock held");
-    }
+  public static ModuleContext create(@NotNull final SModelDescriptor model, Project project) {
 
     Set<IModule> owningModules = ModelAccess.instance().runReadAction(new Computable<Set<IModule>>() {
       public Set<IModule> compute() {
@@ -119,15 +115,7 @@ public class ModuleContext extends StandaloneMPSContext {
       return null;
     }
 
-    IModule module;
-    if (owningModules.size() == 1 || !askIfMany || SModelStereotype.isStubModelStereotype(model.getStereotype())) {
-      module = owningModules.iterator().next();
-    } else {
-      Frame frame = null;
-      ChooseModuleDialog md = new ChooseModuleDialog("Choose Context Module", frame, owningModules);
-      md.showDialog();
-      module = md.getResult();
-    }
+    IModule module = owningModules.iterator().next();
 
     if (module == null) return null;
 
