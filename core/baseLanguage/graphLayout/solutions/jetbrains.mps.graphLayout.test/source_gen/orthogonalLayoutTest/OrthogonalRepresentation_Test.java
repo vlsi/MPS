@@ -82,7 +82,7 @@ public class OrthogonalRepresentation_Test extends TestCase {
 
   private void checkFullEmbedding(EmbeddedGraph embeddedGraph) {
     for (Edge edge : ListSequence.fromList(embeddedGraph.getGraph().getEdges())) {
-      Assert.assertTrue(MapSequence.fromMap(embeddedGraph.getAdjacentFacesMap()).containsKey(edge));
+      Assert.assertTrue(embeddedGraph.getAdjacentFaces(edge) != null);
     }
   }
 
