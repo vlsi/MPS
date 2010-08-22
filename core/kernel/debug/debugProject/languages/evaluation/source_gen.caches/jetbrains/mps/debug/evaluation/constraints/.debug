@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="6036237525966315979">
+    <nodeInfo nodeId="6036237525966315982" fileName="EvaluatorsThisExpression_Constraints.java" startLine="11" startPosition="114" endLine="12" endPosition="194" />
     <scopeInfo nodeId="6036237525966315981" fileName="EvaluatorsThisExpression_Constraints.java" startLine="11" startPosition="114" endLine="12" endPosition="194" />
   </root>
   <root nodeId="6036237525966325224">
@@ -16,7 +17,10 @@
     </scopeInfo>
   </root>
   <root nodeId="6146091894852365519">
+    <nodeInfo nodeId="6146091894852366846" fileName="LowLevelVariableReference_variableDeclaration_ReferentConstraint.java" startLine="34" startPosition="39" endLine="35" endPosition="69" />
+    <nodeInfo nodeId="6146091894852366857" fileName="LowLevelVariableReference_variableDeclaration_ReferentConstraint.java" startLine="42" startPosition="51" endLine="43" endPosition="78" />
     <nodeInfo nodeId="6146091894852366842" fileName="LowLevelVariableReference_variableDeclaration_ReferentConstraint.java" startLine="33" startPosition="246" endLine="37" endPosition="0" />
+    <nodeInfo nodeId="6146091894852366821" fileName="LowLevelVariableReference_variableDeclaration_ReferentConstraint.java" startLine="32" startPosition="132" endLine="37" endPosition="7" />
     <scopeInfo nodeId="6146091894852366843" fileName="LowLevelVariableReference_variableDeclaration_ReferentConstraint.java" startLine="34" startPosition="39" endLine="35" endPosition="69" />
     <scopeInfo nodeId="6146091894852366856" fileName="LowLevelVariableReference_variableDeclaration_ReferentConstraint.java" startLine="42" startPosition="51" endLine="43" endPosition="78" />
     <scopeInfo nodeId="6146091894852366842" fileName="LowLevelVariableReference_variableDeclaration_ReferentConstraint.java" startLine="33" startPosition="246" endLine="37" endPosition="0" />

@@ -11,6 +11,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.ClassifierType" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.IMethodLike" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.structure.LowLevelVariable" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
@@ -77,6 +78,20 @@
   <dependency className="jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation_AnnotationLink" file="ToEvaluateAnnotation_AnnotationLink.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.structure.ToEvaluateAnnotation" />
+    <classNode dependClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+  </dependency>
+  <dependency className="jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation" file="UnprocessedAnnotation.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.structure.GenerationHelperAnnotation" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+  </dependency>
+  <dependency className="jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation_AnnotationLink" file="UnprocessedAnnotation_AnnotationLink.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
 </dependenciesRoot>
