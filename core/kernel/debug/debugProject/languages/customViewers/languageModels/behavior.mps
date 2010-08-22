@@ -68,7 +68,7 @@
     <property name="package" value="highLevel" />
     <link role="concept" targetNodeId="1.680105146889009728:0" resolveInfo="HighLevelCustomViewer" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="43370322128260022">
-      <property name="name" value="getValyeTypeCopy" />
+      <property name="name" value="getValueTypeCopy" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="43370322128260023" />
       <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="43370322128270481">
         <link role="concept:16" targetNodeId="2.1068431790189:3" resolveInfo="Type" />

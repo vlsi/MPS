@@ -13,21 +13,21 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.project.GlobalScope;
 
-public class typeof_HighLevelWatchableCreator_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-  public typeof_HighLevelWatchableCreator_InferenceRule() {
+public class typeof_WatchablesListCreator_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
+  public typeof_WatchablesListCreator_InferenceRule() {
   }
 
-  public void applyRule(final SNode highLevelWatchableCreator, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode watchablesListCreator, final TypeCheckingContext typeCheckingContext) {
     {
-      SNode _nodeToCheck_1029348928467 = highLevelWatchableCreator;
+      SNode _nodeToCheck_1029348928467 = watchablesListCreator;
       BaseIntentionProvider intentionProvider = null;
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:3883084c-f018-4330-aab0-6829350c4b17(jetbrains.mps.debug.customViewers.typesystem)", "43370322128303929", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:3883084c-f018-4330-aab0-6829350c4b17(jetbrains.mps.debug.customViewers.typesystem)", "43370322128293457", true), (SNode) new typeof_HighLevelWatchableCreator_InferenceRule.QuotationClass_qzkqie_a0a0a0().createNode(typeCheckingContext), _info_12389875345);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:3883084c-f018-4330-aab0-6829350c4b17(jetbrains.mps.debug.customViewers.typesystem)", "1842653058275013466", 0, intentionProvider);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:3883084c-f018-4330-aab0-6829350c4b17(jetbrains.mps.debug.customViewers.typesystem)", "1842653058275013463", true), (SNode) new typeof_WatchablesListCreator_InferenceRule.QuotationClass_e5m9au_a0a0a0().createNode(typeCheckingContext), _info_12389875345);
     }
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.debug.customViewers.structure.HighLevelWatchableCreator";
+    return "jetbrains.mps.debug.customViewers.structure.WatchablesListCreator";
   }
 
   public boolean isApplicable(SNode argument) {
@@ -38,8 +38,8 @@ public class typeof_HighLevelWatchableCreator_InferenceRule extends AbstractInfe
     return false;
   }
 
-  public static class QuotationClass_qzkqie_a0a0a0 {
-    public QuotationClass_qzkqie_a0a0a0() {
+  public static class QuotationClass_e5m9au_a0a0a0 {
+    public QuotationClass_e5m9au_a0a0a0() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
@@ -47,7 +47,7 @@ public class typeof_HighLevelWatchableCreator_InferenceRule extends AbstractInfe
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.debug.customViewers.structure.WatchableType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.debug.customViewers.structure.WatchableListType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }
@@ -59,7 +59,7 @@ public class typeof_HighLevelWatchableCreator_InferenceRule extends AbstractInfe
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.debug.customViewers.structure.WatchableType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.debug.customViewers.structure.WatchableListType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         result = quotedNode1_2;
       }

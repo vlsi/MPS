@@ -28,9 +28,9 @@ public class EvaluationUtils {
   }
 
   @NotNull
-  public static Value invokeStatic(@NotNull final ThreadReference threadReference, String className, String name, String jniSignature, Object... args) throws EvaluationException {
+  private static Value invokeStaticInternal(String className, String methodName, String jniSignature, @NotNull final ThreadReference threadReference, Object... args) throws EvaluationException {
     final ClassType referenceType = (ClassType) findClassType(className, threadReference.virtualMachine());
-    final Method method = findMethod(referenceType, name, jniSignature);
+    final Method method = findMethod(referenceType, methodName, jniSignature);
 
     final List<Value> argValues = MirrorUtil.getValues(threadReference, args);
 
@@ -51,7 +51,7 @@ public class EvaluationUtils {
   }
 
   @NotNull
-  public static Value invokeConstructor(@NotNull final ThreadReference threadReference, String className, String jniSignature, Object... args) throws EvaluationException {
+  private static Value invokeConstructorInternal(String className, String jniSignature, @NotNull final ThreadReference threadReference, Object... args) throws EvaluationException {
     // TODO duplication in code
     final ClassType referenceType = (ClassType) findClassType(className, threadReference.virtualMachine());
     final Method constructor = findConstructor(referenceType, jniSignature);
@@ -170,7 +170,7 @@ public class EvaluationUtils {
 
   @NotNull
   public static IValueProxy invokeStatic(String className, String name, String jniSignature, ThreadReference threadReference, Object... args) throws EvaluationException {
-    return MirrorUtil.getValueProxy(EvaluationUtils.invokeStatic(threadReference, className, name, jniSignature, args), threadReference);
+    return MirrorUtil.getValueProxy(EvaluationUtils.invokeStaticInternal(className, name, jniSignature, threadReference, args), threadReference);
   }
 
   @NotNull
@@ -180,7 +180,7 @@ public class EvaluationUtils {
 
   @NotNull
   public static IObjectValueProxy invokeConstructor(String className, String jniSignature, ThreadReference threadReference, Object... args) throws EvaluationException {
-    return (IObjectValueProxy) MirrorUtil.getValueProxy(EvaluationUtils.invokeConstructor(threadReference, className, jniSignature, args), threadReference);
+    return (IObjectValueProxy) MirrorUtil.getValueProxy(EvaluationUtils.invokeConstructorInternal(className, jniSignature, threadReference, args), threadReference);
   }
 
   public static IValueProxy getClassValue(String className, ThreadReference threadReference) throws InvalidEvaluatedExpressionException {

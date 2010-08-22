@@ -41,6 +41,18 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      InferenceRule_Runtime inferenceRule = new typeof_WatchablesListCreator_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new WatchableListIsAList_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new WatchableListIsAListOrWatchables_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
       SubtypingRule_Runtime subtypingRule = new supertypesOfArrayValueType_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }

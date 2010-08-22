@@ -10,7 +10,7 @@ public class HighLevelCustomViewer_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static SNode call_getValyeTypeCopy_43370322128260022(SNode thisNode) {
+  public static SNode call_getValueTypeCopy_43370322128260022(SNode thisNode) {
     return SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, "valueType", true));
   }
 }

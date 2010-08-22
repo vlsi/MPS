@@ -7,6 +7,7 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="774bf8a0-62e5-41e1-af63-f4812e60e48b(jetbrains.mps.baseLanguage.checkedDots)" />
+  <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
@@ -63,8 +64,9 @@
   <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
   <languageAspect modelUID="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debug.customViewers.structure)" version="0" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="1" />
+  <maxImportIndex value="2" />
   <import index="1" modelUID="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debug.customViewers.structure)" version="0" />
+  <import index="2" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="5117350825036256355">
     <property name="name:3" value="typeof_WatchableCreator" />
     <property name="package:3" value="lowLevel.types" />
@@ -419,6 +421,66 @@
     <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="43370322128303940">
       <property name="name:3" value="highLevelValue_ConceptFunctionParameter" />
       <link role="concept:3" targetNodeId="1.43370322128272301:0" resolveInfo="HighLevelValue_ConceptFunctionParameter" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule:3" id="1842653058274902924">
+    <property name="package:3" value="highLevel" />
+    <property name="name:3" value="WatchableListIsAListOrWatchables" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1842653058274902925">
+      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1842653058274918903">
+        <node role="expression:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="6113252630645067449">
+          <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6113252630645067450">
+            <link role="classifier:3" targetNodeId="2.~List" resolveInfo="List" />
+            <node role="parameter:3" type="jetbrains.mps.debug.customViewers.structure.WatchableType:0" id="6113252630645121106" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="1842653058274902926">
+      <property name="name:3" value="watchableListType" />
+      <link role="concept:3" targetNodeId="1.1842653058274900915:0" resolveInfo="WatchableListType" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule:3" id="1842653058275008950">
+    <property name="package:3" value="highLevel" />
+    <property name="name:3" value="WatchableListIsAList" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1842653058275008951">
+      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1842653058275008953">
+        <node role="expression:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1842653058275008955">
+          <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6113252630645067443">
+            <link role="classifier:3" targetNodeId="2.~List" resolveInfo="List" />
+            <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="6113252630645067447" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="1842653058275008952">
+      <property name="name:3" value="watchableListType" />
+      <link role="concept:3" targetNodeId="1.1842653058274900915:0" resolveInfo="WatchableListType" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1842653058275013459">
+    <property name="name:3" value="typeof_WatchablesListCreator" />
+    <property name="package:3" value="highLevel" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1842653058275013460">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="1842653058275013466">
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1842653058275013470">
+          <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1842653058275013471">
+            <node role="quotedNode:0" type="jetbrains.mps.debug.customViewers.structure.WatchableListType:0" id="1842653058275013474" />
+          </node>
+        </node>
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1842653058275013469">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="1842653058275013463">
+            <node role="term:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="1842653058275013465">
+              <link role="applicableNode:3" targetNodeId="1842653058275013461" resolveInfo="watchablesListCreator" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="1842653058275013461">
+      <property name="name:3" value="watchablesListCreator" />
+      <link role="concept:3" targetNodeId="1.1842653058274900914:0" resolveInfo="WatchablesListCreator" />
     </node>
   </node>
 </model>

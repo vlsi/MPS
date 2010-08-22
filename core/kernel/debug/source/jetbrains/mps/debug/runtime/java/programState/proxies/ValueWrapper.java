@@ -52,20 +52,14 @@ public abstract class ValueWrapper extends JavaValue implements IValue {
     return result;
   }
 
-  protected List<CustomJavaWatchable> getSubvaluesImpl() {
-    return getSubvaluesImpl(myValueProxy);
-  }
-
-  protected List<CustomJavaWatchable> getSubvaluesImpl(IValueProxy valueProxy) {
-    return Collections.EMPTY_LIST;
-  }
+  protected abstract List<CustomJavaWatchable> getSubvaluesImpl();
 
   @Override
   public boolean isStructure() {
     return true;
   }
 
-  protected ThreadReference getThreadReference() {
+  public ThreadReference getThreadReference() {
     return myThreadReference;
   }
 

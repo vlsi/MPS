@@ -520,7 +520,7 @@
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="43370322128194527">
       <property name="metaClass:0" value="aggregation" />
       <property name="role:0" value="canWrap" />
-      <property name="sourceCardinality:0" value="1" />
+      <property name="sourceCardinality:0" value="0..1" />
       <link role="target:0" targetNodeId="43370322128194523:0" resolveInfo="HighLevelCanWrapValue_ConceptFunction" />
     </node>
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="43370322128194610">
@@ -557,9 +557,7 @@
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="43370322128194519">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
-      <node role="target:0" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="43370322128194520">
-        <node role="elementType:7" type="jetbrains.mps.debug.customViewers.structure.WatchableType:0" id="43370322128194521" />
-      </node>
+      <node role="target:0" type="jetbrains.mps.debug.customViewers.structure.WatchableListType:0" id="1842653058274955270" />
     </node>
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="43370322128194522">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
@@ -606,6 +604,24 @@
     </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="43370322128285904">
       <property name="value:0" value="watchable" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1842653058274900914">
+    <property name="package:0" value="highLevel" />
+    <property name="name:0" value="WatchablesListCreator" />
+    <link role="extends:0" targetNodeId="2.1145552809883:3" resolveInfo="AbstractCreator" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1842653058274918917">
+      <property name="value:0" value="watchables array list" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1842653058274900915">
+    <property name="package:0" value="highLevel" />
+    <property name="name:0" value="WatchableListType" />
+    <link role="extends:0" targetNodeId="2.1068431790189:3" resolveInfo="Type" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1842653058274902919">
+      <property name="value:0" value="watchable list" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
     </node>
   </node>

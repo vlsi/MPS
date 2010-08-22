@@ -184,7 +184,7 @@ public class Transformator {
   private void replaceConstructors() {
     for (SNode newExpression : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.GenericNewExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "creator", true), "jetbrains.mps.baseLanguage.structure.ClassCreator") && TransformationUtil.isUnprocessed(it);
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "creator", true), "jetbrains.mps.baseLanguage.structure.ClassCreator") && TransformationUtil.isUnprocessed(it) && TransformationUtil.isUnprocessed(SLinkOperations.getTarget(it, "creator", true));
       }
     })) {
       SNode constructor = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(newExpression, "creator", true), "jetbrains.mps.baseLanguage.structure.ClassCreator"), "baseMethodDeclaration", false);
@@ -348,42 +348,46 @@ public class Transformator {
   }
 
   private boolean replaceLocalVariableDeclarations() {
+    boolean finished = true;
     for (SNode variableDeclaration : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it) && (SLinkOperations.getTarget(it, "initializer", true) != null);
       }
     })) {
-      return TransformationUtil.replaceAssignment(variableDeclaration, SLinkOperations.getTarget(variableDeclaration, "initializer", true));
+      finished &= TransformationUtil.replaceAssignment(variableDeclaration, SLinkOperations.getTarget(variableDeclaration, "initializer", true));
     }
-    return true;
+    return finished;
   }
 
   public boolean replaceForeachVariable() {
+    boolean finished = true;
     for (SNode foreachStatement : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.ForeachStatement", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it);
       }
     })) {
-      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(foreachStatement, "iterable", true)), new Transformator.QuotationClass_rxfadt_a1a0a0a0a31().createNode()) && !(TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(SLinkOperations.getTarget(foreachStatement, "variable", true), "type", true), new Transformator.QuotationClass_rxfadt_a1a0a0a0a0n().createNode()))) {
+      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(foreachStatement, "iterable", true)), new Transformator.QuotationClass_rxfadt_a1a0a0a1a31().createNode()) && !(TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(SLinkOperations.getTarget(foreachStatement, "variable", true), "type", true), new Transformator.QuotationClass_rxfadt_a1a0a0a0b0n().createNode()))) {
         TransformationUtil.replaceForEachStatement(foreachStatement);
-        return false;
+        finished = false;
       }
     }
-    return true;
+    return finished;
   }
 
   private boolean replaceAssignments() {
+    boolean finished = true;
     for (SNode assignment : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.AssignmentExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it);
       }
     })) {
-      return TransformationUtil.replaceAssignment(RulesFunctions_BaseLanguage.getVariableDeclaration(SLinkOperations.getTarget(assignment, "lValue", true)), SLinkOperations.getTarget(assignment, "rValue", true));
+      finished &= TransformationUtil.replaceAssignment(RulesFunctions_BaseLanguage.getVariableDeclaration(SLinkOperations.getTarget(assignment, "lValue", true)), SLinkOperations.getTarget(assignment, "rValue", true));
     }
-    return true;
+    return finished;
   }
 
   private boolean replaceNotExpressions() {
+    boolean finished = true;
     {
       SNode notExpression;
       Iterator<SNode> notExpression_iterator = ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.NotExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
@@ -397,15 +401,16 @@ public class Transformator {
         }
         notExpression = notExpression_iterator.next();
         if (TransformationUtil.isNotNullProxy(SLinkOperations.getTarget(notExpression, "expression", true))) {
-          SLinkOperations.setTarget(notExpression, "expression", new Transformator.QuotationClass_rxfadt_a0a0a0a0c0c0a0p().createNode(SLinkOperations.getTarget(notExpression, "expression", true)), true);
-          return false;
+          SLinkOperations.setTarget(notExpression, "expression", new Transformator.QuotationClass_rxfadt_a0a0a0a0c0c0b0p().createNode(SLinkOperations.getTarget(notExpression, "expression", true)), true);
+          finished = false;
         }
       }
     }
-    return true;
+    return finished;
   }
 
   private boolean replaceBinaryOperations() {
+    boolean finished = true;
     for (SNode binaryOperation : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.BinaryOperation", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it);
@@ -413,35 +418,37 @@ public class Transformator {
     })) {
       SNode leftType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(binaryOperation, "leftExpression", true));
       SNode rightType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(binaryOperation, "rightExpression", true));
-      if (SNodeOperations.isInstanceOf(binaryOperation, "jetbrains.mps.baseLanguage.structure.EqualsExpression") && TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, new Transformator.QuotationClass_rxfadt_a1a0a0c0a0q().createNode()) && TypeChecker.getInstance().getSubtypingManager().isSubtype(rightType, new Transformator.QuotationClass_rxfadt_a1a0a2a0a61().createNode())) {
-        SNodeOperations.replaceWithAnother(binaryOperation, new Transformator.QuotationClass_rxfadt_a0a0a0c0a0q().createNode(SLinkOperations.getTarget(binaryOperation, "leftExpression", true), SLinkOperations.getTarget(binaryOperation, "rightExpression", true)));
-        return false;
-      } else if (SNodeOperations.isInstanceOf(binaryOperation, "jetbrains.mps.baseLanguage.structure.NotEqualsExpression") && TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, new Transformator.QuotationClass_rxfadt_a1a0a0a2a0a61().createNode()) && TypeChecker.getInstance().getSubtypingManager().isSubtype(rightType, new Transformator.QuotationClass_rxfadt_a1a0a0c0a0q_0().createNode())) {
-        SNodeOperations.replaceWithAnother(binaryOperation, new Transformator.QuotationClass_rxfadt_a0a0a0a2a0a61().createNode(SLinkOperations.getTarget(binaryOperation, "leftExpression", true), SLinkOperations.getTarget(binaryOperation, "rightExpression", true)));
-        return false;
+      if (SNodeOperations.isInstanceOf(binaryOperation, "jetbrains.mps.baseLanguage.structure.EqualsExpression") && TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, new Transformator.QuotationClass_rxfadt_a1a0a0c0b0q().createNode()) && TypeChecker.getInstance().getSubtypingManager().isSubtype(rightType, new Transformator.QuotationClass_rxfadt_a1a0a2a1a61().createNode())) {
+        SNodeOperations.replaceWithAnother(binaryOperation, new Transformator.QuotationClass_rxfadt_a0a0a0c0b0q().createNode(SLinkOperations.getTarget(binaryOperation, "leftExpression", true), SLinkOperations.getTarget(binaryOperation, "rightExpression", true)));
+        finished = false;
+      } else if (SNodeOperations.isInstanceOf(binaryOperation, "jetbrains.mps.baseLanguage.structure.NotEqualsExpression") && TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, new Transformator.QuotationClass_rxfadt_a1a0a0a2a1a61().createNode()) && TypeChecker.getInstance().getSubtypingManager().isSubtype(rightType, new Transformator.QuotationClass_rxfadt_a1a0a0c0b0q_0().createNode())) {
+        SNodeOperations.replaceWithAnother(binaryOperation, new Transformator.QuotationClass_rxfadt_a0a0a0a2a1a61().createNode(SLinkOperations.getTarget(binaryOperation, "leftExpression", true), SLinkOperations.getTarget(binaryOperation, "rightExpression", true)));
+        finished = false;
       } else {
         if (TransformationUtil.isNotNullProxy(SLinkOperations.getTarget(binaryOperation, "leftExpression", true))) {
-          SLinkOperations.setTarget(binaryOperation, "leftExpression", new Transformator.QuotationClass_rxfadt_a0a0a0a0a2a0a61().createNode(binaryOperation.getChild(Transformator.LTYPE), SLinkOperations.getTarget(binaryOperation, "leftExpression", true)), true);
-          return false;
+          SLinkOperations.setTarget(binaryOperation, "leftExpression", new Transformator.QuotationClass_rxfadt_a0a0a0a0a2a1a61().createNode(binaryOperation.getChild(Transformator.LTYPE), SLinkOperations.getTarget(binaryOperation, "leftExpression", true)), true);
+          finished = false;
         }
         if (TransformationUtil.isNotNullProxy(SLinkOperations.getTarget(binaryOperation, "rightExpression", true))) {
-          SLinkOperations.setTarget(binaryOperation, "rightExpression", new Transformator.QuotationClass_rxfadt_a0a0a0b0a2a0a61().createNode(binaryOperation.getChild(Transformator.RTYPE), SLinkOperations.getTarget(binaryOperation, "rightExpression", true)), true);
-          return false;
+          SLinkOperations.setTarget(binaryOperation, "rightExpression", new Transformator.QuotationClass_rxfadt_a0a0a0b0a2a1a61().createNode(binaryOperation.getChild(Transformator.RTYPE), SLinkOperations.getTarget(binaryOperation, "rightExpression", true)), true);
+          finished = false;
         }
       }
     }
-    return true;
+    return finished;
   }
 
   private boolean replaceInternalStaticFieldReferences() {
+    boolean finished = true;
     for (SNode staticFieldReference : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguageInternal.structure.InternalStaticFieldReference", false, new String[]{}))) {
       TransformationUtil.replaceStaticFieldReference(staticFieldReference, SPropertyOperations.getString(staticFieldReference, "fieldName"), null, TransformationUtil.createStringLiteral(SPropertyOperations.getString(staticFieldReference, "fqClassName")));
-      return false;
+      finished = false;
     }
-    return true;
+    return finished;
   }
 
   private boolean replaceStaticFieldReferences() {
+    boolean finished = true;
     for (SNode staticFieldReference : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.StaticFieldReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it);
@@ -449,38 +456,41 @@ public class Transformator {
     })) {
       // TODO we really process all(?) static field references now, so might wanna move this code out of while cycle 
       TransformationUtil.replaceStaticFieldReference(staticFieldReference, SPropertyOperations.getString(SLinkOperations.getTarget(staticFieldReference, "variableDeclaration", false), "name"), SLinkOperations.getTarget(SLinkOperations.getTarget(staticFieldReference, "variableDeclaration", false), "type", true), TransformationUtil.createClassFqNameNode(myModel, SNodeOperations.cast(SLinkOperations.getTarget(staticFieldReference, "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept")));
-      return false;
+      finished = false;
     }
-    return true;
+    return finished;
   }
 
   private boolean replaceInternalPartialFieldReferences() {
+    boolean finished = true;
     for (SNode fieldReference : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it);
       }
     })) {
       TransformationUtil.replaceFieldReference(fieldReference, SLinkOperations.getTarget(fieldReference, "instance", true), SPropertyOperations.getString(fieldReference, "fieldName"), SLinkOperations.getTarget(fieldReference, "fieldType", true));
-      return false;
+      finished = false;
     }
-    return true;
+    return finished;
   }
 
   private boolean replaceFieldReferenceOperations() {
+    boolean finished = true;
     for (SNode fieldReferenceOperation : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it);
       }
     })) {
-      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.getAncestor(fieldReferenceOperation, "jetbrains.mps.baseLanguage.structure.DotExpression", false, false), "operand", true)), new Transformator.QuotationClass_rxfadt_a1a0a0a0u().createNode())) {
+      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.getAncestor(fieldReferenceOperation, "jetbrains.mps.baseLanguage.structure.DotExpression", false, false), "operand", true)), new Transformator.QuotationClass_rxfadt_a1a0a0b0u().createNode())) {
         TransformationUtil.replaceFieldReference(SNodeOperations.getParent(fieldReferenceOperation), SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(fieldReferenceOperation), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true), SPropertyOperations.getString(SLinkOperations.getTarget(fieldReferenceOperation, "fieldDeclaration", false), "name"), SLinkOperations.getTarget(SLinkOperations.getTarget(fieldReferenceOperation, "fieldDeclaration", false), "type", true));
-        return false;
+        finished = false;
       }
     }
-    return true;
+    return finished;
   }
 
   private boolean replaceInternalStaticMethodCalls() {
+    boolean finished = true;
     for (SNode staticMethodCall : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it);
@@ -491,12 +501,13 @@ public class Transformator {
           return SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(it), "jetbrains.mps.baseLanguage.structure.Type");
         }
       }), SLinkOperations.getTarget(staticMethodCall, "returnType", true)), SLinkOperations.getTarget(staticMethodCall, "returnType", true), SLinkOperations.getTargets(staticMethodCall, "actualArgument", true));
-      return false;
+      finished = false;
     }
-    return true;
+    return finished;
   }
 
   private boolean replaceStaticMethodCalls() {
+    boolean finished = true;
     for (SNode staticMethodCall : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.StaticMethodCall", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it);
@@ -504,12 +515,13 @@ public class Transformator {
     })) {
       // TODO what if we are inside of an inner class? 
       TransformationUtil.replaceStaticMethodCall(staticMethodCall, TransformationUtil.createClassFqNameNode(myModel, SLinkOperations.getTarget(staticMethodCall, "classConcept", false)), SPropertyOperations.getString(SLinkOperations.getTarget(staticMethodCall, "baseMethodDeclaration", false), "name"), TransformationUtil.getJniSignature(SLinkOperations.getTarget(staticMethodCall, "baseMethodDeclaration", false)), SLinkOperations.getTarget(SLinkOperations.getTarget(staticMethodCall, "baseMethodDeclaration", false), "returnType", true), SLinkOperations.getTargets(staticMethodCall, "actualArgument", true));
-      return false;
+      finished = false;
     }
-    return true;
+    return finished;
   }
 
   private boolean replaceInternalPartialInstanceMethodCalls() {
+    boolean finished = true;
     for (SNode methodCall : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it);
@@ -520,27 +532,28 @@ public class Transformator {
           return SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(it), "jetbrains.mps.baseLanguage.structure.Type");
         }
       }), SLinkOperations.getTarget(methodCall, "returnType", true)), SLinkOperations.getTarget(methodCall, "returnType", true), SLinkOperations.getTargets(methodCall, "actualArgument", true));
-      return false;
+      finished = false;
     }
-    return true;
+    return finished;
   }
 
   private boolean replaceInstanceMethodCalls() {
+    boolean finished = true;
     for (SNode methodCall : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return TransformationUtil.isUnprocessed(it);
       }
     })) {
       // TODO should we check for parameter types, like we did for static method calls? 
-      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.getAncestor(methodCall, "jetbrains.mps.baseLanguage.structure.DotExpression", false, false), "operand", true)), new Transformator.QuotationClass_rxfadt_a1a0b0a0y().createNode())) {
+      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.getAncestor(methodCall, "jetbrains.mps.baseLanguage.structure.DotExpression", false, false), "operand", true)), new Transformator.QuotationClass_rxfadt_a1a0b0b0y().createNode())) {
 
         SNode originalMethodDeclaration = SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false);
 
         TransformationUtil.replaceMethodCall(SNodeOperations.cast(SNodeOperations.getParent(methodCall), "jetbrains.mps.baseLanguage.structure.Expression"), SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(methodCall), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true), methodCall, SPropertyOperations.getString(originalMethodDeclaration, "name"), TransformationUtil.getJniSignature(originalMethodDeclaration), SLinkOperations.getTarget(originalMethodDeclaration, "returnType", true), SLinkOperations.getTargets(methodCall, "actualArgument", true));
-        return false;
+        finished = false;
       }
     }
-    return true;
+    return finished;
   }
 
   private void replaceInstanceofs() {
@@ -734,8 +747,8 @@ public class Transformator {
     }
   }
 
-  public static class QuotationClass_rxfadt_a1a0a0a0a0n {
-    public QuotationClass_rxfadt_a1a0a0a0a0n() {
+  public static class QuotationClass_rxfadt_a1a0a0a0b0n {
+    public QuotationClass_rxfadt_a1a0a0a0b0n() {
     }
 
     public SNode createNode() {
@@ -752,8 +765,8 @@ public class Transformator {
     }
   }
 
-  public static class QuotationClass_rxfadt_a1a0a0a0a31 {
-    public QuotationClass_rxfadt_a1a0a0a0a31() {
+  public static class QuotationClass_rxfadt_a1a0a0a1a31 {
+    public QuotationClass_rxfadt_a1a0a0a1a31() {
     }
 
     public SNode createNode() {
@@ -770,8 +783,8 @@ public class Transformator {
     }
   }
 
-  public static class QuotationClass_rxfadt_a0a0a0a0c0c0a0p {
-    public QuotationClass_rxfadt_a0a0a0a0c0c0a0p() {
+  public static class QuotationClass_rxfadt_a0a0a0a0c0c0b0p {
+    public QuotationClass_rxfadt_a0a0a0a0c0c0b0p() {
     }
 
     public SNode createNode(Object parameter_13) {
@@ -828,8 +841,8 @@ public class Transformator {
     }
   }
 
-  public static class QuotationClass_rxfadt_a0a0a0c0a0q {
-    public QuotationClass_rxfadt_a0a0a0c0a0q() {
+  public static class QuotationClass_rxfadt_a0a0a0c0b0q {
+    public QuotationClass_rxfadt_a0a0a0c0b0q() {
     }
 
     public SNode createNode(Object parameter_9, Object parameter_10) {
@@ -881,8 +894,8 @@ public class Transformator {
     }
   }
 
-  public static class QuotationClass_rxfadt_a1a0a2a0a61 {
-    public QuotationClass_rxfadt_a1a0a2a0a61() {
+  public static class QuotationClass_rxfadt_a1a0a2a1a61 {
+    public QuotationClass_rxfadt_a1a0a2a1a61() {
     }
 
     public SNode createNode() {
@@ -899,8 +912,8 @@ public class Transformator {
     }
   }
 
-  public static class QuotationClass_rxfadt_a1a0a0c0a0q {
-    public QuotationClass_rxfadt_a1a0a0c0a0q() {
+  public static class QuotationClass_rxfadt_a1a0a0c0b0q {
+    public QuotationClass_rxfadt_a1a0a0c0b0q() {
     }
 
     public SNode createNode() {
@@ -917,8 +930,8 @@ public class Transformator {
     }
   }
 
-  public static class QuotationClass_rxfadt_a0a0a0a2a0a61 {
-    public QuotationClass_rxfadt_a0a0a0a2a0a61() {
+  public static class QuotationClass_rxfadt_a0a0a0a2a1a61 {
+    public QuotationClass_rxfadt_a0a0a0a2a1a61() {
     }
 
     public SNode createNode(Object parameter_11, Object parameter_12) {
@@ -976,8 +989,8 @@ public class Transformator {
     }
   }
 
-  public static class QuotationClass_rxfadt_a1a0a0c0a0q_0 {
-    public QuotationClass_rxfadt_a1a0a0c0a0q_0() {
+  public static class QuotationClass_rxfadt_a1a0a0c0b0q_0 {
+    public QuotationClass_rxfadt_a1a0a0c0b0q_0() {
     }
 
     public SNode createNode() {
@@ -994,8 +1007,8 @@ public class Transformator {
     }
   }
 
-  public static class QuotationClass_rxfadt_a1a0a0a2a0a61 {
-    public QuotationClass_rxfadt_a1a0a0a2a0a61() {
+  public static class QuotationClass_rxfadt_a1a0a0a2a1a61 {
+    public QuotationClass_rxfadt_a1a0a0a2a1a61() {
     }
 
     public SNode createNode() {
@@ -1012,8 +1025,8 @@ public class Transformator {
     }
   }
 
-  public static class QuotationClass_rxfadt_a0a0a0a0a2a0a61 {
-    public QuotationClass_rxfadt_a0a0a0a0a2a0a61() {
+  public static class QuotationClass_rxfadt_a0a0a0a0a2a1a61 {
+    public QuotationClass_rxfadt_a0a0a0a0a2a1a61() {
     }
 
     public SNode createNode(Object parameter_16, Object parameter_17) {
@@ -1080,8 +1093,8 @@ public class Transformator {
     }
   }
 
-  public static class QuotationClass_rxfadt_a0a0a0b0a2a0a61 {
-    public QuotationClass_rxfadt_a0a0a0b0a2a0a61() {
+  public static class QuotationClass_rxfadt_a0a0a0b0a2a1a61 {
+    public QuotationClass_rxfadt_a0a0a0b0a2a1a61() {
     }
 
     public SNode createNode(Object parameter_16, Object parameter_17) {
@@ -1148,8 +1161,8 @@ public class Transformator {
     }
   }
 
-  public static class QuotationClass_rxfadt_a1a0a0a0u {
-    public QuotationClass_rxfadt_a1a0a0a0u() {
+  public static class QuotationClass_rxfadt_a1a0a0b0u {
+    public QuotationClass_rxfadt_a1a0a0b0u() {
     }
 
     public SNode createNode() {
@@ -1166,8 +1179,8 @@ public class Transformator {
     }
   }
 
-  public static class QuotationClass_rxfadt_a1a0b0a0y {
-    public QuotationClass_rxfadt_a1a0b0a0y() {
+  public static class QuotationClass_rxfadt_a1a0b0b0y {
+    public QuotationClass_rxfadt_a1a0b0b0y() {
     }
 
     public SNode createNode() {

@@ -73,4 +73,8 @@ public abstract class JavaValue extends ProxyForJava implements IValue {
   public String getClassFQName() {
     return myClassFQName;
   }
+
+  public ThreadReference getThreadReference() {
+    return myThreadReference;
+  }
 }

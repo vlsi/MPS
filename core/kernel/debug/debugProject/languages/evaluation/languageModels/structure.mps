@@ -171,6 +171,25 @@
     <property name="package:0" value="annotations" />
     <property name="name:0" value="UnprocessedAnnotation" />
     <link role="extends:0" targetNodeId="1707366700950402060" resolveInfo="GenerationHelperAnnotation" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1067996875388378646">
+      <property name="value:0" value="unprocessed" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="9146111288436274341">
+    <property name="package:0" value="annotations" />
+    <property name="name:0" value="DoNotTransformAnnotation" />
+    <link role="extends:0" targetNodeId="1707366700950402060" resolveInfo="GenerationHelperAnnotation" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1067996875388378644">
+      <property name="value:0" value="do not transform" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration:0" id="9146111288436274342">
+    <property name="package:0" value="annotations" />
+    <property name="role:0" value="doNotTransformAnnotation" />
+    <link role="source:0" targetNodeId="2v.1133920641626:0" resolveInfo="BaseConcept" />
+    <link role="target:0" targetNodeId="9146111288436274341" resolveInfo="DoNotTransformAnnotation" />
   </node>
 </model>
 

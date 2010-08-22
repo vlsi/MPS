@@ -610,5 +610,22 @@
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical:32" id="43370322128323848" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1842653058274900916">
+    <property name="package:32" value="highLevel" />
+    <link role="conceptDeclaration:32" targetNodeId="1.1842653058274900915:0" resolveInfo="WatchableListType" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty:32" id="1842653058274902920">
+      <link role="relationDeclaration:32" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1842653058274918911">
+    <property name="package:32" value="highLevel" />
+    <link role="conceptDeclaration:32" targetNodeId="1.1842653058274900914:0" resolveInfo="WatchablesListCreator" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1842653058274918913">
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="1842653058274918914" />
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty:32" id="1842653058274918915">
+        <link role="relationDeclaration:32" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
+      </node>
+    </node>
+  </node>
 </model>
 
