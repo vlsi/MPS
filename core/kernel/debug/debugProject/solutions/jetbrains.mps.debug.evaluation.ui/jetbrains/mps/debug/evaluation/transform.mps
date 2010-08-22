@@ -3375,22 +3375,22 @@
             </node>
             <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation:16" id="6312424735349214484">
               <node role="replacementNode:16" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="6312424735349214485">
-                <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2717152680784402786">
-                  <link role="baseMethodDeclaration:3" targetNodeId="82.~EvaluationUtils.box(jetbrains.mps.debug.evaluation.proxies.PrimitiveValueProxy,com.sun.jdi.ThreadReference):jetbrains.mps.debug.evaluation.proxies.IValueProxy" resolveInfo="box" />
+                <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7295371247045181711">
+                  <link role="baseMethodDeclaration:3" targetNodeId="82.~EvaluationUtils.box(jetbrains.mps.debug.evaluation.proxies.PrimitiveValueProxy,com.sun.jdi.ThreadReference):jetbrains.mps.debug.evaluation.proxies.IObjectValueProxy" resolveInfo="box" />
                   <link role="classConcept:3" targetNodeId="82.~EvaluationUtils" resolveInfo="EvaluationUtils" />
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="2717152680784402788">
-                    <node role="_attr_$attribute:3" type="jetbrains.mps.lang.quotation.structure.Antiquotation:0" id="2717152680784402794">
-                      <node role="expression:0" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="2717152680784402796">
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="7295371247045181712">
+                    <node role="_attr_$attribute:3" type="jetbrains.mps.lang.quotation.structure.Antiquotation:0" id="7295371247045181718">
+                      <node role="expression:0" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="7295371247045181720">
                         <link role="variableDeclaration:3" targetNodeId="6312424735349214478" resolveInfo="expression" />
                       </node>
                     </node>
                   </node>
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall:1" id="2717152680784402790">
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall:1" id="7295371247045181715">
                     <property name="methodName:1" value="getThreadReference" />
-                    <node role="returnType:1" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2717152680784402792">
+                    <node role="returnType:1" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7295371247045181716">
                       <link role="classifier:3" targetNodeId="13.~ThreadReference" resolveInfo="ThreadReference" />
                     </node>
-                    <node role="instance:1" type="jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression:1" id="2717152680784402793" />
+                    <node role="instance:1" type="jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression:1" id="7295371247045181717" />
                   </node>
                 </node>
               </node>
