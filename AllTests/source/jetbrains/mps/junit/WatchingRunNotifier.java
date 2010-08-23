@@ -38,16 +38,12 @@ public class WatchingRunNotifier extends DelegatingRunNotifier {
   @Override
   public void fireTestStarted(Description description) throws StoppedByUserException {
     super.fireTestStarted(description);
-    if (!description.isSuite()) {
-      beforeTest(description);
-    }
+    beforeTest(description);
   }
 
   @Override
   public void fireTestFinished(Description description) {
-    if (!description.isSuite()) {
-      afterTest(description);
-    }
+    afterTest(description);
     super.fireTestFinished(description);
   }
 
