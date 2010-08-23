@@ -8,6 +8,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite.SuiteClasses;
 
+import java.lang.reflect.Method;
+
 @SuiteClasses({jetbrains.mps.baseLanguage.closures.test.ClosureLiteralDataFlow_Test.class,
 jetbrains.mps.baseLanguage.closures.test.ClosureDataFlow_Test.class,
 jetbrains.mps.generator.test.ParallelPoolTest.class,
@@ -373,4 +375,10 @@ jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Distinct_Test.
 jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Union_Test.class})
 @RunWith(WatchingSuite.class)
 public class GlobalTestSuite extends TestSuite {
+  @BeforeClass
+  public static void make () throws Exception {
+    Class<?> cls = Class.forName("org.apache.tools.ant.launch.Launcher");
+    Method mth = cls.getDeclaredMethod("main", String[].class);
+    mth.invoke(null, (Object)new String[] {"-main", CompileMain.class.getCanonicalName(), "-buildfile", "AllTests/make_all_modules.xml"});
+  }
 }
