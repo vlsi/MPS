@@ -1,20 +1,12 @@
 import com.intellij.ide.IdeEventQueue;
 import jetbrains.mps.TestMain;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.junit.WatchingParameterized;
-import jetbrains.mps.logging.ILoggingHandler;
-import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.test.GenerationHelper;
-import org.apache.commons.logging.impl.Log4JLogger;
-import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.apache.log4j.varia.NullAppender;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import jetbrains.mps.test.ProjectTestHelper;
+import jetbrains.mps.test.ProjectTestHelper.Token;
+import org.junit.*;
+import org.junit.rules.TestName;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
 
@@ -34,7 +26,7 @@ import java.util.List;
 public class TestProject {
 
   @Parameters
-  public static List<String[]> projects () {
+  public static List<String[]> projectNames() {
     return Arrays.asList(new String[][]{
       // Bootstrap tests
       {"/core/baseLanguage/baseLanguage/baseLanguage.mpr"},
@@ -108,40 +100,68 @@ public class TestProject {
   }                                      
   
 
-  private static final GenerationHelper GENERATION_HELPER = new GenerationHelper();
+  private static ProjectTestHelper HELPER;
 
   @BeforeClass
-  public static void setUpEnvironment () {
-    GENERATION_HELPER.setUp();
-
-    IdeMain.setTestMode(TestMode.CORE_TEST);
-    TestMain.configureMPS();
+  public static void init() {
+    HELPER = ProjectTestHelper.getInstance();
   }
   
-  private final String project;
+  private final String projectName;
+  private MPSProject project;
+  private Token token;
 
-  public TestProject(String project) {
-    this.project = System.getProperty("mps.home")+project;
+  public TestProject(String projectName) {
+    this.projectName = System.getProperty("user.dir")+ projectName;
   }
-  
-  @Test
-  public void testProject () {
-    File pfile = new File(project);
 
-    final MPSProject prj = TestMain.loadProject(pfile);
+  @Rule
+  public TestName name = new TestName();
 
-    GENERATION_HELPER.generate(prj);
+  @Before                         
+  public void loadProject () throws Exception {
+    File pfile = new File(projectName);
+    this.project = TestMain.loadProject(pfile);
+    this.token = HELPER.getToken(project);
+  }
+
+  @After
+  public void disposeProject () {
+    HELPER.clean(token);
 
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
-        prj.dispose(false);
-
+        project.dispose(false);
         IdeEventQueue.getInstance().flushQueue();
         System.gc();
       }
     });
-
   }
-  
-  
+
+  @Test
+  public void generateProject () throws Exception {
+    HELPER.generate(token);
+    List<String> genErrors = HELPER.getGenerationErrors(token);
+    Assert.assertTrue("Generation errors:\n"+HELPER.formatErrors(genErrors),genErrors.isEmpty());
+  }
+
+  @Test
+  public void diffProject () throws Exception {
+    List<String> diffReport = HELPER.getDiffReport(token);
+    Assert.assertTrue("Difference:\n"+HELPER.formatErrors(diffReport),diffReport.isEmpty());
+  }
+
+  @Test
+  public void compileProject () throws Exception {
+    HELPER.compile(token);
+    List<String> compErrors = HELPER.getCompilationErrors(token);
+    Assert.assertTrue("Compilation errors:\n"+HELPER.formatErrors(compErrors),compErrors.isEmpty());
+  }
+
+  @Test
+  public void testProject () throws Exception {
+//    HELPER.generate(token);
+  }
+
+
 }

@@ -2,18 +2,17 @@ package jetbrains.mps.test;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.util.Computable;
+import jetbrains.mps.TestMain;
 import jetbrains.mps.compiler.CompilationResultAdapter;
 import jetbrains.mps.compiler.JavaCompiler;
-import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.generator.GenerationListener;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
-import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
+import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
-import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.make.dependencies.StronglyConnectedModules;
@@ -21,21 +20,17 @@ import jetbrains.mps.make.dependencies.StronglyConnectedModules.IModuleDecorator
 import jetbrains.mps.make.dependencies.StronglyConnectedModules.IModuleDecoratorBuilder;
 import jetbrains.mps.make.dependencies.graph.IVertex;
 
-import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.tester.DiffReporter;
 import jetbrains.mps.project.tester.TesterGenerationHandler;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.AbstractClassLoader;
 import jetbrains.mps.util.Pair;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.apache.log4j.ConsoleAppender;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.jetbrains.annotations.NotNull;
@@ -44,7 +39,6 @@ import org.jetbrains.annotations.NotNull;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.rmi.RemoteException;
 import java.util.*;
 
 /**
@@ -54,14 +48,98 @@ import java.util.*;
  * Time: 5:13:29 PM
  * To change this template use File | Settings | File Templates.
  */
-public class GenerationHelper {
+public class ProjectTestHelper {
 
+  private static ProjectTestHelper INSTANCE;
 
-  private static final Logger LOG = Logger.getLogger(GenerationHelper.class);
+  public static ProjectTestHelper getInstance () {
+    if (INSTANCE == null) {
+      INSTANCE = new ProjectTestHelper();
+    }
+    return INSTANCE;
+  }
+
+  /**
+   * An opaque token to represent gneration state.
+   */
+  public static abstract class Token {
+  }
+
+  // Public interface
+
+  public Token getToken (MPSProject prj) throws Exception {
+    return new PrivToken (prj);
+  }
+
+  public void generate (Token tok) {
+    ((PrivToken)tok).generate();
+  }
+
+  public void compile (Token tok) {
+    doCompile();
+  }
+  
+  public void clean(Token tok) {
+    cleanUp();
+  }
+
+  public List<String> getGenerationErrors(Token tok) {
+    return myMessageHandler.getGenerationErrors();
+  }
+
+  public List<String> getDiffReport (Token tok) {
+    return doCreateDiff();
+  }
+
+  public List<String> getCompilationErrors (Token tok) {
+    List<String> res = new ArrayList<String> ();
+    for (CompilationResult r : myCompilationResult) {
+      if (r.getErrors() != null && r.getErrors().length > 0) {
+        StringBuilder sb = new StringBuilder();
+        for (CategorizedProblem p : r.getErrors()) {
+          sb.append(new String(r.getCompilationUnit().getFileName()));
+          sb.append(" (");
+          sb.append(p.getSourceLineNumber());
+          sb.append("): ");
+          sb.append(p.getMessage());
+          sb.append("\n");
+        }
+        res.add (sb.toString());
+      }
+    }
+    return res;
+  }
+
+  public String formatErrors (List<String> errors) {
+    StringBuffer sb = new StringBuffer();
+    String sep = "";
+    for (String er: errors) {
+      sb.append(sep).append(er);
+      sep = "\n";
+    }
+    return sb.toString();
+  }
+
+  // Private
+
+  private class PrivToken extends Token{
+    private final MPSProject project;
+
+    public PrivToken(MPSProject project) {
+      this.project = project;
+    }
+
+    public void generate() {
+      ProjectTestHelper.this.generate(project);
+    }
+  }
+
+  private static final Logger LOG = Logger.getLogger(ProjectTestHelper.class);
 
   protected final MyMessageHandler myMessageHandler = new MyMessageHandler();
+  protected final List<CompilationResult> myCompilationResult = new ArrayList<CompilationResult>();;
 
-    private final TesterGenerationHandler myGenerationHandler = new TesterGenerationHandler(false, true) {
+  private final TesterGenerationHandler myGenerationHandler = new TesterGenerationHandler(false, true) {
     protected JavaCompiler createJavaCompiler() {
       return new JavaCompiler() {
         public ClassLoader getClassLoader(ClassLoader parent) {
@@ -74,16 +152,23 @@ public class GenerationHelper {
 
     }
   };
+
   private boolean myTestFailed;
 
-  public void setUp () {
+  private ProjectTestHelper() {
+    init();
+  }
+
+  private void init() {
     BasicConfigurator.configure();
     Logger.getRootLogger().setLevel(Level.FATAL);
     jetbrains.mps.logging.Logger.addLoggingHandler(new LoggingHandlerAdapter());
+
+    IdeMain.setTestMode(TestMode.CORE_TEST);
+    TestMain.configureMPS();
   }
 
-
-  public void generate(MPSProject project) {
+  private void generate(MPSProject project) {
     GeneratorManager gm = project.getProject().getComponent(GeneratorManager.class);
 
     List<Cycle> order = computeGenerationOrder(project);
@@ -91,67 +176,33 @@ public class GenerationHelper {
     for (Cycle cycle : order) {
       generateModulesCycle(gm, cycle);
     }
-
-
   }
 
   protected void generateModulesCycle(final GeneratorManager gm, final Cycle cycle) {
+    doGenerate(gm, cycle);
 
-    // do generate
-    cycle.generate(gm, myGenerationHandler, myMessageHandler);
+    if (true) {
+      return;
+    }
 
     // calculate diff
-    List<String> diffReports;
-    boolean generationOk = myMessageHandler.getGenerationErrors().isEmpty();
-    if (generationOk &&
-      true //Boolean.parseBoolean(myWhatToDo.getProperty(TestGenerationOnTeamcity.SHOW_DIFF)
-      )
-    {
-      diffReports = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
-        public List<String> compute() {
-          return DiffReporter.createDiffReports(myGenerationHandler);
-        }
-      });
-    } else {
-      diffReports = new ArrayList<String>();
-    }
-    final List<SModel> outputModels = new ArrayList<SModel>();
-    outputModels.addAll(myGenerationHandler.getOutputModels());
+    List<String> diffReports = doCreateDiff();
 
     // compile
-    final List<CompilationResult> compilationResult = new ArrayList<CompilationResult>();
-    if (generationOk &&
-      true //isCompileSet()
-      ) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          CompilationResultAdapter listener = new CompilationResultAdapter() {
-            public void onCompilationResult(CompilationResult r) {
-              compilationResult.add(r);
-            }
-          };
-          myGenerationHandler.compile(ITaskProgressHelper.EMPTY, listener);
-        }
-      });
-    }
+    doCompile();
 
-    boolean compilatonOk = true;
-    for (CompilationResult r : compilationResult) {
-      if (r.hasErrors()) {
-        compilatonOk = false;
-        break;
-      }
-    }
+    final List<CompilationResult> compilationResult = myCompilationResult;
 
     // create test result report
     StringBuffer sb = createDetailedReport(compilationResult, diffReports);
+
+
     myMessageHandler.clean();
     if (sb.length() > 0) {
       myTestFailed = true;
       System.out.append("Errors During Generation Testing"+sb);
       System.out.println("");
     }
-    myMessageHandler.clean();
 
     //  myGenerationHandler.saveGeneratedFilesOnDisk();
 
@@ -159,11 +210,46 @@ public class GenerationHelper {
 //    if (isInvokeTestsSet() && ((ModelCycle) cycle).isUserModel()) {
 //      runTests(cycle.getClassPath(), myGenerationHandler, outputModels);
 //    }
-
-    myGenerationHandler.clean();
+    cleanUp();
   }
 
+  private void cleanUp() {
+    myMessageHandler.clean();
 
+    myGenerationHandler.clean();
+
+    myCompilationResult.clear();
+  }
+
+  private List<String> doCreateDiff() {
+    List<String> diffReports;
+    diffReports = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
+      public List<String> compute() {
+        return DiffReporter.createDiffReports(myGenerationHandler);
+      }
+    });
+    return diffReports;
+  }
+
+  private void doCompile() {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        CompilationResultAdapter listener = new CompilationResultAdapter() {
+          public void onCompilationResult(CompilationResult r) {
+            myCompilationResult.add(r);
+          }
+        };
+        myGenerationHandler.compile(ITaskProgressHelper.EMPTY, listener);
+      }
+    });
+  }
+
+  private boolean doGenerate(GeneratorManager gm, Cycle cycle) {
+    // do generate
+    cycle.generate(gm, myGenerationHandler, myMessageHandler);
+    boolean generationOk = myMessageHandler.getGenerationErrors().isEmpty();
+    return generationOk;
+  }
 
   private StringBuffer createDetailedReport(@NotNull List<CompilationResult> compilationResult, @NotNull List<String> diffReports) {
     StringBuffer sb = new StringBuffer();

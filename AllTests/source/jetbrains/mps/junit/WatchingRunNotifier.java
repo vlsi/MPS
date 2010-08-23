@@ -80,14 +80,13 @@ public class WatchingRunNotifier extends DelegatingRunNotifier {
   }
 
   private void afterTest (Description desc) {
-    Logger.getRootLogger().setLevel(oldLevel);
-
     if (!testsToIgnore.containsKey(desc) && newOut.getBytesCount()+newErr.getBytesCount()+app.getEventsCount() > 0) {
       Failure fail = new Failure(desc, new UncleanTestExecutionException(newOut.getBytesCount(), newErr.getBytesCount(), app.getEventsCount()));
       super.fireTestFailure(fail);
     }
 
     Logger.getRootLogger().removeAppender(app);
+    Logger.getRootLogger().setLevel(oldLevel);
 
     System.setOut(oldOut);
     System.setErr(oldErr);
