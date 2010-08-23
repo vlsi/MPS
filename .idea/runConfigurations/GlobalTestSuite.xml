@@ -19,7 +19,7 @@
     <RunnerSettings RunnerId="Run" />
     <ConfigurationWrapper RunnerId="Run" />
     <method>
-      <option name="AntTarget" enabled="true" antfile="file://$PROJECT_DIR$/AllTests/make_all_modules.xml" target="make" />
+      <option name="AntTarget" enabled="false" antfile="file://$PROJECT_DIR$/AllTests/make_all_modules.xml" target="make" />
     </method>
   </configuration>
 </component>

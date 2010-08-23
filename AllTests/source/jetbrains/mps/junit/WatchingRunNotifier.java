@@ -21,6 +21,8 @@ import java.util.Map;
 public class WatchingRunNotifier extends DelegatingRunNotifier {
   private static final Level WATCH_LEVEL = Level.ERROR;
 
+  private static final com.intellij.openapi.diagnostic.Logger IGNORED_LOG = com.intellij.openapi.diagnostic.Logger.getInstance("#com.intellij.openapi.application.impl.LaterInvocator");
+
   private Level oldLevel;
   private PrintStream oldOut;
   private PrintStream oldErr;
@@ -36,12 +38,16 @@ public class WatchingRunNotifier extends DelegatingRunNotifier {
   @Override
   public void fireTestStarted(Description description) throws StoppedByUserException {
     super.fireTestStarted(description);
-    beforeTest(description);
+    if (!description.isSuite()) {
+      beforeTest(description);
+    }
   }
 
   @Override
   public void fireTestFinished(Description description) {
-    afterTest(description);
+    if (!description.isSuite()) {
+      afterTest(description);
+    }
     super.fireTestFinished(description);
   }
 
@@ -64,12 +70,13 @@ public class WatchingRunNotifier extends DelegatingRunNotifier {
   }
 
   private void beforeTest (Description desc) {
-
     this.oldLevel = Logger.getRootLogger().getLevel();
     Logger.getRootLogger().setLevel(WATCH_LEVEL);
 
     oldOut = System.out;
     oldErr = System.err;
+    oldOut.flush();
+    oldErr.flush();
     newOut = new ByteCountingPrintStream(oldOut);
     newErr = new ByteCountingPrintStream(oldErr);
     System.setOut(newOut);
@@ -77,16 +84,18 @@ public class WatchingRunNotifier extends DelegatingRunNotifier {
 
     app = new CountingAppender();
     Logger.getRootLogger().addAppender(app);
+    
+    IGNORED_LOG.setLevel(Level.FATAL);
   }
 
   private void afterTest (Description desc) {
-    Logger.getRootLogger().removeAppender(app);
-    Logger.getRootLogger().setLevel(oldLevel);
-
     newOut.flush();
     newErr.flush();
     System.setOut(oldOut);
     System.setErr(oldErr);
+
+    Logger.getRootLogger().removeAppender(app);
+    Logger.getRootLogger().setLevel(oldLevel);
 
     if (!testsToIgnore.containsKey(desc) && newOut.getBytesCount()+newErr.getBytesCount()+app.getEventsCount() > 0) {
       Failure fail = new Failure(desc, new UncleanTestExecutionException(newOut.getBytesCount(), newErr.getBytesCount(), app.getEventsCount()));
