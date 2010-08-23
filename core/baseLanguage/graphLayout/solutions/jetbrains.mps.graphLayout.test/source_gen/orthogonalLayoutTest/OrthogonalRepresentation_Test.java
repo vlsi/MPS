@@ -15,6 +15,7 @@ import java.util.HashMap;
 import jetbrains.mps.graphLayout.flowOrthogonalLayout.OrthogonalRepresentation;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import junit.framework.Assert;
+import jetbrains.mps.graphLayout.util.Direction2D;
 import jetbrains.mps.graphLayout.graph.Node;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -65,7 +66,7 @@ public class OrthogonalRepresentation_Test extends TestCase {
       Assert.assertTrue(MapSequence.fromMap(bends).get(bend) == 0);
     }
     System.out.println(embeddedGraph);
-    Map<Dart, Integer> directions = OrthogonalRepresentation.getDirections(embeddedGraph, angles);
+    Map<Dart, Direction2D> directions = OrthogonalRepresentation.getDirections(embeddedGraph, angles);
     for (final Node node : ListSequence.fromList(graph.getNodes())) {
       System.out.println("node: " + node);
       for (Dart dart : SetSequence.fromSet(MapSequence.fromMap(bends).keySet()).where(new IWhereFilter<Dart>() {
@@ -73,7 +74,7 @@ public class OrthogonalRepresentation_Test extends TestCase {
           return it.getSource() == node;
         }
       })) {
-        System.out.println("  -> dart " + dart + ": " + MapSequence.fromMap(angles).get(dart) + ", direction: " + getDirection(MapSequence.fromMap(directions).get(dart)));
+        System.out.println("  -> dart " + dart + ": " + MapSequence.fromMap(angles).get(dart) + ", direction: " + MapSequence.fromMap(directions).get(dart));
       }
     }
     EdgeLengthComputer placer = new EdgeLengthComputer();
@@ -84,21 +85,5 @@ public class OrthogonalRepresentation_Test extends TestCase {
     for (Edge edge : ListSequence.fromList(embeddedGraph.getGraph().getEdges())) {
       Assert.assertTrue(embeddedGraph.getAdjacentFaces(edge) != null);
     }
-  }
-
-  private String getDirection(int direction) {
-    if (direction == 0) {
-      return "right";
-    }
-    if (direction == 1) {
-      return "down";
-    }
-    if (direction == 2) {
-      return "left";
-    }
-    if (direction == 3) {
-      return "up";
-    }
-    return "error";
   }
 }
