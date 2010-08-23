@@ -50,6 +50,14 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.collections.plugin.CustomViewersDescriptor" file="CustomViewersDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.plugin.ListViewer_WrapperFactory" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.plugin.MapEntryViewer_WrapperFactory" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.plugin.MapViewer_WrapperFactory" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.plugin.SetViewer_WrapperFactory" />
+    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.ValueWrapperFactory" />
+    <classNode extendsClassName="jetbrains.mps.debug.runtime.java.programState.proxies.CustomViewersDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.plugin.ListViewer_WrapperFactory" file="ListViewer_WrapperFactory.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.RuntimeException" />

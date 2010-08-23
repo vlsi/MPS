@@ -1437,6 +1437,25 @@
             </node>
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3720097505854413239">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3720097505854413241">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3720097505854413240">
+              <link role="variableDeclaration:3" targetNodeId="7785669630792592661" resolveInfo="result" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3720097505854413798">
+              <link role="baseMethodDeclaration:3" targetNodeId="8.~List.add(java.lang.Object):boolean" resolveInfo="add" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3720097505854413799">
+                <node role="creator:3" type="jetbrains.mps.debug.customViewers.structure.HighLevelWatchableCreator:0" id="3720097505854413801">
+                  <link role="watchable:0" targetNodeId="4489446533979526102" resolveInfo="size" />
+                  <node role="value:0" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3720097505854413803">
+                    <link role="variableDeclaration:3" targetNodeId="7785669630792592653" resolveInfo="size" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="3720097505854399044" />
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="7785669630792592675">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7785669630792592676">
             <property name="name:3" value="entries" />

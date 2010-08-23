@@ -92,17 +92,31 @@
       <node role="conditionFunction:2" type="jetbrains.mps.lang.generator.structure.CreateRootRule_Condition:2" id="2844414625304365060">
         <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2844414625304365061">
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2844414625304365733">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2844414625304365745">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2844414625304365740">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2844414625304365735">
-                  <node role="operand:3" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext:0" id="2844414625304365734" />
-                  <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel:0" id="2844414625304365739" />
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.OrExpression:3" id="2051223608077863880">
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2844414625304365745">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2844414625304365740">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2844414625304365735">
+                    <node role="operand:3" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext:0" id="2844414625304365734" />
+                    <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel:0" id="2844414625304365739" />
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Model_RootsOperation:16" id="2844414625304365744">
+                    <link role="concept:16" targetNodeId="1.5117350825036256331:0" resolveInfo="CustomViewer" />
+                  </node>
                 </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Model_RootsOperation:16" id="2844414625304365744">
-                  <link role="concept:16" targetNodeId="1.5117350825036256331:0" resolveInfo="CustomViewer" />
-                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation:7" id="2844414625304365749" />
               </node>
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation:7" id="2844414625304365749" />
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2051223608077863883">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2051223608077863884">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2051223608077863885">
+                    <node role="operand:3" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext:0" id="2051223608077863886" />
+                    <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel:0" id="2051223608077863887" />
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Model_RootsOperation:16" id="2051223608077863888">
+                    <link role="concept:16" targetNodeId="1.680105146889009728:0" resolveInfo="HighLevelCustomViewer" />
+                  </node>
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation:7" id="2051223608077863889" />
+              </node>
             </node>
           </node>
         </node>
