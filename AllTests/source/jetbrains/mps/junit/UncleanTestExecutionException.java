@@ -7,9 +7,9 @@ package jetbrains.mps.junit;
  * Time: 2:33:37 PM
  * To change this template use File | Settings | File Templates.
  */
-public class UncleanTestExecutionError extends Exception {
+public class UncleanTestExecutionException extends Exception {
 
-  public UncleanTestExecutionError (int out, int err, int events) {
+  public UncleanTestExecutionException(int out, int err, int events) {
     super (
       (out > 0 ? out + " bytes in output " : "") +
       (err > 0 ? err + " bytes in error " : "") +

@@ -92,6 +92,7 @@
     <orderEntry type="module" module-name="YPath" />
     <orderEntry type="module" module-name="YPath-runtime" />
     <orderEntry type="module" module-name="YPath-solutions" />
+    <orderEntry type="library" name="Eclipse-compiler" level="project" />
   </component>
 </module>
 

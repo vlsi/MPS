@@ -1,9 +1,12 @@
 import jetbrains.mps.junit.WatchingSuite;
 import junit.framework.TestSuite;
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite.SuiteClasses;
-
 
 @SuiteClasses({jetbrains.mps.baseLanguage.closures.test.ClosureLiteralDataFlow_Test.class,
 jetbrains.mps.baseLanguage.closures.test.ClosureDataFlow_Test.class,
@@ -44,6 +47,14 @@ jetbrains.mps.internalCollections.test.closures.Find_Test.class,
 jetbrains.mps.baseLanguage.tuples.test.GenericNamedTuples_Test.class,
 jetbrains.mps.baseLanguage.tuples.test.NamedTuples_Test.class,
 jetbrains.mps.baseLanguage.tuples.test.IndexedTuples_Test.class,
+jetbrains.mps.lang.pattern.test.Patternv3_Test.class,
+jetbrains.mps.lang.pattern.test.PatternOrPattern_Test.class,
+jetbrains.mps.lang.pattern.test.Patternv2_Test.class,
+jetbrains.mps.lang.pattern.test.PatternOrPattern2_Test.class,
+jetbrains.mps.lang.pattern.test.PatternMultipleOr_Test.class,
+jetbrains.mps.lang.pattern.test.Patternv1_Test.class,
+jetbrains.mps.lang.pattern.test.PatternListPattern_Test.class,
+jetbrains.mps.lang.pattern.test.PatternProperty_Test.class,
 jetbrains.mps.runtime.BundleTest.class,
 jetbrains.mps.runtime.BundleLoadingTest.class,
 jetbrains.mps.workbench.dialogs.project.components.parts.lists.SortedListTest.class,
@@ -362,6 +373,4 @@ jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Distinct_Test.
 jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Union_Test.class})
 @RunWith(WatchingSuite.class)
 public class GlobalTestSuite extends TestSuite {
-
-
 }
