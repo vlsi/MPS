@@ -90,19 +90,25 @@
   <root nodeId="1213104847098">
     <nodeInfo nodeId="7376433222636453259" fileName="ForEachVariableReference_variable_ReferentConstraint.java" startLine="28" startPosition="132" endLine="29" endPosition="51" />
     <nodeInfo nodeId="1213104847102" fileName="ForEachVariableReference_variable_ReferentConstraint.java" startLine="29" startPosition="51" endLine="30" endPosition="170" />
+    <nodeInfo nodeId="1213104847110" fileName="ForEachVariableReference_variable_ReferentConstraint.java" startLine="30" startPosition="170" endLine="31" endPosition="62" />
     <scopeInfo nodeId="1213104847101" fileName="ForEachVariableReference_variable_ReferentConstraint.java" startLine="28" startPosition="132" endLine="31" endPosition="62">
       <varInfo nodeId="1213104847103" varName="forEachStatements" />
     </scopeInfo>
   </root>
   <root nodeId="1213107434871">
+    <nodeInfo nodeId="1213107434874" fileName="MapOperation_Constraints.java" startLine="13" startPosition="114" endLine="14" endPosition="481" />
     <scopeInfo nodeId="1213107434873" fileName="MapOperation_Constraints.java" startLine="13" startPosition="114" endLine="14" endPosition="481" />
   </root>
   <root nodeId="1213107438012">
+    <nodeInfo nodeId="1213107438015" fileName="SmartClosureParameterDeclaration_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="130" />
     <scopeInfo nodeId="1213107438014" fileName="SmartClosureParameterDeclaration_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="130" />
   </root>
   <root nodeId="1224668254828">
     <nodeInfo nodeId="8439929903877326522" fileName="SequenceOperation_Constraints.java" startLine="20" startPosition="144" endLine="21" endPosition="162" />
     <nodeInfo nodeId="8439929903877360381" fileName="SequenceOperation_Constraints.java" startLine="22" startPosition="27" endLine="23" endPosition="67" />
+    <nodeInfo nodeId="6801639034384668241" fileName="SequenceOperation_Constraints.java" startLine="25" startPosition="43" endLine="26" endPosition="91" />
+    <nodeInfo nodeId="6801639034384669035" fileName="SequenceOperation_Constraints.java" startLine="30" startPosition="45" endLine="31" endPosition="91" />
+    <nodeInfo nodeId="6801639034384669046" fileName="SequenceOperation_Constraints.java" startLine="34" startPosition="43" endLine="35" endPosition="154" />
     <nodeInfo nodeId="6801639034384669020" fileName="SequenceOperation_Constraints.java" startLine="38" startPosition="102" endLine="39" endPosition="26" />
     <nodeInfo nodeId="8439929903877326561" fileName="SequenceOperation_Constraints.java" startLine="43" startPosition="7" endLine="44" endPosition="19" />
     <nodeInfo nodeId="6801639034384669190" fileName="SequenceOperation_Constraints.java" startLine="45" startPosition="12" endLine="46" endPosition="488" />
@@ -143,56 +149,71 @@
     <unitInfo nodeId="6801639034384669044" fileName="SequenceOperation_Constraints.java" startLine="33" startPosition="24" endLine="37" endPosition="11" unitName="jetbrains.mps.baseLanguage.collections.constraints.SequenceOperation_Constraints$3" />
   </root>
   <root nodeId="1226566892900">
+    <nodeInfo nodeId="1226566896647" fileName="AbstractSetOperation_Constraints.java" startLine="13" startPosition="114" endLine="14" endPosition="481" />
     <scopeInfo nodeId="1226566895537" fileName="AbstractSetOperation_Constraints.java" startLine="13" startPosition="114" endLine="14" endPosition="481" />
   </root>
   <root nodeId="1237470769048">
+    <nodeInfo nodeId="1237470785140" fileName="AbstractIteratorOperation_Constraints.java" startLine="13" startPosition="114" endLine="14" endPosition="486" />
     <scopeInfo nodeId="1237470771519" fileName="AbstractIteratorOperation_Constraints.java" startLine="13" startPosition="114" endLine="14" endPosition="486" />
   </root>
   <root nodeId="1237497090779">
+    <nodeInfo nodeId="1237497095197" fileName="AbstractEnumeratorOperation_Constraints.java" startLine="13" startPosition="114" endLine="14" endPosition="488" />
     <scopeInfo nodeId="1237497093466" fileName="AbstractEnumeratorOperation_Constraints.java" startLine="13" startPosition="114" endLine="14" endPosition="488" />
   </root>
   <root nodeId="1237783213865">
+    <nodeInfo nodeId="1237783253668" fileName="AllConstant_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="132" />
     <scopeInfo nodeId="1237783220430" fileName="AllConstant_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="132" />
   </root>
   <root nodeId="1240151875003">
+    <nodeInfo nodeId="1240151937789" fileName="RemoveOperation_Constraints.java" startLine="13" startPosition="114" endLine="14" endPosition="381" />
     <scopeInfo nodeId="1240151878201" fileName="RemoveOperation_Constraints.java" startLine="13" startPosition="114" endLine="14" endPosition="381" />
   </root>
   <root nodeId="1240239329878">
+    <nodeInfo nodeId="1240239336250" fileName="SortedMapOperation_Constraints.java" startLine="13" startPosition="114" endLine="14" endPosition="373" />
     <scopeInfo nodeId="1240239331696" fileName="SortedMapOperation_Constraints.java" startLine="13" startPosition="114" endLine="14" endPosition="373" />
   </root>
   <root nodeId="1240251188203">
+    <nodeInfo nodeId="1240251202707" fileName="SortedSetOperation_Constraints.java" startLine="13" startPosition="114" endLine="14" endPosition="373" />
     <scopeInfo nodeId="1240251191245" fileName="SortedSetOperation_Constraints.java" startLine="13" startPosition="114" endLine="14" endPosition="373" />
   </root>
   <root nodeId="1240326110907">
     <nodeInfo nodeId="1240326211880" fileName="AsSequenceOperation_Constraints.java" startLine="14" startPosition="114" endLine="15" endPosition="360" />
+    <nodeInfo nodeId="1240326217612" fileName="AsSequenceOperation_Constraints.java" startLine="15" startPosition="360" endLine="16" endPosition="33" />
     <scopeInfo nodeId="1240326113679" fileName="AsSequenceOperation_Constraints.java" startLine="14" startPosition="114" endLine="16" endPosition="33">
       <varInfo nodeId="1240326211881" varName="operandType" />
     </scopeInfo>
   </root>
   <root nodeId="1240687924442">
     <nodeInfo nodeId="1240688267133" fileName="JoinOperation_Constraints.java" startLine="14" startPosition="114" endLine="15" endPosition="368" />
+    <nodeInfo nodeId="1240688319881" fileName="JoinOperation_Constraints.java" startLine="15" startPosition="368" endLine="16" endPosition="230" />
     <scopeInfo nodeId="1240687926899" fileName="JoinOperation_Constraints.java" startLine="14" startPosition="114" endLine="16" endPosition="230">
       <varInfo nodeId="1240688267134" varName="type" />
     </scopeInfo>
   </root>
   <root nodeId="1240824770651">
+    <nodeInfo nodeId="1240824807619" fileName="AbstractMappingOperation_Constraints.java" startLine="13" startPosition="114" endLine="14" endPosition="371" />
     <scopeInfo nodeId="1240824773189" fileName="AbstractMappingOperation_Constraints.java" startLine="13" startPosition="114" endLine="14" endPosition="371" />
   </root>
   <root nodeId="1241447264880">
     <nodeInfo nodeId="1241447267829" fileName="HashMapCreator_Constraints.java" startLine="13" startPosition="114" endLine="14" endPosition="295" />
+    <nodeInfo nodeId="1241447267841" fileName="HashMapCreator_Constraints.java" startLine="14" startPosition="295" endLine="15" endPosition="172" />
     <scopeInfo nodeId="1241447266747" fileName="HashMapCreator_Constraints.java" startLine="13" startPosition="114" endLine="15" endPosition="172">
       <varInfo nodeId="1241447267830" varName="dtype" />
     </scopeInfo>
   </root>
   <root nodeId="1241447282324">
     <nodeInfo nodeId="1241447284982" fileName="TreeMapCreator_Constraints.java" startLine="13" startPosition="114" endLine="14" endPosition="295" />
+    <nodeInfo nodeId="1241447284993" fileName="TreeMapCreator_Constraints.java" startLine="14" startPosition="295" endLine="15" endPosition="178" />
     <scopeInfo nodeId="1241447284212" fileName="TreeMapCreator_Constraints.java" startLine="13" startPosition="114" endLine="15" endPosition="178">
       <varInfo nodeId="1241447284983" varName="dtype" />
     </scopeInfo>
   </root>
   <root nodeId="1331913329176292217">
+    <nodeInfo nodeId="1331913329176292787" fileName="CustomContainerCreator_alias_PropertyConstraint.java" startLine="25" startPosition="80" endLine="26" endPosition="113" />
     <nodeInfo nodeId="9034802358628427418" fileName="CustomContainerCreator_containerDeclaration_ReferentConstraint.java" startLine="33" startPosition="132" endLine="34" endPosition="116" />
+    <nodeInfo nodeId="9034802358628519924" fileName="CustomContainerCreator_containerDeclaration_ReferentConstraint.java" startLine="37" startPosition="41" endLine="38" endPosition="207" />
     <nodeInfo nodeId="9034802358628519915" fileName="CustomContainerCreator_containerDeclaration_ReferentConstraint.java" startLine="36" startPosition="304" endLine="40" endPosition="0" />
+    <nodeInfo nodeId="9034802358628427427" fileName="CustomContainerCreator_containerDeclaration_ReferentConstraint.java" startLine="34" startPosition="116" endLine="42" endPosition="6" />
     <scopeInfo nodeId="1331913329176292220" fileName="CustomContainerCreator_alias_PropertyConstraint.java" startLine="25" startPosition="80" endLine="26" endPosition="113" />
     <scopeInfo nodeId="9034802358628519916" fileName="CustomContainerCreator_containerDeclaration_ReferentConstraint.java" startLine="37" startPosition="41" endLine="38" endPosition="207" />
     <scopeInfo nodeId="9034802358628519915" fileName="CustomContainerCreator_containerDeclaration_ReferentConstraint.java" startLine="36" startPosition="304" endLine="40" endPosition="0" />
@@ -202,7 +223,9 @@
     <unitInfo nodeId="9034802358628519915" fileName="CustomContainerCreator_containerDeclaration_ReferentConstraint.java" startLine="36" startPosition="281" endLine="40" endPosition="7" unitName="jetbrains.mps.baseLanguage.collections.constraints.IWhereFilter$anonymous" />
   </root>
   <root nodeId="1576845966386891452">
+    <nodeInfo nodeId="1576845966386891456" fileName="CustomMapCreator_alias_PropertyConstraint.java" startLine="25" startPosition="80" endLine="26" endPosition="113" />
     <nodeInfo nodeId="9034802358628290949" fileName="CustomMapCreator_containerDeclaration_ReferentConstraint.java" startLine="30" startPosition="132" endLine="31" endPosition="116" />
+    <nodeInfo nodeId="9034802358628290988" fileName="CustomMapCreator_containerDeclaration_ReferentConstraint.java" startLine="31" startPosition="116" endLine="35" endPosition="6" />
     <scopeInfo nodeId="1576845966386891455" fileName="CustomMapCreator_alias_PropertyConstraint.java" startLine="25" startPosition="80" endLine="26" endPosition="113" />
     <scopeInfo nodeId="9034802358628290363" fileName="CustomMapCreator_containerDeclaration_ReferentConstraint.java" startLine="30" startPosition="132" endLine="35" endPosition="6">
       <varInfo nodeId="9034802358628290950" varName="expr" />
@@ -210,6 +233,12 @@
   </root>
   <root nodeId="3358009230509358976">
     <nodeInfo nodeId="3358009230509358980" fileName="AbstractContainerCreator_Constraints.java" startLine="21" startPosition="114" endLine="22" endPosition="301" />
+    <nodeInfo nodeId="3358009230509400554" fileName="AbstractContainerCreator_Constraints.java" startLine="24" startPosition="39" endLine="25" endPosition="80" />
+    <nodeInfo nodeId="5192033827214156536" fileName="AbstractContainerCreator_Constraints.java" startLine="30" startPosition="41" endLine="31" endPosition="97" />
+    <nodeInfo nodeId="5192033827214156547" fileName="AbstractContainerCreator_Constraints.java" startLine="34" startPosition="39" endLine="35" endPosition="157" />
+    <nodeInfo nodeId="5192033827214037050" fileName="AbstractContainerCreator_Constraints.java" startLine="39" startPosition="42" endLine="40" endPosition="125" />
+    <nodeInfo nodeId="2490518255521065421" fileName="AbstractContainerCreator_Constraints.java" startLine="43" startPosition="42" endLine="44" endPosition="149" />
+    <nodeInfo nodeId="3358009230509359540" fileName="AbstractContainerCreator_Constraints.java" startLine="47" startPosition="5" endLine="48" endPosition="16" />
     <nodeInfo nodeId="3358009230509400552" fileName="AbstractContainerCreator_Constraints.java" startLine="23" startPosition="271" endLine="27" endPosition="0" />
     <nodeInfo nodeId="5192033827214156534" fileName="AbstractContainerCreator_Constraints.java" startLine="29" startPosition="164" endLine="33" endPosition="0" />
     <nodeInfo nodeId="5192033827214156545" fileName="AbstractContainerCreator_Constraints.java" startLine="33" startPosition="47" endLine="37" endPosition="0" />
@@ -245,6 +274,7 @@
   <root nodeId="6099516049395208152">
     <nodeInfo nodeId="6099516049395208582" fileName="CustomContainerDeclaration_name_PropertyConstraint.java" startLine="25" startPosition="87" endLine="26" endPosition="72" />
     <nodeInfo nodeId="6099516049395208638" fileName="CustomContainerDeclaration_name_PropertyConstraint.java" startLine="27" startPosition="110" endLine="28" endPosition="21" />
+    <nodeInfo nodeId="6099516049395208642" fileName="CustomContainerDeclaration_name_PropertyConstraint.java" startLine="30" startPosition="5" endLine="31" endPosition="16" />
     <nodeInfo nodeId="6099516049395208594" fileName="CustomContainerDeclaration_name_PropertyConstraint.java" startLine="26" startPosition="72" endLine="29" endPosition="7" />
     <nodeInfo nodeId="6099516049395208561" fileName="CustomContainerDeclaration_name_PropertyConstraint.java" startLine="24" startPosition="130" endLine="30" endPosition="5" />
     <scopeInfo nodeId="6099516049395208595" fileName="CustomContainerDeclaration_name_PropertyConstraint.java" startLine="27" startPosition="110" endLine="28" endPosition="21" />

@@ -6,41 +6,36 @@ import jetbrains.mps.debug.runtime.java.programState.proxies.ValueWrapperFactory
 import jetbrains.mps.debug.runtime.java.programState.proxies.ValueWrapper;
 import jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue;
 import jetbrains.mps.debug.evaluation.EvaluationUtils;
-import jetbrains.mps.debug.evaluation.proxies.IObjectValueProxy;
-import jetbrains.mps.debug.evaluation.proxies.MirrorUtil;
 import jetbrains.mps.debug.evaluation.EvaluationException;
 import java.util.List;
 import jetbrains.mps.debug.runtime.java.programState.watchables.CustomJavaWatchable;
+import jetbrains.mps.debug.evaluation.proxies.IObjectValueProxy;
 import java.util.ArrayList;
 import jetbrains.mps.debug.evaluation.proxies.PrimitiveValueProxy;
 import jetbrains.mps.debug.runtime.java.programState.proxies.JavaObjectValue;
 
-public class ListSequenceViewer_WrapperFactory extends ValueWrapperFactory {
-  public ListSequenceViewer_WrapperFactory() {
+public class SetViewer_WrapperFactory extends ValueWrapperFactory {
+  public SetViewer_WrapperFactory() {
   }
 
   public ValueWrapper createValueWrapper(JavaValue value) {
-    return new ListSequenceViewer_WrapperFactory.ListSequenceViewerWrapper(value);
+    return new SetViewer_WrapperFactory.SetViewerWrapper(value);
   }
 
   @Override
   public boolean canWrapValue(JavaValue value) {
     try {
-      if (!(EvaluationUtils.isInstanceOf(value.getValue().type(), "Ljetbrains/mps/internal/collections/runtime/ListSequence;", value.getValue().virtualMachine()))) {
+      if (!(EvaluationUtils.isInstanceOf(value.getValue().type(), "Ljava/util/Set;", value.getValue().virtualMachine()))) {
         return false;
       }
-      return canWrapValue((IObjectValueProxy) MirrorUtil.getValueProxy(value.getValue(), value.getThreadReference()));
+      return true;
     } catch (EvaluationException e) {
       throw new RuntimeException(e);
     }
   }
 
-  protected boolean canWrapValue(IObjectValueProxy value) throws EvaluationException {
-    return true;
-  }
-
-  public static class ListSequenceViewerWrapper extends ValueWrapper {
-    public ListSequenceViewerWrapper(JavaValue value) {
+  public static class SetViewerWrapper extends ValueWrapper {
+    public SetViewerWrapper(JavaValue value) {
       super(value);
     }
 
@@ -54,6 +49,7 @@ public class ListSequenceViewer_WrapperFactory extends ValueWrapperFactory {
     }
 
     protected List<CustomJavaWatchable> getSubvaluesImpl(IObjectValueProxy value) throws EvaluationException {
+      // again, same as ListViewer 
       List<CustomJavaWatchable> watchables = new ArrayList<CustomJavaWatchable>();
 
       PrimitiveValueProxy size = ((PrimitiveValueProxy) value.invokeMethod("size", "()I"));
