@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.refactoring.renameSolution.RenameSolutionDialog;
+import jetbrains.mps.ide.refactoring.RenameSolutionDialog;
 
 public class RenameSolution_Action extends GeneratedAction {
   private static final Icon ICON = null;

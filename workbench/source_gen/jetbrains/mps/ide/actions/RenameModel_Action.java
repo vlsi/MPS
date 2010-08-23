@@ -18,7 +18,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelRootUtil;
-import jetbrains.mps.refactoring.renameModel.RenameModelDialog;
+import jetbrains.mps.ide.refactoring.RenameModelDialog;
 
 public class RenameModel_Action extends GeneratedAction {
   private static final Icon ICON = null;
