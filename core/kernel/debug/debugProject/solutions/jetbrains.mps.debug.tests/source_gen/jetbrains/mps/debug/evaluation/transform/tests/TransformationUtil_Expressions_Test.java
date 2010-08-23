@@ -163,6 +163,12 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
   }
 
   @Test
+  public void test_plusStringExpression() throws Throwable {
+    this.initTest("${mps_home}/core/kernel/debug/debugProject/debugProject.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
+    this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_plusStringExpression", true);
+  }
+
+  @Test
   public void test_equalsExpression() throws Throwable {
     this.initTest("${mps_home}/core/kernel/debug/debugProject/debugProject.mpr", "r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)");
     this.runTest("jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody", "test_equalsExpression", true);
@@ -235,6 +241,8 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("8441349676536412399");
       this.addNodeById("2932187755699941120");
       this.addNodeById("2932187755699941138");
+      this.addNodeById("3278243436493715611");
+      this.addNodeById("3278243436493715569");
       this.addNodeById("6721540366799618936");
       this.addNodeById("6721540366799618956");
       this.addNodeById("6721540366799622797");
@@ -290,6 +298,8 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("8441349676536412399");
       this.addNodeById("2932187755699941120");
       this.addNodeById("2932187755699941138");
+      this.addNodeById("3278243436493715611");
+      this.addNodeById("3278243436493715569");
       this.addNodeById("6721540366799618936");
       this.addNodeById("6721540366799618956");
       this.addNodeById("6721540366799622797");
@@ -345,6 +355,8 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("8441349676536412399");
       this.addNodeById("2932187755699941120");
       this.addNodeById("2932187755699941138");
+      this.addNodeById("3278243436493715611");
+      this.addNodeById("3278243436493715569");
       this.addNodeById("6721540366799618936");
       this.addNodeById("6721540366799618956");
       this.addNodeById("6721540366799622797");
@@ -400,6 +412,8 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("8441349676536412399");
       this.addNodeById("2932187755699941120");
       this.addNodeById("2932187755699941138");
+      this.addNodeById("3278243436493715611");
+      this.addNodeById("3278243436493715569");
       this.addNodeById("6721540366799618936");
       this.addNodeById("6721540366799618956");
       this.addNodeById("6721540366799622797");
@@ -455,6 +469,8 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("8441349676536412399");
       this.addNodeById("2932187755699941120");
       this.addNodeById("2932187755699941138");
+      this.addNodeById("3278243436493715611");
+      this.addNodeById("3278243436493715569");
       this.addNodeById("6721540366799618936");
       this.addNodeById("6721540366799618956");
       this.addNodeById("6721540366799622797");
@@ -510,6 +526,8 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("8441349676536412399");
       this.addNodeById("2932187755699941120");
       this.addNodeById("2932187755699941138");
+      this.addNodeById("3278243436493715611");
+      this.addNodeById("3278243436493715569");
       this.addNodeById("6721540366799618936");
       this.addNodeById("6721540366799618956");
       this.addNodeById("6721540366799622797");
@@ -565,6 +583,8 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("8441349676536412399");
       this.addNodeById("2932187755699941120");
       this.addNodeById("2932187755699941138");
+      this.addNodeById("3278243436493715611");
+      this.addNodeById("3278243436493715569");
       this.addNodeById("6721540366799618936");
       this.addNodeById("6721540366799618956");
       this.addNodeById("6721540366799622797");
@@ -624,6 +644,8 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("8441349676536412399");
       this.addNodeById("2932187755699941120");
       this.addNodeById("2932187755699941138");
+      this.addNodeById("3278243436493715611");
+      this.addNodeById("3278243436493715569");
       this.addNodeById("6721540366799618936");
       this.addNodeById("6721540366799618956");
       this.addNodeById("6721540366799622797");
@@ -679,6 +701,8 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("8441349676536412399");
       this.addNodeById("2932187755699941120");
       this.addNodeById("2932187755699941138");
+      this.addNodeById("3278243436493715611");
+      this.addNodeById("3278243436493715569");
       this.addNodeById("6721540366799618936");
       this.addNodeById("6721540366799618956");
       this.addNodeById("6721540366799622797");
@@ -734,6 +758,8 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("8441349676536412399");
       this.addNodeById("2932187755699941120");
       this.addNodeById("2932187755699941138");
+      this.addNodeById("3278243436493715611");
+      this.addNodeById("3278243436493715569");
       this.addNodeById("6721540366799618936");
       this.addNodeById("6721540366799618956");
       this.addNodeById("6721540366799622797");
@@ -794,6 +820,8 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("8441349676536412399");
       this.addNodeById("2932187755699941120");
       this.addNodeById("2932187755699941138");
+      this.addNodeById("3278243436493715611");
+      this.addNodeById("3278243436493715569");
       this.addNodeById("6721540366799618936");
       this.addNodeById("6721540366799618956");
       this.addNodeById("6721540366799622797");
@@ -849,6 +877,8 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("8441349676536412399");
       this.addNodeById("2932187755699941120");
       this.addNodeById("2932187755699941138");
+      this.addNodeById("3278243436493715611");
+      this.addNodeById("3278243436493715569");
       this.addNodeById("6721540366799618936");
       this.addNodeById("6721540366799618956");
       this.addNodeById("6721540366799622797");
@@ -904,6 +934,8 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("8441349676536412399");
       this.addNodeById("2932187755699941120");
       this.addNodeById("2932187755699941138");
+      this.addNodeById("3278243436493715611");
+      this.addNodeById("3278243436493715569");
       this.addNodeById("6721540366799618936");
       this.addNodeById("6721540366799618956");
       this.addNodeById("6721540366799622797");
@@ -916,7 +948,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("8441349676536441158");
       SNode instanceMethodDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(this.getNodeById("5543996881668550288"), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", false);
       List<SNode> arguments = SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(this.getNodeById("5543996881668550288"), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "actualArgument", true);
-      SNode localInstanceMethodCall = new TransformationUtil_Expressions_Test.TestBody.QuotationClass_n7zrdh_a0a25a21a().createNode(arguments);
+      SNode localInstanceMethodCall = new TransformationUtil_Expressions_Test.TestBody.QuotationClass_n7zrdh_a0a45a21a().createNode(arguments);
       SLinkOperations.setTarget(localInstanceMethodCall, "baseMethodDeclaration", instanceMethodDeclaration, false);
       SNodeOperations.replaceWithAnother(SNodeOperations.cast(this.getNodeById("5543996881668550288"), "jetbrains.mps.baseLanguage.structure.DotExpression"), localInstanceMethodCall);
       new Transformator(SNodeOperations.cast(this.getNodeById("5543996881668550285"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), false).transformEvaluator();
@@ -964,6 +996,8 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("8441349676536412399");
       this.addNodeById("2932187755699941120");
       this.addNodeById("2932187755699941138");
+      this.addNodeById("3278243436493715611");
+      this.addNodeById("3278243436493715569");
       this.addNodeById("6721540366799618936");
       this.addNodeById("6721540366799618956");
       this.addNodeById("6721540366799622797");
@@ -1019,6 +1053,8 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("8441349676536412399");
       this.addNodeById("2932187755699941120");
       this.addNodeById("2932187755699941138");
+      this.addNodeById("3278243436493715611");
+      this.addNodeById("3278243436493715569");
       this.addNodeById("6721540366799618936");
       this.addNodeById("6721540366799618956");
       this.addNodeById("6721540366799622797");
@@ -1074,6 +1110,8 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("8441349676536412399");
       this.addNodeById("2932187755699941120");
       this.addNodeById("2932187755699941138");
+      this.addNodeById("3278243436493715611");
+      this.addNodeById("3278243436493715569");
       this.addNodeById("6721540366799618936");
       this.addNodeById("6721540366799618956");
       this.addNodeById("6721540366799622797");
@@ -1086,7 +1124,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("8441349676536441158");
       SNode staticMethodDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(this.getNodeById("607759879653675061"), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), "baseMethodDeclaration", false);
       List<SNode> arguments = SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("607759879653675061"), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), "actualArgument", true);
-      SNode localStaticMethodCall = new TransformationUtil_Expressions_Test.TestBody.QuotationClass_n7zrdh_a0a25a51a().createNode(arguments);
+      SNode localStaticMethodCall = new TransformationUtil_Expressions_Test.TestBody.QuotationClass_n7zrdh_a0a45a51a().createNode(arguments);
       SLinkOperations.setTarget(localStaticMethodCall, "baseMethodDeclaration", staticMethodDeclaration, false);
       SNodeOperations.replaceWithAnother(SNodeOperations.cast(this.getNodeById("607759879653675061"), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), localStaticMethodCall);
       new Transformator(SNodeOperations.cast(this.getNodeById("607759879653675043"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), false).transformEvaluator();
@@ -1134,6 +1172,8 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("8441349676536412399");
       this.addNodeById("2932187755699941120");
       this.addNodeById("2932187755699941138");
+      this.addNodeById("3278243436493715611");
+      this.addNodeById("3278243436493715569");
       this.addNodeById("6721540366799618936");
       this.addNodeById("6721540366799618956");
       this.addNodeById("6721540366799622797");
@@ -1189,6 +1229,8 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("8441349676536412399");
       this.addNodeById("2932187755699941120");
       this.addNodeById("2932187755699941138");
+      this.addNodeById("3278243436493715611");
+      this.addNodeById("3278243436493715569");
       this.addNodeById("6721540366799618936");
       this.addNodeById("6721540366799618956");
       this.addNodeById("6721540366799622797");
@@ -1244,6 +1286,8 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("8441349676536412399");
       this.addNodeById("2932187755699941120");
       this.addNodeById("2932187755699941138");
+      this.addNodeById("3278243436493715611");
+      this.addNodeById("3278243436493715569");
       this.addNodeById("6721540366799618936");
       this.addNodeById("6721540366799618956");
       this.addNodeById("6721540366799622797");
@@ -1299,6 +1343,8 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("8441349676536412399");
       this.addNodeById("2932187755699941120");
       this.addNodeById("2932187755699941138");
+      this.addNodeById("3278243436493715611");
+      this.addNodeById("3278243436493715569");
       this.addNodeById("6721540366799618936");
       this.addNodeById("6721540366799618956");
       this.addNodeById("6721540366799622797");
@@ -1354,6 +1400,8 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("8441349676536412399");
       this.addNodeById("2932187755699941120");
       this.addNodeById("2932187755699941138");
+      this.addNodeById("3278243436493715611");
+      this.addNodeById("3278243436493715569");
       this.addNodeById("6721540366799618936");
       this.addNodeById("6721540366799618956");
       this.addNodeById("6721540366799622797");
@@ -1409,6 +1457,8 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("8441349676536412399");
       this.addNodeById("2932187755699941120");
       this.addNodeById("2932187755699941138");
+      this.addNodeById("3278243436493715611");
+      this.addNodeById("3278243436493715569");
       this.addNodeById("6721540366799618936");
       this.addNodeById("6721540366799618956");
       this.addNodeById("6721540366799622797");
@@ -1464,6 +1514,8 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("8441349676536412399");
       this.addNodeById("2932187755699941120");
       this.addNodeById("2932187755699941138");
+      this.addNodeById("3278243436493715611");
+      this.addNodeById("3278243436493715569");
       this.addNodeById("6721540366799618936");
       this.addNodeById("6721540366799618956");
       this.addNodeById("6721540366799622797");
@@ -1476,6 +1528,63 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("8441349676536441158");
       new Transformator(SNodeOperations.cast(this.getNodeById("2932187755699941129"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), false).transformEvaluator();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("2932187755699941129"), "jetbrains.mps.baseLanguage.structure.BlockStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("2932187755699941139"), "jetbrains.mps.baseLanguage.structure.BlockStatement"))));
+    }
+
+    public void test_plusStringExpression() throws Exception {
+      this.addNodeById("5543996881668550169");
+      this.addNodeById("5543996881668550178");
+      this.addNodeById("1454920206667908421");
+      this.addNodeById("1454920206667908409");
+      this.addNodeById("2932187755699923943");
+      this.addNodeById("5543996881668550190");
+      this.addNodeById("5543996881668550217");
+      this.addNodeById("5543996881668550225");
+      this.addNodeById("1454920206667900337");
+      this.addNodeById("1454920206667900329");
+      this.addNodeById("5543996881668550233");
+      this.addNodeById("5543996881668550244");
+      this.addNodeById("1454920206667900361");
+      this.addNodeById("1454920206667900347");
+      this.addNodeById("5543996881668550258");
+      this.addNodeById("5543996881668550268");
+      this.addNodeById("1454920206667900391");
+      this.addNodeById("1454920206667900376");
+      this.addNodeById("5543996881668550283");
+      this.addNodeById("5543996881668550295");
+      this.addNodeById("1454920206667908298");
+      this.addNodeById("1454920206667908280");
+      this.addNodeById("607759879653675041");
+      this.addNodeById("607759879653675023");
+      this.addNodeById("1454920206667908335");
+      this.addNodeById("1454920206667908317");
+      this.addNodeById("607759879653679926");
+      this.addNodeById("607759879653679959");
+      this.addNodeById("607759879653679942");
+      this.addNodeById("607759879653680036");
+      this.addNodeById("2932187755699706728");
+      this.addNodeById("2932187755699710925");
+      this.addNodeById("2932187755699923973");
+      this.addNodeById("2932187755699923959");
+      this.addNodeById("2932187755699930360");
+      this.addNodeById("2932187755699930347");
+      this.addNodeById("8441349676536412410");
+      this.addNodeById("8441349676536412399");
+      this.addNodeById("2932187755699941120");
+      this.addNodeById("2932187755699941138");
+      this.addNodeById("3278243436493715611");
+      this.addNodeById("3278243436493715569");
+      this.addNodeById("6721540366799618936");
+      this.addNodeById("6721540366799618956");
+      this.addNodeById("6721540366799622797");
+      this.addNodeById("6721540366799622776");
+      this.addNodeById("6721540366799627023");
+      this.addNodeById("6721540366799627001");
+      this.addNodeById("4693929676428713095");
+      this.addNodeById("4693929676428713077");
+      this.addNodeById("8441349676536441170");
+      this.addNodeById("8441349676536441158");
+      new Transformator(SNodeOperations.cast(this.getNodeById("3278243436493715617"), "jetbrains.mps.baseLanguage.structure.BlockStatement"), false).transformEvaluator();
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3278243436493715617"), "jetbrains.mps.baseLanguage.structure.BlockStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3278243436493715570"), "jetbrains.mps.baseLanguage.structure.BlockStatement"))));
     }
 
     public void test_equalsExpression() throws Exception {
@@ -1519,6 +1628,8 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("8441349676536412399");
       this.addNodeById("2932187755699941120");
       this.addNodeById("2932187755699941138");
+      this.addNodeById("3278243436493715611");
+      this.addNodeById("3278243436493715569");
       this.addNodeById("6721540366799618936");
       this.addNodeById("6721540366799618956");
       this.addNodeById("6721540366799622797");
@@ -1574,6 +1685,8 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("8441349676536412399");
       this.addNodeById("2932187755699941120");
       this.addNodeById("2932187755699941138");
+      this.addNodeById("3278243436493715611");
+      this.addNodeById("3278243436493715569");
       this.addNodeById("6721540366799618936");
       this.addNodeById("6721540366799618956");
       this.addNodeById("6721540366799622797");
@@ -1629,6 +1742,8 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("8441349676536412399");
       this.addNodeById("2932187755699941120");
       this.addNodeById("2932187755699941138");
+      this.addNodeById("3278243436493715611");
+      this.addNodeById("3278243436493715569");
       this.addNodeById("6721540366799618936");
       this.addNodeById("6721540366799618956");
       this.addNodeById("6721540366799622797");
@@ -1684,6 +1799,8 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("8441349676536412399");
       this.addNodeById("2932187755699941120");
       this.addNodeById("2932187755699941138");
+      this.addNodeById("3278243436493715611");
+      this.addNodeById("3278243436493715569");
       this.addNodeById("6721540366799618936");
       this.addNodeById("6721540366799618956");
       this.addNodeById("6721540366799622797");
@@ -1739,6 +1856,8 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("8441349676536412399");
       this.addNodeById("2932187755699941120");
       this.addNodeById("2932187755699941138");
+      this.addNodeById("3278243436493715611");
+      this.addNodeById("3278243436493715569");
       this.addNodeById("6721540366799618936");
       this.addNodeById("6721540366799618956");
       this.addNodeById("6721540366799622797");
@@ -1753,8 +1872,8 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("8441349676536441172"), "jetbrains.mps.baseLanguage.structure.BlockStatement")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("8441349676536441159"), "jetbrains.mps.baseLanguage.structure.BlockStatement"))));
     }
 
-    public static class QuotationClass_n7zrdh_a0a25a21a {
-      public QuotationClass_n7zrdh_a0a25a21a() {
+    public static class QuotationClass_n7zrdh_a0a45a21a {
+      public QuotationClass_n7zrdh_a0a45a21a() {
       }
 
       public SNode createNode(Object parameter_4) {
@@ -1777,8 +1896,8 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       }
     }
 
-    public static class QuotationClass_n7zrdh_a0a25a51a {
-      public QuotationClass_n7zrdh_a0a25a51a() {
+    public static class QuotationClass_n7zrdh_a0a45a51a {
+      public QuotationClass_n7zrdh_a0a45a51a() {
       }
 
       public SNode createNode(Object parameter_4) {
