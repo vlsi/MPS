@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="3kiw8efr7w8eyu9z1rqe9au7fht4jzg">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8p99j1evrx61lgus28guca4n5crohmi" />
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="bwotk0uadvb7l0c102yykfgqh05r5wy" />
+  <dep model="r:74318496-5622-4eb9-9978-1789536164b2(jetbrains.mps.debug.customViewers.generator.template.main@generator)" hash="2i6n0wze4krnenflp0mrznucvxth2t7" />
+  <dep model="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debug.customViewers.structure)" hash="6kxiuwxp8tskm2glwlxry6on36ornsk" />
+  <common hash="-e1pigejasyd5tdve59zoy3zf4ozvvt6">
+    <dep root="4712912993948287709" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:74318496-5622-4eb9-9978-1789536164b2(jetbrains.mps.debug.customViewers.generator.template.main@generator)" />
+    <file name="CustomViewersDescriptor.java" />
+  </common>
+  <source id="4712912993948287708" name="TuplesWatchables" hash="-6w8519ahk7e0lmk8g5g496ylpnabqjt">
+    <dep model="r:74318496-5622-4eb9-9978-1789536164b2(jetbrains.mps.debug.customViewers.generator.template.main@generator)" />
+    <file name="TuplesWatchables.java" />
+  </source>
+  <source id="4712912993948287709" name="IndexedTupleViewer" hash="vpezzm4r4xthjn8tl46lf1mwu0j347">
+    <dep root="4712912993948287708" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:74318496-5622-4eb9-9978-1789536164b2(jetbrains.mps.debug.customViewers.generator.template.main@generator)" />
+    <dep model="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debug.customViewers.structure)" />
+    <file name="IndexedTupleViewer_Factory.java" />
+  </source>
+</dependencies>
+

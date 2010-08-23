@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="-ea3iugzwj4phm5w5u0t13pfrlzbv2i5">
+  <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+  <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="9um92508oadq1qu3kr57d9ne6rw09qx" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-4hat8prvjpz2xz874xvg9fn51gr40tn" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8p99j1evrx61lgus28guca4n5crohmi" />
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="bwotk0uadvb7l0c102yykfgqh05r5wy" />
+  <common hash="drl2ktkdp5w4mpp9akuj58g5zmsrjts">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
+    <file name="Closures_Language.java" />
+  </common>
+  <source id="1199542442495" name="FunctionType" hash="8aq0hdmdthsuo38tgxjvoaf7d2dqs91">
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="FunctionType.java" />
+  </source>
+  <source id="1199547238293" name="InvokeFunctionExpression" hash="aqqxozy9m681oxi4t63dud0xc6s2mgq">
+    <dep root="1229599834263" />
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="InvokeFunctionExpression.java" />
+  </source>
+  <source id="1199569711397" name="ClosureLiteral" hash="-dmmnh66xe826hjx0ujlmn6pqp30blda">
+    <dep root="1229599834263" />
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ClosureLiteral.java" />
+  </source>
+  <source id="1199711271002" name="InvokeExpression" hash="3jkv5vkni0tlohsnx460jftfbmhr5ge">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="InvokeExpression.java" />
+  </source>
+  <source id="1200830824066" name="YieldStatement" hash="-d0o1h069q6yqzz2mq9o5237ev8cyeg">
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="YieldStatement.java" />
+  </source>
+  <source id="1203252195462" name="UnboundClosureParameterDeclaration" hash="-d45z7g3ff3ses1zxwky4ca9715q1w2">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="UnboundClosureParameterDeclaration.java" />
+  </source>
+  <source id="1214952349786" name="PairOfInts" hash="-6llm2mnfwu9a7nytwjz4jp12kzmxrij">
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="PairOfInts.java" />
+  </source>
+  <source id="1214952607239" name="StringPropertyHolder" hash="e0sqr2egvou6vdo2ochkjptausfyo3s">
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="StringPropertyHolder.java" />
+  </source>
+  <source id="1225797177491" name="InvokeFunctionOperation" hash="-8real9f0k3vys8aii8h3dt97u1iogom">
+    <dep root="1229599834263" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="InvokeFunctionOperation.java" />
+  </source>
+  <source id="1228997946467" name="YieldAllStatement" hash="-2luien96gmm52xsttz3l5g0ecz1amkw">
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="YieldAllStatement.java" />
+  </source>
+  <source id="1229598881739" name="UnrestrictedClosureLiteral" hash="-dlhw1tx47o034o6sbqmeqyju6miywng">
+    <dep root="1199569711397" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="UnrestrictedClosureLiteral.java" />
+  </source>
+  <source id="1229599010201" name="ClosureControlStatement" hash="epq4q6nx6lbfggnwzxpu6svm04lhfah">
+    <dep root="1229599114269" />
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ClosureControlStatement.java" />
+  </source>
+  <source id="1229599114269" name="ControlClosureLiteral" hash="aunp7izerckopofevgsj2ach3lp3okk">
+    <dep root="1229598881739" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ControlClosureLiteral.java" />
+  </source>
+  <source id="1229599750256" name="ControlAbstractionContainer" hash="-6p0p5cppyor74iq59uwowmpeaqux2d9">
+    <dep root="1229599834263" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ControlAbstractionContainer.java" />
+  </source>
+  <source id="1229599834263" name="ControlAbstractionDeclaration" hash="-2grwknld1s45ygi75vgsit6c1d62wjw">
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ControlAbstractionDeclaration.java" />
+  </source>
+  <source id="1229708828035" name="UnrestrictedFunctionType" hash="31qzgabow4v7yqgt0y7aidlfokzodfi">
+    <dep root="1199542442495" />
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="UnrestrictedFunctionType.java" />
+  </source>
+  <source id="1235746970280" name="CompactInvokeFunctionExpression" hash="5edskngvv3v2928qwc0ut010kzi7h7a">
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="CompactInvokeFunctionExpression.java" />
+  </source>
+  <source id="4816492477345855364" name="FunctionMethodDeclaration" hash="3oz6vhpvdqja5ehsbnsfww7meot096l">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="FunctionMethodDeclaration.java" />
+  </source>
+</dependencies>
+

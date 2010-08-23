@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1225194245328">
+    <nodeInfo nodeId="1227088888256" fileName="ConceptBehavior_Constraints.java" startLine="10" startPosition="112" endLine="11" endPosition="59" />
     <nodeInfo nodeId="1225194245332" fileName="ConceptBehavior_name_PropertyConstraint.java" startLine="25" startPosition="80" endLine="26" endPosition="23" />
     <nodeInfo nodeId="1225194245342" fileName="ConceptBehavior_name_PropertyConstraint.java" startLine="27" startPosition="68" endLine="28" endPosition="109" />
     <nodeInfo nodeId="1225194245352" fileName="ConceptBehavior_name_PropertyConstraint.java" startLine="29" startPosition="12" endLine="30" endPosition="26" />
@@ -48,11 +49,14 @@
     <scopeInfo nodeId="1225194475701" fileName="ConceptMethodDeclaration_overriddenMethod_ReferentConstraint.java" startLine="35" startPosition="138" endLine="45" endPosition="5" />
   </root>
   <root nodeId="2043122710974690677">
+    <nodeInfo nodeId="2043122710974690753" fileName="ThisNodeExpression_Constraints.java" startLine="9" startPosition="114" endLine="10" endPosition="88" />
     <scopeInfo nodeId="2043122710974690752" fileName="ThisNodeExpression_Constraints.java" startLine="9" startPosition="114" endLine="10" endPosition="88" />
   </root>
   <root nodeId="2043122710974690678">
+    <nodeInfo nodeId="2043122710974690692" fileName="ConstraintsUtil.java" startLine="13" startPosition="56" endLine="14" endPosition="125" />
     <nodeInfo nodeId="2043122710974690727" fileName="ConstraintsUtil.java" startLine="18" startPosition="38" endLine="19" endPosition="19" />
     <nodeInfo nodeId="2043122710974690730" fileName="ConstraintsUtil.java" startLine="20" startPosition="5" endLine="21" endPosition="0" />
+    <nodeInfo nodeId="2043122710974690732" fileName="ConstraintsUtil.java" startLine="21" startPosition="0" endLine="22" endPosition="258" />
     <nodeInfo nodeId="2043122710974690680" fileName="ConstraintsUtil.java" startLine="9" startPosition="30" endLine="11" endPosition="3" />
     <nodeInfo nodeId="2043122710974690720" fileName="ConstraintsUtil.java" startLine="17" startPosition="72" endLine="20" endPosition="5" />
     <nodeInfo nodeId="2043122710974690685" fileName="ConstraintsUtil.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
@@ -71,6 +75,7 @@
     <unitInfo nodeId="2043122710974690678" fileName="ConstraintsUtil.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.behavior.constraints.ConstraintsUtil" />
   </root>
   <root nodeId="2043122710974691049">
+    <nodeInfo nodeId="2043122710974691052" fileName="SuperNodeExpression_Constraints.java" startLine="9" startPosition="114" endLine="10" endPosition="88" />
     <nodeInfo nodeId="5299096511375911566" fileName="SuperNodeExpression_superConcept_ReferentConstraint.java" startLine="30" startPosition="132" endLine="31" endPosition="48" />
     <nodeInfo nodeId="5299096511375911549" fileName="SuperNodeExpression_superConcept_ReferentConstraint.java" startLine="31" startPosition="48" endLine="32" endPosition="212" />
     <nodeInfo nodeId="5299096511375911594" fileName="SuperNodeExpression_superConcept_ReferentConstraint.java" startLine="33" startPosition="128" endLine="34" endPosition="52" />

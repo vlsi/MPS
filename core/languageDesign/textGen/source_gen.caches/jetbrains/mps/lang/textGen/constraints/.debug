@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1233750346381">
+    <nodeInfo nodeId="1233758203985" fileName="ConceptTextGenDeclaration_Constraints.java" startLine="10" startPosition="112" endLine="11" endPosition="59" />
+    <nodeInfo nodeId="1233750421355" fileName="ConceptTextGenDeclaration_name_PropertyConstraint.java" startLine="25" startPosition="80" endLine="26" endPosition="124" />
     <scopeInfo nodeId="1233758188296" fileName="ConceptTextGenDeclaration_Constraints.java" startLine="10" startPosition="112" endLine="11" endPosition="59" />
     <scopeInfo nodeId="1233750418026" fileName="ConceptTextGenDeclaration_name_PropertyConstraint.java" startLine="25" startPosition="80" endLine="26" endPosition="124" />
   </root>
@@ -42,6 +44,7 @@
     </scopeInfo>
   </root>
   <root nodeId="1233929742891">
+    <nodeInfo nodeId="1233929755301" fileName="LanguageTextGenDeclaration_Constraints.java" startLine="10" startPosition="112" endLine="11" endPosition="59" />
     <scopeInfo nodeId="1233929745440" fileName="LanguageTextGenDeclaration_Constraints.java" startLine="10" startPosition="112" endLine="11" endPosition="59" />
   </root>
   <root nodeId="1237206480747">

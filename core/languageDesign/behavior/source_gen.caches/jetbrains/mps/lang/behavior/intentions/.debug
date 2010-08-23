@@ -3,6 +3,7 @@
   <root nodeId="1225201879279">
     <nodeInfo nodeId="1225201879287" fileName="MakeAbstract_Intention.java" startLine="32" startPosition="61" endLine="33" endPosition="33" />
     <nodeInfo nodeId="1225201879291" fileName="MakeAbstract_Intention.java" startLine="34" startPosition="12" endLine="35" endPosition="29" />
+    <nodeInfo nodeId="1225201879295" fileName="MakeAbstract_Intention.java" startLine="46" startPosition="90" endLine="47" endPosition="16" />
     <nodeInfo nodeId="1225201879301" fileName="MakeAbstract_Intention.java" startLine="51" startPosition="64" endLine="52" endPosition="62" />
     <nodeInfo nodeId="1225201879312" fileName="MakeAbstract_Intention.java" startLine="53" startPosition="5" endLine="54" endPosition="110" />
     <nodeInfo nodeId="1225201879289" fileName="MakeAbstract_Intention.java" startLine="34" startPosition="10" endLine="36" endPosition="5" />
@@ -18,6 +19,7 @@
   <root nodeId="1225201879322">
     <nodeInfo nodeId="1225201879330" fileName="MakeVirtual_Intention.java" startLine="32" startPosition="60" endLine="33" endPosition="32" />
     <nodeInfo nodeId="1225201879334" fileName="MakeVirtual_Intention.java" startLine="34" startPosition="12" endLine="35" endPosition="28" />
+    <nodeInfo nodeId="1225201879338" fileName="MakeVirtual_Intention.java" startLine="46" startPosition="90" endLine="47" endPosition="16" />
     <nodeInfo nodeId="1225201879342" fileName="MakeVirtual_Intention.java" startLine="50" startPosition="76" endLine="51" endPosition="108" />
     <nodeInfo nodeId="3566429363059322021" fileName="MakeVirtual_Intention.java" startLine="52" startPosition="63" endLine="53" endPosition="62" />
     <nodeInfo nodeId="1225201879332" fileName="MakeVirtual_Intention.java" startLine="34" startPosition="10" endLine="36" endPosition="5" />
@@ -31,6 +33,8 @@
     <scopeInfo nodeId="1225201879324" fileName="MakeVirtual_Intention.java" startLine="31" startPosition="85" endLine="36" endPosition="5" />
   </root>
   <root nodeId="5167929551696755285">
+    <nodeInfo nodeId="5167929551696755288" fileName="ImplementMethods_Intention.java" startLine="41" startPosition="85" endLine="42" endPosition="31" />
+    <nodeInfo nodeId="5167929551696755316" fileName="ImplementMethods_Intention.java" startLine="52" startPosition="90" endLine="53" endPosition="212" />
     <nodeInfo nodeId="4393431345217255797" fileName="ImplementMethods_Intention.java" startLine="58" startPosition="25" endLine="59" endPosition="73" />
     <nodeInfo nodeId="4393431345217255822" fileName="ImplementMethods_Intention.java" startLine="59" startPosition="73" endLine="60" endPosition="75" />
     <nodeInfo nodeId="7347712222698003846" fileName="ImplementMethods_Intention.java" startLine="60" startPosition="75" endLine="61" endPosition="180" />

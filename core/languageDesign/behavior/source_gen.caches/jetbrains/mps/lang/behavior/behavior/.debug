@@ -6,6 +6,7 @@
     <nodeInfo nodeId="1225194243320" fileName="ConceptBehavior_Behavior.java" startLine="36" startPosition="128" endLine="37" endPosition="128" />
     <nodeInfo nodeId="1225194243327" fileName="ConceptBehavior_Behavior.java" startLine="37" startPosition="128" endLine="38" endPosition="124" />
     <nodeInfo nodeId="5828142732487898462" fileName="ConceptBehavior_Behavior.java" startLine="38" startPosition="124" endLine="39" endPosition="130" />
+    <nodeInfo nodeId="1225194243334" fileName="ConceptBehavior_Behavior.java" startLine="39" startPosition="130" endLine="40" endPosition="19" />
     <nodeInfo nodeId="1225194243341" fileName="ConceptBehavior_Behavior.java" startLine="43" startPosition="107" endLine="44" endPosition="48" />
     <nodeInfo nodeId="1225194243351" fileName="ConceptBehavior_Behavior.java" startLine="46" startPosition="153" endLine="47" endPosition="57" />
     <nodeInfo nodeId="1225194243366" fileName="ConceptBehavior_Behavior.java" startLine="50" startPosition="137" endLine="51" endPosition="59" />
@@ -189,6 +190,7 @@
     <nodeInfo nodeId="1225196404035" fileName="ConceptMethodDeclaration_Behavior.java" startLine="73" startPosition="79" endLine="74" endPosition="94" />
     <nodeInfo nodeId="1225196404052" fileName="ConceptMethodDeclaration_Behavior.java" startLine="77" startPosition="84" endLine="78" endPosition="99" />
     <nodeInfo nodeId="1232982707904" fileName="ConceptMethodDeclaration_Behavior.java" startLine="81" startPosition="74" endLine="82" endPosition="66" />
+    <nodeInfo nodeId="5014346297260520849" fileName="ConceptMethodDeclaration_Behavior.java" startLine="85" startPosition="94" endLine="86" endPosition="74" />
     <nodeInfo nodeId="1225196403959" fileName="ConceptMethodDeclaration_Behavior.java" startLine="31" startPosition="77" endLine="34" endPosition="5" />
     <nodeInfo nodeId="1225196403970" fileName="ConceptMethodDeclaration_Behavior.java" startLine="34" startPosition="5" endLine="37" endPosition="5" />
     <nodeInfo nodeId="1227262369754" fileName="ConceptMethodDeclaration_Behavior.java" startLine="41" startPosition="81" endLine="44" endPosition="5" />

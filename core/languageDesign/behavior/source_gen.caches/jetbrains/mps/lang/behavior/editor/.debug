@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1225194241668">
+    <nodeInfo nodeId="1225194241693" fileName="ConceptBehavior_Editor.java" startLine="534" startPosition="113" endLine="535" endPosition="86" />
+    <nodeInfo nodeId="1225194241706" fileName="ConceptBehavior_Editor.java" startLine="538" startPosition="115" endLine="539" endPosition="72" />
+    <nodeInfo nodeId="1225194241716" fileName="ConceptBehavior_Editor.java" startLine="542" startPosition="114" endLine="543" endPosition="72" />
+    <nodeInfo nodeId="1225194241726" fileName="ConceptBehavior_Editor.java" startLine="546" startPosition="113" endLine="547" endPosition="74" />
+    <nodeInfo nodeId="1225194241739" fileName="ConceptBehavior_Editor.java" startLine="550" startPosition="115" endLine="551" endPosition="73" />
+    <nodeInfo nodeId="1225194241749" fileName="ConceptBehavior_Editor.java" startLine="554" startPosition="114" endLine="555" endPosition="73" />
+    <nodeInfo nodeId="1225194241759" fileName="ConceptBehavior_Editor.java" startLine="558" startPosition="113" endLine="559" endPosition="75" />
+    <nodeInfo nodeId="1225194241777" fileName="ConceptBehavior_Editor.java" startLine="562" startPosition="113" endLine="563" endPosition="100" />
+    <nodeInfo nodeId="1225194241792" fileName="ConceptBehavior_Editor.java" startLine="566" startPosition="113" endLine="567" endPosition="100" />
+    <nodeInfo nodeId="1225194241806" fileName="ConceptBehavior_Editor.java" startLine="570" startPosition="113" endLine="571" endPosition="75" />
     <scopeInfo nodeId="1225194241692" fileName="ConceptBehavior_Editor.java" startLine="534" startPosition="113" endLine="535" endPosition="86" />
     <scopeInfo nodeId="1225194241705" fileName="ConceptBehavior_Editor.java" startLine="538" startPosition="115" endLine="539" endPosition="72" />
     <scopeInfo nodeId="1225194241715" fileName="ConceptBehavior_Editor.java" startLine="542" startPosition="114" endLine="543" endPosition="72" />
@@ -13,6 +23,8 @@
     <scopeInfo nodeId="1225194241805" fileName="ConceptBehavior_Editor.java" startLine="570" startPosition="113" endLine="571" endPosition="75" />
   </root>
   <root nodeId="1225194473508">
+    <nodeInfo nodeId="313898386613796558" fileName="ConceptMethodDeclaration_Editor.java" startLine="347" startPosition="31" endLine="348" endPosition="104" />
+    <nodeInfo nodeId="1233077365746" fileName="ConceptMethodDeclaration_Editor.java" startLine="566" startPosition="111" endLine="567" endPosition="99" />
     <nodeInfo nodeId="313898386614417793" fileName="ConceptMethodDeclaration_Editor.java" startLine="570" startPosition="112" endLine="571" endPosition="61" />
     <nodeInfo nodeId="313898386614417800" fileName="ConceptMethodDeclaration_Editor.java" startLine="574" startPosition="112" endLine="575" endPosition="62" />
     <nodeInfo nodeId="313898386613796575" fileName="ConceptMethodDeclaration_Editor.java" startLine="578" startPosition="112" endLine="579" endPosition="78" />
@@ -39,14 +51,19 @@
     <scopeInfo nodeId="1225194473666" fileName="ConceptMethodDeclaration_Editor.java" startLine="610" startPosition="113" endLine="611" endPosition="120" />
   </root>
   <root nodeId="1225194588660">
+    <nodeInfo nodeId="1233076507284" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="325" startPosition="111" endLine="326" endPosition="99" />
+    <nodeInfo nodeId="1225528259194" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="329" startPosition="112" endLine="330" endPosition="99" />
+    <nodeInfo nodeId="1225528231889" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="333" startPosition="112" endLine="334" endPosition="96" />
     <scopeInfo nodeId="1233076507283" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="325" startPosition="111" endLine="326" endPosition="99" />
     <scopeInfo nodeId="1225528252818" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="329" startPosition="112" endLine="330" endPosition="99" />
     <scopeInfo nodeId="1225528229060" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="333" startPosition="112" endLine="334" endPosition="96" />
   </root>
   <root nodeId="1225194628491">
+    <nodeInfo nodeId="5299096511375909171" fileName="SuperNodeExpression_Editor.java" startLine="137" startPosition="111" endLine="138" endPosition="76" />
     <scopeInfo nodeId="5299096511375900602" fileName="SuperNodeExpression_Editor.java" startLine="137" startPosition="111" endLine="138" endPosition="76" />
   </root>
   <root nodeId="1225202142298">
+    <nodeInfo nodeId="1225202142303" fileName="ConceptMethodDeclaration_Menu.java" startLine="27" startPosition="105" endLine="28" endPosition="251" />
     <nodeInfo nodeId="1225202142316" fileName="ConceptMethodDeclaration_Menu.java" startLine="35" startPosition="163" endLine="36" endPosition="82" />
     <nodeInfo nodeId="1225202142323" fileName="ConceptMethodDeclaration_Menu.java" startLine="36" startPosition="82" endLine="37" endPosition="148" />
     <scopeInfo nodeId="1225202142302" fileName="ConceptMethodDeclaration_Menu.java" startLine="27" startPosition="105" endLine="28" endPosition="251" />
@@ -59,9 +76,11 @@
     <scopeInfo nodeId="1225202142349" fileName="ConceptMethodDeclaration_Visibility.java" startLine="36" startPosition="106" endLine="37" endPosition="63" />
   </root>
   <root nodeId="6603209858471610543">
+    <nodeInfo nodeId="6603209858471610572" fileName="ConceptMethodHierarchy_KeyMap.java" startLine="63" startPosition="152" endLine="64" endPosition="127" />
     <nodeInfo nodeId="4393431345217255654" fileName="ConceptMethodHierarchy_KeyMap.java" startLine="69" startPosition="27" endLine="70" endPosition="75" />
     <nodeInfo nodeId="4393431345217255674" fileName="ConceptMethodHierarchy_KeyMap.java" startLine="70" startPosition="75" endLine="71" endPosition="77" />
     <nodeInfo nodeId="7347712222698060927" fileName="ConceptMethodHierarchy_KeyMap.java" startLine="71" startPosition="77" endLine="72" endPosition="187" />
+    <nodeInfo nodeId="6603209858471610609" fileName="ConceptMethodHierarchy_KeyMap.java" startLine="112" startPosition="152" endLine="113" endPosition="127" />
     <nodeInfo nodeId="4393431345217255683" fileName="ConceptMethodHierarchy_KeyMap.java" startLine="118" startPosition="27" endLine="119" endPosition="75" />
     <nodeInfo nodeId="4393431345217255703" fileName="ConceptMethodHierarchy_KeyMap.java" startLine="119" startPosition="75" endLine="120" endPosition="77" />
     <nodeInfo nodeId="7347712222698060909" fileName="ConceptMethodHierarchy_KeyMap.java" startLine="120" startPosition="77" endLine="121" endPosition="182" />

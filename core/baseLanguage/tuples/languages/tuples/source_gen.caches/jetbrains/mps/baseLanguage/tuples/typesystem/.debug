@@ -320,6 +320,7 @@
     <nodeInfo nodeId="1239972928904" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="37" startPosition="110" endLine="38" endPosition="203" />
     <nodeInfo nodeId="1239972928913" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="39" startPosition="59" endLine="40" endPosition="122" />
     <nodeInfo nodeId="1239972928938" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="43" startPosition="83" endLine="44" endPosition="57" />
+    <nodeInfo nodeId="1239973368750" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="47" startPosition="9" endLine="48" endPosition="69" />
     <nodeInfo nodeId="1239972928911" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="38" startPosition="203" endLine="41" endPosition="13" />
     <nodeInfo nodeId="1239972928932" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="42" startPosition="18" endLine="45" endPosition="13" />
     <nodeInfo nodeId="1239972928930" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="42" startPosition="16" endLine="46" endPosition="11" />
@@ -384,6 +385,7 @@
   <root nodeId="1240403513227">
     <nodeInfo nodeId="1240403562736" fileName="check_NamedTupleComponent_final_NonTypesystemRule.java" startLine="29" startPosition="7" endLine="30" endPosition="152" />
     <nodeInfo nodeId="1240403562736" fileName="check_NamedTupleComponent_final_NonTypesystemRule.java" startLine="30" startPosition="152" endLine="31" endPosition="185" />
+    <nodeInfo nodeId="1240403675479" fileName="check_NamedTupleComponent_final_NonTypesystemRule.java" startLine="34" startPosition="46" endLine="35" endPosition="66" />
     <nodeInfo nodeId="4292022102258809122" fileName="check_NamedTupleComponent_final_NonTypesystemRule.java" startLine="38" startPosition="13" endLine="39" endPosition="61" />
     <nodeInfo nodeId="4292022102258809122" fileName="check_NamedTupleComponent_final_NonTypesystemRule.java" startLine="39" startPosition="61" endLine="40" endPosition="63" />
     <nodeInfo nodeId="4292022102258809122" fileName="check_NamedTupleComponent_final_NonTypesystemRule.java" startLine="40" startPosition="63" endLine="41" endPosition="285" />

@@ -81,6 +81,7 @@
     <scopeInfo nodeId="1227262734778" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="20" startPosition="92" endLine="29" endPosition="5" />
   </root>
   <root nodeId="3834658221333152923">
+    <nodeInfo nodeId="3834658221333152931" fileName="FixMethodSignature_QuickFix.java" startLine="15" startPosition="34" endLine="16" endPosition="34" />
     <nodeInfo nodeId="3834658221333152937" fileName="FixMethodSignature_QuickFix.java" startLine="19" startPosition="35" endLine="20" endPosition="323" />
     <nodeInfo nodeId="3834658221333152950" fileName="FixMethodSignature_QuickFix.java" startLine="20" startPosition="323" endLine="21" endPosition="225" />
     <nodeInfo nodeId="3834658221333152960" fileName="FixMethodSignature_QuickFix.java" startLine="21" startPosition="225" endLine="22" endPosition="178" />

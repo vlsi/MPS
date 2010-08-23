@@ -83,6 +83,7 @@
     <nodeInfo nodeId="1239883754737" fileName="NamedTupleType_Behavior.java" startLine="25" startPosition="77" endLine="26" endPosition="88" />
     <nodeInfo nodeId="1239883775726" fileName="NamedTupleType_Behavior.java" startLine="26" startPosition="88" endLine="27" endPosition="17" />
     <nodeInfo nodeId="1239883818843" fileName="NamedTupleType_Behavior.java" startLine="27" startPosition="17" endLine="28" endPosition="19" />
+    <nodeInfo nodeId="1239883825071" fileName="NamedTupleType_Behavior.java" startLine="29" startPosition="5" endLine="30" endPosition="40" />
     <nodeInfo nodeId="1239617445686" fileName="NamedTupleType_Behavior.java" startLine="17" startPosition="20" endLine="21" endPosition="5" />
     <nodeInfo nodeId="1239883610747" fileName="NamedTupleType_Behavior.java" startLine="24" startPosition="23" endLine="29" endPosition="5" />
     <scopeInfo nodeId="1239617398723" fileName="NamedTupleType_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
@@ -101,6 +102,7 @@
     </scopeInfo>
   </root>
   <root nodeId="1239700191747">
+    <nodeInfo nodeId="1239700239027" fileName="IndexedTupleMemberAccessExpression_Behavior.java" startLine="13" startPosition="72" endLine="14" endPosition="162" />
     <scopeInfo nodeId="1239700191749" fileName="IndexedTupleMemberAccessExpression_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
     <scopeInfo nodeId="1239700193442" fileName="IndexedTupleMemberAccessExpression_Behavior.java" startLine="13" startPosition="72" endLine="14" endPosition="162" />
   </root>
@@ -109,12 +111,16 @@
     <scopeInfo nodeId="1240400869908" fileName="NamedTupleComponentDeclaration_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="59" />
   </root>
   <root nodeId="1240402235406">
+    <nodeInfo nodeId="1240402258514" fileName="NamedTupleComponentAccessOperation_Behavior.java" startLine="13" startPosition="72" endLine="14" endPosition="111" />
     <scopeInfo nodeId="1240402235408" fileName="NamedTupleComponentAccessOperation_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
     <scopeInfo nodeId="1240402237485" fileName="NamedTupleComponentAccessOperation_Behavior.java" startLine="13" startPosition="72" endLine="14" endPosition="111" />
   </root>
   <root nodeId="1240700522950">
+    <nodeInfo nodeId="1240700555589" fileName="InterfaceTupleType_Behavior.java" startLine="20" startPosition="59" endLine="21" endPosition="98" />
+    <nodeInfo nodeId="1240702305508" fileName="InterfaceTupleType_Behavior.java" startLine="25" startPosition="40" endLine="26" endPosition="77" />
     <nodeInfo nodeId="1240700555587" fileName="InterfaceTupleType_Behavior.java" startLine="19" startPosition="272" endLine="23" endPosition="0" />
     <nodeInfo nodeId="1240702301847" fileName="InterfaceTupleType_Behavior.java" startLine="24" startPosition="153" endLine="28" endPosition="0" />
+    <nodeInfo nodeId="1240700538539" fileName="InterfaceTupleType_Behavior.java" startLine="18" startPosition="78" endLine="30" endPosition="72" />
     <scopeInfo nodeId="1240700522952" fileName="InterfaceTupleType_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
     <scopeInfo nodeId="1240700555588" fileName="InterfaceTupleType_Behavior.java" startLine="20" startPosition="59" endLine="21" endPosition="98" />
     <scopeInfo nodeId="1240702301848" fileName="InterfaceTupleType_Behavior.java" startLine="25" startPosition="40" endLine="26" endPosition="77" />

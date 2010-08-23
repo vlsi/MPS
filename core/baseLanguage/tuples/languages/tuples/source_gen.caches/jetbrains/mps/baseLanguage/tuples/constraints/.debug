@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1239537193957">
+    <nodeInfo nodeId="1239555372956" fileName="NamedTupleDeclaration_resolveInfo_PropertyConstraint.java" startLine="24" startPosition="80" endLine="25" endPosition="73" />
     <nodeInfo nodeId="1239726276929" fileName="NamedTupleDeclaration_DefaultSearchScope.java" startLine="30" startPosition="132" endLine="31" endPosition="82" />
+    <nodeInfo nodeId="1239726287305" fileName="NamedTupleDeclaration_DefaultSearchScope.java" startLine="33" startPosition="40" endLine="34" endPosition="121" />
     <nodeInfo nodeId="1239726234084" fileName="NamedTupleDeclaration_DefaultSearchScope.java" startLine="32" startPosition="229" endLine="36" endPosition="0" />
+    <nodeInfo nodeId="1239726206604" fileName="NamedTupleDeclaration_DefaultSearchScope.java" startLine="31" startPosition="82" endLine="36" endPosition="7" />
     <scopeInfo nodeId="1239555370905" fileName="NamedTupleDeclaration_resolveInfo_PropertyConstraint.java" startLine="24" startPosition="80" endLine="25" endPosition="73" />
     <scopeInfo nodeId="1239726234085" fileName="NamedTupleDeclaration_DefaultSearchScope.java" startLine="33" startPosition="40" endLine="34" endPosition="121" />
     <scopeInfo nodeId="1239726234084" fileName="NamedTupleDeclaration_DefaultSearchScope.java" startLine="32" startPosition="229" endLine="36" endPosition="0" />
@@ -12,9 +15,13 @@
     <unitInfo nodeId="1239726234084" fileName="NamedTupleDeclaration_DefaultSearchScope.java" startLine="32" startPosition="206" endLine="36" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.constraints.IWhereFilter$anonymous" />
   </root>
   <root nodeId="1239575916907">
+    <nodeInfo nodeId="1239575955223" fileName="NamedTupleComponentReference_componentDeclaration_ReferentConstraint.java" startLine="26" startPosition="132" endLine="27" endPosition="225" />
     <scopeInfo nodeId="1239575924539" fileName="NamedTupleComponentReference_componentDeclaration_ReferentConstraint.java" startLine="26" startPosition="132" endLine="27" endPosition="225" />
   </root>
   <root nodeId="1239576894334">
+    <nodeInfo nodeId="1239576974859" fileName="NamedTupleComponentAccessOperation_Constraints.java" startLine="13" startPosition="114" endLine="14" endPosition="369" />
+    <nodeInfo nodeId="1239577079007" fileName="NamedTupleComponentAccessOperation_alias_PropertyConstraint.java" startLine="25" startPosition="80" endLine="26" endPosition="102" />
+    <nodeInfo nodeId="1239576909045" fileName="NamedTupleComponentAccessOperation_component_ReferentConstraint.java" startLine="27" startPosition="132" endLine="28" endPosition="371" />
     <scopeInfo nodeId="1239576963985" fileName="NamedTupleComponentAccessOperation_Constraints.java" startLine="13" startPosition="114" endLine="14" endPosition="369" />
     <scopeInfo nodeId="1239577074261" fileName="NamedTupleComponentAccessOperation_alias_PropertyConstraint.java" startLine="25" startPosition="80" endLine="26" endPosition="102" />
     <scopeInfo nodeId="1239576899059" fileName="NamedTupleComponentAccessOperation_component_ReferentConstraint.java" startLine="27" startPosition="132" endLine="28" endPosition="371" />
@@ -29,6 +36,8 @@
     <nodeInfo nodeId="1240573261807" fileName="TupleIntefaceUtils.java" startLine="35" startPosition="314" endLine="36" endPosition="18" />
     <nodeInfo nodeId="1240573261855" fileName="TupleIntefaceUtils.java" startLine="37" startPosition="316" endLine="38" endPosition="18" />
     <nodeInfo nodeId="1240573382659" fileName="TupleIntefaceUtils.java" startLine="40" startPosition="5" endLine="41" endPosition="52" />
+    <nodeInfo nodeId="1240573332430" fileName="TupleIntefaceUtils.java" startLine="43" startPosition="66" endLine="44" endPosition="24" />
+    <nodeInfo nodeId="1240573353692" fileName="TupleIntefaceUtils.java" startLine="48" startPosition="66" endLine="49" endPosition="24" />
     <nodeInfo nodeId="1240573937726" fileName="TupleIntefaceUtils.java" startLine="51" startPosition="26" endLine="52" endPosition="41" />
     <nodeInfo nodeId="1240573479682" fileName="TupleIntefaceUtils.java" startLine="54" startPosition="27" endLine="55" endPosition="85" />
     <nodeInfo nodeId="1240574032662" fileName="TupleIntefaceUtils.java" startLine="57" startPosition="87" endLine="58" endPosition="37" />
@@ -36,6 +45,7 @@
     <nodeInfo nodeId="1240574095466" fileName="TupleIntefaceUtils.java" startLine="63" startPosition="9" endLine="64" endPosition="37" />
     <nodeInfo nodeId="1240573498636" fileName="TupleIntefaceUtils.java" startLine="65" startPosition="7" endLine="66" endPosition="62" />
     <nodeInfo nodeId="1240574251973" fileName="TupleIntefaceUtils.java" startLine="68" startPosition="25" endLine="69" endPosition="18" />
+    <nodeInfo nodeId="1240574258089" fileName="TupleIntefaceUtils.java" startLine="70" startPosition="5" endLine="71" endPosition="18" />
     <nodeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="75" startPosition="23" endLine="76" endPosition="14" />
     <nodeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="79" startPosition="63" endLine="80" endPosition="33" />
     <nodeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="95" startPosition="30" endLine="96" endPosition="24" />

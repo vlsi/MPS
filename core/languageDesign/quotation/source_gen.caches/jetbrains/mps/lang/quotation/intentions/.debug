@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1227885451240">
+    <nodeInfo nodeId="1227885649299" fileName="CreateAntiquotation_Intention.java" startLine="35" startPosition="85" endLine="36" endPosition="34" />
     <nodeInfo nodeId="1227886102811" fileName="CreateAntiquotation_Intention.java" startLine="39" startPosition="76" endLine="40" endPosition="67" />
     <nodeInfo nodeId="1227886102824" fileName="CreateAntiquotation_Intention.java" startLine="41" startPosition="30" endLine="42" endPosition="13" />
     <nodeInfo nodeId="1227886102827" fileName="CreateAntiquotation_Intention.java" startLine="44" startPosition="108" endLine="45" endPosition="148" />
@@ -30,6 +31,7 @@
     </scopeInfo>
   </root>
   <root nodeId="1227886484790">
+    <nodeInfo nodeId="1227886535313" fileName="CreateListAntiquotation_Intention.java" startLine="33" startPosition="85" endLine="34" endPosition="39" />
     <nodeInfo nodeId="1227886560331" fileName="CreateListAntiquotation_Intention.java" startLine="37" startPosition="76" endLine="38" endPosition="67" />
     <nodeInfo nodeId="1227886560359" fileName="CreateListAntiquotation_Intention.java" startLine="39" startPosition="30" endLine="40" endPosition="13" />
     <nodeInfo nodeId="1227886560362" fileName="CreateListAntiquotation_Intention.java" startLine="42" startPosition="112" endLine="43" endPosition="68" />
@@ -60,6 +62,7 @@
     </scopeInfo>
   </root>
   <root nodeId="1227886614590">
+    <nodeInfo nodeId="1227886753709" fileName="CreateReferenceAntiquotation_Intention.java" startLine="36" startPosition="85" endLine="37" endPosition="44" />
     <nodeInfo nodeId="1227887446108" fileName="CreateReferenceAntiquotation_Intention.java" startLine="47" startPosition="90" endLine="48" endPosition="62" />
     <nodeInfo nodeId="1227887446114" fileName="CreateReferenceAntiquotation_Intention.java" startLine="48" startPosition="62" endLine="49" endPosition="119" />
     <nodeInfo nodeId="1227887446122" fileName="CreateReferenceAntiquotation_Intention.java" startLine="49" startPosition="119" endLine="50" endPosition="80" />
@@ -124,6 +127,7 @@
     </scopeInfo>
   </root>
   <root nodeId="1227886844257">
+    <nodeInfo nodeId="1227886875764" fileName="CreatePropertyAntiquotation_Intention.java" startLine="37" startPosition="85" endLine="38" endPosition="43" />
     <nodeInfo nodeId="1227887402428" fileName="CreatePropertyAntiquotation_Intention.java" startLine="48" startPosition="90" endLine="49" endPosition="62" />
     <nodeInfo nodeId="1227887402434" fileName="CreatePropertyAntiquotation_Intention.java" startLine="49" startPosition="62" endLine="50" endPosition="119" />
     <nodeInfo nodeId="1227887402447" fileName="CreatePropertyAntiquotation_Intention.java" startLine="51" startPosition="30" endLine="52" endPosition="19" />
