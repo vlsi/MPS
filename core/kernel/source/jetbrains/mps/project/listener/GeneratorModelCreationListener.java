@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project.listener;
 
+import jetbrains.mps.library.GeneralPurpose_DevKit;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -31,7 +32,7 @@ public class GeneratorModelCreationListener extends ModelCreationListener {
     if (SModelStereotype.isGeneratorModel(model)) {
       model.getSModel().addLanguage(Generator_Language.get());
     } else {
-      model.getSModel().addDevKit(LanguageDesign_DevKit.get());
+      model.getSModel().addDevKit(GeneralPurpose_DevKit.get());
     }
     model.getSModel().addLanguage(GenerationContext_Language.get());
   }

@@ -29,6 +29,7 @@ import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.lang.generator.generationContext.structure.GenerationContext_Language;
 import jetbrains.mps.lang.generator.structure.Generator_Language;
 import jetbrains.mps.lang.generator.structure.MappingConfiguration;
+import jetbrains.mps.library.GeneralPurpose_DevKit;
 import jetbrains.mps.library.LanguageDesign_DevKit;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
@@ -218,9 +219,7 @@ public class NewGeneratorDialog extends BaseDialog {
 //    ref.setName("jetbrains.mps.baseLanguage");
 //    generatorDescriptor.addDependency(ref);
 
-    // generator uses 'language-design' devkit
-    ModuleReference ref = ModuleReference.fromString(LanguageDesign_DevKit.MODULE_REFERENCE.toString());
-    generatorDescriptor.getUsedDevkits().add(ref);
+    generatorDescriptor.getUsedDevkits().add(GeneralPurpose_DevKit.MODULE_REFERENCE);
 
     // add new generator to language
     languageDescriptor.getGenerators().add(generatorDescriptor);
@@ -253,7 +252,7 @@ public class NewGeneratorDialog extends BaseDialog {
       SModel templateModel = templateModelDescriptor.getSModel();
       templateModel.addLanguage(Generator_Language.get());
       templateModel.addLanguage(GenerationContext_Language.get());
-      templateModel.addDevKit(LanguageDesign_DevKit.get());
+      templateModel.addDevKit(GeneralPurpose_DevKit.get());
 
       templateModel.addImportedModel(sourceLanguage.getStructureModelDescriptor().getSModelReference());
       templateModel.addImportedModel(SModelReference.fromString("java.lang@java_stub"));
