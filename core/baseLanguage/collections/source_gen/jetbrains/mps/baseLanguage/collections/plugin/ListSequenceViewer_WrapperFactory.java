@@ -15,12 +15,12 @@ import java.util.ArrayList;
 import jetbrains.mps.debug.evaluation.proxies.PrimitiveValueProxy;
 import jetbrains.mps.debug.runtime.java.programState.proxies.JavaObjectValue;
 
-public class NewListViewer_WrapperFactory extends ValueWrapperFactory {
-  public NewListViewer_WrapperFactory() {
+public class ListSequenceViewer_WrapperFactory extends ValueWrapperFactory {
+  public ListSequenceViewer_WrapperFactory() {
   }
 
   public ValueWrapper createValueWrapper(JavaValue value) {
-    return new NewListViewer_WrapperFactory.NewListViewerWrapper(value);
+    return new ListSequenceViewer_WrapperFactory.ListSequenceViewerWrapper(value);
   }
 
   @Override
@@ -39,8 +39,8 @@ public class NewListViewer_WrapperFactory extends ValueWrapperFactory {
     return true;
   }
 
-  public static class NewListViewerWrapper extends ValueWrapper {
-    public NewListViewerWrapper(JavaValue value) {
+  public static class ListSequenceViewerWrapper extends ValueWrapper {
+    public ListSequenceViewerWrapper(JavaValue value) {
       super(value);
     }
 

@@ -97,6 +97,10 @@ public class QueriesGenerated {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "viewer"), "constructor", true)).first();
   }
 
+  public static Object referenceMacro_GetReferent_9127371268473651354(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "highLevelViewer"), "constructor", true)).first();
+  }
+
   public static Object referenceMacro_GetReferent_264293128390879084(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "highLevelViewer"), "constructor", true)).first();
   }
@@ -213,6 +217,10 @@ public class QueriesGenerated {
     return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.debug.customViewers.structure.CustomViewer");
   }
 
+  public static Iterable sourceNodesQuery_9127371268473651371(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.debug.customViewers.structure.HighLevelCustomViewer");
+  }
+
   public static Iterable sourceNodesQuery_7744028807303024912(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "arguments", true);
   }
@@ -247,11 +255,11 @@ public class QueriesGenerated {
 
   public static void mappingScript_CodeBlock_264293128390891135(final IOperationContext operationContext, final MappingScriptContext _context) {
     for (SNode classConcept : ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
-      if (eq_x583g4_a0a0a0a05(SLinkOperations.getTarget(SLinkOperations.getTarget(classConcept, "superclass", true), "classifier", false), SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a05().createNode(), "classifier", false)) && SPropertyOperations.getString(classConcept, "name").endsWith("_WrapperFactory")) {
+      if (eq_x583g4_a0a0a0a25(SLinkOperations.getTarget(SLinkOperations.getTarget(classConcept, "superclass", true), "classifier", false), SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a25().createNode(), "classifier", false)) && SPropertyOperations.getString(classConcept, "name").endsWith("_WrapperFactory")) {
         List<SNode> methodsToProcess = ListSequence.fromList(new ArrayList<SNode>());
         ListSequence.fromList(methodsToProcess).addElement(ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SPropertyOperations.getString(it, "name").equals("canWrapValue") && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).first(), "type", true), new QueriesGenerated.QuotationClass_x583g4_a1a0a0a0a0a0b0a0a0yb().createNode());
+            return SPropertyOperations.getString(it, "name").equals("canWrapValue") && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).first(), "type", true), new QueriesGenerated.QuotationClass_x583g4_a1a0a0a0a0a0b0a0a0ac().createNode());
           }
         }));
         ListSequence.fromList(methodsToProcess).addElement(ListSequence.fromList(SNodeOperations.getDescendants(classConcept, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, new String[]{})).findFirst(new IWhereFilter<SNode>() {
@@ -274,15 +282,15 @@ public class QueriesGenerated {
     }
   }
 
-  private static boolean eq_x583g4_a0a0a0a05(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0a0a25(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  public static class QuotationClass_x583g4_a1a0a0a0a0a0b0a0a0yb {
-    public QuotationClass_x583g4_a1a0a0a0a0a0b0a0a0yb() {
+  public static class QuotationClass_x583g4_a1a0a0a0a0a0b0a0a0ac {
+    public QuotationClass_x583g4_a1a0a0a0a0a0b0a0a0ac() {
     }
 
     public SNode createNode() {
@@ -299,8 +307,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0a05 {
-    public QuotationClass_x583g4_a0a0a0a0a05() {
+  public static class QuotationClass_x583g4_a0a0a0a0a25 {
+    public QuotationClass_x583g4_a0a0a0a0a25() {
     }
 
     public SNode createNode() {
