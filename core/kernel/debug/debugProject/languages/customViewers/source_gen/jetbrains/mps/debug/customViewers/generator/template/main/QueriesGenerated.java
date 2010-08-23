@@ -121,6 +121,10 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "getPresentation", true) != null);
   }
 
+  public static boolean ifMacro_Condition_7785669630792594441(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "getPresentation", true) != null);
+  }
+
   public static boolean ifMacro_Condition_2685024263846566714(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "canWrap", true) != null);
   }
@@ -189,7 +193,15 @@ public class QueriesGenerated {
     return TransformationUtil.getValueProxyTypeFromType(HighLevelCustomViewer_Behavior.call_getValueTypeCopy_43370322128260022(_context.getNode()));
   }
 
-  public static SNode sourceNodeQuery_264293128390879151(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_7785669630792626876(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return TransformationUtil.getValueProxyTypeFromType(HighLevelCustomViewer_Behavior.call_getValueTypeCopy_43370322128260022(_context.getNode()));
+  }
+
+  public static SNode sourceNodeQuery_7785669630792594432(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return TransformationUtil.getValueProxyTypeFromType(HighLevelCustomViewer_Behavior.call_getValueTypeCopy_43370322128260022(_context.getNode()));
+  }
+
+  public static SNode sourceNodeQuery_7785669630792594457(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "getPresentation", true), "body", true);
   }
 
@@ -255,16 +267,16 @@ public class QueriesGenerated {
 
   public static void mappingScript_CodeBlock_264293128390891135(final IOperationContext operationContext, final MappingScriptContext _context) {
     for (SNode classConcept : ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
-      if (eq_x583g4_a0a0a0a25(SLinkOperations.getTarget(SLinkOperations.getTarget(classConcept, "superclass", true), "classifier", false), SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a25().createNode(), "classifier", false)) && SPropertyOperations.getString(classConcept, "name").endsWith("_WrapperFactory")) {
+      if (eq_x583g4_a0a0a0a55(SLinkOperations.getTarget(SLinkOperations.getTarget(classConcept, "superclass", true), "classifier", false), SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a55().createNode(), "classifier", false)) && SPropertyOperations.getString(classConcept, "name").endsWith("_WrapperFactory")) {
         List<SNode> methodsToProcess = ListSequence.fromList(new ArrayList<SNode>());
         ListSequence.fromList(methodsToProcess).addElement(ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SPropertyOperations.getString(it, "name").equals("canWrapValue") && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).first(), "type", true), new QueriesGenerated.QuotationClass_x583g4_a1a0a0a0a0a0b0a0a0ac().createNode());
+            return SPropertyOperations.getString(it, "name").equals("canWrapValue") && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).first(), "type", true), new QueriesGenerated.QuotationClass_x583g4_a1a0a0a0a0a0b0a0a0dc().createNode());
           }
         }));
         ListSequence.fromList(methodsToProcess).addElement(ListSequence.fromList(SNodeOperations.getDescendants(classConcept, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, new String[]{})).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SPropertyOperations.getString(it, "name").equals("getValuePresentation");
+            return SPropertyOperations.getString(it, "name").equals("getValuePresentation") && ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).count() == 1;
           }
         }));
         ListSequence.fromList(methodsToProcess).addElement(ListSequence.fromList(SNodeOperations.getDescendants(classConcept, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, new String[]{})).findFirst(new IWhereFilter<SNode>() {
@@ -282,15 +294,15 @@ public class QueriesGenerated {
     }
   }
 
-  private static boolean eq_x583g4_a0a0a0a25(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0a0a55(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  public static class QuotationClass_x583g4_a1a0a0a0a0a0b0a0a0ac {
-    public QuotationClass_x583g4_a1a0a0a0a0a0b0a0a0ac() {
+  public static class QuotationClass_x583g4_a1a0a0a0a0a0b0a0a0dc {
+    public QuotationClass_x583g4_a1a0a0a0a0a0b0a0a0dc() {
     }
 
     public SNode createNode() {
@@ -307,8 +319,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0a25 {
-    public QuotationClass_x583g4_a0a0a0a0a25() {
+  public static class QuotationClass_x583g4_a0a0a0a0a55 {
+    public QuotationClass_x583g4_a0a0a0a0a55() {
     }
 
     public SNode createNode() {
