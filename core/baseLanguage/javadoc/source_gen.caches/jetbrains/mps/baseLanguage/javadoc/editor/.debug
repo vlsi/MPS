@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="2068944020170241615">
+    <nodeInfo nodeId="2068944020170241637" fileName="ClassifierDocComment_Editor.java" startLine="200" startPosition="112" endLine="201" endPosition="96" />
+    <nodeInfo nodeId="2068944020170241649" fileName="ClassifierDocComment_Editor.java" startLine="204" startPosition="112" endLine="205" endPosition="95" />
+    <nodeInfo nodeId="2068944020170241661" fileName="ClassifierDocComment_Editor.java" startLine="208" startPosition="112" endLine="209" endPosition="97" />
+    <nodeInfo nodeId="2217234381367280716" fileName="ClassifierDocComment_Editor.java" startLine="212" startPosition="112" endLine="213" endPosition="93" />
+    <nodeInfo nodeId="2068944020170522825" fileName="ClassifierDocComment_Editor.java" startLine="216" startPosition="112" endLine="217" endPosition="95" />
+    <nodeInfo nodeId="2068944020170241706" fileName="ClassifierDocComment_Editor.java" startLine="220" startPosition="111" endLine="221" endPosition="87" />
     <scopeInfo nodeId="2068944020170241636" fileName="ClassifierDocComment_Editor.java" startLine="200" startPosition="112" endLine="201" endPosition="96" />
     <scopeInfo nodeId="2068944020170241648" fileName="ClassifierDocComment_Editor.java" startLine="204" startPosition="112" endLine="205" endPosition="95" />
     <scopeInfo nodeId="2068944020170241660" fileName="ClassifierDocComment_Editor.java" startLine="208" startPosition="112" endLine="209" endPosition="97" />
@@ -232,6 +238,14 @@
     </scopeInfo>
   </root>
   <root nodeId="5349172909345532803">
+    <nodeInfo nodeId="5858074156536703214" fileName="MethodDocComment_Editor.java" startLine="244" startPosition="112" endLine="245" endPosition="96" />
+    <nodeInfo nodeId="5858074156536703234" fileName="MethodDocComment_Editor.java" startLine="248" startPosition="112" endLine="249" endPosition="95" />
+    <nodeInfo nodeId="5858074156536703244" fileName="MethodDocComment_Editor.java" startLine="252" startPosition="112" endLine="253" endPosition="97" />
+    <nodeInfo nodeId="2217234381367280704" fileName="MethodDocComment_Editor.java" startLine="256" startPosition="112" endLine="257" endPosition="93" />
+    <nodeInfo nodeId="5858074156536703253" fileName="MethodDocComment_Editor.java" startLine="260" startPosition="112" endLine="261" endPosition="95" />
+    <nodeInfo nodeId="5858074156537516448" fileName="MethodDocComment_Editor.java" startLine="264" startPosition="112" endLine="265" endPosition="99" />
+    <nodeInfo nodeId="5858074156537516471" fileName="MethodDocComment_Editor.java" startLine="268" startPosition="112" endLine="269" endPosition="69" />
+    <nodeInfo nodeId="7344646339284972204" fileName="MethodDocComment_Editor.java" startLine="272" startPosition="111" endLine="273" endPosition="87" />
     <scopeInfo nodeId="5858074156536703205" fileName="MethodDocComment_Editor.java" startLine="244" startPosition="112" endLine="245" endPosition="96" />
     <scopeInfo nodeId="5858074156536703227" fileName="MethodDocComment_Editor.java" startLine="248" startPosition="112" endLine="249" endPosition="95" />
     <scopeInfo nodeId="5858074156536703243" fileName="MethodDocComment_Editor.java" startLine="252" startPosition="112" endLine="253" endPosition="97" />
@@ -360,11 +374,19 @@
     <unitInfo nodeId="6253469183661714779" fileName="TextCommentPartUtil.java" startLine="15" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentPartUtil" />
   </root>
   <root nodeId="6612597108003615645">
+    <nodeInfo nodeId="6612597108004706973" fileName="HTMLElement_Editor.java" startLine="230" startPosition="110" endLine="231" endPosition="91" />
+    <nodeInfo nodeId="6612597108005074121" fileName="HTMLElement_Editor.java" startLine="276" startPosition="105" endLine="277" endPosition="113" />
+    <nodeInfo nodeId="6612597108004969380" fileName="HTMLElement_Editor.java" startLine="285" startPosition="105" endLine="286" endPosition="113" />
     <scopeInfo nodeId="6612597108004705761" fileName="HTMLElement_Editor.java" startLine="230" startPosition="110" endLine="231" endPosition="91" />
     <scopeInfo nodeId="6612597108005074120" fileName="HTMLElement_Editor.java" startLine="276" startPosition="105" endLine="277" endPosition="113" />
     <scopeInfo nodeId="6612597108004967784" fileName="HTMLElement_Editor.java" startLine="285" startPosition="105" endLine="286" endPosition="113" />
   </root>
   <root nodeId="6832197706140896245">
+    <nodeInfo nodeId="6832197706140896270" fileName="FieldDocComment_Editor.java" startLine="183" startPosition="112" endLine="184" endPosition="96" />
+    <nodeInfo nodeId="6832197706140896282" fileName="FieldDocComment_Editor.java" startLine="187" startPosition="112" endLine="188" endPosition="95" />
+    <nodeInfo nodeId="6832197706140896294" fileName="FieldDocComment_Editor.java" startLine="191" startPosition="112" endLine="192" endPosition="97" />
+    <nodeInfo nodeId="2217234381367277541" fileName="FieldDocComment_Editor.java" startLine="195" startPosition="112" endLine="196" endPosition="93" />
+    <nodeInfo nodeId="6832197706140896339" fileName="FieldDocComment_Editor.java" startLine="199" startPosition="111" endLine="200" endPosition="87" />
     <scopeInfo nodeId="6832197706140896269" fileName="FieldDocComment_Editor.java" startLine="183" startPosition="112" endLine="184" endPosition="96" />
     <scopeInfo nodeId="6832197706140896281" fileName="FieldDocComment_Editor.java" startLine="187" startPosition="112" endLine="188" endPosition="95" />
     <scopeInfo nodeId="6832197706140896293" fileName="FieldDocComment_Editor.java" startLine="191" startPosition="112" endLine="192" endPosition="97" />
@@ -372,12 +394,15 @@
     <scopeInfo nodeId="6832197706140896338" fileName="FieldDocComment_Editor.java" startLine="199" startPosition="111" endLine="200" endPosition="87" />
   </root>
   <root nodeId="6962838954693749205">
+    <nodeInfo nodeId="6501140109493929215" fileName="ValueInlineDocTag_Editor.java" startLine="70" startPosition="111" endLine="71" endPosition="80" />
     <scopeInfo nodeId="6501140109493928005" fileName="ValueInlineDocTag_Editor.java" startLine="70" startPosition="111" endLine="71" endPosition="80" />
   </root>
   <root nodeId="8465538089690372264">
+    <nodeInfo nodeId="3106559687488287960" fileName="CommentLine_Editor.java" startLine="60" startPosition="110" endLine="61" endPosition="55" />
     <scopeInfo nodeId="3106559687488286750" fileName="CommentLine_Editor.java" startLine="60" startPosition="110" endLine="61" endPosition="55" />
   </root>
   <root nodeId="8970989240999019150">
+    <nodeInfo nodeId="2668265993332135379" fileName="TextCommentLinePart_Editor.java" startLine="37" startPosition="31" endLine="38" endPosition="59" />
     <nodeInfo nodeId="677166607849245744" fileName="TextCommentLinePart_Editor.java" startLine="41" startPosition="40" endLine="42" endPosition="52" />
     <nodeInfo nodeId="2668265993332135389" fileName="TextCommentLinePart_Editor.java" startLine="42" startPosition="52" endLine="43" endPosition="71" />
     <nodeInfo nodeId="2668265993332135397" fileName="TextCommentLinePart_Editor.java" startLine="46" startPosition="47" endLine="47" endPosition="20" />

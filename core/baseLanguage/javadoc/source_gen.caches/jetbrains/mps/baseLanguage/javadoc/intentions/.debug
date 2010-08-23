@@ -11,6 +11,7 @@
     <nodeInfo nodeId="2068944020170434443" fileName="AddClassifierDocComment_Intention.java" startLine="66" startPosition="132" endLine="67" endPosition="131" />
     <nodeInfo nodeId="2068944020170434449" fileName="AddClassifierDocComment_Intention.java" startLine="67" startPosition="131" endLine="68" endPosition="169" />
     <nodeInfo nodeId="2068944020170434458" fileName="AddClassifierDocComment_Intention.java" startLine="68" startPosition="169" endLine="69" endPosition="203" />
+    <nodeInfo nodeId="3106559687487194684" fileName="AddClassifierDocComment_Intention.java" startLine="39" startPosition="85" endLine="43" endPosition="6" />
     <nodeInfo nodeId="3106559687487194714" fileName="AddClassifierDocComment_Intention.java" startLine="57" startPosition="76" endLine="61" endPosition="5" />
     <nodeInfo nodeId="2068944020170434437" fileName="AddClassifierDocComment_Intention.java" startLine="65" startPosition="23" endLine="70" endPosition="5" />
     <scopeInfo nodeId="8970989240998714834" fileName="AddClassifierDocComment_Intention.java" startLine="53" startPosition="111" endLine="54" endPosition="499" />
@@ -23,6 +24,8 @@
     <scopeInfo nodeId="2068944020170372974" fileName="AddClassifierDocComment_Intention.java" startLine="57" startPosition="76" endLine="70" endPosition="5" />
   </root>
   <root nodeId="2217234381367409810">
+    <nodeInfo nodeId="2217234381367409832" fileName="AddSeeBlockTag_Intention.java" startLine="32" startPosition="85" endLine="33" endPosition="26" />
+    <nodeInfo nodeId="2217234381367409836" fileName="AddSeeBlockTag_Intention.java" startLine="43" startPosition="90" endLine="44" endPosition="90" />
     <nodeInfo nodeId="2217234381367409848" fileName="AddSeeBlockTag_Intention.java" startLine="47" startPosition="76" endLine="48" endPosition="108" />
     <scopeInfo nodeId="2217234381367409812" fileName="AddSeeBlockTag_Intention.java" startLine="32" startPosition="85" endLine="33" endPosition="26" />
     <scopeInfo nodeId="2217234381367409835" fileName="AddSeeBlockTag_Intention.java" startLine="43" startPosition="90" endLine="44" endPosition="90" />
@@ -51,6 +54,7 @@
     <nodeInfo nodeId="7376433222636453057" fileName="AddMethodDocComment_Intention.java" startLine="73" startPosition="0" endLine="74" endPosition="21" />
     <nodeInfo nodeId="5858074156537614528" fileName="AddMethodDocComment_Intention.java" startLine="75" startPosition="144" endLine="76" endPosition="261" />
     <nodeInfo nodeId="5858074156537614466" fileName="AddMethodDocComment_Intention.java" startLine="74" startPosition="21" endLine="77" endPosition="5" />
+    <nodeInfo nodeId="3106559687487130979" fileName="AddMethodDocComment_Intention.java" startLine="39" startPosition="85" endLine="43" endPosition="6" />
     <nodeInfo nodeId="3106559687487133208" fileName="AddMethodDocComment_Intention.java" startLine="46" startPosition="76" endLine="50" endPosition="5" />
     <nodeInfo nodeId="8465538089690919857" fileName="AddMethodDocComment_Intention.java" startLine="53" startPosition="26" endLine="58" endPosition="5" />
     <nodeInfo nodeId="2068944020170311118" fileName="AddMethodDocComment_Intention.java" startLine="60" startPosition="23" endLine="65" endPosition="5" />
@@ -76,6 +80,7 @@
     <nodeInfo nodeId="3106559687487194857" fileName="AddStaticFieldDocComment_Intention.java" startLine="40" startPosition="131" endLine="41" endPosition="177" />
     <nodeInfo nodeId="3106559687487194872" fileName="AddStaticFieldDocComment_Intention.java" startLine="42" startPosition="12" endLine="43" endPosition="123" />
     <nodeInfo nodeId="3106559687487194870" fileName="AddStaticFieldDocComment_Intention.java" startLine="42" startPosition="10" endLine="44" endPosition="5" />
+    <nodeInfo nodeId="3106559687487194844" fileName="AddStaticFieldDocComment_Intention.java" startLine="32" startPosition="85" endLine="36" endPosition="6" />
     <nodeInfo nodeId="3106559687487194855" fileName="AddStaticFieldDocComment_Intention.java" startLine="39" startPosition="76" endLine="44" endPosition="5" />
     <scopeInfo nodeId="3106559687487194856" fileName="AddStaticFieldDocComment_Intention.java" startLine="40" startPosition="131" endLine="41" endPosition="177" />
     <scopeInfo nodeId="3106559687487194871" fileName="AddStaticFieldDocComment_Intention.java" startLine="42" startPosition="12" endLine="43" endPosition="123" />
@@ -83,6 +88,8 @@
     <scopeInfo nodeId="4021391592916341757" fileName="AddStaticFieldDocComment_Intention.java" startLine="39" startPosition="76" endLine="44" endPosition="5" />
   </root>
   <root nodeId="5858074156537083239">
+    <nodeInfo nodeId="5858074156537083262" fileName="AddParameterBlockDocTag_Intention.java" startLine="32" startPosition="85" endLine="33" endPosition="28" />
+    <nodeInfo nodeId="5858074156537083266" fileName="AddParameterBlockDocTag_Intention.java" startLine="43" startPosition="90" endLine="44" endPosition="92" />
     <nodeInfo nodeId="5858074156537083278" fileName="AddParameterBlockDocTag_Intention.java" startLine="47" startPosition="76" endLine="48" endPosition="116" />
     <scopeInfo nodeId="5858074156537083241" fileName="AddParameterBlockDocTag_Intention.java" startLine="32" startPosition="85" endLine="33" endPosition="28" />
     <scopeInfo nodeId="5858074156537083265" fileName="AddParameterBlockDocTag_Intention.java" startLine="43" startPosition="90" endLine="44" endPosition="92" />
@@ -93,6 +100,7 @@
     <nodeInfo nodeId="6612597108004800097" fileName="FoldHTMLElement_Intention.java" startLine="49" startPosition="12" endLine="50" endPosition="84" />
     <nodeInfo nodeId="6612597108004800092" fileName="FoldHTMLElement_Intention.java" startLine="49" startPosition="10" endLine="51" endPosition="5" />
     <nodeInfo nodeId="6612597108004888988" fileName="FoldHTMLElement_Intention.java" startLine="35" startPosition="85" endLine="39" endPosition="6" />
+    <nodeInfo nodeId="6612597108004799988" fileName="FoldHTMLElement_Intention.java" startLine="39" startPosition="6" endLine="43" endPosition="6" />
     <nodeInfo nodeId="6612597108004800065" fileName="FoldHTMLElement_Intention.java" startLine="46" startPosition="76" endLine="51" endPosition="5" />
     <scopeInfo nodeId="6612597108004800067" fileName="FoldHTMLElement_Intention.java" startLine="47" startPosition="90" endLine="48" endPosition="108" />
     <scopeInfo nodeId="6612597108004800093" fileName="FoldHTMLElement_Intention.java" startLine="49" startPosition="12" endLine="50" endPosition="84" />
@@ -102,13 +110,17 @@
     </scopeInfo>
   </root>
   <root nodeId="6612597108006318457">
+    <nodeInfo nodeId="6612597108006325993" fileName="AddThrowBlockDocTag_Intention.java" startLine="32" startPosition="85" endLine="33" endPosition="28" />
+    <nodeInfo nodeId="6612597108006325998" fileName="AddThrowBlockDocTag_Intention.java" startLine="43" startPosition="90" endLine="44" endPosition="96" />
     <nodeInfo nodeId="6612597108006326010" fileName="AddThrowBlockDocTag_Intention.java" startLine="47" startPosition="76" endLine="48" endPosition="117" />
     <scopeInfo nodeId="6612597108006318459" fileName="AddThrowBlockDocTag_Intention.java" startLine="32" startPosition="85" endLine="33" endPosition="28" />
     <scopeInfo nodeId="6612597108006325997" fileName="AddThrowBlockDocTag_Intention.java" startLine="43" startPosition="90" endLine="44" endPosition="96" />
     <scopeInfo nodeId="6612597108006318461" fileName="AddThrowBlockDocTag_Intention.java" startLine="47" startPosition="76" endLine="48" endPosition="117" />
   </root>
   <root nodeId="6832197706140861451">
+    <nodeInfo nodeId="6832197706140861457" fileName="AddReturnBlockTag_Intention.java" startLine="33" startPosition="85" endLine="34" endPosition="29" />
     <nodeInfo nodeId="8970989240998608395" fileName="AddReturnBlockTag_Intention.java" startLine="44" startPosition="90" endLine="45" endPosition="180" />
+    <nodeInfo nodeId="6832197706140861461" fileName="AddReturnBlockTag_Intention.java" startLine="45" startPosition="180" endLine="46" endPosition="189" />
     <nodeInfo nodeId="6832197706140861480" fileName="AddReturnBlockTag_Intention.java" startLine="49" startPosition="76" endLine="50" endPosition="158" />
     <scopeInfo nodeId="6832197706140861453" fileName="AddReturnBlockTag_Intention.java" startLine="33" startPosition="85" endLine="34" endPosition="29" />
     <scopeInfo nodeId="6832197706140861455" fileName="AddReturnBlockTag_Intention.java" startLine="49" startPosition="76" endLine="50" endPosition="158" />
@@ -120,6 +132,7 @@
     <nodeInfo nodeId="3106559687487194800" fileName="AddFieldDocComment_Intention.java" startLine="40" startPosition="125" endLine="41" endPosition="171" />
     <nodeInfo nodeId="3106559687487194824" fileName="AddFieldDocComment_Intention.java" startLine="42" startPosition="12" endLine="43" endPosition="117" />
     <nodeInfo nodeId="3106559687487194810" fileName="AddFieldDocComment_Intention.java" startLine="42" startPosition="10" endLine="44" endPosition="5" />
+    <nodeInfo nodeId="3106559687487194762" fileName="AddFieldDocComment_Intention.java" startLine="32" startPosition="85" endLine="36" endPosition="6" />
     <nodeInfo nodeId="3106559687487194783" fileName="AddFieldDocComment_Intention.java" startLine="39" startPosition="76" endLine="44" endPosition="5" />
     <scopeInfo nodeId="3106559687487194784" fileName="AddFieldDocComment_Intention.java" startLine="40" startPosition="125" endLine="41" endPosition="171" />
     <scopeInfo nodeId="3106559687487194811" fileName="AddFieldDocComment_Intention.java" startLine="42" startPosition="12" endLine="43" endPosition="117" />
@@ -127,6 +140,8 @@
     <scopeInfo nodeId="6832197706140958204" fileName="AddFieldDocComment_Intention.java" startLine="39" startPosition="76" endLine="44" endPosition="5" />
   </root>
   <root nodeId="8465538089690783660">
+    <nodeInfo nodeId="8465538089690783666" fileName="AddAuthorBlockDocTag_Intention.java" startLine="33" startPosition="85" endLine="34" endPosition="29" />
+    <nodeInfo nodeId="8465538089690783670" fileName="AddAuthorBlockDocTag_Intention.java" startLine="44" startPosition="90" endLine="45" endPosition="93" />
     <nodeInfo nodeId="8970989240998824263" fileName="AddAuthorBlockDocTag_Intention.java" startLine="48" startPosition="76" endLine="49" endPosition="127" />
     <nodeInfo nodeId="8465538089690815805" fileName="AddAuthorBlockDocTag_Intention.java" startLine="49" startPosition="127" endLine="50" endPosition="98" />
     <nodeInfo nodeId="7376433222636453967" fileName="AddAuthorBlockDocTag_Intention.java" startLine="50" startPosition="98" endLine="51" endPosition="13" />
@@ -139,12 +154,16 @@
     </scopeInfo>
   </root>
   <root nodeId="8465538089690815842">
+    <nodeInfo nodeId="8465538089690815847" fileName="AddSinceBlockDocTag_Intention.java" startLine="32" startPosition="85" endLine="33" endPosition="28" />
+    <nodeInfo nodeId="8465538089690815851" fileName="AddSinceBlockDocTag_Intention.java" startLine="43" startPosition="90" endLine="44" endPosition="92" />
     <nodeInfo nodeId="8465538089690815872" fileName="AddSinceBlockDocTag_Intention.java" startLine="47" startPosition="76" endLine="48" endPosition="112" />
     <scopeInfo nodeId="8465538089690815844" fileName="AddSinceBlockDocTag_Intention.java" startLine="32" startPosition="85" endLine="33" endPosition="28" />
     <scopeInfo nodeId="8465538089690815850" fileName="AddSinceBlockDocTag_Intention.java" startLine="43" startPosition="90" endLine="44" endPosition="92" />
     <scopeInfo nodeId="8465538089690815846" fileName="AddSinceBlockDocTag_Intention.java" startLine="47" startPosition="76" endLine="48" endPosition="112" />
   </root>
   <root nodeId="8465538089690851630">
+    <nodeInfo nodeId="8465538089690851635" fileName="AddVersionBlockTagDoc_Intention.java" startLine="32" startPosition="85" endLine="33" endPosition="30" />
+    <nodeInfo nodeId="8465538089690851639" fileName="AddVersionBlockTagDoc_Intention.java" startLine="43" startPosition="90" endLine="44" endPosition="94" />
     <nodeInfo nodeId="8465538089690851652" fileName="AddVersionBlockTagDoc_Intention.java" startLine="47" startPosition="76" endLine="48" endPosition="116" />
     <scopeInfo nodeId="8465538089690851632" fileName="AddVersionBlockTagDoc_Intention.java" startLine="32" startPosition="85" endLine="33" endPosition="30" />
     <scopeInfo nodeId="8465538089690851638" fileName="AddVersionBlockTagDoc_Intention.java" startLine="43" startPosition="90" endLine="44" endPosition="94" />
