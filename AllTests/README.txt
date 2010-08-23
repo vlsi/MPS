@@ -15,7 +15,5 @@ Testing MPS
 
   2.1. The patterns for JUnit tests on the must not be altered.
 
-  2.2. The first test to be run must be "MakeMps".
-
-  2.3. The tests must be run in "fork per test" mode.
-
+  2.2. All top-level tests must have a @BeforeClass static method that invokes make
+  
