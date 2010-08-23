@@ -50,14 +50,9 @@ class OnReloadingUndoCleaner implements ApplicationComponent {
       public void modelReplaced(SModelDescriptor sm) {
         for (SNode root : sm.getSModel().getRoots()) {
           final MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(root);
+          assert file.isValid() : "invalid file returned by MPS VFS for following model root: " + root;
           for (final Project p : myProjectManager.getOpenProjects()) {
-            ApplicationManager.getApplication().invokeLater(new Runnable() {
-              public void run() {
-                if (!p.isDisposed()) {
-                  ((UndoManagerImpl) UndoManager.getInstance(p)).clearUndoRedoQueueInTests(file);
-                }
-              }
-            }, ModalityState.NON_MODAL);
+            ((UndoManagerImpl) UndoManager.getInstance(p)).clearUndoRedoQueueInTests(file);
           }
         }
       }
