@@ -15,16 +15,12 @@
  */
 package jetbrains.mps.plugin;
 
-import java.io.File;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.List;
 
 @SuppressWarnings({"RedundantThrows", "UnusedDeclaration"})
 public interface IProjectHandler extends Remote {
-  void addSourceRoot(final String path) throws RemoteException;
-
-  void addMPSJar(final String mpsHome) throws RemoteException;
 
   void refreshFS() throws RemoteException;
 
@@ -40,15 +36,7 @@ public interface IProjectHandler extends Remote {
 
   void openConstructor(final String className, final int parameterCount) throws RemoteException;
 
-  void addLanguageRoot(String path) throws RemoteException;
-
-  List<String> getModuleClassPath(final String path) throws RemoteException;
-
   void addIdeHandler(IMPSIDEHandler handler) throws RemoteException;
 
   void removeIdeHandler(IMPSIDEHandler handler) throws RemoteException;
-
-  void deleteFilesAndRemoveFromVCS(List<File> files) throws RemoteException;
-
-  void addFilesToVCS(final List<File> files) throws RemoteException;
 }

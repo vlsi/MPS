@@ -24,40 +24,30 @@ import com.intellij.openapi.compiler.CompilerManager;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
-import com.intellij.openapi.module.ModuleUtil;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.roots.*;
-import com.intellij.openapi.roots.libraries.Library;
-import com.intellij.openapi.roots.libraries.LibraryTable;
-import com.intellij.openapi.roots.libraries.LibraryTablesRegistrar;
+import com.intellij.openapi.roots.ModuleRootManager;
+import com.intellij.openapi.roots.ProjectRootManager;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.SystemInfo;
-import com.intellij.openapi.vcs.AbstractVcs;
-import com.intellij.openapi.vcs.FilePath;
-import com.intellij.openapi.vcs.ProjectLevelVcsManager;
-import com.intellij.openapi.vcs.VcsException;
-import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
-import com.intellij.openapi.vcs.checkin.CheckinEnvironment;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.wm.WindowManager;
-import com.intellij.peer.PeerFactory;
-import com.intellij.psi.*;
+import com.intellij.psi.JavaPsiFacade;
+import com.intellij.psi.PsiClass;
+import com.intellij.psi.PsiField;
+import com.intellij.psi.PsiMethod;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.psi.search.searches.ClassInheritorsSearch;
-import com.intellij.util.IncorrectOperationException;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
-import java.awt.Frame;
+import javax.swing.*;
+import java.awt.*;
 import java.io.File;
-import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Kostik
@@ -87,56 +77,6 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
   }
 
   public void disposeComponent() {
-  }
-
-  String getProjectPath() {
-    return new File(myProject.getPresentableUrl()).getAbsolutePath();
-  }
-
-  public void addSourceRoot(final String path) {
-    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-      public void run() {
-        ApplicationManager.getApplication().runWriteAction(new Runnable() {
-          public void run() {
-            LocalFileSystem lfs = LocalFileSystem.getInstance();
-            VirtualFile sourceFolderFile = lfs.refreshAndFindFileByIoFile(new File(path));
-            if (sourceFolderFile == null) return;
-            Module module = ModuleUtil.findModuleForFile(sourceFolderFile, myProject);
-            if (module == null) return;
-            ModifiableRootModel model = ModuleRootManager.getInstance(module).getModifiableModel();
-            ContentEntry entry = model.getContentEntries()[0];
-            entry.addSourceFolder(sourceFolderFile, false);
-            model.commit();
-          }
-        });
-      }
-    }, ModalityState.NON_MODAL);
-  }
-
-  public void addMPSJar(final String mpsHome) {
-    executeWriteAction(new Runnable() {
-      public void run() {
-        Module module = ModuleManager.getInstance(myProject).getModules()[0];
-        ModifiableRootModel rootModel = ModuleRootManager.getInstance(module).getModifiableModel();
-        LibraryTable table = LibraryTablesRegistrar.getInstance().getLibraryTable(myProject);
-        Library library = table.createLibrary("MPS");
-
-        Library.ModifiableModel libraryModel = library.getModifiableModel();
-        try {
-          File mpsJar = new File(mpsHome + File.separatorChar + "lib" + File.separatorChar + "mps.jar");
-          File srcZip = new File(mpsHome + File.separatorChar + "src.zip");
-
-          libraryModel.addRoot("jar://" + mpsJar.getCanonicalPath() + "!/", OrderRootType.CLASSES);
-          libraryModel.addRoot("jar://" + srcZip + "!/", OrderRootType.SOURCES);
-          libraryModel.commit();
-
-          rootModel.addLibraryEntry(library);
-          rootModel.commit();
-        } catch (IOException e) {
-          e.printStackTrace();
-        }
-      }
-    });
   }
 
   public void refreshFS() {
@@ -300,13 +240,6 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
   }
 
 
-  public void addLanguageRoot(String path) {
-    executeWriteAction(new Runnable() {
-      public void run() {
-      }
-    });
-  }
-
   public void addIdeHandler(IMPSIDEHandler handler) throws RemoteException {
     myIDEHandlers.add(handler);
   }
@@ -316,23 +249,6 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
 
     //we need it because of RMI's distributed gc
     System.gc();
-  }
-
-  private PsiDirectory createPackagesForNamespace(PsiDirectory dir, String namespace) {
-    PsiDirectory current = dir;
-    try {
-      String[] elements = namespace.split("\\.");
-      for (String el : elements) {
-        PsiDirectory next = current.findSubdirectory(el);
-        if (next == null) {
-          next = current.createSubdirectory(el);
-        }
-        current = next;
-      }
-    } catch (IncorrectOperationException e) {
-      e.printStackTrace();
-    }
-    return current;
   }
 
   private PsiClass findClass(final String className) {
@@ -383,60 +299,6 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     }
 
     return bestModule;
-  }
-
-  public List<String> getModuleClassPath(final String path) {
-    final List<String> res = new ArrayList<String>();
-    executeWriteAction(new Runnable() {
-      public void run() {
-        Module m = findModule(path);
-
-        if (m == null) return;
-
-
-        final Set<Module> processedModules = new HashSet<Module>();
-        Set<VirtualFile> result = new LinkedHashSet<VirtualFile>();
-
-        ModuleRootManager instance = ModuleRootManager.getInstance(m);
-        if (instance != null) {
-          String outUrl = CompilerModuleExtension.getInstance(m).getCompilerOutputUrl();
-          if (outUrl != null) {
-            res.add(new File(VirtualFileManager.extractPath(outUrl)).getAbsolutePath());
-          }
-        }
-
-
-        ModuleRootManager.getInstance(m).processOrder(new RootPolicy<Set<VirtualFile>>() {
-          public Set<VirtualFile> visitLibraryOrderEntry(LibraryOrderEntry libraryOrderEntry, Set<VirtualFile> result) {
-            result.addAll(Arrays.asList(libraryOrderEntry.getFiles(OrderRootType.CLASSES)));
-            return result;
-          }
-
-          public Set<VirtualFile> visitModuleOrderEntry(ModuleOrderEntry moduleOrderEntry, Set<VirtualFile> result) {
-            Module module = moduleOrderEntry.getModule();
-            if (module != null && !processedModules.contains(module)) {
-              String outUrl = CompilerModuleExtension.getInstance(module).getCompilerOutputUrl();
-              if (outUrl != null) {
-                res.add(new File(VirtualFileManager.extractPath(outUrl)).getAbsolutePath());
-              }
-              processedModules.add(module);
-              result.addAll(Arrays.asList(moduleOrderEntry.getFiles(OrderRootType.CLASSES_AND_OUTPUT)));
-              ModuleRootManager.getInstance(module).processOrder(this, result);
-            }
-            return result;
-          }
-        }, result);
-        for (VirtualFile f : result) {
-          try {
-            res.add(f.getPresentableUrl());
-          } catch (Exception e) {
-            e.printStackTrace();
-          }
-        }
-
-      }
-    });
-    return res;
   }
 
   void showAspectMethodUsages(String namepace, String name) {
@@ -498,61 +360,5 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     if (distance == -1) return -1;
 
     return distance + 1;
-  }
-
-  public void deleteFilesAndRemoveFromVCS(final List<File> files) throws RemoteException {
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
-      public void run() {
-        ApplicationManager.getApplication().runWriteAction(new Runnable() {
-          public void run() {
-            LocalFileSystem lfs = LocalFileSystem.getInstance();
-            for (File file : files) {
-              VirtualFile vfile = lfs.refreshAndFindFileByIoFile(file);
-              if (vfile != null) {
-                try {
-                  vfile.delete(this);
-                } catch (IOException ex) {
-                  ex.printStackTrace();
-                }
-              }
-            }
-          }
-        });
-      }
-    });
-  }
-
-  public void addFilesToVCS(final List<File> files) throws RemoteException {
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
-      public void run() {
-        ApplicationManager.getApplication().runWriteAction(new Runnable() {
-          public void run() {
-            LocalFileSystem lfs = LocalFileSystem.getInstance();
-            for (File f : files) {
-              VirtualFile vf = lfs.refreshAndFindFileByIoFile(f);
-              ProjectLevelVcsManager vcsManager = ProjectLevelVcsManager.getInstance(myProject);
-              if (vf == null) {
-                continue;
-              }
-              FilePath fp = PeerFactory.getInstance().getVcsContextFactory().createFilePathOn(vf);
-              AbstractVcs vcs = vcsManager.getVcsFor(vf);
-              if (vcs != null) {
-                CheckinEnvironment ci = vcs.getCheckinEnvironment();
-                if (ci != null && !vcs.fileIsUnderVcs(fp)) {
-                  List<VirtualFile> vfs = new ArrayList<VirtualFile>();
-                  vfs.add(vf);
-                  List<VcsException> result = ci.scheduleUnversionedFilesForAddition(vfs);
-                  VcsDirtyScopeManager.getInstance(myProject).fileDirty(vf);
-                }
-              }
-            }
-          }
-        });
-      }
-    });
-  }
-
-  private PsiElementFactory getPsiElementFactory() {
-    return JavaPsiFacade.getInstance(myProject).getElementFactory();
   }
 }

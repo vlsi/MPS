@@ -83,7 +83,7 @@ public class CollectJUnitTestsFromPatternsAction extends AnAction {
 
     File baseDir = getProjectBaseDir(project);
 
-    String ptns = showInputDialog(project, "I want coockie. Give me the coockie!", "Coockie monster", Icons.JUNIT_TEST_CLASS_ICON);
+    String ptns = showInputDialog(project, "I want cookie. Give me the cookie!", "Cookie monster", Icons.JUNIT_TEST_CLASS_ICON);
 
 
     if (ptns == null) return;

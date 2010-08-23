@@ -22,15 +22,14 @@ import jetbrains.mps.build.ant.WhatToDo;
 import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
-import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.messages.Message;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.make.dependencies.StronglyConnectedModules;
 import jetbrains.mps.make.dependencies.StronglyConnectedModules.IModuleDecorator;
 import jetbrains.mps.make.dependencies.StronglyConnectedModules.IModuleDecoratorBuilder;
 import jetbrains.mps.make.dependencies.graph.IVertex;
-import jetbrains.mps.plugin.IProjectHandler;
+import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.messages.Message;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
@@ -46,7 +45,6 @@ import org.apache.tools.ant.ProjectComponent;
 
 import java.io.File;
 import java.io.IOException;
-import java.rmi.RemoteException;
 import java.util.*;
 
 public class GeneratorWorker extends MpsWorker {
