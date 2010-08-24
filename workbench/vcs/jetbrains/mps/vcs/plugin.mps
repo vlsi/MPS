@@ -19,13 +19,15 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <maxImportIndex value="6" />
+  <maxImportIndex value="8" />
   <import index="1" modelUID="r:d634c129-ecb4-4acd-bd8c-5f057c144ffa(jetbrains.mps.vcs.changesmanager)" version="-1" />
   <import index="2" modelUID="f:java_stub#com.intellij.openapi.actionSystem(com.intellij.openapi.actionSystem@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)" version="-1" />
   <import index="4" modelUID="f:java_stub#com.intellij.openapi.components(com.intellij.openapi.components@java_stub)" version="-1" />
   <import index="5" modelUID="f:java_stub#com.intellij.openapi.project(com.intellij.openapi.project@java_stub)" version="-1" />
   <import index="6" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
+  <import index="7" modelUID="f:java_stub#com.intellij.openapi.extensions(com.intellij.openapi.extensions@java_stub)" version="-1" />
+  <import index="8" modelUID="f:java_stub#jetbrains.mps.ide.tabbedEditor(jetbrains.mps.ide.tabbedEditor@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration:23" id="6763225944573363022">
     <property name="name:23" value="ChangesStrip" />
     <node role="contents:23" type="jetbrains.mps.lang.plugin.structure.ElementListContents:23" id="6763225944573363023">
@@ -303,10 +305,10 @@
     <property name="name:23" value="EditorInternalVCS" />
     <node role="contents:23" type="jetbrains.mps.lang.plugin.structure.ElementListContents:23" id="6763225944573505221">
       <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="6763225944573505222">
-        <link role="action:23" targetNodeId="2v.4709697229103750690" resolveInfo="DumpChangesManager" />
+        <link role="action:23" targetNodeId="6763225944573505229" resolveInfo="DumpChangesManager" />
       </node>
       <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="6763225944573505223">
-        <link role="action:23" targetNodeId="2v.2416885309092463132" resolveInfo="ForceRefreshModelChanges" />
+        <link role="action:23" targetNodeId="6763225944573505242" resolveInfo="ForceRefreshModelChanges" />
       </node>
     </node>
   </node>
@@ -505,6 +507,121 @@
                 <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="6763225944573505313">
                   <property name="value:3" value="Force Refresh Model Changes for " />
                 </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ApplicationPluginDeclaration:23" id="6763225944573563931">
+    <property name="name:23" value="main" />
+    <node role="fieldDeclaration:23" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration:0" id="6763225944573589040">
+      <property name="name:0" value="myExt" />
+      <node role="visibility:0" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="6763225944573589041" />
+      <node role="type:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6763225944573593401">
+        <link role="classifier:3" targetNodeId="8.~TabColorProvider" resolveInfo="TabColorProvider" />
+      </node>
+    </node>
+    <node role="fieldDeclaration:23" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration:0" id="6763225944573593415">
+      <property name="name:0" value="myEP" />
+      <node role="visibility:0" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="6763225944573593416" />
+      <node role="type:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6763225944573593418">
+        <link role="classifier:3" targetNodeId="7.~ExtensionPoint" resolveInfo="ExtensionPoint" />
+        <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6763225944573593420">
+          <link role="classifier:3" targetNodeId="8.~TabColorProvider" resolveInfo="TabColorProvider" />
+        </node>
+      </node>
+    </node>
+    <node role="initBlock:23" type="jetbrains.mps.lang.plugin.structure.ApplicationPluginInitBlock:23" id="6763225944573563932">
+      <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6763225944573563933">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6763225944573593403">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="6763225944573593407">
+            <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6763225944573593404">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="6763225944573593405" />
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation:0" id="6763225944573593406">
+                <link role="member:0" targetNodeId="6763225944573589040" resolveInfo="myExt" />
+              </node>
+            </node>
+            <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6763225944573593410">
+              <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="6763225944573593411">
+                <link role="baseMethodDeclaration:3" targetNodeId="1.6763225944573384083" resolveInfo="VCSTabColorProvider" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6763225944573593425">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="6763225944573593429">
+            <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6763225944573593426">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="6763225944573593427" />
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation:0" id="6763225944573593428">
+                <link role="member:0" targetNodeId="6763225944573593415" resolveInfo="myEP" />
+              </node>
+            </node>
+            <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6763225944573593432">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6763225944573593433">
+                <link role="baseMethodDeclaration:3" targetNodeId="7.~Extensions.getRootArea():com.intellij.openapi.extensions.ExtensionsArea" resolveInfo="getRootArea" />
+                <link role="classConcept:3" targetNodeId="7.~Extensions" resolveInfo="Extensions" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6763225944573593434">
+                <link role="baseMethodDeclaration:3" targetNodeId="7.~ExtensionsArea.getExtensionPoint(com.intellij.openapi.extensions.ExtensionPointName):com.intellij.openapi.extensions.ExtensionPoint" resolveInfo="getExtensionPoint" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="6763225944573593435">
+                  <link role="classifier:3" targetNodeId="8.~TabColorProvider" resolveInfo="TabColorProvider" />
+                  <link role="variableDeclaration:3" targetNodeId="8.~TabColorProvider.EP_NAME" resolveInfo="EP_NAME" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6763225944573563934">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6763225944573576214">
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6763225944573576219">
+              <link role="baseMethodDeclaration:3" targetNodeId="7.~ExtensionPoint.registerExtension(java.lang.Object):void" resolveInfo="registerExtension" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6763225944573593412">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="6763225944573593413" />
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation:0" id="6763225944573593414">
+                  <link role="member:0" targetNodeId="6763225944573589040" resolveInfo="myExt" />
+                </node>
+              </node>
+            </node>
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6763225944573593421">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="6763225944573593422" />
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation:0" id="6763225944573593423">
+                <link role="member:0" targetNodeId="6763225944573593415" resolveInfo="myEP" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="disposeBlock:23" type="jetbrains.mps.lang.plugin.structure.ApplicationPluginDisposeBlock:23" id="6763225944573593436">
+      <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6763225944573593437">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6763225944573593438">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6763225944573593480">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6763225944573593439">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="6763225944573593440" />
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation:0" id="6763225944573593441">
+                <link role="member:0" targetNodeId="6763225944573593415" resolveInfo="myEP" />
+              </node>
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6763225944573593484">
+              <link role="baseMethodDeclaration:3" targetNodeId="7.~ExtensionPoint.unregisterExtension(java.lang.Object):void" resolveInfo="unregisterExtension" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6763225944573593485">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="6763225944573593486" />
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation:0" id="6763225944573593487">
+                  <link role="member:0" targetNodeId="6763225944573589040" resolveInfo="myExt" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6763225944573593489">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="6763225944573593493">
+            <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="6763225944573593496" />
+            <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6763225944573593490">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="6763225944573593491" />
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation:0" id="6763225944573593492">
+                <link role="member:0" targetNodeId="6763225944573589040" resolveInfo="myExt" />
               </node>
             </node>
           </node>

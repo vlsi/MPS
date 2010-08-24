@@ -38,7 +38,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
   <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
   <languageAspect modelUID="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)" version="0" />
-  <maxImportIndex value="78" />
+  <maxImportIndex value="79" />
   <import index="1" modelUID="f:java_stub#com.intellij.openapi.components(com.intellij.openapi.components@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#com.intellij.openapi.project(com.intellij.openapi.project@java_stub)" version="-1" />
@@ -94,6 +94,7 @@
   <import index="72" modelUID="f:java_stub#jetbrains.mps.smodel.descriptor(jetbrains.mps.smodel.descriptor@java_stub)" version="-1" />
   <import index="77" modelUID="f:java_stub#jetbrains.mps.ide.tabbedEditor.tabs(jetbrains.mps.ide.tabbedEditor.tabs@java_stub)" version="-1" />
   <import index="78" modelUID="f:java_stub#jetbrains.mps.ide.tabbedEditor(jetbrains.mps.ide.tabbedEditor@java_stub)" version="-1" />
+  <import index="79" modelUID="r:5ec7bf64-acd2-448b-8f9b-ce1b8d920038(jetbrains.mps.vcs.plugin)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="23553604208246606">
     <property name="name:3" value="ChangesManager" />
     <node role="staticInnerClassifiers:3" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5569581551640537985">
@@ -28408,7 +28409,7 @@
                     <link role="variableDeclaration:3" targetNodeId="63.~ActionPlaces.UNKNOWN" resolveInfo="UNKNOWN" />
                   </node>
                   <node role="actualArgument:3" type="jetbrains.mps.lang.plugin.structure.GroupAccessOperation:23" id="8182361383258462266">
-                    <link role="group:23" targetNodeId="65.3412631853790927380" resolveInfo="GoToChange" />
+                    <link role="group:23" targetNodeId="79.6763225944573363022" resolveInfo="ChangesStrip" />
                   </node>
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="4957875527975108177">
                     <property name="value:3" value="true" />
@@ -29392,15 +29393,6 @@
       </node>
     </node>
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="2253323551303625636" />
-  </node>
-  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="6763225944573365199">
-    <property name="name:3" value="VCSTabColorProvider" />
-    <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="6763225944573365200" />
-    <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="6763225944573365201">
-      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="6763225944573365202" />
-      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="6763225944573365203" />
-      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6763225944573365204" />
-    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="6763225944573383966">
     <property name="name:3" value="VCSTabColorProvider" />
