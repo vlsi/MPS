@@ -314,6 +314,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
             public void run() {
               IOperationContext context = getOperationContext();
               if (context==null) return;
+              if (!context.isValid()) return;
               Project project = context.getProject();
               if (project==null) return;
               if (project.isDisposed()) return;
