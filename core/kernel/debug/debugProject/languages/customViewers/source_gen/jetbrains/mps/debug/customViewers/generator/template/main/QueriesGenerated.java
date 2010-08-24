@@ -254,11 +254,24 @@ public class QueriesGenerated {
     SLinkOperations.setNewChild(_context.getOutputNode(), AttributesRolesUtil.childRoleFromAttributeRole("doNotTransformAnnotation"), "jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation");
   }
 
+  public static void mapSrcMacro_post_mapper_5639218245806456017(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
+    SLinkOperations.setNewChild(_context.getOutputNode(), AttributesRolesUtil.childRoleFromAttributeRole("doNotTransformAnnotation"), "jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation");
+  }
+
+  public static void mapSrcMacro_post_mapper_6772833964096462904(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
+    SLinkOperations.setNewChild(_context.getOutputNode(), AttributesRolesUtil.childRoleFromAttributeRole("doNotTransformAnnotation"), "jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation");
+  }
+
+  public static void mapSrcMacro_post_mapper_5639218245806455992(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
+    SLinkOperations.setNewChild(_context.getOutputNode(), AttributesRolesUtil.childRoleFromAttributeRole("doNotTransformAnnotation"), "jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation");
+  }
+
+  public static void mapSrcMacro_post_mapper_5639218245806446718(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
+    SLinkOperations.setNewChild(_context.getOutputNode(), AttributesRolesUtil.childRoleFromAttributeRole("doNotTransformAnnotation"), "jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation");
+  }
+
   public static void mapSrcMacro_post_mapper_1464575230816145950(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
     SLinkOperations.setNewChild(_context.getOutputNode(), AttributesRolesUtil.childRoleFromAttributeRole("doNotTransformAnnotation"), "jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation");
-    for (SNode child : ListSequence.fromList(SNodeOperations.getDescendants(_context.getOutputNode(), null, false, new String[]{}))) {
-      SLinkOperations.setNewChild(child, AttributesRolesUtil.childRoleFromAttributeRole("doNotTransformAnnotation"), "jetbrains.mps.debug.evaluation.structure.DoNotTransformAnnotation");
-    }
   }
 
   public static void mapSrcMacro_post_mapper_8256349518541671180(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
@@ -276,7 +289,7 @@ public class QueriesGenerated {
 
   public static void mappingScript_CodeBlock_264293128390891135(final IOperationContext operationContext, final MappingScriptContext _context) {
     for (SNode classConcept : ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
-      if (eq_x583g4_a0a0a0a85(SLinkOperations.getTarget(SLinkOperations.getTarget(classConcept, "superclass", true), "classifier", false), SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a85().createNode(), "classifier", false)) && SPropertyOperations.getString(classConcept, "name").endsWith("_WrapperFactory")) {
+      if (eq_x583g4_a0a0a0a26(SLinkOperations.getTarget(SLinkOperations.getTarget(classConcept, "superclass", true), "classifier", false), SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a26().createNode(), "classifier", false)) && SPropertyOperations.getString(classConcept, "name").endsWith("_WrapperFactory")) {
         for (SNode method : ListSequence.fromList(SNodeOperations.getDescendants(classConcept, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, new String[]{})).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return (SLinkOperations.getTarget(it, AttributesRolesUtil.childRoleFromAttributeRole("toProcessMethod"), true) != null);
@@ -291,15 +304,15 @@ public class QueriesGenerated {
     }
   }
 
-  private static boolean eq_x583g4_a0a0a0a85(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0a0a26(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0a85 {
-    public QuotationClass_x583g4_a0a0a0a0a85() {
+  public static class QuotationClass_x583g4_a0a0a0a0a26 {
+    public QuotationClass_x583g4_a0a0a0a0a26() {
     }
 
     public SNode createNode() {
