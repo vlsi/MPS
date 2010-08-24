@@ -7,7 +7,7 @@ import jetbrains.mps.debug.runtime.java.programState.proxies.ValueWrapperFactory
 public class CustomViewersDescriptor extends jetbrains.mps.debug.runtime.java.programState.proxies.CustomViewersDescriptor {
   public CustomViewersDescriptor() {
     {
-      ValueWrapperFactory factory = new IndexedTupleViewer_Factory();
+      ValueWrapperFactory factory = new IndexedTupleViewer_WrapperFactory();
       myValueWrapperFactories.add(factory);
     }
   }
