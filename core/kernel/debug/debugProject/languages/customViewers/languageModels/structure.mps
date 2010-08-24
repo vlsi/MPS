@@ -76,6 +76,7 @@
       <property name="value:0" value="value" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
     </node>
+    <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="721063219978397150" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5117350825036234467">
     <property name="name:0" value="ArrayValueType" />
@@ -85,6 +86,7 @@
       <property name="value:0" value="arrayValue" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
     </node>
+    <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="721063219978397146" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5117350825036234473">
     <property name="name:0" value="ObjectValueType" />
@@ -94,6 +96,7 @@
       <property name="value:0" value="objectValue" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
     </node>
+    <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="721063219978397147" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5117350825036234478">
     <property name="name:0" value="PrimitiveValueType" />
@@ -103,6 +106,7 @@
       <property name="value:0" value="primitiveValue" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
     </node>
+    <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="721063219978397148" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5117350825036234483">
     <property name="name:0" value="CustomWatchable" />
@@ -201,6 +205,7 @@
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target:0" targetNodeId="5264817233616809557:0" resolveInfo="OriginalValue_ConceptFunctionParameter" />
     </node>
+    <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="721063219978398562" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5264817233616809557">
     <property name="name:0" value="OriginalValue_ConceptFunctionParameter" />
@@ -214,6 +219,7 @@
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545963098:3" resolveInfo="conceptFunctionParameterType" />
       <node role="target:0" type="jetbrains.mps.debug.customViewers.structure.ValueType:0" id="5264817233616809561" />
     </node>
+    <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="721063219978398563" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="2488554353950280317">
     <property name="name:0" value="FieldsListOperation" />
@@ -232,6 +238,7 @@
         <node role="elementType:7" type="jetbrains.mps.debug.customViewers.structure.ValueType:0" id="2488554353950283280" />
       </node>
     </node>
+    <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="721063219978397142" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="2488554353950312668">
     <property name="name:0" value="FieldOperation" />
@@ -258,6 +265,7 @@
       <property name="value:0" value="field value by name" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473914776:0" resolveInfo="shortDescription" />
     </node>
+    <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="721063219978397141" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="2488554353950312745">
     <property name="name:0" value="ElementOperation" />
@@ -284,6 +292,7 @@
       <property name="value:0" value="array element value by index" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473914776:0" resolveInfo="shortDescription" />
     </node>
+    <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="721063219978397134" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4089989733346803658">
     <property name="name:0" value="GetValuePresentation_ConceptFunction" />
@@ -297,6 +306,7 @@
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
       <node role="target:0" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="4089989733346803664" />
     </node>
+    <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="721063219978398561" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4089989733346839773">
     <property name="name:0" value="CanWrapValue_ConceptFunction" />
@@ -310,6 +320,7 @@
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target:0" targetNodeId="5264817233616809557:0" resolveInfo="OriginalValue_ConceptFunctionParameter" />
     </node>
+    <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="721063219978398127" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1843851250586690702">
     <property name="name:0" value="ClassNameOperation" />
@@ -326,6 +337,7 @@
       <property name="value:0" value="classname" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
     </node>
+    <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="721063219978397140" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1843851250586694536">
     <property name="name:0" value="ClassFqNameOperation" />
@@ -342,6 +354,7 @@
       <property name="value:0" value="classFQName" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
     </node>
+    <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="721063219978397139" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1843851250586694559">
     <property name="name:0" value="SizeOperation" />
@@ -358,6 +371,7 @@
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1217022095863:3" resolveInfo="returnType" />
       <node role="target:0" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1843851250586694564" />
     </node>
+    <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="721063219978397136" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1843851250586697538">
     <property name="name:0" value="AllElementsOperation" />
@@ -376,6 +390,7 @@
       <property name="value:0" value="allElements" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
     </node>
+    <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="721063219978397137" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1843851250586697564">
     <property name="name:0" value="ElementsRangeOperation" />
@@ -406,6 +421,7 @@
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1843851250586697571">
       <link role="intfc:0" targetNodeId="2.1197027803184:3" resolveInfo="IOperation" />
     </node>
+    <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="721063219978397135" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7744028807303021417">
     <property name="name:0" value="CallMethodOperation" />
@@ -440,6 +456,7 @@
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1217022095863:3" resolveInfo="returnType" />
       <node role="target:0" type="jetbrains.mps.debug.customViewers.structure.ValueType:0" id="7744028807303022095" />
     </node>
+    <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="721063219978397138" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7744028807303050605">
     <property name="name:0" value="JavaValueOperation" />
@@ -458,6 +475,7 @@
       <property name="value:0" value="javaValue" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
     </node>
+    <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="721063219978397144" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7430908097350531683">
     <property name="name:0" value="StringValueType" />
@@ -467,6 +485,7 @@
       <property name="value:0" value="stringValue" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
     </node>
+    <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="721063219978397149" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7471356136625957315">
     <property name="name:0" value="StringValueOperation" />
@@ -483,6 +502,7 @@
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1217022095863:3" resolveInfo="returnType" />
       <node role="target:0" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="7471356136625957320" />
     </node>
+    <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="721063219978397145" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="929171734855789933">
     <property name="package:0" value="lowLevel.operations.object" />
@@ -505,6 +525,7 @@
       <property name="value:0" value="is instance of" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
     </node>
+    <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="721063219978397143" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="680105146889009728">
     <property name="name:0" value="HighLevelCustomViewer" />
