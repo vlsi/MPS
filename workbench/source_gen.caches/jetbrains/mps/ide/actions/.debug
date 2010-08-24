@@ -526,18 +526,17 @@
     <nodeInfo nodeId="1221753156362" fileName="EditorPopup_ActionGroup.java" startLine="57" startPosition="83" endLine="58" endPosition="50" />
   </root>
   <root nodeId="1204991232446">
-    <nodeInfo nodeId="1215908585470" fileName="EditorInternal_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="118" />
-    <nodeInfo nodeId="1215870456938" fileName="EditorInternal_ActionGroup.java" startLine="17" startPosition="118" endLine="18" endPosition="120" />
-    <nodeInfo nodeId="3344619950201334531" fileName="EditorInternal_ActionGroup.java" startLine="18" startPosition="120" endLine="19" endPosition="126" />
-    <nodeInfo nodeId="8942090734319457077" fileName="EditorInternal_ActionGroup.java" startLine="19" startPosition="126" endLine="20" endPosition="128" />
-    <nodeInfo nodeId="1216124026098" fileName="EditorInternal_ActionGroup.java" startLine="20" startPosition="128" endLine="21" endPosition="124" />
-    <nodeInfo nodeId="1204981265733" fileName="EditorInternal_ActionGroup.java" startLine="21" startPosition="124" endLine="22" endPosition="53" />
-    <nodeInfo nodeId="1215904158590" fileName="EditorInternal_ActionGroup.java" startLine="22" startPosition="53" endLine="23" endPosition="117" />
-    <nodeInfo nodeId="227146524086775941" fileName="EditorInternal_ActionGroup.java" startLine="23" startPosition="117" endLine="24" endPosition="131" />
-    <nodeInfo nodeId="2890760393609348149" fileName="EditorInternal_ActionGroup.java" startLine="24" startPosition="131" endLine="25" endPosition="140" />
-    <nodeInfo nodeId="4709697229103814359" fileName="EditorInternal_ActionGroup.java" startLine="25" startPosition="140" endLine="26" endPosition="124" />
-    <nodeInfo nodeId="2416885309092545741" fileName="EditorInternal_ActionGroup.java" startLine="26" startPosition="124" endLine="27" endPosition="130" />
-    <nodeInfo nodeId="1204981318702" fileName="EditorInternal_ActionGroup.java" startLine="27" startPosition="130" endLine="28" endPosition="53" />
+    <nodeInfo nodeId="1215908585470" fileName="EditorInternal_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="118" />
+    <nodeInfo nodeId="1215870456938" fileName="EditorInternal_ActionGroup.java" startLine="18" startPosition="118" endLine="19" endPosition="120" />
+    <nodeInfo nodeId="3344619950201334531" fileName="EditorInternal_ActionGroup.java" startLine="19" startPosition="120" endLine="20" endPosition="126" />
+    <nodeInfo nodeId="8942090734319457077" fileName="EditorInternal_ActionGroup.java" startLine="20" startPosition="126" endLine="21" endPosition="128" />
+    <nodeInfo nodeId="1216124026098" fileName="EditorInternal_ActionGroup.java" startLine="21" startPosition="128" endLine="22" endPosition="124" />
+    <nodeInfo nodeId="1204981265733" fileName="EditorInternal_ActionGroup.java" startLine="22" startPosition="124" endLine="23" endPosition="53" />
+    <nodeInfo nodeId="1215904158590" fileName="EditorInternal_ActionGroup.java" startLine="23" startPosition="53" endLine="24" endPosition="117" />
+    <nodeInfo nodeId="227146524086775941" fileName="EditorInternal_ActionGroup.java" startLine="24" startPosition="117" endLine="25" endPosition="131" />
+    <nodeInfo nodeId="2890760393609348149" fileName="EditorInternal_ActionGroup.java" startLine="25" startPosition="131" endLine="26" endPosition="140" />
+    <nodeInfo nodeId="6763225944573505218" fileName="EditorInternal_ActionGroup.java" startLine="26" startPosition="140" endLine="27" endPosition="89" />
+    <nodeInfo nodeId="1204981318702" fileName="EditorInternal_ActionGroup.java" startLine="27" startPosition="89" endLine="28" endPosition="53" />
     <nodeInfo nodeId="8499738184441492765" fileName="EditorInternal_ActionGroup.java" startLine="28" startPosition="53" endLine="29" endPosition="119" />
   </root>
   <root nodeId="1204991235731">
@@ -561,10 +560,9 @@
     <nodeInfo nodeId="2841218117793440877" fileName="Generate_ActionGroup.java" startLine="24" startPosition="47" endLine="25" endPosition="87" />
   </root>
   <root nodeId="1204991237264">
-    <nodeInfo nodeId="3906874221886742569" fileName="Goto_ActionGroup.java" startLine="23" startPosition="9" endLine="24" endPosition="130" />
-    <nodeInfo nodeId="2206575092913677917" fileName="Goto_ActionGroup.java" startLine="24" startPosition="130" endLine="25" endPosition="110" />
-    <nodeInfo nodeId="2206575092913677918" fileName="Goto_ActionGroup.java" startLine="25" startPosition="110" endLine="26" endPosition="114" />
-    <nodeInfo nodeId="3906874221886742573" fileName="Goto_ActionGroup.java" startLine="26" startPosition="114" endLine="27" endPosition="43" />
+    <nodeInfo nodeId="3906874221886742569" fileName="Goto_ActionGroup.java" startLine="24" startPosition="9" endLine="25" endPosition="130" />
+    <nodeInfo nodeId="6763225944573427888" fileName="Goto_ActionGroup.java" startLine="25" startPosition="130" endLine="26" endPosition="73" />
+    <nodeInfo nodeId="3906874221886742573" fileName="Goto_ActionGroup.java" startLine="26" startPosition="73" endLine="27" endPosition="43" />
     <nodeInfo nodeId="5014390439885443918" fileName="Goto_ActionGroup.java" startLine="27" startPosition="43" endLine="28" endPosition="126" />
     <nodeInfo nodeId="3906874221886742582" fileName="Goto_ActionGroup.java" startLine="28" startPosition="126" endLine="29" endPosition="134" />
     <nodeInfo nodeId="3906874221886742588" fileName="Goto_ActionGroup.java" startLine="29" startPosition="134" endLine="30" endPosition="108" />
@@ -2054,14 +2052,6 @@
     <nodeInfo nodeId="1241373415191" fileName="ShowModuleDependencies_Action.java" startLine="68" startPosition="112" endLine="69" endPosition="66" />
     <nodeInfo nodeId="1241373423707" fileName="ShowModuleDependencies_Action.java" startLine="69" startPosition="66" endLine="70" endPosition="33" />
   </root>
-  <root nodeId="1324666482847324780">
-    <nodeInfo nodeId="1324666482847326192" fileName="GoToPreviousChange_Action.java" startLine="21" startPosition="0" endLine="22" endPosition="38" />
-    <nodeInfo nodeId="1324666482847326193" fileName="GoToPreviousChange_Action.java" startLine="22" startPosition="38" endLine="23" endPosition="26" />
-    <nodeInfo nodeId="6807973102214706052" fileName="GoToPreviousChange_Action.java" startLine="37" startPosition="9" endLine="38" endPosition="47" />
-    <nodeInfo nodeId="6800888824900112679" fileName="GoToPreviousChange_Action.java" startLine="38" startPosition="47" endLine="39" endPosition="191" />
-    <nodeInfo nodeId="1324666482847326258" fileName="GoToPreviousChange_Action.java" startLine="70" startPosition="9" endLine="71" endPosition="148" />
-    <scopeInfo nodeId="6800888824900112678" fileName="GoToPreviousChange_Action.java" startLine="37" startPosition="9" endLine="39" endPosition="191" />
-  </root>
   <root nodeId="1420252515663895912">
     <nodeInfo nodeId="1420252515663895916" fileName="NewSubModel_Action.java" startLine="27" startPosition="0" endLine="28" endPosition="30" />
     <nodeInfo nodeId="1420252515663895918" fileName="NewSubModel_Action.java" startLine="28" startPosition="30" endLine="29" endPosition="36" />
@@ -2638,23 +2628,6 @@
     <scopeInfo nodeId="3151337970908862662" fileName="Resume_Action.java" startLine="36" startPosition="7" endLine="38" endPosition="92">
       <varInfo nodeId="4825631273596819975" varName="debugSession" />
     </scopeInfo>
-  </root>
-  <root nodeId="2416885309092463132">
-    <nodeInfo nodeId="2416885309092482206" fileName="ForceRefreshModelChanges_Action.java" startLine="21" startPosition="0" endLine="22" endPosition="23" />
-    <nodeInfo nodeId="2416885309092532344" fileName="ForceRefreshModelChanges_Action.java" startLine="22" startPosition="23" endLine="23" endPosition="26" />
-    <nodeInfo nodeId="2416885309092533451" fileName="ForceRefreshModelChanges_Action.java" startLine="37" startPosition="9" endLine="38" endPosition="194" />
-    <nodeInfo nodeId="2416885309092533421" fileName="ForceRefreshModelChanges_Action.java" startLine="72" startPosition="9" endLine="73" endPosition="106" />
-    <nodeInfo nodeId="7037697065285659850" fileName="ForceRefreshModelChanges_Action.java" startLine="73" startPosition="106" endLine="74" endPosition="75" />
-    <nodeInfo nodeId="555131154955263842" fileName="ForceRefreshModelChanges_Action.java" startLine="76" startPosition="27" endLine="77" endPosition="162" />
-    <nodeInfo nodeId="7037697065285659865" fileName="ForceRefreshModelChanges_Action.java" startLine="78" startPosition="50" endLine="79" endPosition="51" />
-    <nodeInfo nodeId="7037697065285659863" fileName="ForceRefreshModelChanges_Action.java" startLine="77" startPosition="162" endLine="80" endPosition="11" />
-    <nodeInfo nodeId="555131154955263839" fileName="ForceRefreshModelChanges_Action.java" startLine="75" startPosition="121" endLine="82" endPosition="0" />
-    <nodeInfo nodeId="555131154955263823" fileName="ForceRefreshModelChanges_Action.java" startLine="74" startPosition="75" endLine="82" endPosition="9" />
-    <scopeInfo nodeId="2416885309092533450" fileName="ForceRefreshModelChanges_Action.java" startLine="37" startPosition="9" endLine="38" endPosition="194" />
-    <scopeInfo nodeId="7037697065285659864" fileName="ForceRefreshModelChanges_Action.java" startLine="78" startPosition="50" endLine="79" endPosition="51" />
-    <scopeInfo nodeId="555131154955263840" fileName="ForceRefreshModelChanges_Action.java" startLine="76" startPosition="27" endLine="80" endPosition="11" />
-    <scopeInfo nodeId="555131154955263839" fileName="ForceRefreshModelChanges_Action.java" startLine="75" startPosition="121" endLine="82" endPosition="0" />
-    <unitInfo nodeId="555131154955263839" fileName="ForceRefreshModelChanges_Action.java" startLine="75" startPosition="109" endLine="82" endPosition="7" unitName="jetbrains.mps.ide.actions.ForceRefreshModelChanges_Action$1" />
   </root>
   <root nodeId="2485811537947421542">
     <nodeInfo nodeId="5999020322563340260" fileName="AccessoriesGroupActions_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="132" />
@@ -3300,11 +3273,6 @@
     <unitInfo nodeId="3176460104656525111" fileName="SurroundWithIntentions_Action.java" startLine="134" startPosition="37" endLine="142" endPosition="5" unitName="jetbrains.mps.ide.actions.SurroundWithIntentions_Action$2" />
     <unitInfo nodeId="3176460104656525185" fileName="SurroundWithIntentions_Action.java" startLine="145" startPosition="30" endLine="153" endPosition="7" unitName="jetbrains.mps.ide.actions.SurroundWithIntentions_Action$3" />
     <unitInfo nodeId="3176460104656477109" fileName="SurroundWithIntentions_Action.java" startLine="101" startPosition="65" endLine="110" endPosition="7" unitName="jetbrains.mps.ide.actions.SurroundWithIntentions_Action$1" />
-  </root>
-  <root nodeId="3412631853790927380">
-    <nodeInfo nodeId="3412631853790994082" fileName="ChangesStrip_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="118" />
-    <nodeInfo nodeId="3412631853790994212" fileName="ChangesStrip_ActionGroup.java" startLine="17" startPosition="118" endLine="18" endPosition="122" />
-    <nodeInfo nodeId="8673441678466071327" fileName="ChangesStrip_ActionGroup.java" startLine="18" startPosition="122" endLine="19" endPosition="119" />
   </root>
   <root nodeId="3575273646046443826">
     <nodeInfo nodeId="3575273646046443838" fileName="DeleteModels_Action.java" startLine="26" startPosition="0" endLine="27" endPosition="22" />
@@ -4340,10 +4308,6 @@
     <nodeInfo nodeId="5220578927949260965" fileName="ReloadStubs_Action.java" startLine="69" startPosition="51" endLine="70" endPosition="47" />
     <scopeInfo nodeId="879779804771595245" fileName="ReloadStubs_Action.java" startLine="33" startPosition="52" endLine="34" endPosition="17" />
   </root>
-  <root nodeId="4709697229103750690">
-    <nodeInfo nodeId="4709697229103772196" fileName="DumpChangesManager_Action.java" startLine="18" startPosition="0" endLine="19" endPosition="26" />
-    <nodeInfo nodeId="4709697229103814360" fileName="DumpChangesManager_Action.java" startLine="60" startPosition="9" endLine="61" endPosition="87" />
-  </root>
   <root nodeId="5014390439885403930">
     <nodeInfo nodeId="5014390439885403931" fileName="GoToFile_Action.java" startLine="16" startPosition="0" endLine="17" endPosition="26" />
     <nodeInfo nodeId="5014390439885403950" fileName="GoToFile_Action.java" startLine="32" startPosition="9" endLine="33" endPosition="48" />
@@ -4666,14 +4630,6 @@
       <varInfo nodeId="2042640167017164621" varName="file" />
     </scopeInfo>
     <unitInfo nodeId="2042640167017164616" fileName="GetModuleContentsFromSource_Action.java" startLine="80" startPosition="40" endLine="84" endPosition="7" unitName="jetbrains.mps.ide.actions.GetModuleContentsFromSource_Action$1" />
-  </root>
-  <root nodeId="5444017747357045765">
-    <nodeInfo nodeId="5444017747357166693" fileName="GoToNextChange_Action.java" startLine="21" startPosition="0" endLine="22" endPosition="38" />
-    <nodeInfo nodeId="5444017747357181483" fileName="GoToNextChange_Action.java" startLine="22" startPosition="38" endLine="23" endPosition="26" />
-    <nodeInfo nodeId="6807973102214705786" fileName="GoToNextChange_Action.java" startLine="37" startPosition="9" endLine="38" endPosition="47" />
-    <nodeInfo nodeId="6800888824900112015" fileName="GoToNextChange_Action.java" startLine="38" startPosition="47" endLine="39" endPosition="179" />
-    <nodeInfo nodeId="5444017747357180133" fileName="GoToNextChange_Action.java" startLine="70" startPosition="9" endLine="71" endPosition="136" />
-    <scopeInfo nodeId="6800888824899957478" fileName="GoToNextChange_Action.java" startLine="37" startPosition="9" endLine="39" endPosition="179" />
   </root>
   <root nodeId="5533671870987003804">
     <nodeInfo nodeId="5533671870987003865" fileName="HighlightUsages_Action.java" startLine="30" startPosition="0" endLine="31" endPosition="42" />
@@ -8729,11 +8685,6 @@
     <nodeInfo nodeId="86456464976537928" fileName="GenerateModulesInProject_Action.java" startLine="74" startPosition="54" endLine="75" endPosition="14" />
     <scopeInfo nodeId="86456464976537942" fileName="GenerateModulesInProject_Action.java" startLine="33" startPosition="9" endLine="34" endPosition="64" />
     <scopeInfo nodeId="86456464976537927" fileName="GenerateModulesInProject_Action.java" startLine="74" startPosition="54" endLine="75" endPosition="14" />
-  </root>
-  <root nodeId="8673441678466068052">
-    <nodeInfo nodeId="6105081101195225807" fileName="RollbackChanges_Action.java" startLine="21" startPosition="0" endLine="22" endPosition="38" />
-    <nodeInfo nodeId="6105081101195225808" fileName="RollbackChanges_Action.java" startLine="22" startPosition="38" endLine="23" endPosition="26" />
-    <nodeInfo nodeId="6105081101195305351" fileName="RollbackChanges_Action.java" startLine="69" startPosition="9" endLine="70" endPosition="139" />
   </root>
   <root nodeId="8789567174723226946">
     <nodeInfo nodeId="142393105344602371" fileName="ShowGenerationTrace_Action.java" startLine="25" startPosition="0" endLine="26" endPosition="26" />

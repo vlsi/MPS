@@ -40,8 +40,6 @@ import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.vcs.changesmanager.NodeFileStatusListener;
-import jetbrains.mps.vcs.changesmanager.RootNodeFileStatusManager;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseGroup;
 import org.jetbrains.annotations.NotNull;
@@ -56,14 +54,11 @@ import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public abstract class BaseMultitabbedTab extends AbstractLazyTab {
   private Set<SNodePointer> myLoadableNodes = new HashSet<SNodePointer>();
-  private JTabbedPane myInnerTabbedPane;
+  public JTabbedPane myInnerTabbedPane;
   private JPanel myComponent;
   private List<EditorComponent> myEditors = new ArrayList<EditorComponent>();
   private int myCurrentIndex = 0;
@@ -116,6 +111,11 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab {
 
   protected abstract Pair<SNode, IOperationContext> createLoadableNode(boolean ask, SNode concept);
 
+  public Set<SNodePointer> getLoadableNodePointers(){
+    return Collections.unmodifiableSet(myLoadableNodes);
+  }
+
+  //todo remove this
   public List<SNode> getLoadableNodes() {
     List<SNode> result = new ArrayList<SNode>();
     for (SNodePointer sNodePointer : myLoadableNodes) {
@@ -284,24 +284,8 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab {
     super.dispose();
   }
 
-  private void updateTabColor(int tabIndex) {
-    RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(getOperationContext().getProject());
-    if (statusManager == null) return;
-
-    FileStatus fileStatus = statusManager.getStatus(myEditors.get(tabIndex).getEditedNode());
-    if (fileStatus == null) {
-      fileStatus = FileStatus.NOT_CHANGED;
-    }
-    Color color = fileStatus.getColor();
-    if (color == null) {
-      color = Color.BLACK;
-    }
-    myInnerTabbedPane.setForegroundAt(tabIndex, color);
-    getTabbedEditor().updateTabColor(this, getBaseNodeVirtualFile());
-  }
-
   public List<EditorComponent> getEditorComponents() {
-    return new ArrayList<EditorComponent>(myEditors);
+    return Collections.unmodifiableList(myEditors);
   }
 
   public EditorComponent getCurrentEditorComponent() {
@@ -395,20 +379,5 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab {
         myInnerTabbedPane.setTitleAt(index, event.getNewPropertyValue());
       }
     }
-  }
-
-  //------------
-
-  protected NodeFileStatusListener createFileStatusListener() {
-    return new NodeFileStatusListener() {
-      public void fileStatusChanged(@NotNull final SNode node) {
-        SNodePointer nodePointer = new SNodePointer(node);
-        if (myLoadableNodes.contains(nodePointer)) {
-          int index = getIndexOfTabFor(nodePointer);
-          assert index >= 0 : "tab for node not found";
-          updateTabColor(index);
-        }
-      }
-    };
   }
 }
