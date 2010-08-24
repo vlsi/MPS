@@ -27,7 +27,6 @@ public class EvaluationUtils {
     return array.getValue(index);
   }
 
-  @NotNull
   private static Value invokeStaticInternal(String className, String methodName, String jniSignature, @NotNull final ThreadReference threadReference, Object... args) throws EvaluationException {
     final ClassType referenceType = (ClassType) findClassType(className, threadReference.virtualMachine());
     final Method method = findMethod(referenceType, methodName, jniSignature);
@@ -42,7 +41,6 @@ public class EvaluationUtils {
     });
   }
 
-  @NotNull
   private static Value getStaticFieldValueInternal(String className, String fieldName, @NotNull final ThreadReference threadReference) throws InvalidEvaluatedExpressionException {
     ClassType referenceType = (ClassType) findClassType(className, threadReference.virtualMachine());
     Field field = findField(referenceType, fieldName);
@@ -50,7 +48,6 @@ public class EvaluationUtils {
     return referenceType.getValue(field);
   }
 
-  @NotNull
   private static Value invokeConstructorInternal(String className, String jniSignature, @NotNull final ThreadReference threadReference, Object... args) throws EvaluationException {
     // TODO duplication in code
     final ClassType referenceType = (ClassType) findClassType(className, threadReference.virtualMachine());
