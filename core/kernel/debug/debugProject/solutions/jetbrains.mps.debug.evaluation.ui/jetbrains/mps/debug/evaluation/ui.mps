@@ -4094,7 +4094,7 @@
                     <link role="variableDeclaration:3" targetNodeId="6185141366360305775" resolveInfo="manager" />
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6185141366360305821">
-                    <link role="baseMethodDeclaration:3" targetNodeId="40.~GeneratorManager.generateModels(java.util.List,jetbrains.mps.smodel.IOperationContext,jetbrains.mps.generator.generationTypes.IGenerationHandler,com.intellij.openapi.progress.ProgressIndicator,jetbrains.mps.ide.messages.IMessageHandler,boolean):boolean" resolveInfo="generateModels" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="40.~GeneratorManager.generateModels(java.util.List,jetbrains.mps.smodel.IOperationContext,jetbrains.mps.generator.generationTypes.IGenerationHandler,com.intellij.openapi.progress.ProgressIndicator,jetbrains.mps.messages.IMessageHandler,boolean):boolean" resolveInfo="generateModels" />
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6185141366360305822">
                       <node role="creator:3" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit:7" id="6185141366360305823">
                         <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5930354527033869974">
