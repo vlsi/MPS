@@ -86,7 +86,7 @@ public class ApplicationPluginManager implements ApplicationComponent {
 
   private List<BaseApplicationPlugin> createPlugins() {
     Set<IModule> modules = new HashSet<IModule>();
-    modules.add(PluginUtil.getIDEModule());
+    modules.addAll(PluginUtil.collectSolutionPlugins());
     for (Project p : ProjectManager.getInstance().getOpenProjects()) {
       modules.addAll(PluginUtil.collectPluginModules(p));
     }
