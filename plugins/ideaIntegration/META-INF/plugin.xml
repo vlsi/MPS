@@ -1,0 +1,30 @@
+<!DOCTYPE idea-plugin PUBLIC "Plugin/DTD" "http://plugins.intellij.net/plugin.dtd">
+<idea-plugin>
+  <name>Idea Integration for MPS</name>
+  <description>Connects MPS to IDEA</description>
+  <version>1.0</version>
+  <vendor>JetBrains</vendor>
+  <idea-version since-build="3000"/>
+
+  <application-components>
+
+  </application-components>
+  <project-components>
+    <component>
+        <implementation-class>jetbrains.mps.plugin.MPSProjectIDEHandler</implementation-class>
+    </component>
+
+    <component>
+        <implementation-class>jetbrains.mps.plugin.PluginStateMonitor</implementation-class>
+    </component>
+  </project-components>
+
+  <actions>
+
+  </actions>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <mps.NavigationProvider implementation="jetbrains.mps.plugin.IdeaNavigationProvider"/>
+    <mps.GenerationHandler implementation="jetbrains.mps.plugin.IdeaHandlerProvider"/>
+  </extensions>
+</idea-plugin>

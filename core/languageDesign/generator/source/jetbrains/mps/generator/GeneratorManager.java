@@ -31,7 +31,7 @@ import jetbrains.mps.generator.impl.GenerationController;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
-import jetbrains.mps.ide.generator.IdeaAwareJavaGenerationHandler;
+import jetbrains.mps.ide.generator.IdeaGeneratorManager;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.lang.generator.plugin.debug.GenerationTracer;
@@ -81,7 +81,7 @@ public class GeneratorManager {
   }
 
   public IGenerationHandler getDefaultGenerationHandler() {
-    return new IdeaAwareJavaGenerationHandler();
+    return IdeaGeneratorManager.getInstance().getDefaultGenerationHandler();
   }
 
   @Deprecated

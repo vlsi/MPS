@@ -383,7 +383,6 @@
             <implementation-class>jetbrains.mps.project.listener.AbstractModuleAdjuster</implementation-class>
         </component>
 
-
         <component>
             <implementation-class>jetbrains.mps.workbench.actions.goTo.index.StubsNodeDescriptorsCache</implementation-class>
         </component>
@@ -572,10 +571,6 @@
         </component>
 
         <component>
-            <implementation-class>jetbrains.mps.plugin.MPSProjectIDEHandler</implementation-class>
-        </component>
-
-        <component>
             <implementation-class>jetbrains.mps.workbench.editors.MPSEditorWarningsManager</implementation-class>
         </component>
 
@@ -598,10 +593,6 @@
 
         <component>
             <implementation-class>jetbrains.mps.nodeEditor.InspectorTool</implementation-class>
-        </component>
-
-        <component>
-            <implementation-class>jetbrains.mps.plugin.PluginStateMonitor</implementation-class>
         </component>
 
         <component>
@@ -656,6 +647,5 @@
             <skipForDefaultProject />
         </component>
     </project-components>
-
 
 </components>

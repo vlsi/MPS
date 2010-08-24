@@ -23,15 +23,13 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.plugin.IProjectHandler;
-import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.ide.navigation.NavigationProvider;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import java.rmi.RemoteException;
 
 public class GoByCurrentReference_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -134,13 +132,10 @@ public class GoByCurrentReference_Action extends GeneratedAction {
 
         new Thread() {
           public void run() {
-            final IProjectHandler handler = MPSPlugin.getInstance().getProjectHandler(modulePath);
-            // todo command here is ust for read action. Without it, openNode will be deadlocked for now 
+            // todo command here is a must for read action. Without it, openNode will be deadlocked for now 
             ModelAccess.instance().runCommandInEDT(new Runnable() {
               public void run() {
-                if (handler != null) {
-                  GoByCurrentReference_Action.this.navigateToJavaStub(handler, targetNode);
-                } else {
+                if (!(GoByCurrentReference_Action.this.navigateToJavaStub(modulePath, targetNode))) {
                   GoByCurrentReference_Action.this.open(targetNode);
                 }
               }
@@ -159,7 +154,7 @@ public class GoByCurrentReference_Action extends GeneratedAction {
     GoByCurrentReference_Action.this.context.getComponent(MPSEditorOpener.class).openNode(targetNode, GoByCurrentReference_Action.this.context, true, !(targetNode.isRoot()));
   }
 
-  private boolean navigateToJavaStub(@NotNull IProjectHandler handler, SNode targetNode) {
+  private boolean navigateToJavaStub(@NotNull String projectPath, SNode targetNode) {
     SModelReference ref = SNodeOperations.getModel(targetNode).getSModelReference();
     boolean isClassifier = SNodeOperations.isInstanceOf(targetNode, "jetbrains.mps.baseLanguage.structure.Classifier");
     boolean isConstructor = SNodeOperations.isInstanceOf(targetNode, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
@@ -168,29 +163,40 @@ public class GoByCurrentReference_Action extends GeneratedAction {
     if (!(isClassifier || isConstructor || isMethod || isField)) {
       return false;
     }
-    try {
-      if (isClassifier) {
-        String fqName = ref.getLongName() + "." + SPropertyOperations.getString(SNodeOperations.cast(targetNode, "jetbrains.mps.baseLanguage.structure.Classifier"), "name");
-        handler.openClass(fqName);
-      } else if (isConstructor) {
-        String classifierName = GoByCurrentReference_Action.this.getClassifierName(targetNode, ref);
-        int paramCount = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(targetNode, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), "parameter", true)).count();
-        handler.openClass(classifierName);
-        handler.openConstructor(classifierName, paramCount);
-      } else if (isMethod) {
-        String classifierName = GoByCurrentReference_Action.this.getClassifierName(targetNode, ref);
-        SNode method = SNodeOperations.cast(targetNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
-        handler.openMethod(classifierName, SPropertyOperations.getString(method, "name"), ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count());
-      } else {
-        String classifierName = GoByCurrentReference_Action.this.getClassifierName(targetNode, ref);
-        handler.openField(classifierName, targetNode.getName());
+    if (isClassifier) {
+      String fqName = ref.getLongName() + "." + SPropertyOperations.getString(SNodeOperations.cast(targetNode, "jetbrains.mps.baseLanguage.structure.Classifier"), "name");
+      for (NavigationProvider np : NavigationProvider.EP_NAME.getExtensions()) {
+        if (np.openClass(projectPath, fqName)) {
+          return true;
+        }
       }
-    } catch (RemoteException e) {
-      if (log.isErrorEnabled()) {
-        log.error("", e);
+    } else if (isConstructor) {
+      String classifierName = GoByCurrentReference_Action.this.getClassifierName(targetNode, ref);
+      int paramCount = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(targetNode, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), "parameter", true)).count();
+      for (NavigationProvider np : NavigationProvider.EP_NAME.getExtensions()) {
+        if (np.openClass(projectPath, classifierName)) {
+          if (np.openConstructor(projectPath, classifierName, paramCount)) {
+            return true;
+          }
+        }
+      }
+    } else if (isMethod) {
+      String classifierName = GoByCurrentReference_Action.this.getClassifierName(targetNode, ref);
+      SNode method = SNodeOperations.cast(targetNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+      for (NavigationProvider np : NavigationProvider.EP_NAME.getExtensions()) {
+        if (np.openMethod(projectPath, classifierName, SPropertyOperations.getString(method, "name"), ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count())) {
+          return true;
+        }
+      }
+    } else {
+      String classifierName = GoByCurrentReference_Action.this.getClassifierName(targetNode, ref);
+      for (NavigationProvider np : NavigationProvider.EP_NAME.getExtensions()) {
+        if (np.openField(projectPath, classifierName, targetNode.getName())) {
+          return true;
+        }
       }
     }
-    return true;
+    return false;
   }
 
   private String getClassifierName(SNode targetNode, SModelReference ref) {

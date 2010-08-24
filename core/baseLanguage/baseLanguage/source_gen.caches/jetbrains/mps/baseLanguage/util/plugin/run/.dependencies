@@ -80,7 +80,7 @@
     <classNode dependClassName="jetbrains.mps.generator.GeneratorManager" />
     <classNode dependClassName="jetbrains.mps.generator.ModelGenerationStatusManager" />
     <classNode dependClassName="jetbrains.mps.generator.NoCachesStrategy" />
-    <classNode dependClassName="jetbrains.mps.ide.generator.IdeaAwareJavaGenerationHandler" />
+    <classNode dependClassName="jetbrains.mps.ide.generator.IdeaGeneratorManager" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />

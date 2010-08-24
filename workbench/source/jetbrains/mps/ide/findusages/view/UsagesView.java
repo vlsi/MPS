@@ -35,7 +35,7 @@ import jetbrains.mps.ide.findusages.view.icons.Icons;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTreeComponent;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
-import jetbrains.mps.ide.generator.IdeaAwareJavaGenerationHandler;
+import jetbrains.mps.ide.generator.IdeaGeneratorManager;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
@@ -136,7 +136,7 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
     for (SModelDescriptor modelDescriptor : myTreeComponent.getIncludedModels()) {
       models.add(modelDescriptor);
     }
-    manager.generateModelsFromDifferentModules(ProjectOperationContext.get(myProject), models, new IdeaAwareJavaGenerationHandler());
+    manager.generateModelsFromDifferentModules(ProjectOperationContext.get(myProject), models, IdeaGeneratorManager.getInstance().getDefaultGenerationHandler());
   }
 
   public void goToNext() {

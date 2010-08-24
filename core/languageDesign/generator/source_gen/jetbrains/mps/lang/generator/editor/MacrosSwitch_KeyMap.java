@@ -13,7 +13,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.nodeEditor.InspectorTool;
-import jetbrains.mps.plugin.GeneratedQueriesOpener;
+import jetbrains.mps.ide.generator.GeneratedQueriesOpener;
 
 public class MacrosSwitch_KeyMap extends EditorCellKeyMap {
   public MacrosSwitch_KeyMap() {

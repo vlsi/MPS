@@ -25,6 +25,7 @@ import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.ide.actions.ModelCheckerTool_Tool;
+import jetbrains.mps.ide.generator.IdeaGeneratorManager;
 import jetbrains.mps.ide.projectPane.ModuleChangingOperationContext;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.project.IModule;
@@ -130,7 +131,7 @@ public abstract class BaseGenerateAction extends BaseAction {
     }
 
     GeneratorManager generatorManager = myOperationContext.getComponent(GeneratorManager.class);
-    IGenerationHandler generationHandler = generatorManager.getDefaultGenerationHandler();
+    IGenerationHandler generationHandler = IdeaGeneratorManager.getInstance().getDefaultGenerationHandler();
     generatorManager.generateModelsFromDifferentModules(
       invocationContext,
       modelsToGenerate,
