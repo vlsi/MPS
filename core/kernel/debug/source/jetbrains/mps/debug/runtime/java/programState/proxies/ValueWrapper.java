@@ -63,13 +63,4 @@ public abstract class ValueWrapper extends JavaValue implements IValue {
     return myThreadReference;
   }
 
-  protected StackFrame getStackFrame() {
-    try {
-      return myThreadReference.frame(0); // todo
-    } catch (IncompatibleThreadStateException e) {
-      //todo
-    }
-    return null;
-  }
-
 }
