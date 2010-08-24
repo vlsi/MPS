@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="5116701553466303326">
-    <nodeInfo nodeId="6367352481823137841" fileName="ListViewer_WrapperFactory.java" startLine="38" startPosition="86" endLine="39" endPosition="16" />
-    <nodeInfo nodeId="6367352481823138411" fileName="ListViewer_WrapperFactory.java" startLine="56" startPosition="110" endLine="57" endPosition="82" />
-    <nodeInfo nodeId="6367352481823138410" fileName="ListViewer_WrapperFactory.java" startLine="57" startPosition="82" endLine="58" endPosition="0" />
-    <nodeInfo nodeId="6367352481823138403" fileName="ListViewer_WrapperFactory.java" startLine="58" startPosition="0" endLine="59" endPosition="91" />
-    <nodeInfo nodeId="1067996875388370558" fileName="ListViewer_WrapperFactory.java" startLine="59" startPosition="91" endLine="60" endPosition="145" />
-    <nodeInfo nodeId="1842653058275013458" fileName="ListViewer_WrapperFactory.java" startLine="60" startPosition="145" endLine="61" endPosition="0" />
-    <nodeInfo nodeId="1067996875388372935" fileName="ListViewer_WrapperFactory.java" startLine="62" startPosition="94" endLine="63" endPosition="156" />
-    <nodeInfo nodeId="6367352481823138420" fileName="ListViewer_WrapperFactory.java" startLine="64" startPosition="7" endLine="65" endPosition="0" />
-    <nodeInfo nodeId="6367352481823138422" fileName="ListViewer_WrapperFactory.java" startLine="65" startPosition="0" endLine="66" endPosition="24" />
-    <nodeInfo nodeId="6367352481823164548" fileName="ListViewer_WrapperFactory.java" startLine="61" startPosition="0" endLine="64" endPosition="7" />
-    <scopeInfo nodeId="5116701553466303329" fileName="ListViewer_WrapperFactory.java" startLine="38" startPosition="86" endLine="39" endPosition="16" />
-    <scopeInfo nodeId="6367352481823164550" fileName="ListViewer_WrapperFactory.java" startLine="62" startPosition="94" endLine="63" endPosition="156" />
-    <scopeInfo nodeId="6367352481823164548" fileName="ListViewer_WrapperFactory.java" startLine="61" startPosition="0" endLine="64" endPosition="7">
+    <nodeInfo nodeId="6367352481823138411" fileName="ListViewer_WrapperFactory.java" startLine="51" startPosition="110" endLine="52" endPosition="82" />
+    <nodeInfo nodeId="6367352481823138410" fileName="ListViewer_WrapperFactory.java" startLine="52" startPosition="82" endLine="53" endPosition="0" />
+    <nodeInfo nodeId="6367352481823138403" fileName="ListViewer_WrapperFactory.java" startLine="53" startPosition="0" endLine="54" endPosition="91" />
+    <nodeInfo nodeId="1067996875388370558" fileName="ListViewer_WrapperFactory.java" startLine="54" startPosition="91" endLine="55" endPosition="145" />
+    <nodeInfo nodeId="1842653058275013458" fileName="ListViewer_WrapperFactory.java" startLine="55" startPosition="145" endLine="56" endPosition="0" />
+    <nodeInfo nodeId="1067996875388372935" fileName="ListViewer_WrapperFactory.java" startLine="57" startPosition="94" endLine="58" endPosition="156" />
+    <nodeInfo nodeId="6367352481823138420" fileName="ListViewer_WrapperFactory.java" startLine="59" startPosition="7" endLine="60" endPosition="0" />
+    <nodeInfo nodeId="6367352481823138422" fileName="ListViewer_WrapperFactory.java" startLine="60" startPosition="0" endLine="61" endPosition="24" />
+    <nodeInfo nodeId="6367352481823164548" fileName="ListViewer_WrapperFactory.java" startLine="56" startPosition="0" endLine="59" endPosition="7" />
+    <scopeInfo nodeId="6367352481823164550" fileName="ListViewer_WrapperFactory.java" startLine="57" startPosition="94" endLine="58" endPosition="156" />
+    <scopeInfo nodeId="6367352481823164548" fileName="ListViewer_WrapperFactory.java" startLine="56" startPosition="0" endLine="59" endPosition="7">
       <varInfo nodeId="6367352481823164549" varName="element" />
     </scopeInfo>
-    <scopeInfo nodeId="5116701553466303331" fileName="ListViewer_WrapperFactory.java" startLine="56" startPosition="110" endLine="66" endPosition="24">
+    <scopeInfo nodeId="5116701553466303331" fileName="ListViewer_WrapperFactory.java" startLine="51" startPosition="110" endLine="61" endPosition="24">
       <varInfo nodeId="6367352481823138412" varName="watchables" />
       <varInfo nodeId="6367352481823138404" varName="size" />
     </scopeInfo>

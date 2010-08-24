@@ -6,11 +6,11 @@ import jetbrains.mps.debug.runtime.java.programState.proxies.ValueWrapperFactory
 import jetbrains.mps.debug.runtime.java.programState.proxies.ValueWrapper;
 import jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue;
 import jetbrains.mps.debug.evaluation.EvaluationUtils;
-import jetbrains.mps.debug.evaluation.proxies.IObjectValueProxy;
-import jetbrains.mps.debug.evaluation.proxies.MirrorUtil;
 import jetbrains.mps.debug.evaluation.EvaluationException;
+import jetbrains.mps.debug.evaluation.EvaluationRuntimeException;
 import java.util.List;
 import jetbrains.mps.debug.runtime.java.programState.watchables.CustomJavaWatchable;
+import jetbrains.mps.debug.evaluation.proxies.IObjectValueProxy;
 import java.util.ArrayList;
 import jetbrains.mps.debug.evaluation.proxies.PrimitiveValueProxy;
 import jetbrains.mps.debug.runtime.java.programState.proxies.JavaObjectValue;
@@ -29,14 +29,10 @@ public class ListViewer_WrapperFactory extends ValueWrapperFactory {
       if (!(EvaluationUtils.isInstanceOf(value.getValue().type(), "Ljava/util/List;", value.getValue().virtualMachine()))) {
         return false;
       }
-      return canWrapValue((IObjectValueProxy) MirrorUtil.getValueProxy(value.getValue(), value.getThreadReference()));
+      return true;
     } catch (EvaluationException e) {
-      throw new RuntimeException(e);
+      throw new EvaluationRuntimeException(e);
     }
-  }
-
-  protected boolean canWrapValue(IObjectValueProxy value) throws EvaluationException {
-    return true;
   }
 
   public static class ListViewerWrapper extends ValueWrapper {
@@ -48,8 +44,7 @@ public class ListViewer_WrapperFactory extends ValueWrapperFactory {
       try {
         return getSubvaluesImpl((IObjectValueProxy) myValueProxy);
       } catch (EvaluationException e) {
-        throw new RuntimeException(e);
-        // todo throw something normal 
+        throw new EvaluationRuntimeException(e);
       }
     }
 

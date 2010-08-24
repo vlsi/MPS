@@ -1672,16 +1672,11 @@
                 <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ThrowStatement:3" id="3798344557789624725">
                   <node role="throwable:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3798344557789624727">
                     <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="3798344557789624729">
-                      <link role="baseMethodDeclaration:3" targetNodeId="2.~RuntimeException.&lt;init&gt;(java.lang.Throwable)" resolveInfo="RuntimeException" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="15.~EvaluationRuntimeException.&lt;init&gt;(java.lang.Throwable)" resolveInfo="EvaluationRuntimeException" />
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3798344557789624730">
                         <link role="variableDeclaration:3" targetNodeId="3798344557789573576" resolveInfo="e" />
                       </node>
                     </node>
-                  </node>
-                </node>
-                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="3798344557789624732">
-                  <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="3798344557789624733">
-                    <property name="text:3" value="todo throw something normal" />
                   </node>
                 </node>
               </node>
@@ -1814,7 +1809,7 @@
                 <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ThrowStatement:3" id="7785669630792626860">
                   <node role="throwable:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="7785669630792626862">
                     <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="7785669630792626864">
-                      <link role="baseMethodDeclaration:3" targetNodeId="2.~RuntimeException.&lt;init&gt;(java.lang.Throwable)" resolveInfo="RuntimeException" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="15.~EvaluationRuntimeException.&lt;init&gt;(java.lang.Throwable)" resolveInfo="EvaluationRuntimeException" />
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7785669630792626865">
                         <link role="variableDeclaration:3" targetNodeId="7785669630792626856" resolveInfo="e" />
                       </node>
@@ -2084,7 +2079,7 @@
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ThrowStatement:3" id="2685024263846514262">
                 <node role="throwable:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2685024263846514264">
                   <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="2685024263846514266">
-                    <link role="baseMethodDeclaration:3" targetNodeId="2.~RuntimeException.&lt;init&gt;(java.lang.Throwable)" resolveInfo="RuntimeException" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="15.~EvaluationRuntimeException.&lt;init&gt;(java.lang.Throwable)" resolveInfo="EvaluationRuntimeException" />
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2685024263846514267">
                       <link role="variableDeclaration:3" targetNodeId="2685024263846493234" resolveInfo="e" />
                     </node>

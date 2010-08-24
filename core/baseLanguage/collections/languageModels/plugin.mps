@@ -1176,15 +1176,6 @@
     <node role="valueType:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7785669630792592729">
       <link role="classifier:3" targetNodeId="8.~List" resolveInfo="List" />
     </node>
-    <node role="canWrap:0" type="jetbrains.mps.debug.customViewers.structure.CanWrapHighLevelValue_ConceptFunction:0" id="5116701553466303328">
-      <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5116701553466303329">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6367352481823137841">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="6367352481823137842">
-            <property name="value:3" value="true" />
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="getWatchables:0" type="jetbrains.mps.debug.customViewers.structure.GetHighLevelWatchablesBlock_ConceptFunction:0" id="5116701553466303330">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5116701553466303331">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="6367352481823138411">

@@ -7,6 +7,7 @@ import jetbrains.mps.debug.runtime.java.programState.proxies.ValueWrapper;
 import jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue;
 import jetbrains.mps.debug.evaluation.EvaluationUtils;
 import jetbrains.mps.debug.evaluation.EvaluationException;
+import jetbrains.mps.debug.evaluation.EvaluationRuntimeException;
 import java.util.List;
 import jetbrains.mps.debug.runtime.java.programState.watchables.CustomJavaWatchable;
 import jetbrains.mps.debug.evaluation.proxies.IObjectValueProxy;
@@ -29,7 +30,7 @@ public class MapEntryViewer_WrapperFactory extends ValueWrapperFactory {
       }
       return true;
     } catch (EvaluationException e) {
-      throw new RuntimeException(e);
+      throw new EvaluationRuntimeException(e);
     }
   }
 
@@ -42,8 +43,7 @@ public class MapEntryViewer_WrapperFactory extends ValueWrapperFactory {
       try {
         return getSubvaluesImpl((IObjectValueProxy) myValueProxy);
       } catch (EvaluationException e) {
-        throw new RuntimeException(e);
-        // todo throw something normal 
+        throw new EvaluationRuntimeException(e);
       }
     }
 
@@ -60,7 +60,7 @@ public class MapEntryViewer_WrapperFactory extends ValueWrapperFactory {
       try {
         return getValuePresentation((IObjectValueProxy) myValueProxy);
       } catch (EvaluationException e) {
-        throw new RuntimeException(e);
+        throw new EvaluationRuntimeException(e);
       }
     }
 
