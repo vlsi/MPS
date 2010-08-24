@@ -23,6 +23,7 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
@@ -45,7 +46,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.JOptionPane;
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -215,19 +216,27 @@ public class GeneratorManager {
         }
 
         if (!requirements.isEmpty()) {
-          String message = "The following models might be required for generation\n" +
-            "but aren't generated. Do you want to generate them?\n";
-          for (SModelDescriptor sm : requirements) {
-            message += "\n" + sm.getSModelReference().getSModelFqName();
+          int result = 2;
+
+          if (mySettings.getGenerateRequirementsPolicy() == GenerationSettings.GenerateRequirementsPolicy.ASK) {
+            final StringBuffer message = new StringBuffer("The following models might be required for generation\n" +
+              "but aren't generated. Do you want to generate them?\n");
+            for (SModelDescriptor sm : requirements) {
+              message.append("\n").append(sm.getSModelReference().getSModelFqName());
+            }
+
+            if (IdeMain.getTestMode() != TestMode.CORE_TEST) {
+              DialogWrapper questionDialog = new GenerateRequirementsDialog(myProject, mySettings, message.toString());
+              questionDialog.show();
+              result = questionDialog.getExitCode();
+            }
+          } else {
+            result = 0; // Answer YES implicitly
           }
 
-          int result = 1;
-          if (IdeMain.getTestMode()!=TestMode.CORE_TEST){
-            result = Messages.showYesNoCancelDialog(myProject, message, "Generate Required Models", Messages.getWarningIcon());
-          }
-
-          //idea don't have constants for YES/NO
-          if (result == -1 || result == 2) return false;
+          // dialog cancelled
+          if (result == 1) return false;
+          // answer was "yes"
           if (result == 0) {
             generateModelsFromDifferentModules(invocationContext, new ArrayList<SModelDescriptor>(requirements), getDefaultGenerationHandler());
           }
@@ -264,7 +273,7 @@ public class GeneratorManager {
   }
 
   protected boolean generateRequirements() {
-    return !myGeneratingRequirements && mySettings.isGenerateRequirements();
+    return !myGeneratingRequirements && mySettings.getGenerateRequirementsPolicy() != GenerationSettings.GenerateRequirementsPolicy.NEVER;
   }
 
   private List<SModelDescriptor> getModelsToGenerateBeforeGeneration(SModelDescriptor model, IOperationContext context) {
@@ -449,4 +458,5 @@ public class GeneratorManager {
   public void removeCompilationListener(CompilationListener l) {
     myCompilationListeners.remove(l);
   }
+
 }
