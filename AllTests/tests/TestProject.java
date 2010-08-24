@@ -3,6 +3,8 @@ import jetbrains.mps.TestMain;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.junit.WatchingParameterized;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.test.CompileMain;
+import jetbrains.mps.test.MpsMakeHelper;
 import jetbrains.mps.test.ProjectTestHelper;
 import jetbrains.mps.test.ProjectTestHelper.Token;
 import org.junit.*;
@@ -104,9 +106,7 @@ public class TestProject {
 
   @BeforeClass
   public static void make () throws Exception {
-    Class<?> cls = Class.forName("org.apache.tools.ant.launch.Launcher");
-    Method mth = cls.getDeclaredMethod("main", String[].class);
-    mth.invoke(null, (Object)new String[] {"-main", CompileMain.class.getCanonicalName(), "-buildfile", "AllTests/make_all_modules.xml"});
+    new MpsMakeHelper().make();
   }
 
   @BeforeClass

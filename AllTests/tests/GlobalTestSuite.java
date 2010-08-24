@@ -1,10 +1,8 @@
 import jetbrains.mps.junit.WatchingSuite;
+import jetbrains.mps.test.CompileMain;
+import jetbrains.mps.test.MpsMakeHelper;
 import junit.framework.TestSuite;
-import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
 import org.junit.BeforeClass;
-import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite.SuiteClasses;
 
@@ -377,8 +375,6 @@ jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Union_Test.cla
 public class GlobalTestSuite extends TestSuite {
   @BeforeClass
   public static void make () throws Exception {
-    Class<?> cls = Class.forName("org.apache.tools.ant.launch.Launcher");
-    Method mth = cls.getDeclaredMethod("main", String[].class);
-    mth.invoke(null, (Object)new String[] {"-main", CompileMain.class.getCanonicalName(), "-buildfile", "AllTests/make_all_modules.xml"});
+    new MpsMakeHelper().make();
   }
 }
