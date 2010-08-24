@@ -691,6 +691,12 @@
         <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Folder:7" id="1234971270457">
           <property name="file:7" value="false" />
           <property name="excludes:7" value="**/*.zip" />
+          <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.CreateIfNotExists" id="1805858203209349734">
+            <property name="artifactName" value="plugins/ideIntegration.jar" />
+            <node role="create" type="jetbrains.mps.build.packaging.structure.BlockReference:7" id="1805858203209349735">
+              <link role="block:7" targetNodeId="23.1805858203209349703" resolveInfo="ideaIntegration.jar" />
+            </node>
+          </node>
           <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="1234971270458">
             <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="1234971270459">
               <property name="name:7" value="mps_home" />
