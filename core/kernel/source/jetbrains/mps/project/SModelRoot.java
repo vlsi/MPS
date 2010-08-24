@@ -44,7 +44,7 @@ public class SModelRoot {
       return BaseStubModelRootManager.create(moduleId, className);
     }
 
-    if (myModelRoot.getHandlerClass() != null) {
+    /*if (myModelRoot.getHandlerClass() != null) {
       String fqName = myModelRoot.getHandlerClass();
       try {
         Class cls = Class.forName(fqName);
@@ -53,7 +53,7 @@ public class SModelRoot {
         LOG.error(e);
         return IModelRootManager.NULL_MANAGER;
       }
-    }
+    }*/
 
     return new DefaultModelRootManager();
   }

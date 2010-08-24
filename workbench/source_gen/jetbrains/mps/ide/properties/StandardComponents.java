@@ -37,14 +37,13 @@ import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.workbench.dialogs.project.components.parts.creators.ModelRootChooser;
 import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.StringPathDescriptor;
 import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.EditableStringDescriptor;
+import jetbrains.mps.InternalFlag;
 import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ManagerDescriptor;
-import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.VoidColumnDescriptor;
-import javax.swing.table.TableCellEditor;
-import jetbrains.mps.workbench.dialogs.project.components.parts.editors.HandlerTableCellEditor;
 import javax.swing.JComponent;
 import jetbrains.mps.project.structure.modules.StubSolution;
 import jetbrains.mps.workbench.dialogs.project.components.parts.creators.StubSolutionChooser;
 import javax.swing.JOptionPane;
+import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.VoidColumnDescriptor;
 import jetbrains.mps.project.structure.modules.StubModelsEntry;
 import jetbrains.mps.workbench.dialogs.project.components.parts.creators.StubRootChooser;
 import jetbrains.mps.project.structure.modules.ClassPathEntry;
@@ -102,7 +101,6 @@ import jetbrains.mps.project.structure.project.Path;
 import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.workbench.dialogs.project.components.parts.creators.ModulePathChooser;
 import jetbrains.mps.workbench.dialogs.project.components.parts.renderers.PathRenderer;
-import jetbrains.mps.InternalFlag;
 import javax.swing.JCheckBox;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
 
@@ -242,14 +240,11 @@ public class StandardComponents {
         result_wf5hwp_a0a0a8.addColumn(result_wf5hwp_a2a0a0a8);
         final ColumnDescriptor result_wf5hwp_a3a0a0a8 = new EditableStringDescriptor(ModelRoot.PREFIX, "Prefix", 250);
         result_wf5hwp_a0a0a8.addColumn(result_wf5hwp_a3a0a0a8);
-        final ColumnDescriptor result_wf5hwp_a4a0a0a8 = new ManagerDescriptor(owner, ModelRoot.MANAGER, "Manager", 200);
-        result_wf5hwp_a0a0a8.addColumn(result_wf5hwp_a4a0a0a8);
-        final ColumnDescriptor result_wf5hwp_a5a0a0a8 = new VoidColumnDescriptor(ModelRoot.OLD_MANAGER, "Manager (Int)", 200) {
-          public TableCellEditor createEditor() {
-            return new HandlerTableCellEditor(owner, caption);
-          }
-        };
-        result_wf5hwp_a0a0a8.addColumn(result_wf5hwp_a5a0a0a8);
+        if (InternalFlag.isInternalMode()) {
+          final ColumnDescriptor result_wf5hwp_a0a4a0a0a8 = new ManagerDescriptor(owner, ModelRoot.MANAGER, "Manager", 200);
+          result_wf5hwp_a0a0a8.addColumn(result_wf5hwp_a0a4a0a0a8);
+          // in progress 
+        }
         result_wf5hwp_a0a0a8.init();
         return result_wf5hwp_a0a0a8;
       }

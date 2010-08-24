@@ -8,27 +8,6 @@
     <classNode dependClassName="javax.swing.JTable" />
     <classNode extendsClassName="javax.swing.DefaultCellEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.editors.HandlerTableCellEditor" file="HandlerTableCellEditor.java">
-    <classNode dependClassName="com.intellij.openapi.ui.TextFieldWithBrowseButton" />
-    <classNode dependClassName="java.awt.BorderLayout" />
-    <classNode dependClassName="java.awt.Component" />
-    <classNode dependClassName="java.awt.event.ActionEvent" />
-    <classNode dependClassName="java.awt.event.ActionListener" />
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="javax.swing.JPanel" />
-    <classNode dependClassName="javax.swing.JTable" />
-    <classNode dependClassName="jetbrains.mps.plugin.IProjectHandler" />
-    <classNode dependClassName="jetbrains.mps.plugin.MPSPlugin" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.IModelRootManager" />
-    <classNode dependClassName="jetbrains.mps.workbench.dialogs.choosers.CommonChoosers" />
-    <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.IBindedDialog" />
-    <classNode extendsClassName="com.intellij.util.ui.AbstractTableCellEditor" />
-  </dependency>
   <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.editors.ManagerTableCellEditor" file="ManagerTableCellEditor.java">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.lang.Object" />

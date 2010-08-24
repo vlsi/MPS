@@ -170,67 +170,6 @@
     <unitInfo nodeId="1560298786499491287" fileName="RuleOperandEditor.java" startLine="54" startPosition="35" endLine="67" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.editors.RuleOperandEditor$1" />
     <unitInfo nodeId="1560298786499491170" fileName="RuleOperandEditor.java" startLine="20" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.editors.RuleOperandEditor" />
   </root>
-  <root nodeId="1560298786499494082">
-    <nodeInfo nodeId="1560298786499494085" fileName="HandlerTableCellEditor.java" startLine="22" startPosition="69" endLine="23" endPosition="32" />
-    <nodeInfo nodeId="1560298786499494088" fileName="HandlerTableCellEditor.java" startLine="23" startPosition="32" endLine="24" endPosition="61" />
-    <nodeInfo nodeId="1560298786499494091" fileName="HandlerTableCellEditor.java" startLine="24" startPosition="61" endLine="25" endPosition="33" />
-    <nodeInfo nodeId="1560298786499494101" fileName="HandlerTableCellEditor.java" startLine="27" startPosition="82" endLine="28" endPosition="20" />
-    <nodeInfo nodeId="1560298786499494107" fileName="HandlerTableCellEditor.java" startLine="28" startPosition="20" endLine="29" endPosition="63" />
-    <nodeInfo nodeId="1560298786499494211" fileName="HandlerTableCellEditor.java" startLine="31" startPosition="50" endLine="32" endPosition="155" />
-    <nodeInfo nodeId="1560298786499494232" fileName="HandlerTableCellEditor.java" startLine="33" startPosition="24" endLine="34" endPosition="17" />
-    <nodeInfo nodeId="1560298786499494233" fileName="HandlerTableCellEditor.java" startLine="35" startPosition="9" endLine="36" endPosition="27" />
-    <nodeInfo nodeId="1560298786499494240" fileName="HandlerTableCellEditor.java" startLine="36" startPosition="27" endLine="37" endPosition="54" />
-    <nodeInfo nodeId="1560298786499494128" fileName="HandlerTableCellEditor.java" startLine="39" startPosition="7" endLine="40" endPosition="53" />
-    <nodeInfo nodeId="1560298786499494137" fileName="HandlerTableCellEditor.java" startLine="40" startPosition="53" endLine="41" endPosition="54" />
-    <nodeInfo nodeId="1560298786499494151" fileName="HandlerTableCellEditor.java" startLine="44" startPosition="38" endLine="45" endPosition="29" />
-    <nodeInfo nodeId="8175648731696618423" fileName="HandlerTableCellEditor.java" startLine="48" startPosition="117" endLine="49" endPosition="38" />
-    <nodeInfo nodeId="1560298786499494171" fileName="HandlerTableCellEditor.java" startLine="49" startPosition="38" endLine="50" endPosition="27" />
-    <nodeInfo nodeId="1560298786499494182" fileName="HandlerTableCellEditor.java" startLine="53" startPosition="80" endLine="54" endPosition="101" />
-    <nodeInfo nodeId="1560298786499494201" fileName="HandlerTableCellEditor.java" startLine="56" startPosition="11" endLine="57" endPosition="80" />
-    <nodeInfo nodeId="1560298786499494208" fileName="HandlerTableCellEditor.java" startLine="60" startPosition="5" endLine="61" endPosition="35" />
-    <nodeInfo nodeId="1560298786499494227" fileName="HandlerTableCellEditor.java" startLine="32" startPosition="155" endLine="35" endPosition="9" />
-    <nodeInfo nodeId="1560298786499494147" fileName="HandlerTableCellEditor.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <nodeInfo nodeId="1560298786499494195" fileName="HandlerTableCellEditor.java" startLine="55" startPosition="33" endLine="59" endPosition="7" />
-    <nodeInfo nodeId="1560298786499494157" fileName="HandlerTableCellEditor.java" startLine="47" startPosition="0" endLine="52" endPosition="0" />
-    <nodeInfo nodeId="1560298786499494190" fileName="HandlerTableCellEditor.java" startLine="54" startPosition="101" endLine="60" endPosition="5" />
-    <nodeInfo nodeId="1560298786499494123" fileName="HandlerTableCellEditor.java" startLine="30" startPosition="52" endLine="39" endPosition="0" />
-    <nodeInfo nodeId="1560298786499494114" fileName="HandlerTableCellEditor.java" startLine="29" startPosition="63" endLine="39" endPosition="7" />
-    <nodeInfo nodeId="1560298786499494175" fileName="HandlerTableCellEditor.java" startLine="52" startPosition="0" endLine="63" endPosition="0" />
-    <nodeInfo nodeId="1560298786499494094" fileName="HandlerTableCellEditor.java" startLine="26" startPosition="0" endLine="42" endPosition="3" />
-    <scopeInfo nodeId="1560298786499494197" fileName="HandlerTableCellEditor.java" startLine="58" startPosition="29" endLine="58" endPosition="29" />
-    <scopeInfo nodeId="1560298786499494231" fileName="HandlerTableCellEditor.java" startLine="33" startPosition="24" endLine="34" endPosition="17" />
-    <scopeInfo nodeId="1560298786499494150" fileName="HandlerTableCellEditor.java" startLine="44" startPosition="38" endLine="45" endPosition="29" />
-    <scopeInfo nodeId="1560298786499494200" fileName="HandlerTableCellEditor.java" startLine="56" startPosition="11" endLine="57" endPosition="80" />
-    <scopeInfo nodeId="1560298786499494170" fileName="HandlerTableCellEditor.java" startLine="48" startPosition="117" endLine="50" endPosition="27" />
-    <scopeInfo nodeId="1560298786499494147" fileName="HandlerTableCellEditor.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="1560298786499494194" fileName="HandlerTableCellEditor.java" startLine="55" startPosition="33" endLine="59" endPosition="7" />
-    <scopeInfo nodeId="1560298786499494157" fileName="HandlerTableCellEditor.java" startLine="47" startPosition="0" endLine="52" endPosition="0">
-      <varInfo nodeId="1560298786499494164" varName="isSelected" />
-      <varInfo nodeId="1560298786499494168" varName="column" />
-      <varInfo nodeId="1560298786499494162" varName="value" />
-      <varInfo nodeId="1560298786499494160" varName="table" />
-      <varInfo nodeId="1560298786499494166" varName="row" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499494210" fileName="HandlerTableCellEditor.java" startLine="31" startPosition="50" endLine="37" endPosition="54">
-      <varInfo nodeId="1560298786499494212" varName="s" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499494181" fileName="HandlerTableCellEditor.java" startLine="53" startPosition="80" endLine="61" endPosition="35">
-      <varInfo nodeId="1560298786499494183" varName="projectHandler" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499494123" fileName="HandlerTableCellEditor.java" startLine="30" startPosition="52" endLine="39" endPosition="0">
-      <varInfo nodeId="1560298786499494126" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499494175" fileName="HandlerTableCellEditor.java" startLine="52" startPosition="0" endLine="63" endPosition="0">
-      <varInfo nodeId="1560298786499494179" varName="context" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499494100" fileName="HandlerTableCellEditor.java" startLine="27" startPosition="82" endLine="41" endPosition="54" />
-    <scopeInfo nodeId="1560298786499494094" fileName="HandlerTableCellEditor.java" startLine="26" startPosition="0" endLine="42" endPosition="3">
-      <varInfo nodeId="1560298786499494096" varName="owner" />
-      <varInfo nodeId="1560298786499494098" varName="caption" />
-    </scopeInfo>
-    <unitInfo nodeId="1560298786499494122" fileName="HandlerTableCellEditor.java" startLine="30" startPosition="34" endLine="39" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.editors.HandlerTableCellEditor$1" />
-    <unitInfo nodeId="1560298786499494082" fileName="HandlerTableCellEditor.java" startLine="22" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.editors.HandlerTableCellEditor" />
-  </root>
   <root nodeId="1560298786499495476">
     <nodeInfo nodeId="4256903895781701718" fileName="ManagerTableCellEditor.java" startLine="28" startPosition="63" endLine="29" endPosition="28" />
     <nodeInfo nodeId="4256903895781701715" fileName="ManagerTableCellEditor.java" startLine="31" startPosition="60" endLine="32" endPosition="129" />

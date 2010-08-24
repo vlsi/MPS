@@ -52,23 +52,8 @@ public class ModelRoot {
     ModelRoot result = new ModelRoot();
     result.myPath = myPath;
     result.myPrefix = myPrefix;
-    result.myHandlerClass = myHandlerClass;
     result.myManager = myManager == null ? null : myManager.getCopy();
 
     return result;
-  }
-
-  //-------todo:remove
-
-  public static final String OLD_MANAGER = "handlerClass";
-
-  private String myHandlerClass;
-
-  public String getHandlerClass() {
-    return myHandlerClass;
-  }
-
-  public void setHandlerClass(String handlerClass) {
-    myHandlerClass = handlerClass;
   }
 }

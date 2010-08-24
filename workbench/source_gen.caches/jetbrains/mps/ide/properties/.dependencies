@@ -265,7 +265,6 @@
     <classNode dependClassName="javax.swing.ScrollPaneConstants" />
     <classNode dependClassName="javax.swing.TransferHandler" />
     <classNode dependClassName="javax.swing.border.EmptyBorder" />
-    <classNode dependClassName="javax.swing.table.TableCellEditor" />
     <classNode dependClassName="jetbrains.mps.InternalFlag" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
@@ -325,7 +324,6 @@
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.RuleTypeDescriptor" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.StringPathDescriptor" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.VoidColumnDescriptor" />
-    <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.editors.HandlerTableCellEditor" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.GeneratorRenderer" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ModelRenderer" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ModuleRenderer" />
