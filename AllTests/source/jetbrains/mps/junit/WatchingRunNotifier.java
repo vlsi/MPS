@@ -73,8 +73,8 @@ public class WatchingRunNotifier extends DelegatingRunNotifier {
     oldErr = System.err;
     oldOut.flush();
     oldErr.flush();
-    newOut = new ByteCountingPrintStream(oldOut);
-    newErr = new ByteCountingPrintStream(oldErr);
+    newOut = new ByteCountingPrintStream(oldOut, "output");
+    newErr = new ByteCountingPrintStream(oldErr, "error");
     System.setOut(newOut);
     System.setErr(newErr);
 
@@ -93,8 +93,8 @@ public class WatchingRunNotifier extends DelegatingRunNotifier {
     Logger.getRootLogger().removeAppender(app);
     Logger.getRootLogger().setLevel(oldLevel);
 
-    if (!testsToIgnore.containsKey(desc) && newOut.getBytesCount()+newErr.getBytesCount()+app.getEventsCount() > 0) {
-      Failure fail = new Failure(desc, new UncleanTestExecutionException(newOut.getBytesCount(), newErr.getBytesCount(), app.getEventsCount()));
+    if (!testsToIgnore.containsKey(desc) && (newOut.isNotEmpty()||newErr.isNotEmpty()||app.isNotEmpty())) {
+      Failure fail = new Failure(desc, new UncleanTestExecutionException(newOut, newErr, app));
       super.fireTestFailure(fail);
     }
   }

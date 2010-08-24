@@ -1,7 +1,6 @@
 package jetbrains.mps.junit;
 
 import java.io.*;
-import java.util.Locale;
 
 /**
  * Created by IntelliJ IDEA.
@@ -10,174 +9,186 @@ import java.util.Locale;
  * Time: 1:07:22 PM
  * To change this template use File | Settings | File Templates.
  */
-public class ByteCountingPrintStream extends PrintStream {
+public class ByteCountingPrintStream extends PrintStream implements Output {
 
-  int bytes = 0;
   private final int LS_BYTES;
 
-  public ByteCountingPrintStream(OutputStream out) {
+  private int bytes = 0;
+  private StringBuilder buffer = new StringBuilder();
+  private String name;
+
+  public ByteCountingPrintStream(OutputStream out, String name) {
     super(out);
+    this.name = name;
     this.LS_BYTES = System.getProperty("line.separator").getBytes().length;
   }
 
-  public int getBytesCount() {
-    return bytes;
-  }  
+  @Override
+  public synchronized boolean isNotEmpty() {
+    return bytes > 0;
+  }
 
   @Override
-  public void flush() {
+  public synchronized String getDescription() {
+    return bytes + " bytes in " + name;
+  }
+
+  @Override
+  public synchronized String getText() {
+    return buffer.toString();
+  }
+
+  public synchronized int getBytesCount() {
+    return bytes;
+  }
+
+  public synchronized String getBuffer () {
+    return buffer.toString();
+  }
+
+  @Override
+  public synchronized void flush() {
     super.flush();    
   }
 
   @Override
-  public void close() {
-    super.close();    
+  public synchronized void close() {
+    super.close();
   }
 
   @Override
-  public boolean checkError() {
-    return super.checkError();    
-  }
-
-  @Override
-  protected void setError() {
-    super.setError();    
-  }
-
-  @Override
-  protected void clearError() {
-    super.clearError();    
-  }
-
-  @Override
-  public void write(int b) {
+  public synchronized void write(int buf) {
     bytes++;
-    super.write(b);    
+    buffer.append((char)buf);
+    super.write(buf);
   }
 
   @Override
-  public void write(byte[] buf, int off, int len) {
+  public synchronized void write(byte[] buf) throws IOException {
+    bytes+=LS_BYTES;
+    buffer.append(new String(buf));
+    super.write(buf);
+  }
+
+  @Override
+  public synchronized void write(byte[] buf, int off, int len) {
     bytes+=len;
+    buffer.append(new String(buf, off, len));
     super.write(buf, off, len);    
   }
 
   @Override
-  public void print(boolean b) {
+  public synchronized void print(boolean b) {
     bytes+=String.valueOf(b).getBytes().length;
     super.print(b);    
   }
 
   @Override
-  public void print(char c) {
+  public synchronized void print(char c) {
     bytes+=String.valueOf(c).getBytes().length;
     super.print(c);    
   }
 
   @Override
-  public void print(int i) {
+  public synchronized void print(int i) {
     bytes+=String.valueOf(i).getBytes().length;
     super.print(i);    
   }
 
   @Override
-  public void print(long l) {
-    bytes+=String.valueOf(l).getBytes().length;
-    super.print(l);    
+  public synchronized void print(long lo) {
+    bytes+=String.valueOf(lo).getBytes().length;
+    super.print(lo);
   }
 
   @Override
-  public void print(float f) {
+  public synchronized void print(float f) {
     bytes+=String.valueOf(f).getBytes().length;
-    super.print(f);    
+    super.print(f);
   }
 
   @Override
-  public void print(double d) {
+  public synchronized void print(double d) {
     bytes+=String.valueOf(d).getBytes().length;
-    super.print(d);    
+    super.print(d);
   }
 
   @Override
-  public void print(char[] s) {
+  public synchronized void print(char[] s) {
     bytes+=String.copyValueOf(s).getBytes().length;
-    super.print(s);    
+    super.print(s);
   }
 
   @Override
-  public void print(String s) {
+  public synchronized void print(String s) {
     bytes+=String.valueOf(s).getBytes().length;
-    super.print(s);    
+    super.print(s);
   }
 
   @Override
-  public void print(Object obj) {
+  public synchronized void print(Object obj) {
     bytes+=String.valueOf(obj).getBytes().length;
-    super.print(obj);    
+    super.print(obj);
   }
 
   @Override
-  public void println() {
+  public synchronized void println() {
     bytes+=LS_BYTES;
-    super.println();    
+    super.println();
   }
 
   @Override
-  public void println(boolean x) {
-    bytes+=LS_BYTES;
-    super.println(x);    
-  }
-
-  @Override
-  public void println(char x) {
+  public synchronized void println(boolean x) {
     bytes+=LS_BYTES;
     super.println(x);
   }
 
   @Override
-  public void println(int x) {
+  public synchronized void println(char x) {
     bytes+=LS_BYTES;
     super.println(x);
   }
 
   @Override
-  public void println(long x) {
+  public synchronized void println(int x) {
     bytes+=LS_BYTES;
     super.println(x);
   }
 
   @Override
-  public void println(float x) {
+  public synchronized void println(long x) {
     bytes+=LS_BYTES;
     super.println(x);
   }
 
   @Override
-  public void println(double x) {
+  public synchronized void println(float x) {
     bytes+=LS_BYTES;
     super.println(x);
   }
 
   @Override
-  public void println(char[] x) {
+  public synchronized void println(double x) {
     bytes+=LS_BYTES;
     super.println(x);
   }
 
   @Override
-  public void println(String x) {
+  public synchronized void println(char[] x) {
     bytes+=LS_BYTES;
     super.println(x);
   }
 
   @Override
-  public void println(Object x) {
+  public synchronized void println(String x) {
     bytes+=LS_BYTES;
     super.println(x);
   }
 
   @Override
-  public void write(byte[] b) throws IOException {
+  public synchronized void println(Object x) {
     bytes+=LS_BYTES;
-    super.write(b);
+    super.println(x);
   }
+
 }

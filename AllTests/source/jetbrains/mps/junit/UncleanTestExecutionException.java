@@ -9,12 +9,19 @@ package jetbrains.mps.junit;
  */
 public class UncleanTestExecutionException extends Exception {
 
-  public UncleanTestExecutionException(int out, int err, int events) {
-    super (
-      (out > 0 ? out + " bytes in output " : "") +
-      (err > 0 ? err + " bytes in error " : "") +
-      (events > 0 ? events + " events" : "")
-    );
+
+  public UncleanTestExecutionException(Output... foo) {
+    super (fooToMessage(foo));
   }
 
+  private static String fooToMessage (Output... foo) {
+    StringBuilder sb = new StringBuilder();
+    for (Output f:foo) {
+      if (f.isNotEmpty()) {
+        sb.append("\n[").append(f.getDescription()).append("]\n");
+        sb.append(f.getText());
+      }
+    }
+    return sb.toString();
+  }
 }
