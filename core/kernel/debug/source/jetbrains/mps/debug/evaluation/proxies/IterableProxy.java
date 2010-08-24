@@ -16,6 +16,7 @@
 package jetbrains.mps.debug.evaluation.proxies;
 
 import jetbrains.mps.debug.evaluation.EvaluationException;
+import jetbrains.mps.debug.evaluation.EvaluationRuntimeException;
 
 import java.util.Iterator;
 
@@ -32,7 +33,7 @@ public class IterableProxy<T extends IValueProxy> implements Iterable<T> {
       IObjectValueProxy iteratorProxy = (IObjectValueProxy) myValueProxy.invokeMethod("iterator", "()Ljava/util/Iterator;");
       return new MyIterator(iteratorProxy);
     } catch (EvaluationException e) {
-      throw new RuntimeException(e);
+      throw new EvaluationRuntimeException(e);
     }
   }
 
@@ -48,7 +49,7 @@ public class IterableProxy<T extends IValueProxy> implements Iterable<T> {
       try {
         return (Boolean)((PrimitiveValueProxy) myIteratorProxy.invokeMethod("hasNext", "()Z")).getJavaValue();
       } catch (EvaluationException e) {
-        throw new RuntimeException(e);
+        throw new EvaluationRuntimeException(e);
       }
     }
 
@@ -57,7 +58,7 @@ public class IterableProxy<T extends IValueProxy> implements Iterable<T> {
       try {
         return (T) myIteratorProxy.invokeMethod("next", "()Ljava/lang/Object;");
       } catch (EvaluationException e) {
-        throw new RuntimeException(e); //todo special exception class
+        throw new EvaluationRuntimeException(e);
       }
     }
 
@@ -66,7 +67,7 @@ public class IterableProxy<T extends IValueProxy> implements Iterable<T> {
       try {
         myIteratorProxy.invokeMethod("remove", "()V");
       } catch (EvaluationException e) {
-        throw new RuntimeException(e);
+        throw new EvaluationRuntimeException(e);
       }
     }
   }

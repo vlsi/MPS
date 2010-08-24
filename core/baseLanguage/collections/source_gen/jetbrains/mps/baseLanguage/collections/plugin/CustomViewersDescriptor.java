@@ -7,23 +7,19 @@ import jetbrains.mps.debug.runtime.java.programState.proxies.ValueWrapperFactory
 public class CustomViewersDescriptor extends jetbrains.mps.debug.runtime.java.programState.proxies.CustomViewersDescriptor {
   public CustomViewersDescriptor() {
     {
-      ValueWrapperFactory factory = new ListViewer_Factory();
+      ValueWrapperFactory factory = new ListViewer_WrapperFactory();
       myValueWrapperFactories.add(factory);
     }
     {
-      ValueWrapperFactory factory = new MapViewer_Factory();
+      ValueWrapperFactory factory = new MapEntryViewer_WrapperFactory();
       myValueWrapperFactories.add(factory);
     }
     {
-      ValueWrapperFactory factory = new MapEntryViewer_Factory();
+      ValueWrapperFactory factory = new MapViewer_WrapperFactory();
       myValueWrapperFactories.add(factory);
     }
     {
-      ValueWrapperFactory factory = new SequentialListViewer_Factory();
-      myValueWrapperFactories.add(factory);
-    }
-    {
-      ValueWrapperFactory factory = new SetViewer_Factory();
+      ValueWrapperFactory factory = new SetViewer_WrapperFactory();
       myValueWrapperFactories.add(factory);
     }
   }

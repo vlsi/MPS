@@ -15,13 +15,14 @@ import java.util.List;
 
 public class WatchableNode extends AbstractWatchableNode {
   private boolean myInitialized;
+  @NotNull
   private IWatchable myWatchable;
 
-  public WatchableNode(IWatchable watchable) {
+  public WatchableNode(@NotNull IWatchable watchable) {
     this(null, watchable);
   }
 
-  public WatchableNode(IOperationContext context, IWatchable watchable) {
+  public WatchableNode(IOperationContext context, @NotNull IWatchable watchable) {
     super(context, watchable.getNode());
     myWatchable = watchable;
     updatePresentation();
@@ -41,7 +42,7 @@ public class WatchableNode extends AbstractWatchableNode {
   }
 
   private void updatePresentationInternal() {
-    setNodeIdentifier(calculateNodeId(getValue()));
+    setNodeIdentifier(calculateNodeId());
     setIcon(getNodeIcon());
   }
 
@@ -52,18 +53,10 @@ public class WatchableNode extends AbstractWatchableNode {
     return myWatchable.getPresentationIcon();
   }
 
-  protected String calculateNodeId(IValue variableValue) {
-    String nodeId;
-    String name;
- //   if (myNode != null) {
- //     name = myNode.toString();
- //   } else {
-      name = getValueName();
-  //  }
-    nodeId = name
+  protected String calculateNodeId() {
+    return myWatchable.getName()
         + " = "
-        + getValuePresentation(variableValue);
-    return nodeId;
+        + getValuePresentation(myWatchable.getValue());
   }
 
   @NotNull
@@ -76,10 +69,6 @@ public class WatchableNode extends AbstractWatchableNode {
   public boolean isLeaf() {
     IValue value = getValue();
     return value == null || !value.isStructure();
-  }
-
-  protected String getValueName() {
-    return myWatchable.getName();
   }
 
   protected IValue getValue() {

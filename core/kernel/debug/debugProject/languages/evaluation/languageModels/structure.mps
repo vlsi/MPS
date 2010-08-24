@@ -58,6 +58,7 @@
   <languageAspect modelUID="r:550fbd90-c9f2-4576-a8a6-223eca16d68b(jetbrains.mps.baseLanguage.runConfigurations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
   <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
+  <languageAspect modelUID="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debug.customViewers.structure)" version="0" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <maxImportIndex value="2" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
@@ -170,6 +171,25 @@
     <property name="package:0" value="annotations" />
     <property name="name:0" value="UnprocessedAnnotation" />
     <link role="extends:0" targetNodeId="1707366700950402060" resolveInfo="GenerationHelperAnnotation" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1067996875388378646">
+      <property name="value:0" value="unprocessed" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="9146111288436274341">
+    <property name="package:0" value="annotations" />
+    <property name="name:0" value="DoNotTransformAnnotation" />
+    <link role="extends:0" targetNodeId="1707366700950402060" resolveInfo="GenerationHelperAnnotation" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1067996875388378644">
+      <property name="value:0" value="do not transform" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration:0" id="9146111288436274342">
+    <property name="package:0" value="annotations" />
+    <property name="role:0" value="doNotTransformAnnotation" />
+    <link role="source:0" targetNodeId="2v.1133920641626:0" resolveInfo="BaseConcept" />
+    <link role="target:0" targetNodeId="9146111288436274341" resolveInfo="DoNotTransformAnnotation" />
   </node>
 </model>
 
