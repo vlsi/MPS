@@ -424,7 +424,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule:3" id="1842653058274902924">
-    <property name="package:3" value="highLevel" />
+    <property name="package:3" value="types" />
     <property name="name:3" value="WatchableListIsAListOrWatchables" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1842653058274902925">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1842653058274918903">

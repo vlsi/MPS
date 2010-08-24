@@ -611,7 +611,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1842653058274900916">
-    <property name="package:32" value="highLevel" />
+    <property name="package:32" value="types" />
     <link role="conceptDeclaration:32" targetNodeId="1.1842653058274900915:0" resolveInfo="WatchableListType" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty:32" id="1842653058274902920">
       <link role="relationDeclaration:32" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
