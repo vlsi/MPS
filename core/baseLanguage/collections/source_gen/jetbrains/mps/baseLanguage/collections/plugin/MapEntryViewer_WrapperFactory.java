@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.collections.plugin;
 import jetbrains.mps.debug.runtime.java.programState.proxies.ValueWrapperFactory;
 import jetbrains.mps.debug.runtime.java.programState.proxies.ValueWrapper;
 import jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue;
+import org.jetbrains.annotations.NotNull;
+import com.sun.jdi.Value;
 import jetbrains.mps.debug.evaluation.EvaluationUtils;
 import jetbrains.mps.debug.evaluation.EvaluationException;
 import jetbrains.mps.debug.evaluation.EvaluationRuntimeException;
@@ -23,9 +25,13 @@ public class MapEntryViewer_WrapperFactory extends ValueWrapperFactory {
   }
 
   @Override
-  public boolean canWrapValue(JavaValue value) {
+  public boolean canWrapValue(@NotNull JavaValue javaValue) {
     try {
-      if (!(EvaluationUtils.isInstanceOf(value.getValue().type(), "Ljava.util.Map$Entry;", value.getValue().virtualMachine()))) {
+      Value value = javaValue.getValue();
+      if (value == null) {
+        return false;
+      }
+      if (!(EvaluationUtils.isInstanceOf(value.type(), "Ljava.util.Map$Entry;", value.virtualMachine()))) {
         return false;
       }
       return true;

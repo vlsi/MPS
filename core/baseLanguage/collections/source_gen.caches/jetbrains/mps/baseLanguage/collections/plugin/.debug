@@ -1,81 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="5116701553466303326">
-    <nodeInfo nodeId="6367352481823138411" fileName="ListViewer_WrapperFactory.java" startLine="51" startPosition="110" endLine="52" endPosition="82" />
-    <nodeInfo nodeId="6367352481823138410" fileName="ListViewer_WrapperFactory.java" startLine="52" startPosition="82" endLine="53" endPosition="0" />
-    <nodeInfo nodeId="6367352481823138403" fileName="ListViewer_WrapperFactory.java" startLine="53" startPosition="0" endLine="54" endPosition="91" />
-    <nodeInfo nodeId="1067996875388370558" fileName="ListViewer_WrapperFactory.java" startLine="54" startPosition="91" endLine="55" endPosition="145" />
-    <nodeInfo nodeId="1842653058275013458" fileName="ListViewer_WrapperFactory.java" startLine="55" startPosition="145" endLine="56" endPosition="0" />
-    <nodeInfo nodeId="1067996875388372935" fileName="ListViewer_WrapperFactory.java" startLine="57" startPosition="94" endLine="58" endPosition="156" />
-    <nodeInfo nodeId="6367352481823138420" fileName="ListViewer_WrapperFactory.java" startLine="59" startPosition="7" endLine="60" endPosition="0" />
-    <nodeInfo nodeId="6367352481823138422" fileName="ListViewer_WrapperFactory.java" startLine="60" startPosition="0" endLine="61" endPosition="24" />
-    <nodeInfo nodeId="6367352481823164548" fileName="ListViewer_WrapperFactory.java" startLine="56" startPosition="0" endLine="59" endPosition="7" />
-    <scopeInfo nodeId="6367352481823164550" fileName="ListViewer_WrapperFactory.java" startLine="57" startPosition="94" endLine="58" endPosition="156" />
-    <scopeInfo nodeId="6367352481823164548" fileName="ListViewer_WrapperFactory.java" startLine="56" startPosition="0" endLine="59" endPosition="7">
+    <nodeInfo nodeId="6367352481823138411" fileName="ListViewer_WrapperFactory.java" startLine="57" startPosition="110" endLine="58" endPosition="82" />
+    <nodeInfo nodeId="6367352481823138410" fileName="ListViewer_WrapperFactory.java" startLine="58" startPosition="82" endLine="59" endPosition="0" />
+    <nodeInfo nodeId="6367352481823138403" fileName="ListViewer_WrapperFactory.java" startLine="59" startPosition="0" endLine="60" endPosition="91" />
+    <nodeInfo nodeId="1067996875388370558" fileName="ListViewer_WrapperFactory.java" startLine="60" startPosition="91" endLine="61" endPosition="145" />
+    <nodeInfo nodeId="1842653058275013458" fileName="ListViewer_WrapperFactory.java" startLine="61" startPosition="145" endLine="62" endPosition="0" />
+    <nodeInfo nodeId="1067996875388372935" fileName="ListViewer_WrapperFactory.java" startLine="63" startPosition="94" endLine="64" endPosition="156" />
+    <nodeInfo nodeId="6367352481823138420" fileName="ListViewer_WrapperFactory.java" startLine="65" startPosition="7" endLine="66" endPosition="0" />
+    <nodeInfo nodeId="6367352481823138422" fileName="ListViewer_WrapperFactory.java" startLine="66" startPosition="0" endLine="67" endPosition="24" />
+    <nodeInfo nodeId="6367352481823164548" fileName="ListViewer_WrapperFactory.java" startLine="62" startPosition="0" endLine="65" endPosition="7" />
+    <scopeInfo nodeId="6367352481823164550" fileName="ListViewer_WrapperFactory.java" startLine="63" startPosition="94" endLine="64" endPosition="156" />
+    <scopeInfo nodeId="6367352481823164548" fileName="ListViewer_WrapperFactory.java" startLine="62" startPosition="0" endLine="65" endPosition="7">
       <varInfo nodeId="6367352481823164549" varName="element" />
     </scopeInfo>
-    <scopeInfo nodeId="5116701553466303331" fileName="ListViewer_WrapperFactory.java" startLine="51" startPosition="110" endLine="61" endPosition="24">
+    <scopeInfo nodeId="5116701553466303331" fileName="ListViewer_WrapperFactory.java" startLine="57" startPosition="110" endLine="67" endPosition="24">
       <varInfo nodeId="6367352481823138412" varName="watchables" />
       <varInfo nodeId="6367352481823138404" varName="size" />
     </scopeInfo>
   </root>
   <root nodeId="7785669630792406965">
-    <nodeInfo nodeId="7785669630792487826" fileName="MapEntryViewer_WrapperFactory.java" startLine="50" startPosition="110" endLine="51" endPosition="78" />
-    <nodeInfo nodeId="7785669630792487812" fileName="MapEntryViewer_WrapperFactory.java" startLine="51" startPosition="78" endLine="52" endPosition="105" />
-    <nodeInfo nodeId="7785669630792487818" fileName="MapEntryViewer_WrapperFactory.java" startLine="52" startPosition="105" endLine="53" endPosition="114" />
-    <nodeInfo nodeId="7785669630792487833" fileName="MapEntryViewer_WrapperFactory.java" startLine="53" startPosition="114" endLine="54" endPosition="138" />
-    <nodeInfo nodeId="7785669630792487845" fileName="MapEntryViewer_WrapperFactory.java" startLine="54" startPosition="138" endLine="55" endPosition="149" />
-    <nodeInfo nodeId="7785669630792487854" fileName="MapEntryViewer_WrapperFactory.java" startLine="55" startPosition="149" endLine="56" endPosition="20" />
-    <nodeInfo nodeId="7785669630792487769" fileName="MapEntryViewer_WrapperFactory.java" startLine="67" startPosition="95" endLine="68" endPosition="105" />
-    <nodeInfo nodeId="7785669630792487783" fileName="MapEntryViewer_WrapperFactory.java" startLine="68" startPosition="105" endLine="69" endPosition="114" />
-    <nodeInfo nodeId="7785669630792487794" fileName="MapEntryViewer_WrapperFactory.java" startLine="69" startPosition="114" endLine="70" endPosition="195" />
-    <scopeInfo nodeId="7785669630792426022" fileName="MapEntryViewer_WrapperFactory.java" startLine="67" startPosition="95" endLine="70" endPosition="195">
+    <nodeInfo nodeId="7785669630792487826" fileName="MapEntryViewer_WrapperFactory.java" startLine="56" startPosition="110" endLine="57" endPosition="78" />
+    <nodeInfo nodeId="7785669630792487812" fileName="MapEntryViewer_WrapperFactory.java" startLine="57" startPosition="78" endLine="58" endPosition="105" />
+    <nodeInfo nodeId="7785669630792487818" fileName="MapEntryViewer_WrapperFactory.java" startLine="58" startPosition="105" endLine="59" endPosition="114" />
+    <nodeInfo nodeId="7785669630792487833" fileName="MapEntryViewer_WrapperFactory.java" startLine="59" startPosition="114" endLine="60" endPosition="138" />
+    <nodeInfo nodeId="7785669630792487845" fileName="MapEntryViewer_WrapperFactory.java" startLine="60" startPosition="138" endLine="61" endPosition="149" />
+    <nodeInfo nodeId="7785669630792487854" fileName="MapEntryViewer_WrapperFactory.java" startLine="61" startPosition="149" endLine="62" endPosition="20" />
+    <nodeInfo nodeId="7785669630792487769" fileName="MapEntryViewer_WrapperFactory.java" startLine="73" startPosition="95" endLine="74" endPosition="105" />
+    <nodeInfo nodeId="7785669630792487783" fileName="MapEntryViewer_WrapperFactory.java" startLine="74" startPosition="105" endLine="75" endPosition="114" />
+    <nodeInfo nodeId="7785669630792487794" fileName="MapEntryViewer_WrapperFactory.java" startLine="75" startPosition="114" endLine="76" endPosition="195" />
+    <scopeInfo nodeId="7785669630792426022" fileName="MapEntryViewer_WrapperFactory.java" startLine="73" startPosition="95" endLine="76" endPosition="195">
       <varInfo nodeId="7785669630792487770" varName="key" />
       <varInfo nodeId="7785669630792487784" varName="entryValue" />
     </scopeInfo>
-    <scopeInfo nodeId="7785669630792406968" fileName="MapEntryViewer_WrapperFactory.java" startLine="50" startPosition="110" endLine="56" endPosition="20">
+    <scopeInfo nodeId="7785669630792406968" fileName="MapEntryViewer_WrapperFactory.java" startLine="56" startPosition="110" endLine="62" endPosition="20">
       <varInfo nodeId="7785669630792487827" varName="result" />
       <varInfo nodeId="7785669630792487813" varName="key" />
       <varInfo nodeId="7785669630792487819" varName="entryValue" />
     </scopeInfo>
   </root>
   <root nodeId="7785669630792592640">
-    <nodeInfo nodeId="7785669630792592660" fileName="MapViewer_WrapperFactory.java" startLine="51" startPosition="110" endLine="52" endPosition="78" />
-    <nodeInfo nodeId="7785669630792592667" fileName="MapViewer_WrapperFactory.java" startLine="52" startPosition="78" endLine="53" endPosition="0" />
-    <nodeInfo nodeId="7785669630792592652" fileName="MapViewer_WrapperFactory.java" startLine="53" startPosition="0" endLine="54" endPosition="91" />
-    <nodeInfo nodeId="3720097505854413239" fileName="MapViewer_WrapperFactory.java" startLine="54" startPosition="91" endLine="55" endPosition="141" />
-    <nodeInfo nodeId="3720097505854399044" fileName="MapViewer_WrapperFactory.java" startLine="55" startPosition="141" endLine="56" endPosition="0" />
-    <nodeInfo nodeId="7785669630792592675" fileName="MapViewer_WrapperFactory.java" startLine="56" startPosition="0" endLine="57" endPosition="108" />
-    <nodeInfo nodeId="7785669630792592697" fileName="MapViewer_WrapperFactory.java" startLine="58" startPosition="94" endLine="59" endPosition="146" />
-    <nodeInfo nodeId="7785669630792592709" fileName="MapViewer_WrapperFactory.java" startLine="60" startPosition="7" endLine="61" endPosition="0" />
-    <nodeInfo nodeId="7785669630792592711" fileName="MapViewer_WrapperFactory.java" startLine="61" startPosition="0" endLine="62" endPosition="20" />
-    <nodeInfo nodeId="7785669630792592688" fileName="MapViewer_WrapperFactory.java" startLine="57" startPosition="108" endLine="60" endPosition="7" />
-    <scopeInfo nodeId="7785669630792592690" fileName="MapViewer_WrapperFactory.java" startLine="58" startPosition="94" endLine="59" endPosition="146" />
-    <scopeInfo nodeId="7785669630792592688" fileName="MapViewer_WrapperFactory.java" startLine="57" startPosition="108" endLine="60" endPosition="7">
+    <nodeInfo nodeId="7785669630792592660" fileName="MapViewer_WrapperFactory.java" startLine="57" startPosition="110" endLine="58" endPosition="78" />
+    <nodeInfo nodeId="7785669630792592667" fileName="MapViewer_WrapperFactory.java" startLine="58" startPosition="78" endLine="59" endPosition="0" />
+    <nodeInfo nodeId="7785669630792592652" fileName="MapViewer_WrapperFactory.java" startLine="59" startPosition="0" endLine="60" endPosition="91" />
+    <nodeInfo nodeId="3720097505854413239" fileName="MapViewer_WrapperFactory.java" startLine="60" startPosition="91" endLine="61" endPosition="141" />
+    <nodeInfo nodeId="3720097505854399044" fileName="MapViewer_WrapperFactory.java" startLine="61" startPosition="141" endLine="62" endPosition="0" />
+    <nodeInfo nodeId="7785669630792592675" fileName="MapViewer_WrapperFactory.java" startLine="62" startPosition="0" endLine="63" endPosition="108" />
+    <nodeInfo nodeId="7785669630792592697" fileName="MapViewer_WrapperFactory.java" startLine="64" startPosition="94" endLine="65" endPosition="146" />
+    <nodeInfo nodeId="7785669630792592709" fileName="MapViewer_WrapperFactory.java" startLine="66" startPosition="7" endLine="67" endPosition="0" />
+    <nodeInfo nodeId="7785669630792592711" fileName="MapViewer_WrapperFactory.java" startLine="67" startPosition="0" endLine="68" endPosition="20" />
+    <nodeInfo nodeId="7785669630792592688" fileName="MapViewer_WrapperFactory.java" startLine="63" startPosition="108" endLine="66" endPosition="7" />
+    <scopeInfo nodeId="7785669630792592690" fileName="MapViewer_WrapperFactory.java" startLine="64" startPosition="94" endLine="65" endPosition="146" />
+    <scopeInfo nodeId="7785669630792592688" fileName="MapViewer_WrapperFactory.java" startLine="63" startPosition="108" endLine="66" endPosition="7">
       <varInfo nodeId="7785669630792592689" varName="entry" />
     </scopeInfo>
-    <scopeInfo nodeId="7785669630792592643" fileName="MapViewer_WrapperFactory.java" startLine="51" startPosition="110" endLine="62" endPosition="20">
+    <scopeInfo nodeId="7785669630792592643" fileName="MapViewer_WrapperFactory.java" startLine="57" startPosition="110" endLine="68" endPosition="20">
       <varInfo nodeId="7785669630792592661" varName="result" />
       <varInfo nodeId="7785669630792592676" varName="entries" />
       <varInfo nodeId="7785669630792592653" varName="size" />
     </scopeInfo>
   </root>
   <root nodeId="7785669630792592730">
-    <nodeInfo nodeId="7785669630792592775" fileName="SetViewer_WrapperFactory.java" startLine="51" startPosition="110" endLine="52" endPosition="35" />
-    <nodeInfo nodeId="7785669630792592738" fileName="SetViewer_WrapperFactory.java" startLine="52" startPosition="35" endLine="53" endPosition="82" />
-    <nodeInfo nodeId="7785669630792592743" fileName="SetViewer_WrapperFactory.java" startLine="53" startPosition="82" endLine="54" endPosition="0" />
-    <nodeInfo nodeId="7785669630792592744" fileName="SetViewer_WrapperFactory.java" startLine="54" startPosition="0" endLine="55" endPosition="91" />
-    <nodeInfo nodeId="7785669630792592750" fileName="SetViewer_WrapperFactory.java" startLine="55" startPosition="91" endLine="56" endPosition="145" />
-    <nodeInfo nodeId="7785669630792592757" fileName="SetViewer_WrapperFactory.java" startLine="56" startPosition="145" endLine="57" endPosition="0" />
-    <nodeInfo nodeId="7785669630792592762" fileName="SetViewer_WrapperFactory.java" startLine="58" startPosition="94" endLine="59" endPosition="156" />
-    <nodeInfo nodeId="7785669630792592770" fileName="SetViewer_WrapperFactory.java" startLine="60" startPosition="7" endLine="61" endPosition="0" />
-    <nodeInfo nodeId="7785669630792592771" fileName="SetViewer_WrapperFactory.java" startLine="61" startPosition="0" endLine="62" endPosition="24" />
-    <nodeInfo nodeId="7785669630792592758" fileName="SetViewer_WrapperFactory.java" startLine="57" startPosition="0" endLine="60" endPosition="7" />
-    <scopeInfo nodeId="7785669630792592761" fileName="SetViewer_WrapperFactory.java" startLine="58" startPosition="94" endLine="59" endPosition="156" />
-    <scopeInfo nodeId="7785669630792592758" fileName="SetViewer_WrapperFactory.java" startLine="57" startPosition="0" endLine="60" endPosition="7">
+    <nodeInfo nodeId="7785669630792592775" fileName="SetViewer_WrapperFactory.java" startLine="57" startPosition="110" endLine="58" endPosition="35" />
+    <nodeInfo nodeId="7785669630792592738" fileName="SetViewer_WrapperFactory.java" startLine="58" startPosition="35" endLine="59" endPosition="82" />
+    <nodeInfo nodeId="7785669630792592743" fileName="SetViewer_WrapperFactory.java" startLine="59" startPosition="82" endLine="60" endPosition="0" />
+    <nodeInfo nodeId="7785669630792592744" fileName="SetViewer_WrapperFactory.java" startLine="60" startPosition="0" endLine="61" endPosition="91" />
+    <nodeInfo nodeId="7785669630792592750" fileName="SetViewer_WrapperFactory.java" startLine="61" startPosition="91" endLine="62" endPosition="145" />
+    <nodeInfo nodeId="7785669630792592757" fileName="SetViewer_WrapperFactory.java" startLine="62" startPosition="145" endLine="63" endPosition="0" />
+    <nodeInfo nodeId="7785669630792592762" fileName="SetViewer_WrapperFactory.java" startLine="64" startPosition="94" endLine="65" endPosition="156" />
+    <nodeInfo nodeId="7785669630792592770" fileName="SetViewer_WrapperFactory.java" startLine="66" startPosition="7" endLine="67" endPosition="0" />
+    <nodeInfo nodeId="7785669630792592771" fileName="SetViewer_WrapperFactory.java" startLine="67" startPosition="0" endLine="68" endPosition="24" />
+    <nodeInfo nodeId="7785669630792592758" fileName="SetViewer_WrapperFactory.java" startLine="63" startPosition="0" endLine="66" endPosition="7" />
+    <scopeInfo nodeId="7785669630792592761" fileName="SetViewer_WrapperFactory.java" startLine="64" startPosition="94" endLine="65" endPosition="156" />
+    <scopeInfo nodeId="7785669630792592758" fileName="SetViewer_WrapperFactory.java" startLine="63" startPosition="0" endLine="66" endPosition="7">
       <varInfo nodeId="7785669630792592759" varName="element" />
     </scopeInfo>
-    <scopeInfo nodeId="7785669630792592733" fileName="SetViewer_WrapperFactory.java" startLine="51" startPosition="110" endLine="62" endPosition="24">
+    <scopeInfo nodeId="7785669630792592733" fileName="SetViewer_WrapperFactory.java" startLine="57" startPosition="110" endLine="68" endPosition="24">
       <varInfo nodeId="7785669630792592739" varName="watchables" />
       <varInfo nodeId="7785669630792592745" varName="size" />
     </scopeInfo>
