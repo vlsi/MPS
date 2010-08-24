@@ -3,7 +3,6 @@ import jetbrains.mps.TestMain;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.junit.WatchingParameterized;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.test.CompileMain;
 import jetbrains.mps.test.MpsMakeHelper;
 import jetbrains.mps.test.ProjectTestHelper;
 import jetbrains.mps.test.ProjectTestHelper.Token;

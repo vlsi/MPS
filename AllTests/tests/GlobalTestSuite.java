@@ -1,5 +1,4 @@
 import jetbrains.mps.junit.WatchingSuite;
-import jetbrains.mps.test.CompileMain;
 import jetbrains.mps.test.MpsMakeHelper;
 import junit.framework.TestSuite;
 import org.junit.BeforeClass;
