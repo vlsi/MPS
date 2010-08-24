@@ -1155,11 +1155,7 @@
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="761495697519362710">
         <link role="classifier:3" targetNodeId="2.~Object" resolveInfo="Object" />
       </node>
-      <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="761495697519362707">
-        <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="761495697519362709">
-          <link role="baseMethodDeclaration:3" targetNodeId="2.~Object.&lt;init&gt;()" resolveInfo="Object" />
-        </node>
-      </node>
+      <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="263483611547406484" />
     </node>
     <node role="staticField:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration:3" id="3337698516783078485">
       <property name="name:3" value="myStaticField" />

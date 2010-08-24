@@ -28,12 +28,19 @@ public abstract class JavaValue extends ProxyForJava implements IValue {
   }
 
   public static JavaValue fromJDIValue(Value value, String classFQname, ThreadReference threadReference) {
+    // could not we, like, get fqName from the value?
     JavaValue javaValue = fromJDIValueRaw(value, classFQname, threadReference);
     return tryToWrap(classFQname, javaValue);
   }
 
+  public static JavaValue fromJDIValue(Value value, ThreadReference threadReference) {
+    JavaValue javaValue = fromJDIValueRaw(value, value.type().name(), threadReference);
+    return tryToWrap(value.type().name(), javaValue);
+  }
+
   public static JavaValue tryToWrap(@NotNull JavaValue javaValue) {
-    return tryToWrap(javaValue.getClassFQName(), javaValue);  
+    // why here?
+    return tryToWrap(javaValue.getClassFQName(), javaValue);
   }
 
   private static JavaValue tryToWrap(String classFQname, JavaValue javaValue) {
@@ -65,5 +72,9 @@ public abstract class JavaValue extends ProxyForJava implements IValue {
 
   public String getClassFQName() {
     return myClassFQName;
+  }
+
+  public ThreadReference getThreadReference() {
+    return myThreadReference;
   }
 }

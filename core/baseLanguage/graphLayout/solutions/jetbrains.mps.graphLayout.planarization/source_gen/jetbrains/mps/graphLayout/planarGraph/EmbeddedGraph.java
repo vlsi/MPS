@@ -10,10 +10,11 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import jetbrains.mps.graphLayout.graph.Node;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class EmbeddedGraph {
   private List<Face> myFaces;
@@ -29,7 +30,7 @@ public class EmbeddedGraph {
     myAdjacentFacesMap = MapSequence.fromMap(new HashMap<Edge, List<Face>>());
     myEdgesHistory = MapSequence.fromMap(new HashMap<Edge, List<Edge>>());
     myDartsToFacesMap = MapSequence.fromMap(new HashMap<Dart, Face>());
-    myEdgeDarts = MapSequence.fromMap(new HashMap<Edge, List<Dart>>());
+    myEdgeDarts = MapSequence.fromMap(new LinkedHashMap<Edge, List<Dart>>(16, (float) 0.75, false));
     myGraph = graph;
   }
 
@@ -47,20 +48,7 @@ public class EmbeddedGraph {
     return containingFace;
   }
 
-  public Face getFaceToTheRight(final Edge edge) {
-    /*
-      List<Face> faces = getAdjacentFaces(edge);
-      for (Face face : ListSequence.fromList(faces)) {
-        Dart dart = ListSequence.fromList(face.getDarts()).findFirst(new IWhereFilter<Dart>() {
-          public boolean accept(Dart it) {
-            return it.getEdge() == edge;
-          }
-        });
-        if (dart.getSource() == edge.getTarget()) {
-          return face;
-        }
-      }
-    */
+  public Face getFaceToTheRight(Edge edge) {
     List<Dart> darts = getDarts(edge);
     for (Dart dart : ListSequence.fromList(darts)) {
       if (dart.getSource() == edge.getTarget()) {
@@ -70,20 +58,7 @@ public class EmbeddedGraph {
     return null;
   }
 
-  public Face getFaceToTheLeft(final Edge edge) {
-    /*
-      List<Face> faces = MapSequence.fromMap(myAdjacentFacesMap).get(edge);
-      for (Face face : ListSequence.fromList(faces)) {
-        Dart dart = ListSequence.fromList(face.getDarts()).findFirst(new IWhereFilter<Dart>() {
-          public boolean accept(Dart it) {
-            return it.getEdge() == edge;
-          }
-        });
-        if (dart.getSource() == edge.getSource()) {
-          return face;
-        }
-      }
-    */
+  public Face getFaceToTheLeft(Edge edge) {
     List<Dart> darts = getDarts(edge);
     for (Dart dart : ListSequence.fromList(darts)) {
       if (dart.getSource() == edge.getSource()) {

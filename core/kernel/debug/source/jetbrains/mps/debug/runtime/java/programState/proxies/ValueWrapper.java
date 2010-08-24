@@ -1,11 +1,18 @@
 package jetbrains.mps.debug.runtime.java.programState.proxies;
 
+import com.sun.jdi.IncompatibleThreadStateException;
+import com.sun.jdi.StackFrame;
+import com.sun.jdi.ThreadReference;
 import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debug.api.programState.IWatchable;
+import jetbrains.mps.debug.evaluation.proxies.IValueProxy;
+import jetbrains.mps.debug.evaluation.proxies.MirrorUtil;
 import jetbrains.mps.debug.runtime.java.programState.watchables.CustomJavaWatchable;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -16,11 +23,14 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class ValueWrapper extends JavaValue implements IValue {
-  protected JavaValue myWrappedValue;
+  protected final JavaValue myWrappedValue;
+  @NotNull
+  protected final IValueProxy myValueProxy;
 
   public ValueWrapper(JavaValue value) {
     super(value.getValue(), value.getClassFQName(), value.myThreadReference);
     myWrappedValue = value;
+    myValueProxy = MirrorUtil.getValueProxy(value.getValue(), value.myThreadReference);
   }
 
   @Override
@@ -47,6 +57,10 @@ public abstract class ValueWrapper extends JavaValue implements IValue {
   @Override
   public boolean isStructure() {
     return true;
+  }
+
+  public ThreadReference getThreadReference() {
+    return myThreadReference;
   }
 
 }

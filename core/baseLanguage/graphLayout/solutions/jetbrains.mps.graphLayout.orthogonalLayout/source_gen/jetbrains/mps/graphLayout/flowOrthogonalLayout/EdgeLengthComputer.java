@@ -6,6 +6,7 @@ import java.util.Map;
 import jetbrains.mps.graphLayout.graph.Edge;
 import jetbrains.mps.graphLayout.planarGraph.EmbeddedGraph;
 import jetbrains.mps.graphLayout.planarGraph.Dart;
+import jetbrains.mps.graphLayout.util.Direction2D;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -16,14 +17,14 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.graphLayout.algorithms.MinCostCirculation;
 
 public class EdgeLengthComputer {
-  private static int SHOW_INFO = 1;
+  private static int SHOW_INFO = 0;
 
   public EdgeLengthComputer() {
   }
 
-  public Map<Edge, Integer> compute(EmbeddedGraph embeddedGraph, Map<Dart, Integer> directions) {
-    Map<Edge, Integer> horEdgeLengths = computeEdgeLengths(embeddedGraph, directions, OrthogonalRepresentation.RIGHT);
-    Map<Edge, Integer> verEdgeLenghts = computeEdgeLengths(embeddedGraph, directions, OrthogonalRepresentation.UP);
+  public Map<Edge, Integer> compute(EmbeddedGraph embeddedGraph, Map<Dart, Direction2D> directions) {
+    Map<Edge, Integer> horEdgeLengths = computeEdgeLengths(embeddedGraph, directions, Direction2D.RIGHT);
+    Map<Edge, Integer> verEdgeLenghts = computeEdgeLengths(embeddedGraph, directions, Direction2D.DOWN);
     Map<Edge, Integer> lengths = MapSequence.fromMap(new HashMap<Edge, Integer>());
     for (Edge edge : ListSequence.fromList(embeddedGraph.getGraph().getEdges())) {
       int length;
@@ -42,7 +43,7 @@ public class EdgeLengthComputer {
     return lengths;
   }
 
-  private Map<Edge, Integer> computeEdgeLengths(EmbeddedGraph embeddedGraph, final Map<Dart, Integer> directions, final int direction) {
+  private Map<Edge, Integer> computeEdgeLengths(EmbeddedGraph embeddedGraph, final Map<Dart, Direction2D> directions, final Direction2D direction) {
     Graph graph = embeddedGraph.getGraph();
     Graph network = new Graph();
     Map<Edge, Edge> edgeMap = MapSequence.fromMap(new HashMap<Edge, Edge>());
@@ -82,7 +83,7 @@ public class EdgeLengthComputer {
         }
         Edge newEdge = sourceNode.addEdgeTo(targetNode);
         MapSequence.fromMap(edgeMap).put(edge, newEdge);
-        MapSequence.fromMap(low).put(newEdge, 1);
+        MapSequence.fromMap(low).put(newEdge, 2);
         MapSequence.fromMap(capacity).put(newEdge, Integer.MAX_VALUE / 2);
         MapSequence.fromMap(cost).put(newEdge, 1);
       }

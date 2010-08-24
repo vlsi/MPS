@@ -31,15 +31,12 @@ class ArrayValueProxy extends ValueProxy implements IArrayValueProxy, IObjectVal
   @NotNull
   @Override
   public IValueProxy getElementAt(int index) {
-    ArrayReference value = getArrayValue();
-    Value result = value.getValue(index);
-    return MirrorUtil.getValueProxy(result, myThreadReference);
+    return MirrorUtil.getValueProxy(EvaluationUtils.getElementAt(getArrayValue(), index), myThreadReference);
   }
 
   @Override
   public int getLength() {
-    ArrayReference value = getArrayValue();
-    return value.length();    
+    return getArrayValue().length();    
   }
 
   @Override
@@ -66,7 +63,7 @@ class ArrayValueProxy extends ValueProxy implements IArrayValueProxy, IObjectVal
 
   @Override
   public boolean isInstanceOf(String typename) throws EvaluationException {
-    return Evaluator.isInstanceOf(myValue.type(), typename, myThreadReference.virtualMachine());
+    return EvaluationUtils.isInstanceOf(myValue.type(), typename, myThreadReference.virtualMachine());
   }
 
   @Override

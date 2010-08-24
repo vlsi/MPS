@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project.listener;
 
+import jetbrains.mps.library.GeneralPurpose_DevKit;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
@@ -40,7 +41,7 @@ public class LanguageModelCreationListener extends ModelCreationListener {
     Language language = (Language) model.getModule();
     model.getSModel().addLanguage(language);
 
-    model.getSModel().addDevKit(LanguageDesign_DevKit.get());
+    model.getSModel().addDevKit(GeneralPurpose_DevKit.get());
 
     for (String modelUID : getModelsToImport(language)) {
       model.getSModel().addImportedModel(SModelReference.fromString(modelUID));
