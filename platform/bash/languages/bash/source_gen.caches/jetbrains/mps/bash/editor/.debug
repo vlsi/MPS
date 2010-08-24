@@ -1,23 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="3147078024757582231">
+    <nodeInfo nodeId="3147078024757674243" fileName="ExternalCommandDescription_EditorComponent.java" startLine="76" startPosition="111" endLine="77" endPosition="86" />
     <scopeInfo nodeId="3147078024757674242" fileName="ExternalCommandDescription_EditorComponent.java" startLine="76" startPosition="111" endLine="77" endPosition="86" />
   </root>
   <root nodeId="3321051580270761365">
     <nodeInfo nodeId="3905757829893675117" fileName="CommandList_Editor.java" startLine="120" startPosition="111" endLine="121" endPosition="147" />
+    <nodeInfo nodeId="2635812496400429933" fileName="CommandList_Editor.java" startLine="124" startPosition="111" endLine="125" endPosition="70" />
     <scopeInfo nodeId="3905757829893675116" fileName="CommandList_Editor.java" startLine="120" startPosition="111" endLine="121" endPosition="147" />
     <scopeInfo nodeId="2635812496400429932" fileName="CommandList_Editor.java" startLine="124" startPosition="111" endLine="125" endPosition="70" />
   </root>
   <root nodeId="3999172467439473298">
+    <nodeInfo nodeId="3263637656459386698" fileName="BasedIntegerLiteral_Editor.java" startLine="98" startPosition="111" endLine="99" endPosition="61" />
     <scopeInfo nodeId="3263637656459386697" fileName="BasedIntegerLiteral_Editor.java" startLine="98" startPosition="111" endLine="99" endPosition="61" />
   </root>
   <root nodeId="4857814468235611011">
+    <nodeInfo nodeId="4857814468235740912" fileName="OutputRedirection_Editor.java" startLine="130" startPosition="111" endLine="131" endPosition="61" />
     <scopeInfo nodeId="4857814468235642467" fileName="OutputRedirection_Editor.java" startLine="130" startPosition="111" endLine="131" endPosition="61" />
   </root>
   <root nodeId="4857814468237284485">
+    <nodeInfo nodeId="4857814468237382955" fileName="HereDocumentRedirection_Editor.java" startLine="150" startPosition="111" endLine="151" endPosition="61" />
     <scopeInfo nodeId="4857814468237284510" fileName="HereDocumentRedirection_Editor.java" startLine="150" startPosition="111" endLine="151" endPosition="61" />
   </root>
   <root nodeId="7633559109512579110">
+    <nodeInfo nodeId="7633559109512792656" fileName="SelectCommand_Editor.java" startLine="143" startPosition="111" endLine="144" endPosition="68" />
     <scopeInfo nodeId="7633559109512700654" fileName="SelectCommand_Editor.java" startLine="143" startPosition="111" endLine="144" endPosition="68" />
   </root>
   <root nodeId="8474643070102636480">
