@@ -30,69 +30,68 @@ import java.util.List;
 
 public class VcsMigrationUtil {
   public static void addModule(AbstractModule abstractModule, boolean inConflict) {
-    SuspiciousModelIndex.instance().addModule(abstractModule, inConflict);
+    //SuspiciousModelIndex.instance().addModule(abstractModule, inConflict);
   }
 
   public static void addFilesToVcs(ArrayList<File> files, boolean b, boolean b1) {
-    context.getProject().getComponent(MPSVCSManager.class).addFilesToVcs(files,b,b1);
+    //context.getProject().getComponent(MPSVCSManager.class).addFilesToVcs(files,b,b1);
   }
 
   public static void deleteFromDiskAndRemoveFromVcs(List<File> filesToDelete, boolean b) {
-   getProject().getComponent(MPSVCSManager.class).   deleteFromDiskAndRemoveFromVcs( filesToDelete,  b);
+   //getProject().getComponent(MPSVCSManager.class).   deleteFromDiskAndRemoveFromVcs( filesToDelete,  b);
   }
 
   public static void addModelFile(VirtualFile file) {
-    SuspiciousModelIndex.instance().addModelFile( file);
+    //SuspiciousModelIndex.instance().addModelFile( file);
   }
 
   public static void addFileToVcs(VirtualFile virtualFile, boolean b) {
-    ApplicationLevelVcsManager.instance().addFileToVcs(virtualFile,b);
+    //ApplicationLevelVcsManager.instance().addFileToVcs(virtualFile,b);
   }
 
   public static VcsRevisionNumber getRevisionNumber(VirtualFile file) {
-    return ApplicationLevelVcsManager.instance().getRevisionNumber(file);
+    return null;//ApplicationLevelVcsManager.instance().getRevisionNumber(file);
   }
 
   public static boolean isIgnoreGeneratedFiles() {
-    return MPSVcsProjectConfiguration.getInstance(getProject()).isIgnoreGeneratedFiles();
+    return false;//MPSVcsProjectConfiguration.getInstance(getProject()).isIgnoreGeneratedFiles();
   }
 
   public static Project getProjectForFile(VirtualFile vfile) {
-    return ApplicationLevelVcsManager.instance().getProjectForFile(vfile);
+    return null;//ApplicationLevelVcsManager.instance().getProjectForFile(vfile);
   }
 
   public static void removeFromVcs(List<File> files, boolean b) {
-    MPSVCSManager.getInstance(project).removeFromVcs(files,b);
+    //MPSVCSManager.getInstance(project).removeFromVcs(files,b);
   }
 
   public static void addModel(EditableSModelDescriptor modelDescriptor, boolean conflictStateFixed) {
-    SuspiciousModelIndex.instance().addModel(modelDescriptor,conflictStateFixed);
+    //SuspiciousModelIndex.instance().addModel(modelDescriptor,conflictStateFixed);
   }
 
   //todo remove
   public static void addToVcsLater(File file) {
-
-    ApplicationLevelVcsManager.instance().addToVcsLater(file);
+   //ApplicationLevelVcsManager.instance().addToVcsLater(file);
   }
 
   //todo remove
   public static void removeFromVcsLater(File file) {
-    ApplicationLevelVcsManager.instance().removeFromVcsLater(file);
+    //ApplicationLevelVcsManager.instance().removeFromVcsLater(file);
   }
 
   public static boolean isInConflict(IFile iFile, boolean b) {
-    return ApplicationLevelVcsManager.instance().isInConflict(iFile,b);
+    return false;//ApplicationLevelVcsManager.instance().isInConflict(iFile,b);
   }
 
   public static void addListener(ExclusionChangedListener exclusionListener) {
-    GlobalClassPathIndex.getInstance().addListener(exclusionListener);
+    //GlobalClassPathIndex.getInstance().addListener(exclusionListener);
   }
 
   public static void removeListener(ExclusionChangedListener exclusionListener) {
-    GlobalClassPathIndex.getInstance().removeListener(exclusionListener);
+    //GlobalClassPathIndex.getInstance().removeListener(exclusionListener);
   }
 
   public static boolean resolveDiskMemoryConflict(IFile modelFile, SModel sModel) {
-    return VcsHelper.resolveDiskMemoryConflict(modelFile,sModel);
+    return true;//VcsHelper.resolveDiskMemoryConflict(modelFile,sModel);
   }
 }
