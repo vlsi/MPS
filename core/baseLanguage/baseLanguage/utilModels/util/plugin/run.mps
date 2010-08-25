@@ -2601,9 +2601,13 @@
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8492459591399148668">
                     <link role="variableDeclaration:3" targetNodeId="8492459591399148614" resolveInfo="models" />
                   </node>
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="8632343076296096732">
-                    <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="8632343076296096738">
-                      <link role="baseMethodDeclaration:3" targetNodeId="39.~IdeaAwareJavaGenerationHandler.&lt;init&gt;()" resolveInfo="IdeaAwareJavaGenerationHandler" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="801441645783237170">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="801441645783237169">
+                      <link role="baseMethodDeclaration:3" targetNodeId="39.~IdeaGeneratorManager.getInstance():jetbrains.mps.ide.generator.IdeaGeneratorManager" resolveInfo="getInstance" />
+                      <link role="classConcept:3" targetNodeId="39.~IdeaGeneratorManager" resolveInfo="IdeaGeneratorManager" />
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="801441645783237174">
+                      <link role="baseMethodDeclaration:3" targetNodeId="39.~IdeaGeneratorManager.getDefaultGenerationHandler():jetbrains.mps.generator.generationTypes.IGenerationHandler" resolveInfo="getDefaultGenerationHandler" />
                     </node>
                   </node>
                 </node>

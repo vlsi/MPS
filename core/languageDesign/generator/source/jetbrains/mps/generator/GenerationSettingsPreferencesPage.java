@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator;
 
+import jetbrains.mps.generator.GenerationSettings.GenerateRequirementsPolicy;
 import jetbrains.mps.ide.projectPane.Icons;
 import org.jetbrains.annotations.Nullable;
 
@@ -22,6 +23,7 @@ import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.text.DefaultFormatter;
+import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.text.ParseException;
@@ -29,7 +31,7 @@ import java.text.ParseException;
 class GenerationSettingsPreferencesPage {
   private JPanel myPage;
   private JCheckBox mySaveTransientModelsCheckBox = new JCheckBox("Save transient models on generation");
-  private JCheckBox myGenerateRequirementsCheckBox = new JCheckBox("Checking if regeneration of other models is required");
+  private JComboBox myGenerateRequirementsComboBox = new JComboBox(GenerationSettings.GenerateRequirementsPolicy.values());
   private JCheckBox myCheckModelsBeforeGenerationCheckBox = new JCheckBox("Check models for errors before generation");
   private JCheckBox myStrictMode = new JCheckBox("Strict mode");
   private JCheckBox myUseNewGenerator = new JCheckBox("Generate in parallel.");
@@ -97,7 +99,7 @@ class GenerationSettingsPreferencesPage {
     c.ipady = 2;
     c.fill = GridBagConstraints.BOTH;
     optionsPanel.add(mySaveTransientModelsCheckBox, c);
-    optionsPanel.add(myGenerateRequirementsCheckBox, c);
+    optionsPanel.add(createGenerateRequirementsPolicyGroup(), c);
     optionsPanel.add(myCheckModelsBeforeGenerationCheckBox, c);
     optionsPanel.add(myStrictMode, c);
     c.ipady = 0;
@@ -106,6 +108,13 @@ class GenerationSettingsPreferencesPage {
     optionsPanel.add(myGenerateDependencies, c);
     optionsPanel.setBorder(BorderFactory.createTitledBorder("General"));
     return optionsPanel;
+  }
+
+  private JPanel createGenerateRequirementsPolicyGroup() {
+    JPanel panel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+    panel.add(new JLabel("Regenerate models required for generation:"));
+    panel.add(myGenerateRequirementsComboBox);
+    return panel;
   }
 
   private JPanel createParallelGenerationGroup() {
@@ -201,7 +210,7 @@ class GenerationSettingsPreferencesPage {
 
   public void commit() {
     myGenerationSettings.setSaveTransientModels(mySaveTransientModelsCheckBox.isSelected());
-    myGenerationSettings.setGenerateRequirements(myGenerateRequirementsCheckBox.isSelected());
+    myGenerationSettings.setGenerateRequirementsPolicy(((GenerateRequirementsPolicy) myGenerateRequirementsComboBox.getSelectedItem()));
     myGenerationSettings.setCheckModelsBeforeGeneration(myCheckModelsBeforeGenerationCheckBox.isSelected());
     myGenerationSettings.setParallelGenerator(myUseNewGenerator.isSelected());
     myGenerationSettings.setStrictMode(myStrictMode.isSelected());
@@ -228,7 +237,7 @@ class GenerationSettingsPreferencesPage {
 
   public boolean isModified() {
     return !(myGenerationSettings.isSaveTransientModels() == mySaveTransientModelsCheckBox.isSelected() &&
-      myGenerationSettings.isGenerateRequirements() == myGenerateRequirementsCheckBox.isSelected() &&
+      myGenerationSettings.getGenerateRequirementsPolicy() == myGenerateRequirementsComboBox.getSelectedItem() &&
       myGenerationSettings.isCheckModelsBeforeGeneration() == myCheckModelsBeforeGenerationCheckBox.isSelected() &&
       myGenerationSettings.isParallelGenerator() == myUseNewGenerator.isSelected() &&
       myGenerationSettings.isShowInfo() == myShowInfo.isSelected() &&
@@ -243,7 +252,7 @@ class GenerationSettingsPreferencesPage {
 
   public void update() {
     mySaveTransientModelsCheckBox.setSelected(myGenerationSettings.isSaveTransientModels());
-    myGenerateRequirementsCheckBox.setSelected(myGenerationSettings.isGenerateRequirements());
+    myGenerateRequirementsComboBox.setSelectedItem(myGenerationSettings.getGenerateRequirementsPolicy());
     myCheckModelsBeforeGenerationCheckBox.setSelected(myGenerationSettings.isCheckModelsBeforeGeneration());
     myUseNewGenerator.setSelected(myGenerationSettings.isParallelGenerator());
     myGenerateDependencies.setSelected(myGenerationSettings.isGenerateDependencies());

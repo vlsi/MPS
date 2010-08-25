@@ -136,12 +136,22 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     myState.mySaveTransientModels = saveTransientModels;
   }
 
+  @Deprecated
   public boolean isGenerateRequirements() {
     return myState.myGenerateRequirements;
   }
 
+  @Deprecated
   public void setGenerateRequirements(boolean generateRequirements) {
     myState.myGenerateRequirements = generateRequirements;
+  }
+
+  public GenerateRequirementsPolicy getGenerateRequirementsPolicy() {
+    return myState.myGenerateRequirementsPolicy;
+  }
+
+  public void setGenerateRequirementsPolicy(GenerateRequirementsPolicy generateRequirementsPolicy) {
+    myState.myGenerateRequirementsPolicy = generateRequirementsPolicy;
   }
 
   public boolean isCheckModelsBeforeGeneration() {
@@ -224,10 +234,27 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     myState.myGenerateDependencies = generateDependencies;
   }
 
+  public enum GenerateRequirementsPolicy {
+    ALWAYS("Always generate"), ASK("Ask"), NEVER("Never generate");
+
+    private String myRepresentation;
+
+    private GenerateRequirementsPolicy(String representation) {
+      myRepresentation = representation;
+    }
+
+    public String toString() {
+      return myRepresentation;
+    }
+  }
+
   public static class MyState {
     private boolean mySaveTransientModels;
     private boolean myShowErrorsOnly;
+    // This is and outdated
+    @Deprecated
     private boolean myGenerateRequirements = true;
+    private GenerateRequirementsPolicy myGenerateRequirementsPolicy = GenerateRequirementsPolicy.ASK;
     private boolean myCheckModelsBeforeGeneration = true;
     private boolean myParallelGenerator = false;
     private boolean myStrictMode = false;
@@ -287,12 +314,12 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
       myShowErrorsOnly = showErrorsOnly;
     }
 
-    public boolean isGenerateRequirements() {
-      return myGenerateRequirements;
+    public GenerateRequirementsPolicy getGenerateRequirementsPolicy() {
+      return myGenerateRequirementsPolicy;
     }
 
-    public void setGenerateRequirements(boolean generateRequirements) {
-      myGenerateRequirements = generateRequirements;
+    public void setGenerateRequirementsPolicy(GenerateRequirementsPolicy generateRequirementsPolicy) {
+      myGenerateRequirementsPolicy = generateRequirementsPolicy;
     }
 
     public boolean isCheckModelsBeforeGeneration() {

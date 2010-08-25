@@ -1140,9 +1140,9 @@
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="199149364782675602">
               <link role="baseMethodDeclaration:3" targetNodeId="5.~SModel.addDevKit(jetbrains.mps.project.DevKit):void" resolveInfo="addDevKit" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="199149364782675603">
-                <link role="baseMethodDeclaration:3" targetNodeId="29.~LanguageDesign_DevKit.get():jetbrains.mps.project.DevKit" resolveInfo="get" />
-                <link role="classConcept:3" targetNodeId="29.~LanguageDesign_DevKit" resolveInfo="LanguageDesign_DevKit" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3357484187995672573">
+                <link role="baseMethodDeclaration:3" targetNodeId="29.~GeneralPurpose_DevKit.get():jetbrains.mps.project.DevKit" resolveInfo="get" />
+                <link role="classConcept:3" targetNodeId="29.~GeneralPurpose_DevKit" resolveInfo="GeneralPurpose_DevKit" />
               </node>
             </node>
           </node>

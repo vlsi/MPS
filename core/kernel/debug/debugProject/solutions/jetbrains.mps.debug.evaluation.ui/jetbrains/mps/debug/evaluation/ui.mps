@@ -481,7 +481,7 @@
                     <link role="baseMethodDeclaration:3" targetNodeId="37.~WatchableNode.&lt;init&gt;(jetbrains.mps.debug.api.programState.IWatchable)" resolveInfo="WatchableNode" />
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="278747144310564287">
                       <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="278747144310564288">
-                        <link role="baseMethodDeclaration:3" targetNodeId="73.~CalculatedValue.&lt;init&gt;(com.sun.jdi.Value,java.lang.String,com.sun.jdi.ThreadReference)" resolveInfo="CalculatedValue" />
+                        <link role="baseMethodDeclaration:3" targetNodeId="73.~CalculatedWatchable.&lt;init&gt;(com.sun.jdi.Value,java.lang.String,com.sun.jdi.ThreadReference)" resolveInfo="CalculatedWatchable" />
                         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="278747144310564289">
                           <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="278747144310564290">
                             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="278747144310564291">
@@ -4426,8 +4426,8 @@
       <property name="name:3" value="IS_DEVELOPER_MODE" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="672360099287494395" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="672360099287494396" />
-      <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="7749479390649665440">
-        <property name="value:3" value="true" />
+      <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="2051223608077819424">
+        <property name="value:3" value="false" />
       </node>
     </node>
   </node>

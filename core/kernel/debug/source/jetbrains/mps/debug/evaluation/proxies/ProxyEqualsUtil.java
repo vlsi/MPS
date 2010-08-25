@@ -10,7 +10,12 @@ package jetbrains.mps.debug.evaluation.proxies;
 public class ProxyEqualsUtil {
   public static boolean javaEquals(IObjectValueProxy proxy1, IObjectValueProxy proxy2) {
     if (proxy1 == proxy2) return true;
-    if (proxy1 == null || proxy2 == null) return false;
+    if (proxy1 == null) {
+      return proxy2 instanceof INullValueProxy;
+    }
+    if (proxy2 == null) {
+      return proxy1 instanceof INullValueProxy;
+    }
     return proxy1.javaEquals(proxy2);
   }
 }

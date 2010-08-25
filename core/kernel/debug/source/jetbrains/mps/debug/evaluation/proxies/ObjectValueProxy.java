@@ -3,13 +3,12 @@ package jetbrains.mps.debug.evaluation.proxies;
 import com.sun.jdi.*;
 import jetbrains.mps.debug.evaluation.EvaluationException;
 import jetbrains.mps.debug.evaluation.EvaluationUtils;
-import jetbrains.mps.debug.evaluation.Evaluator;
 import jetbrains.mps.debug.evaluation.EvaluationUtils.Invocatable;
 import jetbrains.mps.debug.evaluation.InvalidEvaluatedExpressionException;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static jetbrains.mps.debug.evaluation.EvaluationUtils.handleInvocationExceptions;
@@ -28,12 +27,21 @@ class ObjectValueProxy extends ValueProxy implements IObjectValueProxy {
     return (ObjectReference) myValue;
   }
 
-  @Nullable
+  @NotNull
   public IValueProxy getFieldValue(String fieldName) throws InvalidEvaluatedExpressionException {
     ObjectReference value = getObjectValue();
     Field f = EvaluationUtils.findField(myReferenceType, fieldName);
     Value result = value.getValue(f);
     return MirrorUtil.getValueProxy(result, myThreadReference);
+  }
+
+  public List<IValueProxy> getFieldValues() {
+    List<Field> fields = EvaluationUtils.findFields(myReferenceType);
+    List<IValueProxy> fieldValues = new ArrayList<IValueProxy>();
+    for (Field field : fields) {
+      fieldValues.add(MirrorUtil.getValueProxy(getObjectValue().getValue(field), myThreadReference));
+    }
+    return fieldValues;
   }
 
   @Override
@@ -56,14 +64,14 @@ class ObjectValueProxy extends ValueProxy implements IObjectValueProxy {
 
   @Override
   public boolean isInstanceOf(String typename) throws EvaluationException {
-    return Evaluator.isInstanceOf(myReferenceType, typename, myThreadReference.virtualMachine());
+    return EvaluationUtils.isInstanceOf(myReferenceType, typename, myThreadReference.virtualMachine());
   }
 
   protected IValueProxy invoke(String name, String jniSignature, ClassType classType, final int options, Object[] args) throws EvaluationException {
     // TODO merge with Evaluator methods invocation
     final Method method = classType.concreteMethodByName(name, jniSignature);
     if (method == null) {
-      throw new InvalidEvaluatedExpressionException("Concrete method " + name + " with signature " + jniSignature +  " not found in " + classType + ".");
+      throw new InvalidEvaluatedExpressionException("Concrete method " + name + " with signature " + jniSignature + " not found in " + classType + ".");
     }
     final List<Value> argValues = MirrorUtil.getValues(myThreadReference, args);
 

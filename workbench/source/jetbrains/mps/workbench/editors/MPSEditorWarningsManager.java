@@ -32,7 +32,7 @@ import jetbrains.mps.generator.TransientModelsModule.TransientSModelDescriptor;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
-import jetbrains.mps.ide.generator.IdeaAwareJavaGenerationHandler;
+import jetbrains.mps.ide.generator.IdeaGeneratorManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.project.GlobalScope;
@@ -165,7 +165,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
             myProject.getComponent(GeneratorManager.class).generateModelsFromDifferentModules(
               editor.getNodeEditor().getOperationContext(),
               models,
-              new IdeaAwareJavaGenerationHandler()
+              IdeaGeneratorManager.getInstance().getDefaultGenerationHandler()
             );
           }
         });

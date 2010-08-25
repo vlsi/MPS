@@ -16,13 +16,13 @@
 package jetbrains.mps.vcs.actions;
 
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
-import jetbrains.mps.ide.generator.IdeaAwareJavaGenerationHandler;
+import jetbrains.mps.ide.generator.IdeaGeneratorManager;
 
 public class GenerateFilesFromChangeListAction extends GenerateFromChangeListAction {
 
   @Override
   protected IGenerationHandler getGenerationHandler() {
-    return new IdeaAwareJavaGenerationHandler();
+    return IdeaGeneratorManager.getInstance().getDefaultGenerationHandler();
   }
 
   protected String getWhatToGenerateName() {

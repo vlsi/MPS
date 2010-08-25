@@ -92,7 +92,7 @@ public class CustomViewersManager implements ApplicationComponent {
     }
   }
 
-  public Set<ValueWrapperFactory> getValueWrapperFactories(final JavaValue originalValue) {
+  public Set<ValueWrapperFactory> getValueWrapperFactories(@NotNull final JavaValue originalValue) {
     Set<ValueWrapperFactory> result = new HashSet<ValueWrapperFactory>();
     for (ValueWrapperFactory factory : myFactories) {
       if (factory.canWrapValue(originalValue)) {

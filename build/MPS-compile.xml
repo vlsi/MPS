@@ -271,7 +271,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -284,6 +283,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
@@ -337,6 +337,7 @@
     <path path="lib/junit4/junit-4.1.jar" />
     <path path="lib/log4j/log4j.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/languages/testLang/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
@@ -391,7 +392,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -404,6 +404,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
@@ -457,6 +458,7 @@
     <path path="lib/junit4/junit-4.1.jar" />
     <path path="lib/log4j/log4j.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/languages/testLang/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
@@ -510,7 +512,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -523,6 +524,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
@@ -576,6 +578,7 @@
     <path path="lib/junit4/junit-4.1.jar" />
     <path path="lib/log4j/log4j.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/languages/testLang/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
@@ -629,7 +632,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -642,6 +644,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
@@ -695,6 +698,7 @@
     <path path="lib/junit4/junit-4.1.jar" />
     <path path="lib/log4j/log4j.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/languages/testLang/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
@@ -748,7 +752,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -761,6 +764,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
@@ -814,6 +818,7 @@
     <path path="lib/junit4/junit-4.1.jar" />
     <path path="lib/log4j/log4j.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/languages/testLang/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
@@ -867,7 +872,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -880,6 +884,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
@@ -933,6 +938,7 @@
     <path path="lib/junit4/junit-4.1.jar" />
     <path path="lib/log4j/log4j.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/languages/testLang/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
@@ -987,7 +993,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -1000,6 +1005,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
@@ -1053,6 +1059,7 @@
     <path path="lib/junit4/junit-4.1.jar" />
     <path path="lib/log4j/log4j.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/languages/testLang/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
@@ -1113,7 +1120,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -1126,6 +1132,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
@@ -1179,6 +1186,7 @@
     <path path="lib/junit4/junit-4.1.jar" />
     <path path="lib/log4j/log4j.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/languages/testLang/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
@@ -1208,7 +1216,6 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.javadoc_tjc.classpaths">
-    <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="MPSPlugin/apiclasses" />
     <path path="classes" />
@@ -1233,7 +1240,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -1246,6 +1252,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
@@ -1299,6 +1306,7 @@
     <path path="lib/junit4/junit-4.1.jar" />
     <path path="lib/log4j/log4j.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/languages/testLang/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
@@ -1352,7 +1360,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -1365,6 +1372,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
@@ -1418,6 +1426,7 @@
     <path path="lib/junit4/junit-4.1.jar" />
     <path path="lib/log4j/log4j.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/languages/testLang/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
@@ -1471,7 +1480,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -1484,6 +1492,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
@@ -1537,6 +1546,7 @@
     <path path="lib/junit4/junit-4.1.jar" />
     <path path="lib/log4j/log4j.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/languages/testLang/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
@@ -1592,7 +1602,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -1605,6 +1614,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
@@ -1658,6 +1668,7 @@
     <path path="lib/junit4/junit-4.1.jar" />
     <path path="lib/log4j/log4j.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/languages/testLang/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
@@ -1711,7 +1722,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -1724,6 +1734,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
@@ -1777,6 +1788,7 @@
     <path path="lib/junit4/junit-4.1.jar" />
     <path path="lib/log4j/log4j.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/languages/testLang/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
@@ -1837,7 +1849,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -1850,6 +1861,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
@@ -1903,6 +1915,7 @@
     <path path="lib/junit4/junit-4.1.jar" />
     <path path="lib/log4j/log4j.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/languages/testLang/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
@@ -1958,7 +1971,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -1971,6 +1983,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
@@ -2024,6 +2037,7 @@
     <path path="lib/junit4/junit-4.1.jar" />
     <path path="lib/log4j/log4j.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/languages/testLang/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
@@ -2053,6 +2067,8 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.unitTest.lib_tjc.classpaths">
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="lib/junit4/junit-4.1.jar" />
     <path refid="common.classpath" />
   </path>
@@ -2081,7 +2097,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -2094,6 +2109,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
@@ -2147,6 +2163,7 @@
     <path path="lib/junit4/junit-4.1.jar" />
     <path path="lib/log4j/log4j.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/languages/testLang/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
@@ -2203,7 +2220,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -2216,6 +2232,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
@@ -2270,6 +2287,7 @@
     <path path="lib/junit4/junit-4.1.jar" />
     <path path="lib/log4j/log4j.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/languages/testLang/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
@@ -2338,7 +2356,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -2351,6 +2368,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
@@ -2405,6 +2423,7 @@
     <path path="lib/junit4/junit-4.1.jar" />
     <path path="lib/log4j/log4j.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/languages/testLang/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
@@ -2467,7 +2486,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -2480,6 +2498,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
@@ -2534,6 +2553,7 @@
     <path path="lib/junit4/junit-4.1.jar" />
     <path path="lib/log4j/log4j.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/languages/testLang/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
@@ -2600,7 +2620,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -2613,6 +2632,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
@@ -2667,6 +2687,7 @@
     <path path="lib/junit4/junit-4.1.jar" />
     <path path="lib/log4j/log4j.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/languages/testLang/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
@@ -2726,7 +2747,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -2739,6 +2759,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
@@ -2792,6 +2813,7 @@
     <path path="lib/junit4/junit-4.1.jar" />
     <path path="lib/log4j/log4j.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/languages/testLang/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
@@ -2845,7 +2867,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -2858,6 +2879,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
@@ -2911,6 +2933,7 @@
     <path path="lib/junit4/junit-4.1.jar" />
     <path path="lib/log4j/log4j.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/languages/testLang/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
@@ -2971,7 +2994,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -2984,6 +3006,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
@@ -3037,6 +3060,7 @@
     <path path="lib/junit4/junit-4.1.jar" />
     <path path="lib/log4j/log4j.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/languages/testLang/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
@@ -3095,7 +3119,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -3108,6 +3131,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
@@ -3161,6 +3185,7 @@
     <path path="lib/junit4/junit-4.1.jar" />
     <path path="lib/log4j/log4j.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/languages/testLang/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
@@ -3214,7 +3239,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -3227,6 +3251,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
@@ -3280,6 +3305,7 @@
     <path path="lib/junit4/junit-4.1.jar" />
     <path path="lib/log4j/log4j.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/languages/testLang/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
@@ -3333,7 +3359,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -3346,6 +3371,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
@@ -3399,6 +3425,7 @@
     <path path="lib/junit4/junit-4.1.jar" />
     <path path="lib/log4j/log4j.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/languages/testLang/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
@@ -3453,7 +3480,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -3466,6 +3492,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
@@ -3519,6 +3546,7 @@
     <path path="lib/junit4/junit-4.1.jar" />
     <path path="lib/log4j/log4j.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/languages/testLang/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
@@ -3577,7 +3605,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -3590,6 +3617,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
@@ -3643,6 +3671,7 @@
     <path path="lib/junit4/junit-4.1.jar" />
     <path path="lib/log4j/log4j.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/languages/testLang/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
@@ -3707,7 +3736,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -3720,6 +3748,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
@@ -3773,6 +3802,7 @@
     <path path="lib/junit4/junit-4.1.jar" />
     <path path="lib/log4j/log4j.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/languages/testLang/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
@@ -3838,7 +3868,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -3851,6 +3880,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
@@ -3904,6 +3934,7 @@
     <path path="lib/junit4/junit-4.1.jar" />
     <path path="lib/log4j/log4j.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/languages/testLang/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
@@ -3976,7 +4007,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -3989,6 +4019,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
@@ -4042,6 +4073,7 @@
     <path path="lib/junit4/junit-4.1.jar" />
     <path path="lib/log4j/log4j.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/languages/testLang/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
@@ -4097,7 +4129,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -4110,6 +4141,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
@@ -4163,6 +4195,7 @@
     <path path="lib/junit4/junit-4.1.jar" />
     <path path="lib/log4j/log4j.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/languages/testLang/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
@@ -4217,7 +4250,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -4230,6 +4262,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
@@ -4283,6 +4316,7 @@
     <path path="lib/junit4/junit-4.1.jar" />
     <path path="lib/log4j/log4j.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/languages/testLang/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
@@ -4338,7 +4372,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -4351,6 +4384,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
@@ -4404,6 +4438,7 @@
     <path path="lib/junit4/junit-4.1.jar" />
     <path path="lib/log4j/log4j.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/languages/testLang/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
@@ -4457,7 +4492,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -4470,6 +4504,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
@@ -4523,6 +4558,7 @@
     <path path="lib/junit4/junit-4.1.jar" />
     <path path="lib/log4j/log4j.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/languages/testLang/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
@@ -4579,7 +4615,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -4592,6 +4627,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
@@ -4645,6 +4681,7 @@
     <path path="lib/junit4/junit-4.1.jar" />
     <path path="lib/log4j/log4j.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/languages/testLang/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
@@ -4698,7 +4735,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -4711,6 +4747,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
@@ -4764,6 +4801,7 @@
     <path path="lib/junit4/junit-4.1.jar" />
     <path path="lib/log4j/log4j.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/languages/testLang/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
@@ -4818,7 +4856,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -4831,6 +4868,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
@@ -4884,6 +4922,7 @@
     <path path="lib/junit4/junit-4.1.jar" />
     <path path="lib/log4j/log4j.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/languages/testLang/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />

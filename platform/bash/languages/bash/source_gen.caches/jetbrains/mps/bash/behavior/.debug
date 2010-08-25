@@ -47,6 +47,8 @@
     </scopeInfo>
   </root>
   <root nodeId="3147078024759753558">
+    <nodeInfo nodeId="3147078024759753584" fileName="IConcreteWordUnit_Behavior.java" startLine="12" startPosition="76" endLine="13" endPosition="78" />
+    <nodeInfo nodeId="3263637656469698023" fileName="IConcreteWordUnit_Behavior.java" startLine="16" startPosition="76" endLine="17" endPosition="69" />
     <scopeInfo nodeId="3147078024759753560" fileName="IConcreteWordUnit_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
     <scopeInfo nodeId="3147078024759753582" fileName="IConcreteWordUnit_Behavior.java" startLine="12" startPosition="76" endLine="13" endPosition="78" />
     <scopeInfo nodeId="3263637656469698021" fileName="IConcreteWordUnit_Behavior.java" startLine="16" startPosition="76" endLine="17" endPosition="69" />
@@ -83,6 +85,7 @@
     <nodeInfo nodeId="7803330421062325888" fileName="ExternalCommandCall_Behavior.java" startLine="26" startPosition="90" endLine="27" endPosition="156" />
     <nodeInfo nodeId="7803330421062325932" fileName="ExternalCommandCall_Behavior.java" startLine="27" startPosition="156" endLine="28" endPosition="152" />
     <nodeInfo nodeId="7803330421062325950" fileName="ExternalCommandCall_Behavior.java" startLine="28" startPosition="152" endLine="29" endPosition="18" />
+    <nodeInfo nodeId="7803330421064833983" fileName="ExternalCommandCall_Behavior.java" startLine="32" startPosition="83" endLine="33" endPosition="128" />
     <nodeInfo nodeId="3147078024755336053" fileName="ExternalCommandCall_Behavior.java" startLine="38" startPosition="91" endLine="39" endPosition="20" />
     <nodeInfo nodeId="3147078024755336057" fileName="ExternalCommandCall_Behavior.java" startLine="41" startPosition="5" endLine="42" endPosition="17" />
     <nodeInfo nodeId="3263637656468223676" fileName="ExternalCommandCall_Behavior.java" startLine="45" startPosition="89" endLine="46" endPosition="156" />

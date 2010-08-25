@@ -39,7 +39,7 @@ import jetbrains.mps.debug.api.SessionChangeListener;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.debug.api.integration.ui.WatchableNode;
-import jetbrains.mps.debug.runtime.java.programState.watchables.CalculatedValue;
+import jetbrains.mps.debug.runtime.java.programState.watchables.CalculatedWatchable;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import java.awt.Color;
@@ -307,7 +307,7 @@ public class EvaluationDialog extends BaseDialog {
     }
 
     public void rebuild(MPSTreeNode rootTreeNode) {
-      rootTreeNode.add(new WatchableNode(new CalculatedValue(this.myValueProxy.getJDIValue(), myClassFqName, myThreadReference)));
+      rootTreeNode.add(new WatchableNode(new CalculatedWatchable(this.myValueProxy.getJDIValue(), myClassFqName, myThreadReference)));
     }
   }
 
