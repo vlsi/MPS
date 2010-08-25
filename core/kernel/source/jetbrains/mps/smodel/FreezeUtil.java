@@ -25,18 +25,6 @@ import com.intellij.openapi.util.Computable;
  * To change this template use File | Settings | File Templates.
  */
 public class FreezeUtil {
-  public static void freezeAndRun(SNode nodeToFreeze, Runnable r) {
-    if (nodeToFreeze.isFrozen()) {
-      r.run();
-      return;
-    }
-    try {
-      nodeToFreeze.freeze();
-      r.run();
-    } finally {
-      nodeToFreeze.unfreeze();
-    }
-  }
 
   public static <T> T freezeAndCompute(SNode nodeToFreeze, Computable<T> computable) {
     if (nodeToFreeze.isFrozen()) {
