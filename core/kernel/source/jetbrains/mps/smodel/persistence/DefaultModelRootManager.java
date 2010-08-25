@@ -29,8 +29,7 @@ import jetbrains.mps.smodel.persistence.def.RefactoringsPersistence;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.vcs.ApplicationLevelVcsManager;
-import jetbrains.mps.vcs.SuspiciousModelIndex;
+import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
@@ -138,7 +137,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
   }
 
   private SModel handleExceptionDuringModelRead(EditableSModelDescriptor modelDescriptor, RuntimeException exception, boolean isConflictStateFixed) {
-    SuspiciousModelIndex.instance().addModel(modelDescriptor, isConflictStateFixed);
+    VcsMigrationUtil.addModel(modelDescriptor, isConflictStateFixed);
     SModel newModel = new StubModel(modelDescriptor.getSModelReference());
     LOG.error(exception.getMessage(), newModel);
     return newModel;
@@ -413,8 +412,8 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
 
   private void fileRenamed(IFile modelFile, IFile newFile) {
     // todo use listeners
-    ApplicationLevelVcsManager.instance().addToVcsLater(newFile.toFile());
-    ApplicationLevelVcsManager.instance().removeFromVcsLater(modelFile.toFile());
+    VcsMigrationUtil.addToVcsLater(newFile.toFile());
+    VcsMigrationUtil.removeFromVcsLater(modelFile.toFile());
   }
 }
 

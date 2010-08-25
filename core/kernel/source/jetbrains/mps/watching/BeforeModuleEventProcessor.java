@@ -18,10 +18,9 @@ package jetbrains.mps.watching;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
-import jetbrains.mps.vcs.ApplicationLevelVcsManager;
-import jetbrains.mps.vcs.MPSVCSManager;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vfs.VFileSystem;
 
 import java.util.Collections;
@@ -44,9 +43,9 @@ class BeforeModuleEventProcessor extends EventProcessor {
       VirtualFile vfile = getVFile(event);
       if (vfile == null) return;
       if (MPSFileTypesManager.instance().isModuleFile(vfile)) {
-        Project project = ApplicationLevelVcsManager.instance().getProjectForFile(vfile);
+        Project project = VcsMigrationUtil.getProjectForFile(vfile);
         if (project != null) {
-          MPSVCSManager.getInstance(project).removeFromVcs(Collections.singletonList(VFileSystem.toFile(vfile)), true);
+          VcsMigrationUtil.removeFromVcs(Collections.singletonList(VFileSystem.toFile(vfile)), true);
         }
       }
     }

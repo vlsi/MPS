@@ -29,7 +29,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.vcs.SuspiciousModelIndex;
+import jetbrains.mps.vcs.VcsMigrationUtil;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
 
@@ -121,7 +121,7 @@ public abstract class BaseSNodeDescriptorIndex extends SingleEntryFileBasedIndex
     private void handleException(Exception e, FileContent inputData) {
       VirtualFile file = inputData.getFile();
       if (MPSFileTypesManager.instance().isModelFile(file)) {
-        SuspiciousModelIndex.instance().addModelFile(file);
+        VcsMigrationUtil.addModelFile(file);
         LOG.error(e.getMessage());
       } else {
         LOG.warning("Can't index file " + file.getPresentableUrl());

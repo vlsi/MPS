@@ -9,6 +9,8 @@ import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.DevKit;
 import java.util.List;
+
+import jetbrains.mps.vcs.VcsMigrationUtil;
 import org.jdesktop.beansbinding.AutoBinding;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -31,7 +33,6 @@ import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.vcs.ApplicationLevelVcsManager;
 import jetbrains.mps.vfs.VFileSystem;
 import com.intellij.openapi.application.ModalityState;
 
@@ -254,7 +255,7 @@ public class NewDevKitDialogContentPane extends JPanel {
     DevKit devkit = myThis.getProject().addProjectDevKit(devkitFile);
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
-        ApplicationLevelVcsManager.instance().addFileToVcs(VFileSystem.refreshAndGetFile(devkitPath), false);
+        VcsMigrationUtil.addFileToVcs(VFileSystem.refreshAndGetFile(devkitPath), false);
       }
     }, ModalityState.NON_MODAL);
     return devkit;

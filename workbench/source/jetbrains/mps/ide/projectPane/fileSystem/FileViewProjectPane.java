@@ -52,8 +52,6 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.vcs.GlobalClassPathIndex;
-import jetbrains.mps.vcs.GlobalClassPathIndex.ExclusionChangedListener;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NotNull;

@@ -38,7 +38,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.vcs.MPSVCSManager;
+import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.NotNull;
 
@@ -110,8 +110,7 @@ public class FileGenerationManager implements ApplicationComponent {
   private void processGeneratedFiles(GenerationStatus status, final File outputRoot, final IOperationContext context,
                                      Set<File> generatedFiles, boolean cleanUp) {
 
-    MPSVCSManager manager = context.getProject().getComponent(MPSVCSManager.class);
-    manager.addFilesToVcs(new ArrayList<File>(generatedFiles), false, false);
+    VcsMigrationUtil.addFilesToVcs(new ArrayList<File>(generatedFiles), false, false);
 
     ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
       @Override
@@ -165,8 +164,8 @@ public class FileGenerationManager implements ApplicationComponent {
         }
       }
     }
-    MPSVCSManager manager = context.getComponent(MPSVCSManager.class);
-    manager.deleteFromDiskAndRemoveFromVcs(filesToDelete, false);
+
+    VcsMigrationUtil.deleteFromDiskAndRemoveFromVcs(filesToDelete, false);
   }
 
   private boolean generateText(IOperationContext context, GenerationStatus status, Map<SNode, String> outputNodeContents) {

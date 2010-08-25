@@ -7,7 +7,7 @@ import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.misc.hash.HashSet;
-import jetbrains.mps.vcs.MPSVcsProjectConfiguration;
+import jetbrains.mps.vcs.VcsMigrationUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
@@ -22,7 +22,7 @@ public class GeneratedFilesExcludePolicy extends BaseDirectoryIndexExcludePolicy
   @NotNull
   @Override
   protected Set<VirtualFile> getAllExcludeRoots() {
-    if (!MPSVcsProjectConfiguration.getInstance(getProject()).isIgnoreGeneratedFiles()) {
+    if (!VcsMigrationUtil.isIgnoreGeneratedFiles()) {
       return Collections.EMPTY_SET;
     }
 
