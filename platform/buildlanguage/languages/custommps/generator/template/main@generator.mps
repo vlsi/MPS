@@ -690,7 +690,7 @@
         </node>
         <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Folder:7" id="1234971270457">
           <property name="file:7" value="false" />
-          <property name="excludes:7" value="**/*.zip" />
+          <property name="excludes:7" value="**/*.zip, ideaIntegration/**" />
           <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.CreateIfNotExists" id="1805858203209349734">
             <property name="artifactName" value="plugins/ideIntegration.jar" />
             <node role="create" type="jetbrains.mps.build.packaging.structure.BlockReference:7" id="1805858203209349735">
