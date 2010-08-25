@@ -149,7 +149,7 @@
       <arg file="${homepage.icon}" />
       <classpath>
         <pathelement path="${mps_home}/platform/buildlanguage/languages/distrib/classes" />
-        <pathelement path="${mps_home}/MPSPlugin/MPSSupport/classes" />
+        <pathelement path="${mps_home}/core/runtime/classes" />
       </classpath>
     </java>
     <replace file="${nsis.script.path.tmp}" token="$version$" value="${version}" />
