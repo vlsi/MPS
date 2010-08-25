@@ -16,13 +16,13 @@
 package jetbrains.mps.nodeEditor.cells;
 
 
-import jetbrains.mps.nodeEditor.style.*;
 import jetbrains.mps.nodeEditor.EditorSettings;
-import jetbrains.mps.util.misc.hash.HashMap;
+import jetbrains.mps.nodeEditor.style.*;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 

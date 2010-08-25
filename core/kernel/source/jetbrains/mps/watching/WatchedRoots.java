@@ -27,7 +27,6 @@ import jetbrains.mps.library.ProjectLibraryManager;
 import jetbrains.mps.library.Library;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
-import jetbrains.mps.util.misc.hash.HashSet;
 
 import java.util.*;
 

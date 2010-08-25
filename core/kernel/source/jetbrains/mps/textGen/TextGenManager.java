@@ -28,7 +28,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.misc.hash.HashMap;
 
 import java.util.*;
 

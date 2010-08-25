@@ -9,8 +9,6 @@ import com.intellij.util.indexing.FileBasedIndex;
 import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.util.misc.hash.HashMap;
-import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 

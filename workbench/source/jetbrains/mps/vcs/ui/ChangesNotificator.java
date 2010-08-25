@@ -32,19 +32,19 @@ import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.vcs.VcsRootsManager;
 import jetbrains.mps.vcs.VcsRootsManager.VcsRootsListener;
-import jetbrains.mps.util.misc.hash.HashMap;
-import jetbrains.mps.util.misc.hash.HashSet;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.JEditorPane;
 import javax.swing.JComponent;
-import javax.swing.text.html.HTMLEditorKit;
-import javax.swing.event.HyperlinkListener;
-import javax.swing.event.HyperlinkEvent;
-import javax.swing.event.ChangeListener;
+import javax.swing.JEditorPane;
 import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import javax.swing.event.HyperlinkEvent;
+import javax.swing.event.HyperlinkListener;
+import javax.swing.text.html.HTMLEditorKit;
 import java.awt.Color;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
