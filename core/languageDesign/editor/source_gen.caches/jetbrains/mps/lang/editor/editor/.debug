@@ -5,20 +5,26 @@
     <scopeInfo nodeId="1214396913643" fileName="CellModel_Error_Editor.java" startLine="189" startPosition="107" endLine="190" endPosition="49" />
   </root>
   <root nodeId="1078830687765">
-    <nodeInfo nodeId="1237473996312" fileName="CellModel_Collection_Editor.java" startLine="457" startPosition="112" endLine="458" endPosition="77" />
-    <nodeInfo nodeId="1237473996328" fileName="CellModel_Collection_Editor.java" startLine="461" startPosition="112" endLine="462" endPosition="156" />
-    <nodeInfo nodeId="1237474042599" fileName="CellModel_Collection_Editor.java" startLine="465" startPosition="110" endLine="466" endPosition="84" />
-    <nodeInfo nodeId="1237473996307" fileName="CellModel_Collection_Editor.java" startLine="469" startPosition="109" endLine="470" endPosition="49" />
-    <nodeInfo nodeId="1237474002633" fileName="CellModel_Collection_Editor.java" startLine="473" startPosition="110" endLine="474" endPosition="83" />
-    <nodeInfo nodeId="1237474002646" fileName="CellModel_Collection_Editor.java" startLine="477" startPosition="110" endLine="478" endPosition="83" />
-    <nodeInfo nodeId="1237474002653" fileName="CellModel_Collection_Editor.java" startLine="481" startPosition="110" endLine="482" endPosition="83" />
-    <scopeInfo nodeId="1237473996311" fileName="CellModel_Collection_Editor.java" startLine="457" startPosition="112" endLine="458" endPosition="77" />
-    <scopeInfo nodeId="1237473996327" fileName="CellModel_Collection_Editor.java" startLine="461" startPosition="112" endLine="462" endPosition="156" />
-    <scopeInfo nodeId="1237473994195" fileName="CellModel_Collection_Editor.java" startLine="465" startPosition="110" endLine="466" endPosition="84" />
-    <scopeInfo nodeId="1237473996306" fileName="CellModel_Collection_Editor.java" startLine="469" startPosition="109" endLine="470" endPosition="49" />
-    <scopeInfo nodeId="1237474002632" fileName="CellModel_Collection_Editor.java" startLine="473" startPosition="110" endLine="474" endPosition="83" />
-    <scopeInfo nodeId="1237474002645" fileName="CellModel_Collection_Editor.java" startLine="477" startPosition="110" endLine="478" endPosition="83" />
-    <scopeInfo nodeId="1237474002652" fileName="CellModel_Collection_Editor.java" startLine="481" startPosition="110" endLine="482" endPosition="83" />
+    <nodeInfo nodeId="7723470090030249339" fileName="CellModel_Collection_Editor.java" startLine="504" startPosition="113" endLine="505" endPosition="63" />
+    <nodeInfo nodeId="1237473996312" fileName="CellModel_Collection_Editor.java" startLine="508" startPosition="112" endLine="509" endPosition="77" />
+    <nodeInfo nodeId="7723470090030872885" fileName="CellModel_Collection_Editor.java" startLine="512" startPosition="113" endLine="513" endPosition="63" />
+    <nodeInfo nodeId="1237473996328" fileName="CellModel_Collection_Editor.java" startLine="516" startPosition="112" endLine="517" endPosition="156" />
+    <nodeInfo nodeId="1237474042599" fileName="CellModel_Collection_Editor.java" startLine="520" startPosition="110" endLine="521" endPosition="84" />
+    <nodeInfo nodeId="7723470090030966953" fileName="CellModel_Collection_Editor.java" startLine="524" startPosition="112" endLine="525" endPosition="63" />
+    <nodeInfo nodeId="1237473996307" fileName="CellModel_Collection_Editor.java" startLine="528" startPosition="109" endLine="529" endPosition="49" />
+    <nodeInfo nodeId="1237474002633" fileName="CellModel_Collection_Editor.java" startLine="532" startPosition="110" endLine="533" endPosition="83" />
+    <nodeInfo nodeId="1237474002646" fileName="CellModel_Collection_Editor.java" startLine="536" startPosition="110" endLine="537" endPosition="83" />
+    <nodeInfo nodeId="1237474002653" fileName="CellModel_Collection_Editor.java" startLine="540" startPosition="110" endLine="541" endPosition="83" />
+    <scopeInfo nodeId="7723470090030238507" fileName="CellModel_Collection_Editor.java" startLine="504" startPosition="113" endLine="505" endPosition="63" />
+    <scopeInfo nodeId="1237473996311" fileName="CellModel_Collection_Editor.java" startLine="508" startPosition="112" endLine="509" endPosition="77" />
+    <scopeInfo nodeId="7723470090030872884" fileName="CellModel_Collection_Editor.java" startLine="512" startPosition="113" endLine="513" endPosition="63" />
+    <scopeInfo nodeId="1237473996327" fileName="CellModel_Collection_Editor.java" startLine="516" startPosition="112" endLine="517" endPosition="156" />
+    <scopeInfo nodeId="1237473994195" fileName="CellModel_Collection_Editor.java" startLine="520" startPosition="110" endLine="521" endPosition="84" />
+    <scopeInfo nodeId="7723470090030966952" fileName="CellModel_Collection_Editor.java" startLine="524" startPosition="112" endLine="525" endPosition="63" />
+    <scopeInfo nodeId="1237473996306" fileName="CellModel_Collection_Editor.java" startLine="528" startPosition="109" endLine="529" endPosition="49" />
+    <scopeInfo nodeId="1237474002632" fileName="CellModel_Collection_Editor.java" startLine="532" startPosition="110" endLine="533" endPosition="83" />
+    <scopeInfo nodeId="1237474002645" fileName="CellModel_Collection_Editor.java" startLine="536" startPosition="110" endLine="537" endPosition="83" />
+    <scopeInfo nodeId="1237474002652" fileName="CellModel_Collection_Editor.java" startLine="540" startPosition="110" endLine="541" endPosition="83" />
   </root>
   <root nodeId="1080742754453">
     <nodeInfo nodeId="1176717082035" fileName="CellModel_Constant_Editor.java" startLine="306" startPosition="111" endLine="307" endPosition="88" />

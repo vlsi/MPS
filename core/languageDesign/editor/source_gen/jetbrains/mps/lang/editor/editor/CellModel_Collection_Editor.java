@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.behavior.CellModel_Collection_Behavior;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -77,7 +78,10 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(this.createCollection_cvgoyj_a0a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_cvgoyj_b0a0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_cvgoyj_c0a0(editorContext, node));
+    if (renderingCondition_cvgoyj_a2a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_cvgoyj_c0a0(editorContext, node));
+    }
+    editorCell.addEditorCell(this.createCollection_cvgoyj_d0a0(editorContext, node));
     return editorCell;
   }
 
@@ -102,11 +106,20 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_cvgoyj_c0a0");
     Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
+    editorCell.addEditorCell(this.createConstant_cvgoyj_a2a0a(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_cvgoyj_b2a0a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_cvgoyj_d0a0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_cvgoyj_d0a0");
+    Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator<Color>() {
         public Color calculate(EditorCell cell) {
-          return CellModel_Collection_Editor._StyleParameter_QueryFunction_cvgoyj_a0c0a0((cell == null ?
+          return CellModel_Collection_Editor._StyleParameter_QueryFunction_cvgoyj_a0d0a0((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -116,7 +129,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
         }
       });
     }
-    editorCell.addEditorCell(this.createComponent_cvgoyj_a2a0a(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_cvgoyj_a3a0a(editorContext, node));
     return editorCell;
   }
 
@@ -126,7 +139,10 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
     editorCell.addEditorCell(this.createComponent_cvgoyj_a1a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_cvgoyj_b1a0(editorContext, node));
-    editorCell.addEditorCell(this.createComponent_cvgoyj_c1a0(editorContext, node));
+    if (renderingCondition_cvgoyj_a2b0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createComponent_cvgoyj_c1a0(editorContext, node));
+    }
+    editorCell.addEditorCell(this.createComponent_cvgoyj_d1a0(editorContext, node));
     return editorCell;
   }
 
@@ -136,7 +152,10 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     Styles_StyleSheet.getRootCellModelStyle(editorCell).apply(editorCell);
     editorCell.addEditorCell(this.createComponent_cvgoyj_a0a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_cvgoyj_b0a(editorContext, node));
-    editorCell.addEditorCell(this.createComponent_cvgoyj_c0a(editorContext, node));
+    if (renderingCondition_cvgoyj_a2a0(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createComponent_cvgoyj_c0a(editorContext, node));
+    }
+    editorCell.addEditorCell(this.createComponent_cvgoyj_d0a(editorContext, node));
     return editorCell;
   }
 
@@ -215,7 +234,13 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createComponent_cvgoyj_a2a0a(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_cvgoyj_b2a0a(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new CellModel_FoldingCellComponent(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
+    return editorCell;
+  }
+
+  private EditorCell createComponent_cvgoyj_a3a0a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new _CloseTag(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     Styles_StyleSheet.getTag(editorCell).apply(editorCell);
@@ -232,6 +257,12 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_cvgoyj_c1a0(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new CellModel_FoldingCellComponent(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
+    return editorCell;
+  }
+
+  private EditorCell createComponent_cvgoyj_d1a0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new _CloseTag(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     Styles_StyleSheet.getTag(editorCell).apply(editorCell);
@@ -262,6 +293,12 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_cvgoyj_c0a(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new CellModel_FoldingCellComponent(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
+    return editorCell;
+  }
+
+  private EditorCell createComponent_cvgoyj_d0a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new _CloseTag(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     Styles_StyleSheet.getTag(editorCell).apply(editorCell);
@@ -269,7 +306,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, new AttributeCalculator<Boolean>() {
         public Boolean calculate(EditorCell cell) {
-          return CellModel_Collection_Editor._StyleParameter_QueryFunction_cvgoyj_a0c0a((cell == null ?
+          return CellModel_Collection_Editor._StyleParameter_QueryFunction_cvgoyj_a0d0a((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -280,7 +317,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
       });
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, new AttributeCalculator<Boolean>() {
         public Boolean calculate(EditorCell cell) {
-          return CellModel_Collection_Editor._StyleParameter_QueryFunction_cvgoyj_a1c0a((cell == null ?
+          return CellModel_Collection_Editor._StyleParameter_QueryFunction_cvgoyj_a1d0a((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -306,7 +343,17 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.DRAW_BORDER, true);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_cvgoyj_a2a0a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_cvgoyj_a2a0a");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.setDefaultText("");
     return editorCell;
@@ -454,8 +501,16 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private static boolean renderingCondition_cvgoyj_a2a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "usesFolding");
+  }
+
   private static boolean renderingCondition_cvgoyj_a0a0(SNode node, EditorContext editorContext, IScope scope) {
     return CellModel_Collection_Behavior.call_isVertical_1237380214915(node);
+  }
+
+  private static boolean renderingCondition_cvgoyj_a2b0a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "usesFolding");
   }
 
   private static boolean renderingCondition_cvgoyj_a1a0(SNode node, EditorContext editorContext, IScope scope) {
@@ -466,7 +521,11 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     return !(CellModel_Collection_Behavior.call_isIndentLayout_1237380273398(node));
   }
 
-  private static Color _StyleParameter_QueryFunction_cvgoyj_a0c0a0(SNode node, EditorContext editorContext) {
+  private static boolean renderingCondition_cvgoyj_a2a0(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "usesFolding");
+  }
+
+  private static Color _StyleParameter_QueryFunction_cvgoyj_a0d0a0(SNode node, EditorContext editorContext) {
     return _EditorUtil.grayIfNotSelectable(node);
   }
 
@@ -474,11 +533,11 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     return CellModel_Collection_Behavior.call_isVerticalIndent_1237451001939(node);
   }
 
-  private static boolean _StyleParameter_QueryFunction_cvgoyj_a0c0a(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_cvgoyj_a0d0a(SNode node, EditorContext editorContext) {
     return CellModel_Collection_Behavior.call_isVerticalIndent_1237451001939(node);
   }
 
-  private static boolean _StyleParameter_QueryFunction_cvgoyj_a1c0a(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_cvgoyj_a1d0a(SNode node, EditorContext editorContext) {
     return CellModel_Collection_Behavior.call_isVerticalIndent_1237451001939(node);
   }
 

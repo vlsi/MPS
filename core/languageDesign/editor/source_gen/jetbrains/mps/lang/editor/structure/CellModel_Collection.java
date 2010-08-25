@@ -15,6 +15,7 @@ public class CellModel_Collection extends EditorCellModel {
   public static final String GRID_LAYOUT = "gridLayout";
   public static final String USES_BRACES = "usesBraces";
   public static final String USES_FOLDING = "usesFolding";
+  public static final String FOLDED_CELL_MODEL = "foldedCellModel";
   public static final String CELL_LAYOUT = "cellLayout";
   public static final String CHILD_CELL_MODEL = "childCellModel";
 
@@ -52,6 +53,14 @@ public class CellModel_Collection extends EditorCellModel {
 
   public void setUsesFolding(boolean value) {
     this.setBooleanProperty(CellModel_Collection.USES_FOLDING, value);
+  }
+
+  public EditorCellModel getFoldedCellModel() {
+    return (EditorCellModel) this.getChild(EditorCellModel.class, CellModel_Collection.FOLDED_CELL_MODEL);
+  }
+
+  public void setFoldedCellModel(EditorCellModel node) {
+    super.setChild(CellModel_Collection.FOLDED_CELL_MODEL, node);
   }
 
   public CellLayout getCellLayout() {
