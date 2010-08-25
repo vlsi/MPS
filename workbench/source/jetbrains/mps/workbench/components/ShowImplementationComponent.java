@@ -33,13 +33,13 @@ public class ShowImplementationComponent extends JPanel {
   private JBPopup myPopup;
 
   public ShowImplementationComponent(List<SNode> nodes, IOperationContext context) {
-    this.myNodes = nodes;
-    this.myEditor = new EmbeddableEditor(context, new ModelOwner() {}, SNodeOperations.copyNode(nodes.get(0)), false);
-    for (SNode node : this.myNodes) {
+    myNodes = nodes;
+    myEditor = new EmbeddableEditor(context, new ModelOwner() {}, SNodeOperations.copyNode(nodes.get(0)), false);
+    for (SNode node : myNodes) {
       String item = node.getPresentation();
-      this.myItemToNode.put(item, node);
+      myItemToNode.put(item, node);
     }
-    this.init();
+    init();
     updateControls();
   }
 
