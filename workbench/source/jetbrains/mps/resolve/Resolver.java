@@ -29,15 +29,13 @@ import jetbrains.mps.smodel.action.DefaultReferentNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus;
-import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.typesystem.inference.NodeTypesComponentsRepository;
+import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.NameUtil;
 
 import java.util.*;
 
@@ -99,7 +97,7 @@ public class Resolver {
     }
     final AbstractConceptDeclaration referentConcept = linkDeclaration.getTarget();
 
-    TypeCheckingContext typeCheckingContext = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(referenceNode);
+    TypeCheckingContext typeCheckingContext = TypeContextManager.getInstance().createTypeCheckingContext(referenceNode);
     if (typeCheckingContext == null) return false;
     return typeCheckingContext.runTypeCheckingActionInEditorQueries(new Computable<Boolean>() {
       @Override

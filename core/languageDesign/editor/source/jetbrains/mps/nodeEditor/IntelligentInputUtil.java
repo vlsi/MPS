@@ -23,7 +23,7 @@ import jetbrains.mps.nodeEditor.cellMenu.NullSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.cells.*;
-import jetbrains.mps.typesystem.inference.NodeTypesComponentsRepository;
+import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 
 import java.util.List;
@@ -204,7 +204,7 @@ public class IntelligentInputUtil {
   private static boolean applyRigthTransform(EditorContext editorContext, String smallPattern, final String tail, final EditorCell cellForNewNode, SNode newNode) {
     EditorCellAction rtAction = cellForNewNode.findChild(CellFinders.LAST_SELECTABLE_LEAF, true).getApplicableCellAction(CellActionType.RIGHT_TRANSFORM);
 
-    TypeCheckingContext typeCheckingContext = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(cellForNewNode.getSNode());
+    TypeCheckingContext typeCheckingContext = TypeContextManager.getInstance().createTypeCheckingContext(cellForNewNode.getSNode());
     // For: http://youtrack.jetbrains.net/issue/MPS-7757
     assert typeCheckingContext != null : cellForNewNode.getSNode() == null ? "cellForNewNode.getSNode() == null" : "cellForNewNode.getSNode().isDisposed(): " + cellForNewNode.getSNode().isDisposed();
 
@@ -331,7 +331,7 @@ public class IntelligentInputUtil {
 
   private static boolean applyLeftTransform(EditorContext editorContext, final String head, String smallPattern, final EditorCell cellForNewNode, SNode newNode, boolean sourceCellRemains) {
     EditorCellAction ltAction = cellForNewNode.findChild(CellFinders.FIRST_SELECTABLE_LEAF, true).getApplicableCellAction(CellActionType.LEFT_TRANSFORM);
-    TypeCheckingContext typeCheckingContext = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(cellForNewNode.getSNode());
+    TypeCheckingContext typeCheckingContext = TypeContextManager.getInstance().createTypeCheckingContext(cellForNewNode.getSNode());
     boolean hasSideActions = typeCheckingContext.runTypeCheckingActionInEditorQueries(new Computable<Boolean>() {
       @Override
       public Boolean compute() {

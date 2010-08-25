@@ -26,6 +26,8 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.typesystem.inference.NodeTypesComponent;
 import jetbrains.mps.typesystem.inference.NodeTypesComponentsRepository;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.CollectionUtil;
 import com.intellij.openapi.progress.ProgressIndicator;
@@ -46,7 +48,10 @@ public class AffectingRulesFinder implements IFinder {
   public SearchResults find(SearchQuery query, ProgressIndicator indicator) {
     SNode term = (SNode) query.getObjectHolder().getObject();
     List<SearchResult<SNode>> rules = new ArrayList<SearchResult<SNode>>();
-    NodeTypesComponent component = NodeTypesComponentsRepository.getInstance().getNodeTypesComponent(term.getContainingRoot());
+    //todo get by editor
+    TypeCheckingContext typeCheckingContext =
+      TypeContextManager.getInstance().getContextForEditedRootNode(term.getContainingRoot(), TypeContextManager.DEFAULT_OWNER);
+    NodeTypesComponent component = typeCheckingContext.getBaseNodeTypesComponent();
     if (component != null) {
         Set<Pair<String, String>> rulesIds = component.getRulesWhichAffectNodeType(term);
         if (rulesIds != null) {

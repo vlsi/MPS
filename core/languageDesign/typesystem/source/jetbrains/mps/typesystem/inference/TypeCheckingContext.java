@@ -19,6 +19,7 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.nodeEditor.MessageStatus;
 import jetbrains.mps.nodeEditor.SimpleErrorReporter;
@@ -31,7 +32,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
-public class TypeCheckingContext {
+public class TypeCheckingContext implements EditorMessageOwner {
   private static final Logger LOG = Logger.getLogger(TypeCheckingContext.class);
 
   private final NodeTypesComponent myNodeTypesComponent;
@@ -81,11 +82,13 @@ public class TypeCheckingContext {
     return !myIsInEditorQueriesStack.isEmpty();
   }
 
+  @Deprecated
   public void setInEditorQueriesMode() {
     if (myIsNonTypesystemComputation) return;
     myIsInEditorQueriesStack.push(true);
   }
 
+  @Deprecated
   public void resetIsInEditorQueriesMode() {
     if (myIsNonTypesystemComputation) return;
     if (!myIsInEditorQueriesStack.isEmpty()) {
@@ -735,6 +738,24 @@ public class TypeCheckingContext {
     synchronized (TYPECHECKING_LOCK) {
       return myNodeTypesComponent.getType(node);
     }
+  }
+
+  public List<IErrorReporter> getTypeMessagesDontCheck(SNode node) {
+    return getBaseNodeTypesComponent().getErrors(node);
+  }
+
+  //returns the most serious error for node (warning if no errors, info if no warnings and errors)
+  public IErrorReporter getTypeMessageDontCheck(SNode node) {
+    List<IErrorReporter> messages = getTypeMessagesDontCheck(node);
+    if (messages.isEmpty()) {
+      return null;
+    }
+    Collections.sort(messages, new Comparator<IErrorReporter>() {
+      public int compare(IErrorReporter o1, IErrorReporter o2) {
+        return o2.getMessageStatus().compareTo(o1.getMessageStatus());
+      }
+    });
+    return messages.get(0);
   }
 
   public static class NodeInfo {

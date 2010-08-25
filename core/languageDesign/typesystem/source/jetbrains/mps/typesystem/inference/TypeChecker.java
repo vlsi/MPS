@@ -20,19 +20,12 @@ import jetbrains.mps.lang.typesystem.runtime.RuntimeSupport;
 import jetbrains.mps.lang.typesystem.runtime.performance.RuntimeSupport_Tracer;
 import jetbrains.mps.lang.typesystem.runtime.performance.SubtypingManager_Tracer;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.persistence.IModelRootManager;
-import jetbrains.mps.typesystem.integration.TypesystemPreferencesComponent;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
-import jetbrains.mps.typesystem.debug.ISlicer;
-import jetbrains.mps.typesystem.debug.SlicerImpl;
-import jetbrains.mps.typesystem.debug.NullSlicer;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.performance.IPerformanceTracer;
-import jetbrains.mps.util.performance.PerformanceTracer;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -240,37 +233,18 @@ public class TypeChecker implements ApplicationComponent {
     return null;
   }
 
-  public void checkRoot(SNode node) {
-    checkRoot(node, false);
-  }
-
-  public void checkRoot(final SNode node, final boolean refreshTypes) {
-    if (node == null) return;
-    assert node.isRoot();
-    TypeCheckingContext context = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(node);
-    context.checkRoot(refreshTypes);
-  }
-
   public InequationSystem getInequationsForHole(SNode hole, boolean holeIsAType) {
-    TypeCheckingContext typeCheckingContext = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(hole.getContainingRoot());
-    final NodeTypesComponent temporaryComponent;
-    temporaryComponent = typeCheckingContext.createTemporaryTypesComponent();
-    try {
-      return temporaryComponent.computeInequationsForHole(hole, holeIsAType);
-    } finally {
-      temporaryComponent.dispose(); //in order to prevent memory leaks.
-      typeCheckingContext.popTemporaryTypesComponent();
-    }
+    TypeCheckingContext typeCheckingContext = TypeContextManager.getInstance().createTypeCheckingContext(hole.getContainingRoot());
+    InequationSystem inequationSystem = typeCheckingContext.getBaseNodeTypesComponent().computeInequationsForHole(hole, holeIsAType);
+    typeCheckingContext.dispose();
+    return inequationSystem;
   }
 
   public SNode getInferredTypeOf(final SNode node) {
     if (node == null) return null;
-    SNode containingRoot = node.getContainingRoot();
-    if (containingRoot == null) return null;
     TypeCheckingContext typeCheckingContext =
-      NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(containingRoot);
-    SNode resultType = typeCheckingContext.computeTypeInferenceMode(node);
-    return resultType;
+      TypeContextManager.getInstance().createTypeCheckingContext(node);
+    return typeCheckingContext.computeTypeInferenceMode(node);
   }
 
   @Nullable
@@ -284,42 +258,17 @@ public class TypeChecker implements ApplicationComponent {
         componentNode = node.getContainingRoot();
       }
       if (myPerformanceTracer == null) {
-        context = NodeTypesComponentsRepository.getInstance().createIsolatedTypeCheckingContext(componentNode);
+        context = TypeContextManager.getInstance().createTypeCheckingContext(node);
     } else {
-        context = NodeTypesComponentsRepository.getInstance().createTracingTypeCheckingContext(componentNode);
+        context = TypeContextManager.getInstance().createTracingTypeCheckingContext(node);
       }
     } else {
-      context = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(node);
+      context = TypeContextManager.getInstance().getContextForEditedRootNode(node.getContainingRoot(), TypeContextManager.DEFAULT_OWNER);
+      //todo provide owner
     }
     if (context == null) return null;
       return context.getTypeOf(node, this);
     }
-
-  public boolean checkIfNotChecked(SNode node) {
-    return checkIfNotChecked(node, true);
-  }
-
-  public boolean checkIfNotChecked(SNode node, boolean useNonTypesystemRules) {
-    SNode containingRoot = node.getContainingRoot();
-    if (containingRoot == null) return false;
-    TypeCheckingContext context = NodeTypesComponentsRepository.getInstance().
-      createTypeCheckingContext(containingRoot);
-    return context.checkIfNotChecked(node, useNonTypesystemRules);
-  }
-
-  @Nullable
-  public SNode getTypeDontCheck(final SNode node) {
-    if (node == null) return null;
-    NodeTypesComponent nodeTypesComponent = ModelAccess.instance().runReadAction(new Computable<NodeTypesComponent>() {
-      public NodeTypesComponent compute() {
-        return NodeTypesComponentsRepository.getInstance().getNodeTypesComponent(node.getContainingRoot());
-      }
-    });
-
-
-    if (nodeTypesComponent == null) return null;
-    return nodeTypesComponent.getType(node);
-  }
 
 
   public SModelFqName getRuntimeTypesModelUID() {
@@ -336,29 +285,6 @@ public class TypeChecker implements ApplicationComponent {
     }
 
     return modelDescriptor.getSModel();
-  }
-
-  @NotNull
-  public List<IErrorReporter> getTypeMessagesDontCheck(SNode node) {
-    SNode root = node.getContainingRoot();
-    if (root == null) return new ArrayList<IErrorReporter>();
-    TypeCheckingContext context = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(root);
-    if (context == null) return new ArrayList<IErrorReporter>();
-    return context.getBaseNodeTypesComponent().getErrors(node);
-  }
-
-  //returns the most serious error for node (warning if no errors, info if no warnings and errors)
-  public IErrorReporter getTypeMessageDontCheck(SNode node) {  //todo use method above in generated actions
-    List<IErrorReporter> messages = getTypeMessagesDontCheck(node);
-    if (messages.isEmpty()) {
-      return null;
-    }
-    Collections.sort(messages, new Comparator<IErrorReporter>() {
-      public int compare(IErrorReporter o1, IErrorReporter o2) {
-        return o2.getMessageStatus().compareTo(o1.getMessageStatus());
-      }
-    });
-    return messages.get(0);
   }
 
   public boolean isGlobalIncrementalMode() {

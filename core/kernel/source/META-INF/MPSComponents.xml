@@ -227,9 +227,15 @@
       </implementation-class>
     </component>
 
-    <component>
-      <implementation-class>jetbrains.mps.ide.MPSAdapter</implementation-class>
-    </component>
+        <component>
+            <implementation-class>jetbrains.mps.typesystem.inference.TypeContextManager
+            </implementation-class>
+        </component>
+
+        <component>
+            <implementation-class>jetbrains.mps.typesystem.integration.TypesystemPreferencesComponent
+            </implementation-class>
+        </component>
 
     <component>
       <implementation-class>jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem</implementation-class>

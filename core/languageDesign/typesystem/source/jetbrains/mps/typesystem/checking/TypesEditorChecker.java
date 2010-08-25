@@ -22,10 +22,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.typesystem.inference.NodeTypesComponent;
-import jetbrains.mps.typesystem.inference.NodeTypesComponentsRepository;
-import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.typesystem.inference.*;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
@@ -54,12 +51,12 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
                                            List<SModelEvent> events, final boolean wasCheckedOnce, final EditorContext editorContext) {
     myMessagesChanged = false;
     final Set<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
-    final TypeCheckingContext context = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(node.getContainingRoot());
+    final TypeCheckingContext context = editorContext.getNodeEditorComponent().getTypeCheckingContext();
     if (context != null) {
       context.runTypeCheckingAction(new Runnable() {
         @Override
         public void run() {
-          NodeTypesComponent typesComponent = getNodeTypesComponent(node);
+          NodeTypesComponent typesComponent = context.getBaseNodeTypesComponent();
           if (!wasCheckedOnce || !context.isCheckedRoot(true)) {
             try {
               myMessagesChanged = true;
@@ -151,27 +148,13 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
     return messages;
   }
 
-  @Nullable
-  private NodeTypesComponent getNodeTypesComponent(SNode node) {
-    if (node == null) {
-      return null;
-    }
-    TypeCheckingContext context = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(node.getContainingRoot());
-    if (context == null) {
-      return null;
-    }
-    NodeTypesComponent typesComponent =
-      context.getBaseNodeTypesComponent();
-    return typesComponent;
-  }
-
   public boolean executeInUndoableCommand() {
     return false;
   }
 
   public EditorMessageOwner getOwner(SNode node) {
     if (node == null) return null;
-    return getNodeTypesComponent(node);
+    return TypeContextManager.getInstance().getContextForEditedRootNode(node, TypeContextManager.DEFAULT_OWNER);
   }
 
   protected boolean isPropertyEventDramatical(SModelPropertyEvent event) {

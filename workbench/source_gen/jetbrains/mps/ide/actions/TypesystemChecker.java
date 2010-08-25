@@ -13,6 +13,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.NodeTypesComponentsRepository;
 import java.util.Set;
+
+import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -29,7 +31,7 @@ public class TypesystemChecker extends SpecificChecker {
       if (!(progressContext.checkAndUpdateIndicator("Checking " + SModelOperations.getModelName(model) + " for typesystem rules..."))) {
         break;
       }
-      TypeCheckingContext typeCheckingContext = NodeTypesComponentsRepository.getInstance().createIsolatedTypeCheckingContext(rootNode);
+      TypeCheckingContext typeCheckingContext = TypeContextManager.getInstance().createTypeCheckingContext(rootNode);
       typeCheckingContext.setOperationContext(operationContext);
       Set<Pair<SNode, List<IErrorReporter>>> nodeWithErrors = typeCheckingContext.checkRootAndGetErrors(true);
       for (Pair<SNode, List<IErrorReporter>> nodeErrorReporters : SetSequence.fromSet(nodeWithErrors)) {

@@ -61,7 +61,9 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.typesystem.inference.TypeContextManager;
+import jetbrains.mps.typesystem.inference.ITypeContextOwner;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.vfs.IFile;
@@ -92,7 +94,7 @@ import java.lang.reflect.Field;
 import java.util.*;
 import java.util.List;
 
-public abstract class EditorComponent extends JComponent implements Scrollable, DataProvider {
+public abstract class EditorComponent extends JComponent implements Scrollable, DataProvider, ITypeContextOwner {
   private static final Logger LOG = Logger.getLogger(EditorComponent.class);
   public static final String EDITOR_POPUP_MENU_ACTIONS = EditorPopup_ActionGroup.ID;
   public static final String EDITOR_POPUP_MENU_ACTIONS_INTERNAL = EditorInternal_ActionGroup.ID;
@@ -101,6 +103,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private static final int SCROLL_GAP = 15;
 
   private final Object myAdditionalPaintersLock = new Object();
+  private TypeCheckingContext myTypeCheckingContext;
 
   public static void turnOnAliasingIfPossible(Graphics2D g) {
     if (EditorSettings.getInstance().isUseAntialiasing()) {
@@ -785,7 +788,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         IOperationContext operationContext = getOperationContext();
+        disposeTypeCheckingContext();
         myNode = node;
+        createTypeCheckingContext();
         SModel model = node == null ? null : node.getModel();
         setEditorContext(new EditorContext(EditorComponent.this, model, operationContext));
         rebuildEditorContent();
@@ -1075,6 +1080,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       hideMessageToolTip();
     }
 
+    disposeTypeCheckingContext();
     myHighlightManager.dispose();
 
     removeOurListeners();
@@ -2147,6 +2153,21 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myUserDataMap.clear();
   }
 
+  public TypeCheckingContext getTypeCheckingContext() {
+    return myTypeCheckingContext;
+  }
+
+  private void createTypeCheckingContext() {
+    myTypeCheckingContext = TypeContextManager.getInstance().getContextForEditedRootNode(myNode, this, true);
+  }
+
+  private void disposeTypeCheckingContext() {
+    if (myTypeCheckingContext != null) {
+      TypeContextManager.getInstance().removeContextForEditedRootNode(myNode, this);
+      myTypeCheckingContext = null;
+    }
+  }
+
   public void sendKeyEvent(KeyEvent keyEvent) {
     if (keyEvent.getID() == KeyEvent.KEY_PRESSED) {
       processKeyPressed(keyEvent);
@@ -2173,7 +2194,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
               if (highlighter != null) {
                 highlighter.resetCheckedState(EditorComponent.this);
               }
-              TypeChecker.getInstance().checkRoot(sNode.getContainingRoot(), true);
+              getTypeCheckingContext().checkRoot(true);
               rebuildEditorContent();
             }
           });

@@ -24,7 +24,7 @@ import jetbrains.mps.smodel.search.EmptySearchScope;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.smodel.search.UndefinedSearchScope;
-import jetbrains.mps.typesystem.inference.NodeTypesComponentsRepository;
+import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 
 /**
@@ -66,7 +66,7 @@ public class ModelConstraintsUtil {
         if (contextNode == null) {
           contextNode = referenceNode;
         }
-        TypeCheckingContext typeCheckingContext = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(contextNode);
+        TypeCheckingContext typeCheckingContext = TypeContextManager.getInstance().createTypeCheckingContext(contextNode);
         if (typeCheckingContext != null) {
           typeCheckingContext.setInEditorQueriesMode();
         }
