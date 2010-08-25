@@ -15,11 +15,12 @@
  */
 package jetbrains.mps.messages;
 
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.messages.NavigationManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.INodeAdapter;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
