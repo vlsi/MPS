@@ -122,7 +122,7 @@ public class VcsManagerConfigurable extends SearchableConfigurable.Parent.Abstra
     result.add(myGeneralPanel);
     result.add(new VcsBackgroundOperationsConfigurationPanel(myProject));
     // MPS Patch begin
-    result.add(new VcsGeneratedFilesConfigurable(myProject));
+    //result.add(new VcsGeneratedFilesConfigurable(myProject));
     // MPS Patch end
     result.add(new IgnoredSettingsPanel(myProject));
     /*if (!myProject.isDefault()) {
