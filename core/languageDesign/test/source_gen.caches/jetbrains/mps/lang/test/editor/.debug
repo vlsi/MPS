@@ -13,9 +13,12 @@
     <scopeInfo nodeId="1215524022394" fileName="Annotation_Actions.java" startLine="28" startPosition="75" endLine="29" endPosition="39" />
   </root>
   <root nodeId="1225978120955">
-    <scopeInfo nodeId="1890954770481031785" fileName="SimpleNodeTest_Editor.java" startLine="181" startPosition="111" endLine="182" endPosition="99" />
+    <nodeInfo nodeId="1890954770481031786" fileName="SimpleNodeTest_Editor.java" startLine="128" startPosition="111" endLine="129" endPosition="99" />
+    <scopeInfo nodeId="1890954770481031785" fileName="SimpleNodeTest_Editor.java" startLine="128" startPosition="111" endLine="129" endPosition="99" />
   </root>
   <root nodeId="1229194997584">
+    <nodeInfo nodeId="1229432451221" fileName="AnonymousCellAnnotation_Editor.java" startLine="272" startPosition="111" endLine="273" endPosition="66" />
+    <nodeInfo nodeId="1932269937152637550" fileName="AnonymousCellAnnotation_Editor.java" startLine="276" startPosition="111" endLine="277" endPosition="69" />
     <scopeInfo nodeId="1229432434156" fileName="AnonymousCellAnnotation_Editor.java" startLine="272" startPosition="111" endLine="273" endPosition="66" />
     <scopeInfo nodeId="1932269937152637549" fileName="AnonymousCellAnnotation_Editor.java" startLine="276" startPosition="111" endLine="277" endPosition="69" />
   </root>

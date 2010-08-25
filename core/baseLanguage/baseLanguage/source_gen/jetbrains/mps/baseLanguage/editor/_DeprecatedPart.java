@@ -48,9 +48,7 @@ public class _DeprecatedPart extends AbstractCellProvider {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
-    if (renderingCondition_uc5iyq_a0a0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_uc5iyq_a0a(editorContext, node));
-    }
+    editorCell.addEditorCell(this.createConstant_uc5iyq_a0a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_uc5iyq_b0a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_uc5iyq_c0a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_uc5iyq_d0a(editorContext, node));
@@ -103,10 +101,6 @@ public class _DeprecatedPart extends AbstractCellProvider {
   }
 
   private static boolean renderingCondition_uc5iyq_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "isDeprecated");
-  }
-
-  private static boolean renderingCondition_uc5iyq_a0a0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "isDeprecated");
   }
 }

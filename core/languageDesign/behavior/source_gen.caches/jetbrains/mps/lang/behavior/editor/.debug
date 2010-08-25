@@ -23,40 +23,34 @@
     <scopeInfo nodeId="1225194241805" fileName="ConceptBehavior_Editor.java" startLine="570" startPosition="113" endLine="571" endPosition="75" />
   </root>
   <root nodeId="1225194473508">
-    <nodeInfo nodeId="313898386613796558" fileName="ConceptMethodDeclaration_Editor.java" startLine="347" startPosition="31" endLine="348" endPosition="104" />
-    <nodeInfo nodeId="1233077365746" fileName="ConceptMethodDeclaration_Editor.java" startLine="566" startPosition="111" endLine="567" endPosition="99" />
-    <nodeInfo nodeId="313898386614417793" fileName="ConceptMethodDeclaration_Editor.java" startLine="570" startPosition="112" endLine="571" endPosition="61" />
-    <nodeInfo nodeId="313898386614417800" fileName="ConceptMethodDeclaration_Editor.java" startLine="574" startPosition="112" endLine="575" endPosition="62" />
-    <nodeInfo nodeId="313898386613796575" fileName="ConceptMethodDeclaration_Editor.java" startLine="578" startPosition="112" endLine="579" endPosition="78" />
-    <nodeInfo nodeId="313898386613796928" fileName="ConceptMethodDeclaration_Editor.java" startLine="582" startPosition="112" endLine="583" endPosition="65" />
-    <nodeInfo nodeId="313898386613796937" fileName="ConceptMethodDeclaration_Editor.java" startLine="586" startPosition="113" endLine="587" endPosition="62" />
-    <nodeInfo nodeId="1225194473598" fileName="ConceptMethodDeclaration_Editor.java" startLine="590" startPosition="111" endLine="591" endPosition="65" />
-    <nodeInfo nodeId="1225194473607" fileName="ConceptMethodDeclaration_Editor.java" startLine="594" startPosition="111" endLine="595" endPosition="65" />
-    <nodeInfo nodeId="1225194473620" fileName="ConceptMethodDeclaration_Editor.java" startLine="598" startPosition="111" endLine="599" endPosition="191" />
-    <nodeInfo nodeId="1225194473637" fileName="ConceptMethodDeclaration_Editor.java" startLine="602" startPosition="113" endLine="603" endPosition="136" />
-    <nodeInfo nodeId="1225194473655" fileName="ConceptMethodDeclaration_Editor.java" startLine="606" startPosition="111" endLine="607" endPosition="61" />
-    <nodeInfo nodeId="1225194473667" fileName="ConceptMethodDeclaration_Editor.java" startLine="610" startPosition="113" endLine="611" endPosition="120" />
-    <scopeInfo nodeId="313898386613796557" fileName="ConceptMethodDeclaration_Editor.java" startLine="347" startPosition="31" endLine="348" endPosition="104" />
-    <scopeInfo nodeId="1233077365745" fileName="ConceptMethodDeclaration_Editor.java" startLine="566" startPosition="111" endLine="567" endPosition="99" />
-    <scopeInfo nodeId="313898386614417792" fileName="ConceptMethodDeclaration_Editor.java" startLine="570" startPosition="112" endLine="571" endPosition="61" />
-    <scopeInfo nodeId="313898386614417799" fileName="ConceptMethodDeclaration_Editor.java" startLine="574" startPosition="112" endLine="575" endPosition="62" />
-    <scopeInfo nodeId="313898386613796574" fileName="ConceptMethodDeclaration_Editor.java" startLine="578" startPosition="112" endLine="579" endPosition="78" />
-    <scopeInfo nodeId="313898386613796927" fileName="ConceptMethodDeclaration_Editor.java" startLine="582" startPosition="112" endLine="583" endPosition="65" />
-    <scopeInfo nodeId="313898386613796936" fileName="ConceptMethodDeclaration_Editor.java" startLine="586" startPosition="113" endLine="587" endPosition="62" />
-    <scopeInfo nodeId="1225194473597" fileName="ConceptMethodDeclaration_Editor.java" startLine="590" startPosition="111" endLine="591" endPosition="65" />
-    <scopeInfo nodeId="1225194473606" fileName="ConceptMethodDeclaration_Editor.java" startLine="594" startPosition="111" endLine="595" endPosition="65" />
-    <scopeInfo nodeId="1225194473619" fileName="ConceptMethodDeclaration_Editor.java" startLine="598" startPosition="111" endLine="599" endPosition="191" />
-    <scopeInfo nodeId="1225194473636" fileName="ConceptMethodDeclaration_Editor.java" startLine="602" startPosition="113" endLine="603" endPosition="136" />
-    <scopeInfo nodeId="1225194473654" fileName="ConceptMethodDeclaration_Editor.java" startLine="606" startPosition="111" endLine="607" endPosition="61" />
-    <scopeInfo nodeId="1225194473666" fileName="ConceptMethodDeclaration_Editor.java" startLine="610" startPosition="113" endLine="611" endPosition="120" />
+    <nodeInfo nodeId="313898386613796558" fileName="ConceptMethodDeclaration_Editor.java" startLine="327" startPosition="31" endLine="328" endPosition="104" />
+    <nodeInfo nodeId="1233077365746" fileName="ConceptMethodDeclaration_Editor.java" startLine="524" startPosition="111" endLine="525" endPosition="99" />
+    <nodeInfo nodeId="313898386614417793" fileName="ConceptMethodDeclaration_Editor.java" startLine="528" startPosition="112" endLine="529" endPosition="61" />
+    <nodeInfo nodeId="313898386614417800" fileName="ConceptMethodDeclaration_Editor.java" startLine="532" startPosition="112" endLine="533" endPosition="62" />
+    <nodeInfo nodeId="313898386613796575" fileName="ConceptMethodDeclaration_Editor.java" startLine="536" startPosition="112" endLine="537" endPosition="78" />
+    <nodeInfo nodeId="3059910031789039768" fileName="ConceptMethodDeclaration_Editor.java" startLine="540" startPosition="112" endLine="541" endPosition="62" />
+    <nodeInfo nodeId="1225194473620" fileName="ConceptMethodDeclaration_Editor.java" startLine="544" startPosition="111" endLine="545" endPosition="191" />
+    <nodeInfo nodeId="1225194473637" fileName="ConceptMethodDeclaration_Editor.java" startLine="548" startPosition="113" endLine="549" endPosition="136" />
+    <nodeInfo nodeId="1225194473655" fileName="ConceptMethodDeclaration_Editor.java" startLine="552" startPosition="111" endLine="553" endPosition="61" />
+    <nodeInfo nodeId="1225194473667" fileName="ConceptMethodDeclaration_Editor.java" startLine="556" startPosition="111" endLine="557" endPosition="120" />
+    <scopeInfo nodeId="313898386613796557" fileName="ConceptMethodDeclaration_Editor.java" startLine="327" startPosition="31" endLine="328" endPosition="104" />
+    <scopeInfo nodeId="1233077365745" fileName="ConceptMethodDeclaration_Editor.java" startLine="524" startPosition="111" endLine="525" endPosition="99" />
+    <scopeInfo nodeId="313898386614417792" fileName="ConceptMethodDeclaration_Editor.java" startLine="528" startPosition="112" endLine="529" endPosition="61" />
+    <scopeInfo nodeId="313898386614417799" fileName="ConceptMethodDeclaration_Editor.java" startLine="532" startPosition="112" endLine="533" endPosition="62" />
+    <scopeInfo nodeId="313898386613796574" fileName="ConceptMethodDeclaration_Editor.java" startLine="536" startPosition="112" endLine="537" endPosition="78" />
+    <scopeInfo nodeId="3059910031789039766" fileName="ConceptMethodDeclaration_Editor.java" startLine="540" startPosition="112" endLine="541" endPosition="62" />
+    <scopeInfo nodeId="1225194473619" fileName="ConceptMethodDeclaration_Editor.java" startLine="544" startPosition="111" endLine="545" endPosition="191" />
+    <scopeInfo nodeId="1225194473636" fileName="ConceptMethodDeclaration_Editor.java" startLine="548" startPosition="113" endLine="549" endPosition="136" />
+    <scopeInfo nodeId="1225194473654" fileName="ConceptMethodDeclaration_Editor.java" startLine="552" startPosition="111" endLine="553" endPosition="61" />
+    <scopeInfo nodeId="1225194473666" fileName="ConceptMethodDeclaration_Editor.java" startLine="556" startPosition="111" endLine="557" endPosition="120" />
   </root>
   <root nodeId="1225194588660">
-    <nodeInfo nodeId="1233076507284" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="325" startPosition="111" endLine="326" endPosition="99" />
-    <nodeInfo nodeId="1225528259194" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="329" startPosition="112" endLine="330" endPosition="99" />
-    <nodeInfo nodeId="1225528231889" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="333" startPosition="112" endLine="334" endPosition="96" />
-    <scopeInfo nodeId="1233076507283" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="325" startPosition="111" endLine="326" endPosition="99" />
-    <scopeInfo nodeId="1225528252818" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="329" startPosition="112" endLine="330" endPosition="99" />
-    <scopeInfo nodeId="1225528229060" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="333" startPosition="112" endLine="334" endPosition="96" />
+    <nodeInfo nodeId="1233076507284" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="279" startPosition="111" endLine="280" endPosition="99" />
+    <nodeInfo nodeId="1225528259194" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="283" startPosition="112" endLine="284" endPosition="99" />
+    <nodeInfo nodeId="1225528231889" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="287" startPosition="112" endLine="288" endPosition="96" />
+    <scopeInfo nodeId="1233076507283" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="279" startPosition="111" endLine="280" endPosition="99" />
+    <scopeInfo nodeId="1225528252818" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="283" startPosition="112" endLine="284" endPosition="99" />
+    <scopeInfo nodeId="1225528229060" fileName="StaticConceptMethodDeclaration_Editor.java" startLine="287" startPosition="112" endLine="288" endPosition="96" />
   </root>
   <root nodeId="1225194628491">
     <nodeInfo nodeId="5299096511375909171" fileName="SuperNodeExpression_Editor.java" startLine="137" startPosition="111" endLine="138" endPosition="76" />

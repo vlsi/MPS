@@ -82,9 +82,24 @@ public class CellLayout_Indent extends AbstractCellLayout {
 
 
   public void doLayout(EditorCell_Collection editorCells) {
-    if (editorCells.getParent() != null && editorCells.getParent().getCellLayout() instanceof CellLayout_Indent) {
+    if (!editorCells.isFolded() && editorCells.getParent() != null && editorCells.getParent().getCellLayout() instanceof CellLayout_Indent) {
       return;
     }
+
+    if (editorCells.isFolded()) {
+      Font font = EditorSettings.getInstance().getDefaultEditorFont();
+      FontMetrics metrics = editorCells.getEditor().getFontMetrics(font);
+      editorCells.setHeight(metrics.getHeight());
+      editorCells.setWidth(metrics.stringWidth(EditorCell_Collection.FOLDED_TEXT));
+      for (EditorCell cell : editorCells.dfsCells()) {
+        cell.setX(editorCells.getX());
+        cell.setY(editorCells.getY());
+        cell.setWidth(0);
+        cell.setHeight(0);
+      }
+      return;
+    }
+    
 
     new CellLayouter(editorCells).layout();
   }
@@ -140,6 +155,11 @@ public class CellLayout_Indent extends AbstractCellLayout {
     return result;
   }
 
+  @Override
+  public boolean canBeFolded() {
+    return true;
+  }
+
   private List<EditorCell> getIndentLeafs(EditorCell_Collection current) {
     List<EditorCell> result = new ArrayList<EditorCell>();
     collectCells(current, result, null);
@@ -154,7 +174,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
     for (EditorCell child : current) {
       if (child instanceof EditorCell_Collection) {
         EditorCell_Collection collection = (EditorCell_Collection) child;
-        if (isIndentCollection(collection)) {
+        if (isIndentCollection(collection) && !collection.isFolded()) {
           collectCells(collection, frontier, collections);
         } else {
           frontier.add(child);
@@ -303,7 +323,6 @@ public class CellLayout_Indent extends AbstractCellLayout {
     }
 
     private void resetLine() {
-      myLineWidth = 0;
       myLineWidth = 0;
       myLineAscent = 0;
       myLineDescent = 0;

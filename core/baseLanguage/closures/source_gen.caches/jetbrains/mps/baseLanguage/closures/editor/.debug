@@ -55,30 +55,24 @@
     <scopeInfo nodeId="1235747251981" fileName="CompactInvokeFunctionExpression_DELETE.java" startLine="29" startPosition="75" endLine="30" endPosition="98" />
   </root>
   <root nodeId="4816492477345855367">
-    <nodeInfo nodeId="4816492477345855375" fileName="FunctionMethodDeclaration_Editor.java" startLine="405" startPosition="111" endLine="406" endPosition="99" />
-    <nodeInfo nodeId="4816492477345855395" fileName="FunctionMethodDeclaration_Editor.java" startLine="409" startPosition="111" endLine="410" endPosition="126" />
-    <nodeInfo nodeId="4816492477345855407" fileName="FunctionMethodDeclaration_Editor.java" startLine="413" startPosition="112" endLine="414" endPosition="59" />
-    <nodeInfo nodeId="4816492477345855414" fileName="FunctionMethodDeclaration_Editor.java" startLine="417" startPosition="112" endLine="418" endPosition="62" />
-    <nodeInfo nodeId="4816492477345855421" fileName="FunctionMethodDeclaration_Editor.java" startLine="421" startPosition="112" endLine="422" endPosition="66" />
-    <nodeInfo nodeId="4816492477345855429" fileName="FunctionMethodDeclaration_Editor.java" startLine="425" startPosition="111" endLine="426" endPosition="112" />
-    <nodeInfo nodeId="4816492477345855451" fileName="FunctionMethodDeclaration_Editor.java" startLine="429" startPosition="111" endLine="430" endPosition="99" />
-    <nodeInfo nodeId="4816492477345855468" fileName="FunctionMethodDeclaration_Editor.java" startLine="433" startPosition="112" endLine="434" endPosition="65" />
-    <nodeInfo nodeId="4816492477345855476" fileName="FunctionMethodDeclaration_Editor.java" startLine="437" startPosition="112" endLine="438" endPosition="62" />
-    <nodeInfo nodeId="4816492477345855484" fileName="FunctionMethodDeclaration_Editor.java" startLine="441" startPosition="112" endLine="442" endPosition="65" />
-    <nodeInfo nodeId="4816492477345855498" fileName="FunctionMethodDeclaration_Editor.java" startLine="445" startPosition="112" endLine="446" endPosition="65" />
-    <nodeInfo nodeId="4816492477345855508" fileName="FunctionMethodDeclaration_Editor.java" startLine="449" startPosition="112" endLine="450" endPosition="126" />
-    <scopeInfo nodeId="4816492477345855374" fileName="FunctionMethodDeclaration_Editor.java" startLine="405" startPosition="111" endLine="406" endPosition="99" />
-    <scopeInfo nodeId="4816492477345855394" fileName="FunctionMethodDeclaration_Editor.java" startLine="409" startPosition="111" endLine="410" endPosition="126" />
-    <scopeInfo nodeId="4816492477345855406" fileName="FunctionMethodDeclaration_Editor.java" startLine="413" startPosition="112" endLine="414" endPosition="59" />
-    <scopeInfo nodeId="4816492477345855413" fileName="FunctionMethodDeclaration_Editor.java" startLine="417" startPosition="112" endLine="418" endPosition="62" />
-    <scopeInfo nodeId="4816492477345855420" fileName="FunctionMethodDeclaration_Editor.java" startLine="421" startPosition="112" endLine="422" endPosition="66" />
-    <scopeInfo nodeId="4816492477345855428" fileName="FunctionMethodDeclaration_Editor.java" startLine="425" startPosition="111" endLine="426" endPosition="112" />
-    <scopeInfo nodeId="4816492477345855450" fileName="FunctionMethodDeclaration_Editor.java" startLine="429" startPosition="111" endLine="430" endPosition="99" />
-    <scopeInfo nodeId="4816492477345855467" fileName="FunctionMethodDeclaration_Editor.java" startLine="433" startPosition="112" endLine="434" endPosition="65" />
-    <scopeInfo nodeId="4816492477345855475" fileName="FunctionMethodDeclaration_Editor.java" startLine="437" startPosition="112" endLine="438" endPosition="62" />
-    <scopeInfo nodeId="4816492477345855483" fileName="FunctionMethodDeclaration_Editor.java" startLine="441" startPosition="112" endLine="442" endPosition="65" />
-    <scopeInfo nodeId="4816492477345855497" fileName="FunctionMethodDeclaration_Editor.java" startLine="445" startPosition="112" endLine="446" endPosition="65" />
-    <scopeInfo nodeId="4816492477345855507" fileName="FunctionMethodDeclaration_Editor.java" startLine="449" startPosition="112" endLine="450" endPosition="126" />
+    <nodeInfo nodeId="4816492477345855375" fileName="FunctionMethodDeclaration_Editor.java" startLine="354" startPosition="111" endLine="355" endPosition="99" />
+    <nodeInfo nodeId="4816492477345855395" fileName="FunctionMethodDeclaration_Editor.java" startLine="358" startPosition="111" endLine="359" endPosition="126" />
+    <nodeInfo nodeId="4816492477345855407" fileName="FunctionMethodDeclaration_Editor.java" startLine="362" startPosition="112" endLine="363" endPosition="59" />
+    <nodeInfo nodeId="4816492477345855414" fileName="FunctionMethodDeclaration_Editor.java" startLine="366" startPosition="112" endLine="367" endPosition="62" />
+    <nodeInfo nodeId="4816492477345855421" fileName="FunctionMethodDeclaration_Editor.java" startLine="370" startPosition="112" endLine="371" endPosition="66" />
+    <nodeInfo nodeId="4816492477345855429" fileName="FunctionMethodDeclaration_Editor.java" startLine="374" startPosition="111" endLine="375" endPosition="112" />
+    <nodeInfo nodeId="4816492477345855451" fileName="FunctionMethodDeclaration_Editor.java" startLine="378" startPosition="111" endLine="379" endPosition="99" />
+    <nodeInfo nodeId="3059910031788836932" fileName="FunctionMethodDeclaration_Editor.java" startLine="382" startPosition="112" endLine="383" endPosition="62" />
+    <nodeInfo nodeId="4816492477345855508" fileName="FunctionMethodDeclaration_Editor.java" startLine="386" startPosition="112" endLine="387" endPosition="126" />
+    <scopeInfo nodeId="4816492477345855374" fileName="FunctionMethodDeclaration_Editor.java" startLine="354" startPosition="111" endLine="355" endPosition="99" />
+    <scopeInfo nodeId="4816492477345855394" fileName="FunctionMethodDeclaration_Editor.java" startLine="358" startPosition="111" endLine="359" endPosition="126" />
+    <scopeInfo nodeId="4816492477345855406" fileName="FunctionMethodDeclaration_Editor.java" startLine="362" startPosition="112" endLine="363" endPosition="59" />
+    <scopeInfo nodeId="4816492477345855413" fileName="FunctionMethodDeclaration_Editor.java" startLine="366" startPosition="112" endLine="367" endPosition="62" />
+    <scopeInfo nodeId="4816492477345855420" fileName="FunctionMethodDeclaration_Editor.java" startLine="370" startPosition="112" endLine="371" endPosition="66" />
+    <scopeInfo nodeId="4816492477345855428" fileName="FunctionMethodDeclaration_Editor.java" startLine="374" startPosition="111" endLine="375" endPosition="112" />
+    <scopeInfo nodeId="4816492477345855450" fileName="FunctionMethodDeclaration_Editor.java" startLine="378" startPosition="111" endLine="379" endPosition="99" />
+    <scopeInfo nodeId="3059910031788836930" fileName="FunctionMethodDeclaration_Editor.java" startLine="382" startPosition="112" endLine="383" endPosition="62" />
+    <scopeInfo nodeId="4816492477345855507" fileName="FunctionMethodDeclaration_Editor.java" startLine="386" startPosition="112" endLine="387" endPosition="126" />
   </root>
 </debugInfo>
 

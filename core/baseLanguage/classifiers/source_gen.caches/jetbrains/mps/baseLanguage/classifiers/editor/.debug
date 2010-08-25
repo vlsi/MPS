@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1205752655131">
+    <nodeInfo nodeId="1218736992787" fileName="ThisClassifierExpression_Editor.java" startLine="101" startPosition="110" endLine="102" endPosition="72" />
     <scopeInfo nodeId="1218736911691" fileName="ThisClassifierExpression_Editor.java" startLine="101" startPosition="110" endLine="102" endPosition="72" />
   </root>
   <root nodeId="1205769853449">
-    <nodeInfo nodeId="1221310280137" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="290" startPosition="111" endLine="291" endPosition="112" />
-    <nodeInfo nodeId="1221310280163" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="294" startPosition="111" endLine="295" endPosition="99" />
-    <scopeInfo nodeId="1221310280119" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="286" startPosition="111" endLine="287" endPosition="99" />
-    <scopeInfo nodeId="1221310280136" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="290" startPosition="111" endLine="291" endPosition="112" />
-    <scopeInfo nodeId="1221310280162" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="294" startPosition="111" endLine="295" endPosition="99" />
+    <nodeInfo nodeId="1221310280120" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="243" startPosition="111" endLine="244" endPosition="99" />
+    <nodeInfo nodeId="1221310280137" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="247" startPosition="111" endLine="248" endPosition="112" />
+    <nodeInfo nodeId="1221310280163" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="251" startPosition="111" endLine="252" endPosition="99" />
+    <scopeInfo nodeId="1221310280119" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="243" startPosition="111" endLine="244" endPosition="99" />
+    <scopeInfo nodeId="1221310280136" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="247" startPosition="111" endLine="248" endPosition="112" />
+    <scopeInfo nodeId="1221310280162" fileName="DefaultClassifierMethodDeclaration_Editor.java" startLine="251" startPosition="111" endLine="252" endPosition="99" />
   </root>
 </debugInfo>
 
