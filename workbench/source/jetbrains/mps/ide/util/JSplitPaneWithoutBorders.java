@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.util;
+package jetbrains.mps.ide.util;
 
 import javax.swing.JComponent;
 import javax.swing.JSplitPane;
