@@ -19,10 +19,7 @@ import jetbrains.mps.lang.actions.behavior.NodeFactory_Behavior;
 import jetbrains.mps.lang.actions.structure.NodeFactories;
 import jetbrains.mps.lang.actions.structure.NodeFactory;
 import jetbrains.mps.lang.actions.structure.NodeSetupFunction;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.lang.structure.structure.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
@@ -84,8 +81,28 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
     }
     nodeConcept = newNode.getConceptDeclarationAdapter(); // default concrete concept could change nodeConcept
     setupNode((ConceptDeclaration) nodeConcept, newNode, sampleNode, enclosingNode, model, scope);
-    SModelUtil_new.createNodeStructure((ConceptDeclaration) nodeConcept, newNode, sampleNode, enclosingNode, model, scope, true);
+    createNodeStructure((ConceptDeclaration) nodeConcept, newNode, sampleNode, enclosingNode, model, scope);
     return newNode;
+  }
+
+  private static void createNodeStructure(AbstractConceptDeclaration nodeConcept,
+                                         SNode newNode, SNode sampleNode, SNode enclosingNode,
+                                         SModel model, IScope scope) {
+    for (LinkDeclaration linkDeclaration : SModelSearchUtil.getLinkDeclarations(nodeConcept)) {
+      String role = SModelUtil_new.getGenuineLinkRole(linkDeclaration);
+      LinkMetaclass metaClass = SModelUtil_new.getGenuineLinkMetaclass(linkDeclaration);
+      Cardinality sourceCardinality = SModelUtil_new.getGenuineLinkSourceCardinality(linkDeclaration);
+      if (metaClass == LinkMetaclass.aggregation &&
+        (sourceCardinality == Cardinality._1 || sourceCardinality == Cardinality._1__n)) {
+
+        AbstractConceptDeclaration targetConcept = linkDeclaration.getTarget();
+        LOG.assertLog(targetConcept != null, "link target is null");
+        if (newNode.getChildren(role).isEmpty()) {
+          SNode childNode = createNode((AbstractConceptDeclaration) targetConcept, sampleNode, enclosingNode, model, scope);
+          newNode.addChild(role, childNode);
+        }
+      }
+    }
   }
 
   public static void setupNode(ConceptDeclaration nodeConcept, SNode node, SNode sampleNode, SNode enclosingNode, SModel model, IScope scope) {

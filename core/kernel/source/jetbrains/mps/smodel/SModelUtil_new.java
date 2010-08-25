@@ -23,7 +23,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
@@ -170,14 +169,13 @@ public class SModelUtil_new implements ApplicationComponent {
       isNotProjectModel) { //project models can be created and used
       //before project language is loaded
       AbstractConceptDeclaration conceptDeclaration = SModelUtil_new.findConceptDeclaration(conceptFqName, scope);
-      createNodeStructure(conceptDeclaration, newNode, null, null, model, scope, false);
+      createNodeStructure(conceptDeclaration, newNode, model);
     }
     return newNode;
   }
 
   public static void createNodeStructure(AbstractConceptDeclaration nodeConcept,
-                                         SNode newNode, SNode sampleNode, SNode enclosingNode,
-                                         SModel model, IScope scope, boolean invokeNodeFactories) {
+                                         SNode newNode, SModel model) {
     for (LinkDeclaration linkDeclaration : SModelSearchUtil.getLinkDeclarations(nodeConcept)) {
       String role = getGenuineLinkRole(linkDeclaration);
       LinkMetaclass metaClass = getGenuineLinkMetaclass(linkDeclaration);
@@ -188,12 +186,7 @@ public class SModelUtil_new implements ApplicationComponent {
         AbstractConceptDeclaration targetConcept = linkDeclaration.getTarget();
         LOG.assertLog(targetConcept != null, "link target is null");
         if (newNode.getChildren(role).isEmpty()) {
-          SNode childNode;
-          if (invokeNodeFactories) {
-            childNode = NodeFactoryManager.createNode((AbstractConceptDeclaration) targetConcept, sampleNode, enclosingNode, model, scope);
-          } else {
-            childNode = BaseAdapter.fromAdapter(instantiateConceptDeclaration((AbstractConceptDeclaration) targetConcept, model));
-          }
+          SNode childNode = BaseAdapter.fromAdapter(instantiateConceptDeclaration((AbstractConceptDeclaration) targetConcept, model));
           newNode.addChild(role, childNode);
         }
       }

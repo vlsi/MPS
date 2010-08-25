@@ -87,7 +87,7 @@
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="450238327190364732">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="450238327190364733">
-                <link role="baseMethodDeclaration:3" targetNodeId="9.~HashSet.&lt;init&gt;()" resolveInfo="HashSet" />
+                <link role="baseMethodDeclaration:3" targetNodeId="7.~HashSet.&lt;init&gt;()" resolveInfo="HashSet" />
                 <node role="typeParameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="450238327190364734">
                   <link role="classifier:3" targetNodeId="3.~BaseStubModelDescriptor" resolveInfo="BaseStubModelDescriptor" />
                 </node>
@@ -693,7 +693,7 @@
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="450238327190364705">
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="450238327190364707">
                 <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="450238327190364708">
-                  <link role="baseMethodDeclaration:3" targetNodeId="9.~HashSet.&lt;init&gt;()" resolveInfo="HashSet" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="7.~HashSet.&lt;init&gt;()" resolveInfo="HashSet" />
                   <node role="typeParameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="450238327190364709">
                     <link role="classifier:3" targetNodeId="10.~SNodeDescriptor" resolveInfo="SNodeDescriptor" />
                   </node>
@@ -714,7 +714,7 @@
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="450238327190364715">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="450238327190364716">
-                <link role="baseMethodDeclaration:3" targetNodeId="9.~HashSet.&lt;init&gt;()" resolveInfo="HashSet" />
+                <link role="baseMethodDeclaration:3" targetNodeId="7.~HashSet.&lt;init&gt;()" resolveInfo="HashSet" />
                 <node role="typeParameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="450238327190364717">
                   <link role="classifier:3" targetNodeId="10.~SNodeDescriptor" resolveInfo="SNodeDescriptor" />
                 </node>
