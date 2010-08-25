@@ -56,12 +56,10 @@ public class IndexedTupleViewer_WrapperFactory extends ValueWrapperFactory {
 
     protected List<CustomJavaWatchable> getSubvaluesImpl(IObjectValueProxy value) throws EvaluationException {
       List<CustomJavaWatchable> result = new ArrayList<CustomJavaWatchable>();
-
       IArrayValueProxy values = ((IArrayValueProxy) value.getFieldValue("values"));
       for (int i = 0; i < ((IArrayValueProxy) values).getLength(); i++) {
         result.add(new TuplesWatchables.MyWatchable_element(JavaObjectValue.fromJDIValue(((IObjectValueProxy) values.getElementAt(i)).getJDIValue(), getThreadReference()), "element"));
       }
-
       return result;
     }
 

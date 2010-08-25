@@ -2,21 +2,19 @@
 <debugInfo>
   <root nodeId="2603491487853694400">
     <nodeInfo nodeId="2603491487853715548" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="57" startPosition="110" endLine="58" endPosition="78" />
-    <nodeInfo nodeId="2603491487853746841" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="58" startPosition="78" endLine="59" endPosition="0" />
-    <nodeInfo nodeId="2603491487853715519" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="59" startPosition="0" endLine="60" endPosition="83" />
-    <nodeInfo nodeId="5639218245806442360" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="61" startPosition="73" endLine="62" endPosition="184" />
-    <nodeInfo nodeId="2603491487853746854" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="63" startPosition="7" endLine="64" endPosition="0" />
-    <nodeInfo nodeId="2603491487853746856" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="64" startPosition="0" endLine="65" endPosition="20" />
-    <nodeInfo nodeId="2603491487853713634" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="76" startPosition="95" endLine="77" endPosition="176" />
-    <nodeInfo nodeId="5639218245806441386" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="60" startPosition="83" endLine="63" endPosition="7" />
-    <scopeInfo nodeId="5639218245806441387" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="61" startPosition="73" endLine="62" endPosition="184" />
-    <scopeInfo nodeId="2603491487853713633" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="76" startPosition="95" endLine="77" endPosition="176" />
-    <scopeInfo nodeId="5639218245806441386" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="60" startPosition="83" endLine="63" endPosition="7">
+    <nodeInfo nodeId="1900095324287480901" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="58" startPosition="78" endLine="59" endPosition="83" />
+    <nodeInfo nodeId="5639218245806442360" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="60" startPosition="73" endLine="61" endPosition="184" />
+    <nodeInfo nodeId="2603491487853746856" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="62" startPosition="7" endLine="63" endPosition="20" />
+    <nodeInfo nodeId="2603491487853713634" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="74" startPosition="95" endLine="75" endPosition="176" />
+    <nodeInfo nodeId="5639218245806441386" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="59" startPosition="83" endLine="62" endPosition="7" />
+    <scopeInfo nodeId="5639218245806441387" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="60" startPosition="73" endLine="61" endPosition="184" />
+    <scopeInfo nodeId="2603491487853713633" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="74" startPosition="95" endLine="75" endPosition="176" />
+    <scopeInfo nodeId="5639218245806441386" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="59" startPosition="83" endLine="62" endPosition="7">
       <varInfo nodeId="5639218245806441389" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="2603491487853694403" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="57" startPosition="110" endLine="65" endPosition="20">
+    <scopeInfo nodeId="2603491487853694403" fileName="IndexedTupleViewer_WrapperFactory.java" startLine="57" startPosition="110" endLine="63" endPosition="20">
       <varInfo nodeId="2603491487853715549" varName="result" />
-      <varInfo nodeId="2603491487853715520" varName="values" />
+      <varInfo nodeId="1900095324287480902" varName="values" />
     </scopeInfo>
   </root>
 </debugInfo>
