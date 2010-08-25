@@ -37,26 +37,6 @@
             <implementation-class>com.intellij.openapi.components.impl.ServiceManagerImpl</implementation-class>
         </component>
         <component>
-            <interface-class>com.intellij.openapi.vcs.impl.VcsPathPresenter</interface-class>
-            <implementation-class>jetbrains.mps.vcs.ModuleVcsPathPresenter</implementation-class>
-        </component>
-        <component>
-            <implementation-class>jetbrains.mps.vcs.MPSVCSManager</implementation-class>
-        </component>
-        <component>
-            <implementation-class>jetbrains.mps.vcs.VcsRootsManager</implementation-class>
-        </component>
-        <component>
-            <implementation-class>jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager</implementation-class>
-        </component>
-        <component>
-            <implementation-class>jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesPerfsPage
-            </implementation-class>
-        </component>
-        <component>
-            <implementation-class>jetbrains.mps.vcs.ui.ChangesNotificator</implementation-class>
-        </component>
-        <component>
             <interface-class>com.intellij.codeInsight.highlighting.HighlightManager</interface-class>
             <implementation-class>com.intellij.codeInsight.highlighting.HighlightManagerImpl</implementation-class>
             <skipForDummyProject/>
@@ -65,18 +45,6 @@
             <implementation-class>jetbrains.mps.intentions.CodeStyleSettings</implementation-class>
         </component>
     </project-components>
-
-    <application-components>
-        <component>
-            <implementation-class>jetbrains.mps.vcs.ExcludedFileIndexApplicationComponent</implementation-class>
-        </component>
-        <component>
-            <implementation-class>jetbrains.mps.vcs.GlobalClassPathIndex</implementation-class>
-        </component>
-        <component>
-            <implementation-class>jetbrains.mps.vcs.SuspiciousModelIndex</implementation-class>
-        </component>
-    </application-components>
 
     <xi:include href="/componentSets/Platform.xml" xpointer="xpointer(/components/*)"/>
     <xi:include href="/componentSets/UICore.xml" xpointer="xpointer(/components/*)"/>
@@ -316,10 +284,6 @@
         </component>
 
         <component>
-            <implementation-class>jetbrains.mps.vcs.ApplicationLevelVcsManager</implementation-class>
-        </component>
-
-        <component>
             <implementation-class>jetbrains.mps.ide.blame.dialog.BlameDialogComponent</implementation-class>
         </component>
 
@@ -388,9 +352,6 @@
         </component>
     </application-components>
 
-
-<xi:include href="/MPSVCS.xml" xpointer="xpointer(/components/*)"/>
-  
     <project-components>
         <component>
             <interface-class>com.intellij.openapi.fileEditor.FileEditorManager</interface-class>
@@ -623,31 +584,6 @@
 
         <component>
             <implementation-class>jetbrains.mps.make.StartupModuleMaker</implementation-class>
-        </component>
-
-        <component>
-            <implementation-class>jetbrains.mps.vcs.changesmanager.ChangesManager</implementation-class>
-            <skipForDefaultProject />
-        </component>
-
-        <component>
-            <implementation-class>jetbrains.mps.vcs.changesmanager.ProjectTreeChangesHighlighter</implementation-class>
-            <skipForDefaultProject />
-        </component>
-
-        <component>
-            <implementation-class>jetbrains.mps.vcs.changesmanager.EditorChangesHighlighter</implementation-class>
-            <skipForDefaultProject />
-        </component>
-
-        <component>
-            <implementation-class>jetbrains.mps.vcs.changesmanager.RootNodeFileStatusManager</implementation-class>
-            <skipForDefaultProject />
-        </component>
-
-        <component>
-            <implementation-class>jetbrains.mps.vcs.MPSVcsProjectConfiguration</implementation-class>
-            <skipForDefaultProject />
         </component>
     </project-components>
 

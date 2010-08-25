@@ -1,3 +1,0 @@
-<extensions defaultExtensionNs="com.intellij">
-       <vcs.fileStatusProvider implementation="jetbrains.mps.vcs.ChangesManagerFileStatusProvider"/>
-    </extensions>
