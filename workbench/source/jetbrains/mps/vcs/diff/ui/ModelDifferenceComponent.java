@@ -30,7 +30,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.vcs.diff.DiffBuilder;
-import jetbrains.mps.vcs.diff.changes.*;
 
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;

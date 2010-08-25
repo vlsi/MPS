@@ -21,13 +21,11 @@ import com.intellij.openapi.diff.DiffRequest;
 import com.intellij.openapi.diff.DiffTool;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.vcs.ApplicationLevelVcsManager;
 import jetbrains.mps.vcs.ModelUtils;
 import jetbrains.mps.vcs.diff.MPSDiffRequestFactory.ModelMergeRequest;
 import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 
 

@@ -23,7 +23,7 @@
         </component>
 
         <component>
-            <implementation-class>jetbrains.mps.vcs.MPSVcsProjectConfiguration</implementation-class>
+            <implementation-class>MPSVcsProjectConfiguration</implementation-class>
             <skipForDefaultProject />
         </component>
 

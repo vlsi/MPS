@@ -19,15 +19,9 @@ import jetbrains.mps.ide.ui.HeaderWrapper;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.vcs.diff.Conflict;
 
 import javax.swing.JPanel;
-import javax.swing.JSplitPane;
-import javax.swing.JScrollPane;
 import java.awt.GridLayout;
-import java.awt.Frame;
-import java.awt.BorderLayout;
 
 class MergeView extends JPanel {
   private MergeResultView myMergeResult;

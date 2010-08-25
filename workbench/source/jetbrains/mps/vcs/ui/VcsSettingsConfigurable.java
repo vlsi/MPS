@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.vcs.ui;
 
-import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.options.SearchableConfigurable;
 import jetbrains.mps.vcs.ApplicationLevelVcsManager;

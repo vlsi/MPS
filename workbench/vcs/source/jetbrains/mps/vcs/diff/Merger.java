@@ -24,7 +24,6 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.vcs.diff.changes.*;
 
 import java.util.*;
 

@@ -28,8 +28,6 @@ import jetbrains.mps.fileTypes.MPSFileTypesManager;
 
 import java.util.Collections;
 
-import org.apache.log4j.Level;
-
 class BeforeModelEventProcessor extends EventProcessor {
   private static final BeforeModelEventProcessor INSTANCE = new BeforeModelEventProcessor();
 

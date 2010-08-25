@@ -5,9 +5,7 @@ import com.intellij.openapi.components.*;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.ModuleRootListener;
 import com.intellij.openapi.roots.impl.ModuleRootEventImpl;
-import com.intellij.openapi.vcs.changes.ChangeListManager;
 import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
-import com.intellij.openapi.vcs.changes.VcsDirtyScopeManagerImpl;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import jetbrains.mps.vcs.MPSVcsProjectConfiguration.MyState;
 

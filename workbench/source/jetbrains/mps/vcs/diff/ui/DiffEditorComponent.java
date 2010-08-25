@@ -22,7 +22,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.vcs.diff.changes.*;
 
 import java.awt.Color;
 import java.awt.Point;
