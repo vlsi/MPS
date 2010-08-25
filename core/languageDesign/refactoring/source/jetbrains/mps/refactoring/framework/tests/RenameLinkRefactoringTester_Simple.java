@@ -16,12 +16,12 @@
 package jetbrains.mps.refactoring.framework.tests;
 
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.lang.structure.scripts.RenameLink;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.OldRefactoringAdapter;
+import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.*;
 
 public class RenameLinkRefactoringTester_Simple implements IRefactoringTester {
@@ -51,7 +51,7 @@ public class RenameLinkRefactoringTester_Simple implements IRefactoringTester {
 
 
     System.err.println("executing a refactoring");
-    new RefactoringProcessor().doExecuteInTest(refactoringContext);
+    new RefactoringTestFacade().doExecuteInTest(refactoringContext);
 
     final boolean[] result = new boolean[]{false};
 
