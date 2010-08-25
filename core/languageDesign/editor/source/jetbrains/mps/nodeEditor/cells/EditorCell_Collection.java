@@ -429,6 +429,11 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
         if (getBounds().contains(e.getPoint())) {
           editorComponent.removeMouseListener(this);
           unfold();
+
+          EditorComponent editor = getEditor();
+          EditorCell deepestSelected = findChild(CellFinders.FIRST_SELECTABLE_LEAF);
+          editor.pushSelection(deepestSelected);
+          editor.setSelectionDontClearStack(EditorCell_Collection.this, true);
         }
       }
     });
@@ -466,12 +471,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     setFolded(false);
     if (!programmaticaly) {
       getEditorContext().flushEvents();
-
-      EditorComponent editor = getEditor();
-      editor.relayout();
-      EditorCell deepestSelected = findChild(CellFinders.FIRST_SELECTABLE_LEAF);
-      editor.pushSelection(deepestSelected);
-      editor.setSelectionDontClearStack(EditorCell_Collection.this, true);
+      getEditor().relayout();
     }
   }
 
