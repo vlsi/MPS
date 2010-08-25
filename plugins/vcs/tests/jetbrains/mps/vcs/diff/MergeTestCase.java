@@ -16,9 +16,9 @@
 package jetbrains.mps.vcs.diff;
 
 import jetbrains.mps.ModelAssert;
+import jetbrains.mps.vcs.diff.MergeTestUtil.TestVersion;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.vcs.diff.MergeTestUtil.TestVersion;
 import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
 import junit.framework.TestCase;
 
