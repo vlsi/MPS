@@ -97,9 +97,7 @@
           <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="634073782578834045">
             <link role="variableDeclaration:3" targetNodeId="7241381882860002286" resolveInfo="model" />
           </node>
-          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="634073782578834047">
-            <property name="value:3" value="true" />
-          </node>
+          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="634073782578834047" />
         </node>
       </node>
     </node>

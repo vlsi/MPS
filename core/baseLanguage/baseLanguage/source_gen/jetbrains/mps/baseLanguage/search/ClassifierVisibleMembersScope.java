@@ -46,7 +46,7 @@ public class ClassifierVisibleMembersScope extends AbstractSearchScope {
     return myClassifierScope.getNodes(new Condition<SNode>() {
       public boolean met(SNode node) {
         SNode member = SNodeOperations.as(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember");
-        return (member != null) && ((myContextNode == null) || VisibilityUtil.isVisible(myContextNode, member)) && condition.met(node);
+        return (member != null) && ((myContextNode == null) || isVisible(member)) && condition.met(node);
       }
     });
   }
@@ -58,7 +58,7 @@ public class ClassifierVisibleMembersScope extends AbstractSearchScope {
       }
       return super.isInScope(node);
     }
-    return myClassifierScope.getClassifierNodes().contains(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Classifier", false, false)) && VisibilityUtil.isVisible(myContextNode, SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember"));
+    return myClassifierScope.getClassifierNodes().contains(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Classifier", false, false)) && isVisible(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember"));
   }
 
   public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, AbstractConceptDeclaration targetConcept) {
@@ -76,6 +76,10 @@ public class ClassifierVisibleMembersScope extends AbstractSearchScope {
       }
     }
     return this.myClassifierScope.getReferenceInfoResolver(referenceNode, targetConcept);
+  }
+
+  protected boolean isVisible(SNode member) {
+    return VisibilityUtil.isVisible(myContextNode, member);
   }
 
   private static SNode check_y8c6cm_a0a0a(ClassifierType p) {

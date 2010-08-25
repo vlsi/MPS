@@ -61,22 +61,6 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler" />
   </dependency>
-  <dependency className="jetbrains.mps.debug.evaluation.ui.AllMembersJavaStubs" file="AllMembersJavaStubs.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.PublicVisibility" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Visibility" />
-    <classNode dependClassName="jetbrains.mps.reloading.ClassPathFactory" />
-    <classNode dependClassName="jetbrains.mps.reloading.IClassPathItem" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
-    <classNode dependClassName="jetbrains.mps.stubs.StubLocation" />
-    <classNode dependClassName="jetbrains.mps.stubs.javastub.ASMModelLoader" />
-    <classNode dependClassName="jetbrains.mps.stubs.javastub.asm.ASMField" />
-    <classNode dependClassName="jetbrains.mps.stubs.javastub.asm.ASMMethod" />
-    <classNode dependClassName="jetbrains.mps.stubs.javastub.classpath.StubHelper" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-  </dependency>
   <dependency className="jetbrains.mps.debug.evaluation.ui.EvaluationDialog" file="EvaluationDialog.java">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
@@ -181,7 +165,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.ReachableClassifiersScope" />
     <classNode dependClassName="jetbrains.mps.debug.api.DebugInfoManager" />
     <classNode dependClassName="jetbrains.mps.debug.api.info.StacktraceUtil" />
-    <classNode dependClassName="jetbrains.mps.debug.evaluation.ui.AllMembersJavaStubs" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.DebugSession" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.JavaUiState" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaStackFrame" />

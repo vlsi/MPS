@@ -100,7 +100,7 @@ public abstract class ASMModelLoader {
   private final boolean mySkipPrivate;
 
   public ASMModelLoader(IClassPathItem classPathItem, SModel model) {
-    this(classPathItem, model, true);
+    this(classPathItem, model, false);
   }
 
   public ASMModelLoader(IClassPathItem classPathItem, SModel model, boolean skipPrivate) {

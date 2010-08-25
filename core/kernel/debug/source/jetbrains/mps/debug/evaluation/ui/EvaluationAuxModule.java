@@ -1,5 +1,6 @@
 package jetbrains.mps.debug.evaluation.ui;
 
+import jetbrains.mps.baseLanguage.stubs.JavaStubs;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.model.ModelRootManager;
@@ -19,7 +20,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 
 public class EvaluationAuxModule extends AbstractModule {
-  private static final ModelRootManager STUBS_MANAGER = new ModelRootManager(BaseLanguage_Language.MODULE_REFERENCE.getModuleId().toString(), AllMembersJavaStubs.class.getName());
+  private static final ModelRootManager STUBS_MANAGER = new ModelRootManager(BaseLanguage_Language.MODULE_REFERENCE.getModuleId().toString(), JavaStubs.class.getName());
 
   private Project myProject;
   private IModule myInvocationContext;
