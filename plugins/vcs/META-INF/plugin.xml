@@ -36,6 +36,9 @@
     <component>
       <implementation-class>jetbrains.mps.vcs.ApplicationLevelVcsManager</implementation-class>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.vcs.ToolsAppComponent</implementation-class>
+    </component>
   </application-components>
 
   <project-components>

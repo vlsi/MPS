@@ -24,7 +24,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.vcs.ApplicationLevelVcsManager;
 import jetbrains.mps.vcs.ModelUtils;
-import jetbrains.mps.vcs.diff.MPSDiffRequestFactory.ModelMergeRequest;
+import jetbrains.mps.vcs.diff.ModelMergeRequest;
 import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
 import jetbrains.mps.project.ModuleContext;
 
