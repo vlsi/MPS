@@ -249,11 +249,6 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     ChangeListManager.getInstance(myProject).removeChangeListListener(myChangeListListener);
 
     myMessageBusConnection.disconnect();
-    myExclusionListener = new ExclusionChangedListener() {
-      public void exclusionChanged() {
-        rebuildTreeLater();
-      }
-    };
     GlobalClassPathIndex.getInstance().removeListener(myExclusionListener);
   }
 
