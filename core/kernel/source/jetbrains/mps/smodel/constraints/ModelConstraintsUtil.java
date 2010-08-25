@@ -66,20 +66,19 @@ public class ModelConstraintsUtil {
         if (contextNode == null) {
           contextNode = referenceNode;
         }
+        // todo: if inside non-typesystem rules, do not create a new context
         TypeCheckingContext typeCheckingContext = TypeContextManager.getInstance().createTypeCheckingContext(contextNode);
-        if (typeCheckingContext != null) {
-          typeCheckingContext.setInEditorQueriesMode();
-        }
-        try {
-          status[0] = getSearchScope_intern(model, enclosingNode_, referenceNode, referenceNodeConcept, linkRole, linkTarget, context);
-        } catch (Exception t) {
-          LOG.error(t, referenceNode != null ? referenceNode : enclosingNode_);
-          status[0] = new SearchScopeStatus.ERROR("can't create search scope for role '" + linkRole + "' in '" + referenceNodeConcept.getName() + "'");
-        } finally {
-          if (typeCheckingContext != null) {
-            typeCheckingContext.resetIsInEditorQueriesMode();
+        typeCheckingContext.runTypeCheckingActionInEditorQueries(new Runnable() {
+          @Override
+          public void run() {
+            try {
+              status[0] = getSearchScope_intern(model, enclosingNode_, referenceNode, referenceNodeConcept, linkRole, linkTarget, context);
+            } catch (Exception t) {
+              LOG.error(t, referenceNode != null ? referenceNode : enclosingNode_);
+              status[0] = new SearchScopeStatus.ERROR("can't create search scope for role '" + linkRole + "' in '" + referenceNodeConcept.getName() + "'");
+            }
           }
-        }
+        });
       }
     });
     return status[0];

@@ -82,14 +82,12 @@ public class TypeCheckingContext implements EditorMessageOwner {
     return !myIsInEditorQueriesStack.isEmpty();
   }
 
-  @Deprecated
-  public void setInEditorQueriesMode() {
+  private void setInEditorQueriesMode() {
     if (myIsNonTypesystemComputation) return;
     myIsInEditorQueriesStack.push(true);
   }
 
-  @Deprecated
-  public void resetIsInEditorQueriesMode() {
+  private void resetIsInEditorQueriesMode() {
     if (myIsNonTypesystemComputation) return;
     if (!myIsInEditorQueriesStack.isEmpty()) {
       myIsInEditorQueriesStack.pop();
