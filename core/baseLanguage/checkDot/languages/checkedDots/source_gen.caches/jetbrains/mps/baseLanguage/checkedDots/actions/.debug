@@ -5,12 +5,14 @@
     <nodeInfo nodeId="2248628811136263731" fileName="QueriesGenerated.java" startLine="37" startPosition="125" endLine="38" endPosition="145" />
     <nodeInfo nodeId="2248628811136263774" fileName="QueriesGenerated.java" startLine="38" startPosition="145" endLine="39" endPosition="116" />
     <nodeInfo nodeId="2248628811136263791" fileName="QueriesGenerated.java" startLine="39" startPosition="116" endLine="40" endPosition="120" />
+    <nodeInfo nodeId="752102214576873140" fileName="QueriesGenerated.java" startLine="40" startPosition="120" endLine="41" endPosition="24" />
     <scopeInfo nodeId="2248628811136262607" fileName="QueriesGenerated.java" startLine="36" startPosition="94" endLine="41" endPosition="24">
       <varInfo nodeId="2248628811136263732" varName="checkedDot" />
       <varInfo nodeId="2248628811136263736" varName="dot" />
     </scopeInfo>
   </root>
   <root nodeId="4079382982702692311">
+    <nodeInfo nodeId="4079382982702692930" fileName="QueriesGenerated.java" startLine="25" startPosition="202" endLine="26" endPosition="83" />
     <nodeInfo nodeId="4079382982702714350" fileName="QueriesGenerated.java" startLine="66" startPosition="51" endLine="67" endPosition="173" />
     <nodeInfo nodeId="4079382982702714356" fileName="QueriesGenerated.java" startLine="67" startPosition="173" endLine="68" endPosition="100" />
     <nodeInfo nodeId="4079382982702714363" fileName="QueriesGenerated.java" startLine="68" startPosition="100" endLine="69" endPosition="130" />
