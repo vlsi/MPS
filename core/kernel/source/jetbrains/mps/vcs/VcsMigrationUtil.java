@@ -20,6 +20,7 @@ import com.intellij.openapi.vcs.history.VcsRevisionNumber;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.projectPane.fileSystem.ExclusionChangedListener;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 
@@ -89,5 +90,9 @@ public class VcsMigrationUtil {
 
   public static void removeListener(ExclusionChangedListener exclusionListener) {
     GlobalClassPathIndex.getInstance().removeListener(exclusionListener);
+  }
+
+  public static boolean resolveDiskMemoryConflict(IFile modelFile, SModel sModel) {
+    return VcsHelper.resolveDiskMemoryConflict(modelFile,sModel);
   }
 }
