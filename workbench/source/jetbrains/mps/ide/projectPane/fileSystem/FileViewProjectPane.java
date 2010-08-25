@@ -50,8 +50,11 @@ import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NotNull;
@@ -77,7 +80,11 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
   private final IdeDocumentHistory myIdeDocumentHistory;
   private final ProjectView myProjectView;
   private final FileEditorManager myEditorManager;
-  private ExclusionChangedListener myExclusionListener;
+  private ExclusionChangedListener myExclusionListener = new ExclusionChangedListener() {
+    public void exclusionChanged() {
+      rebuildTreeLater();
+    }
+  };
 
   private ChangeListListener myChangeListListener;
   private MessageBusConnection myMessageBusConnection;
@@ -230,12 +237,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
         }
       }
     });
-    myExclusionListener = new ExclusionChangedListener() {
-      public void exclusionChanged() {
-        rebuildTreeLater();
-      }
-    };
-    GlobalClassPathIndex.getInstance().addListener(myExclusionListener);
+    VcsMigrationUtil.addListener(myExclusionListener);
   }
 
   private void disposeListeners() {
@@ -246,7 +248,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     ChangeListManager.getInstance(myProject).removeChangeListListener(myChangeListListener);
 
     myMessageBusConnection.disconnect();
-    GlobalClassPathIndex.getInstance().removeListener(myExclusionListener);
+    VcsMigrationUtil.removeListener(myExclusionListener);
   }
 
   private boolean isInitialized() {
@@ -398,12 +400,12 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
         });
         SModelDescriptor d = smodel.getModelDescriptor();
         if (!(d instanceof EditableSModelDescriptor)) return false;
-        
+
         VirtualFile realFile = VFileSystem.getFile(((EditableSModelDescriptor) d).getModelFile());
 
         myFile = realFile;
         if ((realFile == null) || (isInitialized() && getNode(realFile) == null)) return false;
-        
+
         return true;
       }
 

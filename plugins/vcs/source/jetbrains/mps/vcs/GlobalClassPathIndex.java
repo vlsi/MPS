@@ -20,6 +20,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vcs.FilePath;
 import com.intellij.openapi.vcs.actions.VcsContextFactory;
+import jetbrains.mps.ide.projectPane.fileSystem.ExclusionChangedListener;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.*;
@@ -286,9 +287,5 @@ public class GlobalClassPathIndex implements ApplicationComponent {
     IFile classesGen = module.getClassesGen();
     if (classesGen == null) return;
     myExcludedClassPath.add(classesGen.getCanonicalPath());
-  }
-
-  public static interface ExclusionChangedListener {
-    void exclusionChanged();
   }
 }

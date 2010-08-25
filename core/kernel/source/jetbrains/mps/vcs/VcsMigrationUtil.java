@@ -18,8 +18,10 @@ package jetbrains.mps.vcs;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.history.VcsRevisionNumber;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.ide.projectPane.fileSystem.ExclusionChangedListener;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.vfs.IFile;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -75,5 +77,17 @@ public class VcsMigrationUtil {
   //todo remove
   public static void removeFromVcsLater(File file) {
     ApplicationLevelVcsManager.instance().removeFromVcsLater(file);
+  }
+
+  public static boolean isInConflict(IFile iFile, boolean b) {
+    return ApplicationLevelVcsManager.instance().isInConflict(iFile,b);
+  }
+
+  public static void addListener(ExclusionChangedListener exclusionListener) {
+    GlobalClassPathIndex.getInstance().addListener(exclusionListener);
+  }
+
+  public static void removeListener(ExclusionChangedListener exclusionListener) {
+    GlobalClassPathIndex.getInstance().removeListener(exclusionListener);
   }
 }

@@ -80,10 +80,7 @@ import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.annotation.Patch;
-import jetbrains.mps.vcs.ApplicationLevelVcsManager;
-import jetbrains.mps.vcs.ModelUtils;
-import jetbrains.mps.vcs.VcsHelper.VcsMergeVersion;
-import jetbrains.mps.vcs.diff.MPSDiffRequestFactory.ModelMergeRequest;
+import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
@@ -709,7 +706,7 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
     List<VirtualFile> toMerge = new ArrayList<VirtualFile>();
     List<VirtualFile> alreadyResolved = new ArrayList<VirtualFile>();
     for (VirtualFile f : files) {
-      if (!doStatusRecheck || ApplicationLevelVcsManager.instance().isInConflict(VFileSystem.toIFile(f), true)) {
+      if (!doStatusRecheck || VcsMigrationUtil.isInConflict(VFileSystem.toIFile(f), true)) {
         toMerge.add(f);
       } else {
         alreadyResolved.add(f);
