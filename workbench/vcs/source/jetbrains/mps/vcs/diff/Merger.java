@@ -28,6 +28,7 @@ import jetbrains.mps.util.NameUtil;
 import java.util.*;
 
 import com.intellij.openapi.util.Pair;
+import jetbrains.mps.vcs.diff.changes.*;
 
 public class Merger {
   private final SModel[] mySourceModels = new SModel[Version.values().length];

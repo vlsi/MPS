@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.vcs.diff.changes.*;
 import org.apache.commons.lang.ObjectUtils;
 
 import java.util.*;

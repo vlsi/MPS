@@ -18,7 +18,6 @@ package jetbrains.mps.vcs.diff;
 import java.io.IOException;
 
 import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
-import jetbrains.mps.logging.Logger;
 
 public class MergeReferencesTest extends MergeTestCase {
 

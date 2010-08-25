@@ -5,6 +5,8 @@
     <xi:include href="/META-INF/MPSComponents.xml" xpointer="xpointer(/components/*)"/>
     <xi:include href="/idea/MPSActionManager.xml" xpointer="xpointer(/component/*)"/>
 
+    <xi:include href="/ext.xml" xpointer="xpointer(/component/*)"/>
+
     <extensionPoints>
         <xi:include href="/META-INF/PlatformExtensionPoints.xml" xpointer="xpointer(/extensionPoints/*)"/>
         <xi:include href="/META-INF/VcsExtensionPoints.xml" xpointer="xpointer(/extensionPoints/*)"/>
@@ -20,7 +22,7 @@
         <directoryIndexExcludePolicy implementation="jetbrains.mps.project.ClassesGenPolicy"/>
         <directoryIndexExcludePolicy implementation="jetbrains.mps.project.GeneratedFilesExcludePolicy"/>
 
-        <vcs.fileStatusProvider implementation="jetbrains.mps.vcs.ChangesManagerFileStatusProvider"/>
+       
         <checkoutListener implementation="jetbrains.mps.vcs.ProjectCheckoutListener"/>
         <checkinHandlerFactory implementation="jetbrains.mps.vcs.OptimizeImportsCheckinHandlerFactory" />
         <checkinHandlerFactory implementation="jetbrains.mps.ide.actions.ModelCheckerCheckinHandler$ModelCheckerCheckinHandlerFactory" />

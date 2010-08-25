@@ -20,7 +20,6 @@ import com.intellij.openapi.vcs.actions.VcsContext;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.ide.projectView.ProjectView;
 import jetbrains.mps.ide.projectPane.fileSystem.BaseDirectoryProjectView;
-import jetbrains.mps.ide.projectPane.ProjectPane;
 
 import java.util.Collections;
 import java.util.List;
