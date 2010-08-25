@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder;
+import jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.project.GlobalScope;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
@@ -108,7 +108,7 @@ public class ShowImplementations_Action extends GeneratedAction {
     try {
       final List<SNode> nodes = new ArrayList<SNode>();
       ListSequence.fromList(nodes).addElement(ShowImplementations_Action.this.node);
-      SearchResults<SNode> searchResults = new DerivedClasses_Finder().find(new SearchQuery(ShowImplementations_Action.this.node, GlobalScope.getInstance()), new EmptyProgressIndicator());
+      SearchResults<SNode> searchResults = new ImplementingClasses_Finder().find(new SearchQuery(ShowImplementations_Action.this.node, GlobalScope.getInstance()), new EmptyProgressIndicator());
       for (SearchResult<SNode> searchResult : searchResults.getSearchResults()) {
         SNode searchNode = searchResult.getObject();
         if ((searchNode != null)) {
@@ -119,9 +119,10 @@ public class ShowImplementations_Action extends GeneratedAction {
         public void run() {
           String title = "Definition of " + ShowImplementations_Action.this.node.getPresentation();
           ShowImplementationComponent component = new ShowImplementationComponent(nodes, ShowImplementations_Action.this.context);
-          JBPopup popup = JBPopupFactory.getInstance().createComponentPopupBuilder(component, component.getPrefferedFocusableComponent()).setProject(ShowImplementations_Action.this.project).setMovable(true).setResizable(true).setTitle(title).createPopup();
+          JBPopup popup = JBPopupFactory.getInstance().createComponentPopupBuilder(component, component.getPrefferedFocusableComponent()).setRequestFocus(true).setProject(ShowImplementations_Action.this.project).setMovable(true).setResizable(true).setTitle(title).createPopup();
           popup.show(new RelativePoint(ShowImplementations_Action.this.cell.getEditor(), new Point(ShowImplementations_Action.this.cell.getX(), ShowImplementations_Action.this.cell.getY())));
           component.getPrefferedFocusableComponent().setRequestFocusEnabled(true);
+          component.setPopup(popup);
         }
       });
     } catch (Throwable t) {
