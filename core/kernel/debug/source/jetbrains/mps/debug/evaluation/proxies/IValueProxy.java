@@ -13,4 +13,6 @@ public interface IValueProxy {
 
   @Nullable
   Object getJavaValue();
+
+  boolean javaEquals(IValueProxy valueProxy);
 }

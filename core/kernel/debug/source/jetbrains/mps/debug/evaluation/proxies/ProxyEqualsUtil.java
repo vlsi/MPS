@@ -8,7 +8,7 @@ package jetbrains.mps.debug.evaluation.proxies;
  * To change this template use File | Settings | File Templates.
  */
 public class ProxyEqualsUtil {
-  public static boolean javaEquals(IObjectValueProxy proxy1, IObjectValueProxy proxy2) {
+  public static boolean javaEquals(IValueProxy proxy1, IValueProxy proxy2) {
     if (proxy1 == proxy2) return true;
     if (proxy1 == null) {
       return proxy2 instanceof INullValueProxy;

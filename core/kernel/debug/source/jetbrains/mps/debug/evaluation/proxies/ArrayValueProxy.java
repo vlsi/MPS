@@ -67,7 +67,8 @@ class ArrayValueProxy extends ValueProxy implements IArrayValueProxy, IObjectVal
   }
 
   @Override
-  public boolean javaEquals(IObjectValueProxy proxy) {
+  public boolean javaEquals(IValueProxy proxy) {
+    if (proxy == null || proxy instanceof INullValueProxy) return false;
     return myValue.equals(proxy.getJDIValue());
   }
 }

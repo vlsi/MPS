@@ -55,7 +55,7 @@ class NullValueProxy implements INullValueProxy {
   }
 
   @Override
-  public boolean javaEquals(IObjectValueProxy proxy) {
-    return proxy instanceof NullValueProxy;
+  public boolean javaEquals(IValueProxy proxy) {
+    return proxy instanceof INullValueProxy;
   }
 }

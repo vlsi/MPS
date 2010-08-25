@@ -11,4 +11,10 @@ public class PrimitiveValueProxy extends ValueProxy implements IValueProxy {
   public PrimitiveValue getPrimitiveValue() {
     return (PrimitiveValue) myValue;
   }
+
+  @Override
+  public boolean javaEquals(IValueProxy valueProxy) {
+    if (valueProxy == null || valueProxy instanceof INullValueProxy) return false;
+    return myValue.equals(valueProxy.getJDIValue());
+  }
 }

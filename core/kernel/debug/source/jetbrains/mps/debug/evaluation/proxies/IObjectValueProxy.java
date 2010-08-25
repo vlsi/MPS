@@ -15,6 +15,4 @@ public interface IObjectValueProxy extends IValueProxy {
   IValueProxy invokeSuperMethod(String name, String jniSignature, Object... args) throws EvaluationException;
 
   boolean isInstanceOf(String typename) throws EvaluationException;
-
-  boolean javaEquals(IObjectValueProxy proxy);
 }
