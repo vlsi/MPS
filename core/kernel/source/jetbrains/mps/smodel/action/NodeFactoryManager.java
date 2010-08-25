@@ -19,7 +19,10 @@ import jetbrains.mps.lang.actions.behavior.NodeFactory_Behavior;
 import jetbrains.mps.lang.actions.structure.NodeFactories;
 import jetbrains.mps.lang.actions.structure.NodeFactory;
 import jetbrains.mps.lang.actions.structure.NodeSetupFunction;
-import jetbrains.mps.lang.structure.structure.*;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
@@ -29,13 +32,11 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.QueryMethodGenerated;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
-import java.util.HashSet;
 
 public class NodeFactoryManager extends NodeFactoryManager_deprecated {
   private static final Logger LOG = Logger.getLogger(NodeFactoryManager.class);

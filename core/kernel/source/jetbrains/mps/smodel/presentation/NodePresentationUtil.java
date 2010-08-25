@@ -19,9 +19,9 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.IResolveInfo;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.project.IModule;
 
 import javax.swing.Icon;
 import java.awt.Font;

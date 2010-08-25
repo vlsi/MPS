@@ -20,7 +20,6 @@ import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.Condition;
 
 import java.util.List;
 

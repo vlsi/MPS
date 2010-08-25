@@ -20,9 +20,9 @@ import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.constraints.IReferencePresentation;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus;
-import jetbrains.mps.smodel.constraints.IReferencePresentation;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.util.Condition;
 

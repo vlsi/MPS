@@ -22,9 +22,8 @@ import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.util.QueryMethodGenerated;
 
 import java.util.*;
 
