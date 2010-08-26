@@ -119,6 +119,7 @@
                     serviceImplementation="jetbrains.mps.vcs.MPSExcludedFileIndex"/>
     <projectService serviceInterface="com.intellij.openapi.vcs.impl.DefaultVcsRootPolicy"
                     serviceImplementation="jetbrains.mps.vcs.ExtendedDefaultVcsRootPolicy"/>
+    <applicationConfigurable implementation="jetbrains.mps.vcs.ui.VcsSettingsConfigurable"/>
 
   </extensions>
 </idea-plugin>
