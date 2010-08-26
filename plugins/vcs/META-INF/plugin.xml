@@ -88,7 +88,7 @@
   </actions>
 
   <extensions defaultExtensionNs="com.intellij">
-    <vcs.fileStatusProvider implementation="jetbrains.mps.vcs.ChangesManagerFileStatusProvider"/>
+    <vcs.fileStatusProvider implementation="jetbrains.mps.vcs.changesmanager.ChangesManagerFileStatusProvider"/>
 
     <checkoutListener implementation="jetbrains.mps.vcs.ProjectCheckoutListener"/>
     <checkinHandlerFactory implementation="jetbrains.mps.vcs.OptimizeImportsCheckinHandlerFactory"/>
