@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1894531970723323135">
-    <nodeInfo nodeId="4006340295321214066" fileName="TypeExtension_Editor.java" startLine="182" startPosition="111" endLine="183" endPosition="112" />
-    <scopeInfo nodeId="4006340295321214065" fileName="TypeExtension_Editor.java" startLine="182" startPosition="111" endLine="183" endPosition="112" />
+    <nodeInfo nodeId="4006340295321214066" fileName="TypeExtension_Editor.java" startLine="195" startPosition="111" endLine="196" endPosition="112" />
+    <scopeInfo nodeId="4006340295321214065" fileName="TypeExtension_Editor.java" startLine="195" startPosition="111" endLine="196" endPosition="112" />
   </root>
   <root nodeId="1973189701691198687">
     <nodeInfo nodeId="1713017043371093243" fileName="ExtensionStaticFieldDeclaration_Editor.java" startLine="150" startPosition="111" endLine="151" endPosition="99" />
