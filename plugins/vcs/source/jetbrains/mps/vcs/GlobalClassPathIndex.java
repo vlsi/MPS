@@ -15,12 +15,17 @@
  */
 package jetbrains.mps.vcs;
 
+import com.intellij.ide.projectView.ProjectView;
+import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vcs.FilePath;
 import com.intellij.openapi.vcs.actions.VcsContextFactory;
 import jetbrains.mps.ide.projectPane.fileSystem.ExclusionChangedListener;
+import jetbrains.mps.ide.projectPane.fileSystem.FileViewProjectPane;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.*;
@@ -46,29 +51,36 @@ public class GlobalClassPathIndex implements ApplicationComponent {
   private boolean myIsChanged = false;
   private final List<ExclusionChangedListener> myListeners = new ArrayList<ExclusionChangedListener>();
   private final ModuleRepositoryAdapter myModuleRepositoryListener = new ModuleRepositoryAdapter() {
-    @Override
     public void moduleAdded(IModule module) {
       if (module.isPackaged()) return;
       GlobalClassPathIndex.this.moduleAdded(module);
     }
 
-    @Override
     public void moduleInitialized(IModule module) {
 //  todo moduleInitialized is not called on change module properties => move this call to the right place
 //      GlobalClassPathIndex.this.moduleInitialized(module);
     }
 
-    @Override
     public void moduleChanged(IModule changedModule) {
       if (changedModule.isPackaged()) return;
       GlobalClassPathIndex.this.moduleInitialized(changedModule);
       if (myIsChanged) {
-        notifyListeners();
+        //todo this is a hack. It's a bad code which is also very slow
+        for (Project p: ProjectManager.getInstance().getOpenProjects()){
+          ProjectView view = ProjectView.getInstance(p);
+          for (String id: view.getPaneIds()){
+            AbstractProjectViewPane pane = view.getProjectViewPaneById(id);
+            if (pane instanceof FileViewProjectPane){
+              ((FileViewProjectPane)pane).rebuildTreeLater();
+            }
+          }
+        }
+        //hack end
+
         myIsChanged = false;
       }
     }
 
-    @Override
     public void moduleRemoved(IModule module) {
       if (module.isPackaged()) return;
       GlobalClassPathIndex.this.moduleRemoved(module);
@@ -119,22 +131,6 @@ public class GlobalClassPathIndex implements ApplicationComponent {
 
   public Set<String> getExcludedClassPath() {
     return Collections.unmodifiableSet(myExcludedClassPath);
-  }
-
-  //--------events stuff----------
-
-  public void addListener(ExclusionChangedListener l) {
-    myListeners.add(l);
-  }
-
-  public void removeListener(ExclusionChangedListener l) {
-    myListeners.remove(l);
-  }
-
-  private void notifyListeners() {
-    for (ExclusionChangedListener l : myListeners) {
-      l.exclusionChanged();
-    }
   }
 
   //------------------------------

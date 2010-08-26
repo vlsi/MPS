@@ -77,14 +77,6 @@ public class VcsMigrationUtil {
 
 //-------------------------
 
-  public static void addListener(ExclusionChangedListener exclusionListener) {
-    //GlobalClassPathIndex.getInstance().addListener(exclusionListener);
-  }
-
-  public static void removeListener(ExclusionChangedListener exclusionListener) {
-    //GlobalClassPathIndex.getInstance().removeListener(exclusionListener);
-  }
-
   public static boolean isIgnoreGeneratedFiles() {
     return false;//MPSVcsProjectConfiguration.getInstance(getProject()).isIgnoreGeneratedFiles();
   }

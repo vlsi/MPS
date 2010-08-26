@@ -80,12 +80,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
   private final IdeDocumentHistory myIdeDocumentHistory;
   private final ProjectView myProjectView;
   private final FileEditorManager myEditorManager;
-  private ExclusionChangedListener myExclusionListener = new ExclusionChangedListener() {
-    public void exclusionChanged() {
-      rebuildTreeLater();
-    }
-  };
-
+ 
   private ChangeListListener myChangeListListener;
   private MessageBusConnection myMessageBusConnection;
   private FileStatusListener myFileStatusListener;
@@ -132,7 +127,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     return myProjectView;
   }
 
-  private void rebuildTreeLater() {
+  public void rebuildTreeLater() {
     if (myTimer.isRunning()) {
       return;
     } else {
@@ -237,7 +232,6 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
         }
       }
     });
-    VcsMigrationUtil.addListener(myExclusionListener);
   }
 
   private void disposeListeners() {
@@ -248,7 +242,6 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     ChangeListManager.getInstance(myProject).removeChangeListListener(myChangeListListener);
 
     myMessageBusConnection.disconnect();
-    VcsMigrationUtil.removeListener(myExclusionListener);
   }
 
   private boolean isInitialized() {

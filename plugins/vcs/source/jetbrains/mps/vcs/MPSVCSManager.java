@@ -263,7 +263,6 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   private class CompilationWatcher implements CompilationListener {
-
     public void beforeModelsCompiled(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
       myRemoveOperationScheduler.removeAllProcessingBans();
     }
