@@ -16,6 +16,8 @@ import jetbrains.mps.debug.evaluation.proxies.IObjectValueProxy;
 import java.util.ArrayList;
 import jetbrains.mps.debug.runtime.java.programState.proxies.JavaObjectValue;
 import jetbrains.mps.debug.evaluation.proxies.ProxyEqualsUtil;
+import jetbrains.mps.debug.evaluation.proxies.IArrayValueProxy;
+import jetbrains.mps.debug.evaluation.proxies.MirrorUtil;
 
 public class SNodeViewer_WrapperFactory extends ValueWrapperFactory {
   public SNodeViewer_WrapperFactory() {
@@ -57,20 +59,26 @@ public class SNodeViewer_WrapperFactory extends ValueWrapperFactory {
     protected List<CustomJavaWatchable> getSubvaluesImpl(IObjectValueProxy value) throws EvaluationException {
       List<CustomJavaWatchable> result = new ArrayList<CustomJavaWatchable>();
 
-      result.add(new SNodeWatchables.MyWatchable_id(JavaObjectValue.fromJDIValue(((IObjectValueProxy) value.invokeMethod("getId", "()Ljava/lang/String;")).getJDIValue(), getThreadReference()), "id"));
-      result.add(new SNodeWatchables.MyWatchable_model(JavaObjectValue.fromJDIValue(((IObjectValueProxy) EvaluationUtils.invokeStatic("jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations", "getModel", "(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SModel;", getThreadReference(), value)).getJDIValue(), getThreadReference()), "model"));
+      result.add(new SNodeWatchables.MyWatchable_id(JavaObjectValue.fromJDIValue(((IObjectValueProxy) value.getFieldValue("myId")).getJDIValue(), getThreadReference()), "id"));
+      result.add(new SNodeWatchables.MyWatchable_model(JavaObjectValue.fromJDIValue(((IObjectValueProxy) value.getFieldValue("myModel")).getJDIValue(), getThreadReference()), "model"));
       result.add(new SNodeWatchables.MyWatchable_concept(JavaObjectValue.fromJDIValue(((IObjectValueProxy) EvaluationUtils.invokeStatic("jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations", "getConceptDeclaration", "(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;", getThreadReference(), value)).getJDIValue(), getThreadReference()), "concept"));
 
-      for (IObjectValueProxy property : EvaluationUtils.<IObjectValueProxy>toIterable(((IObjectValueProxy) ((IObjectValueProxy) value.invokeMethod("getProperties", "()Ljava/util/Map;")).invokeMethod("entrySet", "()Ljava/util/Set;")))) {
-        result.add(new SNodeWatchables.MyWatchable_property(JavaObjectValue.fromJDIValue(property.getJDIValue(), getThreadReference()), "property"));
+      IObjectValueProxy properties = ((IObjectValueProxy) value.getFieldValue("myProperties"));
+      if (!(ProxyEqualsUtil.javaEquals(properties, null))) {
+        for (IObjectValueProxy property : EvaluationUtils.<IObjectValueProxy>toIterable(((IObjectValueProxy) properties.invokeMethod("entrySet", "()Ljava/util/Set;")))) {
+          result.add(new SNodeWatchables.MyWatchable_property(JavaObjectValue.fromJDIValue(property.getJDIValue(), getThreadReference()), "property"));
+        }
       }
 
       for (IObjectValueProxy child : EvaluationUtils.<IObjectValueProxy>toIterable(((IObjectValueProxy) EvaluationUtils.invokeStatic("jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations", "getChildren", "(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;", getThreadReference(), value)))) {
         result.add(new SNodeWatchables.MyWatchable_child(JavaObjectValue.fromJDIValue(child.getJDIValue(), getThreadReference()), "child"));
       }
 
-      for (IObjectValueProxy reference : EvaluationUtils.<IObjectValueProxy>toIterable(((IObjectValueProxy) EvaluationUtils.invokeStatic("jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations", "getReferences", "(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;", getThreadReference(), value)))) {
-        result.add(new SNodeWatchables.MyWatchable_reference(JavaObjectValue.fromJDIValue(reference.getJDIValue(), getThreadReference()), "reference"));
+      IArrayValueProxy references = ((IArrayValueProxy) value.getFieldValue("myReferences"));
+      if (!(ProxyEqualsUtil.javaEquals(references, null))) {
+        for (int i = 0; i < ((IArrayValueProxy) references).getLength(); i++) {
+          result.add(new SNodeWatchables.MyWatchable_reference(JavaObjectValue.fromJDIValue(((IObjectValueProxy) references.getElementAt(i)).getJDIValue(), getThreadReference()), "reference"));
+        }
       }
 
       return result;
@@ -85,11 +93,13 @@ public class SNodeViewer_WrapperFactory extends ValueWrapperFactory {
     }
 
     protected String getValuePresentation(IObjectValueProxy value) throws EvaluationException {
-      String containingRole = "";
-      if (!(ProxyEqualsUtil.javaEquals(((IObjectValueProxy) EvaluationUtils.invokeStatic("jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations", "getContainingLinkRole", "(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;", getThreadReference(), value)), null))) {
-        containingRole = " in role " + (String) (((IObjectValueProxy) EvaluationUtils.invokeStatic("jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations", "getContainingLinkRole", "(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;", getThreadReference(), value))).invokeMethod("toString", "()Ljava/lang/String;").getJavaValue();
+      IObjectValueProxy containingRole = ((IObjectValueProxy) value.getFieldValue("myRoleInParent"));
+      if (!(ProxyEqualsUtil.javaEquals(containingRole, null))) {
+        containingRole = ((IObjectValueProxy) MirrorUtil.getValueProxyFromJavaValue(" in role " + (String) (containingRole).invokeMethod("toString", "()Ljava/lang/String;").getJavaValue(), getThreadReference()));
+      } else {
+        containingRole = ((IObjectValueProxy) MirrorUtil.getValueProxyFromJavaValue("", getThreadReference()));
       }
-      return (String) (((IObjectValueProxy) EvaluationUtils.invokeStatic("jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations", "getString", "(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/lang/String;", getThreadReference(), ((IObjectValueProxy) EvaluationUtils.invokeStatic("jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations", "getConceptDeclaration", "(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;", getThreadReference(), value)), "name"))).invokeMethod("toString", "()Ljava/lang/String;").getJavaValue() + containingRole;
+      return (String) (((IObjectValueProxy) value.getFieldValue("myConceptFqName"))).invokeMethod("toString", "()Ljava/lang/String;").getJavaValue() + (String) (containingRole).invokeMethod("toString", "()Ljava/lang/String;").getJavaValue();
     }
   }
 }

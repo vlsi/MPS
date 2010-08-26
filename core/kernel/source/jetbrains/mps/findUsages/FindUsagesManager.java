@@ -18,7 +18,6 @@ package jetbrains.mps.findUsages;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.progress.ProgressIndicator;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.NullAdaptiveProgressMonitor;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
@@ -32,7 +31,7 @@ import java.util.Set;
 public abstract class FindUsagesManager implements ApplicationComponent {
 
   public static FindUsagesManager getInstance() {
-    return ApplicationManager.getApplication().getComponent(FindUsagesManager.class);
+    return ApplicationManager.getApplication().getComponent(ProxyFindUsagesManager.class);
   }
 
   public abstract Set<AbstractConceptDeclaration> findDescendants(AbstractConceptDeclaration node, IScope scope);

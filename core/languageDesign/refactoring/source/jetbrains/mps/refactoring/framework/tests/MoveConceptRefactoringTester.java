@@ -52,7 +52,7 @@ public class MoveConceptRefactoringTester implements IRefactoringTester {
 
 
     System.err.println("executing a refactoring");
-    new RefactoringProcessor().doExecuteInTest(refactoringContext);
+    new RefactoringTestFacade().doExecuteInTest(refactoringContext);
 
     final boolean[] result = new boolean[]{false};
     ThreadUtils.runInUIThreadAndWait(new Runnable() {

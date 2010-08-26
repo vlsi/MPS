@@ -1,26 +1,27 @@
 <!DOCTYPE idea-plugin PUBLIC "Plugin/DTD" "http://plugins.intellij.net/plugin.dtd">
 <idea-plugin>
+  <id>jetbrains.mps.ideaIntegration</id>
   <name>Idea Integration for MPS</name>
   <description>Connects MPS to IDEA</description>
-  <version>1.0</version>
-  <vendor>JetBrains</vendor>
+  <version>1.5</version>
+  <vendor url="http://www.jetbrains.com/mps/">JetBrains</vendor>
   <idea-version since-build="3000"/>
 
   <application-components>
-
+    <!-- no application components -->
   </application-components>
+
   <project-components>
     <component>
         <implementation-class>jetbrains.mps.plugin.MPSProjectIDEHandler</implementation-class>
     </component>
-
     <component>
         <implementation-class>jetbrains.mps.plugin.PluginStateMonitor</implementation-class>
     </component>
   </project-components>
 
   <actions>
-
+    <!-- no actions -->
   </actions>
 
   <extensions defaultExtensionNs="com.intellij">

@@ -15,28 +15,16 @@
  */
 package jetbrains.mps.smodel.presentation;
 
-import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.IResolveInfo;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.project.IModule;
 
-import javax.swing.Icon;
 import java.awt.Font;
 
 public class NodePresentationUtil {
-  public static Icon getIcon(SNode node, boolean referent_presentation) {
-    return getIcon(node.getAdapter(), referent_presentation);
-  }
-
-  public static Icon getIcon(INodeAdapter nodeAdapter, boolean referent_presentation) {
-    if (nodeAdapter instanceof ConceptDeclaration && !referent_presentation) {
-      return IconManager.getIconForConceptFQName(NameUtil.nodeFQName(nodeAdapter));
-    }
-    return IconManager.getIconFor(nodeAdapter.getNode());
-  }
 
   public static boolean isLocalTo(SNode referenceNode, SNode referentNode) {
     IModule referenceModule = toLanguage(referenceNode.getModel().getModelDescriptor().getModule());

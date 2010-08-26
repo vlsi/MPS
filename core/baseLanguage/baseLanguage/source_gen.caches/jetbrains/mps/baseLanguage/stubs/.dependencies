@@ -31,11 +31,10 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="jetbrains.mps.stubs.BaseStubModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.stubs.StubDescriptor" />
     <classNode dependClassName="jetbrains.mps.stubs.StubLocation" />
     <classNode dependClassName="jetbrains.mps.stubs.javastub.ASMModelLoader" />
     <classNode dependClassName="jetbrains.mps.stubs.javastub.classpath.StubHelper" />
-    <classNode dependClassName="jetbrains.mps.workbench.actions.goTo.index.SNodeDescriptor" />
-    <classNode dependClassName="jetbrains.mps.workbench.actions.goTo.index.StubSNodeDescriptor" />
     <classNode extendsClassName="jetbrains.mps.stubs.BaseStubModelRootManager" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.stubs.MPS_StubDescriptor" file="MPS_StubDescriptor.java">

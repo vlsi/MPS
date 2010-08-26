@@ -4,14 +4,13 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.stubs.StubDescriptor;
 import jetbrains.mps.stubs.StubReloadManager;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class StubsNodeDescriptorsCache implements ApplicationComponent {
 
@@ -52,9 +51,18 @@ public class StubsNodeDescriptorsCache implements ApplicationComponent {
     SModelRepository.getInstance().removeModelRepositoryListener(myListener);
   }
 
-  public List<SNodeDescriptor> getSNodeDescritpors(IModule m) {
+  public List<SNodeDescriptor> getSNodeDescriptors(IModule m) {
     if (!myCache.containsKey(m)) {
-      List<SNodeDescriptor> result = StubReloadManager.getInstance().getRootNodeDescriptors(((AbstractModule) m));
+      List<StubDescriptor> list = StubReloadManager.getInstance().getRootNodeDescriptors(((AbstractModule) m));
+      List<SNodeDescriptor> result = new ArrayList<SNodeDescriptor>(list.size());
+      for(final StubDescriptor sd : list) {
+        result.add(new SNodeDescriptor(sd.getClassName(), sd.getConceptFqName(), 0, 0, -1){
+          @Override
+          protected SModelReference calculateModelReference() {
+            return StubHelper.uidForPackageInStubs(sd.getPackage());
+          }
+        });
+      }
       myCache.put(m, result);
     }
     return Collections.unmodifiableList(myCache.get(m));

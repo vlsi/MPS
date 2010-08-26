@@ -16,18 +16,20 @@
 package jetbrains.mps.refactoring.framework;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
-
 import com.intellij.openapi.actionSystem.DataKey;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.refactoring.framework.IRefactoringTarget.TargetType;
+import jetbrains.mps.refactoring.RefactoringFacade;
 import jetbrains.mps.refactoring.framework.RefactoringUtil.Applicability;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class GenericRefactoringAction extends BaseAction {
   private IRefactoring myRefactoring;
@@ -67,7 +69,7 @@ public class GenericRefactoringAction extends BaseAction {
 
     new Thread() {
       public void run() {
-        new RefactoringProcessor().execute(myRefactoring, context);
+        new RefactoringFacade().execute(myRefactoring, context);
       }
     }.start();
   }

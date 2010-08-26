@@ -17,11 +17,11 @@ package jetbrains.mps.workbench.actions.nodes;
 
 import jetbrains.mps.ide.dialogs.BaseNodeDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
+import jetbrains.mps.ide.util.JSplitPaneWithoutBorders;
 import jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRuleUtil;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystem.uiActions.SupertypesViewTool;
-import jetbrains.mps.util.JSplitPaneWithoutBorders;
 
 import javax.swing.AbstractAction;
 import javax.swing.JButton;

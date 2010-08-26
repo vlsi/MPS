@@ -1914,7 +1914,7 @@
                       <node role="templateNode:2" type="jetbrains.mps.buildlanguage.structure.FileName:21" id="1580548376419850431">
                         <node role="value:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1580548376419850432">
                           <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1580548376419850433">
-                            <property name="value:21" value="/MPSPlugin/MPSSupport/classes" />
+                            <property name="value:21" value="/core/runtime/classes" />
                           </node>
                           <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1580548376419850434">
                             <link role="propertyDeclaration:21" targetNodeId="1230642359528" resolveInfo="mps_home" />

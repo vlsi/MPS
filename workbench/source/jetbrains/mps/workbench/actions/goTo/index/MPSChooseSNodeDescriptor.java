@@ -109,7 +109,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
 
   private void addJavaStubs(List<SNodeDescriptor> result, IScope scope) {
     for (IModule m : scope.getVisibleModules()) {
-      result.addAll(StubsNodeDescriptorsCache.getInstance().getSNodeDescritpors(m));
+      result.addAll(StubsNodeDescriptorsCache.getInstance().getSNodeDescriptors(m));
     }
   }
 

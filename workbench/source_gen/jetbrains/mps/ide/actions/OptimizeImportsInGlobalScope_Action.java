@@ -13,7 +13,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.workbench.actions.model.OptimizeImportsHelper;
+import jetbrains.mps.project.OptimizeImportsHelper;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelRepository;

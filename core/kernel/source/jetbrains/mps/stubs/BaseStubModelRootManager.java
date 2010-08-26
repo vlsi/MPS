@@ -22,7 +22,6 @@ import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.AbstractModelRootManager;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
-import jetbrains.mps.workbench.actions.goTo.index.SNodeDescriptor;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
@@ -148,7 +147,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
     }
   }
 
-  public Set<SNodeDescriptor> getRootNodeDescriptors(StubLocation location) {
+  public Set<StubDescriptor> getRootNodeDescriptors(StubLocation location) {
     return Collections.emptySet();
   }
 

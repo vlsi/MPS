@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1174914167958">
+    <nodeInfo nodeId="1202148790550" fileName="InternalClassifierType_Editor.java" startLine="218" startPosition="110" endLine="219" endPosition="98" />
     <scopeInfo nodeId="1202148781769" fileName="InternalClassifierType_Editor.java" startLine="218" startPosition="110" endLine="219" endPosition="98" />
   </root>
   <root nodeId="1176743254937">
@@ -24,6 +25,7 @@
     </scopeInfo>
   </root>
   <root nodeId="1177590124002">
+    <nodeInfo nodeId="1209817335692" fileName="InternalPartialFieldReference_Editor.java" startLine="193" startPosition="111" endLine="194" endPosition="69" />
     <scopeInfo nodeId="1209817320377" fileName="InternalPartialFieldReference_Editor.java" startLine="193" startPosition="111" endLine="194" endPosition="69" />
   </root>
 </debugInfo>

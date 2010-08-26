@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="6825241477451043706">
+    <nodeInfo nodeId="6825241477451043710" fileName="PrivateFieldReferenceOperation_fieldDeclaration_ReferentConstraint.java" startLine="31" startPosition="132" endLine="32" endPosition="124" />
+    <nodeInfo nodeId="6825241477451043712" fileName="PrivateFieldReferenceOperation_fieldDeclaration_ReferentConstraint.java" startLine="32" startPosition="124" endLine="33" endPosition="169" />
+    <nodeInfo nodeId="6825241477451043719" fileName="PrivateFieldReferenceOperation_fieldDeclaration_ReferentConstraint.java" startLine="33" startPosition="169" endLine="34" endPosition="234" />
+    <nodeInfo nodeId="6825241477451043727" fileName="PrivateFieldReferenceOperation_fieldDeclaration_ReferentConstraint.java" startLine="34" startPosition="234" endLine="38" endPosition="47" />
+    <scopeInfo nodeId="6825241477451043709" fileName="PrivateFieldReferenceOperation_fieldDeclaration_ReferentConstraint.java" startLine="31" startPosition="132" endLine="38" endPosition="47">
+      <varInfo nodeId="6825241477451043720" varName="classifierType" />
+      <varInfo nodeId="6825241477451043713" varName="instance" />
+    </scopeInfo>
+  </root>
+  <root nodeId="6825241477451051015">
+    <nodeInfo nodeId="6825241477451051030" fileName="PrivateInstanceMethodCallOperation_instanceMethodDeclaration_ReferentConstraint.java" startLine="34" startPosition="125" endLine="35" endPosition="52" />
+    <nodeInfo nodeId="6825241477451051040" fileName="PrivateInstanceMethodCallOperation_instanceMethodDeclaration_ReferentConstraint.java" startLine="36" startPosition="5" endLine="37" endPosition="169" />
+    <nodeInfo nodeId="6825241477451051047" fileName="PrivateInstanceMethodCallOperation_instanceMethodDeclaration_ReferentConstraint.java" startLine="37" startPosition="169" endLine="38" endPosition="234" />
+    <nodeInfo nodeId="6825241477451051028" fileName="PrivateInstanceMethodCallOperation_instanceMethodDeclaration_ReferentConstraint.java" startLine="33" startPosition="132" endLine="36" endPosition="5" />
+    <nodeInfo nodeId="6825241477451051055" fileName="PrivateInstanceMethodCallOperation_instanceMethodDeclaration_ReferentConstraint.java" startLine="38" startPosition="234" endLine="42" endPosition="48" />
+    <scopeInfo nodeId="6825241477451051029" fileName="PrivateInstanceMethodCallOperation_instanceMethodDeclaration_ReferentConstraint.java" startLine="34" startPosition="125" endLine="35" endPosition="52" />
+    <scopeInfo nodeId="6825241477451051018" fileName="PrivateInstanceMethodCallOperation_instanceMethodDeclaration_ReferentConstraint.java" startLine="33" startPosition="132" endLine="42" endPosition="48">
+      <varInfo nodeId="6825241477451051048" varName="classifierType" />
+      <varInfo nodeId="6825241477451051041" varName="instance" />
+    </scopeInfo>
+  </root>
+</debugInfo>
+

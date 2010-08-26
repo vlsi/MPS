@@ -24,7 +24,6 @@ import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.vcs.diff.Conflict;
 import jetbrains.mps.vcs.diff.Merger;
 import jetbrains.mps.vcs.diff.changes.Change;
@@ -38,6 +37,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 

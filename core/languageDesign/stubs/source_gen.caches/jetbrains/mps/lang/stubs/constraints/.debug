@@ -9,6 +9,7 @@
     <nodeInfo nodeId="562112407431866989" fileName="LanguageRef_languageFqName_PropertyConstraint.java" startLine="37" startPosition="0" endLine="38" endPosition="79" />
     <nodeInfo nodeId="562112407431867010" fileName="LanguageRef_languageFqName_PropertyConstraint.java" startLine="39" startPosition="25" endLine="40" endPosition="33" />
     <nodeInfo nodeId="562112407431867000" fileName="LanguageRef_languageFqName_PropertyConstraint.java" startLine="41" startPosition="5" endLine="42" endPosition="0" />
+    <nodeInfo nodeId="562112407431570000" fileName="LanguageRef_languageFqName_PropertyConstraint.java" startLine="42" startPosition="0" endLine="43" endPosition="36" />
     <nodeInfo nodeId="562112407431845227" fileName="LanguageRef_languageFqName_PropertyConstraint.java" startLine="28" startPosition="80" endLine="31" endPosition="5" />
     <nodeInfo nodeId="562112407431866972" fileName="LanguageRef_languageFqName_PropertyConstraint.java" startLine="33" startPosition="95" endLine="36" endPosition="5" />
     <nodeInfo nodeId="562112407431867001" fileName="LanguageRef_languageFqName_PropertyConstraint.java" startLine="38" startPosition="79" endLine="41" endPosition="5" />
@@ -29,6 +30,7 @@
     <nodeInfo nodeId="2295084792488056032" fileName="LibraryStubDescriptor_moduleName_PropertyConstraint.java" startLine="37" startPosition="0" endLine="38" endPosition="79" />
     <nodeInfo nodeId="2295084792488056041" fileName="LibraryStubDescriptor_moduleName_PropertyConstraint.java" startLine="39" startPosition="25" endLine="40" endPosition="33" />
     <nodeInfo nodeId="2295084792488056048" fileName="LibraryStubDescriptor_moduleName_PropertyConstraint.java" startLine="41" startPosition="5" endLine="42" endPosition="0" />
+    <nodeInfo nodeId="2295084792488056049" fileName="LibraryStubDescriptor_moduleName_PropertyConstraint.java" startLine="42" startPosition="0" endLine="43" endPosition="36" />
     <nodeInfo nodeId="2295084792488056007" fileName="LibraryStubDescriptor_moduleName_PropertyConstraint.java" startLine="28" startPosition="80" endLine="31" endPosition="5" />
     <nodeInfo nodeId="2295084792488056024" fileName="LibraryStubDescriptor_moduleName_PropertyConstraint.java" startLine="33" startPosition="93" endLine="36" endPosition="5" />
     <nodeInfo nodeId="2295084792488056039" fileName="LibraryStubDescriptor_moduleName_PropertyConstraint.java" startLine="38" startPosition="79" endLine="41" endPosition="5" />
@@ -41,6 +43,7 @@
     </scopeInfo>
   </root>
   <root nodeId="972176972348253740">
+    <nodeInfo nodeId="972176972348253743" fileName="Stereotype_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="150" />
     <scopeInfo nodeId="972176972348253742" fileName="Stereotype_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="150" />
   </root>
 </debugInfo>

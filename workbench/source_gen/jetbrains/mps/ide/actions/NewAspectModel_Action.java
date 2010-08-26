@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.LanguageAspect;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -41,7 +42,7 @@ public class NewAspectModel_Action extends GeneratedAction {
   public void doUpdate(@NotNull AnActionEvent event) {
     try {
       event.getPresentation().setText(NameUtil.capitalize(NewAspectModel_Action.this.aspect.getName()) + " Aspect");
-      event.getPresentation().setIcon(NewAspectModel_Action.this.aspect.getIcon());
+      event.getPresentation().setIcon(IconManager.getIconForAspect(NewAspectModel_Action.this.aspect));
       if (NewAspectModel_Action.this.module instanceof Language) {
         NewAspectModel_Action.this.setEnabledState(event.getPresentation(), NewAspectModel_Action.this.aspect.get(((Language) NewAspectModel_Action.this.module)) == null);
       } else {

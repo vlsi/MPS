@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.workbench.action;
 
-import jetbrains.mps.util.misc.hash.HashMap;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.KeyStroke;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 

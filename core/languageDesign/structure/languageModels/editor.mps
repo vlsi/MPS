@@ -41,7 +41,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" version="8" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.lang.intentions.constraints)" version="1" />
-  <maxImportIndex value="45" />
+  <maxImportIndex value="46" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="5" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
@@ -56,6 +56,7 @@
   <import index="42" modelUID="f:java_stub#jetbrains.mps.refactoring.framework(jetbrains.mps.refactoring.framework@java_stub)" version="-1" />
   <import index="43" modelUID="f:java_stub#jetbrains.mps.lang.structure.scripts(jetbrains.mps.lang.structure.scripts@java_stub)" version="-1" />
   <import index="45" modelUID="f:java_stub#jetbrains.mps.lang.structure.refactorings(jetbrains.mps.lang.structure.refactorings@java_stub)" version="-1" />
+  <import index="46" modelUID="f:java_stub#jetbrains.mps.refactoring(jetbrains.mps.refactoring@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1082979388796">
     <property name="name:32" value="ConstrainedDataTypeDeclaration_Editor" />
     <link role="conceptDeclaration:32" targetNodeId="1.1082978499127:0" />
@@ -3131,11 +3132,11 @@
                         <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2754395556039700645">
                           <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2754395556039700640">
                             <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="2754395556039700642">
-                              <link role="baseMethodDeclaration:3" targetNodeId="5.~RefactoringProcessor.&lt;init&gt;()" resolveInfo="RefactoringProcessor" />
+                              <link role="baseMethodDeclaration:3" targetNodeId="46.~RefactoringFacade.&lt;init&gt;()" resolveInfo="RefactoringFacade" />
                             </node>
                           </node>
                           <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2754395556039700649">
-                            <link role="baseMethodDeclaration:3" targetNodeId="5.~RefactoringProcessor.execute(jetbrains.mps.refactoring.framework.IRefactoring,jetbrains.mps.refactoring.framework.RefactoringContext):void" resolveInfo="execute" />
+                            <link role="baseMethodDeclaration:3" targetNodeId="46.~RefactoringFacade.execute(jetbrains.mps.refactoring.framework.IRefactoring,jetbrains.mps.refactoring.framework.RefactoringContext):void" resolveInfo="execute" />
                             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8292108433549555448">
                               <link role="variableDeclaration:3" targetNodeId="8292108433549555404" resolveInfo="refactoring" />
                             </node>

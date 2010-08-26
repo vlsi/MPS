@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.lang.typesystem.runtime.incremental.AbstractNodesReadListener;
 import jetbrains.mps.util.ManyToManyMap;
 
 import java.util.Collections;

@@ -45,7 +45,9 @@
     <classNode dependClassName="jetbrains.mps.debug.evaluation.EvaluationException" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.EvaluationRuntimeException" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.EvaluationUtils" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.IArrayValueProxy" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.IObjectValueProxy" />
+    <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.MirrorUtil" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.ProxyEqualsUtil" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaObjectValue" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue" />

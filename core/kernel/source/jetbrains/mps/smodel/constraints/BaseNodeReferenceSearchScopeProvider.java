@@ -15,21 +15,17 @@
  */
 package jetbrains.mps.smodel.constraints;
 
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.presentation.NodePresentationUtil;
-import jetbrains.mps.smodel.search.*;
+import jetbrains.mps.smodel.search.EmptySearchScope;
+import jetbrains.mps.smodel.search.ISearchScope;
+import jetbrains.mps.smodel.search.SimpleSearchScope;
+import jetbrains.mps.smodel.search.UndefinedSearchScope;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Condition;
-import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public abstract class BaseNodeReferenceSearchScopeProvider implements INodeReferentSearchScopeProvider{
+public abstract class BaseNodeReferenceSearchScopeProvider implements INodeReferentSearchScopeProvider {
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return new UndefinedSearchScope();
   }
