@@ -6,9 +6,11 @@ import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent.DebugSessionListener;
+import jetbrains.mps.debug.api.info.DebugInfoUtil;
 import jetbrains.mps.debug.api.integration.ui.breakpoint.CurrentLinePainter;
 import jetbrains.mps.debug.api.programState.ILocation;
 import jetbrains.mps.debug.api.programState.IStackFrame;
+import jetbrains.mps.debug.api.programState.NullLocation;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -148,8 +150,8 @@ public class CurrentLinePositionComponent implements ProjectComponent {
     IStackFrame stackFrame = debugSession.getUiState().getStackFrame();
     if (stackFrame != null) {
       ILocation location = stackFrame.getLocation();
-      if (location != null) {
-        SNode node = StacktraceUtil2.getNode(location);
+      if (location != null && !(location instanceof NullLocation)) {
+        SNode node = DebugInfoUtil.getNode(location.getUnitName(), location.getFileName(), location.getLineNumber());
         if (node != null) {
           final CurrentLinePainter newPainter = new CurrentLinePainter(node);
 

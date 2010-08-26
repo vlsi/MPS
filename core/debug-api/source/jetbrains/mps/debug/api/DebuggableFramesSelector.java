@@ -1,12 +1,11 @@
 package jetbrains.mps.debug.api;
 
-import jetbrains.mps.debug.api.StacktraceUtil2;
+import jetbrains.mps.debug.api.info.DebugInfoUtil;
 import jetbrains.mps.debug.api.programState.ILocation;
 import jetbrains.mps.debug.api.programState.IStackFrame;
-import jetbrains.mps.debug.api.IDebuggableFramesSelector;
+import jetbrains.mps.debug.api.programState.NullLocation;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.EqualUtil;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 
@@ -27,7 +26,9 @@ public class DebuggableFramesSelector implements IDebuggableFramesSelector {
   @Override
   public boolean isDebuggableFrame(@NotNull IStackFrame frame) {
     ILocation location = frame.getLocation();
-    SNode node = StacktraceUtil2.getNode(location);
+    if (location instanceof NullLocation) return false;
+    
+    SNode node = DebugInfoUtil.getNode(location.getUnitName(), location.getFileName(), location.getLineNumber());
     if (node != null) {
       return true;
     }
@@ -36,7 +37,7 @@ public class DebuggableFramesSelector implements IDebuggableFramesSelector {
 
   @Override
   public boolean isDebuggablePosition(String unitName, String fileName, int position) {
-    SNode node = StacktraceUtil2.getNode(unitName, fileName, position);
+    SNode node = DebugInfoUtil.getNode(unitName, fileName, position);
     if (node != null) {
       return true;
     }
@@ -49,8 +50,8 @@ public class DebuggableFramesSelector implements IDebuggableFramesSelector {
       return true;
     }
 
-    SNode lastNode = StacktraceUtil2.getNode(lastUnitName, lastFileName, lastLineNumber);
-    SNode nextNode = StacktraceUtil2.getNode(nextUnitName, nextFileName, nextLineNumber);
+    SNode lastNode = DebugInfoUtil.getNode(lastUnitName, lastFileName, lastLineNumber);
+    SNode nextNode = DebugInfoUtil.getNode(nextUnitName, nextFileName, nextLineNumber);
     return lastNode == nextNode;
   }
 }

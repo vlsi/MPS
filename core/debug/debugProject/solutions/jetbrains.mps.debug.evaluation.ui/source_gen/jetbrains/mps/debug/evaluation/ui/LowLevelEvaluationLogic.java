@@ -43,7 +43,7 @@ import com.sun.jdi.CharType;
 import com.sun.jdi.ArrayType;
 import jetbrains.mps.debug.runtime.java.programState.proxies.JavaStackFrame;
 import com.sun.jdi.Location;
-import jetbrains.mps.debug.api.info.StacktraceUtil;
+import jetbrains.mps.debug.api.info.DebugInfoUtil;
 import com.sun.jdi.AbsentInformationException;
 import com.sun.jdi.ObjectReference;
 import java.util.List;
@@ -152,7 +152,7 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
     if (frame != null) {
       Location location = frame.getLocation().getLocation();
       try {
-        final String unitType = StacktraceUtil.getUnitName(location.declaringType().name(), location.sourceName(), location.lineNumber());
+        final String unitType = DebugInfoUtil.getUnitName(location.declaringType().name(), location.sourceName(), location.lineNumber());
         if (unitType == null) {
           return null;
         }
