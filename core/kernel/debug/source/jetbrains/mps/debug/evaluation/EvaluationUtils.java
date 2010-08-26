@@ -165,6 +165,10 @@ public class EvaluationUtils {
     return new IterableProxy<T>(valueProxy);
   }
 
+  public static <T extends IValueProxy> Iterable<T> toIterable(IArrayValueProxy valueProxy) {
+    return new IterableArrayProxy<T>(valueProxy);
+  }
+
   @NotNull
   public static IValueProxy invokeStatic(String className, String name, String jniSignature, ThreadReference threadReference, Object... args) throws EvaluationException {
     return MirrorUtil.getValueProxy(EvaluationUtils.invokeStaticInternal(className, name, jniSignature, threadReference, args), threadReference);
