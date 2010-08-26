@@ -61,13 +61,11 @@ public class MPSVCSManager implements ProjectComponent {
   private final Object myMonitor = new Object();
 
   private final VcsOperationsScheduler<AddOperation> myAddOperationScheduler = new VcsOperationsScheduler<AddOperation>(true) {
-    @Override
     public void processTask(AddOperation operation) {
       perform(operation);
     }
   };
   private final VcsOperationsScheduler<RemoveOperation> myRemoveOperationScheduler = new VcsOperationsScheduler<RemoveOperation>(true) {
-    @Override
     public void processTask(RemoveOperation operation) {
       perform(operation);
     }
@@ -80,7 +78,6 @@ public class MPSVCSManager implements ProjectComponent {
   private final GlobalModelSavedListener myGlobalModelSavedListener = new GlobalModelSavedListener();
   private final DataCreationListener myMetadataListener = new MyMetadataCreationListener();
   private final ChangeListAdapter myChangeListUpdateListener = new ChangeListAdapter() {
-    @Override
     public void changeListUpdateDone() {
       myChangeListManagerInitialized = true;
     }
@@ -103,30 +100,16 @@ public class MPSVCSManager implements ProjectComponent {
     for (File f : files) {
       f.delete();
     }
-    if (!isProjectUnderVcs()) {
-      return;
-    }
+    if (!isProjectUnderVcs()) return;
     removeFromVcs(files, silently);
-    return;
   }
 
   public void deleteFromDiskAndRemoveFromVcs(final Set<VirtualFile> virtualFiles, final boolean silently) {
-    if (virtualFiles.size() == 0) return;
-    for (VirtualFile f : virtualFiles) {
-      try {
-        f.delete(this);
-      } catch (IOException e) {
-        LOG.error("Error while deleting file " + f + "\n", e);
-      }
-    }
-    if (!isProjectUnderVcs()) {
-      return;
-    }
     List<File> files = new ArrayList<File>();
     for (VirtualFile f : virtualFiles) {
       files.add(VFileSystem.toFile(f));
     }
-    removeFromVcs(files, silently);
+    deleteFromDiskAndRemoveFromVcs(files,silently);
   }
 
   public void removeFromVcs(List<File> files, boolean silently) {
@@ -154,17 +137,13 @@ public class MPSVCSManager implements ProjectComponent {
     ensureVcssInitialized();
     AbstractVcs vcs = myManager.getVcsFor(vfile);
 
-    if (vcs == null) {
-      return false;
-    }
+    if (vcs == null) return false;
 
     VcsDirtyScopeImpl scope = new VcsDirtyScopeImpl(vcs, myProject);
     scope.addDirtyFile(VcsContextFactory.SERVICE.getInstance().createFilePathOn(vfile));
     ChangeProvider changeProvider = vcs.getChangeProvider();
 
-    if (changeProvider == null) {
-      return false;
-    }
+    if (changeProvider == null) return false;
 
     final MyChangelistBuilder builder = new MyChangelistBuilder(vfile);
     try {
@@ -195,7 +174,6 @@ public class MPSVCSManager implements ProjectComponent {
 
   @NonNls
   @NotNull
-
   public String getComponentName() {
     return "VCS Manager";
   }
@@ -298,7 +276,6 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   private class MySModelRepositoryListener extends SModelRepositoryAdapter {
-    @Override
     public void modelCreated(SModelDescriptor modelDescriptor) {
       modelDescriptor.addModelListener(myNewModelSavedListener);
     }
@@ -311,7 +288,6 @@ public class MPSVCSManager implements ProjectComponent {
       }
     }
 
-    @Override
     public void beforeModelFileChanged(SModelDescriptor modelDescriptor) {
       Set<IModule> modules = modelDescriptor.getModules();
       for (IModule m : modules) {
@@ -363,17 +339,14 @@ public class MPSVCSManager implements ProjectComponent {
       myVirtualFile = vfile;
     }
 
-    @Override
     public void processChangeInList(Change change, @Nullable ChangeList changeList, VcsKey vcsKey) {
       processChange(change, vcsKey);
     }
 
-    @Override
     public void processChangeInList(Change change, String changeListName, VcsKey vcsKey) {
       processChange(change, vcsKey);
     }
 
-    @Override
     public void processChange(Change change, VcsKey vcsKey) {
       if (change.getFileStatus().equals(FileStatus.MERGED_WITH_CONFLICTS)) {
         ContentRevision contentRevision = change.getAfterRevision();

@@ -101,7 +101,7 @@ public class VCSQueue implements ApplicationComponent {
             assert file != null : "Can not find virtual file for " + f;
             filesToAdd.add(file);
           }
-          VCSUtil.addFilesToVcs(filesToAdd, false);
+          VCSUtil.addFilesToVcs(filesToAdd, false, true);
         }
       });
     }
@@ -118,7 +118,7 @@ public class VCSQueue implements ApplicationComponent {
         FilePath file = VcsHelper.getFilePath(f);
         filesToAdd.add(file);
       }
-      VCSUtil.removeFilesFromVcs(filesToAdd);
+      VCSUtil.removeFilesFromVcs(filesToAdd, true);
     }
   }
 }

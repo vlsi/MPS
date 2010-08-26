@@ -46,15 +46,11 @@ public class VcsMigrationUtil {
 //-------------------------
 
   public static void addFilesToVcs(ArrayList<File> files, boolean b, boolean b1) {
-    //(MPSVCSManager.class).addFilesToVcs(files,b,b1);
+     //ApplicationLevelVcsManager.instance().addFilesToVcs(files,b,b1);
   }
 
   public static void removeFromVcs(List<File> files, boolean b) {
-    //Project project = VcsMigrationUtil.getProjectForFile(vfile);
-   // if (project != null) {
-      //MPSVCSManager.getInstance(project).removeFromVcs(files,b);
-  //  }
-
+    //ApplicationLevelVcsManager.instance().removeFilesFromVcs(files,b);
   }
 
   public static void addFileToVcs(VirtualFile virtualFile, boolean b) {

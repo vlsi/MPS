@@ -107,73 +107,64 @@ public class VCSUtil {
     return false;
   }
 
-  public static void addFilesToVcs(List<VirtualFile> files, boolean recursive) {
+  public static void addFilesToVcs(List<VirtualFile> files, boolean recursive,boolean silently) {
     // collect
     Map<MPSVCSManager, Set<VirtualFile>> vcsManagerToFile = new HashMap<MPSVCSManager, Set<VirtualFile>>();
     for (VirtualFile file : files) {
       Project projectForFile = getProjectForFile(file);
-      if (projectForFile != null) {
-        MPSVCSManager mpsVcsManager = MPSVCSManager.getInstance(projectForFile);
-        if (mpsVcsManager != null) {
-          Set<VirtualFile> filesForManager = vcsManagerToFile.get(mpsVcsManager);
-          if (filesForManager == null) {
-            filesForManager = new HashSet<VirtualFile>();
-            vcsManagerToFile.put(mpsVcsManager, filesForManager);
-          }
-          filesForManager.add(file);
-        } else {
-          LOG.debug("Can not find " + MPSVCSManager.class.getName() + " instance for file " + file + ".");
-        }
-      } else {
-        LOG.debug("Can not find " + Project.class.getName() + " instance for file " + file + ".");
+      if (projectForFile == null) continue;
+      MPSVCSManager mpsVcsManager = MPSVCSManager.getInstance(projectForFile);
+      if (mpsVcsManager == null) {
+        LOG.debug("Can not find " + MPSVCSManager.class.getName() + " instance for file " + file + ".");
+        continue;
       }
+      Set<VirtualFile> filesForManager = vcsManagerToFile.get(mpsVcsManager);
+      if (filesForManager == null) {
+        filesForManager = new HashSet<VirtualFile>();
+        vcsManagerToFile.put(mpsVcsManager, filesForManager);
+      }
+      filesForManager.add(file);
     }
 
     // add
     for (MPSVCSManager manager : vcsManagerToFile.keySet()) {
-      manager.addVirtualFilesToVcs(vcsManagerToFile.get(manager), recursive, true);
+      manager.addVirtualFilesToVcs(vcsManagerToFile.get(manager), recursive, silently);
     }
   }
 
   public static void addFileToVcs(VirtualFile file, boolean recursive) {
     Project project = getProjectForFile(file);
-    if (project != null) {
-      MPSVCSManager manager = MPSVCSManager.getInstance(project);
-      if (manager != null) {
-        manager.addVirtualFilesToVcs(Collections.singleton(file), recursive, true);
-      } else {
-        LOG.debug("Can not find " + MPSVCSManager.class.getName() + " instance for file " + file + ".");
-      }
+    if (project == null) return;
+    MPSVCSManager manager = MPSVCSManager.getInstance(project);
+    if (manager != null) {
+      manager.addVirtualFilesToVcs(Collections.singleton(file), recursive, true);
     } else {
-      LOG.warning("Can't find project for " + file.getPath());
+      LOG.debug("Can not find " + MPSVCSManager.class.getName() + " instance for file " + file + ".");
     }
   }
 
-  public static void removeFilesFromVcs(List<FilePath> files) {
+  public static void removeFilesFromVcs(List<FilePath> files,boolean silently) {
     // collect
     Map<MPSVCSManager, List<File>> vcsManagerToFile = new HashMap<MPSVCSManager, List<File>>();
     for (FilePath file : files) {
       Project project = getProjectForFilePath(file);
-      if (project != null) {
-        MPSVCSManager mpsVcsManager = MPSVCSManager.getInstance(project);
-        if (mpsVcsManager != null) {
-          List<File> filesForManager = vcsManagerToFile.get(mpsVcsManager);
-          if (filesForManager == null) {
-            filesForManager = new LinkedList<File>();
-            vcsManagerToFile.put(mpsVcsManager, filesForManager);
-          }
-          filesForManager.add(file.getIOFile());
-        } else {
-          LOG.debug("Can not find " + MPSVCSManager.class.getName() + " instance for file " + file + ".");
-        }
-      } else {
-        LOG.debug("Can not find " + Project.class.getName() + " instance for file " + file + ".");
+      if (project == null) continue;
+      MPSVCSManager mpsVcsManager = MPSVCSManager.getInstance(project);
+      if (mpsVcsManager == null) {
+        LOG.debug("Can not find " + MPSVCSManager.class.getName() + " instance for file " + file + ".");
+        continue;
       }
+      List<File> filesForManager = vcsManagerToFile.get(mpsVcsManager);
+      if (filesForManager == null) {
+        filesForManager = new LinkedList<File>();
+        vcsManagerToFile.put(mpsVcsManager, filesForManager);
+      }
+      filesForManager.add(file.getIOFile());
     }
 
     // remove
     for (MPSVCSManager manager : vcsManagerToFile.keySet()) {
-      manager.deleteFromDiskAndRemoveFromVcs(vcsManagerToFile.get(manager), true);
+      manager.deleteFromDiskAndRemoveFromVcs(vcsManagerToFile.get(manager), silently);
     }
   }
 
