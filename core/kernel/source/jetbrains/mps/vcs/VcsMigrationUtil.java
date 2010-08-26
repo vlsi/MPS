@@ -45,16 +45,12 @@ public class VcsMigrationUtil {
 
 //-------------------------
 
-  public static void addFilesToVcs(ArrayList<File> files, boolean b, boolean b1) {
+  public static void addFilesToVcs(List<File> files, boolean b, boolean b1) {
      //ApplicationLevelVcsManager.instance().addFilesToVcs(files,b,b1);
   }
 
   public static void removeFromVcs(List<File> files, boolean b) {
     //ApplicationLevelVcsManager.instance().removeFilesFromVcs(files,b);
-  }
-
-  public static void addFileToVcs(VirtualFile virtualFile, boolean b) {
-    //ApplicationLevelVcsManager.instance().addFileToVcs(virtualFile,b);
   }
 
   public static VcsRevisionNumber getRevisionNumber(VirtualFile file) {

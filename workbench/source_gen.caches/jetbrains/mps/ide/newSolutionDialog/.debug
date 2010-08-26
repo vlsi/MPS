@@ -83,41 +83,44 @@
     <unitInfo nodeId="1218128984797" fileName="NewSolutionDialogContentPane.java" startLine="226" startPosition="42" endLine="235" endPosition="5" unitName="jetbrains.mps.ide.newSolutionDialog.NewSolutionDialogContentPane$2" />
   </root>
   <root nodeId="5890305283801268194">
-    <nodeInfo nodeId="5890305283801268202" fileName="NewModuleUtil.java" startLine="21" startPosition="90" endLine="22" endPosition="53" />
-    <nodeInfo nodeId="5890305283801268212" fileName="NewModuleUtil.java" startLine="23" startPosition="26" endLine="24" endPosition="19" />
-    <nodeInfo nodeId="5890305283801268220" fileName="NewModuleUtil.java" startLine="25" startPosition="5" endLine="26" endPosition="69" />
-    <nodeInfo nodeId="5890305283801268225" fileName="NewModuleUtil.java" startLine="26" startPosition="69" endLine="27" endPosition="50" />
-    <nodeInfo nodeId="5890305283801268230" fileName="NewModuleUtil.java" startLine="27" startPosition="50" endLine="28" endPosition="45" />
-    <nodeInfo nodeId="5890305283801268236" fileName="NewModuleUtil.java" startLine="28" startPosition="45" endLine="29" endPosition="82" />
-    <nodeInfo nodeId="5890305283801268249" fileName="NewModuleUtil.java" startLine="29" startPosition="82" endLine="30" endPosition="42" />
-    <nodeInfo nodeId="5890305283801268254" fileName="NewModuleUtil.java" startLine="30" startPosition="42" endLine="31" endPosition="28" />
-    <nodeInfo nodeId="5890305283801268259" fileName="NewModuleUtil.java" startLine="31" startPosition="28" endLine="32" endPosition="66" />
-    <nodeInfo nodeId="5890305283801268268" fileName="NewModuleUtil.java" startLine="32" startPosition="66" endLine="33" endPosition="54" />
-    <nodeInfo nodeId="5890305283801268275" fileName="NewModuleUtil.java" startLine="33" startPosition="54" endLine="34" endPosition="91" />
-    <nodeInfo nodeId="5890305283801268291" fileName="NewModuleUtil.java" startLine="36" startPosition="25" endLine="37" endPosition="111" />
-    <nodeInfo nodeId="5890305283801268299" fileName="NewModuleUtil.java" startLine="39" startPosition="32" endLine="40" endPosition="61" />
-    <nodeInfo nodeId="5890305283801268308" fileName="NewModuleUtil.java" startLine="17" startPosition="28" endLine="19" endPosition="3" />
-    <nodeInfo nodeId="5890305283801268210" fileName="NewModuleUtil.java" startLine="22" startPosition="53" endLine="25" endPosition="5" />
-    <nodeInfo nodeId="5890305283801268287" fileName="NewModuleUtil.java" startLine="35" startPosition="68" endLine="39" endPosition="0" />
-    <nodeInfo nodeId="5890305283801268279" fileName="NewModuleUtil.java" startLine="34" startPosition="91" endLine="39" endPosition="32" />
-    <nodeInfo nodeId="5890305283801268195" fileName="NewModuleUtil.java" startLine="20" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="5890305283801268311" fileName="NewModuleUtil.java" startLine="18" startPosition="26" endLine="18" endPosition="26" />
-    <scopeInfo nodeId="5890305283801268211" fileName="NewModuleUtil.java" startLine="23" startPosition="26" endLine="24" endPosition="19" />
-    <scopeInfo nodeId="5890305283801268290" fileName="NewModuleUtil.java" startLine="36" startPosition="25" endLine="37" endPosition="111" />
-    <scopeInfo nodeId="5890305283801268308" fileName="NewModuleUtil.java" startLine="17" startPosition="28" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="5890305283801268287" fileName="NewModuleUtil.java" startLine="35" startPosition="68" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="5890305283801268201" fileName="NewModuleUtil.java" startLine="21" startPosition="90" endLine="40" endPosition="61">
+    <nodeInfo nodeId="5890305283801268202" fileName="NewModuleUtil.java" startLine="22" startPosition="90" endLine="23" endPosition="53" />
+    <nodeInfo nodeId="5890305283801268212" fileName="NewModuleUtil.java" startLine="24" startPosition="26" endLine="25" endPosition="19" />
+    <nodeInfo nodeId="5890305283801268220" fileName="NewModuleUtil.java" startLine="26" startPosition="5" endLine="27" endPosition="69" />
+    <nodeInfo nodeId="5890305283801268225" fileName="NewModuleUtil.java" startLine="27" startPosition="69" endLine="28" endPosition="50" />
+    <nodeInfo nodeId="5890305283801268230" fileName="NewModuleUtil.java" startLine="28" startPosition="50" endLine="29" endPosition="45" />
+    <nodeInfo nodeId="5890305283801268236" fileName="NewModuleUtil.java" startLine="29" startPosition="45" endLine="30" endPosition="82" />
+    <nodeInfo nodeId="5890305283801268249" fileName="NewModuleUtil.java" startLine="30" startPosition="82" endLine="31" endPosition="42" />
+    <nodeInfo nodeId="5890305283801268254" fileName="NewModuleUtil.java" startLine="31" startPosition="42" endLine="32" endPosition="28" />
+    <nodeInfo nodeId="5890305283801268259" fileName="NewModuleUtil.java" startLine="32" startPosition="28" endLine="33" endPosition="66" />
+    <nodeInfo nodeId="5890305283801268268" fileName="NewModuleUtil.java" startLine="33" startPosition="66" endLine="34" endPosition="54" />
+    <nodeInfo nodeId="5890305283801268275" fileName="NewModuleUtil.java" startLine="34" startPosition="54" endLine="35" endPosition="91" />
+    <nodeInfo nodeId="809085581490110338" fileName="NewModuleUtil.java" startLine="37" startPosition="25" endLine="38" endPosition="84" />
+    <nodeInfo nodeId="809085581490110346" fileName="NewModuleUtil.java" startLine="38" startPosition="84" endLine="39" endPosition="85" />
+    <nodeInfo nodeId="5890305283801268299" fileName="NewModuleUtil.java" startLine="41" startPosition="32" endLine="42" endPosition="61" />
+    <nodeInfo nodeId="5890305283801268308" fileName="NewModuleUtil.java" startLine="18" startPosition="28" endLine="20" endPosition="3" />
+    <nodeInfo nodeId="5890305283801268210" fileName="NewModuleUtil.java" startLine="23" startPosition="53" endLine="26" endPosition="5" />
+    <nodeInfo nodeId="5890305283801268287" fileName="NewModuleUtil.java" startLine="36" startPosition="68" endLine="41" endPosition="0" />
+    <nodeInfo nodeId="5890305283801268279" fileName="NewModuleUtil.java" startLine="35" startPosition="91" endLine="41" endPosition="32" />
+    <nodeInfo nodeId="5890305283801268195" fileName="NewModuleUtil.java" startLine="21" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="5890305283801268311" fileName="NewModuleUtil.java" startLine="19" startPosition="26" endLine="19" endPosition="26" />
+    <scopeInfo nodeId="5890305283801268211" fileName="NewModuleUtil.java" startLine="24" startPosition="26" endLine="25" endPosition="19" />
+    <scopeInfo nodeId="5890305283801268308" fileName="NewModuleUtil.java" startLine="18" startPosition="28" endLine="20" endPosition="3" />
+    <scopeInfo nodeId="5890305283801268290" fileName="NewModuleUtil.java" startLine="37" startPosition="25" endLine="39" endPosition="85">
+      <varInfo nodeId="809085581490110339" varName="file" />
+    </scopeInfo>
+    <scopeInfo nodeId="5890305283801268287" fileName="NewModuleUtil.java" startLine="36" startPosition="68" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="5890305283801268201" fileName="NewModuleUtil.java" startLine="22" startPosition="90" endLine="42" endPosition="61">
       <varInfo nodeId="5890305283801268221" varName="solutionDescriptor" />
       <varInfo nodeId="5890305283801268203" varName="dir" />
       <varInfo nodeId="5890305283801268231" varName="fileName" />
       <varInfo nodeId="5890305283801268250" varName="modelRoot" />
     </scopeInfo>
-    <scopeInfo nodeId="5890305283801268195" fileName="NewModuleUtil.java" startLine="20" startPosition="0" endLine="42" endPosition="0">
+    <scopeInfo nodeId="5890305283801268195" fileName="NewModuleUtil.java" startLine="21" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="5890305283801268198" varName="project" />
       <varInfo nodeId="5890305283801268196" varName="solutionFile" />
     </scopeInfo>
-    <unitInfo nodeId="5890305283801268285" fileName="NewModuleUtil.java" startLine="35" startPosition="56" endLine="39" endPosition="5" unitName="jetbrains.mps.ide.newSolutionDialog.NewModuleUtil$1" />
-    <unitInfo nodeId="5890305283801268194" fileName="NewModuleUtil.java" startLine="17" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.ide.newSolutionDialog.NewModuleUtil" />
+    <unitInfo nodeId="5890305283801268285" fileName="NewModuleUtil.java" startLine="36" startPosition="56" endLine="41" endPosition="5" unitName="jetbrains.mps.ide.newSolutionDialog.NewModuleUtil$1" />
+    <unitInfo nodeId="5890305283801268194" fileName="NewModuleUtil.java" startLine="18" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.ide.newSolutionDialog.NewModuleUtil" />
   </root>
 </debugInfo>
 
