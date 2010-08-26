@@ -387,6 +387,10 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.ide.project.listener.AbstractModuleWorkbenchAdjuster</implementation-class>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.workbench.actions.goTo.index.StubsNodeDescriptorsCache</implementation-class>
     </component>
   </application-components>

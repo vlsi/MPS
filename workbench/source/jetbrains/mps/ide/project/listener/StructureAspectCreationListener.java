@@ -1,7 +1,8 @@
-package jetbrains.mps.project.listener;
+package jetbrains.mps.ide.project.listener;
 
 import jetbrains.mps.ide.findusages.UsagesViewTracker;
 import jetbrains.mps.ide.hierarchy.HierarchyViewTool;
+import jetbrains.mps.project.listener.ModelCreationListener;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelDescriptor;
