@@ -7130,41 +7130,55 @@
     <nodeInfo nodeId="3678671434899025990" fileName="DebugTool_ActionGroup.java" startLine="25" startPosition="116" endLine="26" endPosition="48" />
   </root>
   <root nodeId="7397015581138491059">
-    <nodeInfo nodeId="7397015581138571226" fileName="ShowImplementations_Action.java" startLine="36" startPosition="0" endLine="37" endPosition="21" />
-    <nodeInfo nodeId="7397015581138675341" fileName="ShowImplementations_Action.java" startLine="37" startPosition="21" endLine="38" endPosition="26" />
-    <nodeInfo nodeId="7397015581138571230" fileName="ShowImplementations_Action.java" startLine="38" startPosition="26" endLine="39" endPosition="36" />
-    <nodeInfo nodeId="7397015581138676390" fileName="ShowImplementations_Action.java" startLine="39" startPosition="36" endLine="40" endPosition="26" />
-    <nodeInfo nodeId="7397015581138636438" fileName="ShowImplementations_Action.java" startLine="53" startPosition="52" endLine="54" endPosition="129" />
-    <nodeInfo nodeId="7397015581138674363" fileName="ShowImplementations_Action.java" startLine="108" startPosition="9" endLine="109" endPosition="55" />
-    <nodeInfo nodeId="7397015581138759767" fileName="ShowImplementations_Action.java" startLine="109" startPosition="55" endLine="110" endPosition="84" />
-    <nodeInfo nodeId="6737363541214947132" fileName="ShowImplementations_Action.java" startLine="110" startPosition="84" endLine="111" endPosition="193" />
-    <nodeInfo nodeId="6737363541214947196" fileName="ShowImplementations_Action.java" startLine="112" startPosition="81" endLine="113" endPosition="52" />
-    <nodeInfo nodeId="6737363541214947222" fileName="ShowImplementations_Action.java" startLine="114" startPosition="35" endLine="115" endPosition="62" />
-    <nodeInfo nodeId="7397015581138675361" fileName="ShowImplementations_Action.java" startLine="119" startPosition="27" endLine="120" endPosition="99" />
-    <nodeInfo nodeId="7397015581138636473" fileName="ShowImplementations_Action.java" startLine="120" startPosition="99" endLine="121" endPosition="130" />
-    <nodeInfo nodeId="7397015581138636487" fileName="ShowImplementations_Action.java" startLine="121" startPosition="130" endLine="122" endPosition="278" />
-    <nodeInfo nodeId="7397015581138675385" fileName="ShowImplementations_Action.java" startLine="122" startPosition="278" endLine="123" endPosition="191" />
-    <nodeInfo nodeId="6737363541215382775" fileName="ShowImplementations_Action.java" startLine="123" startPosition="191" endLine="124" endPosition="82" />
-    <nodeInfo nodeId="3079509438670904944" fileName="ShowImplementations_Action.java" startLine="124" startPosition="82" endLine="125" endPosition="36" />
-    <nodeInfo nodeId="6737363541214947208" fileName="ShowImplementations_Action.java" startLine="113" startPosition="52" endLine="116" endPosition="9" />
-    <nodeInfo nodeId="6737363541214947151" fileName="ShowImplementations_Action.java" startLine="111" startPosition="193" endLine="117" endPosition="7" />
-    <nodeInfo nodeId="5732689416012549714" fileName="ShowImplementations_Action.java" startLine="118" startPosition="74" endLine="127" endPosition="0" />
-    <nodeInfo nodeId="5732689416012549713" fileName="ShowImplementations_Action.java" startLine="117" startPosition="7" endLine="127" endPosition="9" />
-    <scopeInfo nodeId="7397015581138571223" fileName="ShowImplementations_Action.java" startLine="53" startPosition="52" endLine="54" endPosition="129" />
-    <scopeInfo nodeId="6737363541214947209" fileName="ShowImplementations_Action.java" startLine="114" startPosition="35" endLine="115" endPosition="62" />
-    <scopeInfo nodeId="6737363541214947152" fileName="ShowImplementations_Action.java" startLine="112" startPosition="81" endLine="116" endPosition="9">
-      <varInfo nodeId="6737363541214947197" varName="searchNode" />
+    <nodeInfo nodeId="7397015581138571226" fileName="ShowImplementations_Action.java" startLine="41" startPosition="0" endLine="42" endPosition="21" />
+    <nodeInfo nodeId="7397015581138675341" fileName="ShowImplementations_Action.java" startLine="42" startPosition="21" endLine="43" endPosition="26" />
+    <nodeInfo nodeId="7397015581138571230" fileName="ShowImplementations_Action.java" startLine="43" startPosition="26" endLine="44" endPosition="36" />
+    <nodeInfo nodeId="7397015581138676390" fileName="ShowImplementations_Action.java" startLine="44" startPosition="36" endLine="45" endPosition="26" />
+    <nodeInfo nodeId="7397015581138636438" fileName="ShowImplementations_Action.java" startLine="58" startPosition="52" endLine="59" endPosition="699" />
+    <nodeInfo nodeId="5035246086632277436" fileName="ShowImplementations_Action.java" startLine="113" startPosition="9" endLine="114" endPosition="21" />
+    <nodeInfo nodeId="5035246086632277456" fileName="ShowImplementations_Action.java" startLine="115" startPosition="129" endLine="116" endPosition="50" />
+    <nodeInfo nodeId="5035246086632277564" fileName="ShowImplementations_Action.java" startLine="117" startPosition="303" endLine="118" endPosition="45" />
+    <nodeInfo nodeId="5035246086632287229" fileName="ShowImplementations_Action.java" startLine="119" startPosition="424" endLine="120" endPosition="61" />
+    <nodeInfo nodeId="5035246086632287271" fileName="ShowImplementations_Action.java" startLine="121" startPosition="300" endLine="122" endPosition="45" />
+    <nodeInfo nodeId="5035246086632287310" fileName="ShowImplementations_Action.java" startLine="123" startPosition="14" endLine="124" endPosition="15" />
+    <nodeInfo nodeId="5035246086632277435" fileName="ShowImplementations_Action.java" startLine="125" startPosition="7" endLine="126" endPosition="0" />
+    <nodeInfo nodeId="7397015581138674363" fileName="ShowImplementations_Action.java" startLine="126" startPosition="0" endLine="127" endPosition="55" />
+    <nodeInfo nodeId="7397015581138759767" fileName="ShowImplementations_Action.java" startLine="127" startPosition="55" endLine="128" endPosition="84" />
+    <nodeInfo nodeId="6737363541214947132" fileName="ShowImplementations_Action.java" startLine="128" startPosition="84" endLine="129" endPosition="167" />
+    <nodeInfo nodeId="6737363541214947196" fileName="ShowImplementations_Action.java" startLine="130" startPosition="81" endLine="131" endPosition="51" />
+    <nodeInfo nodeId="6737363541214947222" fileName="ShowImplementations_Action.java" startLine="132" startPosition="34" endLine="133" endPosition="61" />
+    <nodeInfo nodeId="7397015581138675361" fileName="ShowImplementations_Action.java" startLine="137" startPosition="27" endLine="138" endPosition="99" />
+    <nodeInfo nodeId="7397015581138636473" fileName="ShowImplementations_Action.java" startLine="138" startPosition="99" endLine="139" endPosition="130" />
+    <nodeInfo nodeId="7397015581138636487" fileName="ShowImplementations_Action.java" startLine="139" startPosition="130" endLine="140" endPosition="278" />
+    <nodeInfo nodeId="7397015581138675385" fileName="ShowImplementations_Action.java" startLine="140" startPosition="278" endLine="141" endPosition="191" />
+    <nodeInfo nodeId="6737363541215382775" fileName="ShowImplementations_Action.java" startLine="141" startPosition="191" endLine="142" endPosition="82" />
+    <nodeInfo nodeId="3079509438670904944" fileName="ShowImplementations_Action.java" startLine="142" startPosition="82" endLine="143" endPosition="36" />
+    <nodeInfo nodeId="5035246086632287308" fileName="ShowImplementations_Action.java" startLine="123" startPosition="12" endLine="125" endPosition="7" />
+    <nodeInfo nodeId="6737363541214947208" fileName="ShowImplementations_Action.java" startLine="131" startPosition="51" endLine="134" endPosition="9" />
+    <nodeInfo nodeId="6737363541214947151" fileName="ShowImplementations_Action.java" startLine="129" startPosition="167" endLine="135" endPosition="7" />
+    <nodeInfo nodeId="5732689416012549714" fileName="ShowImplementations_Action.java" startLine="136" startPosition="74" endLine="145" endPosition="0" />
+    <nodeInfo nodeId="5732689416012549713" fileName="ShowImplementations_Action.java" startLine="135" startPosition="7" endLine="145" endPosition="9" />
+    <nodeInfo nodeId="5035246086632277442" fileName="ShowImplementations_Action.java" startLine="114" startPosition="21" endLine="125" endPosition="7" />
+    <scopeInfo nodeId="7397015581138571223" fileName="ShowImplementations_Action.java" startLine="58" startPosition="52" endLine="59" endPosition="699" />
+    <scopeInfo nodeId="5035246086632277443" fileName="ShowImplementations_Action.java" startLine="115" startPosition="129" endLine="116" endPosition="50" />
+    <scopeInfo nodeId="5035246086632277465" fileName="ShowImplementations_Action.java" startLine="117" startPosition="303" endLine="118" endPosition="45" />
+    <scopeInfo nodeId="5035246086632287208" fileName="ShowImplementations_Action.java" startLine="119" startPosition="424" endLine="120" endPosition="61" />
+    <scopeInfo nodeId="5035246086632287255" fileName="ShowImplementations_Action.java" startLine="121" startPosition="300" endLine="122" endPosition="45" />
+    <scopeInfo nodeId="5035246086632287309" fileName="ShowImplementations_Action.java" startLine="123" startPosition="14" endLine="124" endPosition="15" />
+    <scopeInfo nodeId="6737363541214947209" fileName="ShowImplementations_Action.java" startLine="132" startPosition="34" endLine="133" endPosition="61" />
+    <scopeInfo nodeId="6737363541214947152" fileName="ShowImplementations_Action.java" startLine="130" startPosition="81" endLine="134" endPosition="9">
+      <varInfo nodeId="6737363541214947197" varName="foundNode" />
     </scopeInfo>
-    <scopeInfo nodeId="6737363541214947151" fileName="ShowImplementations_Action.java" startLine="111" startPosition="193" endLine="117" endPosition="7">
+    <scopeInfo nodeId="6737363541214947151" fileName="ShowImplementations_Action.java" startLine="129" startPosition="167" endLine="135" endPosition="7">
       <varInfo nodeId="6737363541214947155" varName="searchResult" />
     </scopeInfo>
-    <scopeInfo nodeId="5732689416012549715" fileName="ShowImplementations_Action.java" startLine="119" startPosition="27" endLine="125" endPosition="36">
+    <scopeInfo nodeId="5732689416012549715" fileName="ShowImplementations_Action.java" startLine="137" startPosition="27" endLine="143" endPosition="36">
       <varInfo nodeId="7397015581138675362" varName="title" />
       <varInfo nodeId="7397015581138636474" varName="component" />
       <varInfo nodeId="7397015581138636488" varName="popup" />
     </scopeInfo>
-    <scopeInfo nodeId="5732689416012549714" fileName="ShowImplementations_Action.java" startLine="118" startPosition="74" endLine="127" endPosition="0" />
-    <unitInfo nodeId="5732689416012549714" fileName="ShowImplementations_Action.java" startLine="118" startPosition="62" endLine="127" endPosition="7" unitName="jetbrains.mps.ide.actions.ShowImplementations_Action$1" />
+    <scopeInfo nodeId="5732689416012549714" fileName="ShowImplementations_Action.java" startLine="136" startPosition="74" endLine="145" endPosition="0" />
+    <unitInfo nodeId="5732689416012549714" fileName="ShowImplementations_Action.java" startLine="136" startPosition="62" endLine="145" endPosition="7" unitName="jetbrains.mps.ide.actions.ShowImplementations_Action$1" />
   </root>
   <root nodeId="7469574534219670743">
     <nodeInfo nodeId="7469574534219745409" fileName="GenerateFavorites_ActionGroup.java" startLine="44" startPosition="9" endLine="45" endPosition="53" />

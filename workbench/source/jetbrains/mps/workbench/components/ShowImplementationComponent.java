@@ -8,10 +8,7 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModelOwner;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 import javax.swing.*;
@@ -36,8 +33,7 @@ public class ShowImplementationComponent extends JPanel {
     myNodes = nodes;
     myEditor = new EmbeddableEditor(context, new ModelOwner() {}, SNodeOperations.copyNode(nodes.get(0)), false);
     for (SNode node : myNodes) {
-      String item = node.getPresentation();
-      myItemToNode.put(item, node);
+      myItemToNode.put(node.getModel().getSModelReference() + ":" + node.getSNodeId(), node);
     }
     init();
     updateControls();
@@ -48,7 +44,7 @@ public class ShowImplementationComponent extends JPanel {
   }
 
   public JComponent getPrefferedFocusableComponent() {
-    return this.myNodeChooser;
+    return myNodeChooser;
   }
 
   private ActionToolbar createToolbar() {
@@ -78,7 +74,7 @@ public class ShowImplementationComponent extends JPanel {
     final SNode selectedNode = myItemToNode.get(selectedItem);
     final int index = myNodes.indexOf(selectedNode);
     if (mySelectedIndex == index) return;
-    ModelAccess.instance().runWriteActionInCommandAsync(new Runnable() {
+    ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
         IModule module = selectedNode.getModel().getModelDescriptor().getModule();
         myLocationLabel.setText(module.getModuleFqName());
@@ -93,31 +89,36 @@ public class ShowImplementationComponent extends JPanel {
   }
 
   private void init() {
-    this.setLayout(new BorderLayout());
+    setLayout(new BorderLayout());
     myEditorPanel = myEditor.getComponenet();
-    this.add(myEditorPanel, BorderLayout.CENTER);
+    add(myEditorPanel, BorderLayout.CENTER);
     JPanel northPanel = new JPanel(new BorderLayout());
-    this.add(northPanel, BorderLayout.NORTH);
+    add(northPanel, BorderLayout.NORTH);
     JPanel toolbarPanel = new JPanel(new FlowLayout());
-    toolbarPanel.add(this.createToolbar().getComponent());
-    this.myNodeChooser = new JComboBox(this.myItemToNode.keySet().toArray());
-    this.myNodeChooser.setRenderer(new DefaultListCellRenderer() {
+    toolbarPanel.add(createToolbar().getComponent());
+    this.myNodeChooser = new JComboBox(myItemToNode.keySet().toArray());
+    myNodeChooser.setRenderer(new DefaultListCellRenderer() {
       @Override
-      public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
-        ModelAccess.instance().runWriteActionInCommandAsync(new Runnable() {
+      public Component getListCellRendererComponent(JList list, final Object value, int index, boolean isSelected, boolean cellHasFocus) {
+        super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+        updateControls();
+        ModelAccess.instance().runReadAction(new Runnable() {
+          @Override
           public void run() {
-            updateControls();
+            SNode root = myItemToNode.get((String) value).getContainingRoot();
+            setIcon(IconManager.getIconFor(root, true));
+            setText(root.getPresentation());
           }
         });
-        return super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+        return this;
       }
     });
-    toolbarPanel.add(this.myNodeChooser);
-    toolbarPanel.add(this.myCountLanel);
+    toolbarPanel.add(myNodeChooser);
+    toolbarPanel.add(myCountLanel);
     northPanel.add(toolbarPanel, BorderLayout.LINE_START);
-    northPanel.add(this.myLocationLabel, BorderLayout.LINE_END);
+    northPanel.add(myLocationLabel, BorderLayout.LINE_END);
 
-    this.setPreferredSize(new Dimension(600, 400));
+    setPreferredSize(new Dimension(600, 400));
   }
 
   private class BackAction extends AnAction {
@@ -169,8 +170,7 @@ public class ShowImplementationComponent extends JPanel {
     @Override
     public void actionPerformed(AnActionEvent e) {
       IOperationContext operationContext = myEditor.getEditor().getOperationContext();
-      String selectedItem = (String) myNodeChooser.getSelectedItem();
-      final SNode selectedNode = myItemToNode.get(selectedItem);
+      final SNode selectedNode = myItemToNode.get((String) myNodeChooser.getSelectedItem());
       operationContext.getComponent(MPSEditorOpener.class).editNode(selectedNode, operationContext);
       ProjectPane.getInstance(operationContext.getProject()).selectNode(selectedNode);
       if (myClosePopup) {

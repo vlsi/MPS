@@ -13,12 +13,17 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
+import jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder;
+import jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder;
+import jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder;
+import jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.project.GlobalScope;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
@@ -51,7 +56,7 @@ public class ShowImplementations_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return SNodeOperations.isInstanceOf(ShowImplementations_Action.this.node, "jetbrains.mps.baseLanguage.structure.Classifier");
+    return SNodeOperations.isInstanceOf(ShowImplementations_Action.this.node, "jetbrains.mps.baseLanguage.structure.Interface") || SNodeOperations.isInstanceOf(ShowImplementations_Action.this.node, "jetbrains.mps.baseLanguage.structure.ClassConcept") && SPropertyOperations.getBoolean(SNodeOperations.cast(ShowImplementations_Action.this.node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "abstractClass") || SNodeOperations.isInstanceOf(ShowImplementations_Action.this.node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(ShowImplementations_Action.this.node), "jetbrains.mps.baseLanguage.structure.Classifier");
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
@@ -106,13 +111,26 @@ public class ShowImplementations_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
+      IFinder finder;
+      if (SNodeOperations.isInstanceOf(ShowImplementations_Action.this.node, "jetbrains.mps.baseLanguage.structure.Interface")) {
+        finder = new ImplementingClasses_Finder();
+      } else if (SNodeOperations.isInstanceOf(ShowImplementations_Action.this.node, "jetbrains.mps.baseLanguage.structure.ClassConcept") && SPropertyOperations.getBoolean(SNodeOperations.cast(ShowImplementations_Action.this.node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "abstractClass")) {
+        finder = new DerivedClasses_Finder();
+      } else if (SNodeOperations.isInstanceOf(ShowImplementations_Action.this.node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(ShowImplementations_Action.this.node), "jetbrains.mps.baseLanguage.structure.Interface") && SNodeOperations.hasRole(ShowImplementations_Action.this.node, "jetbrains.mps.baseLanguage.structure.Interface", "method")) {
+        finder = new InterfaceMethodImplementations_Finder();
+      } else if (SNodeOperations.isInstanceOf(ShowImplementations_Action.this.node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(ShowImplementations_Action.this.node), "jetbrains.mps.baseLanguage.structure.Classifier")) {
+        finder = new DerivedMethods_Finder();
+      } else {
+        return;
+      }
+
       final List<SNode> nodes = new ArrayList<SNode>();
       ListSequence.fromList(nodes).addElement(ShowImplementations_Action.this.node);
-      SearchResults<SNode> searchResults = new ImplementingClasses_Finder().find(new SearchQuery(ShowImplementations_Action.this.node, GlobalScope.getInstance()), new EmptyProgressIndicator());
+      SearchResults<SNode> searchResults = finder.find(new SearchQuery(ShowImplementations_Action.this.node, GlobalScope.getInstance()), new EmptyProgressIndicator());
       for (SearchResult<SNode> searchResult : searchResults.getSearchResults()) {
-        SNode searchNode = searchResult.getObject();
-        if ((searchNode != null)) {
-          ListSequence.fromList(nodes).addElement(searchNode);
+        SNode foundNode = searchResult.getObject();
+        if ((foundNode != null)) {
+          ListSequence.fromList(nodes).addElement(foundNode);
         }
       }
       ModelAccess.instance().runWriteActionInCommandAsync(new Runnable() {
