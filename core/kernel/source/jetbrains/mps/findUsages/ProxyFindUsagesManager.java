@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.findUsages;
 
+import jetbrains.mps.ide.findusages.FastFindUsagesManager;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -23,18 +24,19 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
 public class ProxyFindUsagesManager extends FindUsagesManager {
   private static boolean ourUseFastManager = true;
 
-  private FastFindUsagesManager myFastFindUsagesManager;
-  private DefaultFindUsagesManager myDefaultFindUsagesManager;
+  private FindUsagesManager myDefault;
+  private FindUsagesManager myFast;
 
   public ProxyFindUsagesManager(ClassLoaderManager manager) {
-    myFastFindUsagesManager = new FastFindUsagesManager();
-    myDefaultFindUsagesManager = new DefaultFindUsagesManager(manager);
+    myDefault = new DefaultFindUsagesManager(manager);
   }
 
   @NotNull
@@ -46,18 +48,20 @@ public class ProxyFindUsagesManager extends FindUsagesManager {
     ourUseFastManager = useFastManager;
   }
 
+  public void setFastManager(FindUsagesManager fast) {
+    myFast = fast;
+  }
+
   private FindUsagesManager getRealManager() {
-    return ourUseFastManager ? myFastFindUsagesManager : myDefaultFindUsagesManager;
+    return myFast != null && ourUseFastManager ? myFast : myDefault;
   }
 
   public void initComponent() {
-    myFastFindUsagesManager.initComponent();
-    myDefaultFindUsagesManager.initComponent();
+    myDefault.initComponent();
   }
 
   public void disposeComponent() {
-    myFastFindUsagesManager.disposeComponent();
-    myDefaultFindUsagesManager.disposeComponent();
+    myDefault.disposeComponent();
   }
 
   public Set<AbstractConceptDeclaration> findDescendants(AbstractConceptDeclaration node, IScope scope) {
@@ -71,7 +75,6 @@ public class ProxyFindUsagesManager extends FindUsagesManager {
 
   public Set<SReference> findUsages(SNode node, IScope scope, IAdaptiveProgressMonitor progress) {
     return getRealManager().findUsages(node, scope, progress);
-
   }
 
   public Set<SReference> findUsages(Set<SNode> nodes, IScope scope, IAdaptiveProgressMonitor progress, boolean manageTasks) {

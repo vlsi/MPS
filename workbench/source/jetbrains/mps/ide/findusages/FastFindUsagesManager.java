@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.findUsages;
+package jetbrains.mps.ide.findusages;
 
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -26,6 +26,8 @@ import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.FileContent;
 import com.intellij.util.text.CharArrayUtil;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
+import jetbrains.mps.findUsages.FindUsagesManager;
+import jetbrains.mps.findUsages.ProxyFindUsagesManager;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -41,9 +43,14 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
-class FastFindUsagesManager extends FindUsagesManager {
+public class FastFindUsagesManager extends FindUsagesManager {
   private static final String TARGET_NODE_ID_PREFIX = "targetNodeId=\"";
   private static final String TYPE_PREFIX = "type=\"";
+  private final ProxyFindUsagesManager myProxyManager;
+
+  public FastFindUsagesManager(ProxyFindUsagesManager proxyManager) {
+    myProxyManager = proxyManager;
+  }
 
   @NotNull
   public String getComponentName() {
@@ -52,9 +59,11 @@ class FastFindUsagesManager extends FindUsagesManager {
 
   public void initComponent() {
     IdTableBuilding.registerIdIndexer(MPSFileTypeFactory.MODEL_FILE_TYPE, new MyFileTypeIdIndexer());
+    myProxyManager.setFastManager(this);
   }
 
   public void disposeComponent() {
+    myProxyManager.setFastManager(null);
   }
 
   @Override

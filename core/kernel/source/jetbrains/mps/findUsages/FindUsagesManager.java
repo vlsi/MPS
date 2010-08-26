@@ -32,7 +32,7 @@ import java.util.Set;
 public abstract class FindUsagesManager implements ApplicationComponent {
 
   public static FindUsagesManager getInstance() {
-    return ApplicationManager.getApplication().getComponent(FindUsagesManager.class);
+    return ApplicationManager.getApplication().getComponent(ProxyFindUsagesManager.class);
   }
 
   public abstract Set<AbstractConceptDeclaration> findDescendants(AbstractConceptDeclaration node, IScope scope);

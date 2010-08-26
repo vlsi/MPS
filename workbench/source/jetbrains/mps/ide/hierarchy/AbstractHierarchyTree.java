@@ -98,7 +98,7 @@ public abstract class AbstractHierarchyTree<T extends INodeAdapter> extends MPST
   public void setOperationContext(IOperationContext operationContext) {
     if (operationContext != null) {
       myOperationContext = operationContext;
-      myUsagesManager = operationContext.getComponent(FindUsagesManager.class);
+      myUsagesManager = FindUsagesManager.getInstance();
     }
   }
 

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.findUsages.caches;
+package jetbrains.mps.ide.findusages.caches;
 
 import com.intellij.ide.caches.CacheUpdater;
 import com.intellij.ide.caches.FileContent;
