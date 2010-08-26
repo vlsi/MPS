@@ -132,6 +132,10 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     return myEditorCellsWrapper.get(i);
   }
 
+  public int indexOf(EditorCell cell) {
+    return myEditorCellsWrapper.indexOf(cell);
+  }
+
   public CellLayout getCellLayout() {
     return myCellLayout;
   }
@@ -156,19 +160,15 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
 
   public int getCellNumber(EditorCell cell) {
     if (usesBraces()) {
-      return myEditorCellsWrapper.indexOf(cell) - 1;
+      return indexOf(cell) - 1;
     } else {
-      return myEditorCellsWrapper.indexOf(cell);
+      return indexOf(cell);
     }
   }
 
   public EditorCell getCellAt(int number) {
     try {
-      if (usesBraces()) {
-        return myEditorCellsWrapper.get(number + 1);
-      } else {
-        return myEditorCellsWrapper.get(number);
-      }
+      return getChildAt(usesBraces() ? number + 1 : number);
     } catch (IndexOutOfBoundsException e) {
       return null;
     }
@@ -282,7 +282,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
       return new Iterable<EditorCell>() {
         public Iterator<EditorCell> iterator() {
           return new Iterator<EditorCell>() {//iterates from second to before last
-            private Iterator<EditorCell> myIterator = myEditorCellsWrapper.iterator();
+            private Iterator<EditorCell> myIterator = EditorCell_Collection.this.iterator();
             private EditorCell myNext;
 
             {
@@ -311,31 +311,24 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   }
 
   public Iterator<EditorCell> iterator() {
-    return cells();
+    return new UnmodifiableIterator(myEditorCellsWrapper, false);
   }
 
   public Iterator<EditorCell> cells() {
-    return new Iterator<EditorCell>() {
-      private Iterator<EditorCell> myIterator = myEditorCellsWrapper.iterator();
+    return iterator();
+  }
 
-      public boolean hasNext() {
-        return myIterator.hasNext();
-      }
-
-      public EditorCell next() {
-        return myIterator.next();
-      }
-
-      public void remove() {
-        throw new UnsupportedOperationException();
-      }
-    };
+  public Iterator<EditorCell> reverseCellIterator() {
+    return new UnmodifiableIterator(myEditorCellsWrapper, true);
   }
 
   public EditorCell[] getContentCells() {
     if (usesBraces()) {
-      List<EditorCell> contentList = myEditorCellsWrapper.subList(1, myEditorCellsWrapper.size() - 1);
-      return contentList.toArray(new EditorCell[contentList.size()]);
+      EditorCell[] result = new EditorCell[getChildCount() - 2];
+      for (int i = 0; i < result.length; i++) {
+        result[i] = getChildAt(i + 1);
+      }
+      return result;
     } else {
       return getCells();
     }
@@ -356,26 +349,6 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
       }
     }
     return result;
-  }
-
-  // TODO: replace this method with getCellListIterator()
-  public Iterator<EditorCell> reverseCellIterator() {
-    return new Iterator<EditorCell>() {
-
-      private ListIterator<EditorCell> myListIterator = myEditorCellsWrapper.listIterator(myEditorCellsWrapper.size());
-
-      public boolean hasNext() {
-        return myListIterator.hasPrevious();
-      }
-
-      public EditorCell next() {
-        return myListIterator.previous();
-      }
-
-      public void remove() {
-        throw new UnsupportedOperationException();
-      }
-    };
   }
 
   public void addEditorCell(EditorCell editorCell) {
@@ -626,10 +599,6 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     return null;
   }
 
-  public int indexOf(EditorCell cell) {
-    return myEditorCellsWrapper.indexOf(cell);
-  }
-
   public void addCellAt(int i, EditorCell cellToAdd, boolean ignoreBraces) {
     int j = i;
     if (usesBraces() && !ignoreBraces) {
@@ -695,8 +664,8 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
       shift = 1;
       size = 2;
     }
-    if (myEditorCellsWrapper.size() > size) {
-      return myEditorCellsWrapper.get(shift);
+    if (getChildCount() > size) {
+      return getChildAt(shift);
     }
     return null;
   }
@@ -708,34 +677,26 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
       shift = 1;
       size = 2;
     }
-    if (myEditorCellsWrapper.size() > size) {
-      return myEditorCellsWrapper.get(myEditorCellsWrapper.size() - (1 + shift));
+    if (getChildCount() > size) {
+      return getChildAt(getChildCount() - (1 + shift));
     }
     return null;
   }
 
   public EditorCell getFirstLeaf() {
-    if (myEditorCellsWrapper.isEmpty()) return this;
-    return getFirstChild().getFirstLeaf();
+    return getChildCount() > 0 ? getFirstChild().getFirstLeaf() : this;
   }
 
   public EditorCell getLastLeaf() {
-    if (myEditorCellsWrapper.isEmpty()) return this;
-    return getLastChild().getLastLeaf();
+    return getChildCount() > 0 ? getLastChild().getLastLeaf() : this;
   }
 
   public EditorCell getLastChild() {
-    if (myEditorCellsWrapper.isEmpty()) {
-      return null;
-    }
-    return myEditorCellsWrapper.get(myEditorCellsWrapper.size() - 1);
+    return getChildCount() > 0 ? getChildAt(getChildCount() - 1) : null;
   }
 
   public EditorCell getFirstChild() {
-    if (myEditorCellsWrapper.isEmpty()) {
-      return null;
-    }
-    return myEditorCellsWrapper.get(0);
+    return getChildCount() > 0 ? getChildAt(0) : null;
   }
 
   public String toString() {
@@ -953,6 +914,31 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
       } else {
         disableBraces();
       }
+    }
+  }
+
+  private class UnmodifiableIterator<T> implements Iterator<T> {
+    private ListIterator<T> myIterator;
+    private boolean myReverse;
+
+    private UnmodifiableIterator(List<T> list, boolean reverse) {
+      myReverse = reverse;
+      myIterator = myReverse ? list.listIterator(list.size()) : list.listIterator();
+    }
+
+    @Override
+    public boolean hasNext() {
+      return myReverse ? myIterator.hasPrevious() : myIterator.hasNext();
+    }
+
+    @Override
+    public T next() {
+      return myReverse ? myIterator.previous() : myIterator.next();
+    }
+
+    @Override
+    public void remove() {
+      throw new UnsupportedOperationException();
     }
   }
 }
