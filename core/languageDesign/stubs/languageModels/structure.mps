@@ -160,8 +160,8 @@
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="8818697550806759820">
       <link role="conceptLinkDeclaration:0" targetNodeId="6.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
       <node role="target:0" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType:7" id="8818697550806759822">
-        <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8818697550806759824">
-          <link role="classifier:3" targetNodeId="4.~SNodeDescriptor" resolveInfo="SNodeDescriptor" />
+        <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8725534055980689215">
+          <link role="classifier:3" targetNodeId="2.~StubDescriptor" resolveInfo="StubDescriptor" />
         </node>
       </node>
     </node>
