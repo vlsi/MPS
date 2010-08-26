@@ -46,10 +46,6 @@ public enum LanguageAspect {
       return Structure_Language.MODULE_REFERENCE;
     }
 
-    public Icon getIcon() {
-      return Icons.STRUCTURE_MODEL_ICON;
-    }
-
     public String getHelpURL() {
       return "http://www.jetbrains.net/confluence/display/MPSD1/Structure";
     }
@@ -58,10 +54,6 @@ public enum LanguageAspect {
   EDITOR("editor") {
     public ModuleReference getMainLanguage() {
       return Editor_Language.MODULE_REFERENCE;
-    }
-
-    public Icon getIcon() {
-      return Icons.EDITOR_MODEL_ICON;
     }
 
     public String getHelpURL() {
@@ -74,10 +66,6 @@ public enum LanguageAspect {
       return Actions_Language.MODULE_REFERENCE;
     }
 
-    public Icon getIcon() {
-      return Icons.ACTIONS_MODEL_ICON;
-    }
-
     public String getHelpURL() {
       return "http://www.jetbrains.net/confluence/display/MPSD1/Editor+Actions";
     }
@@ -88,10 +76,6 @@ public enum LanguageAspect {
       return Constraints_Language.MODULE_REFERENCE;
     }
 
-    public Icon getIcon() {
-      return Icons.CONSTRAINTS_MODEL_ICON;
-    }
-
     public String getHelpURL() {
       return "http://www.jetbrains.net/confluence/display/MPSD1/Constraints";
     }
@@ -100,10 +84,6 @@ public enum LanguageAspect {
   BEHAVIOR("behavior") {
     public ModuleReference getMainLanguage() {
       return Behavior_Language.MODULE_REFERENCE;
-    }
-
-    public Icon getIcon() {
-      return Icons.BEHAVIOR_MODEL_ICON;
     }
 
     public String getHelpURL() {
@@ -131,10 +111,6 @@ public enum LanguageAspect {
       return result;
     }
 
-    public Icon getIcon() {
-      return Icons.TYPESYSTEM_MODEL_ICON;
-    }
-
     public String getHelpURL() {
       return "http://www.jetbrains.net/confluence/display/MPSD1/Typesystem";
     }
@@ -143,10 +119,6 @@ public enum LanguageAspect {
   REFACTORINGS("refactorings") {
     public ModuleReference getMainLanguage() {
       return Refactoring_Language.MODULE_REFERENCE;
-    }
-
-    public Icon getIcon() {
-      return Icons.REFACTORINGS_MODEL_ICON;
     }
 
     public String getHelpURL() {
@@ -169,10 +141,6 @@ public enum LanguageAspect {
       return Intentions_Language.MODULE_REFERENCE;
     }
 
-    public Icon getIcon() {
-      return Icons.INTENTIONS_MODEL_ICON;
-    }
-
     public String getHelpURL() {
       return "http://www.jetbrains.net/confluence/display/MPSD1/Intentions";
     }
@@ -181,10 +149,6 @@ public enum LanguageAspect {
   FIND_USAGES("findUsages") {
     public ModuleReference getMainLanguage() {
       return FindUsages_Language.MODULE_REFERENCE;
-    }
-
-    public Icon getIcon() {
-      return Icons.FIND_USAGES_MODEL_ICON;
     }
 
     public String getHelpURL() {
@@ -197,10 +161,6 @@ public enum LanguageAspect {
       return Plugin_Language.MODULE_REFERENCE;
     }
 
-    public Icon getIcon() {
-      return Icons.PLUGIN_MODEL_ICON;
-    }
-
     public String getHelpURL() {
       return "http://www.jetbrains.net/confluence/display/MPSD1/Plugin";
     }
@@ -209,11 +169,6 @@ public enum LanguageAspect {
   DATA_FLOW("dataFlow") {
     public ModuleReference getMainLanguage() {
       return DataFlow_Language.MODULE_REFERENCE;
-    }
-
-    @Override
-    public Icon getIcon() {
-      return Icons.DATA_FLOW_MODEL_ICON;
     }
 
     public String getHelpURL() {
@@ -226,11 +181,6 @@ public enum LanguageAspect {
       return Test_Language.MODULE_REFERENCE;
     }
 
-    @Override
-    public Icon getIcon() {
-      return Icons.TEST_MODEL_ICON;
-    }
-
     public String getHelpURL() {
       return "http://www.jetbrains.net/confluence/display/MPSD1/Language+tests+language#Languagetestslanguage-introduction";
     }
@@ -241,11 +191,6 @@ public enum LanguageAspect {
       return TextGen_Language.MODULE_REFERENCE;
     }
 
-    @Override
-    public Icon getIcon() {
-      return Icons.TEXT_GEN_MODEL_ICON;
-    }
-
     public String getHelpURL() {
       return "";
     }
@@ -254,10 +199,6 @@ public enum LanguageAspect {
   STUBS("stubs") {
     public ModuleReference getMainLanguage() {
       return Stubs_Language.MODULE_REFERENCE;
-    }
-
-    public Icon getIcon() {
-      return Icons.STUBS_MODEL_ICON;
     }
 
     public String getHelpURL() {
@@ -277,10 +218,6 @@ public enum LanguageAspect {
 
   public boolean is(SModelDescriptor sm) {
     return Language.getModelAspect(sm) == this;
-  }
-
-  public Icon getIcon() {
-    return Icons.MODEL_ICON;
   }
 
   public EditableSModelDescriptor get(Language l) {
