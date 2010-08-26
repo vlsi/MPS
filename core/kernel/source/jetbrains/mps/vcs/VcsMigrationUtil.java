@@ -53,6 +53,14 @@ public class VcsMigrationUtil {
     return null;//ApplicationLevelVcsManager.instance().getRevisionNumber(file);
   }
 
+  public static boolean isInConflict(IFile iFile, boolean b) {
+    return false;//ApplicationLevelVcsManager.instance().isInConflict(iFile,b);
+  }
+
+  public static boolean resolveDiskMemoryConflict(IFile modelFile, SModel sModel) {
+    return true;//VcsHelper.resolveDiskMemoryConflict(modelFile,sModel);
+  }
+
   //todo remove
   public static void addToVcsLater(File file) {
     //ApplicationLevelVcsManager.instance().addToVcsLater(file);
@@ -61,13 +69,5 @@ public class VcsMigrationUtil {
   //todo remove
   public static void removeFromVcsLater(File file) {
     //ApplicationLevelVcsManager.instance().removeFromVcsLater(file);
-  }
-
-  public static boolean isInConflict(IFile iFile, boolean b) {
-    return false;//ApplicationLevelVcsManager.instance().isInConflict(iFile,b);
-  }
-
-  public static boolean resolveDiskMemoryConflict(IFile modelFile, SModel sModel) {
-    return true;//VcsHelper.resolveDiskMemoryConflict(modelFile,sModel);
   }
 }
