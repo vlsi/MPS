@@ -15,10 +15,6 @@
  */
 package jetbrains.mps.ide;
 
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-
 public class IdeMain {
   private static TestMode ourTestMode = TestMode.NO_TEST;
 
