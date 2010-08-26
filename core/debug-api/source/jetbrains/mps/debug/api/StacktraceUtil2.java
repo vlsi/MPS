@@ -1,5 +1,6 @@
 package jetbrains.mps.debug.api;
 
+import jetbrains.mps.debug.api.info.DebugInfoUtil;
 import jetbrains.mps.debug.api.info.StacktraceUtil;
 import jetbrains.mps.debug.api.programState.ILocation;
 import jetbrains.mps.debug.api.programState.NullLocation;
@@ -14,15 +15,16 @@ import jetbrains.mps.smodel.SNode;
  */
 public class StacktraceUtil2 {
   //Temp class. To be merged with StacktraceUtil.
+  //why exactly was this class created?
 
   public static SNode getNode(ILocation location) {
     if (location instanceof NullLocation) {
       return null;
     }
-    return StacktraceUtil.getNode(location.getUnitName(), location.getFileName(), location.getLineNumber());
+    return DebugInfoUtil.getNode(location.getUnitName(), location.getFileName(), location.getLineNumber());
   }
 
   public static SNode getNode(String unitName, String fileName, int position) {
-    return StacktraceUtil.getNode(unitName, fileName, position);
+    return DebugInfoUtil.getNode(unitName, fileName, position);
   }
 }

@@ -20,7 +20,7 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.debug.api.info.StacktraceUtil" />
+    <classNode dependClassName="jetbrains.mps.debug.api.info.DebugInfoUtil" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.EvaluationException" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.Evaluator" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.InvocationTargetEvaluationException" />
@@ -164,7 +164,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.IClassifiersSearchScope" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.ReachableClassifiersScope" />
     <classNode dependClassName="jetbrains.mps.debug.api.DebugInfoManager" />
-    <classNode dependClassName="jetbrains.mps.debug.api.info.StacktraceUtil" />
+    <classNode dependClassName="jetbrains.mps.debug.api.info.DebugInfoUtil" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.DebugSession" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.JavaUiState" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaStackFrame" />

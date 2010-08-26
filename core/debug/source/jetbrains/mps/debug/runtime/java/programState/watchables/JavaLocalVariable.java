@@ -1,6 +1,7 @@
 package jetbrains.mps.debug.runtime.java.programState.watchables;
 
 import com.sun.jdi.*;
+import jetbrains.mps.debug.api.info.DebugInfoUtil;
 import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
@@ -60,7 +61,7 @@ public class JavaLocalVariable extends JavaBreakpointWatchable implements IWatch
   public SNode getNode() {
     try {
       Location location = myStackFrame.getStackFrame().location();
-      SNode snode = StacktraceUtil.getVar(location.declaringType().name(),
+      SNode snode = DebugInfoUtil.getVar(location.declaringType().name(),
         location.sourceName(), location.lineNumber(), myLocalVariable.name());
       return snode;
     } catch (AbsentInformationException ex) {
