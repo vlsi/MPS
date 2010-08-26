@@ -14,7 +14,8 @@ public class ModelActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_showHelp = ID + "showHelp";
   public static final String LABEL_ID_refactoring = ID + "refactoring";
   public static final String LABEL_ID_favorites = ID + "favorites";
-  public static final String LABEL_ID_vcs = ID + "vcs";
+  public static final String LABEL_ID_mpsvcs = ID + "mpsvcs";
+  public static final String LABEL_ID_ideavcs = ID + "ideavcs";
   public static final String LABEL_ID_scripts = ID + "scripts";
 
   public ModelActions_ActionGroup() {
@@ -44,9 +45,6 @@ public class ModelActions_ActionGroup extends GeneratedActionGroup {
       ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateModel_Action", "jetbrains.mps.ide", new OutputViewGenerationHandler(), false);
       ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowMappingsPartitioning_Action", "jetbrains.mps.ide");
       ModelActions_ActionGroup.this.addSeparator();
-      ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowDifferencesWithModelOnDisk_Action", "jetbrains.mps.ide");
-      ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ReRunMergeFromBackup_Action", "jetbrains.mps.ide");
-      ModelActions_ActionGroup.this.addSeparator();
       ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RevertMemoryChanges_Action", "jetbrains.mps.ide");
       ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SaveModel_Action", "jetbrains.mps.ide");
       ModelActions_ActionGroup.this.addSeparator();
@@ -55,7 +53,9 @@ public class ModelActions_ActionGroup extends GeneratedActionGroup {
       ModelActions_ActionGroup.this.addSeparator();
       ModelActions_ActionGroup.this.addAnchor(ModelActions_ActionGroup.LABEL_ID_favorites);
       ModelActions_ActionGroup.this.addSeparator();
-      ModelActions_ActionGroup.this.addAnchor(ModelActions_ActionGroup.LABEL_ID_vcs);
+      ModelActions_ActionGroup.this.addAnchor(ModelActions_ActionGroup.LABEL_ID_mpsvcs);
+      ModelActions_ActionGroup.this.addSeparator();
+      ModelActions_ActionGroup.this.addAnchor(ModelActions_ActionGroup.LABEL_ID_ideavcs);
       ModelActions_ActionGroup.this.addSeparator();
       ModelActions_ActionGroup.this.addAnchor(ModelActions_ActionGroup.LABEL_ID_scripts);
       ModelActions_ActionGroup.this.addSeparator();

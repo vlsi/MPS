@@ -10,6 +10,7 @@ public class EditorTabActions_ActionGroup extends GeneratedActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.EditorTabActions";
   public static final String LABEL_ID_find_instances = ID + "find_instances";
   public static final String LABEL_ID_structure = ID + "structure";
+  public static final String LABEL_ID_diff = ID + "diff";
 
   public EditorTabActions_ActionGroup() {
     super("EditorTabActions", ID);
@@ -29,7 +30,7 @@ public class EditorTabActions_ActionGroup extends GeneratedActionGroup {
       EditorTabActions_ActionGroup.this.addSeparator();
       EditorTabActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowConceptInHierarchy_Action", "jetbrains.mps.ide");
       EditorTabActions_ActionGroup.this.addAnchor(EditorTabActions_ActionGroup.LABEL_ID_structure);
-      EditorTabActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowDiffererenesWithCurrentRevision_Action", "jetbrains.mps.ide");
+      EditorTabActions_ActionGroup.this.addAnchor(EditorTabActions_ActionGroup.LABEL_ID_diff);
       EditorTabActions_ActionGroup.this.addSeparator();
       EditorTabActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowErrorMessage_Action", "jetbrains.mps.ide");
     } catch (Throwable t) {

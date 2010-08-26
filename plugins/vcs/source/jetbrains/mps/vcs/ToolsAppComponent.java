@@ -15,10 +15,14 @@
  */
 package jetbrains.mps.vcs;
 
+import com.intellij.openapi.application.Application;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.diff.DiffManager;
+import jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager;
 import jetbrains.mps.vcs.diff.ui.ModelDiffTool;
 import jetbrains.mps.vcs.diff.ui.ModelMergeTool;
+import jetbrains.mps.vcs.plugin.Vcs_ApplicationPlugin;
 import org.jetbrains.annotations.NotNull;
 
 public class ToolsAppComponent implements ApplicationComponent {
@@ -38,6 +42,8 @@ public class ToolsAppComponent implements ApplicationComponent {
   public void initComponent() {
     myDiffManager.registerDiffTool(myModelDiffTool);
     myDiffManager.registerDiffTool(myModelMergeTool);
+
+    ApplicationManager.getApplication().getComponent(ApplicationPluginManager.class).loadPlugin(new Vcs_ApplicationPlugin());
   }
 
   public void disposeComponent() {

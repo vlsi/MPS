@@ -18,13 +18,11 @@ package jetbrains.mps.plugins.applicationplugins;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
-
 import jetbrains.mps.ide.actions.Ide_ApplicationPlugin;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.PluginUtil;
 import jetbrains.mps.plugins.PluginUtil.ApplicationPluginCreator;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.action.ActionFactory;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -36,8 +34,20 @@ public class ApplicationPluginManager implements ApplicationComponent {
 
   private List<BaseApplicationPlugin> mySortedPlugins = new ArrayList<BaseApplicationPlugin>();
 
+  //-----------  introduced temporary for VCS plugin and other IDEA plugins containing mps plugins
+
+  private List<BaseApplicationPlugin> myPluginPlugins = new ArrayList<BaseApplicationPlugin>();
+
+  public void loadPlugin(BaseApplicationPlugin p) {
+    myPluginPlugins.add(p);
+  }
+
+  //-------
+
   public void loadPlugins() {
     mySortedPlugins = createPlugins();
+    mySortedPlugins.addAll(myPluginPlugins);
+    myPluginPlugins.clear();
 
     BaseApplicationPlugin idePlugin = null;
 
