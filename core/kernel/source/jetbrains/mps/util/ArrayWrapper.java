@@ -16,6 +16,7 @@
 package jetbrains.mps.util;
 
 import java.util.AbstractList;
+import java.util.Arrays;
 
 public abstract class ArrayWrapper<T> extends AbstractList<T> {
   private T[] myArray;
@@ -61,6 +62,24 @@ public abstract class ArrayWrapper<T> extends AbstractList<T> {
       if (myArray[i] == o) return i;
     }
     return -1;
+  }
+
+  @Override
+  public Object[] toArray() {
+    return Arrays.copyOf(myArray, size());
+  }
+
+  @Override
+  public <T> T[] toArray(T[] a) {
+    if (a.length < size()) {
+      // Make a new array of a's runtime type, but my contents:
+      return (T[]) Arrays.copyOf(myArray, size(), a.getClass());
+    }
+    System.arraycopy(myArray, 0, a, 0, size());
+    if (a.length > size()) {
+      a[size()] = null;
+    }
+    return a;
   }
 
   public int size() {
