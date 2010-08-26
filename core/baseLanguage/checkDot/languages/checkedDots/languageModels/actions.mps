@@ -65,7 +65,6 @@
   <maxImportIndex value="4" />
   <import index="1" modelUID="r:5a550369-d6d9-4c89-a89b-1bb748dc20b3(jetbrains.mps.baseLanguage.checkedDots.structure)" version="-1" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
-  <import index="3" modelUID="f:java_stub#jetbrains.mps.smodel.action(jetbrains.mps.smodel.action@java_stub)" version="-1" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="4079382982702692311">
     <property name="name:23" value="checkedDotExpression" />
