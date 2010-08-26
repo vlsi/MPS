@@ -21,7 +21,7 @@ import com.intellij.openapi.project.Project;
 import java.awt.Color;
 
 public interface TabColorProvider {
-  ExtensionPointName<TabColorProvider> EP_NAME = new ExtensionPointName<TabColorProvider>("jetbrains.mps.TabColorProvider");
+  ExtensionPointName<TabColorProvider> EP_NAME = new ExtensionPointName<TabColorProvider>("com.intellij.mps.TabColorProvider");
 
   Color getColor(Project project, ILazyTab tab);
 

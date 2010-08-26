@@ -38,7 +38,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.uiLanguage.runtime.events.Events" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
-    <classNode dependClassName="jetbrains.mps.vcs.ApplicationLevelVcsManager" />
+    <classNode dependClassName="jetbrains.mps.vcs.VcsMigrationUtil" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystemFile" />
     <classNode dependClassName="jetbrains.mps.vfs.MPSExtentions" />
     <classNode dependClassName="jetbrains.mps.vfs.VFileSystem" />

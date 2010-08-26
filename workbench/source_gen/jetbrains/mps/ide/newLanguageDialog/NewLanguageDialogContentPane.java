@@ -10,8 +10,6 @@ import javax.swing.JCheckBox;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.Language;
 import java.util.List;
-
-import jetbrains.mps.vcs.VcsMigrationUtil;
 import org.jdesktop.beansbinding.AutoBinding;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -41,6 +39,7 @@ import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.library.LanguageDesign_DevKit;
 import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vfs.VFileSystem;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
