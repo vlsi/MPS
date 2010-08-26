@@ -35,12 +35,12 @@ import java.util.HashSet;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.reloading.ClassPathFactory;
-import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.generator.GenerationSettings;
-import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import com.intellij.openapi.progress.util.ProgressWindow;
+import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.smodel.SModelDescriptor;
 import com.intellij.openapi.util.Disposer;
 import org.apache.commons.lang.StringUtils;
@@ -162,18 +162,14 @@ public abstract class AbstractEvaluationLogic {
       String path = PathManager.getHomePath() + NameUtil.pathFromNamespace(".lib.tools.") + "tools.jar";
       classpaths.add(ClassPathFactory.getInstance().createFromPath(path));
 
-      GeneratorManager manager = new GeneratorManager(myContext.getProject(), new GenerationSettings()) {
-        protected boolean generateRequirements() {
-          return false;
-        }
-      };
-
+      Project project = myContext.getProject();
       final String fullClassName = this.myAuxModel.getLongName() + "." + EVALUATOR_NAME;
       InMemoryJavaGenerationHandler handler = new AbstractEvaluationLogic.MyInMemoryJavaGenerationHandler(false, true, classpaths);
       Project ideaProject = this.myAuxModule.getMPSProject().getProject();
       DefaultMessageHandler messageHandler = new DefaultMessageHandler(ideaProject);
       ProgressWindow progressWindow = new ProgressWindow(false, ideaProject);
-      boolean successful = manager.generateModels(ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), this.myAuxModel), myContext, handler, progressWindow, messageHandler, true);
+      GeneratorManager generatorManager = project.getComponent(GeneratorManager.class);
+      boolean successful = generatorManager.generateModels(ListSequence.fromListAndArray(new ArrayList<Pair<SModelDescriptor, IOperationContext>>(), new Pair<SModelDescriptor, IOperationContext>(myAuxModel, myContext)), handler, progressWindow, messageHandler, true, false);
 
       Disposer.dispose(progressWindow);
 

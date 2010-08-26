@@ -3943,49 +3943,22 @@
               </node>
             </node>
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="6185141366360305773" />
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="6185141366360305774">
-              <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="6185141366360305775">
-                <property name="name:3" value="manager" />
-                <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6185141366360305776">
-                  <link role="classifier:3" targetNodeId="40.~GeneratorManager" resolveInfo="GeneratorManager" />
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="3400923024997888330">
+              <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="3400923024997888331">
+                <property name="name:3" value="project" />
+                <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3400923024997888332">
+                  <link role="classifier:3" targetNodeId="22.~Project" resolveInfo="Project" />
                 </node>
-                <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6185141366360305777">
-                  <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="6185141366360305778">
-                    <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="6185141366360305779">
-                      <link role="classifier:3" targetNodeId="40.~GeneratorManager" resolveInfo="GeneratorManager" />
-                      <link role="baseMethodDeclaration:3" targetNodeId="40.~GeneratorManager.&lt;init&gt;(com.intellij.openapi.project.Project,jetbrains.mps.generator.GenerationSettings)" resolveInfo="GeneratorManager" />
-                      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="6185141366360305780" />
-                      <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="6185141366360305781">
-                        <property name="name:3" value="generateRequirements" />
-                        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="6185141366360305782" />
-                        <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility:3" id="6185141366360305783" />
-                        <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6185141366360305784">
-                          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="6185141366360305785">
-                            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="6185141366360305786">
-                              <property name="value:3" value="false" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6185141366360305787">
-                        <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6185141366360305791">
-                          <link role="baseMethodDeclaration:3" targetNodeId="9.~IOperationContext.getProject():com.intellij.openapi.project.Project" resolveInfo="getProject" />
-                        </node>
-                        <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="6185141366360331089">
-                          <link role="variableDeclaration:3" targetNodeId="6185141366360320968" resolveInfo="myContext" />
-                        </node>
-                      </node>
-                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6185141366360305792">
-                        <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="6185141366360305793">
-                          <link role="baseMethodDeclaration:3" targetNodeId="40.~GenerationSettings.&lt;init&gt;()" resolveInfo="GenerationSettings" />
-                        </node>
-                      </node>
-                    </node>
+                <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3400923024997888333">
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3400923024997888334">
+                    <link role="baseMethodDeclaration:3" targetNodeId="9.~IOperationContext.getProject():com.intellij.openapi.project.Project" resolveInfo="getProject" />
+                  </node>
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="3400923024997888335">
+                    <link role="variableDeclaration:3" targetNodeId="6185141366360320968" resolveInfo="myContext" />
                   </node>
                 </node>
               </node>
             </node>
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="709519388560460635" />
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="709519388560460622">
               <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="709519388560460623">
                 <property name="name:3" value="fullClassName" />
@@ -4097,43 +4070,79 @@
                 </node>
               </node>
             </node>
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="3400923024997891097">
+              <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="3400923024997891098">
+                <property name="name:3" value="generatorManager" />
+                <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3400923024997891099">
+                  <link role="classifier:3" targetNodeId="40.~GeneratorManager" resolveInfo="GeneratorManager" />
+                </node>
+                <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3400923024997891100">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3400923024997891101">
+                    <link role="variableDeclaration:3" targetNodeId="3400923024997888331" resolveInfo="project" />
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3400923024997891102">
+                    <link role="baseMethodDeclaration:3" targetNodeId="24.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression:3" id="3400923024997891103">
+                      <link role="classifier:3" targetNodeId="40.~GeneratorManager" resolveInfo="GeneratorManager" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="6185141366360305816">
               <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="6185141366360305817">
                 <property name="name:3" value="successful" />
                 <node role="type:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="6185141366360305818" />
-                <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6185141366360305819">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6185141366360305820">
-                    <link role="variableDeclaration:3" targetNodeId="6185141366360305775" resolveInfo="manager" />
+                <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3400923024997899092">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3400923024997899093">
+                    <link role="variableDeclaration:3" targetNodeId="3400923024997891098" resolveInfo="generatorManager" />
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6185141366360305821">
-                    <link role="baseMethodDeclaration:3" targetNodeId="40.~GeneratorManager.generateModels(java.util.List,jetbrains.mps.smodel.IOperationContext,jetbrains.mps.generator.generationTypes.IGenerationHandler,com.intellij.openapi.progress.ProgressIndicator,jetbrains.mps.messages.IMessageHandler,boolean):boolean" resolveInfo="generateModels" />
-                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6185141366360305822">
-                      <node role="creator:3" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit:7" id="6185141366360305823">
-                        <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5930354527033869974">
-                          <link role="classifier:3" targetNodeId="9.~SModelDescriptor" resolveInfo="SModelDescriptor" />
-                        </node>
-                        <node role="initValue:7" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6185141366360305826">
-                          <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="6185141366360330512">
-                            <link role="fieldDeclaration:3" targetNodeId="6185141366360320952" resolveInfo="myAuxModel" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3400923024997899094">
+                    <link role="baseMethodDeclaration:3" targetNodeId="40.~GeneratorManager.generateModels(java.util.List,jetbrains.mps.generator.generationTypes.IGenerationHandler,com.intellij.openapi.progress.ProgressIndicator,jetbrains.mps.messages.IMessageHandler,boolean,boolean):boolean" resolveInfo="generateModels" />
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3400923024997899095">
+                      <node role="creator:3" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit:7" id="3400923024997899096">
+                        <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3400923024997899097">
+                          <link role="classifier:3" targetNodeId="29.~Pair" resolveInfo="Pair" />
+                          <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3400923024997899098">
+                            <link role="classifier:3" targetNodeId="9.~SModelDescriptor" resolveInfo="SModelDescriptor" />
                           </node>
-                          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="6185141366360305828" />
+                          <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3400923024997899099">
+                            <link role="classifier:3" targetNodeId="9.~IOperationContext" resolveInfo="IOperationContext" />
+                          </node>
+                        </node>
+                        <node role="initValue:7" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3400923024997899100">
+                          <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="3400923024997899101">
+                            <link role="baseMethodDeclaration:3" targetNodeId="29.~Pair.&lt;init&gt;(java.lang.Object,java.lang.Object)" resolveInfo="Pair" />
+                            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="3400923024997899102">
+                              <link role="variableDeclaration:3" targetNodeId="6185141366360320952" resolveInfo="myAuxModel" />
+                            </node>
+                            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="3400923024997899103">
+                              <link role="variableDeclaration:3" targetNodeId="6185141366360320968" resolveInfo="myContext" />
+                            </node>
+                            <node role="typeParameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3400923024997900207">
+                              <link role="classifier:3" targetNodeId="9.~SModelDescriptor" resolveInfo="SModelDescriptor" />
+                            </node>
+                            <node role="typeParameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3400923024997900210">
+                              <link role="classifier:3" targetNodeId="9.~IOperationContext" resolveInfo="IOperationContext" />
+                            </node>
+                          </node>
                         </node>
                       </node>
                     </node>
-                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="6185141366360331091">
-                      <link role="variableDeclaration:3" targetNodeId="6185141366360320968" resolveInfo="myContext" />
-                    </node>
-                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6185141366360305833">
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3400923024997899104">
                       <link role="variableDeclaration:3" targetNodeId="6185141366360305796" resolveInfo="handler" />
                     </node>
-                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2788001542316982183">
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3400923024997899105">
                       <link role="variableDeclaration:3" targetNodeId="2788001542316982177" resolveInfo="progressWindow" />
                     </node>
-                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6185141366360305836">
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3400923024997899106">
                       <link role="variableDeclaration:3" targetNodeId="6185141366360305805" resolveInfo="messageHandler" />
                     </node>
-                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="6185141366360305837">
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="3400923024997899107">
                       <property name="value:3" value="true" />
+                    </node>
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="3400923024997899108">
+                      <property name="value:3" value="false" />
                     </node>
                   </node>
                 </node>
