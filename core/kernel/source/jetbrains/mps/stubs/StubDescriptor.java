@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.actions.goTo.index;
+package jetbrains.mps.stubs;
 
 import jetbrains.mps.baseLanguage.structure.Annotation;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
@@ -25,41 +25,43 @@ import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.util.InternUtil;
 
-public class StubSNodeDescriptor extends SNodeDescriptor {
+public class StubDescriptor {
   private final String myCls;
   private final String myPack;
   private final IClassPathItem myItem;
 
-  public StubSNodeDescriptor(String cls, String pack, IClassPathItem item) {
-    super(cls, null, 0, 0, -1);
+  public StubDescriptor(String cls, String pack, IClassPathItem item) {
     myCls = cls;
     myPack = pack;
     myItem = item;
   }
 
-  protected SModelReference calculateModelReference() {
-    return StubHelper.uidForPackageInStubs(myPack);
+  public String getClassName() {
+    return myCls;
+  }
+
+  public String getPackage() {
+    return myPack;
   }
 
   public String getConceptFqName() {
-    if (myConceptFqName == null) {
-      ClassifierKind kind = myItem.getClassifierKind(("".equals(myPack) ?
-        myCls :
-        myPack + "." + myCls
-      ));
-      if (kind == ClassifierKind.CLASS) {
-        myConceptFqName = ClassConcept.concept;
-      } else if (kind == ClassifierKind.INTERFACE) {
-        myConceptFqName = Interface.concept;
-      } else if (kind == ClassifierKind.ANNOTATIONS) {
-        myConceptFqName = Annotation.concept;
-      } else if (kind == ClassifierKind.ENUM) {
-        return EnumClass.concept;
-      } else {
-        myConceptFqName = ClassConcept.concept;
-      }
-      myConceptFqName = InternUtil.intern(myConceptFqName);
+    String result;
+    ClassifierKind kind = myItem.getClassifierKind(("".equals(myPack) ?
+      myCls :
+      myPack + "." + myCls
+    ));
+    if (kind == ClassifierKind.CLASS) {
+      result = ClassConcept.concept;
+    } else if (kind == ClassifierKind.INTERFACE) {
+      result = Interface.concept;
+    } else if (kind == ClassifierKind.ANNOTATIONS) {
+      result = Annotation.concept;
+    } else if (kind == ClassifierKind.ENUM) {
+      return EnumClass.concept;
+    } else {
+      result = ClassConcept.concept;
     }
-    return myConceptFqName;
+    result = InternUtil.intern(result);
+    return result;
   }
 }

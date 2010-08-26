@@ -7,7 +7,6 @@ import com.intellij.util.Processor;
 import jetbrains.mps.lang.stubs.structure.LibraryStubDescriptor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
-import jetbrains.mps.project.StubPath;
 import jetbrains.mps.project.SModelRoot.ManagerNotFoundException;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
@@ -18,7 +17,6 @@ import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.vfs.VFileSystem;
-import jetbrains.mps.workbench.actions.goTo.index.SNodeDescriptor;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -53,8 +51,8 @@ public class StubReloadManager implements ApplicationComponent {
     updateLoadedStubPaths();
   }
 
-  public List<SNodeDescriptor> getRootNodeDescriptors(AbstractModule module) {
-    List<SNodeDescriptor> result = new ArrayList<SNodeDescriptor>();
+  public List<StubDescriptor> getRootNodeDescriptors(AbstractModule module) {
+    List<StubDescriptor> result = new ArrayList<StubDescriptor>();
 
     for (StubPath path : myLoadedStubPaths.get(module.getModuleReference().getModuleId())) {
       PathData pd = myPath2Data.get(path);
