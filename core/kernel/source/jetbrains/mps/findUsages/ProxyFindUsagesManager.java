@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.findUsages;
 
-import jetbrains.mps.ide.findusages.FastFindUsagesManager;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -24,8 +23,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
