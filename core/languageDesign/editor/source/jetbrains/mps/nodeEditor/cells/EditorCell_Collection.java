@@ -44,8 +44,8 @@ import java.util.List;
 public class EditorCell_Collection extends EditorCell_Basic implements Iterable<EditorCell> {
   public static final String FOLDED_TEXT = "...";
 
+  private EditorCell[] myEditorCells = EditorCell.EMPTY_ARRAY;
   private List<EditorCell> myEditorCellsWrapper = new ArrayWrapper<EditorCell>() {
-    private EditorCell[] myEditorCells = EditorCell.EMPTY_ARRAY;
     protected EditorCell[] getArray() {
       return myEditorCells;
     }
