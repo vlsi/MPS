@@ -47,7 +47,6 @@ public class ApplicationPluginManager implements ApplicationComponent {
   public void loadPlugins() {
     mySortedPlugins = createPlugins();
     mySortedPlugins.addAll(myPluginPlugins);
-    myPluginPlugins.clear();
 
     BaseApplicationPlugin idePlugin = null;
 
