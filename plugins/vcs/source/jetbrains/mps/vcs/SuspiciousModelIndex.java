@@ -52,7 +52,6 @@ public class SuspiciousModelIndex implements ApplicationComponent {
   }
 
   private final ProjectManager myProjectManager;
-  private final ApplicationLevelVcsManager myVcsManager;
   private final ModelChangesWatcher myWatcher;
   private final VirtualFileManager myVirtualFileManager;
 
@@ -99,10 +98,9 @@ public class SuspiciousModelIndex implements ApplicationComponent {
     }
   };
 
-  public SuspiciousModelIndex(ProjectManager manager, ApplicationLevelVcsManager vcsManager, ModelChangesWatcher watcher, VirtualFileManager vfManager) {
+  public SuspiciousModelIndex(ProjectManager manager, ModelChangesWatcher watcher, VirtualFileManager vfManager) {
     myProjectManager = manager;
     myProjectManagerListener = new ProjectOpenedListener();
-    myVcsManager = vcsManager;
     myWatcher = watcher;
     myVirtualFileManager = vfManager;
   }
@@ -204,11 +202,11 @@ public class SuspiciousModelIndex implements ApplicationComponent {
 
     for (Conflictable conflictable : conflictableList) {
       IFile ifile = conflictable.getFile();
-      if (myVcsManager.isInConflict(ifile, true)) {
+      if (VCSUtil.isInConflict(ifile, true)) {
         VirtualFile vfile = VFileSystem.getFile(ifile);
         Conflictable prev = fileToConflictable.put(vfile, conflictable);
         if (prev == null) { // since we process the file first time, we need to find a project for it
-          Project project = myVcsManager.getProjectForFile(vfile);
+          Project project = VCSUtil.getProjectForFile(vfile);
           List<VirtualFile> files = toMerge.get(project);
           if (files == null) {
             files = new LinkedList<VirtualFile>();

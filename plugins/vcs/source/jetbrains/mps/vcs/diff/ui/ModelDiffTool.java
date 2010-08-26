@@ -27,7 +27,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalOperationContext;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.vcs.ApplicationLevelVcsManager;
+import jetbrains.mps.vcs.VCSSettingsHolder;
 import jetbrains.mps.vcs.ModelUtils;
 import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.NotNull;
@@ -114,7 +114,7 @@ public class ModelDiffTool implements DiffTool {
   }
 
   public boolean canShow(DiffRequest request) {
-    if (ApplicationLevelVcsManager.instance().getSettings().isTextModeEnabled()) return false;
+    if (VCSSettingsHolder.instance().getSettings().isTextModeEnabled()) return false;
 
     DiffContent[] contents = request.getContents();
     return (contents.length == 2) && isModelFile(contents[0]) && isModelFile(contents[1]);

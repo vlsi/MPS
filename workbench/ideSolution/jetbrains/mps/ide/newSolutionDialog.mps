@@ -974,7 +974,7 @@
                         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5890305283801268291">
                           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5890305283801268292">
                             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5890305283801268293">
-                              <link role="baseMethodDeclaration:3" targetNodeId="17.~ApplicationLevelVcsManager.instance():jetbrains.mps.vcs.ApplicationLevelVcsManager" resolveInfo="instance" />
+                              <link role="baseMethodDeclaration:3" targetNodeId="17.~ApplicationLevelVcsManager.instance():jetbrains.mps.vcs.VCSSettingsHolder" resolveInfo="instance" />
                               <link role="classConcept:3" targetNodeId="17.~ApplicationLevelVcsManager" resolveInfo="ApplicationLevelVcsManager" />
                             </node>
                             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5890305283801268294">

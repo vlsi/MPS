@@ -15,15 +15,8 @@
  */
 package jetbrains.mps.vcs;
 
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.components.PersistentStateComponent;
-import com.intellij.openapi.components.State;
-import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
-import com.intellij.openapi.project.ProjectManagerListener;
-import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vcs.FilePath;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
@@ -33,60 +26,19 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.vcs.ui.VcsIdeSettings;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
-import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.util.*;
 
-@State(
-  name = "ApplicationLevelVcsConfiguration",
-  storages = {
-    @Storage(
-      id = "other",
-      file = "$APP_CONFIG$/other.xml"
-    )
-  }
-)
-public class ApplicationLevelVcsManager implements ApplicationComponent, PersistentStateComponent<VcsIdeSettings> {
-  public static final Logger LOG = Logger.getLogger(ApplicationLevelVcsManager.class);
-
-  public static ApplicationLevelVcsManager instance() {
-    return ApplicationManager.getApplication().getComponent(ApplicationLevelVcsManager.class);
-  }
-
-  private final ProjectManager myProjectManager;
-  private final TaskQueue<File> myFilesToAddQueue = new AddTaskQueue();
-  private final TaskQueue<File> myFilesToRemoveQueue = new RemoveTaskQueue();
-  private final ProjectManagerListener myListener = new MyProjectManagerListener();
-  private VcsIdeSettings mySettings;
-
-  public ApplicationLevelVcsManager(ProjectManager projectManager) {
-    myProjectManager = projectManager;
-  }
-
-  @NonNls
-  @NotNull
-  public String getComponentName() {
-    return "Application Level Vcs Manager";
-  }
-
-  public void initComponent() {
-    myProjectManager.addProjectManagerListener(myListener);
-  }
-
-  public void disposeComponent() {
-    myProjectManager.removeProjectManagerListener(myListener);
-  }
+public class VCSUtil {
+  private static final Logger LOG = Logger.getLogger(VCSUtil.class);
 
   @Nullable
-  public Project getProjectForFile(VirtualFile f) {
-    Project[] projects = myProjectManager.getOpenProjects();
-    for (Project project : projects) {
+  public static Project getProjectForFile(VirtualFile f) {
+    for (Project project : getProjects()) {
       AbstractVcs vcs = getVcsForFile(f, project);
       if (vcs != null) {
         return project;
@@ -96,9 +48,8 @@ public class ApplicationLevelVcsManager implements ApplicationComponent, Persist
   }
 
   @Nullable
-  public Project getProjectForFilePath(FilePath f) {
-    Project[] projects = myProjectManager.getOpenProjects();
-    for (Project project : projects) {
+  public static Project getProjectForFilePath(FilePath f) {
+    for (Project project : getProjects()) {
       AbstractVcs vcs = getVcsForFile(f, project);
       if (vcs != null) {
         return project;
@@ -108,21 +59,20 @@ public class ApplicationLevelVcsManager implements ApplicationComponent, Persist
   }
 
   @Nullable
-  private AbstractVcs getVcsForFile(VirtualFile f, Project project) {
+  private static AbstractVcs getVcsForFile(VirtualFile f, Project project) {
     if (project.isDisposed()) return null;
     return ProjectLevelVcsManager.getInstance(project).getVcsFor(f);
   }
 
   @Nullable
-  private AbstractVcs getVcsForFile(FilePath f, Project project) {
+  private static AbstractVcs getVcsForFile(FilePath f, Project project) {
     if (project.isDisposed()) return null;
     return ProjectLevelVcsManager.getInstance(project).getVcsFor(f);
   }
 
   @Nullable
-  public AbstractVcs getVcsForFile(VirtualFile f) {
-    Project[] projects = myProjectManager.getOpenProjects();
-    for (Project project : projects) {
+  public static AbstractVcs getVcsForFile(VirtualFile f) {
+    for (Project project : getProjects()) {
       AbstractVcs vcs = getVcsForFile(f, project);
       if (vcs != null) {
         return vcs;
@@ -132,7 +82,7 @@ public class ApplicationLevelVcsManager implements ApplicationComponent, Persist
   }
 
   @Nullable
-  public VcsRevisionNumber getRevisionNumber(VirtualFile file) {
+  public static VcsRevisionNumber getRevisionNumber(VirtualFile file) {
     AbstractVcs vcs = getVcsForFile(file);
     if (vcs == null) {
       return null;
@@ -144,10 +94,10 @@ public class ApplicationLevelVcsManager implements ApplicationComponent, Persist
     return diffProvider.getCurrentRevision(file);
   }
 
-  public boolean isInConflict(IFile ifile, boolean synchronously) {
+  public static boolean isInConflict(IFile ifile, boolean synchronously) {
     VirtualFile vfile = VFileSystem.getFile(ifile);
     if ((vfile != null) && (vfile.exists())) {
-      for (Project project : myProjectManager.getOpenProjects()) {
+      for (Project project : getProjects()) {
         boolean isInConflict = MPSVCSManager.getInstance(project).isInConflict(vfile, synchronously);
         if (isInConflict) {
           return true;
@@ -157,7 +107,7 @@ public class ApplicationLevelVcsManager implements ApplicationComponent, Persist
     return false;
   }
 
-  public void addFilesToVcs(List<VirtualFile> files, boolean recursive) {
+  public static void addFilesToVcs(List<VirtualFile> files, boolean recursive) {
     // collect
     Map<MPSVCSManager, Set<VirtualFile>> vcsManagerToFile = new HashMap<MPSVCSManager, Set<VirtualFile>>();
     for (VirtualFile file : files) {
@@ -185,7 +135,7 @@ public class ApplicationLevelVcsManager implements ApplicationComponent, Persist
     }
   }
 
-  public void addFileToVcs(VirtualFile file, boolean recursive) {
+  public static void addFileToVcs(VirtualFile file, boolean recursive) {
     Project project = getProjectForFile(file);
     if (project != null) {
       MPSVCSManager manager = MPSVCSManager.getInstance(project);
@@ -199,7 +149,7 @@ public class ApplicationLevelVcsManager implements ApplicationComponent, Persist
     }
   }
 
-  public void removeFilesFromVcs(List<FilePath> files) {
+  public static void removeFilesFromVcs(List<FilePath> files) {
     // collect
     Map<MPSVCSManager, List<File>> vcsManagerToFile = new HashMap<MPSVCSManager, List<File>>();
     for (FilePath file : files) {
@@ -227,94 +177,14 @@ public class ApplicationLevelVcsManager implements ApplicationComponent, Persist
     }
   }
 
-  public boolean isInConflict(final SModelDescriptor md, boolean synchronously) {
+  public static boolean isInConflict(final SModelDescriptor md, boolean synchronously) {
     if (!(md instanceof EditableSModelDescriptor)) return false;
     EditableSModelDescriptor emd = (EditableSModelDescriptor) md;
     if (emd.getModelFile() == null) return false;
     return isInConflict(emd.getModelFile(), synchronously);
   }
 
-  public void addToVcsLater(File file) {
-    myFilesToAddQueue.invokeLater(file);
-  }
-
-  public void removeFromVcsLater(File file) {
-    myFilesToRemoveQueue.invokeLater(file);
-  }
-
-  public VcsIdeSettings getSettings() {
-    if (mySettings == null) {
-      mySettings = new VcsIdeSettings();
-    }
-    return mySettings;
-  }
-
-  public VcsIdeSettings getState() {
-    return mySettings;
-  }
-
-  public void loadState(VcsIdeSettings state) {
-    mySettings = state;
-  }
-
-  private class MyProjectManagerListener implements ProjectManagerListener {
-    public void projectOpened(Project project) {
-      StartupManager.getInstance(project).registerPostStartupActivity(new Runnable() {
-        public void run() {
-          myFilesToAddQueue.removeProcessingBan();
-          myFilesToRemoveQueue.removeProcessingBan();
-        }
-      });
-    }
-
-    public boolean canCloseProject(Project project) {
-      return true;
-    }
-
-    public void projectClosed(Project project) {
-      if (myProjectManager.getOpenProjects().length == 0) {
-        myFilesToAddQueue.banProcessing();
-        myFilesToRemoveQueue.banProcessing();
-      }
-    }
-
-    public void projectClosing(Project project) {
-    }
-  }
-
-  private class AddTaskQueue extends TaskQueue<File> {
-    public AddTaskQueue() {
-      super(false);
-    }
-
-    public void processTask(final List<File> tasks) {
-      ApplicationManager.getApplication().invokeLater(new Runnable() {
-        public void run() {
-          List<VirtualFile> filesToAdd = new ArrayList<VirtualFile>(tasks.size());
-          for (File f : tasks) {
-            VirtualFile file = VFileSystem.refreshAndGetFile(f);
-            assert file != null : "Can not find virtual file for " + f;
-            filesToAdd.add(file);
-          }
-          addFilesToVcs(filesToAdd, false);
-        }
-      });
-
-    }
-  }
-
-  private class RemoveTaskQueue extends TaskQueue<File> {
-    public RemoveTaskQueue() {
-      super(false);
-    }
-
-    public void processTask(List<File> tasks) {
-      List<FilePath> filesToAdd = new ArrayList<FilePath>(tasks.size());
-      for (File f : tasks) {
-        FilePath file = VcsHelper.getFilePath(f);
-        filesToAdd.add(file);
-      }
-      removeFilesFromVcs(filesToAdd);
-    }
+  private static Project[] getProjects() {
+    return ProjectManager.getInstance().getOpenProjects();
   }
 }

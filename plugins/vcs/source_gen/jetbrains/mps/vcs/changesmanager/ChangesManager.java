@@ -11,6 +11,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.SModelRepositoryListener;
+import jetbrains.mps.vcs.VCSSettingsHolder;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -33,7 +34,6 @@ import java.io.PrintStream;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.changes.Change;
-import jetbrains.mps.vcs.ApplicationLevelVcsManager;
 import com.intellij.openapi.vcs.changes.ChangeListAdapter;
 import java.util.Collection;
 import com.intellij.openapi.vcs.changes.ChangeList;
@@ -200,7 +200,7 @@ public class ChangesManager extends AbstractProjectComponent {
   }
 
   public static boolean isEnabled() {
-    return ApplicationLevelVcsManager.instance().getSettings().isChangesManagerEnabled();
+    return VCSSettingsHolder.instance().getSettings().isChangesManagerEnabled();
   }
 
   private class MyChangeListListener extends ChangeListAdapter {

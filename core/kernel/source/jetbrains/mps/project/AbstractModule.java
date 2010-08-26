@@ -575,7 +575,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   private void handleReadProblem(Exception e, boolean isInConflict) {
-    VcsMigrationUtil.addModule(this, isInConflict);
+    VcsMigrationUtil.addSuspiciousModule(this, isInConflict);
     LOG.error(e.getMessage());
     e.printStackTrace();
   }

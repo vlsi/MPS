@@ -17,7 +17,7 @@ package jetbrains.mps.vcs.ui;
 
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.options.SearchableConfigurable;
-import jetbrains.mps.vcs.ApplicationLevelVcsManager;
+import jetbrains.mps.vcs.VCSSettingsHolder;
 import org.jetbrains.annotations.Nls;
 
 import javax.swing.Icon;
@@ -27,7 +27,7 @@ public class VcsSettingsConfigurable implements SearchableConfigurable {
   private VcsSettingsPanel mySettingsPanel;
   private final VcsIdeSettings mySettings;
 
-  public VcsSettingsConfigurable(ApplicationLevelVcsManager manager) {
+  public VcsSettingsConfigurable(VCSSettingsHolder manager) {
     mySettings = manager.getSettings();
   }
 

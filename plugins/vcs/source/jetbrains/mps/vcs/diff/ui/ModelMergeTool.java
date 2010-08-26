@@ -22,7 +22,7 @@ import com.intellij.openapi.diff.DiffTool;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.vcs.ApplicationLevelVcsManager;
+import jetbrains.mps.vcs.VCSSettingsHolder;
 import jetbrains.mps.vcs.ModelUtils;
 import jetbrains.mps.vcs.diff.ModelMergeRequest;
 import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
@@ -79,7 +79,7 @@ public class ModelMergeTool implements DiffTool {
   }
 
   public boolean canShow(DiffRequest request) {
-    if (ApplicationLevelVcsManager.instance().getSettings().isTextModeEnabled()) return false;
+    if (VCSSettingsHolder.instance().getSettings().isTextModeEnabled()) return false;
     return (request instanceof ModelMergeRequest);
   }
 }

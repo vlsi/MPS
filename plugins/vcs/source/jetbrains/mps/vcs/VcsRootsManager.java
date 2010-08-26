@@ -50,7 +50,7 @@ public class VcsRootsManager implements ProjectComponent {
   private final SModelAdapter myGlobalSModelListener = new SModelAdapter() {
     @Override
     public void modelSaved(SModelDescriptor sm) {
-      if (ApplicationLevelVcsManager.instance().getSettings().getDiscoverVcsRootsSafe().equals(VcsRootsDiscoveryPolicy.DO_NOTING) ||
+      if (VCSSettingsHolder.instance().getSettings().getDiscoverVcsRootsSafe().equals(VcsRootsDiscoveryPolicy.DO_NOTING) ||
         ApplicationManager.getApplication().isUnitTestMode()) {
         return;
       }
@@ -69,9 +69,9 @@ public class VcsRootsManager implements ProjectComponent {
         }
         Set<VirtualFile> currentRoots = new HashSet<VirtualFile>(Arrays.asList(myVcsManager.getAllVersionedRoots()));
         if ((root != null) && (!myExcludedRoots.contains(root)) && (!currentRoots.contains(root))) {
-          if (ApplicationLevelVcsManager.instance().getSettings().getDiscoverVcsRootsSafe().equals(VcsRootsDiscoveryPolicy.NOTIFY)) {
+          if (VCSSettingsHolder.instance().getSettings().getDiscoverVcsRootsSafe().equals(VcsRootsDiscoveryPolicy.NOTIFY)) {
             fireModelOutsideVcsRootsChanged(root, sm);
-          } else if (ApplicationLevelVcsManager.instance().getSettings().getDiscoverVcsRootsSafe().equals(VcsRootsDiscoveryPolicy.ADD)) {
+          } else if (VCSSettingsHolder.instance().getSettings().getDiscoverVcsRootsSafe().equals(VcsRootsDiscoveryPolicy.ADD)) {
             List<VcsDirectoryMapping> mappings = createMappings(Collections.singletonMap(myVcsManager.findVersioningVcs(root), Collections.singleton(file)));
             mergeWithCurrentOnes(mappings);
             myVcsManager.setDirectoryMappings(mappings);
@@ -89,7 +89,7 @@ public class VcsRootsManager implements ProjectComponent {
   }
 
   public void projectOpened() {
-    if (ApplicationLevelVcsManager.instance().getSettings().getDiscoverVcsRootsSafe().equals(VcsRootsDiscoveryPolicy.ADD)) {
+    if (VCSSettingsHolder.instance().getSettings().getDiscoverVcsRootsSafe().equals(VcsRootsDiscoveryPolicy.ADD)) {
       if (!ApplicationManager.getApplication().isUnitTestMode()) {
         addDirectoryMappings();
       }
