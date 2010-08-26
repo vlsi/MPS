@@ -695,13 +695,13 @@
     </jar>
   </target>
   <target name="pack.jetbrains.mps.debug.api.info_f5a">
-    <mkdir dir="core/debug-api/project/solutions/jetbrains.mps.debug.api.info/source_gen.caches" />
-    <mkdir dir="core/debug-api/project/solutions/jetbrains.mps.debug.api.info/test_gen.caches" />
+    <mkdir dir="core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/source_gen.caches" />
+    <mkdir dir="core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/test_gen.caches" />
     <jar destfile="${deploy.dir}/MPS/core/jetbrains.mps.debug.api.info.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="core/debug-api/project/solutions/jetbrains.mps.debug.api.info/jetbrains.mps.debug.api.info.msd" prefix="module" />
-      <zipfileset dir="core/debug-api/project/solutions/jetbrains.mps.debug.api.info/source_gen.caches" prefix="source_gen.caches" />
-      <zipfileset dir="core/debug-api/project/solutions/jetbrains.mps.debug.api.info/test_gen.caches" prefix="test_gen.caches" />
-      <zipfileset dir="core/debug-api/project/solutions/jetbrains.mps.debug.api.info" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset file="core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/jetbrains.mps.debug.api.info.msd" prefix="module" />
+      <zipfileset dir="core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/source_gen.caches" prefix="source_gen.caches" />
+      <zipfileset dir="core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/test_gen.caches" prefix="test_gen.caches" />
+      <zipfileset dir="core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.debug.evaluation_g5a">
