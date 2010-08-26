@@ -109,7 +109,7 @@ public class SuspiciousModelIndex implements ApplicationComponent {
     myTaskQueue.invokeLater(new ConflictableModelAdapter(model, isInConflict));
   }
 
-  public void addModule(AbstractModule abstractModule, boolean inConflict) {
+    public void addModule(AbstractModule abstractModule, boolean inConflict) {
     myTaskQueue.invokeLater(new ConflictableModuleAdapter(abstractModule, inConflict));
   }
 
@@ -133,14 +133,6 @@ public class SuspiciousModelIndex implements ApplicationComponent {
     myProjectManager.removeProjectManagerListener(myProjectManagerListener);
     myWatcher.removeReloadListener(myReloadListener);
     myVirtualFileManager.removeVirtualFileManagerListener(myVirtualFileManagerListener);
-  }
-
-  public void addModelFile(VirtualFile file) {
-    if (file == null) return;
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().findModel(VFileSystem.toIFile(file));
-    if (modelDescriptor != null) {
-      this.addModel(((EditableSModelDescriptor) modelDescriptor), false);
-    }
   }
 
   private class ProjectOpenedListener implements ProjectManagerListener {

@@ -33,12 +33,14 @@ public class VcsMigrationUtil {
     //SuspiciousModelIndex.instance().addModule(abstractModule, inConflict);
   }
 
-  public static void addModelFile(VirtualFile file) {
-    //SuspiciousModelIndex.instance().addModelFile( file);
-  }
-
   public static void addModel(EditableSModelDescriptor modelDescriptor, boolean conflictStateFixed) {
     //SuspiciousModelIndex.instance().addModel(modelDescriptor,conflictStateFixed);
+  }
+
+//-------------------------
+
+  public static void deleteFromDiskAndRemoveFromVcs(List<File> filesToDelete, boolean b) {
+    //(MPSVCSManager.class).   deleteFromDiskAndRemoveFromVcs( filesToDelete,  b);
   }
 
 //-------------------------
@@ -47,15 +49,13 @@ public class VcsMigrationUtil {
     //(MPSVCSManager.class).addFilesToVcs(files,b,b1);
   }
 
-  public static void deleteFromDiskAndRemoveFromVcs(List<File> filesToDelete, boolean b) {
-   //(MPSVCSManager.class).   deleteFromDiskAndRemoveFromVcs( filesToDelete,  b);
-  }
-
   public static void removeFromVcs(List<File> files, boolean b) {
-    //MPSVCSManager.getInstance(project).removeFromVcs(files,b);
-  }
+    //Project project = VcsMigrationUtil.getProjectForFile(vfile);
+   // if (project != null) {
+      //MPSVCSManager.getInstance(project).removeFromVcs(files,b);
+  //  }
 
-//-------------------------
+  }
 
   public static void addFileToVcs(VirtualFile virtualFile, boolean b) {
     //ApplicationLevelVcsManager.instance().addFileToVcs(virtualFile,b);
@@ -65,13 +65,9 @@ public class VcsMigrationUtil {
     return null;//ApplicationLevelVcsManager.instance().getRevisionNumber(file);
   }
 
-  public static Project getProjectForFile(VirtualFile vfile) {
-    return null;//ApplicationLevelVcsManager.instance().getProjectForFile(vfile);
-  }
-
   //todo remove
   public static void addToVcsLater(File file) {
-   //ApplicationLevelVcsManager.instance().addToVcsLater(file);
+    //ApplicationLevelVcsManager.instance().addToVcsLater(file);
   }
 
   //todo remove
