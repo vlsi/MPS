@@ -30,7 +30,7 @@
   <property name="jetbrains.mps.build.packaging.classes" value="platform/buildlanguage/languages/packaging/classes_gen" />
   <property name="jetbrains.mps.build.property.classes" value="platform/buildlanguage/languages/property/classes_gen" />
   <property name="jetbrains.mps.buildlanguage.classes" value="platform/buildlanguage/languages/buildlanguage/classes_gen" />
-  <property name="jetbrains.mps.debug.privateMembers.classes" value="core/kernel/debug/debugProject/languages/privateMembers/classes_gen" />
+  <property name="jetbrains.mps.debug.privateMembers.classes" value="core/debug/debugProject/languages/privateMembers/classes_gen" />
   <property name="jetbrains.mps.editor.runtime.classes" value="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
   <property name="jetbrains.mps.gtext.classes" value="platform/gtext/classes_gen" />
   <property name="jetbrains.mps.gtext.runtime.classes" value="platform/gtext/runtime/classes_gen" />
@@ -62,10 +62,10 @@
   <path id="common.classpath">
     <path path="MPSPlugin/apiclasses" />
     <path path="classes" />
+    <path path="core/debug-api/classes" />
+    <path path="core/debug/classes" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
-    <path path="core/kernel/debug-api/classes" />
-    <path path="core/kernel/debug/classes" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
     <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/eclipse-compiler/ecj.jar" />
@@ -167,7 +167,7 @@
     <path path="platform/buildlanguage/languages/buildlanguage/source_gen" />
   </path>
   <path id="cycle.jetbrains.mps.debug.privateMembers_tjc.src">
-    <path path="core/kernel/debug/debugProject/languages/privateMembers/source_gen" />
+    <path path="core/debug/debugProject/languages/privateMembers/source_gen" />
   </path>
   <path id="cycle.jetbrains.mps.editor.runtime_tjc.src">
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/source_gen" />
@@ -288,11 +288,11 @@
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
+    <path path="core/debug-api/classes" />
+    <path path="core/debug/classes" />
+    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
-    <path path="core/kernel/debug-api/classes" />
-    <path path="core/kernel/debug/classes" />
-    <path path="core/kernel/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/annotations/classes" />
@@ -409,11 +409,11 @@
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
+    <path path="core/debug-api/classes" />
+    <path path="core/debug/classes" />
+    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
-    <path path="core/kernel/debug-api/classes" />
-    <path path="core/kernel/debug/classes" />
-    <path path="core/kernel/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/annotations/classes" />
@@ -529,11 +529,11 @@
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
+    <path path="core/debug-api/classes" />
+    <path path="core/debug/classes" />
+    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
-    <path path="core/kernel/debug-api/classes" />
-    <path path="core/kernel/debug/classes" />
-    <path path="core/kernel/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/annotations/classes" />
@@ -649,11 +649,11 @@
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
+    <path path="core/debug-api/classes" />
+    <path path="core/debug/classes" />
+    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
-    <path path="core/kernel/debug-api/classes" />
-    <path path="core/kernel/debug/classes" />
-    <path path="core/kernel/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/annotations/classes" />
@@ -769,11 +769,11 @@
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
+    <path path="core/debug-api/classes" />
+    <path path="core/debug/classes" />
+    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
-    <path path="core/kernel/debug-api/classes" />
-    <path path="core/kernel/debug/classes" />
-    <path path="core/kernel/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/annotations/classes" />
@@ -889,11 +889,11 @@
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
+    <path path="core/debug-api/classes" />
+    <path path="core/debug/classes" />
+    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
-    <path path="core/kernel/debug-api/classes" />
-    <path path="core/kernel/debug/classes" />
-    <path path="core/kernel/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/annotations/classes" />
@@ -1010,11 +1010,11 @@
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
+    <path path="core/debug-api/classes" />
+    <path path="core/debug/classes" />
+    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
-    <path path="core/kernel/debug-api/classes" />
-    <path path="core/kernel/debug/classes" />
-    <path path="core/kernel/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/annotations/classes" />
@@ -1137,11 +1137,11 @@
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
+    <path path="core/debug-api/classes" />
+    <path path="core/debug/classes" />
+    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
-    <path path="core/kernel/debug-api/classes" />
-    <path path="core/kernel/debug/classes" />
-    <path path="core/kernel/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/annotations/classes" />
@@ -1257,11 +1257,11 @@
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
+    <path path="core/debug-api/classes" />
+    <path path="core/debug/classes" />
+    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
-    <path path="core/kernel/debug-api/classes" />
-    <path path="core/kernel/debug/classes" />
-    <path path="core/kernel/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/annotations/classes" />
@@ -1377,11 +1377,11 @@
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
+    <path path="core/debug-api/classes" />
+    <path path="core/debug/classes" />
+    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
-    <path path="core/kernel/debug-api/classes" />
-    <path path="core/kernel/debug/classes" />
-    <path path="core/kernel/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/annotations/classes" />
@@ -1497,11 +1497,11 @@
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
+    <path path="core/debug-api/classes" />
+    <path path="core/debug/classes" />
+    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
-    <path path="core/kernel/debug-api/classes" />
-    <path path="core/kernel/debug/classes" />
-    <path path="core/kernel/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/annotations/classes" />
@@ -1619,11 +1619,11 @@
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
+    <path path="core/debug-api/classes" />
+    <path path="core/debug/classes" />
+    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
-    <path path="core/kernel/debug-api/classes" />
-    <path path="core/kernel/debug/classes" />
-    <path path="core/kernel/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/annotations/classes" />
@@ -1739,11 +1739,11 @@
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
+    <path path="core/debug-api/classes" />
+    <path path="core/debug/classes" />
+    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
-    <path path="core/kernel/debug-api/classes" />
-    <path path="core/kernel/debug/classes" />
-    <path path="core/kernel/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/annotations/classes" />
@@ -1866,11 +1866,11 @@
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
+    <path path="core/debug-api/classes" />
+    <path path="core/debug/classes" />
+    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
-    <path path="core/kernel/debug-api/classes" />
-    <path path="core/kernel/debug/classes" />
-    <path path="core/kernel/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/annotations/classes" />
@@ -1988,11 +1988,11 @@
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
+    <path path="core/debug-api/classes" />
+    <path path="core/debug/classes" />
+    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
-    <path path="core/kernel/debug-api/classes" />
-    <path path="core/kernel/debug/classes" />
-    <path path="core/kernel/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/annotations/classes" />
@@ -2112,11 +2112,11 @@
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
+    <path path="core/debug-api/classes" />
+    <path path="core/debug/classes" />
+    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
-    <path path="core/kernel/debug-api/classes" />
-    <path path="core/kernel/debug/classes" />
-    <path path="core/kernel/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/annotations/classes" />
@@ -2235,11 +2235,11 @@
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
+    <path path="core/debug-api/classes" />
+    <path path="core/debug/classes" />
+    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
-    <path path="core/kernel/debug-api/classes" />
-    <path path="core/kernel/debug/classes" />
-    <path path="core/kernel/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/annotations/classes" />
@@ -2371,11 +2371,11 @@
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
+    <path path="core/debug-api/classes" />
+    <path path="core/debug/classes" />
+    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
-    <path path="core/kernel/debug-api/classes" />
-    <path path="core/kernel/debug/classes" />
-    <path path="core/kernel/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/annotations/classes" />
@@ -2501,11 +2501,11 @@
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
+    <path path="core/debug-api/classes" />
+    <path path="core/debug/classes" />
+    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
-    <path path="core/kernel/debug-api/classes" />
-    <path path="core/kernel/debug/classes" />
-    <path path="core/kernel/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/annotations/classes" />
@@ -2635,11 +2635,11 @@
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
+    <path path="core/debug-api/classes" />
+    <path path="core/debug/classes" />
+    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
-    <path path="core/kernel/debug-api/classes" />
-    <path path="core/kernel/debug/classes" />
-    <path path="core/kernel/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/annotations/classes" />
@@ -2725,7 +2725,7 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.debug.privateMembers_tjc.classpaths">
-    <path path="core/kernel/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="MPSPlugin/apiclasses" />
     <path path="classes" />
     <path path="core/baseLanguage/baseLanguage/classes" />
@@ -2762,11 +2762,11 @@
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
+    <path path="core/debug-api/classes" />
+    <path path="core/debug/classes" />
+    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
-    <path path="core/kernel/debug-api/classes" />
-    <path path="core/kernel/debug/classes" />
-    <path path="core/kernel/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/annotations/classes" />
@@ -2882,11 +2882,11 @@
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
+    <path path="core/debug-api/classes" />
+    <path path="core/debug/classes" />
+    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
-    <path path="core/kernel/debug-api/classes" />
-    <path path="core/kernel/debug/classes" />
-    <path path="core/kernel/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/annotations/classes" />
@@ -3002,11 +3002,11 @@
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
+    <path path="core/debug-api/classes" />
+    <path path="core/debug/classes" />
+    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
-    <path path="core/kernel/debug-api/classes" />
-    <path path="core/kernel/debug/classes" />
-    <path path="core/kernel/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/annotations/classes" />
@@ -3129,11 +3129,11 @@
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
+    <path path="core/debug-api/classes" />
+    <path path="core/debug/classes" />
+    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
-    <path path="core/kernel/debug-api/classes" />
-    <path path="core/kernel/debug/classes" />
-    <path path="core/kernel/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/annotations/classes" />
@@ -3254,11 +3254,11 @@
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
+    <path path="core/debug-api/classes" />
+    <path path="core/debug/classes" />
+    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
-    <path path="core/kernel/debug-api/classes" />
-    <path path="core/kernel/debug/classes" />
-    <path path="core/kernel/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/annotations/classes" />
@@ -3374,11 +3374,11 @@
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
+    <path path="core/debug-api/classes" />
+    <path path="core/debug/classes" />
+    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
-    <path path="core/kernel/debug-api/classes" />
-    <path path="core/kernel/debug/classes" />
-    <path path="core/kernel/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/annotations/classes" />
@@ -3494,11 +3494,11 @@
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
+    <path path="core/debug-api/classes" />
+    <path path="core/debug/classes" />
+    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
-    <path path="core/kernel/debug-api/classes" />
-    <path path="core/kernel/debug/classes" />
-    <path path="core/kernel/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/annotations/classes" />
@@ -3615,11 +3615,11 @@
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
+    <path path="core/debug-api/classes" />
+    <path path="core/debug/classes" />
+    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
-    <path path="core/kernel/debug-api/classes" />
-    <path path="core/kernel/debug/classes" />
-    <path path="core/kernel/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/annotations/classes" />
@@ -3740,11 +3740,11 @@
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
+    <path path="core/debug-api/classes" />
+    <path path="core/debug/classes" />
+    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
-    <path path="core/kernel/debug-api/classes" />
-    <path path="core/kernel/debug/classes" />
-    <path path="core/kernel/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/annotations/classes" />
@@ -3871,11 +3871,11 @@
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
+    <path path="core/debug-api/classes" />
+    <path path="core/debug/classes" />
+    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
-    <path path="core/kernel/debug-api/classes" />
-    <path path="core/kernel/debug/classes" />
-    <path path="core/kernel/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/annotations/classes" />
@@ -4003,11 +4003,11 @@
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
+    <path path="core/debug-api/classes" />
+    <path path="core/debug/classes" />
+    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
-    <path path="core/kernel/debug-api/classes" />
-    <path path="core/kernel/debug/classes" />
-    <path path="core/kernel/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/annotations/classes" />
@@ -4142,11 +4142,11 @@
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
+    <path path="core/debug-api/classes" />
+    <path path="core/debug/classes" />
+    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
-    <path path="core/kernel/debug-api/classes" />
-    <path path="core/kernel/debug/classes" />
-    <path path="core/kernel/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/annotations/classes" />
@@ -4264,11 +4264,11 @@
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
+    <path path="core/debug-api/classes" />
+    <path path="core/debug/classes" />
+    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
-    <path path="core/kernel/debug-api/classes" />
-    <path path="core/kernel/debug/classes" />
-    <path path="core/kernel/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/annotations/classes" />
@@ -4385,11 +4385,11 @@
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
+    <path path="core/debug-api/classes" />
+    <path path="core/debug/classes" />
+    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
-    <path path="core/kernel/debug-api/classes" />
-    <path path="core/kernel/debug/classes" />
-    <path path="core/kernel/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/annotations/classes" />
@@ -4507,11 +4507,11 @@
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
+    <path path="core/debug-api/classes" />
+    <path path="core/debug/classes" />
+    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
-    <path path="core/kernel/debug-api/classes" />
-    <path path="core/kernel/debug/classes" />
-    <path path="core/kernel/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/annotations/classes" />
@@ -4627,11 +4627,11 @@
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
+    <path path="core/debug-api/classes" />
+    <path path="core/debug/classes" />
+    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
-    <path path="core/kernel/debug-api/classes" />
-    <path path="core/kernel/debug/classes" />
-    <path path="core/kernel/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/annotations/classes" />
@@ -4750,11 +4750,11 @@
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
+    <path path="core/debug-api/classes" />
+    <path path="core/debug/classes" />
+    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
-    <path path="core/kernel/debug-api/classes" />
-    <path path="core/kernel/debug/classes" />
-    <path path="core/kernel/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/annotations/classes" />
@@ -4870,11 +4870,11 @@
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
+    <path path="core/debug-api/classes" />
+    <path path="core/debug/classes" />
+    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
-    <path path="core/kernel/debug-api/classes" />
-    <path path="core/kernel/debug/classes" />
-    <path path="core/kernel/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/annotations/classes" />
@@ -4991,11 +4991,11 @@
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
+    <path path="core/debug-api/classes" />
+    <path path="core/debug/classes" />
+    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
-    <path path="core/kernel/debug-api/classes" />
-    <path path="core/kernel/debug/classes" />
-    <path path="core/kernel/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
     <path path="core/languageDesign/actions/classes" />
     <path path="core/languageDesign/annotations/classes" />
@@ -5498,7 +5498,7 @@
   </target>
   <target name="compile.cycle.jetbrains.mps.debug.privateMembers_tjc" depends="compile.cycle.jetbrains.mps.build.custommps_tjc">
     <property name="classes.dump" value="${jetbrains.mps.debug.privateMembers.classes}.tmp" />
-    <mkdir dir="core/kernel/debug/debugProject/languages/privateMembers/source_gen" />
+    <mkdir dir="core/debug/debugProject/languages/privateMembers/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.debug.privateMembers.classes}" />
     <javac classpathref="cycle.jetbrains.mps.debug.privateMembers_tjc.classpaths" destdir="${classes.dump}">
@@ -5506,7 +5506,7 @@
     </javac>
     <javac classpathref="cycle.jetbrains.mps.debug.privateMembers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.debug.privateMembers.classes}">
       <src>
-        <path path="core/kernel/debug/debugProject/languages/privateMembers/source_gen" />
+        <path path="core/debug/debugProject/languages/privateMembers/source_gen" />
       </src>
     </javac>
     <delete dir="${classes.dump}" />

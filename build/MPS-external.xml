@@ -219,10 +219,10 @@
       <fileset dir="${mps_home}/core/javaParser/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
-      <fileset dir="${mps_home}/core/kernel/debug/classes" />
+      <fileset dir="${mps_home}/core/debug/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
-      <fileset dir="${mps_home}/core/kernel/debug-api/classes" />
+      <fileset dir="${mps_home}/core/debug-api/classes" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
       <fileset dir="${mps_home}/core/kernel/xmlQuery/runtime/classes" />

@@ -695,49 +695,49 @@
     </jar>
   </target>
   <target name="pack.jetbrains.mps.debug.api.info_f5a">
-    <mkdir dir="core/kernel/debug-api/project/solutions/jetbrains.mps.debug.api.info/source_gen.caches" />
-    <mkdir dir="core/kernel/debug-api/project/solutions/jetbrains.mps.debug.api.info/test_gen.caches" />
+    <mkdir dir="core/debug-api/project/solutions/jetbrains.mps.debug.api.info/source_gen.caches" />
+    <mkdir dir="core/debug-api/project/solutions/jetbrains.mps.debug.api.info/test_gen.caches" />
     <jar destfile="${deploy.dir}/MPS/core/jetbrains.mps.debug.api.info.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="core/kernel/debug-api/project/solutions/jetbrains.mps.debug.api.info/jetbrains.mps.debug.api.info.msd" prefix="module" />
-      <zipfileset dir="core/kernel/debug-api/project/solutions/jetbrains.mps.debug.api.info/source_gen.caches" prefix="source_gen.caches" />
-      <zipfileset dir="core/kernel/debug-api/project/solutions/jetbrains.mps.debug.api.info/test_gen.caches" prefix="test_gen.caches" />
-      <zipfileset dir="core/kernel/debug-api/project/solutions/jetbrains.mps.debug.api.info" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset file="core/debug-api/project/solutions/jetbrains.mps.debug.api.info/jetbrains.mps.debug.api.info.msd" prefix="module" />
+      <zipfileset dir="core/debug-api/project/solutions/jetbrains.mps.debug.api.info/source_gen.caches" prefix="source_gen.caches" />
+      <zipfileset dir="core/debug-api/project/solutions/jetbrains.mps.debug.api.info/test_gen.caches" prefix="test_gen.caches" />
+      <zipfileset dir="core/debug-api/project/solutions/jetbrains.mps.debug.api.info" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.debug.evaluation_g5a">
-    <mkdir dir="core/kernel/debug/debugProject/languages/evaluation/source_gen.caches" />
+    <mkdir dir="core/debug/debugProject/languages/evaluation/source_gen.caches" />
     <jar destfile="${deploy.dir}/MPS/core/jetbrains.mps.debug.evaluation.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="core/kernel/debug/debugProject/languages/evaluation/evaluation.mpl" prefix="module" />
-      <zipfileset dir="core/kernel/debug/debugProject/languages/evaluation/source_gen.caches" prefix="source_gen.caches" />
-      <zipfileset dir="core/kernel/debug/debugProject/languages/evaluation" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset file="core/debug/debugProject/languages/evaluation/evaluation.mpl" prefix="module" />
+      <zipfileset dir="core/debug/debugProject/languages/evaluation/source_gen.caches" prefix="source_gen.caches" />
+      <zipfileset dir="core/debug/debugProject/languages/evaluation" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.debug.evaluation.ui_h5a">
-    <mkdir dir="core/kernel/debug/debugProject/solutions/jetbrains.mps.debug.evaluation.ui/source_gen.caches" />
-    <mkdir dir="core/kernel/debug/debugProject/solutions/jetbrains.mps.debug.evaluation.ui/test_gen.caches" />
+    <mkdir dir="core/debug/debugProject/solutions/jetbrains.mps.debug.evaluation.ui/source_gen.caches" />
+    <mkdir dir="core/debug/debugProject/solutions/jetbrains.mps.debug.evaluation.ui/test_gen.caches" />
     <jar destfile="${deploy.dir}/MPS/core/jetbrains.mps.debug.evaluation.ui.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="core/kernel/debug/debugProject/solutions/jetbrains.mps.debug.evaluation.ui/jetbrains.mps.debug.evaluation.ui.msd" prefix="module" />
-      <zipfileset dir="core/kernel/debug/debugProject/solutions/jetbrains.mps.debug.evaluation.ui/source_gen.caches" prefix="source_gen.caches" />
-      <zipfileset dir="core/kernel/debug/debugProject/solutions/jetbrains.mps.debug.evaluation.ui/test_gen.caches" prefix="test_gen.caches" />
-      <zipfileset dir="core/kernel/debug/debugProject/solutions/jetbrains.mps.debug.evaluation.ui" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset file="core/debug/debugProject/solutions/jetbrains.mps.debug.evaluation.ui/jetbrains.mps.debug.evaluation.ui.msd" prefix="module" />
+      <zipfileset dir="core/debug/debugProject/solutions/jetbrains.mps.debug.evaluation.ui/source_gen.caches" prefix="source_gen.caches" />
+      <zipfileset dir="core/debug/debugProject/solutions/jetbrains.mps.debug.evaluation.ui/test_gen.caches" prefix="test_gen.caches" />
+      <zipfileset dir="core/debug/debugProject/solutions/jetbrains.mps.debug.evaluation.ui" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.debug.customViewers_i5a">
-    <mkdir dir="core/kernel/debug/debugProject/languages/customViewers/source_gen.caches" />
+    <mkdir dir="core/debug/debugProject/languages/customViewers/source_gen.caches" />
     <jar destfile="${deploy.dir}/MPS/core/jetbrains.mps.debug.customViewers.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="core/kernel/debug/debugProject/languages/customViewers/customViewers.mpl" prefix="module" />
-      <zipfileset dir="core/kernel/debug/debugProject/languages/customViewers/source_gen.caches" prefix="source_gen.caches" />
-      <zipfileset dir="core/kernel/debug/debugProject/languages/customViewers" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset file="core/debug/debugProject/languages/customViewers/customViewers.mpl" prefix="module" />
+      <zipfileset dir="core/debug/debugProject/languages/customViewers/source_gen.caches" prefix="source_gen.caches" />
+      <zipfileset dir="core/debug/debugProject/languages/customViewers" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.debug.privateMembers_j5a">
-    <mkdir dir="core/kernel/debug/debugProject/languages/privateMembers/classes_gen" />
-    <mkdir dir="core/kernel/debug/debugProject/languages/privateMembers/source_gen.caches" />
+    <mkdir dir="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <mkdir dir="core/debug/debugProject/languages/privateMembers/source_gen.caches" />
     <jar destfile="${deploy.dir}/MPS/core/jetbrains.mps.debug.privateMembers.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="core/kernel/debug/debugProject/languages/privateMembers/privateMembers.mpl" prefix="module" />
-      <zipfileset dir="core/kernel/debug/debugProject/languages/privateMembers/source_gen.caches" prefix="source_gen.caches" />
-      <zipfileset dir="core/kernel/debug/debugProject/languages/privateMembers" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
-      <zipfileset dir="core/kernel/debug/debugProject/languages/privateMembers/classes_gen" />
+      <zipfileset file="core/debug/debugProject/languages/privateMembers/privateMembers.mpl" prefix="module" />
+      <zipfileset dir="core/debug/debugProject/languages/privateMembers/source_gen.caches" prefix="source_gen.caches" />
+      <zipfileset dir="core/debug/debugProject/languages/privateMembers" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="core/debug/debugProject/languages/privateMembers/classes_gen" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.kernel_k5a">

@@ -137,13 +137,10 @@
             <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="7323513735996323334">
               <property name="path:7" value="core" />
             </node>
-            <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="7323513735996323335">
-              <property name="path:7" value="kernel" />
-            </node>
-            <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="7323513735996323336">
+            <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="3400923024996630530">
               <property name="path:7" value="debug" />
             </node>
-            <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="7323513735996323337">
+            <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="3400923024996630531">
               <property name="path:7" value="classes" />
             </node>
           </node>
@@ -160,13 +157,10 @@
             <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="3054521739276449258">
               <property name="path:7" value="core" />
             </node>
-            <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="3054521739276449260">
-              <property name="path:7" value="kernel" />
-            </node>
-            <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="3054521739276449262">
+            <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="3400923024996630533">
               <property name="path:7" value="debug-api" />
             </node>
-            <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="3054521739276449264">
+            <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="3400923024996630534">
               <property name="path:7" value="classes" />
             </node>
           </node>
