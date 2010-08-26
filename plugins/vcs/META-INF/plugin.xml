@@ -120,6 +120,6 @@
     <projectService serviceInterface="com.intellij.openapi.vcs.impl.DefaultVcsRootPolicy"
                     serviceImplementation="jetbrains.mps.vcs.ExtendedDefaultVcsRootPolicy"/>
     <applicationConfigurable implementation="jetbrains.mps.vcs.ui.VcsSettingsConfigurable"/>
-
+    <directoryIndexExcludePolicy implementation="jetbrains.mps.project.GeneratedFilesExcludePolicy"/>     
   </extensions>
 </idea-plugin>

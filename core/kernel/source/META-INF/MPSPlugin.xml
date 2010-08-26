@@ -22,7 +22,6 @@
         <errorHandler implementation="jetbrains.mps.workbench.diagnostics.CharismaReporter"/>
 
         <directoryIndexExcludePolicy implementation="jetbrains.mps.project.ClassesGenPolicy"/>
-        <directoryIndexExcludePolicy implementation="jetbrains.mps.project.GeneratedFilesExcludePolicy"/>
 
         <applicationService serviceInterface="com.intellij.codeStyle.CodeStyleFacade"
                             serviceImplementation="com.intellij.codeStyle.DefaultCodeStyleFacade"/>

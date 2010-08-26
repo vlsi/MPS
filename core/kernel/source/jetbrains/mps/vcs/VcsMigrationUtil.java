@@ -37,13 +37,9 @@ public class VcsMigrationUtil {
     //SuspiciousModelIndex.instance().addModel(modelDescriptor,conflictStateFixed);
   }
 
-//-------------------------
-
   public static void deleteFromDiskAndRemoveFromVcs(List<File> filesToDelete, boolean b) {
     //(MPSVCSManager.class).   deleteFromDiskAndRemoveFromVcs( filesToDelete,  b);
   }
-
-//-------------------------
 
   public static void addFilesToVcs(List<File> files, boolean b, boolean b1) {
      //ApplicationLevelVcsManager.instance().addFilesToVcs(files,b,b1);
@@ -69,12 +65,6 @@ public class VcsMigrationUtil {
 
   public static boolean isInConflict(IFile iFile, boolean b) {
     return false;//ApplicationLevelVcsManager.instance().isInConflict(iFile,b);
-  }
-
-//-------------------------
-
-  public static boolean isIgnoreGeneratedFiles() {
-    return false;//MPSVcsProjectConfiguration.getInstance(getProject()).isIgnoreGeneratedFiles();
   }
 
   public static boolean resolveDiskMemoryConflict(IFile modelFile, SModel sModel) {
