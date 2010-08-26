@@ -59,6 +59,7 @@ public class SNodeViewer_WrapperFactory extends ValueWrapperFactory {
     protected List<CustomJavaWatchable> getSubvaluesImpl(IObjectValueProxy value) throws EvaluationException {
       List<CustomJavaWatchable> result = new ArrayList<CustomJavaWatchable>();
 
+      result.add(new SNodeWatchables.MyWatchable_text(JavaObjectValue.fromJDIValue(((IObjectValueProxy) value.invokeMethod("toString", "()Ljava/lang/String;")).getJDIValue(), getThreadReference()), "text"));
       result.add(new SNodeWatchables.MyWatchable_id(JavaObjectValue.fromJDIValue(((IObjectValueProxy) value.getFieldValue("myId")).getJDIValue(), getThreadReference()), "id"));
       result.add(new SNodeWatchables.MyWatchable_model(JavaObjectValue.fromJDIValue(((IObjectValueProxy) value.getFieldValue("myModel")).getJDIValue(), getThreadReference()), "model"));
       result.add(new SNodeWatchables.MyWatchable_concept(JavaObjectValue.fromJDIValue(((IObjectValueProxy) EvaluationUtils.invokeStatic("jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations", "getConceptDeclaration", "(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;", getThreadReference(), value)).getJDIValue(), getThreadReference()), "concept"));
@@ -95,11 +96,11 @@ public class SNodeViewer_WrapperFactory extends ValueWrapperFactory {
     protected String getValuePresentation(IObjectValueProxy value) throws EvaluationException {
       IObjectValueProxy containingRole = ((IObjectValueProxy) value.getFieldValue("myRoleInParent"));
       if (!(ProxyEqualsUtil.javaEquals(containingRole, null))) {
-        containingRole = ((IObjectValueProxy) MirrorUtil.getValueProxyFromJavaValue(" in role " + (String) (containingRole).invokeMethod("toString", "()Ljava/lang/String;").getJavaValue(), getThreadReference()));
+        containingRole = ((IObjectValueProxy) MirrorUtil.getValueProxyFromJavaValue(" in role: " + (String) (containingRole).invokeMethod("toString", "()Ljava/lang/String;").getJavaValue(), getThreadReference()));
       } else {
         containingRole = ((IObjectValueProxy) MirrorUtil.getValueProxyFromJavaValue("", getThreadReference()));
       }
-      return (String) (((IObjectValueProxy) value.getFieldValue("myConceptFqName"))).invokeMethod("toString", "()Ljava/lang/String;").getJavaValue() + (String) (containingRole).invokeMethod("toString", "()Ljava/lang/String;").getJavaValue();
+      return "node<" + (String) (((IObjectValueProxy) value.getFieldValue("myConceptFqName"))).invokeMethod("toString", "()Ljava/lang/String;").getJavaValue() + ">" + (String) (containingRole).invokeMethod("toString", "()Ljava/lang/String;").getJavaValue();
     }
   }
 }

@@ -81,4 +81,16 @@ public class SNodeWatchables {
       return ourCategory;
     }
   }
+
+  public static class MyWatchable_text extends CustomJavaWatchable {
+    private static WatchablesCategory ourCategory = new WatchablesCategory("text");
+
+    public MyWatchable_text(JavaValue value, String name) {
+      super(value, name);
+    }
+
+    public WatchablesCategory getCategory() {
+      return ourCategory;
+    }
+  }
 }

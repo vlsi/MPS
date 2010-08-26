@@ -493,6 +493,29 @@
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="2647935289680933637" />
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3173086048273253537">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3173086048273253539">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3173086048273253538">
+              <link role="variableDeclaration:3" targetNodeId="2647935289680933631" resolveInfo="result" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3173086048273253543">
+              <link role="baseMethodDeclaration:3" targetNodeId="13.~List.add(java.lang.Object):boolean" resolveInfo="add" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3173086048273253545">
+                <node role="creator:3" type="jetbrains.mps.debug.customViewers.structure.HighLevelWatchableCreator:0" id="3173086048273253547">
+                  <link role="watchable:0" targetNodeId="3173086048273253534" resolveInfo="text" />
+                  <node role="value:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3173086048273253552">
+                    <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="3173086048273253550">
+                      <node role="leftExpression:16" type="jetbrains.mps.debug.customViewers.structure.HighLevelValue_ConceptFunctionParameter:0" id="3173086048273253549" />
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3173086048273253556">
+                      <link role="baseMethodDeclaration:3" targetNodeId="2.~SNode.toString():java.lang.String" resolveInfo="toString" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2647935289680935401">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2647935289680935403">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2647935289680935402">
@@ -776,7 +799,7 @@
                     <link role="variableDeclaration:3" targetNodeId="6583956526375553963" resolveInfo="containingRole" />
                   </node>
                   <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="6583956526375652275">
-                    <property name="value:3" value=" in role " />
+                    <property name="value:3" value=" in role: " />
                   </node>
                 </node>
                 <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6583956526375652271">
@@ -811,12 +834,22 @@
             <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6583956526375553968">
               <link role="variableDeclaration:3" targetNodeId="6583956526375553963" resolveInfo="containingRole" />
             </node>
-            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2647935289680933606">
-              <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="6720888454534218367">
-                <node role="leftExpression:16" type="jetbrains.mps.debug.customViewers.structure.HighLevelValue_ConceptFunctionParameter:0" id="2647935289680933605" />
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="3173086048273235107">
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="3173086048273235110">
+                <property name="value:3" value="&gt;" />
               </node>
-              <node role="operation:3" type="jetbrains.mps.debug.privateMembers.structure.PrivateFieldReferenceOperation" id="6720888454534218370">
-                <link role="fieldDeclaration" targetNodeId="2.~SNode.myConceptFqName" resolveInfo="myConceptFqName" />
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="3173086048273253523">
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3173086048273253529">
+                  <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="3173086048273253527">
+                    <node role="leftExpression:16" type="jetbrains.mps.debug.customViewers.structure.HighLevelValue_ConceptFunctionParameter:0" id="3173086048273253526" />
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.debug.privateMembers.structure.PrivateFieldReferenceOperation" id="3173086048273253533">
+                    <link role="fieldDeclaration" targetNodeId="2.~SNode.myConceptFqName" resolveInfo="myConceptFqName" />
+                  </node>
+                </node>
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="3173086048273234152">
+                  <property name="value:3" value="node&lt;" />
+                </node>
               </node>
             </node>
           </node>
@@ -843,6 +876,9 @@
     </node>
     <node role="watchable:0" type="jetbrains.mps.debug.customViewers.structure.CustomWatchable:0" id="2647935289680933629">
       <property name="name:0" value="model" />
+    </node>
+    <node role="watchable:0" type="jetbrains.mps.debug.customViewers.structure.CustomWatchable:0" id="3173086048273253534">
+      <property name="name:0" value="text" />
     </node>
   </node>
 </model>
