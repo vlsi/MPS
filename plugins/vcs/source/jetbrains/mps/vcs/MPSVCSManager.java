@@ -27,7 +27,6 @@ import jetbrains.mps.generator.CompilationListener;
 import jetbrains.mps.generator.GenerationListener;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Pair;
@@ -40,7 +39,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.*;
 
 public class MPSVCSManager implements ProjectComponent {
@@ -109,7 +107,7 @@ public class MPSVCSManager implements ProjectComponent {
     for (VirtualFile f : virtualFiles) {
       files.add(VFileSystem.toFile(f));
     }
-    deleteFromDiskAndRemoveFromVcs(files,silently);
+    deleteFromDiskAndRemoveFromVcs(files, silently);
   }
 
   public void removeFromVcs(List<File> files, boolean silently) {
@@ -281,21 +279,10 @@ public class MPSVCSManager implements ProjectComponent {
     }
 
     public void modelFileChanged(SModelDescriptor modelDescriptor, IFile ifrom) {
-      if (ifrom != null) {
-        VirtualFile from = VFileSystem.getFile(ifrom);
-        deleteFromDiskAndRemoveFromVcs(Collections.singleton(from), true);
-        modelDescriptor.addModelListener(myNewModelSavedListener);
-      }
-    }
-
-    public void beforeModelFileChanged(SModelDescriptor modelDescriptor) {
-      Set<IModule> modules = modelDescriptor.getModules();
-      for (IModule m : modules) {
-        VirtualFile file = VFileSystem.getFile(m.getOutputFor(modelDescriptor));
-        if (file != null) {
-//            deleteInternal(Collections.singletonList(file));
-        }
-      }
+      if (ifrom == null) return;
+      VirtualFile from = VFileSystem.getFile(ifrom);
+      deleteFromDiskAndRemoveFromVcs(Collections.singleton(from), true);
+      modelDescriptor.addModelListener(myNewModelSavedListener);
     }
   }
 
