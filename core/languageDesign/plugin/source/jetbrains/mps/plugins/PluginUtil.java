@@ -64,7 +64,9 @@ public class PluginUtil {
   }
 
   public static List<Solution> collectSolutionPlugins() {
-    return MPSModuleRepository.getInstance().getAllSolutions();
+    Solution ide = MPSModuleRepository.getInstance().getSolution(IDE_MODULE_ID);
+    return Collections.singletonList(ide);
+    //return MPSModuleRepository.getInstance().getAllSolutions();
   }
 
   public static <T> List<T> createPlugins(Collection<IModule> modules, PluginCreator<T> creator) {
