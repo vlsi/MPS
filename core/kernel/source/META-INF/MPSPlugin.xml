@@ -12,6 +12,7 @@
 
         <extensionPoint name="mps.NavigationProvider" interface="jetbrains.mps.ide.navigation.NavigationProvider"/>
         <extensionPoint name="mps.GenerationHandler" interface="jetbrains.mps.ide.generator.IdeaGeneratorManager$GenerationHandlerProvider"/>
+        <extensionPoint name="mps.TabColorProvider" interface="jetbrains.mps.ide.tabbedEditor.TabColorProvider"/>
     </extensionPoints>
 
     <extensions defaultExtensionNs="com.intellij">
@@ -75,7 +76,7 @@
 
         <fileBasedIndex implementation="com.intellij.psi.impl.cache.impl.id.IdIndex"/>
         <fileBasedIndex implementation="jetbrains.mps.workbench.actions.goTo.index.RootNodeNameIndex"/>
-        <fileBasedIndex implementation="jetbrains.mps.baseLanguage.index.ClassifierSuccessorsIndexer"/> 
+        <fileBasedIndex implementation="jetbrains.mps.baseLanguage.index.ClassifierSuccessorsIndexer"/>
         <!--        <fileBasedIndex implementation="jetbrains.mps.workbench.actions.goTo.index.NamedNodeIndex"/> -->
         <fileBasedIndex implementation="jetbrains.mps.generator.index.ModelDigestIndex"/>
         <fileBasedIndex implementation="com.intellij.psi.search.FilenameIndex"/>
