@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.lang.typesystem.runtime.incremental;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.smodel.INodesReadListener;
 import jetbrains.mps.smodel.SNode;
