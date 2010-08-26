@@ -84,7 +84,24 @@
   </project-components>
 
   <actions>
-    <!-- no actions -->
+    <group id="EditorFixAddition">
+      <separator/>
+      <action id="ShowInLogicalView" class="jetbrains.mps.vcs.actions.ShowInLogicalView"
+              text="Show In Logical View"/>
+      <action id="ShowInFileView" class="jetbrains.mps.vcs.actions.ShowInFileView"
+              text="Show In File System View"/>
+      <action id="ShowInVcsRootsView" class="jetbrains.mps.vcs.actions.ShowInVcsRootsView"
+              text="Show In VCS Roots View"/>
+      <separator/>
+      <action id="GenerateFilesFromChangeListAction"
+              class="jetbrains.mps.vcs.actions.GenerateFilesFromChangeListAction"
+              text="Generate Files"/>
+      <action id="GenerateTextFromChangeListAction"
+              class="jetbrains.mps.vcs.actions.GenerateTextFromChangeListAction"
+              text="Generate Text"/>
+      <add-to-group group-id="ChangesViewPopupMenu" anchor="last"/>
+      <add-to-group anchor="before" relative-to-action="SearchMenu" group-id="EditorFix"/>
+    </group>
   </actions>
 
   <extensions defaultExtensionNs="com.intellij">
