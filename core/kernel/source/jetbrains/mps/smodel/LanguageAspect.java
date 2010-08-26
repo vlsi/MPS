@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.lang.actions.structure.Actions_Language;
 import jetbrains.mps.lang.behavior.structure.Behavior_Language;
 import jetbrains.mps.lang.constraints.structure.Constraints_Language;
@@ -24,19 +23,18 @@ import jetbrains.mps.lang.editor.structure.Editor_Language;
 import jetbrains.mps.lang.findUsages.structure.FindUsages_Language;
 import jetbrains.mps.lang.intentions.structure.Intentions_Language;
 import jetbrains.mps.lang.plugin.structure.Plugin_Language;
+import jetbrains.mps.lang.refactoring.structure.Refactoring_Language;
 import jetbrains.mps.lang.script.structure.Script_Language;
 import jetbrains.mps.lang.structure.structure.Structure_Language;
+import jetbrains.mps.lang.stubs.structure.Stubs_Language;
 import jetbrains.mps.lang.test.structure.Test_Language;
 import jetbrains.mps.lang.textGen.structure.TextGen_Language;
 import jetbrains.mps.lang.typesystem.structure.Typesystem_Language;
-import jetbrains.mps.lang.refactoring.structure.Refactoring_Language;
-import jetbrains.mps.lang.stubs.structure.Stubs_Language;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.Icon;
 import java.util.ArrayList;
 import java.util.List;
 

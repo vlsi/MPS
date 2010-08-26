@@ -472,7 +472,7 @@ public class ChildSubstituteActionsHelper {
     }
 
     public Icon getIconFor(String pattern) {
-      return NodePresentationUtil.getIcon(myReferentNode, true);
+      return NodeIconUtil.getIcon(myReferentNode, true);
     }
 
     @Override

@@ -125,10 +125,10 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
 
   public Icon getIconFor(String pattern, boolean referent_presentation) {
     if (myParameterObject instanceof SNode) {
-      return NodePresentationUtil.getIcon((SNode) myParameterObject, referent_presentation);
+      return NodeIconUtil.getIcon((SNode) myParameterObject, referent_presentation);
     }
     if (myParameterObject instanceof INodeAdapter) {
-      return NodePresentationUtil.getIcon((INodeAdapter) myParameterObject, referent_presentation);
+      return NodeIconUtil.getIcon((INodeAdapter) myParameterObject, referent_presentation);
     }
     return Icons.DEFAULT_ICON;
   }
