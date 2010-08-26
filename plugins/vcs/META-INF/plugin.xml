@@ -15,7 +15,7 @@
   -->
 <!DOCTYPE idea-plugin PUBLIC "Plugin/DTD" "http://plugins.intellij.net/plugin.dtd">
 <idea-plugin>
-  <id>jetbrains.mps.vcsIntegration</id>
+  <id>jetbrains.mps.vcs</id>
   <name>VCS Integration for MPS</name>
   <description>VCS features in MPS</description>
   <version>1.5</version>
@@ -32,7 +32,6 @@
     <component>
       <implementation-class>jetbrains.mps.vcs.SuspiciousModelIndex</implementation-class>
     </component>
-
     <component>
       <implementation-class>jetbrains.mps.vcs.ApplicationLevelVcsManager</implementation-class>
     </component>
@@ -42,26 +41,6 @@
   </application-components>
 
   <project-components>
-    <component>
-      <implementation-class>jetbrains.mps.vcs.changesmanager.ChangesManager</implementation-class>
-      <skipForDefaultProject/>
-    </component>
-    <component>
-      <implementation-class>jetbrains.mps.vcs.changesmanager.ProjectTreeChangesHighlighter</implementation-class>
-      <skipForDefaultProject/>
-    </component>
-    <component>
-      <implementation-class>jetbrains.mps.vcs.changesmanager.EditorChangesHighlighter</implementation-class>
-      <skipForDefaultProject/>
-    </component>
-    <component>
-      <implementation-class>jetbrains.mps.vcs.changesmanager.RootNodeFileStatusManager</implementation-class>
-      <skipForDefaultProject/>
-    </component>
-    <component>
-      <implementation-class>MPSVcsProjectConfiguration</implementation-class>
-      <skipForDefaultProject/>
-    </component>
     <component>
       <interface-class>com.intellij.openapi.vcs.impl.VcsPathPresenter</interface-class>
       <implementation-class>jetbrains.mps.vcs.ModuleVcsPathPresenter</implementation-class>
@@ -110,5 +89,16 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <vcs.fileStatusProvider implementation="jetbrains.mps.vcs.ChangesManagerFileStatusProvider"/>
+
+    <checkoutListener implementation="jetbrains.mps.vcs.ProjectCheckoutListener"/>
+    <checkinHandlerFactory implementation="jetbrains.mps.vcs.OptimizeImportsCheckinHandlerFactory"/>
+    <checkinHandlerFactory
+            implementation="jetbrains.mps.ide.actions.ModelCheckerCheckinHandler$ModelCheckerCheckinHandlerFactory"/>
+
+    <projectService serviceInterface="com.intellij.openapi.vcs.impl.ExcludedFileIndex"
+                    serviceImplementation="jetbrains.mps.vcs.MPSExcludedFileIndex"/>
+    <projectService serviceInterface="com.intellij.openapi.vcs.impl.DefaultVcsRootPolicy"
+                    serviceImplementation="jetbrains.mps.vcs.ExtendedDefaultVcsRootPolicy"/>
+
   </extensions>
 </idea-plugin>
