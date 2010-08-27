@@ -24,7 +24,6 @@
 
 
   <application-components>
-
     <component>
       <implementation-class>jetbrains.mps.vcs.SuspiciousModelIndex</implementation-class>
     </component>
@@ -42,9 +41,9 @@
 
   <project-components>
     <component>
-          <implementation-class>com.intellij.platform.PlatformVcsDetector</implementation-class>
-          <skipForDummyProject/>
-        </component>
+      <implementation-class>com.intellij.platform.PlatformVcsDetector</implementation-class>
+      <skipForDummyProject/>
+    </component>
     <component>
       <interface-class>com.intellij.openapi.vcs.impl.VcsPathPresenter</interface-class>
       <implementation-class>jetbrains.mps.vcs.ModuleVcsPathPresenter</implementation-class>
@@ -103,13 +102,10 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <vcs.fileStatusProvider implementation="jetbrains.mps.vcs.changesmanager.ChangesManagerFileStatusProvider"/>
-
     <checkoutListener implementation="jetbrains.mps.vcs.ProjectCheckoutListener"/>
     <checkinHandlerFactory implementation="jetbrains.mps.vcs.OptimizeImportsCheckinHandlerFactory"/>
     <checkinHandlerFactory
             implementation="jetbrains.mps.ide.actions.ModelCheckerCheckinHandler$ModelCheckerCheckinHandlerFactory"/>
-
-    
     <applicationConfigurable implementation="jetbrains.mps.vcs.ui.VcsSettingsConfigurable"/>
     <directoryIndexExcludePolicy implementation="jetbrains.mps.project.GeneratedFilesExcludePolicy"/>
     <projectConfigurable implementation="jetbrains.mps.vcs.ui.VcsGeneratedFilesConfigurable" id="mpsvcs"/>

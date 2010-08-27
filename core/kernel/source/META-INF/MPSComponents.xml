@@ -25,11 +25,9 @@
       <interface-class>com.intellij.find.FindSettings</interface-class>
       <implementation-class>com.intellij.find.impl.FindSettingsImpl</implementation-class>
     </component>
-
     <component>
       <implementation-class>com.intellij.util.indexing.FileBasedIndex</implementation-class>
     </component>
-
   </application-components>
 
   <project-components>
@@ -54,13 +52,13 @@
   <xi:include href="/componentSets/Execution.xml" xpointer="xpointer(/components/*)"/>
 
   <application-components>
-     <component>
+    <component>
       <implementation-class>jetbrains.mps.vcs.ExcludedFileIndexApplicationComponent</implementation-class>
     </component>
     <component>
       <implementation-class>jetbrains.mps.vcs.GlobalClassPathIndex</implementation-class>
     </component>
-    
+
     <component>
       <interface-class>com.intellij.openapi.fileEditor.impl.text.TextEditorProvider</interface-class>
       <implementation-class>com.intellij.openapi.fileEditor.impl.text.TextEditorProvider</implementation-class>
@@ -375,7 +373,7 @@
       <implementation-class>jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesPerfsPage
       </implementation-class>
     </component>
-    
+
     <component>
       <interface-class>com.intellij.openapi.fileEditor.FileEditorManager</interface-class>
       <implementation-class>com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl</implementation-class>
