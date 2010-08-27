@@ -37,7 +37,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.refactoring.framework.*;
 import jetbrains.mps.refactoring.framework.RefactoringUtil.Applicability;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.vcs.MPSVCSManager;
+import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
 import org.jetbrains.annotations.NonNls;
@@ -78,13 +78,13 @@ public class DeleteModelHelper {
     directoriesToDelete.add(FileGenerationUtil.getDefaultOutputDir(modelDescriptor,FileGenerationUtil.getCachesOutputDir(moduleOutput)));
     for (File directory: directoriesToDelete) {
       if (directory.exists()) {
-        MPSVCSManager.getInstance(project).deleteFromDiskAndRemoveFromVcs(Arrays.asList(directory.listFiles(new FilenameFilter() {
+        VcsMigrationUtil.deleteFromDiskAndRemoveFromVcs(Arrays.asList(directory.listFiles(new FilenameFilter() {
           @Override
           public boolean accept(File dir, String name) {
             return !FileTypeManager.getInstance().isFileIgnored(name);
           }
         })), false);
-        MPSVCSManager.getInstance(project).deleteFromDiskAndRemoveFromVcs(Arrays.asList(directory), false);
+        VcsMigrationUtil.deleteFromDiskAndRemoveFromVcs(Arrays.asList(directory), false);
       }
     }
   }

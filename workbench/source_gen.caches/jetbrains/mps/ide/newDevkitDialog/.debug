@@ -1,101 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1204026656767">
-    <nodeInfo nodeId="1204027371638" fileName="NewDevKitDialogContentPane.java" startLine="66" startPosition="31" endLine="67" endPosition="29" />
-    <nodeInfo nodeId="1204027376133" fileName="NewDevKitDialogContentPane.java" startLine="67" startPosition="29" endLine="68" endPosition="28" />
-    <nodeInfo nodeId="1237027964719" fileName="NewDevKitDialogContentPane.java" startLine="68" startPosition="28" endLine="69" endPosition="37" />
-    <nodeInfo nodeId="1237027964724" fileName="NewDevKitDialogContentPane.java" startLine="69" startPosition="37" endLine="70" endPosition="37" />
-    <nodeInfo nodeId="3734045384532741048" fileName="NewDevKitDialogContentPane.java" startLine="195" startPosition="46" endLine="196" endPosition="64" />
-    <nodeInfo nodeId="1204027477351" fileName="NewDevKitDialogContentPane.java" startLine="196" startPosition="64" endLine="197" endPosition="13" />
-    <nodeInfo nodeId="3734045384532741044" fileName="NewDevKitDialogContentPane.java" startLine="199" startPosition="47" endLine="200" endPosition="59" />
-    <nodeInfo nodeId="1204027496358" fileName="NewDevKitDialogContentPane.java" startLine="200" startPosition="59" endLine="201" endPosition="13" />
-    <nodeInfo nodeId="1204027640131" fileName="NewDevKitDialogContentPane.java" startLine="202" startPosition="5" endLine="203" endPosition="121" />
-    <nodeInfo nodeId="3734045384532741054" fileName="NewDevKitDialogContentPane.java" startLine="204" startPosition="40" endLine="205" endPosition="80" />
-    <nodeInfo nodeId="1204027686054" fileName="NewDevKitDialogContentPane.java" startLine="205" startPosition="80" endLine="206" endPosition="13" />
-    <nodeInfo nodeId="4015801747712958746" fileName="NewDevKitDialogContentPane.java" startLine="207" startPosition="5" endLine="208" endPosition="36" />
-    <nodeInfo nodeId="4015801747712977594" fileName="NewDevKitDialogContentPane.java" startLine="208" startPosition="36" endLine="209" endPosition="102" />
-    <nodeInfo nodeId="4015801747712977603" fileName="NewDevKitDialogContentPane.java" startLine="210" startPosition="26" endLine="211" endPosition="47" />
-    <nodeInfo nodeId="4015801747712977605" fileName="NewDevKitDialogContentPane.java" startLine="211" startPosition="47" endLine="212" endPosition="13" />
-    <nodeInfo nodeId="3734045384532741041" fileName="NewDevKitDialogContentPane.java" startLine="213" startPosition="5" endLine="214" endPosition="33" />
-    <nodeInfo nodeId="1217961860098" fileName="NewDevKitDialogContentPane.java" startLine="214" startPosition="33" endLine="215" endPosition="59" />
-    <nodeInfo nodeId="1228828498149" fileName="NewDevKitDialogContentPane.java" startLine="215" startPosition="59" endLine="216" endPosition="47" />
-    <nodeInfo nodeId="1217961230508" fileName="NewDevKitDialogContentPane.java" startLine="218" startPosition="61" endLine="219" endPosition="41" />
-    <nodeInfo nodeId="1228828519375" fileName="NewDevKitDialogContentPane.java" startLine="221" startPosition="29" endLine="222" endPosition="74" />
-    <nodeInfo nodeId="1228828603549" fileName="NewDevKitDialogContentPane.java" startLine="226" startPosition="7" endLine="227" endPosition="37" />
-    <nodeInfo nodeId="3734045384532741036" fileName="NewDevKitDialogContentPane.java" startLine="230" startPosition="31" endLine="231" endPosition="33" />
-    <nodeInfo nodeId="1204027196562" fileName="NewDevKitDialogContentPane.java" startLine="235" startPosition="38" endLine="236" endPosition="13" />
-    <nodeInfo nodeId="1204027187688" fileName="NewDevKitDialogContentPane.java" startLine="237" startPosition="5" endLine="238" endPosition="98" />
-    <nodeInfo nodeId="1204027260587" fileName="NewDevKitDialogContentPane.java" startLine="238" startPosition="98" endLine="239" endPosition="71" />
-    <nodeInfo nodeId="1204027325480" fileName="NewDevKitDialogContentPane.java" startLine="240" startPosition="90" endLine="241" endPosition="59" />
-    <nodeInfo nodeId="1237289593456" fileName="NewDevKitDialogContentPane.java" startLine="245" startPosition="61" endLine="246" endPosition="47" />
-    <nodeInfo nodeId="1237289570287" fileName="NewDevKitDialogContentPane.java" startLine="247" startPosition="26" endLine="248" endPosition="19" />
-    <nodeInfo nodeId="1204028226155" fileName="NewDevKitDialogContentPane.java" startLine="249" startPosition="5" endLine="250" endPosition="57" />
-    <nodeInfo nodeId="1204028239960" fileName="NewDevKitDialogContentPane.java" startLine="250" startPosition="57" endLine="251" endPosition="52" />
-    <nodeInfo nodeId="1226077098697" fileName="NewDevKitDialogContentPane.java" startLine="251" startPosition="52" endLine="252" endPosition="63" />
-    <nodeInfo nodeId="1204028268732" fileName="NewDevKitDialogContentPane.java" startLine="252" startPosition="63" endLine="253" endPosition="77" />
-    <nodeInfo nodeId="1228828265103" fileName="NewDevKitDialogContentPane.java" startLine="253" startPosition="77" endLine="254" endPosition="69" />
-    <nodeInfo nodeId="1226081971544" fileName="NewDevKitDialogContentPane.java" startLine="256" startPosition="25" endLine="257" endPosition="109" />
-    <nodeInfo nodeId="1228828280747" fileName="NewDevKitDialogContentPane.java" startLine="259" startPosition="32" endLine="260" endPosition="18" />
-    <nodeInfo nodeId="1204027191787" fileName="NewDevKitDialogContentPane.java" startLine="234" startPosition="41" endLine="237" endPosition="5" />
-    <nodeInfo nodeId="1204027305859" fileName="NewDevKitDialogContentPane.java" startLine="239" startPosition="71" endLine="242" endPosition="5" />
-    <nodeInfo nodeId="1237289570285" fileName="NewDevKitDialogContentPane.java" startLine="246" startPosition="47" endLine="249" endPosition="5" />
-    <nodeInfo nodeId="1204027462424" fileName="NewDevKitDialogContentPane.java" startLine="194" startPosition="27" endLine="198" endPosition="5" />
-    <nodeInfo nodeId="1204027478681" fileName="NewDevKitDialogContentPane.java" startLine="198" startPosition="5" endLine="202" endPosition="5" />
-    <nodeInfo nodeId="1204027665297" fileName="NewDevKitDialogContentPane.java" startLine="203" startPosition="121" endLine="207" endPosition="5" />
-    <nodeInfo nodeId="4015801747712977601" fileName="NewDevKitDialogContentPane.java" startLine="209" startPosition="102" endLine="213" endPosition="5" />
-    <nodeInfo nodeId="1217961230514" fileName="NewDevKitDialogContentPane.java" startLine="220" startPosition="62" endLine="224" endPosition="0" />
-    <nodeInfo nodeId="1204027087626" fileName="NewDevKitDialogContentPane.java" startLine="229" startPosition="0" endLine="233" endPosition="0" />
-    <nodeInfo nodeId="1226081869743" fileName="NewDevKitDialogContentPane.java" startLine="255" startPosition="68" endLine="259" endPosition="0" />
-    <nodeInfo nodeId="1217961230513" fileName="NewDevKitDialogContentPane.java" startLine="219" startPosition="41" endLine="224" endPosition="11" />
-    <nodeInfo nodeId="1226081869735" fileName="NewDevKitDialogContentPane.java" startLine="254" startPosition="69" endLine="259" endPosition="32" />
-    <nodeInfo nodeId="1217961230501" fileName="NewDevKitDialogContentPane.java" startLine="217" startPosition="86" endLine="226" endPosition="0" />
-    <nodeInfo nodeId="1217961230493" fileName="NewDevKitDialogContentPane.java" startLine="216" startPosition="47" endLine="226" endPosition="7" />
-    <nodeInfo nodeId="1204027179199" fileName="NewDevKitDialogContentPane.java" startLine="233" startPosition="0" endLine="244" endPosition="0" />
-    <nodeInfo nodeId="1204027985317" fileName="NewDevKitDialogContentPane.java" startLine="244" startPosition="0" endLine="262" endPosition="0" />
-    <nodeInfo nodeId="1204027050087" fileName="NewDevKitDialogContentPane.java" startLine="193" startPosition="0" endLine="229" endPosition="0" />
-    <scopeInfo nodeId="1217961230515" fileName="NewDevKitDialogContentPane.java" startLine="221" startPosition="29" endLine="222" endPosition="74" />
-    <scopeInfo nodeId="1204027087628" fileName="NewDevKitDialogContentPane.java" startLine="230" startPosition="31" endLine="231" endPosition="33" />
-    <scopeInfo nodeId="1204027191788" fileName="NewDevKitDialogContentPane.java" startLine="235" startPosition="38" endLine="236" endPosition="13" />
-    <scopeInfo nodeId="1204027305860" fileName="NewDevKitDialogContentPane.java" startLine="240" startPosition="90" endLine="241" endPosition="59" />
-    <scopeInfo nodeId="1237289570286" fileName="NewDevKitDialogContentPane.java" startLine="247" startPosition="26" endLine="248" endPosition="19" />
-    <scopeInfo nodeId="1226081869746" fileName="NewDevKitDialogContentPane.java" startLine="256" startPosition="25" endLine="257" endPosition="109" />
-    <scopeInfo nodeId="1204027462425" fileName="NewDevKitDialogContentPane.java" startLine="195" startPosition="46" endLine="197" endPosition="13" />
-    <scopeInfo nodeId="1204027478682" fileName="NewDevKitDialogContentPane.java" startLine="199" startPosition="47" endLine="201" endPosition="13" />
-    <scopeInfo nodeId="1204027665298" fileName="NewDevKitDialogContentPane.java" startLine="204" startPosition="40" endLine="206" endPosition="13" />
-    <scopeInfo nodeId="4015801747712977602" fileName="NewDevKitDialogContentPane.java" startLine="210" startPosition="26" endLine="212" endPosition="13" />
-    <scopeInfo nodeId="1204027369200" fileName="NewDevKitDialogContentPane.java" startLine="66" startPosition="31" endLine="70" endPosition="37" />
-    <scopeInfo nodeId="1217961230514" fileName="NewDevKitDialogContentPane.java" startLine="220" startPosition="62" endLine="224" endPosition="0" />
-    <scopeInfo nodeId="1204027087626" fileName="NewDevKitDialogContentPane.java" startLine="229" startPosition="0" endLine="233" endPosition="0" />
-    <scopeInfo nodeId="1226081869743" fileName="NewDevKitDialogContentPane.java" startLine="255" startPosition="68" endLine="259" endPosition="0" />
-    <scopeInfo nodeId="1217961230507" fileName="NewDevKitDialogContentPane.java" startLine="218" startPosition="61" endLine="224" endPosition="11" />
-    <scopeInfo nodeId="1204027179201" fileName="NewDevKitDialogContentPane.java" startLine="234" startPosition="41" endLine="242" endPosition="5">
+    <nodeInfo nodeId="1204027371638" fileName="NewDevKitDialogContentPane.java" startLine="68" startPosition="31" endLine="69" endPosition="29" />
+    <nodeInfo nodeId="1204027376133" fileName="NewDevKitDialogContentPane.java" startLine="69" startPosition="29" endLine="70" endPosition="28" />
+    <nodeInfo nodeId="1237027964719" fileName="NewDevKitDialogContentPane.java" startLine="70" startPosition="28" endLine="71" endPosition="37" />
+    <nodeInfo nodeId="1237027964724" fileName="NewDevKitDialogContentPane.java" startLine="71" startPosition="37" endLine="72" endPosition="37" />
+    <nodeInfo nodeId="3734045384532741048" fileName="NewDevKitDialogContentPane.java" startLine="197" startPosition="46" endLine="198" endPosition="64" />
+    <nodeInfo nodeId="1204027477351" fileName="NewDevKitDialogContentPane.java" startLine="198" startPosition="64" endLine="199" endPosition="13" />
+    <nodeInfo nodeId="3734045384532741044" fileName="NewDevKitDialogContentPane.java" startLine="201" startPosition="47" endLine="202" endPosition="59" />
+    <nodeInfo nodeId="1204027496358" fileName="NewDevKitDialogContentPane.java" startLine="202" startPosition="59" endLine="203" endPosition="13" />
+    <nodeInfo nodeId="1204027640131" fileName="NewDevKitDialogContentPane.java" startLine="204" startPosition="5" endLine="205" endPosition="121" />
+    <nodeInfo nodeId="3734045384532741054" fileName="NewDevKitDialogContentPane.java" startLine="206" startPosition="40" endLine="207" endPosition="80" />
+    <nodeInfo nodeId="1204027686054" fileName="NewDevKitDialogContentPane.java" startLine="207" startPosition="80" endLine="208" endPosition="13" />
+    <nodeInfo nodeId="4015801747712958746" fileName="NewDevKitDialogContentPane.java" startLine="209" startPosition="5" endLine="210" endPosition="36" />
+    <nodeInfo nodeId="4015801747712977594" fileName="NewDevKitDialogContentPane.java" startLine="210" startPosition="36" endLine="211" endPosition="102" />
+    <nodeInfo nodeId="4015801747712977603" fileName="NewDevKitDialogContentPane.java" startLine="212" startPosition="26" endLine="213" endPosition="47" />
+    <nodeInfo nodeId="4015801747712977605" fileName="NewDevKitDialogContentPane.java" startLine="213" startPosition="47" endLine="214" endPosition="13" />
+    <nodeInfo nodeId="3734045384532741041" fileName="NewDevKitDialogContentPane.java" startLine="215" startPosition="5" endLine="216" endPosition="33" />
+    <nodeInfo nodeId="1217961860098" fileName="NewDevKitDialogContentPane.java" startLine="216" startPosition="33" endLine="217" endPosition="59" />
+    <nodeInfo nodeId="1228828498149" fileName="NewDevKitDialogContentPane.java" startLine="217" startPosition="59" endLine="218" endPosition="47" />
+    <nodeInfo nodeId="1217961230508" fileName="NewDevKitDialogContentPane.java" startLine="220" startPosition="61" endLine="221" endPosition="41" />
+    <nodeInfo nodeId="1228828519375" fileName="NewDevKitDialogContentPane.java" startLine="223" startPosition="29" endLine="224" endPosition="74" />
+    <nodeInfo nodeId="1228828603549" fileName="NewDevKitDialogContentPane.java" startLine="228" startPosition="7" endLine="229" endPosition="37" />
+    <nodeInfo nodeId="3734045384532741036" fileName="NewDevKitDialogContentPane.java" startLine="232" startPosition="31" endLine="233" endPosition="33" />
+    <nodeInfo nodeId="1204027196562" fileName="NewDevKitDialogContentPane.java" startLine="237" startPosition="38" endLine="238" endPosition="13" />
+    <nodeInfo nodeId="1204027187688" fileName="NewDevKitDialogContentPane.java" startLine="239" startPosition="5" endLine="240" endPosition="98" />
+    <nodeInfo nodeId="1204027260587" fileName="NewDevKitDialogContentPane.java" startLine="240" startPosition="98" endLine="241" endPosition="71" />
+    <nodeInfo nodeId="1204027325480" fileName="NewDevKitDialogContentPane.java" startLine="242" startPosition="90" endLine="243" endPosition="59" />
+    <nodeInfo nodeId="1237289593456" fileName="NewDevKitDialogContentPane.java" startLine="247" startPosition="61" endLine="248" endPosition="47" />
+    <nodeInfo nodeId="1237289570287" fileName="NewDevKitDialogContentPane.java" startLine="249" startPosition="26" endLine="250" endPosition="19" />
+    <nodeInfo nodeId="1204028226155" fileName="NewDevKitDialogContentPane.java" startLine="251" startPosition="5" endLine="252" endPosition="57" />
+    <nodeInfo nodeId="1204028239960" fileName="NewDevKitDialogContentPane.java" startLine="252" startPosition="57" endLine="253" endPosition="52" />
+    <nodeInfo nodeId="1226077098697" fileName="NewDevKitDialogContentPane.java" startLine="253" startPosition="52" endLine="254" endPosition="63" />
+    <nodeInfo nodeId="1204028268732" fileName="NewDevKitDialogContentPane.java" startLine="254" startPosition="63" endLine="255" endPosition="77" />
+    <nodeInfo nodeId="1228828265103" fileName="NewDevKitDialogContentPane.java" startLine="255" startPosition="77" endLine="256" endPosition="69" />
+    <nodeInfo nodeId="4542069726925197479" fileName="NewDevKitDialogContentPane.java" startLine="258" startPosition="25" endLine="259" endPosition="69" />
+    <nodeInfo nodeId="4542069726925197486" fileName="NewDevKitDialogContentPane.java" startLine="259" startPosition="69" endLine="260" endPosition="98" />
+    <nodeInfo nodeId="1228828280747" fileName="NewDevKitDialogContentPane.java" startLine="262" startPosition="32" endLine="263" endPosition="18" />
+    <nodeInfo nodeId="1204027191787" fileName="NewDevKitDialogContentPane.java" startLine="236" startPosition="41" endLine="239" endPosition="5" />
+    <nodeInfo nodeId="1204027305859" fileName="NewDevKitDialogContentPane.java" startLine="241" startPosition="71" endLine="244" endPosition="5" />
+    <nodeInfo nodeId="1237289570285" fileName="NewDevKitDialogContentPane.java" startLine="248" startPosition="47" endLine="251" endPosition="5" />
+    <nodeInfo nodeId="1204027462424" fileName="NewDevKitDialogContentPane.java" startLine="196" startPosition="27" endLine="200" endPosition="5" />
+    <nodeInfo nodeId="1204027478681" fileName="NewDevKitDialogContentPane.java" startLine="200" startPosition="5" endLine="204" endPosition="5" />
+    <nodeInfo nodeId="1204027665297" fileName="NewDevKitDialogContentPane.java" startLine="205" startPosition="121" endLine="209" endPosition="5" />
+    <nodeInfo nodeId="4015801747712977601" fileName="NewDevKitDialogContentPane.java" startLine="211" startPosition="102" endLine="215" endPosition="5" />
+    <nodeInfo nodeId="1217961230514" fileName="NewDevKitDialogContentPane.java" startLine="222" startPosition="62" endLine="226" endPosition="0" />
+    <nodeInfo nodeId="1204027087626" fileName="NewDevKitDialogContentPane.java" startLine="231" startPosition="0" endLine="235" endPosition="0" />
+    <nodeInfo nodeId="1217961230513" fileName="NewDevKitDialogContentPane.java" startLine="221" startPosition="41" endLine="226" endPosition="11" />
+    <nodeInfo nodeId="1226081869743" fileName="NewDevKitDialogContentPane.java" startLine="257" startPosition="68" endLine="262" endPosition="0" />
+    <nodeInfo nodeId="1226081869735" fileName="NewDevKitDialogContentPane.java" startLine="256" startPosition="69" endLine="262" endPosition="32" />
+    <nodeInfo nodeId="1217961230501" fileName="NewDevKitDialogContentPane.java" startLine="219" startPosition="86" endLine="228" endPosition="0" />
+    <nodeInfo nodeId="1217961230493" fileName="NewDevKitDialogContentPane.java" startLine="218" startPosition="47" endLine="228" endPosition="7" />
+    <nodeInfo nodeId="1204027179199" fileName="NewDevKitDialogContentPane.java" startLine="235" startPosition="0" endLine="246" endPosition="0" />
+    <nodeInfo nodeId="1204027985317" fileName="NewDevKitDialogContentPane.java" startLine="246" startPosition="0" endLine="265" endPosition="0" />
+    <nodeInfo nodeId="1204027050087" fileName="NewDevKitDialogContentPane.java" startLine="195" startPosition="0" endLine="231" endPosition="0" />
+    <scopeInfo nodeId="1217961230515" fileName="NewDevKitDialogContentPane.java" startLine="223" startPosition="29" endLine="224" endPosition="74" />
+    <scopeInfo nodeId="1204027087628" fileName="NewDevKitDialogContentPane.java" startLine="232" startPosition="31" endLine="233" endPosition="33" />
+    <scopeInfo nodeId="1204027191788" fileName="NewDevKitDialogContentPane.java" startLine="237" startPosition="38" endLine="238" endPosition="13" />
+    <scopeInfo nodeId="1204027305860" fileName="NewDevKitDialogContentPane.java" startLine="242" startPosition="90" endLine="243" endPosition="59" />
+    <scopeInfo nodeId="1237289570286" fileName="NewDevKitDialogContentPane.java" startLine="249" startPosition="26" endLine="250" endPosition="19" />
+    <scopeInfo nodeId="1204027462425" fileName="NewDevKitDialogContentPane.java" startLine="197" startPosition="46" endLine="199" endPosition="13" />
+    <scopeInfo nodeId="1204027478682" fileName="NewDevKitDialogContentPane.java" startLine="201" startPosition="47" endLine="203" endPosition="13" />
+    <scopeInfo nodeId="1204027665298" fileName="NewDevKitDialogContentPane.java" startLine="206" startPosition="40" endLine="208" endPosition="13" />
+    <scopeInfo nodeId="4015801747712977602" fileName="NewDevKitDialogContentPane.java" startLine="212" startPosition="26" endLine="214" endPosition="13" />
+    <scopeInfo nodeId="1226081869746" fileName="NewDevKitDialogContentPane.java" startLine="258" startPosition="25" endLine="260" endPosition="98">
+      <varInfo nodeId="4542069726925197480" varName="file" />
+    </scopeInfo>
+    <scopeInfo nodeId="1204027369200" fileName="NewDevKitDialogContentPane.java" startLine="68" startPosition="31" endLine="72" endPosition="37" />
+    <scopeInfo nodeId="1217961230514" fileName="NewDevKitDialogContentPane.java" startLine="222" startPosition="62" endLine="226" endPosition="0" />
+    <scopeInfo nodeId="1204027087626" fileName="NewDevKitDialogContentPane.java" startLine="231" startPosition="0" endLine="235" endPosition="0" />
+    <scopeInfo nodeId="1226081869743" fileName="NewDevKitDialogContentPane.java" startLine="257" startPosition="68" endLine="262" endPosition="0" />
+    <scopeInfo nodeId="1217961230507" fileName="NewDevKitDialogContentPane.java" startLine="220" startPosition="61" endLine="226" endPosition="11" />
+    <scopeInfo nodeId="1204027179201" fileName="NewDevKitDialogContentPane.java" startLine="236" startPosition="41" endLine="244" endPosition="5">
       <varInfo nodeId="1204027260588" varName="prefix" />
       <varInfo nodeId="1204027187689" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="1217961230501" fileName="NewDevKitDialogContentPane.java" startLine="217" startPosition="86" endLine="226" endPosition="0">
+    <scopeInfo nodeId="1217961230501" fileName="NewDevKitDialogContentPane.java" startLine="219" startPosition="86" endLine="228" endPosition="0">
       <varInfo nodeId="1217961230504" varName="indicator" />
     </scopeInfo>
-    <scopeInfo nodeId="1204027179199" fileName="NewDevKitDialogContentPane.java" startLine="233" startPosition="0" endLine="244" endPosition="0" />
-    <scopeInfo nodeId="1204028223029" fileName="NewDevKitDialogContentPane.java" startLine="245" startPosition="61" endLine="260" endPosition="18">
+    <scopeInfo nodeId="1204027179199" fileName="NewDevKitDialogContentPane.java" startLine="235" startPosition="0" endLine="246" endPosition="0" />
+    <scopeInfo nodeId="1204028223029" fileName="NewDevKitDialogContentPane.java" startLine="247" startPosition="61" endLine="263" endPosition="18">
       <varInfo nodeId="1228828265104" varName="devkit" />
       <varInfo nodeId="1204028226156" varName="descriptor" />
       <varInfo nodeId="1237289593457" varName="dir" />
       <varInfo nodeId="1226077098698" varName="devkitFile" />
     </scopeInfo>
-    <scopeInfo nodeId="1204027985317" fileName="NewDevKitDialogContentPane.java" startLine="244" startPosition="0" endLine="262" endPosition="0">
+    <scopeInfo nodeId="1204027985317" fileName="NewDevKitDialogContentPane.java" startLine="246" startPosition="0" endLine="265" endPosition="0">
       <varInfo nodeId="1204028053073" varName="devkitPath" />
     </scopeInfo>
-    <scopeInfo nodeId="1204027050089" fileName="NewDevKitDialogContentPane.java" startLine="194" startPosition="27" endLine="227" endPosition="37">
+    <scopeInfo nodeId="1204027050089" fileName="NewDevKitDialogContentPane.java" startLine="196" startPosition="27" endLine="229" endPosition="37">
       <varInfo nodeId="4015801747712977595" varName="message" />
       <varInfo nodeId="4015801747712958747" varName="dir" />
       <varInfo nodeId="1204027640132" varName="devkitPath" />
       <varInfo nodeId="1228828498150" varName="localResult" />
       <varInfo nodeId="1217961860099" varName="ideaProject" />
     </scopeInfo>
-    <scopeInfo nodeId="1204027050087" fileName="NewDevKitDialogContentPane.java" startLine="193" startPosition="0" endLine="229" endPosition="0" />
-    <unitInfo nodeId="1217961230514" fileName="NewDevKitDialogContentPane.java" startLine="220" startPosition="50" endLine="224" endPosition="9" unitName="jetbrains.mps.ide.newDevkitDialog.NewDevKitDialogContentPane$3" />
-    <unitInfo nodeId="1226081869741" fileName="NewDevKitDialogContentPane.java" startLine="255" startPosition="56" endLine="259" endPosition="5" unitName="jetbrains.mps.ide.newDevkitDialog.NewDevKitDialogContentPane$3" />
-    <unitInfo nodeId="1217961230499" fileName="NewDevKitDialogContentPane.java" startLine="217" startPosition="42" endLine="226" endPosition="5" unitName="jetbrains.mps.ide.newDevkitDialog.NewDevKitDialogContentPane$2" />
+    <scopeInfo nodeId="1204027050087" fileName="NewDevKitDialogContentPane.java" startLine="195" startPosition="0" endLine="231" endPosition="0" />
+    <unitInfo nodeId="1217961230514" fileName="NewDevKitDialogContentPane.java" startLine="222" startPosition="50" endLine="226" endPosition="9" unitName="jetbrains.mps.ide.newDevkitDialog.NewDevKitDialogContentPane$3" />
+    <unitInfo nodeId="1226081869741" fileName="NewDevKitDialogContentPane.java" startLine="257" startPosition="56" endLine="262" endPosition="5" unitName="jetbrains.mps.ide.newDevkitDialog.NewDevKitDialogContentPane$3" />
+    <unitInfo nodeId="1217961230499" fileName="NewDevKitDialogContentPane.java" startLine="219" startPosition="42" endLine="228" endPosition="5" unitName="jetbrains.mps.ide.newDevkitDialog.NewDevKitDialogContentPane$2" />
   </root>
 </debugInfo>
 

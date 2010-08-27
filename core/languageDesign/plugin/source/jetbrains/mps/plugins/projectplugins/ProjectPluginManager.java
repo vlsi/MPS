@@ -114,7 +114,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
         public void run() {
           Set<IModule> modules = new HashSet<IModule>();
           modules.addAll(PluginUtil.collectPluginModules(myProject));
-          modules.add(PluginUtil.getIDEModule());
+          modules.addAll(PluginUtil.collectSolutionPlugins());
           mySortedPlugins = PluginUtil.createPlugins(modules, new ProjectPluginCreator());
           for (BaseProjectPlugin plugin : mySortedPlugins) {
             try {

@@ -21,22 +21,12 @@ import com.intellij.openapi.diff.DiffManager;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.vcs.diff.ui.ModelDiffTool;
-import jetbrains.mps.vcs.diff.ui.ModelMergeTool;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 public class MPSFileTypesManager implements ApplicationComponent {
-  private final ModelDiffTool myModelDiffTool = new ModelDiffTool();
-  private final ModelMergeTool myModelMergeTool = new ModelMergeTool();
-  private final DiffManager myDiffManager;
-
   public static MPSFileTypesManager instance() {
     return ApplicationManager.getApplication().getComponent(MPSFileTypesManager.class);
-  }
-
-  public MPSFileTypesManager(DiffManager diffManager) {
-    myDiffManager = diffManager;
   }
 
   @NonNls
@@ -46,13 +36,11 @@ public class MPSFileTypesManager implements ApplicationComponent {
   }
 
   public void initComponent() {
-    myDiffManager.registerDiffTool(myModelDiffTool);
-    myDiffManager.registerDiffTool(myModelMergeTool);
+
   }
 
   public void disposeComponent() {
-    myDiffManager.unregisterDiffTool(myModelDiffTool);
-    myDiffManager.unregisterDiffTool(myModelMergeTool);
+
   }
 
   public boolean isModuleFile(VirtualFile file) {

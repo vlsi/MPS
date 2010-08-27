@@ -17,9 +17,8 @@ package jetbrains.mps.ide.tabbedEditor;
 
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.Disposable;
+import com.intellij.openapi.extensions.Extensions;
 import com.intellij.openapi.fileEditor.FileEditor;
-import com.intellij.openapi.vcs.FileStatus;
-import jetbrains.mps.vcs.changesmanager.RootNodeFileStatusManager;
 import jetbrains.mps.nodeEditor.CellSelectionListener;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.InspectorTool;
@@ -106,40 +105,13 @@ public class LazyTabbedPane extends JPanel implements Disposable {
       return;
     }
 
-    RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(myTabbedEditor.getOperationContext().getProject());
-    if (statusManager == null) {
+    TabColorProvider provider = Extensions.getRootArea().getExtensionPoint(TabColorProvider.EP_NAME).getExtension();
+    if (provider == null) {
       myTabbedPane.setForegroundAt(index, Color.BLACK);
       return;
     }
 
-    boolean hasNotChanged = false;
-    boolean hasModified = false;
-    boolean hasAdded = false;
-    for (EditorComponent editorComponent : tab.getEditorComponents()) {
-      SNode node = editorComponent.getEditedNode();
-      if (node == null) {
-        continue;
-      }
-      FileStatus status = statusManager.getStatus(node);
-      if (status == FileStatus.ADDED) {
-        hasAdded = true;
-      } else if (status == FileStatus.MODIFIED) {
-        hasModified = true;
-      } else {
-        hasNotChanged = true;
-      }
-    }
-    FileStatus status = FileStatus.NOT_CHANGED;
-    if (hasModified) {
-      status = FileStatus.MODIFIED;
-    } else if (hasAdded) {
-      if (hasNotChanged) {
-        status = FileStatus.MODIFIED;
-      } else {
-        status = FileStatus.ADDED;
-      }
-    }
-    myTabbedPane.setForegroundAt(index, status.getColor());
+    myTabbedPane.setForegroundAt(index, provider.getColor(myTabbedEditor.getOperationContext().getProject(), tab));
   }
 
   public void initTab(final ILazyTab tab) {
@@ -161,7 +133,8 @@ public class LazyTabbedPane extends JPanel implements Disposable {
 
       label.addHierarchyListener(new HierarchyListener() {
         public void hierarchyChanged(HierarchyEvent hierarchyEvent) {
-          if (HierarchyEvent.SHOWING_CHANGED != (hierarchyEvent.getChangeFlags() & HierarchyEvent.SHOWING_CHANGED)) return;
+          if (HierarchyEvent.SHOWING_CHANGED != (hierarchyEvent.getChangeFlags() & HierarchyEvent.SHOWING_CHANGED))
+            return;
           if (!isShowing()) return;
           inspect(null);
         }
@@ -178,7 +151,7 @@ public class LazyTabbedPane extends JPanel implements Disposable {
       updateTabColor(tab); //todo why here?
       myInitializedTabs.add(tab);
 
-      if (panel!=component){
+      if (panel != component) {
         panel.removeAll();
         panel.add(component, BorderLayout.CENTER);
         panel.validate();

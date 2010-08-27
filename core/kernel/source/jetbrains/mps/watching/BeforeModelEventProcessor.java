@@ -15,20 +15,16 @@
  */
 package jetbrains.mps.watching;
 
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
+import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.vcs.ApplicationLevelVcsManager;
-import jetbrains.mps.vcs.MPSVCSManager;
+import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.VFileSystem;
-import jetbrains.mps.fileTypes.MPSFileTypesManager;
 
 import java.util.Collections;
-
-import org.apache.log4j.Level;
 
 class BeforeModelEventProcessor extends EventProcessor {
   private static final BeforeModelEventProcessor INSTANCE = new BeforeModelEventProcessor();
@@ -45,10 +41,7 @@ class BeforeModelEventProcessor extends EventProcessor {
       VirtualFile vfile = getVFile(event);
       if (vfile == null) return;
       if (MPSFileTypesManager.instance().isModelFile(vfile)) {
-        Project project = ApplicationLevelVcsManager.instance().getProjectForFile(vfile);
-        if (project != null) {
-          MPSVCSManager.getInstance(project).removeFromVcs(Collections.singletonList(VFileSystem.toFile(vfile)), true);
-        }
+        VcsMigrationUtil.getHandler().removeFromVcs(Collections.singletonList(vfile), true);
       }
     } else {
       // if model is not null, than file was deleted externally

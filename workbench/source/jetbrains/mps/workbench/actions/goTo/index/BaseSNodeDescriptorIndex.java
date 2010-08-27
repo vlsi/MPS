@@ -17,29 +17,27 @@ package jetbrains.mps.workbench.actions.goTo.index;
 
 import com.intellij.openapi.util.Key;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.util.indexing.*;
+import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.FileBasedIndex.InputFilter;
-import com.intellij.util.io.*;
+import com.intellij.util.indexing.FileContent;
+import com.intellij.util.indexing.SingleEntryFileBasedIndexExtension;
+import com.intellij.util.indexing.SingleEntryIndexer;
+import com.intellij.util.io.DataExternalizer;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.vcs.SuspiciousModelIndex;
+import jetbrains.mps.vcs.VcsMigrationUtil;
+import jetbrains.mps.vfs.VFileSystem;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.DataInput;
-import java.io.DataOutput;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public abstract class BaseSNodeDescriptorIndex extends SingleEntryFileBasedIndexExtension<List<SNodeDescriptor>> {
 
@@ -125,7 +123,9 @@ public abstract class BaseSNodeDescriptorIndex extends SingleEntryFileBasedIndex
     private void handleException(Exception e, FileContent inputData) {
       VirtualFile file = inputData.getFile();
       if (MPSFileTypesManager.instance().isModelFile(file)) {
-        SuspiciousModelIndex.instance().addModelFile(file);
+        SModelDescriptor modelDescriptor = SModelRepository.getInstance().findModel(VFileSystem.toIFile(file));
+        if (modelDescriptor == null) return;
+        VcsMigrationUtil.getHandler().addSuspiciousModel(((EditableSModelDescriptor) modelDescriptor), false);
         LOG.error(e.getMessage());
       } else {
         LOG.warning("Can't index file " + file.getPresentableUrl());
@@ -138,5 +138,4 @@ public abstract class BaseSNodeDescriptorIndex extends SingleEntryFileBasedIndex
       return (file.getFileType().equals(MPSFileTypeFactory.MODEL_FILE_TYPE));
     }
   }
-
 }

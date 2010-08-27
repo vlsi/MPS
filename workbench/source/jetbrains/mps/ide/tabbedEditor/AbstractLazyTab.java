@@ -16,14 +16,13 @@
 
 package jetbrains.mps.ide.tabbedEditor;
 
+import com.intellij.openapi.extensions.Extensions;
 import com.intellij.openapi.util.Pair;
 import com.intellij.util.containers.MultiMap;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.vcs.changesmanager.NodeFileStatusListener;
-import jetbrains.mps.vcs.changesmanager.RootNodeFileStatusManager;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 
@@ -34,8 +33,6 @@ public abstract class AbstractLazyTab implements ILazyTab {
   private SNodePointer myBaseNode;
   private TabbedEditor myTabbedEditor;
 
-  private NodeFileStatusListener myNodeFileStatusListener = createFileStatusListener();
-
   public AbstractLazyTab(TabbedEditor tabbedEditor, SNode baseNode) {
     myTabbedEditor = tabbedEditor;
     myBaseNode = new SNodePointer(baseNode);
@@ -43,16 +40,16 @@ public abstract class AbstractLazyTab implements ILazyTab {
     SModelRepository.getInstance().addModelRepositoryListener(myModelAddedListener);
     SModelRepository.getInstance().addModelRepositoryListener(myModelRemovedListener);
 
-    RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(getTabbedEditor().getOperationContext().getProject());
-    if (statusManager != null) {
-      statusManager.addNodeFileStatusListener(myNodeFileStatusListener);
+    TabColorProvider provider = Extensions.getRootArea().getExtensionPoint(TabColorProvider.EP_NAME).getExtension();
+    if (provider != null) {
+      provider.tabOpened(this);
     }
   }
 
   public void dispose() {
-    RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(getTabbedEditor().getOperationContext().getProject());
-    if (statusManager != null) {
-      statusManager.removeNodeFileStatusListener(myNodeFileStatusListener);
+    TabColorProvider provider = Extensions.getRootArea().getExtensionPoint(TabColorProvider.EP_NAME).getExtension();
+    if (provider != null) {
+      provider.tabClosed(this);
     }
 
     SModelRepository.getInstance().removeModelRepositoryListener(myModelRemovedListener);
@@ -100,8 +97,6 @@ public abstract class AbstractLazyTab implements ILazyTab {
     return false;
   }
 
-  protected abstract NodeFileStatusListener createFileStatusListener();
-
   protected abstract void onImportantRootRemoved(SNodePointer node);
 
   ///-------------tab change events----------------
@@ -117,7 +112,7 @@ public abstract class AbstractLazyTab implements ILazyTab {
   }
 
   public void callTabChangeListener() {
-    for (TabChangeListener listener:myTabChangeListeners){
+    for (TabChangeListener listener : myTabChangeListeners) {
       listener.changed();
     }
   }

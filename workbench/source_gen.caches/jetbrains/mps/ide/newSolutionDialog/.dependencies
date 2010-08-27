@@ -3,15 +3,17 @@
   <dependency className="jetbrains.mps.ide.newSolutionDialog.NewModuleUtil" file="NewModuleUtil.java">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
+    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.project.Solution" />
     <classNode dependClassName="jetbrains.mps.project.persistence.SolutionDescriptorPersistence" />
     <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRoot" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.SolutionDescriptor" />
-    <classNode dependClassName="jetbrains.mps.vcs.ApplicationLevelVcsManager" />
+    <classNode dependClassName="jetbrains.mps.vcs.VcsMigrationUtil" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="jetbrains.mps.vfs.VFileSystem" />
   </dependency>

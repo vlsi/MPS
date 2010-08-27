@@ -25,7 +25,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <maxImportIndex value="23" />
+  <maxImportIndex value="25" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="4" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c895904a5(jetbrains.mps.ide.common)" version="-1" />
@@ -42,6 +42,8 @@
   <import index="20" modelUID="f:java_stub#jetbrains.mps.project.persistence(jetbrains.mps.project.persistence@java_stub)" version="-1" />
   <import index="21" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
   <import index="23" modelUID="f:java_stub#jetbrains.mps.ide(jetbrains.mps.ide@java_stub)" version="-1" />
+  <import index="24" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
+  <import index="25" modelUID="f:java_stub#com.intellij.openapi.vfs(com.intellij.openapi.vfs@java_stub)" version="-1" />
   <node type="jetbrains.mps.uiLanguage.structure.ComponentDeclaration:1" id="1204026592280">
     <property name="name:1" value="NewDevKitDialog" />
     <node role="root:1" type="jetbrains.mps.ide.uiLanguage.structure.IDEDialog" id="1204026607298">
@@ -750,23 +752,41 @@
                       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1226081869744" />
                       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1226081869745" />
                       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1226081869746">
-                        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1226081971544">
-                          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1226081971545">
-                            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1226081971546">
-                              <link role="classConcept:3" targetNodeId="17.~ApplicationLevelVcsManager" resolveInfo="ApplicationLevelVcsManager" />
-                              <link role="baseMethodDeclaration:3" targetNodeId="17.~ApplicationLevelVcsManager.instance():jetbrains.mps.vcs.ApplicationLevelVcsManager" resolveInfo="instance" />
+                        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="4542069726925197479">
+                          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="4542069726925197480">
+                            <property name="name:3" value="file" />
+                            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4542069726925197481">
+                              <link role="classifier:3" targetNodeId="25.~VirtualFile" resolveInfo="VirtualFile" />
                             </node>
-                            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1226081971547">
-                              <link role="baseMethodDeclaration:3" targetNodeId="17.~ApplicationLevelVcsManager.addFileToVcs(com.intellij.openapi.vfs.VirtualFile,boolean):void" resolveInfo="addFileToVcs" />
-                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1226081971548">
-                                <link role="baseMethodDeclaration:3" targetNodeId="11.~VFileSystem.refreshAndGetFile(java.io.File):com.intellij.openapi.vfs.VirtualFile" resolveInfo="refreshAndGetFile" />
-                                <link role="classConcept:3" targetNodeId="11.~VFileSystem" resolveInfo="VFileSystem" />
-                                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1226081971549">
-                                  <link role="variableDeclaration:3" targetNodeId="1204028053073" resolveInfo="devkitPath" />
+                            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="4542069726925197482">
+                              <link role="baseMethodDeclaration:3" targetNodeId="11.~VFileSystem.refreshAndGetFile(java.io.File):com.intellij.openapi.vfs.VirtualFile" resolveInfo="refreshAndGetFile" />
+                              <link role="classConcept:3" targetNodeId="11.~VFileSystem" resolveInfo="VFileSystem" />
+                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4542069726925197483">
+                                <link role="variableDeclaration:3" targetNodeId="1204028053073" resolveInfo="devkitPath" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4542069726925197486">
+                          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4542069726925197489">
+                            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="4542069726925197488">
+                              <link role="baseMethodDeclaration:3" targetNodeId="17.~VcsMigrationUtil.getHandler():jetbrains.mps.vcs.VCSHandler" resolveInfo="getHandler" />
+                              <link role="classConcept:3" targetNodeId="17.~VcsMigrationUtil" resolveInfo="VcsMigrationUtil" />
+                            </node>
+                            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4542069726925197493">
+                              <link role="baseMethodDeclaration:3" targetNodeId="17.~VCSHandler.addFilesToVcs(java.util.List,boolean,boolean):void" resolveInfo="addFilesToVcs" />
+                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="4542069726925197494">
+                                <link role="baseMethodDeclaration:3" targetNodeId="24.~Collections.singletonList(java.lang.Object):java.util.List" resolveInfo="singletonList" />
+                                <link role="classConcept:3" targetNodeId="24.~Collections" resolveInfo="Collections" />
+                                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4542069726925197495">
+                                  <link role="variableDeclaration:3" targetNodeId="4542069726925197480" resolveInfo="file" />
                                 </node>
                               </node>
-                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="1226081971550">
+                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="4542069726925197496">
                                 <property name="value:3" value="false" />
+                              </node>
+                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="4542069726925197497">
+                                <property name="value:3" value="true" />
                               </node>
                             </node>
                           </node>

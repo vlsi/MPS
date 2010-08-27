@@ -38,7 +38,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.vcs.MPSVCSManager;
+import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.NotNull;
 
@@ -109,9 +109,13 @@ public class FileGenerationManager implements ApplicationComponent {
 
   private void processGeneratedFiles(GenerationStatus status, final File outputRoot, final IOperationContext context,
                                      Set<File> generatedFiles, boolean cleanUp) {
-
-    MPSVCSManager manager = context.getProject().getComponent(MPSVCSManager.class);
-    manager.addFilesToVcs(new ArrayList<File>(generatedFiles), false, false);
+    List<VirtualFile> filesToAdd = new ArrayList<VirtualFile>(generatedFiles.size());
+    for (File f : generatedFiles) {
+      VirtualFile file = VFileSystem.refreshAndGetFile(f);
+      assert file != null : "Can not find virtual file for " + f;
+      filesToAdd.add(file);
+    }
+    VcsMigrationUtil.getHandler().addFilesToVcs(filesToAdd, false, false);
 
     ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
       @Override
@@ -165,8 +169,8 @@ public class FileGenerationManager implements ApplicationComponent {
         }
       }
     }
-    MPSVCSManager manager = context.getComponent(MPSVCSManager.class);
-    manager.deleteFromDiskAndRemoveFromVcs(filesToDelete, false);
+
+    VcsMigrationUtil.deleteFromDiskAndRemoveFromVcs(filesToDelete, false);
   }
 
   private boolean generateText(IOperationContext context, GenerationStatus status, Map<SNode, String> outputNodeContents) {
@@ -309,16 +313,16 @@ public class FileGenerationManager implements ApplicationComponent {
 
           // invoke post processing 
           Set<File> newfiles = fireFileGenerated(generatedFile);
-          if(newfiles != null) {
-            for(File n : newfiles) {
-              if(generatedFiles.add(n)) {
+          if (newfiles != null) {
+            for (File n : newfiles) {
+              if (generatedFiles.add(n)) {
                 GenerationDependencies dependencies = status.getDependencies();
                 if (dependencies != null) {
                   // calc map
-                  if(dependenciesByFile == null) {
+                  if (dependenciesByFile == null) {
                     dependenciesByFile = new HashMap<String, GenerationRootDependencies>();
-                    for(GenerationRootDependencies rd : dependencies.getRootDependencies()) {
-                      for(String file : rd.getFiles()) {
+                    for (GenerationRootDependencies rd : dependencies.getRootDependencies()) {
+                      for (String file : rd.getFiles()) {
                         dependenciesByFile.put(file, rd);
                       }
                     }
@@ -326,7 +330,7 @@ public class FileGenerationManager implements ApplicationComponent {
 
                   // register as generated file
                   GenerationRootDependencies rdep = dependenciesByFile.get(generatedFile.getName());
-                  if(rdep != null) {
+                  if (rdep != null) {
                     rdep.addGeneratedFile(n.getName());
                   }
                 }
@@ -412,11 +416,11 @@ public class FileGenerationManager implements ApplicationComponent {
       for (FileGenerationListener l : myGenerationListeners) {
         try {
           Set<File> res = l.fileGenerated(file);
-          if(res != null && !res.isEmpty()) {
-            if(generated == null) {
+          if (res != null && !res.isEmpty()) {
+            if (generated == null) {
               generated = res;
             } else {
-              if(!(generated instanceof HashSet)) {
+              if (!(generated instanceof HashSet)) {
                 generated = new HashSet<File>(generated);
               }
               generated.addAll(res);

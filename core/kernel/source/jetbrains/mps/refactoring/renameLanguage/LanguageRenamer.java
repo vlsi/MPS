@@ -28,7 +28,7 @@ import jetbrains.mps.refactoring.framework.OldRefactoringAdapter;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.vcs.MPSVCSManager;
+import jetbrains.mps.vcs.VcsMigrationUtil;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -69,7 +69,7 @@ public class LanguageRenamer {
 
   private void deleteOldFiles(List<File> oldModelRoots) {
     List<File> newModelRoots = getModelOutputRoots();
-    MPSVCSManager.getInstance(myProject).deleteFromDiskAndRemoveFromVcs(getFilesToDelete(oldModelRoots, newModelRoots), true);
+    VcsMigrationUtil.deleteFromDiskAndRemoveFromVcs(getFilesToDelete(oldModelRoots, newModelRoots), true);
   }
 
   private void renameLanguage(String oldFqName) {

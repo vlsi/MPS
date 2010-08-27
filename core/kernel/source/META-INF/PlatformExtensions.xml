@@ -170,10 +170,7 @@
     <!-- Web Browser -->
     <applicationConfigurable implementation="com.intellij.ide.BrowserSettings"/>
 
-    <!--MPS Patch: MPS application vcs settings-->
-    <!--Vcs Ide Settings-->
-    <applicationConfigurable implementation="jetbrains.mps.vcs.ui.VcsSettingsConfigurable"/>
-
+   
     <!--MPS Patch: was not in previos versions of MPS redactions of this file, but was in idea sources-->
     <!-- Notifications -->
     <!--<applicationConfigurable implementation="com.intellij.notification.impl.NotificationsConfigurable"/>-->
