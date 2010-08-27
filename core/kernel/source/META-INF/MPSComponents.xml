@@ -367,6 +367,15 @@
   </application-components>
 
   <project-components>
+
+    <component>
+      <implementation-class>jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager</implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesPerfsPage
+      </implementation-class>
+    </component>
+    
     <component>
       <interface-class>com.intellij.openapi.fileEditor.FileEditorManager</interface-class>
       <implementation-class>com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl</implementation-class>
