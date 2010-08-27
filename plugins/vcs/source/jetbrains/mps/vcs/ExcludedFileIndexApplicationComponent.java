@@ -24,7 +24,6 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 public class ExcludedFileIndexApplicationComponent implements ApplicationComponent {
-  private static final Logger LOG = Logger.getLogger(ExcludedFileIndexApplicationComponent.class);
   private final GlobalClassPathIndex myGlobalClassPathIndex;
 
   public static ExcludedFileIndexApplicationComponent getInstance() {

@@ -50,7 +50,6 @@
   <xi:include href="/componentSets/UICore.xml" xpointer="xpointer(/components/*)"/>
   <xi:include href="/componentSets/WindowManagement.xml" xpointer="xpointer(/components/*)"/>
   <xi:include href="/componentSets/Editor.xml" xpointer="xpointer(/components/*)"/>
-  <xi:include href="/componentSets/VCS.xml" xpointer="xpointer(/components/*)"/>
   <xi:include href="/componentSets/Execution.xml" xpointer="xpointer(/components/*)"/>
 
   <application-components>
@@ -379,12 +378,6 @@
       <interface-class>com.intellij.packageDependencies.DependencyValidationManager</interface-class>
       <implementation-class>com.intellij.packageDependencies.DependencyValidationManagerImpl
       </implementation-class>
-    </component>
-
-
-    <component>
-      <implementation-class>com.intellij.platform.PlatformVcsDetector</implementation-class>
-      <skipForDummyProject/>
     </component>
 
     <component>

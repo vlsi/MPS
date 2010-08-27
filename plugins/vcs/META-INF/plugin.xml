@@ -14,13 +14,16 @@
   ~ limitations under the License.
   -->
 <!DOCTYPE idea-plugin PUBLIC "Plugin/DTD" "http://plugins.intellij.net/plugin.dtd">
-<idea-plugin>
+<idea-plugin xmlns:xi="http://www.w3.org/2001/XInclude">
   <id>jetbrains.mps.vcs</id>
   <name>VCS Integration for MPS</name>
   <description>VCS features in MPS</description>
   <version>1.5</version>
   <vendor url="http://www.jetbrains.com/mps/">JetBrains</vendor>
   <idea-version since-build="3000"/>
+
+
+  <xi:include href="/componentSets/VCS.xml" xpointer="xpointer(/components/*)"/>
 
   <application-components>
     <component>
@@ -45,6 +48,10 @@
   </application-components>
 
   <project-components>
+    <component>
+          <implementation-class>com.intellij.platform.PlatformVcsDetector</implementation-class>
+          <skipForDummyProject/>
+        </component>
     <component>
       <interface-class>com.intellij.openapi.vcs.impl.VcsPathPresenter</interface-class>
       <implementation-class>jetbrains.mps.vcs.ModuleVcsPathPresenter</implementation-class>
@@ -118,7 +125,11 @@
 
     <projectService serviceInterface="com.intellij.openapi.vcs.impl.ExcludedFileIndex"
                     serviceImplementation="jetbrains.mps.vcs.MPSExcludedFileIndex"/>
-    
+
+    <projectService serviceInterface="com.intellij.openapi.vcs.impl.DefaultVcsRootPolicy"
+                      serviceImplementation="jetbrains.mps.vcs.ExtendedDefaultVcsRootPolicy"/>
+
+
     <applicationConfigurable implementation="jetbrains.mps.vcs.ui.VcsSettingsConfigurable"/>
     <directoryIndexExcludePolicy implementation="jetbrains.mps.project.GeneratedFilesExcludePolicy"/>
     <projectConfigurable implementation="jetbrains.mps.vcs.ui.VcsGeneratedFilesConfigurable" id="mpsvcs"/>
