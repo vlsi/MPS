@@ -24,14 +24,13 @@ import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
-import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.impl.GenerationController;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
-import jetbrains.mps.ide.generator.IdeaGeneratorManager;
+import jetbrains.mps.ide.generator.GeneratorFacade;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.lang.generator.plugin.debug.GenerationTracer;
@@ -81,14 +80,7 @@ public class GeneratorManager {
   }
 
   public IGenerationHandler getDefaultGenerationHandler() {
-    return IdeaGeneratorManager.getInstance().getDefaultGenerationHandler();
-  }
-
-  @Deprecated
-  public void generateModelsFromDifferentModules(final IOperationContext operationContext,
-                                                 final List<SModelDescriptor> inputModels,
-                                                 final IGenerationHandler generationHandler) {
-    generateModelsFromDifferentModules(operationContext, inputModels, generationHandler, true);
+    return GeneratorFacade.getInstance().getDefaultGenerationHandler();
   }
 
 
@@ -121,13 +113,6 @@ public class GeneratorManager {
     }
   }
 
-  @Deprecated
-  public boolean generateModelsWithProgressWindow(final List<SModelDescriptor> inputModels,
-                                                  final IOperationContext invocationContext,
-                                                  final IGenerationHandler generationHandler,
-                                                  boolean closeOnExit) {
-    return generateModelsWithProgressWindow(inputModels, invocationContext, generationHandler, closeOnExit, true);
-  }
   /**
    * @return false if canceled
    */
@@ -238,7 +223,7 @@ public class GeneratorManager {
           if (result == 1) return false;
           // answer was "yes"
           if (result == 0) {
-            generateModelsFromDifferentModules(invocationContext, new ArrayList<SModelDescriptor>(requirements), getDefaultGenerationHandler());
+            generateModelsFromDifferentModules(invocationContext, new ArrayList<SModelDescriptor>(requirements), getDefaultGenerationHandler(), true);
           }
         }
       } finally {
@@ -342,15 +327,6 @@ public class GeneratorManager {
       messages,
       saveTransientModels,
       rebuildAll);
-  }
-
-  @Deprecated
-  public boolean generateModels(final List<Pair<SModelDescriptor, IOperationContext>> inputModels,
-                                final IGenerationHandler generationHandler,
-                                final ProgressIndicator progress,
-                                final IMessageHandler messages,
-                                final boolean saveTransientModels) {
-    return generateModels(inputModels, generationHandler, progress, messages, saveTransientModels, true);
   }
 
   /**

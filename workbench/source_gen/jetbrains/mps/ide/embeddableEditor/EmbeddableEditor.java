@@ -136,7 +136,7 @@ public class EmbeddableEditor {
         return false;
       }
     };
-    boolean successful = manager.generateModelsWithProgressWindow(ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), myModel), myContext, handler, false);
+    boolean successful = manager.generateModelsWithProgressWindow(ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), myModel), myContext, handler, false, true);
     return new GenerationResult(myRootNode, myContext, myModel, handler, successful);
   }
 

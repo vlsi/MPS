@@ -11930,7 +11930,7 @@
                   <link role="variableDeclaration:3" targetNodeId="1224851586149" resolveInfo="generatorManager" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1224851586292">
-                  <link role="baseMethodDeclaration:3" targetNodeId="3.~GeneratorManager.generateModelsWithProgressWindow(java.util.List,jetbrains.mps.smodel.IOperationContext,jetbrains.mps.generator.generationTypes.IGenerationHandler,boolean):boolean" resolveInfo="generateModelsWithProgressWindow" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="3.~GeneratorManager.generateModelsWithProgressWindow(java.util.List,jetbrains.mps.smodel.IOperationContext,jetbrains.mps.generator.generationTypes.IGenerationHandler,boolean,boolean):boolean" resolveInfo="generateModelsWithProgressWindow" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1224851586293">
                     <node role="creator:3" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit:7" id="1224851586294">
                       <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8095040450980532731">
@@ -11948,6 +11948,9 @@
                     <link role="variableDeclaration:3" targetNodeId="6053328609845219935" resolveInfo="generationHandler" />
                   </node>
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="1224851586299">
+                    <property name="value:3" value="true" />
+                  </node>
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="754170669293800979">
                     <property name="value:3" value="true" />
                   </node>
                 </node>

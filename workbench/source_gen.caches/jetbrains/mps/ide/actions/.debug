@@ -319,9 +319,9 @@
     <nodeInfo nodeId="1204909245350" fileName="ModelActions_ActionGroup.java" startLine="38" startPosition="90" endLine="39" endPosition="51" />
     <nodeInfo nodeId="8071957793010769916" fileName="ModelActions_ActionGroup.java" startLine="39" startPosition="51" endLine="40" endPosition="114" />
     <nodeInfo nodeId="1204909253120" fileName="ModelActions_ActionGroup.java" startLine="40" startPosition="114" endLine="41" endPosition="51" />
-    <nodeInfo nodeId="3906874221886741856" fileName="ModelActions_ActionGroup.java" startLine="41" startPosition="51" endLine="42" endPosition="190" />
-    <nodeInfo nodeId="2280359988539783705" fileName="ModelActions_ActionGroup.java" startLine="42" startPosition="190" endLine="43" endPosition="189" />
-    <nodeInfo nodeId="3906874221886741858" fileName="ModelActions_ActionGroup.java" startLine="43" startPosition="189" endLine="44" endPosition="159" />
+    <nodeInfo nodeId="3906874221886741856" fileName="ModelActions_ActionGroup.java" startLine="41" startPosition="51" endLine="42" endPosition="185" />
+    <nodeInfo nodeId="2280359988539783705" fileName="ModelActions_ActionGroup.java" startLine="42" startPosition="185" endLine="43" endPosition="184" />
+    <nodeInfo nodeId="3906874221886741858" fileName="ModelActions_ActionGroup.java" startLine="43" startPosition="184" endLine="44" endPosition="159" />
     <nodeInfo nodeId="2360909385709190614" fileName="ModelActions_ActionGroup.java" startLine="44" startPosition="159" endLine="45" endPosition="128" />
     <nodeInfo nodeId="1204909572396" fileName="ModelActions_ActionGroup.java" startLine="45" startPosition="128" endLine="46" endPosition="51" />
     <nodeInfo nodeId="1216124611057" fileName="ModelActions_ActionGroup.java" startLine="46" startPosition="51" endLine="47" endPosition="134" />
@@ -1671,7 +1671,7 @@
     <nodeInfo nodeId="1229274613437" fileName="GenerateTemplateQueries_Action.java" startLine="96" startPosition="76" endLine="97" endPosition="155" />
     <nodeInfo nodeId="1229274829917" fileName="GenerateTemplateQueries_Action.java" startLine="99" startPosition="27" endLine="100" endPosition="160" />
     <nodeInfo nodeId="1232133232068" fileName="GenerateTemplateQueries_Action.java" startLine="103" startPosition="58" endLine="104" endPosition="180" />
-    <nodeInfo nodeId="1229275750931" fileName="GenerateTemplateQueries_Action.java" startLine="109" startPosition="9" endLine="110" endPosition="125" />
+    <nodeInfo nodeId="1229275750931" fileName="GenerateTemplateQueries_Action.java" startLine="109" startPosition="9" endLine="110" endPosition="131" />
     <nodeInfo nodeId="1229276371800" fileName="GenerateTemplateQueries_Action.java" startLine="51" startPosition="7" endLine="55" endPosition="26" />
     <nodeInfo nodeId="1232133232066" fileName="GenerateTemplateQueries_Action.java" startLine="102" startPosition="107" endLine="106" endPosition="0" />
     <nodeInfo nodeId="1232133232060" fileName="GenerateTemplateQueries_Action.java" startLine="101" startPosition="66" endLine="106" endPosition="32" />
@@ -2012,7 +2012,7 @@
     <nodeInfo nodeId="1241022868132" fileName="GenerateTextFromSolution_Action.java" startLine="111" startPosition="39" endLine="112" endPosition="102" />
     <nodeInfo nodeId="1241022871233" fileName="GenerateTextFromSolution_Action.java" startLine="112" startPosition="102" endLine="113" endPosition="15" />
     <nodeInfo nodeId="1241022878750" fileName="GenerateTextFromSolution_Action.java" startLine="114" startPosition="7" endLine="115" endPosition="115" />
-    <nodeInfo nodeId="1241022937430" fileName="GenerateTextFromSolution_Action.java" startLine="115" startPosition="115" endLine="116" endPosition="171" />
+    <nodeInfo nodeId="1241022937430" fileName="GenerateTextFromSolution_Action.java" startLine="115" startPosition="115" endLine="116" endPosition="177" />
     <nodeInfo nodeId="1241022858388" fileName="GenerateTextFromSolution_Action.java" startLine="110" startPosition="9" endLine="114" endPosition="7" />
     <nodeInfo nodeId="1241022655018" fileName="GenerateTextFromSolution_Action.java" startLine="103" startPosition="30" endLine="108" endPosition="11" />
     <nodeInfo nodeId="1241022404055" fileName="GenerateTextFromSolution_Action.java" startLine="99" startPosition="59" endLine="110" endPosition="0" />
@@ -4001,8 +4001,8 @@
     </scopeInfo>
     <scopeInfo nodeId="413582328332576432" fileName="InformationDialog.java" startLine="49" startPosition="0" endLine="60" endPosition="0" />
     <scopeInfo nodeId="413582328332537326" fileName="InformationDialog.java" startLine="67" startPosition="29" endLine="81" endPosition="7">
-      <varInfo nodeId="413582328332537328" varName="isCreated" />
       <varInfo nodeId="413582328332537336" varName="isRemoved" />
+      <varInfo nodeId="413582328332537328" varName="isCreated" />
     </scopeInfo>
     <scopeInfo nodeId="413582328332537591" fileName="InformationDialog.java" startLine="96" startPosition="47" endLine="111" endPosition="7">
       <varInfo nodeId="413582328332537593" varName="isDiff" />
@@ -4964,8 +4964,8 @@
       <varInfo nodeId="5286974591503450557" varName="context" />
     </scopeInfo>
     <scopeInfo nodeId="5573155209983904318" fileName="RefactoringPanel.java" startLine="46" startPosition="32" endLine="61" endPosition="52">
-      <varInfo nodeId="5573155209983945709" varName="modelName" />
       <varInfo nodeId="5573155209983905286" varName="modelNameLabel" />
+      <varInfo nodeId="5573155209983945709" varName="modelName" />
       <varInfo nodeId="5189407523588908771" varName="refactoringsContextList" />
       <varInfo nodeId="5573155209983945672" varName="mainPanel" />
       <varInfo nodeId="7235352240938997737" varName="gridBagConstraints" />
@@ -6570,7 +6570,7 @@
     <nodeInfo nodeId="6840593892233918998" fileName="GenerateFiles_Action.java" startLine="87" startPosition="9" endLine="88" endPosition="104" />
     <nodeInfo nodeId="6840593892233919100" fileName="GenerateFiles_Action.java" startLine="88" startPosition="104" endLine="89" endPosition="72" />
     <nodeInfo nodeId="5930354527034081683" fileName="GenerateFiles_Action.java" startLine="91" startPosition="109" endLine="92" endPosition="28" />
-    <nodeInfo nodeId="6840593892233919176" fileName="GenerateFiles_Action.java" startLine="94" startPosition="7" endLine="95" endPosition="173" />
+    <nodeInfo nodeId="6840593892233919176" fileName="GenerateFiles_Action.java" startLine="94" startPosition="7" endLine="95" endPosition="174" />
     <nodeInfo nodeId="6840593892233918987" fileName="GenerateFiles_Action.java" startLine="103" startPosition="44" endLine="104" endPosition="82" />
     <nodeInfo nodeId="3356634874434605477" fileName="GenerateFiles_Action.java" startLine="43" startPosition="69" endLine="46" endPosition="7" />
     <nodeInfo nodeId="6840593892233919112" fileName="GenerateFiles_Action.java" startLine="90" startPosition="88" endLine="93" endPosition="9" />

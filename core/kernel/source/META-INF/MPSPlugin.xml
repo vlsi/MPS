@@ -11,7 +11,7 @@
         <xi:include href="/META-INF/LangExtensionPoints.xml" xpointer="xpointer(/extensionPoints/*)"/>
 
         <extensionPoint name="mps.NavigationProvider" interface="jetbrains.mps.ide.navigation.NavigationProvider"/>
-        <extensionPoint name="mps.GenerationHandler" interface="jetbrains.mps.ide.generator.IdeaGeneratorManager$GenerationHandlerProvider"/>
+        <extensionPoint name="mps.GenerationHandler" interface="jetbrains.mps.ide.generator.GeneratorFacade$GenerationHandlerProvider"/>
     </extensionPoints>
 
     <extensions defaultExtensionNs="com.intellij">

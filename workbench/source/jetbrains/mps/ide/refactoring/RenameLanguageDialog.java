@@ -25,19 +25,16 @@ import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
-import jetbrains.mps.ide.generator.IdeaGeneratorManager;
+import jetbrains.mps.ide.generator.GeneratorFacade;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
 import jetbrains.mps.refactoring.renameLanguage.LanguageRenamer;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.*;
 
 public class RenameLanguageDialog extends BaseDialog {
   private JPanel myMainPanel;
@@ -145,11 +142,7 @@ public class RenameLanguageDialog extends BaseDialog {
           return;
         }
 
-        myProject.getComponent(GeneratorManager.class)
-          .generateModelsFromDifferentModules(
-            new ModuleContext(myLanguage, myProject),
-            params.getModelDescriptors(),
-            IdeaGeneratorManager.getInstance().getDefaultGenerationHandler());
+        myProject.getComponent(GeneratorManager.class).generateModelsFromDifferentModules(new ModuleContext(myLanguage, myProject), params.getModelDescriptors(), GeneratorFacade.getInstance().getDefaultGenerationHandler(), true);
       }
     }
 
