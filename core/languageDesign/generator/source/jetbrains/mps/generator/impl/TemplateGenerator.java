@@ -25,7 +25,7 @@ import jetbrains.mps.generator.impl.FastRuleFinder.BlockedReductionsData;
 import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
 import jetbrains.mps.generator.template.*;
 import jetbrains.mps.lang.core.structure.INamedConcept;
-import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
+import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.lang.sharedConcepts.structure.Options_DefaultTrue;

@@ -1,4 +1,4 @@
-package jetbrains.mps.lang.generator.plugin.debug;
+package jetbrains.mps.generator;
 
 import jetbrains.mps.lang.generator.structure.MappingScript;
 import jetbrains.mps.smodel.SModel;

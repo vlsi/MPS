@@ -27,6 +27,8 @@ import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.impl.GenerationController;
+import jetbrains.mps.generator.impl.GenerationProcessContext;
+import jetbrains.mps.generator.impl.GeneratorLoggerAdapter;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
@@ -34,8 +36,6 @@ import jetbrains.mps.ide.generator.GeneratorFacade;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.lang.generator.plugin.debug.GenerationTracer;
-import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
-import jetbrains.mps.lang.generator.plugin.debug.NullGenerationTracer;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.Message;
@@ -354,7 +354,15 @@ public class GeneratorManager {
         tracer.startTracing();
 
         fireBeforeGeneration(inputModels);
-        GenerationController gc = new GenerationController(new GeneratorNotifierHelper(), mySettings, inputModels, generationHandler, tracer, progress, messages, saveTransientModels, rebuildAll);
+
+        GenerationProcessContext parameters = new GenerationProcessContext(
+          saveTransientModels, mySettings.isParallelGenerator(), mySettings.isStrictMode(), rebuildAll, mySettings.isGenerateDependencies(),
+          !mySettings.isShowWarnings() && !mySettings.isShowInfo(),
+          progress, tracer, mySettings.getNumberOfParallelThreads(), mySettings.getPerformanceTracingLevel());
+
+        GeneratorLoggerAdapter logger = new GeneratorLoggerAdapter(messages, mySettings.isShowInfo(), mySettings.isShowWarnings(), mySettings.isKeepModelsWithWarnings());
+
+        GenerationController gc = new GenerationController(parameters, new GeneratorNotifierHelper(), inputModels,  logger, generationHandler);
         result[0] = gc.generate();
         tracer.finishTracing();
         fireAfterGeneration(inputModels);
