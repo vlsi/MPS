@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vcs;
+package jetbrains.mps.vcs.queue;
 
-abstract class BansHolder {
+public abstract class BansHolder {
   protected int myProcessingBans;
 
   public BansHolder(boolean isProcessingAllowed) {

@@ -30,6 +30,7 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vcs.VcsMigrationUtil;
+import jetbrains.mps.vcs.queue.VCSQueue;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
@@ -137,7 +138,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
   }
 
   private SModel handleExceptionDuringModelRead(EditableSModelDescriptor modelDescriptor, RuntimeException exception, boolean isConflictStateFixed) {
-    VcsMigrationUtil.addModel(modelDescriptor, isConflictStateFixed);
+    VcsMigrationUtil.addSuspiciousModel(modelDescriptor, isConflictStateFixed);
     SModel newModel = new StubModel(modelDescriptor.getSModelReference());
     LOG.error(exception.getMessage(), newModel);
     return newModel;
@@ -412,8 +413,8 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
 
   private void fileRenamed(IFile modelFile, IFile newFile) {
     // todo use listeners
-    VcsMigrationUtil.addToVcsLater(newFile.toFile());
-    VcsMigrationUtil.removeFromVcsLater(modelFile.toFile());
+    VCSQueue.instance().addToVcsLater(newFile.toFile());
+    VCSQueue.instance().removeFromVcsLater(modelFile.toFile());
   }
 }
 

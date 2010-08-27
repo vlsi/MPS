@@ -16,6 +16,7 @@
 package jetbrains.mps.vcs;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.vcs.queue.BansHolder;
 
 abstract class VcsOperationsScheduler<O extends VcsOperation> extends BansHolder {
   private final static Logger LOG = Logger.getLogger(VcsOperationsScheduler.class);

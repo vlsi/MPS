@@ -32,9 +32,8 @@ import com.intellij.openapi.vfs.VirtualFileManager;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.vcs.queue.TaskQueue;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.watching.ModelChangesWatcher;
@@ -56,7 +55,7 @@ public class SuspiciousModelIndex implements ApplicationComponent {
   private final VirtualFileManager myVirtualFileManager;
 
   private final SuspiciousModelIndex.ProjectOpenedListener myProjectManagerListener;
-  private final TaskQueue<Conflictable> myTaskQueue = new TaskQueue<Conflictable>(false) {
+  private final jetbrains.mps.vcs.queue.TaskQueue<Conflictable> myTaskQueue = new TaskQueue<Conflictable>(false) {
     public void processTask(final List<Conflictable> tasks) {
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {

@@ -107,7 +107,7 @@ public class VCSUtil {
     return false;
   }
 
-  public static void addFilesToVcs(List<VirtualFile> files, boolean recursive,boolean silently) {
+  public static void addFilesToVcs(List<VirtualFile> files, boolean recursive, boolean silently) {
     // collect
     Map<MPSVCSManager, Set<VirtualFile>> vcsManagerToFile = new HashMap<MPSVCSManager, Set<VirtualFile>>();
     for (VirtualFile file : files) {
@@ -143,7 +143,7 @@ public class VCSUtil {
     }
   }
 
-  public static void removeFilesFromVcs(List<FilePath> files,boolean silently) {
+  public static void removeFilesFromVcs(List<FilePath> files, boolean silently) {
     // collect
     Map<MPSVCSManager, List<File>> vcsManagerToFile = new HashMap<MPSVCSManager, List<File>>();
     for (FilePath file : files) {

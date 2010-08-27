@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vcs;
+package jetbrains.mps.vcs.queue;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
@@ -21,13 +21,10 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.ProjectManagerListener;
 import com.intellij.openapi.startup.StartupManager;
-import com.intellij.openapi.vcs.FilePath;
-import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.vfs.VFileSystem;
+import jetbrains.mps.vcs.VcsMigrationUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.List;
 
 public class VCSQueue implements ApplicationComponent {
@@ -36,6 +33,10 @@ public class VCSQueue implements ApplicationComponent {
   private final ProjectManagerListener myListener = new MyProjectManagerListener();
 
   private final ProjectManager myProjectManager;
+
+  public static VCSQueue instance(){
+    return ApplicationManager.getApplication().getComponent(VCSQueue.class);
+  }
 
   public VCSQueue(ProjectManager projectManager) {
     myProjectManager = projectManager;
@@ -95,13 +96,7 @@ public class VCSQueue implements ApplicationComponent {
     public void processTask(final List<File> tasks) {
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
-          List<VirtualFile> filesToAdd = new ArrayList<VirtualFile>(tasks.size());
-          for (File f : tasks) {
-            VirtualFile file = VFileSystem.refreshAndGetFile(f);
-            assert file != null : "Can not find virtual file for " + f;
-            filesToAdd.add(file);
-          }
-          VCSUtil.addFilesToVcs(filesToAdd, false, true);
+          VcsMigrationUtil.addFilesToVcs(tasks, false, true);
         }
       });
     }
@@ -113,12 +108,7 @@ public class VCSQueue implements ApplicationComponent {
     }
 
     public void processTask(List<File> tasks) {
-      List<FilePath> filesToAdd = new ArrayList<FilePath>(tasks.size());
-      for (File f : tasks) {
-        FilePath file = VcsHelper.getFilePath(f);
-        filesToAdd.add(file);
-      }
-      VCSUtil.removeFilesFromVcs(filesToAdd, true);
+      VcsMigrationUtil.removeFromVcs(tasks, true);
     }
   }
 }

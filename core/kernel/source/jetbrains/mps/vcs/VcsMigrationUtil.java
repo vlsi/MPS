@@ -15,39 +15,38 @@
  */
 package jetbrains.mps.vcs;
 
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.history.VcsRevisionNumber;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.ide.projectPane.fileSystem.ExclusionChangedListener;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.List;
 
 public class VcsMigrationUtil {
+  //-----suspicious
+
   public static void addSuspiciousModule(AbstractModule abstractModule, boolean inConflict) {
     //SuspiciousModelIndex.instance().addModule(abstractModule, inConflict);
   }
 
-  public static void addModel(EditableSModelDescriptor modelDescriptor, boolean conflictStateFixed) {
+  public static void addSuspiciousModel(EditableSModelDescriptor modelDescriptor, boolean conflictStateFixed) {
     //SuspiciousModelIndex.instance().addModel(modelDescriptor,conflictStateFixed);
   }
 
-  public static void deleteFromDiskAndRemoveFromVcs(List<File> filesToDelete, boolean b) {
-    //(MPSVCSManager.class).   deleteFromDiskAndRemoveFromVcs( filesToDelete,  b);
-  }
+  //-----add/remove
 
   public static void addFilesToVcs(List<File> files, boolean b, boolean b1) {
-     //ApplicationLevelVcsManager.instance().addFilesToVcs(files,b,b1);
+    //ApplicationLevelVcsManager.instance().addFilesToVcs(files,b,b1);
   }
 
   public static void removeFromVcs(List<File> files, boolean b) {
     //ApplicationLevelVcsManager.instance().removeFilesFromVcs(files,b);
   }
+
+  //-----other
 
   public static VcsRevisionNumber getRevisionNumber(VirtualFile file) {
     return null;//ApplicationLevelVcsManager.instance().getRevisionNumber(file);
@@ -61,13 +60,13 @@ public class VcsMigrationUtil {
     return true;//VcsHelper.resolveDiskMemoryConflict(modelFile,sModel);
   }
 
-  //todo remove
-  public static void addToVcsLater(File file) {
-    //ApplicationLevelVcsManager.instance().addToVcsLater(file);
-  }
+  //-----util
 
-  //todo remove
-  public static void removeFromVcsLater(File file) {
-    //ApplicationLevelVcsManager.instance().removeFromVcsLater(file);
+  public static void deleteFromDiskAndRemoveFromVcs(List<File> files, boolean silently) {
+    if (files.size() == 0) return;
+    for (File f : files) {
+      f.delete();
+    }
+    removeFromVcs(files, silently);
   }
 }

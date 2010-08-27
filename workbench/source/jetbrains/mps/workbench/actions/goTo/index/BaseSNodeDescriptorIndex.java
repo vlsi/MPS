@@ -125,7 +125,7 @@ public abstract class BaseSNodeDescriptorIndex extends SingleEntryFileBasedIndex
       if (MPSFileTypesManager.instance().isModelFile(file)) {
         SModelDescriptor modelDescriptor = SModelRepository.getInstance().findModel(VFileSystem.toIFile(file));
         if (modelDescriptor == null) return;
-        VcsMigrationUtil.addModel(((EditableSModelDescriptor) modelDescriptor), false);
+        VcsMigrationUtil.addSuspiciousModel(((EditableSModelDescriptor) modelDescriptor), false);
         LOG.error(e.getMessage());
       } else {
         LOG.warning("Can't index file " + file.getPresentableUrl());

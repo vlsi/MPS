@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vcs;
+package jetbrains.mps.vcs.queue;
 
 import jetbrains.mps.logging.Logger;
 
@@ -21,7 +21,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-abstract class TaskQueue<T> extends BansHolder {
+public abstract class TaskQueue<T> extends BansHolder {
   private final static Logger LOG = Logger.getLogger(TaskQueue.class);
   private final List<T> myTasks = new LinkedList<T>();
 
