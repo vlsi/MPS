@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.workbench.action;
 
+import com.intellij.ide.plugins.IdeaPluginDescriptor;
+import com.intellij.ide.plugins.PluginManager;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.extensions.PluginId;
 import com.intellij.openapi.keymap.Keymap;
@@ -98,9 +100,20 @@ public class ActionFactory {
     Class groupClass = null;
     if (module == null) {
       try {
-        groupClass = Class.forName(groupClassName);
+        IdeaPluginDescriptor plugin = PluginManager.getPlugin(PluginId.getId("jetbrains.mps.vcs"));
+        if (plugin != null) {
+          groupClass = plugin.getPluginClassLoader().loadClass(groupClassName);
+        }
       } catch (ClassNotFoundException e) {
-        LOG.error(e);
+
+      }
+
+      if (groupClass == null) {
+        try {
+          groupClass = Class.forName(groupClassName);
+        } catch (ClassNotFoundException e) {
+          LOG.error(e);
+        }
       }
     } else {
       groupClass = module.getClass(groupClassName);
