@@ -132,7 +132,10 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   }
 
   @NotNull
-  private List<EditorCell> getFoldedCells() {
+    private List<EditorCell> getFoldedCells() {
+    if (!myCanBeFolded) {
+      return Collections.emptyList();
+    }
     if (myFoldedCells == null) {
       EditorCell_Constant foldedCell = new EditorCell_Constant(getEditorContext(), getSNode(), FOLDED_TEXT);
       Style style = foldedCell.getStyle();
