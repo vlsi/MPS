@@ -222,11 +222,6 @@
       </implementation-class>
     </component>
 
-    <component>
-      <implementation-class>jetbrains.mps.typesystem.integration.TypesystemPreferencesComponent
-      </implementation-class>
-    </component>
-
         <component>
             <implementation-class>jetbrains.mps.typesystem.inference.TypeContextManager
             </implementation-class>
