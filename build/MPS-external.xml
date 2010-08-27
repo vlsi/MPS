@@ -61,6 +61,8 @@
     <mkdir dir="${deploy.dir}/MPS/license" />
     <mkdir dir="${deploy.dir}/MPS/plugins/ideaIntegration.jar.tmp/META-INF" />
     <mkdir dir="${deploy.dir}/MPS/plugins/ideaIntegration.jar.tmp" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/ideaIntegration.jar.tmp/META-INF" />
+    <mkdir dir="${deploy.dir}/MPS/plugins/ideaIntegration.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/plugins" />
     <mkdir dir="${deploy.dir}/MPS/samples.zip.tmp/MPSSamples" />
     <mkdir dir="${deploy.dir}/MPS/samples.zip.tmp" />
@@ -256,8 +258,18 @@
       <fileset dir="${deploy.dir}/MPS/plugins/ideaIntegration.jar.tmp" />
     </jar>
     <delete dir="${deploy.dir}/MPS/plugins/ideaIntegration.jar.tmp" />
+    <copy todir="${deploy.dir}/MPS/plugins/ideaIntegration.jar.tmp/META-INF">
+      <fileset dir="${mps_home}/plugins/vcs/META-INF" includes="**/plugin.xml, " />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/plugins/ideaIntegration.jar.tmp">
+      <fileset dir="${mps_home}/plugins/vcs/classes" />
+    </copy>
+    <jar destfile="${deploy.dir}/MPS/plugins/ideaIntegration.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="${deploy.dir}/MPS/plugins/ideaIntegration.jar.tmp" />
+    </jar>
+    <delete dir="${deploy.dir}/MPS/plugins/ideaIntegration.jar.tmp" />
     <copy todir="${deploy.dir}/MPS/plugins">
-      <fileset dir="${mps_home}/plugins" excludes="**/*.zip, ideaIntegration/**, **/*.iml, **/*.iws" />
+      <fileset dir="${mps_home}/plugins" excludes="**/*.zip, ideaIntegration/**, vcs/**, **/*.iml, **/*.iws" />
     </copy>
     <copy todir="${deploy.dir}/MPS/samples.zip.tmp/MPSSamples">
       <fileset dir="${mps_home}/samples" excludes="**/*.iml, **/*.iws" />
@@ -431,6 +443,7 @@
     <delete dir="${deploy.dir}/MPS-buildTools.zip.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/idea-patch.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/mps.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS/plugins/ideaIntegration.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/plugins/ideaIntegration.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/platform/generate.ant.task.jar.tmp" />
   </target>
