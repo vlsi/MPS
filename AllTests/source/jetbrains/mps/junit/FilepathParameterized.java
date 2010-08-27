@@ -1,6 +1,8 @@
 package jetbrains.mps.junit;
 
+import org.junit.runner.Description;
 import org.junit.runner.Runner;
+import org.junit.runner.manipulation.Sorter;
 import org.junit.runner.notification.RunNotifier;
 import org.junit.runners.BlockJUnit4ClassRunner;
 import org.junit.runners.Parameterized.Parameters;
@@ -14,14 +16,33 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
+import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class FilepathParameterized extends Suite {
+  private static final Sorter SORTER = new Sorter(new Comparator<Description>(){
+    @Override
+    public int compare(Description a, Description b) {
+      if (a.getTestClass() != b.getTestClass()) {
+        return a.getTestClass().getName().compareTo(b.getTestClass().getName());
+      }
+      if (a.getMethodName().equals(b.getMethodName())) {
+        return 0;
+      }
+      for (Method m: a.getTestClass().getMethods()) {
+        if (m.getName().equals(a.getMethodName())) {
+          return -1;
+        }
+        else if (m.getName().equals(b.getMethodName())) {
+          return 1;
+        }
+      };
+      throw new IllegalArgumentException("Method(s) not found : either "+a+" or "+b);
+    }                    
+  });
 
-	private class TestClassRunnerForParameters extends
+  private class TestClassRunnerForParameters extends
           BlockJUnit4ClassRunner {
 		private final int fParameterSetNumber;
 
@@ -83,9 +104,11 @@ public class FilepathParameterized extends Suite {
 	public FilepathParameterized(Class<?> klass) throws Throwable {
 		super(klass, Collections.<Runner>emptyList());
 		List<Object[]> parametersList= getParametersList(getTestClass());
-		for (int i= 0; i < parametersList.size(); i++)
-			runners.add(new TestClassRunnerForParameters(getTestClass().getJavaClass(),
-					parametersList, i));
+		for (int i= 0; i < parametersList.size(); i++) {
+                  TestClassRunnerForParameters runner = new TestClassRunnerForParameters(getTestClass().getJavaClass(), parametersList, i);
+                  runner.sort(SORTER);
+                  runners.add(runner);
+                }
 	}
 
 	@Override
