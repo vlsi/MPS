@@ -17,6 +17,7 @@
     <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
     <classNode dependClassName="com.intellij.openapi.progress.Task" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="java.awt.GridLayout" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Object" />

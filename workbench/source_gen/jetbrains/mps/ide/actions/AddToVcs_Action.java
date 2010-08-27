@@ -76,7 +76,7 @@ public class AddToVcs_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      List<VirtualFile> unversionedFiles = VcsActionsHelper.getUnversionedFilesForModules(AddToVcs_Action.this.project, AddToVcs_Action.this.modules);
+      List<VirtualFile> unversionedFiles = null;//VcsActionsHelper.getUnversionedFilesForModules(AddToVcs_Action.this.project, AddToVcs_Action.this.modules);
       if (ListSequence.fromList(unversionedFiles).isEmpty()) {
         Messages.showInfoMessage(AddToVcs_Action.this.project, "Nothing to add", "Add to VCS");
         return;

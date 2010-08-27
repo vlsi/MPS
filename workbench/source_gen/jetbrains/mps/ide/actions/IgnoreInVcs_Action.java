@@ -76,7 +76,7 @@ public class IgnoreInVcs_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      List<VirtualFile> unversionedFiles = VcsActionsHelper.getUnversionedFilesForModules(IgnoreInVcs_Action.this.project, IgnoreInVcs_Action.this.modules);
+      List<VirtualFile> unversionedFiles =null; //VcsActionsHelper.getUnversionedFilesForModules(IgnoreInVcs_Action.this.project, IgnoreInVcs_Action.this.modules);
       if (ListSequence.fromList(unversionedFiles).isEmpty()) {
         Messages.showInfoMessage(IgnoreInVcs_Action.this.project, "Nothing to ignore", "Ignore..");
         return;

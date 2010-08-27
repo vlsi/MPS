@@ -31,6 +31,7 @@ import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.vcs.VcsMigrationUtil;
 import java.util.Collections;
@@ -255,8 +256,8 @@ public class NewDevKitDialogContentPane extends JPanel {
     DevKit devkit = myThis.getProject().addProjectDevKit(devkitFile);
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
-        File file = VFileSystem.toFile(VFileSystem.refreshAndGetFile(devkitPath));
-        //VcsMigrationUtil.addFilesToVcs(Collections.singletonList(file), false, true);
+        VirtualFile file = VFileSystem.refreshAndGetFile(devkitPath);
+        VcsMigrationUtil.getHandler().addFilesToVcs(Collections.singletonList(file), false, true);
       }
     }, ModalityState.NON_MODAL);
     return devkit;

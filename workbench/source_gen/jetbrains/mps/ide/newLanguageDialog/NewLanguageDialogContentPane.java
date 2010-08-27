@@ -39,6 +39,7 @@ import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.library.LanguageDesign_DevKit;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.vcs.VcsMigrationUtil;
 import java.util.Collections;
@@ -320,8 +321,8 @@ public class NewLanguageDialogContentPane extends JPanel {
     // add to vcs 
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
-        File file = VFileSystem.toFile(VFileSystem.refreshAndGetFile(descriptorFile.getParentFile()));
-        //VcsMigrationUtil.addFilesToVcs(Collections.singletonList(file), false, true);
+        VirtualFile file = VFileSystem.refreshAndGetFile(descriptorFile.getParentFile());
+        VcsMigrationUtil.getHandler().addFilesToVcs(Collections.singletonList(file), false, true);
       }
     }, ModalityState.NON_MODAL);
     return language;

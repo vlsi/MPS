@@ -166,7 +166,7 @@ public class BlameDialog extends BaseDialog {
   private String getRevisionNumber() {
     VirtualFile file = VFileSystem.getFile(PathManager.getHomePath());
     if (file == null) return "";
-    VcsRevisionNumber revisionNumber = VcsMigrationUtil.getRevisionNumber(file);
+    VcsRevisionNumber revisionNumber = VcsMigrationUtil.getHandler().getRevisionNumber(file);
     if (revisionNumber == null) {
       return "";
     }
