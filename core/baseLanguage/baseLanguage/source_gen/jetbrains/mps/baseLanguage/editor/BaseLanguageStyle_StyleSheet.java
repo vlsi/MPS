@@ -7,6 +7,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
+import java.awt.Color;
 
 public class BaseLanguageStyle_StyleSheet {
   public static Style getKeyWord(final EditorCell cell) {
@@ -212,6 +213,13 @@ public class BaseLanguageStyle_StyleSheet {
   public static Style getMatching(final EditorCell cell) {
     Style style = new Style(cell);
     style.set(StyleAttributes.MATCHING_LABEL, "matching");
+    return style;
+  }
+
+  public static Style getFoldedCell(final EditorCell cell) {
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new Color(15790320));
+    style.set(StyleAttributes.TEXT_COLOR, new Color(12829635));
     return style;
   }
 }

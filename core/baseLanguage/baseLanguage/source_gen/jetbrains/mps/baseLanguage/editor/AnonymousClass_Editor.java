@@ -92,6 +92,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_msf9u8_b0");
     editorCell.setCanBeFolded(true);
+    editorCell.setFoldedCell(this.createConstant_msf9u8_a1a_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_msf9u8_a1a(editorContext, node));
     if (renderingCondition_msf9u8_a1b0(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_msf9u8_b1a(editorContext, node));
@@ -262,6 +263,14 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
     }
     AnonymousClass_CurlyBraces.setCellActions(editorCell, node, editorContext);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_msf9u8_a1a_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{...}");
+    editorCell.setCellId("Constant_msf9u8_a1a_0");
+    BaseLanguageStyle_StyleSheet.getFoldedCell(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }

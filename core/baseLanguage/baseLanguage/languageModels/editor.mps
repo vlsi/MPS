@@ -8399,6 +8399,10 @@
             <property name="tag:32" value="ext_1_RTransform" />
           </node>
         </node>
+        <node role="foldedCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="5179638159363024448">
+          <property name="text:32" value="{...}" />
+          <link role="styleClass:32" targetNodeId="5179638159363031272" resolveInfo="FoldedCell" />
+        </node>
       </node>
       <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="1214310993740">
         <property name="flag:32" value="false" />
@@ -10787,6 +10791,21 @@
       <property name="name:32" value="Matching" />
       <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem:32" id="1238143825925">
         <property name="labelName:32" value="matching" />
+      </node>
+    </node>
+    <node role="styleClass:32" type="jetbrains.mps.lang.editor.structure.StyleSheetClass:32" id="5179638159363031272">
+      <property name="name:32" value="FoldedCell" />
+      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem:32" id="5179638159363031273">
+        <property name="color:32" value="lightGray" />
+        <node role="query:32" type="jetbrains.mps.lang.editor.structure.RGBColor:32" id="5179638159363031274">
+          <property name="value:32" value="f0f0f0" />
+        </node>
+      </node>
+      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem:32" id="5179638159363031275">
+        <property name="color:32" value="gray" />
+        <node role="query:32" type="jetbrains.mps.lang.editor.structure.RGBColor:32" id="5179638159363031276">
+          <property name="value:32" value="c3c3c3" />
+        </node>
       </node>
     </node>
   </node>
@@ -17400,18 +17419,7 @@
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="6827006320070687178" />
       <node role="foldedCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="8359793381631976003">
         <property name="text:32" value="{...}" />
-        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem:32" id="8359793381631976004">
-          <property name="color:32" value="lightGray" />
-          <node role="query:32" type="jetbrains.mps.lang.editor.structure.RGBColor:32" id="8359793381631976012">
-            <property name="value:32" value="f0f0f0" />
-          </node>
-        </node>
-        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem:32" id="8359793381631976006">
-          <property name="color:32" value="gray" />
-          <node role="query:32" type="jetbrains.mps.lang.editor.structure.RGBColor:32" id="8359793381631976011">
-            <property name="value:32" value="c3c3c3" />
-          </node>
-        </node>
+        <link role="styleClass:32" targetNodeId="5179638159363031272" resolveInfo="FoldedCell" />
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="6435995161850510862">
           <property name="flag:32" value="true" />
         </node>
