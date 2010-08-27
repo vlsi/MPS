@@ -28,35 +28,35 @@ import java.util.List;
 public class VcsMigrationUtil {
   //-----suspicious
 
-  public static void addSuspiciousModule(AbstractModule abstractModule, boolean inConflict) {
+  public static void addSuspiciousModule(AbstractModule abstractModule, boolean isInConflict) {
     //SuspiciousModelIndex.instance().addModule(abstractModule, inConflict);
   }
 
-  public static void addSuspiciousModel(EditableSModelDescriptor modelDescriptor, boolean conflictStateFixed) {
+  public static void addSuspiciousModel(EditableSModelDescriptor modelDescriptor, boolean isInConflict) {
     //SuspiciousModelIndex.instance().addModel(modelDescriptor,conflictStateFixed);
   }
 
   //-----add/remove
 
-  public static void addFilesToVcs(List<File> files, boolean b, boolean b1) {
+  public static void addFilesToVcs(List<File> files, boolean recursive, boolean silently) {
     //ApplicationLevelVcsManager.instance().addFilesToVcs(files,b,b1);
   }
 
-  public static void removeFromVcs(List<File> files, boolean b) {
+  public static void removeFromVcs(List<File> files, boolean silently) {
     //ApplicationLevelVcsManager.instance().removeFilesFromVcs(files,b);
   }
 
-  //-----other
+  //-----misc
 
   public static VcsRevisionNumber getRevisionNumber(VirtualFile file) {
     return null;//ApplicationLevelVcsManager.instance().getRevisionNumber(file);
   }
 
-  public static boolean isInConflict(IFile iFile, boolean b) {
+  public static boolean isInConflict(IFile iFile, boolean synchronously) {
     return false;//ApplicationLevelVcsManager.instance().isInConflict(iFile,b);
   }
 
-  public static boolean resolveDiskMemoryConflict(IFile modelFile, SModel sModel) {
+  public static boolean resolveDiskMemoryConflict(IFile modelFile, SModel model) {
     return true;//VcsHelper.resolveDiskMemoryConflict(modelFile,sModel);
   }
 
