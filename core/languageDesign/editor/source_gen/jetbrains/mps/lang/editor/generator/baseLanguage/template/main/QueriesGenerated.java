@@ -1107,6 +1107,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "renderingCondition", true) == null && SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty");
   }
 
+  public static boolean ifMacro_Condition_8359793381632144651(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "usesFolding") && SLinkOperations.getTarget(_context.getNode(), "foldedCellModel", true) != null;
+  }
+
   public static boolean ifMacro_Condition_1182993960564(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "alternationCondition", true) != null;
   }
@@ -1401,6 +1405,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_996730828436925654(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "inspectedCellModel", true);
+  }
+
+  public static SNode sourceNodeQuery_8359793381632168594(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "foldedCellModel", true);
   }
 
   public static SNode sourceNodeQuery_996730828436727092(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
