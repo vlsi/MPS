@@ -16,7 +16,6 @@
 package jetbrains.mps.plugins;
 
 import com.intellij.openapi.project.Project;
-
 import jetbrains.mps.ide.actions.Ide_ApplicationPlugin;
 import jetbrains.mps.ide.actions.Ide_ProjectPlugin;
 import jetbrains.mps.library.LibraryManager;
@@ -30,6 +29,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
@@ -63,6 +63,12 @@ public class PluginUtil {
     return modules;
   }
 
+  public static List<Solution> collectSolutionPlugins() {
+    Solution ide = MPSModuleRepository.getInstance().getSolution(IDE_MODULE_ID);
+    return Collections.singletonList(ide);
+    //return MPSModuleRepository.getInstance().getAllSolutions();
+  }
+
   public static <T> List<T> createPlugins(Collection<IModule> modules, PluginCreator<T> creator) {
     List<IModule> sortedModules = PluginSorter.sortByDependencies(modules);
 
@@ -91,10 +97,6 @@ public class PluginUtil {
     }
   }
 
-  public static IModule getIDEModule() {
-    return MPSModuleRepository.getInstance().getModuleByUID(IDE_MODULE_ID);
-  }
-
   private static abstract class PluginCreator<T> {
     @Nullable
     public final String getPlugin(IModule module) {
@@ -104,9 +106,6 @@ public class PluginUtil {
         return getPlugin(language);
       } else if (module instanceof Solution) {
         Solution solution = (Solution) module;
-        if (!solution.getModuleFqName().equals(IDE_MODULE_ID)) {
-          throw new IllegalStateException("Solution having a plugin is not " + IDE_MODULE_ID);
-        }
         return getPlugin(solution);
       } else if (module instanceof DevKit) {
         DevKit dk = (DevKit) module;
@@ -137,7 +136,8 @@ public class PluginUtil {
     }
 
     public String getPlugin(Solution s) {
-      return Ide_ProjectPlugin.class.getName();
+      if (s.getModuleFqName().equals(IDE_MODULE_ID)) return Ide_ProjectPlugin.class.getName();
+      return NameUtil.capitalize(NameUtil.shortNameFromLongName(s.getModuleFqName()))+"_ProjectPlugin";
     }
   }
 
@@ -151,7 +151,8 @@ public class PluginUtil {
     }
 
     public String getPlugin(Solution s) {
-      return Ide_ApplicationPlugin.class.getName();
+      if (s.getModuleFqName().equals(IDE_MODULE_ID)) return Ide_ApplicationPlugin.class.getName();
+      return NameUtil.capitalize(NameUtil.shortNameFromLongName(s.getModuleFqName()))+"_ApplicationPlugin";
     }
   }
 }

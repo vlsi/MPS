@@ -18,7 +18,7 @@ import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.ide.generator.IdeaGeneratorManager;
+import jetbrains.mps.ide.generator.GeneratorFacade;
 import jetbrains.mps.generator.GeneratorManager;
 
 public class GenerateFiles_Action extends GeneratedAction {
@@ -92,7 +92,7 @@ public class GenerateFiles_Action extends GeneratedAction {
           models.add(model);
         }
       }
-      GenerateFiles_Action.this.getGenManager().generateModelsFromDifferentModules(projectContext, models, IdeaGeneratorManager.getInstance().getDefaultGenerationHandler());
+      GenerateFiles_Action.this.getGenManager().generateModelsFromDifferentModules(projectContext, models, GeneratorFacade.getInstance().getDefaultGenerationHandler(), true);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GenerateFiles", t);

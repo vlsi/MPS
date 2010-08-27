@@ -25,7 +25,7 @@ import jetbrains.mps.generator.GenerationSettings;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.generator.IdeaGeneratorManager;
+import jetbrains.mps.ide.generator.GeneratorFacade;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.refactoring.framework.*;
 import jetbrains.mps.smodel.*;
@@ -225,7 +225,7 @@ public class RefactoringFacade extends RefactoringProcessor {
         }
       });
       IOperationContext operationContext = ProjectOperationContext.get(refactoringContext.getSelectedProject());
-      new GeneratorManager(operationContext.getProject(), new GenerationSettings()).generateModelsFromDifferentModules(operationContext, descriptors, IdeaGeneratorManager.getInstance().getDefaultGenerationHandler());
+      new GeneratorManager(operationContext.getProject(), new GenerationSettings()).generateModelsFromDifferentModules(operationContext, descriptors, GeneratorFacade.getInstance().getDefaultGenerationHandler(), true);
     } finally {
       SNode.setNodeMemeberAccessModifier(null);
     }

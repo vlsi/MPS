@@ -11,7 +11,8 @@
         <xi:include href="/META-INF/LangExtensionPoints.xml" xpointer="xpointer(/extensionPoints/*)"/>
 
         <extensionPoint name="mps.NavigationProvider" interface="jetbrains.mps.ide.navigation.NavigationProvider"/>
-        <extensionPoint name="mps.GenerationHandler" interface="jetbrains.mps.ide.generator.IdeaGeneratorManager$GenerationHandlerProvider"/>
+        <extensionPoint name="mps.GenerationHandler" interface="jetbrains.mps.ide.generator.GeneratorFacade$GenerationHandlerProvider"/>
+      <extensionPoint name="mps.TabColorProvider" interface="jetbrains.mps.ide.tabbedEditor.TabColorProvider"/>
     </extensionPoints>
 
     <extensions defaultExtensionNs="com.intellij">
@@ -21,12 +22,6 @@
         <errorHandler implementation="jetbrains.mps.workbench.diagnostics.CharismaReporter"/>
 
         <directoryIndexExcludePolicy implementation="jetbrains.mps.project.ClassesGenPolicy"/>
-        <directoryIndexExcludePolicy implementation="jetbrains.mps.project.GeneratedFilesExcludePolicy"/>
-
-        <vcs.fileStatusProvider implementation="jetbrains.mps.vcs.changesmanager.ChangesManagerFileStatusProvider"/>
-        <checkoutListener implementation="jetbrains.mps.vcs.ProjectCheckoutListener"/>
-        <checkinHandlerFactory implementation="jetbrains.mps.vcs.OptimizeImportsCheckinHandlerFactory" />
-        <checkinHandlerFactory implementation="jetbrains.mps.ide.actions.ModelCheckerCheckinHandler$ModelCheckerCheckinHandlerFactory" />
 
         <applicationService serviceInterface="com.intellij.codeStyle.CodeStyleFacade"
                             serviceImplementation="com.intellij.codeStyle.DefaultCodeStyleFacade"/>
@@ -39,15 +34,18 @@
 
         <projectService serviceInterface="com.intellij.openapi.vcs.changes.patch.PatchBaseDirectoryDetector"
                         serviceImplementation="com.intellij.openapi.vcs.changes.patch.PsiPatchBaseDirectoryDetector"/>
-        <projectService serviceInterface="com.intellij.openapi.vcs.impl.ExcludedFileIndex"
-                        serviceImplementation="jetbrains.mps.vcs.MPSExcludedFileIndex"/>
-        <projectService serviceInterface="com.intellij.openapi.vcs.impl.DefaultVcsRootPolicy"
-                        serviceImplementation="jetbrains.mps.vcs.ExtendedDefaultVcsRootPolicy"/>
-        <projectService serviceInterface="com.intellij.find.FindManager"
+           <projectService serviceInterface="com.intellij.find.FindManager"
                         serviceImplementation="com.intellij.find.impl.FindManagerImpl"/>
         <projectService serviceInterface="com.intellij.usages.UsageViewManager"
                         serviceImplementation="com.intellij.usages.impl.UsageViewManagerImpl"/>
 
+      <projectService serviceInterface="com.intellij.openapi.vcs.impl.ExcludedFileIndex"
+                      serviceImplementation="jetbrains.mps.vcs.MPSExcludedFileIndex"/>
+      <projectService serviceInterface="com.intellij.openapi.vcs.impl.DefaultVcsRootPolicy"
+                            serviceImplementation="jetbrains.mps.vcs.ExtendedDefaultVcsRootPolicy"/>
+
+                  
+              
         <applicationService serviceInterface="com.intellij.openapi.wm.impl.FrameTitleBuilder"
                             serviceImplementation="com.intellij.openapi.wm.impl.PlatformFrameTitleBuilder"/>
         <applicationService serviceInterface="com.intellij.platform.ProjectBaseDirectory"
@@ -84,7 +82,7 @@
 
         <fileBasedIndex implementation="com.intellij.psi.impl.cache.impl.id.IdIndex"/>
         <fileBasedIndex implementation="jetbrains.mps.workbench.actions.goTo.index.RootNodeNameIndex"/>
-        <fileBasedIndex implementation="jetbrains.mps.baseLanguage.index.ClassifierSuccessorsIndexer"/> 
+        <fileBasedIndex implementation="jetbrains.mps.baseLanguage.index.ClassifierSuccessorsIndexer"/>
         <!--        <fileBasedIndex implementation="jetbrains.mps.workbench.actions.goTo.index.NamedNodeIndex"/> -->
         <fileBasedIndex implementation="jetbrains.mps.generator.index.ModelDigestIndex"/>
         <fileBasedIndex implementation="com.intellij.psi.search.FilenameIndex"/>

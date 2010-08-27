@@ -16,7 +16,7 @@
 package jetbrains.mps.workbench.actions.generate;
 
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
-import jetbrains.mps.ide.generator.IdeaGeneratorManager;
+import jetbrains.mps.ide.generator.GeneratorFacade;
 
 public class GenerateFilesFromModelsAction extends GenerateModelsAction {
   public GenerateFilesFromModelsAction(boolean rebuildAll) {
@@ -25,6 +25,6 @@ public class GenerateFilesFromModelsAction extends GenerateModelsAction {
   }
 
   public IGenerationHandler getGenerationHandler() {
-    return IdeaGeneratorManager.getInstance().getDefaultGenerationHandler();
+    return GeneratorFacade.getInstance().getDefaultGenerationHandler();
   }
 }

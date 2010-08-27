@@ -15,6 +15,7 @@ import jetbrains.mps.workbench.actions.goTo.GoToDevkitAction;
 public class Goto_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Goto_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.Goto";
+  public static final String LABEL_ID_gotoVCS = ID + "gotoVCS";
 
   public Goto_ActionGroup() {
     super("Go To", ID);
@@ -22,8 +23,7 @@ public class Goto_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToAction_Action", "jetbrains.mps.ide", new GotoActionAction());
-      Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToNextChange_Action", "jetbrains.mps.ide");
-      Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToPreviousChange_Action", "jetbrains.mps.ide");
+      Goto_ActionGroup.this.addAnchor(Goto_ActionGroup.LABEL_ID_gotoVCS);
       Goto_ActionGroup.this.addSeparator();
       Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToFile_Action", "jetbrains.mps.ide", new GotoFileAction());
       Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToRootNode_Action", "jetbrains.mps.ide", new GoToRootNodeAction());

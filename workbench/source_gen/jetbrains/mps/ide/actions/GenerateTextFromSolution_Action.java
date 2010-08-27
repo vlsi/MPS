@@ -113,7 +113,7 @@ public class GenerateTextFromSolution_Action extends GeneratedAction {
         return;
       }
       GeneratorManager manager = GenerateTextFromSolution_Action.this.context.getComponent(GeneratorManager.class);
-      manager.generateModelsWithProgressWindow(params.value.getModelDescriptors(), GenerateTextFromSolution_Action.this.context, new OutputViewGenerationHandler(), false);
+      manager.generateModelsWithProgressWindow(params.value.getModelDescriptors(), GenerateTextFromSolution_Action.this.context, new OutputViewGenerationHandler(), false, true);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GenerateTextFromSolution", t);

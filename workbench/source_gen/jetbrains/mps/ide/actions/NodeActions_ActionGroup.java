@@ -10,6 +10,7 @@ public class NodeActions_ActionGroup extends GeneratedActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.NodeActions";
   public static final String LABEL_ID_find_instances = ID + "find_instances";
   public static final String LABEL_ID_structure = ID + "structure";
+  public static final String LABEL_ID_diff = ID + "diff";
   public static final String LABEL_ID_favorites = ID + "favorites";
 
   public NodeActions_ActionGroup() {
@@ -48,7 +49,7 @@ public class NodeActions_ActionGroup extends GeneratedActionGroup {
       NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowConceptInHierarchy_Action", "jetbrains.mps.ide");
       NodeActions_ActionGroup.this.addAnchor(NodeActions_ActionGroup.LABEL_ID_structure);
       NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowClassInHierarchy_Action", "jetbrains.mps.ide");
-      NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowDiffererenesWithCurrentRevision_Action", "jetbrains.mps.ide");
+      NodeActions_ActionGroup.this.addAnchor(NodeActions_ActionGroup.LABEL_ID_diff);
       NodeActions_ActionGroup.this.addSeparator();
       NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowErrorMessage_Action", "jetbrains.mps.ide");
       NodeActions_ActionGroup.this.addSeparator();

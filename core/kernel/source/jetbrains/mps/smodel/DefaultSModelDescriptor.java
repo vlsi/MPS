@@ -30,7 +30,7 @@ import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.vcs.VcsHelper;
+import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.JarFileEntryFile;
 import org.jetbrains.annotations.NotNull;
@@ -101,7 +101,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     if (SModelRepository.getInstance().isChanged(this)) {
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
-          final boolean needSave = VcsHelper.resolveDiskMemoryConflict(myModelFile, mySModel);
+          final boolean needSave = VcsMigrationUtil.getHandler().resolveDiskMemoryConflict(myModelFile, mySModel);
           if (needSave) {
             ModelAccess.instance().runWriteActionInCommand(new Runnable() {
               public void run() {
@@ -205,7 +205,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
         "You might want to turn \"Synchronize files on frame activation/deactivation\" option on to avoid conflicts.");
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
-          final boolean needSave = VcsHelper.resolveDiskMemoryConflict(myModelFile, mySModel);
+          final boolean needSave = VcsMigrationUtil.getHandler().resolveDiskMemoryConflict(myModelFile, mySModel);
           if (needSave) {
             ModelAccess.instance().runWriteActionInCommand(new Runnable() {
               public void run() {

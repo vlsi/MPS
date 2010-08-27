@@ -37,7 +37,6 @@ import com.intellij.openapi.vcs.VcsListener;
 import com.intellij.openapi.vcs.changes.ChangeListAdapter;
 import com.intellij.openapi.vcs.changes.ChangeListListener;
 import com.intellij.openapi.vcs.changes.ChangeListManager;
-import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
 import com.intellij.openapi.vfs.*;
 import com.intellij.util.messages.MessageBus;
 import com.intellij.util.messages.MessageBusConnection;
@@ -51,11 +50,11 @@ import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.vcs.GlobalClassPathIndex;
-import jetbrains.mps.vcs.GlobalClassPathIndex.ExclusionChangedListener;
-import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NotNull;
@@ -81,8 +80,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
   private final IdeDocumentHistory myIdeDocumentHistory;
   private final ProjectView myProjectView;
   private final FileEditorManager myEditorManager;
-  private ExclusionChangedListener myExclusionListener;
-
+ 
   private ChangeListListener myChangeListListener;
   private MessageBusConnection myMessageBusConnection;
   private FileStatusListener myFileStatusListener;
@@ -129,7 +127,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     return myProjectView;
   }
 
-  private void rebuildTreeLater() {
+  public void rebuildTreeLater() {
     if (myTimer.isRunning()) {
       return;
     } else {
@@ -234,12 +232,6 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
         }
       }
     });
-    myExclusionListener = new ExclusionChangedListener() {
-      public void exclusionChanged() {
-        rebuildTreeLater();
-      }
-    };
-    GlobalClassPathIndex.getInstance().addListener(myExclusionListener);
   }
 
   private void disposeListeners() {
@@ -250,12 +242,6 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     ChangeListManager.getInstance(myProject).removeChangeListListener(myChangeListListener);
 
     myMessageBusConnection.disconnect();
-    myExclusionListener = new ExclusionChangedListener() {
-      public void exclusionChanged() {
-        rebuildTreeLater();
-      }
-    };
-    GlobalClassPathIndex.getInstance().removeListener(myExclusionListener);
   }
 
   private boolean isInitialized() {
@@ -407,12 +393,12 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
         });
         SModelDescriptor d = smodel.getModelDescriptor();
         if (!(d instanceof EditableSModelDescriptor)) return false;
-        
+
         VirtualFile realFile = VFileSystem.getFile(((EditableSModelDescriptor) d).getModelFile());
 
         myFile = realFile;
         if ((realFile == null) || (isInitialized() && getNode(realFile) == null)) return false;
-        
+
         return true;
       }
 

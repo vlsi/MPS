@@ -28,9 +28,7 @@ import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.ide.progress.TaskProgressHelper;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
-import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -57,25 +55,18 @@ public class GenerationController {
   protected List<Pair<IModule, List<SModelDescriptor>>> myModuleSequence = new ArrayList<Pair<IModule, List<SModelDescriptor>>>();
   protected Map<IModule, IOperationContext> myModulesToContexts = new HashMap<IModule, IOperationContext>();
 
-  public GenerationController(GeneratorNotifierHelper notifierHelper,
-                              GenerationSettings settings,
+  public GenerationController(GenerationProcessContext parameters,
+                              GeneratorNotifierHelper notifierHelper,
                               List<Pair<SModelDescriptor, IOperationContext>> _inputModels,
-                              IGenerationHandler generationHandler,
-                              IGenerationTracer generationTracer,
-                              ProgressIndicator progress,
-                              IMessageHandler messages,
-                              boolean saveTransientModels,
-                              boolean rebuildAll) {
+                              GeneratorLoggerAdapter generatorLogger,
+                              IGenerationHandler generationHandler) {
 
     myNotifierHelper = notifierHelper;
     myInputModels = _inputModels;
     myGenerationHandler = generationHandler;
-    myProgress = progress;
-    myLogger = new GeneratorLoggerAdapter(messages, settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings());
-    myGenerationContext = new GenerationProcessContext(
-      saveTransientModels, settings.isParallelGenerator(), settings.isStrictMode(), rebuildAll, settings.isGenerateDependencies(),
-      !settings.isShowWarnings() && !settings.isShowInfo(),
-      progress, generationTracer, settings.getNumberOfParallelThreads(), settings.getPerformanceTracingLevel());
+    myProgress = parameters.getProgressIndicator();
+    myLogger = generatorLogger;
+    myGenerationContext = parameters;
   }
 
   private void initMaps() {

@@ -107,7 +107,7 @@ public class GenerateTemplateQueries_Action extends GeneratedAction {
           }
         }
       });
-      manager.generateModelsWithProgressWindow(models.value, GenerateTemplateQueries_Action.this.context, genHandler, false);
+      manager.generateModelsWithProgressWindow(models.value, GenerateTemplateQueries_Action.this.context, genHandler, false, true);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GenerateTemplateQueries", t);

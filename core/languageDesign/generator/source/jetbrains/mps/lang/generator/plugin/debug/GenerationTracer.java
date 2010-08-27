@@ -17,8 +17,8 @@ package jetbrains.mps.lang.generator.plugin.debug;
 
 import com.intellij.openapi.project.Project;
 
+import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.lang.generator.plugin.debug.TracerNode.Kind;
 import jetbrains.mps.lang.generator.structure.MappingScript;

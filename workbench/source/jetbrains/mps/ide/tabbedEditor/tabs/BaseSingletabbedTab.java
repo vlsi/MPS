@@ -29,7 +29,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.vcs.changesmanager.NodeFileStatusListener;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 
@@ -74,6 +73,10 @@ public abstract class BaseSingletabbedTab extends AbstractLazyTab {
 
   public final void selectTab(int index) {
 
+  }
+
+  public SNodePointer getLoadableNodePointer(){
+    return myLoadableNode;
   }
 
   protected SNode getLoadableNode() {
@@ -166,18 +169,5 @@ public abstract class BaseSingletabbedTab extends AbstractLazyTab {
     if (getBaseNode() == node.getNode()) return;
 
     reinit();
-  }
-
-  //------------
-
-  protected NodeFileStatusListener createFileStatusListener() {
-    return new NodeFileStatusListener() {
-      public void fileStatusChanged(@NotNull final SNode node) {
-        SNodePointer nodePointer = new SNodePointer(node);
-        if (ObjectUtils.equals(myLoadableNode, nodePointer)) {
-          getTabbedEditor().updateTabColor(BaseSingletabbedTab.this, getBaseNodeVirtualFile());
-        }
-      }
-    };
   }
 }
