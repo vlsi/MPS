@@ -421,12 +421,12 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="5267577397386524188">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5267577397386524706">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5267577397386524701">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5267577397386524700">
-                <link role="baseMethodDeclaration:3" targetNodeId="17.~ApplicationLevelVcsManager.instance():jetbrains.mps.vcs.ApplicationLevelVcsManager" resolveInfo="instance" />
-                <link role="classConcept:3" targetNodeId="17.~ApplicationLevelVcsManager" resolveInfo="ApplicationLevelVcsManager" />
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="4987500647204165919">
+                <link role="baseMethodDeclaration:3" targetNodeId="17.~VCSSettingsHolder.instance():jetbrains.mps.vcs.VCSSettingsHolder" resolveInfo="instance" />
+                <link role="classConcept:3" targetNodeId="17.~VCSSettingsHolder" resolveInfo="VCSSettingsHolder" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5267577397386524705">
-                <link role="baseMethodDeclaration:3" targetNodeId="17.~ApplicationLevelVcsManager.getSettings():jetbrains.mps.vcs.ui.VcsIdeSettings" resolveInfo="getSettings" />
+                <link role="baseMethodDeclaration:3" targetNodeId="17.~VCSSettingsHolder.getSettings():jetbrains.mps.vcs.ui.VcsIdeSettings" resolveInfo="getSettings" />
               </node>
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5267577397386524710">

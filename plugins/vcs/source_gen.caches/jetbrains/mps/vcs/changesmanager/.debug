@@ -697,7 +697,7 @@
     <nodeInfo nodeId="1741994337989997199" fileName="ChangesManager.java" startLine="183" startPosition="87" endLine="184" endPosition="110" />
     <nodeInfo nodeId="3722815385094377378" fileName="ChangesManager.java" startLine="194" startPosition="47" endLine="195" endPosition="26" />
     <nodeInfo nodeId="15936038984552681" fileName="ChangesManager.java" startLine="198" startPosition="61" endLine="199" endPosition="54" />
-    <nodeInfo nodeId="5267577397386524188" fileName="ChangesManager.java" startLine="202" startPosition="37" endLine="203" endPosition="89" />
+    <nodeInfo nodeId="5267577397386524188" fileName="ChangesManager.java" startLine="202" startPosition="37" endLine="203" endPosition="80" />
     <nodeInfo nodeId="5569581551640544141" fileName="ChangesManager.java" startLine="211" startPosition="93" endLine="212" endPosition="75" />
     <nodeInfo nodeId="5569581551640544164" fileName="ChangesManager.java" startLine="217" startPosition="110" endLine="218" endPosition="30" />
     <nodeInfo nodeId="6276661785379536160" fileName="ChangesManager.java" startLine="223" startPosition="93" endLine="224" endPosition="57" />
@@ -787,7 +787,7 @@
     <scopeInfo nodeId="1741994337989997196" fileName="ChangesManager.java" startLine="183" startPosition="87" endLine="184" endPosition="110" />
     <scopeInfo nodeId="3722815385094377322" fileName="ChangesManager.java" startLine="194" startPosition="47" endLine="195" endPosition="26" />
     <scopeInfo nodeId="15936038984552265" fileName="ChangesManager.java" startLine="198" startPosition="61" endLine="199" endPosition="54" />
-    <scopeInfo nodeId="5267577397386524132" fileName="ChangesManager.java" startLine="202" startPosition="37" endLine="203" endPosition="89" />
+    <scopeInfo nodeId="5267577397386524132" fileName="ChangesManager.java" startLine="202" startPosition="37" endLine="203" endPosition="80" />
     <scopeInfo nodeId="5569581551640544135" fileName="ChangesManager.java" startLine="211" startPosition="93" endLine="212" endPosition="75" />
     <scopeInfo nodeId="5569581551640544156" fileName="ChangesManager.java" startLine="217" startPosition="110" endLine="218" endPosition="30" />
     <scopeInfo nodeId="6276661785379535593" fileName="ChangesManager.java" startLine="223" startPosition="93" endLine="224" endPosition="57" />
@@ -1105,8 +1105,8 @@
     <scopeInfo nodeId="3017189042833275044" fileName="ChangesManagerFileStatusProvider.java" startLine="26" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="3017189042833275047" varName="file" />
     </scopeInfo>
-    <unitInfo nodeId="5643745088231031220" fileName="ChangesManagerFileStatusProvider.java" startLine="32" startPosition="49" endLine="36" endPosition="9" unitName="ChangesManagerFileStatusProvider$1" />
-    <unitInfo nodeId="3017189042833268903" fileName="ChangesManagerFileStatusProvider.java" startLine="18" startPosition="0" endLine="48" endPosition="0" unitName="ChangesManagerFileStatusProvider" />
+    <unitInfo nodeId="5643745088231031220" fileName="ChangesManagerFileStatusProvider.java" startLine="32" startPosition="49" endLine="36" endPosition="9" unitName="jetbrains.mps.vcs.changesmanager.ChangesManagerFileStatusProvider$1" />
+    <unitInfo nodeId="3017189042833268903" fileName="ChangesManagerFileStatusProvider.java" startLine="18" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.ChangesManagerFileStatusProvider" />
   </root>
   <root nodeId="3501823384977732903">
     <nodeInfo nodeId="3501823384977732913" fileName="ChangeListener.java" startLine="12" startPosition="55" endLine="13" endPosition="73" />

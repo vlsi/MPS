@@ -91,8 +91,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepositoryListener" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelListener" />
-    <classNode dependClassName="jetbrains.mps.vcs.ApplicationLevelVcsManager" />
     <classNode dependClassName="jetbrains.mps.vcs.MPSVCSManager" />
+    <classNode dependClassName="jetbrains.mps.vcs.VCSSettingsHolder" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.ModelChangesManager" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.SimpleCommandQueue" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.Change" />
