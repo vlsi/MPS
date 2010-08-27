@@ -7,6 +7,7 @@ import org.junit.runners.Suite.SuiteClasses;
 
 import java.lang.reflect.Method;
 
+
 @SuiteClasses({jetbrains.mps.baseLanguage.closures.test.ClosureLiteralDataFlow_Test.class,
 jetbrains.mps.baseLanguage.closures.test.ClosureDataFlow_Test.class,
 jetbrains.mps.generator.test.ParallelPoolTest.class,
@@ -60,17 +61,13 @@ jetbrains.mps.workbench.dialogs.project.components.parts.lists.SortedListTest.cl
 jetbrains.mps.ide.messages.MessageViewListModelTest.class,
 jetbrains.mps.baseLanguage.tuples.test.Tuples_Test.class,
 jetbrains.mps.lang.smodel.test.InsertPrevSiblingOperation_Focus_Test.class,
+jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test.class,
+jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test.class,
 jetbrains.mps.ide.blame.command.YouTrackURLTest.class,
-jetbrains.mps.vcs.diff.MergeRefactoringTest.class,
 jetbrains.mps.make.dependencies.GraphTestCase.class,
 jetbrains.mps.make.TestMakeOnRealProject.class,
 jetbrains.mps.make.dependencies.FindStronglyConnectedComponentsTestCase.class,
 jetbrains.mps.diff.DiffTestCase.class,
-jetbrains.mps.vcs.diff.MergeNotLoseExternalChangesTest.class,
-jetbrains.mps.vcs.diff.MergeReferencesTest.class,
-jetbrains.mps.vcs.diff.MergeConceptAndImportsTest.class,
-jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test.class,
-jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test.class,
 jetbrains.mps.smodel.test.reflection.SNodeGetReferenceOperation_Test.class,
 jetbrains.mps.smodel.test.reflection.SNodeGetReterencesOperation_Test.class,
 jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test.class,
@@ -352,6 +349,10 @@ jetbrains.mps.closures.test.FunctionTypes_Test.class,
 jetbrains.mps.closures.test.WhileBreak_Test.class,
 jetbrains.mps.analyzers.mpsAnalyzers.testNullable.testNullableAnalyzer_Test.class,
 jetbrains.mps.baseLanguage.math.runtime.IntervalTest.class,
+jetbrains.mps.vcs.diff.MergeRefactoringTest.class,
+jetbrains.mps.vcs.diff.MergeNotLoseExternalChangesTest.class,
+jetbrains.mps.vcs.diff.MergeReferencesTest.class,
+jetbrains.mps.vcs.diff.MergeConceptAndImportsTest.class,
 jetbrains.mps.refactoring.RefactoringTest.class,
 tests.Match_Test.class,
 tests.PerlReplace_Test.class,
@@ -369,8 +370,7 @@ jetbrains.mps.baseLanguage.collections.unittest.query_operations.Where_Select_Te
 jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Contains_Test.class,
 jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Concat_Test_Test.class,
 jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Distinct_Test.class,
-jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Union_Test.class})
-@RunWith(WatchingSuite.class)
+jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Union_Test.class})@RunWith(WatchingSuite.class)
 public class GlobalTestSuite extends TestSuite {
   @BeforeClass
   public static void make () throws Exception {

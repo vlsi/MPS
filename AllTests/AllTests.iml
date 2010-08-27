@@ -104,6 +104,7 @@
         <jarDirectory url="file://$MODULE_DIR$/../lib/jetbrains-ideframework" recursive="false" />
       </library>
     </orderEntry>
+    <orderEntry type="module" module-name="vcs" />
   </component>
 </module>
 

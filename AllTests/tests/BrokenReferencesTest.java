@@ -1,11 +1,11 @@
+import com.intellij.ide.IdeEventQueue;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.junit.WatchingParameterized;
 import jetbrains.mps.test.BrokenReferencesTestHelper;
 import jetbrains.mps.test.FilesCollector;
 import jetbrains.mps.test.FilesCollector.FilePattern;
 import jetbrains.mps.test.ProjectTestHelper;
-import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
 
@@ -58,6 +58,11 @@ public class BrokenReferencesTest {
   @BeforeClass
   public static void init() {
     HELPER = BrokenReferencesTestHelper.getInstance();
+  }
+
+  @AfterClass
+  public static void cleanUp () {
+    HELPER.cleanUp();
   }
 
   private File file;

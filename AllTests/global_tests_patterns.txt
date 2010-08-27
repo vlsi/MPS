@@ -25,4 +25,3 @@
 +regexp:**/*_Test.java
 +debugTests:**/*_Test.java
 +analyzers:**/*_Test.java
-

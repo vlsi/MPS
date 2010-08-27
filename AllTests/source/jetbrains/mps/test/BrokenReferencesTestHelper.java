@@ -1,11 +1,13 @@
 package jetbrains.mps.test;
 
+import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.generator.structure.ReferenceMacro_AnnotationLink;
 import jetbrains.mps.logging.ILoggingHandler;
@@ -42,6 +44,7 @@ import java.util.*;
 public class BrokenReferencesTestHelper {
 
   private static BrokenReferencesTestHelper INSTANCE;
+  private MPSProject project;
 
   public static BrokenReferencesTestHelper getInstance () {
     if (INSTANCE == null) {
@@ -52,6 +55,10 @@ public class BrokenReferencesTestHelper {
 
   public List<String> check (Iterable<File> files) {
     return doCheck(files);
+  }
+
+  public void cleanUp () {
+    doCleanUp ();
   }
 
   public String formatErrors (List<String> errors) {
@@ -242,9 +249,21 @@ public class BrokenReferencesTestHelper {
 
     com.intellij.openapi.project.Project ideaProject = ProjectManager.getInstance().getDefaultProject();
     File projectFile = FileUtil.createTmpFile();
-    final MPSProject project = new MPSProject(ideaProject);
+    this.project = new MPSProject(ideaProject);
     project.init(projectFile, new ProjectDescriptor());
   }
+
+
+  public void doCleanUp() {
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
+        project.dispose(false);
+        IdeEventQueue.getInstance().flushQueue();
+        System.gc();
+      }
+    });
+  }
+
 
   protected void extractModels(Set<SModelDescriptor> modelDescriptors, MPSProject project) {
     List<SModelDescriptor> models = project.getProjectModels();
