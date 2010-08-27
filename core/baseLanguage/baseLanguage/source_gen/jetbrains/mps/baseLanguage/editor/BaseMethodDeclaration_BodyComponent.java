@@ -36,10 +36,10 @@ public class BaseMethodDeclaration_BodyComponent extends AbstractCellProvider {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_fao2ea_a");
     editorCell.setCanBeFolded(true);
+    editorCell.setFoldedCell(this.createConstant_fao2ea_a0_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_fao2ea_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_fao2ea_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_fao2ea_c0(editorContext, node));
-    editorCell.setFoldedCell(this.createConstant_fao2ea_a0_0(editorContext, node));
     return editorCell;
   }
 

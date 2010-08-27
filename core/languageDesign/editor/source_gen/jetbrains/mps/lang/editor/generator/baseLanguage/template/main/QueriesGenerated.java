@@ -1091,6 +1091,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getBoolean(_context.getNode(), "usesFolding");
   }
 
+  public static boolean ifMacro_Condition_6845024055069759791(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "usesFolding") && SLinkOperations.getTarget(_context.getNode(), "foldedCellModel", true) != null;
+  }
+
   public static boolean ifMacro_Condition_1182977255664(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "menuDescriptor", true) != null;
   }
@@ -1105,10 +1109,6 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1184320535496(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "renderingCondition", true) == null && SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty");
-  }
-
-  public static boolean ifMacro_Condition_8359793381632144651(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SPropertyOperations.getBoolean(_context.getNode(), "usesFolding") && SLinkOperations.getTarget(_context.getNode(), "foldedCellModel", true) != null;
   }
 
   public static boolean ifMacro_Condition_1182993960564(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1407,7 +1407,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "inspectedCellModel", true);
   }
 
-  public static SNode sourceNodeQuery_8359793381632168594(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_6845024055069759784(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "foldedCellModel", true);
   }
 
