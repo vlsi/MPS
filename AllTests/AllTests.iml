@@ -93,6 +93,17 @@
     <orderEntry type="module" module-name="YPath-runtime" />
     <orderEntry type="module" module-name="YPath-solutions" />
     <orderEntry type="library" name="Eclipse-compiler" level="project" />
+    <orderEntry type="library" name="IDEA-plaform" level="project" />
+    <orderEntry type="module-library">
+      <library name="jetbrains-ideframework">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../lib/jetbrains-ideframework" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/../lib/jetbrains-ideframework" recursive="false" />
+      </library>
+    </orderEntry>
   </component>
 </module>
 

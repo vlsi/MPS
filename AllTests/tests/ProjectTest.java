@@ -25,7 +25,7 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 @RunWith(WatchingParameterized.class)
-public class TestProject {
+public class ProjectTest {
 
   @Parameters
   public static List<String[]> projectNames() {
@@ -117,7 +117,7 @@ public class TestProject {
   private MPSProject project;
   private Token token;
 
-  public TestProject(String projectName) {
+  public ProjectTest(String projectName) {
     this.projectName = System.getProperty("user.dir")+ projectName;
   }
 

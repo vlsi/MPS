@@ -77,6 +77,7 @@ public class FilepathParameterized extends Suite {
                     String fname = String.valueOf (fParameterList.get(fParameterSetNumber)[0]);
                     fname = fname.replaceAll("\\.\\w*$", "");
                     fname = fname.replaceAll("^.*\\/", "");
+                    fname = fname.replaceAll("\\.", "_");
 	            return String.format("%s", fname);
 		}
 

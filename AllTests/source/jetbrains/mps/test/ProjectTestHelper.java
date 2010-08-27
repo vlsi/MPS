@@ -537,7 +537,7 @@ public class ProjectTestHelper {
 
 
 
-  public class LoggingHandlerAdapter implements ILoggingHandler {
+  private static class LoggingHandlerAdapter implements ILoggingHandler {
 
     public void info(LogEntry e) {
      LOG.info(e.getMessage());
