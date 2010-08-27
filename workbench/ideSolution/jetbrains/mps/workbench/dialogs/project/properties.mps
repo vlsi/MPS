@@ -9,10 +9,5 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <maxImportIndex value="5" />
-  <import index="1" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
-  <import index="2" modelUID="f:java_stub#jetbrains.mps.project.structure.model(jetbrains.mps.project.structure.model@java_stub)" version="-1" />
-  <import index="3" modelUID="f:java_stub#jetbrains.mps.project.structure.modules(jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
-  <import index="4" modelUID="r:36b80a55-07fd-42e9-a27f-9930079d9718(jetbrains.mps.workbench.dialogs.project.components.parts.lists)" version="-1" />
-  <import index="5" modelUID="f:java_stub#jetbrains.mps.workbench.dialogs.project.components.parts.lists(jetbrains.mps.workbench.dialogs.project.components.parts.lists@java_stub)" version="-1" />
 </model>
 
