@@ -95,8 +95,16 @@ public class ActionFactory {
   @Nullable
   public BaseGroup acquireRegisteredGroup(String groupClassName, String moduleNamespace, Object... params) {
     IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference(moduleNamespace));
-    if (module == null) return null;
-    Class groupClass = module.getClass(groupClassName);
+    Class groupClass = null;
+    if (module == null) {
+      try {
+        groupClass = Class.forName(groupClassName);
+      } catch (ClassNotFoundException e) {
+        LOG.error(e);
+      }
+    } else {
+      groupClass = module.getClass(groupClassName);
+    }
 
     String id = groupClassName;
     if (groupClass != null) {
