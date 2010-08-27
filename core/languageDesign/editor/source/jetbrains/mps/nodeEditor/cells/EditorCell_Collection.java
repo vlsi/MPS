@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ArrayWrapper;
 import jetbrains.mps.util.Condition;
+import org.jetbrains.annotations.NotNull;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -58,6 +59,8 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
       return new EditorCell[size];
     }
   };
+
+  private List<EditorCell> myFoldedCells;
 
   protected CellLayout myCellLayout;
   private AbstractCellListHandler myCellListHandler;
@@ -124,16 +127,50 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     return myFolded;
   }
 
+  private List<EditorCell> getEditorCells() {
+    return myEditorCellsWrapper;
+  }
+
+  @NotNull
+  private List<EditorCell> getFoldedCells() {
+    if (myFoldedCells == null) {
+      EditorCell_Constant foldedCell = new EditorCell_Constant(getEditorContext(), getSNode(), FOLDED_TEXT);
+      Style style = foldedCell.getStyle();
+      style.set(StyleAttributes.FONT_STYLE, Font.BOLD);
+      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, Color.lightGray);
+      style.set(StyleAttributes.TEXT_COLOR, Color.darkGray);
+      style.set(StyleAttributes.SELECTABLE, Boolean.FALSE);
+      setFoldedCell(foldedCell);
+    }
+    return myFoldedCells;
+  }
+
+  public void setFoldedCell(EditorCell foldedCell) {
+    if (myFoldedCells != null) {
+      assert myFoldedCells.size() == 1;
+      EditorCell oldFoldedCell = myFoldedCells.get(0);
+      ((EditorCell_Basic) oldFoldedCell).setParent(null);
+      getStyle().remove(oldFoldedCell.getStyle());
+    }
+    ((EditorCell_Basic) foldedCell).setParent(this);
+    getStyle().add(foldedCell.getStyle());
+    myFoldedCells = Collections.singletonList(foldedCell);
+  }
+
+  private List<EditorCell> getVisibleChil dCells() {
+    return isFolded() ? getFoldedCells() : getEditorCells();
+  }
+
   public int getChildCount() {
-    return myEditorCellsWrapper.size();
+    return getVisibleChildCells().size();
   }
 
   public EditorCell getChildAt(int i) {
-    return myEditorCellsWrapper.get(i);
+    return getVisibleChildCells().get(i);
   }
 
   public int indexOf(EditorCell cell) {
-    return myEditorCellsWrapper.indexOf(cell);
+    return getVisibleChildCells().indexOf(cell);
   }
 
   public CellLayout getCellLayout() {
@@ -311,7 +348,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   }
 
   public Iterator<EditorCell> iterator() {
-    return new UnmodifiableIterator(myEditorCellsWrapper, false);
+    return new UnmodifiableIterator(getVisibleChildCells(), false);
   }
 
   public Iterator<EditorCell> cells() {
@@ -319,7 +356,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   }
 
   public Iterator<EditorCell> reverseCellIterator() {
-    return new UnmodifiableIterator(myEditorCellsWrapper, true);
+    return new UnmodifiableIterator(getVisibleChildCells(), true);
   }
 
   public EditorCell[] getContentCells() {
@@ -335,12 +372,12 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   }
 
   public EditorCell[] getCells() {
-    return myEditorCellsWrapper.toArray(new EditorCell[myEditorCellsWrapper.size()]);
+    return getVisibleChildCells().toArray(new EditorCell[getVisibleChildCells().size()]);
   }
 
   public List<EditorCell> dfsCells() {
     List<EditorCell> result = new ArrayList<EditorCell>();
-    for (EditorCell cell : myEditorCellsWrapper) {
+    for (EditorCell cell : getVisibleChildCells()) {
       if (cell instanceof EditorCell_Collection) {
         result.add(cell);
         result.addAll(((EditorCell_Collection) cell).dfsCells());
@@ -358,7 +395,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   }
 
   public boolean containsCell(EditorCell editorCell) {
-    return myEditorCellsWrapper.contains(editorCell);
+    return getVisibleChildCells().contains(editorCell);
   }
 
   public int getCellsCount() {
@@ -457,28 +494,16 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     if (!g.getClipBounds().intersects(getBounds())) {
       return;
     }
-    if (isFolded()) {
-      String s = FOLDED_TEXT;
-      Font editorFont = EditorSettings.getInstance().getDefaultEditorFont().deriveFont(Font.BOLD);
-      FontMetrics metrics = getEditor().getFontMetrics(editorFont);
-      g.setFont(editorFont);
-      int x = myX;
-      g.setColor(Color.lightGray);
-      g.fillRect(x, myY, (int) metrics.stringWidth(s), myHeight);
-      g.setColor(Color.DARK_GRAY);
-      g.drawString(s, x, myY + myHeight - metrics.getDescent());
-    } else {
-      if (!isSelectionPaintedOnAncestor()) {
-        paintBackground(g);
-      }
-      paintSelectionIfRequired(g);
-      paintContent(g);
-
-      for (EditorCell child : this) {
-        child.paint(g);
-      }
-      paintDecorations(g);
+    if (!isSelectionPaintedOnAncestor()) {
+      paintBackground(g);
     }
+    paintSelectionIfRequired(g);
+    paintContent(g);
+
+    for (EditorCell child : this) {
+      child.paint(g);
+    }
+    paintDecorations(g);
   }
 
   public void moveTo(int x, int y) {
@@ -581,14 +606,17 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   }
 
   public void synchronizeViewWithModel() {
-    for (EditorCell myEditorCell : myEditorCellsWrapper) {
+    for (EditorCell myEditorCell : getEditorCells()) {
       myEditorCell.synchronizeViewWithModel();
+    }
+    for (EditorCell foldedCell : getFoldedCells()) {
+      foldedCell.synchronizeViewWithModel();
     }
   }
 
   public EditorCell findLeaf(int x, int y, Condition<EditorCell> condition) {
     if (myX <= x && x < myX + myWidth && myY <= y && y < myY + myHeight) {
-      for (EditorCell child : myEditorCellsWrapper) {
+      for (EditorCell child : getVisibleChildCells()) {
         EditorCell result = child.findLeaf(x, y, condition);
         if (result != null) {
           return result;
@@ -605,7 +633,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
       j = i - 1;
     }
     ((EditorCell_Basic) cellToAdd).setParent(this);
-    myEditorCellsWrapper.add(j, cellToAdd);
+    getEditorCells().add(j, cellToAdd);
     getStyle().add(cellToAdd.getStyle());
 
     if (isInTree()) {
@@ -615,7 +643,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
 
   public void removeCell(EditorCell cellToRemove) {
     ((EditorCell_Basic) cellToRemove).setParent(null);
-    myEditorCellsWrapper.remove(cellToRemove);
+    getEditorCells().remove(cellToRemove);
     getStyle().remove(cellToRemove.getStyle());
 
     if (isInTree()) {
@@ -634,7 +662,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   }
 
   public boolean usesBraces() {
-    return myUsesBraces;
+    return isFolded() ? false : myUsesBraces;
   }
 
   public void setUsesBraces(boolean b) {
@@ -705,8 +733,11 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
 
   public void onAdd() {
     super.onAdd();
-    for (EditorCell child : myEditorCellsWrapper) {
+    for (EditorCell child : getEditorCells()) {
       ((EditorCell_Basic) child).onAdd();
+    }
+    for (EditorCell foldedCell : getFoldedCells()) {
+      ((EditorCell_Basic) foldedCell).onAdd();
     }
     if (myLastCellSelectionListener != null) {
       getEditor().addCellSelectionListener(myLastCellSelectionListener);
@@ -725,8 +756,11 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
       setBracesEnabled(false);
       getEditor().removeCellSelectionListener(myLastCellSelectionListener);
     }
-    for (EditorCell child : myEditorCellsWrapper) {
+    for (EditorCell child : getEditorCells()) {
       ((EditorCell_Basic) child).onRemove();
+    }
+    for (EditorCell foldedCell : getFoldedCells()) {
+      ((EditorCell_Basic) foldedCell).onRemove();
     }
     super.onRemove();
   }
@@ -757,7 +791,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   public void setSubstituteInfo(NodeSubstituteInfo substitueInfo) {
     super.setSubstituteInfo(substitueInfo);
     if (isTransparentCollection()) {
-      for (EditorCell child : myEditorCellsWrapper) {
+      for (EditorCell child : getEditorCells()) {
         if (child.getSNode() == getSNode()) {
           child.setSubstituteInfo(substitueInfo);
         }
@@ -768,7 +802,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   public void setAction(CellActionType type, EditorCellAction action) {
     super.setAction(type, action);
     if (isTransparentCollection()) {
-      for (EditorCell child : myEditorCellsWrapper) {
+      for (EditorCell child : getEditorCells()) {
         if (child.getSNode() == getSNode()) {
           child.setAction(type, action);
         }

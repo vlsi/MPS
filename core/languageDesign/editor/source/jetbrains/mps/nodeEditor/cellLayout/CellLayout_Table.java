@@ -93,20 +93,6 @@ public class CellLayout_Table extends AbstractCellLayout {
       return;
     }
 
-    if (editorCells.isFolded()) {
-      Font font = EditorSettings.getInstance().getDefaultEditorFont();
-      FontMetrics metrics = editorCells.getEditor().getFontMetrics(font);
-      editorCells.setHeight(metrics.getHeight());
-      editorCells.setWidth(metrics.stringWidth(EditorCell_Collection.FOLDED_TEXT));
-      for (EditorCell cell : editorCells.dfsCells()) {
-        cell.setX(editorCells.getX());
-        cell.setY(editorCells.getY());
-        cell.setWidth(0);
-        cell.setHeight(0);
-      }
-      return;
-    }
-
     TableComponent tc = editorCells.getStyle().get(StyleAttributes.TABLE_COMPONENT);
     findPairingCollections(editorCells);
 

@@ -75,20 +75,6 @@ public class CellLayout_Superscript extends AbstractCellLayout {
       CellLayout_Indent_Old._doLayout(editorCells);
       return;
     }
-    if (editorCells.isFolded()) {
-      Font font = EditorSettings.getInstance().getDefaultEditorFont();
-      FontMetrics metrics = editorCells.getEditor().getFontMetrics(font);
-      editorCells.setHeight(metrics.getHeight());
-      editorCells.setWidth(metrics.stringWidth(EditorCell_Collection.FOLDED_TEXT));
-      for (EditorCell cell : editorCells.dfsCells()) {
-        cell.setX(editorCells.getX());
-        cell.setY(editorCells.getY());
-        cell.setWidth(0);
-        cell.setHeight(0);
-      }
-      return;
-    }
-
     EditorCell[] cells = editorCells.getContentCells();
 
     final int x = editorCells.getX();

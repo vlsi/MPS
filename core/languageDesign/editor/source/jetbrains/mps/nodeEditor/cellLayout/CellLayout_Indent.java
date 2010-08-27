@@ -82,24 +82,9 @@ public class CellLayout_Indent extends AbstractCellLayout {
 
 
   public void doLayout(EditorCell_Collection editorCells) {
-    if (!editorCells.isFolded() && editorCells.getParent() != null && editorCells.getParent().getCellLayout() instanceof CellLayout_Indent) {
+    if (editorCells.getParent() != null && editorCells.getParent().getCellLayout() instanceof CellLayout_Indent) {
       return;
     }
-
-    if (editorCells.isFolded()) {
-      Font font = EditorSettings.getInstance().getDefaultEditorFont();
-      FontMetrics metrics = editorCells.getEditor().getFontMetrics(font);
-      editorCells.setHeight(metrics.getHeight());
-      editorCells.setWidth(metrics.stringWidth(EditorCell_Collection.FOLDED_TEXT));
-      for (EditorCell cell : editorCells.dfsCells()) {
-        cell.setX(editorCells.getX());
-        cell.setY(editorCells.getY());
-        cell.setWidth(0);
-        cell.setHeight(0);
-      }
-      return;
-    }
-    
 
     new CellLayouter(editorCells).layout();
   }
@@ -174,7 +159,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
     for (EditorCell child : current) {
       if (child instanceof EditorCell_Collection) {
         EditorCell_Collection collection = (EditorCell_Collection) child;
-        if (isIndentCollection(collection) && !collection.isFolded()) {
+        if (isIndentCollection(collection)) {
           collectCells(collection, frontier, collections);
         } else {
           frontier.add(child);
