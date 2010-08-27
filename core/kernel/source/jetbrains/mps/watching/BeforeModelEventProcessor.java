@@ -41,7 +41,7 @@ class BeforeModelEventProcessor extends EventProcessor {
       VirtualFile vfile = getVFile(event);
       if (vfile == null) return;
       if (MPSFileTypesManager.instance().isModelFile(vfile)) {
-        VcsMigrationUtil.getHandler().removeFromVcs(Collections.singletonList(VFileSystem.toFile(vfile)), true);
+        VcsMigrationUtil.getHandler().removeFromVcs(Collections.singletonList(vfile), true);
       }
     } else {
       // if model is not null, than file was deleted externally

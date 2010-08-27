@@ -24,7 +24,6 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.File;
 import java.util.List;
 
 public class RealVCSHandler implements VCSHandler, ApplicationComponent {
@@ -36,11 +35,11 @@ public class RealVCSHandler implements VCSHandler, ApplicationComponent {
     SuspiciousModelIndex.instance().addModel(modelDescriptor, isInConflict);
   }
 
-  public void addFilesToVcs(List<File> files, boolean recursive, boolean silently) {
+  public void addFilesToVcs(List<VirtualFile> files, boolean recursive, boolean silently) {
     VCSUtil.addFilesToVcs(files, recursive, silently);
   }
 
-  public void removeFromVcs(List<File> files, boolean silently) {
+  public void removeFromVcs(List<VirtualFile> files, boolean silently) {
     VCSUtil.removeFilesFromVcs(files, silently);
   }
 

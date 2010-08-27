@@ -35,9 +35,9 @@ public interface VCSHandler {
 
   //-----add/remove
 
-  void addFilesToVcs(List<File> files, boolean recursive, boolean silently);
+  void addFilesToVcs(List<VirtualFile> files, boolean recursive, boolean silently);
 
-  void removeFromVcs(List<File> files, boolean silently);
+  void removeFromVcs(List<VirtualFile> files, boolean silently);
 
   //-----misc
 

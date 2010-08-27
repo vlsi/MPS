@@ -21,10 +21,13 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.ProjectManagerListener;
 import com.intellij.openapi.startup.StartupManager;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.vcs.VcsMigrationUtil;
+import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 public class VCSQueue implements ApplicationComponent {
@@ -96,7 +99,13 @@ public class VCSQueue implements ApplicationComponent {
     public void processTask(final List<File> tasks) {
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
-          VcsMigrationUtil.getHandler().addFilesToVcs(tasks, false, true);
+          List<VirtualFile> filesToAdd = new ArrayList<VirtualFile>(tasks.size());
+          for (File f : tasks) {
+            VirtualFile file = VFileSystem.refreshAndGetFile(f);
+            assert file != null : "Can not find virtual file for " + f;
+            filesToAdd.add(file);
+          }
+          VcsMigrationUtil.getHandler().addFilesToVcs(filesToAdd, false, true);
         }
       });
     }
@@ -108,7 +117,13 @@ public class VCSQueue implements ApplicationComponent {
     }
 
     public void processTask(List<File> tasks) {
-      VcsMigrationUtil.getHandler().removeFromVcs(tasks, true);
+      List<VirtualFile> filesToRemove = new ArrayList<VirtualFile>(tasks.size());
+      for (File f : tasks) {
+        VirtualFile file = VFileSystem.refreshAndGetFile(f);
+        assert file != null : "Can not find virtual file for " + f;
+        filesToRemove.add(file);
+      }
+      VcsMigrationUtil.getHandler().removeFromVcs(filesToRemove, true);
     }
   }
 }

@@ -48,29 +48,12 @@ public class VCSUtil {
   }
 
   @Nullable
-  public static Project getProjectForFilePath(FilePath f) {
-    for (Project project : getProjects()) {
-      AbstractVcs vcs = getVcsForFile(f, project);
-      if (vcs != null) {
-        return project;
-      }
-    }
-    return null;
-  }
-
-  @Nullable
   private static AbstractVcs getVcsForFile(VirtualFile f, Project project) {
     if (project.isDisposed()) return null;
     return ProjectLevelVcsManager.getInstance(project).getVcsFor(f);
   }
 
-  @Nullable
-  private static AbstractVcs getVcsForFile(FilePath f, Project project) {
-    if (project.isDisposed()) return null;
-    return ProjectLevelVcsManager.getInstance(project).getVcsFor(f);
-  }
-
-  @Nullable
+ @Nullable
   public static AbstractVcs getVcsForFile(VirtualFile f) {
     for (Project project : getProjects()) {
       AbstractVcs vcs = getVcsForFile(f, project);
@@ -143,11 +126,11 @@ public class VCSUtil {
     }
   }
 
-  public static void removeFilesFromVcs(List<FilePath> files, boolean silently) {
+  public static void removeFilesFromVcs(List<VirtualFile> files, boolean silently) {
     // collect
     Map<MPSVCSManager, List<File>> vcsManagerToFile = new HashMap<MPSVCSManager, List<File>>();
-    for (FilePath file : files) {
-      Project project = getProjectForFilePath(file);
+    for (VirtualFile file : files) {
+      Project project = getProjectForFile(file);
       if (project == null) continue;
       MPSVCSManager mpsVcsManager = MPSVCSManager.getInstance(project);
       if (mpsVcsManager == null) {
@@ -159,7 +142,7 @@ public class VCSUtil {
         filesForManager = new LinkedList<File>();
         vcsManagerToFile.put(mpsVcsManager, filesForManager);
       }
-      filesForManager.add(file.getIOFile());
+      filesForManager.add(VFileSystem.toFile(file));
     }
 
     // remove

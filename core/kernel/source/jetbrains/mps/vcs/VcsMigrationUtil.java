@@ -16,14 +16,11 @@
 package jetbrains.mps.vcs;
 
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.vcs.history.VcsRevisionNumber;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.VFileSystem;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 public class VcsMigrationUtil {
@@ -36,9 +33,17 @@ public class VcsMigrationUtil {
 
   public static void deleteFromDiskAndRemoveFromVcs(List<File> files, boolean silently) {
     if (files.size() == 0) return;
+
+    List<VirtualFile> filesToRemove = new ArrayList<VirtualFile>(files.size());
+    for (File f : files) {
+      VirtualFile file = VFileSystem.refreshAndGetFile(f);
+      assert file != null : "Can not find virtual file for " + f;
+      filesToRemove.add(file);
+    }
+
     for (File f : files) {
       f.delete();
     }
-    getHandler().removeFromVcs(files, silently);
+    getHandler().removeFromVcs(filesToRemove, silently);
   }
 }
