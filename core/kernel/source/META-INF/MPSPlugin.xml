@@ -39,6 +39,9 @@
         <projectService serviceInterface="com.intellij.usages.UsageViewManager"
                         serviceImplementation="com.intellij.usages.impl.UsageViewManagerImpl"/>
 
+      <projectService serviceInterface="com.intellij.openapi.vcs.impl.DefaultVcsRootPolicy"
+                    serviceImplementation="jetbrains.mps.vcs.ExtendedDefaultVcsRootPolicy"/>
+
         <applicationService serviceInterface="com.intellij.openapi.wm.impl.FrameTitleBuilder"
                             serviceImplementation="com.intellij.openapi.wm.impl.PlatformFrameTitleBuilder"/>
         <applicationService serviceInterface="com.intellij.platform.ProjectBaseDirectory"
