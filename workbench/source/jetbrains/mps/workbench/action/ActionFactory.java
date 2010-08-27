@@ -98,6 +98,8 @@ public class ActionFactory {
   public BaseGroup acquireRegisteredGroup(String groupClassName, String moduleNamespace, Object... params) {
     IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference(moduleNamespace));
     Class groupClass = null;
+
+    //todo this is a temporary hack to make vcs plugin work
     if (module == null) {
       try {
         IdeaPluginDescriptor plugin = PluginManager.getPlugin(PluginId.getId("jetbrains.mps.vcs"));
