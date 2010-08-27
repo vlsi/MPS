@@ -97,7 +97,9 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
                 errorNode.o1,
                 NameUtil.capitalize(status.getPresentation()) + ": " + errorString,
                 errorReporter,
-                TypesEditorChecker.this);
+                TypesEditorChecker.this,
+                editorContext
+              );
               IntentionProvider intentionProvider = errorReporter.getIntentionProvider();
 
               if (intentionProvider != null && intentionProvider.isExecutedImmediately() && !IMMEDIATE_QFIX_DISABLED) {
@@ -152,9 +154,9 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
     return false;
   }
 
-  public EditorMessageOwner getOwner(SNode node) {
+  public EditorMessageOwner getOwner(SNode node, EditorComponent editorComponent) {
     if (node == null) return null;
-    return TypeContextManager.getInstance().getContextForEditedRootNode(node, TypeContextManager.DEFAULT_OWNER);
+    return editorComponent.getTypeCheckingContext();
   }
 
   protected boolean isPropertyEventDramatical(SModelPropertyEvent event) {

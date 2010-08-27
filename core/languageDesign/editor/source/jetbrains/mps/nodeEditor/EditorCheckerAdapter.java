@@ -30,7 +30,7 @@ import java.util.Set;
 
 public abstract class EditorCheckerAdapter implements IEditorChecker, EditorMessageOwner {
 
-  public EditorMessageOwner getOwner(SNode rootNode) {
+  public EditorMessageOwner getOwner(SNode rootNode, EditorComponent editorComponent) {
     return this;
   }
 

@@ -387,7 +387,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
         public void run() {
           SNode node = editor.getEditedNode();          
           if (node == null || node.isDisposed()) return;
-          owners[0] = checker.getOwner(node);
+          owners[0] = checker.getOwner(node, editor);
           messages.addAll(checker.createMessages(node, editor.getOperationContext(), events, wasCheckedOnce, editor.getEditorContext()));
           messagesChangedContainer[0] = messagesChangedContainer[0] || checker.messagesChanged();
         }
@@ -417,7 +417,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
         public void run() {
           SNode node = editor.getEditedNode();
           if (node == null) return;
-          owners[0] = checker.getOwner(node);
+          owners[0] = checker.getOwner(node, editor);
         }
       };
       ModelAccess.instance().runReadAction(runnable);

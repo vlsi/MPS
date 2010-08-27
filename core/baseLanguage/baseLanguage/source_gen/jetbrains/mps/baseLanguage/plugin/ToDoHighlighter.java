@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.plugin;
 
 import jetbrains.mps.nodeEditor.EditorCheckerAdapter;
 import java.util.Set;
+
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
@@ -25,14 +27,15 @@ public class ToDoHighlighter extends EditorCheckerAdapter {
   public Set<EditorMessage> createMessages(SNode rootNode, IOperationContext operationContext, List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext) {
     Set<EditorMessage> messages = SetSequence.fromSet(new LinkedHashSet<EditorMessage>());
     SNode node = rootNode;
+    EditorComponent editorComponent = editorContext.getNodeEditorComponent();
     for (SNode remark : SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.RemarkStatement", false, new String[]{})) {
       if (RemarkStatement_Behavior.call_isTodo_1213877427548(remark)) {
-        SetSequence.fromSet(messages).addElement(new ToDoMessage(remark, SPropertyOperations.getString(remark, "value"), this.getOwner(rootNode)));
+        SetSequence.fromSet(messages).addElement(new ToDoMessage(remark, SPropertyOperations.getString(remark, "value"), this.getOwner(rootNode, editorComponent)));
       }
     }
     for (SNode textCommentPart : SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.TextCommentPart", false, new String[]{})) {
       if (CommentPart_Behavior.call_isToDo_7236590470026152831(textCommentPart)) {
-        SetSequence.fromSet(messages).addElement(new ToDoMessage(textCommentPart, SPropertyOperations.getString(textCommentPart, "text"), this.getOwner(rootNode)));
+        SetSequence.fromSet(messages).addElement(new ToDoMessage(textCommentPart, SPropertyOperations.getString(textCommentPart, "text"), this.getOwner(rootNode, editorComponent)));
       }
     }
     return messages;

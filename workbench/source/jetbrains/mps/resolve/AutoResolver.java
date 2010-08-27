@@ -82,7 +82,7 @@ public class AutoResolver extends EditorCheckerAdapter {
 
     // highlight nodes with errors
     for (SReference ref : yetBadReferences) {
-      EditorMessage message = HighlightUtil.createHighlighterMessage(ref.getSourceNode(), "unresolved reference", this);
+      EditorMessage message = HighlightUtil.createHighlighterMessage(ref.getSourceNode(), "unresolved reference", this, editorContext);
       messages.add(message);
     }
     return messages;

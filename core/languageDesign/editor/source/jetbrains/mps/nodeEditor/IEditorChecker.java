@@ -29,7 +29,7 @@ public interface IEditorChecker {
   public Set<EditorMessage> createMessages(SNode rootNode, IOperationContext operationContext,
                                            List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext);
 
-  public EditorMessageOwner getOwner(SNode rootNode);
+  public EditorMessageOwner getOwner(SNode rootNode, EditorComponent editorComponent);
 
   public boolean hasDramaticalEvent(List<SModelEvent> events);
 

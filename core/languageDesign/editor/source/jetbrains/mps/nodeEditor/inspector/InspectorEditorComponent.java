@@ -28,6 +28,8 @@ import jetbrains.mps.smodel.event.SModelEvent;
 import javax.swing.JComponent;
 import java.util.List;
 
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.typesystem.inference.TypeContextManager;
 import org.jetbrains.annotations.NotNull;
 
 public class InspectorEditorComponent extends EditorComponent {
@@ -109,5 +111,21 @@ public class InspectorEditorComponent extends EditorComponent {
       notifyDisposal();
     }
     super.dispose();
+  }
+
+  @Override
+  public TypeCheckingContext getTypeCheckingContext() {
+    if (myNode == null) return null;
+    SNode root = myNode.getContainingRoot();
+    if (root == null) return null;
+    return TypeContextManager.getInstance().getContextForEditedRootNode(root, TypeContextManager.DEFAULT_OWNER);
+  }
+
+  @Override
+  protected void createTypeCheckingContext() {
+  }
+
+  @Override
+  protected void disposeTypeCheckingContext() {
   }
 }

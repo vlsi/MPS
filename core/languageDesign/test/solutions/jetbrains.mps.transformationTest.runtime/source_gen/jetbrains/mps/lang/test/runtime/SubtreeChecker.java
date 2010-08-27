@@ -80,6 +80,7 @@ public class SubtreeChecker {
         }
       }
     }
+    typeCheckingContext.dispose();
   }
 
   public static void checkDataFlow(SNode node) {

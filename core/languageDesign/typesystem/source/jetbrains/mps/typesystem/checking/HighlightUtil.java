@@ -14,19 +14,24 @@ import java.awt.Color;
  * To change this template use File | Settings | File Templates.
  */
 public class HighlightUtil {
-  public static HighlighterMessage createHighlighterMessage(SNode node, String message, IErrorReporter errorReporter, EditorCheckerAdapter checker) {
+  public static HighlighterMessage createHighlighterMessage(SNode node, String message, IErrorReporter errorReporter, EditorCheckerAdapter checker, EditorContext editorContext) {
     if (errorReporter == null) {
       errorReporter = new SimpleErrorReporter(node, message, null, null, MessageStatus.ERROR, new NodeErrorTarget());
     }
     final MessageStatus status = errorReporter.getMessageStatus();
-    HighlighterMessage error = new HighlighterMessage(node, status,
-      errorReporter.getErrorTarget().toEditorMessageTarget(), getMessageColor(status), message, checker.getOwner(node.getContainingRoot()));
+    HighlighterMessage error = new HighlighterMessage(
+      node, 
+      status,
+      errorReporter.getErrorTarget().toEditorMessageTarget(),
+      getMessageColor(status),
+      message,
+      checker.getOwner(node.getContainingRoot(), editorContext.getNodeEditorComponent()));
     error.setErrorReporter(errorReporter);
     return error;
   }
 
-  public static HighlighterMessage createHighlighterMessage(SNode node, String message, EditorCheckerAdapter checker) {
-    return createHighlighterMessage(node, message, (IErrorReporter) null, checker);
+  public static HighlighterMessage createHighlighterMessage(SNode node, String message, EditorCheckerAdapter checker, EditorContext editorContext) {
+    return createHighlighterMessage(node, message, (IErrorReporter) null, checker, editorContext);
   }
 
   public static Color getMessageColor(MessageStatus messageStatus) {

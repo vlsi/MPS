@@ -94,6 +94,61 @@ public class NodeTypesComponentsRepository implements ApplicationComponent {
   public void disposeComponent() {
   }
 
+  @Deprecated
+  public NodeTypesComponent getNodeTypesComponent(SNode node) {
+    TypeCheckingContext context = getTypeCheckingContext(node);
+    if (context == null) return null;
+    return context.getNodeTypesComponent();
+  }
+
+  public TypeCheckingContext getTypeCheckingContext(SNode node) {
+    if (node == null) return null;
+    synchronized (myLock) {
+      return myNodesToContexts.get(node.getContainingRoot());
+    }
+  }
+
+  @Deprecated
+  public NodeTypesComponent createNodeTypesComponent(SNode node) {
+    TypeCheckingContext context = createTypeCheckingContext(node);
+    return context == null ? null : context.getNodeTypesComponent();
+  }
+
+  public TypeCheckingContext createTypeCheckingContext(final SNode node) {
+    return ModelAccess.instance().runReadAction(new Computable<TypeCheckingContext>() {
+      public TypeCheckingContext compute() {
+        if (node == null || node.isDisposed()) return null;
+        SNode root = node.getContainingRoot();
+        if (root == null) return null;
+
+        synchronized (myLock) {
+          TypeCheckingContext typeCheckingContext = getTypeCheckingContext(root);
+          if (typeCheckingContext != null) return typeCheckingContext;
+
+          typeCheckingContext = new TypeCheckingContext(root, myTypeChecker);
+          myNodesToContexts.put(root, typeCheckingContext);
+          SModel sModel = root.getModel();
+          SModelDescriptor descriptor = sModel.getModelDescriptor();
+          if (descriptor != null && !myListeningForModels.contains(descriptor)) {
+            descriptor.addModelListener(myModelListener);
+            myListeningForModels.add(descriptor);
+          }
+          return typeCheckingContext;
+        }
+      }
+    });
+  }
+
+  public TypeCheckingContext createIsolatedTypeCheckingContext(final SNode node) {
+    TypeCheckingContext typeCheckingContext = new TypeCheckingContext(node, myTypeChecker);
+    return typeCheckingContext;
+  }
+
+  public TypeCheckingContext createTracingTypeCheckingContext(final SNode node) {
+    TypeCheckingContext typeCheckingContext = new TypeCheckingContext_Tracer(node, myTypeChecker);
+    return typeCheckingContext;
+  }
+
   public void clear() {
     synchronized (myLock) {
       for (final TypeCheckingContext typeCheckingContext : myNodesToContexts.values()) {

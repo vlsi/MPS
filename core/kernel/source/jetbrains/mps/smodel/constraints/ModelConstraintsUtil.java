@@ -79,6 +79,7 @@ public class ModelConstraintsUtil {
             }
           }
         });
+        typeCheckingContext.dispose();
       }
     });
     return status[0];

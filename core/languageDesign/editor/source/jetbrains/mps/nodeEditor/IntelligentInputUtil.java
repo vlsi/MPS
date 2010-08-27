@@ -242,6 +242,8 @@ public class IntelligentInputUtil {
           }
         });
 
+      typeCheckingContext.dispose();
+
       if (!canCompleteSmallPatternImmediately(rtSubstituteInfo, tail, "")) { //don't execute non-unique action on RT hint cell
         editorContext.flushEvents();
 
@@ -338,6 +340,7 @@ public class IntelligentInputUtil {
         return hasSideActions(cellForNewNode, CellSide.LEFT, head);
       }
     });
+    typeCheckingContext.dispose();
 
     if (ltAction == null || !hasSideActions) {
       CellInfo cellInfo = cellForNewNode.getCellInfo();

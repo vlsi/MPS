@@ -244,7 +244,9 @@ public class TypeChecker implements ApplicationComponent {
     if (node == null) return null;
     TypeCheckingContext typeCheckingContext =
       TypeContextManager.getInstance().createTypeCheckingContext(node);
-    return typeCheckingContext.computeTypeInferenceMode(node);
+    SNode type = typeCheckingContext.computeTypeInferenceMode(node);
+    typeCheckingContext.dispose();
+    return type;
   }
 
   @Nullable

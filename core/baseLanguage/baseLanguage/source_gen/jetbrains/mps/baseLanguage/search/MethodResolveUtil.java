@@ -155,6 +155,7 @@ public class MethodResolveUtil {
                 return typeCheckingContext.getTypeOf(term, TypeChecker.getInstance());
               }
             });
+            typeCheckingContext.dispose();
             nodesAndTypes.put(term, typeOfArg);
           }
         }
