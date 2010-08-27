@@ -2,15 +2,30 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.debug.api.info.BLDebugInfoCache" file="BLDebugInfoCache.java">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.io.InputStream" />
+    <classNode dependClassName="java.io.OutputStream" />
+    <classNode dependClassName="java.lang.ClassLoader" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.debug.api.info.DebugInfo" />
-    <classNode dependClassName="jetbrains.mps.generator.fileGenerator.AllCaches" />
     <classNode dependClassName="jetbrains.mps.generator.fileGenerator.CacheGenerationContext" />
     <classNode dependClassName="jetbrains.mps.generator.fileGenerator.FileGenerationManager" />
+    <classNode dependClassName="jetbrains.mps.generator.fileGenerator.FileGenerationUtil" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="jetbrains.mps.project.IModule" />
+    <classNode dependClassName="jetbrains.mps.reloading.ClassLoaderManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.util.JDOMUtil" />
+    <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
+    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="org.jdom.Document" />
     <classNode dependClassName="org.jdom.Element" />
+    <classNode dependClassName="org.jdom.JDOMException" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.generator.fileGenerator.XmlBasedModelCache" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.generator.fileGenerator.BaseModelCache" />
   </dependency>
   <dependency className="jetbrains.mps.debug.api.info.DebugInfo" file="DebugInfo.java">
     <classNode dependClassName="java.lang.Comparable" />
