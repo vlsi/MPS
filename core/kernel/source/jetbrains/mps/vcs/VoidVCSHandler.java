@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.vcs;
 
-import com.intellij.openapi.extensions.ExtensionPointName;
 import com.intellij.openapi.vcs.history.VcsRevisionNumber;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.project.AbstractModule;
@@ -26,24 +25,32 @@ import jetbrains.mps.vfs.IFile;
 import java.io.File;
 import java.util.List;
 
-public interface VCSHandler {
-  //-----suspicious
+public class VoidVCSHandler implements VCSHandler {
+  public void addSuspiciousModule(AbstractModule abstractModule, boolean isInConflict) {
 
-  void addSuspiciousModule(AbstractModule abstractModule, boolean isInConflict);
+  }
 
-  void addSuspiciousModel(EditableSModelDescriptor modelDescriptor, boolean isInConflict);
+  public void addSuspiciousModel(EditableSModelDescriptor modelDescriptor, boolean isInConflict) {
 
-  //-----add/remove
+  }
 
-  void addFilesToVcs(List<File> files, boolean recursive, boolean silently);
+  public void addFilesToVcs(List<File> files, boolean recursive, boolean silently) {
 
-  void removeFromVcs(List<File> files, boolean silently);
+  }
 
-  //-----misc
+  public void removeFromVcs(List<File> files, boolean silently) {
 
-  VcsRevisionNumber getRevisionNumber(VirtualFile file);
+  }
 
-  boolean isInConflict(IFile iFile, boolean synchronously);
+  public VcsRevisionNumber getRevisionNumber(VirtualFile file) {
+    return null;
+  }
 
-  boolean resolveDiskMemoryConflict(IFile modelFile, SModel model);
+  public boolean isInConflict(IFile iFile, boolean synchronously) {
+    return false;
+  }
+
+  public boolean resolveDiskMemoryConflict(IFile modelFile, SModel model) {
+    return true;
+  }
 }

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.vcs;
 
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.vcs.history.VcsRevisionNumber;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.project.AbstractModule;
@@ -26,47 +27,18 @@ import java.io.File;
 import java.util.List;
 
 public class VcsMigrationUtil {
-  //-----suspicious
+  private static final VoidVCSHandler VOID_HANDLER = new VoidVCSHandler();
 
-  public static void addSuspiciousModule(AbstractModule abstractModule, boolean isInConflict) {
-    //SuspiciousModelIndex.instance().addModule(abstractModule, inConflict);
+  public static VCSHandler getHandler() {
+    VCSHandler handler = ApplicationManager.getApplication().getComponent(VCSHandler.class);
+    return handler == null ? VOID_HANDLER : handler;
   }
-
-  public static void addSuspiciousModel(EditableSModelDescriptor modelDescriptor, boolean isInConflict) {
-    //SuspiciousModelIndex.instance().addModel(modelDescriptor,conflictStateFixed);
-  }
-
-  //-----add/remove
-
-  public static void addFilesToVcs(List<File> files, boolean recursive, boolean silently) {
-    //ApplicationLevelVcsManager.instance().addFilesToVcs(files,b,b1);
-  }
-
-  public static void removeFromVcs(List<File> files, boolean silently) {
-    //ApplicationLevelVcsManager.instance().removeFilesFromVcs(files,b);
-  }
-
-  //-----misc
-
-  public static VcsRevisionNumber getRevisionNumber(VirtualFile file) {
-    return null;//ApplicationLevelVcsManager.instance().getRevisionNumber(file);
-  }
-
-  public static boolean isInConflict(IFile iFile, boolean synchronously) {
-    return false;//ApplicationLevelVcsManager.instance().isInConflict(iFile,b);
-  }
-
-  public static boolean resolveDiskMemoryConflict(IFile modelFile, SModel model) {
-    return true;//VcsHelper.resolveDiskMemoryConflict(modelFile,sModel);
-  }
-
-  //-----util
 
   public static void deleteFromDiskAndRemoveFromVcs(List<File> files, boolean silently) {
     if (files.size() == 0) return;
     for (File f : files) {
       f.delete();
     }
-    removeFromVcs(files, silently);
+    getHandler().removeFromVcs(files, silently);
   }
 }

@@ -35,7 +35,10 @@
     <component>
       <implementation-class>jetbrains.mps.vcs.VCSSettingsHolder</implementation-class>
     </component>
-   
+    <component>
+      <interface-class>jetbrains.mps.vcs.VCSHandler</interface-class>
+      <implementation-class>jetbrains.mps.vcs.RealVCSHandler</implementation-class>
+    </component>
     <component>
       <implementation-class>jetbrains.mps.vcs.ToolsAppComponent</implementation-class>
     </component>
