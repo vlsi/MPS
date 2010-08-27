@@ -12,9 +12,7 @@
     </favorites_list>
   </component>
   <component name="MPSProject">
-    <projectSolutions>
-      <solutionPath path="${mps_home}/plugins/vcs/jetbrains.mps.vcs.msd" />
-    </projectSolutions>
+    <projectSolutions />
     <projectLanguages>
       <languagePath path="${project}/plugin.mpl" />
     </projectLanguages>
@@ -66,8 +64,6 @@
     <option name="mySupportsUserInfoFilter" value="true" />
   </component>
   <component name="VcsDirectoryMappings">
-    <mapping directory="" vcs="" />
-    <mapping directory="" vcs="" />
     <mapping directory="" vcs="" />
     <mapping directory="$APPLICATION_HOME_DIR$" vcs="Git" />
   </component>
