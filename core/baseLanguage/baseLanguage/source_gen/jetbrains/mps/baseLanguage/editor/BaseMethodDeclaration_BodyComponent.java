@@ -85,6 +85,7 @@ public class BaseMethodDeclaration_BodyComponent extends AbstractCellProvider {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new Color(15790320));
       style.set(StyleAttributes.TEXT_COLOR, new Color(12829635));
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
     editorCell.setDefaultText("");
     return editorCell;

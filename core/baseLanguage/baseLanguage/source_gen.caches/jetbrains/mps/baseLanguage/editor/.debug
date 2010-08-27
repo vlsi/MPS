@@ -1336,10 +1336,10 @@
     <scopeInfo nodeId="7236590470026154858" fileName="TextCommentPart_Editor.java" startLine="60" startPosition="106" endLine="65" endPosition="5" />
   </root>
   <root nodeId="6827006320070687174">
-    <nodeInfo nodeId="6827006320070687188" fileName="BaseMethodDeclaration_BodyComponent.java" startLine="125" startPosition="109" endLine="126" endPosition="101" />
-    <nodeInfo nodeId="6827006320070704770" fileName="BaseMethodDeclaration_BodyComponent.java" startLine="129" startPosition="109" endLine="130" endPosition="101" />
-    <scopeInfo nodeId="6827006320070687187" fileName="BaseMethodDeclaration_BodyComponent.java" startLine="125" startPosition="109" endLine="126" endPosition="101" />
-    <scopeInfo nodeId="6827006320070704769" fileName="BaseMethodDeclaration_BodyComponent.java" startLine="129" startPosition="109" endLine="130" endPosition="101" />
+    <nodeInfo nodeId="6827006320070687188" fileName="BaseMethodDeclaration_BodyComponent.java" startLine="126" startPosition="109" endLine="127" endPosition="101" />
+    <nodeInfo nodeId="6827006320070704770" fileName="BaseMethodDeclaration_BodyComponent.java" startLine="130" startPosition="109" endLine="131" endPosition="101" />
+    <scopeInfo nodeId="6827006320070687187" fileName="BaseMethodDeclaration_BodyComponent.java" startLine="126" startPosition="109" endLine="127" endPosition="101" />
+    <scopeInfo nodeId="6827006320070704769" fileName="BaseMethodDeclaration_BodyComponent.java" startLine="130" startPosition="109" endLine="131" endPosition="101" />
   </root>
   <root nodeId="7483212795958380584">
     <nodeInfo nodeId="7483212795959001524" fileName="AnonymousClass_CurlyBraces.java" startLine="32" startPosition="136" endLine="33" endPosition="137" />

@@ -17412,6 +17412,9 @@
             <property name="value:32" value="c3c3c3" />
           </node>
         </node>
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="6435995161850510862">
+          <property name="flag:32" value="true" />
+        </node>
       </node>
     </node>
   </node>
