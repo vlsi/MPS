@@ -138,7 +138,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
   }
 
   private SModel handleExceptionDuringModelRead(EditableSModelDescriptor modelDescriptor, RuntimeException exception, boolean isConflictStateFixed) {
-    VcsMigrationUtil.addSuspiciousModel(modelDescriptor, isConflictStateFixed);
+    VcsMigrationUtil.getHandler().addSuspiciousModel(modelDescriptor, isConflictStateFixed);
     SModel newModel = new StubModel(modelDescriptor.getSModelReference());
     LOG.error(exception.getMessage(), newModel);
     return newModel;

@@ -706,7 +706,7 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
     List<VirtualFile> toMerge = new ArrayList<VirtualFile>();
     List<VirtualFile> alreadyResolved = new ArrayList<VirtualFile>();
     for (VirtualFile f : files) {
-      if (!doStatusRecheck || VcsMigrationUtil.isInConflict(VFileSystem.toIFile(f), true)) {
+      if (!doStatusRecheck || VcsMigrationUtil.getHandler().isInConflict(VFileSystem.toIFile(f), true)) {
         toMerge.add(f);
       } else {
         alreadyResolved.add(f);

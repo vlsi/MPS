@@ -321,7 +321,7 @@ public class NewLanguageDialogContentPane extends JPanel {
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
         File file = VFileSystem.toFile(VFileSystem.refreshAndGetFile(descriptorFile.getParentFile()));
-        VcsMigrationUtil.addFilesToVcs(Collections.singletonList(file), false, true);
+        //VcsMigrationUtil.addFilesToVcs(Collections.singletonList(file), false, true);
       }
     }, ModalityState.NON_MODAL);
     return language;

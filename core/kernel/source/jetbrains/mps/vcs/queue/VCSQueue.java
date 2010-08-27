@@ -96,7 +96,7 @@ public class VCSQueue implements ApplicationComponent {
     public void processTask(final List<File> tasks) {
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
-          VcsMigrationUtil.addFilesToVcs(tasks, false, true);
+          VcsMigrationUtil.getHandler().addFilesToVcs(tasks, false, true);
         }
       });
     }
@@ -108,7 +108,7 @@ public class VCSQueue implements ApplicationComponent {
     }
 
     public void processTask(List<File> tasks) {
-      VcsMigrationUtil.removeFromVcs(tasks, true);
+      VcsMigrationUtil.getHandler().removeFromVcs(tasks, true);
     }
   }
 }

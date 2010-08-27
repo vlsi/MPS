@@ -101,7 +101,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     if (SModelRepository.getInstance().isChanged(this)) {
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
-          final boolean needSave = VcsMigrationUtil.resolveDiskMemoryConflict(myModelFile, mySModel);
+          final boolean needSave = VcsMigrationUtil.getHandler().resolveDiskMemoryConflict(myModelFile, mySModel);
           if (needSave) {
             ModelAccess.instance().runWriteActionInCommand(new Runnable() {
               public void run() {
@@ -205,7 +205,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
         "You might want to turn \"Synchronize files on frame activation/deactivation\" option on to avoid conflicts.");
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
-          final boolean needSave = VcsMigrationUtil.resolveDiskMemoryConflict(myModelFile, mySModel);
+          final boolean needSave = VcsMigrationUtil.getHandler().resolveDiskMemoryConflict(myModelFile, mySModel);
           if (needSave) {
             ModelAccess.instance().runWriteActionInCommand(new Runnable() {
               public void run() {
