@@ -568,6 +568,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       return;
     }
     if (myOperationContext.getProject().isDisposed()) {
+      LOG.error("Trying to notify disposal of EditorComponent related to disposed project. This may cause memory leaks.");
       return;
     }
     EditorComponentCreateListener listener = myOperationContext.getProject().getMessageBus().syncPublisher(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION);

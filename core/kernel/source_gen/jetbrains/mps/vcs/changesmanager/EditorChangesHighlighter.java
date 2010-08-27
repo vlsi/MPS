@@ -109,7 +109,6 @@ public class EditorChangesHighlighter extends AbstractProjectComponent implement
 
     public void editorComponentDisposed(@NotNull EditorComponent editorComponent) {
       disposeHighlighter(editorComponent);
-      MapSequence.fromMap(myEditorsHighlighters).removeKey(editorComponent);
     }
   }
 

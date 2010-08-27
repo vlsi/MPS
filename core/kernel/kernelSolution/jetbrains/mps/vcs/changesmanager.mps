@@ -13561,18 +13561,6 @@
               </node>
             </node>
           </node>
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4120908392502580481">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4120908392502580482">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="7601193928418873122">
-                <link role="variableDeclaration:3" targetNodeId="6080400160196223146" resolveInfo="myEditorsHighlighters" />
-              </node>
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.MapRemoveOperation:7" id="4120908392502580486">
-                <node role="key:7" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4120908392502580487">
-                  <link role="variableDeclaration:3" targetNodeId="5267577397386525134" resolveInfo="editorComponent" />
-                </node>
-              </node>
-            </node>
-          </node>
         </node>
       </node>
       <node role="implementedInterface:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5643745088231031272">

@@ -1160,13 +1160,12 @@
     <nodeInfo nodeId="5444017747357180999" fileName="EditorChangesHighlighter.java" startLine="96" startPosition="80" endLine="97" endPosition="64" />
     <nodeInfo nodeId="5267577397386525106" fileName="EditorChangesHighlighter.java" startLine="105" startPosition="114" endLine="106" endPosition="93" />
     <nodeInfo nodeId="5267577397386525138" fileName="EditorChangesHighlighter.java" startLine="110" startPosition="83" endLine="111" endPosition="42" />
-    <nodeInfo nodeId="4120908392502580481" fileName="EditorChangesHighlighter.java" startLine="111" startPosition="42" endLine="112" endPosition="76" />
-    <nodeInfo nodeId="5267577397386525208" fileName="EditorChangesHighlighter.java" startLine="116" startPosition="76" endLine="117" endPosition="94" />
-    <nodeInfo nodeId="5267577397386525157" fileName="EditorChangesHighlighter.java" startLine="122" startPosition="35" endLine="123" endPosition="89" />
-    <nodeInfo nodeId="2530613801598702392" fileName="EditorChangesHighlighter.java" startLine="125" startPosition="143" endLine="126" endPosition="64" />
-    <nodeInfo nodeId="5267577397386525202" fileName="EditorChangesHighlighter.java" startLine="128" startPosition="7" endLine="129" endPosition="55" />
+    <nodeInfo nodeId="5267577397386525208" fileName="EditorChangesHighlighter.java" startLine="115" startPosition="76" endLine="116" endPosition="94" />
+    <nodeInfo nodeId="5267577397386525157" fileName="EditorChangesHighlighter.java" startLine="121" startPosition="35" endLine="122" endPosition="89" />
+    <nodeInfo nodeId="2530613801598702392" fileName="EditorChangesHighlighter.java" startLine="124" startPosition="143" endLine="125" endPosition="64" />
+    <nodeInfo nodeId="5267577397386525202" fileName="EditorChangesHighlighter.java" startLine="127" startPosition="7" endLine="128" endPosition="55" />
     <nodeInfo nodeId="5643745088231031267" fileName="EditorChangesHighlighter.java" startLine="100" startPosition="90" endLine="102" endPosition="5" />
-    <nodeInfo nodeId="5643745088231031276" fileName="EditorChangesHighlighter.java" startLine="118" startPosition="0" endLine="120" endPosition="5" />
+    <nodeInfo nodeId="5643745088231031276" fileName="EditorChangesHighlighter.java" startLine="117" startPosition="0" endLine="119" endPosition="5" />
     <nodeInfo nodeId="3549425352859601108" fileName="EditorChangesHighlighter.java" startLine="26" startPosition="0" endLine="29" endPosition="3" />
     <nodeInfo nodeId="5444017747357182535" fileName="EditorChangesHighlighter.java" startLine="60" startPosition="77" endLine="63" endPosition="5" />
     <nodeInfo nodeId="5444017747357187057" fileName="EditorChangesHighlighter.java" startLine="67" startPosition="77" endLine="70" endPosition="5" />
@@ -1174,13 +1173,13 @@
     <nodeInfo nodeId="3499023120082627380" fileName="EditorChangesHighlighter.java" startLine="82" startPosition="77" endLine="85" endPosition="5" />
     <nodeInfo nodeId="6105081101195305324" fileName="EditorChangesHighlighter.java" startLine="90" startPosition="77" endLine="93" endPosition="5" />
     <nodeInfo nodeId="5267577397386525104" fileName="EditorChangesHighlighter.java" startLine="104" startPosition="82" endLine="107" endPosition="7" />
-    <nodeInfo nodeId="5267577397386525170" fileName="EditorChangesHighlighter.java" startLine="124" startPosition="62" endLine="127" endPosition="9" />
+    <nodeInfo nodeId="5267577397386525170" fileName="EditorChangesHighlighter.java" startLine="123" startPosition="62" endLine="126" endPosition="9" />
     <nodeInfo nodeId="5643745088231031259" fileName="EditorChangesHighlighter.java" startLine="41" startPosition="31" endLine="45" endPosition="5" />
     <nodeInfo nodeId="1682111275047034270" fileName="EditorChangesHighlighter.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
     <nodeInfo nodeId="1682111275047043017" fileName="EditorChangesHighlighter.java" startLine="52" startPosition="77" endLine="56" endPosition="5" />
     <nodeInfo nodeId="5444017747357180216" fileName="EditorChangesHighlighter.java" startLine="95" startPosition="0" endLine="99" endPosition="0" />
-    <nodeInfo nodeId="5267577397386525131" fileName="EditorChangesHighlighter.java" startLine="109" startPosition="0" endLine="114" endPosition="0" />
-    <nodeInfo nodeId="5267577397386525163" fileName="EditorChangesHighlighter.java" startLine="123" startPosition="89" endLine="128" endPosition="7" />
+    <nodeInfo nodeId="5267577397386525131" fileName="EditorChangesHighlighter.java" startLine="109" startPosition="0" endLine="113" endPosition="0" />
+    <nodeInfo nodeId="5267577397386525163" fileName="EditorChangesHighlighter.java" startLine="122" startPosition="89" endLine="127" endPosition="7" />
     <nodeInfo nodeId="5267577397386525095" fileName="EditorChangesHighlighter.java" startLine="103" startPosition="0" endLine="109" endPosition="0" />
     <nodeInfo nodeId="5267577397386524959" fileName="EditorChangesHighlighter.java" startLine="31" startPosition="31" endLine="38" endPosition="5" />
     <nodeInfo nodeId="3549425352859601094" fileName="EditorChangesHighlighter.java" startLine="40" startPosition="0" endLine="47" endPosition="0" />
@@ -1191,9 +1190,9 @@
     <nodeInfo nodeId="3499023120082625207" fileName="EditorChangesHighlighter.java" startLine="72" startPosition="0" endLine="80" endPosition="0" />
     <nodeInfo nodeId="3499023120082625220" fileName="EditorChangesHighlighter.java" startLine="80" startPosition="0" endLine="88" endPosition="0" />
     <nodeInfo nodeId="3549425352859601098" fileName="EditorChangesHighlighter.java" startLine="30" startPosition="0" endLine="40" endPosition="0" />
-    <nodeInfo nodeId="5267577397386525153" fileName="EditorChangesHighlighter.java" startLine="121" startPosition="0" endLine="131" endPosition="0" />
+    <nodeInfo nodeId="5267577397386525153" fileName="EditorChangesHighlighter.java" startLine="120" startPosition="0" endLine="130" endPosition="0" />
     <scopeInfo nodeId="5643745088231031270" fileName="EditorChangesHighlighter.java" startLine="101" startPosition="46" endLine="101" endPosition="46" />
-    <scopeInfo nodeId="5643745088231031279" fileName="EditorChangesHighlighter.java" startLine="119" startPosition="39" endLine="119" endPosition="39" />
+    <scopeInfo nodeId="5643745088231031279" fileName="EditorChangesHighlighter.java" startLine="118" startPosition="39" endLine="118" endPosition="39" />
     <scopeInfo nodeId="3549425352859601112" fileName="EditorChangesHighlighter.java" startLine="27" startPosition="67" endLine="28" endPosition="19" />
     <scopeInfo nodeId="1682111275047034273" fileName="EditorChangesHighlighter.java" startLine="48" startPosition="93" endLine="49" endPosition="143" />
     <scopeInfo nodeId="5444017747357182536" fileName="EditorChangesHighlighter.java" startLine="61" startPosition="82" endLine="62" endPosition="100" />
@@ -1203,18 +1202,18 @@
     <scopeInfo nodeId="6105081101195305325" fileName="EditorChangesHighlighter.java" startLine="91" startPosition="82" endLine="92" endPosition="101" />
     <scopeInfo nodeId="5444017747357180219" fileName="EditorChangesHighlighter.java" startLine="96" startPosition="80" endLine="97" endPosition="64" />
     <scopeInfo nodeId="5267577397386525105" fileName="EditorChangesHighlighter.java" startLine="105" startPosition="114" endLine="106" endPosition="93" />
-    <scopeInfo nodeId="5267577397386525177" fileName="EditorChangesHighlighter.java" startLine="125" startPosition="143" endLine="126" endPosition="64" />
+    <scopeInfo nodeId="5267577397386525137" fileName="EditorChangesHighlighter.java" startLine="110" startPosition="83" endLine="111" endPosition="42" />
+    <scopeInfo nodeId="5267577397386525177" fileName="EditorChangesHighlighter.java" startLine="124" startPosition="143" endLine="125" endPosition="64" />
     <scopeInfo nodeId="5643745088231031260" fileName="EditorChangesHighlighter.java" startLine="42" startPosition="37" endLine="44" endPosition="42" />
     <scopeInfo nodeId="1682111275047043019" fileName="EditorChangesHighlighter.java" startLine="53" startPosition="82" endLine="55" endPosition="76" />
     <scopeInfo nodeId="5643745088231031267" fileName="EditorChangesHighlighter.java" startLine="100" startPosition="90" endLine="102" endPosition="5" />
-    <scopeInfo nodeId="5267577397386525137" fileName="EditorChangesHighlighter.java" startLine="110" startPosition="83" endLine="112" endPosition="76" />
-    <scopeInfo nodeId="5643745088231031276" fileName="EditorChangesHighlighter.java" startLine="118" startPosition="0" endLine="120" endPosition="5" />
+    <scopeInfo nodeId="5643745088231031276" fileName="EditorChangesHighlighter.java" startLine="117" startPosition="0" endLine="119" endPosition="5" />
     <scopeInfo nodeId="3549425352859601108" fileName="EditorChangesHighlighter.java" startLine="26" startPosition="0" endLine="29" endPosition="3">
       <varInfo nodeId="3549425352859601113" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="5267577397386525101" fileName="EditorChangesHighlighter.java" startLine="104" startPosition="82" endLine="107" endPosition="7" />
-    <scopeInfo nodeId="5267577397386525169" fileName="EditorChangesHighlighter.java" startLine="124" startPosition="62" endLine="127" endPosition="9" />
-    <scopeInfo nodeId="5267577397386525170" fileName="EditorChangesHighlighter.java" startLine="124" startPosition="62" endLine="127" endPosition="9" />
+    <scopeInfo nodeId="5267577397386525169" fileName="EditorChangesHighlighter.java" startLine="123" startPosition="62" endLine="126" endPosition="9" />
+    <scopeInfo nodeId="5267577397386525170" fileName="EditorChangesHighlighter.java" startLine="123" startPosition="62" endLine="126" endPosition="9" />
     <scopeInfo nodeId="3549425352859601097" fileName="EditorChangesHighlighter.java" startLine="41" startPosition="31" endLine="45" endPosition="5" />
     <scopeInfo nodeId="1682111275047034270" fileName="EditorChangesHighlighter.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="8601487597690777599" varName="enabled" />
@@ -1233,15 +1232,15 @@
     <scopeInfo nodeId="5444017747357180216" fileName="EditorChangesHighlighter.java" startLine="95" startPosition="0" endLine="99" endPosition="0">
       <varInfo nodeId="5444017747357180673" varName="project" />
     </scopeInfo>
+    <scopeInfo nodeId="5267577397386525131" fileName="EditorChangesHighlighter.java" startLine="109" startPosition="0" endLine="113" endPosition="0">
+      <varInfo nodeId="5267577397386525134" varName="editorComponent" />
+    </scopeInfo>
     <scopeInfo nodeId="5267577397386524960" fileName="EditorChangesHighlighter.java" startLine="32" startPosition="37" endLine="37" endPosition="87" />
     <scopeInfo nodeId="3499023120082625210" fileName="EditorChangesHighlighter.java" startLine="73" startPosition="82" endLine="78" endPosition="17">
       <varInfo nodeId="3499023120082625505" varName="editorComponent" />
     </scopeInfo>
     <scopeInfo nodeId="3499023120082625223" fileName="EditorChangesHighlighter.java" startLine="81" startPosition="78" endLine="86" endPosition="17">
       <varInfo nodeId="3499023120082627375" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="5267577397386525131" fileName="EditorChangesHighlighter.java" startLine="109" startPosition="0" endLine="114" endPosition="0">
-      <varInfo nodeId="5267577397386525134" varName="editorComponent" />
     </scopeInfo>
     <scopeInfo nodeId="5267577397386525095" fileName="EditorChangesHighlighter.java" startLine="103" startPosition="0" endLine="109" endPosition="0">
       <varInfo nodeId="5267577397386525098" varName="editorComponent" />
@@ -1260,7 +1259,7 @@
     <scopeInfo nodeId="6105081101195231754" fileName="EditorChangesHighlighter.java" startLine="88" startPosition="0" endLine="95" endPosition="0">
       <varInfo nodeId="6105081101195262369" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="5267577397386525156" fileName="EditorChangesHighlighter.java" startLine="122" startPosition="35" endLine="129" endPosition="55">
+    <scopeInfo nodeId="5267577397386525156" fileName="EditorChangesHighlighter.java" startLine="121" startPosition="35" endLine="128" endPosition="55">
       <varInfo nodeId="5267577397386525158" varName="currentHighlightChanges" />
     </scopeInfo>
     <scopeInfo nodeId="3499023120082625207" fileName="EditorChangesHighlighter.java" startLine="72" startPosition="0" endLine="80" endPosition="0">
@@ -1270,10 +1269,10 @@
       <varInfo nodeId="3499023120082625231" varName="editorContext" />
     </scopeInfo>
     <scopeInfo nodeId="3549425352859601098" fileName="EditorChangesHighlighter.java" startLine="30" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="5267577397386525153" fileName="EditorChangesHighlighter.java" startLine="121" startPosition="0" endLine="131" endPosition="0" />
-    <unitInfo nodeId="5643745088231031265" fileName="EditorChangesHighlighter.java" startLine="100" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.EditorChangesHighlighter$MyEditorComponentCreateListener" />
-    <unitInfo nodeId="5643745088231031274" fileName="EditorChangesHighlighter.java" startLine="116" startPosition="0" endLine="132" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.EditorChangesHighlighter$MyEditorSettingsListener" />
-    <unitInfo nodeId="3549425352859600642" fileName="EditorChangesHighlighter.java" startLine="22" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.EditorChangesHighlighter" />
+    <scopeInfo nodeId="5267577397386525153" fileName="EditorChangesHighlighter.java" startLine="120" startPosition="0" endLine="130" endPosition="0" />
+    <unitInfo nodeId="5643745088231031265" fileName="EditorChangesHighlighter.java" startLine="100" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.EditorChangesHighlighter$MyEditorComponentCreateListener" />
+    <unitInfo nodeId="5643745088231031274" fileName="EditorChangesHighlighter.java" startLine="115" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.EditorChangesHighlighter$MyEditorSettingsListener" />
+    <unitInfo nodeId="3549425352859600642" fileName="EditorChangesHighlighter.java" startLine="22" startPosition="0" endLine="132" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.EditorChangesHighlighter" />
   </root>
   <root nodeId="3722815385094205361">
     <nodeInfo nodeId="3722815385094205361" fileName="SimpleCommandQueue.java" startLine="11" startPosition="33" endLine="12" endPosition="73" />
