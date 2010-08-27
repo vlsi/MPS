@@ -132,7 +132,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   }
 
   @NotNull
-    private List<EditorCell> getFoldedCells() {
+  private List<EditorCell> getFoldedCells() {
     if (!myCanBeFolded) {
       return Collections.emptyList();
     }
@@ -146,6 +146,11 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
       setFoldedCell(foldedCell);
     }
     return myFoldedCells;
+  }
+
+  private EditorCell getFoldedCell() {
+    assert myCanBeFolded;
+    return getFoldedCells().get(0);
   }
 
   public void setFoldedCell(EditorCell foldedCell) {
@@ -437,17 +442,19 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   public void fold(boolean programmaticaly) {
     if (!canBeFolded()) return;
     setFolded(true);
+
     final EditorComponent editorComponent = getEditor();
+    if (isDescendantCellSelected(editorComponent)) {
+      editorComponent.clearSelectionStack();
+      editorComponent.pushSelection(getFoldedCell());
+    }
     editorComponent.addMouseListener(new MouseAdapter() {
       public void mouseClicked(MouseEvent e) {
         if (getBounds().contains(e.getPoint())) {
           editorComponent.removeMouseListener(this);
+          editorComponent.clearSelectionStack();
+          editorComponent.pushSelection(getFoldedCell());
           unfold();
-
-          EditorComponent editor = getEditor();
-          EditorCell deepestSelected = findChild(CellFinders.FIRST_SELECTABLE_LEAF);
-          editor.pushSelection(deepestSelected);
-          editor.setSelectionDontClearStack(EditorCell_Collection.this, true);
         }
       }
     });
@@ -456,6 +463,16 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
 
       getEditor().relayout();
     }
+  }
+
+  private boolean isDescendantCellSelected(EditorComponent editorComponent) {
+    EditorCell selectedCell = editorComponent.getDeepestSelectedCell();
+    return selectedCell != null && selectedCell.findParent(new Condition<EditorCell_Collection>() {
+      @Override
+      public boolean met(EditorCell_Collection object) {
+        return object == EditorCell_Collection.this;
+      }
+    }) != null;
   }
 
   private boolean canBeFolded() {
@@ -483,6 +500,14 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   public void unfold(boolean programmaticaly) {
     if (!isFolded()) return;
     setFolded(false);
+
+    EditorComponent editor = getEditor();
+    if (isDescendantCellSelected(editor)) {
+      EditorCell deepestSelected = findChild(CellFinders.FIRST_SELECTABLE_LEAF);
+      editor.clearSelectionStack();
+      editor.pushSelection(deepestSelected);
+    }
+
     if (!programmaticaly) {
       getEditorContext().flushEvents();
       getEditor().relayout();
