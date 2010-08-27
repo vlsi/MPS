@@ -157,7 +157,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     myFoldedCells = Collections.singletonList(foldedCell);
   }
 
-  private List<EditorCell> getVisibleChil dCells() {
+  private List<EditorCell> getVisibleChildCells() {
     return isFolded() ? getFoldedCells() : getEditorCells();
   }
 
