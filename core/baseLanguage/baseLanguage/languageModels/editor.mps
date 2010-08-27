@@ -17398,6 +17398,21 @@
         </node>
       </node>
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="6827006320070687178" />
+      <node role="foldedCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="8359793381631976003">
+        <property name="text:32" value="{...}" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem:32" id="8359793381631976004">
+          <property name="color:32" value="lightGray" />
+          <node role="query:32" type="jetbrains.mps.lang.editor.structure.RGBColor:32" id="8359793381631976012">
+            <property name="value:32" value="f0f0f0" />
+          </node>
+        </node>
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem:32" id="8359793381631976006">
+          <property name="color:32" value="gray" />
+          <node role="query:32" type="jetbrains.mps.lang.editor.structure.RGBColor:32" id="8359793381631976011">
+            <property name="value:32" value="c3c3c3" />
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>

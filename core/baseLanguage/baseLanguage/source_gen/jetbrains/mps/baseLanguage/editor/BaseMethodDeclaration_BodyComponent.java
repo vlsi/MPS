@@ -11,6 +11,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -38,6 +39,7 @@ public class BaseMethodDeclaration_BodyComponent extends AbstractCellProvider {
     editorCell.addEditorCell(this.createConstant_fao2ea_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_fao2ea_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_fao2ea_c0(editorContext, node));
+    editorCell.setFoldedCell(this.createConstant_fao2ea_a0_0(editorContext, node));
     return editorCell;
   }
 
@@ -71,6 +73,18 @@ public class BaseMethodDeclaration_BodyComponent extends AbstractCellProvider {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.POSITION, "next-line");
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_fao2ea_a0_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{...}");
+    editorCell.setCellId("Constant_fao2ea_a0_0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new Color(15790320));
+      style.set(StyleAttributes.TEXT_COLOR, new Color(12829635));
     }
     editorCell.setDefaultText("");
     return editorCell;
