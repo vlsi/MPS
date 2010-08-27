@@ -16,6 +16,7 @@ import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.generationTypes.TextGenerationHandler;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.ide.generator.GeneratorFacade;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
@@ -51,7 +52,7 @@ public class GenerateTextFromBuild {
       }
     };
     if (showWindow) {
-      generatorManager.generateModelsWithProgressWindow(ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor), context, generationHandler, true, true);
+      GeneratorFacade.getInstance().generateModels(context, ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor), generationHandler, true, false);
     } else {
       generatorManager.generateModels(ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor), context, generationHandler, new EmptyProgressIndicator(), new DefaultMessageHandler(project));
     }

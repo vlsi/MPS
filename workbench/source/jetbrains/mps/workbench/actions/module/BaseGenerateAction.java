@@ -21,7 +21,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.generator.GenParameters;
-import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.ide.actions.ModelCheckerTool_Tool;
@@ -117,26 +116,24 @@ public abstract class BaseGenerateAction extends BaseAction {
     boolean checkSuccessful = myProject.getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class)
       .checkModelsBeforeGenerationIfNeeded(invocationContext, (List)modelsToGenerate, new Runnable() {
         public void run() {
-          GeneratorManager generatorManager = myOperationContext.getComponent(GeneratorManager.class);
-          IGenerationHandler generationHandler = generatorManager.getDefaultGenerationHandler();
-          generatorManager.generateModelsFromDifferentModules(
+          IGenerationHandler generationHandler = GeneratorFacade.getInstance().getDefaultGenerationHandler();
+          GeneratorFacade.getInstance().generateModels(
             invocationContext1,
             modelsToGenerate,
             generationHandler,
-            myRebuildAll);
+            myRebuildAll, false);
         }
       });
     if (!checkSuccessful) {
       return;
     }
 
-    GeneratorManager generatorManager = myOperationContext.getComponent(GeneratorManager.class);
     IGenerationHandler generationHandler = GeneratorFacade.getInstance().getDefaultGenerationHandler();
-    generatorManager.generateModelsFromDifferentModules(
+    GeneratorFacade.getInstance().generateModels(
       invocationContext,
       modelsToGenerate,
       generationHandler,
-      myRebuildAll);
+      myRebuildAll, false);
   }
 
   @NotNull

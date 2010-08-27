@@ -15,9 +15,9 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.generator.GeneratorManager;
 import java.util.ArrayList;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
+import jetbrains.mps.ide.generator.GeneratorFacade;
 
 public class GenerateModel_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -94,20 +94,19 @@ public class GenerateModel_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      final GeneratorManager manager = GenerateModel_Action.this.project.getComponent(GeneratorManager.class);
       final List<SModelDescriptor> modelsToGenerate = new ArrayList<SModelDescriptor>();
       for (SModelDescriptor m : ListSequence.fromList(GenerateModel_Action.this.models)) {
         modelsToGenerate.add(m);
       }
       boolean checkSuccessful = GenerateModel_Action.this.project.getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModelsBeforeGenerationIfNeeded(GenerateModel_Action.this.context, (List) modelsToGenerate, new Runnable() {
         public void run() {
-          manager.generateModelsFromDifferentModules(GenerateModel_Action.this.context, modelsToGenerate, GenerateModel_Action.this.generationHandler, GenerateModel_Action.this.rebuildAll);
+          GeneratorFacade.getInstance().generateModels(GenerateModel_Action.this.context, modelsToGenerate, GenerateModel_Action.this.generationHandler, GenerateModel_Action.this.rebuildAll, false);
         }
       });
       if (!(checkSuccessful)) {
         return;
       }
-      manager.generateModelsFromDifferentModules(GenerateModel_Action.this.context, modelsToGenerate, GenerateModel_Action.this.generationHandler, GenerateModel_Action.this.rebuildAll);
+      GeneratorFacade.getInstance().generateModels(GenerateModel_Action.this.context, modelsToGenerate, GenerateModel_Action.this.generationHandler, GenerateModel_Action.this.rebuildAll, false);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GenerateModel", t);

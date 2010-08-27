@@ -20,7 +20,6 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
@@ -131,12 +130,11 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
   }
 
   private void regenerate() {
-    GeneratorManager manager = myProject.getComponent(GeneratorManager.class);
     List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
     for (SModelDescriptor modelDescriptor : myTreeComponent.getIncludedModels()) {
       models.add(modelDescriptor);
     }
-    manager.generateModelsFromDifferentModules(ProjectOperationContext.get(myProject), models, GeneratorFacade.getInstance().getDefaultGenerationHandler(), true);
+    GeneratorFacade.getInstance().generateModels(ProjectOperationContext.get(myProject), models, GeneratorFacade.getInstance().getDefaultGenerationHandler(), true, false);
   }
 
   public void goToNext() {

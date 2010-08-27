@@ -24,7 +24,6 @@ import com.intellij.openapi.fileEditor.FileEditorManagerListener;
 import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.generator.NoCachesStrategy;
@@ -162,7 +161,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
               }
             });
 
-            myProject.getComponent(GeneratorManager.class).generateModelsFromDifferentModules(editor.getNodeEditor().getOperationContext(), models, GeneratorFacade.getInstance().getDefaultGenerationHandler(), true);
+            GeneratorFacade.getInstance().generateModels(editor.getNodeEditor().getOperationContext(), models, GeneratorFacade.getInstance().getDefaultGenerationHandler(), true, false);
           }
         });
     }

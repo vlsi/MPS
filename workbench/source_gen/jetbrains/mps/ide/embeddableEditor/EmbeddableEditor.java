@@ -25,6 +25,7 @@ import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.GenerationSettings;
+import jetbrains.mps.ide.generator.GeneratorFacade;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.Language;
@@ -136,7 +137,7 @@ public class EmbeddableEditor {
         return false;
       }
     };
-    boolean successful = manager.generateModelsWithProgressWindow(ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), myModel), myContext, handler, false, true);
+    boolean successful = GeneratorFacade.getInstance().generateModels(myContext, ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), myModel), handler, true, true);
     return new GenerationResult(myRootNode, myContext, myModel, handler, successful);
   }
 

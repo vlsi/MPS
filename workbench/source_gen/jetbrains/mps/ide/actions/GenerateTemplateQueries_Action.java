@@ -13,8 +13,8 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
+import jetbrains.mps.ide.generator.GeneratorFacade;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -92,8 +92,7 @@ public class GenerateTemplateQueries_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      GeneratorManager manager = GenerateTemplateQueries_Action.this.context.getComponent(GeneratorManager.class);
-      IGenerationHandler genHandler = manager.getDefaultGenerationHandler();
+      IGenerationHandler genHandler = GeneratorFacade.getInstance().getDefaultGenerationHandler();
       final Wrappers._T<List<SModelDescriptor>> models = new Wrappers._T<List<SModelDescriptor>>(ListSequence.fromList(new ArrayList<SModelDescriptor>()));
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
@@ -107,7 +106,7 @@ public class GenerateTemplateQueries_Action extends GeneratedAction {
           }
         }
       });
-      manager.generateModelsWithProgressWindow(models.value, GenerateTemplateQueries_Action.this.context, genHandler, false, true);
+      GeneratorFacade.getInstance().generateModels(GenerateTemplateQueries_Action.this.context, models.value, genHandler, true, false);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GenerateTemplateQueries", t);

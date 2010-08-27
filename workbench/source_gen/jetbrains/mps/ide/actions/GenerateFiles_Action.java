@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.generator.GeneratorFacade;
-import jetbrains.mps.generator.GeneratorManager;
 
 public class GenerateFiles_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -45,7 +44,7 @@ public class GenerateFiles_Action extends GeneratedAction {
         return false;
       }
     }
-    return GenerateFiles_Action.this.getGenManager() != null;
+    return true;
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
@@ -92,15 +91,11 @@ public class GenerateFiles_Action extends GeneratedAction {
           models.add(model);
         }
       }
-      GenerateFiles_Action.this.getGenManager().generateModelsFromDifferentModules(projectContext, models, GeneratorFacade.getInstance().getDefaultGenerationHandler(), true);
+      GeneratorFacade.getInstance().generateModels(projectContext, models, GeneratorFacade.getInstance().getDefaultGenerationHandler(), true, false);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GenerateFiles", t);
       }
     }
-  }
-
-  private GeneratorManager getGenManager() {
-    return GenerateFiles_Action.this.project.getComponent(GeneratorManager.class);
   }
 }

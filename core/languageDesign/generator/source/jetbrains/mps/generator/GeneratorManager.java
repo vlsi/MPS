@@ -15,271 +15,36 @@
  */
 package jetbrains.mps.generator;
 
-import com.intellij.ide.IdeEventQueue;
-import com.intellij.openapi.components.State;
-import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.progress.ProgressIndicator;
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.Task.Modal;
-import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.impl.GenerationController;
 import jetbrains.mps.generator.impl.GenerationProcessContext;
 import jetbrains.mps.generator.impl.GeneratorLoggerAdapter;
-import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.generator.GeneratorFacade;
-import jetbrains.mps.ide.messages.DefaultMessageHandler;
-import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.lang.generator.plugin.debug.GenerationTracer;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.messages.Message;
-import jetbrains.mps.messages.MessageKind;
-import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.util.Pair;
-import org.jetbrains.annotations.NotNull;
 
-import javax.swing.*;
 import java.util.ArrayList;
-import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Set;
 
-
-@State(
-  name = "GenerationManager",
-  storages = {
-    @Storage(
-      id = "other",
-      file = "$WORKSPACE_FILE$"
-    )
-  }
-)
 public class GeneratorManager {
-  public static final int AMOUNT_PER_MODEL = 100;
-  public static final int AMOUNT_PER_COMPILATION = 100;
 
-  public static final Logger LOG = Logger.getLogger(GeneratorManager.class);
+  private static final Logger LOG = Logger.getLogger(GeneratorManager.class);
 
   private final List<GenerationListener> myGenerationListeners = new ArrayList<GenerationListener>();
   private final List<CompilationListener> myCompilationListeners = new ArrayList<CompilationListener>();
 
-  private GenerationSettings mySettings;
   private Project myProject;
-  private boolean myGeneratingRequirements;
 
   public GeneratorManager(Project project, GenerationSettings settings) {
     myProject = project;
-    mySettings = settings;
-  }
-
-  public IGenerationHandler getDefaultGenerationHandler() {
-    return GeneratorFacade.getInstance().getDefaultGenerationHandler();
-  }
-
-
-  public void generateModelsFromDifferentModules(final IOperationContext operationContext,
-                                                 final List<SModelDescriptor> inputModels,
-                                                 final IGenerationHandler generationHandler,
-                                                 boolean rebuildAll) {
-    try {
-      GeneratorManager generatorManager = operationContext.getComponent(GeneratorManager.class);
-      List<Pair<SModelDescriptor, IOperationContext>> modelsWithContext = new ArrayList<Pair<SModelDescriptor, IOperationContext>>();
-      MessagesViewTool messagesTool = operationContext.getProject().getComponent(MessagesViewTool.class);
-      messagesTool.resetAutoscrollOption();
-      for (SModelDescriptor model : inputModels) {
-        assert model != null;
-        ModuleContext moduleContext = ModuleContext.create(model, operationContext.getProject());
-        if (moduleContext == null) {
-          messagesTool.add(new Message(MessageKind.WARNING, GeneratorManager.class, "Model " + model.getLongName() + " won't be generated"));
-          continue;
-        }
-        modelsWithContext.add(new Pair<SModelDescriptor, IOperationContext>(model, moduleContext));
-      }
-
-      generatorManager.generateModelsWithProgressWindow(
-        modelsWithContext,
-        generationHandler,
-        rebuildAll
-      );
-    } catch (Throwable t) {
-      LOG.error(t);
-    }
-  }
-
-  /**
-   * @return false if canceled
-   */
-  public boolean generateModelsWithProgressWindow(final List<SModelDescriptor> inputModels,
-                                                  final IOperationContext invocationContext,
-                                                  final IGenerationHandler generationHandler,
-                                                  boolean closeOnExit, boolean rebuildAll) {
-    List<Pair<SModelDescriptor, IOperationContext>> inputModelPairs = new ArrayList<Pair<SModelDescriptor, IOperationContext>>();
-
-    for (SModelDescriptor model : inputModels) {
-      inputModelPairs.add(new Pair<SModelDescriptor, IOperationContext>(model, invocationContext));
-    }
-
-    return generateModelsWithProgressWindow(
-      inputModelPairs,
-      generationHandler,
-      rebuildAll
-    );
-  }
-
-  /**
-   * @return false if canceled
-   */
-  private boolean generateModelsWithProgressWindow(final List<Pair<SModelDescriptor, IOperationContext>> inputModels,
-                                                   final IGenerationHandler generationHandler,
-                                                   final boolean rebuildAll
-  ) {
-    if (inputModels.isEmpty()) {
-      return true;
-    }
-
-    final IOperationContext invocationContext = inputModels.get(0).o2;
-    final DefaultMessageHandler messages = new DefaultMessageHandler(invocationContext.getProject());
-
-    // confirm saving transient models
-    final boolean saveTransientModels;
-    if (mySettings.isSaveTransientModels()) {
-      Object[] options = {
-        "Save Transient Models",
-        "Not this time",
-        "No, and cancel saving"};
-      int option = JOptionPane.showOptionDialog(invocationContext.getMainFrame(),
-        "Would you like to save transient models?",
-        "",
-        JOptionPane.YES_NO_CANCEL_OPTION,
-        JOptionPane.QUESTION_MESSAGE,
-        null,
-        options,
-        options[0]);
-
-      if (option == 0) {
-        saveTransientModels = true;
-      } else {
-        saveTransientModels = false;
-        if (option == 2) {
-          mySettings.setSaveTransientModels(false);
-        }
-        if (option == -1) {
-          return false;
-        }
-      }
-    } else {
-      saveTransientModels = false;
-    }
-
-    if (DumbService.getInstance(myProject).isDumb()) {
-      DumbService.getInstance(myProject).showDumbModeNotification("Generation is not available until indices are built.");
-      return false;
-    }
-
-    if (generateRequirements()) {
-      boolean wasSaveTransientModels = mySettings.isSaveTransientModels();
-      myGeneratingRequirements = true;
-      try {
-        final Set<SModelDescriptor> requirements = new LinkedHashSet<SModelDescriptor>();
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            for (Pair<SModelDescriptor, IOperationContext> inputModel : inputModels) {
-              requirements.addAll(getModelsToGenerateBeforeGeneration(inputModel.o1, inputModel.o2));
-            }
-          }
-        });
-
-        for (Pair<SModelDescriptor, IOperationContext> inputModel : inputModels) {
-          requirements.remove(inputModel.o1);
-        }
-
-        if (!requirements.isEmpty()) {
-          int result = 2;
-
-          if (mySettings.getGenerateRequirementsPolicy() == GenerationSettings.GenerateRequirementsPolicy.ASK) {
-            final StringBuffer message = new StringBuffer("The following models might be required for generation\n" +
-              "but aren't generated. Do you want to generate them?\n");
-            for (SModelDescriptor sm : requirements) {
-              message.append("\n").append(sm.getSModelReference().getSModelFqName());
-            }
-
-            if (IdeMain.getTestMode() != TestMode.CORE_TEST) {
-              DialogWrapper questionDialog = new GenerateRequirementsDialog(myProject, mySettings, message.toString());
-              questionDialog.show();
-              result = questionDialog.getExitCode();
-            }
-          } else {
-            result = 0; // Answer YES implicitly
-          }
-
-          // dialog cancelled
-          if (result == 1) return false;
-          // answer was "yes"
-          if (result == 0) {
-            generateModelsFromDifferentModules(invocationContext, new ArrayList<SModelDescriptor>(requirements), getDefaultGenerationHandler(), true);
-          }
-        }
-      } finally {
-        mySettings.setSaveTransientModels(wasSaveTransientModels);
-        myGeneratingRequirements = false;
-      }
-    }
-
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      public void run() {
-        SModelRepository.getInstance().saveAll();
-      }
-    });
-
-    showMessageView();
-    IdeEventQueue.getInstance().flushQueue();
-
-    final boolean[] result = new boolean[]{false};
-    ProgressManager.getInstance().run(new Modal(invocationContext.getProject(), "Generation", true) {
-      public void run(@NotNull ProgressIndicator progress) {
-        result[0] = generateModels(inputModels, generationHandler, progress, messages, saveTransientModels, rebuildAll);
-      }
-    });
-    return result[0];
-  }
-
-  private void showMessageView() {
-    MessagesViewTool messagesView = myProject.getComponent(MessagesViewTool.class);
-    if (messagesView != null) {
-      messagesView.openToolLater(false);
-    }
-  }
-
-  protected boolean generateRequirements() {
-    return !myGeneratingRequirements && mySettings.getGenerateRequirementsPolicy() != GenerationSettings.GenerateRequirementsPolicy.NEVER;
-  }
-
-  private List<SModelDescriptor> getModelsToGenerateBeforeGeneration(SModelDescriptor model, IOperationContext context) {
-    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
-
-    ModelGenerationStatusManager statusManager = ModelGenerationStatusManager.getInstance();
-    for (Generator g : GenerationPartitioningUtil.getAllPossiblyEngagedGenerators(model.getSModel(), context.getScope())) {
-      for (SModelDescriptor sm : g.getOwnModelDescriptors()) {
-        if (SModelStereotype.isUserModel(sm) && statusManager.generationRequired(sm, context.getProject(), NoCachesStrategy.createBuildCachesStrategy())) {
-          result.add(sm);
-        }
-      }
-
-      for (SModelDescriptor sm : g.getSourceLanguage().getAspectModelDescriptors()) {
-        if (statusManager.generationRequired(sm, context.getProject(), NoCachesStrategy.createBuildCachesStrategy())) {
-          result.add(sm);
-        }
-      }
-    }
-
-    return result;
   }
 
   /**
@@ -342,32 +107,33 @@ public class GeneratorManager {
     final boolean[] result = new boolean[1];
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        final Project project = inputModels.get(0).o2.getProject();
-        project.getComponent(TransientModelsModule.class).clearAll();
+        myProject.getComponent(TransientModelsModule.class).clearAll();
         if (!saveTransientModels) {
-          project.getComponent(GenerationTracer.class).discardTracing();
+          myProject.getComponent(GenerationTracer.class).discardTracing();
         }
 
         IGenerationTracer tracer = saveTransientModels
-          ? project.getComponent(GenerationTracer.class)
+          ? myProject.getComponent(GenerationTracer.class)
           : new NullGenerationTracer();
         tracer.startTracing();
 
         fireBeforeGeneration(inputModels);
 
-        GenerationProcessContext parameters = new GenerationProcessContext(
-          saveTransientModels, mySettings.isParallelGenerator(), mySettings.isStrictMode(), rebuildAll, mySettings.isGenerateDependencies(),
-          !mySettings.isShowWarnings() && !mySettings.isShowInfo(),
-          progress, tracer, mySettings.getNumberOfParallelThreads(), mySettings.getPerformanceTracingLevel());
+        GenerationSettings settings = GenerationSettings.getInstance();
 
-        GeneratorLoggerAdapter logger = new GeneratorLoggerAdapter(messages, mySettings.isShowInfo(), mySettings.isShowWarnings(), mySettings.isKeepModelsWithWarnings());
+        GenerationProcessContext parameters = new GenerationProcessContext(
+          saveTransientModels, settings.isParallelGenerator(), settings.isStrictMode(), rebuildAll, settings.isGenerateDependencies(),
+          !settings.isShowWarnings() && !settings.isShowInfo(),
+          progress, tracer, settings.getNumberOfParallelThreads(), settings.getPerformanceTracingLevel());
+
+        GeneratorLoggerAdapter logger = new GeneratorLoggerAdapter(messages, settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings());
 
         GenerationController gc = new GenerationController(parameters, new GeneratorNotifierHelper(), inputModels,  logger, generationHandler);
         result[0] = gc.generate();
         tracer.finishTracing();
         fireAfterGeneration(inputModels);
 
-        project.getComponent(TransientModelsModule.class).publishAll();
+        myProject.getComponent(TransientModelsModule.class).publishAll();
         CleanupManager.getInstance().cleanup();
       }
     });

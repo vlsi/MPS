@@ -23,7 +23,10 @@ import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
-import jetbrains.mps.generator.*;
+import jetbrains.mps.generator.GenerationSettings;
+import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.generator.ModelGenerationStatusManager;
+import jetbrains.mps.generator.NoCachesStrategy;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
@@ -31,6 +34,7 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import jetbrains.mps.ide.messages.MessagesViewTool;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.project.ModuleContext;
@@ -49,6 +53,7 @@ import java.util.Set;
  */
 public class GeneratorFacade {
 
+  private static final Logger LOG = Logger.getLogger(GeneratorFacade.class);
   private static final GeneratorFacade INSTANCE = new GeneratorFacade();
 
   private GeneratorFacade() {
@@ -59,18 +64,200 @@ public class GeneratorFacade {
   }
 
   public static ExtensionPointName<GenerationHandlerProvider> EP_NAME =
-      ExtensionPointName.create("com.intellij.mps.GenerationHandler");
+    ExtensionPointName.create("com.intellij.mps.GenerationHandler");
 
   public interface GenerationHandlerProvider {
-    
+
     IGenerationHandler create();
   }
 
   public IGenerationHandler getDefaultGenerationHandler() {
-    for(GenerationHandlerProvider hp : EP_NAME.getExtensions()) {
+    for (GenerationHandlerProvider hp : EP_NAME.getExtensions()) {
       return hp.create();
     }
 
     return new JavaGenerationHandler();
+  }
+
+  /**
+   * @return false if canceled
+   */
+  public boolean generateModels(final IOperationContext operationContext,
+                                final List<SModelDescriptor> inputModels,
+                                final IGenerationHandler generationHandler,
+                                boolean rebuildAll,
+                                boolean skipRequirementsGeneration) {
+    Project project = operationContext.getProject();
+    assert project != null : "Cannot generate models without a project";
+    
+    try {
+      List<Pair<SModelDescriptor, IOperationContext>> modelsWithContext = new ArrayList<Pair<SModelDescriptor, IOperationContext>>(inputModels.size());
+      MessagesViewTool messagesTool = project.getComponent(MessagesViewTool.class);
+      messagesTool.resetAutoscrollOption();
+      for (SModelDescriptor model : inputModels) {
+        assert model != null;
+        ModuleContext moduleContext = ModuleContext.create(model, project);
+        if (moduleContext == null) {
+          messagesTool.add(new Message(MessageKind.WARNING, GeneratorManager.class, "Model " + model.getLongName() + " won't be generated"));
+          continue;
+        }
+        modelsWithContext.add(new Pair<SModelDescriptor, IOperationContext>(model, moduleContext));
+      }
+
+      return generateModelsWithProgressWindow(project, modelsWithContext, generationHandler, rebuildAll, skipRequirementsGeneration);
+
+    } catch (Throwable t) {
+      LOG.error(t);
+      return false;
+    }
+  }
+
+  /**
+   * @return false if canceled
+   */
+  private boolean generateModelsWithProgressWindow(final Project project, final List<Pair<SModelDescriptor, IOperationContext>> inputModels,
+                                                   final IGenerationHandler generationHandler,
+                                                   final boolean rebuildAll, boolean skipRequirementsGeneration) {
+    
+    if (inputModels.isEmpty()) {
+      return true;
+    }
+
+    final IOperationContext invocationContext = inputModels.get(0).o2;
+    final DefaultMessageHandler messages = new DefaultMessageHandler(invocationContext.getProject());
+    final GenerationSettings settings = GenerationSettings.getInstance();
+
+    // confirm saving transient models
+    final boolean saveTransientModels;
+    if (settings.isSaveTransientModels()) {
+      Object[] options = {
+        "Save Transient Models",
+        "Not this time",
+        "No, and cancel saving"};
+      int option = JOptionPane.showOptionDialog(invocationContext.getMainFrame(),
+        "Would you like to save transient models?",
+        "",
+        JOptionPane.YES_NO_CANCEL_OPTION,
+        JOptionPane.QUESTION_MESSAGE,
+        null,
+        options,
+        options[0]);
+
+      if (option == 0) {
+        saveTransientModels = true;
+      } else {
+        saveTransientModels = false;
+        if (option == 2) {
+          settings.setSaveTransientModels(false);
+        }
+        if (option == -1) {
+          return false;
+        }
+      }
+    } else {
+      saveTransientModels = false;
+    }
+
+    if (DumbService.getInstance(project).isDumb()) {
+      DumbService.getInstance(project).showDumbModeNotification("Generation is not available until indices are built.");
+      return false;
+    }
+
+    if (!skipRequirementsGeneration && generateRequirements(settings)) {
+      boolean wasSaveTransientModels = settings.isSaveTransientModels();
+      try {
+        final Set<SModelDescriptor> requirements = new LinkedHashSet<SModelDescriptor>();
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            for (Pair<SModelDescriptor, IOperationContext> inputModel : inputModels) {
+              requirements.addAll(getModelsToGenerateBeforeGeneration(inputModel.o1, inputModel.o2));
+            }
+          }
+        });
+
+        for (Pair<SModelDescriptor, IOperationContext> inputModel : inputModels) {
+          requirements.remove(inputModel.o1);
+        }
+
+        if (!requirements.isEmpty()) {
+          int result = 2;
+
+          if (settings.getGenerateRequirementsPolicy() == GenerationSettings.GenerateRequirementsPolicy.ASK) {
+            final StringBuffer message = new StringBuffer("The following models might be required for generation\n" +
+              "but aren't generated. Do you want to generate them?\n");
+            for (SModelDescriptor sm : requirements) {
+              message.append("\n").append(sm.getSModelReference().getSModelFqName());
+            }
+
+            if (IdeMain.getTestMode() != TestMode.CORE_TEST) {
+              DialogWrapper questionDialog = new GenerateRequirementsDialog(project, settings, message.toString());
+              questionDialog.show();
+              result = questionDialog.getExitCode();
+            }
+          } else {
+            result = 0; // Answer YES implicitly
+          }
+
+          // dialog cancelled
+          if (result == 1) return false;
+          // answer was "yes"
+          if (result == 0) {
+            generateModels(invocationContext, new ArrayList<SModelDescriptor>(requirements), getDefaultGenerationHandler(), rebuildAll, true);
+          }
+        }
+      } finally {
+        settings.setSaveTransientModels(wasSaveTransientModels);
+      }
+    }
+
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      public void run() {
+        SModelRepository.getInstance().saveAll();
+      }
+    });
+
+    showMessageView(project);
+    IdeEventQueue.getInstance().flushQueue();
+
+    final boolean[] result = new boolean[]{false};
+    ProgressManager.getInstance().run(new Modal(invocationContext.getProject(), "Generation", true) {
+      public void run(@NotNull ProgressIndicator progress) {
+        GeneratorManager generatorManager = project.getComponent(GeneratorManager.class);
+        result[0] = generatorManager.generateModels(inputModels, generationHandler, progress, messages, saveTransientModels, rebuildAll);
+      }
+    });
+    return result[0];
+  }
+
+  private void showMessageView(Project project) {
+    MessagesViewTool messagesView = project.getComponent(MessagesViewTool.class);
+    if (messagesView != null) {
+      messagesView.openToolLater(false);
+    }
+  }
+
+  private boolean generateRequirements(GenerationSettings settings) {
+    return settings.getGenerateRequirementsPolicy() != GenerationSettings.GenerateRequirementsPolicy.NEVER;
+  }
+
+  private List<SModelDescriptor> getModelsToGenerateBeforeGeneration(SModelDescriptor model, IOperationContext context) {
+    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
+
+    ModelGenerationStatusManager statusManager = ModelGenerationStatusManager.getInstance();
+    for (Generator g : GenerationPartitioningUtil.getAllPossiblyEngagedGenerators(model.getSModel(), context.getScope())) {
+      for (SModelDescriptor sm : g.getOwnModelDescriptors()) {
+        if (SModelStereotype.isUserModel(sm) && statusManager.generationRequired(sm, context.getProject(), NoCachesStrategy.createBuildCachesStrategy())) {
+          result.add(sm);
+        }
+      }
+
+      for (SModelDescriptor sm : g.getSourceLanguage().getAspectModelDescriptors()) {
+        if (statusManager.generationRequired(sm, context.getProject(), NoCachesStrategy.createBuildCachesStrategy())) {
+          result.add(sm);
+        }
+      }
+    }
+
+    return result;
   }
 }

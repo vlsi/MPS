@@ -17,13 +17,12 @@ package jetbrains.mps.workbench.actions.generate;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.ide.actions.ModelCheckerTool_Tool;
+import jetbrains.mps.ide.generator.GeneratorFacade;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NotNull;
@@ -34,7 +33,6 @@ import java.util.List;
 public abstract class GenerateModelsAction extends BaseAction {
   private List<SModelDescriptor> myModels;
   private IOperationContext myContext;
-  private GeneratorManager myGenManager;
   private ProjectPluginManager myPluginManager;
   private final boolean myRebuildAll;
 
@@ -51,24 +49,24 @@ public abstract class GenerateModelsAction extends BaseAction {
     boolean checkSuccessful = myPluginManager.getTool(ModelCheckerTool_Tool.class)
       .checkModelsBeforeGenerationIfNeeded(myContext, (List<SModelDescriptor>)((List) myModels), new Runnable() {
         public void run() {
-          myGenManager.generateModelsFromDifferentModules(
+          GeneratorFacade.getInstance().generateModels(
             myContext,
             myModels,
             getGenerationHandler(),
-            myRebuildAll
-          );
+            myRebuildAll,
+            false);
         }
       });
     if (!(checkSuccessful)) {
       return;
     }
 
-    myGenManager.generateModelsFromDifferentModules(
+    GeneratorFacade.getInstance().generateModels(
       myContext,
       myModels,
       getGenerationHandler(),
-      myRebuildAll
-    );
+      myRebuildAll,
+      false);
   }
 
   protected void doUpdate(AnActionEvent e) {
@@ -87,7 +85,6 @@ public abstract class GenerateModelsAction extends BaseAction {
     if (!super.collectActionData(e)) return false;
     Project project = e.getData(MPSDataKeys.PROJECT);
     myPluginManager = project.getComponent(ProjectPluginManager.class);
-    myGenManager = project.getComponent(GeneratorManager.class);
     List<SModelDescriptor> models = e.getData(MPSDataKeys.MODELS);
 
     myModels = new ArrayList<SModelDescriptor>();

@@ -21,8 +21,6 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.generator.GenerationSettings;
-import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.generator.GeneratorFacade;
@@ -225,7 +223,7 @@ public class RefactoringFacade extends RefactoringProcessor {
         }
       });
       IOperationContext operationContext = ProjectOperationContext.get(refactoringContext.getSelectedProject());
-      new GeneratorManager(operationContext.getProject(), new GenerationSettings()).generateModelsFromDifferentModules(operationContext, descriptors, GeneratorFacade.getInstance().getDefaultGenerationHandler(), true);
+      GeneratorFacade.getInstance().generateModels(operationContext, descriptors, GeneratorFacade.getInstance().getDefaultGenerationHandler(), true, false);
     } finally {
       SNode.setNodeMemeberAccessModifier(null);
     }

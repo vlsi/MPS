@@ -21,8 +21,8 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.actions.AbstractVcsAction;
 import com.intellij.openapi.vcs.actions.VcsContext;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
+import jetbrains.mps.ide.generator.GeneratorFacade;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -38,7 +38,7 @@ public abstract class GenerateFromChangeListAction extends AbstractVcsAction {
     List<SModelDescriptor> modelsToGenerate = getModelsToGenerate(vcsContext);
     Project project = vcsContext.getProject();
     IOperationContext context = ProjectOperationContext.get(project);
-    project.getComponent(GeneratorManager.class).generateModelsFromDifferentModules(context, modelsToGenerate, getGenerationHandler(), true);
+    GeneratorFacade.getInstance().generateModels(context, modelsToGenerate, getGenerationHandler(), true, false);
   }
 
   protected abstract IGenerationHandler getGenerationHandler();
