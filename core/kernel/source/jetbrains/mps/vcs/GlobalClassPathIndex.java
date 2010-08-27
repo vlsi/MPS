@@ -49,7 +49,6 @@ public class GlobalClassPathIndex implements ApplicationComponent {
   private final Map<String, ArrayList<IModule>> myClassPathIndex = new HashMap<String, ArrayList<IModule>>();
   private final HashSet<String> myExcludedClassPath = new HashSet<String>();
   private boolean myIsChanged = false;
-  private final List<ExclusionChangedListener> myListeners = new ArrayList<ExclusionChangedListener>();
   private final ModuleRepositoryAdapter myModuleRepositoryListener = new ModuleRepositoryAdapter() {
     public void moduleAdded(IModule module) {
       if (module.isPackaged()) return;

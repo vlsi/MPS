@@ -24,12 +24,7 @@
 
 
   <application-components>
-    <component>
-      <implementation-class>jetbrains.mps.vcs.ExcludedFileIndexApplicationComponent</implementation-class>
-    </component>
-    <component>
-      <implementation-class>jetbrains.mps.vcs.GlobalClassPathIndex</implementation-class>
-    </component>
+
     <component>
       <implementation-class>jetbrains.mps.vcs.SuspiciousModelIndex</implementation-class>
     </component>
@@ -120,9 +115,6 @@
     <checkinHandlerFactory implementation="jetbrains.mps.vcs.OptimizeImportsCheckinHandlerFactory"/>
     <checkinHandlerFactory
             implementation="jetbrains.mps.ide.actions.ModelCheckerCheckinHandler$ModelCheckerCheckinHandlerFactory"/>
-
-    <projectService serviceInterface="com.intellij.openapi.vcs.impl.ExcludedFileIndex"
-                    serviceImplementation="jetbrains.mps.vcs.MPSExcludedFileIndex"/>
 
     <projectService serviceInterface="com.intellij.openapi.vcs.impl.DefaultVcsRootPolicy"
                       serviceImplementation="jetbrains.mps.vcs.ExtendedDefaultVcsRootPolicy"/>
