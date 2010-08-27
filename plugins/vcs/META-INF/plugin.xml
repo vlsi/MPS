@@ -23,8 +23,6 @@
   <idea-version since-build="3000"/>
 
 
-  <xi:include href="/componentSets/VCS.xml" xpointer="xpointer(/components/*)"/>
-
   <application-components>
     <component>
       <implementation-class>jetbrains.mps.vcs.ExcludedFileIndexApplicationComponent</implementation-class>
