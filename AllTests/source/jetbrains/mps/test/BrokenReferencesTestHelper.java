@@ -1,6 +1,7 @@
 package jetbrains.mps.test;
 
 import com.intellij.ide.IdeEventQueue;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.TestMain;
@@ -10,14 +11,16 @@ import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.generator.structure.ReferenceMacro_AnnotationLink;
+import jetbrains.mps.library.BaseLibraryManager.MyState;
+import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
-import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.messages.Message;
+import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
+import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
 import jetbrains.mps.smodel.persistence.def.ModelFileReadException;
@@ -85,6 +88,16 @@ public class BrokenReferencesTestHelper {
       extractModels(models, mod);
     }
     return checkModels(models);
+  }
+
+  private void doCleanUp() {
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
+        project.dispose(false);
+        IdeEventQueue.getInstance().flushQueue();
+        System.gc();
+      }
+    });
   }
 
   private List<String> checkModels(final Iterable<SModelDescriptor> models) {
@@ -247,25 +260,41 @@ public class BrokenReferencesTestHelper {
     IdeMain.setTestMode(TestMode.CORE_TEST);
     TestMain.configureMPS();
 
+    initLibs();
+    makeAll();
+
     com.intellij.openapi.project.Project ideaProject = ProjectManager.getInstance().getDefaultProject();
     File projectFile = FileUtil.createTmpFile();
     this.project = new MPSProject(ideaProject);
     project.init(projectFile, new ProjectDescriptor());
   }
 
-
-  public void doCleanUp() {
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+  private void makeAll() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        project.dispose(false);
-        IdeEventQueue.getInstance().flushQueue();
-        System.gc();
+        EmptyProgressIndicator indicator = new EmptyProgressIndicator();
+
+        ClassLoaderManager.getInstance().updateClassPath();
+
+        ModuleMaker maker = new ModuleMaker();
+        maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), indicator);
+
+        ClassLoaderManager.getInstance().reloadAll(indicator);
       }
     });
   }
 
+  private void initLibs() {
+    MyState state = LibraryManager.getInstance().getState();
+    LibraryManager.getInstance().loadState(state);
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        LibraryManager.getInstance().update();
+      }
+    });
+  }
 
-  protected void extractModels(Set<SModelDescriptor> modelDescriptors, MPSProject project) {
+  private void extractModels(Set<SModelDescriptor> modelDescriptors, MPSProject project) {
     List<SModelDescriptor> models = project.getProjectModels();
     for (Language language : project.getProjectLanguages()) {
       models.addAll(language.getOwnModelDescriptors());
@@ -280,7 +309,7 @@ public class BrokenReferencesTestHelper {
     }
   }
 
-  protected void extractModels(Collection<SModelDescriptor> modelsList, IModule m) {
+  private void extractModels(Collection<SModelDescriptor> modelsList, IModule m) {
     List<SModelDescriptor> ownedModels = m.getOwnModelDescriptors();
     for (SModelDescriptor d : ownedModels) {
       if (includeModel(d)) {
