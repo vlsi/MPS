@@ -10,6 +10,9 @@ import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
+import jetbrains.mps.library.BaseLibraryManager.MyState;
+import jetbrains.mps.library.LibraryManager;
+import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
@@ -25,6 +28,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.tester.DiffReporter;
 import jetbrains.mps.project.tester.TesterGenerationHandler;
+import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.AbstractClassLoader;
 import jetbrains.mps.util.Pair;
@@ -164,9 +168,38 @@ public class ProjectTestHelper {
     Logger.getRootLogger().setLevel(Level.FATAL);
     jetbrains.mps.logging.Logger.addLoggingHandler(new LoggingHandlerAdapter());
 
+    initLibs();
+    makeAll();
+    
     IdeMain.setTestMode(TestMode.CORE_TEST);
     TestMain.configureMPS();
   }
+
+  private void makeAll() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        EmptyProgressIndicator indicator = new EmptyProgressIndicator();
+
+        ClassLoaderManager.getInstance().updateClassPath();
+
+        ModuleMaker maker = new ModuleMaker();
+        maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), indicator);
+
+        ClassLoaderManager.getInstance().reloadAll(indicator);
+      }
+    });
+  }
+
+  private void initLibs() {
+    MyState state = LibraryManager.getInstance().getState();
+    LibraryManager.getInstance().loadState(state);
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        LibraryManager.getInstance().update();
+      }
+    });
+  }
+
 
   private void generate(MPSProject project) {
     GeneratorManager gm = project.getProject().getComponent(GeneratorManager.class);
@@ -303,7 +336,7 @@ public class ProjectTestHelper {
   }
 
 
-  protected List<Cycle> computeGenerationOrder(MPSProject project) {
+  private List<Cycle> computeGenerationOrder(MPSProject project) {
 
     final Map<IModule, List<SModelDescriptor>> moduleToModels = new LinkedHashMap<IModule, List<SModelDescriptor>>();
 
@@ -359,7 +392,7 @@ public class ProjectTestHelper {
   }
 
 
-  protected void extractModels(Set<SModelDescriptor> modelDescriptors, MPSProject project) {
+  private void extractModels(Set<SModelDescriptor> modelDescriptors, MPSProject project) {
     List<SModelDescriptor> models = project.getProjectModels();
     for (Language language : project.getProjectLanguages()) {
       models.addAll(language.getOwnModelDescriptors());
@@ -385,7 +418,7 @@ public class ProjectTestHelper {
     List<File> getClassPath();
   }
 
-  protected static class SimpleModuleCycle implements Cycle {
+  private static class SimpleModuleCycle implements Cycle {
     private final Set<IModule> myModules;
     private final MPSProject myProject;
     private final Map<IModule, List<SModelDescriptor>> myModuleToModels;
