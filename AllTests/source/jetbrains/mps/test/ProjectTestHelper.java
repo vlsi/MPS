@@ -1,6 +1,7 @@
 package jetbrains.mps.test;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
+import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.compiler.CompilationResultAdapter;
@@ -26,11 +27,13 @@ import jetbrains.mps.make.dependencies.graph.IVertex;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.project.tester.DiffReporter;
 import jetbrains.mps.project.tester.TesterGenerationHandler;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.AbstractClassLoader;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.Pair;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
@@ -55,6 +58,8 @@ import java.util.*;
 public class ProjectTestHelper {
 
   private static ProjectTestHelper INSTANCE;
+
+  private MPSProject dummyProject;
 
   public static ProjectTestHelper getInstance () {
     if (INSTANCE == null) {
@@ -168,11 +173,25 @@ public class ProjectTestHelper {
     Logger.getRootLogger().setLevel(Level.FATAL);
     jetbrains.mps.logging.Logger.addLoggingHandler(new LoggingHandlerAdapter());
 
-    initLibs();
-    makeAll();
-    
     IdeMain.setTestMode(TestMode.CORE_TEST);
     TestMain.configureMPS();
+
+    initLibs();
+    makeAll();
+
+    this.dummyProject = createDummyProject();
+  }
+
+  private MPSProject createDummyProject() {
+    com.intellij.openapi.project.Project ideaProject = ProjectManager.getInstance().getDefaultProject();
+
+    File projectFile = FileUtil.createTmpFile();
+    final MPSProject project = new MPSProject(ideaProject);
+    project.init(projectFile, new ProjectDescriptor());
+
+    projectFile.deleteOnExit();
+
+    return project;
   }
 
   private void makeAll() {
@@ -202,7 +221,7 @@ public class ProjectTestHelper {
 
 
   private void generate(MPSProject project) {
-    GeneratorManager gm = project.getProject().getComponent(GeneratorManager.class);
+    GeneratorManager gm = dummyProject.getProject().getComponent(GeneratorManager.class);
 
     List<Cycle> order = computeGenerationOrder(project);
 
