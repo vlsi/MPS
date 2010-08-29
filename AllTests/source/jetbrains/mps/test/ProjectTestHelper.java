@@ -95,6 +95,10 @@ public class ProjectTestHelper {
     return myMessageHandler.getGenerationErrors();
   }
 
+  public List<String> getGenerationWarnings(Token tok) {
+    return myMessageHandler.getGenerationWarnings();
+  }
+
   public List<String> getDiffReport (Token tok) {
     return doCreateDiff();
   }
