@@ -6,6 +6,7 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.compiler.CompilationResultAdapter;
 import jetbrains.mps.compiler.JavaCompiler;
+import jetbrains.mps.generator.GenerationSettings;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
@@ -181,6 +182,9 @@ public class ProjectTestHelper {
 
     initLibs();
     makeAll();
+
+    GenerationSettings.getInstance().setParallelGenerator(false);
+    GenerationSettings.getInstance().setStrictMode(false);  
   }
 
   private MPSProject createDummyProject() {

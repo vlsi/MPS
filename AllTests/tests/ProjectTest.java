@@ -147,10 +147,10 @@ public class ProjectTest {
   @Test
   public void generateProject () throws Exception {
     HELPER.generate(token);
-    List<String> genWarns = HELPER.getGenerationWarnings(token);
-    Assert.assertTrue("Generation warnings:\n"+HELPER.formatErrors(genWarns),genWarns.isEmpty());
     List<String> genErrors = HELPER.getGenerationErrors(token);
     Assert.assertTrue("Generation errors:\n"+HELPER.formatErrors(genErrors),genErrors.isEmpty());
+    List<String> genWarns = HELPER.getGenerationWarnings(token);
+    Assert.assertTrue("Generation warnings:\n"+HELPER.formatErrors(genWarns),genWarns.isEmpty());
   }
 
   @Test
