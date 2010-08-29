@@ -59,7 +59,6 @@ public class ProjectTestHelper {
 
   private static ProjectTestHelper INSTANCE;
 
-  private MPSProject dummyProject;
 
   public static ProjectTestHelper getInstance () {
     if (INSTANCE == null) {
@@ -178,8 +177,6 @@ public class ProjectTestHelper {
 
     initLibs();
     makeAll();
-
-    this.dummyProject = createDummyProject();
   }
 
   private MPSProject createDummyProject() {
@@ -221,7 +218,7 @@ public class ProjectTestHelper {
 
 
   private void generate(MPSProject project) {
-    GeneratorManager gm = dummyProject.getProject().getComponent(GeneratorManager.class);
+    GeneratorManager gm = project.getProject().getComponent(GeneratorManager.class);
 
     List<Cycle> order = computeGenerationOrder(project);
 
