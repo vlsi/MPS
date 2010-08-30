@@ -63,32 +63,20 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
   <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="28" />
-  <import index="2" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
-  <import index="4" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
-  <import index="5" modelUID="r:f144b87b-8ea5-4a8a-bb79-78fd4663e93c(jetbrains.mps.baseLanguage.util.plugin.run)" version="-1" />
-  <import index="6" modelUID="f:java_stub#java.awt.event(java.awt.event@java_stub)" version="-1" />
+  <maxImportIndex value="31" />
   <import index="7" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="8" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
-  <import index="9" modelUID="f:java_stub#javax.swing.text(javax.swing.text@java_stub)" version="-1" />
   <import index="10" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="11" modelUID="f:java_stub#com.intellij.execution.process(com.intellij.execution.process@java_stub)" version="-1" />
-  <import index="12" modelUID="f:java_stub#com.intellij.execution.impl(com.intellij.execution.impl@java_stub)" version="-1" />
-  <import index="13" modelUID="f:java_stub#com.intellij.openapi.actionSystem(com.intellij.openapi.actionSystem@java_stub)" version="-1" />
-  <import index="14" modelUID="r:af5efca5-3385-45cc-9441-f2124214c2e2(jetbrains.mps.debug.api.info)" version="-1" />
-  <import index="15" modelUID="f:java_stub#com.intellij.openapi.util(com.intellij.openapi.util@java_stub)" version="-1" />
   <import index="16" modelUID="f:java_stub#com.intellij.execution(com.intellij.execution@java_stub)" version="-1" />
   <import index="17" modelUID="f:java_stub#jetbrains.mps.debug.executable(jetbrains.mps.debug.executable@java_stub)" version="-1" />
   <import index="18" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
-  <import index="19" modelUID="f:java_stub#jetbrains.mps.nanoc.debug(jetbrains.mps.nanoc.debug@java_stub)" version="-1" />
-  <import index="21" modelUID="f:java_stub#jetbrains.mps.nanoc.debug.breakpoints(jetbrains.mps.nanoc.debug.breakpoints@java_stub)" version="-1" />
   <import index="22" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
-  <import index="23" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="24" modelUID="r:b9858adc-db8e-47c0-9e2e-ef86ca91a020(jetbrains.mps.baseLanguage.runConfigurations.runtime)" version="-1" />
-  <import index="25" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <import index="26" modelUID="f:java_stub#jetbrains.mps.vfs(jetbrains.mps.vfs@java_stub)" version="-1" />
-  <import index="27" modelUID="f:java_stub#jetbrains.mps.nanoc.plugin(jetbrains.mps.nanoc.plugin@java_stub)" version="-1" />
   <import index="28" modelUID="r:d65f98fc-790c-41b3-9614-f2de26685b21(jetbrains.mps.nanoc.structure)" version="-1" />
+  <import index="29" modelUID="r:6cbc34f0-fc44-4f49-8c51-c9b5f566fbee(jetbrains.mps.nanoc.debug.breakpoints)" version="-1" />
+  <import index="30" modelUID="r:59c1af20-1ec9-4ace-b5bb-9744d61a596b(jetbrains.mps.nanoc.debug)" version="-1" />
+  <import index="31" modelUID="r:6d35499a-6bbf-4603-99de-254d0c8b91cb(jetbrains.mps.nanoc.jetbrains.mps.nanoc.pluginutil)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.RunConfigurationTypeDeclaration:23" id="8325829821233548499">
     <property name="name:23" value="ExecutableFileRunConfiguration" />
     <property name="caption:23" value="Executable File" />
@@ -100,7 +88,7 @@
       <property name="name:23" value="GDB Location" />
       <node role="component:23" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2617013732192820098">
         <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="2617013732192820100">
-          <link role="baseMethodDeclaration:3" targetNodeId="27.~ProgramsLocationEditor.&lt;init&gt;()" resolveInfo="ProgramsLocationEditor" />
+          <link role="baseMethodDeclaration:3" targetNodeId="31.8247677264794237510" resolveInfo="ProgramsLocationEditor" />
         </node>
       </node>
       <node role="isModifiedBlock:23" type="jetbrains.mps.lang.plugin.structure.PreferencePageIsModifiedBlock:23" id="2617013732192790793">
@@ -120,7 +108,7 @@
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6573626905552596334">
                     <node role="operand:3" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_PreferencePage_component:23" id="6573626905552596333" />
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6573626905552596338">
-                      <link role="baseMethodDeclaration:3" targetNodeId="27.~ProgramsLocationEditor.getGCCLocation():java.lang.String" resolveInfo="getGCCLocation" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="31.8247677264794237591" resolveInfo="getGCCLocation" />
                     </node>
                   </node>
                 </node>
@@ -138,7 +126,7 @@
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2617013732192820295">
                     <node role="operand:3" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_PreferencePage_component:23" id="2617013732192820296" />
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2617013732192820297">
-                      <link role="baseMethodDeclaration:3" targetNodeId="27.~ProgramsLocationEditor.getGDBLocation():java.lang.String" resolveInfo="getGDBLocation" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="31.8247677264794237585" resolveInfo="getGDBLocation" />
                     </node>
                   </node>
                 </node>
@@ -153,7 +141,7 @@
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2617013732192820104">
               <node role="operand:3" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_PreferencePage_component:23" id="2617013732192820102" />
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2617013732192820108">
-                <link role="baseMethodDeclaration:3" targetNodeId="27.~ProgramsLocationEditor.setGDBLocation(java.lang.String):void" resolveInfo="setGDBLocation" />
+                <link role="baseMethodDeclaration:3" targetNodeId="31.8247677264794237551" resolveInfo="setGDBLocation" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2617013732192820109">
                   <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="2617013732192820110" />
                   <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyReference:23" id="2617013732192820111">
@@ -167,7 +155,7 @@
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6573626905552569799">
               <node role="operand:3" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_PreferencePage_component:23" id="6573626905552569800" />
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6573626905552569801">
-                <link role="baseMethodDeclaration:3" targetNodeId="27.~ProgramsLocationEditor.setGCCLocation(java.lang.String):void" resolveInfo="setGCCLocation" />
+                <link role="baseMethodDeclaration:3" targetNodeId="31.8247677264794237570" resolveInfo="setGCCLocation" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6573626905552569802">
                   <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="6573626905552569803" />
                   <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyReference:23" id="6573626905552569805">
@@ -186,7 +174,7 @@
               <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2617013732192820126">
                 <node role="operand:3" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_PreferencePage_component:23" id="2617013732192820125" />
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2617013732192820130">
-                  <link role="baseMethodDeclaration:3" targetNodeId="27.~ProgramsLocationEditor.getGDBLocation():java.lang.String" resolveInfo="getGDBLocation" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="31.8247677264794237585" resolveInfo="getGDBLocation" />
                 </node>
               </node>
               <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2617013732192820119">
@@ -199,8 +187,8 @@
           </node>
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6052833210962104368">
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6052833210962104370">
-              <link role="classConcept:3" targetNodeId="19.~ProgramsLocationUtil" resolveInfo="ProgramsLocationUtil" />
-              <link role="baseMethodDeclaration:3" targetNodeId="19.~ProgramsLocationUtil.setGdbLocation(java.lang.String):void" resolveInfo="setGdbLocation" />
+              <link role="classConcept:3" targetNodeId="30.3990508698139427192" resolveInfo="ProgramsLocationUtil" />
+              <link role="baseMethodDeclaration:3" targetNodeId="30.3990508698139427204" resolveInfo="setGdbLocation" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6052833210962104371">
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="6052833210962104372" />
                 <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyReference:23" id="6052833210962104373">
@@ -214,7 +202,7 @@
               <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6573626905552569816">
                 <node role="operand:3" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_PreferencePage_component:23" id="6573626905552569815" />
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6573626905552569820">
-                  <link role="baseMethodDeclaration:3" targetNodeId="27.~ProgramsLocationEditor.getGCCLocation():java.lang.String" resolveInfo="getGCCLocation" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="31.8247677264794237591" resolveInfo="getGCCLocation" />
                 </node>
               </node>
               <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6573626905552569808">
@@ -227,8 +215,8 @@
           </node>
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6573626905552596310">
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="992214184335533726">
-              <link role="baseMethodDeclaration:3" targetNodeId="19.~ProgramsLocationUtil.setGccLocation(java.lang.String):void" resolveInfo="setGccLocation" />
-              <link role="classConcept:3" targetNodeId="19.~ProgramsLocationUtil" resolveInfo="ProgramsLocationUtil" />
+              <link role="classConcept:3" targetNodeId="30.3990508698139427192" resolveInfo="ProgramsLocationUtil" />
+              <link role="baseMethodDeclaration:3" targetNodeId="30.3990508698139427220" resolveInfo="setGccLocation" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="992214184335533727">
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="992214184335533728" />
                 <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyReference:23" id="992214184335533729">
@@ -251,24 +239,24 @@
     <node role="afterReadBlock:23" type="jetbrains.mps.lang.plugin.structure.OnAfterReadBlock:23" id="6052833210962094408">
       <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6052833210962094409">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6052833210962104361">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6052833210962104363">
-            <link role="classConcept:3" targetNodeId="19.~ProgramsLocationUtil" resolveInfo="ProgramsLocationUtil" />
-            <link role="baseMethodDeclaration:3" targetNodeId="19.~ProgramsLocationUtil.setGdbLocation(java.lang.String):void" resolveInfo="setGdbLocation" />
-            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6052833210962104364">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="6052833210962104365" />
-              <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyReference:23" id="6052833210962104366">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6264910831237086872">
+            <link role="baseMethodDeclaration:3" targetNodeId="30.3990508698139427204" resolveInfo="setGdbLocation" />
+            <link role="classConcept:3" targetNodeId="30.3990508698139427192" resolveInfo="ProgramsLocationUtil" />
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6264910831237086873">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="6264910831237086874" />
+              <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyReference:23" id="6264910831237086875">
                 <link role="member:23" targetNodeId="2617013732192775194" resolveInfo="myGDBLocation" />
               </node>
             </node>
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6573626905552569790">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="992214184335551221">
-            <link role="baseMethodDeclaration:3" targetNodeId="19.~ProgramsLocationUtil.setGccLocation(java.lang.String):void" resolveInfo="setGccLocation" />
-            <link role="classConcept:3" targetNodeId="19.~ProgramsLocationUtil" resolveInfo="ProgramsLocationUtil" />
-            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="992214184335551222">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="992214184335551223" />
-              <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyReference:23" id="992214184335551224">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6264910831237086876">
+            <link role="baseMethodDeclaration:3" targetNodeId="30.3990508698139427220" resolveInfo="setGccLocation" />
+            <link role="classConcept:3" targetNodeId="30.3990508698139427192" resolveInfo="ProgramsLocationUtil" />
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6264910831237086877">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="6264910831237086878" />
+              <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyReference:23" id="6264910831237086879">
                 <link role="member:23" targetNodeId="6573626905552569795" resolveInfo="myGCCLocation" />
               </node>
             </node>
@@ -285,7 +273,7 @@
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="4211204866430939956">
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="4211204866430939958">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="4211204866431007103">
-                <link role="baseMethodDeclaration:3" targetNodeId="21.~GDBBreakpoint.&lt;init&gt;(jetbrains.mps.smodel.SNodePointer,com.intellij.openapi.project.Project)" resolveInfo="GDBBreakpoint" />
+                <link role="baseMethodDeclaration:3" targetNodeId="29.3990508698139426936" resolveInfo="GDBBreakpoint" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="4211204866431007104">
                   <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="4211204866431007106">
                     <link role="baseMethodDeclaration:3" targetNodeId="22.~SNodePointer.&lt;init&gt;(jetbrains.mps.smodel.SNode)" resolveInfo="SNodePointer" />
@@ -323,8 +311,8 @@
                 <link role="classifier:3" targetNodeId="7.~File" resolveInfo="File" />
               </node>
               <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3379524366802153362">
-                <link role="classConcept:3" targetNodeId="27.~NanocConfigRunPreparationUtil" resolveInfo="NanocConfigRunPreparationUtil" />
-                <link role="baseMethodDeclaration:3" targetNodeId="27.~NanocConfigRunPreparationUtil.prepare(java.lang.String,java.lang.String):java.io.File" resolveInfo="prepare" />
+                <link role="classConcept:3" targetNodeId="31.8247677264794237122" resolveInfo="NanocConfigRunPreparationUtil" />
+                <link role="baseMethodDeclaration:3" targetNodeId="31.8247677264794237128" resolveInfo="prepare" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3379524366802153363">
                   <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="3379524366802153364" />
                   <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyReference:23" id="3379524366802153365">
@@ -523,7 +511,7 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="7243599812675958047">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2926840360797444247">
             <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="2926840360797444357">
-              <link role="baseMethodDeclaration:3" targetNodeId="19.~CppGDBCreator.&lt;init&gt;(java.lang.String,java.lang.String)" resolveInfo="CppGDBCreator" />
+              <link role="baseMethodDeclaration:3" targetNodeId="30.3990508698139426424" resolveInfo="CppGDBCreator" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1639420095593094527">
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="1639420095593094528" />
                 <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyReference:23" id="1639420095593094529">

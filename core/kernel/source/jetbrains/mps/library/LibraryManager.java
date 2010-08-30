@@ -21,13 +21,15 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.util.xmlb.annotations.Transient;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.stubs.StubReloadManager;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.samples.WorkbenchPathManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
+import jetbrains.mps.stubs.StubReloadManager;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.annotations.Nls;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.util.*;
@@ -53,7 +55,7 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
   private ClassLoaderManager myClm;
 
 
-  public LibraryManager(MPSModuleRepository repo, ModelConstraintsManager cm, StubReloadManager loader,ClassLoaderManager clm) {
+  public LibraryManager(MPSModuleRepository repo, ModelConstraintsManager cm, StubReloadManager loader, ClassLoaderManager clm) {
     super(repo);
     myClm = clm;
   }
@@ -79,7 +81,7 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
           readCustomBuiltInLibraries();
           updatePredefinedLibraries();
           update();
-          ClassLoaderManager.getInstance().updateClassPath();          
+          ClassLoaderManager.getInstance().updateClassPath();
         }
       });
     } finally {
@@ -124,6 +126,7 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
   public Set<Library> getLibraries() {
     Set<Library> result = super.getLibraries();
     result.add(new PredefinedLibrary("mps.bootstrap") {
+      @NotNull
       public String getPath() {
         return PathManager.getBootstrapPath();
       }
@@ -134,26 +137,35 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
       }
     });
     result.add(new PredefinedLibrary("mps.platform") {
+      @NotNull
       public String getPath() {
         return PathManager.getPlatformPath();
       }
     });
     result.add(new PredefinedLibrary("mps.workbench") {
+      @NotNull
       public String getPath() {
         return PathManager.getWorkbenchPath();
       }
     });
     result.add(new PredefinedLibrary("mps.app") {
+      @NotNull
       public String getPath() {
         return PathManager.getAppPath();
       }
     });
-    result.add(new PredefinedLibrary("mps.samples") {
-      public String getPath() {
-        return PathManager.getSamplesPath();
-      }
-    });
+
+    final String samplesPath = WorkbenchPathManager.getSamplesPath();
+    if (samplesPath != null) {
+      result.add(new PredefinedLibrary("mps.samples") {
+        @NotNull
+        public String getPath() {
+          return samplesPath;
+        }
+      });
+    }
     result.add(new PredefinedLibrary("mps.languages") {
+      @NotNull
       public String getPath() {
         return PathManager.getLanguagesPath();
       }

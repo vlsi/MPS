@@ -366,7 +366,6 @@
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
-    <path path="plugins/vcs/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -488,7 +487,6 @@
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
-    <path path="plugins/vcs/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -609,7 +607,6 @@
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
-    <path path="plugins/vcs/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -730,7 +727,6 @@
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
-    <path path="plugins/vcs/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -851,7 +847,6 @@
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
-    <path path="plugins/vcs/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -972,7 +967,6 @@
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
-    <path path="plugins/vcs/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -1094,7 +1088,6 @@
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
-    <path path="plugins/vcs/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -1222,7 +1215,6 @@
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
-    <path path="plugins/vcs/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -1343,7 +1335,6 @@
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
-    <path path="plugins/vcs/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -1464,7 +1455,6 @@
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
-    <path path="plugins/vcs/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -1585,7 +1575,6 @@
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
-    <path path="plugins/vcs/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -1708,7 +1697,6 @@
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
-    <path path="plugins/vcs/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -1830,7 +1818,6 @@
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
-    <path path="plugins/vcs/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -1957,7 +1944,6 @@
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
-    <path path="plugins/vcs/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -2080,7 +2066,6 @@
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
-    <path path="plugins/vcs/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -2206,7 +2191,6 @@
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
-    <path path="plugins/vcs/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -2343,7 +2327,6 @@
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
-    <path path="plugins/vcs/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -2476,7 +2459,6 @@
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
-    <path path="plugins/vcs/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -2608,7 +2590,6 @@
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
-    <path path="plugins/vcs/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -2739,7 +2720,6 @@
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
-    <path path="plugins/vcs/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -2860,7 +2840,6 @@
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
-    <path path="plugins/vcs/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -2981,7 +2960,6 @@
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
-    <path path="plugins/vcs/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -3102,7 +3080,6 @@
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
-    <path path="plugins/vcs/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -3230,7 +3207,6 @@
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
-    <path path="plugins/vcs/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -3356,7 +3332,6 @@
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
-    <path path="plugins/vcs/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -3477,7 +3452,6 @@
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
-    <path path="plugins/vcs/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -3598,7 +3572,6 @@
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
-    <path path="plugins/vcs/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -3720,7 +3693,6 @@
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
-    <path path="plugins/vcs/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -3857,7 +3829,6 @@
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
-    <path path="plugins/vcs/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -3989,7 +3960,6 @@
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
-    <path path="plugins/vcs/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -4122,7 +4092,6 @@
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
-    <path path="plugins/vcs/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -4251,7 +4220,6 @@
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
-    <path path="plugins/vcs/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -4374,7 +4342,6 @@
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
-    <path path="plugins/vcs/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -4498,7 +4465,6 @@
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
-    <path path="plugins/vcs/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -4619,7 +4585,6 @@
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
-    <path path="plugins/vcs/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -4741,7 +4706,6 @@
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
-    <path path="plugins/vcs/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -4864,7 +4828,6 @@
     <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
-    <path path="plugins/vcs/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -4986,7 +4949,6 @@
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="platform/ypath/solutions/main/classes_gen" />
-    <path path="plugins/vcs/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
@@ -5109,7 +5071,6 @@
     <path path="platform/ypath/runtime/classes" />
     <path path="platform/ypath/solutions/main/classes_gen" />
     <path path="platform/ypath/solutions/test/classes_gen" />
-    <path path="plugins/vcs/classes" />
     <path path="workbench/classes" />
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />

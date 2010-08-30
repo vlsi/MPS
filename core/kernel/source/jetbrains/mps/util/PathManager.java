@@ -15,13 +15,13 @@
  */
 package jetbrains.mps.util;
 
-import jetbrains.mps.build.SamplesExtractor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.io.IOException;
@@ -49,12 +49,11 @@ public class PathManager {
   private static final String PROTOCOL_DELIMITER = ":";
 
   private static String ourHomePath;
-  private static String ourConfigPath;
   private static String ourHelpPath;
   private static String ourHelpIndexPath;
   private static String ourTutorialPath;
 
-  private static Pattern MODEL_UID_PATTERN = Pattern.compile(ModelPersistence.MODEL_UID + "=\"(.*?)\"");
+  private static final Pattern MODEL_UID_PATTERN = Pattern.compile(ModelPersistence.MODEL_UID + "=\"(.*?)\"");
 
   public static String getUserHome() {
     return System.getProperty("user.home");
@@ -115,10 +114,6 @@ public class PathManager {
     return new File(file, "build.number").exists();
   }
 
-  public static void setConfigPath(String newConfigPath) {
-    ourConfigPath = newConfigPath;
-  }
-
   public static String getHelpPath() {
     if (ourHelpPath != null) {
       return ourHelpPath;
@@ -153,11 +148,6 @@ public class PathManager {
 
   public static String getBootstrapPath() {
     return getHomePath() + File.separator + "core";
-  }
-
-  // TODO remove
-  public static String getSamplesPath() {
-    return SamplesExtractor.getInstance().getSamplesPath();
   }
 
   public static String getPlatformPath() {

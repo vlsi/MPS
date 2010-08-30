@@ -81,7 +81,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
   <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="24" />
+  <maxImportIndex value="25" />
   <import index="1" modelUID="r:896f64dd-7cfe-4bc4-b401-38e2a027e9ae(jetbrains.mps.build.custommps.structure)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.library(jetbrains.mps.library@java_stub)" version="-1" />
@@ -92,12 +92,12 @@
   <import index="13" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="16" modelUID="r:3440a6a7-d645-4c49-b3b3-9d0c36859a49(jetbrains.mps.build.custommpsInternal.structure)" version="-1" />
   <import index="17" modelUID="r:2b19badf-1dc2-46e6-ac2c-0d8d94be0fc1(jetbrains.mps.build.custommpsInternal.behavior)" version="-1" />
-  <import index="18" modelUID="f:java_stub#jetbrains.mps.build(jetbrains.mps.build@java_stub)" version="-1" />
   <import index="19" modelUID="r:3ffa047e-f111-477c-9b1d-805bb060825a(jetbrains.mps.build.distrib.structure)" version="0" />
   <import index="20" modelUID="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" version="21" />
   <import index="22" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="7" />
   <import index="23" modelUID="r:78df483d-4047-42ac-9c9b-cfaad8712277(jetbrains.mps.build.custommps.components)" version="-1" />
   <import index="24" modelUID="r:2d21a960-b27b-446c-b511-65afab987b27(jetbrains.mps.build.custommps.modules)" version="-1" />
+  <import index="25" modelUID="f:java_stub#jetbrains.mps.samples(jetbrains.mps.samples@java_stub)" version="-1" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration:2" id="1233155140772">
     <property name="name:2" value="main" />
@@ -690,7 +690,7 @@
         </node>
         <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Folder:7" id="1234971270457">
           <property name="file:7" value="false" />
-          <property name="excludes:7" value="**/*.zip, ideaIntegration/**, vcs/**" />
+          <property name="excludes:7" value="**/*.zip, ideaIntegration/**, vcs/**, samples/**" />
           <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.CreateIfNotExists" id="1805858203209349734">
             <property name="artifactName" value="plugins/ideIntegration.jar" />
             <node role="create" type="jetbrains.mps.build.packaging.structure.BlockReference:7" id="1805858203209349735">
@@ -701,6 +701,12 @@
             <property name="artifactName" value="plugins/vcs.jar" />
             <node role="create" type="jetbrains.mps.build.packaging.structure.BlockReference:7" id="2122546960488253147">
               <link role="block:7" targetNodeId="23.2122546960488253148" resolveInfo="vcs.jar" />
+            </node>
+          </node>
+          <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.CreateIfNotExists" id="8292782121805372919">
+            <property name="artifactName" value="plugins/samples.jar" />
+            <node role="create" type="jetbrains.mps.build.packaging.structure.BlockReference:7" id="8292782121805372920">
+              <link role="block:7" targetNodeId="23.8292782121805370750" resolveInfo="samples.jar" />
             </node>
           </node>
           <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="1234971270458">
@@ -734,8 +740,8 @@
                   <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="251121617073503092">
                     <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="251121617073503093">
                       <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="251121617073503094">
-                        <link role="classifier:3" targetNodeId="18.~SamplesExtractor" resolveInfo="SamplesExtractor" />
-                        <link role="variableDeclaration:3" targetNodeId="18.~SamplesExtractor.SAMPLES_IN_USER_HOME_DIR" resolveInfo="SAMPLES_IN_USER_HOME_DIR" />
+                        <link role="classifier:3" targetNodeId="25.~SamplesInfo" resolveInfo="SamplesInfo" />
+                        <link role="variableDeclaration:3" targetNodeId="25.~SamplesInfo.SAMPLES_IN_USER_HOME_DIR" resolveInfo="SAMPLES_IN_USER_HOME_DIR" />
                       </node>
                     </node>
                   </node>
@@ -751,8 +757,8 @@
                 <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1240993720608">
                   <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1240993724334">
                     <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1240993724335">
-                      <link role="classifier:3" targetNodeId="18.~SamplesExtractor" resolveInfo="SamplesExtractor" />
-                      <link role="variableDeclaration:3" targetNodeId="18.~SamplesExtractor.SAMPLES_IN_MPS_HOME_ZIP" resolveInfo="SAMPLES_IN_MPS_HOME_ZIP" />
+                      <link role="classifier:3" targetNodeId="25.~SamplesInfo" resolveInfo="SamplesInfo" />
+                      <link role="variableDeclaration:3" targetNodeId="25.~SamplesInfo.SAMPLES_IN_MPS_HOME_ZIP" resolveInfo="SAMPLES_IN_MPS_HOME_ZIP" />
                     </node>
                   </node>
                 </node>
@@ -786,8 +792,8 @@
                           <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1240994139295">
                             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1240994152006">
                               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1240994152007">
-                                <link role="classifier:3" targetNodeId="18.~SamplesExtractor" resolveInfo="SamplesExtractor" />
-                                <link role="variableDeclaration:3" targetNodeId="18.~SamplesExtractor.SAMPLES_IN_MPS_HOME_ZIP" resolveInfo="SAMPLES_IN_MPS_HOME_ZIP" />
+                                <link role="classifier:3" targetNodeId="25.~SamplesInfo" resolveInfo="SamplesInfo" />
+                                <link role="variableDeclaration:3" targetNodeId="25.~SamplesInfo.SAMPLES_IN_MPS_HOME_ZIP" resolveInfo="SAMPLES_IN_MPS_HOME_ZIP" />
                               </node>
                             </node>
                           </node>
@@ -3347,8 +3353,8 @@
             <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1241015690727">
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1241015702100">
                 <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1241015702101">
-                  <link role="classifier:3" targetNodeId="18.~SamplesExtractor" resolveInfo="SamplesExtractor" />
-                  <link role="variableDeclaration:3" targetNodeId="18.~SamplesExtractor.SAMPLES_IN_USER_HOME_DIR" resolveInfo="SAMPLES_IN_USER_HOME_DIR" />
+                  <link role="classifier:3" targetNodeId="25.~SamplesInfo" resolveInfo="SamplesInfo" />
+                  <link role="variableDeclaration:3" targetNodeId="25.~SamplesInfo.SAMPLES_IN_USER_HOME_DIR" resolveInfo="SAMPLES_IN_USER_HOME_DIR" />
                 </node>
               </node>
             </node>
