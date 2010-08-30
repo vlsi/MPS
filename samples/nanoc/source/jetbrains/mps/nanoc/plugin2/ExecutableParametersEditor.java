@@ -1,4 +1,4 @@
-package jetbrains.mps.nanoc.plugin;
+package jetbrains.mps.nanoc.plugin2;
 
 import javax.swing.JPanel;
 import javax.swing.JTextField;

@@ -21,7 +21,7 @@ import jetbrains.mps.nanoc.debug.events.GDBEventsHandler;
 import jetbrains.mps.nanoc.debug.requests.BreakpointRequestor;
 import jetbrains.mps.debug.executable.SimpleConsoleProcessHandler;
 import jetbrains.mps.debug.api.info.StacktraceUtil;
-import jetbrains.mps.nanoc.plugin.NanocConfigRunPreparationUtil;
+import jetbrains.mps.nanoc.plugin2.NanocConfigRunPreparationUtil;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 

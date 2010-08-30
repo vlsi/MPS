@@ -1,4 +1,4 @@
-package jetbrains.mps.nanoc.plugin;
+package jetbrains.mps.nanoc.plugin2;
 
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
