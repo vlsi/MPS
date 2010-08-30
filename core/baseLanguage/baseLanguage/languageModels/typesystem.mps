@@ -14373,6 +14373,35 @@
     <property name="overrides:3" value="true" />
     <property name="package:3" value="string" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1225276837986">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateComparableEquationStatement:3" id="6247012736950760408">
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="6247012736950760409">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="6247012736950760410">
+            <node role="term:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6247012736950760411">
+              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="6247012736950885303">
+                <link role="applicableNode:3" targetNodeId="1225276837994" resolveInfo="nodeToCheck" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="6247012736950760413">
+                <link role="link:16" targetNodeId="1.1081773367580:3" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="6247012736950760414">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="6247012736950760415">
+            <node role="term:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6247012736950760416">
+              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="6247012736950885302">
+                <link role="applicableNode:3" targetNodeId="1225276837994" resolveInfo="nodeToCheck" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="6247012736950760418">
+                <link role="link:16" targetNodeId="1.1081773367579:3" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="nodeToCheck:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="6247012736950885304">
+          <link role="applicableNode:3" targetNodeId="1225276837994" resolveInfo="nodeToCheck" />
+        </node>
+      </node>
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="1225276837987">
         <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1225276837988">
           <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1225276837989">
@@ -14398,6 +14427,35 @@
     <property name="overrides:3" value="true" />
     <property name="package:3" value="string" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1225276837996">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateComparableEquationStatement:3" id="6247012736950885309">
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="6247012736950885310">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="6247012736950885311">
+            <node role="term:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6247012736950885312">
+              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="6247012736950885313">
+                <link role="applicableNode:3" targetNodeId="1225276838004" resolveInfo="nodeToCheck" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="6247012736950885314">
+                <link role="link:16" targetNodeId="1.1081773367580:3" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="6247012736950885315">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="6247012736950885316">
+            <node role="term:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6247012736950885317">
+              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="6247012736950885318">
+                <link role="applicableNode:3" targetNodeId="1225276838004" resolveInfo="nodeToCheck" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="6247012736950885319">
+                <link role="link:16" targetNodeId="1.1081773367579:3" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="nodeToCheck:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="6247012736950885320">
+          <link role="applicableNode:3" targetNodeId="1225276838004" resolveInfo="nodeToCheck" />
+        </node>
+      </node>
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="1225276837997">
         <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1225276837998">
           <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1225276837999">
