@@ -31,6 +31,7 @@ import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.*;
+import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.awt.image.WritableRaster;
 import java.awt.event.MouseAdapter;
@@ -79,6 +80,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
 
   private int myAscent = -1;
   private int myDescent = -1;
+  private MouseListener myUnfoldCollectionMouseListener;
 
   @SuppressWarnings({"UnusedDeclaration"})
   public static EditorCell_Collection createVertical(EditorContext editorContext, SNode node, EditorCellListHandler handler) {
@@ -448,10 +450,9 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
       editorComponent.clearSelectionStack();
       editorComponent.pushSelection(getFoldedCell());
     }
-    editorComponent.addMouseListener(new MouseAdapter() {
+    editorComponent.addMouseListener(myUnfoldCollectionMouseListener = new MouseAdapter() {
       public void mouseClicked(MouseEvent e) {
         if (getBounds().contains(e.getPoint())) {
-          editorComponent.removeMouseListener(this);
           editorComponent.clearSelectionStack();
           editorComponent.pushSelection(getFoldedCell());
           unfold();
@@ -502,6 +503,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     setFolded(false);
 
     EditorComponent editor = getEditor();
+    editor.removeMouseListener(myUnfoldCollectionMouseListener);
     if (isDescendantCellSelected(editor)) {
       EditorCell deepestSelected = findChild(CellFinders.FIRST_SELECTABLE_LEAF);
       editor.clearSelectionStack();
