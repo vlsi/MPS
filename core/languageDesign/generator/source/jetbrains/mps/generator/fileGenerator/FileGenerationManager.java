@@ -17,10 +17,6 @@ package jetbrains.mps.generator.fileGenerator;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.newvfs.RefreshQueue;
-import com.intellij.openapi.vfs.newvfs.RefreshSession;
 import jetbrains.mps.baseLanguage.textGen.BLDependenciesCache;
 import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
 import jetbrains.mps.baseLanguage.textGen.RootDependencies;
@@ -29,6 +25,7 @@ import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.generator.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.dependencies.GenerationRootDependencies;
+import jetbrains.mps.generator.fileGenerator.vcs.FileProcessor;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil.TextGenerationResult;
 import jetbrains.mps.generator.template.TemplateQueryContext;
@@ -38,8 +35,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.vcs.VcsMigrationUtil;
-import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -93,78 +88,20 @@ public class FileGenerationManager implements ApplicationComponent {
     }
 
     Set<File> generatedFiles = generateFiles(status, outputRoot, outputNodeContents);
-    processGeneratedFiles(status, outputRoot, context, generatedFiles, true);
+    FileProcessor.processVCSAddition(outputRoot, context, generatedFiles);
+    FileProcessor.processVCSDeletion(status.getInputModel(), outputRoot, generatedFiles);
 
     File cachesOutput = FileGenerationUtil.getCachesOutputDir(outputRoot);
     Set<File> generatedCaches = generateCaches(status, cachesOutput);
-    processGeneratedFiles(status, cachesOutput, context, generatedCaches, true);
+    FileProcessor.processVCSAddition(cachesOutput, context, generatedCaches);
+    FileProcessor.processVCSDeletion(status.getInputModel(), cachesOutput, generatedFiles);
 
     return ok;
   }
 
   public void handleEmptyOutput(IOperationContext context, GenerationStatus status, File outputDir) {
-    cleanUpDefaultOutputDir(status, outputDir, context);
+    FileProcessor.processVCSDeletion(status.getInputModel(), outputDir, new HashSet<File>(0));
     touchOutputDir(status, outputDir);
-  }
-
-  private void processGeneratedFiles(GenerationStatus status, final File outputRoot, final IOperationContext context,
-                                     Set<File> generatedFiles, boolean cleanUp) {
-    List<VirtualFile> filesToAdd = new ArrayList<VirtualFile>(generatedFiles.size());
-    for (File f : generatedFiles) {
-      VirtualFile file = VFileSystem.refreshAndGetFile(f);
-      assert file != null : "Can not find virtual file for " + f;
-      filesToAdd.add(file);
-    }
-    VcsMigrationUtil.getHandler().addFilesToVcs(filesToAdd, false, false);
-
-    ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
-      public void run() {
-        final VirtualFile outputRootVirtualFile = VFileSystem.refreshAndGetFile(outputRoot);
-
-        RefreshSession session = RefreshQueue.getInstance().createSession(true, true, new Runnable() {
-          public void run() {
-            VcsDirtyScopeManager.getInstance(context.getProject()).filesDirty(null, Arrays.asList(outputRootVirtualFile));
-          }
-        });
-        session.addAllFiles(Arrays.asList(outputRootVirtualFile));
-        session.launch();
-      }
-    });
-
-    if (cleanUp) {
-      cleanUp(status.getInputModel(), outputRoot, generatedFiles);
-    }
-  }
-
-
-  private void cleanUpDefaultOutputDir(GenerationStatus status, File outputDir, IOperationContext context) {
-    cleanUp(status.getInputModel(), outputDir, new HashSet<File>(0));
-  }
-
-  private void cleanUp(
-    SModel inputModel,
-    File outputDir,
-    Set<File> generatedFiles) {
-
-    Set<File> directories = new HashSet<File>();
-    for (File f : generatedFiles) {
-      directories.add(f.getParentFile());
-    }
-    directories.add(FileGenerationUtil.getDefaultOutputDir(inputModel, outputDir));
-
-    // clear garbage
-    List<File> filesToDelete = new ArrayList<File>();
-    for (File dir : directories) {
-      File[] files = dir.listFiles();
-      if (files == null) continue;
-      for (File outputDirectoryFile : files) {
-        if (outputDirectoryFile.isDirectory()) continue;
-        if (generatedFiles.contains(outputDirectoryFile)) continue;
-        filesToDelete.add(outputDirectoryFile);
-      }
-    }
-
-    VcsMigrationUtil.deleteFromDiskAndRemoveFromVcs(filesToDelete, false);
   }
 
   private boolean generateText(IOperationContext context, GenerationStatus status, Map<SNode, String> outputNodeContents) {
