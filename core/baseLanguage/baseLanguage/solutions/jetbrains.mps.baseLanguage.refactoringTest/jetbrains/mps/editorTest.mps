@@ -5805,12 +5805,12 @@
                   <node role="typeParameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8547191361978288769">
                     <link role="classifier:3" targetNodeId="1.~Integer" resolveInfo="Integer" />
                   </node>
-                  <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="2576168041330184814">
+                  <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="2808229838471175003">
                     <property name="isLastPosition:4" value="true" />
                     <property name="useLabelSelection:4" value="true" />
                     <property name="selectionStart:4" value="1" />
                     <property name="selectionEnd:4" value="1" />
-                    <property name="cellId:4" value="Constant_msf9u8_g0a" />
+                    <property name="cellId:4" value="Constant_msf9u8_a1a" />
                   </node>
                 </node>
               </node>
@@ -5955,12 +5955,12 @@
                   <node role="typeParameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8547191361978793011">
                     <link role="classifier:3" targetNodeId="1.~Integer" resolveInfo="Integer" />
                   </node>
-                  <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="2576168041330184817">
-                    <property name="isLastPosition:4" value="true" />
+                  <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="2808229838471166685">
+                    <property name="caretPosition:4" value="0" />
                     <property name="useLabelSelection:4" value="true" />
-                    <property name="selectionStart:4" value="1" />
-                    <property name="selectionEnd:4" value="1" />
-                    <property name="cellId:4" value="Constant_msf9u8_h0" />
+                    <property name="selectionStart:4" value="0" />
+                    <property name="selectionEnd:4" value="0" />
+                    <property name="cellId:4" value="Constant_msf9u8_h1a" />
                   </node>
                 </node>
               </node>
