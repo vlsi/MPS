@@ -77,7 +77,7 @@ public class ProjectTest {
       // Applications tests
       {"/core/kernel/kernelSolution/kernel.mpr"},
       {"/core/debug/debugProject/debugProject.mpr"},
-      {"/core/traceinfo/traceInfo.mpr"},
+      {"/core/kernel/traceinfo/traceInfo.mpr"},
       {"/core/kernel/testMake/testMake.mpr"},
       {"/core/languageDesign/mps-lite/mps-lite.mpr"},
       {"/platform/quickQueryLanguage/quickQueryLanguage.mpr"},
