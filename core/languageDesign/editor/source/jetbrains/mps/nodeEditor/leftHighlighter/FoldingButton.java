@@ -7,6 +7,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.Color;
+import java.awt.Component;
+import java.awt.Cursor;
 import java.awt.Graphics;
 
 /**
@@ -53,7 +55,7 @@ class FoldingButton {
   }
 
   private Color getBorderColor() {
-    return myMouseOver ? Color.blue : Color.gray;
+    return myMouseOver ? Color.black : Color.gray;
   }
 
   void paintFeedback(Graphics g) {
@@ -95,7 +97,6 @@ class FoldingButton {
       g.setColor(borderColor);
       g.drawRect(-HALF_WIDTH, (myY1 + myY2) / 2 - HALF_WIDTH, HALF_WIDTH * 2, HALF_WIDTH * 2);
 
-      g.setColor(Color.black);
       g.drawLine(-HALF_WIDTH / 2, (myY1 + myY2) / 2, HALF_WIDTH / 2, (myY1 + myY2) / 2);
       g.drawLine(0, (myY1 + myY2) / 2 + HALF_WIDTH / 2, 0, (myY1 + myY2) / 2 - HALF_WIDTH / 2);
     }
@@ -118,11 +119,13 @@ class FoldingButton {
     }
   }
 
-  void mouseEntered() {
+  void mouseEntered(Component component) {
+    component.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
     myMouseOver = true;
   }
 
-  void mouseExited() {
+  void mouseExited(Component component) {
+    component.setCursor(null);
     myMouseOver = false;
   }
 

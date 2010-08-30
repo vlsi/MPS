@@ -96,11 +96,11 @@ public class FoldingButtonsPainter extends AbstractFoldingAreaPainter {
       return;
     }
     if (myButtonUnderMouse != null) {
-      myButtonUnderMouse.mouseExited();
+      myButtonUnderMouse.mouseExited(getLeftHighlighter());
       repaint(myButtonUnderMouse);
     }
     if (newButtonUnderMouse != null) {
-      newButtonUnderMouse.mouseEntered();
+      newButtonUnderMouse.mouseEntered(getLeftHighlighter());
       repaint(newButtonUnderMouse);
     }
     myButtonUnderMouse = newButtonUnderMouse;
@@ -109,7 +109,7 @@ public class FoldingButtonsPainter extends AbstractFoldingAreaPainter {
   @Override
   public void mouseExited(MouseEvent e) {
     if (myButtonUnderMouse != null) {
-      myButtonUnderMouse.mouseExited();
+      myButtonUnderMouse.mouseExited(getLeftHighlighter());
       repaint(myButtonUnderMouse);
       myButtonUnderMouse = null;
     }
