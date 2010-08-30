@@ -72,20 +72,11 @@ public class FileGenerationManager implements ApplicationComponent {
   }
 
   public boolean handleOutput(IOperationContext context, GenerationStatus status, File outputRoot) {
-    if (outputRoot == null) {
-      throw new RuntimeException("unspecified output path for file generation.");
-    }
-
-    if (!status.isOk()) {
-      return false;
-    }
+    if (outputRoot == null) throw new RuntimeException("unspecified output path for file generation.");
+    if (!status.isOk()) return false;
 
     Map<SNode, String> outputNodeContents = new LinkedHashMap<SNode, String>();
-
-    boolean ok = true;
-    if (!generateText(context, status, outputNodeContents)) {
-      return false;
-    }
+    if (!generateText(context, status, outputNodeContents)) return false;
 
     Set<File> generatedFiles = generateFiles(status, outputRoot, outputNodeContents);
     FileProcessor.processVCSAddition(outputRoot, context, generatedFiles);
@@ -96,12 +87,7 @@ public class FileGenerationManager implements ApplicationComponent {
     FileProcessor.processVCSAddition(cachesOutput, context, generatedCaches);
     FileProcessor.processVCSDeletion(status.getInputModel(), cachesOutput, generatedFiles);
 
-    return ok;
-  }
-
-  public void handleEmptyOutput(IOperationContext context, GenerationStatus status, File outputDir) {
-    FileProcessor.processVCSDeletion(status.getInputModel(), outputDir, new HashSet<File>(0));
-    touchOutputDir(status, outputDir);
+    return true;
   }
 
   private boolean generateText(IOperationContext context, GenerationStatus status, Map<SNode, String> outputNodeContents) {
