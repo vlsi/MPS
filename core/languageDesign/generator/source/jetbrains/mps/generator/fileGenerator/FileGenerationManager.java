@@ -34,6 +34,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.textGen.TextGenManager;
+import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 
@@ -80,12 +81,14 @@ public class FileGenerationManager implements ApplicationComponent {
 
     Set<File> generatedFiles = generateFiles(status, outputRoot, outputNodeContents);
     FileProcessor.processVCSAddition(outputRoot, context, generatedFiles);
-    FileProcessor.processVCSDeletion(status.getInputModel(), outputRoot, generatedFiles);
 
     File cachesOutput = FileGenerationUtil.getCachesOutputDir(outputRoot);
     Set<File> generatedCaches = generateCaches(status, cachesOutput);
     FileProcessor.processVCSAddition(cachesOutput, context, generatedCaches);
-    FileProcessor.processVCSDeletion(status.getInputModel(), cachesOutput, generatedFiles);
+
+    // we have to clean garbage in both dirs simultaneously, since caches might be located in source_gen
+    FileProcessor.processVCSDeletion(status.getInputModel(), CollectionUtil.set(outputRoot, cachesOutput),
+      CollectionUtil.union(generatedFiles, generatedCaches));
 
     return true;
   }

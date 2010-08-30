@@ -23,6 +23,7 @@ import com.intellij.openapi.vfs.newvfs.RefreshSession;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vfs.VFileSystem;
 
@@ -63,7 +64,7 @@ public class FileProcessor {
 
   public static void processVCSDeletion(
     final SModel inputModel,
-    final File outputDir,
+    final Set<File> outputDirs,
     final Set<File> generatedFiles) {
 
     Runnable runnable = new Runnable() {
@@ -72,7 +73,9 @@ public class FileProcessor {
         for (File f : generatedFiles) {
           directories.add(f.getParentFile());
         }
-        directories.add(FileGenerationUtil.getDefaultOutputDir(inputModel, outputDir));
+        for (File outputDir : outputDirs) {
+          directories.add(FileGenerationUtil.getDefaultOutputDir(inputModel, outputDir));
+        }
 
         // clear garbage
         List<File> filesToDelete = new ArrayList<File>();
