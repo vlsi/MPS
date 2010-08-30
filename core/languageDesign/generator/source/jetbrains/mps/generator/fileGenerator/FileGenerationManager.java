@@ -118,12 +118,10 @@ public class FileGenerationManager implements ApplicationComponent {
     VcsMigrationUtil.getHandler().addFilesToVcs(filesToAdd, false, false);
 
     ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
-      @Override
       public void run() {
         final VirtualFile outputRootVirtualFile = VFileSystem.refreshAndGetFile(outputRoot);
 
         RefreshSession session = RefreshQueue.getInstance().createSession(true, true, new Runnable() {
-          @Override
           public void run() {
             VcsDirtyScopeManager.getInstance(context.getProject()).filesDirty(null, Arrays.asList(outputRootVirtualFile));
           }
@@ -134,18 +132,17 @@ public class FileGenerationManager implements ApplicationComponent {
     });
 
     if (cleanUp) {
-      cleanUp(status.getInputModel(), context, outputRoot, generatedFiles);
+      cleanUp(status.getInputModel(), outputRoot, generatedFiles);
     }
   }
 
 
   private void cleanUpDefaultOutputDir(GenerationStatus status, File outputDir, IOperationContext context) {
-    cleanUp(status.getInputModel(), context, outputDir, new HashSet<File>(0));
+    cleanUp(status.getInputModel(), outputDir, new HashSet<File>(0));
   }
 
   private void cleanUp(
     SModel inputModel,
-    IOperationContext context,
     File outputDir,
     Set<File> generatedFiles) {
 
@@ -159,14 +156,11 @@ public class FileGenerationManager implements ApplicationComponent {
     List<File> filesToDelete = new ArrayList<File>();
     for (File dir : directories) {
       File[] files = dir.listFiles();
-      if (files != null) {
-        for (File outputDirectoryFile : files) {
-          if (!outputDirectoryFile.isDirectory()) {
-            if (!generatedFiles.contains(outputDirectoryFile)) {
-              filesToDelete.add(outputDirectoryFile);
-            }
-          }
-        }
+      if (files == null) continue;
+      for (File outputDirectoryFile : files) {
+        if (outputDirectoryFile.isDirectory()) continue;
+        if (generatedFiles.contains(outputDirectoryFile)) continue;
+        filesToDelete.add(outputDirectoryFile);
       }
     }
 
