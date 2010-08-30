@@ -33,7 +33,7 @@ import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
   }
 
   public void m5() {
-    Iterable<String> ss = Sequence.fromClosure(new ISequenceClosure() {
+    Iterable<String> ss = Sequence.fromClosure(new ISequenceClosure<T>() {
       public Iterable<T> iterable() {
         "1";
         "2";
