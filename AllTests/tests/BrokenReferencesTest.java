@@ -4,6 +4,7 @@ import jetbrains.mps.junit.WatchingParameterized;
 import jetbrains.mps.test.BrokenReferencesTestHelper;
 import jetbrains.mps.test.FilesCollector;
 import jetbrains.mps.test.FilesCollector.FilePattern;
+import jetbrains.mps.test.FilesCollector.FilePattern.Type;
 import jetbrains.mps.test.ProjectTestHelper;
 import org.junit.*;
 import org.junit.runner.RunWith;
@@ -26,17 +27,17 @@ import java.util.List;
 public class BrokenReferencesTest {
 
   private static Object [][] patterns = new Object [][] {
-    {FilePattern.Type.EXCLUDE, "**/classes/**"},
-    {FilePattern.Type.EXCLUDE, "**/classes_gen/**"},
-    {FilePattern.Type.EXCLUDE, "**/lib/**"},
-    {FilePattern.Type.EXCLUDE, "**/testMaterial/**"},
-    {FilePattern.Type.EXCLUDE, "**/**transformationTest**/**"},
-    {FilePattern.Type.EXCLUDE, "**/**testLogger**/**"},
-    {FilePattern.Type.EXCLUDE, "**/**sandbox**/**"},
-    {FilePattern.Type.EXCLUDE, "**/**Sandbox**/**"},
-    {FilePattern.Type.INCLUDE, "**/**.mpl"},
-    {FilePattern.Type.INCLUDE, "**/**.msd"},
-    {FilePattern.Type.EXCLUDE, "**/resolve.msd"},
+    {Type.EXCLUDE, "**/classes/**"},
+    {Type.EXCLUDE, "**/classes_gen/**"},
+    {Type.EXCLUDE, "**/lib/**"},
+    {Type.EXCLUDE, "**/testMaterial/**"},
+    {Type.EXCLUDE, "**/**transformationTest**/**"},
+    {Type.EXCLUDE, "**/**testLogger**/**"},
+    {Type.EXCLUDE, "**/**sandbox**/**"},
+    {Type.EXCLUDE, "**/**Sandbox**/**"},
+    {Type.INCLUDE, "**/**.mpl"},
+    {Type.INCLUDE, "**/**.msd"},
+    {Type.EXCLUDE, "**/resolve.msd"},
   } ;
 
   private static BrokenReferencesTestHelper HELPER;
