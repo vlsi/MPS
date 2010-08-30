@@ -150,12 +150,6 @@ public class PathManager {
     return getHomePath() + File.separator + "core";
   }
 
-  // TODO remove
-  @Nullable
-  public static String getSamplesPath() {
-    return SamplesExtractor.getInstance().getSamplesPath();
-  }
-
   public static String getPlatformPath() {
     return getHomePath() + File.separator + "platform";
   }

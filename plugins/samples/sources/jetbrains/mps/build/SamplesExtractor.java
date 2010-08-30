@@ -36,6 +36,7 @@ import com.intellij.ide.AppLifecycleListener;
 import com.intellij.ide.AppLifecycleListener.Adapter;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
+import jetbrains.mps.samples.SamplesInfo;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.build.SamplesExtractor.MyState;
 import jetbrains.mps.util.PathManager;
@@ -55,7 +56,7 @@ import java.io.IOException;
       file = "$APP_CONFIG$/other.xml"
     )}
 )
-public class SamplesExtractor implements ApplicationComponent, PersistentStateComponent<MyState> {
+public class SamplesExtractor implements ApplicationComponent, PersistentStateComponent<MyState>, SamplesInfo {
   private static final Logger LOG = Logger.getLogger(SamplesExtractor.class);
 
   private static final String SAMPLES_IN_MPS_HOME_DIR = "samples";
@@ -64,7 +65,7 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
   private static final String MPS = "MPS";
 
   public static SamplesExtractor getInstance() {
-    return ApplicationManager.getApplication().getComponent(SamplesExtractor.class);
+    return ((SamplesExtractor) ApplicationManager.getApplication().getComponent(SamplesInfo.class));
   }
 
   private MyState myState;

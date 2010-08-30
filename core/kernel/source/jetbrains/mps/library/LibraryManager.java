@@ -22,6 +22,7 @@ import com.intellij.openapi.components.Storage;
 import com.intellij.util.xmlb.annotations.Transient;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.samples.WorkbenchPathManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.stubs.StubReloadManager;
@@ -154,7 +155,7 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
       }
     });
 
-    final String samplesPath = PathManager.getSamplesPath();
+    final String samplesPath = WorkbenchPathManager.getSamplesPath();
     if (samplesPath != null) {
       result.add(new PredefinedLibrary("mps.samples") {
         @NotNull
