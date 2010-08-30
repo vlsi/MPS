@@ -6,9 +6,7 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.compiler.CompilationResultAdapter;
 import jetbrains.mps.compiler.JavaCompiler;
-import jetbrains.mps.generator.GenerationSettings;
-import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.generator.ModelGenerationStatusManager;
+import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
@@ -29,6 +27,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
+import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
 import jetbrains.mps.project.tester.DiffReporter;
 import jetbrains.mps.project.tester.TesterGenerationHandler;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -365,7 +364,7 @@ public class ProjectTestHelper {
     final Map<IModule, List<SModelDescriptor>> moduleToModels = new LinkedHashMap<IModule, List<SModelDescriptor>>();
 
     Set<SModelDescriptor> models = new HashSet<SModelDescriptor>();
-    extractModels(models, project);
+    extractModelsForTesting(models, project);
 
     // get owners of loaded models
     for (final SModelDescriptor model : models) {
@@ -429,6 +428,30 @@ public class ProjectTestHelper {
         modelDescriptors.add(modelDescriptor);
       }
     }
+  }
+
+  private void extractModelsForTesting(final Set<SModelDescriptor> modelDescriptors, final MPSProject project) {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        List<BaseTestConfiguration> testConfigurationList = project.getProjectDescriptor().getTestConfigurations();
+        if (testConfigurationList.isEmpty()) {
+          if (false) {
+            extractModels(modelDescriptors, project);
+          } else {
+            LOG.warn("No test configurations for project " + project.getProjectDescriptor().getName());
+          }
+        } else {
+          for (BaseTestConfiguration config : testConfigurationList) {
+            try {
+              GenParameters genParams = config.getGenParams(project.getProject(), true);
+              modelDescriptors.addAll(genParams.getModelDescriptors());
+            } catch (IllegalGeneratorConfigurationException e) {
+              LOG.error("Error while reading configuration of project " + project.getProject().getName(), e);
+            }
+          }
+        }
+      }
+    });
   }
 
   private boolean includeModel(SModelDescriptor modelDescriptor) {
