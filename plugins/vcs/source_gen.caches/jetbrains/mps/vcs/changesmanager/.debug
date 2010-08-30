@@ -558,8 +558,8 @@
       <varInfo nodeId="2936752800012777363" varName="nextChildIndex" />
     </scopeInfo>
     <scopeInfo nodeId="166132277801270114" fileName="EditorComponentChangesHighligher.java" startLine="63" startPosition="0" endLine="107" endPosition="3">
-      <varInfo nodeId="8601487597690772311" varName="enabled" />
       <varInfo nodeId="166132277801275270" varName="project" />
+      <varInfo nodeId="8601487597690772311" varName="enabled" />
       <varInfo nodeId="76450717690085769" varName="editorComponent" />
     </scopeInfo>
     <scopeInfo nodeId="6149144798615862420" fileName="EditorComponentChangesHighligher.java" startLine="374" startPosition="14" endLine="424" endPosition="75">
@@ -574,8 +574,8 @@
       <varInfo nodeId="6149144798615862398" varName="graphics" />
     </scopeInfo>
     <scopeInfo nodeId="166132277801275731" fileName="EditorComponentChangesHighligher.java" startLine="109" startPosition="71" endLine="179" endPosition="19">
-      <varInfo nodeId="166132277801275742" varName="message" />
       <varInfo nodeId="94490962879300526" varName="messageTarget" />
+      <varInfo nodeId="166132277801275742" varName="message" />
       <varInfo nodeId="166132277801275733" varName="node" />
       <varInfo nodeId="94490962879300582" varName="c" />
       <varInfo nodeId="7627490208786691768" varName="isOurChange" />
@@ -601,43 +601,46 @@
   </root>
   <root nodeId="2253323551303625635">
     <nodeInfo nodeId="2253323551303625635" fileName="VCSUtils.java" startLine="18" startPosition="23" endLine="19" endPosition="63" />
-    <nodeInfo nodeId="7675522084224246220" fileName="VCSUtils.java" startLine="23" startPosition="9" endLine="24" endPosition="84" />
-    <nodeInfo nodeId="7675522084224246244" fileName="VCSUtils.java" startLine="25" startPosition="24" endLine="26" endPosition="20" />
-    <nodeInfo nodeId="7675522084224244299" fileName="VCSUtils.java" startLine="27" startPosition="7" endLine="28" endPosition="56" />
-    <nodeInfo nodeId="7675522084224247899" fileName="VCSUtils.java" startLine="29" startPosition="33" endLine="30" endPosition="20" />
-    <nodeInfo nodeId="7675522084224244309" fileName="VCSUtils.java" startLine="31" startPosition="7" endLine="32" endPosition="79" />
-    <nodeInfo nodeId="8246992813612317724" fileName="VCSUtils.java" startLine="33" startPosition="35" endLine="34" endPosition="20" />
-    <nodeInfo nodeId="3958959855415944351" fileName="VCSUtils.java" startLine="35" startPosition="7" endLine="36" endPosition="86" />
-    <nodeInfo nodeId="3958959855415944375" fileName="VCSUtils.java" startLine="37" startPosition="29" endLine="38" endPosition="20" />
-    <nodeInfo nodeId="7675522084224244316" fileName="VCSUtils.java" startLine="39" startPosition="7" endLine="40" endPosition="35" />
-    <nodeInfo nodeId="83742232301382756" fileName="VCSUtils.java" startLine="42" startPosition="32" endLine="43" endPosition="75" />
-    <nodeInfo nodeId="7675522084224244327" fileName="VCSUtils.java" startLine="44" startPosition="7" endLine="45" endPosition="18" />
-    <nodeInfo nodeId="7675522084224246231" fileName="VCSUtils.java" startLine="24" startPosition="84" endLine="27" endPosition="7" />
-    <nodeInfo nodeId="7675522084224247887" fileName="VCSUtils.java" startLine="28" startPosition="56" endLine="31" endPosition="7" />
-    <nodeInfo nodeId="8246992813612317715" fileName="VCSUtils.java" startLine="32" startPosition="79" endLine="35" endPosition="7" />
-    <nodeInfo nodeId="3958959855415944362" fileName="VCSUtils.java" startLine="36" startPosition="86" endLine="39" endPosition="7" />
-    <nodeInfo nodeId="83742232301382756" fileName="VCSUtils.java" startLine="41" startPosition="31" endLine="44" endPosition="7" />
-    <nodeInfo nodeId="7675522084224244289" fileName="VCSUtils.java" startLine="22" startPosition="99" endLine="46" endPosition="5" />
-    <nodeInfo nodeId="3090835573635150394" fileName="VCSUtils.java" startLine="20" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="7675522084224246232" fileName="VCSUtils.java" startLine="25" startPosition="24" endLine="26" endPosition="20" />
-    <scopeInfo nodeId="7675522084224247888" fileName="VCSUtils.java" startLine="29" startPosition="33" endLine="30" endPosition="20" />
-    <scopeInfo nodeId="8246992813612317716" fileName="VCSUtils.java" startLine="33" startPosition="35" endLine="34" endPosition="20" />
-    <scopeInfo nodeId="3958959855415944363" fileName="VCSUtils.java" startLine="37" startPosition="29" endLine="38" endPosition="20" />
-    <scopeInfo nodeId="83742232301382756" fileName="VCSUtils.java" startLine="42" startPosition="32" endLine="43" endPosition="75" />
-    <scopeInfo nodeId="83742232301382756" fileName="VCSUtils.java" startLine="41" startPosition="31" endLine="44" endPosition="7" />
-    <scopeInfo nodeId="7675522084224244295" fileName="VCSUtils.java" startLine="41" startPosition="31" endLine="45" endPosition="18" />
-    <scopeInfo nodeId="7675522084224244290" fileName="VCSUtils.java" startLine="23" startPosition="9" endLine="40" endPosition="35">
+    <nodeInfo nodeId="7675522084224246220" fileName="VCSUtils.java" startLine="26" startPosition="9" endLine="27" endPosition="84" />
+    <nodeInfo nodeId="7675522084224246244" fileName="VCSUtils.java" startLine="28" startPosition="24" endLine="29" endPosition="20" />
+    <nodeInfo nodeId="7675522084224244299" fileName="VCSUtils.java" startLine="30" startPosition="7" endLine="31" endPosition="56" />
+    <nodeInfo nodeId="7675522084224247899" fileName="VCSUtils.java" startLine="32" startPosition="33" endLine="33" endPosition="20" />
+    <nodeInfo nodeId="7675522084224244309" fileName="VCSUtils.java" startLine="34" startPosition="7" endLine="35" endPosition="79" />
+    <nodeInfo nodeId="8246992813612317724" fileName="VCSUtils.java" startLine="36" startPosition="35" endLine="37" endPosition="20" />
+    <nodeInfo nodeId="3958959855415944351" fileName="VCSUtils.java" startLine="38" startPosition="7" endLine="39" endPosition="86" />
+    <nodeInfo nodeId="3958959855415944375" fileName="VCSUtils.java" startLine="40" startPosition="29" endLine="41" endPosition="20" />
+    <nodeInfo nodeId="7675522084224244316" fileName="VCSUtils.java" startLine="42" startPosition="7" endLine="43" endPosition="35" />
+    <nodeInfo nodeId="83742232301382756" fileName="VCSUtils.java" startLine="45" startPosition="32" endLine="46" endPosition="75" />
+    <nodeInfo nodeId="7675522084224244327" fileName="VCSUtils.java" startLine="47" startPosition="7" endLine="48" endPosition="18" />
+    <nodeInfo nodeId="7523553402533213938" fileName="VCSUtils.java" startLine="20" startPosition="0" endLine="22" endPosition="3" />
+    <nodeInfo nodeId="7675522084224246231" fileName="VCSUtils.java" startLine="27" startPosition="84" endLine="30" endPosition="7" />
+    <nodeInfo nodeId="7675522084224247887" fileName="VCSUtils.java" startLine="31" startPosition="56" endLine="34" endPosition="7" />
+    <nodeInfo nodeId="8246992813612317715" fileName="VCSUtils.java" startLine="35" startPosition="79" endLine="38" endPosition="7" />
+    <nodeInfo nodeId="3958959855415944362" fileName="VCSUtils.java" startLine="39" startPosition="86" endLine="42" endPosition="7" />
+    <nodeInfo nodeId="83742232301382756" fileName="VCSUtils.java" startLine="44" startPosition="31" endLine="47" endPosition="7" />
+    <nodeInfo nodeId="7675522084224244289" fileName="VCSUtils.java" startLine="25" startPosition="99" endLine="49" endPosition="5" />
+    <nodeInfo nodeId="3090835573635150394" fileName="VCSUtils.java" startLine="23" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="7523553402533213941" fileName="VCSUtils.java" startLine="21" startPosition="22" endLine="21" endPosition="22" />
+    <scopeInfo nodeId="7675522084224246232" fileName="VCSUtils.java" startLine="28" startPosition="24" endLine="29" endPosition="20" />
+    <scopeInfo nodeId="7675522084224247888" fileName="VCSUtils.java" startLine="32" startPosition="33" endLine="33" endPosition="20" />
+    <scopeInfo nodeId="8246992813612317716" fileName="VCSUtils.java" startLine="36" startPosition="35" endLine="37" endPosition="20" />
+    <scopeInfo nodeId="3958959855415944363" fileName="VCSUtils.java" startLine="40" startPosition="29" endLine="41" endPosition="20" />
+    <scopeInfo nodeId="83742232301382756" fileName="VCSUtils.java" startLine="45" startPosition="32" endLine="46" endPosition="75" />
+    <scopeInfo nodeId="7523553402533213938" fileName="VCSUtils.java" startLine="20" startPosition="0" endLine="22" endPosition="3" />
+    <scopeInfo nodeId="83742232301382756" fileName="VCSUtils.java" startLine="44" startPosition="31" endLine="47" endPosition="7" />
+    <scopeInfo nodeId="7675522084224244295" fileName="VCSUtils.java" startLine="44" startPosition="31" endLine="48" endPosition="18" />
+    <scopeInfo nodeId="7675522084224244290" fileName="VCSUtils.java" startLine="26" startPosition="9" endLine="43" endPosition="35">
       <varInfo nodeId="3958959855415944352" varName="revision" />
       <varInfo nodeId="7675522084224244310" varName="revisionNumber" />
       <varInfo nodeId="7675522084224246221" varName="vcs" />
       <varInfo nodeId="7675522084224244300" varName="diffProvider" />
     </scopeInfo>
-    <scopeInfo nodeId="3090835573635150397" fileName="VCSUtils.java" startLine="22" startPosition="99" endLine="46" endPosition="5" />
-    <scopeInfo nodeId="3090835573635150394" fileName="VCSUtils.java" startLine="20" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="3090835573635150397" fileName="VCSUtils.java" startLine="25" startPosition="99" endLine="49" endPosition="5" />
+    <scopeInfo nodeId="3090835573635150394" fileName="VCSUtils.java" startLine="23" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="3090835573635190505" varName="project" />
       <varInfo nodeId="3090835573635150793" varName="file" />
     </scopeInfo>
-    <unitInfo nodeId="2253323551303625635" fileName="VCSUtils.java" startLine="18" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.VCSUtils" />
+    <unitInfo nodeId="2253323551303625635" fileName="VCSUtils.java" startLine="18" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.VCSUtils" />
   </root>
   <root nodeId="23553604208246606">
     <nodeInfo nodeId="591225141044085659" fileName="ChangesManager.java" startLine="46" startPosition="62" endLine="47" endPosition="93" />
@@ -845,8 +848,8 @@
     </scopeInfo>
     <scopeInfo nodeId="5569581551640544192" fileName="ChangesManager.java" startLine="227" startPosition="0" endLine="232" endPosition="0">
       <varInfo nodeId="5569581551640544200" varName="toList" />
-      <varInfo nodeId="5569581551640544198" varName="fromList" />
       <varInfo nodeId="5569581551640544195" varName="changes" />
+      <varInfo nodeId="5569581551640544198" varName="fromList" />
     </scopeInfo>
     <scopeInfo nodeId="209997191345281381" fileName="ChangesManager.java" startLine="257" startPosition="0" endLine="262" endPosition="0" />
     <scopeInfo nodeId="5267577397386524719" fileName="ChangesManager.java" startLine="59" startPosition="22" endLine="65" endPosition="34" />
@@ -861,8 +864,8 @@
     <scopeInfo nodeId="8477273007880817016" fileName="ChangesManager.java" startLine="163" startPosition="17" endLine="170" endPosition="28" />
     <scopeInfo nodeId="8477273007880817056" fileName="ChangesManager.java" startLine="173" startPosition="48" endLine="180" endPosition="13" />
     <scopeInfo nodeId="5569581551640544170" fileName="ChangesManager.java" startLine="220" startPosition="0" endLine="227" endPosition="0">
-      <varInfo nodeId="5569581551640544176" varName="fromList" />
       <varInfo nodeId="5569581551640544173" varName="changes" />
+      <varInfo nodeId="5569581551640544176" varName="fromList" />
     </scopeInfo>
     <scopeInfo nodeId="5752539231810454519" fileName="ChangesManager.java" startLine="232" startPosition="0" endLine="239" endPosition="0" />
     <scopeInfo nodeId="6003305288819068510" fileName="ChangesManager.java" startLine="269" startPosition="71" endLine="276" endPosition="9" />
@@ -871,8 +874,8 @@
     <scopeInfo nodeId="6058514296621167572" fileName="ChangesManager.java" startLine="117" startPosition="0" endLine="125" endPosition="0" />
     <scopeInfo nodeId="6003305288819000322" fileName="ChangesManager.java" startLine="126" startPosition="90" endLine="134" endPosition="7" />
     <scopeInfo nodeId="8386680215811366512" fileName="ChangesManager.java" startLine="88" startPosition="25" endLine="98" endPosition="79">
-      <varInfo nodeId="2253323551303615596" varName="modelChangesManager" />
       <varInfo nodeId="1552342397249029519" varName="modelRef" />
+      <varInfo nodeId="2253323551303615596" varName="modelChangesManager" />
     </scopeInfo>
     <scopeInfo nodeId="5186220276475231268" fileName="ChangesManager.java" startLine="136" startPosition="0" endLine="146" endPosition="0">
       <varInfo nodeId="5186220276475231323" varName="modelDescriptor" />
@@ -893,8 +896,8 @@
     <scopeInfo nodeId="23553604208247411" fileName="ChangesManager.java" startLine="69" startPosition="31" endLine="83" endPosition="7" />
     <scopeInfo nodeId="1552342397249028024" fileName="ChangesManager.java" startLine="86" startPosition="122" endLine="100" endPosition="7" />
     <scopeInfo nodeId="5392440913055405811" fileName="ChangesManager.java" startLine="102" startPosition="0" endLine="117" endPosition="0">
-      <varInfo nodeId="3645216862591272454" varName="fileStatus" />
       <varInfo nodeId="891158202133117057" varName="file" />
+      <varInfo nodeId="3645216862591272454" varName="fileStatus" />
     </scopeInfo>
     <scopeInfo nodeId="23553604208247408" fileName="ChangesManager.java" startLine="68" startPosition="0" endLine="85" endPosition="0" />
     <scopeInfo nodeId="1552342397249028021" fileName="ChangesManager.java" startLine="85" startPosition="0" endLine="102" endPosition="0">
@@ -1037,8 +1040,8 @@
       <varInfo nodeId="2698665420347342222" varName="a" />
     </scopeInfo>
     <scopeInfo nodeId="7183063426006642447" fileName="LongestCommonSubsequenceFinder.java" startLine="40" startPosition="131" endLine="61" endPosition="57">
-      <varInfo nodeId="7183063426006642480" varName="indices" />
       <varInfo nodeId="7183063426006642456" varName="lengths" />
+      <varInfo nodeId="7183063426006642480" varName="indices" />
       <varInfo nodeId="7183063426006642508" varName="j" />
       <varInfo nodeId="7183063426006642496" varName="i" />
     </scopeInfo>
@@ -1364,82 +1367,85 @@
     <unitInfo nodeId="3722815385094205361" fileName="SimpleCommandQueue.java" startLine="11" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.SimpleCommandQueue" />
   </root>
   <root nodeId="4056424511791981358">
-    <nodeInfo nodeId="4056424511791981376" fileName="SModelUtils.java" startLine="26" startPosition="41" endLine="27" endPosition="33" />
-    <nodeInfo nodeId="4056424511791981401" fileName="SModelUtils.java" startLine="33" startPosition="57" endLine="34" endPosition="132" />
-    <nodeInfo nodeId="4056424511791981413" fileName="SModelUtils.java" startLine="35" startPosition="48" endLine="36" endPosition="108" />
-    <nodeInfo nodeId="4056424511791981427" fileName="SModelUtils.java" startLine="38" startPosition="12" endLine="39" endPosition="163" />
-    <nodeInfo nodeId="4056424511791981438" fileName="SModelUtils.java" startLine="40" startPosition="38" endLine="41" endPosition="87" />
-    <nodeInfo nodeId="4056424511791981445" fileName="SModelUtils.java" startLine="43" startPosition="5" endLine="44" endPosition="17" />
-    <nodeInfo nodeId="4056424511791981458" fileName="SModelUtils.java" startLine="47" startPosition="74" endLine="48" endPosition="100" />
-    <nodeInfo nodeId="4056424511791981483" fileName="SModelUtils.java" startLine="52" startPosition="64" endLine="53" endPosition="70" />
-    <nodeInfo nodeId="4056424511791981495" fileName="SModelUtils.java" startLine="54" startPosition="26" endLine="55" endPosition="52" />
-    <nodeInfo nodeId="4056424511791981500" fileName="SModelUtils.java" startLine="55" startPosition="52" endLine="56" endPosition="45" />
-    <nodeInfo nodeId="4056424511791981506" fileName="SModelUtils.java" startLine="57" startPosition="5" endLine="58" endPosition="56" />
-    <nodeInfo nodeId="4056424511791981512" fileName="SModelUtils.java" startLine="58" startPosition="56" endLine="59" endPosition="17" />
-    <nodeInfo nodeId="762570481842505921" fileName="SModelUtils.java" startLine="63" startPosition="71" endLine="64" endPosition="75" />
-    <nodeInfo nodeId="762570481842505909" fileName="SModelUtils.java" startLine="67" startPosition="44" endLine="68" endPosition="52" />
-    <nodeInfo nodeId="762570481842505935" fileName="SModelUtils.java" startLine="70" startPosition="12" endLine="71" endPosition="60" />
-    <nodeInfo nodeId="762570481842505945" fileName="SModelUtils.java" startLine="73" startPosition="5" endLine="74" endPosition="22" />
-    <nodeInfo nodeId="4056424511791981411" fileName="SModelUtils.java" startLine="34" startPosition="132" endLine="37" endPosition="7" />
-    <nodeInfo nodeId="4056424511791981436" fileName="SModelUtils.java" startLine="39" startPosition="163" endLine="42" endPosition="7" />
-    <nodeInfo nodeId="4056424511791981374" fileName="SModelUtils.java" startLine="25" startPosition="80" endLine="29" endPosition="0" />
-    <nodeInfo nodeId="4056424511791981454" fileName="SModelUtils.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
-    <nodeInfo nodeId="4056424511791981490" fileName="SModelUtils.java" startLine="53" startPosition="70" endLine="57" endPosition="5" />
-    <nodeInfo nodeId="762570481842505907" fileName="SModelUtils.java" startLine="66" startPosition="72" endLine="70" endPosition="0" />
-    <nodeInfo nodeId="4056424511791981369" fileName="SModelUtils.java" startLine="24" startPosition="61" endLine="29" endPosition="24" />
-    <nodeInfo nodeId="4056424511791981425" fileName="SModelUtils.java" startLine="38" startPosition="10" endLine="43" endPosition="5" />
-    <nodeInfo nodeId="762570481842505896" fileName="SModelUtils.java" startLine="65" startPosition="60" endLine="72" endPosition="7" />
-    <nodeInfo nodeId="4056424511791981364" fileName="SModelUtils.java" startLine="22" startPosition="26" endLine="31" endPosition="0" />
-    <nodeInfo nodeId="762570481842505893" fileName="SModelUtils.java" startLine="64" startPosition="75" endLine="73" endPosition="5" />
-    <nodeInfo nodeId="4056424511791981399" fileName="SModelUtils.java" startLine="32" startPosition="111" endLine="43" endPosition="5" />
-    <nodeInfo nodeId="4056424511791981478" fileName="SModelUtils.java" startLine="50" startPosition="0" endLine="61" endPosition="0" />
-    <nodeInfo nodeId="4056424511791981395" fileName="SModelUtils.java" startLine="31" startPosition="0" endLine="46" endPosition="0" />
-    <nodeInfo nodeId="762570481842505862" fileName="SModelUtils.java" startLine="61" startPosition="0" endLine="76" endPosition="0" />
-    <scopeInfo nodeId="4056424511791981375" fileName="SModelUtils.java" startLine="26" startPosition="41" endLine="27" endPosition="33" />
-    <scopeInfo nodeId="4056424511791981412" fileName="SModelUtils.java" startLine="35" startPosition="48" endLine="36" endPosition="108" />
-    <scopeInfo nodeId="4056424511791981437" fileName="SModelUtils.java" startLine="40" startPosition="38" endLine="41" endPosition="87" />
-    <scopeInfo nodeId="4056424511791981457" fileName="SModelUtils.java" startLine="47" startPosition="74" endLine="48" endPosition="100" />
-    <scopeInfo nodeId="762570481842505908" fileName="SModelUtils.java" startLine="67" startPosition="44" endLine="68" endPosition="52" />
-    <scopeInfo nodeId="762570481842505897" fileName="SModelUtils.java" startLine="70" startPosition="12" endLine="71" endPosition="60" />
-    <scopeInfo nodeId="4056424511791981494" fileName="SModelUtils.java" startLine="54" startPosition="26" endLine="56" endPosition="45" />
-    <scopeInfo nodeId="4056424511791981374" fileName="SModelUtils.java" startLine="25" startPosition="80" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="4056424511791981400" fileName="SModelUtils.java" startLine="33" startPosition="57" endLine="37" endPosition="7">
+    <nodeInfo nodeId="4056424511791981376" fileName="SModelUtils.java" startLine="29" startPosition="41" endLine="30" endPosition="33" />
+    <nodeInfo nodeId="4056424511791981401" fileName="SModelUtils.java" startLine="36" startPosition="57" endLine="37" endPosition="132" />
+    <nodeInfo nodeId="4056424511791981413" fileName="SModelUtils.java" startLine="38" startPosition="48" endLine="39" endPosition="108" />
+    <nodeInfo nodeId="4056424511791981427" fileName="SModelUtils.java" startLine="41" startPosition="12" endLine="42" endPosition="163" />
+    <nodeInfo nodeId="4056424511791981438" fileName="SModelUtils.java" startLine="43" startPosition="38" endLine="44" endPosition="87" />
+    <nodeInfo nodeId="4056424511791981445" fileName="SModelUtils.java" startLine="46" startPosition="5" endLine="47" endPosition="17" />
+    <nodeInfo nodeId="4056424511791981458" fileName="SModelUtils.java" startLine="50" startPosition="74" endLine="51" endPosition="100" />
+    <nodeInfo nodeId="4056424511791981483" fileName="SModelUtils.java" startLine="55" startPosition="64" endLine="56" endPosition="70" />
+    <nodeInfo nodeId="4056424511791981495" fileName="SModelUtils.java" startLine="57" startPosition="26" endLine="58" endPosition="52" />
+    <nodeInfo nodeId="4056424511791981500" fileName="SModelUtils.java" startLine="58" startPosition="52" endLine="59" endPosition="45" />
+    <nodeInfo nodeId="4056424511791981506" fileName="SModelUtils.java" startLine="60" startPosition="5" endLine="61" endPosition="56" />
+    <nodeInfo nodeId="4056424511791981512" fileName="SModelUtils.java" startLine="61" startPosition="56" endLine="62" endPosition="17" />
+    <nodeInfo nodeId="762570481842505921" fileName="SModelUtils.java" startLine="66" startPosition="71" endLine="67" endPosition="75" />
+    <nodeInfo nodeId="762570481842505909" fileName="SModelUtils.java" startLine="70" startPosition="44" endLine="71" endPosition="52" />
+    <nodeInfo nodeId="762570481842505935" fileName="SModelUtils.java" startLine="73" startPosition="12" endLine="74" endPosition="60" />
+    <nodeInfo nodeId="762570481842505945" fileName="SModelUtils.java" startLine="76" startPosition="5" endLine="77" endPosition="22" />
+    <nodeInfo nodeId="7523553402533156445" fileName="SModelUtils.java" startLine="22" startPosition="26" endLine="24" endPosition="3" />
+    <nodeInfo nodeId="4056424511791981411" fileName="SModelUtils.java" startLine="37" startPosition="132" endLine="40" endPosition="7" />
+    <nodeInfo nodeId="4056424511791981436" fileName="SModelUtils.java" startLine="42" startPosition="163" endLine="45" endPosition="7" />
+    <nodeInfo nodeId="4056424511791981374" fileName="SModelUtils.java" startLine="28" startPosition="80" endLine="32" endPosition="0" />
+    <nodeInfo nodeId="4056424511791981454" fileName="SModelUtils.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
+    <nodeInfo nodeId="4056424511791981490" fileName="SModelUtils.java" startLine="56" startPosition="70" endLine="60" endPosition="5" />
+    <nodeInfo nodeId="762570481842505907" fileName="SModelUtils.java" startLine="69" startPosition="72" endLine="73" endPosition="0" />
+    <nodeInfo nodeId="4056424511791981369" fileName="SModelUtils.java" startLine="27" startPosition="61" endLine="32" endPosition="24" />
+    <nodeInfo nodeId="4056424511791981425" fileName="SModelUtils.java" startLine="41" startPosition="10" endLine="46" endPosition="5" />
+    <nodeInfo nodeId="762570481842505896" fileName="SModelUtils.java" startLine="68" startPosition="60" endLine="75" endPosition="7" />
+    <nodeInfo nodeId="4056424511791981364" fileName="SModelUtils.java" startLine="25" startPosition="0" endLine="34" endPosition="0" />
+    <nodeInfo nodeId="762570481842505893" fileName="SModelUtils.java" startLine="67" startPosition="75" endLine="76" endPosition="5" />
+    <nodeInfo nodeId="4056424511791981399" fileName="SModelUtils.java" startLine="35" startPosition="111" endLine="46" endPosition="5" />
+    <nodeInfo nodeId="4056424511791981478" fileName="SModelUtils.java" startLine="53" startPosition="0" endLine="64" endPosition="0" />
+    <nodeInfo nodeId="4056424511791981395" fileName="SModelUtils.java" startLine="34" startPosition="0" endLine="49" endPosition="0" />
+    <nodeInfo nodeId="762570481842505862" fileName="SModelUtils.java" startLine="64" startPosition="0" endLine="79" endPosition="0" />
+    <scopeInfo nodeId="7523553402533156448" fileName="SModelUtils.java" startLine="23" startPosition="25" endLine="23" endPosition="25" />
+    <scopeInfo nodeId="4056424511791981375" fileName="SModelUtils.java" startLine="29" startPosition="41" endLine="30" endPosition="33" />
+    <scopeInfo nodeId="4056424511791981412" fileName="SModelUtils.java" startLine="38" startPosition="48" endLine="39" endPosition="108" />
+    <scopeInfo nodeId="4056424511791981437" fileName="SModelUtils.java" startLine="43" startPosition="38" endLine="44" endPosition="87" />
+    <scopeInfo nodeId="4056424511791981457" fileName="SModelUtils.java" startLine="50" startPosition="74" endLine="51" endPosition="100" />
+    <scopeInfo nodeId="762570481842505908" fileName="SModelUtils.java" startLine="70" startPosition="44" endLine="71" endPosition="52" />
+    <scopeInfo nodeId="762570481842505897" fileName="SModelUtils.java" startLine="73" startPosition="12" endLine="74" endPosition="60" />
+    <scopeInfo nodeId="7523553402533156445" fileName="SModelUtils.java" startLine="22" startPosition="26" endLine="24" endPosition="3" />
+    <scopeInfo nodeId="4056424511791981494" fileName="SModelUtils.java" startLine="57" startPosition="26" endLine="59" endPosition="45" />
+    <scopeInfo nodeId="4056424511791981374" fileName="SModelUtils.java" startLine="28" startPosition="80" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="4056424511791981400" fileName="SModelUtils.java" startLine="36" startPosition="57" endLine="40" endPosition="7">
       <varInfo nodeId="4056424511791981402" varName="annotationLinkDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="4056424511791981426" fileName="SModelUtils.java" startLine="38" startPosition="12" endLine="42" endPosition="7">
+    <scopeInfo nodeId="4056424511791981426" fileName="SModelUtils.java" startLine="41" startPosition="12" endLine="45" endPosition="7">
       <varInfo nodeId="4056424511791981428" varName="linkDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="4056424511791981454" fileName="SModelUtils.java" startLine="46" startPosition="0" endLine="50" endPosition="0">
+    <scopeInfo nodeId="4056424511791981454" fileName="SModelUtils.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="4056424511791981469" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="762570481842505907" fileName="SModelUtils.java" startLine="66" startPosition="72" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="4056424511791981368" fileName="SModelUtils.java" startLine="24" startPosition="61" endLine="29" endPosition="24" />
-    <scopeInfo nodeId="4056424511791981482" fileName="SModelUtils.java" startLine="52" startPosition="64" endLine="59" endPosition="17">
+    <scopeInfo nodeId="762570481842505907" fileName="SModelUtils.java" startLine="69" startPosition="72" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="4056424511791981368" fileName="SModelUtils.java" startLine="27" startPosition="61" endLine="32" endPosition="24" />
+    <scopeInfo nodeId="4056424511791981482" fileName="SModelUtils.java" startLine="55" startPosition="64" endLine="62" endPosition="17">
       <varInfo nodeId="4056424511791981484" varName="nodes" />
     </scopeInfo>
-    <scopeInfo nodeId="762570481842505895" fileName="SModelUtils.java" startLine="65" startPosition="60" endLine="72" endPosition="7" />
-    <scopeInfo nodeId="4056424511791981364" fileName="SModelUtils.java" startLine="22" startPosition="26" endLine="31" endPosition="0">
+    <scopeInfo nodeId="762570481842505895" fileName="SModelUtils.java" startLine="68" startPosition="60" endLine="75" endPosition="7" />
+    <scopeInfo nodeId="4056424511791981364" fileName="SModelUtils.java" startLine="25" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="4056424511791981384" varName="nodes" />
     </scopeInfo>
-    <scopeInfo nodeId="762570481842505893" fileName="SModelUtils.java" startLine="64" startPosition="75" endLine="73" endPosition="5" />
-    <scopeInfo nodeId="4056424511791981478" fileName="SModelUtils.java" startLine="50" startPosition="0" endLine="61" endPosition="0">
+    <scopeInfo nodeId="762570481842505893" fileName="SModelUtils.java" startLine="67" startPosition="75" endLine="76" endPosition="5" />
+    <scopeInfo nodeId="4056424511791981478" fileName="SModelUtils.java" startLine="53" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="4056424511791981514" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="762570481842505865" fileName="SModelUtils.java" startLine="63" startPosition="71" endLine="74" endPosition="22">
+    <scopeInfo nodeId="762570481842505865" fileName="SModelUtils.java" startLine="66" startPosition="71" endLine="77" endPosition="22">
       <varInfo nodeId="762570481842505922" varName="dominators" />
     </scopeInfo>
-    <scopeInfo nodeId="4056424511791981398" fileName="SModelUtils.java" startLine="32" startPosition="111" endLine="44" endPosition="17" />
-    <scopeInfo nodeId="4056424511791981395" fileName="SModelUtils.java" startLine="31" startPosition="0" endLine="46" endPosition="0">
+    <scopeInfo nodeId="4056424511791981398" fileName="SModelUtils.java" startLine="35" startPosition="111" endLine="47" endPosition="17" />
+    <scopeInfo nodeId="4056424511791981395" fileName="SModelUtils.java" startLine="34" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="4056424511791981451" varName="modelDescriptor" />
-      <varInfo nodeId="4056424511791981449" varName="parent" />
       <varInfo nodeId="4056424511791981447" varName="childRole" />
+      <varInfo nodeId="4056424511791981449" varName="parent" />
     </scopeInfo>
-    <scopeInfo nodeId="762570481842505862" fileName="SModelUtils.java" startLine="61" startPosition="0" endLine="76" endPosition="0">
+    <scopeInfo nodeId="762570481842505862" fileName="SModelUtils.java" startLine="64" startPosition="0" endLine="79" endPosition="0">
       <varInfo nodeId="762570481842505872" varName="nodes" />
     </scopeInfo>
-    <unitInfo nodeId="4056424511791981374" fileName="SModelUtils.java" startLine="25" startPosition="51" endLine="29" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.SModelUtils$1" />
-    <unitInfo nodeId="762570481842505907" fileName="SModelUtils.java" startLine="66" startPosition="49" endLine="70" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.SModelUtils$2" />
-    <unitInfo nodeId="4056424511791981358" fileName="SModelUtils.java" startLine="22" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.SModelUtils" />
+    <unitInfo nodeId="4056424511791981374" fileName="SModelUtils.java" startLine="28" startPosition="51" endLine="32" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.SModelUtils$1" />
+    <unitInfo nodeId="762570481842505907" fileName="SModelUtils.java" startLine="69" startPosition="49" endLine="73" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.SModelUtils$2" />
+    <unitInfo nodeId="4056424511791981358" fileName="SModelUtils.java" startLine="22" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.SModelUtils" />
   </root>
   <root nodeId="5052922865790629132">
     <nodeInfo nodeId="4344428334011818010" fileName="ProjectTreeChangesHighlighter.java" startLine="49" startPosition="105" endLine="50" endPosition="59" />
@@ -2115,8 +2121,8 @@
     <scopeInfo nodeId="3935103675993769250" fileName="ProjectTreeChangesHighlighter.java" startLine="474" startPosition="90" endLine="486" endPosition="19" />
     <scopeInfo nodeId="6484240062667323248" fileName="ProjectTreeChangesHighlighter.java" startLine="103" startPosition="58" endLine="116" endPosition="11" />
     <scopeInfo nodeId="9167608307817304536" fileName="ProjectTreeChangesHighlighter.java" startLine="251" startPosition="0" endLine="264" endPosition="0">
-      <varInfo nodeId="9167608307817304639" varName="model" />
       <varInfo nodeId="9167608307817304624" varName="nodeId" />
+      <varInfo nodeId="9167608307817304639" varName="model" />
     </scopeInfo>
     <scopeInfo nodeId="704512678984999260" fileName="ProjectTreeChangesHighlighter.java" startLine="511" startPosition="85" endLine="524" endPosition="5" />
     <scopeInfo nodeId="3935103675993767267" fileName="ProjectTreeChangesHighlighter.java" startLine="473" startPosition="57" endLine="487" endPosition="15" />
@@ -2201,8 +2207,8 @@
     </scopeInfo>
     <scopeInfo nodeId="5962623969496448269" fileName="ProjectTreeChangesHighlighter.java" startLine="267" startPosition="25" endLine="334" endPosition="9">
       <varInfo nodeId="1794625231785958389" varName="affectedNodeId" />
-      <varInfo nodeId="1794625231785958416" varName="nodeToDecrement" />
       <varInfo nodeId="1794625231785958408" varName="node" />
+      <varInfo nodeId="1794625231785958416" varName="nodeToDecrement" />
     </scopeInfo>
     <scopeInfo nodeId="5962623969496448268" fileName="ProjectTreeChangesHighlighter.java" startLine="266" startPosition="43" endLine="336" endPosition="0" />
     <scopeInfo nodeId="7690582295257017316" fileName="ProjectTreeChangesHighlighter.java" startLine="265" startPosition="93" endLine="336" endPosition="7" />
@@ -2618,10 +2624,10 @@
       <varInfo nodeId="6763225944573384310" varName="tabIndex" />
     </scopeInfo>
     <scopeInfo nodeId="6763225944573384094" fileName="VCSTabColorProvider.java" startLine="27" startPosition="56" endLine="61" endPosition="29">
-      <varInfo nodeId="6763225944573384116" varName="hasAdded" />
       <varInfo nodeId="6763225944573384108" varName="hasNotChanged" />
-      <varInfo nodeId="6763225944573384112" varName="hasModified" />
+      <varInfo nodeId="6763225944573384116" varName="hasAdded" />
       <varInfo nodeId="6763225944573384096" varName="statusManager" />
+      <varInfo nodeId="6763225944573384112" varName="hasModified" />
       <varInfo nodeId="6763225944573384170" varName="status" />
     </scopeInfo>
     <scopeInfo nodeId="6763225944573384087" fileName="VCSTabColorProvider.java" startLine="26" startPosition="0" endLine="63" endPosition="0">
@@ -4015,8 +4021,8 @@
     <scopeInfo nodeId="4220555432291379732" fileName="ModelChangesManager.java" startLine="806" startPosition="0" endLine="812" endPosition="0" />
     <scopeInfo nodeId="3854217528818475427" fileName="ModelChangesManager.java" startLine="1139" startPosition="77" endLine="1145" endPosition="9" />
     <scopeInfo nodeId="2352903979085962819" fileName="ModelChangesManager.java" startLine="1277" startPosition="22" endLine="1283" endPosition="17">
-      <varInfo nodeId="2352903979085962833" varName="newInternalValue" />
       <varInfo nodeId="2352903979085962821" varName="propertySupport" />
+      <varInfo nodeId="2352903979085962833" varName="newInternalValue" />
       <varInfo nodeId="2352903979085962826" varName="baseInternalValue" />
     </scopeInfo>
     <scopeInfo nodeId="993300782394691290" fileName="ModelChangesManager.java" startLine="113" startPosition="29" endLine="120" endPosition="23">
@@ -4097,8 +4103,8 @@
       <varInfo nodeId="3958959855415944328" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="967641992124639090" fileName="ModelChangesManager.java" startLine="402" startPosition="99" endLine="411" endPosition="13">
-      <varInfo nodeId="6198597596203365588" varName="node" />
       <varInfo nodeId="967641992124639169" varName="nodeId" />
+      <varInfo nodeId="6198597596203365588" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="2370132037603420703" fileName="ModelChangesManager.java" startLine="532" startPosition="82" endLine="541" endPosition="9">
       <varInfo nodeId="2370132037603420851" varName="parentNode" />
@@ -4261,8 +4267,8 @@
       <varInfo nodeId="2352903979085963019" varName="reference" />
     </scopeInfo>
     <scopeInfo nodeId="3913480212906640440" fileName="ModelChangesManager.java" startLine="520" startPosition="66" endLine="542" endPosition="7">
-      <varInfo nodeId="3913480212906641691" varName="node" />
       <varInfo nodeId="3913480212906640458" varName="nodeId" />
+      <varInfo nodeId="3913480212906641691" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="977382291400364233" fileName="ModelChangesManager.java" startLine="819" startPosition="89" endLine="841" endPosition="26">
       <varInfo nodeId="977382291400364242" varName="baseNode" />
@@ -4288,19 +4294,19 @@
     </scopeInfo>
     <scopeInfo nodeId="4604734785880205984" fileName="ModelChangesManager.java" startLine="453" startPosition="24" endLine="478" endPosition="23" />
     <scopeInfo nodeId="977382291400364230" fileName="ModelChangesManager.java" startLine="817" startPosition="0" endLine="843" endPosition="0">
-      <varInfo nodeId="6185837146817078080" varName="nodeToBeReplaced" />
       <varInfo nodeId="977382291400364237" varName="childId" />
+      <varInfo nodeId="6185837146817078080" varName="nodeToBeReplaced" />
     </scopeInfo>
     <scopeInfo nodeId="2352903979085962687" fileName="ModelChangesManager.java" startLine="1369" startPosition="45" endLine="1395" endPosition="0" />
     <scopeInfo nodeId="3811819025881608028" fileName="ModelChangesManager.java" startLine="412" startPosition="56" endLine="439" endPosition="13">
-      <varInfo nodeId="3811819025881727828" varName="node" />
       <varInfo nodeId="3811819025881728174" varName="nodeId" />
+      <varInfo nodeId="3811819025881727828" varName="node" />
       <varInfo nodeId="3811819025881728166" varName="conceptFqName" />
       <varInfo nodeId="3811819025881728308" varName="parent" />
     </scopeInfo>
     <scopeInfo nodeId="5687497293128274743" fileName="ModelChangesManager.java" startLine="881" startPosition="14" endLine="908" endPosition="9">
-      <varInfo nodeId="5687497293128274749" varName="node" />
       <varInfo nodeId="5890845648943347" varName="nodeId" />
+      <varInfo nodeId="5687497293128274749" varName="node" />
       <varInfo nodeId="3992381866776136444" varName="baseNodeId" />
     </scopeInfo>
     <scopeInfo nodeId="2352903979085962651" fileName="ModelChangesManager.java" startLine="1297" startPosition="45" endLine="1324" endPosition="0" />
@@ -4398,13 +4404,13 @@
       <varInfo nodeId="5880341150427494735" varName="recursively" />
     </scopeInfo>
     <scopeInfo nodeId="1281598945698463182" fileName="ModelChangesManager.java" startLine="580" startPosition="53" endLine="653" endPosition="5">
-      <varInfo nodeId="1281598945698463520" varName="status" />
       <varInfo nodeId="1281598945698463477" varName="modelFile" />
+      <varInfo nodeId="1281598945698463520" varName="status" />
       <varInfo nodeId="1281598945698463491" varName="modelVFile" />
     </scopeInfo>
     <scopeInfo nodeId="2698665420347316391" fileName="ModelChangesManager.java" startLine="726" startPosition="120" endLine="799" endPosition="5">
-      <varInfo nodeId="1998279847126788454" varName="changesToAdd" />
       <varInfo nodeId="1998279847126777983" varName="differentSubsequences" />
+      <varInfo nodeId="1998279847126788454" varName="changesToAdd" />
       <varInfo nodeId="2698665420347341261" varName="pair" />
       <varInfo nodeId="6552041766050874826" varName="currentChildrenIds" />
       <varInfo nodeId="7654328074273895361" varName="baseChildrenIds" />
@@ -4878,8 +4884,8 @@
     <scopeInfo nodeId="6378762527268264727" fileName="ChangesFoldingAreaPainter.java" startLine="438" startPosition="99" endLine="447" endPosition="7" />
     <scopeInfo nodeId="2792704635247516010" fileName="ChangesFoldingAreaPainter.java" startLine="117" startPosition="151" endLine="127" endPosition="46">
       <varInfo nodeId="2792704635247522101" varName="height" />
-      <varInfo nodeId="2792704635247522090" varName="width" />
       <varInfo nodeId="2792704635247516029" varName="cell" />
+      <varInfo nodeId="2792704635247522090" varName="width" />
       <varInfo nodeId="2792704635247520989" varName="y" />
       <varInfo nodeId="2792704635247522079" varName="x" />
     </scopeInfo>
@@ -4890,8 +4896,8 @@
       <varInfo nodeId="4434895596490172181" varName="editorComponent" />
     </scopeInfo>
     <scopeInfo nodeId="6746101208730360071" fileName="ChangesFoldingAreaPainter.java" startLine="294" startPosition="104" endLine="304" endPosition="31">
-      <varInfo nodeId="6746101208730361664" varName="bottomY" />
       <varInfo nodeId="6746101208730360675" varName="editorComponent" />
+      <varInfo nodeId="6746101208730361664" varName="bottomY" />
     </scopeInfo>
     <scopeInfo nodeId="4434895596490172219" fileName="ChangesFoldingAreaPainter.java" startLine="78" startPosition="79" endLine="89" endPosition="17">
       <varInfo nodeId="6589571255109292396" varName="xPoints" />
@@ -4958,8 +4964,8 @@
       <varInfo nodeId="6923910471520917317" varName="clipBounds" />
     </scopeInfo>
     <scopeInfo nodeId="6746101208730360006" fileName="ChangesFoldingAreaPainter.java" startLine="130" startPosition="36" endLine="170" endPosition="5">
-      <varInfo nodeId="3176852462137033808" varName="currentMaxY" />
       <varInfo nodeId="6746101208730363612" varName="currentGroupMessages" />
+      <varInfo nodeId="3176852462137033808" varName="currentMaxY" />
       <varInfo nodeId="6746101208730361841" varName="messagesWithCells" />
       <varInfo nodeId="6746101208730361713" varName="editorComponent" />
     </scopeInfo>

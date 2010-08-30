@@ -2976,7 +2976,7 @@
               <node role="logExpression:0" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="3367145324776993280" />
               <node role="exception:0" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3367145324776993281">
                 <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="3367145324776993283">
-                  <link role="baseMethodDeclaration:3" targetNodeId="49.~AssertionError.&lt;init&gt;(java.lang.Object)" resolveInfo="AssertionError" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="49.~AssertionError.&lt;init&gt;(java.lang.String)" resolveInfo="AssertionError" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="3367145324776993284">
                     <property name="value:3" value="adding change to model without base version" />
                   </node>
@@ -3197,7 +3197,7 @@
               <node role="logExpression:0" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="3367145324776993297" />
               <node role="exception:0" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3367145324776993298">
                 <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="3367145324776993299">
-                  <link role="baseMethodDeclaration:3" targetNodeId="49.~AssertionError.&lt;init&gt;(java.lang.Object)" resolveInfo="AssertionError" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="49.~AssertionError.&lt;init&gt;(java.lang.String)" resolveInfo="AssertionError" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="3367145324776993300">
                     <property name="value:3" value="removing change from model without base version" />
                   </node>
@@ -28757,6 +28757,11 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4056424511791981358">
     <property name="name:3" value="SModelUtils" />
+    <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="7523553402533156445">
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="7523553402533156446" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="7523553402533156449" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7523553402533156448" />
+    </node>
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4056424511791981359" />
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="4056424511791981364">
       <property name="name:3" value="getNodeIds" />
@@ -29182,6 +29187,11 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="2253323551303625635">
     <property name="name:3" value="VCSUtils" />
+    <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="7523553402533213938">
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="7523553402533213939" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="7523553402533213942" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7523553402533213941" />
+    </node>
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="3090835573635150394">
       <property name="name:3" value="getBaseVersionContent" />
       <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="272407866692946649">

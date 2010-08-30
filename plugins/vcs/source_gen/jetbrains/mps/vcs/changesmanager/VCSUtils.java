@@ -18,6 +18,9 @@ import com.intellij.openapi.vcs.VcsException;
 public class VCSUtils {
   protected static Log log = LogFactory.getLog(VCSUtils.class);
 
+  private VCSUtils() {
+  }
+
   @Nullable
   public static String getBaseVersionContent(@NotNull VirtualFile file, @NotNull Project project) {
     try {
