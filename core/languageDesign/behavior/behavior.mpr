@@ -9,6 +9,7 @@
   </component>
   <component name="MPSProject">
     <projectSolutions>
+      <solutionPath path="${project}/solutions/behavior.sandbox/behavior.sandbox.msd" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/languages/behavior/behavior.mpl" />

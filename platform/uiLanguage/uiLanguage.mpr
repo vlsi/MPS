@@ -18,9 +18,9 @@
   </component>
   <component name="MPSProject">
     <projectSolutions>
+      <solutionPath path="${project}/runtime/jetbrains.mps.ide.uiLanguage.runtime/jetbrains.mps.ide.uiLanguage.runtime.msd" folder="" />
       <solutionPath path="${project}/solutions/jetbrains.mps.uiLanguage.samples/jetbrains.mps.uiLanguage.saamples.msd" />
       <solutionPath path="${mps_home}/workbench/ideSolution/jetbrains.mps.ide.msd" />
-      <solutionPath path="${project}/runtime/jetbrains.mps.ide.uiLanguage.runtime/jetbrains.mps.ide.uiLanguage.runtime.msd" folder="" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/uiLanguage.mpl" />
@@ -76,7 +76,7 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
-    <mapping directory="$APPLICATION_HOME_DIR$" vcs="svn" />
+    <mapping directory="$APPLICATION_HOME_DIR$" vcs="Git" />
   </component>
 </project>
 
