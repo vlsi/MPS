@@ -690,7 +690,7 @@
         </node>
         <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Folder:7" id="1234971270457">
           <property name="file:7" value="false" />
-          <property name="excludes:7" value="**/*.zip, ideaIntegration/**, vcs/**" />
+          <property name="excludes:7" value="**/*.zip, ideaIntegration/**, vcs/**, samples/**" />
           <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.CreateIfNotExists" id="1805858203209349734">
             <property name="artifactName" value="plugins/ideIntegration.jar" />
             <node role="create" type="jetbrains.mps.build.packaging.structure.BlockReference:7" id="1805858203209349735">
@@ -701,6 +701,12 @@
             <property name="artifactName" value="plugins/vcs.jar" />
             <node role="create" type="jetbrains.mps.build.packaging.structure.BlockReference:7" id="2122546960488253147">
               <link role="block:7" targetNodeId="23.2122546960488253148" resolveInfo="vcs.jar" />
+            </node>
+          </node>
+          <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.CreateIfNotExists" id="8292782121805372919">
+            <property name="artifactName" value="plugins/samples.jar" />
+            <node role="create" type="jetbrains.mps.build.packaging.structure.BlockReference:7" id="8292782121805372920">
+              <link role="block:7" targetNodeId="23.8292782121805370750" resolveInfo="samples.jar" />
             </node>
           </node>
           <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="1234971270458">
