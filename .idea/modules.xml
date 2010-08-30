@@ -45,7 +45,7 @@
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/generator/generator.iml" filepath="$PROJECT_DIR$/core/languageDesign/generator/generator.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/workbench/ideUiLanguage/ideUiLanguage.iml" filepath="$PROJECT_DIR$/workbench/ideUiLanguage/ideUiLanguage.iml" group="workbench" />
       <module fileurl="file://$PROJECT_DIR$/core/idea-patch/idea-patch.iml" filepath="$PROJECT_DIR$/core/idea-patch/idea-patch.iml" group="core/kernel" />
-      <module fileurl="file://$PROJECT_DIR$/plugins/ideaIntegration/ideaIntegration.iml" filepath="$PROJECT_DIR$/plugins/ideaIntegration/ideaIntegration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/ideaIntegration/ideaIntegration.iml" filepath="$PROJECT_DIR$/plugins/ideaIntegration/ideaIntegration.iml" group="plugins" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/intentions/intentions.iml" filepath="$PROJECT_DIR$/core/languageDesign/intentions/intentions.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/javaParser/javaParser.iml" filepath="$PROJECT_DIR$/core/javaParser/javaParser.iml" group="core/kernel" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/javadoc/javadoc.iml" filepath="$PROJECT_DIR$/core/baseLanguage/javadoc/javadoc.iml" group="core/baseLanguage" />
@@ -69,8 +69,7 @@
       <module fileurl="file://$PROJECT_DIR$/resources/resources.iml" filepath="$PROJECT_DIR$/resources/resources.iml" group="workbench" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/runConfigurations/runConfigurations.iml" filepath="$PROJECT_DIR$/core/baseLanguage/runConfigurations/runConfigurations.iml" group="core/baseLanguage" />
       <module fileurl="file://$PROJECT_DIR$/core/runtime/runtime.iml" filepath="$PROJECT_DIR$/core/runtime/runtime.iml" group="core/kernel" />
-      <module fileurl="file://$PROJECT_DIR$/samples/sampleXML/sampleXML.iml" filepath="$PROJECT_DIR$/samples/sampleXML/sampleXML.iml" group="samples" />
-      <module fileurl="file://$PROJECT_DIR$/plugins/samples/samplesplugin.iml" filepath="$PROJECT_DIR$/plugins/samples/samplesplugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/samples/samplesplugin.iml" filepath="$PROJECT_DIR$/plugins/samples/samplesplugin.iml" group="plugins" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/script/script.iml" filepath="$PROJECT_DIR$/core/languageDesign/script/script.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/sharedConcepts/sharedConcepts.iml" filepath="$PROJECT_DIR$/core/languageDesign/sharedConcepts/sharedConcepts.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/smodel/smodel.iml" filepath="$PROJECT_DIR$/core/languageDesign/smodel/smodel.iml" group="core/languageDesign" />
@@ -83,7 +82,7 @@
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/typesystem/typesystem.iml" filepath="$PROJECT_DIR$/core/languageDesign/typesystem/typesystem.iml" group="core/languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/platform/uiLanguage/uiLanguage.iml" filepath="$PROJECT_DIR$/platform/uiLanguage/uiLanguage.iml" group="platform/uiLanguage" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/unitTest/unitTest.iml" filepath="$PROJECT_DIR$/core/baseLanguage/unitTest/unitTest.iml" group="core/baseLanguage" />
-      <module fileurl="file://$PROJECT_DIR$/plugins/vcs/vcs.iml" filepath="$PROJECT_DIR$/plugins/vcs/vcs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/vcs/vcs.iml" filepath="$PROJECT_DIR$/plugins/vcs/vcs.iml" group="plugins" />
       <module fileurl="file://$PROJECT_DIR$/workbench/workbench.iml" filepath="$PROJECT_DIR$/workbench/workbench.iml" group="workbench" />
       <module fileurl="file://$PROJECT_DIR$/platform/xmlDeprecated/xmlDeprecated.iml" filepath="$PROJECT_DIR$/platform/xmlDeprecated/xmlDeprecated.iml" group="platform" />
       <module fileurl="file://$PROJECT_DIR$/core/kernel/xmlQuery/runtime/xmlQuery-runtime.iml" filepath="$PROJECT_DIR$/core/kernel/xmlQuery/runtime/xmlQuery-runtime.iml" />
