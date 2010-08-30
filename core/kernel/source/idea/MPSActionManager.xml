@@ -110,15 +110,7 @@
               class="jetbrains.mps.workbench.actions.help.ShowDocumentationAction"
               text="Browse MPS Documentation"
               description="You can browse online documentation on MPS"/>
-       <action id="OpenTheComplexNumberLanguageProject"
-              class="jetbrains.mps.workbench.actions.welcomeScreen.OpenComplexLanguageProjectAction"
-              text="Open Complex Numbers Project"
-              description="You can take a look at how baseLanguage can be extended with support for complex numbers. Click the icon or link to open the sample project."/>
-      <action
-              id="OpenTheSimplestLanguageProject"
-              class="jetbrains.mps.workbench.actions.welcomeScreen.OpenTheSimplestLanguageProjectAction"
-              text="Open The Simplest Language Project"
-              description="You can take a look at the simplest possible language with typical aspects of most languages. Click the icon or link to open the sample project."/>
+
       <add-to-group group-id="WelcomeScreen.Documentation" anchor="first"/>
     </group>
 
