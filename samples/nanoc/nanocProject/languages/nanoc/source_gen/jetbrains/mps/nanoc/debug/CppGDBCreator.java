@@ -52,12 +52,10 @@ public class CppGDBCreator extends AbstractDebugSessionCreator {
     myModelRef = modelRef;
   }
 
-  @Override
   public AbstractDebugSession getDebugSession() {
     return myDebugSession;
   }
 
-  @Override
   public ExecutionResult startSession(Executor executor, ProgramRunner runner, RunProfileState state, Project project) throws ExecutionException {
     try {
       myProgramFile = NanocConfigRunPreparationUtil.prepare(myNodeId, myModelRef);
@@ -71,17 +69,14 @@ public class CppGDBCreator extends AbstractDebugSessionCreator {
       SimpleConsoleProcessHandler processHandler = new SimpleConsoleProcessHandler(consoleView, process, gdbFile.getAbsolutePath());
       processHandler.addProcessListener(new CppGDBCreator.MyProcessListener());
       ExecutionConsole executionConsole = new ExecutionConsole() {
-        @Override
         public JComponent getComponent() {
           return consoleView.getComponent();
         }
 
-        @Override
         public JComponent getPreferredFocusableComponent() {
           return consoleView;
         }
 
-        @Override
         public void dispose() {
           Disposer.dispose(consoleView);
         }
@@ -89,7 +84,6 @@ public class CppGDBCreator extends AbstractDebugSessionCreator {
       myDebugSession = new CppDebugSession(project, sourceGen);
       myDebugSession.setProcessHandler(processHandler);
       myDebugSession.getGDBEventsHandler().addEventListener(new GDBEventsAdapter() {
-        @Override
         public void processTerminated(SimpleConsoleProcessHandler gdbProcess) {
           gdbProcess.inputWithFlush("-gdb-exit\n");
         }
@@ -110,7 +104,6 @@ public class CppGDBCreator extends AbstractDebugSessionCreator {
     private MyProcessListener() {
     }
 
-    @Override
     public void onTextAvailable(ProcessEvent event, Key outputType) {
       if (!(myReadyForInput)) {
         String s = event.getText();
@@ -122,11 +115,9 @@ public class CppGDBCreator extends AbstractDebugSessionCreator {
           gdbProcess.inputWithFlush("-environment-cd " + workingDir + "\n");
           gdbProcess.inputWithFlush("-file-exec-and-symbols " + myProgramFile.getAbsolutePath().replace(File.separatorChar, '/') + "\n");
           myDebugSession.getGDBRequestManager().createRequest(new BreakpointRequestor("main") {
-            @Override
             public void onRequestFulfilled(ResultAnswer answer, List<StreamAnswer> receivedStreamAnswers) {
               final GDBEventsHandler eventsHandler = myDebugSession.getGDBEventsHandler();
               eventsHandler.addEventListener(new GDBEventsAdapter() {
-                @Override
                 public void paused(AsyncAnswer answer, SimpleConsoleProcessHandler gdbProcess) {
                   eventsHandler.removeEventListener(this);
                   connectedToDebuggee(gdbProcess);

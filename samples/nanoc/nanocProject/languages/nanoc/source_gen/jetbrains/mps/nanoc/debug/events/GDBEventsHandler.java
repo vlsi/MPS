@@ -29,7 +29,6 @@ public class GDBEventsHandler {
   public GDBEventsHandler(SimpleConsoleProcessHandler gdbProcess) {
     myProcessHandler = gdbProcess;
     myProcessHandler.addProcessListener(new ProcessAdapter() {
-      @Override
       public void onTextAvailable(ProcessEvent event, Key outputType) {
         String text = event.getText();
         GDBAnswerProducer producer = new GDBAnswerProducer(text);
@@ -67,7 +66,6 @@ public class GDBEventsHandler {
         }
       }
 
-      @Override
       public void processTerminated(ProcessEvent event) {
         fireGDBProcessTerminated();
       }

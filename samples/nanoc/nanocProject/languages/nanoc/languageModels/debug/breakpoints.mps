@@ -134,18 +134,12 @@
                         </node>
                       </node>
                     </node>
-                    <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="3990508698139427030">
-                      <link role="annotation:3" targetNodeId="2v.~Override" />
-                    </node>
                   </node>
                 </node>
               </node>
             </node>
           </node>
         </node>
-      </node>
-      <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="3990508698139426962">
-        <link role="annotation:3" targetNodeId="2v.~Override" />
       </node>
     </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3990508698139426963">
@@ -191,18 +185,12 @@
                         </node>
                       </node>
                     </node>
-                    <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="3990508698139427037">
-                      <link role="annotation:3" targetNodeId="2v.~Override" />
-                    </node>
                   </node>
                 </node>
               </node>
             </node>
           </node>
         </node>
-      </node>
-      <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="3990508698139426978">
-        <link role="annotation:3" targetNodeId="2v.~Override" />
       </node>
     </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3990508698139426979">
@@ -343,9 +331,6 @@
                           </node>
                         </node>
                       </node>
-                      <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="3990508698139427074">
-                        <link role="annotation:3" targetNodeId="2v.~Override" />
-                      </node>
                     </node>
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="3990508698139427000">
                       <link role="baseMethodDeclaration:3" targetNodeId="1.~AbstractMPSBreakpoint.getFileName():java.lang.String" />
@@ -425,9 +410,6 @@
                             </node>
                           </node>
                         </node>
-                      </node>
-                      <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="3990508698139427085">
-                        <link role="annotation:3" targetNodeId="2v.~Override" />
                       </node>
                     </node>
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="3990508698139427023">

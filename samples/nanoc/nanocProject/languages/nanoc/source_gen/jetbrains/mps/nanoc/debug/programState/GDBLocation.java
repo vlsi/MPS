@@ -33,22 +33,18 @@ public class GDBLocation implements ILocation {
     }
   }
 
-  @Override
   public String getFileName() {
     return myFileName;
   }
 
-  @Override
   public String getUnitName() {
     return myUnit;
   }
 
-  @Override
   public String getRoutineName() {
     return myRoutine;
   }
 
-  @Override
   public int getLineNumber() {
     return myLineNumber + 2;
   }

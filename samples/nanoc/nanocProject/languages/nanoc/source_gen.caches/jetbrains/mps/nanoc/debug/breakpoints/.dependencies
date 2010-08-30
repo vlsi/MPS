@@ -3,7 +3,6 @@
   <dependency className="jetbrains.mps.nanoc.debug.breakpoints.GDBBreakpoint" file="GDBBreakpoint.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Integer" />
-    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.nanoc.debug.CppDebugSession" />

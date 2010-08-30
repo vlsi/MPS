@@ -12,19 +12,15 @@ public abstract class GDBEventsAdapter implements GDBEventsListener {
   public GDBEventsAdapter() {
   }
 
-  @Override
   public void paused(AsyncAnswer answer, SimpleConsoleProcessHandler gdbProcess) {
   }
 
-  @Override
   public void processTerminated(SimpleConsoleProcessHandler gdbProcess) {
   }
 
-  @Override
   public void resultReceived(ResultAnswer result, List<StreamAnswer> receivedStreamAnswers, SimpleConsoleProcessHandler gdbProcess) {
   }
 
-  @Override
   public void gdbProcessTerminated(SimpleConsoleProcessHandler processHandler) {
   }
 }

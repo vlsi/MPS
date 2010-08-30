@@ -17,7 +17,6 @@ public abstract class BreakpointRequestor extends GDBRequestor {
     myFunction = function;
   }
 
-  @Override
   public String createRequestString() {
     if (mySourceFile == null) {
       return "-break-insert " + myFunction;

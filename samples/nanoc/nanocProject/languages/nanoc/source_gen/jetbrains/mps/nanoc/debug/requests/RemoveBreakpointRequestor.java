@@ -10,7 +10,6 @@ public abstract class RemoveBreakpointRequestor extends GDBRequestor {
     myBreakpointGDBNumber = breakpointNumber;
   }
 
-  @Override
   public String createRequestString() {
     return "-break-delete " + myBreakpointGDBNumber;
   }

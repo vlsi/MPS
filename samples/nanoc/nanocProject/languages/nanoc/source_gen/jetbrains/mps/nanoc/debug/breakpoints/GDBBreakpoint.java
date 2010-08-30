@@ -27,20 +27,16 @@ public class GDBBreakpoint extends AbstractMPSBreakpoint {
     super(nodePointer, project);
   }
 
-  @Override
   public void removeFromRunningSessions() {
     CppDebugSession.performAllSessionsAction(myProject, new CppDebugSession.DebugSessionAction() {
-      @Override
       public void run(CppDebugSession debugSession) {
         createRemoveBreakpointRequest(debugSession.getGDBRequestManager());
       }
     });
   }
 
-  @Override
   public void addToRunningSessions() {
     CppDebugSession.performAllSessionsAction(myProject, new CppDebugSession.DebugSessionAction() {
-      @Override
       public void run(CppDebugSession debugSession) {
         createBreakpointRequest(debugSession.getGDBRequestManager());
       }
@@ -49,7 +45,6 @@ public class GDBBreakpoint extends AbstractMPSBreakpoint {
 
   public void createBreakpointRequest(GDBRequestManager requestManager) {
     requestManager.createRequest(new BreakpointRequestor(getFileName(), getLineIndexInFile()) {
-      @Override
       public void onRequestFulfilled(ResultAnswer answer, List<StreamAnswer> receivedStreamAnswers) {
         myAdded = true;
         RecordValue bkptInfo = (RecordValue) answer.getResults().getPropertyValue(GDBBreakpoint.BKPT);
@@ -62,7 +57,6 @@ public class GDBBreakpoint extends AbstractMPSBreakpoint {
 
   public void createRemoveBreakpointRequest(GDBRequestManager requestManager) {
     requestManager.createRequest(new RemoveBreakpointRequestor(myInternalGDBNumber) {
-      @Override
       public void onRequestFulfilled(ResultAnswer answer, List<StreamAnswer> receivedStreamAnswers) {
         myAdded = false;
         myInternalGDBNumber = -1;

@@ -7,7 +7,6 @@ public abstract class ResumeRequest extends GDBRequestor {
   public ResumeRequest() {
   }
 
-  @Override
   public String createRequestString() {
     return "-exec-continue";
   }

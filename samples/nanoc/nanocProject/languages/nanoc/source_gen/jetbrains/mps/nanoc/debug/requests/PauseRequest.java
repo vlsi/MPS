@@ -7,7 +7,6 @@ public abstract class PauseRequest extends GDBRequestor {
   public PauseRequest() {
   }
 
-  @Override
   public String createRequestString() {
     return "-exec-interrupt";
   }

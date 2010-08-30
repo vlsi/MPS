@@ -15,22 +15,18 @@ public class SimpleValue implements IValue {
     myValue = value;
   }
 
-  @Override
   public String getValuePresentation() {
     return myValue;
   }
 
-  @Override
   public boolean isStructure() {
     return false;
   }
 
-  @Override
   public List<IWatchable> getSubvalues() {
     return new ArrayList<IWatchable>();
   }
 
-  @Override
   public Icon getPresentationIcon() {
     return null;
   }

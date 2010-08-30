@@ -13,7 +13,6 @@
   <import index="3" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="4" modelUID="f:java_stub#com.intellij.execution.process(com.intellij.execution.process@java_stub)" version="-1" />
   <import index="5" modelUID="f:java_stub#com.intellij.openapi.util(com.intellij.openapi.util@java_stub)" version="-1" />
-  <visible index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="3990508698139423539">
     <property name="abstractClass:3" value="true" />
     <property name="name:3" value="GDBEventsAdapter" />
@@ -43,9 +42,6 @@
         </node>
       </node>
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3990508698139425387" />
-      <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="3990508698139425388">
-        <link role="annotation:3" targetNodeId="2v.~Override" />
-      </node>
     </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3990508698139425389">
       <property name="name:3" value="processTerminated" />
@@ -58,9 +54,6 @@
         </node>
       </node>
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3990508698139425394" />
-      <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="3990508698139425395">
-        <link role="annotation:3" targetNodeId="2v.~Override" />
-      </node>
     </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3990508698139425396">
       <property name="name:3" value="resultReceived" />
@@ -88,9 +81,6 @@
         </node>
       </node>
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3990508698139425406" />
-      <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="3990508698139425407">
-        <link role="annotation:3" targetNodeId="2v.~Override" />
-      </node>
     </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3990508698139425408">
       <property name="name:3" value="gdbProcessTerminated" />
@@ -103,9 +93,6 @@
         </node>
       </node>
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3990508698139425413" />
-      <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="3990508698139425414">
-        <link role="annotation:3" targetNodeId="2v.~Override" />
-      </node>
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.Interface:3" id="3990508698139426857">
@@ -185,6 +172,7 @@
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3990508698139426889" />
     </node>
   </node>
+  <visible index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="3990508698139429160">
     <property name="name:3" value="GDBEventsHandler" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3990508698139429161" />
@@ -666,9 +654,6 @@
                           </node>
                         </node>
                       </node>
-                      <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="3990508698139429464">
-                        <link role="annotation:3" targetNodeId="2v.~Override" />
-                      </node>
                     </node>
                     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3990508698139429219">
                       <property name="name:3" value="processTerminated" />
@@ -686,9 +671,6 @@
                             <link role="baseMethodDeclaration:3" targetNodeId="3990508698139429238" resolveInfo="fireGDBProcessTerminated" />
                           </node>
                         </node>
-                      </node>
-                      <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="3990508698139429468">
-                        <link role="annotation:3" targetNodeId="2v.~Override" />
                       </node>
                     </node>
                   </node>

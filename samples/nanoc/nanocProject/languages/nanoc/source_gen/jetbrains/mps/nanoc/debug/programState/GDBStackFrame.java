@@ -54,17 +54,14 @@ public class GDBStackFrame implements IStackFrame {
     }
   }
 
-  @Override
   public ILocation getLocation() {
     return myLocation;
   }
 
-  @Override
   public IThread getThread() {
     return myThread;
   }
 
-  @Override
   public Map<IWatchable, IValue> getWatchableValues() {
     HashMap<IWatchable, IValue> result = new HashMap<IWatchable, IValue>();
     for (SimpleVarWatchable variable : myVariables) {
@@ -73,7 +70,6 @@ public class GDBStackFrame implements IStackFrame {
     return result;
   }
 
-  @Override
   public IValue getValue(IWatchable watchable) {
     for (SimpleVarWatchable variable : myVariables) {
       if (variable == watchable) {
@@ -83,7 +79,6 @@ public class GDBStackFrame implements IStackFrame {
     return null;
   }
 
-  @Override
   public List<IWatchable> getVisibleWatchables() {
     return new ArrayList<IWatchable>(myVariables);
   }
