@@ -60,9 +60,7 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
   private static final Logger LOG = Logger.getLogger(SamplesExtractor.class);
 
   private static final String SAMPLES_IN_MPS_HOME_DIR = "samples";
-  public static final String SAMPLES_IN_MPS_HOME_ZIP = "samples.zip";
-  public static final String SAMPLES_IN_USER_HOME_DIR = "MPSSamples";
-  private static final String MPS = "MPS";
+   private static final String MPS = "MPS";
 
   public static SamplesExtractor getInstance() {
     return ((SamplesExtractor) ApplicationManager.getApplication().getComponent(SamplesInfo.class));

@@ -8,7 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.build.custommps.behavior.MPSBuild_Behavior;
 import jetbrains.mps.generator.template.PropertyMacroContext;
-import jetbrains.mps.build.SamplesExtractor;
+import jetbrains.mps.samples.SamplesInfo;
 import jetbrains.mps.build.custommps.behavior.LibraryFolder_Behavior;
 import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -69,15 +69,15 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_251121617073503091(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SamplesExtractor.SAMPLES_IN_USER_HOME_DIR;
+    return SamplesInfo.SAMPLES_IN_USER_HOME_DIR;
   }
 
   public static Object propertyMacro_GetPropertyValue_1240993720607(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SamplesExtractor.SAMPLES_IN_MPS_HOME_ZIP;
+    return SamplesInfo.SAMPLES_IN_MPS_HOME_ZIP;
   }
 
   public static Object propertyMacro_GetPropertyValue_1240994139294(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SamplesExtractor.SAMPLES_IN_MPS_HOME_ZIP;
+    return SamplesInfo.SAMPLES_IN_MPS_HOME_ZIP;
   }
 
   public static Object propertyMacro_GetPropertyValue_1240847003277(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -191,7 +191,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1241015690726(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SamplesExtractor.SAMPLES_IN_USER_HOME_DIR;
+    return SamplesInfo.SAMPLES_IN_USER_HOME_DIR;
   }
 
   public static Object propertyMacro_GetPropertyValue_1239130486816(final IOperationContext operationContext, final PropertyMacroContext _context) {
