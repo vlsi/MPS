@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="3990508698139430162">
+    <nodeInfo nodeId="3990508698139430174" fileName="ProcessUtil.java" startLine="11" startPosition="48" endLine="12" endPosition="44" />
+    <nodeInfo nodeId="3990508698139430184" fileName="ProcessUtil.java" startLine="13" startPosition="20" endLine="14" endPosition="32" />
+    <nodeInfo nodeId="3990508698139430190" fileName="ProcessUtil.java" startLine="15" startPosition="5" endLine="16" endPosition="48" />
+    <nodeInfo nodeId="3990508698139430200" fileName="ProcessUtil.java" startLine="17" startPosition="20" endLine="18" endPosition="32" />
+    <nodeInfo nodeId="3990508698139430206" fileName="ProcessUtil.java" startLine="19" startPosition="5" endLine="20" endPosition="16" />
+    <nodeInfo nodeId="3990508698139430222" fileName="ProcessUtil.java" startLine="24" startPosition="9" endLine="25" endPosition="56" />
+    <nodeInfo nodeId="3990508698139430231" fileName="ProcessUtil.java" startLine="25" startPosition="56" endLine="26" endPosition="28" />
+    <nodeInfo nodeId="3990508698139430236" fileName="ProcessUtil.java" startLine="26" startPosition="28" endLine="27" endPosition="31" />
+    <nodeInfo nodeId="3990508698139430245" fileName="ProcessUtil.java" startLine="27" startPosition="31" endLine="28" endPosition="15" />
+    <nodeInfo nodeId="3990508698139430217" fileName="ProcessUtil.java" startLine="29" startPosition="27" endLine="30" endPosition="18" />
+    <nodeInfo nodeId="3990508698139430261" fileName="ProcessUtil.java" startLine="35" startPosition="9" endLine="36" endPosition="53" />
+    <nodeInfo nodeId="3990508698139430270" fileName="ProcessUtil.java" startLine="36" startPosition="53" endLine="37" endPosition="28" />
+    <nodeInfo nodeId="3990508698139430275" fileName="ProcessUtil.java" startLine="37" startPosition="28" endLine="38" endPosition="37" />
+    <nodeInfo nodeId="3990508698139430284" fileName="ProcessUtil.java" startLine="38" startPosition="37" endLine="39" endPosition="15" />
+    <nodeInfo nodeId="3990508698139430256" fileName="ProcessUtil.java" startLine="40" startPosition="27" endLine="41" endPosition="18" />
+    <nodeInfo nodeId="3990508698139430164" fileName="ProcessUtil.java" startLine="7" startPosition="26" endLine="9" endPosition="3" />
+    <nodeInfo nodeId="3990508698139430179" fileName="ProcessUtil.java" startLine="12" startPosition="44" endLine="15" endPosition="5" />
+    <nodeInfo nodeId="3990508698139430195" fileName="ProcessUtil.java" startLine="16" startPosition="48" endLine="19" endPosition="5" />
+    <nodeInfo nodeId="3990508698139430214" fileName="ProcessUtil.java" startLine="23" startPosition="50" endLine="31" endPosition="5" />
+    <nodeInfo nodeId="3990508698139430253" fileName="ProcessUtil.java" startLine="34" startPosition="54" endLine="42" endPosition="5" />
+    <nodeInfo nodeId="3990508698139430208" fileName="ProcessUtil.java" startLine="22" startPosition="0" endLine="33" endPosition="0" />
+    <nodeInfo nodeId="3990508698139430247" fileName="ProcessUtil.java" startLine="33" startPosition="0" endLine="44" endPosition="0" />
+    <nodeInfo nodeId="3990508698139430168" fileName="ProcessUtil.java" startLine="10" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="3990508698139430167" fileName="ProcessUtil.java" startLine="8" startPosition="24" endLine="8" endPosition="24" />
+    <scopeInfo nodeId="3990508698139430183" fileName="ProcessUtil.java" startLine="13" startPosition="20" endLine="14" endPosition="32" />
+    <scopeInfo nodeId="3990508698139430199" fileName="ProcessUtil.java" startLine="17" startPosition="20" endLine="18" endPosition="32" />
+    <scopeInfo nodeId="3990508698139430216" fileName="ProcessUtil.java" startLine="29" startPosition="27" endLine="30" endPosition="18" />
+    <scopeInfo nodeId="3990508698139430255" fileName="ProcessUtil.java" startLine="40" startPosition="27" endLine="41" endPosition="18" />
+    <scopeInfo nodeId="3990508698139430164" fileName="ProcessUtil.java" startLine="7" startPosition="26" endLine="9" endPosition="3" />
+    <scopeInfo nodeId="3990508698139430221" fileName="ProcessUtil.java" startLine="24" startPosition="9" endLine="28" endPosition="15">
+      <varInfo nodeId="3990508698139430223" varName="f" />
+      <varInfo nodeId="3990508698139430237" varName="l" />
+    </scopeInfo>
+    <scopeInfo nodeId="3990508698139430260" fileName="ProcessUtil.java" startLine="35" startPosition="9" endLine="39" endPosition="15">
+      <varInfo nodeId="3990508698139430262" varName="f" />
+      <varInfo nodeId="3990508698139430276" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="3990508698139430213" fileName="ProcessUtil.java" startLine="23" startPosition="50" endLine="31" endPosition="5" />
+    <scopeInfo nodeId="3990508698139430252" fileName="ProcessUtil.java" startLine="34" startPosition="54" endLine="42" endPosition="5" />
+    <scopeInfo nodeId="3990508698139430173" fileName="ProcessUtil.java" startLine="11" startPosition="48" endLine="20" endPosition="16">
+      <varInfo nodeId="3990508698139430175" varName="l" />
+      <varInfo nodeId="3990508698139430191" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="3990508698139430208" fileName="ProcessUtil.java" startLine="22" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="3990508698139430211" varName="p" />
+    </scopeInfo>
+    <scopeInfo nodeId="3990508698139430247" fileName="ProcessUtil.java" startLine="33" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="3990508698139430250" varName="p" />
+    </scopeInfo>
+    <scopeInfo nodeId="3990508698139430168" fileName="ProcessUtil.java" startLine="10" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="3990508698139430171" varName="p" />
+    </scopeInfo>
+    <unitInfo nodeId="3990508698139430162" fileName="ProcessUtil.java" startLine="7" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.nanoc.debug.util.ProcessUtil" />
+  </root>
+</debugInfo>
+

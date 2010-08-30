@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="3990508698139423539">
+    <nodeInfo nodeId="3990508698139425376" fileName="GDBEventsAdapter.java" startLine="11" startPosition="69" endLine="13" endPosition="3" />
+    <nodeInfo nodeId="3990508698139425380" fileName="GDBEventsAdapter.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <nodeInfo nodeId="3990508698139425389" fileName="GDBEventsAdapter.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
+    <nodeInfo nodeId="3990508698139425396" fileName="GDBEventsAdapter.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
+    <nodeInfo nodeId="3990508698139425408" fileName="GDBEventsAdapter.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="3990508698139425379" fileName="GDBEventsAdapter.java" startLine="12" startPosition="29" endLine="12" endPosition="29" />
+    <scopeInfo nodeId="3990508698139425387" fileName="GDBEventsAdapter.java" startLine="16" startPosition="82" endLine="16" endPosition="82" />
+    <scopeInfo nodeId="3990508698139425394" fileName="GDBEventsAdapter.java" startLine="20" startPosition="73" endLine="20" endPosition="73" />
+    <scopeInfo nodeId="3990508698139425406" fileName="GDBEventsAdapter.java" startLine="24" startPosition="133" endLine="24" endPosition="133" />
+    <scopeInfo nodeId="3990508698139425413" fileName="GDBEventsAdapter.java" startLine="28" startPosition="80" endLine="28" endPosition="80" />
+    <scopeInfo nodeId="3990508698139425376" fileName="GDBEventsAdapter.java" startLine="11" startPosition="69" endLine="13" endPosition="3" />
+    <scopeInfo nodeId="3990508698139425380" fileName="GDBEventsAdapter.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="3990508698139425385" varName="gdbProcess" />
+      <varInfo nodeId="3990508698139425383" varName="answer" />
+    </scopeInfo>
+    <scopeInfo nodeId="3990508698139425389" fileName="GDBEventsAdapter.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="3990508698139425392" varName="gdbProcess" />
+    </scopeInfo>
+    <scopeInfo nodeId="3990508698139425396" fileName="GDBEventsAdapter.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="3990508698139425399" varName="result" />
+      <varInfo nodeId="3990508698139425401" varName="receivedStreamAnswers" />
+      <varInfo nodeId="3990508698139425404" varName="gdbProcess" />
+    </scopeInfo>
+    <scopeInfo nodeId="3990508698139425408" fileName="GDBEventsAdapter.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="3990508698139425411" varName="processHandler" />
+    </scopeInfo>
+    <unitInfo nodeId="3990508698139423539" fileName="GDBEventsAdapter.java" startLine="11" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.nanoc.debug.events.GDBEventsAdapter" />
+  </root>
+  <root nodeId="3990508698139426857">
+    <nodeInfo nodeId="3990508698139426859" fileName="GDBEventsListener.java" startLine="11" startPosition="36" endLine="12" endPosition="81" />
+    <nodeInfo nodeId="3990508698139426867" fileName="GDBEventsListener.java" startLine="12" startPosition="81" endLine="13" endPosition="72" />
+    <nodeInfo nodeId="3990508698139426873" fileName="GDBEventsListener.java" startLine="13" startPosition="72" endLine="14" endPosition="132" />
+    <nodeInfo nodeId="3990508698139426884" fileName="GDBEventsListener.java" startLine="14" startPosition="132" endLine="15" endPosition="79" />
+    <scopeInfo nodeId="3990508698139426859" fileName="GDBEventsListener.java" startLine="11" startPosition="36" endLine="12" endPosition="81">
+      <varInfo nodeId="3990508698139426864" varName="gdbProcess" />
+      <varInfo nodeId="3990508698139426862" varName="answer" />
+    </scopeInfo>
+    <scopeInfo nodeId="3990508698139426867" fileName="GDBEventsListener.java" startLine="12" startPosition="81" endLine="13" endPosition="72">
+      <varInfo nodeId="3990508698139426870" varName="gdbProcess" />
+    </scopeInfo>
+    <scopeInfo nodeId="3990508698139426873" fileName="GDBEventsListener.java" startLine="13" startPosition="72" endLine="14" endPosition="132">
+      <varInfo nodeId="3990508698139426876" varName="result" />
+      <varInfo nodeId="3990508698139426878" varName="receivedStreamAnswers" />
+      <varInfo nodeId="3990508698139426881" varName="gdbProcess" />
+    </scopeInfo>
+    <scopeInfo nodeId="3990508698139426884" fileName="GDBEventsListener.java" startLine="14" startPosition="132" endLine="15" endPosition="79">
+      <varInfo nodeId="3990508698139426887" varName="processHandler" />
+    </scopeInfo>
+    <unitInfo nodeId="3990508698139426857" fileName="GDBEventsListener.java" startLine="11" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.nanoc.debug.events.GDBEventsListener" />
+  </root>
+  <root nodeId="3990508698139429160">
+    <nodeInfo nodeId="3990508698139429172" fileName="GDBEventsHandler.java" startLine="19" startPosition="31" endLine="20" endPosition="47" />
+    <nodeInfo nodeId="3990508698139429176" fileName="GDBEventsHandler.java" startLine="20" startPosition="47" endLine="21" endPosition="62" />
+    <nodeInfo nodeId="3990508698139429180" fileName="GDBEventsHandler.java" startLine="21" startPosition="62" endLine="22" endPosition="72" />
+    <nodeInfo nodeId="3990508698139429184" fileName="GDBEventsHandler.java" startLine="22" startPosition="72" endLine="23" endPosition="54" />
+    <nodeInfo nodeId="3990508698139429162" fileName="GDBEventsHandler.java" startLine="24" startPosition="0" endLine="25" endPosition="55" />
+    <nodeInfo nodeId="3990508698139429165" fileName="GDBEventsHandler.java" startLine="25" startPosition="55" endLine="26" endPosition="89" />
+    <nodeInfo nodeId="3990508698139429188" fileName="GDBEventsHandler.java" startLine="26" startPosition="89" endLine="27" endPosition="84" />
+    <nodeInfo nodeId="3990508698139429201" fileName="GDBEventsHandler.java" startLine="29" startPosition="67" endLine="30" endPosition="34" />
+    <nodeInfo nodeId="3990508698139429329" fileName="GDBEventsHandler.java" startLine="33" startPosition="71" endLine="34" endPosition="38" />
+    <nodeInfo nodeId="3990508698139429335" fileName="GDBEventsHandler.java" startLine="34" startPosition="38" endLine="35" endPosition="65" />
+    <nodeInfo nodeId="3990508698139429341" fileName="GDBEventsHandler.java" startLine="35" startPosition="65" endLine="36" endPosition="54" />
+    <nodeInfo nodeId="3990508698139429356" fileName="GDBEventsHandler.java" startLine="37" startPosition="55" endLine="38" endPosition="17" />
+    <nodeInfo nodeId="3990508698139429362" fileName="GDBEventsHandler.java" startLine="40" startPosition="47" endLine="41" endPosition="55" />
+    <nodeInfo nodeId="3990508698139429377" fileName="GDBEventsHandler.java" startLine="42" startPosition="54" endLine="43" endPosition="95" />
+    <nodeInfo nodeId="3990508698139429417" fileName="GDBEventsHandler.java" startLine="48" startPosition="122" endLine="49" endPosition="38" />
+    <nodeInfo nodeId="3990508698139429419" fileName="GDBEventsHandler.java" startLine="49" startPosition="38" endLine="50" endPosition="21" />
+    <nodeInfo nodeId="3990508698139429412" fileName="GDBEventsHandler.java" startLine="51" startPosition="20" endLine="52" endPosition="33" />
+    <nodeInfo nodeId="3990508698139429415" fileName="GDBEventsHandler.java" startLine="52" startPosition="33" endLine="53" endPosition="21" />
+    <nodeInfo nodeId="3990508698139429425" fileName="GDBEventsHandler.java" startLine="57" startPosition="48" endLine="58" endPosition="63" />
+    <nodeInfo nodeId="3990508698139429431" fileName="GDBEventsHandler.java" startLine="58" startPosition="63" endLine="59" endPosition="51" />
+    <nodeInfo nodeId="3990508698139429441" fileName="GDBEventsHandler.java" startLine="61" startPosition="48" endLine="62" endPosition="63" />
+    <nodeInfo nodeId="3990508698139429447" fileName="GDBEventsHandler.java" startLine="62" startPosition="63" endLine="63" endPosition="105" />
+    <nodeInfo nodeId="3990508698139429455" fileName="GDBEventsHandler.java" startLine="63" startPosition="105" endLine="64" endPosition="41" />
+    <nodeInfo nodeId="3990508698139429459" fileName="GDBEventsHandler.java" startLine="64" startPosition="41" endLine="65" endPosition="66" />
+    <nodeInfo nodeId="3990508698139429463" fileName="GDBEventsHandler.java" startLine="65" startPosition="66" endLine="66" endPosition="17" />
+    <nodeInfo nodeId="3990508698139429466" fileName="GDBEventsHandler.java" startLine="71" startPosition="57" endLine="72" endPosition="35" />
+    <nodeInfo nodeId="3990508698139429233" fileName="GDBEventsHandler.java" startLine="78" startPosition="61" endLine="79" endPosition="51" />
+    <nodeInfo nodeId="3990508698139429247" fileName="GDBEventsHandler.java" startLine="84" startPosition="61" endLine="85" endPosition="54" />
+    <nodeInfo nodeId="3990508698139429263" fileName="GDBEventsHandler.java" startLine="90" startPosition="61" endLine="91" endPosition="51" />
+    <nodeInfo nodeId="3990508698139429283" fileName="GDBEventsHandler.java" startLine="96" startPosition="61" endLine="97" endPosition="82" />
+    <nodeInfo nodeId="3990508698139429295" fileName="GDBEventsHandler.java" startLine="101" startPosition="55" endLine="102" endPosition="63" />
+    <nodeInfo nodeId="3990508698139429306" fileName="GDBEventsHandler.java" startLine="105" startPosition="60" endLine="106" endPosition="36" />
+    <nodeInfo nodeId="3990508698139429317" fileName="GDBEventsHandler.java" startLine="109" startPosition="63" endLine="110" endPosition="39" />
+    <nodeInfo nodeId="3990508698139429326" fileName="GDBEventsHandler.java" startLine="113" startPosition="61" endLine="114" endPosition="28" />
+    <nodeInfo nodeId="3990508698139429347" fileName="GDBEventsHandler.java" startLine="36" startPosition="54" endLine="39" endPosition="9" />
+    <nodeInfo nodeId="3990508698139429410" fileName="GDBEventsHandler.java" startLine="51" startPosition="18" endLine="54" endPosition="13" />
+    <nodeInfo nodeId="3990508698139429228" fileName="GDBEventsHandler.java" startLine="77" startPosition="40" endLine="80" endPosition="5" />
+    <nodeInfo nodeId="3990508698139429242" fileName="GDBEventsHandler.java" startLine="83" startPosition="43" endLine="86" endPosition="5" />
+    <nodeInfo nodeId="3990508698139429258" fileName="GDBEventsHandler.java" startLine="89" startPosition="50" endLine="92" endPosition="5" />
+    <nodeInfo nodeId="3990508698139429278" fileName="GDBEventsHandler.java" startLine="95" startPosition="101" endLine="98" endPosition="5" />
+    <nodeInfo nodeId="3990508698139429386" fileName="GDBEventsHandler.java" startLine="43" startPosition="95" endLine="47" endPosition="14" />
+    <nodeInfo nodeId="3990508698139429420" fileName="GDBEventsHandler.java" startLine="56" startPosition="9" endLine="60" endPosition="9" />
+    <nodeInfo nodeId="3990508698139429290" fileName="GDBEventsHandler.java" startLine="100" startPosition="0" endLine="104" endPosition="0" />
+    <nodeInfo nodeId="3990508698139429300" fileName="GDBEventsHandler.java" startLine="104" startPosition="0" endLine="108" endPosition="0" />
+    <nodeInfo nodeId="3990508698139429311" fileName="GDBEventsHandler.java" startLine="108" startPosition="0" endLine="112" endPosition="0" />
+    <nodeInfo nodeId="3990508698139429322" fileName="GDBEventsHandler.java" startLine="112" startPosition="0" endLine="116" endPosition="0" />
+    <nodeInfo nodeId="3990508698139429219" fileName="GDBEventsHandler.java" startLine="69" startPosition="0" endLine="74" endPosition="0" />
+    <nodeInfo nodeId="3990508698139429224" fileName="GDBEventsHandler.java" startLine="76" startPosition="0" endLine="82" endPosition="0" />
+    <nodeInfo nodeId="3990508698139429238" fileName="GDBEventsHandler.java" startLine="82" startPosition="0" endLine="88" endPosition="0" />
+    <nodeInfo nodeId="3990508698139429252" fileName="GDBEventsHandler.java" startLine="88" startPosition="0" endLine="94" endPosition="0" />
+    <nodeInfo nodeId="3990508698139429269" fileName="GDBEventsHandler.java" startLine="94" startPosition="0" endLine="100" endPosition="0" />
+    <nodeInfo nodeId="3990508698139429400" fileName="GDBEventsHandler.java" startLine="47" startPosition="14" endLine="54" endPosition="13" />
+    <nodeInfo nodeId="3990508698139429436" fileName="GDBEventsHandler.java" startLine="60" startPosition="9" endLine="67" endPosition="9" />
+    <nodeInfo nodeId="3990508698139429368" fileName="GDBEventsHandler.java" startLine="41" startPosition="55" endLine="55" endPosition="11" />
+    <nodeInfo nodeId="3990508698139429357" fileName="GDBEventsHandler.java" startLine="39" startPosition="9" endLine="56" endPosition="9" />
+    <nodeInfo nodeId="3990508698139429212" fileName="GDBEventsHandler.java" startLine="31" startPosition="62" endLine="69" endPosition="0" />
+    <nodeInfo nodeId="3990508698139429205" fileName="GDBEventsHandler.java" startLine="30" startPosition="34" endLine="74" endPosition="7" />
+    <nodeInfo nodeId="3990508698139429195" fileName="GDBEventsHandler.java" startLine="28" startPosition="0" endLine="75" endPosition="3" />
+    <scopeInfo nodeId="3990508698139429355" fileName="GDBEventsHandler.java" startLine="37" startPosition="55" endLine="38" endPosition="17" />
+    <scopeInfo nodeId="3990508698139429465" fileName="GDBEventsHandler.java" startLine="71" startPosition="57" endLine="72" endPosition="35" />
+    <scopeInfo nodeId="3990508698139429232" fileName="GDBEventsHandler.java" startLine="78" startPosition="61" endLine="79" endPosition="51" />
+    <scopeInfo nodeId="3990508698139429246" fileName="GDBEventsHandler.java" startLine="84" startPosition="61" endLine="85" endPosition="54" />
+    <scopeInfo nodeId="3990508698139429262" fileName="GDBEventsHandler.java" startLine="90" startPosition="61" endLine="91" endPosition="51" />
+    <scopeInfo nodeId="3990508698139429282" fileName="GDBEventsHandler.java" startLine="96" startPosition="61" endLine="97" endPosition="82" />
+    <scopeInfo nodeId="3990508698139429294" fileName="GDBEventsHandler.java" startLine="101" startPosition="55" endLine="102" endPosition="63" />
+    <scopeInfo nodeId="3990508698139429305" fileName="GDBEventsHandler.java" startLine="105" startPosition="60" endLine="106" endPosition="36" />
+    <scopeInfo nodeId="3990508698139429316" fileName="GDBEventsHandler.java" startLine="109" startPosition="63" endLine="110" endPosition="39" />
+    <scopeInfo nodeId="3990508698139429325" fileName="GDBEventsHandler.java" startLine="113" startPosition="61" endLine="114" endPosition="28" />
+    <scopeInfo nodeId="3990508698139429416" fileName="GDBEventsHandler.java" startLine="48" startPosition="122" endLine="50" endPosition="21" />
+    <scopeInfo nodeId="3990508698139429411" fileName="GDBEventsHandler.java" startLine="51" startPosition="20" endLine="53" endPosition="21" />
+    <scopeInfo nodeId="3990508698139429424" fileName="GDBEventsHandler.java" startLine="57" startPosition="48" endLine="59" endPosition="51">
+      <varInfo nodeId="3990508698139429426" varName="streamAnswer" />
+    </scopeInfo>
+    <scopeInfo nodeId="3990508698139429227" fileName="GDBEventsHandler.java" startLine="77" startPosition="40" endLine="80" endPosition="5" />
+    <scopeInfo nodeId="3990508698139429228" fileName="GDBEventsHandler.java" startLine="77" startPosition="40" endLine="80" endPosition="5">
+      <varInfo nodeId="3990508698139429230" varName="listener" />
+    </scopeInfo>
+    <scopeInfo nodeId="3990508698139429241" fileName="GDBEventsHandler.java" startLine="83" startPosition="43" endLine="86" endPosition="5" />
+    <scopeInfo nodeId="3990508698139429242" fileName="GDBEventsHandler.java" startLine="83" startPosition="43" endLine="86" endPosition="5">
+      <varInfo nodeId="3990508698139429244" varName="listener" />
+    </scopeInfo>
+    <scopeInfo nodeId="3990508698139429257" fileName="GDBEventsHandler.java" startLine="89" startPosition="50" endLine="92" endPosition="5" />
+    <scopeInfo nodeId="3990508698139429258" fileName="GDBEventsHandler.java" startLine="89" startPosition="50" endLine="92" endPosition="5">
+      <varInfo nodeId="3990508698139429260" varName="listener" />
+    </scopeInfo>
+    <scopeInfo nodeId="3990508698139429277" fileName="GDBEventsHandler.java" startLine="95" startPosition="101" endLine="98" endPosition="5" />
+    <scopeInfo nodeId="3990508698139429278" fileName="GDBEventsHandler.java" startLine="95" startPosition="101" endLine="98" endPosition="5">
+      <varInfo nodeId="3990508698139429280" varName="listener" />
+    </scopeInfo>
+    <scopeInfo nodeId="3990508698139429290" fileName="GDBEventsHandler.java" startLine="100" startPosition="0" endLine="104" endPosition="0" />
+    <scopeInfo nodeId="3990508698139429300" fileName="GDBEventsHandler.java" startLine="104" startPosition="0" endLine="108" endPosition="0">
+      <varInfo nodeId="3990508698139429303" varName="listener" />
+    </scopeInfo>
+    <scopeInfo nodeId="3990508698139429311" fileName="GDBEventsHandler.java" startLine="108" startPosition="0" endLine="112" endPosition="0">
+      <varInfo nodeId="3990508698139429314" varName="listener" />
+    </scopeInfo>
+    <scopeInfo nodeId="3990508698139429322" fileName="GDBEventsHandler.java" startLine="112" startPosition="0" endLine="116" endPosition="0" />
+    <scopeInfo nodeId="3990508698139429440" fileName="GDBEventsHandler.java" startLine="61" startPosition="48" endLine="66" endPosition="17">
+      <varInfo nodeId="3990508698139429448" varName="receivedStreamAnswers" />
+      <varInfo nodeId="3990508698139429442" varName="resultAnswer" />
+    </scopeInfo>
+    <scopeInfo nodeId="3990508698139429219" fileName="GDBEventsHandler.java" startLine="69" startPosition="0" endLine="74" endPosition="0">
+      <varInfo nodeId="3990508698139429222" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="3990508698139429224" fileName="GDBEventsHandler.java" startLine="76" startPosition="0" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="3990508698139429238" fileName="GDBEventsHandler.java" startLine="82" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="3990508698139429252" fileName="GDBEventsHandler.java" startLine="88" startPosition="0" endLine="94" endPosition="0">
+      <varInfo nodeId="3990508698139429255" varName="gdbAnswer" />
+    </scopeInfo>
+    <scopeInfo nodeId="3990508698139429269" fileName="GDBEventsHandler.java" startLine="94" startPosition="0" endLine="100" endPosition="0">
+      <varInfo nodeId="3990508698139429274" varName="receivedStreamAnswers" />
+      <varInfo nodeId="3990508698139429272" varName="gdbAnswer" />
+    </scopeInfo>
+    <scopeInfo nodeId="3990508698139429376" fileName="GDBEventsHandler.java" startLine="42" startPosition="54" endLine="54" endPosition="13">
+      <varInfo nodeId="3990508698139429378" varName="reasonRaw" />
+      <varInfo nodeId="3990508698139429387" varName="reason" />
+    </scopeInfo>
+    <scopeInfo nodeId="3990508698139429361" fileName="GDBEventsHandler.java" startLine="40" startPosition="47" endLine="55" endPosition="11">
+      <varInfo nodeId="3990508698139429363" varName="answer" />
+    </scopeInfo>
+    <scopeInfo nodeId="3990508698139429328" fileName="GDBEventsHandler.java" startLine="33" startPosition="71" endLine="67" endPosition="9">
+      <varInfo nodeId="3990508698139429330" varName="text" />
+      <varInfo nodeId="3990508698139429342" varName="gdbAnswer" />
+      <varInfo nodeId="3990508698139429336" varName="producer" />
+    </scopeInfo>
+    <scopeInfo nodeId="3990508698139429212" fileName="GDBEventsHandler.java" startLine="31" startPosition="62" endLine="69" endPosition="0">
+      <varInfo nodeId="3990508698139429215" varName="event" />
+      <varInfo nodeId="3990508698139429217" varName="outputType" />
+    </scopeInfo>
+    <scopeInfo nodeId="3990508698139429200" fileName="GDBEventsHandler.java" startLine="29" startPosition="67" endLine="74" endPosition="7" />
+    <scopeInfo nodeId="3990508698139429195" fileName="GDBEventsHandler.java" startLine="28" startPosition="0" endLine="75" endPosition="3">
+      <varInfo nodeId="3990508698139429198" varName="gdbProcess" />
+    </scopeInfo>
+    <unitInfo nodeId="3990508698139429211" fileName="GDBEventsHandler.java" startLine="31" startPosition="44" endLine="74" endPosition="5" unitName="jetbrains.mps.nanoc.debug.events.GDBEventsHandler$1" />
+    <unitInfo nodeId="3990508698139429160" fileName="GDBEventsHandler.java" startLine="19" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.nanoc.debug.events.GDBEventsHandler" />
+  </root>
+</debugInfo>
+
