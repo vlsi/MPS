@@ -20,7 +20,6 @@ import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.RefreshQueue;
 import com.intellij.openapi.vfs.newvfs.RefreshSession;
-import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
@@ -31,18 +30,21 @@ import java.io.File;
 import java.util.*;
 
 public class FileProcessor {
-  public static void processVCSAddition(final File outputRoot, final IOperationContext context,
-                                        Set<File> generatedFiles) {
-    List<VirtualFile> filesToAdd = new ArrayList<VirtualFile>(generatedFiles.size());
-    for (File f : generatedFiles) {
-      VirtualFile file = VFileSystem.refreshAndGetFile(f);
-      assert file != null : "Can not find virtual file for " + f;
-      filesToAdd.add(file);
-    }
-    VcsMigrationUtil.getHandler().addFilesToVcs(filesToAdd, false, false);
+  private static List<Runnable> ourQueue = new LinkedList<Runnable>();
+  private static final Object LOCK = new Object();
 
-    ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
+  public static void processVCSAddition(final File outputRoot, final IOperationContext context,
+                                        final Set<File> generatedFiles) {
+    Runnable runnable = new Runnable() {
       public void run() {
+        List<VirtualFile> filesToAdd = new ArrayList<VirtualFile>(generatedFiles.size());
+        for (File f : generatedFiles) {
+          VirtualFile file = VFileSystem.refreshAndGetFile(f);
+          assert file != null : "Can not find virtual file for " + f;
+          filesToAdd.add(file);
+        }
+        VcsMigrationUtil.getHandler().addFilesToVcs(filesToAdd, false, false);
+
         final VirtualFile outputRootVirtualFile = VFileSystem.refreshAndGetFile(outputRoot);
 
         RefreshSession session = RefreshQueue.getInstance().createSession(true, true, new Runnable() {
@@ -53,32 +55,53 @@ public class FileProcessor {
         session.addAllFiles(Arrays.asList(outputRootVirtualFile));
         session.launch();
       }
-    });
+    };
+    synchronized (LOCK) {
+      ourQueue.add(runnable);
+    }
   }
 
   public static void processVCSDeletion(
-    SModel inputModel,
-    File outputDir,
-    Set<File> generatedFiles) {
+    final SModel inputModel,
+    final File outputDir,
+    final Set<File> generatedFiles) {
 
-    Set<File> directories = new HashSet<File>();
-    for (File f : generatedFiles) {
-      directories.add(f.getParentFile());
-    }
-    directories.add(FileGenerationUtil.getDefaultOutputDir(inputModel, outputDir));
+    Runnable runnable = new Runnable() {
+      public void run() {
+        Set<File> directories = new HashSet<File>();
+        for (File f : generatedFiles) {
+          directories.add(f.getParentFile());
+        }
+        directories.add(FileGenerationUtil.getDefaultOutputDir(inputModel, outputDir));
 
-    // clear garbage
-    List<File> filesToDelete = new ArrayList<File>();
-    for (File dir : directories) {
-      File[] files = dir.listFiles();
-      if (files == null) continue;
-      for (File outputDirectoryFile : files) {
-        if (outputDirectoryFile.isDirectory()) continue;
-        if (generatedFiles.contains(outputDirectoryFile)) continue;
-        filesToDelete.add(outputDirectoryFile);
+        // clear garbage
+        List<File> filesToDelete = new ArrayList<File>();
+        for (File dir : directories) {
+          File[] files = dir.listFiles();
+          if (files == null) continue;
+          for (File outputDirectoryFile : files) {
+            if (outputDirectoryFile.isDirectory()) continue;
+            if (generatedFiles.contains(outputDirectoryFile)) continue;
+            filesToDelete.add(outputDirectoryFile);
+          }
+        }
+
+        VcsMigrationUtil.deleteFromDiskAndRemoveFromVcs(filesToDelete, false);
       }
+    };
+    synchronized (LOCK) {
+      ourQueue.add(runnable);
     }
+  }
 
-    VcsMigrationUtil.deleteFromDiskAndRemoveFromVcs(filesToDelete, false);
+  public static void invoke() {
+    List<Runnable> queue;
+    synchronized (LOCK) {
+      queue = ourQueue;
+      ourQueue = new ArrayList<Runnable>();
+    }
+    for (Runnable q : queue) {
+      ApplicationManager.getApplication().executeOnPooledThread(q);
+    }
   }
 }
