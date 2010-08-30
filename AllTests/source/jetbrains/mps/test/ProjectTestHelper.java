@@ -438,7 +438,7 @@ public class ProjectTestHelper {
           if (false) {
             extractModels(modelDescriptors, project);
           } else {
-            LOG.warn("No test configurations for project " + project.getProjectDescriptor().getName());
+            LOG.error("No test configurations for project " + project.getProjectDescriptor().getName());
           }
         } else {
           for (BaseTestConfiguration config : testConfigurationList) {
