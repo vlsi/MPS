@@ -30,7 +30,7 @@ public class OpenComplexLanguageProjectAction extends AnAction {
   }
 
   public void actionPerformed(AnActionEvent e) {
-    String projectFile = PathManager.getSamplesPath() + File.separator + "complexLanguage" + File.separator + "Complex.mpr";
+    String projectFile = SamplesExtractor.getInstance().getSamplesPath() + File.separator + "complexLanguage" + File.separator + "Complex.mpr";
     if (!new File(projectFile).exists()) {
       SamplesExtractor.getInstance().extractSamples();
     }
