@@ -21,7 +21,6 @@ import jetbrains.mps.generator.index.ModelDigestIndex;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
-import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.FileInputStream;
@@ -70,8 +69,18 @@ public abstract class NoCachesStrategy {
         }
 
         String currentHash = ModelDigestIndex.hash(modelBytes);
-        return ObjectUtils.equals(currentHash, generatedHash);
+        return safeEquals(currentHash, generatedHash);
       }
     };
+  }
+
+  private static boolean safeEquals(Object object1, Object object2) {
+      if (object1 == object2) {
+          return true;
+      }
+      if ((object1 == null) || (object2 == null)) {
+          return false;
+      }
+      return object1.equals(object2);
   }
 }
