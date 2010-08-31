@@ -22,6 +22,7 @@
   <component name="MPSProject">
     <projectSolutions>
       <solutionPath path="${project}/solutions/secretCompartmentLanguage.sandbox/secretCompartmentLanguage.sandbox.msd" />
+      <solutionPath path="${project}/solutions/runtime/jetbrains.mps.samples.secretCompartment.runtime.msd" folder="" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/languages/secretCompartmentLanguage/secretCompartmentLanguage.mpl" />
@@ -44,7 +45,7 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
-    <mapping directory="$APPLICATION_HOME_DIR$" vcs="svn" />
+    <mapping directory="$APPLICATION_HOME_DIR$" vcs="Git" />
   </component>
 </project>
 

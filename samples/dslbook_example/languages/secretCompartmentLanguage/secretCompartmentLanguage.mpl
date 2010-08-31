@@ -21,13 +21,10 @@
       <mapping-priorities />
     </generator>
   </generators>
-  <classPath>
-    <entry path="${samples_home}/dslbook_example/classes" include="false" />
-  </classPath>
-  <languageRuntimeClassPath>
-    <entry path="${samples_home}/dslbook_example/classes" />
-  </languageRuntimeClassPath>
   <sourcePath />
+  <runtime>
+    <dependency reexport="false">086f6299-eca0-43c4-bbca-fab3f95963aa(jetbrains.mps.samples.secretCompartment.runtime)</dependency>
+  </runtime>
   <extendedLanguages />
 </language>
 

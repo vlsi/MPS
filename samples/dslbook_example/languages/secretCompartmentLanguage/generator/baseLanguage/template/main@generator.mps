@@ -27,10 +27,10 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)" version="0" />
-  <maxImportIndex value="10" />
+  <maxImportIndex value="11" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c8959042e(jetbrains.mps.samples.secretCompartmentLanguage.structure)" version="1" />
   <import index="7" modelUID="r:00000000-0000-4000-0000-011c8959042c(jetbrains.mps.samples.secretCompartmentLanguage.constraints)" version="-1" />
-  <import index="8" modelUID="f:java_stub#jetbrains.mps.samples.secretCompartmentLanguage.runtime(jetbrains.mps.samples.secretCompartmentLanguage.runtime@java_stub)" version="-1" />
+  <import index="11" modelUID="r:84968794-d306-4a7a-9857-08605b2b07d6(jetbrains.mps.samples.secretCompartmentLanguage.runtime)" version="-1" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration:2" id="1197167156483">
     <property name="name:2" value="mc_secretCompartmentLanguage" />
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="1197255977264">
@@ -70,7 +70,7 @@
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1197168212091">
       <property name="name:3" value="getStateMachine" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1197168533311">
-        <link role="classifier:3" targetNodeId="8.~StateMachine" resolveInfo="StateMachine" />
+        <link role="classifier:3" targetNodeId="11.6877931680625740838" resolveInfo="StateMachine" />
       </node>
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1197168212093" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1197168212094">
@@ -78,7 +78,7 @@
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1217628915413">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1197225125662" />
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1217628915414">
-              <link role="baseMethodDeclaration:3" targetNodeId="8.~StateMachineFactory.putEvent(java.lang.String,jetbrains.mps.samples.secretCompartmentLanguage.runtime.Event):void" resolveInfo="putEvent" />
+              <link role="baseMethodDeclaration:3" targetNodeId="11.6877931680625741426" resolveInfo="putEvent" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1197225159984">
                 <property name="value:3" value="eventName" />
                 <node role="propertyMacro$property_attribute$value:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1197225159985">
@@ -98,7 +98,7 @@
               </node>
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1217888360850">
                 <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1217888360852">
-                  <link role="baseMethodDeclaration:3" targetNodeId="8.~Event.&lt;init&gt;(java.lang.String,java.lang.String)" resolveInfo="Event" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="11.6877931680625740353" resolveInfo="Event" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1197225159993">
                     <property name="value:3" value="eventName" />
                     <node role="propertyMacro$property_attribute$value:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1197225159994">
@@ -156,7 +156,7 @@
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1217628918104">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1197225494308" />
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1217628918105">
-              <link role="baseMethodDeclaration:3" targetNodeId="8.~StateMachineFactory.putState(java.lang.String,jetbrains.mps.samples.secretCompartmentLanguage.runtime.State):void" resolveInfo="putState" />
+              <link role="baseMethodDeclaration:3" targetNodeId="11.6877931680625741440" resolveInfo="putState" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1197225513005">
                 <property name="value:3" value="stateName" />
                 <node role="propertyMacro$property_attribute$value:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1197225513006">
@@ -176,7 +176,7 @@
               </node>
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1217888431339">
                 <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1217888431341">
-                  <link role="baseMethodDeclaration:3" targetNodeId="8.~State.&lt;init&gt;(java.lang.String)" resolveInfo="State" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="11.6877931680625740458" resolveInfo="State" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1197225513014">
                     <property name="value:3" value="stateName" />
                     <node role="propertyMacro$property_attribute$value:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1197225513015">
@@ -218,7 +218,7 @@
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1217628906564">
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1197241557637" />
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1217628906565">
-                <link role="baseMethodDeclaration:3" targetNodeId="8.~StateMachineFactory.getState(java.lang.String):jetbrains.mps.samples.secretCompartmentLanguage.runtime.State" resolveInfo="getState" />
+                <link role="baseMethodDeclaration:3" targetNodeId="11.6877931680625741454" resolveInfo="getState" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1197241559341">
                   <property name="value:3" value="stateName" />
                 </node>
@@ -237,11 +237,11 @@
               </node>
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1217628894187">
-              <link role="baseMethodDeclaration:3" targetNodeId="8.~State.addTransition(jetbrains.mps.samples.secretCompartmentLanguage.runtime.Event,jetbrains.mps.samples.secretCompartmentLanguage.runtime.State):void" resolveInfo="addTransition" />
+              <link role="baseMethodDeclaration:3" targetNodeId="11.6877931680625740436" resolveInfo="addTransition" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1217628915804">
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1197242041047" />
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1217628915805">
-                  <link role="baseMethodDeclaration:3" targetNodeId="8.~StateMachineFactory.getEvent(java.lang.String):jetbrains.mps.samples.secretCompartmentLanguage.runtime.Event" resolveInfo="getEvent" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="11.6877931680625741465" resolveInfo="getEvent" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1197242042470">
                     <property name="value:3" value="eventName" />
                     <node role="propertyMacro$property_attribute$value:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1197242046924">
@@ -282,7 +282,7 @@
                   </node>
                 </node>
                 <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1217888432460">
-                  <link role="baseMethodDeclaration:3" targetNodeId="8.~State.&lt;init&gt;(java.lang.String)" resolveInfo="State" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="11.6877931680625740458" resolveInfo="State" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1197254143687">
                     <property name="value:3" value="target" />
                   </node>
@@ -321,7 +321,7 @@
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1197169007030">
             <property name="name:3" value="startState" />
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1197169007031">
-              <link role="classifier:3" targetNodeId="8.~State" resolveInfo="State" />
+              <link role="classifier:3" targetNodeId="11.6877931680625740406" resolveInfo="State" />
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1197169013361">
               <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="1197239764837">
@@ -345,11 +345,11 @@
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1197168813523">
             <property name="name:3" value="stateMachine" />
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1197168813524">
-              <link role="classifier:3" targetNodeId="8.~StateMachine" resolveInfo="StateMachine" />
+              <link role="classifier:3" targetNodeId="11.6877931680625740838" resolveInfo="StateMachine" />
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1217888374394">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1217888374396">
-                <link role="baseMethodDeclaration:3" targetNodeId="8.~StateMachine.&lt;init&gt;(jetbrains.mps.samples.secretCompartmentLanguage.runtime.State)" resolveInfo="StateMachine" />
+                <link role="baseMethodDeclaration:3" targetNodeId="11.6877931680625740843" resolveInfo="StateMachine" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1197169020440">
                   <link role="variableDeclaration:3" targetNodeId="1197169007030" resolveInfo="startState" />
                 </node>
@@ -388,7 +388,7 @@
       <link role="applicableConcept:2" targetNodeId="1.1197149564476:1" resolveInfo="StateMachine" />
     </node>
     <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1197224597210">
-      <link role="classifier:3" targetNodeId="8.~StateMachineFactory" resolveInfo="StateMachineFactory" />
+      <link role="classifier:3" targetNodeId="11.6877931680625741402" resolveInfo="StateMachineFactory" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1197239799208">
@@ -405,7 +405,7 @@
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1217628896224">
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1197240003496" />
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1217628896225">
-                <link role="baseMethodDeclaration:3" targetNodeId="8.~StateMachineFactory.getState(java.lang.String):jetbrains.mps.samples.secretCompartmentLanguage.runtime.State" resolveInfo="getState" />
+                <link role="baseMethodDeclaration:3" targetNodeId="11.6877931680625741454" resolveInfo="getState" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1197240012764">
                   <property name="value:3" value="stateName" />
                   <node role="propertyMacro$property_attribute$value:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1197240019765">
@@ -431,7 +431,7 @@
       </node>
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1197239967482" />
       <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1197239977968">
-        <link role="classifier:3" targetNodeId="8.~StateMachineFactory" resolveInfo="StateMachineFactory" />
+        <link role="classifier:3" targetNodeId="11.6877931680625741402" resolveInfo="StateMachineFactory" />
       </node>
     </node>
   </node>
@@ -482,7 +482,7 @@
       <link role="applicableConcept:2" targetNodeId="1.1197246912613:1" resolveInfo="StateMachineTest" />
     </node>
     <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1197256417601">
-      <link role="classifier:3" targetNodeId="8.~StateMachineTest" resolveInfo="StateMachineTest" />
+      <link role="classifier:3" targetNodeId="11.6877931680625741150" resolveInfo="StateMachineTest" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1197253199675">
@@ -500,7 +500,7 @@
               <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1197256505973">
                 <property name="name:3" value="stateMachineFactory" />
                 <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1222951014414">
-                  <link role="classifier:3" targetNodeId="8.~StateMachineFactory" resolveInfo="StateMachineFactory" />
+                  <link role="classifier:3" targetNodeId="11.6877931680625741402" resolveInfo="StateMachineFactory" />
                 </node>
                 <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1217888349317">
                   <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1217888349319">
@@ -513,7 +513,7 @@
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1217628904133">
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1197256539320" />
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1217628904134">
-                  <link role="baseMethodDeclaration:3" targetNodeId="8.~StateMachineTest.init(jetbrains.mps.samples.secretCompartmentLanguage.runtime.StateMachineFactory):void" resolveInfo="init" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="11.6877931680625741160" resolveInfo="init" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1197256542649">
                     <link role="variableDeclaration:3" targetNodeId="1197256505973" resolveInfo="stateMachineFactory" />
                   </node>
@@ -567,15 +567,15 @@
                   <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1217628914330">
                     <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1197256518613" />
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1217628914331">
-                      <link role="baseMethodDeclaration:3" targetNodeId="8.~StateMachineTest.getController():jetbrains.mps.samples.secretCompartmentLanguage.runtime.Controller" resolveInfo="getController" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="11.6877931680625741180" resolveInfo="getController" />
                     </node>
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1217628904951">
-                    <link role="baseMethodDeclaration:3" targetNodeId="8.~Controller.getCurrentState():jetbrains.mps.samples.secretCompartmentLanguage.runtime.State" resolveInfo="getCurrentState" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="11.6877931680625740159" resolveInfo="getCurrentState" />
                   </node>
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1217628870870">
-                  <link role="baseMethodDeclaration:3" targetNodeId="8.~State.getName():java.lang.String" resolveInfo="getName" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="11.6877931680625740597" resolveInfo="getName" />
                 </node>
               </node>
             </node>
@@ -598,7 +598,7 @@
         </node>
       </node>
       <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1197256498993">
-        <link role="classifier:3" targetNodeId="8.~StateMachineTest" resolveInfo="StateMachineTest" />
+        <link role="classifier:3" targetNodeId="11.6877931680625741150" resolveInfo="StateMachineTest" />
       </node>
     </node>
   </node>
@@ -617,11 +617,11 @@
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1217628884077">
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1197256612028" />
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1217628884078">
-                  <link role="baseMethodDeclaration:3" targetNodeId="8.~StateMachineTest.getController():jetbrains.mps.samples.secretCompartmentLanguage.runtime.Controller" resolveInfo="getController" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="11.6877931680625741180" resolveInfo="getController" />
                 </node>
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1217628902988">
-                <link role="baseMethodDeclaration:3" targetNodeId="8.~Controller.handle(java.lang.String):void" resolveInfo="handle" />
+                <link role="baseMethodDeclaration:3" targetNodeId="11.6877931680625740165" resolveInfo="handle" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1197256623939">
                   <property name="value:3" value="eventCode" />
                   <node role="propertyMacro$property_attribute$value:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1197256634487">
@@ -652,7 +652,7 @@
       </node>
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1197256599114" />
       <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1197256606334">
-        <link role="classifier:3" targetNodeId="8.~StateMachineTest" resolveInfo="StateMachineTest" />
+        <link role="classifier:3" targetNodeId="11.6877931680625741150" resolveInfo="StateMachineTest" />
       </node>
     </node>
   </node>

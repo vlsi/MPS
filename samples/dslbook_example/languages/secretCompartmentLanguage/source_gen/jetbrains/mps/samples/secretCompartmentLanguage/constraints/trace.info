@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="1197166592844">
+    <scopeInfo nodeId="1197166592846" fileName="StateMachine_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+  </root>
+  <root nodeId="1197239526049">
+    <scopeInfo nodeId="1197239526051" fileName="State_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+  </root>
+  <root nodeId="1197240876769">
+    <scopeInfo nodeId="1197240876771" fileName="Event_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+  </root>
+  <root nodeId="1197248069433">
+    <nodeInfo nodeId="1197251292013" fileName="StateMachineTest_Behavior.java" startLine="13" startPosition="79" endLine="14" endPosition="121" />
+    <scopeInfo nodeId="1197248069435" fileName="StateMachineTest_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
+    <scopeInfo nodeId="1197251245698" fileName="StateMachineTest_Behavior.java" startLine="13" startPosition="79" endLine="14" endPosition="121" />
+  </root>
+  <root nodeId="1213107435705">
+    <nodeInfo nodeId="1213107435709" fileName="StateMachine_name_PropertyConstraint.java" startLine="24" startPosition="80" endLine="25" endPosition="86" />
+    <scopeInfo nodeId="1213107435708" fileName="StateMachine_name_PropertyConstraint.java" startLine="24" startPosition="80" endLine="25" endPosition="86" />
+  </root>
+  <root nodeId="1213107435908">
+    <nodeInfo nodeId="1213107435912" fileName="StateMachineTest_name_PropertyConstraint.java" startLine="23" startPosition="80" endLine="24" endPosition="106" />
+    <scopeInfo nodeId="1213107435911" fileName="StateMachineTest_name_PropertyConstraint.java" startLine="23" startPosition="80" endLine="24" endPosition="106" />
+  </root>
+  <root nodeId="1213107436125">
+    <nodeInfo nodeId="1213107436129" fileName="Event_name_PropertyConstraint.java" startLine="24" startPosition="80" endLine="25" endPosition="60" />
+    <scopeInfo nodeId="1213107436128" fileName="Event_name_PropertyConstraint.java" startLine="24" startPosition="80" endLine="25" endPosition="60" />
+  </root>
+  <root nodeId="1213107437474">
+    <nodeInfo nodeId="1213107437478" fileName="State_name_PropertyConstraint.java" startLine="24" startPosition="80" endLine="25" endPosition="60" />
+    <scopeInfo nodeId="1213107437477" fileName="State_name_PropertyConstraint.java" startLine="24" startPosition="80" endLine="25" endPosition="60" />
+  </root>
+</debugInfo>
+

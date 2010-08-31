@@ -8,7 +8,6 @@ import jetbrains.mps.samples.secretCompartmentLanguage.runtime.Event;
 import jetbrains.mps.samples.secretCompartmentLanguage.runtime.State;
 
 public class MrsH_StateMachineFactory extends StateMachineFactory {
-
   public MrsH_StateMachineFactory() {
   }
 
@@ -28,5 +27,4 @@ public class MrsH_StateMachineFactory extends StateMachineFactory {
     StateMachine stateMachine = new StateMachine(startState);
     return stateMachine;
   }
-
 }
