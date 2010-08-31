@@ -684,7 +684,7 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
     private int myIndentSize = 2;
     private int myVerticalBound = 120;
 
-    private boolean myHighlightChanges = true;
+    private boolean myHighlightChanges = false;
 
     @Override
     public boolean equals(Object o) {
