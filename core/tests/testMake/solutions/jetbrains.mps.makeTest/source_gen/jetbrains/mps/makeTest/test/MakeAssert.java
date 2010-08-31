@@ -24,7 +24,7 @@ import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
 public class MakeAssert {
   private static final String MESSAGE_COMPILATION_FAILED = "Compilation failed";
   private static final String MESSAGE_DEPENDENCY_NOT_CHECKED = "Compilation finished with Unchecked Dependencies";
-  private static final String PROJECT_FILE = "core/kernel/testMake/testMake.mpr";
+  private static final String PROJECT_FILE = "core/tests/testMake/testMake.mpr";
 
   public static void assertNotMake(final String modelName, final ChangeModel changer) {
     Project project = launchProject();

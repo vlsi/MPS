@@ -599,7 +599,7 @@
                         <link role="variableDeclaration:3" targetNodeId="6016914837743474510" resolveInfo="genType" />
                       </node>
                       <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2381103581468453848">
-                        <link role="baseMethodDeclaration:3" targetNodeId="9.~TesterGenerationHandler.compile(com.intellij.openapi.project.Project,java.util.List,boolean,jetbrains.mps.ide.progress.ITaskProgressHelper):boolean" resolveInfo="compile" />
+                        <link role="baseMethodDeclaration:3" targetNodeId="14.~InMemoryJavaGenerationHandler.compile(jetbrains.mps.ide.progress.ITaskProgressHelper):boolean" resolveInfo="compile" />
                         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="2381103581468453849">
                           <link role="classifier:3" targetNodeId="19.~ITaskProgressHelper" resolveInfo="ITaskProgressHelper" />
                           <link role="variableDeclaration:3" targetNodeId="19.~ITaskProgressHelper.EMPTY" resolveInfo="EMPTY" />
@@ -1090,7 +1090,7 @@
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1957199320903968396" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1957199320903968397" />
       <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1957199320903968398">
-        <property name="value:3" value="core/kernel/testMake/testMake.mpr" />
+        <property name="value:3" value="core/tests/testMake/testMake.mpr" />
       </node>
     </node>
   </node>
