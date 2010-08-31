@@ -4,6 +4,9 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.style.Measure;
+import jetbrains.mps.nodeEditor.style.Padding;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.Color;
@@ -16,9 +19,7 @@ import java.awt.Graphics;
  * Date: 02.03.2010
  */
 class FoldingButton {
-  public static final int ADDITIONAL_VERTICAL_SHIFT = 3;
   public static final int HALF_WIDTH = 4;
-
   private static final int HEIGHT = HALF_WIDTH * 5 / 2;
   private static final int CANT_HEIGHT = HALF_WIDTH * 3 / 2;
 
@@ -42,11 +43,14 @@ class FoldingButton {
   boolean relayout() {
     EditorCell cell = getCell();
     if (cell instanceof EditorCell_Collection) {
-      myIsHidden = cell.isUnderFolded();
+      EditorCell_Collection collectionCell = (EditorCell_Collection) cell;
+      myIsHidden = collectionCell.isUnderFolded();
       if (!myIsHidden) {
-        myIsFolded = ((EditorCell_Collection) cell).isFolded();
-        myY1 = cell.getY() + ADDITIONAL_VERTICAL_SHIFT;
-        myY2 = cell.getY() + cell.getHeight() - cell.getTopInset() - cell.getBottomInset() - 1 - ADDITIONAL_VERTICAL_SHIFT;
+        myIsFolded = collectionCell.isFolded();
+        EditorCell firstLeafCell = collectionCell.getFirstLeaf();
+        myY1 = firstLeafCell != null ? firstLeafCell.getBaseline() - HEIGHT : collectionCell.getBaseline() - HEIGHT;
+        EditorCell lastLeafCell = collectionCell.getLastLeaf();
+        myY2 = lastLeafCell != null ? collectionCell.getLastLeaf().getBaseline() : collectionCell.getBaseline();
       }
       // to avoid overlapping folding buttons
       return myIsFolded || myY2 - myY1 >= 2 * HEIGHT;
@@ -92,13 +96,13 @@ class FoldingButton {
 
     } else {
       g.setColor(myBackgroundColor);
-      g.fillRect(-HALF_WIDTH, (myY1 + myY2) / 2 - HALF_WIDTH, HALF_WIDTH * 2, HALF_WIDTH * 2);
-      
-      g.setColor(borderColor);
-      g.drawRect(-HALF_WIDTH, (myY1 + myY2) / 2 - HALF_WIDTH, HALF_WIDTH * 2, HALF_WIDTH * 2);
+      g.fillRect(-HALF_WIDTH, myY1, HALF_WIDTH * 2, HALF_WIDTH * 2);
 
-      g.drawLine(-HALF_WIDTH / 2, (myY1 + myY2) / 2, HALF_WIDTH / 2, (myY1 + myY2) / 2);
-      g.drawLine(0, (myY1 + myY2) / 2 + HALF_WIDTH / 2, 0, (myY1 + myY2) / 2 - HALF_WIDTH / 2);
+      g.setColor(borderColor);
+      g.drawRect(-HALF_WIDTH, myY1, HALF_WIDTH * 2, HALF_WIDTH * 2);
+
+      g.drawLine(-HALF_WIDTH / 2, myY1 + HALF_WIDTH, HALF_WIDTH / 2, myY1 + HALF_WIDTH);
+      g.drawLine(0, myY1 + HALF_WIDTH / 2, 0, myY1 + HALF_WIDTH * 3 / 2);
     }
   }
 
@@ -131,10 +135,18 @@ class FoldingButton {
 
   boolean isInside(int x, int y) {
     if (myIsFolded) {
-      return Math.abs(x) <= HALF_WIDTH && Math.abs(y - (myY1 + myY2) / 2) <= HALF_WIDTH;
+      return Math.abs(x) <= HALF_WIDTH && Math.abs(y - myY1 - HALF_WIDTH) <= HALF_WIDTH;
     } else {
-      return Math.abs(x) <= HALF_WIDTH && ((myY1 <= y && y <= myY1 + HEIGHT) || (myY2 - HEIGHT <= y && y <= myY2));
+      return Math.abs(x) <= HALF_WIDTH && (isOnTopButton(y) || isOnBottomButton(y));
     }
+  }
+
+  private boolean isOnTopButton(int y) {
+    return myY1 <= y && y <= myY1 + HEIGHT;
+  }
+
+  private boolean isOnBottomButton(int y) {
+    return myY2 - HEIGHT <= y && y <= myY2;
   }
 
   int getY() {
