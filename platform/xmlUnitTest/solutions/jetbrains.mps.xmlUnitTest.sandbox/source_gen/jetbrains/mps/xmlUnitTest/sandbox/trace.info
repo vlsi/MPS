@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="9070985627710925999">
+    <nodeInfo nodeId="9070985627710932727" fileName="Sample_Test.java" startLine="9" startPosition="50" endLine="10" endPosition="94" />
+    <nodeInfo nodeId="9070985627710932722" fileName="Sample_Test.java" startLine="8" startPosition="43" endLine="12" endPosition="0" />
+    <scopeInfo nodeId="9070985627710932725" fileName="Sample_Test.java" startLine="9" startPosition="50" endLine="10" endPosition="94" />
+    <scopeInfo nodeId="9070985627710932722" fileName="Sample_Test.java" startLine="8" startPosition="43" endLine="12" endPosition="0" />
+  </root>
+</debugInfo>
+
