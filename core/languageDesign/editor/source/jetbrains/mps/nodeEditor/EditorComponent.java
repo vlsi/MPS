@@ -588,7 +588,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   @NotNull
-  MyScrollBar getVerticalScrollBar() {
+  public MyScrollBar getVerticalScrollBar() {
     return myVerticalScrollBar;
   }
 

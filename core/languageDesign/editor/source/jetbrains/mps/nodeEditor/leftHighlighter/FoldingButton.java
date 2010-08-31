@@ -9,10 +9,8 @@ import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import org.jetbrains.annotations.NotNull;
 
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Cursor;
-import java.awt.Graphics;
+import javax.swing.JScrollBar;
+import java.awt.*;
 
 /**
  * User: Alexander Shatalin
@@ -110,7 +108,7 @@ class FoldingButton {
     return myCellInfo.findCell(myEditor);
   }
 
-  void activate() {
+  void activate(int x, int y) {
     EditorCell cell = getCell();
     if (cell instanceof EditorCell_Collection) {
       EditorCell_Collection collection = (EditorCell_Collection) cell;
@@ -118,6 +116,10 @@ class FoldingButton {
       if (collection.isFolded()) {
         collection.unfold();
       } else {
+        if (isOnBottomButton(y)) {
+          JScrollBar verticalScrollBar = myEditor.getVerticalScrollBar();
+          verticalScrollBar.setValue(Math.max(verticalScrollBar.getValue() - (myY2 - myY1 - HEIGHT), 0));
+        }
         collection.fold();
       }
     }
@@ -135,7 +137,7 @@ class FoldingButton {
 
   boolean isInside(int x, int y) {
     if (myIsFolded) {
-      return Math.abs(x) <= HALF_WIDTH && Math.abs(y - myY1 - HALF_WIDTH) <= HALF_WIDTH;
+      return Math.abs(x) <= HALF_WIDTH && isOnTopButton(y);
     } else {
       return Math.abs(x) <= HALF_WIDTH && (isOnTopButton(y) || isOnBottomButton(y));
     }

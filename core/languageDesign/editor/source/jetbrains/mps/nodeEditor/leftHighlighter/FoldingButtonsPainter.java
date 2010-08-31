@@ -126,7 +126,7 @@ public class FoldingButtonsPainter extends AbstractFoldingAreaPainter {
     FoldingButton buttonUnderMouse = getFoldingButtonUnderMouse(e);
     if (buttonUnderMouse != null) {
       if (e.getID() == MouseEvent.MOUSE_CLICKED) {
-        buttonUnderMouse.activate();
+        buttonUnderMouse.activate(getLocalXCoordinate(e), e.getY());
       }
       e.consume();
     }
