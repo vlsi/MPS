@@ -19,6 +19,7 @@
   <component name="MPSProject">
     <projectSolutions>
       <solutionPath path="${project}/myReaderConfiguration/myReaderConfiguration.msd" />
+      <solutionPath path="${project}/readerFramework/readerFramework.msd" folder="" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/readerConfigLanguage/readerConfigLanguage.mpl" />
@@ -42,7 +43,7 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
-    <mapping directory="$APPLICATION_HOME_DIR$" vcs="svn" />
+    <mapping directory="$APPLICATION_HOME_DIR$" vcs="Git" />
   </component>
 </project>
 

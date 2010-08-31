@@ -12,6 +12,7 @@
       <external-templates />
       <dependencies>
         <dependency reexport="false">2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)</dependency>
+        <dependency reexport="false">f4f64bcd-8732-4771-be32-6b92ca717f39(readerFramework)</dependency>
       </dependencies>
       <mapping-priorities />
     </generator>
@@ -29,12 +30,6 @@
       <mapping-priorities />
     </generator>
   </generators>
-  <classPath>
-    <entry path="${samples_home}/fixedLengthReader/classes" include="false" />
-  </classPath>
-  <languageRuntimeClassPath>
-    <entry path="${samples_home}/fixedLengthReader/classes" />
-  </languageRuntimeClassPath>
   <sourcePath />
   <extendedLanguages />
 </language>
