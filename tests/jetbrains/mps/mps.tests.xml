@@ -46,8 +46,6 @@
     <include name="**/**.mpl"/>
     <include name="**/**.msd"/>
     <exclude name="**/resolve.msd"/>
-    <exclude name="**/samples/**"/>
-    <exclude name="**/vcs/**"/>
   </patternset>
 
   <target name="test.test">
