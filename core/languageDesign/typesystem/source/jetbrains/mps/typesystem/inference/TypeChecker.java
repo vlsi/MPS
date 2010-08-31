@@ -279,10 +279,14 @@ public class TypeChecker implements ApplicationComponent {
     fireNodeTypeAccessed(node);
     TypeCheckingContext context;
     if (isGenerationMode() || isTransformationTestMode()) {
+      SNode componentNode = node;
+      if (isTransformationTestMode()) {
+        componentNode = node.getContainingRoot();
+      }
       if (myPerformanceTracer == null) {
-        context = NodeTypesComponentsRepository.getInstance().createIsolatedTypeCheckingContext(node);
+        context = NodeTypesComponentsRepository.getInstance().createIsolatedTypeCheckingContext(componentNode);
     } else {
-        context = NodeTypesComponentsRepository.getInstance().createTracingTypeCheckingContext(node);
+        context = NodeTypesComponentsRepository.getInstance().createTracingTypeCheckingContext(componentNode);
       }
     } else {
       context = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(node);
