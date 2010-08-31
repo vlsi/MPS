@@ -119,6 +119,7 @@
     <mps.test.generation fork="true" compile="true" showdiff="true" invoketests="${invoke.tests}" loglevel="info"
                          useperrootgeneration="${per.root.generation}" saveondisk="${save.on.disk}">
       <jvmargs refid="mps.args"/>
+      <macro name="samples_home" path="${mps.home}/samples"/>
       <perfomancereport file="${mps.home}/generation.perfomance"/>
 
       <!-- Bootstrap tests -->
