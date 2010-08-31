@@ -63,6 +63,7 @@
   <target name="make">
     <mps.make fork="true" loglevel="info">
       <jvmargs refid="mps.args"/>
+      <macro name="samples_home" path="${mps.home}/samples"/>
       <modules dir="${mps.home}">
         <patternset refid="excluded.modules"/>
       </modules>
