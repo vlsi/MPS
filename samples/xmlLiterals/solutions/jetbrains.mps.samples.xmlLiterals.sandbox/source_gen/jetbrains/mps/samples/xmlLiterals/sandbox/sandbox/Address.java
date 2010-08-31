@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jdom.Text;
 
 public class Address {
-
   private String addressString;
 
   public Address(String addressString) {
@@ -18,15 +17,13 @@ public class Address {
   }
 
   public Element toXml() {
-    return new _FunctionTypes._return_P0_E0 <Element>() {
-
+    return new _FunctionTypes._return_P0_E0<Element>() {
       public Element invoke() {
-        Element simpleElement_7417816926334720706 = new Element("address");
-        Text text_7417816926334720711 = new Text(Address.this.getAddressString());
-        simpleElement_7417816926334720706.addContent(simpleElement_7417816926334720706);
-        return simpleElement_7417816926334720706;
+        Element simpleElement_49w4x6_a0a0b = new Element("address");
+        Text text_49w4x6_a0a0a0b = new Text(Address.this.getAddressString());
+        simpleElement_49w4x6_a0a0b.addContent(text_49w4x6_a0a0a0b);
+        return simpleElement_49w4x6_a0a0b;
       }
     }.invoke();
   }
-
 }

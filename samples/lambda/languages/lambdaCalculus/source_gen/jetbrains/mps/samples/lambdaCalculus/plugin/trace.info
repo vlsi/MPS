@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="2566054628276075478">
+    <nodeInfo nodeId="2566054628276106082" fileName="DefaultLambdaCalculusFromProgram.java" startLine="30" startPosition="52" endLine="31" endPosition="89" />
+    <nodeInfo nodeId="2566054628276106089" fileName="DefaultLambdaCalculusFromProgram.java" startLine="32" startPosition="5" endLine="33" endPosition="201" />
+    <nodeInfo nodeId="2566054628276106089" fileName="DefaultLambdaCalculusFromProgram.java" startLine="33" startPosition="201" endLine="34" endPosition="241" />
+    <nodeInfo nodeId="2566054628276106089" fileName="DefaultLambdaCalculusFromProgram.java" startLine="34" startPosition="241" endLine="35" endPosition="72" />
+    <nodeInfo nodeId="2566054628276106089" fileName="DefaultLambdaCalculusFromProgram.java" startLine="35" startPosition="72" endLine="36" endPosition="58" />
+    <nodeInfo nodeId="2566054628276106089" fileName="DefaultLambdaCalculusFromProgram.java" startLine="36" startPosition="58" endLine="37" endPosition="115" />
+    <nodeInfo nodeId="2566054628276106089" fileName="DefaultLambdaCalculusFromProgram.java" startLine="37" startPosition="115" endLine="38" endPosition="63" />
+    <nodeInfo nodeId="2566054628276077280" fileName="DefaultLambdaCalculusFromProgram.java" startLine="47" startPosition="56" endLine="48" endPosition="145" />
+    <nodeInfo nodeId="2566054628276106089" fileName="DefaultLambdaCalculusFromProgram.java" startLine="31" startPosition="89" endLine="39" endPosition="5" />
+    <scopeInfo nodeId="2566054628276106089" fileName="DefaultLambdaCalculusFromProgram.java" startLine="32" startPosition="5" endLine="38" endPosition="63" />
+    <scopeInfo nodeId="2566054628276075481" fileName="DefaultLambdaCalculusFromProgram.java" startLine="30" startPosition="52" endLine="39" endPosition="5" />
+    <unitInfo nodeId="2566054628276106089" fileName="DefaultLambdaCalculusFromProgram.java" startLine="34" startPosition="63" endLine="34" endPosition="240" unitName="jetbrains.mps.samples.lambdaCalculus.plugin.DefaultLambdaCalculusFromProgram$1" />
+  </root>
+  <root nodeId="6796549325584324225">
+    <nodeInfo nodeId="6796549325584806283" fileName="DefaultLambdaCalculusProgram_Configuration.java" startLine="159" startPosition="21" endLine="160" endPosition="79" />
+    <nodeInfo nodeId="6796549325584806289" fileName="DefaultLambdaCalculusProgram_Configuration.java" startLine="160" startPosition="79" endLine="161" endPosition="82" />
+    <nodeInfo nodeId="6796549325584806295" fileName="DefaultLambdaCalculusProgram_Configuration.java" startLine="163" startPosition="39" endLine="164" endPosition="98" />
+    <nodeInfo nodeId="6796549325584806301" fileName="DefaultLambdaCalculusProgram_Configuration.java" startLine="166" startPosition="21" endLine="167" endPosition="75" />
+    <nodeInfo nodeId="6796549325584806309" fileName="DefaultLambdaCalculusProgram_Configuration.java" startLine="167" startPosition="75" endLine="168" endPosition="114" />
+    <nodeInfo nodeId="6796549325584806293" fileName="DefaultLambdaCalculusProgram_Configuration.java" startLine="162" startPosition="71" endLine="166" endPosition="0" />
+    <nodeInfo nodeId="6796549325584806292" fileName="DefaultLambdaCalculusProgram_Configuration.java" startLine="161" startPosition="82" endLine="166" endPosition="21" />
+    <scopeInfo nodeId="6796549325584806294" fileName="DefaultLambdaCalculusProgram_Configuration.java" startLine="163" startPosition="39" endLine="164" endPosition="98" />
+    <scopeInfo nodeId="6796549325584806293" fileName="DefaultLambdaCalculusProgram_Configuration.java" startLine="162" startPosition="71" endLine="166" endPosition="0" />
+    <scopeInfo nodeId="6796549325584326028" fileName="DefaultLambdaCalculusProgram_Configuration.java" startLine="159" startPosition="21" endLine="168" endPosition="114">
+      <varInfo nodeId="6796549325584806302" varName="process" />
+      <varInfo nodeId="6796549325584806284" varName="classRunner" />
+      <varInfo nodeId="6796549325584806290" varName="className" />
+    </scopeInfo>
+    <unitInfo nodeId="6796549325584806293" fileName="DefaultLambdaCalculusProgram_Configuration.java" startLine="162" startPosition="59" endLine="166" endPosition="19" unitName="jetbrains.mps.samples.lambdaCalculus.plugin.DefaultLambdaCalculusProgram_Configuration$3" />
+  </root>
+</debugInfo>
+

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="1215414020889">
+    <nodeInfo nodeId="1215414028678" fileName="MatrixType_Behavior.java" startLine="12" startPosition="78" endLine="13" endPosition="75" />
+    <nodeInfo nodeId="1215414028689" fileName="MatrixType_Behavior.java" startLine="14" startPosition="25" endLine="15" endPosition="23" />
+    <nodeInfo nodeId="1215414028691" fileName="MatrixType_Behavior.java" startLine="16" startPosition="5" endLine="17" endPosition="34" />
+    <nodeInfo nodeId="1215414028684" fileName="MatrixType_Behavior.java" startLine="13" startPosition="75" endLine="16" endPosition="5" />
+    <scopeInfo nodeId="1215414020891" fileName="MatrixType_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1215414028688" fileName="MatrixType_Behavior.java" startLine="14" startPosition="25" endLine="15" endPosition="23" />
+    <scopeInfo nodeId="1215414028677" fileName="MatrixType_Behavior.java" startLine="12" startPosition="78" endLine="17" endPosition="34">
+      <varInfo nodeId="1215414028679" varName="scalar" />
+    </scopeInfo>
+  </root>
+</debugInfo>
+

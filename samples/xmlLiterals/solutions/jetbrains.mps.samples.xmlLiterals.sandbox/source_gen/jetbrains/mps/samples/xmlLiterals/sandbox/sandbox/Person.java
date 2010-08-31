@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jdom.Text;
 
 public class Person {
-
   private String name;
   private String lastName;
   private Address address;
@@ -40,23 +39,23 @@ public class Person {
   }
 
   public Element toXml() {
-    return new _FunctionTypes._return_P0_E0 <Element>() {
-
+    return new _FunctionTypes._return_P0_E0<Element>() {
       public Element invoke() {
-        Element simpleElement_9152904044274469589 = new Element("person");
-        Element simpleElement_9152904044274518018 = new Element("name");
-        Text text_7417816926334597241 = new Text(Person.this.getName());
-        simpleElement_9152904044274518018.addContent(simpleElement_9152904044274518018);
-        Element simpleElement_7417816926334720627 = new Element("lastName");
-        Text text_7417816926334720631 = new Text(Person.this.getLastName());
-        simpleElement_7417816926334720627.addContent(simpleElement_7417816926334720627);
-        Element simpleElement_9152904044274518193 = new Element("address");
-        Element elementMacro_7417816926334645014 = Person.this.getAddress().toXml();
-        simpleElement_9152904044274518193.addContent(simpleElement_9152904044274518193);
-        simpleElement_9152904044274469589.addContent(simpleElement_9152904044274469589);
-        return simpleElement_9152904044274469589;
+        Element simpleElement_jqm3zu_a0a0g = new Element("person");
+        Element simpleElement_jqm3zu_a0a0a0g = new Element("name");
+        Text text_jqm3zu_a0a0a0a0g = new Text(Person.this.getName());
+        simpleElement_jqm3zu_a0a0a0g.addContent(text_jqm3zu_a0a0a0a0g);
+        Element simpleElement_jqm3zu_b0a0a0g = new Element("lastName");
+        Text text_jqm3zu_a0b0a0a0g = new Text(Person.this.getLastName());
+        simpleElement_jqm3zu_b0a0a0g.addContent(text_jqm3zu_a0b0a0a0g);
+        Element simpleElement_jqm3zu_c0a0a0g = new Element("address");
+        Element elementMacro_jqm3zu_a0c0a0a0g = Person.this.getAddress().toXml();
+        simpleElement_jqm3zu_c0a0a0g.addContent(elementMacro_jqm3zu_a0c0a0a0g);
+        simpleElement_jqm3zu_a0a0a0g.addContent(simpleElement_jqm3zu_a0a0a0g);
+        simpleElement_jqm3zu_b0a0a0g.addContent(simpleElement_jqm3zu_b0a0a0g);
+        simpleElement_jqm3zu_c0a0a0g.addContent(simpleElement_jqm3zu_c0a0a0g);
+        return simpleElement_jqm3zu_a0a0g;
       }
     }.invoke();
   }
-
 }
