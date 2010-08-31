@@ -12,9 +12,6 @@ public class MPSCodeStyleFacade extends DefaultCodeStyleFacade {
 
   @Override
    public String getLineSeparator() {
-    // TODO
-    // return CodeStyleSettingsManager.getSettings(myProject).getLineSeparator();
-    System.out.println("Return line separator");
-    return super.getLineSeparator();
+    return CodeStyleSettings.getInstance(myProject).getLineSeparator();
   }
 }

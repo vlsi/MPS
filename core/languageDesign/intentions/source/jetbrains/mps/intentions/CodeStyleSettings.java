@@ -8,6 +8,7 @@ import com.intellij.openapi.options.SearchableConfigurable;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.project.Project;
 import com.intellij.ide.DataManager;
+import com.intellij.util.SystemProperties;
 import jetbrains.mps.intentions.CodeStyleSettings.MyState;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -35,6 +36,8 @@ public class CodeStyleSettings implements PersistentStateComponent<MyState>, Pro
 
   private MyState myState = new MyState();
   private CodeStylePreferencesPage myPage;
+
+  private static final String ourSystemLineSeparator = SystemProperties.getLineSeparator();
 
   private CodeStylePreferencesPage getPage() {
     if (myPage == null) {
@@ -78,6 +81,20 @@ public class CodeStyleSettings implements PersistentStateComponent<MyState>, Pro
     myState.setLocalVariablePrefix(settings.o1);
     myState.setLocalVariableSuffix(settings.o2);
   }
+
+  @NotNull
+  public String getLineSeparator() {
+    return (myState.myLineSeparator == null) ? ourSystemLineSeparator : myState.myLineSeparator;
+  }
+
+  public String getLineSeparatorSetting() {
+    return myState.myLineSeparator;
+  }
+
+  public void setLineSeparator(String lineSeparator) {
+    myState.myLineSeparator = lineSeparator;
+  }
+
   
   public MyState getState() {
     return myState;
@@ -153,6 +170,7 @@ public class CodeStyleSettings implements PersistentStateComponent<MyState>, Pro
     private String myParameterSuffix;
     private String myLocalVariablePrefix;
     private String myLocalVariableSuffix;
+    private String myLineSeparator;
 
     public String getFieldPrefix() {
       return myFieldPrefix;
@@ -216,6 +234,14 @@ public class CodeStyleSettings implements PersistentStateComponent<MyState>, Pro
 
     public void setLocalVariableSuffix(String localVariableSuffix) {
       myLocalVariableSuffix = localVariableSuffix;
+    }
+
+    public String getLineSeparator() {
+      return myLineSeparator;
+    }
+
+    public void setLineSeparator(String lineSeparator) {
+      myLineSeparator = lineSeparator;
     }
   }
 }
