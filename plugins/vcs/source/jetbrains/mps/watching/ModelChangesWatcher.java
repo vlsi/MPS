@@ -48,7 +48,6 @@ import jetbrains.mps.library.Library;
 import jetbrains.mps.library.ProjectLibraryManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import org.apache.log4j.Level;
 
 import java.io.File;
 import java.io.IOException;
@@ -62,8 +61,6 @@ public class ModelChangesWatcher implements ApplicationComponent {
   }
 
   private final MessageBus myBus;
-
-  private final Set<DataCreationListener> myDataListeners = new LinkedHashSet<DataCreationListener>();
 
   private final ProjectManager myProjectManager;
   private final VirtualFileManager myVirtualFileManager;
@@ -176,24 +173,6 @@ public class ModelChangesWatcher implements ApplicationComponent {
         }
       }, ModalityState.NON_MODAL);
     }
-  }
-
-  public void addDataListener(DataCreationListener l) {
-    myDataListeners.add(l);
-  }
-
-  public void removeDataListener(DataCreationListener l) {
-    myDataListeners.remove(l);
-  }
-
-  public void fireDataFileCreated(IFile f) {
-    for (DataCreationListener l : myDataListeners) {
-      l.dataFileCreated(f);
-    }
-  }
-
-  public static interface DataCreationListener {
-    void dataFileCreated(IFile f);
   }
 
   /**

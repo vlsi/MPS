@@ -33,7 +33,6 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.watching.ModelChangesWatcher;
-import jetbrains.mps.watching.ModelChangesWatcher.DataCreationListener;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -74,8 +73,7 @@ public class MPSVCSManager implements ProjectComponent {
   private final SModelRepositoryListener myModelRepositoryListener = new MySModelRepositoryListener();
   private final NewModelSavedListener myNewModelSavedListener = new NewModelSavedListener();
   private final GlobalModelSavedListener myGlobalModelSavedListener = new GlobalModelSavedListener();
-  private final DataCreationListener myMetadataListener = new MyMetadataCreationListener();
-  private final ChangeListAdapter myChangeListUpdateListener = new ChangeListAdapter() {
+    private final ChangeListAdapter myChangeListUpdateListener = new ChangeListAdapter() {
     public void changeListUpdateDone() {
       myChangeListManagerInitialized = true;
     }
@@ -192,7 +190,6 @@ public class MPSVCSManager implements ProjectComponent {
     myProject.getComponent(GeneratorManager.class).addCompilationListener(myCompilationListener);
     SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
     GlobalSModelEventsManager.getInstance().addGlobalModelListener(myGlobalModelSavedListener);
-    ModelChangesWatcher.instance().addDataListener(myMetadataListener);
     myChangeListManager.addChangeListListener(myChangeListUpdateListener);
   }
 
@@ -201,7 +198,6 @@ public class MPSVCSManager implements ProjectComponent {
     myProject.getComponent(GeneratorManager.class).removeCompilationListener(myCompilationListener);
     GlobalSModelEventsManager.getInstance().removeGlobalModelListener(myGlobalModelSavedListener);
     SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
-    ModelChangesWatcher.instance().removeDataListener(myMetadataListener);
     myChangeListManager.removeChangeListListener(myChangeListUpdateListener);
 
     myAddOperationScheduler.removeProcessingBan();
@@ -228,14 +224,6 @@ public class MPSVCSManager implements ProjectComponent {
       final IFile modelFile = ((EditableSModelDescriptor) sm).getModelFile();
       if (modelFile == null) return;
       VcsDirtyScopeManager.getInstance(myProject).fileDirty(VFileSystem.refreshAndGetFile(modelFile));
-    }
-  }
-
-  private class MyMetadataCreationListener implements DataCreationListener {
-    public void dataFileCreated(IFile ifile) {
-      if (ifile != null) {
-        addFilesToVcs(Collections.singletonList(ifile.toFile()), false, false);
-      }
     }
   }
 

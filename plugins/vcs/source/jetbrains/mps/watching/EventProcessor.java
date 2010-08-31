@@ -17,7 +17,6 @@ package jetbrains.mps.watching;
 
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.events.*;
-import jetbrains.mps.smodel.ModelAccess;
 
 abstract class EventProcessor {
   public final void process(VFileEvent event, ReloadSession reloadSession) {

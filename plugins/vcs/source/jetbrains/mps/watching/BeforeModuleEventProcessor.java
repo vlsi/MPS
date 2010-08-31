@@ -19,8 +19,8 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.vcs.VCSUtil;
 import jetbrains.mps.vcs.VcsMigrationUtil;
-import jetbrains.mps.vfs.VFileSystem;
 
 import java.util.Collections;
 
@@ -42,7 +42,7 @@ class BeforeModuleEventProcessor extends EventProcessor {
       VirtualFile vfile = getVFile(event);
       if (vfile == null) return;
       if (MPSFileTypesManager.instance().isModuleFile(vfile)) {
-        VcsMigrationUtil.getHandler().removeFromVcs(Collections.singletonList(vfile), true);
+        VCSUtil.removeFilesFromVcs(Collections.singletonList(vfile), true);
       }
     }
   }

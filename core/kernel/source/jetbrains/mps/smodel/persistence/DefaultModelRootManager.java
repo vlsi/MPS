@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.persistence;
 
 import com.intellij.openapi.fileTypes.FileTypeManager;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
@@ -34,7 +35,7 @@ import jetbrains.mps.vcs.queue.VCSQueue;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
-import jetbrains.mps.watching.ModelChangesWatcher;
+import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -42,10 +43,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.Reader;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @author Kostik
@@ -362,7 +360,8 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     IFile metadataFile = getMetadataFile(dsm.getModelFile());
     if (!metadataFile.exists()) {
       metadataFile.createNewFile();
-      ModelChangesWatcher.instance().fireDataFileCreated(metadataFile);
+      VirtualFile file = VFileSystem.getFile(metadataFile);
+      VcsMigrationUtil.getHandler().addFilesToVcs(Collections.singletonList(file), false, false);
     }
 
     DefaultMetadataPersistence.save(metadataFile, metadata);
