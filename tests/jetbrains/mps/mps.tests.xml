@@ -15,6 +15,14 @@
     <arg value="-XX:+HeapDumpOnOutOfMemoryError"/>
   </jvmargs>
 
+  <jvmargs id="mps.args.yjp">
+    <arg value="-Xss1024k"/>
+    <arg value="-Xmx1536m"/>
+    <arg value="-XX:MaxPermSize=128m"/>
+    <arg value="-XX:+HeapDumpOnOutOfMemoryError"/>
+    <arg value="-agentpath:/opt/yjp/yjp-9.0.7/bin/linux-x86-64/libyjpagent.so=sampling,delay=10000,noj2ee,onexit=snapshot"/>
+  </jvmargs>
+
   <jvmargs id="debug.args">
     <arg value="-Xdebug"/>
     <arg value="-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"/>
