@@ -38,7 +38,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="25" />
+  <maxImportIndex value="26" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c8959043d(jetbrains.mps.samples.formulaLanguage.generator.baseLanguage@generator)" version="-1" />
   <import index="12" modelUID="r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)" version="0" />
@@ -49,9 +49,9 @@
   <import index="18" modelUID="r:00000000-0000-4000-0000-011c8959043c(jetbrains.mps.samples.formulaLanguage.structure)" version="0" />
   <import index="19" modelUID="r:00000000-0000-4000-0000-011c8959040d(jetbrains.mps.samples.agreementLanguage.generator.util)" version="-1" />
   <import index="22" modelUID="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)" version="-1" />
-  <import index="23" modelUID="r:b17a01a1-0865-4ad1-8c9d-e469dcacc149(formulaAdapter)" version="-1" />
   <import index="24" modelUID="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)" version="-1" />
   <import index="25" modelUID="r:ba35e19a-8f05-4cae-a99b-d51695da551f(jetbrains.mps.samples.formulaLanguage.api)" version="-1" />
+  <import index="26" modelUID="r:450af4ca-ba22-4f57-89bb-35faca681f10(formulaAdapter)" version="-1" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration:2" id="1112303804151">
     <property name="name:2" value="MAPPING_Agreement_BaseLanguage" />
     <node role="createRootRule:2" type="jetbrains.mps.lang.generator.structure.CreateRootRule:2" id="1197658381645">
@@ -517,7 +517,7 @@
               </node>
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1214253959025">
                 <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1214253959027">
-                  <link role="baseMethodDeclaration:3" targetNodeId="23.5953591380558896259" resolveInfo="PostingRule_Formula" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="26.6374450524837363842" resolveInfo="PostingRule_Formula" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="1197661235316">
                     <link role="enumClass:3" targetNodeId="24.6531435794299654331" resolveInfo="AccountType" />
                     <link role="enumConstantDeclaration:3" targetNodeId="24.6531435794299654335" resolveInfo="TAX" />
@@ -1112,7 +1112,7 @@
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1214253959375">
       <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="1214253959377" />
       <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1214253959378">
-        <link role="baseMethodDeclaration:3" targetNodeId="23.5953591380558896601" resolveInfo="FeeMoney" />
+        <link role="baseMethodDeclaration:3" targetNodeId="26.6374450524837364184" resolveInfo="FeeMoney" />
       </node>
     </node>
   </node>
@@ -1123,7 +1123,7 @@
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1214253958375">
       <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="1214253958377" />
       <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1214253958378">
-        <link role="baseMethodDeclaration:3" targetNodeId="23.5953591380558896346" resolveInfo="MoneyAddOperation" />
+        <link role="baseMethodDeclaration:3" targetNodeId="26.6374450524837363929" resolveInfo="MoneyAddOperation" />
         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1112804541135">
           <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.SwitchMacro:2" id="1112804671521">
             <link role="templateSwitch:2" targetNodeId="1112733851363" />
@@ -1168,7 +1168,7 @@
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1214253959324">
       <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="1214253959326" />
       <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1214253959327">
-        <link role="baseMethodDeclaration:3" targetNodeId="23.5953591380558896414" resolveInfo="MoneyConstant" />
+        <link role="baseMethodDeclaration:3" targetNodeId="26.6374450524837363997" resolveInfo="MoneyConstant" />
         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.FloatingPointConstant:3" id="1112999428224">
           <property name="value:3" value="0.0" />
           <node role="propertyMacro$property_attribute$value:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1113259356564">
@@ -1205,7 +1205,7 @@
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1214253959257">
       <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="1214253959259" />
       <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1214253959260">
-        <link role="baseMethodDeclaration:3" targetNodeId="23.5953591380558896449" resolveInfo="MoneyMultiplyOperation" />
+        <link role="baseMethodDeclaration:3" targetNodeId="26.6374450524837364032" resolveInfo="MoneyMultiplyOperation" />
         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1112894129940">
           <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.SwitchMacro:2" id="1112894241007">
             <link role="templateSwitch:2" targetNodeId="1112733851363" />
@@ -1250,7 +1250,7 @@
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1214253958756">
       <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="1214253958758" />
       <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1214253958759">
-        <link role="baseMethodDeclaration:3" targetNodeId="23.5953591380558896515" resolveInfo="QuantityConstant" />
+        <link role="baseMethodDeclaration:3" targetNodeId="26.6374450524837364098" resolveInfo="QuantityConstant" />
         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.FloatingPointConstant:3" id="1112999618731">
           <property name="value:3" value="0.0" />
           <node role="propertyMacro$property_attribute$value:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1113259356565">
@@ -1287,7 +1287,7 @@
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1214253958507">
       <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="1214253958509" />
       <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1214253958510">
-        <link role="baseMethodDeclaration:3" targetNodeId="23.5953591380558896562" resolveInfo="QuantityGreaterThanOperation" />
+        <link role="baseMethodDeclaration:3" targetNodeId="26.6374450524837364145" resolveInfo="QuantityGreaterThanOperation" />
         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1112902637460">
           <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.SwitchMacro:2" id="1112902693652">
             <link role="templateSwitch:2" targetNodeId="1112916267895" />
@@ -1331,7 +1331,7 @@
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1214253958822">
       <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="1214253958824" />
       <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1214253958825">
-        <link role="baseMethodDeclaration:3" targetNodeId="23.5953591380558896488" resolveInfo="UsageQuantity" />
+        <link role="baseMethodDeclaration:3" targetNodeId="26.6374450524837364071" resolveInfo="UsageQuantity" />
       </node>
     </node>
   </node>
@@ -1341,7 +1341,7 @@
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1214253958955">
       <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="1214253958957" />
       <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1214253958958">
-        <link role="baseMethodDeclaration:3" targetNodeId="23.5953591380558896385" resolveInfo="UsageDouble" />
+        <link role="baseMethodDeclaration:3" targetNodeId="26.6374450524837363968" resolveInfo="UsageDouble" />
       </node>
     </node>
   </node>
@@ -1352,7 +1352,7 @@
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1214253959075">
       <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="1214253959077" />
       <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1214253959078">
-        <link role="baseMethodDeclaration:3" targetNodeId="23.5953591380558896218" resolveInfo="ValueQuantity" />
+        <link role="baseMethodDeclaration:3" targetNodeId="26.6374450524837363801" resolveInfo="ValueQuantity" />
         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1116524183578">
           <property name="value:3" value="_VALUE_" />
           <node role="propertyMacro$property_attribute$value:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1116524198032">
@@ -1502,7 +1502,7 @@
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1214253958889">
       <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="1214253958891" />
       <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1214253958892">
-        <link role="baseMethodDeclaration:3" targetNodeId="23.5953591380558896161" resolveInfo="ValueDouble" />
+        <link role="baseMethodDeclaration:3" targetNodeId="26.6374450524837363744" resolveInfo="ValueDouble" />
         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1116524441908">
           <property name="value:3" value="_VALUE_" />
           <node role="propertyMacro$property_attribute$value:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1116524441909">
@@ -1759,7 +1759,7 @@
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1214253959141">
       <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="1214253959143" />
       <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1214253959144">
-        <link role="baseMethodDeclaration:3" targetNodeId="23.5953591380558896299" resolveInfo="MoneyAdapter" />
+        <link role="baseMethodDeclaration:3" targetNodeId="26.6374450524837363882" resolveInfo="MoneyAdapter" />
         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1112988416115">
           <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.SwitchMacro:2" id="1112988515668">
             <link role="templateSwitch:2" targetNodeId="1112915076342" />
