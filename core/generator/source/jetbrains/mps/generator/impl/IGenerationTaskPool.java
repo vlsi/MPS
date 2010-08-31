@@ -1,7 +1,6 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.generator.GenerationFailureException;
 
 import java.util.Deque;
 import java.util.LinkedList;

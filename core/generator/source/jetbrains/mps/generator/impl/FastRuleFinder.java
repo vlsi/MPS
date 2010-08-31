@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator.impl;
 
-import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule;
 import jetbrains.mps.lang.generator.structure.ReductionRule;
 import jetbrains.mps.lang.generator.structure.Reduction_MappingRule;

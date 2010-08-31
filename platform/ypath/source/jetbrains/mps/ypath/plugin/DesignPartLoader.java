@@ -18,7 +18,6 @@ package jetbrains.mps.ypath.plugin;
 import java.util.HashMap;
 import java.util.Map;
 
-import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.logging.Logger;

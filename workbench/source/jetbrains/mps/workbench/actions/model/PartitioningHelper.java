@@ -17,9 +17,9 @@ package jetbrains.mps.workbench.actions.model;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Pair;
-import jetbrains.mps.generator.plan.ConnectedComponentPartitioner;
-import jetbrains.mps.generator.plan.GenerationPartitioner;
-import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
+import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner;
+import jetbrains.mps.generator.impl.plan.GenerationPartitioner;
+import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.ide.messages.MessagesViewTool;

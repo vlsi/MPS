@@ -16,11 +16,10 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
-import jetbrains.mps.generator.template.InputQueryUtil;
+import jetbrains.mps.generator.impl.template.InputQueryUtil;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;

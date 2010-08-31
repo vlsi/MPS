@@ -2,7 +2,7 @@ package jetbrains.mps.generator.test;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.generator.GenerationFailureException;
+import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.GenerationTaskPool;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.GenerationTask;
 import junit.framework.Assert;

@@ -384,7 +384,7 @@
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationSettings" />
-    <classNode dependClassName="jetbrains.mps.generator.Icons" />
+    <classNode dependClassName="jetbrains.mps.ide.generator.Icons" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

@@ -1,6 +1,6 @@
 package jetbrains.mps.generator.template;
 
-import jetbrains.mps.generator.GenerationFailureException;
+import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.ReductionContext;
 import jetbrains.mps.generator.impl.TemplateContext;
 import jetbrains.mps.lang.generator.structure.*;

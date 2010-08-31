@@ -21,7 +21,7 @@ import jetbrains.mps.util.Pair;
 
 import java.util.List;
 
-public class GenerationAdapter implements GenerationListener{
+public class GenerationAdapter implements GenerationListener {
   @Override
   public void beforeGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
   }

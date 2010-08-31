@@ -18,7 +18,6 @@ package jetbrains.mps.generator.impl;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.template.ITemplateGenerator;

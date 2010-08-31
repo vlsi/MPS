@@ -1,13 +1,12 @@
 package jetbrains.mps.generator.template;
 
-import jetbrains.mps.generator.GenerationFailureException;
+import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.ReductionContext;
 import jetbrains.mps.generator.impl.TemplateContext;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.generator.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.QueryMethodGenerated;

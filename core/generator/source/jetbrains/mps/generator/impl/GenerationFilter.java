@@ -4,7 +4,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.impl.dependencies.*;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder.NullDependenciesBuilder;
 import jetbrains.mps.generator.index.ModelDigestUtil;
-import jetbrains.mps.generator.plan.ConnectedComponentPartitioner;
+import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;

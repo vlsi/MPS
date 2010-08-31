@@ -15,8 +15,7 @@
  */
 package jetbrains.mps.generator.impl;
 
-import jetbrains.mps.generator.GenerationFailureException;
-import jetbrains.mps.generator.plan.GenerationPlan;
+import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.util.FlattenIterable;
 import jetbrains.mps.lang.generator.structure.*;

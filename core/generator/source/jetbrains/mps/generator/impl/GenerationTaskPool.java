@@ -2,7 +2,6 @@ package jetbrains.mps.generator.impl;
 
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.smodel.ModelAccess;
 
 import java.util.LinkedList;

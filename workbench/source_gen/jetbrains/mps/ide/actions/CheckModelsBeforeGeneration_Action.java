@@ -9,7 +9,7 @@ import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.generator.GenerationSettings;
-import jetbrains.mps.generator.Icons;
+import jetbrains.mps.ide.generator.Icons;
 import com.intellij.util.ui.EmptyIcon;
 
 public class CheckModelsBeforeGeneration_Action extends GeneratedAction {

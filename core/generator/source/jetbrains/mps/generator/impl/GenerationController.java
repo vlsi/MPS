@@ -19,7 +19,6 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.generator.GenerationSettings;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.GeneratorManager.GeneratorNotifierHelper;

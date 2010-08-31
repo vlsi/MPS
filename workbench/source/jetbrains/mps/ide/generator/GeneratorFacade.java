@@ -29,7 +29,7 @@ import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.generator.NoCachesStrategy;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
-import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
+import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;

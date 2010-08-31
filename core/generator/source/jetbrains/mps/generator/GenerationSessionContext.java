@@ -16,7 +16,7 @@
 package jetbrains.mps.generator;
 
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.generator.plan.GenerationPlan;
+import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.smodel.*;

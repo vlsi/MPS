@@ -1,7 +1,6 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
