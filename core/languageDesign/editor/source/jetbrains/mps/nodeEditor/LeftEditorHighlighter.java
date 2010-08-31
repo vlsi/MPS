@@ -594,8 +594,12 @@ public class LeftEditorHighlighter extends JComponent {
 
   private void mouseMovedInFoldingArea(MouseEvent e) {
     myMouseIsInFoldingArea = true;
-    for (AbstractFoldingAreaPainter painter : myFoldingAreaPainters) {
+    for (Iterator<AbstractFoldingAreaPainter> it = myFoldingAreaPainters.descendingIterator(); it.hasNext();) {
+      AbstractFoldingAreaPainter painter = it.next();
       painter.mouseMoved(e);
+      if (e.isConsumed()) {
+        break;
+      }
     }
   }
 

@@ -92,6 +92,9 @@ public class FoldingButtonsPainter extends AbstractFoldingAreaPainter {
   @Override
   public void mouseMoved(MouseEvent e) {
     FoldingButton newButtonUnderMouse = getFoldingButtonUnderMouse(e);
+    if (newButtonUnderMouse != null) {
+      e.consume();
+    }
     if (newButtonUnderMouse == myButtonUnderMouse) {
       return;
     }
