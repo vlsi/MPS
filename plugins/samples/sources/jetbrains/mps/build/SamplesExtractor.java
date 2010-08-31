@@ -73,7 +73,7 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
   public SamplesExtractor(ApplicationInfo applicationInfo) {
     myApplicationInfo = applicationInfo;
   }
-
+                   
   @NotNull
   public String getComponentName() {
     return "Samples Extractor";

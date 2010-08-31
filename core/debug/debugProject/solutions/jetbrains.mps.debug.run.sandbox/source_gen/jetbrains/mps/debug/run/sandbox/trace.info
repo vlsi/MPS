@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1816315258006275542">
-    <nodeInfo nodeId="1816315258006280129" fileName="Foo.java" startLine="10" startPosition="30" endLine="11" endPosition="33" />
-    <nodeInfo nodeId="1816315258006280134" fileName="Foo.java" startLine="14" startPosition="42" endLine="15" endPosition="14" />
-    <nodeInfo nodeId="1816315258006280140" fileName="Foo.java" startLine="15" startPosition="14" endLine="16" endPosition="14" />
-    <nodeInfo nodeId="1816315258006280151" fileName="Foo.java" startLine="16" startPosition="14" endLine="17" endPosition="35" />
-    <nodeInfo nodeId="1816315258006280162" fileName="Foo.java" startLine="17" startPosition="35" endLine="18" endPosition="16" />
-    <scopeInfo nodeId="1816315258006275544" fileName="Foo.java" startLine="10" startPosition="30" endLine="11" endPosition="33" />
-    <scopeInfo nodeId="1816315258006275547" fileName="Foo.java" startLine="14" startPosition="42" endLine="18" endPosition="16">
-      <varInfo nodeId="1816315258006280135" varName="i" />
-    </scopeInfo>
-  </root>
   <root nodeId="1876713722539579910">
     <nodeInfo nodeId="4210312560528450747" fileName="Main.java" startLine="8" startPosition="19" endLine="9" endPosition="17" />
     <nodeInfo nodeId="4060685206781455318" fileName="Main.java" startLine="11" startPosition="17" endLine="12" endPosition="25" />
