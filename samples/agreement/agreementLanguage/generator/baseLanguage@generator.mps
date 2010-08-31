@@ -1861,7 +1861,7 @@
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="1197664311626">
         <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1214253958706">
           <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1214253958708">
-            <link role="baseMethodDeclaration:3" targetNodeId="22.6531435794299655598" resolveInfo="Quantity" />
+            <link role="baseMethodDeclaration:3" targetNodeId="22.6531435794299655602" resolveInfo="Quantity" />
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.FloatingPointConstant:3" id="1197664434872">
               <property name="value:3" value="0.0" />
               <node role="propertyMacro$property_attribute$value:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1197664480422">

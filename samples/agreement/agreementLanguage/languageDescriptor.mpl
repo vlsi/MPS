@@ -26,6 +26,9 @@
   <dependencies>
     <dependency reexport="false">b1a9bc47-8a26-4792-8b68-4660c531090a(jetbrains.mps.samples.formulaLanguage)</dependency>
   </dependencies>
+  <runtime>
+    <dependency reexport="false">45571709-5529-4a2c-94c9-5b0e2469ad35(jetbrains.mps.samples.agreement.framework)</dependency>
+  </runtime>
   <extendedLanguages />
 </language>
 
