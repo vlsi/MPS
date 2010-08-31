@@ -91,6 +91,11 @@ public class CommonPaths {
       result.add(kernelClassPath);
     }
 
+    IClassPathItem generatorClassPath = getGeneratorEngineClasspath();
+    if (generatorClassPath != null) {
+      result.add(generatorClassPath);
+    }
+
     IClassPathItem debugClassPath = getMPSDebugClassPath();
     if (debugClassPath != null) {
       result.add(debugClassPath);
@@ -278,6 +283,17 @@ public class CommonPaths {
       + File.separator + "classes";
     if (new File(workbenchClasses).exists()) {
       return ClassPathFactory.getInstance().createFromPath(workbenchClasses);
+    }
+
+    return null;
+  }
+
+  private static IClassPathItem getGeneratorEngineClasspath() {
+    String generatorClasses = PathManager.getHomePath() + File.separator + "core"
+      + File.separator + "generator"
+      + File.separator + "classes";
+    if (new File(generatorClasses).exists()) {
+      return ClassPathFactory.getInstance().createFromPath(generatorClasses);
     }
 
     return null;
