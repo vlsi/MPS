@@ -67,7 +67,11 @@ public class VCSTabColorProvider implements TabColorProvider {
       return;
     }
     myTabListeners.put(tab, createFileStatusListener(tab));
-    statusManager.addNodeFileStatusListener(myTabListeners.get(tab));
+    NodeFileStatusListener listener = myTabListeners.get(tab);
+    if (listener == null) {
+      return;
+    }
+    statusManager.addNodeFileStatusListener(listener);
   }
 
   public void tabClosed(AbstractLazyTab tab) {
@@ -75,7 +79,11 @@ public class VCSTabColorProvider implements TabColorProvider {
     if (statusManager == null) {
       return;
     }
-    statusManager.removeNodeFileStatusListener(myTabListeners.remove(tab));
+    NodeFileStatusListener listener = myTabListeners.remove(tab);
+    if (listener == null) {
+      return;
+    }
+    statusManager.removeNodeFileStatusListener(listener);
   }
 
   private Project getTabProject(AbstractLazyTab tab) {

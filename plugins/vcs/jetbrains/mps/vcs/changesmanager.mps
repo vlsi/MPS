@@ -30026,6 +30026,36 @@
             </node>
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="3876980871838660616">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="3876980871838660617">
+            <property name="name:3" value="listener" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3876980871838660618">
+              <link role="classifier:3" targetNodeId="6204261414007568332" resolveInfo="NodeFileStatusListener" />
+            </node>
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3876980871838660619">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="3876980871838660620">
+                <link role="variableDeclaration:3" targetNodeId="6763225944573384074" resolveInfo="myTabListeners" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3876980871838660621">
+                <link role="baseMethodDeclaration:3" targetNodeId="23.~Map.get(java.lang.Object):java.lang.Object" resolveInfo="get" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3876980871838660622">
+                  <link role="variableDeclaration:3" targetNodeId="6763225944573384203" resolveInfo="tab" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="3876980871838704824">
+          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3876980871838704825">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="3876980871838704833" />
+          </node>
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="3876980871838704829">
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="3876980871838704832" />
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3876980871838704828">
+              <link role="variableDeclaration:3" targetNodeId="3876980871838660617" resolveInfo="listener" />
+            </node>
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6763225944573384225">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6763225944573384226">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6763225944573384227">
@@ -30033,16 +30063,8 @@
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6763225944573384228">
               <link role="baseMethodDeclaration:3" targetNodeId="6204261414007623369" resolveInfo="addNodeFileStatusListener" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6763225944573384229">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="6763225944573384230">
-                  <link role="variableDeclaration:3" targetNodeId="6763225944573384074" resolveInfo="myTabListeners" />
-                </node>
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6763225944573384231">
-                  <link role="baseMethodDeclaration:3" targetNodeId="23.~Map.get(java.lang.Object):java.lang.Object" resolveInfo="get" />
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="6763225944573384232">
-                    <link role="variableDeclaration:3" targetNodeId="6763225944573384203" resolveInfo="tab" />
-                  </node>
-                </node>
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3876980871838660623">
+                <link role="variableDeclaration:3" targetNodeId="3876980871838660617" resolveInfo="listener" />
               </node>
             </node>
           </node>
@@ -30089,6 +30111,36 @@
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="6763225944573384250" />
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="3876980871838704834">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="3876980871838704835">
+            <property name="name:3" value="listener" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3876980871838704836">
+              <link role="classifier:3" targetNodeId="6204261414007568332" resolveInfo="NodeFileStatusListener" />
+            </node>
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3876980871838704837">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="3876980871838704838">
+                <link role="variableDeclaration:3" targetNodeId="6763225944573384074" resolveInfo="myTabListeners" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3876980871838704839">
+                <link role="baseMethodDeclaration:3" targetNodeId="23.~Map.remove(java.lang.Object):java.lang.Object" resolveInfo="remove" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3876980871838704840">
+                  <link role="variableDeclaration:3" targetNodeId="6763225944573384236" resolveInfo="tab" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="3876980871838704843">
+          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3876980871838704844">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="3876980871838704852" />
+          </node>
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="3876980871838704848">
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="3876980871838704851" />
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3876980871838704847">
+              <link role="variableDeclaration:3" targetNodeId="3876980871838704835" resolveInfo="listener" />
+            </node>
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6763225944573384251">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6763225944573384252">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6763225944573384253">
@@ -30096,16 +30148,8 @@
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6763225944573384254">
               <link role="baseMethodDeclaration:3" targetNodeId="6204261414007623375" resolveInfo="removeNodeFileStatusListener" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6763225944573384255">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="6763225944573384256">
-                  <link role="variableDeclaration:3" targetNodeId="6763225944573384074" resolveInfo="myTabListeners" />
-                </node>
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6763225944573384257">
-                  <link role="baseMethodDeclaration:3" targetNodeId="23.~Map.remove(java.lang.Object):java.lang.Object" resolveInfo="remove" />
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="6763225944573384258">
-                    <link role="variableDeclaration:3" targetNodeId="6763225944573384236" resolveInfo="tab" />
-                  </node>
-                </node>
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3876980871838704841">
+                <link role="variableDeclaration:3" targetNodeId="3876980871838704835" resolveInfo="listener" />
               </node>
             </node>
           </node>

@@ -558,8 +558,8 @@
       <varInfo nodeId="2936752800012777363" varName="nextChildIndex" />
     </scopeInfo>
     <scopeInfo nodeId="166132277801270114" fileName="EditorComponentChangesHighligher.java" startLine="63" startPosition="0" endLine="107" endPosition="3">
-      <varInfo nodeId="166132277801275270" varName="project" />
       <varInfo nodeId="8601487597690772311" varName="enabled" />
+      <varInfo nodeId="166132277801275270" varName="project" />
       <varInfo nodeId="76450717690085769" varName="editorComponent" />
     </scopeInfo>
     <scopeInfo nodeId="6149144798615862420" fileName="EditorComponentChangesHighligher.java" startLine="374" startPosition="14" endLine="424" endPosition="75">
@@ -574,8 +574,8 @@
       <varInfo nodeId="6149144798615862398" varName="graphics" />
     </scopeInfo>
     <scopeInfo nodeId="166132277801275731" fileName="EditorComponentChangesHighligher.java" startLine="109" startPosition="71" endLine="179" endPosition="19">
-      <varInfo nodeId="94490962879300526" varName="messageTarget" />
       <varInfo nodeId="166132277801275742" varName="message" />
+      <varInfo nodeId="94490962879300526" varName="messageTarget" />
       <varInfo nodeId="166132277801275733" varName="node" />
       <varInfo nodeId="94490962879300582" varName="c" />
       <varInfo nodeId="7627490208786691768" varName="isOurChange" />
@@ -848,8 +848,8 @@
     </scopeInfo>
     <scopeInfo nodeId="5569581551640544192" fileName="ChangesManager.java" startLine="227" startPosition="0" endLine="232" endPosition="0">
       <varInfo nodeId="5569581551640544200" varName="toList" />
-      <varInfo nodeId="5569581551640544195" varName="changes" />
       <varInfo nodeId="5569581551640544198" varName="fromList" />
+      <varInfo nodeId="5569581551640544195" varName="changes" />
     </scopeInfo>
     <scopeInfo nodeId="209997191345281381" fileName="ChangesManager.java" startLine="257" startPosition="0" endLine="262" endPosition="0" />
     <scopeInfo nodeId="5267577397386524719" fileName="ChangesManager.java" startLine="59" startPosition="22" endLine="65" endPosition="34" />
@@ -864,8 +864,8 @@
     <scopeInfo nodeId="8477273007880817016" fileName="ChangesManager.java" startLine="163" startPosition="17" endLine="170" endPosition="28" />
     <scopeInfo nodeId="8477273007880817056" fileName="ChangesManager.java" startLine="173" startPosition="48" endLine="180" endPosition="13" />
     <scopeInfo nodeId="5569581551640544170" fileName="ChangesManager.java" startLine="220" startPosition="0" endLine="227" endPosition="0">
-      <varInfo nodeId="5569581551640544173" varName="changes" />
       <varInfo nodeId="5569581551640544176" varName="fromList" />
+      <varInfo nodeId="5569581551640544173" varName="changes" />
     </scopeInfo>
     <scopeInfo nodeId="5752539231810454519" fileName="ChangesManager.java" startLine="232" startPosition="0" endLine="239" endPosition="0" />
     <scopeInfo nodeId="6003305288819068510" fileName="ChangesManager.java" startLine="269" startPosition="71" endLine="276" endPosition="9" />
@@ -874,8 +874,8 @@
     <scopeInfo nodeId="6058514296621167572" fileName="ChangesManager.java" startLine="117" startPosition="0" endLine="125" endPosition="0" />
     <scopeInfo nodeId="6003305288819000322" fileName="ChangesManager.java" startLine="126" startPosition="90" endLine="134" endPosition="7" />
     <scopeInfo nodeId="8386680215811366512" fileName="ChangesManager.java" startLine="88" startPosition="25" endLine="98" endPosition="79">
-      <varInfo nodeId="1552342397249029519" varName="modelRef" />
       <varInfo nodeId="2253323551303615596" varName="modelChangesManager" />
+      <varInfo nodeId="1552342397249029519" varName="modelRef" />
     </scopeInfo>
     <scopeInfo nodeId="5186220276475231268" fileName="ChangesManager.java" startLine="136" startPosition="0" endLine="146" endPosition="0">
       <varInfo nodeId="5186220276475231323" varName="modelDescriptor" />
@@ -896,8 +896,8 @@
     <scopeInfo nodeId="23553604208247411" fileName="ChangesManager.java" startLine="69" startPosition="31" endLine="83" endPosition="7" />
     <scopeInfo nodeId="1552342397249028024" fileName="ChangesManager.java" startLine="86" startPosition="122" endLine="100" endPosition="7" />
     <scopeInfo nodeId="5392440913055405811" fileName="ChangesManager.java" startLine="102" startPosition="0" endLine="117" endPosition="0">
-      <varInfo nodeId="891158202133117057" varName="file" />
       <varInfo nodeId="3645216862591272454" varName="fileStatus" />
+      <varInfo nodeId="891158202133117057" varName="file" />
     </scopeInfo>
     <scopeInfo nodeId="23553604208247408" fileName="ChangesManager.java" startLine="68" startPosition="0" endLine="85" endPosition="0" />
     <scopeInfo nodeId="1552342397249028021" fileName="ChangesManager.java" startLine="85" startPosition="0" endLine="102" endPosition="0">
@@ -1040,8 +1040,8 @@
       <varInfo nodeId="2698665420347342222" varName="a" />
     </scopeInfo>
     <scopeInfo nodeId="7183063426006642447" fileName="LongestCommonSubsequenceFinder.java" startLine="40" startPosition="131" endLine="61" endPosition="57">
-      <varInfo nodeId="7183063426006642456" varName="lengths" />
       <varInfo nodeId="7183063426006642480" varName="indices" />
+      <varInfo nodeId="7183063426006642456" varName="lengths" />
       <varInfo nodeId="7183063426006642508" varName="j" />
       <varInfo nodeId="7183063426006642496" varName="i" />
     </scopeInfo>
@@ -1437,8 +1437,8 @@
     <scopeInfo nodeId="4056424511791981398" fileName="SModelUtils.java" startLine="35" startPosition="111" endLine="47" endPosition="17" />
     <scopeInfo nodeId="4056424511791981395" fileName="SModelUtils.java" startLine="34" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="4056424511791981451" varName="modelDescriptor" />
-      <varInfo nodeId="4056424511791981447" varName="childRole" />
       <varInfo nodeId="4056424511791981449" varName="parent" />
+      <varInfo nodeId="4056424511791981447" varName="childRole" />
     </scopeInfo>
     <scopeInfo nodeId="762570481842505862" fileName="SModelUtils.java" startLine="64" startPosition="0" endLine="79" endPosition="0">
       <varInfo nodeId="762570481842505872" varName="nodes" />
@@ -2121,8 +2121,8 @@
     <scopeInfo nodeId="3935103675993769250" fileName="ProjectTreeChangesHighlighter.java" startLine="474" startPosition="90" endLine="486" endPosition="19" />
     <scopeInfo nodeId="6484240062667323248" fileName="ProjectTreeChangesHighlighter.java" startLine="103" startPosition="58" endLine="116" endPosition="11" />
     <scopeInfo nodeId="9167608307817304536" fileName="ProjectTreeChangesHighlighter.java" startLine="251" startPosition="0" endLine="264" endPosition="0">
-      <varInfo nodeId="9167608307817304624" varName="nodeId" />
       <varInfo nodeId="9167608307817304639" varName="model" />
+      <varInfo nodeId="9167608307817304624" varName="nodeId" />
     </scopeInfo>
     <scopeInfo nodeId="704512678984999260" fileName="ProjectTreeChangesHighlighter.java" startLine="511" startPosition="85" endLine="524" endPosition="5" />
     <scopeInfo nodeId="3935103675993767267" fileName="ProjectTreeChangesHighlighter.java" startLine="473" startPosition="57" endLine="487" endPosition="15" />
@@ -2207,8 +2207,8 @@
     </scopeInfo>
     <scopeInfo nodeId="5962623969496448269" fileName="ProjectTreeChangesHighlighter.java" startLine="267" startPosition="25" endLine="334" endPosition="9">
       <varInfo nodeId="1794625231785958389" varName="affectedNodeId" />
-      <varInfo nodeId="1794625231785958408" varName="node" />
       <varInfo nodeId="1794625231785958416" varName="nodeToDecrement" />
+      <varInfo nodeId="1794625231785958408" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="5962623969496448268" fileName="ProjectTreeChangesHighlighter.java" startLine="266" startPosition="43" endLine="336" endPosition="0" />
     <scopeInfo nodeId="7690582295257017316" fileName="ProjectTreeChangesHighlighter.java" startLine="265" startPosition="93" endLine="336" endPosition="7" />
@@ -2484,63 +2484,69 @@
     <nodeInfo nodeId="6763225944573384206" fileName="VCSTabColorProvider.java" startLine="64" startPosition="46" endLine="65" endPosition="104" />
     <nodeInfo nodeId="6763225944573384217" fileName="VCSTabColorProvider.java" startLine="66" startPosition="32" endLine="67" endPosition="13" />
     <nodeInfo nodeId="6763225944573384218" fileName="VCSTabColorProvider.java" startLine="68" startPosition="5" endLine="69" endPosition="59" />
-    <nodeInfo nodeId="6763225944573384225" fileName="VCSTabColorProvider.java" startLine="69" startPosition="59" endLine="70" endPosition="69" />
-    <nodeInfo nodeId="6763225944573384239" fileName="VCSTabColorProvider.java" startLine="73" startPosition="46" endLine="74" endPosition="104" />
-    <nodeInfo nodeId="6763225944573384250" fileName="VCSTabColorProvider.java" startLine="75" startPosition="32" endLine="76" endPosition="13" />
-    <nodeInfo nodeId="6763225944573384251" fileName="VCSTabColorProvider.java" startLine="77" startPosition="5" endLine="78" endPosition="75" />
-    <nodeInfo nodeId="6763225944573384265" fileName="VCSTabColorProvider.java" startLine="81" startPosition="54" endLine="82" endPosition="68" />
-    <nodeInfo nodeId="6763225944573384297" fileName="VCSTabColorProvider.java" startLine="86" startPosition="45" endLine="87" endPosition="63" />
-    <nodeInfo nodeId="6763225944573384303" fileName="VCSTabColorProvider.java" startLine="87" startPosition="63" endLine="88" endPosition="68" />
-    <nodeInfo nodeId="6763225944573384292" fileName="VCSTabColorProvider.java" startLine="90" startPosition="44" endLine="91" endPosition="68" />
-    <nodeInfo nodeId="6763225944573384287" fileName="VCSTabColorProvider.java" startLine="92" startPosition="10" endLine="93" endPosition="57" />
-    <nodeInfo nodeId="6763225944573384315" fileName="VCSTabColorProvider.java" startLine="96" startPosition="68" endLine="97" endPosition="103" />
-    <nodeInfo nodeId="6763225944573384326" fileName="VCSTabColorProvider.java" startLine="98" startPosition="32" endLine="99" endPosition="13" />
-    <nodeInfo nodeId="6763225944573384327" fileName="VCSTabColorProvider.java" startLine="100" startPosition="5" endLine="101" endPosition="108" />
-    <nodeInfo nodeId="6763225944573384346" fileName="VCSTabColorProvider.java" startLine="102" startPosition="29" endLine="103" endPosition="42" />
-    <nodeInfo nodeId="6763225944573384350" fileName="VCSTabColorProvider.java" startLine="104" startPosition="5" endLine="105" endPosition="40" />
-    <nodeInfo nodeId="6763225944573384361" fileName="VCSTabColorProvider.java" startLine="106" startPosition="24" endLine="107" endPosition="26" />
-    <nodeInfo nodeId="6763225944573384365" fileName="VCSTabColorProvider.java" startLine="108" startPosition="5" endLine="109" endPosition="58" />
-    <nodeInfo nodeId="6763225944573384373" fileName="VCSTabColorProvider.java" startLine="109" startPosition="58" endLine="110" endPosition="73" />
-    <nodeInfo nodeId="6763225944573383972" fileName="VCSTabColorProvider.java" startLine="113" startPosition="85" endLine="114" endPosition="43" />
-    <nodeInfo nodeId="6763225944573383981" fileName="VCSTabColorProvider.java" startLine="116" startPosition="63" endLine="117" endPosition="16" />
-    <nodeInfo nodeId="6763225944573383992" fileName="VCSTabColorProvider.java" startLine="120" startPosition="62" endLine="121" endPosition="56" />
-    <nodeInfo nodeId="6763225944573384005" fileName="VCSTabColorProvider.java" startLine="122" startPosition="75" endLine="123" endPosition="83" />
-    <nodeInfo nodeId="6763225944573384018" fileName="VCSTabColorProvider.java" startLine="128" startPosition="77" endLine="129" endPosition="40" />
-    <nodeInfo nodeId="6763225944573384027" fileName="VCSTabColorProvider.java" startLine="131" startPosition="59" endLine="132" endPosition="18" />
-    <nodeInfo nodeId="6763225944573384038" fileName="VCSTabColorProvider.java" startLine="135" startPosition="62" endLine="136" endPosition="56" />
-    <nodeInfo nodeId="6763225944573384044" fileName="VCSTabColorProvider.java" startLine="136" startPosition="56" endLine="137" endPosition="57" />
-    <nodeInfo nodeId="6763225944573384058" fileName="VCSTabColorProvider.java" startLine="138" startPosition="63" endLine="139" endPosition="53" />
-    <nodeInfo nodeId="6763225944573384065" fileName="VCSTabColorProvider.java" startLine="139" startPosition="53" endLine="140" endPosition="53" />
-    <nodeInfo nodeId="6763225944573384070" fileName="VCSTabColorProvider.java" startLine="140" startPosition="53" endLine="141" endPosition="34" />
+    <nodeInfo nodeId="3876980871838660616" fileName="VCSTabColorProvider.java" startLine="69" startPosition="59" endLine="70" endPosition="62" />
+    <nodeInfo nodeId="3876980871838704833" fileName="VCSTabColorProvider.java" startLine="71" startPosition="27" endLine="72" endPosition="13" />
+    <nodeInfo nodeId="6763225944573384225" fileName="VCSTabColorProvider.java" startLine="73" startPosition="5" endLine="74" endPosition="54" />
+    <nodeInfo nodeId="6763225944573384239" fileName="VCSTabColorProvider.java" startLine="77" startPosition="46" endLine="78" endPosition="104" />
+    <nodeInfo nodeId="6763225944573384250" fileName="VCSTabColorProvider.java" startLine="79" startPosition="32" endLine="80" endPosition="13" />
+    <nodeInfo nodeId="3876980871838704834" fileName="VCSTabColorProvider.java" startLine="81" startPosition="5" endLine="82" endPosition="65" />
+    <nodeInfo nodeId="3876980871838704852" fileName="VCSTabColorProvider.java" startLine="83" startPosition="27" endLine="84" endPosition="13" />
+    <nodeInfo nodeId="6763225944573384251" fileName="VCSTabColorProvider.java" startLine="85" startPosition="5" endLine="86" endPosition="57" />
+    <nodeInfo nodeId="6763225944573384265" fileName="VCSTabColorProvider.java" startLine="89" startPosition="54" endLine="90" endPosition="68" />
+    <nodeInfo nodeId="6763225944573384297" fileName="VCSTabColorProvider.java" startLine="94" startPosition="45" endLine="95" endPosition="63" />
+    <nodeInfo nodeId="6763225944573384303" fileName="VCSTabColorProvider.java" startLine="95" startPosition="63" endLine="96" endPosition="68" />
+    <nodeInfo nodeId="6763225944573384292" fileName="VCSTabColorProvider.java" startLine="98" startPosition="44" endLine="99" endPosition="68" />
+    <nodeInfo nodeId="6763225944573384287" fileName="VCSTabColorProvider.java" startLine="100" startPosition="10" endLine="101" endPosition="57" />
+    <nodeInfo nodeId="6763225944573384315" fileName="VCSTabColorProvider.java" startLine="104" startPosition="68" endLine="105" endPosition="103" />
+    <nodeInfo nodeId="6763225944573384326" fileName="VCSTabColorProvider.java" startLine="106" startPosition="32" endLine="107" endPosition="13" />
+    <nodeInfo nodeId="6763225944573384327" fileName="VCSTabColorProvider.java" startLine="108" startPosition="5" endLine="109" endPosition="108" />
+    <nodeInfo nodeId="6763225944573384346" fileName="VCSTabColorProvider.java" startLine="110" startPosition="29" endLine="111" endPosition="42" />
+    <nodeInfo nodeId="6763225944573384350" fileName="VCSTabColorProvider.java" startLine="112" startPosition="5" endLine="113" endPosition="40" />
+    <nodeInfo nodeId="6763225944573384361" fileName="VCSTabColorProvider.java" startLine="114" startPosition="24" endLine="115" endPosition="26" />
+    <nodeInfo nodeId="6763225944573384365" fileName="VCSTabColorProvider.java" startLine="116" startPosition="5" endLine="117" endPosition="58" />
+    <nodeInfo nodeId="6763225944573384373" fileName="VCSTabColorProvider.java" startLine="117" startPosition="58" endLine="118" endPosition="73" />
+    <nodeInfo nodeId="6763225944573383972" fileName="VCSTabColorProvider.java" startLine="121" startPosition="85" endLine="122" endPosition="43" />
+    <nodeInfo nodeId="6763225944573383981" fileName="VCSTabColorProvider.java" startLine="124" startPosition="63" endLine="125" endPosition="16" />
+    <nodeInfo nodeId="6763225944573383992" fileName="VCSTabColorProvider.java" startLine="128" startPosition="62" endLine="129" endPosition="56" />
+    <nodeInfo nodeId="6763225944573384005" fileName="VCSTabColorProvider.java" startLine="130" startPosition="75" endLine="131" endPosition="83" />
+    <nodeInfo nodeId="6763225944573384018" fileName="VCSTabColorProvider.java" startLine="136" startPosition="77" endLine="137" endPosition="40" />
+    <nodeInfo nodeId="6763225944573384027" fileName="VCSTabColorProvider.java" startLine="139" startPosition="59" endLine="140" endPosition="18" />
+    <nodeInfo nodeId="6763225944573384038" fileName="VCSTabColorProvider.java" startLine="143" startPosition="62" endLine="144" endPosition="56" />
+    <nodeInfo nodeId="6763225944573384044" fileName="VCSTabColorProvider.java" startLine="144" startPosition="56" endLine="145" endPosition="57" />
+    <nodeInfo nodeId="6763225944573384058" fileName="VCSTabColorProvider.java" startLine="146" startPosition="63" endLine="147" endPosition="53" />
+    <nodeInfo nodeId="6763225944573384065" fileName="VCSTabColorProvider.java" startLine="147" startPosition="53" endLine="148" endPosition="53" />
+    <nodeInfo nodeId="6763225944573384070" fileName="VCSTabColorProvider.java" startLine="148" startPosition="53" endLine="149" endPosition="34" />
     <nodeInfo nodeId="6763225944573384083" fileName="VCSTabColorProvider.java" startLine="23" startPosition="0" endLine="25" endPosition="3" />
     <nodeInfo nodeId="6763225944573384153" fileName="VCSTabColorProvider.java" startLine="46" startPosition="12" endLine="48" endPosition="7" />
     <nodeInfo nodeId="6763225944573384180" fileName="VCSTabColorProvider.java" startLine="57" startPosition="12" endLine="59" endPosition="7" />
     <nodeInfo nodeId="6763225944573384100" fileName="VCSTabColorProvider.java" startLine="28" startPosition="93" endLine="31" endPosition="5" />
     <nodeInfo nodeId="6763225944573384132" fileName="VCSTabColorProvider.java" startLine="36" startPosition="51" endLine="39" endPosition="7" />
     <nodeInfo nodeId="6763225944573384212" fileName="VCSTabColorProvider.java" startLine="65" startPosition="104" endLine="68" endPosition="5" />
-    <nodeInfo nodeId="6763225944573384245" fileName="VCSTabColorProvider.java" startLine="74" startPosition="104" endLine="77" endPosition="5" />
-    <nodeInfo nodeId="6763225944573384321" fileName="VCSTabColorProvider.java" startLine="97" startPosition="103" endLine="100" endPosition="5" />
-    <nodeInfo nodeId="6763225944573384341" fileName="VCSTabColorProvider.java" startLine="101" startPosition="108" endLine="104" endPosition="5" />
-    <nodeInfo nodeId="6763225944573384356" fileName="VCSTabColorProvider.java" startLine="105" startPosition="40" endLine="108" endPosition="5" />
-    <nodeInfo nodeId="6763225944573383975" fileName="VCSTabColorProvider.java" startLine="115" startPosition="0" endLine="118" endPosition="5" />
-    <nodeInfo nodeId="6763225944573383998" fileName="VCSTabColorProvider.java" startLine="121" startPosition="56" endLine="124" endPosition="7" />
-    <nodeInfo nodeId="6763225944573384021" fileName="VCSTabColorProvider.java" startLine="130" startPosition="0" endLine="133" endPosition="5" />
-    <nodeInfo nodeId="6763225944573384259" fileName="VCSTabColorProvider.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
-    <nodeInfo nodeId="6763225944573384283" fileName="VCSTabColorProvider.java" startLine="89" startPosition="10" endLine="93" endPosition="57" />
+    <nodeInfo nodeId="3876980871838704824" fileName="VCSTabColorProvider.java" startLine="70" startPosition="62" endLine="73" endPosition="5" />
+    <nodeInfo nodeId="6763225944573384245" fileName="VCSTabColorProvider.java" startLine="78" startPosition="104" endLine="81" endPosition="5" />
+    <nodeInfo nodeId="3876980871838704843" fileName="VCSTabColorProvider.java" startLine="82" startPosition="65" endLine="85" endPosition="5" />
+    <nodeInfo nodeId="6763225944573384321" fileName="VCSTabColorProvider.java" startLine="105" startPosition="103" endLine="108" endPosition="5" />
+    <nodeInfo nodeId="6763225944573384341" fileName="VCSTabColorProvider.java" startLine="109" startPosition="108" endLine="112" endPosition="5" />
+    <nodeInfo nodeId="6763225944573384356" fileName="VCSTabColorProvider.java" startLine="113" startPosition="40" endLine="116" endPosition="5" />
+    <nodeInfo nodeId="6763225944573383975" fileName="VCSTabColorProvider.java" startLine="123" startPosition="0" endLine="126" endPosition="5" />
+    <nodeInfo nodeId="6763225944573383998" fileName="VCSTabColorProvider.java" startLine="129" startPosition="56" endLine="132" endPosition="7" />
+    <nodeInfo nodeId="6763225944573384021" fileName="VCSTabColorProvider.java" startLine="138" startPosition="0" endLine="141" endPosition="5" />
+    <nodeInfo nodeId="6763225944573384259" fileName="VCSTabColorProvider.java" startLine="88" startPosition="0" endLine="92" endPosition="0" />
+    <nodeInfo nodeId="6763225944573384283" fileName="VCSTabColorProvider.java" startLine="97" startPosition="10" endLine="101" endPosition="57" />
     <nodeInfo nodeId="6763225944573384149" fileName="VCSTabColorProvider.java" startLine="43" startPosition="12" endLine="48" endPosition="7" />
     <nodeInfo nodeId="6763225944573384178" fileName="VCSTabColorProvider.java" startLine="54" startPosition="19" endLine="59" endPosition="7" />
-    <nodeInfo nodeId="6763225944573384050" fileName="VCSTabColorProvider.java" startLine="137" startPosition="57" endLine="142" endPosition="7" />
+    <nodeInfo nodeId="6763225944573384050" fileName="VCSTabColorProvider.java" startLine="145" startPosition="57" endLine="150" endPosition="7" />
     <nodeInfo nodeId="6763225944573384175" fileName="VCSTabColorProvider.java" startLine="53" startPosition="10" endLine="60" endPosition="5" />
-    <nodeInfo nodeId="6763225944573383985" fileName="VCSTabColorProvider.java" startLine="119" startPosition="0" endLine="126" endPosition="0" />
+    <nodeInfo nodeId="6763225944573383985" fileName="VCSTabColorProvider.java" startLine="127" startPosition="0" endLine="134" endPosition="0" />
     <nodeInfo nodeId="6763225944573384145" fileName="VCSTabColorProvider.java" startLine="40" startPosition="56" endLine="48" endPosition="7" />
-    <nodeInfo nodeId="6763225944573384233" fileName="VCSTabColorProvider.java" startLine="72" startPosition="0" endLine="80" endPosition="0" />
-    <nodeInfo nodeId="6763225944573384279" fileName="VCSTabColorProvider.java" startLine="85" startPosition="88" endLine="93" endPosition="57" />
-    <nodeInfo nodeId="6763225944573384200" fileName="VCSTabColorProvider.java" startLine="63" startPosition="0" endLine="72" endPosition="0" />
+    <nodeInfo nodeId="6763225944573384279" fileName="VCSTabColorProvider.java" startLine="93" startPosition="88" endLine="101" endPosition="57" />
     <nodeInfo nodeId="6763225944573384173" fileName="VCSTabColorProvider.java" startLine="50" startPosition="47" endLine="60" endPosition="5" />
-    <nodeInfo nodeId="6763225944573384031" fileName="VCSTabColorProvider.java" startLine="134" startPosition="0" endLine="144" endPosition="0" />
-    <nodeInfo nodeId="6763225944573384273" fileName="VCSTabColorProvider.java" startLine="84" startPosition="0" endLine="95" endPosition="0" />
+    <nodeInfo nodeId="6763225944573384031" fileName="VCSTabColorProvider.java" startLine="142" startPosition="0" endLine="152" endPosition="0" />
+    <nodeInfo nodeId="6763225944573384273" fileName="VCSTabColorProvider.java" startLine="92" startPosition="0" endLine="103" endPosition="0" />
+    <nodeInfo nodeId="6763225944573384233" fileName="VCSTabColorProvider.java" startLine="76" startPosition="0" endLine="88" endPosition="0" />
+    <nodeInfo nodeId="6763225944573384200" fileName="VCSTabColorProvider.java" startLine="63" startPosition="0" endLine="76" endPosition="0" />
     <nodeInfo nodeId="6763225944573384119" fileName="VCSTabColorProvider.java" startLine="34" startPosition="29" endLine="49" endPosition="5" />
-    <nodeInfo nodeId="6763225944573384307" fileName="VCSTabColorProvider.java" startLine="95" startPosition="0" endLine="112" endPosition="0" />
+    <nodeInfo nodeId="6763225944573384307" fileName="VCSTabColorProvider.java" startLine="103" startPosition="0" endLine="120" endPosition="0" />
     <nodeInfo nodeId="6763225944573384087" fileName="VCSTabColorProvider.java" startLine="26" startPosition="0" endLine="63" endPosition="0" />
     <scopeInfo nodeId="6763225944573384086" fileName="VCSTabColorProvider.java" startLine="24" startPosition="32" endLine="24" endPosition="32" />
     <scopeInfo nodeId="6763225944573384104" fileName="VCSTabColorProvider.java" startLine="29" startPosition="32" endLine="30" endPosition="25" />
@@ -2552,66 +2558,70 @@
     <scopeInfo nodeId="6763225944573384186" fileName="VCSTabColorProvider.java" startLine="55" startPosition="26" endLine="56" endPosition="37" />
     <scopeInfo nodeId="6763225944573384181" fileName="VCSTabColorProvider.java" startLine="57" startPosition="14" endLine="58" endPosition="34" />
     <scopeInfo nodeId="6763225944573384216" fileName="VCSTabColorProvider.java" startLine="66" startPosition="32" endLine="67" endPosition="13" />
-    <scopeInfo nodeId="6763225944573384249" fileName="VCSTabColorProvider.java" startLine="75" startPosition="32" endLine="76" endPosition="13" />
-    <scopeInfo nodeId="6763225944573384264" fileName="VCSTabColorProvider.java" startLine="81" startPosition="54" endLine="82" endPosition="68" />
-    <scopeInfo nodeId="6763225944573384291" fileName="VCSTabColorProvider.java" startLine="90" startPosition="44" endLine="91" endPosition="68" />
-    <scopeInfo nodeId="6763225944573384325" fileName="VCSTabColorProvider.java" startLine="98" startPosition="32" endLine="99" endPosition="13" />
-    <scopeInfo nodeId="6763225944573384345" fileName="VCSTabColorProvider.java" startLine="102" startPosition="29" endLine="103" endPosition="42" />
-    <scopeInfo nodeId="6763225944573384360" fileName="VCSTabColorProvider.java" startLine="106" startPosition="24" endLine="107" endPosition="26" />
-    <scopeInfo nodeId="6763225944573383980" fileName="VCSTabColorProvider.java" startLine="116" startPosition="63" endLine="117" endPosition="16" />
-    <scopeInfo nodeId="6763225944573384004" fileName="VCSTabColorProvider.java" startLine="122" startPosition="75" endLine="123" endPosition="83" />
-    <scopeInfo nodeId="6763225944573384026" fileName="VCSTabColorProvider.java" startLine="131" startPosition="59" endLine="132" endPosition="18" />
+    <scopeInfo nodeId="3876980871838704825" fileName="VCSTabColorProvider.java" startLine="71" startPosition="27" endLine="72" endPosition="13" />
+    <scopeInfo nodeId="6763225944573384249" fileName="VCSTabColorProvider.java" startLine="79" startPosition="32" endLine="80" endPosition="13" />
+    <scopeInfo nodeId="3876980871838704844" fileName="VCSTabColorProvider.java" startLine="83" startPosition="27" endLine="84" endPosition="13" />
+    <scopeInfo nodeId="6763225944573384264" fileName="VCSTabColorProvider.java" startLine="89" startPosition="54" endLine="90" endPosition="68" />
+    <scopeInfo nodeId="6763225944573384291" fileName="VCSTabColorProvider.java" startLine="98" startPosition="44" endLine="99" endPosition="68" />
+    <scopeInfo nodeId="6763225944573384325" fileName="VCSTabColorProvider.java" startLine="106" startPosition="32" endLine="107" endPosition="13" />
+    <scopeInfo nodeId="6763225944573384345" fileName="VCSTabColorProvider.java" startLine="110" startPosition="29" endLine="111" endPosition="42" />
+    <scopeInfo nodeId="6763225944573384360" fileName="VCSTabColorProvider.java" startLine="114" startPosition="24" endLine="115" endPosition="26" />
+    <scopeInfo nodeId="6763225944573383980" fileName="VCSTabColorProvider.java" startLine="124" startPosition="63" endLine="125" endPosition="16" />
+    <scopeInfo nodeId="6763225944573384004" fileName="VCSTabColorProvider.java" startLine="130" startPosition="75" endLine="131" endPosition="83" />
+    <scopeInfo nodeId="6763225944573384026" fileName="VCSTabColorProvider.java" startLine="139" startPosition="59" endLine="140" endPosition="18" />
     <scopeInfo nodeId="6763225944573384083" fileName="VCSTabColorProvider.java" startLine="23" startPosition="0" endLine="25" endPosition="3" />
-    <scopeInfo nodeId="6763225944573384296" fileName="VCSTabColorProvider.java" startLine="86" startPosition="45" endLine="88" endPosition="68">
+    <scopeInfo nodeId="6763225944573384296" fileName="VCSTabColorProvider.java" startLine="94" startPosition="45" endLine="96" endPosition="68">
       <varInfo nodeId="6763225944573384298" varName="st" />
     </scopeInfo>
-    <scopeInfo nodeId="6763225944573383975" fileName="VCSTabColorProvider.java" startLine="115" startPosition="0" endLine="118" endPosition="5">
+    <scopeInfo nodeId="6763225944573383975" fileName="VCSTabColorProvider.java" startLine="123" startPosition="0" endLine="126" endPosition="5">
       <varInfo nodeId="6763225944573383978" varName="st" />
     </scopeInfo>
-    <scopeInfo nodeId="6763225944573384021" fileName="VCSTabColorProvider.java" startLine="130" startPosition="0" endLine="133" endPosition="5">
+    <scopeInfo nodeId="6763225944573384021" fileName="VCSTabColorProvider.java" startLine="138" startPosition="0" endLine="141" endPosition="5">
       <varInfo nodeId="6763225944573384024" varName="tab" />
     </scopeInfo>
-    <scopeInfo nodeId="6763225944573384057" fileName="VCSTabColorProvider.java" startLine="138" startPosition="63" endLine="141" endPosition="34">
+    <scopeInfo nodeId="6763225944573384057" fileName="VCSTabColorProvider.java" startLine="146" startPosition="63" endLine="149" endPosition="34">
       <varInfo nodeId="6763225944573384059" varName="index" />
     </scopeInfo>
-    <scopeInfo nodeId="6763225944573384259" fileName="VCSTabColorProvider.java" startLine="80" startPosition="0" endLine="84" endPosition="0">
+    <scopeInfo nodeId="6763225944573384259" fileName="VCSTabColorProvider.java" startLine="88" startPosition="0" endLine="92" endPosition="0">
       <varInfo nodeId="6763225944573384262" varName="tab" />
     </scopeInfo>
-    <scopeInfo nodeId="6763225944573383991" fileName="VCSTabColorProvider.java" startLine="120" startPosition="62" endLine="124" endPosition="7">
+    <scopeInfo nodeId="6763225944573383991" fileName="VCSTabColorProvider.java" startLine="128" startPosition="62" endLine="132" endPosition="7">
       <varInfo nodeId="6763225944573383993" varName="nodePointer" />
     </scopeInfo>
     <scopeInfo nodeId="6763225944573384177" fileName="VCSTabColorProvider.java" startLine="54" startPosition="19" endLine="59" endPosition="7" />
-    <scopeInfo nodeId="6763225944573384238" fileName="VCSTabColorProvider.java" startLine="73" startPosition="46" endLine="78" endPosition="75">
-      <varInfo nodeId="6763225944573384240" varName="statusManager" />
-    </scopeInfo>
-    <scopeInfo nodeId="6763225944573384205" fileName="VCSTabColorProvider.java" startLine="64" startPosition="46" endLine="70" endPosition="69">
-      <varInfo nodeId="6763225944573384207" varName="statusManager" />
-    </scopeInfo>
-    <scopeInfo nodeId="6763225944573383985" fileName="VCSTabColorProvider.java" startLine="119" startPosition="0" endLine="126" endPosition="0">
+    <scopeInfo nodeId="6763225944573383985" fileName="VCSTabColorProvider.java" startLine="127" startPosition="0" endLine="134" endPosition="0">
       <varInfo nodeId="6763225944573383988" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6763225944573384037" fileName="VCSTabColorProvider.java" startLine="135" startPosition="62" endLine="142" endPosition="7">
+    <scopeInfo nodeId="6763225944573384037" fileName="VCSTabColorProvider.java" startLine="143" startPosition="62" endLine="150" endPosition="7">
       <varInfo nodeId="6763225944573384039" varName="nodePointer" />
       <varInfo nodeId="6763225944573384045" varName="mt" />
     </scopeInfo>
-    <scopeInfo nodeId="6763225944573384233" fileName="VCSTabColorProvider.java" startLine="72" startPosition="0" endLine="80" endPosition="0">
-      <varInfo nodeId="6763225944573384236" varName="tab" />
+    <scopeInfo nodeId="6763225944573384278" fileName="VCSTabColorProvider.java" startLine="93" startPosition="88" endLine="101" endPosition="57" />
+    <scopeInfo nodeId="6763225944573384238" fileName="VCSTabColorProvider.java" startLine="77" startPosition="46" endLine="86" endPosition="57">
+      <varInfo nodeId="6763225944573384240" varName="statusManager" />
+      <varInfo nodeId="3876980871838704835" varName="listener" />
     </scopeInfo>
-    <scopeInfo nodeId="6763225944573384278" fileName="VCSTabColorProvider.java" startLine="85" startPosition="88" endLine="93" endPosition="57" />
-    <scopeInfo nodeId="6763225944573384200" fileName="VCSTabColorProvider.java" startLine="63" startPosition="0" endLine="72" endPosition="0">
-      <varInfo nodeId="6763225944573384203" varName="tab" />
+    <scopeInfo nodeId="6763225944573384205" fileName="VCSTabColorProvider.java" startLine="64" startPosition="46" endLine="74" endPosition="54">
+      <varInfo nodeId="6763225944573384207" varName="statusManager" />
+      <varInfo nodeId="3876980871838660617" varName="listener" />
     </scopeInfo>
-    <scopeInfo nodeId="6763225944573384031" fileName="VCSTabColorProvider.java" startLine="134" startPosition="0" endLine="144" endPosition="0">
+    <scopeInfo nodeId="6763225944573384031" fileName="VCSTabColorProvider.java" startLine="142" startPosition="0" endLine="152" endPosition="0">
       <varInfo nodeId="6763225944573384034" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6763225944573384273" fileName="VCSTabColorProvider.java" startLine="84" startPosition="0" endLine="95" endPosition="0">
+    <scopeInfo nodeId="6763225944573384273" fileName="VCSTabColorProvider.java" startLine="92" startPosition="0" endLine="103" endPosition="0">
       <varInfo nodeId="6763225944573384276" varName="tab" />
+    </scopeInfo>
+    <scopeInfo nodeId="6763225944573384233" fileName="VCSTabColorProvider.java" startLine="76" startPosition="0" endLine="88" endPosition="0">
+      <varInfo nodeId="6763225944573384236" varName="tab" />
     </scopeInfo>
     <scopeInfo nodeId="6763225944573384125" fileName="VCSTabColorProvider.java" startLine="35" startPosition="71" endLine="48" endPosition="7">
       <varInfo nodeId="6763225944573384127" varName="node" />
       <varInfo nodeId="6763225944573384139" varName="status" />
     </scopeInfo>
-    <scopeInfo nodeId="6763225944573384314" fileName="VCSTabColorProvider.java" startLine="96" startPosition="68" endLine="110" endPosition="73">
+    <scopeInfo nodeId="6763225944573384200" fileName="VCSTabColorProvider.java" startLine="63" startPosition="0" endLine="76" endPosition="0">
+      <varInfo nodeId="6763225944573384203" varName="tab" />
+    </scopeInfo>
+    <scopeInfo nodeId="6763225944573384314" fileName="VCSTabColorProvider.java" startLine="104" startPosition="68" endLine="118" endPosition="73">
       <varInfo nodeId="6763225944573384316" varName="statusManager" />
       <varInfo nodeId="6763225944573384351" varName="color" />
       <varInfo nodeId="6763225944573384328" varName="fileStatus" />
@@ -2619,24 +2629,24 @@
     <scopeInfo nodeId="6763225944573384119" fileName="VCSTabColorProvider.java" startLine="34" startPosition="29" endLine="49" endPosition="5">
       <varInfo nodeId="6763225944573384123" varName="editorComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="6763225944573384307" fileName="VCSTabColorProvider.java" startLine="95" startPosition="0" endLine="112" endPosition="0">
+    <scopeInfo nodeId="6763225944573384307" fileName="VCSTabColorProvider.java" startLine="103" startPosition="0" endLine="120" endPosition="0">
       <varInfo nodeId="6763225944573384312" varName="mt" />
       <varInfo nodeId="6763225944573384310" varName="tabIndex" />
     </scopeInfo>
     <scopeInfo nodeId="6763225944573384094" fileName="VCSTabColorProvider.java" startLine="27" startPosition="56" endLine="61" endPosition="29">
-      <varInfo nodeId="6763225944573384108" varName="hasNotChanged" />
       <varInfo nodeId="6763225944573384116" varName="hasAdded" />
-      <varInfo nodeId="6763225944573384096" varName="statusManager" />
+      <varInfo nodeId="6763225944573384108" varName="hasNotChanged" />
       <varInfo nodeId="6763225944573384112" varName="hasModified" />
+      <varInfo nodeId="6763225944573384096" varName="statusManager" />
       <varInfo nodeId="6763225944573384170" varName="status" />
     </scopeInfo>
     <scopeInfo nodeId="6763225944573384087" fileName="VCSTabColorProvider.java" startLine="26" startPosition="0" endLine="63" endPosition="0">
       <varInfo nodeId="6763225944573384090" varName="project" />
       <varInfo nodeId="6763225944573384092" varName="tab" />
     </scopeInfo>
-    <unitInfo nodeId="6763225944573383969" fileName="VCSTabColorProvider.java" startLine="113" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.VCSTabColorProvider$SingletabbedStatusListener" />
-    <unitInfo nodeId="6763225944573384015" fileName="VCSTabColorProvider.java" startLine="128" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.VCSTabColorProvider$MultitabbedStatusListener" />
-    <unitInfo nodeId="6763225944573383966" fileName="VCSTabColorProvider.java" startLine="21" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.VCSTabColorProvider" />
+    <unitInfo nodeId="6763225944573383969" fileName="VCSTabColorProvider.java" startLine="121" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.VCSTabColorProvider$SingletabbedStatusListener" />
+    <unitInfo nodeId="6763225944573384015" fileName="VCSTabColorProvider.java" startLine="136" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.VCSTabColorProvider$MultitabbedStatusListener" />
+    <unitInfo nodeId="6763225944573383966" fileName="VCSTabColorProvider.java" startLine="21" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.VCSTabColorProvider" />
   </root>
   <root nodeId="8006781392765204425">
     <nodeInfo nodeId="4604734785880205984" fileName="ModelChangesManager.java" startLine="470" startPosition="31" endLine="470" endPosition="31" />
@@ -4021,8 +4031,8 @@
     <scopeInfo nodeId="4220555432291379732" fileName="ModelChangesManager.java" startLine="806" startPosition="0" endLine="812" endPosition="0" />
     <scopeInfo nodeId="3854217528818475427" fileName="ModelChangesManager.java" startLine="1139" startPosition="77" endLine="1145" endPosition="9" />
     <scopeInfo nodeId="2352903979085962819" fileName="ModelChangesManager.java" startLine="1277" startPosition="22" endLine="1283" endPosition="17">
-      <varInfo nodeId="2352903979085962821" varName="propertySupport" />
       <varInfo nodeId="2352903979085962833" varName="newInternalValue" />
+      <varInfo nodeId="2352903979085962821" varName="propertySupport" />
       <varInfo nodeId="2352903979085962826" varName="baseInternalValue" />
     </scopeInfo>
     <scopeInfo nodeId="993300782394691290" fileName="ModelChangesManager.java" startLine="113" startPosition="29" endLine="120" endPosition="23">
@@ -4103,8 +4113,8 @@
       <varInfo nodeId="3958959855415944328" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="967641992124639090" fileName="ModelChangesManager.java" startLine="402" startPosition="99" endLine="411" endPosition="13">
-      <varInfo nodeId="967641992124639169" varName="nodeId" />
       <varInfo nodeId="6198597596203365588" varName="node" />
+      <varInfo nodeId="967641992124639169" varName="nodeId" />
     </scopeInfo>
     <scopeInfo nodeId="2370132037603420703" fileName="ModelChangesManager.java" startLine="532" startPosition="82" endLine="541" endPosition="9">
       <varInfo nodeId="2370132037603420851" varName="parentNode" />
@@ -4267,8 +4277,8 @@
       <varInfo nodeId="2352903979085963019" varName="reference" />
     </scopeInfo>
     <scopeInfo nodeId="3913480212906640440" fileName="ModelChangesManager.java" startLine="520" startPosition="66" endLine="542" endPosition="7">
-      <varInfo nodeId="3913480212906640458" varName="nodeId" />
       <varInfo nodeId="3913480212906641691" varName="node" />
+      <varInfo nodeId="3913480212906640458" varName="nodeId" />
     </scopeInfo>
     <scopeInfo nodeId="977382291400364233" fileName="ModelChangesManager.java" startLine="819" startPosition="89" endLine="841" endPosition="26">
       <varInfo nodeId="977382291400364242" varName="baseNode" />
@@ -4294,19 +4304,19 @@
     </scopeInfo>
     <scopeInfo nodeId="4604734785880205984" fileName="ModelChangesManager.java" startLine="453" startPosition="24" endLine="478" endPosition="23" />
     <scopeInfo nodeId="977382291400364230" fileName="ModelChangesManager.java" startLine="817" startPosition="0" endLine="843" endPosition="0">
-      <varInfo nodeId="977382291400364237" varName="childId" />
       <varInfo nodeId="6185837146817078080" varName="nodeToBeReplaced" />
+      <varInfo nodeId="977382291400364237" varName="childId" />
     </scopeInfo>
     <scopeInfo nodeId="2352903979085962687" fileName="ModelChangesManager.java" startLine="1369" startPosition="45" endLine="1395" endPosition="0" />
     <scopeInfo nodeId="3811819025881608028" fileName="ModelChangesManager.java" startLine="412" startPosition="56" endLine="439" endPosition="13">
-      <varInfo nodeId="3811819025881728174" varName="nodeId" />
       <varInfo nodeId="3811819025881727828" varName="node" />
+      <varInfo nodeId="3811819025881728174" varName="nodeId" />
       <varInfo nodeId="3811819025881728166" varName="conceptFqName" />
       <varInfo nodeId="3811819025881728308" varName="parent" />
     </scopeInfo>
     <scopeInfo nodeId="5687497293128274743" fileName="ModelChangesManager.java" startLine="881" startPosition="14" endLine="908" endPosition="9">
-      <varInfo nodeId="5890845648943347" varName="nodeId" />
       <varInfo nodeId="5687497293128274749" varName="node" />
+      <varInfo nodeId="5890845648943347" varName="nodeId" />
       <varInfo nodeId="3992381866776136444" varName="baseNodeId" />
     </scopeInfo>
     <scopeInfo nodeId="2352903979085962651" fileName="ModelChangesManager.java" startLine="1297" startPosition="45" endLine="1324" endPosition="0" />
@@ -4404,13 +4414,13 @@
       <varInfo nodeId="5880341150427494735" varName="recursively" />
     </scopeInfo>
     <scopeInfo nodeId="1281598945698463182" fileName="ModelChangesManager.java" startLine="580" startPosition="53" endLine="653" endPosition="5">
-      <varInfo nodeId="1281598945698463477" varName="modelFile" />
       <varInfo nodeId="1281598945698463520" varName="status" />
+      <varInfo nodeId="1281598945698463477" varName="modelFile" />
       <varInfo nodeId="1281598945698463491" varName="modelVFile" />
     </scopeInfo>
     <scopeInfo nodeId="2698665420347316391" fileName="ModelChangesManager.java" startLine="726" startPosition="120" endLine="799" endPosition="5">
-      <varInfo nodeId="1998279847126777983" varName="differentSubsequences" />
       <varInfo nodeId="1998279847126788454" varName="changesToAdd" />
+      <varInfo nodeId="1998279847126777983" varName="differentSubsequences" />
       <varInfo nodeId="2698665420347341261" varName="pair" />
       <varInfo nodeId="6552041766050874826" varName="currentChildrenIds" />
       <varInfo nodeId="7654328074273895361" varName="baseChildrenIds" />
@@ -4884,8 +4894,8 @@
     <scopeInfo nodeId="6378762527268264727" fileName="ChangesFoldingAreaPainter.java" startLine="438" startPosition="99" endLine="447" endPosition="7" />
     <scopeInfo nodeId="2792704635247516010" fileName="ChangesFoldingAreaPainter.java" startLine="117" startPosition="151" endLine="127" endPosition="46">
       <varInfo nodeId="2792704635247522101" varName="height" />
-      <varInfo nodeId="2792704635247516029" varName="cell" />
       <varInfo nodeId="2792704635247522090" varName="width" />
+      <varInfo nodeId="2792704635247516029" varName="cell" />
       <varInfo nodeId="2792704635247520989" varName="y" />
       <varInfo nodeId="2792704635247522079" varName="x" />
     </scopeInfo>
@@ -4896,8 +4906,8 @@
       <varInfo nodeId="4434895596490172181" varName="editorComponent" />
     </scopeInfo>
     <scopeInfo nodeId="6746101208730360071" fileName="ChangesFoldingAreaPainter.java" startLine="294" startPosition="104" endLine="304" endPosition="31">
-      <varInfo nodeId="6746101208730360675" varName="editorComponent" />
       <varInfo nodeId="6746101208730361664" varName="bottomY" />
+      <varInfo nodeId="6746101208730360675" varName="editorComponent" />
     </scopeInfo>
     <scopeInfo nodeId="4434895596490172219" fileName="ChangesFoldingAreaPainter.java" startLine="78" startPosition="79" endLine="89" endPosition="17">
       <varInfo nodeId="6589571255109292396" varName="xPoints" />
@@ -4964,8 +4974,8 @@
       <varInfo nodeId="6923910471520917317" varName="clipBounds" />
     </scopeInfo>
     <scopeInfo nodeId="6746101208730360006" fileName="ChangesFoldingAreaPainter.java" startLine="130" startPosition="36" endLine="170" endPosition="5">
-      <varInfo nodeId="6746101208730363612" varName="currentGroupMessages" />
       <varInfo nodeId="3176852462137033808" varName="currentMaxY" />
+      <varInfo nodeId="6746101208730363612" varName="currentGroupMessages" />
       <varInfo nodeId="6746101208730361841" varName="messagesWithCells" />
       <varInfo nodeId="6746101208730361713" varName="editorComponent" />
     </scopeInfo>
