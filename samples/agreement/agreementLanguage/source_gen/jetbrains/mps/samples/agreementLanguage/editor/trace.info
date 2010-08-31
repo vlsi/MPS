@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="1112031136847">
+    <nodeInfo nodeId="1146682507484" fileName="Quantity_Editor.java" startLine="103" startPosition="111" endLine="104" endPosition="72" />
+    <nodeInfo nodeId="1146682772915" fileName="Quantity_Editor.java" startLine="107" startPosition="111" endLine="108" endPosition="75" />
+    <scopeInfo nodeId="1146682482218" fileName="Quantity_Editor.java" startLine="103" startPosition="111" endLine="104" endPosition="72" />
+    <scopeInfo nodeId="1146682771383" fileName="Quantity_Editor.java" startLine="107" startPosition="111" endLine="108" endPosition="75" />
+  </root>
+</debugInfo>
+

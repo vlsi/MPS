@@ -378,8 +378,8 @@ __switch__:
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#postingrules(postingrules@java_stub)"), SNodeId.fromString("~EventType")));
-        quotedNode1_2.addReference(SReference.create("variableDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#postingrules(postingrules@java_stub)"), SNodeId.fromString("~EventType.SERVICE_CALL")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299655543")));
+        quotedNode1_2.addReference(SReference.create("variableDeclaration", quotedNode1_2, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299655558")));
         result = quotedNode1_2;
       }
       return result;
@@ -397,8 +397,8 @@ __switch__:
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#postingrules(postingrules@java_stub)"), SNodeId.fromString("~EventType")));
-        quotedNode1_2.addReference(SReference.create("variableDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#postingrules(postingrules@java_stub)"), SNodeId.fromString("~EventType.USAGE")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299655543")));
+        quotedNode1_2.addReference(SReference.create("variableDeclaration", quotedNode1_2, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299655546")));
         result = quotedNode1_2;
       }
       return result;
@@ -416,8 +416,8 @@ __switch__:
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#postingrules(postingrules@java_stub)"), SNodeId.fromString("~EventType")));
-        quotedNode1_2.addReference(SReference.create("variableDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#postingrules(postingrules@java_stub)"), SNodeId.fromString("~EventType.TAX")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299655543")));
+        quotedNode1_2.addReference(SReference.create("variableDeclaration", quotedNode1_2, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299655552")));
         result = quotedNode1_2;
       }
       return result;
@@ -435,8 +435,8 @@ __switch__:
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("enumClass", quotedNode1_2, SModelReference.fromString("f:java_stub#postingrules(postingrules@java_stub)"), SNodeId.fromString("~AccountType")));
-        quotedNode1_2.addReference(SReference.create("enumConstantDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#postingrules(postingrules@java_stub)"), SNodeId.fromString("~AccountType.BASE_USAGE")));
+        quotedNode1_2.addReference(SReference.create("enumClass", quotedNode1_2, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299654331")));
+        quotedNode1_2.addReference(SReference.create("enumConstantDeclaration", quotedNode1_2, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299654333")));
         result = quotedNode1_2;
       }
       return result;
@@ -454,8 +454,8 @@ __switch__:
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("enumClass", quotedNode1_2, SModelReference.fromString("f:java_stub#postingrules(postingrules@java_stub)"), SNodeId.fromString("~AccountType")));
-        quotedNode1_2.addReference(SReference.create("enumConstantDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#postingrules(postingrules@java_stub)"), SNodeId.fromString("~AccountType.SERVICE")));
+        quotedNode1_2.addReference(SReference.create("enumClass", quotedNode1_2, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299654331")));
+        quotedNode1_2.addReference(SReference.create("enumConstantDeclaration", quotedNode1_2, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299654334")));
         result = quotedNode1_2;
       }
       return result;
@@ -473,8 +473,8 @@ __switch__:
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("enumClass", quotedNode1_2, SModelReference.fromString("f:java_stub#postingrules(postingrules@java_stub)"), SNodeId.fromString("~AccountType")));
-        quotedNode1_2.addReference(SReference.create("enumConstantDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#postingrules(postingrules@java_stub)"), SNodeId.fromString("~AccountType.TAX")));
+        quotedNode1_2.addReference(SReference.create("enumClass", quotedNode1_2, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299654331")));
+        quotedNode1_2.addReference(SReference.create("enumConstantDeclaration", quotedNode1_2, SModelReference.fromString("r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)"), SNodeId.fromString("6531435794299654335")));
         result = quotedNode1_2;
       }
       return result;
