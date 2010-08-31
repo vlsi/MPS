@@ -27,19 +27,20 @@ public class OverloadedBinaryOperator_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_42nz3b_a");
     editorCell.addEditorCell(this.createConstant_42nz3b_a0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_42nz3b_b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_42nz3b_c0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_42nz3b_d0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_42nz3b_e0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_42nz3b_f0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_42nz3b_g0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_42nz3b_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_42nz3b_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_42nz3b_d0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_42nz3b_e0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_42nz3b_f0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_42nz3b_g0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_42nz3b_h0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_42nz3b_i0(editorContext, node));
-    editorCell.addEditorCell(this.createComponent_42nz3b_j0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_42nz3b_i0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_42nz3b_j0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_42nz3b_k0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_42nz3b_j0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_42nz3b_k0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new ConceptFunction_Component(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     {
@@ -50,16 +51,28 @@ public class OverloadedBinaryOperator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_42nz3b_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "operator");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_42nz3b_a0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_42nz3b_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "operator");
+    editorCell.setCellId("Constant_42nz3b_b0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_42nz3b_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_42nz3b_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_42nz3b_c0");
+    editorCell.setCellId("Constant_42nz3b_d0");
     BaseLanguageStyle_StyleSheet.getParenthesis(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -69,21 +82,9 @@ public class OverloadedBinaryOperator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_42nz3b_e0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_42nz3b_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
-    editorCell.setCellId("Constant_42nz3b_e0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_42nz3b_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_42nz3b_g0");
-    BaseLanguageStyle_StyleSheet.getParenthesis(editorCell).apply(editorCell);
+    editorCell.setCellId("Constant_42nz3b_f0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -93,13 +94,25 @@ public class OverloadedBinaryOperator_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_42nz3b_h0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_42nz3b_h0");
+    BaseLanguageStyle_StyleSheet.getParenthesis(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_42nz3b_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_42nz3b_i0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
+    editorCell.setCellId("Constant_42nz3b_i0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_42nz3b_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("operator");
     provider.setNoTargetText("<no operator>");
@@ -116,7 +129,7 @@ public class OverloadedBinaryOperator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_42nz3b_d0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_42nz3b_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("leftType");
     provider.setNoTargetText("<no leftType>");
@@ -133,7 +146,7 @@ public class OverloadedBinaryOperator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_42nz3b_f0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_42nz3b_g0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("rightType");
     provider.setNoTargetText("<no rightType>");
@@ -150,7 +163,7 @@ public class OverloadedBinaryOperator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_42nz3b_i0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_42nz3b_j0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("returnType");
     provider.setNoTargetText("<no returnType>");

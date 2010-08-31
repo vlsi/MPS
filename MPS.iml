@@ -60,6 +60,7 @@
     <orderEntry type="library" exported="" name="jfcUnit" level="project" />
     <orderEntry type="module" module-name="debug-api" exported="" />
     <orderEntry type="module" module-name="debug" exported="" />
+    <orderEntry type="module" module-name="generator-engine" exported="" />
   </component>
   <component name="copyright">
     <Base>

@@ -5,7 +5,6 @@ import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil.TextGenerationResult;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.textGen.TextGenManager;
@@ -37,7 +36,7 @@ public class TextGenerationHandler extends GenerationHandlerBase {
     List<SNode> roots = outputModel != null ? outputModel.getRoots() : Collections.<SNode>emptyList();
     boolean generatedOk = true;
     // generate files
-    for (SNode output : ListSequence.fromList(roots)) {
+    for (SNode output : roots) {
       String fileName = output.getName() + "." + TextGenManager.instance().getExtension(output);
       TextGenerationResult result = TextGenerationUtil.generateText(ocontext, output);
       if (result.hasErrors()) {
