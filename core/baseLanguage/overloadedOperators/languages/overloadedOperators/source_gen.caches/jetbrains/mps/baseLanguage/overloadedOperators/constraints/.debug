@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1569627462441400262">
+    <nodeInfo nodeId="1141736782993481444" fileName="CustomOperatorUsage_operator_ReferentConstraint.java" startLine="25" startPosition="132" endLine="26" endPosition="107" />
     <scopeInfo nodeId="1569627462441400276" fileName="CustomOperatorUsage_operator_ReferentConstraint.java" startLine="25" startPosition="132" endLine="26" endPosition="107" />
   </root>
   <root nodeId="2838654975957288939">
@@ -8,6 +9,7 @@
     <nodeInfo nodeId="2838654975957288984" fileName="BinaryOperationReference_binaryOperation_ReferentConstraint.java" startLine="37" startPosition="48" endLine="38" endPosition="0" />
     <nodeInfo nodeId="2838654975957288991" fileName="BinaryOperationReference_binaryOperation_ReferentConstraint.java" startLine="39" startPosition="104" endLine="40" endPosition="85" />
     <nodeInfo nodeId="2838654975957288998" fileName="BinaryOperationReference_binaryOperation_ReferentConstraint.java" startLine="40" startPosition="85" endLine="41" endPosition="59" />
+    <nodeInfo nodeId="2838654975957289015" fileName="BinaryOperationReference_binaryOperation_ReferentConstraint.java" startLine="43" startPosition="41" endLine="44" endPosition="171" />
     <nodeInfo nodeId="2838654975957289027" fileName="BinaryOperationReference_binaryOperation_ReferentConstraint.java" startLine="47" startPosition="5" endLine="48" endPosition="18" />
     <nodeInfo nodeId="2838654975957289013" fileName="BinaryOperationReference_binaryOperation_ReferentConstraint.java" startLine="42" startPosition="203" endLine="46" endPosition="0" />
     <nodeInfo nodeId="2838654975957289004" fileName="BinaryOperationReference_binaryOperation_ReferentConstraint.java" startLine="41" startPosition="59" endLine="46" endPosition="10" />
@@ -25,6 +27,7 @@
     <unitInfo nodeId="2838654975957289013" fileName="BinaryOperationReference_binaryOperation_ReferentConstraint.java" startLine="42" startPosition="180" endLine="46" endPosition="7" unitName="jetbrains.mps.baseLanguage.overloadedOperators.constraints.BinaryOperationReference_binaryOperation_ReferentConstraint$1" />
   </root>
   <root nodeId="2838654975957402179">
+    <nodeInfo nodeId="1141736782993481456" fileName="CustomOperator_declaration_ReferentConstraint.java" startLine="25" startPosition="132" endLine="26" endPosition="107" />
     <scopeInfo nodeId="2838654975957402204" fileName="CustomOperator_declaration_ReferentConstraint.java" startLine="25" startPosition="132" endLine="26" endPosition="107" />
   </root>
 </debugInfo>

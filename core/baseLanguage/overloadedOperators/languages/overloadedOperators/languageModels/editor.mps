@@ -83,65 +83,58 @@
         </node>
       </node>
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="483844232470139405" />
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="483844232470346640">
-        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="483844232470346641">
-          <property name="flag:32" value="false" />
-        </node>
-        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="483844232471821782">
-          <property name="text:32" value=" " />
-          <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="483844232471822117">
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Block:32" id="3622867488195023752">
+        <node role="body:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="3622867488195023766">
+          <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="3622867488195023767">
             <property name="flag:32" value="false" />
           </node>
-          <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="3524394717035289469">
+          <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="3622867488195023768">
+            <property name="text:32" value=" " />
+            <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="3622867488195023769">
+              <property name="flag:32" value="false" />
+            </node>
+            <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="3622867488195023770">
+              <property name="flag:32" value="true" />
+            </node>
+          </node>
+          <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList:32" id="3622867488195023771">
+            <link role="relationDeclaration:32" targetNodeId="1.2838654975956759196" />
+            <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="3622867488195023772" />
+            <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="3622867488195023773">
+              <property name="flag:32" value="true" />
+            </node>
+            <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem:32" id="3622867488195023774">
+              <property name="flag:32" value="true" />
+            </node>
+            <node role="emptyCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="3622867488195023775">
+              <property name="text:32" value="" />
+              <property name="nullText:32" value="&lt;&lt;custom operators declaration&gt;&gt;" />
+            </node>
+          </node>
+          <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList:32" id="3622867488195023777">
+            <link role="relationDeclaration:32" targetNodeId="1.483844232470139400" />
+            <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="3622867488195023778" />
+            <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.PositionChildrenStyleClassItem:32" id="3622867488195023779">
+              <property name="position:32" value="indented" />
+            </node>
+            <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="3622867488195023780">
+              <property name="flag:32" value="true" />
+            </node>
+            <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem:32" id="3622867488195023781">
+              <property name="flag:32" value="true" />
+            </node>
+            <node role="emptyCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="3622867488195023782">
+              <property name="text:32" value="" />
+              <property name="nullText:32" value="&lt;&lt;overloaded binary operators&gt;&gt;" />
+            </node>
+          </node>
+          <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="3622867488195023783" />
+          <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="3622867488195023784">
             <property name="flag:32" value="true" />
           </node>
-        </node>
-        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList:32" id="2838654975956759198">
-          <link role="relationDeclaration:32" targetNodeId="1.2838654975956759196" />
-          <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="2838654975956759199" />
-          <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="2838654975956759201">
+          <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem:32" id="3622867488195023785">
             <property name="flag:32" value="true" />
           </node>
-          <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem:32" id="2838654975957036194">
-            <property name="flag:32" value="true" />
-          </node>
-          <node role="emptyCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="2959643274329588162">
-            <property name="text:32" value="" />
-            <property name="nullText:32" value="&lt;&lt;custom operators declaration&gt;&gt;" />
-          </node>
-        </node>
-        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="2838654975957036197">
-          <property name="text:32" value=" " />
-        </node>
-        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList:32" id="483844232470346644">
-          <link role="relationDeclaration:32" targetNodeId="1.483844232470139400" />
-          <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="483844232470346645" />
-          <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.PositionChildrenStyleClassItem:32" id="483844232471281716">
-            <property name="position:32" value="indented" />
-          </node>
-          <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="483844232471821780">
-            <property name="flag:32" value="true" />
-          </node>
-          <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem:32" id="3524394717035167852">
-            <property name="flag:32" value="true" />
-          </node>
-          <node role="emptyCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="2959643274329588161">
-            <property name="text:32" value="" />
-            <property name="nullText:32" value="&lt;&lt;overloaded binary operators&gt;&gt;" />
-          </node>
-        </node>
-        <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="483844232470346643" />
-        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="483844232470453939">
-          <property name="flag:32" value="true" />
-        </node>
-        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem:32" id="6677452554237563150">
-          <property name="flag:32" value="true" />
-        </node>
-      </node>
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="483844232470453936">
-        <property name="text:32" value="}" />
-        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="483844232470453938">
-          <property name="flag:32" value="true" />
         </node>
       </node>
     </node>
@@ -149,6 +142,15 @@
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="483844232470139749">
     <link role="conceptDeclaration:32" targetNodeId="1.483844232470132813" resolveInfo="OverloadedBinaryOperator" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="483844232470139751">
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="3622867488195180041">
+        <property name="text:32" value="" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="3622867488195180042">
+          <property name="flag:32" value="false" />
+        </node>
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="3622867488195180043">
+          <property name="flag:32" value="true" />
+        </node>
+      </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="483844232470139757">
         <property name="text:32" value="operator" />
         <link role="styleClass:32" targetNodeId="2.1186415544875" resolveInfo="KeyWord" />
