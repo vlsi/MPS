@@ -18,7 +18,8 @@
   </component>
   <component name="MPSProject">
     <projectSolutions>
-      <solutionPath path="${project}/framework/agreementRegistryBuilder.msd" />
+      <solutionPath path="${project}/sandbox/agreementRegistryBuilder.msd" />
+      <solutionPath path="${project}/framework/jetbrains.mps.samples.agreement.framework.msd" folder="" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/agreementLanguage/languageDescriptor.mpl" />
@@ -42,7 +43,7 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
-    <mapping directory="$APPLICATION_HOME_DIR$" vcs="svn" />
+    <mapping directory="$APPLICATION_HOME_DIR$" vcs="Git" />
   </component>
 </project>
 
