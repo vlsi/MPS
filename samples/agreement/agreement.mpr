@@ -18,8 +18,8 @@
   </component>
   <component name="MPSProject">
     <projectSolutions>
-      <solutionPath path="${project}/sandbox/agreementRegistryBuilder.msd" />
       <solutionPath path="${project}/framework/jetbrains.mps.samples.agreement.framework.msd" folder="" />
+      <solutionPath path="${project}/sandbox/agreementRegistryBuilder.msd" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/agreementLanguage/languageDescriptor.mpl" />
