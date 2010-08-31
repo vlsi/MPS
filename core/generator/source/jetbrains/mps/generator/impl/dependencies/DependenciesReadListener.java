@@ -1,7 +1,6 @@
-package jetbrains.mps.generator.dependencies;
+package jetbrains.mps.generator.impl.dependencies;
 
 import jetbrains.mps.smodel.INodesReadListener;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 
 /**

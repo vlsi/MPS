@@ -1,4 +1,4 @@
-package jetbrains.mps.generator.util;
+package jetbrains.mps.util;
 
 import java.util.Collection;
 import java.util.Iterator;

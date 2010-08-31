@@ -17,7 +17,7 @@ package jetbrains.mps.generator.impl;
 
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.*;
-import jetbrains.mps.generator.dependencies.DependenciesBuilder;
+import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.plan.GenerationPlan;
 import jetbrains.mps.messages.NodeWithContext;

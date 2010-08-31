@@ -1,4 +1,4 @@
-package jetbrains.mps.generator.dependencies;
+package jetbrains.mps.generator.impl.dependencies;
 
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;

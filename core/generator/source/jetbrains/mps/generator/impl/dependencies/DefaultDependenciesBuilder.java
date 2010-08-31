@@ -1,4 +1,4 @@
-package jetbrains.mps.generator.dependencies;
+package jetbrains.mps.generator.impl.dependencies;
 
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.index.ModelDigestUtil;

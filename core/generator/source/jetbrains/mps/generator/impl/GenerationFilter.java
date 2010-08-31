@@ -1,8 +1,8 @@
 package jetbrains.mps.generator.impl;
 
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.generator.dependencies.*;
-import jetbrains.mps.generator.dependencies.DependenciesBuilder.NullDependenciesBuilder;
+import jetbrains.mps.generator.impl.dependencies.*;
+import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder.NullDependenciesBuilder;
 import jetbrains.mps.generator.index.ModelDigestUtil;
 import jetbrains.mps.generator.plan.ConnectedComponentPartitioner;
 import jetbrains.mps.smodel.SModelDescriptor;

@@ -1,4 +1,4 @@
-package jetbrains.mps.generator.dependencies;
+package jetbrains.mps.generator.impl.dependencies;
 
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.generator.fileGenerator.AllCaches;

@@ -340,7 +340,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.generator.dependencies.GenerationDependenciesCache</implementation-class>
+      <implementation-class>jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache</implementation-class>
     </component>
 
     <component>

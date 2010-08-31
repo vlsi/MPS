@@ -18,7 +18,7 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.generator.plan.GenerationPlan;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.generator.util.FlattenIterable;
+import jetbrains.mps.util.FlattenIterable;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.SModelUtil_new;

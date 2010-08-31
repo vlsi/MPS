@@ -1,6 +1,6 @@
 package jetbrains.mps.generator;
 
-import jetbrains.mps.generator.util.FlattenIterable;
+import jetbrains.mps.util.FlattenIterable;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;

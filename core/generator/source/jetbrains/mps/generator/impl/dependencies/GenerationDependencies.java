@@ -1,4 +1,4 @@
-package jetbrains.mps.generator.dependencies;
+package jetbrains.mps.generator.impl.dependencies;
 
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.index.ModelDigestUtil;
@@ -10,7 +10,6 @@ import jetbrains.mps.textGen.TextGenManager;
 import org.jdom.Element;
 
 import java.util.*;
-import java.util.Map.Entry;
 
 /**
  * Evgeny Gryaznov, May 14, 2010

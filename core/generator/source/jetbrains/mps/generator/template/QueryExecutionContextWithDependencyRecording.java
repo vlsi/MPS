@@ -1,12 +1,11 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.GenerationFailureException;
-import jetbrains.mps.generator.dependencies.DependenciesReadListener;
+import jetbrains.mps.generator.impl.dependencies.DependenciesReadListener;
 import jetbrains.mps.generator.impl.ReductionContext;
 import jetbrains.mps.generator.impl.TemplateContext;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
-import jetbrains.mps.smodel.INodesReadListener;
 import jetbrains.mps.smodel.NodeReadEventsCaster;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
