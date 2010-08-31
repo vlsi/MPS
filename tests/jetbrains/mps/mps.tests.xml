@@ -203,6 +203,7 @@
       <modules dir="${mps.home}">
         <patternset refid="excluded.modules"/>
       </modules>
+      <macro name="samples_home" path="${mps.home}/samples"/>
     </mps.test.broken.references>
   </target>
 
