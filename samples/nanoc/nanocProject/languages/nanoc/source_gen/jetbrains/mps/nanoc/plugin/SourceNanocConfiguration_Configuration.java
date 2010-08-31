@@ -38,6 +38,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.io.File;
+import jetbrains.mps.nanoc.jetbrains.mps.nanoc.pluginutil.NanocConfigRunPreparationUtil;
 import java.io.IOException;
 import jetbrains.mps.debug.executable.SimpleConsoleProcessHandler;
 import jetbrains.mps.debug.api.AbstractDebugSessionCreator;

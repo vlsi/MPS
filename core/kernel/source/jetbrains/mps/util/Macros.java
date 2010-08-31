@@ -20,6 +20,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.samples.WorkbenchPathManager;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -118,8 +119,11 @@ public abstract class Macros {
     result = tryToExpandWith(path, MPS_HOME, PathManager.getHomePath());
     if (result != null) return result.getCanonicalPath();
 
-    result = tryToExpandWith(path, SAMPLES_HOME, PathManager.getSamplesPath());
-    if (result != null) return result.getCanonicalPath();
+    String samplesPath = WorkbenchPathManager.getSamplesPath();
+    if (samplesPath != null) {
+      result = tryToExpandWith(path, SAMPLES_HOME, samplesPath);
+      if (result != null) return result.getCanonicalPath();
+    }
 
     if (!path.startsWith("${")) {
       result = FileSystem.getFile(path);
@@ -154,8 +158,9 @@ public abstract class Macros {
 
   protected String shrinkPath_internal(String absolutePath, IFile anchorFile) {
     String fileName;
-    if (pathStartsWith(absolutePath, PathManager.getSamplesPath())) {
-      String relationalPath = shrink(absolutePath, PathManager.getSamplesPath());
+    String samplesPath = WorkbenchPathManager.getSamplesPath();
+    if (samplesPath != null && pathStartsWith(absolutePath, samplesPath)) {
+      String relationalPath = shrink(absolutePath, samplesPath);
       fileName = SAMPLES_HOME + relationalPath;
     } else if (pathStartsWith(absolutePath, PathManager.getHomePath())) {
       String relationalPath = shrink(absolutePath, PathManager.getHomePath());

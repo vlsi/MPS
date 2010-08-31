@@ -437,6 +437,14 @@
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1137714177492" />
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6247012736950760402">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NPENotEqualsExpression:3" id="6247012736950885305">
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="6247012736950885306">
+              <property name="value:3" value="sdsd" />
+            </node>
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="6247012736950885307" />
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1144458338335">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1144458418386">
             <link role="variableDeclaration:3" targetNodeId="1141080210673" />

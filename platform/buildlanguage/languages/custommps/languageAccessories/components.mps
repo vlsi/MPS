@@ -1077,5 +1077,56 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.build.packaging.structure.Block:7" id="8292782121805370750">
+    <property name="name:7" value="samples.jar" />
+    <link role="layout:7" targetNodeId="2.1233857021518" resolveInfo="MPSBuildStructure" />
+    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Jar:7" id="8292782121805370751">
+      <property name="excludes:7" value="" />
+      <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Folder:7" id="8292782121805370752">
+        <property name="excludes:7" value="" />
+        <property name="includes:7" value="**/plugin.xml" />
+        <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="8292782121805370753">
+          <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="8292782121805370754">
+            <property name="name:7" value="mps_home" />
+          </node>
+          <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="8292782121805370755">
+            <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8292782121805370756">
+              <property name="path:7" value="plugins" />
+            </node>
+            <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8292782121805370768">
+              <property name="path:7" value="samples" />
+            </node>
+            <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8292782121805370758">
+              <property name="path:7" value="META-INF" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Copy:7" id="8292782121805370759">
+        <property name="name:7" value="" />
+        <property name="excludes:7" value="" />
+        <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="8292782121805370760">
+          <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="8292782121805370761">
+            <property name="name:7" value="mps_home" />
+          </node>
+          <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="8292782121805370762">
+            <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8292782121805370763">
+              <property name="path:7" value="plugins" />
+            </node>
+            <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8292782121805370769">
+              <property name="path:7" value="samples" />
+            </node>
+            <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8292782121805370765">
+              <property name="path:7" value="classes" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="delete:7" type="jetbrains.mps.build.packaging.structure.Delete:7" id="8292782121805370766" />
+      <node role="title:7" type="jetbrains.mps.build.packaging.structure.SimpleString:7" id="8292782121805370767">
+        <property name="name:7" value="samples.jar" />
+      </node>
+    </node>
+  </node>
 </model>
 

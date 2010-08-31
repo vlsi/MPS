@@ -37,7 +37,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
-  <maxImportIndex value="21" />
+  <maxImportIndex value="22" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="7" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -53,6 +53,7 @@
   <import index="18" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="20" modelUID="f:java_stub#jetbrains.mps.lang.structure.editor(jetbrains.mps.lang.structure.editor@java_stub)" version="-1" />
   <import index="21" modelUID="f:java_stub#org.apache.commons.lang(org.apache.commons.lang@java_stub)" version="-1" />
+  <import index="22" modelUID="f:java_stub#jetbrains.mps.samples(jetbrains.mps.samples@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877173053">
     <property name="package" value="variables" />
     <link role="concept" targetNodeId="1.1205339194346:7" resolveInfo="IStringExpression" />
@@ -6995,9 +6996,9 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="2409558632330510506">
           <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2409558632330510507">
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="2409558632330510508">
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2409558632330510515">
-                <link role="baseMethodDeclaration:3" targetNodeId="2.~PathManager.getSamplesPath():java.lang.String" resolveInfo="getSamplesPath" />
-                <link role="classConcept:3" targetNodeId="2.~PathManager" resolveInfo="PathManager" />
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3566051423876449783">
+                <link role="baseMethodDeclaration:3" targetNodeId="22.~WorkbenchPathManager.getSamplesPath():java.lang.String" resolveInfo="getSamplesPath" />
+                <link role="classConcept:3" targetNodeId="22.~WorkbenchPathManager" resolveInfo="WorkbenchPathManager" />
               </node>
             </node>
           </node>

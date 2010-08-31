@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
@@ -34,125 +35,78 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(BaseModelCache.class);
 
   private final FileGenerationManager myFileGeneratorManager;
+  @Nullable
   private final AllCaches myAllCaches;
 
-  private Map<SModelDescriptor, T> myCache = new WeakHashMap<SModelDescriptor, T>();
+  private final Map<SModelDescriptor, T> myCache = new WeakHashMap<SModelDescriptor, T>();
+  private final BaseModelCache<T>.MyCacheGenerator myCacheGenerator;
 
-  protected abstract void save(T t, OutputStream os) throws IOException;
-
-  protected abstract T load(InputStream is) throws IOException;
+  @Nullable
+  protected abstract T readCache(SModelDescriptor model);
+  protected abstract File saveCache(@NotNull T t, SModelDescriptor model);
 
   protected abstract T generateCache(CacheGenerationContext context);
 
   protected abstract String getCacheFileName();
 
+  protected BaseModelCache(FileGenerationManager fileGeneratorManager) {
+    this(fileGeneratorManager, null);
+  }
+  
   protected BaseModelCache(FileGenerationManager fileGeneratorManager, AllCaches allCaches) {
     myFileGeneratorManager = fileGeneratorManager;
     myAllCaches = allCaches;
+    myCacheGenerator = new MyCacheGenerator();
   }
 
   public void initComponent() {
-    myAllCaches.registerCache(this);
-    myFileGeneratorManager.addCachesGenerator(new CacheGenerator() {
-      public File generateCache(CacheGenerationContext context) {
-        T cache = BaseModelCache.this.generateCache(context);
-        if(cache == null) return null;
-
-        SModelDescriptor model = context.getOriginalInputModel();
-
-        synchronized (myCache) {
-          myCache.put(model, cache);
-        }
-        
-        IFile cacheFile = getCacheFile(model);
-        if (cacheFile == null) return null;
-
-        OutputStream os = null;
-        try {
-          os = cacheFile.openOutputStream();
-          save(cache, os);
-        } catch (IOException e) {
-          LOG.error(e);
-        } finally {
-          if (os != null) {
-            try {
-              os.close();
-            } catch (IOException e) {
-              LOG.error(e);
-            }
-          }
-        }
-        return cacheFile.toFile();
-      }
-    });
+    if (myAllCaches != null) {
+      myAllCaches.registerCache(this);
+    }
+    myFileGeneratorManager.addCachesGenerator(myCacheGenerator);
   }
 
   public void disposeComponent() {
-
+    myFileGeneratorManager.removeCachesGenerator(myCacheGenerator);
   }
 
   @Nullable
-  public T get(SModelDescriptor sm) {
+  public T get(SModelDescriptor modelDescriptor) {
     synchronized (myCache) {
-      if (myCache.containsKey(sm)) {
-        return myCache.get(sm);
+      if (myCache.containsKey(modelDescriptor)) {
+        return myCache.get(modelDescriptor);
       }
 
-      IFile cacheFile = getCacheFile(sm);
+      T cache = readCache(modelDescriptor);
+      myCache.put(modelDescriptor, cache);
 
-      if (cacheFile == null || !cacheFile.exists()) return null;
-
-      InputStream is = null;
-      try {
-        is = cacheFile.openInputStream();
-        T result = load(is);
-        myCache.put(sm, result);
-        return result;
-      } catch (IOException e) {
-        LOG.error(e);
-      } finally {
-        try {
-          if (is != null) {
-            is.close();
-          }
-        } catch (IOException e) {
-          LOG.error(e);
-        }
-      }
-
-      myCache.put(sm, null);
-      return null;
+      return cache;
     }
-  }
-
-  @Nullable
-  private IFile getCacheFile(SModelDescriptor sm) {
-    IModule m = sm.getModule();
-    IFile cachesModuleDir = getCachesDir(m, m.getOutputFor(sm));
-    if (cachesModuleDir == null) return null;
-    IFile cachesDir = FileGenerationUtil.getDefaultOutputDir(sm, cachesModuleDir);
-
-    return cachesDir.child(getCacheFileName());
   }
 
   public List<IFile> getCachesDirs(IModule m) {
     List<IFile> result = new ArrayList<IFile>();
 
     if (m.getGeneratorOutputPath() != null) {
-      IFile file = getCachesDir(m, m.getGeneratorOutputPath());
+      IFile file = getCachesDirInternal(m, m.getGeneratorOutputPath());
       if (file != null) {
         result.add(file);
       }
     }
 
     if (m.getTestsGeneratorOutputPath() != null) {
-      IFile file = getCachesDir(m, m.getTestsGeneratorOutputPath());
+      IFile file = getCachesDirInternal(m, m.getTestsGeneratorOutputPath());
       if (file != null) {
         result.add(file);
       }
     }
 
     return result;
+  }
+
+  @Nullable
+  protected IFile getCachesDirInternal(IModule module, String outputPath) {
+    return getCachesDir(module, outputPath);
   }
 
   @Nullable
@@ -179,5 +133,20 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
 
   public boolean isCacheFile(IFile file) {
     return (file.getName().endsWith(getCacheFileName()));  
+  }
+
+  protected class MyCacheGenerator implements CacheGenerator {
+    public File generateCache(CacheGenerationContext context) {
+      T cache = BaseModelCache.this.generateCache(context);
+      if(cache == null) return null;
+
+      SModelDescriptor model = context.getOriginalInputModel();
+
+      synchronized (myCache) {
+        myCache.put(model, cache);
+      }
+
+      return saveCache(cache, model);
+    }
   }
 }

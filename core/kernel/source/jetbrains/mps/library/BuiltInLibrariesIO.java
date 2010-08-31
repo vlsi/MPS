@@ -22,6 +22,7 @@ import jetbrains.mps.util.PathManager;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.io.IOException;
@@ -53,6 +54,7 @@ public class BuiltInLibrariesIO {
         final String realPath = Macros.mpsHomeMacros().expandPath(path, new File(PathManager.getHomePath()));
 
         PredefinedLibrary predefinedLibrary = new PredefinedLibrary(name) {
+          @NotNull
           @Override
           public String getPath() {
             return realPath;

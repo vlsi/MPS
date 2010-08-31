@@ -52,8 +52,8 @@
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="jetbrains.mps.nanoc.debug.ProgramsLocationUtil" />
+    <classNode dependClassName="jetbrains.mps.nanoc.jetbrains.mps.nanoc.pluginutil.ProgramsLocationEditor" />
     <classNode dependClassName="jetbrains.mps.nanoc.plugin.ProgramsLocationComponent_PreferencesComponent" />
-    <classNode dependClassName="jetbrains.mps.nanoc.plugin.ProgramsLocationEditor" />
     <classNode dependClassName="jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent" />
     <classNode dependClassName="jetbrains.mps.util.EqualUtil" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.prefs.BasePrefsPage" />
@@ -123,7 +123,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.nanoc.debug.CppGDBCreator" />
-    <classNode dependClassName="jetbrains.mps.nanoc.plugin.NanocConfigRunPreparationUtil" />
+    <classNode dependClassName="jetbrains.mps.nanoc.jetbrains.mps.nanoc.pluginutil.NanocConfigRunPreparationUtil" />
     <classNode dependClassName="jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunProfileState" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />

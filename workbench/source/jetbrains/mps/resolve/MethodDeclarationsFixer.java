@@ -197,19 +197,26 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     if (candidates.isEmpty()) {
       return;
     }
-    Map<TypeVariableDeclaration, Type> typeByTypeVar = getTypeByTypeVar(methodCall);
-
-    jetbrains.mps.util.Pair<List<? extends BaseMethodDeclaration>,Boolean> parmCountPair = MethodResolveUtil.selectByParmCountReportNoGoodMethod(candidates, actualArgs);
-    List<? extends BaseMethodDeclaration> methodDeclarationsGoodParams = parmCountPair.o1;
     BaseMethodDeclaration newTarget = null;
     boolean good;
+    Map<TypeVariableDeclaration, Type> typeByTypeVar = getTypeByTypeVar(methodCall);
+    jetbrains.mps.util.Pair<List<? extends BaseMethodDeclaration>,Boolean> parmCountPair = MethodResolveUtil.selectByVisibilityReportNoGoodMethod(candidates, methodCall);
+    List<? extends BaseMethodDeclaration> methodDeclarationsGoodParams = parmCountPair.o1;
+
     if (methodDeclarationsGoodParams.size() == 1) {
       newTarget = methodDeclarationsGoodParams.get(0);
       good = parmCountPair.o2;
     } else {
-      jetbrains.mps.util.Pair<BaseMethodDeclaration, Boolean> parmTypesPair = MethodResolveUtil.chooseByParameterTypeReportNoGoodMethod(methodDeclarationsGoodParams, actualArgs, typeByTypeVar);
-      newTarget = parmTypesPair.o1;
-      good = parmTypesPair.o2;
+      parmCountPair = MethodResolveUtil.selectByParmCountReportNoGoodMethod(methodDeclarationsGoodParams, actualArgs);
+      methodDeclarationsGoodParams = parmCountPair.o1;
+      if (methodDeclarationsGoodParams.size() == 1) {
+        newTarget = methodDeclarationsGoodParams.get(0);
+        good = parmCountPair.o2;
+      } else {
+        jetbrains.mps.util.Pair<BaseMethodDeclaration, Boolean> parmTypesPair = MethodResolveUtil.chooseByParameterTypeReportNoGoodMethod(methodDeclarationsGoodParams, actualArgs, typeByTypeVar);
+        newTarget = parmTypesPair.o1;
+        good = parmTypesPair.o2;
+      }
     }
     if (newTarget != null) {
       if (baseMethodDeclaration == null || (good && newTarget.getNode() != baseMethodDeclaration.getNode())) {
