@@ -13,12 +13,6 @@
       <mapping-priorities />
     </generator>
   </generators>
-  <classPath>
-    <entry path="${samples_home}/formulaLanguage/classes" include="false" />
-  </classPath>
-  <languageRuntimeClassPath>
-    <entry path="${samples_home}/formulaLanguage/classes" />
-  </languageRuntimeClassPath>
   <sourcePath />
   <dependencies>
     <dependency reexport="true">daafa647-f1f7-4b0b-b096-69cd7c8408c0(jetbrains.mps.baseLanguage.regexp)</dependency>
@@ -26,6 +20,9 @@
   <usedLanguages>
     <usedLanguage>daafa647-f1f7-4b0b-b096-69cd7c8408c0(jetbrains.mps.baseLanguage.regexp)</usedLanguage>
   </usedLanguages>
+  <runtime>
+    <dependency reexport="false">191c9cb2-d1d4-4aae-aafa-a30eaf3192a6(jetbrains.mps.samples.formula.runtime)</dependency>
+  </runtime>
   <extendedLanguages />
 </language>
 
