@@ -62,6 +62,8 @@ public class DiffReporter {
         continue;
       }
       files.addAll(Arrays.asList(dir.list()));
+      // TODO extract j.m.project.tester -> tests
+      files.remove("trace.info");
       for (String outputRoot : genHandler.getRoots(outputModel)) {
         String filename = genHandler.getName(outputRoot, outputModel);
         if (filename == null) {
