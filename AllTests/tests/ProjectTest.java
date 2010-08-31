@@ -111,6 +111,7 @@ public class ProjectTest {
   @BeforeClass
   public static void init() {
     HELPER = ProjectTestHelper.getInstance();
+    HELPER.setMacro("samples_home", System.getProperty("user.dir")+"/samples");
   }
   
   private final String projectName;

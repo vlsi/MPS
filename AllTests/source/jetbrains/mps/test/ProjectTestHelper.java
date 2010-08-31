@@ -1,8 +1,10 @@
 package jetbrains.mps.test;
 
+import com.intellij.openapi.application.PathMacros;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.util.Computable;
+import com.intellij.util.PathUtil;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.compiler.CompilationResultAdapter;
 import jetbrains.mps.compiler.JavaCompiler;
@@ -130,6 +132,14 @@ public class ProjectTestHelper {
       sep = "\n";
     }
     return sb.toString();
+  }
+
+  public void setMacro (String macroName, String path) {
+    String canonicalPath = PathUtil.getCanonicalPath(path);
+    File file = new File(canonicalPath);
+    if (file.exists() && file.isDirectory()) {
+      PathMacros.getInstance().setMacro(macroName, canonicalPath);
+    }
   }
 
   // Private

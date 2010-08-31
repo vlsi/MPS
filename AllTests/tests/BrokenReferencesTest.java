@@ -59,6 +59,7 @@ public class BrokenReferencesTest {
   @BeforeClass
   public static void init() {
     HELPER = BrokenReferencesTestHelper.getInstance();
+    HELPER.setMacro("samples_home", System.getProperty("user.dir")+"/samples");
   }
 
   @AfterClass
