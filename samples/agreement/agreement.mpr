@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DependencyValidationManager">
+    <option name="SKIP_IMPORT_STATEMENTS" value="false" />
+  </component>
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
+  <component name="MPSMessagesViewTool">
+    <option name="dialogState">
+      <MyState>
+        <option name="anonymous" value="true" />
+        <option name="password" value="" />
+        <option name="username" value="" />
+      </MyState>
+    </option>
+    <option name="errors" value="true" />
+    <option name="info" value="true" />
+    <option name="warnings" value="true" />
+  </component>
+  <component name="MPSProject">
+    <projectSolutions>
+      <solutionPath path="${project}/sandbox/agreementRegistryBuilder.msd" />
+      <solutionPath path="${project}/framework/jetbrains.mps.samples.agreement.framework.msd" folder="" />
+    </projectSolutions>
+    <projectLanguages>
+      <languagePath path="${project}/agreementLanguage/languageDescriptor.mpl" />
+      <languagePath path="${samples_home}/formulaLanguage/language/formulaLanguage.mpl" />
+    </projectLanguages>
+    <projectDevkits />
+    <genConfs>
+      <genConfModule name="agreementLanguage" moduleRef="jetbrains.mps.samples.agreementLanguage" />
+    </genConfs>
+  </component>
+  <component name="ProjectDetails">
+    <option name="projectName" value="agreementRegistryBuilder" />
+  </component>
+  <component name="ProjectModuleManager">
+    <modules />
+  </component>
+  <component name="ProjectRootManager" version="2" />
+  <component name="SvnBranchConfigurationManager">
+    <option name="myVersion" value="124" />
+    <option name="mySupportsUserInfoFilter" value="true" />
+  </component>
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="" />
+    <mapping directory="$APPLICATION_HOME_DIR$" vcs="Git" />
+  </component>
+</project>
