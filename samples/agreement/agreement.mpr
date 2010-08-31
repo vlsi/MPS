@@ -46,3 +46,4 @@
     <mapping directory="$APPLICATION_HOME_DIR$" vcs="Git" />
   </component>
 </project>
+
