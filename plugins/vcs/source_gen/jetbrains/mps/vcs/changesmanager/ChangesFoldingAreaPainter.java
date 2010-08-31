@@ -52,6 +52,7 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
   private EditorComponentChangesHighligher myEditorComponentChangesHighligher;
   private List<ChangesFoldingAreaPainter.MessageGroup> myMessageGroups;
   private ChangesFoldingAreaPainter.MessageGroup myCurrentMessageGroup = null;
+  private ChangesFoldingAreaPainter.MessageGroup myMessageGroupUnderMouse = null;
   private ChangesFoldingAreaPainter.MyPopupMenu myPopupMenu = new ChangesFoldingAreaPainter.MyPopupMenu();
 
   public ChangesFoldingAreaPainter(@NotNull EditorComponentChangesHighligher editorComponentChangesHighligher) {
@@ -208,9 +209,16 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
   public void mouseMoved(MouseEvent event) {
     ChangesFoldingAreaPainter.MessageGroup messageGroup = findMessageGroupUnder(event.getPoint());
     if (messageGroup != null) {
+      event.consume();
+    }
+    if (myMessageGroupUnderMouse == messageGroup) {
+      return;
+    }
+    myMessageGroupUnderMouse = messageGroup;
+    if (messageGroup != null) {
       event.getComponent().setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
     } else {
-      event.getComponent().setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+      event.getComponent().setCursor(null);
     }
     if (!(myPopupMenu.isVisible())) {
       setCurrentMessageGroup(messageGroup);
@@ -219,7 +227,11 @@ public class ChangesFoldingAreaPainter extends AbstractFoldingAreaPainter {
 
   @Override
   public void mouseExited(MouseEvent event) {
-    event.getComponent().setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+    if (myMessageGroupUnderMouse == null) {
+      return;
+    }
+    event.getComponent().setCursor(null);
+    myMessageGroupUnderMouse = null;
     if (!(myPopupMenu.isVisible())) {
       setCurrentMessageGroup(null);
     }

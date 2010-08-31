@@ -25464,6 +25464,14 @@
       </node>
       <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="7429456937243134092" />
     </node>
+    <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="8909869386401300728">
+      <property name="name:3" value="myMessageGroupUnderMouse" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="8909869386401300729" />
+      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8909869386401300731">
+        <link role="classifier:3" targetNodeId="6746101208730359979" resolveInfo="ChangesFoldingAreaPainter.MessageGroup" />
+      </node>
+      <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="8909869386401300735" />
+    </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="6208564103581773727">
       <property name="name:3" value="myPopupMenu" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="6208564103581773728" />
@@ -27006,6 +27014,49 @@
             </node>
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="8909869386401300780">
+          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8909869386401300781">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8909869386401300789">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8909869386401300791">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="8909869386401300790">
+                  <link role="variableDeclaration:3" targetNodeId="1216620237029569510" resolveInfo="event" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8909869386401300795">
+                  <link role="baseMethodDeclaration:3" targetNodeId="58.~InputEvent.consume():void" resolveInfo="consume" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="8909869386401300785">
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="8909869386401300788" />
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8909869386401300784">
+              <link role="variableDeclaration:3" targetNodeId="7429456937243136039" resolveInfo="messageGroup" />
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="8909869386401300757">
+          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8909869386401300758">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="8909869386401300766" />
+          </node>
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="8909869386401300762">
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8909869386401300765">
+              <link role="variableDeclaration:3" targetNodeId="7429456937243136039" resolveInfo="messageGroup" />
+            </node>
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8909869386401300761">
+              <link role="variableDeclaration:3" targetNodeId="8909869386401300728" resolveInfo="myMessageGroupUnderMouse" />
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8909869386401300775">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="8909869386401300776">
+            <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8909869386401300777">
+              <link role="variableDeclaration:3" targetNodeId="7429456937243136039" resolveInfo="messageGroup" />
+            </node>
+            <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8909869386401300778">
+              <link role="variableDeclaration:3" targetNodeId="8909869386401300728" resolveInfo="myMessageGroupUnderMouse" />
+            </node>
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1216620237029569852">
           <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1216620237029569853">
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1216620237029569865">
@@ -27052,14 +27103,7 @@
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1216620237029569906">
                     <link role="baseMethodDeclaration:3" targetNodeId="30.~Component.setCursor(java.awt.Cursor):void" resolveInfo="setCursor" />
-                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1216620237029569907">
-                      <link role="classConcept:3" targetNodeId="30.~Cursor" resolveInfo="Cursor" />
-                      <link role="baseMethodDeclaration:3" targetNodeId="30.~Cursor.getPredefinedCursor(int):java.awt.Cursor" resolveInfo="getPredefinedCursor" />
-                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1216620237029569908">
-                        <link role="classifier:3" targetNodeId="30.~Cursor" resolveInfo="Cursor" />
-                        <link role="variableDeclaration:3" targetNodeId="30.~Cursor.DEFAULT_CURSOR" resolveInfo="DEFAULT_CURSOR" />
-                      </node>
-                    </node>
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="8909869386401300798" />
                   </node>
                 </node>
               </node>
@@ -27104,6 +27148,17 @@
         </node>
       </node>
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1216620237029569553">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="8909869386401300737">
+          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8909869386401300738">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="8909869386401300746" />
+          </node>
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="8909869386401300742">
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="8909869386401300745" />
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8909869386401300741">
+              <link role="variableDeclaration:3" targetNodeId="8909869386401300728" resolveInfo="myMessageGroupUnderMouse" />
+            </node>
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1216620237029569909">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1216620237029569910">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1216620237029569911">
@@ -27116,14 +27171,15 @@
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1216620237029569914">
               <link role="baseMethodDeclaration:3" targetNodeId="30.~Component.setCursor(java.awt.Cursor):void" resolveInfo="setCursor" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1216620237029569915">
-                <link role="baseMethodDeclaration:3" targetNodeId="30.~Cursor.getPredefinedCursor(int):java.awt.Cursor" resolveInfo="getPredefinedCursor" />
-                <link role="classConcept:3" targetNodeId="30.~Cursor" resolveInfo="Cursor" />
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1216620237029569916">
-                  <link role="classifier:3" targetNodeId="30.~Cursor" resolveInfo="Cursor" />
-                  <link role="variableDeclaration:3" targetNodeId="30.~Cursor.DEFAULT_CURSOR" resolveInfo="DEFAULT_CURSOR" />
-                </node>
-              </node>
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="8909869386401300748" />
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8909869386401300750">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="8909869386401300752">
+            <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="8909869386401300755" />
+            <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8909869386401300751">
+              <link role="variableDeclaration:3" targetNodeId="8909869386401300728" resolveInfo="myMessageGroupUnderMouse" />
             </node>
           </node>
         </node>

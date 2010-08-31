@@ -4518,486 +4518,498 @@
     <nodeInfo nodeId="9048291698849215495" fileName="ChangesFoldingAreaPainter.java" startLine="51" startPosition="0" endLine="52" endPosition="78" />
     <nodeInfo nodeId="6746101208730363954" fileName="ChangesFoldingAreaPainter.java" startLine="52" startPosition="78" endLine="53" endPosition="71" />
     <nodeInfo nodeId="7429456937243130495" fileName="ChangesFoldingAreaPainter.java" startLine="53" startPosition="71" endLine="54" endPosition="78" />
-    <nodeInfo nodeId="6208564103581773727" fileName="ChangesFoldingAreaPainter.java" startLine="54" startPosition="78" endLine="55" endPosition="106" />
-    <nodeInfo nodeId="9048291698849215506" fileName="ChangesFoldingAreaPainter.java" startLine="57" startPosition="112" endLine="58" endPosition="92" />
-    <nodeInfo nodeId="9048291698849215513" fileName="ChangesFoldingAreaPainter.java" startLine="58" startPosition="92" endLine="59" endPosition="74" />
-    <nodeInfo nodeId="8274502957383614784" fileName="ChangesFoldingAreaPainter.java" startLine="62" startPosition="26" endLine="63" endPosition="13" />
-    <nodeInfo nodeId="3511475470456930402" fileName="ChangesFoldingAreaPainter.java" startLine="68" startPosition="34" endLine="69" endPosition="26" />
-    <nodeInfo nodeId="6923910471520917316" fileName="ChangesFoldingAreaPainter.java" startLine="70" startPosition="5" endLine="71" endPosition="45" />
-    <nodeInfo nodeId="6923910471520922732" fileName="ChangesFoldingAreaPainter.java" startLine="72" startPosition="80" endLine="73" endPosition="13" />
-    <nodeInfo nodeId="9213787164325786206" fileName="ChangesFoldingAreaPainter.java" startLine="75" startPosition="104" endLine="76" endPosition="34" />
-    <nodeInfo nodeId="6589571255109292433" fileName="ChangesFoldingAreaPainter.java" startLine="76" startPosition="34" endLine="77" endPosition="42" />
-    <nodeInfo nodeId="2792704635247506866" fileName="ChangesFoldingAreaPainter.java" startLine="78" startPosition="79" endLine="79" endPosition="42" />
-    <nodeInfo nodeId="2792704635247511608" fileName="ChangesFoldingAreaPainter.java" startLine="79" startPosition="42" endLine="80" endPosition="87" />
-    <nodeInfo nodeId="2792704635247511626" fileName="ChangesFoldingAreaPainter.java" startLine="80" startPosition="87" endLine="81" endPosition="97" />
-    <nodeInfo nodeId="6589571255109292395" fileName="ChangesFoldingAreaPainter.java" startLine="81" startPosition="97" endLine="82" endPosition="64" />
-    <nodeInfo nodeId="6589571255109292410" fileName="ChangesFoldingAreaPainter.java" startLine="82" startPosition="64" endLine="83" endPosition="129" />
-    <nodeInfo nodeId="4434895596490172238" fileName="ChangesFoldingAreaPainter.java" startLine="83" startPosition="129" endLine="84" endPosition="43" />
-    <nodeInfo nodeId="6589571255109292430" fileName="ChangesFoldingAreaPainter.java" startLine="84" startPosition="43" endLine="85" endPosition="0" />
-    <nodeInfo nodeId="4434895596490172229" fileName="ChangesFoldingAreaPainter.java" startLine="85" startPosition="0" endLine="86" endPosition="37" />
-    <nodeInfo nodeId="6589571255109292441" fileName="ChangesFoldingAreaPainter.java" startLine="86" startPosition="37" endLine="87" endPosition="43" />
-    <nodeInfo nodeId="2792704635247511615" fileName="ChangesFoldingAreaPainter.java" startLine="87" startPosition="43" endLine="88" endPosition="79" />
-    <nodeInfo nodeId="4434895596490172228" fileName="ChangesFoldingAreaPainter.java" startLine="88" startPosition="79" endLine="89" endPosition="17" />
-    <nodeInfo nodeId="9213787164325786215" fileName="ChangesFoldingAreaPainter.java" startLine="90" startPosition="7" endLine="91" endPosition="44" />
-    <nodeInfo nodeId="6923910471520923503" fileName="ChangesFoldingAreaPainter.java" startLine="92" startPosition="53" endLine="93" endPosition="17" />
-    <nodeInfo nodeId="6923910471520924548" fileName="ChangesFoldingAreaPainter.java" startLine="95" startPosition="49" endLine="96" endPosition="14" />
-    <nodeInfo nodeId="6746101208730364163" fileName="ChangesFoldingAreaPainter.java" startLine="97" startPosition="7" endLine="98" endPosition="53" />
-    <nodeInfo nodeId="6589571255109292429" fileName="ChangesFoldingAreaPainter.java" startLine="98" startPosition="53" endLine="99" endPosition="0" />
-    <nodeInfo nodeId="9213787164325786161" fileName="ChangesFoldingAreaPainter.java" startLine="99" startPosition="0" endLine="100" endPosition="35" />
-    <nodeInfo nodeId="9213787164325786170" fileName="ChangesFoldingAreaPainter.java" startLine="100" startPosition="35" endLine="101" endPosition="39" />
-    <nodeInfo nodeId="9213787164325786246" fileName="ChangesFoldingAreaPainter.java" startLine="101" startPosition="39" endLine="102" endPosition="57" />
-    <nodeInfo nodeId="9213787164325786268" fileName="ChangesFoldingAreaPainter.java" startLine="102" startPosition="57" endLine="103" endPosition="58" />
-    <nodeInfo nodeId="8274502957383614847" fileName="ChangesFoldingAreaPainter.java" startLine="108" startPosition="33" endLine="109" endPosition="22" />
-    <nodeInfo nodeId="3511475470456930840" fileName="ChangesFoldingAreaPainter.java" startLine="113" startPosition="26" endLine="114" endPosition="27" />
-    <nodeInfo nodeId="2792704635247516028" fileName="ChangesFoldingAreaPainter.java" startLine="117" startPosition="151" endLine="118" endPosition="55" />
-    <nodeInfo nodeId="2792704635247522078" fileName="ChangesFoldingAreaPainter.java" startLine="118" startPosition="55" endLine="119" endPosition="24" />
-    <nodeInfo nodeId="2792704635247520988" fileName="ChangesFoldingAreaPainter.java" startLine="119" startPosition="24" endLine="120" endPosition="24" />
-    <nodeInfo nodeId="2792704635247522089" fileName="ChangesFoldingAreaPainter.java" startLine="120" startPosition="24" endLine="121" endPosition="32" />
-    <nodeInfo nodeId="2792704635247522100" fileName="ChangesFoldingAreaPainter.java" startLine="121" startPosition="32" endLine="122" endPosition="34" />
-    <nodeInfo nodeId="2792704635247521006" fileName="ChangesFoldingAreaPainter.java" startLine="123" startPosition="56" endLine="124" endPosition="40" />
-    <nodeInfo nodeId="2792704635247522111" fileName="ChangesFoldingAreaPainter.java" startLine="124" startPosition="40" endLine="125" endPosition="17" />
-    <nodeInfo nodeId="2792704635247521019" fileName="ChangesFoldingAreaPainter.java" startLine="126" startPosition="5" endLine="127" endPosition="46" />
-    <nodeInfo nodeId="4399127869643550738" fileName="ChangesFoldingAreaPainter.java" startLine="130" startPosition="36" endLine="131" endPosition="101" />
-    <nodeInfo nodeId="6746101208730361712" fileName="ChangesFoldingAreaPainter.java" startLine="131" startPosition="101" endLine="132" endPosition="65" />
-    <nodeInfo nodeId="6746101208730361853" fileName="ChangesFoldingAreaPainter.java" startLine="134" startPosition="85" endLine="135" endPosition="50" />
-    <nodeInfo nodeId="6746101208730361762" fileName="ChangesFoldingAreaPainter.java" startLine="137" startPosition="24" endLine="138" endPosition="0" />
-    <nodeInfo nodeId="2792704635247522120" fileName="ChangesFoldingAreaPainter.java" startLine="140" startPosition="144" endLine="141" endPosition="62" />
-    <nodeInfo nodeId="2792704635247522127" fileName="ChangesFoldingAreaPainter.java" startLine="141" startPosition="62" endLine="142" endPosition="62" />
-    <nodeInfo nodeId="480390906262810838" fileName="ChangesFoldingAreaPainter.java" startLine="144" startPosition="27" endLine="145" endPosition="39" />
-    <nodeInfo nodeId="480390906262810855" fileName="ChangesFoldingAreaPainter.java" startLine="146" startPosition="18" endLine="147" endPosition="29" />
-    <nodeInfo nodeId="480390906262810872" fileName="ChangesFoldingAreaPainter.java" startLine="149" startPosition="16" endLine="150" endPosition="27" />
-    <nodeInfo nodeId="6746101208730363609" fileName="ChangesFoldingAreaPainter.java" startLine="153" startPosition="30" endLine="154" endPosition="0" />
-    <nodeInfo nodeId="6746101208730363611" fileName="ChangesFoldingAreaPainter.java" startLine="154" startPosition="0" endLine="155" endPosition="179" />
-    <nodeInfo nodeId="3176852462137033805" fileName="ChangesFoldingAreaPainter.java" startLine="155" startPosition="179" endLine="156" endPosition="27" />
-    <nodeInfo nodeId="3176852462137033861" fileName="ChangesFoldingAreaPainter.java" startLine="157" startPosition="115" endLine="158" endPosition="72" />
-    <nodeInfo nodeId="1216620237029549111" fileName="ChangesFoldingAreaPainter.java" startLine="160" startPosition="49" endLine="161" endPosition="102" />
-    <nodeInfo nodeId="1216620237029549120" fileName="ChangesFoldingAreaPainter.java" startLine="161" startPosition="102" endLine="162" endPosition="62" />
-    <nodeInfo nodeId="1216620237029549029" fileName="ChangesFoldingAreaPainter.java" startLine="164" startPosition="7" endLine="165" endPosition="70" />
-    <nodeInfo nodeId="3176852462137033840" fileName="ChangesFoldingAreaPainter.java" startLine="165" startPosition="70" endLine="166" endPosition="64" />
-    <nodeInfo nodeId="2892955808309432859" fileName="ChangesFoldingAreaPainter.java" startLine="168" startPosition="67" endLine="169" endPosition="98" />
-    <nodeInfo nodeId="7429456937243135808" fileName="ChangesFoldingAreaPainter.java" startLine="174" startPosition="96" endLine="175" endPosition="70" />
-    <nodeInfo nodeId="7429456937243135961" fileName="ChangesFoldingAreaPainter.java" startLine="178" startPosition="74" endLine="179" endPosition="81" />
-    <nodeInfo nodeId="7429456937243135896" fileName="ChangesFoldingAreaPainter.java" startLine="182" startPosition="12" endLine="183" endPosition="18" />
-    <nodeInfo nodeId="1992587573287146565" fileName="ChangesFoldingAreaPainter.java" startLine="188" startPosition="41" endLine="189" endPosition="13" />
-    <nodeInfo nodeId="7429456937243136241" fileName="ChangesFoldingAreaPainter.java" startLine="194" startPosition="139" endLine="195" endPosition="48" />
-    <nodeInfo nodeId="4419032571725341541" fileName="ChangesFoldingAreaPainter.java" startLine="199" startPosition="6" endLine="200" endPosition="0" />
-    <nodeInfo nodeId="7429456937243136248" fileName="ChangesFoldingAreaPainter.java" startLine="200" startPosition="0" endLine="201" endPosition="33" />
-    <nodeInfo nodeId="7429456937243135645" fileName="ChangesFoldingAreaPainter.java" startLine="201" startPosition="33" endLine="202" endPosition="34" />
-    <nodeInfo nodeId="7429456937243136263" fileName="ChangesFoldingAreaPainter.java" startLine="202" startPosition="34" endLine="203" endPosition="32" />
-    <nodeInfo nodeId="6243204728785249327" fileName="ChangesFoldingAreaPainter.java" startLine="203" startPosition="32" endLine="204" endPosition="116" />
-    <nodeInfo nodeId="7429456937243136038" fileName="ChangesFoldingAreaPainter.java" startLine="208" startPosition="44" endLine="209" endPosition="98" />
-    <nodeInfo nodeId="1216620237029569865" fileName="ChangesFoldingAreaPainter.java" startLine="210" startPosition="31" endLine="211" endPosition="85" />
-    <nodeInfo nodeId="1216620237029569901" fileName="ChangesFoldingAreaPainter.java" startLine="212" startPosition="12" endLine="213" endPosition="88" />
-    <nodeInfo nodeId="7429456937243136060" fileName="ChangesFoldingAreaPainter.java" startLine="215" startPosition="37" endLine="216" endPosition="43" />
-    <nodeInfo nodeId="1216620237029569909" fileName="ChangesFoldingAreaPainter.java" startLine="221" startPosition="45" endLine="222" endPosition="86" />
-    <nodeInfo nodeId="6208564103581782294" fileName="ChangesFoldingAreaPainter.java" startLine="223" startPosition="37" endLine="224" endPosition="35" />
-    <nodeInfo nodeId="5444017747356995491" fileName="ChangesFoldingAreaPainter.java" startLine="229" startPosition="46" endLine="230" endPosition="98" />
-    <nodeInfo nodeId="5444017747357015202" fileName="ChangesFoldingAreaPainter.java" startLine="231" startPosition="31" endLine="232" endPosition="43" />
-    <nodeInfo nodeId="7539796992259356332" fileName="ChangesFoldingAreaPainter.java" startLine="232" startPosition="43" endLine="233" endPosition="86" />
-    <nodeInfo nodeId="7539796992259356344" fileName="ChangesFoldingAreaPainter.java" startLine="234" startPosition="25" endLine="235" endPosition="51" />
-    <nodeInfo nodeId="2643085131950809484" fileName="ChangesFoldingAreaPainter.java" startLine="236" startPosition="7" endLine="237" endPosition="38" />
-    <nodeInfo nodeId="5444017747357190855" fileName="ChangesFoldingAreaPainter.java" startLine="242" startPosition="74" endLine="243" endPosition="27" />
-    <nodeInfo nodeId="6378762527268290205" fileName="ChangesFoldingAreaPainter.java" startLine="247" startPosition="34" endLine="248" endPosition="52" />
-    <nodeInfo nodeId="3821603290882626782" fileName="ChangesFoldingAreaPainter.java" startLine="249" startPosition="12" endLine="250" endPosition="43" />
-    <nodeInfo nodeId="7317795005505898110" fileName="ChangesFoldingAreaPainter.java" startLine="254" startPosition="37" endLine="255" endPosition="34" />
-    <nodeInfo nodeId="6105081101195305214" fileName="ChangesFoldingAreaPainter.java" startLine="259" startPosition="74" endLine="260" endPosition="33" />
-    <nodeInfo nodeId="4745893119449688979" fileName="ChangesFoldingAreaPainter.java" startLine="264" startPosition="34" endLine="265" endPosition="53" />
-    <nodeInfo nodeId="4434895596490172180" fileName="ChangesFoldingAreaPainter.java" startLine="269" startPosition="146" endLine="270" endPosition="65" />
-    <nodeInfo nodeId="4434895596490172172" fileName="ChangesFoldingAreaPainter.java" startLine="272" startPosition="85" endLine="273" endPosition="55" />
-    <nodeInfo nodeId="4434895596490172192" fileName="ChangesFoldingAreaPainter.java" startLine="275" startPosition="9" endLine="276" endPosition="70" />
-    <nodeInfo nodeId="4434895596490172204" fileName="ChangesFoldingAreaPainter.java" startLine="277" startPosition="12" endLine="278" endPosition="66" />
-    <nodeInfo nodeId="8274502957383551392" fileName="ChangesFoldingAreaPainter.java" startLine="283" startPosition="20" endLine="284" endPosition="18" />
-    <nodeInfo nodeId="8274502957383551392" fileName="ChangesFoldingAreaPainter.java" startLine="285" startPosition="5" endLine="286" endPosition="30" />
-    <nodeInfo nodeId="6746101208730360012" fileName="ChangesFoldingAreaPainter.java" startLine="289" startPosition="29" endLine="290" endPosition="177" />
-    <nodeInfo nodeId="6746101208730360041" fileName="ChangesFoldingAreaPainter.java" startLine="290" startPosition="177" endLine="291" endPosition="24" />
-    <nodeInfo nodeId="6746101208730360045" fileName="ChangesFoldingAreaPainter.java" startLine="291" startPosition="24" endLine="292" endPosition="29" />
-    <nodeInfo nodeId="6746101208730360092" fileName="ChangesFoldingAreaPainter.java" startLine="294" startPosition="104" endLine="295" endPosition="67" />
-    <nodeInfo nodeId="6746101208730360075" fileName="ChangesFoldingAreaPainter.java" startLine="295" startPosition="67" endLine="296" endPosition="132" />
-    <nodeInfo nodeId="6746101208730360674" fileName="ChangesFoldingAreaPainter.java" startLine="296" startPosition="132" endLine="297" endPosition="67" />
-    <nodeInfo nodeId="6746101208730360087" fileName="ChangesFoldingAreaPainter.java" startLine="297" startPosition="67" endLine="298" endPosition="89" />
-    <nodeInfo nodeId="1488166530899637889" fileName="ChangesFoldingAreaPainter.java" startLine="300" startPosition="102" endLine="301" endPosition="86" />
-    <nodeInfo nodeId="6746101208730361686" fileName="ChangesFoldingAreaPainter.java" startLine="303" startPosition="9" endLine="304" endPosition="31" />
-    <nodeInfo nodeId="6746101208730364064" fileName="ChangesFoldingAreaPainter.java" startLine="308" startPosition="85" endLine="309" endPosition="24" />
-    <nodeInfo nodeId="6746101208730364072" fileName="ChangesFoldingAreaPainter.java" startLine="312" startPosition="23" endLine="313" endPosition="17" />
-    <nodeInfo nodeId="6746101208730364080" fileName="ChangesFoldingAreaPainter.java" startLine="316" startPosition="28" endLine="317" endPosition="22" />
-    <nodeInfo nodeId="3322868409858674647" fileName="ChangesFoldingAreaPainter.java" startLine="322" startPosition="87" endLine="323" endPosition="65" />
-    <nodeInfo nodeId="3322868409858674638" fileName="ChangesFoldingAreaPainter.java" startLine="325" startPosition="11" endLine="326" endPosition="30" />
-    <nodeInfo nodeId="3322868409858674668" fileName="ChangesFoldingAreaPainter.java" startLine="328" startPosition="87" endLine="329" endPosition="68" />
-    <nodeInfo nodeId="3322868409858674659" fileName="ChangesFoldingAreaPainter.java" startLine="331" startPosition="11" endLine="332" endPosition="33" />
-    <nodeInfo nodeId="3322868409858674680" fileName="ChangesFoldingAreaPainter.java" startLine="333" startPosition="14" endLine="334" endPosition="33" />
-    <nodeInfo nodeId="3322868409858674684" fileName="ChangesFoldingAreaPainter.java" startLine="339" startPosition="29" endLine="340" endPosition="46" />
-    <nodeInfo nodeId="2331005757591015011" fileName="ChangesFoldingAreaPainter.java" startLine="344" startPosition="59" endLine="345" endPosition="78" />
-    <nodeInfo nodeId="3322868409858689541" fileName="ChangesFoldingAreaPainter.java" startLine="346" startPosition="135" endLine="347" endPosition="90" />
-    <nodeInfo nodeId="3322868409858689530" fileName="ChangesFoldingAreaPainter.java" startLine="348" startPosition="53" endLine="349" endPosition="87" />
-    <nodeInfo nodeId="3322868409858689544" fileName="ChangesFoldingAreaPainter.java" startLine="350" startPosition="56" endLine="351" endPosition="90" />
-    <nodeInfo nodeId="3322868409858689547" fileName="ChangesFoldingAreaPainter.java" startLine="352" startPosition="58" endLine="353" endPosition="94" />
-    <nodeInfo nodeId="3322868409858689550" fileName="ChangesFoldingAreaPainter.java" startLine="354" startPosition="57" endLine="355" endPosition="95" />
-    <nodeInfo nodeId="2331005757591010198" fileName="ChangesFoldingAreaPainter.java" startLine="356" startPosition="9" endLine="357" endPosition="26" />
-    <nodeInfo nodeId="3322868409858674695" fileName="ChangesFoldingAreaPainter.java" startLine="358" startPosition="14" endLine="359" endPosition="60" />
-    <nodeInfo nodeId="3322868409858674709" fileName="ChangesFoldingAreaPainter.java" startLine="361" startPosition="19" endLine="362" endPosition="83" />
-    <nodeInfo nodeId="3322868409858674728" fileName="ChangesFoldingAreaPainter.java" startLine="363" startPosition="22" endLine="364" endPosition="85" />
-    <nodeInfo nodeId="8332220865210648784" fileName="ChangesFoldingAreaPainter.java" startLine="365" startPosition="18" endLine="366" endPosition="74" />
-    <nodeInfo nodeId="4434895596490172113" fileName="ChangesFoldingAreaPainter.java" startLine="372" startPosition="81" endLine="373" endPosition="20" />
-    <nodeInfo nodeId="4434895596490168996" fileName="ChangesFoldingAreaPainter.java" startLine="375" startPosition="107" endLine="376" endPosition="22" />
-    <nodeInfo nodeId="4434895596490172089" fileName="ChangesFoldingAreaPainter.java" startLine="376" startPosition="22" endLine="377" endPosition="67" />
-    <nodeInfo nodeId="4434895596490171979" fileName="ChangesFoldingAreaPainter.java" startLine="379" startPosition="87" endLine="380" endPosition="57" />
-    <nodeInfo nodeId="4434895596490172044" fileName="ChangesFoldingAreaPainter.java" startLine="384" startPosition="87" endLine="385" endPosition="41" />
-    <nodeInfo nodeId="4434895596490172096" fileName="ChangesFoldingAreaPainter.java" startLine="387" startPosition="10" endLine="388" endPosition="50" />
-    <nodeInfo nodeId="4434895596490172118" fileName="ChangesFoldingAreaPainter.java" startLine="388" startPosition="50" endLine="389" endPosition="89" />
-    <nodeInfo nodeId="4434895596490169006" fileName="ChangesFoldingAreaPainter.java" startLine="394" startPosition="29" endLine="395" endPosition="42" />
-    <nodeInfo nodeId="4434895596490172008" fileName="ChangesFoldingAreaPainter.java" startLine="399" startPosition="28" endLine="400" endPosition="52" />
-    <nodeInfo nodeId="4434895596490172134" fileName="ChangesFoldingAreaPainter.java" startLine="404" startPosition="23" endLine="405" endPosition="17" />
-    <nodeInfo nodeId="4957875527975081886" fileName="ChangesFoldingAreaPainter.java" startLine="409" startPosition="48" endLine="410" endPosition="42" />
-    <nodeInfo nodeId="4957875527975107841" fileName="ChangesFoldingAreaPainter.java" startLine="412" startPosition="26" endLine="413" endPosition="226" />
-    <nodeInfo nodeId="6531409938423387864" fileName="ChangesFoldingAreaPainter.java" startLine="413" startPosition="226" endLine="414" endPosition="63" />
-    <nodeInfo nodeId="6208564103581775273" fileName="ChangesFoldingAreaPainter.java" startLine="414" startPosition="63" endLine="415" endPosition="42" />
-    <nodeInfo nodeId="1039290607165159065" fileName="ChangesFoldingAreaPainter.java" startLine="415" startPosition="42" endLine="416" endPosition="61" />
-    <nodeInfo nodeId="4957875527975108834" fileName="ChangesFoldingAreaPainter.java" startLine="418" startPosition="70" endLine="419" endPosition="53" />
-    <nodeInfo nodeId="9173051028496930069" fileName="ChangesFoldingAreaPainter.java" startLine="422" startPosition="72" endLine="423" endPosition="39" />
-    <nodeInfo nodeId="6208564103581786115" fileName="ChangesFoldingAreaPainter.java" startLine="432" startPosition="52" endLine="433" endPosition="89" />
-    <nodeInfo nodeId="6208564103581788060" fileName="ChangesFoldingAreaPainter.java" startLine="433" startPosition="89" endLine="434" endPosition="24" />
-    <nodeInfo nodeId="6378762527268295125" fileName="ChangesFoldingAreaPainter.java" startLine="439" startPosition="24" endLine="440" endPosition="26" />
-    <nodeInfo nodeId="6378762527268296967" fileName="ChangesFoldingAreaPainter.java" startLine="440" startPosition="26" endLine="441" endPosition="69" />
-    <nodeInfo nodeId="6378762527268302492" fileName="ChangesFoldingAreaPainter.java" startLine="441" startPosition="69" endLine="442" endPosition="73" />
-    <nodeInfo nodeId="6378762527268296309" fileName="ChangesFoldingAreaPainter.java" startLine="443" startPosition="35" endLine="444" endPosition="88" />
-    <nodeInfo nodeId="7755015088410488384" fileName="ChangesFoldingAreaPainter.java" startLine="445" startPosition="9" endLine="446" endPosition="45" />
-    <nodeInfo nodeId="480390906262810853" fileName="ChangesFoldingAreaPainter.java" startLine="146" startPosition="16" endLine="148" endPosition="11" />
-    <nodeInfo nodeId="480390906262810870" fileName="ChangesFoldingAreaPainter.java" startLine="149" startPosition="14" endLine="151" endPosition="9" />
-    <nodeInfo nodeId="7429456937243135894" fileName="ChangesFoldingAreaPainter.java" startLine="182" startPosition="10" endLine="184" endPosition="5" />
-    <nodeInfo nodeId="1216620237029569878" fileName="ChangesFoldingAreaPainter.java" startLine="212" startPosition="10" endLine="214" endPosition="5" />
-    <nodeInfo nodeId="7755015088410487294" fileName="ChangesFoldingAreaPainter.java" startLine="249" startPosition="10" endLine="251" endPosition="5" />
-    <nodeInfo nodeId="4434895596490172202" fileName="ChangesFoldingAreaPainter.java" startLine="277" startPosition="10" endLine="279" endPosition="5" />
-    <nodeInfo nodeId="3322868409858674678" fileName="ChangesFoldingAreaPainter.java" startLine="333" startPosition="12" endLine="335" endPosition="7" />
-    <nodeInfo nodeId="3511475470456928963" fileName="ChangesFoldingAreaPainter.java" startLine="67" startPosition="54" endLine="70" endPosition="5" />
-    <nodeInfo nodeId="6923910471520920989" fileName="ChangesFoldingAreaPainter.java" startLine="71" startPosition="45" endLine="74" endPosition="5" />
-    <nodeInfo nodeId="6923910471520922801" fileName="ChangesFoldingAreaPainter.java" startLine="91" startPosition="44" endLine="94" endPosition="7" />
-    <nodeInfo nodeId="6923910471520923641" fileName="ChangesFoldingAreaPainter.java" startLine="94" startPosition="7" endLine="97" endPosition="7" />
-    <nodeInfo nodeId="2892955808309432840" fileName="ChangesFoldingAreaPainter.java" startLine="167" startPosition="5" endLine="170" endPosition="5" />
-    <nodeInfo nodeId="1992587573287146554" fileName="ChangesFoldingAreaPainter.java" startLine="187" startPosition="95" endLine="190" endPosition="5" />
-    <nodeInfo nodeId="7429456937243136233" fileName="ChangesFoldingAreaPainter.java" startLine="193" startPosition="44" endLine="196" endPosition="11" />
-    <nodeInfo nodeId="6208564103581780933" fileName="ChangesFoldingAreaPainter.java" startLine="214" startPosition="5" endLine="217" endPosition="5" />
-    <nodeInfo nodeId="6208564103581782292" fileName="ChangesFoldingAreaPainter.java" startLine="222" startPosition="86" endLine="225" endPosition="5" />
-    <nodeInfo nodeId="7539796992259494955" fileName="ChangesFoldingAreaPainter.java" startLine="233" startPosition="86" endLine="236" endPosition="7" />
-    <nodeInfo nodeId="8274502957383551392" fileName="ChangesFoldingAreaPainter.java" startLine="282" startPosition="86" endLine="285" endPosition="5" />
-    <nodeInfo nodeId="9173051028496928516" fileName="ChangesFoldingAreaPainter.java" startLine="425" startPosition="0" endLine="428" endPosition="0" />
-    <nodeInfo nodeId="6378762527268302762" fileName="ChangesFoldingAreaPainter.java" startLine="442" startPosition="73" endLine="445" endPosition="9" />
-    <nodeInfo nodeId="9048291698849215501" fileName="ChangesFoldingAreaPainter.java" startLine="56" startPosition="0" endLine="60" endPosition="3" />
-    <nodeInfo nodeId="8274502957383614780" fileName="ChangesFoldingAreaPainter.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
-    <nodeInfo nodeId="2792704635247516036" fileName="ChangesFoldingAreaPainter.java" startLine="122" startPosition="34" endLine="126" endPosition="5" />
-    <nodeInfo nodeId="6746101208730361851" fileName="ChangesFoldingAreaPainter.java" startLine="133" startPosition="241" endLine="137" endPosition="0" />
-    <nodeInfo nodeId="1216620237029549073" fileName="ChangesFoldingAreaPainter.java" startLine="159" startPosition="69" endLine="163" endPosition="9" />
-    <nodeInfo nodeId="7429456937243135909" fileName="ChangesFoldingAreaPainter.java" startLine="177" startPosition="122" endLine="181" endPosition="0" />
-    <nodeInfo nodeId="7317795005505883205" fileName="ChangesFoldingAreaPainter.java" startLine="253" startPosition="0" endLine="257" endPosition="0" />
-    <nodeInfo nodeId="4434895596490172170" fileName="ChangesFoldingAreaPainter.java" startLine="271" startPosition="118" endLine="275" endPosition="0" />
-    <nodeInfo nodeId="1488166530899637887" fileName="ChangesFoldingAreaPainter.java" startLine="299" startPosition="150" endLine="303" endPosition="0" />
-    <nodeInfo nodeId="6746101208730364068" fileName="ChangesFoldingAreaPainter.java" startLine="311" startPosition="0" endLine="315" endPosition="0" />
-    <nodeInfo nodeId="6746101208730364076" fileName="ChangesFoldingAreaPainter.java" startLine="315" startPosition="0" endLine="319" endPosition="0" />
-    <nodeInfo nodeId="3322868409858674645" fileName="ChangesFoldingAreaPainter.java" startLine="321" startPosition="122" endLine="325" endPosition="0" />
-    <nodeInfo nodeId="3322868409858674666" fileName="ChangesFoldingAreaPainter.java" startLine="327" startPosition="129" endLine="331" endPosition="0" />
-    <nodeInfo nodeId="4434895596490169019" fileName="ChangesFoldingAreaPainter.java" startLine="378" startPosition="123" endLine="382" endPosition="0" />
-    <nodeInfo nodeId="4434895596490172040" fileName="ChangesFoldingAreaPainter.java" startLine="383" startPosition="197" endLine="387" endPosition="0" />
-    <nodeInfo nodeId="9173051028496928504" fileName="ChangesFoldingAreaPainter.java" startLine="417" startPosition="52" endLine="421" endPosition="0" />
-    <nodeInfo nodeId="9173051028496928510" fileName="ChangesFoldingAreaPainter.java" startLine="421" startPosition="0" endLine="425" endPosition="0" />
-    <nodeInfo nodeId="6208564103581785206" fileName="ChangesFoldingAreaPainter.java" startLine="431" startPosition="48" endLine="435" endPosition="7" />
-    <nodeInfo nodeId="8274502957383614839" fileName="ChangesFoldingAreaPainter.java" startLine="106" startPosition="0" endLine="111" endPosition="0" />
-    <nodeInfo nodeId="3511475470456930835" fileName="ChangesFoldingAreaPainter.java" startLine="111" startPosition="0" endLine="116" endPosition="0" />
-    <nodeInfo nodeId="6746101208730361840" fileName="ChangesFoldingAreaPainter.java" startLine="132" startPosition="65" endLine="137" endPosition="24" />
-    <nodeInfo nodeId="480390906262810836" fileName="ChangesFoldingAreaPainter.java" startLine="143" startPosition="25" endLine="148" endPosition="11" />
-    <nodeInfo nodeId="7429456937243135899" fileName="ChangesFoldingAreaPainter.java" startLine="176" startPosition="72" endLine="181" endPosition="9" />
-    <nodeInfo nodeId="7429456937243136226" fileName="ChangesFoldingAreaPainter.java" startLine="192" startPosition="47" endLine="197" endPosition="9" />
-    <nodeInfo nodeId="1216620237029569852" fileName="ChangesFoldingAreaPainter.java" startLine="209" startPosition="98" endLine="214" endPosition="5" />
-    <nodeInfo nodeId="5444017747357190850" fileName="ChangesFoldingAreaPainter.java" startLine="240" startPosition="0" endLine="245" endPosition="0" />
-    <nodeInfo nodeId="7755015088410487282" fileName="ChangesFoldingAreaPainter.java" startLine="246" startPosition="97" endLine="251" endPosition="5" />
-    <nodeInfo nodeId="6105081101195305210" fileName="ChangesFoldingAreaPainter.java" startLine="257" startPosition="0" endLine="262" endPosition="0" />
-    <nodeInfo nodeId="4745893119449660806" fileName="ChangesFoldingAreaPainter.java" startLine="262" startPosition="0" endLine="267" endPosition="0" />
-    <nodeInfo nodeId="6746101208730361663" fileName="ChangesFoldingAreaPainter.java" startLine="298" startPosition="89" endLine="303" endPosition="9" />
-    <nodeInfo nodeId="6746101208730364059" fileName="ChangesFoldingAreaPainter.java" startLine="306" startPosition="0" endLine="311" endPosition="0" />
-    <nodeInfo nodeId="531813502180011368" fileName="ChangesFoldingAreaPainter.java" startLine="337" startPosition="0" endLine="342" endPosition="0" />
-    <nodeInfo nodeId="4434895596490169011" fileName="ChangesFoldingAreaPainter.java" startLine="377" startPosition="67" endLine="382" endPosition="9" />
-    <nodeInfo nodeId="4434895596490172022" fileName="ChangesFoldingAreaPainter.java" startLine="382" startPosition="9" endLine="387" endPosition="10" />
-    <nodeInfo nodeId="4434895596490171987" fileName="ChangesFoldingAreaPainter.java" startLine="397" startPosition="0" endLine="402" endPosition="0" />
-    <nodeInfo nodeId="4434895596490171991" fileName="ChangesFoldingAreaPainter.java" startLine="402" startPosition="0" endLine="407" endPosition="0" />
-    <nodeInfo nodeId="1216620237029549045" fileName="ChangesFoldingAreaPainter.java" startLine="158" startPosition="72" endLine="164" endPosition="7" />
-    <nodeInfo nodeId="4434895596490168998" fileName="ChangesFoldingAreaPainter.java" startLine="391" startPosition="0" endLine="397" endPosition="0" />
-    <nodeInfo nodeId="8274502957383551392" fileName="ChangesFoldingAreaPainter.java" startLine="281" startPosition="0" endLine="288" endPosition="0" />
-    <nodeInfo nodeId="6208564103581783468" fileName="ChangesFoldingAreaPainter.java" startLine="430" startPosition="0" endLine="437" endPosition="0" />
-    <nodeInfo nodeId="7429456937243136224" fileName="ChangesFoldingAreaPainter.java" startLine="191" startPosition="108" endLine="199" endPosition="0" />
-    <nodeInfo nodeId="1216620237029569548" fileName="ChangesFoldingAreaPainter.java" startLine="219" startPosition="0" endLine="227" endPosition="0" />
-    <nodeInfo nodeId="7473049078843270640" fileName="ChangesFoldingAreaPainter.java" startLine="230" startPosition="98" endLine="238" endPosition="5" />
-    <nodeInfo nodeId="6378762527268289355" fileName="ChangesFoldingAreaPainter.java" startLine="245" startPosition="0" endLine="253" endPosition="0" />
-    <nodeInfo nodeId="3322868409858674700" fileName="ChangesFoldingAreaPainter.java" startLine="359" startPosition="60" endLine="367" endPosition="9" />
-    <nodeInfo nodeId="480390906262810834" fileName="ChangesFoldingAreaPainter.java" startLine="142" startPosition="62" endLine="151" endPosition="9" />
-    <nodeInfo nodeId="7429456937243135882" fileName="ChangesFoldingAreaPainter.java" startLine="175" startPosition="70" endLine="184" endPosition="5" />
-    <nodeInfo nodeId="7429456937243136220" fileName="ChangesFoldingAreaPainter.java" startLine="190" startPosition="5" endLine="199" endPosition="6" />
-    <nodeInfo nodeId="4434895596490172164" fileName="ChangesFoldingAreaPainter.java" startLine="270" startPosition="65" endLine="279" endPosition="5" />
-    <nodeInfo nodeId="6378762527268295652" fileName="ChangesFoldingAreaPainter.java" startLine="438" startPosition="99" endLine="447" endPosition="7" />
-    <nodeInfo nodeId="2331005757591009641" fileName="ChangesFoldingAreaPainter.java" startLine="358" startPosition="12" endLine="368" endPosition="7" />
-    <nodeInfo nodeId="6746101208730363621" fileName="ChangesFoldingAreaPainter.java" startLine="156" startPosition="27" endLine="167" endPosition="5" />
-    <nodeInfo nodeId="2331005757591015009" fileName="ChangesFoldingAreaPainter.java" startLine="345" startPosition="78" endLine="356" endPosition="9" />
-    <nodeInfo nodeId="6746101208730360067" fileName="ChangesFoldingAreaPainter.java" startLine="293" startPosition="0" endLine="305" endPosition="5" />
-    <nodeInfo nodeId="9173051028496844704" fileName="ChangesFoldingAreaPainter.java" startLine="416" startPosition="61" endLine="428" endPosition="9" />
-    <nodeInfo nodeId="6378762527268264724" fileName="ChangesFoldingAreaPainter.java" startLine="437" startPosition="0" endLine="449" endPosition="0" />
-    <nodeInfo nodeId="4434895596490172218" fileName="ChangesFoldingAreaPainter.java" startLine="77" startPosition="42" endLine="90" endPosition="7" />
-    <nodeInfo nodeId="2792704635247516007" fileName="ChangesFoldingAreaPainter.java" startLine="116" startPosition="0" endLine="129" endPosition="0" />
-    <nodeInfo nodeId="1216620237029569507" fileName="ChangesFoldingAreaPainter.java" startLine="206" startPosition="0" endLine="219" endPosition="0" />
-    <nodeInfo nodeId="2310110763987865522" fileName="ChangesFoldingAreaPainter.java" startLine="227" startPosition="0" endLine="240" endPosition="0" />
-    <nodeInfo nodeId="480390906262810818" fileName="ChangesFoldingAreaPainter.java" startLine="139" startPosition="142" endLine="153" endPosition="0" />
-    <nodeInfo nodeId="7429456937243135759" fileName="ChangesFoldingAreaPainter.java" startLine="172" startPosition="0" endLine="186" endPosition="0" />
-    <nodeInfo nodeId="4434895596490172139" fileName="ChangesFoldingAreaPainter.java" startLine="267" startPosition="0" endLine="281" endPosition="0" />
-    <nodeInfo nodeId="480390906262810788" fileName="ChangesFoldingAreaPainter.java" startLine="138" startPosition="0" endLine="153" endPosition="30" />
-    <nodeInfo nodeId="3322868409858674636" fileName="ChangesFoldingAreaPainter.java" startLine="320" startPosition="46" endLine="335" endPosition="7" />
-    <nodeInfo nodeId="4434895596490127940" fileName="ChangesFoldingAreaPainter.java" startLine="374" startPosition="0" endLine="390" endPosition="5" />
-    <nodeInfo nodeId="3322868409858650847" fileName="ChangesFoldingAreaPainter.java" startLine="319" startPosition="0" endLine="337" endPosition="0" />
-    <nodeInfo nodeId="6208564103581772569" fileName="ChangesFoldingAreaPainter.java" startLine="411" startPosition="0" endLine="429" endPosition="5" />
-    <nodeInfo nodeId="7429456937243134093" fileName="ChangesFoldingAreaPainter.java" startLine="186" startPosition="0" endLine="206" endPosition="0" />
-    <nodeInfo nodeId="2331005757591009627" fileName="ChangesFoldingAreaPainter.java" startLine="343" startPosition="36" endLine="368" endPosition="7" />
-    <nodeInfo nodeId="8332220865210648779" fileName="ChangesFoldingAreaPainter.java" startLine="342" startPosition="0" endLine="370" endPosition="0" />
-    <nodeInfo nodeId="6746101208730364039" fileName="ChangesFoldingAreaPainter.java" startLine="74" startPosition="5" endLine="104" endPosition="5" />
-    <nodeInfo nodeId="8274502957383614813" fileName="ChangesFoldingAreaPainter.java" startLine="65" startPosition="0" endLine="106" endPosition="0" />
-    <nodeInfo nodeId="6746101208730360003" fileName="ChangesFoldingAreaPainter.java" startLine="129" startPosition="0" endLine="172" endPosition="0" />
-    <scopeInfo nodeId="9173051028496928521" fileName="ChangesFoldingAreaPainter.java" startLine="426" startPosition="61" endLine="426" endPosition="61" />
-    <scopeInfo nodeId="8274502957383614783" fileName="ChangesFoldingAreaPainter.java" startLine="62" startPosition="26" endLine="63" endPosition="13" />
-    <scopeInfo nodeId="3511475470456928964" fileName="ChangesFoldingAreaPainter.java" startLine="68" startPosition="34" endLine="69" endPosition="26" />
-    <scopeInfo nodeId="6923910471520920990" fileName="ChangesFoldingAreaPainter.java" startLine="72" startPosition="80" endLine="73" endPosition="13" />
-    <scopeInfo nodeId="6923910471520922802" fileName="ChangesFoldingAreaPainter.java" startLine="92" startPosition="53" endLine="93" endPosition="17" />
-    <scopeInfo nodeId="6923910471520923642" fileName="ChangesFoldingAreaPainter.java" startLine="95" startPosition="49" endLine="96" endPosition="14" />
-    <scopeInfo nodeId="8274502957383614842" fileName="ChangesFoldingAreaPainter.java" startLine="108" startPosition="33" endLine="109" endPosition="22" />
-    <scopeInfo nodeId="3511475470456930838" fileName="ChangesFoldingAreaPainter.java" startLine="113" startPosition="26" endLine="114" endPosition="27" />
-    <scopeInfo nodeId="6746101208730361852" fileName="ChangesFoldingAreaPainter.java" startLine="134" startPosition="85" endLine="135" endPosition="50" />
-    <scopeInfo nodeId="480390906262810837" fileName="ChangesFoldingAreaPainter.java" startLine="144" startPosition="27" endLine="145" endPosition="39" />
-    <scopeInfo nodeId="480390906262810854" fileName="ChangesFoldingAreaPainter.java" startLine="146" startPosition="18" endLine="147" endPosition="29" />
-    <scopeInfo nodeId="480390906262810871" fileName="ChangesFoldingAreaPainter.java" startLine="149" startPosition="16" endLine="150" endPosition="27" />
-    <scopeInfo nodeId="2892955808309432841" fileName="ChangesFoldingAreaPainter.java" startLine="168" startPosition="67" endLine="169" endPosition="98" />
-    <scopeInfo nodeId="7429456937243135910" fileName="ChangesFoldingAreaPainter.java" startLine="178" startPosition="74" endLine="179" endPosition="81" />
-    <scopeInfo nodeId="7429456937243135895" fileName="ChangesFoldingAreaPainter.java" startLine="182" startPosition="12" endLine="183" endPosition="18" />
-    <scopeInfo nodeId="1992587573287146555" fileName="ChangesFoldingAreaPainter.java" startLine="188" startPosition="41" endLine="189" endPosition="13" />
-    <scopeInfo nodeId="7429456937243136240" fileName="ChangesFoldingAreaPainter.java" startLine="194" startPosition="139" endLine="195" endPosition="48" />
-    <scopeInfo nodeId="1216620237029569853" fileName="ChangesFoldingAreaPainter.java" startLine="210" startPosition="31" endLine="211" endPosition="85" />
-    <scopeInfo nodeId="1216620237029569879" fileName="ChangesFoldingAreaPainter.java" startLine="212" startPosition="12" endLine="213" endPosition="88" />
-    <scopeInfo nodeId="6208564103581780934" fileName="ChangesFoldingAreaPainter.java" startLine="215" startPosition="37" endLine="216" endPosition="43" />
-    <scopeInfo nodeId="6208564103581782293" fileName="ChangesFoldingAreaPainter.java" startLine="223" startPosition="37" endLine="224" endPosition="35" />
-    <scopeInfo nodeId="7539796992259494956" fileName="ChangesFoldingAreaPainter.java" startLine="234" startPosition="25" endLine="235" endPosition="51" />
-    <scopeInfo nodeId="5444017747357190854" fileName="ChangesFoldingAreaPainter.java" startLine="242" startPosition="74" endLine="243" endPosition="27" />
-    <scopeInfo nodeId="7755015088410487283" fileName="ChangesFoldingAreaPainter.java" startLine="247" startPosition="34" endLine="248" endPosition="52" />
-    <scopeInfo nodeId="7755015088410487295" fileName="ChangesFoldingAreaPainter.java" startLine="249" startPosition="12" endLine="250" endPosition="43" />
-    <scopeInfo nodeId="7317795005505883208" fileName="ChangesFoldingAreaPainter.java" startLine="254" startPosition="37" endLine="255" endPosition="34" />
-    <scopeInfo nodeId="6105081101195305213" fileName="ChangesFoldingAreaPainter.java" startLine="259" startPosition="74" endLine="260" endPosition="33" />
-    <scopeInfo nodeId="4745893119449660809" fileName="ChangesFoldingAreaPainter.java" startLine="264" startPosition="34" endLine="265" endPosition="53" />
-    <scopeInfo nodeId="4434895596490172171" fileName="ChangesFoldingAreaPainter.java" startLine="272" startPosition="85" endLine="273" endPosition="55" />
-    <scopeInfo nodeId="4434895596490172166" fileName="ChangesFoldingAreaPainter.java" startLine="275" startPosition="9" endLine="276" endPosition="70" />
-    <scopeInfo nodeId="4434895596490172203" fileName="ChangesFoldingAreaPainter.java" startLine="277" startPosition="12" endLine="278" endPosition="66" />
-    <scopeInfo nodeId="8274502957383551392" fileName="ChangesFoldingAreaPainter.java" startLine="283" startPosition="20" endLine="284" endPosition="18" />
-    <scopeInfo nodeId="1488166530899637888" fileName="ChangesFoldingAreaPainter.java" startLine="300" startPosition="102" endLine="301" endPosition="86" />
-    <scopeInfo nodeId="6746101208730364063" fileName="ChangesFoldingAreaPainter.java" startLine="308" startPosition="85" endLine="309" endPosition="24" />
-    <scopeInfo nodeId="6746101208730364071" fileName="ChangesFoldingAreaPainter.java" startLine="312" startPosition="23" endLine="313" endPosition="17" />
-    <scopeInfo nodeId="6746101208730364079" fileName="ChangesFoldingAreaPainter.java" startLine="316" startPosition="28" endLine="317" endPosition="22" />
-    <scopeInfo nodeId="3322868409858674646" fileName="ChangesFoldingAreaPainter.java" startLine="322" startPosition="87" endLine="323" endPosition="65" />
-    <scopeInfo nodeId="3322868409858674637" fileName="ChangesFoldingAreaPainter.java" startLine="325" startPosition="11" endLine="326" endPosition="30" />
-    <scopeInfo nodeId="3322868409858674667" fileName="ChangesFoldingAreaPainter.java" startLine="328" startPosition="87" endLine="329" endPosition="68" />
-    <scopeInfo nodeId="3322868409858674658" fileName="ChangesFoldingAreaPainter.java" startLine="331" startPosition="11" endLine="332" endPosition="33" />
-    <scopeInfo nodeId="3322868409858674679" fileName="ChangesFoldingAreaPainter.java" startLine="333" startPosition="14" endLine="334" endPosition="33" />
-    <scopeInfo nodeId="531813502180011371" fileName="ChangesFoldingAreaPainter.java" startLine="339" startPosition="29" endLine="340" endPosition="46" />
-    <scopeInfo nodeId="2331005757591015010" fileName="ChangesFoldingAreaPainter.java" startLine="346" startPosition="135" endLine="347" endPosition="90" />
-    <scopeInfo nodeId="3322868409858674738" fileName="ChangesFoldingAreaPainter.java" startLine="348" startPosition="53" endLine="349" endPosition="87" />
-    <scopeInfo nodeId="3322868409858675906" fileName="ChangesFoldingAreaPainter.java" startLine="350" startPosition="56" endLine="351" endPosition="90" />
-    <scopeInfo nodeId="3322868409858675951" fileName="ChangesFoldingAreaPainter.java" startLine="352" startPosition="58" endLine="353" endPosition="94" />
-    <scopeInfo nodeId="3322868409858675986" fileName="ChangesFoldingAreaPainter.java" startLine="354" startPosition="57" endLine="355" endPosition="95" />
-    <scopeInfo nodeId="3322868409858674706" fileName="ChangesFoldingAreaPainter.java" startLine="361" startPosition="19" endLine="362" endPosition="83" />
-    <scopeInfo nodeId="3322868409858674724" fileName="ChangesFoldingAreaPainter.java" startLine="363" startPosition="22" endLine="364" endPosition="85" />
-    <scopeInfo nodeId="3322868409858674702" fileName="ChangesFoldingAreaPainter.java" startLine="365" startPosition="18" endLine="366" endPosition="74" />
-    <scopeInfo nodeId="4434895596490169020" fileName="ChangesFoldingAreaPainter.java" startLine="379" startPosition="87" endLine="380" endPosition="57" />
-    <scopeInfo nodeId="4434895596490172041" fileName="ChangesFoldingAreaPainter.java" startLine="384" startPosition="87" endLine="385" endPosition="41" />
-    <scopeInfo nodeId="4434895596490169002" fileName="ChangesFoldingAreaPainter.java" startLine="394" startPosition="29" endLine="395" endPosition="42" />
-    <scopeInfo nodeId="4434895596490171990" fileName="ChangesFoldingAreaPainter.java" startLine="399" startPosition="28" endLine="400" endPosition="52" />
-    <scopeInfo nodeId="4434895596490171994" fileName="ChangesFoldingAreaPainter.java" startLine="404" startPosition="23" endLine="405" endPosition="17" />
-    <scopeInfo nodeId="9173051028496928509" fileName="ChangesFoldingAreaPainter.java" startLine="418" startPosition="70" endLine="419" endPosition="53" />
-    <scopeInfo nodeId="9173051028496928515" fileName="ChangesFoldingAreaPainter.java" startLine="422" startPosition="72" endLine="423" endPosition="39" />
-    <scopeInfo nodeId="6378762527268302763" fileName="ChangesFoldingAreaPainter.java" startLine="443" startPosition="35" endLine="444" endPosition="88" />
-    <scopeInfo nodeId="9048291698849215505" fileName="ChangesFoldingAreaPainter.java" startLine="57" startPosition="112" endLine="59" endPosition="74" />
-    <scopeInfo nodeId="2792704635247516037" fileName="ChangesFoldingAreaPainter.java" startLine="123" startPosition="56" endLine="125" endPosition="17" />
-    <scopeInfo nodeId="1216620237029549074" fileName="ChangesFoldingAreaPainter.java" startLine="160" startPosition="49" endLine="162" endPosition="62" />
-    <scopeInfo nodeId="6208564103581785208" fileName="ChangesFoldingAreaPainter.java" startLine="432" startPosition="52" endLine="434" endPosition="24" />
-    <scopeInfo nodeId="7429456937243136232" fileName="ChangesFoldingAreaPainter.java" startLine="193" startPosition="44" endLine="196" endPosition="11" />
-    <scopeInfo nodeId="7429456937243136233" fileName="ChangesFoldingAreaPainter.java" startLine="193" startPosition="44" endLine="196" endPosition="11" />
-    <scopeInfo nodeId="9173051028496928516" fileName="ChangesFoldingAreaPainter.java" startLine="425" startPosition="0" endLine="428" endPosition="0">
+    <nodeInfo nodeId="8909869386401300728" fileName="ChangesFoldingAreaPainter.java" startLine="54" startPosition="78" endLine="55" endPosition="81" />
+    <nodeInfo nodeId="6208564103581773727" fileName="ChangesFoldingAreaPainter.java" startLine="55" startPosition="81" endLine="56" endPosition="106" />
+    <nodeInfo nodeId="9048291698849215506" fileName="ChangesFoldingAreaPainter.java" startLine="58" startPosition="112" endLine="59" endPosition="92" />
+    <nodeInfo nodeId="9048291698849215513" fileName="ChangesFoldingAreaPainter.java" startLine="59" startPosition="92" endLine="60" endPosition="74" />
+    <nodeInfo nodeId="8274502957383614784" fileName="ChangesFoldingAreaPainter.java" startLine="63" startPosition="26" endLine="64" endPosition="13" />
+    <nodeInfo nodeId="3511475470456930402" fileName="ChangesFoldingAreaPainter.java" startLine="69" startPosition="34" endLine="70" endPosition="26" />
+    <nodeInfo nodeId="6923910471520917316" fileName="ChangesFoldingAreaPainter.java" startLine="71" startPosition="5" endLine="72" endPosition="45" />
+    <nodeInfo nodeId="6923910471520922732" fileName="ChangesFoldingAreaPainter.java" startLine="73" startPosition="80" endLine="74" endPosition="13" />
+    <nodeInfo nodeId="9213787164325786206" fileName="ChangesFoldingAreaPainter.java" startLine="76" startPosition="104" endLine="77" endPosition="34" />
+    <nodeInfo nodeId="6589571255109292433" fileName="ChangesFoldingAreaPainter.java" startLine="77" startPosition="34" endLine="78" endPosition="42" />
+    <nodeInfo nodeId="2792704635247506866" fileName="ChangesFoldingAreaPainter.java" startLine="79" startPosition="79" endLine="80" endPosition="42" />
+    <nodeInfo nodeId="2792704635247511608" fileName="ChangesFoldingAreaPainter.java" startLine="80" startPosition="42" endLine="81" endPosition="87" />
+    <nodeInfo nodeId="2792704635247511626" fileName="ChangesFoldingAreaPainter.java" startLine="81" startPosition="87" endLine="82" endPosition="97" />
+    <nodeInfo nodeId="6589571255109292395" fileName="ChangesFoldingAreaPainter.java" startLine="82" startPosition="97" endLine="83" endPosition="64" />
+    <nodeInfo nodeId="6589571255109292410" fileName="ChangesFoldingAreaPainter.java" startLine="83" startPosition="64" endLine="84" endPosition="129" />
+    <nodeInfo nodeId="4434895596490172238" fileName="ChangesFoldingAreaPainter.java" startLine="84" startPosition="129" endLine="85" endPosition="43" />
+    <nodeInfo nodeId="6589571255109292430" fileName="ChangesFoldingAreaPainter.java" startLine="85" startPosition="43" endLine="86" endPosition="0" />
+    <nodeInfo nodeId="4434895596490172229" fileName="ChangesFoldingAreaPainter.java" startLine="86" startPosition="0" endLine="87" endPosition="37" />
+    <nodeInfo nodeId="6589571255109292441" fileName="ChangesFoldingAreaPainter.java" startLine="87" startPosition="37" endLine="88" endPosition="43" />
+    <nodeInfo nodeId="2792704635247511615" fileName="ChangesFoldingAreaPainter.java" startLine="88" startPosition="43" endLine="89" endPosition="79" />
+    <nodeInfo nodeId="4434895596490172228" fileName="ChangesFoldingAreaPainter.java" startLine="89" startPosition="79" endLine="90" endPosition="17" />
+    <nodeInfo nodeId="9213787164325786215" fileName="ChangesFoldingAreaPainter.java" startLine="91" startPosition="7" endLine="92" endPosition="44" />
+    <nodeInfo nodeId="6923910471520923503" fileName="ChangesFoldingAreaPainter.java" startLine="93" startPosition="53" endLine="94" endPosition="17" />
+    <nodeInfo nodeId="6923910471520924548" fileName="ChangesFoldingAreaPainter.java" startLine="96" startPosition="49" endLine="97" endPosition="14" />
+    <nodeInfo nodeId="6746101208730364163" fileName="ChangesFoldingAreaPainter.java" startLine="98" startPosition="7" endLine="99" endPosition="53" />
+    <nodeInfo nodeId="6589571255109292429" fileName="ChangesFoldingAreaPainter.java" startLine="99" startPosition="53" endLine="100" endPosition="0" />
+    <nodeInfo nodeId="9213787164325786161" fileName="ChangesFoldingAreaPainter.java" startLine="100" startPosition="0" endLine="101" endPosition="35" />
+    <nodeInfo nodeId="9213787164325786170" fileName="ChangesFoldingAreaPainter.java" startLine="101" startPosition="35" endLine="102" endPosition="39" />
+    <nodeInfo nodeId="9213787164325786246" fileName="ChangesFoldingAreaPainter.java" startLine="102" startPosition="39" endLine="103" endPosition="57" />
+    <nodeInfo nodeId="9213787164325786268" fileName="ChangesFoldingAreaPainter.java" startLine="103" startPosition="57" endLine="104" endPosition="58" />
+    <nodeInfo nodeId="8274502957383614847" fileName="ChangesFoldingAreaPainter.java" startLine="109" startPosition="33" endLine="110" endPosition="22" />
+    <nodeInfo nodeId="3511475470456930840" fileName="ChangesFoldingAreaPainter.java" startLine="114" startPosition="26" endLine="115" endPosition="27" />
+    <nodeInfo nodeId="2792704635247516028" fileName="ChangesFoldingAreaPainter.java" startLine="118" startPosition="151" endLine="119" endPosition="55" />
+    <nodeInfo nodeId="2792704635247522078" fileName="ChangesFoldingAreaPainter.java" startLine="119" startPosition="55" endLine="120" endPosition="24" />
+    <nodeInfo nodeId="2792704635247520988" fileName="ChangesFoldingAreaPainter.java" startLine="120" startPosition="24" endLine="121" endPosition="24" />
+    <nodeInfo nodeId="2792704635247522089" fileName="ChangesFoldingAreaPainter.java" startLine="121" startPosition="24" endLine="122" endPosition="32" />
+    <nodeInfo nodeId="2792704635247522100" fileName="ChangesFoldingAreaPainter.java" startLine="122" startPosition="32" endLine="123" endPosition="34" />
+    <nodeInfo nodeId="2792704635247521006" fileName="ChangesFoldingAreaPainter.java" startLine="124" startPosition="56" endLine="125" endPosition="40" />
+    <nodeInfo nodeId="2792704635247522111" fileName="ChangesFoldingAreaPainter.java" startLine="125" startPosition="40" endLine="126" endPosition="17" />
+    <nodeInfo nodeId="2792704635247521019" fileName="ChangesFoldingAreaPainter.java" startLine="127" startPosition="5" endLine="128" endPosition="46" />
+    <nodeInfo nodeId="4399127869643550738" fileName="ChangesFoldingAreaPainter.java" startLine="131" startPosition="36" endLine="132" endPosition="101" />
+    <nodeInfo nodeId="6746101208730361712" fileName="ChangesFoldingAreaPainter.java" startLine="132" startPosition="101" endLine="133" endPosition="65" />
+    <nodeInfo nodeId="6746101208730361853" fileName="ChangesFoldingAreaPainter.java" startLine="135" startPosition="85" endLine="136" endPosition="50" />
+    <nodeInfo nodeId="6746101208730361762" fileName="ChangesFoldingAreaPainter.java" startLine="138" startPosition="24" endLine="139" endPosition="0" />
+    <nodeInfo nodeId="2792704635247522120" fileName="ChangesFoldingAreaPainter.java" startLine="141" startPosition="144" endLine="142" endPosition="62" />
+    <nodeInfo nodeId="2792704635247522127" fileName="ChangesFoldingAreaPainter.java" startLine="142" startPosition="62" endLine="143" endPosition="62" />
+    <nodeInfo nodeId="480390906262810838" fileName="ChangesFoldingAreaPainter.java" startLine="145" startPosition="27" endLine="146" endPosition="39" />
+    <nodeInfo nodeId="480390906262810855" fileName="ChangesFoldingAreaPainter.java" startLine="147" startPosition="18" endLine="148" endPosition="29" />
+    <nodeInfo nodeId="480390906262810872" fileName="ChangesFoldingAreaPainter.java" startLine="150" startPosition="16" endLine="151" endPosition="27" />
+    <nodeInfo nodeId="6746101208730363609" fileName="ChangesFoldingAreaPainter.java" startLine="154" startPosition="30" endLine="155" endPosition="0" />
+    <nodeInfo nodeId="6746101208730363611" fileName="ChangesFoldingAreaPainter.java" startLine="155" startPosition="0" endLine="156" endPosition="179" />
+    <nodeInfo nodeId="3176852462137033805" fileName="ChangesFoldingAreaPainter.java" startLine="156" startPosition="179" endLine="157" endPosition="27" />
+    <nodeInfo nodeId="3176852462137033861" fileName="ChangesFoldingAreaPainter.java" startLine="158" startPosition="115" endLine="159" endPosition="72" />
+    <nodeInfo nodeId="1216620237029549111" fileName="ChangesFoldingAreaPainter.java" startLine="161" startPosition="49" endLine="162" endPosition="102" />
+    <nodeInfo nodeId="1216620237029549120" fileName="ChangesFoldingAreaPainter.java" startLine="162" startPosition="102" endLine="163" endPosition="62" />
+    <nodeInfo nodeId="1216620237029549029" fileName="ChangesFoldingAreaPainter.java" startLine="165" startPosition="7" endLine="166" endPosition="70" />
+    <nodeInfo nodeId="3176852462137033840" fileName="ChangesFoldingAreaPainter.java" startLine="166" startPosition="70" endLine="167" endPosition="64" />
+    <nodeInfo nodeId="2892955808309432859" fileName="ChangesFoldingAreaPainter.java" startLine="169" startPosition="67" endLine="170" endPosition="98" />
+    <nodeInfo nodeId="7429456937243135808" fileName="ChangesFoldingAreaPainter.java" startLine="175" startPosition="96" endLine="176" endPosition="70" />
+    <nodeInfo nodeId="7429456937243135961" fileName="ChangesFoldingAreaPainter.java" startLine="179" startPosition="74" endLine="180" endPosition="81" />
+    <nodeInfo nodeId="7429456937243135896" fileName="ChangesFoldingAreaPainter.java" startLine="183" startPosition="12" endLine="184" endPosition="18" />
+    <nodeInfo nodeId="1992587573287146565" fileName="ChangesFoldingAreaPainter.java" startLine="189" startPosition="41" endLine="190" endPosition="13" />
+    <nodeInfo nodeId="7429456937243136241" fileName="ChangesFoldingAreaPainter.java" startLine="195" startPosition="139" endLine="196" endPosition="48" />
+    <nodeInfo nodeId="4419032571725341541" fileName="ChangesFoldingAreaPainter.java" startLine="200" startPosition="6" endLine="201" endPosition="0" />
+    <nodeInfo nodeId="7429456937243136248" fileName="ChangesFoldingAreaPainter.java" startLine="201" startPosition="0" endLine="202" endPosition="33" />
+    <nodeInfo nodeId="7429456937243135645" fileName="ChangesFoldingAreaPainter.java" startLine="202" startPosition="33" endLine="203" endPosition="34" />
+    <nodeInfo nodeId="7429456937243136263" fileName="ChangesFoldingAreaPainter.java" startLine="203" startPosition="34" endLine="204" endPosition="32" />
+    <nodeInfo nodeId="6243204728785249327" fileName="ChangesFoldingAreaPainter.java" startLine="204" startPosition="32" endLine="205" endPosition="116" />
+    <nodeInfo nodeId="7429456937243136038" fileName="ChangesFoldingAreaPainter.java" startLine="209" startPosition="44" endLine="210" endPosition="98" />
+    <nodeInfo nodeId="8909869386401300789" fileName="ChangesFoldingAreaPainter.java" startLine="211" startPosition="31" endLine="212" endPosition="22" />
+    <nodeInfo nodeId="8909869386401300766" fileName="ChangesFoldingAreaPainter.java" startLine="214" startPosition="51" endLine="215" endPosition="13" />
+    <nodeInfo nodeId="8909869386401300775" fileName="ChangesFoldingAreaPainter.java" startLine="216" startPosition="5" endLine="217" endPosition="44" />
+    <nodeInfo nodeId="1216620237029569865" fileName="ChangesFoldingAreaPainter.java" startLine="218" startPosition="31" endLine="219" endPosition="85" />
+    <nodeInfo nodeId="1216620237029569901" fileName="ChangesFoldingAreaPainter.java" startLine="220" startPosition="12" endLine="221" endPosition="43" />
+    <nodeInfo nodeId="7429456937243136060" fileName="ChangesFoldingAreaPainter.java" startLine="223" startPosition="37" endLine="224" endPosition="43" />
+    <nodeInfo nodeId="8909869386401300746" fileName="ChangesFoldingAreaPainter.java" startLine="230" startPosition="43" endLine="231" endPosition="13" />
+    <nodeInfo nodeId="1216620237029569909" fileName="ChangesFoldingAreaPainter.java" startLine="232" startPosition="5" endLine="233" endPosition="41" />
+    <nodeInfo nodeId="8909869386401300750" fileName="ChangesFoldingAreaPainter.java" startLine="233" startPosition="41" endLine="234" endPosition="36" />
+    <nodeInfo nodeId="6208564103581782294" fileName="ChangesFoldingAreaPainter.java" startLine="235" startPosition="37" endLine="236" endPosition="35" />
+    <nodeInfo nodeId="5444017747356995491" fileName="ChangesFoldingAreaPainter.java" startLine="241" startPosition="46" endLine="242" endPosition="98" />
+    <nodeInfo nodeId="5444017747357015202" fileName="ChangesFoldingAreaPainter.java" startLine="243" startPosition="31" endLine="244" endPosition="43" />
+    <nodeInfo nodeId="7539796992259356332" fileName="ChangesFoldingAreaPainter.java" startLine="244" startPosition="43" endLine="245" endPosition="86" />
+    <nodeInfo nodeId="7539796992259356344" fileName="ChangesFoldingAreaPainter.java" startLine="246" startPosition="25" endLine="247" endPosition="51" />
+    <nodeInfo nodeId="2643085131950809484" fileName="ChangesFoldingAreaPainter.java" startLine="248" startPosition="7" endLine="249" endPosition="38" />
+    <nodeInfo nodeId="5444017747357190855" fileName="ChangesFoldingAreaPainter.java" startLine="254" startPosition="74" endLine="255" endPosition="27" />
+    <nodeInfo nodeId="6378762527268290205" fileName="ChangesFoldingAreaPainter.java" startLine="259" startPosition="34" endLine="260" endPosition="52" />
+    <nodeInfo nodeId="3821603290882626782" fileName="ChangesFoldingAreaPainter.java" startLine="261" startPosition="12" endLine="262" endPosition="43" />
+    <nodeInfo nodeId="7317795005505898110" fileName="ChangesFoldingAreaPainter.java" startLine="266" startPosition="37" endLine="267" endPosition="34" />
+    <nodeInfo nodeId="6105081101195305214" fileName="ChangesFoldingAreaPainter.java" startLine="271" startPosition="74" endLine="272" endPosition="33" />
+    <nodeInfo nodeId="4745893119449688979" fileName="ChangesFoldingAreaPainter.java" startLine="276" startPosition="34" endLine="277" endPosition="53" />
+    <nodeInfo nodeId="4434895596490172180" fileName="ChangesFoldingAreaPainter.java" startLine="281" startPosition="146" endLine="282" endPosition="65" />
+    <nodeInfo nodeId="4434895596490172172" fileName="ChangesFoldingAreaPainter.java" startLine="284" startPosition="85" endLine="285" endPosition="55" />
+    <nodeInfo nodeId="4434895596490172192" fileName="ChangesFoldingAreaPainter.java" startLine="287" startPosition="9" endLine="288" endPosition="70" />
+    <nodeInfo nodeId="4434895596490172204" fileName="ChangesFoldingAreaPainter.java" startLine="289" startPosition="12" endLine="290" endPosition="66" />
+    <nodeInfo nodeId="8274502957383551392" fileName="ChangesFoldingAreaPainter.java" startLine="295" startPosition="20" endLine="296" endPosition="18" />
+    <nodeInfo nodeId="8274502957383551392" fileName="ChangesFoldingAreaPainter.java" startLine="297" startPosition="5" endLine="298" endPosition="30" />
+    <nodeInfo nodeId="6746101208730360012" fileName="ChangesFoldingAreaPainter.java" startLine="301" startPosition="29" endLine="302" endPosition="177" />
+    <nodeInfo nodeId="6746101208730360041" fileName="ChangesFoldingAreaPainter.java" startLine="302" startPosition="177" endLine="303" endPosition="24" />
+    <nodeInfo nodeId="6746101208730360045" fileName="ChangesFoldingAreaPainter.java" startLine="303" startPosition="24" endLine="304" endPosition="29" />
+    <nodeInfo nodeId="6746101208730360092" fileName="ChangesFoldingAreaPainter.java" startLine="306" startPosition="104" endLine="307" endPosition="67" />
+    <nodeInfo nodeId="6746101208730360075" fileName="ChangesFoldingAreaPainter.java" startLine="307" startPosition="67" endLine="308" endPosition="132" />
+    <nodeInfo nodeId="6746101208730360674" fileName="ChangesFoldingAreaPainter.java" startLine="308" startPosition="132" endLine="309" endPosition="67" />
+    <nodeInfo nodeId="6746101208730360087" fileName="ChangesFoldingAreaPainter.java" startLine="309" startPosition="67" endLine="310" endPosition="89" />
+    <nodeInfo nodeId="1488166530899637889" fileName="ChangesFoldingAreaPainter.java" startLine="312" startPosition="102" endLine="313" endPosition="86" />
+    <nodeInfo nodeId="6746101208730361686" fileName="ChangesFoldingAreaPainter.java" startLine="315" startPosition="9" endLine="316" endPosition="31" />
+    <nodeInfo nodeId="6746101208730364064" fileName="ChangesFoldingAreaPainter.java" startLine="320" startPosition="85" endLine="321" endPosition="24" />
+    <nodeInfo nodeId="6746101208730364072" fileName="ChangesFoldingAreaPainter.java" startLine="324" startPosition="23" endLine="325" endPosition="17" />
+    <nodeInfo nodeId="6746101208730364080" fileName="ChangesFoldingAreaPainter.java" startLine="328" startPosition="28" endLine="329" endPosition="22" />
+    <nodeInfo nodeId="3322868409858674647" fileName="ChangesFoldingAreaPainter.java" startLine="334" startPosition="87" endLine="335" endPosition="65" />
+    <nodeInfo nodeId="3322868409858674638" fileName="ChangesFoldingAreaPainter.java" startLine="337" startPosition="11" endLine="338" endPosition="30" />
+    <nodeInfo nodeId="3322868409858674668" fileName="ChangesFoldingAreaPainter.java" startLine="340" startPosition="87" endLine="341" endPosition="68" />
+    <nodeInfo nodeId="3322868409858674659" fileName="ChangesFoldingAreaPainter.java" startLine="343" startPosition="11" endLine="344" endPosition="33" />
+    <nodeInfo nodeId="3322868409858674680" fileName="ChangesFoldingAreaPainter.java" startLine="345" startPosition="14" endLine="346" endPosition="33" />
+    <nodeInfo nodeId="3322868409858674684" fileName="ChangesFoldingAreaPainter.java" startLine="351" startPosition="29" endLine="352" endPosition="46" />
+    <nodeInfo nodeId="2331005757591015011" fileName="ChangesFoldingAreaPainter.java" startLine="356" startPosition="59" endLine="357" endPosition="78" />
+    <nodeInfo nodeId="3322868409858689541" fileName="ChangesFoldingAreaPainter.java" startLine="358" startPosition="135" endLine="359" endPosition="90" />
+    <nodeInfo nodeId="3322868409858689530" fileName="ChangesFoldingAreaPainter.java" startLine="360" startPosition="53" endLine="361" endPosition="87" />
+    <nodeInfo nodeId="3322868409858689544" fileName="ChangesFoldingAreaPainter.java" startLine="362" startPosition="56" endLine="363" endPosition="90" />
+    <nodeInfo nodeId="3322868409858689547" fileName="ChangesFoldingAreaPainter.java" startLine="364" startPosition="58" endLine="365" endPosition="94" />
+    <nodeInfo nodeId="3322868409858689550" fileName="ChangesFoldingAreaPainter.java" startLine="366" startPosition="57" endLine="367" endPosition="95" />
+    <nodeInfo nodeId="2331005757591010198" fileName="ChangesFoldingAreaPainter.java" startLine="368" startPosition="9" endLine="369" endPosition="26" />
+    <nodeInfo nodeId="3322868409858674695" fileName="ChangesFoldingAreaPainter.java" startLine="370" startPosition="14" endLine="371" endPosition="60" />
+    <nodeInfo nodeId="3322868409858674709" fileName="ChangesFoldingAreaPainter.java" startLine="373" startPosition="19" endLine="374" endPosition="83" />
+    <nodeInfo nodeId="3322868409858674728" fileName="ChangesFoldingAreaPainter.java" startLine="375" startPosition="22" endLine="376" endPosition="85" />
+    <nodeInfo nodeId="8332220865210648784" fileName="ChangesFoldingAreaPainter.java" startLine="377" startPosition="18" endLine="378" endPosition="74" />
+    <nodeInfo nodeId="4434895596490172113" fileName="ChangesFoldingAreaPainter.java" startLine="384" startPosition="81" endLine="385" endPosition="20" />
+    <nodeInfo nodeId="4434895596490168996" fileName="ChangesFoldingAreaPainter.java" startLine="387" startPosition="107" endLine="388" endPosition="22" />
+    <nodeInfo nodeId="4434895596490172089" fileName="ChangesFoldingAreaPainter.java" startLine="388" startPosition="22" endLine="389" endPosition="67" />
+    <nodeInfo nodeId="4434895596490171979" fileName="ChangesFoldingAreaPainter.java" startLine="391" startPosition="87" endLine="392" endPosition="57" />
+    <nodeInfo nodeId="4434895596490172044" fileName="ChangesFoldingAreaPainter.java" startLine="396" startPosition="87" endLine="397" endPosition="41" />
+    <nodeInfo nodeId="4434895596490172096" fileName="ChangesFoldingAreaPainter.java" startLine="399" startPosition="10" endLine="400" endPosition="50" />
+    <nodeInfo nodeId="4434895596490172118" fileName="ChangesFoldingAreaPainter.java" startLine="400" startPosition="50" endLine="401" endPosition="89" />
+    <nodeInfo nodeId="4434895596490169006" fileName="ChangesFoldingAreaPainter.java" startLine="406" startPosition="29" endLine="407" endPosition="42" />
+    <nodeInfo nodeId="4434895596490172008" fileName="ChangesFoldingAreaPainter.java" startLine="411" startPosition="28" endLine="412" endPosition="52" />
+    <nodeInfo nodeId="4434895596490172134" fileName="ChangesFoldingAreaPainter.java" startLine="416" startPosition="23" endLine="417" endPosition="17" />
+    <nodeInfo nodeId="4957875527975081886" fileName="ChangesFoldingAreaPainter.java" startLine="421" startPosition="48" endLine="422" endPosition="42" />
+    <nodeInfo nodeId="4957875527975107841" fileName="ChangesFoldingAreaPainter.java" startLine="424" startPosition="26" endLine="425" endPosition="226" />
+    <nodeInfo nodeId="6531409938423387864" fileName="ChangesFoldingAreaPainter.java" startLine="425" startPosition="226" endLine="426" endPosition="63" />
+    <nodeInfo nodeId="6208564103581775273" fileName="ChangesFoldingAreaPainter.java" startLine="426" startPosition="63" endLine="427" endPosition="42" />
+    <nodeInfo nodeId="1039290607165159065" fileName="ChangesFoldingAreaPainter.java" startLine="427" startPosition="42" endLine="428" endPosition="61" />
+    <nodeInfo nodeId="4957875527975108834" fileName="ChangesFoldingAreaPainter.java" startLine="430" startPosition="70" endLine="431" endPosition="53" />
+    <nodeInfo nodeId="9173051028496930069" fileName="ChangesFoldingAreaPainter.java" startLine="434" startPosition="72" endLine="435" endPosition="39" />
+    <nodeInfo nodeId="6208564103581786115" fileName="ChangesFoldingAreaPainter.java" startLine="444" startPosition="52" endLine="445" endPosition="89" />
+    <nodeInfo nodeId="6208564103581788060" fileName="ChangesFoldingAreaPainter.java" startLine="445" startPosition="89" endLine="446" endPosition="24" />
+    <nodeInfo nodeId="6378762527268295125" fileName="ChangesFoldingAreaPainter.java" startLine="451" startPosition="24" endLine="452" endPosition="26" />
+    <nodeInfo nodeId="6378762527268296967" fileName="ChangesFoldingAreaPainter.java" startLine="452" startPosition="26" endLine="453" endPosition="69" />
+    <nodeInfo nodeId="6378762527268302492" fileName="ChangesFoldingAreaPainter.java" startLine="453" startPosition="69" endLine="454" endPosition="73" />
+    <nodeInfo nodeId="6378762527268296309" fileName="ChangesFoldingAreaPainter.java" startLine="455" startPosition="35" endLine="456" endPosition="88" />
+    <nodeInfo nodeId="7755015088410488384" fileName="ChangesFoldingAreaPainter.java" startLine="457" startPosition="9" endLine="458" endPosition="45" />
+    <nodeInfo nodeId="480390906262810853" fileName="ChangesFoldingAreaPainter.java" startLine="147" startPosition="16" endLine="149" endPosition="11" />
+    <nodeInfo nodeId="480390906262810870" fileName="ChangesFoldingAreaPainter.java" startLine="150" startPosition="14" endLine="152" endPosition="9" />
+    <nodeInfo nodeId="7429456937243135894" fileName="ChangesFoldingAreaPainter.java" startLine="183" startPosition="10" endLine="185" endPosition="5" />
+    <nodeInfo nodeId="1216620237029569878" fileName="ChangesFoldingAreaPainter.java" startLine="220" startPosition="10" endLine="222" endPosition="5" />
+    <nodeInfo nodeId="7755015088410487294" fileName="ChangesFoldingAreaPainter.java" startLine="261" startPosition="10" endLine="263" endPosition="5" />
+    <nodeInfo nodeId="4434895596490172202" fileName="ChangesFoldingAreaPainter.java" startLine="289" startPosition="10" endLine="291" endPosition="5" />
+    <nodeInfo nodeId="3322868409858674678" fileName="ChangesFoldingAreaPainter.java" startLine="345" startPosition="12" endLine="347" endPosition="7" />
+    <nodeInfo nodeId="3511475470456928963" fileName="ChangesFoldingAreaPainter.java" startLine="68" startPosition="54" endLine="71" endPosition="5" />
+    <nodeInfo nodeId="6923910471520920989" fileName="ChangesFoldingAreaPainter.java" startLine="72" startPosition="45" endLine="75" endPosition="5" />
+    <nodeInfo nodeId="6923910471520922801" fileName="ChangesFoldingAreaPainter.java" startLine="92" startPosition="44" endLine="95" endPosition="7" />
+    <nodeInfo nodeId="6923910471520923641" fileName="ChangesFoldingAreaPainter.java" startLine="95" startPosition="7" endLine="98" endPosition="7" />
+    <nodeInfo nodeId="2892955808309432840" fileName="ChangesFoldingAreaPainter.java" startLine="168" startPosition="5" endLine="171" endPosition="5" />
+    <nodeInfo nodeId="1992587573287146554" fileName="ChangesFoldingAreaPainter.java" startLine="188" startPosition="95" endLine="191" endPosition="5" />
+    <nodeInfo nodeId="7429456937243136233" fileName="ChangesFoldingAreaPainter.java" startLine="194" startPosition="44" endLine="197" endPosition="11" />
+    <nodeInfo nodeId="8909869386401300780" fileName="ChangesFoldingAreaPainter.java" startLine="210" startPosition="98" endLine="213" endPosition="5" />
+    <nodeInfo nodeId="8909869386401300757" fileName="ChangesFoldingAreaPainter.java" startLine="213" startPosition="5" endLine="216" endPosition="5" />
+    <nodeInfo nodeId="6208564103581780933" fileName="ChangesFoldingAreaPainter.java" startLine="222" startPosition="5" endLine="225" endPosition="5" />
+    <nodeInfo nodeId="8909869386401300737" fileName="ChangesFoldingAreaPainter.java" startLine="229" startPosition="45" endLine="232" endPosition="5" />
+    <nodeInfo nodeId="6208564103581782292" fileName="ChangesFoldingAreaPainter.java" startLine="234" startPosition="36" endLine="237" endPosition="5" />
+    <nodeInfo nodeId="7539796992259494955" fileName="ChangesFoldingAreaPainter.java" startLine="245" startPosition="86" endLine="248" endPosition="7" />
+    <nodeInfo nodeId="8274502957383551392" fileName="ChangesFoldingAreaPainter.java" startLine="294" startPosition="86" endLine="297" endPosition="5" />
+    <nodeInfo nodeId="9173051028496928516" fileName="ChangesFoldingAreaPainter.java" startLine="437" startPosition="0" endLine="440" endPosition="0" />
+    <nodeInfo nodeId="6378762527268302762" fileName="ChangesFoldingAreaPainter.java" startLine="454" startPosition="73" endLine="457" endPosition="9" />
+    <nodeInfo nodeId="9048291698849215501" fileName="ChangesFoldingAreaPainter.java" startLine="57" startPosition="0" endLine="61" endPosition="3" />
+    <nodeInfo nodeId="8274502957383614780" fileName="ChangesFoldingAreaPainter.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
+    <nodeInfo nodeId="2792704635247516036" fileName="ChangesFoldingAreaPainter.java" startLine="123" startPosition="34" endLine="127" endPosition="5" />
+    <nodeInfo nodeId="6746101208730361851" fileName="ChangesFoldingAreaPainter.java" startLine="134" startPosition="241" endLine="138" endPosition="0" />
+    <nodeInfo nodeId="1216620237029549073" fileName="ChangesFoldingAreaPainter.java" startLine="160" startPosition="69" endLine="164" endPosition="9" />
+    <nodeInfo nodeId="7429456937243135909" fileName="ChangesFoldingAreaPainter.java" startLine="178" startPosition="122" endLine="182" endPosition="0" />
+    <nodeInfo nodeId="7317795005505883205" fileName="ChangesFoldingAreaPainter.java" startLine="265" startPosition="0" endLine="269" endPosition="0" />
+    <nodeInfo nodeId="4434895596490172170" fileName="ChangesFoldingAreaPainter.java" startLine="283" startPosition="118" endLine="287" endPosition="0" />
+    <nodeInfo nodeId="1488166530899637887" fileName="ChangesFoldingAreaPainter.java" startLine="311" startPosition="150" endLine="315" endPosition="0" />
+    <nodeInfo nodeId="6746101208730364068" fileName="ChangesFoldingAreaPainter.java" startLine="323" startPosition="0" endLine="327" endPosition="0" />
+    <nodeInfo nodeId="6746101208730364076" fileName="ChangesFoldingAreaPainter.java" startLine="327" startPosition="0" endLine="331" endPosition="0" />
+    <nodeInfo nodeId="3322868409858674645" fileName="ChangesFoldingAreaPainter.java" startLine="333" startPosition="122" endLine="337" endPosition="0" />
+    <nodeInfo nodeId="3322868409858674666" fileName="ChangesFoldingAreaPainter.java" startLine="339" startPosition="129" endLine="343" endPosition="0" />
+    <nodeInfo nodeId="4434895596490169019" fileName="ChangesFoldingAreaPainter.java" startLine="390" startPosition="123" endLine="394" endPosition="0" />
+    <nodeInfo nodeId="4434895596490172040" fileName="ChangesFoldingAreaPainter.java" startLine="395" startPosition="197" endLine="399" endPosition="0" />
+    <nodeInfo nodeId="9173051028496928504" fileName="ChangesFoldingAreaPainter.java" startLine="429" startPosition="52" endLine="433" endPosition="0" />
+    <nodeInfo nodeId="9173051028496928510" fileName="ChangesFoldingAreaPainter.java" startLine="433" startPosition="0" endLine="437" endPosition="0" />
+    <nodeInfo nodeId="6208564103581785206" fileName="ChangesFoldingAreaPainter.java" startLine="443" startPosition="48" endLine="447" endPosition="7" />
+    <nodeInfo nodeId="8274502957383614839" fileName="ChangesFoldingAreaPainter.java" startLine="107" startPosition="0" endLine="112" endPosition="0" />
+    <nodeInfo nodeId="3511475470456930835" fileName="ChangesFoldingAreaPainter.java" startLine="112" startPosition="0" endLine="117" endPosition="0" />
+    <nodeInfo nodeId="6746101208730361840" fileName="ChangesFoldingAreaPainter.java" startLine="133" startPosition="65" endLine="138" endPosition="24" />
+    <nodeInfo nodeId="480390906262810836" fileName="ChangesFoldingAreaPainter.java" startLine="144" startPosition="25" endLine="149" endPosition="11" />
+    <nodeInfo nodeId="7429456937243135899" fileName="ChangesFoldingAreaPainter.java" startLine="177" startPosition="72" endLine="182" endPosition="9" />
+    <nodeInfo nodeId="7429456937243136226" fileName="ChangesFoldingAreaPainter.java" startLine="193" startPosition="47" endLine="198" endPosition="9" />
+    <nodeInfo nodeId="1216620237029569852" fileName="ChangesFoldingAreaPainter.java" startLine="217" startPosition="44" endLine="222" endPosition="5" />
+    <nodeInfo nodeId="5444017747357190850" fileName="ChangesFoldingAreaPainter.java" startLine="252" startPosition="0" endLine="257" endPosition="0" />
+    <nodeInfo nodeId="7755015088410487282" fileName="ChangesFoldingAreaPainter.java" startLine="258" startPosition="97" endLine="263" endPosition="5" />
+    <nodeInfo nodeId="6105081101195305210" fileName="ChangesFoldingAreaPainter.java" startLine="269" startPosition="0" endLine="274" endPosition="0" />
+    <nodeInfo nodeId="4745893119449660806" fileName="ChangesFoldingAreaPainter.java" startLine="274" startPosition="0" endLine="279" endPosition="0" />
+    <nodeInfo nodeId="6746101208730361663" fileName="ChangesFoldingAreaPainter.java" startLine="310" startPosition="89" endLine="315" endPosition="9" />
+    <nodeInfo nodeId="6746101208730364059" fileName="ChangesFoldingAreaPainter.java" startLine="318" startPosition="0" endLine="323" endPosition="0" />
+    <nodeInfo nodeId="531813502180011368" fileName="ChangesFoldingAreaPainter.java" startLine="349" startPosition="0" endLine="354" endPosition="0" />
+    <nodeInfo nodeId="4434895596490169011" fileName="ChangesFoldingAreaPainter.java" startLine="389" startPosition="67" endLine="394" endPosition="9" />
+    <nodeInfo nodeId="4434895596490172022" fileName="ChangesFoldingAreaPainter.java" startLine="394" startPosition="9" endLine="399" endPosition="10" />
+    <nodeInfo nodeId="4434895596490171987" fileName="ChangesFoldingAreaPainter.java" startLine="409" startPosition="0" endLine="414" endPosition="0" />
+    <nodeInfo nodeId="4434895596490171991" fileName="ChangesFoldingAreaPainter.java" startLine="414" startPosition="0" endLine="419" endPosition="0" />
+    <nodeInfo nodeId="1216620237029549045" fileName="ChangesFoldingAreaPainter.java" startLine="159" startPosition="72" endLine="165" endPosition="7" />
+    <nodeInfo nodeId="4434895596490168998" fileName="ChangesFoldingAreaPainter.java" startLine="403" startPosition="0" endLine="409" endPosition="0" />
+    <nodeInfo nodeId="8274502957383551392" fileName="ChangesFoldingAreaPainter.java" startLine="293" startPosition="0" endLine="300" endPosition="0" />
+    <nodeInfo nodeId="6208564103581783468" fileName="ChangesFoldingAreaPainter.java" startLine="442" startPosition="0" endLine="449" endPosition="0" />
+    <nodeInfo nodeId="7429456937243136224" fileName="ChangesFoldingAreaPainter.java" startLine="192" startPosition="108" endLine="200" endPosition="0" />
+    <nodeInfo nodeId="7473049078843270640" fileName="ChangesFoldingAreaPainter.java" startLine="242" startPosition="98" endLine="250" endPosition="5" />
+    <nodeInfo nodeId="6378762527268289355" fileName="ChangesFoldingAreaPainter.java" startLine="257" startPosition="0" endLine="265" endPosition="0" />
+    <nodeInfo nodeId="3322868409858674700" fileName="ChangesFoldingAreaPainter.java" startLine="371" startPosition="60" endLine="379" endPosition="9" />
+    <nodeInfo nodeId="480390906262810834" fileName="ChangesFoldingAreaPainter.java" startLine="143" startPosition="62" endLine="152" endPosition="9" />
+    <nodeInfo nodeId="7429456937243135882" fileName="ChangesFoldingAreaPainter.java" startLine="176" startPosition="70" endLine="185" endPosition="5" />
+    <nodeInfo nodeId="7429456937243136220" fileName="ChangesFoldingAreaPainter.java" startLine="191" startPosition="5" endLine="200" endPosition="6" />
+    <nodeInfo nodeId="4434895596490172164" fileName="ChangesFoldingAreaPainter.java" startLine="282" startPosition="65" endLine="291" endPosition="5" />
+    <nodeInfo nodeId="6378762527268295652" fileName="ChangesFoldingAreaPainter.java" startLine="450" startPosition="99" endLine="459" endPosition="7" />
+    <nodeInfo nodeId="2331005757591009641" fileName="ChangesFoldingAreaPainter.java" startLine="370" startPosition="12" endLine="380" endPosition="7" />
+    <nodeInfo nodeId="6746101208730363621" fileName="ChangesFoldingAreaPainter.java" startLine="157" startPosition="27" endLine="168" endPosition="5" />
+    <nodeInfo nodeId="2331005757591015009" fileName="ChangesFoldingAreaPainter.java" startLine="357" startPosition="78" endLine="368" endPosition="9" />
+    <nodeInfo nodeId="1216620237029569548" fileName="ChangesFoldingAreaPainter.java" startLine="227" startPosition="0" endLine="239" endPosition="0" />
+    <nodeInfo nodeId="6746101208730360067" fileName="ChangesFoldingAreaPainter.java" startLine="305" startPosition="0" endLine="317" endPosition="5" />
+    <nodeInfo nodeId="9173051028496844704" fileName="ChangesFoldingAreaPainter.java" startLine="428" startPosition="61" endLine="440" endPosition="9" />
+    <nodeInfo nodeId="6378762527268264724" fileName="ChangesFoldingAreaPainter.java" startLine="449" startPosition="0" endLine="461" endPosition="0" />
+    <nodeInfo nodeId="4434895596490172218" fileName="ChangesFoldingAreaPainter.java" startLine="78" startPosition="42" endLine="91" endPosition="7" />
+    <nodeInfo nodeId="2792704635247516007" fileName="ChangesFoldingAreaPainter.java" startLine="117" startPosition="0" endLine="130" endPosition="0" />
+    <nodeInfo nodeId="2310110763987865522" fileName="ChangesFoldingAreaPainter.java" startLine="239" startPosition="0" endLine="252" endPosition="0" />
+    <nodeInfo nodeId="480390906262810818" fileName="ChangesFoldingAreaPainter.java" startLine="140" startPosition="142" endLine="154" endPosition="0" />
+    <nodeInfo nodeId="7429456937243135759" fileName="ChangesFoldingAreaPainter.java" startLine="173" startPosition="0" endLine="187" endPosition="0" />
+    <nodeInfo nodeId="4434895596490172139" fileName="ChangesFoldingAreaPainter.java" startLine="279" startPosition="0" endLine="293" endPosition="0" />
+    <nodeInfo nodeId="480390906262810788" fileName="ChangesFoldingAreaPainter.java" startLine="139" startPosition="0" endLine="154" endPosition="30" />
+    <nodeInfo nodeId="3322868409858674636" fileName="ChangesFoldingAreaPainter.java" startLine="332" startPosition="46" endLine="347" endPosition="7" />
+    <nodeInfo nodeId="4434895596490127940" fileName="ChangesFoldingAreaPainter.java" startLine="386" startPosition="0" endLine="402" endPosition="5" />
+    <nodeInfo nodeId="3322868409858650847" fileName="ChangesFoldingAreaPainter.java" startLine="331" startPosition="0" endLine="349" endPosition="0" />
+    <nodeInfo nodeId="6208564103581772569" fileName="ChangesFoldingAreaPainter.java" startLine="423" startPosition="0" endLine="441" endPosition="5" />
+    <nodeInfo nodeId="7429456937243134093" fileName="ChangesFoldingAreaPainter.java" startLine="187" startPosition="0" endLine="207" endPosition="0" />
+    <nodeInfo nodeId="1216620237029569507" fileName="ChangesFoldingAreaPainter.java" startLine="207" startPosition="0" endLine="227" endPosition="0" />
+    <nodeInfo nodeId="2331005757591009627" fileName="ChangesFoldingAreaPainter.java" startLine="355" startPosition="36" endLine="380" endPosition="7" />
+    <nodeInfo nodeId="8332220865210648779" fileName="ChangesFoldingAreaPainter.java" startLine="354" startPosition="0" endLine="382" endPosition="0" />
+    <nodeInfo nodeId="6746101208730364039" fileName="ChangesFoldingAreaPainter.java" startLine="75" startPosition="5" endLine="105" endPosition="5" />
+    <nodeInfo nodeId="8274502957383614813" fileName="ChangesFoldingAreaPainter.java" startLine="66" startPosition="0" endLine="107" endPosition="0" />
+    <nodeInfo nodeId="6746101208730360003" fileName="ChangesFoldingAreaPainter.java" startLine="130" startPosition="0" endLine="173" endPosition="0" />
+    <scopeInfo nodeId="9173051028496928521" fileName="ChangesFoldingAreaPainter.java" startLine="438" startPosition="61" endLine="438" endPosition="61" />
+    <scopeInfo nodeId="8274502957383614783" fileName="ChangesFoldingAreaPainter.java" startLine="63" startPosition="26" endLine="64" endPosition="13" />
+    <scopeInfo nodeId="3511475470456928964" fileName="ChangesFoldingAreaPainter.java" startLine="69" startPosition="34" endLine="70" endPosition="26" />
+    <scopeInfo nodeId="6923910471520920990" fileName="ChangesFoldingAreaPainter.java" startLine="73" startPosition="80" endLine="74" endPosition="13" />
+    <scopeInfo nodeId="6923910471520922802" fileName="ChangesFoldingAreaPainter.java" startLine="93" startPosition="53" endLine="94" endPosition="17" />
+    <scopeInfo nodeId="6923910471520923642" fileName="ChangesFoldingAreaPainter.java" startLine="96" startPosition="49" endLine="97" endPosition="14" />
+    <scopeInfo nodeId="8274502957383614842" fileName="ChangesFoldingAreaPainter.java" startLine="109" startPosition="33" endLine="110" endPosition="22" />
+    <scopeInfo nodeId="3511475470456930838" fileName="ChangesFoldingAreaPainter.java" startLine="114" startPosition="26" endLine="115" endPosition="27" />
+    <scopeInfo nodeId="6746101208730361852" fileName="ChangesFoldingAreaPainter.java" startLine="135" startPosition="85" endLine="136" endPosition="50" />
+    <scopeInfo nodeId="480390906262810837" fileName="ChangesFoldingAreaPainter.java" startLine="145" startPosition="27" endLine="146" endPosition="39" />
+    <scopeInfo nodeId="480390906262810854" fileName="ChangesFoldingAreaPainter.java" startLine="147" startPosition="18" endLine="148" endPosition="29" />
+    <scopeInfo nodeId="480390906262810871" fileName="ChangesFoldingAreaPainter.java" startLine="150" startPosition="16" endLine="151" endPosition="27" />
+    <scopeInfo nodeId="2892955808309432841" fileName="ChangesFoldingAreaPainter.java" startLine="169" startPosition="67" endLine="170" endPosition="98" />
+    <scopeInfo nodeId="7429456937243135910" fileName="ChangesFoldingAreaPainter.java" startLine="179" startPosition="74" endLine="180" endPosition="81" />
+    <scopeInfo nodeId="7429456937243135895" fileName="ChangesFoldingAreaPainter.java" startLine="183" startPosition="12" endLine="184" endPosition="18" />
+    <scopeInfo nodeId="1992587573287146555" fileName="ChangesFoldingAreaPainter.java" startLine="189" startPosition="41" endLine="190" endPosition="13" />
+    <scopeInfo nodeId="7429456937243136240" fileName="ChangesFoldingAreaPainter.java" startLine="195" startPosition="139" endLine="196" endPosition="48" />
+    <scopeInfo nodeId="8909869386401300781" fileName="ChangesFoldingAreaPainter.java" startLine="211" startPosition="31" endLine="212" endPosition="22" />
+    <scopeInfo nodeId="8909869386401300758" fileName="ChangesFoldingAreaPainter.java" startLine="214" startPosition="51" endLine="215" endPosition="13" />
+    <scopeInfo nodeId="1216620237029569853" fileName="ChangesFoldingAreaPainter.java" startLine="218" startPosition="31" endLine="219" endPosition="85" />
+    <scopeInfo nodeId="1216620237029569879" fileName="ChangesFoldingAreaPainter.java" startLine="220" startPosition="12" endLine="221" endPosition="43" />
+    <scopeInfo nodeId="6208564103581780934" fileName="ChangesFoldingAreaPainter.java" startLine="223" startPosition="37" endLine="224" endPosition="43" />
+    <scopeInfo nodeId="8909869386401300738" fileName="ChangesFoldingAreaPainter.java" startLine="230" startPosition="43" endLine="231" endPosition="13" />
+    <scopeInfo nodeId="6208564103581782293" fileName="ChangesFoldingAreaPainter.java" startLine="235" startPosition="37" endLine="236" endPosition="35" />
+    <scopeInfo nodeId="7539796992259494956" fileName="ChangesFoldingAreaPainter.java" startLine="246" startPosition="25" endLine="247" endPosition="51" />
+    <scopeInfo nodeId="5444017747357190854" fileName="ChangesFoldingAreaPainter.java" startLine="254" startPosition="74" endLine="255" endPosition="27" />
+    <scopeInfo nodeId="7755015088410487283" fileName="ChangesFoldingAreaPainter.java" startLine="259" startPosition="34" endLine="260" endPosition="52" />
+    <scopeInfo nodeId="7755015088410487295" fileName="ChangesFoldingAreaPainter.java" startLine="261" startPosition="12" endLine="262" endPosition="43" />
+    <scopeInfo nodeId="7317795005505883208" fileName="ChangesFoldingAreaPainter.java" startLine="266" startPosition="37" endLine="267" endPosition="34" />
+    <scopeInfo nodeId="6105081101195305213" fileName="ChangesFoldingAreaPainter.java" startLine="271" startPosition="74" endLine="272" endPosition="33" />
+    <scopeInfo nodeId="4745893119449660809" fileName="ChangesFoldingAreaPainter.java" startLine="276" startPosition="34" endLine="277" endPosition="53" />
+    <scopeInfo nodeId="4434895596490172171" fileName="ChangesFoldingAreaPainter.java" startLine="284" startPosition="85" endLine="285" endPosition="55" />
+    <scopeInfo nodeId="4434895596490172166" fileName="ChangesFoldingAreaPainter.java" startLine="287" startPosition="9" endLine="288" endPosition="70" />
+    <scopeInfo nodeId="4434895596490172203" fileName="ChangesFoldingAreaPainter.java" startLine="289" startPosition="12" endLine="290" endPosition="66" />
+    <scopeInfo nodeId="8274502957383551392" fileName="ChangesFoldingAreaPainter.java" startLine="295" startPosition="20" endLine="296" endPosition="18" />
+    <scopeInfo nodeId="1488166530899637888" fileName="ChangesFoldingAreaPainter.java" startLine="312" startPosition="102" endLine="313" endPosition="86" />
+    <scopeInfo nodeId="6746101208730364063" fileName="ChangesFoldingAreaPainter.java" startLine="320" startPosition="85" endLine="321" endPosition="24" />
+    <scopeInfo nodeId="6746101208730364071" fileName="ChangesFoldingAreaPainter.java" startLine="324" startPosition="23" endLine="325" endPosition="17" />
+    <scopeInfo nodeId="6746101208730364079" fileName="ChangesFoldingAreaPainter.java" startLine="328" startPosition="28" endLine="329" endPosition="22" />
+    <scopeInfo nodeId="3322868409858674646" fileName="ChangesFoldingAreaPainter.java" startLine="334" startPosition="87" endLine="335" endPosition="65" />
+    <scopeInfo nodeId="3322868409858674637" fileName="ChangesFoldingAreaPainter.java" startLine="337" startPosition="11" endLine="338" endPosition="30" />
+    <scopeInfo nodeId="3322868409858674667" fileName="ChangesFoldingAreaPainter.java" startLine="340" startPosition="87" endLine="341" endPosition="68" />
+    <scopeInfo nodeId="3322868409858674658" fileName="ChangesFoldingAreaPainter.java" startLine="343" startPosition="11" endLine="344" endPosition="33" />
+    <scopeInfo nodeId="3322868409858674679" fileName="ChangesFoldingAreaPainter.java" startLine="345" startPosition="14" endLine="346" endPosition="33" />
+    <scopeInfo nodeId="531813502180011371" fileName="ChangesFoldingAreaPainter.java" startLine="351" startPosition="29" endLine="352" endPosition="46" />
+    <scopeInfo nodeId="2331005757591015010" fileName="ChangesFoldingAreaPainter.java" startLine="358" startPosition="135" endLine="359" endPosition="90" />
+    <scopeInfo nodeId="3322868409858674738" fileName="ChangesFoldingAreaPainter.java" startLine="360" startPosition="53" endLine="361" endPosition="87" />
+    <scopeInfo nodeId="3322868409858675906" fileName="ChangesFoldingAreaPainter.java" startLine="362" startPosition="56" endLine="363" endPosition="90" />
+    <scopeInfo nodeId="3322868409858675951" fileName="ChangesFoldingAreaPainter.java" startLine="364" startPosition="58" endLine="365" endPosition="94" />
+    <scopeInfo nodeId="3322868409858675986" fileName="ChangesFoldingAreaPainter.java" startLine="366" startPosition="57" endLine="367" endPosition="95" />
+    <scopeInfo nodeId="3322868409858674706" fileName="ChangesFoldingAreaPainter.java" startLine="373" startPosition="19" endLine="374" endPosition="83" />
+    <scopeInfo nodeId="3322868409858674724" fileName="ChangesFoldingAreaPainter.java" startLine="375" startPosition="22" endLine="376" endPosition="85" />
+    <scopeInfo nodeId="3322868409858674702" fileName="ChangesFoldingAreaPainter.java" startLine="377" startPosition="18" endLine="378" endPosition="74" />
+    <scopeInfo nodeId="4434895596490169020" fileName="ChangesFoldingAreaPainter.java" startLine="391" startPosition="87" endLine="392" endPosition="57" />
+    <scopeInfo nodeId="4434895596490172041" fileName="ChangesFoldingAreaPainter.java" startLine="396" startPosition="87" endLine="397" endPosition="41" />
+    <scopeInfo nodeId="4434895596490169002" fileName="ChangesFoldingAreaPainter.java" startLine="406" startPosition="29" endLine="407" endPosition="42" />
+    <scopeInfo nodeId="4434895596490171990" fileName="ChangesFoldingAreaPainter.java" startLine="411" startPosition="28" endLine="412" endPosition="52" />
+    <scopeInfo nodeId="4434895596490171994" fileName="ChangesFoldingAreaPainter.java" startLine="416" startPosition="23" endLine="417" endPosition="17" />
+    <scopeInfo nodeId="9173051028496928509" fileName="ChangesFoldingAreaPainter.java" startLine="430" startPosition="70" endLine="431" endPosition="53" />
+    <scopeInfo nodeId="9173051028496928515" fileName="ChangesFoldingAreaPainter.java" startLine="434" startPosition="72" endLine="435" endPosition="39" />
+    <scopeInfo nodeId="6378762527268302763" fileName="ChangesFoldingAreaPainter.java" startLine="455" startPosition="35" endLine="456" endPosition="88" />
+    <scopeInfo nodeId="9048291698849215505" fileName="ChangesFoldingAreaPainter.java" startLine="58" startPosition="112" endLine="60" endPosition="74" />
+    <scopeInfo nodeId="2792704635247516037" fileName="ChangesFoldingAreaPainter.java" startLine="124" startPosition="56" endLine="126" endPosition="17" />
+    <scopeInfo nodeId="1216620237029549074" fileName="ChangesFoldingAreaPainter.java" startLine="161" startPosition="49" endLine="163" endPosition="62" />
+    <scopeInfo nodeId="6208564103581785208" fileName="ChangesFoldingAreaPainter.java" startLine="444" startPosition="52" endLine="446" endPosition="24" />
+    <scopeInfo nodeId="7429456937243136232" fileName="ChangesFoldingAreaPainter.java" startLine="194" startPosition="44" endLine="197" endPosition="11" />
+    <scopeInfo nodeId="7429456937243136233" fileName="ChangesFoldingAreaPainter.java" startLine="194" startPosition="44" endLine="197" endPosition="11" />
+    <scopeInfo nodeId="9173051028496928516" fileName="ChangesFoldingAreaPainter.java" startLine="437" startPosition="0" endLine="440" endPosition="0">
       <varInfo nodeId="9173051028496928519" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="9048291698849215501" fileName="ChangesFoldingAreaPainter.java" startLine="56" startPosition="0" endLine="60" endPosition="3">
+    <scopeInfo nodeId="9048291698849215501" fileName="ChangesFoldingAreaPainter.java" startLine="57" startPosition="0" endLine="61" endPosition="3">
       <varInfo nodeId="9048291698849215511" varName="editorComponentChangesHighligher" />
     </scopeInfo>
-    <scopeInfo nodeId="8274502957383614780" fileName="ChangesFoldingAreaPainter.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="6746101208730361851" fileName="ChangesFoldingAreaPainter.java" startLine="133" startPosition="241" endLine="137" endPosition="0" />
-    <scopeInfo nodeId="1216620237029549046" fileName="ChangesFoldingAreaPainter.java" startLine="159" startPosition="69" endLine="163" endPosition="9" />
-    <scopeInfo nodeId="7429456937243135909" fileName="ChangesFoldingAreaPainter.java" startLine="177" startPosition="122" endLine="181" endPosition="0" />
-    <scopeInfo nodeId="1216620237029569553" fileName="ChangesFoldingAreaPainter.java" startLine="221" startPosition="45" endLine="225" endPosition="5" />
-    <scopeInfo nodeId="7317795005505883205" fileName="ChangesFoldingAreaPainter.java" startLine="253" startPosition="0" endLine="257" endPosition="0" />
-    <scopeInfo nodeId="4434895596490172170" fileName="ChangesFoldingAreaPainter.java" startLine="271" startPosition="118" endLine="275" endPosition="0" />
-    <scopeInfo nodeId="8274502957383551392" fileName="ChangesFoldingAreaPainter.java" startLine="282" startPosition="86" endLine="286" endPosition="30" />
-    <scopeInfo nodeId="1488166530899637887" fileName="ChangesFoldingAreaPainter.java" startLine="299" startPosition="150" endLine="303" endPosition="0" />
-    <scopeInfo nodeId="6746101208730364068" fileName="ChangesFoldingAreaPainter.java" startLine="311" startPosition="0" endLine="315" endPosition="0" />
-    <scopeInfo nodeId="6746101208730364076" fileName="ChangesFoldingAreaPainter.java" startLine="315" startPosition="0" endLine="319" endPosition="0" />
-    <scopeInfo nodeId="3322868409858674645" fileName="ChangesFoldingAreaPainter.java" startLine="321" startPosition="122" endLine="325" endPosition="0" />
-    <scopeInfo nodeId="3322868409858674666" fileName="ChangesFoldingAreaPainter.java" startLine="327" startPosition="129" endLine="331" endPosition="0" />
-    <scopeInfo nodeId="4434895596490169019" fileName="ChangesFoldingAreaPainter.java" startLine="378" startPosition="123" endLine="382" endPosition="0" />
-    <scopeInfo nodeId="4434895596490172040" fileName="ChangesFoldingAreaPainter.java" startLine="383" startPosition="197" endLine="387" endPosition="0" />
-    <scopeInfo nodeId="9173051028496928504" fileName="ChangesFoldingAreaPainter.java" startLine="417" startPosition="52" endLine="421" endPosition="0">
+    <scopeInfo nodeId="8274502957383614780" fileName="ChangesFoldingAreaPainter.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="6746101208730361851" fileName="ChangesFoldingAreaPainter.java" startLine="134" startPosition="241" endLine="138" endPosition="0" />
+    <scopeInfo nodeId="1216620237029549046" fileName="ChangesFoldingAreaPainter.java" startLine="160" startPosition="69" endLine="164" endPosition="9" />
+    <scopeInfo nodeId="7429456937243135909" fileName="ChangesFoldingAreaPainter.java" startLine="178" startPosition="122" endLine="182" endPosition="0" />
+    <scopeInfo nodeId="7317795005505883205" fileName="ChangesFoldingAreaPainter.java" startLine="265" startPosition="0" endLine="269" endPosition="0" />
+    <scopeInfo nodeId="4434895596490172170" fileName="ChangesFoldingAreaPainter.java" startLine="283" startPosition="118" endLine="287" endPosition="0" />
+    <scopeInfo nodeId="8274502957383551392" fileName="ChangesFoldingAreaPainter.java" startLine="294" startPosition="86" endLine="298" endPosition="30" />
+    <scopeInfo nodeId="1488166530899637887" fileName="ChangesFoldingAreaPainter.java" startLine="311" startPosition="150" endLine="315" endPosition="0" />
+    <scopeInfo nodeId="6746101208730364068" fileName="ChangesFoldingAreaPainter.java" startLine="323" startPosition="0" endLine="327" endPosition="0" />
+    <scopeInfo nodeId="6746101208730364076" fileName="ChangesFoldingAreaPainter.java" startLine="327" startPosition="0" endLine="331" endPosition="0" />
+    <scopeInfo nodeId="3322868409858674645" fileName="ChangesFoldingAreaPainter.java" startLine="333" startPosition="122" endLine="337" endPosition="0" />
+    <scopeInfo nodeId="3322868409858674666" fileName="ChangesFoldingAreaPainter.java" startLine="339" startPosition="129" endLine="343" endPosition="0" />
+    <scopeInfo nodeId="4434895596490169019" fileName="ChangesFoldingAreaPainter.java" startLine="390" startPosition="123" endLine="394" endPosition="0" />
+    <scopeInfo nodeId="4434895596490172040" fileName="ChangesFoldingAreaPainter.java" startLine="395" startPosition="197" endLine="399" endPosition="0" />
+    <scopeInfo nodeId="9173051028496928504" fileName="ChangesFoldingAreaPainter.java" startLine="429" startPosition="52" endLine="433" endPosition="0">
       <varInfo nodeId="9173051028496928507" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="9173051028496928510" fileName="ChangesFoldingAreaPainter.java" startLine="421" startPosition="0" endLine="425" endPosition="0">
+    <scopeInfo nodeId="9173051028496928510" fileName="ChangesFoldingAreaPainter.java" startLine="433" startPosition="0" endLine="437" endPosition="0">
       <varInfo nodeId="9173051028496928513" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="6208564103581783471" fileName="ChangesFoldingAreaPainter.java" startLine="431" startPosition="48" endLine="435" endPosition="7" />
-    <scopeInfo nodeId="8274502957383614839" fileName="ChangesFoldingAreaPainter.java" startLine="106" startPosition="0" endLine="111" endPosition="0" />
-    <scopeInfo nodeId="3511475470456930835" fileName="ChangesFoldingAreaPainter.java" startLine="111" startPosition="0" endLine="116" endPosition="0" />
-    <scopeInfo nodeId="480390906262810835" fileName="ChangesFoldingAreaPainter.java" startLine="143" startPosition="25" endLine="148" endPosition="11" />
-    <scopeInfo nodeId="7429456937243135883" fileName="ChangesFoldingAreaPainter.java" startLine="176" startPosition="72" endLine="181" endPosition="9" />
-    <scopeInfo nodeId="7429456937243136225" fileName="ChangesFoldingAreaPainter.java" startLine="192" startPosition="47" endLine="197" endPosition="9" />
-    <scopeInfo nodeId="5444017747357190850" fileName="ChangesFoldingAreaPainter.java" startLine="240" startPosition="0" endLine="245" endPosition="0" />
-    <scopeInfo nodeId="6378762527268289358" fileName="ChangesFoldingAreaPainter.java" startLine="246" startPosition="97" endLine="251" endPosition="5" />
-    <scopeInfo nodeId="6105081101195305210" fileName="ChangesFoldingAreaPainter.java" startLine="257" startPosition="0" endLine="262" endPosition="0" />
-    <scopeInfo nodeId="4745893119449660806" fileName="ChangesFoldingAreaPainter.java" startLine="262" startPosition="0" endLine="267" endPosition="0" />
-    <scopeInfo nodeId="6746101208730364059" fileName="ChangesFoldingAreaPainter.java" startLine="306" startPosition="0" endLine="311" endPosition="0" />
-    <scopeInfo nodeId="531813502180011368" fileName="ChangesFoldingAreaPainter.java" startLine="337" startPosition="0" endLine="342" endPosition="0" />
-    <scopeInfo nodeId="4434895596490171987" fileName="ChangesFoldingAreaPainter.java" startLine="397" startPosition="0" endLine="402" endPosition="0" />
-    <scopeInfo nodeId="4434895596490171991" fileName="ChangesFoldingAreaPainter.java" startLine="402" startPosition="0" endLine="407" endPosition="0" />
-    <scopeInfo nodeId="7473049078843270641" fileName="ChangesFoldingAreaPainter.java" startLine="231" startPosition="31" endLine="237" endPosition="38">
+    <scopeInfo nodeId="6208564103581783471" fileName="ChangesFoldingAreaPainter.java" startLine="443" startPosition="48" endLine="447" endPosition="7" />
+    <scopeInfo nodeId="8274502957383614839" fileName="ChangesFoldingAreaPainter.java" startLine="107" startPosition="0" endLine="112" endPosition="0" />
+    <scopeInfo nodeId="3511475470456930835" fileName="ChangesFoldingAreaPainter.java" startLine="112" startPosition="0" endLine="117" endPosition="0" />
+    <scopeInfo nodeId="480390906262810835" fileName="ChangesFoldingAreaPainter.java" startLine="144" startPosition="25" endLine="149" endPosition="11" />
+    <scopeInfo nodeId="7429456937243135883" fileName="ChangesFoldingAreaPainter.java" startLine="177" startPosition="72" endLine="182" endPosition="9" />
+    <scopeInfo nodeId="7429456937243136225" fileName="ChangesFoldingAreaPainter.java" startLine="193" startPosition="47" endLine="198" endPosition="9" />
+    <scopeInfo nodeId="5444017747357190850" fileName="ChangesFoldingAreaPainter.java" startLine="252" startPosition="0" endLine="257" endPosition="0" />
+    <scopeInfo nodeId="6378762527268289358" fileName="ChangesFoldingAreaPainter.java" startLine="258" startPosition="97" endLine="263" endPosition="5" />
+    <scopeInfo nodeId="6105081101195305210" fileName="ChangesFoldingAreaPainter.java" startLine="269" startPosition="0" endLine="274" endPosition="0" />
+    <scopeInfo nodeId="4745893119449660806" fileName="ChangesFoldingAreaPainter.java" startLine="274" startPosition="0" endLine="279" endPosition="0" />
+    <scopeInfo nodeId="6746101208730364059" fileName="ChangesFoldingAreaPainter.java" startLine="318" startPosition="0" endLine="323" endPosition="0" />
+    <scopeInfo nodeId="531813502180011368" fileName="ChangesFoldingAreaPainter.java" startLine="349" startPosition="0" endLine="354" endPosition="0" />
+    <scopeInfo nodeId="4434895596490171987" fileName="ChangesFoldingAreaPainter.java" startLine="409" startPosition="0" endLine="414" endPosition="0" />
+    <scopeInfo nodeId="4434895596490171991" fileName="ChangesFoldingAreaPainter.java" startLine="414" startPosition="0" endLine="419" endPosition="0" />
+    <scopeInfo nodeId="7473049078843270641" fileName="ChangesFoldingAreaPainter.java" startLine="243" startPosition="31" endLine="249" endPosition="38">
       <varInfo nodeId="7539796992259356333" varName="cell" />
     </scopeInfo>
-    <scopeInfo nodeId="4434895596490168998" fileName="ChangesFoldingAreaPainter.java" startLine="391" startPosition="0" endLine="397" endPosition="0" />
-    <scopeInfo nodeId="8274502957383551392" fileName="ChangesFoldingAreaPainter.java" startLine="281" startPosition="0" endLine="288" endPosition="0" />
-    <scopeInfo nodeId="6208564103581783468" fileName="ChangesFoldingAreaPainter.java" startLine="430" startPosition="0" endLine="437" endPosition="0">
+    <scopeInfo nodeId="4434895596490168998" fileName="ChangesFoldingAreaPainter.java" startLine="403" startPosition="0" endLine="409" endPosition="0" />
+    <scopeInfo nodeId="8274502957383551392" fileName="ChangesFoldingAreaPainter.java" startLine="293" startPosition="0" endLine="300" endPosition="0" />
+    <scopeInfo nodeId="6208564103581783468" fileName="ChangesFoldingAreaPainter.java" startLine="442" startPosition="0" endLine="449" endPosition="0">
       <varInfo nodeId="6208564103581783921" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="6378762527268295653" fileName="ChangesFoldingAreaPainter.java" startLine="439" startPosition="24" endLine="446" endPosition="45">
+    <scopeInfo nodeId="6378762527268295653" fileName="ChangesFoldingAreaPainter.java" startLine="451" startPosition="24" endLine="458" endPosition="45">
       <varInfo nodeId="6378762527268296968" varName="leftHighlighter" />
       <varInfo nodeId="6378762527268302493" varName="selectedCell" />
     </scopeInfo>
-    <scopeInfo nodeId="7429456937243136224" fileName="ChangesFoldingAreaPainter.java" startLine="191" startPosition="108" endLine="199" endPosition="0" />
-    <scopeInfo nodeId="1216620237029569548" fileName="ChangesFoldingAreaPainter.java" startLine="219" startPosition="0" endLine="227" endPosition="0">
-      <varInfo nodeId="1216620237029569551" varName="event" />
-    </scopeInfo>
-    <scopeInfo nodeId="6378762527268289355" fileName="ChangesFoldingAreaPainter.java" startLine="245" startPosition="0" endLine="253" endPosition="0">
+    <scopeInfo nodeId="7429456937243136224" fileName="ChangesFoldingAreaPainter.java" startLine="192" startPosition="108" endLine="200" endPosition="0" />
+    <scopeInfo nodeId="1216620237029569553" fileName="ChangesFoldingAreaPainter.java" startLine="229" startPosition="45" endLine="237" endPosition="5" />
+    <scopeInfo nodeId="6378762527268289355" fileName="ChangesFoldingAreaPainter.java" startLine="257" startPosition="0" endLine="265" endPosition="0">
       <varInfo nodeId="3821603290882626779" varName="messageGroup" />
     </scopeInfo>
-    <scopeInfo nodeId="6746101208730363624" fileName="ChangesFoldingAreaPainter.java" startLine="157" startPosition="115" endLine="166" endPosition="64">
+    <scopeInfo nodeId="6746101208730363624" fileName="ChangesFoldingAreaPainter.java" startLine="158" startPosition="115" endLine="167" endPosition="64">
       <varInfo nodeId="3176852462137033862" varName="cellBounds" />
     </scopeInfo>
-    <scopeInfo nodeId="1216620237029569512" fileName="ChangesFoldingAreaPainter.java" startLine="208" startPosition="44" endLine="217" endPosition="5">
-      <varInfo nodeId="7429456937243136039" varName="messageGroup" />
-    </scopeInfo>
-    <scopeInfo nodeId="2310110763987865527" fileName="ChangesFoldingAreaPainter.java" startLine="229" startPosition="46" endLine="238" endPosition="5">
+    <scopeInfo nodeId="2310110763987865527" fileName="ChangesFoldingAreaPainter.java" startLine="241" startPosition="46" endLine="250" endPosition="5">
       <varInfo nodeId="5444017747356995492" varName="messageGroup" />
     </scopeInfo>
-    <scopeInfo nodeId="2331005757591009642" fileName="ChangesFoldingAreaPainter.java" startLine="358" startPosition="14" endLine="367" endPosition="9">
+    <scopeInfo nodeId="2331005757591009642" fileName="ChangesFoldingAreaPainter.java" startLine="370" startPosition="14" endLine="379" endPosition="9">
       <varInfo nodeId="3322868409858674696" varName="unitedChangeType" />
     </scopeInfo>
-    <scopeInfo nodeId="6378762527268264727" fileName="ChangesFoldingAreaPainter.java" startLine="438" startPosition="99" endLine="447" endPosition="7" />
-    <scopeInfo nodeId="2792704635247516010" fileName="ChangesFoldingAreaPainter.java" startLine="117" startPosition="151" endLine="127" endPosition="46">
+    <scopeInfo nodeId="6378762527268264727" fileName="ChangesFoldingAreaPainter.java" startLine="450" startPosition="99" endLine="459" endPosition="7" />
+    <scopeInfo nodeId="2792704635247516010" fileName="ChangesFoldingAreaPainter.java" startLine="118" startPosition="151" endLine="128" endPosition="46">
       <varInfo nodeId="2792704635247522101" varName="height" />
       <varInfo nodeId="2792704635247522090" varName="width" />
       <varInfo nodeId="2792704635247516029" varName="cell" />
       <varInfo nodeId="2792704635247520989" varName="y" />
       <varInfo nodeId="2792704635247522079" varName="x" />
     </scopeInfo>
-    <scopeInfo nodeId="7429456937243135762" fileName="ChangesFoldingAreaPainter.java" startLine="174" startPosition="96" endLine="184" endPosition="5">
+    <scopeInfo nodeId="7429456937243135762" fileName="ChangesFoldingAreaPainter.java" startLine="175" startPosition="96" endLine="185" endPosition="5">
       <varInfo nodeId="7429456937243135809" varName="localX" />
     </scopeInfo>
-    <scopeInfo nodeId="4434895596490172142" fileName="ChangesFoldingAreaPainter.java" startLine="269" startPosition="146" endLine="279" endPosition="5">
+    <scopeInfo nodeId="4434895596490172142" fileName="ChangesFoldingAreaPainter.java" startLine="281" startPosition="146" endLine="291" endPosition="5">
       <varInfo nodeId="4434895596490172181" varName="editorComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="6746101208730360071" fileName="ChangesFoldingAreaPainter.java" startLine="294" startPosition="104" endLine="304" endPosition="31">
+    <scopeInfo nodeId="6746101208730360071" fileName="ChangesFoldingAreaPainter.java" startLine="306" startPosition="104" endLine="316" endPosition="31">
       <varInfo nodeId="6746101208730361664" varName="bottomY" />
       <varInfo nodeId="6746101208730360675" varName="editorComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="4434895596490172219" fileName="ChangesFoldingAreaPainter.java" startLine="78" startPosition="79" endLine="89" endPosition="17">
+    <scopeInfo nodeId="4434895596490172219" fileName="ChangesFoldingAreaPainter.java" startLine="79" startPosition="79" endLine="90" endPosition="17">
       <varInfo nodeId="6589571255109292396" varName="xPoints" />
       <varInfo nodeId="2792704635247506867" varName="g2d" />
       <varInfo nodeId="2792704635247511609" varName="oldAntialiasing" />
       <varInfo nodeId="6589571255109292411" varName="yPoints" />
     </scopeInfo>
-    <scopeInfo nodeId="480390906262810819" fileName="ChangesFoldingAreaPainter.java" startLine="140" startPosition="144" endLine="151" endPosition="9">
+    <scopeInfo nodeId="480390906262810819" fileName="ChangesFoldingAreaPainter.java" startLine="141" startPosition="144" endLine="152" endPosition="9">
       <varInfo nodeId="2792704635247522128" varName="b" />
       <varInfo nodeId="2792704635247522121" varName="a" />
     </scopeInfo>
-    <scopeInfo nodeId="6746101208730363621" fileName="ChangesFoldingAreaPainter.java" startLine="156" startPosition="27" endLine="167" endPosition="5" />
-    <scopeInfo nodeId="6746101208730360067" fileName="ChangesFoldingAreaPainter.java" startLine="293" startPosition="0" endLine="305" endPosition="5">
+    <scopeInfo nodeId="6746101208730363621" fileName="ChangesFoldingAreaPainter.java" startLine="157" startPosition="27" endLine="168" endPosition="5" />
+    <scopeInfo nodeId="1216620237029569548" fileName="ChangesFoldingAreaPainter.java" startLine="227" startPosition="0" endLine="239" endPosition="0">
+      <varInfo nodeId="1216620237029569551" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="6746101208730360067" fileName="ChangesFoldingAreaPainter.java" startLine="305" startPosition="0" endLine="317" endPosition="5">
       <varInfo nodeId="6746101208730360072" varName="messages" />
     </scopeInfo>
-    <scopeInfo nodeId="6378762527268264724" fileName="ChangesFoldingAreaPainter.java" startLine="437" startPosition="0" endLine="449" endPosition="0">
+    <scopeInfo nodeId="6378762527268264724" fileName="ChangesFoldingAreaPainter.java" startLine="449" startPosition="0" endLine="461" endPosition="0">
       <varInfo nodeId="7755015088410487296" varName="messageGroup" />
     </scopeInfo>
-    <scopeInfo nodeId="2792704635247516007" fileName="ChangesFoldingAreaPainter.java" startLine="116" startPosition="0" endLine="129" endPosition="0">
+    <scopeInfo nodeId="2792704635247516007" fileName="ChangesFoldingAreaPainter.java" startLine="117" startPosition="0" endLine="130" endPosition="0">
       <varInfo nodeId="2792704635247516013" varName="message" />
       <varInfo nodeId="2792704635247516015" varName="editorComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="1216620237029569507" fileName="ChangesFoldingAreaPainter.java" startLine="206" startPosition="0" endLine="219" endPosition="0">
-      <varInfo nodeId="1216620237029569510" varName="event" />
-    </scopeInfo>
-    <scopeInfo nodeId="2310110763987865522" fileName="ChangesFoldingAreaPainter.java" startLine="227" startPosition="0" endLine="240" endPosition="0">
+    <scopeInfo nodeId="2310110763987865522" fileName="ChangesFoldingAreaPainter.java" startLine="239" startPosition="0" endLine="252" endPosition="0">
       <varInfo nodeId="2310110763987865525" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="2331005757591009628" fileName="ChangesFoldingAreaPainter.java" startLine="344" startPosition="59" endLine="357" endPosition="26">
+    <scopeInfo nodeId="2331005757591009628" fileName="ChangesFoldingAreaPainter.java" startLine="356" startPosition="59" endLine="369" endPosition="26">
       <varInfo nodeId="2331005757591015012" varName="change" />
     </scopeInfo>
-    <scopeInfo nodeId="480390906262810818" fileName="ChangesFoldingAreaPainter.java" startLine="139" startPosition="142" endLine="153" endPosition="0" />
-    <scopeInfo nodeId="7429456937243135759" fileName="ChangesFoldingAreaPainter.java" startLine="172" startPosition="0" endLine="186" endPosition="0">
+    <scopeInfo nodeId="480390906262810818" fileName="ChangesFoldingAreaPainter.java" startLine="140" startPosition="142" endLine="154" endPosition="0" />
+    <scopeInfo nodeId="7429456937243135759" fileName="ChangesFoldingAreaPainter.java" startLine="173" startPosition="0" endLine="187" endPosition="0">
       <varInfo nodeId="7429456937243135804" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="4434895596490172139" fileName="ChangesFoldingAreaPainter.java" startLine="267" startPosition="0" endLine="281" endPosition="0">
+    <scopeInfo nodeId="4434895596490172139" fileName="ChangesFoldingAreaPainter.java" startLine="279" startPosition="0" endLine="293" endPosition="0">
       <varInfo nodeId="4434895596490172145" varName="messages" />
     </scopeInfo>
-    <scopeInfo nodeId="4434895596490127943" fileName="ChangesFoldingAreaPainter.java" startLine="375" startPosition="107" endLine="389" endPosition="89">
+    <scopeInfo nodeId="4434895596490127943" fileName="ChangesFoldingAreaPainter.java" startLine="387" startPosition="107" endLine="401" endPosition="89">
       <varInfo nodeId="4434895596490172025" varName="ys" />
       <varInfo nodeId="4434895596490172090" varName="editorComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="3322868409858650850" fileName="ChangesFoldingAreaPainter.java" startLine="320" startPosition="46" endLine="335" endPosition="7" />
-    <scopeInfo nodeId="4434895596490127940" fileName="ChangesFoldingAreaPainter.java" startLine="374" startPosition="0" endLine="390" endPosition="5">
+    <scopeInfo nodeId="3322868409858650850" fileName="ChangesFoldingAreaPainter.java" startLine="332" startPosition="46" endLine="347" endPosition="7" />
+    <scopeInfo nodeId="1216620237029569512" fileName="ChangesFoldingAreaPainter.java" startLine="209" startPosition="44" endLine="225" endPosition="5">
+      <varInfo nodeId="7429456937243136039" varName="messageGroup" />
+    </scopeInfo>
+    <scopeInfo nodeId="4434895596490127940" fileName="ChangesFoldingAreaPainter.java" startLine="386" startPosition="0" endLine="402" endPosition="5">
       <varInfo nodeId="4434895596490168853" varName="messages" />
     </scopeInfo>
-    <scopeInfo nodeId="6208564103581772572" fileName="ChangesFoldingAreaPainter.java" startLine="412" startPosition="26" endLine="428" endPosition="9" />
-    <scopeInfo nodeId="7429456937243134096" fileName="ChangesFoldingAreaPainter.java" startLine="187" startPosition="95" endLine="204" endPosition="116">
+    <scopeInfo nodeId="6208564103581772572" fileName="ChangesFoldingAreaPainter.java" startLine="424" startPosition="26" endLine="440" endPosition="9" />
+    <scopeInfo nodeId="7429456937243134096" fileName="ChangesFoldingAreaPainter.java" startLine="188" startPosition="95" endLine="205" endPosition="116">
       <varInfo nodeId="7429456937243136221" varName="setHighlighted" />
     </scopeInfo>
-    <scopeInfo nodeId="3322868409858650847" fileName="ChangesFoldingAreaPainter.java" startLine="319" startPosition="0" endLine="337" endPosition="0" />
-    <scopeInfo nodeId="6208564103581772569" fileName="ChangesFoldingAreaPainter.java" startLine="411" startPosition="0" endLine="429" endPosition="5" />
-    <scopeInfo nodeId="7429456937243134093" fileName="ChangesFoldingAreaPainter.java" startLine="186" startPosition="0" endLine="206" endPosition="0">
+    <scopeInfo nodeId="3322868409858650847" fileName="ChangesFoldingAreaPainter.java" startLine="331" startPosition="0" endLine="349" endPosition="0" />
+    <scopeInfo nodeId="6208564103581772569" fileName="ChangesFoldingAreaPainter.java" startLine="423" startPosition="0" endLine="441" endPosition="5" />
+    <scopeInfo nodeId="7429456937243134093" fileName="ChangesFoldingAreaPainter.java" startLine="187" startPosition="0" endLine="207" endPosition="0">
       <varInfo nodeId="7429456937243134135" varName="group" />
     </scopeInfo>
-    <scopeInfo nodeId="8332220865210648782" fileName="ChangesFoldingAreaPainter.java" startLine="343" startPosition="36" endLine="368" endPosition="7" />
-    <scopeInfo nodeId="6746101208730364042" fileName="ChangesFoldingAreaPainter.java" startLine="75" startPosition="104" endLine="103" endPosition="58">
+    <scopeInfo nodeId="1216620237029569507" fileName="ChangesFoldingAreaPainter.java" startLine="207" startPosition="0" endLine="227" endPosition="0">
+      <varInfo nodeId="1216620237029569510" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="8332220865210648782" fileName="ChangesFoldingAreaPainter.java" startLine="355" startPosition="36" endLine="380" endPosition="7" />
+    <scopeInfo nodeId="6746101208730364042" fileName="ChangesFoldingAreaPainter.java" startLine="76" startPosition="104" endLine="104" endPosition="58">
       <varInfo nodeId="9213787164325786216" varName="height" />
       <varInfo nodeId="9213787164325786207" varName="y" />
     </scopeInfo>
-    <scopeInfo nodeId="8332220865210648779" fileName="ChangesFoldingAreaPainter.java" startLine="342" startPosition="0" endLine="370" endPosition="0" />
-    <scopeInfo nodeId="6746101208730364039" fileName="ChangesFoldingAreaPainter.java" startLine="74" startPosition="5" endLine="104" endPosition="5" />
-    <scopeInfo nodeId="8274502957383614818" fileName="ChangesFoldingAreaPainter.java" startLine="67" startPosition="54" endLine="104" endPosition="5">
+    <scopeInfo nodeId="8332220865210648779" fileName="ChangesFoldingAreaPainter.java" startLine="354" startPosition="0" endLine="382" endPosition="0" />
+    <scopeInfo nodeId="6746101208730364039" fileName="ChangesFoldingAreaPainter.java" startLine="75" startPosition="5" endLine="105" endPosition="5" />
+    <scopeInfo nodeId="8274502957383614818" fileName="ChangesFoldingAreaPainter.java" startLine="68" startPosition="54" endLine="105" endPosition="5">
       <varInfo nodeId="6923910471520917317" varName="clipBounds" />
     </scopeInfo>
-    <scopeInfo nodeId="6746101208730360006" fileName="ChangesFoldingAreaPainter.java" startLine="130" startPosition="36" endLine="170" endPosition="5">
+    <scopeInfo nodeId="6746101208730360006" fileName="ChangesFoldingAreaPainter.java" startLine="131" startPosition="36" endLine="171" endPosition="5">
       <varInfo nodeId="3176852462137033808" varName="currentMaxY" />
       <varInfo nodeId="6746101208730363612" varName="currentGroupMessages" />
       <varInfo nodeId="6746101208730361841" varName="messagesWithCells" />
       <varInfo nodeId="6746101208730361713" varName="editorComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="8274502957383614813" fileName="ChangesFoldingAreaPainter.java" startLine="65" startPosition="0" endLine="106" endPosition="0">
+    <scopeInfo nodeId="8274502957383614813" fileName="ChangesFoldingAreaPainter.java" startLine="66" startPosition="0" endLine="107" endPosition="0">
       <varInfo nodeId="8274502957383614816" varName="g" />
     </scopeInfo>
-    <scopeInfo nodeId="6746101208730360003" fileName="ChangesFoldingAreaPainter.java" startLine="129" startPosition="0" endLine="172" endPosition="0" />
-    <unitInfo nodeId="6746101208730361851" fileName="ChangesFoldingAreaPainter.java" startLine="133" startPosition="171" endLine="137" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$1" />
-    <unitInfo nodeId="7429456937243135909" fileName="ChangesFoldingAreaPainter.java" startLine="177" startPosition="66" endLine="181" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$3" />
-    <unitInfo nodeId="4434895596490172170" fileName="ChangesFoldingAreaPainter.java" startLine="271" startPosition="48" endLine="275" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$5" />
-    <unitInfo nodeId="1488166530899637887" fileName="ChangesFoldingAreaPainter.java" startLine="299" startPosition="68" endLine="303" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$1" />
-    <unitInfo nodeId="3322868409858674645" fileName="ChangesFoldingAreaPainter.java" startLine="321" startPosition="52" endLine="325" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$2" />
-    <unitInfo nodeId="3322868409858674666" fileName="ChangesFoldingAreaPainter.java" startLine="327" startPosition="59" endLine="331" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$3" />
-    <unitInfo nodeId="4434895596490169019" fileName="ChangesFoldingAreaPainter.java" startLine="378" startPosition="53" endLine="382" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$1" />
-    <unitInfo nodeId="4434895596490172040" fileName="ChangesFoldingAreaPainter.java" startLine="383" startPosition="121" endLine="387" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$2" />
-    <unitInfo nodeId="7429456937243136224" fileName="ChangesFoldingAreaPainter.java" startLine="191" startPosition="69" endLine="199" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$4" />
-    <unitInfo nodeId="9173051028496928502" fileName="ChangesFoldingAreaPainter.java" startLine="417" startPosition="31" endLine="428" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$1" />
-    <unitInfo nodeId="480390906262810818" fileName="ChangesFoldingAreaPainter.java" startLine="139" startPosition="74" endLine="153" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$2" />
-    <unitInfo nodeId="4434895596490127938" fileName="ChangesFoldingAreaPainter.java" startLine="372" startPosition="0" endLine="408" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$ThinMessageGroup" />
-    <unitInfo nodeId="6208564103581772567" fileName="ChangesFoldingAreaPainter.java" startLine="409" startPosition="0" endLine="450" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$MyPopupMenu" />
-    <unitInfo nodeId="6746101208730359979" fileName="ChangesFoldingAreaPainter.java" startLine="289" startPosition="0" endLine="371" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$MessageGroup" />
-    <unitInfo nodeId="8274502957383551392" fileName="ChangesFoldingAreaPainter.java" startLine="47" startPosition="0" endLine="451" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter" />
+    <scopeInfo nodeId="6746101208730360003" fileName="ChangesFoldingAreaPainter.java" startLine="130" startPosition="0" endLine="173" endPosition="0" />
+    <unitInfo nodeId="6746101208730361851" fileName="ChangesFoldingAreaPainter.java" startLine="134" startPosition="171" endLine="138" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$1" />
+    <unitInfo nodeId="7429456937243135909" fileName="ChangesFoldingAreaPainter.java" startLine="178" startPosition="66" endLine="182" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$3" />
+    <unitInfo nodeId="4434895596490172170" fileName="ChangesFoldingAreaPainter.java" startLine="283" startPosition="48" endLine="287" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$5" />
+    <unitInfo nodeId="1488166530899637887" fileName="ChangesFoldingAreaPainter.java" startLine="311" startPosition="68" endLine="315" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$1" />
+    <unitInfo nodeId="3322868409858674645" fileName="ChangesFoldingAreaPainter.java" startLine="333" startPosition="52" endLine="337" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$2" />
+    <unitInfo nodeId="3322868409858674666" fileName="ChangesFoldingAreaPainter.java" startLine="339" startPosition="59" endLine="343" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$3" />
+    <unitInfo nodeId="4434895596490169019" fileName="ChangesFoldingAreaPainter.java" startLine="390" startPosition="53" endLine="394" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$1" />
+    <unitInfo nodeId="4434895596490172040" fileName="ChangesFoldingAreaPainter.java" startLine="395" startPosition="121" endLine="399" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$2" />
+    <unitInfo nodeId="7429456937243136224" fileName="ChangesFoldingAreaPainter.java" startLine="192" startPosition="69" endLine="200" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$4" />
+    <unitInfo nodeId="9173051028496928502" fileName="ChangesFoldingAreaPainter.java" startLine="429" startPosition="31" endLine="440" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$1" />
+    <unitInfo nodeId="480390906262810818" fileName="ChangesFoldingAreaPainter.java" startLine="140" startPosition="74" endLine="154" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$2" />
+    <unitInfo nodeId="4434895596490127938" fileName="ChangesFoldingAreaPainter.java" startLine="384" startPosition="0" endLine="420" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$ThinMessageGroup" />
+    <unitInfo nodeId="6208564103581772567" fileName="ChangesFoldingAreaPainter.java" startLine="421" startPosition="0" endLine="462" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$MyPopupMenu" />
+    <unitInfo nodeId="6746101208730359979" fileName="ChangesFoldingAreaPainter.java" startLine="301" startPosition="0" endLine="383" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter$MessageGroup" />
+    <unitInfo nodeId="8274502957383551392" fileName="ChangesFoldingAreaPainter.java" startLine="47" startPosition="0" endLine="463" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.ChangesFoldingAreaPainter" />
   </root>
 </debugInfo>
 
