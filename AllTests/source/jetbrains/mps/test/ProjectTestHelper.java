@@ -191,21 +191,10 @@ public class ProjectTestHelper {
 
     initLibs();
     makeAll();
+    reloadAll();
 
     GenerationSettings.getInstance().setParallelGenerator(false);
     GenerationSettings.getInstance().setStrictMode(false);  
-  }
-
-  private MPSProject createDummyProject() {
-    com.intellij.openapi.project.Project ideaProject = ProjectManager.getInstance().getDefaultProject();
-
-    File projectFile = FileUtil.createTmpFile();
-    final MPSProject project = new MPSProject(ideaProject);
-    project.init(projectFile, new ProjectDescriptor());
-
-    projectFile.deleteOnExit();
-
-    return project;
   }
 
   private void makeAll() {
@@ -218,6 +207,15 @@ public class ProjectTestHelper {
         ModuleMaker maker = new ModuleMaker();
         maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), indicator);
 
+        ClassLoaderManager.getInstance().reloadAll(indicator);
+      }
+    });
+  }
+
+  private void reloadAll() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        EmptyProgressIndicator indicator = new EmptyProgressIndicator();
         ClassLoaderManager.getInstance().reloadAll(indicator);
       }
     });

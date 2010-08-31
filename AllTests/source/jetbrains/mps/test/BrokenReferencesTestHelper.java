@@ -98,6 +98,10 @@ public class BrokenReferencesTestHelper {
     for (IModule mod: collectFromModuleFiles(files)) {
       extractModels(models, mod);
     }
+
+    // ???
+    reloadAll();
+
     return checkModels(models);
   }
 
@@ -274,6 +278,7 @@ public class BrokenReferencesTestHelper {
     initLibs();
     makeAll();
 
+
     com.intellij.openapi.project.Project ideaProject = ProjectManager.getInstance().getDefaultProject();
     File projectFile = FileUtil.createTmpFile();
     this.project = new MPSProject(ideaProject);
@@ -290,6 +295,15 @@ public class BrokenReferencesTestHelper {
         ModuleMaker maker = new ModuleMaker();
         maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), indicator);
 
+        ClassLoaderManager.getInstance().reloadAll(indicator);
+      }
+    });
+  }
+
+  private void reloadAll() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        EmptyProgressIndicator indicator = new EmptyProgressIndicator();
         ClassLoaderManager.getInstance().reloadAll(indicator);
       }
     });
