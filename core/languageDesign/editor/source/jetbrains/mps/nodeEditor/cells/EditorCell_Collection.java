@@ -61,7 +61,8 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     }
   };
 
-  private List<EditorCell> myFoldedCells;
+  private List<EditorCell> myFoldedCellCollection;
+  private EditorCell myFoldedCell;
 
   protected CellLayout myCellLayout;
   private AbstractCellListHandler myCellListHandler;
@@ -134,11 +135,19 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   }
 
   @NotNull
-  private List<EditorCell> getFoldedCells() {
-    if (!myCanBeFolded) {
+  private List<EditorCell> getFoldedCellCollection() {
+    if (!hasFoldedCell()) {
       return Collections.emptyList();
     }
-    if (myFoldedCells == null) {
+    if (myFoldedCellCollection == null) {
+      myFoldedCellCollection = Collections.singletonList(getFoldedCell());
+    }
+    return myFoldedCellCollection;
+  }
+
+  private EditorCell getFoldedCell() {
+    assert hasFoldedCell();
+    if (myFoldedCell == null) {
       EditorCell_Constant foldedCell = new EditorCell_Constant(getEditorContext(), getSNode(), FOLDED_TEXT);
       Style style = foldedCell.getStyle();
       style.set(StyleAttributes.FONT_STYLE, Font.BOLD);
@@ -147,28 +156,25 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
       style.set(StyleAttributes.SELECTABLE, Boolean.FALSE);
       setFoldedCell(foldedCell);
     }
-    return myFoldedCells;
-  }
-
-  private EditorCell getFoldedCell() {
-    assert myCanBeFolded;
-    return getFoldedCells().get(0);
+    return myFoldedCell;
   }
 
   public void setFoldedCell(EditorCell foldedCell) {
-    if (myFoldedCells != null) {
-      assert myFoldedCells.size() == 1;
-      EditorCell oldFoldedCell = myFoldedCells.get(0);
-      ((EditorCell_Basic) oldFoldedCell).setParent(null);
-      getStyle().remove(oldFoldedCell.getStyle());
+    if (myFoldedCell != null) {
+      ((EditorCell_Basic) myFoldedCell).setParent(null);
+      getStyle().remove(myFoldedCell.getStyle());
     }
-    ((EditorCell_Basic) foldedCell).setParent(this);
-    getStyle().add(foldedCell.getStyle());
-    myFoldedCells = Collections.singletonList(foldedCell);
+    myFoldedCell = foldedCell;
+    ((EditorCell_Basic) myFoldedCell).setParent(this);
+    getStyle().add(myFoldedCell.getStyle());
+  }
+
+  private boolean hasFoldedCell() {
+    return myCanBeFolded;
   }
 
   private List<EditorCell> getVisibleChildCells() {
-    return isFolded() ? getFoldedCells() : getEditorCells();
+    return isFolded() ? getFoldedCellCollection() : getEditorCells();
   }
 
   public int getChildCount() {
@@ -639,8 +645,8 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     for (EditorCell myEditorCell : getEditorCells()) {
       myEditorCell.synchronizeViewWithModel();
     }
-    for (EditorCell foldedCell : getFoldedCells()) {
-      foldedCell.synchronizeViewWithModel();
+    if (hasFoldedCell()) {
+      getFoldedCell().synchronizeViewWithModel();
     }
   }
 
@@ -766,8 +772,8 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     for (EditorCell child : getEditorCells()) {
       ((EditorCell_Basic) child).onAdd();
     }
-    for (EditorCell foldedCell : getFoldedCells()) {
-      ((EditorCell_Basic) foldedCell).onAdd();
+    if (hasFoldedCell()) {
+      ((EditorCell_Basic) getFoldedCell()).onAdd();
     }
     if (myLastCellSelectionListener != null) {
       getEditor().addCellSelectionListener(myLastCellSelectionListener);
@@ -789,8 +795,8 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     for (EditorCell child : getEditorCells()) {
       ((EditorCell_Basic) child).onRemove();
     }
-    for (EditorCell foldedCell : getFoldedCells()) {
-      ((EditorCell_Basic) foldedCell).onRemove();
+    if (hasFoldedCell()) {
+      ((EditorCell_Basic) getFoldedCell()).onRemove();
     }
     super.onRemove();
   }
