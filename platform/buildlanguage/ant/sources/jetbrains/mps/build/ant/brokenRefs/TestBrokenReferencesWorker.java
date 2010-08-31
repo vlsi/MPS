@@ -76,6 +76,8 @@ public class TestBrokenReferencesWorker extends MpsWorker {
     ObjectsToProcess go = new ObjectsToProcess();
     collectModelsToGenerate(go);
 
+    reload();
+
     executeTask(project, go);
 
     dispose();
