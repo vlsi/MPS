@@ -153,6 +153,7 @@ public abstract class MpsWorker {
     setMacro();
     loadLibraries();
     make();
+    reload();
   }
 
   protected void make() {
@@ -164,7 +165,14 @@ public abstract class MpsWorker {
 
         ModuleMaker maker = new ModuleMaker();
         maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), indicator);
+      }
+    });
+  }
 
+  protected void reload() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        EmptyProgressIndicator indicator = new EmptyProgressIndicator();
         ClassLoaderManager.getInstance().reloadAll(indicator);
       }
     });
