@@ -16,8 +16,7 @@
 package jetbrains.mps.nodeEditor.cellMenu;
 
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.IdeMain.TestMode;
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.*;
@@ -127,7 +126,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     if (myChooserActivated != b) {
       if (b) {
         myEditorComponent.pushKeyboardHandler(this);
-        if (!(IdeMain.getTestMode() == TestMode.CORE_TEST)) {
+        if (!(MPSCore.getInstance().isTestMode())) {
           getPatternEditor().activate(getEditorWindow(), myPatternEditorLocation, myPatternEditorSize);
           myNodeSubstituteInfo.invalidateActions();
           rebuildMenuEntries();
@@ -143,7 +142,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
         }
         myPopupActivated = true;
       } else {
-        if (!(IdeMain.getTestMode() == TestMode.CORE_TEST)) {
+        if (!(MPSCore.getInstance().isTestMode())) {
           getPopupWindow().setVisible(false);
           getPatternEditor().done();
           getPopupWindow().setRelativeCell(null);
@@ -393,7 +392,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     if (getPatternEditor().processKeyTyped(keyEvent)) {
       if (myPopupActivated) {
         rebuildMenuEntries();
-        if (!(IdeMain.getTestMode() == TestMode.CORE_TEST)) {
+        if (!MPSCore.getInstance().isTestMode()) {
           relayoutPopupMenu();
         }
         tryToApplyIntelligentInput();

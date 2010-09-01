@@ -19,14 +19,12 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.WindowManager;
-
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder;
 import jetbrains.mps.baseLanguage.findUsages.ClassUsages_Finder;
 import jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder;
 import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.Classifier;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
@@ -35,11 +33,10 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethods
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FrameUtil;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
@@ -61,7 +58,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   }
 
   public void projectOpened() {
-    if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
+    if (MPSCore.getInstance().isTestMode()) return;
 
     new Thread() {
       public void run() {
@@ -77,7 +74,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   }
 
   public void projectClosed() {
-    if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
+    if (MPSCore.getInstance().isTestMode()) return;
 
     new Thread() {
       @Override

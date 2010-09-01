@@ -24,9 +24,8 @@ import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.ShutDownTracker;
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.cleanup.CleanupManager;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.Highlighter;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
@@ -176,7 +175,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent,
         MPSModuleRepository.getInstance().removeUnusedModules();
         SModelRepository.getInstance().removeUnusedDescriptors();
         if (reloadAll) {
-          boolean standardMode = IdeMain.getTestMode() == TestMode.NO_TEST;
+          boolean standardMode = !MPSCore.getInstance().isTestMode();
           if (standardMode){
             ClassLoaderManager.getInstance().unloadAll(new EmptyProgressIndicator());
           } else{
@@ -190,7 +189,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent,
 
     //todo hack
     if (myProject != null) {
-      if (IdeMain.getTestMode() == TestMode.CORE_TEST) {
+      if (MPSCore.getInstance().isTestMode()) {
         ProjectUtil.closeProject(myProject);
       }
     }

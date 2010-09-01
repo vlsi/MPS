@@ -15,13 +15,12 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.command.CommandProcessor;
-import com.intellij.openapi.command.CommandAdapter;
-import com.intellij.openapi.command.CommandEvent;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.util.Computable;
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
@@ -34,9 +33,9 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelListener;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.workbench.highlighter.EditorsProvider;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -151,7 +150,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   }
 
   public void addChecker(IEditorChecker checker) {
-    if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
+    if (MPSCore.getInstance().isTestMode()) return;
 
     if (checker != null) {
       synchronized (CHECKERS_LOCK) {
@@ -161,7 +160,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   }
 
   public void removeChecker(IEditorChecker checker) {
-    if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
+    if (MPSCore.getInstance().isTestMode()) return;
 
     if (checker != null) {
       synchronized (CHECKERS_LOCK) {

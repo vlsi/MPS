@@ -22,8 +22,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManagerAdapter;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.ui.Messages;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.IdeMain.TestMode;
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
@@ -66,7 +65,7 @@ public class ProjectSaveChecker implements ProjectComponent{
     @Override
     
     public boolean canCloseProject(Project project) {
-      if (IdeMain.getTestMode() == TestMode.CORE_TEST) return true;
+      if (MPSCore.getInstance().isTestMode()) return true;
 
       if (myIgnoredSaving) {
         myIgnoredSaving = false;

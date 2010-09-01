@@ -15,35 +15,22 @@
  */
 package jetbrains.mps.build;
 
+import com.intellij.openapi.application.ApplicationInfo;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
-import com.intellij.openapi.application.ApplicationInfo;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ModalityState;
+import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.util.BuildNumber;
 import com.intellij.openapi.util.io.FileUtil;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.ProgressIndicator;
-import com.intellij.openapi.progress.Task.Modal;
-import com.intellij.openapi.ui.Messages;
 import com.intellij.util.io.ZipUtil;
-import com.intellij.util.messages.MessageBusConnection;
-import com.intellij.util.messages.MessageBus;
-import com.intellij.ide.AppLifecycleListener;
-import com.intellij.ide.AppLifecycleListener.Adapter;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.IdeMain.TestMode;
-import jetbrains.mps.samples.SamplesInfo;
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.build.SamplesExtractor.MyState;
-import jetbrains.mps.util.PathManager;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.library.LibraryManager;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.samples.SamplesInfo;
+import jetbrains.mps.util.PathManager;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.io.IOException;
@@ -85,7 +72,7 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
     }
     updateSamplesLocation();
 
-    if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
+    if (MPSCore.getInstance().isTestMode()) return;
 
     checkSamplesAndUpdateIfNeeded();
   }

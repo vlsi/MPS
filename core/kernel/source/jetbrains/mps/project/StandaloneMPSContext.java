@@ -18,16 +18,15 @@ package jetbrains.mps.project;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.WindowManager;
-
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.IdeMain.TestMode;
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.smodel.IOperationContext;
 
 import java.awt.Frame;
 
 public abstract class StandaloneMPSContext implements IOperationContext {
+
   public boolean isTestMode() {
-    return IdeMain.getTestMode() == TestMode.CORE_TEST;
+    return MPSCore.getInstance().isTestMode();
   }
 
   public <T> T getComponent(Class<T> clazz) {

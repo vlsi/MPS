@@ -13,7 +13,7 @@ import com.intellij.openapi.options.ConfigurationException;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -57,7 +57,7 @@ public class AntRunnerPreferences_PreferencesComponent extends BaseProjectPrefsC
     if (AntRunnerPreferences_PreferencesComponent.this.getStateObject().data == null) {
       AntRunnerPreferences_PreferencesComponent.this.getStateObject().data = MapSequence.fromMap(new HashMap<String, String>());
     }
-    if (IdeMain.getTestMode() == IdeMain.TestMode.CORE_TEST) {
+    if (MPSCore.getInstance().isTestMode()) {
       return;
     }
     for (Solution sln : ListSequence.fromList(project.getProjectSolutions())) {

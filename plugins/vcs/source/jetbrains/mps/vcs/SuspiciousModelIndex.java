@@ -24,11 +24,12 @@ import com.intellij.openapi.project.ProjectManagerListener;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.vcs.AbstractVcsHelper;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
-import com.intellij.openapi.vcs.impl.ProjectLevelVcsManagerImpl.IBackgroundVcsOperationsListener;
 import com.intellij.openapi.vcs.impl.ProjectLevelVcsManagerImpl;
+import com.intellij.openapi.vcs.impl.ProjectLevelVcsManagerImpl.IBackgroundVcsOperationsListener;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.VirtualFileManagerListener;
 import com.intellij.openapi.vfs.VirtualFileManager;
+import com.intellij.openapi.vfs.VirtualFileManagerListener;
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
@@ -38,8 +39,6 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.watching.ModelChangesWatcher;
 import jetbrains.mps.watching.ModelChangesWatcher.IReloadListener;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.IdeMain.TestMode;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -108,7 +107,7 @@ public class SuspiciousModelIndex implements ApplicationComponent {
     myTaskQueue.invokeLater(new ConflictableModelAdapter(model, isInConflict));
   }
 
-    public void addModule(AbstractModule abstractModule, boolean inConflict) {
+  public void addModule(AbstractModule abstractModule, boolean inConflict) {
     myTaskQueue.invokeLater(new ConflictableModuleAdapter(abstractModule, inConflict));
   }
 
@@ -119,7 +118,7 @@ public class SuspiciousModelIndex implements ApplicationComponent {
   }
 
   public void initComponent() {
-    if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
+    if (MPSCore.getInstance().isTestMode()) return;
 
     myProjectManager.addProjectManagerListener(myProjectManagerListener);
     myWatcher.addReloadListener(myReloadListener);
@@ -127,7 +126,7 @@ public class SuspiciousModelIndex implements ApplicationComponent {
   }
 
   public void disposeComponent() {
-    if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
+    if (MPSCore.getInstance().isTestMode()) return;
 
     myProjectManager.removeProjectManagerListener(myProjectManagerListener);
     myWatcher.removeReloadListener(myReloadListener);

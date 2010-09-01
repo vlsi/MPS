@@ -15,16 +15,14 @@
  */
 package jetbrains.mps.nodeEditor.cellMenu;
 
-import jetbrains.mps.nodeEditor.cells.TextLine;
+import com.intellij.util.ui.UIUtil;
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.IdeMain.TestMode;
+import jetbrains.mps.nodeEditor.cells.TextLine;
 
 import javax.swing.JWindow;
 import java.awt.*;
 import java.awt.event.KeyEvent;
-
-import com.intellij.util.ui.UIUtil;
 
 /**
  * Author: Sergey Dmitriev.
@@ -105,6 +103,7 @@ public class NodeSubstitutePatternEditor {
   }
 
   // ------------------
+
   public void activate(Window owner, Point location, Dimension size) {
     if (!myEditorActivated) {
       myEditorActivated = true;
@@ -113,7 +112,7 @@ public class NodeSubstitutePatternEditor {
       myEditorWindow.setMinimalSize(size);
       myEditorWindow.myTextLine.setText(myCachedText);
       myEditorWindow.myTextLine.setCaretPosition(myCachedCaretPosition);
-      if (!(IdeMain.getTestMode() == TestMode.CORE_TEST)) {
+      if (!(MPSCore.getInstance().isTestMode())) {
         myEditorWindow.relayout();
         myEditorWindow.setVisible(true);
       }

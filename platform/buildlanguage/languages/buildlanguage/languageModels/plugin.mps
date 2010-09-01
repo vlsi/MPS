@@ -645,7 +645,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c7(jetbrains.mps.buildlanguage.plugin)" version="0" />
   <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
   <languageAspect modelUID="r:550fbd90-c9f2-4576-a8a6-223eca16d68b(jetbrains.mps.baseLanguage.runConfigurations.structure)" version="0" />
-  <maxImportIndex value="62" />
+  <maxImportIndex value="63" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" />
   <import index="21" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="22" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -676,6 +676,7 @@
   <import index="60" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
   <import index="61" modelUID="f:java_stub#jetbrains.mps.generator.fileGenerator(jetbrains.mps.generator.fileGenerator@java_stub)" version="-1" />
   <import index="62" modelUID="r:82f15792-6966-47aa-8004-b293ab2bcfd2(jetbrains.mps.lang.plugin.run)" version="-1" />
+  <import index="63" modelUID="f:java_stub#jetbrains.mps(jetbrains.mps@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1225567253971">
     <property name="name:3" value="BuildScriptRunner" />
     <property name="package:3" value="runner" />
@@ -3909,18 +3910,17 @@
             </node>
           </node>
         </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1240833723624">
-          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1240833723625">
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1240833723626" />
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="8873802432863232818">
+          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8873802432863232819">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="8873802432863233344" />
           </node>
-          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="1240833723627">
-            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1240833723628">
-              <link role="classConcept:3" targetNodeId="44.~IdeMain" resolveInfo="IdeMain" />
-              <link role="baseMethodDeclaration:3" targetNodeId="44.~IdeMain.getTestMode():jetbrains.mps.ide.IdeMain$TestMode" resolveInfo="getTestMode" />
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8873802432863233339">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8873802432863233338">
+              <link role="baseMethodDeclaration:3" targetNodeId="63.~MPSCore.getInstance():jetbrains.mps.MPSCore" resolveInfo="getInstance" />
+              <link role="classConcept:3" targetNodeId="63.~MPSCore" resolveInfo="MPSCore" />
             </node>
-            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="1240833723629">
-              <link role="enumClass:3" targetNodeId="44.~IdeMain$TestMode" resolveInfo="IdeMain.TestMode" />
-              <link role="enumConstantDeclaration:3" targetNodeId="44.~IdeMain$TestMode.CORE_TEST" resolveInfo="CORE_TEST" />
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8873802432863233343">
+              <link role="baseMethodDeclaration:3" targetNodeId="63.~MPSCore.isTestMode():boolean" resolveInfo="isTestMode" />
             </node>
           </node>
         </node>

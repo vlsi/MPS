@@ -18,12 +18,13 @@ package jetbrains.mps.smodel.persistence.def;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.util.text.CharArrayUtil;
 import com.intellij.util.text.CharSequenceReader;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.IdeMain.TestMode;
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.persistence.PersistenceSettings;
 import jetbrains.mps.smodel.persistence.def.v0.ModelReader0;
 import jetbrains.mps.smodel.persistence.def.v1.ModelReader1;
@@ -157,7 +158,7 @@ public class ModelPersistence {
   }
 
   private static boolean needsUpgrade(int modelPersistenceVersion) {
-    if (IdeMain.getTestMode() != TestMode.NO_TEST) {
+    if (MPSCore.getInstance().isTestMode()) {
       return false;
     }
     if (modelPersistenceVersion < getCurrentPersistenceVersion()) {

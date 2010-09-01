@@ -17,17 +17,16 @@ package jetbrains.mps.generator.generationTypes;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.generator.fileGenerator.FileGenerationManager;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
-import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.make.CompilationResult;
+import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.IOperationContext;
@@ -160,7 +159,7 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
   }
 
   protected void reloadClasses(ITaskProgressHelper progressHelper) {
-    if (IdeMain.getTestMode() != TestMode.NO_TEST) {
+    if (MPSCore.getInstance().isTestMode()) {
       return;
     }
 

@@ -13,34 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide;
+package jetbrains.mps;
 
-import jetbrains.mps.MPSCore;
+/**
+ * Evgeny Gryaznov, Sep 1, 2010
+ */
+public class MPSCore {
 
-public class IdeMain {
-  private static TestMode ourTestMode = TestMode.NO_TEST;
+  private static MPSCore ourInstance = new MPSCore();
 
-  public static TestMode getTestMode() {
-    return ourTestMode;
+  private boolean testMode = false;
+
+  private MPSCore() {
   }
 
-  public static void setTestMode(TestMode testMode) {
-    ourTestMode = testMode;
-    if(testMode == TestMode.CORE_TEST) {
-      MPSCore.getInstance().setTestMode();
-    }
+  public static MPSCore getInstance() {
+    return ourInstance;
   }
 
-  @Deprecated
-  public static void setTestMode(boolean test) {
-    if (test) {
-      setTestMode(TestMode.CORE_TEST);
-    } else {
-      setTestMode(TestMode.NO_TEST);
-    }
+  public boolean isTestMode() {
+    return testMode;
   }
 
-  public enum TestMode {
-    NO_TEST, CORE_TEST, UI_TEST
+  public void setTestMode() {
+    testMode = true;
   }
 }

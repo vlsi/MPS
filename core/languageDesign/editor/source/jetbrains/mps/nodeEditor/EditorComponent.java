@@ -26,8 +26,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.openapi.wm.WindowManager;
 import com.intellij.openapi.wm.ex.StatusBarEx;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.IdeMain.TestMode;
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
@@ -1072,8 +1071,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (myDisposed) throw new IllegalStateException(myDisposedTrace);
     myDisposed = true;
     myDisposedTrace = new Throwable("Editor was disposed by: ");
-
-    if (IdeMain.getTestMode() != TestMode.CORE_TEST) {
+    if (!MPSCore.getInstance().isTestMode()) {
       hideMessageToolTip();
     }
 

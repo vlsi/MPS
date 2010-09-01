@@ -16,15 +16,12 @@
 package jetbrains.mps.plugin;
 
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
-import jetbrains.mps.plugin.CompilationResult;
-import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.util.Pair;
@@ -130,11 +127,11 @@ public class IdeaAwareJavaGenerationHandler extends JavaGenerationHandler {
   }
 
   protected boolean isIDEAPresent(IProjectHandler handler) {
-    return IdeMain.getTestMode() != TestMode.CORE_TEST && handler != null;
+    return !MPSCore.getInstance().isTestMode() && handler != null;
   }
 
   protected IProjectHandler getProjectHandler(Project p) {
-    if (IdeMain.getTestMode() == TestMode.CORE_TEST) return null;
+    if (MPSCore.getInstance().isTestMode()) return null;
     return MPSPlugin.getInstance().getProjectHandler(p);
   }
 }
