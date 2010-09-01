@@ -32,16 +32,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-/**
- * Author: Sergey Dmitriev
- * Created Nov 9, 2003
- */
 public class PathManager {
   private static final Logger LOG = Logger.getLogger(PathManager.class);
 
-  public static final String PROPERTY_CONFIG_PATH = "mps.config.path";
   public static final String PROPERTY_HOME_PATH = "mps.home.path";
-  public static final String PROPERTY_MODEL_PATH = "mps.model.path";
 
   private static final String FILE = "file";
   private static final String JAR = "jar";
@@ -49,26 +43,11 @@ public class PathManager {
   private static final String PROTOCOL_DELIMITER = ":";
 
   private static String ourHomePath;
-  private static String ourHelpPath;
-  private static String ourHelpIndexPath;
-  private static String ourTutorialPath;
 
   private static final Pattern MODEL_UID_PATTERN = Pattern.compile(ModelPersistence.MODEL_UID + "=\"(.*?)\"");
 
   public static String getUserHome() {
     return System.getProperty("user.home");
-  }
-
-  public static File getUserHomeFile() {
-    return new File(getUserHome());
-  }
-
-  public static void resetHomePath() {
-    ourHomePath = null;
-  }
-
-  public static void setHomePath(String newHomePath) {
-    ourHomePath = FileUtil.getCanonicalPath(newHomePath);
   }
 
   public static String getHomePath() {
@@ -114,38 +93,6 @@ public class PathManager {
     return new File(file, "build.number").exists();
   }
 
-  public static String getHelpPath() {
-    if (ourHelpPath != null) {
-      return ourHelpPath;
-    }
-    ourHelpPath = getHomePath() + File.separator + "help" + File.separator + "help.html";
-    return ourHelpPath;
-  }
-
-  public static String getTutorialPath() {
-    if (ourTutorialPath != null) {
-      return ourTutorialPath;
-    }
-    ourTutorialPath = getHomePath() + File.separator + "docs" + File.separator + "help" + File.separator + "regexps.html";
-    return ourTutorialPath;
-  }
-
-  public static String getHelpIndexPath() {
-    if (ourHelpIndexPath != null) {
-      return ourHelpIndexPath;
-    }
-    ourHelpIndexPath = getHomePath() + File.separator + "docs" + File.separator + "help" + File.separator + "index.html";
-    return ourHelpIndexPath;
-  }
-
-  public static String getAcknowledgementsPath() {
-    return getHomePath() + File.separator + File.separator + "docs" + File.separator + "help" + File.separator + "acknowledgements.html";
-  }
-
-  public static String getLanguageDesignPath() {
-    return getHomePath() + File.separator + "core" + File.separator + "languageDesign";
-  }
-
   public static String getBootstrapPath() {
     return getHomePath() + File.separator + "core";
   }
@@ -158,24 +105,8 @@ public class PathManager {
     return getHomePath() + File.separator + "workbench";
   }
 
-  public static String getProjectsPath() {
-    return getHomePath() + File.separator + "projects";
-  }
-
   public static String getAppPath() {
     return getHomePath() + File.separator + "app";
-  }
-
-  public static String getBaseLanguagePath() {
-    return getHomePath() + File.separator + "core" + File.separator + "baseLanguage";
-  }
-
-  public static String getBaseAppPath() {
-    return getHomePath() + File.separator + "app";
-  }
-
-  public static String getVCSPath() {
-    return getHomePath() + File.separator + "core" + File.separator + "kernel" + File.separator + "vcs" + File.separator + "generic";
   }
 
   public static String getLanguagesPath() {
@@ -242,58 +173,6 @@ public class PathManager {
 
     resultPath = StringUtil.replace(resultPath, "%20", " ");
     return resultPath;
-  }
-
-
-  public static String findModelPath(Collection<ModelRoot> modelRoots, SModelReference modelReference) {
-    for (ModelRoot modelRoot : modelRoots) {
-      String path = findModelPath(modelRoot, modelReference);
-      if (path != null) {
-        return path;
-      }
-    }
-    return null;
-  }
-
-  public static String findModelPath(Iterator<ModelRoot> modelRoots, SModelReference modelReference) {
-    while (modelRoots.hasNext()) {
-      ModelRoot modelRoot = modelRoots.next();
-      String path = findModelPath(modelRoot, modelReference);
-      if (path != null) {
-        return path;
-      }
-    }
-    return null;
-  }
-
-
-  public static String findModelPath(ModelRoot modelRoot, SModelReference modelReference) {
-    String modelFQName = modelReference.getLongName();
-    String name = modelFQName;
-    String packagePrefix = modelRoot.getPrefix();
-    if (packagePrefix != null && packagePrefix.length() > 0) {
-      if (modelFQName.startsWith(packagePrefix + '.')) {
-        name = modelFQName.substring(packagePrefix.length());
-      } else {
-        return null;
-      }
-    }
-    String path = name.replace('.', File.separatorChar);
-    if (!path.startsWith(File.separator)) {
-      path = File.separator + path;
-    }
-
-    if (!modelReference.getStereotype().equals("")) {
-      String littleName = path.substring(path.lastIndexOf(File.separator) + 1);
-      String rawPath = path.substring(0, path.lastIndexOf(File.separator) + 1);
-      System.err.println("littleName = " + littleName + ", rawPath = " + rawPath);
-      path = rawPath + modelReference.getStereotype() + "@" + littleName;
-    }
-    path = modelRoot.getPath() + path + MPSExtentions.DOT_MODEL;
-    if (!(new File(path)).exists()) {
-      return null;
-    }
-    return path;
   }
 
   public static SModelReference getModelUID(IFile modelFile, IFile root, String namespacePrefix) {
