@@ -32,14 +32,13 @@ import jetbrains.mps.buildlanguage.behavior.PropertyReference_Behavior;
 import jetbrains.mps.build.packaging.behavior.IMacroHolder_Behavior;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
-import jetbrains.mps.project.DevKit;
 import jetbrains.mps.build.packaging.behavior.IVariableHolder_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.build.packaging.behavior.ModuleCycle_Behavior;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.Comparator;
 import jetbrains.mps.build.packaging.behavior.ILayoutComponent_Behavior;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
@@ -47,6 +46,7 @@ import jetbrains.mps.generator.template.MappingScriptContext;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
+import jetbrains.mps.project.DevKit;
 import java.util.ArrayList;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -181,15 +181,6 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1237395828460(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return AbstractModule.MODULE_DIR;
-  }
-
-  public static Object propertyMacro_GetPropertyValue_7878975119848007051(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String fullPath = SPropertyOperations.getString(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.build.packaging.structure.PathHolder"), "fullPath");
-    int index = fullPath.lastIndexOf(Util.SEPARATOR);
-    if (index >= 0) {
-      return fullPath.substring(index + 1);
-    }
-    return fullPath;
   }
 
   public static Object propertyMacro_GetPropertyValue_1237396085551(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -584,14 +575,6 @@ public class QueriesGenerated {
     return !(SPropertyOperations.getString(_context.getNode(), "fullPath").endsWith("jar"));
   }
 
-  public static boolean ifMacro_Condition_7878975119848157009(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(Module_Behavior.call_getModule_1213877515148(_context.getNode()) instanceof DevKit);
-  }
-
-  public static boolean ifMacro_Condition_7878975119847925616(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(Module_Behavior.call_getModule_1213877515148(_context.getNode()) instanceof DevKit);
-  }
-
   public static boolean ifMacro_Condition_1237396009300(final IOperationContext operationContext, final IfMacroContext _context) {
     return !(SPropertyOperations.getString(_context.getNode(), "fullPath").endsWith("jar"));
   }
@@ -665,18 +648,10 @@ public class QueriesGenerated {
     return _context.getNode();
   }
 
-  public static SNode sourceNodeQuery_7878975119848157056(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
-  }
-
   public static SNode sourceNodeQuery_1239195389762(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     IModule module = Module_Behavior.call_getModule_1213877515148(_context.getNode());
     String absoluteDescriptorPath = module.getDescriptorFile().getAbsolutePath();
     return Module_Behavior.call_getPathHolder_1239195000114(_context.getNode(), absoluteDescriptorPath);
-  }
-
-  public static SNode sourceNodeQuery_8196794507570046919(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
   }
 
   public static SNode sourceNodeQuery_1239195355939(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -773,22 +748,6 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1210254517273(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return Module_Behavior.call_getClassPath_1213877515083(_context.getNode());
-  }
-
-  public static Iterable sourceNodesQuery_7878975119848157021(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(Module_Behavior.call_getCachesDirs_8196794507570019546(_context.getNode())).select(new ISelector<String, SNode>() {
-      public SNode select(String it) {
-        return Module_Behavior.call_getPathHolder_1239195000114(_context.getNode(), it.replace(File.separator, Util.SEPARATOR));
-      }
-    });
-  }
-
-  public static Iterable sourceNodesQuery_7878975119847925621(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(Module_Behavior.call_getCachesDirs_8196794507570019546(_context.getNode())).select(new ISelector<String, SNode>() {
-      public SNode select(String it) {
-        return Module_Behavior.call_getPathHolder_1239195000114(_context.getNode(), it.replace(File.separator, Util.SEPARATOR));
-      }
-    });
   }
 
   public static Iterable sourceNodesQuery_1237395979883(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
