@@ -198,6 +198,10 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
         GeneratorUtil.describe(targetNode, relationKind + (child ? "" : " (hidden in editor)")));
     }
     if (!SModelUtil_new.isAcceptableTarget(link, targetNode)) {
+      if(child && targetNode.getUserObject(DelayedChanges.MAP_SRC_TEMP_NODE) != null) {
+        // temporary child node, ignore
+        return null;
+      }
       String expected = link.getTarget().getName();
       String was = targetNode.getConceptShortName();
       return new RoleValidationStatus(sourceNode, relationKind + " '" + expected + "' is expected for role '" + role + "' but was '" + was + "'",

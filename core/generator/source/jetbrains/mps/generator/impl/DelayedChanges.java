@@ -18,6 +18,7 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
+import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.generator.structure.MapSrcListMacro;
 import jetbrains.mps.lang.generator.structure.MapSrcMacro_PostMapperFunction;
 import jetbrains.mps.lang.generator.structure.MapSrcNodeMacro;
@@ -37,8 +38,12 @@ import java.util.List;
  */
 public class DelayedChanges {
 
+  public static final String MAP_SRC_TEMP_NODE = "mapSrcTempNode";
+
   private List<ExecuteMapSrcNodeMacroChange> myExecuteMapSrcNodeMacroChanges = new ArrayList<ExecuteMapSrcNodeMacroChange>();
   private List<ExecuteMapSrcNodeMacroPostProcChange> myExecuteMapSrcNodeMacroPostProcChanges = new ArrayList<ExecuteMapSrcNodeMacroPostProcChange>();
+
+  private SNode attrsHolder = new SNode(null, BaseConcept.concept);
 
   private IGeneratorLogger myLogger;
   private TemplateGenerator myGenerator;
@@ -46,6 +51,7 @@ public class DelayedChanges {
   public DelayedChanges(TemplateGenerator generator) {
     myGenerator = generator;
     myLogger = generator.getLogger();
+    attrsHolder.putUserObject(MAP_SRC_TEMP_NODE, MAP_SRC_TEMP_NODE);
   }
 
   public boolean isEmpty() {
@@ -53,6 +59,7 @@ public class DelayedChanges {
   }
 
   public void addExecuteMapSrcNodeMacroChange(NodeMacro mapSrcMacro, SNode childToReplace, @NotNull TemplateContext context, @NotNull ReductionContext reductionContext) {
+    childToReplace.putUserObjects(attrsHolder);
     synchronized (this) {
       myExecuteMapSrcNodeMacroChanges.add(new ExecuteMapSrcNodeMacroChange(mapSrcMacro, childToReplace, context, reductionContext));
     }
