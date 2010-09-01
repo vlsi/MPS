@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="1076452857759831353">
+    <nodeInfo nodeId="1076452857759831385" fileName="WasSelectedNodeOperation_Constraints.java" startLine="12" startPosition="114" endLine="13" endPosition="278" />
+    <scopeInfo nodeId="1076452857759831355" fileName="WasSelectedNodeOperation_Constraints.java" startLine="12" startPosition="114" endLine="13" endPosition="278" />
+  </root>
+  <root nodeId="1076452857759831406">
+    <nodeInfo nodeId="1076452857759831409" fileName="CaretPositionOperation_Constraints.java" startLine="12" startPosition="114" endLine="13" endPosition="278" />
+    <scopeInfo nodeId="1076452857759831408" fileName="CaretPositionOperation_Constraints.java" startLine="12" startPosition="114" endLine="13" endPosition="278" />
+  </root>
+  <root nodeId="1213104837334">
+    <nodeInfo nodeId="1213104837338" fileName="ChildTypeRestrictionReference_typeRestriction_ReferentConstraint.java" startLine="28" startPosition="132" endLine="29" endPosition="226" />
+    <nodeInfo nodeId="1213104837348" fileName="ChildTypeRestrictionReference_typeRestriction_ReferentConstraint.java" startLine="29" startPosition="226" endLine="30" endPosition="33" />
+    <scopeInfo nodeId="1213104837337" fileName="ChildTypeRestrictionReference_typeRestriction_ReferentConstraint.java" startLine="28" startPosition="132" endLine="30" endPosition="33">
+      <varInfo nodeId="1213104837339" varName="childTypeRestrictions" />
+    </scopeInfo>
+  </root>
+  <root nodeId="1213104837475">
+    <nodeInfo nodeId="1213104837479" fileName="WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint.java" startLine="30" startPosition="132" endLine="31" endPosition="171" />
+    <nodeInfo nodeId="1213104837486" fileName="WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint.java" startLine="31" startPosition="171" endLine="32" endPosition="54" />
+    <nodeInfo nodeId="1213104837494" fileName="WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint.java" startLine="33" startPosition="64" endLine="34" endPosition="134" />
+    <nodeInfo nodeId="1213104837504" fileName="WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint.java" startLine="35" startPosition="5" endLine="36" endPosition="24" />
+    <nodeInfo nodeId="1213104837492" fileName="WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint.java" startLine="32" startPosition="54" endLine="35" endPosition="5" />
+    <scopeInfo nodeId="1213104837493" fileName="WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint.java" startLine="33" startPosition="64" endLine="34" endPosition="134" />
+    <scopeInfo nodeId="1213104837492" fileName="WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint.java" startLine="32" startPosition="54" endLine="35" endPosition="5">
+      <varInfo nodeId="1213104837502" varName="whenConcreteStatement" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213104837478" fileName="WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint.java" startLine="30" startPosition="132" endLine="36" endPosition="24">
+      <varInfo nodeId="1213104837480" varName="whenConcreteStatements" />
+      <varInfo nodeId="1213104837487" varName="declarations" />
+    </scopeInfo>
+  </root>
+  <root nodeId="1213104840529">
+    <nodeInfo nodeId="1213104840557" fileName="ListVarReference_listVarDeclaration_ReferentConstraint.java" startLine="25" startPosition="132" endLine="26" endPosition="57" />
+    <scopeInfo nodeId="1213104840556" fileName="ListVarReference_listVarDeclaration_ReferentConstraint.java" startLine="25" startPosition="132" endLine="26" endPosition="57" />
+  </root>
+  <root nodeId="1213104844579">
+    <nodeInfo nodeId="1213104844583" fileName="PropertyPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="30" startPosition="132" endLine="31" endPosition="48" />
+    <nodeInfo nodeId="1213104844589" fileName="PropertyPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="31" startPosition="48" endLine="32" endPosition="144" />
+    <nodeInfo nodeId="1213104844604" fileName="PropertyPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="33" startPosition="156" endLine="34" endPosition="384" />
+    <nodeInfo nodeId="1213104844617" fileName="PropertyPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="35" startPosition="5" endLine="36" endPosition="158" />
+    <nodeInfo nodeId="1213104844637" fileName="PropertyPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="38" startPosition="162" endLine="39" endPosition="390" />
+    <nodeInfo nodeId="1213104844650" fileName="PropertyPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="40" startPosition="7" endLine="41" endPosition="142" />
+    <nodeInfo nodeId="1213104844657" fileName="PropertyPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="42" startPosition="5" endLine="43" endPosition="164" />
+    <nodeInfo nodeId="1213104844677" fileName="PropertyPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="45" startPosition="167" endLine="46" endPosition="395" />
+    <nodeInfo nodeId="1213104844690" fileName="PropertyPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="47" startPosition="7" endLine="48" endPosition="151" />
+    <nodeInfo nodeId="1213104844697" fileName="PropertyPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="49" startPosition="5" endLine="50" endPosition="18" />
+    <nodeInfo nodeId="1213104844596" fileName="PropertyPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="32" startPosition="144" endLine="35" endPosition="5" />
+    <nodeInfo nodeId="1213104844629" fileName="PropertyPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="37" startPosition="37" endLine="40" endPosition="7" />
+    <nodeInfo nodeId="1213104844669" fileName="PropertyPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="44" startPosition="40" endLine="47" endPosition="7" />
+    <nodeInfo nodeId="1213104844624" fileName="PropertyPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="36" startPosition="158" endLine="42" endPosition="5" />
+    <nodeInfo nodeId="1213104844664" fileName="PropertyPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="43" startPosition="164" endLine="49" endPosition="5" />
+    <scopeInfo nodeId="1213104844603" fileName="PropertyPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="33" startPosition="156" endLine="34" endPosition="384" />
+    <scopeInfo nodeId="1213104844636" fileName="PropertyPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="38" startPosition="162" endLine="39" endPosition="390" />
+    <scopeInfo nodeId="1213104844676" fileName="PropertyPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="45" startPosition="167" endLine="46" endPosition="395" />
+    <scopeInfo nodeId="1213104844628" fileName="PropertyPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="37" startPosition="37" endLine="41" endPosition="142" />
+    <scopeInfo nodeId="1213104844668" fileName="PropertyPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="44" startPosition="40" endLine="48" endPosition="151" />
+    <scopeInfo nodeId="1213104844582" fileName="PropertyPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="30" startPosition="132" endLine="50" endPosition="18">
+      <varInfo nodeId="1213104844584" varName="result" />
+      <varInfo nodeId="1213104844658" varName="matchStatementItem" />
+      <varInfo nodeId="1213104844618" varName="coerceStatement" />
+      <varInfo nodeId="1213104844590" varName="rule" />
+    </scopeInfo>
+  </root>
+  <root nodeId="1213104844757">
+    <nodeInfo nodeId="1213104844761" fileName="LinkPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="30" startPosition="132" endLine="31" endPosition="48" />
+    <nodeInfo nodeId="1213104844767" fileName="LinkPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="31" startPosition="48" endLine="32" endPosition="144" />
+    <nodeInfo nodeId="1213104844782" fileName="LinkPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="33" startPosition="156" endLine="34" endPosition="380" />
+    <nodeInfo nodeId="1213104844795" fileName="LinkPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="35" startPosition="5" endLine="36" endPosition="158" />
+    <nodeInfo nodeId="1213104844815" fileName="LinkPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="38" startPosition="162" endLine="39" endPosition="386" />
+    <nodeInfo nodeId="1213104844828" fileName="LinkPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="40" startPosition="7" endLine="41" endPosition="142" />
+    <nodeInfo nodeId="1213104844835" fileName="LinkPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="42" startPosition="5" endLine="43" endPosition="164" />
+    <nodeInfo nodeId="1213104844855" fileName="LinkPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="45" startPosition="167" endLine="46" endPosition="391" />
+    <nodeInfo nodeId="1213104844868" fileName="LinkPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="47" startPosition="7" endLine="48" endPosition="151" />
+    <nodeInfo nodeId="1213104844875" fileName="LinkPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="49" startPosition="5" endLine="50" endPosition="18" />
+    <nodeInfo nodeId="1213104844774" fileName="LinkPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="32" startPosition="144" endLine="35" endPosition="5" />
+    <nodeInfo nodeId="1213104844807" fileName="LinkPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="37" startPosition="37" endLine="40" endPosition="7" />
+    <nodeInfo nodeId="1213104844847" fileName="LinkPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="44" startPosition="40" endLine="47" endPosition="7" />
+    <nodeInfo nodeId="1213104844802" fileName="LinkPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="36" startPosition="158" endLine="42" endPosition="5" />
+    <nodeInfo nodeId="1213104844842" fileName="LinkPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="43" startPosition="164" endLine="49" endPosition="5" />
+    <scopeInfo nodeId="1213104844781" fileName="LinkPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="33" startPosition="156" endLine="34" endPosition="380" />
+    <scopeInfo nodeId="1213104844814" fileName="LinkPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="38" startPosition="162" endLine="39" endPosition="386" />
+    <scopeInfo nodeId="1213104844854" fileName="LinkPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="45" startPosition="167" endLine="46" endPosition="391" />
+    <scopeInfo nodeId="1213104844806" fileName="LinkPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="37" startPosition="37" endLine="41" endPosition="142" />
+    <scopeInfo nodeId="1213104844846" fileName="LinkPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="44" startPosition="40" endLine="48" endPosition="151" />
+    <scopeInfo nodeId="1213104844760" fileName="LinkPatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="30" startPosition="132" endLine="50" endPosition="18">
+      <varInfo nodeId="1213104844762" varName="result" />
+      <varInfo nodeId="1213104844836" varName="matchStatementItem" />
+      <varInfo nodeId="1213104844796" varName="coerceStatement" />
+      <varInfo nodeId="1213104844768" varName="rule" />
+    </scopeInfo>
+  </root>
+  <root nodeId="1213104846662">
+    <nodeInfo nodeId="1213104846666" fileName="PatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="30" startPosition="132" endLine="31" endPosition="48" />
+    <nodeInfo nodeId="1213104846672" fileName="PatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="31" startPosition="48" endLine="32" endPosition="144" />
+    <nodeInfo nodeId="1213104846687" fileName="PatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="33" startPosition="156" endLine="34" endPosition="376" />
+    <nodeInfo nodeId="1213104846702" fileName="PatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="36" startPosition="114" endLine="37" endPosition="174" />
+    <nodeInfo nodeId="1213104846711" fileName="PatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="38" startPosition="116" endLine="39" endPosition="336" />
+    <nodeInfo nodeId="1213104846732" fileName="PatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="42" startPosition="103" endLine="43" endPosition="159" />
+    <nodeInfo nodeId="1213104846741" fileName="PatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="44" startPosition="114" endLine="45" endPosition="334" />
+    <nodeInfo nodeId="1213104846760" fileName="PatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="47" startPosition="5" endLine="48" endPosition="158" />
+    <nodeInfo nodeId="1213104846780" fileName="PatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="50" startPosition="162" endLine="51" endPosition="382" />
+    <nodeInfo nodeId="1213104846793" fileName="PatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="52" startPosition="7" endLine="53" endPosition="142" />
+    <nodeInfo nodeId="1213104846800" fileName="PatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="54" startPosition="5" endLine="55" endPosition="164" />
+    <nodeInfo nodeId="1213104846820" fileName="PatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="57" startPosition="167" endLine="58" endPosition="387" />
+    <nodeInfo nodeId="1213104846833" fileName="PatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="59" startPosition="7" endLine="60" endPosition="151" />
+    <nodeInfo nodeId="1213104846840" fileName="PatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="61" startPosition="5" endLine="62" endPosition="18" />
+    <nodeInfo nodeId="1213104846679" fileName="PatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="32" startPosition="144" endLine="35" endPosition="5" />
+    <nodeInfo nodeId="1213104846709" fileName="PatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="37" startPosition="174" endLine="40" endPosition="7" />
+    <nodeInfo nodeId="1213104846739" fileName="PatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="43" startPosition="159" endLine="46" endPosition="7" />
+    <nodeInfo nodeId="1213104846772" fileName="PatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="49" startPosition="37" endLine="52" endPosition="7" />
+    <nodeInfo nodeId="1213104846812" fileName="PatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="56" startPosition="40" endLine="59" endPosition="7" />
+    <nodeInfo nodeId="1213104846700" fileName="PatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="35" startPosition="5" endLine="41" endPosition="5" />
+    <nodeInfo nodeId="1213104846730" fileName="PatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="41" startPosition="5" endLine="47" endPosition="5" />
+    <nodeInfo nodeId="1213104846767" fileName="PatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="48" startPosition="158" endLine="54" endPosition="5" />
+    <nodeInfo nodeId="1213104846807" fileName="PatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="55" startPosition="164" endLine="61" endPosition="5" />
+    <scopeInfo nodeId="1213104846686" fileName="PatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="33" startPosition="156" endLine="34" endPosition="376" />
+    <scopeInfo nodeId="1213104846710" fileName="PatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="38" startPosition="116" endLine="39" endPosition="336" />
+    <scopeInfo nodeId="1213104846740" fileName="PatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="44" startPosition="114" endLine="45" endPosition="334" />
+    <scopeInfo nodeId="1213104846779" fileName="PatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="50" startPosition="162" endLine="51" endPosition="382" />
+    <scopeInfo nodeId="1213104846819" fileName="PatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="57" startPosition="167" endLine="58" endPosition="387" />
+    <scopeInfo nodeId="1213104846701" fileName="PatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="36" startPosition="114" endLine="40" endPosition="7">
+      <varInfo nodeId="1213104846703" varName="supertypeNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213104846731" fileName="PatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="42" startPosition="103" endLine="46" endPosition="7">
+      <varInfo nodeId="1213104846733" varName="anotherNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213104846771" fileName="PatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="49" startPosition="37" endLine="53" endPosition="142" />
+    <scopeInfo nodeId="1213104846811" fileName="PatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="56" startPosition="40" endLine="60" endPosition="151" />
+    <scopeInfo nodeId="1213104846665" fileName="PatternVariableReference_patternVarDecl_ReferentConstraint.java" startLine="30" startPosition="132" endLine="62" endPosition="18">
+      <varInfo nodeId="1213104846667" varName="result" />
+      <varInfo nodeId="1213104846801" varName="matchStatementItem" />
+      <varInfo nodeId="1213104846761" varName="coerceStatement" />
+      <varInfo nodeId="1213104846673" varName="rule" />
+    </scopeInfo>
+  </root>
+  <root nodeId="1213104847200">
+    <nodeInfo nodeId="1213104847204" fileName="TypeVarReference_typeVarDeclaration_ReferentConstraint.java" startLine="25" startPosition="132" endLine="26" endPosition="57" />
+    <scopeInfo nodeId="1213104847203" fileName="TypeVarReference_typeVarDeclaration_ReferentConstraint.java" startLine="25" startPosition="132" endLine="26" endPosition="57" />
+  </root>
+  <root nodeId="1213104847820">
+    <nodeInfo nodeId="1213104847824" fileName="ChildTypeRestriction_childLinkDeclaration_ReferentConstraint.java" startLine="30" startPosition="132" endLine="31" endPosition="160" />
+    <nodeInfo nodeId="1213104847831" fileName="ChildTypeRestriction_childLinkDeclaration_ReferentConstraint.java" startLine="31" startPosition="160" endLine="32" endPosition="178" />
+    <nodeInfo nodeId="1213104847839" fileName="ChildTypeRestriction_childLinkDeclaration_ReferentConstraint.java" startLine="32" startPosition="178" endLine="33" endPosition="168" />
+    <nodeInfo nodeId="1213104847846" fileName="ChildTypeRestriction_childLinkDeclaration_ReferentConstraint.java" startLine="33" startPosition="168" endLine="34" endPosition="24" />
+    <scopeInfo nodeId="1213104847823" fileName="ChildTypeRestriction_childLinkDeclaration_ReferentConstraint.java" startLine="30" startPosition="132" endLine="34" endPosition="24">
+      <varInfo nodeId="1213104847840" varName="conceptScope" />
+      <varInfo nodeId="1213104847832" varName="abstractConceptDeclaration" />
+      <varInfo nodeId="1213104847825" varName="inferenceRule" />
+    </scopeInfo>
+  </root>
+  <root nodeId="1213104856925">
+    <nodeInfo nodeId="1213104856931" fileName="ConceptReference_concept_ReferentConstraint.java" startLine="27" startPosition="74" endLine="28" endPosition="132" />
+    <nodeInfo nodeId="1213104856943" fileName="ConceptReference_concept_ReferentConstraint.java" startLine="29" startPosition="140" endLine="30" endPosition="229" />
+    <nodeInfo nodeId="1213104856941" fileName="ConceptReference_concept_ReferentConstraint.java" startLine="28" startPosition="132" endLine="31" endPosition="7" />
+    <nodeInfo nodeId="1213104856929" fileName="ConceptReference_concept_ReferentConstraint.java" startLine="26" startPosition="138" endLine="32" endPosition="5" />
+    <scopeInfo nodeId="1213104856942" fileName="ConceptReference_concept_ReferentConstraint.java" startLine="29" startPosition="140" endLine="30" endPosition="229" />
+    <scopeInfo nodeId="1213104856930" fileName="ConceptReference_concept_ReferentConstraint.java" startLine="27" startPosition="74" endLine="31" endPosition="7" />
+    <scopeInfo nodeId="1213104856928" fileName="ConceptReference_concept_ReferentConstraint.java" startLine="26" startPosition="138" endLine="32" endPosition="5" />
+  </root>
+  <root nodeId="1213104858863">
+    <nodeInfo nodeId="1213104858867" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="30" startPosition="132" endLine="31" endPosition="48" />
+    <nodeInfo nodeId="1213104858873" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="31" startPosition="48" endLine="32" endPosition="144" />
+    <nodeInfo nodeId="1213104858885" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="33" startPosition="23" endLine="34" endPosition="78" />
+    <nodeInfo nodeId="130768708364810666" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="35" startPosition="28" endLine="36" endPosition="58" />
+    <nodeInfo nodeId="1213104858898" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="38" startPosition="105" endLine="39" endPosition="158" />
+    <nodeInfo nodeId="130768708364810649" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="40" startPosition="31" endLine="41" endPosition="61" />
+    <nodeInfo nodeId="1213104858916" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="44" startPosition="116" endLine="45" endPosition="171" />
+    <nodeInfo nodeId="130768708364810632" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="46" startPosition="31" endLine="47" endPosition="61" />
+    <nodeInfo nodeId="1213104858932" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="50" startPosition="5" endLine="51" endPosition="158" />
+    <nodeInfo nodeId="130768708364810589" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="53" startPosition="80" endLine="54" endPosition="110" />
+    <nodeInfo nodeId="1213104858951" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="55" startPosition="7" endLine="56" endPosition="142" />
+    <nodeInfo nodeId="1213104858958" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="57" startPosition="5" endLine="58" endPosition="164" />
+    <nodeInfo nodeId="130768708364810613" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="60" startPosition="85" endLine="61" endPosition="115" />
+    <nodeInfo nodeId="1213104858977" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="62" startPosition="7" endLine="63" endPosition="151" />
+    <nodeInfo nodeId="1213104858984" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="64" startPosition="5" endLine="65" endPosition="18" />
+    <nodeInfo nodeId="130768708364810657" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="34" startPosition="78" endLine="37" endPosition="7" />
+    <nodeInfo nodeId="130768708364810640" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="39" startPosition="158" endLine="42" endPosition="9" />
+    <nodeInfo nodeId="130768708364810623" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="45" startPosition="171" endLine="48" endPosition="9" />
+    <nodeInfo nodeId="130768708364810575" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="52" startPosition="37" endLine="55" endPosition="7" />
+    <nodeInfo nodeId="130768708364810599" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="59" startPosition="40" endLine="62" endPosition="7" />
+    <nodeInfo nodeId="1213104858896" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="37" startPosition="7" endLine="43" endPosition="7" />
+    <nodeInfo nodeId="1213104858914" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="43" startPosition="7" endLine="49" endPosition="7" />
+    <nodeInfo nodeId="1213104858939" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="51" startPosition="158" endLine="57" endPosition="5" />
+    <nodeInfo nodeId="1213104858965" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="58" startPosition="164" endLine="64" endPosition="5" />
+    <nodeInfo nodeId="1213104858880" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="32" startPosition="144" endLine="50" endPosition="5" />
+    <scopeInfo nodeId="130768708364810658" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="35" startPosition="28" endLine="36" endPosition="58" />
+    <scopeInfo nodeId="130768708364810641" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="40" startPosition="31" endLine="41" endPosition="61" />
+    <scopeInfo nodeId="130768708364810624" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="46" startPosition="31" endLine="47" endPosition="61" />
+    <scopeInfo nodeId="130768708364810576" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="53" startPosition="80" endLine="54" endPosition="110" />
+    <scopeInfo nodeId="130768708364810600" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="60" startPosition="85" endLine="61" endPosition="115" />
+    <scopeInfo nodeId="1213104858897" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="38" startPosition="105" endLine="42" endPosition="9">
+      <varInfo nodeId="1213104858899" varName="appNode2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213104858915" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="44" startPosition="116" endLine="48" endPosition="9">
+      <varInfo nodeId="1213104858917" varName="appNode2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213104858943" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="52" startPosition="37" endLine="56" endPosition="142" />
+    <scopeInfo nodeId="1213104858969" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="59" startPosition="40" endLine="63" endPosition="151" />
+    <scopeInfo nodeId="1213104858884" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="33" startPosition="23" endLine="49" endPosition="7">
+      <varInfo nodeId="1213104858886" varName="appNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213104858866" fileName="ApplicableNodeReference_applicableNode_ReferentConstraint.java" startLine="30" startPosition="132" endLine="65" endPosition="18">
+      <varInfo nodeId="1213104858868" varName="result" />
+      <varInfo nodeId="1213104858959" varName="matchStatementItem" />
+      <varInfo nodeId="1213104858933" varName="coerceStatement" />
+      <varInfo nodeId="1213104858874" varName="rule" />
+    </scopeInfo>
+  </root>
+  <root nodeId="1213104860682">
+    <nodeInfo nodeId="1216387794918" fileName="TypesystemIntentionArgument_quickFixArgument_ReferentConstraint.java" startLine="30" startPosition="132" endLine="31" endPosition="47" />
+    <nodeInfo nodeId="1216387794924" fileName="TypesystemIntentionArgument_quickFixArgument_ReferentConstraint.java" startLine="31" startPosition="47" endLine="32" endPosition="162" />
+    <nodeInfo nodeId="1216387794934" fileName="TypesystemIntentionArgument_quickFixArgument_ReferentConstraint.java" startLine="33" startPosition="35" endLine="34" endPosition="188" />
+    <nodeInfo nodeId="1216387794946" fileName="TypesystemIntentionArgument_quickFixArgument_ReferentConstraint.java" startLine="35" startPosition="5" endLine="36" endPosition="17" />
+    <nodeInfo nodeId="1216387794932" fileName="TypesystemIntentionArgument_quickFixArgument_ReferentConstraint.java" startLine="32" startPosition="162" endLine="35" endPosition="5" />
+    <scopeInfo nodeId="1216387794933" fileName="TypesystemIntentionArgument_quickFixArgument_ReferentConstraint.java" startLine="33" startPosition="35" endLine="34" endPosition="188" />
+    <scopeInfo nodeId="1216387794917" fileName="TypesystemIntentionArgument_quickFixArgument_ReferentConstraint.java" startLine="30" startPosition="132" endLine="36" endPosition="17">
+      <varInfo nodeId="1216387794919" varName="nodes" />
+      <varInfo nodeId="1216387794925" varName="helginsIntention" />
+    </scopeInfo>
+  </root>
+  <root nodeId="1216390479216">
+    <nodeInfo nodeId="1216390512068" fileName="QuickFixArgumentReference_quickFixArgument_ReferentConstraint.java" startLine="30" startPosition="132" endLine="31" endPosition="47" />
+    <nodeInfo nodeId="1216390512074" fileName="QuickFixArgumentReference_quickFixArgument_ReferentConstraint.java" startLine="31" startPosition="47" endLine="32" endPosition="154" />
+    <nodeInfo nodeId="1216390512084" fileName="QuickFixArgumentReference_quickFixArgument_ReferentConstraint.java" startLine="33" startPosition="29" endLine="34" endPosition="134" />
+    <nodeInfo nodeId="1216390512094" fileName="QuickFixArgumentReference_quickFixArgument_ReferentConstraint.java" startLine="35" startPosition="5" endLine="36" endPosition="17" />
+    <nodeInfo nodeId="1216390512082" fileName="QuickFixArgumentReference_quickFixArgument_ReferentConstraint.java" startLine="32" startPosition="154" endLine="35" endPosition="5" />
+    <scopeInfo nodeId="1216390512083" fileName="QuickFixArgumentReference_quickFixArgument_ReferentConstraint.java" startLine="33" startPosition="29" endLine="34" endPosition="134" />
+    <scopeInfo nodeId="1216390512067" fileName="QuickFixArgumentReference_quickFixArgument_ReferentConstraint.java" startLine="30" startPosition="132" endLine="36" endPosition="17">
+      <varInfo nodeId="1216390512069" varName="nodes" />
+      <varInfo nodeId="1216390512075" varName="quickFix" />
+    </scopeInfo>
+  </root>
+  <root nodeId="1223035198112">
+    <nodeInfo nodeId="1223035281304" fileName="SimpleRule_VarRef_link_ReferentConstraint.java" startLine="28" startPosition="132" endLine="29" endPosition="157" />
+    <nodeInfo nodeId="1223035339624" fileName="SimpleRule_VarRef_link_ReferentConstraint.java" startLine="30" startPosition="39" endLine="31" endPosition="117" />
+    <nodeInfo nodeId="1223035325004" fileName="SimpleRule_VarRef_link_ReferentConstraint.java" startLine="32" startPosition="5" endLine="33" endPosition="34" />
+    <nodeInfo nodeId="1223035236604" fileName="SimpleRule_VarRef_link_ReferentConstraint.java" startLine="29" startPosition="157" endLine="32" endPosition="5" />
+    <scopeInfo nodeId="1223035236605" fileName="SimpleRule_VarRef_link_ReferentConstraint.java" startLine="30" startPosition="39" endLine="31" endPosition="117" />
+    <scopeInfo nodeId="1223035204092" fileName="SimpleRule_VarRef_link_ReferentConstraint.java" startLine="28" startPosition="132" endLine="33" endPosition="34">
+      <varInfo nodeId="1223035281305" varName="conceptDeclaration" />
+    </scopeInfo>
+  </root>
+  <root nodeId="1223056887745">
+    <nodeInfo nodeId="1223057289099" fileName="SimpleRule_ProcedureCall_procedureDeclaration_ReferentConstraint.java" startLine="28" startPosition="132" endLine="29" endPosition="157" />
+    <nodeInfo nodeId="1223057339224" fileName="SimpleRule_ProcedureCall_procedureDeclaration_ReferentConstraint.java" startLine="30" startPosition="39" endLine="31" endPosition="117" />
+    <nodeInfo nodeId="1223056952791" fileName="SimpleRule_ProcedureCall_actualArgumentsLink_ReferentConstraint.java" startLine="31" startPosition="132" endLine="32" endPosition="157" />
+    <nodeInfo nodeId="1223057366719" fileName="SimpleRule_ProcedureCall_parametersLink_ReferentConstraint.java" startLine="31" startPosition="132" endLine="32" endPosition="161" />
+    <nodeInfo nodeId="1223057350190" fileName="SimpleRule_ProcedureCall_procedureDeclaration_ReferentConstraint.java" startLine="32" startPosition="5" endLine="33" endPosition="34" />
+    <nodeInfo nodeId="1223057212211" fileName="SimpleRule_ProcedureCall_actualArgumentsLink_ReferentConstraint.java" startLine="33" startPosition="39" endLine="34" endPosition="154" />
+    <nodeInfo nodeId="1223057387227" fileName="SimpleRule_ProcedureCall_parametersLink_ReferentConstraint.java" startLine="33" startPosition="39" endLine="34" endPosition="154" />
+    <nodeInfo nodeId="1223057219799" fileName="SimpleRule_ProcedureCall_actualArgumentsLink_ReferentConstraint.java" startLine="34" startPosition="154" endLine="35" endPosition="50" />
+    <nodeInfo nodeId="1223057387233" fileName="SimpleRule_ProcedureCall_parametersLink_ReferentConstraint.java" startLine="34" startPosition="154" endLine="35" endPosition="50" />
+    <nodeInfo nodeId="1223057268848" fileName="SimpleRule_ProcedureCall_actualArgumentsLink_ReferentConstraint.java" startLine="37" startPosition="76" endLine="38" endPosition="55" />
+    <nodeInfo nodeId="1223057387243" fileName="SimpleRule_ProcedureCall_parametersLink_ReferentConstraint.java" startLine="37" startPosition="76" endLine="38" endPosition="55" />
+    <nodeInfo nodeId="1223056972965" fileName="SimpleRule_ProcedureCall_actualArgumentsLink_ReferentConstraint.java" startLine="40" startPosition="7" endLine="41" endPosition="20" />
+    <nodeInfo nodeId="1223057387255" fileName="SimpleRule_ProcedureCall_parametersLink_ReferentConstraint.java" startLine="40" startPosition="7" endLine="41" endPosition="20" />
+    <nodeInfo nodeId="1223056962444" fileName="SimpleRule_ProcedureCall_actualArgumentsLink_ReferentConstraint.java" startLine="42" startPosition="5" endLine="43" endPosition="34" />
+    <nodeInfo nodeId="1223057387260" fileName="SimpleRule_ProcedureCall_parametersLink_ReferentConstraint.java" startLine="42" startPosition="5" endLine="43" endPosition="34" />
+    <nodeInfo nodeId="1223057316943" fileName="SimpleRule_ProcedureCall_procedureDeclaration_ReferentConstraint.java" startLine="29" startPosition="157" endLine="32" endPosition="5" />
+    <nodeInfo nodeId="1223057259017" fileName="SimpleRule_ProcedureCall_actualArgumentsLink_ReferentConstraint.java" startLine="36" startPosition="52" endLine="39" endPosition="9" />
+    <nodeInfo nodeId="1223057387241" fileName="SimpleRule_ProcedureCall_parametersLink_ReferentConstraint.java" startLine="36" startPosition="52" endLine="39" endPosition="9" />
+    <nodeInfo nodeId="1223057248484" fileName="SimpleRule_ProcedureCall_actualArgumentsLink_ReferentConstraint.java" startLine="35" startPosition="50" endLine="40" endPosition="7" />
+    <nodeInfo nodeId="1223057387239" fileName="SimpleRule_ProcedureCall_parametersLink_ReferentConstraint.java" startLine="35" startPosition="50" endLine="40" endPosition="7" />
+    <nodeInfo nodeId="1223056954719" fileName="SimpleRule_ProcedureCall_actualArgumentsLink_ReferentConstraint.java" startLine="32" startPosition="157" endLine="42" endPosition="5" />
+    <nodeInfo nodeId="1223057387225" fileName="SimpleRule_ProcedureCall_parametersLink_ReferentConstraint.java" startLine="32" startPosition="161" endLine="42" endPosition="5" />
+    <scopeInfo nodeId="1223057316944" fileName="SimpleRule_ProcedureCall_procedureDeclaration_ReferentConstraint.java" startLine="30" startPosition="39" endLine="31" endPosition="117" />
+    <scopeInfo nodeId="1223057259018" fileName="SimpleRule_ProcedureCall_actualArgumentsLink_ReferentConstraint.java" startLine="37" startPosition="76" endLine="38" endPosition="55" />
+    <scopeInfo nodeId="1223057387242" fileName="SimpleRule_ProcedureCall_parametersLink_ReferentConstraint.java" startLine="37" startPosition="76" endLine="38" endPosition="55" />
+    <scopeInfo nodeId="1223057248485" fileName="SimpleRule_ProcedureCall_actualArgumentsLink_ReferentConstraint.java" startLine="36" startPosition="52" endLine="39" endPosition="9" />
+    <scopeInfo nodeId="1223057387240" fileName="SimpleRule_ProcedureCall_parametersLink_ReferentConstraint.java" startLine="36" startPosition="52" endLine="39" endPosition="9" />
+    <scopeInfo nodeId="1223057283783" fileName="SimpleRule_ProcedureCall_procedureDeclaration_ReferentConstraint.java" startLine="28" startPosition="132" endLine="33" endPosition="34">
+      <varInfo nodeId="1223057289100" varName="conceptDeclaration" />
+    </scopeInfo>
+    <scopeInfo nodeId="1223057248484" fileName="SimpleRule_ProcedureCall_actualArgumentsLink_ReferentConstraint.java" startLine="35" startPosition="50" endLine="40" endPosition="7">
+      <varInfo nodeId="1223057248488" varName="ld" />
+    </scopeInfo>
+    <scopeInfo nodeId="1223057387239" fileName="SimpleRule_ProcedureCall_parametersLink_ReferentConstraint.java" startLine="35" startPosition="50" endLine="40" endPosition="7">
+      <varInfo nodeId="1223057387253" varName="ld" />
+    </scopeInfo>
+    <scopeInfo nodeId="1223056954720" fileName="SimpleRule_ProcedureCall_actualArgumentsLink_ReferentConstraint.java" startLine="33" startPosition="39" endLine="41" endPosition="20">
+      <varInfo nodeId="1223057219800" varName="result" />
+      <varInfo nodeId="1223057212212" varName="aggregationLinkDeclarations" />
+    </scopeInfo>
+    <scopeInfo nodeId="1223057387226" fileName="SimpleRule_ProcedureCall_parametersLink_ReferentConstraint.java" startLine="33" startPosition="39" endLine="41" endPosition="20">
+      <varInfo nodeId="1223057387234" varName="result" />
+      <varInfo nodeId="1223057387228" varName="aggregationLinkDeclarations" />
+    </scopeInfo>
+    <scopeInfo nodeId="1223056910921" fileName="SimpleRule_ProcedureCall_actualArgumentsLink_ReferentConstraint.java" startLine="31" startPosition="132" endLine="43" endPosition="34">
+      <varInfo nodeId="1223056952792" varName="conceptDeclaration" />
+    </scopeInfo>
+    <scopeInfo nodeId="1223057361865" fileName="SimpleRule_ProcedureCall_parametersLink_ReferentConstraint.java" startLine="31" startPosition="132" endLine="43" endPosition="34">
+      <varInfo nodeId="1223057366720" varName="conceptDeclaration" />
+    </scopeInfo>
+  </root>
+  <root nodeId="1227088436106">
+    <nodeInfo nodeId="1227088481579" fileName="InferenceRule_Constraints.java" startLine="10" startPosition="112" endLine="11" endPosition="61" />
+    <scopeInfo nodeId="1227088438467" fileName="InferenceRule_Constraints.java" startLine="10" startPosition="112" endLine="11" endPosition="61" />
+  </root>
+  <root nodeId="1227088545213">
+    <nodeInfo nodeId="1227088547169" fileName="ComparisonRule_Constraints.java" startLine="10" startPosition="112" endLine="11" endPosition="61" />
+    <scopeInfo nodeId="1227088546715" fileName="ComparisonRule_Constraints.java" startLine="10" startPosition="112" endLine="11" endPosition="61" />
+  </root>
+  <root nodeId="1227088567867">
+    <nodeInfo nodeId="1227088570838" fileName="TypesystemQuickFix_Constraints.java" startLine="10" startPosition="112" endLine="11" endPosition="61" />
+    <scopeInfo nodeId="1227088570447" fileName="TypesystemQuickFix_Constraints.java" startLine="10" startPosition="112" endLine="11" endPosition="61" />
+  </root>
+  <root nodeId="1227088583369">
+    <nodeInfo nodeId="1227088585685" fileName="InequationReplacementRule_Constraints.java" startLine="10" startPosition="112" endLine="11" endPosition="61" />
+    <scopeInfo nodeId="1227088585371" fileName="InequationReplacementRule_Constraints.java" startLine="10" startPosition="112" endLine="11" endPosition="61" />
+  </root>
+  <root nodeId="1227088611953">
+    <nodeInfo nodeId="1227088613441" fileName="NonTypesystemRule_Constraints.java" startLine="10" startPosition="112" endLine="11" endPosition="61" />
+    <scopeInfo nodeId="1227088613159" fileName="NonTypesystemRule_Constraints.java" startLine="10" startPosition="112" endLine="11" endPosition="61" />
+  </root>
+  <root nodeId="1227088633509">
+    <nodeInfo nodeId="1227088635481" fileName="SimpleRulesContainer_Constraints.java" startLine="10" startPosition="112" endLine="11" endPosition="61" />
+    <scopeInfo nodeId="1227088635167" fileName="SimpleRulesContainer_Constraints.java" startLine="10" startPosition="112" endLine="11" endPosition="61" />
+  </root>
+  <root nodeId="1227088639814">
+    <nodeInfo nodeId="1227088641395" fileName="SubtypingRule_Constraints.java" startLine="10" startPosition="112" endLine="11" endPosition="61" />
+    <scopeInfo nodeId="1227088641113" fileName="SubtypingRule_Constraints.java" startLine="10" startPosition="112" endLine="11" endPosition="61" />
+  </root>
+  <root nodeId="1227098342559">
+    <nodeInfo nodeId="1227098369686" fileName="PropertyMessageTarget_propertyDeclaration_ReferentConstraint.java" startLine="33" startPosition="132" endLine="34" endPosition="159" />
+    <nodeInfo nodeId="1227098427215" fileName="PropertyMessageTarget_propertyDeclaration_ReferentConstraint.java" startLine="35" startPosition="35" endLine="36" endPosition="67" />
+    <nodeInfo nodeId="1227098720716" fileName="PropertyMessageTarget_propertyDeclaration_ReferentConstraint.java" startLine="37" startPosition="5" endLine="38" endPosition="124" />
+    <nodeInfo nodeId="1227098750462" fileName="PropertyMessageTarget_propertyDeclaration_ReferentConstraint.java" startLine="39" startPosition="5" endLine="40" endPosition="137" />
+    <nodeInfo nodeId="1227098750462" fileName="PropertyMessageTarget_propertyDeclaration_ReferentConstraint.java" startLine="40" startPosition="137" endLine="41" endPosition="123" />
+    <nodeInfo nodeId="1227098796738" fileName="PropertyMessageTarget_propertyDeclaration_ReferentConstraint.java" startLine="42" startPosition="44" endLine="43" endPosition="164" />
+    <nodeInfo nodeId="1227099045158" fileName="PropertyMessageTarget_propertyDeclaration_ReferentConstraint.java" startLine="44" startPosition="14" endLine="45" endPosition="69" />
+    <nodeInfo nodeId="1227098750462" fileName="PropertyMessageTarget_propertyDeclaration_ReferentConstraint.java" startLine="44" startPosition="12" endLine="46" endPosition="7" />
+    <nodeInfo nodeId="1227098417505" fileName="PropertyMessageTarget_propertyDeclaration_ReferentConstraint.java" startLine="34" startPosition="159" endLine="37" endPosition="5" />
+    <nodeInfo nodeId="1227098750462" fileName="PropertyMessageTarget_propertyDeclaration_ReferentConstraint.java" startLine="41" startPosition="123" endLine="46" endPosition="7" />
+    <nodeInfo nodeId="1227098750462" fileName="PropertyMessageTarget_propertyDeclaration_ReferentConstraint.java" startLine="38" startPosition="124" endLine="47" endPosition="5" />
+    <scopeInfo nodeId="1227098417506" fileName="PropertyMessageTarget_propertyDeclaration_ReferentConstraint.java" startLine="35" startPosition="35" endLine="36" endPosition="67" />
+    <scopeInfo nodeId="1227098750465" fileName="PropertyMessageTarget_propertyDeclaration_ReferentConstraint.java" startLine="42" startPosition="44" endLine="43" endPosition="164" />
+    <scopeInfo nodeId="1227098770651" fileName="PropertyMessageTarget_propertyDeclaration_ReferentConstraint.java" startLine="44" startPosition="14" endLine="45" endPosition="69" />
+    <scopeInfo nodeId="1227098750462" fileName="PropertyMessageTarget_propertyDeclaration_ReferentConstraint.java" startLine="39" startPosition="5" endLine="46" endPosition="7" />
+    <scopeInfo nodeId="1227098350410" fileName="PropertyMessageTarget_propertyDeclaration_ReferentConstraint.java" startLine="33" startPosition="132" endLine="47" endPosition="5">
+      <varInfo nodeId="1227098369687" varName="messageStatement" />
+      <varInfo nodeId="1227098720717" varName="nodetype" />
+    </scopeInfo>
+  </root>
+  <root nodeId="1227101197786">
+    <nodeInfo nodeId="1227101207967" fileName="ReferenceMessageTarget_linkDeclaration_ReferentConstraint.java" startLine="33" startPosition="132" endLine="34" endPosition="159" />
+    <nodeInfo nodeId="1227101207977" fileName="ReferenceMessageTarget_linkDeclaration_ReferentConstraint.java" startLine="35" startPosition="35" endLine="36" endPosition="67" />
+    <nodeInfo nodeId="1227101207984" fileName="ReferenceMessageTarget_linkDeclaration_ReferentConstraint.java" startLine="37" startPosition="5" endLine="38" endPosition="124" />
+    <nodeInfo nodeId="1227101207992" fileName="ReferenceMessageTarget_linkDeclaration_ReferentConstraint.java" startLine="39" startPosition="5" endLine="40" endPosition="137" />
+    <nodeInfo nodeId="1227101207992" fileName="ReferenceMessageTarget_linkDeclaration_ReferentConstraint.java" startLine="40" startPosition="137" endLine="41" endPosition="123" />
+    <nodeInfo nodeId="1227101207996" fileName="ReferenceMessageTarget_linkDeclaration_ReferentConstraint.java" startLine="42" startPosition="44" endLine="43" endPosition="160" />
+    <nodeInfo nodeId="1227101208003" fileName="ReferenceMessageTarget_linkDeclaration_ReferentConstraint.java" startLine="44" startPosition="14" endLine="45" endPosition="69" />
+    <nodeInfo nodeId="1227101207992" fileName="ReferenceMessageTarget_linkDeclaration_ReferentConstraint.java" startLine="44" startPosition="12" endLine="46" endPosition="7" />
+    <nodeInfo nodeId="1227101207975" fileName="ReferenceMessageTarget_linkDeclaration_ReferentConstraint.java" startLine="34" startPosition="159" endLine="37" endPosition="5" />
+    <nodeInfo nodeId="1227101207992" fileName="ReferenceMessageTarget_linkDeclaration_ReferentConstraint.java" startLine="41" startPosition="123" endLine="46" endPosition="7" />
+    <nodeInfo nodeId="1227101207992" fileName="ReferenceMessageTarget_linkDeclaration_ReferentConstraint.java" startLine="38" startPosition="124" endLine="47" endPosition="5" />
+    <scopeInfo nodeId="1227101207976" fileName="ReferenceMessageTarget_linkDeclaration_ReferentConstraint.java" startLine="35" startPosition="35" endLine="36" endPosition="67" />
+    <scopeInfo nodeId="1227101207995" fileName="ReferenceMessageTarget_linkDeclaration_ReferentConstraint.java" startLine="42" startPosition="44" endLine="43" endPosition="160" />
+    <scopeInfo nodeId="1227101208002" fileName="ReferenceMessageTarget_linkDeclaration_ReferentConstraint.java" startLine="44" startPosition="14" endLine="45" endPosition="69" />
+    <scopeInfo nodeId="1227101207992" fileName="ReferenceMessageTarget_linkDeclaration_ReferentConstraint.java" startLine="39" startPosition="5" endLine="46" endPosition="7" />
+    <scopeInfo nodeId="1227101206989" fileName="ReferenceMessageTarget_linkDeclaration_ReferentConstraint.java" startLine="33" startPosition="132" endLine="47" endPosition="5">
+      <varInfo nodeId="1227101207968" varName="messageStatement" />
+      <varInfo nodeId="1227101207985" varName="nodetype" />
+    </scopeInfo>
+  </root>
+  <root nodeId="1240322964495">
+    <nodeInfo nodeId="1240322972672" fileName="ConceptTypeClause_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="133" />
+    <scopeInfo nodeId="1240322967731" fileName="ConceptTypeClause_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="133" />
+  </root>
+  <root nodeId="1240323011427">
+    <nodeInfo nodeId="1240323022137" fileName="ConceptClauseLinkInfo_linkDeclaration_ReferentConstraint.java" startLine="26" startPosition="132" endLine="27" endPosition="248" />
+    <scopeInfo nodeId="1240323016899" fileName="ConceptClauseLinkInfo_linkDeclaration_ReferentConstraint.java" startLine="26" startPosition="132" endLine="27" endPosition="248" />
+  </root>
+  <root nodeId="5622704259074443414">
+    <nodeInfo nodeId="5622704259074443963" fileName="OperationContextExpression_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="149" />
+    <scopeInfo nodeId="5622704259074443416" fileName="OperationContextExpression_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="149" />
+  </root>
+  <root nodeId="7857223919215948959">
+    <nodeInfo nodeId="7857223919215949539" fileName="InequationReference_inequation_ReferentConstraint.java" startLine="31" startPosition="102" endLine="32" endPosition="164" />
+    <nodeInfo nodeId="7857223919215949562" fileName="InequationReference_inequation_ReferentConstraint.java" startLine="33" startPosition="12" endLine="34" endPosition="88" />
+    <nodeInfo nodeId="7857223919215949560" fileName="InequationReference_inequation_ReferentConstraint.java" startLine="33" startPosition="10" endLine="35" endPosition="5" />
+    <nodeInfo nodeId="7857223919215949531" fileName="InequationReference_inequation_ReferentConstraint.java" startLine="30" startPosition="129" endLine="35" endPosition="5" />
+    <scopeInfo nodeId="7857223919215949537" fileName="InequationReference_inequation_ReferentConstraint.java" startLine="31" startPosition="102" endLine="32" endPosition="164" />
+    <scopeInfo nodeId="7857223919215949561" fileName="InequationReference_inequation_ReferentConstraint.java" startLine="33" startPosition="12" endLine="34" endPosition="88" />
+    <scopeInfo nodeId="7857223919215948962" fileName="InequationReference_inequation_ReferentConstraint.java" startLine="30" startPosition="129" endLine="35" endPosition="5" />
+  </root>
+  <root nodeId="8090891477833132962">
+    <nodeInfo nodeId="8090891477833132966" fileName="QuickFixFieldReference_quickFixField_ReferentConstraint.java" startLine="30" startPosition="132" endLine="31" endPosition="47" />
+    <nodeInfo nodeId="8090891477833132972" fileName="QuickFixFieldReference_quickFixField_ReferentConstraint.java" startLine="31" startPosition="47" endLine="32" endPosition="154" />
+    <nodeInfo nodeId="8090891477833132982" fileName="QuickFixFieldReference_quickFixField_ReferentConstraint.java" startLine="33" startPosition="29" endLine="34" endPosition="131" />
+    <nodeInfo nodeId="8090891477833132992" fileName="QuickFixFieldReference_quickFixField_ReferentConstraint.java" startLine="35" startPosition="5" endLine="36" endPosition="17" />
+    <nodeInfo nodeId="8090891477833132980" fileName="QuickFixFieldReference_quickFixField_ReferentConstraint.java" startLine="32" startPosition="154" endLine="35" endPosition="5" />
+    <scopeInfo nodeId="8090891477833132981" fileName="QuickFixFieldReference_quickFixField_ReferentConstraint.java" startLine="33" startPosition="29" endLine="34" endPosition="131" />
+    <scopeInfo nodeId="8090891477833132965" fileName="QuickFixFieldReference_quickFixField_ReferentConstraint.java" startLine="30" startPosition="132" endLine="36" endPosition="17">
+      <varInfo nodeId="8090891477833132967" varName="nodes" />
+      <varInfo nodeId="8090891477833132973" varName="quickFix" />
+    </scopeInfo>
+  </root>
+  <root nodeId="919572754501607735">
+    <nodeInfo nodeId="919572754501607738" fileName="MessageStatement_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="66" />
+    <scopeInfo nodeId="919572754501607737" fileName="MessageStatement_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="66" />
+  </root>
+</debugInfo>
+

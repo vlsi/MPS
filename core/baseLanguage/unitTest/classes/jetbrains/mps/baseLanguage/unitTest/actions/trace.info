@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="1198167751204">
+    <nodeInfo nodeId="1198167785565" fileName="QueriesGenerated.java" startLine="21" startPosition="144" endLine="22" endPosition="118" />
+    <scopeInfo nodeId="1198167764448" fileName="QueriesGenerated.java" startLine="21" startPosition="144" endLine="22" endPosition="118" />
+  </root>
+  <root nodeId="589054057631277539">
+    <nodeInfo nodeId="589054057631277619" fileName="QueriesGenerated.java" startLine="17" startPosition="194" endLine="18" endPosition="149" />
+    <scopeInfo nodeId="589054057631277542" fileName="QueriesGenerated.java" startLine="17" startPosition="194" endLine="18" endPosition="149" />
+  </root>
+</debugInfo>
+

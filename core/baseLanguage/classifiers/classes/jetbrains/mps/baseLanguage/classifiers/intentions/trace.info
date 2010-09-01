@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="1218968276327">
+    <nodeInfo nodeId="1218968276330" fileName="CreateReferenceOnClassifier_Intention.java" startLine="32" startPosition="85" endLine="33" endPosition="52" />
+    <nodeInfo nodeId="1218968276355" fileName="CreateReferenceOnClassifier_Intention.java" startLine="43" startPosition="90" endLine="44" endPosition="240" />
+    <nodeInfo nodeId="1218968276334" fileName="CreateReferenceOnClassifier_Intention.java" startLine="47" startPosition="76" endLine="48" endPosition="244" />
+    <nodeInfo nodeId="1218968276346" fileName="CreateReferenceOnClassifier_Intention.java" startLine="48" startPosition="244" endLine="49" endPosition="71" />
+    <scopeInfo nodeId="1218968276329" fileName="CreateReferenceOnClassifier_Intention.java" startLine="32" startPosition="85" endLine="33" endPosition="52" />
+    <scopeInfo nodeId="1218968276354" fileName="CreateReferenceOnClassifier_Intention.java" startLine="43" startPosition="90" endLine="44" endPosition="240" />
+    <scopeInfo nodeId="1218968276333" fileName="CreateReferenceOnClassifier_Intention.java" startLine="47" startPosition="76" endLine="49" endPosition="71">
+      <varInfo nodeId="1218968276335" varName="outerConcept" />
+    </scopeInfo>
+  </root>
+</debugInfo>
+
