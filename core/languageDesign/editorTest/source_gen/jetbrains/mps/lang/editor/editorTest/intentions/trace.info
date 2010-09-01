@@ -2,6 +2,7 @@
 <debugInfo>
   <root nodeId="7658393498702987309">
     <nodeInfo nodeId="7658393498702987331" fileName="AddTestReferenceAnnotation_Intention.java" startLine="35" startPosition="85" endLine="36" endPosition="42" />
+    <nodeInfo nodeId="7846202737110270550" fileName="AddTestReferenceAnnotation_Intention.java" startLine="46" startPosition="90" endLine="47" endPosition="76" />
     <nodeInfo nodeId="7658393498702987473" fileName="AddTestReferenceAnnotation_Intention.java" startLine="50" startPosition="76" endLine="51" endPosition="54" />
     <nodeInfo nodeId="7658393498702996085" fileName="AddTestReferenceAnnotation_Intention.java" startLine="51" startPosition="54" endLine="52" endPosition="58" />
     <nodeInfo nodeId="7658393498703022822" fileName="AddTestReferenceAnnotation_Intention.java" startLine="52" startPosition="58" endLine="53" endPosition="69" />
