@@ -13608,10 +13608,8 @@
       <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="1223640864025" />
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1223637231686">
         <property name="vertical:32" value="true" />
+        <property name="usesFolding:32" value="true" />
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="1223637231687">
-          <property name="flag:32" value="false" />
-        </node>
-        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="1223637231689">
           <property name="flag:32" value="false" />
         </node>
         <node role="renderingCondition:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition:32" id="1223637250731">
@@ -13657,6 +13655,10 @@
         <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="1237719194301" />
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="1237719194302">
           <property name="flag:32" value="true" />
+        </node>
+        <node role="foldedCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="4247940824966341146">
+          <property name="text:32" value="/**...*/" />
+          <link role="styleClass:32" targetNodeId="5179638159363031272" resolveInfo="FoldedCell" />
         </node>
       </node>
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="1237719214272" />

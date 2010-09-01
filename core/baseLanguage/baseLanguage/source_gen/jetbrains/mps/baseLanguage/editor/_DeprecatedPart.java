@@ -45,9 +45,10 @@ public class _DeprecatedPart extends AbstractCellProvider {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
+    editorCell.setCanBeFolded(true);
+    editorCell.setFoldedCell(this.createConstant_uc5iyq_a0a_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_uc5iyq_a0a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_uc5iyq_b0a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_uc5iyq_c0a(editorContext, node));
@@ -96,6 +97,14 @@ public class _DeprecatedPart extends AbstractCellProvider {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_uc5iyq_a0a_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/**...*/");
+    editorCell.setCellId("Constant_uc5iyq_a0a_0");
+    BaseLanguageStyle_StyleSheet.getFoldedCell(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }

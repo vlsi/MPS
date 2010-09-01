@@ -1153,8 +1153,8 @@
     <scopeInfo nodeId="1221569837085" fileName="VariableDeclaration_RemoveFinalOnDelete.java" startLine="28" startPosition="75" endLine="29" endPosition="61" />
   </root>
   <root nodeId="1223637210494">
-    <nodeInfo nodeId="1223637252795" fileName="_DeprecatedPart.java" startLine="103" startPosition="111" endLine="104" endPosition="64" />
-    <scopeInfo nodeId="1223637250732" fileName="_DeprecatedPart.java" startLine="103" startPosition="111" endLine="104" endPosition="64" />
+    <nodeInfo nodeId="1223637252795" fileName="_DeprecatedPart.java" startLine="112" startPosition="111" endLine="113" endPosition="64" />
+    <scopeInfo nodeId="1223637250732" fileName="_DeprecatedPart.java" startLine="112" startPosition="111" endLine="113" endPosition="64" />
   </root>
   <root nodeId="1224574042506">
     <nodeInfo nodeId="1224579460892" fileName="EnumValuesExpression_Editor.java" startLine="112" startPosition="105" endLine="113" endPosition="117" />
