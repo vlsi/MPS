@@ -26,6 +26,7 @@ import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureE
 import jetbrains.mps.generator.impl.template.QueryExecutionContextWithDependencyRecording;
 import jetbrains.mps.generator.impl.template.QueryExecutionContextWithTracing;
 import jetbrains.mps.generator.template.*;
+import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.lang.generator.structure.*;
