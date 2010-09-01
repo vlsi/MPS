@@ -235,7 +235,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_cvgoyj_b2a0a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new CellModel_FoldingCellComponent(node);
+    AbstractCellProvider provider = new CellModelCollection_FoldedCellComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
@@ -257,7 +257,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_cvgoyj_c1a0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new CellModel_FoldingCellComponent(node);
+    AbstractCellProvider provider = new CellModelCollection_FoldedCellComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
@@ -293,7 +293,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_cvgoyj_c0a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new CellModel_FoldingCellComponent(node);
+    AbstractCellProvider provider = new CellModelCollection_FoldedCellComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }

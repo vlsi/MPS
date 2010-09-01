@@ -13,8 +13,8 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
-public class CellModel_FoldingCellComponent extends AbstractCellProvider {
-  public CellModel_FoldingCellComponent(SNode node) {
+public class CellModelListWithRole_FoldedCell extends AbstractCellProvider {
+  public CellModelListWithRole_FoldedCell(SNode node) {
     super(node);
   }
 
@@ -23,27 +23,27 @@ public class CellModel_FoldingCellComponent extends AbstractCellProvider {
   }
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_oewq89_a(editorContext, node);
+    return this.createCollection_hu558g_a(editorContext, node);
   }
 
-  private EditorCell createCollection_oewq89_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_hu558g_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_oewq89_a");
+    editorCell.setCellId("Collection_hu558g_a");
     Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
-    editorCell.addEditorCell(this.createConstant_oewq89_a0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_oewq89_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_hu558g_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_hu558g_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_oewq89_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_hu558g_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/folded cell:");
-    editorCell.setCellId("Constant_oewq89_a0");
+    editorCell.setCellId("Constant_hu558g_a0");
     Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_oewq89_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_hu558g_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("foldedCellModel");
     provider.setNoTargetText("<default>");

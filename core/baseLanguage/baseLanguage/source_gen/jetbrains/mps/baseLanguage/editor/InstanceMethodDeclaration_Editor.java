@@ -169,6 +169,14 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createConstant_359zr8_a0b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@{...}");
+    editorCell.setCellId("Constant_359zr8_a0b0");
+    BaseLanguageStyle_StyleSheet.getFoldedCell(editorCell).apply(editorCell);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   private EditorCell createConstant_359zr8_b2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "final");
     editorCell.setCellId("Constant_359zr8_b2a");
@@ -276,6 +284,8 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
       style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     }
+    editorCell.setCanBeFolded(true);
+    editorCell.setFoldedCell(this.createConstant_359zr8_a0b0(editorContext, node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

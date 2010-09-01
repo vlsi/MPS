@@ -1143,6 +1143,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getBoolean(_context.getNode(), "usesFolding");
   }
 
+  public static boolean ifMacro_Condition_4251248560567068263(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "usesFolding") && SLinkOperations.getTarget(_context.getNode(), "foldedCellModel", true) != null;
+  }
+
   public static boolean ifMacro_Condition_1182995371220(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "menuDescriptor", true) != null;
   }
@@ -1425,6 +1429,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_3031123562488321479(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "cellProvider", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_4251248560567092189(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "foldedCellModel", true);
   }
 
   public static SNode sourceNodeQuery_3031123562487795361(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

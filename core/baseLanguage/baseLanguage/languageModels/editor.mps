@@ -1073,13 +1073,18 @@
         </node>
         <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList:32" id="1188210514740">
           <property name="vertical:32" value="false" />
+          <property name="usesFolding:32" value="true" />
           <link role="relationDeclaration:32" targetNodeId="17.1188208488637:3" />
           <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="1237717874642">
             <property name="flag:32" value="true" />
           </node>
-          <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="1237818796596" />
+          <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="4251248560567064374" />
           <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem:32" id="6699325334163206152">
             <property name="flag:32" value="true" />
+          </node>
+          <node role="foldedCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="4251248560567064375">
+            <property name="text:32" value="@{...}" />
+            <link role="styleClass:32" targetNodeId="5179638159363031272" resolveInfo="FoldedCell" />
           </node>
         </node>
         <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="1237717874644" />

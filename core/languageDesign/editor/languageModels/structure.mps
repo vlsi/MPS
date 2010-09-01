@@ -1749,6 +1749,11 @@
       <property name="metaClass:0" value="aggregation" />
       <link role="target:0" targetNodeId="1073389214265:32" resolveInfo="EditorCellModel" />
     </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="6046489571270834038">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="foldedCellModel" />
+      <link role="target:0" targetNodeId="1073389214265:32" resolveInfo="EditorCellModel" />
+    </node>
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1140524464360">
       <property name="sourceCardinality:0" value="0..1" />
       <property name="role:0" value="cellLayout" />
