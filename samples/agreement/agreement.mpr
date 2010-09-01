@@ -20,6 +20,7 @@
     <projectSolutions>
       <solutionPath path="${project}/framework/jetbrains.mps.samples.agreement.framework.msd" folder="" />
       <solutionPath path="${project}/sandbox/agreementRegistryBuilder.msd" />
+      <solutionPath path="${samples_home}/formulaLanguage/runtime/jetbrains.mps.samples.formula.runtime.msd" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/agreementLanguage/languageDescriptor.mpl" />
