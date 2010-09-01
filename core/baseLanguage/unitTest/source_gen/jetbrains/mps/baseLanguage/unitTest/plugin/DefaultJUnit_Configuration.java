@@ -42,6 +42,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import com.intellij.openapi.util.Disposer;
 import com.intellij.execution.configurations.RunnerSettings;
 import com.intellij.execution.configurations.ConfigurationPerRunnerSettings;
 import com.intellij.openapi.util.JDOMExternalizable;
@@ -166,7 +167,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
                 final UnitTestViewComponent runComponent = new UnitTestViewComponent(project_22042010, operationContext, consoleView_22042010, parameter);
                 return MultiTuple.<JComponent,_FunctionTypes._void_P0_E0>from((JComponent) runComponent, new _FunctionTypes._void_P0_E0() {
                   public void invoke() {
-                    runComponent.dispose();
+                    Disposer.dispose(runComponent);
                   }
                 });
               }

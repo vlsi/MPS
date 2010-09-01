@@ -27468,13 +27468,12 @@
               </node>
               <node role="component:2" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral:3" id="5076369874037232949">
                 <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5076369874037232950">
-                  <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5076369874037232953">
-                    <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5076369874037232954">
-                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5076369874037232955">
+                  <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3397047498318811188">
+                    <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3397047498318811190">
+                      <link role="baseMethodDeclaration:3" targetNodeId="40.~Disposer.dispose(com.intellij.openapi.Disposable):void" resolveInfo="dispose" />
+                      <link role="classConcept:3" targetNodeId="40.~Disposer" resolveInfo="Disposer" />
+                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3397047498318811191">
                         <link role="variableDeclaration:3" targetNodeId="2281887280934080838:0" resolveInfo="runComponent" />
-                      </node>
-                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5076369874037232956">
-                        <link role="baseMethodDeclaration:3" targetNodeId="1214211870988:0" resolveInfo="dispose" />
                       </node>
                     </node>
                   </node>
