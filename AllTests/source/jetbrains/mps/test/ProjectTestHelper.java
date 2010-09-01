@@ -2,40 +2,39 @@ package jetbrains.mps.test;
 
 import com.intellij.openapi.application.PathMacros;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
-import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.util.Computable;
 import com.intellij.util.PathUtil;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.compiler.CompilationResultAdapter;
 import jetbrains.mps.compiler.JavaCompiler;
-import jetbrains.mps.generator.*;
+import jetbrains.mps.generator.GenParameters;
+import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
+import jetbrains.mps.ide.generator.GenerationSettings;
+import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.library.BaseLibraryManager.MyState;
 import jetbrains.mps.library.LibraryManager;
-import jetbrains.mps.make.ModuleMaker;
-import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.messages.Message;
-import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
+import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.make.dependencies.StronglyConnectedModules;
 import jetbrains.mps.make.dependencies.StronglyConnectedModules.IModuleDecorator;
 import jetbrains.mps.make.dependencies.StronglyConnectedModules.IModuleDecoratorBuilder;
 import jetbrains.mps.make.dependencies.graph.IVertex;
-
+import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.messages.Message;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
 import jetbrains.mps.project.tester.DiffReporter;
 import jetbrains.mps.project.tester.TesterGenerationHandler;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.AbstractClassLoader;
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.Pair;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
@@ -43,7 +42,6 @@ import org.apache.log4j.Logger;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.jetbrains.annotations.NotNull;
-
 
 import java.io.File;
 import java.net.MalformedURLException;
@@ -464,7 +462,7 @@ public class ProjectTestHelper {
 
   private boolean includeModel(SModelDescriptor modelDescriptor) {
     return SModelStereotype.isUserModel(modelDescriptor) &&
-      !(ModelGenerationStatusManager.isDoNotGenerate(modelDescriptor));
+      !(GeneratorManager.isDoNotGenerate(modelDescriptor));
   }
 
   protected static interface Cycle {

@@ -7,7 +7,7 @@ import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.util.Computable;
 import com.intellij.util.PathUtil;
 import jetbrains.mps.TestMain;
-import jetbrains.mps.generator.ModelGenerationStatusManager;
+import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
@@ -62,6 +62,10 @@ public class BrokenReferencesTestHelper {
     return doCheck(files);
   }
 
+  public void load (Iterable<File> files) {
+    doLoadModels(files);
+  }
+
   public void cleanUp () {
     doCleanUp ();
   }
@@ -76,20 +80,20 @@ public class BrokenReferencesTestHelper {
     return sb.toString();
   }
 
-  public void setMacro (String macroName, String path) {
-    String canonicalPath = PathUtil.getCanonicalPath(path);
-    File file = new File(canonicalPath);
-    if (file.exists() && file.isDirectory()) {
-      PathMacros.getInstance().setMacro(macroName, canonicalPath);
-    }
-  }
-  
-
   // Private
 
   private static final Logger LOG = Logger.getLogger(BrokenReferencesTestHelper.class);
 
   private List<String> doCheck(Iterable<File> files) {
+    Set<SModelDescriptor> models = doLoadModels(files);
+
+    // ???
+    reloadAll();
+
+    return checkModels(models);
+  }
+
+  private Set<SModelDescriptor> doLoadModels(Iterable<File> files) {
     Set<SModelDescriptor> models = collectFromModelFiles(files);
 
     for (MPSProject prj: collectFromProjects(files)) {
@@ -98,11 +102,7 @@ public class BrokenReferencesTestHelper {
     for (IModule mod: collectFromModuleFiles(files)) {
       extractModels(models, mod);
     }
-
-    // ???
-    reloadAll();
-
-    return checkModels(models);
+    return models;
   }
 
   private void doCleanUp() {
@@ -264,25 +264,35 @@ public class BrokenReferencesTestHelper {
   private boolean myTestFailed;
 
   private BrokenReferencesTestHelper() {
-    init();
   }
 
-  private void init() {
+  public void init(String[][] macros) {
     BasicConfigurator.configure();
-    Logger.getRootLogger().setLevel(Level.FATAL);
+    Logger.getRootLogger().setLevel(Level.INFO);
     jetbrains.mps.logging.Logger.addLoggingHandler(new LoggingHandlerAdapter());
 
     IdeMain.setTestMode(TestMode.CORE_TEST);
     TestMain.configureMPS();
 
+    for (String[] macro: macros) {
+      setMacro(macro[0], macro[1]);
+    }
     initLibs();
     makeAll();
-
+    reloadAll();
 
     com.intellij.openapi.project.Project ideaProject = ProjectManager.getInstance().getDefaultProject();
     File projectFile = FileUtil.createTmpFile();
     this.project = new MPSProject(ideaProject);
     project.init(projectFile, new ProjectDescriptor());
+  }
+
+  private void setMacro (String macroName, String path) {
+    String canonicalPath = PathUtil.getCanonicalPath(path);
+    File file = new File(canonicalPath);
+    if (file.exists() && file.isDirectory()) {
+      PathMacros.getInstance().setMacro(macroName, canonicalPath);
+    }
   }
 
   private void makeAll() {
@@ -345,7 +355,7 @@ public class BrokenReferencesTestHelper {
 
   private boolean includeModel(SModelDescriptor modelDescriptor) {
     return SModelStereotype.isUserModel(modelDescriptor) &&
-      !(ModelGenerationStatusManager.isDoNotGenerate(modelDescriptor));
+      !(GeneratorManager.isDoNotGenerate(modelDescriptor));
   }
 
 

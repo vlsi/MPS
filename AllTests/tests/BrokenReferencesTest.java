@@ -1,12 +1,12 @@
-import com.intellij.ide.IdeEventQueue;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.junit.WatchingParameterized;
 import jetbrains.mps.test.BrokenReferencesTestHelper;
 import jetbrains.mps.test.FilesCollector;
 import jetbrains.mps.test.FilesCollector.FilePattern;
 import jetbrains.mps.test.FilesCollector.FilePattern.Type;
-import jetbrains.mps.test.ProjectTestHelper;
-import org.junit.*;
+import org.junit.AfterClass;
+import org.junit.Assert;
+import org.junit.BeforeClass;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
 
@@ -59,7 +59,13 @@ public class BrokenReferencesTest {
   @BeforeClass
   public static void init() {
     HELPER = BrokenReferencesTestHelper.getInstance();
-    HELPER.setMacro("samples_home", System.getProperty("user.dir")+"/samples");
+    HELPER.init(new String [][] {{"samples_home", System.getProperty("user.dir")+"/samples"}});
+    List<File> path = Collections.singletonList(new File(System.getProperty("user.dir")));
+    List<FilePattern> filePtns = new ArrayList<FilePattern>();
+    for (Object[] ptns : patterns) {
+      filePtns.add (FilesCollector.FilePattern.fromTypeAndPattern(ptns));
+    }
+    HELPER.load(FilesCollector.collectFiles(filePtns, path));
   }
 
   @AfterClass
