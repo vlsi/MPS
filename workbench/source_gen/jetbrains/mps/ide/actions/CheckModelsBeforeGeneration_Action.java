@@ -8,7 +8,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.generator.GenerationSettings;
+import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.ide.generator.Icons;
 import com.intellij.util.ui.EmptyIcon;
 

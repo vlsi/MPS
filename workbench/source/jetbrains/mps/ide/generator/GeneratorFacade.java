@@ -23,7 +23,6 @@ import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
-import jetbrains.mps.generator.GenerationSettings;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.generator.NoCachesStrategy;

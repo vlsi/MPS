@@ -18,6 +18,7 @@ package jetbrains.mps.generator;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.util.containers.ConcurrentHashSet;
+import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;

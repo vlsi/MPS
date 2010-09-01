@@ -22,6 +22,7 @@ import jetbrains.mps.build.ant.WhatToDo;
 import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
+import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.make.dependencies.StronglyConnectedModules;

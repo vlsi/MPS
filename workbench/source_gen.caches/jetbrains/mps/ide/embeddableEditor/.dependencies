@@ -8,8 +8,6 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="javax.swing.JComponent" />
-    <classNode dependClassName="jetbrains.mps.generator.GenerationSettings" />
-    <classNode dependClassName="jetbrains.mps.generator.GeneratorManager" />
     <classNode dependClassName="jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler" />
     <classNode dependClassName="jetbrains.mps.ide.IEditor" />
     <classNode dependClassName="jetbrains.mps.ide.NodeEditor" />

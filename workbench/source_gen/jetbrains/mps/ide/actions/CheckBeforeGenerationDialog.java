@@ -12,7 +12,7 @@ import java.awt.BorderLayout;
 import javax.swing.JCheckBox;
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
-import jetbrains.mps.generator.GenerationSettings;
+import jetbrains.mps.ide.generator.GenerationSettings;
 import javax.swing.JLabel;
 import javax.swing.Action;
 

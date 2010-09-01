@@ -5,7 +5,6 @@ import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.util.ui.UIUtil;
-import jetbrains.mps.generator.GenerationSettings;
 
 import javax.swing.*;
 import java.awt.BorderLayout;

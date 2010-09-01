@@ -23,7 +23,7 @@ import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.impl.GenerationController;
 import jetbrains.mps.generator.impl.GenerationProcessContext;
 import jetbrains.mps.generator.impl.GeneratorLoggerAdapter;
-import jetbrains.mps.ide.generator.GeneratorFacade;
+import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.lang.generator.plugin.debug.GenerationTracer;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.messages.IMessageHandler;
@@ -44,7 +44,7 @@ public class GeneratorManager {
 
   private Project myProject;
 
-  public GeneratorManager(Project project, GenerationSettings settings) {
+  public GeneratorManager(Project project) {
     myProject = project;
   }
 
@@ -129,7 +129,7 @@ public class GeneratorManager {
 
         GeneratorLoggerAdapter logger = new GeneratorLoggerAdapter(messages, settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings());
 
-        GenerationController gc = new GenerationController(parameters, new GeneratorNotifierHelper(), inputModels,  logger, generationHandler);
+        GenerationController gc = new GenerationController(parameters, new GeneratorNotifierHelper(), inputModels, logger, generationHandler);
         result[0] = gc.generate();
         tracer.finishTracing();
         fireAfterGeneration(inputModels);

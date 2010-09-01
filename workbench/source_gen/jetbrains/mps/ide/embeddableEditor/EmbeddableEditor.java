@@ -23,8 +23,6 @@ import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.generator.GenerationSettings;
 import jetbrains.mps.ide.generator.GeneratorFacade;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -130,11 +128,6 @@ public class EmbeddableEditor {
           result.add(item);
         }
         return result;
-      }
-    };
-    GeneratorManager manager = new GeneratorManager(myContext.getProject(), new GenerationSettings()) {
-      protected boolean generateRequirements() {
-        return false;
       }
     };
     boolean successful = GeneratorFacade.getInstance().generateModels(myContext, ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), myModel), handler, true, true);

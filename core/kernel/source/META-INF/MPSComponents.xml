@@ -292,7 +292,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.generator.GenerationSettings</implementation-class>
+      <implementation-class>jetbrains.mps.ide.generator.GenerationSettings</implementation-class>
     </component>
 
     <component>

@@ -24,8 +24,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.projectPane.Icons;
 import java.util.ArrayList;
 import jetbrains.mps.project.MPSProject;
-import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.generator.GenerationSettings;
+import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import com.intellij.openapi.vcs.checkin.CheckinHandler;
 import com.intellij.openapi.ui.Messages;
@@ -122,7 +121,7 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
   }
 
   public boolean checkModelsBeforeGenerationIfNeeded(IOperationContext operationContext, List<SModelDescriptor> modelDescriptors, Runnable regenerationRunnable) {
-    boolean checkModels = ApplicationManager.getApplication().getComponent(GenerationSettings.class).isCheckModelsBeforeGeneration();
+    boolean checkModels = GenerationSettings.getInstance().isCheckModelsBeforeGeneration();
     if (!(checkModels)) {
       return true;
     }
