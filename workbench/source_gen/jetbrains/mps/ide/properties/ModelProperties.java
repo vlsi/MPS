@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.MissingDependenciesFixer;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.project.DevKit;
@@ -87,6 +88,7 @@ public class ModelProperties extends BaseBean {
         ((EditableSModelDescriptor) myModelDescriptor).save();
       }
     });
+    new MissingDependenciesFixer(myContext, myModelDescriptor).fix();
   }
 
   private void addNewDevKits() {
