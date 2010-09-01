@@ -881,19 +881,39 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1149547447656252123(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "inequation", false), AttributesRolesUtil.childRoleFromAttributeRole("originalNodeIdAnnotation"), true), "modelId");
+    SNode id = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "inequation", false), AttributesRolesUtil.childRoleFromAttributeRole("originalNodeIdAnnotation"), true);
+    if (id != null) {
+      return SPropertyOperations.getString(id, "modelId");
+    } else {
+      return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "inequation", false)).toString();
+    }
   }
 
   public static Object propertyMacro_GetPropertyValue_4031518422727234198(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "inequation", false), AttributesRolesUtil.childRoleFromAttributeRole("originalNodeIdAnnotation"), true), "nodeId");
+    SNode id = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "inequation", false), AttributesRolesUtil.childRoleFromAttributeRole("originalNodeIdAnnotation"), true);
+    if (id != null) {
+      return SPropertyOperations.getString(id, "nodeId");
+    } else {
+      return SLinkOperations.getTarget(_context.getNode(), "inequation", false).getId();
+    }
   }
 
   public static Object propertyMacro_GetPropertyValue_1149547447656253830(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "inequation", false), AttributesRolesUtil.childRoleFromAttributeRole("originalNodeIdAnnotation"), true), "modelId");
+    SNode id = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "inequation", false), AttributesRolesUtil.childRoleFromAttributeRole("originalNodeIdAnnotation"), true);
+    if (id != null) {
+      return SPropertyOperations.getString(id, "modelId");
+    } else {
+      return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "inequation", false)).toString();
+    }
   }
 
   public static Object propertyMacro_GetPropertyValue_4031518422727234220(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "inequation", false), AttributesRolesUtil.childRoleFromAttributeRole("originalNodeIdAnnotation"), true), "nodeId");
+    SNode id = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "inequation", false), AttributesRolesUtil.childRoleFromAttributeRole("originalNodeIdAnnotation"), true);
+    if (id != null) {
+      return SPropertyOperations.getString(id, "nodeId");
+    } else {
+      return SLinkOperations.getTarget(_context.getNode(), "inequation", false).getId();
+    }
   }
 
   public static Object propertyMacro_GetPropertyValue_7342618720440051764(final IOperationContext operationContext, final PropertyMacroContext _context) {
