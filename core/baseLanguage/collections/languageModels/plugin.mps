@@ -1376,17 +1376,43 @@
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="7785669630792487794">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="7785669630792487808">
-            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7785669630792487811">
-              <link role="variableDeclaration:3" targetNodeId="7785669630792487784" resolveInfo="entryValue" />
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="667569110692308445">
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="667569110692308448">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression:3" id="667569110692308455">
+                <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="667569110692308459">
+                  <property name="value:3" value="null" />
+                </node>
+                <node role="ifFalse:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="667569110692308460">
+                  <link role="variableDeclaration:3" targetNodeId="7785669630792487784" resolveInfo="entryValue" />
+                </node>
+                <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="667569110692308451">
+                  <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="667569110692308454" />
+                  <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="667569110692308450">
+                    <link role="variableDeclaration:3" targetNodeId="7785669630792487784" resolveInfo="entryValue" />
+                  </node>
+                </node>
+              </node>
             </node>
             <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="7785669630792487804">
               <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="7785669630792487799">
                 <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="7785669630792487798">
                   <property name="value:3" value="[" />
                 </node>
-                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7785669630792487803">
-                  <link role="variableDeclaration:3" targetNodeId="7785669630792487770" resolveInfo="key" />
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="667569110692308433">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression:3" id="667569110692308439">
+                    <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="667569110692308443">
+                      <property name="value:3" value="null" />
+                    </node>
+                    <node role="ifFalse:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="667569110692308444">
+                      <link role="variableDeclaration:3" targetNodeId="7785669630792487770" resolveInfo="key" />
+                    </node>
+                    <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="667569110692308435">
+                      <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="667569110692308438" />
+                      <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="667569110692308434">
+                        <link role="variableDeclaration:3" targetNodeId="7785669630792487770" resolveInfo="key" />
+                      </node>
+                    </node>
+                  </node>
                 </node>
               </node>
               <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="7785669630792487807">

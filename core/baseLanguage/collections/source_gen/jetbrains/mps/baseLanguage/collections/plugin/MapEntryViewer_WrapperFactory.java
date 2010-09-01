@@ -15,6 +15,7 @@ import jetbrains.mps.debug.runtime.java.programState.watchables.CustomJavaWatcha
 import jetbrains.mps.debug.evaluation.proxies.IObjectValueProxy;
 import java.util.ArrayList;
 import jetbrains.mps.debug.runtime.java.programState.proxies.JavaObjectValue;
+import jetbrains.mps.debug.evaluation.proxies.ProxyEqualsUtil;
 
 public class MapEntryViewer_WrapperFactory extends ValueWrapperFactory {
   public MapEntryViewer_WrapperFactory() {
@@ -73,7 +74,13 @@ public class MapEntryViewer_WrapperFactory extends ValueWrapperFactory {
     protected String getValuePresentation(IObjectValueProxy value) throws EvaluationException {
       IObjectValueProxy key = ((IObjectValueProxy) value.invokeMethod("getKey", "()Ljava/lang/Object;"));
       IObjectValueProxy entryValue = ((IObjectValueProxy) value.invokeMethod("getValue", "()Ljava/lang/Object;"));
-      return "[" + (String) (key).invokeMethod("toString", "()Ljava/lang/String;").getJavaValue() + "] = " + (String) (entryValue).invokeMethod("toString", "()Ljava/lang/String;").getJavaValue();
+      return "[" + ((ProxyEqualsUtil.javaEquals(key, null) ?
+        "null" :
+        key
+      )) + "] = " + ((ProxyEqualsUtil.javaEquals(entryValue, null) ?
+        "null" :
+        entryValue
+      ));
     }
   }
 }
