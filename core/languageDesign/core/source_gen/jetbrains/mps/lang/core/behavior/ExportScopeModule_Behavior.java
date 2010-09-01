@@ -7,20 +7,20 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ExportScopeModule_Behavior {
-  private static Class[] PARAMETERS_402007580867586263 = {SNode.class ,String.class};
+  private static Class[] PARAMETERS_402007580867586263 = {SNode.class ,String.class ,SNode.class};
 
   public static void init(SNode thisNode) {
   }
 
-  public static boolean virtual_checkExport_2565736246230026584(SNode thisNode, String sourceNamespace) {
-    return sourceNamespace.equals(ExportScope_Behavior.getNamespace_2565736246230026649(thisNode));
+  public static boolean virtual_checkExport_2565736246230026584(SNode thisNode, String sourceNamespace, SNode targetNode) {
+    return sourceNamespace.equals(ExportScope_Behavior.getNamespace_2565736246230026649(targetNode));
   }
 
-  public static boolean call_checkExport_402007580867586263(SNode thisNode, String sourceNamespace) {
-    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ExportScopeModule"), "virtual_checkExport_2565736246230026584", PARAMETERS_402007580867586263, sourceNamespace);
+  public static boolean call_checkExport_402007580867586263(SNode thisNode, String sourceNamespace, SNode targetNode) {
+    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ExportScopeModule"), "virtual_checkExport_2565736246230026584", PARAMETERS_402007580867586263, sourceNamespace, targetNode);
   }
 
-  public static boolean callSuper_checkExport_402007580867586263(SNode thisNode, String callerConceptFqName, String sourceNamespace) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ExportScopeModule"), callerConceptFqName, "virtual_checkExport_2565736246230026584", PARAMETERS_402007580867586263, sourceNamespace);
+  public static boolean callSuper_checkExport_402007580867586263(SNode thisNode, String callerConceptFqName, String sourceNamespace, SNode targetNode) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ExportScopeModule"), callerConceptFqName, "virtual_checkExport_2565736246230026584", PARAMETERS_402007580867586263, sourceNamespace, targetNode);
   }
 }

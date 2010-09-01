@@ -1,3 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo />
+<debugInfo>
+  <root nodeId="2565736246230068875">
+    <nodeInfo nodeId="2565736246230071401" fileName="DeleteExportScope.java" startLine="32" startPosition="75" endLine="33" endPosition="39" />
+    <scopeInfo nodeId="2565736246230068878" fileName="DeleteExportScope.java" startLine="32" startPosition="75" endLine="33" endPosition="39" />
+  </root>
+</debugInfo>
 

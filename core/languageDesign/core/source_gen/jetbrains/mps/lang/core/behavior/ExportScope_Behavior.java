@@ -9,27 +9,27 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.AttributesRolesUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
 
 public class ExportScope_Behavior {
-  private static Class[] PARAMETERS_2565736246230026584 = {SNode.class ,String.class};
+  private static Class[] PARAMETERS_2565736246230026584 = {SNode.class ,String.class ,SNode.class};
 
   public static void init(SNode thisNode) {
   }
 
-  public static boolean call_checkExport_2565736246230026584(SNode thisNode, String sourceNamespace) {
-    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ExportScope"), "virtual_checkExport_2565736246230026584", PARAMETERS_2565736246230026584, sourceNamespace);
+  public static boolean call_checkExport_2565736246230026584(SNode thisNode, String sourceNamespace, SNode targetNode) {
+    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ExportScope"), "virtual_checkExport_2565736246230026584", PARAMETERS_2565736246230026584, sourceNamespace, targetNode);
   }
 
-  public static boolean callSuper_checkExport_2565736246230026584(SNode thisNode, String callerConceptFqName, String sourceNamespace) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ExportScope"), callerConceptFqName, "virtual_checkExport_2565736246230026584", PARAMETERS_2565736246230026584, sourceNamespace);
+  public static boolean callSuper_checkExport_2565736246230026584(SNode thisNode, String callerConceptFqName, String sourceNamespace, SNode targetNode) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ExportScope"), callerConceptFqName, "virtual_checkExport_2565736246230026584", PARAMETERS_2565736246230026584, sourceNamespace, targetNode);
   }
 
   public static String getNamespace_2565736246230026649(SNode node) {
-    return check_ogf5a0_a0a0(check_ogf5a0_a0a0a(check_ogf5a0_a0a0a0(SNodeOperations.getModel(node))));
+    return check_ogf5a0_a0a0(check_ogf5a0_a0a0a(check_ogf5a0_a0a0a0(check_ogf5a0_a0a0a0a(SNodeOperations.getModel(node)))));
   }
 
   public static SNode getExportScope_4075196924244445285(SNode node) {
@@ -44,38 +44,48 @@ public class ExportScope_Behavior {
     return SLinkOperations.getTarget(SNodeOperations.getContainingRoot(node), AttributesRolesUtil.childRoleFromAttributeRole("export"), true);
   }
 
-  public static SNode getExportScope_4075196924244451896(SNode node, boolean isConcept) {
-    // return effective export scope or default export scope for given concept or reference 
-    SNode res = ExportScope_Behavior.getExportScope_4075196924244445285(node);
-    if ((res == null)) {
-      res = (isConcept ?
-        SConceptOperations.createNewNode("jetbrains.mps.lang.core.structure.ExportScopePublic", null) :
-        SConceptOperations.createNewNode("jetbrains.mps.lang.core.structure.ExportScopeNamespace", null)
+  public static boolean checkExportDefault_8259195909097980935(boolean isConcept, SNode node, String namespace) {
+    /*
+      return (isConcept ?
+        true :
+        namespace.equals(ExportScope_Behavior.getNamespace_2565736246230026649(node))
       );
-    }
-    return res;
+    */
+    // for a while "module' export only for jetbrains.mps... modules 
+    String targetNamespace = ExportScope_Behavior.getNamespace_2565736246230026649(node);
+    return isConcept || namespace.equals(targetNamespace) || targetNamespace == null || !(targetNamespace.startsWith("jetbrains.mps"));
   }
 
   public static boolean checkExport_2565736246230031479(boolean isConcept, SNode node, String namespace) {
-    SNode exp = ExportScope_Behavior.getExportScope_4075196924244451896(node, isConcept);
-    return namespace == null || ExportScope_Behavior.call_checkExport_2565736246230026584(exp, namespace);
+    SNode exp = ExportScope_Behavior.getExportScope_4075196924244445285(node);
+    return namespace == null || (((exp == null) ?
+      ExportScope_Behavior.checkExportDefault_8259195909097980935(isConcept, node, namespace) :
+      ExportScope_Behavior.call_checkExport_2565736246230026584(exp, namespace, node)
+    ));
   }
 
-  private static String check_ogf5a0_a0a0(IModule p) {
+  private static String check_ogf5a0_a0a0(ModuleDescriptor p) {
     if (null == p) {
       return null;
     }
-    return p.getModuleNamespace();
+    return p.getNamespace();
   }
 
-  private static IModule check_ogf5a0_a0a0a(SModelDescriptor p) {
+  private static ModuleDescriptor check_ogf5a0_a0a0a(IModule p) {
+    if (null == p) {
+      return null;
+    }
+    return p.getModuleDescriptor();
+  }
+
+  private static IModule check_ogf5a0_a0a0a0(SModelDescriptor p) {
     if (null == p) {
       return null;
     }
     return p.getModule();
   }
 
-  private static SModelDescriptor check_ogf5a0_a0a0a0(SModel p) {
+  private static SModelDescriptor check_ogf5a0_a0a0a0a(SModel p) {
     if (null == p) {
       return null;
     }
