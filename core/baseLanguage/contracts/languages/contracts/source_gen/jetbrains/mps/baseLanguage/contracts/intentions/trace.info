@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="6302815655306137097">
+    <nodeInfo nodeId="6302815655306166930" fileName="RemoveConditions_Intention.java" startLine="34" startPosition="85" endLine="35" endPosition="31" />
+    <nodeInfo nodeId="6302815655306166940" fileName="RemoveConditions_Intention.java" startLine="45" startPosition="90" endLine="46" endPosition="200" />
+    <nodeInfo nodeId="6302815655306167016" fileName="RemoveConditions_Intention.java" startLine="49" startPosition="76" endLine="50" endPosition="138" />
+    <scopeInfo nodeId="6302815655306137099" fileName="RemoveConditions_Intention.java" startLine="34" startPosition="85" endLine="35" endPosition="31" />
+    <scopeInfo nodeId="6302815655306166933" fileName="RemoveConditions_Intention.java" startLine="45" startPosition="90" endLine="46" endPosition="200" />
+    <scopeInfo nodeId="6302815655306137101" fileName="RemoveConditions_Intention.java" startLine="49" startPosition="76" endLine="50" endPosition="138" />
+  </root>
+  <root nodeId="6302815655306137102">
+    <nodeInfo nodeId="6302815655306145565" fileName="AddConditions_Intention.java" startLine="34" startPosition="85" endLine="35" endPosition="28" />
+    <nodeInfo nodeId="2348361366766591633" fileName="AddConditions_Intention.java" startLine="45" startPosition="90" endLine="46" endPosition="123" />
+    <nodeInfo nodeId="6302815655306145570" fileName="AddConditions_Intention.java" startLine="50" startPosition="126" endLine="51" endPosition="219" />
+    <nodeInfo nodeId="6302815655306145568" fileName="AddConditions_Intention.java" startLine="49" startPosition="76" endLine="52" endPosition="5" />
+    <scopeInfo nodeId="6302815655306137104" fileName="AddConditions_Intention.java" startLine="34" startPosition="85" endLine="35" endPosition="28" />
+    <scopeInfo nodeId="2348361366766581297" fileName="AddConditions_Intention.java" startLine="45" startPosition="90" endLine="46" endPosition="123" />
+    <scopeInfo nodeId="6302815655306145569" fileName="AddConditions_Intention.java" startLine="50" startPosition="126" endLine="51" endPosition="219" />
+    <scopeInfo nodeId="6302815655306137106" fileName="AddConditions_Intention.java" startLine="49" startPosition="76" endLine="52" endPosition="5" />
+  </root>
+</debugInfo>
+

@@ -48,7 +48,9 @@ public class BLDebugInfoCache extends BaseModelCache<DebugInfo> {
   }
 
   protected File saveCache(@NotNull DebugInfo debugInfo, SModelDescriptor model) {
-    IFile cacheFile = check_xy6085_a0a0d(FileGenerationUtil.getDefaultOutputDir(model, getOutputDirForWriting(model.getModule(), model.getModule().getOutputFor(model))), TRACE_FILE_NAME);
+    IFile defaultOutputDir = FileGenerationUtil.getDefaultOutputDir(model, getOutputDirForWriting(model.getModule(), model.getModule().getOutputFor(model)));
+    check_xy6085_a1a3(defaultOutputDir);
+    IFile cacheFile = check_xy6085_a0c0d(defaultOutputDir, TRACE_FILE_NAME);
     if (cacheFile == null) {
       return null;
     }
@@ -107,7 +109,14 @@ public class BLDebugInfoCache extends BaseModelCache<DebugInfo> {
     return ApplicationManager.getApplication().getComponent(BLDebugInfoCache.class);
   }
 
-  private static IFile check_xy6085_a0a0d(IFile p, String TRACE_FILE_NAME) {
+  private static Boolean check_xy6085_a1a3(IFile p) {
+    if (null == p) {
+      return null;
+    }
+    return p.mkdirs();
+  }
+
+  private static IFile check_xy6085_a0c0d(IFile p, String TRACE_FILE_NAME) {
     if (null == p) {
       return null;
     }

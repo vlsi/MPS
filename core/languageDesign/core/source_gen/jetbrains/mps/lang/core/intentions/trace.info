@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="1209383918929">
+    <nodeInfo nodeId="1209383934311" fileName="AddMissingLanguageImport_Intention.java" startLine="32" startPosition="85" endLine="33" endPosition="80" />
+    <nodeInfo nodeId="1209383977800" fileName="AddMissingLanguageImport_Intention.java" startLine="43" startPosition="90" endLine="44" endPosition="62" />
+    <nodeInfo nodeId="1239134261152" fileName="AddMissingLanguageImport_Intention.java" startLine="47" startPosition="76" endLine="48" endPosition="97" />
+    <nodeInfo nodeId="1239134266454" fileName="AddMissingLanguageImport_Intention.java" startLine="49" startPosition="28" endLine="50" endPosition="13" />
+    <nodeInfo nodeId="1209383995632" fileName="AddMissingLanguageImport_Intention.java" startLine="51" startPosition="5" endLine="52" endPosition="79" />
+    <nodeInfo nodeId="1239134262742" fileName="AddMissingLanguageImport_Intention.java" startLine="48" startPosition="97" endLine="51" endPosition="5" />
+    <scopeInfo nodeId="1209383918931" fileName="AddMissingLanguageImport_Intention.java" startLine="32" startPosition="85" endLine="33" endPosition="80" />
+    <scopeInfo nodeId="1209383961979" fileName="AddMissingLanguageImport_Intention.java" startLine="43" startPosition="90" endLine="44" endPosition="62" />
+    <scopeInfo nodeId="1239134262743" fileName="AddMissingLanguageImport_Intention.java" startLine="49" startPosition="28" endLine="50" endPosition="13" />
+    <scopeInfo nodeId="1209383918933" fileName="AddMissingLanguageImport_Intention.java" startLine="47" startPosition="76" endLine="52" endPosition="79">
+      <varInfo nodeId="1239134261153" varName="moduleRef" />
+    </scopeInfo>
+  </root>
+  <root nodeId="1209384963618">
+    <nodeInfo nodeId="1209384987919" fileName="AddMissingDependency_Intention.java" startLine="35" startPosition="85" endLine="36" endPosition="44" />
+    <nodeInfo nodeId="1209385154009" fileName="AddMissingDependency_Intention.java" startLine="37" startPosition="49" endLine="38" endPosition="59" />
+    <nodeInfo nodeId="1209385165278" fileName="AddMissingDependency_Intention.java" startLine="39" startPosition="111" endLine="40" endPosition="80" />
+    <nodeInfo nodeId="1209385228564" fileName="AddMissingDependency_Intention.java" startLine="40" startPosition="80" endLine="41" endPosition="60" />
+    <nodeInfo nodeId="1209385248988" fileName="AddMissingDependency_Intention.java" startLine="43" startPosition="5" endLine="44" endPosition="33" />
+    <nodeInfo nodeId="1209385285846" fileName="AddMissingDependency_Intention.java" startLine="54" startPosition="90" endLine="55" endPosition="44" />
+    <nodeInfo nodeId="1209385276369" fileName="AddMissingDependency_Intention.java" startLine="56" startPosition="49" endLine="57" endPosition="59" />
+    <nodeInfo nodeId="1222430244831" fileName="AddMissingDependency_Intention.java" startLine="58" startPosition="24" endLine="59" endPosition="17" />
+    <nodeInfo nodeId="1209385290905" fileName="AddMissingDependency_Intention.java" startLine="61" startPosition="111" endLine="62" endPosition="20" />
+    <nodeInfo nodeId="1209385293184" fileName="AddMissingDependency_Intention.java" startLine="64" startPosition="5" endLine="65" endPosition="17" />
+    <nodeInfo nodeId="1209385300976" fileName="AddMissingDependency_Intention.java" startLine="68" startPosition="76" endLine="69" endPosition="44" />
+    <nodeInfo nodeId="1209385300990" fileName="AddMissingDependency_Intention.java" startLine="70" startPosition="49" endLine="71" endPosition="59" />
+    <nodeInfo nodeId="1209385301011" fileName="AddMissingDependency_Intention.java" startLine="72" startPosition="111" endLine="73" endPosition="80" />
+    <nodeInfo nodeId="1209385306059" fileName="AddMissingDependency_Intention.java" startLine="73" startPosition="80" endLine="74" endPosition="114" />
+    <nodeInfo nodeId="1222430227713" fileName="AddMissingDependency_Intention.java" startLine="57" startPosition="59" endLine="60" endPosition="7" />
+    <nodeInfo nodeId="1209385276375" fileName="AddMissingDependency_Intention.java" startLine="60" startPosition="7" endLine="63" endPosition="7" />
+    <nodeInfo nodeId="1209384983302" fileName="AddMissingDependency_Intention.java" startLine="38" startPosition="59" endLine="42" endPosition="7" />
+    <nodeInfo nodeId="1209385300996" fileName="AddMissingDependency_Intention.java" startLine="71" startPosition="59" endLine="75" endPosition="7" />
+    <nodeInfo nodeId="1209384972498" fileName="AddMissingDependency_Intention.java" startLine="36" startPosition="44" endLine="43" endPosition="5" />
+    <nodeInfo nodeId="1209385300982" fileName="AddMissingDependency_Intention.java" startLine="69" startPosition="44" endLine="76" endPosition="5" />
+    <nodeInfo nodeId="1209385276361" fileName="AddMissingDependency_Intention.java" startLine="55" startPosition="44" endLine="64" endPosition="5" />
+    <scopeInfo nodeId="1222430227714" fileName="AddMissingDependency_Intention.java" startLine="58" startPosition="24" endLine="59" endPosition="17" />
+    <scopeInfo nodeId="1209385276389" fileName="AddMissingDependency_Intention.java" startLine="61" startPosition="111" endLine="62" endPosition="20" />
+    <scopeInfo nodeId="1209384983304" fileName="AddMissingDependency_Intention.java" startLine="39" startPosition="111" endLine="41" endPosition="60">
+      <varInfo nodeId="1209385165279" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1209385301010" fileName="AddMissingDependency_Intention.java" startLine="72" startPosition="111" endLine="74" endPosition="114">
+      <varInfo nodeId="1209385301012" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="1209384972502" fileName="AddMissingDependency_Intention.java" startLine="37" startPosition="49" endLine="42" endPosition="7">
+      <varInfo nodeId="1209385154010" varName="uid" />
+    </scopeInfo>
+    <scopeInfo nodeId="1209385300989" fileName="AddMissingDependency_Intention.java" startLine="70" startPosition="49" endLine="75" endPosition="7">
+      <varInfo nodeId="1209385300991" varName="uid" />
+    </scopeInfo>
+    <scopeInfo nodeId="1209384972498" fileName="AddMissingDependency_Intention.java" startLine="36" startPosition="44" endLine="43" endPosition="5">
+      <varInfo nodeId="1209384972500" varName="ref" />
+    </scopeInfo>
+    <scopeInfo nodeId="1209385276368" fileName="AddMissingDependency_Intention.java" startLine="56" startPosition="49" endLine="63" endPosition="7">
+      <varInfo nodeId="1209385276370" varName="uid" />
+    </scopeInfo>
+    <scopeInfo nodeId="1209385300982" fileName="AddMissingDependency_Intention.java" startLine="69" startPosition="44" endLine="76" endPosition="5">
+      <varInfo nodeId="1209385300987" varName="ref" />
+    </scopeInfo>
+    <scopeInfo nodeId="1209384963622" fileName="AddMissingDependency_Intention.java" startLine="68" startPosition="76" endLine="76" endPosition="5">
+      <varInfo nodeId="1209385300977" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="1209384963620" fileName="AddMissingDependency_Intention.java" startLine="35" startPosition="85" endLine="44" endPosition="33">
+      <varInfo nodeId="1209384987920" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="1209385276361" fileName="AddMissingDependency_Intention.java" startLine="55" startPosition="44" endLine="64" endPosition="5">
+      <varInfo nodeId="1209385276366" varName="ref" />
+    </scopeInfo>
+    <scopeInfo nodeId="1209385272887" fileName="AddMissingDependency_Intention.java" startLine="54" startPosition="90" endLine="65" endPosition="17">
+      <varInfo nodeId="1209385285847" varName="scope" />
+    </scopeInfo>
+  </root>
+</debugInfo>
+

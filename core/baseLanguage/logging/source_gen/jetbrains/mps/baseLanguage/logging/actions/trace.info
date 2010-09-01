@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="1167245922666">
+    <nodeInfo nodeId="1240932331955" fileName="QueriesGenerated.java" startLine="31" startPosition="37" endLine="32" endPosition="175" />
+    <nodeInfo nodeId="1178200464538" fileName="QueriesGenerated.java" startLine="39" startPosition="98" endLine="40" endPosition="142" />
+    <nodeInfo nodeId="1178200470855" fileName="QueriesGenerated.java" startLine="40" startPosition="142" endLine="41" endPosition="110" />
+    <nodeInfo nodeId="1178200541336" fileName="QueriesGenerated.java" startLine="41" startPosition="110" endLine="42" endPosition="129" />
+    <nodeInfo nodeId="1178200598476" fileName="QueriesGenerated.java" startLine="42" startPosition="129" endLine="43" endPosition="155" />
+    <nodeInfo nodeId="1178200673830" fileName="QueriesGenerated.java" startLine="44" startPosition="115" endLine="45" endPosition="85" />
+    <nodeInfo nodeId="1178200707049" fileName="QueriesGenerated.java" startLine="45" startPosition="85" endLine="46" endPosition="148" />
+    <nodeInfo nodeId="1178200710476" fileName="QueriesGenerated.java" startLine="46" startPosition="148" endLine="47" endPosition="138" />
+    <nodeInfo nodeId="1178200746617" fileName="QueriesGenerated.java" startLine="48" startPosition="17" endLine="49" endPosition="36" />
+    <nodeInfo nodeId="1178200350843" fileName="QueriesGenerated.java" startLine="52" startPosition="61" endLine="53" endPosition="66" />
+    <nodeInfo nodeId="1178200411281" fileName="QueriesGenerated.java" startLine="60" startPosition="64" endLine="61" endPosition="39" />
+    <nodeInfo nodeId="1178200633194" fileName="QueriesGenerated.java" startLine="43" startPosition="155" endLine="48" endPosition="17" />
+    <scopeInfo nodeId="1178200228689" fileName="QueriesGenerated.java" startLine="31" startPosition="37" endLine="32" endPosition="175" />
+    <scopeInfo nodeId="1178200323242" fileName="QueriesGenerated.java" startLine="52" startPosition="61" endLine="53" endPosition="66" />
+    <scopeInfo nodeId="1178200409935" fileName="QueriesGenerated.java" startLine="60" startPosition="64" endLine="61" endPosition="39" />
+    <scopeInfo nodeId="1178200633196" fileName="QueriesGenerated.java" startLine="44" startPosition="115" endLine="47" endPosition="138">
+      <varInfo nodeId="1178200707050" varName="lvr" />
+    </scopeInfo>
+    <scopeInfo nodeId="1178200228691" fileName="QueriesGenerated.java" startLine="39" startPosition="98" endLine="49" endPosition="36">
+      <varInfo nodeId="1178200464539" varName="logStatement" />
+      <varInfo nodeId="1178200598477" varName="catchClause" />
+    </scopeInfo>
+  </root>
+</debugInfo>
+

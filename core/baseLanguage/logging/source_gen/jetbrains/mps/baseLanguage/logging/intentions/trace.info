@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="1195647359270">
+    <nodeInfo nodeId="1195647359367" fileName="ToggleExceptionSection_Intention.java" startLine="38" startPosition="76" endLine="39" endPosition="114" />
+    <nodeInfo nodeId="1210175212718" fileName="ToggleExceptionSection_Intention.java" startLine="31" startPosition="85" endLine="35" endPosition="6" />
+    <scopeInfo nodeId="1195647359366" fileName="ToggleExceptionSection_Intention.java" startLine="38" startPosition="76" endLine="39" endPosition="114" />
+    <scopeInfo nodeId="1195647359325" fileName="ToggleExceptionSection_Intention.java" startLine="31" startPosition="85" endLine="35" endPosition="6" />
+  </root>
+</debugInfo>
+
