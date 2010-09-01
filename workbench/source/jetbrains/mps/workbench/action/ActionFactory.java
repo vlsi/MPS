@@ -52,7 +52,21 @@ public class ActionFactory {
   public BaseAction acquireRegisteredAction(String actionClassName, String moduleNamespace, Object... params) {
     IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference(moduleNamespace));
     if (module == null) return null;
-    Class actionClass = module.getClass(actionClassName);
+
+    //todo this is a temporary hack to make vcs plugin work
+    Class actionClass = null;
+    try {
+      IdeaPluginDescriptor plugin = PluginManager.getPlugin(PluginId.getId("jetbrains.mps.vcs"));
+      if (plugin != null) {
+        actionClass = plugin.getPluginClassLoader().loadClass(actionClassName);
+      }
+    } catch (ClassNotFoundException e) {
+
+    }
+
+    if (actionClass == null) {
+      actionClass = module.getClass(actionClassName);
+    }
 
     if (actionClass == null) {
       LOG.warning("Action " + actionClassName + " is not found in module " + moduleNamespace);
@@ -100,26 +114,27 @@ public class ActionFactory {
     Class groupClass = null;
 
     //todo this is a temporary hack to make vcs plugin work
-    if (module == null) {
-      try {
-        IdeaPluginDescriptor plugin = PluginManager.getPlugin(PluginId.getId("jetbrains.mps.vcs"));
-        if (plugin != null) {
-          groupClass = plugin.getPluginClassLoader().loadClass(groupClassName);
-        }
-      } catch (ClassNotFoundException e) {
-
+    try {
+      IdeaPluginDescriptor plugin = PluginManager.getPlugin(PluginId.getId("jetbrains.mps.vcs"));
+      if (plugin != null) {
+        groupClass = plugin.getPluginClassLoader().loadClass(groupClassName);
       }
+    } catch (ClassNotFoundException e) {
 
-      if (groupClass == null) {
+    }
+
+    if (groupClass == null) {
+      if (module == null) {
         try {
           groupClass = Class.forName(groupClassName);
         } catch (ClassNotFoundException e) {
           LOG.error(e);
         }
+      } else {
+        groupClass = module.getClass(groupClassName);
       }
-    } else {
-      groupClass = module.getClass(groupClassName);
     }
+
 
     String id = groupClassName;
     if (groupClass != null) {
