@@ -11782,8 +11782,8 @@
               <link role="variableDeclaration:3" targetNodeId="5923576889075042911" resolveInfo="myDoNotGenerate" />
             </node>
             <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5923576889075042990">
-              <link role="classConcept:3" targetNodeId="78.~ModelGenerationStatusManager" resolveInfo="ModelGenerationStatusManager" />
-              <link role="baseMethodDeclaration:3" targetNodeId="78.~ModelGenerationStatusManager.isDoNotGenerate(jetbrains.mps.smodel.SModelDescriptor):boolean" resolveInfo="isDoNotGenerate" />
+              <link role="classConcept:3" targetNodeId="78.~GeneratorManager" resolveInfo="GeneratorManager" />
+              <link role="baseMethodDeclaration:3" targetNodeId="78.~GeneratorManager.isDoNotGenerate(jetbrains.mps.smodel.SModelDescriptor):boolean" resolveInfo="isDoNotGenerate" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204890">
                 <link role="variableDeclaration:3" targetNodeId="5923576889075042905" resolveInfo="myModelDescriptor" />
               </node>
@@ -11989,8 +11989,8 @@
                         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="5923576889075043105">
                           <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="5923576889075043106">
                             <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5923576889075043107">
-                              <link role="classConcept:3" targetNodeId="78.~ModelGenerationStatusManager" resolveInfo="ModelGenerationStatusManager" />
-                              <link role="baseMethodDeclaration:3" targetNodeId="78.~ModelGenerationStatusManager.isDoNotGenerate(jetbrains.mps.smodel.SModelDescriptor):boolean" resolveInfo="isDoNotGenerate" />
+                              <link role="classConcept:3" targetNodeId="78.~GeneratorManager" resolveInfo="GeneratorManager" />
+                              <link role="baseMethodDeclaration:3" targetNodeId="78.~GeneratorManager.isDoNotGenerate(jetbrains.mps.smodel.SModelDescriptor):boolean" resolveInfo="isDoNotGenerate" />
                               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204405">
                                 <link role="variableDeclaration:3" targetNodeId="5923576889075042905" resolveInfo="myModelDescriptor" />
                               </node>
@@ -12002,8 +12002,8 @@
                           <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5923576889075043114">
                             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5923576889075043115">
                               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5923576889075043116">
-                                <link role="classConcept:3" targetNodeId="78.~ModelGenerationStatusManager" resolveInfo="ModelGenerationStatusManager" />
-                                <link role="baseMethodDeclaration:3" targetNodeId="78.~ModelGenerationStatusManager.setDoNotGenerate(jetbrains.mps.smodel.SModelDescriptor,boolean):void" resolveInfo="setDoNotGenerate" />
+                                <link role="classConcept:3" targetNodeId="78.~GeneratorManager" resolveInfo="GeneratorManager" />
+                                <link role="baseMethodDeclaration:3" targetNodeId="78.~GeneratorManager.setDoNotGenerate(jetbrains.mps.smodel.SModelDescriptor,boolean):void" resolveInfo="setDoNotGenerate" />
                                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="8692480643148204742">
                                   <link role="variableDeclaration:3" targetNodeId="5923576889075042905" resolveInfo="myModelDescriptor" />
                                 </node>

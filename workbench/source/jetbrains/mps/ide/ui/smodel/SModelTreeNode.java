@@ -22,6 +22,7 @@ import com.intellij.openapi.project.IndexNotReadyException;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.ui.LayeredIcon;
+import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.ModelGenerationStatusListener;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.icons.IconManager;
@@ -383,7 +384,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
   private boolean isDoNotGenerate() {
     if (getSModelDescriptor() == null) return false;
-    return ModelGenerationStatusManager.isDoNotGenerate(getSModelDescriptor());
+    return GeneratorManager.isDoNotGenerate(getSModelDescriptor());
   }
 
   public void updateNodePresentationInTree() {

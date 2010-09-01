@@ -1,7 +1,7 @@
 package jetbrains.mps.generator.impl.dependencies;
 
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.generator.index.ModelDigestUtil;
+import jetbrains.mps.generator.index.ModelDigestHelper;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
@@ -44,7 +44,7 @@ public class GenerationDependencies {
     this.myUsedModelsHashes = externalHashes;
     for (GenerationRootDependencies rd : data) {
       String id = rd.getRootId();
-      myRootDependenciesMap.put(id == null ? ModelDigestUtil.HEADER : id, rd);
+      myRootDependenciesMap.put(id == null ? ModelDigestHelper.HEADER : id, rd);
     }
   }
 
@@ -159,8 +159,8 @@ public class GenerationDependencies {
       for(String modelReference : dep.getExternal()) {
         if(!externalHashes.containsKey(modelReference)) {
           SModelDescriptor sm = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(modelReference));
-          Map<String, String> hashes = ModelDigestUtil.getGenerationHashes(sm, project);
-          String value = hashes != null ? hashes.get(ModelDigestUtil.FILE) : null;
+          Map<String, String> hashes = ModelDigestHelper.getInstance().getGenerationHashes(sm, project);
+          String value = hashes != null ? hashes.get(ModelDigestHelper.FILE) : null;
           externalHashes.put(modelReference, value);
         }
       }

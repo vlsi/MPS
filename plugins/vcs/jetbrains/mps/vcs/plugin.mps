@@ -916,8 +916,8 @@
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7545884443035896193">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7545884443035896194">
-            <link role="baseMethodDeclaration:3" targetNodeId="15.~ModelDigestIndex.hash(byte[]):java.lang.String" resolveInfo="hash" />
-            <link role="classConcept:3" targetNodeId="15.~ModelDigestIndex" resolveInfo="ModelDigestIndex" />
+            <link role="classConcept:3" targetNodeId="15.~ModelDigestHelper" resolveInfo="ModelDigestHelper" />
+            <link role="baseMethodDeclaration:3" targetNodeId="15.~ModelDigestHelper.hash(byte[]):java.lang.String" resolveInfo="hash" />
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7545884443035896195">
               <link role="variableDeclaration:3" targetNodeId="7545884443035896188" resolveInfo="currentBytes" />
             </node>

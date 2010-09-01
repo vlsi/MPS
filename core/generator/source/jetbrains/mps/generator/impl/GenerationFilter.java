@@ -3,7 +3,7 @@ package jetbrains.mps.generator.impl;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.impl.dependencies.*;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder.NullDependenciesBuilder;
-import jetbrains.mps.generator.index.ModelDigestUtil;
+import jetbrains.mps.generator.index.ModelDigestHelper;
 import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
@@ -45,7 +45,7 @@ public class GenerationFilter {
       return;
     }
 
-    myGenerationHashes = ModelDigestUtil.getGenerationHashes(myModel, myProject);
+    myGenerationHashes = ModelDigestHelper.getInstance().getGenerationHashes(myModel, myProject);
 
     if (myGenerationContext.isRebuildAll()) {
       return;
@@ -78,7 +78,7 @@ public class GenerationFilter {
 
   private void analyzeDependencies(@NotNull GenerationDependencies dependencies) {
 
-    GenerationRootDependencies commonDeps = dependencies.getDependenciesFor(ModelDigestUtil.HEADER);
+    GenerationRootDependencies commonDeps = dependencies.getDependenciesFor(ModelDigestHelper.HEADER);
     if (commonDeps == null) {
       return;
     }
@@ -86,7 +86,7 @@ public class GenerationFilter {
     // check model header
     {
       String oldHash = commonDeps.getHash();
-      String newHash = myGenerationHashes.get(ModelDigestUtil.HEADER);
+      String newHash = myGenerationHashes.get(ModelDigestHelper.HEADER);
       if (oldHash == null || newHash == null || !newHash.equals(oldHash)) {
         return;
       }
@@ -110,8 +110,8 @@ public class GenerationFilter {
         }
         continue;
       }
-      Map<String, String> map = ModelDigestUtil.getGenerationHashes(sm, myProject);
-      String newHash = map != null ? map.get(ModelDigestUtil.FILE) : null;
+      Map<String, String> map = ModelDigestHelper.getInstance().getGenerationHashes(sm, myProject);
+      String newHash = map != null ? map.get(ModelDigestHelper.FILE) : null;
       if (newHash == null || !oldHash.equals(newHash)) {
         changedModels.add(modelReference);
       }
@@ -295,7 +295,7 @@ public class GenerationFilter {
       propagateDependencies(result.getRootBuilder(root), mySavedDependencies.getDependenciesFor(root.getId()));
     }
     if (myConditionalsUnchanged) {
-      propagateDependencies(result.getRootBuilder(null), mySavedDependencies.getDependenciesFor(ModelDigestUtil.HEADER));
+      propagateDependencies(result.getRootBuilder(null), mySavedDependencies.getDependenciesFor(ModelDigestHelper.HEADER));
     }
 
     return result;

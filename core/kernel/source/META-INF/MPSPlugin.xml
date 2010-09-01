@@ -86,7 +86,7 @@
         <fileBasedIndex implementation="jetbrains.mps.workbench.actions.goTo.index.RootNodeNameIndex"/>
         <fileBasedIndex implementation="jetbrains.mps.baseLanguage.index.ClassifierSuccessorsIndexer"/>
         <!--        <fileBasedIndex implementation="jetbrains.mps.workbench.actions.goTo.index.NamedNodeIndex"/> -->
-        <fileBasedIndex implementation="jetbrains.mps.generator.index.ModelDigestIndex"/>
+        <fileBasedIndex implementation="jetbrains.mps.ide.generator.index.ModelDigestIndex"/>
         <fileBasedIndex implementation="com.intellij.psi.search.FilenameIndex"/>
 
         <syntaxHighlighter key="JAVA" implementationClass="jetbrains.mps.ide.java.JavaFileHighlighter"/>

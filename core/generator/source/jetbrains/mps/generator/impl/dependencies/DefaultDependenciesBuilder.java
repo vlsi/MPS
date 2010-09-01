@@ -1,7 +1,7 @@
 package jetbrains.mps.generator.impl.dependencies;
 
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.generator.index.ModelDigestUtil;
+import jetbrains.mps.generator.index.ModelDigestHelper;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
@@ -35,12 +35,12 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
   public DefaultDependenciesBuilder(SModel originalInputModel, @Nullable Map<String, String> generationHashes) {
     currentInputModel = originalInputModel;
     currentOutputModel = null;
-    myModelHash = generationHashes == null ? null : generationHashes.get(ModelDigestUtil.FILE);
+    myModelHash = generationHashes == null ? null : generationHashes.get(ModelDigestHelper.FILE);
     initData(getRoots(originalInputModel), generationHashes);
   }
 
   private void initData(SNode[] roots, Map<String, String> generationHashes) {
-    myConditionalsBuilder = new RootDependenciesBuilder(null, this, generationHashes != null ? generationHashes.get(ModelDigestUtil.HEADER) : "");
+    myConditionalsBuilder = new RootDependenciesBuilder(null, this, generationHashes != null ? generationHashes.get(ModelDigestHelper.HEADER) : "");
     currentToOriginalMap = new HashMap<SNode, SNode>(roots.length*3/2);
     myAllBuilders = new RootDependenciesBuilder[roots.length+1];
     int e = 0;

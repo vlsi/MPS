@@ -30,6 +30,7 @@ import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Pair;
 
 import java.util.ArrayList;
@@ -38,6 +39,8 @@ import java.util.List;
 public class GeneratorManager {
 
   private static final Logger LOG = Logger.getLogger(GeneratorManager.class);
+
+  public static final String DO_NOT_GENERATE = "doNotGenerate";
 
   private final List<GenerationListener> myGenerationListeners = new ArrayList<GenerationListener>();
   private final List<CompilationListener> myCompilationListeners = new ArrayList<CompilationListener>();
@@ -211,4 +214,13 @@ public class GeneratorManager {
     myCompilationListeners.remove(l);
   }
 
+  public static boolean isDoNotGenerate(SModelDescriptor sm) {
+    if (!(sm instanceof EditableSModelDescriptor)) return false;
+    return Boolean.parseBoolean(((EditableSModelDescriptor) sm).getAttribute(DO_NOT_GENERATE));
+  }
+
+  public static void setDoNotGenerate(SModelDescriptor sm, boolean value) {
+    if (!(sm instanceof EditableSModelDescriptor)) return;
+    ((EditableSModelDescriptor) sm).setAttribute(DO_NOT_GENERATE, "" + value);
+  }
 }

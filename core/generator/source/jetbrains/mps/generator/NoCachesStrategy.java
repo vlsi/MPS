@@ -17,7 +17,7 @@ package jetbrains.mps.generator;
 
 import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.generator.index.ModelDigestIndex;
+import jetbrains.mps.generator.index.ModelDigestHelper;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
@@ -68,7 +68,7 @@ public abstract class NoCachesStrategy {
           return true;
         }
 
-        String currentHash = ModelDigestIndex.hash(modelBytes);
+        String currentHash = ModelDigestHelper.hash(modelBytes);
         return safeEquals(currentHash, generatedHash);
       }
     };

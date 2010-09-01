@@ -28,8 +28,8 @@ import jetbrains.mps.generator.fileGenerator.CacheGenerationContext;
 import jetbrains.mps.generator.fileGenerator.CacheGenerator;
 import jetbrains.mps.generator.fileGenerator.FileGenerationManager;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
-import jetbrains.mps.generator.index.ModelDigestIndex;
-import jetbrains.mps.generator.index.ModelDigestUtil;
+import jetbrains.mps.generator.index.ModelDigestHelper;
+import jetbrains.mps.ide.generator.index.ModelDigestIndex;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
@@ -51,18 +51,6 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
   public static final String HASH_PREFIX = ".hash.";
 
   private static final Logger LOG = Logger.getLogger(ModelGenerationStatusManager.class);
-
-  private static final String DO_NOT_GENERATE = "doNotGenerate";
-
-  public static boolean isDoNotGenerate(SModelDescriptor sm) {
-    if (!(sm instanceof EditableSModelDescriptor)) return false;
-    return Boolean.parseBoolean(((EditableSModelDescriptor) sm).getAttribute(DO_NOT_GENERATE));
-  }
-
-  public static void setDoNotGenerate(SModelDescriptor sm, boolean value) {
-    if (!(sm instanceof EditableSModelDescriptor)) return;
-    ((EditableSModelDescriptor) sm).setAttribute(DO_NOT_GENERATE, "" + value);
-  }
 
   public static ModelGenerationStatusManager getInstance() {
     return ApplicationManager.getApplication().getComponent(ModelGenerationStatusManager.class);
@@ -122,7 +110,7 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
     if (esm.isPackaged()) return false;
     if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) return false;
-    if (isDoNotGenerate(sm)) return false;
+    if (GeneratorManager.isDoNotGenerate(sm)) return false;
     if (SModelRepository.getInstance().isChanged(esm)) return true;
     if (isEmpty(esm)) return false;
 
@@ -141,7 +129,7 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     final String[] valueArray = new String[1];
     FileBasedIndex.getInstance().processValues(ModelDigestIndex.NAME, FileBasedIndex.getFileId(f), f, new ValueProcessor<Map<String, String>>() {
       public boolean process(VirtualFile file, Map<String, String> values) {
-        valueArray[0] = values.get(ModelDigestUtil.FILE);
+        valueArray[0] = values.get(ModelDigestHelper.FILE);
         return true;
       }
     }, GlobalSearchScope.allScope(project));
@@ -244,7 +232,7 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
       }
     }
 
-    String hash = ModelDigestIndex.hash(content);
+    String hash = ModelDigestHelper.hash(content);
     File result = new File(FileGenerationUtil.getDefaultOutputDir(context.getInputModel(), outputDir), ModelGenerationStatusManager.HASH_PREFIX + hash);
     if (!result.exists()) {
       try {

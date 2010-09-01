@@ -1649,7 +1649,7 @@
     <nodeInfo nodeId="5923576889075042946" fileName="ModelProperties.java" startLine="36" startPosition="82" endLine="37" endPosition="91" />
     <nodeInfo nodeId="5923576889075042959" fileName="ModelProperties.java" startLine="37" startPosition="91" endLine="38" endPosition="72" />
     <nodeInfo nodeId="5923576889075042972" fileName="ModelProperties.java" startLine="38" startPosition="72" endLine="39" endPosition="107" />
-    <nodeInfo nodeId="5923576889075042985" fileName="ModelProperties.java" startLine="39" startPosition="107" endLine="40" endPosition="86" />
+    <nodeInfo nodeId="5923576889075042985" fileName="ModelProperties.java" startLine="39" startPosition="107" endLine="40" endPosition="74" />
     <nodeInfo nodeId="5923576889075042998" fileName="ModelProperties.java" startLine="43" startPosition="48" endLine="44" endPosition="29" />
     <nodeInfo nodeId="5923576889075043007" fileName="ModelProperties.java" startLine="47" startPosition="52" endLine="48" endPosition="28" />
     <nodeInfo nodeId="5923576889075043016" fileName="ModelProperties.java" startLine="51" startPosition="51" endLine="52" endPosition="27" />
@@ -1666,7 +1666,7 @@
     <nodeInfo nodeId="5923576889075043093" fileName="ModelProperties.java" startLine="81" startPosition="24" endLine="82" endPosition="30" />
     <nodeInfo nodeId="5923576889075043097" fileName="ModelProperties.java" startLine="82" startPosition="30" endLine="83" endPosition="45" />
     <nodeInfo nodeId="5923576889075043101" fileName="ModelProperties.java" startLine="83" startPosition="45" endLine="84" endPosition="51" />
-    <nodeInfo nodeId="5923576889075043115" fileName="ModelProperties.java" startLine="85" startPosition="97" endLine="86" endPosition="92" />
+    <nodeInfo nodeId="5923576889075043115" fileName="ModelProperties.java" startLine="85" startPosition="85" endLine="86" endPosition="80" />
     <nodeInfo nodeId="5923576889075043123" fileName="ModelProperties.java" startLine="87" startPosition="9" endLine="88" endPosition="62" />
     <nodeInfo nodeId="6863222025035162407" fileName="ModelProperties.java" startLine="90" startPosition="7" endLine="91" endPosition="69" />
     <nodeInfo nodeId="5923576889075043137" fileName="ModelProperties.java" startLine="94" startPosition="32" endLine="95" endPosition="118" />
@@ -1746,7 +1746,7 @@
     <scopeInfo nodeId="5923576889075043041" fileName="ModelProperties.java" startLine="63" startPosition="36" endLine="64" endPosition="27" />
     <scopeInfo nodeId="5923576889075043051" fileName="ModelProperties.java" startLine="67" startPosition="55" endLine="68" endPosition="36" />
     <scopeInfo nodeId="7793469387662781819" fileName="ModelProperties.java" startLine="72" startPosition="67" endLine="73" endPosition="13" />
-    <scopeInfo nodeId="5923576889075043114" fileName="ModelProperties.java" startLine="85" startPosition="97" endLine="86" endPosition="92" />
+    <scopeInfo nodeId="5923576889075043114" fileName="ModelProperties.java" startLine="85" startPosition="85" endLine="86" endPosition="80" />
     <scopeInfo nodeId="5923576889075043226" fileName="ModelProperties.java" startLine="109" startPosition="41" endLine="110" endPosition="55" />
     <scopeInfo nodeId="5923576889075043239" fileName="ModelProperties.java" startLine="115" startPosition="37" endLine="116" endPosition="16" />
     <scopeInfo nodeId="5238341566564854664" fileName="ModelProperties.java" startLine="126" startPosition="99" endLine="127" endPosition="87" />
@@ -1818,7 +1818,7 @@
     <scopeInfo nodeId="5923576889075043279" fileName="ModelProperties.java" startLine="123" startPosition="56" endLine="130" endPosition="7">
       <varInfo nodeId="5923576889075043281" varName="language" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075042920" fileName="ModelProperties.java" startLine="32" startPosition="87" endLine="40" endPosition="86" />
+    <scopeInfo nodeId="5923576889075042920" fileName="ModelProperties.java" startLine="32" startPosition="87" endLine="40" endPosition="74" />
     <scopeInfo nodeId="5923576889075043136" fileName="ModelProperties.java" startLine="94" startPosition="32" endLine="103" endPosition="5">
       <varInfo nodeId="5923576889075043152" varName="devKitsInProperties" />
       <varInfo nodeId="5923576889075043138" varName="devKitsInModel" />

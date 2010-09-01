@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.generator.index;
+package jetbrains.mps.ide.generator.index;
 
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.indexing.FileBasedIndex.InputFilter;
@@ -24,46 +24,22 @@ import com.intellij.util.indexing.SingleEntryIndexer;
 import com.intellij.util.io.DataExternalizer;
 import com.intellij.util.io.EnumeratorStringDescriptor;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
-import jetbrains.mps.logging.Logger;
+import jetbrains.mps.generator.index.ModelDigestHelper;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.*;
-import java.math.BigInteger;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
 public class ModelDigestIndex extends SingleEntryFileBasedIndexExtension<Map<String, String>> {
-  private static final Logger LOG = Logger.getLogger(ModelDigestIndex.class);
 
   public static final ID<Integer, Map<String, String>> NAME = ID.create("ModelDigest");
-
-  public static String hash(byte[] content) {
-    try {
-      BufferedReader reader = new BufferedReader(new InputStreamReader(new ByteArrayInputStream(content)));
-
-      MessageDigest digest = MessageDigest.getInstance("SHA");
-      String line;
-      try {
-        while ((line = reader.readLine()) != null) {
-          digest.update(line.getBytes());
-        }
-      } catch (IOException e) {
-        LOG.error(e); //it can't happen
-      }
-
-      byte[] res = digest.digest();
-      return new BigInteger(res).toString(Character.MAX_RADIX);
-    } catch (NoSuchAlgorithmException e) {
-      throw new RuntimeException(e);
-    }
-  }
 
   public ID<Integer, Map<String, String>> getName() {
     return NAME;
   }
-
 
   @Override
   public DataExternalizer<Map<String, String>> getValueExternalizer() {
@@ -76,7 +52,7 @@ public class ModelDigestIndex extends SingleEntryFileBasedIndexExtension<Map<Str
       @Override
       protected Map<String, String> computeValue(@NotNull FileContent inputData) {
         final byte[] content = inputData.getContent();
-        return ModelDigestUtil.getDigestMap(content);
+        return ModelDigestHelper.getDigestMap(content);
       }
     };
   }

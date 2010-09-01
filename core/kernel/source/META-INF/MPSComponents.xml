@@ -296,6 +296,10 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.ide.generator.index.IndexBasedModelDigest</implementation-class>        
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.ide.actions.ModelCheckerSettings</implementation-class>
     </component>
 

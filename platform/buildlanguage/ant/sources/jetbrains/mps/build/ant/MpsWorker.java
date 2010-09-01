@@ -22,7 +22,7 @@ import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.util.Computable;
 import com.intellij.util.PathUtil;
 import jetbrains.mps.TestMain;
-import jetbrains.mps.generator.ModelGenerationStatusManager;
+import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
@@ -289,7 +289,7 @@ public abstract class MpsWorker {
 
   private boolean includeModel(SModelDescriptor modelDescriptor) {
     return SModelStereotype.isUserModel(modelDescriptor) &&
-      !(ModelGenerationStatusManager.isDoNotGenerate(modelDescriptor));
+      !(GeneratorManager.isDoNotGenerate(modelDescriptor));
   }
 
   protected void extractModels(Collection<SModelDescriptor> modelsList, IModule m) {

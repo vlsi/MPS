@@ -60,7 +60,7 @@ public class ModuleTestConfiguration extends BaseTestConfiguration {
           continue;
         }
 
-        if (ModelGenerationStatusManager.isDoNotGenerate(sm)) {
+        if (GeneratorManager.isDoNotGenerate(sm)) {
           continue;
         }
 
@@ -80,7 +80,7 @@ public class ModuleTestConfiguration extends BaseTestConfiguration {
       while (it.hasNext()) {
         SModelDescriptor model = it.next();
         if ((!fullRegeneration && !ModelGenerationStatusManager.getInstance().generationRequired(model, project, NoCachesStrategy.createBuildCachesStrategy())) ||
-          ModelGenerationStatusManager.isDoNotGenerate(model)) {
+          GeneratorManager.isDoNotGenerate(model)) {
           it.remove();
         }
       }
