@@ -317,22 +317,6 @@
     </node>
     <node role="executeFunction:23" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock:23" id="6763225944573363110">
       <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6763225944573363111">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1596063027222135255">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1596063027222135256">
-            <link role="baseMethodDeclaration:3" targetNodeId="1596063027222054298" resolveInfo="useIcon" />
-            <link role="classConcept:3" targetNodeId="1596063027222054292" resolveInfo="IconUtil" />
-            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="1596063027222135257" />
-            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1596063027222135258">
-              <node role="operand:3" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_AnActionEvent:23" id="1596063027222135259" />
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1596063027222135260">
-                <link role="baseMethodDeclaration:3" targetNodeId="2.~AnActionEvent.getPresentation():com.intellij.openapi.actionSystem.Presentation" resolveInfo="getPresentation" />
-              </node>
-            </node>
-            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1596063027222135261">
-              <property name="value:3" value="icons\\reset.png" />
-            </node>
-          </node>
-        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6763225944573363112">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6763225944573363113">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6763225944573363114">
@@ -353,6 +337,26 @@
                   <link role="member:23" targetNodeId="6763225944573363108" resolveInfo="editorContext" />
                 </node>
               </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="updateBlock:23" type="jetbrains.mps.lang.plugin.structure.DoUpdateBlock:23" id="434116226312812720">
+      <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="434116226312812721">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="434116226312812722">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="434116226312812723">
+            <link role="classConcept:3" targetNodeId="1596063027222054292" resolveInfo="IconUtil" />
+            <link role="baseMethodDeclaration:3" targetNodeId="1596063027222054298" resolveInfo="useIcon" />
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="434116226312812724" />
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="434116226312812725">
+              <node role="operand:3" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_AnActionEvent:23" id="434116226312812726" />
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="434116226312812727">
+                <link role="baseMethodDeclaration:3" targetNodeId="2.~AnActionEvent.getPresentation():com.intellij.openapi.actionSystem.Presentation" resolveInfo="getPresentation" />
+              </node>
+            </node>
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="434116226312812728">
+              <property name="value:3" value="icons\\reset.png" />
             </node>
           </node>
         </node>

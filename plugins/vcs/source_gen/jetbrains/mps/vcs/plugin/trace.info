@@ -46,8 +46,9 @@
   <root nodeId="6763225944573363107">
     <nodeInfo nodeId="6763225944573363108" fileName="RollbackChanges_Action.java" startLine="21" startPosition="0" endLine="22" endPosition="38" />
     <nodeInfo nodeId="6763225944573363109" fileName="RollbackChanges_Action.java" startLine="22" startPosition="38" endLine="23" endPosition="26" />
-    <nodeInfo nodeId="1596063027222135255" fileName="RollbackChanges_Action.java" startLine="69" startPosition="9" endLine="70" endPosition="97" />
-    <nodeInfo nodeId="6763225944573363112" fileName="RollbackChanges_Action.java" startLine="70" startPosition="97" endLine="71" endPosition="139" />
+    <nodeInfo nodeId="434116226312812722" fileName="RollbackChanges_Action.java" startLine="37" startPosition="9" endLine="38" endPosition="97" />
+    <nodeInfo nodeId="6763225944573363112" fileName="RollbackChanges_Action.java" startLine="69" startPosition="9" endLine="70" endPosition="139" />
+    <scopeInfo nodeId="434116226312812721" fileName="RollbackChanges_Action.java" startLine="37" startPosition="9" endLine="38" endPosition="97" />
   </root>
   <root nodeId="6763225944573505210">
     <nodeInfo nodeId="6763225944573505213" fileName="GoToVCS_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="112" />

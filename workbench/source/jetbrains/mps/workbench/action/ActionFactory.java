@@ -51,7 +51,6 @@ public class ActionFactory {
 
   public BaseAction acquireRegisteredAction(String actionClassName, String moduleNamespace, Object... params) {
     IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference(moduleNamespace));
-    if (module == null) return null;
 
     //todo this is a temporary hack to make vcs plugin work
     Class actionClass = null;
