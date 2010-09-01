@@ -19,7 +19,6 @@
   <component name="MPSProject">
     <projectSolutions>
       <solutionPath path="${project}/solutions/jetbrains.mps.uiLanguage.samples/jetbrains.mps.uiLanguage.saamples.msd" />
-      <solutionPath path="${project}/solutions/jetbrains.mps.uiLanguage.sandbox/jetbrains.mps.uiLanguage.sandbox.msd" />
       <solutionPath path="${mps_home}/workbench/ideSolution/jetbrains.mps.ide.msd" />
       <solutionPath path="${project}/runtime/jetbrains.mps.ide.uiLanguage.runtime/jetbrains.mps.ide.uiLanguage.runtime.msd" folder="" />
     </projectSolutions>

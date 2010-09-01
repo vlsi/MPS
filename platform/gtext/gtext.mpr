@@ -22,7 +22,6 @@
   <component name="MPSProject">
     <projectSolutions>
       <solutionPath path="${project}/runtime/jetbrains.mps.gtext.runtime.msd" />
-      <solutionPath path="${project}/tests/jetbrains.mps.gtext.tests.msd" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/gtext.mpl" />

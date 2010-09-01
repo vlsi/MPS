@@ -9,7 +9,6 @@
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpl" folder="mps-stuff" />
-      <languagePath path="${project}/languages/quickQueryLanguage/quickQueryLanguage.mpl" />
       <languagePath path="${project}/quickQueryLanguage.mpl" folder="main" />
     </projectLanguages>
     <projectDevkits />

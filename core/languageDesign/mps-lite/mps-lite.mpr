@@ -24,8 +24,6 @@
       <solutionPath path="${project}/solutions/mpslite.sandbox/mpslite.sandbox.msd" />
     </projectSolutions>
     <projectLanguages>
-      <languagePath path="${project}/languages/langAlpha/langAlpha.mpl" folder="" />
-      <languagePath path="${project}/languages/langBeta/langBeta.mpl" folder="" />
       <languagePath path="${project}/languages/mpslite/mpslite.mpl" />
       <languagePath path="${project}/languages/nanoj/nanoj.mpl" />
     </projectLanguages>
