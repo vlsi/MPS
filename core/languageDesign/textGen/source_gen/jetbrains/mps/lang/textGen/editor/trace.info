@@ -7,30 +7,30 @@
     <scopeInfo nodeId="7547703063484794577" fileName="ConceptTextGenDeclaration_Editor.java" startLine="241" startPosition="111" endLine="242" endPosition="354" />
   </root>
   <root nodeId="1233928609576">
-    <nodeInfo nodeId="1234262518199" fileName="OperationDeclaration_Editor.java" startLine="161" startPosition="111" endLine="162" endPosition="55" />
-    <nodeInfo nodeId="1233928625351" fileName="OperationDeclaration_Editor.java" startLine="165" startPosition="111" endLine="166" endPosition="99" />
-    <scopeInfo nodeId="1234262514495" fileName="OperationDeclaration_Editor.java" startLine="161" startPosition="111" endLine="162" endPosition="55" />
-    <scopeInfo nodeId="1233928625350" fileName="OperationDeclaration_Editor.java" startLine="165" startPosition="111" endLine="166" endPosition="99" />
+    <nodeInfo nodeId="1234262518199" fileName="OperationDeclaration_Editor.java" startLine="143" startPosition="111" endLine="144" endPosition="55" />
+    <nodeInfo nodeId="8856861289653810223" fileName="OperationDeclaration_Editor.java" startLine="147" startPosition="111" endLine="148" endPosition="100" />
+    <scopeInfo nodeId="1234262514495" fileName="OperationDeclaration_Editor.java" startLine="143" startPosition="111" endLine="144" endPosition="55" />
+    <scopeInfo nodeId="8856861289653810222" fileName="OperationDeclaration_Editor.java" startLine="147" startPosition="111" endLine="148" endPosition="100" />
   </root>
   <root nodeId="1234190682269">
     <nodeInfo nodeId="1234199930619" fileName="OperationCall_Editor.java" startLine="75" startPosition="111" endLine="76" endPosition="145" />
     <scopeInfo nodeId="1234191836338" fileName="OperationCall_Editor.java" startLine="75" startPosition="111" endLine="76" endPosition="145" />
   </root>
   <root nodeId="1234525206228">
-    <nodeInfo nodeId="1234526064884" fileName="UtilityMethodDeclaration_Editor.java" startLine="188" startPosition="111" endLine="189" endPosition="55" />
-    <nodeInfo nodeId="1234525261683" fileName="UtilityMethodDeclaration_Editor.java" startLine="192" startPosition="111" endLine="193" endPosition="99" />
-    <nodeInfo nodeId="1234525698197" fileName="UtilityMethodDeclaration_Editor.java" startLine="302" startPosition="100" endLine="303" endPosition="26" />
-    <nodeInfo nodeId="1234525698201" fileName="UtilityMethodDeclaration_Editor.java" startLine="303" startPosition="26" endLine="304" endPosition="75" />
-    <nodeInfo nodeId="1234525698209" fileName="UtilityMethodDeclaration_Editor.java" startLine="305" startPosition="29" endLine="306" endPosition="80" />
-    <nodeInfo nodeId="1234525698220" fileName="UtilityMethodDeclaration_Editor.java" startLine="307" startPosition="14" endLine="308" endPosition="64" />
-    <nodeInfo nodeId="1234525698226" fileName="UtilityMethodDeclaration_Editor.java" startLine="309" startPosition="7" endLine="310" endPosition="20" />
-    <nodeInfo nodeId="1234525698218" fileName="UtilityMethodDeclaration_Editor.java" startLine="307" startPosition="12" endLine="309" endPosition="7" />
-    <nodeInfo nodeId="1234525698207" fileName="UtilityMethodDeclaration_Editor.java" startLine="304" startPosition="75" endLine="309" endPosition="7" />
-    <scopeInfo nodeId="1234526063195" fileName="UtilityMethodDeclaration_Editor.java" startLine="188" startPosition="111" endLine="189" endPosition="55" />
-    <scopeInfo nodeId="1234525261682" fileName="UtilityMethodDeclaration_Editor.java" startLine="192" startPosition="111" endLine="193" endPosition="99" />
-    <scopeInfo nodeId="1234525698208" fileName="UtilityMethodDeclaration_Editor.java" startLine="305" startPosition="29" endLine="306" endPosition="80" />
-    <scopeInfo nodeId="1234525698219" fileName="UtilityMethodDeclaration_Editor.java" startLine="307" startPosition="14" endLine="308" endPosition="64" />
-    <scopeInfo nodeId="1234525694458" fileName="UtilityMethodDeclaration_Editor.java" startLine="302" startPosition="100" endLine="310" endPosition="20">
+    <nodeInfo nodeId="1234526064884" fileName="UtilityMethodDeclaration_Editor.java" startLine="170" startPosition="111" endLine="171" endPosition="55" />
+    <nodeInfo nodeId="8856861289653810397" fileName="UtilityMethodDeclaration_Editor.java" startLine="174" startPosition="111" endLine="175" endPosition="100" />
+    <nodeInfo nodeId="1234525698197" fileName="UtilityMethodDeclaration_Editor.java" startLine="246" startPosition="100" endLine="247" endPosition="26" />
+    <nodeInfo nodeId="1234525698201" fileName="UtilityMethodDeclaration_Editor.java" startLine="247" startPosition="26" endLine="248" endPosition="75" />
+    <nodeInfo nodeId="1234525698209" fileName="UtilityMethodDeclaration_Editor.java" startLine="249" startPosition="29" endLine="250" endPosition="80" />
+    <nodeInfo nodeId="1234525698220" fileName="UtilityMethodDeclaration_Editor.java" startLine="251" startPosition="14" endLine="252" endPosition="64" />
+    <nodeInfo nodeId="1234525698226" fileName="UtilityMethodDeclaration_Editor.java" startLine="253" startPosition="7" endLine="254" endPosition="20" />
+    <nodeInfo nodeId="1234525698218" fileName="UtilityMethodDeclaration_Editor.java" startLine="251" startPosition="12" endLine="253" endPosition="7" />
+    <nodeInfo nodeId="1234525698207" fileName="UtilityMethodDeclaration_Editor.java" startLine="248" startPosition="75" endLine="253" endPosition="7" />
+    <scopeInfo nodeId="1234526063195" fileName="UtilityMethodDeclaration_Editor.java" startLine="170" startPosition="111" endLine="171" endPosition="55" />
+    <scopeInfo nodeId="8856861289653810396" fileName="UtilityMethodDeclaration_Editor.java" startLine="174" startPosition="111" endLine="175" endPosition="100" />
+    <scopeInfo nodeId="1234525698208" fileName="UtilityMethodDeclaration_Editor.java" startLine="249" startPosition="29" endLine="250" endPosition="80" />
+    <scopeInfo nodeId="1234525698219" fileName="UtilityMethodDeclaration_Editor.java" startLine="251" startPosition="14" endLine="252" endPosition="64" />
+    <scopeInfo nodeId="1234525694458" fileName="UtilityMethodDeclaration_Editor.java" startLine="246" startPosition="100" endLine="254" endPosition="20">
       <varInfo nodeId="1234525698198" varName="result" />
       <varInfo nodeId="1234525698202" varName="nodeType" />
     </scopeInfo>

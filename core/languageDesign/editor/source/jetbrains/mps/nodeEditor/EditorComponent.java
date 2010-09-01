@@ -236,9 +236,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private ReferenceUnderliner myReferenceUnderliner = new ReferenceUnderliner();
   private BracesHighlighter myBracesHighlighter = new BracesHighlighter(this);
 
-  /**
-   * @param operationContext
-   */
+
   public EditorComponent(IOperationContext operationContext) {
     this(operationContext, false);
   }

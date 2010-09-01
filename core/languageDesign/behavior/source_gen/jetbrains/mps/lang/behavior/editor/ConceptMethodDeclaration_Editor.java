@@ -11,6 +11,7 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.baseLanguage.editor._DeprecatedPart;
+import jetbrains.mps.baseLanguage.editor.HasAnnotation_AnnotationComponent;
 import jetbrains.mps.baseLanguage.editor.BaseMethodDeclaration_BodyComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
@@ -39,9 +40,9 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
@@ -72,21 +73,10 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_gmtuod_a");
     editorCell.addEditorCell(this.createComponent_gmtuod_a0(editorContext, node));
     if (renderingCondition_gmtuod_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_gmtuod_b0(editorContext, node));
+      editorCell.addEditorCell(this.createComponent_gmtuod_b0(editorContext, node));
     }
     editorCell.addEditorCell(this.createCollection_gmtuod_c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_gmtuod_d0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_gmtuod_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_gmtuod_b0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-    editorCell.addEditorCell(this.createRefNodeList_gmtuod_a1a(editorContext, node));
     return editorCell;
   }
 
@@ -139,7 +129,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.createCollection_gmtuod_a0(editorContext, node));
     }
     if (renderingCondition_gmtuod_a1a_0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_gmtuod_b0_0(editorContext, node));
+      editorCell.addEditorCell(this.createCollection_gmtuod_b0(editorContext, node));
     }
     if (renderingCondition_gmtuod_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_gmtuod_c0_0(editorContext, node));
@@ -165,9 +155,9 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createCollection_gmtuod_b0_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_gmtuod_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_gmtuod_b0_0");
+    editorCell.setCellId("Collection_gmtuod_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -206,6 +196,12 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCell createComponent_gmtuod_a0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new _DeprecatedPart(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
+    return editorCell;
+  }
+
+  private EditorCell createComponent_gmtuod_b0(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new HasAnnotation_AnnotationComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
@@ -340,18 +336,6 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_gmtuod_a1a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new ConceptMethodDeclaration_Editor.annotationListHandler_gmtuod_a1a(node, "annotation", editorContext);
-    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
-    editorCell.setCellId("refNodeList_annotation");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
-    }
-    editorCell.setRole(handler.getElementRole());
-    return editorCell;
-  }
-
   private EditorCell createRefNodeList_gmtuod_g2a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new ConceptMethodDeclaration_Editor.parameterListHandler_gmtuod_g2a(node, "parameter", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -363,7 +347,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createRefNodeList_gmtuod_f0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new ConceptMethodDeclaration_Editor.annotationListHandler_gmtuod_f0(node, "annotation", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
-    editorCell.setCellId("refNodeList_annotation_1");
+    editorCell.setCellId("refNodeList_annotation");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -522,7 +506,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_gmtuod_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).count() > 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_gmtuod_a1c0(SNode node, EditorContext editorContext, IScope scope) {
@@ -620,44 +604,6 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
         return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
       } else
       return editorCell;
-    }
-  }
-
-  private static class annotationListHandler_gmtuod_a1a extends RefNodeListHandler {
-    public annotationListHandler_gmtuod_a1a(SNode ownerNode, String childRole, EditorContext context) {
-      super(ownerNode, childRole, context, false);
-    }
-
-    public SNode createNodeToInsert(EditorContext editorContext) {
-      SNode listOwner = super.getOwner();
-      return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
-    }
-
-    public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
-      EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
-      this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
-      return elementCell;
-    }
-
-    public EditorCell createEmptyCell(EditorContext editorContext) {
-      EditorCell emptyCell = null;
-      emptyCell = super.createEmptyCell(editorContext);
-      this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
-      return emptyCell;
-    }
-
-    public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
-      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
-        elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
-        SNode substituteInfoNode = listOwner;
-        if (elementNode != null) {
-          substituteInfoNode = elementNode;
-          elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
-        }
-        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
-          elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
-        }
-      }
     }
   }
 
