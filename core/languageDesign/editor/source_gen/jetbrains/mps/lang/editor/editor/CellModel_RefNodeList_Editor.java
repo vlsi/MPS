@@ -346,13 +346,13 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createComponent_2v2794_b1a2a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new CellModelListWithRole_FoldedCell(node);
+    AbstractCellProvider provider = new CellModelListWithRole_FoldedCellComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
   private EditorCell createComponent_2v2794_f0b2a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new CellModelListWithRole_FoldedCell(node);
+    AbstractCellProvider provider = new CellModelListWithRole_FoldedCellComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }

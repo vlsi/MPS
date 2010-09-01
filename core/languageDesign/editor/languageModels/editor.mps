@@ -10005,7 +10005,7 @@
   </node>
   <node type="jetbrains.mps.lang.editor.structure.EditorComponentDeclaration:32" id="5837890607849937537">
     <property name="package:32" value="CellModel" />
-    <property name="name:32" value="CellModelListWithRole_FoldedCell" />
+    <property name="name:32" value="CellModelListWithRole_FoldedCellComponent" />
     <link role="conceptDeclaration:32" targetNodeId="2.1140524381322:32" resolveInfo="CellModel_ListWithRole" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="5837890607849937539">
       <link role="styleClass:32" targetNodeId="1233829988599" resolveInfo="borderedCollection" />

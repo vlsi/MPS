@@ -543,7 +543,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.AbstractCellProvider" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.editor.CellModelListWithRole_FoldedCell" file="CellModelListWithRole_FoldedCell.java">
+  <dependency className="jetbrains.mps.lang.editor.editor.CellModelListWithRole_FoldedCellComponent" file="CellModelListWithRole_FoldedCellComponent.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.Styles_StyleSheet" />
@@ -1062,7 +1062,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.editor.CellModelListWithRole_FoldedCell" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.editor.CellModelListWithRole_FoldedCellComponent" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.Styles_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor._CellModel_Common" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor._CloseTag" />
