@@ -47,7 +47,8 @@ public class ReachingReadsAnalyzer implements DataFlowAnalyzer<Set<ReadInstructi
       WriteInstruction write = (WriteInstruction) instruction;
 
       for (ReadInstruction item : new HashSet<ReadInstruction>(result)) {
-        if (write.getVariable().equals(item.getVariable())) {
+        Object variable = write.getVariable();
+        if (variable != null && variable.equals(item.getVariable())) {
           result.remove(item);
         }
       }
