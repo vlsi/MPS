@@ -460,7 +460,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
           try {
             ((ILoggableRefactoring) refactoring).updateModel(model, refactoringContext);
           } catch (Throwable t) {
-            LOG.error("An exception was thrown by refactoring " + refactoring.getUserFriendlyName() + " while updating model " + model.getLongName() + ". Models could have been corrupted.");
+            LOG.error("An exception was thrown by refactoring " + refactoring.getUserFriendlyName() + " while updating model " + model.getLongName() + ". Models could have been corrupted.", t);
           }
         }
       }
