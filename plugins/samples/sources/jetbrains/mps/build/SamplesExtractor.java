@@ -119,8 +119,8 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
     myState = state;
   }
 
-  public List<String> getSamplesPaths() {
-    return Collections.singletonList(myIsSamplesInMPSHome ? getSamplesPathInMPSHome() : getSamplesPathInUserHome());
+  public String getSamplesPath() {
+    return myIsSamplesInMPSHome ? getSamplesPathInMPSHome() : getSamplesPathInUserHome();
   }
 
   private String getSamplesPathInUserHome() {

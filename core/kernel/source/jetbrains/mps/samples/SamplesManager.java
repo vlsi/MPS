@@ -37,7 +37,7 @@ public class SamplesManager {
   public List<String> getSamplesPaths(){
     List<String> result  = new ArrayList<String>();
     for (SamplesInfo info:myComponents){
-      result.addAll(info.getSamplesPaths());
+      result.add(info.getSamplesPath());
     }
     return result;
   }
