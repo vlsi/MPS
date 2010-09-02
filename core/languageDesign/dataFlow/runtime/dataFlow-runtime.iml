@@ -13,6 +13,7 @@
     <orderEntry type="module" module-name="unitTest" />
     <orderEntry type="module" module-name="dataFlow" />
     <orderEntry type="module" module-name="MPSSupport" />
+    <orderEntry type="module" module-name="runtime" />
   </component>
 </module>
 
