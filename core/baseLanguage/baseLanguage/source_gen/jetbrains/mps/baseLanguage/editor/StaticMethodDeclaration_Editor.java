@@ -20,9 +20,9 @@ import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -50,9 +50,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, true);
     }
     editorCell.addEditorCell(this.createComponent_j4vm40_a0(editorContext, node));
-    if (renderingCondition_j4vm40_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createComponent_j4vm40_b0(editorContext, node));
-    }
+    editorCell.addEditorCell(this.createComponent_j4vm40_b0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_j4vm40_c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_j4vm40_d0(editorContext, node));
     if (renderingCondition_j4vm40_a4a(node, editorContext, editorContext.getOperationContext().getScope())) {
@@ -263,10 +261,6 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_j4vm40_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_j4vm40_a4a(SNode node, EditorContext editorContext, IScope scope) {

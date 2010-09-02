@@ -19,9 +19,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -42,9 +41,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_t6d1qn_a");
     editorCell.addEditorCell(this.createComponent_t6d1qn_a0(editorContext, node));
-    if (renderingCondition_t6d1qn_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createComponent_t6d1qn_b0(editorContext, node));
-    }
+    editorCell.addEditorCell(this.createComponent_t6d1qn_b0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_t6d1qn_c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_t6d1qn_d0(editorContext, node));
     if (renderingCondition_t6d1qn_a4a(node, editorContext, editorContext.getOperationContext().getScope())) {
@@ -235,10 +232,6 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_t6d1qn_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_t6d1qn_a4a(SNode node, EditorContext editorContext, IScope scope) {

@@ -7,11 +7,14 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -29,13 +32,28 @@ public class HasAnnotation_AnnotationComponent extends AbstractCellProvider {
   }
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_85xxz0_a(editorContext, node);
+    return this.createAlternation_85xxz0_a(editorContext, node);
   }
 
-  private EditorCell createCollection_85xxz0_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_85xxz0_a");
-    editorCell.addEditorCell(this.createRefNodeList_85xxz0_a0(editorContext, node));
+  private EditorCell createAlternation_85xxz0_a(EditorContext editorContext, SNode node) {
+    boolean alternationCondition = true;
+    alternationCondition = HasAnnotation_AnnotationComponent.renderingCondition_85xxz0_a0(node, editorContext, editorContext.getOperationContext().getScope());
+    EditorCell editorCell = null;
+    if (alternationCondition) {
+      editorCell = this.createRefNodeList_85xxz0_a0(editorContext, node);
+    } else {
+      editorCell = this.createCollection_85xxz0_a0(editorContext, node);
+    }
+    return editorCell;
+  }
+
+  private EditorCell createCollection_85xxz0_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_85xxz0_a0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
     return editorCell;
   }
 
@@ -60,6 +78,10 @@ public class HasAnnotation_AnnotationComponent extends AbstractCellProvider {
     editorCell.setFoldedCell(this.createConstant_85xxz0_a0a(editorContext, node));
     editorCell.setRole(handler.getElementRole());
     return editorCell;
+  }
+
+  private static boolean renderingCondition_85xxz0_a0(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).isNotEmpty();
   }
 
   private static class annotationListHandler_85xxz0_a0 extends RefNodeListHandler {

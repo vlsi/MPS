@@ -17,9 +17,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -39,9 +36,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_mr1gse_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_mr1gse_a");
-    if (renderingCondition_mr1gse_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createComponent_mr1gse_a0(editorContext, node));
-    }
+    editorCell.addEditorCell(this.createComponent_mr1gse_a0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_mr1gse_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_mr1gse_c0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_mr1gse_d0(editorContext, node));
@@ -164,10 +159,6 @@ public class Annotation_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_mr1gse_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).isNotEmpty();
   }
 
   private static class annotationMethodListHandler_mr1gse_f0 extends RefNodeListHandler {

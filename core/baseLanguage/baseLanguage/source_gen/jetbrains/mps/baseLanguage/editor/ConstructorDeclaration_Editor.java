@@ -47,9 +47,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, true);
     }
     editorCell.addEditorCell(this.createComponent_1x071y_a0(editorContext, node));
-    if (renderingCondition_1x071y_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createComponent_1x071y_b0(editorContext, node));
-    }
+    editorCell.addEditorCell(this.createComponent_1x071y_b0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_1x071y_c0(editorContext, node));
     if (renderingCondition_1x071y_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createComponent_1x071y_d0(editorContext, node));
@@ -223,10 +221,6 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_1x071y_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_1x071y_a3a(SNode node, EditorContext editorContext, IScope scope) {

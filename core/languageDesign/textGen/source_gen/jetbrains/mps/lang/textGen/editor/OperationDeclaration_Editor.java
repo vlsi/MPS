@@ -24,8 +24,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -45,9 +43,7 @@ public class OperationDeclaration_Editor extends DefaultNodeEditor {
     if (renderingCondition_hqj93g_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_hqj93g_a0(editorContext, node));
     }
-    if (renderingCondition_hqj93g_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createComponent_hqj93g_b0(editorContext, node));
-    }
+    editorCell.addEditorCell(this.createComponent_hqj93g_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_hqj93g_c0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_hqj93g_d0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_hqj93g_e0(editorContext, node));
@@ -142,10 +138,6 @@ public class OperationDeclaration_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_hqj93g_a0a(SNode node, EditorContext editorContext, IScope scope) {
     return SNodeOperations.getIndexInParent(node) != 0;
-  }
-
-  private static boolean renderingCondition_hqj93g_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).isNotEmpty();
   }
 
   private static class parameterListHandler_hqj93g_f0 extends RefNodeListHandler {

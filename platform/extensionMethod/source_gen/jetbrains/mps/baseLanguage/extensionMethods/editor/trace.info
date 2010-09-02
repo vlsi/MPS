@@ -4,10 +4,6 @@
     <nodeInfo nodeId="4006340295321214066" fileName="TypeExtension_Editor.java" startLine="195" startPosition="111" endLine="196" endPosition="112" />
     <scopeInfo nodeId="4006340295321214065" fileName="TypeExtension_Editor.java" startLine="195" startPosition="111" endLine="196" endPosition="112" />
   </root>
-  <root nodeId="1973189701691198687">
-    <nodeInfo nodeId="8856861289654301129" fileName="ExtensionStaticFieldDeclaration_Editor.java" startLine="124" startPosition="111" endLine="125" endPosition="100" />
-    <scopeInfo nodeId="8856861289654301128" fileName="ExtensionStaticFieldDeclaration_Editor.java" startLine="124" startPosition="111" endLine="125" endPosition="100" />
-  </root>
   <root nodeId="6513744873655832108">
     <nodeInfo nodeId="1082537205635903145" fileName="ExtensionMethodDeclaration_Actions.java" startLine="30" startPosition="101" endLine="31" endPosition="101" />
     <nodeInfo nodeId="1082537205635903121" fileName="ExtensionMethodDeclaration_Actions.java" startLine="29" startPosition="75" endLine="32" endPosition="7" />

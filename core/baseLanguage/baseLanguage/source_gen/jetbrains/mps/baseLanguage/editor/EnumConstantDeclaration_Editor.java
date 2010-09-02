@@ -42,9 +42,7 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_u66lwb_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_u66lwb_a");
-    if (renderingCondition_u66lwb_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createComponent_u66lwb_a0(editorContext, node));
-    }
+    editorCell.addEditorCell(this.createComponent_u66lwb_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_u66lwb_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_u66lwb_c0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_u66lwb_d0(editorContext, node));
@@ -188,10 +186,6 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_u66lwb_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_u66lwb_a5a(SNode node, EditorContext editorContext, IScope scope) {

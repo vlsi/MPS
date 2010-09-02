@@ -18,9 +18,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ExtensionStaticFieldDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -30,9 +27,7 @@ public class ExtensionStaticFieldDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ipnr5b_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ipnr5b_a");
-    if (renderingCondition_ipnr5b_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createComponent_ipnr5b_a0(editorContext, node));
-    }
+    editorCell.addEditorCell(this.createComponent_ipnr5b_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ipnr5b_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_ipnr5b_c0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_ipnr5b_d0(editorContext, node));
@@ -119,9 +114,5 @@ public class ExtensionStaticFieldDeclaration_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_ipnr5b_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).isNotEmpty();
   }
 }

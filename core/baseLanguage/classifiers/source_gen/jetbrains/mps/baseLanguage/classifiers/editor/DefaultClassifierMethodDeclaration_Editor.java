@@ -55,9 +55,7 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
       style.set(StyleAttributes.SELECTABLE, true);
     }
     editorCell.addEditorCell(this.createComponent_77c6be_a0(editorContext, node));
-    if (renderingCondition_77c6be_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createComponent_77c6be_b0(editorContext, node));
-    }
+    editorCell.addEditorCell(this.createComponent_77c6be_b0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_77c6be_c0(editorContext, node));
     if (renderingCondition_77c6be_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createComponent_77c6be_d0(editorContext, node));
@@ -221,10 +219,6 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_77c6be_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_77c6be_a3a(SNode node, EditorContext editorContext, IScope scope) {

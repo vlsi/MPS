@@ -52,9 +52,7 @@ public class StaticConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_gggi92_a");
     editorCell.addEditorCell(this.createComponent_gggi92_a0(editorContext, node));
-    if (renderingCondition_gggi92_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createComponent_gggi92_b0(editorContext, node));
-    }
+    editorCell.addEditorCell(this.createComponent_gggi92_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_gggi92_c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_gggi92_d0(editorContext, node));
     return editorCell;
@@ -258,10 +256,6 @@ public class StaticConceptMethodDeclaration_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_gggi92_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_gggi92_a5c0(SNode node, EditorContext editorContext, IScope scope) {

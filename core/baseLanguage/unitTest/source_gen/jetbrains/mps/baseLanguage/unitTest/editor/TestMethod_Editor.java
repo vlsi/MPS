@@ -22,10 +22,9 @@ import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class TestMethod_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -36,9 +35,7 @@ public class TestMethod_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ml6tu4_a");
     editorCell.addEditorCell(this.createComponent_ml6tu4_a0(editorContext, node));
-    if (renderingCondition_ml6tu4_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createComponent_ml6tu4_b0(editorContext, node));
-    }
+    editorCell.addEditorCell(this.createComponent_ml6tu4_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ml6tu4_c0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_ml6tu4_d0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_ml6tu4_e0(editorContext, node));
@@ -110,10 +107,6 @@ public class TestMethod_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_ml6tu4_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_ml6tu4_a5a(SNode node, EditorContext editorContext, IScope scope) {

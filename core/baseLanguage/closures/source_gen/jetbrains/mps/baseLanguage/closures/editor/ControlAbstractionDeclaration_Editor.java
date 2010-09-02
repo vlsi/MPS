@@ -45,9 +45,7 @@ public class ControlAbstractionDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_4f8got_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_4f8got_a");
-    if (renderingCondition_4f8got_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createComponent_4f8got_a0(editorContext, node));
-    }
+    editorCell.addEditorCell(this.createComponent_4f8got_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_4f8got_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_4f8got_c0(editorContext, node));
     if (renderingCondition_4f8got_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
@@ -278,10 +276,6 @@ public class ControlAbstractionDeclaration_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_4f8got_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_4f8got_a3a(SNode node, EditorContext editorContext, IScope scope) {

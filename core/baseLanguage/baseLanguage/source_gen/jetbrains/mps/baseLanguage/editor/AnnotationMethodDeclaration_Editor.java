@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -40,9 +39,7 @@ public class AnnotationMethodDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ux6pap_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ux6pap_a");
-    if (renderingCondition_ux6pap_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createComponent_ux6pap_a0(editorContext, node));
-    }
+    editorCell.addEditorCell(this.createComponent_ux6pap_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_ux6pap_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_ux6pap_c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ux6pap_d0(editorContext, node));
@@ -231,10 +228,6 @@ public class AnnotationMethodDeclaration_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_ux6pap_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_ux6pap_a5a(SNode node, EditorContext editorContext, IScope scope) {

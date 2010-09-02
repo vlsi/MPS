@@ -26,8 +26,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -37,7 +35,9 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
 import java.util.List;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class UtilityMethodDeclaration_Editor extends DefaultNodeEditor {
@@ -51,9 +51,7 @@ public class UtilityMethodDeclaration_Editor extends DefaultNodeEditor {
     if (renderingCondition_4607in_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_4607in_a0(editorContext, node));
     }
-    if (renderingCondition_4607in_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createComponent_4607in_b0(editorContext, node));
-    }
+    editorCell.addEditorCell(this.createComponent_4607in_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_4607in_c0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_4607in_d0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_4607in_e0(editorContext, node));
@@ -169,10 +167,6 @@ public class UtilityMethodDeclaration_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_4607in_a0a(SNode node, EditorContext editorContext, IScope scope) {
     return SNodeOperations.getIndexInParent(node) != 0;
-  }
-
-  private static boolean renderingCondition_4607in_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).isNotEmpty();
   }
 
   private static class parameterListHandler_4607in_g0 extends RefNodeListHandler {
