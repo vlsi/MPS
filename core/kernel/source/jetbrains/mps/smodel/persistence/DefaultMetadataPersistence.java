@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.persistence;
 
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
@@ -28,6 +29,8 @@ import java.util.Map;
 import java.util.TreeSet;
 
 class DefaultMetadataPersistence {
+  private static final Logger LOG = Logger.getLogger(DefaultMetadataPersistence.class);
+
   private static final String ENTRY = "entry";
   private static final String KEY = "key";
   private static final String VALUE = "value";
@@ -57,9 +60,11 @@ class DefaultMetadataPersistence {
       }
       return result;
     } catch (IOException e) {
-      throw new RuntimeException(e);
+      LOG.error("Was not able to load metadata. File: " + file.getAbsolutePath() + ". Assuming there's no metadata for this model.", e);
+      return new HashMap<String, String>();
     } catch (JDOMException e) {
-      throw new RuntimeException(e);
+      LOG.error("Metadata file corrupted. File: " + file.getAbsolutePath() + ". Assuming there's no metadata for this model.", e);
+      return new HashMap<String, String>();
     }
   }
 }
