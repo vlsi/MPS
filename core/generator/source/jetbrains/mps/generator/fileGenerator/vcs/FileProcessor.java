@@ -62,33 +62,9 @@ public class FileProcessor {
     }
   }
 
-  public static void processVCSDeletion(
-    final SModel inputModel,
-    final Set<File> outputDirs,
-    final Set<File> generatedFiles) {
-
+  public static void processVCSDeletion(final List<File> filesToDelete) {
     Runnable runnable = new Runnable() {
       public void run() {
-        Set<File> directories = new HashSet<File>();
-        for (File f : generatedFiles) {
-          directories.add(f.getParentFile());
-        }
-        for (File outputDir : outputDirs) {
-          directories.add(FileGenerationUtil.getDefaultOutputDir(inputModel, outputDir));
-        }
-
-        // clear garbage
-        List<File> filesToDelete = new ArrayList<File>();
-        for (File dir : directories) {
-          File[] files = dir.listFiles();
-          if (files == null) continue;
-          for (File outputDirectoryFile : files) {
-            if (outputDirectoryFile.isDirectory()) continue;
-            if (generatedFiles.contains(outputDirectoryFile)) continue;
-            filesToDelete.add(outputDirectoryFile);
-          }
-        }
-
         VcsMigrationUtil.deleteFromDiskAndRemoveFromVcs(filesToDelete, false);
       }
     };

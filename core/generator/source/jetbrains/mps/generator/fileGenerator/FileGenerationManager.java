@@ -23,11 +23,11 @@ import jetbrains.mps.baseLanguage.textGen.RootDependencies;
 import jetbrains.mps.debug.api.info.*;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.TransientSModel;
-import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
-import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
 import jetbrains.mps.generator.fileGenerator.vcs.FileProcessor;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil.TextGenerationResult;
+import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
+import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.IOperationContext;
@@ -87,11 +87,40 @@ public class FileGenerationManager implements ApplicationComponent {
     FileProcessor.processVCSAddition(cachesOutput, context, generatedCaches);
 
     // we have to clean garbage in both dirs simultaneously, since caches might be located in source_gen
-    FileProcessor.processVCSDeletion(status.getInputModel(), CollectionUtil.set(outputRoot, cachesOutput),
+    List<File> filesToDelete = processDeletion(status.getInputModel(), CollectionUtil.set(outputRoot, cachesOutput),
       CollectionUtil.union(generatedFiles, generatedCaches));
+    FileProcessor.processVCSDeletion(filesToDelete);
 
     return true;
   }
+
+  public static List<File> processDeletion(
+    final SModel inputModel,
+    final Set<File> outputDirs,
+    final Set<File> generatedFiles) {
+
+    Set<File> directories = new HashSet<File>();
+    for (File f : generatedFiles) {
+      directories.add(f.getParentFile());
+    }
+    for (File outputDir : outputDirs) {
+      directories.add(FileGenerationUtil.getDefaultOutputDir(inputModel, outputDir));
+    }
+
+    // clear garbage
+    final List<File> filesToDelete = new ArrayList<File>();
+    for (File dir : directories) {
+      File[] files = dir.listFiles();
+      if (files == null) continue;
+      for (File outputDirectoryFile : files) {
+        if (outputDirectoryFile.isDirectory()) continue;
+        if (generatedFiles.contains(outputDirectoryFile)) continue;
+        filesToDelete.add(outputDirectoryFile);
+      }
+    }
+    return filesToDelete;
+  }
+
 
   private boolean generateText(IOperationContext context, GenerationStatus status, Map<SNode, String> outputNodeContents) {
     boolean hasErrors = false;
