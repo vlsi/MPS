@@ -24,19 +24,25 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.util.CollectionUtil;
 
+import java.awt.Frame;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MissingDependenciesFixer {
   private SModelDescriptor myModelDescriptor;
-  private IOperationContext myContext;
+  private Frame myMainFrame;
 
   public MissingDependenciesFixer(IOperationContext context, SModelDescriptor modelDescriptor) {
     myModelDescriptor = modelDescriptor;
-    myContext = context;
+    myMainFrame = context.getMainFrame();
   }
 
-  public void fix() {
+  @Deprecated
+  public void fix(){
+    fix(true);
+  }
+
+  public void fix(final boolean reload) {
     final IModule[] module = new IModule[1];
     final IScope[] moduleScope = new IScope[1];
     final boolean[] wereChanges = new boolean[]{false};
@@ -99,7 +105,7 @@ public class MissingDependenciesFixer {
         }
 
         if (wereChanges[0]) {
-          module[0].setModuleDescriptor(md[0], true);
+          module[0].setModuleDescriptor(md[0], reload);
           module[0].save();
         }
       }
@@ -110,7 +116,7 @@ public class MissingDependenciesFixer {
     if (modules.isEmpty()) return null;
     if (modules.size() == 1) return modules.get(0);
 
-    ChooseModuleDialog dialog = new ChooseModuleDialog("Choose Module to Import Model " + sm.getSModelReference() + " from", myContext.getMainFrame(), modules);
+    ChooseModuleDialog dialog = new ChooseModuleDialog("Choose Module to Import Model " + sm.getSModelReference() + " from", myMainFrame, modules);
     dialog.showDialog();
     return dialog.getResult();
   }
