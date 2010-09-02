@@ -105,10 +105,6 @@ public class PathManager {
     return getHomePath() + File.separator + "workbench";
   }
 
-  public static String getAppPath() {
-    return getHomePath() + File.separator + "app";
-  }
-
   public static String getLanguagesPath() {
     return getHomePath() + File.separator + "languages";
   }

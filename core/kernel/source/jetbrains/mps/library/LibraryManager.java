@@ -147,13 +147,6 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
         return PathManager.getWorkbenchPath();
       }
     });
-    result.add(new PredefinedLibrary("mps.app") {
-      @NotNull
-      public String getPath() {
-        return PathManager.getAppPath();
-      }
-    });
-
     result.add(new PredefinedLibrary("mps.languages") {
       @NotNull
       public String getPath() {
