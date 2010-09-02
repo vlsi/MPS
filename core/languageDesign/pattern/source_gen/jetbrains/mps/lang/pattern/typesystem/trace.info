@@ -105,29 +105,24 @@
     </scopeInfo>
   </root>
   <root nodeId="612919440683696543">
-    <nodeInfo nodeId="4855904478357073135" fileName="check_PatternVariableNamesDuplication_NonTypesystemRule.java" startLine="25" startPosition="116" endLine="26" endPosition="13" />
-    <nodeInfo nodeId="612919440683723821" fileName="check_PatternVariableNamesDuplication_NonTypesystemRule.java" startLine="27" startPosition="5" endLine="28" endPosition="41" />
-    <nodeInfo nodeId="612919440683732016" fileName="check_PatternVariableNamesDuplication_NonTypesystemRule.java" startLine="28" startPosition="41" endLine="29" endPosition="210" />
-    <nodeInfo nodeId="612919440683732038" fileName="check_PatternVariableNamesDuplication_NonTypesystemRule.java" startLine="29" startPosition="210" endLine="30" endPosition="218" />
-    <nodeInfo nodeId="612919440683723755" fileName="check_PatternVariableNamesDuplication_NonTypesystemRule.java" startLine="30" startPosition="218" endLine="31" endPosition="38" />
-    <nodeInfo nodeId="612919440683723790" fileName="check_PatternVariableNamesDuplication_NonTypesystemRule.java" startLine="34" startPosition="9" endLine="35" endPosition="57" />
-    <nodeInfo nodeId="612919440683723790" fileName="check_PatternVariableNamesDuplication_NonTypesystemRule.java" startLine="35" startPosition="57" endLine="36" endPosition="59" />
-    <nodeInfo nodeId="612919440683723790" fileName="check_PatternVariableNamesDuplication_NonTypesystemRule.java" startLine="36" startPosition="59" endLine="37" endPosition="331" />
-    <nodeInfo nodeId="612919440683723798" fileName="check_PatternVariableNamesDuplication_NonTypesystemRule.java" startLine="39" startPosition="14" endLine="40" endPosition="62" />
-    <nodeInfo nodeId="612919440683723796" fileName="check_PatternVariableNamesDuplication_NonTypesystemRule.java" startLine="39" startPosition="12" endLine="41" endPosition="7" />
-    <nodeInfo nodeId="4855904478357073130" fileName="check_PatternVariableNamesDuplication_NonTypesystemRule.java" startLine="24" startPosition="103" endLine="27" endPosition="5" />
-    <nodeInfo nodeId="612919440683723790" fileName="check_PatternVariableNamesDuplication_NonTypesystemRule.java" startLine="33" startPosition="71" endLine="38" endPosition="9" />
-    <nodeInfo nodeId="612919440683723774" fileName="check_PatternVariableNamesDuplication_NonTypesystemRule.java" startLine="32" startPosition="33" endLine="41" endPosition="7" />
-    <nodeInfo nodeId="612919440683723749" fileName="check_PatternVariableNamesDuplication_NonTypesystemRule.java" startLine="31" startPosition="38" endLine="42" endPosition="5" />
-    <scopeInfo nodeId="4855904478357073131" fileName="check_PatternVariableNamesDuplication_NonTypesystemRule.java" startLine="25" startPosition="116" endLine="26" endPosition="13" />
-    <scopeInfo nodeId="612919440683723797" fileName="check_PatternVariableNamesDuplication_NonTypesystemRule.java" startLine="39" startPosition="14" endLine="40" endPosition="62" />
-    <scopeInfo nodeId="612919440683723790" fileName="check_PatternVariableNamesDuplication_NonTypesystemRule.java" startLine="34" startPosition="9" endLine="37" endPosition="331" />
-    <scopeInfo nodeId="612919440683723775" fileName="check_PatternVariableNamesDuplication_NonTypesystemRule.java" startLine="33" startPosition="71" endLine="38" endPosition="9" />
-    <scopeInfo nodeId="612919440683723751" fileName="check_PatternVariableNamesDuplication_NonTypesystemRule.java" startLine="32" startPosition="33" endLine="41" endPosition="7" />
-    <scopeInfo nodeId="612919440683723749" fileName="check_PatternVariableNamesDuplication_NonTypesystemRule.java" startLine="31" startPosition="38" endLine="42" endPosition="5">
+    <nodeInfo nodeId="612919440683723821" fileName="check_PatternVariableNamesDuplication_NonTypesystemRule.java" startLine="24" startPosition="103" endLine="25" endPosition="112" />
+    <nodeInfo nodeId="612919440683723755" fileName="check_PatternVariableNamesDuplication_NonTypesystemRule.java" startLine="25" startPosition="112" endLine="26" endPosition="38" />
+    <nodeInfo nodeId="4264731254635435133" fileName="check_PatternVariableNamesDuplication_NonTypesystemRule.java" startLine="29" startPosition="9" endLine="30" endPosition="57" />
+    <nodeInfo nodeId="4264731254635435133" fileName="check_PatternVariableNamesDuplication_NonTypesystemRule.java" startLine="30" startPosition="57" endLine="31" endPosition="59" />
+    <nodeInfo nodeId="4264731254635435133" fileName="check_PatternVariableNamesDuplication_NonTypesystemRule.java" startLine="31" startPosition="59" endLine="32" endPosition="332" />
+    <nodeInfo nodeId="612919440683723798" fileName="check_PatternVariableNamesDuplication_NonTypesystemRule.java" startLine="34" startPosition="14" endLine="35" endPosition="62" />
+    <nodeInfo nodeId="612919440683723796" fileName="check_PatternVariableNamesDuplication_NonTypesystemRule.java" startLine="34" startPosition="12" endLine="36" endPosition="7" />
+    <nodeInfo nodeId="4264731254635435133" fileName="check_PatternVariableNamesDuplication_NonTypesystemRule.java" startLine="28" startPosition="71" endLine="33" endPosition="9" />
+    <nodeInfo nodeId="612919440683723774" fileName="check_PatternVariableNamesDuplication_NonTypesystemRule.java" startLine="27" startPosition="33" endLine="36" endPosition="7" />
+    <nodeInfo nodeId="612919440683723749" fileName="check_PatternVariableNamesDuplication_NonTypesystemRule.java" startLine="26" startPosition="38" endLine="37" endPosition="5" />
+    <scopeInfo nodeId="612919440683723797" fileName="check_PatternVariableNamesDuplication_NonTypesystemRule.java" startLine="34" startPosition="14" endLine="35" endPosition="62" />
+    <scopeInfo nodeId="4264731254635435133" fileName="check_PatternVariableNamesDuplication_NonTypesystemRule.java" startLine="29" startPosition="9" endLine="32" endPosition="332" />
+    <scopeInfo nodeId="612919440683723775" fileName="check_PatternVariableNamesDuplication_NonTypesystemRule.java" startLine="28" startPosition="71" endLine="33" endPosition="9" />
+    <scopeInfo nodeId="612919440683723751" fileName="check_PatternVariableNamesDuplication_NonTypesystemRule.java" startLine="27" startPosition="33" endLine="36" endPosition="7" />
+    <scopeInfo nodeId="612919440683723749" fileName="check_PatternVariableNamesDuplication_NonTypesystemRule.java" startLine="26" startPosition="38" endLine="37" endPosition="5">
       <varInfo nodeId="612919440683723750" varName="var" />
     </scopeInfo>
-    <scopeInfo nodeId="612919440683696544" fileName="check_PatternVariableNamesDuplication_NonTypesystemRule.java" startLine="24" startPosition="103" endLine="42" endPosition="5">
+    <scopeInfo nodeId="612919440683696544" fileName="check_PatternVariableNamesDuplication_NonTypesystemRule.java" startLine="24" startPosition="103" endLine="37" endPosition="5">
       <varInfo nodeId="612919440683723756" varName="names" />
       <varInfo nodeId="612919440683723822" varName="variables" />
     </scopeInfo>

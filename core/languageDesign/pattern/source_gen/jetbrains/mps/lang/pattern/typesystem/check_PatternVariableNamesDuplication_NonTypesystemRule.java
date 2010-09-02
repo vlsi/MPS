@@ -6,10 +6,10 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.List;
+import jetbrains.mps.lang.pattern.behavior.PatternExpression_Behavior;
 import java.util.Set;
 import java.util.HashSet;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
@@ -22,19 +22,14 @@ public class check_PatternVariableNamesDuplication_NonTypesystemRule extends Abs
   }
 
   public void applyRule(final SNode patternExpression, final TypeCheckingContext typeCheckingContext) {
-    if (SNodeOperations.isInstanceOf(patternExpression, "jetbrains.mps.lang.pattern.structure.PatternExpression")) {
-      return;
-    }
-    Set<SNode> variables = new HashSet();
-    variables.addAll(SNodeOperations.getDescendants(SLinkOperations.getTarget(patternExpression, "patternNode", true), "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", false, new String[]{}));
-    variables.addAll(SNodeOperations.getDescendants(SLinkOperations.getTarget(patternExpression, "patternNode", true), "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", false, new String[]{}));
+    List<SNode> variables = PatternExpression_Behavior.call_getVariables_4855904478357072957(patternExpression);
     Set<String> names = new HashSet();
     for (SNode var : variables) {
       if (names.contains(SPropertyOperations.getString(var, "name"))) {
         {
           BaseIntentionProvider intentionProvider = null;
           IErrorTarget errorTarget = new NodeErrorTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(patternExpression, "Pattern has two or more variables with name " + SPropertyOperations.getString(var, "name"), "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.typesystem)", "612919440683723790", intentionProvider, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(patternExpression, "Pattern has two or more variables with name " + SPropertyOperations.getString(var, "name"), "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.typesystem)", "4264731254635435133", intentionProvider, errorTarget);
         }
       } else {
         names.add(SPropertyOperations.getString(var, "name"));

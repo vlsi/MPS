@@ -12,6 +12,7 @@ import jetbrains.mps.project.GlobalScope;
 public class OrPattern extends Pattern {
   public static final String concept = "jetbrains.mps.lang.pattern.structure.OrPattern";
   public static final String CLAUSE = "clause";
+  public static final String VARIABLE = "variable";
 
   public OrPattern(SNode node) {
     super(node);
@@ -35,6 +36,26 @@ public class OrPattern extends Pattern {
 
   public void insertClause(OrPatternClause prev, OrPatternClause node) {
     this.insertChild(prev, OrPattern.CLAUSE, node);
+  }
+
+  public int getVariablesCount() {
+    return this.getChildCount(OrPattern.VARIABLE);
+  }
+
+  public Iterator<PatternVariableDeclaration> variables() {
+    return this.children(PatternVariableDeclaration.class, OrPattern.VARIABLE);
+  }
+
+  public List<PatternVariableDeclaration> getVariables() {
+    return this.getChildren(PatternVariableDeclaration.class, OrPattern.VARIABLE);
+  }
+
+  public void addVariable(PatternVariableDeclaration node) {
+    this.addChild(OrPattern.VARIABLE, node);
+  }
+
+  public void insertVariable(PatternVariableDeclaration prev, PatternVariableDeclaration node) {
+    this.insertChild(prev, OrPattern.VARIABLE, node);
   }
 
   public static OrPattern newInstance(SModel sm, boolean init) {

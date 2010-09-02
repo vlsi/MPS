@@ -222,6 +222,12 @@
       <property name="role:0" value="clause" />
       <link role="target:0" targetNodeId="4855904478356877904:0" resolveInfo="OrPatternClause" />
     </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="4264731254635442558">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="variable" />
+      <property name="sourceCardinality:0" value="0..n" />
+      <link role="target:0" targetNodeId="1136720037779:0" resolveInfo="PatternVariableDeclaration" />
+    </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="612919440683661613">
       <property name="value:0" value="[|]" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" resolveInfo="alias" />
@@ -250,6 +256,16 @@
       <property name="role:0" value="expression" />
       <link role="specializedLink:0" targetNodeId="1136720037778:0" />
       <link role="target:0" targetNodeId="1.1133920641626:0" resolveInfo="BaseConcept" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4264731254635442556">
+    <property name="name:0" value="OrPatternVariableReference" />
+    <link role="extends:0" targetNodeId="1.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="4264731254635442557">
+      <property name="metaClass:0" value="reference" />
+      <property name="sourceCardinality:0" value="1" />
+      <property name="role:0" value="declaration" />
+      <link role="target:0" targetNodeId="1136720037779:0" resolveInfo="PatternVariableDeclaration" />
     </node>
   </node>
 </model>
