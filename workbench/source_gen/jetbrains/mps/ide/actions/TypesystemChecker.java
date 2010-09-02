@@ -11,10 +11,8 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-
-import java.util.Set;
-
 import jetbrains.mps.typesystem.inference.TypeContextManager;
+import java.util.Set;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.internal.collections.runtime.SetSequence;

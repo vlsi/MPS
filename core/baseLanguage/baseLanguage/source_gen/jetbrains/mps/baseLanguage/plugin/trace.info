@@ -161,60 +161,62 @@
     <scopeInfo nodeId="1205605202047" fileName="UncommentStatements_Action.java" startLine="82" startPosition="184" endLine="85" endPosition="7" />
   </root>
   <root nodeId="1208785675986">
-    <nodeInfo nodeId="1208787056655" fileName="ToDoHighlighter.java" startLine="25" startPosition="175" endLine="26" endPosition="90" />
-    <nodeInfo nodeId="1208786967327" fileName="ToDoHighlighter.java" startLine="26" startPosition="90" endLine="27" endPosition="26" />
-    <nodeInfo nodeId="1208787153453" fileName="ToDoHighlighter.java" startLine="29" startPosition="71" endLine="30" endPosition="147" />
-    <nodeInfo nodeId="5405376949613885740" fileName="ToDoHighlighter.java" startLine="34" startPosition="82" endLine="35" endPosition="164" />
-    <nodeInfo nodeId="1208787241301" fileName="ToDoHighlighter.java" startLine="37" startPosition="5" endLine="38" endPosition="20" />
-    <nodeInfo nodeId="1208879383150" fileName="ToDoHighlighter.java" startLine="41" startPosition="79" endLine="42" endPosition="41" />
-    <nodeInfo nodeId="1208879461172" fileName="ToDoHighlighter.java" startLine="44" startPosition="60" endLine="45" endPosition="20" />
-    <nodeInfo nodeId="5405376949613885725" fileName="ToDoHighlighter.java" startLine="49" startPosition="59" endLine="50" endPosition="20" />
-    <nodeInfo nodeId="1208879467582" fileName="ToDoHighlighter.java" startLine="52" startPosition="5" endLine="53" endPosition="17" />
-    <nodeInfo nodeId="1208787693048" fileName="ToDoHighlighter.java" startLine="21" startPosition="59" endLine="23" endPosition="3" />
-    <nodeInfo nodeId="1208787124092" fileName="ToDoHighlighter.java" startLine="28" startPosition="142" endLine="31" endPosition="7" />
-    <nodeInfo nodeId="5405376949613885738" fileName="ToDoHighlighter.java" startLine="33" startPosition="151" endLine="36" endPosition="7" />
-    <nodeInfo nodeId="1208879430997" fileName="ToDoHighlighter.java" startLine="43" startPosition="101" endLine="46" endPosition="7" />
-    <nodeInfo nodeId="5405376949613885723" fileName="ToDoHighlighter.java" startLine="48" startPosition="101" endLine="51" endPosition="7" />
-    <nodeInfo nodeId="1208786989912" fileName="ToDoHighlighter.java" startLine="27" startPosition="26" endLine="32" endPosition="5" />
-    <nodeInfo nodeId="5405376949613885736" fileName="ToDoHighlighter.java" startLine="32" startPosition="5" endLine="37" endPosition="5" />
-    <nodeInfo nodeId="1208879393783" fileName="ToDoHighlighter.java" startLine="42" startPosition="41" endLine="47" endPosition="5" />
-    <nodeInfo nodeId="5405376949613885711" fileName="ToDoHighlighter.java" startLine="47" startPosition="5" endLine="52" endPosition="5" />
-    <nodeInfo nodeId="1208879271322" fileName="ToDoHighlighter.java" startLine="40" startPosition="0" endLine="55" endPosition="0" />
-    <nodeInfo nodeId="1208786474480" fileName="ToDoHighlighter.java" startLine="24" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="1208787693051" fileName="ToDoHighlighter.java" startLine="22" startPosition="28" endLine="22" endPosition="28" />
-    <scopeInfo nodeId="1208787124093" fileName="ToDoHighlighter.java" startLine="29" startPosition="71" endLine="30" endPosition="147" />
-    <scopeInfo nodeId="5405376949613885739" fileName="ToDoHighlighter.java" startLine="34" startPosition="82" endLine="35" endPosition="164" />
-    <scopeInfo nodeId="1208879430998" fileName="ToDoHighlighter.java" startLine="44" startPosition="60" endLine="45" endPosition="20" />
-    <scopeInfo nodeId="5405376949613885724" fileName="ToDoHighlighter.java" startLine="49" startPosition="59" endLine="50" endPosition="20" />
-    <scopeInfo nodeId="1208787693048" fileName="ToDoHighlighter.java" startLine="21" startPosition="59" endLine="23" endPosition="3" />
-    <scopeInfo nodeId="1208786989913" fileName="ToDoHighlighter.java" startLine="28" startPosition="142" endLine="31" endPosition="7" />
-    <scopeInfo nodeId="5405376949613885737" fileName="ToDoHighlighter.java" startLine="33" startPosition="151" endLine="36" endPosition="7" />
-    <scopeInfo nodeId="1208879393784" fileName="ToDoHighlighter.java" startLine="43" startPosition="101" endLine="46" endPosition="7" />
-    <scopeInfo nodeId="5405376949613885712" fileName="ToDoHighlighter.java" startLine="48" startPosition="101" endLine="51" endPosition="7" />
-    <scopeInfo nodeId="1208786989912" fileName="ToDoHighlighter.java" startLine="27" startPosition="26" endLine="32" endPosition="5">
+    <nodeInfo nodeId="1208787056655" fileName="ToDoHighlighter.java" startLine="26" startPosition="175" endLine="27" endPosition="90" />
+    <nodeInfo nodeId="1208786967327" fileName="ToDoHighlighter.java" startLine="27" startPosition="90" endLine="28" endPosition="26" />
+    <nodeInfo nodeId="8042441407353514249" fileName="ToDoHighlighter.java" startLine="28" startPosition="26" endLine="29" endPosition="77" />
+    <nodeInfo nodeId="1208787153453" fileName="ToDoHighlighter.java" startLine="31" startPosition="71" endLine="32" endPosition="164" />
+    <nodeInfo nodeId="5405376949613885740" fileName="ToDoHighlighter.java" startLine="36" startPosition="82" endLine="37" endPosition="181" />
+    <nodeInfo nodeId="1208787241301" fileName="ToDoHighlighter.java" startLine="39" startPosition="5" endLine="40" endPosition="20" />
+    <nodeInfo nodeId="1208879383150" fileName="ToDoHighlighter.java" startLine="43" startPosition="79" endLine="44" endPosition="41" />
+    <nodeInfo nodeId="1208879461172" fileName="ToDoHighlighter.java" startLine="46" startPosition="60" endLine="47" endPosition="20" />
+    <nodeInfo nodeId="5405376949613885725" fileName="ToDoHighlighter.java" startLine="51" startPosition="59" endLine="52" endPosition="20" />
+    <nodeInfo nodeId="1208879467582" fileName="ToDoHighlighter.java" startLine="54" startPosition="5" endLine="55" endPosition="17" />
+    <nodeInfo nodeId="1208787693048" fileName="ToDoHighlighter.java" startLine="22" startPosition="59" endLine="24" endPosition="3" />
+    <nodeInfo nodeId="1208787124092" fileName="ToDoHighlighter.java" startLine="30" startPosition="142" endLine="33" endPosition="7" />
+    <nodeInfo nodeId="5405376949613885738" fileName="ToDoHighlighter.java" startLine="35" startPosition="151" endLine="38" endPosition="7" />
+    <nodeInfo nodeId="1208879430997" fileName="ToDoHighlighter.java" startLine="45" startPosition="101" endLine="48" endPosition="7" />
+    <nodeInfo nodeId="5405376949613885723" fileName="ToDoHighlighter.java" startLine="50" startPosition="101" endLine="53" endPosition="7" />
+    <nodeInfo nodeId="1208786989912" fileName="ToDoHighlighter.java" startLine="29" startPosition="77" endLine="34" endPosition="5" />
+    <nodeInfo nodeId="5405376949613885736" fileName="ToDoHighlighter.java" startLine="34" startPosition="5" endLine="39" endPosition="5" />
+    <nodeInfo nodeId="1208879393783" fileName="ToDoHighlighter.java" startLine="44" startPosition="41" endLine="49" endPosition="5" />
+    <nodeInfo nodeId="5405376949613885711" fileName="ToDoHighlighter.java" startLine="49" startPosition="5" endLine="54" endPosition="5" />
+    <nodeInfo nodeId="1208879271322" fileName="ToDoHighlighter.java" startLine="42" startPosition="0" endLine="57" endPosition="0" />
+    <nodeInfo nodeId="1208786474480" fileName="ToDoHighlighter.java" startLine="25" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="1208787693051" fileName="ToDoHighlighter.java" startLine="23" startPosition="28" endLine="23" endPosition="28" />
+    <scopeInfo nodeId="1208787124093" fileName="ToDoHighlighter.java" startLine="31" startPosition="71" endLine="32" endPosition="164" />
+    <scopeInfo nodeId="5405376949613885739" fileName="ToDoHighlighter.java" startLine="36" startPosition="82" endLine="37" endPosition="181" />
+    <scopeInfo nodeId="1208879430998" fileName="ToDoHighlighter.java" startLine="46" startPosition="60" endLine="47" endPosition="20" />
+    <scopeInfo nodeId="5405376949613885724" fileName="ToDoHighlighter.java" startLine="51" startPosition="59" endLine="52" endPosition="20" />
+    <scopeInfo nodeId="1208787693048" fileName="ToDoHighlighter.java" startLine="22" startPosition="59" endLine="24" endPosition="3" />
+    <scopeInfo nodeId="1208786989913" fileName="ToDoHighlighter.java" startLine="30" startPosition="142" endLine="33" endPosition="7" />
+    <scopeInfo nodeId="5405376949613885737" fileName="ToDoHighlighter.java" startLine="35" startPosition="151" endLine="38" endPosition="7" />
+    <scopeInfo nodeId="1208879393784" fileName="ToDoHighlighter.java" startLine="45" startPosition="101" endLine="48" endPosition="7" />
+    <scopeInfo nodeId="5405376949613885712" fileName="ToDoHighlighter.java" startLine="50" startPosition="101" endLine="53" endPosition="7" />
+    <scopeInfo nodeId="1208786989912" fileName="ToDoHighlighter.java" startLine="29" startPosition="77" endLine="34" endPosition="5">
       <varInfo nodeId="1208786989916" varName="remark" />
     </scopeInfo>
-    <scopeInfo nodeId="5405376949613885736" fileName="ToDoHighlighter.java" startLine="32" startPosition="5" endLine="37" endPosition="5">
+    <scopeInfo nodeId="5405376949613885736" fileName="ToDoHighlighter.java" startLine="34" startPosition="5" endLine="39" endPosition="5">
       <varInfo nodeId="5405376949613885762" varName="textCommentPart" />
     </scopeInfo>
-    <scopeInfo nodeId="1208879271327" fileName="ToDoHighlighter.java" startLine="41" startPosition="79" endLine="53" endPosition="17">
+    <scopeInfo nodeId="1208879271327" fileName="ToDoHighlighter.java" startLine="43" startPosition="79" endLine="55" endPosition="17">
       <varInfo nodeId="1208879383151" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1208786474488" fileName="ToDoHighlighter.java" startLine="25" startPosition="175" endLine="38" endPosition="20">
+    <scopeInfo nodeId="1208786474488" fileName="ToDoHighlighter.java" startLine="26" startPosition="175" endLine="40" endPosition="20">
       <varInfo nodeId="1208786967328" varName="node" />
+      <varInfo nodeId="8042441407353514250" varName="editorComponent" />
       <varInfo nodeId="1208787056656" varName="messages" />
     </scopeInfo>
-    <scopeInfo nodeId="1208879271322" fileName="ToDoHighlighter.java" startLine="40" startPosition="0" endLine="55" endPosition="0">
+    <scopeInfo nodeId="1208879271322" fileName="ToDoHighlighter.java" startLine="42" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="1208879271325" varName="propertyEvent" />
     </scopeInfo>
-    <scopeInfo nodeId="1208786474480" fileName="ToDoHighlighter.java" startLine="24" startPosition="0" endLine="40" endPosition="0">
+    <scopeInfo nodeId="1208786474480" fileName="ToDoHighlighter.java" startLine="25" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="3238664143031493812" varName="editorContext" />
       <varInfo nodeId="1208786474484" varName="rootNode" />
       <varInfo nodeId="1222347059345" varName="events" />
       <varInfo nodeId="1208786474486" varName="operationContext" />
       <varInfo nodeId="1222347161751" varName="wasCheckedOnce" />
     </scopeInfo>
-    <unitInfo nodeId="1208785675986" fileName="ToDoHighlighter.java" startLine="21" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.ToDoHighlighter" />
+    <unitInfo nodeId="1208785675986" fileName="ToDoHighlighter.java" startLine="22" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.ToDoHighlighter" />
   </root>
   <root nodeId="1208785739646">
     <nodeInfo nodeId="1208785857625" fileName="ToDoMessage.java" startLine="14" startPosition="76" endLine="15" endPosition="44" />

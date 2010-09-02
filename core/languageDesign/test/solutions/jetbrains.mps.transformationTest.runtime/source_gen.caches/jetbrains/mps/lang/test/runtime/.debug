@@ -1,191 +1,182 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1215078243118">
-    <nodeInfo nodeId="852155438141189832" fileName="SubtreeChecker.java" startLine="30" startPosition="53" endLine="31" endPosition="43" />
-    <nodeInfo nodeId="1215607026361" fileName="SubtreeChecker.java" startLine="34" startPosition="97" endLine="35" endPosition="52" />
-    <nodeInfo nodeId="1215607026365" fileName="SubtreeChecker.java" startLine="35" startPosition="52" endLine="36" endPosition="36" />
-    <nodeInfo nodeId="1215607026381" fileName="SubtreeChecker.java" startLine="37" startPosition="134" endLine="38" endPosition="30" />
-    <nodeInfo nodeId="1215607026387" fileName="SubtreeChecker.java" startLine="39" startPosition="131" endLine="40" endPosition="137" />
-    <nodeInfo nodeId="1215607026407" fileName="SubtreeChecker.java" startLine="42" startPosition="109" endLine="43" endPosition="51" />
-    <nodeInfo nodeId="1215607026414" fileName="SubtreeChecker.java" startLine="43" startPosition="51" endLine="44" endPosition="152" />
-    <nodeInfo nodeId="1215608437013" fileName="SubtreeChecker.java" startLine="44" startPosition="152" endLine="45" endPosition="187" />
-    <nodeInfo nodeId="95706764259162024" fileName="SubtreeChecker.java" startLine="47" startPosition="112" endLine="48" endPosition="51" />
-    <nodeInfo nodeId="95706764259162136" fileName="SubtreeChecker.java" startLine="48" startPosition="51" endLine="49" endPosition="36" />
-    <nodeInfo nodeId="95706764259162154" fileName="SubtreeChecker.java" startLine="51" startPosition="58" endLine="52" endPosition="31" />
-    <nodeInfo nodeId="95706764259162170" fileName="SubtreeChecker.java" startLine="52" startPosition="31" endLine="53" endPosition="22" />
-    <nodeInfo nodeId="95706764259162171" fileName="SubtreeChecker.java" startLine="55" startPosition="13" endLine="56" endPosition="39" />
-    <nodeInfo nodeId="1215607026428" fileName="SubtreeChecker.java" startLine="58" startPosition="109" endLine="59" endPosition="78" />
-    <nodeInfo nodeId="1215607026435" fileName="SubtreeChecker.java" startLine="59" startPosition="78" endLine="60" endPosition="115" />
-    <nodeInfo nodeId="1215607026442" fileName="SubtreeChecker.java" startLine="60" startPosition="115" endLine="61" endPosition="27" />
-    <nodeInfo nodeId="1215607026452" fileName="SubtreeChecker.java" startLine="63" startPosition="112" endLine="64" endPosition="78" />
-    <nodeInfo nodeId="1215607026459" fileName="SubtreeChecker.java" startLine="64" startPosition="78" endLine="65" endPosition="114" />
-    <nodeInfo nodeId="1215607026466" fileName="SubtreeChecker.java" startLine="65" startPosition="114" endLine="66" endPosition="27" />
-    <nodeInfo nodeId="7938028138875678860" fileName="SubtreeChecker.java" startLine="70" startPosition="23" endLine="71" endPosition="73" />
-    <nodeInfo nodeId="3996711022540418636" fileName="SubtreeChecker.java" startLine="73" startPosition="31" endLine="74" endPosition="82" />
-    <nodeInfo nodeId="3996711022540418661" fileName="SubtreeChecker.java" startLine="76" startPosition="33" endLine="77" endPosition="84" />
-    <nodeInfo nodeId="1217526349224" fileName="SubtreeChecker.java" startLine="84" startPosition="63" endLine="85" endPosition="52" />
-    <nodeInfo nodeId="1217526349228" fileName="SubtreeChecker.java" startLine="85" startPosition="52" endLine="86" endPosition="43" />
-    <nodeInfo nodeId="1217526319595" fileName="SubtreeChecker.java" startLine="86" startPosition="43" endLine="87" endPosition="49" />
-    <nodeInfo nodeId="1217526416846" fileName="SubtreeChecker.java" startLine="87" startPosition="49" endLine="88" endPosition="178" />
-    <nodeInfo nodeId="1215612199638" fileName="SubtreeChecker.java" startLine="91" startPosition="48" endLine="92" endPosition="74" />
-    <nodeInfo nodeId="1215612669321" fileName="SubtreeChecker.java" startLine="92" startPosition="74" endLine="93" endPosition="72" />
-    <nodeInfo nodeId="1215615074247" fileName="SubtreeChecker.java" startLine="93" startPosition="72" endLine="94" endPosition="93" />
-    <nodeInfo nodeId="1215617240412" fileName="SubtreeChecker.java" startLine="94" startPosition="93" endLine="95" endPosition="74" />
-    <nodeInfo nodeId="1215611983708" fileName="SubtreeChecker.java" startLine="97" startPosition="131" endLine="98" endPosition="137" />
-    <nodeInfo nodeId="1215615554563" fileName="SubtreeChecker.java" startLine="99" startPosition="90" endLine="100" endPosition="34" />
-    <nodeInfo nodeId="1215615533526" fileName="SubtreeChecker.java" startLine="100" startPosition="34" endLine="101" endPosition="77" />
-    <nodeInfo nodeId="1215615626527" fileName="SubtreeChecker.java" startLine="102" startPosition="64" endLine="103" endPosition="67" />
-    <nodeInfo nodeId="1215615667361" fileName="SubtreeChecker.java" startLine="104" startPosition="18" endLine="105" endPosition="21" />
-    <nodeInfo nodeId="1215615683215" fileName="SubtreeChecker.java" startLine="107" startPosition="106" endLine="108" endPosition="87" />
-    <nodeInfo nodeId="1215615689933" fileName="SubtreeChecker.java" startLine="110" startPosition="108" endLine="111" endPosition="86" />
-    <nodeInfo nodeId="1215615703953" fileName="SubtreeChecker.java" startLine="113" startPosition="108" endLine="114" endPosition="86" />
-    <nodeInfo nodeId="1215615758600" fileName="SubtreeChecker.java" startLine="116" startPosition="110" endLine="117" endPosition="74" />
-    <nodeInfo nodeId="1215615437101" fileName="SubtreeChecker.java" startLine="117" startPosition="74" endLine="118" endPosition="150" />
-    <nodeInfo nodeId="1215615811654" fileName="SubtreeChecker.java" startLine="118" startPosition="150" endLine="119" endPosition="128" />
-    <nodeInfo nodeId="1215617277218" fileName="SubtreeChecker.java" startLine="121" startPosition="105" endLine="122" endPosition="67" />
-    <nodeInfo nodeId="1215617277225" fileName="SubtreeChecker.java" startLine="122" startPosition="67" endLine="123" endPosition="150" />
-    <nodeInfo nodeId="1215617277234" fileName="SubtreeChecker.java" startLine="123" startPosition="150" endLine="124" endPosition="128" />
-    <nodeInfo nodeId="1215609104515" fileName="SubtreeChecker.java" startLine="135" startPosition="199" endLine="136" endPosition="86" />
-    <nodeInfo nodeId="1215615663872" fileName="SubtreeChecker.java" startLine="104" startPosition="16" endLine="106" endPosition="11" />
-    <nodeInfo nodeId="3996711022540418629" fileName="SubtreeChecker.java" startLine="72" startPosition="31" endLine="75" endPosition="11" />
-    <nodeInfo nodeId="3996711022540418654" fileName="SubtreeChecker.java" startLine="75" startPosition="11" endLine="78" endPosition="11" />
-    <nodeInfo nodeId="1215611983722" fileName="SubtreeChecker.java" startLine="106" startPosition="11" endLine="109" endPosition="11" />
-    <nodeInfo nodeId="1215613114952" fileName="SubtreeChecker.java" startLine="109" startPosition="11" endLine="112" endPosition="11" />
-    <nodeInfo nodeId="1215614969820" fileName="SubtreeChecker.java" startLine="112" startPosition="11" endLine="115" endPosition="11" />
-    <nodeInfo nodeId="1215609104505" fileName="SubtreeChecker.java" startLine="134" startPosition="138" endLine="137" endPosition="11" />
-    <nodeInfo nodeId="1215698239875" fileName="SubtreeChecker.java" startLine="142" startPosition="0" endLine="145" endPosition="0" />
-    <nodeInfo nodeId="852155438141188210" fileName="SubtreeChecker.java" startLine="29" startPosition="29" endLine="33" endPosition="0" />
-    <nodeInfo nodeId="95706764259162145" fileName="SubtreeChecker.java" startLine="50" startPosition="163" endLine="54" endPosition="15" />
-    <nodeInfo nodeId="1215607026401" fileName="SubtreeChecker.java" startLine="41" startPosition="90" endLine="46" endPosition="11" />
-    <nodeInfo nodeId="1215607026426" fileName="SubtreeChecker.java" startLine="57" startPosition="11" endLine="62" endPosition="11" />
-    <nodeInfo nodeId="1215607026450" fileName="SubtreeChecker.java" startLine="62" startPosition="11" endLine="67" endPosition="11" />
-    <nodeInfo nodeId="1215615533534" fileName="SubtreeChecker.java" startLine="101" startPosition="77" endLine="106" endPosition="11" />
-    <nodeInfo nodeId="1215615153956" fileName="SubtreeChecker.java" startLine="115" startPosition="11" endLine="120" endPosition="11" />
-    <nodeInfo nodeId="1215617277216" fileName="SubtreeChecker.java" startLine="120" startPosition="11" endLine="125" endPosition="11" />
-    <nodeInfo nodeId="1215609104497" fileName="SubtreeChecker.java" startLine="133" startPosition="32" endLine="138" endPosition="9" />
-    <nodeInfo nodeId="95706764259162043" fileName="SubtreeChecker.java" startLine="49" startPosition="36" endLine="55" endPosition="13" />
-    <nodeInfo nodeId="1217526223478" fileName="SubtreeChecker.java" startLine="83" startPosition="0" endLine="90" endPosition="0" />
-    <nodeInfo nodeId="1215609091939" fileName="SubtreeChecker.java" startLine="132" startPosition="140" endLine="139" endPosition="7" />
-    <nodeInfo nodeId="3996711022540418620" fileName="SubtreeChecker.java" startLine="71" startPosition="73" endLine="79" endPosition="9" />
-    <nodeInfo nodeId="1215605336242" fileName="SubtreeChecker.java" startLine="131" startPosition="52" endLine="140" endPosition="5" />
-    <nodeInfo nodeId="95706764259161997" fileName="SubtreeChecker.java" startLine="46" startPosition="11" endLine="57" endPosition="11" />
-    <nodeInfo nodeId="1215610523461" fileName="SubtreeChecker.java" startLine="69" startPosition="7" endLine="80" endPosition="7" />
-    <nodeInfo nodeId="1215605336227" fileName="SubtreeChecker.java" startLine="130" startPosition="0" endLine="142" endPosition="0" />
-    <nodeInfo nodeId="1215607026394" fileName="SubtreeChecker.java" startLine="40" startPosition="137" endLine="68" endPosition="9" />
-    <nodeInfo nodeId="1215611983715" fileName="SubtreeChecker.java" startLine="98" startPosition="137" endLine="126" endPosition="9" />
-    <nodeInfo nodeId="1215607026385" fileName="SubtreeChecker.java" startLine="38" startPosition="30" endLine="69" endPosition="7" />
-    <nodeInfo nodeId="1215611983706" fileName="SubtreeChecker.java" startLine="96" startPosition="134" endLine="127" endPosition="7" />
-    <nodeInfo nodeId="1215611983693" fileName="SubtreeChecker.java" startLine="95" startPosition="74" endLine="128" endPosition="5" />
-    <nodeInfo nodeId="1215611932104" fileName="SubtreeChecker.java" startLine="90" startPosition="0" endLine="130" endPosition="0" />
-    <nodeInfo nodeId="1215607026372" fileName="SubtreeChecker.java" startLine="36" startPosition="36" endLine="81" endPosition="5" />
-    <nodeInfo nodeId="1215078294635" fileName="SubtreeChecker.java" startLine="33" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="1215698239878" fileName="SubtreeChecker.java" startLine="143" startPosition="32" endLine="143" endPosition="32" />
-    <scopeInfo nodeId="852155438141188213" fileName="SubtreeChecker.java" startLine="30" startPosition="53" endLine="31" endPosition="43" />
-    <scopeInfo nodeId="3996711022540418630" fileName="SubtreeChecker.java" startLine="73" startPosition="31" endLine="74" endPosition="82" />
-    <scopeInfo nodeId="3996711022540418655" fileName="SubtreeChecker.java" startLine="76" startPosition="33" endLine="77" endPosition="84" />
-    <scopeInfo nodeId="1215615533535" fileName="SubtreeChecker.java" startLine="102" startPosition="64" endLine="103" endPosition="67" />
-    <scopeInfo nodeId="1215615663873" fileName="SubtreeChecker.java" startLine="104" startPosition="18" endLine="105" endPosition="21" />
-    <scopeInfo nodeId="1215611983727" fileName="SubtreeChecker.java" startLine="107" startPosition="106" endLine="108" endPosition="87" />
-    <scopeInfo nodeId="1215613114957" fileName="SubtreeChecker.java" startLine="110" startPosition="108" endLine="111" endPosition="86" />
-    <scopeInfo nodeId="1215614969825" fileName="SubtreeChecker.java" startLine="113" startPosition="108" endLine="114" endPosition="86" />
-    <scopeInfo nodeId="1215609104514" fileName="SubtreeChecker.java" startLine="135" startPosition="199" endLine="136" endPosition="86" />
-    <scopeInfo nodeId="95706764259162146" fileName="SubtreeChecker.java" startLine="51" startPosition="58" endLine="53" endPosition="22" />
-    <scopeInfo nodeId="1215607026406" fileName="SubtreeChecker.java" startLine="42" startPosition="109" endLine="45" endPosition="187">
+    <nodeInfo nodeId="852155438141189832" fileName="SubtreeChecker.java" startLine="34" startPosition="53" endLine="35" endPosition="43" />
+    <nodeInfo nodeId="8042441407353529721" fileName="SubtreeChecker.java" startLine="38" startPosition="97" endLine="39" endPosition="131" />
+    <nodeInfo nodeId="1215607026365" fileName="SubtreeChecker.java" startLine="39" startPosition="131" endLine="40" endPosition="54" />
+    <nodeInfo nodeId="1215607026381" fileName="SubtreeChecker.java" startLine="41" startPosition="134" endLine="42" endPosition="30" />
+    <nodeInfo nodeId="1215607026387" fileName="SubtreeChecker.java" startLine="43" startPosition="131" endLine="44" endPosition="137" />
+    <nodeInfo nodeId="1215607026407" fileName="SubtreeChecker.java" startLine="46" startPosition="109" endLine="47" endPosition="70" />
+    <nodeInfo nodeId="1215607026414" fileName="SubtreeChecker.java" startLine="47" startPosition="70" endLine="48" endPosition="152" />
+    <nodeInfo nodeId="1215608437013" fileName="SubtreeChecker.java" startLine="48" startPosition="152" endLine="49" endPosition="187" />
+    <nodeInfo nodeId="95706764259162024" fileName="SubtreeChecker.java" startLine="51" startPosition="112" endLine="52" endPosition="70" />
+    <nodeInfo nodeId="95706764259162136" fileName="SubtreeChecker.java" startLine="52" startPosition="70" endLine="53" endPosition="36" />
+    <nodeInfo nodeId="95706764259162154" fileName="SubtreeChecker.java" startLine="55" startPosition="58" endLine="56" endPosition="31" />
+    <nodeInfo nodeId="95706764259162170" fileName="SubtreeChecker.java" startLine="56" startPosition="31" endLine="57" endPosition="22" />
+    <nodeInfo nodeId="95706764259162171" fileName="SubtreeChecker.java" startLine="59" startPosition="13" endLine="60" endPosition="39" />
+    <nodeInfo nodeId="1215607026428" fileName="SubtreeChecker.java" startLine="62" startPosition="109" endLine="63" endPosition="90" />
+    <nodeInfo nodeId="1215607026435" fileName="SubtreeChecker.java" startLine="63" startPosition="90" endLine="64" endPosition="127" />
+    <nodeInfo nodeId="1215607026442" fileName="SubtreeChecker.java" startLine="64" startPosition="127" endLine="65" endPosition="27" />
+    <nodeInfo nodeId="1215607026452" fileName="SubtreeChecker.java" startLine="67" startPosition="112" endLine="68" endPosition="90" />
+    <nodeInfo nodeId="1215607026459" fileName="SubtreeChecker.java" startLine="68" startPosition="90" endLine="69" endPosition="126" />
+    <nodeInfo nodeId="1215607026466" fileName="SubtreeChecker.java" startLine="69" startPosition="126" endLine="70" endPosition="27" />
+    <nodeInfo nodeId="7938028138875678860" fileName="SubtreeChecker.java" startLine="74" startPosition="23" endLine="75" endPosition="85" />
+    <nodeInfo nodeId="3996711022540418636" fileName="SubtreeChecker.java" startLine="77" startPosition="31" endLine="78" endPosition="82" />
+    <nodeInfo nodeId="3996711022540418661" fileName="SubtreeChecker.java" startLine="80" startPosition="33" endLine="81" endPosition="84" />
+    <nodeInfo nodeId="8042441407353530935" fileName="SubtreeChecker.java" startLine="85" startPosition="5" endLine="86" endPosition="34" />
+    <nodeInfo nodeId="1215612199638" fileName="SubtreeChecker.java" startLine="89" startPosition="48" endLine="90" endPosition="74" />
+    <nodeInfo nodeId="1215612669321" fileName="SubtreeChecker.java" startLine="90" startPosition="74" endLine="91" endPosition="72" />
+    <nodeInfo nodeId="1215615074247" fileName="SubtreeChecker.java" startLine="91" startPosition="72" endLine="92" endPosition="93" />
+    <nodeInfo nodeId="1215617240412" fileName="SubtreeChecker.java" startLine="92" startPosition="93" endLine="93" endPosition="74" />
+    <nodeInfo nodeId="1215611983708" fileName="SubtreeChecker.java" startLine="95" startPosition="131" endLine="96" endPosition="137" />
+    <nodeInfo nodeId="1215615554563" fileName="SubtreeChecker.java" startLine="97" startPosition="90" endLine="98" endPosition="34" />
+    <nodeInfo nodeId="1215615533526" fileName="SubtreeChecker.java" startLine="98" startPosition="34" endLine="99" endPosition="77" />
+    <nodeInfo nodeId="1215615626527" fileName="SubtreeChecker.java" startLine="100" startPosition="64" endLine="101" endPosition="67" />
+    <nodeInfo nodeId="1215615667361" fileName="SubtreeChecker.java" startLine="102" startPosition="18" endLine="103" endPosition="21" />
+    <nodeInfo nodeId="1215615683215" fileName="SubtreeChecker.java" startLine="105" startPosition="106" endLine="106" endPosition="87" />
+    <nodeInfo nodeId="1215615689933" fileName="SubtreeChecker.java" startLine="108" startPosition="108" endLine="109" endPosition="86" />
+    <nodeInfo nodeId="1215615703953" fileName="SubtreeChecker.java" startLine="111" startPosition="108" endLine="112" endPosition="86" />
+    <nodeInfo nodeId="1215615758600" fileName="SubtreeChecker.java" startLine="114" startPosition="110" endLine="115" endPosition="74" />
+    <nodeInfo nodeId="1215615437101" fileName="SubtreeChecker.java" startLine="115" startPosition="74" endLine="116" endPosition="150" />
+    <nodeInfo nodeId="1215615811654" fileName="SubtreeChecker.java" startLine="116" startPosition="150" endLine="117" endPosition="128" />
+    <nodeInfo nodeId="1215617277218" fileName="SubtreeChecker.java" startLine="119" startPosition="105" endLine="120" endPosition="67" />
+    <nodeInfo nodeId="1215617277225" fileName="SubtreeChecker.java" startLine="120" startPosition="67" endLine="121" endPosition="150" />
+    <nodeInfo nodeId="1215617277234" fileName="SubtreeChecker.java" startLine="121" startPosition="150" endLine="122" endPosition="128" />
+    <nodeInfo nodeId="1215609104515" fileName="SubtreeChecker.java" startLine="133" startPosition="199" endLine="134" endPosition="86" />
+    <nodeInfo nodeId="8042441407353530942" fileName="SubtreeChecker.java" startLine="30" startPosition="29" endLine="32" endPosition="3" />
+    <nodeInfo nodeId="1215615663872" fileName="SubtreeChecker.java" startLine="102" startPosition="16" endLine="104" endPosition="11" />
+    <nodeInfo nodeId="3996711022540418629" fileName="SubtreeChecker.java" startLine="76" startPosition="31" endLine="79" endPosition="11" />
+    <nodeInfo nodeId="3996711022540418654" fileName="SubtreeChecker.java" startLine="79" startPosition="11" endLine="82" endPosition="11" />
+    <nodeInfo nodeId="1215611983722" fileName="SubtreeChecker.java" startLine="104" startPosition="11" endLine="107" endPosition="11" />
+    <nodeInfo nodeId="1215613114952" fileName="SubtreeChecker.java" startLine="107" startPosition="11" endLine="110" endPosition="11" />
+    <nodeInfo nodeId="1215614969820" fileName="SubtreeChecker.java" startLine="110" startPosition="11" endLine="113" endPosition="11" />
+    <nodeInfo nodeId="1215609104505" fileName="SubtreeChecker.java" startLine="132" startPosition="138" endLine="135" endPosition="11" />
+    <nodeInfo nodeId="1215698239875" fileName="SubtreeChecker.java" startLine="140" startPosition="0" endLine="143" endPosition="0" />
+    <nodeInfo nodeId="852155438141188210" fileName="SubtreeChecker.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
+    <nodeInfo nodeId="95706764259162145" fileName="SubtreeChecker.java" startLine="54" startPosition="163" endLine="58" endPosition="15" />
+    <nodeInfo nodeId="1215607026401" fileName="SubtreeChecker.java" startLine="45" startPosition="90" endLine="50" endPosition="11" />
+    <nodeInfo nodeId="1215607026426" fileName="SubtreeChecker.java" startLine="61" startPosition="11" endLine="66" endPosition="11" />
+    <nodeInfo nodeId="1215607026450" fileName="SubtreeChecker.java" startLine="66" startPosition="11" endLine="71" endPosition="11" />
+    <nodeInfo nodeId="1215615533534" fileName="SubtreeChecker.java" startLine="99" startPosition="77" endLine="104" endPosition="11" />
+    <nodeInfo nodeId="1215615153956" fileName="SubtreeChecker.java" startLine="113" startPosition="11" endLine="118" endPosition="11" />
+    <nodeInfo nodeId="1215617277216" fileName="SubtreeChecker.java" startLine="118" startPosition="11" endLine="123" endPosition="11" />
+    <nodeInfo nodeId="1215609104497" fileName="SubtreeChecker.java" startLine="131" startPosition="32" endLine="136" endPosition="9" />
+    <nodeInfo nodeId="95706764259162043" fileName="SubtreeChecker.java" startLine="53" startPosition="36" endLine="59" endPosition="13" />
+    <nodeInfo nodeId="1215609091939" fileName="SubtreeChecker.java" startLine="130" startPosition="140" endLine="137" endPosition="7" />
+    <nodeInfo nodeId="3996711022540418620" fileName="SubtreeChecker.java" startLine="75" startPosition="85" endLine="83" endPosition="9" />
+    <nodeInfo nodeId="1215605336242" fileName="SubtreeChecker.java" startLine="129" startPosition="52" endLine="138" endPosition="5" />
+    <nodeInfo nodeId="95706764259161997" fileName="SubtreeChecker.java" startLine="50" startPosition="11" endLine="61" endPosition="11" />
+    <nodeInfo nodeId="1215610523461" fileName="SubtreeChecker.java" startLine="73" startPosition="7" endLine="84" endPosition="7" />
+    <nodeInfo nodeId="1215605336227" fileName="SubtreeChecker.java" startLine="128" startPosition="0" endLine="140" endPosition="0" />
+    <nodeInfo nodeId="1215607026394" fileName="SubtreeChecker.java" startLine="44" startPosition="137" endLine="72" endPosition="9" />
+    <nodeInfo nodeId="1215611983715" fileName="SubtreeChecker.java" startLine="96" startPosition="137" endLine="124" endPosition="9" />
+    <nodeInfo nodeId="1215607026385" fileName="SubtreeChecker.java" startLine="42" startPosition="30" endLine="73" endPosition="7" />
+    <nodeInfo nodeId="1215611983706" fileName="SubtreeChecker.java" startLine="94" startPosition="134" endLine="125" endPosition="7" />
+    <nodeInfo nodeId="1215611983693" fileName="SubtreeChecker.java" startLine="93" startPosition="74" endLine="126" endPosition="5" />
+    <nodeInfo nodeId="1215611932104" fileName="SubtreeChecker.java" startLine="88" startPosition="0" endLine="128" endPosition="0" />
+    <nodeInfo nodeId="1215607026372" fileName="SubtreeChecker.java" startLine="40" startPosition="54" endLine="85" endPosition="5" />
+    <nodeInfo nodeId="1215078294635" fileName="SubtreeChecker.java" startLine="37" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="8042441407353530945" fileName="SubtreeChecker.java" startLine="31" startPosition="27" endLine="31" endPosition="27" />
+    <scopeInfo nodeId="1215698239878" fileName="SubtreeChecker.java" startLine="141" startPosition="32" endLine="141" endPosition="32" />
+    <scopeInfo nodeId="852155438141188213" fileName="SubtreeChecker.java" startLine="34" startPosition="53" endLine="35" endPosition="43" />
+    <scopeInfo nodeId="3996711022540418630" fileName="SubtreeChecker.java" startLine="77" startPosition="31" endLine="78" endPosition="82" />
+    <scopeInfo nodeId="3996711022540418655" fileName="SubtreeChecker.java" startLine="80" startPosition="33" endLine="81" endPosition="84" />
+    <scopeInfo nodeId="1215615533535" fileName="SubtreeChecker.java" startLine="100" startPosition="64" endLine="101" endPosition="67" />
+    <scopeInfo nodeId="1215615663873" fileName="SubtreeChecker.java" startLine="102" startPosition="18" endLine="103" endPosition="21" />
+    <scopeInfo nodeId="1215611983727" fileName="SubtreeChecker.java" startLine="105" startPosition="106" endLine="106" endPosition="87" />
+    <scopeInfo nodeId="1215613114957" fileName="SubtreeChecker.java" startLine="108" startPosition="108" endLine="109" endPosition="86" />
+    <scopeInfo nodeId="1215614969825" fileName="SubtreeChecker.java" startLine="111" startPosition="108" endLine="112" endPosition="86" />
+    <scopeInfo nodeId="1215609104514" fileName="SubtreeChecker.java" startLine="133" startPosition="199" endLine="134" endPosition="86" />
+    <scopeInfo nodeId="8042441407353530942" fileName="SubtreeChecker.java" startLine="30" startPosition="29" endLine="32" endPosition="3" />
+    <scopeInfo nodeId="95706764259162146" fileName="SubtreeChecker.java" startLine="55" startPosition="58" endLine="57" endPosition="22" />
+    <scopeInfo nodeId="1215607026406" fileName="SubtreeChecker.java" startLine="46" startPosition="109" endLine="49" endPosition="187">
       <varInfo nodeId="1215607026408" varName="type1" />
       <varInfo nodeId="1215607026415" varName="type2" />
     </scopeInfo>
-    <scopeInfo nodeId="1215607026427" fileName="SubtreeChecker.java" startLine="58" startPosition="109" endLine="61" endPosition="27" />
-    <scopeInfo nodeId="1215607026451" fileName="SubtreeChecker.java" startLine="63" startPosition="112" endLine="66" endPosition="27" />
-    <scopeInfo nodeId="1215615153957" fileName="SubtreeChecker.java" startLine="116" startPosition="110" endLine="119" endPosition="128">
+    <scopeInfo nodeId="1215607026427" fileName="SubtreeChecker.java" startLine="62" startPosition="109" endLine="65" endPosition="27" />
+    <scopeInfo nodeId="1215607026451" fileName="SubtreeChecker.java" startLine="67" startPosition="112" endLine="70" endPosition="27" />
+    <scopeInfo nodeId="1215615153957" fileName="SubtreeChecker.java" startLine="114" startPosition="110" endLine="117" endPosition="128">
       <varInfo nodeId="1215615758601" varName="vars" />
       <varInfo nodeId="1215615437102" varName="var" />
     </scopeInfo>
-    <scopeInfo nodeId="1215617277217" fileName="SubtreeChecker.java" startLine="121" startPosition="105" endLine="124" endPosition="128">
+    <scopeInfo nodeId="1215617277217" fileName="SubtreeChecker.java" startLine="119" startPosition="105" endLine="122" endPosition="128">
       <varInfo nodeId="1215617277219" varName="vars" />
       <varInfo nodeId="1215617277226" varName="var" />
     </scopeInfo>
-    <scopeInfo nodeId="1215609104504" fileName="SubtreeChecker.java" startLine="134" startPosition="138" endLine="137" endPosition="11" />
-    <scopeInfo nodeId="1215609104505" fileName="SubtreeChecker.java" startLine="134" startPosition="138" endLine="137" endPosition="11">
+    <scopeInfo nodeId="1215609104504" fileName="SubtreeChecker.java" startLine="132" startPosition="138" endLine="135" endPosition="11" />
+    <scopeInfo nodeId="1215609104505" fileName="SubtreeChecker.java" startLine="132" startPosition="138" endLine="135" endPosition="11">
       <varInfo nodeId="1215609104512" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="1215698239875" fileName="SubtreeChecker.java" startLine="142" startPosition="0" endLine="145" endPosition="0" />
-    <scopeInfo nodeId="852155438141188210" fileName="SubtreeChecker.java" startLine="29" startPosition="29" endLine="33" endPosition="0">
+    <scopeInfo nodeId="1215698239875" fileName="SubtreeChecker.java" startLine="140" startPosition="0" endLine="143" endPosition="0" />
+    <scopeInfo nodeId="852155438141188210" fileName="SubtreeChecker.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="852155438141188214" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="95706764259162044" fileName="SubtreeChecker.java" startLine="50" startPosition="163" endLine="54" endPosition="15" />
-    <scopeInfo nodeId="1217526223481" fileName="SubtreeChecker.java" startLine="84" startPosition="63" endLine="88" endPosition="178">
-      <varInfo nodeId="1217526319596" varName="type1" />
-      <varInfo nodeId="1217526349225" varName="checker" />
-    </scopeInfo>
-    <scopeInfo nodeId="1215609091940" fileName="SubtreeChecker.java" startLine="133" startPosition="32" endLine="138" endPosition="9" />
-    <scopeInfo nodeId="95706764259162043" fileName="SubtreeChecker.java" startLine="49" startPosition="36" endLine="55" endPosition="13">
+    <scopeInfo nodeId="95706764259162044" fileName="SubtreeChecker.java" startLine="54" startPosition="163" endLine="58" endPosition="15" />
+    <scopeInfo nodeId="1215609091940" fileName="SubtreeChecker.java" startLine="131" startPosition="32" endLine="136" endPosition="9" />
+    <scopeInfo nodeId="95706764259162043" fileName="SubtreeChecker.java" startLine="53" startPosition="36" endLine="59" endPosition="13">
       <varInfo nodeId="95706764259162047" varName="type2" />
     </scopeInfo>
-    <scopeInfo nodeId="3996711022540418621" fileName="SubtreeChecker.java" startLine="72" startPosition="31" endLine="78" endPosition="11" />
-    <scopeInfo nodeId="1217526223478" fileName="SubtreeChecker.java" startLine="83" startPosition="0" endLine="90" endPosition="0">
-      <varInfo nodeId="1217526243109" varName="nodeToCheck" />
-      <varInfo nodeId="1217526245378" varName="type" />
-    </scopeInfo>
-    <scopeInfo nodeId="1215605336250" fileName="SubtreeChecker.java" startLine="132" startPosition="140" endLine="139" endPosition="7" />
-    <scopeInfo nodeId="95706764259161998" fileName="SubtreeChecker.java" startLine="47" startPosition="112" endLine="56" endPosition="39">
+    <scopeInfo nodeId="3996711022540418621" fileName="SubtreeChecker.java" startLine="76" startPosition="31" endLine="82" endPosition="11" />
+    <scopeInfo nodeId="1215605336250" fileName="SubtreeChecker.java" startLine="130" startPosition="140" endLine="137" endPosition="7" />
+    <scopeInfo nodeId="95706764259161998" fileName="SubtreeChecker.java" startLine="51" startPosition="112" endLine="60" endPosition="39">
       <varInfo nodeId="95706764259162025" varName="type1" />
       <varInfo nodeId="95706764259162137" varName="hasType" />
     </scopeInfo>
-    <scopeInfo nodeId="1215610523462" fileName="SubtreeChecker.java" startLine="70" startPosition="23" endLine="79" endPosition="9">
+    <scopeInfo nodeId="1215610523462" fileName="SubtreeChecker.java" startLine="74" startPosition="23" endLine="83" endPosition="9">
       <varInfo nodeId="7938028138875678861" varName="reporter" />
     </scopeInfo>
-    <scopeInfo nodeId="1215605336230" fileName="SubtreeChecker.java" startLine="131" startPosition="52" endLine="140" endPosition="5" />
-    <scopeInfo nodeId="1215605336242" fileName="SubtreeChecker.java" startLine="131" startPosition="52" endLine="140" endPosition="5">
+    <scopeInfo nodeId="1215605336230" fileName="SubtreeChecker.java" startLine="129" startPosition="52" endLine="138" endPosition="5" />
+    <scopeInfo nodeId="1215605336242" fileName="SubtreeChecker.java" startLine="129" startPosition="52" endLine="138" endPosition="5">
       <varInfo nodeId="1215605336248" varName="nodeToCheck" />
     </scopeInfo>
-    <scopeInfo nodeId="1215605336227" fileName="SubtreeChecker.java" startLine="130" startPosition="0" endLine="142" endPosition="0">
+    <scopeInfo nodeId="1215605336227" fileName="SubtreeChecker.java" startLine="128" startPosition="0" endLine="140" endPosition="0">
       <varInfo nodeId="1215605336251" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1215607026400" fileName="SubtreeChecker.java" startLine="41" startPosition="90" endLine="67" endPosition="11" />
-    <scopeInfo nodeId="1215611983721" fileName="SubtreeChecker.java" startLine="99" startPosition="90" endLine="125" endPosition="11">
+    <scopeInfo nodeId="1215607026400" fileName="SubtreeChecker.java" startLine="45" startPosition="90" endLine="71" endPosition="11" />
+    <scopeInfo nodeId="1215611983721" fileName="SubtreeChecker.java" startLine="97" startPosition="90" endLine="123" endPosition="11">
       <varInfo nodeId="1215615533527" varName="instructions" />
       <varInfo nodeId="1215615554564" varName="instruction" />
     </scopeInfo>
-    <scopeInfo nodeId="1215607026394" fileName="SubtreeChecker.java" startLine="40" startPosition="137" endLine="68" endPosition="9">
+    <scopeInfo nodeId="1215607026394" fileName="SubtreeChecker.java" startLine="44" startPosition="137" endLine="72" endPosition="9">
       <varInfo nodeId="1215607026398" varName="property" />
     </scopeInfo>
-    <scopeInfo nodeId="1215611983715" fileName="SubtreeChecker.java" startLine="98" startPosition="137" endLine="126" endPosition="9">
+    <scopeInfo nodeId="1215611983715" fileName="SubtreeChecker.java" startLine="96" startPosition="137" endLine="124" endPosition="9">
       <varInfo nodeId="1215611983719" varName="property" />
     </scopeInfo>
-    <scopeInfo nodeId="1215607026386" fileName="SubtreeChecker.java" startLine="39" startPosition="131" endLine="68" endPosition="9">
+    <scopeInfo nodeId="1215607026386" fileName="SubtreeChecker.java" startLine="43" startPosition="131" endLine="72" endPosition="9">
       <varInfo nodeId="1215607026388" varName="container" />
     </scopeInfo>
-    <scopeInfo nodeId="1215611983707" fileName="SubtreeChecker.java" startLine="97" startPosition="131" endLine="126" endPosition="9">
+    <scopeInfo nodeId="1215611983707" fileName="SubtreeChecker.java" startLine="95" startPosition="131" endLine="124" endPosition="9">
       <varInfo nodeId="1215611983709" varName="container" />
     </scopeInfo>
-    <scopeInfo nodeId="1215611983701" fileName="SubtreeChecker.java" startLine="96" startPosition="134" endLine="127" endPosition="7" />
-    <scopeInfo nodeId="1215611983693" fileName="SubtreeChecker.java" startLine="95" startPosition="74" endLine="128" endPosition="5">
+    <scopeInfo nodeId="1215611983701" fileName="SubtreeChecker.java" startLine="94" startPosition="134" endLine="125" endPosition="7" />
+    <scopeInfo nodeId="1215611983693" fileName="SubtreeChecker.java" startLine="93" startPosition="74" endLine="126" endPosition="5">
       <varInfo nodeId="1215611983699" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="1215611932107" fileName="SubtreeChecker.java" startLine="91" startPosition="48" endLine="128" endPosition="5">
+    <scopeInfo nodeId="1215611932107" fileName="SubtreeChecker.java" startLine="89" startPosition="48" endLine="126" endPosition="5">
       <varInfo nodeId="1215612669322" varName="unreachable" />
       <varInfo nodeId="1215612199639" varName="program" />
       <varInfo nodeId="1215615074248" varName="initialized" />
       <varInfo nodeId="1215617240413" varName="live" />
     </scopeInfo>
-    <scopeInfo nodeId="1215611932104" fileName="SubtreeChecker.java" startLine="90" startPosition="0" endLine="130" endPosition="0">
+    <scopeInfo nodeId="1215611932104" fileName="SubtreeChecker.java" startLine="88" startPosition="0" endLine="128" endPosition="0">
       <varInfo nodeId="1215611999300" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1215607026380" fileName="SubtreeChecker.java" startLine="37" startPosition="134" endLine="80" endPosition="7">
+    <scopeInfo nodeId="1215607026380" fileName="SubtreeChecker.java" startLine="41" startPosition="134" endLine="84" endPosition="7">
       <varInfo nodeId="1215607026382" varName="isError" />
     </scopeInfo>
-    <scopeInfo nodeId="1215607026372" fileName="SubtreeChecker.java" startLine="36" startPosition="36" endLine="81" endPosition="5">
+    <scopeInfo nodeId="1215607026372" fileName="SubtreeChecker.java" startLine="40" startPosition="54" endLine="85" endPosition="5">
       <varInfo nodeId="1215607026378" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="1215078294638" fileName="SubtreeChecker.java" startLine="34" startPosition="97" endLine="81" endPosition="5">
-      <varInfo nodeId="1215607026362" varName="checker" />
+    <scopeInfo nodeId="1215078294638" fileName="SubtreeChecker.java" startLine="38" startPosition="97" endLine="86" endPosition="34">
+      <varInfo nodeId="8042441407353529722" varName="typeCheckingContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1215078294635" fileName="SubtreeChecker.java" startLine="33" startPosition="0" endLine="83" endPosition="0">
+    <scopeInfo nodeId="1215078294635" fileName="SubtreeChecker.java" startLine="37" startPosition="0" endLine="88" endPosition="0">
       <varInfo nodeId="1215078403182" varName="node" />
       <varInfo nodeId="852155438140970277" varName="allowErrors" />
       <varInfo nodeId="852155438141020164" varName="allowWarnings" />
     </scopeInfo>
-    <unitInfo nodeId="1215078243118" fileName="SubtreeChecker.java" startLine="29" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.lang.test.runtime.SubtreeChecker" />
+    <unitInfo nodeId="1215078243118" fileName="SubtreeChecker.java" startLine="30" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.lang.test.runtime.SubtreeChecker" />
   </root>
   <root nodeId="1215696484420">
     <nodeInfo nodeId="1216230018581" fileName="BaseTransformationTest.java" startLine="26" startPosition="54" endLine="27" endPosition="71" />

@@ -428,6 +428,22 @@
             </node>
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="8042441407353514249">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="8042441407353514250">
+            <property name="name:3" value="editorComponent" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8042441407353514251">
+              <link role="classifier:3" targetNodeId="35.~EditorComponent" resolveInfo="EditorComponent" />
+            </node>
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8042441407353514254">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="8042441407353514253">
+                <link role="variableDeclaration:3" targetNodeId="3238664143031493812" resolveInfo="editorContext" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8042441407353514258">
+                <link role="baseMethodDeclaration:3" targetNodeId="35.~EditorContext.getNodeEditorComponent():jetbrains.mps.nodeEditor.EditorComponent" resolveInfo="getNodeEditorComponent" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ForeachStatement:3" id="1208786989912">
           <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1208786989913">
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1208787124092">
@@ -454,9 +470,12 @@
                           </node>
                           <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1237386078866">
                             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1237386078867">
-                              <link role="baseMethodDeclaration:3" targetNodeId="35.~EditorCheckerAdapter.getOwner(jetbrains.mps.smodel.SNode):jetbrains.mps.nodeEditor.EditorMessageOwner" resolveInfo="getOwner" />
+                              <link role="baseMethodDeclaration:3" targetNodeId="35.~EditorCheckerAdapter.getOwner(jetbrains.mps.smodel.SNode,jetbrains.mps.nodeEditor.EditorComponent):jetbrains.mps.nodeEditor.EditorMessageOwner" resolveInfo="getOwner" />
                               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1237386078868">
                                 <link role="variableDeclaration:3" targetNodeId="1208786474484" resolveInfo="rootNode" />
+                              </node>
+                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8042441407353514259">
+                                <link role="variableDeclaration:3" targetNodeId="8042441407353514250" resolveInfo="editorComponent" />
                               </node>
                             </node>
                             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1237386078869" />
@@ -522,9 +541,12 @@
                           </node>
                           <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5405376949613885750">
                             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5405376949613885751">
-                              <link role="baseMethodDeclaration:3" targetNodeId="35.~EditorCheckerAdapter.getOwner(jetbrains.mps.smodel.SNode):jetbrains.mps.nodeEditor.EditorMessageOwner" resolveInfo="getOwner" />
+                              <link role="baseMethodDeclaration:3" targetNodeId="35.~EditorCheckerAdapter.getOwner(jetbrains.mps.smodel.SNode,jetbrains.mps.nodeEditor.EditorComponent):jetbrains.mps.nodeEditor.EditorMessageOwner" resolveInfo="getOwner" />
                               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="5405376949613885752">
                                 <link role="variableDeclaration:3" targetNodeId="1208786474484" resolveInfo="rootNode" />
+                              </node>
+                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8042441407353514261">
+                                <link role="variableDeclaration:3" targetNodeId="8042441407353514250" resolveInfo="editorComponent" />
                               </node>
                             </node>
                             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="5405376949613885753" />
