@@ -11,7 +11,5 @@ public interface Refactorable {
 
   int getVersion();
 
-  int getNameVersion();
-
   void setVersion(int newVersion);
 }

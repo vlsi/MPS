@@ -41,7 +41,6 @@ import java.util.Map;
 
 public class DefaultSModelDescriptor extends BaseSModelDescriptor implements EditableSModelDescriptor {
   private static final String VERSION = "version";
-  private static final String NAME_VERSION = "nameVersion";
 
   private static final Logger LOG = Logger.getLogger(DefaultSModelDescriptor.class);
 
@@ -331,14 +330,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     }
     try {
       return Integer.parseInt(attributeValue);
-    } catch (NumberFormatException e) {
-      return -1;
-    }
-  }
-
-  public int getNameVersion() {
-    try {
-      return Integer.parseInt(getAttribute(NAME_VERSION));
     } catch (NumberFormatException e) {
       return -1;
     }
