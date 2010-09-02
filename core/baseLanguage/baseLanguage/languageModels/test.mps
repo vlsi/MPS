@@ -2316,7 +2316,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="6011730950863071455">
-    <property name="name:4" value="testNullableAnalyzer" />
+    <property name="name:4" value="NullableAnalyzer" />
     <property name="package:4" value="dataFlow" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="6011730950863071456">
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="6011730950863071457">
