@@ -52,30 +52,19 @@ public class PathManager {
     final Class aClass = PathManager.class;
 
     String rootPath = getResourceRoot(aClass, "/" + aClass.getName().replace('.', '/') + ".class");
-    if (rootPath != null) {
-      File root = new File(rootPath);
-      root = root.getAbsoluteFile();
 
-      if (!root.isDirectory() || root.getName().toLowerCase().endsWith(".zip") || root.getName().toLowerCase().endsWith(".jar")) {
-        root = new File(root.getParent()); // one step back to getCollectionClass folder
-      }
-      root = root.getAbsoluteFile();
+    //todo this line should be removed
+    if (rootPath == null) return new File(".").getAbsolutePath(); //we need this for build server
 
-      while (true) {
-        if (isMpsDir(root)) break;
-        if (root.getParentFile() == null) {
-          break;
-        }
+    File root = new File(rootPath);
+    root = root.getAbsoluteFile();
 
-        root = root.getParentFile();
-      }
-
-      ourHomePath = root.getAbsolutePath();    // one step back to getCollectionClass rid of "lib" or "classes" folder
-      return ourHomePath;
+    while ((!isMpsDir(root)) && (root.getParentFile() != null)) {
+      root = root.getParentFile();
     }
 
-    return new File(".").getAbsolutePath(); //we need this for build server on which stuff written above
-    //for somne reason doesn't work
+    ourHomePath = root.getAbsolutePath();    
+    return ourHomePath;
   }
 
   public static String getBootstrapPath() {
@@ -85,8 +74,6 @@ public class PathManager {
   public static String getPlatformPath() {
     return getHomePath() + File.separator + "platform";
   }
-
-  //------------------
 
   private static boolean isMpsDir(File file) {
     return new File(file, "build.number").exists();
@@ -102,6 +89,8 @@ public class PathManager {
     file = file.getAbsoluteFile();
     return FileUtil.getCanonicalPath(file.getAbsolutePath());
   }
+
+  //------------------
 
   /**
    * Attempts to detect classpath entry which contains given resource
