@@ -61,6 +61,7 @@
     <orderEntry type="module" module-name="debug-api" exported="" />
     <orderEntry type="module" module-name="debug" exported="" />
     <orderEntry type="module" module-name="generator-engine" exported="" />
+    <orderEntry type="library" name="JMock" level="project" />
   </component>
   <component name="copyright">
     <Base>
