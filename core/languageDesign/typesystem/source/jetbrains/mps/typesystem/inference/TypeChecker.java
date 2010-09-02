@@ -260,9 +260,9 @@ public class TypeChecker implements ApplicationComponent {
         componentNode = node.getContainingRoot();
       }
       if (myPerformanceTracer == null) {
-        context = TypeContextManager.getInstance().createTypeCheckingContext(node);
+        context = TypeContextManager.getInstance().createTypeCheckingContext(componentNode);
     } else {
-        context = TypeContextManager.getInstance().createTracingTypeCheckingContext(node);
+        context = TypeContextManager.getInstance().createTracingTypeCheckingContext(componentNode);
       }
     } else {
       context = TypeContextManager.getInstance().getContextForEditedRootNode(node.getContainingRoot(), TypeContextManager.DEFAULT_OWNER);
