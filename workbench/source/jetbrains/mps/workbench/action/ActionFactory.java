@@ -52,20 +52,7 @@ public class ActionFactory {
   public BaseAction acquireRegisteredAction(String actionClassName, String moduleNamespace, Object... params) {
     IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference(moduleNamespace));
 
-    //todo this is a temporary hack to make vcs plugin work
-    Class actionClass = null;
-    try {
-      IdeaPluginDescriptor plugin = PluginManager.getPlugin(PluginId.getId("jetbrains.mps.vcs"));
-      if (plugin != null) {
-        actionClass = plugin.getPluginClassLoader().loadClass(actionClassName);
-      }
-    } catch (ClassNotFoundException e) {
-
-    }
-
-    if (actionClass == null) {
-      actionClass = module.getClass(actionClassName);
-    }
+    Class actionClass = getActionClassHacked(actionClassName, module);
 
     if (actionClass == null) {
       LOG.warning("Action " + actionClassName + " is not found in module " + moduleNamespace);
@@ -90,6 +77,25 @@ public class ActionFactory {
     }
   }
 
+  //todo this is a temporary hack to make vcs plugin work
+  private Class getActionClassHacked(String actionClassName, IModule module) {
+    Class actionClass = null;
+    if (module != null) {
+      actionClass = module.getClass(actionClassName);
+    }
+    if (actionClass == null) {
+      try {
+        IdeaPluginDescriptor plugin = PluginManager.getPlugin(PluginId.getId("jetbrains.mps.vcs"));
+        if (plugin != null) {
+          actionClass = plugin.getPluginClassLoader().loadClass(actionClassName);
+        }
+      } catch (ClassNotFoundException e) {
+
+      }
+    }
+    return actionClass;
+  }
+
   private AnAction createAction(Class actionClass, Object... params) {
     AnAction newAction;
     try {
@@ -110,30 +116,7 @@ public class ActionFactory {
   @Nullable
   public BaseGroup acquireRegisteredGroup(String groupClassName, String moduleNamespace, Object... params) {
     IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference(moduleNamespace));
-    Class groupClass = null;
-
-    //todo this is a temporary hack to make vcs plugin work
-    try {
-      IdeaPluginDescriptor plugin = PluginManager.getPlugin(PluginId.getId("jetbrains.mps.vcs"));
-      if (plugin != null) {
-        groupClass = plugin.getPluginClassLoader().loadClass(groupClassName);
-      }
-    } catch (ClassNotFoundException e) {
-
-    }
-
-    if (groupClass == null) {
-      if (module == null) {
-        try {
-          groupClass = Class.forName(groupClassName);
-        } catch (ClassNotFoundException e) {
-          LOG.error(e);
-        }
-      } else {
-        groupClass = module.getClass(groupClassName);
-      }
-    }
-
+    Class groupClass = getActionClassHacked(groupClassName, module);
 
     String id = groupClassName;
     if (groupClass != null) {
