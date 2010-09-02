@@ -1,14 +1,11 @@
-package jetbrains.mps.junit;
+package jetbrains.mps.testbench.junit;
 
-import org.apache.log4j.Logger;
 import org.junit.runner.Description;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
 import org.junit.runner.notification.RunListener;
 import org.junit.runner.notification.RunNotifier;
 import org.junit.runner.notification.StoppedByUserException;
-
-import java.io.PrintStream;
 
 /**
 * Created by IntelliJ IDEA.

@@ -1,18 +1,17 @@
 import com.intellij.ide.IdeEventQueue;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.junit.WatchingParameterized;
+import jetbrains.mps.testbench.junit.runners.WatchingParameterized;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.test.MpsMakeHelper;
-import jetbrains.mps.test.ProjectTestHelper;
-import jetbrains.mps.test.ProjectTestHelper.Token;
+import jetbrains.mps.testbench.MpsMakeHelper;
+import jetbrains.mps.testbench.ProjectTestHelper;
+import jetbrains.mps.testbench.ProjectTestHelper.Token;
 import org.junit.*;
 import org.junit.rules.TestName;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
 
 import java.io.File;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.List;
 
@@ -110,7 +109,7 @@ public class ProjectTest {
 
   @BeforeClass
   public static void init() {
-    HELPER = ProjectTestHelper.getInstance();
+    HELPER = new ProjectTestHelper();
     HELPER.setMacro("samples_home", System.getProperty("user.dir")+"/samples");
   }
   
@@ -134,7 +133,7 @@ public class ProjectTest {
 
   @After
   public void disposeProject () {
-    HELPER.clean(token);
+    HELPER.cleanUp(token);
 
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
@@ -169,7 +168,7 @@ public class ProjectTest {
 
   @Test
   public void testProject () throws Exception {
-//    HELPER.generate(token);
+    HELPER.test(token);
   }
 
 

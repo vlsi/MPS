@@ -1,4 +1,4 @@
-package jetbrains.mps.junit;
+package jetbrains.mps.testbench.util;
 
 import java.io.*;
 
@@ -9,18 +9,35 @@ import java.io.*;
  * Time: 1:07:22 PM
  * To change this template use File | Settings | File Templates.
  */
-public class ByteCountingPrintStream extends PrintStream implements Output {
+public class CachingPrintStream extends PrintStream implements Output {
 
   private final int LS_BYTES;
 
   private int bytes = 0;
   private StringBuilder buffer = new StringBuilder();
   private String name;
+  private boolean caching;
 
-  public ByteCountingPrintStream(OutputStream out, String name) {
+  public CachingPrintStream(OutputStream out, String name) {
     super(out);
     this.name = name;
     this.LS_BYTES = System.getProperty("line.separator").getBytes().length;
+  }
+
+  public void startCaching () {
+    if (caching) throw new IllegalStateException("Already caching");
+    this.caching = true;
+  }
+
+  public void stopCaching () {
+    if (!caching) throw new IllegalStateException("Not caching");
+    this.caching = false;
+  }
+
+  public void clear () {
+    if (caching) throw new IllegalStateException("Currently caching");
+    this.buffer.setLength(0);
+    this.bytes = 0;
   }
 
   @Override
@@ -58,136 +75,142 @@ public class ByteCountingPrintStream extends PrintStream implements Output {
 
   @Override
   public synchronized void write(int buf) {
-    bytes++;
-    buffer.append((char)buf);
+    if (caching) {
+      bytes++;
+      buffer.append((char)buf);
+    }
     super.write(buf);
   }
 
   @Override
   public synchronized void write(byte[] buf) throws IOException {
-    bytes+=LS_BYTES;
-    buffer.append(new String(buf));
+    if (caching) {
+      bytes+=LS_BYTES;
+      buffer.append(new String(buf));
+    }
     super.write(buf);
   }
 
   @Override
   public synchronized void write(byte[] buf, int off, int len) {
-    bytes+=len;
-    buffer.append(new String(buf, off, len));
-    super.write(buf, off, len);    
+    if (caching) {
+      bytes+=len;
+      buffer.append(new String(buf, off, len));
+    }
+    super.write(buf, off, len);
   }
 
   @Override
   public synchronized void print(boolean b) {
-    bytes+=String.valueOf(b).getBytes().length;
+    if (caching) bytes+=String.valueOf(b).getBytes().length;
     super.print(b);    
   }
 
   @Override
   public synchronized void print(char c) {
-    bytes+=String.valueOf(c).getBytes().length;
+    if (caching) bytes+=String.valueOf(c).getBytes().length;
     super.print(c);    
   }
 
   @Override
   public synchronized void print(int i) {
-    bytes+=String.valueOf(i).getBytes().length;
+    if (caching) bytes+=String.valueOf(i).getBytes().length;
     super.print(i);    
   }
 
   @Override
   public synchronized void print(long lo) {
-    bytes+=String.valueOf(lo).getBytes().length;
+    if (caching) bytes+=String.valueOf(lo).getBytes().length;
     super.print(lo);
   }
 
   @Override
   public synchronized void print(float f) {
-    bytes+=String.valueOf(f).getBytes().length;
+    if (caching) bytes+=String.valueOf(f).getBytes().length;
     super.print(f);
   }
 
   @Override
   public synchronized void print(double d) {
-    bytes+=String.valueOf(d).getBytes().length;
+    if (caching) bytes+=String.valueOf(d).getBytes().length;
     super.print(d);
   }
 
   @Override
   public synchronized void print(char[] s) {
-    bytes+=String.copyValueOf(s).getBytes().length;
+    if (caching) bytes+=String.copyValueOf(s).getBytes().length;
     super.print(s);
   }
 
   @Override
   public synchronized void print(String s) {
-    bytes+=String.valueOf(s).getBytes().length;
+    if (caching) bytes+=String.valueOf(s).getBytes().length;
     super.print(s);
   }
 
   @Override
   public synchronized void print(Object obj) {
-    bytes+=String.valueOf(obj).getBytes().length;
+    if (caching) bytes+=String.valueOf(obj).getBytes().length;
     super.print(obj);
   }
 
   @Override
   public synchronized void println() {
-    bytes+=LS_BYTES;
+    if (caching) bytes+=LS_BYTES;
     super.println();
   }
 
   @Override
   public synchronized void println(boolean x) {
-    bytes+=LS_BYTES;
+    if (caching) bytes+=LS_BYTES;
     super.println(x);
   }
 
   @Override
   public synchronized void println(char x) {
-    bytes+=LS_BYTES;
+    if (caching) bytes+=LS_BYTES;
     super.println(x);
   }
 
   @Override
   public synchronized void println(int x) {
-    bytes+=LS_BYTES;
+    if (caching) bytes+=LS_BYTES;
     super.println(x);
   }
 
   @Override
   public synchronized void println(long x) {
-    bytes+=LS_BYTES;
+    if (caching) bytes+=LS_BYTES;
     super.println(x);
   }
 
   @Override
   public synchronized void println(float x) {
-    bytes+=LS_BYTES;
+    if (caching) bytes+=LS_BYTES;
     super.println(x);
   }
 
   @Override
   public synchronized void println(double x) {
-    bytes+=LS_BYTES;
+    if (caching) bytes+=LS_BYTES;
     super.println(x);
   }
 
   @Override
   public synchronized void println(char[] x) {
-    bytes+=LS_BYTES;
+    if (caching) bytes+=LS_BYTES;
     super.println(x);
   }
 
   @Override
   public synchronized void println(String x) {
-    bytes+=LS_BYTES;
+    if (caching) bytes+=LS_BYTES;
     super.println(x);
   }
 
   @Override
   public synchronized void println(Object x) {
-    bytes+=LS_BYTES;
+    if (caching) bytes+=LS_BYTES;
     super.println(x);
   }
 

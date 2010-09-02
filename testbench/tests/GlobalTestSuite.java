@@ -1,16 +1,13 @@
-import jetbrains.mps.junit.WatchingSuite;
-import jetbrains.mps.test.MpsMakeHelper;
+import jetbrains.mps.testbench.junit.runners.WatchingSuite;
+import jetbrains.mps.testbench.MpsMakeHelper;
 import junit.framework.TestSuite;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite.SuiteClasses;
 
-import java.lang.reflect.Method;
-
 
 @SuiteClasses({jetbrains.mps.baseLanguage.closures.test.ClosureLiteralDataFlow_Test.class,
 jetbrains.mps.baseLanguage.closures.test.ClosureDataFlow_Test.class,
-jetbrains.mps.generator.test.ParallelPoolTest.class,
 jetbrains.mps.internalCollections.test.compareOperations.SubtractTest_Test.class,
 jetbrains.mps.internalCollections.test.compareOperations.Disjunct_Test.class,
 jetbrains.mps.internalCollections.test.basicOperations.QueueDequeStack_Test.class,
@@ -92,6 +89,7 @@ jetbrains.mps.baseLanguage.test.CatchingUnthrownException_Test.class,
 jetbrains.mps.baseLanguage.test.VariableUninitialized_Test.class,
 jetbrains.mps.baseLanguage.test.ListWithConceptFunction_Test.class,
 jetbrains.mps.baseLanguage.test.IfStatementWrongUnreachable_Test.class,
+jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test.class,
 jetbrains.mps.baseLanguage.test.UnreachableStatements_Test.class,
 jetbrains.mps.baseLanguage.test.ReadAction_Test.class,
 jetbrains.mps.baseLanguage.test.CommandDataflowWithReturn_Test.class,
@@ -347,7 +345,6 @@ jetbrains.mps.closures.test.FinalClosureParameter_Test.class,
 jetbrains.mps.closures.test.ExternalReferences_Test.class,
 jetbrains.mps.closures.test.FunctionTypes_Test.class,
 jetbrains.mps.closures.test.WhileBreak_Test.class,
-jetbrains.mps.analyzers.mpsAnalyzers.testNullable.testNullableAnalyzer_Test.class,
 jetbrains.mps.baseLanguage.math.runtime.IntervalTest.class,
 jetbrains.mps.vcs.diff.MergeRefactoringTest.class,
 jetbrains.mps.vcs.diff.MergeNotLoseExternalChangesTest.class,

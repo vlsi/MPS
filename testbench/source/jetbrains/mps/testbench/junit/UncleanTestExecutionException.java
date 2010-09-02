@@ -1,4 +1,6 @@
-package jetbrains.mps.junit;
+package jetbrains.mps.testbench.junit;
+
+import jetbrains.mps.testbench.util.Output;
 
 /**
  * Created by IntelliJ IDEA.

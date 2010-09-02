@@ -1,5 +1,7 @@
-package jetbrains.mps.junit;
+package jetbrains.mps.testbench.junit;
 
+import jetbrains.mps.testbench.util.CachingAppender;
+import jetbrains.mps.testbench.util.CachingPrintStream;
 import jetbrains.mps.util.misc.hash.HashMap;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -24,26 +26,51 @@ public class WatchingRunNotifier extends DelegatingRunNotifier {
   private static final com.intellij.openapi.diagnostic.Logger IGNORED_LOG = com.intellij.openapi.diagnostic.Logger.getInstance("#com.intellij.openapi.application.impl.LaterInvocator");
 
   private Level oldLevel;
-  private PrintStream oldOut;
-  private PrintStream oldErr;
-  private ByteCountingPrintStream newOut;
-  private ByteCountingPrintStream newErr;
-  private CountingAppender app;
+  private PrintStream stdOut;
+  private PrintStream stdErr;
+  private CachingPrintStream cacheOut;
+  private CachingPrintStream cacheErr;
+  private CachingAppender app;
   private Map<Description, Object> testsToIgnore = new HashMap<Description, Object>();
 
-  WatchingRunNotifier(RunNotifier delegate) {
+  public WatchingRunNotifier(RunNotifier delegate) {
     super(delegate);
+    init();
+  }
+
+  private void init () {
+    this.stdOut = System.out;
+    this.stdErr = System.err;
+    this.cacheOut = new CachingPrintStream(System.out, "output");
+    this.cacheErr = new CachingPrintStream(System.err, "error");
+    System.setOut(cacheOut);
+    System.setErr(cacheErr);
+  }
+
+  public void dispose() {
+    System.setOut(stdOut);
+    System.setErr(stdErr);
   }
 
   @Override
   public void fireTestStarted(Description description) throws StoppedByUserException {
     super.fireTestStarted(description);
-    beforeTest(description);
+    try {
+      beforeTest(description);
+    }
+    catch (Throwable e) {
+      super.fireTestFailure(new Failure (description, e));
+    }
   }
 
   @Override
   public void fireTestFinished(Description description) {
-    afterTest(description);
+    try {
+      afterTest(description);
+    }
+    catch (Throwable e) {
+      super.fireTestFailure(new Failure (description, e));
+    }
     super.fireTestFinished(description);
   }
 
@@ -69,34 +96,35 @@ public class WatchingRunNotifier extends DelegatingRunNotifier {
     this.oldLevel = Logger.getRootLogger().getLevel();
     Logger.getRootLogger().setLevel(WATCH_LEVEL);
 
-    oldOut = System.out;
-    oldErr = System.err;
-    oldOut.flush();
-    oldErr.flush();
-    newOut = new ByteCountingPrintStream(oldOut, "output");
-    newErr = new ByteCountingPrintStream(oldErr, "error");
-    System.setOut(newOut);
-    System.setErr(newErr);
+    cacheOut.clear();
+    cacheOut.startCaching();
+    cacheErr.clear();
+    cacheErr.startCaching();
 
-    app = new CountingAppender();
+    app = new CachingAppender();
     Logger.getRootLogger().addAppender(app);
     
     IGNORED_LOG.setLevel(Level.FATAL);
   }
 
   private void afterTest (Description desc) {
-    newOut.flush();
-    newErr.flush();
-    System.setOut(oldOut);
-    System.setErr(oldErr);
+    cacheOut.flush();
+    cacheOut.stopCaching();
+    cacheErr.flush();
+    cacheErr.stopCaching();
 
     Logger.getRootLogger().removeAppender(app);
     Logger.getRootLogger().setLevel(oldLevel);
 
-    if (!testsToIgnore.containsKey(desc) && (newOut.isNotEmpty()||newErr.isNotEmpty()||app.isNotEmpty())) {
-      Failure fail = new Failure(desc, new UncleanTestExecutionException(newOut, newErr, app));
+    Failure fail = null;
+    if (!testsToIgnore.containsKey(desc) && (cacheOut.isNotEmpty()|| cacheErr.isNotEmpty()||app.isNotEmpty())) {
+      fail = new Failure(desc, new UncleanTestExecutionException(cacheOut, cacheErr, app));
+    }
+    cacheOut.clear();
+    cacheErr.clear();
+
+    if (fail != null) {
       super.fireTestFailure(fail);
     }
   }
-
 }

@@ -1,4 +1,4 @@
-package jetbrains.mps.test;
+package jetbrains.mps.testbench.util;
 
 import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.util.io.FileUtil;

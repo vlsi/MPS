@@ -1,5 +1,6 @@
-package jetbrains.mps.junit;
+package jetbrains.mps.testbench.junit.runners;
 
+import jetbrains.mps.testbench.junit.WatchingRunNotifier;
 import org.junit.runner.Runner;
 import org.junit.runner.notification.RunNotifier;
 import org.junit.runners.Suite;
@@ -22,7 +23,13 @@ public class WatchingSuite extends Suite{
 
   @Override
   protected void runChild(Runner runner, RunNotifier notifier) {
-    super.runChild(runner, new WatchingRunNotifier(notifier));
+    WatchingRunNotifier runNotifier = new WatchingRunNotifier(notifier);
+    try {
+      super.runChild(runner, runNotifier);
+    }
+    finally {
+      runNotifier.dispose();
+    }
   }
 
 }

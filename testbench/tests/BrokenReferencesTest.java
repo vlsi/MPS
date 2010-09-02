@@ -1,8 +1,9 @@
-import jetbrains.mps.junit.WatchingParameterized;
-import jetbrains.mps.test.BrokenReferencesTestHelper;
-import jetbrains.mps.test.FilesCollector;
-import jetbrains.mps.test.FilesCollector.FilePattern;
-import jetbrains.mps.test.FilesCollector.FilePattern.Type;
+import jetbrains.mps.testbench.junit.runners.WatchingParameterized;
+import jetbrains.mps.testbench.BrokenReferencesTestHelper;
+import jetbrains.mps.testbench.BrokenReferencesTestHelper.Token;
+import jetbrains.mps.testbench.util.FilesCollector;
+import jetbrains.mps.testbench.util.FilesCollector.FilePattern;
+import jetbrains.mps.testbench.util.FilesCollector.FilePattern.Type;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -41,6 +42,7 @@ public class BrokenReferencesTest {
   } ;
 
   private static BrokenReferencesTestHelper HELPER;
+  private static Token TOKEN;
 
   @Parameters
   public static List<Object[]> filePaths() {
@@ -58,8 +60,8 @@ public class BrokenReferencesTest {
 
   @BeforeClass
   public static void init() {
-    HELPER = BrokenReferencesTestHelper.getInstance();
-    HELPER.init(new String [][] {{"samples_home", System.getProperty("user.dir")+"/samples"}});
+    HELPER = new BrokenReferencesTestHelper();
+    TOKEN = HELPER.init(new String[][]{{"samples_home", System.getProperty("user.dir") + "/samples"}});
     List<File> path = Collections.singletonList(new File(System.getProperty("user.dir")));
     List<FilePattern> filePtns = new ArrayList<FilePattern>();
     for (Object[] ptns : patterns) {
@@ -70,7 +72,8 @@ public class BrokenReferencesTest {
 
   @AfterClass
   public static void cleanUp () {
-    HELPER.cleanUp();
+    HELPER.cleanUp(TOKEN);
+    HELPER.dispose();
   }
 
   private File file;
@@ -81,7 +84,7 @@ public class BrokenReferencesTest {
 
   @Test
   public void checkReferences() {
-    List<String> errors = HELPER.check(Collections.singletonList(file));
+    List<String> errors = HELPER.check(TOKEN, Collections.singletonList(file));
     Assert.assertTrue("Reference errors:\n"+HELPER.formatErrors(errors),errors.isEmpty());
   }
 }

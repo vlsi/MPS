@@ -10,6 +10,7 @@ import junit.framework.TestCase;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * Evgeny Gryaznov, Apr 7, 2010
@@ -17,7 +18,8 @@ import java.util.List;
 public class ParallelPoolTest extends TestCase {
 
   private static class CustomTask implements GenerationTask {
-    private boolean isFinished = false;
+    private AtomicBoolean isFinished = new AtomicBoolean(false);
+    private AtomicBoolean isCancelled = new AtomicBoolean(false);
 
     private final long amountOfWork;
     private final GenerationTaskPool taskPool;
@@ -27,12 +29,18 @@ public class ParallelPoolTest extends TestCase {
       this.taskPool = taskPool;
     }
 
-    public synchronized boolean isFinished() {
-      return isFinished;
+    public boolean isFinished() {
+      return isFinished.get();
     }
     
+    public boolean isCancelled() {
+      return isCancelled.get();
+    }
+
     @Override
     public void run() throws GenerationCanceledException, GenerationFailureException {
+      isCancelled.set(true);
+      isFinished.set(false);
       long localCounter = amountOfWork;
       long fract = 1;
       while (fract < amountOfWork) {
@@ -51,9 +59,8 @@ public class ParallelPoolTest extends TestCase {
       }
       long end = System.currentTimeMillis();
       System.out.println("Took " + (end-start)/1000. + " secs");
-      synchronized (this) {
-        isFinished = true;
-      }
+      isCancelled.set(false);
+      isFinished.set(true);
     }
 
     @Override
@@ -165,7 +172,8 @@ public class ParallelPoolTest extends TestCase {
     long end = System.currentTimeMillis();
 
     for(CustomTask t : generationTasks) {
-      Assert.assertTrue("task should be finished", t.isFinished());
+      Assert.assertTrue("task should be cancelled", t.isCancelled());
+      Assert.assertFalse("task should not be finished", t.isFinished());
     }
 
     System.out.println("Total " + (end-start)/1000. + " seconds, when cancelled after 1 sec.");
@@ -204,7 +212,8 @@ public class ParallelPoolTest extends TestCase {
     long end = System.currentTimeMillis();
 
     for(CustomTask t : generationTasks) {
-      Assert.assertTrue("task should be finished", t.isFinished());
+      Assert.assertTrue("task should be cancelled", t.isCancelled());
+      Assert.assertFalse("task should not be finished", t.isFinished());
     }
 
     System.out.println("Total " + (end-start)/1000. + " seconds (should be 2 secs), when cancelled after 1.6 secs");

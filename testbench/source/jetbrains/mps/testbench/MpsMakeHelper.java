@@ -1,4 +1,4 @@
-package jetbrains.mps.test;
+package jetbrains.mps.testbench;
 
 import org.apache.tools.ant.util.JavaEnvUtils;
 

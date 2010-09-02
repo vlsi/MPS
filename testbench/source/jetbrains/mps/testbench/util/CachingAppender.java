@@ -1,4 +1,4 @@
-package jetbrains.mps.junit;
+package jetbrains.mps.testbench.util;
 
 import org.apache.log4j.AppenderSkeleton;
 import org.apache.log4j.spi.LoggingEvent;
@@ -13,7 +13,7 @@ import java.util.List;
  * Time: 2:13:11 PM
  * To change this template use File | Settings | File Templates.
  */
-public class CountingAppender extends AppenderSkeleton implements Output {
+public class CachingAppender extends AppenderSkeleton implements Output {
 
   private int events;
   private List<String> messages = new ArrayList<String>();

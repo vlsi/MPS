@@ -1,4 +1,4 @@
-package jetbrains.mps.junit;
+package jetbrains.mps.testbench.junit.runners;
 
 import org.junit.runner.Description;
 import org.junit.runner.Runner;
@@ -12,10 +12,6 @@ import org.junit.runners.model.InitializationError;
 import org.junit.runners.model.Statement;
 import org.junit.runners.model.TestClass;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.*;
