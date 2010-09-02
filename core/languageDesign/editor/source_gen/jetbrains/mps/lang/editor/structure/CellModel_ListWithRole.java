@@ -17,6 +17,7 @@ public class CellModel_ListWithRole extends CellModel_WithRole {
   public static final String SEPARATOR_LAYOUT_CONSTRAINT = "separatorLayoutConstraint";
   public static final String NODE_FACTORY = "nodeFactory";
   public static final String EMPTY_CELL_MODEL = "emptyCellModel";
+  public static final String FOLDED_CELL_MODEL = "foldedCellModel";
   public static final String CELL_LAYOUT = "cellLayout";
   public static final String SEPARATOR_STYLE = "separatorStyle";
   public static final String SEPARATOR_TEXT_QUERY = "separatorTextQuery";
@@ -88,6 +89,14 @@ public class CellModel_ListWithRole extends CellModel_WithRole {
 
   public void setEmptyCellModel(EditorCellModel node) {
     super.setChild(CellModel_ListWithRole.EMPTY_CELL_MODEL, node);
+  }
+
+  public EditorCellModel getFoldedCellModel() {
+    return (EditorCellModel) this.getChild(EditorCellModel.class, CellModel_ListWithRole.FOLDED_CELL_MODEL);
+  }
+
+  public void setFoldedCellModel(EditorCellModel node) {
+    super.setChild(CellModel_ListWithRole.FOLDED_CELL_MODEL, node);
   }
 
   public CellLayout getCellLayout() {
