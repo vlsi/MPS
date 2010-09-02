@@ -20,13 +20,14 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.samples.WorkbenchPathManager;
+import jetbrains.mps.samples.SamplesManager;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
+import java.util.List;
 import java.util.Set;
 
 public abstract class Macros {
@@ -274,8 +275,14 @@ public abstract class Macros {
         prefix = projectDescriptor.getCanonicalPath();
       }
 
-      String samplesPath = WorkbenchPathManager.getSamplesPath();
-      boolean samplesProject = samplesPath != null && pathStartsWith(absolutePath, samplesPath);
+      List<String> paths = SamplesManager.getInstance().getSamplesPaths();
+      boolean samplesProject = false;
+      for (String samplesPath : paths) {
+        if (samplesPath != null && pathStartsWith(absolutePath, samplesPath) && pathStartsWith(prefix, samplesPath)) {
+          samplesProject = true;
+          break;
+        }
+      }
 
       if (samplesProject || pathStartsWith(absolutePath, prefix)) {
         String relationalPath = shrink(absolutePath, prefix);

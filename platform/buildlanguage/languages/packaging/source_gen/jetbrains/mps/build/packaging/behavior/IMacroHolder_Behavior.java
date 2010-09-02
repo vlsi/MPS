@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import com.intellij.openapi.application.PathMacros;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.samples.WorkbenchPathManager;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -49,9 +48,6 @@ public class IMacroHolder_Behavior {
     }
     if (macroName.equals(MPSLayout_Behavior.getMPSHomeName_1226508944077())) {
       return PathManager.getHomePath();
-    }
-    if (macroName.equals(MPSLayout_Behavior.getSamplesHomeName_2409558632330510491())) {
-      return WorkbenchPathManager.getSamplesPath();
     }
     return PathMacros.getInstance().getValue(macroName);
   }

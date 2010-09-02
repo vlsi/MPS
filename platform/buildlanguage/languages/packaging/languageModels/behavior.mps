@@ -132,44 +132,6 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1226508968717" />
     </node>
-    <node role="staticMethod" type="jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration" id="2409558632330510491">
-      <property name="name" value="getSamplesHomeName" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="2409558632330510492" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2409558632330510493">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="2409558632330510494">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2409558632330510495">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="2409558632330510496">
-              <link role="classifier:3" targetNodeId="2.~Macros" resolveInfo="Macros" />
-              <link role="variableDeclaration:3" targetNodeId="2.~Macros.SAMPLES_HOME" resolveInfo="SAMPLES_HOME" />
-            </node>
-            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2409558632330510497">
-              <link role="baseMethodDeclaration:3" targetNodeId="3.~String.substring(int,int):java.lang.String" resolveInfo="substring" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2409558632330510498">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="2409558632330510499">
-                  <property name="value:3" value="${" />
-                </node>
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2409558632330510500">
-                  <link role="baseMethodDeclaration:3" targetNodeId="3.~String.length():int" resolveInfo="length" />
-                </node>
-              </node>
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2409558632330510501">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="2409558632330510502">
-                  <link role="classifier:3" targetNodeId="2.~Macros" resolveInfo="Macros" />
-                  <link role="variableDeclaration:3" targetNodeId="2.~Macros.SAMPLES_HOME" resolveInfo="SAMPLES_HOME" />
-                </node>
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2409558632330510503">
-                  <link role="baseMethodDeclaration:3" targetNodeId="3.~String.lastIndexOf(java.lang.String):int" resolveInfo="lastIndexOf" />
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="2409558632330510504">
-                    <property name="value:3" value="}" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="2409558632330510505" />
-    </node>
     <node role="staticMethod" type="jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration" id="1226509010730">
       <property name="name" value="getBasedirName" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1226509020816" />
@@ -6989,28 +6951,6 @@
               <node role="actualArgument:3" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall:16" id="1234975968011">
                 <link role="concept:16" targetNodeId="1.1202916958754:7" resolveInfo="MPSLayout" />
                 <link role="baseMethodDeclaration:16" targetNodeId="1226508944077" resolveInfo="getMPSHomeName" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="2409558632330510506">
-          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2409558632330510507">
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="2409558632330510508">
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3566051423876449783">
-                <link role="baseMethodDeclaration:3" targetNodeId="22.~WorkbenchPathManager.getSamplesPath():java.lang.String" resolveInfo="getSamplesPath" />
-                <link role="classConcept:3" targetNodeId="22.~WorkbenchPathManager" resolveInfo="WorkbenchPathManager" />
-              </node>
-            </node>
-          </node>
-          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2409558632330510510">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="2409558632330510511">
-              <link role="variableDeclaration:3" targetNodeId="1234975968018" resolveInfo="macroName" />
-            </node>
-            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2409558632330510512">
-              <link role="baseMethodDeclaration:3" targetNodeId="3.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
-              <node role="actualArgument:3" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall:16" id="2409558632330510514">
-                <link role="concept:16" targetNodeId="1.1202916958754:7" resolveInfo="MPSLayout" />
-                <link role="baseMethodDeclaration:16" targetNodeId="2409558632330510491" resolveInfo="getSamplesHomeName" />
               </node>
             </node>
           </node>

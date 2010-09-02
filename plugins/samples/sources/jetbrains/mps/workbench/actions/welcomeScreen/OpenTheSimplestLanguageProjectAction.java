@@ -20,7 +20,6 @@ import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.build.SamplesExtractor;
-import jetbrains.mps.util.PathManager;
 
 import java.io.File;
 
@@ -30,7 +29,7 @@ public class OpenTheSimplestLanguageProjectAction extends AnAction {
   }
 
   public void actionPerformed(AnActionEvent e) {
-    String projectFile = SamplesExtractor.getInstance().getSamplesPath() + File.separator + "theSimplestLanguage" + File.separator + "theSimplestLanguage.mpr";
+    String projectFile = SamplesExtractor.getInstance().getSamplesPaths().get(0) + File.separator + "theSimplestLanguage" + File.separator + "theSimplestLanguage.mpr";
     ProjectUtil.openProject(projectFile, e.getData(PlatformDataKeys.PROJECT), false);
   }
 }

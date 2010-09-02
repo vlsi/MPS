@@ -24,7 +24,6 @@
 
   <application-components>
     <component>
-      <interface-class>jetbrains.mps.samples.SamplesInfo</interface-class>
       <implementation-class>jetbrains.mps.build.SamplesExtractor</implementation-class>
     </component>
   </application-components>

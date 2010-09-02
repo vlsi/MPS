@@ -126,10 +126,6 @@ public class MPSLayout_Behavior {
     return Macros.MPS_HOME.substring("${".length(), Macros.MPS_HOME.lastIndexOf("}"));
   }
 
-  public static String getSamplesHomeName_2409558632330510491() {
-    return Macros.SAMPLES_HOME.substring("${".length(), Macros.SAMPLES_HOME.lastIndexOf("}"));
-  }
-
   public static String getBasedirName_1226509010730() {
     return "basedir";
   }

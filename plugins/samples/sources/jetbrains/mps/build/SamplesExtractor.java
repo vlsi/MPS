@@ -29,11 +29,14 @@ import jetbrains.mps.MPSCore;
 import jetbrains.mps.build.SamplesExtractor.MyState;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.samples.SamplesInfo;
+import jetbrains.mps.samples.SamplesManager;
 import jetbrains.mps.util.PathManager;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Collections;
+import java.util.List;
 
 @State(
   name = "LastBuildNumber",
@@ -47,7 +50,7 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
   private static final Logger LOG = Logger.getLogger(SamplesExtractor.class);
 
   private static final String SAMPLES_IN_MPS_HOME_DIR = "samples";
-   private static final String MPS = "MPS";
+  private static final String MPS = "MPS";
 
   public static SamplesExtractor getInstance() {
     return ((SamplesExtractor) ApplicationManager.getApplication().getComponent(SamplesInfo.class));
@@ -60,13 +63,15 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
   public SamplesExtractor(ApplicationInfo applicationInfo) {
     myApplicationInfo = applicationInfo;
   }
-                   
+
   @NotNull
   public String getComponentName() {
     return "Samples Extractor";
   }
 
   public void initComponent() {
+    SamplesManager.getInstance().registerSamplesInfo(this);
+
     if (myState == null) {
       myState = new MyState();
     }
@@ -114,11 +119,8 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
     myState = state;
   }
 
-  public String getSamplesPath() {
-    if (myIsSamplesInMPSHome) {
-      return getSamplesPathInMPSHome();
-    }
-    return getSamplesPathInUserHome();
+  public List<String> getSamplesPaths() {
+    return Collections.singletonList(myIsSamplesInMPSHome ? getSamplesPathInMPSHome() : getSamplesPathInUserHome());
   }
 
   private String getSamplesPathInUserHome() {

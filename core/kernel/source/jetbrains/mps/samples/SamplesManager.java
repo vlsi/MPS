@@ -15,14 +15,30 @@
  */
 package jetbrains.mps.samples;
 
-import com.intellij.openapi.application.ApplicationManager;
-import org.jetbrains.annotations.Nullable;
+import java.util.ArrayList;
+import java.util.List;
 
-public class WorkbenchPathManager {
-  @Nullable
-  public static String getSamplesPath() {
-    SamplesInfo component = ApplicationManager.getApplication().getComponent(SamplesInfo.class);
-    if (component==null) return null;
-    return component.getSamplesPath();
+public class SamplesManager {
+  private static SamplesManager ourInstance = new SamplesManager();
+  private List<SamplesInfo> myComponents = new ArrayList<SamplesInfo>();
+
+  public static SamplesManager getInstance() {
+    return ourInstance;
+  }
+
+  private SamplesManager() {
+
+  }
+
+  public void registerSamplesInfo(SamplesInfo component){
+    myComponents.add(component);
+  }
+
+  public List<String> getSamplesPaths(){
+    List<String> result  = new ArrayList<String>();
+    for (SamplesInfo info:myComponents){
+      result.addAll(info.getSamplesPaths());
+    }
+    return result;
   }
 }

@@ -22,7 +22,6 @@ import com.intellij.openapi.components.Storage;
 import com.intellij.util.xmlb.annotations.Transient;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.samples.WorkbenchPathManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.stubs.StubReloadManager;
