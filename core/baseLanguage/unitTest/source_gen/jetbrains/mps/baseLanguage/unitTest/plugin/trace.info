@@ -940,7 +940,7 @@
     <nodeInfo nodeId="6130031063588740863" fileName="UnitTestRunner.java" startLine="51" startPosition="90" endLine="52" endPosition="79" />
     <nodeInfo nodeId="934665312924241144" fileName="UnitTestRunner.java" startLine="54" startPosition="25" endLine="55" endPosition="123" />
     <nodeInfo nodeId="934665312924241169" fileName="UnitTestRunner.java" startLine="57" startPosition="43" endLine="58" endPosition="104" />
-    <nodeInfo nodeId="934665312924241195" fileName="UnitTestRunner.java" startLine="63" startPosition="108" endLine="64" endPosition="86" />
+    <nodeInfo nodeId="2892363851914193523" fileName="UnitTestRunner.java" startLine="63" startPosition="104" endLine="64" endPosition="86" />
     <nodeInfo nodeId="4958672126368713256" fileName="UnitTestRunner.java" startLine="69" startPosition="7" endLine="70" endPosition="73" />
     <nodeInfo nodeId="5581197863062264890" fileName="UnitTestRunner.java" startLine="75" startPosition="25" endLine="76" endPosition="77" />
     <nodeInfo nodeId="5581197863062264897" fileName="UnitTestRunner.java" startLine="76" startPosition="77" endLine="77" endPosition="33" />
@@ -978,21 +978,25 @@
     <nodeInfo nodeId="1216049377455" fileName="UnitTestRunner.java" startLine="137" startPosition="5" endLine="138" endPosition="27" />
     <nodeInfo nodeId="1208523052170" fileName="UnitTestRunner.java" startLine="142" startPosition="20" endLine="143" endPosition="18" />
     <nodeInfo nodeId="1208523052170" fileName="UnitTestRunner.java" startLine="144" startPosition="5" endLine="145" endPosition="73" />
+    <nodeInfo nodeId="1208523052170" fileName="UnitTestRunner.java" startLine="149" startPosition="20" endLine="150" endPosition="18" />
+    <nodeInfo nodeId="1208523052170" fileName="UnitTestRunner.java" startLine="151" startPosition="5" endLine="152" endPosition="73" />
     <nodeInfo nodeId="4958672126368713199" fileName="UnitTestRunner.java" startLine="46" startPosition="81" endLine="49" endPosition="5" />
-    <nodeInfo nodeId="934665312924241193" fileName="UnitTestRunner.java" startLine="62" startPosition="39" endLine="65" endPosition="13" />
+    <nodeInfo nodeId="2892363851914193521" fileName="UnitTestRunner.java" startLine="62" startPosition="39" endLine="65" endPosition="13" />
     <nodeInfo nodeId="5581197863062264995" fileName="UnitTestRunner.java" startLine="92" startPosition="77" endLine="95" endPosition="9" />
     <nodeInfo nodeId="5581197863062265038" fileName="UnitTestRunner.java" startLine="100" startPosition="74" endLine="103" endPosition="9" />
     <nodeInfo nodeId="6443906062459247006" fileName="UnitTestRunner.java" startLine="115" startPosition="36" endLine="118" endPosition="5" />
     <nodeInfo nodeId="8706803813943883498" fileName="UnitTestRunner.java" startLine="128" startPosition="77" endLine="131" endPosition="5" />
     <nodeInfo nodeId="1216642115612" fileName="UnitTestRunner.java" startLine="134" startPosition="43" endLine="137" endPosition="5" />
     <nodeInfo nodeId="1208523052170" fileName="UnitTestRunner.java" startLine="141" startPosition="74" endLine="144" endPosition="5" />
+    <nodeInfo nodeId="1208523052170" fileName="UnitTestRunner.java" startLine="148" startPosition="73" endLine="151" endPosition="5" />
     <nodeInfo nodeId="5241497812385778200" fileName="UnitTestRunner.java" startLine="35" startPosition="0" endLine="39" endPosition="3" />
     <nodeInfo nodeId="3636700473139093276" fileName="UnitTestRunner.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
     <nodeInfo nodeId="934665312924241167" fileName="UnitTestRunner.java" startLine="56" startPosition="89" endLine="60" endPosition="0" />
     <nodeInfo nodeId="5581197863062264952" fileName="UnitTestRunner.java" startLine="86" startPosition="103" endLine="90" endPosition="9" />
     <nodeInfo nodeId="5581197863062265006" fileName="UnitTestRunner.java" startLine="95" startPosition="9" endLine="99" endPosition="9" />
     <nodeInfo nodeId="8706803813943880021" fileName="UnitTestRunner.java" startLine="123" startPosition="75" endLine="127" endPosition="5" />
-    <nodeInfo nodeId="1208523052170" fileName="UnitTestRunner.java" startLine="148" startPosition="80" endLine="152" endPosition="6" />
+    <nodeInfo nodeId="1208523052170" fileName="UnitTestRunner.java" startLine="155" startPosition="80" endLine="159" endPosition="6" />
+    <nodeInfo nodeId="1208523052170" fileName="UnitTestRunner.java" startLine="162" startPosition="79" endLine="166" endPosition="6" />
     <nodeInfo nodeId="934665312924241159" fileName="UnitTestRunner.java" startLine="55" startPosition="123" endLine="60" endPosition="28" />
     <nodeInfo nodeId="5581197863062264909" fileName="UnitTestRunner.java" startLine="79" startPosition="31" endLine="84" endPosition="9" />
     <nodeInfo nodeId="934665312924241191" fileName="UnitTestRunner.java" startLine="61" startPosition="69" endLine="67" endPosition="0" />
@@ -1001,6 +1005,8 @@
     <nodeInfo nodeId="6443906062459246977" fileName="UnitTestRunner.java" startLine="114" startPosition="0" endLine="121" endPosition="0" />
     <nodeInfo nodeId="1208523052170" fileName="UnitTestRunner.java" startLine="140" startPosition="0" endLine="147" endPosition="0" />
     <nodeInfo nodeId="1208523052170" fileName="UnitTestRunner.java" startLine="147" startPosition="0" endLine="154" endPosition="0" />
+    <nodeInfo nodeId="1208523052170" fileName="UnitTestRunner.java" startLine="154" startPosition="0" endLine="161" endPosition="0" />
+    <nodeInfo nodeId="1208523052170" fileName="UnitTestRunner.java" startLine="161" startPosition="0" endLine="168" endPosition="0" />
     <nodeInfo nodeId="934665312924241129" fileName="UnitTestRunner.java" startLine="53" startPosition="57" endLine="69" endPosition="0" />
     <nodeInfo nodeId="934665312924241128" fileName="UnitTestRunner.java" startLine="52" startPosition="79" endLine="69" endPosition="7" />
     <nodeInfo nodeId="1216049265926" fileName="UnitTestRunner.java" startLine="121" startPosition="0" endLine="140" endPosition="0" />
@@ -1011,7 +1017,7 @@
     <scopeInfo nodeId="3636700473139093279" fileName="UnitTestRunner.java" startLine="41" startPosition="58" endLine="42" endPosition="37" />
     <scopeInfo nodeId="4958672126368713200" fileName="UnitTestRunner.java" startLine="47" startPosition="49" endLine="48" endPosition="18" />
     <scopeInfo nodeId="934665312924241168" fileName="UnitTestRunner.java" startLine="57" startPosition="43" endLine="58" endPosition="104" />
-    <scopeInfo nodeId="934665312924241194" fileName="UnitTestRunner.java" startLine="63" startPosition="108" endLine="64" endPosition="86" />
+    <scopeInfo nodeId="2892363851914193522" fileName="UnitTestRunner.java" startLine="63" startPosition="104" endLine="64" endPosition="86" />
     <scopeInfo nodeId="5581197863062264998" fileName="UnitTestRunner.java" startLine="93" startPosition="57" endLine="94" endPosition="138" />
     <scopeInfo nodeId="5581197863062265039" fileName="UnitTestRunner.java" startLine="101" startPosition="71" endLine="102" endPosition="79" />
     <scopeInfo nodeId="1216648032120" fileName="UnitTestRunner.java" startLine="107" startPosition="9" endLine="108" endPosition="43" />
@@ -1019,6 +1025,7 @@
     <scopeInfo nodeId="8706803813943883499" fileName="UnitTestRunner.java" startLine="129" startPosition="40" endLine="130" endPosition="115" />
     <scopeInfo nodeId="1216642115613" fileName="UnitTestRunner.java" startLine="135" startPosition="44" endLine="136" endPosition="48" />
     <scopeInfo nodeId="1208523052170" fileName="UnitTestRunner.java" startLine="142" startPosition="20" endLine="143" endPosition="18" />
+    <scopeInfo nodeId="1208523052170" fileName="UnitTestRunner.java" startLine="149" startPosition="20" endLine="150" endPosition="18" />
     <scopeInfo nodeId="5241497812385778203" fileName="UnitTestRunner.java" startLine="36" startPosition="79" endLine="38" endPosition="88" />
     <scopeInfo nodeId="5581197863062264953" fileName="UnitTestRunner.java" startLine="87" startPosition="67" endLine="89" endPosition="106">
       <varInfo nodeId="5581197863062264955" varName="paramList" />
@@ -1050,11 +1057,15 @@
       <varInfo nodeId="8706803813943880025" varName="testable" />
     </scopeInfo>
     <scopeInfo nodeId="1208523052170" fileName="UnitTestRunner.java" startLine="141" startPosition="74" endLine="145" endPosition="73" />
-    <scopeInfo nodeId="1208523052170" fileName="UnitTestRunner.java" startLine="148" startPosition="80" endLine="152" endPosition="6" />
+    <scopeInfo nodeId="1208523052170" fileName="UnitTestRunner.java" startLine="148" startPosition="73" endLine="152" endPosition="73" />
+    <scopeInfo nodeId="1208523052170" fileName="UnitTestRunner.java" startLine="155" startPosition="80" endLine="159" endPosition="6" />
+    <scopeInfo nodeId="1208523052170" fileName="UnitTestRunner.java" startLine="162" startPosition="79" endLine="166" endPosition="6" />
     <scopeInfo nodeId="934665312924241191" fileName="UnitTestRunner.java" startLine="61" startPosition="69" endLine="67" endPosition="0" />
     <scopeInfo nodeId="6443906062459246977" fileName="UnitTestRunner.java" startLine="114" startPosition="0" endLine="121" endPosition="0" />
     <scopeInfo nodeId="1208523052170" fileName="UnitTestRunner.java" startLine="140" startPosition="0" endLine="147" endPosition="0" />
     <scopeInfo nodeId="1208523052170" fileName="UnitTestRunner.java" startLine="147" startPosition="0" endLine="154" endPosition="0" />
+    <scopeInfo nodeId="1208523052170" fileName="UnitTestRunner.java" startLine="154" startPosition="0" endLine="161" endPosition="0" />
+    <scopeInfo nodeId="1208523052170" fileName="UnitTestRunner.java" startLine="161" startPosition="0" endLine="168" endPosition="0" />
     <scopeInfo nodeId="934665312924241130" fileName="UnitTestRunner.java" startLine="54" startPosition="25" endLine="67" endPosition="11" />
     <scopeInfo nodeId="934665312924241129" fileName="UnitTestRunner.java" startLine="53" startPosition="57" endLine="69" endPosition="0" />
     <scopeInfo nodeId="1216049265929" fileName="UnitTestRunner.java" startLine="122" startPosition="87" endLine="138" endPosition="27">
@@ -1089,7 +1100,7 @@
     <unitInfo nodeId="934665312924241191" fileName="UnitTestRunner.java" startLine="61" startPosition="50" endLine="67" endPosition="9" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.UnitTestRunner$2" />
     <unitInfo nodeId="934665312924241129" fileName="UnitTestRunner.java" startLine="53" startPosition="45" endLine="69" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.UnitTestRunner$1" />
     <unitInfo nodeId="5581197863062264881" fileName="UnitTestRunner.java" startLine="74" startPosition="45" endLine="105" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.UnitTestRunner$2" />
-    <unitInfo nodeId="1208523052170" fileName="UnitTestRunner.java" startLine="30" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.UnitTestRunner" />
+    <unitInfo nodeId="1208523052170" fileName="UnitTestRunner.java" startLine="30" startPosition="0" endLine="169" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.UnitTestRunner" />
   </root>
   <root nodeId="1208774804359">
     <nodeInfo nodeId="1208774897858" fileName="TestOutputComponent.java" startLine="19" startPosition="54" endLine="20" endPosition="31" />

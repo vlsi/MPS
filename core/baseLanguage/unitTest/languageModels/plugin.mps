@@ -4806,39 +4806,36 @@
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.VisitAllOperation:7" id="934665312924241190">
                     <node role="closure:7" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral:3" id="934665312924241191">
                       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="934665312924241192">
-                        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="934665312924241193">
-                          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="934665312924241194">
-                            <node role="statement:3" type="jetbrains.mps.baseLanguage.logging.structure.LogStatement:0" id="934665312924241195">
+                        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="2892363851914193521">
+                          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2892363851914193522">
+                            <node role="statement:3" type="jetbrains.mps.baseLanguage.logging.structure.LogStatement:0" id="2892363851914193523">
                               <property name="severity:0" value="error" />
-                              <node role="logExpression:0" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="934665312924241196">
-                                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="934665312924241197">
+                              <node role="logExpression:0" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="2892363851914193524">
+                                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="2892363851914193525">
                                   <property name="value:3" value=": run parameters does not match." />
                                 </node>
-                                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="934665312924241198">
-                                  <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="934665312924241199">
+                                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="2892363851914193526">
+                                  <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="2892363851914193527">
                                     <property name="value:3" value="Can not execute " />
                                   </node>
-                                  <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="934665312924241200">
+                                  <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="2892363851914193528">
                                     <link role="variableDeclaration:3" targetNodeId="934665312924241208:0" resolveInfo="it" />
                                   </node>
                                 </node>
                               </node>
                             </node>
                           </node>
-                          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="934665312924241201">
-                            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="934665312924241202">
-                              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="934665312924241203">
-                                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="934665312924241204">
+                          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="2892363851914193529">
+                            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression:3" id="2892363851914193536">
+                              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2892363851914235364">
+                                <link role="variableDeclaration:3" targetNodeId="4958672126368713136:0" resolveInfo="runParams" />
+                              </node>
+                              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression" id="2892363851914235365">
+                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="2892363851914193532">
                                   <link role="variableDeclaration:3" targetNodeId="934665312924241208:0" resolveInfo="it" />
                                 </node>
-                                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="934665312924241205">
+                                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="2892363851914193533">
                                   <link role="baseMethodDeclaration:16" targetNodeId="41.1216045139515" resolveInfo="getTestRunParameters" />
-                                </node>
-                              </node>
-                              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="934665312924241206">
-                                <link role="baseMethodDeclaration:3" targetNodeId="21.1216640059134" resolveInfo="equals" />
-                                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="934665312924241207">
-                                  <link role="variableDeclaration:3" targetNodeId="4958672126368713136:0" resolveInfo="runParams" />
                                 </node>
                               </node>
                             </node>
