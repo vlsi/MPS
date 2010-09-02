@@ -39,8 +39,6 @@ public class PathManager {
 
   private static String ourHomePath;
 
-  private static final Pattern MODEL_UID_PATTERN = Pattern.compile(ModelPersistence.MODEL_UID + "=\"(.*?)\"");
-
   public static String getHomePath() {
     if (ourHomePath != null) {
       return ourHomePath;
@@ -86,58 +84,6 @@ public class PathManager {
 
   public static String getPlatformPath() {
     return getHomePath() + File.separator + "platform";
-  }
-
-  //------------------
-
-  public static SModelReference createModelReference(IFile modelFile, IFile root, String namespacePrefix) {
-    SModelReference fromFile = getFileUID(modelFile);
-    if (fromFile != null) return fromFile;
-    String rawLongName = getModelReferenceString(modelFile, root, namespacePrefix);
-    return SModelReference.fromString(rawLongName);
-  }
-
-  private static String getModelReferenceString(IFile modelFile, IFile root, String namespacePrefix) {
-    String longName = cropModelPath(modelFile, root);
-    if (longName == null) return null;
-
-    String namespace = NameUtil.namespaceFromLongName(longName);
-    namespace = namespace.replace(File.separatorChar, '.').replace('/', '.');
-
-    if (namespacePrefix != null && namespacePrefix.length() > 0) {
-      namespace = namespacePrefix + ((namespace.length() > 0) ? "." + namespace : "");
-    }
-    return namespace;
-  }
-
-  private static SModelReference getFileUID(IFile modelFile) {
-    try {
-      String secondLine = FileUtil.readLine(modelFile.openReader(), 1);
-      if (secondLine == null) {
-        return null;
-      }
-
-      Matcher m = MODEL_UID_PATTERN.matcher(secondLine);
-      if (m.find()) {
-        return SModelReference.fromString(m.group(1));
-      }
-
-      return null;
-    } catch (IOException e) {
-      throw new RuntimeException(e);
-    }
-  }
-
-  private static String cropModelPath(IFile modelFile, IFile root) {
-    String modelPath = modelFile.getCanonicalPath();
-    String rootPath = root.getCanonicalPath();
-    if (!modelPath.startsWith(rootPath)) return null;
-
-    int length = rootPath.length();
-    if (rootPath.endsWith(File.separator) || rootPath.endsWith("!")) {
-      length--;
-    }
-    return modelPath.substring(length + 1);
   }
 
   //------------------

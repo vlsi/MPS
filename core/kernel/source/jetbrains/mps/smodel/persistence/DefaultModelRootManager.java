@@ -29,7 +29,7 @@ import jetbrains.mps.smodel.persistence.def.PersistenceVersionNotFoundException;
 import jetbrains.mps.smodel.persistence.def.RefactoringsPersistence;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.PathManager;
+import jetbrains.mps.util.ModelRefCreator;
 import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vcs.queue.VCSQueue;
 import jetbrains.mps.vfs.FileSystem;
@@ -236,7 +236,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
       String fileName = file.getName();
       boolean isMPSModel = fileName.endsWith(MPSExtentions.DOT_MODEL);
       if (!(isMPSModel)) continue;
-      SModelReference modelReference = PathManager.createModelReference(file, FileSystem.getFile(modelRoot.getPath()), modelRoot.getPrefix());
+      SModelReference modelReference = ModelRefCreator.createModelReference(file, FileSystem.getFile(modelRoot.getPath()), modelRoot.getPrefix());
 
       if (modelReference.getSModelId() == null) {
         modelReference = new SModelReference(modelReference.getSModelFqName(), SModelId.generate());
