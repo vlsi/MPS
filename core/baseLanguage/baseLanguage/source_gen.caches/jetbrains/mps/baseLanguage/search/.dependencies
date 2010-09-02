@@ -257,10 +257,10 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersCache" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.GenericTypesUtil" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.BaseMethodCall" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Classifier" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Expression" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.IMethodCall" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.IVisible" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.PrivateVisibility" />
