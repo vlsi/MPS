@@ -31,12 +31,11 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.samples.SamplesInfo;
 import jetbrains.mps.samples.SamplesManager;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.workbench.WorkbenchPathManager;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Collections;
-import java.util.List;
 
 @State(
   name = "LastBuildNumber",
@@ -124,7 +123,7 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
   }
 
   private String getSamplesPathInUserHome() {
-    return PathManager.getUserHome() + File.separator + SAMPLES_IN_USER_HOME_DIR + "." + getSuffix();
+    return WorkbenchPathManager.getUserHome() + File.separator + SAMPLES_IN_USER_HOME_DIR + "." + getSuffix();
   }
 
   private String getSuffix() {

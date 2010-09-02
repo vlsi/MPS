@@ -46,10 +46,6 @@ public class PathManager {
 
   private static final Pattern MODEL_UID_PATTERN = Pattern.compile(ModelPersistence.MODEL_UID + "=\"(.*?)\"");
 
-  public static String getUserHome() {
-    return System.getProperty("user.home");
-  }
-
   public static String getHomePath() {
     if (ourHomePath != null) {
       return ourHomePath;
@@ -99,14 +95,6 @@ public class PathManager {
 
   public static String getPlatformPath() {
     return getHomePath() + File.separator + "platform";
-  }
-
-  public static String getWorkbenchPath() {
-    return getHomePath() + File.separator + "workbench";
-  }
-
-  public static String getLanguagesPath() {
-    return getHomePath() + File.separator + "languages";
   }
 
   private static String getAbsolutePath(String path) {

@@ -26,11 +26,11 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.stubs.StubReloadManager;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.workbench.WorkbenchPathManager;
 import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.File;
 import java.util.*;
 
 
@@ -98,12 +98,6 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
     myBootstrapLibrariesOwner = new MPSModuleOwner() {
     };
 
-    String langPath = PathManager.getLanguagesPath();
-    File langDir = new File(langPath);
-    if (!langDir.exists()) {
-      langDir.mkdirs();
-    }
-
     for (Library l : getLibraries()) {
       if (l.isPredefined()) {
         MPSModuleOwner owner = (l.isBootstrap() ? myBootstrapLibrariesOwner : myPredefinedLibrariesOwner);
@@ -141,16 +135,20 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
         return PathManager.getPlatformPath();
       }
     });
+
+    //todo replace with lib contributor
     result.add(new PredefinedLibrary("mps.workbench") {
       @NotNull
       public String getPath() {
-        return PathManager.getWorkbenchPath();
+        return WorkbenchPathManager.getWorkbenchPath();
       }
     });
+
+    //todo replace with lib contributor
     result.add(new PredefinedLibrary("mps.languages") {
       @NotNull
       public String getPath() {
-        return PathManager.getLanguagesPath();
+        return WorkbenchPathManager.getLanguagesPath();
       }
     });
     result.addAll(myCustomBuiltInLibraries.values());
