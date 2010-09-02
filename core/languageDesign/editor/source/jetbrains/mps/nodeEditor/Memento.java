@@ -103,6 +103,7 @@ class Memento {
       EditorCell collection = collectionInfo.findCell(editor);
       if (!(collection instanceof EditorCell_Collection)) continue;
       ((EditorCell_Collection)collection).fold(true);
+      editor.requestRelayout();
     }
     
     restoreErrors(editor);
