@@ -18,7 +18,6 @@ package jetbrains.mps.generator;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
 import java.util.ArrayList;
 import java.util.Collections;

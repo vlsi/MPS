@@ -153,9 +153,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     return outputNode;
   }
 
-  /*package*/
-
-  SNode findCopiedOutputNodeForInputNode_unique(SNode inputNode) {
+  public SNode findCopiedOutputNodeForInputNode_unique(SNode inputNode) {
     SNode node = findCopiedOutputNodeForInputNode(inputNode);
     if (myMappings.isInputNodeHasUniqueCopiedOutputNode(inputNode)) return node;
     return null;

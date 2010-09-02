@@ -13,9 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.generator.impl;
+package jetbrains.mps.generator.impl.reference;
 
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
+import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.Nullable;

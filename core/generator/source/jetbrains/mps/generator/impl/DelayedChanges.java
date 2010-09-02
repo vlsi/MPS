@@ -18,6 +18,8 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
+import jetbrains.mps.generator.impl.reference.PostponedReference;
+import jetbrains.mps.generator.impl.reference.ReferenceInfo_CopiedInputNode;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.generator.structure.MapSrcListMacro;
 import jetbrains.mps.lang.generator.structure.MapSrcMacro_PostMapperFunction;
@@ -163,7 +165,7 @@ public class DelayedChanges {
 
     private void validateReference(SReference reference) {
       // reference to input model - illegal
-      if (myGenerator.getSourceModel().getSModelReference().equals(reference.getTargetSModelReference())) {
+      if (myGenerator.getInputModel().getSModelReference().equals(reference.getTargetSModelReference())) {
         // replace
         ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
           reference.getRole(),

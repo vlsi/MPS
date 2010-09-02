@@ -23,6 +23,8 @@ import jetbrains.mps.generator.impl.dependencies.DependenciesReadListener;
 import jetbrains.mps.generator.impl.dependencies.RootDependenciesBuilder;
 import jetbrains.mps.generator.impl.FastRuleFinder.BlockedReductionsData;
 import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
+import jetbrains.mps.generator.impl.reference.PostponedReference;
+import jetbrains.mps.generator.impl.reference.ReferenceInfo_CopiedInputNode;
 import jetbrains.mps.generator.impl.template.QueryExecutionContextWithDependencyRecording;
 import jetbrains.mps.generator.impl.template.QueryExecutionContextWithTracing;
 import jetbrains.mps.generator.template.*;
