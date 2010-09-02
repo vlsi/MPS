@@ -1363,6 +1363,10 @@ public class QueriesGenerated {
     return !(SPropertyOperations.getBoolean(_context.getNode(), "hasNoLabel"));
   }
 
+  public static boolean ifMacro_Condition_603091730836689192(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SPropertyOperations.getString_def(_context.getNode(), "color", null) != SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_Colors_Enum"), "none"));
+  }
+
   public static boolean ifMacro_Condition_5170495790389308453(final IOperationContext operationContext, final IfMacroContext _context) {
     return !(EditorCellModel_Behavior.call_isCellIdInitialized_1229948571177(_context.getNode()));
   }

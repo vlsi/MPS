@@ -16710,6 +16710,39 @@
                       </node>
                     </node>
                   </node>
+                  <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.IfMacro:2" id="603091730836689191">
+                    <node role="conditionFunction:2" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition:2" id="603091730836689192">
+                      <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="603091730836689193">
+                        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="603091730836690435">
+                          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="603091730836690442">
+                            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="603091730836690448">
+                              <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation:16" id="603091730836690445">
+                                <link role="enumDeclaration:16" targetNodeId="38.1083952545109:32" resolveInfo="_Colors_Enum" />
+                                <node role="operation:16" type="jetbrains.mps.lang.smodel.structure.SEnum_MemberOperation:16" id="603091730836690447">
+                                  <link role="member:16" targetNodeId="38.1083952545110:32" />
+                                </node>
+                              </node>
+                              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.EnumMember_ValueOperation:16" id="603091730836690452" />
+                            </node>
+                            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="603091730836690437">
+                              <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="603091730836690436" />
+                              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="603091730836690441">
+                                <link role="property:16" targetNodeId="38.1186403713874:32" resolveInfo="color" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node role="alternativeConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="603091730836690458">
+                      <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="2164056950349323316">
+                        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2164056950349323317">
+                          <link role="classifier:3" targetNodeId="50.~Color" resolveInfo="Color" />
+                        </node>
+                        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="2164056950349323318" />
+                      </node>
+                    </node>
+                  </node>
                 </node>
                 <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="3219221556189188088" />
               </node>
