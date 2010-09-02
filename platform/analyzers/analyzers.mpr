@@ -12,7 +12,6 @@
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/languages/analyzers/analyzers.mpl" />
-      <languagePath path="${project}/languages/testLang/testLang.mpl" folder="" />
     </projectLanguages>
     <projectDevkits />
     <genConfs />

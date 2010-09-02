@@ -12,7 +12,6 @@
     <usedLanguage>97a52717-898f-4598-8150-573d9fd03868(jetbrains.mps.analyzers)</usedLanguage>
     <usedLanguage>d4615e3b-d671-4ba9-af01-2b78369b0ba7(jetbrains.mps.lang.pattern)</usedLanguage>
     <usedLanguage>8585453e-6bfb-4d80-98de-b16074f1d86c(jetbrains.mps.lang.test)</usedLanguage>
-    <usedLanguage>496552cd-f3b7-4503-ace9-268d7c3c645d(jetbrains.mps.analyzers.testLang)</usedLanguage>
   </usedLanguages>
 </solution>
 
