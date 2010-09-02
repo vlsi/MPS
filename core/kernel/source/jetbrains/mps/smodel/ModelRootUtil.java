@@ -37,11 +37,4 @@ public class ModelRootUtil {
     }
     return result;
   }
-
-  public static boolean isCorrectNamespace(SModelRoot root, EditableSModelDescriptor model){
-    String modelFqName = model.getSModelReference().getSModelFqName().toString();
-    String expectedName = PathManager.getModelUIDString(model.getModelFile(), FileSystem.getFile(root.getPath()), root.getPrefix());
-
-    return  modelFqName.equals(expectedName);
-  }
 }

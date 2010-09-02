@@ -236,7 +236,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
       String fileName = file.getName();
       boolean isMPSModel = fileName.endsWith(MPSExtentions.DOT_MODEL);
       if (!(isMPSModel)) continue;
-      SModelReference modelReference = PathManager.getModelUID(file, FileSystem.getFile(modelRoot.getPath()), modelRoot.getPrefix());
+      SModelReference modelReference = PathManager.createModelReference(file, FileSystem.getFile(modelRoot.getPath()), modelRoot.getPrefix());
 
       if (modelReference.getSModelId() == null) {
         modelReference = new SModelReference(modelReference.getSModelFqName(), SModelId.generate());
