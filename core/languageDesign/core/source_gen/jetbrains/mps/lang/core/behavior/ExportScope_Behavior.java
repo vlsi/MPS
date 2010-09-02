@@ -9,6 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -53,7 +54,7 @@ public class ExportScope_Behavior {
     */
     // for a while "module' export only for jetbrains.mps... modules 
     String targetNamespace = ExportScope_Behavior.getNamespace_2565736246230026649(node);
-    return isConcept || namespace.equals(targetNamespace) || targetNamespace == null || !(targetNamespace.startsWith("jetbrains.mps"));
+    return isConcept || namespace.equals(targetNamespace) || targetNamespace == null || !(SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(node).getStereotype()) && targetNamespace.startsWith("jetbrains.mps"));
   }
 
   public static boolean checkExport_2565736246230031479(boolean isConcept, SNode node, String namespace) {

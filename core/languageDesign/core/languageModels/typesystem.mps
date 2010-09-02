@@ -2308,11 +2308,11 @@
       </node>
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="402007580867616295">
         <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="402007580867616296">
-          <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement:3" id="402007580867616297">
-            <node role="errorString:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="402007580867616298">
+          <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.WarningStatement:3" id="4427695773496933176">
+            <node role="warningText:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4427695773496933179">
               <property name="value:3" value="no target namespace" />
             </node>
-            <node role="nodeToReport:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="402007580867616299">
+            <node role="nodeToReport:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="4427695773496933180">
               <link role="applicableNode:3" targetNodeId="376024488709664744" resolveInfo="node" />
             </node>
           </node>
@@ -2392,19 +2392,19 @@
           </node>
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="5425021671150237343">
             <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5425021671150237344">
-              <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement:3" id="4075196924244459916">
-                <node role="errorString:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4075196924244459917">
+              <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.WarningStatement:3" id="4427695773496933184">
+                <node role="warningText:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4427695773496933187">
                   <property name="value:3" value="no target namespace" />
                 </node>
-                <node role="nodeToReport:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="4075196924244459918">
+                <node role="nodeToReport:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="4427695773496933188">
                   <link role="applicableNode:3" targetNodeId="376024488709664744" resolveInfo="node" />
                 </node>
-                <node role="messageTarget:3" type="jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget:3" id="4075196924244459922">
-                  <node role="referenceRole:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4075196924244459927">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="4075196924244459926">
+                <node role="messageTarget:3" type="jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget:3" id="4427695773496933189">
+                  <node role="referenceRole:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4427695773496933190">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="4427695773496933191">
                       <link role="variable:7" targetNodeId="376024488709665190" resolveInfo="ref" />
                     </node>
-                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Reference_GetRoleOperation:16" id="4075196924244459931" />
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Reference_GetRoleOperation:16" id="4427695773496933192" />
                   </node>
                 </node>
               </node>

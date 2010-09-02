@@ -124,10 +124,6 @@
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="201537367881071930">
     <property name="name:0" value="IMetaLevelChanger" />
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="376024488709656960">
-    <property name="name:0" value="IExportable" />
-    <property name="package:0" value="export" />
-  </node>
   <node type="jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration:0" id="376024488709664661">
     <property name="role:0" value="export" />
     <property name="stereotype:0" value="node" />
