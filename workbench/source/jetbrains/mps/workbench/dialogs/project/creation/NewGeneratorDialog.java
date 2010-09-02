@@ -30,11 +30,9 @@ import jetbrains.mps.lang.generator.generationContext.structure.GenerationContex
 import jetbrains.mps.lang.generator.structure.Generator_Language;
 import jetbrains.mps.lang.generator.structure.MappingConfiguration;
 import jetbrains.mps.library.GeneralPurpose_DevKit;
-import jetbrains.mps.library.LanguageDesign_DevKit;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.FileSystemFile;

@@ -16,12 +16,9 @@
 package jetbrains.mps.project.listener;
 
 import jetbrains.mps.library.GeneralPurpose_DevKit;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.library.LanguageDesign_DevKit;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.util.CollectionUtil;
 
 import java.util.List;
