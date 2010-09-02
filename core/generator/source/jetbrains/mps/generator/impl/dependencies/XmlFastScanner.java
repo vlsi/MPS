@@ -1,4 +1,4 @@
-package jetbrains.mps.generator.index;
+package jetbrains.mps.generator.impl.dependencies;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -8,7 +8,7 @@ import java.io.Reader;
 /**
  * Evgeny Gryaznov, Jun 2, 2010
  */
-public class XmlFastScanner {
+class XmlFastScanner {
 
   public static final int EOI = 0;
   public static final int SIMPLE_TAG = 1;
