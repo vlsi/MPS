@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="2411622665278543566">
+    <nodeInfo nodeId="2411622665278543613" fileName="ILeftCombinator.java" startLine="13" startPosition="29" endLine="14" endPosition="25" />
     <nodeInfo nodeId="2411622665278543568" fileName="ILeftCombinator.java" startLine="7" startPosition="94" endLine="9" endPosition="3" />
     <nodeInfo nodeId="2411622665278543590" fileName="ILeftCombinator.java" startLine="10" startPosition="0" endLine="12" endPosition="0" />
     <nodeInfo nodeId="2411622665278543580" fileName="ILeftCombinator.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
@@ -18,6 +19,7 @@
     <unitInfo nodeId="2411622665278543566" fileName="ILeftCombinator.java" startLine="7" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.ILeftCombinator" />
   </root>
   <root nodeId="2411622665278543851">
+    <nodeInfo nodeId="2411622665278543886" fileName="IRightCombinator.java" startLine="13" startPosition="29" endLine="14" endPosition="25" />
     <nodeInfo nodeId="2411622665278543853" fileName="IRightCombinator.java" startLine="7" startPosition="95" endLine="9" endPosition="3" />
     <nodeInfo nodeId="2411622665278543859" fileName="IRightCombinator.java" startLine="10" startPosition="0" endLine="12" endPosition="0" />
     <nodeInfo nodeId="2411622665278543871" fileName="IRightCombinator.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
@@ -35,6 +37,7 @@
     <unitInfo nodeId="2411622665278543851" fileName="IRightCombinator.java" startLine="7" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.IRightCombinator" />
   </root>
   <root nodeId="2411622665278544142">
+    <nodeInfo nodeId="2411622665278544168" fileName="ISelector.java" startLine="13" startPosition="24" endLine="14" endPosition="21" />
     <nodeInfo nodeId="2411622665278544144" fileName="ISelector.java" startLine="7" startPosition="85" endLine="9" endPosition="3" />
     <nodeInfo nodeId="2411622665278544150" fileName="ISelector.java" startLine="10" startPosition="0" endLine="12" endPosition="0" />
     <nodeInfo nodeId="2411622665278544160" fileName="ISelector.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
@@ -50,6 +53,7 @@
     <unitInfo nodeId="2411622665278544142" fileName="ISelector.java" startLine="7" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.ISelector" />
   </root>
   <root nodeId="3473971317150294575">
+    <nodeInfo nodeId="3473971317150294649" fileName="ISequenceClosure.java" startLine="13" startPosition="31" endLine="14" endPosition="22" />
     <nodeInfo nodeId="3473971317150294577" fileName="ISequenceClosure.java" startLine="7" startPosition="96" endLine="9" endPosition="3" />
     <nodeInfo nodeId="3473971317150294632" fileName="ISequenceClosure.java" startLine="10" startPosition="0" endLine="12" endPosition="0" />
     <nodeInfo nodeId="3473971317150294642" fileName="ISequenceClosure.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
@@ -61,6 +65,7 @@
     <unitInfo nodeId="3473971317150294575" fileName="ISequenceClosure.java" startLine="7" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.ISequenceClosure" />
   </root>
   <root nodeId="3473971317150294731">
+    <nodeInfo nodeId="3473971317150294758" fileName="ITranslator.java" startLine="13" startPosition="35" endLine="14" endPosition="24" />
     <nodeInfo nodeId="3473971317150294733" fileName="ITranslator.java" startLine="7" startPosition="98" endLine="9" endPosition="3" />
     <nodeInfo nodeId="3473971317150294739" fileName="ITranslator.java" startLine="10" startPosition="0" endLine="12" endPosition="0" />
     <nodeInfo nodeId="3473971317150294750" fileName="ITranslator.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
@@ -76,6 +81,7 @@
     <unitInfo nodeId="3473971317150294731" fileName="ITranslator.java" startLine="7" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.ITranslator" />
   </root>
   <root nodeId="3473971317150294883">
+    <nodeInfo nodeId="3473971317150294912" fileName="ITranslator2.java" startLine="13" startPosition="34" endLine="14" endPosition="24" />
     <nodeInfo nodeId="3473971317150294885" fileName="ITranslator2.java" startLine="7" startPosition="98" endLine="9" endPosition="3" />
     <nodeInfo nodeId="3473971317150294891" fileName="ITranslator2.java" startLine="10" startPosition="0" endLine="12" endPosition="0" />
     <nodeInfo nodeId="3473971317150294902" fileName="ITranslator2.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
@@ -4100,6 +4106,7 @@
     <unitInfo nodeId="6543581031674036880" fileName="ISortedSetSequence.java" startLine="7" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.ISortedSetSequence" />
   </root>
   <root nodeId="7730170264858257623">
+    <nodeInfo nodeId="7730170264858257648" fileName="IWhereFilter.java" startLine="13" startPosition="30" endLine="14" endPosition="21" />
     <nodeInfo nodeId="7730170264858257625" fileName="IWhereFilter.java" startLine="7" startPosition="91" endLine="9" endPosition="3" />
     <nodeInfo nodeId="7730170264858257629" fileName="IWhereFilter.java" startLine="10" startPosition="0" endLine="12" endPosition="0" />
     <nodeInfo nodeId="7730170264858257640" fileName="IWhereFilter.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />

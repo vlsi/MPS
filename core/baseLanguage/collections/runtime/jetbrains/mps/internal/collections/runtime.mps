@@ -15204,7 +15204,7 @@
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="6543581031674031996">
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6543581031674031997">
                 <link role="classConcept:3" targetNodeId="6543581031674033682" resolveInfo="ArrayUtils" />
-                <link role="baseMethodDeclaration:3" targetNodeId="6543581031674033956" resolveInfo="newArrayInstance" />
+                <link role="baseMethodDeclaration:3" targetNodeId="6543581031674033969" resolveInfo="newArrayInstance" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="6543581031674031998">
                   <link role="variableDeclaration:3" targetNodeId="6543581031674031988" resolveInfo="runtimeClass" />
                 </node>

@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1572321421811299586">
+    <nodeInfo nodeId="1572321421812766994" fileName="PatternFilter_Editor.java" startLine="171" startPosition="112" endLine="172" endPosition="67" />
+    <nodeInfo nodeId="1572321421812922615" fileName="PatternFilter_Editor.java" startLine="175" startPosition="112" endLine="176" endPosition="67" />
     <scopeInfo nodeId="1572321421812661235" fileName="PatternFilter_Editor.java" startLine="171" startPosition="112" endLine="172" endPosition="67" />
     <scopeInfo nodeId="1572321421812919008" fileName="PatternFilter_Editor.java" startLine="175" startPosition="112" endLine="176" endPosition="67" />
   </root>
   <root nodeId="1572321421811299639">
+    <nodeInfo nodeId="1572321421811395064" fileName="DefaultExcludes_Editor.java" startLine="89" startPosition="111" endLine="90" endPosition="57" />
     <nodeInfo nodeId="1572321421811416437" fileName="DefaultExcludes_Editor.java" startLine="97" startPosition="106" endLine="98" endPosition="56" />
     <nodeInfo nodeId="1572321421811416452" fileName="DefaultExcludes_Editor.java" startLine="110" startPosition="106" endLine="111" endPosition="57" />
     <scopeInfo nodeId="1572321421811299653" fileName="DefaultExcludes_Editor.java" startLine="89" startPosition="111" endLine="90" endPosition="57" />
@@ -12,14 +15,17 @@
     <scopeInfo nodeId="1572321421811416451" fileName="DefaultExcludes_Editor.java" startLine="110" startPosition="106" endLine="111" endPosition="57" />
   </root>
   <root nodeId="1572321421811416509">
+    <nodeInfo nodeId="3710764346182546694" fileName="Inherits_Editor.java" startLine="87" startPosition="33" endLine="88" endPosition="82" />
     <scopeInfo nodeId="3710764346182472731" fileName="Inherits_Editor.java" startLine="87" startPosition="33" endLine="88" endPosition="82" />
   </root>
   <root nodeId="1572321421812788716">
+    <nodeInfo nodeId="1572321421812788723" fileName="PathFilter_Enter.java" startLine="51" startPosition="152" endLine="52" endPosition="69" />
     <nodeInfo nodeId="1572321421812788735" fileName="PathFilter_Enter.java" startLine="55" startPosition="146" endLine="56" endPosition="91" />
     <scopeInfo nodeId="1572321421812788722" fileName="PathFilter_Enter.java" startLine="51" startPosition="152" endLine="52" endPosition="69" />
     <scopeInfo nodeId="1572321421812788720" fileName="PathFilter_Enter.java" startLine="55" startPosition="146" endLine="56" endPosition="91" />
   </root>
   <root nodeId="1572321421814003145">
+    <nodeInfo nodeId="1572321421814003152" fileName="GWTModule_Enter.java" startLine="51" startPosition="152" endLine="52" endPosition="73" />
     <nodeInfo nodeId="1572321421814003164" fileName="GWTModule_Enter.java" startLine="55" startPosition="146" endLine="56" endPosition="99" />
     <scopeInfo nodeId="1572321421814003151" fileName="GWTModule_Enter.java" startLine="51" startPosition="152" endLine="52" endPosition="73" />
     <scopeInfo nodeId="1572321421814003149" fileName="GWTModule_Enter.java" startLine="55" startPosition="146" endLine="56" endPosition="99" />
