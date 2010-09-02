@@ -28,7 +28,7 @@
       <languagePath path="${mps_home}/platform/buildlanguage/languages/buildlanguage/buildlanguage.mpl" folder="usages.build" />
       <languagePath path="${mps_home}/platform/buildlanguage/languages/custommps/custommps.mpl" folder="usages.build" />
       <languagePath path="${mps_home}/platform/buildlanguage/languages/packaging/packaging.mpl" folder="usages.build" />
-      <languagePath path="${samples_home}/lambda/languages/lambdaCalculus/lambdaCalculus.mpl" folder="usages.lambda" />
+      <languagePath path="${project}/../lambda/languages/lambdaCalculus/lambdaCalculus.mpl" folder="usages.lambda" />
       <languagePath path="${mps_home}/workbench/ideUiLanguage/uiLanguage.mpl" />
     </projectLanguages>
     <projectDevkits />

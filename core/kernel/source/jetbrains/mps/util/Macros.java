@@ -36,9 +36,6 @@ public abstract class Macros {
   public static final String MPS_HOME_NAKED = "mps_home";
   public static final String MPS_HOME = "${" + MPS_HOME_NAKED + "}";
 
-  // TODO remove
-  public static final String SAMPLES_HOME = "${samples_home}";
-
   public static final String LANGUAGE_DESCRIPTOR = "${language_descriptor}";
   public static final String SOLUTION_DESCRIPTOR = "${solution_descriptor}";
   public static final String DEVKIT_DESCRIPTOR = "${devkit_descriptor}";
@@ -119,12 +116,6 @@ public abstract class Macros {
     result = tryToExpandWith(path, MPS_HOME, PathManager.getHomePath());
     if (result != null) return result.getCanonicalPath();
 
-    String samplesPath = WorkbenchPathManager.getSamplesPath();
-    if (samplesPath != null) {
-      result = tryToExpandWith(path, SAMPLES_HOME, samplesPath);
-      if (result != null) return result.getCanonicalPath();
-    }
-
     if (!path.startsWith("${")) {
       result = FileSystem.getFile(path);
       return result.getCanonicalPath();
@@ -158,11 +149,7 @@ public abstract class Macros {
 
   protected String shrinkPath_internal(String absolutePath, IFile anchorFile) {
     String fileName;
-    String samplesPath = WorkbenchPathManager.getSamplesPath();
-    if (samplesPath != null && pathStartsWith(absolutePath, samplesPath)) {
-      String relationalPath = shrink(absolutePath, samplesPath);
-      fileName = SAMPLES_HOME + relationalPath;
-    } else if (pathStartsWith(absolutePath, PathManager.getHomePath())) {
+    if (pathStartsWith(absolutePath, PathManager.getHomePath())) {
       String relationalPath = shrink(absolutePath, PathManager.getHomePath());
       fileName = MPS_HOME + relationalPath;
     } else {
@@ -294,7 +281,10 @@ public abstract class Macros {
         prefix = projectDescriptor.getCanonicalPath();
       }
 
-      if (pathStartsWith(absolutePath, prefix)) {
+      String samplesPath = WorkbenchPathManager.getSamplesPath();
+      boolean samplesProject = samplesPath!=null && pathStartsWith(absolutePath, samplesPath);
+      
+      if (samplesProject || pathStartsWith(absolutePath, prefix)) {
         String relationalPath = shrink(absolutePath, prefix);
         return PROJECT + relationalPath;
       }

@@ -155,15 +155,6 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
       }
     });
 
-    final String samplesPath = WorkbenchPathManager.getSamplesPath();
-    if (samplesPath != null) {
-      result.add(new PredefinedLibrary("mps.samples") {
-        @NotNull
-        public String getPath() {
-          return samplesPath;
-        }
-      });
-    }
     result.add(new PredefinedLibrary("mps.languages") {
       @NotNull
       public String getPath() {

@@ -29,7 +29,7 @@
     <projectLanguages>
       <languagePath path="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpl" />
       <languagePath path="${project}/languages/evaluation/evaluation.mpl" folder="" />
-      <languagePath path="${samples_home}/sampleLanguage/sampleLanguage.mpl" folder="" />
+      <languagePath path="${project}/../sampleLanguage/sampleLanguage.mpl" folder="" />
       <languagePath path="${project}/languages/customViewers/customViewers.mpl" folder="" />
       <languagePath path="${project}/languages/privateMembers/privateMembers.mpl" folder="" />
     </projectLanguages>
