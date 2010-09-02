@@ -9,7 +9,7 @@
     <entry path="${mps_home}/core/languageDesign/dataFlow/classes" include="false" />
     <entry path="${mps_home}/core/languageDesign/dataFlow/runtime/classes" include="false" />
     <entry path="${mps_home}/core/languageDesign/structure/classes" include="false" />
-    <entry path="${mps_home}/lib/jetbrains-ideframework/annotations.jar" include="false" />
+    <entry path="${mps_home}/lib/annotations.jar" include="false" />
   </classPath>
   <sourcePath />
 </solution>

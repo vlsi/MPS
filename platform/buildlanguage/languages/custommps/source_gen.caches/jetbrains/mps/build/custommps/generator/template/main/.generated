@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="bbvr42khtt7w6cxtu6bc10bfouynbd0">
+<dependencies version="2" modelHash="-d6eaey2cdxnryogldhvksxfel1fwqd8">
   <dep model="f:java_stub#java.io(java.io@java_stub)" />
   <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
   <dep model="f:java_stub#jetbrains.mps.lang.smodel.generator.smodelAdapter(jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
   <dep model="f:java_stub#jetbrains.mps.samples(jetbrains.mps.samples@java_stub)" />
   <dep model="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="9um92508oadq1qu3kr57d9ne6rw09qx" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="7183ubv0g8f0os3c7f2n72onia9g7oc" />
   <dep model="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)" hash="7zvwahf8lmpzg6daznfdg7t2pnr9z5v" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8p99j1evrx61lgus28guca4n5crohmi" />
   <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" hash="77rn04hub6f8gk30071gb1d591vj9n4" />
@@ -24,7 +24,7 @@
   <dep model="r:3440a6a7-d645-4c49-b3b3-9d0c36859a49(jetbrains.mps.build.custommpsInternal.structure)" hash="6sf4kdajvluw9o4wlvozjruy2xq1ua9" />
   <dep model="r:3ffa047e-f111-477c-9b1d-805bb060825a(jetbrains.mps.build.distrib.structure)" hash="8m121x6a4maxrrq5rcau5gd1wu35z9j" />
   <dep model="r:896f64dd-7cfe-4bc4-b401-38e2a027e9ae(jetbrains.mps.build.custommps.structure)" hash="lhcc2xlzflztwqksvl70jegdb7ets5" />
-  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="bl8jtm9eljaos5s5pwxk9oarpq7plfi" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-2rkzuqqynwzblwwmka6kyl9kuiqkjfc" />
   <common hash="-abdtu8g63f217r69eovtj8lbjsiksk5">
     <dep root="1233154898746" />
     <dep root="1233155140772" />
@@ -67,16 +67,16 @@
   </common>
   <source id="1233155140772" name="main" hash="8fguo0kgisum6i9pzrdo7u7egq20dug" />
   <source id="1233154898746" name="reduce_MPSBuild" hash="-sik5cqqzsftvr81t5q9jt6hpglc0ud" />
-  <source id="1233668931882" name="help-build" hash="-3rzob91mjlk1fdu8o9nho68phezmipn" />
+  <source id="1233668931882" name="help-build" hash="d3nzoecoie1l96ketyscrfhx290f2mr" />
   <source id="1233749569093" name="reduce_CreateIfNotExists" hash="-5kr73hemnh1u0o37v6svs3rbmhpzuxq" />
   <source id="1233926023574" name="reduce_UndeclaredVariableReference" hash="-cpmdgqeukgezoyaqph890ywzjbncez" />
   <source id="1233931547920" name="weave_UndeclaredVariableReference" hash="-7xyx6mpezdyc85r0ujs9n5qqdalofht" />
-  <source id="1234779587495" name="MPS-autodist" hash="-4cckwkvzb4pxq2epqeaidf7tlzbyufj" />
+  <source id="1234779587495" name="MPS-autodist" hash="1s6eozyz01zdqe15f8nyijxshxrqfgw" />
   <source id="1234891595846" name="reduce_UndeclaredVariableReferenceInDistConfig" hash="-2jp3xr826y7esfnqqvgkhn3e0jjh0gc" />
   <source id="1236880101685" name="weave_MPSBuild" hash="-645yw5785tyjqs5bej2gbi9238alm0g" />
   <source id="1236881017235" name="weave_MPSBuildInMPSLayout" hash="4jdhwj9ynkd319ijfc33ohatwod3qdf" />
   <source id="1237471276095" name="reduce_MPSModule" hash="2clnpepxt0gzh3uajemwgtyigp0bfi6" />
-  <source id="1238505290206" name="weave_MPSLayout" hash="ch18696ad221y2a03l2t17mtkvqa46n" />
+  <source id="1238505290206" name="weave_MPSLayout" hash="-d8k1i8ioybjoikrozqsdrrrkit9fkh5" />
   <source id="1238511936410" name="weave_MPSLayout_PackSrc" hash="-2y0asq4wryjob4zj0qxfvxn7pyyti8z" />
   <source id="1240396556348" name="weave_MPSLayout_AddPropertyFile" hash="ec819w4ts0okgxip1dazuhiedatqb2q" />
 </dependencies>

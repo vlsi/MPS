@@ -1776,7 +1776,7 @@
             <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1238512027802">
               <link role="attributeDeclaration:22" targetNodeId="4v.353793545802814494" resolveInfo="name" />
               <node role="value:22" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1238512027803">
-                <property name="value:21" value="lib/jetbrains-ideframework/idea-platform-src.zip" />
+                <property name="value:21" value="lib/sources/idea-platform-src.zip" />
               </node>
             </node>
           </node>
@@ -1785,7 +1785,7 @@
             <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1238512027805">
               <link role="attributeDeclaration:22" targetNodeId="4v.353793545802814494" resolveInfo="name" />
               <node role="value:22" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1238512027806">
-                <property name="value:21" value="lib/jetbrains-ideframework/idea-external-src.zip" />
+                <property name="value:21" value="lib/sources/idea-external-src.zip" />
               </node>
             </node>
           </node>
@@ -1893,14 +1893,14 @@
             <link role="attributeDeclaration:22" targetNodeId="4v.353793545802811537" resolveInfo="file" />
             <node role="value:22" type="jetbrains.mps.buildlanguage.structure.FileName:21" id="1238512224564">
               <node role="value:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1238512224565">
-                <property name="value:21" value="lib/jetbrains-ideframework/idea-external-src.zip" />
+                <property name="value:21" value="lib/sources/idea-external-src.zip" />
               </node>
             </node>
           </node>
           <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1238512027837">
             <link role="attributeDeclaration:22" targetNodeId="4v.353793545802811860" resolveInfo="prefix" />
             <node role="value:22" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1238512027838">
-              <property name="value:21" value="MPS/lib/jetbrains-ideframework" />
+              <property name="value:21" value="MPS/lib/sources" />
             </node>
           </node>
         </node>
@@ -3376,16 +3376,16 @@
         <property name="path:0" value="lib/jdom/jdom.jar" />
       </node>
       <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786088">
-        <property name="path:0" value="lib/jetbrains-ideframework/boot.jar" />
+        <property name="path:0" value="lib/boot.jar" />
       </node>
       <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786089">
-        <property name="path:0" value="lib/jetbrains-ideframework/bootstrap.jar" />
+        <property name="path:0" value="lib/bootstrap.jar" />
       </node>
       <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786090">
-        <property name="path:0" value="lib/jetbrains-ideframework/extensions.jar" />
+        <property name="path:0" value="lib/extensions.jar" />
       </node>
       <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786098">
-        <property name="path:0" value="lib/jetbrains-ideframework/util.jar" />
+        <property name="path:0" value="lib/util.jar" />
       </node>
       <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786103">
         <property name="path:0" value="lib/log4j/log4j.jar" />
@@ -4039,10 +4039,10 @@
               <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="1238505359848">
                 <property name="path:7" value="lib" />
               </node>
-              <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="1238505359849">
-                <property name="path:7" value="jetbrains-ideframework" />
+              <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="7964686922241506840">
+                <property name="path:7" value="sources" />
               </node>
-              <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="1238505359850">
+              <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="7964686922241506841">
                 <property name="path:7" value="idea-platform-src.zip" />
               </node>
             </node>

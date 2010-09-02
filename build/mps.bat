@@ -14,10 +14,10 @@ set JVM_ARGS=%ACC%
 set CLASSPATH="%PROJECT_HOME%lib\idea-patch.jar"
 set CLASSPATH=%CLASSPATH%;"%PROJECT_HOME%lib\mps.jar"
 set CLASSPATH=%CLASSPATH%;"%PROJECT_HOME%lib\jdom\jdom.jar"
-set CLASSPATH=%CLASSPATH%;"%PROJECT_HOME%lib\jetbrains-ideframework\boot.jar"
-set CLASSPATH=%CLASSPATH%;"%PROJECT_HOME%lib\jetbrains-ideframework\bootstrap.jar"
-set CLASSPATH=%CLASSPATH%;"%PROJECT_HOME%lib\jetbrains-ideframework\extensions.jar"
-set CLASSPATH=%CLASSPATH%;"%PROJECT_HOME%lib\jetbrains-ideframework\util.jar"
+set CLASSPATH=%CLASSPATH%;"%PROJECT_HOME%lib\boot.jar"
+set CLASSPATH=%CLASSPATH%;"%PROJECT_HOME%lib\bootstrap.jar"
+set CLASSPATH=%CLASSPATH%;"%PROJECT_HOME%lib\extensions.jar"
+set CLASSPATH=%CLASSPATH%;"%PROJECT_HOME%lib\util.jar"
 set CLASSPATH=%CLASSPATH%;"%PROJECT_HOME%lib\log4j\log4j.jar"
 
 pushd bin

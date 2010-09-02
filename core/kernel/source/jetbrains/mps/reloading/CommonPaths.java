@@ -132,11 +132,11 @@ public class CommonPaths {
     }
 
     addIfExists(result, "/lib/commons-lang/commons-lang-2.1.jar");
-    addIfExists(result, "/lib/picocontainer/picocontainer.jar");
+    addIfExists(result, "/lib/picocontainer.jar");
     addIfExists(result, "/lib/jdom/jdom.jar");
     addIfExists(result, "/lib/eclipse-compiler/ecj.jar");
 
-    addIfExists(result, "/lib/jetbrains-ideframework/annotations.jar");
+    addIfExists(result, "/lib/annotations.jar");
 
     return result;
   }
@@ -160,22 +160,22 @@ public class CommonPaths {
   }
 
   private static IClassPathItem getIDEAOpenAPIJar() {
-    String path = getIdeaPlatformPath() + File.separator + "platform-api.jar";
+    String path = libPath() + File.separator + "platform-api.jar";
     return ClassPathFactory.getInstance().createFromPath(path);
   }
 
   private static IClassPathItem getIDEAJar() {
-    String path = getIdeaPlatformPath() + File.separator + "platform.jar";
+    String path = libPath() + File.separator + "platform.jar";
     return ClassPathFactory.getInstance().createFromPath(path);
   }
 
   private static IClassPathItem getIDEAUtilJar() {
-    String path = getIdeaPlatformPath() + File.separator + "util.jar";
+    String path = libPath() + File.separator + "util.jar";
     return ClassPathFactory.getInstance().createFromPath(path);
   }
 
   private static IClassPathItem getIDEAExtensionsJar() {
-    String path = getIdeaPlatformPath() + File.separator + "extensions.jar";
+    String path = libPath() + File.separator + "extensions.jar";
     return ClassPathFactory.getInstance().createFromPath(path);
   }
 
@@ -304,10 +304,6 @@ public class CommonPaths {
   private static String libPath() {
     return PathManager.getHomePath() + File.separator + "lib"
       + File.separator;
-  }
-
-  private static String getIdeaPlatformPath() {
-    return libPath() + "jetbrains-ideframework";
   }
 
   //--------utils-----------

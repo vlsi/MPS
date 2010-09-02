@@ -44,8 +44,8 @@
     <zip destfile="${output.dir}/MPS-${build.number}-src.zip" filesonly="true">
       <zipfileset dir="${basedir}" prefix="MPS">
         <exclude name="${deploy.dir}/**" />
-        <exclude name="lib/jetbrains-ideframework/idea-platform-src.zip" />
-        <exclude name="lib/jetbrains-ideframework/idea-external-src.zip" />
+        <exclude name="lib/sources/idea-platform-src.zip" />
+        <exclude name="lib/sources/idea-external-src.zip" />
         <exclude name="**/*.class" />
         <exclude name="**/*.bdp" />
         <exclude name="**/*.pvk" />
@@ -56,7 +56,7 @@
         <exclude name="**/*.hprof" />
         <exclude name="integrationBuild*" />
       </zipfileset>
-      <zipfileset file="lib/jetbrains-ideframework/idea-external-src.zip" prefix="MPS/lib/jetbrains-ideframework" />
+      <zipfileset file="lib/sources/idea-external-src.zip" prefix="MPS/lib/sources" />
     </zip>
     <delete dir="${tmpdir}" />
   </target>
