@@ -28,7 +28,6 @@ import jetbrains.mps.generator.fileGenerator.CacheGenerationContext;
 import jetbrains.mps.generator.fileGenerator.CacheGenerator;
 import jetbrains.mps.generator.fileGenerator.FileGenerationManager;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
-import jetbrains.mps.generator.index.ModelDigestHelper;
 import jetbrains.mps.ide.generator.index.ModelDigestIndex;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;

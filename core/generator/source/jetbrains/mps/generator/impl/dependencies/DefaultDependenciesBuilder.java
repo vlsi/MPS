@@ -1,7 +1,7 @@
 package jetbrains.mps.generator.impl.dependencies;
 
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.generator.index.ModelDigestHelper;
+import jetbrains.mps.generator.ModelDigestHelper;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;

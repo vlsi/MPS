@@ -23,8 +23,8 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.FileBasedIndex.ValueProcessor;
-import jetbrains.mps.generator.index.ModelDigestHelper;
-import jetbrains.mps.generator.index.ModelDigestHelper.DigestProvider;
+import jetbrains.mps.generator.ModelDigestHelper;
+import jetbrains.mps.generator.ModelDigestHelper.DigestProvider;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
