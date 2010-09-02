@@ -45,27 +45,6 @@
   <component name="SvnBranchConfigurationManager">
     <option name="myConfigurationMap">
       <map>
-        <entry key="$PROJECT_DIR$/../../../CHARISMA">
-          <value>
-            <SvnBranchConfiguration>
-              <option name="branchMap">
-                <map>
-                  <entry key="http://svn.jetbrains.org/teamsys/tags">
-                    <value>
-                      <list />
-                    </value>
-                  </entry>
-                </map>
-              </option>
-              <option name="branchUrls">
-                <list>
-                  <option value="http://svn.jetbrains.org/teamsys/tags" />
-                </list>
-              </option>
-              <option name="trunkUrl" value="http://svn.jetbrains.org/teamsys/trunk" />
-            </SvnBranchConfiguration>
-          </value>
-        </entry>
         <entry key="$APPLICATION_HOME_DIR$">
           <value>
             <SvnBranchConfiguration>
@@ -90,47 +69,6 @@
                 </list>
               </option>
               <option name="trunkUrl" value="http://svn.jetbrains.org/mps/trunk" />
-            </SvnBranchConfiguration>
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/../../../OAF">
-          <value>
-            <SvnBranchConfiguration>
-              <option name="trunkUrl" value="http://svn.jetbrains.org/oaf/trunk" />
-            </SvnBranchConfiguration>
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/../../../TREEWRITE">
-          <value>
-            <SvnBranchConfiguration>
-              <option name="trunkUrl" value="http://svn.jetbrains.org/mps-app/treewrite/trunk" />
-            </SvnBranchConfiguration>
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/../../../WEBR-DNQ">
-          <value>
-            <SvnBranchConfiguration>
-              <option name="branchMap">
-                <map>
-                  <entry key="http://svn.jetbrains.org/webr-dnq/branches">
-                    <value>
-                      <list />
-                    </value>
-                  </entry>
-                  <entry key="http://svn.jetbrains.org/webr-dnq/tags">
-                    <value>
-                      <list />
-                    </value>
-                  </entry>
-                </map>
-              </option>
-              <option name="branchUrls">
-                <list>
-                  <option value="http://svn.jetbrains.org/webr-dnq/branches" />
-                  <option value="http://svn.jetbrains.org/webr-dnq/tags" />
-                </list>
-              </option>
-              <option name="trunkUrl" value="http://svn.jetbrains.org/webr-dnq/trunk" />
             </SvnBranchConfiguration>
           </value>
         </entry>
