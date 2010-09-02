@@ -474,16 +474,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
 
     // broken model fixing code
     if (currentVersion < usedVersion) {
-
-      //user might have forgotten to commit .metadata file
-      if (currentVersion == -1) {
-        if (usedModelDescriptor instanceof EditableSModelDescriptor) {
-          //usedModelDescriptor.getSModel();
-        }
-
-        if (usedModelDescriptor.getVersion() == usedVersion) return false;
-      }
-
       LOG.error("Model version mismatch for import " + usedModelDescriptor.getSModelReference().getSModelFqName() + " in model " + getSModelReference().getSModelFqName());
       LOG.error("Used version = " + usedVersion + ", current version = " + currentVersion);
       model.updateImportedModelUsedVersion(usedModelDescriptor.getSModelReference(), currentVersion);
