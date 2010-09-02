@@ -17,10 +17,11 @@ package jetbrains.mps.samples;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class SamplesManager {
   private static SamplesManager ourInstance = new SamplesManager();
-  private List<SamplesInfo> myComponents = new ArrayList<SamplesInfo>();
+  private List<SamplesInfo> myComponents = new CopyOnWriteArrayList<SamplesInfo>();
 
   public static SamplesManager getInstance() {
     return ourInstance;
