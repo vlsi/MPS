@@ -58,7 +58,8 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
   <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
   <languageAspect modelUID="r:550fbd90-c9f2-4576-a8a6-223eca16d68b(jetbrains.mps.baseLanguage.runConfigurations.structure)" version="0" />
-  <maxImportIndex value="190" />
+  <languageAspect modelUID="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.analyzers.structure)" version="0" />
+  <maxImportIndex value="191" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" />
   <import index="4" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
@@ -110,10 +111,11 @@
   <import index="183" modelUID="f:java_stub#jetbrains.mps.debug.runtime(jetbrains.mps.debug.runtime@java_stub)" version="-1" />
   <import index="184" modelUID="r:82f15792-6966-47aa-8004-b293ab2bcfd2(jetbrains.mps.lang.plugin.run)" version="-1" />
   <import index="185" modelUID="f:java_stub#jetbrains.mps.lang.dataFlow.framework(jetbrains.mps.lang.dataFlow.framework@java_stub)" version="-1" />
-  <import index="186" modelUID="r:fc545d82-6d72-41b7-a7f1-93ef15402ef1(jetbrains.mps.analyzers.mpsAnalyzers.nullable)" version="0" />
+  <import index="186" modelUID="r:fc545d82-6d72-41b7-a7f1-93ef15402ef1(jetbrains.mps.analyzers.mpsAnalyzers.nullable)" version="-1" />
   <import index="187" modelUID="r:c6e01f98-6040-4dd0-a88b-62f17e77e610(jetbrains.mps.lang.dataFlow.presentation)" version="-1" />
   <import index="188" modelUID="r:00000000-0000-4000-0000-011c8959037c(jetbrains.mps.lang.dataFlow.plugin)" version="-1" />
   <import index="190" modelUID="r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)" version="-1" />
+  <import index="191" modelUID="f:java_stub#jetbrains.mps.plugins(jetbrains.mps.plugins@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration:23" id="1205247737002">
     <property name="name:23" value="BaseLanguageModelActionsInternal" />
     <property name="package:23" value="Actions.Groups" />
@@ -9891,7 +9893,6 @@
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1594966379433202447" />
     </node>
   </node>
-  <visible index="2" modelUID="f:java_stub#jetbrains.mps.plugins(jetbrains.mps.plugins@java_stub)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5002400195358095186">
     <property name="package:3" value="highlighters" />
     <property name="name:3" value="OverridenMethodEditorMessage" />
@@ -9916,8 +9917,8 @@
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="3488726975322984539" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="3488726975322984541" />
       <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3488726975322984554">
-        <link role="baseMethodDeclaration:3" targetNodeId="2v.~MacrosUtil.expandPath(java.lang.String,java.lang.String):java.lang.String" resolveInfo="expandPath" />
-        <link role="classConcept:3" targetNodeId="2v.~MacrosUtil" resolveInfo="MacrosUtil" />
+        <link role="baseMethodDeclaration:3" targetNodeId="191.~MacrosUtil.expandPath(java.lang.String,java.lang.String):java.lang.String" resolveInfo="expandPath" />
+        <link role="classConcept:3" targetNodeId="191.~MacrosUtil" resolveInfo="MacrosUtil" />
         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="3488726975322984557">
           <property name="value:3" value="${language_descriptor}/icons/gutter/overridenMethod.png" />
         </node>
@@ -9931,8 +9932,8 @@
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="3488726975322984545" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="3488726975322984547" />
       <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3488726975322984564">
-        <link role="baseMethodDeclaration:3" targetNodeId="2v.~MacrosUtil.expandPath(java.lang.String,java.lang.String):java.lang.String" resolveInfo="expandPath" />
-        <link role="classConcept:3" targetNodeId="2v.~MacrosUtil" resolveInfo="MacrosUtil" />
+        <link role="baseMethodDeclaration:3" targetNodeId="191.~MacrosUtil.expandPath(java.lang.String,java.lang.String):java.lang.String" resolveInfo="expandPath" />
+        <link role="classConcept:3" targetNodeId="191.~MacrosUtil" resolveInfo="MacrosUtil" />
         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="3488726975322984566">
           <property name="value:3" value="${language_descriptor}/icons/gutter/implementedMethod.png" />
         </node>
@@ -10161,8 +10162,8 @@
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="113917032267548860" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="113917032267548861" />
       <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="113917032267548862">
-        <link role="baseMethodDeclaration:3" targetNodeId="2v.~MacrosUtil.expandPath(java.lang.String,java.lang.String):java.lang.String" resolveInfo="expandPath" />
-        <link role="classConcept:3" targetNodeId="2v.~MacrosUtil" resolveInfo="MacrosUtil" />
+        <link role="baseMethodDeclaration:3" targetNodeId="191.~MacrosUtil.expandPath(java.lang.String,java.lang.String):java.lang.String" resolveInfo="expandPath" />
+        <link role="classConcept:3" targetNodeId="191.~MacrosUtil" resolveInfo="MacrosUtil" />
         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="113917032267548863">
           <property name="value:3" value="${language_descriptor}/icons/gutter/overridingMethod.png" />
         </node>
@@ -10176,8 +10177,8 @@
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="113917032267548866" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="113917032267548867" />
       <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="113917032267548868">
-        <link role="baseMethodDeclaration:3" targetNodeId="2v.~MacrosUtil.expandPath(java.lang.String,java.lang.String):java.lang.String" resolveInfo="expandPath" />
-        <link role="classConcept:3" targetNodeId="2v.~MacrosUtil" resolveInfo="MacrosUtil" />
+        <link role="baseMethodDeclaration:3" targetNodeId="191.~MacrosUtil.expandPath(java.lang.String,java.lang.String):java.lang.String" resolveInfo="expandPath" />
+        <link role="classConcept:3" targetNodeId="191.~MacrosUtil" resolveInfo="MacrosUtil" />
         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="113917032267548869">
           <property name="value:3" value="${language_descriptor}/icons/gutter/implementingMethod.png" />
         </node>
@@ -13070,8 +13071,8 @@
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="3836499504550260394" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="3836499504550260395" />
       <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3836499504550260396">
-        <link role="baseMethodDeclaration:3" targetNodeId="2v.~MacrosUtil.expandPath(java.lang.String,java.lang.String):java.lang.String" resolveInfo="expandPath" />
-        <link role="classConcept:3" targetNodeId="2v.~MacrosUtil" resolveInfo="MacrosUtil" />
+        <link role="baseMethodDeclaration:3" targetNodeId="191.~MacrosUtil.expandPath(java.lang.String,java.lang.String):java.lang.String" resolveInfo="expandPath" />
+        <link role="classConcept:3" targetNodeId="191.~MacrosUtil" resolveInfo="MacrosUtil" />
         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="3836499504550260397">
           <property name="value:3" value="${language_descriptor}/icons/gutter/overridenMethod.png" />
         </node>
@@ -13085,8 +13086,8 @@
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="3836499504550260400" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="3836499504550260401" />
       <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3836499504550260402">
-        <link role="baseMethodDeclaration:3" targetNodeId="2v.~MacrosUtil.expandPath(java.lang.String,java.lang.String):java.lang.String" resolveInfo="expandPath" />
-        <link role="classConcept:3" targetNodeId="2v.~MacrosUtil" resolveInfo="MacrosUtil" />
+        <link role="baseMethodDeclaration:3" targetNodeId="191.~MacrosUtil.expandPath(java.lang.String,java.lang.String):java.lang.String" resolveInfo="expandPath" />
+        <link role="classConcept:3" targetNodeId="191.~MacrosUtil" resolveInfo="MacrosUtil" />
         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="3836499504550260403">
           <property name="value:3" value="${language_descriptor}/icons/gutter/implementedMethod.png" />
         </node>
@@ -13390,9 +13391,9 @@
                 </node>
               </node>
             </node>
-            <node role="initializer:3" type="jetbrains.mps.analyzers.structure.AnalyzerRunnerCreator" id="6868777471677670385">
-              <link role="analyzer" targetNodeId="190.6868777471677432036" resolveInfo="Nullable" />
-              <node role="nodeToCheck" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6868777471677670386">
+            <node role="initializer:3" type="jetbrains.mps.analyzers.structure.AnalyzerRunnerCreator:0" id="6868777471677670385">
+              <link role="analyzer:0" targetNodeId="190.6868777471677432036" resolveInfo="Nullable" />
+              <node role="nodeToCheck:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6868777471677670386">
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="6868777471677703719" />
                 <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation:23" id="6868777471677670388">
                   <link role="member:23" targetNodeId="6868777471677670372" resolveInfo="node" />
