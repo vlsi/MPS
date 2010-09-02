@@ -17,6 +17,9 @@ public class ToolsInternal_ActionGroup extends GeneratedActionGroup {
       ToolsInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RemoveTransientModels_Action", "jetbrains.mps.ide");
       ToolsInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.DumpKeyStrokes_Action", "jetbrains.mps.ide");
       ToolsInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.OptimizeImportsInGlobalScope_Action", "jetbrains.mps.ide");
+      ToolsInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FixDependenciesEverywhere_Action", "jetbrains.mps.ide");
+      ToolsInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RemoveLanguageDesignDevKitFromModels_Action", "jetbrains.mps.ide");
+      ToolsInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AddGeneralPurposeDevKitToLanguageModels_Action", "jetbrains.mps.ide");
       ToolsInternal_ActionGroup.this.addSeparator();
     } catch (Throwable t) {
       LOG.error("User group error", t);

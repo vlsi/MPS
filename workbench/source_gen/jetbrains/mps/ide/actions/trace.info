@@ -474,10 +474,13 @@
     <nodeInfo nodeId="1216663315861" fileName="Tools_ActionGroup.java" startLine="18" startPosition="117" endLine="19" endPosition="116" />
     <nodeInfo nodeId="1241287334170" fileName="ToolsInternal_ActionGroup.java" startLine="18" startPosition="119" endLine="19" endPosition="133" />
     <nodeInfo nodeId="1234190474703" fileName="Tools_ActionGroup.java" startLine="19" startPosition="116" endLine="20" endPosition="110" />
-    <nodeInfo nodeId="1207148387807" fileName="ToolsInternal_ActionGroup.java" startLine="19" startPosition="133" endLine="20" endPosition="52" />
+    <nodeInfo nodeId="357939571037264853" fileName="ToolsInternal_ActionGroup.java" startLine="19" startPosition="133" endLine="20" endPosition="130" />
     <nodeInfo nodeId="4234072580447136276" fileName="Tools_ActionGroup.java" startLine="20" startPosition="110" endLine="21" endPosition="113" />
+    <nodeInfo nodeId="357939571037264855" fileName="ToolsInternal_ActionGroup.java" startLine="20" startPosition="130" endLine="21" endPosition="141" />
     <nodeInfo nodeId="1217598172089" fileName="Tools_ActionGroup.java" startLine="21" startPosition="113" endLine="22" endPosition="79" />
+    <nodeInfo nodeId="357939571037315243" fileName="ToolsInternal_ActionGroup.java" startLine="21" startPosition="141" endLine="22" endPosition="144" />
     <nodeInfo nodeId="1216662587333" fileName="Tools_ActionGroup.java" startLine="22" startPosition="79" endLine="23" endPosition="44" />
+    <nodeInfo nodeId="1207148387807" fileName="ToolsInternal_ActionGroup.java" startLine="22" startPosition="144" endLine="23" endPosition="52" />
     <nodeInfo nodeId="6840593892233920147" fileName="Tools_ActionGroup.java" startLine="23" startPosition="44" endLine="24" endPosition="106" />
     <nodeInfo nodeId="4639644606316722084" fileName="Tools_ActionGroup.java" startLine="24" startPosition="106" endLine="25" endPosition="108" />
     <nodeInfo nodeId="1215010257642" fileName="Tools_ActionGroup.java" startLine="25" startPosition="108" endLine="26" endPosition="44" />
@@ -3167,6 +3170,37 @@
     <scopeInfo nodeId="3575273646046443877" fileName="DeleteModels_Action.java" startLine="94" startPosition="27" endLine="100" endPosition="11" />
     <scopeInfo nodeId="3575273646046443875" fileName="DeleteModels_Action.java" startLine="93" startPosition="69" endLine="102" endPosition="0" />
     <unitInfo nodeId="3575273646046443875" fileName="DeleteModels_Action.java" startLine="93" startPosition="57" endLine="102" endPosition="7" unitName="jetbrains.mps.ide.actions.DeleteModels_Action$1" />
+  </root>
+  <root nodeId="357939571037212138">
+    <nodeInfo nodeId="357939571037434813" fileName="RemoveLanguageDesignDevKitFromModels_Action.java" startLine="59" startPosition="100" endLine="60" endPosition="82" />
+    <nodeInfo nodeId="357939571037434823" fileName="RemoveLanguageDesignDevKitFromModels_Action.java" startLine="62" startPosition="7" endLine="63" endPosition="47" />
+    <nodeInfo nodeId="357939571037434810" fileName="RemoveLanguageDesignDevKitFromModels_Action.java" startLine="58" startPosition="101" endLine="61" endPosition="9" />
+    <nodeInfo nodeId="357939571037434804" fileName="RemoveLanguageDesignDevKitFromModels_Action.java" startLine="57" startPosition="9" endLine="62" endPosition="7" />
+    <scopeInfo nodeId="357939571037434812" fileName="RemoveLanguageDesignDevKitFromModels_Action.java" startLine="59" startPosition="100" endLine="60" endPosition="82" />
+    <scopeInfo nodeId="357939571037434809" fileName="RemoveLanguageDesignDevKitFromModels_Action.java" startLine="58" startPosition="101" endLine="61" endPosition="9" />
+    <scopeInfo nodeId="357939571037434810" fileName="RemoveLanguageDesignDevKitFromModels_Action.java" startLine="58" startPosition="101" endLine="61" endPosition="9" />
+    <scopeInfo nodeId="357939571037434804" fileName="RemoveLanguageDesignDevKitFromModels_Action.java" startLine="57" startPosition="9" endLine="62" endPosition="7" />
+  </root>
+  <root nodeId="357939571037213591">
+    <nodeInfo nodeId="357939571037436123" fileName="FixDependenciesEverywhere_Action.java" startLine="24" startPosition="0" endLine="25" endPosition="36" />
+    <nodeInfo nodeId="357939571037436116" fileName="FixDependenciesEverywhere_Action.java" startLine="68" startPosition="59" endLine="69" endPosition="19" />
+    <nodeInfo nodeId="357939571037436125" fileName="FixDependenciesEverywhere_Action.java" startLine="70" startPosition="9" endLine="71" endPosition="102" />
+    <nodeInfo nodeId="357939571037436137" fileName="FixDependenciesEverywhere_Action.java" startLine="72" startPosition="7" endLine="73" endPosition="79" />
+    <nodeInfo nodeId="357939571037436105" fileName="FixDependenciesEverywhere_Action.java" startLine="67" startPosition="114" endLine="70" endPosition="9" />
+    <nodeInfo nodeId="357939571037436094" fileName="FixDependenciesEverywhere_Action.java" startLine="66" startPosition="9" endLine="72" endPosition="7" />
+    <scopeInfo nodeId="357939571037436107" fileName="FixDependenciesEverywhere_Action.java" startLine="68" startPosition="59" endLine="69" endPosition="19" />
+    <scopeInfo nodeId="357939571037436097" fileName="FixDependenciesEverywhere_Action.java" startLine="67" startPosition="114" endLine="71" endPosition="102" />
+    <scopeInfo nodeId="357939571037436094" fileName="FixDependenciesEverywhere_Action.java" startLine="66" startPosition="9" endLine="72" endPosition="7" />
+  </root>
+  <root nodeId="357939571037281073">
+    <nodeInfo nodeId="357939571037433535" fileName="AddGeneralPurposeDevKitToLanguageModels_Action.java" startLine="59" startPosition="100" endLine="60" endPosition="68" />
+    <nodeInfo nodeId="357939571037434664" fileName="AddGeneralPurposeDevKitToLanguageModels_Action.java" startLine="62" startPosition="7" endLine="63" endPosition="47" />
+    <nodeInfo nodeId="357939571037315366" fileName="AddGeneralPurposeDevKitToLanguageModels_Action.java" startLine="58" startPosition="101" endLine="61" endPosition="9" />
+    <nodeInfo nodeId="357939571037315244" fileName="AddGeneralPurposeDevKitToLanguageModels_Action.java" startLine="57" startPosition="9" endLine="62" endPosition="7" />
+    <scopeInfo nodeId="357939571037315369" fileName="AddGeneralPurposeDevKitToLanguageModels_Action.java" startLine="59" startPosition="100" endLine="60" endPosition="68" />
+    <scopeInfo nodeId="357939571037315247" fileName="AddGeneralPurposeDevKitToLanguageModels_Action.java" startLine="58" startPosition="101" endLine="61" endPosition="9" />
+    <scopeInfo nodeId="357939571037315366" fileName="AddGeneralPurposeDevKitToLanguageModels_Action.java" startLine="58" startPosition="101" endLine="61" endPosition="9" />
+    <scopeInfo nodeId="357939571037315244" fileName="AddGeneralPurposeDevKitToLanguageModels_Action.java" startLine="57" startPosition="9" endLine="62" endPosition="7" />
   </root>
   <root nodeId="368497359753393666">
     <nodeInfo nodeId="3619186996280266776" fileName="ConstraintsChecker.java" startLine="28" startPosition="142" endLine="29" endPosition="124" />
