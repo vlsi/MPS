@@ -11,26 +11,17 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="asm" level="project" />
+    <orderEntry type="library" name="Beansbinding" level="project" />
     <orderEntry type="module" module-name="MPS" />
     <orderEntry type="module" module-name="collections" />
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$APPLICATION_HOME_DIR$/lib/junit.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
     <orderEntry type="module" module-name="test" />
-    <orderEntry type="library" name="Beansbinding" level="project" />
     <orderEntry type="module" module-name="baseLanguageInternal" />
     <orderEntry type="module" module-name="kernel" />
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="debug" />
     <orderEntry type="module" module-name="runConfigurations" />
     <orderEntry type="module" module-name="analyzers" />
-    <orderEntry type="library" name="asm" level="project" />
   </component>
 </module>
 
