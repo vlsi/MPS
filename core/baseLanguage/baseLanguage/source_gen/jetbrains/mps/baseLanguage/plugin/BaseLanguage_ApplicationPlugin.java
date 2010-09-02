@@ -14,6 +14,7 @@ public class BaseLanguage_ApplicationPlugin extends BaseApplicationPlugin {
   public List<BaseGroup> initGroups() {
     List<BaseGroup> groups = ListSequence.fromList(new ArrayList<BaseGroup>());
     String moduleName = "jetbrains.mps.baseLanguage";
+    this.addGroup(groups, moduleName, "jetbrains.mps.baseLanguage.plugin.AnalyzersActions_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.baseLanguage.plugin.BaseLanguageEditorPopupInternal_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.baseLanguage.plugin.BaseLanguageEditorPopup_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.baseLanguage.plugin.BaseLanguageModelActionsInternal_ActionGroup");

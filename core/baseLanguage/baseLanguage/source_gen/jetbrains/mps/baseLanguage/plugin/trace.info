@@ -1829,6 +1829,16 @@
     <unitInfo nodeId="6556826051425136622" fileName="GoToInheritedClassifier_Action.java" startLine="124" startPosition="47" endLine="133" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.GoToInheritedClassifier_Action$1" />
     <unitInfo nodeId="6556826051425136662" fileName="GoToInheritedClassifier_Action.java" startLine="136" startPosition="44" endLine="146" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.GoToInheritedClassifier_Action$2" />
   </root>
+  <root nodeId="6868777471677670371">
+    <nodeInfo nodeId="6868777471677670372" fileName="ShowNullDFA_Action.java" startLine="23" startPosition="0" endLine="24" endPosition="21" />
+    <nodeInfo nodeId="6868777471677670375" fileName="ShowNullDFA_Action.java" startLine="24" startPosition="21" endLine="25" endPosition="36" />
+    <nodeInfo nodeId="6868777471677670376" fileName="ShowNullDFA_Action.java" startLine="25" startPosition="36" endLine="26" endPosition="22" />
+    <nodeInfo nodeId="6868777471677670379" fileName="ShowNullDFA_Action.java" startLine="80" startPosition="9" endLine="81" endPosition="114" />
+    <nodeInfo nodeId="6868777471677670389" fileName="ShowNullDFA_Action.java" startLine="81" startPosition="114" endLine="82" endPosition="113" />
+  </root>
+  <root nodeId="6868777471677670401">
+    <nodeInfo nodeId="6868777471677703720" fileName="AnalyzersActions_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="136" />
+  </root>
   <root nodeId="8596238429278788966">
     <nodeInfo nodeId="8596238429278845812" fileName="GoToOverridingMethod_Action.java" startLine="40" startPosition="0" endLine="41" endPosition="27" />
     <nodeInfo nodeId="1910641662757800562" fileName="GoToOverridingMethod_Action.java" startLine="41" startPosition="27" endLine="42" endPosition="42" />

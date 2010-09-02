@@ -1577,10 +1577,10 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.NullableAnalyzerRunner" />
-    <classNode dependClassName="jetbrains.mps.analyzers.mpsAnalyzers.nullable.NullableState" />
     <classNode dependClassName="jetbrains.mps.analyzers.runtime.framework.CustomAnalyzerRunner" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IOperation_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.NullableAnalyzerRunner" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.NullableState" />
     <classNode dependClassName="jetbrains.mps.intentions.BaseIntentionProvider" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
