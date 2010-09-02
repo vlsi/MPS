@@ -16,15 +16,12 @@
 package jetbrains.mps.util;
 
 
-import sun.misc.Launcher;
-
 import java.io.*;
-import java.net.URISyntaxException;
-import java.net.URL;
 import java.util.Iterator;
 import java.util.List;
 import java.util.jar.JarOutputStream;
 import java.util.jar.Manifest;
+import java.util.regex.Pattern;
 import java.util.zip.ZipOutputStream;
 
 /**
@@ -32,24 +29,6 @@ import java.util.zip.ZipOutputStream;
  */
 public class FileUtil {
   private static final String[] IGNORED_DIRS = new String[]{".svn", ".git", "_svn"};
-
-  public static File getJREHome() {
-    return getRTJar().getParentFile().getParentFile();
-  }
-
-  public static File getRTJar() {
-    for (URL url : Launcher.getBootstrapClassPath().getURLs()) {
-      if (url.getPath().endsWith("rt.jar")) {
-        try {
-          return new File(url.toURI());
-        } catch (URISyntaxException e) {
-          e.printStackTrace();
-        }
-        return null;
-      }
-    }
-    return null;
-  }
 
   public static File createTmpDir() {
     File tmp = getTempDir();
@@ -283,14 +262,6 @@ public class FileUtil {
     }
   }
 
-  public static String readLine(File file, int lineNo) {
-    try {
-      return readLine(new FileReader(file), lineNo);
-    } catch (IOException e) {
-      throw new RuntimeException(e);
-    }
-  }
-
   public static String readLine(Reader reader, int lineNo) {
     BufferedReader r = null;
     try {
@@ -383,5 +354,54 @@ public class FileUtil {
       }
     }
     return false;
+  }
+
+
+  public static String getRelativePath(String targetPath, String basePath, String pathSeparator) {
+    String[] base = basePath.split(Pattern.quote(pathSeparator));
+    String[] target = targetPath.split(Pattern.quote(pathSeparator));
+
+    StringBuffer common = new StringBuffer();
+
+    int commonIndex = 0;
+    while (commonIndex < target.length && commonIndex < base.length
+      && target[commonIndex].equals(base[commonIndex])) {
+      common.append(target[commonIndex]).append(pathSeparator);
+      commonIndex++;
+    }
+
+    if (commonIndex == 0) {
+      throw new PathResolutionException("No common path element found for '" + targetPath + "' and '" + basePath
+        + "'");
+    }
+
+    boolean baseIsFile = true;
+
+    File baseResource = new File(basePath);
+
+    if (baseResource.exists()) {
+      baseIsFile = baseResource.isFile();
+
+    } else if (basePath.endsWith(pathSeparator)) {
+      baseIsFile = false;
+    }
+
+    StringBuffer relative = new StringBuffer();
+
+    if (base.length != commonIndex) {
+      int numDirsUp = baseIsFile ? base.length - commonIndex - 1 : base.length - commonIndex;
+
+      for (int i = 0; i < numDirsUp; i++) {
+        relative.append("..").append(pathSeparator);
+      }
+    }
+    relative.append(targetPath.substring(common.length()));
+    return relative.toString();
+  }
+
+  static class PathResolutionException extends RuntimeException {
+    PathResolutionException(String msg) {
+      super(msg);
+    }
   }
 }

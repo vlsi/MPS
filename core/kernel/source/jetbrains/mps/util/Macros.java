@@ -175,13 +175,8 @@ public abstract class Macros {
     // we use it here also
     path = FileUtil.getCanonicalPath(path);
     assert path.length() >= prefix.length() : "path: " + path + "; prefix: " + prefix;
-    String result = path.substring(prefix.length());
 
-    if (result.length() == 0) {
-      return "" + File.separatorChar;
-    }
-
-    return result;
+    return File.separator + FileUtil.getRelativePath(path, prefix, File.separator);
   }
 
   protected String removePrefix(String path, String prefix) {
@@ -200,9 +195,7 @@ public abstract class Macros {
     if (!path.toLowerCase().startsWith(fullPart.toLowerCase())) return false;
 
     String pathReplaced = FileUtil.getCanonicalPath(with + path.substring(with.length()));
-    boolean sameObjects = path.equals(pathReplaced);
-
-    return sameObjects;
+    return path.equals(pathReplaced);
   }
 
   private static class LanguageDescriptorMacros extends Macros {
@@ -282,8 +275,8 @@ public abstract class Macros {
       }
 
       String samplesPath = WorkbenchPathManager.getSamplesPath();
-      boolean samplesProject = samplesPath!=null && pathStartsWith(absolutePath, samplesPath);
-      
+      boolean samplesProject = samplesPath != null && pathStartsWith(absolutePath, samplesPath);
+
       if (samplesProject || pathStartsWith(absolutePath, prefix)) {
         String relationalPath = shrink(absolutePath, prefix);
         return PROJECT + relationalPath;
