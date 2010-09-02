@@ -487,7 +487,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
       //user might have forgotten to commit .metadata file
       if (currentVersion == -1) {
         if (usedModelDescriptor instanceof EditableSModelDescriptor) {
-          usedModelDescriptor.getSModel();
+          //usedModelDescriptor.getSModel();
         }
 
         if (usedModelDescriptor.getVersion() == usedVersion) return false;
