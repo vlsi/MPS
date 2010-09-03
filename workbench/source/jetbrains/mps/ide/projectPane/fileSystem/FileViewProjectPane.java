@@ -28,6 +28,7 @@ import com.intellij.openapi.fileEditor.FileEditorManagerEvent;
 import com.intellij.openapi.fileEditor.FileEditorManagerListener;
 import com.intellij.openapi.fileEditor.ex.IdeDocumentHistory;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.util.ActionCallback;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vcs.FileStatusListener;
@@ -54,6 +55,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.vcs.ChangedListener;
+import jetbrains.mps.vcs.GlobalClassPathIndex;
 import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
@@ -89,6 +92,11 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
   private VcsListener myDirectoryMappingListener;
   private VirtualFileManagerListener myVirtualFileManagerListener;
   private JScrollPane myScrollPane;
+  private ChangedListener myChangedListener = new ChangedListener() {
+    public void changed() {
+      rebuildTreeLater();
+    }
+  };
 
   @Override
   public void addToolbarActions(DefaultActionGroup actionGroup) {
@@ -121,10 +129,6 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
 
   public Project getProject() {
     return myProject;
-  }
-
-  public ProjectView getProjectView() {
-    return myProjectView;
   }
 
   public void rebuildTreeLater() {
@@ -203,6 +207,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
   }
 
   private void installListeners() {
+    GlobalClassPathIndex.getInstance().addChangedListener(myChangedListener);
     FileStatusManager.getInstance(myProject).addFileStatusListener(myFileStatusListener = new FileStatusChangeListener());
     VirtualFileManager.getInstance().addVirtualFileListener(myFileListener = new FileChangesListener());
     VirtualFileManager.getInstance().addVirtualFileManagerListener(myVirtualFileManagerListener = new RefreshListener());
@@ -240,8 +245,8 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     VirtualFileManager.getInstance().removeVirtualFileManagerListener(myVirtualFileManagerListener);
     myProject.getComponent(ProjectLevelVcsManager.class).removeVcsListener(myDirectoryMappingListener);
     ChangeListManager.getInstance(myProject).removeChangeListListener(myChangeListListener);
-
     myMessageBusConnection.disconnect();
+    GlobalClassPathIndex.getInstance().removeChangedListener(myChangedListener);
   }
 
   private boolean isInitialized() {
@@ -295,14 +300,6 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
       return new FilePaneCopyProvider();
     }
     return super.getData(dataId);
-  }
-
-  private void getFiles(AbstractFileTreeNode node, Collection<VirtualFile> files) {
-    files.add(node.getFile());
-    ((MPSTreeNode) node).init();
-    for (AbstractFileTreeNode child : node.getChildren()) {
-      getFiles(child, files);
-    }
   }
 
   private void openEditor() {

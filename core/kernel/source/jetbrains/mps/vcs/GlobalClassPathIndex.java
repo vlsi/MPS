@@ -41,6 +41,7 @@ import java.util.*;
 
 public class GlobalClassPathIndex implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(GlobalClassPathIndex.class);
+  private List<ChangedListener> myListeners = new ArrayList<ChangedListener>();
 
   public static GlobalClassPathIndex getInstance() {
     return ApplicationManager.getApplication().getComponent(GlobalClassPathIndex.class);
@@ -65,17 +66,7 @@ public class GlobalClassPathIndex implements ApplicationComponent {
       if (changedModule.isPackaged()) return;
       GlobalClassPathIndex.this.moduleInitialized(changedModule);
       if (myIsChanged) {
-        //todo this is a hack. It's a bad code which is also very slow
-        for (Project p: ProjectManager.getInstance().getOpenProjects()){
-          ProjectView view = ProjectView.getInstance(p);
-          for (String id: view.getPaneIds()){
-            AbstractProjectViewPane pane = view.getProjectViewPaneById(id);
-            if (pane instanceof FileViewProjectPane){
-              ((FileViewProjectPane)pane).rebuildTreeLater();
-            }
-          }
-        }
-        //hack end
+        callChangedListeners();
 
         myIsChanged = false;
       }
@@ -86,6 +77,20 @@ public class GlobalClassPathIndex implements ApplicationComponent {
       GlobalClassPathIndex.this.moduleRemoved(module);
     }
   };
+
+  private void callChangedListeners() {
+    for (ChangedListener l:myListeners){
+      l.changed();
+    }
+  }
+
+  public void addChangedListener(ChangedListener l){
+    myListeners.add(l);
+  }
+
+  public void removeChangedListener(ChangedListener l){
+    myListeners.remove(l);
+  }
 
   @SuppressWarnings({"UnusedDeclaration"}) //component dependency 
   public GlobalClassPathIndex(final MPSModuleRepository moduleRepository, VcsContextFactory factory) {
