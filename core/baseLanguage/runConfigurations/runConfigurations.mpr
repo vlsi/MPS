@@ -19,7 +19,9 @@
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="MPSProject">
-    <projectSolutions />
+    <projectSolutions>
+      <solutionPath path="${mps_home}/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.runtime/jetbrains.mps.samples.lambdaCalculus.runtime.msd" />
+    </projectSolutions>
     <projectLanguages>
       <languagePath path="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpl" folder="usages.baselang" />
       <languagePath path="${project}/runConfigurations.mpl" />
@@ -28,7 +30,7 @@
       <languagePath path="${mps_home}/platform/buildlanguage/languages/buildlanguage/buildlanguage.mpl" folder="usages.build" />
       <languagePath path="${mps_home}/platform/buildlanguage/languages/custommps/custommps.mpl" folder="usages.build" />
       <languagePath path="${mps_home}/platform/buildlanguage/languages/packaging/packaging.mpl" folder="usages.build" />
-      <languagePath path="${project}/../lambda/languages/lambdaCalculus/lambdaCalculus.mpl" folder="usages.lambda" />
+      <languagePath path="${mps_home}/samples/lambda/languages/lambdaCalculus/lambdaCalculus.mpl" folder="usages" />
       <languagePath path="${mps_home}/workbench/ideUiLanguage/uiLanguage.mpl" />
     </projectLanguages>
     <projectDevkits />
