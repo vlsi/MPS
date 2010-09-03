@@ -53,7 +53,7 @@ public abstract class IntroduceVariableRefactoring {
       if (expectedVariableName != null) {
         SetSequence.fromSet(expectedNames).addElement(NameUtil.decapitalize(expectedVariableName));
       }
-      List<String> variableSuffixes = Type_Behavior.call_getVariableSuffixes_1213877337304(SNodeOperations.cast(expressionType, "jetbrains.mps.baseLanguage.structure.Type"));
+      List<String> variableSuffixes = Type_Behavior.call_getVariableSuffixes_1213877337304(myExpressionType);
       if (variableSuffixes != null) {
         SetSequence.fromSet(expectedNames).addSequence(ListSequence.fromList(variableSuffixes));
       }

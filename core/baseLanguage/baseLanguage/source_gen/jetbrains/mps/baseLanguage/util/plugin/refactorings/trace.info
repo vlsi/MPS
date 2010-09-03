@@ -6761,7 +6761,7 @@
     <nodeInfo nodeId="8492459591399175166" fileName="IntroduceVariableRefactoring.java" startLine="50" startPosition="112" endLine="51" endPosition="77" />
     <nodeInfo nodeId="8492459591399175173" fileName="IntroduceVariableRefactoring.java" startLine="51" startPosition="77" endLine="52" endPosition="105" />
     <nodeInfo nodeId="8492459591399175181" fileName="IntroduceVariableRefactoring.java" startLine="53" startPosition="41" endLine="54" endPosition="99" />
-    <nodeInfo nodeId="8492459591399175190" fileName="IntroduceVariableRefactoring.java" startLine="55" startPosition="7" endLine="56" endPosition="174" />
+    <nodeInfo nodeId="8492459591399175190" fileName="IntroduceVariableRefactoring.java" startLine="55" startPosition="7" endLine="56" endPosition="109" />
     <nodeInfo nodeId="8492459591399175200" fileName="IntroduceVariableRefactoring.java" startLine="57" startPosition="37" endLine="58" endPosition="96" />
     <nodeInfo nodeId="8492459591399175219" fileName="IntroduceVariableRefactoring.java" startLine="61" startPosition="42" endLine="62" endPosition="45" />
     <nodeInfo nodeId="8492459591399175234" fileName="IntroduceVariableRefactoring.java" startLine="65" startPosition="66" endLine="66" endPosition="67" />
@@ -6813,7 +6813,7 @@
     <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="166" startPosition="56" endLine="168" endPosition="5" />
     <nodeInfo nodeId="8492459591399175108" fileName="IntroduceVariableRefactoring.java" startLine="184" startPosition="54" endLine="186" endPosition="5" />
     <nodeInfo nodeId="8492459591399175179" fileName="IntroduceVariableRefactoring.java" startLine="52" startPosition="105" endLine="55" endPosition="7" />
-    <nodeInfo nodeId="8492459591399175198" fileName="IntroduceVariableRefactoring.java" startLine="56" startPosition="174" endLine="59" endPosition="7" />
+    <nodeInfo nodeId="8492459591399175198" fileName="IntroduceVariableRefactoring.java" startLine="56" startPosition="109" endLine="59" endPosition="7" />
     <nodeInfo nodeId="8492459591399175227" fileName="IntroduceVariableRefactoring.java" startLine="64" startPosition="26" endLine="67" endPosition="7" />
     <nodeInfo nodeId="3109730807963405935" fileName="IntroduceVariableRefactoring.java" startLine="73" startPosition="219" endLine="76" endPosition="5" />
     <nodeInfo nodeId="6974242407276524461" fileName="IntroduceVariableRefactoring.java" startLine="84" startPosition="5" endLine="87" endPosition="5" />
