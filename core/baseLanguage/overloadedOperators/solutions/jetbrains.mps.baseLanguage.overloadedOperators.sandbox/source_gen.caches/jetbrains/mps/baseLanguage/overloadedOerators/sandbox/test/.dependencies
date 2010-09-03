@@ -11,11 +11,15 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test.Complex" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test.Complex2" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test.StringOperators" file="StringOperators.java">
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test.TestComplex" file="TestComplex.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test.Complex" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test.Complex2" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test.ComplexOperators" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test.StringOperators" />
   </dependency>
 </dependenciesRoot>
 

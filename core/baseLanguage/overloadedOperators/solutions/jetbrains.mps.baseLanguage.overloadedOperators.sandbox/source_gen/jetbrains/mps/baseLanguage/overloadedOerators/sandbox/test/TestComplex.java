@@ -18,5 +18,12 @@ public class TestComplex {
     b.print();
     c.print();
     d.print();
+    String str = "str";
+
+    if (StringOperators.apply_customOperator_4888428037514503287_string_string(str, "abc")) {
+
+    }
+    d = ComplexOperators.apply_MulExpression_int_Complex(3, c);
+    d = ComplexOperators.apply_MulExpression_int_Complex(3, c);
   }
 }

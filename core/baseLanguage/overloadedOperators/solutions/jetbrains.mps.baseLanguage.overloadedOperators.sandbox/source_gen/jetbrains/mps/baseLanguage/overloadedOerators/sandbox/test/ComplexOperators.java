@@ -30,4 +30,10 @@ public class ComplexOperators {
     res.set(left.getRe() + right.getRe(), left.getIm() + right.getIm());
     return res;
   }
+
+  public static Complex apply_MulExpression_int_Complex(int left, Complex right) {
+    Complex res = new Complex();
+    res.set(left * right.getRe(), left * right.getIm());
+    return res;
+  }
 }

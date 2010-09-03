@@ -193,6 +193,15 @@
           <property name="flag:32" value="true" />
         </node>
       </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="2673276898228709095">
+        <property name="text:32" value="commutative:" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="2673276898228709092">
+        <link role="relationDeclaration:32" targetNodeId="1.2673276898228709090" resolveInfo="commutative" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="2673276898228709093">
+          <property name="flag:32" value="true" />
+        </node>
+      </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Component:32" id="7789383629181140013">
         <link role="editorComponent:32" targetNodeId="2.1196975362614" resolveInfo="ConceptFunction_Component" />
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="6677452554239402806">

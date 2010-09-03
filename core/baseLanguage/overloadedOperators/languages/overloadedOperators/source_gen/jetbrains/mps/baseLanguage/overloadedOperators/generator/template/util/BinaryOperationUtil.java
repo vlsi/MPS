@@ -7,9 +7,12 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
+import java.util.Map;
 import java.util.List;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.IMapping;
 
 public class BinaryOperationUtil {
   public BinaryOperationUtil() {
@@ -31,14 +34,17 @@ public class BinaryOperationUtil {
     return false;
   }
 
-  public static List<SNode> getOverloadedOperators(SNode node, SNode leftType, SNode rightType, List<SNode> operators) {
+  public static Map<SNode, Boolean> getOverloadedOperators(SNode node, SNode leftType, SNode rightType, List<SNode> operators) {
+    Map<SNode, Boolean> result = MapSequence.fromMap(new HashMap<SNode, Boolean>());
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BinaryOperation"))) {
-      return null;
+      return result;
     }
-    List<SNode> result = new ArrayList<SNode>();
     for (SNode operator : operators) {
       if (isOverloading(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), leftType, rightType, operator)) {
-        ListSequence.fromList(result).addElement(operator);
+        MapSequence.fromMap(result).put(operator, false);
+      }
+      if (SPropertyOperations.getBoolean(operator, "commutative") && isOverloading(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), rightType, leftType, operator)) {
+        MapSequence.fromMap(result).put(operator, true);
       }
     }
     return result;
@@ -52,11 +58,14 @@ public class BinaryOperationUtil {
       if (isOverloading(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), leftType, rightType, operator)) {
         return true;
       }
+      if (SPropertyOperations.getBoolean(operator, "commutative") && isOverloading(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), rightType, leftType, operator)) {
+        return true;
+      }
     }
     return false;
   }
 
-  public static boolean isSubTypeOperator(SNode subOperator, SNode superOperator) {
+  public static boolean isSubTypeOperatorStraight(SNode subOperator, SNode superOperator) {
     if (TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(superOperator, "leftType", true), SLinkOperations.getTarget(subOperator, "leftType", true), false)) {
       return false;
     }
@@ -69,20 +78,50 @@ public class BinaryOperationUtil {
     return true;
   }
 
+  public static boolean isReversedSubTypeOperator(SNode subOperator, SNode superOperator) {
+    if (TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(superOperator, "rightType", true), SLinkOperations.getTarget(subOperator, "leftType", true), false)) {
+      return false;
+    }
+    if (TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(subOperator, "leftType", true), SLinkOperations.getTarget(superOperator, "rightType", true), false)) {
+      return true;
+    }
+    if (TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(superOperator, "leftType", true), SLinkOperations.getTarget(subOperator, "rightType", true), false)) {
+      return false;
+    }
+    return true;
+  }
+
+  public static boolean isSubTypeOperator(SNode subOperator, SNode superOperator, boolean reversed) {
+    if (!(reversed)) {
+      return isSubTypeOperatorStraight(subOperator, superOperator);
+    }
+    return isReversedSubTypeOperator(subOperator, superOperator);
+  }
+
   public static SNode getNearestOverloaded(SNode node, SNode leftType, SNode rightType, List<SNode> operators) {
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BinaryOperation"))) {
       return null;
     }
-    operators = getOverloadedOperators(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), leftType, rightType, operators);
-    if (ListSequence.fromList(operators).count() == 0) {
+    SNode result = (SNode) (node.getUserObject("operator"));
+    if (result != null) {
+      return result;
+    }
+    Map<SNode, Boolean> operatorMap = getOverloadedOperators(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), leftType, rightType, operators);
+    if (MapSequence.fromMap(operatorMap).count() == 0) {
       return null;
     }
-    SNode result = ListSequence.fromList(operators).first();
-    for (SNode operator : operators) {
-      if (isSubTypeOperator(operator, result)) {
+    result = MapSequence.fromMap(operatorMap).first().key();
+    boolean resultReversed = MapSequence.fromMap(operatorMap).first().value();
+    for (IMapping<SNode, Boolean> operatorEntry : MapSequence.fromMap(operatorMap)) {
+      SNode operator = operatorEntry.key();
+      boolean reversed = operatorEntry.value() != resultReversed;
+      if (isSubTypeOperator(operator, result, reversed)) {
         result = operator;
+        resultReversed = operatorEntry.value();
       }
     }
+    node.putUserObject("operator", result);
+    node.putUserObject("reversed", resultReversed);
     return result;
   }
 }

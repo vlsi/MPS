@@ -63,9 +63,14 @@
   <maxImportIndex value="3" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
+  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="483844232470132813">
     <property name="name:0" value="OverloadedBinaryOperator" />
     <link role="extends:0" targetNodeId="3.1137021947720:3" resolveInfo="ConceptFunction" />
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="2673276898228709090">
+      <property name="name:0" value="commutative" />
+      <link role="dataType:0" targetNodeId="2v.1082983657063:0" resolveInfo="boolean" />
+    </node>
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="6677452554237917709">
       <property name="metaClass:0" value="aggregation" />
       <property name="role:0" value="returnType" />
@@ -99,7 +104,6 @@
       <link role="target:0" targetNodeId="7789383629180756961" resolveInfo="RightOperand" />
     </node>
   </node>
-  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="483844232470139399">
     <property name="name:0" value="OverloadedOperatorContainer" />
     <property name="rootable:0" value="true" />

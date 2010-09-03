@@ -11,6 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class OverloadedBinaryOperator extends ConceptFunction {
   public static final String concept = "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedBinaryOperator";
+  public static final String COMMUTATIVE = "commutative";
   public static final String RETURN_TYPE = "returnType";
   public static final String LEFT_TYPE = "leftType";
   public static final String RIGHT_TYPE = "rightType";
@@ -18,6 +19,14 @@ public class OverloadedBinaryOperator extends ConceptFunction {
 
   public OverloadedBinaryOperator(SNode node) {
     super(node);
+  }
+
+  public boolean getCommutative() {
+    return this.getBooleanProperty(OverloadedBinaryOperator.COMMUTATIVE);
+  }
+
+  public void setCommutative(boolean value) {
+    this.setBooleanProperty(OverloadedBinaryOperator.COMMUTATIVE, value);
   }
 
   public Type getReturnType() {

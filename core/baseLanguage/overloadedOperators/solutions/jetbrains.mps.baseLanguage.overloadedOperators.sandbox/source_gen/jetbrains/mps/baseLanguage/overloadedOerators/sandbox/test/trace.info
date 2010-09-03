@@ -6,6 +6,7 @@
     <nodeInfo nodeId="4226637275972869642" fileName="Complex.java" startLine="13" startPosition="39" endLine="14" endPosition="16" />
     <nodeInfo nodeId="4226637275972869651" fileName="Complex.java" startLine="14" startPosition="16" endLine="15" endPosition="16" />
     <nodeInfo nodeId="4226637275972869664" fileName="Complex.java" startLine="18" startPosition="25" endLine="19" endPosition="19" />
+    <nodeInfo nodeId="4226637275972869674" fileName="Complex.java" startLine="22" startPosition="25" endLine="23" endPosition="19" />
     <nodeInfo nodeId="4226637275972869685" fileName="Complex.java" startLine="26" startPosition="23" endLine="27" endPosition="54" />
     <nodeInfo nodeId="4226637275972869610" fileName="Complex.java" startLine="9" startPosition="0" endLine="11" endPosition="3" />
     <nodeInfo nodeId="4226637275972869659" fileName="Complex.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
@@ -38,30 +39,45 @@
     <nodeInfo nodeId="162210779026732185" fileName="TestComplex.java" startLine="17" startPosition="14" endLine="18" endPosition="14" />
     <nodeInfo nodeId="162210779026732193" fileName="TestComplex.java" startLine="18" startPosition="14" endLine="19" endPosition="14" />
     <nodeInfo nodeId="162210779026732201" fileName="TestComplex.java" startLine="19" startPosition="14" endLine="20" endPosition="14" />
+    <nodeInfo nodeId="4888428037514421011" fileName="TestComplex.java" startLine="20" startPosition="14" endLine="21" endPosition="23" />
+    <nodeInfo nodeId="4888428037514503266" fileName="TestComplex.java" startLine="21" startPosition="23" endLine="22" endPosition="0" />
+    <nodeInfo nodeId="4888428037514423988" fileName="TestComplex.java" startLine="23" startPosition="93" endLine="24" endPosition="0" />
+    <nodeInfo nodeId="2673276898228773531" fileName="TestComplex.java" startLine="25" startPosition="5" endLine="26" endPosition="63" />
+    <nodeInfo nodeId="2673276898228773758" fileName="TestComplex.java" startLine="26" startPosition="63" endLine="27" endPosition="63" />
     <nodeInfo nodeId="4226637275972869616" fileName="TestComplex.java" startLine="6" startPosition="26" endLine="8" endPosition="3" />
-    <nodeInfo nodeId="4226637275972870384" fileName="TestComplex.java" startLine="9" startPosition="0" endLine="22" endPosition="0" />
+    <nodeInfo nodeId="4888428037514423986" fileName="TestComplex.java" startLine="22" startPosition="0" endLine="25" endPosition="5" />
+    <nodeInfo nodeId="4226637275972870384" fileName="TestComplex.java" startLine="9" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="4226637275972869619" fileName="TestComplex.java" startLine="7" startPosition="24" endLine="7" endPosition="24" />
+    <scopeInfo nodeId="4888428037514423987" fileName="TestComplex.java" startLine="23" startPosition="93" endLine="24" endPosition="0" />
     <scopeInfo nodeId="4226637275972869616" fileName="TestComplex.java" startLine="6" startPosition="26" endLine="8" endPosition="3" />
-    <scopeInfo nodeId="4226637275972870387" fileName="TestComplex.java" startLine="10" startPosition="42" endLine="20" endPosition="14">
+    <scopeInfo nodeId="4226637275972870387" fileName="TestComplex.java" startLine="10" startPosition="42" endLine="27" endPosition="63">
       <varInfo nodeId="162210779026732168" varName="d" />
+      <varInfo nodeId="4888428037514421012" varName="str" />
       <varInfo nodeId="4226637275972873358" varName="b" />
       <varInfo nodeId="162210779026732156" varName="c" />
       <varInfo nodeId="4226637275972870395" varName="a" />
     </scopeInfo>
-    <scopeInfo nodeId="4226637275972870384" fileName="TestComplex.java" startLine="9" startPosition="0" endLine="22" endPosition="0">
+    <scopeInfo nodeId="4226637275972870384" fileName="TestComplex.java" startLine="9" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="4226637275972870388" varName="args" />
     </scopeInfo>
-    <unitInfo nodeId="4226637275972869614" fileName="TestComplex.java" startLine="6" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test.TestComplex" />
+    <unitInfo nodeId="4226637275972869614" fileName="TestComplex.java" startLine="6" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test.TestComplex" />
   </root>
   <root nodeId="4226637275972869620">
     <nodeInfo nodeId="4226637275972873407" fileName="ComplexOperators.java" startLine="10" startPosition="91" endLine="11" endPosition="32" />
     <nodeInfo nodeId="4226637275972878678" fileName="ComplexOperators.java" startLine="11" startPosition="32" endLine="12" endPosition="72" />
+    <nodeInfo nodeId="4226637275972878717" fileName="ComplexOperators.java" startLine="12" startPosition="72" endLine="13" endPosition="15" />
     <nodeInfo nodeId="162210779026732094" fileName="ComplexOperators.java" startLine="16" startPosition="90" endLine="17" endPosition="32" />
     <nodeInfo nodeId="162210779026732099" fileName="ComplexOperators.java" startLine="17" startPosition="32" endLine="18" endPosition="134" />
+    <nodeInfo nodeId="162210779026732117" fileName="ComplexOperators.java" startLine="18" startPosition="134" endLine="19" endPosition="15" />
     <nodeInfo nodeId="6517886960437940046" fileName="ComplexOperators.java" startLine="22" startPosition="94" endLine="23" endPosition="34" />
     <nodeInfo nodeId="6517886960437940051" fileName="ComplexOperators.java" startLine="23" startPosition="34" endLine="24" endPosition="72" />
+    <nodeInfo nodeId="6517886960437940069" fileName="ComplexOperators.java" startLine="24" startPosition="72" endLine="25" endPosition="15" />
     <nodeInfo nodeId="6517886960437940081" fileName="ComplexOperators.java" startLine="28" startPosition="96" endLine="29" endPosition="34" />
     <nodeInfo nodeId="6517886960437940086" fileName="ComplexOperators.java" startLine="29" startPosition="34" endLine="30" endPosition="72" />
+    <nodeInfo nodeId="6517886960437940104" fileName="ComplexOperators.java" startLine="30" startPosition="72" endLine="31" endPosition="15" />
+    <nodeInfo nodeId="2673276898228773427" fileName="ComplexOperators.java" startLine="34" startPosition="82" endLine="35" endPosition="32" />
+    <nodeInfo nodeId="2673276898228773433" fileName="ComplexOperators.java" startLine="35" startPosition="32" endLine="36" endPosition="56" />
+    <nodeInfo nodeId="2673276898228773424" fileName="ComplexOperators.java" startLine="36" startPosition="56" endLine="37" endPosition="15" />
     <scopeInfo nodeId="4226637275972873401" fileName="ComplexOperators.java" startLine="10" startPosition="91" endLine="13" endPosition="15">
       <varInfo nodeId="4226637275972873408" varName="res" />
     </scopeInfo>
@@ -74,6 +90,13 @@
     <scopeInfo nodeId="6517886960437940076" fileName="ComplexOperators.java" startLine="28" startPosition="96" endLine="31" endPosition="15">
       <varInfo nodeId="6517886960437940082" varName="res" />
     </scopeInfo>
+    <scopeInfo nodeId="2673276898228773419" fileName="ComplexOperators.java" startLine="34" startPosition="82" endLine="37" endPosition="15">
+      <varInfo nodeId="2673276898228773428" varName="res" />
+    </scopeInfo>
+  </root>
+  <root nodeId="4888428037514503250">
+    <nodeInfo nodeId="4888428037514503278" fileName="StringOperators.java" startLine="10" startPosition="107" endLine="11" endPosition="32" />
+    <scopeInfo nodeId="4888428037514503274" fileName="StringOperators.java" startLine="10" startPosition="107" endLine="11" endPosition="32" />
   </root>
   <root nodeId="6517886960437939909">
     <nodeInfo nodeId="6517886960437939964" fileName="Complex2.java" startLine="10" startPosition="23" endLine="11" endPosition="35" />

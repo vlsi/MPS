@@ -10,6 +10,12 @@ public class TestModel {
   public TestModel() {
   }
 
+  public void test() {
+    String str = "";
+    check_6o96ff_a1a0(str);
+    str.concat("b");
+  }
+
   public static void main(String[] args) {
     Complex2 a = new Complex2();
     Complex2 b = new Complex2();
@@ -21,5 +27,12 @@ public class TestModel {
     b.print();
     c.print();
     d.print();
+  }
+
+  private static String check_6o96ff_a1a0(String p) {
+    if (null == p) {
+      return null;
+    }
+    return p.concat("a");
   }
 }
