@@ -435,7 +435,7 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
       colorSettingsPanel.add(mySelectionForegroundColorComponent);
 
       colorSettingsPanel.add(new JLabel(" "));
-      colorSettingsPanel.add(new JLabel("Cursor Blinking Rate : "));
+      colorSettingsPanel.add(new JLabel("Caret Blinking Rate : "));
       myBlinkingRateSlider = new JSlider(1, 10, 5);
       colorSettingsPanel.add(myBlinkingRateSlider);
       myBlinkingDemo = createBlinkingDemo();
