@@ -30,7 +30,7 @@ import com.intellij.util.text.StringTokenizer;
 import jetbrains.mps.util.annotation.Patch;
 import org.jetbrains.annotations.NonNls;
 
-import javax.swing.JOptionPane;
+import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Field;
@@ -261,6 +261,7 @@ public class ClassloaderUtil {
       classPath.add(selfRootUrl);
 
       final File libFolder = new File(aFolderPath + File.separator + "lib");
+      addLibraries(classPath, libFolder, selfRootUrl);
       // MPS Patch Start
       for (File libSubFolder : libFolder.listFiles()) {
         addLibraries(classPath, libSubFolder, selfRootUrl);
