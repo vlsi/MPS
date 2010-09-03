@@ -15,23 +15,19 @@
  */
 package jetbrains.mps.smodel.persistence;
 
-import com.intellij.openapi.options.SearchableConfigurable;
-import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
+import com.intellij.openapi.options.ConfigurationException;
+import com.intellij.openapi.options.SearchableConfigurable;
 import jetbrains.mps.smodel.persistence.PersistenceSettings.MyState;
+import org.jetbrains.annotations.Nls;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
-import java.awt.BorderLayout;
-import java.awt.FlowLayout;
-import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
-import java.awt.event.ActionEvent;
-
-import org.jetbrains.annotations.Nls;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.annotations.NonNls;
+import java.awt.GridBagLayout;
 
 /**
  * Created by IntelliJ IDEA.

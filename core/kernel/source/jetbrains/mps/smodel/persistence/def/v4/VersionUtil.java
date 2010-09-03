@@ -20,8 +20,6 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelVersionsInfo;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId.Foreign;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import org.jdom.Element;
 
 public class VersionUtil {
   private static final char VERSION_SEPARATOR_CHAR = ':';

@@ -21,22 +21,23 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
-import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vcs.FilePath;
 import com.intellij.openapi.vcs.actions.VcsContextFactory;
-import jetbrains.mps.ide.projectPane.fileSystem.ExclusionChangedListener;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.projectPane.fileSystem.FileViewProjectPane;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.reloading.*;
+import jetbrains.mps.reloading.EachClassPathItemVisitor;
+import jetbrains.mps.reloading.FileClassPathItem;
+import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryAdapter;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.*;
 import java.io.File;
+import java.util.*;
 
 public class GlobalClassPathIndex implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(GlobalClassPathIndex.class);

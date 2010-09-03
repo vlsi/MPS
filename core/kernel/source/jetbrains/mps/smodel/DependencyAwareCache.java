@@ -17,10 +17,10 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.smodel.event.*;
 
-import java.util.Map;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.ArrayList;
+import java.util.Map;
 
 public abstract class DependencyAwareCache<K, V> {
   private Map<K, V> myCache = new HashMap<K, V>();

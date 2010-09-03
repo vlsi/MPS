@@ -21,9 +21,9 @@ import com.intellij.openapi.command.UndoConfirmationPolicy;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.util.containers.ConcurrentHashSet;
+import jetbrains.mps.InternalFlag;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.InternalFlag;
 
 import javax.swing.SwingUtilities;
 import java.util.ArrayList;

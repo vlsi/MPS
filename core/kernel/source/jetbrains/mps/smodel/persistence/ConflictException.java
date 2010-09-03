@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel.persistence;
 
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 

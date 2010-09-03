@@ -25,7 +25,10 @@ import jetbrains.mps.smodel.persistence.def.v1.ReferencePersister1;
 import org.jdom.Document;
 import org.jdom.Element;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class ModelWriter3 implements IModelWriter {
   protected IReferencePersister getReferencePersister() {

@@ -15,9 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

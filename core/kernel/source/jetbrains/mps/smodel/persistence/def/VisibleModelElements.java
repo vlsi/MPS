@@ -16,11 +16,6 @@
 package jetbrains.mps.smodel.persistence.def;
 
 import jetbrains.mps.smodel.SModelReference;
-import org.jdom.Element;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Evgeny Gryaznov, Aug 6, 2010

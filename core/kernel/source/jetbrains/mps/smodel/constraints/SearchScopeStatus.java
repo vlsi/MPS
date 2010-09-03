@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.smodel.constraints;
 
-import jetbrains.mps.util.Status;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.search.ISearchScope;
+import jetbrains.mps.util.Status;
 
 /**
  * Igor Alshannikov

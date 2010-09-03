@@ -15,12 +15,9 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.command.CommandEvent;
-import com.intellij.openapi.command.CommandListener;
 import com.intellij.openapi.command.CommandProcessor;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelListener;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
 import org.jetbrains.annotations.NotNull;
 

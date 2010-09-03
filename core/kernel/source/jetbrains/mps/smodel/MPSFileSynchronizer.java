@@ -15,18 +15,17 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.command.CommandProcessor;
-import com.intellij.openapi.command.CommandEvent;
-import com.intellij.openapi.command.CommandAdapter;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.command.CommandAdapter;
+import com.intellij.openapi.command.CommandEvent;
+import com.intellij.openapi.command.CommandProcessor;
+import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Set;
 import java.util.HashSet;
-
-import jetbrains.mps.vfs.VFileSystem;
-import jetbrains.mps.vfs.IFile;
+import java.util.Set;
 
 public class MPSFileSynchronizer implements ApplicationComponent {
   private CommandAdapter myListener = new MyCommandAdapter();

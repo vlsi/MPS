@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.smodel.SNode;
-
 public interface INodesReadListener {
   public void nodeChildReadAccess(SNode node, String childRole, SNode child);
 

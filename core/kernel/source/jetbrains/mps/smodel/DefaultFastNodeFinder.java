@@ -20,7 +20,6 @@ import jetbrains.mps.nodeEditor.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.util.NameUtil;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 

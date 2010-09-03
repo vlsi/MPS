@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.annotations.NotNull;
 
 public class StubModel extends SModel {
