@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.ide.ThreadUtils;
-
 public class ModelChange {
   private static final boolean FREEZE_CHECKS_ENABLED = true;
 
@@ -25,19 +23,19 @@ public class ModelChange {
     if (FREEZE_CHECKS_ENABLED && node.isFrozen()) {
       throw new IllegalModelChangeError("can't modify a frozen node" + node.getDebugText());
     }
-    if (!node.getModel().isLoading() && node.isRegistered() && !isInsideUndoableCommand()) {
+    if (!node.getModel().isLoading() && node.isRegistered() && !UndoHelper.isInsideUndoableCommand()) {
       throw new IllegalModelChangeError("registered node can only be modified inside undoable command or in 'loading' model " + node.getDebugText());
     }
   }
 
   static void assertLegalNodeRegistration(SModel model, SNode node) {
-    if (!model.isLoading() && !isInsideUndoableCommand()) {
+    if (!model.isLoading() && !UndoHelper.isInsideUndoableCommand()) {
       throw new IllegalModelChangeError("node registration is only allowed inside undoable command  or in 'loading' model " + node.getDebugText());
     }
   }
 
   static void assertLegalNodeUnRegistration(SModel model, SNode node) {
-    if (!model.isLoading() && !isInsideUndoableCommand()) {
+    if (!model.isLoading() && !UndoHelper.isInsideUndoableCommand()) {
       throw new IllegalModelChangeError("node un-registration is only allowed inside undoable command or in 'loading' model" + node.getDebugText());
     }
   }
@@ -48,16 +46,8 @@ public class ModelChange {
     }
   }
 
-  static boolean needRegisterUndo(SModel model) {
-    return !(model.isLoading()) && isInsideUndoableCommand();
-  }
-
   static boolean needFireEvents(SModel model, SNode node) {
     return node.isRegistered() && !(model.isLoading());
   }
 
-  private static boolean isInsideUndoableCommand() {
-    return ThreadUtils.isEventDispatchThread() && !UndoUtil.isUndoBlocked() &&
-      com.intellij.openapi.command.CommandProcessor.getInstance().getCurrentCommand() != null;
-  }
 }

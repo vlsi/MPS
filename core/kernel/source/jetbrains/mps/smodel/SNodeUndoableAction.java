@@ -15,61 +15,22 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.command.undo.DocumentReference;
-import com.intellij.openapi.command.undo.UndoableAction;
-import com.intellij.openapi.command.undo.UnexpectedUndoException;
-import com.intellij.openapi.command.undo.DocumentReferenceManager;
-import com.intellij.openapi.command.impl.DocumentReferenceByVirtualFile;
-import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+public abstract class SNodeUndoableAction {
 
-public abstract class SNodeUndoableAction implements UndoableAction {
-  private DocumentReference[] myAffectedDocuments;
-  private MPSNodeVirtualFile myFile;
-  private long myModifcationStamp;
+  private SNodePointer myRoot;
 
   protected SNodeUndoableAction(SNode affectedNode) {
     SNode containingRoot = affectedNode.getContainingRoot();
-    if (containingRoot == null) {
-      myAffectedDocuments = new DocumentReference[0];
-    } else {
-      myFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(containingRoot);
-      assert myFile.isValid() : "Invalid file was returned by VFS node is not available: " + myFile.getNode();
-      myAffectedDocuments = new DocumentReference[]{DocumentReferenceManager.getInstance().create(myFile)};
-      myModifcationStamp = myFile.getModificationStamp();
-    }
+    myRoot = containingRoot != null ? new SNodePointer(containingRoot) : null;
+  }
+
+  public SNodePointer getRoot() {
+    return myRoot;
   }
 
   protected abstract void doUndo();
 
   protected abstract void doRedo();
-
-  public final void undo() throws UnexpectedUndoException {
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        if (myFile != null) {
-          myFile.setModificationStamp(myModifcationStamp);
-        }
-        doUndo();
-      }
-    });
-  }
-
-  public final void redo() throws UnexpectedUndoException {
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        doRedo();
-      }
-    });
-  }
-
-  public DocumentReference[] getAffectedDocuments() {
-    return myAffectedDocuments;
-  }
-
-  public boolean isComplex() {
-    return false;
-  }
 
   public boolean isGlobal() {
     return false;

@@ -21,7 +21,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -202,8 +201,8 @@ public class SModel implements Iterable<SNode> {
 
     myRoots.add(node);
     node.registerInModel(this);
-    if (ModelChange.needRegisterUndo(this)) {
-      UndoUtil.addUndoableAction(new AddRootUndoableAction(node));
+    if (UndoHelper.needRegisterUndo(this)) {
+      UndoHelper.addUndoableAction(new AddRootUndoableAction(node));
     }
     fireRootAddedEvent(node);
   }
@@ -213,8 +212,8 @@ public class SModel implements Iterable<SNode> {
     if (myRoots.contains(node)) {
       myRoots.remove(node);
       node.unRegisterFromModel();
-      if (ModelChange.needRegisterUndo(this)) {
-        UndoUtil.addUndoableAction(new RemoveRootUndoableAction(node));
+      if (UndoHelper.needRegisterUndo(this)) {
+        UndoHelper.addUndoableAction(new RemoveRootUndoableAction(node));
       }
       fireRootRemovedEvent(node);
     }

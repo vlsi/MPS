@@ -19,9 +19,7 @@ import jetbrains.mps.lang.typesystem.runtime.*;
 import jetbrains.mps.lang.typesystem.structure.RuntimeErrorType;
 import jetbrains.mps.lang.typesystem.structure.MeetType;
 import jetbrains.mps.nodeEditor.NodeReadAccessCasterInEditor;
-import jetbrains.mps.smodel.ModelChange;
 import jetbrains.mps.typesystem.inference.util.*;
-import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
@@ -318,7 +316,7 @@ public class SubtypingManager {
         final TypeCheckingContext tcContext = equationManager == null ? null : equationManager.getTypeCheckingContext();
         List<SNode> supertypes = FreezeUtil.freezeAndCompute(term, new Computable<List<SNode>>() {
           public List<SNode> compute() {
-            return UndoUtil.runNonUndoableAction(new Computable<List<SNode>>() {
+            return UndoHelper.runNonUndoableAction(new Computable<List<SNode>>() {
               @Override
               public List<SNode> compute() {
                 return subtypingRule.getSubOrSuperTypes(term, tcContext);

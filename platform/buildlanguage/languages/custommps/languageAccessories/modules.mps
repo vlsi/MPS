@@ -347,10 +347,6 @@
       <property name="id" value="af19274f-5f89-42dd-8f3c-c9932448f7f2" />
       <property name="name" value="jetbrains.mps.analyzers.runtime" />
     </node>
-    <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="233068984338644270">
-      <property name="id" value="f6258018-bf91-43ed-87e3-5545a32927ed" />
-      <property name="name" value="jetbrains.mps.analyzers.mpsAnalyzers" />
-    </node>
   </node>
   <node type="jetbrains.mps.build.packaging.structure.Block:7" id="4062013737453621614">
     <property name="name:7" value="core.devkits" />

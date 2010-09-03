@@ -753,8 +753,8 @@ public final class SNode {
       myProperties.put(propertyName_, propertyValue);
     }
 
-    if (ModelChange.needRegisterUndo(getModel())) {
-      UndoUtil.addUndoableAction(new PropertyChangeUndoableAction(this, propertyName, oldValue, propertyValue));
+    if (UndoHelper.needRegisterUndo(getModel())) {
+      UndoHelper.addUndoableAction(new PropertyChangeUndoableAction(this, propertyName, oldValue, propertyValue));
     }
 
     if (ModelChange.needFireEvents(getModel(), this)) {
@@ -1018,8 +1018,8 @@ public final class SNode {
     wasChild.myRoleInParent = null;
     wasChild.unRegisterFromModel();
 
-    if (ModelChange.needRegisterUndo(getModel())) {
-      UndoUtil.addUndoableAction(new RemoveChildUndoableAction(this, anchor, wasRole, wasChild));
+    if (UndoHelper.needRegisterUndo(getModel())) {
+      UndoHelper.addUndoableAction(new RemoveChildUndoableAction(this, anchor, wasRole, wasChild));
     }
 
     if (ModelChange.needFireEvents(getModel(), this)) {
@@ -1057,8 +1057,8 @@ public final class SNode {
       child.changeModel(getModel());
     }
 
-    if (ModelChange.needRegisterUndo(getModel())) {
-      UndoUtil.addUndoableAction(new InsertChildAtUndoableAction(this, anchor, _role, child));
+    if (UndoHelper.needRegisterUndo(getModel())) {
+      UndoHelper.addUndoableAction(new InsertChildAtUndoableAction(this, anchor, _role, child));
     }
 
     if (ModelChange.needFireEvents(getModel(), this)) {
@@ -1330,8 +1330,8 @@ public final class SNode {
     ModelChange.assertLegalNodeChange(this);
     _reference().add(i, reference);
 
-    if (ModelChange.needRegisterUndo(getModel())) {
-      UndoUtil.addUndoableAction(new InsertReferenceAtUndoableAction(this, i, reference));
+    if (UndoHelper.needRegisterUndo(getModel())) {
+      UndoHelper.addUndoableAction(new InsertReferenceAtUndoableAction(this, i, reference));
     }
 
     if (ModelChange.needFireEvents(getModel(), this)) {
@@ -1342,7 +1342,7 @@ public final class SNode {
   private void replaceReferenceAt(int index, @NotNull SReference referenceToAdd) {
     ModelChange.assertLegalNodeChange(this);
 
-    if (ModelChange.needRegisterUndo(getModel()) || ModelChange.needFireEvents(getModel(), this)) {
+    if (UndoHelper.needRegisterUndo(getModel()) || ModelChange.needFireEvents(getModel(), this)) {
       removeReferenceAt(index);
       insertReferenceAt(index, referenceToAdd);
     } else {
@@ -1355,8 +1355,8 @@ public final class SNode {
     final SReference reference = myReferences[i];
     _reference().remove(reference);
 
-    if (ModelChange.needRegisterUndo(getModel())) {
-      UndoUtil.addUndoableAction(new RemoveReferenceAtUndoableAction(this, i, reference));
+    if (UndoHelper.needRegisterUndo(getModel())) {
+      UndoHelper.addUndoableAction(new RemoveReferenceAtUndoableAction(this, i, reference));
     }
 
     if (ModelChange.needFireEvents(getModel(), this)) {

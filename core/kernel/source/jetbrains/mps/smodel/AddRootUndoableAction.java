@@ -23,11 +23,6 @@ class AddRootUndoableAction extends SNodeUndoableAction {
     myRoot = root;
   }
 
-  @Override
-  public boolean isComplex() {
-    return true;
-  }
-
   protected void doUndo() {
     myRoot.getModel().removeRoot(myRoot);
   }
