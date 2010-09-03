@@ -37,17 +37,10 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
   }
 
   private EditorCell createCollection_grmouy_a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_grmouy_a_0");
-    editorCell.addEditorCell(this.createCollection_grmouy_a0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_grmouy_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_grmouy_a0");
-    if (renderingCondition_grmouy_a0a0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createRefNode_grmouy_a0a(editorContext, node));
+    editorCell.setCellId("Collection_grmouy_a_0");
+    if (renderingCondition_grmouy_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createRefNode_grmouy_a0_0(editorContext, node));
     }
     return editorCell;
   }
@@ -95,7 +88,7 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
     return editorCell;
   }
 
-  private EditorCell createRefNode_grmouy_a0a(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_grmouy_a0_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("toStringFunction");
     provider.setNoTargetText("<no toStringFunction>");
@@ -112,7 +105,7 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
     return editorCell;
   }
 
-  private static boolean renderingCondition_grmouy_a0a0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_grmouy_a0a(SNode node, EditorContext editorContext, IScope scope) {
     return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType"));
   }
 }
