@@ -20,8 +20,10 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
+import jetbrains.mps.stubs.StubReloadManager;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.workbench.WorkbenchPathManager;
 import org.jetbrains.annotations.Nls;
@@ -43,7 +45,7 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
     return ApplicationManager.getApplication().getComponent(LibraryManager.class);
   }
 
-  public LibraryManager(MPSModuleRepository repo) {
+  public LibraryManager(MPSModuleRepository repo, ModelConstraintsManager cm, StubReloadManager loader, ClassLoaderManager clm) {
     super(repo);
   }
 
@@ -72,8 +74,12 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
 
   public <M extends IModule> Set<M> getGlobalModules(Class<M> cls) {
     Set<M> result = new HashSet<M>();
-    for (String path:getLibraries()){
-      result.addAll((Collection<? extends M>) LibraryInitializer.getInstance().getModules(path));
+    for (String path : getLibraries()) {
+      for (IModule m : LibraryInitializer.getInstance().getModules(path)) {
+        if (cls.isAssignableFrom(m.getClass())) {
+          result.add((M) m);
+        }
+      }
     }
 
     LibraryInitializer.getInstance().addGenerators(cls, new ArrayList<M>(result));
