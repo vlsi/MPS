@@ -50,7 +50,7 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
   private MPSModuleOwner myBootstrapLibrariesOwner;
   private MPSModuleOwner myPredefinedLibrariesOwner;
   private boolean myInitializing = false;
-  private final Map<String, Library> myCustomBuiltInLibraries = new HashMap<String, Library>();
+  private Map<String, Library> myCustomBuiltInLibraries = new HashMap<String, Library>();
   private ClassLoaderManager myClm;
 
 
@@ -75,7 +75,7 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
     try {
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          BuiltInLibrariesIO.readBuiltInLibraries(myCustomBuiltInLibraries);
+          myCustomBuiltInLibraries = BuiltInLibrariesIO.readBuiltInLibraries();
           initPredefinedLibs();
           update();
           ClassLoaderManager.getInstance().updateClassPath();

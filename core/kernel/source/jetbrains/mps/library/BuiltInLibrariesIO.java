@@ -19,6 +19,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.Macros;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.util.misc.hash.HashMap;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
@@ -39,9 +40,11 @@ public class BuiltInLibrariesIO {
   public static final String LIBRARY_NAME_TAG = "name";
   public static final String LIBRARY_PATH_TAG = "path";
 
-  public static void readBuiltInLibraries(Map<String, Library> libraryMap) {
+  public static Map<String, Library> readBuiltInLibraries() {
+    Map<String, Library> result = new HashMap<String, Library>();
+
     URL resource = BuiltInLibrariesIO.class.getResource(CONFIG_FILE_WHOLE_NAME);
-    if (resource == null) return;
+    if (resource == null) return result;
 
     try {
       Document document = JDOMUtil.loadDocument(resource.openStream());
@@ -60,13 +63,14 @@ public class BuiltInLibrariesIO {
             return realPath;
           }
         };
-        libraryMap.put(name, predefinedLibrary);
+        result.put(name, predefinedLibrary);
       }
     } catch (JDOMException e) {
       LOG.error(e);
     } catch (IOException e) {
       LOG.error(e);
     }
+    return result;
   }
 
   public static void addLibraryToConfigurationFile(String name, String path, String sourceHome) {
@@ -123,5 +127,4 @@ public class BuiltInLibrariesIO {
       BuiltInLibrariesIO.addLibraryToConfigurationFile(name, path, mpsHome);
     }
   }
-
 }
