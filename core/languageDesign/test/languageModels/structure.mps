@@ -442,21 +442,6 @@
       <link role="conceptPropertyDeclaration:0" targetNodeId="5.1137473891462:0" resolveInfo="alias" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1217524464944">
-    <property name="package:0" value="asserts" />
-    <property name="name:0" value="AssertType" />
-    <link role="extends:0" targetNodeId="1214846310980:4" resolveInfo="AbstractNodeAssert" />
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1217524539419">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="typeToCheck" />
-      <property name="sourceCardinality:0" value="1" />
-      <link role="target:0" targetNodeId="7.1068431790189:3" resolveInfo="Type" />
-    </node>
-    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1217525016260">
-      <property name="value:0" value="assert type" />
-      <link role="conceptPropertyDeclaration:0" targetNodeId="5.1137473891462:0" resolveInfo="alias" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1225467090849">
     <property name="name:0" value="ProjectExpression" />
     <property name="package:0" value="expression" />

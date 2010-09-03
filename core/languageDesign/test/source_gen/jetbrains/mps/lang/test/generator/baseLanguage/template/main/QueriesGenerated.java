@@ -181,14 +181,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "nodeToCheck", true);
   }
 
-  public static SNode sourceNodeQuery_1217526593768(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "nodeToCheck", true);
-  }
-
-  public static SNode sourceNodeQuery_1217526624853(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "typeToCheck", true);
-  }
-
   public static SNode sourceNodeQuery_1227010390721(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "operation", true);
   }

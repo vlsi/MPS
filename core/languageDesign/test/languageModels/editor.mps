@@ -578,31 +578,6 @@
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="1237812088939" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1217524555391">
-    <property name="package:32" value="asserts" />
-    <link role="conceptDeclaration:32" targetNodeId="1.1217524464944:4" resolveInfo="AssertType" />
-    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1217524579625">
-      <property name="vertical:32" value="false" />
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1217524584768">
-        <property name="text:32" value="assert" />
-        <link role="styleClass:32" targetNodeId="1214842784938" resolveInfo="AssertStyle" />
-      </node>
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="1217524593813">
-        <link role="relationDeclaration:32" targetNodeId="1.1214846370530:4" />
-      </node>
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1217524604803">
-        <property name="text:32" value="has type" />
-        <link role="styleClass:32" targetNodeId="1214842784938" resolveInfo="AssertStyle" />
-      </node>
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="1217524623347">
-        <link role="relationDeclaration:32" targetNodeId="1.1217524539419:4" />
-      </node>
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1217524850693">
-        <property name="text:32" value=";" />
-      </node>
-      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="1237812083274" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1225467113507">
     <property name="package:32" value="expression" />
     <link role="conceptDeclaration:32" targetNodeId="1.1225467090849:4" resolveInfo="ProjectExpression" />
