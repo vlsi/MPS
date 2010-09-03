@@ -130,7 +130,7 @@
               </node>
             </node>
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1596063027222135243">
-              <property name="value:3" value="icons\\nextOccurence.png" />
+              <property name="value:3" value="icons/nextOccurence.png" />
             </node>
           </node>
         </node>
@@ -246,7 +246,7 @@
               </node>
             </node>
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1596063027222135253">
-              <property name="value:3" value="icons\\previousOccurence.png" />
+              <property name="value:3" value="icons/previousOccurence.png" />
             </node>
           </node>
         </node>
@@ -356,10 +356,43 @@
               </node>
             </node>
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="434116226312812728">
-              <property name="value:3" value="icons\\reset.png" />
+              <property name="value:3" value="icons/reset.png" />
             </node>
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7076648626338595222">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7076648626338595223">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7076648626338595224">
+              <node role="operand:3" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_AnActionEvent:23" id="7076648626338595225" />
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7076648626338595226">
+                <link role="baseMethodDeclaration:3" targetNodeId="2.~AnActionEvent.getPresentation():com.intellij.openapi.actionSystem.Presentation" resolveInfo="getPresentation" />
+              </node>
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7076648626338595227">
+              <link role="baseMethodDeclaration:3" targetNodeId="2.~Presentation.setVisible(boolean):void" resolveInfo="setVisible" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="7076648626338595228">
+                <property name="value:3" value="true" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7076648626338595229">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7076648626338595230">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7076648626338595231">
+              <node role="operand:3" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_AnActionEvent:23" id="7076648626338595232" />
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7076648626338595233">
+                <link role="baseMethodDeclaration:3" targetNodeId="2.~AnActionEvent.getPresentation():com.intellij.openapi.actionSystem.Presentation" resolveInfo="getPresentation" />
+              </node>
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7076648626338595234">
+              <link role="baseMethodDeclaration:3" targetNodeId="2.~Presentation.setEnabled(boolean):void" resolveInfo="setEnabled" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="7076648626338595245">
+                <property name="value:3" value="true" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="7076648626338595221" />
       </node>
     </node>
   </node>
@@ -2295,7 +2328,7 @@
               </node>
             </node>
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1596063027222135269">
-              <property name="value:3" value="icons\\diff.png" />
+              <property name="value:3" value="icons/diff.png" />
             </node>
           </node>
         </node>

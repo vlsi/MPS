@@ -44,7 +44,7 @@ public class ShowDiffererenesWithCurrentRevision_Action extends GeneratedAction 
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    IconUtil.useIcon(ShowDiffererenesWithCurrentRevision_Action.this, event.getPresentation(), "icons\\diff.png");
+    IconUtil.useIcon(ShowDiffererenesWithCurrentRevision_Action.this, event.getPresentation(), "icons/diff.png");
     if (!(ShowDiffererenesWithCurrentRevision_Action.this.model instanceof EditableSModelDescriptor)) {
       return false;
     }

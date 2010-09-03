@@ -28,8 +28,8 @@
   <root nodeId="6763225944573363027">
     <nodeInfo nodeId="6763225944573363041" fileName="GoToNextChange_Action.java" startLine="21" startPosition="0" endLine="22" endPosition="38" />
     <nodeInfo nodeId="6763225944573363042" fileName="GoToNextChange_Action.java" startLine="22" startPosition="38" endLine="23" endPosition="26" />
-    <nodeInfo nodeId="1596063027222056018" fileName="GoToNextChange_Action.java" startLine="37" startPosition="9" endLine="38" endPosition="104" />
-    <nodeInfo nodeId="6763225944573363045" fileName="GoToNextChange_Action.java" startLine="38" startPosition="104" endLine="39" endPosition="47" />
+    <nodeInfo nodeId="1596063027222056018" fileName="GoToNextChange_Action.java" startLine="37" startPosition="9" endLine="38" endPosition="103" />
+    <nodeInfo nodeId="6763225944573363045" fileName="GoToNextChange_Action.java" startLine="38" startPosition="103" endLine="39" endPosition="47" />
     <nodeInfo nodeId="6763225944573363052" fileName="GoToNextChange_Action.java" startLine="39" startPosition="47" endLine="40" endPosition="179" />
     <nodeInfo nodeId="6763225944573363030" fileName="GoToNextChange_Action.java" startLine="71" startPosition="9" endLine="72" endPosition="136" />
     <scopeInfo nodeId="6763225944573363044" fileName="GoToNextChange_Action.java" startLine="37" startPosition="9" endLine="40" endPosition="179" />
@@ -37,8 +37,8 @@
   <root nodeId="6763225944573363067">
     <nodeInfo nodeId="6763225944573363068" fileName="GoToPreviousChange_Action.java" startLine="21" startPosition="0" endLine="22" endPosition="38" />
     <nodeInfo nodeId="6763225944573363069" fileName="GoToPreviousChange_Action.java" startLine="22" startPosition="38" endLine="23" endPosition="26" />
-    <nodeInfo nodeId="1596063027222135247" fileName="GoToPreviousChange_Action.java" startLine="37" startPosition="9" endLine="38" endPosition="112" />
-    <nodeInfo nodeId="6763225944573363085" fileName="GoToPreviousChange_Action.java" startLine="38" startPosition="112" endLine="39" endPosition="47" />
+    <nodeInfo nodeId="1596063027222135247" fileName="GoToPreviousChange_Action.java" startLine="37" startPosition="9" endLine="38" endPosition="111" />
+    <nodeInfo nodeId="6763225944573363085" fileName="GoToPreviousChange_Action.java" startLine="38" startPosition="111" endLine="39" endPosition="47" />
     <nodeInfo nodeId="6763225944573363092" fileName="GoToPreviousChange_Action.java" startLine="39" startPosition="47" endLine="40" endPosition="191" />
     <nodeInfo nodeId="6763225944573363072" fileName="GoToPreviousChange_Action.java" startLine="71" startPosition="9" endLine="72" endPosition="148" />
     <scopeInfo nodeId="6763225944573363084" fileName="GoToPreviousChange_Action.java" startLine="37" startPosition="9" endLine="40" endPosition="191" />
@@ -46,9 +46,12 @@
   <root nodeId="6763225944573363107">
     <nodeInfo nodeId="6763225944573363108" fileName="RollbackChanges_Action.java" startLine="21" startPosition="0" endLine="22" endPosition="38" />
     <nodeInfo nodeId="6763225944573363109" fileName="RollbackChanges_Action.java" startLine="22" startPosition="38" endLine="23" endPosition="26" />
-    <nodeInfo nodeId="434116226312812722" fileName="RollbackChanges_Action.java" startLine="37" startPosition="9" endLine="38" endPosition="97" />
-    <nodeInfo nodeId="6763225944573363112" fileName="RollbackChanges_Action.java" startLine="69" startPosition="9" endLine="70" endPosition="139" />
-    <scopeInfo nodeId="434116226312812721" fileName="RollbackChanges_Action.java" startLine="37" startPosition="9" endLine="38" endPosition="97" />
+    <nodeInfo nodeId="434116226312812722" fileName="RollbackChanges_Action.java" startLine="37" startPosition="9" endLine="38" endPosition="96" />
+    <nodeInfo nodeId="7076648626338595222" fileName="RollbackChanges_Action.java" startLine="38" startPosition="96" endLine="39" endPosition="47" />
+    <nodeInfo nodeId="7076648626338595229" fileName="RollbackChanges_Action.java" startLine="39" startPosition="47" endLine="40" endPosition="47" />
+    <nodeInfo nodeId="7076648626338595221" fileName="RollbackChanges_Action.java" startLine="40" startPosition="47" endLine="41" endPosition="0" />
+    <nodeInfo nodeId="6763225944573363112" fileName="RollbackChanges_Action.java" startLine="72" startPosition="9" endLine="73" endPosition="139" />
+    <scopeInfo nodeId="434116226312812721" fileName="RollbackChanges_Action.java" startLine="37" startPosition="9" endLine="41" endPosition="0" />
   </root>
   <root nodeId="6763225944573505210">
     <nodeInfo nodeId="6763225944573505213" fileName="GoToVCS_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="112" />
@@ -403,14 +406,14 @@
     <nodeInfo nodeId="7545884443035919784" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="30" startPosition="21" endLine="31" endPosition="26" />
     <nodeInfo nodeId="7545884443035919785" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="31" startPosition="26" endLine="32" endPosition="36" />
     <nodeInfo nodeId="7545884443035919786" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="32" startPosition="36" endLine="33" endPosition="33" />
-    <nodeInfo nodeId="1596063027222135263" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="46" startPosition="52" endLine="47" endPosition="114" />
+    <nodeInfo nodeId="1596063027222135263" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="46" startPosition="52" endLine="47" endPosition="113" />
     <nodeInfo nodeId="7545884443035919812" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="48" startPosition="103" endLine="49" endPosition="19" />
     <nodeInfo nodeId="7545884443035919820" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="50" startPosition="5" endLine="51" endPosition="144" />
     <nodeInfo nodeId="7545884443035919835" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="52" startPosition="198" endLine="53" endPosition="155" />
     <nodeInfo nodeId="7545884443035919847" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="53" startPosition="155" endLine="54" endPosition="80" />
     <nodeInfo nodeId="7545884443035919870" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="55" startPosition="5" endLine="56" endPosition="17" />
     <nodeInfo nodeId="7545884443035919789" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="110" startPosition="9" endLine="111" endPosition="327" />
-    <nodeInfo nodeId="7545884443035919810" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="47" startPosition="114" endLine="50" endPosition="5" />
+    <nodeInfo nodeId="7545884443035919810" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="47" startPosition="113" endLine="50" endPosition="5" />
     <nodeInfo nodeId="7545884443035919833" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="51" startPosition="144" endLine="55" endPosition="5" />
     <scopeInfo nodeId="7545884443035919811" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="48" startPosition="103" endLine="49" endPosition="19" />
     <scopeInfo nodeId="7545884443035919834" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="52" startPosition="198" endLine="54" endPosition="80">

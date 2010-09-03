@@ -35,7 +35,7 @@ public class GoToPreviousChange_Action extends GeneratedAction {
 
   public void doUpdate(@NotNull AnActionEvent event) {
     try {
-      IconUtil.useIcon(GoToPreviousChange_Action.this, event.getPresentation(), "icons\\previousOccurence.png");
+      IconUtil.useIcon(GoToPreviousChange_Action.this, event.getPresentation(), "icons/previousOccurence.png");
       event.getPresentation().setVisible(true);
       event.getPresentation().setEnabled(EditorChangesHighlighter.getInstance(GoToPreviousChange_Action.this.project).isPreviousChangeAvailable(GoToPreviousChange_Action.this.editorContext));
     } catch (Throwable t) {

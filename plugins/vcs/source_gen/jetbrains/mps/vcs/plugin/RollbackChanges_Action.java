@@ -35,7 +35,10 @@ public class RollbackChanges_Action extends GeneratedAction {
 
   public void doUpdate(@NotNull AnActionEvent event) {
     try {
-      IconUtil.useIcon(RollbackChanges_Action.this, event.getPresentation(), "icons\\reset.png");
+      IconUtil.useIcon(RollbackChanges_Action.this, event.getPresentation(), "icons/reset.png");
+      event.getPresentation().setVisible(true);
+      event.getPresentation().setEnabled(true);
+
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "RollbackChanges", t);

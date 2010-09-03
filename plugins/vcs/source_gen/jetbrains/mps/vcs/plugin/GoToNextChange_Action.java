@@ -35,7 +35,7 @@ public class GoToNextChange_Action extends GeneratedAction {
 
   public void doUpdate(@NotNull AnActionEvent event) {
     try {
-      IconUtil.useIcon(GoToNextChange_Action.this, event.getPresentation(), "icons\\nextOccurence.png");
+      IconUtil.useIcon(GoToNextChange_Action.this, event.getPresentation(), "icons/nextOccurence.png");
       event.getPresentation().setVisible(true);
       event.getPresentation().setEnabled(EditorChangesHighlighter.getInstance(GoToNextChange_Action.this.project).isNextChangeAvailable(GoToNextChange_Action.this.editorContext));
     } catch (Throwable t) {
