@@ -4,8 +4,8 @@
   <unitInfo fileName="NonEmptyLibraryName_NonTypesystemRule.java" startLine="16" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.build.custommps.typesystem.NonEmptyLibraryName_NonTypesystemRule" />
   <unitInfo fileName="MPSBuildShouldHaveToolsZipDefined_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.build.custommps.typesystem.MPSBuildShouldHaveToolsZipDefined_NonTypesystemRule" />
   <root nodeId="1234292464807">
-    <nodeInfo nodeId="1234294303464" fileName="MPSBuildShouldHaveToolsZipDefined_NonTypesystemRule.java" startLine="25" startPosition="94" endLine="26" endPosition="102" />
-    <nodeInfo nodeId="1234294315450" fileName="MPSBuildShouldHaveToolsZipDefined_NonTypesystemRule.java" startLine="26" startPosition="102" endLine="27" endPosition="62" />
+    <nodeInfo nodeId="1234294303464" fileName="MPSBuildShouldHaveToolsZipDefined_NonTypesystemRule.java" startLine="25" startPosition="94" endLine="26" endPosition="106" />
+    <nodeInfo nodeId="1234294315450" fileName="MPSBuildShouldHaveToolsZipDefined_NonTypesystemRule.java" startLine="26" startPosition="106" endLine="27" endPosition="62" />
     <nodeInfo nodeId="1238771106116" fileName="MPSBuildShouldHaveToolsZipDefined_NonTypesystemRule.java" startLine="29" startPosition="7" endLine="30" endPosition="55" />
     <nodeInfo nodeId="1238771106116" fileName="MPSBuildShouldHaveToolsZipDefined_NonTypesystemRule.java" startLine="30" startPosition="55" endLine="31" endPosition="57" />
     <nodeInfo nodeId="1238771106116" fileName="MPSBuildShouldHaveToolsZipDefined_NonTypesystemRule.java" startLine="31" startPosition="57" endLine="32" endPosition="314" />
