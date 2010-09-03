@@ -23,7 +23,6 @@ import com.intellij.util.xmlb.annotations.Transient;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.MPSModuleOwner.SelfManagingModuleOwner;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.stubs.StubReloadManager;
 import jetbrains.mps.util.PathManager;
@@ -48,8 +47,8 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
     return ApplicationManager.getApplication().getComponent(LibraryManager.class);
   }
 
-  private SelfManagingModuleOwner myBootstrapLibrariesOwner;
-  private SelfManagingModuleOwner myPredefinedLibrariesOwner;
+  private MPSModuleOwner myBootstrapLibrariesOwner;
+  private MPSModuleOwner myPredefinedLibrariesOwner;
   private boolean myInitializing = false;
   private final Map<String, Library> myCustomBuiltInLibraries = new HashMap<String, Library>();
   private ClassLoaderManager myClm;
@@ -127,9 +126,9 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
   }
 
   private void initPredefinedLibs() {
-    myPredefinedLibrariesOwner = new SelfManagingModuleOwner() {
+    myPredefinedLibrariesOwner = new MPSModuleOwner() {
     };
-    myBootstrapLibrariesOwner = new SelfManagingModuleOwner() {
+    myBootstrapLibrariesOwner = new MPSModuleOwner() {
     };
 
     for (Library l : getLibraries()) {

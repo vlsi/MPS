@@ -16,6 +16,5 @@
 package jetbrains.mps.smodel;
 
 public interface MPSModuleOwner {
-
-  public interface SelfManagingModuleOwner extends MPSModuleOwner{};
+  
 }

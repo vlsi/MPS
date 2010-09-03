@@ -22,7 +22,6 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 public class GarbageCollector implements ApplicationComponent {
-
   private final CleanupManager myCleanupManager;
   private final SModelRepository mySModelRepository;
   private final MPSModuleRepository myMPSModuleRepository;
