@@ -54,7 +54,7 @@ public class ExportScope_Behavior {
     */
     // for a while "module' export only for jetbrains.mps... modules 
     String targetNamespace = ExportScope_Behavior.getNamespace_2565736246230026649(node);
-    return isConcept || namespace.equals(targetNamespace) || targetNamespace == null || !(SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(node).getStereotype()) && targetNamespace.startsWith("jetbrains.mps"));
+    return isConcept || namespace.equals(targetNamespace) || targetNamespace == null || !(SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(node).getStereotype()) && (targetNamespace.equals("MPS.Classpath") || targetNamespace.startsWith("jetbrains.mps")));
   }
 
   public static boolean checkExport_2565736246230031479(boolean isConcept, SNode node, String namespace) {

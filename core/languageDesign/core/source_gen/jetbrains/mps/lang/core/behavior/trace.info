@@ -83,7 +83,7 @@
     <nodeInfo nodeId="4075196924244445339" fileName="ExportScope_Behavior.java" startLine="44" startPosition="6" endLine="45" endPosition="142" />
     <nodeInfo nodeId="976430961577071353" fileName="ExportScope_Behavior.java" startLine="54" startPosition="6" endLine="55" endPosition="69" />
     <nodeInfo nodeId="976430961577062472" fileName="ExportScope_Behavior.java" startLine="55" startPosition="69" endLine="56" endPosition="89" />
-    <nodeInfo nodeId="976430961577069868" fileName="ExportScope_Behavior.java" startLine="56" startPosition="89" endLine="57" endPosition="225" />
+    <nodeInfo nodeId="976430961577069868" fileName="ExportScope_Behavior.java" startLine="56" startPosition="89" endLine="57" endPosition="270" />
     <nodeInfo nodeId="2565736246230031493" fileName="ExportScope_Behavior.java" startLine="60" startPosition="106" endLine="61" endPosition="78" />
     <nodeInfo nodeId="8656690432819148317" fileName="ExportScope_Behavior.java" startLine="39" startPosition="146" endLine="43" endPosition="0" />
     <nodeInfo nodeId="976430961577068655" fileName="ExportScope_Behavior.java" startLine="49" startPosition="6" endLine="53" endPosition="8" />
@@ -99,7 +99,7 @@
       <varInfo nodeId="2565736246230031494" varName="exp" />
     </scopeInfo>
     <scopeInfo nodeId="4075196924244445288" fileName="ExportScope_Behavior.java" startLine="36" startPosition="70" endLine="45" endPosition="142" />
-    <scopeInfo nodeId="8259195909097980938" fileName="ExportScope_Behavior.java" startLine="48" startPosition="113" endLine="57" endPosition="225">
+    <scopeInfo nodeId="8259195909097980938" fileName="ExportScope_Behavior.java" startLine="48" startPosition="113" endLine="57" endPosition="270">
       <varInfo nodeId="976430961577062473" varName="targetNamespace" />
     </scopeInfo>
     <unitInfo nodeId="8656690432819148317" fileName="ExportScope_Behavior.java" startLine="39" startPosition="123" endLine="43" endPosition="7" unitName="jetbrains.mps.lang.core.behavior.ExportScope_Behavior$1" />
