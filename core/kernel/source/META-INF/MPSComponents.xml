@@ -188,6 +188,10 @@
     <component>
       <implementation-class>jetbrains.mps.nodeEditor.CaretBlinker</implementation-class>
     </component>
+    
+    <component>
+      <implementation-class>jetbrains.mps.ide.MPSAdapter</implementation-class>
+    </component>
 
     <component>
       <implementation-class>jetbrains.mps.nodeEditor.EditorSettings</implementation-class>
