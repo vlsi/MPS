@@ -33,7 +33,7 @@ public abstract class BaseDiffTestCase extends TestCase {
     String fileName = null;
     for (StackTraceElement e : stack) {
       if (e.getClassName().equals(DiffTestCase.class.getName())) {
-        fileName = "core\\kernel\\tests\\jetbrains\\mps\\diff\\test\\resources\\result\\" + e.getMethodName() + ".txt";
+        fileName = "core/kernel/tests/jetbrains/mps/diff/test/resources/result/" + e.getMethodName() + ".txt";
       }
     }
     File file = new File(fileName);
@@ -44,7 +44,7 @@ public abstract class BaseDiffTestCase extends TestCase {
   }
 
   void assertDiff(String fileName) {
-    String path = "core\\kernel\\tests\\jetbrains\\mps\\diff\\test\\resources\\";
+    String path = "core/kernel/tests/jetbrains/mps/diff/test/resources/";
     String fullName = path + fileName + "1.txt";
     assertDiff(FileUtil.read(new File(fullName)).split("\n"),
       FileUtil.read(new File(fullName.replace("1", "2"))).split("\n"));

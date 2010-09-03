@@ -5,8 +5,7 @@
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="MPSProject">
-    <projectSolutions>
-    </projectSolutions>
+    <projectSolutions />
     <projectLanguages>
       <languagePath path="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpl" folder="mps-stuff" />
       <languagePath path="${project}/quickQueryLanguage.mpl" folder="main" />
@@ -29,7 +28,7 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
-    <mapping directory="$APPLICATION_HOME_DIR$" vcs="svn" />
+    <mapping directory="$APPLICATION_HOME_DIR$" vcs="Git" />
   </component>
 </project>
 

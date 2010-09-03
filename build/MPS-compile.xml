@@ -1,6 +1,7 @@
 <project name="MPS-compile" default="compile.all" basedir="..">
   <property name="collections_trove.runtime.classes" value="core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
   <property name="jetbrains.mps.analyzers.classes" value="platform/analyzers/languages/analyzers/classes_gen" />
+  <property name="jetbrains.mps.analyzers.mpsAnalyzers.classes" value="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
   <property name="jetbrains.mps.analyzers.runtime.classes" value="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
   <property name="jetbrains.mps.baseLanguage.builders.classes" value="platform/builders/classes_gen" />
   <property name="jetbrains.mps.baseLanguage.checkedDots.classes" value="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
@@ -63,7 +64,6 @@
     <path path="classes" />
     <path path="core/debug-api/classes" />
     <path path="core/debug/classes" />
-    <path path="core/generator/classes" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
@@ -87,6 +87,10 @@
   </path>
   <path id="cycle.jetbrains.mps.analyzers_tjc.src">
     <path path="platform/analyzers/languages/analyzers/source_gen" />
+  </path>
+  <path id="cycle.jetbrains.mps.analyzers.mpsAnalyzers_tjc.src">
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/source_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/test_gen" />
   </path>
   <path id="cycle.jetbrains.mps.analyzers.runtime_tjc.src">
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/source_gen" />
@@ -252,8 +256,8 @@
     <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="MPSPlugin/apiclasses" />
     <path path="classes" />
-    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
     <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
     <path path="core/baseLanguage/classifiers/classes" />
@@ -285,12 +289,10 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
-    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug-api/classes" />
     <path path="core/debug/classes" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
-    <path path="core/generator/classes" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
@@ -301,9 +303,9 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -316,8 +318,8 @@
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
     <path path="core/languageDesign/sharedConcepts/classes" />
-    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/smodelTests/classes_gen" />
+    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/structure/classes" />
     <path path="core/languageDesign/stubs/classes" />
     <path path="core/languageDesign/stubs/classes_gen" />
@@ -343,6 +345,7 @@
     <path path="lib/tools/tools.jar" />
     <path path="lib/util.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
@@ -358,10 +361,10 @@
     <path path="platform/uiLanguage/classes" />
     <path path="platform/uiLanguage/classes_gen" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
     <path path="platform/xml/xmlQuery/classes_gen" />
     <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/classes" />
@@ -405,12 +408,10 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
-    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug-api/classes" />
     <path path="core/debug/classes" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
-    <path path="core/generator/classes" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
@@ -421,9 +422,9 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -436,8 +437,8 @@
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
     <path path="core/languageDesign/sharedConcepts/classes" />
-    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/smodelTests/classes_gen" />
+    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/structure/classes" />
     <path path="core/languageDesign/stubs/classes" />
     <path path="core/languageDesign/stubs/classes_gen" />
@@ -463,6 +464,7 @@
     <path path="lib/tools/tools.jar" />
     <path path="lib/util.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
@@ -478,10 +480,129 @@
     <path path="platform/uiLanguage/classes" />
     <path path="platform/uiLanguage/classes_gen" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
     <path path="platform/xml/xmlQuery/classes_gen" />
     <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
+    <path path="platform/ypath/classes_gen" />
+    <path path="platform/ypath/runtime/classes" />
+    <path path="workbench/classes" />
+    <path path="workbench/ideUiLanguage/classes_gen" />
+    <path refid="common.classpath" />
+  </path>
+  <path id="cycle.jetbrains.mps.analyzers.mpsAnalyzers_tjc.classpaths">
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
+    <path path="MPSPlugin/apiclasses" />
+    <path path="classes" />
+    <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
+    <path path="core/baseLanguage/blTypes/classes" />
+    <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
+    <path path="core/baseLanguage/classifiers/classes" />
+    <path path="core/baseLanguage/closures/classes" />
+    <path path="core/baseLanguage/closures/runtime/classes" />
+    <path path="core/baseLanguage/closures/runtime/source" />
+    <path path="core/baseLanguage/closures/runtime/source_gen" />
+    <path path="core/baseLanguage/collections/classes" />
+    <path path="core/baseLanguage/collections/languages/trove/classes_gen" />
+    <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
+    <path path="core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
+    <path path="core/baseLanguage/collections/runtime/classes" />
+    <path path="core/baseLanguage/collections/runtime/classes_gen" />
+    <path path="core/baseLanguage/collections/runtime/source_gen" />
+    <path path="core/baseLanguage/constructors/classes_gen" />
+    <path path="core/baseLanguage/contracts/languages/contracts/classes_gen" />
+    <path path="core/baseLanguage/dates/classes_gen" />
+    <path path="core/baseLanguage/dates/internal/classes_gen" />
+    <path path="core/baseLanguage/dates/runtime/classes_gen" />
+    <path path="core/baseLanguage/javadoc/classes_gen" />
+    <path path="core/baseLanguage/logging/classes_gen" />
+    <path path="core/baseLanguage/math/classes" />
+    <path path="core/baseLanguage/math/runtime/classes" />
+    <path path="core/baseLanguage/money/classes" />
+    <path path="core/baseLanguage/money/runtime/classes" />
+    <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
+    <path path="core/baseLanguage/runConfigurations/classes" />
+    <path path="core/baseLanguage/tuples/languages/tuples/classes_gen" />
+    <path path="core/baseLanguage/tuples/runtime/classes_gen" />
+    <path path="core/baseLanguage/unitTest/classes" />
+    <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
+    <path path="core/debug-api/classes" />
+    <path path="core/debug/classes" />
+    <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
+    <path path="core/javaParser/classes" />
+    <path path="core/kernel/classes" />
+    <path path="core/kernel/xmlQuery/runtime/classes" />
+    <path path="core/languageDesign/actions/classes" />
+    <path path="core/languageDesign/annotations/classes" />
+    <path path="core/languageDesign/behavior/classes" />
+    <path path="core/languageDesign/constraints/classes" />
+    <path path="core/languageDesign/core/classes" />
+    <path path="core/languageDesign/dataFlow/classes" />
+    <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editorTest/classes_gen" />
+    <path path="core/languageDesign/editor/classes" />
+    <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
+    <path path="core/languageDesign/findUsages/classes" />
+    <path path="core/languageDesign/generator/classes" />
+    <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
+    <path path="core/languageDesign/intentions/classes" />
+    <path path="core/languageDesign/mps-lite/classes" />
+    <path path="core/languageDesign/pattern/classes" />
+    <path path="core/languageDesign/pattern/languages/testLang/classes_gen" />
+    <path path="core/languageDesign/plugin/classes" />
+    <path path="core/languageDesign/quotation/classes" />
+    <path path="core/languageDesign/refactoring/classes" />
+    <path path="core/languageDesign/script/classes" />
+    <path path="core/languageDesign/sharedConcepts/classes" />
+    <path path="core/languageDesign/smodelTests/classes_gen" />
+    <path path="core/languageDesign/smodel/classes" />
+    <path path="core/languageDesign/structure/classes" />
+    <path path="core/languageDesign/stubs/classes" />
+    <path path="core/languageDesign/stubs/classes_gen" />
+    <path path="core/languageDesign/test/classes" />
+    <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
+    <path path="core/languageDesign/textGen/classes" />
+    <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/runtime/classes" />
+    <path path="lib/annotations.jar" />
+    <path path="lib/asm/asm.jar" />
+    <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
+    <path path="lib/commons-lang/commons-lang-2.1.jar" />
+    <path path="lib/commons-logging/commons-logging-1.1.jar" />
+    <path path="lib/eclipse-compiler/ecj.jar" />
+    <path path="lib/extensions.jar" />
+    <path path="lib/jdom/jdom.jar" />
+    <path path="lib/joda-time/joda-time-1.6.jar" />
+    <path path="lib/junit4/junit-4.1.jar" />
+    <path path="lib/log4j/log4j.jar" />
+    <path path="lib/picocontainer.jar" />
+    <path path="lib/platform-api.jar" />
+    <path path="lib/platform.jar" />
+    <path path="lib/tools/tools.jar" />
+    <path path="lib/util.jar" />
+    <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
+    <path path="platform/builders/classes_gen" />
+    <path path="platform/extensionMethod/classes_gen" />
+    <path path="platform/gtext/classes_gen" />
+    <path path="platform/gtext/runtime/classes_gen" />
+    <path path="platform/gwtsupport/languages/client/classes_gen" />
+    <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
+    <path path="platform/quickQueryLanguage/classes" />
+    <path path="platform/quickQueryLanguage/classes_gen" />
+    <path path="platform/regexp/classes" />
+    <path path="platform/regexp/classes_gen" />
+    <path path="platform/regexp/runtime/classes" />
+    <path path="platform/uiLanguage/classes" />
+    <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
+    <path path="platform/xml/xmlInternal/classes_gen" />
+    <path path="platform/xml/xmlQuery/classes_gen" />
+    <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/classes" />
@@ -492,8 +613,8 @@
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="MPSPlugin/apiclasses" />
     <path path="classes" />
-    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
     <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
     <path path="core/baseLanguage/classifiers/classes" />
@@ -525,12 +646,10 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
-    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug-api/classes" />
     <path path="core/debug/classes" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
-    <path path="core/generator/classes" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
@@ -541,9 +660,9 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -556,8 +675,8 @@
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
     <path path="core/languageDesign/sharedConcepts/classes" />
-    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/smodelTests/classes_gen" />
+    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/structure/classes" />
     <path path="core/languageDesign/stubs/classes" />
     <path path="core/languageDesign/stubs/classes_gen" />
@@ -583,6 +702,7 @@
     <path path="lib/tools/tools.jar" />
     <path path="lib/util.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
@@ -598,10 +718,10 @@
     <path path="platform/uiLanguage/classes" />
     <path path="platform/uiLanguage/classes_gen" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
     <path path="platform/xml/xmlQuery/classes_gen" />
     <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/classes" />
@@ -612,8 +732,8 @@
     <path path="platform/builders/classes_gen" />
     <path path="MPSPlugin/apiclasses" />
     <path path="classes" />
-    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
     <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
     <path path="core/baseLanguage/classifiers/classes" />
@@ -645,12 +765,10 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
-    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug-api/classes" />
     <path path="core/debug/classes" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
-    <path path="core/generator/classes" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
@@ -661,9 +779,9 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -676,8 +794,8 @@
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
     <path path="core/languageDesign/sharedConcepts/classes" />
-    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/smodelTests/classes_gen" />
+    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/structure/classes" />
     <path path="core/languageDesign/stubs/classes" />
     <path path="core/languageDesign/stubs/classes_gen" />
@@ -703,6 +821,7 @@
     <path path="lib/tools/tools.jar" />
     <path path="lib/util.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
@@ -718,10 +837,10 @@
     <path path="platform/uiLanguage/classes" />
     <path path="platform/uiLanguage/classes_gen" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
     <path path="platform/xml/xmlQuery/classes_gen" />
     <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/classes" />
@@ -732,8 +851,8 @@
     <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
     <path path="MPSPlugin/apiclasses" />
     <path path="classes" />
-    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
     <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
     <path path="core/baseLanguage/classifiers/classes" />
@@ -765,12 +884,10 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
-    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug-api/classes" />
     <path path="core/debug/classes" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
-    <path path="core/generator/classes" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
@@ -781,9 +898,9 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -796,8 +913,8 @@
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
     <path path="core/languageDesign/sharedConcepts/classes" />
-    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/smodelTests/classes_gen" />
+    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/structure/classes" />
     <path path="core/languageDesign/stubs/classes" />
     <path path="core/languageDesign/stubs/classes_gen" />
@@ -823,6 +940,7 @@
     <path path="lib/tools/tools.jar" />
     <path path="lib/util.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
@@ -838,10 +956,10 @@
     <path path="platform/uiLanguage/classes" />
     <path path="platform/uiLanguage/classes_gen" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
     <path path="platform/xml/xmlQuery/classes_gen" />
     <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/classes" />
@@ -852,8 +970,8 @@
     <path path="core/baseLanguage/contracts/languages/contracts/classes_gen" />
     <path path="MPSPlugin/apiclasses" />
     <path path="classes" />
-    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
     <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
     <path path="core/baseLanguage/classifiers/classes" />
@@ -885,12 +1003,10 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
-    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug-api/classes" />
     <path path="core/debug/classes" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
-    <path path="core/generator/classes" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
@@ -901,9 +1017,9 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -916,8 +1032,8 @@
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
     <path path="core/languageDesign/sharedConcepts/classes" />
-    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/smodelTests/classes_gen" />
+    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/structure/classes" />
     <path path="core/languageDesign/stubs/classes" />
     <path path="core/languageDesign/stubs/classes_gen" />
@@ -943,6 +1059,7 @@
     <path path="lib/tools/tools.jar" />
     <path path="lib/util.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
@@ -958,10 +1075,10 @@
     <path path="platform/uiLanguage/classes" />
     <path path="platform/uiLanguage/classes_gen" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
     <path path="platform/xml/xmlQuery/classes_gen" />
     <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/classes" />
@@ -973,8 +1090,8 @@
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="MPSPlugin/apiclasses" />
     <path path="classes" />
-    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
     <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
     <path path="core/baseLanguage/classifiers/classes" />
@@ -1006,12 +1123,10 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
-    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug-api/classes" />
     <path path="core/debug/classes" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
-    <path path="core/generator/classes" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
@@ -1022,9 +1137,9 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -1037,8 +1152,8 @@
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
     <path path="core/languageDesign/sharedConcepts/classes" />
-    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/smodelTests/classes_gen" />
+    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/structure/classes" />
     <path path="core/languageDesign/stubs/classes" />
     <path path="core/languageDesign/stubs/classes_gen" />
@@ -1064,6 +1179,7 @@
     <path path="lib/tools/tools.jar" />
     <path path="lib/util.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
@@ -1079,10 +1195,10 @@
     <path path="platform/uiLanguage/classes" />
     <path path="platform/uiLanguage/classes_gen" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
     <path path="platform/xml/xmlQuery/classes_gen" />
     <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/classes" />
@@ -1100,8 +1216,8 @@
     <path path="platform/extensionMethod/classes_gen" />
     <path path="MPSPlugin/apiclasses" />
     <path path="classes" />
-    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
     <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
     <path path="core/baseLanguage/classifiers/classes" />
@@ -1133,12 +1249,10 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
-    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug-api/classes" />
     <path path="core/debug/classes" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
-    <path path="core/generator/classes" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
@@ -1149,9 +1263,9 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -1164,8 +1278,8 @@
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
     <path path="core/languageDesign/sharedConcepts/classes" />
-    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/smodelTests/classes_gen" />
+    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/structure/classes" />
     <path path="core/languageDesign/stubs/classes" />
     <path path="core/languageDesign/stubs/classes_gen" />
@@ -1191,6 +1305,7 @@
     <path path="lib/tools/tools.jar" />
     <path path="lib/util.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
@@ -1206,10 +1321,10 @@
     <path path="platform/uiLanguage/classes" />
     <path path="platform/uiLanguage/classes_gen" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
     <path path="platform/xml/xmlQuery/classes_gen" />
     <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/classes" />
@@ -1220,8 +1335,8 @@
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="MPSPlugin/apiclasses" />
     <path path="classes" />
-    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
     <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
     <path path="core/baseLanguage/classifiers/classes" />
@@ -1253,12 +1368,10 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
-    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug-api/classes" />
     <path path="core/debug/classes" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
-    <path path="core/generator/classes" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
@@ -1269,9 +1382,9 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -1284,8 +1397,8 @@
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
     <path path="core/languageDesign/sharedConcepts/classes" />
-    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/smodelTests/classes_gen" />
+    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/structure/classes" />
     <path path="core/languageDesign/stubs/classes" />
     <path path="core/languageDesign/stubs/classes_gen" />
@@ -1311,6 +1424,7 @@
     <path path="lib/tools/tools.jar" />
     <path path="lib/util.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
@@ -1326,10 +1440,10 @@
     <path path="platform/uiLanguage/classes" />
     <path path="platform/uiLanguage/classes_gen" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
     <path path="platform/xml/xmlQuery/classes_gen" />
     <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/classes" />
@@ -1340,8 +1454,8 @@
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="MPSPlugin/apiclasses" />
     <path path="classes" />
-    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
     <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
     <path path="core/baseLanguage/classifiers/classes" />
@@ -1373,12 +1487,10 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
-    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug-api/classes" />
     <path path="core/debug/classes" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
-    <path path="core/generator/classes" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
@@ -1389,9 +1501,9 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -1404,8 +1516,8 @@
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
     <path path="core/languageDesign/sharedConcepts/classes" />
-    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/smodelTests/classes_gen" />
+    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/structure/classes" />
     <path path="core/languageDesign/stubs/classes" />
     <path path="core/languageDesign/stubs/classes_gen" />
@@ -1431,6 +1543,7 @@
     <path path="lib/tools/tools.jar" />
     <path path="lib/util.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
@@ -1446,10 +1559,10 @@
     <path path="platform/uiLanguage/classes" />
     <path path="platform/uiLanguage/classes_gen" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
     <path path="platform/xml/xmlQuery/classes_gen" />
     <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/classes" />
@@ -1460,8 +1573,8 @@
     <path path="core/baseLanguage/overloadedOperators/languages/overloadedOperators/classes_gen" />
     <path path="MPSPlugin/apiclasses" />
     <path path="classes" />
-    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
     <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
     <path path="core/baseLanguage/classifiers/classes" />
@@ -1493,12 +1606,10 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
-    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug-api/classes" />
     <path path="core/debug/classes" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
-    <path path="core/generator/classes" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
@@ -1509,9 +1620,9 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -1524,8 +1635,8 @@
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
     <path path="core/languageDesign/sharedConcepts/classes" />
-    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/smodelTests/classes_gen" />
+    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/structure/classes" />
     <path path="core/languageDesign/stubs/classes" />
     <path path="core/languageDesign/stubs/classes_gen" />
@@ -1551,6 +1662,7 @@
     <path path="lib/tools/tools.jar" />
     <path path="lib/util.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
@@ -1566,10 +1678,10 @@
     <path path="platform/uiLanguage/classes" />
     <path path="platform/uiLanguage/classes_gen" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
     <path path="platform/xml/xmlQuery/classes_gen" />
     <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/classes" />
@@ -1582,8 +1694,8 @@
     <path path="platform/regexp/runtime/classes" />
     <path path="MPSPlugin/apiclasses" />
     <path path="classes" />
-    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
     <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
     <path path="core/baseLanguage/classifiers/classes" />
@@ -1615,12 +1727,10 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
-    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug-api/classes" />
     <path path="core/debug/classes" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
-    <path path="core/generator/classes" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
@@ -1631,9 +1741,9 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -1646,8 +1756,8 @@
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
     <path path="core/languageDesign/sharedConcepts/classes" />
-    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/smodelTests/classes_gen" />
+    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/structure/classes" />
     <path path="core/languageDesign/stubs/classes" />
     <path path="core/languageDesign/stubs/classes_gen" />
@@ -1673,6 +1783,7 @@
     <path path="lib/tools/tools.jar" />
     <path path="lib/util.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
@@ -1688,10 +1799,10 @@
     <path path="platform/uiLanguage/classes" />
     <path path="platform/uiLanguage/classes_gen" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
     <path path="platform/xml/xmlQuery/classes_gen" />
     <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/classes" />
@@ -1702,8 +1813,8 @@
     <path path="platform/regexp/solutions/jetbrains.mps.regexp.examples/classes_gen" />
     <path path="MPSPlugin/apiclasses" />
     <path path="classes" />
-    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
     <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
     <path path="core/baseLanguage/classifiers/classes" />
@@ -1735,12 +1846,10 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
-    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug-api/classes" />
     <path path="core/debug/classes" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
-    <path path="core/generator/classes" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
@@ -1751,9 +1860,9 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -1766,8 +1875,8 @@
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
     <path path="core/languageDesign/sharedConcepts/classes" />
-    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/smodelTests/classes_gen" />
+    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/structure/classes" />
     <path path="core/languageDesign/stubs/classes" />
     <path path="core/languageDesign/stubs/classes_gen" />
@@ -1793,6 +1902,7 @@
     <path path="lib/tools/tools.jar" />
     <path path="lib/util.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
@@ -1809,10 +1919,10 @@
     <path path="platform/uiLanguage/classes" />
     <path path="platform/uiLanguage/classes_gen" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
     <path path="platform/xml/xmlQuery/classes_gen" />
     <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/classes" />
@@ -1829,8 +1939,8 @@
     <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="MPSPlugin/apiclasses" />
     <path path="classes" />
-    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
     <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
     <path path="core/baseLanguage/classifiers/classes" />
@@ -1862,12 +1972,10 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
-    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug-api/classes" />
     <path path="core/debug/classes" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
-    <path path="core/generator/classes" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
@@ -1878,9 +1986,9 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -1893,8 +2001,8 @@
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
     <path path="core/languageDesign/sharedConcepts/classes" />
-    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/smodelTests/classes_gen" />
+    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/structure/classes" />
     <path path="core/languageDesign/stubs/classes" />
     <path path="core/languageDesign/stubs/classes_gen" />
@@ -1920,6 +2028,7 @@
     <path path="lib/tools/tools.jar" />
     <path path="lib/util.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
@@ -1935,10 +2044,10 @@
     <path path="platform/uiLanguage/classes" />
     <path path="platform/uiLanguage/classes_gen" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
     <path path="platform/xml/xmlQuery/classes_gen" />
     <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/classes" />
@@ -1951,8 +2060,8 @@
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="MPSPlugin/apiclasses" />
     <path path="classes" />
-    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
     <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
     <path path="core/baseLanguage/classifiers/classes" />
@@ -1984,12 +2093,10 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
-    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug-api/classes" />
     <path path="core/debug/classes" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
-    <path path="core/generator/classes" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
@@ -2000,9 +2107,9 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -2015,8 +2122,8 @@
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
     <path path="core/languageDesign/sharedConcepts/classes" />
-    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/smodelTests/classes_gen" />
+    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/structure/classes" />
     <path path="core/languageDesign/stubs/classes" />
     <path path="core/languageDesign/stubs/classes_gen" />
@@ -2042,6 +2149,7 @@
     <path path="lib/tools/tools.jar" />
     <path path="lib/util.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
@@ -2057,10 +2165,10 @@
     <path path="platform/uiLanguage/classes" />
     <path path="platform/uiLanguage/classes_gen" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
     <path path="platform/xml/xmlQuery/classes_gen" />
     <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/classes" />
@@ -2068,8 +2176,6 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.unitTest.lib_tjc.classpaths">
-    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
-    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="lib/junit4/junit-4.1.jar" />
     <path refid="common.classpath" />
   </path>
@@ -2077,8 +2183,8 @@
     <path path="platform/bash/languages/bash/classes_gen" />
     <path path="MPSPlugin/apiclasses" />
     <path path="classes" />
-    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
     <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
     <path path="core/baseLanguage/classifiers/classes" />
@@ -2110,12 +2216,10 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
-    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug-api/classes" />
     <path path="core/debug/classes" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
-    <path path="core/generator/classes" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
@@ -2126,9 +2230,9 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -2141,8 +2245,8 @@
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
     <path path="core/languageDesign/sharedConcepts/classes" />
-    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/smodelTests/classes_gen" />
+    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/structure/classes" />
     <path path="core/languageDesign/stubs/classes" />
     <path path="core/languageDesign/stubs/classes_gen" />
@@ -2168,6 +2272,7 @@
     <path path="lib/tools/tools.jar" />
     <path path="lib/util.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/bash/languages/bash/classes_gen" />
     <path path="platform/builders/classes_gen" />
@@ -2200,8 +2305,8 @@
     <path path="platform/buildlanguage/languages/custommpsInternal/classes_gen" />
     <path path="MPSPlugin/apiclasses" />
     <path path="classes" />
-    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
     <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
     <path path="core/baseLanguage/classifiers/classes" />
@@ -2233,12 +2338,10 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
-    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug-api/classes" />
     <path path="core/debug/classes" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
-    <path path="core/generator/classes" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
@@ -2249,9 +2352,9 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -2264,8 +2367,8 @@
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
     <path path="core/languageDesign/sharedConcepts/classes" />
-    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/smodelTests/classes_gen" />
+    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/structure/classes" />
     <path path="core/languageDesign/stubs/classes" />
     <path path="core/languageDesign/stubs/classes_gen" />
@@ -2292,13 +2395,14 @@
     <path path="lib/tools/tools.jar" />
     <path path="lib/util.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/bash/languages/bash/classes_gen" />
     <path path="platform/builders/classes_gen" />
     <path path="platform/buildlanguage/languages/buildlanguage/classes" />
     <path path="platform/buildlanguage/languages/buildlanguage/classes_gen" />
-    <path path="platform/buildlanguage/languages/custommps/classes_gen" />
     <path path="platform/buildlanguage/languages/custommpsInternal/classes_gen" />
+    <path path="platform/buildlanguage/languages/custommps/classes_gen" />
     <path path="platform/buildlanguage/languages/dependency/classes_gen" />
     <path path="platform/buildlanguage/languages/distrib/classes_gen" />
     <path path="platform/buildlanguage/languages/generictasks/classes_gen" />
@@ -2318,12 +2422,12 @@
     <path path="platform/uiLanguage/classes" />
     <path path="platform/uiLanguage/classes_gen" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="platform/xml/xml/classes_gen" />
+    <path path="platform/xmlDeprecated/classes" />
+    <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
     <path path="platform/xml/xmlQuery/classes_gen" />
     <path path="platform/xml/xmlSchema/classes_gen" />
-    <path path="platform/xmlDeprecated/classes" />
-    <path path="platform/xmlDeprecated/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/classes" />
@@ -2336,8 +2440,8 @@
     <path path="platform/buildlanguage/languages/packaging/classes_gen" />
     <path path="MPSPlugin/apiclasses" />
     <path path="classes" />
-    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
     <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
     <path path="core/baseLanguage/classifiers/classes" />
@@ -2369,12 +2473,10 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
-    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug-api/classes" />
     <path path="core/debug/classes" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
-    <path path="core/generator/classes" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
@@ -2385,9 +2487,9 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -2400,8 +2502,8 @@
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
     <path path="core/languageDesign/sharedConcepts/classes" />
-    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/smodelTests/classes_gen" />
+    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/structure/classes" />
     <path path="core/languageDesign/stubs/classes" />
     <path path="core/languageDesign/stubs/classes_gen" />
@@ -2428,6 +2530,7 @@
     <path path="lib/tools/tools.jar" />
     <path path="lib/util.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
     <path path="platform/buildlanguage/languages/buildlanguage/classes" />
@@ -2450,12 +2553,12 @@
     <path path="platform/uiLanguage/classes" />
     <path path="platform/uiLanguage/classes_gen" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="platform/xml/xml/classes_gen" />
+    <path path="platform/xmlDeprecated/classes" />
+    <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
     <path path="platform/xml/xmlQuery/classes_gen" />
     <path path="platform/xml/xmlSchema/classes_gen" />
-    <path path="platform/xmlDeprecated/classes" />
-    <path path="platform/xmlDeprecated/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/classes" />
@@ -2466,8 +2569,8 @@
     <path path="platform/buildlanguage/languages/distrib/classes_gen" />
     <path path="MPSPlugin/apiclasses" />
     <path path="classes" />
-    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
     <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
     <path path="core/baseLanguage/classifiers/classes" />
@@ -2499,12 +2602,10 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
-    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug-api/classes" />
     <path path="core/debug/classes" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
-    <path path="core/generator/classes" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
@@ -2515,9 +2616,9 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -2530,8 +2631,8 @@
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
     <path path="core/languageDesign/sharedConcepts/classes" />
-    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/smodelTests/classes_gen" />
+    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/structure/classes" />
     <path path="core/languageDesign/stubs/classes" />
     <path path="core/languageDesign/stubs/classes_gen" />
@@ -2558,6 +2659,7 @@
     <path path="lib/tools/tools.jar" />
     <path path="lib/util.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
     <path path="platform/buildlanguage/languages/buildlanguage/classes" />
@@ -2581,12 +2683,12 @@
     <path path="platform/uiLanguage/classes" />
     <path path="platform/uiLanguage/classes_gen" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="platform/xml/xml/classes_gen" />
+    <path path="platform/xmlDeprecated/classes" />
+    <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
     <path path="platform/xml/xmlQuery/classes_gen" />
     <path path="platform/xml/xmlSchema/classes_gen" />
-    <path path="platform/xmlDeprecated/classes" />
-    <path path="platform/xmlDeprecated/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/classes" />
@@ -2600,8 +2702,8 @@
     <path path="platform/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="MPSPlugin/apiclasses" />
     <path path="classes" />
-    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
     <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
     <path path="core/baseLanguage/classifiers/classes" />
@@ -2633,12 +2735,10 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
-    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug-api/classes" />
     <path path="core/debug/classes" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
-    <path path="core/generator/classes" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
@@ -2649,9 +2749,9 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -2664,8 +2764,8 @@
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
     <path path="core/languageDesign/sharedConcepts/classes" />
-    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/smodelTests/classes_gen" />
+    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/structure/classes" />
     <path path="core/languageDesign/stubs/classes" />
     <path path="core/languageDesign/stubs/classes_gen" />
@@ -2692,6 +2792,7 @@
     <path path="lib/tools/tools.jar" />
     <path path="lib/util.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
     <path path="platform/buildlanguage/languages/buildlanguage/classes" />
@@ -2711,12 +2812,12 @@
     <path path="platform/uiLanguage/classes" />
     <path path="platform/uiLanguage/classes_gen" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="platform/xml/xml/classes_gen" />
+    <path path="platform/xmlDeprecated/classes" />
+    <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
     <path path="platform/xml/xmlQuery/classes_gen" />
     <path path="platform/xml/xmlSchema/classes_gen" />
-    <path path="platform/xmlDeprecated/classes" />
-    <path path="platform/xmlDeprecated/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/classes" />
@@ -2727,8 +2828,8 @@
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="MPSPlugin/apiclasses" />
     <path path="classes" />
-    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
     <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
     <path path="core/baseLanguage/classifiers/classes" />
@@ -2760,12 +2861,10 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
-    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug-api/classes" />
     <path path="core/debug/classes" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
-    <path path="core/generator/classes" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
@@ -2776,9 +2875,9 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -2791,8 +2890,8 @@
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
     <path path="core/languageDesign/sharedConcepts/classes" />
-    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/smodelTests/classes_gen" />
+    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/structure/classes" />
     <path path="core/languageDesign/stubs/classes" />
     <path path="core/languageDesign/stubs/classes_gen" />
@@ -2818,6 +2917,7 @@
     <path path="lib/tools/tools.jar" />
     <path path="lib/util.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
@@ -2833,10 +2933,10 @@
     <path path="platform/uiLanguage/classes" />
     <path path="platform/uiLanguage/classes_gen" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
     <path path="platform/xml/xmlQuery/classes_gen" />
     <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/classes" />
@@ -2847,8 +2947,8 @@
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
     <path path="MPSPlugin/apiclasses" />
     <path path="classes" />
-    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
     <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
     <path path="core/baseLanguage/classifiers/classes" />
@@ -2880,12 +2980,10 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
-    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug-api/classes" />
     <path path="core/debug/classes" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
-    <path path="core/generator/classes" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
@@ -2896,9 +2994,9 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -2911,8 +3009,8 @@
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
     <path path="core/languageDesign/sharedConcepts/classes" />
-    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/smodelTests/classes_gen" />
+    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/structure/classes" />
     <path path="core/languageDesign/stubs/classes" />
     <path path="core/languageDesign/stubs/classes_gen" />
@@ -2938,6 +3036,7 @@
     <path path="lib/tools/tools.jar" />
     <path path="lib/util.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
@@ -2953,10 +3052,10 @@
     <path path="platform/uiLanguage/classes" />
     <path path="platform/uiLanguage/classes_gen" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
     <path path="platform/xml/xmlQuery/classes_gen" />
     <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/classes" />
@@ -2967,8 +3066,8 @@
     <path path="platform/gtext/classes_gen" />
     <path path="MPSPlugin/apiclasses" />
     <path path="classes" />
-    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
     <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
     <path path="core/baseLanguage/classifiers/classes" />
@@ -3000,12 +3099,10 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
-    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug-api/classes" />
     <path path="core/debug/classes" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
-    <path path="core/generator/classes" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
@@ -3016,9 +3113,9 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -3031,8 +3128,8 @@
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
     <path path="core/languageDesign/sharedConcepts/classes" />
-    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/smodelTests/classes_gen" />
+    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/structure/classes" />
     <path path="core/languageDesign/stubs/classes" />
     <path path="core/languageDesign/stubs/classes_gen" />
@@ -3058,6 +3155,7 @@
     <path path="lib/tools/tools.jar" />
     <path path="lib/util.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
@@ -3073,10 +3171,10 @@
     <path path="platform/uiLanguage/classes" />
     <path path="platform/uiLanguage/classes_gen" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
     <path path="platform/xml/xmlQuery/classes_gen" />
     <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/classes" />
@@ -3094,8 +3192,8 @@
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path path="MPSPlugin/apiclasses" />
     <path path="classes" />
-    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
     <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
     <path path="core/baseLanguage/classifiers/classes" />
@@ -3127,12 +3225,10 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
-    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug-api/classes" />
     <path path="core/debug/classes" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
-    <path path="core/generator/classes" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
@@ -3143,9 +3239,9 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -3158,8 +3254,8 @@
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
     <path path="core/languageDesign/sharedConcepts/classes" />
-    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/smodelTests/classes_gen" />
+    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/structure/classes" />
     <path path="core/languageDesign/stubs/classes" />
     <path path="core/languageDesign/stubs/classes_gen" />
@@ -3185,6 +3281,7 @@
     <path path="lib/tools/tools.jar" />
     <path path="lib/util.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
@@ -3200,10 +3297,10 @@
     <path path="platform/uiLanguage/classes" />
     <path path="platform/uiLanguage/classes_gen" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
     <path path="platform/xml/xmlQuery/classes_gen" />
     <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/classes" />
@@ -3219,8 +3316,8 @@
     <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="MPSPlugin/apiclasses" />
     <path path="classes" />
-    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
     <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
     <path path="core/baseLanguage/classifiers/classes" />
@@ -3252,12 +3349,10 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
-    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug-api/classes" />
     <path path="core/debug/classes" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
-    <path path="core/generator/classes" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
@@ -3268,9 +3363,9 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -3283,8 +3378,8 @@
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
     <path path="core/languageDesign/sharedConcepts/classes" />
-    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/smodelTests/classes_gen" />
+    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/structure/classes" />
     <path path="core/languageDesign/stubs/classes" />
     <path path="core/languageDesign/stubs/classes_gen" />
@@ -3310,6 +3405,7 @@
     <path path="lib/tools/tools.jar" />
     <path path="lib/util.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
@@ -3325,10 +3421,10 @@
     <path path="platform/uiLanguage/classes" />
     <path path="platform/uiLanguage/classes_gen" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
     <path path="platform/xml/xmlQuery/classes_gen" />
     <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/classes" />
@@ -3339,8 +3435,8 @@
     <path path="core/languageDesign/stubs/classes_gen" />
     <path path="MPSPlugin/apiclasses" />
     <path path="classes" />
-    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
     <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
     <path path="core/baseLanguage/classifiers/classes" />
@@ -3372,12 +3468,10 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
-    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug-api/classes" />
     <path path="core/debug/classes" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
-    <path path="core/generator/classes" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
@@ -3388,9 +3482,9 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -3403,8 +3497,8 @@
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
     <path path="core/languageDesign/sharedConcepts/classes" />
-    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/smodelTests/classes_gen" />
+    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/structure/classes" />
     <path path="core/languageDesign/stubs/classes" />
     <path path="core/languageDesign/stubs/classes_gen" />
@@ -3430,6 +3524,7 @@
     <path path="lib/tools/tools.jar" />
     <path path="lib/util.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
@@ -3445,10 +3540,10 @@
     <path path="platform/uiLanguage/classes" />
     <path path="platform/uiLanguage/classes_gen" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
     <path path="platform/xml/xmlQuery/classes_gen" />
     <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/classes" />
@@ -3459,8 +3554,8 @@
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="MPSPlugin/apiclasses" />
     <path path="classes" />
-    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
     <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
     <path path="core/baseLanguage/classifiers/classes" />
@@ -3492,12 +3587,10 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
-    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug-api/classes" />
     <path path="core/debug/classes" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
-    <path path="core/generator/classes" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
@@ -3508,9 +3601,9 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -3523,8 +3616,8 @@
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
     <path path="core/languageDesign/sharedConcepts/classes" />
-    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/smodelTests/classes_gen" />
+    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/structure/classes" />
     <path path="core/languageDesign/stubs/classes" />
     <path path="core/languageDesign/stubs/classes_gen" />
@@ -3550,6 +3643,7 @@
     <path path="lib/tools/tools.jar" />
     <path path="lib/util.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
@@ -3565,10 +3659,10 @@
     <path path="platform/uiLanguage/classes" />
     <path path="platform/uiLanguage/classes_gen" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
     <path path="platform/xml/xmlQuery/classes_gen" />
     <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/classes" />
@@ -3580,8 +3674,8 @@
     <path path="platform/quickQueryLanguage/classes_gen" />
     <path path="MPSPlugin/apiclasses" />
     <path path="classes" />
-    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
     <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
     <path path="core/baseLanguage/classifiers/classes" />
@@ -3613,7 +3707,6 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
-    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug-api/classes" />
     <path path="core/debug/classes" />
@@ -3671,6 +3764,7 @@
     <path path="lib/tools/tools.jar" />
     <path path="lib/util.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
@@ -3686,10 +3780,10 @@
     <path path="platform/uiLanguage/classes" />
     <path path="platform/uiLanguage/classes_gen" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
     <path path="platform/xml/xmlQuery/classes_gen" />
     <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/classes" />
@@ -3705,8 +3799,8 @@
     <path path="platform/ui/languages/swt/runtime/classes_gen" />
     <path path="MPSPlugin/apiclasses" />
     <path path="classes" />
-    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
     <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
     <path path="core/baseLanguage/classifiers/classes" />
@@ -3738,12 +3832,10 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
-    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug-api/classes" />
     <path path="core/debug/classes" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
-    <path path="core/generator/classes" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
@@ -3754,9 +3846,9 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -3769,8 +3861,8 @@
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
     <path path="core/languageDesign/sharedConcepts/classes" />
-    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/smodelTests/classes_gen" />
+    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/structure/classes" />
     <path path="core/languageDesign/stubs/classes" />
     <path path="core/languageDesign/stubs/classes_gen" />
@@ -3796,6 +3888,7 @@
     <path path="lib/tools/tools.jar" />
     <path path="lib/util.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
@@ -3808,6 +3901,9 @@
     <path path="platform/regexp/classes" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/runtime/classes" />
+    <path path="platform/uiLanguage/classes" />
+    <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/ui/languages/gwt/classes_gen" />
     <path path="platform/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="platform/ui/languages/internal/classes_gen" />
@@ -3819,13 +3915,10 @@
     <path path="platform/ui/languages/swt/lib/macosx/64/swt.jar" />
     <path path="platform/ui/languages/swt/runtime/classes_gen" />
     <path path="platform/ui/languages/ui/classes_gen" />
-    <path path="platform/uiLanguage/classes" />
-    <path path="platform/uiLanguage/classes_gen" />
-    <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
     <path path="platform/xml/xmlQuery/classes_gen" />
     <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/classes" />
@@ -3836,8 +3929,8 @@
     <path path="platform/ui/languages/gwt/classes_gen" />
     <path path="MPSPlugin/apiclasses" />
     <path path="classes" />
-    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
     <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
     <path path="core/baseLanguage/classifiers/classes" />
@@ -3869,12 +3962,10 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
-    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug-api/classes" />
     <path path="core/debug/classes" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
-    <path path="core/generator/classes" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
@@ -3885,9 +3976,9 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -3900,8 +3991,8 @@
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
     <path path="core/languageDesign/sharedConcepts/classes" />
-    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/smodelTests/classes_gen" />
+    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/structure/classes" />
     <path path="core/languageDesign/stubs/classes" />
     <path path="core/languageDesign/stubs/classes_gen" />
@@ -3927,6 +4018,7 @@
     <path path="lib/tools/tools.jar" />
     <path path="lib/util.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
@@ -3939,6 +4031,9 @@
     <path path="platform/regexp/classes" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/runtime/classes" />
+    <path path="platform/uiLanguage/classes" />
+    <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/ui/languages/gwt/classes_gen" />
     <path path="platform/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="platform/ui/languages/internal/classes_gen" />
@@ -3950,13 +4045,10 @@
     <path path="platform/ui/languages/swt/lib/macosx/64/swt.jar" />
     <path path="platform/ui/languages/swt/runtime/classes_gen" />
     <path path="platform/ui/languages/ui/classes_gen" />
-    <path path="platform/uiLanguage/classes" />
-    <path path="platform/uiLanguage/classes_gen" />
-    <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
     <path path="platform/xml/xmlQuery/classes_gen" />
     <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/classes" />
@@ -3968,8 +4060,8 @@
     <path path="platform/ui/languages/swing/lib/swingx-1.6.jar" />
     <path path="MPSPlugin/apiclasses" />
     <path path="classes" />
-    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
     <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
     <path path="core/baseLanguage/classifiers/classes" />
@@ -4001,12 +4093,10 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
-    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug-api/classes" />
     <path path="core/debug/classes" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
-    <path path="core/generator/classes" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
@@ -4017,9 +4107,9 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -4032,8 +4122,8 @@
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
     <path path="core/languageDesign/sharedConcepts/classes" />
-    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/smodelTests/classes_gen" />
+    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/structure/classes" />
     <path path="core/languageDesign/stubs/classes" />
     <path path="core/languageDesign/stubs/classes_gen" />
@@ -4059,6 +4149,7 @@
     <path path="lib/tools/tools.jar" />
     <path path="lib/util.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
@@ -4071,6 +4162,9 @@
     <path path="platform/regexp/classes" />
     <path path="platform/regexp/classes_gen" />
     <path path="platform/regexp/runtime/classes" />
+    <path path="platform/uiLanguage/classes" />
+    <path path="platform/uiLanguage/classes_gen" />
+    <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
     <path path="platform/ui/languages/gwt/classes_gen" />
     <path path="platform/ui/languages/gwt/lib/gwt-user.jar" />
     <path path="platform/ui/languages/internal/classes_gen" />
@@ -4082,13 +4176,10 @@
     <path path="platform/ui/languages/swt/lib/macosx/64/swt.jar" />
     <path path="platform/ui/languages/swt/runtime/classes_gen" />
     <path path="platform/ui/languages/ui/classes_gen" />
-    <path path="platform/uiLanguage/classes" />
-    <path path="platform/uiLanguage/classes_gen" />
-    <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
     <path path="platform/xml/xmlQuery/classes_gen" />
     <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/classes" />
@@ -4107,8 +4198,8 @@
     <path path="platform/uiLanguage/classes_gen" />
     <path path="MPSPlugin/apiclasses" />
     <path path="classes" />
-    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
     <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
     <path path="core/baseLanguage/classifiers/classes" />
@@ -4140,12 +4231,10 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
-    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug-api/classes" />
     <path path="core/debug/classes" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
-    <path path="core/generator/classes" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
@@ -4156,9 +4245,9 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -4171,8 +4260,8 @@
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
     <path path="core/languageDesign/sharedConcepts/classes" />
-    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/smodelTests/classes_gen" />
+    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/structure/classes" />
     <path path="core/languageDesign/stubs/classes" />
     <path path="core/languageDesign/stubs/classes_gen" />
@@ -4198,6 +4287,7 @@
     <path path="lib/tools/tools.jar" />
     <path path="lib/util.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
@@ -4213,10 +4303,10 @@
     <path path="platform/uiLanguage/classes" />
     <path path="platform/uiLanguage/classes_gen" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
     <path path="platform/xml/xmlQuery/classes_gen" />
     <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/classes" />
@@ -4229,8 +4319,8 @@
     <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="MPSPlugin/apiclasses" />
     <path path="classes" />
-    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
     <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
     <path path="core/baseLanguage/classifiers/classes" />
@@ -4262,12 +4352,10 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
-    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug-api/classes" />
     <path path="core/debug/classes" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
-    <path path="core/generator/classes" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
@@ -4278,9 +4366,9 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -4293,8 +4381,8 @@
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
     <path path="core/languageDesign/sharedConcepts/classes" />
-    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/smodelTests/classes_gen" />
+    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/structure/classes" />
     <path path="core/languageDesign/stubs/classes" />
     <path path="core/languageDesign/stubs/classes_gen" />
@@ -4320,6 +4408,7 @@
     <path path="lib/tools/tools.jar" />
     <path path="lib/util.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
@@ -4335,10 +4424,10 @@
     <path path="platform/uiLanguage/classes" />
     <path path="platform/uiLanguage/classes_gen" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
     <path path="platform/xml/xmlQuery/classes_gen" />
     <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/classes" />
@@ -4350,8 +4439,8 @@
     <path path="platform/xmlDeprecated/classes_gen" />
     <path path="MPSPlugin/apiclasses" />
     <path path="classes" />
-    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
     <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
     <path path="core/baseLanguage/classifiers/classes" />
@@ -4383,12 +4472,10 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
-    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug-api/classes" />
     <path path="core/debug/classes" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
-    <path path="core/generator/classes" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
@@ -4399,9 +4486,9 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -4414,8 +4501,8 @@
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
     <path path="core/languageDesign/sharedConcepts/classes" />
-    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/smodelTests/classes_gen" />
+    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/structure/classes" />
     <path path="core/languageDesign/stubs/classes" />
     <path path="core/languageDesign/stubs/classes_gen" />
@@ -4441,6 +4528,7 @@
     <path path="lib/tools/tools.jar" />
     <path path="lib/util.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
@@ -4456,12 +4544,12 @@
     <path path="platform/uiLanguage/classes" />
     <path path="platform/uiLanguage/classes_gen" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="platform/xml/xml/classes_gen" />
+    <path path="platform/xmlDeprecated/classes" />
+    <path path="platform/xmlDeprecated/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
     <path path="platform/xml/xmlQuery/classes_gen" />
     <path path="platform/xml/xmlSchema/classes_gen" />
-    <path path="platform/xmlDeprecated/classes" />
-    <path path="platform/xmlDeprecated/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/classes" />
@@ -4472,8 +4560,8 @@
     <path path="platform/xml/xmlQuery/classes_gen" />
     <path path="MPSPlugin/apiclasses" />
     <path path="classes" />
-    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
     <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
     <path path="core/baseLanguage/classifiers/classes" />
@@ -4505,12 +4593,10 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
-    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug-api/classes" />
     <path path="core/debug/classes" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
-    <path path="core/generator/classes" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
@@ -4521,9 +4607,9 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -4536,8 +4622,8 @@
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
     <path path="core/languageDesign/sharedConcepts/classes" />
-    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/smodelTests/classes_gen" />
+    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/structure/classes" />
     <path path="core/languageDesign/stubs/classes" />
     <path path="core/languageDesign/stubs/classes_gen" />
@@ -4563,6 +4649,7 @@
     <path path="lib/tools/tools.jar" />
     <path path="lib/util.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
@@ -4578,10 +4665,10 @@
     <path path="platform/uiLanguage/classes" />
     <path path="platform/uiLanguage/classes_gen" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
     <path path="platform/xml/xmlQuery/classes_gen" />
     <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/classes" />
@@ -4592,8 +4679,8 @@
     <path path="platform/xmlUnitTest/languages/xmlUnitTest/classes_gen" />
     <path path="MPSPlugin/apiclasses" />
     <path path="classes" />
-    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
     <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
     <path path="core/baseLanguage/classifiers/classes" />
@@ -4625,12 +4712,10 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
-    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug-api/classes" />
     <path path="core/debug/classes" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
-    <path path="core/generator/classes" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
@@ -4641,9 +4726,9 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -4656,8 +4741,8 @@
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
     <path path="core/languageDesign/sharedConcepts/classes" />
-    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/smodelTests/classes_gen" />
+    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/structure/classes" />
     <path path="core/languageDesign/stubs/classes" />
     <path path="core/languageDesign/stubs/classes_gen" />
@@ -4683,6 +4768,7 @@
     <path path="lib/tools/tools.jar" />
     <path path="lib/util.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
@@ -4698,11 +4784,11 @@
     <path path="platform/uiLanguage/classes" />
     <path path="platform/uiLanguage/classes_gen" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="platform/xml/xml/classes_gen" />
+    <path path="platform/xmlUnitTest/languages/xmlUnitTest/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
     <path path="platform/xml/xmlQuery/classes_gen" />
     <path path="platform/xml/xmlSchema/classes_gen" />
-    <path path="platform/xmlUnitTest/languages/xmlUnitTest/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/classes" />
@@ -4715,8 +4801,8 @@
     <path path="platform/ypath/runtime/classes" />
     <path path="MPSPlugin/apiclasses" />
     <path path="classes" />
-    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
     <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
     <path path="core/baseLanguage/classifiers/classes" />
@@ -4748,12 +4834,10 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
-    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug-api/classes" />
     <path path="core/debug/classes" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
-    <path path="core/generator/classes" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
@@ -4764,9 +4848,9 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -4779,8 +4863,8 @@
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
     <path path="core/languageDesign/sharedConcepts/classes" />
-    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/smodelTests/classes_gen" />
+    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/structure/classes" />
     <path path="core/languageDesign/stubs/classes" />
     <path path="core/languageDesign/stubs/classes_gen" />
@@ -4806,6 +4890,7 @@
     <path path="lib/tools/tools.jar" />
     <path path="lib/util.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
@@ -4821,10 +4906,10 @@
     <path path="platform/uiLanguage/classes" />
     <path path="platform/uiLanguage/classes_gen" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
     <path path="platform/xml/xmlQuery/classes_gen" />
     <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="workbench/classes" />
@@ -4835,8 +4920,8 @@
     <path path="platform/ypath/solutions/main/classes_gen" />
     <path path="MPSPlugin/apiclasses" />
     <path path="classes" />
-    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
     <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
     <path path="core/baseLanguage/classifiers/classes" />
@@ -4868,12 +4953,10 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
-    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug-api/classes" />
     <path path="core/debug/classes" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
-    <path path="core/generator/classes" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
@@ -4884,9 +4967,9 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -4899,8 +4982,8 @@
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
     <path path="core/languageDesign/sharedConcepts/classes" />
-    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/smodelTests/classes_gen" />
+    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/structure/classes" />
     <path path="core/languageDesign/stubs/classes" />
     <path path="core/languageDesign/stubs/classes_gen" />
@@ -4926,6 +5009,7 @@
     <path path="lib/tools/tools.jar" />
     <path path="lib/util.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
@@ -4941,10 +5025,10 @@
     <path path="platform/uiLanguage/classes" />
     <path path="platform/uiLanguage/classes_gen" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
     <path path="platform/xml/xmlQuery/classes_gen" />
     <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="platform/ypath/solutions/main/classes_gen" />
@@ -4956,8 +5040,8 @@
     <path path="platform/ypath/solutions/test/classes_gen" />
     <path path="MPSPlugin/apiclasses" />
     <path path="classes" />
-    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
+    <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
     <path path="core/baseLanguage/checkDot/languages/checkedDots/classes_gen" />
     <path path="core/baseLanguage/classifiers/classes" />
@@ -4989,12 +5073,10 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
-    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug-api/classes" />
     <path path="core/debug/classes" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
-    <path path="core/generator/classes" />
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
@@ -5005,9 +5087,9 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
+    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
     <path path="core/languageDesign/generator/classes" />
     <path path="core/languageDesign/generator/languages/errorReporting/classes_gen" />
@@ -5020,8 +5102,8 @@
     <path path="core/languageDesign/refactoring/classes" />
     <path path="core/languageDesign/script/classes" />
     <path path="core/languageDesign/sharedConcepts/classes" />
-    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/smodelTests/classes_gen" />
+    <path path="core/languageDesign/smodel/classes" />
     <path path="core/languageDesign/structure/classes" />
     <path path="core/languageDesign/stubs/classes" />
     <path path="core/languageDesign/stubs/classes_gen" />
@@ -5047,6 +5129,7 @@
     <path path="lib/tools/tools.jar" />
     <path path="lib/util.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
+    <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
     <path path="platform/builders/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
@@ -5062,10 +5145,10 @@
     <path path="platform/uiLanguage/classes" />
     <path path="platform/uiLanguage/classes_gen" />
     <path path="platform/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime/classes_gen" />
-    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/xml/xmlInternal/classes_gen" />
     <path path="platform/xml/xmlQuery/classes_gen" />
     <path path="platform/xml/xmlSchema/classes_gen" />
+    <path path="platform/xml/xml/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
     <path path="platform/ypath/solutions/main/classes_gen" />
@@ -5074,7 +5157,7 @@
     <path path="workbench/ideUiLanguage/classes_gen" />
     <path refid="common.classpath" />
   </path>
-  <target name="compile.all" depends="compile.cycle.collections_trove.runtime_tjc,compile.cycle.jetbrains.mps.analyzers_tjc,compile.cycle.jetbrains.mps.analyzers.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.builders_tjc,compile.cycle.jetbrains.mps.baseLanguage.checkedDots_tjc,compile.cycle.jetbrains.mps.baseLanguage.contracts_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc,compile.cycle.jetbrains.mps.baseLanguage.javadoc_tjc,compile.cycle.jetbrains.mps.baseLanguage.logging_tjc,compile.cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc,compile.cycle.jetbrains.mps.baseLanguage.tuples_tjc,compile.cycle.jetbrains.mps.baseLanguage.unitTest_tjc,compile.cycle.jetbrains.mps.baseLanguage.unitTest.lib_tjc,compile.cycle.jetbrains.mps.bash_tjc,compile.cycle.jetbrains.mps.build.custommps_tjc,compile.cycle.jetbrains.mps.build.dependency_tjc,compile.cycle.jetbrains.mps.build.distrib_tjc,compile.cycle.jetbrains.mps.build.generictasks_tjc,compile.cycle.jetbrains.mps.debug.privateMembers_tjc,compile.cycle.jetbrains.mps.editor.runtime_tjc,compile.cycle.jetbrains.mps.gtext_tjc,compile.cycle.jetbrains.mps.gtext.runtime_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage.runtime_tjc,compile.cycle.jetbrains.mps.lang.editor.editorTest_tjc,compile.cycle.jetbrains.mps.lang.stubs_tjc,compile.cycle.jetbrains.mps.lang.test.runtime_tjc,compile.cycle.jetbrains.mps.quickQueryLanguage_tjc,compile.cycle.jetbrains.mps.ui_tjc,compile.cycle.jetbrains.mps.ui.gwt_tjc,compile.cycle.jetbrains.mps.ui.swing_tjc,compile.cycle.jetbrains.mps.ui.swing.runtime_tjc,compile.cycle.jetbrains.mps.uiLanguage_tjc,compile.cycle.jetbrains.mps.xml_tjc,compile.cycle.jetbrains.mps.xml.deprecated_tjc,compile.cycle.jetbrains.mps.xmlQuery_tjc,compile.cycle.jetbrains.mps.xmlUnitTest_tjc,compile.cycle.jetbrains.mps.ypath_tjc,compile.cycle.ypath.main_tjc,compile.cycle.ypath.test_tjc" />
+  <target name="compile.all" depends="compile.cycle.collections_trove.runtime_tjc,compile.cycle.jetbrains.mps.analyzers_tjc,compile.cycle.jetbrains.mps.analyzers.mpsAnalyzers_tjc,compile.cycle.jetbrains.mps.analyzers.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.builders_tjc,compile.cycle.jetbrains.mps.baseLanguage.checkedDots_tjc,compile.cycle.jetbrains.mps.baseLanguage.contracts_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates_tjc,compile.cycle.jetbrains.mps.baseLanguage.dates.runtime_tjc,compile.cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc,compile.cycle.jetbrains.mps.baseLanguage.javadoc_tjc,compile.cycle.jetbrains.mps.baseLanguage.logging_tjc,compile.cycle.jetbrains.mps.baseLanguage.overloadedOperators_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp_tjc,compile.cycle.jetbrains.mps.baseLanguage.regexp.examples_tjc,compile.cycle.jetbrains.mps.baseLanguage.tuples_tjc,compile.cycle.jetbrains.mps.baseLanguage.unitTest_tjc,compile.cycle.jetbrains.mps.baseLanguage.unitTest.lib_tjc,compile.cycle.jetbrains.mps.bash_tjc,compile.cycle.jetbrains.mps.build.custommps_tjc,compile.cycle.jetbrains.mps.build.dependency_tjc,compile.cycle.jetbrains.mps.build.distrib_tjc,compile.cycle.jetbrains.mps.build.generictasks_tjc,compile.cycle.jetbrains.mps.debug.privateMembers_tjc,compile.cycle.jetbrains.mps.editor.runtime_tjc,compile.cycle.jetbrains.mps.gtext_tjc,compile.cycle.jetbrains.mps.gtext.runtime_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage_tjc,compile.cycle.jetbrains.mps.ide.uiLanguage.runtime_tjc,compile.cycle.jetbrains.mps.lang.editor.editorTest_tjc,compile.cycle.jetbrains.mps.lang.stubs_tjc,compile.cycle.jetbrains.mps.lang.test.runtime_tjc,compile.cycle.jetbrains.mps.quickQueryLanguage_tjc,compile.cycle.jetbrains.mps.ui_tjc,compile.cycle.jetbrains.mps.ui.gwt_tjc,compile.cycle.jetbrains.mps.ui.swing_tjc,compile.cycle.jetbrains.mps.ui.swing.runtime_tjc,compile.cycle.jetbrains.mps.uiLanguage_tjc,compile.cycle.jetbrains.mps.xml_tjc,compile.cycle.jetbrains.mps.xml.deprecated_tjc,compile.cycle.jetbrains.mps.xmlQuery_tjc,compile.cycle.jetbrains.mps.xmlUnitTest_tjc,compile.cycle.jetbrains.mps.ypath_tjc,compile.cycle.ypath.main_tjc,compile.cycle.ypath.test_tjc" />
   <target name="compile.cycle.collections_trove.runtime_tjc">
     <property name="classes.dump" value="${collections_trove.runtime.classes}.tmp" />
     <mkdir dir="core/baseLanguage/collections/languages/trove/runtime/source_gen" />
@@ -5114,6 +5197,23 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
+  <target name="compile.cycle.jetbrains.mps.analyzers.mpsAnalyzers_tjc" depends="compile.cycle.jetbrains.mps.analyzers_tjc">
+    <property name="classes.dump" value="${jetbrains.mps.analyzers.mpsAnalyzers.classes}.tmp" />
+    <mkdir dir="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/source_gen" />
+    <mkdir dir="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/test_gen" />
+    <mkdir dir="${classes.dump}" />
+    <mkdir dir="${jetbrains.mps.analyzers.mpsAnalyzers.classes}" />
+    <javac classpathref="cycle.jetbrains.mps.analyzers.mpsAnalyzers_tjc.classpaths" destdir="${classes.dump}">
+      <src refid="cycle.jetbrains.mps.analyzers.mpsAnalyzers_tjc.src" />
+    </javac>
+    <javac classpathref="cycle.jetbrains.mps.analyzers.mpsAnalyzers_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.analyzers.mpsAnalyzers.classes}">
+      <src>
+        <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/source_gen" />
+        <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.mpsAnalyzers/test_gen" />
+      </src>
+    </javac>
+    <delete dir="${classes.dump}" />
+  </target>
   <target name="compile.cycle.jetbrains.mps.analyzers.runtime_tjc" depends="compile.cycle.collections_trove.runtime_tjc">
     <property name="classes.dump" value="${jetbrains.mps.analyzers.runtime.classes}.tmp" />
     <mkdir dir="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/source_gen" />
@@ -5131,7 +5231,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.baseLanguage.builders_tjc" depends="compile.cycle.jetbrains.mps.analyzers_tjc">
+  <target name="compile.cycle.jetbrains.mps.baseLanguage.builders_tjc" depends="compile.cycle.jetbrains.mps.analyzers.mpsAnalyzers_tjc">
     <property name="classes.dump" value="${jetbrains.mps.baseLanguage.builders.classes}.tmp" />
     <mkdir dir="platform/builders/source_gen" />
     <mkdir dir="${classes.dump}" />
@@ -5882,6 +5982,7 @@
     <delete dir="${collections_trove.runtime.classes}" />
     <delete dir="${jetbrains.mps.baseLanguage.collections.trove.classes}" />
     <delete dir="${jetbrains.mps.analyzers.classes}" />
+    <delete dir="${jetbrains.mps.analyzers.mpsAnalyzers.classes}" />
     <delete dir="${jetbrains.mps.analyzers.runtime.classes}" />
     <delete dir="${jetbrains.mps.baseLanguage.builders.classes}" />
     <delete dir="${jetbrains.mps.baseLanguage.checkedDots.classes}" />

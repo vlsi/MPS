@@ -15,6 +15,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
@@ -85,8 +86,13 @@ public class ClosureLiteralUtil {
     Map<SNode, SNode> map = null;
     List<SNode> imds = SLinkOperations.getTargets(SLinkOperations.getTarget(ctNoParams, "classifier", false), "method", true);
     SNode absRetCT = null;
-    if (ListSequence.fromList(imds).count() > 0) {
-      if (ListSequence.fromList(imds).count() != 1) {
+    List<SNode> meths = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ctNoParams, "classifier", false), "method", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode m) {
+        return !("equals".equals(SPropertyOperations.getString(m, "name"))) && SPropertyOperations.getBoolean(m, "isAbstract");
+      }
+    }).toListSequence();
+    if (ListSequence.fromList(meths).count() > 0) {
+      if (ListSequence.fromList(meths).count() > 1) {
         genContext.showWarningMessage(literal, "The adaptation target interface has more than one method");
       }
       SNode method = ListSequence.fromList(imds).getElement(0);

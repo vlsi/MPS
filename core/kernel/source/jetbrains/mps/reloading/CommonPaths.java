@@ -146,7 +146,7 @@ public class CommonPaths {
   private static IClassPathItem getLibraryJars() {
     CompositeClassPathItem cp = new CompositeClassPathItem();
 
-    String junitJar = libPath() + "junit4" + File.separator + "junit-4.1.jar";
+    String junitJar = libPath() + "junit4" + File.separator + "junit-4.8.2.jar";
     if (new File(junitJar).exists()) {
       cp.add(ClassPathFactory.getInstance().createFromPath(junitJar));
     }
