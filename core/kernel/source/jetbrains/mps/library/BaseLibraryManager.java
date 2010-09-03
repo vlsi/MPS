@@ -121,7 +121,7 @@ public abstract class BaseLibraryManager implements BaseComponent, Configurable,
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         for (Library l : getLibraries()) {
-          if (!l.isPredefined()) {
+          if (!(l instanceof PredefinedLibrary)) {
             myRepository.readModuleDescriptors(FileSystem.getFile(l.getPath()), myOwner);
           }
         }

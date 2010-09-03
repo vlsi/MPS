@@ -99,7 +99,7 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
     };
 
     for (Library l : getLibraries()) {
-      if (l.isPredefined()) {
+      if (l instanceof PredefinedLibrary) {
         MPSModuleOwner owner = (l.isBootstrap() ? myBootstrapLibrariesOwner : myPredefinedLibrariesOwner);
         List<IModule> modules = getModuleRepository().readModuleDescriptors(FileSystem.getFile(l.getPath()), owner);
 

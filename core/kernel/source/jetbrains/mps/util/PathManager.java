@@ -30,7 +30,7 @@ import java.util.regex.Pattern;
 public class PathManager {
   private static final Logger LOG = Logger.getLogger(PathManager.class);
 
-  public static final String PROPERTY_HOME_PATH = "mps.home.path";
+  private static final String PROPERTY_HOME_PATH = "mps.home.path";
 
   private static final String FILE = "file";
   private static final String JAR = "jar";

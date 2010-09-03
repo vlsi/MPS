@@ -38,21 +38,12 @@ public class Library implements Cloneable {
     return myPath;
   }
 
-  public boolean canSetPath() {
-    return true;
-  }
-
   public void setPath(String path) {
     myPath = path;
   }
 
   public String toString() {
     return myName;
-  }
-
-  @Transient
-  public boolean isPredefined() {
-    return false;
   }
 
   @Transient
