@@ -4,7 +4,8 @@ package jetbrains.mps.ide.tooltips;
 
 import java.awt.Component;
 import javax.swing.JTextArea;
-import jetbrains.mps.nodeEditor.EditorSettings;
+import com.intellij.util.ui.UIUtil;
+import javax.swing.border.EmptyBorder;
 
 public class ToolTipData {
   private String myText;
@@ -29,8 +30,8 @@ public class ToolTipData {
       JTextArea text = new JTextArea();
       text.setEditable(false);
       text.setText(myText);
-      text.setFont(EditorSettings.getInstance().getDefaultEditorFont());
-
+      text.setFont(UIUtil.getLabelFont());
+      text.setBorder(new EmptyBorder(0, 5, 0, 5));
       text.setBackground(ToolTip.BACKGROUND_COLOR);
       return text;
     }

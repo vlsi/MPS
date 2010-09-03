@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1657638272963062314">
-    <nodeInfo nodeId="1657638272963062322" fileName="ToolTipData.java" startLine="9" startPosition="26" endLine="10" endPosition="24" />
-    <nodeInfo nodeId="1975624945529243613" fileName="ToolTipData.java" startLine="10" startPosition="24" endLine="11" endPosition="32" />
-    <nodeInfo nodeId="1657638272963062326" fileName="ToolTipData.java" startLine="13" startPosition="40" endLine="14" endPosition="18" />
-    <nodeInfo nodeId="1975624945529244899" fileName="ToolTipData.java" startLine="17" startPosition="43" endLine="18" endPosition="28" />
-    <nodeInfo nodeId="1657638272963062343" fileName="ToolTipData.java" startLine="21" startPosition="32" endLine="22" endPosition="18" />
-    <nodeInfo nodeId="1975624945529320813" fileName="ToolTipData.java" startLine="26" startPosition="30" endLine="27" endPosition="25" />
-    <nodeInfo nodeId="1975624945529346147" fileName="ToolTipData.java" startLine="28" startPosition="12" endLine="29" endPosition="39" />
-    <nodeInfo nodeId="1975624945529346113" fileName="ToolTipData.java" startLine="29" startPosition="39" endLine="30" endPosition="30" />
-    <nodeInfo nodeId="1975624945529346120" fileName="ToolTipData.java" startLine="30" startPosition="30" endLine="31" endPosition="27" />
-    <nodeInfo nodeId="1975624945529346129" fileName="ToolTipData.java" startLine="31" startPosition="27" endLine="32" endPosition="72" />
-    <nodeInfo nodeId="1975624945529346138" fileName="ToolTipData.java" startLine="32" startPosition="72" endLine="33" endPosition="0" />
-    <nodeInfo nodeId="1975624945529346139" fileName="ToolTipData.java" startLine="33" startPosition="0" endLine="34" endPosition="51" />
-    <nodeInfo nodeId="1975624945529346170" fileName="ToolTipData.java" startLine="34" startPosition="51" endLine="35" endPosition="18" />
-    <nodeInfo nodeId="1657638272963062316" fileName="ToolTipData.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
-    <nodeInfo nodeId="1975624945529244892" fileName="ToolTipData.java" startLine="16" startPosition="0" endLine="19" endPosition="3" />
-    <nodeInfo nodeId="1657638272963062338" fileName="ToolTipData.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
-    <nodeInfo nodeId="1975624945529320819" fileName="ToolTipData.java" startLine="28" startPosition="10" endLine="36" endPosition="5" />
-    <nodeInfo nodeId="1975624945529320802" fileName="ToolTipData.java" startLine="25" startPosition="40" endLine="36" endPosition="5" />
-    <nodeInfo nodeId="1975624945529320792" fileName="ToolTipData.java" startLine="24" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="1657638272963062319" fileName="ToolTipData.java" startLine="13" startPosition="40" endLine="14" endPosition="18" />
-    <scopeInfo nodeId="1975624945529244895" fileName="ToolTipData.java" startLine="17" startPosition="43" endLine="18" endPosition="28" />
-    <scopeInfo nodeId="1657638272963062341" fileName="ToolTipData.java" startLine="21" startPosition="32" endLine="22" endPosition="18" />
-    <scopeInfo nodeId="1975624945529320803" fileName="ToolTipData.java" startLine="26" startPosition="30" endLine="27" endPosition="25" />
-    <scopeInfo nodeId="1657638272963062316" fileName="ToolTipData.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+    <nodeInfo nodeId="1657638272963062322" fileName="ToolTipData.java" startLine="10" startPosition="26" endLine="11" endPosition="24" />
+    <nodeInfo nodeId="1975624945529243613" fileName="ToolTipData.java" startLine="11" startPosition="24" endLine="12" endPosition="32" />
+    <nodeInfo nodeId="1657638272963062326" fileName="ToolTipData.java" startLine="14" startPosition="40" endLine="15" endPosition="18" />
+    <nodeInfo nodeId="1975624945529244899" fileName="ToolTipData.java" startLine="18" startPosition="43" endLine="19" endPosition="28" />
+    <nodeInfo nodeId="1657638272963062343" fileName="ToolTipData.java" startLine="22" startPosition="32" endLine="23" endPosition="18" />
+    <nodeInfo nodeId="1975624945529320813" fileName="ToolTipData.java" startLine="27" startPosition="30" endLine="28" endPosition="25" />
+    <nodeInfo nodeId="1975624945529346147" fileName="ToolTipData.java" startLine="29" startPosition="12" endLine="30" endPosition="39" />
+    <nodeInfo nodeId="1975624945529346113" fileName="ToolTipData.java" startLine="30" startPosition="39" endLine="31" endPosition="30" />
+    <nodeInfo nodeId="1975624945529346120" fileName="ToolTipData.java" startLine="31" startPosition="30" endLine="32" endPosition="27" />
+    <nodeInfo nodeId="1975624945529346129" fileName="ToolTipData.java" startLine="32" startPosition="27" endLine="33" endPosition="42" />
+    <nodeInfo nodeId="4878424605393323603" fileName="ToolTipData.java" startLine="33" startPosition="42" endLine="34" endPosition="50" />
+    <nodeInfo nodeId="1975624945529346139" fileName="ToolTipData.java" startLine="34" startPosition="50" endLine="35" endPosition="51" />
+    <nodeInfo nodeId="1975624945529346170" fileName="ToolTipData.java" startLine="35" startPosition="51" endLine="36" endPosition="18" />
+    <nodeInfo nodeId="1657638272963062316" fileName="ToolTipData.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
+    <nodeInfo nodeId="1975624945529244892" fileName="ToolTipData.java" startLine="17" startPosition="0" endLine="20" endPosition="3" />
+    <nodeInfo nodeId="1657638272963062338" fileName="ToolTipData.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <nodeInfo nodeId="1975624945529320819" fileName="ToolTipData.java" startLine="29" startPosition="10" endLine="37" endPosition="5" />
+    <nodeInfo nodeId="1975624945529320802" fileName="ToolTipData.java" startLine="26" startPosition="40" endLine="37" endPosition="5" />
+    <nodeInfo nodeId="1975624945529320792" fileName="ToolTipData.java" startLine="25" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="1657638272963062319" fileName="ToolTipData.java" startLine="14" startPosition="40" endLine="15" endPosition="18" />
+    <scopeInfo nodeId="1975624945529244895" fileName="ToolTipData.java" startLine="18" startPosition="43" endLine="19" endPosition="28" />
+    <scopeInfo nodeId="1657638272963062341" fileName="ToolTipData.java" startLine="22" startPosition="32" endLine="23" endPosition="18" />
+    <scopeInfo nodeId="1975624945529320803" fileName="ToolTipData.java" startLine="27" startPosition="30" endLine="28" endPosition="25" />
+    <scopeInfo nodeId="1657638272963062316" fileName="ToolTipData.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
       <varInfo nodeId="1657638272963062320" varName="text" />
     </scopeInfo>
-    <scopeInfo nodeId="1975624945529244892" fileName="ToolTipData.java" startLine="16" startPosition="0" endLine="19" endPosition="3">
+    <scopeInfo nodeId="1975624945529244892" fileName="ToolTipData.java" startLine="17" startPosition="0" endLine="20" endPosition="3">
       <varInfo nodeId="1975624945529244897" varName="component" />
     </scopeInfo>
-    <scopeInfo nodeId="1657638272963062338" fileName="ToolTipData.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="1975624945529320820" fileName="ToolTipData.java" startLine="28" startPosition="12" endLine="35" endPosition="18">
+    <scopeInfo nodeId="1657638272963062338" fileName="ToolTipData.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="1975624945529320820" fileName="ToolTipData.java" startLine="29" startPosition="12" endLine="36" endPosition="18">
       <varInfo nodeId="1975624945529346148" varName="text" />
     </scopeInfo>
-    <scopeInfo nodeId="1975624945529320795" fileName="ToolTipData.java" startLine="25" startPosition="40" endLine="36" endPosition="5" />
-    <scopeInfo nodeId="1975624945529320792" fileName="ToolTipData.java" startLine="24" startPosition="0" endLine="38" endPosition="0" />
-    <unitInfo nodeId="1657638272963062314" fileName="ToolTipData.java" startLine="9" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.ide.tooltips.ToolTipData" />
+    <scopeInfo nodeId="1975624945529320795" fileName="ToolTipData.java" startLine="26" startPosition="40" endLine="37" endPosition="5" />
+    <scopeInfo nodeId="1975624945529320792" fileName="ToolTipData.java" startLine="25" startPosition="0" endLine="39" endPosition="0" />
+    <unitInfo nodeId="1657638272963062314" fileName="ToolTipData.java" startLine="10" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.ide.tooltips.ToolTipData" />
   </root>
   <root nodeId="1657638272963439183">
     <nodeInfo nodeId="7530108077312637991" fileName="MPSToolTipManager.java" startLine="20" startPosition="43" endLine="21" endPosition="51" />

@@ -43,11 +43,12 @@
     <classNode extendsClassName="java.awt.Window" />
   </dependency>
   <dependency className="jetbrains.mps.ide.tooltips.ToolTipData" file="ToolTipData.java">
+    <classNode dependClassName="com.intellij.util.ui.UIUtil" />
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.JTextArea" />
+    <classNode dependClassName="javax.swing.border.EmptyBorder" />
     <classNode dependClassName="jetbrains.mps.ide.tooltips.ToolTip" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorSettings" />
   </dependency>
 </dependenciesRoot>
 
