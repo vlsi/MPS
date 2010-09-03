@@ -20,7 +20,6 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.impl.CloneUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.lang.reflect.InvocationTargetException;
 
 public class BaseTransformationTest extends TestCase {
@@ -82,7 +81,6 @@ public class BaseTransformationTest extends TestCase {
         public void run() {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
-              TypeChecker.getInstance().setIsTransformationTestMode(true);
               exception[0] = BaseTransformationTest.this.tryToRunTest(clazz.value, methodName, obj);
             }
           });

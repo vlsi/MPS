@@ -83,6 +83,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
 
   private MyModelListener myModelListener = new MyModelListener();
   private MyModelListenerManager myModelListenerManager = new MyModelListenerManager(myModelListener);
+  List<SModelEvent> myPendingEvents = new ArrayList<SModelEvent>();
 
   private MyEventsReadListener myNodesReadListener = new MyEventsReadListener();
   private MyTypeRecalculatedListener myTypeRecalculatedListener = new MyTypeRecalculatedListener();
@@ -1100,6 +1101,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
   }
 
   public boolean isChecked(boolean considerNonTypesystemRules) {
+    processPendingEvents();
     if (!myIsChecked) {
       return false;
     }
@@ -1124,11 +1126,17 @@ public class NodeTypesComponent implements EditorMessageOwner {
     myIsChecked = true;
   }
 
-  private class MyModelListener implements SModelCommandListener {
-    public void eventsHappenedInCommand(List<SModelEvent> events) {
-      for (SModelEvent event : events) {
-        event.accept(new MySModelEventVisitorAdapter());
-      }
+  private void processPendingEvents() {
+    for (SModelEvent event : myPendingEvents) {
+      event.accept(new MySModelEventVisitorAdapter());
+    }
+    myPendingEvents.clear();
+  }
+
+  private class MyModelListener extends SModelAdapter {
+    @Override
+    public void eventFired(SModelEvent event) {
+      myPendingEvents.add(event);
     }
   }
 
@@ -1311,9 +1319,9 @@ public class NodeTypesComponent implements EditorMessageOwner {
     private ReferenceQueue<SNode> myReferenceQueue = new ReferenceQueue<SNode>();
     private Map<SModelDescriptor, Integer> myNodesCount = new HashMap<SModelDescriptor, Integer>();
     private Map<WeakReference, SModelDescriptor> myDescriptors = new HashMap<WeakReference, SModelDescriptor>();
-    private SModelCommandListener myListener;
+    private SModelListener myListener;
 
-    MyModelListenerManager(SModelCommandListener listener) {
+    MyModelListenerManager(SModelListener listener) {
       myListener = listener;
     }
 
@@ -1327,7 +1335,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
       if (sm == null) return;
 
       if (!myNodesCount.containsKey(sm)) {
-        sm.addModelCommandListener(myListener);
+        sm.addModelListener(myListener);
         myNodesCount.put(sm, 1);
       } else {
         Integer oldValue = myNodesCount.get(sm);
@@ -1347,7 +1355,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
         SModelDescriptor sm = myDescriptors.get(ref);
         Integer count = myNodesCount.get(sm);
         if (count == 1) {
-          sm.removeModelCommandListener(myListener);
+          sm.removeModelListener(myListener);
           myNodesCount.remove(sm);
         } else {
           myNodesCount.put(sm, count - 1);
@@ -1359,7 +1367,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
 
     void dispose() {
       for (SModelDescriptor sm : myNodesCount.keySet()) {
-        sm.removeModelCommandListener(myListener);
+        sm.removeModelListener(myListener);
       }
     }
   }

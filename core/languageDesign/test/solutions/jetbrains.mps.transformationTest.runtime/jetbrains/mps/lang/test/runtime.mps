@@ -1842,20 +1842,6 @@
                           <node role="statement:3" type="jetbrains.mps.lang.plugin.structure.ExecuteCommandStatement:23" id="3740450423773773623">
                             <node role="commandClosureLiteral:23" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral:23" id="3740450423773773624">
                               <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3740450423773773625">
-                                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7639878611624280692">
-                                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7639878611624280695">
-                                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7639878611624280694">
-                                      <link role="baseMethodDeclaration:3" targetNodeId="1.~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker" resolveInfo="getInstance" />
-                                      <link role="classConcept:3" targetNodeId="1.~TypeChecker" resolveInfo="TypeChecker" />
-                                    </node>
-                                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7639878611624282166">
-                                      <link role="baseMethodDeclaration:3" targetNodeId="1.~TypeChecker.setIsTransformationTestMode(boolean):void" resolveInfo="setIsTransformationTestMode" />
-                                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="7639878611624282167">
-                                        <property name="value:3" value="true" />
-                                      </node>
-                                    </node>
-                                  </node>
-                                </node>
                                 <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3740450423773773626">
                                   <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="3740450423773773627">
                                     <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression:3" id="3740450423773773658">
