@@ -7005,6 +7005,28 @@
         </node>
       </node>
     </node>
+    <node role="scopeConcepts:23" type="jetbrains.mps.lang.plugin.structure.ScopeNodeItem:23" id="5114497955154812729">
+      <link role="scopeConcept:23" targetNodeId="1.1164903280175:3" resolveInfo="CatchClause" />
+      <node role="variablesGetter:23" type="jetbrains.mps.lang.plugin.structure.ConceptFunction_GetVariables:23" id="5114497955154812730">
+        <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5114497955154812731">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="5114497955154858872">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="5114497955154858874">
+              <node role="creator:3" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit:7" id="5114497955154858880">
+                <node role="elementType:7" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="5114497955154858881">
+                  <link role="concept:16" targetNodeId="1.1068581242863:3" resolveInfo="LocalVariableDeclaration" />
+                </node>
+                <node role="initValue:7" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5114497955154865104">
+                  <node role="operand:3" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_ScopeNode:23" id="5114497955154865103" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="5114497955154865108">
+                    <link role="link:16" targetNodeId="1.1164903359217:3" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="conceptsToDebug:23" type="jetbrains.mps.lang.plugin.structure.DebuggableNodeItem:23" id="5191407547578560720">
       <link role="declaration:23" targetNodeId="1.1068580123157:3" resolveInfo="Statement" />
       <node role="createBreakpoint:23" type="jetbrains.mps.lang.plugin.structure.ConceptFunction_CreateBreakpoint:23" id="7642440232345709528">

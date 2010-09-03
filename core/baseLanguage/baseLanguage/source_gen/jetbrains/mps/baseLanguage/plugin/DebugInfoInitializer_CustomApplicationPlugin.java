@@ -74,6 +74,11 @@ public class DebugInfoInitializer_CustomApplicationPlugin extends BaseCustomAppl
         return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(scopeNode, "variable", true));
       }
     });
+    manager.addScopeConcept("jetbrains.mps.baseLanguage.structure.CatchClause", new Mapper<SNode, List<SNode>>() {
+      public List<SNode> value(SNode scopeNode) {
+        return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(scopeNode, "throwable", true));
+      }
+    });
     manager.addUnitConcept("jetbrains.mps.baseLanguage.structure.AnonymousClass", new Mapper<SNode, String>() {
       public String value(SNode unitNode) {
         return AnonymousClass_Behavior.call_getJavaName_2977939203456914071(unitNode);
@@ -118,6 +123,7 @@ public class DebugInfoInitializer_CustomApplicationPlugin extends BaseCustomAppl
     manager.removeScopeConcept("jetbrains.mps.baseLanguage.structure.StatementList");
     manager.removeScopeConcept("jetbrains.mps.baseLanguage.structure.ForeachStatement");
     manager.removeScopeConcept("jetbrains.mps.baseLanguage.structure.ForStatement");
+    manager.removeScopeConcept("jetbrains.mps.baseLanguage.structure.CatchClause");
     manager.removeScopeConcept("jetbrains.mps.baseLanguage.structure.AnonymousClass");
     manager.removeScopeConcept("jetbrains.mps.baseLanguage.structure.Interface");
     manager.removeScopeConcept("jetbrains.mps.baseLanguage.structure.ClassConcept");
