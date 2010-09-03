@@ -8,10 +8,10 @@
 +collections:jetbrains/mps/baseLanguage/collections/**/*Test.java
 +collections:jetbrains/mps/internalCollections/**/*Test.java
 +dates:jetbrains/mps/baseLanguage/dates/unittest/**/*Test.java
-+generator:jetbrains/mps/generator/test/*Test.java
++generator-engine:jetbrains/mps/generator/test/*Test.java
 +kernel:jetbrains/mps/make/**/*Test*.java
 +kernel:jetbrains/mps/diff/**/DiffTestCase.java
-+kernel:jetbrains/mps/makeTest/**/*Test.java
++**/jetbrains/mps/makeTest/**/*Test.java
 +MPS:jetbrains/mps/bootstrap/helgins/**/*.Test.java
 +**/jetbrains/mps/vcs/**/*Test.java
 +workbench:**/*Test.java
