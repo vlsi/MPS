@@ -312,7 +312,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.smodel.OnReloadingUndoCleaner</implementation-class>
+      <implementation-class>jetbrains.mps.ide.undo.OnReloadingUndoCleaner</implementation-class>
     </component>
 
     <component>
