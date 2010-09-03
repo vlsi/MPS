@@ -1382,22 +1382,23 @@
     <nodeInfo nodeId="6127114859620813462" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="63" startPosition="9" endLine="64" endPosition="22" />
     <nodeInfo nodeId="6127114859620813487" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="68" startPosition="49" endLine="69" endPosition="125" />
     <nodeInfo nodeId="6127114859620885236" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="73" startPosition="49" endLine="74" endPosition="125" />
-    <nodeInfo nodeId="4089570349960765078" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="78" startPosition="43" endLine="79" endPosition="86" />
-    <nodeInfo nodeId="1523981646350772692" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="83" startPosition="43" endLine="84" endPosition="86" />
-    <nodeInfo nodeId="1523981646350772698" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="85" startPosition="125" endLine="86" endPosition="24" />
-    <nodeInfo nodeId="1523981646350773067" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="87" startPosition="9" endLine="88" endPosition="44" />
-    <nodeInfo nodeId="1523981646350773121" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="89" startPosition="25" endLine="90" endPosition="24" />
-    <nodeInfo nodeId="1523981646350773082" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="91" startPosition="9" endLine="92" endPosition="78" />
-    <nodeInfo nodeId="1523981646350773126" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="96" startPosition="43" endLine="97" endPosition="86" />
-    <nodeInfo nodeId="1523981646350773134" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="98" startPosition="125" endLine="99" endPosition="24" />
-    <nodeInfo nodeId="1523981646350773143" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="100" startPosition="9" endLine="101" endPosition="44" />
-    <nodeInfo nodeId="1523981646350773152" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="102" startPosition="25" endLine="103" endPosition="24" />
-    <nodeInfo nodeId="1523981646350773157" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="104" startPosition="9" endLine="105" endPosition="78" />
+    <nodeInfo nodeId="5114497955154858872" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="78" startPosition="49" endLine="79" endPosition="126" />
+    <nodeInfo nodeId="4089570349960765078" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="83" startPosition="43" endLine="84" endPosition="86" />
+    <nodeInfo nodeId="1523981646350772692" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="88" startPosition="43" endLine="89" endPosition="86" />
+    <nodeInfo nodeId="1523981646350772698" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="90" startPosition="125" endLine="91" endPosition="24" />
+    <nodeInfo nodeId="1523981646350773067" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="92" startPosition="9" endLine="93" endPosition="44" />
+    <nodeInfo nodeId="1523981646350773121" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="94" startPosition="25" endLine="95" endPosition="24" />
+    <nodeInfo nodeId="1523981646350773082" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="96" startPosition="9" endLine="97" endPosition="78" />
+    <nodeInfo nodeId="1523981646350773126" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="101" startPosition="43" endLine="102" endPosition="86" />
+    <nodeInfo nodeId="1523981646350773134" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="103" startPosition="125" endLine="104" endPosition="24" />
+    <nodeInfo nodeId="1523981646350773143" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="105" startPosition="9" endLine="106" endPosition="44" />
+    <nodeInfo nodeId="1523981646350773152" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="107" startPosition="25" endLine="108" endPosition="24" />
+    <nodeInfo nodeId="1523981646350773157" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="109" startPosition="9" endLine="110" endPosition="78" />
     <nodeInfo nodeId="6127114859620813440" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="59" startPosition="90" endLine="62" endPosition="11" />
-    <nodeInfo nodeId="1523981646350771673" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="84" startPosition="86" endLine="87" endPosition="9" />
-    <nodeInfo nodeId="1523981646350773112" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="88" startPosition="44" endLine="91" endPosition="9" />
-    <nodeInfo nodeId="1523981646350773132" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="97" startPosition="86" endLine="100" endPosition="9" />
-    <nodeInfo nodeId="1523981646350773150" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="101" startPosition="44" endLine="104" endPosition="9" />
+    <nodeInfo nodeId="1523981646350771673" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="89" startPosition="86" endLine="92" endPosition="9" />
+    <nodeInfo nodeId="1523981646350773112" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="93" startPosition="44" endLine="96" endPosition="9" />
+    <nodeInfo nodeId="1523981646350773132" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="102" startPosition="86" endLine="105" endPosition="9" />
+    <nodeInfo nodeId="1523981646350773150" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="106" startPosition="44" endLine="109" endPosition="9" />
     <nodeInfo nodeId="6127114859620813405" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="58" startPosition="52" endLine="63" endPosition="9" />
     <scopeInfo nodeId="7642440232345709529" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="32" startPosition="81" endLine="33" endPosition="58" />
     <scopeInfo nodeId="1613050375575203829" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="37" startPosition="81" endLine="38" endPosition="58" />
@@ -1407,11 +1408,12 @@
     <scopeInfo nodeId="6127114859620813442" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="60" startPosition="130" endLine="61" endPosition="221" />
     <scopeInfo nodeId="6127114859620813486" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="68" startPosition="49" endLine="69" endPosition="125" />
     <scopeInfo nodeId="6127114859620885235" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="73" startPosition="49" endLine="74" endPosition="125" />
-    <scopeInfo nodeId="4089570349960765077" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="78" startPosition="43" endLine="79" endPosition="86" />
-    <scopeInfo nodeId="1523981646350771674" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="85" startPosition="125" endLine="86" endPosition="24" />
-    <scopeInfo nodeId="1523981646350773113" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="89" startPosition="25" endLine="90" endPosition="24" />
-    <scopeInfo nodeId="1523981646350773133" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="98" startPosition="125" endLine="99" endPosition="24" />
-    <scopeInfo nodeId="1523981646350773151" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="102" startPosition="25" endLine="103" endPosition="24" />
+    <scopeInfo nodeId="5114497955154812731" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="78" startPosition="49" endLine="79" endPosition="126" />
+    <scopeInfo nodeId="4089570349960765077" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="83" startPosition="43" endLine="84" endPosition="86" />
+    <scopeInfo nodeId="1523981646350771674" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="90" startPosition="125" endLine="91" endPosition="24" />
+    <scopeInfo nodeId="1523981646350773113" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="94" startPosition="25" endLine="95" endPosition="24" />
+    <scopeInfo nodeId="1523981646350773133" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="103" startPosition="125" endLine="104" endPosition="24" />
+    <scopeInfo nodeId="1523981646350773151" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="107" startPosition="25" endLine="108" endPosition="24" />
     <scopeInfo nodeId="6127114859620813409" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="59" startPosition="90" endLine="62" endPosition="11" />
     <scopeInfo nodeId="6127114859620813405" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="58" startPosition="52" endLine="63" endPosition="9">
       <varInfo nodeId="6127114859620813407" varName="statement" />
@@ -1419,11 +1421,11 @@
     <scopeInfo nodeId="6127114859620812847" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="57" startPosition="49" endLine="64" endPosition="22">
       <varInfo nodeId="6127114859620813417" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="4208012086501209379" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="83" startPosition="43" endLine="92" endPosition="78">
+    <scopeInfo nodeId="4208012086501209379" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="88" startPosition="43" endLine="97" endPosition="78">
       <varInfo nodeId="1523981646350773068" varName="index" />
       <varInfo nodeId="1523981646350772693" varName="fqName" />
     </scopeInfo>
-    <scopeInfo nodeId="4089570349960820761" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="96" startPosition="43" endLine="105" endPosition="78">
+    <scopeInfo nodeId="4089570349960820761" fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="101" startPosition="43" endLine="110" endPosition="78">
       <varInfo nodeId="1523981646350773144" varName="index" />
       <varInfo nodeId="1523981646350773127" varName="fqName" />
     </scopeInfo>
