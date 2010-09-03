@@ -64,12 +64,12 @@ public class WatchedRoots implements ApplicationComponent {
     myProjectManagerListener = new ProjectManagerAdapter() {
       @Override
       public void projectOpened(Project project) {
-        processLibrariesChange(project.getComponent(ProjectLibraryManager.class).getLibraries(), myProjectLibrariesRequests);
+        processLibrariesChange(project.getComponent(ProjectLibraryManager.class).getUILibraries(), myProjectLibrariesRequests);
       }
 
       @Override
       public void projectClosing(Project project) {
-        processLibrariesChange(project.getComponent(ProjectLibraryManager.class).getLibraries(), myProjectLibrariesRequests);
+        processLibrariesChange(project.getComponent(ProjectLibraryManager.class).getUILibraries(), myProjectLibrariesRequests);
       }
     };
     myProjectManager.addProjectManagerListener(myProjectManagerListener);
@@ -83,7 +83,7 @@ public class WatchedRoots implements ApplicationComponent {
   private void processProjectLibrariesChange() {
     Set<Library> libs = new HashSet<Library>();
     for (Project p : myProjectManager.getOpenProjects()) {
-      libs.addAll(p.getComponent(ProjectLibraryManager.class).getLibraries());
+      libs.addAll(p.getComponent(ProjectLibraryManager.class).getUILibraries());
     }
     processLibrariesChange(libs, myProjectLibrariesRequests);
   }

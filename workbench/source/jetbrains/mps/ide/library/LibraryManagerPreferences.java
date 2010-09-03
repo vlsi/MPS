@@ -18,6 +18,7 @@ package jetbrains.mps.ide.library;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.library.BaseLibraryManager;
 import jetbrains.mps.library.Library;
+import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.vfs.IFile;
@@ -98,15 +99,11 @@ public class LibraryManagerPreferences {
   }
 
 
-  private void updateModel() {
-    updateModel(true);
-  }
-
   private void updateModel(final boolean updateManager) {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         Library oldSelection = (Library) myLibrariesList.getSelectedValue();
-        List<Library> libraries = new ArrayList<Library>(myManager.getLibraries());
+        List<Library> libraries = new ArrayList<Library>(myManager.getUILibraries());
         Collections.sort(libraries, new ToStringComparator());
         myListModel.clear();
         for (Library l : libraries) {
@@ -118,7 +115,7 @@ public class LibraryManagerPreferences {
         }
 
         if (updateManager) {
-          myManager.update();
+          LibraryInitializer.getInstance().update();
         }
       }
     });
@@ -130,7 +127,7 @@ public class LibraryManagerPreferences {
       return;
     }
     myManager.remove((Library) myListModel.get(index));
-    updateModel();
+    updateModel(true);
     myChanged = true;
   }
 
@@ -159,7 +156,7 @@ public class LibraryManagerPreferences {
 
     l.setPath(path);
 
-    updateModel();
+    updateModel(true);
     myChanged = true;
   }
 
@@ -180,7 +177,7 @@ public class LibraryManagerPreferences {
     path = result.getAbsolutePath();
 
     myManager.addLibrary(name).setPath(path);
-    updateModel();
+    updateModel(true);
 
     myChanged = true;
   }
