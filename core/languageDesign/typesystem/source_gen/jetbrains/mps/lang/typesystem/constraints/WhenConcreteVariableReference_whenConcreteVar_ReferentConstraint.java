@@ -11,8 +11,8 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
@@ -31,7 +31,10 @@ public class WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint ex
     List<SNode> whenConcreteStatements = SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement", false);
     List<SNode> declarations = new ArrayList<SNode>();
     for (SNode whenConcreteStatement : whenConcreteStatements) {
-      ListSequence.fromList(declarations).addElement(SLinkOperations.getTarget(whenConcreteStatement, "argumentRepresentator", true));
+      SNode variableDeclaration = SLinkOperations.getTarget(whenConcreteStatement, "argumentRepresentator", true);
+      if (variableDeclaration != null) {
+        ListSequence.fromList(declarations).addElement(variableDeclaration);
+      }
     }
     return declarations;
   }

@@ -18,14 +18,19 @@
   <root nodeId="1213104837475">
     <nodeInfo nodeId="1213104837479" fileName="WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint.java" startLine="30" startPosition="132" endLine="31" endPosition="171" />
     <nodeInfo nodeId="1213104837486" fileName="WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint.java" startLine="31" startPosition="171" endLine="32" endPosition="54" />
-    <nodeInfo nodeId="1213104837494" fileName="WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint.java" startLine="33" startPosition="64" endLine="34" endPosition="134" />
-    <nodeInfo nodeId="1213104837504" fileName="WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint.java" startLine="35" startPosition="5" endLine="36" endPosition="24" />
-    <nodeInfo nodeId="1213104837492" fileName="WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint.java" startLine="32" startPosition="54" endLine="35" endPosition="5" />
-    <scopeInfo nodeId="1213104837493" fileName="WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint.java" startLine="33" startPosition="64" endLine="34" endPosition="134" />
-    <scopeInfo nodeId="1213104837492" fileName="WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint.java" startLine="32" startPosition="54" endLine="35" endPosition="5">
+    <nodeInfo nodeId="4271881596550104298" fileName="WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint.java" startLine="33" startPosition="64" endLine="34" endPosition="114" />
+    <nodeInfo nodeId="1213104837494" fileName="WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint.java" startLine="35" startPosition="40" endLine="36" endPosition="76" />
+    <nodeInfo nodeId="1213104837504" fileName="WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint.java" startLine="38" startPosition="5" endLine="39" endPosition="24" />
+    <nodeInfo nodeId="4271881596550105607" fileName="WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint.java" startLine="34" startPosition="114" endLine="37" endPosition="7" />
+    <nodeInfo nodeId="1213104837492" fileName="WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint.java" startLine="32" startPosition="54" endLine="38" endPosition="5" />
+    <scopeInfo nodeId="4271881596550105608" fileName="WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint.java" startLine="35" startPosition="40" endLine="36" endPosition="76" />
+    <scopeInfo nodeId="1213104837493" fileName="WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint.java" startLine="33" startPosition="64" endLine="37" endPosition="7">
+      <varInfo nodeId="4271881596550104299" varName="variableDeclaration" />
+    </scopeInfo>
+    <scopeInfo nodeId="1213104837492" fileName="WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint.java" startLine="32" startPosition="54" endLine="38" endPosition="5">
       <varInfo nodeId="1213104837502" varName="whenConcreteStatement" />
     </scopeInfo>
-    <scopeInfo nodeId="1213104837478" fileName="WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint.java" startLine="30" startPosition="132" endLine="36" endPosition="24">
+    <scopeInfo nodeId="1213104837478" fileName="WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint.java" startLine="30" startPosition="132" endLine="39" endPosition="24">
       <varInfo nodeId="1213104837480" varName="whenConcreteStatements" />
       <varInfo nodeId="1213104837487" varName="declarations" />
     </scopeInfo>
