@@ -511,16 +511,4 @@ public abstract class MpsWorker {
       return !myModels.isEmpty() || !myProjects.isEmpty() || !myModules.isEmpty();
     }
   }
-
-  private class InfoProgressIndicator extends EmptyProgressIndicator {
-    @Override
-    public void setText2(String text) {
-      info("    " + text);
-    }
-
-    @Override
-    public void setText(String text) {
-      info(text);
-    }
-  }
 }

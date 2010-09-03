@@ -77,7 +77,7 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
     try {
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          readCustomBuiltInLibraries();
+          BuiltInLibrariesIO.readBuiltInLibraries(myCustomBuiltInLibraries);
           updatePredefinedLibraries();
           update();
           ClassLoaderManager.getInstance().updateClassPath();
@@ -86,10 +86,6 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
     } finally {
       myInitializing = false;
     }
-  }
-
-  private void readCustomBuiltInLibraries() {
-    BuiltInLibrariesIO.readBuiltInLibraries(myCustomBuiltInLibraries);
   }
 
   private void updatePredefinedLibraries() {
@@ -101,7 +97,7 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
     for (Library l : getLibraries()) {
       if (l instanceof PredefinedLibrary) {
         MPSModuleOwner owner = (l.isBootstrap() ? myBootstrapLibrariesOwner : myPredefinedLibrariesOwner);
-        List<IModule> modules = getModuleRepository().readModuleDescriptors(FileSystem.getFile(l.getPath()), owner);
+        List<IModule> modules = myRepository.readModuleDescriptors(FileSystem.getFile(l.getPath()), owner);
 
         if (l.isBootstrap()) {
           for (IModule m : modules) {
@@ -136,7 +132,7 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
       }
     });
 
-    //todo replace with lib contributor
+    //todo replace with lib contributor. This can be removed when there will be a possibility to load plugin without module
     result.add(new PredefinedLibrary("mps.workbench") {
       @NotNull
       public String getPath() {
@@ -157,8 +153,8 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
 
   public <M extends IModule> Set<M> getGlobalModules(Class<M> cls) {
     List<M> result = new ArrayList<M>();
-    result.addAll(getModuleRepository().getModules(myBootstrapLibrariesOwner, cls));
-    result.addAll(getModuleRepository().getModules(myPredefinedLibrariesOwner, cls));
+    result.addAll(myRepository.getModules(myBootstrapLibrariesOwner, cls));
+    result.addAll(myRepository.getModules(myPredefinedLibrariesOwner, cls));
     result.addAll(getModules(cls));
 
     addGenerators(cls, result);
@@ -168,7 +164,7 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
 
   public <M extends IModule> Set<M> getBootstrapModules(Class<M> cls) {
     List<M> result = new ArrayList<M>();
-    result.addAll(getModuleRepository().getModules(myBootstrapLibrariesOwner, cls));
+    result.addAll(myRepository.getModules(myBootstrapLibrariesOwner, cls));
 
     addGenerators(cls, result);
 

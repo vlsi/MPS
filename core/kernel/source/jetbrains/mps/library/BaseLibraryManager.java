@@ -15,67 +15,35 @@
  */
 package jetbrains.mps.library;
 
-import com.intellij.openapi.options.ConfigurationException;
-import com.intellij.openapi.options.Configurable;
-import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.BaseComponent;
+import com.intellij.openapi.components.PersistentStateComponent;
+import com.intellij.openapi.options.Configurable;
+import com.intellij.openapi.options.ConfigurationException;
+import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.ide.library.LibraryManagerPreferences;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.Macros;
+import jetbrains.mps.library.BaseLibraryManager.MyState;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.MPSModuleOwner;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Macros;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.cleanup.CleanupManager;
-import jetbrains.mps.library.BaseLibraryManager.MyState;
-
-import java.util.*;
-import java.util.Map.Entry;
-
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
+import java.util.*;
+import java.util.Map.Entry;
 
 public abstract class BaseLibraryManager implements BaseComponent, Configurable, PersistentStateComponent<MyState> {
-  private MyState myState = new MyState();
-
   private MPSModuleOwner myOwner;
-  private MPSModuleRepository myRepository;
-  private LibraryManagerPreferences myPreferences;
+  protected final MPSModuleRepository myRepository;
 
   public BaseLibraryManager(MPSModuleRepository repo) {
     myRepository = repo;
-  }
-
-  public void initComponent() {
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        update();
-      }
-    });
-  }
-
-
-  public void disposeComponent() {
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        if (myOwner != null) {
-          myRepository.unRegisterModules(myOwner);
-        }
-      }
-    });
-  }
-
-  @NonNls
-  @NotNull
-  public String getComponentName() {
-    return "Library Manager";
-  }
-
-  protected MPSModuleRepository getModuleRepository() {
-    return myRepository;
   }
 
   public <M extends IModule> List<M> getModules(Class<M> cls) {
@@ -85,7 +53,7 @@ public abstract class BaseLibraryManager implements BaseComponent, Configurable,
   public Library newLibrary(String name) {
     Library library = new Library();
     library.setName(name);
-    myState.myLibraries.put(library.getName(), library);
+    myState.getLibraries().put(library.getName(), library);
     return library;
   }
 
@@ -99,17 +67,13 @@ public abstract class BaseLibraryManager implements BaseComponent, Configurable,
   }
 
   public void remove(Library l) {
-    myState.myLibraries.remove(l.getName());
+    myState.getLibraries().remove(l.getName());
   }
 
   public Set<Library> getLibraries() {
     Set<Library> result = new HashSet<Library>();
-    result.addAll(myState.myLibraries.values());
+    result.addAll(myState.getLibraries().values());
     return result;
-  }
-
-  public boolean isOwns(IModule m) {
-    return myRepository.getOwners(m).contains(myOwner);
   }
 
   public void update() {
@@ -133,8 +97,8 @@ public abstract class BaseLibraryManager implements BaseComponent, Configurable,
     });
   }
 
-
   protected void onAfterModulesRead() {
+
   }
 
   protected void fireOnLoad(final MPSModuleOwner owner) {
@@ -149,6 +113,39 @@ public abstract class BaseLibraryManager implements BaseComponent, Configurable,
     }
     return myPreferences;
   }
+
+  private MyState removeMacros(MyState state) {
+    MyState result = new MyState();
+    for (Entry<String, Library> entry : state.getLibraries().entrySet()) {
+      result.getLibraries().put(entry.getKey(), removeMacros(entry.getValue()));
+
+    }
+    return result;
+  }
+
+  private Library addMacros(Library l) {
+    Library result = l.copy();
+    result.setPath(addMacros(result.getPath()));
+    return result;
+  }
+
+  private Library removeMacros(Library l) {
+    Library result = l.copy();
+    result.setPath(removeMacros(result.getPath()));
+    return result;
+  }
+
+  protected String addMacros(String path) {
+    return Macros.mpsHomeMacros().shrinkPath(path, (IFile) null);
+  }
+
+  protected String removeMacros(String path) {
+    return Macros.mpsHomeMacros().expandPath(path, (IFile) null);
+  }
+
+  //-------configurable stuff
+
+  private LibraryManagerPreferences myPreferences;
 
   @Nullable
   public Icon getIcon() {
@@ -178,52 +175,47 @@ public abstract class BaseLibraryManager implements BaseComponent, Configurable,
   }
 
   public void disposeUIResources() {
+
+  }
+
+  //-------component stuff
+
+  private MyState myState = new MyState();
+
+  public void initComponent() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        update();
+      }
+    });
+  }
+
+  public void disposeComponent() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        if (myOwner != null) {
+          myRepository.unRegisterModules(myOwner);
+        }
+      }
+    });
+  }
+
+  @NonNls
+  @NotNull
+  public String getComponentName() {
+    return "Library Manager";
   }
 
   public MyState getState() {
-    return addMacros(myState);
+    MyState result = new MyState();
+    for (Entry<String, Library> entry : myState.getLibraries().entrySet()) {
+      result.getLibraries().put(entry.getKey(), addMacros(entry.getValue()));
+    }
+    return result;
   }
 
   public void loadState(MyState state) {
     myState = removeMacros(state);
-  }
-
-  private MyState addMacros(MyState state) {
-    MyState result = new MyState();
-    for (Entry<String, Library> entry : state.myLibraries.entrySet()) {
-      result.myLibraries.put(entry.getKey(), addMacros(entry.getValue()));
-
-    }
-    return result;
-  }
-
-  private MyState removeMacros(MyState state) {
-    MyState result = new MyState();
-    for (Entry<String, Library> entry : state.myLibraries.entrySet()) {
-      result.myLibraries.put(entry.getKey(), removeMacros(entry.getValue()));
-
-    }
-    return result;
-  }
-
-  private Library addMacros(Library l) {
-    Library result = l.copy();
-    result.setPath(addMacros(result.getPath()));
-    return result;
-  }
-
-  private Library removeMacros(Library l) {
-    Library result = l.copy();
-    result.setPath(removeMacros(result.getPath()));
-    return result;
-  }
-
-  protected String addMacros(String path) {
-    return Macros.mpsHomeMacros().shrinkPath(path, (IFile) null);
-  }
-
-  protected String removeMacros(String path) {
-    return Macros.mpsHomeMacros().expandPath(path, (IFile) null);
   }
 
   public static class MyState {
@@ -237,5 +229,4 @@ public abstract class BaseLibraryManager implements BaseComponent, Configurable,
       myLibraries = libraries;
     }
   }
-
 }
