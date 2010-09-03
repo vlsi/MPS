@@ -11,6 +11,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * Evgeny Gryaznov, Jun 2, 2010
@@ -21,7 +22,7 @@ public class ModelDigestHelper {
   public static final String FILE = "model";
 
   private static ModelDigestHelper ourInstance = new ModelDigestHelper();
-  private List<DigestProvider> myProviders = new ArrayList<DigestProvider>();
+  private List<DigestProvider> myProviders = new CopyOnWriteArrayList<DigestProvider>();
 
   public static ModelDigestHelper getInstance() {
     return ourInstance;
@@ -31,9 +32,7 @@ public class ModelDigestHelper {
   }
 
   public void addDigestProvider(DigestProvider provider) {
-    synchronized (myProviders) {
-      myProviders.add(provider);
-    }
+    myProviders.add(provider);
   }
 
   public Map<String, String> getGenerationHashes(SModelDescriptor sm, Project project) {

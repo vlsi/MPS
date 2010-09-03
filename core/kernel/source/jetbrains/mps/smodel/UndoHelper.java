@@ -15,119 +15,68 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.command.CommandProcessor;
-import com.intellij.openapi.command.undo.*;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 
 public class UndoHelper {
-  private static final Logger LOG = Logger.getLogger(UndoHelper.class);
-  private static boolean ourUndoBlocked = false;
 
-  public static void addUndoableAction(SNodeUndoableAction action) {
-    Project project = CommandProcessor.getInstance().getCurrentCommandProject();
-    if (project == null) return;
+  private static UndoHelper ourInstance = new UndoHelper();
+  private UndoHandler myHandler = new DefaultUndoHandler();
 
-    UndoManager undoManager = UndoManager.getInstance(project);
-    if (undoManager.isUndoInProgress() || undoManager.isRedoInProgress()) return;
-
-    undoManager.undoableActionPerformed(new SNodeIdeaUndoableAction(action));
+  public static UndoHelper getInstance() {
+    return ourInstance;
   }
 
-  public static <T> T runNonUndoableAction(Computable<T> t) {
-    if (!ThreadUtils.isEventDispatchThread()) {
-      return t.compute();
-    } else {
-      if (ourUndoBlocked) {
-        return t.compute();
-      }
-      setUndoBlocked();
-      try {
-        return t.compute();
-      } finally {
-        setUndoUnblocked();
-      }
-    }
+  private UndoHelper() {
   }
 
-  private static void setUndoBlocked() {
-    if (!ThreadUtils.isEventDispatchThread()) return;
-    ourUndoBlocked = true;
+  public void setUndoHandler(UndoHandler handler) {
+    myHandler = handler;
   }
 
-  private static void setUndoUnblocked() {
-    if (!ThreadUtils.isEventDispatchThread()) return;
-    ourUndoBlocked = false;
+  public void addUndoableAction(SNodeUndoableAction action) {
+    myHandler.addUndoableAction(action);
   }
 
-  private static boolean isUndoBlocked() {
-    if (!ThreadUtils.isEventDispatchThread()) {
-      LOG.errorWithTrace("this check should be performed in EDT only");
-      return false;
-    }
-    return ourUndoBlocked;
+  public <T> T runNonUndoableAction(Computable<T> t) {
+    return myHandler.runNonUndoableAction(t);
   }
 
-  static boolean needRegisterUndo(SModel model) {
-    return !(model.isLoading()) && isInsideUndoableCommand();
+  boolean needRegisterUndo(SModel model) {
+    return myHandler.needRegisterUndo(model);
   }
 
-  static boolean isInsideUndoableCommand() {
-    return ThreadUtils.isEventDispatchThread() && !isUndoBlocked() &&
-      CommandProcessor.getInstance().getCurrentCommand() != null;
+  boolean isInsideUndoableCommand() {
+    return myHandler.isInsideUndoableCommand();
   }
 
-  private static class SNodeIdeaUndoableAction implements UndoableAction {
-    private DocumentReference[] myAffectedDocuments;
-    private MPSNodeVirtualFile myFile;
-    private long myModifcationStamp;
+  public interface UndoHandler {
+    public void addUndoableAction(SNodeUndoableAction action);
 
-    private SNodeUndoableAction wrapped;
+    public <T> T runNonUndoableAction(Computable<T> t);
 
-    private SNodeIdeaUndoableAction(SNodeUndoableAction wrapped) {
-      this.wrapped = wrapped;
-      if (wrapped.getRoot() == null) {
-        myAffectedDocuments = new DocumentReference[0];
-      } else {
-        myFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(wrapped.getRoot());
-        assert myFile.isValid() : "Invalid file was returned by VFS node is not available: " + myFile.getNode();
-        myAffectedDocuments = new DocumentReference[]{DocumentReferenceManager.getInstance().create(myFile)};
-        myModifcationStamp = myFile.getModificationStamp();
-      }
+    boolean needRegisterUndo(SModel model);
 
-    }
+    boolean isInsideUndoableCommand();
+  }
 
-    public final void undo() throws UnexpectedUndoException {
-      ModelAccess.instance().runWriteAction(new Runnable() {
-        public void run() {
-          if (myFile != null) {
-            myFile.setModificationStamp(myModifcationStamp);
-          }
-          wrapped.doUndo();
-        }
-      });
-    }
-
-    public final void redo() throws UnexpectedUndoException {
-      ModelAccess.instance().runWriteAction(new Runnable() {
-        public void run() {
-          wrapped.doRedo();
-        }
-      });
-    }
-
-    public DocumentReference[] getAffectedDocuments() {
-      return myAffectedDocuments;
+  public static class DefaultUndoHandler implements UndoHandler {
+    @Override
+    public void addUndoableAction(SNodeUndoableAction action) {
     }
 
     @Override
-    public boolean isGlobal() {
-      return wrapped.isGlobal();
+    public <T> T runNonUndoableAction(Computable<T> t) {
+      return t.compute();
     }
 
+    @Override
+    public boolean needRegisterUndo(SModel model) {
+      return false;
+    }
+
+    @Override
+    public boolean isInsideUndoableCommand() {
+      return false;
+    }
   }
 }

@@ -316,7 +316,7 @@ public class SubtypingManager {
         final TypeCheckingContext tcContext = equationManager == null ? null : equationManager.getTypeCheckingContext();
         List<SNode> supertypes = FreezeUtil.freezeAndCompute(term, new Computable<List<SNode>>() {
           public List<SNode> compute() {
-            return UndoHelper.runNonUndoableAction(new Computable<List<SNode>>() {
+            return UndoHelper.getInstance().runNonUndoableAction(new Computable<List<SNode>>() {
               @Override
               public List<SNode> compute() {
                 return subtypingRule.getSubOrSuperTypes(term, tcContext);

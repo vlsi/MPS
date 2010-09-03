@@ -13,34 +13,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.ide;
 
-public abstract class SNodeUndoableAction {
+import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.ide.undo.WorkbenchUndoHandler;
+import jetbrains.mps.smodel.UndoHelper;
+import org.jetbrains.annotations.NotNull;
 
-  private SNodePointer myRoot;
-
-  protected SNodeUndoableAction(SNode affectedNode) {
-    SNode containingRoot = affectedNode.getContainingRoot();
-    myRoot = containingRoot != null ? new SNodePointer(containingRoot) : null;
+/**
+ * Evgeny Gryaznov, Sep 3, 2010
+ */
+public class MPSWorkbench implements ApplicationComponent {
+  @NotNull
+  @Override
+  public String getComponentName() {
+    return "MPS Workbench";
   }
 
-  public SNodePointer getRoot() {
-    return myRoot;
+  @Override
+  public void initComponent() {
+    // setup undo
+    UndoHelper.getInstance().setUndoHandler(new WorkbenchUndoHandler());
   }
 
-  protected abstract void doUndo();
-
-  protected abstract void doRedo();
-
-  public final void undo() {
-    doUndo();
-  }
-
-  public final void redo() {
-    doRedo();
-  }
-
-  public boolean isGlobal() {
-    return false;
+  @Override
+  public void disposeComponent() {
   }
 }

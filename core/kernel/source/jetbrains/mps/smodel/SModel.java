@@ -201,8 +201,8 @@ public class SModel implements Iterable<SNode> {
 
     myRoots.add(node);
     node.registerInModel(this);
-    if (UndoHelper.needRegisterUndo(this)) {
-      UndoHelper.addUndoableAction(new AddRootUndoableAction(node));
+    if (UndoHelper.getInstance().needRegisterUndo(this)) {
+      UndoHelper.getInstance().addUndoableAction(new AddRootUndoableAction(node));
     }
     fireRootAddedEvent(node);
   }
@@ -212,8 +212,8 @@ public class SModel implements Iterable<SNode> {
     if (myRoots.contains(node)) {
       myRoots.remove(node);
       node.unRegisterFromModel();
-      if (UndoHelper.needRegisterUndo(this)) {
-        UndoHelper.addUndoableAction(new RemoveRootUndoableAction(node));
+      if (UndoHelper.getInstance().needRegisterUndo(this)) {
+        UndoHelper.getInstance().addUndoableAction(new RemoveRootUndoableAction(node));
       }
       fireRootRemovedEvent(node);
     }
