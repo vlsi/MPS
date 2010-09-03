@@ -18,7 +18,6 @@ package jetbrains.mps.ide.library;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.library.BaseLibraryManager;
 import jetbrains.mps.library.Library;
-import jetbrains.mps.library.PredefinedLibrary;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.vfs.IFile;
@@ -86,7 +85,8 @@ public class LibraryManagerPreferences {
         int index = myLibrariesList.getSelectedIndex();
         if (index < 0) return;
         Library l = (Library) myListModel.get(index);
-        boolean predefined = l instanceof PredefinedLibrary;
+        //todo add predef lib to view
+        boolean predefined = false;
         myEditButton.setEnabled(!predefined);
         myRemoveButton.setEnabled(!predefined);
       }
@@ -143,7 +143,8 @@ public class LibraryManagerPreferences {
 
     Library l = (Library) myListModel.get(index);
 
-    if (l instanceof PredefinedLibrary) {
+    //add support of predefined libs
+    if (false) {
       JOptionPane.showMessageDialog(myMainPanel, "You can't edit a predefined library", "Error", JOptionPane.ERROR_MESSAGE);
       return;
     }
@@ -178,7 +179,7 @@ public class LibraryManagerPreferences {
     if (result == null) return;
     path = result.getAbsolutePath();
 
-    myManager.newLibrary(name).setPath(path);
+    myManager.addLibrary(name).setPath(path);
     updateModel();
 
     myChanged = true;

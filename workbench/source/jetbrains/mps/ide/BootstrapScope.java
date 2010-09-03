@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.ide;
 
-import jetbrains.mps.library.LibraryManager;
+import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -47,7 +47,7 @@ public class BootstrapScope extends BaseScope {
   }
 
   public <T extends IModule> List<T> getModules(Class<T> cls) {
-    return new ArrayList<T>(LibraryManager.getInstance().getBootstrapModules(cls));
+    return new ArrayList<T>(LibraryInitializer.getInstance().getBootstrapModules(cls));
   }
 
   public List<Language> getVisibleLanguages() {

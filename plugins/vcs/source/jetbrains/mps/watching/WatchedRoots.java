@@ -76,7 +76,7 @@ public class WatchedRoots implements ApplicationComponent {
   }
 
   private void processLibrariesChange() {
-    processLibrariesChange(myLibraryManager.getLibraries(), myLibrariesRequests);
+    processLibrariesChange(myLibraryManager.getUILibraries(), myLibrariesRequests);
     processProjectLibrariesChange();
   }
 

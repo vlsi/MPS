@@ -16,7 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.lang.generator.structure.MappingConfiguration;
-import jetbrains.mps.library.LibraryManager;
+import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
@@ -248,7 +248,7 @@ public class Generator extends AbstractModule{
 
   public List<ModuleReference> getUsedLanguagesReferences() {
     List<ModuleReference> result = super.getUsedLanguagesReferences();
-    for (Language l : LibraryManager.getInstance().getBootstrapModules(Language.class)) {
+    for (Language l : LibraryInitializer.getInstance().getBootstrapModules(Language.class)) {
       if (!result.contains(l.getModuleReference())) {
         result.add(l.getModuleReference());
       }

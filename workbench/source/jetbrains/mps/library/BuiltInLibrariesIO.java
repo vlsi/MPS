@@ -56,7 +56,7 @@ public class BuiltInLibrariesIO {
         String path = child.getAttribute(LIBRARY_PATH_TAG).getValue();
         final String realPath = Macros.mpsHomeMacros().expandPath(path, new File(PathManager.getHomePath()));
 
-        PredefinedLibrary predefinedLibrary = new PredefinedLibrary(name) {
+        Library predefinedLibrary = new Library(name) {
           @NotNull
           @Override
           public String getPath() {

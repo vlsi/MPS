@@ -19,15 +19,12 @@ import com.intellij.openapi.components.BaseComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
-import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.ide.library.LibraryManagerPreferences;
 import jetbrains.mps.library.BaseLibraryManager.MyState;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Macros;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -38,80 +35,41 @@ import javax.swing.JComponent;
 import java.util.*;
 import java.util.Map.Entry;
 
-public abstract class BaseLibraryManager implements BaseComponent, Configurable, PersistentStateComponent<MyState> {
-  private MPSModuleOwner myOwner;
+public abstract class BaseLibraryManager implements BaseComponent, Configurable, PersistentStateComponent<MyState>, LibraryContributor {
   protected final MPSModuleRepository myRepository;
 
   public BaseLibraryManager(MPSModuleRepository repo) {
     myRepository = repo;
   }
 
-  public <M extends IModule> List<M> getModules(Class<M> cls) {
-    return myRepository.getModules(myOwner, cls);
+  //-------libraries
+
+  public final Set<String> getLibraries() {
+    Set<String> result = new HashSet<String>();
+    for (Library l : getUILibraries()) {
+      result.add(l.getPath());
+    }
+    return result;
   }
 
-  public Library newLibrary(String name) {
+  public Library addLibrary(String name) {
     Library library = new Library();
     library.setName(name);
     myState.getLibraries().put(library.getName(), library);
     return library;
   }
 
-  public Library get(String name) {
-    for (Library l : getLibraries()) {
-      if (!name.equals(l.getName())) continue;
-      return l;
-    }
-    return null;
-  }
-
   public void remove(Library l) {
     myState.getLibraries().remove(l.getName());
   }
 
-  public Set<Library> getLibraries() {
+  public Set<Library> getUILibraries() {
     Set<Library> result = new HashSet<Library>();
     result.addAll(myState.getLibraries().values());
     return result;
   }
 
-  public void update() {
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        if (myOwner != null) {
-          myRepository.unRegisterModules(myOwner);
-        }
-        myOwner = new MPSModuleOwner() {
-        };
-        for (Library l : getLibraries()) {
-          if (l instanceof PredefinedLibrary) continue;
-          myRepository.readModuleDescriptors(FileSystem.getFile(l.getPath()), myOwner);
-        }
-        fireOnLoad(myOwner);
-
-        onAfterModulesRead();
-
-        CleanupManager.getInstance().cleanup();
-      }
-    });
-  }
-
-  protected void onAfterModulesRead() {
-
-  }
-
-  protected void fireOnLoad(final MPSModuleOwner owner) {
-    for (IModule m : myRepository.getModules(owner)) {
-      m.onModuleLoad();
-    }
-  }
-
-  private LibraryManagerPreferences getPreferences() {
-    if (myPreferences == null) {
-      myPreferences = new LibraryManagerPreferences(this);
-    }
-    return myPreferences;
-  }
+  //-------macro stuff
 
   private MyState removeMacros(MyState state) {
     MyState result = new MyState();
@@ -145,6 +103,13 @@ public abstract class BaseLibraryManager implements BaseComponent, Configurable,
   //-------configurable stuff
 
   private LibraryManagerPreferences myPreferences;
+
+  private LibraryManagerPreferences getPreferences() {
+    if (myPreferences == null) {
+      myPreferences = new LibraryManagerPreferences(this);
+    }
+    return myPreferences;
+  }  
 
   @Nullable
   public Icon getIcon() {
@@ -182,17 +147,12 @@ public abstract class BaseLibraryManager implements BaseComponent, Configurable,
   private MyState myState = new MyState();
 
   public void initComponent() {
-
+    LibraryInitializer.getInstance().addContributor(this);
   }
 
   public void disposeComponent() {
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        if (myOwner != null) {
-          myRepository.unRegisterModules(myOwner);
-        }
-      }
-    });
+    LibraryInitializer.getInstance().removeContributor(this);
+    LibraryInitializer.getInstance().update();
   }
 
   @NonNls

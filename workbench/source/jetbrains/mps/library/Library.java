@@ -25,6 +25,10 @@ public class Library implements Cloneable {
   public Library() {
   }
 
+  public Library(String name) {
+    myName = name;
+  }
+
   public void setName(String name) {
     myName = name;
   }

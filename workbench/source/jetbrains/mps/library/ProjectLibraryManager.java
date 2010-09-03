@@ -60,15 +60,6 @@ public class ProjectLibraryManager extends BaseLibraryManager implements Project
 
   }
 
-  public void initComponent() {
-    super.initComponent();
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        update();
-      }
-    });
-  }
-
   protected String addMacros(String path) {
     return Macros.projectDescriptor().shrinkPath(path, getAnchorFile());
   }

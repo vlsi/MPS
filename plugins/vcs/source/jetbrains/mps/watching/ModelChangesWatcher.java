@@ -203,7 +203,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
     }
 
     LibraryManager libraryManager = LibraryManager.getInstance();
-    for (Library lib : libraryManager.getLibraries()) {
+    for (Library lib : libraryManager.getUILibraries()) {
       VirtualFile file = VFileSystem.getFile(lib.getPath());
       if (file != null) {
         roots.add(file);

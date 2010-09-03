@@ -19,6 +19,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
@@ -56,10 +57,10 @@ public class ClassLoaderManager implements ApplicationComponent {
     myRepository = repository;
   }
 
-  public void init(LibraryManager libraryManager) {
+  public void init() {
     synchronized (myLock) {
       if (myRuntimeEnvironment == null) {
-        myRuntimeEnvironment = createRuntimeEnvironment(libraryManager);
+        myRuntimeEnvironment = createRuntimeEnvironment();
       }
     }
   }
@@ -157,7 +158,7 @@ public class ClassLoaderManager implements ApplicationComponent {
   public void updateClassPath() {
     synchronized (myLock) {
       if (myRuntimeEnvironment == null) {
-        myRuntimeEnvironment = createRuntimeEnvironment(LibraryManager.getInstance());
+        myRuntimeEnvironment = createRuntimeEnvironment();
       }
 
       Set<ModuleReference> added = new HashSet<ModuleReference>();
@@ -265,17 +266,14 @@ public class ClassLoaderManager implements ApplicationComponent {
 
   //---------------runtime environment------------------
 
-  private RuntimeEnvironmentExt createRuntimeEnvironment(LibraryManager libraryManager) {
-    return new RuntimeEnvironmentExt(libraryManager);
+  private RuntimeEnvironmentExt createRuntimeEnvironment() {
+    return new RuntimeEnvironmentExt();
   }
 
   private class RuntimeEnvironmentExt extends RuntimeEnvironment<ModuleReference> {
-
-    private LibraryManager myLibraryManager;
     private Set<String> myExcludedPackages;
 
-    RuntimeEnvironmentExt(LibraryManager libraryManager) {
-      myLibraryManager = libraryManager;
+    RuntimeEnvironmentExt() {
       reloadExcludedPackages();
     }
 
@@ -305,7 +303,7 @@ public class ClassLoaderManager implements ApplicationComponent {
     }
 
     private void assertOnlyBootstrapLanguagesAreInClasspath() {
-      Set<Language> bootstrapLanguages = myLibraryManager.getBootstrapModules(Language.class);
+      Set<Language> bootstrapLanguages = LibraryInitializer.getInstance().getBootstrapModules(Language.class);
       for (Language language : MPSModuleRepository.getInstance().getAllLanguages()) {
         if (bootstrapLanguages.contains(language)) {
           continue;
@@ -331,7 +329,7 @@ public class ClassLoaderManager implements ApplicationComponent {
 
     private synchronized void reloadExcludedPackages() {
       myExcludedPackages = new HashSet();
-      Set<Language> bootstrapLanguages = myLibraryManager.getBootstrapModules(Language.class);
+      Set<Language> bootstrapLanguages = LibraryInitializer.getInstance().getBootstrapModules(Language.class);
       /**
        * Iterating through all known bundles because we need to exclude following non-bootstrap modules available in
        * application classpath:

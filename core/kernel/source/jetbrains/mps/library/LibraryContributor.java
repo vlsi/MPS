@@ -15,13 +15,8 @@
  */
 package jetbrains.mps.library;
 
-public class PredefinedLibrary extends Library {
-  public PredefinedLibrary(String name) {
-    super();
-    setName(name);
-  }
+import java.util.Set;
 
-  public void setPath(String path) {
-    throw new RuntimeException();
-  }
+public interface LibraryContributor {
+  public Set<String> getLibraries();
 }
