@@ -375,6 +375,10 @@ public class FileUtil {
         + "'");
     }
 
+    if (target.length == commonIndex && base.length == target.length) {
+      return "";
+    }
+
     boolean baseIsFile = true;
 
     File baseResource = new File(basePath);
