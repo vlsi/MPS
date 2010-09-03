@@ -73,9 +73,6 @@
                         serviceImplementation="com.intellij.ui.content.ContentFactoryImpl"/>
     <applicationService serviceInterface="com.intellij.ui.TreeUIHelper"
                         serviceImplementation="com.intellij.ui.TreeUIHelperImpl"/>
-    <!--MPS Patch: our own diff request factory-->
-    <applicationService serviceInterface="com.intellij.openapi.diff.DiffRequestFactory"
-                        serviceImplementation="jetbrains.mps.vcs.diff.MPSDiffRequestFactory"/>
     <applicationService serviceInterface="com.intellij.ui.SystemNotifications"
                         serviceImplementation="com.intellij.ui.SystemNotificationsImpl"/>
     <applicationService serviceInterface="com.intellij.openapi.keymap.KeymapGroupFactory"

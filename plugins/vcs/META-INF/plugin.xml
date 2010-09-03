@@ -115,5 +115,9 @@
     <applicationConfigurable implementation="jetbrains.mps.vcs.ui.VcsSettingsConfigurable"/>
     <directoryIndexExcludePolicy implementation="jetbrains.mps.project.GeneratedFilesExcludePolicy"/>
     <projectConfigurable implementation="jetbrains.mps.vcs.ui.VcsGeneratedFilesConfigurable" id="mpsvcs"/>
+
+    <!--MPS Patch: our own diff request factory-->
+    <applicationService serviceInterface="com.intellij.openapi.diff.DiffRequestFactory"
+                        serviceImplementation="jetbrains.mps.vcs.diff.MPSDiffRequestFactory"/>
   </extensions>
 </idea-plugin>
