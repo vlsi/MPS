@@ -24,6 +24,7 @@ import jetbrains.mps.ide.library.LibraryManagerPreferences;
 import jetbrains.mps.library.BaseLibraryManager.MyState;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleOwner;
+import jetbrains.mps.smodel.MPSModuleOwner.SelfManagingModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Macros;
@@ -39,7 +40,7 @@ import java.util.*;
 import java.util.Map.Entry;
 
 public abstract class BaseLibraryManager implements BaseComponent, Configurable, PersistentStateComponent<MyState> {
-  private MPSModuleOwner myOwner;
+  private SelfManagingModuleOwner myOwner;
   protected final MPSModuleRepository myRepository;
 
   public BaseLibraryManager(MPSModuleRepository repo) {
@@ -59,9 +60,8 @@ public abstract class BaseLibraryManager implements BaseComponent, Configurable,
 
   public Library get(String name) {
     for (Library l : getLibraries()) {
-      if (name.equals(l.getName())) {
-        return l;
-      }
+      if (!name.equals(l.getName())) continue;
+      return l;
     }
     return null;
   }
@@ -77,20 +77,20 @@ public abstract class BaseLibraryManager implements BaseComponent, Configurable,
   }
 
   public void update() {
-    if (myOwner != null) {
-      myRepository.unRegisterModules(myOwner);
-    }
-    myOwner = new MPSModuleOwner() {
-    };
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        for (Library l : getLibraries()) {
-          if (!(l instanceof PredefinedLibrary)) {
-            myRepository.readModuleDescriptors(FileSystem.getFile(l.getPath()), myOwner);
-          }
+        if (myOwner != null) {
+          myRepository.unRegisterModules(myOwner);
         }
-        onAfterModulesRead();
+        myOwner = new SelfManagingModuleOwner() {
+        };
+        for (Library l : getLibraries()) {
+          if (l instanceof PredefinedLibrary) continue;
+          myRepository.readModuleDescriptors(FileSystem.getFile(l.getPath()), myOwner);
+        }
         fireOnLoad(myOwner);
+
+        onAfterModulesRead();
 
         CleanupManager.getInstance().cleanup();
       }
@@ -183,11 +183,7 @@ public abstract class BaseLibraryManager implements BaseComponent, Configurable,
   private MyState myState = new MyState();
 
   public void initComponent() {
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        update();
-      }
-    });
+
   }
 
   public void disposeComponent() {

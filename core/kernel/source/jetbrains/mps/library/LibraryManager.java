@@ -23,6 +23,7 @@ import com.intellij.util.xmlb.annotations.Transient;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.MPSModuleOwner.SelfManagingModuleOwner;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.stubs.StubReloadManager;
 import jetbrains.mps.util.PathManager;
@@ -47,8 +48,8 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
     return ApplicationManager.getApplication().getComponent(LibraryManager.class);
   }
 
-  private MPSModuleOwner myBootstrapLibrariesOwner;
-  private MPSModuleOwner myPredefinedLibrariesOwner;
+  private SelfManagingModuleOwner myBootstrapLibrariesOwner;
+  private SelfManagingModuleOwner myPredefinedLibrariesOwner;
   private boolean myInitializing = false;
   private final Map<String, Library> myCustomBuiltInLibraries = new HashMap<String, Library>();
   private ClassLoaderManager myClm;
@@ -64,12 +65,10 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
     return "Library Manager (IDE)";
   }
 
-  @Override
   protected void onAfterModulesRead() {
     myClm.init(LibraryManager.this);
   }
 
-  @Override
   public void initComponent() {
     //todo hack
     if (myInitializing) return;
@@ -78,7 +77,7 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
           BuiltInLibrariesIO.readBuiltInLibraries(myCustomBuiltInLibraries);
-          updatePredefinedLibraries();
+          initPredefinedLibs();
           update();
           ClassLoaderManager.getInstance().updateClassPath();
         }
@@ -88,30 +87,6 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
     }
   }
 
-  private void updatePredefinedLibraries() {
-    myPredefinedLibrariesOwner = new MPSModuleOwner() {
-    };
-    myBootstrapLibrariesOwner = new MPSModuleOwner() {
-    };
-
-    for (Library l : getLibraries()) {
-      if (l instanceof PredefinedLibrary) {
-        MPSModuleOwner owner = (l.isBootstrap() ? myBootstrapLibrariesOwner : myPredefinedLibrariesOwner);
-        List<IModule> modules = myRepository.readModuleDescriptors(FileSystem.getFile(l.getPath()), owner);
-
-        if (l.isBootstrap()) {
-          for (IModule m : modules) {
-            m.updateClassPath();
-          }
-        }
-      }
-    }
-
-    fireOnLoad(myBootstrapLibrariesOwner);
-    fireOnLoad(myPredefinedLibrariesOwner);
-  }
-
-  @Override
   public Set<Library> getLibraries() {
     Set<Library> result = super.getLibraries();
     result.add(new PredefinedLibrary("mps.bootstrap") {
@@ -151,6 +126,28 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
     return result;
   }
 
+  private void initPredefinedLibs() {
+    myPredefinedLibrariesOwner = new SelfManagingModuleOwner() {
+    };
+    myBootstrapLibrariesOwner = new SelfManagingModuleOwner() {
+    };
+
+    for (Library l : getLibraries()) {
+      if (!(l instanceof PredefinedLibrary)) continue;
+      MPSModuleOwner owner = (l.isBootstrap() ? myBootstrapLibrariesOwner : myPredefinedLibrariesOwner);
+      List<IModule> modules = myRepository.readModuleDescriptors(FileSystem.getFile(l.getPath()), owner);
+
+      if (l.isBootstrap()) {
+        for (IModule m : modules) {
+          m.updateClassPath();
+        }
+      }
+    }
+
+    fireOnLoad(myBootstrapLibrariesOwner);
+    fireOnLoad(myPredefinedLibrariesOwner);
+  }
+
   public <M extends IModule> Set<M> getGlobalModules(Class<M> cls) {
     List<M> result = new ArrayList<M>();
     result.addAll(myRepository.getModules(myBootstrapLibrariesOwner, cls));
@@ -179,5 +176,19 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
         }
       }
     }
+  }
+
+  public void disposeComponent() {
+    super.disposeComponent();
+    ModelAccess.instance().runWriteAction(new Runnable() {
+     public void run() {
+       if (myBootstrapLibrariesOwner != null) {
+         myRepository.unRegisterModules(myBootstrapLibrariesOwner);
+       }
+       if (myPredefinedLibrariesOwner != null) {
+         myRepository.unRegisterModules(myPredefinedLibrariesOwner);
+       }
+     }
+   });
   }
 }

@@ -20,9 +20,12 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.reloading.CommonPaths;
+import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Macros;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.annotations.Nls;
 
 import java.io.File;
@@ -57,12 +60,19 @@ public class ProjectLibraryManager extends BaseLibraryManager implements Project
 
   }
 
-  @Override
+  public void initComponent() {
+    super.initComponent();
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        update();
+      }
+    });
+  }
+
   protected String addMacros(String path) {
     return Macros.projectDescriptor().shrinkPath(path, getAnchorFile());
   }
 
-  @Override
   protected String removeMacros(String path) {
     return Macros.projectDescriptor().expandPath(path, getAnchorFile());
   }
