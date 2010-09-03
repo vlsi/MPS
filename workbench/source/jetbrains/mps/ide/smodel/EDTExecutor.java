@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.ide.smodel;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
@@ -32,11 +32,13 @@ class EDTExecutor {
   private final Object myLock = new Object();
 
   private Thread myExecutor;
+  private final WorkbenchModelAccess myModelAccess;
 
   private Queue<Runnable> myToExecuteRead = new LinkedList<Runnable>();
   private Queue<Runnable> myToExecuteCommand = new LinkedList<Runnable>();
 
-  public EDTExecutor() {
+  public EDTExecutor(WorkbenchModelAccess modelAccess) {
+    myModelAccess = modelAccess;
     myExecutor = new Executor();
     myExecutor.setDaemon(true);
     myExecutor.start();
@@ -129,7 +131,7 @@ class EDTExecutor {
 
     private class ReadRunnable implements Runnable {
       public void run() {
-        ModelAccess.instance().tryRead(new Runnable() {
+        myModelAccess.tryRead(new Runnable() {
           public void run() {
             long start = System.currentTimeMillis();
             while (true) {
@@ -145,7 +147,7 @@ class EDTExecutor {
 
     private class CommandRunnable implements Runnable {
       public void run() {
-        ModelAccess.instance().tryWriteInCommand(new Runnable() {
+        myModelAccess.tryWriteInCommand(new Runnable() {
           public void run() {
             long start = System.currentTimeMillis();
             while (true) {
