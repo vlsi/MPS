@@ -14,6 +14,11 @@ public class Cls {
   public void foo() {
     myI = myI + 1;
     System.err.println("a");
+    try {
+      throw new RuntimeException("1");
+    } catch (RuntimeException e) {
+      System.out.println(e);
+    }
   }
 
   public static void main(String[] args) {

@@ -18,6 +18,7 @@ package jetbrains.mps.debug.evaluation;
 import com.sun.jdi.*;
 import jetbrains.mps.debug.evaluation.proxies.*;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
@@ -101,14 +102,24 @@ public class EvaluationUtils {
     return methods.get(0);
   }
 
+  @NotNull
   public static ReferenceType findClassType(String className, VirtualMachine virtualMachine) throws InvalidEvaluatedExpressionException {
+    ReferenceType classType = findClassTypeSilently(className, virtualMachine);
+    if (classType == null) {
+      throw new InvalidEvaluatedExpressionException("Could not find class " + className + ".");
+    }
+    return classType;
+  }
+
+  @Nullable
+  public static ReferenceType findClassTypeSilently(String className, VirtualMachine virtualMachine) throws InvalidEvaluatedExpressionException {
     // apparently, classesByName works for both dot and slash (ie for java.lang.String and for java/lang/String)
     // even for java.lang/String
     // seriously
     // amazing
     List<ReferenceType> classes = virtualMachine.classesByName(className);
     if (classes.size() == 0) {
-      throw new InvalidEvaluatedExpressionException("Could not find class " + className + ".");
+      return null;
     }
     return classes.get(0);
   }
@@ -127,7 +138,9 @@ public class EvaluationUtils {
           if (!(what instanceof ClassType)) {
             return false;
           }
-          ReferenceType type = findClassType(jniSignature.substring(1, jniSignature.length() - 1), machine);
+          ReferenceType type = findClassTypeSilently(jniSignature.substring(1, jniSignature.length() - 1), machine);
+
+          if (type == null) return false;
 
           ClassType whatClassType = (ClassType) what;
           if (type instanceof InterfaceType) {
