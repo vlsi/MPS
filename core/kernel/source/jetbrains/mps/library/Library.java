@@ -33,7 +33,6 @@ public class Library implements Cloneable {
     return myName;
   }
 
-  @NotNull
   public String getPath() {
     return myPath;
   }
