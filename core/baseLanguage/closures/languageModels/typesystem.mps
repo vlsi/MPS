@@ -79,20 +79,19 @@
               </node>
             </node>
           </node>
-          <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement:3" id="642108346586029323">
-            <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="642108346586029324">
-              <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference:3" id="642108346586029325">
-                <link role="typeVarDeclaration:3" targetNodeId="642108346586029317" resolveInfo="T" />
-              </node>
-            </node>
-            <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="642108346586029326">
-              <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="642108346586029327">
-                <node role="term:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="642108346586029328">
+          <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="2608385503904033309">
+            <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="2608385503904033310">
+              <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="2608385503904033311">
+                <node role="term:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2608385503904033312">
                   <link role="variableDeclaration:3" targetNodeId="642108346586029333" resolveInfo="p" />
                 </node>
               </node>
             </node>
-            <node role="inequationGroup:3" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference:3" id="642108346586029329" />
+            <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="2608385503904033313">
+              <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference:3" id="2608385503904033314">
+                <link role="typeVarDeclaration:3" targetNodeId="642108346586029317" resolveInfo="T" />
+              </node>
+            </node>
           </node>
         </node>
         <node role="iterable:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="642108346586029330">
@@ -149,22 +148,22 @@
       </node>
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement:3" id="642108346586029351">
         <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="642108346586029352">
-          <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement:3" id="642108346586029353">
-            <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="642108346586029354">
-              <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference:3" id="642108346586029355">
+          <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateGreaterThanInequationStatement:3" id="2608385503904033275">
+            <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="2608385503904033276">
+              <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference:3" id="2608385503904033277">
                 <link role="typeVarDeclaration:3" targetNodeId="642108346586029335" resolveInfo="ret" />
               </node>
             </node>
-            <node role="inequationGroup:3" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference:3" id="642108346586029361" />
-            <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="642108346586220416">
-              <node role="normalType:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="642108346586220418">
+            <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="2608385503904033278">
+              <node role="normalType:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2608385503904033279">
                 <link role="baseMethodDeclaration:3" targetNodeId="31.642108346586196509" resolveInfo="getResultType" />
                 <link role="classConcept:3" targetNodeId="31.1201646588418" resolveInfo="FunctionTypeUtil" />
-                <node role="actualArgument:3" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference:3" id="642108346586220420">
+                <node role="actualArgument:3" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference:3" id="2608385503904033280">
                   <link role="typeVarDeclaration:3" targetNodeId="642108346586029342" resolveInfo="ftype" />
                 </node>
               </node>
             </node>
+            <node role="inequationGroup:3" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference:3" id="2608385503904033281" />
           </node>
           <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.MultipleForeachLoop:3" id="642108346586029362">
             <node role="loopVariable:3" type="jetbrains.mps.lang.typesystem.structure.MultipleForeachLoopVariable:3" id="642108346586029363">
@@ -190,20 +189,20 @@
               </node>
             </node>
             <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="642108346586029374">
-              <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateGreaterThanInequationStatement:3" id="642108346586029375">
-                <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="642108346586029376">
-                  <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="642108346586029377">
-                    <node role="term:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="642108346586029378">
+              <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement:3" id="2608385503904033282">
+                <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="2608385503904033283">
+                  <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="2608385503904033284">
+                    <node role="term:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2608385503904033285">
                       <link role="variableDeclaration:3" targetNodeId="642108346586029364" resolveInfo="pt" />
                     </node>
                   </node>
                 </node>
-                <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="642108346586029379">
-                  <node role="normalType:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="642108346586029380">
+                <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="2608385503904033286">
+                  <node role="normalType:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2608385503904033287">
                     <link role="variableDeclaration:3" targetNodeId="642108346586029368" resolveInfo="fpt" />
                   </node>
                 </node>
-                <node role="inequationGroup:3" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference:3" id="642108346586029381" />
+                <node role="inequationGroup:3" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference:3" id="2608385503904033288" />
               </node>
             </node>
           </node>
@@ -3568,20 +3567,19 @@
               </node>
             </node>
           </node>
-          <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement:3" id="3143009324072631659">
-            <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="3143009324072631660">
-              <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference:3" id="3143009324072631661">
-                <link role="typeVarDeclaration:3" targetNodeId="3143009324072631653" resolveInfo="T" />
-              </node>
-            </node>
-            <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="3143009324072631662">
-              <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="3143009324072631663">
-                <node role="term:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3143009324072631664">
+          <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="2608385503904033303">
+            <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="2608385503904033304">
+              <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="2608385503904033305">
+                <node role="term:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2608385503904033306">
                   <link role="variableDeclaration:3" targetNodeId="3143009324072631669" resolveInfo="p" />
                 </node>
               </node>
             </node>
-            <node role="inequationGroup:3" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference:3" id="3143009324072631665" />
+            <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="2608385503904033307">
+              <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference:3" id="2608385503904033308">
+                <link role="typeVarDeclaration:3" targetNodeId="3143009324072631653" resolveInfo="T" />
+              </node>
+            </node>
           </node>
         </node>
         <node role="iterable:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3143009324072631666">
@@ -3638,22 +3636,22 @@
       </node>
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement:3" id="3143009324072631687">
         <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3143009324072631688">
-          <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement:3" id="3143009324072631689">
-            <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="3143009324072631690">
-              <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference:3" id="3143009324072631691">
+          <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateGreaterThanInequationStatement:3" id="2608385503904033261">
+            <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="2608385503904033262">
+              <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference:3" id="2608385503904033263">
                 <link role="typeVarDeclaration:3" targetNodeId="3143009324072631671" resolveInfo="ret" />
               </node>
             </node>
-            <node role="inequationGroup:3" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference:3" id="3143009324072631692" />
-            <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="3143009324072631693">
-              <node role="normalType:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3143009324072631694">
+            <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="2608385503904033264">
+              <node role="normalType:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2608385503904033265">
                 <link role="classConcept:3" targetNodeId="31.1201646588418" resolveInfo="FunctionTypeUtil" />
                 <link role="baseMethodDeclaration:3" targetNodeId="31.642108346586196509" resolveInfo="getResultType" />
-                <node role="actualArgument:3" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference:3" id="3143009324072631695">
+                <node role="actualArgument:3" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference:3" id="2608385503904033266">
                   <link role="typeVarDeclaration:3" targetNodeId="3143009324072631678" resolveInfo="ftype" />
                 </node>
               </node>
             </node>
+            <node role="inequationGroup:3" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference:3" id="2608385503904033267" />
           </node>
           <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.MultipleForeachLoop:3" id="3143009324072631696">
             <node role="loopVariable:3" type="jetbrains.mps.lang.typesystem.structure.MultipleForeachLoopVariable:3" id="3143009324072631697">
@@ -3679,20 +3677,20 @@
               </node>
             </node>
             <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3143009324072631706">
-              <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateGreaterThanInequationStatement:3" id="3143009324072631707">
-                <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="3143009324072631708">
-                  <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="3143009324072631709">
-                    <node role="term:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3143009324072631710">
+              <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement:3" id="2608385503904033268">
+                <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="2608385503904033269">
+                  <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="2608385503904033270">
+                    <node role="term:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2608385503904033271">
                       <link role="variableDeclaration:3" targetNodeId="3143009324072631698" resolveInfo="pt" />
                     </node>
                   </node>
                 </node>
-                <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="3143009324072631711">
-                  <node role="normalType:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3143009324072631712">
+                <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="2608385503904033272">
+                  <node role="normalType:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2608385503904033273">
                     <link role="variableDeclaration:3" targetNodeId="3143009324072631702" resolveInfo="fpt" />
                   </node>
                 </node>
-                <node role="inequationGroup:3" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference:3" id="3143009324072631713" />
+                <node role="inequationGroup:3" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference:3" id="2608385503904033274" />
               </node>
             </node>
           </node>
@@ -4039,20 +4037,19 @@
               </node>
             </node>
           </node>
-          <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement:3" id="7246115176735293281">
-            <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="7246115176735293282">
-              <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference:3" id="7246115176735293283">
-                <link role="typeVarDeclaration:3" targetNodeId="7246115176735293270" resolveInfo="T" />
-              </node>
-            </node>
-            <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="7246115176735293284">
-              <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="7246115176735293285">
-                <node role="term:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7246115176735293286">
+          <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="2608385503904033315">
+            <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="2608385503904033316">
+              <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="2608385503904033317">
+                <node role="term:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2608385503904033318">
                   <link role="variableDeclaration:3" targetNodeId="7246115176735293290" resolveInfo="p" />
                 </node>
               </node>
             </node>
-            <node role="inequationGroup:3" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference:3" id="5970100369440882739" />
+            <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="2608385503904033319">
+              <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference:3" id="2608385503904033320">
+                <link role="typeVarDeclaration:3" targetNodeId="7246115176735293270" resolveInfo="T" />
+              </node>
+            </node>
           </node>
         </node>
         <node role="iterable:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7246115176735293287">
@@ -4109,22 +4106,22 @@
       </node>
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement:3" id="642108346586001510">
         <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="642108346586001511">
-          <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement:3" id="642108346586220451">
-            <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="642108346586220452">
-              <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference:3" id="642108346586220453">
+          <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateGreaterThanInequationStatement:3" id="2608385503904033289">
+            <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="2608385503904033290">
+              <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference:3" id="2608385503904033291">
                 <link role="typeVarDeclaration:3" targetNodeId="7246115176735293292" resolveInfo="ret" />
               </node>
             </node>
-            <node role="inequationGroup:3" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference:3" id="642108346586220454" />
-            <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="642108346586220455">
-              <node role="normalType:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="642108346586220456">
+            <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="2608385503904033292">
+              <node role="normalType:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2608385503904033293">
                 <link role="baseMethodDeclaration:3" targetNodeId="31.642108346586196509" resolveInfo="getResultType" />
                 <link role="classConcept:3" targetNodeId="31.1201646588418" resolveInfo="FunctionTypeUtil" />
-                <node role="actualArgument:3" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference:3" id="642108346586220457">
+                <node role="actualArgument:3" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference:3" id="2608385503904033294">
                   <link role="typeVarDeclaration:3" targetNodeId="642108346586029186" resolveInfo="ftype" />
                 </node>
               </node>
             </node>
+            <node role="inequationGroup:3" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference:3" id="2608385503904033295" />
           </node>
           <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.MultipleForeachLoop:3" id="642108346586220458">
             <node role="loopVariable:3" type="jetbrains.mps.lang.typesystem.structure.MultipleForeachLoopVariable:3" id="642108346586220459">
@@ -4150,20 +4147,20 @@
               </node>
             </node>
             <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="642108346586220468">
-              <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateGreaterThanInequationStatement:3" id="642108346586220469">
-                <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="642108346586220470">
-                  <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="642108346586220471">
-                    <node role="term:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="642108346586220472">
+              <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement:3" id="2608385503904033296">
+                <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="2608385503904033297">
+                  <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="2608385503904033298">
+                    <node role="term:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2608385503904033299">
                       <link role="variableDeclaration:3" targetNodeId="642108346586220460" resolveInfo="pt" />
                     </node>
                   </node>
                 </node>
-                <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="642108346586220473">
-                  <node role="normalType:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="642108346586220474">
+                <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="2608385503904033300">
+                  <node role="normalType:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2608385503904033301">
                     <link role="variableDeclaration:3" targetNodeId="642108346586220464" resolveInfo="fpt" />
                   </node>
                 </node>
-                <node role="inequationGroup:3" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference:3" id="642108346586220475" />
+                <node role="inequationGroup:3" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference:3" id="2608385503904033302" />
               </node>
             </node>
           </node>
