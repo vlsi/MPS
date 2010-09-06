@@ -874,7 +874,7 @@
                       <link role="variableDeclaration" targetNodeId="3812105808561105137" resolveInfo="LOG" />
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="3812105808561169690">
-                      <link role="baseMethodDeclaration" targetNodeId="18.~Category.error(java.lang.Object):void" resolveInfo="error" />
+                      <link role="baseMethodDeclaration" targetNodeId="18.~Category.warn(java.lang.Object):void" resolveInfo="warn" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3812105808561169691">
                         <property name="value" value="EditorExtensions.runDelayed called after dispose" />
                       </node>
@@ -972,7 +972,7 @@
                       <link role="variableDeclaration" targetNodeId="3812105808561105137" resolveInfo="LOG" />
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="3812105808561169668">
-                      <link role="baseMethodDeclaration" targetNodeId="18.~Category.error(java.lang.Object):void" resolveInfo="error" />
+                      <link role="baseMethodDeclaration" targetNodeId="18.~Category.warn(java.lang.Object):void" resolveInfo="warn" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3812105808561169669">
                         <property name="value" value="EditorExtensions.runOnDispose called after dispose" />
                       </node>
