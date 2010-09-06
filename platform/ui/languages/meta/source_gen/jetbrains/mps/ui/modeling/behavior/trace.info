@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="2482864227446704885">
+    <nodeInfo nodeId="1055897155339717891" fileName="ContainerItemAdder_Behavior.java" startLine="13" startPosition="85" endLine="14" endPosition="219" />
     <scopeInfo nodeId="2482864227446704887" fileName="ContainerItemAdder_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
     <scopeInfo nodeId="1055897155339717887" fileName="ContainerItemAdder_Behavior.java" startLine="13" startPosition="85" endLine="14" endPosition="219" />
   </root>
   <root nodeId="3939571372331676057">
+    <nodeInfo nodeId="262873202871795839" fileName="HasTemplate_Behavior.java" startLine="18" startPosition="107" endLine="19" endPosition="94" />
     <scopeInfo nodeId="3939571372331676059" fileName="HasTemplate_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
     <scopeInfo nodeId="262873202871795836" fileName="HasTemplate_Behavior.java" startLine="18" startPosition="107" endLine="19" endPosition="94" />
   </root>
   <root nodeId="3939571372331676256">
+    <nodeInfo nodeId="3939571372331676295" fileName="UIProperty_Behavior.java" startLine="19" startPosition="40" endLine="20" endPosition="77" />
     <nodeInfo nodeId="3939571372331676288" fileName="UIProperty_Behavior.java" startLine="18" startPosition="188" endLine="22" endPosition="0" />
+    <nodeInfo nodeId="3939571372331676269" fileName="UIProperty_Behavior.java" startLine="17" startPosition="114" endLine="22" endPosition="7" />
     <scopeInfo nodeId="3939571372331676258" fileName="UIProperty_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
     <scopeInfo nodeId="3939571372331676289" fileName="UIProperty_Behavior.java" startLine="19" startPosition="40" endLine="20" endPosition="77" />
     <scopeInfo nodeId="3939571372331676288" fileName="UIProperty_Behavior.java" startLine="18" startPosition="188" endLine="22" endPosition="0" />
@@ -17,7 +21,9 @@
     <unitInfo nodeId="3939571372331676288" fileName="UIProperty_Behavior.java" startLine="18" startPosition="165" endLine="22" endPosition="5" unitName="jetbrains.mps.ui.modeling.behavior.IWhereFilter$anonymous" />
   </root>
   <root nodeId="3939571372331676343">
+    <nodeInfo nodeId="3939571372331676377" fileName="EventProperty_Behavior.java" startLine="19" startPosition="40" endLine="20" endPosition="77" />
     <nodeInfo nodeId="3939571372331676370" fileName="EventProperty_Behavior.java" startLine="18" startPosition="187" endLine="22" endPosition="0" />
+    <nodeInfo nodeId="3939571372331676356" fileName="EventProperty_Behavior.java" startLine="17" startPosition="114" endLine="22" endPosition="7" />
     <scopeInfo nodeId="3939571372331676345" fileName="EventProperty_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
     <scopeInfo nodeId="3939571372331676371" fileName="EventProperty_Behavior.java" startLine="19" startPosition="40" endLine="20" endPosition="77" />
     <scopeInfo nodeId="3939571372331676370" fileName="EventProperty_Behavior.java" startLine="18" startPosition="187" endLine="22" endPosition="0" />
@@ -25,7 +31,9 @@
     <unitInfo nodeId="3939571372331676370" fileName="EventProperty_Behavior.java" startLine="18" startPosition="164" endLine="22" endPosition="5" unitName="jetbrains.mps.ui.modeling.behavior.IWhereFilter$anonymous" />
   </root>
   <root nodeId="3939571372332041049">
+    <nodeInfo nodeId="3939571372332041063" fileName="EditableUIProperty_Behavior.java" startLine="19" startPosition="40" endLine="20" endPosition="77" />
     <nodeInfo nodeId="3939571372332041061" fileName="EditableUIProperty_Behavior.java" startLine="18" startPosition="188" endLine="22" endPosition="0" />
+    <nodeInfo nodeId="3939571372332041054" fileName="EditableUIProperty_Behavior.java" startLine="17" startPosition="114" endLine="22" endPosition="7" />
     <scopeInfo nodeId="3939571372332041051" fileName="EditableUIProperty_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
     <scopeInfo nodeId="3939571372332041062" fileName="EditableUIProperty_Behavior.java" startLine="19" startPosition="40" endLine="20" endPosition="77" />
     <scopeInfo nodeId="3939571372332041061" fileName="EditableUIProperty_Behavior.java" startLine="18" startPosition="188" endLine="22" endPosition="0" />
@@ -33,8 +41,11 @@
     <unitInfo nodeId="3939571372332041061" fileName="EditableUIProperty_Behavior.java" startLine="18" startPosition="165" endLine="22" endPosition="5" unitName="jetbrains.mps.ui.modeling.behavior.IWhereFilter$anonymous" />
   </root>
   <root nodeId="4007322171506129961">
+    <nodeInfo nodeId="4007322171506130017" fileName="UIObjectTemplate_Behavior.java" startLine="19" startPosition="38" endLine="20" endPosition="218" />
+    <nodeInfo nodeId="4007322171506130410" fileName="UIObjectTemplate_Behavior.java" startLine="23" startPosition="40" endLine="24" endPosition="27" />
     <nodeInfo nodeId="4007322171506130007" fileName="UIObjectTemplate_Behavior.java" startLine="18" startPosition="182" endLine="22" endPosition="0" />
     <nodeInfo nodeId="4007322171506130394" fileName="UIObjectTemplate_Behavior.java" startLine="22" startPosition="40" endLine="26" endPosition="0" />
+    <nodeInfo nodeId="4007322171506129975" fileName="UIObjectTemplate_Behavior.java" startLine="17" startPosition="100" endLine="26" endPosition="7" />
     <scopeInfo nodeId="4007322171506129963" fileName="UIObjectTemplate_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
     <scopeInfo nodeId="4007322171506130008" fileName="UIObjectTemplate_Behavior.java" startLine="19" startPosition="38" endLine="20" endPosition="218" />
     <scopeInfo nodeId="4007322171506130395" fileName="UIObjectTemplate_Behavior.java" startLine="23" startPosition="40" endLine="24" endPosition="27" />
@@ -69,9 +80,12 @@
     <nodeInfo nodeId="513490887686364859" fileName="Container_Behavior.java" startLine="63" startPosition="28" endLine="64" endPosition="37" />
     <nodeInfo nodeId="513490887686364859" fileName="Container_Behavior.java" startLine="66" startPosition="31" endLine="67" endPosition="29" />
     <nodeInfo nodeId="513490887686364902" fileName="Container_Behavior.java" startLine="76" startPosition="108" endLine="77" endPosition="136" />
+    <nodeInfo nodeId="513490887686364942" fileName="Container_Behavior.java" startLine="79" startPosition="39" endLine="80" endPosition="102" />
+    <nodeInfo nodeId="513490887686365152" fileName="Container_Behavior.java" startLine="83" startPosition="45" endLine="84" endPosition="101" />
     <nodeInfo nodeId="513490887686364859" fileName="Container_Behavior.java" startLine="42" startPosition="27" endLine="46" endPosition="23" />
     <nodeInfo nodeId="513490887686364929" fileName="Container_Behavior.java" startLine="78" startPosition="181" endLine="82" endPosition="0" />
     <nodeInfo nodeId="513490887686365130" fileName="Container_Behavior.java" startLine="82" startPosition="51" endLine="86" endPosition="0" />
+    <nodeInfo nodeId="4391079257750950166" fileName="Container_Behavior.java" startLine="77" startPosition="136" endLine="86" endPosition="21" />
     <nodeInfo nodeId="513490887686364859" fileName="Container_Behavior.java" startLine="34" startPosition="20" endLine="65" endPosition="19" />
     <nodeInfo nodeId="513490887686364859" fileName="Container_Behavior.java" startLine="32" startPosition="46" endLine="66" endPosition="31" />
     <nodeInfo nodeId="513490887686364859" fileName="Container_Behavior.java" startLine="31" startPosition="0" endLine="69" endPosition="0" />
@@ -79,6 +93,7 @@
     <nodeInfo nodeId="513490887686364859" fileName="Container_Behavior.java" startLine="26" startPosition="38" endLine="71" endPosition="0" />
     <nodeInfo nodeId="513490887686364859" fileName="Container_Behavior.java" startLine="25" startPosition="41" endLine="71" endPosition="10" />
     <nodeInfo nodeId="513490887686364859" fileName="Container_Behavior.java" startLine="24" startPosition="63" endLine="73" endPosition="0" />
+    <nodeInfo nodeId="513490887686364853" fileName="Container_Behavior.java" startLine="23" startPosition="94" endLine="73" endPosition="7" />
     <scopeInfo nodeId="4391079257750950151" fileName="Container_Behavior.java" startLine="20" startPosition="43" endLine="20" endPosition="43" />
     <scopeInfo nodeId="513490887686364859" fileName="Container_Behavior.java" startLine="57" startPosition="27" endLine="57" endPosition="27" />
     <scopeInfo nodeId="513490887686364859" fileName="Container_Behavior.java" startLine="60" startPosition="27" endLine="60" endPosition="27" />
@@ -113,6 +128,7 @@
     <unitInfo nodeId="513490887686364859" fileName="Container_Behavior.java" startLine="24" startPosition="36" endLine="73" endPosition="5" unitName="jetbrains.mps.ui.modeling.behavior.ISequenceClosure$anonymous" />
   </root>
   <root nodeId="4643695836679547811">
+    <nodeInfo nodeId="4643695836679547820" fileName="UIPropertyGetter_Behavior.java" startLine="13" startPosition="83" endLine="14" endPosition="214" />
     <scopeInfo nodeId="4643695836679547813" fileName="UIPropertyGetter_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
     <scopeInfo nodeId="4643695836679547817" fileName="UIPropertyGetter_Behavior.java" startLine="13" startPosition="83" endLine="14" endPosition="214" />
   </root>
@@ -141,8 +157,10 @@
     <nodeInfo nodeId="5224413709454845746" fileName="Event_Behavior.java" startLine="61" startPosition="38" endLine="62" endPosition="28" />
     <nodeInfo nodeId="5224413709454845746" fileName="Event_Behavior.java" startLine="63" startPosition="28" endLine="64" endPosition="37" />
     <nodeInfo nodeId="5224413709454845746" fileName="Event_Behavior.java" startLine="66" startPosition="31" endLine="67" endPosition="29" />
+    <nodeInfo nodeId="3939571372331676115" fileName="Event_Behavior.java" startLine="78" startPosition="40" endLine="79" endPosition="74" />
     <nodeInfo nodeId="5224413709454845746" fileName="Event_Behavior.java" startLine="42" startPosition="27" endLine="46" endPosition="23" />
     <nodeInfo nodeId="3939571372331676108" fileName="Event_Behavior.java" startLine="77" startPosition="188" endLine="81" endPosition="0" />
+    <nodeInfo nodeId="3939571372331676094" fileName="Event_Behavior.java" startLine="76" startPosition="114" endLine="81" endPosition="7" />
     <nodeInfo nodeId="5224413709454845746" fileName="Event_Behavior.java" startLine="34" startPosition="20" endLine="65" endPosition="19" />
     <nodeInfo nodeId="5224413709454845746" fileName="Event_Behavior.java" startLine="32" startPosition="46" endLine="66" endPosition="31" />
     <nodeInfo nodeId="5224413709454845746" fileName="Event_Behavior.java" startLine="31" startPosition="0" endLine="69" endPosition="0" />
@@ -150,6 +168,7 @@
     <nodeInfo nodeId="5224413709454845746" fileName="Event_Behavior.java" startLine="26" startPosition="38" endLine="71" endPosition="0" />
     <nodeInfo nodeId="5224413709454845746" fileName="Event_Behavior.java" startLine="25" startPosition="41" endLine="71" endPosition="10" />
     <nodeInfo nodeId="5224413709454845746" fileName="Event_Behavior.java" startLine="24" startPosition="63" endLine="73" endPosition="0" />
+    <nodeInfo nodeId="5224413709454845742" fileName="Event_Behavior.java" startLine="23" startPosition="91" endLine="73" endPosition="7" />
     <scopeInfo nodeId="5224413709454845746" fileName="Event_Behavior.java" startLine="57" startPosition="27" endLine="57" endPosition="27" />
     <scopeInfo nodeId="5224413709454845746" fileName="Event_Behavior.java" startLine="60" startPosition="27" endLine="60" endPosition="27" />
     <scopeInfo nodeId="5224413709454845732" fileName="Event_Behavior.java" startLine="19" startPosition="43" endLine="20" endPosition="63" />
@@ -179,16 +198,22 @@
     <unitInfo nodeId="5224413709454845746" fileName="Event_Behavior.java" startLine="24" startPosition="36" endLine="73" endPosition="5" unitName="jetbrains.mps.ui.modeling.behavior.ISequenceClosure$anonymous" />
   </root>
   <root nodeId="5263857617434470665">
+    <nodeInfo nodeId="5263857617434470674" fileName="EventPropertyGetter_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="111" />
     <scopeInfo nodeId="5263857617434470667" fileName="EventPropertyGetter_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
     <scopeInfo nodeId="5263857617434470671" fileName="EventPropertyGetter_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="111" />
   </root>
   <root nodeId="5572604531249685304">
+    <nodeInfo nodeId="5572604531249685437" fileName="LayoutConstraintType_Behavior.java" startLine="17" startPosition="78" endLine="21" endPosition="13" />
     <scopeInfo nodeId="5572604531249685306" fileName="LayoutConstraintType_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
     <scopeInfo nodeId="5572604531249685431" fileName="LayoutConstraintType_Behavior.java" startLine="17" startPosition="78" endLine="21" endPosition="13" />
   </root>
   <root nodeId="6030013275785838173">
+    <nodeInfo nodeId="6030013275785870852" fileName="ApplyConstraintStatement_Behavior.java" startLine="17" startPosition="38" endLine="18" endPosition="197" />
+    <nodeInfo nodeId="6030013275785871483" fileName="ApplyConstraintStatement_Behavior.java" startLine="25" startPosition="38" endLine="26" endPosition="197" />
     <nodeInfo nodeId="6030013275785870848" fileName="ApplyConstraintStatement_Behavior.java" startLine="16" startPosition="122" endLine="20" endPosition="0" />
     <nodeInfo nodeId="6030013275785871479" fileName="ApplyConstraintStatement_Behavior.java" startLine="24" startPosition="175" endLine="28" endPosition="0" />
+    <nodeInfo nodeId="6030013275785870813" fileName="ApplyConstraintStatement_Behavior.java" startLine="15" startPosition="96" endLine="20" endPosition="7" />
+    <nodeInfo nodeId="6030013275785871467" fileName="ApplyConstraintStatement_Behavior.java" startLine="23" startPosition="94" endLine="28" endPosition="95" />
     <scopeInfo nodeId="6030013275785838175" fileName="ApplyConstraintStatement_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
     <scopeInfo nodeId="6030013275785870849" fileName="ApplyConstraintStatement_Behavior.java" startLine="17" startPosition="38" endLine="18" endPosition="197" />
     <scopeInfo nodeId="6030013275785871480" fileName="ApplyConstraintStatement_Behavior.java" startLine="25" startPosition="38" endLine="26" endPosition="197" />
@@ -200,7 +225,9 @@
     <unitInfo nodeId="6030013275785871479" fileName="ApplyConstraintStatement_Behavior.java" startLine="24" startPosition="152" endLine="28" endPosition="5" unitName="jetbrains.mps.ui.modeling.behavior.IWhereFilter$anonymous" />
   </root>
   <root nodeId="6261739386029732729">
+    <nodeInfo nodeId="6261739386029732743" fileName="UIAction_Behavior.java" startLine="19" startPosition="40" endLine="20" endPosition="75" />
     <nodeInfo nodeId="6261739386029732741" fileName="UIAction_Behavior.java" startLine="18" startPosition="180" endLine="22" endPosition="0" />
+    <nodeInfo nodeId="6261739386029732734" fileName="UIAction_Behavior.java" startLine="17" startPosition="114" endLine="22" endPosition="7" />
     <scopeInfo nodeId="6261739386029732731" fileName="UIAction_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
     <scopeInfo nodeId="6261739386029732742" fileName="UIAction_Behavior.java" startLine="19" startPosition="40" endLine="20" endPosition="75" />
     <scopeInfo nodeId="6261739386029732741" fileName="UIAction_Behavior.java" startLine="18" startPosition="180" endLine="22" endPosition="0" />
@@ -211,16 +238,20 @@
     <scopeInfo nodeId="6261739386029733414" fileName="UIActionCode_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
   </root>
   <root nodeId="7650899729856274258">
+    <nodeInfo nodeId="7650899729856274267" fileName="AuxObjectFactory_Behavior.java" startLine="13" startPosition="83" endLine="14" endPosition="168" />
     <scopeInfo nodeId="7650899729856274260" fileName="AuxObjectFactory_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
     <scopeInfo nodeId="7650899729856274264" fileName="AuxObjectFactory_Behavior.java" startLine="13" startPosition="83" endLine="14" endPosition="168" />
   </root>
   <root nodeId="7655275107718262758">
+    <nodeInfo nodeId="7655275107718262777" fileName="UIObjectFactory_Behavior.java" startLine="22" startPosition="83" endLine="23" endPosition="167" />
     <nodeInfo nodeId="7655275107718418330" fileName="UIObjectFactory_Behavior.java" startLine="27" startPosition="86" endLine="28" endPosition="18" />
     <nodeInfo nodeId="7655275107718418368" fileName="UIObjectFactory_Behavior.java" startLine="29" startPosition="5" endLine="30" endPosition="271" />
     <nodeInfo nodeId="1642651187739495211" fileName="UIObjectFactory_Behavior.java" startLine="37" startPosition="81" endLine="38" endPosition="71" />
     <nodeInfo nodeId="1642651187739512389" fileName="UIObjectFactory_Behavior.java" startLine="39" startPosition="73" endLine="40" endPosition="150" />
+    <nodeInfo nodeId="1642651187739512405" fileName="UIObjectFactory_Behavior.java" startLine="41" startPosition="5" endLine="42" endPosition="18" />
     <nodeInfo nodeId="7655275107718418312" fileName="UIObjectFactory_Behavior.java" startLine="26" startPosition="78" endLine="29" endPosition="5" />
     <nodeInfo nodeId="1642651187739512374" fileName="UIObjectFactory_Behavior.java" startLine="38" startPosition="71" endLine="41" endPosition="5" />
+    <nodeInfo nodeId="7655275107718418384" fileName="UIObjectFactory_Behavior.java" startLine="30" startPosition="271" endLine="34" endPosition="6" />
     <scopeInfo nodeId="7655275107718262760" fileName="UIObjectFactory_Behavior.java" startLine="19" startPosition="43" endLine="19" endPosition="43" />
     <scopeInfo nodeId="7655275107718262772" fileName="UIObjectFactory_Behavior.java" startLine="22" startPosition="83" endLine="23" endPosition="167" />
     <scopeInfo nodeId="7655275107718418328" fileName="UIObjectFactory_Behavior.java" startLine="27" startPosition="86" endLine="28" endPosition="18" />
@@ -234,6 +265,7 @@
   </root>
   <root nodeId="7798684637310718699">
     <nodeInfo nodeId="7798684637310724160" fileName="ContainerItemIterator_Behavior.java" startLine="22" startPosition="83" endLine="23" endPosition="172" />
+    <nodeInfo nodeId="7798684637310719316" fileName="ContainerItemIterator_Behavior.java" startLine="23" startPosition="172" endLine="24" endPosition="94" />
     <scopeInfo nodeId="7798684637310718701" fileName="ContainerItemIterator_Behavior.java" startLine="19" startPosition="43" endLine="19" endPosition="43" />
     <scopeInfo nodeId="7798684637310718749" fileName="ContainerItemIterator_Behavior.java" startLine="22" startPosition="83" endLine="24" endPosition="94">
       <varInfo nodeId="7798684637310724161" varName="itype" />
@@ -264,13 +296,20 @@
     <nodeInfo nodeId="8115675450774407604" fileName="UIObject_Behavior.java" startLine="63" startPosition="28" endLine="64" endPosition="37" />
     <nodeInfo nodeId="8115675450774407604" fileName="UIObject_Behavior.java" startLine="66" startPosition="31" endLine="67" endPosition="29" />
     <nodeInfo nodeId="7936848552255174992" fileName="UIObject_Behavior.java" startLine="77" startPosition="76" endLine="78" endPosition="69" />
+    <nodeInfo nodeId="1719339442171055229" fileName="UIObject_Behavior.java" startLine="88" startPosition="36" endLine="89" endPosition="64" />
+    <nodeInfo nodeId="1719339442171055238" fileName="UIObject_Behavior.java" startLine="92" startPosition="39" endLine="93" endPosition="28" />
     <nodeInfo nodeId="3089727292574428118" fileName="UIObject_Behavior.java" startLine="98" startPosition="108" endLine="99" endPosition="132" />
+    <nodeInfo nodeId="3089727292574428283" fileName="UIObject_Behavior.java" startLine="101" startPosition="40" endLine="102" endPosition="102" />
+    <nodeInfo nodeId="3089727292574428475" fileName="UIObject_Behavior.java" startLine="105" startPosition="46" endLine="106" endPosition="101" />
     <nodeInfo nodeId="7936848552255174977" fileName="UIObject_Behavior.java" startLine="76" startPosition="82" endLine="79" endPosition="5" />
     <nodeInfo nodeId="8115675450774407604" fileName="UIObject_Behavior.java" startLine="42" startPosition="27" endLine="46" endPosition="23" />
+    <nodeInfo nodeId="7936848552255180986" fileName="UIObject_Behavior.java" startLine="79" startPosition="5" endLine="83" endPosition="6" />
     <nodeInfo nodeId="1719339442171055227" fileName="UIObject_Behavior.java" startLine="87" startPosition="144" endLine="91" endPosition="0" />
     <nodeInfo nodeId="1719339442171055236" fileName="UIObject_Behavior.java" startLine="91" startPosition="44" endLine="95" endPosition="0" />
     <nodeInfo nodeId="3089727292574428270" fileName="UIObject_Behavior.java" startLine="100" startPosition="180" endLine="104" endPosition="0" />
     <nodeInfo nodeId="3089727292574428453" fileName="UIObject_Behavior.java" startLine="104" startPosition="51" endLine="108" endPosition="0" />
+    <nodeInfo nodeId="1719339442171055217" fileName="UIObject_Behavior.java" startLine="86" startPosition="77" endLine="95" endPosition="7" />
+    <nodeInfo nodeId="3939571372331676187" fileName="UIObject_Behavior.java" startLine="99" startPosition="132" endLine="108" endPosition="21" />
     <nodeInfo nodeId="8115675450774407604" fileName="UIObject_Behavior.java" startLine="34" startPosition="20" endLine="65" endPosition="19" />
     <nodeInfo nodeId="8115675450774407604" fileName="UIObject_Behavior.java" startLine="32" startPosition="46" endLine="66" endPosition="31" />
     <nodeInfo nodeId="8115675450774407604" fileName="UIObject_Behavior.java" startLine="31" startPosition="0" endLine="69" endPosition="0" />
@@ -278,6 +317,7 @@
     <nodeInfo nodeId="8115675450774407604" fileName="UIObject_Behavior.java" startLine="26" startPosition="38" endLine="71" endPosition="0" />
     <nodeInfo nodeId="8115675450774407604" fileName="UIObject_Behavior.java" startLine="25" startPosition="41" endLine="71" endPosition="10" />
     <nodeInfo nodeId="8115675450774407604" fileName="UIObject_Behavior.java" startLine="24" startPosition="63" endLine="73" endPosition="0" />
+    <nodeInfo nodeId="8115675450774407600" fileName="UIObject_Behavior.java" startLine="23" startPosition="91" endLine="73" endPosition="7" />
     <scopeInfo nodeId="8115675450774407591" fileName="UIObject_Behavior.java" startLine="20" startPosition="43" endLine="20" endPosition="43" />
     <scopeInfo nodeId="8115675450774407604" fileName="UIObject_Behavior.java" startLine="57" startPosition="27" endLine="57" endPosition="27" />
     <scopeInfo nodeId="8115675450774407604" fileName="UIObject_Behavior.java" startLine="60" startPosition="27" endLine="60" endPosition="27" />
