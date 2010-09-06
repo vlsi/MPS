@@ -367,7 +367,8 @@ jetbrains.mps.baseLanguage.collections.unittest.query_operations.Where_Select_Te
 jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Contains_Test.class,
 jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Concat_Test_Test.class,
 jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Distinct_Test.class,
-jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Union_Test.class})@RunWith(WatchingSuite.class)
+jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Union_Test.class})
+@RunWith(WatchingSuite.class)
 public class GlobalTestSuite extends TestSuite {
   @BeforeClass
   public static void make () throws Exception {

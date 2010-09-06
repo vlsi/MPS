@@ -52,7 +52,7 @@ public class ProjectTestHelper {
 
   // Public interface
 
-  public Token getToken (MPSProject prj) throws Exception {
+  public Token getToken (MPSProject prj)  {
     return new PrivToken (prj);
   }
 
