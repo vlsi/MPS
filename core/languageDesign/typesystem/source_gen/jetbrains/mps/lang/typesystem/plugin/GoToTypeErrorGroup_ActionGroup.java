@@ -50,7 +50,7 @@ public class GoToTypeErrorGroup_ActionGroup extends GeneratedActionGroup {
         GoToTypeErrorGroup_ActionGroup.this.disable(event.getPresentation());
         return;
       }
-      IErrorReporter error = editorComponent.getTypeCheckingContext().getTypeMessageDontCheck(node);
+      IErrorReporter error = editorComponent.getErrorReporterFor(editorComponent.getSelectedCell());
       if (error == null || error.getRuleId() == null || error.getRuleModel() == null || error.getAdditionalRulesIds().isEmpty()) {
         GoToTypeErrorGroup_ActionGroup.this.disable(event.getPresentation());
         return;
@@ -58,10 +58,10 @@ public class GoToTypeErrorGroup_ActionGroup extends GeneratedActionGroup {
       GoToTypeErrorGroup_ActionGroup.this.enable(event.getPresentation());
       GoToTypeErrorGroup_ActionGroup.this.removeAll();
       jetbrains.mps.util.Pair<String, String> firstId = new jetbrains.mps.util.Pair<String, String>(error.getRuleModel(), error.getRuleId());
-      GoToTypeErrorGroup_ActionGroup.this.addAction("jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRule_InGroup_Action", "jetbrains.mps.lang.typesystem", firstId, true);
-      for (jetbrains.mps.util.Pair<String, String> id : error.getAdditionalRulesIdsInReverseOrder()) {
+      for (jetbrains.mps.util.Pair<String, String> id : error.getAdditionalRulesIds()) {
         GoToTypeErrorGroup_ActionGroup.this.addAction("jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRule_InGroup_Action", "jetbrains.mps.lang.typesystem", id, false);
       }
+      GoToTypeErrorGroup_ActionGroup.this.addAction("jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRule_InGroup_Action", "jetbrains.mps.lang.typesystem", firstId, true);
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

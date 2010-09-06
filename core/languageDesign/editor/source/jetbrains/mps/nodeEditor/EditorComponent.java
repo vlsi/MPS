@@ -761,6 +761,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return null;
   }
 
+  public IErrorReporter getErrorReporterFor(EditorCell cell) {
+    HighlighterMessage message = getHighlighterMessageFor(cell);
+    if (message == null) return null;
+    return message.getErrorReporter();
+  }
+
   public void showMessageTooltip() {
     EditorCell cell = getSelectedCell();
     if (cell == null) {
@@ -1732,18 +1738,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
                   public void actionPerformed(ActionEvent e) {
                     if (hasAdditionalRuleIds) {
                       JPopupMenu popupMenu = new JPopupMenu();
-                      popupMenu.add(new AbstractAction("Go To Immediate Rule") {
-                        public void actionPerformed(ActionEvent e) {
-                          ModelAccess.instance().runReadAction(new Runnable() {
-                            public void run() {
-                              GoToTypeErrorRuleUtil.goToRuleById(myOperationContext, new Pair<String, String>(herror.getRuleModel(),
-                                herror.getRuleId()));
-                              dialog.dispose();
-                            }
-                          });
-                        }
-                      });
-                      for (final Pair<String, String> id : herror.getAdditionalRulesIdsInReverseOrder()) {
+                      for (final Pair<String, String> id : herror.getAdditionalRulesIds()) {
                         popupMenu.add(new AbstractAction("Go To Rule " + id.o2) {
                           public void actionPerformed(ActionEvent e) {
                             ModelAccess.instance().runReadAction(new Runnable() {
@@ -1755,6 +1750,17 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
                           }
                         });
                       }
+                      popupMenu.add(new AbstractAction("Go To Immediate Rule") {
+                        public void actionPerformed(ActionEvent e) {
+                          ModelAccess.instance().runReadAction(new Runnable() {
+                            public void run() {
+                              GoToTypeErrorRuleUtil.goToRuleById(myOperationContext, new Pair<String, String>(herror.getRuleModel(),
+                                herror.getRuleId()));
+                              dialog.dispose();
+                            }
+                          });
+                        }
+                      });
                       popupMenu.show(dialog, button.getX(), button.getY() + button.getHeight());
                     } else {
                       ModelAccess.instance().runReadAction(new Runnable() {
