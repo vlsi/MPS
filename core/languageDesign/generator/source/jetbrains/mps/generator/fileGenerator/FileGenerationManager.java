@@ -244,14 +244,15 @@ public class FileGenerationManager implements ApplicationComponent {
       for (SNode out : unitPositions.keySet()) {
         SNode input = out;
         input = getOriginalInputNodeForNearestParent(input);
+        UnitPositionInfo positionInfo = result.getUnitPositions().get(out);
+        positionInfo.setFileName(fileName);
+        String id = null;
         if (input != null && !(input.isDisposed())) {
-          UnitPositionInfo positionInfo = result.getUnitPositions().get(out);
           positionInfo.setNodeId(input.getId());
           info.setModel(input.getModel());
-          positionInfo.setFileName(fileName);
-
-          info.addUnitPosition(positionInfo, input.getTopmostAncestor().getId());
+          id = input.getTopmostAncestor().getId();
         }
+        info.addUnitPosition(positionInfo, id);
       }
     }
   }
@@ -309,16 +310,16 @@ public class FileGenerationManager implements ApplicationComponent {
 
           // invoke post processing 
           Set<File> newfiles = fireFileGenerated(generatedFile);
-          if(newfiles != null) {
-            for(File n : newfiles) {
-              if(generatedFiles.add(n)) {
+          if (newfiles != null) {
+            for (File n : newfiles) {
+              if (generatedFiles.add(n)) {
                 GenerationDependencies dependencies = status.getDependencies();
                 if (dependencies != null) {
                   // calc map
-                  if(dependenciesByFile == null) {
+                  if (dependenciesByFile == null) {
                     dependenciesByFile = new HashMap<String, GenerationRootDependencies>();
-                    for(GenerationRootDependencies rd : dependencies.getRootDependencies()) {
-                      for(String file : rd.getFiles()) {
+                    for (GenerationRootDependencies rd : dependencies.getRootDependencies()) {
+                      for (String file : rd.getFiles()) {
                         dependenciesByFile.put(file, rd);
                       }
                     }
@@ -326,7 +327,7 @@ public class FileGenerationManager implements ApplicationComponent {
 
                   // register as generated file
                   GenerationRootDependencies rdep = dependenciesByFile.get(generatedFile.getName());
-                  if(rdep != null) {
+                  if (rdep != null) {
                     rdep.addGeneratedFile(n.getName());
                   }
                 }
@@ -412,11 +413,11 @@ public class FileGenerationManager implements ApplicationComponent {
       for (FileGenerationListener l : myGenerationListeners) {
         try {
           Set<File> res = l.fileGenerated(file);
-          if(res != null && !res.isEmpty()) {
-            if(generated == null) {
+          if (res != null && !res.isEmpty()) {
+            if (generated == null) {
               generated = res;
             } else {
-              if(!(generated instanceof HashSet)) {
+              if (!(generated instanceof HashSet)) {
                 generated = new HashSet<File>(generated);
               }
               generated.addAll(res);

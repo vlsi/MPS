@@ -260,7 +260,11 @@ public class DebugInfo {
       }
     }, false);
     UnitPositionInfo firstPositionInfo = Sequence.fromIterable(sorted).first();
-    return model.getNodeById(firstPositionInfo.getNodeId());
+    String id = firstPositionInfo.getNodeId();
+    if (id == null) {
+      return null;
+    }
+    return model.getNodeById(id);
   }
 
   public List<String> getRoots() {

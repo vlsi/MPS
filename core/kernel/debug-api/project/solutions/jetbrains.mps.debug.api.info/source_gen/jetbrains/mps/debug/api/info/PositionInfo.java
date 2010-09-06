@@ -4,6 +4,7 @@ package jetbrains.mps.debug.api.info;
 
 import org.jdom.Element;
 import org.jdom.DataConversionException;
+import org.jdom.Attribute;
 
 public class PositionInfo implements Comparable<PositionInfo> {
   private static String FILE_NAME = "fileName";
@@ -24,7 +25,10 @@ public class PositionInfo implements Comparable<PositionInfo> {
   }
 
   public PositionInfo(Element element) throws DataConversionException {
-    this.myNodeId = element.getAttribute(NODE_ID).getValue();
+    Attribute attribute = element.getAttribute(NODE_ID);
+    if (attribute != null) {
+      this.myNodeId = attribute.getValue();
+    }
     this.myFileName = element.getAttribute(FILE_NAME).getValue();
     this.myStartLine = element.getAttribute(START_LINE).getIntValue();
     this.myStartPosition = element.getAttribute(START_POSITION).getIntValue();
@@ -89,7 +93,9 @@ public class PositionInfo implements Comparable<PositionInfo> {
   }
 
   public void saveTo(Element element) {
-    element.setAttribute(NODE_ID, this.myNodeId);
+    if (this.myNodeId != null) {
+      element.setAttribute(NODE_ID, this.myNodeId);
+    }
     element.setAttribute(FILE_NAME, this.myFileName);
     element.setAttribute(START_LINE, Integer.toString(this.myStartLine));
     element.setAttribute(START_POSITION, Integer.toString(this.myStartPosition));
