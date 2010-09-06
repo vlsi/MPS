@@ -197,20 +197,20 @@
     <nodeInfo nodeId="4290387479601539718" fileName="GoToTypeErrorGroup_ActionGroup.java" startLine="57" startPosition="7" endLine="58" endPosition="74" />
     <nodeInfo nodeId="4290387479601539733" fileName="GoToTypeErrorGroup_ActionGroup.java" startLine="58" startPosition="74" endLine="59" endPosition="54" />
     <nodeInfo nodeId="4290387479601583623" fileName="GoToTypeErrorGroup_ActionGroup.java" startLine="59" startPosition="54" endLine="60" endPosition="141" />
-    <nodeInfo nodeId="4290387479601583569" fileName="GoToTypeErrorGroup_ActionGroup.java" startLine="60" startPosition="141" endLine="61" endPosition="173" />
-    <nodeInfo nodeId="4290387479601583730" fileName="GoToTypeErrorGroup_ActionGroup.java" startLine="62" startPosition="102" endLine="63" endPosition="171" />
-    <nodeInfo nodeId="4290387479601583679" fileName="GoToTypeErrorGroup_ActionGroup.java" startLine="61" startPosition="173" endLine="64" endPosition="7" />
+    <nodeInfo nodeId="4290387479601583730" fileName="GoToTypeErrorGroup_ActionGroup.java" startLine="61" startPosition="88" endLine="62" endPosition="171" />
+    <nodeInfo nodeId="4290387479601583569" fileName="GoToTypeErrorGroup_ActionGroup.java" startLine="63" startPosition="7" endLine="64" endPosition="173" />
+    <nodeInfo nodeId="4290387479601583679" fileName="GoToTypeErrorGroup_ActionGroup.java" startLine="60" startPosition="141" endLine="63" endPosition="7" />
     <nodeInfo nodeId="3876057187276892763" fileName="GoToTypeErrorGroup_ActionGroup.java" startLine="43" startPosition="51" endLine="47" endPosition="7" />
     <nodeInfo nodeId="8042441407353625232" fileName="GoToTypeErrorGroup_ActionGroup.java" startLine="48" startPosition="84" endLine="52" endPosition="7" />
     <nodeInfo nodeId="4290387479601539638" fileName="GoToTypeErrorGroup_ActionGroup.java" startLine="53" startPosition="100" endLine="57" endPosition="7" />
-    <scopeInfo nodeId="4290387479601583680" fileName="GoToTypeErrorGroup_ActionGroup.java" startLine="62" startPosition="102" endLine="63" endPosition="171" />
+    <scopeInfo nodeId="4290387479601583680" fileName="GoToTypeErrorGroup_ActionGroup.java" startLine="61" startPosition="88" endLine="62" endPosition="171" />
     <scopeInfo nodeId="3876057187276892764" fileName="GoToTypeErrorGroup_ActionGroup.java" startLine="44" startPosition="25" endLine="46" endPosition="15" />
     <scopeInfo nodeId="8042441407353625233" fileName="GoToTypeErrorGroup_ActionGroup.java" startLine="49" startPosition="36" endLine="51" endPosition="15" />
     <scopeInfo nodeId="4290387479601539639" fileName="GoToTypeErrorGroup_ActionGroup.java" startLine="54" startPosition="130" endLine="56" endPosition="15" />
-    <scopeInfo nodeId="4290387479601583679" fileName="GoToTypeErrorGroup_ActionGroup.java" startLine="61" startPosition="173" endLine="64" endPosition="7">
+    <scopeInfo nodeId="4290387479601583679" fileName="GoToTypeErrorGroup_ActionGroup.java" startLine="60" startPosition="141" endLine="63" endPosition="7">
       <varInfo nodeId="4290387479601583683" varName="id" />
     </scopeInfo>
-    <scopeInfo nodeId="4290387479601539561" fileName="GoToTypeErrorGroup_ActionGroup.java" startLine="42" startPosition="9" endLine="64" endPosition="7">
+    <scopeInfo nodeId="4290387479601539561" fileName="GoToTypeErrorGroup_ActionGroup.java" startLine="42" startPosition="9" endLine="64" endPosition="173">
       <varInfo nodeId="4290387479601539595" varName="node" />
       <varInfo nodeId="4290387479601539605" varName="error" />
       <varInfo nodeId="8042441407353625226" varName="editorComponent" />
