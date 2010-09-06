@@ -7,8 +7,13 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
@@ -22,17 +27,30 @@ public class OrPatternVariableReference_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_souhyd_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_souhyd_a");
-    editorCell.addEditorCell(this.createRefCell_souhyd_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_souhyd_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_souhyd_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_souhyd_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_souhyd_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "#");
+    editorCell.setCellId("Constant_souhyd_a0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createRefCell_souhyd_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("declaration");
     provider.setNoTargetText("<no declaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new OrPatternVariableReference_Editor._Inline_souhyd_a0a());
+    provider.setAuxiliaryCellProvider(new OrPatternVariableReference_Editor._Inline_souhyd_a1a());
     editorCell = provider.createEditorCell(editorContext);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -44,8 +62,8 @@ public class OrPatternVariableReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline_souhyd_a0a extends InlineCellProvider {
-    public _Inline_souhyd_a0a() {
+  public static class _Inline_souhyd_a1a extends InlineCellProvider {
+    public _Inline_souhyd_a1a() {
       super();
     }
 
@@ -54,10 +72,10 @@ public class OrPatternVariableReference_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_souhyd_a0a0(editorContext, node);
+      return this.createProperty_souhyd_a0b0(editorContext, node);
     }
 
-    private EditorCell createProperty_souhyd_a0a0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_souhyd_a0b0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("varName");
       provider.setNoTargetText("<no varName>");

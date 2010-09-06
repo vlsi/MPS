@@ -334,11 +334,11 @@
   <node type="jetbrains.mps.lang.pattern.testLang.structure.PatternTest" id="2879868312063084275">
     <property name="name" value="OrPattern" />
     <node role="variable" type="jetbrains.mps.lang.pattern.testLang.structure.VariableValue" id="4855904478357142041">
-      <node role="variable" type="jetbrains.mps.lang.pattern.testLang.structure.TestVariableReference" id="4855904478357142044">
-        <link role="declaration" targetNodeId="4855904478356985685" resolveInfo="#s" />
-      </node>
       <node role="value" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression:3" id="4855904478357142047">
         <link role="classifier:3" targetNodeId="1.~BufferedOutputStream" resolveInfo="BufferedOutputStream" />
+      </node>
+      <node role="variable" type="jetbrains.mps.lang.pattern.testLang.structure.TestVariableReference" id="455132893173205751">
+        <link role="declaration" targetNodeId="5642650895629225735" resolveInfo="#ds" />
       </node>
     </node>
     <node role="nodeToMatch" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="4855904478357142033">
@@ -362,24 +362,26 @@
           </node>
         </node>
         <node role="condition:3" type="jetbrains.mps.lang.pattern.structure.OrPattern:0" id="4855904478356985691">
+          <node role="variable:0" type="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration:0" id="5642650895629225735">
+            <property name="varName:0" value="ds" />
+          </node>
+          <node role="variable:0" type="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration:0" id="5642650895629225736">
+            <property name="varName:0" value="dfdf" />
+          </node>
           <node role="clause:0" type="jetbrains.mps.lang.pattern.structure.OrPatternClause:0" id="4855904478356985692">
-            <node role="patternNode:0" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="4855904478356985679">
-              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="4855904478356985690" />
-              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="4855904478356985681">
-                <node role="_attr_$attribute:3" type="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration:0" id="4855904478356985685">
-                  <property name="varName:0" value="s" />
-                </node>
+            <node role="patternNode:0" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="7447026300559943984">
+              <node role="leftExpression:3" type="jetbrains.mps.lang.pattern.structure.OrPatternVariableReference:0" id="7447026300559948863">
+                <link role="declaration:0" targetNodeId="5642650895629225735" resolveInfo="#ds" />
               </node>
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="4855904478356985690" />
             </node>
           </node>
           <node role="clause:0" type="jetbrains.mps.lang.pattern.structure.OrPatternClause:0" id="4855904478357000966">
-            <node role="patternNode:0" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="4855904478357000982">
-              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="4855904478357089956">
-                <node role="_attr_$attribute:3" type="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration:0" id="4855904478357089957">
-                  <property name="varName:0" value="s" />
-                </node>
-              </node>
+            <node role="patternNode:0" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="455132893173200872">
               <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="4855904478357000968" />
+              <node role="rightExpression:3" type="jetbrains.mps.lang.pattern.structure.OrPatternVariableReference:0" id="455132893173205750">
+                <link role="declaration:0" targetNodeId="5642650895629225735" resolveInfo="#ds" />
+              </node>
             </node>
           </node>
         </node>
@@ -392,8 +394,8 @@
   <node type="jetbrains.mps.lang.pattern.testLang.structure.PatternTest" id="4855904478357165289">
     <property name="name" value="OrPattern2" />
     <node role="variable" type="jetbrains.mps.lang.pattern.testLang.structure.VariableValue" id="4855904478357165290">
-      <node role="variable" type="jetbrains.mps.lang.pattern.testLang.structure.TestVariableReference" id="4855904478357165291">
-        <link role="declaration" targetNodeId="4855904478357165309" resolveInfo="#s" />
+      <node role="variable" type="jetbrains.mps.lang.pattern.testLang.structure.TestVariableReference" id="7228132814203674561">
+        <link role="declaration" targetNodeId="7228132814203674558" resolveInfo="#s" />
       </node>
       <node role="value" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression:3" id="4855904478357165292">
         <link role="classifier:3" targetNodeId="1.~BufferedOutputStream" resolveInfo="BufferedOutputStream" />
@@ -420,22 +422,21 @@
           </node>
         </node>
         <node role="condition:3" type="jetbrains.mps.lang.pattern.structure.OrPattern:0" id="4855904478357165304">
+          <node role="variable:0" type="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration:0" id="7228132814203674558">
+            <property name="varName:0" value="s" />
+          </node>
           <node role="clause:0" type="jetbrains.mps.lang.pattern.structure.OrPatternClause:0" id="4855904478357165305">
             <node role="patternNode:0" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="4855904478357165306">
               <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="4855904478357165307" />
-              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="4855904478357165308">
-                <node role="_attr_$attribute:3" type="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration:0" id="4855904478357165309">
-                  <property name="varName:0" value="s" />
-                </node>
+              <node role="leftExpression:3" type="jetbrains.mps.lang.pattern.structure.OrPatternVariableReference:0" id="7228132814203674559">
+                <link role="declaration:0" targetNodeId="7228132814203674558" resolveInfo="#s" />
               </node>
             </node>
           </node>
           <node role="clause:0" type="jetbrains.mps.lang.pattern.structure.OrPatternClause:0" id="4855904478357165310">
             <node role="patternNode:0" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="4855904478357165311">
-              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="4855904478357165312">
-                <node role="_attr_$attribute:3" type="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration:0" id="4855904478357165313">
-                  <property name="varName:0" value="s" />
-                </node>
+              <node role="rightExpression:3" type="jetbrains.mps.lang.pattern.structure.OrPatternVariableReference:0" id="7228132814203674560">
+                <link role="declaration:0" targetNodeId="7228132814203674558" resolveInfo="#s" />
               </node>
               <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="4855904478357165314" />
             </node>
@@ -451,7 +452,7 @@
     <property name="name" value="MultipleOr" />
     <node role="variable" type="jetbrains.mps.lang.pattern.testLang.structure.VariableValue" id="8297918475033210051">
       <node role="variable" type="jetbrains.mps.lang.pattern.testLang.structure.TestVariableReference" id="8297918475033210054">
-        <link role="declaration" targetNodeId="8297918475033209967" resolveInfo="#s" />
+        <link role="declaration" targetNodeId="7228132814203674562" resolveInfo="#s" />
       </node>
       <node role="value" type="jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression:3" id="8297918475033210055">
         <node role="primitiveType:3" type="jetbrains.mps.baseLanguage.structure.DoubleType:3" id="8297918475033210056" />
@@ -461,12 +462,13 @@
       <node role="patternNode:0" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="8263735385373599999">
         <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8263735385373600001" />
         <node role="condition:3" type="jetbrains.mps.lang.pattern.structure.OrPattern:0" id="8297918475033171167">
+          <node role="variable:0" type="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration:0" id="7228132814203674562">
+            <property name="varName:0" value="s" />
+          </node>
           <node role="clause:0" type="jetbrains.mps.lang.pattern.structure.OrPatternClause:0" id="8297918475033171168">
             <node role="patternNode:0" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="8297918475033209961">
-              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="8297918475033209962">
-                <node role="_attr_$attribute:3" type="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration:0" id="8297918475033209967">
-                  <property name="varName:0" value="s" />
-                </node>
+              <node role="rightExpression:3" type="jetbrains.mps.lang.pattern.structure.OrPatternVariableReference:0" id="7228132814203674563">
+                <link role="declaration:0" targetNodeId="7228132814203674562" resolveInfo="#s" />
               </node>
               <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="8297918475033209966" />
             </node>
@@ -474,10 +476,8 @@
           <node role="clause:0" type="jetbrains.mps.lang.pattern.structure.OrPatternClause:0" id="8297918475033171173">
             <node role="patternNode:0" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="8297918475033209958">
               <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="8297918475033209965" />
-              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="8297918475033209960">
-                <node role="_attr_$attribute:3" type="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration:0" id="8297918475033209964">
-                  <property name="varName:0" value="s" />
-                </node>
+              <node role="leftExpression:3" type="jetbrains.mps.lang.pattern.structure.OrPatternVariableReference:0" id="7228132814203674564">
+                <link role="declaration:0" targetNodeId="7228132814203674562" resolveInfo="#s" />
               </node>
             </node>
           </node>
@@ -488,10 +488,8 @@
               </node>
               <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="8297918475033209971">
                 <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="8297918475033209975" />
-                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="8297918475033209973">
-                  <node role="_attr_$attribute:3" type="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration:0" id="8297918475033209974">
-                    <property name="varName:0" value="s" />
-                  </node>
+                <node role="leftExpression:3" type="jetbrains.mps.lang.pattern.structure.OrPatternVariableReference:0" id="7228132814203674565">
+                  <link role="declaration:0" targetNodeId="7228132814203674562" resolveInfo="#s" />
                 </node>
               </node>
             </node>
@@ -502,12 +500,10 @@
                 <node role="_attr_$attribute:3" type="jetbrains.mps.lang.pattern.structure.WildcardPattern:0" id="8297918475033210033" />
               </node>
               <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="8297918475033210024">
-                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="8297918475033210025">
-                  <node role="_attr_$attribute:3" type="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration:0" id="8297918475033210031">
-                    <property name="varName:0" value="s" />
-                  </node>
-                </node>
                 <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="8297918475033210032" />
+                <node role="rightExpression:3" type="jetbrains.mps.lang.pattern.structure.OrPatternVariableReference:0" id="7228132814203674566">
+                  <link role="declaration:0" targetNodeId="7228132814203674562" resolveInfo="#s" />
+                </node>
               </node>
             </node>
           </node>

@@ -13,11 +13,11 @@ public class ConstraintsDescriptor implements IModelConstraints {
 
   public ConstraintsDescriptor() {
     ListSequence.fromList(this.myConstraints).addElement(new PatternVariableDeclaration_name_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new PatternVariableDeclaration_shortDescription_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new LinkPatternVariableDeclaration_name_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new PropertyPatternVariableDeclaration_name_PropertyConstraint());
-    ListSequence.fromList(this.myConstraints).addElement(new PatternVariableDeclaration_shortDescription_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new PatternVariableReference_variable_ReferentConstraint());
-    ListSequence.fromList(this.myConstraints).addElement(new PatternVariableDeclarationCopy_declaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new OrPatternVariableReference_declaration_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {
