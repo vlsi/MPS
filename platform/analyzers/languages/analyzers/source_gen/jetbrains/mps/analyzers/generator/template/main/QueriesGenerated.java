@@ -79,7 +79,7 @@ public class QueriesGenerated {
     return "PatternVar_" + SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(_context.getOriginalCopiedInputNode(_context.getNode())), "jetbrains.mps.lang.pattern.structure.ActionAsPattern"), "varName");
   }
 
-  public static Object propertyMacro_GetPropertyValue_7962250936070468103(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_1420906503568751825(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return "PatternVar_" + SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(_context.getOriginalCopiedInputNode(_context.getNode())), "jetbrains.mps.lang.pattern.structure.ActionAsPattern"), "varName");
   }
 
@@ -142,7 +142,7 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "field");
   }
 
-  public static Object referenceMacro_GetReferent_7962250936070468162(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_1420906503568700591(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "instructionRef", true), "instruction", false), "instructionConstructor");
   }
 
@@ -240,7 +240,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "type", true);
   }
 
-  public static SNode sourceNodeQuery_7962250936070468157(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_1420906503568700586(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return _context.getNode();
   }
 
@@ -312,7 +312,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "parameter", true);
   }
 
-  public static Iterable sourceNodesQuery_7962250936070468148(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_1420906503568700577(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "instructionRef", true), "argument", true);
   }
 

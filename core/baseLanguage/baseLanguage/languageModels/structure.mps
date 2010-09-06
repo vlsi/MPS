@@ -3420,11 +3420,6 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4972933694980447171">
     <property name="name:0" value="BaseVariableDeclaration" />
     <link role="extends:0" targetNodeId="4.1133920641626:0" resolveInfo="BaseConcept" />
-    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="5680397130376129217">
-      <property name="name:0" value="name" />
-      <property name="propertyType:0" value="string" />
-      <link role="dataType:0" targetNodeId="4.1082983041843:0" resolveInfo="string" />
-    </node>
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="5680397130376446158">
       <property name="sourceCardinality:0" value="1" />
       <property name="role:0" value="type" />

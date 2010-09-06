@@ -7,6 +7,7 @@ import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 
 public class WhileNotNull extends DataFlowConstructor {
   private GeneratedMatchingPattern myPattern = new WhileNotNull.Pattern_pezsk4_a0a();
@@ -114,8 +115,10 @@ public class WhileNotNull extends DataFlowConstructor {
         int position = 0;
         Object object = getFieldValue("PatternVar_body");
         if (((Program) o).contains(object)) {
-          position = ((Program) (o)).getStart(getFieldValue("PatternVar_body"));
-          ((Program) (o)).insert(new notNullInstruction((SNode) getFieldValue("PatternVar_p")), position, true);
+          position = ((Program) (o)).getStart(object);
+          Instruction instruction = new notNullInstruction((SNode) getFieldValue("PatternVar_p"));
+          instruction.setSource(getFieldValue("PatternVar_body"));
+          ((Program) (o)).insert(instruction, position, true);
         }
       }
     }
