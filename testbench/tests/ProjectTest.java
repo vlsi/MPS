@@ -5,6 +5,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.testbench.MpsMakeHelper;
 import jetbrains.mps.testbench.ProjectTestHelper;
 import jetbrains.mps.testbench.ProjectTestHelper.Token;
+import jetbrains.mps.testbench.junit.Order;
 import jetbrains.mps.testbench.junit.runners.WatchingParameterized;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -200,6 +201,7 @@ public class ProjectTest {
   };
 
   @Test
+  @Order(1)
   public void generateProject () throws Exception {
     HELPER.generate(fixture.token);
     List<String> genErrors = HELPER.getGenerationErrors(fixture.token);
@@ -209,12 +211,14 @@ public class ProjectTest {
   }
 
   @Test
+  @Order(2)
   public void diffProject () throws Exception {
     List<String> diffReport = HELPER.getDiffReport(fixture.token);
     Assert.assertTrue("Difference:\n"+HELPER.formatErrors(diffReport),diffReport.isEmpty());
   }
 
   @Test
+  @Order(3)
   public void compileProject () throws Exception {
     HELPER.compile(fixture.token);
     List<String> compErrors = HELPER.getCompilationErrors(fixture.token);
@@ -222,6 +226,7 @@ public class ProjectTest {
   }
 
   @Test
+  @Order(4)
   public void testProject () throws Exception {
     HELPER.test(fixture.token);
   }
