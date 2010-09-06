@@ -2093,10 +2093,10 @@ __switch__:
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SNode operationExpression = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.DotExpression");
-          SLinkOperations.setTarget(operationExpression, "operand", _context.getSourceNode(), true);
-          SLinkOperations.setNewChild(operationExpression, "operation", "jetbrains.mps.baseLanguage.structure.AbstractOperation");
-          return operationExpression;
+          SNode dotExpression = SNodeOperations.replaceWithAnother(_context.getSourceNode(), SModelOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.structure.DotExpression", _context.getSourceNode()));
+          SLinkOperations.setTarget(dotExpression, "operand", _context.getSourceNode(), true);
+          SLinkOperations.setNewChild(dotExpression, "operation", "jetbrains.mps.baseLanguage.structure.AbstractOperation");
+          return dotExpression;
         }
 
         public String getMatchingText(String pattern) {
