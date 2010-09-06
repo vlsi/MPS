@@ -23,7 +23,11 @@ import java.util.Map;
 public class WatchingRunNotifier extends DelegatingRunNotifier {
   private static final Level WATCH_LEVEL = Level.ERROR;
 
-  private static final com.intellij.openapi.diagnostic.Logger IGNORED_LOG = com.intellij.openapi.diagnostic.Logger.getInstance("#com.intellij.openapi.application.impl.LaterInvocator");
+  private static final com.intellij.openapi.diagnostic.Logger IGNORED_LOGGERS[] = new com.intellij.openapi.diagnostic.Logger []
+    {
+      com.intellij.openapi.diagnostic.Logger.getInstance("#com.intellij.openapi.application.impl.LaterInvocator"),
+      com.intellij.openapi.diagnostic.Logger.getInstance("#com.intellij.application.impl.ApplicationImpl"),
+    };
 
   private Level oldLevel;
   private PrintStream stdOut;
@@ -103,8 +107,10 @@ public class WatchingRunNotifier extends DelegatingRunNotifier {
 
     app = new CachingAppender();
     Logger.getRootLogger().addAppender(app);
-    
-    IGNORED_LOG.setLevel(Level.FATAL);
+
+    for (com.intellij.openapi.diagnostic.Logger ignore: IGNORED_LOGGERS) {
+      ignore.setLevel(Level.FATAL);
+    }
   }
 
   private void afterTest (Description desc) {
