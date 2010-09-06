@@ -1256,6 +1256,14 @@
     <nodeInfo nodeId="1221142451653" fileName="PasteWrappers.java" startLine="67" startPosition="55" endLine="68" endPosition="139" />
     <nodeInfo nodeId="1221142461520" fileName="PasteWrappers.java" startLine="68" startPosition="139" endLine="69" endPosition="105" />
     <nodeInfo nodeId="1221142469850" fileName="PasteWrappers.java" startLine="69" startPosition="105" endLine="70" endPosition="25" />
+    <nodeInfo nodeId="8345479982871212636" fileName="PasteWrappers.java" startLine="82" startPosition="55" endLine="83" endPosition="123" />
+    <nodeInfo nodeId="8345479982871212633" fileName="PasteWrappers.java" startLine="83" startPosition="123" endLine="84" endPosition="85" />
+    <nodeInfo nodeId="8345479982871282305" fileName="PasteWrappers.java" startLine="84" startPosition="85" endLine="85" endPosition="22" />
+    <nodeInfo nodeId="3782443780630924534" fileName="PasteWrappers.java" startLine="97" startPosition="55" endLine="98" endPosition="122" />
+    <nodeInfo nodeId="3782443780630924517" fileName="PasteWrappers.java" startLine="98" startPosition="122" endLine="99" endPosition="130" />
+    <nodeInfo nodeId="3782443780630924523" fileName="PasteWrappers.java" startLine="99" startPosition="130" endLine="100" endPosition="92" />
+    <nodeInfo nodeId="3782443780630924540" fileName="PasteWrappers.java" startLine="100" startPosition="92" endLine="101" endPosition="77" />
+    <nodeInfo nodeId="3782443780630924530" fileName="PasteWrappers.java" startLine="101" startPosition="77" endLine="102" endPosition="22" />
     <scopeInfo nodeId="1221141744477" fileName="PasteWrappers.java" startLine="41" startPosition="55" endLine="42" endPosition="87" />
     <scopeInfo nodeId="1221142396269" fileName="PasteWrappers.java" startLine="54" startPosition="55" endLine="55" endPosition="101" />
     <scopeInfo nodeId="1221138747028" fileName="PasteWrappers.java" startLine="26" startPosition="55" endLine="29" endPosition="22">
@@ -1263,6 +1271,13 @@
     </scopeInfo>
     <scopeInfo nodeId="1221142438332" fileName="PasteWrappers.java" startLine="67" startPosition="55" endLine="70" endPosition="25">
       <varInfo nodeId="1221142451654" varName="statement" />
+    </scopeInfo>
+    <scopeInfo nodeId="8345479982871191188" fileName="PasteWrappers.java" startLine="82" startPosition="55" endLine="85" endPosition="22">
+      <varInfo nodeId="8345479982871212637" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="3782443780630924516" fileName="PasteWrappers.java" startLine="97" startPosition="55" endLine="102" endPosition="22">
+      <varInfo nodeId="3782443780630924535" varName="result" />
+      <varInfo nodeId="3782443780630924518" varName="newExpression" />
     </scopeInfo>
   </root>
   <root nodeId="1221569179842">
