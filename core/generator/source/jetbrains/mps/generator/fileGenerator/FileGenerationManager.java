@@ -197,14 +197,15 @@ public class FileGenerationManager implements ApplicationComponent {
       for (SNode out : unitPositions.keySet()) {
         SNode input = out;
         input = getOriginalInputNodeForNearestParent(input);
+        UnitPositionInfo positionInfo = result.getUnitPositions().get(out);
+        positionInfo.setFileName(fileName);
+        String id = null;
         if (input != null && !(input.isDisposed())) {
-          UnitPositionInfo positionInfo = result.getUnitPositions().get(out);
           positionInfo.setNodeId(input.getId());
           info.setModel(input.getModel());
-          positionInfo.setFileName(fileName);
-
-          info.addUnitPosition(positionInfo, input.getTopmostAncestor().getId());
+          id = input.getTopmostAncestor().getId();
         }
+        info.addUnitPosition(positionInfo, id);
       }
     }
   }
