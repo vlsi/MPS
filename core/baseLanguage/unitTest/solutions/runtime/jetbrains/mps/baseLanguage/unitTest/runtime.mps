@@ -224,14 +224,24 @@
                           </node>
                         </node>
                       </node>
-                      <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1208535289355">
-                        <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1208535289356">
-                          <link role="baseMethodDeclaration:3" targetNodeId="2.~BaseTestRunner.loadSuiteClass(java.lang.String):java.lang.Class" resolveInfo="loadSuiteClass" />
-                          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1208535292377">
-                            <link role="variableDeclaration:3" targetNodeId="1208534490395" resolveInfo="testCase" />
+                      <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="6650061735730454235">
+                        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6650061735730454238">
+                          <link role="classifier:3" targetNodeId="3.~Class" resolveInfo="Class" />
+                          <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.UpperBoundType:3" id="6650061735730454241">
+                            <node role="bound:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6650061735730454243">
+                              <link role="classifier:3" targetNodeId="1.~TestCase" resolveInfo="TestCase" />
+                            </node>
                           </node>
                         </node>
-                        <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1208535289357" />
+                        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1208535289355">
+                          <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1208535289356">
+                            <link role="baseMethodDeclaration:3" targetNodeId="2.~BaseTestRunner.loadSuiteClass(java.lang.String):java.lang.Class" resolveInfo="loadSuiteClass" />
+                            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1208535292377">
+                              <link role="variableDeclaration:3" targetNodeId="1208534490395" resolveInfo="testCase" />
+                            </node>
+                          </node>
+                          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1208535289357" />
+                        </node>
                       </node>
                     </node>
                   </node>
