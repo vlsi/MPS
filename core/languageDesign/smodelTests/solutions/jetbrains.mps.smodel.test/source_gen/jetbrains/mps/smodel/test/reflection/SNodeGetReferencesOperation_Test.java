@@ -18,59 +18,59 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 @MPSLaunch
-public class SNodeGetReterencesOperation_Test extends BaseTransformationTest {
+public class SNodeGetReferencesOperation_Test extends BaseTransformationTest {
   @Test
   public void test_size() throws Throwable {
     this.initTest("${mps_home}/core/languageDesign/smodel/smodel.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
-    this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReterencesOperation_Test$TestBody", "test_size", true);
+    this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody", "test_size", true);
   }
 
   @Test
   public void test_target() throws Throwable {
     this.initTest("${mps_home}/core/languageDesign/smodel/smodel.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
-    this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReterencesOperation_Test$TestBody", "test_target", true);
+    this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody", "test_target", true);
   }
 
   @Test
   public void test_linkDeclaration() throws Throwable {
     this.initTest("${mps_home}/core/languageDesign/smodel/smodel.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
-    this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReterencesOperation_Test$TestBody", "test_linkDeclaration", true);
+    this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody", "test_linkDeclaration", true);
   }
 
   @Test
   public void test_forSpecializedLink() throws Throwable {
     this.initTest("${mps_home}/core/languageDesign/smodel/smodel.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
-    this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReterencesOperation_Test$TestBody", "test_forSpecializedLink", true);
+    this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody", "test_forSpecializedLink", true);
   }
 
   @Test
   public void test_roles() throws Throwable {
     this.initTest("${mps_home}/core/languageDesign/smodel/smodel.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
-    this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReterencesOperation_Test$TestBody", "test_roles", true);
+    this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody", "test_roles", true);
   }
 
   @Test
   public void test_resolveInfo() throws Throwable {
     this.initTest("${mps_home}/core/languageDesign/smodel/smodel.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
-    this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReterencesOperation_Test$TestBody", "test_resolveInfo", true);
+    this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody", "test_resolveInfo", true);
   }
 
   @Test
   public void test_unspecifiedReferences() throws Throwable {
     this.initTest("${mps_home}/core/languageDesign/smodel/smodel.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
-    this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReterencesOperation_Test$TestBody", "test_unspecifiedReferences", true);
+    this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody", "test_unspecifiedReferences", true);
   }
 
   @Test
   public void test_unresolvedReference() throws Throwable {
     this.initTest("${mps_home}/core/languageDesign/smodel/smodel.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
-    this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReterencesOperation_Test$TestBody", "test_unresolvedReference", true);
+    this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody", "test_unresolvedReference", true);
   }
 
   @Test
   public void test_forNull() throws Throwable {
     this.initTest("${mps_home}/core/languageDesign/smodel/smodel.mpr", "r:8ac706c2-cfd2-4da3-8b63-a741ed2733d4(jetbrains.mps.smodel.test.reflection)");
-    this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReterencesOperation_Test$TestBody", "test_forNull", true);
+    this.runTest("jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test$TestBody", "test_forNull", true);
   }
 
   @MPSLaunch
@@ -152,7 +152,7 @@ public class SNodeGetReterencesOperation_Test extends BaseTransformationTest {
       this.addNodeById("2906110183022219843");
       this.addNodeById("2906110183022354865");
       this.addNodeById("2906110183022432276");
-      // Resolcing references by accessing .target node: 
+      // Resolving references by accessing .target node: 
       Sequence.fromIterable(SNodeOperations.getReferences(SNodeOperations.cast(this.getNodeById("2906110183022219844"), "jetbrains.mps.lang.smodelTests.structure.ReferenceContainer"))).visitAll(new IVisitor<SReference>() {
         public void visit(SReference it) {
           SLinkOperations.getTargetNode(it);
@@ -207,7 +207,7 @@ public class SNodeGetReterencesOperation_Test extends BaseTransformationTest {
       Assert.assertEquals(initialSize, Sequence.fromIterable(SNodeOperations.getReferences(SNodeOperations.cast(this.getNodeById("2906110183022432277"), "jetbrains.mps.lang.smodelTests.structure.ReferenceContainer"))).count());
       Iterable<SReference> brokenReferences = Sequence.fromIterable(SNodeOperations.getReferences(SNodeOperations.cast(this.getNodeById("2906110183022432277"), "jetbrains.mps.lang.smodelTests.structure.ReferenceContainer"))).where(new IWhereFilter<SReference>() {
         public boolean accept(SReference it) {
-          return (SLinkOperations.getTargetNode(it) == null);
+          return it.getTargetNodeSilently() == null;
         }
       });
       Assert.assertEquals(1, Sequence.fromIterable(brokenReferences).count());
