@@ -83,7 +83,7 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
 
   public void initComponent() {
     myFileGenerationManager.addCachesGenerator(new CacheGenerator() {
-      public File generateCache(CacheGenerationContext context) {
+      public VirtualFile generateCache(CacheGenerationContext context) {
         return generateHashFile(context);
       }
     });
@@ -204,7 +204,7 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     return result;
   }
 
-  private File generateHashFile(CacheGenerationContext context) {
+  private VirtualFile generateHashFile(CacheGenerationContext context) {
     File outputDir = context.getOutputDir();
 
     SModelDescriptor descriptor = context.getOriginalInputModel();
@@ -232,19 +232,14 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     }
 
     String hash = ModelDigestHelper.hash(content);
-    File result = new File(FileGenerationUtil.getDefaultOutputDir(context.getInputModel(), outputDir), ModelGenerationStatusManager.HASH_PREFIX + hash);
-    if (!result.exists()) {
-      try {
-        if (!result.createNewFile()) {
-          LOG.error("Can't create hash file");
-        } else {
-          FileUtil.write(result, hash);
-        }
-      } catch (IOException e) {
-        LOG.error(e);
-      }
+    VirtualFile resultFile = null;
+    try {
+      resultFile = FileUtil.createVirtualFile(FileGenerationUtil.getDefaultOutputDir(context.getInputModel(), outputDir), ModelGenerationStatusManager.HASH_PREFIX + hash);
+       FileUtil.write(resultFile, hash);
+    } catch (IOException e) {
+      LOG.error(e, "Cant create hash file");
     }
-    return result;
+    return resultFile;
   }
 
 }
