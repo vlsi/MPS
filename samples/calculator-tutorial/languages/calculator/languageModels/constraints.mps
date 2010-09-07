@@ -71,14 +71,14 @@
             <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1241364841509">
               <property name="name:3" value="calc" />
               <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1241364841510">
-                <link role="concept:16" targetNodeId="1.1241362555920" resolveInfo="Calcualtor" />
+                <link role="concept:16" targetNodeId="1.1241362555920" resolveInfo="Calculator" />
               </node>
               <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1241364841511">
                 <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode:8" id="1241364841512" />
                 <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation:16" id="1241364841513">
                   <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="1241364841514">
                     <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="1241364841515">
-                      <link role="conceptDeclaration:16" targetNodeId="1.1241362555920" resolveInfo="Calcualtor" />
+                      <link role="conceptDeclaration:16" targetNodeId="1.1241362555920" resolveInfo="Calculator" />
                     </node>
                   </node>
                 </node>

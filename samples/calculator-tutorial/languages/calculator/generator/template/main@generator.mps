@@ -113,7 +113,7 @@
       <link role="targetConcept:2" targetNodeId="8.1068581242863:3" resolveInfo="LocalVariableDeclaration" />
     </node>
     <node role="rootMappingRule:2" type="jetbrains.mps.lang.generator.structure.Root_MappingRule:2" id="1241363224332">
-      <link role="applicableConcept:2" targetNodeId="1.1241362555920" resolveInfo="Calcualtor" />
+      <link role="applicableConcept:2" targetNodeId="1.1241362555920" resolveInfo="Calculator" />
       <link role="template:2" targetNodeId="1241363184176" resolveInfo="CalculatorImpl" />
     </node>
   </node>
@@ -800,7 +800,7 @@
       </node>
     </node>
     <node role="rootTemplateAnnotation$attribute:3" type="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation:2" id="1241363184182">
-      <link role="applicableConcept:2" targetNodeId="1.1241362555920" resolveInfo="Calcualtor" />
+      <link role="applicableConcept:2" targetNodeId="1.1241362555920" resolveInfo="Calculator" />
     </node>
     <node role="propertyMacro$property_attribute$name:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1241363259553">
       <node role="propertyValueFunction:2" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue:2" id="1241363259554">

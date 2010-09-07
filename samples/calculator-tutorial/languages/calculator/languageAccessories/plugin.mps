@@ -220,7 +220,7 @@
       <property name="name:23" value="calcNode" />
       <node role="visibility:23" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1241364981993" />
       <node role="type:23" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1241364981994">
-        <link role="concept:16" targetNodeId="1.1241362555920" resolveInfo="Calcualtor" />
+        <link role="concept:16" targetNodeId="1.1241362555920" resolveInfo="Calculator" />
       </node>
     </node>
     <node role="updateBlock:23" type="jetbrains.mps.lang.plugin.structure.IsApplicableBlock:23" id="1241367246475">
