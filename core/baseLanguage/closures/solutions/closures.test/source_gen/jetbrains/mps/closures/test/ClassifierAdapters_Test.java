@@ -297,7 +297,6 @@ __switch__:
         return Result.TERMINATE(count.value++);
       }
     };
-    
     {
       Result<? extends Integer, ?> __result__ = ucl.invokeUnrestricted();
       switch (__result__.getOutcome()) {
@@ -312,9 +311,8 @@ __switch__:
         default:
           break;
       }
-    };
+    }
     Assert.assertSame(3, count.value);
-    
     {
       Result<? extends Integer, ?> __result__ = new _UnrestrictedFunctionTypes._return_terminate_P0_E0<Integer, Integer>() {
         public Result<Integer, Integer> invokeUnrestricted() {
@@ -333,7 +331,7 @@ __switch__:
         default:
           break;
       }
-    };
+    }
     Assert.assertSame(4, count.value);
     // testing compilation 
     new _FunctionTypes._return_P0_E0<Object>() {

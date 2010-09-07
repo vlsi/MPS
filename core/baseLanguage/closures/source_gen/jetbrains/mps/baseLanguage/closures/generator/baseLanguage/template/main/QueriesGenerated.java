@@ -193,7 +193,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_55412175018273848(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return false;
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
   }
 
   public static boolean baseMappingRule_Condition_55412175018273755(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -2064,7 +2064,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SNodeOperations.as(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression"), "function", true)), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "resultType", true);
   }
 
-  public static SNode sourceNodeQuery_55412175018310947(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_872684720293964757(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "expression", true);
   }
 
