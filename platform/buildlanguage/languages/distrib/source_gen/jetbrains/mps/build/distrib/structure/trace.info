@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="Distrib_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.distrib.structure.Distrib_Language" />
+  <unitInfo fileName="UniversalConfig.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.build.distrib.structure.UniversalConfig" />
+  <unitInfo fileName="AbstractPath.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.build.distrib.structure.AbstractPath" />
+  <unitInfo fileName="SystemSpecificConfig.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.build.distrib.structure.SystemSpecificConfig" />
+  <unitInfo fileName="SimplePath.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.build.distrib.structure.SimplePath" />
+  <unitInfo fileName="PathCommantLinePart.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.build.distrib.structure.PathCommantLinePart" />
+  <unitInfo fileName="ClassPath.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.build.distrib.structure.ClassPath" />
+  <unitInfo fileName="DigitalSignatureWindowsConfiguration.java" startLine="14" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.build.distrib.structure.DigitalSignatureWindowsConfiguration" />
+  <unitInfo fileName="Role.java" startLine="12" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.build.distrib.structure.Role" />
+  <unitInfo fileName="ExternalVariableReference.java" startLine="13" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.build.distrib.structure.ExternalVariableReference" />
+  <unitInfo fileName="MacConfig.java" startLine="13" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.build.distrib.structure.MacConfig" />
+  <unitInfo fileName="FileAssociation.java" startLine="13" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.build.distrib.structure.FileAssociation" />
+  <unitInfo fileName="WindowsConfig.java" startLine="11" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.build.distrib.structure.WindowsConfig" />
+  <unitInfo fileName="DistribConfiguration.java" startLine="20" startPosition="0" endLine="248" endPosition="0" unitName="jetbrains.mps.build.distrib.structure.DistribConfiguration" />
+</debugInfo>
+

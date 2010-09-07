@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="LibraryFolder_Behavior.java" startLine="11" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.LibraryFolder_Behavior" />
+  <unitInfo fileName="MPSBuild_Behavior.java" startLine="31" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.MPSBuild_Behavior" />
   <root nodeId="1233155892819">
     <nodeInfo nodeId="1233155998228" fileName="MPSBuild_Behavior.java" startLine="35" startPosition="83" endLine="36" endPosition="92" />
     <nodeInfo nodeId="1233680226706" fileName="MPSBuild_Behavior.java" startLine="39" startPosition="95" endLine="40" endPosition="70" />

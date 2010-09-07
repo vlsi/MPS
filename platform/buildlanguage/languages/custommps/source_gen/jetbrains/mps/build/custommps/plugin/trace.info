@@ -1,5 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="Custommps_ProjectPlugin.java" startLine="7" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.Custommps_ProjectPlugin" />
+  <unitInfo fileName="DefaultCustomMpsApplication_Editor.java" startLine="28" startPosition="47" endLine="32" endPosition="7" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Editor$3" />
+  <unitInfo fileName="DefaultCustomMpsApplication_Configuration.java" startLine="149" startPosition="42" endLine="153" endPosition="13" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Configuration$3" />
+  <unitInfo fileName="DefaultCustomMpsApplication_Configuration.java" startLine="272" startPosition="45" endLine="276" endPosition="5" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Configuration$4" />
+  <unitInfo fileName="DefaultCustomMpsApplication_Configuration.java" startLine="301" startPosition="66" endLine="305" endPosition="7" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Configuration$6" />
+  <unitInfo fileName="DefaultCustomMpsApplication_Configuration.java" startLine="286" startPosition="45" endLine="291" endPosition="5" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Configuration$5" />
+  <unitInfo fileName="DefaultCustomMpsApplication_Configuration.java" startLine="138" startPosition="90" endLine="145" endPosition="13" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Configuration$3" />
+  <unitInfo fileName="ForeignConfigurations.java" startLine="16" startPosition="140" endLine="24" endPosition="5" unitName="jetbrains.mps.build.custommps.plugin.ForeignConfigurations$1" />
+  <unitInfo fileName="DefaultCustomMpsLanguageConfigurationFromConfiguration.java" startLine="26" startPosition="108" endLine="34" endPosition="5" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsLanguageConfigurationFromConfiguration$1" />
+  <unitInfo fileName="DefaultCustomMpsLanguageConfigurationFromMPSLayout.java" startLine="27" startPosition="108" endLine="35" endPosition="5" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsLanguageConfigurationFromMPSLayout$1" />
+  <unitInfo fileName="DefaultCustomMpsLanguageConfigurationFromMPSBuild.java" startLine="29" startPosition="108" endLine="37" endPosition="5" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsLanguageConfigurationFromMPSBuild$1" />
+  <unitInfo fileName="DefaultCustomMpsApplication_Editor.java" startLine="59" startPosition="40" endLine="67" endPosition="7" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Editor$1" />
+  <unitInfo fileName="DefaultCustomMpsApplication_Editor.java" startLine="25" startPosition="74" endLine="35" endPosition="3" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Editor$2" />
+  <unitInfo fileName="DefaultCustomMpsApplication_Configuration.java" startLine="310" startPosition="35" endLine="320" endPosition="9" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Configuration$7" />
+  <unitInfo fileName="DefaultCustomMpsApplication_Factory.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Factory" />
+  <unitInfo fileName="DefaultCustomMpsApplication_Editor.java" startLine="35" startPosition="18" endLine="50" endPosition="3" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Editor$3" />
+  <unitInfo fileName="Custommps_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.Custommps_ApplicationPlugin" />
+  <unitInfo fileName="ForeignConfigurations.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.ForeignConfigurations" />
+  <unitInfo fileName="DefaultCustomMpsApplication_Configuration.java" startLine="377" startPosition="0" endLine="394" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Configuration$MyState" />
+  <unitInfo fileName="ProjectAddition_ActionGroup.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.ProjectAddition_ActionGroup" />
+  <unitInfo fileName="InternalChecks_ActionGroup.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.InternalChecks_ActionGroup" />
+  <unitInfo fileName="DefaultCustomMpsApplication_Configuration.java" startLine="395" startPosition="0" endLine="418" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Configuration$MyExecutionResult" />
+  <unitInfo fileName="DefaultCustomMpsApplication_Configuration.java" startLine="419" startPosition="0" endLine="444" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Configuration$MyExecutionConsole" />
+  <unitInfo fileName="DefaultCustomMpsApplication_Configuration.java" startLine="157" startPosition="52" endLine="202" endPosition="13" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Configuration$3" />
+  <unitInfo fileName="DefaultCustomMpsApplication_Configuration.java" startLine="331" startPosition="0" endLine="376" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Configuration$MySettingsEditor" />
+  <unitInfo fileName="CheckSamples_Action.java" startLine="18" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.CheckSamples_Action" />
+  <unitInfo fileName="CheckIncludedLanguages_Action.java" startLine="20" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.CheckIncludedLanguages_Action" />
+  <unitInfo fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.GenerateCustomMPSBuildForProjectAction_Action" />
+  <unitInfo fileName="DefaultCustomMpsLanguageConfigurationFromConfiguration.java" startLine="22" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsLanguageConfigurationFromConfiguration" />
+  <unitInfo fileName="DefaultCustomMpsApplication_Editor.java" startLine="22" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Editor" />
+  <unitInfo fileName="DefaultCustomMpsLanguageConfigurationFromMPSLayout.java" startLine="23" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsLanguageConfigurationFromMPSLayout" />
+  <unitInfo fileName="CheckCoreRuntimeDeps_Action.java" startLine="25" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.CheckCoreRuntimeDeps_Action" />
+  <unitInfo fileName="DefaultCustomMpsLanguageConfigurationFromMPSBuild.java" startLine="25" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsLanguageConfigurationFromMPSBuild" />
+  <unitInfo fileName="DefaultCustomMpsApplication_Configuration.java" startLine="121" startPosition="15" endLine="229" endPosition="5" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Configuration$2" />
+  <unitInfo fileName="DefaultCustomMpsApplication_Configuration.java" startLine="62" startPosition="0" endLine="445" endPosition="0" unitName="jetbrains.mps.build.custommps.plugin.DefaultCustomMpsApplication_Configuration" />
   <root nodeId="1241450087965">
     <nodeInfo nodeId="1241450087966" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="20" startPosition="0" endLine="21" endPosition="32" />
     <nodeInfo nodeId="1241450087968" fileName="GenerateCustomMPSBuildForProjectAction_Action.java" startLine="21" startPosition="32" endLine="22" endPosition="26" />
@@ -330,6 +365,7 @@
     <nodeInfo nodeId="1325286122618317706" fileName="DefaultCustomMpsLanguageConfigurationFromConfiguration.java" startLine="57" startPosition="111" endLine="74" endPosition="5" />
     <scopeInfo nodeId="1325286122618317699" fileName="DefaultCustomMpsLanguageConfigurationFromConfiguration.java" startLine="53" startPosition="32" endLine="54" endPosition="13" />
     <scopeInfo nodeId="1325286122618317706" fileName="DefaultCustomMpsLanguageConfigurationFromConfiguration.java" startLine="61" startPosition="15" endLine="62" endPosition="154" />
+    <scopeInfo nodeId="1325286122618317706" fileName="DefaultCustomMpsLanguageConfigurationFromConfiguration.java" startLine="63" startPosition="0" endLine="64" endPosition="51" />
     <scopeInfo nodeId="1325286122618317706" fileName="DefaultCustomMpsLanguageConfigurationFromConfiguration.java" startLine="63" startPosition="47" endLine="64" endPosition="51" />
     <scopeInfo nodeId="1325286122618317667" fileName="DefaultCustomMpsLanguageConfigurationFromConfiguration.java" startLine="47" startPosition="25" endLine="50" endPosition="50" />
     <scopeInfo nodeId="1325286122618317706" fileName="DefaultCustomMpsLanguageConfigurationFromConfiguration.java" startLine="60" startPosition="50" endLine="65" endPosition="11" />
@@ -376,6 +412,7 @@
     <scopeInfo nodeId="1325286122618317744" fileName="DefaultCustomMpsLanguageConfigurationFromMPSLayout.java" startLine="50" startPosition="32" endLine="51" endPosition="13" />
     <scopeInfo nodeId="1325286122618317752" fileName="DefaultCustomMpsLanguageConfigurationFromMPSLayout.java" startLine="56" startPosition="25" endLine="57" endPosition="119" />
     <scopeInfo nodeId="1325286122618317767" fileName="DefaultCustomMpsLanguageConfigurationFromMPSLayout.java" startLine="65" startPosition="15" endLine="66" endPosition="154" />
+    <scopeInfo nodeId="1325286122618317767" fileName="DefaultCustomMpsLanguageConfigurationFromMPSLayout.java" startLine="67" startPosition="0" endLine="68" endPosition="51" />
     <scopeInfo nodeId="1325286122618317767" fileName="DefaultCustomMpsLanguageConfigurationFromMPSLayout.java" startLine="67" startPosition="47" endLine="68" endPosition="51" />
     <scopeInfo nodeId="1325286122618317728" fileName="DefaultCustomMpsLanguageConfigurationFromMPSLayout.java" startLine="45" startPosition="57" endLine="49" endPosition="0" />
     <scopeInfo nodeId="1325286122618317751" fileName="DefaultCustomMpsLanguageConfigurationFromMPSLayout.java" startLine="55" startPosition="57" endLine="59" endPosition="0" />
@@ -424,6 +461,7 @@
     <scopeInfo nodeId="1325286122618400432" fileName="DefaultCustomMpsLanguageConfigurationFromMPSBuild.java" startLine="55" startPosition="43" endLine="56" endPosition="96" />
     <scopeInfo nodeId="1325286122618391298" fileName="DefaultCustomMpsLanguageConfigurationFromMPSBuild.java" startLine="62" startPosition="32" endLine="63" endPosition="13" />
     <scopeInfo nodeId="1325286122618391305" fileName="DefaultCustomMpsLanguageConfigurationFromMPSBuild.java" startLine="70" startPosition="15" endLine="71" endPosition="154" />
+    <scopeInfo nodeId="1325286122618391305" fileName="DefaultCustomMpsLanguageConfigurationFromMPSBuild.java" startLine="72" startPosition="0" endLine="73" endPosition="51" />
     <scopeInfo nodeId="1325286122618391305" fileName="DefaultCustomMpsLanguageConfigurationFromMPSBuild.java" startLine="72" startPosition="47" endLine="73" endPosition="51" />
     <scopeInfo nodeId="1325286122618400431" fileName="DefaultCustomMpsLanguageConfigurationFromMPSBuild.java" startLine="54" startPosition="154" endLine="58" endPosition="0" />
     <scopeInfo nodeId="1325286122618391305" fileName="DefaultCustomMpsLanguageConfigurationFromMPSBuild.java" startLine="69" startPosition="50" endLine="74" endPosition="11" />

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="SystemSpecificConfig_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.build.distrib.constraints.SystemSpecificConfig_Constraints" />
+  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.build.distrib.constraints.ConstraintsDescriptor" />
+  <unitInfo fileName="DistribConfiguration_projectFolder_ReferentConstraint.java" startLine="13" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.build.distrib.constraints.DistribConfiguration_projectFolder_ReferentConstraint" />
+  <unitInfo fileName="ExternalVariableReference_variable_ReferentConstraint.java" startLine="19" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.build.distrib.constraints.ExternalVariableReference_variable_ReferentConstraint" />
   <root nodeId="1230207820573">
     <nodeInfo nodeId="1230207830478" fileName="SystemSpecificConfig_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="128" />
     <scopeInfo nodeId="1230207824559" fileName="SystemSpecificConfig_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="128" />

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.build.custommps.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="NonEmptyLibraryName_NonTypesystemRule.java" startLine="16" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.build.custommps.typesystem.NonEmptyLibraryName_NonTypesystemRule" />
+  <unitInfo fileName="MPSBuildShouldHaveToolsZipDefined_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.build.custommps.typesystem.MPSBuildShouldHaveToolsZipDefined_NonTypesystemRule" />
   <root nodeId="1234292464807">
     <nodeInfo nodeId="1234294303464" fileName="MPSBuildShouldHaveToolsZipDefined_NonTypesystemRule.java" startLine="25" startPosition="94" endLine="26" endPosition="102" />
     <nodeInfo nodeId="1234294315450" fileName="MPSBuildShouldHaveToolsZipDefined_NonTypesystemRule.java" startLine="26" startPosition="102" endLine="27" endPosition="62" />

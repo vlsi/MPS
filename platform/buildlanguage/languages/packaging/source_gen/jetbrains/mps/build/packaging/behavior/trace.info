@@ -1,5 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="Delete_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.Delete_Behavior" />
+  <unitInfo fileName="MacroReference_Behavior.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.MacroReference_Behavior" />
+  <unitInfo fileName="File_Behavior.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.File_Behavior" />
+  <unitInfo fileName="Echo_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.Echo_Behavior" />
+  <unitInfo fileName="SimpleString_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.SimpleString_Behavior" />
+  <unitInfo fileName="VariableReference_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.VariableReference_Behavior" />
+  <unitInfo fileName="NonExistingPath_Behavior.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.NonExistingPath_Behavior" />
+  <unitInfo fileName="Folder_Behavior.java" startLine="9" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.Folder_Behavior" />
+  <unitInfo fileName="FileExistsCondition_Behavior.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.FileExistsCondition_Behavior" />
+  <unitInfo fileName="Configuration_Behavior.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.Configuration_Behavior" />
+  <unitInfo fileName="BaseDirPath_Behavior.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.BaseDirPath_Behavior" />
+  <unitInfo fileName="ILayoutComponent_Behavior.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.ILayoutComponent_Behavior" />
+  <unitInfo fileName="IPath_Behavior.java" startLine="10" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.IPath_Behavior" />
+  <unitInfo fileName="CompositePathComponent_Behavior.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.CompositePathComponent_Behavior" />
+  <unitInfo fileName="Block_Behavior.java" startLine="11" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.Block_Behavior" />
+  <unitInfo fileName="MPSLayoutConfigurationReferencePropertyValueExpression_Behavior.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.MPSLayoutConfigurationReferencePropertyValueExpression_Behavior" />
+  <unitInfo fileName="PathHolder_Behavior.java" startLine="9" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.PathHolder_Behavior" />
+  <unitInfo fileName="ICondition_Behavior.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.ICondition_Behavior" />
+  <unitInfo fileName="IVariableHolder_Behavior.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.IVariableHolder_Behavior" />
+  <unitInfo fileName="Zip_Behavior.java" startLine="16" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.Zip_Behavior" />
+  <unitInfo fileName="IStringExpression_Behavior.java" startLine="9" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior" />
+  <unitInfo fileName="Antcall_Behavior.java" startLine="16" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.Antcall_Behavior" />
+  <unitInfo fileName="ModuleCycle_Behavior.java" startLine="21" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.ModuleCycle_Behavior" />
+  <unitInfo fileName="Copy_Behavior.java" startLine="14" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.Copy_Behavior" />
+  <unitInfo fileName="Path_Behavior.java" startLine="14" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.Path_Behavior" />
+  <unitInfo fileName="IMacroHolder_Behavior.java" startLine="17" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.IMacroHolder_Behavior" />
+  <unitInfo fileName="Variable_Behavior.java" startLine="17" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.Variable_Behavior" />
+  <unitInfo fileName="AbstractProjectComponent_Behavior.java" startLine="17" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_Behavior" />
+  <unitInfo fileName="MPSLayout_Behavior.java" startLine="23" startPosition="0" endLine="148" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.MPSLayout_Behavior" />
+  <unitInfo fileName="Module_Behavior.java" startLine="33" startPosition="0" endLine="212" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.Module_Behavior" />
   <root nodeId="1213877173053">
     <nodeInfo nodeId="1240317482667" fileName="IStringExpression_Behavior.java" startLine="16" startPosition="71" endLine="17" endPosition="14" />
     <nodeInfo nodeId="8148924375507879478" fileName="IStringExpression_Behavior.java" startLine="20" startPosition="80" endLine="21" endPosition="76" />

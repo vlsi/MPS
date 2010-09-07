@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="CustomMpsStyles_StyleSheet.java" startLine="17" startPosition="46" endLine="27" endPosition="5" unitName="jetbrains.mps.build.custommps.editor.CustomMpsStyles_StyleSheet$1" />
+  <unitInfo fileName="CustomMpsStyles_StyleSheet.java" startLine="13" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.build.custommps.editor.CustomMpsStyles_StyleSheet" />
+  <unitInfo fileName="LibraryFolder_Editor.java" startLine="25" startPosition="0" endLine="184" endPosition="0" unitName="jetbrains.mps.build.custommps.editor.LibraryFolder_Editor" />
+  <unitInfo fileName="MPSBuild_Editor.java" startLine="27" startPosition="0" endLine="199" endPosition="0" unitName="jetbrains.mps.build.custommps.editor.MPSBuild_Editor" />
   <root nodeId="1233149986967">
     <nodeInfo nodeId="1236884902200" fileName="MPSBuild_Editor.java" startLine="195" startPosition="111" endLine="196" endPosition="103" />
     <scopeInfo nodeId="1236884802695" fileName="MPSBuild_Editor.java" startLine="195" startPosition="111" endLine="196" endPosition="103" />
