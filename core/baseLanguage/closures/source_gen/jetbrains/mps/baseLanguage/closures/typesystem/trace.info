@@ -344,8 +344,8 @@
       <varInfo nodeId="1202741535644" varName="resType" />
     </scopeInfo>
     <scopeInfo nodeId="1202212971748" fileName="supertypesOf_ClassifierType_SubtypingRule.java" startLine="33" startPosition="237" endLine="52" endPosition="7">
-      <varInfo nodeId="4616312228468046992" varName="mtd" />
       <varInfo nodeId="1202741408807" varName="methods" />
+      <varInfo nodeId="4616312228468046992" varName="mtd" />
       <varInfo nodeId="1983923772552990132" varName="it" />
       <varInfo nodeId="4616312228468046969" varName="cands" />
     </scopeInfo>
@@ -531,8 +531,8 @@
       <varInfo nodeId="3229004455031473391" varName="retType" />
     </scopeInfo>
     <scopeInfo nodeId="1202742329267" fileName="FunctionType_subtypeOf_ClassifierType_InequationReplacementRule.java" startLine="140" startPosition="239" endLine="184" endPosition="9">
-      <varInfo nodeId="6789088485023020161" varName="mtd" />
       <varInfo nodeId="1202742329269" varName="methods" />
+      <varInfo nodeId="6789088485023020161" varName="mtd" />
       <varInfo nodeId="1983923772552993244" varName="it" />
       <varInfo nodeId="4616312228468046907" varName="cands" />
     </scopeInfo>
@@ -544,8 +544,8 @@
       <varInfo nodeId="1202821005225" varName="errorMsg" />
     </scopeInfo>
     <scopeInfo nodeId="1202742329267" fileName="FunctionType_subtypeOf_ClassifierType_InequationReplacementRule.java" startLine="47" startPosition="237" endLine="113" endPosition="7">
-      <varInfo nodeId="6789088485023020161" varName="mtd" />
       <varInfo nodeId="1202742329269" varName="methods" />
+      <varInfo nodeId="6789088485023020161" varName="mtd" />
       <varInfo nodeId="1983923772552993244" varName="it" />
       <varInfo nodeId="4616312228468046907" varName="cands" />
     </scopeInfo>
@@ -897,18 +897,18 @@
       <varInfo nodeId="1221579075581" varName="stmt" />
     </scopeInfo>
     <scopeInfo nodeId="1221579075453" fileName="typeof_ClosureLiteral_InferenceRule.java" startLine="37" startPosition="93" endLine="297" endPosition="5">
-      <varInfo nodeId="1221579075808" varName="realThrows" />
-      <varInfo nodeId="1221579075702" varName="yieldsValue" />
-      <varInfo nodeId="1228998509555" varName="allYldAlls" />
-      <varInfo nodeId="1221579075737" varName="stmts" />
-      <varInfo nodeId="1221579075746" varName="lastStmt" />
       <varInfo nodeId="1221579075505" varName="allYlds" />
+      <varInfo nodeId="1221579075702" varName="yieldsValue" />
+      <varInfo nodeId="1221579075808" varName="realThrows" />
+      <varInfo nodeId="1228998509555" varName="allYldAlls" />
       <varInfo nodeId="1221579075512" varName="allStmts" />
-      <varInfo nodeId="1221579075498" varName="allRets" />
       <varInfo nodeId="1221579075519" varName="allThrows" />
+      <varInfo nodeId="1221579075498" varName="allRets" />
+      <varInfo nodeId="1221579075737" varName="stmts" />
       <varInfo nodeId="1226055847955" varName="returnsFromLast" />
       <varInfo nodeId="1221579075695" varName="returnsValue" />
       <varInfo nodeId="1221579075455" varName="paramTypes" />
+      <varInfo nodeId="1221579075746" varName="lastStmt" />
     </scopeInfo>
   </root>
   <root nodeId="1225797528199">
