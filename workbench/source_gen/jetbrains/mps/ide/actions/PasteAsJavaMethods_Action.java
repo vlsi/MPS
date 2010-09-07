@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.javaParser.paste.JavaPaster;
+import jetbrains.mps.nodeEditor.datatransfer.JavaPaster;
 import jetbrains.mps.javaParser.FeatureKind;
 
 public class PasteAsJavaMethods_Action extends GeneratedAction {
