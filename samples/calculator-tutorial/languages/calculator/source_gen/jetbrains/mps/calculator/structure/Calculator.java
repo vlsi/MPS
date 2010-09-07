@@ -11,8 +11,8 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class Calcualtor extends BaseConcept implements INamedConcept {
-  public static final String concept = "jetbrains.mps.calculator.structure.Calcualtor";
+public class Calculator extends BaseConcept implements INamedConcept {
+  public static final String concept = "jetbrains.mps.calculator.structure.Calculator";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
@@ -20,87 +20,87 @@ public class Calcualtor extends BaseConcept implements INamedConcept {
   public static final String INPUT_FIELD = "inputField";
   public static final String OUTPUT_FIELD = "outputField";
 
-  public Calcualtor(SNode node) {
+  public Calculator(SNode node) {
     super(node);
   }
 
   public String getName() {
-    return this.getProperty(Calcualtor.NAME);
+    return this.getProperty(Calculator.NAME);
   }
 
   public void setName(String value) {
-    this.setProperty(Calcualtor.NAME, value);
+    this.setProperty(Calculator.NAME, value);
   }
 
   public String getShortDescription() {
-    return this.getProperty(Calcualtor.SHORT_DESCRIPTION);
+    return this.getProperty(Calculator.SHORT_DESCRIPTION);
   }
 
   public void setShortDescription(String value) {
-    this.setProperty(Calcualtor.SHORT_DESCRIPTION, value);
+    this.setProperty(Calculator.SHORT_DESCRIPTION, value);
   }
 
   public String getAlias() {
-    return this.getProperty(Calcualtor.ALIAS);
+    return this.getProperty(Calculator.ALIAS);
   }
 
   public void setAlias(String value) {
-    this.setProperty(Calcualtor.ALIAS, value);
+    this.setProperty(Calculator.ALIAS, value);
   }
 
   public String getVirtualPackage() {
-    return this.getProperty(Calcualtor.VIRTUAL_PACKAGE);
+    return this.getProperty(Calculator.VIRTUAL_PACKAGE);
   }
 
   public void setVirtualPackage(String value) {
-    this.setProperty(Calcualtor.VIRTUAL_PACKAGE, value);
+    this.setProperty(Calculator.VIRTUAL_PACKAGE, value);
   }
 
   public int getInputFieldsCount() {
-    return this.getChildCount(Calcualtor.INPUT_FIELD);
+    return this.getChildCount(Calculator.INPUT_FIELD);
   }
 
   public Iterator<InputField> inputFields() {
-    return this.children(InputField.class, Calcualtor.INPUT_FIELD);
+    return this.children(InputField.class, Calculator.INPUT_FIELD);
   }
 
   public List<InputField> getInputFields() {
-    return this.getChildren(InputField.class, Calcualtor.INPUT_FIELD);
+    return this.getChildren(InputField.class, Calculator.INPUT_FIELD);
   }
 
   public void addInputField(InputField node) {
-    this.addChild(Calcualtor.INPUT_FIELD, node);
+    this.addChild(Calculator.INPUT_FIELD, node);
   }
 
   public void insertInputField(InputField prev, InputField node) {
-    this.insertChild(prev, Calcualtor.INPUT_FIELD, node);
+    this.insertChild(prev, Calculator.INPUT_FIELD, node);
   }
 
   public int getOutputFieldsCount() {
-    return this.getChildCount(Calcualtor.OUTPUT_FIELD);
+    return this.getChildCount(Calculator.OUTPUT_FIELD);
   }
 
   public Iterator<OutputField> outputFields() {
-    return this.children(OutputField.class, Calcualtor.OUTPUT_FIELD);
+    return this.children(OutputField.class, Calculator.OUTPUT_FIELD);
   }
 
   public List<OutputField> getOutputFields() {
-    return this.getChildren(OutputField.class, Calcualtor.OUTPUT_FIELD);
+    return this.getChildren(OutputField.class, Calculator.OUTPUT_FIELD);
   }
 
   public void addOutputField(OutputField node) {
-    this.addChild(Calcualtor.OUTPUT_FIELD, node);
+    this.addChild(Calculator.OUTPUT_FIELD, node);
   }
 
   public void insertOutputField(OutputField prev, OutputField node) {
-    this.insertChild(prev, Calcualtor.OUTPUT_FIELD, node);
+    this.insertChild(prev, Calculator.OUTPUT_FIELD, node);
   }
 
-  public static Calcualtor newInstance(SModel sm, boolean init) {
-    return (Calcualtor) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.calculator.structure.Calcualtor", sm, GlobalScope.getInstance(), init).getAdapter();
+  public static Calculator newInstance(SModel sm, boolean init) {
+    return (Calculator) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.calculator.structure.Calculator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
-  public static Calcualtor newInstance(SModel sm) {
-    return Calcualtor.newInstance(sm, false);
+  public static Calculator newInstance(SModel sm) {
+    return Calculator.newInstance(sm, false);
   }
 }
