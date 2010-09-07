@@ -15,6 +15,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
@@ -83,7 +84,11 @@ public class ClosureLiteralUtil {
 
   private static void matchParameters(TemplateQueryContext genContext, SNode origCT, SNode ctNoParams, SNode ft, SNode literal) {
     Map<SNode, SNode> map = null;
-    List<SNode> imds = SLinkOperations.getTargets(SLinkOperations.getTarget(ctNoParams, "classifier", false), "method", true);
+    List<SNode> imds = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ctNoParams, "classifier", false), "method", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode m) {
+        return !("equals".equals(SPropertyOperations.getString(m, "name"))) && SPropertyOperations.getBoolean(m, "isAbstract");
+      }
+    }).toListSequence();
     SNode absRetCT = null;
     if (ListSequence.fromList(imds).count() > 0) {
       if (ListSequence.fromList(imds).count() != 1) {

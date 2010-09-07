@@ -967,346 +967,350 @@
     <unitInfo nodeId="1201646588418" fileName="FunctionTypeUtil.java" startLine="37" startPosition="0" endLine="352" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.FunctionTypeUtil" />
   </root>
   <root nodeId="1201861621557">
-    <nodeInfo nodeId="1229018864233" fileName="ClosureLiteralUtil.java" startLine="30" startPosition="291" endLine="31" endPosition="20" />
-    <nodeInfo nodeId="1201861798344" fileName="ClosureLiteralUtil.java" startLine="33" startPosition="5" endLine="34" endPosition="17" />
-    <nodeInfo nodeId="1202833745035" fileName="ClosureLiteralUtil.java" startLine="37" startPosition="75" endLine="38" endPosition="70" />
-    <nodeInfo nodeId="1202835350107" fileName="ClosureLiteralUtil.java" startLine="40" startPosition="226" endLine="41" endPosition="161" />
-    <nodeInfo nodeId="1202833779019" fileName="ClosureLiteralUtil.java" startLine="43" startPosition="265" endLine="44" endPosition="195" />
-    <nodeInfo nodeId="1202833632910" fileName="ClosureLiteralUtil.java" startLine="48" startPosition="5" endLine="49" endPosition="17" />
-    <nodeInfo nodeId="100821637069110954" fileName="ClosureLiteralUtil.java" startLine="52" startPosition="62" endLine="53" endPosition="33" />
-    <nodeInfo nodeId="100821637069110960" fileName="ClosureLiteralUtil.java" startLine="53" startPosition="33" endLine="54" endPosition="126" />
-    <nodeInfo nodeId="100821637069110988" fileName="ClosureLiteralUtil.java" startLine="55" startPosition="50" endLine="56" endPosition="63" />
-    <nodeInfo nodeId="100821637069111008" fileName="ClosureLiteralUtil.java" startLine="57" startPosition="215" endLine="58" endPosition="160" />
-    <nodeInfo nodeId="100821637069111049" fileName="ClosureLiteralUtil.java" startLine="59" startPosition="7" endLine="60" endPosition="100" />
-    <nodeInfo nodeId="100821637069111056" fileName="ClosureLiteralUtil.java" startLine="60" startPosition="100" endLine="61" endPosition="18" />
-    <nodeInfo nodeId="100821637069111092" fileName="ClosureLiteralUtil.java" startLine="62" startPosition="78" endLine="63" endPosition="121" />
-    <nodeInfo nodeId="100821637069111103" fileName="ClosureLiteralUtil.java" startLine="63" startPosition="121" endLine="64" endPosition="14" />
-    <nodeInfo nodeId="100821637069111418" fileName="ClosureLiteralUtil.java" startLine="66" startPosition="5" endLine="67" endPosition="62" />
-    <nodeInfo nodeId="100821637069111456" fileName="ClosureLiteralUtil.java" startLine="69" startPosition="145" endLine="70" endPosition="204" />
-    <nodeInfo nodeId="100821637069111486" fileName="ClosureLiteralUtil.java" startLine="72" startPosition="5" endLine="73" endPosition="24" />
-    <nodeInfo nodeId="1203244633012" fileName="ClosureLiteralUtil.java" startLine="76" startPosition="117" endLine="77" endPosition="114" />
-    <nodeInfo nodeId="1203337454987" fileName="ClosureLiteralUtil.java" startLine="77" startPosition="114" endLine="78" endPosition="116" />
-    <nodeInfo nodeId="1203337857504" fileName="ClosureLiteralUtil.java" startLine="78" startPosition="116" endLine="79" endPosition="188" />
-    <nodeInfo nodeId="1240919336360" fileName="ClosureLiteralUtil.java" startLine="79" startPosition="188" endLine="80" endPosition="53" />
-    <nodeInfo nodeId="1240924689150" fileName="ClosureLiteralUtil.java" startLine="80" startPosition="53" endLine="81" endPosition="60" />
-    <nodeInfo nodeId="1203337810314" fileName="ClosureLiteralUtil.java" startLine="84" startPosition="129" endLine="85" endPosition="33" />
-    <nodeInfo nodeId="1203337810321" fileName="ClosureLiteralUtil.java" startLine="85" startPosition="33" endLine="86" endPosition="126" />
-    <nodeInfo nodeId="1203681845653" fileName="ClosureLiteralUtil.java" startLine="86" startPosition="126" endLine="87" endPosition="26" />
-    <nodeInfo nodeId="1227741316791" fileName="ClosureLiteralUtil.java" startLine="89" startPosition="53" endLine="90" endPosition="107" />
-    <nodeInfo nodeId="1203337810332" fileName="ClosureLiteralUtil.java" startLine="91" startPosition="7" endLine="92" endPosition="63" />
-    <nodeInfo nodeId="1203337810340" fileName="ClosureLiteralUtil.java" startLine="94" startPosition="10" endLine="95" endPosition="156" />
-    <nodeInfo nodeId="1203619600663" fileName="ClosureLiteralUtil.java" startLine="96" startPosition="10" endLine="97" endPosition="160" />
-    <nodeInfo nodeId="1203681885612" fileName="ClosureLiteralUtil.java" startLine="98" startPosition="153" endLine="99" endPosition="178" />
-    <nodeInfo nodeId="1203337810364" fileName="ClosureLiteralUtil.java" startLine="101" startPosition="7" endLine="102" endPosition="100" />
-    <nodeInfo nodeId="1203337810371" fileName="ClosureLiteralUtil.java" startLine="102" startPosition="100" endLine="103" endPosition="18" />
-    <nodeInfo nodeId="1227741350895" fileName="ClosureLiteralUtil.java" startLine="105" startPosition="59" endLine="106" endPosition="342" />
-    <nodeInfo nodeId="1208888108770" fileName="ClosureLiteralUtil.java" startLine="106" startPosition="342" endLine="107" endPosition="17" />
-    <nodeInfo nodeId="1203337810377" fileName="ClosureLiteralUtil.java" startLine="108" startPosition="9" endLine="109" endPosition="121" />
-    <nodeInfo nodeId="1203337810388" fileName="ClosureLiteralUtil.java" startLine="109" startPosition="121" endLine="110" endPosition="14" />
-    <nodeInfo nodeId="1240919309121" fileName="ClosureLiteralUtil.java" startLine="112" startPosition="5" endLine="113" endPosition="53" />
-    <nodeInfo nodeId="1203685630112" fileName="ClosureLiteralUtil.java" startLine="114" startPosition="29" endLine="115" endPosition="116" />
-    <nodeInfo nodeId="1203685740804" fileName="ClosureLiteralUtil.java" startLine="115" startPosition="116" endLine="116" endPosition="383" />
-    <nodeInfo nodeId="1203686030873" fileName="ClosureLiteralUtil.java" startLine="118" startPosition="101" endLine="119" endPosition="121" />
-    <nodeInfo nodeId="1203686046968" fileName="ClosureLiteralUtil.java" startLine="119" startPosition="121" endLine="120" endPosition="72" />
-    <nodeInfo nodeId="1203686072153" fileName="ClosureLiteralUtil.java" startLine="122" startPosition="150" endLine="123" endPosition="179" />
-    <nodeInfo nodeId="1240919276258" fileName="ClosureLiteralUtil.java" startLine="125" startPosition="12" endLine="126" endPosition="67" />
-    <nodeInfo nodeId="1203686140509" fileName="ClosureLiteralUtil.java" startLine="126" startPosition="67" endLine="127" endPosition="16" />
-    <nodeInfo nodeId="1203337810407" fileName="ClosureLiteralUtil.java" startLine="132" startPosition="146" endLine="133" endPosition="175" />
-    <nodeInfo nodeId="1205737030187" fileName="ClosureLiteralUtil.java" startLine="135" startPosition="6" endLine="136" endPosition="143" />
-    <nodeInfo nodeId="2737773518672173864" fileName="ClosureLiteralUtil.java" startLine="136" startPosition="143" endLine="137" endPosition="16" />
-    <nodeInfo nodeId="2737773518672045766" fileName="ClosureLiteralUtil.java" startLine="138" startPosition="75" endLine="139" endPosition="203" />
-    <nodeInfo nodeId="2737773518672045809" fileName="ClosureLiteralUtil.java" startLine="140" startPosition="57" endLine="141" endPosition="66" />
-    <nodeInfo nodeId="2737773518672051911" fileName="ClosureLiteralUtil.java" startLine="150" startPosition="208" endLine="151" endPosition="108" />
-    <nodeInfo nodeId="2737773518672173870" fileName="ClosureLiteralUtil.java" startLine="154" startPosition="7" endLine="155" endPosition="12" />
-    <nodeInfo nodeId="1203612716883" fileName="ClosureLiteralUtil.java" startLine="159" startPosition="105" endLine="160" endPosition="69" />
-    <nodeInfo nodeId="1203612751490" fileName="ClosureLiteralUtil.java" startLine="160" startPosition="69" endLine="161" endPosition="47" />
-    <nodeInfo nodeId="1226318676320" fileName="ClosureLiteralUtil.java" startLine="163" startPosition="154" endLine="164" endPosition="53" />
-    <nodeInfo nodeId="1226318701627" fileName="ClosureLiteralUtil.java" startLine="166" startPosition="12" endLine="167" endPosition="56" />
-    <nodeInfo nodeId="1203612783100" fileName="ClosureLiteralUtil.java" startLine="169" startPosition="6" endLine="170" endPosition="55" />
-    <nodeInfo nodeId="1203612810187" fileName="ClosureLiteralUtil.java" startLine="172" startPosition="55" endLine="173" endPosition="72" />
-    <nodeInfo nodeId="1222886411451" fileName="ClosureLiteralUtil.java" startLine="175" startPosition="10" endLine="176" endPosition="31" />
-    <nodeInfo nodeId="1222886609751" fileName="ClosureLiteralUtil.java" startLine="179" startPosition="107" endLine="180" endPosition="181" />
-    <nodeInfo nodeId="1222886687372" fileName="ClosureLiteralUtil.java" startLine="181" startPosition="59" endLine="182" endPosition="31" />
-    <nodeInfo nodeId="1222886715525" fileName="ClosureLiteralUtil.java" startLine="186" startPosition="34" endLine="187" endPosition="53" />
-    <nodeInfo nodeId="1222886715532" fileName="ClosureLiteralUtil.java" startLine="187" startPosition="53" endLine="188" endPosition="23" />
-    <nodeInfo nodeId="1226319026614" fileName="ClosureLiteralUtil.java" startLine="191" startPosition="49" endLine="192" endPosition="51" />
-    <nodeInfo nodeId="1226319704860" fileName="ClosureLiteralUtil.java" startLine="192" startPosition="51" endLine="193" endPosition="21" />
-    <nodeInfo nodeId="1203619378761" fileName="ClosureLiteralUtil.java" startLine="194" startPosition="9" endLine="195" endPosition="116" />
-    <nodeInfo nodeId="1203619420296" fileName="ClosureLiteralUtil.java" startLine="196" startPosition="119" endLine="197" endPosition="61" />
-    <nodeInfo nodeId="1203619468061" fileName="ClosureLiteralUtil.java" startLine="200" startPosition="5" endLine="201" endPosition="15" />
-    <nodeInfo nodeId="1222886275014" fileName="ClosureLiteralUtil.java" startLine="206" startPosition="40" endLine="207" endPosition="20" />
-    <nodeInfo nodeId="1222886278339" fileName="ClosureLiteralUtil.java" startLine="209" startPosition="5" endLine="210" endPosition="16" />
-    <nodeInfo nodeId="1222887016575" fileName="ClosureLiteralUtil.java" startLine="214" startPosition="182" endLine="215" endPosition="19" />
-    <nodeInfo nodeId="1222886947314" fileName="ClosureLiteralUtil.java" startLine="217" startPosition="208" endLine="218" endPosition="18" />
-    <nodeInfo nodeId="1222886108863" fileName="ClosureLiteralUtil.java" startLine="221" startPosition="105" endLine="222" endPosition="20" />
-    <nodeInfo nodeId="1222886113996" fileName="ClosureLiteralUtil.java" startLine="223" startPosition="7" endLine="224" endPosition="604" />
-    <nodeInfo nodeId="1222886178828" fileName="ClosureLiteralUtil.java" startLine="225" startPosition="5" endLine="226" endPosition="17" />
-    <nodeInfo nodeId="1222888980544" fileName="ClosureLiteralUtil.java" startLine="229" startPosition="100" endLine="230" endPosition="25" />
-    <nodeInfo nodeId="1222888980564" fileName="ClosureLiteralUtil.java" startLine="231" startPosition="101" endLine="232" endPosition="173" />
-    <nodeInfo nodeId="1222888980555" fileName="ClosureLiteralUtil.java" startLine="233" startPosition="51" endLine="234" endPosition="25" />
-    <nodeInfo nodeId="1222889300386" fileName="ClosureLiteralUtil.java" startLine="237" startPosition="112" endLine="238" endPosition="242" />
-    <nodeInfo nodeId="1203266429330" fileName="ClosureLiteralUtil.java" startLine="239" startPosition="14" endLine="240" endPosition="20" />
-    <nodeInfo nodeId="1203266455012" fileName="ClosureLiteralUtil.java" startLine="240" startPosition="20" endLine="241" endPosition="160" />
-    <nodeInfo nodeId="1203266533257" fileName="ClosureLiteralUtil.java" startLine="241" startPosition="160" endLine="242" endPosition="160" />
-    <nodeInfo nodeId="1203269969580" fileName="ClosureLiteralUtil.java" startLine="243" startPosition="120" endLine="244" endPosition="123" />
-    <nodeInfo nodeId="1203266353489" fileName="ClosureLiteralUtil.java" startLine="247" startPosition="5" endLine="248" endPosition="15" />
-    <nodeInfo nodeId="1203264696362" fileName="ClosureLiteralUtil.java" startLine="252" startPosition="22" endLine="253" endPosition="61" />
-    <nodeInfo nodeId="1203264698740" fileName="ClosureLiteralUtil.java" startLine="254" startPosition="5" endLine="255" endPosition="15" />
-    <nodeInfo nodeId="1226318696243" fileName="ClosureLiteralUtil.java" startLine="166" startPosition="10" endLine="168" endPosition="5" />
-    <nodeInfo nodeId="1229018807134" fileName="ClosureLiteralUtil.java" startLine="29" startPosition="146" endLine="32" endPosition="7" />
-    <nodeInfo nodeId="1202833868263" fileName="ClosureLiteralUtil.java" startLine="42" startPosition="130" endLine="45" endPosition="11" />
-    <nodeInfo nodeId="100821637069110994" fileName="ClosureLiteralUtil.java" startLine="56" startPosition="63" endLine="59" endPosition="7" />
-    <nodeInfo nodeId="100821637069111447" fileName="ClosureLiteralUtil.java" startLine="68" startPosition="22" endLine="71" endPosition="7" />
-    <nodeInfo nodeId="1226420361765" fileName="ClosureLiteralUtil.java" startLine="88" startPosition="50" endLine="91" endPosition="7" />
-    <nodeInfo nodeId="1203619620069" fileName="ClosureLiteralUtil.java" startLine="93" startPosition="215" endLine="96" endPosition="10" />
-    <nodeInfo nodeId="1203681862895" fileName="ClosureLiteralUtil.java" startLine="97" startPosition="160" endLine="100" endPosition="9" />
-    <nodeInfo nodeId="1203686072151" fileName="ClosureLiteralUtil.java" startLine="121" startPosition="12" endLine="124" endPosition="13" />
-    <nodeInfo nodeId="1203337810405" fileName="ClosureLiteralUtil.java" startLine="131" startPosition="6" endLine="134" endPosition="7" />
-    <nodeInfo nodeId="2737773518672144494" fileName="ClosureLiteralUtil.java" startLine="149" startPosition="16" endLine="152" endPosition="11" />
-    <nodeInfo nodeId="1226318666258" fileName="ClosureLiteralUtil.java" startLine="162" startPosition="101" endLine="165" endPosition="7" />
-    <nodeInfo nodeId="1226318719405" fileName="ClosureLiteralUtil.java" startLine="168" startPosition="5" endLine="171" endPosition="6" />
-    <nodeInfo nodeId="1226319041618" fileName="ClosureLiteralUtil.java" startLine="174" startPosition="121" endLine="177" endPosition="10" />
-    <nodeInfo nodeId="1203619399435" fileName="ClosureLiteralUtil.java" startLine="195" startPosition="116" endLine="198" endPosition="9" />
-    <nodeInfo nodeId="1222886264670" fileName="ClosureLiteralUtil.java" startLine="205" startPosition="33" endLine="208" endPosition="7" />
-    <nodeInfo nodeId="1222887001103" fileName="ClosureLiteralUtil.java" startLine="213" startPosition="66" endLine="216" endPosition="5" />
-    <nodeInfo nodeId="1222886938932" fileName="ClosureLiteralUtil.java" startLine="216" startPosition="5" endLine="219" endPosition="5" />
-    <nodeInfo nodeId="1222886093346" fileName="ClosureLiteralUtil.java" startLine="220" startPosition="102" endLine="223" endPosition="7" />
-    <nodeInfo nodeId="1203266543569" fileName="ClosureLiteralUtil.java" startLine="242" startPosition="160" endLine="245" endPosition="9" />
-    <nodeInfo nodeId="1203264696360" fileName="ClosureLiteralUtil.java" startLine="251" startPosition="66" endLine="254" endPosition="5" />
-    <nodeInfo nodeId="100821637069111060" fileName="ClosureLiteralUtil.java" startLine="61" startPosition="18" endLine="65" endPosition="7" />
-    <nodeInfo nodeId="1208887893344" fileName="ClosureLiteralUtil.java" startLine="104" startPosition="78" endLine="108" endPosition="9" />
-    <nodeInfo nodeId="2737773518672051994" fileName="ClosureLiteralUtil.java" startLine="143" startPosition="166" endLine="147" endPosition="15" />
-    <nodeInfo nodeId="1381658464811794960" fileName="ClosureLiteralUtil.java" startLine="149" startPosition="14" endLine="153" endPosition="9" />
-    <nodeInfo nodeId="1222886703955" fileName="ClosureLiteralUtil.java" startLine="185" startPosition="10" endLine="189" endPosition="11" />
-    <nodeInfo nodeId="1226318932749" fileName="ClosureLiteralUtil.java" startLine="190" startPosition="10" endLine="194" endPosition="9" />
-    <nodeInfo nodeId="1229018792786" fileName="ClosureLiteralUtil.java" startLine="28" startPosition="53" endLine="33" endPosition="5" />
-    <nodeInfo nodeId="1202833632891" fileName="ClosureLiteralUtil.java" startLine="41" startPosition="161" endLine="46" endPosition="9" />
-    <nodeInfo nodeId="100821637069111400" fileName="ClosureLiteralUtil.java" startLine="67" startPosition="62" endLine="72" endPosition="5" />
-    <nodeInfo nodeId="1203687229050" fileName="ClosureLiteralUtil.java" startLine="120" startPosition="72" endLine="125" endPosition="12" />
-    <nodeInfo nodeId="1205735060858" fileName="ClosureLiteralUtil.java" startLine="130" startPosition="5" endLine="135" endPosition="6" />
-    <nodeInfo nodeId="1222886565252" fileName="ClosureLiteralUtil.java" startLine="178" startPosition="10" endLine="183" endPosition="11" />
-    <nodeInfo nodeId="1222886249575" fileName="ClosureLiteralUtil.java" startLine="204" startPosition="77" endLine="209" endPosition="5" />
-    <nodeInfo nodeId="1222888980549" fileName="ClosureLiteralUtil.java" startLine="230" startPosition="25" endLine="235" endPosition="5" />
-    <nodeInfo nodeId="2737773518672173876" fileName="ClosureLiteralUtil.java" startLine="142" startPosition="108" endLine="148" endPosition="11" />
-    <nodeInfo nodeId="1226319020743" fileName="ClosureLiteralUtil.java" startLine="184" startPosition="10" endLine="190" endPosition="10" />
-    <nodeInfo nodeId="1222886033635" fileName="ClosureLiteralUtil.java" startLine="219" startPosition="5" endLine="225" endPosition="5" />
-    <nodeInfo nodeId="1226318628496" fileName="ClosureLiteralUtil.java" startLine="161" startPosition="47" endLine="168" endPosition="5" />
-    <nodeInfo nodeId="1226318606326" fileName="ClosureLiteralUtil.java" startLine="177" startPosition="10" endLine="184" endPosition="10" />
-    <nodeInfo nodeId="1222889307362" fileName="ClosureLiteralUtil.java" startLine="239" startPosition="12" endLine="246" endPosition="7" />
-    <nodeInfo nodeId="1203264641836" fileName="ClosureLiteralUtil.java" startLine="250" startPosition="0" endLine="257" endPosition="0" />
-    <nodeInfo nodeId="1202833632889" fileName="ClosureLiteralUtil.java" startLine="39" startPosition="88" endLine="47" endPosition="7" />
-    <nodeInfo nodeId="1203244632984" fileName="ClosureLiteralUtil.java" startLine="75" startPosition="0" endLine="83" endPosition="0" />
-    <nodeInfo nodeId="1203337810375" fileName="ClosureLiteralUtil.java" startLine="103" startPosition="18" endLine="111" endPosition="7" />
-    <nodeInfo nodeId="1201861629066" fileName="ClosureLiteralUtil.java" startLine="27" startPosition="33" endLine="36" endPosition="0" />
-    <nodeInfo nodeId="1203337810338" fileName="ClosureLiteralUtil.java" startLine="92" startPosition="63" endLine="101" endPosition="7" />
-    <nodeInfo nodeId="1222886201347" fileName="ClosureLiteralUtil.java" startLine="203" startPosition="0" endLine="212" endPosition="0" />
-    <nodeInfo nodeId="1202833632887" fileName="ClosureLiteralUtil.java" startLine="38" startPosition="70" endLine="48" endPosition="5" />
-    <nodeInfo nodeId="1222889300380" fileName="ClosureLiteralUtil.java" startLine="236" startPosition="28" endLine="246" endPosition="7" />
-    <nodeInfo nodeId="1203685724395" fileName="ClosureLiteralUtil.java" startLine="117" startPosition="186" endLine="128" endPosition="9" />
-    <nodeInfo nodeId="100821637069110973" fileName="ClosureLiteralUtil.java" startLine="54" startPosition="126" endLine="66" endPosition="5" />
-    <nodeInfo nodeId="2737773518672051933" fileName="ClosureLiteralUtil.java" startLine="141" startPosition="66" endLine="153" endPosition="9" />
-    <nodeInfo nodeId="1222888980573" fileName="ClosureLiteralUtil.java" startLine="235" startPosition="5" endLine="247" endPosition="5" />
-    <nodeInfo nodeId="1203685693438" fileName="ClosureLiteralUtil.java" startLine="116" startPosition="383" endLine="129" endPosition="7" />
-    <nodeInfo nodeId="1202833632881" fileName="ClosureLiteralUtil.java" startLine="36" startPosition="0" endLine="51" endPosition="0" />
-    <nodeInfo nodeId="2737773518672045783" fileName="ClosureLiteralUtil.java" startLine="139" startPosition="203" endLine="154" endPosition="7" />
-    <nodeInfo nodeId="1222885982407" fileName="ClosureLiteralUtil.java" startLine="212" startPosition="0" endLine="228" endPosition="0" />
-    <nodeInfo nodeId="1203681914224" fileName="ClosureLiteralUtil.java" startLine="113" startPosition="53" endLine="130" endPosition="5" />
-    <nodeInfo nodeId="1205735075825" fileName="ClosureLiteralUtil.java" startLine="137" startPosition="16" endLine="156" endPosition="5" />
-    <nodeInfo nodeId="1203266255814" fileName="ClosureLiteralUtil.java" startLine="228" startPosition="0" endLine="250" endPosition="0" />
-    <nodeInfo nodeId="100821637069110950" fileName="ClosureLiteralUtil.java" startLine="51" startPosition="0" endLine="75" endPosition="0" />
-    <nodeInfo nodeId="1203337810330" fileName="ClosureLiteralUtil.java" startLine="87" startPosition="26" endLine="112" endPosition="5" />
-    <nodeInfo nodeId="1203612831442" fileName="ClosureLiteralUtil.java" startLine="173" startPosition="72" endLine="199" endPosition="7" />
-    <nodeInfo nodeId="1203612792848" fileName="ClosureLiteralUtil.java" startLine="171" startPosition="6" endLine="200" endPosition="5" />
-    <nodeInfo nodeId="1203612359736" fileName="ClosureLiteralUtil.java" startLine="158" startPosition="0" endLine="203" endPosition="0" />
-    <nodeInfo nodeId="1203337773820" fileName="ClosureLiteralUtil.java" startLine="83" startPosition="0" endLine="158" endPosition="0" />
-    <scopeInfo nodeId="1229018807135" fileName="ClosureLiteralUtil.java" startLine="30" startPosition="291" endLine="31" endPosition="20" />
-    <scopeInfo nodeId="1202833868264" fileName="ClosureLiteralUtil.java" startLine="43" startPosition="265" endLine="44" endPosition="195" />
-    <scopeInfo nodeId="100821637069110995" fileName="ClosureLiteralUtil.java" startLine="57" startPosition="215" endLine="58" endPosition="160" />
-    <scopeInfo nodeId="100821637069111448" fileName="ClosureLiteralUtil.java" startLine="69" startPosition="145" endLine="70" endPosition="204" />
-    <scopeInfo nodeId="1226420361766" fileName="ClosureLiteralUtil.java" startLine="89" startPosition="53" endLine="90" endPosition="107" />
-    <scopeInfo nodeId="1203681862896" fileName="ClosureLiteralUtil.java" startLine="98" startPosition="153" endLine="99" endPosition="178" />
-    <scopeInfo nodeId="1203686072152" fileName="ClosureLiteralUtil.java" startLine="122" startPosition="150" endLine="123" endPosition="179" />
-    <scopeInfo nodeId="1203337810406" fileName="ClosureLiteralUtil.java" startLine="132" startPosition="146" endLine="133" endPosition="175" />
-    <scopeInfo nodeId="2737773518672144495" fileName="ClosureLiteralUtil.java" startLine="150" startPosition="208" endLine="151" endPosition="108" />
-    <scopeInfo nodeId="1226318666259" fileName="ClosureLiteralUtil.java" startLine="163" startPosition="154" endLine="164" endPosition="53" />
-    <scopeInfo nodeId="1226318696244" fileName="ClosureLiteralUtil.java" startLine="166" startPosition="12" endLine="167" endPosition="56" />
-    <scopeInfo nodeId="1222886592343" fileName="ClosureLiteralUtil.java" startLine="179" startPosition="107" endLine="180" endPosition="181" />
-    <scopeInfo nodeId="1222886676383" fileName="ClosureLiteralUtil.java" startLine="181" startPosition="59" endLine="182" endPosition="31" />
-    <scopeInfo nodeId="1203619399436" fileName="ClosureLiteralUtil.java" startLine="196" startPosition="119" endLine="197" endPosition="61" />
-    <scopeInfo nodeId="1222886264672" fileName="ClosureLiteralUtil.java" startLine="206" startPosition="40" endLine="207" endPosition="20" />
-    <scopeInfo nodeId="1222887001104" fileName="ClosureLiteralUtil.java" startLine="214" startPosition="182" endLine="215" endPosition="19" />
-    <scopeInfo nodeId="1222886938933" fileName="ClosureLiteralUtil.java" startLine="217" startPosition="208" endLine="218" endPosition="18" />
-    <scopeInfo nodeId="1222886093348" fileName="ClosureLiteralUtil.java" startLine="221" startPosition="105" endLine="222" endPosition="20" />
-    <scopeInfo nodeId="1222888980563" fileName="ClosureLiteralUtil.java" startLine="231" startPosition="101" endLine="232" endPosition="173" />
-    <scopeInfo nodeId="1222888980554" fileName="ClosureLiteralUtil.java" startLine="233" startPosition="51" endLine="234" endPosition="25" />
-    <scopeInfo nodeId="1222889300385" fileName="ClosureLiteralUtil.java" startLine="237" startPosition="112" endLine="238" endPosition="242" />
-    <scopeInfo nodeId="1203266543570" fileName="ClosureLiteralUtil.java" startLine="243" startPosition="120" endLine="244" endPosition="123" />
-    <scopeInfo nodeId="1203264696361" fileName="ClosureLiteralUtil.java" startLine="252" startPosition="22" endLine="253" endPosition="61" />
-    <scopeInfo nodeId="100821637069111061" fileName="ClosureLiteralUtil.java" startLine="62" startPosition="78" endLine="64" endPosition="14" />
-    <scopeInfo nodeId="1208887893345" fileName="ClosureLiteralUtil.java" startLine="105" startPosition="59" endLine="107" endPosition="17" />
-    <scopeInfo nodeId="1222886703956" fileName="ClosureLiteralUtil.java" startLine="186" startPosition="34" endLine="188" endPosition="23" />
-    <scopeInfo nodeId="1226318932750" fileName="ClosureLiteralUtil.java" startLine="191" startPosition="49" endLine="193" endPosition="21" />
-    <scopeInfo nodeId="1229018792787" fileName="ClosureLiteralUtil.java" startLine="29" startPosition="146" endLine="32" endPosition="7" />
-    <scopeInfo nodeId="1202833632898" fileName="ClosureLiteralUtil.java" startLine="42" startPosition="130" endLine="45" endPosition="11" />
-    <scopeInfo nodeId="100821637069111401" fileName="ClosureLiteralUtil.java" startLine="68" startPosition="22" endLine="71" endPosition="7" />
-    <scopeInfo nodeId="100821637069111447" fileName="ClosureLiteralUtil.java" startLine="68" startPosition="22" endLine="71" endPosition="7">
+    <nodeInfo nodeId="1229018864233" fileName="ClosureLiteralUtil.java" startLine="31" startPosition="291" endLine="32" endPosition="20" />
+    <nodeInfo nodeId="1201861798344" fileName="ClosureLiteralUtil.java" startLine="34" startPosition="5" endLine="35" endPosition="17" />
+    <nodeInfo nodeId="1202833745035" fileName="ClosureLiteralUtil.java" startLine="38" startPosition="75" endLine="39" endPosition="70" />
+    <nodeInfo nodeId="1202835350107" fileName="ClosureLiteralUtil.java" startLine="41" startPosition="226" endLine="42" endPosition="161" />
+    <nodeInfo nodeId="1202833779019" fileName="ClosureLiteralUtil.java" startLine="44" startPosition="265" endLine="45" endPosition="195" />
+    <nodeInfo nodeId="1202833632910" fileName="ClosureLiteralUtil.java" startLine="49" startPosition="5" endLine="50" endPosition="17" />
+    <nodeInfo nodeId="100821637069110954" fileName="ClosureLiteralUtil.java" startLine="53" startPosition="62" endLine="54" endPosition="33" />
+    <nodeInfo nodeId="100821637069110960" fileName="ClosureLiteralUtil.java" startLine="54" startPosition="33" endLine="55" endPosition="126" />
+    <nodeInfo nodeId="100821637069110988" fileName="ClosureLiteralUtil.java" startLine="56" startPosition="50" endLine="57" endPosition="63" />
+    <nodeInfo nodeId="100821637069111008" fileName="ClosureLiteralUtil.java" startLine="58" startPosition="215" endLine="59" endPosition="160" />
+    <nodeInfo nodeId="100821637069111049" fileName="ClosureLiteralUtil.java" startLine="60" startPosition="7" endLine="61" endPosition="100" />
+    <nodeInfo nodeId="100821637069111056" fileName="ClosureLiteralUtil.java" startLine="61" startPosition="100" endLine="62" endPosition="18" />
+    <nodeInfo nodeId="100821637069111092" fileName="ClosureLiteralUtil.java" startLine="63" startPosition="78" endLine="64" endPosition="121" />
+    <nodeInfo nodeId="100821637069111103" fileName="ClosureLiteralUtil.java" startLine="64" startPosition="121" endLine="65" endPosition="14" />
+    <nodeInfo nodeId="100821637069111418" fileName="ClosureLiteralUtil.java" startLine="67" startPosition="5" endLine="68" endPosition="62" />
+    <nodeInfo nodeId="100821637069111456" fileName="ClosureLiteralUtil.java" startLine="70" startPosition="145" endLine="71" endPosition="204" />
+    <nodeInfo nodeId="100821637069111486" fileName="ClosureLiteralUtil.java" startLine="73" startPosition="5" endLine="74" endPosition="24" />
+    <nodeInfo nodeId="1203244633012" fileName="ClosureLiteralUtil.java" startLine="77" startPosition="117" endLine="78" endPosition="114" />
+    <nodeInfo nodeId="1203337454987" fileName="ClosureLiteralUtil.java" startLine="78" startPosition="114" endLine="79" endPosition="116" />
+    <nodeInfo nodeId="1203337857504" fileName="ClosureLiteralUtil.java" startLine="79" startPosition="116" endLine="80" endPosition="188" />
+    <nodeInfo nodeId="1240919336360" fileName="ClosureLiteralUtil.java" startLine="80" startPosition="188" endLine="81" endPosition="53" />
+    <nodeInfo nodeId="1240924689150" fileName="ClosureLiteralUtil.java" startLine="81" startPosition="53" endLine="82" endPosition="60" />
+    <nodeInfo nodeId="1203337810314" fileName="ClosureLiteralUtil.java" startLine="85" startPosition="129" endLine="86" endPosition="33" />
+    <nodeInfo nodeId="1203681845653" fileName="ClosureLiteralUtil.java" startLine="91" startPosition="24" endLine="92" endPosition="26" />
+    <nodeInfo nodeId="1227741316791" fileName="ClosureLiteralUtil.java" startLine="94" startPosition="53" endLine="95" endPosition="107" />
+    <nodeInfo nodeId="1203337810332" fileName="ClosureLiteralUtil.java" startLine="96" startPosition="7" endLine="97" endPosition="63" />
+    <nodeInfo nodeId="1203337810340" fileName="ClosureLiteralUtil.java" startLine="99" startPosition="10" endLine="100" endPosition="156" />
+    <nodeInfo nodeId="1203619600663" fileName="ClosureLiteralUtil.java" startLine="101" startPosition="10" endLine="102" endPosition="160" />
+    <nodeInfo nodeId="1203681885612" fileName="ClosureLiteralUtil.java" startLine="103" startPosition="153" endLine="104" endPosition="178" />
+    <nodeInfo nodeId="1203337810364" fileName="ClosureLiteralUtil.java" startLine="106" startPosition="7" endLine="107" endPosition="100" />
+    <nodeInfo nodeId="1203337810371" fileName="ClosureLiteralUtil.java" startLine="107" startPosition="100" endLine="108" endPosition="18" />
+    <nodeInfo nodeId="1227741350895" fileName="ClosureLiteralUtil.java" startLine="110" startPosition="59" endLine="111" endPosition="342" />
+    <nodeInfo nodeId="1208888108770" fileName="ClosureLiteralUtil.java" startLine="111" startPosition="342" endLine="112" endPosition="17" />
+    <nodeInfo nodeId="1203337810377" fileName="ClosureLiteralUtil.java" startLine="113" startPosition="9" endLine="114" endPosition="121" />
+    <nodeInfo nodeId="1203337810388" fileName="ClosureLiteralUtil.java" startLine="114" startPosition="121" endLine="115" endPosition="14" />
+    <nodeInfo nodeId="1240919309121" fileName="ClosureLiteralUtil.java" startLine="117" startPosition="5" endLine="118" endPosition="53" />
+    <nodeInfo nodeId="1203685630112" fileName="ClosureLiteralUtil.java" startLine="119" startPosition="29" endLine="120" endPosition="116" />
+    <nodeInfo nodeId="1203685740804" fileName="ClosureLiteralUtil.java" startLine="120" startPosition="116" endLine="121" endPosition="383" />
+    <nodeInfo nodeId="1203686030873" fileName="ClosureLiteralUtil.java" startLine="123" startPosition="101" endLine="124" endPosition="121" />
+    <nodeInfo nodeId="1203686046968" fileName="ClosureLiteralUtil.java" startLine="124" startPosition="121" endLine="125" endPosition="72" />
+    <nodeInfo nodeId="1203686072153" fileName="ClosureLiteralUtil.java" startLine="127" startPosition="150" endLine="128" endPosition="179" />
+    <nodeInfo nodeId="1240919276258" fileName="ClosureLiteralUtil.java" startLine="130" startPosition="12" endLine="131" endPosition="67" />
+    <nodeInfo nodeId="1203686140509" fileName="ClosureLiteralUtil.java" startLine="131" startPosition="67" endLine="132" endPosition="16" />
+    <nodeInfo nodeId="1203337810407" fileName="ClosureLiteralUtil.java" startLine="137" startPosition="146" endLine="138" endPosition="175" />
+    <nodeInfo nodeId="1205737030187" fileName="ClosureLiteralUtil.java" startLine="140" startPosition="6" endLine="141" endPosition="143" />
+    <nodeInfo nodeId="2737773518672173864" fileName="ClosureLiteralUtil.java" startLine="141" startPosition="143" endLine="142" endPosition="16" />
+    <nodeInfo nodeId="2737773518672045766" fileName="ClosureLiteralUtil.java" startLine="143" startPosition="75" endLine="144" endPosition="203" />
+    <nodeInfo nodeId="2737773518672045809" fileName="ClosureLiteralUtil.java" startLine="145" startPosition="57" endLine="146" endPosition="66" />
+    <nodeInfo nodeId="2737773518672051911" fileName="ClosureLiteralUtil.java" startLine="155" startPosition="208" endLine="156" endPosition="108" />
+    <nodeInfo nodeId="2737773518672173870" fileName="ClosureLiteralUtil.java" startLine="159" startPosition="7" endLine="160" endPosition="12" />
+    <nodeInfo nodeId="1203612716883" fileName="ClosureLiteralUtil.java" startLine="164" startPosition="105" endLine="165" endPosition="69" />
+    <nodeInfo nodeId="1203612751490" fileName="ClosureLiteralUtil.java" startLine="165" startPosition="69" endLine="166" endPosition="47" />
+    <nodeInfo nodeId="1226318676320" fileName="ClosureLiteralUtil.java" startLine="168" startPosition="154" endLine="169" endPosition="53" />
+    <nodeInfo nodeId="1226318701627" fileName="ClosureLiteralUtil.java" startLine="171" startPosition="12" endLine="172" endPosition="56" />
+    <nodeInfo nodeId="1203612783100" fileName="ClosureLiteralUtil.java" startLine="174" startPosition="6" endLine="175" endPosition="55" />
+    <nodeInfo nodeId="1203612810187" fileName="ClosureLiteralUtil.java" startLine="177" startPosition="55" endLine="178" endPosition="72" />
+    <nodeInfo nodeId="1222886411451" fileName="ClosureLiteralUtil.java" startLine="180" startPosition="10" endLine="181" endPosition="31" />
+    <nodeInfo nodeId="1222886609751" fileName="ClosureLiteralUtil.java" startLine="184" startPosition="107" endLine="185" endPosition="181" />
+    <nodeInfo nodeId="1222886687372" fileName="ClosureLiteralUtil.java" startLine="186" startPosition="59" endLine="187" endPosition="31" />
+    <nodeInfo nodeId="1222886715525" fileName="ClosureLiteralUtil.java" startLine="191" startPosition="34" endLine="192" endPosition="53" />
+    <nodeInfo nodeId="1222886715532" fileName="ClosureLiteralUtil.java" startLine="192" startPosition="53" endLine="193" endPosition="23" />
+    <nodeInfo nodeId="1226319026614" fileName="ClosureLiteralUtil.java" startLine="196" startPosition="49" endLine="197" endPosition="51" />
+    <nodeInfo nodeId="1226319704860" fileName="ClosureLiteralUtil.java" startLine="197" startPosition="51" endLine="198" endPosition="21" />
+    <nodeInfo nodeId="1203619378761" fileName="ClosureLiteralUtil.java" startLine="199" startPosition="9" endLine="200" endPosition="116" />
+    <nodeInfo nodeId="1203619420296" fileName="ClosureLiteralUtil.java" startLine="201" startPosition="119" endLine="202" endPosition="61" />
+    <nodeInfo nodeId="1203619468061" fileName="ClosureLiteralUtil.java" startLine="205" startPosition="5" endLine="206" endPosition="15" />
+    <nodeInfo nodeId="1222886275014" fileName="ClosureLiteralUtil.java" startLine="211" startPosition="40" endLine="212" endPosition="20" />
+    <nodeInfo nodeId="1222886278339" fileName="ClosureLiteralUtil.java" startLine="214" startPosition="5" endLine="215" endPosition="16" />
+    <nodeInfo nodeId="1222887016575" fileName="ClosureLiteralUtil.java" startLine="219" startPosition="182" endLine="220" endPosition="19" />
+    <nodeInfo nodeId="1222886947314" fileName="ClosureLiteralUtil.java" startLine="222" startPosition="208" endLine="223" endPosition="18" />
+    <nodeInfo nodeId="1222886108863" fileName="ClosureLiteralUtil.java" startLine="226" startPosition="105" endLine="227" endPosition="20" />
+    <nodeInfo nodeId="1222886113996" fileName="ClosureLiteralUtil.java" startLine="228" startPosition="7" endLine="229" endPosition="604" />
+    <nodeInfo nodeId="1222886178828" fileName="ClosureLiteralUtil.java" startLine="230" startPosition="5" endLine="231" endPosition="17" />
+    <nodeInfo nodeId="1222888980544" fileName="ClosureLiteralUtil.java" startLine="234" startPosition="100" endLine="235" endPosition="25" />
+    <nodeInfo nodeId="1222888980564" fileName="ClosureLiteralUtil.java" startLine="236" startPosition="101" endLine="237" endPosition="173" />
+    <nodeInfo nodeId="1222888980555" fileName="ClosureLiteralUtil.java" startLine="238" startPosition="51" endLine="239" endPosition="25" />
+    <nodeInfo nodeId="1222889300386" fileName="ClosureLiteralUtil.java" startLine="242" startPosition="112" endLine="243" endPosition="242" />
+    <nodeInfo nodeId="1203266429330" fileName="ClosureLiteralUtil.java" startLine="244" startPosition="14" endLine="245" endPosition="20" />
+    <nodeInfo nodeId="1203266455012" fileName="ClosureLiteralUtil.java" startLine="245" startPosition="20" endLine="246" endPosition="160" />
+    <nodeInfo nodeId="1203266533257" fileName="ClosureLiteralUtil.java" startLine="246" startPosition="160" endLine="247" endPosition="160" />
+    <nodeInfo nodeId="1203269969580" fileName="ClosureLiteralUtil.java" startLine="248" startPosition="120" endLine="249" endPosition="123" />
+    <nodeInfo nodeId="1203266353489" fileName="ClosureLiteralUtil.java" startLine="252" startPosition="5" endLine="253" endPosition="15" />
+    <nodeInfo nodeId="1203264696362" fileName="ClosureLiteralUtil.java" startLine="257" startPosition="22" endLine="258" endPosition="61" />
+    <nodeInfo nodeId="1203264698740" fileName="ClosureLiteralUtil.java" startLine="259" startPosition="5" endLine="260" endPosition="15" />
+    <nodeInfo nodeId="1226318696243" fileName="ClosureLiteralUtil.java" startLine="171" startPosition="10" endLine="173" endPosition="5" />
+    <nodeInfo nodeId="1229018807134" fileName="ClosureLiteralUtil.java" startLine="30" startPosition="146" endLine="33" endPosition="7" />
+    <nodeInfo nodeId="1202833868263" fileName="ClosureLiteralUtil.java" startLine="43" startPosition="130" endLine="46" endPosition="11" />
+    <nodeInfo nodeId="100821637069110994" fileName="ClosureLiteralUtil.java" startLine="57" startPosition="63" endLine="60" endPosition="7" />
+    <nodeInfo nodeId="100821637069111447" fileName="ClosureLiteralUtil.java" startLine="69" startPosition="22" endLine="72" endPosition="7" />
+    <nodeInfo nodeId="1226420361765" fileName="ClosureLiteralUtil.java" startLine="93" startPosition="50" endLine="96" endPosition="7" />
+    <nodeInfo nodeId="1203619620069" fileName="ClosureLiteralUtil.java" startLine="98" startPosition="215" endLine="101" endPosition="10" />
+    <nodeInfo nodeId="1203681862895" fileName="ClosureLiteralUtil.java" startLine="102" startPosition="160" endLine="105" endPosition="9" />
+    <nodeInfo nodeId="1203686072151" fileName="ClosureLiteralUtil.java" startLine="126" startPosition="12" endLine="129" endPosition="13" />
+    <nodeInfo nodeId="1203337810405" fileName="ClosureLiteralUtil.java" startLine="136" startPosition="6" endLine="139" endPosition="7" />
+    <nodeInfo nodeId="2737773518672144494" fileName="ClosureLiteralUtil.java" startLine="154" startPosition="16" endLine="157" endPosition="11" />
+    <nodeInfo nodeId="1226318666258" fileName="ClosureLiteralUtil.java" startLine="167" startPosition="101" endLine="170" endPosition="7" />
+    <nodeInfo nodeId="1226318719405" fileName="ClosureLiteralUtil.java" startLine="173" startPosition="5" endLine="176" endPosition="6" />
+    <nodeInfo nodeId="1226319041618" fileName="ClosureLiteralUtil.java" startLine="179" startPosition="121" endLine="182" endPosition="10" />
+    <nodeInfo nodeId="1203619399435" fileName="ClosureLiteralUtil.java" startLine="200" startPosition="116" endLine="203" endPosition="9" />
+    <nodeInfo nodeId="1222886264670" fileName="ClosureLiteralUtil.java" startLine="210" startPosition="33" endLine="213" endPosition="7" />
+    <nodeInfo nodeId="1222887001103" fileName="ClosureLiteralUtil.java" startLine="218" startPosition="66" endLine="221" endPosition="5" />
+    <nodeInfo nodeId="1222886938932" fileName="ClosureLiteralUtil.java" startLine="221" startPosition="5" endLine="224" endPosition="5" />
+    <nodeInfo nodeId="1222886093346" fileName="ClosureLiteralUtil.java" startLine="225" startPosition="102" endLine="228" endPosition="7" />
+    <nodeInfo nodeId="1203266543569" fileName="ClosureLiteralUtil.java" startLine="247" startPosition="160" endLine="250" endPosition="9" />
+    <nodeInfo nodeId="1203264696360" fileName="ClosureLiteralUtil.java" startLine="256" startPosition="66" endLine="259" endPosition="5" />
+    <nodeInfo nodeId="100821637069111060" fileName="ClosureLiteralUtil.java" startLine="62" startPosition="18" endLine="66" endPosition="7" />
+    <nodeInfo nodeId="8179015163785450949" fileName="ClosureLiteralUtil.java" startLine="87" startPosition="182" endLine="91" endPosition="0" />
+    <nodeInfo nodeId="1208887893344" fileName="ClosureLiteralUtil.java" startLine="109" startPosition="78" endLine="113" endPosition="9" />
+    <nodeInfo nodeId="2737773518672051994" fileName="ClosureLiteralUtil.java" startLine="148" startPosition="166" endLine="152" endPosition="15" />
+    <nodeInfo nodeId="1381658464811794960" fileName="ClosureLiteralUtil.java" startLine="154" startPosition="14" endLine="158" endPosition="9" />
+    <nodeInfo nodeId="1222886703955" fileName="ClosureLiteralUtil.java" startLine="190" startPosition="10" endLine="194" endPosition="11" />
+    <nodeInfo nodeId="1226318932749" fileName="ClosureLiteralUtil.java" startLine="195" startPosition="10" endLine="199" endPosition="9" />
+    <nodeInfo nodeId="1229018792786" fileName="ClosureLiteralUtil.java" startLine="29" startPosition="53" endLine="34" endPosition="5" />
+    <nodeInfo nodeId="1202833632891" fileName="ClosureLiteralUtil.java" startLine="42" startPosition="161" endLine="47" endPosition="9" />
+    <nodeInfo nodeId="100821637069111400" fileName="ClosureLiteralUtil.java" startLine="68" startPosition="62" endLine="73" endPosition="5" />
+    <nodeInfo nodeId="8179015163785450939" fileName="ClosureLiteralUtil.java" startLine="86" startPosition="33" endLine="91" endPosition="24" />
+    <nodeInfo nodeId="1203687229050" fileName="ClosureLiteralUtil.java" startLine="125" startPosition="72" endLine="130" endPosition="12" />
+    <nodeInfo nodeId="1205735060858" fileName="ClosureLiteralUtil.java" startLine="135" startPosition="5" endLine="140" endPosition="6" />
+    <nodeInfo nodeId="1222886565252" fileName="ClosureLiteralUtil.java" startLine="183" startPosition="10" endLine="188" endPosition="11" />
+    <nodeInfo nodeId="1222886249575" fileName="ClosureLiteralUtil.java" startLine="209" startPosition="77" endLine="214" endPosition="5" />
+    <nodeInfo nodeId="1222888980549" fileName="ClosureLiteralUtil.java" startLine="235" startPosition="25" endLine="240" endPosition="5" />
+    <nodeInfo nodeId="2737773518672173876" fileName="ClosureLiteralUtil.java" startLine="147" startPosition="108" endLine="153" endPosition="11" />
+    <nodeInfo nodeId="1226319020743" fileName="ClosureLiteralUtil.java" startLine="189" startPosition="10" endLine="195" endPosition="10" />
+    <nodeInfo nodeId="1222886033635" fileName="ClosureLiteralUtil.java" startLine="224" startPosition="5" endLine="230" endPosition="5" />
+    <nodeInfo nodeId="1226318628496" fileName="ClosureLiteralUtil.java" startLine="166" startPosition="47" endLine="173" endPosition="5" />
+    <nodeInfo nodeId="1226318606326" fileName="ClosureLiteralUtil.java" startLine="182" startPosition="10" endLine="189" endPosition="10" />
+    <nodeInfo nodeId="1222889307362" fileName="ClosureLiteralUtil.java" startLine="244" startPosition="12" endLine="251" endPosition="7" />
+    <nodeInfo nodeId="1203264641836" fileName="ClosureLiteralUtil.java" startLine="255" startPosition="0" endLine="262" endPosition="0" />
+    <nodeInfo nodeId="1202833632889" fileName="ClosureLiteralUtil.java" startLine="40" startPosition="88" endLine="48" endPosition="7" />
+    <nodeInfo nodeId="1203244632984" fileName="ClosureLiteralUtil.java" startLine="76" startPosition="0" endLine="84" endPosition="0" />
+    <nodeInfo nodeId="1203337810375" fileName="ClosureLiteralUtil.java" startLine="108" startPosition="18" endLine="116" endPosition="7" />
+    <nodeInfo nodeId="1201861629066" fileName="ClosureLiteralUtil.java" startLine="28" startPosition="33" endLine="37" endPosition="0" />
+    <nodeInfo nodeId="1203337810338" fileName="ClosureLiteralUtil.java" startLine="97" startPosition="63" endLine="106" endPosition="7" />
+    <nodeInfo nodeId="1222886201347" fileName="ClosureLiteralUtil.java" startLine="208" startPosition="0" endLine="217" endPosition="0" />
+    <nodeInfo nodeId="1202833632887" fileName="ClosureLiteralUtil.java" startLine="39" startPosition="70" endLine="49" endPosition="5" />
+    <nodeInfo nodeId="1222889300380" fileName="ClosureLiteralUtil.java" startLine="241" startPosition="28" endLine="251" endPosition="7" />
+    <nodeInfo nodeId="1203685724395" fileName="ClosureLiteralUtil.java" startLine="122" startPosition="186" endLine="133" endPosition="9" />
+    <nodeInfo nodeId="100821637069110973" fileName="ClosureLiteralUtil.java" startLine="55" startPosition="126" endLine="67" endPosition="5" />
+    <nodeInfo nodeId="2737773518672051933" fileName="ClosureLiteralUtil.java" startLine="146" startPosition="66" endLine="158" endPosition="9" />
+    <nodeInfo nodeId="1222888980573" fileName="ClosureLiteralUtil.java" startLine="240" startPosition="5" endLine="252" endPosition="5" />
+    <nodeInfo nodeId="1203685693438" fileName="ClosureLiteralUtil.java" startLine="121" startPosition="383" endLine="134" endPosition="7" />
+    <nodeInfo nodeId="1202833632881" fileName="ClosureLiteralUtil.java" startLine="37" startPosition="0" endLine="52" endPosition="0" />
+    <nodeInfo nodeId="2737773518672045783" fileName="ClosureLiteralUtil.java" startLine="144" startPosition="203" endLine="159" endPosition="7" />
+    <nodeInfo nodeId="1222885982407" fileName="ClosureLiteralUtil.java" startLine="217" startPosition="0" endLine="233" endPosition="0" />
+    <nodeInfo nodeId="1203681914224" fileName="ClosureLiteralUtil.java" startLine="118" startPosition="53" endLine="135" endPosition="5" />
+    <nodeInfo nodeId="1205735075825" fileName="ClosureLiteralUtil.java" startLine="142" startPosition="16" endLine="161" endPosition="5" />
+    <nodeInfo nodeId="1203266255814" fileName="ClosureLiteralUtil.java" startLine="233" startPosition="0" endLine="255" endPosition="0" />
+    <nodeInfo nodeId="100821637069110950" fileName="ClosureLiteralUtil.java" startLine="52" startPosition="0" endLine="76" endPosition="0" />
+    <nodeInfo nodeId="1203337810330" fileName="ClosureLiteralUtil.java" startLine="92" startPosition="26" endLine="117" endPosition="5" />
+    <nodeInfo nodeId="1203612831442" fileName="ClosureLiteralUtil.java" startLine="178" startPosition="72" endLine="204" endPosition="7" />
+    <nodeInfo nodeId="1203612792848" fileName="ClosureLiteralUtil.java" startLine="176" startPosition="6" endLine="205" endPosition="5" />
+    <nodeInfo nodeId="1203612359736" fileName="ClosureLiteralUtil.java" startLine="163" startPosition="0" endLine="208" endPosition="0" />
+    <nodeInfo nodeId="1203337773820" fileName="ClosureLiteralUtil.java" startLine="84" startPosition="0" endLine="163" endPosition="0" />
+    <scopeInfo nodeId="1229018807135" fileName="ClosureLiteralUtil.java" startLine="31" startPosition="291" endLine="32" endPosition="20" />
+    <scopeInfo nodeId="1202833868264" fileName="ClosureLiteralUtil.java" startLine="44" startPosition="265" endLine="45" endPosition="195" />
+    <scopeInfo nodeId="100821637069110995" fileName="ClosureLiteralUtil.java" startLine="58" startPosition="215" endLine="59" endPosition="160" />
+    <scopeInfo nodeId="100821637069111448" fileName="ClosureLiteralUtil.java" startLine="70" startPosition="145" endLine="71" endPosition="204" />
+    <scopeInfo nodeId="8179015163785450950" fileName="ClosureLiteralUtil.java" startLine="88" startPosition="38" endLine="89" endPosition="127" />
+    <scopeInfo nodeId="1226420361766" fileName="ClosureLiteralUtil.java" startLine="94" startPosition="53" endLine="95" endPosition="107" />
+    <scopeInfo nodeId="1203681862896" fileName="ClosureLiteralUtil.java" startLine="103" startPosition="153" endLine="104" endPosition="178" />
+    <scopeInfo nodeId="1203686072152" fileName="ClosureLiteralUtil.java" startLine="127" startPosition="150" endLine="128" endPosition="179" />
+    <scopeInfo nodeId="1203337810406" fileName="ClosureLiteralUtil.java" startLine="137" startPosition="146" endLine="138" endPosition="175" />
+    <scopeInfo nodeId="2737773518672144495" fileName="ClosureLiteralUtil.java" startLine="155" startPosition="208" endLine="156" endPosition="108" />
+    <scopeInfo nodeId="1226318666259" fileName="ClosureLiteralUtil.java" startLine="168" startPosition="154" endLine="169" endPosition="53" />
+    <scopeInfo nodeId="1226318696244" fileName="ClosureLiteralUtil.java" startLine="171" startPosition="12" endLine="172" endPosition="56" />
+    <scopeInfo nodeId="1222886592343" fileName="ClosureLiteralUtil.java" startLine="184" startPosition="107" endLine="185" endPosition="181" />
+    <scopeInfo nodeId="1222886676383" fileName="ClosureLiteralUtil.java" startLine="186" startPosition="59" endLine="187" endPosition="31" />
+    <scopeInfo nodeId="1203619399436" fileName="ClosureLiteralUtil.java" startLine="201" startPosition="119" endLine="202" endPosition="61" />
+    <scopeInfo nodeId="1222886264672" fileName="ClosureLiteralUtil.java" startLine="211" startPosition="40" endLine="212" endPosition="20" />
+    <scopeInfo nodeId="1222887001104" fileName="ClosureLiteralUtil.java" startLine="219" startPosition="182" endLine="220" endPosition="19" />
+    <scopeInfo nodeId="1222886938933" fileName="ClosureLiteralUtil.java" startLine="222" startPosition="208" endLine="223" endPosition="18" />
+    <scopeInfo nodeId="1222886093348" fileName="ClosureLiteralUtil.java" startLine="226" startPosition="105" endLine="227" endPosition="20" />
+    <scopeInfo nodeId="1222888980563" fileName="ClosureLiteralUtil.java" startLine="236" startPosition="101" endLine="237" endPosition="173" />
+    <scopeInfo nodeId="1222888980554" fileName="ClosureLiteralUtil.java" startLine="238" startPosition="51" endLine="239" endPosition="25" />
+    <scopeInfo nodeId="1222889300385" fileName="ClosureLiteralUtil.java" startLine="242" startPosition="112" endLine="243" endPosition="242" />
+    <scopeInfo nodeId="1203266543570" fileName="ClosureLiteralUtil.java" startLine="248" startPosition="120" endLine="249" endPosition="123" />
+    <scopeInfo nodeId="1203264696361" fileName="ClosureLiteralUtil.java" startLine="257" startPosition="22" endLine="258" endPosition="61" />
+    <scopeInfo nodeId="100821637069111061" fileName="ClosureLiteralUtil.java" startLine="63" startPosition="78" endLine="65" endPosition="14" />
+    <scopeInfo nodeId="1208887893345" fileName="ClosureLiteralUtil.java" startLine="110" startPosition="59" endLine="112" endPosition="17" />
+    <scopeInfo nodeId="1222886703956" fileName="ClosureLiteralUtil.java" startLine="191" startPosition="34" endLine="193" endPosition="23" />
+    <scopeInfo nodeId="1226318932750" fileName="ClosureLiteralUtil.java" startLine="196" startPosition="49" endLine="198" endPosition="21" />
+    <scopeInfo nodeId="1229018792787" fileName="ClosureLiteralUtil.java" startLine="30" startPosition="146" endLine="33" endPosition="7" />
+    <scopeInfo nodeId="1202833632898" fileName="ClosureLiteralUtil.java" startLine="43" startPosition="130" endLine="46" endPosition="11" />
+    <scopeInfo nodeId="100821637069111401" fileName="ClosureLiteralUtil.java" startLine="69" startPosition="22" endLine="72" endPosition="7" />
+    <scopeInfo nodeId="100821637069111447" fileName="ClosureLiteralUtil.java" startLine="69" startPosition="22" endLine="72" endPosition="7">
       <varInfo nodeId="100821637069111449" varName="tvd" />
     </scopeInfo>
-    <scopeInfo nodeId="1203686072151" fileName="ClosureLiteralUtil.java" startLine="121" startPosition="12" endLine="124" endPosition="13">
+    <scopeInfo nodeId="1203686072151" fileName="ClosureLiteralUtil.java" startLine="126" startPosition="12" endLine="129" endPosition="13">
       <varInfo nodeId="1203686072169" varName="tvar" />
     </scopeInfo>
-    <scopeInfo nodeId="1203337810405" fileName="ClosureLiteralUtil.java" startLine="131" startPosition="6" endLine="134" endPosition="7">
+    <scopeInfo nodeId="1203337810405" fileName="ClosureLiteralUtil.java" startLine="136" startPosition="6" endLine="139" endPosition="7">
       <varInfo nodeId="1203337810423" varName="tvar" />
     </scopeInfo>
-    <scopeInfo nodeId="1381658464811794961" fileName="ClosureLiteralUtil.java" startLine="149" startPosition="16" endLine="152" endPosition="11" />
-    <scopeInfo nodeId="1226318628510" fileName="ClosureLiteralUtil.java" startLine="162" startPosition="101" endLine="165" endPosition="7" />
-    <scopeInfo nodeId="1226318666258" fileName="ClosureLiteralUtil.java" startLine="162" startPosition="101" endLine="165" endPosition="7">
+    <scopeInfo nodeId="1381658464811794961" fileName="ClosureLiteralUtil.java" startLine="154" startPosition="16" endLine="157" endPosition="11" />
+    <scopeInfo nodeId="1226318628510" fileName="ClosureLiteralUtil.java" startLine="167" startPosition="101" endLine="170" endPosition="7" />
+    <scopeInfo nodeId="1226318666258" fileName="ClosureLiteralUtil.java" startLine="167" startPosition="101" endLine="170" endPosition="7">
       <varInfo nodeId="1226318666262" varName="arg" />
     </scopeInfo>
-    <scopeInfo nodeId="1203619399435" fileName="ClosureLiteralUtil.java" startLine="195" startPosition="116" endLine="198" endPosition="9">
+    <scopeInfo nodeId="1203619399435" fileName="ClosureLiteralUtil.java" startLine="200" startPosition="116" endLine="203" endPosition="9">
       <varInfo nodeId="1203619399439" varName="superType" />
     </scopeInfo>
-    <scopeInfo nodeId="1222886249579" fileName="ClosureLiteralUtil.java" startLine="205" startPosition="33" endLine="208" endPosition="7" />
-    <scopeInfo nodeId="1203266543569" fileName="ClosureLiteralUtil.java" startLine="242" startPosition="160" endLine="245" endPosition="9">
+    <scopeInfo nodeId="1222886249579" fileName="ClosureLiteralUtil.java" startLine="210" startPosition="33" endLine="213" endPosition="7" />
+    <scopeInfo nodeId="1203266543569" fileName="ClosureLiteralUtil.java" startLine="247" startPosition="160" endLine="250" endPosition="9">
       <varInfo nodeId="1203266543572" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="100821637069111060" fileName="ClosureLiteralUtil.java" startLine="61" startPosition="18" endLine="65" endPosition="7">
+    <scopeInfo nodeId="100821637069111060" fileName="ClosureLiteralUtil.java" startLine="62" startPosition="18" endLine="66" endPosition="7">
       <varInfo nodeId="100821637069111109" varName="pd" />
     </scopeInfo>
-    <scopeInfo nodeId="2737773518672173877" fileName="ClosureLiteralUtil.java" startLine="143" startPosition="166" endLine="147" endPosition="15" />
-    <scopeInfo nodeId="1222886033637" fileName="ClosureLiteralUtil.java" startLine="220" startPosition="102" endLine="224" endPosition="604" />
-    <scopeInfo nodeId="1203264641839" fileName="ClosureLiteralUtil.java" startLine="251" startPosition="66" endLine="255" endPosition="15" />
-    <scopeInfo nodeId="1229018792786" fileName="ClosureLiteralUtil.java" startLine="28" startPosition="53" endLine="33" endPosition="5">
+    <scopeInfo nodeId="8179015163785450949" fileName="ClosureLiteralUtil.java" startLine="87" startPosition="182" endLine="91" endPosition="0" />
+    <scopeInfo nodeId="2737773518672173877" fileName="ClosureLiteralUtil.java" startLine="148" startPosition="166" endLine="152" endPosition="15" />
+    <scopeInfo nodeId="1222886033637" fileName="ClosureLiteralUtil.java" startLine="225" startPosition="102" endLine="229" endPosition="604" />
+    <scopeInfo nodeId="1203264641839" fileName="ClosureLiteralUtil.java" startLine="256" startPosition="66" endLine="260" endPosition="15" />
+    <scopeInfo nodeId="1229018792786" fileName="ClosureLiteralUtil.java" startLine="29" startPosition="53" endLine="34" endPosition="5">
       <varInfo nodeId="1229018792790" varName="desc" />
     </scopeInfo>
-    <scopeInfo nodeId="1203244632985" fileName="ClosureLiteralUtil.java" startLine="76" startPosition="117" endLine="81" endPosition="60">
+    <scopeInfo nodeId="1203244632985" fileName="ClosureLiteralUtil.java" startLine="77" startPosition="117" endLine="82" endPosition="60">
       <varInfo nodeId="1203244633013" varName="trgCopy" />
     </scopeInfo>
-    <scopeInfo nodeId="1222886249575" fileName="ClosureLiteralUtil.java" startLine="204" startPosition="77" endLine="209" endPosition="5">
+    <scopeInfo nodeId="1222886249575" fileName="ClosureLiteralUtil.java" startLine="209" startPosition="77" endLine="214" endPosition="5">
       <varInfo nodeId="1222886249577" varName="left" />
     </scopeInfo>
-    <scopeInfo nodeId="1201861629069" fileName="ClosureLiteralUtil.java" startLine="28" startPosition="53" endLine="34" endPosition="17" />
-    <scopeInfo nodeId="1202833632890" fileName="ClosureLiteralUtil.java" startLine="40" startPosition="226" endLine="46" endPosition="9">
+    <scopeInfo nodeId="1201861629069" fileName="ClosureLiteralUtil.java" startLine="29" startPosition="53" endLine="35" endPosition="17" />
+    <scopeInfo nodeId="1202833632890" fileName="ClosureLiteralUtil.java" startLine="41" startPosition="226" endLine="47" endPosition="9">
       <varInfo nodeId="1202835350108" varName="vd" />
     </scopeInfo>
-    <scopeInfo nodeId="1203337810376" fileName="ClosureLiteralUtil.java" startLine="104" startPosition="78" endLine="110" endPosition="14" />
-    <scopeInfo nodeId="2737773518672051934" fileName="ClosureLiteralUtil.java" startLine="142" startPosition="108" endLine="148" endPosition="11" />
-    <scopeInfo nodeId="1222886201350" fileName="ClosureLiteralUtil.java" startLine="204" startPosition="77" endLine="210" endPosition="16" />
-    <scopeInfo nodeId="1222889307363" fileName="ClosureLiteralUtil.java" startLine="239" startPosition="14" endLine="245" endPosition="9">
+    <scopeInfo nodeId="1203337810376" fileName="ClosureLiteralUtil.java" startLine="109" startPosition="78" endLine="115" endPosition="14" />
+    <scopeInfo nodeId="2737773518672051934" fileName="ClosureLiteralUtil.java" startLine="147" startPosition="108" endLine="153" endPosition="11" />
+    <scopeInfo nodeId="1222886201350" fileName="ClosureLiteralUtil.java" startLine="209" startPosition="77" endLine="215" endPosition="16" />
+    <scopeInfo nodeId="1222889307363" fileName="ClosureLiteralUtil.java" startLine="244" startPosition="14" endLine="250" endPosition="9">
       <varInfo nodeId="1203266429331" varName="idx" />
       <varInfo nodeId="1203266455013" varName="mptypes" />
       <varInfo nodeId="1203266533258" varName="rptypes" />
     </scopeInfo>
-    <scopeInfo nodeId="1203337810339" fileName="ClosureLiteralUtil.java" startLine="93" startPosition="215" endLine="100" endPosition="9" />
-    <scopeInfo nodeId="1203264641836" fileName="ClosureLiteralUtil.java" startLine="250" startPosition="0" endLine="257" endPosition="0">
+    <scopeInfo nodeId="1203337810339" fileName="ClosureLiteralUtil.java" startLine="98" startPosition="215" endLine="105" endPosition="9" />
+    <scopeInfo nodeId="1203264641836" fileName="ClosureLiteralUtil.java" startLine="255" startPosition="0" endLine="262" endPosition="0">
       <varInfo nodeId="1203264679731" varName="map" />
     </scopeInfo>
-    <scopeInfo nodeId="1202833632888" fileName="ClosureLiteralUtil.java" startLine="39" startPosition="88" endLine="47" endPosition="7" />
-    <scopeInfo nodeId="1203244632984" fileName="ClosureLiteralUtil.java" startLine="75" startPosition="0" endLine="83" endPosition="0">
+    <scopeInfo nodeId="1202833632888" fileName="ClosureLiteralUtil.java" startLine="40" startPosition="88" endLine="48" endPosition="7" />
+    <scopeInfo nodeId="1203244632984" fileName="ClosureLiteralUtil.java" startLine="76" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="1203244633040" varName="target" />
       <varInfo nodeId="1203244633042" varName="genContext" />
       <varInfo nodeId="1203244633038" varName="literal" />
     </scopeInfo>
-    <scopeInfo nodeId="1203337810375" fileName="ClosureLiteralUtil.java" startLine="103" startPosition="18" endLine="111" endPosition="7">
+    <scopeInfo nodeId="1203337810375" fileName="ClosureLiteralUtil.java" startLine="108" startPosition="18" endLine="116" endPosition="7">
       <varInfo nodeId="1203337810397" varName="pd" />
     </scopeInfo>
-    <scopeInfo nodeId="1201861629066" fileName="ClosureLiteralUtil.java" startLine="27" startPosition="33" endLine="36" endPosition="0">
+    <scopeInfo nodeId="1201861629066" fileName="ClosureLiteralUtil.java" startLine="28" startPosition="33" endLine="37" endPosition="0">
       <varInfo nodeId="1201861638525" varName="cl" />
     </scopeInfo>
-    <scopeInfo nodeId="1203685724396" fileName="ClosureLiteralUtil.java" startLine="118" startPosition="101" endLine="127" endPosition="16">
+    <scopeInfo nodeId="1203685724396" fileName="ClosureLiteralUtil.java" startLine="123" startPosition="101" endLine="132" endPosition="16">
       <varInfo nodeId="1203686030874" varName="newRetCT" />
     </scopeInfo>
-    <scopeInfo nodeId="1222886201347" fileName="ClosureLiteralUtil.java" startLine="203" startPosition="0" endLine="212" endPosition="0">
+    <scopeInfo nodeId="1222886201347" fileName="ClosureLiteralUtil.java" startLine="208" startPosition="0" endLine="217" endPosition="0">
       <varInfo nodeId="1222886235032" varName="right" />
       <varInfo nodeId="1222886216513" varName="leftList" />
     </scopeInfo>
-    <scopeInfo nodeId="1202833632887" fileName="ClosureLiteralUtil.java" startLine="38" startPosition="70" endLine="48" endPosition="5">
+    <scopeInfo nodeId="1202833632887" fileName="ClosureLiteralUtil.java" startLine="39" startPosition="70" endLine="49" endPosition="5">
       <varInfo nodeId="1202833632905" varName="desc" />
     </scopeInfo>
-    <scopeInfo nodeId="100821637069110974" fileName="ClosureLiteralUtil.java" startLine="55" startPosition="50" endLine="65" endPosition="7">
+    <scopeInfo nodeId="100821637069110974" fileName="ClosureLiteralUtil.java" startLine="56" startPosition="50" endLine="66" endPosition="7">
       <varInfo nodeId="100821637069111057" varName="idx" />
       <varInfo nodeId="100821637069110989" varName="method" />
       <varInfo nodeId="100821637069111050" varName="ptypes" />
     </scopeInfo>
-    <scopeInfo nodeId="1222888980574" fileName="ClosureLiteralUtil.java" startLine="236" startPosition="28" endLine="246" endPosition="7" />
-    <scopeInfo nodeId="1203685693439" fileName="ClosureLiteralUtil.java" startLine="117" startPosition="186" endLine="128" endPosition="9" />
-    <scopeInfo nodeId="1202833632886" fileName="ClosureLiteralUtil.java" startLine="37" startPosition="75" endLine="49" endPosition="17">
+    <scopeInfo nodeId="1222888980574" fileName="ClosureLiteralUtil.java" startLine="241" startPosition="28" endLine="251" endPosition="7" />
+    <scopeInfo nodeId="1203685693439" fileName="ClosureLiteralUtil.java" startLine="122" startPosition="186" endLine="133" endPosition="9" />
+    <scopeInfo nodeId="1202833632886" fileName="ClosureLiteralUtil.java" startLine="38" startPosition="75" endLine="50" endPosition="17">
       <varInfo nodeId="1202833745036" varName="vrefs" />
     </scopeInfo>
-    <scopeInfo nodeId="1203685693438" fileName="ClosureLiteralUtil.java" startLine="116" startPosition="383" endLine="129" endPosition="7">
+    <scopeInfo nodeId="1203685693438" fileName="ClosureLiteralUtil.java" startLine="121" startPosition="383" endLine="134" endPosition="7">
       <varInfo nodeId="1203685693442" varName="cls" />
     </scopeInfo>
-    <scopeInfo nodeId="2737773518672045785" fileName="ClosureLiteralUtil.java" startLine="140" startPosition="57" endLine="153" endPosition="9">
+    <scopeInfo nodeId="2737773518672045785" fileName="ClosureLiteralUtil.java" startLine="145" startPosition="57" endLine="158" endPosition="9">
       <varInfo nodeId="2737773518672045810" varName="n" />
     </scopeInfo>
-    <scopeInfo nodeId="1222885982410" fileName="ClosureLiteralUtil.java" startLine="213" startPosition="66" endLine="226" endPosition="17" />
-    <scopeInfo nodeId="1202833632881" fileName="ClosureLiteralUtil.java" startLine="36" startPosition="0" endLine="51" endPosition="0">
+    <scopeInfo nodeId="1222885982410" fileName="ClosureLiteralUtil.java" startLine="218" startPosition="66" endLine="231" endPosition="17" />
+    <scopeInfo nodeId="1202833632881" fileName="ClosureLiteralUtil.java" startLine="37" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="1202833632882" varName="cl" />
     </scopeInfo>
-    <scopeInfo nodeId="1203681914225" fileName="ClosureLiteralUtil.java" startLine="114" startPosition="29" endLine="129" endPosition="7">
+    <scopeInfo nodeId="1203681914225" fileName="ClosureLiteralUtil.java" startLine="119" startPosition="29" endLine="134" endPosition="7">
       <varInfo nodeId="1203685630113" varName="ftResCT" />
       <varInfo nodeId="1203685740805" varName="adapterName" />
     </scopeInfo>
-    <scopeInfo nodeId="1222885982407" fileName="ClosureLiteralUtil.java" startLine="212" startPosition="0" endLine="228" endPosition="0">
+    <scopeInfo nodeId="1222885982407" fileName="ClosureLiteralUtil.java" startLine="217" startPosition="0" endLine="233" endPosition="0">
       <varInfo nodeId="1222886005160" varName="left" />
       <varInfo nodeId="1222886010051" varName="right" />
     </scopeInfo>
-    <scopeInfo nodeId="1205735075826" fileName="ClosureLiteralUtil.java" startLine="138" startPosition="75" endLine="155" endPosition="12">
+    <scopeInfo nodeId="1205735075826" fileName="ClosureLiteralUtil.java" startLine="143" startPosition="75" endLine="160" endPosition="12">
       <varInfo nodeId="2737773518672045767" varName="queue" />
     </scopeInfo>
-    <scopeInfo nodeId="1205735075825" fileName="ClosureLiteralUtil.java" startLine="137" startPosition="16" endLine="156" endPosition="5">
+    <scopeInfo nodeId="1205735075825" fileName="ClosureLiteralUtil.java" startLine="142" startPosition="16" endLine="161" endPosition="5">
       <varInfo nodeId="1205735075829" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="1203266255817" fileName="ClosureLiteralUtil.java" startLine="229" startPosition="100" endLine="248" endPosition="15">
+    <scopeInfo nodeId="1203266255817" fileName="ClosureLiteralUtil.java" startLine="234" startPosition="100" endLine="253" endPosition="15">
       <varInfo nodeId="1222888980545" varName="matched" />
     </scopeInfo>
-    <scopeInfo nodeId="100821637069110953" fileName="ClosureLiteralUtil.java" startLine="52" startPosition="62" endLine="73" endPosition="24">
+    <scopeInfo nodeId="100821637069110953" fileName="ClosureLiteralUtil.java" startLine="53" startPosition="62" endLine="74" endPosition="24">
       <varInfo nodeId="100821637069110955" varName="map" />
       <varInfo nodeId="100821637069111419" varName="ctWithParams" />
       <varInfo nodeId="100821637069110961" varName="imds" />
     </scopeInfo>
-    <scopeInfo nodeId="1203266255814" fileName="ClosureLiteralUtil.java" startLine="228" startPosition="0" endLine="250" endPosition="0">
+    <scopeInfo nodeId="1203266255814" fileName="ClosureLiteralUtil.java" startLine="233" startPosition="0" endLine="255" endPosition="0">
       <varInfo nodeId="1203266275869" varName="absType" />
       <varInfo nodeId="1203266295883" varName="map" />
       <varInfo nodeId="1203266288154" varName="realType" />
     </scopeInfo>
-    <scopeInfo nodeId="1203337810331" fileName="ClosureLiteralUtil.java" startLine="88" startPosition="50" endLine="111" endPosition="7">
+    <scopeInfo nodeId="1203337810331" fileName="ClosureLiteralUtil.java" startLine="93" startPosition="50" endLine="116" endPosition="7">
       <varInfo nodeId="1203337810372" varName="idx" />
       <varInfo nodeId="1203337810333" varName="method" />
       <varInfo nodeId="1203337810365" varName="ptypes" />
     </scopeInfo>
-    <scopeInfo nodeId="100821637069110950" fileName="ClosureLiteralUtil.java" startLine="51" startPosition="0" endLine="75" endPosition="0">
+    <scopeInfo nodeId="100821637069110950" fileName="ClosureLiteralUtil.java" startLine="52" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="100821637069111357" varName="ctNoParams" />
       <varInfo nodeId="100821637069111359" varName="ft" />
     </scopeInfo>
-    <scopeInfo nodeId="1203612831443" fileName="ClosureLiteralUtil.java" startLine="174" startPosition="121" endLine="198" endPosition="9" />
-    <scopeInfo nodeId="1203612792850" fileName="ClosureLiteralUtil.java" startLine="172" startPosition="55" endLine="199" endPosition="7">
+    <scopeInfo nodeId="1203612831443" fileName="ClosureLiteralUtil.java" startLine="179" startPosition="121" endLine="203" endPosition="9" />
+    <scopeInfo nodeId="1203612792850" fileName="ClosureLiteralUtil.java" startLine="177" startPosition="55" endLine="204" endPosition="7">
       <varInfo nodeId="1203612810188" varName="candidate" />
     </scopeInfo>
-    <scopeInfo nodeId="1203612359739" fileName="ClosureLiteralUtil.java" startLine="159" startPosition="105" endLine="201" endPosition="15">
+    <scopeInfo nodeId="1203612359739" fileName="ClosureLiteralUtil.java" startLine="164" startPosition="105" endLine="206" endPosition="15">
       <varInfo nodeId="1203612716884" varName="visited" />
       <varInfo nodeId="1203612751491" varName="queue" />
     </scopeInfo>
-    <scopeInfo nodeId="1203612359736" fileName="ClosureLiteralUtil.java" startLine="158" startPosition="0" endLine="203" endPosition="0">
+    <scopeInfo nodeId="1203612359736" fileName="ClosureLiteralUtil.java" startLine="163" startPosition="0" endLine="208" endPosition="0">
       <varInfo nodeId="1203612386830" varName="absType" />
       <varInfo nodeId="1203612405274" varName="map" />
       <varInfo nodeId="1203612395534" varName="realType" />
     </scopeInfo>
-    <scopeInfo nodeId="1203337773823" fileName="ClosureLiteralUtil.java" startLine="84" startPosition="129" endLine="156" endPosition="5">
+    <scopeInfo nodeId="1203337773823" fileName="ClosureLiteralUtil.java" startLine="85" startPosition="129" endLine="161" endPosition="5">
       <varInfo nodeId="1205737030188" varName="varDecls" />
       <varInfo nodeId="2737773518672173865" varName="idx" />
       <varInfo nodeId="1203337810315" varName="map" />
       <varInfo nodeId="1203681845654" varName="absRetCT" />
-      <varInfo nodeId="1203337810322" varName="imds" />
+      <varInfo nodeId="8179015163785450940" varName="imds" />
     </scopeInfo>
-    <scopeInfo nodeId="1203337773820" fileName="ClosureLiteralUtil.java" startLine="83" startPosition="0" endLine="158" endPosition="0">
+    <scopeInfo nodeId="1203337773820" fileName="ClosureLiteralUtil.java" startLine="84" startPosition="0" endLine="163" endPosition="0">
       <varInfo nodeId="1205734851367" varName="origCT" />
       <varInfo nodeId="1203337787304" varName="ctNoParams" />
       <varInfo nodeId="1203337796679" varName="ft" />
       <varInfo nodeId="552650560884163725" varName="genContext" />
       <varInfo nodeId="1208887953422" varName="literal" />
     </scopeInfo>
-    <unitInfo nodeId="1201861621557" fileName="ClosureLiteralUtil.java" startLine="27" startPosition="0" endLine="258" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.ClosureLiteralUtil" />
+    <unitInfo nodeId="8179015163785450949" fileName="ClosureLiteralUtil.java" startLine="87" startPosition="159" endLine="91" endPosition="5" unitName="jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.ClosureLiteralUtil$1" />
+    <unitInfo nodeId="1201861621557" fileName="ClosureLiteralUtil.java" startLine="28" startPosition="0" endLine="263" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.ClosureLiteralUtil" />
   </root>
   <root nodeId="1207078435086">
     <nodeInfo nodeId="6289591591668563665" fileName="WrappersUtils.java" startLine="24" startPosition="79" endLine="25" endPosition="74" />

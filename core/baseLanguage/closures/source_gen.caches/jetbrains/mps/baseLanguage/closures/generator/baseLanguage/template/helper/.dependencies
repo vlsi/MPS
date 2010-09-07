@@ -13,6 +13,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.Values" />
     <classNode dependClassName="jetbrains.mps.generator.JavaNameUtil" />
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />

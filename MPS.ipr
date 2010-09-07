@@ -603,7 +603,7 @@
     </list>
   </component>
   <component name="JavacSettings">
-    <option name="MAXIMUM_HEAP_SIZE" value="512" />
+    <option name="MAXIMUM_HEAP_SIZE" value="1500" />
   </component>
   <component name="JavadocGenerationManager">
     <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/lib/beansbinding/docs" />
