@@ -257,14 +257,14 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     if (newModel == mySModel) return;
     final SModel oldSModel = mySModel;
     if (oldSModel != null) {
-      oldSModel.setModelDescritor(null);
+      oldSModel.setModelDescriptor(null);
     }
     mySModel = newModel;
     setLoadingState(mySModel == null ? ModelLoadingState.NOT_LOADED : ModelLoadingState.FULLY_LOADED);
 
     myRefactoringHistory = null;
     if (mySModel != null) {
-      mySModel.setModelDescritor(this);
+      mySModel.setModelDescriptor(this);
     }
     SModelRepository.getInstance().markChanged(this, true);
     MPSModuleRepository.getInstance().invalidateCaches();
