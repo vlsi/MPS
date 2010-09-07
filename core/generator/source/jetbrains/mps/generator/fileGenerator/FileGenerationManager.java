@@ -15,8 +15,12 @@
  */
 package jetbrains.mps.generator.fileGenerator;
 
+import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.vfs.LocalFileSystem;
+import com.intellij.openapi.vfs.VfsUtil;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.baseLanguage.textGen.BLDependenciesCache;
 import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
 import jetbrains.mps.baseLanguage.textGen.RootDependencies;
@@ -35,6 +39,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 
@@ -79,46 +84,46 @@ public class FileGenerationManager implements ApplicationComponent {
     Map<SNode, String> outputNodeContents = new LinkedHashMap<SNode, String>();
     if (!generateText(context, status, outputNodeContents)) return false;
 
-    Set<File> generatedFiles = generateFiles(status, outputRoot, outputNodeContents);
-    FileProcessor.processVCSAddition(outputRoot, context, generatedFiles);
+    Set<VirtualFile> generatedFiles = generateFiles(status, outputRoot, outputNodeContents);
 
-    File cachesOutput = FileGenerationUtil.getCachesOutputDir(outputRoot);
-    Set<File> generatedCaches = generateCaches(status, cachesOutput);
-    FileProcessor.processVCSAddition(cachesOutput, context, generatedCaches);
+    File cachesOutputRoot = FileGenerationUtil.getCachesOutputDir(outputRoot);
+    Set<VirtualFile> generatedCaches = generateCaches(status, cachesOutputRoot);
 
     // we have to clean garbage in both dirs simultaneously, since caches might be located in source_gen
-    List<File> filesToDelete = processDeletion(status.getInputModel(), CollectionUtil.set(outputRoot, cachesOutput),
+    processDeletion(status.getInputModel(), CollectionUtil.set(outputRoot, cachesOutputRoot),
       CollectionUtil.union(generatedFiles, generatedCaches));
-    FileProcessor.processVCSDeletion(filesToDelete);
 
     return true;
   }
 
-  public static List<File> processDeletion(
+  public static void processDeletion(
     final SModel inputModel,
-    final Set<File> outputDirs,
-    final Set<File> generatedFiles) {
+    final Set<File> outputRoots,
+    final Set<VirtualFile> generatedFiles) {
 
-    Set<File> directories = new HashSet<File>();
-    for (File f : generatedFiles) {
-      directories.add(f.getParentFile());
+    Set<VirtualFile> directories = new HashSet<VirtualFile>();
+    for (VirtualFile f : generatedFiles) {
+      directories.add(f.getParent());
     }
-    for (File outputDir : outputDirs) {
-      directories.add(FileGenerationUtil.getDefaultOutputDir(inputModel, outputDir));
+    for (File outputDir : outputRoots) {
+      directories.add(LocalFileSystem.getInstance().findFileByIoFile(
+        FileGenerationUtil.getDefaultOutputDir(inputModel, outputDir)));
     }
 
     // clear garbage
-    final List<File> filesToDelete = new ArrayList<File>();
-    for (File dir : directories) {
-      File[] files = dir.listFiles();
-      if (files == null) continue;
-      for (File outputDirectoryFile : files) {
-        if (outputDirectoryFile.isDirectory()) continue;
-        if (generatedFiles.contains(outputDirectoryFile)) continue;
-        filesToDelete.add(outputDirectoryFile);
+    for (VirtualFile dir : directories) {
+      VirtualFile[] children = dir.getChildren();
+      if (children == null) continue;
+      for (VirtualFile child : children) {
+        if (child.isDirectory()) continue;
+        if (generatedFiles.contains(child)) continue;
+        try {
+          FileUtil.deleteVirtualFile(child);
+        } catch (IOException e) {
+          LOG.error(e);
+        }
       }
     }
-    return filesToDelete;
   }
 
 
@@ -235,32 +240,20 @@ public class FileGenerationManager implements ApplicationComponent {
     }
   }
 
-  private void touchOutputDir(GenerationStatus status, File outputRootDirectory) {
-    File outDir = FileGenerationUtil.getDefaultOutputDir(status.getInputModel(), outputRootDirectory);
-    if (!outDir.exists()) {
-      if (!outDir.mkdirs()) {
-        throw new RuntimeException("Can't create " + outDir);
-      }
-    }
-    if (!outDir.setLastModified(System.currentTimeMillis())) {
-      throw new RuntimeException("Can't touch " + outDir);
-    }
-  }
-
-  private Set<File> generateFiles(GenerationStatus status, File outputRootDirectory, Map<SNode, String> outputNodeContents) {
-    Set<File> generatedFiles = new HashSet<File>();
+  private Set<VirtualFile> generateFiles(GenerationStatus status, File outputRootDirectory, Map<SNode, String> outputNodeContents) {
+    Set<VirtualFile> generatedVFiles = new HashSet<VirtualFile>();
     Map<String, GenerationRootDependencies> dependenciesByFile = null;
 
     DefaultFileGenerator fileGenerator = new DefaultFileGenerator();
     for (SNode outputRootNode : outputNodeContents.keySet()) {
       try {
-        SNode originalInputNode = null;
-        File generatedFile = fileGenerator.generateFile(outputRootNode, originalInputNode, status.getInputModel(), outputNodeContents.get(outputRootNode), outputRootDirectory);
+        VirtualFile generatedVFile = fileGenerator.generateFile(outputRootNode, null, status.getInputModel(), outputNodeContents.get(outputRootNode), outputRootDirectory);
 
-        if (generatedFile != null) {
-          generatedFiles.add(generatedFile);
-
-          // invoke post processing 
+        if (generatedVFile != null) {
+          generatedVFiles.add(generatedVFile);
+          // invoke post processing
+          // TODO handle external generators
+/*
           Set<File> newfiles = fireFileGenerated(generatedFile);
           if (newfiles != null) {
             for (File n : newfiles) {
@@ -286,6 +279,7 @@ public class FileGenerationManager implements ApplicationComponent {
               }
             }
           }
+*/
         }
       } catch (IOException e) {
         LOG.error(e);
@@ -302,9 +296,10 @@ public class FileGenerationManager implements ApplicationComponent {
       // process unchanged files
       for (GenerationRootDependencies rdep : dependencies.getUnchangedDependencies()) {
         for (String filename : rdep.getFiles()) {
-          File file = new File(outputDir, filename);
-          if (file.exists()) {
-            generatedFiles.add(file);
+          File ioFile = new File(outputDir, filename);
+          VirtualFile file = LocalFileSystem.getInstance().findFileByIoFile(ioFile);
+          if (file != null && file.exists()) {
+            generatedVFiles.add(file);
 
             // re-register baselanguage dependencies
             if (modelDep == null) {
@@ -332,10 +327,10 @@ public class FileGenerationManager implements ApplicationComponent {
       }
     }
 
-    return generatedFiles;
+    return generatedVFiles;
   }
 
-  private Set<File> generateCaches(GenerationStatus status, File outputRootDirectory) {
+  private Set<VirtualFile> generateCaches(GenerationStatus status, File outputRootDirectory) {
     File modelOutput = FileGenerationUtil.getDefaultOutputDir(status.getInputModel(), outputRootDirectory);
     if (!modelOutput.exists()) {
       if (!modelOutput.mkdirs()) {
@@ -343,13 +338,13 @@ public class FileGenerationManager implements ApplicationComponent {
       }
     }
 
-    Set<File> generatedCaches = new HashSet<File>(myCacheGenerators.size());
+    HashSet<VirtualFile> generatedCaches = new HashSet<VirtualFile>();
 
     for (CacheGenerator g : myCacheGenerators) {
       try {
-        File cacheFile = g.generateCache(new CacheGenerationContext(status, outputRootDirectory));
-        if (cacheFile != null) {
-          generatedCaches.add(cacheFile);
+        VirtualFile cache = g.generateCache(new CacheGenerationContext(status, outputRootDirectory));
+        if (cache != null) {
+          generatedCaches.add(cache);
         }
       } catch (Throwable t) {
         LOG.error(t);

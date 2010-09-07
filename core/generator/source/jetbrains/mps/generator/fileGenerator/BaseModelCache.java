@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.fileGenerator;
 
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Generator;
@@ -43,7 +44,7 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
 
   @Nullable
   protected abstract T readCache(SModelDescriptor model);
-  protected abstract File saveCache(@NotNull T t, SModelDescriptor model);
+  protected abstract VirtualFile saveCache(@NotNull T t, SModelDescriptor model);
 
   protected abstract T generateCache(CacheGenerationContext context);
 
@@ -136,7 +137,7 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
   }
 
   protected class MyCacheGenerator implements CacheGenerator {
-    public File generateCache(CacheGenerationContext context) {
+    public VirtualFile generateCache(CacheGenerationContext context) {
       T cache = BaseModelCache.this.generateCache(context);
       if(cache == null) return null;
 

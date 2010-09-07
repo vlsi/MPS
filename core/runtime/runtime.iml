@@ -40,6 +40,7 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="JUnit4" level="project" />
+    <orderEntry type="module" module-name="MPS" />
   </component>
 </module>
 

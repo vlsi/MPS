@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.generator.fileGenerator;
 
+import com.intellij.openapi.vfs.LocalFileSystem;
+import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.VirtualFileSystem;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -50,6 +53,14 @@ public class FileGenerationUtil {
 
   public static File getCachesOutputDir(File outputDir) {
     return new File(getCachesPath(outputDir.getAbsolutePath()));
+  }
+
+  public static String getDefaultOutputPath(SModelReference inputModel, VirtualFile outputRootDir) {
+    return getDefaultOutputDir(inputModel, FileSystem.getFile(outputRootDir.getPath())).getPath();
+  }
+
+  public static String getDefaultOutputPath(SModel inputModel, VirtualFile outputRootDir) {
+    return getDefaultOutputDir(inputModel, FileSystem.getFile(outputRootDir.getPath())).getPath();
   }
 
   public static String getCachesPath(String outputDir) {

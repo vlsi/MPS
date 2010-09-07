@@ -587,130 +587,157 @@
     <unitInfo nodeId="4494976841093370953" fileName="StacktraceUtil.java" startLine="17" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.debug.api.info.StacktraceUtil" />
   </root>
   <root nodeId="4494976841093543348">
-    <nodeInfo nodeId="4806149635758532329" fileName="BLDebugInfoCache.java" startLine="28" startPosition="65" endLine="29" endPosition="77" />
-    <nodeInfo nodeId="4806149635758532322" fileName="BLDebugInfoCache.java" startLine="29" startPosition="77" endLine="30" endPosition="60" />
-    <nodeInfo nodeId="8178225738272059155" fileName="BLDebugInfoCache.java" startLine="32" startPosition="71" endLine="33" endPosition="32" />
-    <nodeInfo nodeId="4494976841093543976" fileName="BLDebugInfoCache.java" startLine="38" startPosition="36" endLine="39" endPosition="33" />
-    <nodeInfo nodeId="4806149635758532334" fileName="BLDebugInfoCache.java" startLine="42" startPosition="39" endLine="43" endPosition="27" />
-    <nodeInfo nodeId="4494976841093550729" fileName="BLDebugInfoCache.java" startLine="46" startPosition="65" endLine="47" endPosition="30" />
-    <nodeInfo nodeId="1169313761568076494" fileName="BLDebugInfoCache.java" startLine="50" startPosition="82" endLine="51" endPosition="157" />
-    <nodeInfo nodeId="1169313761568078930" fileName="BLDebugInfoCache.java" startLine="51" startPosition="157" endLine="52" endPosition="40" />
-    <nodeInfo nodeId="4806149635758432675" fileName="BLDebugInfoCache.java" startLine="52" startPosition="40" endLine="53" endPosition="76" />
-    <nodeInfo nodeId="4806149635758432693" fileName="BLDebugInfoCache.java" startLine="54" startPosition="28" endLine="55" endPosition="18" />
-    <nodeInfo nodeId="4806149635758432698" fileName="BLDebugInfoCache.java" startLine="56" startPosition="5" endLine="57" endPosition="0" />
-    <nodeInfo nodeId="4806149635758432699" fileName="BLDebugInfoCache.java" startLine="57" startPosition="0" endLine="58" endPosition="27" />
-    <nodeInfo nodeId="4806149635758432705" fileName="BLDebugInfoCache.java" startLine="59" startPosition="9" endLine="60" endPosition="40" />
-    <nodeInfo nodeId="4806149635758432711" fileName="BLDebugInfoCache.java" startLine="60" startPosition="40" endLine="61" endPosition="42" />
-    <nodeInfo nodeId="4806149635758432717" fileName="BLDebugInfoCache.java" startLine="61" startPosition="42" endLine="62" endPosition="56" />
-    <nodeInfo nodeId="4806149635758432727" fileName="BLDebugInfoCache.java" startLine="63" startPosition="29" endLine="64" endPosition="19" />
-    <nodeInfo nodeId="4806149635758432740" fileName="BLDebugInfoCache.java" startLine="67" startPosition="13" endLine="68" endPosition="21" />
-    <nodeInfo nodeId="4806149635758432748" fileName="BLDebugInfoCache.java" startLine="69" startPosition="33" endLine="70" endPosition="23" />
-    <nodeInfo nodeId="4806149635758432753" fileName="BLDebugInfoCache.java" startLine="73" startPosition="5" endLine="74" endPosition="0" />
-    <nodeInfo nodeId="4806149635758432754" fileName="BLDebugInfoCache.java" startLine="74" startPosition="0" endLine="75" endPosition="30" />
-    <nodeInfo nodeId="4806149635758436064" fileName="BLDebugInfoCache.java" startLine="79" startPosition="62" endLine="80" endPosition="105" />
-    <nodeInfo nodeId="4806149635758533331" fileName="BLDebugInfoCache.java" startLine="80" startPosition="105" endLine="81" endPosition="86" />
-    <nodeInfo nodeId="4641257602950179479" fileName="BLDebugInfoCache.java" startLine="82" startPosition="25" endLine="83" endPosition="18" />
-    <nodeInfo nodeId="4806149635758536019" fileName="BLDebugInfoCache.java" startLine="85" startPosition="9" endLine="86" endPosition="56" />
-    <nodeInfo nodeId="4806149635758536040" fileName="BLDebugInfoCache.java" startLine="86" startPosition="56" endLine="87" endPosition="58" />
-    <nodeInfo nodeId="4806149635758536030" fileName="BLDebugInfoCache.java" startLine="88" startPosition="29" endLine="89" endPosition="19" />
-    <nodeInfo nodeId="4806149635758536055" fileName="BLDebugInfoCache.java" startLine="90" startPosition="31" endLine="91" endPosition="19" />
-    <nodeInfo nodeId="4806149635758536047" fileName="BLDebugInfoCache.java" startLine="92" startPosition="5" endLine="93" endPosition="16" />
-    <nodeInfo nodeId="4806149635758415144" fileName="BLDebugInfoCache.java" startLine="97" startPosition="29" endLine="98" endPosition="18" />
-    <nodeInfo nodeId="4806149635758415146" fileName="BLDebugInfoCache.java" startLine="99" startPosition="5" endLine="100" endPosition="0" />
-    <nodeInfo nodeId="2112847400037516666" fileName="BLDebugInfoCache.java" startLine="101" startPosition="30" endLine="102" endPosition="81" />
-    <nodeInfo nodeId="4806149635758415189" fileName="BLDebugInfoCache.java" startLine="103" startPosition="5" endLine="104" endPosition="0" />
-    <nodeInfo nodeId="4806149635758415190" fileName="BLDebugInfoCache.java" startLine="104" startPosition="0" endLine="105" endPosition="42" />
-    <nodeInfo nodeId="4494976841093545527" fileName="BLDebugInfoCache.java" startLine="108" startPosition="48" endLine="109" endPosition="84" />
-    <nodeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="113" startPosition="20" endLine="114" endPosition="18" />
-    <nodeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="115" startPosition="5" endLine="116" endPosition="22" />
-    <nodeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="120" startPosition="20" endLine="121" endPosition="18" />
-    <nodeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="122" startPosition="5" endLine="123" endPosition="36" />
-    <nodeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="127" startPosition="20" endLine="128" endPosition="18" />
-    <nodeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="129" startPosition="5" endLine="130" endPosition="101" />
-    <nodeInfo nodeId="4494976841093543350" fileName="BLDebugInfoCache.java" startLine="31" startPosition="0" endLine="34" endPosition="3" />
-    <nodeInfo nodeId="4806149635758432691" fileName="BLDebugInfoCache.java" startLine="53" startPosition="76" endLine="56" endPosition="5" />
-    <nodeInfo nodeId="4641257602950179470" fileName="BLDebugInfoCache.java" startLine="81" startPosition="86" endLine="84" endPosition="5" />
-    <nodeInfo nodeId="4806149635758415139" fileName="BLDebugInfoCache.java" startLine="96" startPosition="82" endLine="99" endPosition="5" />
-    <nodeInfo nodeId="4806149635758415147" fileName="BLDebugInfoCache.java" startLine="100" startPosition="0" endLine="103" endPosition="5" />
-    <nodeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="112" startPosition="53" endLine="115" endPosition="5" />
-    <nodeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="119" startPosition="76" endLine="122" endPosition="5" />
-    <nodeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="126" startPosition="117" endLine="129" endPosition="5" />
-    <nodeInfo nodeId="4494976841093543968" fileName="BLDebugInfoCache.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
-    <nodeInfo nodeId="4494976841093543962" fileName="BLDebugInfoCache.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
-    <nodeInfo nodeId="4494976841093543993" fileName="BLDebugInfoCache.java" startLine="107" startPosition="0" endLine="111" endPosition="0" />
-    <nodeInfo nodeId="4806149635758432738" fileName="BLDebugInfoCache.java" startLine="66" startPosition="23" endLine="71" endPosition="9" />
-    <nodeInfo nodeId="4494976841093543956" fileName="BLDebugInfoCache.java" startLine="35" startPosition="0" endLine="41" endPosition="0" />
-    <nodeInfo nodeId="4806149635758432733" fileName="BLDebugInfoCache.java" startLine="65" startPosition="15" endLine="72" endPosition="7" />
-    <nodeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="111" startPosition="0" endLine="118" endPosition="0" />
-    <nodeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="118" startPosition="0" endLine="125" endPosition="0" />
-    <nodeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="125" startPosition="0" endLine="132" endPosition="0" />
-    <nodeInfo nodeId="4806149635758536011" fileName="BLDebugInfoCache.java" startLine="84" startPosition="5" endLine="92" endPosition="5" />
-    <nodeInfo nodeId="4806149635758415135" fileName="BLDebugInfoCache.java" startLine="95" startPosition="0" endLine="107" endPosition="0" />
-    <nodeInfo nodeId="4806149635758432703" fileName="BLDebugInfoCache.java" startLine="58" startPosition="27" endLine="73" endPosition="5" />
-    <nodeInfo nodeId="4806149635758412831" fileName="BLDebugInfoCache.java" startLine="77" startPosition="0" endLine="95" endPosition="0" />
-    <nodeInfo nodeId="4806149635758412823" fileName="BLDebugInfoCache.java" startLine="49" startPosition="0" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="4494976841093543353" fileName="BLDebugInfoCache.java" startLine="32" startPosition="71" endLine="33" endPosition="32" />
-    <scopeInfo nodeId="4494976841093543961" fileName="BLDebugInfoCache.java" startLine="38" startPosition="36" endLine="39" endPosition="33" />
-    <scopeInfo nodeId="4494976841093543971" fileName="BLDebugInfoCache.java" startLine="42" startPosition="39" endLine="43" endPosition="27" />
-    <scopeInfo nodeId="4494976841093543967" fileName="BLDebugInfoCache.java" startLine="46" startPosition="65" endLine="47" endPosition="30" />
-    <scopeInfo nodeId="4806149635758432692" fileName="BLDebugInfoCache.java" startLine="54" startPosition="28" endLine="55" endPosition="18" />
-    <scopeInfo nodeId="4806149635758432726" fileName="BLDebugInfoCache.java" startLine="63" startPosition="29" endLine="64" endPosition="19" />
-    <scopeInfo nodeId="4806149635758432739" fileName="BLDebugInfoCache.java" startLine="67" startPosition="13" endLine="68" endPosition="21" />
-    <scopeInfo nodeId="4806149635758432747" fileName="BLDebugInfoCache.java" startLine="69" startPosition="33" endLine="70" endPosition="23" />
-    <scopeInfo nodeId="4641257602950179471" fileName="BLDebugInfoCache.java" startLine="82" startPosition="25" endLine="83" endPosition="18" />
-    <scopeInfo nodeId="4806149635758536017" fileName="BLDebugInfoCache.java" startLine="88" startPosition="29" endLine="89" endPosition="19" />
-    <scopeInfo nodeId="4806149635758536053" fileName="BLDebugInfoCache.java" startLine="90" startPosition="31" endLine="91" endPosition="19" />
-    <scopeInfo nodeId="4806149635758415143" fileName="BLDebugInfoCache.java" startLine="97" startPosition="29" endLine="98" endPosition="18" />
-    <scopeInfo nodeId="4806149635758415148" fileName="BLDebugInfoCache.java" startLine="101" startPosition="30" endLine="102" endPosition="81" />
-    <scopeInfo nodeId="4494976841093543996" fileName="BLDebugInfoCache.java" startLine="108" startPosition="48" endLine="109" endPosition="84" />
-    <scopeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="113" startPosition="20" endLine="114" endPosition="18" />
-    <scopeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="120" startPosition="20" endLine="121" endPosition="18" />
-    <scopeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="127" startPosition="20" endLine="128" endPosition="18" />
-    <scopeInfo nodeId="4806149635758536012" fileName="BLDebugInfoCache.java" startLine="85" startPosition="9" endLine="87" endPosition="58">
+    <nodeInfo nodeId="4806149635758532329" fileName="BLDebugInfoCache.java" startLine="31" startPosition="65" endLine="32" endPosition="77" />
+    <nodeInfo nodeId="4806149635758532322" fileName="BLDebugInfoCache.java" startLine="32" startPosition="77" endLine="33" endPosition="60" />
+    <nodeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="33" startPosition="60" endLine="34" endPosition="71" />
+    <nodeInfo nodeId="8178225738272059155" fileName="BLDebugInfoCache.java" startLine="36" startPosition="71" endLine="37" endPosition="32" />
+    <nodeInfo nodeId="4494976841093543976" fileName="BLDebugInfoCache.java" startLine="42" startPosition="36" endLine="43" endPosition="33" />
+    <nodeInfo nodeId="4806149635758532334" fileName="BLDebugInfoCache.java" startLine="46" startPosition="39" endLine="47" endPosition="27" />
+    <nodeInfo nodeId="4494976841093550729" fileName="BLDebugInfoCache.java" startLine="50" startPosition="65" endLine="51" endPosition="30" />
+    <nodeInfo nodeId="1169313761568076494" fileName="BLDebugInfoCache.java" startLine="54" startPosition="89" endLine="55" endPosition="157" />
+    <nodeInfo nodeId="1169313761568078930" fileName="BLDebugInfoCache.java" startLine="55" startPosition="157" endLine="56" endPosition="40" />
+    <nodeInfo nodeId="4806149635758432675" fileName="BLDebugInfoCache.java" startLine="56" startPosition="40" endLine="57" endPosition="76" />
+    <nodeInfo nodeId="4806149635758432693" fileName="BLDebugInfoCache.java" startLine="58" startPosition="28" endLine="59" endPosition="18" />
+    <nodeInfo nodeId="4806149635758432698" fileName="BLDebugInfoCache.java" startLine="60" startPosition="5" endLine="61" endPosition="0" />
+    <nodeInfo nodeId="112272351853313978" fileName="BLDebugInfoCache.java" startLine="61" startPosition="0" endLine="62" endPosition="27" />
+    <nodeInfo nodeId="112272351853314275" fileName="BLDebugInfoCache.java" startLine="63" startPosition="9" endLine="64" endPosition="99" />
+    <nodeInfo nodeId="112272351853313991" fileName="BLDebugInfoCache.java" startLine="66" startPosition="33" endLine="67" endPosition="51" />
+    <nodeInfo nodeId="112272351853313995" fileName="BLDebugInfoCache.java" startLine="68" startPosition="7" endLine="69" endPosition="18" />
+    <nodeInfo nodeId="4806149635758432699" fileName="BLDebugInfoCache.java" startLine="70" startPosition="5" endLine="71" endPosition="27" />
+    <nodeInfo nodeId="4806149635758432705" fileName="BLDebugInfoCache.java" startLine="72" startPosition="9" endLine="73" endPosition="62" />
+    <nodeInfo nodeId="4806149635758432711" fileName="BLDebugInfoCache.java" startLine="73" startPosition="62" endLine="74" endPosition="42" />
+    <nodeInfo nodeId="4806149635758432717" fileName="BLDebugInfoCache.java" startLine="74" startPosition="42" endLine="75" endPosition="56" />
+    <nodeInfo nodeId="4806149635758432727" fileName="BLDebugInfoCache.java" startLine="76" startPosition="29" endLine="77" endPosition="19" />
+    <nodeInfo nodeId="4806149635758432740" fileName="BLDebugInfoCache.java" startLine="80" startPosition="13" endLine="81" endPosition="21" />
+    <nodeInfo nodeId="4806149635758432748" fileName="BLDebugInfoCache.java" startLine="82" startPosition="33" endLine="83" endPosition="23" />
+    <nodeInfo nodeId="4806149635758432753" fileName="BLDebugInfoCache.java" startLine="86" startPosition="5" endLine="87" endPosition="0" />
+    <nodeInfo nodeId="4806149635758432754" fileName="BLDebugInfoCache.java" startLine="87" startPosition="0" endLine="88" endPosition="22" />
+    <nodeInfo nodeId="4806149635758436064" fileName="BLDebugInfoCache.java" startLine="92" startPosition="62" endLine="93" endPosition="105" />
+    <nodeInfo nodeId="4806149635758533331" fileName="BLDebugInfoCache.java" startLine="93" startPosition="105" endLine="94" endPosition="86" />
+    <nodeInfo nodeId="4641257602950179479" fileName="BLDebugInfoCache.java" startLine="95" startPosition="25" endLine="96" endPosition="18" />
+    <nodeInfo nodeId="4806149635758536019" fileName="BLDebugInfoCache.java" startLine="98" startPosition="9" endLine="99" endPosition="56" />
+    <nodeInfo nodeId="4806149635758536040" fileName="BLDebugInfoCache.java" startLine="99" startPosition="56" endLine="100" endPosition="58" />
+    <nodeInfo nodeId="4806149635758536030" fileName="BLDebugInfoCache.java" startLine="101" startPosition="29" endLine="102" endPosition="19" />
+    <nodeInfo nodeId="4806149635758536055" fileName="BLDebugInfoCache.java" startLine="103" startPosition="31" endLine="104" endPosition="19" />
+    <nodeInfo nodeId="4806149635758536047" fileName="BLDebugInfoCache.java" startLine="105" startPosition="5" endLine="106" endPosition="16" />
+    <nodeInfo nodeId="4806149635758415144" fileName="BLDebugInfoCache.java" startLine="110" startPosition="29" endLine="111" endPosition="18" />
+    <nodeInfo nodeId="4806149635758415146" fileName="BLDebugInfoCache.java" startLine="112" startPosition="5" endLine="113" endPosition="0" />
+    <nodeInfo nodeId="2112847400037516666" fileName="BLDebugInfoCache.java" startLine="114" startPosition="30" endLine="115" endPosition="81" />
+    <nodeInfo nodeId="4806149635758415189" fileName="BLDebugInfoCache.java" startLine="116" startPosition="5" endLine="117" endPosition="0" />
+    <nodeInfo nodeId="4806149635758415190" fileName="BLDebugInfoCache.java" startLine="117" startPosition="0" endLine="118" endPosition="42" />
+    <nodeInfo nodeId="4494976841093545527" fileName="BLDebugInfoCache.java" startLine="121" startPosition="48" endLine="122" endPosition="84" />
+    <nodeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="126" startPosition="20" endLine="127" endPosition="18" />
+    <nodeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="128" startPosition="5" endLine="129" endPosition="22" />
+    <nodeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="133" startPosition="20" endLine="134" endPosition="18" />
+    <nodeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="135" startPosition="5" endLine="136" endPosition="36" />
+    <nodeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="140" startPosition="20" endLine="141" endPosition="18" />
+    <nodeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="142" startPosition="5" endLine="143" endPosition="101" />
+    <nodeInfo nodeId="4494976841093543350" fileName="BLDebugInfoCache.java" startLine="35" startPosition="0" endLine="38" endPosition="3" />
+    <nodeInfo nodeId="4806149635758432691" fileName="BLDebugInfoCache.java" startLine="57" startPosition="76" endLine="60" endPosition="5" />
+    <nodeInfo nodeId="112272351853313991" fileName="BLDebugInfoCache.java" startLine="65" startPosition="29" endLine="68" endPosition="7" />
+    <nodeInfo nodeId="4641257602950179470" fileName="BLDebugInfoCache.java" startLine="94" startPosition="86" endLine="97" endPosition="5" />
+    <nodeInfo nodeId="4806149635758415139" fileName="BLDebugInfoCache.java" startLine="109" startPosition="82" endLine="112" endPosition="5" />
+    <nodeInfo nodeId="4806149635758415147" fileName="BLDebugInfoCache.java" startLine="113" startPosition="0" endLine="116" endPosition="5" />
+    <nodeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="125" startPosition="53" endLine="128" endPosition="5" />
+    <nodeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="132" startPosition="76" endLine="135" endPosition="5" />
+    <nodeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="139" startPosition="117" endLine="142" endPosition="5" />
+    <nodeInfo nodeId="4494976841093543968" fileName="BLDebugInfoCache.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <nodeInfo nodeId="4494976841093543962" fileName="BLDebugInfoCache.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
+    <nodeInfo nodeId="4494976841093543993" fileName="BLDebugInfoCache.java" startLine="120" startPosition="0" endLine="124" endPosition="0" />
+    <nodeInfo nodeId="4806149635758432738" fileName="BLDebugInfoCache.java" startLine="79" startPosition="23" endLine="84" endPosition="9" />
+    <nodeInfo nodeId="4494976841093543956" fileName="BLDebugInfoCache.java" startLine="39" startPosition="0" endLine="45" endPosition="0" />
+    <nodeInfo nodeId="4806149635758432733" fileName="BLDebugInfoCache.java" startLine="78" startPosition="15" endLine="85" endPosition="7" />
+    <nodeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="124" startPosition="0" endLine="131" endPosition="0" />
+    <nodeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="131" startPosition="0" endLine="138" endPosition="0" />
+    <nodeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="138" startPosition="0" endLine="145" endPosition="0" />
+    <nodeInfo nodeId="112272351853313983" fileName="BLDebugInfoCache.java" startLine="62" startPosition="27" endLine="70" endPosition="5" />
+    <nodeInfo nodeId="4806149635758536011" fileName="BLDebugInfoCache.java" startLine="97" startPosition="5" endLine="105" endPosition="5" />
+    <nodeInfo nodeId="4806149635758415135" fileName="BLDebugInfoCache.java" startLine="108" startPosition="0" endLine="120" endPosition="0" />
+    <nodeInfo nodeId="4806149635758432703" fileName="BLDebugInfoCache.java" startLine="71" startPosition="27" endLine="86" endPosition="5" />
+    <nodeInfo nodeId="4806149635758412831" fileName="BLDebugInfoCache.java" startLine="90" startPosition="0" endLine="108" endPosition="0" />
+    <nodeInfo nodeId="4806149635758412823" fileName="BLDebugInfoCache.java" startLine="53" startPosition="0" endLine="90" endPosition="0" />
+    <scopeInfo nodeId="4494976841093543353" fileName="BLDebugInfoCache.java" startLine="36" startPosition="71" endLine="37" endPosition="32" />
+    <scopeInfo nodeId="4494976841093543961" fileName="BLDebugInfoCache.java" startLine="42" startPosition="36" endLine="43" endPosition="33" />
+    <scopeInfo nodeId="4494976841093543971" fileName="BLDebugInfoCache.java" startLine="46" startPosition="39" endLine="47" endPosition="27" />
+    <scopeInfo nodeId="4494976841093543967" fileName="BLDebugInfoCache.java" startLine="50" startPosition="65" endLine="51" endPosition="30" />
+    <scopeInfo nodeId="4806149635758432692" fileName="BLDebugInfoCache.java" startLine="58" startPosition="28" endLine="59" endPosition="18" />
+    <scopeInfo nodeId="112272351853313984" fileName="BLDebugInfoCache.java" startLine="63" startPosition="9" endLine="64" endPosition="99" />
+    <scopeInfo nodeId="112272351853313991" fileName="BLDebugInfoCache.java" startLine="66" startPosition="33" endLine="67" endPosition="51" />
+    <scopeInfo nodeId="4806149635758432723" fileName="BLDebugInfoCache.java" startLine="76" startPosition="0" endLine="77" endPosition="19">
+      <varInfo nodeId="4806149635758432724" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="4806149635758432726" fileName="BLDebugInfoCache.java" startLine="76" startPosition="29" endLine="77" endPosition="19" />
+    <scopeInfo nodeId="4806149635758432739" fileName="BLDebugInfoCache.java" startLine="80" startPosition="13" endLine="81" endPosition="21" />
+    <scopeInfo nodeId="4806149635758432744" fileName="BLDebugInfoCache.java" startLine="82" startPosition="0" endLine="83" endPosition="23">
+      <varInfo nodeId="4806149635758432745" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="4806149635758432747" fileName="BLDebugInfoCache.java" startLine="82" startPosition="33" endLine="83" endPosition="23" />
+    <scopeInfo nodeId="4641257602950179471" fileName="BLDebugInfoCache.java" startLine="95" startPosition="25" endLine="96" endPosition="18" />
+    <scopeInfo nodeId="4806149635758536014" fileName="BLDebugInfoCache.java" startLine="101" startPosition="0" endLine="102" endPosition="19">
+      <varInfo nodeId="4806149635758536015" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="4806149635758536017" fileName="BLDebugInfoCache.java" startLine="101" startPosition="29" endLine="102" endPosition="19" />
+    <scopeInfo nodeId="4806149635758536050" fileName="BLDebugInfoCache.java" startLine="103" startPosition="0" endLine="104" endPosition="19">
+      <varInfo nodeId="4806149635758536051" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="4806149635758536053" fileName="BLDebugInfoCache.java" startLine="103" startPosition="31" endLine="104" endPosition="19" />
+    <scopeInfo nodeId="4806149635758415143" fileName="BLDebugInfoCache.java" startLine="110" startPosition="29" endLine="111" endPosition="18" />
+    <scopeInfo nodeId="4806149635758415148" fileName="BLDebugInfoCache.java" startLine="114" startPosition="30" endLine="115" endPosition="81" />
+    <scopeInfo nodeId="4494976841093543996" fileName="BLDebugInfoCache.java" startLine="121" startPosition="48" endLine="122" endPosition="84" />
+    <scopeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="126" startPosition="20" endLine="127" endPosition="18" />
+    <scopeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="133" startPosition="20" endLine="134" endPosition="18" />
+    <scopeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="140" startPosition="20" endLine="141" endPosition="18" />
+    <scopeInfo nodeId="4806149635758536012" fileName="BLDebugInfoCache.java" startLine="98" startPosition="9" endLine="100" endPosition="58">
       <varInfo nodeId="4806149635758536020" varName="document" />
     </scopeInfo>
-    <scopeInfo nodeId="4494976841093543350" fileName="BLDebugInfoCache.java" startLine="31" startPosition="0" endLine="34" endPosition="3">
+    <scopeInfo nodeId="4494976841093543350" fileName="BLDebugInfoCache.java" startLine="35" startPosition="0" endLine="38" endPosition="3">
       <varInfo nodeId="4494976841093550698" varName="fileGeneratorManager" />
     </scopeInfo>
-    <scopeInfo nodeId="4806149635758432704" fileName="BLDebugInfoCache.java" startLine="59" startPosition="9" endLine="62" endPosition="56">
+    <scopeInfo nodeId="112272351853313991" fileName="BLDebugInfoCache.java" startLine="65" startPosition="29" endLine="68" endPosition="7" />
+    <scopeInfo nodeId="4806149635758432704" fileName="BLDebugInfoCache.java" startLine="72" startPosition="9" endLine="75" endPosition="56">
       <varInfo nodeId="4806149635758432712" varName="element" />
     </scopeInfo>
-    <scopeInfo nodeId="4494976841093543968" fileName="BLDebugInfoCache.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="4494976841093543962" fileName="BLDebugInfoCache.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
+    <scopeInfo nodeId="4494976841093543968" fileName="BLDebugInfoCache.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="4494976841093543962" fileName="BLDebugInfoCache.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="4494976841093543965" varName="ctx" />
     </scopeInfo>
-    <scopeInfo nodeId="4494976841093543993" fileName="BLDebugInfoCache.java" startLine="107" startPosition="0" endLine="111" endPosition="0" />
-    <scopeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="112" startPosition="53" endLine="116" endPosition="22" />
-    <scopeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="119" startPosition="76" endLine="123" endPosition="36" />
-    <scopeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="126" startPosition="117" endLine="130" endPosition="101" />
-    <scopeInfo nodeId="4806149635758432737" fileName="BLDebugInfoCache.java" startLine="66" startPosition="23" endLine="71" endPosition="9" />
-    <scopeInfo nodeId="4494976841093543956" fileName="BLDebugInfoCache.java" startLine="35" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="4806149635758432732" fileName="BLDebugInfoCache.java" startLine="65" startPosition="15" endLine="72" endPosition="7" />
-    <scopeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="111" startPosition="0" endLine="118" endPosition="0" />
-    <scopeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="118" startPosition="0" endLine="125" endPosition="0" />
-    <scopeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="125" startPosition="0" endLine="132" endPosition="0" />
-    <scopeInfo nodeId="4806149635758415138" fileName="BLDebugInfoCache.java" startLine="96" startPosition="82" endLine="105" endPosition="42" />
-    <scopeInfo nodeId="4806149635758415135" fileName="BLDebugInfoCache.java" startLine="95" startPosition="0" endLine="107" endPosition="0">
+    <scopeInfo nodeId="112272351853313986" fileName="BLDebugInfoCache.java" startLine="65" startPosition="0" endLine="69" endPosition="18">
+      <varInfo nodeId="112272351853315222" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="112272351853313989" fileName="BLDebugInfoCache.java" startLine="65" startPosition="29" endLine="69" endPosition="18" />
+    <scopeInfo nodeId="4494976841093543993" fileName="BLDebugInfoCache.java" startLine="120" startPosition="0" endLine="124" endPosition="0" />
+    <scopeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="125" startPosition="53" endLine="129" endPosition="22" />
+    <scopeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="132" startPosition="76" endLine="136" endPosition="36" />
+    <scopeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="139" startPosition="117" endLine="143" endPosition="101" />
+    <scopeInfo nodeId="4806149635758432737" fileName="BLDebugInfoCache.java" startLine="79" startPosition="23" endLine="84" endPosition="9" />
+    <scopeInfo nodeId="4494976841093543956" fileName="BLDebugInfoCache.java" startLine="39" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="4806149635758432732" fileName="BLDebugInfoCache.java" startLine="78" startPosition="15" endLine="85" endPosition="7" />
+    <scopeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="124" startPosition="0" endLine="131" endPosition="0" />
+    <scopeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="131" startPosition="0" endLine="138" endPosition="0" />
+    <scopeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="138" startPosition="0" endLine="145" endPosition="0" />
+    <scopeInfo nodeId="4806149635758415138" fileName="BLDebugInfoCache.java" startLine="109" startPosition="82" endLine="118" endPosition="42" />
+    <scopeInfo nodeId="4806149635758415135" fileName="BLDebugInfoCache.java" startLine="108" startPosition="0" endLine="120" endPosition="0">
       <varInfo nodeId="4806149635758415195" varName="outputPath" />
       <varInfo nodeId="4806149635758415193" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="4806149635758412836" fileName="BLDebugInfoCache.java" startLine="79" startPosition="62" endLine="93" endPosition="16">
+    <scopeInfo nodeId="4806149635758412836" fileName="BLDebugInfoCache.java" startLine="92" startPosition="62" endLine="106" endPosition="16">
       <varInfo nodeId="4806149635758533332" varName="stream" />
       <varInfo nodeId="4806149635758436065" varName="classLoader" />
     </scopeInfo>
-    <scopeInfo nodeId="4806149635758412831" fileName="BLDebugInfoCache.java" startLine="77" startPosition="0" endLine="95" endPosition="0">
+    <scopeInfo nodeId="4806149635758412831" fileName="BLDebugInfoCache.java" startLine="90" startPosition="0" endLine="108" endPosition="0">
       <varInfo nodeId="4806149635758412834" varName="descriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="4806149635758412830" fileName="BLDebugInfoCache.java" startLine="50" startPosition="82" endLine="75" endPosition="30">
+    <scopeInfo nodeId="4806149635758412830" fileName="BLDebugInfoCache.java" startLine="54" startPosition="89" endLine="88" endPosition="22">
       <varInfo nodeId="4806149635758432700" varName="os" />
       <varInfo nodeId="1169313761568076495" varName="defaultOutputDir" />
+      <varInfo nodeId="112272351853313979" varName="cacheVFile" />
       <varInfo nodeId="4806149635758432676" varName="cacheFile" />
     </scopeInfo>
-    <scopeInfo nodeId="4806149635758412823" fileName="BLDebugInfoCache.java" startLine="49" startPosition="0" endLine="77" endPosition="0">
+    <scopeInfo nodeId="4806149635758412823" fileName="BLDebugInfoCache.java" startLine="53" startPosition="0" endLine="90" endPosition="0">
       <varInfo nodeId="4806149635758412828" varName="model" />
       <varInfo nodeId="4806149635758412826" varName="debugInfo" />
     </scopeInfo>
-    <unitInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="28" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.debug.api.info.BLDebugInfoCache" />
+    <unitInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="31" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.debug.api.info.BLDebugInfoCache" />
   </root>
   <root nodeId="4837185610456219360">
     <nodeInfo nodeId="4837185610456241392" fileName="ScopePositionInfo.java" startLine="15" startPosition="53" endLine="16" endPosition="45" />
@@ -1086,6 +1113,9 @@
     <scopeInfo nodeId="5166158193670392700" fileName="DebugInfo.java" startLine="266" startPosition="34" endLine="267" endPosition="92" />
     <scopeInfo nodeId="5166158193670463068" fileName="DebugInfo.java" startLine="285" startPosition="42" endLine="286" endPosition="26" />
     <scopeInfo nodeId="5166158193670462724" fileName="DebugInfo.java" startLine="302" startPosition="32" endLine="303" endPosition="77" />
+    <scopeInfo nodeId="5166158193670442705" fileName="DebugInfo.java" startLine="310" startPosition="0" endLine="311" endPosition="36">
+      <varInfo nodeId="5166158193670442706" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="5166158193670442708" fileName="DebugInfo.java" startLine="310" startPosition="41" endLine="311" endPosition="36" />
     <scopeInfo nodeId="5166158193670371782" fileName="DebugInfo.java" startLine="31" startPosition="0" endLine="33" endPosition="3" />
     <scopeInfo nodeId="5166158193670462873" fileName="DebugInfo.java" startLine="48" startPosition="27" endLine="50" endPosition="57" />
