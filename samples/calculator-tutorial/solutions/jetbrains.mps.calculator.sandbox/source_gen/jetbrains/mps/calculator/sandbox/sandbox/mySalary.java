@@ -11,9 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.SwingUtilities;
 
 public class mySalary extends JFrame {
-
   private DocumentListener listener = new DocumentListener() {
-
     public void insertUpdate(DocumentEvent p0) {
       mySalary.this.update();
     }
@@ -26,21 +24,21 @@ public class mySalary extends JFrame {
       mySalary.this.update();
     }
   };
-  private JTextField inputField0 = new JTextField();
-  private JTextField inputField1 = new JTextField();
-  private JTextField outputField0 = new JTextField();
+  private JTextField inputField_a = new JTextField();
+  private JTextField inputField_b = new JTextField();
+  private JTextField outputField_a = new JTextField();
 
   public mySalary() {
     this.setTitle("mySalary");
     this.setLayout(new GridLayout(0, 2));
-    this.inputField0.getDocument().addDocumentListener(this.listener);
+    this.inputField_a.getDocument().addDocumentListener(this.listener);
     this.add(new JLabel("Java Hours"));
-    this.add(this.inputField0);
-    this.inputField1.getDocument().addDocumentListener(this.listener);
+    this.add(this.inputField_a);
+    this.inputField_b.getDocument().addDocumentListener(this.listener);
     this.add(new JLabel("PHP Hours"));
-    this.add(this.inputField1);
+    this.add(this.inputField_b);
     this.add(new JLabel("Output"));
-    this.add(this.outputField0);
+    this.add(this.outputField_a);
     this.update();
     this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     this.pack();
@@ -48,24 +46,21 @@ public class mySalary extends JFrame {
   }
 
   public void update() {
-    int i0 = 0;
-    int i1 = 0;
+    int i_a = 0;
+    int i_b = 0;
     try {
-      i0 = Integer.parseInt(this.inputField0.getText());
-      i1 = Integer.parseInt(this.inputField1.getText());
+      i_a = Integer.parseInt(this.inputField_a.getText());
+      i_b = Integer.parseInt(this.inputField_b.getText());
     } catch (NumberFormatException e) {
     }
-    this.outputField0.setText("" + (i0 * 10 + i1 * 5));
+    this.outputField_a.setText("" + (i_a * 10 + i_b * 5));
   }
-
 
   public static void main(String[] args) {
     SwingUtilities.invokeLater(new Runnable() {
-
       public void run() {
         new mySalary();
       }
     });
   }
-
 }

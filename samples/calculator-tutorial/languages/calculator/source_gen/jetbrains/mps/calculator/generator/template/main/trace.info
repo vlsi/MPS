@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="QueriesGenerated.java" startLine="14" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.calculator.generator.template.main.QueriesGenerated" />
   <root nodeId="1241363163940">
     <nodeInfo nodeId="1241364768623" fileName="QueriesGenerated.java" startLine="39" startPosition="145" endLine="40" endPosition="135" />
     <scopeInfo nodeId="1241364765716" fileName="QueriesGenerated.java" startLine="39" startPosition="145" endLine="40" endPosition="135" />
