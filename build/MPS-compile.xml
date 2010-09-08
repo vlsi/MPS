@@ -67,6 +67,7 @@
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
+    <path path="core/typesystemEngine/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/eclipse-compiler/ecj.jar" />
@@ -325,6 +326,7 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/runtime/classes" />
+    <path path="core/typesystemEngine/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
@@ -444,6 +446,7 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/runtime/classes" />
+    <path path="core/typesystemEngine/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
@@ -563,6 +566,7 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/runtime/classes" />
+    <path path="core/typesystemEngine/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
@@ -682,6 +686,7 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/runtime/classes" />
+    <path path="core/typesystemEngine/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
@@ -801,6 +806,7 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/runtime/classes" />
+    <path path="core/typesystemEngine/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
@@ -920,6 +926,7 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/runtime/classes" />
+    <path path="core/typesystemEngine/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
@@ -1040,6 +1047,7 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/runtime/classes" />
+    <path path="core/typesystemEngine/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
@@ -1166,6 +1174,7 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/runtime/classes" />
+    <path path="core/typesystemEngine/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
@@ -1285,6 +1294,7 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/runtime/classes" />
+    <path path="core/typesystemEngine/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
@@ -1404,6 +1414,7 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/runtime/classes" />
+    <path path="core/typesystemEngine/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
@@ -1523,6 +1534,7 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/runtime/classes" />
+    <path path="core/typesystemEngine/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
@@ -1644,6 +1656,7 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/runtime/classes" />
+    <path path="core/typesystemEngine/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
@@ -1763,6 +1776,7 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/runtime/classes" />
+    <path path="core/typesystemEngine/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
@@ -1889,6 +1903,7 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/runtime/classes" />
+    <path path="core/typesystemEngine/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
@@ -2010,6 +2025,7 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/runtime/classes" />
+    <path path="core/typesystemEngine/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
@@ -2133,6 +2149,7 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/runtime/classes" />
+    <path path="core/typesystemEngine/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
@@ -2255,6 +2272,7 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/runtime/classes" />
+    <path path="core/typesystemEngine/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/ant-1.7.0/lib/ant.jar" />
     <path path="lib/asm/asm.jar" />
@@ -2390,6 +2408,7 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/runtime/classes" />
+    <path path="core/typesystemEngine/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/ant-1.7.0/lib/ant.jar" />
     <path path="lib/asm/asm.jar" />
@@ -2519,6 +2538,7 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/runtime/classes" />
+    <path path="core/typesystemEngine/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/ant-1.7.0/lib/ant.jar" />
     <path path="lib/asm/asm.jar" />
@@ -2652,6 +2672,7 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/runtime/classes" />
+    <path path="core/typesystemEngine/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/ant-1.7.0/lib/ant.jar" />
     <path path="lib/asm/asm.jar" />
@@ -2778,6 +2799,7 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/runtime/classes" />
+    <path path="core/typesystemEngine/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
@@ -2897,6 +2919,7 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/runtime/classes" />
+    <path path="core/typesystemEngine/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
@@ -3016,6 +3039,7 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/runtime/classes" />
+    <path path="core/typesystemEngine/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
@@ -3142,6 +3166,7 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/runtime/classes" />
+    <path path="core/typesystemEngine/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
@@ -3266,6 +3291,7 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/runtime/classes" />
+    <path path="core/typesystemEngine/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
@@ -3385,6 +3411,7 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/runtime/classes" />
+    <path path="core/typesystemEngine/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
@@ -3504,6 +3531,7 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/runtime/classes" />
+    <path path="core/typesystemEngine/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
@@ -3624,6 +3652,7 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/runtime/classes" />
+    <path path="core/typesystemEngine/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
@@ -3748,6 +3777,7 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/runtime/classes" />
+    <path path="core/typesystemEngine/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
@@ -3878,6 +3908,7 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/runtime/classes" />
+    <path path="core/typesystemEngine/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
@@ -4009,6 +4040,7 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/runtime/classes" />
+    <path path="core/typesystemEngine/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
@@ -4147,6 +4179,7 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/runtime/classes" />
+    <path path="core/typesystemEngine/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
@@ -4268,6 +4301,7 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/runtime/classes" />
+    <path path="core/typesystemEngine/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
@@ -4388,6 +4422,7 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/runtime/classes" />
+    <path path="core/typesystemEngine/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
@@ -4509,6 +4544,7 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/runtime/classes" />
+    <path path="core/typesystemEngine/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
@@ -4628,6 +4664,7 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/runtime/classes" />
+    <path path="core/typesystemEngine/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
@@ -4750,6 +4787,7 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/runtime/classes" />
+    <path path="core/typesystemEngine/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
@@ -4869,6 +4907,7 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/runtime/classes" />
+    <path path="core/typesystemEngine/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
@@ -4989,6 +5028,7 @@
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
     <path path="core/runtime/classes" />
+    <path path="core/typesystemEngine/classes" />
     <path path="lib/annotations.jar" />
     <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
