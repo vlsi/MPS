@@ -135,9 +135,9 @@ public class GenerationRootDependencies {
     return new GenerationRootDependencies(rootId, rootName, rootHash, dependsOnConditionals, local, external, files);
   }
 
-  public static GenerationRootDependencies fromData(RootDependenciesBuilder l, List<String> generatedFiles) {
-    final Collection<SNode> localNodes = l.getDependsOn();
-    final Collection<SModelDescriptor> externalModels = l.getDependsOnModels();
+  public static GenerationRootDependencies fromData(RootDependenciesBuilder rdb, List<String> generatedFiles) {
+    final Collection<SNode> localNodes = rdb.getDependsOn();
+    final Collection<SModelDescriptor> externalModels = rdb.getDependsOnModels();
 
     List<String> local = new ArrayList<String>(localNodes.size());
     for(SNode n : localNodes) {
@@ -152,11 +152,11 @@ public class GenerationRootDependencies {
     Collections.sort(external);
     Collections.sort(generatedFiles);
 
-    final SNode originalRoot = l.getOriginalRoot();
+    final SNode originalRoot = rdb.getOriginalRoot();
     return new GenerationRootDependencies(
       originalRoot != null ? originalRoot.getId() : null,
       originalRoot != null ? originalRoot.getName() : null,
-      l.getHash(), l.isDependsOnConditionals(),
+      rdb.getHash(), rdb.isDependsOnConditionals(),
       local, external, generatedFiles);
   }
 }

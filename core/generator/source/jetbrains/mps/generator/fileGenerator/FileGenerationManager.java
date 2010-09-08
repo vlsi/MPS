@@ -15,11 +15,9 @@
  */
 package jetbrains.mps.generator.fileGenerator;
 
-import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.vfs.LocalFileSystem;
-import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.baseLanguage.textGen.BLDependenciesCache;
 import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
@@ -27,7 +25,6 @@ import jetbrains.mps.baseLanguage.textGen.RootDependencies;
 import jetbrains.mps.debug.api.info.*;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.TransientSModel;
-import jetbrains.mps.generator.fileGenerator.vcs.FileProcessor;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil.TextGenerationResult;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
@@ -90,24 +87,23 @@ public class FileGenerationManager implements ApplicationComponent {
     Set<VirtualFile> generatedCaches = generateCaches(status, cachesOutputRoot);
 
     // we have to clean garbage in both dirs simultaneously, since caches might be located in source_gen
-    processDeletion(status.getInputModel(), CollectionUtil.set(outputRoot, cachesOutputRoot),
+    performCleanup(status.getInputModel(), CollectionUtil.set(outputRoot, cachesOutputRoot),
       CollectionUtil.union(generatedFiles, generatedCaches));
 
     return true;
   }
 
-  public static void processDeletion(
-    final SModel inputModel,
-    final Set<File> outputRoots,
-    final Set<VirtualFile> generatedFiles) {
+  public static void performCleanup(final SModel inputModel,
+                                    final Set<File> outputRootDirs,
+                                    final Set<VirtualFile> generatedFiles) {
 
     Set<VirtualFile> directories = new HashSet<VirtualFile>();
     for (VirtualFile f : generatedFiles) {
       directories.add(f.getParent());
     }
-    for (File outputDir : outputRoots) {
+    for (File outputRoot : outputRootDirs) {
       directories.add(LocalFileSystem.getInstance().findFileByIoFile(
-        FileGenerationUtil.getDefaultOutputDir(inputModel, outputDir)));
+        FileGenerationUtil.getDefaultOutputDir(inputModel, outputRoot)));
     }
 
     // clear garbage
@@ -331,15 +327,7 @@ public class FileGenerationManager implements ApplicationComponent {
   }
 
   private Set<VirtualFile> generateCaches(GenerationStatus status, File outputRootDirectory) {
-    File modelOutput = FileGenerationUtil.getDefaultOutputDir(status.getInputModel(), outputRootDirectory);
-    if (!modelOutput.exists()) {
-      if (!modelOutput.mkdirs()) {
-        LOG.error("Can't create output dir");
-      }
-    }
-
     HashSet<VirtualFile> generatedCaches = new HashSet<VirtualFile>();
-
     for (CacheGenerator g : myCacheGenerators) {
       try {
         VirtualFile cache = g.generateCache(new CacheGenerationContext(status, outputRootDirectory));
