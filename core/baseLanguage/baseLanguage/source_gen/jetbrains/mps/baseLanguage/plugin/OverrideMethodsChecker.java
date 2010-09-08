@@ -22,7 +22,6 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Iterator;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -55,7 +54,7 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
     });
     this.myIndexWasNotReady = !(ClassifierSuccessorsFinder.isIndexReady(operationContext.getProject()));
     if (Sequence.fromIterable(classifiers).isEmpty() || this.myIndexWasNotReady) {
-      return Collections.emptySet();
+      return Collections.<EditorMessage>emptySet();
     }
     Set<EditorMessage> result = SetSequence.fromSet(new HashSet<EditorMessage>());
     for (SNode containedClassifier : Sequence.fromIterable(classifiers)) {
@@ -99,22 +98,13 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
   }
 
   private void collectOverridenMethods(SNode container, Set<EditorMessage> messages) {
-    List<SNode> rawDerivedClassifiers = ClassifierSuccessorsFinder.getDerivedClassifiers(container, GlobalScope.getInstance());
-    Iterable<SNode> derivedClassifiers = ListSequence.fromList(rawDerivedClassifiers).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        return SNodeOperations.as(it, "jetbrains.mps.baseLanguage.structure.Classifier");
-      }
-    }).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return (it != null);
-      }
-    });
-    if (Sequence.fromIterable(derivedClassifiers).isEmpty()) {
+    List<SNode> derivedClassifiers = ClassifierSuccessorsFinder.getDerivedClassifiers(container, GlobalScope.getInstance());
+    if (ListSequence.fromList(derivedClassifiers).isEmpty()) {
       return;
     }
     boolean isInterface = SNodeOperations.isInstanceOf(container, "jetbrains.mps.baseLanguage.structure.Interface");
     StringBuffer superClassifierTooltip = new StringBuffer();
-    if (Sequence.fromIterable(derivedClassifiers).count() > MAX_MESSAGE_NUMBER) {
+    if (ListSequence.fromList(derivedClassifiers).count() > MAX_MESSAGE_NUMBER) {
       superClassifierTooltip.append((isInterface ?
         "Has implementations" :
         "Has subclasses"
@@ -124,7 +114,7 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
         "Is implemented by" :
         "Is subclassed by"
       ));
-      for (SNode subClassifier : Sequence.fromIterable(derivedClassifiers)) {
+      for (SNode subClassifier : ListSequence.fromList(derivedClassifiers)) {
         superClassifierTooltip.append(TOOLTIP_INDENT);
         superClassifierTooltip.append(getClassifierPresentation(subClassifier));
         if (SNodeOperations.isInstanceOf(subClassifier, "jetbrains.mps.baseLanguage.structure.EnumClass")) {

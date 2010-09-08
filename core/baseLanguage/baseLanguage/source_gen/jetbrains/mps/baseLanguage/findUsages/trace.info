@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="StraightDerivedClasses_Finder.java" startLine="15" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder" />
+  <unitInfo fileName="ExactMethodUsages_Finder.java" startLine="16" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder" />
+  <unitInfo fileName="OverridingMethods_Finder.java" startLine="17" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder" />
+  <unitInfo fileName="ImplementedInterfaces_Finder.java" startLine="17" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.ImplementedInterfaces_Finder" />
+  <unitInfo fileName="ClassAncestors_Finder.java" startLine="15" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.ClassAncestors_Finder" />
+  <unitInfo fileName="DerivedClasses_Finder.java" startLine="16" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder" />
+  <unitInfo fileName="InterfaceAncestors_Finder.java" startLine="15" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder" />
+  <unitInfo fileName="DerivedInterfaces_Finder.java" startLine="16" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.DerivedInterfaces_Finder" />
+  <unitInfo fileName="InterfaceMethodImplementations_Finder.java" startLine="19" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder" />
+  <unitInfo fileName="OverridingFields_Finder.java" startLine="19" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.OverridingFields_Finder" />
+  <unitInfo fileName="BaseMethodUsages_Finder.java" startLine="17" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder" />
+  <unitInfo fileName="ParameterUsages_Finder.java" startLine="17" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.ParameterUsages_Finder" />
+  <unitInfo fileName="DerivedMethods_Finder.java" startLine="19" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder" />
+  <unitInfo fileName="ImplementingClasses_Finder.java" startLine="17" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder" />
+  <unitInfo fileName="FieldUsages_Finder.java" startLine="17" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.FieldUsages_Finder" />
+  <unitInfo fileName="AllMethodUsages_Finder.java" startLine="17" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.AllMethodUsages_Finder" />
+  <unitInfo fileName="BaseMethod_Finder.java" startLine="21" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.BaseMethod_Finder" />
+  <unitInfo fileName="ConstructorUsages_Finder.java" startLine="18" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder" />
   <root nodeId="1200309609796">
     <nodeInfo nodeId="1200425243130" fileName="OverridingMethods_Finder.java" startLine="32" startPosition="43" endLine="33" endPosition="126" />
     <nodeInfo nodeId="3165939133470356997" fileName="OverridingMethods_Finder.java" startLine="39" startPosition="96" endLine="40" endPosition="62" />
@@ -605,56 +623,44 @@
     <scopeInfo nodeId="1237738696200" fileName="ClassUsages_Finder.java" startLine="30" startPosition="102" endLine="38" endPosition="5" />
   </root>
   <root nodeId="4151347580001021181">
-    <nodeInfo nodeId="4151347580001029644" fileName="DerivedMethods_Finder.java" startLine="35" startPosition="43" endLine="36" endPosition="124" />
-    <nodeInfo nodeId="4151347580001030663" fileName="DerivedMethods_Finder.java" startLine="39" startPosition="108" endLine="40" endPosition="63" />
-    <nodeInfo nodeId="4151347580001040946" fileName="DerivedMethods_Finder.java" startLine="40" startPosition="63" endLine="41" endPosition="38" />
-    <nodeInfo nodeId="4151347580001030679" fileName="DerivedMethods_Finder.java" startLine="41" startPosition="38" endLine="42" endPosition="126" />
-    <nodeInfo nodeId="4151347580001030715" fileName="DerivedMethods_Finder.java" startLine="44" startPosition="37" endLine="45" endPosition="89" />
-    <nodeInfo nodeId="4151347580001030723" fileName="DerivedMethods_Finder.java" startLine="48" startPosition="39" endLine="49" endPosition="26" />
-    <nodeInfo nodeId="1622582681834357554" fileName="DerivedMethods_Finder.java" startLine="53" startPosition="41" endLine="54" endPosition="104" />
-    <nodeInfo nodeId="4151347580001030944" fileName="DerivedMethods_Finder.java" startLine="57" startPosition="37" endLine="58" endPosition="57" />
-    <nodeInfo nodeId="4717960406884169463" fileName="DerivedMethods_Finder.java" startLine="64" startPosition="45" endLine="65" endPosition="108" />
-    <nodeInfo nodeId="4717960406884170482" fileName="DerivedMethods_Finder.java" startLine="68" startPosition="41" endLine="69" endPosition="61" />
-    <nodeInfo nodeId="4151347580001030713" fileName="DerivedMethods_Finder.java" startLine="43" startPosition="115" endLine="47" endPosition="0" />
-    <nodeInfo nodeId="4151347580001030721" fileName="DerivedMethods_Finder.java" startLine="47" startPosition="40" endLine="51" endPosition="0" />
-    <nodeInfo nodeId="4151347580001030863" fileName="DerivedMethods_Finder.java" startLine="52" startPosition="124" endLine="56" endPosition="0" />
-    <nodeInfo nodeId="4151347580001030936" fileName="DerivedMethods_Finder.java" startLine="56" startPosition="41" endLine="60" endPosition="0" />
-    <nodeInfo nodeId="4717960406884169459" fileName="DerivedMethods_Finder.java" startLine="63" startPosition="123" endLine="67" endPosition="0" />
-    <nodeInfo nodeId="4717960406884170478" fileName="DerivedMethods_Finder.java" startLine="67" startPosition="45" endLine="71" endPosition="0" />
-    <nodeInfo nodeId="4151347580001030746" fileName="DerivedMethods_Finder.java" startLine="51" startPosition="9" endLine="60" endPosition="9" />
-    <nodeInfo nodeId="4717960406884169447" fileName="DerivedMethods_Finder.java" startLine="62" startPosition="199" endLine="71" endPosition="13" />
-    <nodeInfo nodeId="4717960406884169435" fileName="DerivedMethods_Finder.java" startLine="61" startPosition="110" endLine="72" endPosition="9" />
-    <nodeInfo nodeId="4717960406884169423" fileName="DerivedMethods_Finder.java" startLine="60" startPosition="9" endLine="73" endPosition="7" />
-    <nodeInfo nodeId="4151347580001030692" fileName="DerivedMethods_Finder.java" startLine="42" startPosition="126" endLine="74" endPosition="5" />
-    <scopeInfo nodeId="4151347580001021657" fileName="DerivedMethods_Finder.java" startLine="35" startPosition="43" endLine="36" endPosition="124" />
-    <scopeInfo nodeId="4151347580001030714" fileName="DerivedMethods_Finder.java" startLine="44" startPosition="37" endLine="45" endPosition="89" />
-    <scopeInfo nodeId="4151347580001030722" fileName="DerivedMethods_Finder.java" startLine="48" startPosition="39" endLine="49" endPosition="26" />
-    <scopeInfo nodeId="4151347580001030864" fileName="DerivedMethods_Finder.java" startLine="53" startPosition="41" endLine="54" endPosition="104" />
-    <scopeInfo nodeId="4151347580001030937" fileName="DerivedMethods_Finder.java" startLine="57" startPosition="37" endLine="58" endPosition="57" />
-    <scopeInfo nodeId="4717960406884169460" fileName="DerivedMethods_Finder.java" startLine="64" startPosition="45" endLine="65" endPosition="108" />
-    <scopeInfo nodeId="4717960406884170479" fileName="DerivedMethods_Finder.java" startLine="68" startPosition="41" endLine="69" endPosition="61" />
-    <scopeInfo nodeId="4151347580001030713" fileName="DerivedMethods_Finder.java" startLine="43" startPosition="115" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="4151347580001030721" fileName="DerivedMethods_Finder.java" startLine="47" startPosition="40" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="4151347580001030863" fileName="DerivedMethods_Finder.java" startLine="52" startPosition="124" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="4151347580001030936" fileName="DerivedMethods_Finder.java" startLine="56" startPosition="41" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="4717960406884169459" fileName="DerivedMethods_Finder.java" startLine="63" startPosition="123" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="4717960406884170478" fileName="DerivedMethods_Finder.java" startLine="67" startPosition="45" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="4717960406884169438" fileName="DerivedMethods_Finder.java" startLine="62" startPosition="199" endLine="71" endPosition="13" />
-    <scopeInfo nodeId="4717960406884169424" fileName="DerivedMethods_Finder.java" startLine="61" startPosition="110" endLine="72" endPosition="9" />
-    <scopeInfo nodeId="4717960406884169435" fileName="DerivedMethods_Finder.java" startLine="61" startPosition="110" endLine="72" endPosition="9" />
-    <scopeInfo nodeId="4151347580001030694" fileName="DerivedMethods_Finder.java" startLine="51" startPosition="9" endLine="73" endPosition="7" />
-    <scopeInfo nodeId="4151347580001030692" fileName="DerivedMethods_Finder.java" startLine="42" startPosition="126" endLine="74" endPosition="5" />
-    <scopeInfo nodeId="4151347580001021183" fileName="DerivedMethods_Finder.java" startLine="39" startPosition="108" endLine="74" endPosition="5">
+    <nodeInfo nodeId="4151347580001029644" fileName="DerivedMethods_Finder.java" startLine="34" startPosition="43" endLine="35" endPosition="124" />
+    <nodeInfo nodeId="4151347580001030663" fileName="DerivedMethods_Finder.java" startLine="38" startPosition="108" endLine="39" endPosition="63" />
+    <nodeInfo nodeId="4151347580001040946" fileName="DerivedMethods_Finder.java" startLine="39" startPosition="63" endLine="40" endPosition="38" />
+    <nodeInfo nodeId="1622582681834357554" fileName="DerivedMethods_Finder.java" startLine="43" startPosition="41" endLine="44" endPosition="104" />
+    <nodeInfo nodeId="4151347580001030944" fileName="DerivedMethods_Finder.java" startLine="47" startPosition="37" endLine="48" endPosition="57" />
+    <nodeInfo nodeId="4717960406884169463" fileName="DerivedMethods_Finder.java" startLine="54" startPosition="45" endLine="55" endPosition="108" />
+    <nodeInfo nodeId="4717960406884170482" fileName="DerivedMethods_Finder.java" startLine="58" startPosition="41" endLine="59" endPosition="61" />
+    <nodeInfo nodeId="4151347580001030863" fileName="DerivedMethods_Finder.java" startLine="42" startPosition="124" endLine="46" endPosition="0" />
+    <nodeInfo nodeId="4151347580001030936" fileName="DerivedMethods_Finder.java" startLine="46" startPosition="41" endLine="50" endPosition="0" />
+    <nodeInfo nodeId="4717960406884169459" fileName="DerivedMethods_Finder.java" startLine="53" startPosition="123" endLine="57" endPosition="0" />
+    <nodeInfo nodeId="4717960406884170478" fileName="DerivedMethods_Finder.java" startLine="57" startPosition="45" endLine="61" endPosition="0" />
+    <nodeInfo nodeId="4151347580001030746" fileName="DerivedMethods_Finder.java" startLine="41" startPosition="128" endLine="50" endPosition="9" />
+    <nodeInfo nodeId="4717960406884169447" fileName="DerivedMethods_Finder.java" startLine="52" startPosition="199" endLine="61" endPosition="13" />
+    <nodeInfo nodeId="4717960406884169435" fileName="DerivedMethods_Finder.java" startLine="51" startPosition="110" endLine="62" endPosition="9" />
+    <nodeInfo nodeId="4717960406884169423" fileName="DerivedMethods_Finder.java" startLine="50" startPosition="9" endLine="63" endPosition="7" />
+    <nodeInfo nodeId="4151347580001030692" fileName="DerivedMethods_Finder.java" startLine="40" startPosition="38" endLine="64" endPosition="5" />
+    <scopeInfo nodeId="4151347580001021657" fileName="DerivedMethods_Finder.java" startLine="34" startPosition="43" endLine="35" endPosition="124" />
+    <scopeInfo nodeId="4151347580001030864" fileName="DerivedMethods_Finder.java" startLine="43" startPosition="41" endLine="44" endPosition="104" />
+    <scopeInfo nodeId="4151347580001030937" fileName="DerivedMethods_Finder.java" startLine="47" startPosition="37" endLine="48" endPosition="57" />
+    <scopeInfo nodeId="4717960406884169460" fileName="DerivedMethods_Finder.java" startLine="54" startPosition="45" endLine="55" endPosition="108" />
+    <scopeInfo nodeId="4717960406884170479" fileName="DerivedMethods_Finder.java" startLine="58" startPosition="41" endLine="59" endPosition="61" />
+    <scopeInfo nodeId="4151347580001030863" fileName="DerivedMethods_Finder.java" startLine="42" startPosition="124" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="4151347580001030936" fileName="DerivedMethods_Finder.java" startLine="46" startPosition="41" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="4717960406884169459" fileName="DerivedMethods_Finder.java" startLine="53" startPosition="123" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="4717960406884170478" fileName="DerivedMethods_Finder.java" startLine="57" startPosition="45" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="4717960406884169438" fileName="DerivedMethods_Finder.java" startLine="52" startPosition="199" endLine="61" endPosition="13" />
+    <scopeInfo nodeId="4717960406884169424" fileName="DerivedMethods_Finder.java" startLine="51" startPosition="110" endLine="62" endPosition="9" />
+    <scopeInfo nodeId="4717960406884169435" fileName="DerivedMethods_Finder.java" startLine="51" startPosition="110" endLine="62" endPosition="9" />
+    <scopeInfo nodeId="4151347580001030694" fileName="DerivedMethods_Finder.java" startLine="41" startPosition="128" endLine="63" endPosition="7" />
+    <scopeInfo nodeId="4151347580001030692" fileName="DerivedMethods_Finder.java" startLine="40" startPosition="38" endLine="64" endPosition="5" />
+    <scopeInfo nodeId="4151347580001021183" fileName="DerivedMethods_Finder.java" startLine="38" startPosition="108" endLine="64" endPosition="5">
       <varInfo nodeId="4151347580001040947" varName="instanceMethod" />
-      <varInfo nodeId="4151347580001030680" varName="derivedClassifiers" />
       <varInfo nodeId="4151347580001030664" varName="classifier" />
     </scopeInfo>
-    <unitInfo nodeId="4151347580001030713" fileName="DerivedMethods_Finder.java" startLine="43" startPosition="88" endLine="47" endPosition="5" unitName="jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder$5" />
-    <unitInfo nodeId="4151347580001030721" fileName="DerivedMethods_Finder.java" startLine="47" startPosition="17" endLine="51" endPosition="5" unitName="jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder$6" />
-    <unitInfo nodeId="4151347580001030863" fileName="DerivedMethods_Finder.java" startLine="52" startPosition="101" endLine="56" endPosition="7" unitName="jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder$1" />
-    <unitInfo nodeId="4151347580001030936" fileName="DerivedMethods_Finder.java" startLine="56" startPosition="22" endLine="60" endPosition="7" unitName="jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder$2" />
-    <unitInfo nodeId="4717960406884169459" fileName="DerivedMethods_Finder.java" startLine="63" startPosition="100" endLine="67" endPosition="11" unitName="jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder$3" />
-    <unitInfo nodeId="4717960406884170478" fileName="DerivedMethods_Finder.java" startLine="67" startPosition="26" endLine="71" endPosition="11" unitName="jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder$4" />
+    <unitInfo nodeId="4151347580001030863" fileName="DerivedMethods_Finder.java" startLine="42" startPosition="101" endLine="46" endPosition="7" unitName="jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder$1" />
+    <unitInfo nodeId="4151347580001030936" fileName="DerivedMethods_Finder.java" startLine="46" startPosition="22" endLine="50" endPosition="7" unitName="jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder$2" />
+    <unitInfo nodeId="4717960406884169459" fileName="DerivedMethods_Finder.java" startLine="53" startPosition="100" endLine="57" endPosition="11" unitName="jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder$3" />
+    <unitInfo nodeId="4717960406884170478" fileName="DerivedMethods_Finder.java" startLine="57" startPosition="26" endLine="61" endPosition="11" unitName="jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder$4" />
   </root>
 </debugInfo>
 
