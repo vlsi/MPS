@@ -611,6 +611,18 @@
     <nodeInfo nodeId="1239714982018" fileName="AbstractUnaryNumberOperation_DataFlow.java" startLine="16" startPosition="107" endLine="17" endPosition="36" />
     <scopeInfo nodeId="1239714962886" fileName="AbstractUnaryNumberOperation_DataFlow.java" startLine="15" startPosition="102" endLine="17" endPosition="36" />
   </root>
+  <root nodeId="5730083271929368106">
+    <nodeInfo nodeId="5730083271929368119" fileName="RuleAssertNull.java" startLine="98" startPosition="7" endLine="99" endPosition="25" />
+    <nodeInfo nodeId="5730083271929368119" fileName="RuleAssertNull.java" startLine="99" startPosition="25" endLine="100" endPosition="68" />
+    <nodeInfo nodeId="5730083271929368119" fileName="RuleAssertNull.java" startLine="101" startPosition="45" endLine="102" endPosition="52" />
+    <nodeInfo nodeId="5730083271929368119" fileName="RuleAssertNull.java" startLine="102" startPosition="52" endLine="103" endPosition="98" />
+    <nodeInfo nodeId="5730083271929368119" fileName="RuleAssertNull.java" startLine="103" startPosition="98" endLine="104" endPosition="77" />
+    <nodeInfo nodeId="5730083271929368119" fileName="RuleAssertNull.java" startLine="104" startPosition="77" endLine="105" endPosition="62" />
+    <nodeInfo nodeId="5730083271929368119" fileName="RuleAssertNull.java" startLine="100" startPosition="68" endLine="106" endPosition="9" />
+    <nodeInfo nodeId="5730083271929368119" fileName="RuleAssertNull.java" startLine="97" startPosition="42" endLine="107" endPosition="7" />
+    <scopeInfo nodeId="5730083271929368119" fileName="RuleAssertNull.java" startLine="101" startPosition="45" endLine="105" endPosition="62" />
+    <scopeInfo nodeId="5730083271929368119" fileName="RuleAssertNull.java" startLine="98" startPosition="7" endLine="106" endPosition="9" />
+  </root>
   <root nodeId="6023428257643051553">
     <nodeInfo nodeId="6023428257643052113" fileName="AsExpression_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" />
     <scopeInfo nodeId="6023428257643051555" fileName="AsExpression_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" />

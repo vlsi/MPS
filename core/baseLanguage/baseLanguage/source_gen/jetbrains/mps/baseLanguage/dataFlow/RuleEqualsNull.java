@@ -207,7 +207,11 @@ public class RuleEqualsNull extends DataFlowConstructor {
             }
             {
               SNode childVar_vwsftd_a0a0a0a = nodeToMatch_vwsftd_a0a0a0.getChildren(childRole_vwsftd__1).get(0);
-              this.PatternVar_p = childVar_vwsftd_a0a0a0a;
+              {
+                SNode nodeToMatch_vwsftd_a0a0a0a;
+                nodeToMatch_vwsftd_a0a0a0a = childVar_vwsftd_a0a0a0a;
+                PatternVar_p = nodeToMatch_vwsftd_a0a0a0a;
+              }
             }
           }
           {
@@ -218,9 +222,9 @@ public class RuleEqualsNull extends DataFlowConstructor {
             {
               SNode childVar_vwsftd_a0a0a0a_0 = nodeToMatch_vwsftd_a0a0a0.getChildren(childRole_vwsftd__2).get(0);
               {
-                SNode nodeToMatch_vwsftd_a0a0a0a;
-                nodeToMatch_vwsftd_a0a0a0a = childVar_vwsftd_a0a0a0a_0;
-                if (!("jetbrains.mps.baseLanguage.structure.NullLiteral".equals(nodeToMatch_vwsftd_a0a0a0a.getConceptFqName()))) {
+                SNode nodeToMatch_vwsftd_a0a0a0a_0;
+                nodeToMatch_vwsftd_a0a0a0a_0 = childVar_vwsftd_a0a0a0a_0;
+                if (!("jetbrains.mps.baseLanguage.structure.NullLiteral".equals(nodeToMatch_vwsftd_a0a0a0a_0.getConceptFqName()))) {
                   return false;
                 }
               }
@@ -287,7 +291,11 @@ public class RuleEqualsNull extends DataFlowConstructor {
             }
             {
               SNode childVar_vwsftd_a0b0a0a_0 = nodeToMatch_vwsftd_a1a0a0.getChildren(childRole_vwsftd__4).get(0);
-              this.PatternVar_p = childVar_vwsftd_a0b0a0a_0;
+              {
+                SNode nodeToMatch_vwsftd_a0b0a0a_0;
+                nodeToMatch_vwsftd_a0b0a0a_0 = childVar_vwsftd_a0b0a0a_0;
+                PatternVar_p = nodeToMatch_vwsftd_a0b0a0a_0;
+              }
             }
           }
         }
