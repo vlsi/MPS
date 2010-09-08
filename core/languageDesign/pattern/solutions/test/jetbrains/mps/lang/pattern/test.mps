@@ -365,9 +365,6 @@
           <node role="variable:0" type="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration:0" id="5642650895629225735">
             <property name="varName:0" value="ds" />
           </node>
-          <node role="variable:0" type="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration:0" id="5642650895629225736">
-            <property name="varName:0" value="dfdf" />
-          </node>
           <node role="clause:0" type="jetbrains.mps.lang.pattern.structure.OrPatternClause:0" id="4855904478356985692">
             <node role="patternNode:0" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="7447026300559943984">
               <node role="leftExpression:3" type="jetbrains.mps.lang.pattern.structure.OrPatternVariableReference:0" id="7447026300559948863">

@@ -273,6 +273,9 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
         }
 
         public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
+          if (pattern != null && pattern.getClass() == this.getClass()) {
+            this.PatternVar_s = (SNode) pattern.getFieldValue("PatternVar_s");
+          }
         }
 
         public Object getFieldValue(String fieldName) {
@@ -338,6 +341,9 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
         }
 
         public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
+          if (pattern != null && pattern.getClass() == this.getClass()) {
+            this.PatternVar_s = (SNode) pattern.getFieldValue("PatternVar_s");
+          }
         }
 
         public Object getFieldValue(String fieldName) {
@@ -428,6 +434,9 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
         }
 
         public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
+          if (pattern != null && pattern.getClass() == this.getClass()) {
+            this.PatternVar_s = (SNode) pattern.getFieldValue("PatternVar_s");
+          }
         }
 
         public Object getFieldValue(String fieldName) {
@@ -518,6 +527,9 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
         }
 
         public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
+          if (pattern != null && pattern.getClass() == this.getClass()) {
+            this.PatternVar_s = (SNode) pattern.getFieldValue("PatternVar_s");
+          }
         }
 
         public Object getFieldValue(String fieldName) {
