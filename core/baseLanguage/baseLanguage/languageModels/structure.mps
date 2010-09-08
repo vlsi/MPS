@@ -2175,6 +2175,9 @@
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1244292059682911434">
       <link role="intfc:0" targetNodeId="1238805530342:3" resolveInfo="ILocalVariableElementList" />
     </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1234682635114938392">
+      <link role="intfc:0" targetNodeId="4.201537367881071930:0" resolveInfo="IMetaLevelChanger" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1177666668936">
     <property name="name:0" value="DoWhileStatement" />

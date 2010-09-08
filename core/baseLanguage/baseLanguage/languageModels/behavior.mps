@@ -21426,6 +21426,20 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="5412515780383209311" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5412515780383209312" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1234682635114938387">
+      <property name="name" value="getMetaLevelChange" />
+      <link role="overriddenMethod" targetNodeId="20.201537367881074474" resolveInfo="getMetaLevelChange" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1234682635114938390">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1234682635114938395">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1234682635114938396">
+            <link role="classifier:3" targetNodeId="2.~Integer" resolveInfo="Integer" />
+            <link role="variableDeclaration:3" targetNodeId="2.~Integer.MAX_VALUE" resolveInfo="MAX_VALUE" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1234682635114938393" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1234682635114938394" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="4581730695772276352">
     <link role="concept" targetNodeId="1.6329021646629104955:3" resolveInfo="CommentPart" />
