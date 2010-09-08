@@ -24,6 +24,10 @@ public class CachingPrintStream extends PrintStream implements Output {
     this.LS_BYTES = System.getProperty("line.separator").getBytes().length;
   }
 
+  public PrintStream getOut () {
+    return (PrintStream) out;
+  }
+
   public void startCaching () {
     if (caching) throw new IllegalStateException("Already caching");
     this.caching = true;

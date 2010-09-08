@@ -30,8 +30,6 @@ public class WatchingRunNotifier extends DelegatingRunNotifier {
     };
 
   private Level oldLevel;
-  private PrintStream stdOut;
-  private PrintStream stdErr;
   private CachingPrintStream cacheOut;
   private CachingPrintStream cacheErr;
   private CachingAppender app;
@@ -39,21 +37,27 @@ public class WatchingRunNotifier extends DelegatingRunNotifier {
 
   public WatchingRunNotifier(RunNotifier delegate) {
     super(delegate);
-    init();
   }
 
-  private void init () {
-    this.stdOut = System.out;
-    this.stdErr = System.err;
-    this.cacheOut = new CachingPrintStream(System.out, "output");
-    this.cacheErr = new CachingPrintStream(System.err, "error");
-    System.setOut(cacheOut);
-    System.setErr(cacheErr);
+  public void dispose () {
   }
 
-  public void dispose() {
-    System.setOut(stdOut);
-    System.setErr(stdErr);
+  private void initCaches () {
+    System.setOut(this.cacheOut = new CachingPrintStream(System.out, "output"));
+    System.setErr(this.cacheErr = new CachingPrintStream(System.err, "error"));
+    cacheOut.clear();
+    cacheOut.startCaching();
+    cacheErr.clear();
+    cacheErr.startCaching();
+  }
+
+  private void disposeCaches() {
+    cacheOut.flush();
+    cacheOut.stopCaching();
+    System.setOut(cacheOut.getOut());
+    cacheErr.flush();
+    cacheErr.stopCaching();
+    System.setErr(cacheErr.getOut());
   }
 
   @Override
@@ -100,10 +104,7 @@ public class WatchingRunNotifier extends DelegatingRunNotifier {
     this.oldLevel = Logger.getRootLogger().getLevel();
     Logger.getRootLogger().setLevel(WATCH_LEVEL);
 
-    cacheOut.clear();
-    cacheOut.startCaching();
-    cacheErr.clear();
-    cacheErr.startCaching();
+    initCaches();
 
     app = new CachingAppender();
     Logger.getRootLogger().addAppender(app);
@@ -114,10 +115,7 @@ public class WatchingRunNotifier extends DelegatingRunNotifier {
   }
 
   private void afterTest (Description desc) {
-    cacheOut.flush();
-    cacheOut.stopCaching();
-    cacheErr.flush();
-    cacheErr.stopCaching();
+    disposeCaches();
 
     Logger.getRootLogger().removeAppender(app);
     Logger.getRootLogger().setLevel(oldLevel);
