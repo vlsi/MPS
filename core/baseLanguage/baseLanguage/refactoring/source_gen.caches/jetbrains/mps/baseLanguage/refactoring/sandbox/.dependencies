@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.baseLanguage.refactoring.sandbox.FooClass" file="FooClass.java" />
+  <dependency className="jetbrains.mps.baseLanguage.refactoring.sandbox.FooEnum" file="FooEnum.java" />
+  <dependency className="jetbrains.mps.baseLanguage.refactoring.sandbox.Intfc" file="Intfc.java" />
+</dependenciesRoot>
+
