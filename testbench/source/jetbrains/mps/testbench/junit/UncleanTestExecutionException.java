@@ -18,12 +18,14 @@ public class UncleanTestExecutionException extends Exception {
 
   private static String fooToMessage (Output... foo) {
     StringBuilder sb = new StringBuilder();
+    sb.append("\n---8<---------");
     for (Output f:foo) {
       if (f.isNotEmpty()) {
         sb.append("\n[").append(f.getDescription()).append("]\n");
         sb.append(f.getText());
       }
     }
+    sb.append("--------->8---");
     return sb.toString();
   }
 }

@@ -2,6 +2,7 @@ package jetbrains.mps.testbench.junit;
 
 import jetbrains.mps.testbench.util.CachingAppender;
 import jetbrains.mps.testbench.util.CachingPrintStream;
+import jetbrains.mps.testbench.util.ThreadWatcher;
 import jetbrains.mps.util.misc.hash.HashMap;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -34,6 +35,7 @@ public class WatchingRunNotifier extends DelegatingRunNotifier {
   private CachingPrintStream cacheErr;
   private CachingAppender app;
   private Map<Description, Object> testsToIgnore = new HashMap<Description, Object>();
+  private ThreadWatcher threadWatcher;
 
   public WatchingRunNotifier(RunNotifier delegate) {
     super(delegate);
@@ -43,6 +45,8 @@ public class WatchingRunNotifier extends DelegatingRunNotifier {
   }
 
   private void initCaches () {
+    System.out.flush();
+    System.err.flush();
     System.setOut(this.cacheOut = new CachingPrintStream(System.out, "output"));
     System.setErr(this.cacheErr = new CachingPrintStream(System.err, "error"));
     cacheOut.clear();
@@ -112,17 +116,21 @@ public class WatchingRunNotifier extends DelegatingRunNotifier {
     for (com.intellij.openapi.diagnostic.Logger ignore: IGNORED_LOGGERS) {
       ignore.setLevel(Level.FATAL);
     }
+
+    this.threadWatcher = new ThreadWatcher();
   }
 
   private void afterTest (Description desc) {
+    threadWatcher.waitUntilSettled(5000);
+    
     disposeCaches();
 
     Logger.getRootLogger().removeAppender(app);
     Logger.getRootLogger().setLevel(oldLevel);
 
     Failure fail = null;
-    if (!testsToIgnore.containsKey(desc) && (cacheOut.isNotEmpty()|| cacheErr.isNotEmpty()||app.isNotEmpty())) {
-      fail = new Failure(desc, new UncleanTestExecutionException(cacheOut, cacheErr, app));
+    if (!testsToIgnore.containsKey(desc) && (cacheOut.isNotEmpty()|| cacheErr.isNotEmpty()||app.isNotEmpty()||threadWatcher.isNotEmpty())) {
+      fail = new Failure(desc, new UncleanTestExecutionException(cacheOut, cacheErr, app, threadWatcher));
     }
     cacheOut.clear();
     cacheErr.clear();
