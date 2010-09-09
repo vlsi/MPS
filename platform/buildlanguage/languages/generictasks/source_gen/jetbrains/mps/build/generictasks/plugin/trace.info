@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="Generictasks_ProjectPlugin.java" startLine="7" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.build.generictasks.plugin.Generictasks_ProjectPlugin" />
+  <unitInfo fileName="Generictasks_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.build.generictasks.plugin.Generictasks_ApplicationPlugin" />
+  <unitInfo fileName="ProjectPaneLanguageAddition_ActionGroup.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.build.generictasks.plugin.ProjectPaneLanguageAddition_ActionGroup" />
+  <unitInfo fileName="ImportAntStuff_Action.java" startLine="16" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.build.generictasks.plugin.ImportAntStuff_Action" />
   <root nodeId="353793545803155581">
     <nodeInfo nodeId="353793545803155644" fileName="ImportAntStuff_Action.java" startLine="19" startPosition="0" endLine="20" endPosition="25" />
     <nodeInfo nodeId="353793545803155647" fileName="ImportAntStuff_Action.java" startLine="33" startPosition="52" endLine="34" endPosition="169" />

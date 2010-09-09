@@ -132,7 +132,7 @@
               <link role="baseMethodDeclaration:3" targetNodeId="4.~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolveInfo="instance" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2307546287432038924">
-              <link role="baseMethodDeclaration:3" targetNodeId="4.~ModelAccess.runReadAction(com.intellij.openapi.util.Computable):java.lang.Object" resolveInfo="runReadAction" />
+              <link role="baseMethodDeclaration:3" targetNodeId="4.~ModelCommandExecutor.runReadAction(com.intellij.openapi.util.Computable):java.lang.Object" resolveInfo="runReadAction" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2307546287432038925">
                 <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="2307546287432038926">
                   <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="2307546287432038927">
@@ -3301,7 +3301,7 @@
                     <link role="classConcept:3" targetNodeId="4.~ModelAccess" resolveInfo="ModelAccess" />
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1240327558082">
-                    <link role="baseMethodDeclaration:3" targetNodeId="4.~ModelAccess.runReadAction(com.intellij.openapi.util.Computable):java.lang.Object" resolveInfo="runReadAction" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="4.~ModelCommandExecutor.runReadAction(com.intellij.openapi.util.Computable):java.lang.Object" resolveInfo="runReadAction" />
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1240327559527">
                       <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="1240327566448">
                         <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="1240327566449">
@@ -3657,7 +3657,7 @@
               <link role="classConcept:3" targetNodeId="4.~ModelAccess" resolveInfo="ModelAccess" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1240326901981">
-              <link role="baseMethodDeclaration:3" targetNodeId="4.~ModelAccess.runWriteAction(com.intellij.openapi.util.Computable):java.lang.Object" resolveInfo="runWriteAction" />
+              <link role="baseMethodDeclaration:3" targetNodeId="4.~ModelCommandExecutor.runWriteAction(com.intellij.openapi.util.Computable):java.lang.Object" resolveInfo="runWriteAction" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1240326903841">
                 <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="1240326909622">
                   <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="1240326909623">
@@ -9150,7 +9150,7 @@
               <link role="baseMethodDeclaration:3" targetNodeId="4.~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolveInfo="instance" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1224001891601">
-              <link role="baseMethodDeclaration:3" targetNodeId="4.~ModelAccess.runReadAction(com.intellij.openapi.util.Computable):java.lang.Object" resolveInfo="runReadAction" />
+              <link role="baseMethodDeclaration:3" targetNodeId="4.~ModelCommandExecutor.runReadAction(com.intellij.openapi.util.Computable):java.lang.Object" resolveInfo="runReadAction" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1224001891602">
                 <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="1224001891603">
                   <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="1224001891604">
@@ -11330,7 +11330,7 @@
                       <link role="classConcept:3" targetNodeId="4.~ModelAccess" resolveInfo="ModelAccess" />
                     </node>
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1224163112028">
-                      <link role="baseMethodDeclaration:3" targetNodeId="4.~ModelAccess.runReadAction(com.intellij.openapi.util.Computable):java.lang.Object" resolveInfo="runReadAction" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="4.~ModelCommandExecutor.runReadAction(com.intellij.openapi.util.Computable):java.lang.Object" resolveInfo="runReadAction" />
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1224163112029">
                         <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="1224163112030">
                           <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="1224163112031">
@@ -11688,7 +11688,7 @@
                 <link role="classConcept:3" targetNodeId="4.~ModelAccess" resolveInfo="ModelAccess" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1224851586131">
-                <link role="baseMethodDeclaration:3" targetNodeId="4.~ModelAccess.runReadAction(com.intellij.openapi.util.Computable):java.lang.Object" resolveInfo="runReadAction" />
+                <link role="baseMethodDeclaration:3" targetNodeId="4.~ModelCommandExecutor.runReadAction(com.intellij.openapi.util.Computable):java.lang.Object" resolveInfo="runReadAction" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1224851586132">
                   <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="1224851586133">
                     <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="1224851586134">

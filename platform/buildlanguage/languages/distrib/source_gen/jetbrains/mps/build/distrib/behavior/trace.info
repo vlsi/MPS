@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="StringCommandLinePart_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.distrib.behavior.StringCommandLinePart_Behavior" />
   <unitInfo fileName="SimplePath_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.distrib.behavior.SimplePath_Behavior" />
   <unitInfo fileName="DigitalSignatureWindowsConfiguration_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.build.distrib.behavior.DigitalSignatureWindowsConfiguration_Behavior" />
   <unitInfo fileName="ArtifactReferenceCommandLinePart_Behavior.java" startLine="7" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.build.distrib.behavior.ArtifactReferenceCommandLinePart_Behavior" />
   <unitInfo fileName="UnixConfig_Behavior.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.build.distrib.behavior.UnixConfig_Behavior" />
   <unitInfo fileName="PathCommantLinePart_Behavior.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.build.distrib.behavior.PathCommantLinePart_Behavior" />
+  <unitInfo fileName="AbstractCommandLinePart_Behavior.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.build.distrib.behavior.AbstractCommandLinePart_Behavior" />
   <unitInfo fileName="AbstractPath_Behavior.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.build.distrib.behavior.AbstractPath_Behavior" />
   <unitInfo fileName="ExternalVariableReference_Behavior.java" startLine="10" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.build.distrib.behavior.ExternalVariableReference_Behavior" />
   <unitInfo fileName="UniversalConfig_Behavior.java" startLine="11" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.build.distrib.behavior.UniversalConfig_Behavior" />

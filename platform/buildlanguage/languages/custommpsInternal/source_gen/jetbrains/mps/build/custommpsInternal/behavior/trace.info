@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="UndeclaredVariableReference_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.custommpsInternal.behavior.UndeclaredVariableReference_Behavior" />
+  <unitInfo fileName="MPSModule_Behavior.java" startLine="16" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.build.custommpsInternal.behavior.MPSModule_Behavior" />
+  <unitInfo fileName="IfProjectComponent_Behavior.java" startLine="14" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.build.custommpsInternal.behavior.IfProjectComponent_Behavior" />
   <root nodeId="1240033962873">
     <nodeInfo nodeId="1240033962877" fileName="MPSModule_Behavior.java" startLine="20" startPosition="71" endLine="21" endPosition="76" />
     <nodeInfo nodeId="1240033962885" fileName="MPSModule_Behavior.java" startLine="22" startPosition="25" endLine="23" endPosition="33" />

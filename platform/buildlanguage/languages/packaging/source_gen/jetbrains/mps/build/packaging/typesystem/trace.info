@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.build.packaging.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="NonEmptyFolderName_NonTypesystemRule.java" startLine="16" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.build.packaging.typesystem.NonEmptyFolderName_NonTypesystemRule" />
+  <unitInfo fileName="NonEmptyFileName_NonTypesystemRule.java" startLine="16" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.build.packaging.typesystem.NonEmptyFileName_NonTypesystemRule" />
+  <unitInfo fileName="NonEmptyArchiveName_NonTypesystemRule.java" startLine="16" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.build.packaging.typesystem.NonEmptyArchiveName_NonTypesystemRule" />
+  <unitInfo fileName="NotExisingModule_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.build.packaging.typesystem.NotExisingModule_NonTypesystemRule" />
+  <unitInfo fileName="DuplicateModule_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.build.packaging.typesystem.DuplicateModule_NonTypesystemRule" />
   <root nodeId="1205349754730">
     <nodeInfo nodeId="1205349830527" fileName="NonEmptyArchiveName_NonTypesystemRule.java" startLine="22" startPosition="7" endLine="23" endPosition="55" />
     <nodeInfo nodeId="1205349830527" fileName="NonEmptyArchiveName_NonTypesystemRule.java" startLine="23" startPosition="55" endLine="24" endPosition="57" />

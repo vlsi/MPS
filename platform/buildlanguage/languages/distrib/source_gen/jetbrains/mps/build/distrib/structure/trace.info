@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Distrib_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.distrib.structure.Distrib_Language" />
+  <unitInfo fileName="UnixConfig.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.build.distrib.structure.UnixConfig" />
+  <unitInfo fileName="ArtifactReferenceCommandLinePart.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.build.distrib.structure.ArtifactReferenceCommandLinePart" />
   <unitInfo fileName="UniversalConfig.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.build.distrib.structure.UniversalConfig" />
+  <unitInfo fileName="AbstractCommandLinePart.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.build.distrib.structure.AbstractCommandLinePart" />
   <unitInfo fileName="AbstractPath.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.build.distrib.structure.AbstractPath" />
   <unitInfo fileName="SystemSpecificConfig.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.build.distrib.structure.SystemSpecificConfig" />
+  <unitInfo fileName="MacOsFileAssociation.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.build.distrib.structure.MacOsFileAssociation" />
+  <unitInfo fileName="StringCommandLinePart.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.build.distrib.structure.StringCommandLinePart" />
   <unitInfo fileName="SimplePath.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.build.distrib.structure.SimplePath" />
   <unitInfo fileName="PathCommantLinePart.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.build.distrib.structure.PathCommantLinePart" />
   <unitInfo fileName="ClassPath.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.build.distrib.structure.ClassPath" />

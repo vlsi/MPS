@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="Packaging_ProjectPlugin.java" startLine="7" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.Packaging_ProjectPlugin" />
+  <unitInfo fileName="DefaultPackagingLanguageApplication_Editor.java" startLine="27" startPosition="47" endLine="31" endPosition="7" unitName="jetbrains.mps.build.packaging.plugin.DefaultPackagingLanguageApplication_Editor$3" />
+  <unitInfo fileName="DefaultPackagingLanguageApplication_Configuration.java" startLine="146" startPosition="42" endLine="150" endPosition="13" unitName="jetbrains.mps.build.packaging.plugin.DefaultPackagingLanguageApplication_Configuration$3" />
+  <unitInfo fileName="DefaultPackagingLanguageApplication_Configuration.java" startLine="255" startPosition="45" endLine="259" endPosition="5" unitName="jetbrains.mps.build.packaging.plugin.DefaultPackagingLanguageApplication_Configuration$4" />
+  <unitInfo fileName="DefaultPackagingLanguageApplication_Configuration.java" startLine="284" startPosition="66" endLine="288" endPosition="7" unitName="jetbrains.mps.build.packaging.plugin.DefaultPackagingLanguageApplication_Configuration$6" />
+  <unitInfo fileName="DefaultPackagingLanguageApplication_Configuration.java" startLine="269" startPosition="45" endLine="274" endPosition="5" unitName="jetbrains.mps.build.packaging.plugin.DefaultPackagingLanguageApplication_Configuration$5" />
+  <unitInfo fileName="DefaultPackagingLanguageApplication_Configuration.java" startLine="135" startPosition="90" endLine="142" endPosition="13" unitName="jetbrains.mps.build.packaging.plugin.DefaultPackagingLanguageApplication_Configuration$3" />
+  <unitInfo fileName="ForeignConfigurations.java" startLine="16" startPosition="140" endLine="24" endPosition="5" unitName="jetbrains.mps.build.packaging.plugin.ForeignConfigurations$1" />
+  <unitInfo fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="26" startPosition="108" endLine="34" endPosition="5" unitName="jetbrains.mps.build.packaging.plugin.DefaultPackagingLanguageConfigurationFromConfiguration$1" />
+  <unitInfo fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="27" startPosition="108" endLine="35" endPosition="5" unitName="jetbrains.mps.build.packaging.plugin.DefaultPackagingLanguageConfigurationFromMPSLayout$1" />
+  <unitInfo fileName="DefaultPackagingLanguageApplication_Editor.java" startLine="58" startPosition="40" endLine="66" endPosition="7" unitName="jetbrains.mps.build.packaging.plugin.DefaultPackagingLanguageApplication_Editor$1" />
+  <unitInfo fileName="DefaultPackagingLanguageApplication_Editor.java" startLine="24" startPosition="74" endLine="34" endPosition="3" unitName="jetbrains.mps.build.packaging.plugin.DefaultPackagingLanguageApplication_Editor$2" />
+  <unitInfo fileName="DefaultPackagingLanguageApplication_Configuration.java" startLine="293" startPosition="35" endLine="303" endPosition="9" unitName="jetbrains.mps.build.packaging.plugin.DefaultPackagingLanguageApplication_Configuration$7" />
+  <unitInfo fileName="DefaultPackagingLanguageApplication_Factory.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.DefaultPackagingLanguageApplication_Factory" />
+  <unitInfo fileName="DefaultPackagingLanguageApplication_Editor.java" startLine="34" startPosition="18" endLine="49" endPosition="3" unitName="jetbrains.mps.build.packaging.plugin.DefaultPackagingLanguageApplication_Editor$3" />
+  <unitInfo fileName="Packaging_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.Packaging_ApplicationPlugin" />
+  <unitInfo fileName="ForeignConfigurations.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.ForeignConfigurations" />
+  <unitInfo fileName="DefaultPackagingLanguageApplication_Configuration.java" startLine="360" startPosition="0" endLine="377" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.DefaultPackagingLanguageApplication_Configuration$MyState" />
+  <unitInfo fileName="ProjectPaneModelAddition_ActionGroup.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.ProjectPaneModelAddition_ActionGroup" />
+  <unitInfo fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.ProjectPaneProjectAddition_ActionGroup" />
+  <unitInfo fileName="DefaultPackagingLanguageApplication_Configuration.java" startLine="378" startPosition="0" endLine="401" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.DefaultPackagingLanguageApplication_Configuration$MyExecutionResult" />
+  <unitInfo fileName="DefaultPackagingLanguageApplication_Configuration.java" startLine="402" startPosition="0" endLine="427" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.DefaultPackagingLanguageApplication_Configuration$MyExecutionConsole" />
+  <unitInfo fileName="DefaultPackagingLanguageApplication_Configuration.java" startLine="154" startPosition="52" endLine="185" endPosition="13" unitName="jetbrains.mps.build.packaging.plugin.DefaultPackagingLanguageApplication_Configuration$3" />
+  <unitInfo fileName="DefaultPackagingLanguageApplication_Configuration.java" startLine="314" startPosition="0" endLine="359" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.DefaultPackagingLanguageApplication_Configuration$MySettingsEditor" />
+  <unitInfo fileName="GenerateBuildForProjectAction_Action.java" startLine="16" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.GenerateBuildForProjectAction_Action" />
+  <unitInfo fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="22" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.DefaultPackagingLanguageConfigurationFromConfiguration" />
+  <unitInfo fileName="DefaultPackagingLanguageApplication_Editor.java" startLine="21" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.DefaultPackagingLanguageApplication_Editor" />
+  <unitInfo fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="23" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.DefaultPackagingLanguageConfigurationFromMPSLayout" />
+  <unitInfo fileName="GenerateMPSBuildAction_Action.java" startLine="21" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.GenerateMPSBuildAction_Action" />
+  <unitInfo fileName="DefaultPackagingLanguageApplication_Configuration.java" startLine="118" startPosition="15" endLine="212" endPosition="5" unitName="jetbrains.mps.build.packaging.plugin.DefaultPackagingLanguageApplication_Configuration$2" />
+  <unitInfo fileName="DefaultPackagingLanguageApplication_Configuration.java" startLine="59" startPosition="0" endLine="428" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.DefaultPackagingLanguageApplication_Configuration" />
   <root nodeId="1218726094600">
     <nodeInfo nodeId="1218726094602" fileName="ProjectPaneModelAddition_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="161" />
   </root>
@@ -1955,6 +1986,7 @@
     <scopeInfo nodeId="1325286122618176637" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="50" startPosition="32" endLine="51" endPosition="13" />
     <scopeInfo nodeId="1325286122618219126" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="56" startPosition="25" endLine="57" endPosition="119" />
     <scopeInfo nodeId="1325286122618217633" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="65" startPosition="15" endLine="66" endPosition="154" />
+    <scopeInfo nodeId="1325286122618217633" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="67" startPosition="0" endLine="68" endPosition="51" />
     <scopeInfo nodeId="1325286122618217633" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="67" startPosition="47" endLine="68" endPosition="51" />
     <scopeInfo nodeId="1325286122618219159" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="45" startPosition="57" endLine="49" endPosition="0" />
     <scopeInfo nodeId="1325286122618219125" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="55" startPosition="57" endLine="59" endPosition="0" />
@@ -1998,6 +2030,7 @@
     <nodeInfo nodeId="1325286122618219295" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="57" startPosition="111" endLine="74" endPosition="5" />
     <scopeInfo nodeId="1325286122618219280" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="53" startPosition="32" endLine="54" endPosition="13" />
     <scopeInfo nodeId="1325286122618219295" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="61" startPosition="15" endLine="62" endPosition="154" />
+    <scopeInfo nodeId="1325286122618219295" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="63" startPosition="0" endLine="64" endPosition="51" />
     <scopeInfo nodeId="1325286122618219295" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="63" startPosition="47" endLine="64" endPosition="51" />
     <scopeInfo nodeId="1325286122618219209" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="47" startPosition="25" endLine="50" endPosition="50" />
     <scopeInfo nodeId="1325286122618219295" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="60" startPosition="50" endLine="65" endPosition="11" />

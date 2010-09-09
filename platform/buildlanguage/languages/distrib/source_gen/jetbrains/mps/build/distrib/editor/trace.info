@@ -4,6 +4,8 @@
   <unitInfo fileName="ArtifactReferenceCommandLinePart_Editor.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.ArtifactReferenceCommandLinePart_Editor" />
   <unitInfo fileName="WindowsConfig_Editor.java" startLine="544" startPosition="0" endLine="557" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.WindowsConfig_Editor$WindowsConfig_generic_cellMenu_a0a2e0a" />
   <unitInfo fileName="StringCommandLinePart_Editor.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.StringCommandLinePart_Editor" />
+  <unitInfo fileName="Role_Editor.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.Role_Editor" />
+  <unitInfo fileName="SystemSpecificConfig_Editor.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.SystemSpecificConfig_Editor" />
   <unitInfo fileName="SimplePath_Editor.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.SimplePath_Editor" />
   <unitInfo fileName="PathCommantLinePart_Editor.java" startLine="15" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.PathCommantLinePart_Editor" />
   <unitInfo fileName="DistribConfiguration_Editor.java" startLine="865" startPosition="0" endLine="897" endPosition="0" unitName="jetbrains.mps.build.distrib.editor.DistribConfiguration_Editor$_Inline_pkpw5p_a1d0" />
