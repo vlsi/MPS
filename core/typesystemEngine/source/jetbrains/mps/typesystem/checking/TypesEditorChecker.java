@@ -15,35 +15,33 @@
  */
 package jetbrains.mps.typesystem.checking;
 
+import com.intellij.openapi.application.ModalityState;
+import com.intellij.openapi.application.impl.LaterInvocator;
+import com.intellij.openapi.command.CommandProcessor;
+import jetbrains.mps.intentions.IntentionProvider;
+import jetbrains.mps.lang.typesystem.runtime.quickfix.QuickFix_Runtime;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.typesystem.inference.*;
-import jetbrains.mps.nodeEditor.IErrorReporter;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.smodel.event.SModelPropertyEvent;
+import jetbrains.mps.typesystem.inference.NodeTypesComponent;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.intentions.IntentionProvider;
-import jetbrains.mps.lang.typesystem.runtime.quickfix.QuickFix_Runtime;
 
 import java.util.*;
-
-import com.intellij.openapi.command.CommandProcessor;
-import com.intellij.openapi.application.impl.LaterInvocator;
-import com.intellij.openapi.application.ModalityState;
-import org.jetbrains.annotations.Nullable;
 
 public class TypesEditorChecker extends EditorCheckerAdapter {
   private static final Logger LOG = Logger.getLogger(TypesEditorChecker.class);
 
   public static boolean IMMEDIATE_QFIX_DISABLED = false;
 
-  private Timer myTimer = new Timer("helgins interruptor");
   private WeakSet<QuickFix_Runtime> myOnceExecutedQuickFixes = new WeakSet<QuickFix_Runtime>();
   private boolean myMessagesChanged = false;
 
@@ -168,7 +166,6 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
   }
 
   public void dispose() {
-    myTimer.cancel();
   }
 
   public boolean messagesChanged() {
