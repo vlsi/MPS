@@ -153,27 +153,10 @@ public class GenerateTaskFilesCreationTest extends BaseMPSTest {
 
       @Override
       public void log(String msg, int msgLevel) {
-        String levelText = "";
-        switch (msgLevel) {
-          case Project.MSG_ERR:
-            levelText = "ERROR";
-            break;
-          case Project.MSG_WARN:
-            levelText = "WARN";
-            break;
-          case Project.MSG_INFO:
-            levelText = "INFO";
-            break;
-          case Project.MSG_VERBOSE:
-            levelText = "VERBOSE";
-            break;
-          case Project.MSG_DEBUG:
-            levelText = "DEBUG";
-            break;
-          default:
-            fail("Unknown log message levelText " + msgLevel);
+        //supress all messages except error ones
+        if (msgLevel == Project.MSG_ERR){
+          System.out.println("ERROR" + ": " + msg);
         }
-        System.out.println(levelText + ": " + msg);
       }
     });
     mpsWorker.work();
