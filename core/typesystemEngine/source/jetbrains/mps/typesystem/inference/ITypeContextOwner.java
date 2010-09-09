@@ -7,4 +7,5 @@ package jetbrains.mps.typesystem.inference;
  * To change this template use File | Settings | File Templates.
  */
 public interface ITypeContextOwner {
+  void typeContextRemoved();
 }

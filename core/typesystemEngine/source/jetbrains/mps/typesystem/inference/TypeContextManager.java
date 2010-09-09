@@ -23,7 +23,10 @@ import java.util.Map.Entry;
 public class TypeContextManager implements ApplicationComponent {
   private final Object myLock = new Object();
 
-  public static final ITypeContextOwner DEFAULT_OWNER = new ITypeContextOwner() {};
+  public static final ITypeContextOwner DEFAULT_OWNER = new ITypeContextOwner() {
+    public void typeContextRemoved() {
+    }
+  };
 
   private Set<SModelDescriptor> myListeningForModels = new HashSet<SModelDescriptor>();
   private Map<SNode, Pair<TypeCheckingContext, List<ITypeContextOwner>>> myTypeCheckingContexts =
@@ -162,7 +165,10 @@ public class TypeContextManager implements ApplicationComponent {
   public void clear() {
     synchronized (myLock) {
       for (Pair<TypeCheckingContext,List<ITypeContextOwner>> context : myTypeCheckingContexts.values()) {
-        context.o1.dispose();
+        for (ITypeContextOwner owner : context.o2) {
+          owner.typeContextRemoved();
+          context.o1.dispose();
+        }
       }
       myTypeCheckingContexts.clear();
 
