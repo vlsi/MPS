@@ -23,12 +23,12 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class QueriesGenerated {
-  public static boolean baseMappingRule_Condition_4943044633101738102(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "condition", true), "jetbrains.mps.analyzers.structure.PatternCondition");
-  }
-
   public static boolean baseMappingRule_Condition_4943044633102120866(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "condition", true), "jetbrains.mps.analyzers.structure.ConceptCondition");
+  }
+
+  public static boolean baseMappingRule_Condition_7986066585199098223(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "condition", true), "jetbrains.mps.analyzers.structure.PatternCondition");
   }
 
   public static boolean baseMappingRule_Condition_4943044633102130531(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -158,6 +158,10 @@ public class QueriesGenerated {
     SNode rule = SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "applicableNode", false)), "jetbrains.mps.analyzers.structure.Rule");
     SNode method = _context.getOutputNodeByInputNodeAndMappingLabel(rule, "perform");
     return ListSequence.fromList(ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).toListSequence()).getElement(1);
+  }
+
+  public static Object referenceMacro_GetReferent_4444769741952754168(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "funcParam");
   }
 
   public static boolean ifMacro_Condition_8656002014371080657(final IOperationContext operationContext, final IfMacroContext _context) {

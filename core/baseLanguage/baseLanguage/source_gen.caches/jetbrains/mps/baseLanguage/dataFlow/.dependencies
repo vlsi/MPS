@@ -415,7 +415,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.notNullInstruction" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.nullInstruction" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.nullableInstruction" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowManager" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.MPSProgramBuilder" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.AnalysisDirection" />

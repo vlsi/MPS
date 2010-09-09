@@ -13,7 +13,6 @@ import jetbrains.mps.lang.dataFlow.MPSProgramBuilder;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
 import jetbrains.mps.lang.dataFlow.framework.DataFlowAnalyzer;
 import jetbrains.mps.lang.dataFlow.framework.Program;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.dataFlow.framework.ProgramState;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 import jetbrains.mps.analyzers.runtime.framework.GeneratedInstruction;
@@ -50,8 +49,7 @@ public class NullableAnalyzerRunner extends CustomAnalyzerRunner<Map<SNode, Null
 
     public Map<SNode, NullableState> merge(Program program, List<Map<SNode, NullableState>> input) {
       Map<SNode, NullableState> result = new HashMap<SNode, NullableState>();
-
-      for (Map<SNode, NullableState> inputElement : ListSequence.fromList(input)) {
+      for (Map<SNode, NullableState> inputElement : input) {
         for (Map.Entry<SNode, NullableState> entry : inputElement.entrySet()) {
           SNode expr = entry.getKey();
           NullableState value = entry.getValue();
