@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.make;
+package jetbrains.mps.ide.make;
 
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
@@ -22,6 +22,7 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import jetbrains.mps.library.ProjectLibraryManager;
+import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.reloading.ClassLoaderManager;

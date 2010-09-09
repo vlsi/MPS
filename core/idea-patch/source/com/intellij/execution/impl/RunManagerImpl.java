@@ -25,7 +25,7 @@ import com.intellij.openapi.util.*;
 import com.intellij.util.NullableFunction;
 import com.intellij.util.containers.ContainerUtil;
 import com.intellij.util.containers.WeakHashMap;
-import jetbrains.mps.make.StartupModuleMaker;
+import jetbrains.mps.ide.make.StartupModuleMaker;
 import jetbrains.mps.runconfigs.RunConfigManager;
 import jetbrains.mps.util.annotation.Patch;
 import org.jdom.Element;

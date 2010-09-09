@@ -593,7 +593,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.make.StartupModuleMaker</implementation-class>
+      <implementation-class>jetbrains.mps.ide.make.StartupModuleMaker</implementation-class>
     </component>
 
     <component>
