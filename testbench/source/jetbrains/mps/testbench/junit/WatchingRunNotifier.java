@@ -11,7 +11,6 @@ import org.junit.runner.notification.Failure;
 import org.junit.runner.notification.RunNotifier;
 import org.junit.runner.notification.StoppedByUserException;
 
-import java.io.PrintStream;
 import java.util.Map;
 
 /**
@@ -121,7 +120,7 @@ public class WatchingRunNotifier extends DelegatingRunNotifier {
   }
 
   private void afterTest (Description desc) {
-    threadWatcher.waitUntilSettled(5000);
+//    threadWatcher.waitUntilSettled(5000);
     
     disposeCaches();
 
