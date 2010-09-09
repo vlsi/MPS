@@ -52,18 +52,17 @@ public class ExportScope_Behavior {
         namespace.equals(ExportScope_Behavior.getNamespace_2565736246230026649(node))
       );
     */
-    // for a while "module' export only for jetbrains.mps... modules 
     String targetNamespace = ExportScope_Behavior.getNamespace_2565736246230026649(node);
     if (isConcept || targetNamespace == null || namespace.equals(targetNamespace)) {
       return true;
     }
-    if (SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(node).getStereotype()) && (targetNamespace.equals("MPS.Classpath") || targetNamespace.startsWith("jetbrains.mps"))) {
-      return namespace.startsWith("jetbrains.mps");
-    }
-    return true;
     /*
-      return isConcept || namespace.equals(targetNamespace) || targetNamespace == null || !(SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(node).getStereotype()) && (targetNamespace.equals("MPS.Classpath") || targetNamespace.startsWith("jetbrains.mps")));
+      if (SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(node).getStereotype()) && (targetNamespace.equals("MPS.Classpath") || targetNamespace.startsWith("jetbrains.mps"))) {
+        return namespace.startsWith("jetbrains.mps");
+      }
     */
+    // stubs are private by default,all other is pbulic now 
+    return !(SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(node).getStereotype()));
   }
 
   public static boolean checkExport_2565736246230031479(boolean isConcept, SNode node, String namespace) {

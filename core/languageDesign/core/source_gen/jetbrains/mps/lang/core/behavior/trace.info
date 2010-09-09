@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="IResolveInfo_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.IResolveInfo_Behavior" />
+  <unitInfo fileName="IMetaLevelChanger_Behavior.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.IMetaLevelChanger_Behavior" />
+  <unitInfo fileName="ExportScopeModule_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ExportScopeModule_Behavior" />
+  <unitInfo fileName="ExportScopePublic_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ExportScopePublic_Behavior" />
+  <unitInfo fileName="ExportScopeNamespace_Behavior.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ExportScopeNamespace_Behavior" />
+  <unitInfo fileName="INamedConcept_Behavior.java" startLine="10" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
+  <unitInfo fileName="IDeprecatable_Behavior.java" startLine="9" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior" />
+  <unitInfo fileName="ExportScope_Behavior.java" startLine="18" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ExportScope_Behavior" />
+  <unitInfo fileName="BaseConcept_Behavior.java" startLine="16" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.BaseConcept_Behavior" />
   <root nodeId="1213877396626">
     <nodeInfo nodeId="1218237543864" fileName="BaseConcept_Behavior.java" startLine="27" startPosition="74" endLine="28" endPosition="81" />
     <nodeInfo nodeId="5017341185733869648" fileName="BaseConcept_Behavior.java" startLine="31" startPosition="84" endLine="32" endPosition="16" />
@@ -81,33 +90,32 @@
     <nodeInfo nodeId="4075196924244451892" fileName="ExportScope_Behavior.java" startLine="36" startPosition="70" endLine="37" endPosition="44" />
     <nodeInfo nodeId="8656690432819148319" fileName="ExportScope_Behavior.java" startLine="40" startPosition="41" endLine="41" endPosition="121" />
     <nodeInfo nodeId="4075196924244445339" fileName="ExportScope_Behavior.java" startLine="44" startPosition="6" endLine="45" endPosition="142" />
-    <nodeInfo nodeId="976430961577071353" fileName="ExportScope_Behavior.java" startLine="54" startPosition="6" endLine="55" endPosition="69" />
-    <nodeInfo nodeId="976430961577062472" fileName="ExportScope_Behavior.java" startLine="55" startPosition="69" endLine="56" endPosition="89" />
-    <nodeInfo nodeId="3510694121368167364" fileName="ExportScope_Behavior.java" startLine="57" startPosition="84" endLine="58" endPosition="18" />
-    <nodeInfo nodeId="3510694121368167390" fileName="ExportScope_Behavior.java" startLine="60" startPosition="189" endLine="61" endPosition="51" />
-    <nodeInfo nodeId="3510694121368167400" fileName="ExportScope_Behavior.java" startLine="62" startPosition="5" endLine="63" endPosition="16" />
-    <nodeInfo nodeId="976430961577069868" fileName="ExportScope_Behavior.java" startLine="64" startPosition="6" endLine="65" endPosition="272" />
-    <nodeInfo nodeId="2565736246230031493" fileName="ExportScope_Behavior.java" startLine="69" startPosition="106" endLine="70" endPosition="78" />
-    <nodeInfo nodeId="3510694121368167341" fileName="ExportScope_Behavior.java" startLine="56" startPosition="89" endLine="59" endPosition="5" />
-    <nodeInfo nodeId="3510694121368167368" fileName="ExportScope_Behavior.java" startLine="59" startPosition="5" endLine="62" endPosition="5" />
-    <nodeInfo nodeId="3510694121368167403" fileName="ExportScope_Behavior.java" startLine="63" startPosition="16" endLine="66" endPosition="6" />
+    <nodeInfo nodeId="976430961577062472" fileName="ExportScope_Behavior.java" startLine="54" startPosition="6" endLine="55" endPosition="89" />
+    <nodeInfo nodeId="3510694121368167364" fileName="ExportScope_Behavior.java" startLine="56" startPosition="84" endLine="57" endPosition="18" />
+    <nodeInfo nodeId="3510694121368167390" fileName="ExportScope_Behavior.java" startLine="60" startPosition="191" endLine="61" endPosition="53" />
+    <nodeInfo nodeId="1910096640874415251" fileName="ExportScope_Behavior.java" startLine="63" startPosition="6" endLine="64" endPosition="60" />
+    <nodeInfo nodeId="976430961577069868" fileName="ExportScope_Behavior.java" startLine="64" startPosition="60" endLine="65" endPosition="101" />
+    <nodeInfo nodeId="2565736246230031493" fileName="ExportScope_Behavior.java" startLine="68" startPosition="106" endLine="69" endPosition="78" />
+    <nodeInfo nodeId="3510694121368167341" fileName="ExportScope_Behavior.java" startLine="55" startPosition="89" endLine="58" endPosition="5" />
+    <nodeInfo nodeId="3510694121368167368" fileName="ExportScope_Behavior.java" startLine="59" startPosition="6" endLine="62" endPosition="7" />
     <nodeInfo nodeId="8656690432819148317" fileName="ExportScope_Behavior.java" startLine="39" startPosition="146" endLine="43" endPosition="0" />
     <nodeInfo nodeId="976430961577068655" fileName="ExportScope_Behavior.java" startLine="49" startPosition="6" endLine="53" endPosition="8" />
-    <nodeInfo nodeId="8259195909097980891" fileName="ExportScope_Behavior.java" startLine="70" startPosition="78" endLine="74" endPosition="7" />
+    <nodeInfo nodeId="8259195909097980891" fileName="ExportScope_Behavior.java" startLine="69" startPosition="78" endLine="73" endPosition="7" />
     <nodeInfo nodeId="8656690432819148309" fileName="ExportScope_Behavior.java" startLine="38" startPosition="6" endLine="43" endPosition="74" />
-    <nodeInfo nodeId="976430961577062470" fileName="ExportScope_Behavior.java" startLine="48" startPosition="113" endLine="54" endPosition="6" />
+    <nodeInfo nodeId="1910096640874415249" fileName="ExportScope_Behavior.java" startLine="58" startPosition="5" endLine="63" endPosition="6" />
+    <nodeInfo nodeId="1910096640874374126" fileName="ExportScope_Behavior.java" startLine="48" startPosition="113" endLine="54" endPosition="6" />
     <nodeInfo nodeId="8656690432819154715" fileName="ExportScope_Behavior.java" startLine="37" startPosition="44" endLine="44" endPosition="6" />
     <scopeInfo nodeId="2565736246230026579" fileName="ExportScope_Behavior.java" startLine="21" startPosition="43" endLine="21" endPosition="43" />
     <scopeInfo nodeId="2565736246230026652" fileName="ExportScope_Behavior.java" startLine="32" startPosition="69" endLine="33" endPosition="124" />
     <scopeInfo nodeId="8656690432819148318" fileName="ExportScope_Behavior.java" startLine="40" startPosition="41" endLine="41" endPosition="121" />
-    <scopeInfo nodeId="3510694121368167342" fileName="ExportScope_Behavior.java" startLine="57" startPosition="84" endLine="58" endPosition="18" />
-    <scopeInfo nodeId="3510694121368167369" fileName="ExportScope_Behavior.java" startLine="60" startPosition="189" endLine="61" endPosition="51" />
+    <scopeInfo nodeId="3510694121368167342" fileName="ExportScope_Behavior.java" startLine="56" startPosition="84" endLine="57" endPosition="18" />
+    <scopeInfo nodeId="3510694121368167369" fileName="ExportScope_Behavior.java" startLine="60" startPosition="191" endLine="61" endPosition="53" />
     <scopeInfo nodeId="8656690432819148317" fileName="ExportScope_Behavior.java" startLine="39" startPosition="146" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="2565736246230031482" fileName="ExportScope_Behavior.java" startLine="69" startPosition="106" endLine="74" endPosition="7">
+    <scopeInfo nodeId="2565736246230031482" fileName="ExportScope_Behavior.java" startLine="68" startPosition="106" endLine="73" endPosition="7">
       <varInfo nodeId="2565736246230031494" varName="exp" />
     </scopeInfo>
     <scopeInfo nodeId="4075196924244445288" fileName="ExportScope_Behavior.java" startLine="36" startPosition="70" endLine="45" endPosition="142" />
-    <scopeInfo nodeId="8259195909097980938" fileName="ExportScope_Behavior.java" startLine="48" startPosition="113" endLine="66" endPosition="6">
+    <scopeInfo nodeId="8259195909097980938" fileName="ExportScope_Behavior.java" startLine="48" startPosition="113" endLine="65" endPosition="101">
       <varInfo nodeId="976430961577062473" varName="targetNamespace" />
     </scopeInfo>
     <unitInfo nodeId="8656690432819148317" fileName="ExportScope_Behavior.java" startLine="39" startPosition="123" endLine="43" endPosition="7" unitName="jetbrains.mps.lang.core.behavior.ExportScope_Behavior$1" />

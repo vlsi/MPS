@@ -130,6 +130,7 @@
     <property name="package:0" value="export" />
     <link role="source:0" targetNodeId="1133920641626:0" resolveInfo="BaseConcept" />
     <link role="target:0" targetNodeId="5425021671150136555:0" resolveInfo="ExportScope" />
+    <node role="export$attribute:0" type="jetbrains.mps.lang.core.structure.ExportScopePublic:0" id="9136532523118437100" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5425021671150136555">
     <property name="name:0" value="ExportScope" />

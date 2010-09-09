@@ -2302,36 +2302,6 @@
           </node>
         </node>
       </node>
-      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="402007580867616293">
-        <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="402007580867616294">
-          <property name="text:3" value="just check this to understand situation" />
-        </node>
-      </node>
-      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="402007580867616295">
-        <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="402007580867616296">
-          <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.WarningStatement:3" id="4427695773496933176">
-            <node role="warningText:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4427695773496933179">
-              <property name="value:3" value="no target namespace" />
-            </node>
-            <node role="nodeToReport:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="4427695773496933180">
-              <link role="applicableNode:3" targetNodeId="376024488709664744" resolveInfo="node" />
-            </node>
-          </node>
-        </node>
-        <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="402007580867616304">
-          <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="402007580867616305" />
-          <node role="leftExpression:3" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall:16" id="8259195909097764103">
-            <link role="concept:16" targetNodeId="1.5425021671150136555:0" resolveInfo="ExportScope" />
-            <link role="baseMethodDeclaration:16" targetNodeId="23.2565736246230026649" resolveInfo="getNamespace" />
-            <node role="actualArgument:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8259195909097764104">
-              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="8259195909097764105">
-                <link role="applicableNode:3" targetNodeId="376024488709664744" resolveInfo="node" />
-              </node>
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation:16" id="8259195909097764106" />
-            </node>
-          </node>
-        </node>
-      </node>
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="376024488709665019">
         <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="376024488709665020">
           <property name="text:3" value="check references" />
@@ -2382,44 +2352,6 @@
                     </node>
                     <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Reference_GetRoleOperation:16" id="402007580867616267" />
                   </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="402007580867616290">
-            <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="402007580867616291">
-              <property name="text:3" value="just check this to understand situation" />
-            </node>
-          </node>
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="5425021671150237343">
-            <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5425021671150237344">
-              <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.WarningStatement:3" id="4427695773496933184">
-                <node role="warningText:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4427695773496933187">
-                  <property name="value:3" value="no target namespace" />
-                </node>
-                <node role="nodeToReport:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="4427695773496933188">
-                  <link role="applicableNode:3" targetNodeId="376024488709664744" resolveInfo="node" />
-                </node>
-                <node role="messageTarget:3" type="jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget:3" id="4427695773496933189">
-                  <node role="referenceRole:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4427695773496933190">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="4427695773496933191">
-                      <link role="variable:7" targetNodeId="376024488709665190" resolveInfo="ref" />
-                    </node>
-                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Reference_GetRoleOperation:16" id="4427695773496933192" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="402007580867616279">
-              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="402007580867616282" />
-              <node role="leftExpression:3" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall:16" id="8259195909097764114">
-                <link role="concept:16" targetNodeId="1.5425021671150136555:0" resolveInfo="ExportScope" />
-                <link role="baseMethodDeclaration:16" targetNodeId="23.2565736246230026649" resolveInfo="getNamespace" />
-                <node role="actualArgument:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8259195909097764115">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="8259195909097764116">
-                    <link role="variable:7" targetNodeId="376024488709665190" resolveInfo="ref" />
-                  </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Reference_GetTargetOperation:16" id="8259195909097764117" />
                 </node>
               </node>
             </node>
