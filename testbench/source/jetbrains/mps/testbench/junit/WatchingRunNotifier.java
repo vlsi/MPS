@@ -116,11 +116,11 @@ public class WatchingRunNotifier extends DelegatingRunNotifier {
       ignore.setLevel(Level.FATAL);
     }
 
-    this.threadWatcher = new ThreadWatcher();
+    this.threadWatcher = new ThreadWatcher(true);
   }
 
   private void afterTest (Description desc) {
-//    threadWatcher.waitUntilSettled(5000);
+    threadWatcher.waitUntilSettled(5000);
     
     disposeCaches();
 

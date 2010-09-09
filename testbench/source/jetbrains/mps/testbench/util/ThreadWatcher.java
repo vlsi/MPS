@@ -1,11 +1,11 @@
 package jetbrains.mps.testbench.util;
 
 import gnu.trove.TLongObjectHashMap;
-import gnu.trove.TLongObjectProcedure;
 
 import java.lang.management.ManagementFactory;
 import java.lang.management.ThreadInfo;
 import java.lang.management.ThreadMXBean;
+import java.util.regex.Pattern;
 
 /**
  * Created by IntelliJ IDEA.
@@ -19,6 +19,8 @@ public class ThreadWatcher implements Output {
   private String errors;
 
   private static class ThreadState {
+
+    private static Pattern IGNORED_THREAD = Pattern.compile("(AWT\\-.*)|(Image Fetch.*)");
 
     private TLongObjectHashMap<ThreadInfo> allThreads = new TLongObjectHashMap<ThreadInfo> ();
     private TLongObjectHashMap<ThreadInfo> runningThreads = new TLongObjectHashMap<ThreadInfo> ();
@@ -34,10 +36,12 @@ public class ThreadWatcher implements Output {
       ThreadMXBean bean = ManagementFactory.getThreadMXBean();
 
       for (ThreadInfo info: bean.getThreadInfo(bean.getAllThreadIds())) {
-        if (info != null && cid != info.getThreadId() &&
-          // TODO: fix this!
-          !"helgins interruptor".equals(info.getThreadName())
-          ) {
+        if (info != null &&
+            cid != info.getThreadId() &&
+            info.getThreadState() != Thread.State.NEW &&
+            info.getThreadState() != Thread.State.TERMINATED &&
+            !IGNORED_THREAD.matcher(info.getThreadName()).matches())
+        {
           allThreads.put(info.getThreadId(), info);
           if (Thread.State.RUNNABLE == info.getThreadState()) {
             runningThreads.put (info.getThreadId(), info);
@@ -59,43 +63,45 @@ public class ThreadWatcher implements Output {
     }
 
     public ThreadState[] diff (ThreadState baseLine) {
-      ThreadState leftDiff = new ThreadState();
-      ThreadState rightDiff = new ThreadState();
+      ThreadState newDiff = new ThreadState();
+      ThreadState oldDiff = new ThreadState();
       for (long id:this.allThreads.keys()) {
         if (!(baseLine.allThreads.containsKey(id))) {
-          leftDiff.allThreads.put (id, this.allThreads.get(id));
+          newDiff.allThreads.put (id, this.allThreads.get(id));
           if (this.runningThreads.containsKey(id)) {
-            leftDiff.runningThreads.put (id, this.runningThreads.get(id));
+            newDiff.runningThreads.put (id, this.runningThreads.get(id));
           }
         }
       }
       for (long id:baseLine.allThreads.keys()) {
         if (!(this.allThreads.containsKey(id))) {
-          rightDiff.allThreads.put (id, baseLine.allThreads.get(id));
+          oldDiff.allThreads.put (id, baseLine.allThreads.get(id));
           if (baseLine.runningThreads.containsKey(id)) {
-            rightDiff.runningThreads.put (id, baseLine.runningThreads.get(id));
+            oldDiff.runningThreads.put (id, baseLine.runningThreads.get(id));
           }
         }
       }
       for (long id:this.runningThreads.keys()) {
         if (!(baseLine.runningThreads.containsKey(id))) {
-          leftDiff.runningThreads.put (id, this.runningThreads.get(id));
-          leftDiff.allThreads.put(id, this.allThreads.get(id));
+          newDiff.runningThreads.put (id, this.runningThreads.get(id));
+          newDiff.allThreads.put(id, this.allThreads.get(id));
         }
       }
       for (long id:baseLine.runningThreads.keys()) {
         if (!(this.runningThreads.containsKey(id))) {
-          rightDiff.runningThreads.put (id, baseLine.runningThreads.get(id));
-          rightDiff.allThreads.put(id, baseLine.allThreads.get(id));
+          oldDiff.runningThreads.put (id, baseLine.runningThreads.get(id));
+          oldDiff.allThreads.put(id, baseLine.allThreads.get(id));
         }
       }
-      return new ThreadState[] {leftDiff, rightDiff};
+      return new ThreadState[] {newDiff, oldDiff};
     }
   }
 
-  public ThreadWatcher () {
-    this.base = new ThreadState();
-    base.captureState();
+  public ThreadWatcher (boolean capture) {
+    if (capture) {
+      this.base = new ThreadState();
+      base.captureState();
+    }
   }
 
   @Override
@@ -114,6 +120,8 @@ public class ThreadWatcher implements Output {
   }
   
   public boolean waitUntilSettled (long millis) {
+    if (base == null) return true;
+    if (errors != null) throw new IllegalStateException("Settled already");
     ThreadState current = new ThreadState();
     ThreadState[] diff;
     long step = 100;
@@ -131,7 +139,7 @@ public class ThreadWatcher implements Output {
     StringBuilder sb = new StringBuilder();
     sb.append("After ").append(millis).append(" ms. --\n");
     if (!diff[0].allThreads.isEmpty()) {
-      sb.append("  Still running:\n");
+      sb.append("  New:\n");
       diff[0].dump(sb, "    ");
       sb.append("\n");
     }
