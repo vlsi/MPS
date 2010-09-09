@@ -15,17 +15,10 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.command.UndoConfirmationPolicy;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.InternalFlag;
-import jetbrains.mps.ide.ThreadUtils;
-
-import javax.swing.SwingUtilities;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Evgeny Gryaznov, Sep 3, 2010
