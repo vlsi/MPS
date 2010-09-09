@@ -68,9 +68,6 @@
   <import index="5" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="6" modelUID="f:java_stub#jetbrains.mps.reloading(jetbrains.mps.reloading@java_stub)" version="-1" />
   <import index="7" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
-  <import index="9" modelUID="f:java_stub#jetbrains.mps.util.misc.hash(jetbrains.mps.util.misc.hash@java_stub)" version="-1" />
-  <import index="10" modelUID="f:java_stub#jetbrains.mps.workbench.actions.goTo.index(jetbrains.mps.workbench.actions.goTo.index@java_stub)" version="-1" />
-  <import index="11" modelUID="f:java_stub#jetbrains.mps.baseLanguage.structure(jetbrains.mps.baseLanguage.structure@java_stub)" version="-1" />
   <import index="17" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="18" modelUID="f:java_stub#jetbrains.mps.stubs.javastub.classpath(jetbrains.mps.stubs.javastub.classpath@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.stubs.structure.StubsCreatorDeclaration" id="5516999836374025628">
