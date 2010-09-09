@@ -14,58 +14,6 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.smodel.search.ISearchScope" />
   </dependency>
-  <dependency className="jetbrains.mps.smodel.search.ConceptAndSuperConceptsCache" file="ConceptAndSuperConceptsCache.java">
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.System" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.HashMap" />
-    <classNode dependClassName="java.util.HashSet" />
-    <classNode dependClassName="java.util.LinkedHashSet" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.cache.CachesManager" />
-    <classNode dependClassName="jetbrains.mps.cache.KeyProducer" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.ConceptDeclaration" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.ConceptProperty" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.LinkDeclaration" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.PropertyDeclaration" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.event.SModelChildEvent" />
-    <classNode dependClassName="jetbrains.mps.smodel.event.SModelPropertyEvent" />
-    <classNode dependClassName="jetbrains.mps.smodel.event.SModelReferenceEvent" />
-    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
-    <classNode extendsClassName="jetbrains.mps.cache.AbstractCache" />
-    <classNode extendsClassName="jetbrains.mps.cache.DataSet" />
-  </dependency>
-  <dependency className="jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope" file="ConceptAndSuperConceptsScope.java">
-    <classNode dependClassName="com.intellij.openapi.util.Computable" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.ConceptProperty" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.LinkDeclaration" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.PropertyDeclaration" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.NodeReadAccessCasterInEditor" />
-    <classNode dependClassName="jetbrains.mps.smodel.INodeAdapter" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.search.ConceptAndSuperConceptsCache" />
-    <classNode dependClassName="jetbrains.mps.util.Condition" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode extendsClassName="jetbrains.mps.smodel.search.AbstractSearchScope" />
-  </dependency>
   <dependency className="jetbrains.mps.smodel.search.EmptySearchScope" file="EmptySearchScope.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -128,32 +76,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.util.Condition" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.smodel.search.AbstractSearchScope" />
-  </dependency>
-  <dependency className="jetbrains.mps.smodel.search.SModelSearchUtil" file="SModelSearchUtil.java">
-    <classNode dependClassName="com.intellij.openapi.util.Computable" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.ConceptDeclaration" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.ConceptProperty" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.LinkDeclaration" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.LinkMetaclass" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.PropertyDeclaration" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.NodeReadAccessCasterInEditor" />
-    <classNode dependClassName="jetbrains.mps.smodel.IScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.Language" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.search.ISearchScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.search.ModelAndImportedModelsScope" />
-    <classNode dependClassName="jetbrains.mps.util.Condition" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.search.AbstractSearchScope" />
   </dependency>
   <dependency className="jetbrains.mps.smodel.search.SearchScopeWithNode" file="SearchScopeWithNode.java">

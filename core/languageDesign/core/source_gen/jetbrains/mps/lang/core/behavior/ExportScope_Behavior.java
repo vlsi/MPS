@@ -56,12 +56,11 @@ public class ExportScope_Behavior {
     if (isConcept || targetNamespace == null || namespace.equals(targetNamespace)) {
       return true;
     }
-    /*
-      if (SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(node).getStereotype()) && (targetNamespace.equals("MPS.Classpath") || targetNamespace.startsWith("jetbrains.mps"))) {
-        return namespace.startsWith("jetbrains.mps");
-      }
-    */
-    // stubs are private by default,all other is pbulic now 
+    // while problem with adapters is not solved 
+    if (SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(node).getStereotype()) && targetNamespace.startsWith("jetbrains.mps")) {
+      return namespace.startsWith("jetbrains.mps");
+    }
+    // stubs are module by default, all other are public now 
     return !(SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(node).getStereotype()));
   }
 
