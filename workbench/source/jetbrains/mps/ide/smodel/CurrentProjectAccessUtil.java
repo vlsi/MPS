@@ -1,4 +1,4 @@
-package jetbrains.mps.smodel;
+package jetbrains.mps.ide.smodel;
 
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.DataContext;

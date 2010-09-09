@@ -16,7 +16,9 @@
 package jetbrains.mps.ide;
 
 import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.ide.smodel.WorkbenchModelAccess;
 import jetbrains.mps.ide.undo.WorkbenchUndoHandler;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.UndoHelper;
 import org.jetbrains.annotations.NotNull;
 
@@ -34,6 +36,9 @@ public class MPSWorkbench implements ApplicationComponent {
   public void initComponent() {
     // setup undo
     UndoHelper.getInstance().setUndoHandler(new WorkbenchUndoHandler());
+
+    // setup model access
+    ModelAccess.setInstance(new WorkbenchModelAccess());
   }
 
   @Override
