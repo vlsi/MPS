@@ -36,12 +36,14 @@ public class SolutionStep extends BaseStep {
   public static final String SOLUTION_PATH = "Solution Path";
   public static final String SOLUTION_NAME = "Solution Name";
   public static final String CREATE_CHECKBOX = "Create Checkbox";
+  public static final String CREATE_MODEL_CHECKBOX = "Create Checkbox";
 
   private ProjectOptions myOptions;
 
   private JTextField myNamespace;
   private PathField myPath;
   private JCheckBox myCreate;
+  private JCheckBox myCreateModel;
 
   public SolutionStep(ProjectOptions options) {
     super();
@@ -49,7 +51,7 @@ public class SolutionStep extends BaseStep {
   }
 
   public JComponent createControlComponent() {
-    JPanel panel = new JPanel(new GridLayout(5, 1));
+    JPanel panel = new JPanel(new GridLayout(6, 1));
 
     myCreate = new JCheckBox(new AbstractAction("Create new solution") {
       public void actionPerformed(ActionEvent e) {
@@ -74,6 +76,14 @@ public class SolutionStep extends BaseStep {
     myPath = new PathField();
     myPath.setName(SOLUTION_PATH);
     panel.add(myPath);
+
+    myCreateModel = new JCheckBox(new AbstractAction("Create model in solution") {
+      public void actionPerformed(ActionEvent e) {
+        setCreateModel(myCreateModel.isSelected());
+      }
+    });
+    myCreateModel.setName(CREATE_MODEL_CHECKBOX);
+    panel.add(myCreateModel);
 
     myNamespace.addCaretListener(new CaretListener() {
       public void caretUpdate(CaretEvent e) {
@@ -124,6 +134,7 @@ public class SolutionStep extends BaseStep {
       }
       myOptions.setSolutionNamespace(prefix + ".sandbox");
       myCreate.doClick();
+      myCreateModel.doClick();
     }
 
     myNamespace.setText(myOptions.getSolutionNamespace());
@@ -163,7 +174,13 @@ public class SolutionStep extends BaseStep {
 
   private void setCreateSolution(boolean value) {
     myOptions.setCreateNewSolution(value);
+
     myNamespace.setEnabled(value);
     myPath.setEnabled(value);
+    myCreateModel.setEnabled(value);
+  }
+
+  private void setCreateModel(boolean value) {
+    myOptions.setCreateModel(value);
   }
 }

@@ -19,14 +19,14 @@ import com.intellij.ide.IdeBundle;
 import com.intellij.ide.impl.ProjectUtil;
 import com.intellij.ide.wizard.AbstractWizard;
 import com.intellij.ide.wizard.CommitStepException;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
-import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.startup.StartupManager;
-
+import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.library.LanguageDesign_DevKit;
 import jetbrains.mps.project.MPSProject;
@@ -36,7 +36,10 @@ import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.FileSystemFile;
@@ -113,51 +116,69 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
 
   protected void doOKAction() {
     super.doOKAction();
-    int exitCode = 1;
     if (myProject != null) {
-      exitCode = Messages.showDialog(IdeBundle.message("prompt.open.project.in.new.frame"), IdeBundle.message("title.open.project"),
+      int exitCode = Messages.showDialog(IdeBundle.message("prompt.open.project.in.new.frame"), IdeBundle.message("title.open.project"),
         new String[]{IdeBundle.message("button.newframe"), IdeBundle.message("button.existingframe")}, 1, Messages.getQuestionIcon());
+      if (exitCode == 1) {
+        ProjectUtil.closeProject(myProject);
+      }
     }
 
+    //invoke later is for plugins to be ready
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
+      public void run() {
+        doCreate();
+      }
+    });
+  }
+
+  private void doCreate() {
     final String[] error = new String[]{null};
     ProgressManager.getInstance().run(new Task.Modal(myProject, "Creating", false) {
       public void run(@NotNull() ProgressIndicator indicator) {
         indicator.setIndeterminate(true);
         error[0] = createDirs();
-        if (error[0] != null) {
-          return;
-        }
-        createProject();
+        if (error[0] != null) return;
+        myCreatedProject = ProjectManagerEx.getInstanceEx().newProject(myOptions.getProjectName(), myOptions.getProjectPath() + File.separator + myOptions.getProjectName() + MPSExtentions.DOT_MPS_PROJECT, true, false);
       }
     });
-
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      public void run() {
-        SModelRepository.getInstance().saveAll();
-      }
-    });
-
 
     if (error[0] != null) {
       Messages.showErrorDialog(getContentPane(), error[0]);
       return;
     }
 
+    myCreatedProject.save();
+
+    //noinspection ConstantConditions
+    final MPSProject mpsProject = myCreatedProject.getComponent(MPSProject.class);
+
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
+        if (myOptions.getCreateNewLanguage()) {
+          myCreatedLanguage = createNewLanguage(mpsProject);
+          mpsProject.addProjectLanguage(myCreatedLanguage);
+          myCreatedLanguage.save();
+        }
+
+        if (myOptions.getCreateNewSolution()) {
+          IFile solutionDescriptorFile = createNewSolution();
+          myCreatedSolution = mpsProject.addProjectSolution(solutionDescriptorFile.toFile());
+          myCreatedSolution.save();
+        }
 
         if (myCreatedSolution != null && myCreatedLanguage != null) {
-          addLanguageImportToSolution(myCreatedLanguage, myCreatedSolution);
+          myCreatedSolution.addUsedLanguage(myCreatedLanguage.getModuleReference());
+          myCreatedSolution.save();
+
+          if (myOptions.getCreateModel()) {
+            EditableSModelDescriptor model = myCreatedSolution.createModel(SModelFqName.fromString(myCreatedSolution.getModuleReference().getModuleFqName() + ".sandbox"), myCreatedSolution.getSModelRoots().get(0));
+            model.getSModel().addLanguage(myCreatedLanguage);
+            model.save();
+          }
         }
       }
     });
-
-    if (myCreatedProject == null) return;
-    myCreatedProject.save();
-
-    if ((exitCode == 1) && (myProject != null)) {
-      ProjectUtil.closeProject(myProject);
-    }
 
     ProjectManagerEx projectManager = ProjectManagerEx.getInstanceEx();
     boolean opened = projectManager.openProject(myCreatedProject);
@@ -167,26 +188,6 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
     StartupManager.getInstance(myCreatedProject).runWhenProjectIsInitialized(new Runnable() {
       public void run() {
         ProjectPane.getInstance(myCreatedProject).activate();
-      }
-    });
-  }
-
-  private void createProject() {
-    myCreatedProject = ProjectManagerEx.getInstanceEx().newProject(myOptions.getProjectName(), myOptions.getProjectPath() + File.separator + myOptions.getProjectName() + MPSExtentions.DOT_MPS_PROJECT, true, false);
-    //noinspection ConstantConditions
-    final MPSProject mpsProject = myCreatedProject.getComponent(MPSProject.class);
-
-    ModelAccess.instance().runCommandInEDT(new Runnable() {
-      public void run() {
-        if (myOptions.getCreateNewLanguage()) {
-          myCreatedLanguage = createNewLanguage(mpsProject);
-          mpsProject.addProjectLanguage(myCreatedLanguage);
-        }
-
-        if (myOptions.getCreateNewSolution()) {
-          IFile solutionDescriptorFile = createNewSolution();
-          myCreatedSolution = mpsProject.addProjectSolution(solutionDescriptorFile.toFile());
-        }
       }
     });
   }
@@ -217,13 +218,6 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
     return null;
   }
 
-  private void addLanguageImportToSolution(final Language language, final Solution solution) {
-    solution.addUsedLanguage(language.getModuleReference());
-    EditableSModelDescriptor model = solution.createModel(SModelFqName.fromString(solution.getModuleReference().getModuleFqName() + ".sandbox"), solution.getSModelRoots().get(0));
-    model.getSModel().addLanguage(language);
-    model.save();
-  }
-
   private Language createNewLanguage(MPSProject mpsProject) {
     String descriptorFileName = NameUtil.shortNameFromLongName(myOptions.getLanguageNamespace());
     File descriptorFile = new File(myOptions.getLanguagePath(), descriptorFileName + MPSExtentions.DOT_LANGUAGE);
@@ -240,7 +234,6 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
     LanguageAspect.CONSTRAINTS.createNew(language, false);
     LanguageAspect.TYPESYSTEM.createNew(language, false);
     language.setLanguageDescriptor(languageDescriptor, false);
-    language.save();
 
     return language;
   }
