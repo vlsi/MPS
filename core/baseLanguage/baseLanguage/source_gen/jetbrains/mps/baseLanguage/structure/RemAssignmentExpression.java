@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class RemAssignmentExpression extends BaseAssignmentExpression {
+public class RemAssignmentExpression extends OperationAssignmentExpression {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.RemAssignmentExpression";
 
   public RemAssignmentExpression(SNode node) {

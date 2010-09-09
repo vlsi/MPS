@@ -43,6 +43,7 @@
   <unitInfo fileName="DivAssignmentExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.DivAssignmentExpression" />
   <unitInfo fileName="MulAssignmentExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.MulAssignmentExpression" />
   <unitInfo fileName="StubStatementList.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.StubStatementList" />
+  <unitInfo fileName="OperationAssignmentExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.OperationAssignmentExpression" />
   <unitInfo fileName="PlaceholderMethodDeclaration.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.PlaceholderMethodDeclaration" />
   <unitInfo fileName="ImplicitAnnotationInstanceValue.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.ImplicitAnnotationInstanceValue" />
   <unitInfo fileName="AdditionalForLoopVariable.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.AdditionalForLoopVariable" />
