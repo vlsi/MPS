@@ -632,12 +632,6 @@
         </node>
       </node>
     </node>
-    <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="1240324482753">
-      <link role="applicableConcept:2" targetNodeId="1.1240322207314:3" resolveInfo="ConceptTypeClause" />
-      <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="1240324711888">
-        <link role="template:2" targetNodeId="1240324504680" resolveInfo="ConeptTypeClause_to_Expression" />
-      </node>
-    </node>
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="1174665867033">
       <link role="applicableConcept:2" targetNodeId="1.1174665551739:3" />
       <link role="labelDeclaration:2" targetNodeId="1215475953163" resolveInfo="typeVarDeclaration" />
@@ -17341,6 +17335,12 @@
       <link role="applicableConcept:2" targetNodeId="1.1185788614172:3" resolveInfo="NormalTypeClause" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="84006253453154250">
         <link role="template:2" targetNodeId="1185789352998" resolveInfo="NormalTypeClause_to_Expression" />
+      </node>
+    </node>
+    <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="77033829275204343">
+      <link role="applicableConcept:2" targetNodeId="1.1240322207314:3" resolveInfo="ConceptTypeClause" />
+      <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="77033829275204344">
+        <link role="template:2" targetNodeId="1240324504680" resolveInfo="ConeptTypeClause_to_Expression" />
       </node>
     </node>
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="6998169140110910385">
