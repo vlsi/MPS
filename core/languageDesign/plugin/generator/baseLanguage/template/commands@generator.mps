@@ -216,7 +216,7 @@
         <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1225441503941">
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1225441503942">
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1225441503943">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1225441503944">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1466373763342775389">
                 <link role="baseMethodDeclaration:3" targetNodeId="2.~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolveInfo="instance" />
                 <link role="classConcept:3" targetNodeId="2.~ModelAccess" resolveInfo="ModelAccess" />
               </node>

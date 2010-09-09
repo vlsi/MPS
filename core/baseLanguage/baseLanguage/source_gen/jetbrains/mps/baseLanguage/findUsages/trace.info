@@ -6,6 +6,7 @@
   <unitInfo fileName="ImplementedInterfaces_Finder.java" startLine="17" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.ImplementedInterfaces_Finder" />
   <unitInfo fileName="ClassAncestors_Finder.java" startLine="15" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.ClassAncestors_Finder" />
   <unitInfo fileName="DerivedClasses_Finder.java" startLine="16" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder" />
+  <unitInfo fileName="ClassUsages_Finder.java" startLine="15" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.ClassUsages_Finder" />
   <unitInfo fileName="InterfaceAncestors_Finder.java" startLine="15" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder" />
   <unitInfo fileName="DerivedInterfaces_Finder.java" startLine="16" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.DerivedInterfaces_Finder" />
   <unitInfo fileName="InterfaceMethodImplementations_Finder.java" startLine="19" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder" />

@@ -2564,7 +2564,7 @@
                 <link role="baseMethodDeclaration:3" targetNodeId="17.~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4575917870415847097">
-                <link role="baseMethodDeclaration:3" targetNodeId="17.~ModelAccess.runIndexing(java.lang.Runnable):void" />
+                <link role="baseMethodDeclaration:3" targetNodeId="17.~ModelCommandExecutor.runIndexing(java.lang.Runnable):void" resolveInfo="runIndexing" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="4575917870415847098">
                   <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="4575917870415847099">
                     <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="4575917870415847100">
@@ -2716,7 +2716,7 @@
                                         <link role="classConcept:3" targetNodeId="17.~ModelAccess" resolveInfo="ModelAccess" />
                                       </node>
                                       <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2994434894843711779">
-                                        <link role="baseMethodDeclaration:3" targetNodeId="17.~ModelAccess.runReadAction(java.lang.Runnable):void" resolveInfo="runReadAction" />
+                                        <link role="baseMethodDeclaration:3" targetNodeId="17.~ModelCommandExecutor.runReadAction(java.lang.Runnable):void" resolveInfo="runReadAction" />
                                         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2994434894843711780">
                                           <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="2994434894843783459">
                                             <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="2994434894843783460">

@@ -16,6 +16,9 @@
     <nodeInfo nodeId="8492459591399146915" fileName="BaseOutputReader.java" startLine="15" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="8492459591399146906" fileName="BaseOutputReader.java" startLine="12" startPosition="43" endLine="13" endPosition="19" />
     <scopeInfo nodeId="8492459591399146938" fileName="BaseOutputReader.java" startLine="19" startPosition="58" endLine="20" endPosition="38" />
+    <scopeInfo nodeId="8492459591399146926" fileName="BaseOutputReader.java" startLine="22" startPosition="0" endLine="23" endPosition="56">
+      <varInfo nodeId="8492459591399146934" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="8492459591399146927" fileName="BaseOutputReader.java" startLine="22" startPosition="27" endLine="23" endPosition="56" />
     <scopeInfo nodeId="8492459591399146956" fileName="BaseOutputReader.java" startLine="26" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="8492459591399146957" varName="message" />
@@ -362,6 +365,9 @@
     <scopeInfo nodeId="8673268087143253529" fileName="ClassRunner.java" startLine="37" startPosition="71" endLine="38" endPosition="76" />
     <scopeInfo nodeId="8492459591399148367" fileName="ClassRunner.java" startLine="43" startPosition="9" endLine="44" endPosition="43" />
     <scopeInfo nodeId="8492459591399148379" fileName="ClassRunner.java" startLine="51" startPosition="36" endLine="52" endPosition="56" />
+    <scopeInfo nodeId="8492459591399148352" fileName="ClassRunner.java" startLine="45" startPosition="0" endLine="47" endPosition="85">
+      <varInfo nodeId="8492459591399148365" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="8492459591399148353" fileName="ClassRunner.java" startLine="45" startPosition="29" endLine="47" endPosition="85" />
     <scopeInfo nodeId="8492459591399148212" fileName="ClassRunner.java" startLine="20" startPosition="0" endLine="23" endPosition="3">
       <varInfo nodeId="3038691514508965728" varName="parameters" />
@@ -474,6 +480,9 @@
     <nodeInfo nodeId="8492459591399148687" fileName="ConfigRunParameters.java" startLine="22" startPosition="34" endLine="31" endPosition="5" />
     <nodeInfo nodeId="8492459591399148683" fileName="ConfigRunParameters.java" startLine="21" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="8492459591399148870" fileName="ConfigRunParameters.java" startLine="15" startPosition="32" endLine="15" endPosition="32" />
+    <scopeInfo nodeId="6391309690622370749" fileName="ConfigRunParameters.java" startLine="86" startPosition="0" endLine="86" endPosition="50">
+      <varInfo nodeId="6391309690622370750" varName="ignored" />
+    </scopeInfo>
     <scopeInfo nodeId="6391309690622370752" fileName="ConfigRunParameters.java" startLine="86" startPosition="50" endLine="86" endPosition="50" />
     <scopeInfo nodeId="8492459591399148874" fileName="ConfigRunParameters.java" startLine="18" startPosition="53" endLine="19" endPosition="32" />
     <scopeInfo nodeId="8492459591399148701" fileName="ConfigRunParameters.java" startLine="26" startPosition="28" endLine="27" endPosition="22" />

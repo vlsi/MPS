@@ -566,6 +566,9 @@
     <nodeInfo nodeId="7241381882860004460" fileName="ASMModelLoader.java" startLine="562" startPosition="0" endLine="655" endPosition="0" />
     <scopeInfo nodeId="7241381882860002288" fileName="ASMModelLoader.java" startLine="102" startPosition="69" endLine="103" endPosition="38" />
     <scopeInfo nodeId="7241381882860002349" fileName="ASMModelLoader.java" startLine="117" startPosition="35" endLine="118" endPosition="33" />
+    <scopeInfo nodeId="7241381882860002312" fileName="ASMModelLoader.java" startLine="120" startPosition="0" endLine="121" endPosition="32">
+      <varInfo nodeId="7241381882860002320" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="7241381882860002313" fileName="ASMModelLoader.java" startLine="120" startPosition="27" endLine="121" endPosition="32" />
     <scopeInfo nodeId="7241381882860002433" fileName="ASMModelLoader.java" startLine="134" startPosition="25" endLine="135" endPosition="20" />
     <scopeInfo nodeId="7241381882860002455" fileName="ASMModelLoader.java" startLine="139" startPosition="27" endLine="140" endPosition="20" />

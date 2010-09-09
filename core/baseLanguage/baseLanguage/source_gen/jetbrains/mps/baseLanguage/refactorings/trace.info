@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="RenameMethod_refactorOverriding_Settings.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.RenameMethod_refactorOverriding_Settings" />
+  <unitInfo fileName="RenameMethod_newName_Settings.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.RenameMethod_newName_Settings" />
+  <unitInfo fileName="ConvertAnonymousClass_name_Settings.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.ConvertAnonymousClass_name_Settings" />
+  <unitInfo fileName="MoveStaticMethod_destination_Settings.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.MoveStaticMethod_destination_Settings" />
+  <unitInfo fileName="MoveStaticField_destination_Settings.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.MoveStaticField_destination_Settings" />
+  <unitInfo fileName="MakeFieldStatic.java" startLine="165" startPosition="0" endLine="182" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.MakeFieldStatic$QuotationClass_so6etp_a0a0a0e0d0e" />
+  <unitInfo fileName="MakeFieldStatic.java" startLine="146" startPosition="0" endLine="164" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.MakeFieldStatic$QuotationClass_so6etp_a0a0a4a3a4" />
+  <unitInfo fileName="MakeFieldStatic_Target.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.MakeFieldStatic_Target" />
+  <unitInfo fileName="ConvertAnonymousClass_Target.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.ConvertAnonymousClass_Target" />
+  <unitInfo fileName="MoveStaticMethod_Target.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.MoveStaticMethod_Target" />
+  <unitInfo fileName="MoveStaticField_Target.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.MoveStaticField_Target" />
+  <unitInfo fileName="MakeFieldFinal_Target.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.MakeFieldFinal_Target" />
+  <unitInfo fileName="RenameMethod_Target.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.RenameMethod_Target" />
+  <unitInfo fileName="ChangeMethodSignature_Target.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.ChangeMethodSignature_Target" />
+  <unitInfo fileName="MakeFieldFinal.java" startLine="14" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.MakeFieldFinal" />
+  <unitInfo fileName="ConvertAnonymousClass.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.ConvertAnonymousClass" />
+  <unitInfo fileName="MakeFieldStatic.java" startLine="100" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.MakeFieldStatic$QuotationClass_so6etp_a0a0a4" />
+  <unitInfo fileName="MoveStaticMethod.java" startLine="18" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.MoveStaticMethod" />
+  <unitInfo fileName="MoveStaticField.java" startLine="18" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.MoveStaticField" />
+  <unitInfo fileName="ChangeMethodSignature.java" startLine="20" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.ChangeMethodSignature" />
+  <unitInfo fileName="RenameMethod.java" startLine="23" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.RenameMethod" />
+  <unitInfo fileName="MakeFieldStatic.java" startLine="26" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.baseLanguage.refactorings.MakeFieldStatic" />
   <root nodeId="2869783065404758436">
     <nodeInfo nodeId="2869783065404832785" fileName="MakeFieldFinal.java" startLine="30" startPosition="69" endLine="31" endPosition="88" />
     <nodeInfo nodeId="2869783065404832781" fileName="MakeFieldFinal.java" startLine="34" startPosition="86" endLine="35" endPosition="193" />
