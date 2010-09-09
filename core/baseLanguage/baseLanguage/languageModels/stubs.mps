@@ -6,6 +6,7 @@
   <language namespace="443f4c36-fcf5-4eb6-9500-8d06ed259e3e(jetbrains.mps.baseLanguage.classifiers)" />
   <language namespace="760a0a8c-eabb-4521-8bfd-65db761a9ba3(jetbrains.mps.baseLanguage.logging)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
+  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
@@ -785,6 +786,7 @@
         </node>
       </node>
     </node>
+    <node role="export" type="jetbrains.mps.lang.core.structure.ExportScopePublic:0" id="2307695276139687033" />
   </node>
   <node type="jetbrains.mps.lang.stubs.structure.LibraryStubDescriptor" id="2974122604715433683">
     <property name="name" value="MPS" />
@@ -805,6 +807,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="export" type="jetbrains.mps.lang.core.structure.ExportScopeNamespace:0" id="2307695276140100072">
+      <property name="namespace:0" value="jetbrains.mps" />
     </node>
   </node>
 </model>
