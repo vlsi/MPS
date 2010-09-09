@@ -167,8 +167,8 @@ public class TypeContextManager implements ApplicationComponent {
       for (Pair<TypeCheckingContext,List<ITypeContextOwner>> context : myTypeCheckingContexts.values()) {
         for (ITypeContextOwner owner : context.o2) {
           owner.typeContextRemoved();
-          context.o1.dispose();
         }
+        context.o1.dispose();
       }
       myTypeCheckingContexts.clear();
 
