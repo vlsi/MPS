@@ -95,7 +95,7 @@
                 <link role="classConcept:3" targetNodeId="2.~ModelAccess" resolveInfo="ModelAccess" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1225441503885">
-                <link role="baseMethodDeclaration:3" targetNodeId="2.~ModelAccess.runWriteActionInCommand(java.lang.Runnable):void" resolveInfo="runWriteActionInCommand" />
+                <link role="baseMethodDeclaration:3" targetNodeId="2.~ModelCommandExecutor.runWriteActionInCommand(java.lang.Runnable):void" resolveInfo="runWriteActionInCommand" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1225441503886">
                   <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="1225441503887">
                     <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="1225441503888">
@@ -137,7 +137,7 @@
                 <link role="baseMethodDeclaration:3" targetNodeId="2.~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolveInfo="instance" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1225441503905">
-                <link role="baseMethodDeclaration:3" targetNodeId="2.~ModelAccess.runWriteActionInCommandAsync(java.lang.Runnable):void" resolveInfo="runWriteActionInCommandAsync" />
+                <link role="baseMethodDeclaration:3" targetNodeId="2.~ModelCommandExecutor.runWriteActionInCommandAsync(java.lang.Runnable):void" resolveInfo="runWriteActionInCommandAsync" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1225441503906">
                   <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="1225441503907">
                     <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="1225441503908">
@@ -179,7 +179,7 @@
                 <link role="classConcept:3" targetNodeId="2.~ModelAccess" resolveInfo="ModelAccess" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1225441503925">
-                <link role="baseMethodDeclaration:3" targetNodeId="2.~ModelAccess.runReadInEDT(java.lang.Runnable):void" resolveInfo="runReadInEDT" />
+                <link role="baseMethodDeclaration:3" targetNodeId="2.~ModelCommandExecutor.runReadInEDT(java.lang.Runnable):void" resolveInfo="runReadInEDT" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1225441503926">
                   <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="1225441503927">
                     <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="1225441503928">
@@ -221,7 +221,7 @@
                 <link role="classConcept:3" targetNodeId="2.~ModelAccess" resolveInfo="ModelAccess" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1225441503945">
-                <link role="baseMethodDeclaration:3" targetNodeId="2.~ModelAccess.runReadAction(java.lang.Runnable):void" resolveInfo="runReadAction" />
+                <link role="baseMethodDeclaration:3" targetNodeId="2.~ModelCommandExecutor.runReadAction(java.lang.Runnable):void" resolveInfo="runReadAction" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1225441503946">
                   <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="1225441503947">
                     <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="1225441503948">
@@ -263,7 +263,7 @@
                 <link role="baseMethodDeclaration:3" targetNodeId="2.~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolveInfo="instance" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1225441503965">
-                <link role="baseMethodDeclaration:3" targetNodeId="2.~ModelAccess.runWriteAction(java.lang.Runnable):void" resolveInfo="runWriteAction" />
+                <link role="baseMethodDeclaration:3" targetNodeId="2.~ModelCommandExecutor.runWriteAction(java.lang.Runnable):void" resolveInfo="runWriteAction" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1225441503966">
                   <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="1225441503967">
                     <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="1225441503968">
