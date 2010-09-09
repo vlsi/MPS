@@ -42,6 +42,7 @@ public class CachingAppender extends AppenderSkeleton implements Output {
       sb.append(sep); sep = "\n";
       sb.append(s);
     }
+    sb.append("\n");
     return sb.toString();
   }
 
