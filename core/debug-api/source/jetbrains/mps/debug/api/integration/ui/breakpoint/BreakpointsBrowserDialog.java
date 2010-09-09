@@ -44,7 +44,12 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
     createBreakpointsTable(myBreakpointsTableModel);
 
     myMainPanel = new JScrollPane(myBreakpointsTable);
+    myMainPanel.getViewport().setBackground(getBackgroundColor());
     addActions();
+  }
+
+  private Color getBackgroundColor() {
+    return UIManager.getColor("Table.background");
   }
 
   private void createBreakpointsTable(MyAbstractTableModel model) {
@@ -207,7 +212,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
       if (isSelected) {
         bg = UIManager.getColor("Table.selectionBackground");
       } else {
-        bg = UIManager.getColor("Table.background");
+        bg = getBackgroundColor();
       }
       this.setBackground(bg);
       this.setLayout(new GridBagLayout());
