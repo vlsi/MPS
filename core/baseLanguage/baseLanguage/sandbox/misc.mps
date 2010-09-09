@@ -273,6 +273,30 @@
             </node>
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ForStatement:3" id="3337377470784672725">
+          <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3337377470784672726">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="3337377470784672727" />
+          </node>
+          <node role="variable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="3337377470784672728">
+            <property name="name:3" value="b" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="3337377470784672729" />
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="3337377470784672734">
+              <property name="value:3" value="0" />
+            </node>
+          </node>
+          <node role="iteration:3" type="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression:3" id="3337377470784672731">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3337377470784672732">
+              <link role="variableDeclaration:3" targetNodeId="3337377470784672728" resolveInfo="b" />
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.WhileStatement:3" id="3337377470784672736">
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="3337377470784672739">
+            <property name="value:3" value="true" />
+          </node>
+          <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3337377470784672738" />
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="3337377470784672741" />
       </node>
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="873252349305453049">
