@@ -1,8 +1,9 @@
+/system
 .DS_Store
 .idea/workspace.xml
 .idea/inspectionProfiles
-MPSPlugin/.idea/workspace.xml
-MPSPlugin/apiclasses
+/MPSPlugin/.idea/workspace.xml
+/MPSPlugin/apiclasses
 classes
 classes_gen
 testclasses
