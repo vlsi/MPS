@@ -17,6 +17,9 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 
 public class StubSolutionCreateHelper {
+  public StubSolutionCreateHelper() {
+  }
+
   public static List<StubSolution> getAvailableStubSolutions(SNode node) {
     Language currentLanguage = StubSolutionCreateHelper.getCurrentLanguage(node);
     return currentLanguage.getModuleDescriptor().getStubSolutions();
