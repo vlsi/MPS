@@ -17,13 +17,12 @@ package jetbrains.mps.refactoring.framework;
 
 import jetbrains.mps.util.Condition;
 
+import javax.swing.JComponent;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.JLabel;
-import javax.swing.JComponent;
-import java.awt.*;
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeEvent;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 
 @Deprecated //left for compatibility with old refactorings
 public class ChooseStringComponent extends JPanel implements IChooseComponent<String>  {

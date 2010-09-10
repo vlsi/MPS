@@ -15,21 +15,22 @@
  */
 package jetbrains.mps.refactoring.framework;
 
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.hierarchy.AbstractHierarchyTree;
 import jetbrains.mps.ide.hierarchy.HierarchyTreeNode;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
 
 import javax.swing.*;
 import javax.swing.tree.TreePath;
+import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.util.HashSet;
 import java.util.Set;
-import java.awt.*;
-
-import com.intellij.openapi.util.Computable;
 
 @Deprecated //left for compatibility with old refactorings
 public class HierarchicalChooseNodeComponent extends JPanel implements IChooseComponent<SNode> {

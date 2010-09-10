@@ -15,10 +15,8 @@
  */
 package jetbrains.mps.refactoring.framework;
 
-import jetbrains.mps.smodel.SNode;
-
-import java.util.Set;
 import java.util.HashSet;
+import java.util.Set;
 
 public class BaseGeneratedRefactoring extends AbstractLoggableRefactoring {
   private Set<String> myTransientParameters = new HashSet<String>();

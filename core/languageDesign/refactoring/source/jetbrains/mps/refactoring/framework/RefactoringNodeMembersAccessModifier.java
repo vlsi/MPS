@@ -15,15 +15,14 @@
  */
 package jetbrains.mps.refactoring.framework;
 
-import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.refactoring.framework.RefactoringContext.ConceptFeatureKind;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.Pair;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
-
-import org.jetbrains.annotations.NotNull;
 
 public class RefactoringNodeMembersAccessModifier implements NodeMemberAccessModifier {
   private static final Logger LOG = Logger.getLogger(RefactoringNodeMembersAccessModifier.class);

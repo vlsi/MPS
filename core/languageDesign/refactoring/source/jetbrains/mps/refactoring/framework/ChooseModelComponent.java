@@ -15,16 +15,11 @@
  */
 package jetbrains.mps.refactoring.framework;
 
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.util.Condition;
 
-import javax.swing.JPanel;
 import javax.swing.JComponent;
-import java.awt.BorderLayout;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
 
 @Deprecated //left for compatibility with old refactorings
 public class ChooseModelComponent implements IChooseComponent<SModel> {

@@ -16,9 +16,8 @@
 package jetbrains.mps.refactoring.framework.tests;
 
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SModelDescriptor;
 
 /**
  * Created by IntelliJ IDEA.

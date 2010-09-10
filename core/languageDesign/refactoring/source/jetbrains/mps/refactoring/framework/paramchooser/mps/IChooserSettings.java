@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.refactoring.framework.paramchooser.mps;
 
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.Condition;
+import org.jetbrains.annotations.Nullable;
 
 public interface IChooserSettings<T> extends Condition<T> {
   @Nullable

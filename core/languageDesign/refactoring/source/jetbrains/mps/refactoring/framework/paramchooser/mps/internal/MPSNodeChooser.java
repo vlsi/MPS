@@ -32,7 +32,6 @@ import jetbrains.mps.smodel.SNode;
 
 import javax.swing.JComponent;
 import javax.swing.JScrollPane;
-import javax.swing.tree.TreeNode;
 
 public class MPSNodeChooser implements IChooser {
   private ProjectTree myTree;

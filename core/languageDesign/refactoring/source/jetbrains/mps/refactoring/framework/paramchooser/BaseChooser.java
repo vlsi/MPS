@@ -15,10 +15,7 @@
  */
 package jetbrains.mps.refactoring.framework.paramchooser;
 
-import jetbrains.mps.refactoring.framework.InvalidInputValueException;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-
-import javax.swing.JComponent;
 
 public abstract class BaseChooser implements IChooser {
   private RefactoringContext myRefactoringContext;
