@@ -23,10 +23,7 @@ import java.util.Map.Entry;
 public class TypeContextManager implements ApplicationComponent {
   private final Object myLock = new Object();
 
-  public static final ITypeContextOwner DEFAULT_OWNER = new ITypeContextOwner() {
-    public void typeContextRemoved() {
-    }
-  };
+  public static final ITypeContextOwner DEFAULT_OWNER = new ITypeContextOwner() {};
 
   private Set<SModelDescriptor> myListeningForModels = new HashSet<SModelDescriptor>();
   private Map<SNode, Pair<TypeCheckingContext, List<ITypeContextOwner>>> myTypeCheckingContexts =
@@ -77,7 +74,7 @@ public class TypeContextManager implements ApplicationComponent {
   public void initComponent() {
     myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
       public void unload() {
-        clear();
+        clearForClassesUnload();
       }
     });
     myTimer = new Timer(true);
@@ -162,21 +159,11 @@ public class TypeContextManager implements ApplicationComponent {
     }
   }
 
-  public void clear() {
+  public void clearForClassesUnload() {
     synchronized (myLock) {
       for (Pair<TypeCheckingContext,List<ITypeContextOwner>> context : myTypeCheckingContexts.values()) {
-        for (ITypeContextOwner owner : context.o2) {
-          owner.typeContextRemoved();
-        }
-        context.o1.dispose();
+        context.o1.clear();
       }
-      myTypeCheckingContexts.clear();
-
-      for (SModelDescriptor d : myListeningForModels) {
-        d.removeModelListener(myModelListener);
-      }
-      myListeningForModels.clear();
-      myAccessTimes.clear();
     }
   }
 

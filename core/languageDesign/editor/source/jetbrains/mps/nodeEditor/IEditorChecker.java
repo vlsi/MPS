@@ -29,6 +29,9 @@ public interface IEditorChecker {
   public Set<EditorMessage> createMessages(SNode rootNode, IOperationContext operationContext,
                                            List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext);
 
+  // IMPORTANT: there should be no equal owners for messages from different checkers
+  // for instance, make owners change when checker is reloaded
+  // otherwise old checkers may remove new checker's messages
   public EditorMessageOwner getOwner(SNode rootNode, EditorComponent editorComponent);
 
   public boolean hasDramaticalEvent(List<SModelEvent> events);

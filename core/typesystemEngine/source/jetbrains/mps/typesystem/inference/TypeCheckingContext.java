@@ -26,13 +26,12 @@ import jetbrains.mps.nodeEditor.SimpleErrorReporter;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystem.debug.ISlicer;
-import jetbrains.mps.typesystem.integration.TypesystemPreferencesComponent;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
-public class TypeCheckingContext implements EditorMessageOwner {
+public class TypeCheckingContext {
   private static final Logger LOG = Logger.getLogger(TypeCheckingContext.class);
 
   private final NodeTypesComponent myNodeTypesComponent;
@@ -712,7 +711,7 @@ public class TypeCheckingContext implements EditorMessageOwner {
   public void checkRoot(final boolean refreshTypes) {
     synchronized (TYPECHECKING_LOCK) {
       myNodeTypesComponent.computeTypes(refreshTypes);
-      myNodeTypesComponent.setChecked();
+      myNodeTypesComponent.setCheckedTypesystem();
     }
   }
 
@@ -754,6 +753,10 @@ public class TypeCheckingContext implements EditorMessageOwner {
       }
     });
     return messages.get(0);
+  }
+
+  public void clear() {
+    myNodeTypesComponent.clear();
   }
 
   public static class NodeInfo {

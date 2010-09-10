@@ -128,8 +128,4 @@ public class InspectorEditorComponent extends EditorComponent {
   @Override
   protected void disposeTypeCheckingContext() {
   }
-
-  @Override
-  public void typeContextRemoved() {
-  }
 }

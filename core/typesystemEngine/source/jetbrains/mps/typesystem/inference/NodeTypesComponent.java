@@ -53,7 +53,8 @@ public class NodeTypesComponent implements EditorMessageOwner {
   private final Object ACCESS_LOCK = new Object();
 
   private SNode myRootNode;
-  private boolean myIsChecked = false;
+  private boolean myIsCheckedTypesystem = false;
+  private boolean myIsCheckedNonTypesystem = false;
   private TypeChecker myTypeChecker;
   private Map<SNode, SNode> myNodesToTypesMap = new HashMap<SNode, SNode>();
   private Map<SNode, List<IErrorReporter>> myNodesToErrorsMap = new HashMap<SNode, List<IErrorReporter>>();
@@ -172,7 +173,8 @@ public class NodeTypesComponent implements EditorMessageOwner {
     clearNodesTypes();
     myRegisteredVariables.clear();
     clearCaches();
-    myIsChecked = false;
+    myIsCheckedTypesystem = false;
+    myIsCheckedNonTypesystem = false;
   }
 
   private boolean isForSlaveComputation(SNode node) {
@@ -1102,9 +1104,6 @@ public class NodeTypesComponent implements EditorMessageOwner {
 
   public boolean isChecked(boolean considerNonTypesystemRules) {
     processPendingEvents();
-    if (!myIsChecked) {
-      return false;
-    }
     boolean b = isCheckedTypesystem();
     if (considerNonTypesystemRules) {
       return b && isCheckedNonTypesystem();
@@ -1114,16 +1113,27 @@ public class NodeTypesComponent implements EditorMessageOwner {
   }
 
   private boolean isCheckedTypesystem() {
+    if (!myIsCheckedTypesystem) {
+      return false;
+    }
     return !doInvalidateTypesystem();
   }
 
   public boolean isCheckedNonTypesystem() {
+    if (!myIsCheckedNonTypesystem) {
+      return false;
+    }
     return !doInvalidateNonTypesystem();
   }
 
   @UseCarefully
-  public void setChecked() {
-    myIsChecked = true;
+  public void setCheckedTypesystem() {
+    myIsCheckedTypesystem = true;
+  }
+
+  @UseCarefully
+  public void setCheckedNonTypesystem() {
+    myIsCheckedNonTypesystem = true;
   }
 
   private void processPendingEvents() {

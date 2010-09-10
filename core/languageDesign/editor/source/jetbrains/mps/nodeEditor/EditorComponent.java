@@ -104,7 +104,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private final Object myAdditionalPaintersLock = new Object();
   private TypeCheckingContext myTypeCheckingContext;
-  private boolean myShouldCreateTypeCheckingContext = false;
 
   public static void turnOnAliasingIfPossible(Graphics2D g) {
     if (EditorSettings.getInstance().isUseAntialiasing()) {
@@ -2176,10 +2175,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public TypeCheckingContext getTypeCheckingContext() {
-    if (myTypeCheckingContext == null || myShouldCreateTypeCheckingContext) {
-      createTypeCheckingContext();
-      myShouldCreateTypeCheckingContext = false;
-    }
     return myTypeCheckingContext;
   }
 
@@ -2192,12 +2187,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       TypeContextManager.getInstance().removeOwnerForRootNodeContext(myNode, this);
       myTypeCheckingContext = null;
     }
-  }
-
-  @Override
-  public void typeContextRemoved() {
-    myTypeCheckingContext = null;
-    myShouldCreateTypeCheckingContext = true;
   }
 
   public void sendKeyEvent(KeyEvent keyEvent) {
