@@ -37,79 +37,81 @@ def layoutFull(String home, String targetDirectory) {
   }
 
   layout(targetDirectory) {
-    dir("lib") {
-      jar("util.jar") {
-        module("util")
-      }
-      jar("platform-api.jar") {
-        openapiModules.each { module it}
-      }
-      jar("annotations.jar") {
-        module("annotations")
-      }
-      jar("extensions.jar") {
-        module("extensions")
-      }
-      jar("platform.jar") {
-        implementationModules.each { module it}
-      }
-      jar("bootstrap.jar") {
-        module("bootstrap")
-      }
-      jar("resources.jar") {
-        module("resources")
-        module("platform-resources")
-        module("community-resources")
-      }
-      jar("resources_en.jar") {
-        module("resources-en")
-        module("platform-resources-en")
-      }
-      jar("forms_rt.jar") {
-        module("forms_rt")
-        module("forms-compiler")
-      }
-      jar("icons.jar") {
-        module("icons")
-      }
-      jar("boot.jar") {
-        module("boot")
-      }
+    jar("platform") {
+      dir("lib") {
+        jar("util.jar") {
+          module("util")
+        }
+        jar("platform-api.jar") {
+          openapiModules.each { module it}
+        }
+        jar("annotations.jar") {
+          module("annotations")
+        }
+        jar("extensions.jar") {
+          module("extensions")
+        }
+        jar("platform.jar") {
+          implementationModules.each { module it}
+        }
+        jar("bootstrap.jar") {
+          module("bootstrap")
+        }
+        jar("resources.jar") {
+          module("resources")
+          module("platform-resources")
+          module("community-resources")
+        }
+        jar("resources_en.jar") {
+          module("resources-en")
+          module("platform-resources-en")
+        }
+        jar("forms_rt.jar") {
+          module("forms_rt")
+          module("forms-compiler")
+        }
+        jar("icons.jar") {
+          module("icons")
+        }
+        jar("boot.jar") {
+          module("boot")
+        }
 
-      fileset(dir: "$home/lib") {
-        include(name: "*.jar")
-        exclude(name: "eawtstub.jar")
-      }
-      fileset(dir: "$home/lib/src") {
-        include(name: "trove4j_changes.txt")
-        include(name: "trove4j_src.jar")
-      }
-      dir("ant") {
-        fileset(dir: "$home/lib/ant") {
-          exclude(name: "**/src/**")
+        fileset(dir: "$home/lib") {
+          include(name: "*.jar")
+          exclude(name: "eawtstub.jar")
+        }
+        fileset(dir: "$home/lib/src") {
+          include(name: "trove4j_changes.txt")
+          include(name: "trove4j_src.jar")
+        }
+        dir("ant") {
+          fileset(dir: "$home/lib/ant") {
+            exclude(name: "**/src/**")
+          }
         }
       }
-    }
 
-    dir("plugins") {
-      layoutPlugin("git4idea") {
-        fileset(dir: "$home/plugins/git4idea/lib", excludes: "**/trilead-ssh2-src.zip")
-      }
+      dir("plugins") {
+        layoutPlugin("git4idea") {
+          fileset(dir: "$home/plugins/git4idea/lib", excludes: "**/trilead-ssh2-src.zip")
+        }
 
-      layoutPlugin("svn4idea") {
-        fileset(dir: "$home/plugins/svn4idea/lib", excludes: "**/svnkitsrc.zip")
-      }
+        layoutPlugin("svn4idea") {
+          fileset(dir: "$home/plugins/svn4idea/lib", excludes: "**/svnkitsrc.zip")
+        }
 
-      dir("cvsIntegration") {
-        dir("lib") {
-          jar("cvs_util.jar") {noResources("cvs-core")}
-          jar("cvsIntegration.jar") {noResources("cvs-plugin")}
-          jar("javacvs-src.jar") {noResources("javacvs-src")}
-          jar("smartcvs-src.jar") {noResources("smartcvs-src")}
+        dir("cvsIntegration") {
+          dir("lib") {
+            jar("cvs_util.jar") {noResources("cvs-core")}
+            jar("cvsIntegration.jar") {noResources("cvs-plugin")}
+            jar("javacvs-src.jar") {noResources("javacvs-src")}
+            jar("smartcvs-src.jar") {noResources("smartcvs-src")}
 
-          resources(["cvs-core", "cvs-plugin", "javacvs-src", "smartcvs-src"])
+            resources(["cvs-core", "cvs-plugin", "javacvs-src", "smartcvs-src"])
 
-          fileset(dir: "${home}/plugins/cvs/lib")
+            fileset(dir: "${home}/plugins/cvs/lib")
+          }
         }
       }
     }
