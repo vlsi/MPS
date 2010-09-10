@@ -15,17 +15,19 @@
  */
 package jetbrains.mps.ide.findusages.model;
 
+import jetbrains.mps.findUsages.UsagesList;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 
 import java.util.*;
 
-public class SearchResults<T> {
-  private Set<T> mySearchedNodes = new HashSet<T>();
-  private List<SearchResult<T>> mySearchResults = new ArrayList<SearchResult<T>>();
+public class SearchResults<T> implements UsagesList {
+  private final Set<T> mySearchedNodes;
+  private List<SearchResult<T>> mySearchResults;
 
   public SearchResults() {
-
+    mySearchedNodes = new HashSet<T>();
+    mySearchResults = new ArrayList<SearchResult<T>>();
   }
 
   public SearchResults(Set<T> searchedNodes, List<SearchResult<T>> searchResults) {
@@ -46,7 +48,8 @@ public class SearchResults<T> {
     mySearchResults.addAll(sr.mySearchResults);
   }
 
-  public Set<SModel> getModelsWithResults() {
+  @Override
+  public Set<SModel> getAffectedModels() {
     LinkedHashSet<SModel> result = new LinkedHashSet<SModel>();
     for (SearchResult searchResult : mySearchResults) {
       Object resultObject = searchResult.getObject();

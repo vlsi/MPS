@@ -55,13 +55,12 @@ public class RefactoringFacade extends RefactoringProcessor {
     });
     if (!success[0]) return;
 
-    SearchResults usages = null;
+    SearchResults usages = findUsages(refactoringContext);
+    if (usages == null) return;
 
-    if (!findUsages(refactoringContext)) return;
-    usages = refactoringContext.getUsages();
-
-    if (usages != null && (!usages.getSearchResults().isEmpty())) {
-      showRefactoring(refactoringContext);
+    refactoringContext.setUsages(usages);
+    if (!usages.getSearchResults().isEmpty()) {
+      showRefactoring(refactoringContext, usages);
     } else {
       doExecuteWithDialog(refactoringContext);
     }
@@ -87,7 +86,7 @@ public class RefactoringFacade extends RefactoringProcessor {
     doExecute(refactoringContext);
   }
 
-  private void showRefactoring(final RefactoringContext refactoringContext) {
+  private void showRefactoring(final RefactoringContext refactoringContext, final SearchResults searchResults) {
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
         ModelAccess.instance().runReadAction(new Runnable() {
@@ -108,20 +107,19 @@ public class RefactoringFacade extends RefactoringProcessor {
               }
             };
             List<SModel> modelsToGenerate = getModelsToGenerate(refactoringContext.getRefactoring(), refactoringContext);
-            refactorintView.showRefactoringView(refactoringContext, okAction, refactoringContext.getUsages(), !modelsToGenerate.isEmpty());
+            refactorintView.showRefactoringView(refactoringContext, okAction, searchResults, !modelsToGenerate.isEmpty());
           }
         });
       }
     });
   }
 
-  //returns false if should be interrupted after the call
+  //returns null if should be interrupted after the call
 
-  private boolean findUsages(final RefactoringContext refactoringContext) {
-    final boolean result[] = new boolean[]{false};
+  private SearchResults findUsages(final RefactoringContext refactoringContext) {
+    final SearchResults[] result = new SearchResults[]{null};
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
-        final boolean[] wasError = new boolean[]{false};
         ProgressManager.getInstance().run(new Modal(refactoringContext.getCurrentOperationContext().getProject(), "Finding usages...", false) {
           public void run(@NotNull ProgressIndicator indicator) {
             indicator.setIndeterminate(true);
@@ -131,25 +129,27 @@ public class RefactoringFacade extends RefactoringProcessor {
                   Project project = refactoringContext.getSelectedProject();
                   refactoringContext.setCurrentOperationContext(ProjectOperationContext.get(project));
                   IRefactoring refactoring = refactoringContext.getRefactoring();
-                  SearchResults usages = refactoring.getAffectedNodes(refactoringContext);
-                  refactoringContext.setUsages(usages);
+                  result[0] = refactoring.getAffectedNodes(refactoringContext);
+                  if (result[0] == null) {
+                    result[0] = new SearchResults();
+                  }
                 } catch (Throwable t) {
                   LOG.error(t);
-                  wasError[0] = true;
                 }
               }
             });
           }
         });
 
-        if (!wasError[0]) {
-          result[0] = true;
+        if (result[0] != null) {
           return;
         }
 
         int promptResult = JOptionPane.showConfirmDialog(MPSDataKeys.FRAME.getData(DataManager.getInstance().getDataContext()),
           "An exception occurred during searching affected nodes. Do you want to continue anyway?", "Exception", JOptionPane.YES_NO_OPTION);
-        result[0] = promptResult == JOptionPane.YES_OPTION;
+        if (promptResult == JOptionPane.YES_OPTION) {
+          result[0] = new SearchResults();
+        }
       }
     });
     return result[0];
