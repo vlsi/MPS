@@ -1,7 +1,7 @@
 package jetbrains.mps.newvfs.impl;
 
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.logging.Logger;
+import com.sun.istack.internal.NotNull;
 import jetbrains.mps.newvfs.INewFile;
 
 import java.io.IOException;
@@ -14,12 +14,10 @@ import java.util.List;
  * @author Evgeny Gerashchenko
  */
 public class IdeaFile implements INewFile {
-  private static final Logger LOG = Logger.getLogger(IdeaFileSystemProvider.class);
-
   private VirtualFile myVirtualFile = null;
   private IdeaFileSystemProvider myProvider;
 
-  protected IdeaFile(IdeaFileSystemProvider provider, VirtualFile virtualFile) {
+  IdeaFile(@NotNull IdeaFileSystemProvider provider, @NotNull VirtualFile virtualFile) {
     myProvider = provider;
     myVirtualFile = virtualFile;
   }
@@ -59,20 +57,19 @@ public class IdeaFile implements INewFile {
   }
 
   @Override
+  public IdeaFile createChild(String childName) {
+    try {
+      VirtualFile childFile = myVirtualFile.createChildData(IdeaFileSystemProvider.class, childName);
+      return new IdeaFile(myProvider, childFile); 
+    } catch (IOException e) {
+      IdeaFileSystemProvider.LOG.warning("Could not create file: ", e);
+      return null;
+    }
+  }
+
+  @Override
   public boolean exists() {
     return myVirtualFile.exists();
-  }
-
-  @Override
-  public boolean createNewFile() {
-    // TODO do nothing, virtual files should be present
-    return false;
-  }
-
-  @Override
-  public boolean mkdirs() {
-    // TODO do nothing, virtual files should be present
-    return false;
   }
 
   @Override
@@ -81,7 +78,7 @@ public class IdeaFile implements INewFile {
       myVirtualFile.delete(IdeaFileSystemProvider.class);
       return true;
     } catch (IOException e) {
-      LOG.warning("Could not delete file: ", e);
+      IdeaFileSystemProvider.LOG.warning("Could not delete file: ", e);
       return false;
     }
   }

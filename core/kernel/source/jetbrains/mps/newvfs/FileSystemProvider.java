@@ -12,4 +12,7 @@ public interface FileSystemProvider {
 
   @Nullable
   public INewFile getJarFile(@NotNull String jarPath, @NotNull String entryPath);
+
+  @Nullable
+  public INewFile mkdirs(@NotNull String path);
 }

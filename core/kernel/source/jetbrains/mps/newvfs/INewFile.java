@@ -31,9 +31,9 @@ public interface INewFile {
   boolean isDirectory();
   boolean isFile();
 
+  INewFile createChild(String childName);
+
   boolean exists();
-  boolean createNewFile();
-  boolean mkdirs();
   boolean delete();
 
   InputStream openInputStream() throws IOException;
