@@ -7,6 +7,7 @@ import jetbrains.mps.generator.impl.GenerationTaskPool;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.GenerationTask;
 import junit.framework.Assert;
 import junit.framework.TestCase;
+import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +17,8 @@ import java.util.concurrent.atomic.AtomicBoolean;
  * Evgeny Gryaznov, Apr 7, 2010
  */
 public class ParallelPoolTest extends TestCase {
+
+  private static Logger LOG = Logger.getLogger(ParallelPoolTest.class);
 
   private static class CustomTask implements GenerationTask {
     private AtomicBoolean isFinished = new AtomicBoolean(false);
@@ -46,7 +49,7 @@ public class ParallelPoolTest extends TestCase {
       while (fract < amountOfWork) {
         fract <<= 1;
       }
-      fract = (fract >> 5);
+      fract = (fract >> 8);
       long fractCounter;
       long start = System.currentTimeMillis();
       while(localCounter > 0) {
@@ -58,7 +61,7 @@ public class ParallelPoolTest extends TestCase {
         if (taskPool.isCancelled()) return;
       }
       long end = System.currentTimeMillis();
-      System.out.println("Took " + (end-start)/1000. + " secs");
+      LOG.info("Took " + (end-start)/1000. + " secs");
       isCancelled.set(false);
       isFinished.set(true);
     }
@@ -110,7 +113,7 @@ public class ParallelPoolTest extends TestCase {
     }
 
     long amountFor2secs = get2SecsOperation();
-    System.out.println("Work amount: " + amountFor2secs + " ticks");
+    LOG.info("Work amount: " + amountFor2secs + " ticks");
 
     long start = System.currentTimeMillis();
     GenerationTaskPool pool = new GenerationTaskPool(new EmptyProgressIndicator(), 4);
@@ -133,8 +136,9 @@ public class ParallelPoolTest extends TestCase {
       Assert.assertTrue(t.isFinished());
     }
 
-    System.out.println("Total " + (end-start)/1000. + " seconds to complete 4 x 2secs tasks");
+    LOG.info("Total " + (end-start)/1000. + " seconds to complete 4 x 2secs tasks");
     Assert.assertTrue((end-start) < 4500); // at least 2 core cpu
+    pool.dispose();
   }
 
   public void testPoolCancelling() {
@@ -176,8 +180,9 @@ public class ParallelPoolTest extends TestCase {
       Assert.assertFalse("task should not be finished", t.isFinished());
     }
 
-    System.out.println("Total " + (end-start)/1000. + " seconds, when cancelled after 1 sec.");
+    LOG.info("Total " + (end-start)/1000. + " seconds, when cancelled after 1 sec.");
     Assert.assertTrue((end-start) < 1500 && (end-start) > 970);
+    pool.dispose();
   }
 
   public void testPoolCancelling2() {
@@ -216,7 +221,8 @@ public class ParallelPoolTest extends TestCase {
       Assert.assertFalse("task should not be finished", t.isFinished());
     }
 
-    System.out.println("Total " + (end-start)/1000. + " seconds (should be 2 secs), when cancelled after 1.6 secs");
+    LOG.info("Total " + (end-start)/1000. + " seconds (should be 2 secs), when cancelled after 1.6 secs");
     Assert.assertTrue((end-start) < 2300 && (end-start) > 1700);
+    pool.dispose();
   }
 }

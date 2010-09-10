@@ -130,6 +130,7 @@ public class ThreadWatcher implements Output {
       current.captureState();
       diff = current.diff(base);
       if (diff[0].allThreads.isEmpty() && diff[1].allThreads.isEmpty()) return true;
+      if (diff[0].allThreads.isEmpty()) break;
       try {
         Thread.sleep(step);
       } catch (InterruptedException ignore) {}
