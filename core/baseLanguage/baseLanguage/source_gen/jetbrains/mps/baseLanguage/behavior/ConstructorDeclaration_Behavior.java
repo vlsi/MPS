@@ -80,6 +80,41 @@ public class ConstructorDeclaration_Behavior {
     return sb.toString();
   }
 
+  public static boolean call_containsImplicitSuperConstructorCall_7152041109751551503(SNode thisNode) {
+    List<SNode> statements = SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "body", true), "statement", true);
+    if (ListSequence.fromList(statements).isEmpty() || !(SNodeOperations.isInstanceOf(ListSequence.fromList(statements).first(), "jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement"))) {
+      return true;
+    }
+    return false;
+  }
+
+  public static SNode call_getSuperDefaultConstructor_7152041109751601013(SNode thisNode) {
+    SNode classConcept = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+    SNode classifierType = SLinkOperations.getTarget(classConcept, "superclass", true);
+    if (classifierType == null) {
+      return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("f:java_stub#java.lang(java.lang@java_stub)", "~Object"), "constructor", true)).first();
+    }
+    SNode classifier = SLinkOperations.getTarget(classifierType, "classifier", false);
+    if (!(SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+      return null;
+    }
+    SNode superclass = SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
+    if (superclass != SNodeOperations.getNode("f:java_stub#java.lang(java.lang@java_stub)", "~Enum")) {
+      List<SNode> constructors = SLinkOperations.getTargets(superclass, "constructor", true);
+      if (ListSequence.fromList(constructors).isEmpty()) {
+        return null;
+      }
+      for (SNode constructor : constructors) {
+        if (ListSequence.fromList(SLinkOperations.getTargets(constructor, "parameter", true)).isEmpty()) {
+          return constructor;
+        }
+      }
+      return null;
+    } else {
+      return ListSequence.fromList(SLinkOperations.getTargets(superclass, "constructor", true)).first();
+    }
+  }
+
   public static Icon call_getAdditionalIcon_8884554759541375762(SNode thisNode) {
     return (Icon) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_8884554759541375762);
   }

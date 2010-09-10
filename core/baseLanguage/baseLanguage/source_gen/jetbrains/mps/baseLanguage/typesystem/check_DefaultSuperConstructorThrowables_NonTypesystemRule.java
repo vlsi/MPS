@@ -7,25 +7,22 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.baseLanguage.behavior.ConstructorDeclaration_Behavior;
-import jetbrains.mps.intentions.BaseIntentionProvider;
-import jetbrains.mps.typesystem.inference.IErrorTarget;
-import jetbrains.mps.typesystem.inference.NodeErrorTarget;
-import jetbrains.mps.nodeEditor.IErrorReporter;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class check_HasSuperConstructorCall_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-  public check_HasSuperConstructorCall_NonTypesystemRule() {
+public class check_DefaultSuperConstructorThrowables_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
+  public check_DefaultSuperConstructorThrowables_NonTypesystemRule() {
   }
 
   public void applyRule(final SNode constructorDeclaration, final TypeCheckingContext typeCheckingContext) {
     if (ConstructorDeclaration_Behavior.call_containsImplicitSuperConstructorCall_7152041109751551503(constructorDeclaration)) {
       SNode superConstructor = ConstructorDeclaration_Behavior.call_getSuperDefaultConstructor_7152041109751601013(constructorDeclaration);
-      if (superConstructor == null) {
-        {
-          BaseIntentionProvider intentionProvider = null;
-          IErrorTarget errorTarget = new NodeErrorTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(constructorDeclaration, "there is no default constructor available in superclass", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2782601603365247587", intentionProvider, errorTarget);
-        }
+      if (superConstructor != null) {
+        Set<SNode> throwables = SetSequence.fromSetWithValues(new HashSet<SNode>(), SLinkOperations.getTargets(superConstructor, "throwsItem", true));
+        RulesFunctions_BaseLanguage.check(typeCheckingContext, throwables, SLinkOperations.getTarget(constructorDeclaration, "body", true), "uncaught exceptions in super constructor:");
       }
     }
   }
