@@ -147,7 +147,6 @@
   <unitInfo fileName="IfStatement_Behavior.java" startLine="13" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IfStatement_Behavior" />
   <unitInfo fileName="Property_Behavior.java" startLine="13" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.Property_Behavior" />
   <unitInfo fileName="ParameterDeclaration_Behavior.java" startLine="14" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ParameterDeclaration_Behavior" />
-  <unitInfo fileName="StatementList_Behavior.java" startLine="14" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.StatementList_Behavior" />
   <unitInfo fileName="ConstructorInvocationStatement_Behavior.java" startLine="21" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ConstructorInvocationStatement_Behavior" />
   <unitInfo fileName="IMethodCall_Behavior.java" startLine="147" startPosition="0" endLine="207" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IMethodCall_Behavior$Pattern_fq0410_a0a0a5a2a1a2" />
   <unitInfo fileName="ClassifierType_Behavior.java" startLine="257" startPosition="0" endLine="317" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ClassifierType_Behavior$Pattern_hz3823_a0a0a1a01" />
@@ -156,6 +155,7 @@
   <unitInfo fileName="ConceptFunctionParameter_Behavior.java" startLine="14" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_Behavior" />
   <unitInfo fileName="BreakStatement_Behavior.java" startLine="10" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BreakStatement_Behavior" />
   <unitInfo fileName="StringLiteral_Behavior.java" startLine="9" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.StringLiteral_Behavior" />
+  <unitInfo fileName="StatementList_Behavior.java" startLine="15" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.StatementList_Behavior" />
   <unitInfo fileName="EnumConstantDeclaration_Behavior.java" startLine="17" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.EnumConstantDeclaration_Behavior" />
   <unitInfo fileName="LocalVariableDeclaration_Behavior.java" startLine="15" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.LocalVariableDeclaration_Behavior" />
   <unitInfo fileName="InstanceMethodDeclaration_Behavior.java" startLine="19" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.InstanceMethodDeclaration_Behavior" />
@@ -167,7 +167,7 @@
   <unitInfo fileName="VariableDeclaration_Behavior.java" startLine="18" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.VariableDeclaration_Behavior" />
   <unitInfo fileName="StaticFieldDeclaration_Behavior.java" startLine="18" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.StaticFieldDeclaration_Behavior" />
   <unitInfo fileName="AnonymousClass_Behavior.java" startLine="21" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AnonymousClass_Behavior" />
-  <unitInfo fileName="ConstructorDeclaration_Behavior.java" startLine="15" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ConstructorDeclaration_Behavior" />
+  <unitInfo fileName="ConstructorDeclaration_Behavior.java" startLine="15" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ConstructorDeclaration_Behavior" />
   <unitInfo fileName="FieldDeclaration_Behavior.java" startLine="23" startPosition="0" endLine="156" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.FieldDeclaration_Behavior" />
   <unitInfo fileName="ClassConcept_Behavior.java" startLine="34" startPosition="0" endLine="218" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior" />
   <unitInfo fileName="IMethodCall_Behavior.java" startLine="30" startPosition="0" endLine="244" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IMethodCall_Behavior" />
@@ -889,64 +889,75 @@
     <scopeInfo nodeId="8847328628797640225" fileName="CharType_Behavior.java" startLine="26" startPosition="81" endLine="27" endPosition="15" />
   </root>
   <root nodeId="1213877327381">
-    <nodeInfo nodeId="1214501228158" fileName="StatementList_Behavior.java" startLine="18" startPosition="96" endLine="19" endPosition="72" />
-    <nodeInfo nodeId="1222757250215" fileName="StatementList_Behavior.java" startLine="19" startPosition="72" endLine="20" endPosition="69" />
-    <nodeInfo nodeId="1222757405054" fileName="StatementList_Behavior.java" startLine="20" startPosition="69" endLine="21" endPosition="198" />
-    <nodeInfo nodeId="1222757428010" fileName="StatementList_Behavior.java" startLine="21" startPosition="198" endLine="22" endPosition="194" />
-    <nodeInfo nodeId="1214501228174" fileName="StatementList_Behavior.java" startLine="23" startPosition="33" endLine="24" endPosition="44" />
-    <nodeInfo nodeId="1214501228194" fileName="StatementList_Behavior.java" startLine="26" startPosition="60" endLine="27" endPosition="39" />
-    <nodeInfo nodeId="1214501228200" fileName="StatementList_Behavior.java" startLine="30" startPosition="37" endLine="31" endPosition="115" />
-    <nodeInfo nodeId="1214501236007" fileName="StatementList_Behavior.java" startLine="33" startPosition="5" endLine="34" endPosition="24" />
-    <nodeInfo nodeId="1237546649635" fileName="StatementList_Behavior.java" startLine="38" startPosition="142" endLine="39" endPosition="19" />
-    <nodeInfo nodeId="1237546676328" fileName="StatementList_Behavior.java" startLine="40" startPosition="5" endLine="41" endPosition="140" />
-    <nodeInfo nodeId="1237546676337" fileName="StatementList_Behavior.java" startLine="42" startPosition="99" endLine="43" endPosition="19" />
-    <nodeInfo nodeId="1237546718944" fileName="StatementList_Behavior.java" startLine="44" startPosition="5" endLine="45" endPosition="93" />
-    <nodeInfo nodeId="1237539777025" fileName="StatementList_Behavior.java" startLine="49" startPosition="101" endLine="50" endPosition="19" />
-    <nodeInfo nodeId="1237539799089" fileName="StatementList_Behavior.java" startLine="52" startPosition="285" endLine="53" endPosition="19" />
-    <nodeInfo nodeId="1237538871026" fileName="StatementList_Behavior.java" startLine="54" startPosition="5" endLine="55" endPosition="16" />
-    <nodeInfo nodeId="1238805924857" fileName="StatementList_Behavior.java" startLine="58" startPosition="92" endLine="59" endPosition="67" />
-    <nodeInfo nodeId="3331512479731121369" fileName="StatementList_Behavior.java" startLine="62" startPosition="119" endLine="63" endPosition="66" />
-    <nodeInfo nodeId="3331512479731121382" fileName="StatementList_Behavior.java" startLine="63" startPosition="66" endLine="64" endPosition="119" />
-    <nodeInfo nodeId="3331512479731121379" fileName="StatementList_Behavior.java" startLine="64" startPosition="119" endLine="65" endPosition="18" />
-    <nodeInfo nodeId="5412515780383134514" fileName="StatementList_Behavior.java" startLine="69" startPosition="108" endLine="70" endPosition="128" />
-    <nodeInfo nodeId="1214501228187" fileName="StatementList_Behavior.java" startLine="25" startPosition="132" endLine="28" endPosition="9" />
-    <nodeInfo nodeId="1214501228198" fileName="StatementList_Behavior.java" startLine="29" startPosition="7" endLine="32" endPosition="7" />
-    <nodeInfo nodeId="1237546634862" fileName="StatementList_Behavior.java" startLine="37" startPosition="70" endLine="40" endPosition="5" />
-    <nodeInfo nodeId="1237546676335" fileName="StatementList_Behavior.java" startLine="41" startPosition="140" endLine="44" endPosition="5" />
-    <nodeInfo nodeId="1237539767856" fileName="StatementList_Behavior.java" startLine="48" startPosition="71" endLine="51" endPosition="5" />
-    <nodeInfo nodeId="1237539779859" fileName="StatementList_Behavior.java" startLine="51" startPosition="5" endLine="54" endPosition="5" />
-    <nodeInfo nodeId="5412515780383134487" fileName="StatementList_Behavior.java" startLine="68" startPosition="143" endLine="71" endPosition="5" />
-    <nodeInfo nodeId="1214501228178" fileName="StatementList_Behavior.java" startLine="24" startPosition="44" endLine="29" endPosition="7" />
-    <nodeInfo nodeId="1214501228165" fileName="StatementList_Behavior.java" startLine="22" startPosition="194" endLine="33" endPosition="5" />
-    <scopeInfo nodeId="1213877327631" fileName="StatementList_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
-    <scopeInfo nodeId="1214501228193" fileName="StatementList_Behavior.java" startLine="26" startPosition="60" endLine="27" endPosition="39" />
-    <scopeInfo nodeId="1214501228199" fileName="StatementList_Behavior.java" startLine="30" startPosition="37" endLine="31" endPosition="115" />
-    <scopeInfo nodeId="1237546634864" fileName="StatementList_Behavior.java" startLine="38" startPosition="142" endLine="39" endPosition="19" />
-    <scopeInfo nodeId="1237546676336" fileName="StatementList_Behavior.java" startLine="42" startPosition="99" endLine="43" endPosition="19" />
-    <scopeInfo nodeId="1237539767857" fileName="StatementList_Behavior.java" startLine="49" startPosition="101" endLine="50" endPosition="19" />
-    <scopeInfo nodeId="1237539779860" fileName="StatementList_Behavior.java" startLine="52" startPosition="285" endLine="53" endPosition="19" />
-    <scopeInfo nodeId="1238805914105" fileName="StatementList_Behavior.java" startLine="58" startPosition="92" endLine="59" endPosition="67" />
-    <scopeInfo nodeId="5412515780383134490" fileName="StatementList_Behavior.java" startLine="69" startPosition="108" endLine="70" endPosition="128" />
-    <scopeInfo nodeId="1214501228186" fileName="StatementList_Behavior.java" startLine="25" startPosition="132" endLine="28" endPosition="9" />
-    <scopeInfo nodeId="3331512479731115652" fileName="StatementList_Behavior.java" startLine="62" startPosition="119" endLine="65" endPosition="18">
+    <nodeInfo nodeId="1214501228158" fileName="StatementList_Behavior.java" startLine="19" startPosition="96" endLine="20" endPosition="72" />
+    <nodeInfo nodeId="1222757250215" fileName="StatementList_Behavior.java" startLine="20" startPosition="72" endLine="21" endPosition="69" />
+    <nodeInfo nodeId="1222757405054" fileName="StatementList_Behavior.java" startLine="21" startPosition="69" endLine="22" endPosition="198" />
+    <nodeInfo nodeId="1222757428010" fileName="StatementList_Behavior.java" startLine="22" startPosition="198" endLine="23" endPosition="194" />
+    <nodeInfo nodeId="1214501228174" fileName="StatementList_Behavior.java" startLine="24" startPosition="33" endLine="25" endPosition="44" />
+    <nodeInfo nodeId="1214501228194" fileName="StatementList_Behavior.java" startLine="27" startPosition="60" endLine="28" endPosition="39" />
+    <nodeInfo nodeId="1214501228200" fileName="StatementList_Behavior.java" startLine="31" startPosition="37" endLine="32" endPosition="115" />
+    <nodeInfo nodeId="1214501236007" fileName="StatementList_Behavior.java" startLine="34" startPosition="5" endLine="35" endPosition="24" />
+    <nodeInfo nodeId="1237546649635" fileName="StatementList_Behavior.java" startLine="39" startPosition="142" endLine="40" endPosition="19" />
+    <nodeInfo nodeId="1237546676328" fileName="StatementList_Behavior.java" startLine="41" startPosition="5" endLine="42" endPosition="140" />
+    <nodeInfo nodeId="1237546676337" fileName="StatementList_Behavior.java" startLine="43" startPosition="99" endLine="44" endPosition="19" />
+    <nodeInfo nodeId="1237546718944" fileName="StatementList_Behavior.java" startLine="45" startPosition="5" endLine="46" endPosition="93" />
+    <nodeInfo nodeId="1237539777025" fileName="StatementList_Behavior.java" startLine="50" startPosition="101" endLine="51" endPosition="19" />
+    <nodeInfo nodeId="1237539799089" fileName="StatementList_Behavior.java" startLine="53" startPosition="285" endLine="54" endPosition="19" />
+    <nodeInfo nodeId="1237538871026" fileName="StatementList_Behavior.java" startLine="55" startPosition="5" endLine="56" endPosition="16" />
+    <nodeInfo nodeId="1238805924857" fileName="StatementList_Behavior.java" startLine="59" startPosition="92" endLine="60" endPosition="67" />
+    <nodeInfo nodeId="3331512479731121369" fileName="StatementList_Behavior.java" startLine="63" startPosition="119" endLine="64" endPosition="66" />
+    <nodeInfo nodeId="3331512479731121382" fileName="StatementList_Behavior.java" startLine="64" startPosition="66" endLine="65" endPosition="119" />
+    <nodeInfo nodeId="3331512479731121379" fileName="StatementList_Behavior.java" startLine="65" startPosition="119" endLine="66" endPosition="18" />
+    <nodeInfo nodeId="5412515780383134514" fileName="StatementList_Behavior.java" startLine="70" startPosition="108" endLine="71" endPosition="128" />
+    <nodeInfo nodeId="5420652334935404898" fileName="StatementList_Behavior.java" startLine="77" startPosition="350" endLine="78" endPosition="17" />
+    <nodeInfo nodeId="5420652334935404900" fileName="StatementList_Behavior.java" startLine="79" startPosition="7" endLine="80" endPosition="23" />
+    <nodeInfo nodeId="5420652334935404904" fileName="StatementList_Behavior.java" startLine="81" startPosition="5" endLine="82" endPosition="16" />
+    <nodeInfo nodeId="1214501228187" fileName="StatementList_Behavior.java" startLine="26" startPosition="132" endLine="29" endPosition="9" />
+    <nodeInfo nodeId="1214501228198" fileName="StatementList_Behavior.java" startLine="30" startPosition="7" endLine="33" endPosition="7" />
+    <nodeInfo nodeId="1237546634862" fileName="StatementList_Behavior.java" startLine="38" startPosition="70" endLine="41" endPosition="5" />
+    <nodeInfo nodeId="1237546676335" fileName="StatementList_Behavior.java" startLine="42" startPosition="140" endLine="45" endPosition="5" />
+    <nodeInfo nodeId="1237539767856" fileName="StatementList_Behavior.java" startLine="49" startPosition="71" endLine="52" endPosition="5" />
+    <nodeInfo nodeId="1237539779859" fileName="StatementList_Behavior.java" startLine="52" startPosition="5" endLine="55" endPosition="5" />
+    <nodeInfo nodeId="5412515780383134487" fileName="StatementList_Behavior.java" startLine="69" startPosition="143" endLine="72" endPosition="5" />
+    <nodeInfo nodeId="5420652334935404856" fileName="StatementList_Behavior.java" startLine="76" startPosition="85" endLine="79" endPosition="7" />
+    <nodeInfo nodeId="1214501228178" fileName="StatementList_Behavior.java" startLine="25" startPosition="44" endLine="30" endPosition="7" />
+    <nodeInfo nodeId="5420652334935404845" fileName="StatementList_Behavior.java" startLine="75" startPosition="82" endLine="81" endPosition="5" />
+    <nodeInfo nodeId="1214501228165" fileName="StatementList_Behavior.java" startLine="23" startPosition="194" endLine="34" endPosition="5" />
+    <scopeInfo nodeId="1213877327631" fileName="StatementList_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
+    <scopeInfo nodeId="1214501228193" fileName="StatementList_Behavior.java" startLine="27" startPosition="60" endLine="28" endPosition="39" />
+    <scopeInfo nodeId="1214501228199" fileName="StatementList_Behavior.java" startLine="31" startPosition="37" endLine="32" endPosition="115" />
+    <scopeInfo nodeId="1237546634864" fileName="StatementList_Behavior.java" startLine="39" startPosition="142" endLine="40" endPosition="19" />
+    <scopeInfo nodeId="1237546676336" fileName="StatementList_Behavior.java" startLine="43" startPosition="99" endLine="44" endPosition="19" />
+    <scopeInfo nodeId="1237539767857" fileName="StatementList_Behavior.java" startLine="50" startPosition="101" endLine="51" endPosition="19" />
+    <scopeInfo nodeId="1237539779860" fileName="StatementList_Behavior.java" startLine="53" startPosition="285" endLine="54" endPosition="19" />
+    <scopeInfo nodeId="1238805914105" fileName="StatementList_Behavior.java" startLine="59" startPosition="92" endLine="60" endPosition="67" />
+    <scopeInfo nodeId="5412515780383134490" fileName="StatementList_Behavior.java" startLine="70" startPosition="108" endLine="71" endPosition="128" />
+    <scopeInfo nodeId="5420652334935404858" fileName="StatementList_Behavior.java" startLine="77" startPosition="350" endLine="78" endPosition="17" />
+    <scopeInfo nodeId="1214501228186" fileName="StatementList_Behavior.java" startLine="26" startPosition="132" endLine="29" endPosition="9" />
+    <scopeInfo nodeId="3331512479731115652" fileName="StatementList_Behavior.java" startLine="63" startPosition="119" endLine="66" endPosition="18">
       <varInfo nodeId="3331512479731121370" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="5412515780383134477" fileName="StatementList_Behavior.java" startLine="68" startPosition="143" endLine="71" endPosition="5" />
-    <scopeInfo nodeId="5412515780383134487" fileName="StatementList_Behavior.java" startLine="68" startPosition="143" endLine="71" endPosition="5" />
-    <scopeInfo nodeId="1214501228178" fileName="StatementList_Behavior.java" startLine="24" startPosition="44" endLine="29" endPosition="7">
+    <scopeInfo nodeId="5412515780383134477" fileName="StatementList_Behavior.java" startLine="69" startPosition="143" endLine="72" endPosition="5" />
+    <scopeInfo nodeId="5412515780383134487" fileName="StatementList_Behavior.java" startLine="69" startPosition="143" endLine="72" endPosition="5" />
+    <scopeInfo nodeId="5420652334935404848" fileName="StatementList_Behavior.java" startLine="76" startPosition="85" endLine="80" endPosition="23" />
+    <scopeInfo nodeId="1214501228178" fileName="StatementList_Behavior.java" startLine="25" startPosition="44" endLine="30" endPosition="7">
       <varInfo nodeId="1214501228184" varName="parent" />
     </scopeInfo>
-    <scopeInfo nodeId="1237538811453" fileName="StatementList_Behavior.java" startLine="48" startPosition="71" endLine="55" endPosition="16" />
-    <scopeInfo nodeId="1237546596170" fileName="StatementList_Behavior.java" startLine="37" startPosition="70" endLine="45" endPosition="93">
+    <scopeInfo nodeId="5420652334935404845" fileName="StatementList_Behavior.java" startLine="75" startPosition="82" endLine="81" endPosition="5">
+      <varInfo nodeId="5420652334935404846" varName="statement" />
+    </scopeInfo>
+    <scopeInfo nodeId="1237538811453" fileName="StatementList_Behavior.java" startLine="49" startPosition="71" endLine="56" endPosition="16" />
+    <scopeInfo nodeId="5420652334935371937" fileName="StatementList_Behavior.java" startLine="75" startPosition="82" endLine="82" endPosition="16" />
+    <scopeInfo nodeId="1237546596170" fileName="StatementList_Behavior.java" startLine="38" startPosition="70" endLine="46" endPosition="93">
       <varInfo nodeId="1237546676329" varName="parent" />
     </scopeInfo>
-    <scopeInfo nodeId="1214501228173" fileName="StatementList_Behavior.java" startLine="23" startPosition="33" endLine="32" endPosition="7">
+    <scopeInfo nodeId="1214501228173" fileName="StatementList_Behavior.java" startLine="24" startPosition="33" endLine="33" endPosition="7">
       <varInfo nodeId="1214501228175" varName="statementsContainsVar" />
     </scopeInfo>
-    <scopeInfo nodeId="1214501228165" fileName="StatementList_Behavior.java" startLine="22" startPosition="194" endLine="33" endPosition="5">
+    <scopeInfo nodeId="1214501228165" fileName="StatementList_Behavior.java" startLine="23" startPosition="194" endLine="34" endPosition="5">
       <varInfo nodeId="1214501228171" varName="ref" />
     </scopeInfo>
-    <scopeInfo nodeId="1214501165482" fileName="StatementList_Behavior.java" startLine="18" startPosition="96" endLine="34" endPosition="24">
+    <scopeInfo nodeId="1214501165482" fileName="StatementList_Behavior.java" startLine="19" startPosition="96" endLine="35" endPosition="24">
       <varInfo nodeId="1214501228159" varName="declarations" />
       <varInfo nodeId="1222757250216" varName="reference" />
     </scopeInfo>
@@ -2044,35 +2055,33 @@
     <nodeInfo nodeId="1304595503654544001" fileName="ConstructorDeclaration_Behavior.java" startLine="77" startPosition="5" endLine="78" endPosition="19" />
     <nodeInfo nodeId="1304595503654544006" fileName="ConstructorDeclaration_Behavior.java" startLine="78" startPosition="19" endLine="79" endPosition="19" />
     <nodeInfo nodeId="1304595503654544015" fileName="ConstructorDeclaration_Behavior.java" startLine="79" startPosition="19" endLine="80" endPosition="25" />
-    <nodeInfo nodeId="7152041109751578037" fileName="ConstructorDeclaration_Behavior.java" startLine="83" startPosition="103" endLine="84" endPosition="126" />
-    <nodeInfo nodeId="7152041109751578059" fileName="ConstructorDeclaration_Behavior.java" startLine="85" startPosition="203" endLine="86" endPosition="18" />
-    <nodeInfo nodeId="7152041109751578063" fileName="ConstructorDeclaration_Behavior.java" startLine="87" startPosition="5" endLine="88" endPosition="17" />
-    <nodeInfo nodeId="7152041109751601018" fileName="ConstructorDeclaration_Behavior.java" startLine="91" startPosition="91" endLine="92" endPosition="130" />
-    <nodeInfo nodeId="7152041109751601026" fileName="ConstructorDeclaration_Behavior.java" startLine="92" startPosition="130" endLine="93" endPosition="87" />
-    <nodeInfo nodeId="7152041109751698065" fileName="ConstructorDeclaration_Behavior.java" startLine="94" startPosition="33" endLine="95" endPosition="174" />
-    <nodeInfo nodeId="7152041109751601032" fileName="ConstructorDeclaration_Behavior.java" startLine="96" startPosition="5" endLine="97" endPosition="86" />
-    <nodeInfo nodeId="7152041109751609198" fileName="ConstructorDeclaration_Behavior.java" startLine="98" startPosition="107" endLine="99" endPosition="18" />
-    <nodeInfo nodeId="7152041109751609223" fileName="ConstructorDeclaration_Behavior.java" startLine="100" startPosition="5" endLine="101" endPosition="109" />
-    <nodeInfo nodeId="7152041109751601040" fileName="ConstructorDeclaration_Behavior.java" startLine="102" startPosition="103" endLine="103" endPosition="93" />
-    <nodeInfo nodeId="7152041109751601049" fileName="ConstructorDeclaration_Behavior.java" startLine="104" startPosition="58" endLine="105" endPosition="20" />
-    <nodeInfo nodeId="7152041109751601059" fileName="ConstructorDeclaration_Behavior.java" startLine="108" startPosition="106" endLine="109" endPosition="29" />
-    <nodeInfo nodeId="7152041109751609183" fileName="ConstructorDeclaration_Behavior.java" startLine="111" startPosition="7" endLine="112" endPosition="18" />
-    <nodeInfo nodeId="7152041109751609216" fileName="ConstructorDeclaration_Behavior.java" startLine="113" startPosition="12" endLine="114" endPosition="104" />
+    <nodeInfo nodeId="5420652334935457184" fileName="ConstructorDeclaration_Behavior.java" startLine="83" startPosition="103" endLine="84" endPosition="144" />
+    <nodeInfo nodeId="7152041109751578063" fileName="ConstructorDeclaration_Behavior.java" startLine="84" startPosition="144" endLine="85" endPosition="130" />
+    <nodeInfo nodeId="7152041109751601018" fileName="ConstructorDeclaration_Behavior.java" startLine="88" startPosition="91" endLine="89" endPosition="130" />
+    <nodeInfo nodeId="7152041109751601026" fileName="ConstructorDeclaration_Behavior.java" startLine="89" startPosition="130" endLine="90" endPosition="87" />
+    <nodeInfo nodeId="7152041109751698065" fileName="ConstructorDeclaration_Behavior.java" startLine="91" startPosition="33" endLine="92" endPosition="174" />
+    <nodeInfo nodeId="7152041109751601032" fileName="ConstructorDeclaration_Behavior.java" startLine="93" startPosition="5" endLine="94" endPosition="86" />
+    <nodeInfo nodeId="7152041109751609198" fileName="ConstructorDeclaration_Behavior.java" startLine="95" startPosition="107" endLine="96" endPosition="18" />
+    <nodeInfo nodeId="7152041109751609223" fileName="ConstructorDeclaration_Behavior.java" startLine="97" startPosition="5" endLine="98" endPosition="109" />
+    <nodeInfo nodeId="7152041109751601040" fileName="ConstructorDeclaration_Behavior.java" startLine="99" startPosition="103" endLine="100" endPosition="93" />
+    <nodeInfo nodeId="7152041109751601049" fileName="ConstructorDeclaration_Behavior.java" startLine="101" startPosition="58" endLine="102" endPosition="20" />
+    <nodeInfo nodeId="7152041109751601059" fileName="ConstructorDeclaration_Behavior.java" startLine="105" startPosition="106" endLine="106" endPosition="29" />
+    <nodeInfo nodeId="7152041109751609183" fileName="ConstructorDeclaration_Behavior.java" startLine="108" startPosition="7" endLine="109" endPosition="18" />
+    <nodeInfo nodeId="7152041109751609216" fileName="ConstructorDeclaration_Behavior.java" startLine="110" startPosition="12" endLine="111" endPosition="104" />
     <nodeInfo nodeId="8896167893546348433" fileName="ConstructorDeclaration_Behavior.java" startLine="52" startPosition="10" endLine="54" endPosition="5" />
     <nodeInfo nodeId="983626226385657731" fileName="ConstructorDeclaration_Behavior.java" startLine="64" startPosition="12" endLine="66" endPosition="7" />
-    <nodeInfo nodeId="7152041109751609214" fileName="ConstructorDeclaration_Behavior.java" startLine="113" startPosition="10" endLine="115" endPosition="5" />
+    <nodeInfo nodeId="7152041109751609214" fileName="ConstructorDeclaration_Behavior.java" startLine="110" startPosition="10" endLine="112" endPosition="5" />
     <nodeInfo nodeId="983626226385657702" fileName="ConstructorDeclaration_Behavior.java" startLine="57" startPosition="80" endLine="60" endPosition="7" />
     <nodeInfo nodeId="1304595503654543985" fileName="ConstructorDeclaration_Behavior.java" startLine="74" startPosition="19" endLine="77" endPosition="5" />
-    <nodeInfo nodeId="7152041109751578045" fileName="ConstructorDeclaration_Behavior.java" startLine="84" startPosition="126" endLine="87" endPosition="5" />
-    <nodeInfo nodeId="7152041109751698056" fileName="ConstructorDeclaration_Behavior.java" startLine="93" startPosition="87" endLine="96" endPosition="5" />
-    <nodeInfo nodeId="7152041109751609189" fileName="ConstructorDeclaration_Behavior.java" startLine="97" startPosition="86" endLine="100" endPosition="5" />
-    <nodeInfo nodeId="7152041109751601047" fileName="ConstructorDeclaration_Behavior.java" startLine="103" startPosition="93" endLine="106" endPosition="7" />
-    <nodeInfo nodeId="7152041109751601057" fileName="ConstructorDeclaration_Behavior.java" startLine="107" startPosition="46" endLine="110" endPosition="9" />
+    <nodeInfo nodeId="7152041109751698056" fileName="ConstructorDeclaration_Behavior.java" startLine="90" startPosition="87" endLine="93" endPosition="5" />
+    <nodeInfo nodeId="7152041109751609189" fileName="ConstructorDeclaration_Behavior.java" startLine="94" startPosition="86" endLine="97" endPosition="5" />
+    <nodeInfo nodeId="7152041109751601047" fileName="ConstructorDeclaration_Behavior.java" startLine="100" startPosition="93" endLine="103" endPosition="7" />
+    <nodeInfo nodeId="7152041109751601057" fileName="ConstructorDeclaration_Behavior.java" startLine="104" startPosition="46" endLine="107" endPosition="9" />
     <nodeInfo nodeId="8896167893546348405" fileName="ConstructorDeclaration_Behavior.java" startLine="49" startPosition="47" endLine="54" endPosition="5" />
     <nodeInfo nodeId="983626226385657715" fileName="ConstructorDeclaration_Behavior.java" startLine="61" startPosition="20" endLine="66" endPosition="7" />
-    <nodeInfo nodeId="7152041109751601053" fileName="ConstructorDeclaration_Behavior.java" startLine="106" startPosition="7" endLine="111" endPosition="7" />
+    <nodeInfo nodeId="7152041109751601053" fileName="ConstructorDeclaration_Behavior.java" startLine="103" startPosition="7" endLine="108" endPosition="7" />
     <nodeInfo nodeId="983626226385657695" fileName="ConstructorDeclaration_Behavior.java" startLine="56" startPosition="25" endLine="67" endPosition="5" />
-    <nodeInfo nodeId="7152041109751601038" fileName="ConstructorDeclaration_Behavior.java" startLine="101" startPosition="109" endLine="115" endPosition="5" />
+    <nodeInfo nodeId="7152041109751601038" fileName="ConstructorDeclaration_Behavior.java" startLine="98" startPosition="109" endLine="112" endPosition="5" />
     <scopeInfo nodeId="1213877436410" fileName="ConstructorDeclaration_Behavior.java" startLine="19" startPosition="43" endLine="19" endPosition="43" />
     <scopeInfo nodeId="1224865755826" fileName="ConstructorDeclaration_Behavior.java" startLine="22" startPosition="76" endLine="23" endPosition="434" />
     <scopeInfo nodeId="1233076530823" fileName="ConstructorDeclaration_Behavior.java" startLine="26" startPosition="78" endLine="27" endPosition="16" />
@@ -2085,30 +2094,29 @@
     <scopeInfo nodeId="983626226385657716" fileName="ConstructorDeclaration_Behavior.java" startLine="62" startPosition="66" endLine="63" endPosition="126" />
     <scopeInfo nodeId="983626226385657732" fileName="ConstructorDeclaration_Behavior.java" startLine="64" startPosition="14" endLine="65" endPosition="29" />
     <scopeInfo nodeId="1304595503654543986" fileName="ConstructorDeclaration_Behavior.java" startLine="75" startPosition="77" endLine="76" endPosition="113" />
-    <scopeInfo nodeId="7152041109751578046" fileName="ConstructorDeclaration_Behavior.java" startLine="85" startPosition="203" endLine="86" endPosition="18" />
-    <scopeInfo nodeId="7152041109751698057" fileName="ConstructorDeclaration_Behavior.java" startLine="94" startPosition="33" endLine="95" endPosition="174" />
-    <scopeInfo nodeId="7152041109751609190" fileName="ConstructorDeclaration_Behavior.java" startLine="98" startPosition="107" endLine="99" endPosition="18" />
-    <scopeInfo nodeId="7152041109751601048" fileName="ConstructorDeclaration_Behavior.java" startLine="104" startPosition="58" endLine="105" endPosition="20" />
-    <scopeInfo nodeId="7152041109751601058" fileName="ConstructorDeclaration_Behavior.java" startLine="108" startPosition="106" endLine="109" endPosition="29" />
-    <scopeInfo nodeId="7152041109751609215" fileName="ConstructorDeclaration_Behavior.java" startLine="113" startPosition="12" endLine="114" endPosition="104" />
+    <scopeInfo nodeId="7152041109751698057" fileName="ConstructorDeclaration_Behavior.java" startLine="91" startPosition="33" endLine="92" endPosition="174" />
+    <scopeInfo nodeId="7152041109751609190" fileName="ConstructorDeclaration_Behavior.java" startLine="95" startPosition="107" endLine="96" endPosition="18" />
+    <scopeInfo nodeId="7152041109751601048" fileName="ConstructorDeclaration_Behavior.java" startLine="101" startPosition="58" endLine="102" endPosition="20" />
+    <scopeInfo nodeId="7152041109751601058" fileName="ConstructorDeclaration_Behavior.java" startLine="105" startPosition="106" endLine="106" endPosition="29" />
+    <scopeInfo nodeId="7152041109751609215" fileName="ConstructorDeclaration_Behavior.java" startLine="110" startPosition="12" endLine="111" endPosition="104" />
+    <scopeInfo nodeId="7152041109751551506" fileName="ConstructorDeclaration_Behavior.java" startLine="83" startPosition="103" endLine="85" endPosition="130">
+      <varInfo nodeId="5420652334935457185" varName="firstStatement" />
+    </scopeInfo>
     <scopeInfo nodeId="4025276038182459844" fileName="ConstructorDeclaration_Behavior.java" startLine="38" startPosition="103" endLine="41" endPosition="18">
       <varInfo nodeId="4025276038182459846" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="1304595503654543985" fileName="ConstructorDeclaration_Behavior.java" startLine="74" startPosition="19" endLine="77" endPosition="5">
       <varInfo nodeId="1304595503654543999" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="7152041109751601056" fileName="ConstructorDeclaration_Behavior.java" startLine="107" startPosition="46" endLine="110" endPosition="9" />
-    <scopeInfo nodeId="7152041109751551506" fileName="ConstructorDeclaration_Behavior.java" startLine="83" startPosition="103" endLine="88" endPosition="17">
-      <varInfo nodeId="7152041109751578038" varName="statements" />
-    </scopeInfo>
-    <scopeInfo nodeId="7152041109751601053" fileName="ConstructorDeclaration_Behavior.java" startLine="106" startPosition="7" endLine="111" endPosition="7">
+    <scopeInfo nodeId="7152041109751601056" fileName="ConstructorDeclaration_Behavior.java" startLine="104" startPosition="46" endLine="107" endPosition="9" />
+    <scopeInfo nodeId="7152041109751601053" fileName="ConstructorDeclaration_Behavior.java" startLine="103" startPosition="7" endLine="108" endPosition="7">
       <varInfo nodeId="7152041109751601054" varName="constructor" />
     </scopeInfo>
     <scopeInfo nodeId="1304595503654539645" fileName="ConstructorDeclaration_Behavior.java" startLine="72" startPosition="81" endLine="80" endPosition="25">
       <varInfo nodeId="1304595503654543976" varName="sb" />
     </scopeInfo>
     <scopeInfo nodeId="983626226385657701" fileName="ConstructorDeclaration_Behavior.java" startLine="57" startPosition="80" endLine="66" endPosition="7" />
-    <scopeInfo nodeId="7152041109751601039" fileName="ConstructorDeclaration_Behavior.java" startLine="102" startPosition="103" endLine="112" endPosition="18">
+    <scopeInfo nodeId="7152041109751601039" fileName="ConstructorDeclaration_Behavior.java" startLine="99" startPosition="103" endLine="109" endPosition="18">
       <varInfo nodeId="7152041109751601041" varName="constructors" />
     </scopeInfo>
     <scopeInfo nodeId="983626226385657695" fileName="ConstructorDeclaration_Behavior.java" startLine="56" startPosition="25" endLine="67" endPosition="5">
@@ -2118,7 +2126,7 @@
       <varInfo nodeId="983626226385657675" varName="result" />
       <varInfo nodeId="983626226385657692" varName="first" />
     </scopeInfo>
-    <scopeInfo nodeId="7152041109751601016" fileName="ConstructorDeclaration_Behavior.java" startLine="91" startPosition="91" endLine="115" endPosition="5">
+    <scopeInfo nodeId="7152041109751601016" fileName="ConstructorDeclaration_Behavior.java" startLine="88" startPosition="91" endLine="112" endPosition="5">
       <varInfo nodeId="7152041109751601027" varName="classifierType" />
       <varInfo nodeId="7152041109751609224" varName="superclass" />
       <varInfo nodeId="7152041109751601033" varName="classifier" />

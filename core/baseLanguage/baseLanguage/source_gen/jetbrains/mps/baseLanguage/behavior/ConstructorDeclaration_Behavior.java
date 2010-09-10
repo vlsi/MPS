@@ -81,11 +81,8 @@ public class ConstructorDeclaration_Behavior {
   }
 
   public static boolean call_containsImplicitSuperConstructorCall_7152041109751551503(SNode thisNode) {
-    List<SNode> statements = SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "body", true), "statement", true);
-    if (ListSequence.fromList(statements).isEmpty() || !(SNodeOperations.isInstanceOf(ListSequence.fromList(statements).first(), "jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement"))) {
-      return true;
-    }
-    return false;
+    SNode firstStatement = StatementList_Behavior.call_getFirstStatement_5420652334935371934(SLinkOperations.getTarget(thisNode, "body", true));
+    return !(SNodeOperations.isInstanceOf(firstStatement, "jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement"));
   }
 
   public static SNode call_getSuperDefaultConstructor_7152041109751601013(SNode thisNode) {

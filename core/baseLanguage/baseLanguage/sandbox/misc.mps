@@ -208,7 +208,7 @@
         <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="7152041109751465934" />
         <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7152041109751465935" />
         <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7152041109751465936" />
-        <node role="throwsItem:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7152041109751856944">
+        <node role="throwsItem:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5420652334935575668">
           <link role="classifier:3" targetNodeId="150.~Exception" resolveInfo="Exception" />
         </node>
       </node>
