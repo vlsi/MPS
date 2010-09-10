@@ -1,7 +1,7 @@
 import org.jetbrains.jps.Module
 import static org.jetbrains.jps.idea.IdeaProjectLoader.*
 
-includeTargets << new File("${guessHome(this)}/build/scripts/utils.gant")
+includeTargets << new File("scripts/utils.gant")
 
 target('default': "Developers update") {
   layoutFull(home, deploy)
@@ -73,7 +73,7 @@ def layoutFull(String home, String targetDirectory) {
         module("icons")
       }
       jar("boot.jar") {
-        module("boot") 
+        module("boot")
       }
 
       fileset(dir: "$home/lib") {
@@ -132,7 +132,7 @@ private List platformImplementationModules() {
           "testFramework",
           "tests_bootstrap",
           "xml",
-          "images",
+          "images"
   ]
 }
 
@@ -144,7 +144,8 @@ private List<String> platformApiModules() {
           "lang-api",
           "usageView",
           "xdebugger-api",
-          "xml-openapi"]
+          "xml-openapi"
+  ]
 }
 
 //------------custom layouters

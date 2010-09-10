@@ -8,13 +8,9 @@ requireProperty("out", "$home/out")
 
 class Paths {
   final sandbox
-  final distAll
-  final artifacts
 
   def Paths(String out) {
     sandbox = out
-    distAll = "$sandbox/dist.all.ce"
-    artifacts = "$sandbox/artifacts"
   }
 }
 
@@ -34,7 +30,7 @@ target(compile: "Compile project") {
   project.stage("Cleaning up sandbox folder")
   ant.delete(dir: paths.sandbox)
 
-  [paths.sandbox, paths.distAll, paths.artifacts].each {
+  [paths.sandbox].each {
     ant.mkdir(dir: it)
   }
 
@@ -75,14 +71,14 @@ public def layoutAll(Map args, String home, String out) {
   ant.xmlproperty(file: appInfoFile(), collapseAttributes: "true")
 
   def layouts = includeFile("$home/build/scripts/mps_platform.gant")
-  layouts.layoutFull(home, paths.distAll)
+  layouts.layoutFull(home, paths.sandbox)
 
-  ant.echo(message: args.buildNumber, file: "$paths.distAll/build.txt")
-  ant.copy(todir: "$paths.distAll/license", preservelastmodified: "true") {
+  ant.echo(message: args.buildNumber, file: "$paths.sandbox/build.txt")
+  ant.copy(todir: "$paths.sandbox/license", preservelastmodified: "true") {
     fileset(dir: "$home/license")
   }
 
-  ant.copy(file: "$home/LICENSE.txt", todir: "$paths.distAll", preservelastmodified: "true")
+  ant.copy(file: "$home/LICENSE.txt", todir: "$paths.sandbox", preservelastmodified: "true")
 }
 
 boolean isEap() {
