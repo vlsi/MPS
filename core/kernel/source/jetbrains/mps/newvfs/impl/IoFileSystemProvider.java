@@ -19,4 +19,10 @@ public class IoFileSystemProvider implements FileSystemProvider {
     System.out.println("getJarFile()"); // TODO
     return null;
   }
+
+  @Override
+  public INewFile mkdirs(@NotNull String path) {
+    System.out.println("mkdirs()"); // TODO
+    return null;
+  }
 }

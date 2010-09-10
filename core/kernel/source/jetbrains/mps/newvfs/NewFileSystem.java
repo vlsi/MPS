@@ -15,6 +15,9 @@ public abstract class NewFileSystem {
   @Nullable
   public abstract INewFile getFileByPath(@NotNull String path);
 
+  @Nullable
+  public abstract INewFile mkdirs(@NotNull String path);
+
   public static NewFileSystem getInstance() {
     return INSTANCE;
   }

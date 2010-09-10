@@ -1,15 +1,10 @@
 package jetbrains.mps.newvfs.impl;
 
-import com.intellij.openapi.vfs.LocalFileSystem;
-import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.newvfs.FileSystemProvider;
 import jetbrains.mps.newvfs.INewFile;
 import jetbrains.mps.newvfs.NewFileSystem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import sun.management.FileSystemImpl;
-
-import java.io.File;
 
 /**
  * @author Evgeny Gerashchenko
@@ -41,5 +36,10 @@ public class NewFileSystemImpl extends NewFileSystem {
     }
 
     return myFileSystemProvider.getPlainFile(path);
+  }
+
+  @Override
+  public INewFile mkdirs(@NotNull String path) {
+    return myFileSystemProvider.mkdirs(path);
   }
 }

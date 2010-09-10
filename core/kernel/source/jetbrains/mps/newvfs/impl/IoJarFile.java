@@ -1,9 +1,9 @@
 package jetbrains.mps.newvfs.impl;
 
-import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.newvfs.INewFile;
 
 /**
  * @author Evgeny Gerashchenko
  */
-public abstract class IoJarFile implements IFile {
+public abstract class IoJarFile implements INewFile {
 }
