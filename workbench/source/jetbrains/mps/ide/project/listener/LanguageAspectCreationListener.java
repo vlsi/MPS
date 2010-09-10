@@ -13,8 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project.listener;
+package jetbrains.mps.ide.project.listener;
 
+import jetbrains.mps.project.listener.ModelCreationListener;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;

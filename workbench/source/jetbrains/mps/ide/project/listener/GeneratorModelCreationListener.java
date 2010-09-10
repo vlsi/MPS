@@ -13,11 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project.listener;
+package jetbrains.mps.ide.project.listener;
 
 import jetbrains.mps.lang.generator.generationContext.structure.GenerationContext_Language;
 import jetbrains.mps.lang.generator.structure.Generator_Language;
 import jetbrains.mps.library.GeneralPurpose_DevKit;
+import jetbrains.mps.project.listener.ModelCreationListener;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
