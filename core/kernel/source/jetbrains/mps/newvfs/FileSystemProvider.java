@@ -1,9 +1,15 @@
 package jetbrains.mps.newvfs;
 
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
 /**
  * @author Evgeny Gerashchenko
  */
 public interface FileSystemProvider {
-  public INewFile getPlainFile(String path);
-  public INewFile getJarFile(String path);
+  @Nullable
+  public INewFile getPlainFile(@NotNull String path);
+
+  @Nullable
+  public INewFile getJarFile(@NotNull String jarPath, @NotNull String entryPath);
 }

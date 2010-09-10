@@ -25,8 +25,8 @@ import java.util.List;
  */
 public interface INewFile {
   String getName();
-  IFile getParent();
-  List<IFile> getChildren();
+  INewFile getParent();
+  List<? extends INewFile> getChildren();
 
   boolean isDirectory();
   boolean isFile();
