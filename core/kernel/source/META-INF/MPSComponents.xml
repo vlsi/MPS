@@ -448,7 +448,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.refactoring.RefactoringView</implementation-class>
+      <implementation-class>jetbrains.mps.ide.refactoring.RefactoringView</implementation-class>
       <skipForDummyProject/>
     </component>
 

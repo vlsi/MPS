@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.refactoring;
+package jetbrains.mps.ide.refactoring;
 
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder;

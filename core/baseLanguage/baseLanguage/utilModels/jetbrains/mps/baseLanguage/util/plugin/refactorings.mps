@@ -64,7 +64,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
   <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="51" />
+  <maxImportIndex value="52" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="2" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
@@ -109,6 +109,7 @@
   <import index="49" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="50" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="51" modelUID="f:java_stub#jetbrains.mps.project.dependency(jetbrains.mps.project.dependency@java_stub)" version="-1" />
+  <import index="52" modelUID="f:java_stub#jetbrains.mps.ide.refactoring(jetbrains.mps.ide.refactoring@java_stub)" version="-1" />
   <visible index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399162125">
     <property name="package:3" value="introduceVariable" />
@@ -20178,14 +20179,14 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="8492459591399169949">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="8492459591399169950">
             <property name="name:3" value="refactoringViewAction" />
-            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8492459591399169951">
-              <link role="classifier:3" targetNodeId="31.~RefactoringViewAction" resolveInfo="RefactoringViewAction" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8443130329368597972">
+              <link role="classifier:3" targetNodeId="52.~RefactoringViewAction" resolveInfo="RefactoringViewAction" />
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="8492459591399169952">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="8492459591399169953">
                 <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="8492459591399169954">
-                  <link role="classifier:3" targetNodeId="31.~RefactoringViewAction" resolveInfo="RefactoringViewAction" />
                   <link role="baseMethodDeclaration:3" targetNodeId="2v.~Object.&lt;init&gt;()" resolveInfo="Object" />
+                  <link role="classifier:3" targetNodeId="52.~RefactoringViewAction" resolveInfo="RefactoringViewAction" />
                   <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8492459591399169955" />
                   <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="8492459591399169956">
                     <property name="isAbstract:3" value="false" />
@@ -20194,18 +20195,18 @@
                     <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="8492459591399169958" />
                     <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="8492459591399169959">
                       <property name="name:3" value="p0" />
-                      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8492459591399169960">
-                        <link role="classifier:3" targetNodeId="31.~RefactoringViewItem" resolveInfo="RefactoringViewItem" />
+                      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8443130329368597974">
+                        <link role="classifier:3" targetNodeId="52.~RefactoringViewItem" resolveInfo="RefactoringViewItem" />
                       </node>
                     </node>
                     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8492459591399169961">
                       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8492459591399169962">
                         <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8492459591399169963">
-                          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="8492459591399169964">
+                          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="8443130329368597975">
                             <link role="variableDeclaration:3" targetNodeId="8492459591399169959" resolveInfo="p0" />
                           </node>
                           <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8492459591399169965">
-                            <link role="baseMethodDeclaration:3" targetNodeId="31.~RefactoringViewItem.close():void" resolveInfo="close" />
+                            <link role="baseMethodDeclaration:3" targetNodeId="52.~RefactoringViewItem.close():void" resolveInfo="close" />
                           </node>
                         </node>
                       </node>
@@ -20237,13 +20238,13 @@
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8492459591399169976">
                 <link role="baseMethodDeclaration:3" targetNodeId="10.~IOperationContext.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression:3" id="8492459591399169977">
-                  <link role="classifier:3" targetNodeId="31.~RefactoringView" resolveInfo="RefactoringView" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression:3" id="8443130329368597979">
+                  <link role="classifier:3" targetNodeId="52.~RefactoringView" resolveInfo="RefactoringView" />
                 </node>
               </node>
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8492459591399169978">
-              <link role="baseMethodDeclaration:3" targetNodeId="31.~RefactoringView.showRefactoringView(com.intellij.openapi.project.Project,jetbrains.mps.refactoring.RefactoringViewAction,jetbrains.mps.ide.findusages.model.SearchResults,boolean):void" resolveInfo="showRefactoringView" />
+              <link role="baseMethodDeclaration:3" targetNodeId="52.~RefactoringView.showRefactoringView(com.intellij.openapi.project.Project,jetbrains.mps.ide.refactoring.RefactoringViewAction,jetbrains.mps.ide.findusages.model.SearchResults,boolean):void" resolveInfo="showRefactoringView" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2703085928134209196">
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="2703085928134209195">
                   <link role="variableDeclaration:3" targetNodeId="8492459591399169789" resolveInfo="myOperationContext" />

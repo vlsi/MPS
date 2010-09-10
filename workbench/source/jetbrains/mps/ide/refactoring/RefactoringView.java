@@ -13,20 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.refactoring;
+package jetbrains.mps.ide.refactoring;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
-import com.intellij.ui.content.ContentManager;
 import jetbrains.mps.ide.findusages.view.TabbedUsagesTool;
 import jetbrains.mps.ide.findusages.view.UsagesView;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
-import javax.swing.SwingUtilities;
 import java.util.ArrayList;
 import java.util.List;
 

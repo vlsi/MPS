@@ -13,9 +13,9 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.refactoring.RefactoringViewAction;
-import jetbrains.mps.refactoring.RefactoringViewItem;
-import jetbrains.mps.refactoring.RefactoringView;
+import jetbrains.mps.ide.refactoring.RefactoringViewAction;
+import jetbrains.mps.ide.refactoring.RefactoringViewItem;
+import jetbrains.mps.ide.refactoring.RefactoringView;
 
 public class InlineMethodDialogModel {
   private boolean myForAll;
