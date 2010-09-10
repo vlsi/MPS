@@ -15,18 +15,9 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.intentions.IntentionProvider;
-import jetbrains.mps.nodeEditor.MessageStatus;
-import jetbrains.mps.nodeEditor.IErrorReporter;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
-import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.Pair;
-
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Collections;
 
 public class SimpleErrorReporter extends AbstractErrorReporter implements IErrorReporter {
   private String myErrorString;

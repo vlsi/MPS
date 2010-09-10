@@ -16,10 +16,10 @@
 package jetbrains.mps.typesystem.debug;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.*;
-import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.typesystem.inference.EquationInfo;
 
-import java.util.*;
+import java.util.List;
+import java.util.Map;
 
 public interface ISlicer {
 

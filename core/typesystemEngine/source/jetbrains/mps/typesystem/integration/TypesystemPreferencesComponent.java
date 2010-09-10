@@ -19,7 +19,6 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
-import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.options.SearchableConfigurable;
 import jetbrains.mps.typesystem.integration.TypesystemPreferencesComponent.MyState;
@@ -27,10 +26,11 @@ import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.*;
+import javax.swing.Icon;
+import javax.swing.JCheckBox;
+import javax.swing.JComponent;
+import javax.swing.JPanel;
 import java.awt.BorderLayout;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 
 
@@ -100,7 +100,7 @@ public class TypesystemPreferencesComponent implements SearchableConfigurable, P
   }
 
   public String getId() {
-    return "mps.typesystem.preferences.component";  
+    return "mps.typesystem.preferences.component";
   }
 
   public Runnable enableSearch(String option) {
@@ -155,7 +155,7 @@ public class TypesystemPreferencesComponent implements SearchableConfigurable, P
       boolean sameCacheCoerceSimple = myCacheCoerceSimpleCheckBox.isSelected() == myState.isCoersionSimpleCached();
       boolean sameCacheCoercePatterns = myCacheCoercePatternsCheckBox.isSelected() == myState.isCoersionPatternCached();
 
-      return  !(sameCacheSubtyping&&sameCacheCoerceSimple&&sameCacheCoercePatterns);
+      return !(sameCacheSubtyping && sameCacheCoerceSimple && sameCacheCoercePatterns);
     }
   }
 
