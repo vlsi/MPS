@@ -20,7 +20,8 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
 import java.io.File;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -42,22 +43,22 @@ public class BrokenReferencesTestHelper {
   public BrokenReferencesTestHelper() {
   }
 
-  public void load (Iterable<File> files) {
+  public void load(Iterable<File> files) {
     myModelsExtractor.loadModels(files);
   }
 
   public List<String> check(Token token, List<File> files) {
-    return ((PrivToken)token).check(files);
+    return ((PrivToken) token).check(files);
   }
 
-  public void cleanUp (Token tok) {
-    ((PrivToken)tok).cleanUp();
+  public void cleanUp(Token tok) {
+    ((PrivToken) tok).cleanUp();
   }
 
-  public String formatErrors (List<String> errors) {
+  public String formatErrors(List<String> errors) {
     StringBuffer sb = new StringBuffer();
     String sep = "";
-    for (String er: errors) {
+    for (String er : errors) {
       sb.append(sep).append(er);
       sep = "\n";
     }
@@ -72,7 +73,7 @@ public class BrokenReferencesTestHelper {
     IdeMain.setTestMode(TestMode.CORE_TEST);
     TestMain.configureMPS();
 
-    for (String[] macro: macros) {
+    for (String[] macro : macros) {
       Testbench.setMacro(macro[0], macro[1]);
     }
     Testbench.initLibs();
@@ -86,7 +87,7 @@ public class BrokenReferencesTestHelper {
     return new PrivToken(project);
   }
 
-  public void dispose () {
+  public void dispose() {
     myModelsExtractor.clear();
   }
 
@@ -94,7 +95,7 @@ public class BrokenReferencesTestHelper {
 
   // Private
 
-  private class PrivToken extends Token{
+  private class PrivToken extends Token {
     private final MPSProject project;
 
     public PrivToken(MPSProject project) {
@@ -105,7 +106,7 @@ public class BrokenReferencesTestHelper {
       return BrokenReferencesTestHelper.this.doCheck(files, project);
     }
 
-    public void cleanUp () {
+    public void cleanUp() {
       BrokenReferencesTestHelper.this.doCleanUp(project);
     }
   }
@@ -114,7 +115,7 @@ public class BrokenReferencesTestHelper {
   private List<String> doCheck(Iterable<File> files, MPSProject project) {
     ModelsExtractor me = new ModelsExtractor();
     me.loadModels(files);
-   
+
     // ???
     Testbench.reloadAll();
 
@@ -132,7 +133,7 @@ public class BrokenReferencesTestHelper {
   }
 
   private List<String> checkModels(final Iterable<SModelDescriptor> models) {
-    final List<String> errors = new ArrayList<String> ();
+    final List<String> errors = new ArrayList<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (SModelDescriptor sm : models) {
@@ -140,7 +141,7 @@ public class BrokenReferencesTestHelper {
           StringBuffer errorMessages = checkModel(sm);
 
           if (errorMessages.length() > 0) {
-            errors.add ("Broken References: "+errorMessages.toString());
+            errors.add("Broken References: " + errorMessages.toString());
           }
         }
       }
@@ -171,18 +172,21 @@ public class BrokenReferencesTestHelper {
     }
 
     for (SNode node : sm.getSModel().allNodes()) {
-
       for (SReference ref : node.getReferences()) {
         if (ReferenceMacro_AnnotationLink.getReferenceMacro((BaseConcept) node.getAdapter(), ref.getRole()) != null) {
           continue;
         }
 
         if (ref.getTargetNode() == null) {
-          errorMessages.append("Broken reference in node ");
-          errorMessages.append(node.getId());
-          errorMessages.append("(");
-          errorMessages.append(node);
-          errorMessages.append(")\n");
+          errorMessages.
+            append("Broken reference in model {").
+            append(node.getModel().getLongName()).
+            append("}").
+            append(" node ").
+            append(node.getId()).
+            append("(").
+            append(node).
+            append(")\n");
         }
       }
     }
