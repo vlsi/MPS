@@ -525,6 +525,10 @@
       <property name="id" value="fc8d557e-5de6-4dd8-b749-aab2fb23aefc" />
       <property name="name" value="jetbrains.mps.baseLanguage.overloadedOperators" />
     </node>
+    <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="8813959862138237124">
+      <property name="id" value="0ae47ad3-5abd-486c-ac0f-298884f39393" />
+      <property name="name" value="jetbrains.mps.baseLanguage.constructors" />
+    </node>
   </node>
   <node type="jetbrains.mps.build.packaging.structure.Block:7" id="7678729833318422573">
     <property name="package:7" value="platform" />
