@@ -137,6 +137,9 @@
     <scopeInfo nodeId="3201642974933583228" fileName="ProjectPropertiesComponent.java" startLine="41" startPosition="31" endLine="42" endPosition="82" />
     <scopeInfo nodeId="3201642974933583294" fileName="ProjectPropertiesComponent.java" startLine="47" startPosition="25" endLine="48" endPosition="53" />
     <scopeInfo nodeId="3201642974933583271" fileName="ProjectPropertiesComponent.java" startLine="54" startPosition="9" endLine="55" endPosition="53" />
+    <scopeInfo nodeId="3201642974933583261" fileName="ProjectPropertiesComponent.java" startLine="56" startPosition="0" endLine="57" endPosition="48">
+      <varInfo nodeId="3201642974933583269" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="3201642974933583262" fileName="ProjectPropertiesComponent.java" startLine="56" startPosition="27" endLine="57" endPosition="48" />
     <scopeInfo nodeId="3201642974933583284" fileName="ProjectPropertiesComponent.java" startLine="61" startPosition="38" endLine="62" endPosition="52" />
     <scopeInfo nodeId="3201642974933583184" fileName="ProjectPropertiesComponent.java" startLine="26" startPosition="27" endLine="28" endPosition="34" />
