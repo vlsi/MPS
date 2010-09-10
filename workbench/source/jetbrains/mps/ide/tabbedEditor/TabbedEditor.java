@@ -31,6 +31,7 @@ import jetbrains.mps.nodeEditor.CellSelectionListener;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
+import jetbrains.mps.nodeEditor.cells.DefaultCellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
@@ -328,6 +329,10 @@ public class TabbedEditor implements IEditor {
             result.myInspectorMemento = inspectorContext.createMemento(full);
           }
         }
+        EditorCell selectedCell = editorComponent.getSelectedCell();
+        if (selectedCell != null) {
+          result.mySelectedCell = new DefaultCellInfo(selectedCell);
+        }
       }
     }
     result.myCurrentTab = myTabbedPane.getCurrentTabIndex();
@@ -369,6 +374,15 @@ public class TabbedEditor implements IEditor {
       EditorComponent component = getCurrentEditorComponent();
       if (component != null) {
         ((NodeEditorComponent) component).getInspector().getEditorContext().setMemento(s.myInspectorMemento);
+      }
+    }
+     if (s.myIsExternal && s.mySelectedCell != null) {
+      NodeEditorComponent editorComponent = (NodeEditorComponent) getCurrentEditorComponent();
+      if (editorComponent != null) {
+        EditorCell closestCell = s.mySelectedCell.findClosestCell(editorComponent);
+        if (closestCell != null) {
+          editorComponent.changeSelection(closestCell);
+        }
       }
     }
   }
@@ -413,14 +427,22 @@ public class TabbedEditor implements IEditor {
     private static final String TAB = "tab";
     private static final String TABS = "inner_tabs";
     private static final String INDEX = "index";
+    private static final String SELECTED_CELL = "selectedCell";
 
     private Object myMemento;
     private Object myInspectorMemento;
     private List<Integer> myInnerCurrentTabs = new ArrayList<Integer>();
     private int myCurrentTab;
+    private boolean myIsExternal = false;
+    private DefaultCellInfo mySelectedCell;
 
     public void save(Element e) {
       e.setAttribute(TAB, "" + myCurrentTab);
+       if (mySelectedCell != null) {
+        Element cellElem = new Element(SELECTED_CELL);
+        mySelectedCell.saveTo(cellElem);
+        e.addContent(cellElem);
+      }
       Element innerTabsIndexXML = new Element(TABS);
       for (int innerTabIndex : myInnerCurrentTabs) {
         Element innerTabIndexXML = new Element(TAB);
@@ -436,6 +458,10 @@ public class TabbedEditor implements IEditor {
       } catch (NumberFormatException ex) {
         myCurrentTab = 0;
       }
+      Element cellElem = e.getChild(SELECTED_CELL);
+      if (cellElem != null) {
+        mySelectedCell = DefaultCellInfo.loadFrom(cellElem);
+      }
       myInnerCurrentTabs.clear();
       Element innerTabsIndexXML = e.getChild(TABS);
       if (innerTabsIndexXML != null) {
@@ -444,6 +470,7 @@ public class TabbedEditor implements IEditor {
           myInnerCurrentTabs.add(Integer.parseInt(value));
         }
       }
+      myIsExternal = true;
     }
 
     public int hashCode() {

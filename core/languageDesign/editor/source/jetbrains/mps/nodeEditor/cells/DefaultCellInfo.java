@@ -21,9 +21,18 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
+import org.jdom.Element;
 
 
 public class DefaultCellInfo implements CellInfo {
+  private static final String CELL_ID = "cellId";
+  private static final String CELL_NUMBER = "cellNumber";
+  private static final String IS_IN_LIST = "isInList";
+  private static final String NODE = "node";
+  private static final String MODEL = "model";
+  private static final String ID = "id";
+  private static final String PARENT = "parent";
+
 
   @NotNull
   private SNodePointer myNodePointer;
@@ -52,6 +61,66 @@ public class DefaultCellInfo implements CellInfo {
         myCellNumber = parent.getCellNumber(cell);
       }
     }
+  }
+
+  private DefaultCellInfo() {
+
+  }
+
+  public void saveTo(Element e) {
+    e.setAttribute(CELL_ID, myCellId);
+    e.setAttribute(CELL_NUMBER, "" + myCellNumber);
+    e.setAttribute(IS_IN_LIST, "" + myIsInList);
+    Element nodeElement = new Element(NODE);
+    nodeElement.setAttribute(MODEL, myNodePointer.getModelReference().toString());
+    nodeElement.setAttribute(ID, myNodePointer.getNodeId().toString());
+    e.addContent(nodeElement);
+    if (myParentInfo instanceof DefaultCellInfo) {
+      Element parentElement = new Element(PARENT);
+      ((DefaultCellInfo)myParentInfo).saveTo(parentElement);
+      e.addContent(parentElement);
+    }
+  }
+
+  public static DefaultCellInfo loadFrom(Element e) {
+    String cellId;
+    int cellNumber;
+    boolean isInList;
+    final String model;
+    final String id;
+    DefaultCellInfo parentInfo = null;
+    cellId = e.getAttributeValue(CELL_ID);
+    if (cellId == null) return null;
+    String num = e.getAttributeValue(CELL_NUMBER);
+    if (num == null) return null;
+    try {
+      cellNumber = Integer.parseInt(num);
+    } catch (NumberFormatException ex) {
+      return null;
+    }
+    isInList = "true".equals(e.getAttributeValue(IS_IN_LIST));
+    Element nodeElem = e.getChild(NODE);
+    if (nodeElem == null) return null;
+    model = nodeElem.getAttributeValue(MODEL);
+    if (model == null) return null;
+    id = nodeElem.getAttributeValue(ID);
+    if (id == null) return null;
+    Element parentElem = e.getChild(PARENT);
+    if (parentElem != null) {
+      parentInfo = loadFrom(parentElem);
+      if (parentInfo == null) return null;
+    }
+    final DefaultCellInfo result = new DefaultCellInfo();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        result.myNodePointer = new SNodePointer(model, id);
+      }
+    });
+    result.myCellId = cellId;
+    result.myParentInfo = parentInfo;
+    result.myIsInList = isInList;
+    result.myCellNumber = cellNumber;
+    return result;
   }
 
   public int hashCode() {
