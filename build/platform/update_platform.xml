@@ -17,7 +17,8 @@
   <property name="main.url" value="http://buildserver/guestAuth/repository/download/bt1069/latest.lastSuccessful"/>
   <property name="platform.file" value="platform.zip"/>
 
-  <property name="home.path" value="${ant.file}/.."/>
+  <dirname property="ant.dir" file="${ant.file}"/>
+  <property name="home.path" value="${ant.dir}/../../"/>
   <property name="platform.lib.dir" value="${home.path}/lib/platform"/>
   <property name="platform.plugin.dir" value="${home.path}/plugins/platform"/>
 
@@ -26,28 +27,28 @@
 
   <target name="default">
     <antcall target="prepare"/>
-    <antcall target="upgrade_platform"/>
-    <antcall target="upgrade_plugins"/>
+    <antcall target="update.platform"/>
+    <antcall target="update.plugins"/>
     <antcall target="clean"/>
   </target>
 
   <target name="prepare">
     <mkdir dir="${tmp}"/>
-    <get src="${tmp}/${platform.file}" dest="${tmp}/${platform.file}"/>
+    <get src="${main.url}/${platform.file}" dest="${tmp}/${platform.file}"/>
     <unzip src="${tmp}/${platform.file}" dest="${tmp.platform}"/>
   </target>
 
-  <target name="upgrade_platform">
+  <target name="update.platform">
     <antcall target="update">
       <param name="upd.dir" value="${platform.lib.dir}"/>
-      <param name="files" value="lib/*.jar"/>
+      <param name="files" value="lib"/>
     </antcall>
   </target>
 
-  <target name="upgrade_plugins">
+  <target name="update.plugins">
     <antcall target="update">
       <param name="upd.dir" value="${platform.plugin.dir}"/>
-      <param name="files" value="plugins/*.jar"/>
+      <param name="files" value="plugins"/>
     </antcall>
     </target>
 
@@ -55,16 +56,13 @@
     <delete dir="${tmp}"/>
   </target>
 
-
   <!--update task-->
   <target name="update">
     <delete dir="${upd.dir}"/>
     <mkdir dir="${upd.dir}"/>
 
     <move todir="${upd.dir}">
-      <fileset dir="${tmp.platform}">
-        <include name="${files}"/>
-      </fileset>
+      <fileset dir="${tmp.platform}/${files}"/>
     </move>
     <!--update sources-->
   </target>
@@ -72,21 +70,6 @@
 
   <!--
   <property name="idea.platform.build.property" value="idea.platform.build.number"/>
-    <target name="clean.license.classes" depends="download,replace.libraries">
-      <property name="platform.jar" value="${platform.lib.dir}/platform.jar" />
-      <property name="openapi.tmpdir" value="${tmp}/idea/lib/openapi" />
-      <mkdir dir="${tmpdir}" />
-      <unzip src="${platform.jar}" dest="${tmpdir}" />
-      <delete dir="${tmpdir}" includes="**com/intellij/ide/license/impl/**" />
-      <mkdir dir="${openapi.tmpdir}" />
-      <unzip src="${tmp}/idea/lib/openapi.jar" dest="${openapi.tmpdir}" />
-      <copy todir="${tmpdir}">
-        <fileset dir="${openapi.tmpdir}" includes="**com/intellij/execution/**, **com/intellij/ide/highlighter/**" />
-      </copy>
-      <delete dir="${openapi.tmpdir}" />
-      <jar basedir="${tmpdir}" destfile="${platform.jar}" update="false" />
-      <delete dir="${tmpdir}" />
-    </target>
     <target name="replace.libraries" depends="download">
       <unzip src="${tmp}/idea.zip" dest="${tmp}/idea" />
       <copy file="${tmp}/idea/lib/commons-codec-1.3.jar" todir="${lib.dir}/commons-codec" overwrite="true" />
@@ -154,13 +137,6 @@
         </zipfileset>
       </zip>
     </target>
-    <target name="upgrade.plugins" depends="replace.libraries">
-      <copy todir="plugins" overwrite="true">
-        <fileset dir="${tmp}/idea/plugins/" includes="cvsIntegration/**, git4idea/**, svn4idea/**, " />
-      </copy>
-    </target>
-    <target name="clean" depends="upgrade.plugins,download,replace.libraries,unpack.sources,prepare,clean.license.classes">
-      <delete dir="${tmp}" />
-    </target>
+
   -->
 </project>
