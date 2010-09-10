@@ -37,6 +37,9 @@
     <scopeInfo nodeId="1560298786499494420" fileName="CopySupport.java" startLine="46" startPosition="44" endLine="46" endPosition="44" />
     <scopeInfo nodeId="1560298786499494435" fileName="CopySupport.java" startLine="51" startPosition="52" endLine="52" endPosition="53" />
     <scopeInfo nodeId="1560298786499494491" fileName="CopySupport.java" startLine="59" startPosition="35" endLine="60" endPosition="40" />
+    <scopeInfo nodeId="1560298786499494506" fileName="CopySupport.java" startLine="67" startPosition="0" endLine="68" endPosition="50">
+      <varInfo nodeId="1560298786499494515" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="1560298786499494507" fileName="CopySupport.java" startLine="67" startPosition="41" endLine="68" endPosition="50" />
     <scopeInfo nodeId="1560298786499494366" fileName="CopySupport.java" startLine="20" startPosition="26" endLine="22" endPosition="3" />
     <scopeInfo nodeId="1560298786499494532" fileName="CopySupport.java" startLine="28" startPosition="50" endLine="30" endPosition="101">

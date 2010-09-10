@@ -65,7 +65,7 @@ public class ManagerTableCellEditor extends DefaultCellEditor {
             continue;
           }
           SModel model = stubsAspect.getSModel();
-          result.addAll(SModelOperations.getRoots(model, "jetbrains.mps.lang.stubs.structure.ModelManagerDeclaration"));
+          result.addAll(SModelOperations.getRoots(model, "jetbrains.mps.lang.stubs.structure.StubsCreatorDeclaration"));
         }
       }
     });
