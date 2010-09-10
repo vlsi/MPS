@@ -2816,7 +2816,7 @@
                               <link role="baseMethodDeclaration:3" targetNodeId="10.~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" />
                             </node>
                             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499495097">
-                              <link role="baseMethodDeclaration:3" targetNodeId="10.~ModelAccess.runReadAction(com.intellij.openapi.util.Computable):java.lang.Object" />
+                              <link role="baseMethodDeclaration:3" targetNodeId="10.~ModelCommandExecutor.runReadAction(com.intellij.openapi.util.Computable):java.lang.Object" />
                               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1560298786499495098">
                                 <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="1560298786499495099">
                                   <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="1560298786499495100">

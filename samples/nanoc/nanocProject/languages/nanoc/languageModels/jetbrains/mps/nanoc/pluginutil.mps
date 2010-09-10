@@ -704,7 +704,7 @@
               <link role="classConcept:3" targetNodeId="3v.~ModelAccess" resolveInfo="ModelAccess" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8247677264794237175">
-              <link role="baseMethodDeclaration:3" targetNodeId="3v.~ModelAccess.runReadAction(java.lang.Runnable):void" resolveInfo="runReadAction" />
+              <link role="baseMethodDeclaration:3" targetNodeId="3v.~ModelCommandExecutor.runReadAction(java.lang.Runnable):void" resolveInfo="runReadAction" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="8247677264794237176">
                 <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="8247677264794237177">
                   <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="8247677264794237178">

@@ -37,7 +37,13 @@
     <scopeInfo nodeId="1720905492960355661" fileName="AbstractManager.java" startLine="18" startPosition="22" endLine="19" endPosition="72" />
     <scopeInfo nodeId="1058093769518980216" fileName="AbstractManager.java" startLine="22" startPosition="25" endLine="23" endPosition="75" />
     <scopeInfo nodeId="1058093769519031420" fileName="AbstractManager.java" startLine="48" startPosition="15" endLine="49" endPosition="62" />
+    <scopeInfo nodeId="1058093769519031431" fileName="AbstractManager.java" startLine="50" startPosition="0" endLine="51" endPosition="28">
+      <varInfo nodeId="1058093769519031432" varName="ex" />
+    </scopeInfo>
     <scopeInfo nodeId="1058093769519031434" fileName="AbstractManager.java" startLine="50" startPosition="47" endLine="51" endPosition="28" />
+    <scopeInfo nodeId="1058093769519031442" fileName="AbstractManager.java" startLine="52" startPosition="0" endLine="53" endPosition="28">
+      <varInfo nodeId="1058093769519031443" varName="ex" />
+    </scopeInfo>
     <scopeInfo nodeId="1058093769519031445" fileName="AbstractManager.java" startLine="52" startPosition="47" endLine="53" endPosition="28" />
     <scopeInfo nodeId="1058093769519031457" fileName="AbstractManager.java" startLine="55" startPosition="16" endLine="56" endPosition="121" />
     <scopeInfo nodeId="1058093769519002869" fileName="AbstractManager.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />

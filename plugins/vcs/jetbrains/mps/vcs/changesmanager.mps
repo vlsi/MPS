@@ -24422,7 +24422,7 @@
                         <link role="classConcept:3" targetNodeId="7.~ModelAccess" resolveInfo="ModelAccess" />
                       </node>
                       <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5941846869273291863">
-                        <link role="baseMethodDeclaration:3" targetNodeId="7.~ModelAccess.runReadInEDT(java.lang.Runnable):void" resolveInfo="runReadInEDT" />
+                        <link role="baseMethodDeclaration:3" targetNodeId="7.~ModelCommandExecutor.runReadInEDT(java.lang.Runnable):void" resolveInfo="runReadInEDT" />
                         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral:3" id="3722815385094384683">
                           <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3722815385094384684">
                             <node role="statement:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement:7" id="3722815385094384685">

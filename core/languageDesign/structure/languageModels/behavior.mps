@@ -804,7 +804,7 @@
               <link role="classConcept:3" targetNodeId="3.~ModelAccess" resolveInfo="ModelAccess" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3129341680481885978">
-              <link role="baseMethodDeclaration:3" targetNodeId="3.~ModelAccess.runWriteActionInCommand(java.lang.Runnable):void" resolveInfo="runWriteActionInCommand" />
+              <link role="baseMethodDeclaration:3" targetNodeId="3.~ModelCommandExecutor.runWriteActionInCommand(java.lang.Runnable):void" resolveInfo="runWriteActionInCommand" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3129341680481885979">
                 <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="3129341680481885980">
                   <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="3129341680481885981">
