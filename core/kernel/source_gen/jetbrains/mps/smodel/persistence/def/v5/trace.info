@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="ModelReader5Handler.java" startLine="279" startPosition="0" endLine="304" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v5.ModelReader5Handler$persistenceElementHandler" />
+  <unitInfo fileName="ModelReader5Handler.java" startLine="305" startPosition="0" endLine="330" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v5.ModelReader5Handler$maxImportIndexElementHandler" />
+  <unitInfo fileName="ModelReader5Handler.java" startLine="360" startPosition="0" endLine="385" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v5.ModelReader5Handler$tag_with_namespaceElementHandler" />
+  <unitInfo fileName="ModelReader5Handler.java" startLine="331" startPosition="0" endLine="359" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v5.ModelReader5Handler$languageAspectElementHandler" />
+  <unitInfo fileName="ModelReader5Handler.java" startLine="502" startPosition="0" endLine="531" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v5.ModelReader5Handler$propertyElementHandler" />
+  <unitInfo fileName="ModelReader5Handler.java" startLine="532" startPosition="0" endLine="561" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v5.ModelReader5Handler$linkElementHandler" />
+  <unitInfo fileName="ModelReader5Handler.java" startLine="562" startPosition="0" endLine="591" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v5.ModelReader5Handler$visibleElementHandler" />
+  <unitInfo fileName="ModelReader5Handler.java" startLine="111" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v5.ModelReader5Handler$ElementHandler" />
+  <unitInfo fileName="ModelReader5Handler.java" startLine="386" startPosition="0" endLine="419" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v5.ModelReader5Handler$importElementHandler" />
+  <unitInfo fileName="ModelReader5Handler.java" startLine="420" startPosition="0" endLine="501" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v5.ModelReader5Handler$nodeElementHandler" />
+  <unitInfo fileName="ModelReader5Handler.java" startLine="145" startPosition="0" endLine="278" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v5.ModelReader5Handler$modelElementHandler" />
+  <unitInfo fileName="ModelReader5Handler.java" startLine="22" startPosition="0" endLine="592" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v5.ModelReader5Handler" />
   <root nodeId="2286463592495096552">
     <nodeInfo nodeId="7707758858786107639" fileName="ModelReader5Handler.java" startLine="152" startPosition="53" endLine="153" endPosition="51" />
     <nodeInfo nodeId="7707758858786147417" fileName="ModelReader5Handler.java" startLine="153" startPosition="51" endLine="154" endPosition="71" />
