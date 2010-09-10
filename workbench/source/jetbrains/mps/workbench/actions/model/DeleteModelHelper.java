@@ -27,6 +27,7 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ModelUsagesFi
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
+import jetbrains.mps.ide.refactoring.GenericRefactoringAction;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.ide.messages.MessagesViewTool;

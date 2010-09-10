@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.refactoring;
+package jetbrains.mps.ide.refactoring;
 
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.progress.ProgressIndicator;
@@ -25,6 +25,9 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.generator.GeneratorFacade;
 import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.refactoring.RefactoringView;
+import jetbrains.mps.refactoring.RefactoringViewAction;
+import jetbrains.mps.refactoring.RefactoringViewItem;
 import jetbrains.mps.refactoring.framework.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.MPSDataKeys;

@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.refactoring.framework;
+package jetbrains.mps.ide.refactoring;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataKey;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.refactoring.RefactoringFacade;
+import jetbrains.mps.refactoring.framework.*;
 import jetbrains.mps.refactoring.framework.RefactoringUtil.Applicability;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;

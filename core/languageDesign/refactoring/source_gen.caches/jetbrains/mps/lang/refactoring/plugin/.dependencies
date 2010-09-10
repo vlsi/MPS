@@ -17,7 +17,7 @@
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.plugin.RefactoringHelper" file="RefactoringHelper.java">
-    <classNode dependClassName="jetbrains.mps.refactoring.framework.GenericRefactoringAction" />
+    <classNode dependClassName="jetbrains.mps.ide.refactoring.GenericRefactoringAction" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.IRefactoring" />
     <classNode dependClassName="jetbrains.mps.workbench.action.ActionFactory" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseAction" />

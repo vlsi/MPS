@@ -108,7 +108,7 @@
     <classNode dependClassName="jetbrains.mps.lang.structure.refactorings.RenameLink" />
     <classNode dependClassName="jetbrains.mps.lang.structure.refactorings.RenameProperty" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.refactoring.RefactoringFacade" />
+    <classNode dependClassName="jetbrains.mps.ide.refactoring.RefactoringFacade" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.IRefactoring" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringContext" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />

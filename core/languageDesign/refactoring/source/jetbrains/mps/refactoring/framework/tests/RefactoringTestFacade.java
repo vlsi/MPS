@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.refactoring.framework.tests;
 
-import jetbrains.mps.refactoring.RefactoringFacade;
+import jetbrains.mps.ide.refactoring.RefactoringFacade;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 
 class RefactoringTestFacade extends RefactoringFacade {
