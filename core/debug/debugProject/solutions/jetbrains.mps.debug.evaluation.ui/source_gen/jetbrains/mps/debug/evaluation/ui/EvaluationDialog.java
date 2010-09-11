@@ -43,6 +43,11 @@ import jetbrains.mps.debug.api.integration.ui.WatchableNode;
 import jetbrains.mps.debug.runtime.java.programState.watchables.CalculatedWatchable;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.TextTreeNode;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.awt.Color;
 import jetbrains.mps.ide.messages.Icons;
 
@@ -198,11 +203,7 @@ public class EvaluationDialog extends BaseDialog {
     invokeLaterIfNeeded(new Runnable() {
       public void run() {
         if (error != null) {
-          if (error.getMessage() != null) {
-            myTree.setError(error.getMessage());
-          } else {
-            myTree.setError(error.toString());
-          }
+          myTree.setError(error);
         } else {
           myTree.setError(message);
         }
@@ -314,15 +315,24 @@ public class EvaluationDialog extends BaseDialog {
   }
 
   private static class FailureState extends EvaluationDialog.EvaluationState {
-    @NotNull
-    private final String myErrorText;
+    @Nullable
+    private String myErrorText;
+    private Throwable myError;
 
     public FailureState(String errorText) {
       myErrorText = errorText;
     }
 
+    private FailureState(Throwable error) {
+      myError = error;
+    }
+
     public void rebuild(MPSTreeNode rootTreeNode) {
-      rootTreeNode.add(new EvaluationDialog.ErrorTreeNode(myErrorText));
+      if (myError != null) {
+        rootTreeNode.add(new EvaluationDialog.ErrorTreeNode(myError));
+      } else {
+        rootTreeNode.add(new EvaluationDialog.ErrorTreeNode(myErrorText));
+      }
     }
   }
 
@@ -346,6 +356,10 @@ public class EvaluationDialog extends BaseDialog {
       myState = new EvaluationDialog.FailureState(text);
     }
 
+    private void setError(@NotNull Throwable error) {
+      myState = new EvaluationDialog.FailureState(error);
+    }
+
     private void setEvaluating() {
       myState = new EvaluationDialog.EvaluationInProgressState();
     }
@@ -361,15 +375,35 @@ public class EvaluationDialog extends BaseDialog {
   }
 
   private static class ErrorTreeNode extends TextTreeNode {
-    public ErrorTreeNode(@NotNull String text) {
+    private final List<String> myExtendedMessage = ListSequence.fromList(new ArrayList<String>());
+
+    public ErrorTreeNode(@NotNull String text, String... extendedMessage) {
       super(text);
 
+      if (extendedMessage != null && extendedMessage.length > 0) {
+        for (int i = 0; i < extendedMessage.length; i++) {
+          ListSequence.fromList(myExtendedMessage).addElement(extendedMessage[i]);
+        }
+      }
+
       updatePresentation();
+      doInit();
+    }
+
+    public ErrorTreeNode(Throwable t) {
+      this((t.getMessage() == null ?
+        t.toString() :
+        t.getMessage()
+      ), Sequence.fromIterable(Sequence.fromArray(t.getStackTrace())).select(new ISelector<StackTraceElement, String>() {
+        public String select(StackTraceElement it) {
+          return it.toString();
+        }
+      }).toGenericArray(String.class));
     }
 
     @Override
     public boolean isLeaf() {
-      return true;
+      return ListSequence.fromList(myExtendedMessage).count() == 0;
     }
 
     @Override
@@ -378,6 +412,24 @@ public class EvaluationDialog extends BaseDialog {
 
       setColor(Color.RED);
       setIcon(Icons.ERROR_ICON);
+    }
+
+    @Override
+    protected void doInit() {
+      for (String messagePart : ListSequence.fromList(myExtendedMessage)) {
+        add(new TextTreeNode(messagePart) {
+          @Override
+          public boolean isLeaf() {
+            return true;
+          }
+
+          @Override
+          protected void updatePresentation() {
+            super.updatePresentation();
+            setIcon(Icons.ERROR_ICON);
+          }
+        });
+      }
     }
   }
 
