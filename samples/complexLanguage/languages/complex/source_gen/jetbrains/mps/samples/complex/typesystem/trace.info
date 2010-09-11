@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.samples.complex.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="subtype_ComplexType_SubtypingRule.java" startLine="34" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.samples.complex.typesystem.subtype_ComplexType_SubtypingRule$QuotationClass_roewzw_a0a0a" />
+  <unitInfo fileName="typeof_ImaginaryUnit_InferenceRule.java" startLine="41" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.samples.complex.typesystem.typeof_ImaginaryUnit_InferenceRule$QuotationClass_ir5twi_a0a0a0" />
+  <unitInfo fileName="typeof_DegreeComplexExpression_InferenceRule.java" startLine="42" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.samples.complex.typesystem.typeof_DegreeComplexExpression_InferenceRule$QuotationClass_12zmle_a0a0a0" />
+  <unitInfo fileName="typeof_ComplexExpression_InferenceRule.java" startLine="50" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.samples.complex.typesystem.typeof_ComplexExpression_InferenceRule$QuotationClass_l75no8_a0a0a0" />
+  <unitInfo fileName="Complex_is_Object_weak_SubtypingRule.java" startLine="37" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.samples.complex.typesystem.Complex_is_Object_weak_SubtypingRule$QuotationClass_f46hoj_a0a0a" />
+  <unitInfo fileName="Complex_is_Numeric_SubtypingRule.java" startLine="38" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.samples.complex.typesystem.Complex_is_Numeric_SubtypingRule$QuotationClass_5kk67h_a0a0a0" />
+  <unitInfo fileName="subtype_ComplexType_SubtypingRule.java" startLine="14" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.samples.complex.typesystem.subtype_ComplexType_SubtypingRule" />
+  <unitInfo fileName="Complex_is_Object_weak_SubtypingRule.java" startLine="17" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.samples.complex.typesystem.Complex_is_Object_weak_SubtypingRule" />
+  <unitInfo fileName="Complex_is_Numeric_SubtypingRule.java" startLine="18" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.samples.complex.typesystem.Complex_is_Numeric_SubtypingRule" />
+  <unitInfo fileName="typeof_ImaginaryUnit_InferenceRule.java" startLine="16" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.samples.complex.typesystem.typeof_ImaginaryUnit_InferenceRule" />
+  <unitInfo fileName="typeof_DegreeComplexExpression_InferenceRule.java" startLine="17" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.samples.complex.typesystem.typeof_DegreeComplexExpression_InferenceRule" />
+  <unitInfo fileName="typeof_ComplexExpression_InferenceRule.java" startLine="18" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.samples.complex.typesystem.typeof_ComplexExpression_InferenceRule" />
   <root nodeId="1196267612159">
     <nodeInfo nodeId="1196268989250" fileName="typeof_ComplexExpression_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="107" />
     <nodeInfo nodeId="1196268989250" fileName="typeof_ComplexExpression_InferenceRule.java" startLine="24" startPosition="107" endLine="25" endPosition="53" />
