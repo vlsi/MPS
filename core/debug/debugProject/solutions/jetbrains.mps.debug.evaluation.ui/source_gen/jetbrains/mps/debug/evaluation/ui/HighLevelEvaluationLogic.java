@@ -4,8 +4,8 @@ package jetbrains.mps.debug.evaluation.ui;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
+import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.debug.runtime.JavaUiState;
 import jetbrains.mps.debug.runtime.DebugSession;
 import jetbrains.mps.smodel.ModelAccess;
@@ -23,8 +23,8 @@ public class HighLevelEvaluationLogic extends AbstractEvaluationLogic {
   private SNode myLocationRootCopy;
   private SNode myNodeToShow;
 
-  public HighLevelEvaluationLogic(@NotNull IOperationContext context, @NotNull JavaUiState state, @NotNull DebugSession debugSession) {
-    super(context, state, debugSession);
+  public HighLevelEvaluationLogic(Project project, @NotNull JavaUiState state, @NotNull DebugSession debugSession) {
+    super(project, state, debugSession);
 
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {

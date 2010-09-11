@@ -15,7 +15,9 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.ArrayList;
+import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -35,7 +37,6 @@ import java.util.HashSet;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.reloading.ClassPathFactory;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import com.intellij.openapi.progress.util.ProgressWindow;
@@ -46,8 +47,8 @@ import com.intellij.openapi.util.Disposer;
 import org.apache.commons.lang.StringUtils;
 import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.debug.evaluation.InvocationTargetEvaluationException;
-import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.debug.evaluation.transform.Transformator;
@@ -67,10 +68,10 @@ public abstract class AbstractEvaluationLogic {
   protected SNode myEvaluator;
   private final List<_FunctionTypes._void_P1_E0<? super SNode>> myGenerationListeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P1_E0<? super SNode>>());
 
-  public AbstractEvaluationLogic(@NotNull IOperationContext context, @NotNull JavaUiState state, @NotNull DebugSession debugSession) {
+  public AbstractEvaluationLogic(Project project, @NotNull JavaUiState state, @NotNull DebugSession debugSession) {
     myUiState = state;
     myDebugSession = debugSession;
-    myContext = context;
+    myContext = ModuleContext.create(getLocationNode(), project);
 
     // creating module 
     myAuxModule = myDebugSession.getAuxModule();
@@ -91,7 +92,7 @@ public abstract class AbstractEvaluationLogic {
   }
 
   @Nullable
-  protected SNode getLocationNode() {
+  protected final SNode getLocationNode() {
     JavaStackFrame javaStackFrame = myUiState.getStackFrame();
     SNode locationNode = null;
     if (javaStackFrame != null) {
@@ -211,11 +212,19 @@ public abstract class AbstractEvaluationLogic {
     }
   }
 
-  public static AbstractEvaluationLogic createInstance(IOperationContext context, JavaUiState state, DebugSession session) {
+  protected IModule getLocationModule() {
+    return getLocationModel().getModelDescriptor().getModule();
+  }
+
+  public IOperationContext getContext() {
+    return myContext;
+  }
+
+  public static AbstractEvaluationLogic createInstance(Project project, JavaUiState state, DebugSession session) {
     if (IS_IN_HIGHLEVEL_MODE) {
-      return new HighLevelEvaluationLogic(context, state, session);
+      return new HighLevelEvaluationLogic(project, state, session);
     }
-    return new LowLevelEvaluationLogic(context, state, session);
+    return new LowLevelEvaluationLogic(project, state, session);
   }
 
   private class MyInMemoryJavaGenerationHandler extends InMemoryJavaGenerationHandler {

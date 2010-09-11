@@ -13,6 +13,7 @@ import com.sun.jdi.ThreadReference;
 import jetbrains.mps.debug.runtime.DebugSession;
 import jetbrains.mps.nodeEditor.Highlighter;
 import jetbrains.mps.debug.runtime.JavaUiState;
+import com.intellij.openapi.project.Project;
 import java.awt.Dimension;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNode;
@@ -63,8 +64,8 @@ public class EvaluationDialog extends BaseDialog {
 
   public EvaluationDialog(final IOperationContext context, JavaUiState uiState, final DebugSession debugSession) {
     super(context.getMainFrame(), "Evaluate");
-    this.myContext = context;
-    this.myHighlighter = myContext.getProject().getComponent(Highlighter.class);
+    Project project = context.getProject();
+    myHighlighter = project.getComponent(Highlighter.class);
     myClassFQName = uiState.getStackFrame().getLocation().getUnitName();
     myThreadReference = uiState.getThread().getThread();
     myDebugSession = debugSession;
@@ -74,7 +75,8 @@ public class EvaluationDialog extends BaseDialog {
     mySessionChangeListener = new EvaluationDialog.MySessionChangeListener();
     debugSession.addChangeListener(mySessionChangeListener);
 
-    this.myEvaluationLogic = AbstractEvaluationLogic.createInstance(context, uiState, debugSession);
+    myEvaluationLogic = AbstractEvaluationLogic.createInstance(project, uiState, debugSession);
+    myContext = myEvaluationLogic.getContext();
     if (myEvaluationLogic.isDeveloperMode()) {
       myEvaluationLogic.addGenerationListener(new _FunctionTypes._void_P1_E0<SNode>() {
         public void invoke(SNode result) {
