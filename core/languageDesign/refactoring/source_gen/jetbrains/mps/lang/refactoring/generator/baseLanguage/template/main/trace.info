@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="QueriesGenerated.java" startLine="962" startPosition="0" endLine="978" endPosition="0" unitName="jetbrains.mps.lang.refactoring.generator.baseLanguage.template.main.QueriesGenerated$QuotationClass_x583g4_a1a0a0a78" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="979" startPosition="0" endLine="995" endPosition="0" unitName="jetbrains.mps.lang.refactoring.generator.baseLanguage.template.main.QueriesGenerated$QuotationClass_x583g4_a1a0a0a88" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="996" startPosition="0" endLine="1012" endPosition="0" unitName="jetbrains.mps.lang.refactoring.generator.baseLanguage.template.main.QueriesGenerated$QuotationClass_x583g4_a1a0a0a98" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="1013" startPosition="0" endLine="1030" endPosition="0" unitName="jetbrains.mps.lang.refactoring.generator.baseLanguage.template.main.QueriesGenerated$QuotationClass_x583g4_a1a0a0a09" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="905" startPosition="0" endLine="923" endPosition="0" unitName="jetbrains.mps.lang.refactoring.generator.baseLanguage.template.main.QueriesGenerated$QuotationClass_x583g4_a0a0a0a94" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="924" startPosition="0" endLine="942" endPosition="0" unitName="jetbrains.mps.lang.refactoring.generator.baseLanguage.template.main.QueriesGenerated$QuotationClass_x583g4_a0a0a0a0xb" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="943" startPosition="0" endLine="961" endPosition="0" unitName="jetbrains.mps.lang.refactoring.generator.baseLanguage.template.main.QueriesGenerated$QuotationClass_x583g4_a0a0a1a0xb" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="866" startPosition="0" endLine="904" endPosition="0" unitName="jetbrains.mps.lang.refactoring.generator.baseLanguage.template.main.QueriesGenerated$Pattern_x583g4_a0a0a0a81" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="37" startPosition="0" endLine="1031" endPosition="0" unitName="jetbrains.mps.lang.refactoring.generator.baseLanguage.template.main.QueriesGenerated" />
   <root nodeId="1189697446192">
     <nodeInfo nodeId="6528618226609204858" fileName="QueriesGenerated.java" startLine="66" startPosition="154" endLine="67" endPosition="69" />
     <nodeInfo nodeId="1199462161181" fileName="QueriesGenerated.java" startLine="70" startPosition="148" endLine="71" endPosition="138" />

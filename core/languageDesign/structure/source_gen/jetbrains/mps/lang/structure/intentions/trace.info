@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="Structure_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.Structure_Language" />
+  <unitInfo fileName="CreateReferenceConcept_Intention.java" startLine="86" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.CreateReferenceConcept_Intention$QuotationClass_k63gxf_a0a1a7" />
+  <unitInfo fileName="MakeRootable_Intention.java" startLine="11" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.MakeRootable_Intention" />
+  <unitInfo fileName="CreateReferenceConcept_Intention.java" startLine="115" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.CreateReferenceConcept_Intention$QuotationClass_k63gxf_a0a11a7" />
+  <unitInfo fileName="AddDeprecatedAnnotation_Intention.java" startLine="14" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.AddDeprecatedAnnotation_Intention" />
+  <unitInfo fileName="CreateReferenceConcept_Intention.java" startLine="27" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.CreateReferenceConcept_Intention" />
   <root nodeId="1224245135252">
     <nodeInfo nodeId="1224245365572" fileName="AddDeprecatedAnnotation_Intention.java" startLine="35" startPosition="124" endLine="36" endPosition="41" />
     <nodeInfo nodeId="1224245381358" fileName="AddDeprecatedAnnotation_Intention.java" startLine="37" startPosition="5" endLine="38" endPosition="42" />

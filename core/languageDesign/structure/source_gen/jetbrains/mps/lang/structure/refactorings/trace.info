@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="MoveLinkUp_mergeLinks_Settings.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.MoveLinkUp_mergeLinks_Settings" />
+  <unitInfo fileName="RenameProperty_newName_Settings.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.RenameProperty_newName_Settings" />
+  <unitInfo fileName="RenameLink_newName_Settings.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.RenameLink_newName_Settings" />
+  <unitInfo fileName="RenameConcept_newName_Settings.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.RenameConcept_newName_Settings" />
+  <unitInfo fileName="MoveConcepts_targetModel_Settings.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.MoveConcepts_targetModel_Settings" />
+  <unitInfo fileName="MovePropertyUp_Target.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.MovePropertyUp_Target" />
+  <unitInfo fileName="MoveLinkUp_Target.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.MoveLinkUp_Target" />
+  <unitInfo fileName="MoveConcepts_Target.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.MoveConcepts_Target" />
+  <unitInfo fileName="RenameProperty_Target.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.RenameProperty_Target" />
+  <unitInfo fileName="RenameLink_Target.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.RenameLink_Target" />
+  <unitInfo fileName="RenameConcept_Target.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.RenameConcept_Target" />
+  <unitInfo fileName="MovePropertyUp_targetConcept_Chooser.java" startLine="11" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.MovePropertyUp_targetConcept_Chooser" />
+  <unitInfo fileName="MoveLinkUp_targetConcept_Chooser.java" startLine="11" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.MoveLinkUp_targetConcept_Chooser" />
+  <unitInfo fileName="RenameProperty.java" startLine="22" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.RenameProperty" />
+  <unitInfo fileName="RenameConcept.java" startLine="23" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.RenameConcept" />
+  <unitInfo fileName="RenameLink.java" startLine="27" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.RenameLink" />
+  <unitInfo fileName="MovePropertyUp.java" startLine="30" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.MovePropertyUp" />
+  <unitInfo fileName="MoveLinkUp.java" startLine="30" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.MoveLinkUp" />
+  <unitInfo fileName="MoveConcepts.java" startLine="33" startPosition="0" endLine="217" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.MoveConcepts" />
   <root nodeId="1347577327951781517">
     <nodeInfo nodeId="1347577327951781527" fileName="RenameConcept_newName_Settings.java" startLine="17" startPosition="35" endLine="18" endPosition="125" />
     <nodeInfo nodeId="8292108433549550607" fileName="RenameConcept.java" startLine="45" startPosition="68" endLine="46" endPosition="87" />

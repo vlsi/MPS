@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="Structure_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.Structure_ApplicationPlugin" />
+  <unitInfo fileName="StructureView_Tool.java" startLine="11" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.StructureView_Tool" />
+  <unitInfo fileName="Structure_ActionGroup.java" startLine="10" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.Structure_ActionGroup" />
+  <unitInfo fileName="ShowHelp_ActionGroup.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ShowHelp_ActionGroup" />
+  <unitInfo fileName="ConceptDeclaration_TabbedEditor.java" startLine="66" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ConceptDeclaration_TabbedEditor$Structure_Tab" />
+  <unitInfo fileName="ConceptDeclaration_TabbedEditor.java" startLine="143" startPosition="0" endLine="177" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ConceptDeclaration_TabbedEditor$Constraints_Tab" />
+  <unitInfo fileName="ConceptDeclaration_TabbedEditor.java" startLine="178" startPosition="0" endLine="212" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ConceptDeclaration_TabbedEditor$Behavior_Tab" />
+  <unitInfo fileName="ConceptDeclaration_TabbedEditor.java" startLine="460" startPosition="0" endLine="494" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ConceptDeclaration_TabbedEditor$Data_Flow_Tab" />
+  <unitInfo fileName="ConceptDeclaration_TabbedEditor.java" startLine="669" startPosition="0" endLine="703" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ConceptDeclaration_TabbedEditor$Textgen_Tab" />
+  <unitInfo fileName="ConceptDeclaration_TabbedEditor.java" startLine="284" startPosition="0" endLine="326" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ConceptDeclaration_TabbedEditor$Actions_Tab" />
+  <unitInfo fileName="ConceptDeclaration_TabbedEditor.java" startLine="327" startPosition="0" endLine="369" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ConceptDeclaration_TabbedEditor$Refactorings_Tab" />
+  <unitInfo fileName="ConceptDeclaration_TabbedEditor.java" startLine="370" startPosition="0" endLine="412" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ConceptDeclaration_TabbedEditor$Intentions_Tab" />
+  <unitInfo fileName="Structure_ProjectPlugin.java" startLine="26" startPosition="35" endLine="70" endPosition="5" unitName="jetbrains.mps.lang.structure.plugin.Structure_ProjectPlugin$1" />
+  <unitInfo fileName="ConceptDeclaration_TabbedEditor.java" startLine="97" startPosition="0" endLine="142" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ConceptDeclaration_TabbedEditor$Editor_Tab" />
+  <unitInfo fileName="ConceptDeclaration_TabbedEditor.java" startLine="413" startPosition="0" endLine="459" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ConceptDeclaration_TabbedEditor$Find_Usages_Tab" />
+  <unitInfo fileName="Structure_ProjectPlugin.java" startLine="23" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.Structure_ProjectPlugin" />
+  <unitInfo fileName="ShowDefaultHelp_Action.java" startLine="16" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ShowDefaultHelp_Action" />
+  <unitInfo fileName="ShowConceptStructure_Action.java" startLine="18" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ShowConceptStructure_Action" />
+  <unitInfo fileName="ShowHelpForRoot_Action.java" startLine="15" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ShowHelpForRoot_Action" />
+  <unitInfo fileName="ShowHelpForNode_Action.java" startLine="15" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ShowHelpForNode_Action" />
+  <unitInfo fileName="ConceptDeclaration_TabbedEditor.java" startLine="213" startPosition="0" endLine="283" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ConceptDeclaration_TabbedEditor$Typesystem_Tab" />
+  <unitInfo fileName="ShowHelpForAspect_Action.java" startLine="15" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ShowHelpForAspect_Action" />
+  <unitInfo fileName="ConceptDeclaration_TabbedEditor.java" startLine="495" startPosition="0" endLine="668" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ConceptDeclaration_TabbedEditor$Generator_Tab" />
+  <unitInfo fileName="ConceptDeclaration_TabbedEditor.java" startLine="49" startPosition="0" endLine="704" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ConceptDeclaration_TabbedEditor" />
   <root nodeId="1216648908320">
     <nodeInfo nodeId="1216649120171" fileName="StructureView_Tool.java" startLine="11" startPosition="55" endLine="12" endPosition="45" />
     <nodeInfo nodeId="1217360996397" fileName="StructureView_Tool.java" startLine="19" startPosition="24" endLine="20" endPosition="71" />

@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="ExactConceptInstances_Finder.java" startLine="17" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.structure.findUsages.ExactConceptInstances_Finder" />
+  <unitInfo fileName="NodeUsages_Finder.java" startLine="17" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder" />
+  <unitInfo fileName="ConceptInstances_Finder.java" startLine="17" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder" />
+  <unitInfo fileName="PropertyInstances_Finder.java" startLine="16" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.structure.findUsages.PropertyInstances_Finder" />
+  <unitInfo fileName="NodeAndDescendantsUsages_Finder.java" startLine="19" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder" />
+  <unitInfo fileName="LinkInstances_Finder.java" startLine="20" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.lang.structure.findUsages.LinkInstances_Finder" />
   <root nodeId="1197632773078">
     <nodeInfo nodeId="1197634574462" fileName="ConceptInstances_Finder.java" startLine="32" startPosition="102" endLine="33" endPosition="259" />
     <nodeInfo nodeId="1200268665345" fileName="ConceptInstances_Finder.java" startLine="34" startPosition="36" endLine="35" endPosition="58" />
