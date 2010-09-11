@@ -4,9 +4,9 @@ package jetbrains.mps.build.custommps.generator.template.main;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
+import jetbrains.mps.build.custommps.behavior.MPSBuild_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.build.custommps.behavior.MPSBuild_Behavior;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.samples.SamplesInfo;
 import jetbrains.mps.build.custommps.behavior.LibraryFolder_Behavior;
@@ -32,6 +32,14 @@ import java.util.ArrayList;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 
 public class QueriesGenerated {
+  public static boolean baseMappingRule_Condition_2521628527372173688(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return MPSBuild_Behavior.isInMPSBuild_1239995424995();
+  }
+
+  public static boolean baseMappingRule_Condition_2521628527372173700(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return !(MPSBuild_Behavior.isInMPSBuild_1239995424995());
+  }
+
   public static boolean baseMappingRule_Condition_1234891502382(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return (SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", true, false) != null);
   }
@@ -202,7 +210,27 @@ public class QueriesGenerated {
     return MPSBuild_Behavior.getMPSBuildToolsZipName_1234294616845();
   }
 
-  public static Object referenceMacro_GetReferent_1234971270387(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_2521628527372165853(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SamplesInfo.SAMPLES_IN_MPS_HOME_ZIP;
+  }
+
+  public static Object propertyMacro_GetPropertyValue_2521628527372165858(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SamplesInfo.SAMPLES_IN_USER_HOME_DIR;
+  }
+
+  public static Object propertyMacro_GetPropertyValue_2521628527372173584(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return LibraryFolder_Behavior.call_getLibraryPathRelativeToMPSBuild_1240408519032(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_2521628527372173601(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(_context.getNode(), "libraryName", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_2521628527372173618(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return Module_Behavior.call_getModule_1213877515148(_context.getNode()).getModuleFqName();
+  }
+
+  public static Object referenceMacro_GetReferent_2521628527372173197(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "CustomMPSBuildToTargetDeclaration");
   }
 
@@ -223,7 +251,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1234780362598(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "CustomMPsBuildToFolder");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "CustomMPSBuildToFolder");
   }
 
   public static Object referenceMacro_GetReferent_1234891647534(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -306,6 +334,14 @@ public class QueriesGenerated {
     return !(new File(PathManager.getHomePath() + File.separator + "lib/mps.jar").exists());
   }
 
+  public static boolean ifMacro_Condition_2521628527372173391(final IOperationContext operationContext, final IfMacroContext _context) {
+    return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.custommps.structure.LibraryFolder", false, new String[]{})).isNotEmpty();
+  }
+
+  public static boolean ifMacro_Condition_2521628527372173476(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "licencePath", true) != null);
+  }
+
   public static SNode sourceNodeQuery_1237898470384(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "licencePath", true);
   }
@@ -337,6 +373,14 @@ public class QueriesGenerated {
       ListSequence.fromList(SLinkOperations.getTargets(module, "configuration", true)).addElement(config);
     }
     return module;
+  }
+
+  public static SNode sourceNodeQuery_2521628527372173469(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "licencePath", true);
+  }
+
+  public static SNode sourceNodeQuery_2521628527372173678(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return _context.getNode();
   }
 
   public static Iterable sourceNodesQuery_1234877027528(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -386,6 +430,26 @@ public class QueriesGenerated {
     }
     ListSequence.fromList(components).removeLastElement();
     return components;
+  }
+
+  public static Iterable sourceNodesQuery_2521628527372165783(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "configuration", true);
+  }
+
+  public static Iterable sourceNodesQuery_2521628527372173635(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.packaging.structure.Module", false, new String[]{});
+  }
+
+  public static Iterable sourceNodesQuery_2521628527372173650(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.custommps.structure.LibraryFolder", false, new String[]{});
+  }
+
+  public static Iterable sourceNodesQuery_2521628527372173671(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "entry", true);
+  }
+
+  public static Iterable sourceNodesQuery_2521628527372173369(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "configuration", true);
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1234876993397(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
