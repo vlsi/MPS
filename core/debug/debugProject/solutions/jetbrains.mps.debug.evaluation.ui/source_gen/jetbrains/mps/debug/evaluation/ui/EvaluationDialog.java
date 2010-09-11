@@ -46,10 +46,16 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.awt.Color;
 import jetbrains.mps.ide.messages.Icons;
+import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.datatransfer.CopyPasteUtil;
+import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
+import java.io.StringWriter;
+import java.io.PrintWriter;
 
 public class EvaluationDialog extends BaseDialog {
   private static final Logger LOG = Logger.getLogger(EvaluationDialog.class);
@@ -394,11 +400,7 @@ public class EvaluationDialog extends BaseDialog {
       this((t.getMessage() == null ?
         t.toString() :
         t.getMessage()
-      ), Sequence.fromIterable(Sequence.fromArray(t.getStackTrace())).select(new ISelector<StackTraceElement, String>() {
-        public String select(StackTraceElement it) {
-          return it.toString();
-        }
-      }).toGenericArray(String.class));
+      ), getStackTrace(t));
     }
 
     @Override
@@ -417,19 +419,36 @@ public class EvaluationDialog extends BaseDialog {
     @Override
     protected void doInit() {
       for (String messagePart : ListSequence.fromList(myExtendedMessage)) {
-        add(new TextTreeNode(messagePart) {
+        TextTreeNode node = new TextTreeNode(messagePart) {
           @Override
           public boolean isLeaf() {
             return true;
           }
-
-          @Override
-          protected void updatePresentation() {
-            super.updatePresentation();
-            setIcon(Icons.ERROR_ICON);
-          }
-        });
+        };
+        add(node);
+        node.setIcon(Icons.ERROR_ICON);
       }
+    }
+
+    @Override
+    public ActionGroup getActionGroup() {
+      DefaultActionGroup defaultActionGroup = new DefaultActionGroup();
+      defaultActionGroup.add(new AnAction("Copy Stacktrace To Clipboard") {
+        public void actionPerformed(AnActionEvent event) {
+          CopyPasteUtil.copyTextToClipboard(getText() + ListSequence.fromList(myExtendedMessage).foldLeft("", new ILeftCombinator<String, String>() {
+            public String combine(String s, String it) {
+              return s + "\n" + it;
+            }
+          }));
+        }
+      });
+      return defaultActionGroup;
+    }
+
+    private static String[] getStackTrace(Throwable t) {
+      StringWriter writer = new StringWriter();
+      t.printStackTrace(new PrintWriter(writer));
+      return writer.toString().split("\n");
     }
   }
 
