@@ -5,7 +5,7 @@
   <fail unless="version" message="Property version unspecified." />
   <fail unless="teamcity.buildConfName" message="Property teamcity.buildConfName unspecified." />
   <import file="${ant.file}/../MPS-compile.xml" />
-  <import file="${ant.file}/../help-build.xml" />
+  <import file="${ant.file}/../help-build-src.xml" />
   <import file="${ant.file}/../MPS-external.xml" />
   <import file="${ant.file}/../MPS-languages.xml" />
   <target name="main" depends="compile,clean.before,folders.create,do.the.job,clean.after" />
@@ -41,12 +41,12 @@
     <mkdir dir="${deploy.dir}/MPS/lib/yjp" />
     <mkdir dir="${deploy.dir}/MPS/lib/httpclient" />
     <mkdir dir="${deploy.dir}/MPS/lib/tools" />
-    <mkdir dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources/core" />
-    <mkdir dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources/platform" />
-    <mkdir dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources/plugin" />
-    <mkdir dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources/resources" />
-    <mkdir dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources/workbench" />
-    <mkdir dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources" />
+    <mkdir dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build-src.repack.sources/core" />
+    <mkdir dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build-src.repack.sources/platform" />
+    <mkdir dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build-src.repack.sources/plugin" />
+    <mkdir dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build-src.repack.sources/resources" />
+    <mkdir dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build-src.repack.sources/workbench" />
+    <mkdir dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build-src.repack.sources" />
     <mkdir dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp" />
     <mkdir dir="${deploy.dir}/MPS/lib/idea-patch.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps.jar.tmp/idea" />
@@ -71,12 +71,12 @@
     <mkdir dir="${deploy.dir}/MPS/platform" />
     <mkdir dir="${deploy.dir}/MPS/plugin" />
     <mkdir dir="${deploy.dir}/MPS/workbench" />
-    <mkdir dir="${deploy.dir}/MPS/help-build.append.idea.version" />
+    <mkdir dir="${deploy.dir}/MPS/help-build-src.append.idea.version" />
     <mkdir dir="${deploy.dir}/MPS" />
     <mkdir dir="${deploy.dir}/MPS-buildTools.zip.tmp/tools" />
     <mkdir dir="${deploy.dir}/MPS-buildTools.zip.tmp/resources" />
     <mkdir dir="${deploy.dir}/MPS-buildTools.zip.tmp" />
-    <mkdir dir="${deploy.dir}/help-build.pack.mps.src" />
+    <mkdir dir="${deploy.dir}/help-build-src.pack.mps.src" />
   </target>
   <target name="do.the.job" depends="folders.create">
     <fail unless="mps_home" message="Property mps_home unspecified." />
@@ -173,28 +173,28 @@
     <copy todir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp">
       <fileset dir="${mps_home}/tests" excludes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, **/*.zip, **/*.iml, **/*.iws" includes="**/*.java, **/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources/core">
+    <copy todir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build-src.repack.sources/core">
       <fileset dir="${mps_home}/core" excludes="**/sandbox/**, **/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, **/*.zip, **/*.iml, **/*.iws" includes="**/*.java, **/*.java, **/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources/platform">
+    <copy todir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build-src.repack.sources/platform">
       <fileset dir="${mps_home}/platform" excludes="**/sandbox/**, **/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, **/*.zip, **/*.iml, **/*.iws" includes="**/*.java, **/*.java, **/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources/plugin">
+    <copy todir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build-src.repack.sources/plugin">
       <fileset dir="${mps_home}/plugin" excludes="**/sandbox/**, **/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, **/*.zip, **/*.iml, **/*.iws" includes="**/*.java, **/*.java, **/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources/resources">
+    <copy todir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build-src.repack.sources/resources">
       <fileset dir="${mps_home}/resources" excludes="**/sandbox/**, **/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, **/*.zip, **/*.iml, **/*.iws" includes="**/*.java, **/*.java, **/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources/workbench">
+    <copy todir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build-src.repack.sources/workbench">
       <fileset dir="${mps_home}/workbench" excludes="**/sandbox/**, **/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, **/*.zip, **/*.iml, **/*.iws" includes="**/*.java, **/*.java, **/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
-    <antcall target="help-build.repack.sources" inheritall="true">
+    <antcall target="help-build-src.repack.sources" inheritall="true">
       <param name="deploy.dir" value="${deploy.dir}" />
-      <param name="input.dir" value="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources" />
+      <param name="input.dir" value="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build-src.repack.sources" />
       <param name="output.dir" value="${deploy.dir}/MPS/lib/MPS-src.zip.tmp" />
       <param name="basedir" value="${basedir}" />
     </antcall>
-    <delete dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources" />
+    <delete dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build-src.repack.sources" />
     <zip destfile="${deploy.dir}/MPS/lib/MPS-src.zip" duplicate="preserve" filesonly="true">
       <zipfileset dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp" excludes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, **/*.zip, **/*.iml, **/*.iws" includes="**/*.java, **/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </zip>
@@ -414,14 +414,14 @@
     </copy>
     <antcall target="MPS-languages.pack.jetbrains.mps.ide_a8a" />
     <mkdir dir="${deploy.dir}/MPS/workbench" />
-    <echo file="${deploy.dir}/MPS/help-build.append.idea.version/build.number">build.number=${build.number}${line.separator}date=${DSTAMP}${line.separator}revision.number=${build.vcs.number}${line.separator}configuration.name=${teamcity.buildConfName}${line.separator}version=${version}</echo>
-    <antcall target="help-build.append.idea.version" inheritall="true">
+    <echo file="${deploy.dir}/MPS/help-build-src.append.idea.version/build.number">build.number=${build.number}${line.separator}date=${DSTAMP}${line.separator}revision.number=${build.vcs.number}${line.separator}configuration.name=${teamcity.buildConfName}${line.separator}version=${version}</echo>
+    <antcall target="help-build-src.append.idea.version" inheritall="true">
       <param name="deploy.dir" value="${deploy.dir}" />
-      <param name="input.dir" value="${deploy.dir}/MPS/help-build.append.idea.version" />
+      <param name="input.dir" value="${deploy.dir}/MPS/help-build-src.append.idea.version" />
       <param name="output.dir" value="${deploy.dir}/MPS" />
       <param name="basedir" value="${basedir}" />
     </antcall>
-    <delete dir="${deploy.dir}/MPS/help-build.append.idea.version" />
+    <delete dir="${deploy.dir}/MPS/help-build-src.append.idea.version" />
     <copy file="${mps_home}/entryPoints.xml" tofile="${deploy.dir}/MPS/entryPoints.xml" />
     <copy file="${mps_home}/readme.txt" tofile="${deploy.dir}/MPS/readme.txt" />
     <copy file="${mps_home}/releaseNotes.txt" tofile="${deploy.dir}/MPS/releaseNotes.txt" />
@@ -438,13 +438,13 @@
     </zip>
     <delete dir="${deploy.dir}/MPS-buildTools.zip.tmp" />
     <copy file="${mps_home}/lib/sources/idea-platform-src.zip" tofile="${deploy.dir}/idea-platform-src.zip" />
-    <antcall target="help-build.pack.mps.src" inheritall="true">
+    <antcall target="help-build-src.pack.mps.src" inheritall="true">
       <param name="deploy.dir" value="${deploy.dir}" />
-      <param name="input.dir" value="${deploy.dir}/help-build.pack.mps.src" />
+      <param name="input.dir" value="${deploy.dir}/help-build-src.pack.mps.src" />
       <param name="output.dir" value="${deploy.dir}/" />
       <param name="basedir" value="${basedir}" />
     </antcall>
-    <delete dir="${deploy.dir}/help-build.pack.mps.src" />
+    <delete dir="${deploy.dir}/help-build-src.pack.mps.src" />
   </target>
   <target name="clean.after" depends="do.the.job">
     <delete dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp" />
