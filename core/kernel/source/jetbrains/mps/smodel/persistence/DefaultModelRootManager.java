@@ -80,6 +80,8 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     try {
       model.setLoading(true);
       boolean needToSave = false;
+
+      //this code is for migration from old models (with no IDS)
       if (model.getSModelReference().getSModelId() == null) {
         model.changeModelReference(dsm.getSModelReference());
         // FIXME update on save?
@@ -238,6 +240,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
       if (!(isMPSModel)) continue;
       SModelReference modelReference = ModelRefCreator.createModelReference(file, FileSystem.getFile(modelRoot.getPath()), modelRoot.getPrefix());
 
+      //this code is for migration from old models (with no IDS)
       if (modelReference.getSModelId() == null) {
         modelReference = new SModelReference(modelReference.getSModelFqName(), SModelId.generate());
       }
