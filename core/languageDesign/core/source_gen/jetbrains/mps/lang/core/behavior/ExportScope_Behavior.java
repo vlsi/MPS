@@ -5,15 +5,16 @@ package jetbrains.mps.lang.core.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 
 public class ExportScope_Behavior {
   private static Class[] PARAMETERS_2565736246230026584 = {SNode.class ,String.class ,SNode.class};
@@ -30,7 +31,11 @@ public class ExportScope_Behavior {
   }
 
   public static String getNamespace_2565736246230026649(SNode node) {
-    return check_ogf5a0_a0a0(check_ogf5a0_a0a0a(check_ogf5a0_a0a0a0(check_ogf5a0_a0a0a0a(SNodeOperations.getModel(node)))));
+    IModule module = check_ogf5a0_a0a0a(check_ogf5a0_a0a0a0(SNodeOperations.getModel(node)));
+    if (module instanceof Generator) {
+      module = ((Generator) module).getSourceLanguage();
+    }
+    return check_ogf5a0_a2a0(check_ogf5a0_a0c0a(module));
   }
 
   public static SNode getExportScope_4075196924244445285(SNode node) {
@@ -72,31 +77,31 @@ public class ExportScope_Behavior {
     ));
   }
 
-  private static String check_ogf5a0_a0a0(ModuleDescriptor p) {
-    if (null == p) {
-      return null;
-    }
-    return p.getNamespace();
-  }
-
-  private static ModuleDescriptor check_ogf5a0_a0a0a(IModule p) {
-    if (null == p) {
-      return null;
-    }
-    return p.getModuleDescriptor();
-  }
-
-  private static IModule check_ogf5a0_a0a0a0(SModelDescriptor p) {
+  private static IModule check_ogf5a0_a0a0a(SModelDescriptor p) {
     if (null == p) {
       return null;
     }
     return p.getModule();
   }
 
-  private static SModelDescriptor check_ogf5a0_a0a0a0a(SModel p) {
+  private static SModelDescriptor check_ogf5a0_a0a0a0(SModel p) {
     if (null == p) {
       return null;
     }
     return p.getModelDescriptor();
+  }
+
+  private static String check_ogf5a0_a2a0(ModuleDescriptor p) {
+    if (null == p) {
+      return null;
+    }
+    return p.getNamespace();
+  }
+
+  private static ModuleDescriptor check_ogf5a0_a0c0a(IModule p) {
+    if (null == p) {
+      return null;
+    }
+    return p.getModuleDescriptor();
   }
 }
