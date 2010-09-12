@@ -136,6 +136,8 @@ public class CommonPaths {
       result.add(javaConverterClassPath);
     }
 
+    addIfExists(result, "/core/runtime/classes");
+
     addIfExists(result, "/lib/commons-lang/commons-lang-2.1.jar");
     addIfExists(result, "/lib/picocontainer.jar");
     addIfExists(result, "/lib/jdom/jdom.jar");
