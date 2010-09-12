@@ -5399,6 +5399,23 @@
           </node>
         </node>
       </node>
+      <node role="property:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderProperty:0" id="8805873473707326927">
+        <property name="name:0" value="readonly" />
+        <node role="type:0" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="8805873473707329443" />
+        <node role="set:0" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="8805873473707329444">
+          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8805873473707329445">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8805873473707329449">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8805873473707329451">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyParent:0" id="8805873473707329450" />
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8805873473707329455">
+                  <link role="baseMethodDeclaration:3" targetNodeId="23.~BaseTabbedBindedDialog$ComponentDescriptor.setReadOnly():void" resolveInfo="setReadOnly" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyValue:0" id="8805873473707329448" />
+        </node>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="3201642974933960738">
@@ -7510,6 +7527,20 @@
                             <node role="value:0" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="901357770590749931">
                               <link role="enumClass:3" targetNodeId="23.~BaseBindedDialog$ConstraintsType" resolveInfo="BaseBindedDialog.ConstraintsType" />
                               <link role="enumConstantDeclaration:3" targetNodeId="23.~BaseBindedDialog$ConstraintsType.LIST" resolveInfo="LIST" />
+                            </node>
+                          </node>
+                        </node>
+                        <node role="statement:3" type="jetbrains.mps.baseLanguage.builders.structure.BuilderStatement:0" id="5640028523652887970">
+                          <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5640028523652887971" />
+                          <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyBuilder:0" id="5640028523652887972">
+                            <link role="declaration:0" targetNodeId="8805873473707326927" resolveInfo="readonly" />
+                            <node role="value:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5640028523652887973">
+                              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="5640028523652887974">
+                                <link role="variableDeclaration:3" targetNodeId="901357770590750078" resolveInfo="s" />
+                              </node>
+                              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5640028523652887975">
+                                <link role="baseMethodDeclaration:3" targetNodeId="19.~Solution.isStub():boolean" resolveInfo="isStub" />
+                              </node>
                             </node>
                           </node>
                         </node>
