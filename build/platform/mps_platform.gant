@@ -76,6 +76,9 @@ def layoutFull(String home, String targetDirectory) {
         jar("boot.jar") {
           module("boot")
         }
+        jar("execution-api.jar"){
+          module("execution-openapi")
+        }
 
         fileset(dir: "$home/lib") {
           include(name: "*.jar")
