@@ -36,6 +36,10 @@ public class MPSUnindexedFilesUpdater implements CacheUpdater {
     myIndex = index;
   }
 
+  public int getNumberOfPendingUpdateJobs() {
+    return myIndex.getNumberOfPendingInvalidations();
+  }
+
   public VirtualFile[] queryNeededFiles() {
     final CollectingContentIterator finder = myIndex.createContentIterator();
 
