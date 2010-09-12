@@ -63,7 +63,7 @@
               <link role="variableDeclaration:3" targetNodeId="2.~System.out" resolveInfo="out" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1206619936532">
-              <link role="baseMethodDeclaration:3" targetNodeId="3.~PrintStream.println(java.lang.Object):void" resolveInfo="println" />
+              <link role="baseMethodDeclaration:3" targetNodeId="3.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1206620379141">
                 <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="1206620379142">
                   <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.MulExpression:3" id="1206620379143">
