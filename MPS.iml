@@ -57,7 +57,6 @@
     <orderEntry type="library" exported="" name="Trove4j" level="project" />
     <orderEntry type="library" exported="" name="XmlRpc" level="project" />
     <orderEntry type="library" exported="" name="XStream" level="project" />
-    <orderEntry type="library" name="jfcUnit" level="project" />
     <orderEntry type="module" module-name="debug-api" exported="" />
     <orderEntry type="module" module-name="debug" exported="" />
     <orderEntry type="module" module-name="generator-engine" exported="" />
