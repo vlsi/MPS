@@ -1,10 +1,12 @@
 <component>
   <actions>
     <!--MPS Patch Start-->
+<!--
     <action id="CaptureMemorySnapShot" class="com.intellij.util.CaptureMemorySnapshotAction"
             icon="/actions/profileMemory.png"/>
     <action id="CaptureCPUUsageData" class="com.intellij.util.CaptureCPUUsageDataAction"
             icon="/actions/profuleCPU.png"/>
+-->
     <!--MPS Patch End-->
     <action id="ContextHelp" class="com.intellij.ide.actions.ContextHelpAction"/>
     <action id="RunGc" class="com.intellij.ide.actions.RunGcAction"/>
