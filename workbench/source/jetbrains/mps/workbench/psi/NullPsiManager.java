@@ -92,6 +92,10 @@ class NullPsiManager extends PsiManagerEx {
 
   }
 
+  public void beforeChildReplacement(@NotNull PsiTreeChangeEventImpl psiTreeChangeEvent) {
+    
+  }
+
   public CacheManager getCacheManager() {
     return null;
   }
