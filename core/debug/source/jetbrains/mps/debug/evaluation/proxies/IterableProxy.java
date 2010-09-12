@@ -47,7 +47,7 @@ public class IterableProxy<T extends IValueProxy> implements Iterable<T> {
     @Override
     public boolean hasNext() {
       try {
-        return (Boolean)((PrimitiveValueProxy) myIteratorProxy.invokeMethod("hasNext", "()Z")).getJavaValue();
+        return (Boolean) ((PrimitiveValueProxy) myIteratorProxy.invokeMethod("hasNext", "()Z")).getJavaValue();
       } catch (EvaluationException e) {
         throw new EvaluationRuntimeException(e);
       }

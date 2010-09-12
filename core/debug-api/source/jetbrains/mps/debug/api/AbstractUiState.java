@@ -1,6 +1,9 @@
 package jetbrains.mps.debug.api;
 
-import jetbrains.mps.debug.api.programState.*;
+import jetbrains.mps.debug.api.programState.IStackFrame;
+import jetbrains.mps.debug.api.programState.IThread;
+import jetbrains.mps.debug.api.programState.IValue;
+import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -26,6 +29,7 @@ public abstract class AbstractUiState {
   }
 
   //public
+
   @Nullable
   public abstract IThread getThread();
 
@@ -39,14 +43,17 @@ public abstract class AbstractUiState {
 
 
   //protected
+
   protected abstract IThread findThread();
 
   // changes state on user selection
+
   protected abstract AbstractUiState selectThreadInternal(@Nullable IThread thread);
 
   protected abstract AbstractUiState selectFrameInternal(@Nullable IStackFrame frame);
 
   //impl
+
   protected IStackFrame findStackFrame() {
     IThread thread = getThread();
     if (thread == null) {
@@ -61,9 +68,6 @@ public abstract class AbstractUiState {
     }
     return frame;
   }
-
-
-
 
 
   public void selectThread(@Nullable IThread thread) {

@@ -33,8 +33,9 @@ public class OrdinaryClassWithInnerClasses extends BaseConcept {
   }
 
   public void foo() {
-    
+
   }
+
   public class Ddd {
     public Ddd() {
     }

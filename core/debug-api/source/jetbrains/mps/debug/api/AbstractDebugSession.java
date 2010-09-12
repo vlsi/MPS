@@ -2,7 +2,6 @@ package jetbrains.mps.debug.api;
 
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.annotation.UseCarefully;
 import org.jetbrains.annotations.NotNull;

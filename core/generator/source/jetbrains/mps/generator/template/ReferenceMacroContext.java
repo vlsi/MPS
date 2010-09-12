@@ -54,7 +54,7 @@ public class ReferenceMacroContext extends TemplateQueryContext {
     ISearchScope referenceScope = SNodeOperations.getReferentSearchScope(referenceSourceNode, referenceRole, operationContext);
     for (SNode outputNode : outputNodes) {
       if (SearchScopeOperations.containsNode(referenceScope, outputNode)) {
-         return outputNode;
+        return outputNode;
       }
     }
     return null;

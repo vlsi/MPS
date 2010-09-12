@@ -67,8 +67,8 @@ abstract class AbstractModelScanner {
 
   private void collectLanguageNamespaces(SNode node, Set<String> namespaces) {
     {
-    String namespace = getUsedLanguageNamespaceFromInstanceNode(node);
-      if(namespace != null) {
+      String namespace = getUsedLanguageNamespaceFromInstanceNode(node);
+      if (namespace != null) {
         namespaces.add(namespace);
       }
       List<SNode> descendants = getDescendantsToScan(node);

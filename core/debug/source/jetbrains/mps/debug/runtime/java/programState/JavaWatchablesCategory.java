@@ -1,7 +1,6 @@
 package jetbrains.mps.debug.runtime.java.programState;
 
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
-import jetbrains.mps.logging.Logger;
 
 /**
  * Created by IntelliJ IDEA.
@@ -26,7 +25,7 @@ public class JavaWatchablesCategory extends WatchablesCategory {
 
   @Override
   public int compareTo(WatchablesCategory o) {
-    if (! (o instanceof JavaWatchablesCategory)) return 1;
+    if (!(o instanceof JavaWatchablesCategory)) return 1;
     return myOrder - ((JavaWatchablesCategory) o).myOrder;
   }
 }

@@ -87,7 +87,7 @@ public class NodeReadEventsCaster {
     private Stack<INodesReadListener> myListenersStack = new Stack<INodesReadListener>();
     private boolean myEventsBlocked;
 
-     public void addListener(INodesReadListener listener) {
+    public void addListener(INodesReadListener listener) {
       assert listener != null : "Trying to add null as a listener";
       myListenersStack.push(listener);
     }
@@ -117,7 +117,7 @@ public class NodeReadEventsCaster {
       myListenersStack.peek().nodeUnclassifiedReadAccess(node);
     }
 
-     public boolean areEventsBlocked() {
+    public boolean areEventsBlocked() {
       return myEventsBlocked;
     }
 

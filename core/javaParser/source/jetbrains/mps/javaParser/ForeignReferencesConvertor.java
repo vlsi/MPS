@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.javaParser;
 
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.SNodeId.Foreign;
 import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.lang.core.structure.INamedConcept;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SNodeId.Foreign;
 import jetbrains.mps.util.NameUtil;
 
 import java.util.*;
@@ -75,13 +75,13 @@ public class ForeignReferencesConvertor {
 
   }
 
-   private SModelDescriptor regularModelReferenceFromForeign(SModelReference foreingModelReference) {
+  private SModelDescriptor regularModelReferenceFromForeign(SModelReference foreingModelReference) {
     SModelDescriptor sModelDescriptor =
       SModelRepository.getInstance().getModelDescriptor(foreingModelReference.getSModelFqName().withoutStereotype());
     return sModelDescriptor;
   }
 
-   private Classifier getMPSClassByIdString(SModel model, String idString) {
+  private Classifier getMPSClassByIdString(SModel model, String idString) {
     if (idString.startsWith(Foreign.ID_PREFIX)) {
       idString = idString.substring(Foreign.ID_PREFIX.length());
     }
@@ -97,7 +97,7 @@ public class ForeignReferencesConvertor {
     }
   }
 
-   private Classifier getMPSClassById(SModel model, SNodeId nodeId) {
+  private Classifier getMPSClassById(SModel model, SNodeId nodeId) {
     String idString = nodeId.toString();
     return getMPSClassByIdString(model, idString);
   }

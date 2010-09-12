@@ -24,7 +24,7 @@ import java.util.List;
 public interface GenerationListener {
   void beforeGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels);
 
-  void modelsGenerated(List<Pair<SModelDescriptor,IOperationContext>> models, boolean success);
+  void modelsGenerated(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success);
 
   void afterGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels);
 }

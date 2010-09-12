@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.project.listener;
 
+import jetbrains.mps.baseLanguage.unitTest.structure.UnitTest_Language;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.baseLanguage.unitTest.structure.UnitTest_Language;
 
 public class TestsModelCreationListener extends ModelCreationListener {
   public boolean isApplicable(SModelDescriptor model) {

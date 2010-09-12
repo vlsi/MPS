@@ -58,14 +58,14 @@ public abstract class AbstractCache extends SModelAdapter {
 
   protected DataSet getDataSet(String dataSetId, DataSetCreator creator) {
     DataSet result = myDataSets.get(dataSetId);
-    if(result != null || creator == null) {
+    if (result != null || creator == null) {
       return result;
     }
     result = creator.create(this);
     assert result.getId().equals(dataSetId);
     result.init();
     DataSet existing = myDataSets.putIfAbsent(dataSetId, result);
-    if(existing != null) {
+    if (existing != null) {
       // ignored, drop dataSet
       return existing;
     }

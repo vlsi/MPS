@@ -77,8 +77,8 @@ abstract class BaseClassLoader extends ClassLoader {
     return c;
   }
 
-  public void dispose () {
-    myCache.clear();    
+  public void dispose() {
+    myCache.clear();
   }
 
   private void definePackageIfNecessary(String name) {

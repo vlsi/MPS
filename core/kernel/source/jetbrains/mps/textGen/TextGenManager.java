@@ -65,7 +65,7 @@ public class TextGenManager {
     myPositions = new HashMap<SNode, PositionInfo>();
     myScopePositions = new HashMap<SNode, ScopePositionInfo>();
     myUnitPositions = new HashMap<SNode, UnitPositionInfo>();
-    myClassesCache = new HashMap<String,Class<SNodeTextGen>>();
+    myClassesCache = new HashMap<String, Class<SNodeTextGen>>();
 
     TextGenBuffer buffer = new TextGenBuffer();
     buffer.putUserObject(PACKAGE_NAME, node.getModel().getLongName());
@@ -139,7 +139,7 @@ public class TextGenManager {
         }
         myScopePositions.put(node, scopePositionInfo);
       }
-      if (DebugInfoManager.getInstance().isUnitNode(node)){
+      if (DebugInfoManager.getInstance().isUnitNode(node)) {
         UnitPositionInfo unitPositionInfo = new UnitPositionInfo();
         unitPositionInfo.fillFrom(info);
         unitPositionInfo.setUnitName(DebugInfoManager.getInstance().getUnitName(node));
@@ -174,7 +174,7 @@ public class TextGenManager {
     String nodeConcept = node.getConceptFqName();
 
     Class<SNodeTextGen> textgenClass = myClassesCache == null ? loadTextGenClass(node.getConceptDeclarationNode()) : myClassesCache.get(nodeConcept);
-    if(textgenClass == null) {
+    if (textgenClass == null) {
       textgenClass = loadTextGenClass(node.getConceptDeclarationNode());
       myClassesCache.put(nodeConcept, textgenClass);
     }
@@ -203,7 +203,7 @@ public class TextGenManager {
         if (dependObj == null || nodeFQName.equals(dependObj)) {
           continue;
         }
-        if(skipSet != null && skipSet.contains(dependObj)) {
+        if (skipSet != null && skipSet.contains(dependObj)) {
           continue;
         }
         dependencies.add(dependObj);

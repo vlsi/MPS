@@ -29,11 +29,11 @@ public class GenerationPlan {
     try {
       myGenerators = GenerationPartitioningUtil.getAllPossiblyEngagedGenerators(inputModel, GlobalScope.getInstance());
       for (Generator generator : myGenerators) {
-         myLanguages.add(generator.getSourceLanguage());
+        myLanguages.add(generator.getSourceLanguage());
       }
       GenerationPartitioner partitioner = (new GenerationPartitioner());
       myPlan = partitioner.createMappingSets(myGenerators);
-      if(myPlan.isEmpty()) {
+      if (myPlan.isEmpty()) {
         myPlan.add(new ArrayList<MappingConfiguration>());
       }
       myConflictingPriorityRules = partitioner.getConflictingPriorityRules();

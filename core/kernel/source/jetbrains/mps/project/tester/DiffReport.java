@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.project.tester;
 
-import java.util.List;
-import java.util.Arrays;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class DiffReport {
   private static final String SEPARATOR = "*****************";

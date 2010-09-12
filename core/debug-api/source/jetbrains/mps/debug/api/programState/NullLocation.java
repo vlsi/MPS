@@ -1,7 +1,5 @@
 package jetbrains.mps.debug.api.programState;
 
-import jetbrains.mps.debug.api.programState.ILocation;
-
 /**
  * Created by IntelliJ IDEA.
  * User: Cyril.Konopko

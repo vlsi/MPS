@@ -72,11 +72,11 @@ public class GenerationDependencies {
     }
     String[] models = myUsedModelsHashes.keySet().toArray(new String[myUsedModelsHashes.size()]);
     Arrays.sort(models);
-    for(String model : models) {
+    for (String model : models) {
       Element e = new Element(NODE_MODEL);
       e.setAttribute(ATTR_MODEL_ID, model);
       String hash = myUsedModelsHashes.get(model);
-      if(hash != null) {
+      if (hash != null) {
         e.setAttribute(ATTR_HASH, hash);
       }
       root.addContent(e);
@@ -97,13 +97,13 @@ public class GenerationDependencies {
       /* regenerate all */
       return null;
     }
-    Map<String,String> externalHashes = new HashMap<String, String>();
+    Map<String, String> externalHashes = new HashMap<String, String>();
     for (Element e : ((List<Element>) root.getChildren(NODE_MODEL))) {
       String modelReference = GenerationRootDependencies.getValue(e, ATTR_MODEL_ID);
       String rootHash = GenerationRootDependencies.getValue(e, ATTR_HASH);
-      if(modelReference != null) {
+      if (modelReference != null) {
         externalHashes.put(modelReference, rootHash);
-      }      
+      }
     }
     List<GenerationRootDependencies> data = new ArrayList<GenerationRootDependencies>();
     for (Element e : ((List<Element>) root.getChildren(NODE_COMMON))) {
@@ -156,8 +156,8 @@ public class GenerationDependencies {
         dep = GenerationRootDependencies.fromData(l, files);
       }
       rootDependencies.add(dep);
-      for(String modelReference : dep.getExternal()) {
-        if(!externalHashes.containsKey(modelReference)) {
+      for (String modelReference : dep.getExternal()) {
+        if (!externalHashes.containsKey(modelReference)) {
           SModelDescriptor sm = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(modelReference));
           Map<String, String> hashes = ModelDigestHelper.getInstance().getGenerationHashes(sm, project);
           String value = hashes != null ? hashes.get(ModelDigestHelper.FILE) : null;

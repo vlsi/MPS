@@ -71,6 +71,7 @@ public class StronglyConnectedModules {
 
   public static interface IModuleDecorator<M extends IModule> extends IVertex, Comparable<IModuleDecorator<M>> {
     public M getModule();
+
     public void fill(Map<IModule, IModuleDecorator<M>> map);
   }
 

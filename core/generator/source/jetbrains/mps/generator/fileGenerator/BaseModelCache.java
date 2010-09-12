@@ -26,10 +26,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.WeakHashMap;
 
 public abstract class BaseModelCache<T> implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(BaseModelCache.class);
@@ -43,6 +43,7 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
 
   @Nullable
   protected abstract T readCache(SModelDescriptor model);
+
   protected abstract File saveCache(@NotNull T t, SModelDescriptor model);
 
   protected abstract T generateCache(CacheGenerationContext context);
@@ -52,7 +53,7 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
   protected BaseModelCache(FileGenerationManager fileGeneratorManager) {
     this(fileGeneratorManager, null);
   }
-  
+
   protected BaseModelCache(FileGenerationManager fileGeneratorManager, AllCaches allCaches) {
     myFileGeneratorManager = fileGeneratorManager;
     myAllCaches = allCaches;
@@ -132,13 +133,13 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
   }
 
   public boolean isCacheFile(IFile file) {
-    return (file.getName().endsWith(getCacheFileName()));  
+    return (file.getName().endsWith(getCacheFileName()));
   }
 
   protected class MyCacheGenerator implements CacheGenerator {
     public File generateCache(CacheGenerationContext context) {
       T cache = BaseModelCache.this.generateCache(context);
-      if(cache == null) return null;
+      if (cache == null) return null;
 
       SModelDescriptor model = context.getOriginalInputModel();
 

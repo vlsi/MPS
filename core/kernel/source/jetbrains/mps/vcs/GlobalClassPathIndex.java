@@ -74,20 +74,21 @@ public class GlobalClassPathIndex implements ApplicationComponent {
   };
 
   private void callChangedListeners() {
-    for (ChangedListener l:myListeners){
+    for (ChangedListener l : myListeners) {
       l.changed();
     }
   }
 
-  public void addChangedListener(ChangedListener l){
+  public void addChangedListener(ChangedListener l) {
     myListeners.add(l);
   }
 
-  public void removeChangedListener(ChangedListener l){
+  public void removeChangedListener(ChangedListener l) {
     myListeners.remove(l);
   }
 
-  @SuppressWarnings({"UnusedDeclaration"}) //component dependency 
+  @SuppressWarnings({"UnusedDeclaration"})
+  //component dependency
   public GlobalClassPathIndex(final MPSModuleRepository moduleRepository, VcsContextFactory factory) {
     myModuleRepository = moduleRepository;
   }

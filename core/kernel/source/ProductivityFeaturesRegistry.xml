@@ -1,11 +1,11 @@
 <component>
   <group id="navigation">
     <feature
-      id="navigation.goto.concept"
-      tip-file="GoToConcept.html"
-      min-usage-count="5"
-      first-show="1"
-      successive-show="4"
-      />
+            id="navigation.goto.concept"
+            tip-file="GoToConcept.html"
+            min-usage-count="5"
+            first-show="1"
+            successive-show="4"
+            />
   </group>
 </component>

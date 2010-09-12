@@ -64,14 +64,14 @@ public class MappingConfig_RefSet extends MappingConfig_AbstractRef {
   public boolean removeModelReference(SModelReference ref, boolean[] mappingsChanged) {
     Iterator<MappingConfig_AbstractRef> it = myRefs.iterator();
     boolean affected = false;
-    while(it.hasNext()) {
+    while (it.hasNext()) {
       MappingConfig_AbstractRef curr = it.next();
-      if(curr.removeModelReference(ref, mappingsChanged)) {
+      if (curr.removeModelReference(ref, mappingsChanged)) {
         it.remove();
         affected = true;
       }
     }
-    if(affected && myRefs.size() == 0) {
+    if (affected && myRefs.size() == 0) {
       return true;
     }
     return false;

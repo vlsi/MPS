@@ -90,7 +90,7 @@ public class LibraryInitializer {
 
   public Collection<IModule> getModules(String path) {
     return myRepo.getModules(myLibsToOwners.get(path));
-  }  
+  }
 
   public <M extends IModule> Set<M> getBootstrapModules(Class<M> cls) {
     List<M> result = new ArrayList<M>();

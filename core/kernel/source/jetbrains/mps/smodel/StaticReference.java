@@ -27,14 +27,14 @@ public class StaticReference extends SReferenceBase {
   private SNodeId myTargetNodeId;    // mature
 
   /**
-   *  create 'young' reference
+   * create 'young' reference
    */
   public StaticReference(@NotNull String role, @NotNull SNode sourceNode, @NotNull SNode immatureTargetNode) {
     super(role, sourceNode, null, immatureTargetNode);
   }
 
   /**
-   *  create 'mature' reference
+   * create 'mature' reference
    */
   public StaticReference(@NotNull String role, @NotNull SNode sourceNode, @Nullable SModelReference targetModelReference, @Nullable SNodeId nodeId, @Nullable String resolveInfo) {
     // 'targetModelReference' can be null only if it is broken external reference

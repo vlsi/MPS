@@ -82,7 +82,7 @@ public class StubModelsEntry {
     return result;
   }
 
-  public boolean isJava(){
+  public boolean isJava() {
     return LanguageID.JAVA_MANAGER.equals(myManager);
   }
 

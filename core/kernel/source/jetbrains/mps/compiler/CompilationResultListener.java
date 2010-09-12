@@ -20,5 +20,6 @@ import org.eclipse.jdt.internal.compiler.CompilationResult;
 
 public interface CompilationResultListener {
   void onCompilationResult(CompilationResult r);
+
   void onClass(ClassFile f);
 }

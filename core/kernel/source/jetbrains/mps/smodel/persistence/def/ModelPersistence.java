@@ -151,7 +151,7 @@ public class ModelPersistence {
     int persistenceVersion = getPersistenceSettings().getUserSelectedPersistenceVersion();
     if (persistenceVersion == PersistenceSettings.VERSION_UNDEFINED) {
       return currentApplicationPersistenceVersion;
-    } else if(persistenceVersion == PersistenceSettings.VERSION_UPDATE_TO_THE_LATEST) {
+    } else if (persistenceVersion == PersistenceSettings.VERSION_UPDATE_TO_THE_LATEST) {
       return currentApplicationPersistenceVersion;
     }
     return persistenceVersion;
@@ -166,7 +166,7 @@ public class ModelPersistence {
         return true; //user already decided to convert models now
       } else {
         return false; //do not show dialog, for it causes deadlock
-      }        
+      }
     }
     return false;
   }
@@ -252,7 +252,7 @@ public class ModelPersistence {
   }
 
   /**
-   *  upgrades model persistence and saves model
+   * upgrades model persistence and saves model
    */
   public static SModel upgradePersistence(IFile file, SModel model, int fromVersion, int toVersion) {
     SModelReference reference = model.getSModelReference();
@@ -260,10 +260,10 @@ public class ModelPersistence {
     int version = fromVersion;
     while (version < toVersion) {
       IModelWriter writer = modelWriters.get(++version);
-      if(version == 5) {
+      if (version == 5) {
         //noinspection deprecation
         refactorings = model.getRefactoringHistory();
-        if(refactorings != null && refactorings.getRefactoringContexts().isEmpty()) {
+        if (refactorings != null && refactorings.getRefactoringContexts().isEmpty()) {
           refactorings = null;
         }
       }
@@ -279,7 +279,7 @@ public class ModelPersistence {
       Document document = saveModel(model, false);
       JDOMUtil.writeDocument(document, file);
 
-      if(refactorings != null) {
+      if (refactorings != null) {
         RefactoringsPersistence.save(file, refactorings);
       }
     } catch (IOException e) {
@@ -289,20 +289,20 @@ public class ModelPersistence {
   }
 
   public static int getModelPersistenceVersion(IFile file) {
-    final int[] version = new int[] { -1 };
+    final int[] version = new int[]{-1};
     try {
       SAXParser parser = JDOMUtil.createSAXParser();
       parser.parse(new InputSource(file.openReader()), new DefaultHandler() {
         @Override
         public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-          if(version[0] == -1 && MODEL.equals(qName)) {
+          if (version[0] == -1 && MODEL.equals(qName)) {
             version[0] = 0;
-          } else if(version[0] == 0 && PERSISTENCE.equals(qName) ) {
+          } else if (version[0] == 0 && PERSISTENCE.equals(qName)) {
             String s = attributes.getValue(PERSISTENCE_VERSION);
-            if(s != null) {
+            if (s != null) {
               try {
                 version[0] = Integer.parseInt(s);
-              } catch(NumberFormatException ex) {
+              } catch (NumberFormatException ex) {
               }
             }
           } else {
@@ -315,7 +315,7 @@ public class ModelPersistence {
           throw new SAXException();
         }
       });
-    } catch(SAXException ex) {
+    } catch (SAXException ex) {
       /* used to break SAX parsing flow */
     } catch (ParserConfigurationException e) {
     } catch (IOException e) {
@@ -358,7 +358,7 @@ public class ModelPersistence {
   }
 
   /**
-   *  returns upgraded model, or null if the model doesn't require update or canUpgrade is false
+   * returns upgraded model, or null if the model doesn't require update or canUpgrade is false
    */
   public static SModel saveModel(@NotNull SModel model, @NotNull IFile file, boolean validate, boolean canUpgrade) {
     LOG.debug("Save model " + model.getSModelReference() + " to file " + file.getAbsolutePath());

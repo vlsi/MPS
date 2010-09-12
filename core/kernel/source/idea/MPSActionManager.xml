@@ -104,7 +104,7 @@
     <group id="MPSWelcomeDocumentationMenu">
       <action id="ReadMPSTutorial"
               class="jetbrains.mps.workbench.actions.help.ReadMPSTutorialAction"
-              text="Read The Tutorial" 
+              text="Read The Tutorial"
               description="You can read a tutorial on how to create a simple language with MPS"/>
       <action id="ShowMPSDocumentation"
               class="jetbrains.mps.workbench.actions.help.ShowDocumentationAction"
@@ -137,28 +137,28 @@
     <group id="EditorFix">
       <!--We need this only cause platform requires this action, and NPE is thrown if
                 the action is not in its place (see MPS-2081 for further details) -->
-            <action id="EditorSelectWord" class="com.intellij.openapi.editor.actions.SelectWordAtCaretAction"/>
-            <add-to-group group-id="EditMenu" anchor="last"/>
-        </group>
+      <action id="EditorSelectWord" class="com.intellij.openapi.editor.actions.SelectWordAtCaretAction"/>
+      <add-to-group group-id="EditMenu" anchor="last"/>
+    </group>
 
-        <group id="VcsMappingsFix">
-            <!--fix MPS-2142-->
-            <action id="NewElement" class="com.intellij.ide.actions.NewElementAction"/>
-            <action id="IncrementalSearch" class="com.intellij.codeInsight.navigation.actions.IncrementalSearchAction"/>
-        </group>
+    <group id="VcsMappingsFix">
+      <!--fix MPS-2142-->
+      <action id="NewElement" class="com.intellij.ide.actions.NewElementAction"/>
+      <action id="IncrementalSearch" class="com.intellij.codeInsight.navigation.actions.IncrementalSearchAction"/>
+    </group>
 
-        <!--fix MPS-2156 after fixing MPS-2142-->
-        <group id="WeighingNewGroup" class="com.intellij.ide.actions.WeighingNewActionGroup"/>
-        <group id="NewGroup" popup="true">
-        </group>
+    <!--fix MPS-2156 after fixing MPS-2142-->
+    <group id="WeighingNewGroup" class="com.intellij.ide.actions.WeighingNewActionGroup"/>
+    <group id="NewGroup" popup="true">
+    </group>
 
-        <group id="SearchMenu" popup="true">
-          <add-to-group group-id="MainMenu" anchor="after" relative-to-action="EditMenu"/>
-        </group>
+    <group id="SearchMenu" popup="true">
+      <add-to-group group-id="MainMenu" anchor="after" relative-to-action="EditMenu"/>
+    </group>
 
-        <!--Fixing exeception in ToolWindowContentUi which uses this action-->
-        <action id="ShowContent" class="com.intellij.ide.actions.ShowContentAction"/>
-        <!--Fix another exception, in InternalDecorator this time-->
-        <action id="ToggleContentUiTypeMode" class="com.intellij.ide.actions.ToggleContentUiTypeAction"/>
-    </actions>
+    <!--Fixing exeception in ToolWindowContentUi which uses this action-->
+    <action id="ShowContent" class="com.intellij.ide.actions.ShowContentAction"/>
+    <!--Fix another exception, in InternalDecorator this time-->
+    <action id="ToggleContentUiTypeMode" class="com.intellij.ide.actions.ToggleContentUiTypeAction"/>
+  </actions>
 </component>

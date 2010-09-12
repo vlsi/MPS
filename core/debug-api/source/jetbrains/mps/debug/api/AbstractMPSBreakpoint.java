@@ -1,11 +1,13 @@
 package jetbrains.mps.debug.api;
 
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.debug.api.info.BLDebugInfoCache;
 import jetbrains.mps.debug.api.info.DebugInfo;
 import jetbrains.mps.debug.api.info.PositionInfo;
-import jetbrains.mps.smodel.*;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 
 /**
  * Created by IntelliJ IDEA.

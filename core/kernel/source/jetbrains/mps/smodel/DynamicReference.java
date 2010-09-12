@@ -35,14 +35,14 @@ import org.jetbrains.annotations.NotNull;
 public class DynamicReference extends SReferenceBase {
 
   /**
-   *  create 'young' reference
+   * create 'young' reference
    */
   public DynamicReference(@NotNull String role, @NotNull SNode sourceNode, @NotNull SNode immatureTargetNode) {
     super(role, sourceNode, null, immatureTargetNode);
   }
 
   /**
-   *  create 'mature' reference
+   * create 'mature' reference
    */
   public DynamicReference(@NotNull String role, @NotNull SNode sourceNode, @NotNull SModelReference targetModelReference, String resolveInfo) {
     super(role, sourceNode, targetModelReference, null);
@@ -109,9 +109,9 @@ public class DynamicReference extends SReferenceBase {
 
   private IModule getModule() {
     SModel model = getSourceNode().getModel();
-    if(model != null) {
+    if (model != null) {
       SModelDescriptor descr = model.getModelDescriptor();
-      if(descr != null) {
+      if (descr != null) {
         return descr.getModule();
       }
     }

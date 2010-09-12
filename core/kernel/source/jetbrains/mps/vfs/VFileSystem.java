@@ -18,15 +18,13 @@ package jetbrains.mps.vfs;
 import com.intellij.openapi.vfs.JarFileSystem;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vcs.actions.VcsContextFactory;
-import com.intellij.openapi.vcs.FilePath;
 import com.intellij.util.Processor;
 import jetbrains.mps.util.PathManager;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
-import java.util.LinkedList;
 import java.util.Arrays;
+import java.util.LinkedList;
 
 public class VFileSystem {
 

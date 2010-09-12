@@ -27,7 +27,7 @@ import jetbrains.mps.vfs.VFileSystem;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LanguageValidator extends BaseModuleValidator<Language>{
+public class LanguageValidator extends BaseModuleValidator<Language> {
   public LanguageValidator(Language module) {
     super(module);
   }

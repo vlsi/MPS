@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.generator.fileGenerator;
 
-import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
@@ -41,11 +41,11 @@ public class FileGenerationUtil {
   }
 
   public static File getDefaultOutputDir(SModelReference inputModel, File outputRootDir) {
-      return getDefaultOutputDir(inputModel, FileSystem.getFile(outputRootDir)).toFile();
+    return getDefaultOutputDir(inputModel, FileSystem.getFile(outputRootDir)).toFile();
   }
 
   public static File getDefaultOutputDir(SModel inputModel, File outputRootDir) {
-    return getDefaultOutputDir(inputModel, FileSystem.getFile(outputRootDir)).toFile();    
+    return getDefaultOutputDir(inputModel, FileSystem.getFile(outputRootDir)).toFile();
   }
 
   public static File getCachesOutputDir(File outputDir) {

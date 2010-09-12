@@ -1,7 +1,5 @@
 package jetbrains.mps.debug.runtime.java.programState.proxies;
 
-import com.sun.jdi.IncompatibleThreadStateException;
-import com.sun.jdi.StackFrame;
 import com.sun.jdi.ThreadReference;
 import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debug.api.programState.IWatchable;
@@ -12,7 +10,6 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**

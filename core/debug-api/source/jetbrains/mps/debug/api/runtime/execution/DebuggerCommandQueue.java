@@ -1,7 +1,7 @@
 package jetbrains.mps.debug.api.runtime.execution;
 
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.debug.api.runtime.execution.IDebuggerCommand.CommandPriority;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.LinkedList;

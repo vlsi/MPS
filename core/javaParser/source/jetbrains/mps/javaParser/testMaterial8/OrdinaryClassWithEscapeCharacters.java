@@ -11,16 +11,16 @@ import java.util.Map;
  * To change this template use File | Settings | File Templates.
  */
 public class OrdinaryClassWithEscapeCharacters {
-   private static Map<Character, String> escapeMap = new HashMap<Character, String>();
+  private static Map<Character, String> escapeMap = new HashMap<Character, String>();
 
-    static {
-        escapeMap.put('\b', "\\b");
-        escapeMap.put('\t', "\\t");
-        escapeMap.put('\n', "\\n");
-        escapeMap.put('\f', "\\f");
-        escapeMap.put('\r', "\\r");
-        escapeMap.put('\"', "\\\"");
-        escapeMap.put('\'', "\\'");
-        escapeMap.put('\\', "\\\\");
-    }
+  static {
+    escapeMap.put('\b', "\\b");
+    escapeMap.put('\t', "\\t");
+    escapeMap.put('\n', "\\n");
+    escapeMap.put('\f', "\\f");
+    escapeMap.put('\r', "\\r");
+    escapeMap.put('\"', "\\\"");
+    escapeMap.put('\'', "\\'");
+    escapeMap.put('\\', "\\\\");
+  }
 }

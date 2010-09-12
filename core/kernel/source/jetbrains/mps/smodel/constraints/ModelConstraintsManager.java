@@ -125,7 +125,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
   public void registerNodePropertyGetter(String conceptFqName, String propertyName, INodePropertyGetter getter) {
     String key = conceptFqName + "#" + propertyName;
     INodePropertyGetter old = myNodePropertyGettersMap.put(key, getter);
-    if(old != null) {
+    if (old != null) {
       LOG.error("property getter is already registered for key '" + key + "' : " + old);
     }
     synchronized (myLock) {
@@ -143,7 +143,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
   public void registerNodePropertySetter(String conceptFqName, String propertyName, INodePropertySetter setter) {
     String key = conceptFqName + "#" + propertyName;
     INodePropertySetter old = myNodePropertySettersMap.put(key, setter);
-    if(old != null) {
+    if (old != null) {
       LOG.error("property setter is already registered for key '" + key + "' : " + old);
     }
 
@@ -162,7 +162,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
   public void registerNodePropertyValidator(String conceptFqName, String propertyName, INodePropertyValidator validator) {
     String key = conceptFqName + "#" + propertyName;
     INodePropertyValidator old = myNodePropertyValidatorsMap.put(key, validator);
-    if(old != null) {
+    if (old != null) {
       LOG.error("property validator is already registered for key '" + key + "' : " + old);
     }
     synchronized (myLock) {
@@ -181,7 +181,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
     String key = conceptFqName + "#" + referentRole;
     synchronized (myLock) {
       INodeReferentSetEventHandler old = myNodeReferentSetEventHandlersMap.put(key, eventHandler);
-      if(old != null) {
+      if (old != null) {
         LOG.error("'set referent' event handler is already registered for key '" + key + "' : " + old);
       }
     }
@@ -223,7 +223,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
   public void registerNodeReferentSearchScopeProvider(String conceptFqName, String referenceRole, INodeReferentSearchScopeProvider provider) {
     String key = conceptFqName + "#" + referenceRole;
     INodeReferentSearchScopeProvider old = myNodeReferentSearchScopeProvidersMap.put(key, provider);
-    if(old != null) {
+    if (old != null) {
       LOG.error("search scope provider is already registered for key '" + key + "' : " + old);
     }
   }
@@ -234,7 +234,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
   public void registerNodeDefaultSearchScopeProvider(String conceptFqName, INodeReferentSearchScopeProvider provider) {
     INodeReferentSearchScopeProvider old = myNodeDefaultSearchScopeProvidersMap.put(conceptFqName, provider);
-    if(old != null) {
+    if (old != null) {
       LOG.error("default search scope provider is already registered for concept '" + conceptFqName + "' : " + old);
     }
   }
@@ -618,7 +618,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
    * @return node of broken constraint block or null if constraint was not broken for all ancestors
    */
   public SNode canBeAncestorReturnBlock(SNode parentNode, SNode childConcept, IOperationContext context) {
-    if (parentNode == null)  return null;
+    if (parentNode == null) return null;
     Method m = getCanBeAncestorMethod(parentNode, context);
     if (m != null) {
       try {
@@ -671,7 +671,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
       if (topConcept != null) {
         List<AbstractConceptDeclaration> conceptAndSuperConcepts = SModelUtil_new.getConceptAndSuperConcepts(topConcept);
-  
+
         for (AbstractConceptDeclaration concept : conceptAndSuperConcepts) {
           String fqName = NameUtil.nodeFQName(concept);
           Language language = scope.getLanguage(NameUtil.namespaceFromConcept(concept));

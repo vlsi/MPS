@@ -120,6 +120,7 @@ public class SNodePointer {
 
 
   /*package*/
+
   public static void changeSModelReference(SModelReference oldModelReference, SModelReference newModelReference) {
     if (!ourRenamedModelUIDsByTimestamp.containsKey(ourPointersTimestamp)) {
       ourRenamedModelUIDsByTimestamp.put(ourPointersTimestamp, new HashMap<SModelReference, SModelReference>());

@@ -26,7 +26,7 @@ class UnregisteredNodes {
   private final Object myLock = new Object();
 
   private boolean myDisabled = true;
-  
+
   public static UnregisteredNodes instance() {
     if (ourInstance == null) {
       ourInstance = new UnregisteredNodes();
@@ -43,7 +43,7 @@ class UnregisteredNodes {
   }
 
   private UnregisteredNodes() {
-    ModelAccess.instance().addCommandListener(new ModelAccessAdapter(){
+    ModelAccess.instance().addCommandListener(new ModelAccessAdapter() {
       public void commandFinished() {
         clear();
       }
@@ -69,7 +69,7 @@ class UnregisteredNodes {
   }
 
   SNode get(SModelReference modelReference, SNodeId nodeId) {
-    if(myDisabled) return null;
+    if (myDisabled) return null;
     synchronized (myLock) {
       return myMap.get(modelReference, nodeId);
     }
@@ -83,7 +83,7 @@ class UnregisteredNodes {
       }
       myMap.put(reference, id, node);
     }
-    if(showError) {
+    if (showError) {
       LOG.error(new IllegalStateException("attempt to put another node with same key: " + reference + "#" + id));
     }
   }

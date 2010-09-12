@@ -1,9 +1,9 @@
 package jetbrains.mps.generator.impl;
 
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.SimpleGenerationTaskPool;
+import jetbrains.mps.ide.generator.GenerationSettings;
 
 /**
  * Evgeny Gryaznov, Apr 26, 2010

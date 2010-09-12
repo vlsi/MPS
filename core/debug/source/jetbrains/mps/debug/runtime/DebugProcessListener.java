@@ -26,17 +26,22 @@ import org.jetbrains.annotations.NotNull;
  */
 public interface DebugProcessListener {
   //executed in manager thread
+
   void connectorIsReady();
 
   //executed in manager thread
+
   void paused(@NotNull SuspendContext suspendContext);
 
   //executed in manager thread
+
   void resumed(@NotNull SuspendContext suspendContext);
 
   //executed in manager thread
+
   void processDetached(@NotNull DebugVMEventsProcessor process, boolean closedByUser);
 
   //executed in manager thread
+
   void processAttached(@NotNull DebugVMEventsProcessor process);
 }

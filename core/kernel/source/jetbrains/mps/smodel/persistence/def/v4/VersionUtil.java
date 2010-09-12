@@ -27,7 +27,7 @@ public class VersionUtil {
   private static final int NO_VERSION = -100;
 
   private static int parseVersionedString(String rawString) {
-    if(rawString.startsWith(Foreign.ID_PREFIX)) {
+    if (rawString.startsWith(Foreign.ID_PREFIX)) {
       return NO_VERSION;
     }
     int result = 0;
@@ -83,7 +83,7 @@ public class VersionUtil {
   }
 
   public static String getPropertyName(String raw, SNode node, SModelVersionsInfo versionsInfo) {
-    String propertyName = getBeforeSeparator(raw);      
+    String propertyName = getBeforeSeparator(raw);
     int version = parseVersionedString(raw);
     if (version != NO_VERSION) {
       versionsInfo.addPropertyVersion(node, propertyName, version);

@@ -15,10 +15,9 @@
  */
 package jetbrains.mps.project.validation;
 
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 
-public class SolutionValidator extends BaseModuleValidator<Solution>{
+public class SolutionValidator extends BaseModuleValidator<Solution> {
   public SolutionValidator(Solution module) {
     super(module);
   }

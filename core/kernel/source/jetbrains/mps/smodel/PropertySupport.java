@@ -138,16 +138,19 @@ public abstract class PropertySupport {
   }
 
   //todo remove method - moved to PrimitiveDatatypeDeclaration
+
   public static boolean isString(PrimitiveDataTypeDeclaration datatype) {
     return Primitives.STRING_TYPE.equals(datatype.getName());
   }
 
   //todo remove method - moved to PrimitiveDatatypeDeclaration
+
   public static boolean isInteger(PrimitiveDataTypeDeclaration datatype) {
     return Primitives.INTEGER_TYPE.equals(datatype.getName());
   }
 
   //todo remove method - moved to PrimitiveDatatypeDeclaration
+
   public static boolean isBoolean(PrimitiveDataTypeDeclaration datatype) {
     return Primitives.BOOLEAN_TYPE.equals(datatype.getName());
   }

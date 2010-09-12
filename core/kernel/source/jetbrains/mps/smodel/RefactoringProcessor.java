@@ -70,7 +70,7 @@ public class RefactoringProcessor {
         try {
           ((ILoggableRefactoring) refactoring).updateModel(model, refactoringContext);
         } catch (Throwable t) {
-          LOG.error("An exception was thrown by refactoring " + refactoring.getUserFriendlyName() + " while updating model " + model.getLongName() + ". Models could have been corrupted." ,t);
+          LOG.error("An exception was thrown by refactoring " + refactoring.getUserFriendlyName() + " while updating model " + model.getLongName() + ". Models could have been corrupted.", t);
         }
 
         if (!refactoringContext.isLocal()) {

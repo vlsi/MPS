@@ -26,6 +26,6 @@ public class ModelAccessAdapter implements ModelAccessListener {
   }
 
   public void commandFinished() {
-    
+
   }
 }

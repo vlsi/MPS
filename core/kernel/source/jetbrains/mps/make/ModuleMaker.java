@@ -20,7 +20,10 @@ import jetbrains.mps.compiler.CompilationResultAdapter;
 import jetbrains.mps.compiler.JavaCompiler;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.make.dependencies.StronglyConnectedModules;
-import jetbrains.mps.project.*;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.DependencyCollector;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -48,7 +51,7 @@ public class ModuleMaker {
   private Dependencies myDependencies;
 
   public ModuleMaker() {
-    
+
   }
 
   public void clean(final Set<IModule> modules, @NotNull final ProgressIndicator indicator) {
@@ -59,7 +62,7 @@ public class ModuleMaker {
       for (IModule m : modules) {
         if (isExcluded(m)) continue;
         if (indicator.isCanceled()) break;
-        
+
         indicator.setText2("Cleaning " + m.getModuleFqName() + "...");
         FileUtil.delete(m.getClassesGen().toFile());
       }
@@ -145,7 +148,7 @@ public class ModuleMaker {
     invalidateClasspath(modulesWithRemovals);
 
     IClassPathItem classPathItems = computeDependenciesClassPath(modules);
-    MyCompilationResultAdapter listener = new MyCompilationResultAdapter(modules,classPathItems);
+    MyCompilationResultAdapter listener = new MyCompilationResultAdapter(modules, classPathItems);
     compiler.addCompilationResultListener(listener);
     compiler.compile(classPathItems);
     compiler.removeCompilationResultListener(listener);
@@ -251,8 +254,8 @@ public class ModuleMaker {
   private boolean isExcluded(IModule m) {
     if (!(m instanceof Solution) && !(m instanceof Language)) return true;
     if (m.isPackaged()) return true;
-    if (!m.isCompileInMPS())return true;
-    
+    if (!m.isCompileInMPS()) return true;
+
     return false;
   }
 
@@ -260,7 +263,7 @@ public class ModuleMaker {
     for (IModule m : modules) {
       m.invalidateClassPath();
     }
-    for (IModule m: MPSModuleRepository.getInstance().getAllModules()){
+    for (IModule m : MPSModuleRepository.getInstance().getAllModules()) {
       m.updateClassPath();
     }
   }
@@ -298,7 +301,7 @@ public class ModuleMaker {
             LOG.warning(messageStirng + " (line: " + cp.getSourceLineNumber() + ")", hintObject);
           } else {
             if (myOutputtedErrors == 0) {
-              LOG.error("Errors encountered"); 
+              LOG.error("Errors encountered");
               LOG.debug("Modules: " + myModules.toString() + "\nClasspath: " + myClassPathItems + "\n");
             }
             if (myOutputtedErrors < MAX_ERRORS) {

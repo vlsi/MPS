@@ -15,9 +15,12 @@
  */
 package jetbrains.mps.project.listener;
 
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
 public class LanguageAspectCreationListener extends ModelCreationListener {

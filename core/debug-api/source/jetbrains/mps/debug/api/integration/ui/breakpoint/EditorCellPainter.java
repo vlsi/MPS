@@ -12,7 +12,6 @@ import org.jetbrains.annotations.Nullable;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Image;
 import java.awt.Rectangle;
 
 public abstract class EditorCellPainter<E> extends AbstractAdditionalPainter<E> {

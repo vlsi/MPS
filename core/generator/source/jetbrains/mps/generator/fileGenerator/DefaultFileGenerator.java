@@ -35,7 +35,7 @@ public class DefaultFileGenerator implements IFileGenerator {
 
   public String getFileName(SNode outputRootNode) {
     String extension = TextGenManager.instance().getExtension(outputRootNode);
-    return (extension == null)? outputRootNode.getName() : outputRootNode.getName() + "." + extension;
+    return (extension == null) ? outputRootNode.getName() : outputRootNode.getName() + "." + extension;
   }
 
   public final File generateFile(SNode outputRootNode, SNode originalInputNode, SModel inputModel, String content, File outputRootDir) throws IOException {
@@ -58,10 +58,10 @@ public class DefaultFileGenerator implements IFileGenerator {
     if (file.exists()) {
       try {
         String existingContents = FileUtil.read(file);
-        if(existingContents != null && existingContents.equals(content)) {
+        if (existingContents != null && existingContents.equals(content)) {
           return file;
         }
-      } catch(RuntimeException ex) {
+      } catch (RuntimeException ex) {
         /* ignore */
       }
       file.delete();

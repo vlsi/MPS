@@ -94,7 +94,7 @@ public final class TextGenBuffer {
     int spaces = myIndent * myDepth;
     myPostions[myCurrBuffer] += spaces;
 
-    while(spaces > 0) {
+    while (spaces > 0) {
       int i = spaces > SPACES.length() ? SPACES.length() : spaces;
       myBuffers[myCurrBuffer].append(SPACES, 0, i);
       spaces -= i;

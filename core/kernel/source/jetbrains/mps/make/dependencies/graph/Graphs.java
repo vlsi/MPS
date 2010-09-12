@@ -15,10 +15,12 @@
  */
 package jetbrains.mps.make.dependencies.graph;
 
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.GraphUtil;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Graphs {
 
@@ -28,21 +30,21 @@ public class Graphs {
     int[][] result = new int[count][];
 
     Map<IVertex, Integer> rootIndex = new HashMap<IVertex, Integer>(vertices.length);
-    for(int i = 0; i < vertices.length; i++) {
+    for (int i = 0; i < vertices.length; i++) {
       rootIndex.put(vertices[i], i);
     }
 
-    for(int index = 0; index < count; index++) {
+    for (int index = 0; index < count; index++) {
       IVertex vertex = vertices[index];
       int tsize = 0;
-      for(IVertex node : vertex.getNexts()) {
+      for (IVertex node : vertex.getNexts()) {
         Integer targetIndex = rootIndex.get(node);
-        if(targetIndex != null && targetIndex != index) {
+        if (targetIndex != null && targetIndex != index) {
           temparray[tsize++] = targetIndex;
         }
       }
       result[index] = new int[tsize];
-      if(tsize > 0) {
+      if (tsize > 0) {
         System.arraycopy(temparray, 0, result[index], 0, tsize);
       }
     }
@@ -56,9 +58,9 @@ public class Graphs {
     int[][] partitions = GraphUtil.tarjan(graph);
 
     List<List<V>> result = new ArrayList<List<V>>(partitions.length + 1);
-    for(int i = partitions.length - 1; i >= 0; i--) {
+    for (int i = partitions.length - 1; i >= 0; i--) {
       List<V> proots = new ArrayList<V>(partitions[i].length);
-      for(int e = 0; e < partitions[i].length; e++) {
+      for (int e = 0; e < partitions[i].length; e++) {
         proots.add((V) vertices[partitions[i][e]]);
       }
       result.add(proots);

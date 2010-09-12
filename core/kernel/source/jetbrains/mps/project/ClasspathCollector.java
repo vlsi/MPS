@@ -43,14 +43,14 @@ public class ClasspathCollector {
     }
 
     CompositeClassPathItem result = new CompositeClassPathItem();
-    if (includeStubSolutions){
+    if (includeStubSolutions) {
 
       //this is needed because we can use this class before these stub solutions are loaded
       result.add(CommonPaths.getJDKClassPath());
       result.add(CommonPaths.getMPSClassPath());
 
-      for (Solution s: MPSModuleRepository.getInstance().getAllSolutions()){
-        if (s.isStub()){
+      for (Solution s : MPSModuleRepository.getInstance().getAllSolutions()) {
+        if (s.isStub()) {
           result.add(s.getClassPathItem());
         }
       }

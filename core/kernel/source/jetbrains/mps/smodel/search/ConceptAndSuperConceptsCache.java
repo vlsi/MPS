@@ -33,7 +33,7 @@ import jetbrains.mps.util.NameUtil;
 import java.util.*;
 
 /**
- *  Should be thread safe. 
+ * Should be thread safe.
  */
 class ConceptAndSuperConceptsCache extends AbstractCache {
   private static final KeyProducer keyProducer = new KeyProducer();

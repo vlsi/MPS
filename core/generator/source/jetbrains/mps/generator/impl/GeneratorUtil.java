@@ -18,11 +18,11 @@ package jetbrains.mps.generator.impl;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.generator.GenerationCanceledException;
+import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.lang.core.structure.BaseConcept;
-import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.lang.pattern.behavior.PatternVarsUtil;
 import jetbrains.mps.logging.Logger;
@@ -373,7 +373,7 @@ public class GeneratorUtil {
   }
 
   public static <T> T runReadInWrite(final GenerationComputable<T> c) throws GenerationCanceledException, GenerationFailureException {
-    if(ModelAccess.instance().canRead() && !ModelAccess.instance().canWrite()) {
+    if (ModelAccess.instance().canRead() && !ModelAccess.instance().canWrite()) {
       return c.compute();
     }
     try {

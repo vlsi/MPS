@@ -16,41 +16,44 @@
 package jetbrains.mps.javaParser;
 
 import jetbrains.mps.baseLanguage.structure.*;
-import jetbrains.mps.baseLanguage.structure.LongLiteral;
-import jetbrains.mps.baseLanguage.structure.StringLiteral;
-import jetbrains.mps.baseLanguage.structure.Statement;
-import jetbrains.mps.baseLanguage.structure.FieldDeclaration;
 import jetbrains.mps.baseLanguage.structure.CastExpression;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.baseLanguage.structure.FieldDeclaration;
+import jetbrains.mps.baseLanguage.structure.LongLiteral;
+import jetbrains.mps.baseLanguage.structure.Statement;
+import jetbrains.mps.baseLanguage.structure.StringLiteral;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
-import org.eclipse.jdt.internal.compiler.ast.AnnotationMethodDeclaration;
-import org.eclipse.jdt.internal.compiler.impl.*;
-import org.eclipse.jdt.internal.compiler.impl.BooleanConstant;
-import org.eclipse.jdt.internal.compiler.impl.CharConstant;
 import org.eclipse.jdt.internal.compiler.ast.*;
-import org.eclipse.jdt.internal.compiler.ast.Expression;
-import org.eclipse.jdt.internal.compiler.ast.InstanceOfExpression;
+import org.eclipse.jdt.internal.compiler.ast.Annotation;
+import org.eclipse.jdt.internal.compiler.ast.AnnotationMethodDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.AssertStatement;
 import org.eclipse.jdt.internal.compiler.ast.BreakStatement;
+import org.eclipse.jdt.internal.compiler.ast.ConstructorDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.ContinueStatement;
-import org.eclipse.jdt.internal.compiler.ast.ForeachStatement;
-import org.eclipse.jdt.internal.compiler.ast.ReturnStatement;
+import org.eclipse.jdt.internal.compiler.ast.Expression;
 import org.eclipse.jdt.internal.compiler.ast.ForStatement;
+import org.eclipse.jdt.internal.compiler.ast.ForeachStatement;
 import org.eclipse.jdt.internal.compiler.ast.IfStatement;
+import org.eclipse.jdt.internal.compiler.ast.InstanceOfExpression;
+import org.eclipse.jdt.internal.compiler.ast.NullLiteral;
+import org.eclipse.jdt.internal.compiler.ast.ReturnStatement;
 import org.eclipse.jdt.internal.compiler.ast.SwitchStatement;
 import org.eclipse.jdt.internal.compiler.ast.SynchronizedStatement;
 import org.eclipse.jdt.internal.compiler.ast.ThrowStatement;
 import org.eclipse.jdt.internal.compiler.ast.TryStatement;
 import org.eclipse.jdt.internal.compiler.ast.WhileStatement;
-import org.eclipse.jdt.internal.compiler.ast.NullLiteral;
-import org.eclipse.jdt.internal.compiler.ast.ConstructorDeclaration;
-import org.eclipse.jdt.internal.compiler.ast.Annotation;
+import org.eclipse.jdt.internal.compiler.impl.BooleanConstant;
+import org.eclipse.jdt.internal.compiler.impl.*;
+import org.eclipse.jdt.internal.compiler.impl.CharConstant;
 import org.eclipse.jdt.internal.compiler.lookup.*;
 
-import java.util.*;
-import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
@@ -533,7 +536,7 @@ public class JavaConverterTreeBuilder {
 
     //compiler returns not a type but rather an expression
     if (x.type instanceof Expression) {
-      result.setType(createType(((Expression)x.type).resolvedType));
+      result.setType(createType(((Expression) x.type).resolvedType));
     }
 /*
 
@@ -654,7 +657,7 @@ public class JavaConverterTreeBuilder {
 
   private boolean isSubtype(ReferenceBinding subtype, TypeBinding supertype) {
     if (subtype instanceof ParameterizedTypeBinding) {
-      subtype = ((ParameterizedTypeBinding)subtype).genericType();
+      subtype = ((ParameterizedTypeBinding) subtype).genericType();
     }
     if (supertype == subtype) {
       return true;
@@ -664,7 +667,7 @@ public class JavaConverterTreeBuilder {
         return true;
       }
     }
-    if(subtype.superInterfaces() != null) {
+    if (subtype.superInterfaces() != null) {
       for (ReferenceBinding infc : subtype.superInterfaces()) {
         if (isSubtype(infc, supertype)) {
           return true;
@@ -1573,6 +1576,7 @@ public class JavaConverterTreeBuilder {
   }
 
   // exec ==========================================================================
+
   public List<Classifier> exec(ReferentsCreator referentsCreator,
                                Map<String, SModel> modelMap, boolean isolated) {
     List<Classifier> result = new ArrayList<Classifier>();
@@ -1601,7 +1605,7 @@ public class JavaConverterTreeBuilder {
 
   public SModel getModelByTypeDeclaration(SourceTypeBinding typeBinding) {
     if (typeBinding instanceof NestedTypeBinding) {
-      return getModelByTypeDeclaration(((NestedTypeBinding)typeBinding).enclosingType);
+      return getModelByTypeDeclaration(((NestedTypeBinding) typeBinding).enclosingType);
     }
     if (myIsolated) {
       return myModelMap.values().iterator().next();

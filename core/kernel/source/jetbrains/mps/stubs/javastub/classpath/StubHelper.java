@@ -1,10 +1,6 @@
 package jetbrains.mps.stubs.javastub.classpath;
 
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.LanguageID;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SModelId;
+import jetbrains.mps.smodel.*;
 
 public class StubHelper {
   public StubHelper() {

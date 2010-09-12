@@ -42,14 +42,14 @@ public class GenerationFailureException extends Exception {
   }
 
   private static String toBetterMessage(String message, Throwable cause) {
-    if(cause instanceof GenerationFailureException) {
+    if (cause instanceof GenerationFailureException) {
       return message + cause.getMessage();
     }
     return message + " : " + cause.toString();
   }
 
   private static Throwable toBetterCause(Throwable cause) {
-    if(cause instanceof GenerationFailureException) {
+    if (cause instanceof GenerationFailureException) {
       return cause.getCause();
     }
     return cause;

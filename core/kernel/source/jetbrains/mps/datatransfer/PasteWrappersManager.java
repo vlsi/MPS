@@ -85,7 +85,7 @@ public class PasteWrappersManager implements ApplicationComponent {
 
   //-------------reloading-----------------
 
-  private void checkLoaded(){
+  private void checkLoaded() {
     if (myLoaded) return;
     myLoaded = true;
     load();

@@ -25,7 +25,7 @@ package jetbrains.mps.javaParser.testMaterial5;
 public class OrdinaryClassWithInnerInnerClasses {
   public static class Inner1 {
     public static class Inner2 {
-      
+
     }
   }
 }

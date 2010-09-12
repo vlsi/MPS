@@ -15,15 +15,13 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.baseLanguage.collections.structure.Collections_Language;
-import jetbrains.mps.baseLanguage.structure.BaseLanguage_Language;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.util.annotation.Hack;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ModuleUtil {
   public static List<Language> refsToLanguages(List<ModuleReference> refs) {

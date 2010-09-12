@@ -103,7 +103,7 @@ public class BundleClassLoader<T> extends BaseClassLoader {
   }
 
   public void dispose() {
-    super.dispose ();
+    super.dispose();
     myClassesCache.clear();
     myDisposed = true;
   }

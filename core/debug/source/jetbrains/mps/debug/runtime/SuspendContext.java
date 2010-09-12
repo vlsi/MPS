@@ -15,22 +15,21 @@
  */
 package jetbrains.mps.debug.runtime;
 
-import jetbrains.mps.debug.api.runtime.execution.DebuggerManagerThread;
-import org.jetbrains.annotations.NotNull;
-
-import java.util.Collections;
-import java.util.List;
-import java.util.Set;
-import java.util.HashSet;
-
-import com.sun.jdi.ThreadReference;
 import com.sun.jdi.IncompatibleThreadStateException;
-import com.sun.jdi.StackFrame;
 import com.sun.jdi.ObjectReference;
+import com.sun.jdi.StackFrame;
+import com.sun.jdi.ThreadReference;
 import com.sun.jdi.event.EventSet;
 import com.sun.jdi.request.EventRequest;
+import jetbrains.mps.debug.api.runtime.execution.DebuggerManagerThread;
 import jetbrains.mps.logging.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
@@ -52,8 +51,8 @@ public abstract class SuspendContext { //todo: add evaluation and postponed comm
 
   boolean myIsVotedForResume = true;
   protected int myVotesToVote;
-  private volatile boolean  myIsResumed;
-  public volatile boolean  myInProgress;
+  private volatile boolean myIsResumed;
+  public volatile boolean myInProgress;
   private boolean myIsEvaluating = false;
 
   SuspendContext(@NotNull DebugVMEventsProcessor debugProcess,
@@ -72,7 +71,7 @@ public abstract class SuspendContext { //todo: add evaluation and postponed comm
 
   protected abstract void resumeImpl();
 
-  protected void resume(){
+  protected void resume() {
     assertNotResumed();
     DebuggerManagerThread.assertIsManagerThread();
     try {
@@ -129,9 +128,10 @@ public abstract class SuspendContext { //todo: add evaluation and postponed comm
   }
 
   //if this context suspends a given thread
+
   public boolean suspends(ThreadReference thread) {
     assertNotResumed();
-    switch(getSuspendPolicy()) {
+    switch (getSuspendPolicy()) {
       case EventRequest.SUSPEND_ALL:
         return true;
       case EventRequest.SUSPEND_EVENT_THREAD:

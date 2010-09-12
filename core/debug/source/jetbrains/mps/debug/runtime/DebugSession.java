@@ -6,21 +6,11 @@ import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import jetbrains.mps.debug.evaluation.ui.EvaluationAuxModule;
 import jetbrains.mps.debug.evaluation.ui.EvaluationDialog;
-import jetbrains.mps.debug.runtime.JavaUiState;
 import jetbrains.mps.debug.runtime.DebugVMEventsProcessor.StepType;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.reloading.EachClassPathItemVisitor;
-import jetbrains.mps.reloading.FileClassPathItem;
-import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.reloading.JarFileClassPathItem;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.stubs.StubReloadManager;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.Collections;
 
 public class DebugSession extends AbstractDebugSession<JavaUiState> {
   //todo extract abstract superclass to allow suspend/resume/etc. any process if developer implements it

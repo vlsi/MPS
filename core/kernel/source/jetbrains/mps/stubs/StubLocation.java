@@ -42,7 +42,7 @@ public class StubLocation {
     return myPrefix == null ? "" : myPrefix;
   }
 
-  public ModuleReference getModuleRef(){
+  public ModuleReference getModuleRef() {
     return myModuleReference;
   }
 

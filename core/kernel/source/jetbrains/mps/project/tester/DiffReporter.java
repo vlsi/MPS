@@ -17,15 +17,13 @@ package jetbrains.mps.project.tester;
 
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.project.tester.TesterGenerationHandler;
 
-import java.util.List;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.io.File;
+import java.util.List;
 
 public class DiffReporter {
 

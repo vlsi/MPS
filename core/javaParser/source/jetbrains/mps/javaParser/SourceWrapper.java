@@ -1,15 +1,12 @@
 package jetbrains.mps.javaParser;
 
-import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
 
 import java.util.ArrayList;
@@ -44,10 +41,14 @@ public abstract class SourceWrapper {
 
   public static SourceWrapper wrapSource(String source, SModel model, FeatureKind featureKind) {
     switch (featureKind) {
-      case CLASS: return new ClassWrapper(source, model);
-      case METHOD: return new MethodsWrapper(source, model);
-      case STATEMENTS: return new StatementsWrapper(source, model);
-      default: throw new IllegalArgumentException();
+      case CLASS:
+        return new ClassWrapper(source, model);
+      case METHOD:
+        return new MethodsWrapper(source, model);
+      case STATEMENTS:
+        return new StatementsWrapper(source, model);
+      default:
+        throw new IllegalArgumentException();
     }
   }
 

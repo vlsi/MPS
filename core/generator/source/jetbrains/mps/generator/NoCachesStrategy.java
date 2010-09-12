@@ -47,7 +47,7 @@ public abstract class NoCachesStrategy {
   public static NoCachesStrategy createBuildCachesStrategy() {
     return new NoCachesStrategy() {
       public boolean compute(Project project, SModelDescriptor sm, String generatedHash) {
-        if (!(sm instanceof EditableSModelDescriptor))  return false;
+        if (!(sm instanceof EditableSModelDescriptor)) return false;
 
         IFile file = ((EditableSModelDescriptor) sm).getModelFile();
         if (file == null) return false;
@@ -74,12 +74,12 @@ public abstract class NoCachesStrategy {
   }
 
   private static boolean safeEquals(Object object1, Object object2) {
-      if (object1 == object2) {
-          return true;
-      }
-      if ((object1 == null) || (object2 == null)) {
-          return false;
-      }
-      return object1.equals(object2);
+    if (object1 == object2) {
+      return true;
+    }
+    if ((object1 == null) || (object2 == null)) {
+      return false;
+    }
+    return object1.equals(object2);
   }
 }

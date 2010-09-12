@@ -117,7 +117,7 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     if (generatedHash == null) return true;
 
     IFile modelFile = esm.getModelFile();
-    if (modelFile==null) return true;
+    if (modelFile == null) return true;
     VirtualFile file = modelFile.toVirtualFile();
     if (file == null) return true;
 
@@ -136,11 +136,11 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
   }
 
   private boolean isEmpty(SModelDescriptor sm) {
-    if(!(sm instanceof EditableSModelDescriptor)) {
+    if (!(sm instanceof EditableSModelDescriptor)) {
       return sm.isEmpty();
     }
 
-    if (myEmptyStatus.containsKey(sm) && myEmptyStatusRetrievalTime.get(sm) >= ((EditableSModelDescriptor)sm).lastChangeTime()) {
+    if (myEmptyStatus.containsKey(sm) && myEmptyStatusRetrievalTime.get(sm) >= ((EditableSModelDescriptor) sm).lastChangeTime()) {
       return myEmptyStatus.get(sm);
     }
 
@@ -208,9 +208,9 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     File outputDir = context.getOutputDir();
 
     SModelDescriptor descriptor = context.getOriginalInputModel();
-    if(!(descriptor instanceof EditableSModelDescriptor)) return null;
+    if (!(descriptor instanceof EditableSModelDescriptor)) return null;
 
-    IFile file = ((EditableSModelDescriptor)descriptor).getModelFile();
+    IFile file = ((EditableSModelDescriptor) descriptor).getModelFile();
     if (file == null) return null;
 
     byte[] content = new byte[(int) file.length()];

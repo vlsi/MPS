@@ -15,17 +15,18 @@
  */
 package jetbrains.mps.javaParser;
 
-import org.eclipse.jdt.internal.compiler.lookup.*;
-import org.eclipse.jdt.internal.compiler.ast.Wildcard;
+import jetbrains.mps.baseLanguage.structure.*;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SNodeId.Foreign;
-import jetbrains.mps.baseLanguage.structure.*;
-import jetbrains.mps.util.NodeNameUtil;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
-import jetbrains.mps.logging.Logger;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.NodeNameUtil;
+import org.eclipse.jdt.internal.compiler.ast.Wildcard;
+import org.eclipse.jdt.internal.compiler.lookup.*;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
@@ -61,10 +62,10 @@ public class TypesProvider {
 
   private void setComponentType(Type vector, Type component) {
     if (vector instanceof ArrayType) {
-      ((ArrayType)vector).setComponentType(component);
+      ((ArrayType) vector).setComponentType(component);
     }
     if (vector instanceof VariableArityType) {
-      ((VariableArityType)vector).setComponentType(component);
+      ((VariableArityType) vector).setComponentType(component);
     }
   }
 
@@ -104,7 +105,7 @@ public class TypesProvider {
       ArrayBinding arrayBinding = (ArrayBinding) binding;
       TypeBinding componentTypeBinding = arrayBinding.leafComponentType;
       int dimensions = arrayBinding.dimensions;
-      Type outerType = varArg ? VariableArityType.newInstance(model) :  ArrayType.newInstance(model);
+      Type outerType = varArg ? VariableArityType.newInstance(model) : ArrayType.newInstance(model);
       Type smallestVectorType = outerType;
       while (dimensions > 1) {
         ArrayType newArrayType = ArrayType.newInstance(model);
@@ -154,14 +155,14 @@ public class TypesProvider {
         return classifierType;
       }
       if (binding instanceof MissingTypeBinding || binding instanceof ProblemReferenceBinding) {
-          ClassifierType classifierType = ClassifierType.newInstance(model);
+        ClassifierType classifierType = ClassifierType.newInstance(model);
         ReferenceBinding missingTypeBinding = (ReferenceBinding) binding;
         char[][] chars = missingTypeBinding.compoundName;
         char[] name = chars[chars.length - 1];
         SReference reference = createErrorReference(ClassifierType.CLASSIFIER, new String(name), classifierType.getNode());
         classifierType.getNode().addReference(reference);
         return classifierType;
-        }
+      }
       if (binding instanceof BinaryTypeBinding) {
         //in java stubs
         ClassifierType classifierType = ClassifierType.newInstance(model);
@@ -169,19 +170,19 @@ public class TypesProvider {
         SReference reference = createClassifierReference(binaryTypeBinding, ClassifierType.CLASSIFIER, classifierType.getNode());
         classifierType.getNode().addReference(reference);
         return classifierType;
-        }
       }
-      if (binding instanceof TypeVariableBinding) {
-        TypeVariableBinding typeVariableBinding = (TypeVariableBinding) binding;
-        TypeVariableReference tvr = TypeVariableReference.newInstance(model);
-        INodeAdapter declaringGeneric = myReferentsCreator.myBindingMap.get(typeVariableBinding.declaringElement);
-        if (declaringGeneric instanceof GenericDeclaration) {
-          tvr.setTypeVariableDeclaration(((GenericDeclaration) declaringGeneric).getTypeVariableDeclarations().get(typeVariableBinding.rank));
-        } else {
-          throw new JavaConverterException("Declaring element for a type var is not a GenericDeclaration");
-        }
-        return tvr;
+    }
+    if (binding instanceof TypeVariableBinding) {
+      TypeVariableBinding typeVariableBinding = (TypeVariableBinding) binding;
+      TypeVariableReference tvr = TypeVariableReference.newInstance(model);
+      INodeAdapter declaringGeneric = myReferentsCreator.myBindingMap.get(typeVariableBinding.declaringElement);
+      if (declaringGeneric instanceof GenericDeclaration) {
+        tvr.setTypeVariableDeclaration(((GenericDeclaration) declaringGeneric).getTypeVariableDeclarations().get(typeVariableBinding.rank));
+      } else {
+        throw new JavaConverterException("Declaring element for a type var is not a GenericDeclaration");
       }
+      return tvr;
+    }
     return null;
   }
 
@@ -234,7 +235,6 @@ public class TypesProvider {
     SModelReference modelReference = StubHelper.uidForPackageInStubs(packageName);
     return modelReference;
   }
-
 
 
   private SReference getRegularMPSNodeReferenceFromForeignId(SNode sourceNode, String role, SModelReference modelReference, SNodeId nodeId, FeatureKind targetKind) {
@@ -385,7 +385,7 @@ public class TypesProvider {
 
   public void replaceUnsafe(INodeAdapter oldAdapter, INodeAdapter newAdapter) {
     if (oldAdapter == null) return;
-    Map<Binding,INodeAdapter> map = myReferentsCreator.myBindingMap;
+    Map<Binding, INodeAdapter> map = myReferentsCreator.myBindingMap;
     for (Binding binding : new HashSet<Binding>(map.keySet())) {
       INodeAdapter result = map.get(binding);
       if (result != null && result.getNode() == oldAdapter.getNode()) {

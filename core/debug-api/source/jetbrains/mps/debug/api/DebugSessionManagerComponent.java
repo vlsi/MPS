@@ -7,7 +7,6 @@ import com.intellij.execution.ui.RunContentListener;
 import com.intellij.execution.ui.RunContentManager;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.debug.api.AbstractDebugSession;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -120,12 +119,11 @@ public class DebugSessionManagerComponent implements ProjectComponent {
     fireSessionRegistered(session);
   }
 
- public void removeDebugSession(AbstractDebugSession session) {
-   fireSessionDetached(session);
-   session.sessionUnregistered(this);
-   myProcessesToSessions.remove(session.getProcessHandler());
- }
-
+  public void removeDebugSession(AbstractDebugSession session) {
+    fireSessionDetached(session);
+    session.sessionUnregistered(this);
+    myProcessesToSessions.remove(session.getProcessHandler());
+  }
 
 
   public void addCurrentDebugSessionListener(DebugSessionListener listener) {
@@ -150,6 +148,7 @@ public class DebugSessionManagerComponent implements ProjectComponent {
 
   public static interface DebugSessionListener {
     //todo why don't listen DebugSessionManagerComponent?
+
     public void registered(AbstractDebugSession session);
 
     public void currentSessionChanged(AbstractDebugSession session);

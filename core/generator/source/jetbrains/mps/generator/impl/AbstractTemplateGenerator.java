@@ -196,7 +196,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
         GeneratorUtil.describe(targetNode, relationKind + (child ? "" : " (hidden in editor)")));
     }
     if (!SModelUtil_new.isAcceptableTarget(link, targetNode)) {
-      if(child && targetNode.getUserObject(DelayedChanges.MAP_SRC_TEMP_NODE) != null) {
+      if (child && targetNode.getUserObject(DelayedChanges.MAP_SRC_TEMP_NODE) != null) {
         // temporary child node, ignore
         return null;
       }

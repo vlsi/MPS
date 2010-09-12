@@ -314,6 +314,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
   }
 
   //toggles breakpoint and repaints if necessary
+
   public void setBreakpointEnabled(AbstractMPSBreakpoint breakpoint, boolean enabled) {
     boolean toggled = breakpoint.setEnabledInternal(enabled);
     if (toggled) {

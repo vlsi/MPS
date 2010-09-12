@@ -22,7 +22,6 @@ import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
-import org.objectweb.asm.ClassReader;
 
 import java.io.File;
 import java.io.IOException;

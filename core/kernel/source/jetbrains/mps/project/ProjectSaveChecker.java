@@ -28,12 +28,12 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.NotNull;
 
-public class ProjectSaveChecker implements ProjectComponent{
+public class ProjectSaveChecker implements ProjectComponent {
   private Project myProject;
   private ProjectManagerEx myProjectManager;
   private MyProjectListener myProjectListener = new MyProjectListener();
 
-  public ProjectSaveChecker(Project project,ProjectManagerEx projectManager) {
+  public ProjectSaveChecker(Project project, ProjectManagerEx projectManager) {
     myProject = project;
     myProjectManager = projectManager;
   }
@@ -63,7 +63,7 @@ public class ProjectSaveChecker implements ProjectComponent{
     private boolean myIgnoredSaving = false;
 
     @Override
-    
+
     public boolean canCloseProject(Project project) {
       if (MPSCore.getInstance().isTestMode()) return true;
 

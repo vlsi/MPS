@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.project.listener;
 
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 
 public abstract class ModelCreationListener {

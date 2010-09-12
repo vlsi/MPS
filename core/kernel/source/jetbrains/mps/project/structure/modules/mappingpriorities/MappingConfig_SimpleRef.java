@@ -54,7 +54,7 @@ public class MappingConfig_SimpleRef extends MappingConfig_AbstractRef {
 
   @Override
   public boolean removeModelReference(SModelReference ref, boolean[] mappingsChanged) {
-    if(myModelUID != null && myModelUID.equals(ref.toString())) {
+    if (myModelUID != null && myModelUID.equals(ref.toString())) {
       mappingsChanged[0] = true;
       return true;
     }
@@ -63,7 +63,7 @@ public class MappingConfig_SimpleRef extends MappingConfig_AbstractRef {
 
   @Override
   public boolean updateReferences() {
-    if(myModelUID.equals("*")) {
+    if (myModelUID.equals("*")) {
       return false;
     }
     SModelReference ref = SModelReference.fromString(myModelUID);

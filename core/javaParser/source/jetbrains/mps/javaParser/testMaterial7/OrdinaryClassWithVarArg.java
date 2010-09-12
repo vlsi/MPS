@@ -9,6 +9,6 @@ package jetbrains.mps.javaParser.testMaterial7;
  */
 public class OrdinaryClassWithVarArg {
   public static void foo(Object[][] o) {
-    
+
   }
 }

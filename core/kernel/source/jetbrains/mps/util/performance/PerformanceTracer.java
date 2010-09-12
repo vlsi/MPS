@@ -15,10 +15,10 @@ public class PerformanceTracer implements IPerformanceTracer {
 
   public PerformanceTracer(String name) {
     this.traceName = name;
-    for(int i = 0; i < myStack.length; i++) {
+    for (int i = 0; i < myStack.length; i++) {
       myStack[i] = new StackElement();
     }
-    for(int i = 0; i < precreated.length; i++) {
+    for (int i = 0; i < precreated.length; i++) {
       precreated[i] = new Task("default");
     }
     myStack[0].name = null;
@@ -38,8 +38,8 @@ public class PerformanceTracer implements IPerformanceTracer {
   public void pop() {
     long len = System.nanoTime() - myStack[top].startTime;
     long correction = myStack[top].correction;
-    if(myStack[top].isMajor) {
-      for(int i = 0; i < top; i++) {
+    if (myStack[top].isMajor) {
+      for (int i = 0; i < top; i++) {
         myStack[i].correction += len - correction;
       }
     }
@@ -47,15 +47,15 @@ public class PerformanceTracer implements IPerformanceTracer {
     Task wasTask = myStack[top].task;
 
     // propagate leaves
-    if(!myStack[top].children.isEmpty()) {
-      if(wasTask == null) {
+    if (!myStack[top].children.isEmpty()) {
+      if (wasTask == null) {
         wasTask = getTask(top);
       }
       wasTask.tasks.addAll(myStack[top].children.values());
       myStack[top].children.clear();
     }
-    if(wasTask == null) {
-      myStack[top-1].addLeaf(name, len, correction);
+    if (wasTask == null) {
+      myStack[top - 1].addLeaf(name, len, correction);
     } else {
       wasTask.executionTime += len;
       wasTask.correction += correction;
@@ -66,7 +66,7 @@ public class PerformanceTracer implements IPerformanceTracer {
 
   private Task getTask(int i) {
     Task t = myStack[i].task;
-    if(t == null) {
+    if (t == null) {
       t = createFast(myStack[i].name);
       myStack[i].task = t;
       Task parent = getTask(i - 1);
@@ -76,8 +76,8 @@ public class PerformanceTracer implements IPerformanceTracer {
   }
 
   @Override
-  public String report(String ...separate) {
-    if(top == 0) {
+  public String report(String... separate) {
+    if (top == 0) {
       myStack[0].task.tasks.addAll(myStack[0].children.values());
       myStack[0].task.merge(new HashSet<String>(Arrays.asList(separate)));
       StringBuilder sb = new StringBuilder();
@@ -101,7 +101,7 @@ public class PerformanceTracer implements IPerformanceTracer {
 
     private Task addLeaf(String name, long time, long correction) {
       Task t = children.get(name);
-      if(t == null) {
+      if (t == null) {
         t = createFast(name);
         children.put(name, t);
       } else {
@@ -131,22 +131,22 @@ public class PerformanceTracer implements IPerformanceTracer {
     }
 
     public void merge(Set<String> keepUnmerged) {
-      Map<String,Task> map = new HashMap<String, Task>();
+      Map<String, Task> map = new HashMap<String, Task>();
       Iterator<Task> it = tasks.iterator();
-      while(it.hasNext()) {
+      while (it.hasNext()) {
         Task n = it.next();
-        if(keepUnmerged.contains(n.name)) {
+        if (keepUnmerged.contains(n.name)) {
           continue;
         }
         Task prev = map.get(n.name);
-        if(prev == null) {
+        if (prev == null) {
           map.put(n.name, n);
         } else {
           it.remove();
           prev.mergeWith(n);
         }
       }
-      for(Task t : tasks) {
+      for (Task t : tasks) {
         t.merge(keepUnmerged);
       }
     }
@@ -159,38 +159,38 @@ public class PerformanceTracer implements IPerformanceTracer {
     }
 
     public void toString(StringBuilder sb, int indent) {
-      if(name != null) {
-        for(int i = 0; i < indent; i++) {
+      if (name != null) {
+        for (int i = 0; i < indent; i++) {
           sb.append("  ");
         }
-        if(tasks.isEmpty()) {
-          sb.append( "- ");
+        if (tasks.isEmpty()) {
+          sb.append("- ");
         }
         sb.append(name);
         sb.append(": ");
-        sb.append(executionTime/1000000.);
+        sb.append(executionTime / 1000000.);
         sb.append(" ms");
-        if(correction != 0) {
+        if (correction != 0) {
           sb.append("  (real: ");
-          sb.append((executionTime-correction)/1000000.);
+          sb.append((executionTime - correction) / 1000000.);
           sb.append(" ms)");
         }
         sb.append("\n");
       }
       Collections.sort(tasks);
-      for(Task t : tasks) {
-        t.toString(sb, name == null ? indent : indent+2);
+      for (Task t : tasks) {
+        t.toString(sb, name == null ? indent : indent + 2);
       }
     }
 
     @Override
     public int compareTo(Object o) {
-      return new Long(((Task)o).executionTime).compareTo(executionTime);
+      return new Long(((Task) o).executionTime).compareTo(executionTime);
     }
   }
 
   private Task createFast(String name) {
-    if(precreatedIndex < precreated.length) {
+    if (precreatedIndex < precreated.length) {
       Task t = precreated[precreatedIndex++];
       t.name = name;
       return t;

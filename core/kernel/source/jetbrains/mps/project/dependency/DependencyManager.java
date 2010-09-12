@@ -28,5 +28,5 @@ public interface DependencyManager {
 
   Set<IModule> getDesignTimeDeps();
 
-  List<IModule> getDependOnModules() ;
+  List<IModule> getDependOnModules();
 }

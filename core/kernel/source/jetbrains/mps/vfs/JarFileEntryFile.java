@@ -19,11 +19,11 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.util.FileUtil;
 
 import java.io.*;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.net.URL;
-import java.net.MalformedURLException;
 
 public class JarFileEntryFile implements IFile {
   private JarFileData myJarFileData;

@@ -18,9 +18,9 @@ package jetbrains.mps.vfs;
 import com.intellij.openapi.vfs.VirtualFile;
 
 import java.io.*;
-import java.util.List;
-import java.net.URL;
 import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.List;
 
 public interface IFile {
   String getName();

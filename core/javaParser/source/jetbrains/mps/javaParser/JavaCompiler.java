@@ -298,7 +298,6 @@ public class JavaCompiler {
   }
 
 
-
   private void compileOnce() {
     myCompilationUnitDeclarations = new ArrayList<CompilationUnitDeclaration>();
     myProcessedCompilationUnits = new HashSet<ICompilationUnit>();

@@ -31,7 +31,7 @@ import java.io.File;
 import java.net.URL;
 import java.util.*;
 
-public class Generator extends AbstractModule{
+public class Generator extends AbstractModule {
   public static final Logger LOG = Logger.getLogger(Generator.class);
 
   private Language mySourceLanguage;
@@ -132,7 +132,7 @@ public class Generator extends AbstractModule{
 
   @Override
   public boolean isStubPathExcluded(String path) {
-    if (!getSourceLanguage().isStubPathExcluded(path)){
+    if (!getSourceLanguage().isStubPathExcluded(path)) {
       return false;
     }
     return super.isStubPathExcluded(path);
@@ -272,7 +272,7 @@ public class Generator extends AbstractModule{
     Set<SModelDescriptor> result = new LinkedHashSet<SModelDescriptor>(super.getImplicitlyImportedModelsFor(sm));
 
     SModelDescriptor structureModelDescriptor = getSourceLanguage().getStructureModelDescriptor();
-    if (structureModelDescriptor!=null){
+    if (structureModelDescriptor != null) {
       result.add(structureModelDescriptor);
     }
 
@@ -331,7 +331,7 @@ public class Generator extends AbstractModule{
   public boolean deleteReferenceFromPriorities(SModelReference ref) {
     boolean[] descriptorChanged = new boolean[]{false};
     Iterator<MappingPriorityRule> it = myGeneratorDescriptor.getPriorityRules().iterator();
-    while(it.hasNext()) {
+    while (it.hasNext()) {
       MappingPriorityRule rule = it.next();
       MappingConfig_AbstractRef right = rule.getRight();
       MappingConfig_AbstractRef left = rule.getLeft();

@@ -15,14 +15,11 @@
  */
 package jetbrains.mps.project.dependency;
 
-import jetbrains.mps.baseLanguage.collections.structure.Collections_Language;
-import jetbrains.mps.baseLanguage.structure.BaseLanguage_Language;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.util.annotation.Hack;
 
 import java.util.*;
 

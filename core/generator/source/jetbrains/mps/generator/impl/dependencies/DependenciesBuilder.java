@@ -12,7 +12,7 @@ public interface DependenciesBuilder {
   void scriptApplied(SModel newmodel);
 
   RootDependenciesBuilder getRootBuilder(SNode inputNode);
-  
+
   void registerRoot(SNode outputRoot, SNode inputNode);
 
   void updateModel(SModel newInputModel);
@@ -27,7 +27,7 @@ public interface DependenciesBuilder {
 
     @Override
     public void scriptApplied(SModel newmodel) {
-}
+    }
 
     @Override
     public RootDependenciesBuilder getRootBuilder(SNode inputNode) {

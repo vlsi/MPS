@@ -13,8 +13,12 @@ import javax.swing.Icon;
  */
 public interface IWatchable {
   public String getName();
+
   public WatchablesCategory getCategory();
+
   public IValue getValue();
+
   public Icon getPresentationIcon();
+
   public SNode getNode();
 }

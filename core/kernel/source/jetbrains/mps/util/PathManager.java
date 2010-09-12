@@ -16,15 +16,9 @@
 package jetbrains.mps.util;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.vfs.IFile;
 
 import java.io.File;
-import java.io.IOException;
 import java.net.URL;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 
 public class PathManager {
@@ -63,7 +57,7 @@ public class PathManager {
       root = root.getParentFile();
     }
 
-    ourHomePath = root.getAbsolutePath();    
+    ourHomePath = root.getAbsolutePath();
     return ourHomePath;
   }
 

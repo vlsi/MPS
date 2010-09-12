@@ -15,19 +15,11 @@
  */
 package jetbrains.mps.javaParser;
 
-import com.intellij.ide.DataManager;
 import com.intellij.util.containers.HashMap;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
-import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.reloading.AbstractClassPathItem;
-import jetbrains.mps.reloading.FileClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.reloading.JarFileClassPathItem;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.vfs.FileSystemFile;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.dialogs.project.BaseBindedDialog;
 import jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.BoundListPanel;
 import org.jdesktop.observablecollections.ObservableCollections;
@@ -40,13 +32,12 @@ import java.awt.Frame;
 import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.io.File;
-import java.io.IOException;
 import java.util.*;
 
 public class UIComponents {
   private static final Logger LOG = Logger.getLogger(UIComponents.class);
 
-  public static MyDialog createClasspathsDialog(IOperationContext context,final File sourceDir, List<String> classFqNames) {
+  public static MyDialog createClasspathsDialog(IOperationContext context, final File sourceDir, List<String> classFqNames) {
     return new MyDialog(context, sourceDir, classFqNames);
   }
 
@@ -102,7 +93,7 @@ public class UIComponents {
       result.setCellRenderer(renderer);
       result.init();
       return result;
-    }                                        
+    }
 
     @Override
     public DialogDimensions getDefaultDimensionSettings() {

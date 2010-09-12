@@ -38,7 +38,7 @@ public class LanguageDescriptor extends ModuleDescriptor {
     myExtendedLanguages = new ArrayList<ModuleReference>();
     myRuntimeModules = new ArrayList<Dependency>();
     myRuntimeStubModels = new ArrayList<StubModelsEntry>();
-    myStubSolutions = new ArrayList<StubSolution>(); 
+    myStubSolutions = new ArrayList<StubSolution>();
   }
 
   public String getGenPath() {
@@ -64,7 +64,7 @@ public class LanguageDescriptor extends ModuleDescriptor {
   public List<Dependency> getRuntimeModules() {
     return myRuntimeModules;
   }
-  
+
   public List<StubModelsEntry> getRuntimeStubModels() {
     return myRuntimeStubModels;
   }

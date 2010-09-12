@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.util;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class BenchmarkUtil {
   public static long measure(int ntimes, Runnable r) {

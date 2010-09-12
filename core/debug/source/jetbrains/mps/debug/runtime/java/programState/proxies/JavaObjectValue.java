@@ -88,7 +88,7 @@ public class JavaObjectValue extends JavaValue {
   }
 
   @NotNull
-  private IObjectValueProxy createValueProxy(){
+  private IObjectValueProxy createValueProxy() {
     return (IObjectValueProxy) MirrorUtil.getValueProxy(myValue, myThreadReference);
   }
 

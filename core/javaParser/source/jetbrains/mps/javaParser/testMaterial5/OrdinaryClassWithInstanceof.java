@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.javaParser.testMaterial5;
 
-import java.util.List;
-
 /**
  * Created by IntelliJ IDEA.
  * User: Cyril.Konopko

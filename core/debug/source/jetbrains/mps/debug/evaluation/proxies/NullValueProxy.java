@@ -1,7 +1,5 @@
 package jetbrains.mps.debug.evaluation.proxies;
 
-import com.sun.jdi.ArrayReference;
-import com.sun.jdi.ObjectReference;
 import com.sun.jdi.Value;
 import org.jetbrains.annotations.NotNull;
 

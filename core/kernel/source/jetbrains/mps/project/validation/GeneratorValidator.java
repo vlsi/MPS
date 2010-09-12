@@ -22,7 +22,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GeneratorValidator extends BaseModuleValidator<Generator>{
+public class GeneratorValidator extends BaseModuleValidator<Generator> {
   public GeneratorValidator(Generator module) {
     super(module);
   }

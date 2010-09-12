@@ -2,8 +2,6 @@ package jetbrains.mps.debug.evaluation.proxies;
 
 import com.sun.jdi.ThreadReference;
 import com.sun.jdi.Value;
-import jetbrains.mps.debug.evaluation.EvaluationException;
-import jetbrains.mps.debug.evaluation.InvalidEvaluatedExpressionException;
 import org.jetbrains.annotations.NotNull;
 
 /**

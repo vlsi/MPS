@@ -1,14 +1,14 @@
 package jetbrains.mps.generator.impl.template;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
-import jetbrains.mps.generator.template.QueryExecutionContext;
-import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.generator.impl.ReductionContext;
 import jetbrains.mps.generator.impl.TemplateContext;
+import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -16,8 +16,8 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 /**
-* Evgeny Gryaznov, May 13, 2010
-*/
+ * Evgeny Gryaznov, May 13, 2010
+ */
 public class QueryExecutionContextWithTracing implements QueryExecutionContext {
 
   private final QueryExecutionContext wrapped;
@@ -33,7 +33,7 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   }
 
   private static String taskName(@NotNull String name, SNode ruleNode) {
-    if(ruleNode == null || ruleNode.getModel() == null) {
+    if (ruleNode == null || ruleNode.getModel() == null) {
       return name;
     }
     return "query in " + getRulePackage(ruleNode); //name;

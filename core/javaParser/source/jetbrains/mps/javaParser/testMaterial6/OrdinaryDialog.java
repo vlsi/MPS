@@ -30,7 +30,7 @@ import java.awt.HeadlessException;
  * Time: 17:21:15
  * To change this template use File | Settings | File Templates.
  */
-public class OrdinaryDialog extends BaseDialog  {
+public class OrdinaryDialog extends BaseDialog {
 
   public OrdinaryDialog(Frame mainFrame, IOperationContext context, SModelDescriptor contextModel, String text) throws HeadlessException {
     super(mainFrame, text);

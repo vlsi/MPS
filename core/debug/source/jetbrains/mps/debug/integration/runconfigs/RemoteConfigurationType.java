@@ -33,7 +33,7 @@ public class RemoteConfigurationType implements ConfigurationType {
 
   @Override
   public ConfigurationFactory[] getConfigurationFactories() {
-    return new ConfigurationFactory[] {new ConfigurationFactory(this) {
+    return new ConfigurationFactory[]{new ConfigurationFactory(this) {
       @Override
       public RunConfiguration createTemplateConfiguration(Project project) {
         return new RemoteConfiguration(project, this, "Remote");

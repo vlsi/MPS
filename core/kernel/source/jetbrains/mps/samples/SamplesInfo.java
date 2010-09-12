@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.samples;
 
-import java.util.List;
-
 public interface SamplesInfo {
   public static final String SAMPLES_IN_MPS_HOME_ZIP = "samples.zip";
   public static final String SAMPLES_IN_USER_HOME_DIR = "MPSSamples";

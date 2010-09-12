@@ -23,7 +23,7 @@ package jetbrains.mps.javaParser.testMaterial4;
  * To change this template use File | Settings | File Templates.
  */
 public enum OridinaryEnumWithStaticFileds {
-  A,B,C;
+  A, B, C;
   private static final int FOO = 239;
 
   public int bar(int y) {

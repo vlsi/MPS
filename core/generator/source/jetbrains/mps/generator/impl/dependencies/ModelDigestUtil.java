@@ -32,7 +32,7 @@ import java.util.Map;
  * Evgeny Gryaznov, Sep 2, 2010
  */
 public class ModelDigestUtil {
-  
+
   private static final Logger LOG = Logger.getLogger(ModelDigestUtil.class);
 
   private static void extractRootHashes(byte[] content, Map<String, String> rootHashes) {

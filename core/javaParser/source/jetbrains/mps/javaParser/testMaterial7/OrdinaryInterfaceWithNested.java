@@ -8,9 +8,10 @@ package jetbrains.mps.javaParser.testMaterial7;
  */
 public interface OrdinaryInterfaceWithNested<T> {
 
-	boolean moveNext ();
+  boolean moveNext();
 
-	T current ();
+  T current();
 
-	interface Iterator<T> extends OrdinaryInterfaceWithNested<T>, java.util.Iterator <T> {	}
+  interface Iterator<T> extends OrdinaryInterfaceWithNested<T>, java.util.Iterator<T> {
+  }
 }

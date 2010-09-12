@@ -1,8 +1,11 @@
 package jetbrains.mps.generator;
 
-import jetbrains.mps.util.FlattenIterable;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.FastNodeFinder;
+import jetbrains.mps.smodel.LanguageHierarchyCache;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.FlattenIterable;
 import jetbrains.mps.util.NameUtil;
 
 import java.util.*;
@@ -80,7 +83,7 @@ public class TransientModelNodeFinder implements FastNodeFinder {
       }
       return Collections.emptyList();
     }
-  }                                                         
+  }
 
   private void addToCache(final SNode root) {
     String conceptFqName = root.getConceptFqName();

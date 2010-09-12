@@ -37,7 +37,7 @@ public class VCSQueue implements ApplicationComponent {
 
   private final ProjectManager myProjectManager;
 
-  public static VCSQueue instance(){
+  public static VCSQueue instance() {
     return ApplicationManager.getApplication().getComponent(VCSQueue.class);
   }
 

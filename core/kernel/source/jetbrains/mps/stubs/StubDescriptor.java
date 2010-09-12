@@ -20,9 +20,7 @@ import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.structure.EnumClass;
 import jetbrains.mps.baseLanguage.structure.Interface;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
-import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.util.InternUtil;
 
 public class StubDescriptor {

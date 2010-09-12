@@ -16,12 +16,11 @@
 package jetbrains.mps.project;
 
 import junit.framework.TestFailure;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.PrintStream;
-import java.util.List;
 import java.util.ArrayList;
-
-import org.jetbrains.annotations.NotNull;
+import java.util.List;
 
 public class TestResult {
   public final List<String> myGenerationErrors;

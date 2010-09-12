@@ -15,7 +15,10 @@
  */
 package jetbrains.mps.project.tester;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
 
 public class TestComparator {
   private Integer[] myUniqueOld, myUniqueNew;

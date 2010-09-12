@@ -16,5 +16,5 @@
 package jetbrains.mps.smodel;
 
 public interface MPSModuleOwner {
-  
+
 }

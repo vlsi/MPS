@@ -49,6 +49,7 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
   //the second parameter is needed because there is a time dependency -
   //MPSProject must be disposed after TransientModelsModule for
   //the module's models to be disposed
+
   public TransientModelsModule(Project project, MPSProject mpsProject) {
     myProject = project;
     ModuleReference reference = ModuleReference.fromString("TransientModule " + myNumber);
@@ -277,9 +278,9 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
 
     @Override
     public SModelDescriptor resolveModel(SModelReference reference) {
-      if(reference.getLongName().equals(myLongName)) {
+      if (reference.getLongName().equals(myLongName)) {
         SModelDescriptor descriptor = myModels.get(reference.getSModelFqName());
-        if(descriptor != null) {
+        if (descriptor != null) {
           return descriptor;
         }
       }

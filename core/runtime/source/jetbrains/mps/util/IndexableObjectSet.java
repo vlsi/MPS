@@ -15,7 +15,10 @@
  */
 package jetbrains.mps.util;
 
-import java.util.*;
+import java.util.AbstractSet;
+import java.util.BitSet;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public abstract class IndexableObjectSet<E> extends AbstractSet<E> {
   private BitSet myBitSet;

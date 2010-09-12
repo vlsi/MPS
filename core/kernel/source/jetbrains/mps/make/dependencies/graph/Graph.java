@@ -17,9 +17,10 @@ package jetbrains.mps.make.dependencies.graph;
 
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 public class Graph<V extends IVertex> {
   private static final Logger LOG = Logger.getLogger(Graph.class);

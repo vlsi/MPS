@@ -22,7 +22,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DevkitValidator extends BaseModuleValidator<DevKit>{
+public class DevkitValidator extends BaseModuleValidator<DevKit> {
   public DevkitValidator(DevKit module) {
     super(module);
   }

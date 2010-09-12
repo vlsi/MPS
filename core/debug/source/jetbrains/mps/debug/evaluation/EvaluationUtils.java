@@ -204,7 +204,7 @@ public class EvaluationUtils {
 
   @NotNull
   public static IValueProxy getClassValue(String className, ThreadReference threadReference) throws InvalidEvaluatedExpressionException {
-    ClassType referenceType = (ClassType)findClassType(className, threadReference.virtualMachine());
+    ClassType referenceType = (ClassType) findClassType(className, threadReference.virtualMachine());
     ClassObjectReference classObject = referenceType.classObject();
     return MirrorUtil.getValueProxy(classObject, threadReference);
   }
@@ -232,7 +232,7 @@ public class EvaluationUtils {
     }
     if (primitiveValue instanceof IntegerValue) {
       return (IObjectValueProxy) invokeStatic(Integer.class.getName(), "valueOf", "(I)Ljava/lang/Integer;", threadReference, primitiveValue.intValue());
-    }                                                 
+    }
     if (primitiveValue instanceof LongValue) {
       return (IObjectValueProxy) invokeStatic(Long.class.getName(), "valueOf", "(J)Ljava/lang/Long;", threadReference, primitiveValue.longValue());
     }

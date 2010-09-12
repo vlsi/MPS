@@ -30,7 +30,9 @@ public class SearchScopeStatus extends Status {
   protected SNodePointer myReferenceValidator;
   protected IReferencePresentation myPresentation;
 
-  /*package*/ SearchScopeStatus(Code code, String message) {
+  /*package*/
+
+  SearchScopeStatus(Code code, String message) {
     super(code, message);
   }
 
@@ -50,7 +52,9 @@ public class SearchScopeStatus extends Status {
     return myReferenceValidator == null ? null : myReferenceValidator.getNode();
   }
 
-  /*package*/ static class OK extends SearchScopeStatus {
+  /*package*/
+
+  static class OK extends SearchScopeStatus {
     public OK(ISearchScope ss, IReferencePresentation presentation, boolean isDefault, SNodePointer validatorNode) {
       super(Code.OK, "");
       mySearchScope = ss;
@@ -60,7 +64,9 @@ public class SearchScopeStatus extends Status {
     }
   }
 
-  /*package*/ static class ERROR extends SearchScopeStatus {
+  /*package*/
+
+  static class ERROR extends SearchScopeStatus {
     public ERROR(String message) {
       super(Code.ERROR, message);
     }

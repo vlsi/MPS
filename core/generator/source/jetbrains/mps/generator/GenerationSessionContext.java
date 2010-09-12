@@ -22,7 +22,10 @@ import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Igor Alshannikov
@@ -193,10 +196,10 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   }
 
   public String createUniqueName(String roughName, SNode contextNode, SNode inputNode) {
-    if(useOldStyleUniqueName) {
+    if (useOldStyleUniqueName) {
       return createUniqueNameOldStyle(roughName, contextNode);
     }
-    
+
     String uniqueSuffix = null;
 
     if (contextNode != null) {

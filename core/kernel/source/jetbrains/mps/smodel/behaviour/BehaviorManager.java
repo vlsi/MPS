@@ -339,7 +339,7 @@ public final class BehaviorManager implements ApplicationComponent {
       int h = 13;
       h += myConceptFqName.hashCode() * 17;
       h += myMethodName.hashCode() * 23;
-      for (Class c: myParameters) {
+      for (Class c : myParameters) {
         h += c.hashCode() * 11;
       }
       return h;

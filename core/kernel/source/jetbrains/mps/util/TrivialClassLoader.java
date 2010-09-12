@@ -30,6 +30,6 @@ public class TrivialClassLoader extends AbstractClassLoader {
   }
 
   protected boolean isExcluded(String name) {
-    return false;  
+    return false;
   }
 }
