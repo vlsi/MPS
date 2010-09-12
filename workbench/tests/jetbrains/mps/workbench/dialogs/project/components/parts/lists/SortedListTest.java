@@ -21,6 +21,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 
 import jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory.ListComparator;
+import org.junit.Assert;
 
 public class SortedListTest extends TestCase {
 
@@ -28,16 +29,16 @@ public class SortedListTest extends TestCase {
     SortedList<Integer> sortedList = new SortedList<Integer>(new IntegerComparator());
     sortedList.add(10);
     sortedList.add(1);
-    assertEquals(Integer.valueOf(1), sortedList.get(0));
-    assertEquals(Integer.valueOf(10), sortedList.get(1));
+    Assert.assertEquals(Integer.valueOf(1), sortedList.get(0));
+    Assert.assertEquals(Integer.valueOf(10), sortedList.get(1));
   }
 
   public void testAddToSingletonListBuggy() {
     SortedList<Integer> sortedList = new SortedList<Integer>(new IntegerComparator());
     sortedList.add(1);
     sortedList.add(10);
-    assertEquals(Integer.valueOf(1), sortedList.get(0));
-    assertEquals(Integer.valueOf(10), sortedList.get(1));
+    Assert.assertEquals(Integer.valueOf(1), sortedList.get(0));
+    Assert.assertEquals(Integer.valueOf(10), sortedList.get(1));
   }
 
   public void testAddThreeNumbers1() {
@@ -45,9 +46,9 @@ public class SortedListTest extends TestCase {
     sortedList.add(1);
     sortedList.add(2);
     sortedList.add(3);
-    assertEquals(Integer.valueOf(1), sortedList.get(0));
-    assertEquals(Integer.valueOf(2), sortedList.get(1));
-    assertEquals(Integer.valueOf(3), sortedList.get(2));
+    Assert.assertEquals(Integer.valueOf(1), sortedList.get(0));
+    Assert.assertEquals(Integer.valueOf(2), sortedList.get(1));
+    Assert.assertEquals(Integer.valueOf(3), sortedList.get(2));
   }
 
   public void testAddThreeNumbers2() {
@@ -55,9 +56,9 @@ public class SortedListTest extends TestCase {
     sortedList.add(1);
     sortedList.add(3);
     sortedList.add(2);
-    assertEquals(Integer.valueOf(1), sortedList.get(0));
-    assertEquals(Integer.valueOf(2), sortedList.get(1));
-    assertEquals(Integer.valueOf(3), sortedList.get(2));
+    Assert.assertEquals(Integer.valueOf(1), sortedList.get(0));
+    Assert.assertEquals(Integer.valueOf(2), sortedList.get(1));
+    Assert.assertEquals(Integer.valueOf(3), sortedList.get(2));
   }
 
   public void testAddThreeNumbers3() {
@@ -65,9 +66,9 @@ public class SortedListTest extends TestCase {
     sortedList.add(2);
     sortedList.add(1);
     sortedList.add(3);
-    assertEquals(Integer.valueOf(1), sortedList.get(0));
-    assertEquals(Integer.valueOf(2), sortedList.get(1));
-    assertEquals(Integer.valueOf(3), sortedList.get(2));
+    Assert.assertEquals(Integer.valueOf(1), sortedList.get(0));
+    Assert.assertEquals(Integer.valueOf(2), sortedList.get(1));
+    Assert.assertEquals(Integer.valueOf(3), sortedList.get(2));
   }
 
   public void testAddThreeNumbers4() {
@@ -75,9 +76,9 @@ public class SortedListTest extends TestCase {
     sortedList.add(2);
     sortedList.add(3);
     sortedList.add(1);
-    assertEquals(Integer.valueOf(1), sortedList.get(0));
-    assertEquals(Integer.valueOf(2), sortedList.get(1));
-    assertEquals(Integer.valueOf(3), sortedList.get(2));
+    Assert.assertEquals(Integer.valueOf(1), sortedList.get(0));
+    Assert.assertEquals(Integer.valueOf(2), sortedList.get(1));
+    Assert.assertEquals(Integer.valueOf(3), sortedList.get(2));
   }
 
   public void testAddThreeNumbers5() {
@@ -85,9 +86,9 @@ public class SortedListTest extends TestCase {
     sortedList.add(3);
     sortedList.add(2);
     sortedList.add(1);
-    assertEquals(Integer.valueOf(1), sortedList.get(0));
-    assertEquals(Integer.valueOf(2), sortedList.get(1));
-    assertEquals(Integer.valueOf(3), sortedList.get(2));
+    Assert.assertEquals(Integer.valueOf(1), sortedList.get(0));
+    Assert.assertEquals(Integer.valueOf(2), sortedList.get(1));
+    Assert.assertEquals(Integer.valueOf(3), sortedList.get(2));
   }
 
   public void testAddThreeNumbers6() {
@@ -95,9 +96,9 @@ public class SortedListTest extends TestCase {
     sortedList.add(3);
     sortedList.add(1);
     sortedList.add(2);
-    assertEquals(Integer.valueOf(1), sortedList.get(0));
-    assertEquals(Integer.valueOf(2), sortedList.get(1));
-    assertEquals(Integer.valueOf(3), sortedList.get(2));
+    Assert.assertEquals(Integer.valueOf(1), sortedList.get(0));
+    Assert.assertEquals(Integer.valueOf(2), sortedList.get(1));
+    Assert.assertEquals(Integer.valueOf(3), sortedList.get(2));
   }
 
   public void testAddNumbersRandomOrder() {
@@ -116,7 +117,7 @@ public class SortedListTest extends TestCase {
     }
 
     for (int i = 0; i < n; i++) {
-      assertEquals("Adding order was " + numbers, Integer.valueOf(i), sortedList.get(i));
+      Assert.assertEquals("Adding order was " + numbers, Integer.valueOf(i), sortedList.get(i));
     }
   }
 
