@@ -24,6 +24,7 @@ import com.intellij.openapi.roots.ContentIterator;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.containers.HashSet;
 import com.intellij.util.indexing.FileBasedIndex;
+import com.intellij.util.indexing.IndexingStamp;
 import jetbrains.mps.smodel.ModelAccess;
 
 import java.util.List;
@@ -54,6 +55,7 @@ public class MPSUnindexedFilesUpdater implements CacheUpdater {
 
   public void processFile(final FileContent fileContent) {
     myIndex.indexFileContent(null, fileContent);
+    IndexingStamp.flushCache();
   }
 
   private void iterateIndexableFiles(final ContentIterator processor) {
@@ -86,11 +88,10 @@ public class MPSUnindexedFilesUpdater implements CacheUpdater {
   }
 
   public void updatingDone() {
-    //System.out.println("IdIndex contains " + myIndex.getAllKeys(IdIndex.NAME).size() + " unique keys");
-    myIndex.flushCaches();
+
   }
 
   public void canceled() {
-    myIndex.flushCaches();
+
   }
 }
