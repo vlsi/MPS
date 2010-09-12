@@ -227,7 +227,7 @@ public class IntentionsSupport {
 
     final DefaultActionGroup intentionActionGroup = new DefaultActionGroup(intention.getDescription(node, myEditor.getEditorContext()), true) {
       @Override
-      public boolean canBePerformed() {
+      public boolean canBePerformed(DataContext c) {
         return true;
       }
 
