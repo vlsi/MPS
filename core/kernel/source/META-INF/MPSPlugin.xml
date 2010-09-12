@@ -52,6 +52,8 @@
                         serviceImplementation="com.intellij.openapi.wm.impl.PlatformFrameTitleBuilder"/>
     <applicationService serviceInterface="com.intellij.platform.ProjectBaseDirectory"
                         serviceImplementation="com.intellij.platform.ProjectBaseDirectory"/>
+    <applicationService serviceInterface="com.intellij.ui.LicenseeInfoProvider"
+                        serviceImplementation="jetbrains.mps.workbench.license.MPSLicenseManager"/>
 
     <!-- two next declaration should not ever be swicthed: we want mps to open mpr projects from command line -->
     <projectOpenProcessor implementation="jetbrains.mps.project.MpsProjectOpenProcessor"/>
