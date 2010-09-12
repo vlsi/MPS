@@ -480,9 +480,6 @@
   <action id="Resume">
     <keyboard-shortcut first-keystroke="F9"/>
   </action>
-  <action id="EditorDeleteLine">
-    <keyboard-shortcut first-keystroke="control Y"/>
-  </action>
   <action id="ShowErrorDescription">
     <keyboard-shortcut first-keystroke="control F1"/>
   </action>

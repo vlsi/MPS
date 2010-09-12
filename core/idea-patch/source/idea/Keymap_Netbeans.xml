@@ -103,9 +103,6 @@
       <keyboard-shortcut first-keystroke="shift control ENTER" />
       <keyboard-shortcut first-keystroke="control SEMICOLON" />
     </action>
-    <action id="EditorDeleteLine">
-      <keyboard-shortcut first-keystroke="control E" />
-    </action>
     <action id="EditorDuplicate">
       <keyboard-shortcut first-keystroke="control D" />
       <keyboard-shortcut first-keystroke="shift control DOWN" />
