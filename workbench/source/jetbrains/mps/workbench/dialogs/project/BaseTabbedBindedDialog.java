@@ -15,11 +15,14 @@
  */
 package jetbrains.mps.workbench.dialogs.project;
 
+import com.intellij.openapi.actionSystem.ActionToolbar;
 import jetbrains.mps.smodel.IOperationContext;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
+import java.awt.Component;
+import java.awt.Container;
 import java.awt.GridBagLayout;
 import java.awt.HeadlessException;
 import java.util.ArrayList;
@@ -59,8 +62,21 @@ public abstract class BaseTabbedBindedDialog extends BaseBindedDialog {
     myComponents.put(tabName, tab);
   }
 
+  private static void setReadOnly(Component comp) {
+    comp.setEnabled(false);
+    if (comp instanceof ActionToolbar) {  // temp workaround to disable ActionToolbar component also
+      ((ActionToolbar) comp).getComponent().getParent().remove(((ActionToolbar) comp).getComponent());
+    }
+    if (comp instanceof Container) {
+      for (Component c : ((Container) comp).getComponents()) {
+        setReadOnly(c);
+      }
+    }
+  }
+
   public void addTab(DialogTab tab) {
     for (ComponentDescriptor d : tab.getComponents()) {
+      if (d.isReadOnly())  setReadOnly(d.getComponent());
       addComponent(tab.getName(), d.getComponent(), d.getConstraints());
     }
   }
@@ -89,6 +105,7 @@ public abstract class BaseTabbedBindedDialog extends BaseBindedDialog {
   public static class ComponentDescriptor {
     private JComponent myComponent;
     private ConstraintsType myConstraints;
+    private boolean myReadOnly = false;
 
     public JComponent getComponent() {
       return myComponent;
@@ -104,6 +121,14 @@ public abstract class BaseTabbedBindedDialog extends BaseBindedDialog {
 
     public void setConstraints(ConstraintsType constraints) {
       myConstraints = constraints;
+    }
+
+    public boolean isReadOnly() {
+      return myReadOnly;
+    }
+
+    public void setReadOnly() {
+      myReadOnly = true;
     }
   }
 }
