@@ -1,24 +1,21 @@
 package jetbrains.mps.ide.ui.smodel;
 
-import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.DependencyRecorder;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.IOperationContext;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
-import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
-import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.smodel.DependencyRecorder;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.CollectionUtil;
 
-import java.util.*;
-
-import com.intellij.openapi.project.Project;
-import org.jetbrains.annotations.NotNull;
-
 import javax.swing.tree.DefaultTreeModel;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
 
 public abstract class SNodeTreeUpdater<T extends MPSTreeNode> {
   private Project myProject;

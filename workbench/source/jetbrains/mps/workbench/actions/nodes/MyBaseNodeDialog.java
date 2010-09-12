@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.workbench.actions.nodes;
 
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.dialogs.BaseNodeDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.ide.util.JSplitPaneWithoutBorders;
@@ -29,8 +30,6 @@ import javax.swing.JComponent;
 import javax.swing.JSplitPane;
 import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
-
-import com.intellij.openapi.util.Computable;
 
 public class
   MyBaseNodeDialog extends BaseNodeDialog {
@@ -77,7 +76,7 @@ public class
     supertypesView.showItemInHierarchy(adapter[0], operationContext);
   }
 
-  private static String getTitle(final SNode node) {                                
+  private static String getTitle(final SNode node) {
     return ModelAccess.instance().runWriteActionInCommand(new Computable<String>() {
       public String compute() {
         return "Type For Node " + node;

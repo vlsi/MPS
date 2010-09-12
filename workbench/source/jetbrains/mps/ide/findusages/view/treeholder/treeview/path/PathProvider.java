@@ -21,7 +21,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
 

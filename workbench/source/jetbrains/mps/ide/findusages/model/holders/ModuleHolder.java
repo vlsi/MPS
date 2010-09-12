@@ -52,7 +52,7 @@ public class ModuleHolder implements IHolder<IModule> {
     return IconManager.getIconFor(getObject());
   }
 
-  public void write(Element element,Project project) throws CantSaveSomethingException {
+  public void write(Element element, Project project) throws CantSaveSomethingException {
     if (getObject() == null) throw new CantSaveSomethingException("module is not found");
 
     element.setAttribute(UID, myModuleUID);

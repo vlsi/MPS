@@ -17,8 +17,8 @@ package jetbrains.mps.workbench.choose.modules;
 
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 
 public abstract class BaseModuleModel extends BaseMPSChooseModel<IModule> {
   public BaseModuleModel(Project project, String entityName) {

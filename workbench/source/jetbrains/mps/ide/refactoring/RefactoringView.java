@@ -17,9 +17,9 @@ package jetbrains.mps.ide.refactoring;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
+import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.TabbedUsagesTool;
 import jetbrains.mps.ide.findusages.view.UsagesView;
-import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import org.jetbrains.annotations.NotNull;
@@ -45,7 +45,7 @@ public class RefactoringView extends TabbedUsagesTool {
   protected boolean forceCloseOnReload() {
     return true;
   }
-      
+
   public void showRefactoringView(RefactoringContext refactoringContext, @NotNull RefactoringViewAction refactoringViewAction,
                                   SearchResults searchResults, boolean hasModelsToGenerate) {
     RefactoringViewItem refactoringViewItem = new MyRefactoringViewItem(refactoringContext, refactoringViewAction, searchResults, hasModelsToGenerate);

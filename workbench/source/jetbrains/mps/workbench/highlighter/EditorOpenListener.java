@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.workbench.highlighter;
 
-import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
 
 /**

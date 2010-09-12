@@ -49,7 +49,7 @@ public class IndexBasedModelDigest implements ApplicationComponent {
           VirtualFile file = modelFile.toVirtualFile();
           if (file == null) return null;
 
-          final Map<String, String>[] valueArray = new Map[] { null };
+          final Map<String, String>[] valueArray = new Map[]{null};
           FileBasedIndex.getInstance().processValues(ModelDigestIndex.NAME, FileBasedIndex.getFileId(file), file, new ValueProcessor<Map<String, String>>() {
             public boolean process(VirtualFile file, Map<String, String> values) {
               valueArray[0] = values;
@@ -63,7 +63,7 @@ public class IndexBasedModelDigest implements ApplicationComponent {
         return null;
       }
     });
-    
+
   }
 
   @Override

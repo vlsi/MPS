@@ -61,6 +61,7 @@ public abstract class BaseDialog extends JDialog {
   }
 
   //required for invocation of "super" in descendants before initialization
+
   protected BaseDialog(Frame mainFrame, String text, boolean init) throws HeadlessException {
     super(mainFrame, text, true);
     if (init) {
@@ -137,7 +138,7 @@ public abstract class BaseDialog extends JDialog {
 
   protected void updateDimensionSettings() {
     myDialogDimensions = getDimensionSettings(this.getClass());
-    if (myDialogDimensions == null)  {
+    if (myDialogDimensions == null) {
       myDialogDimensions = getDefaultDimensionSettings();
       return;
     }

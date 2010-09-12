@@ -23,7 +23,6 @@ import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;

@@ -1,14 +1,13 @@
 package jetbrains.mps.ide.projectPane.favorites.root;
 
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.ide.ui.smodel.UpdatableSNodeTreeNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 
-import java.util.List;
 import java.util.Collections;
+import java.util.List;
 
 class NodeFavoritesRoot extends FavoritesRoot<SNodePointer> {
   public NodeFavoritesRoot(SNodePointer value) {

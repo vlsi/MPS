@@ -15,12 +15,15 @@
  */
 package jetbrains.mps.workbench.nodesFs;
 
+import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.DeprecatedVirtualFile;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileSystem;
-import com.intellij.openapi.util.Computable;
 import com.intellij.util.LocalTimeCounter;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;

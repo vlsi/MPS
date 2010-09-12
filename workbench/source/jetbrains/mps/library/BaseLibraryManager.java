@@ -21,7 +21,6 @@ import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
 import jetbrains.mps.ide.library.LibraryManagerPreferences;
 import jetbrains.mps.library.BaseLibraryManager.MyState;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Macros;
@@ -32,8 +31,11 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 
 public abstract class BaseLibraryManager implements BaseComponent, Configurable, PersistentStateComponent<MyState>, LibraryContributor {
   protected final MPSModuleRepository myRepository;
@@ -109,7 +111,7 @@ public abstract class BaseLibraryManager implements BaseComponent, Configurable,
       myPreferences = new LibraryManagerPreferences(this);
     }
     return myPreferences;
-  }  
+  }
 
   @Nullable
   public Icon getIcon() {

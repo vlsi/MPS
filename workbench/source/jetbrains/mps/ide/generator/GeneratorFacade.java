@@ -88,7 +88,7 @@ public class GeneratorFacade {
                                 boolean skipRequirementsGeneration) {
     Project project = operationContext.getProject();
     assert project != null : "Cannot generate models without a project";
-    
+
     try {
       List<Pair<SModelDescriptor, IOperationContext>> modelsWithContext = new ArrayList<Pair<SModelDescriptor, IOperationContext>>(inputModels.size());
       MessagesViewTool messagesTool = project.getComponent(MessagesViewTool.class);
@@ -117,7 +117,7 @@ public class GeneratorFacade {
   private boolean generateModelsWithProgressWindow(final Project project, final List<Pair<SModelDescriptor, IOperationContext>> inputModels,
                                                    final IGenerationHandler generationHandler,
                                                    final boolean rebuildAll, boolean skipRequirementsGeneration) {
-    
+
     if (inputModels.isEmpty()) {
       return true;
     }

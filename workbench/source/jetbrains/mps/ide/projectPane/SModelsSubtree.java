@@ -126,7 +126,7 @@ public class SModelsSubtree {
         int countNamePart = getCountNamePart(rootModelDescriptor, rootModelDescriptor.getSModelReference().getNamespace());
         SModelTreeNode treeNode = new SModelTreeNode(sortedModels.get(rootIndex), null, context, countNamePart);
         result.add(treeNode);
-        rootIndex = (isNeedBuildChildModels)? buildChildModels(treeNode, sortedModels, rootIndex) : rootIndex + 1;
+        rootIndex = (isNeedBuildChildModels) ? buildChildModels(treeNode, sortedModels, rootIndex) : rootIndex + 1;
       }
     }
     return result;

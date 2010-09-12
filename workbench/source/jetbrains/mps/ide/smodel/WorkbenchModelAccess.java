@@ -23,7 +23,10 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.util.containers.ConcurrentHashSet;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IllegalModelAccessError;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessListener;
+import jetbrains.mps.smodel.SNode;
 
 import javax.swing.SwingUtilities;
 import java.util.ArrayList;

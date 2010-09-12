@@ -21,9 +21,7 @@ import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.SystemInfo;
-
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectScope;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;

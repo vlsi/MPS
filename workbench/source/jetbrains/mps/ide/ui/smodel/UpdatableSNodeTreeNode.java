@@ -1,26 +1,24 @@
 package jetbrains.mps.ide.ui.smodel;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.ui.smodel.SModelEventsDispatcher.SModelEventsListener;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.Condition;
-
-import java.util.List;
-import java.util.Set;
-import java.util.HashSet;
-
-import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.tree.DefaultTreeModel;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class UpdatableSNodeTreeNode extends SNodeTreeNode {
   private SNodeTreeUpdater myTreeUpdater;
   private SModelEventsListener myEventsListener;
-  private  SimpleModelListener mySNodeModelListener;
+  private SimpleModelListener mySNodeModelListener;
 
   public UpdatableSNodeTreeNode(SNode node, IOperationContext operationContext) {
     super(node, operationContext);
@@ -105,7 +103,7 @@ public class UpdatableSNodeTreeNode extends SNodeTreeNode {
     private Set<SNode> getNodesInThisRoot(Set<SNode> candidates) {
       Set<SNode> nodesInThisRoot = new HashSet<SNode>();
       for (SNode node : candidates) {
-        SNode root = (node.isRoot())? node : node.getContainingRoot();
+        SNode root = (node.isRoot()) ? node : node.getContainingRoot();
         if (myTreeNode.getSNode().equals(root)) {
           nodesInThisRoot.add(node);
         }

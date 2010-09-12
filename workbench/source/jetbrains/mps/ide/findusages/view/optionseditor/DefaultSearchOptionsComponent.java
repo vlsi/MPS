@@ -20,7 +20,6 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
-
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
@@ -28,7 +27,6 @@ import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
 import jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder;
 import jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder;
-import jetbrains.mps.project.MPSProject;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;

@@ -19,13 +19,15 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ProjectScope;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelRepository;
 import org.jdesktop.beansbinding.AutoBinding;
 import org.jetbrains.annotations.NotNull;
 
@@ -94,6 +96,7 @@ public abstract class BaseBindedDialog extends BaseDialog implements IBindedDial
 
   /**
    * should be called on "ok", "apply" etc.
+   *
    * @return true if no errors and the dialog should be closed
    */
   protected final boolean saveChanges() {
@@ -132,7 +135,7 @@ public abstract class BaseBindedDialog extends BaseDialog implements IBindedDial
     return closeDialog[0];
   }
 
-  protected boolean doSaveChanges(){
+  protected boolean doSaveChanges() {
     return true;
   }
 

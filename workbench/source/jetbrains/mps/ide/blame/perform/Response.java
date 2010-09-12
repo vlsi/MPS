@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.ide.blame.perform;
 
-import org.jdom.Element;
-
 public class Response {
   private boolean mySuccess = true;
   private String myMessage = "";

@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.workbench.action;
 
-import com.intellij.openapi.actionSystem.*;
 import com.intellij.ide.DataManager;
+import com.intellij.openapi.actionSystem.*;
 import jetbrains.mps.logging.Logger;
 
 import java.awt.event.InputEvent;

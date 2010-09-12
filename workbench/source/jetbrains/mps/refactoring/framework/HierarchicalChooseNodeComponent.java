@@ -32,7 +32,8 @@ import java.awt.GridBagLayout;
 import java.util.HashSet;
 import java.util.Set;
 
-@Deprecated //left for compatibility with old refactorings
+@Deprecated
+//left for compatibility with old refactorings
 public class HierarchicalChooseNodeComponent extends JPanel implements IChooseComponent<SNode> {
   private MyHierarchyTree myHierarchyTree;
   private IOperationContext myOperationContext;

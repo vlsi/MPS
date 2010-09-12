@@ -17,7 +17,6 @@ package jetbrains.mps.workbench.actions.module;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.WindowManager;
-
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
@@ -37,7 +36,7 @@ public class DeleteModuleHelper {
     if (safeDelete) {
       safeDelete(project, module, deleteFiles);
     } else {
-      delete(project,  module, deleteFiles);
+      delete(project, module, deleteFiles);
     }
   }
 

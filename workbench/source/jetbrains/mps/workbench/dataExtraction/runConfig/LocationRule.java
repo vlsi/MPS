@@ -18,17 +18,15 @@ package jetbrains.mps.workbench.dataExtraction.runConfig;
 import com.intellij.ide.impl.dataRules.GetDataRule;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ProjectManager;
-import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.IdeFrame;
 import jetbrains.mps.plugins.pluginparts.runconfigs.MPSLocation;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.annotations.Nullable;
 
-import java.awt.Frame;
 import java.util.List;
 
 public class LocationRule implements GetDataRule {

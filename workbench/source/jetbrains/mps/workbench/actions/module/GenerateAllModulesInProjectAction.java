@@ -15,15 +15,13 @@
  */
 package jetbrains.mps.workbench.actions.module;
 
+import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.MPSDataKeys;
 
-import java.util.Set;
-import java.util.List;
 import java.util.HashSet;
-
-import com.intellij.openapi.actionSystem.AnActionEvent;
+import java.util.Set;
 
 public class GenerateAllModulesInProjectAction extends BaseGenerateAction {
   public GenerateAllModulesInProjectAction(boolean regenerate) {

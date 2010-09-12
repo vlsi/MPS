@@ -23,14 +23,12 @@ import com.intellij.openapi.ui.popup.ListPopup;
 import com.intellij.openapi.ui.popup.PopupStep;
 import com.intellij.openapi.ui.popup.util.BaseListPopupStep;
 import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.vcs.FileStatus;
 import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.ide.actions.EditorTabActions_ActionGroup;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.tabbedEditor.AbstractLazyTab;
-import jetbrains.mps.ide.tabbedEditor.TabChangeListener;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -48,7 +46,6 @@ import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Component;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
@@ -111,7 +108,7 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab {
 
   protected abstract Pair<SNode, IOperationContext> createLoadableNode(boolean ask, SNode concept);
 
-  public Set<SNodePointer> getLoadableNodePointers(){
+  public Set<SNodePointer> getLoadableNodePointers() {
     return Collections.unmodifiableSet(myLoadableNodes);
   }
 

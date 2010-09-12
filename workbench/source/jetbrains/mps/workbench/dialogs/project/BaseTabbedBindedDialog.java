@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.workbench.dialogs.project;
 
-import com.intellij.openapi.util.Pair;
 import jetbrains.mps.smodel.IOperationContext;
 
 import javax.swing.JComponent;

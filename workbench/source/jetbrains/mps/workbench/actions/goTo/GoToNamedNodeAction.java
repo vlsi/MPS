@@ -21,8 +21,8 @@ import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.application.ModalityState;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.DumbService;
+import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.impl.FakePsiElement;
 import jetbrains.mps.smodel.IScope;
@@ -51,7 +51,7 @@ public class GoToNamedNodeAction extends BaseAction {
     assert project != null;
 
     DumbService service = DumbService.getInstance(project);
-    if (service.isDumb()){
+    if (service.isDumb()) {
       return;
     }
 

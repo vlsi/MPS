@@ -104,7 +104,7 @@ public class FindersManager implements ApplicationComponent {
 
   //-------------reloading stuff----------------
 
-  private void checkLoaded(){
+  private void checkLoaded() {
     if (myLoaded) return;
     myLoaded = true;
     load();

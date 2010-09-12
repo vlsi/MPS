@@ -15,11 +15,10 @@
  */
 package jetbrains.mps.ide.blame.command;
 
+import jetbrains.mps.ide.blame.perform.Query;
+import jetbrains.mps.ide.blame.perform.Response;
 import junit.framework.TestCase;
 import org.apache.commons.httpclient.HttpClient;
-import jetbrains.mps.ide.blame.perform.Response;
-import jetbrains.mps.ide.blame.perform.Query;
-import jetbrains.mps.ide.blame.dialog.BlameDialog;
 
 import java.io.IOException;
 

@@ -15,25 +15,23 @@
  */
 package jetbrains.mps.resolve;
 
-import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.search.IsInstanceCondition;
-import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.baseLanguage.structure.*;
-import jetbrains.mps.baseLanguage.search.MethodResolveUtil;
+import com.intellij.openapi.command.CommandProcessor;
+import com.intellij.openapi.util.Pair;
 import jetbrains.mps.baseLanguage.behavior.IMethodCall_Behavior;
+import jetbrains.mps.baseLanguage.search.MethodResolveUtil;
+import jetbrains.mps.baseLanguage.structure.*;
+import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.EditorCheckerAdapter;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorMessage;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeRecalculatedListener;
-import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 import java.util.*;
-
-import com.intellij.openapi.util.Pair;
-import com.intellij.openapi.command.CommandProcessor;
 
 
 public class MethodDeclarationsFixer extends EditorCheckerAdapter {
@@ -204,7 +202,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     BaseMethodDeclaration newTarget = null;
     boolean good;
     Map<TypeVariableDeclaration, Type> typeByTypeVar = getTypeByTypeVar(methodCall);
-    jetbrains.mps.util.Pair<List<? extends BaseMethodDeclaration>,Boolean> parmCountPair = MethodResolveUtil.selectByVisibilityReportNoGoodMethod(candidates, methodCall);
+    jetbrains.mps.util.Pair<List<? extends BaseMethodDeclaration>, Boolean> parmCountPair = MethodResolveUtil.selectByVisibilityReportNoGoodMethod(candidates, methodCall);
     List<? extends BaseMethodDeclaration> methodDeclarationsGoodParams = parmCountPair.o1;
 
     if (methodDeclarationsGoodParams.size() == 1) {

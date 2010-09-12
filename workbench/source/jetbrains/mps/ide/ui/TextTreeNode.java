@@ -17,8 +17,6 @@ package jetbrains.mps.ide.ui;
 
 import jetbrains.mps.smodel.IOperationContext;
 
-import javax.swing.tree.TreeNode;
-
 public class TextTreeNode extends MPSTreeNode {
   public TextTreeNode(String text) {
     this(text, null);

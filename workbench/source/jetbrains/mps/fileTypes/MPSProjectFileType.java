@@ -16,13 +16,9 @@
 package jetbrains.mps.fileTypes;
 
 import com.intellij.ide.highlighter.ProjectFileType;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.lang.xml.XMLLanguage;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
-
-import jetbrains.mps.vfs.MPSExtentions;
 
 public class MPSProjectFileType extends ProjectFileType {
   private final String myName;

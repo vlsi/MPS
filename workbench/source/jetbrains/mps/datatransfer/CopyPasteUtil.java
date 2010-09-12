@@ -17,19 +17,19 @@ package jetbrains.mps.datatransfer;
 
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.baseLanguage.structure.IMethodCall;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.dialogs.project.utildialogs.addmodelimport.AddRequiredModelImportsDialog;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
 
 import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
 import java.awt.datatransfer.Transferable;
 import java.awt.datatransfer.UnsupportedFlavorException;
-import java.awt.datatransfer.StringSelection;
 import java.io.IOException;
 import java.util.*;
 import java.util.Map.Entry;
@@ -86,7 +86,7 @@ public class CopyPasteUtil {
     processReferencesIn(sourceNodesToNewNodes, allReferences);
 
     Map<SNode, SNode> newNodesToSourceNodes = new HashMap<SNode, SNode>();
-    for(Entry<SNode, SNode> entry : sourceNodesToNewNodes.entrySet()) {
+    for (Entry<SNode, SNode> entry : sourceNodesToNewNodes.entrySet()) {
       newNodesToSourceNodes.put(entry.getValue(), entry.getKey());
     }
     for (SNode newNode : result) {

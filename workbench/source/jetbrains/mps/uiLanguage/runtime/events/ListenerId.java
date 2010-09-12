@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.uiLanguage.runtime.events;
 
-import java.lang.reflect.Method;
-
 public class ListenerId {
   private Object myInstance;
   private String myMethod;

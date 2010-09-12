@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.ide.findusages.view;
 
-import com.intellij.ide.DataManager;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
@@ -37,7 +36,6 @@ import jetbrains.mps.ide.findusages.view.UsagesView.ButtonConfiguration;
 import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesOptions;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;

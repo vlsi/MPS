@@ -21,7 +21,8 @@ import jetbrains.mps.util.Condition;
 
 import javax.swing.JComponent;
 
-@Deprecated //left for compatibility with old refactorings
+@Deprecated
+//left for compatibility with old refactorings
 public class ChooseModelComponent implements IChooseComponent<SModel> {
   private ChooseNodeOrModelComponent myChooseNodeOrModelComponent;
 

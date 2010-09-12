@@ -19,20 +19,16 @@ import com.intellij.codeHighlighting.BackgroundEditorHighlighter;
 import com.intellij.ide.structureView.StructureViewBuilder;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import com.intellij.openapi.command.undo.DocumentReference;
 import com.intellij.openapi.command.impl.DocumentReferenceManagerImpl;
+import com.intellij.openapi.command.undo.DocumentReference;
 import com.intellij.openapi.editor.Document;
-import com.intellij.openapi.editor.impl.DocumentImpl;
 import com.intellij.openapi.fileEditor.*;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.UserDataHolderBase;
-import com.intellij.openapi.application.Application;
-
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.NodeEditor;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -208,7 +204,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor,
   public void dispose() {
     myNodeEditor.dispose();
     myNodeEditor = null;
-    
+
     myComponent.removeAll();
     myComponent = null;
   }

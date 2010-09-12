@@ -23,9 +23,9 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.vfs.VFileSystem;
 
+import java.io.File;
 import java.util.LinkedHashSet;
 import java.util.Set;
-import java.io.File;
 
 public class CompositeTreeNode extends MPSTreeNode {
   private Project myProject;

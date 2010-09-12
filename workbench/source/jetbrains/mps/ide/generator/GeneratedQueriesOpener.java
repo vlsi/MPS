@@ -38,8 +38,8 @@ public class GeneratedQueriesOpener {
 
     for (Method m : cls.getMethods()) {
       if (m.getName().endsWith("_" + node.getId())) {
-        for(NavigationProvider np : NavigationProvider.EP_NAME.getExtensions()) {
-          if(np.openMethod(getProjectPath(context.getProject()), modelName + ".QueriesGenerated", m.getName(), m.getParameterTypes().length)) {
+        for (NavigationProvider np : NavigationProvider.EP_NAME.getExtensions()) {
+          if (np.openMethod(getProjectPath(context.getProject()), modelName + ".QueriesGenerated", m.getName(), m.getParameterTypes().length)) {
             return true;
           }
         }
@@ -51,7 +51,7 @@ public class GeneratedQueriesOpener {
   }
 
   private static String getProjectPath(Project p) {
-    if(p == null) return null;
+    if (p == null) return null;
 
     File mpsProject = p.getComponent(MPSProject.class).getProjectFile();
 

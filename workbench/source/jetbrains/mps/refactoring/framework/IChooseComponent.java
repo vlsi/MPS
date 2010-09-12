@@ -19,7 +19,8 @@ import jetbrains.mps.util.Condition;
 
 import javax.swing.JComponent;
 
-@Deprecated //left for compatibility with old refactorings
+@Deprecated
+//left for compatibility with old refactorings
 public interface IChooseComponent<T> {
   public T submit() throws InvalidInputValueException;
 

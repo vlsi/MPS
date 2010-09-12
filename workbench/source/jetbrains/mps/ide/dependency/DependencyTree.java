@@ -29,7 +29,6 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextMPSTreeNode;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;

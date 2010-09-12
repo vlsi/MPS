@@ -15,14 +15,12 @@
  */
 package jetbrains.mps.ide.tabbedEditor;
 
-import com.intellij.openapi.Disposable;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.nodeEditor.EditorComponent;
 
 import javax.swing.JComponent;
-import java.util.List;
 import java.awt.event.MouseEvent;
-
-import com.intellij.openapi.vfs.VirtualFile;
+import java.util.List;
 
 public interface ILazyTab {
   String getTitle();

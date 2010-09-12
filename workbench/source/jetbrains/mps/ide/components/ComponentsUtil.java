@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.ide.components;
 
-import jetbrains.mps.messages.NodeWithContext;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.messages.NodeWithContext;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
@@ -61,6 +61,7 @@ public class ComponentsUtil {
   }
 
   //do not remove it. we need it for cell info
+
   public static SNode nodeFromElement(Element nodeElement, IScope scope) {
     String modelUID = nodeElement.getAttributeValue(MODEL);
     String id = nodeElement.getAttributeValue(ID);

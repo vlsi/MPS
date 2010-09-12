@@ -16,18 +16,12 @@
 package jetbrains.mps.workbench.actions.goTo.index;
 
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.ide.projectPane.SortUtil;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.choose.base.BasePresentation;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
-import java.util.ArrayList;
-import java.util.List;
 
 public class SNodeDescriptorPresentation extends BasePresentation {
   private SNodeDescriptor myNodeResult;

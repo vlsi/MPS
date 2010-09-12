@@ -56,6 +56,7 @@ public abstract class BaseGenerateAction extends BaseAction {
   }
 
   abstract Set<IModule> getModuleToGenerate(AnActionEvent e);
+
   abstract String getObject();
 
   protected void doUpdate(AnActionEvent e) {
@@ -114,7 +115,7 @@ public abstract class BaseGenerateAction extends BaseAction {
     final IOperationContext invocationContext1 = invocationContext;
     //noinspection ConstantConditions
     boolean checkSuccessful = myProject.getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class)
-      .checkModelsBeforeGenerationIfNeeded(invocationContext, (List)modelsToGenerate, new Runnable() {
+      .checkModelsBeforeGenerationIfNeeded(invocationContext, (List) modelsToGenerate, new Runnable() {
         public void run() {
           IGenerationHandler generationHandler = GeneratorFacade.getInstance().getDefaultGenerationHandler();
           GeneratorFacade.getInstance().generateModels(

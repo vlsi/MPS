@@ -32,7 +32,7 @@ class ImportantNodes extends HashMap<SModelReference, Set<SNodePointer>> {
     put(modelRef, nodes);
   }
 
-  public Set<SNodePointer> get(SModelReference modelRef){
+  public Set<SNodePointer> get(SModelReference modelRef) {
     Set<SNodePointer> nodes = super.get(modelRef);
     if (nodes != null) return nodes;
     return new HashSet<SNodePointer>();

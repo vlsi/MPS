@@ -45,7 +45,7 @@ public abstract class BaseModelItem implements NavigationItem {
 
   public FileStatus getFileStatus() {
     boolean changed = false;
-    if (myModelDescriptor instanceof EditableSModelDescriptor){
+    if (myModelDescriptor instanceof EditableSModelDescriptor) {
       changed = SModelRepository.getInstance().isChanged(((EditableSModelDescriptor) myModelDescriptor));
     }
     return changed ? FileStatus.MODIFIED : FileStatus.NOT_CHANGED;

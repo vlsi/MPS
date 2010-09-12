@@ -80,7 +80,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
   private final IdeDocumentHistory myIdeDocumentHistory;
   private final ProjectView myProjectView;
   private final FileEditorManager myEditorManager;
- 
+
   private ChangeListListener myChangeListListener;
   private MessageBusConnection myMessageBusConnection;
   private FileStatusListener myFileStatusListener;

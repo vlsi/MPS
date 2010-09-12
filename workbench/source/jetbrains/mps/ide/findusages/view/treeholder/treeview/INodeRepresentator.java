@@ -15,9 +15,8 @@
  */
 package jetbrains.mps.ide.findusages.view.treeholder.treeview;
 
-import jetbrains.mps.ide.findusages.model.CategoryKind;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.findusages.IExternalizeable;
+import jetbrains.mps.ide.findusages.model.CategoryKind;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
 import org.jetbrains.annotations.NotNull;
 

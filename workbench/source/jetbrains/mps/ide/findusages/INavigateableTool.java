@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.ide.findusages;
 
-import jetbrains.mps.ide.findusages.view.UsagesView;
 import com.intellij.openapi.wm.ToolWindow;
 
 public interface INavigateableTool {

@@ -5,7 +5,6 @@ import com.intellij.ide.projectView.ProjectView;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.wm.ToolWindowManager;
 import jetbrains.mps.ide.projectPane.AbstractProjectViewSelectInTarget;
 import jetbrains.mps.ide.projectPane.favorites.root.FavoritesRoot;
 import jetbrains.mps.ide.ui.MPSTree;
@@ -74,10 +73,10 @@ public class FavoritesSelectInTarget extends AbstractProjectViewSelectInTarget {
     MPSNodeVirtualFile nodeVirtualFile = (MPSNodeVirtualFile) context.getVirtualFile();
     final SNode nodeToSelect = nodeVirtualFile.getNode();
     SModelDescriptor model = ModelAccess.instance().runReadAction(new Computable<SModelDescriptor>() {
-       public SModelDescriptor compute() {
-         return nodeToSelect.getModel().getModelDescriptor();
-       }
-     });
+      public SModelDescriptor compute() {
+        return nodeToSelect.getModel().getModelDescriptor();
+      }
+    });
     IModule module = model.getModule();
     FavoritesProjectPane pane = (FavoritesProjectPane) ProjectView.getInstance(project).getCurrentProjectViewPane();
     MPSTree tree = pane.getTree();

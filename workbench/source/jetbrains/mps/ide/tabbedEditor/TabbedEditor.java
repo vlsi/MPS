@@ -376,7 +376,7 @@ public class TabbedEditor implements IEditor {
         ((NodeEditorComponent) component).getInspector().getEditorContext().setMemento(s.myInspectorMemento);
       }
     }
-     if (s.myIsExternal && s.mySelectedCell != null) {
+    if (s.myIsExternal && s.mySelectedCell != null) {
       NodeEditorComponent editorComponent = (NodeEditorComponent) getCurrentEditorComponent();
       if (editorComponent != null) {
         EditorCell closestCell = s.mySelectedCell.findClosestCell(editorComponent);
@@ -438,7 +438,7 @@ public class TabbedEditor implements IEditor {
 
     public void save(Element e) {
       e.setAttribute(TAB, "" + myCurrentTab);
-       if (mySelectedCell != null) {
+      if (mySelectedCell != null) {
         Element cellElem = new Element(SELECTED_CELL);
         mySelectedCell.saveTo(cellElem);
         e.addContent(cellElem);

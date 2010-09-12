@@ -27,10 +27,7 @@ import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentFactoryImpl;
 import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.ContentManagerListener;
-
-import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;

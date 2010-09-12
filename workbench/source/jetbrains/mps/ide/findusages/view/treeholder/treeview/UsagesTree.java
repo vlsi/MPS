@@ -617,7 +617,7 @@ public class UsagesTree extends MPSTree {
       }
 
       DataNode userObject = parent.getUserObject();
-      if (userObject != null){
+      if (userObject != null) {
         if (isAliveResultNode(userObject)) return parent;
       }
 

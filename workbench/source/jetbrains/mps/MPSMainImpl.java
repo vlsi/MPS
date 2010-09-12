@@ -17,7 +17,6 @@ package jetbrains.mps;
 
 import com.intellij.ide.license.LicenseManager;
 import com.intellij.idea.MainImpl;
-import com.intellij.openapi.application.PathManager;
 import jetbrains.mps.workbench.license.MPSLicenseManager;
 
 import java.lang.reflect.Method;

@@ -16,7 +16,6 @@
 package jetbrains.mps.ide.navigation;
 
 import com.intellij.openapi.extensions.ExtensionPointName;
-import com.intellij.openapi.project.Project;
 
 /**
  * Evgeny Gryaznov, Aug 24, 2010
@@ -24,7 +23,7 @@ import com.intellij.openapi.project.Project;
 public interface NavigationProvider {
 
   public static ExtensionPointName<NavigationProvider> EP_NAME =
-      ExtensionPointName.create("com.intellij.mps.NavigationProvider");
+    ExtensionPointName.create("com.intellij.mps.NavigationProvider");
 
   boolean openClass(String projectPath, String fqName);
 

@@ -16,7 +16,6 @@
 package jetbrains.mps.library;
 
 import com.intellij.util.xmlb.annotations.Transient;
-import org.jetbrains.annotations.NotNull;
 
 public class Library implements Cloneable {
   private String myName;

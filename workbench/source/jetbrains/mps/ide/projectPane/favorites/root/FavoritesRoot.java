@@ -1,11 +1,8 @@
 package jetbrains.mps.ide.projectPane.favorites.root;
 
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
-import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.ide.projectPane.ProjectModuleTreeNode;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 
 import java.util.List;

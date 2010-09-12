@@ -1,6 +1,5 @@
 package jetbrains.mps.ide.projectPane;
 
-import com.intellij.ide.DataManager;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
 import com.intellij.openapi.project.DumbService;
@@ -18,7 +17,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.workbench.MPSDataKeys;
 
 import javax.swing.tree.TreePath;
 import java.awt.datatransfer.DataFlavor;

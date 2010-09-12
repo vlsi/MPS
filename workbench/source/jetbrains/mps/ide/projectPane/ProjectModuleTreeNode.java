@@ -20,8 +20,8 @@ import jetbrains.mps.ide.projectPane.ProjectLanguageTreeNode.AccessoriesModelTre
 import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode.GenerationStatus;
+import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
@@ -132,7 +132,7 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
   }
 
   private boolean isInheritableGenStatus(GenerationStatus childGenStatus) {
-    return childGenStatus == GenerationStatus.REQUIRED || childGenStatus==GenerationStatus.UPDATING;
+    return childGenStatus == GenerationStatus.REQUIRED || childGenStatus == GenerationStatus.UPDATING;
   }
 
   public abstract IModule getModule();

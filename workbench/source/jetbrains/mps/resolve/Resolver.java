@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.resolve;
 
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
@@ -24,7 +25,10 @@ import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NullSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.action.DefaultReferentNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
@@ -32,14 +36,12 @@ import jetbrains.mps.smodel.constraints.SearchScopeStatus;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 
 import java.util.*;
-
-import com.intellij.openapi.util.Computable;
 
 public class Resolver {
 
@@ -102,7 +104,7 @@ public class Resolver {
     return typeCheckingContext.runTypeCheckingActionInEditorQueries(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
-          SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(referenceNode.getParent(),
+        SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(referenceNode.getParent(),
           referenceNode, referenceNodeConcept, linkDeclaration, operationContext);
         if (status.isError()) {
           LOG.error("Couldn't create referent search scope : " + status.getMessage());

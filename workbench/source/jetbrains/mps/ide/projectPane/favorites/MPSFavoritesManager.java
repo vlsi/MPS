@@ -1,22 +1,21 @@
 package jetbrains.mps.ide.projectPane.favorites;
 
 import com.intellij.openapi.components.ProjectComponent;
-import com.intellij.openapi.util.*;
 import com.intellij.openapi.project.Project;
-import com.intellij.ide.projectView.impl.AbstractUrl;
+import com.intellij.openapi.util.DefaultJDOMExternalizer;
+import com.intellij.openapi.util.InvalidDataException;
+import com.intellij.openapi.util.JDOMExternalizable;
+import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.ArrayUtil;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.NonNls;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.ide.projectPane.favorites.root.FavoritesRoot;
-
-public class MPSFavoritesManager implements ProjectComponent, JDOMExternalizable { 
+public class MPSFavoritesManager implements ProjectComponent, JDOMExternalizable {
   private static final String ELEMENT_FAVORITES_LIST = "favorites_list";
   private static final String FAVORITES_ROOT = "favorite_root";
   private static final String ATTRIBUTE_NAME = "name";
@@ -29,7 +28,9 @@ public class MPSFavoritesManager implements ProjectComponent, JDOMExternalizable
 
   public interface MPSFavoritesListener {
     void rootsChanged(String listName);
+
     void listAdded(String listName);
+
     void listRemoved(String listName);
   }
 
@@ -119,8 +120,8 @@ public class MPSFavoritesManager implements ProjectComponent, JDOMExternalizable
   public void readExternal(Element element) throws InvalidDataException {
     myName2FavoritesRoots.clear();
     for (Object list : element.getChildren(ELEMENT_FAVORITES_LIST)) {
-      final String name = ((Element)list).getAttributeValue(ATTRIBUTE_NAME);
-      List<Object> roots = readRoots((Element)list, myProject);
+      final String name = ((Element) list).getAttributeValue(ATTRIBUTE_NAME);
+      List<Object> roots = readRoots((Element) list, myProject);
       myName2FavoritesRoots.put(name, roots);
     }
     DefaultJDOMExternalizer.readExternal(this, element);

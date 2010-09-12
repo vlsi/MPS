@@ -71,7 +71,7 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
   }
 
   public String getTitle() {
-   return "Favorites";
+    return "Favorites";
   }
 
   public Icon getIcon() {
@@ -93,6 +93,7 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
         refreshMySubIdsAndSelect(listName);
         getTree().rebuildLater();
       }
+
       public void listAdded(String listName) {
         refreshMySubIdsAndSelect(listName);
       }
@@ -176,7 +177,7 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
   private class MyLogicalViewTree extends MPSTree implements LogicalViewTree {
     protected MPSTreeNode rebuild() {
       String subId = getSubId();
-      TextTreeNode invisibleRoot = new TextTreeNode(subId == null? "Favorites" : subId);
+      TextTreeNode invisibleRoot = new TextTreeNode(subId == null ? "Favorites" : subId);
       invisibleRoot.setIcon(new EmptyIcon(10));
       List<Object> objectList = myFavoritesManager.getRoots(subId);
       if (objectList == null || objectList.size() == 0) {

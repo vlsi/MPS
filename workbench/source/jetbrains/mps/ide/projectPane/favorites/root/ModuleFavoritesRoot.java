@@ -1,20 +1,16 @@
 package jetbrains.mps.ide.projectPane.favorites.root;
 
 
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.projectPane.ProjectModuleTreeNode;
-import jetbrains.mps.ide.projectPane.SModelsSubtree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 
-import java.util.List;
 import java.util.ArrayList;
-
-import com.intellij.openapi.util.Computable;
+import java.util.List;
 
 class ModuleFavoritesRoot extends FavoritesRoot<ModuleReference> {
   public ModuleFavoritesRoot(ModuleReference value) {

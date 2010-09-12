@@ -20,12 +20,10 @@ import com.intellij.openapi.fileChooser.FileChooserDialog;
 import com.intellij.openapi.fileChooser.FileChooserFactory;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.ide.DataManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

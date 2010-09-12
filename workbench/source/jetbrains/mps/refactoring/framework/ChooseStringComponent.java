@@ -24,15 +24,16 @@ import javax.swing.JTextField;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 
-@Deprecated //left for compatibility with old refactorings
-public class ChooseStringComponent extends JPanel implements IChooseComponent<String>  {
+@Deprecated
+//left for compatibility with old refactorings
+public class ChooseStringComponent extends JPanel implements IChooseComponent<String> {
   private JTextField myTextField;
   private String myPropertyName;
   private String myCaption;
   private Condition<String> myCondition = Condition.TRUE_CONDITION;
 
   public ChooseStringComponent() {
-   // initComponent();
+    // initComponent();
   }
 
   public void initComponent() {

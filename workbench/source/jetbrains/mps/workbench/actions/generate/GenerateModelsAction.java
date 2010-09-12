@@ -47,7 +47,7 @@ public abstract class GenerateModelsAction extends BaseAction {
   public void doExecute(AnActionEvent e) {
     //noinspection ConstantConditions
     boolean checkSuccessful = myPluginManager.getTool(ModelCheckerTool_Tool.class)
-      .checkModelsBeforeGenerationIfNeeded(myContext, (List<SModelDescriptor>)((List) myModels), new Runnable() {
+      .checkModelsBeforeGenerationIfNeeded(myContext, (List<SModelDescriptor>) ((List) myModels), new Runnable() {
         public void run() {
           GeneratorFacade.getInstance().generateModels(
             myContext,
@@ -89,7 +89,7 @@ public abstract class GenerateModelsAction extends BaseAction {
 
     myModels = new ArrayList<SModelDescriptor>();
 
-    if (models!=null){
+    if (models != null) {
       myModels.addAll(models);
     }
 

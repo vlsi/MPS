@@ -54,22 +54,21 @@ class GenerateRequirementsDialog extends DialogWrapper {
       pane.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
       pane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
       pane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-      final int scrollSize = (int)new JScrollBar(JScrollBar.VERTICAL).getPreferredSize().getWidth();
+      final int scrollSize = (int) new JScrollBar(JScrollBar.VERTICAL).getPreferredSize().getWidth();
       final Dimension preferredSize =
-        new Dimension(Math.min(textSize.width, screenSize.width * 4 / 5) + scrollSize, Math.min(textSize.height, screenSize.height/2) + scrollSize);
+        new Dimension(Math.min(textSize.width, screenSize.width * 4 / 5) + scrollSize, Math.min(textSize.height, screenSize.height / 2) + scrollSize);
       pane.setPreferredSize(preferredSize);
       panel.add(pane, BorderLayout.CENTER);
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
           final Dimension textSize = messageComponent.getPreferredSize();
           final Dimension preferredSize = new Dimension(Math.min(textSize.width, screenSize.width * 4 / 5) + scrollSize,
-                                                        Math.min(textSize.height, screenSize.height / 2) + scrollSize);
+            Math.min(textSize.height, screenSize.height / 2) + scrollSize);
           pane.setPreferredSize(preferredSize);
           SwingUtilities.getWindowAncestor(pane).pack();
         }
       });
-    }
-    else {
+    } else {
       panel.add(messageComponent, BorderLayout.CENTER);
     }
 

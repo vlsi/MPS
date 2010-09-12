@@ -98,10 +98,10 @@ public class GenericRefactoringAction extends BaseAction {
 
   @NotNull
   private <T> List<T> getEntities(AnActionEvent e, boolean oneEntity, DataKey<T> keySingle, DataKey<List<T>> keyList) {
-    T single     = e.getData(keySingle);
+    T single = e.getData(keySingle);
     List<T> list = e.getData(keyList);
 
-    List<T> res = new ArrayList<T>(list==null ? 1 : list.size()+1);
+    List<T> res = new ArrayList<T>(list == null ? 1 : list.size() + 1);
 
     if (list != null) {
       res.addAll(list);
@@ -120,10 +120,12 @@ public class GenericRefactoringAction extends BaseAction {
   private List<SNode> getNodes(AnActionEvent e, boolean oneEntity) {
     return getEntities(e, oneEntity, MPSDataKeys.NODE, MPSDataKeys.NODES);
   }
+
   @NotNull
   private List<SModelDescriptor> getModels(AnActionEvent e, boolean oneEntity) {
     return getEntities(e, oneEntity, MPSDataKeys.CONTEXT_MODEL, MPSDataKeys.MODELS);
   }
+
   @NotNull
   private List<IModule> getModules(AnActionEvent e, boolean oneEntity) {
     return getEntities(e, oneEntity, MPSDataKeys.MODULE, MPSDataKeys.MODULES);
@@ -134,9 +136,15 @@ public class GenericRefactoringAction extends BaseAction {
     boolean oneEntity = !refTarget.allowMultipleTargets();
     List entities;
     switch (refTarget.getTarget()) {
-      case NODE:   entities = getNodes  (e, oneEntity);  break;
-      case MODEL:  entities = getModels (e, oneEntity);  break;
-      case MODULE: entities = getModules(e, oneEntity);  break;
+      case NODE:
+        entities = getNodes(e, oneEntity);
+        break;
+      case MODEL:
+        entities = getModels(e, oneEntity);
+        break;
+      case MODULE:
+        entities = getModules(e, oneEntity);
+        break;
       default:
         throw new IllegalArgumentException("Wrong refactoring type " + refTarget.getTarget().getClass().getName());
     }
