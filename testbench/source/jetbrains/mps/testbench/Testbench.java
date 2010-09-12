@@ -84,7 +84,7 @@ public class Testbench {
       if (e.getThrowable() != null) {
         LOG.error(e.getThrowable());
       } else {
-        LOG.error(e.getMessage(), new Exception("StackTrace diagnostic exception"));
+        LOG.error( new Exception(e.getMessage()));
       }
     }
 
