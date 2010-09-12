@@ -19,7 +19,6 @@ import com.intellij.Patches;
 import com.intellij.ide.BrowserUtil;
 import com.intellij.ide.DataManager;
 import com.intellij.ide.IdeBundle;
-import com.intellij.ide.license.LicenseManager;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
@@ -29,6 +28,7 @@ import com.intellij.openapi.util.IconLoader;
 import com.intellij.openapi.util.SystemInfo;
 import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.openapi.wm.WindowManager;
+import com.intellij.ui.LicenseeInfoProvider;
 import com.intellij.util.ImageLoader;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.util.FileUtil;
@@ -200,8 +200,8 @@ public class AboutAction extends AnAction {
       myLines.add(new AboutBoxLine(IdeBundle.message("aboutbox.build.number", ideInfo.getBuildNumber())));
       myLines.add(new AboutBoxLine(IdeBundle.message("aboutbox.build.date", DateFormat.getDateInstance(DateFormat.LONG).format(cal.getTime()))));
       myLines.add(new AboutBoxLine(""));
-      myLines.add(new AboutBoxLine(LicenseManager.getInstance().licensedToMessage(), true, false));
-      myLines.add(new AboutBoxLine(LicenseManager.getInstance().licensedRestrictionsMessage()));
+      myLines.add(new AboutBoxLine(LicenseeInfoProvider.getInstance().getLicensedToMessage(), true, false));
+      myLines.add(new AboutBoxLine(LicenseeInfoProvider.getInstance().getLicenseRestrictionsMessage()));
       myLines.add(new AboutBoxLine(""));
 
       {
