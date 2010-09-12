@@ -82,6 +82,7 @@ def layoutFull(String home, String targetDirectory) {
 
         fileset(dir: "$home/lib") {
           include(name: "*.jar")
+          exclude(name: "asm.jar")
           exclude(name: "eawtstub.jar")
         }
         fileset(dir: "$home/lib/src") {
