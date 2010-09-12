@@ -377,9 +377,11 @@
       <reference ref="HelpTopics"/>
       <!--MPS Patch Start-->
       <!--Add profile actions-->
+<!--
       <separator/>
       <reference ref="CaptureMemorySnapShot"/>
       <reference ref="CaptureCPUUsageData"/>
+-->
       <!--MPS Patch End-->
     </group>
 
