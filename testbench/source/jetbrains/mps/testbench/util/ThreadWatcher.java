@@ -20,7 +20,7 @@ public class ThreadWatcher implements Output {
 
   private static class ThreadState {
 
-    private static Pattern IGNORED_THREAD = Pattern.compile("(AWT\\-.*)|(Image Fetch.*)|(Keep\\-Alive.*)");
+    private static Pattern IGNORED_THREAD = Pattern.compile("(AWT\\-.*)|(Image Fetch.*)|(Keep\\-Alive.*)|(Finalizer.*)|(caret blinker.*)");
 
     private TLongObjectHashMap<ThreadInfo> allThreads = new TLongObjectHashMap<ThreadInfo> ();
     private TLongObjectHashMap<ThreadInfo> runningThreads = new TLongObjectHashMap<ThreadInfo> ();
