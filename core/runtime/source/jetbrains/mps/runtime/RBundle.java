@@ -83,7 +83,7 @@ public class RBundle<T> {
     return myRuntimeEnvironment;
   }
 
-  BytecodeLocator getLocator() {
+  public BytecodeLocator getLocator() {
     return myLocator;
   }
 
