@@ -143,8 +143,7 @@ def layoutFull(String home, String targetDirectory) {
     }
 
     zip("platform.src.zip") {
-      modules = [platformApiModules(),platformImplementationModules()].flatten()
-      modules.each {
+      platformApiModules().each {
         module(it) {
           patternset(refid: "sources")
         }
