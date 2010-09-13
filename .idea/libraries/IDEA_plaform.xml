@@ -14,6 +14,7 @@
       <root url="jar://$PROJECT_DIR$/lib/forms_rt.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/cglib-nodep-2.1_3.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/execution-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/guava-r06.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
