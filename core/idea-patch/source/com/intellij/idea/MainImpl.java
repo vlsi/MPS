@@ -21,6 +21,7 @@ import com.intellij.openapi.application.PathManager;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.util.SystemInfo;
 import com.intellij.ui.AppUIUtil;
+import jetbrains.mps.util.annotation.Patch;
 
 import javax.swing.*;
 
@@ -35,7 +36,9 @@ public class MainImpl {
   /**
    * Is called from PluginManager
    */
+  @Patch
   protected static void start(final String[] args) {
+    //this is a patch
     //System.setProperty("idea.platform.prefix", "Idea");
     StartupUtil.isHeadless = Main.isHeadless(args);
     boolean isNewConfigFolder = PathManager.ensureConfigFolderExists(true);
