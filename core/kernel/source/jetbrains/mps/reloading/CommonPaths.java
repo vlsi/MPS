@@ -82,6 +82,7 @@ public class CommonPaths {
     result.add(getBaseMPSClassPath());
     result.add(getIDEAOpenAPIJar());
     result.add(getIDEAJar());
+    result.add(getExecJar());
     result.add(getIDEAUtilJar());
     result.add(getIDEAExtensionsJar());
     result.add(getLibraryJars());
@@ -171,6 +172,11 @@ public class CommonPaths {
 
   private static IClassPathItem getIDEAJar() {
     String path = libPath() + File.separator + "platform.jar";
+    return ClassPathFactory.getInstance().createFromPath(path);
+  }
+
+  private static IClassPathItem getExecJar() {
+    String path = libPath() + File.separator + "execution-api.jar";
     return ClassPathFactory.getInstance().createFromPath(path);
   }
 
