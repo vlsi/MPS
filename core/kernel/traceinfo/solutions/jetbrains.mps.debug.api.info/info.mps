@@ -31,7 +31,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590553(jetbrains.mps.uiLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959054e(jetbrains.mps.uiLanguage.constraints)" version="26" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" />
-  <maxImportIndex value="39" />
+  <maxImportIndex value="38" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.workbench.editors(jetbrains.mps.workbench.editors@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.vfs(jetbrains.mps.vfs@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
@@ -52,7 +52,6 @@
   <import index="36" modelUID="f:java_stub#jetbrains.mps.debug.api.info(jetbrains.mps.debug.api.info@java_stub)" version="-1" />
   <import index="37" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="38" modelUID="f:java_stub#jetbrains.mps.reloading(jetbrains.mps.reloading@java_stub)" version="-1" />
-  <import index="39" modelUID="f:java_stub#com.intellij.openapi.vfs(com.intellij.openapi.vfs@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4494976841093370185">
     <property name="name:3" value="DebugInfoRoot" />
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="4494976841093370186">
@@ -2735,8 +2734,8 @@
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="4806149635758412823">
       <property name="name:3" value="saveCache" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility:3" id="4806149635758412824" />
-      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="112272351853313973">
-        <link role="classifier:3" targetNodeId="39.~VirtualFile" resolveInfo="VirtualFile" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4806149635758412825">
+        <link role="classifier:3" targetNodeId="3.~File" resolveInfo="File" />
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4806149635758412826">
         <property name="name:3" value="debugInfo" />
@@ -2839,73 +2838,6 @@
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="4806149635758432698" />
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="112272351853313978">
-          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="112272351853313979">
-            <property name="name:3" value="cacheVFile" />
-            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="112272351853313980">
-              <link role="classifier:3" targetNodeId="39.~VirtualFile" resolveInfo="VirtualFile" />
-            </node>
-          </node>
-        </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.TryCatchStatement:3" id="112272351853313983">
-          <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="112272351853313984">
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="112272351853314275">
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="112272351853314277">
-                <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="112272351853315198">
-                  <link role="baseMethodDeclaration:3" targetNodeId="37.~FileUtil.createVirtualFile(java.io.File,java.lang.String):com.intellij.openapi.vfs.VirtualFile" resolveInfo="createVirtualFile" />
-                  <link role="classConcept:3" targetNodeId="37.~FileUtil" resolveInfo="FileUtil" />
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="112272351853315205">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="112272351853315200">
-                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="112272351853315199">
-                        <link role="variableDeclaration:3" targetNodeId="4806149635758432676" resolveInfo="cacheFile" />
-                      </node>
-                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="112272351853315204">
-                        <link role="baseMethodDeclaration:3" targetNodeId="2.~IFile.getParent():jetbrains.mps.vfs.IFile" resolveInfo="getParent" />
-                      </node>
-                    </node>
-                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="112272351853315209">
-                      <link role="baseMethodDeclaration:3" targetNodeId="2.~IFile.toFile():java.io.File" resolveInfo="toFile" />
-                    </node>
-                  </node>
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="112272351853315212">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="112272351853315211">
-                      <link role="variableDeclaration:3" targetNodeId="4806149635758432676" resolveInfo="cacheFile" />
-                    </node>
-                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="112272351853315216">
-                      <link role="baseMethodDeclaration:3" targetNodeId="2.~IFile.getName():java.lang.String" resolveInfo="getName" />
-                    </node>
-                  </node>
-                </node>
-                <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="112272351853314276">
-                  <link role="variableDeclaration:3" targetNodeId="112272351853313979" resolveInfo="cacheVFile" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="catchClause:3" type="jetbrains.mps.baseLanguage.structure.CatchClause:3" id="112272351853313986">
-            <node role="catchBody:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="112272351853313989">
-              <node role="statement:3" type="jetbrains.mps.baseLanguage.logging.structure.LogStatement:0" id="112272351853313991">
-                <property name="severity:0" value="error" />
-                <property name="hasException:0" value="true" />
-                <node role="logExpression:0" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="112272351853313992">
-                  <property name="value:3" value="Could not write cache file" />
-                </node>
-                <node role="exception:0" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="112272351853313993">
-                  <link role="variableDeclaration:3" targetNodeId="112272351853315222" resolveInfo="e" />
-                </node>
-              </node>
-              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="112272351853313995">
-                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="112272351853313997" />
-              </node>
-            </node>
-            <node role="throwable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="112272351853315222">
-              <property name="name:3" value="e" />
-              <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="112272351853315224">
-                <link role="classifier:3" targetNodeId="3.~IOException" resolveInfo="IOException" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="4806149635758432699">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="4806149635758432700">
             <property name="name:3" value="os" />
@@ -2920,14 +2852,11 @@
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4806149635758432705">
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="4806149635758432706">
                 <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4806149635758432707">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="112272351853315217">
-                    <link role="variableDeclaration:3" targetNodeId="112272351853313979" resolveInfo="cacheVFile" />
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4806149635758432708">
+                    <link role="variableDeclaration:3" targetNodeId="4806149635758432676" resolveInfo="cacheFile" />
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="112272351853315219">
-                    <link role="baseMethodDeclaration:3" targetNodeId="39.~VirtualFile.getOutputStream(java.lang.Object):java.io.OutputStream" resolveInfo="getOutputStream" />
-                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression:3" id="112272351853315221">
-                      <link role="classifier:3" targetNodeId="4494976841093543348" resolveInfo="BLDebugInfoCache" />
-                    </node>
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4806149635758432709">
+                    <link role="baseMethodDeclaration:3" targetNodeId="2.~IFile.openOutputStream():java.io.OutputStream" resolveInfo="openOutputStream" />
                   </node>
                 </node>
                 <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4806149635758432710">
@@ -3044,8 +2973,13 @@
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="4806149635758432753" />
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="4806149635758432754">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="112272351853323623">
-            <link role="variableDeclaration:3" targetNodeId="112272351853313979" resolveInfo="cacheVFile" />
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4806149635758432755">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4806149635758432756">
+              <link role="variableDeclaration:3" targetNodeId="4806149635758432676" resolveInfo="cacheFile" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4806149635758432757">
+              <link role="baseMethodDeclaration:3" targetNodeId="2.~IFile.toFile():java.io.File" resolveInfo="toFile" />
+            </node>
           </node>
         </node>
       </node>

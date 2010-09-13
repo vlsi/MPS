@@ -15,21 +15,14 @@
  */
 package jetbrains.mps.generator.fileGenerator;
 
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.vfs.LocalFileSystem;
-import com.intellij.openapi.vfs.VfsUtil;
-import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.util.FileUtil;
 
-import javax.swing.SwingUtilities;
 import java.io.File;
 import java.io.IOException;
-import java.io.OutputStream;
-import java.lang.reflect.InvocationTargetException;
 
 public class DefaultFileGenerator implements IFileGenerator {
 
@@ -46,7 +39,7 @@ public class DefaultFileGenerator implements IFileGenerator {
     return (extension == null)? outputRootNode.getName() : outputRootNode.getName() + "." + extension;
   }
 
-  public final VirtualFile generateFile(SNode outputRootNode, SNode originalInputNode, SModel inputModel, String content, File outputRootDir) throws IOException {
+  public final File generateFile(SNode outputRootNode, SNode originalInputNode, SModel inputModel, String content, File outputRootDir) throws IOException {
     if (!isDefault(outputRootNode)) {
       throw new RuntimeException("couldn't generate file for output node: " + outputRootNode.getDebugText());
     }
@@ -57,8 +50,52 @@ public class DefaultFileGenerator implements IFileGenerator {
       return null;
     }
 
-    VirtualFile file = FileUtil.createVirtualFile(outputDir, filename);
-    FileUtil.write(file, content);
+    File file = new File(outputDir, filename);
+
+    if (!file.getParentFile().exists()) {
+      file.getParentFile().mkdirs();
+    }
+
+    if (file.exists()) {
+      try {
+        String existingContents = FileUtil.read(file);
+        if(existingContents != null && existingContents.equals(content)) {
+          return file;
+        }
+      } catch(RuntimeException ex) {
+        /* ignore */
+      }
+      file.delete();
+    }
+
+    boolean fileCreated = false;
+    IOException lastExc = null;
+    for (int i = 1; i <= 20; i++) {
+      try {
+        file.createNewFile();
+        fileCreated = true;
+        break;
+      } catch (IOException ex) {
+        lastExc = ex;
+        //sometimes:
+        //java.io.IOException: Access is denied
+        //at java.io.WinNTFileSystem.createFileExclusively(Native Method)
+        //at java.io.File.createNewFile(File.java:850)
+        // so we'll try 5(20) times
+      }
+      try {
+        Thread.sleep(100);
+      } catch (InterruptedException ie) {
+        //ok
+      }
+    }
+
+    if (fileCreated) {
+      FileUtil.write(file, content);
+    } else {
+      throw lastExc == null ? new IOException("Can't create " + file.getPath()) : lastExc;
+    }
+
     return file;
   }
 }

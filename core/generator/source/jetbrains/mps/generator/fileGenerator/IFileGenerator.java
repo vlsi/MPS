@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator.fileGenerator;
 
-import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 
@@ -27,7 +26,7 @@ import java.io.IOException;
  * Sep 14, 2006
  */
 public interface IFileGenerator {
-  VirtualFile generateFile(SNode outputRootNode, SNode originalInputNode, SModel inputModel, String content, File outputRootDir) throws IOException;
+  File generateFile(SNode outputRootNode, SNode originalInputNode, SModel inputModel, String content, File outputRootDir) throws IOException;
 
   boolean overridesDefault(SNode outputRootNode, SNode originalInputNode);
 

@@ -4,22 +4,19 @@ package jetbrains.mps.debug.api.info;
 
 import jetbrains.mps.generator.fileGenerator.BaseModelCache;
 import jetbrains.mps.logging.Logger;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.generator.fileGenerator.FileGenerationManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.fileGenerator.CacheGenerationContext;
-import com.intellij.openapi.vfs.VirtualFile;
+import java.io.File;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
-import jetbrains.mps.util.FileUtil;
-import java.io.IOException;
 import java.io.OutputStream;
 import org.jdom.Element;
 import jetbrains.mps.util.JDOMUtil;
 import org.jdom.Document;
+import java.io.IOException;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import java.io.InputStream;
@@ -31,7 +28,6 @@ import com.intellij.openapi.application.ApplicationManager;
 public class BLDebugInfoCache extends BaseModelCache<DebugInfo> {
   private static final Logger LOG = Logger.getLogger(BLDebugInfoCache.class);
   public static final String TRACE_FILE_NAME = "trace.info";
-  protected static Log log = LogFactory.getLog(BLDebugInfoCache.class);
 
   public BLDebugInfoCache(FileGenerationManager fileGeneratorManager) {
     super(fileGeneratorManager);
@@ -51,7 +47,7 @@ public class BLDebugInfoCache extends BaseModelCache<DebugInfo> {
     return ctx.getDebugInfo();
   }
 
-  protected VirtualFile saveCache(@NotNull DebugInfo debugInfo, SModelDescriptor model) {
+  protected File saveCache(@NotNull DebugInfo debugInfo, SModelDescriptor model) {
     IFile defaultOutputDir = FileGenerationUtil.getDefaultOutputDir(model, getOutputDirForWriting(model.getModule(), model.getModule().getOutputFor(model)));
     check_xy6085_a1a3(defaultOutputDir);
     IFile cacheFile = check_xy6085_a0c0d(defaultOutputDir, TRACE_FILE_NAME);
@@ -59,18 +55,9 @@ public class BLDebugInfoCache extends BaseModelCache<DebugInfo> {
       return null;
     }
 
-    VirtualFile cacheVFile;
-    try {
-      cacheVFile = FileUtil.createVirtualFile(cacheFile.getParent().toFile(), cacheFile.getName());
-    } catch (IOException e) {
-      if (log.isErrorEnabled()) {
-        log.error("Could not write cache file", e);
-      }
-      return null;
-    }
     OutputStream os = null;
     try {
-      os = cacheVFile.getOutputStream(BLDebugInfoCache.class);
+      os = cacheFile.openOutputStream();
       Element element = debugInfo.toXml();
       JDOMUtil.writeDocument(new Document(element), os);
     } catch (IOException e) {
@@ -85,7 +72,7 @@ public class BLDebugInfoCache extends BaseModelCache<DebugInfo> {
       }
     }
 
-    return cacheVFile;
+    return cacheFile.toFile();
   }
 
   @Nullable

@@ -16,15 +16,7 @@
 package jetbrains.mps.util;
 
 
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.vfs.LocalFileSystem;
-import com.intellij.openapi.vfs.VfsUtil;
-import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.generator.fileGenerator.DefaultFileGenerator;
-
-import javax.swing.SwingUtilities;
 import java.io.*;
-import java.lang.reflect.InvocationTargetException;
 import java.util.Iterator;
 import java.util.List;
 import java.util.jar.JarOutputStream;
@@ -221,42 +213,24 @@ public class FileUtil {
   }
 
 
-  public static void write(Writer w, String content) {
-    PrintWriter printWriter = new PrintWriter(w);
-    printWriter.print(content);
-    printWriter.flush();
-    printWriter.close();
-  }
-
   public static void write(File file, String content) {
+    PrintWriter writer = null;
     try {
-      Writer w = new FileWriter(file);
-      write(w, content);
+      writer = new PrintWriter(new FileWriter(file));
+      writer.print(content);
+      writer.flush();
     } catch (IOException e) {
       throw new RuntimeException(e);
-    }
-  }
-
-  public static void write(VirtualFile file, String content) {
-    try {
-      Writer w = new OutputStreamWriter(file.getOutputStream(null));
-      write(w, content);
-    } catch (IOException e) {
-      throw new RuntimeException(e);
+    } finally {
+      if (writer != null) {
+        writer.close();
+      }
     }
   }
 
   public static String read(File file) {
     try {
       return read(new FileReader(file));
-    } catch (IOException e) {
-      throw new RuntimeException(e);
-    }
-  }
-
-  public static String read(VirtualFile file) {
-    try {
-      return read(new InputStreamReader(file.getInputStream()));
     } catch (IOException e) {
       throw new RuntimeException(e);
     }
@@ -427,77 +401,6 @@ public class FileUtil {
     }
     relative.append(targetPath.substring(common.length()));
     return relative.toString();
-  }
-
-  public static VirtualFile createVirtualFile(final File directory, final String filename) throws IOException {
-    final VirtualFile[] file = new VirtualFile[1];
-    final IOException[] ioException = new IOException[1];
-
-    try {
-      SwingUtilities.invokeAndWait(new Runnable() {
-        @Override
-        public void run() {
-          ApplicationManager.getApplication().runWriteAction(new Runnable() {
-            @Override
-            public void run() {
-              try {
-                VirtualFile virtualDir = LocalFileSystem.getInstance().findFileByIoFile(directory);
-                if (virtualDir == null) {
-                  virtualDir = VfsUtil.createDirectories(directory.getPath());
-                }
-
-                file[0] = virtualDir.findChild(filename);
-                if (file[0] == null) {
-                  file[0] = virtualDir.createChildData(FileUtil.class, filename);
-                }
-              } catch (IOException e) {
-                ioException[0] = e;
-              }
-            }
-          });
-        }
-      });
-    } catch (InterruptedException e) {
-      assert false;
-    } catch (InvocationTargetException e) {
-      throw new RuntimeException(e);
-    }
-
-    if (ioException[0] != null) {
-      throw ioException[0];
-    } else {
-      return file[0];
-    }
-  }
-
-  public static void deleteVirtualFile(final VirtualFile file) throws IOException {
-    final IOException[] ioException = new IOException[1];
-
-    try {
-      SwingUtilities.invokeAndWait(new Runnable() {
-        @Override
-        public void run() {
-          ApplicationManager.getApplication().runWriteAction(new Runnable() {
-            @Override
-            public void run() {
-              try {
-                file.delete(FileUtil.class);
-              } catch (IOException e) {
-                ioException[0] = e;
-              }
-            }
-          });
-        }
-      });
-    } catch (InterruptedException e) {
-      assert false;
-    } catch (InvocationTargetException e) {
-      throw new RuntimeException(e);
-    }
-
-    if (ioException[0] != null) {
-      throw ioException[0];
-    }
   }
 
   static class PathResolutionException extends RuntimeException {

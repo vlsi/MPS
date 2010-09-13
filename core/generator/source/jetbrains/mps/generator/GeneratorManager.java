@@ -18,6 +18,7 @@ package jetbrains.mps.generator;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.generator.fileGenerator.vcs.FileProcessor;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.impl.GenerationController;
 import jetbrains.mps.generator.impl.GenerationProcessContext;
@@ -140,6 +141,7 @@ public class GeneratorManager {
         CleanupManager.getInstance().cleanup();
       }
     });
+    FileProcessor.invoke();
     return result[0];
   }
 

@@ -15,11 +15,9 @@
  */
 package jetbrains.mps.generator.fileGenerator;
 
-import com.intellij.openapi.vfs.VirtualFile;
-
 import java.io.File;
 import java.util.Set;
 
 public interface CacheGenerator {
-  VirtualFile generateCache(CacheGenerationContext context);
+  File generateCache(CacheGenerationContext context);
 }

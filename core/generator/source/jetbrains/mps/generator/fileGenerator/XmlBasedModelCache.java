@@ -15,11 +15,9 @@
  */
 package jetbrains.mps.generator.fileGenerator;
 
-import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
@@ -28,6 +26,7 @@ import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -69,21 +68,13 @@ public abstract class XmlBasedModelCache<T> extends BaseModelCache<T> {
   }
 
   @Override
-  protected VirtualFile saveCache(@NotNull T cache, SModelDescriptor model) {
+  protected File saveCache(@NotNull T cache, SModelDescriptor model) {
     IFile cacheFile = getCacheFile(model);
     if (cacheFile == null) return null;
 
-    VirtualFile cacheVFile;
-    try {
-      cacheVFile = FileUtil.createVirtualFile(cacheFile.getParent().toFile(), cacheFile.getName());
-    } catch (IOException e) {
-      LOG.error(e, "Could no.t write cache file");
-      return null;
-    }
-
     OutputStream os = null;
     try {
-      os = cacheVFile.getOutputStream(XmlBasedModelCache.class);
+      os = cacheFile.openOutputStream();
       save(cache, os);
     } catch (IOException e) {
       LOG.error(e);
@@ -96,7 +87,7 @@ public abstract class XmlBasedModelCache<T> extends BaseModelCache<T> {
         }
       }
     }
-    return cacheVFile;
+    return cacheFile.toFile();
   }
 
   protected void save(T t, OutputStream os) throws IOException {
