@@ -16,11 +16,8 @@
 package jetbrains.mps.newTypesystem;
 
 
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.IWrapper;
-
-import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -32,12 +29,12 @@ import java.util.*;
 public class State {
   private Equations myEquations = new Equations();
   private Inequalities myInequalities = new Inequalities();
-  private NodesToTypes myNodesToTypes = new NodesToTypes();
+  private NodeMaps myNodeMaps = new NodeMaps();
 
   public void rollBack(Difference difference) {
     myEquations.rollBack();
-
-    myNodesToTypes.rollBack(difference.getNodeToTypes());
+    myInequalities.rollBack();
+    //myNodeMaps.rollBack();
   }
 
   public Equations getEquations() {
@@ -45,6 +42,7 @@ public class State {
   }
 
   public Difference addEquation(IWrapper left, IWrapper right, EquationInfo info) {
+    myEquations.addEquation(left, right);
     return null;
   }
 

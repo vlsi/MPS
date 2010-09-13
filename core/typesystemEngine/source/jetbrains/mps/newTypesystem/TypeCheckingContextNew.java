@@ -32,7 +32,6 @@ import java.util.Stack;
  */
 public class TypeCheckingContextNew extends TypeCheckingContext {
 
-  private Equations myEquations = new Equations();
   private State myState = new State();
   private Stack<Difference> myDifferenceStack = new Stack<Difference>();
 
@@ -40,10 +39,19 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     super(rootNode, typeChecker);
   }
 
+  private void rollBack() {
+    if (myDifferenceStack.isEmpty()) {
+      return;
+    }
+    myState.rollBack(myDifferenceStack.pop());
+  }
+
   @Override
   public void createEquation(IWrapper left, IWrapper right, EquationInfo equationInfo) {
     myDifferenceStack.add(myState.addEquation(left, right, equationInfo));
   }
+
+
 
 
 }

@@ -15,6 +15,14 @@
  */
 package jetbrains.mps.newTypesystem;
 
+import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.typesystem.inference.IWrapper;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
@@ -23,4 +31,29 @@ package jetbrains.mps.newTypesystem;
  * To change this template use File | Settings | File Templates.
  */
 public class Inequalities {
+  private Set<InequalityMapPair> myInequalities = new HashSet<InequalityMapPair>();
+
+  private InequalityMapPair myWeakInequalities = new InequalityMapPair();
+  private InequalityMapPair myStrongInequalities = new InequalityMapPair();
+  private InequalityMapPair myWeakCheckInequalities = new InequalityMapPair();
+  private InequalityMapPair myStrongCheckInequalities = new InequalityMapPair();
+
+  private InequalityMapPair myComparableTypes = new InequalityMapPair();
+
+  public Inequalities() {
+    myInequalities.add(myWeakInequalities);
+    myInequalities.add(myStrongInequalities);
+    myInequalities.add(myWeakCheckInequalities);
+    myInequalities.add(myStrongCheckInequalities);
+  }
+
+  public void rollBack() {
+    
+  }
+
+  public void substitute(IWrapper var, IWrapper type) {
+    for (InequalityMapPair inequalityMap : myInequalities) {
+      inequalityMap.substitute(var, type);
+    }
+  }
 }

@@ -28,9 +28,7 @@ import java.util.Map;
  * To change this template use File | Settings | File Templates.
  */
 public class Difference {
-  private Map<SNode, SNode> myNodeToTypes = new HashMap<SNode, SNode>();
 
-  public Map<SNode, SNode> getNodeToTypes() {
-    return myNodeToTypes;
-  }
+
+
 }

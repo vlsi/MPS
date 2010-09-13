@@ -15,9 +15,11 @@
  */
 package jetbrains.mps.newTypesystem;
 
+import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.smodel.SNode;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -27,8 +29,9 @@ import java.util.Map;
  * Time: 6:38:28 PM
  * To change this template use File | Settings | File Templates.
  */
-public class NodesToTypes {
+public class NodeMaps {
   private Map<SNode, SNode> myNodeToTypes = new HashMap<SNode, SNode>();
+  private Map<SNode, List<IErrorReporter>> myNodesToErrors = new HashMap<SNode, List<IErrorReporter>>();
 
   public void rollBack(Map<SNode, SNode> difference) {
     for (SNode node :difference.keySet()) {
