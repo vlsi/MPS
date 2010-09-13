@@ -18,6 +18,7 @@ package jetbrains.mps;
 import com.intellij.idea.Main;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.util.SystemInfo;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 
@@ -28,6 +29,8 @@ public class ServerVMCheck implements ApplicationComponent{
 
   public static boolean ensureNonServerVMVersion() {
     if (InternalFlag.isInternalMode()) return true;
+
+    if (SystemInfo.isMac) return true;
 
     String vmName = System.getProperty("java.vm.name");
     if (!vmName.toLowerCase().contains("server")) return true;
