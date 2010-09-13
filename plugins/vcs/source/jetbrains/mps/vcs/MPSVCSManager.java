@@ -303,6 +303,10 @@ public class MPSVCSManager implements ProjectComponent {
 
     public void setListsToDisappear(Collection<String> names) {
     }
+
+    public FileStatus getStatus(VirtualFile virtualFile) {
+      return FileStatus.NOT_CHANGED;
+    }
   }
 
   private static class MyChangelistBuilder extends EmptyChangelistBuilder {

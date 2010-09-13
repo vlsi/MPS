@@ -18,7 +18,6 @@ package com.intellij.openapi.components.impl.stores;
 import com.intellij.CommonBundle;
 import com.intellij.ide.highlighter.ProjectFileType;
 import com.intellij.ide.highlighter.WorkspaceFileType;
-import com.intellij.notification.*;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ApplicationNamesInfo;
 import com.intellij.openapi.components.*;
@@ -35,7 +34,6 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.util.io.FileUtil;
-import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.ReadonlyStatusHandler;
 import com.intellij.openapi.vfs.VfsUtil;
@@ -51,14 +49,12 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.event.HyperlinkEvent;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.lang.annotation.Annotation;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
@@ -81,6 +77,7 @@ class ProjectStoreImpl extends BaseFileConfigurableStoreImpl implements IProject
   private static int originalVersion = -1;
 
   private StorageScheme myScheme = StorageScheme.DEFAULT;
+  private String myCachedLocation;
 
   ProjectStoreImpl(final ProjectEx project) {
     super(project);
@@ -95,8 +92,8 @@ class ProjectStoreImpl extends BaseFileConfigurableStoreImpl implements IProject
       String name = projectFile.getNameWithoutExtension();
 
       String message = ProjectBundle.message("project.convert.old.prompt", projectFile.getName(),
-                                             appNamesInfo.getProductName(),
-                                             name + OLD_PROJECT_SUFFIX + projectFile.getExtension());
+        appNamesInfo.getProductName(),
+        name + OLD_PROJECT_SUFFIX + projectFile.getExtension());
       if (Messages.showYesNoDialog(message, CommonBundle.getWarningTitle(), Messages.getWarningIcon()) != 0) return false;
 
       final ArrayList<String> conversionProblems = getConversionProblemsStorage();
@@ -109,8 +106,8 @@ class ProjectStoreImpl extends BaseFileConfigurableStoreImpl implements IProject
         }
         buffer.append(ProjectBundle.message("project.convert.problems.help"));
         final int result = Messages.showDialog(myProject, buffer.toString(), ProjectBundle.message("project.convert.problems.title"),
-                                               new String[]{ProjectBundle.message("project.convert.problems.help.button"),
-                                                 CommonBundle.getCloseButtonText()}, 0, Messages.getWarningIcon());
+          new String[]{ProjectBundle.message("project.convert.problems.help.button"),
+            CommonBundle.getCloseButtonText()}, 0, Messages.getWarningIcon());
         if (result == 0) {
           HelpManager.getInstance().invokeHelp("project.migrationProblems");
         }
@@ -204,6 +201,8 @@ class ProjectStoreImpl extends BaseFileConfigurableStoreImpl implements IProject
       LocalFileSystem.getInstance().refreshAndFindFileByPath(workspacePath);
       stateStorageManager.addMacro(WS_FILE_MACRO, workspacePath);
     }
+
+    myCachedLocation = null;
   }
 
   private static void useOldWsContent(final String filePath, final IFile ws) {
@@ -255,18 +254,19 @@ class ProjectStoreImpl extends BaseFileConfigurableStoreImpl implements IProject
       .findFileByIoFile(myScheme == StorageScheme.DEFAULT ? file.getParentFile() : file.getParentFile().getParentFile());
   }
 
-  public void setStorageFormat(final StorageFormat storageFormat) {
-  }
-
   @Nullable
   public String getLocation() {
-    if (myScheme == StorageScheme.DEFAULT) {
-      return getProjectFilePath();
+    if (myCachedLocation == null) {
+      if (myScheme == StorageScheme.DEFAULT) {
+        myCachedLocation = getProjectFilePath();
+      }
+      else {
+        final VirtualFile baseDir = getProjectBaseDir();
+        myCachedLocation = baseDir == null ? null : baseDir.getPath();
+      }
     }
-    else {
-      final VirtualFile baseDir = getProjectBaseDir();
-      return baseDir == null ? null : baseDir.getPath();
-    }
+
+    return myCachedLocation;
   }
 
   @NotNull
@@ -274,7 +274,7 @@ class ProjectStoreImpl extends BaseFileConfigurableStoreImpl implements IProject
   public String getProjectName() {
     if (myScheme == StorageScheme.DIRECTORY_BASED) {
       final VirtualFile baseDir = getProjectBaseDir();
-      assert baseDir != null;
+      assert baseDir != null : "project file: " + (getProjectFile() == null ? "[NULL]" : getProjectFile().getPath());
       return baseDir.getName().replace(":", "");
     }
 

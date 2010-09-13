@@ -13,11 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.intellij.ide.util.gotoByName;
 
+import com.intellij.Patches;
 import com.intellij.ide.IdeBundle;
 import com.intellij.ide.actions.CopyReferenceAction;
 import com.intellij.ide.ui.UISettings;
+import com.intellij.openapi.MnemonicHelper;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
@@ -27,10 +30,14 @@ import com.intellij.openapi.editor.colors.EditorColorsScheme;
 import com.intellij.openapi.keymap.KeymapManager;
 import com.intellij.openapi.progress.ProcessCanceledException;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.ui.popup.JBPopup;
+import com.intellij.openapi.ui.popup.*;
+import com.intellij.openapi.util.ActionCallback;
+import com.intellij.openapi.util.Comparing;
+import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Pair;
-import com.intellij.openapi.util.SystemInfo;
+import com.intellij.openapi.util.registry.Registry;
 import com.intellij.openapi.util.text.StringUtil;
+import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.openapi.wm.WindowManager;
 import com.intellij.openapi.wm.ex.WindowManagerEx;
 import com.intellij.psi.PsiElement;
@@ -40,19 +47,19 @@ import com.intellij.psi.statistics.StatisticsManager;
 import com.intellij.psi.util.proximity.PsiProximityComparator;
 import com.intellij.ui.DocumentAdapter;
 import com.intellij.ui.ListScrollingUtil;
+import com.intellij.ui.ScrollPaneFactory;
+import com.intellij.ui.components.JBList;
 import com.intellij.ui.popup.PopupOwner;
 import com.intellij.ui.popup.PopupUpdateProcessor;
 import com.intellij.util.Alarm;
-import com.intellij.util.SmartList;
 import com.intellij.util.diff.Diff;
 import com.intellij.util.ui.UIUtil;
-import jetbrains.mps.ide.ChooseItemComponent;
 import jetbrains.mps.util.annotation.Patch;
-import org.apache.oro.text.regex.*;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -63,21 +70,24 @@ import java.lang.ref.Reference;
 import java.lang.ref.WeakReference;
 import java.util.*;
 import java.util.List;
-import java.util.regex.Matcher;
 
 public abstract class ChooseByNameBase {
   private static final Logger LOG = Logger.getInstance("#com.intellij.ide.util.gotoByName.ChooseByNameBase");
 
   protected final Project myProject;
-  protected final ChooseByNameModel myModel;
-  @Patch
-  protected String myInitialText; // final modifier removed
-  private final Reference<PsiElement> myContext;
+
+  @Patch //public
+  public final ChooseByNameModel myModel;
+  protected final String myInitialText;
+  private boolean myPreselectInitialText;
+
+  @Patch //public
+  public final Reference<PsiElement> myContext;
 
   protected Component myPreviouslyFocusedComponent;
 
   protected JPanelProvider myTextFieldPanel;// Located in the layered pane
-  protected JTextField myTextField;
+  protected MyTextField myTextField;
   private JPanel myCardContainer;
   private CardLayout myCard;
   protected JCheckBox myCheckBox;
@@ -98,13 +108,20 @@ public abstract class ChooseByNameBase {
 
   private final ListUpdater myListUpdater = new ListUpdater();
 
-  private boolean myListIsUpToDate = false;
+  private volatile boolean myListIsUpToDate = false;
   protected boolean myDisposedFlag = false;
+  private ActionCallback myPosponedOkAction;
 
-  private final String[][] myNames = new String[2][];
+  @Patch
+  //public
+  public final String[][] myNames = new String[2][];
   private CalcElementsThread myCalcElementsThread;
   private static int VISIBLE_LIST_SIZE_LIMIT = 10;
-  protected int myMaximumListSizeLimit = getVisibleItemsCount();
+  private static final int MAXIMUM_LIST_SIZE_LIMIT = 30;
+
+  @Patch
+  //public
+  public int myMaximumListSizeLimit = MAXIMUM_LIST_SIZE_LIMIT;
   @NonNls
   private static final String NOT_FOUND_IN_PROJECT_CARD = "syslib";
   @NonNls
@@ -114,6 +131,28 @@ public abstract class ChooseByNameBase {
   @NonNls
   private static final String SEARCHING_CARD = "searching";
   private static final int REBUILD_DELAY = 300;
+
+  private final Alarm myHideAlarm = new Alarm();
+  private boolean myShowListAfterCompletionKeyStroke = false;
+  protected JBPopup myTextPopup;
+  protected JBPopup myDropdownPopup;
+
+  private static class MatchesComparator implements Comparator<String> {
+    private final String myOriginalPattern;
+
+    private MatchesComparator(final String originalPattern) {
+      myOriginalPattern = originalPattern.trim();
+    }
+
+    public int compare(final String a, final String b) {
+      boolean aStarts = a.startsWith(myOriginalPattern);
+      boolean bStarts = b.startsWith(myOriginalPattern);
+      if (aStarts && bStarts) return a.compareToIgnoreCase(b);
+      if (aStarts && !bStarts) return -1;
+      if (bStarts && !aStarts) return 1;
+      return a.compareToIgnoreCase(b);
+    }
+  }
 
   /**
    * @param initialText initial text which will be in the lookup text field
@@ -126,21 +165,18 @@ public abstract class ChooseByNameBase {
     myContext = new WeakReference<PsiElement>(context);
   }
 
-  protected int getVisibleItemsCount() {
-    return 30;
+  public boolean isPreselectInitialText() {
+    return myPreselectInitialText;
   }
 
-  //this method is needed by our obfuscator since IDEA class ChooseByNamePopup requires it
-  public String getNamePattern(String pattern) {
-    return "";
+  public void setPreselectInitialText(boolean preselectInitialText) {
+    myPreselectInitialText = preselectInitialText;
   }
 
-  /**
-   * @return get tool area
-   */
-  public JComponent getToolArea() {
-    return myToolArea;
+  public void setShowListAfterCompletionKeyStroke(boolean showListAfterCompletionKeyStroke) {
+    myShowListAfterCompletionKeyStroke = showListAfterCompletionKeyStroke;
   }
+
 
   /**
    * Set tool area. The method may be called only before invoke.
@@ -154,7 +190,9 @@ public abstract class ChooseByNameBase {
     myToolArea = toolArea;
   }
 
-  public void invoke(final ChooseByNamePopupComponent.Callback callback, final ModalityState modalityState, boolean allowMultipleSelection) {
+  public void invoke(final ChooseByNamePopupComponent.Callback callback,
+                     final ModalityState modalityState,
+                     boolean allowMultipleSelection) {
     initUI(callback, modalityState, allowMultipleSelection);
   }
 
@@ -162,18 +200,17 @@ public abstract class ChooseByNameBase {
     JBPopup myHint = null;
     boolean myFocusRequested = false;
 
-    JPanelProvider(LayoutManager mgr) {
-      super(mgr);
-    }
-
     JPanelProvider() {
     }
 
     public Object getData(String dataId) {
+      if (PlatformDataKeys.HELP_ID.is(dataId)) {
+        return myModel.getHelpId();
+      }
       if (!myListIsUpToDate) {
         return null;
       }
-      if (dataId.equals(DataConstants.PSI_ELEMENT)) {
+      if (LangDataKeys.PSI_ELEMENT.is(dataId)) {
         Object element = getChosenElement();
 
         if (element instanceof PsiElement) {
@@ -183,7 +220,7 @@ public abstract class ChooseByNameBase {
         if (element instanceof DataProvider) {
           return ((DataProvider) element).getData(dataId);
         }
-      } else if (dataId.equals(DataConstants.PSI_ELEMENT_ARRAY)) {
+      } else if (LangDataKeys.PSI_ELEMENT_ARRAY.is(dataId)) {
         final List<Object> chosenElements = getChosenElements();
         if (chosenElements != null) {
           List<PsiElement> result = new ArrayList<PsiElement>();
@@ -194,7 +231,7 @@ public abstract class ChooseByNameBase {
           }
           return result.toArray(new PsiElement[result.size()]);
         }
-      } else if (dataId.equals(DataConstants.DOMINANT_HINT_AREA_RECTANGLE)) {
+      } else if (PlatformDataKeys.DOMINANT_HINT_AREA_RECTANGLE.is(dataId)) {
         return getBounds();
       }
       return null;
@@ -243,86 +280,82 @@ public abstract class ChooseByNameBase {
     }
   }
 
-  @Patch
-  public void setInitialText(String text) {
-    myInitialText = text;
-  }
-
   /**
    * @param callback
    * @param modalityState          - if not null rebuilds list in given {@link com.intellij.openapi.application.ModalityState}
    * @param allowMultipleSelection
    */
-  protected void initUI(final ChooseByNamePopupComponent.Callback callback, final ModalityState modalityState, boolean allowMultipleSelection) {
+  protected void initUI(final ChooseByNamePopupComponent.Callback callback,
+                        final ModalityState modalityState,
+                        boolean allowMultipleSelection) {
     myPreviouslyFocusedComponent = WindowManagerEx.getInstanceEx().getFocusedComponent(myProject);
 
     myActionListener = callback;
     myTextFieldPanel = new JPanelProvider();
     myTextFieldPanel.setLayout(new BoxLayout(myTextFieldPanel, BoxLayout.Y_AXIS));
+
     final JPanel hBox = new JPanel();
     hBox.setLayout(new BoxLayout(hBox, BoxLayout.X_AXIS));
 
+    JPanel caption2Tools = new JPanel(new BorderLayout());
+
     if (myModel.getPromptText() != null) {
-      JLabel label = new JLabel(" " + myModel.getPromptText());
+      JLabel label = new JLabel(myModel.getPromptText());
       label.setFont(UIUtil.getLabelFont().deriveFont(Font.BOLD));
-      hBox.add(label);
+      caption2Tools.add(label, BorderLayout.WEST);
     }
+
+    GridBagLayout gb = new GridBagLayout();
+    JPanel eastWrapper = new JPanel(gb);
+    gb.setConstraints(hBox, new GridBagConstraints(0, 0, 0, 0, 1, 1, GridBagConstraints.SOUTHEAST, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0));
+    eastWrapper.add(hBox);
+
+    caption2Tools.add(eastWrapper, BorderLayout.CENTER);
 
     myCard = new CardLayout();
     myCardContainer = new JPanel(myCard);
 
     final JPanel checkBoxPanel = new JPanel();
-    checkBoxPanel.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 5));
     myCheckBox = new JCheckBox(myModel.getCheckBoxName());
+    myCheckBox.setAlignmentX(SwingConstants.RIGHT);
     myCheckBox.setSelected(myModel.loadInitialCheckBoxState());
 
     if (myModel.getPromptText() != null) {
       checkBoxPanel.setLayout(new BoxLayout(checkBoxPanel, BoxLayout.X_AXIS));
-      checkBoxPanel.add(new JLabel("  ("));
       checkBoxPanel.add(myCheckBox);
-      checkBoxPanel.add(new JLabel(")"));
     } else {
       checkBoxPanel.setLayout(new BoxLayout(checkBoxPanel, BoxLayout.LINE_AXIS));
       checkBoxPanel.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
-      checkBoxPanel.add(new JLabel(")"));
       checkBoxPanel.add(myCheckBox);
-      checkBoxPanel.add(new JLabel("  ("));
     }
     checkBoxPanel.setVisible(myModel.getCheckBoxName() != null);
     JPanel panel = new JPanel(new BorderLayout());
     panel.add(checkBoxPanel, BorderLayout.CENTER);
     myCardContainer.add(panel, CHECK_BOX_CARD);
-    myCardContainer.add(new JLabel("  (" + myModel.getNotInMessage() + ")"), NOT_FOUND_IN_PROJECT_CARD);
-    myCardContainer.add(new JLabel("  " + IdeBundle.message("label.choosebyname.no.matches.found")), NOT_FOUND_CARD);
-    myCardContainer.add(new JLabel("  " + IdeBundle.message("label.choosebyname.searching")), SEARCHING_CARD);
+
+    myCardContainer.add(new HintLabel(myModel.getNotInMessage()), NOT_FOUND_IN_PROJECT_CARD);
+    myCardContainer.add(new HintLabel(IdeBundle.message("label.choosebyname.no.matches.found")), NOT_FOUND_CARD);
+    myCardContainer.add(new HintLabel(IdeBundle.message("label.choosebyname.searching")), SEARCHING_CARD);
     myCard.show(myCardContainer, CHECK_BOX_CARD);
-
-    //myCaseCheckBox = new JCheckBox("Ignore case");
-    //myCaseCheckBox.setMnemonic('g');
-    //myCaseCheckBox.setSelected(true);
-
-    //myCamelCheckBox = new JCheckBox("Camel words");
-    //myCamelCheckBox.setMnemonic('w');
-    //myCamelCheckBox.setSelected(true);
 
     if (isCheckboxVisible()) {
       hBox.add(myCardContainer);
-      //hBox.add(myCheckBox);
-      //hBox.add(myCaseCheckBox);
-      //hBox.add(myCamelCheckBox);
-    }
-    if (myToolArea != null) {
-      // if too area was set, add it to hbox
-      hBox.add(myToolArea);
     }
 
-    hBox.add(new JPanel());
-    myTextFieldPanel.add(hBox);
+    if (myToolArea != null) {
+      hBox.add(Box.createHorizontalStrut(5));
+      hBox.add(myToolArea);
+    }
+    hBox.add(Box.createHorizontalStrut(5));
+    myTextFieldPanel.add(caption2Tools);
 
     myHistory = new ArrayList<Pair<String, Integer>>();
     myFuture = new ArrayList<Pair<String, Integer>>();
     myTextField = new MyTextField();
     myTextField.setText(myInitialText);
+    if (myPreselectInitialText) {
+      myTextField.select(0, myInitialText.length());
+    }
 
     final ActionMap actionMap = new ActionMap();
     actionMap.setParent(myTextField.getActionMap());
@@ -347,11 +380,24 @@ public abstract class ChooseByNameBase {
 
     if (isCloseByFocusLost()) {
       myTextField.addFocusListener(new FocusAdapter() {
-        public void focusLost(FocusEvent e) {
-          if (!myTextFieldPanel.focusRequested()) {
-            doClose(false);
-            myTextFieldPanel.hideHint();
-          }
+        public void focusLost(final FocusEvent e) {
+          myHideAlarm.addRequest(new Runnable() {
+            public void run() {
+              JBPopup popup = JBPopupFactory.getInstance().getChildFocusedPopup(e.getComponent());
+              if (popup != null) {
+                popup.addListener(new JBPopupListener.Adapter() {
+                  @Override
+                  public void onClosed(LightweightWindowEvent event) {
+                    if (event.isOk()) {
+                      hideHint();
+                    }
+                  }
+                });
+              } else {
+                hideHint();
+              }
+            }
+          }, 200);
         }
       });
     }
@@ -365,6 +411,7 @@ public abstract class ChooseByNameBase {
 
     myTextField.getDocument().addDocumentListener(new DocumentAdapter() {
       protected void textChanged(DocumentEvent e) {
+        clearPosponedOkAction(false);
         rebuildList();
       }
     });
@@ -390,8 +437,8 @@ public abstract class ChooseByNameBase {
             break;
           case KeyEvent.VK_ENTER:
             if (myList.getSelectedValue() == EXTRA_ELEM) {
-              myMaximumListSizeLimit += getVisibleItemsCount();
-              rebuildList(myList.getSelectedIndex(), REBUILD_DELAY, null, ModalityState.current());
+              myMaximumListSizeLimit += MAXIMUM_LIST_SIZE_LIMIT;
+              rebuildList(myList.getSelectedIndex(), REBUILD_DELAY, null, ModalityState.current(), e);
               e.consume();
             }
             break;
@@ -406,7 +453,7 @@ public abstract class ChooseByNameBase {
     });
 
     myListModel = new DefaultListModel();
-    myList = new JList(myListModel);
+    myList = new JBList(myListModel);
     myList.setFocusable(false);
     myList.setSelectionMode(allowMultipleSelection ? ListSelectionModel.MULTIPLE_INTERVAL_SELECTION :
       ListSelectionModel.SINGLE_SELECTION);
@@ -418,8 +465,8 @@ public abstract class ChooseByNameBase {
 
         if (e.getClickCount() == 2) {
           if (myList.getSelectedValue() == EXTRA_ELEM) {
-            myMaximumListSizeLimit += getVisibleItemsCount();
-            rebuildList(myList.getSelectedIndex(), REBUILD_DELAY, null, ModalityState.current());
+            myMaximumListSizeLimit += MAXIMUM_LIST_SIZE_LIMIT;
+            rebuildList(myList.getSelectedIndex(), REBUILD_DELAY, null, ModalityState.current(), e);
             e.consume();
           } else {
             doClose(true);
@@ -437,17 +484,22 @@ public abstract class ChooseByNameBase {
       }
     });
 
-    myListScrollPane = new JScrollPane(myList);
+    myListScrollPane = ScrollPaneFactory.createScrollPane(myList);
+    myListScrollPane.setViewportBorder(new EmptyBorder(0, 0, 0, 0));
 
-    if (!UIUtil.isMotifLookAndFeel()) {
-      UIUtil.installPopupMenuBorder(myTextFieldPanel);
-    }
-    UIUtil.installPopupMenuColorAndFonts(myTextFieldPanel);
+    myTextFieldPanel.setBorder(new EmptyBorder(2, 2, 2, 2));
 
     showTextFieldPanel();
 
     if (modalityState != null) {
-      rebuildList(0, 0, null, modalityState);
+      rebuildList(0, 0, null, modalityState, null);
+    }
+  }
+
+  private void hideHint() {
+    if (!myTextFieldPanel.focusRequested()) {
+      doClose(false);
+      myTextFieldPanel.hideHint();
     }
   }
 
@@ -455,8 +507,8 @@ public abstract class ChooseByNameBase {
    * Default rebuild list. It uses {@link #REBUILD_DELAY} and current modality state.
    */
   public void rebuildList() {
-    // TODO this method is public, because the myChooser does not listed for the model.
-    rebuildList(0, REBUILD_DELAY, null, ModalityState.current());
+    // TODO this method is public, because the chooser does not listed for the model.
+    rebuildList(0, REBUILD_DELAY, null, ModalityState.current(), null);
   }
 
   private void updateDocumentation() {
@@ -466,7 +518,7 @@ public abstract class ChooseByNameBase {
       if (element instanceof PsiElement) {
         myTextFieldPanel.updateHint((PsiElement) element);
       } else if (element instanceof DataProvider) {
-        final Object o = ((DataProvider) element).getData(DataConstants.PSI_ELEMENT);
+        final Object o = ((DataProvider) element).getData(LangDataKeys.PSI_ELEMENT.getName());
         if (o instanceof PsiElement) {
           myTextFieldPanel.updateHint((PsiElement) o);
         }
@@ -475,8 +527,31 @@ public abstract class ChooseByNameBase {
   }
 
   private void doClose(final boolean ok) {
-    myListUpdater.cancelAll();
+    if (myDisposedFlag) return;
+
+    if (posponeCloseWhenListReady(ok)) return;
+
+    cancelListUpdater();
     close(ok);
+
+    clearPosponedOkAction(ok);
+  }
+
+  protected void cancelListUpdater() {
+    myListUpdater.cancelAll();
+  }
+
+  private boolean posponeCloseWhenListReady(boolean ok) {
+    if (!Registry.is("actionSystem.fixLostTyping")) return false;
+
+    final String text = myTextField.getText();
+    if (ok && !myListIsUpToDate && text != null && text.trim().length() > 0) {
+      myPosponedOkAction = new ActionCallback();
+      IdeFocusManager.getInstance(myProject).suspendKeyProcessingUntil(myPosponedOkAction);
+      return true;
+    }
+
+    return false;
   }
 
   private synchronized void ensureNamesLoaded(boolean checkboxState) {
@@ -517,47 +592,40 @@ public abstract class ChooseByNameBase {
     final int paneHeight = layeredPane.getHeight();
     final int y = paneHeight / 3 - preferredTextFieldPanelSize.height / 2;
 
-
-    myTextFieldPanel.setBounds(x, y, preferredTextFieldPanelSize.width, preferredTextFieldPanelSize.height);
-    layeredPane.add(myTextFieldPanel, Integer.valueOf(500));
-    layeredPane.moveToFront(myTextFieldPanel);
     VISIBLE_LIST_SIZE_LIMIT = Math.max
       (10, (paneHeight - (y + preferredTextFieldPanelSize.height)) / (preferredTextFieldPanelSize.height / 2) - 1);
 
-    // I'm registering KeyListener to close popup only by KeyTyped event.
-    // If react on KeyPressed then sometime KeyTyped goes into underlying editor.
-    // It causes typing of Enter into it.
-    myTextFieldPanel.registerKeyboardAction(new AbstractAction() {
-      public void actionPerformed(ActionEvent e) {
-        doClose(false);
+    ComponentPopupBuilder builder = JBPopupFactory.getInstance().createComponentPopupBuilder(myTextFieldPanel, myTextField);
+    builder.setCancelCallback(new Computable<Boolean>() {
+      @Override
+      public Boolean compute() {
+        myTextPopup = null;
+        close(false);
+        return Boolean.TRUE;
       }
-    }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0),
-      JComponent.WHEN_IN_FOCUSED_WINDOW
-    );
+    }).setFocusable(true).setRequestFocus(true).setForceHeavyweight(true).setModalContext(false).setCancelOnClickOutside(false);
 
-    myList.registerKeyboardAction(new AbstractAction() {
-      public void actionPerformed(ActionEvent e) {
-        doClose(false);
-      }
-    }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0),
-      JComponent.WHEN_IN_FOCUSED_WINDOW
-    );
+    Point point = new Point(x, y);
+    SwingUtilities.convertPointToScreen(point, layeredPane);
+    Rectangle bounds = new Rectangle(point, new Dimension(preferredTextFieldPanelSize.width + 20, preferredTextFieldPanelSize.height));
+    myTextPopup = builder.createPopup();
+    myTextPopup.setSize(bounds.getSize());
+    myTextPopup.setLocation(bounds.getLocation());
 
-    if (myTextField.requestFocusInWindow() || SystemInfo.isMac) {
-      myTextField.requestFocus();
-    }
-
-    myTextFieldPanel.validate();
-    myTextFieldPanel.paintImmediately(0, 0, myTextFieldPanel.getWidth(), myTextFieldPanel.getHeight());
+    new MnemonicHelper().register(myTextFieldPanel);
+    myTextPopup.show(layeredPane);
   }
 
   private JLayeredPane getLayeredPane() {
     JLayeredPane layeredPane;
     final Window window = WindowManager.getInstance().suggestParentWindow(myProject);
-    if (window instanceof JFrame) {
-      layeredPane = ((JFrame) window).getLayeredPane();
-    } else if (window instanceof JDialog) {
-      layeredPane = ((JDialog) window).getLayeredPane();
+
+    Component parent = UIUtil.findUltimateParent(window);
+
+    if (parent instanceof JFrame) {
+      layeredPane = ((JFrame) parent).getLayeredPane();
+    } else if (parent instanceof JDialog) {
+      layeredPane = ((JDialog) parent).getLayeredPane();
     } else {
       throw new IllegalStateException("cannot find parent window: project=" + myProject +
         (myProject != null ? "; open=" + myProject.isOpen() : "") +
@@ -568,16 +636,22 @@ public abstract class ChooseByNameBase {
 
   private final Object myRebuildMutex = new Object();
 
-  protected void rebuildList(final int pos, final int delay, final Runnable postRunnable, final ModalityState modalityState) {
+  protected void rebuildList(final int pos,
+                             final int delay,
+                             final Runnable postRunnable,
+                             final ModalityState modalityState,
+                             final @Nullable ComponentEvent e) {
+    ApplicationManager.getApplication().assertIsDispatchThread();
     myListIsUpToDate = false;
     myAlarm.cancelAllRequests();
     myListUpdater.cancelAll();
 
-    tryToCancel();
+    cancelCalcElementsThread();
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
         final String text = myTextField.getText();
-        if (!isShowListForEmptyPattern() && (text == null || text.trim().length() == 0)) {
+        if (!canShowListForEmptyPattern() &&
+          (text == null || text.trim().length() == 0)) {
           myListModel.clear();
           hideList();
           myCard.show(myCardContainer, CHECK_BOX_CARD);
@@ -593,7 +667,7 @@ public abstract class ChooseByNameBase {
                     return;
                   }
 
-                  setElementsToList(pos, elements, text);
+                  setElementsToList(pos, elements);
 
                   myListIsUpToDate = true;
                   choosenElementMightChange();
@@ -605,16 +679,15 @@ public abstract class ChooseByNameBase {
               }
             };
 
-            tryToCancel();
+            cancelCalcElementsThread();
 
-            myCalcElementsThread = new CalcElementsThread(text, myCheckBox.isSelected(), callback, modalityState);
-            myCalcElementsThread.setCanCancel(postRunnable == null);
+            myCalcElementsThread = new CalcElementsThread(text, myCheckBox.isSelected(), callback, modalityState, postRunnable == null);
             ApplicationManager.getApplication().executeOnPooledThread(myCalcElementsThread);
           }
         };
 
         if (delay > 0) {
-          myAlarm.addRequest(request, delay, ModalityState.current());
+          myAlarm.addRequest(request, delay, ModalityState.stateForComponent(myTextField));
         } else {
           request.run();
         }
@@ -622,14 +695,18 @@ public abstract class ChooseByNameBase {
     }, modalityState);
   }
 
-  private void tryToCancel() {
+  private boolean isShowListAfterCompletionKeyStroke() {
+    return myShowListAfterCompletionKeyStroke;
+  }
+
+  private void cancelCalcElementsThread() {
     if (myCalcElementsThread != null) {
       myCalcElementsThread.cancel();
       myCalcElementsThread = null;
     }
   }
 
-  private void setElementsToList(int pos, Set<?> elements, final String patternText) {
+  private void setElementsToList(int pos, Set<?> elements) {
     myListUpdater.cancelAll();
     if (myDisposedFlag) return;
     if (elements.isEmpty()) {
@@ -637,6 +714,7 @@ public abstract class ChooseByNameBase {
       myTextField.setForeground(Color.red);
       myListUpdater.cancelAll();
       hideList();
+      clearPosponedOkAction(false);
       return;
     }
 
@@ -702,8 +780,29 @@ public abstract class ChooseByNameBase {
     return bestPosition;
   }
 
+  @NonNls
   protected String statisticsContext() {
     return "choose_by_name#" + myModel.getPromptText() + "#" + myCheckBox.isSelected() + "#" + myTextField.getText();
+  }
+
+  private String getQualifierPattern(String pattern) {
+    final String[] separators = myModel.getSeparators();
+    int lastSeparatorOccurence = 0;
+    for (String separator : separators) {
+      lastSeparatorOccurence = Math.max(lastSeparatorOccurence, pattern.lastIndexOf(separator));
+    }
+    return pattern.substring(0, lastSeparatorOccurence);
+  }
+
+  public String getNamePattern(String pattern) {
+    final String[] separators = myModel.getSeparators();
+    int lastSeparatorOccurence = 0;
+    for (String separator : separators) {
+      final int idx = pattern.lastIndexOf(separator);
+      lastSeparatorOccurence = Math.max(lastSeparatorOccurence, idx == -1 ? idx : idx + separator.length());
+    }
+
+    return pattern.substring(lastSeparatorOccurence);
   }
 
   private interface Cmd {
@@ -714,7 +813,7 @@ public abstract class ChooseByNameBase {
     private final int start;
     private final int end;
 
-    public RemoveCmd(final int start, final int end) {
+    private RemoveCmd(final int start, final int end) {
       this.start = start;
       this.end = end;
     }
@@ -728,7 +827,7 @@ public abstract class ChooseByNameBase {
     private final int idx;
     private final Object element;
 
-    public InsertCmd(final int idx, final Object element) {
+    private InsertCmd(final int idx, final Object element) {
       this.idx = idx;
       this.element = element;
     }
@@ -768,18 +867,43 @@ public abstract class ChooseByNameBase {
           }
 
           myList.setVisibleRowCount(Math.min(VISIBLE_LIST_SIZE_LIMIT, myList.getModel().getSize()));
-          if (myListModel.size() > 0) {
+          if (!myListModel.isEmpty()) {
             int pos = selectionPos == 0 ? detectBestStatisticalPosition() : selectionPos;
             ListScrollingUtil.selectItem(myList, Math.min(pos, myListModel.size() - 1));
           }
 
           if (!myCommands.isEmpty()) {
             myAlarm.addRequest(this, DELAY);
+          } else {
+            doPostponedOkIfNeeded();
           }
-          showList();
+          if (!myDisposedFlag) {
+            showList();
+          }
         }
       }, DELAY);
     }
+
+    private void doPostponedOkIfNeeded() {
+      if (myPosponedOkAction != null) {
+        if (getChosenElement() != null) {
+          doClose(true);
+          clearPosponedOkAction(myDisposedFlag);
+        }
+      }
+    }
+  }
+
+  private void clearPosponedOkAction(boolean success) {
+    if (myPosponedOkAction != null) {
+      if (success) {
+        myPosponedOkAction.setDone();
+      } else {
+        myPosponedOkAction.setRejected();
+      }
+    }
+
+    myPosponedOkAction = null;
   }
 
   protected abstract void showList();
@@ -794,6 +918,8 @@ public abstract class ChooseByNameBase {
     return elements != null && elements.size() == 1 ? elements.get(0) : null;
   }
 
+  @Patch
+  //public
   public List<Object> getChosenElements() {
     if (myListIsUpToDate) {
       List<Object> values = new ArrayList<Object>(Arrays.asList(myList.getSelectedValues()));
@@ -824,12 +950,14 @@ public abstract class ChooseByNameBase {
   protected void choosenElementMightChange() {
   }
 
-  private final class MyTextField extends JTextField implements PopupOwner {
+  protected final class MyTextField extends JTextField implements PopupOwner {
     private final KeyStroke myCompletionKeyStroke;
     private final KeyStroke forwardStroke;
     private final KeyStroke backStroke;
 
-    public MyTextField() {
+    private boolean completionKeyStrokeHappened = false;
+
+    private MyTextField() {
       super(40);
       enableEvents(AWTEvent.KEY_EVENT_MASK);
       myCompletionKeyStroke = getShortcut(IdeActions.ACTION_CODE_COMPLETION);
@@ -850,18 +978,21 @@ public abstract class ChooseByNameBase {
 
     protected void processKeyEvent(KeyEvent e) {
       final KeyStroke keyStroke = KeyStroke.getKeyStrokeForEvent(e);
+
       if (myCompletionKeyStroke != null && keyStroke.equals(myCompletionKeyStroke)) {
+        completionKeyStrokeHappened = true;
         e.consume();
         final String pattern = myTextField.getText();
         final String oldText = myTextField.getText();
         final int oldPos = myList.getSelectedIndex();
         myHistory.add(Pair.create(oldText, oldPos));
         final Runnable postRunnable = new Runnable() {
+          @Patch
           public void run() {
-            fillInCommonPrefix(pattern);
+            //fillInCommonPrefix(pattern);
           }
         };
-        rebuildList(0, 0, postRunnable, ModalityState.current());
+        rebuildList(0, 0, postRunnable, ModalityState.current(), e);
         return;
       }
       if (backStroke != null && keyStroke.equals(backStroke)) {
@@ -872,7 +1003,7 @@ public abstract class ChooseByNameBase {
           final Pair<String, Integer> last = myHistory.remove(myHistory.size() - 1);
           myTextField.setText(last.first);
           myFuture.add(Pair.create(oldText, oldPos));
-          rebuildList(0, 0, null, ModalityState.current());
+          rebuildList(0, 0, null, ModalityState.current(), e);
         }
         return;
       }
@@ -884,15 +1015,21 @@ public abstract class ChooseByNameBase {
           final Pair<String, Integer> next = myFuture.remove(myFuture.size() - 1);
           myTextField.setText(next.first);
           myHistory.add(Pair.create(oldText, oldPos));
-          rebuildList(0, 0, null, ModalityState.current());
+          rebuildList(0, 0, null, ModalityState.current(), e);
         }
         return;
       }
-      super.processKeyEvent(e);
+      try {
+        super.processKeyEvent(e);
+      }
+      catch (NullPointerException e1) {
+        if (!Patches.SUN_BUG_6322854) {
+          throw e1;
+        }
+      }
     }
 
     private void fillInCommonPrefix(final String pattern) {
-/*
       final ArrayList<String> list = new ArrayList<String>();
       getNamesByPattern(myCheckBox.isSelected(), null, list, pattern);
 
@@ -916,7 +1053,6 @@ public abstract class ChooseByNameBase {
             if (commonPrefix.length() == 0) break;
           }
         }
-        assert commonPrefix != null;
         commonPrefix = list.get(0).substring(0, commonPrefix.length());
         for (int i = 1; i < list.size(); i++) {
           final String string = list.get(i).substring(0, commonPrefix.length());
@@ -934,7 +1070,6 @@ public abstract class ChooseByNameBase {
       myTextField.setCaretPosition(newPattern.length());
 
       rebuildList();
-*/
     }
 
     private boolean isComplexPattern(final String pattern) {
@@ -955,27 +1090,45 @@ public abstract class ChooseByNameBase {
       UISettings.setupAntialiasing(g);
       super.paintComponent(g);
     }
+
+    public boolean isCompletionKeyStroke() {
+      return completionKeyStrokeHappened;
+    }
   }
 
-  private static final String EXTRA_ELEM = "...";
+  @Patch
+  //public
+  public static final String EXTRA_ELEM = "...";
 
-  private class CalcElementsThread implements Runnable {
+  @Patch
+  //public
+  public class CalcElementsThread implements Runnable {
     private final String myPattern;
-    private boolean myCheckboxState;
+    @Patch
+    //public
+    public boolean myCheckboxState;
     private final CalcElementsCallback myCallback;
     private final ModalityState myModalityState;
 
     private Set<Object> myElements = null;
 
-    private volatile boolean myCancelled = false;
-    private boolean myCanCancel = true;
+    @Patch
+    //public
+    public volatile boolean myCancelled = false;
+    private final boolean myCanCancel;
 
-    public CalcElementsThread(String pattern, boolean checkboxState, CalcElementsCallback callback, ModalityState modalityState) {
+    private CalcElementsThread(String pattern,
+                               boolean checkboxState,
+                               CalcElementsCallback callback,
+                               ModalityState modalityState,
+                               boolean canCancel) {
       myPattern = pattern;
       myCheckboxState = checkboxState;
       myCallback = callback;
       myModalityState = modalityState;
+      myCanCancel = canCancel;
     }
+
 
     private final Alarm myShowCardAlarm = new Alarm();
 
@@ -989,7 +1142,9 @@ public abstract class ChooseByNameBase {
             ensureNamesLoaded(myCheckboxState);
             addElementsByPattern(elements, myPattern);
             for (Object elem : elements) {
-              if (myCancelled) throw new ProcessCanceledException();
+              if (myCancelled) {
+                break;
+              }
               if (elem instanceof PsiElement) {
                 final PsiElement psiElement = (PsiElement) elem;
                 psiElement.isWritable(); // That will cache writable flag in VirtualFile. Taking the action here makes it canceleable.
@@ -1036,266 +1191,113 @@ public abstract class ChooseByNameBase {
       }, delay, myModalityState);
     }
 
-    public void setCanCancel(boolean canCancel) {
-      myCanCancel = canCancel;
+    @Patch
+    private void addElementsByPattern(Set<Object> elementsArray, String pattern) {
+      new CompositeChooser(ChooseByNameBase.this, CalcElementsThread.this).addElementsByPattern(elementsArray, pattern);
     }
 
-    private void addElementsByPattern(Set<Object> elementsArray, String pattern) {
-       new CompositeChooser().addElementsByPattern(elementsArray, pattern);
-     }
+    private void cancel() {
+      if (myCanCancel) {
+        myCancelled = true;
+      }
+    }
+  }
+
+  private List<String> split(String s) {
+    List<String> answer = new ArrayList<String>();
+    for (String token : StringUtil.tokenize(s, StringUtil.join(myModel.getSeparators(), ""))) {
+      if (token.length() > 0) {
+        answer.add(token);
+      }
+    }
+
+    return answer.isEmpty() ? Collections.singletonList(s) : answer;
+  }
 
 
-     private void cancel() {
-       if (myCanCancel) {
-         myCancelled = true;
-       }
-     }
+  private void getNamesByPattern(final boolean checkboxState,
+                                 CalcElementsThread calcElementsThread,
+                                 final List<String> list,
+                                 String pattern) throws ProcessCanceledException {
+    if (!canShowListForEmptyPattern()) {
+      LOG.assertTrue(pattern.length() > 0);
+    }
 
-     private class MatchesComparator implements Comparator<String> {
-       private final String myOriginalPattern;
+    if (pattern.startsWith("@")) {
+      pattern = pattern.substring(1);
+    }
 
-       public MatchesComparator(final String originalPattern) {
-         myOriginalPattern = originalPattern.trim();
-       }
+    final String[] names = checkboxState ? myNames[1] : myNames[0];
+    final NameUtil.Matcher matcher = buildPatternMatcher(pattern);
 
-       public int compare(final String a, final String b) {
-         if (a.startsWith(myOriginalPattern) && b.startsWith(myOriginalPattern)) return a.compareToIgnoreCase(b);
-         if (a.startsWith(myOriginalPattern) && !b.startsWith(myOriginalPattern)) return -1;
-         if (b.startsWith(myOriginalPattern) && !a.startsWith(myOriginalPattern)) return 1;
-         return a.compareToIgnoreCase(b);
-       }
-     }
+    try {
+      for (String name : names) {
+        if (calcElementsThread != null && calcElementsThread.myCancelled) {
+          break;
+        }
+        if (matches(pattern, matcher, name)) {
+          list.add(name);
+        }
+      }
+    }
+    catch (Exception e) {
+      // Do nothing. No matches appears valid result for "bad" pattern
+    }
+  }
 
-     private class IdeaChooser implements Chooser {
-       public void addElementsByPattern(Set<Object> elementsArray, String pattern) {
-         String namePattern = getNamePattern(pattern);
-         String qualifierPattern = getQualifierPattern(pattern);
+  private boolean canShowListForEmptyPattern() {
+    return isShowListForEmptyPattern() || (isShowListAfterCompletionKeyStroke() && lastKeyStrokeIsCompletion());
+  }
 
-         boolean empty = namePattern.length() == 0 || namePattern.equals("@");
-         if (empty && !isShowListForEmptyPattern()) return;
+  protected boolean lastKeyStrokeIsCompletion() {
+    return myTextField.isCompletionKeyStroke();
+  }
 
-         List<String> namesList = new ArrayList<String>();
-         getNamesByPattern(myCheckboxState, CalcElementsThread.this, namesList, namePattern);
-         if (myCancelled) {
-           throw new ProcessCanceledException();
-         }
-         Collections.sort(namesList, new MatchesComparator(pattern));
+  private boolean matches(String pattern, NameUtil.Matcher matcher, String name) {
+    boolean matches = false;
+    if (name != null) {
+      if (myModel instanceof CustomMatcherModel) {
+        if (((CustomMatcherModel) myModel).matches(name, pattern)) {
+          matches = true;
+        }
+      } else if (pattern.length() == 0 || matcher.matches(name)) {
+        matches = true;
+      }
+    }
+    return matches;
+  }
 
-         boolean overflow = false;
-         List<Object> sameNameElements = new SmartList<Object>();
-         All:
-         for (String name : namesList) {
-           if (myCancelled) {
-             throw new ProcessCanceledException();
-           }
-           final Object[] elements = myModel.getElementsByName(name, myCheckboxState, namePattern);
-           sameNameElements.clear();
-           for (final Object element : elements) {
-             if (matchesQualifier(element, qualifierPattern)) {
-               sameNameElements.add(element);
-             }
-           }
-           sortByProximity(sameNameElements);
-           for (Object element : sameNameElements) {
-             elementsArray.add(element);
-             if (elementsArray.size() >= myMaximumListSizeLimit) {
-               overflow = true;
-               break All;
-             }
-           }
-         }
+  private NameUtil.Matcher buildPatternMatcher(String pattern) {
+    return NameUtil.buildMatcher(pattern, 0, true, true, pattern.toLowerCase().equals(pattern));
+  }
 
-         if (overflow) {
-           elementsArray.add(ChooseByNameBase.EXTRA_ELEM);
-         }
-       }
+  private interface CalcElementsCallback {
+    void run(Set<?> elements);
+  }
 
-       private void sortByProximity(final List<Object> sameNameElements) {
-         Collections.sort(sameNameElements, new PsiProximityComparator(myContext.get()));
-       }
+  private static class PathProximityComparator implements Comparator<Object> {
+    private final ChooseByNameModel myModel;
+    private final PsiProximityComparator myProximityComparator;
 
-       private List<String> split(String s) {
-         for (String separator : myModel.getSeparators()) {
-           final List<String> result = StringUtil.split(s, separator);
-           if (!result.isEmpty()) return result;
-         }
-         return Collections.singletonList(s);
-       }
+    private PathProximityComparator(final ChooseByNameModel model, final PsiElement context) {
+      myModel = model;
+      myProximityComparator = new PsiProximityComparator(context);
+    }
 
-       private boolean matchesQualifier(final Object element, final String qualifierPattern) {
-         final String name = myModel.getFullName(element);
-         if (name == null) return false;
+    public int compare(final Object o1, final Object o2) {
+      int rc = myProximityComparator.compare(o1, o2);
+      if (rc != 0) return rc;
 
-         final List<String> suspects = split(name);
-         final List<String> patterns = split(qualifierPattern);
+      return Comparing.compare(myModel.getFullName(o1), myModel.getFullName(o2));
+    }
+  }
 
-         int matchPosition = 0;
-
-         patterns:
-         for (String pattern : patterns) {
-           if (pattern.length() > 0) {
-             for (int j = matchPosition; j < suspects.size() - 1; j++) {
-               String suspect = suspects.get(j);
-               if (StringUtil.startsWithIgnoreCase(suspect, pattern)) {
-                 matchPosition = j + 1;
-                 continue patterns;
-               }
-             }
-
-             return false;
-           }
-         }
-
-         return true;
-       }
-
-       public void getNamesByPattern(final boolean checkboxState,
-                                     CalcElementsThread calcElementsThread,
-                                     final List<String> list,
-                                     String pattern) throws ProcessCanceledException {
-         if (!isShowListForEmptyPattern()) {
-           LOG.assertTrue(pattern.length() > 0);
-         }
-
-         if (pattern.startsWith("@")) {
-           pattern = pattern.substring(1);
-         }
-
-         final String[] names = checkboxState ? myNames[1] : myNames[0];
-         final String regex = NameUtil.buildRegexp(pattern, 0, true, true);
-
-         try {
-           Perl5Compiler compiler = new Perl5Compiler();
-           final Pattern compiledPattern = compiler.compile(regex);
-           final PatternMatcher matcher = new Perl5Matcher();
-
-           for (String name : names) {
-             if (calcElementsThread != null && calcElementsThread.myCancelled) {
-               throw new ProcessCanceledException();
-             }
-             if (name != null) {
-               String shortName = (myModel instanceof GotoFileModel)? name : jetbrains.mps.util.NameUtil.shortNameFromLongName(name);
-               if (myModel instanceof GotoActionModel) {
-                 if (((GotoActionModel) myModel).matches(name, pattern)) {
-                   list.add(name);
-                 }
-               } else if (matcher.matches(shortName, compiledPattern)) {
-                 list.add(name);
-               }
-             }
-           }
-         }
-         catch (MalformedPatternException e) {
-           // Do nothing. No matches appears valid result for "bad" pattern
-         }
-       }
+  private static class HintLabel extends JLabel {
+    private HintLabel(String text) {
+      super(text, RIGHT);
+      setForeground(Color.darkGray);
+    }
+  }
 
 
-       private String getQualifierPattern(String pattern) {
-         final String[] separators = myModel.getSeparators();
-         int lastSeparatorOccurence = 0;
-         for (String separator : separators) {
-           lastSeparatorOccurence = Math.max(lastSeparatorOccurence, pattern.lastIndexOf(separator));
-         }
-         return pattern.substring(0, lastSeparatorOccurence);
-       }
-
-       public String getNamePattern(String pattern) {
-         final String[] separators = myModel.getSeparators();
-         int lastSeparatorOccurence = 0;
-         for (String separator : separators) {
-           final int idx = pattern.lastIndexOf(separator);
-           lastSeparatorOccurence = Math.max(lastSeparatorOccurence, idx != -1 ? idx + separator.length() : idx);
-         }
-
-         String s = pattern.substring(lastSeparatorOccurence);
-         return s;
-       }
-     }
-
-     private class MPSChooser implements Chooser {
-       public void addElementsByPattern(Set<Object> elementsArray, String pattern) {
-         if (pattern.length() == 0 && !isShowListForEmptyPattern()) return;
-
-         List<String> namesList = new ArrayList<String>();
-         getNamesByPattern(myCheckboxState, CalcElementsThread.this, namesList, pattern);
-         if (myCancelled) {
-           throw new ProcessCanceledException();
-         }
-         Collections.sort(namesList, new MatchesComparator(pattern));
-
-         boolean overflow = false;
-         All:
-         for (String name : namesList) {
-           if (myCancelled) {
-             throw new ProcessCanceledException();
-           }
-
-           final Object[] elements = myModel.getElementsByName(name, myCheckboxState, name);
-
-           List<Object> sameNameElements = new SmartList<Object>();
-           for (final Object element : elements) {
-             sameNameElements.add(element);
-           }
-           //sortByProximity(sameNameElements);
-           for (Object element : sameNameElements) {
-             elementsArray.add(element);
-             if (elementsArray.size() >= myMaximumListSizeLimit) {
-               overflow = true;
-               break All;
-             }
-           }
-         }
-
-         if (overflow) {
-           elementsArray.add(ChooseByNameBase.EXTRA_ELEM);
-         }
-       }
-
-       public void getNamesByPattern(boolean checkboxState, CalcElementsThread calcElementsThread, List<String> list, String pattern) throws ProcessCanceledException {
-         final String[] names = checkboxState ? myNames[1] : myNames[0];
-
-         boolean isMatchesSomething = false;
-         Matcher itemMatcher = getItemPattern().matcher("");
-         for (String name : names) {
-           if (name == null) continue;
-           itemMatcher.reset(name);
-           if (itemMatcher.matches()) {
-             if (!isMatchesSomething) isMatchesSomething = true;
-             list.add(name);
-           }
-         }
-       }
-
-       private java.util.regex.Pattern getItemPattern() {
-         final String text = myTextField.getText();
-         StringBuilder b = getExactItemPatternBuilder(text);
-         b.append(".*");
-         java.util.regex.Pattern p = java.util.regex.Pattern.compile(b.toString());
-         return p;
-       }
-
-       private StringBuilder getExactItemPatternBuilder(String text) {
-         return ChooseItemComponent.getExactItemPatternBuilder(text, true);
-       }
-     }
-
-     private class CompositeChooser implements Chooser {
-       private MPSChooser myMPSChooser = new MPSChooser();
-       private IdeaChooser myIdeaChooser = new IdeaChooser();
-
-       public void addElementsByPattern(Set<Object> elementsArray, String pattern) {
-         myMPSChooser.addElementsByPattern(elementsArray, pattern);
-         myIdeaChooser.addElementsByPattern(elementsArray, pattern);
-       }
-     }
-   }
-
-   private static interface CalcElementsCallback {
-     void run(Set<?> elements);
-   }
-
-   public interface Chooser {
-     public void addElementsByPattern(Set<Object> elementsArray, String pattern);
-   }
- }
+}

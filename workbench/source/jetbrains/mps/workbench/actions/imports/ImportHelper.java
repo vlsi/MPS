@@ -221,8 +221,7 @@ public class ImportHelper {
         }
       };
     }
-    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToNodeModel, fakePsiContext);
-    popup.setInitialText(initialText);
+    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToNodeModel, fakePsiContext,initialText);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {

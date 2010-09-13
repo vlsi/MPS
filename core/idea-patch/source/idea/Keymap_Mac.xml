@@ -342,10 +342,7 @@
     <action id="EditorDeleteToWordEnd">
       <keyboard-shortcut first-keystroke="alt DELETE"/>
     </action>
-    <action id="EditorDeleteLine">
-      <keyboard-shortcut first-keystroke="meta BACK_SPACE"/>
-    </action>
-
+    
     <action id="CloseEditor">
       <keyboard-shortcut first-keystroke="meta W"/>
     </action>

@@ -84,17 +84,17 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
       //this code is for migration from old models (with no IDS)
       if (model.getSModelReference().getSModelId() == null) {
         model.changeModelReference(dsm.getSModelReference());
-        // FIXME update on save?
+        //todo FIXME update on save?
         needToSave = true;
       }
 
       if (model.updateSModelReferences()) {
-        // FIXME update on save?
+        //todo FIXME update on save?
         needToSave = true;
       }
 
       if (model.updateModuleReferences()) {
-        // FIXME update on save?
+        //todo FIXME update on save?
         needToSave = true;
       }
 
@@ -131,7 +131,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
       return refactorings;
     }
 
-    if (((EditableSModelDescriptor) dsm).getPersistenceVersion() < 5) {
+    if (dsm.getPersistenceVersion() < 5) {
       return RefactoringsPersistence.loadFromModel(dsm.getModelFile());
     }
     return null;

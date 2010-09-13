@@ -82,6 +82,7 @@ public class CommonPaths {
     result.add(getBaseMPSClassPath());
     result.add(getIDEAOpenAPIJar());
     result.add(getIDEAJar());
+    result.add(getExecJar());
     result.add(getIDEAUtilJar());
     result.add(getIDEAExtensionsJar());
     result.add(getLibraryJars());
@@ -137,10 +138,10 @@ public class CommonPaths {
     }
 
     addIfExists(result, "/core/runtime/classes");
-
-    addIfExists(result, "/lib/commons-lang/commons-lang-2.1.jar");
+    
+    addIfExists(result, "/lib/commons-lang-2.4.jar");
     addIfExists(result, "/lib/picocontainer.jar");
-    addIfExists(result, "/lib/jdom/jdom.jar");
+    addIfExists(result, "/lib/jdom.jar");
     addIfExists(result, "/lib/eclipse-compiler/ecj.jar");
 
     addIfExists(result, "/lib/annotations.jar");
@@ -153,12 +154,12 @@ public class CommonPaths {
   private static IClassPathItem getLibraryJars() {
     CompositeClassPathItem cp = new CompositeClassPathItem();
 
-    String junitJar = libPath() + "junit4" + File.separator + "junit-4.8.2.jar";
+    String junitJar = libPath() + "junit-4.7.jar";
     if (new File(junitJar).exists()) {
       cp.add(ClassPathFactory.getInstance().createFromPath(junitJar));
     }
 
-    String log4jJar = libPath() + "log4j" + File.separator + "log4j.jar";
+    String log4jJar = libPath() + "log4j.jar";
     if (new File(log4jJar).exists()) {
       cp.add(ClassPathFactory.getInstance().createFromPath(log4jJar));
     }
@@ -173,6 +174,11 @@ public class CommonPaths {
 
   private static IClassPathItem getIDEAJar() {
     String path = libPath() + File.separator + "platform.jar";
+    return ClassPathFactory.getInstance().createFromPath(path);
+  }
+
+  private static IClassPathItem getExecJar() {
+    String path = libPath() + File.separator + "execution-api.jar";
     return ClassPathFactory.getInstance().createFromPath(path);
   }
 
