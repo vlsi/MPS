@@ -10,12 +10,6 @@ target('default': "Developers update") {
 def layoutFull(String home, String targetDirectory) {
   project.stage("layout to $targetDirectory")
 
-  //noinspection GroovyAssignabilityCheck
-  List<String> openapiModules = platformApiModules()
-
-  //noinspection GroovyAssignabilityCheck
-  List<String> implementationModules = platformImplementationModules()
-
   ant.patternset(id: "resources.included") {
     include(name: "**/*.properties")
     include(name: "fileTemplates/**/*")
@@ -36,6 +30,10 @@ def layoutFull(String home, String targetDirectory) {
     exclude(name: "tips")
   }
 
+  ant.patternset(id: "sources") {
+    include(name: "**/*.java")
+  }
+
   layout(targetDirectory) {
     zip("platform.zip") {
       dir("lib") {
@@ -43,7 +41,7 @@ def layoutFull(String home, String targetDirectory) {
           module("util")
         }
         jar("platform-api.jar") {
-          openapiModules.each { module it}
+          platformApiModules().each { module it}
         }
         jar("annotations.jar") {
           module("annotations")
@@ -52,7 +50,7 @@ def layoutFull(String home, String targetDirectory) {
           module("extensions")
         }
         jar("platform.jar") {
-          implementationModules.each { module it}
+          platformImplementationModules().each { module it}
         }
         jar("bootstrap.jar") {
           module("bootstrap")
@@ -76,7 +74,7 @@ def layoutFull(String home, String targetDirectory) {
         jar("boot.jar") {
           module("boot")
         }
-        jar("execution-api.jar"){
+        jar("execution-api.jar") {
           module("execution-openapi")
         }
 
@@ -94,13 +92,13 @@ def layoutFull(String home, String targetDirectory) {
           exclude(name: "asm-commons.jar")
 
           /**
-          * the following libs are required for build (see required_for_dist.txt),
+           * the following libs are required for build (see required_for_dist.txt),
            * but MPS works normally without them
            */
           exclude(name: "jcip-annotations.jar")
           exclude(name: "jsr173_1.0_api.jar")
           exclude(name: "org.eclipse.jdt.core_3.5.2.v_981_R35x.jar")
-          exclude(name: "resolver.jar") 
+          exclude(name: "resolver.jar")
           exclude(name: "serviceMessages.jar")
           exclude(name: "velocity.jar")
           exclude(name: "xbean.jar")
@@ -140,6 +138,15 @@ def layoutFull(String home, String targetDirectory) {
 
             fileset(dir: "${home}/plugins/cvs/lib")
           }
+        }
+      }
+    }
+
+    zip("platform.src.zip") {
+      modules = [platformApiModules(),platformImplementationModules()].flatten()
+      modules.each {
+        module(it) {
+          patternset(refid: "sources")
         }
       }
     }
@@ -259,4 +266,3 @@ def printUnusedModules() {
 boolean hasSourceRoots(Module module) {
   !module.sourceRoots.isEmpty()
 }
-
