@@ -117,7 +117,7 @@ public final class ActionMenu extends JMenu {
   private void installSynchronizer() {
     if (myMenuItemSynchronizer == null) {
       myMenuItemSynchronizer = new MenuItemSynchronizer();
-      myGroup.addPropertyChangeListener(myMenuItemSynchronizer);
+      getGroup().addPropertyChangeListener(myMenuItemSynchronizer);
       myPresentation.addPropertyChangeListener(myMenuItemSynchronizer);
     }
   }
@@ -129,7 +129,7 @@ public final class ActionMenu extends JMenu {
 
   private void uninstallSynchronizer() {
     if (myMenuItemSynchronizer != null) {
-      myGroup.removePropertyChangeListener(myMenuItemSynchronizer);
+      getGroup().removePropertyChangeListener(myMenuItemSynchronizer);
       myPresentation.removePropertyChangeListener(myMenuItemSynchronizer);
       myMenuItemSynchronizer = null;
     }
@@ -267,7 +267,7 @@ public final class ActionMenu extends JMenu {
       context = DataManager.getInstance().getDataContext();
       mayContextBeInvalid = true;
     }
-    Utils.fillMenu(myGroup, this, myMnemonicEnabled, myPresentationFactory, context, myPlace, true, mayContextBeInvalid);
+    Utils.fillMenu(getGroup(), this, myMnemonicEnabled, myPresentationFactory, context, myPlace, true, mayContextBeInvalid);
   }
 
   private class MenuItemSynchronizer implements PropertyChangeListener {
