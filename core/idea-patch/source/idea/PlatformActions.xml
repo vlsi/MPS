@@ -1,13 +1,14 @@
 <component>
   <actions>
-    <!--MPS Patch Start-->
-<!--
-    <action id="CaptureMemorySnapShot" class="com.intellij.util.CaptureMemorySnapshotAction"
-            icon="/actions/profileMemory.png"/>
-    <action id="CaptureCPUUsageData" class="com.intellij.util.CaptureCPUUsageDataAction"
-            icon="/actions/profuleCPU.png"/>
--->
-    <!--MPS Patch End-->
+
+    <group id="SwitchViewActions">
+      <action id="SwitchUp" class="com.intellij.ui.switcher.SwitchAction$Up"/>
+      <action id="SwitchDown" class="com.intellij.ui.switcher.SwitchAction$Down"/>
+      <action id="SwitchLeft" class="com.intellij.ui.switcher.SwitchAction$Left"/>
+      <action id="SwitchRight" class="com.intellij.ui.switcher.SwitchAction$Right"/>
+      <action id="SwitchApply" class="com.intellij.ui.switcher.ApplySwitchAction"/>
+    </group>
+
     <action id="ContextHelp" class="com.intellij.ide.actions.ContextHelpAction"/>
     <action id="RunGc" class="com.intellij.ide.actions.RunGcAction"/>
     <action id="ShowPopupMenu" class="com.intellij.ide.actions.ShowPopupMenuAction"/>
@@ -17,16 +18,13 @@
     <action id="PreviousEditorTab" class="com.intellij.openapi.fileEditor.impl.SelectPreviousEditorTabAction"/>
 
     <action id="TextComponent.ClearAction" class="com.intellij.ui.ClearTextAction"/>
-    <!--TODO (MPS) Do we need this action?-->
-    <action id="ToolWindowSwitcher" class="com.intellij.ide.actions.Switcher" text="Switcher"/>
+    <action id="Switcher" class="com.intellij.ide.actions.Switcher" text="Switcher"/>
 
     <group id="EditorActions">
       <action id="EditorPageUp" class="com.intellij.openapi.editor.actions.PageUpAction"/>
       <action id="EditorPageDown" class="com.intellij.openapi.editor.actions.PageDownAction"/>
-      <action id="EditorPageUpWithSelection"
-              class="com.intellij.openapi.editor.actions.PageUpWithSelectionAction"/>
-      <action id="EditorPageDownWithSelection"
-              class="com.intellij.openapi.editor.actions.PageDownWithSelectionAction"/>
+      <action id="EditorPageUpWithSelection" class="com.intellij.openapi.editor.actions.PageUpWithSelectionAction"/>
+      <action id="EditorPageDownWithSelection" class="com.intellij.openapi.editor.actions.PageDownWithSelectionAction"/>
       <action id="EditorCopy" class="com.intellij.openapi.editor.actions.CopyAction"/>
       <action id="EditorCut" class="com.intellij.openapi.editor.actions.CutAction"/>
       <action id="EditorPaste" class="com.intellij.openapi.editor.actions.PasteAction"/>
@@ -46,8 +44,7 @@
       <action id="EditorDown" class="com.intellij.openapi.editor.actions.MoveCaretDownAction"/>
       <action id="EditorLeft" class="com.intellij.openapi.editor.actions.MoveCaretLeftAction"/>
       <action id="EditorRight" class="com.intellij.openapi.editor.actions.MoveCaretRightAction"/>
-      <action id="EditorUpWithSelection"
-              class="com.intellij.openapi.editor.actions.MoveCaretUpWithSelectionAction"/>
+      <action id="EditorUpWithSelection" class="com.intellij.openapi.editor.actions.MoveCaretUpWithSelectionAction"/>
       <action id="EditorDownWithSelection"
               class="com.intellij.openapi.editor.actions.MoveCaretDownWithSelectionAction"/>
       <action id="EditorLeftWithSelection"
@@ -72,27 +69,27 @@
       <action id="EditorTextEnd" class="com.intellij.openapi.editor.actions.TextEndAction"/>
       <action id="EditorLineStartWithSelection"
               class="com.intellij.openapi.editor.actions.LineStartWithSelectionAction"/>
-      <action id="EditorLineEndWithSelection"
-              class="com.intellij.openapi.editor.actions.LineEndWithSelectionAction"/>
+      <action id="EditorLineEndWithSelection" class="com.intellij.openapi.editor.actions.LineEndWithSelectionAction"/>
       <action id="EditorTextStartWithSelection"
               class="com.intellij.openapi.editor.actions.TextStartWithSelectionAction"/>
-      <action id="EditorTextEndWithSelection"
-              class="com.intellij.openapi.editor.actions.TextEndWithSelectionAction"/>
+      <action id="EditorTextEndWithSelection" class="com.intellij.openapi.editor.actions.TextEndWithSelectionAction"/>
       <action id="EditorNextWord" class="com.intellij.openapi.editor.actions.NextWordAction"/>
       <action id="EditorPreviousWord" class="com.intellij.openapi.editor.actions.PreviousWordAction"/>
-      <action id="EditorNextWordWithSelection"
-              class="com.intellij.openapi.editor.actions.NextWordWithSelectionAction"/>
+      <action id="EditorNextWordWithSelection" class="com.intellij.openapi.editor.actions.NextWordWithSelectionAction"/>
       <action id="EditorPreviousWordWithSelection"
               class="com.intellij.openapi.editor.actions.PreviousWordWithSelectionAction"/>
       <action id="EditorDeleteToWordStart" class="com.intellij.openapi.editor.actions.DeleteToWordStartAction"/>
       <action id="EditorDeleteToWordEnd" class="com.intellij.openapi.editor.actions.DeleteToWordEndAction"/>
+      <action id="EditorDeleteLine" class="com.intellij.openapi.editor.actions.DeleteLineAtCaretAction"/>
       <action id="EditorDuplicate" class="com.intellij.openapi.editor.actions.DuplicateAction"/>
       <action id="EditorToggleInsertState" class="com.intellij.openapi.editor.actions.ToggleInsertStateAction"/>
       <action id="EditorToggleColumnMode" class="com.intellij.openapi.editor.actions.ToggleColumnModeAction"/>
-      <action id="EditorToggleShowWhitespaces"
-              class="com.intellij.openapi.editor.actions.ToggleShowWhitespacesAction"/>
-      <action id="EditorToggleShowLineNumbers"
-              class="com.intellij.openapi.editor.actions.ToggleShowLineNumbersAction"/>
+      <action id="EditorToggleShowWhitespaces" class="com.intellij.openapi.editor.actions.ToggleShowWhitespacesAction"/>
+      <action id="EditorToggleShowLineNumbers" class="com.intellij.openapi.editor.actions.ToggleShowLineNumbersAction"/>
+      <action id="EditorToggleShowIndentLines" class="com.intellij.openapi.editor.actions.ToggleShowIndentLinesAction"/>
+      <action id="EditorToggleUseSoftWraps" class="com.intellij.openapi.editor.actions.ToggleUseSoftWrapsMenuAction"
+              icon="/actions/toggleSoftWrap.png"/>
+
       <action id="EditorScrollToCenter" class="com.intellij.openapi.editor.actions.ScrollToCenterAction"/>
       <action id="EditorToggleCase" class="com.intellij.openapi.editor.actions.ToggleCaseAction"/>
       <action id="EditorJoinLines" class="com.intellij.openapi.editor.actions.JoinLinesAction"/>
@@ -103,15 +100,13 @@
 
     <action id="ExpandAll" class="com.intellij.ide.actions.ExpandAllAction" icon="/actions/expandall.png"/>
     <action id="CollapseAll" class="com.intellij.ide.actions.CollapseAllAction" icon="/actions/collapseall.png"/>
-    <action id="ExportToTextFile" class="com.intellij.ide.actions.ExportToTextFileAction"
-            icon="/actions/export.png"/>
+    <action id="ExportToTextFile" class="com.intellij.ide.actions.ExportToTextFileAction" icon="/actions/export.png"/>
     <action id="ExpandTreeNode" class="com.intellij.ide.actions.tree.ExpandTreeNodeAction"/>
     <action id="CollapseTreeNode" class="com.intellij.ide.actions.tree.CollapseTreeNodeAction"/>
     <action id="FullyExpandTreeNode" class="com.intellij.ide.actions.tree.FullyExpandTreeNodeAction"/>
 
     <action id="NextDiff" class="com.intellij.openapi.diff.actions.NextDiffAction" icon="/actions/moveDown.png"/>
-    <action id="PreviousDiff" class="com.intellij.openapi.diff.actions.PreviousDiffAction"
-            icon="/actions/moveUp.png"/>
+    <action id="PreviousDiff" class="com.intellij.openapi.diff.actions.PreviousDiffAction" icon="/actions/moveUp.png"/>
 
     <action id="Refresh" class="com.intellij.ide.actions.RefreshAction"/>
 
@@ -123,20 +118,19 @@
 
     <action id="PinToolwindowTab" class="com.intellij.ui.content.tabs.PinToolwindowTabAction"/>
 
+    <action id="CloseEditor" class="com.intellij.ide.actions.CloseEditorAction"/>
+
     <group id="MainMenu">
       <group id="FileMenu" popup="true">
         <group id="FileOpenGroup">
-          <action id="NewDummyProject" class="com.intellij.ide.actions.NewDummyProjectAction"
-                  text="New Dummy Project"/>
-          <action id="OpenFile" class="com.intellij.ide.actions.OpenFileAction"
-                  icon="/actions/menu-open.png"/>
+          <action id="NewDummyProject" class="com.intellij.ide.actions.NewDummyProjectAction" text="New Dummy Project"/>
+          <action id="OpenFile" class="com.intellij.ide.actions.OpenFileAction" icon="/actions/menu-open.png"/>
           <group id="$LRU" class="com.intellij.ide.actions.RecentProjectsGroup" popup="true"/>
           <action id="CloseProject" class="com.intellij.ide.actions.CloseProjectAction"/>
         </group>
         <separator/>
         <group id="FileMainSettingsGroup">
-          <action id="ShowSettings" class="com.intellij.ide.actions.ShowSettingsAction"
-                  icon="/general/ideOptions.png"/>
+          <action id="ShowSettings" class="com.intellij.ide.actions.ShowSettingsAction" icon="/general/ideOptions.png"/>
           <group id="FileOtherSettingsGroup" popup="true">
             <group id="FileSettingsGroup"/>
           </group>
@@ -153,8 +147,8 @@
 
         <group id="ChangeFileEncodingGroup" popup="true"
                class="com.intellij.openapi.vfs.encoding.ChangeEncodingUpdateGroup">
-          <action id="ChangeFileEncodingGroupAction"
-                  class="com.intellij.openapi.vfs.encoding.ChangeFileEncodingGroup" text=""/>
+          <action id="ChangeFileEncodingGroupAction" class="com.intellij.openapi.vfs.encoding.ChangeFileEncodingGroup"
+                  text=""/>
         </group>
         <!--MPS Patch Start-->
         <!--<action id="ToggleReadOnlyAttribute" class="com.intellij.ide.actions.ToggleReadOnlyAttributeAction"/>-->
@@ -192,6 +186,8 @@
           <reference ref="EditorIndentSelection"/>
           <reference ref="EditorUnindentSelection"/>
           <reference ref="EditorToggleCase"/>
+          <action id="ConvertIndentsToSpaces" class="com.intellij.openapi.editor.actions.ConvertIndentsToSpacesAction"/>
+          <action id="ConvertIndentsToTabs" class="com.intellij.openapi.editor.actions.ConvertIndentsToTabsAction"/>
         </group>
       </group>
 
@@ -199,8 +195,11 @@
       <group id="ViewMenu" popup="true">
         <action id="ViewToolBar" class="com.intellij.ide.actions.ViewToolbarAction"/>
         <action id="ViewStatusBar" class="com.intellij.ide.actions.ViewStatusBarAction"/>
+        <action id="ViewToolButtons" class="com.intellij.ide.actions.ViewToolWindowButtonsAction"/>
         <reference ref="EditorToggleShowWhitespaces"/>
         <reference ref="EditorToggleShowLineNumbers"/>
+        <reference ref="EditorToggleShowIndentLines"/>
+        <reference ref="EditorToggleUseSoftWraps"/>
         <separator/>
         <action id="QuickChangeScheme" class="com.intellij.ide.actions.QuickChangeSchemesAction"/>
         <separator/>
@@ -209,9 +208,9 @@
         <separator/>
         <group id="ViewRecentActions">
           <action id="RecentFiles" class="com.intellij.ide.actions.ShowRecentFilesAction"/>
-          <!--
-                              <action id="RecentChangedFiles" class="com.intellij.ide.actions.ShowRecentlyEditedFilesAction"/>
-          -->
+          <!--MPS Patch Start-->
+          <!--<action id="RecentChangedFiles" class="com.intellij.ide.actions.ShowRecentlyEditedFilesAction"/>-->
+          <!--MPS Patch End-->
         </group>
         <separator/>
         <group id="PairFileActions">
@@ -239,8 +238,7 @@
       <group id="ToolsMenu" configurable="true" popup="true">
         <group id="Macros" popup="false">
           <group id="StanardMacroActions">
-            <action id="PlaybackLastMacro"
-                    class="com.intellij.ide.actionMacro.actions.PlaybackLastMacroAction"/>
+            <action id="PlaybackLastMacro" class="com.intellij.ide.actionMacro.actions.PlaybackLastMacroAction"/>
             <action id="StartStopMacroRecording"
                     class="com.intellij.ide.actionMacro.actions.StartStopMacroRecordingAction"/>
             <action id="EditMacros" class="com.intellij.ide.actionMacro.actions.EditMacrosAction"/>
@@ -255,7 +253,10 @@
 
       <group id="WindowMenu" popup="true">
         <group id="ToolWindowsGroup" class="com.intellij.ide.actions.ToolWindowsGroup" popup="true"/>
-        <action id="ShowProcessWindow" class="com.intellij.openapi.wm.impl.status.ShowProcessWindowAction"/>
+        <group id="BackgroundTasks" popup="true">
+          <action id="ShowProcessWindow" class="com.intellij.openapi.wm.impl.status.ShowProcessWindowAction"/>
+          <action id="AutoShowProcessWindow" class="com.intellij.openapi.wm.impl.status.AutoShowProcessPopupAction"/>
+        </group>
         <separator/>
         <action id="StoreDefaultLayout" class="com.intellij.ide.actions.StoreDefaultLayoutAction"/>
         <action id="RestoreDefaultLayout" class="com.intellij.ide.actions.RestoreDefaultLayoutAction"/>
@@ -269,9 +270,13 @@
         <action id="ToggleDockMode" class="com.intellij.ide.actions.ToggleDockModeAction"/>
         <action id="ToggleFloatingMode" class="com.intellij.ide.actions.ToggleFloatingModeAction"/>
         <action id="ToggleSideMode" class="com.intellij.ide.actions.ToggleSideModeAction"/>
-        <!--MPS Patch
-      <action id="ToggleContentUiTypeMode" class="com.intellij.ide.actions.ToggleContentUiTypeAction"/>
-      <action id="ShowContent" class="com.intellij.ide.actions.ShowContentAction"/>-->
+
+        <!--MPS Patch Start-->
+        <!--
+        <action id="ToggleContentUiTypeMode" class="com.intellij.ide.actions.ToggleContentUiTypeAction"/>
+        <action id="ShowContent" class="com.intellij.ide.actions.ShowContentAction"/>
+        -->
+        <!--MPS Patch End-->
         <group id="ResizeToolWindowGroup" popup="true">
           <action id="ResizeToolWindowLeft" class="com.intellij.ide.actions.ResizeToolWindowAction$Left"/>
           <action id="ResizeToolWindowRight" class="com.intellij.ide.actions.ResizeToolWindowAction$Right"/>
@@ -285,12 +290,10 @@
         <action id="PinActiveTab" class="com.intellij.ide.actions.PinActiveTabAction"/>
         <separator/>
         <group id="CloseEditorsGroup">
-          <action id="CloseEditor" class="com.intellij.ide.actions.CloseEditorAction"/>
-          <action id="CloseAllEditorsButActive"
-                  class="com.intellij.ide.actions.CloseAllEditorsButActiveAction"/>
+          <action id="CloseContent" class="com.intellij.ide.actions.CloseAction"/>
+          <action id="CloseAllEditorsButActive" class="com.intellij.ide.actions.CloseAllEditorsButActiveAction"/>
           <action id="CloseAllEditors" class="com.intellij.ide.actions.CloseAllEditorsAction"/>
-          <action id="CloseAllUnpinnedEditors"
-                  class="com.intellij.ide.actions.CloseAllUnpinnedEditorsAction"/>
+          <action id="CloseAllUnpinnedEditors" class="com.intellij.ide.actions.CloseAllUnpinnedEditorsAction"/>
         </group>
         <separator/>
         <action id="SplitVertically" class="com.intellij.ide.actions.SplitVerticallyAction"
@@ -306,12 +309,10 @@
 
       <!-- Help -->
       <group id="HelpMenu" popup="true">
-        <action id="HelpTopics" class="com.intellij.ide.actions.HelpTopicsAction"
-                icon="/actions/menu-help.png"/>
+        <action id="HelpTopics" class="com.intellij.ide.actions.HelpTopicsAction" icon="/actions/menu-help.png"/>
         <action id="ShowTips" class="com.intellij.ide.actions.ShowTipsAction"/>
+        <action id="ProductivityGude" class="com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsAction"/>
         <!--MPS Patch Start-->
-        <action id="ProductivityGude"
-                class="com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsAction"/>
         <action id="DefaultKeymap"
                 class="jetbrains.mps.workbench.actions.help.ShowDefaultKeymap"
                 text="Default Keymap Reference"/>
@@ -347,8 +348,8 @@
                 text="Issue Tracker"/>
 
         <separator/>
-        <!--<action id="CheckForUpdate" class="com.intellij.openapi.updateSettings.impl.CheckForUpdateAction"/>-->
         <!--MPS Patch End-->
+
         <action id="About" class="com.intellij.ide.actions.AboutAction"/>
       </group>
 
@@ -373,14 +374,7 @@
       <reference ref="ShowSettings"/>
       <separator/>
       <reference ref="HelpTopics"/>
-      <!--MPS Patch Start-->
-      <!--Add profile actions-->
-<!--
-      <separator/>
-      <reference ref="CaptureMemorySnapShot"/>
-      <reference ref="CaptureCPUUsageData"/>
--->
-      <!--MPS Patch End-->
+
     </group>
 
     <group id="EditorPopupMenu" configurable="true">
@@ -438,6 +432,8 @@
 
     <group id="EditorGutterPopupMenu">
       <reference ref="EditorToggleShowLineNumbers"/>
+      <reference ref="EditorToggleShowIndentLines"/>
+      <reference ref="EditorToggleUseSoftWraps"/>
     </group>
 
     <group id="FileChooserToolbar">
@@ -470,8 +466,7 @@
       <reference ref="PreviousDiff"/>
       <reference ref="NextDiff"/>
       <separator/>
-      <action id="Diff.IgnoreWhitespace" class="com.intellij.openapi.diff.actions.IgnoreWhiteSpacesAction"
-              text=""/>
+      <action id="Diff.IgnoreWhitespace" class="com.intellij.openapi.diff.actions.IgnoreWhiteSpacesAction" text=""/>
     </group>
 
     <group id="ChangeScheme">
@@ -480,51 +475,65 @@
       <action id="ChangeLaf" class="com.intellij.ide.actions.QuickChangeLookAndFeel"/>
     </group>
 
-    <!--MPS Patch-->
-    <!--TODO (MPS) Do we need this?-->
-    <!--<group id="Internal" text="Internal Actions" internal="true" popup="true">-->
-    <!--<action id="DropAnError" internal="true" class="com.intellij.diagnostic.DropAnErrorAction"/>-->
-    <!--<action id="DropAnOutOfMemoryError" internal="true"-->
-    <!--class="com.intellij.diagnostic.DropAnOutOfMemoryErrorAction"/>-->
-    <!--<action id="DropAnOutOfPermGenMemoryError" internal="true"-->
-    <!--class="com.intellij.diagnostic.DropAnOutOfPermGenMemoryErrorAction"/>-->
-    <!--<separator/>-->
-    <!--<action internal="true" id="ReloadProjectAction" class="com.intellij.internal.ReloadProjectAction"/>-->
-    <!--<action internal="true" id="RestartInfo" class="com.intellij.internal.RestartInfoAction"-->
-    <!--text="Restart Info"/>-->
-    <!--<action internal="true" id="PruneEmptyDirectories"-->
-    <!--class="com.intellij.ide.actions.PruneEmptyDirectoriesAction" text="Prune Empty Directories"/>-->
-    <!--<action internal="true" id="FixLineSeparators" class="com.intellij.ide.actions.FixLineSeparatorsAction"-->
-    <!--text="Fix Line Separators"/>-->
-    <!--<action id="DumbMode" internal="true" class="com.intellij.internal.ToggleDumbModeAction" text="Dumb mode"/>-->
-    <!--<add-to-group group-id="ToolsMenu" anchor="last"/>-->
-    <!--</group>-->
+    <action id="MaintenanceAction" class="com.intellij.ide.actions.MaintenanceAction"/>
 
-    <!--<group id="EditorContextBarMenu">-->
-    <!--</group>-->
-
-    <!--<action id="Rerun" class="com.intellij.execution.runners.FakeRerunAction" text="Rerun"/>-->
-
-    <!--<action id="IncrementWindowWidth" class="com.intellij.ide.actions.WindowAction$IncrementWidth"-->
-    <!--use-shortcut-of="ResizeToolWindowRight"/>-->
-    <!--<action id="DecrementWindowWidth" class="com.intellij.ide.actions.WindowAction$DecrementWidth"-->
-    <!--use-shortcut-of="ResizeToolWindowLeft"/>-->
-    <!--<action id="IncrementWindowHeight" class="com.intellij.ide.actions.WindowAction$IncrementHeight"-->
-    <!--use-shortcut-of="ResizeToolWindowDown"/>-->
-    <!--<action id="DecrementWindowHeight" class="com.intellij.ide.actions.WindowAction$DecrementHeight"-->
-    <!--use-shortcut-of="ResizeToolWindowUp"/>-->
-    <!--MPS Patch End-->
-
-    <group id="NavbarPopupMenu">
-      <reference ref="CutCopyPasteGroup"></reference>
-      <separator/>
-      <reference ref="EditSource"></reference>
-      <reference ref="ViewSource"></reference>
-      <separator/>
-      <action id="SynchronizeCurrentFile" class="com.intellij.ide.actions.SynchronizeCurrentFileAction"
-              icon="/actions/sync.png"/>
-      <reference ref="CompareTwoFiles"></reference>
-      <reference ref="CompareFileWithEditor"></reference>
+    <group id="MaintenanceGroup">
+      <action id="UiDebugger" class="com.intellij.ui.debugger.ShowUiDebuggerAction"/>
+      <action id="ShowRegistry" class="com.intellij.openapi.util.registry.ShowRegistryAction"/>
     </group>
+
+    <action id="Console.Execute" class="com.intellij.openapi.actionSystem.EmptyAction"
+            text="Execute Current Statement"/>
+    <group id="Console.HistoryActions">
+      <action id="Console.History.Previous" class="com.intellij.openapi.actionSystem.EmptyAction" text="Previous"/>
+      <action id="Console.History.Next" class="com.intellij.openapi.actionSystem.EmptyAction" text="Next"/>
+    </group>
+
+    <group id="Internal" text="Internal Actions" internal="true" popup="true">
+      <action id="DropAnError" internal="true" class="com.intellij.diagnostic.DropAnErrorAction"/>
+      <action id="DropAnOutOfMemoryError" internal="true" class="com.intellij.diagnostic.DropAnOutOfMemoryErrorAction"/>
+      <action id="DropAnOutOfPermGenMemoryError" internal="true"
+              class="com.intellij.diagnostic.DropAnOutOfPermGenMemoryErrorAction"/>
+      <separator/>
+      <action internal="true" id="ReloadProjectAction" class="com.intellij.internal.ReloadProjectAction"/>
+      <action internal="true" id="RestartInfo" class="com.intellij.internal.RestartInfoAction" text="Restart Info"/>
+      <action internal="true" id="PruneEmptyDirectories" class="com.intellij.ide.actions.PruneEmptyDirectoriesAction"
+              text="Prune Empty Directories"/>
+      <action internal="true" id="FixLineSeparators" class="com.intellij.ide.actions.FixLineSeparatorsAction"
+              text="Fix Line Separators"/>
+      <action id="DumbMode" internal="true" class="com.intellij.internal.ToggleDumbModeAction" text="Dumb mode"/>
+      <separator/>
+      <action id="NotificationTestAction" internal="true"
+              class="com.intellij.notification.impl.actions.NotificationTestAction"
+              text="Add Test Notification"/>
+      <action id="TestMessageBoxAction" internal="true" class="com.intellij.diagnostic.TestMessageBoxAction"
+              text="Show Test Dialog"/>
+      <separator/>
+      <action id="FocusDebugger" internal="true" class="com.intellij.internal.focus.FocusDebuggerAction"
+              text="Start Focus Debugger"/>
+      <action id="UiInspector" internal="true" class="com.intellij.internal.inspector.UiInspectorAction"
+              text="UI Inspector"/>
+      <separator/>
+      <reference ref="MaintenanceGroup"/>
+
+      <add-to-group group-id="ToolsMenu" anchor="last"/>
+    </group>
+
+    <group id="EditorContextBarMenu">
+    </group>
+
+    <action id="Rerun" class="com.intellij.execution.runners.FakeRerunAction" text="Rerun"/>
+                                        
+    <action id="IncrementWindowWidth" class="com.intellij.ide.actions.WindowAction$IncrementWidth"
+            use-shortcut-of="ResizeToolWindowRight"/>
+    <action id="DecrementWindowWidth" class="com.intellij.ide.actions.WindowAction$DecrementWidth"
+            use-shortcut-of="ResizeToolWindowLeft"/>
+    <action id="IncrementWindowHeight" class="com.intellij.ide.actions.WindowAction$IncrementHeight"
+            use-shortcut-of="ResizeToolWindowDown"/>
+    <action id="DecrementWindowHeight" class="com.intellij.ide.actions.WindowAction$DecrementHeight"
+            use-shortcut-of="ResizeToolWindowUp"/>
+
+    <action id="ExportTestResults" class="com.intellij.execution.testframework.export.ExportTestResultsAction"
+            icon="/actions/export.png"/>
   </actions>
 </component>
