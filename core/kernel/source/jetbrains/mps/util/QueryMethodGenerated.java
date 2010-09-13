@@ -22,7 +22,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
-import jetbrains.mps.runtime.BundleClassLoader;
 import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -167,12 +166,6 @@ public class QueryMethodGenerated implements ApplicationComponent {
       cls = l.getClass(adapterName);
 
       if (cls == null) {
-        ClassLoader languageClassLoader = ClassLoaderManager.getInstance().getClassLoaderFor(l);
-        if (languageClassLoader instanceof BundleClassLoader) {
-          BundleClassLoader bcl = (BundleClassLoader) languageClassLoader;
-          byte[] bytes = bcl.getBundle().getLocator().find(className);
-          throw new ClassNotFoundException("class " + adapterName + " was not found in language: " + languageNamespace + " bytes from bundle locator: " + (bytes == null ? "null" : bytes.length));
-        }
         throw new ClassNotFoundException("class " + adapterName + " was not found in language: " + languageNamespace);
       }
 
