@@ -15,10 +15,8 @@
  */
 package jetbrains.mps.ide.project.listener;
 
-import jetbrains.mps.project.listener.ModelCreationListener;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.project.listener.ModelCreationListener;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
