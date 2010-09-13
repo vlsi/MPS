@@ -20,6 +20,9 @@
   <applicationService serviceInterface="com.intellij.psi.templateLanguages.TemplateDataLanguagePatterns"
                       serviceImplementation="com.intellij.psi.templateLanguages.TemplateDataLanguagePatterns"/>
   <!--MPS Patch Ended-->
+  <!--MPS Patch:-->
+  <selectInTarget implementation="com.intellij.ide.impl.ProjectViewSelectInGroupTarget"/>
+
 
   <applicationService serviceInterface="com.intellij.openapi.actionSystem.JBAwtEventQueue"
                       serviceImplementation="com.intellij.openapi.actionSystem.impl.JBAwtEventQueueImpl"/>
@@ -39,6 +42,9 @@
   <applicationService serviceInterface="com.intellij.openapi.progress.ProgressManager"
                       serviceImplementation="com.intellij.openapi.progress.impl.ProgressManagerImpl"/>
 
+  <undoProvider implementation="com.intellij.openapi.command.impl.FileUndoProvider"/>
+  <projectUndoProvider implementation="com.intellij.openapi.command.impl.FileUndoProvider"/>
+
   <applicationService serviceInterface="com.intellij.openapi.command.CommandProcessor"
                       serviceImplementation="com.intellij.openapi.command.impl.CommandProcessorImpl"/>
 
@@ -49,8 +55,6 @@
                       serviceImplementation="com.intellij.ide.CopyPasteManagerEx"/>
   <applicationService serviceInterface="com.intellij.openapi.ui.popup.JBPopupFactory"
                       serviceImplementation="com.intellij.ui.popup.PopupFactoryImpl"/>
-  <applicationService serviceInterface="com.intellij.ui.ToolTipHandlerProvider"
-                      serviceImplementation="com.intellij.ui.ToolTipHandlerProviderImpl"/>
   <applicationService serviceInterface="com.intellij.openapi.diff.DiffManager"
                       serviceImplementation="com.intellij.openapi.diff.impl.external.DiffManagerImpl"/>
   <applicationService serviceInterface="com.intellij.openapi.fileEditor.ex.FileEditorProviderManager"
@@ -62,6 +66,8 @@
                       serviceImplementation="com.intellij.diagnostic.ErrorReportConfigurable"/>
   <applicationService serviceInterface="com.intellij.util.net.HttpConfigurable"
                       serviceImplementation="com.intellij.util.net.HttpConfigurable"/>
+  <applicationService serviceInterface="com.intellij.openapi.vfs.impl.http.RemoteFileManager"
+                      serviceImplementation="com.intellij.openapi.vfs.impl.http.RemoteFileManagerImpl"/>
   <applicationService serviceInterface="com.intellij.openapi.vfs.newvfs.RefreshQueue"
                       serviceImplementation="com.intellij.openapi.vfs.newvfs.RefreshQueueImpl"/>
 
@@ -73,6 +79,12 @@
                       serviceImplementation="com.intellij.ui.content.ContentFactoryImpl"/>
   <applicationService serviceInterface="com.intellij.ui.TreeUIHelper"
                       serviceImplementation="com.intellij.ui.TreeUIHelperImpl"/>
+  <applicationService serviceInterface="com.intellij.ui.ExpandableItemsHandlerFactory"
+                      serviceImplementation="com.intellij.ui.ExpandTipHandlerFactoryImpl"/>
+  <!--MPS Patch: we have our own
+  <applicationService serviceInterface="com.intellij.openapi.diff.DiffRequestFactory"
+                      serviceImplementation="com.intellij.openapi.diff.impl.mergeTool.DiffRequestFactoryImpl"/>
+  -->
   <applicationService serviceInterface="com.intellij.ui.SystemNotifications"
                       serviceImplementation="com.intellij.ui.SystemNotificationsImpl"/>
   <applicationService serviceInterface="com.intellij.openapi.keymap.KeymapGroupFactory"
@@ -95,25 +107,40 @@
                       serviceImplementation="com.intellij.codeInsight.hint.TooltipController"/>
   <applicationService serviceInterface="com.intellij.openapi.editor.actionSystem.EditorActionManager"
                       serviceImplementation="com.intellij.openapi.editor.impl.EditorActionManagerImpl"/>
-  <applicationService serviceInterface="com.intellij.history.LocalHistoryConfiguration"
-                      serviceImplementation="com.intellij.history.LocalHistoryConfiguration"/>
   <applicationService serviceInterface="com.intellij.openapi.updateSettings.impl.UpdateSettings"
                       serviceImplementation="com.intellij.openapi.updateSettings.impl.UpdateSettings"/>
   <applicationService serviceInterface="com.intellij.featureStatistics.FeatureUsageTracker"
                       serviceImplementation="com.intellij.featureStatistics.FeatureUsageTrackerImpl"/>
   <applicationService serviceInterface="com.intellij.featureStatistics.ProductivityFeaturesRegistry"
                       serviceImplementation="com.intellij.featureStatistics.ProductivityFeaturesRegistryImpl"/>
-  <applicationService serviceInterface="com.intellij.openapi.options.SchemesManagerFactory"
-                      serviceImplementation="com.intellij.openapi.options.SchemesManagerFactoryImpl"/>
-
-  <!--MPS Patch: do not know why this is commented out-->
-  <!--<applicationService serviceInterface="com.intellij.util.InstanceofCheckerGenerator"
-  serviceImplementation="com.intellij.util.InstanceofCheckerGeneratorImpl"/>-->
+  <applicationService serviceInterface="com.intellij.util.InstanceofCheckerGenerator"
+                      serviceImplementation="com.intellij.util.InstanceofCheckerGeneratorImpl"/>
   <applicationService serviceInterface="com.intellij.internal.psiView.PsiViewerSettings"
                       serviceImplementation="com.intellij.internal.psiView.PsiViewerSettings"/>
 
   <applicationService serviceInterface="com.intellij.openapi.keymap.impl.DefaultKeymap"
                       serviceImplementation="com.intellij.openapi.keymap.impl.DefaultKeymap"/>
+
+  <applicationService serviceInterface="com.intellij.ide.passwordSafe.impl.providers.masterKey.PasswordDatabase"
+                      serviceImplementation="com.intellij.ide.passwordSafe.impl.providers.masterKey.PasswordDatabase"/>
+  <applicationService serviceInterface="com.intellij.ide.passwordSafe.config.PasswordSafeSettings"
+                      serviceImplementation="com.intellij.ide.passwordSafe.config.PasswordSafeSettings"/>
+  <applicationService serviceInterface="com.intellij.ide.passwordSafe.PasswordSafe"
+                      serviceImplementation="com.intellij.ide.passwordSafe.impl.PasswordSafeImpl"/>
+  <applicationConfigurable instance="com.intellij.ide.passwordSafe.config.PasswordSafeConfigurable"/>
+
+  <applicationService serviceInterface="com.intellij.execution.process.ColoredOutputTypeRegistry"
+                      serviceImplementation="com.intellij.execution.process.ColoredOutputTypeRegistry"/>
+
+  <applicationService serviceInterface="com.intellij.openapi.options.SchemesManagerFactory"
+                      serviceImplementation="com.intellij.openapi.options.SchemesManagerFactoryImpl"/>
+
+  <applicationService serviceInterface="com.intellij.openapi.editor.colors.ex.DefaultColorSchemesManager"
+                      serviceImplementation="com.intellij.openapi.editor.colors.ex.DefaultColorSchemesManager"/>
+  <applicationService serviceInterface="com.intellij.openapi.editor.colors.EditorColorsManager"
+                      serviceImplementation="com.intellij.openapi.editor.colors.impl.EditorColorsManagerImpl"/>
+  <exportable serviceInterface="com.intellij.openapi.editor.colors.EditorColorsManager"/>
+  <schemeOwner serviceInterface="com.intellij.openapi.editor.colors.EditorColorsManager"/>
 
   <projectService serviceInterface="com.intellij.openapi.vfs.ReadonlyStatusHandler"
                   serviceImplementation="com.intellij.openapi.vcs.readOnlyHandler.ReadonlyStatusHandlerImpl"/>
@@ -134,9 +161,6 @@
   <projectService serviceInterface="com.intellij.ui.content.MessageView"
                   serviceImplementation="com.intellij.ui.content.impl.MessageViewImpl"/>
 
-  <!--MPS Patch:-->
-  <selectInTarget implementation="com.intellij.ide.impl.ProjectViewSelectInGroupTarget"/>
-
   <projectService serviceInterface="com.intellij.ui.FileColorManager"
                   serviceImplementation="com.intellij.ui.tabs.FileColorManagerImpl"/>
 
@@ -155,33 +179,36 @@
   <projectService serviceInterface="com.intellij.openapi.vcs.changes.RemoteRevisionsCache"
                   serviceImplementation="com.intellij.openapi.vcs.changes.RemoteRevisionsCache"/>
 
+  <projectService serviceInterface="com.intellij.execution.testframework.export.ExportTestResultsConfiguration"
+                  serviceImplementation="com.intellij.execution.testframework.export.ExportTestResultsConfiguration"/>
+
+
   <!-- General -->
-  <applicationConfigurable implementation="com.intellij.ide.GeneralSettingsConfigurable"/>
+  <applicationConfigurable instance="com.intellij.ide.GeneralSettingsConfigurable"/>
 
   <!-- Appearance -->
-  <applicationConfigurable implementation="com.intellij.ide.ui.AppearanceConfigurable" id="appearance"/>
+  <applicationConfigurable instance="com.intellij.ide.ui.AppearanceConfigurable" id="appearance"/>
 
   <!-- Keymap -->
-  <applicationConfigurable implementation="com.intellij.openapi.keymap.impl.ui.KeymapConfigurable"/>
+  <applicationConfigurable instance="com.intellij.openapi.keymap.impl.ui.KeymapConfigurable"/>
 
   <!-- Customizations -->
-  <applicationConfigurable implementation="com.intellij.ide.ui.customization.CustomizationConfigurable"/>
+  <applicationConfigurable instance="com.intellij.ide.ui.customization.CustomizationConfigurable"/>
 
   <!-- Web Browser -->
-  <applicationConfigurable implementation="com.intellij.ide.BrowserSettings"/>
+  <applicationConfigurable instance="com.intellij.ide.BrowserSettings"/>
 
-
-  <!--MPS Patch: was not in previos versions of MPS redactions of this file, but was in idea sources-->
   <!-- Notifications -->
-  <!--<applicationConfigurable implementation="com.intellij.notification.impl.NotificationsConfigurable"/>-->
+  <applicationConfigurable instance="com.intellij.notification.impl.NotificationsConfigurable"/>
 
   <!-- Plugins -->
   <applicationConfigurable implementation="com.intellij.ide.plugins.PluginManagerConfigurable"/>
+  <applicationConfigurable instance="com.intellij.openapi.diff.impl.external.DiffOptionsForm"/>
 
   <!--MPS Patch: remove updates tab-->
   <!--
-  <applicationConfigurable implementation="com.intellij.util.net.HttpConfigurable"/>
-  <applicationConfigurable implementation="com.intellij.openapi.diff.impl.external.DiffOptionsForm"/>
+    <applicationConfigurable instance="com.intellij.util.net.HTTPProxySettingsPanel"/>
+    <applicationConfigurable instance="com.intellij.ui.switcher.QuickAccessConfigurable"/>
   -->
 
   <fileTypeFactory implementation="com.intellij.openapi.fileTypes.impl.PlatformFileTypeFactory"/>
@@ -190,19 +217,16 @@
   <applicationService serviceInterface="com.intellij.openapi.options.colors.ColorSettingsPages"
                       serviceImplementation="com.intellij.openapi.options.colors.pages.ColorSettingsPagesImpl"/>
 
-  <applicationConfigurable implementation="com.intellij.openapi.updateSettings.impl.UpdateSettingsConfigurable"/>
+  <applicationConfigurable instance="com.intellij.openapi.updateSettings.impl.UpdateSettingsConfigurable"/>
 
   <applicationService serviceInterface="com.intellij.psi.search.scope.packageSet.PackageSetFactory"
                       serviceImplementation="com.intellij.psi.search.scope.packageSet.PackageSetFactoryImpl"/>
   <scopeParserExtension implementation="com.intellij.psi.search.scope.packageSet.FilePackageSetParserExtension"/>
-  <applicationService serviceInterface="com.intellij.openapi.ui.popup.StackingPopupDispatcher"
-                      serviceImplementation="com.intellij.ui.popup.StackingPopupDispatcherImpl"/>
+  <applicationService serviceInterface="com.intellij.openapi.ui.popup.StackingPopupDispatcher" serviceImplementation="com.intellij.ui.popup.StackingPopupDispatcherImpl"/>
 
   <fileEditorProvider implementation="com.intellij.openapi.fileEditor.impl.http.HttpFileEditorProvider"/>
-  <componentConfigurationMerger
-          implementation="com.intellij.openapi.vcs.changes.shelf.ShelfManagerConfigurationMerger"/>
-  <editorActionHandler action="EditorEscape" implementationClass="com.intellij.codeInsight.hint.EscapeHandler"
-                       id="hide-hints"/>
+  <componentConfigurationMerger implementation="com.intellij.openapi.vcs.changes.shelf.ShelfManagerConfigurationMerger"/>
+  <editorActionHandler action="EditorEscape" implementationClass="com.intellij.codeInsight.hint.EscapeHandler" id="hide-hints"/>
   <ComponentRoamingType component="ChangeListManager" type="DISABLED"/>
   <ComponentRoamingType component="RestoreUpdateTree" type="DISABLED"/>
   <ComponentRoamingType component="PropertiesComponent" type="DISABLED"/>
