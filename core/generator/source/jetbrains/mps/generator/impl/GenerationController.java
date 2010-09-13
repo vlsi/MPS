@@ -22,7 +22,6 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.GeneratorManager.GeneratorNotifierHelper;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
-import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.ide.progress.TaskProgressHelper;
@@ -167,11 +166,11 @@ public class GenerationController {
   private boolean generateModel(final SModelDescriptor inputModel, final IModule module, final IOperationContext invocationContext, final ITaskProgressHelper progressHelper) throws GenerationCanceledException {
     boolean currentGenerationOK = false;
 
-    IPerformanceTracer ttrace = myGenerationContext.getTracingMode() != GenerationSettings.TRACE_OFF
+    IPerformanceTracer ttrace = myGenerationContext.getTracingMode() != GenerationProcessContext.TRACE_OFF
       ? new PerformanceTracer("model " + NameUtil.shortNameFromLongName(inputModel.getLongName()))
       : new NullPerformanceTracer();
 
-    boolean traceTypes = myGenerationContext.getTracingMode() == GenerationSettings.TRACE_TYPES;
+    boolean traceTypes = myGenerationContext.getTracingMode() == GenerationProcessContext.TRACE_TYPES;
     TypeChecker.getInstance().setIsGeneration(true, traceTypes ? ttrace : null);
 
     final GenerationSession generationSession = new GenerationSession(

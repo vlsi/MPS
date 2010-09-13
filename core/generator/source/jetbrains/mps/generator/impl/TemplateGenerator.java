@@ -33,7 +33,6 @@ import jetbrains.mps.generator.impl.template.QueryExecutionContextWithTracing;
 import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.template.TemplateQueryContext;
-import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
@@ -92,7 +91,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myDependenciesBuilder = dependenciesBuilder;
     ttrace = performanceTracer;
     myOutputRoots = new ArrayList<SNode>();
-    myExecutionContext = generationContext.getTracingMode() >= GenerationSettings.TRACE_LANGS
+    myExecutionContext = generationContext.getTracingMode() >= GenerationProcessContext.TRACE_LANGS
       ? new QueryExecutionContextWithTracing(new DefaultQueryExecutionContext(this), performanceTracer)
       : new DefaultQueryExecutionContext(this);
 

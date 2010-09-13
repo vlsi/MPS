@@ -3,19 +3,23 @@ package jetbrains.mps.generator.impl;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.SimpleGenerationTaskPool;
-import jetbrains.mps.ide.generator.GenerationSettings;
 
 /**
  * Evgeny Gryaznov, Apr 26, 2010
  */
 public class GenerationProcessContext {
 
+  public static final int TRACE_OFF = 0;
+  public static final int TRACE_STEPS = 1;
+  public static final int TRACE_LANGS = 2;
+  public static final int TRACE_TYPES = 3;
+
   public static /*final*/ boolean USE_PARALLEL_POOL = true;
 
   private final boolean mySaveTransientModels;
   private final boolean myStrictMode;
   private final boolean myRebuildAll;
-  private final boolean myGenerateDependencies;
+  private final boolean myIncremental;
   private final boolean myShowErrorsOnly;
   private final boolean myGenerateInParallel;
   private final int myNumberOfThreads;
@@ -25,14 +29,14 @@ public class GenerationProcessContext {
   IGenerationTracer myGenerationTracer;
   IGenerationTaskPool myParallelTaskPool;
 
-  public GenerationProcessContext(boolean saveTransientModels, boolean generateInParallel, boolean strictMode, boolean rebuildAll,
-                                  boolean generateDependencies, boolean showErrorsOnly, ProgressIndicator progressIndicator,
-                                  IGenerationTracer generationTracer, int numberOfThreads, int tracingMode) {
+  public GenerationProcessContext(boolean strictMode, boolean saveTransientModels, boolean rebuildAll, boolean incremental, boolean showErrorsOnly, boolean generateInParallel,
+                                  int numberOfThreads, int tracingMode, ProgressIndicator progressIndicator,
+                                  IGenerationTracer generationTracer) {
     mySaveTransientModels = saveTransientModels;
     myGenerateInParallel = generateInParallel;
     myStrictMode = strictMode;
     myRebuildAll = rebuildAll;
-    myGenerateDependencies = generateDependencies;
+    myIncremental = incremental;
     myShowErrorsOnly = showErrorsOnly;
     myGenerationTracer = generationTracer;
     myProgressIndicator = progressIndicator;
@@ -60,8 +64,8 @@ public class GenerationProcessContext {
     return myShowErrorsOnly;
   }
 
-  public boolean isGenerateDependencies() {
-    return myGenerateDependencies;
+  public boolean isIncremental() {
+    return myIncremental;
   }
 
   public ProgressIndicator getProgressIndicator() {
@@ -77,8 +81,8 @@ public class GenerationProcessContext {
   }
 
   public int getTracingMode() {
-    if (isGenerateInParallel() && myTracingMode > GenerationSettings.TRACE_STEPS) {
-      return GenerationSettings.TRACE_STEPS;
+    if (isGenerateInParallel() && myTracingMode > TRACE_STEPS) {
+      return TRACE_STEPS;
     }
     return myTracingMode;
   }

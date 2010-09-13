@@ -65,19 +65,6 @@ public class GeneratorManager {
   /**
    * @return false if canceled
    */
-  @Deprecated
-  public boolean generateModels(final List<SModelDescriptor> inputModels,
-                                final IOperationContext invocationContext,
-                                final IGenerationHandler generationHandler,
-                                final ProgressIndicator progress,
-                                final IMessageHandler messages,
-                                boolean saveTransientModels) {
-    return generateModels(inputModels, invocationContext, generationHandler, progress, messages, saveTransientModels, true);
-  }
-
-  /**
-   * @return false if canceled
-   */
   public boolean generateModels(final List<SModelDescriptor> inputModels,
                                 final IOperationContext invocationContext,
                                 final IGenerationHandler generationHandler,
@@ -126,9 +113,8 @@ public class GeneratorManager {
         GenerationSettings settings = GenerationSettings.getInstance();
 
         GenerationProcessContext parameters = new GenerationProcessContext(
-          saveTransientModels, settings.isParallelGenerator(), settings.isStrictMode(), rebuildAll, settings.isGenerateDependencies(),
-          !settings.isShowWarnings() && !settings.isShowInfo(),
-          progress, tracer, settings.getNumberOfParallelThreads(), settings.getPerformanceTracingLevel());
+          settings.isStrictMode(), saveTransientModels, rebuildAll, settings.isGenerateDependencies(), !settings.isShowWarnings() && !settings.isShowInfo(), settings.isParallelGenerator(),
+          settings.getNumberOfParallelThreads(), settings.getPerformanceTracingLevel(), progress, tracer);
 
         GeneratorLoggerAdapter logger = new GeneratorLoggerAdapter(messages, settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings());
 

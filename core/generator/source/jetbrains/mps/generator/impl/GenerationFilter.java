@@ -41,7 +41,7 @@ public class GenerationFilter {
   }
 
   private void init() {
-    if (!myGenerationContext.isGenerateDependencies()) {
+    if (!myGenerationContext.isIncremental()) {
       return;
     }
 
@@ -282,7 +282,7 @@ public class GenerationFilter {
   }
 
   public DependenciesBuilder createDependenciesBuilder() {
-    if (!myGenerationContext.isGenerateDependencies()) {
+    if (!myGenerationContext.isIncremental()) {
       return new NullDependenciesBuilder();
     }
 
