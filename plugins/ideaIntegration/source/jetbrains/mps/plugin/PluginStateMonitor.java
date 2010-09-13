@@ -20,6 +20,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.openapi.wm.StatusBar;
 import com.intellij.openapi.wm.WindowManager;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugin.icons.Icons;
 import org.jetbrains.annotations.NonNls;
@@ -109,7 +110,7 @@ public class PluginStateMonitor implements ProjectComponent {
   }
 
   private void tick() {
-    LOG.assertNotInEDT();
+    LOG.assertLog(!ThreadUtils.isEventDispatchThread(), "You should not do this in EDT");
 
     synchronized (LOCK) {
       if (myState == State.CONNECTED) {
