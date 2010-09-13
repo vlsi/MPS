@@ -148,7 +148,7 @@ public class RunManagerImpl extends RunManagerEx implements JDOMExternalizable, 
   }
 
   @Patch
-  public void setSelectedConfiguration(final RunnerAndConfigurationSettingsImpl configuration) {
+  public void setSelectedConfiguration(final RunnerAndConfigurationSettings configuration) {
     mySelectedConfig = configuration == null ? null : getUniqueName(configuration.getConfiguration());
   }
 
@@ -169,7 +169,7 @@ public class RunManagerImpl extends RunManagerEx implements JDOMExternalizable, 
   @Nullable
   @Patch
   // mySelectedConfiguration was removed and replaced with a call to method setSelectedConfiguration()
-  public RunnerAndConfigurationSettingsImpl loadConfiguration(final Element element, boolean isShared) throws InvalidDataException {
+  public RunnerAndConfigurationSettings loadConfiguration(final Element element, boolean isShared) throws InvalidDataException {
     RunnerAndConfigurationSettingsImpl settings = new RunnerAndConfigurationSettingsImpl(this);
     settings.readExternal(element);
     ConfigurationFactory factory = settings.getFactory();
@@ -403,10 +403,6 @@ public class RunManagerImpl extends RunManagerEx implements JDOMExternalizable, 
       }
     }
     return null;
-  }
-
-  public void setSelectedConfiguration(final RunnerAndConfigurationSettings configuration) {
-    mySelectedConfiguration = configuration;
   }
 
   public static boolean canRunConfiguration(@NotNull final RunnerAndConfigurationSettings configuration, @NotNull final Executor executor) {
