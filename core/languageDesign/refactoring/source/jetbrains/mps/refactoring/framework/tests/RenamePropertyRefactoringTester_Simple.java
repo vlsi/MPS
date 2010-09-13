@@ -30,7 +30,6 @@ public class RenamePropertyRefactoringTester_Simple implements IRefactoringTeste
                                  final SModelDescriptor sandbox2,
                                  final Language testRefactoringLanguage,
                                  final Language testRefactoringTargetLanguage) {
-    System.err.println("preparing arguments for refactoring");
     RenameProperty renameProperty = new RenameProperty();
     final RefactoringContext refactoringContext = new RefactoringContext(OldRefactoringAdapter.createAdapterFor(renameProperty));
     refactoringContext.setCurrentOperationContext(ProjectOperationContext.get(project));
@@ -49,7 +48,6 @@ public class RenamePropertyRefactoringTester_Simple implements IRefactoringTeste
       }
     });
 
-    System.err.println("executing a refactoring");
     new RefactoringTestFacade().doExecuteInTest(refactoringContext);
 
     final boolean[] result = new boolean[]{false};
@@ -58,7 +56,6 @@ public class RenamePropertyRefactoringTester_Simple implements IRefactoringTeste
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
             try {
-              System.err.println("checking a model");
               if (sandbox1.getLoadingState() != ModelLoadingState.NOT_LOADED) {
                 System.err.println("test environment is invalid: model sandbox1 is already initialized, should be not");
                 result[0] = false;

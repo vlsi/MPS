@@ -31,7 +31,6 @@ public class RenameConceptRefactoringTester implements IRefactoringTester {
                                  final SModelDescriptor sandbox2,
                                  final Language testRefactoringLanguage,
                                  final Language testRefactoringTargetLanguage) {
-    System.err.println("preparing arguments for refactoring");
     final String newConceptName = "MyVeryGoodConcept2";
     RenameConcept renameConcept = new RenameConcept();
     final RefactoringContext refactoringContext = new RefactoringContext(OldRefactoringAdapter.createAdapterFor(renameConcept));
@@ -48,7 +47,6 @@ public class RenameConceptRefactoringTester implements IRefactoringTester {
       }
     });
 
-    System.err.println("executing a refactoring");
     new RefactoringTestFacade().doExecuteInTest(refactoringContext);
 
     final boolean[] result = new boolean[]{false};
@@ -57,16 +55,14 @@ public class RenameConceptRefactoringTester implements IRefactoringTester {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
             try {
-              System.err.println("checking a model");
               if (sandbox1.getLoadingState() != ModelLoadingState.NOT_LOADED) {
                 System.err.println("test environment is invalid: model sandbox1 is already initialized, should be not");
                 result[0] = false;
                 return;
               }
-              ((DefaultSModelDescriptor) sandbox1).setTestRefactoringMode(true);
+              //((DefaultSModelDescriptor) sandbox1).setTestRefactoringMode(true);
               SModel sModel = sandbox1.getSModel();
               String conceptFqName = sModel.getRoots().get(0).getConceptFqName();
-              System.err.println("Inspected concept FQ name = " + conceptFqName);
               SModelDescriptor structureModelDescriptor = (SModelDescriptor) refactoringContext.getParameter(STRMD);
               result[0] = conceptFqName.equals(structureModelDescriptor.getSModelReference().getSModelFqName() + "." + newConceptName);
             } catch (Throwable t) {
