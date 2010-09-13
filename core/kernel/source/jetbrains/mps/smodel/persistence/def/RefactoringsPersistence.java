@@ -2,12 +2,12 @@ package jetbrains.mps.smodel.persistence.def;
 
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.vfs.VFileSystem;
 import org.jdom.Document;
 import org.jdom.Element;

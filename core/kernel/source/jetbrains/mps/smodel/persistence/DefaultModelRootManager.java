@@ -34,7 +34,7 @@ import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vcs.queue.VCSQueue;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.MPSExtentions;
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

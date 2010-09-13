@@ -49,7 +49,7 @@ import jetbrains.mps.util.AbstractClassLoader;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.vfs.MPSExtentions;
+import jetbrains.mps.project.MPSExtentions;
 import junit.framework.TestCase;
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.ProjectComponent;

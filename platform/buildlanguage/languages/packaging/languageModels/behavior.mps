@@ -3647,8 +3647,8 @@
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1217854945685">
                       <link role="baseMethodDeclaration:3" targetNodeId="3.~String.endsWith(java.lang.String):boolean" resolveInfo="endsWith" />
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1217854945686">
-                        <link role="classifier:3" targetNodeId="7.~MPSExtentions" resolveInfo="MPSExtentions" />
-                        <link role="variableDeclaration:3" targetNodeId="7.~MPSExtentions.DOT_MPS_PROJECT" resolveInfo="DOT_MPS_PROJECT" />
+                        <link role="classifier:3" targetNodeId="6.~MPSExtentions" resolveInfo="MPSExtentions" />
+                        <link role="variableDeclaration:3" targetNodeId="6.~MPSExtentions.DOT_MPS_PROJECT" resolveInfo="DOT_MPS_PROJECT" />
                       </node>
                     </node>
                   </node>
@@ -4279,8 +4279,8 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1213877515129">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1213877515131">
             <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="4560166711357363535">
-              <link role="classifier:3" targetNodeId="7.~MPSExtentions" resolveInfo="MPSExtentions" />
-              <link role="variableDeclaration:3" targetNodeId="7.~MPSExtentions.RUNTIME_ARCH" resolveInfo="RUNTIME_ARCH" />
+              <link role="classifier:3" targetNodeId="6.~MPSExtentions" resolveInfo="MPSExtentions" />
+              <link role="variableDeclaration:3" targetNodeId="6.~MPSExtentions.RUNTIME_ARCH" resolveInfo="RUNTIME_ARCH" />
             </node>
             <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1213877515130">
               <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1213877515134">
@@ -4306,8 +4306,8 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1213877515140">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1213877515142">
             <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="4560166711357363533">
-              <link role="classifier:3" targetNodeId="7.~MPSExtentions" resolveInfo="MPSExtentions" />
-              <link role="variableDeclaration:3" targetNodeId="7.~MPSExtentions.MPS_ARCH" resolveInfo="MPS_ARCH" />
+              <link role="classifier:3" targetNodeId="6.~MPSExtentions" resolveInfo="MPSExtentions" />
+              <link role="variableDeclaration:3" targetNodeId="6.~MPSExtentions.MPS_ARCH" resolveInfo="MPS_ARCH" />
             </node>
             <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1213877515141">
               <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1213877515145">
@@ -4430,7 +4430,6 @@
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1218642305013">
             <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1218642305014" />
             <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1218642305016">
-              <property name="name:16" value="getPathHolders" />
               <link role="baseMethodDeclaration:16" targetNodeId="1213877515000" resolveInfo="getClassPath" />
               <node role="actualArgument:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1218642305017">
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1218642305018">

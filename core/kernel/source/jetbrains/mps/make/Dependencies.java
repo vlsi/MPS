@@ -19,11 +19,11 @@ import jetbrains.mps.baseLanguage.textGen.BLDependenciesCache;
 import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
 import jetbrains.mps.baseLanguage.textGen.RootDependencies;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.MPSExtentions;
 
 import java.io.File;
 import java.util.*;

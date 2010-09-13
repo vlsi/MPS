@@ -825,6 +825,9 @@
     <scopeInfo nodeId="4060390951635972978" fileName="StandardComponents.java" startLine="108" startPosition="31" endLine="108" endPosition="31" />
     <scopeInfo nodeId="1747818952411874080" fileName="StandardComponents.java" startLine="149" startPosition="122" endLine="150" endPosition="60" />
     <scopeInfo nodeId="4060390951635973405" fileName="StandardComponents.java" startLine="382" startPosition="9" endLine="383" endPosition="30" />
+    <scopeInfo nodeId="4060390951635973397" fileName="StandardComponents.java" startLine="384" startPosition="0" endLine="385" endPosition="22">
+      <varInfo nodeId="4060390951635973403" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="4060390951635973398" fileName="StandardComponents.java" startLine="384" startPosition="38" endLine="385" endPosition="22" />
     <scopeInfo nodeId="4060390951635973548" fileName="StandardComponents.java" startLine="411" startPosition="29" endLine="412" endPosition="17" />
     <scopeInfo nodeId="3631268986232939459" fileName="StandardComponents.java" startLine="428" startPosition="92" endLine="429" endPosition="124" />

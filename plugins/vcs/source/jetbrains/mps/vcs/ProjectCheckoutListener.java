@@ -4,7 +4,7 @@ import com.intellij.ide.impl.ProjectUtil;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vcs.checkout.CheckoutListener;
-import jetbrains.mps.vfs.MPSExtentions;
+import jetbrains.mps.project.MPSExtentions;
 import org.apache.oro.io.GlobFilenameFilter;
 
 import java.io.File;

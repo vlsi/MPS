@@ -20,7 +20,7 @@ import org.jdesktop.beansbinding.BeanProperty;
 import org.jdesktop.beansbinding.Bindings;
 import java.io.File;
 import jetbrains.mps.ide.NewModuleCheckUtil;
-import jetbrains.mps.vfs.MPSExtentions;
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;

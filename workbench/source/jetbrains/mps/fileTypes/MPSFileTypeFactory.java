@@ -22,7 +22,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.java.JavaFileType;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.fileSystem.FileIcons;
-import jetbrains.mps.vfs.MPSExtentions;
+import jetbrains.mps.project.MPSExtentions;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

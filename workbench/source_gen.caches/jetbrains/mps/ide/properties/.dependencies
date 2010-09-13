@@ -272,6 +272,7 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.RefactoringPanel" />
     <classNode dependClassName="jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
+    <classNode dependClassName="jetbrains.mps.project.MPSExtentions" />
     <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRoot" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ClassPathEntry" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.Dependency" />
@@ -290,7 +291,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.util.Condition" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
-    <classNode dependClassName="jetbrains.mps.vfs.MPSExtentions" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.choosers.CommonChoosers" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.IBindedDialog" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.CopySupport" />

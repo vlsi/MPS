@@ -1955,6 +1955,7 @@
     <scopeInfo nodeId="1325286122618176637" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="50" startPosition="32" endLine="51" endPosition="13" />
     <scopeInfo nodeId="1325286122618219126" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="56" startPosition="25" endLine="57" endPosition="119" />
     <scopeInfo nodeId="1325286122618217633" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="65" startPosition="15" endLine="66" endPosition="154" />
+    <scopeInfo nodeId="1325286122618217633" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="67" startPosition="0" endLine="68" endPosition="51" />
     <scopeInfo nodeId="1325286122618217633" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="67" startPosition="47" endLine="68" endPosition="51" />
     <scopeInfo nodeId="1325286122618219159" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="45" startPosition="57" endLine="49" endPosition="0" />
     <scopeInfo nodeId="1325286122618219125" fileName="DefaultPackagingLanguageConfigurationFromMPSLayout.java" startLine="55" startPosition="57" endLine="59" endPosition="0" />
@@ -1998,6 +1999,7 @@
     <nodeInfo nodeId="1325286122618219295" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="57" startPosition="111" endLine="74" endPosition="5" />
     <scopeInfo nodeId="1325286122618219280" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="53" startPosition="32" endLine="54" endPosition="13" />
     <scopeInfo nodeId="1325286122618219295" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="61" startPosition="15" endLine="62" endPosition="154" />
+    <scopeInfo nodeId="1325286122618219295" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="63" startPosition="0" endLine="64" endPosition="51" />
     <scopeInfo nodeId="1325286122618219295" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="63" startPosition="47" endLine="64" endPosition="51" />
     <scopeInfo nodeId="1325286122618219209" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="47" startPosition="25" endLine="50" endPosition="50" />
     <scopeInfo nodeId="1325286122618219295" fileName="DefaultPackagingLanguageConfigurationFromConfiguration.java" startLine="60" startPosition="50" endLine="65" endPosition="11" />

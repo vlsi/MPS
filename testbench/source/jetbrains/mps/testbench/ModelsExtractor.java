@@ -4,16 +4,15 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
 import jetbrains.mps.smodel.persistence.def.ModelFileReadException;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.PersistenceVersionNotFoundException;
-import jetbrains.mps.testbench.Testbench;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.MPSExtentions;
 
 import java.io.File;
 import java.util.*;

@@ -29,7 +29,7 @@ import jetbrains.mps.reloading.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.vfs.MPSExtentions;
+import jetbrains.mps.project.MPSExtentions;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.core.compiler.IProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;

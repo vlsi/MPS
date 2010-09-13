@@ -28,7 +28,7 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.ManyToManyMap;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.MPSExtentions;
+import jetbrains.mps.project.MPSExtentions;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 

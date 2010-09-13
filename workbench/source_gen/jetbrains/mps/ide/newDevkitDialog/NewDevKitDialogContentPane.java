@@ -18,7 +18,7 @@ import org.jdesktop.beansbinding.Property;
 import org.jdesktop.beansbinding.BeanProperty;
 import org.jdesktop.beansbinding.Bindings;
 import java.io.File;
-import jetbrains.mps.vfs.MPSExtentions;
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.ide.NewModuleCheckUtil;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.progress.ProgressManager;

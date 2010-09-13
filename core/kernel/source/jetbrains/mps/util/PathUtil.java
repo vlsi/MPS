@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.util;
 
-import jetbrains.mps.vfs.MPSExtentions;
+import jetbrains.mps.project.MPSExtentions;
 
 import java.io.File;
 import java.util.Set;

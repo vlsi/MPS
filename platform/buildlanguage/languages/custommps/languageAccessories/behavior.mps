@@ -7,6 +7,7 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)" />
+  <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="8" />
@@ -606,8 +607,8 @@
                       </node>
                     </node>
                     <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="4560166711357320118">
-                      <link role="classifier:3" targetNodeId="11.~MPSExtentions" resolveInfo="MPSExtentions" />
-                      <link role="variableDeclaration:3" targetNodeId="11.~MPSExtentions.MPS_ARCH" resolveInfo="MPS_ARCH" />
+                      <link role="classifier:3" targetNodeId="3.~MPSExtentions" resolveInfo="MPSExtentions" />
+                      <link role="variableDeclaration:3" targetNodeId="3.~MPSExtentions.MPS_ARCH" resolveInfo="MPS_ARCH" />
                     </node>
                   </node>
                 </node>
@@ -725,8 +726,8 @@
                               </node>
                             </node>
                             <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="4560166711357320120">
-                              <link role="classifier:3" targetNodeId="11.~MPSExtentions" resolveInfo="MPSExtentions" />
-                              <link role="variableDeclaration:3" targetNodeId="11.~MPSExtentions.RUNTIME_ARCH" resolveInfo="RUNTIME_ARCH" />
+                              <link role="classifier:3" targetNodeId="3.~MPSExtentions" resolveInfo="MPSExtentions" />
+                              <link role="variableDeclaration:3" targetNodeId="3.~MPSExtentions.RUNTIME_ARCH" resolveInfo="RUNTIME_ARCH" />
                             </node>
                           </node>
                         </node>

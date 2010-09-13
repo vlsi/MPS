@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.compiler;
 
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.util.AbstractClassLoader;
-import jetbrains.mps.vfs.MPSExtentions;
 import org.eclipse.jdt.internal.compiler.*;
 import org.eclipse.jdt.internal.compiler.Compiler;
 import org.eclipse.jdt.internal.compiler.batch.CompilationUnit;

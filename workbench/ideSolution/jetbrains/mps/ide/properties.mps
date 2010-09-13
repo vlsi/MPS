@@ -4200,8 +4200,8 @@
               <link role="variableDeclaration:3" targetNodeId="4060390951635974679" resolveInfo="list" />
             </node>
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="4060390951635974688">
-              <link role="classifier:3" targetNodeId="6.~MPSExtentions" resolveInfo="MPSExtentions" />
-              <link role="variableDeclaration:3" targetNodeId="6.~MPSExtentions.DOT_SOLUTION" resolveInfo="DOT_SOLUTION" />
+              <link role="classifier:3" targetNodeId="19.~MPSExtentions" resolveInfo="MPSExtentions" />
+              <link role="variableDeclaration:3" targetNodeId="19.~MPSExtentions.DOT_SOLUTION" resolveInfo="DOT_SOLUTION" />
             </node>
           </node>
         </node>
@@ -4252,8 +4252,8 @@
               <link role="variableDeclaration:3" targetNodeId="4060390951635974696" resolveInfo="list" />
             </node>
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="4060390951635974705">
-              <link role="classifier:3" targetNodeId="6.~MPSExtentions" resolveInfo="MPSExtentions" />
-              <link role="variableDeclaration:3" targetNodeId="6.~MPSExtentions.DOT_LANGUAGE" resolveInfo="DOT_LANGUAGE" />
+              <link role="classifier:3" targetNodeId="19.~MPSExtentions" resolveInfo="MPSExtentions" />
+              <link role="variableDeclaration:3" targetNodeId="19.~MPSExtentions.DOT_LANGUAGE" resolveInfo="DOT_LANGUAGE" />
             </node>
           </node>
         </node>
@@ -4304,8 +4304,8 @@
               <link role="variableDeclaration:3" targetNodeId="4060390951635974713" resolveInfo="list" />
             </node>
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="4060390951635974722">
-              <link role="classifier:3" targetNodeId="6.~MPSExtentions" resolveInfo="MPSExtentions" />
-              <link role="variableDeclaration:3" targetNodeId="6.~MPSExtentions.DOT_DEVKIT" resolveInfo="DOT_DEVKIT" />
+              <link role="classifier:3" targetNodeId="19.~MPSExtentions" resolveInfo="MPSExtentions" />
+              <link role="variableDeclaration:3" targetNodeId="19.~MPSExtentions.DOT_DEVKIT" resolveInfo="DOT_DEVKIT" />
             </node>
           </node>
         </node>

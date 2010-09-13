@@ -22,7 +22,7 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.IFileFilter;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.MPSExtentions;
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.workbench.action.BaseAction;
 
 import javax.swing.Icon;

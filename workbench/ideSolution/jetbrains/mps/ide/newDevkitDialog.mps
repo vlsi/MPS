@@ -218,8 +218,8 @@
                 </node>
               </node>
               <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1214659395994">
-                <link role="classifier:3" targetNodeId="11.~MPSExtentions" resolveInfo="MPSExtentions" />
-                <link role="variableDeclaration:3" targetNodeId="11.~MPSExtentions.DOT_DEVKIT" resolveInfo="DOT_DEVKIT" />
+                <link role="classifier:3" targetNodeId="4.~MPSExtentions" resolveInfo="MPSExtentions" />
+                <link role="variableDeclaration:3" targetNodeId="4.~MPSExtentions.DOT_DEVKIT" resolveInfo="DOT_DEVKIT" />
               </node>
             </node>
           </node>
@@ -284,8 +284,8 @@
                 <link role="variableDeclaration:3" targetNodeId="4015801747712958747" resolveInfo="dir" />
               </node>
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="4015801747712977599">
-                <link role="classifier:3" targetNodeId="11.~MPSExtentions" resolveInfo="MPSExtentions" />
-                <link role="variableDeclaration:3" targetNodeId="11.~MPSExtentions.DOT_DEVKIT" resolveInfo="DOT_DEVKIT" />
+                <link role="classifier:3" targetNodeId="4.~MPSExtentions" resolveInfo="MPSExtentions" />
+                <link role="variableDeclaration:3" targetNodeId="4.~MPSExtentions.DOT_DEVKIT" resolveInfo="DOT_DEVKIT" />
               </node>
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4015801747712977600">
                 <property name="value:3" value="DevKit" />

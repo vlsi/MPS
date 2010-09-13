@@ -24,7 +24,7 @@ import java.util.HashSet;
 import jetbrains.mps.project.dependency.LanguageDepsManager;
 import jetbrains.mps.build.packaging.behavior.Module_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.vfs.MPSExtentions;
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.StubPath;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 

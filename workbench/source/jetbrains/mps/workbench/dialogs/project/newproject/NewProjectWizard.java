@@ -29,6 +29,7 @@ import com.intellij.openapi.startup.StartupManager;
 
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.library.LanguageDesign_DevKit;
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
@@ -41,7 +42,6 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.MPSExtentions;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

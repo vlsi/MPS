@@ -197,8 +197,8 @@
                 <link role="variableDeclaration:3" targetNodeId="1203687991307" resolveInfo="dir" />
               </node>
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="4015801747712958687">
-                <link role="classifier:3" targetNodeId="15.~MPSExtentions" resolveInfo="MPSExtentions" />
-                <link role="variableDeclaration:3" targetNodeId="15.~MPSExtentions.DOT_LANGUAGE" resolveInfo="DOT_LANGUAGE" />
+                <link role="classifier:3" targetNodeId="2.~MPSExtentions" resolveInfo="MPSExtentions" />
+                <link role="variableDeclaration:3" targetNodeId="2.~MPSExtentions.DOT_LANGUAGE" resolveInfo="DOT_LANGUAGE" />
               </node>
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4015801747712958689">
                 <property name="value:3" value="Language" />
@@ -821,8 +821,8 @@
                     <link role="variableDeclaration:3" targetNodeId="1203686289744" resolveInfo="descriptorFileName" />
                   </node>
                   <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1214658752399">
-                    <link role="classifier:3" targetNodeId="15.~MPSExtentions" resolveInfo="MPSExtentions" />
-                    <link role="variableDeclaration:3" targetNodeId="15.~MPSExtentions.DOT_LANGUAGE" resolveInfo="DOT_LANGUAGE" />
+                    <link role="classifier:3" targetNodeId="2.~MPSExtentions" resolveInfo="MPSExtentions" />
+                    <link role="variableDeclaration:3" targetNodeId="2.~MPSExtentions.DOT_LANGUAGE" resolveInfo="DOT_LANGUAGE" />
                   </node>
                 </node>
               </node>
@@ -1139,8 +1139,8 @@
                 </node>
               </node>
               <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="5890305283801272068">
-                <link role="classifier:3" targetNodeId="15.~MPSExtentions" resolveInfo="MPSExtentions" />
-                <link role="variableDeclaration:3" targetNodeId="15.~MPSExtentions.DOT_SOLUTION" resolveInfo="DOT_SOLUTION" />
+                <link role="classifier:3" targetNodeId="2.~MPSExtentions" resolveInfo="MPSExtentions" />
+                <link role="variableDeclaration:3" targetNodeId="2.~MPSExtentions.DOT_SOLUTION" resolveInfo="DOT_SOLUTION" />
               </node>
             </node>
           </node>
@@ -1263,8 +1263,8 @@
                 </node>
               </node>
               <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="5890305283801272196">
-                <link role="classifier:3" targetNodeId="15.~MPSExtentions" resolveInfo="MPSExtentions" />
-                <link role="variableDeclaration:3" targetNodeId="15.~MPSExtentions.DOT_SOLUTION" resolveInfo="DOT_SOLUTION" />
+                <link role="classifier:3" targetNodeId="2.~MPSExtentions" resolveInfo="MPSExtentions" />
+                <link role="variableDeclaration:3" targetNodeId="2.~MPSExtentions.DOT_SOLUTION" resolveInfo="DOT_SOLUTION" />
               </node>
             </node>
           </node>

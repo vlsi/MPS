@@ -36,7 +36,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.vfs.MPSExtentions;
+import jetbrains.mps.project.MPSExtentions;
 import org.jdom.JDOMException;
 
 import java.io.File;
