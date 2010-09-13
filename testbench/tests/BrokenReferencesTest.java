@@ -1,7 +1,7 @@
-import jetbrains.mps.testbench.MpsMakeHelper;
-import jetbrains.mps.testbench.junit.runners.WatchingParameterized;
 import jetbrains.mps.testbench.BrokenReferencesTestHelper;
 import jetbrains.mps.testbench.BrokenReferencesTestHelper.Token;
+import jetbrains.mps.testbench.MpsMakeHelper;
+import jetbrains.mps.testbench.junit.runners.WatchingParameterized;
 import jetbrains.mps.testbench.util.FilesCollector;
 import jetbrains.mps.testbench.util.FilesCollector.FilePattern;
 import jetbrains.mps.testbench.util.FilesCollector.FilePattern.Type;
@@ -13,6 +13,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
 
 import java.io.File;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -44,16 +45,19 @@ public class BrokenReferencesTest {
 
   private static BrokenReferencesTestHelper HELPER;
   private static Token TOKEN;
+  private static PrintStream systemOut = System.out;
 
   @Parameters
   public static List<Object[]> filePaths() {
+    long timeStamp = System.currentTimeMillis();
+
     List<File> path = Collections.singletonList(new File(System.getProperty("user.dir")));
     List<FilePattern> filePtns = new ArrayList<FilePattern>();
     for (Object[] ptns : patterns) {
       filePtns.add (FilesCollector.FilePattern.fromTypeAndPattern(ptns));
     }
     ArrayList<Object[]> res = new ArrayList<Object[]>();
-    for (File f: FilesCollector.collectFiles(filePtns, path)) {
+    for (File f: FilesCollector.fastCollectFiles(filePtns, path)) {
       res.add(new Object[]{f});
     }
     return res;
@@ -68,12 +72,13 @@ public class BrokenReferencesTest {
   public static void init() {
     HELPER = new BrokenReferencesTestHelper();
     TOKEN = HELPER.init(new String[][]{{"samples_home", System.getProperty("user.dir") + "/samples"}});
+    long timeStamp = System.currentTimeMillis();
     List<File> path = Collections.singletonList(new File(System.getProperty("user.dir")));
     List<FilePattern> filePtns = new ArrayList<FilePattern>();
     for (Object[] ptns : patterns) {
       filePtns.add (FilesCollector.FilePattern.fromTypeAndPattern(ptns));
     }
-    HELPER.load(FilesCollector.collectFiles(filePtns, path));
+    HELPER.load(FilesCollector.fastCollectFiles(filePtns, path));
   }
 
   @AfterClass
