@@ -145,7 +145,7 @@
     <property name="package:0" value="export" />
     <link role="extends:0" targetNodeId="5425021671150136555:0" resolveInfo="ExportScope" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="4075196924244376958">
-      <property name="value:0" value="public" />
+      <property name="value:0" value="@export(public)" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="1137473891462:0" resolveInfo="alias" />
     </node>
     <node role="export$attribute:0" type="jetbrains.mps.lang.core.structure.ExportScopePublic:0" id="4075196924244431954" />
@@ -155,7 +155,7 @@
     <property name="package:0" value="export" />
     <link role="extends:0" targetNodeId="5425021671150136555:0" resolveInfo="ExportScope" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="4075196924244376960">
-      <property name="value:0" value="namespace" />
+      <property name="value:0" value="@export(namespace)" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="1137473891462:0" resolveInfo="alias" />
     </node>
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="2565736246230036153">
@@ -169,7 +169,7 @@
     <property name="package:0" value="export" />
     <link role="extends:0" targetNodeId="5425021671150136555:0" resolveInfo="ExportScope" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="4075196924244376956">
-      <property name="value:0" value="module" />
+      <property name="value:0" value="@export(module)" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="1137473891462:0" resolveInfo="alias" />
     </node>
     <node role="export$attribute:0" type="jetbrains.mps.lang.core.structure.ExportScopePublic:0" id="4075196924244431952" />

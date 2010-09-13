@@ -43,7 +43,7 @@ public class SetExportAnnotation_Intention extends BaseIntention implements Inte
   public String getDescription(final SNode node, final EditorContext editorContext) {
     return ((this.myParameter == null) ?
       "Remove @export() Annotation" :
-      "Set @export(" + SConceptPropertyOperations.getString(SNodeOperations.castConcept(this.myParameter, "jetbrains.mps.lang.core.structure.ExportScope"), "alias") + ") Annotation"
+      "Set " + SConceptPropertyOperations.getString(SNodeOperations.castConcept(this.myParameter, "jetbrains.mps.lang.core.structure.ExportScope"), "alias") + " Annotation"
     );
   }
 
