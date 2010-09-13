@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="6hq1d5ir2iq2y3nwt0ee59u9ieyi9w1">
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-9m0qbr226ijpw1k9p40vluc55b7fvfw" />
+  <dep model="r:00000000-0000-4000-0000-011c895904b1(jetbrains.mps.ide.uiLanguage.structure)" hash="-dzbm8g3grpx2i14exjskb19w97xjje6" />
+  <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="ebvwkzeu7b9qz8hug47msykar5hbmyt" />
+  <common hash="-crgpvvful9rk8c17dbxe11m5y45oclf">
+    <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
+  </common>
+  <source id="1213877315073" name="ReportErrorExpression_Behavior" hash="9epwi6fjmdivt7bqdi14wv1nmfpjza4">
+    <dep model="r:00000000-0000-4000-0000-011c895904b1(jetbrains.mps.ide.uiLanguage.structure)" />
+    <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
+    <file name="ReportErrorExpression_Behavior.java" />
+  </source>
+  <source id="1213877331196" name="DialogExpression_Behavior" hash="-1ewufbadcmxw3xrncftl0kmjptylxds">
+    <dep model="r:00000000-0000-4000-0000-011c895904b1(jetbrains.mps.ide.uiLanguage.structure)" />
+    <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
+    <file name="DialogExpression_Behavior.java" />
+  </source>
+  <source id="1213877369278" name="IDEDialog_Behavior" hash="-5528kj8eoafrurixz1c5qpfi9omt7hn">
+    <dep model="r:00000000-0000-4000-0000-011c895904b1(jetbrains.mps.ide.uiLanguage.structure)" />
+    <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
+    <file name="IDEDialog_Behavior.java" />
+  </source>
+  <source id="1213877501207" name="DisposeDialogExpression_Behavior" hash="-255c1a8ohtbetwjqiomsua01ikd2ney">
+    <dep model="r:00000000-0000-4000-0000-011c895904b1(jetbrains.mps.ide.uiLanguage.structure)" />
+    <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" />
+    <file name="DisposeDialogExpression_Behavior.java" />
+  </source>
+</dependencies>
+
