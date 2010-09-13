@@ -17,6 +17,9 @@
       <root url="jar://$PROJECT_DIR$/lib/guava-r06.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/sources/idea-platform-src.zip!/" />
+      <root url="jar://$PROJECT_DIR$/lib/sources/idea-external-src.zip!/" />
+    </SOURCES>
   </library>
 </component>
