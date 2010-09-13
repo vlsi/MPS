@@ -153,6 +153,7 @@ def layoutFull(String home, String targetDirectory) {
 private List platformImplementationModules() {
   return [
           "platform-impl",
+          "platform-main",
           "lvcs-impl",
           "vcs-impl",
           "lang-impl",
