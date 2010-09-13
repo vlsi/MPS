@@ -383,12 +383,6 @@
     </component>
 
     <component>
-      <interface-class>com.intellij.history.LocalHistory</interface-class>
-      <implementation-class>com.intellij.history.integration.LocalHistoryImpl</implementation-class>
-      <skipForDummyProject/>
-    </component>
-
-    <component>
       <interface-class>com.intellij.packageDependencies.DependencyValidationManager</interface-class>
       <implementation-class>com.intellij.packageDependencies.DependencyValidationManagerImpl
       </implementation-class>
