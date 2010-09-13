@@ -82,7 +82,31 @@ def layoutFull(String home, String targetDirectory) {
 
         fileset(dir: "$home/lib") {
           include(name: "*.jar")
+
+          //these libs from repository are not required
+          exclude(name: "dtdparser113.jar")
+          exclude(name: "foundrylogic-vpp-2.2.1.jar")
+          exclude(name: "groovy-all-1.7.3.jar")
+          exclude(name: "jaxen-1.1.1.jar")
+
+          //this is replaced by MPS asm.jar, which contains more packages
           exclude(name: "asm.jar")
+          exclude(name: "asm-commons.jar")
+
+          /**
+          * the following libs are required for build (see required_for_dist.txt),
+           * but MPS works normally without them
+           */
+          exclude(name: "jcip-annotations.jar")
+          exclude(name: "jsr173_1.0_api.jar")
+          exclude(name: "org.eclipse.jdt.core_3.5.2.v_981_R35x.jar")
+          exclude(name: "resolver.jar") 
+          exclude(name: "serviceMessages.jar")
+          exclude(name: "velocity.jar")
+          exclude(name: "xbean.jar")
+          exclude(name: "xerces.jar")
+
+          //platform exclude
           exclude(name: "eawtstub.jar")
         }
         fileset(dir: "$home/lib/src") {
