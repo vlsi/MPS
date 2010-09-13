@@ -35,12 +35,12 @@
     <exclude name="**/classes_gen/**"/>
     <exclude name="**/lib/**"/>
     <exclude name="**/testMaterial/**"/>
-    <exclude name="**/**transformationTest**/**"/>
-    <exclude name="**/**testLogger**/**"/>
-    <exclude name="**/**sandbox**/**"/>
-    <exclude name="**/**Sandbox**/**"/>
-    <include name="**/**.mpl"/>
-    <include name="**/**.msd"/>
+    <exclude name="**/*transformationTest*/**"/>
+    <exclude name="**/*testLogger*/**"/>
+    <exclude name="**/*sandbox*/**"/>
+    <exclude name="**/*Sandbox*/**"/>
+    <include name="**/*.mpl"/>
+    <include name="**/*.msd"/>
     <exclude name="**/resolve.msd"/>
   </patternset>
 

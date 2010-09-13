@@ -1,3 +1,4 @@
+import jetbrains.mps.testbench.MpsMakeHelper;
 import jetbrains.mps.testbench.junit.runners.WatchingParameterized;
 import jetbrains.mps.testbench.BrokenReferencesTestHelper;
 import jetbrains.mps.testbench.BrokenReferencesTestHelper.Token;
@@ -56,6 +57,11 @@ public class BrokenReferencesTest {
       res.add(new Object[]{f});
     }
     return res;
+  }
+
+  @BeforeClass
+  public static void make () throws Exception {
+    new MpsMakeHelper().make();
   }
 
   @BeforeClass
