@@ -1615,7 +1615,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void rebuildEditorContent() {
-    LOG.assertInEDT();
+    LOG.assertLog(ThreadUtils.isEventDispatchThread(), "You should do this in EDT");
 
     clearCaches();
     clearUserData();

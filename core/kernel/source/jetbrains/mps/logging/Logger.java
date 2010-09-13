@@ -16,7 +16,6 @@
 package jetbrains.mps.logging;
 
 import com.intellij.openapi.command.CommandProcessor;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.ModelAccess;
 import org.apache.log4j.Level;
 
@@ -241,24 +240,6 @@ public class Logger {
 
   public void assertInCommand() {
     assertLog(CommandProcessor.getInstance().getCurrentCommand() != null, "This action must be performed in command");
-  }
-
-  public void assertInEDT() {
-    assertLog(ThreadUtils.isEventDispatchThread(), "You should do this in EDT");
-  }
-
-  public void assertNotInEDT() {
-    assertLog(!ThreadUtils.isEventDispatchThread(), "You should not do this in EDT");
-  }
-
-  public void assertNotInCommand() {
-    assertLog(CommandProcessor.getInstance().getCurrentCommand() == null, "This action should be performed outside of command");
-  }
-
-  public void checkEDT() {
-    if (!ThreadUtils.isEventDispatchThread()) {
-      throw new IllegalStateException("Can't use this outside of EDT");
-    }
   }
 }
 

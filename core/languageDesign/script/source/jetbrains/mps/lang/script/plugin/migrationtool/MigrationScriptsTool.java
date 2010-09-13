@@ -21,7 +21,7 @@ import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.ui.content.Content;
-import com.intellij.ui.content.ContentManagerAdapter;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -68,7 +68,9 @@ public class MigrationScriptsTool extends TabbedUsagesTool {
   }
 
   public void startMigration(List<MigrationScript> scriptNodes, final IScope scope, final IOperationContext context) {
-    LOG.checkEDT();
+    if (!ThreadUtils.isEventDispatchThread()) {
+      throw new IllegalStateException("Can't use this outside of EDT");
+    }
 
     myScripts = new ArrayList<SNodePointer>();
     for (MigrationScript scriptNode : scriptNodes) {
@@ -110,7 +112,9 @@ public class MigrationScriptsTool extends TabbedUsagesTool {
   }
 
   void addTab(final MigrationScriptFinder finder, final IResultProvider provider, final SearchQuery query) {
-    LOG.checkEDT();
+    if (!ThreadUtils.isEventDispatchThread()) {
+      throw new IllegalStateException("Can't use this outside of EDT");
+    }
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
