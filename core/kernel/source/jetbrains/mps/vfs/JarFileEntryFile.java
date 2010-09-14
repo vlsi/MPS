@@ -62,7 +62,7 @@ public class JarFileEntryFile implements IFile {
   }
 
   public List<IFile> list() {
-    if (isFile()) {
+    if (!isDirectory()) {
       return null;
     }
 
@@ -103,10 +103,6 @@ public class JarFileEntryFile implements IFile {
       return false;
     }
     return myJarFileData.isDirectory(myEntryPath);
-  }
-
-  public boolean isFile() {
-    return !isDirectory();
   }
 
   public String getAbsolutePath() {

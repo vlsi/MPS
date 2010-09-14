@@ -89,7 +89,7 @@ public abstract class PathItem {
     List<IFile> lst = fld.list();
     IFile file = ListSequence.fromList(lst).findFirst(new IWhereFilter<IFile>() {
       public boolean accept(IFile f) {
-        return resName.equals(f.getName()) && f.isFile();
+        return resName.equals(f.getName()) && !f.isDirectory();
       }
     });
     if (file == null) {

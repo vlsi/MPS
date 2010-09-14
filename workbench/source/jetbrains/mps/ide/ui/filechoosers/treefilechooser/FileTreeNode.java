@@ -89,7 +89,7 @@ public abstract class FileTreeNode extends MPSTreeNode {
   }
 
   public boolean isLeaf() {
-    return getAssociatedFile().isFile();
+    return !getAssociatedFile().isDirectory();
   }
 
   private void setAssociatedFile(IFile file) {

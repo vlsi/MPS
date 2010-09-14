@@ -50,10 +50,6 @@ public class FileSystemFile implements IFile {
     return myFile.isDirectory();
   }
 
-  public boolean isFile() {
-    return myFile.isFile();
-  }
-
   public String getAbsolutePath() {
     return myFile.getAbsolutePath();
   }

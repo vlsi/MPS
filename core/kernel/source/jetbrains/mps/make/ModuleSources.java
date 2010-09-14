@@ -168,13 +168,13 @@ public class ModuleSources {
   }
 
   private boolean isJavaFile(IFile file) {
-    return file.isFile() && file.getName().endsWith(MPSExtentions.DOT_JAVAFILE);
+    return !file.isDirectory() && file.getName().endsWith(MPSExtentions.DOT_JAVAFILE);
   }
 
   private boolean isResourceFile(IFile file) {
     int extPos = file.getName().lastIndexOf('.');
     if (extPos == -1) return false;
-    return file.isFile() &&
+    return !file.isDirectory() &&
       !file.getName().endsWith(MPSExtentions.DOT_JAVAFILE) &&
       !file.getName().endsWith(MPSExtentions.DOT_CLASSFILE) &&
       !AllCaches.getInstance().isCacheFile(file);

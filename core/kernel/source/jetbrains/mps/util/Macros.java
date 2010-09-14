@@ -269,7 +269,7 @@ public abstract class Macros {
     protected String shrinkPath_internal(String absolutePath, IFile projectDescriptor) {
       String prefix;
 
-      if (projectDescriptor.isFile()) {
+      if (!projectDescriptor.isDirectory()) {
         prefix = projectDescriptor.getParent().getCanonicalPath();
       } else {
         prefix = projectDescriptor.getCanonicalPath();

@@ -35,8 +35,6 @@ public interface IFile {
 
   boolean isDirectory();
 
-  boolean isFile();
-
   String getAbsolutePath();
 
   String getCanonicalPath();
