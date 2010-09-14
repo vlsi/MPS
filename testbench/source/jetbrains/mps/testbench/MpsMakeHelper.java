@@ -1,5 +1,8 @@
 package jetbrains.mps.testbench;
 
+import org.apache.tools.ant.DefaultLogger;
+import org.apache.tools.ant.Project;
+import org.apache.tools.ant.ProjectHelper;
 import org.apache.tools.ant.util.JavaEnvUtils;
 
 import java.io.*;
@@ -19,6 +22,17 @@ public class MpsMakeHelper {
   public void make() {
     String antHome = System.getProperty("ant.home");
     if (antHome == null || !new File (antHome).exists()) {
+      File baseDir = new File(System.getProperty("user.dir"));
+      Project project = new Project();
+      project.setBaseDir(baseDir);
+      project.init();
+      ProjectHelper.configureProject(project, new File(baseDir, "testbench/make_all_modules.xml"));
+      DefaultLogger consoleLogger = new DefaultLogger();
+      consoleLogger.setErrorPrintStream(System.err);
+      consoleLogger.setOutputPrintStream(System.out);
+      consoleLogger.setMessageOutputLevel(Project.MSG_INFO);
+      project.addBuildListener(consoleLogger);
+      project.executeTarget(project.getDefaultTarget());
       return;
     }
     
