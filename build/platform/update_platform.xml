@@ -20,8 +20,8 @@
 
   <dirname property="ant.dir" file="${ant.file}"/>
   <property name="home.path" value="${ant.dir}/../../"/>
-  <property name="platform.lib.dir" value="${home.path}/lib/platform"/>
-  <property name="platform.plugin.dir" value="${home.path}/plugins/platform"/>
+  <property name="platform.lib.dir" value="${home.path}/lib"/>
+  <property name="platform.plugin.dir" value="${home.path}/plugins"/>
   <property name="platform.sources.dir" value="${home.path}/platform_src"/>
 
   <property name="tmp" value="${java.io.tmpdir}/idea.new"/>
@@ -43,37 +43,24 @@
   </target>
 
   <target name="update.platform">
-    <antcall target="update">
-      <param name="upd.dir" value="${platform.lib.dir}"/>
-      <param name="files" value="${tmp.platform}/lib"/>
-    </antcall>
+    <move overwrite="true" todir="${platform.lib.dir}">
+      <fileset dir="${tmp.platform}/lib"/>
+    </move>
   </target>
 
   <target name="update.plugins">
-    <antcall target="update">
-      <param name="upd.dir" value="${platform.plugin.dir}"/>
-      <param name="files" value="${tmp.platform}/plugins"/>
-    </antcall>
+    <move overwrite="true" todir="${platform.plugin.dir}">
+      <fileset dir="${tmp.platform}/plugins"/>
+    </move>
   </target>
 
   <target name="update.sources">
-    <antcall target="update">
-      <param name="upd.dir" value="${platform.sources.dir}"/>
-      <param name="files" value="${tmp}/${platform.src.file}"/>
-    </antcall>
+    <move overwrite="true" todir="${platform.sources.dir}">
+      <fileset file="${tmp}/${platform.src.file}"/>
+    </move>
   </target>
 
   <target name="clean">
     <delete dir="${tmp}"/>
-  </target>
-
-  <!--update task-->
-  <target name="update">
-    <delete dir="${upd.dir}"/>
-    <mkdir dir="${upd.dir}"/>
-
-    <move todir="${upd.dir}">
-      <fileset dir="${files}"/>
-    </move>
   </target>
 </project>
