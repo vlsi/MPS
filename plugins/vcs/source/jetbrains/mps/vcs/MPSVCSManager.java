@@ -24,15 +24,14 @@ import com.intellij.openapi.vcs.changes.*;
 import com.intellij.openapi.vcs.impl.ProjectLevelVcsManagerImpl;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.generator.CompilationListener;
+import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationListener;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
-import jetbrains.mps.watching.ModelChangesWatcher;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -228,7 +227,7 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   private class GenerationWatcher implements GenerationListener {
-    public void beforeGeneration(List<SModelDescriptor> inputModels) {
+    public void beforeGeneration(List<SModelDescriptor> inputModels, GenerationOptions options, IOperationContext operationContext) {
       for (SModelDescriptor smodelDescriptor : inputModels) {
         if (smodelDescriptor instanceof EditableSModelDescriptor && ((EditableSModelDescriptor) smodelDescriptor).needsReloading()) {
           ((EditableSModelDescriptor) smodelDescriptor).reloadFromDisk();
@@ -243,7 +242,7 @@ public class MPSVCSManager implements ProjectComponent {
 
     }
 
-    public void afterGeneration(List<SModelDescriptor> inputModels) {
+    public void afterGeneration(List<SModelDescriptor> inputModels, GenerationOptions options, IOperationContext operationContext) {
       myAddOperationScheduler.removeProcessingBan();
       myRemoveOperationScheduler.removeProcessingBan();
     }

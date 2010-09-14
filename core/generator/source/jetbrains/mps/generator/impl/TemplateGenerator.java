@@ -16,10 +16,7 @@
 package jetbrains.mps.generator.impl;
 
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.generator.GenerationSessionContext;
-import jetbrains.mps.generator.IGenerationTracer;
-import jetbrains.mps.generator.IGeneratorLogger;
+import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.FastRuleFinder.BlockedReductionsData;
 import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
@@ -80,18 +77,18 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   public TemplateGenerator(GenerationSessionContext operationContext, ProgressIndicator progressMonitor,
                            IGeneratorLogger logger, RuleManager ruleManager,
-                           SModel inputModel, SModel outputModel, GenerationProcessContext generationContext,
+                           SModel inputModel, SModel outputModel, GenerationOptions options,
                            DependenciesBuilder dependenciesBuilder, IPerformanceTracer performanceTracer) {
 
     super(operationContext, progressMonitor, logger, inputModel, outputModel);
     myRuleManager = ruleManager;
     myGenerationTracer = getGeneratorSessionContext().getGenerationTracer();
-    myIsStrict = generationContext.isStrictMode();
+    myIsStrict = options.isStrictMode();
     myDelayedChanges = new DelayedChanges(this);
     myDependenciesBuilder = dependenciesBuilder;
     ttrace = performanceTracer;
     myOutputRoots = new ArrayList<SNode>();
-    myExecutionContext = generationContext.getTracingMode() >= GenerationProcessContext.TRACE_LANGS
+    myExecutionContext = options.getTracingMode() >= GenerationOptions.TRACE_LANGS
       ? new QueryExecutionContextWithTracing(new DefaultQueryExecutionContext(this), performanceTracer)
       : new DefaultQueryExecutionContext(this);
 

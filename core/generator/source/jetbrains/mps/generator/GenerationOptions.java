@@ -1,13 +1,14 @@
-package jetbrains.mps.generator.impl;
+package jetbrains.mps.generator;
 
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.generator.IGenerationTracer;
+import jetbrains.mps.generator.impl.GenerationTaskPool;
+import jetbrains.mps.generator.impl.IGenerationTaskPool;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.SimpleGenerationTaskPool;
 
 /**
  * Evgeny Gryaznov, Apr 26, 2010
  */
-public class GenerationProcessContext {
+public class GenerationOptions {
 
   public static final int TRACE_OFF = 0;
   public static final int TRACE_STEPS = 1;
@@ -25,11 +26,11 @@ public class GenerationProcessContext {
   private final int myNumberOfThreads;
   private final int myTracingMode;
 
-  ProgressIndicator myProgressIndicator;
-  IGenerationTracer myGenerationTracer;
-  IGenerationTaskPool myParallelTaskPool;
+  private ProgressIndicator myProgressIndicator;
+  private IGenerationTracer myGenerationTracer;
+  private IGenerationTaskPool myParallelTaskPool;
 
-  public GenerationProcessContext(boolean strictMode, boolean saveTransientModels, boolean rebuildAll, boolean incremental, boolean showErrorsOnly, boolean generateInParallel,
+  public GenerationOptions(boolean strictMode, boolean saveTransientModels, boolean rebuildAll, boolean incremental, boolean showErrorsOnly, boolean generateInParallel,
                                   int numberOfThreads, int tracingMode, ProgressIndicator progressIndicator,
                                   IGenerationTracer generationTracer) {
     mySaveTransientModels = saveTransientModels;

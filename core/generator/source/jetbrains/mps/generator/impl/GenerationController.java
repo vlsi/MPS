@@ -17,6 +17,7 @@ package jetbrains.mps.generator.impl;
 
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.GeneratorManager.GeneratorNotifierHelper;
@@ -51,11 +52,11 @@ public class GenerationController {
   protected final IGenerationHandler myGenerationHandler;
   protected ProgressIndicator myProgress;
   protected GeneratorLoggerAdapter myLogger;
-  private GenerationProcessContext myGenerationContext;
+  private GenerationOptions myOptions;
 
   protected List<Pair<IModule, List<SModelDescriptor>>> myModuleSequence = new ArrayList<Pair<IModule, List<SModelDescriptor>>>();
 
-  public GenerationController(List<SModelDescriptor> _inputModels, GenerationProcessContext parameters,
+  public GenerationController(List<SModelDescriptor> _inputModels, GenerationOptions options,
                               IGenerationHandler generationHandler, GeneratorNotifierHelper notifierHelper,
                               GeneratorLoggerAdapter generatorLogger, IOperationContext operationContext) {
 
@@ -63,9 +64,9 @@ public class GenerationController {
     myInputModels = _inputModels;
     myOperationContext = operationContext;
     myGenerationHandler = generationHandler;
-    myProgress = parameters.getProgressIndicator();
+    myProgress = options.getProgressIndicator();
     myLogger = generatorLogger;
-    myGenerationContext = parameters;
+    myOptions = options;
   }
 
   private void initMaps() {
@@ -103,7 +104,7 @@ public class GenerationController {
           generationOK = generationOK && result;
         }
       } finally {
-        myGenerationContext.cleanup();
+        myOptions.cleanup();
       }
       if (generationOK) {
         if (myLogger.needsInfo()) {
@@ -147,7 +148,7 @@ public class GenerationController {
     //++ generation
     String wasLoggingThreshold = null;
     try {
-      if (myGenerationContext.isShowErrorsOnly()) {
+      if (myOptions.isShowErrorsOnly()) {
         wasLoggingThreshold = Logger.setThreshold("ERROR");
       }
 
@@ -172,15 +173,15 @@ public class GenerationController {
   private boolean generateModel(final SModelDescriptor inputModel, final IModule module, final IOperationContext invocationContext, final ITaskProgressHelper progressHelper) throws GenerationCanceledException {
     boolean currentGenerationOK = false;
 
-    IPerformanceTracer ttrace = myGenerationContext.getTracingMode() != GenerationProcessContext.TRACE_OFF
+    IPerformanceTracer ttrace = myOptions.getTracingMode() != GenerationOptions.TRACE_OFF
       ? new PerformanceTracer("model " + NameUtil.shortNameFromLongName(inputModel.getLongName()))
       : new NullPerformanceTracer();
 
-    boolean traceTypes = myGenerationContext.getTracingMode() == GenerationProcessContext.TRACE_TYPES;
+    boolean traceTypes = myOptions.getTracingMode() == GenerationOptions.TRACE_TYPES;
     TypeChecker.getInstance().setIsGeneration(true, traceTypes ? ttrace : null);
 
     final GenerationSession generationSession = new GenerationSession(
-      inputModel, invocationContext, myProgress, myLogger, ttrace, myGenerationContext);
+      inputModel, invocationContext, myProgress, myLogger, ttrace, myOptions);
 
     try {
       Logger.addLoggingHandler(generationSession.getLoggingHandler());
@@ -197,11 +198,11 @@ public class GenerationController {
       progressHelper.startLeafTask(taskName);
       if (myLogger.needsInfo()) {
         myLogger.info("[model " + inputModel.getSModelReference().getSModelFqName() +
-          (myGenerationContext.isRebuildAll()
+          (myOptions.isRebuildAll()
             ? ", rebuilding"
             : "") +
-          (myGenerationContext.isGenerateInParallel()
-            ? ", using " + myGenerationContext.getNumberOfThreads() + " threads]"
+          (myOptions.isGenerateInParallel()
+            ? ", using " + myOptions.getNumberOfThreads() + " threads]"
             : "]"));
       }
 

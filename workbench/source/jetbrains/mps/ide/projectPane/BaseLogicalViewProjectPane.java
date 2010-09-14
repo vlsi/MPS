@@ -12,6 +12,7 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.vfs.VirtualFileManagerListener;
+import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationListener;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.ide.actions.CopyNode_Action;
@@ -32,7 +33,6 @@ import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.workbench.ActionPlace;
@@ -69,14 +69,14 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   };
 
   private GenerationListener myGenerationListener = new GenerationListener() {
-    public void beforeGeneration(List<SModelDescriptor> inputModels) {
+    public void beforeGeneration(List<SModelDescriptor> inputModels, GenerationOptions options, IOperationContext operationContext) {
 
     }
 
     public void modelsGenerated(List<SModelDescriptor> models, boolean success) {
     }
 
-    public void afterGeneration(List<SModelDescriptor> inputModels) {
+    public void afterGeneration(List<SModelDescriptor> inputModels, GenerationOptions options, IOperationContext operationContext) {
       // rebuild tree in case of 'cancel' too (need to get 'transient models' node rebuilt)
       ModelAccess.instance().runReadInEDT(new Runnable() {
         public void run() {

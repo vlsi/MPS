@@ -15,13 +15,15 @@
  */
 package jetbrains.mps.generator;
 
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 
 import java.util.List;
 
 public class GenerationAdapter implements GenerationListener {
+
   @Override
-  public void beforeGeneration(List<SModelDescriptor> inputModels) {
+  public void beforeGeneration(List<SModelDescriptor> inputModels, GenerationOptions options, IOperationContext operationContext) {
   }
 
   @Override
@@ -29,6 +31,6 @@ public class GenerationAdapter implements GenerationListener {
   }
 
   @Override
-  public void afterGeneration(List<SModelDescriptor> inputModels) {
+  public void afterGeneration(List<SModelDescriptor> inputModels, GenerationOptions options, IOperationContext operationContext) {
   }
 }

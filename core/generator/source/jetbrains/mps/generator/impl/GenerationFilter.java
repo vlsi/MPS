@@ -1,5 +1,6 @@
 package jetbrains.mps.generator.impl;
 
+import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.ModelDigestHelper;
 import jetbrains.mps.generator.impl.dependencies.*;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder.NullDependenciesBuilder;
@@ -19,7 +20,7 @@ public class GenerationFilter {
   private static final String CONDITIONALS_ID = "";
 
   private SModelDescriptor myModel;
-  private GenerationProcessContext myGenerationContext;
+  private GenerationOptions myGenerationOptions;
   private IOperationContext myOperationContext;
   private Set<SNode> myUnchangedRoots;
   private int myRootsCount;
@@ -27,9 +28,9 @@ public class GenerationFilter {
   private Map<String, String> myGenerationHashes;
   private GenerationDependencies mySavedDependencies;
 
-  public GenerationFilter(SModelDescriptor model, IOperationContext operationContext, GenerationProcessContext generationContext) {
+  public GenerationFilter(SModelDescriptor model, IOperationContext operationContext, GenerationOptions options) {
     myModel = model;
-    myGenerationContext = generationContext;
+    myGenerationOptions = options;
     myOperationContext = operationContext;
     myUnchangedRoots = Collections.emptySet();
     myConditionalsUnchanged = false;
@@ -37,13 +38,13 @@ public class GenerationFilter {
   }
 
   private void init() {
-    if (!myGenerationContext.isIncremental()) {
+    if (!myGenerationOptions.isIncremental()) {
       return;
     }
 
     myGenerationHashes = ModelDigestHelper.getInstance().getGenerationHashes(myModel, myOperationContext);
 
-    if (myGenerationContext.isRebuildAll()) {
+    if (myGenerationOptions.isRebuildAll()) {
       return;
     }
 
@@ -273,12 +274,8 @@ public class GenerationFilter {
     return myModel;
   }
 
-  public GenerationProcessContext getGenerationContext() {
-    return myGenerationContext;
-  }
-
   public DependenciesBuilder createDependenciesBuilder() {
-    if (!myGenerationContext.isIncremental()) {
+    if (!myGenerationOptions.isIncremental()) {
       return new NullDependenciesBuilder();
     }
 

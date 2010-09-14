@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.ide.generator;
 
-import jetbrains.mps.generator.impl.GenerationProcessContext;
+import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.ide.generator.GenerationSettings.GenerateRequirementsPolicy;
 import jetbrains.mps.ide.projectPane.Icons;
 import org.jetbrains.annotations.Nullable;
@@ -226,10 +226,10 @@ class GenerationSettingsPreferencesPage {
 
   private int getTracingLevel() {
     return
-      myTraceTypes.isSelected() ? GenerationProcessContext.TRACE_TYPES :
-        myTraceLanguages.isSelected() ? GenerationProcessContext.TRACE_LANGS :
-          myTraceSteps.isSelected() ? GenerationProcessContext.TRACE_STEPS
-            : GenerationProcessContext.TRACE_OFF;
+      myTraceTypes.isSelected() ? GenerationOptions.TRACE_TYPES :
+        myTraceLanguages.isSelected() ? GenerationOptions.TRACE_LANGS :
+          myTraceSteps.isSelected() ? GenerationOptions.TRACE_STEPS
+            : GenerationOptions.TRACE_OFF;
   }
 
   private int getNumberOfModelsToKeep() {

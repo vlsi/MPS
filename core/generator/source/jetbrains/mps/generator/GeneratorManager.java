@@ -21,7 +21,6 @@ import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.fileGenerator.vcs.FileProcessor;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.impl.GenerationController;
-import jetbrains.mps.generator.impl.GenerationProcessContext;
 import jetbrains.mps.generator.impl.GeneratorLoggerAdapter;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.lang.generator.plugin.debug.GenerationTracer;
@@ -85,20 +84,20 @@ public class GeneratorManager {
           : new NullGenerationTracer();
         tracer.startTracing();
 
-        fireBeforeGeneration(inputModels);
-
         GenerationSettings settings = GenerationSettings.getInstance();
 
-        GenerationProcessContext parameters = new GenerationProcessContext(
+        GenerationOptions options = new GenerationOptions(
           settings.isStrictMode(), saveTransientModels, rebuildAll, settings.isGenerateDependencies(), !settings.isShowWarnings() && !settings.isShowInfo(), settings.isParallelGenerator(),
           settings.getNumberOfParallelThreads(), settings.getPerformanceTracingLevel(), progress, tracer);
 
+        fireBeforeGeneration(inputModels, options, invocationContext);
+
         GeneratorLoggerAdapter logger = new GeneratorLoggerAdapter(messages, settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings());
 
-        GenerationController gc = new GenerationController(inputModels, parameters, generationHandler, new GeneratorNotifierHelper(), logger, invocationContext);
+        GenerationController gc = new GenerationController(inputModels, options, generationHandler, new GeneratorNotifierHelper(), logger, invocationContext);
         result[0] = gc.generate();
         tracer.finishTracing();
-        fireAfterGeneration(inputModels);
+        fireAfterGeneration(inputModels, options, invocationContext);
 
         myProject.getComponent(TransientModelsModule.class).publishAll();
         CleanupManager.getInstance().cleanup();
@@ -108,20 +107,20 @@ public class GeneratorManager {
     return result[0];
   }
 
-  private void fireBeforeGeneration(List<SModelDescriptor> inputModels) {
+  private void fireBeforeGeneration(List<SModelDescriptor> inputModels, GenerationOptions options, IOperationContext operationContext) {
     for (GenerationListener l : myGenerationListeners) {
       try {
-        l.beforeGeneration(inputModels);
+        l.beforeGeneration(inputModels, options, operationContext);
       } catch (Throwable t) {
         LOG.error(t);
       }
     }
   }
 
-  private void fireAfterGeneration(List<SModelDescriptor> inputModels) {
+  private void fireAfterGeneration(List<SModelDescriptor> inputModels, GenerationOptions options, IOperationContext operationContext) {
     for (GenerationListener l : myGenerationListeners) {
       try {
-        l.afterGeneration(inputModels);
+        l.afterGeneration(inputModels, options, operationContext);
       } catch (Throwable t) {
         LOG.error(t);
       }

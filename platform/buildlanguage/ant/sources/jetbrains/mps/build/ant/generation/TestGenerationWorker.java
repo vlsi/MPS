@@ -31,6 +31,7 @@ import jetbrains.mps.compiler.CompilationResultAdapter;
 import jetbrains.mps.compiler.JavaCompiler;
 import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
+import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.library.Library;
 import jetbrains.mps.messages.IMessageHandler;
@@ -195,7 +196,7 @@ public class TestGenerationWorker extends GeneratorWorker {
     if (isGeneratePerfomanceReport()) {
       return new GenerationAdapter() {
         @Override
-        public void beforeGeneration(List<SModelDescriptor> inputModels) {
+        public void beforeGeneration(List<SModelDescriptor> inputModels, GenerationOptions options, IOperationContext operationContext) {
           Long startTime = System.currentTimeMillis();
           for (SModelDescriptor model : inputModels) {
             myPerfomanceMap.put(model, startTime);
@@ -203,7 +204,7 @@ public class TestGenerationWorker extends GeneratorWorker {
         }
 
         @Override
-        public void afterGeneration(List<SModelDescriptor> inputModels) {
+        public void afterGeneration(List<SModelDescriptor> inputModels, GenerationOptions options, IOperationContext operationContext) {
           Long finishTime = System.currentTimeMillis();
           for (SModelDescriptor model : inputModels) {
             Long startTime = myPerfomanceMap.get(model);
