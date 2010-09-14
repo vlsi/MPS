@@ -1,7 +1,7 @@
 package jetbrains.mps.generator;
 
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.impl.dependencies.ModelDigestUtil;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -34,7 +34,7 @@ public class ModelDigestHelper {
     myProviders.add(provider);
   }
 
-  public Map<String, String> getGenerationHashes(SModelDescriptor sm, Project project) {
+  public Map<String, String> getGenerationHashes(SModelDescriptor sm, IOperationContext operationContext) {
     if (!(sm instanceof EditableSModelDescriptor)) return null;
     EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
     if (esm.isPackaged()) return null;
@@ -44,7 +44,7 @@ public class ModelDigestHelper {
     if (modelFile == null) return null;
 
     for (DigestProvider p : myProviders) {
-      Map<String, String> result = p.getGenerationHashes(project, modelFile);
+      Map<String, String> result = p.getGenerationHashes(operationContext, modelFile);
       if (result != null) {
         return result;
       }
@@ -62,6 +62,6 @@ public class ModelDigestHelper {
   }
 
   public interface DigestProvider {
-    Map<String, String> getGenerationHashes(Project project, @NotNull IFile f);
+    Map<String, String> getGenerationHashes(IOperationContext operationContext, @NotNull IFile f);
   }
 }

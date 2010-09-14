@@ -18,13 +18,13 @@ package jetbrains.mps.ide.generator.index;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.progress.ProcessCanceledException;
 import com.intellij.openapi.project.IndexNotReadyException;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.FileBasedIndex.ValueProcessor;
 import jetbrains.mps.generator.ModelDigestHelper;
 import jetbrains.mps.generator.ModelDigestHelper.DigestProvider;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
@@ -44,7 +44,7 @@ public class IndexBasedModelDigest implements ApplicationComponent {
   public void initComponent() {
     ModelDigestHelper.getInstance().addDigestProvider(new DigestProvider() {
       @Override
-      public Map<String, String> getGenerationHashes(final Project project, @NotNull IFile modelFile) {
+      public Map<String, String> getGenerationHashes(final IOperationContext operationContext, @NotNull IFile modelFile) {
         try {
           VirtualFile file = modelFile.toVirtualFile();
           if (file == null) return null;
@@ -55,7 +55,7 @@ public class IndexBasedModelDigest implements ApplicationComponent {
               valueArray[0] = values;
               return true;
             }
-          }, GlobalSearchScope.allScope(project));
+          }, GlobalSearchScope.allScope(operationContext.getProject()));
           return valueArray[0];
         } catch (IndexNotReadyException e) {
         } catch (ProcessCanceledException e) {

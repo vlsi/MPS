@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="dgec4soph91h7jpjs7vhymz28b31ltv">
+<dependencies version="2" modelHash="oaaz4s3en254lubb25wxvtmcquam50">
   <dep model="f:java_stub#com.intellij.openapi.actionSystem(com.intellij.openapi.actionSystem@java_stub)" />
   <dep model="f:java_stub#com.intellij.openapi.application(com.intellij.openapi.application@java_stub)" />
   <dep model="f:java_stub#com.intellij.openapi.progress.util(com.intellij.openapi.progress.util@java_stub)" />
@@ -87,7 +87,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="EvaluationDialog.java" />
   </source>
-  <source id="6185141366360269633" name="AbstractEvaluationLogic" hash="-dy66k6g9l0d0i8yyfd4dyjj9mpzx1bt">
+  <source id="6185141366360269633" name="AbstractEvaluationLogic" hash="-c4fjb71uu4usoex1o5jj5avd3lskvx3">
     <dep model="f:java_stub#com.intellij.openapi.progress.util(com.intellij.openapi.progress.util@java_stub)" />
     <dep model="f:java_stub#com.intellij.openapi.project(com.intellij.openapi.project@java_stub)" />
     <dep model="f:java_stub#com.sun.jdi(com.sun.jdi@java_stub)" />

@@ -1,14 +1,10 @@
 package jetbrains.mps.generator.impl;
 
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.ModelDigestHelper;
 import jetbrains.mps.generator.impl.dependencies.*;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder.NullDependenciesBuilder;
 import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 
@@ -24,17 +20,17 @@ public class GenerationFilter {
 
   private SModelDescriptor myModel;
   private GenerationProcessContext myGenerationContext;
-  private Project myProject;
+  private IOperationContext myOperationContext;
   private Set<SNode> myUnchangedRoots;
   private int myRootsCount;
   private boolean myConditionalsUnchanged;
   private Map<String, String> myGenerationHashes;
   private GenerationDependencies mySavedDependencies;
 
-  public GenerationFilter(SModelDescriptor model, Project project, GenerationProcessContext generationContext) {
+  public GenerationFilter(SModelDescriptor model, IOperationContext operationContext, GenerationProcessContext generationContext) {
     myModel = model;
     myGenerationContext = generationContext;
-    myProject = project;
+    myOperationContext = operationContext;
     myUnchangedRoots = Collections.emptySet();
     myConditionalsUnchanged = false;
     init();
@@ -45,7 +41,7 @@ public class GenerationFilter {
       return;
     }
 
-    myGenerationHashes = ModelDigestHelper.getInstance().getGenerationHashes(myModel, myProject);
+    myGenerationHashes = ModelDigestHelper.getInstance().getGenerationHashes(myModel, myOperationContext);
 
     if (myGenerationContext.isRebuildAll()) {
       return;
@@ -110,7 +106,7 @@ public class GenerationFilter {
         }
         continue;
       }
-      Map<String, String> map = ModelDigestHelper.getInstance().getGenerationHashes(sm, myProject);
+      Map<String, String> map = ModelDigestHelper.getInstance().getGenerationHashes(sm, myOperationContext);
       String newHash = map != null ? map.get(ModelDigestHelper.FILE) : null;
       if (newHash == null || !oldHash.equals(newHash)) {
         changedModels.add(modelReference);

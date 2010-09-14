@@ -87,7 +87,7 @@ public class GenerationSession {
       // throw new GenerationCanceledException();
     }
 
-    GenerationFilter filter = new GenerationFilter(myOriginalInputModel, myInvocationContext.getProject(), myGenerationContext);
+    GenerationFilter filter = new GenerationFilter(myOriginalInputModel, myInvocationContext, myGenerationContext);
     myDependenciesBuilder = filter.createDependenciesBuilder();
 
     if (!filter.getUnchangedRoots().isEmpty() || !filter.areConditionalsDirty()) {
@@ -98,7 +98,7 @@ public class GenerationSession {
       if (total > 0 && unchanged == total && !filter.areConditionalsDirty()) {
         myLogger.info("generated files are up-to-date");
         return new GenerationStatus(myOriginalInputModel.getSModel(), null,
-          myDependenciesBuilder.getResult(myInvocationContext.getProject()), false, false, false);
+          myDependenciesBuilder.getResult(myInvocationContext), false, false, false);
       }
     }
 
@@ -131,7 +131,7 @@ public class GenerationSession {
       }
 
       return new GenerationStatus(myOriginalInputModel.getSModel(), currOutput,
-        myDependenciesBuilder.getResult(myInvocationContext.getProject()), myLogger.getErrorCount() > 0,
+        myDependenciesBuilder.getResult(myInvocationContext), myLogger.getErrorCount() > 0,
         myLogger.getWarningCount() > 0, false);
 
     } catch (GenerationCanceledException gce) {

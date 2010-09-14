@@ -1,11 +1,7 @@
 package jetbrains.mps.generator.impl.dependencies;
 
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.ModelDigestHelper;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.textGen.TextGenManager;
 import org.jdom.Element;
 
@@ -122,7 +118,7 @@ public class GenerationDependencies {
     return (extension == null) ? outputRootNode.getName() : outputRootNode.getName() + "." + extension;
   }
 
-  public static GenerationDependencies fromData(Map<SNode, SNode> currentToOriginalMap, RootDependenciesBuilder[] roots, String modelHash, Project project) {
+  public static GenerationDependencies fromData(Map<SNode, SNode> currentToOriginalMap, RootDependenciesBuilder[] roots, String modelHash, IOperationContext operationContext) {
     Map<String, List<String>> generatedFiles = new HashMap<String, List<String>>();
     Map<String, String> externalHashes = new HashMap<String, String>();
 
@@ -159,7 +155,7 @@ public class GenerationDependencies {
       for (String modelReference : dep.getExternal()) {
         if (!externalHashes.containsKey(modelReference)) {
           SModelDescriptor sm = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(modelReference));
-          Map<String, String> hashes = ModelDigestHelper.getInstance().getGenerationHashes(sm, project);
+          Map<String, String> hashes = ModelDigestHelper.getInstance().getGenerationHashes(sm, operationContext);
           String value = hashes != null ? hashes.get(ModelDigestHelper.FILE) : null;
           externalHashes.put(modelReference, value);
         }

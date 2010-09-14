@@ -4562,7 +4562,7 @@
                     <link role="variableDeclaration:3" targetNodeId="3400923024997891098" resolveInfo="generatorManager" />
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3400923024997899094">
-                    <link role="baseMethodDeclaration:3" targetNodeId="40.~GeneratorManager.generateModels(java.util.List,com.intellij.openapi.project.Project,jetbrains.mps.generator.generationTypes.IGenerationHandler,com.intellij.openapi.progress.ProgressIndicator,jetbrains.mps.messages.IMessageHandler,boolean,boolean):boolean" resolveInfo="generateModels" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="40.~GeneratorManager.generateModels(java.util.List,jetbrains.mps.smodel.IOperationContext,jetbrains.mps.generator.generationTypes.IGenerationHandler,com.intellij.openapi.progress.ProgressIndicator,jetbrains.mps.messages.IMessageHandler,boolean,boolean):boolean" resolveInfo="generateModels" />
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2955880512389991854">
                       <link role="baseMethodDeclaration:3" targetNodeId="11.~Collections.singletonList(java.lang.Object):java.util.List" resolveInfo="singletonList" />
                       <link role="classConcept:3" targetNodeId="11.~Collections" resolveInfo="Collections" />
@@ -4570,8 +4570,8 @@
                         <link role="variableDeclaration:3" targetNodeId="6185141366360320952" resolveInfo="myAuxModel" />
                       </node>
                     </node>
-                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2955880512389991857">
-                      <link role="variableDeclaration:3" targetNodeId="3400923024997888331" resolveInfo="project" />
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="5435738801031348905">
+                      <link role="variableDeclaration:3" targetNodeId="6185141366360320968" resolveInfo="myContext" />
                     </node>
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3400923024997899104">
                       <link role="variableDeclaration:3" targetNodeId="6185141366360305796" resolveInfo="handler" />
