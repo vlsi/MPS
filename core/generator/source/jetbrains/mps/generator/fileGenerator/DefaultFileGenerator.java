@@ -23,15 +23,7 @@ import jetbrains.mps.util.FileUtil;
 import java.io.File;
 import java.io.IOException;
 
-public class DefaultFileGenerator implements IFileGenerator {
-
-  public boolean overridesDefault(SNode outputRootNode, SNode originalInputNode) {
-    return true;
-  }
-
-  public boolean isDefault(SNode outputRootNode) {
-    return true;
-  }
+public class DefaultFileGenerator {
 
   public String getFileName(SNode outputRootNode) {
     String extension = TextGenManager.instance().getExtension(outputRootNode);
@@ -39,10 +31,6 @@ public class DefaultFileGenerator implements IFileGenerator {
   }
 
   public final File generateFile(SNode outputRootNode, SNode originalInputNode, SModel inputModel, String content, File outputRootDir) throws IOException {
-    if (!isDefault(outputRootNode)) {
-      throw new RuntimeException("couldn't generate file for output node: " + outputRootNode.getDebugText());
-    }
-
     File outputDir = FileGenerationUtil.getDefaultOutputDir(inputModel, outputRootDir);
     String filename = getFileName(outputRootNode);
     if (filename == null) {

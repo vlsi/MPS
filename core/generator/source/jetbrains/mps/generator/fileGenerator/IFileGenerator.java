@@ -24,6 +24,7 @@ import java.io.IOException;
 /**
  * author: Igor Alshannikov
  * Sep 14, 2006
+ * @deprecated use IGenerationHandler
  */
 public interface IFileGenerator {
   File generateFile(SNode outputRootNode, SNode originalInputNode, SModel inputModel, String content, File outputRootDir) throws IOException;
