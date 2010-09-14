@@ -154,7 +154,7 @@ public class LanguageDescriptorPersistence {
   public static void saveLanguageDescriptor(final IFile file, final LanguageDescriptor descriptor) {
     if (file.isReadOnly()) {
       if (log.isErrorEnabled()) {
-        log.error("Cant't save " + file.getPath());
+        log.error("Cant't save " + file.getAbsolutePath());
       }
       return;
     }

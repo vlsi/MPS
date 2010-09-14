@@ -39,10 +39,7 @@ import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
-import java.io.Reader;
+import java.io.*;
 import java.util.*;
 
 /**
@@ -154,7 +151,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     if (!modelFile.exists()) return true;
     BufferedReader r = null;
     try {
-      r = new BufferedReader(modelFile.openReader());
+      r = new BufferedReader(new InputStreamReader(modelFile.openInputStream()));
       String line;
       boolean result = false;
       while ((line = r.readLine()) != null) {
@@ -186,8 +183,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     if (!modelFile.exists()) return true;
     Reader reader = null;
     try {
-      reader = modelFile.openReader();
-      BufferedReader r = new BufferedReader(reader);
+      BufferedReader r = new BufferedReader(new InputStreamReader(modelFile.openInputStream()));
       String line;
       while ((line = r.readLine()) != null) {
         if (line.contains("<node")) {

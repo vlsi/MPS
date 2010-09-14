@@ -40,7 +40,7 @@ public class RefactoringsPersistence {
 
     Document document = new Document(refactorings.toElement());
     if (refactoringsFile.isReadOnly()) {
-      LOG.error("Can't write to " + refactoringsFile.getPath());
+      LOG.error("Can't write to " + refactoringsFile.getAbsolutePath());
       return;
     }
 

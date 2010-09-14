@@ -37,8 +37,6 @@ public interface IFile {
 
   boolean isFile();
 
-  String getPath();
-
   String getAbsolutePath();
 
   String getCanonicalPath();
@@ -53,21 +51,19 @@ public interface IFile {
 
   boolean delete();
 
-  Reader openReader() throws IOException;
-
-  Writer openWriter() throws IOException;
-
   InputStream openInputStream() throws IOException;
-
   OutputStream openOutputStream() throws IOException;
 
   boolean isReadOnly();
 
+  @Deprecated
   File toFile();
 
+  @Deprecated
   VirtualFile toVirtualFile();
 
   long length();
 
+  @Deprecated
   URL toURL() throws MalformedURLException;
 }

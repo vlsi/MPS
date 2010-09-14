@@ -55,10 +55,10 @@ public class ModuleUtil {
 
       public void visit(JarFileClassPathItem p0) {
         // filter out JDK 
-        if (jdk.contains(p0.getIFile().getPath())) {
+        if (jdk.contains(p0.getIFile().getAbsolutePath())) {
           return;
         }
-        ListSequence.fromList(result).addElement(p0.getIFile().getPath());
+        ListSequence.fromList(result).addElement(p0.getIFile().getAbsolutePath());
       }
     });
     return result;

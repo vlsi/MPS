@@ -109,10 +109,6 @@ public class JarFileEntryFile implements IFile {
     return !isDirectory();
   }
 
-  public String getPath() {
-    return getCanonicalPath();
-  }
-
   public String getAbsolutePath() {
     return getCanonicalPath();
   }
@@ -142,10 +138,6 @@ public class JarFileEntryFile implements IFile {
 
   public boolean delete() {
     return false;
-  }
-
-  public Reader openReader() throws IOException {
-    return new InputStreamReader(openInputStream());
   }
 
   public Writer openWriter() throws IOException {

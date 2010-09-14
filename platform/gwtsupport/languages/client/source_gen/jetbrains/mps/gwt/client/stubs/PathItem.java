@@ -33,7 +33,7 @@ public abstract class PathItem {
           p
         ));
       } else {
-        File cf = asFile(FileSystem.getFile(container.getPath() + p));
+        File cf = asFile(FileSystem.getFile(container.getAbsolutePath() + p));
         // '!' would have been added by JarFileEntryFile 
         container = FileSystem.getFile(cf.getPath() + "!/");
         // can't simply pass a file, must be a path with a '!' at the end 

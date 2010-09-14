@@ -376,7 +376,7 @@ public class StandardComponents {
   public static JPanel createFilePanel(String label, IFile file) {
     String initText = ((file == null) ?
       "<no file>" :
-      file.getPath()
+      file.getAbsolutePath()
     );
     boolean isValid;
     try {

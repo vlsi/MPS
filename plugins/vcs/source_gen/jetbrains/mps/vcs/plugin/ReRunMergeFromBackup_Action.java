@@ -138,7 +138,7 @@ public class ReRunMergeFromBackup_Action extends GeneratedAction {
   }
 
   private File[] getBackupFiles() {
-    return ModelUtils.findZipFileNameForModelFile(ReRunMergeFromBackup_Action.this.getModelFile().getPath());
+    return ModelUtils.findZipFileNameForModelFile(ReRunMergeFromBackup_Action.this.getModelFile().getAbsolutePath());
   }
 
   private String getHash(SModel model) {

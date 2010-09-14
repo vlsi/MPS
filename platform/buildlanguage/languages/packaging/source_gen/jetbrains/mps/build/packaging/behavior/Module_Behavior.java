@@ -59,7 +59,7 @@ public class Module_Behavior {
     for (BaseModelCache cache : caches) {
       List<IFile> dirs = cache.getCachesDirs(Module_Behavior.call_getModule_1213877515148(thisNode));
       for (IFile cacheDir : dirs) {
-        SetSequence.fromSet(result).addElement(ModuleUtil.getRelativePath(cacheDir.getPath(), AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode).getPath()));
+        SetSequence.fromSet(result).addElement(ModuleUtil.getRelativePath(cacheDir.getAbsolutePath(), AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode).getPath()));
       }
     }
     return SetSequence.fromSet(result).toListSequence();

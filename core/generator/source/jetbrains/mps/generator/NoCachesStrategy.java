@@ -22,9 +22,8 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nullable;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 
 public abstract class NoCachesStrategy {
   protected NoCachesStrategy() {
@@ -52,10 +51,10 @@ public abstract class NoCachesStrategy {
         IFile file = ((EditableSModelDescriptor) sm).getModelFile();
         if (file == null) return false;
 
-        FileInputStream in = null;
+        InputStream in = null;
         try {
-          in = new FileInputStream(file.toFile());
-        } catch (FileNotFoundException e) {
+          in = file.openInputStream();
+        } catch (IOException e) {
           return false;
         }
 

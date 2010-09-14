@@ -54,10 +54,6 @@ public class FileSystemFile implements IFile {
     return myFile.isFile();
   }
 
-  public String getPath() {
-    return myFile.getPath();
-  }
-
   public String getAbsolutePath() {
     return myFile.getAbsolutePath();
   }
@@ -128,10 +124,6 @@ public class FileSystemFile implements IFile {
 
   public File getFile() {
     return myFile;
-  }
-
-  public Reader openReader() throws IOException {
-    return new FileReader(myFile);
   }
 
   public Writer openWriter() throws IOException {
