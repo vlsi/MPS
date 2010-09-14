@@ -16,11 +16,13 @@
 <project name="update_platform" default="default" basedir="..">
   <property name="main.url" value="http://buildserver/guestAuth/repository/download/bt1069/latest.lastSuccessful"/>
   <property name="platform.file" value="platform.zip"/>
+  <property name="platform.src.file" value="platform.src.zip"/>
 
   <dirname property="ant.dir" file="${ant.file}"/>
   <property name="home.path" value="${ant.dir}/../../"/>
   <property name="platform.lib.dir" value="${home.path}/lib/platform"/>
   <property name="platform.plugin.dir" value="${home.path}/plugins/platform"/>
+  <property name="platform.sources.dir" value="${home.path}/platform_src"/>
 
   <property name="tmp" value="${java.io.tmpdir}/idea.new"/>
   <property name="tmp.platform" value="${tmp}/platform"/>
@@ -29,28 +31,37 @@
     <antcall target="prepare"/>
     <antcall target="update.platform"/>
     <antcall target="update.plugins"/>
+    <antcall target="update.sources"/>
     <antcall target="clean"/>
   </target>
 
   <target name="prepare">
     <mkdir dir="${tmp}"/>
     <get src="${main.url}/${platform.file}" dest="${tmp}/${platform.file}"/>
+    <get src="${main.url}/${platform.src.file}" dest="${tmp}/${platform.src.file}"/>
     <unzip src="${tmp}/${platform.file}" dest="${tmp.platform}"/>
   </target>
 
   <target name="update.platform">
     <antcall target="update">
       <param name="upd.dir" value="${platform.lib.dir}"/>
-      <param name="files" value="lib"/>
+      <param name="files" value="${tmp.platform}/lib"/>
     </antcall>
   </target>
 
   <target name="update.plugins">
     <antcall target="update">
       <param name="upd.dir" value="${platform.plugin.dir}"/>
-      <param name="files" value="plugins"/>
+      <param name="files" value="${tmp.platform}/plugins"/>
     </antcall>
-    </target>
+  </target>
+
+  <target name="update.sources">
+    <antcall target="update">
+      <param name="upd.dir" value="${platform.sources.dir}"/>
+      <param name="files" value="${tmp}/${platform.src.file}"/>
+    </antcall>
+  </target>
 
   <target name="clean">
     <delete dir="${tmp}"/>
@@ -62,81 +73,7 @@
     <mkdir dir="${upd.dir}"/>
 
     <move todir="${upd.dir}">
-      <fileset dir="${tmp.platform}/${files}"/>
+      <fileset dir="${files}"/>
     </move>
-    <!--update sources-->
   </target>
-
-
-  <!--
-  <property name="idea.platform.build.property" value="idea.platform.build.number"/>
-    <target name="replace.libraries" depends="download">
-      <unzip src="${tmp}/idea.zip" dest="${tmp}/idea" />
-      <copy file="${tmp}/idea/lib/commons-codec-1.3.jar" todir="${lib.dir}/commons-codec" overwrite="true" />
-      <copy file="${tmp}/idea/lib/commons-collections.jar" todir="${lib.dir}/commons-collections" overwrite="true" />
-      <copy todir="${lib.dir}/jdom" file="${tmp}/idea/lib/jdom.jar" overwrite="true" />
-      <copy file="${tmp}/idea/lib/jgoodies-forms.jar" todir="${lib.dir}/jgoodies" overwrite="true" />
-      <copy file="${tmp}/idea/lib/jh.jar" todir="${lib.dir}/javahelp" overwrite="true" />
-      <copy todir="${lib.dir}/jna" overwrite="true">
-        <fileset dir="${tmp}/idea/lib">
-          <include name="jna-utils.jar, jna.jar" />
-        </fileset>
-      </copy>
-      <copy file="${tmp}/idea/lib/log4j.jar" todir="${lib.dir}/log4j" overwrite="true" />
-      <copy file="${tmp}/idea/lib/microba.jar" todir="${lib.dir}/microba" overwrite="true" />
-      <copy file="${tmp}/idea/lib/nanoxml-2.2.3.jar" todir="${lib.dir}/nanoxml" overwrite="true" />
-      <copy file="${tmp}/idea/lib/oromatcher.jar" todir="${lib.dir}/oromatcher" overwrite="true" />
-      <copy file="${tmp}/idea/lib/picocontainer.jar" todir="${lib.dir}/picocontainer" overwrite="true" />
-      <copy todir="${lib.dir}/trove4j" overwrite="true">
-        <fileset dir="${tmp}/idea/lib">
-          <include name="trove4j_src.jar, trove4j.jar" />
-        </fileset>
-      </copy>
-      <copy file="${tmp}/idea/lib/xmlrpc-2.0.jar" todir="${lib.dir}/xmlrpc" overwrite="true" />
-      <copy file="${tmp}/idea/lib/xstream.jar" todir="${lib.dir}/xstream" overwrite="true" />
-      <copy todir="${platform.lib.dir}" overwrite="true">
-        <fileset dir="${tmp}/idea/lib" includes="annotations.jar, boot.jar, bootstrap.jar, extensions.jar, forms_rt.jar, icons.jar, util.jar, " />
-      </copy>
-      <replaceregexp match="${idea.platform.build.property}=(.*)" file="build.number" replace="${idea.platform.build.property}=" byline="true" />
-      <concat append="true" destfile="build.number">
-        <filelist files="${tmp}/idea/build.txt" />
-      </concat>
-    </target>
-    <target name="unpack.sources" depends="download">
-      <copy file="${platform.lib.dir}/${platfrom.src.zip}" tofile="${platform.lib.dir}/${platfrom.src.zip}.old" />
-      <unzip src="${platform.lib.dir}/sources.zip" dest="${tmp}/idea-src" />
-      <zip destfile="${platform.lib.dir}/${platfrom.src.zip}" update="false">
-        <fileset dir="${srcdir}/annotations/src/" />
-        <fileset dir="${srcdir}/boot/src/" />
-        <fileset dir="${srcdir}/bootstrap/src/" />
-        <fileset dir="${srcdir}/extensions/src/" />
-        <fileset dir="${srcdir}/lang-api/src/" />
-        <fileset dir="${srcdir}/lang-impl/src/" />
-        <fileset dir="${srcdir}/lvcs-impl/src/" />
-        <fileset dir="${srcdir}/lvcs-api/src/" />
-        <fileset dir="${srcdir}/platform-api/src/" />
-        <fileset dir="${srcdir}/platform-impl/src/" />
-        <fileset dir="${srcdir}/platform-resources/src/" />
-        <fileset dir="${srcdir}/platform-resources-en/src/" />
-        <fileset dir="${srcdir}/testRunner/src/" />
-        <fileset dir="${srcdir}/usageView/src/" />
-        <fileset dir="${srcdir}/util/src/" />
-        <fileset dir="${srcdir}/vcs-api/src/" />
-        <fileset dir="${srcdir}/vcs-impl/src/" />
-      </zip>
-      <delete file="${platform.lib.dir}/${platfrom.src.zip}.old" />
-      <delete file="${platform.lib.dir}/sources.zip" />
-    </target>
-    <target name="unpack.external.sources" depends="download">
-      <property name="src" value="${tmp}/idea-dev/lib/src/src_openapi.zip" />
-      <unzip src="${tmp}/idea-dev.zip" dest="${tmp}/idea-dev" />
-      <unzip src="${src}" dest="${tmp}/idea-openapi" />
-      <zip destfile="${platform.lib.dir}/idea-external-src.zip">
-        <zipfileset dir="${tmp}/idea-openapi">
-          <include name="**/*.java" />
-        </zipfileset>
-      </zip>
-    </target>
-
-  -->
 </project>
