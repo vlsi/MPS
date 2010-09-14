@@ -8,13 +8,14 @@
   <unitInfo fileName="AnnotationLinkDeclaration_name_PropertyConstraint.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.structure.constraints.AnnotationLinkDeclaration_name_PropertyConstraint" />
   <unitInfo fileName="ConceptLinkDeclaration_name_PropertyConstraint.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.structure.constraints.ConceptLinkDeclaration_name_PropertyConstraint" />
   <unitInfo fileName="LinkDeclaration_role_PropertyConstraint.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.structure.constraints.LinkDeclaration_role_PropertyConstraint" />
+  <unitInfo fileName="LinkDeclaration_sourceCardinality_PropertyConstraint.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.structure.constraints.LinkDeclaration_sourceCardinality_PropertyConstraint" />
   <unitInfo fileName="EnumerationDataTypeDeclaration_hasNoDefaultMember_PropertyConstraint.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.structure.constraints.EnumerationDataTypeDeclaration_hasNoDefaultMember_PropertyConstraint" />
   <unitInfo fileName="ConceptDeclaration_extends_ReferentConstraint.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.structure.constraints.ConceptDeclaration_extends_ReferentConstraint" />
   <unitInfo fileName="EnumerationDataTypeDeclaration_defaultMember_ReferentConstraint.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.structure.constraints.EnumerationDataTypeDeclaration_defaultMember_ReferentConstraint" />
   <unitInfo fileName="ConceptProperty_conceptPropertyDeclaration_ReferentConstraint.java" startLine="16" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.structure.constraints.ConceptProperty_conceptPropertyDeclaration_ReferentConstraint" />
   <unitInfo fileName="ConceptLink_conceptLinkDeclaration_ReferentConstraint.java" startLine="16" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.structure.constraints.ConceptLink_conceptLinkDeclaration_ReferentConstraint" />
   <unitInfo fileName="ReferenceConceptLink_target_ReferentConstraint.java" startLine="13" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.structure.constraints.ReferenceConceptLink_target_ReferentConstraint" />
-  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.structure.constraints.ConstraintsDescriptor" />
+  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.structure.constraints.ConstraintsDescriptor" />
   <unitInfo fileName="LinkDeclaration_specializedLink_ReferentConstraint.java" startLine="21" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.structure.constraints.LinkDeclaration_specializedLink_ReferentConstraint" />
   <root nodeId="1213104840673">
     <nodeInfo nodeId="1227087338533" fileName="ConceptDeclaration_Constraints.java" startLine="10" startPosition="112" endLine="11" endPosition="60" />
@@ -25,6 +26,7 @@
   </root>
   <root nodeId="1213104841300">
     <nodeInfo nodeId="4049502122675876454" fileName="LinkDeclaration_role_PropertyConstraint.java" startLine="25" startPosition="130" endLine="26" endPosition="82" />
+    <nodeInfo nodeId="589716822028322828" fileName="LinkDeclaration_sourceCardinality_PropertyConstraint.java" startLine="25" startPosition="130" endLine="26" endPosition="592" />
     <nodeInfo nodeId="7376433222636453895" fileName="LinkDeclaration_specializedLink_ReferentConstraint.java" startLine="33" startPosition="132" endLine="34" endPosition="57" />
     <nodeInfo nodeId="1215740152260" fileName="LinkDeclaration_specializedLink_ReferentConstraint.java" startLine="35" startPosition="46" endLine="36" endPosition="18" />
     <nodeInfo nodeId="1213104841304" fileName="LinkDeclaration_specializedLink_ReferentConstraint.java" startLine="37" startPosition="5" endLine="38" endPosition="131" />
@@ -41,6 +43,7 @@
     <nodeInfo nodeId="1213104841345" fileName="LinkDeclaration_specializedLink_ReferentConstraint.java" startLine="43" startPosition="110" endLine="51" endPosition="10" />
     <nodeInfo nodeId="1213104841335" fileName="LinkDeclaration_specializedLink_ReferentConstraint.java" startLine="41" startPosition="98" endLine="52" endPosition="5" />
     <scopeInfo nodeId="4049502122675870326" fileName="LinkDeclaration_role_PropertyConstraint.java" startLine="25" startPosition="130" endLine="26" endPosition="82" />
+    <scopeInfo nodeId="589716822028322824" fileName="LinkDeclaration_sourceCardinality_PropertyConstraint.java" startLine="25" startPosition="130" endLine="26" endPosition="592" />
     <scopeInfo nodeId="1215740141315" fileName="LinkDeclaration_specializedLink_ReferentConstraint.java" startLine="35" startPosition="46" endLine="36" endPosition="18" />
     <scopeInfo nodeId="1227876796987" fileName="LinkDeclaration_specializedLink_ReferentConstraint.java" startLine="46" startPosition="28" endLine="47" endPosition="93" />
     <scopeInfo nodeId="1227876796985" fileName="LinkDeclaration_specializedLink_ReferentConstraint.java" startLine="45" startPosition="41" endLine="49" endPosition="89" />

@@ -86,8 +86,65 @@
       </node>
     </node>
   </node>
+  <visible index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1213104841300">
     <link role="concept:8" targetNodeId="1.1071489288298:0" resolveInfo="LinkDeclaration" />
+    <node role="property:8" type="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint:8" id="589716822028322822">
+      <link role="applicableProperty:8" targetNodeId="1.1071599893252:0" resolveInfo="sourceCardinality" />
+      <node role="propertyValidator:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator:8" id="589716822028322823">
+        <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="589716822028322824">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="589716822028322828">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.OrExpression:3" id="589716822028334524">
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="589716822028334545">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="589716822028334537">
+                  <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation:16" id="589716822028334528">
+                    <link role="enumDeclaration:16" targetNodeId="1.1084197782722:0" resolveInfo="Cardinality" />
+                    <node role="operation:16" type="jetbrains.mps.lang.smodel.structure.SEnum_MemberOperation:16" id="589716822028334535">
+                      <link role="member:16" targetNodeId="1.1084197782723:0" />
+                    </node>
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.EnumMember_ValueOperation:16" id="589716822028334542" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="589716822028334551">
+                  <link role="baseMethodDeclaration:3" targetNodeId="2v.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                  <node role="actualArgument:3" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue:8" id="589716822028334554" />
+                </node>
+              </node>
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.OrExpression:3" id="589716822028334503">
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="589716822028333749">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="589716822028322830">
+                    <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node:8" id="589716822028322829" />
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="589716822028322834">
+                      <link role="property:16" targetNodeId="1.1071599937831:0" resolveInfo="metaClass" />
+                    </node>
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum:16" id="589716822028334476">
+                    <node role="value:16" type="jetbrains.mps.lang.smodel.structure.EnumMemberReference:16" id="589716822028334477">
+                      <link role="enumMember:16" targetNodeId="1.1084199179705:0" resolveInfo="aggregation" />
+                    </node>
+                  </node>
+                </node>
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="589716822028334515">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="589716822028334509">
+                    <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation:16" id="589716822028334506">
+                      <link role="enumDeclaration:16" targetNodeId="1.1084197782722:0" resolveInfo="Cardinality" />
+                      <node role="operation:16" type="jetbrains.mps.lang.smodel.structure.SEnum_MemberOperation:16" id="589716822028334508">
+                        <link role="member:16" targetNodeId="1.1084197782724:0" />
+                      </node>
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.EnumMember_ValueOperation:16" id="589716822028334513" />
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="589716822028334520">
+                    <link role="baseMethodDeclaration:3" targetNodeId="2v.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                    <node role="actualArgument:3" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue:8" id="589716822028334522" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="property:8" type="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint:8" id="4049502122675870324">
       <link role="applicableProperty:8" targetNodeId="1.1071599776563:0" resolveInfo="role" />
       <node role="propertyValidator:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator:8" id="4049502122675870325">
