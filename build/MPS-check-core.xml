@@ -101,10 +101,10 @@
 
     <!-- refactoring -->
     <path path="core/languageDesign/refactoring/source"/>
-    <path path="core/languageDesign/refactoring/source_gen/jetbrains/mps/lang/refactoring/behavior"/>
-    <path path="core/languageDesign/refactoring/source_gen/jetbrains/mps/lang/refactoring/generator"/>
+    <!--<path path="core/languageDesign/refactoring/source_gen/jetbrains/mps/lang/refactoring/behavior"/>-->
+    <!--<path path="core/languageDesign/refactoring/source_gen/jetbrains/mps/lang/refactoring/generator"/>-->
     <path path="core/languageDesign/refactoring/source_gen/jetbrains/mps/lang/refactoring/structure"/>
-    <path path="core/languageDesign/refactoring/source_gen/jetbrains/mps/lang/refactoring/typesystem"/>
+    <!--<path path="core/languageDesign/refactoring/source_gen/jetbrains/mps/lang/refactoring/typesystem"/>-->
 
     <!-- script -->
     <path path="core/languageDesign/script/source/jetbrains/mps/lang/script/runtime"/>
