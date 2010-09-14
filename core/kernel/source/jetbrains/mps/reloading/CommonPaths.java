@@ -80,12 +80,6 @@ public class CommonPaths {
   public static IClassPathItem getMPSClassPath() {
     CompositeClassPathItem result = new CompositeClassPathItem();
     result.add(getBaseMPSClassPath());
-    result.add(getIDEAOpenAPIJar());
-    result.add(getIDEAJar());
-    result.add(getExecJar());
-    result.add(getIDEAUtilJar());
-    result.add(getIDEAExtensionsJar());
-    result.add(getLibraryJars());
 
     IClassPathItem kernelClassPath = getMPSKernelClassPath();
     if (kernelClassPath != null) {
@@ -138,59 +132,23 @@ public class CommonPaths {
     }
 
     addIfExists(result, "/core/runtime/classes");
-    
+
+    addIfExists(result, "/lib/platform-api.jar");
+    addIfExists(result, "/lib/platform.jar");
+    addIfExists(result, "/lib/execution-api.jar");
+    addIfExists(result, "/lib/util.jar");
+    addIfExists(result, "/lib/extensions.jar");
+    addIfExists(result, "/lib/junit-4.7.jar");
+    addIfExists(result, "/lib/log4j.jar");
     addIfExists(result, "/lib/commons-lang-2.4.jar");
     addIfExists(result, "/lib/picocontainer.jar");
     addIfExists(result, "/lib/jdom.jar");
     addIfExists(result, "/lib/eclipse-compiler/ecj.jar");
 
-    addIfExists(result, "/lib/annotations.jar");
-
     return result;
   }
 
   //--------private----------
-
-  private static IClassPathItem getLibraryJars() {
-    CompositeClassPathItem cp = new CompositeClassPathItem();
-
-    String junitJar = libPath() + "junit-4.7.jar";
-    if (new File(junitJar).exists()) {
-      cp.add(ClassPathFactory.getInstance().createFromPath(junitJar));
-    }
-
-    String log4jJar = libPath() + "log4j.jar";
-    if (new File(log4jJar).exists()) {
-      cp.add(ClassPathFactory.getInstance().createFromPath(log4jJar));
-    }
-
-    return cp;
-  }
-
-  private static IClassPathItem getIDEAOpenAPIJar() {
-    String path = libPath() + File.separator + "platform-api.jar";
-    return ClassPathFactory.getInstance().createFromPath(path);
-  }
-
-  private static IClassPathItem getIDEAJar() {
-    String path = libPath() + File.separator + "platform.jar";
-    return ClassPathFactory.getInstance().createFromPath(path);
-  }
-
-  private static IClassPathItem getExecJar() {
-    String path = libPath() + File.separator + "execution-api.jar";
-    return ClassPathFactory.getInstance().createFromPath(path);
-  }
-
-  private static IClassPathItem getIDEAUtilJar() {
-    String path = libPath() + File.separator + "util.jar";
-    return ClassPathFactory.getInstance().createFromPath(path);
-  }
-
-  private static IClassPathItem getIDEAExtensionsJar() {
-    String path = libPath() + File.separator + "extensions.jar";
-    return ClassPathFactory.getInstance().createFromPath(path);
-  }
 
   private static IClassPathItem getBaseMPSClassPath() {
     String path = getBaseMPSPath();
