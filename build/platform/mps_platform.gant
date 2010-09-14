@@ -37,7 +37,7 @@ def layoutFull(String home, String targetDirectory) {
   layout(targetDirectory) {
     zip("platform.zip") {
       dir("lib") {
-        jar("platform-api.jar") {
+        jar("platform.jar") {
           platformApiModules().each { module it}
           platformImplementationModules().each { module it}
 
