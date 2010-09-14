@@ -95,7 +95,7 @@ public class GeneratorManager {
 
         GeneratorLoggerAdapter logger = new GeneratorLoggerAdapter(messages, settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings());
 
-        GenerationController gc = new GenerationController(parameters, new GeneratorNotifierHelper(), inputModels, invocationContext, logger, generationHandler);
+        GenerationController gc = new GenerationController(inputModels, parameters, generationHandler, new GeneratorNotifierHelper(), logger, invocationContext);
         result[0] = gc.generate();
         tracer.finishTracing();
         fireAfterGeneration(inputModels);

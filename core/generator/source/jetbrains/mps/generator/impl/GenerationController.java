@@ -55,12 +55,9 @@ public class GenerationController {
 
   protected List<Pair<IModule, List<SModelDescriptor>>> myModuleSequence = new ArrayList<Pair<IModule, List<SModelDescriptor>>>();
 
-  public GenerationController(GenerationProcessContext parameters,
-                              GeneratorNotifierHelper notifierHelper,
-                              List<SModelDescriptor> _inputModels,
-                              IOperationContext operationContext,
-                              GeneratorLoggerAdapter generatorLogger,
-                              IGenerationHandler generationHandler) {
+  public GenerationController(List<SModelDescriptor> _inputModels, GenerationProcessContext parameters,
+                              IGenerationHandler generationHandler, GeneratorNotifierHelper notifierHelper,
+                              GeneratorLoggerAdapter generatorLogger, IOperationContext operationContext) {
 
     myNotifierHelper = notifierHelper;
     myInputModels = _inputModels;
