@@ -25,7 +25,8 @@ public class RefactoringsPersistence {
 
   private static IFile getRefactoringsFile(IFile modelFile) {
     String modelPath = modelFile.getAbsolutePath();
-    String refactoringsPath = modelPath.substring(0, modelPath.length() - MPSExtentions.DOT_MODEL.length()) + ".refactorings";
+    String refactoringsPath = modelPath.substring(0, modelPath.length() - MPSExtentions.DOT_MODEL.length())
+      + MPSExtentions.DOT_REFACTORINGS;
     return FileSystem.getFile(refactoringsPath);
   }
 
