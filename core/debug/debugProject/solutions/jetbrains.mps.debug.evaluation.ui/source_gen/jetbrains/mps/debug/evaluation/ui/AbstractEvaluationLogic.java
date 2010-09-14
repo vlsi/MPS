@@ -170,7 +170,7 @@ public abstract class AbstractEvaluationLogic {
       DefaultMessageHandler messageHandler = new DefaultMessageHandler(ideaProject);
       ProgressWindow progressWindow = new ProgressWindow(false, ideaProject);
       GeneratorManager generatorManager = project.getComponent(GeneratorManager.class);
-      boolean successful = generatorManager.generateModels(Collections.singletonList(myAuxModel), project, handler, progressWindow, messageHandler, true, false);
+      boolean successful = generatorManager.generateModels(Collections.singletonList(myAuxModel), myContext, handler, progressWindow, messageHandler, true, false);
 
       Disposer.dispose(progressWindow);
 

@@ -34,10 +34,7 @@ import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.library.Library;
 import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
 import jetbrains.mps.project.tester.DiffReporter;
 import jetbrains.mps.project.tester.TesterGenerationHandler;
@@ -527,7 +524,7 @@ public class TestGenerationWorker extends GeneratorWorker {
 
     public void generate(GeneratorManager gm, IGenerationHandler generationHandler, IMessageHandler messageHandler) {
       gm.generateModels(Collections.<SModelDescriptor>singletonList(mySModel),
-        myProject.getProject(),
+        ProjectOperationContext.get(myProject.getProject()),
         generationHandler,
         new EmptyProgressIndicator(),
         messageHandler,

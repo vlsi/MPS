@@ -197,7 +197,7 @@ public class GeneratorFacade {
     ProgressManager.getInstance().run(new Modal(invocationContext.getProject(), "Generation", true) {
       public void run(@NotNull ProgressIndicator progress) {
         GeneratorManager generatorManager = project.getComponent(GeneratorManager.class);
-        result[0] = generatorManager.generateModels(inputModels, project, generationHandler, progress, messages, saveTransientModels, rebuildAll);
+        result[0] = generatorManager.generateModels(inputModels, invocationContext, generationHandler, progress, messages, saveTransientModels, rebuildAll);
       }
     });
     return result[0];

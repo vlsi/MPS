@@ -16,7 +16,6 @@
 package jetbrains.mps.generator.impl;
 
 import com.intellij.openapi.progress.ProgressIndicator;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationStatus;
@@ -48,7 +47,7 @@ public class GenerationController {
 
   private GeneratorNotifierHelper myNotifierHelper;
   private List<SModelDescriptor> myInputModels;
-  private final Project myProject;
+  private final IOperationContext myOperationContext;
   protected final IGenerationHandler myGenerationHandler;
   protected ProgressIndicator myProgress;
   protected GeneratorLoggerAdapter myLogger;
@@ -59,13 +58,13 @@ public class GenerationController {
   public GenerationController(GenerationProcessContext parameters,
                               GeneratorNotifierHelper notifierHelper,
                               List<SModelDescriptor> _inputModels,
-                              Project project,
+                              IOperationContext operationContext,
                               GeneratorLoggerAdapter generatorLogger,
                               IGenerationHandler generationHandler) {
 
     myNotifierHelper = notifierHelper;
     myInputModels = _inputModels;
-    myProject = project;
+    myOperationContext = operationContext;
     myGenerationHandler = generationHandler;
     myProgress = parameters.getProgressIndicator();
     myLogger = generatorLogger;
@@ -136,7 +135,7 @@ public class GenerationController {
 
   private boolean compile(ITaskProgressHelper progressHelper, boolean generationOK) throws IOException, GenerationCanceledException {
     fireBeforeModelsCompiled(generationOK);
-    generationOK = generationOK && myGenerationHandler.compile(getProject(), myModuleSequence, generationOK, progressHelper);
+    generationOK = generationOK && myGenerationHandler.compile(myOperationContext, myModuleSequence, generationOK, progressHelper);
     fireAfterModelsCompiled(generationOK);
     return generationOK;
   }
@@ -144,8 +143,9 @@ public class GenerationController {
   protected boolean generateModelsInModule(IModule module, List<SModelDescriptor> inputModels, ITaskProgressHelper progressHelper) throws Exception {
     boolean currentGenerationOK = true;
 
-    IOperationContext invocationContext = new ModuleContext(module, getProject());
-    myGenerationHandler.startModule(module, inputModels, getProject(), progressHelper);
+    // TODO fix context
+    IOperationContext invocationContext = new ModuleContext(module, myOperationContext.getProject());
+    myGenerationHandler.startModule(module, inputModels, myOperationContext, progressHelper);
 
     //++ generation
     String wasLoggingThreshold = null;
@@ -273,12 +273,8 @@ public class GenerationController {
     myNotifierHelper.fireAfterModelsCompiled(Collections.unmodifiableList(myInputModels), success);
   }
 
-  private Project getProject() {
-    return myProject;
-  }
-
   private void clearMessageVew() {
-    MessagesViewTool messagesView = getProject().getComponent(MessagesViewTool.class);
+    MessagesViewTool messagesView = myOperationContext.getComponent(MessagesViewTool.class);
     if (messagesView != null) {
       messagesView.clear();
     }

@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.project.tester;
 
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
@@ -48,7 +47,7 @@ public class TesterGenerationHandler extends InMemoryJavaGenerationHandler {
   }
 
   @Override
-  public boolean compile(Project p, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) {
+  public boolean compile(IOperationContext operationContext, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) {
     return true;
   }
 

@@ -23,6 +23,7 @@ import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.util.Pair;
 
@@ -37,11 +38,11 @@ import java.util.Set;
 public class IdeaAwareJavaGenerationHandler extends JavaGenerationHandler {
 
   @Override
-  public boolean compile(Project p, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws IOException, GenerationCanceledException {
+  public boolean compile(IOperationContext operationContext, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws IOException, GenerationCanceledException {
     boolean compiledSuccessfully = generationOK;
     boolean[] ideaIsFresh = new boolean[]{false};
 
-    IProjectHandler projectHandler = getProjectHandler(p);
+    IProjectHandler projectHandler = getProjectHandler(operationContext.getProject());
 
     if (generationOK) {
       long compilationStart = System.currentTimeMillis();

@@ -16,7 +16,6 @@
 package jetbrains.mps.generator.generationTypes;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationStatus;
@@ -76,7 +75,7 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
     return true;
   }
 
-  public void startModule(IModule module, List<SModelDescriptor> inputModels, Project project, ITaskProgressHelper progressHelper) {
+  public void startModule(IModule module, List<SModelDescriptor> inputModels, IOperationContext operationContext, ITaskProgressHelper progressHelper) {
     progressHelper.setText2("module " + module);
 
     String outputFolder = module != null ? module.getGeneratorOutputPath() : null;
@@ -93,7 +92,7 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
   }
 
   @Override
-  public boolean compile(Project p, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws IOException, GenerationCanceledException {
+  public boolean compile(IOperationContext operationContext, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws IOException, GenerationCanceledException {
     boolean compiledSuccessfully = generationOK;
 
     if (generationOK) {

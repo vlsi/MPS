@@ -36,6 +36,7 @@ import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
@@ -248,7 +249,7 @@ public class GeneratorWorker extends MpsWorker {
           inputModels.add(model);
         }
       }
-      gm.generateModels(inputModels, myProject.getProject(), generationHandler, new EmptyProgressIndicator(), messageHandler, false, true);
+      gm.generateModels(inputModels, ProjectOperationContext.get(myProject.getProject()), generationHandler, new EmptyProgressIndicator(), messageHandler, false, true);
     }
 
     @Override

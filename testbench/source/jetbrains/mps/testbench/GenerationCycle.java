@@ -13,6 +13,7 @@ import jetbrains.mps.make.dependencies.graph.IVertex;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
@@ -126,7 +127,7 @@ public class GenerationCycle {
           inputModels.add(model);
         }
       }
-      gm.generateModels(inputModels, myProject.getProject(), generationHandler, new EmptyProgressIndicator(), messageHandler, false, true);
+      gm.generateModels(inputModels, ProjectOperationContext.get(myProject.getProject()), generationHandler, new EmptyProgressIndicator(), messageHandler, false, true);
     }
 
     @Override

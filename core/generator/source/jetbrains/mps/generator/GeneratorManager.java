@@ -58,14 +58,14 @@ public class GeneratorManager {
                                 final IGenerationHandler generationHandler,
                                 final ProgressIndicator progress,
                                 final IMessageHandler messages) {
-    return generateModels(inputModels, invocationContext.getProject(), generationHandler, progress, messages, false, true);
+    return generateModels(inputModels, invocationContext, generationHandler, progress, messages, false, true);
   }
 
   /**
    * @return false if canceled
    */
   public boolean generateModels(final List<SModelDescriptor> inputModels,
-                                final Project project,
+                                final IOperationContext invocationContext,
                                 final IGenerationHandler generationHandler,
                                 final ProgressIndicator progress,
                                 final IMessageHandler messages,
@@ -95,7 +95,7 @@ public class GeneratorManager {
 
         GeneratorLoggerAdapter logger = new GeneratorLoggerAdapter(messages, settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings());
 
-        GenerationController gc = new GenerationController(parameters, new GeneratorNotifierHelper(), inputModels, project, logger, generationHandler);
+        GenerationController gc = new GenerationController(parameters, new GeneratorNotifierHelper(), inputModels, invocationContext, logger, generationHandler);
         result[0] = gc.generate();
         tracer.finishTracing();
         fireAfterGeneration(inputModels);
