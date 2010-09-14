@@ -28,8 +28,14 @@ public class ThreadWatcher implements Output {
         "(Finalizer.*)|" +
         "(caret blinker.*)|" +
         "(ApplicationImpl.*)|" +
+        "(Executor)|" +
         "(TimerQueue)|" +
-        "(Change List.*)");
+        "(Change List.*)|" +
+        "(Reference.*)|" +
+        "(Periodic task.*)|" +
+        "(Java2D.*)|" +
+        "(LowMemoryWatcher)|" +
+        "(Timer\\-.*)");
 
     private TLongObjectHashMap<ThreadInfo> allThreads = new TLongObjectHashMap<ThreadInfo> ();
     private TLongObjectHashMap<ThreadInfo> runningThreads = new TLongObjectHashMap<ThreadInfo> ();
