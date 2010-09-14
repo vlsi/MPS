@@ -28,6 +28,7 @@ import jetbrains.mps.ide.progress.TaskProgressHelper;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -38,29 +39,33 @@ import jetbrains.mps.util.performance.IPerformanceTracer.NullPerformanceTracer;
 import jetbrains.mps.util.performance.PerformanceTracer;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class GenerationController {
   protected static Logger LOG = Logger.getLogger(GenerationController.class);
 
   private GeneratorNotifierHelper myNotifierHelper;
-  private List<Pair<SModelDescriptor, IOperationContext>> myInputModels;
+  private List<SModelDescriptor> myInputModels;
+  private final Project myProject;
   protected final IGenerationHandler myGenerationHandler;
   protected ProgressIndicator myProgress;
   protected GeneratorLoggerAdapter myLogger;
   private GenerationProcessContext myGenerationContext;
 
   protected List<Pair<IModule, List<SModelDescriptor>>> myModuleSequence = new ArrayList<Pair<IModule, List<SModelDescriptor>>>();
-  protected Map<IModule, IOperationContext> myModulesToContexts = new HashMap<IModule, IOperationContext>();
 
   public GenerationController(GenerationProcessContext parameters,
                               GeneratorNotifierHelper notifierHelper,
-                              List<Pair<SModelDescriptor, IOperationContext>> _inputModels,
+                              List<SModelDescriptor> _inputModels,
+                              Project project,
                               GeneratorLoggerAdapter generatorLogger,
                               IGenerationHandler generationHandler) {
 
     myNotifierHelper = notifierHelper;
     myInputModels = _inputModels;
+    myProject = project;
     myGenerationHandler = generationHandler;
     myProgress = parameters.getProgressIndicator();
     myLogger = generatorLogger;
@@ -70,15 +75,19 @@ public class GenerationController {
   private void initMaps() {
     IModule current = null;
     ArrayList<SModelDescriptor> currentList = null;
-    for (Pair<SModelDescriptor, IOperationContext> inputModel : myInputModels) {
-      IModule newModule = inputModel.o2.getModule();
+    for (SModelDescriptor inputModel : myInputModels) {
+      IModule newModule = inputModel.getModule();
+      if(newModule == null) {
+        myLogger.warning("Model " + inputModel.getLongName() + " won't be generated");
+        continue;
+      }
+
       if (current == null || newModule != current) {
         current = newModule;
         currentList = new ArrayList<SModelDescriptor>();
         myModuleSequence.add(new Pair<IModule, List<SModelDescriptor>>(current, currentList));
-        myModulesToContexts.put(current, inputModel.o2);
       }
-      currentList.add(inputModel.o1);
+      currentList.add(inputModel);
     }
   }
 
@@ -135,7 +144,7 @@ public class GenerationController {
   protected boolean generateModelsInModule(IModule module, List<SModelDescriptor> inputModels, ITaskProgressHelper progressHelper) throws Exception {
     boolean currentGenerationOK = true;
 
-    IOperationContext invocationContext = myModulesToContexts.get(module);
+    IOperationContext invocationContext = new ModuleContext(module, getProject());
     myGenerationHandler.startModule(module, inputModels, getProject(), progressHelper);
 
     //++ generation
@@ -264,12 +273,8 @@ public class GenerationController {
     myNotifierHelper.fireAfterModelsCompiled(Collections.unmodifiableList(myInputModels), success);
   }
 
-  private IOperationContext getFirstContext() {
-    return myInputModels.get(0).o2;
-  }
-
   private Project getProject() {
-    return getFirstContext().getProject();
+    return myProject;
   }
 
   private void clearMessageVew() {

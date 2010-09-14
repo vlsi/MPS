@@ -19,7 +19,10 @@ import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.build.ant.MpsWorker;
 import jetbrains.mps.build.ant.WhatToDo;
-import jetbrains.mps.generator.*;
+import jetbrains.mps.generator.GenerationAdapter;
+import jetbrains.mps.generator.GenerationCanceledException;
+import jetbrains.mps.generator.GenerationListener;
+import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
 import jetbrains.mps.ide.generator.GenerationSettings;
@@ -33,13 +36,10 @@ import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Pair;
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.ProjectComponent;
@@ -159,7 +159,7 @@ public class GeneratorWorker extends MpsWorker {
 
   protected List<Cycle> computeGenerationOrder(MPSProject project, ObjectsToProcess go) {
 
-    final Map<IModule, List<EditableSModelDescriptor>> moduleToModels = new LinkedHashMap<IModule, List<EditableSModelDescriptor>>();
+    final Map<IModule, List<SModelDescriptor>> moduleToModels = new LinkedHashMap<IModule, List<SModelDescriptor>>();
     extractModels(go.getProjects(), go.getModules(), (Set) go.getModels(), (Map) moduleToModels);
 
     // calculate order
@@ -232,24 +232,23 @@ public class GeneratorWorker extends MpsWorker {
   protected static class SimpleModuleCycle implements Cycle {
     private final Set<IModule> myModules;
     private final MPSProject myProject;
-    private final Map<IModule, List<EditableSModelDescriptor>> myModuleToModels;
+    private final Map<IModule, List<SModelDescriptor>> myModuleToModels;
 
-    public SimpleModuleCycle(MPSProject project, Set<IModule> modules, Map<IModule, List<EditableSModelDescriptor>> moduleToModels) {
+    public SimpleModuleCycle(MPSProject project, Set<IModule> modules, Map<IModule, List<SModelDescriptor>> moduleToModels) {
       myModules = modules;
       myProject = project;
       myModuleToModels = moduleToModels;
     }
 
     public void generate(GeneratorManager gm, IGenerationHandler generationHandler, IMessageHandler messageHandler) {
-      List<Pair<SModelDescriptor, IOperationContext>> modelsToContext = new ArrayList<Pair<SModelDescriptor, IOperationContext>>();
+      List<SModelDescriptor> inputModels = new ArrayList<SModelDescriptor>();
       for (IModule module : myModules) {
-        ModuleContext moduleContext = new ModuleContext(module, myProject);
-        List<EditableSModelDescriptor> modelsToGenerateNow = myModuleToModels.get(module);
-        for (EditableSModelDescriptor model : modelsToGenerateNow) {
-          modelsToContext.add(new Pair<SModelDescriptor, IOperationContext>(model, moduleContext));
+        List<SModelDescriptor> modelsToGenerateNow = myModuleToModels.get(module);
+        for (SModelDescriptor model : modelsToGenerateNow) {
+          inputModels.add(model);
         }
       }
-      gm.generateModels(modelsToContext, generationHandler, new EmptyProgressIndicator(), messageHandler, false, true);
+      gm.generateModels(inputModels, myProject.getProject(), generationHandler, new EmptyProgressIndicator(), messageHandler, false, true);
     }
 
     @Override

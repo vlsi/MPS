@@ -31,7 +31,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.util.Pair;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,42 +58,20 @@ public class GeneratorManager {
                                 final IGenerationHandler generationHandler,
                                 final ProgressIndicator progress,
                                 final IMessageHandler messages) {
-    return generateModels(inputModels, invocationContext, generationHandler, progress, messages, false, true);
+    return generateModels(inputModels, invocationContext.getProject(), generationHandler, progress, messages, false, true);
   }
 
   /**
    * @return false if canceled
    */
   public boolean generateModels(final List<SModelDescriptor> inputModels,
-                                final IOperationContext invocationContext,
-                                final IGenerationHandler generationHandler,
-                                final ProgressIndicator progress,
-                                final IMessageHandler messages,
-                                boolean saveTransientModels,
-                                boolean rebuildAll) {
-    List<Pair<SModelDescriptor, IOperationContext>> inputModelPairs = new ArrayList<Pair<SModelDescriptor, IOperationContext>>();
-    for (SModelDescriptor model : inputModels) {
-      inputModelPairs.add(new Pair<SModelDescriptor, IOperationContext>(model, invocationContext));
-    }
-    return generateModels(
-      inputModelPairs,
-      generationHandler,
-      progress,
-      messages,
-      saveTransientModels,
-      rebuildAll);
-  }
-
-  /**
-   * @return false if canceled
-   */
-  public boolean generateModels(final List<Pair<SModelDescriptor, IOperationContext>> inputModels,
+                                final Project project,
                                 final IGenerationHandler generationHandler,
                                 final ProgressIndicator progress,
                                 final IMessageHandler messages,
                                 final boolean saveTransientModels,
-                                final boolean rebuildAll
-  ) {
+                                final boolean rebuildAll) {
+
     final boolean[] result = new boolean[1];
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
@@ -118,7 +95,7 @@ public class GeneratorManager {
 
         GeneratorLoggerAdapter logger = new GeneratorLoggerAdapter(messages, settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings());
 
-        GenerationController gc = new GenerationController(parameters, new GeneratorNotifierHelper(), inputModels, logger, generationHandler);
+        GenerationController gc = new GenerationController(parameters, new GeneratorNotifierHelper(), inputModels, project, logger, generationHandler);
         result[0] = gc.generate();
         tracer.finishTracing();
         fireAfterGeneration(inputModels);
@@ -131,7 +108,7 @@ public class GeneratorManager {
     return result[0];
   }
 
-  private void fireBeforeGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
+  private void fireBeforeGeneration(List<SModelDescriptor> inputModels) {
     for (GenerationListener l : myGenerationListeners) {
       try {
         l.beforeGeneration(inputModels);
@@ -141,7 +118,7 @@ public class GeneratorManager {
     }
   }
 
-  private void fireAfterGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
+  private void fireAfterGeneration(List<SModelDescriptor> inputModels) {
     for (GenerationListener l : myGenerationListeners) {
       try {
         l.afterGeneration(inputModels);
@@ -153,7 +130,7 @@ public class GeneratorManager {
 
   public class GeneratorNotifierHelper {
 
-    public void fireModelsGenerated(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
+    public void fireModelsGenerated(List<SModelDescriptor> models, boolean success) {
       for (GenerationListener l : myGenerationListeners) {
         try {
           l.modelsGenerated(models, success);
@@ -163,7 +140,7 @@ public class GeneratorManager {
       }
     }
 
-    public void fireBeforeModelsCompiled(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
+    public void fireBeforeModelsCompiled(List<SModelDescriptor> models, boolean success) {
       for (CompilationListener l : myCompilationListeners) {
         try {
           l.beforeModelsCompiled(models, success);
@@ -173,7 +150,7 @@ public class GeneratorManager {
       }
     }
 
-    public void fireAfterModelsCompiled(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
+    public void fireAfterModelsCompiled(List<SModelDescriptor> models, boolean success) {
       for (CompilationListener l : myCompilationListeners) {
         try {
           l.afterModelsCompiled(models, success);

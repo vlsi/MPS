@@ -228,9 +228,8 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   private class GenerationWatcher implements GenerationListener {
-    public void beforeGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
-      for (Pair<SModelDescriptor, IOperationContext> pair : inputModels) {
-        SModelDescriptor smodelDescriptor = pair.o1;
+    public void beforeGeneration(List<SModelDescriptor> inputModels) {
+      for (SModelDescriptor smodelDescriptor : inputModels) {
         if (smodelDescriptor instanceof EditableSModelDescriptor && ((EditableSModelDescriptor) smodelDescriptor).needsReloading()) {
           ((EditableSModelDescriptor) smodelDescriptor).reloadFromDisk();
           LOG.info("Model " + smodelDescriptor + " reloaded from disk.");
@@ -240,22 +239,22 @@ public class MPSVCSManager implements ProjectComponent {
       myRemoveOperationScheduler.banProcessing();
     }
 
-    public void modelsGenerated(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
+    public void modelsGenerated(List<SModelDescriptor> models, boolean success) {
 
     }
 
-    public void afterGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
+    public void afterGeneration(List<SModelDescriptor> inputModels) {
       myAddOperationScheduler.removeProcessingBan();
       myRemoveOperationScheduler.removeProcessingBan();
     }
   }
 
   private class CompilationWatcher implements CompilationListener {
-    public void beforeModelsCompiled(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
+    public void beforeModelsCompiled(List<SModelDescriptor> models, boolean success) {
       myRemoveOperationScheduler.removeAllProcessingBans();
     }
 
-    public void afterModelsCompiled(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
+    public void afterModelsCompiled(List<SModelDescriptor> models, boolean success) {
 
     }
   }

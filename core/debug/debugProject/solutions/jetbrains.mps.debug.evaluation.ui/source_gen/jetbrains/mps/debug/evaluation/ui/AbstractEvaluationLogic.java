@@ -7,14 +7,15 @@ import jetbrains.mps.debug.runtime.JavaUiState;
 import jetbrains.mps.debug.runtime.DebugSession;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import java.util.List;
+
+import java.util.*;
+
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import java.util.ArrayList;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.ModuleContext;
@@ -31,9 +32,7 @@ import com.sun.jdi.Location;
 import jetbrains.mps.debug.api.info.DebugInfoUtil;
 import jetbrains.mps.debug.evaluation.Evaluator;
 import jetbrains.mps.debug.evaluation.EvaluationException;
-import java.util.Set;
 import jetbrains.mps.reloading.IClassPathItem;
-import java.util.HashSet;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.reloading.ClassPathFactory;
@@ -170,7 +169,7 @@ public abstract class AbstractEvaluationLogic {
       DefaultMessageHandler messageHandler = new DefaultMessageHandler(ideaProject);
       ProgressWindow progressWindow = new ProgressWindow(false, ideaProject);
       GeneratorManager generatorManager = project.getComponent(GeneratorManager.class);
-      boolean successful = generatorManager.generateModels(ListSequence.fromListAndArray(new ArrayList<Pair<SModelDescriptor, IOperationContext>>(), new Pair<SModelDescriptor, IOperationContext>(myAuxModel, myContext)), handler, progressWindow, messageHandler, true, false);
+      boolean successful = generatorManager.generateModels(Collections.<SModelDescriptor>singletonList(myAuxModel), project, handler, progressWindow, messageHandler, true, false);
 
       Disposer.dispose(progressWindow);
 
