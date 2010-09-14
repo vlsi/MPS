@@ -45,6 +45,7 @@ import java.util.List;
  * Created once per model generation.
  */
 public class GenerationSession {
+  private final GenerationController myController;
   private final SModelDescriptor myOriginalInputModel;
   private GenerationPlan myGenerationPlan;
 
@@ -63,9 +64,10 @@ public class GenerationSession {
   private int myTransientModelsCount = 0;
   private GenerationOptions myGenerationOptions;
 
-  public GenerationSession(@NotNull SModelDescriptor inputModel, IOperationContext invocationContext,
+  public GenerationSession(GenerationController controller, @NotNull SModelDescriptor inputModel, IOperationContext invocationContext,
                            ProgressIndicator progressMonitor, GeneratorLoggerAdapter logger,
                            IPerformanceTracer tracer, GenerationOptions generationOptions) {
+    myController = controller;
     myOriginalInputModel = inputModel;
     myInvocationContext = invocationContext;
     myGenerationTracer = generationOptions.getGenerationTracer();
@@ -272,7 +274,7 @@ public class GenerationSession {
     myDependenciesBuilder.setOutputModel(currentOutputModel);
     final TemplateGenerator tg =
       myGenerationOptions.isGenerateInParallel()
-        ? new ParallelTemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentOutputModel, myGenerationOptions, myDependenciesBuilder, ttrace)
+        ? new ParallelTemplateGenerator(myController, mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentOutputModel, myGenerationOptions, myDependenciesBuilder, ttrace)
         : new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentOutputModel, myGenerationOptions, myDependenciesBuilder, ttrace);
     if (tg instanceof ParallelTemplateGenerator) {
       return GeneratorUtil.runReadInWrite(new GenerationComputable<Boolean>() {

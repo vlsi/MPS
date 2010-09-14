@@ -1,10 +1,5 @@
 package jetbrains.mps.generator;
 
-import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.generator.impl.GenerationTaskPool;
-import jetbrains.mps.generator.impl.IGenerationTaskPool;
-import jetbrains.mps.generator.impl.IGenerationTaskPool.SimpleGenerationTaskPool;
-
 /**
  * Evgeny Gryaznov, Apr 26, 2010
  */
@@ -26,13 +21,11 @@ public class GenerationOptions {
   private final int myNumberOfThreads;
   private final int myTracingMode;
 
-  private ProgressIndicator myProgressIndicator;
   private IGenerationTracer myGenerationTracer;
-  private IGenerationTaskPool myParallelTaskPool;
 
   public GenerationOptions(boolean strictMode, boolean saveTransientModels, boolean rebuildAll, boolean incremental, boolean showErrorsOnly, boolean generateInParallel,
-                                  int numberOfThreads, int tracingMode, ProgressIndicator progressIndicator,
-                                  IGenerationTracer generationTracer) {
+                           int numberOfThreads, int tracingMode,
+                           IGenerationTracer generationTracer) {
     mySaveTransientModels = saveTransientModels;
     myGenerateInParallel = generateInParallel;
     myStrictMode = strictMode;
@@ -40,7 +33,6 @@ public class GenerationOptions {
     myIncremental = incremental;
     myShowErrorsOnly = showErrorsOnly;
     myGenerationTracer = generationTracer;
-    myProgressIndicator = progressIndicator;
     myNumberOfThreads = numberOfThreads;
     myTracingMode = tracingMode;
   }
@@ -69,10 +61,6 @@ public class GenerationOptions {
     return myIncremental;
   }
 
-  public ProgressIndicator getProgressIndicator() {
-    return myProgressIndicator;
-  }
-
   public IGenerationTracer getGenerationTracer() {
     return myGenerationTracer;
   }
@@ -86,22 +74,5 @@ public class GenerationOptions {
       return TRACE_STEPS;
     }
     return myTracingMode;
-  }
-
-  public IGenerationTaskPool getTaskPool() {
-    if (myParallelTaskPool != null || !isGenerateInParallel()) {
-      return myParallelTaskPool;
-    }
-    myParallelTaskPool = USE_PARALLEL_POOL
-      ? new GenerationTaskPool(myProgressIndicator, myNumberOfThreads)
-      : new SimpleGenerationTaskPool();
-    return myParallelTaskPool;
-  }
-
-  public void cleanup() {
-    if (myParallelTaskPool != null) {
-      myParallelTaskPool.dispose();
-      myParallelTaskPool = null;
-    }
   }
 }

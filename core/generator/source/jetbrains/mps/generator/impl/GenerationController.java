@@ -22,6 +22,7 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.GeneratorManager.GeneratorNotifierHelper;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
+import jetbrains.mps.generator.impl.IGenerationTaskPool.SimpleGenerationTaskPool;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.ide.progress.TaskProgressHelper;
@@ -53,18 +54,19 @@ public class GenerationController {
   protected ProgressIndicator myProgress;
   protected GeneratorLoggerAdapter myLogger;
   private GenerationOptions myOptions;
+  private IGenerationTaskPool myParallelTaskPool;
 
   protected List<Pair<IModule, List<SModelDescriptor>>> myModuleSequence = new ArrayList<Pair<IModule, List<SModelDescriptor>>>();
 
   public GenerationController(List<SModelDescriptor> _inputModels, GenerationOptions options,
                               IGenerationHandler generationHandler, GeneratorNotifierHelper notifierHelper,
-                              GeneratorLoggerAdapter generatorLogger, IOperationContext operationContext) {
+                              GeneratorLoggerAdapter generatorLogger, IOperationContext operationContext, ProgressIndicator progress) {
 
     myNotifierHelper = notifierHelper;
     myInputModels = _inputModels;
     myOperationContext = operationContext;
     myGenerationHandler = generationHandler;
-    myProgress = options.getProgressIndicator();
+    myProgress = progress;
     myLogger = generatorLogger;
     myOptions = options;
   }
@@ -104,7 +106,10 @@ public class GenerationController {
           generationOK = generationOK && result;
         }
       } finally {
-        myOptions.cleanup();
+        if (myParallelTaskPool != null) {
+          myParallelTaskPool.dispose();
+          myParallelTaskPool = null;
+        }
       }
       if (generationOK) {
         if (myLogger.needsInfo()) {
@@ -180,7 +185,7 @@ public class GenerationController {
     boolean traceTypes = myOptions.getTracingMode() == GenerationOptions.TRACE_TYPES;
     TypeChecker.getInstance().setIsGeneration(true, traceTypes ? ttrace : null);
 
-    final GenerationSession generationSession = new GenerationSession(
+    final GenerationSession generationSession = new GenerationSession(this,
       inputModel, invocationContext, myProgress, myLogger, ttrace, myOptions);
 
     try {
@@ -244,6 +249,16 @@ public class GenerationController {
       myLogger.trace(report);
     }
     return currentGenerationOK;
+  }
+
+  public IGenerationTaskPool getTaskPool() {
+    if (myParallelTaskPool != null || !myOptions.isGenerateInParallel()) {
+      return myParallelTaskPool;
+    }
+    myParallelTaskPool = GenerationOptions.USE_PARALLEL_POOL
+      ? new GenerationTaskPool(myProgress, myOptions.getNumberOfThreads())
+      : new SimpleGenerationTaskPool();
+    return myParallelTaskPool;
   }
 
   private long estimateGenerationTime() {

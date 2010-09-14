@@ -88,13 +88,13 @@ public class GeneratorManager {
 
         GenerationOptions options = new GenerationOptions(
           settings.isStrictMode(), saveTransientModels, rebuildAll, settings.isGenerateDependencies(), !settings.isShowWarnings() && !settings.isShowInfo(), settings.isParallelGenerator(),
-          settings.getNumberOfParallelThreads(), settings.getPerformanceTracingLevel(), progress, tracer);
+          settings.getNumberOfParallelThreads(), settings.getPerformanceTracingLevel(), tracer);
 
         fireBeforeGeneration(inputModels, options, invocationContext);
 
         GeneratorLoggerAdapter logger = new GeneratorLoggerAdapter(messages, settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings());
 
-        GenerationController gc = new GenerationController(inputModels, options, generationHandler, new GeneratorNotifierHelper(), logger, invocationContext);
+        GenerationController gc = new GenerationController(inputModels, options, generationHandler, new GeneratorNotifierHelper(), logger, invocationContext, progress);
         result[0] = gc.generate();
         tracer.finishTracing();
         fireAfterGeneration(inputModels, options, invocationContext);
