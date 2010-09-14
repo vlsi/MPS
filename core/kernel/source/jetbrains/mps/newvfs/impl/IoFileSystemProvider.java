@@ -9,20 +9,8 @@ import org.jetbrains.annotations.NotNull;
  */
 public class IoFileSystemProvider implements FileSystemProvider {
   @Override
-  public INewFile getPlainFile(@NotNull String path) {
-    System.out.println("getPlainFile()"); // TODO 
-    return null;
-  }
-
-  @Override
-  public INewFile getJarFile(@NotNull String jarPath, @NotNull String entryPath) {
-    System.out.println("getJarFile()"); // TODO
-    return null;
-  }
-
-  @Override
-  public INewFile mkdirs(@NotNull String path) {
-    System.out.println("mkdirs()"); // TODO
+  public INewFile getFile(@NotNull String path) {
+    System.out.println("getFile()"); // TODO
     return null;
   }
 }

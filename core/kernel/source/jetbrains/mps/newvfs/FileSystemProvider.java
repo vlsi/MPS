@@ -8,11 +8,5 @@ import org.jetbrains.annotations.Nullable;
  */
 public interface FileSystemProvider {
   @Nullable
-  public INewFile getPlainFile(@NotNull String path);
-
-  @Nullable
-  public INewFile getJarFile(@NotNull String jarPath, @NotNull String entryPath);
-
-  @Nullable
-  public INewFile mkdirs(@NotNull String path);
+  public INewFile getFile(@NotNull String path);
 }

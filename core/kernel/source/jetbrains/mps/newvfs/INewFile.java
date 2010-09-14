@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.newvfs;
 
+import org.jetbrains.annotations.Nullable;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -25,13 +27,19 @@ import java.util.List;
  */
 public interface INewFile {
   String getName();
+  String getPath();
   INewFile getParent();
   List<? extends INewFile> getChildren();
+  @Nullable
+  INewFile findChild(String name);
 
   boolean isDirectory();
-  boolean isFile();
+  boolean isReadOnly();
+  long lastModified();
 
-  INewFile createChild(String childName);
+
+  boolean createNewFile();
+  boolean mkdirs();
 
   boolean exists();
   boolean delete();

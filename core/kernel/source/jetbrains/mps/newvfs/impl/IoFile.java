@@ -5,5 +5,5 @@ import jetbrains.mps.newvfs.INewFile;
 /**
  * @author Evgeny Gerashchenko
  */
-public abstract class IoFile implements INewFile {
+public abstract class IoFile implements INewFileEx {
 }

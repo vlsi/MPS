@@ -1,5 +1,6 @@
 package jetbrains.mps.newvfs.impl;
 
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.newvfs.FileSystemProvider;
 import jetbrains.mps.newvfs.INewFile;
 import jetbrains.mps.newvfs.NewFileSystem;
@@ -20,26 +21,19 @@ public class NewFileSystemImpl extends NewFileSystem {
   @Override
   @Nullable
   public INewFile getFileByPath(@NotNull String path) {
-    if (path.contains("!")) {
-      int index = path.indexOf("!");
-      String jarPath = path.substring(0, index);
-      String entryPath = path.substring(index + 1);
-
-      if (entryPath.startsWith("/")) {
-        entryPath = entryPath.substring(1);
-      }
-
-      INewFile jarFile = myFileSystemProvider.getJarFile(jarPath, entryPath);
-      if (jarFile != null) {
-        return jarFile;
-      }
-    }
-
-    return myFileSystemProvider.getPlainFile(path);
+    return myFileSystemProvider.getFile(path);
   }
 
   @Override
-  public INewFile mkdirs(@NotNull String path) {
-    return myFileSystemProvider.mkdirs(path);
+  public boolean isPackaged(INewFile file) {
+    return file instanceof INewFileEx && ((INewFileEx) file).isPackaged();  
+  }
+
+  @Override
+  public VirtualFile getVirtualFile(INewFile file) {
+    if (file instanceof IdeaFile) {
+      return ((IdeaFile) file).getVirtualFile();
+    }
+    return null;
   }
 }

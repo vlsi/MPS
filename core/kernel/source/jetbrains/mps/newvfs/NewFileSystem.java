@@ -1,5 +1,6 @@
 package jetbrains.mps.newvfs;
 
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.newvfs.impl.NewFileSystemImpl;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -15,8 +16,11 @@ public abstract class NewFileSystem {
   @Nullable
   public abstract INewFile getFileByPath(@NotNull String path);
 
+  public abstract boolean isPackaged(INewFile file);
+
+  // This method should not be used in MPS kernel, only in workbench
   @Nullable
-  public abstract INewFile mkdirs(@NotNull String path);
+  public abstract VirtualFile getVirtualFile(INewFile file);
 
   public static NewFileSystem getInstance() {
     return INSTANCE;
