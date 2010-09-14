@@ -3762,8 +3762,8 @@
       <property name="name:3" value="myAuxModel" />
       <property name="isFinal:3" value="false" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility:3" id="4592086915999584304" />
-      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="9094453971530424635">
-        <link role="classifier:3" targetNodeId="82.~EditableSModelDescriptor" resolveInfo="EditableSModelDescriptor" />
+      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2955880512389991858">
+        <link role="classifier:3" targetNodeId="9.~SModelDescriptor" resolveInfo="SModelDescriptor" />
       </node>
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="6185141366360320956">
@@ -4562,36 +4562,16 @@
                     <link role="variableDeclaration:3" targetNodeId="3400923024997891098" resolveInfo="generatorManager" />
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3400923024997899094">
-                    <link role="baseMethodDeclaration:3" targetNodeId="40.~GeneratorManager.generateModels(java.util.List,jetbrains.mps.generator.generationTypes.IGenerationHandler,com.intellij.openapi.progress.ProgressIndicator,jetbrains.mps.messages.IMessageHandler,boolean,boolean):boolean" resolveInfo="generateModels" />
-                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3400923024997899095">
-                      <node role="creator:3" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit:7" id="3400923024997899096">
-                        <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3400923024997899097">
-                          <link role="classifier:3" targetNodeId="29.~Pair" resolveInfo="Pair" />
-                          <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3400923024997899098">
-                            <link role="classifier:3" targetNodeId="9.~SModelDescriptor" resolveInfo="SModelDescriptor" />
-                          </node>
-                          <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3400923024997899099">
-                            <link role="classifier:3" targetNodeId="9.~IOperationContext" resolveInfo="IOperationContext" />
-                          </node>
-                        </node>
-                        <node role="initValue:7" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3400923024997899100">
-                          <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="3400923024997899101">
-                            <link role="baseMethodDeclaration:3" targetNodeId="29.~Pair.&lt;init&gt;(java.lang.Object,java.lang.Object)" resolveInfo="Pair" />
-                            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="3400923024997899102">
-                              <link role="variableDeclaration:3" targetNodeId="6185141366360320952" resolveInfo="myAuxModel" />
-                            </node>
-                            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="3400923024997899103">
-                              <link role="variableDeclaration:3" targetNodeId="6185141366360320968" resolveInfo="myContext" />
-                            </node>
-                            <node role="typeParameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3400923024997900207">
-                              <link role="classifier:3" targetNodeId="9.~SModelDescriptor" resolveInfo="SModelDescriptor" />
-                            </node>
-                            <node role="typeParameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3400923024997900210">
-                              <link role="classifier:3" targetNodeId="9.~IOperationContext" resolveInfo="IOperationContext" />
-                            </node>
-                          </node>
-                        </node>
+                    <link role="baseMethodDeclaration:3" targetNodeId="40.~GeneratorManager.generateModels(java.util.List,com.intellij.openapi.project.Project,jetbrains.mps.generator.generationTypes.IGenerationHandler,com.intellij.openapi.progress.ProgressIndicator,jetbrains.mps.messages.IMessageHandler,boolean,boolean):boolean" resolveInfo="generateModels" />
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2955880512389991854">
+                      <link role="baseMethodDeclaration:3" targetNodeId="11.~Collections.singletonList(java.lang.Object):java.util.List" resolveInfo="singletonList" />
+                      <link role="classConcept:3" targetNodeId="11.~Collections" resolveInfo="Collections" />
+                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="2955880512389991855">
+                        <link role="variableDeclaration:3" targetNodeId="6185141366360320952" resolveInfo="myAuxModel" />
                       </node>
+                    </node>
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2955880512389991857">
+                      <link role="variableDeclaration:3" targetNodeId="3400923024997888331" resolveInfo="project" />
                     </node>
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3400923024997899104">
                       <link role="variableDeclaration:3" targetNodeId="6185141366360305796" resolveInfo="handler" />

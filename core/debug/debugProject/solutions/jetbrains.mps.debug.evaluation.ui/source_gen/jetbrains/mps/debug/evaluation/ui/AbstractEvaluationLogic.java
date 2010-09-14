@@ -6,16 +6,15 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.debug.runtime.JavaUiState;
 import jetbrains.mps.debug.runtime.DebugSession;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-
-import java.util.*;
-
+import jetbrains.mps.smodel.SModelDescriptor;
+import java.util.List;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import java.util.ArrayList;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.ModuleContext;
@@ -30,9 +29,12 @@ import jetbrains.mps.debug.runtime.java.programState.proxies.JavaStackFrame;
 import com.sun.jdi.StackFrame;
 import com.sun.jdi.Location;
 import jetbrains.mps.debug.api.info.DebugInfoUtil;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.debug.evaluation.Evaluator;
 import jetbrains.mps.debug.evaluation.EvaluationException;
+import java.util.Set;
 import jetbrains.mps.reloading.IClassPathItem;
+import java.util.HashSet;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.reloading.ClassPathFactory;
@@ -40,8 +42,7 @@ import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import com.intellij.openapi.progress.util.ProgressWindow;
 import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.util.Pair;
-import jetbrains.mps.smodel.SModelDescriptor;
+import java.util.Collections;
 import com.intellij.openapi.util.Disposer;
 import org.apache.commons.lang.StringUtils;
 import java.lang.reflect.InvocationTargetException;
@@ -61,7 +62,7 @@ public abstract class AbstractEvaluationLogic {
   protected JavaUiState myUiState;
   protected final DebugSession myDebugSession;
   protected final IOperationContext myContext;
-  protected EditableSModelDescriptor myAuxModel;
+  protected SModelDescriptor myAuxModel;
   protected final EvaluationAuxModule myAuxModule;
   private final List<Language> myLanguages = ListSequence.fromListAndArray(new LinkedList<Language>(), MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.debug.evaluation"), MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.debug.privateMembers"));
   protected SNode myEvaluator;
@@ -169,7 +170,7 @@ public abstract class AbstractEvaluationLogic {
       DefaultMessageHandler messageHandler = new DefaultMessageHandler(ideaProject);
       ProgressWindow progressWindow = new ProgressWindow(false, ideaProject);
       GeneratorManager generatorManager = project.getComponent(GeneratorManager.class);
-      boolean successful = generatorManager.generateModels(Collections.<SModelDescriptor>singletonList(myAuxModel), project, handler, progressWindow, messageHandler, true, false);
+      boolean successful = generatorManager.generateModels(Collections.singletonList(myAuxModel), project, handler, progressWindow, messageHandler, true, false);
 
       Disposer.dispose(progressWindow);
 
