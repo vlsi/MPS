@@ -1,6 +1,5 @@
 package jetbrains.mps.testbench;
 
-import junit.framework.Assert;
 import org.apache.tools.ant.util.JavaEnvUtils;
 
 import java.io.*;
@@ -20,7 +19,6 @@ public class MpsMakeHelper {
   public void make() {
     String antHome = System.getProperty("ant.home");
     if (antHome == null || !new File (antHome).exists()) {
-      Assert.fail("ant.home property was not specified");
       return;
     }
     
