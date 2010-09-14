@@ -143,12 +143,16 @@ def layoutFull(String home, String targetDirectory) {
     }
 
     zip("platform.src.zip") {
-      platformApiModules().each {
-        module(it) {
-          patternset(refid: "sources")
+      project.modules.values().each {Module m ->
+        if (m["used"] != null && hasSourceRoots(m)) {
+          dir(m.name) {
+            m.sourceRoots.each {
+              fileset(dir: it)
+            }
+          }
         }
       }
-    }
+    }    
   }
 
   printUnusedModules()
