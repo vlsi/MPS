@@ -45,6 +45,7 @@ import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.containers.HashSet;
 import gnu.trove.THashSet;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.annotation.Patch;
 import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
 import org.jetbrains.annotations.NotNull;
@@ -79,6 +80,36 @@ public class UndoManagerImpl extends UndoManager implements ProjectComponent, Ap
       }
     }
     return result;
+  }
+
+  @Patch
+  private void undoOrRedo(final FileEditor editor) {
+    final RuntimeException[] exception = new RuntimeException[1];
+    Runnable executeUndoOrRedoAction = new Runnable() {
+      public void run() {
+        try {
+          if (isUndoInProgress()) {
+            myMerger.undoOrRedo(editor, true);
+          }
+          else {
+            myMerger.undoOrRedo(editor, false);
+          }
+        }
+        catch (RuntimeException ex) {
+          exception[0] = ex;
+        }
+        finally {
+          myCurrentOperationState = NONE;
+        }
+      }
+    };
+
+    String name = getUndoOrRedoActionNameAndDescription(editor, isUndoInProgress()).second;
+
+    //patch
+    ModelAccess.instance().executeCommand(executeUndoOrRedoAction);
+
+    if (exception[0] != null) throw exception[0];
   }
 
 
@@ -389,33 +420,6 @@ public class UndoManagerImpl extends UndoManager implements ProjectComponent, Ap
 
     myCurrentOperationState = REDO;
     undoOrRedo(editor);
-  }
-
-  private void undoOrRedo(final FileEditor editor) {
-    final RuntimeException[] exception = new RuntimeException[1];
-    Runnable executeUndoOrRedoAction = new Runnable() {
-      public void run() {
-        try {
-          if (isUndoInProgress()) {
-            myMerger.undoOrRedo(editor, true);
-          }
-          else {
-            myMerger.undoOrRedo(editor, false);
-          }
-        }
-        catch (RuntimeException ex) {
-          exception[0] = ex;
-        }
-        finally {
-          myCurrentOperationState = NONE;
-        }
-      }
-    };
-
-    String name = getUndoOrRedoActionNameAndDescription(editor, isUndoInProgress()).second;
-    CommandProcessor.getInstance()
-      .executeCommand(myProject, executeUndoOrRedoAction, name, null, myMerger.getUndoConfirmationPolicy());
-    if (exception[0] != null) throw exception[0];
   }
 
   public boolean isUndoAvailable(@Nullable FileEditor editor) {
