@@ -45,12 +45,9 @@ public class BrokenReferencesTest {
 
   private static BrokenReferencesTestHelper HELPER;
   private static Token TOKEN;
-  private static PrintStream systemOut = System.out;
 
   @Parameters
   public static List<Object[]> filePaths() {
-    long timeStamp = System.currentTimeMillis();
-
     List<File> path = Collections.singletonList(new File(System.getProperty("user.dir")));
     List<FilePattern> filePtns = new ArrayList<FilePattern>();
     for (Object[] ptns : patterns) {
@@ -72,7 +69,6 @@ public class BrokenReferencesTest {
   public static void init() {
     HELPER = new BrokenReferencesTestHelper();
     TOKEN = HELPER.init(new String[][]{{"samples_home", System.getProperty("user.dir") + "/samples"}});
-    long timeStamp = System.currentTimeMillis();
     List<File> path = Collections.singletonList(new File(System.getProperty("user.dir")));
     List<FilePattern> filePtns = new ArrayList<FilePattern>();
     for (Object[] ptns : patterns) {
