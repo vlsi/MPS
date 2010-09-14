@@ -18,7 +18,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.generator.GenParameters;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
-import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
+import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
 import javax.swing.JOptionPane;
 import jetbrains.mps.ide.generator.GeneratorFacade;
 import jetbrains.mps.ide.generator.OutputViewGenerationHandler;

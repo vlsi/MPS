@@ -1445,7 +1445,7 @@
     <classNode dependClassName="javax.swing.JOptionPane" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.generator.GenParameters" />
-    <classNode dependClassName="jetbrains.mps.generator.IllegalGeneratorConfigurationException" />
+    <classNode dependClassName="jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException" />
     <classNode dependClassName="jetbrains.mps.ide.generator.GeneratorFacade" />
     <classNode dependClassName="jetbrains.mps.ide.generator.OutputViewGenerationHandler" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />

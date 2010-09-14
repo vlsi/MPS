@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.generator;
+package jetbrains.mps.project.structure.project.testconfigurations;
 
-public class IllegalGeneratorConfigurationException extends RuntimeException {
+public class IllegalGeneratorConfigurationException extends Exception {
   public IllegalGeneratorConfigurationException(String message) {
     super(message);
   }

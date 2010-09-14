@@ -16,7 +16,6 @@
 package jetbrains.mps.generator.fileGenerator;
 
 import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -32,7 +31,6 @@ import java.util.Map;
 import java.util.WeakHashMap;
 
 public abstract class BaseModelCache<T> implements ApplicationComponent {
-  private static final Logger LOG = Logger.getLogger(BaseModelCache.class);
 
   private final FileGenerationManager myFileGeneratorManager;
   @Nullable

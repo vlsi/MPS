@@ -37,6 +37,7 @@ import jetbrains.mps.library.Library;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
+import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
 import jetbrains.mps.project.tester.DiffReporter;
 import jetbrains.mps.project.tester.TesterGenerationHandler;
 import jetbrains.mps.reloading.EachClassPathItemVisitor;

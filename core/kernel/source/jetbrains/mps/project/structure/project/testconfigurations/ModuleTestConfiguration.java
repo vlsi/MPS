@@ -66,7 +66,7 @@ public class ModuleTestConfiguration extends BaseTestConfiguration {
 
 
         if (SModelStereotype.isUserModel(sm) && (sm instanceof EditableSModelDescriptor)) {
-          models.add(((EditableSModelDescriptor) sm));
+          models.add(sm);
         }
       }
 
