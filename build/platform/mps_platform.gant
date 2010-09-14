@@ -37,45 +37,27 @@ def layoutFull(String home, String targetDirectory) {
   layout(targetDirectory) {
     zip("platform.zip") {
       dir("lib") {
-        jar("util.jar") {
-          module("util")
-        }
         jar("platform-api.jar") {
           platformApiModules().each { module it}
-        }
-        jar("annotations.jar") {
-          module("annotations")
-        }
-        jar("extensions.jar") {
-          module("extensions")
-        }
-        jar("platform.jar") {
           platformImplementationModules().each { module it}
-        }
-        jar("bootstrap.jar") {
+
+          module("util")
+          module("boot")
           module("bootstrap")
+          module("annotations")
+          module("extensions")
+          module("forms_rt")
+          module("forms-compiler")
+          module("execution-openapi")
         }
+
         jar("resources.jar") {
           module("resources")
           module("platform-resources")
           module("community-resources")
-        }
-        jar("resources_en.jar") {
           module("resources-en")
           module("platform-resources-en")
-        }
-        jar("forms_rt.jar") {
-          module("forms_rt")
-          module("forms-compiler")
-        }
-        jar("icons.jar") {
           module("icons")
-        }
-        jar("boot.jar") {
-          module("boot")
-        }
-        jar("execution-api.jar") {
-          module("execution-openapi")
         }
 
         fileset(dir: "$home/lib") {
