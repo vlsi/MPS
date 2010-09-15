@@ -124,7 +124,7 @@ public class VcsRootsManager implements ProjectComponent {
   private void addDirectoryMappings() {
     MPSProject mpsProject = myProject.getComponent(MPSProject.class);
     List<IModule> allModules = mpsProject.getModules();
-    Map<AbstractVcs, Set<VirtualFile>> vcss = new HashMap<AbstractVcs, Set<VirtualFile>>();
+    final Map<AbstractVcs, Set<VirtualFile>> vcss = new HashMap<AbstractVcs, Set<VirtualFile>>();
 
     for (IModule module : allModules) {
       if (module.isPackaged()) continue;
@@ -139,11 +139,10 @@ public class VcsRootsManager implements ProjectComponent {
       }
     }
 
-    final List<VcsDirectoryMapping> vcsMappings = createMappings(vcss);
-    mergeWithCurrentOnes(vcsMappings);
-
     StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
       public void run() {
+        final List<VcsDirectoryMapping> vcsMappings = createMappings(vcss);
+        mergeWithCurrentOnes(vcsMappings);
         myVcsManager.setDirectoryMappings(vcsMappings);
       }
     });
