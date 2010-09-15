@@ -23,7 +23,7 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
-import jetbrains.mps.generator.fileGenerator.JavaGenerationManager;
+import jetbrains.mps.generator.fileGenerator.JavaFileGenerator;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
@@ -66,7 +66,7 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
     String targetDir = module.getOutputFor(inputModel);
 
     long startJobTime = System.currentTimeMillis();
-    boolean result = new JavaGenerationManager(
+    boolean result = new JavaFileGenerator(
       ModelGenerationStatusManager.getInstance().getCacheGenerator(),
       BLDependenciesCache.getInstance().getGenerator(),
       BLDebugInfoCache.getInstance().getGenerator(),

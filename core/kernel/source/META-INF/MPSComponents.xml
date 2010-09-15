@@ -318,7 +318,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.generator.fileGenerator.AllCaches</implementation-class>
+      <implementation-class>jetbrains.mps.generator.cache.AllCaches</implementation-class>
     </component>
 
     <component>

@@ -16,9 +16,9 @@
 package jetbrains.mps.baseLanguage.textGen;
 
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.generator.fileGenerator.AllCaches;
-import jetbrains.mps.generator.fileGenerator.CacheGenerationContext;
-import jetbrains.mps.generator.fileGenerator.XmlBasedModelCache;
+import jetbrains.mps.generator.cache.CacheGenerationContext;
+import jetbrains.mps.generator.cache.XmlBasedModelCache;
+import jetbrains.mps.generator.cache.AllCaches;
 import jetbrains.mps.util.JDOMUtil;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;

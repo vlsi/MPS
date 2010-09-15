@@ -10,7 +10,7 @@
     <classNode dependClassName="java.lang.ClassLoader" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.debug.api.info.DebugInfo" />
-    <classNode dependClassName="jetbrains.mps.generator.fileGenerator.CacheGenerationContext" />
+    <classNode dependClassName="jetbrains.mps.generator.cache.CacheGenerationContext" />
     <classNode dependClassName="jetbrains.mps.generator.fileGenerator.FileGenerationUtil" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
@@ -25,7 +25,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode extendsClassName="jetbrains.mps.generator.fileGenerator.BaseModelCache" />
+    <classNode extendsClassName="jetbrains.mps.generator.cache.BaseModelCache" />
   </dependency>
   <dependency className="jetbrains.mps.debug.api.info.DebugInfo" file="DebugInfo.java">
     <classNode dependClassName="java.lang.Comparable" />

@@ -16,7 +16,7 @@
 package jetbrains.mps.make;
 
 import com.intellij.openapi.fileTypes.FileTypeManager;
-import jetbrains.mps.generator.fileGenerator.AllCaches;
+import jetbrains.mps.generator.cache.AllCaches;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;

@@ -21,6 +21,8 @@ import jetbrains.mps.baseLanguage.textGen.RootDependencies;
 import jetbrains.mps.debug.api.info.*;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.TransientSModel;
+import jetbrains.mps.generator.cache.CacheGenerationContext;
+import jetbrains.mps.generator.cache.CacheGenerator;
 import jetbrains.mps.generator.fileGenerator.vcs.FileProcessor;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil.TextGenerationResult;
@@ -40,12 +42,12 @@ import java.io.File;
 import java.io.IOException;
 import java.util.*;
 
-public class JavaGenerationManager {
-  private static final Logger LOG = Logger.getLogger(JavaGenerationManager.class);
+public class JavaFileGenerator {
+  private static final Logger LOG = Logger.getLogger(JavaFileGenerator.class);
 
   private CacheGenerator[] myCacheGenerators;
 
-  public JavaGenerationManager(CacheGenerator ...generators) {
+  public JavaFileGenerator(CacheGenerator ...generators) {
     myCacheGenerators = generators;
   }
 

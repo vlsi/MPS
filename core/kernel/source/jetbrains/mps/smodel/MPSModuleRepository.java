@@ -18,7 +18,7 @@ package jetbrains.mps.smodel;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.fileTypes.FileTypeManager;
-import jetbrains.mps.generator.fileGenerator.BaseModelCache;
+import jetbrains.mps.generator.cache.BaseModelCache;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.model.RootReference;
