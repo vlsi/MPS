@@ -110,7 +110,7 @@ public class VcsHelper {
 
   private static boolean openDiffDialog(IFile modelFile, final SModel inMemory) {
     try {
-      final SModel onDisk = ModelUtils.readModel(FileUtil.loadFileBytes(FileSystem.toFile(modelFile)), modelFile.getAbsolutePath());
+      final SModel onDisk = ModelUtils.readModel(FileUtil.loadFileBytes(modelFile.toFile()), modelFile.getAbsolutePath());
       return showDiffDialog(onDisk, inMemory, modelFile, ProjectManager.getInstance().getOpenProjects()[0]);
     } catch (IOException e) {
       LOG.error(e);

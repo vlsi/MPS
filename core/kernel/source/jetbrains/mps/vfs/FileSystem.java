@@ -44,22 +44,6 @@ public class FileSystem {
     return new FileSystemFile(file);
   }
 
-  public static IFile getJarFileRoot(File file) {
-    return new JarFileEntryFile(file);
-  }
-
-  public static File toFile(IFile file) {
-    if (!(file instanceof FileSystemFile)) {
-      throw new RuntimeException();
-    }
-
-    return ((FileSystemFile) file).getFile();
-  }
-
-  public static IFile getDefaultDirectory() {
-    return new FileSystemFile(new File(PathManager.getHomePath()));
-  }
-
   public static boolean isPackaged(IFile file) {
     return file instanceof JarFileEntryFile;
   }
@@ -70,7 +54,7 @@ public class FileSystem {
         return ((JarFileEntryFile) file).getJarFile();
       }
 
-      return FileSystem.toFile(file.getParent());
+      return file.getParent().toFile();
     }
 
     return null;
