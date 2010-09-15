@@ -59,7 +59,7 @@
   <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
   <languageAspect modelUID="r:550fbd90-c9f2-4576-a8a6-223eca16d68b(jetbrains.mps.baseLanguage.runConfigurations.structure)" version="0" />
   <languageAspect modelUID="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.analyzers.structure)" version="0" />
-  <maxImportIndex value="192" />
+  <maxImportIndex value="193" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" />
   <import index="4" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
@@ -115,6 +115,7 @@
   <import index="190" modelUID="r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)" version="-1" />
   <import index="191" modelUID="f:java_stub#jetbrains.mps.plugins(jetbrains.mps.plugins@java_stub)" version="-1" />
   <import index="192" modelUID="r:8f84baed-e3cf-4388-876c-40bbd4124b9e(jetbrains.mps.baseLanguage.index)" version="-1" />
+  <import index="193" modelUID="f:java_stub#jetbrains.mps.generator.cache(jetbrains.mps.generator.cache@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration:23" id="1205247737002">
     <property name="name:23" value="BaseLanguageModelActionsInternal" />
     <property name="package:23" value="Actions.Groups" />
@@ -5389,7 +5390,7 @@
                 <link role="baseMethodDeclaration:3" targetNodeId="132.4494976841093543993" resolveInfo="getInstance" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7358399876271371820">
-                <link role="baseMethodDeclaration:3" targetNodeId="99.~BaseModelCache.get(jetbrains.mps.smodel.SModelDescriptor):java.lang.Object" resolveInfo="get" />
+                <link role="baseMethodDeclaration:3" targetNodeId="193.~BaseModelCache.get(jetbrains.mps.smodel.SModelDescriptor):java.lang.Object" resolveInfo="get" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7358399876271371821">
                   <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="7358399876271371822" />
                   <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation:23" id="7358399876271371823">
