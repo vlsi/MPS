@@ -23,7 +23,6 @@
   <property name="jetbrains.mps.baseLanguage.unitTest.runtime.classes" value="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
   <property name="jetbrains.mps.bash.classes" value="platform/bash/languages/bash/classes_gen" />
   <property name="jetbrains.mps.build.custommps.classes" value="platform/buildlanguage/languages/custommps/classes_gen" />
-  <property name="jetbrains.mps.build.custommpsInternal.classes" value="platform/buildlanguage/languages/custommpsInternal/classes_gen" />
   <property name="jetbrains.mps.build.dependency.classes" value="platform/buildlanguage/languages/dependency/classes_gen" />
   <property name="jetbrains.mps.build.distrib.classes" value="platform/buildlanguage/languages/distrib/classes_gen" />
   <property name="jetbrains.mps.build.generictasks.classes" value="platform/buildlanguage/languages/generictasks/classes_gen" />
@@ -154,7 +153,6 @@
   </path>
   <path id="cycle.jetbrains.mps.build.custommps_tjc.src">
     <path path="platform/buildlanguage/languages/custommps/source_gen" />
-    <path path="platform/buildlanguage/languages/custommpsInternal/source_gen" />
   </path>
   <path id="cycle.jetbrains.mps.build.dependency_tjc.src">
     <path path="platform/buildlanguage/languages/dependency/source_gen" />
@@ -2032,8 +2030,6 @@
   </path>
   <path id="cycle.jetbrains.mps.build.custommps_tjc.classpaths">
     <path path="platform/buildlanguage/languages/custommps/classes_gen" />
-    <path path="platform/buildlanguage/languages/custommpsInternal/classes_gen" />
-    <path path="platform/buildlanguage/languages/custommpsInternal/classes_gen" />
     <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
@@ -2118,13 +2114,13 @@
     <path path="platform/buildlanguage/languages/buildlanguage/classes" />
     <path path="platform/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="platform/buildlanguage/languages/custommps/classes_gen" />
-    <path path="platform/buildlanguage/languages/custommpsInternal/classes_gen" />
     <path path="platform/buildlanguage/languages/dependency/classes_gen" />
     <path path="platform/buildlanguage/languages/distrib/classes_gen" />
     <path path="platform/buildlanguage/languages/generictasks/classes_gen" />
     <path path="platform/buildlanguage/languages/packaging/classes" />
     <path path="platform/buildlanguage/languages/packaging/classes_gen" />
     <path path="platform/buildlanguage/languages/property/classes_gen" />
+    <path path="platform/buildlanguage/solutions/jetbrains.mps.buildlangauge.mpsautobuild/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -4859,21 +4855,14 @@
   <target name="compile.cycle.jetbrains.mps.build.custommps_tjc" depends="compile.cycle.jetbrains.mps.build.distrib_tjc">
     <property name="classes.dump" value="${jetbrains.mps.build.custommps.classes}.tmp" />
     <mkdir dir="platform/buildlanguage/languages/custommps/source_gen" />
-    <mkdir dir="platform/buildlanguage/languages/custommpsInternal/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.build.custommps.classes}" />
-    <mkdir dir="${jetbrains.mps.build.custommpsInternal.classes}" />
     <javac classpathref="cycle.jetbrains.mps.build.custommps_tjc.classpaths" destdir="${classes.dump}">
       <src refid="cycle.jetbrains.mps.build.custommps_tjc.src" />
     </javac>
     <javac classpathref="cycle.jetbrains.mps.build.custommps_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.custommps.classes}">
       <src>
         <path path="platform/buildlanguage/languages/custommps/source_gen" />
-      </src>
-    </javac>
-    <javac classpathref="cycle.jetbrains.mps.build.custommps_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.custommpsInternal.classes}">
-      <src>
-        <path path="platform/buildlanguage/languages/custommpsInternal/source_gen" />
       </src>
     </javac>
     <delete dir="${classes.dump}" />
@@ -5364,7 +5353,6 @@
     <delete dir="${jetbrains.mps.baseLanguage.unitTest.lib.classes}" />
     <delete dir="${jetbrains.mps.bash.classes}" />
     <delete dir="${jetbrains.mps.build.custommps.classes}" />
-    <delete dir="${jetbrains.mps.build.custommpsInternal.classes}" />
     <delete dir="${jetbrains.mps.build.dependency.classes}" />
     <delete dir="${jetbrains.mps.build.packaging.classes}" />
     <delete dir="${jetbrains.mps.build.distrib.classes}" />

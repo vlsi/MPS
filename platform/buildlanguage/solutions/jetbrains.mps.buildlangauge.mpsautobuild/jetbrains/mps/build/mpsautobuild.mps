@@ -8,7 +8,6 @@
   <language namespace="fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)" />
-  <language namespace="8d09fa8b-0d65-4c2f-aae6-d4847a49d862(jetbrains.mps.build.custommpsInternal)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904d4(jetbrains.mps.build.packaging.constraints)" version="20" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="7" />
@@ -40,9 +39,6 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
   <maxImportIndex value="9" />
-  <import index="4" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="7" />
-  <import index="8" modelUID="r:78df483d-4047-42ac-9c9b-cfaad8712277(jetbrains.mps.build.custommps.components)" version="-1" />
-  <import index="9" modelUID="r:2d21a960-b27b-446c-b511-65afab987b27(jetbrains.mps.build.custommps.modules)" version="-1" />
   <visible index="2" modelUID="r:19a13561-830e-4400-a084-e2990744f9e1(jetbrains.mps.build.packaging.defaultVariables)" />
   <node type="jetbrains.mps.build.packaging.structure.MPSLayout:7" id="2235195415637073459">
     <property name="name:7" value="MPS" />
@@ -2435,9 +2431,6 @@
     </node>
     <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Module:7" id="8431776905956472974">
       <property name="id:7" value="a79f53b6-9aaa-48eb-9fbb-aaec80a6da9a" />
-    </node>
-    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Module:7" id="8431776905956472975">
-      <property name="id:7" value="8d09fa8b-0d65-4c2f-aae6-d4847a49d862" />
     </node>
     <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Module:7" id="8431776905956472976">
       <property name="id:7" value="02824ec0-c6a4-4517-a484-12d85172bbaa" />
