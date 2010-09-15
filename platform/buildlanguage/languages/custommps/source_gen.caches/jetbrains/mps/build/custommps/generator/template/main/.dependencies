@@ -28,7 +28,6 @@
     <classNode dependClassName="jetbrains.mps.samples.SamplesInfo" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.util.PathManager" />
   </dependency>
 </dependenciesRoot>
 

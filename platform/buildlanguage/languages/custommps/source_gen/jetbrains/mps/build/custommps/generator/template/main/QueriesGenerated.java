@@ -20,7 +20,6 @@ import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.packaging.behavior.IVariableHolder_Behavior;
 import jetbrains.mps.generator.template.IfMacroContext;
-import jetbrains.mps.util.PathManager;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -62,11 +61,15 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1236880986480(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.packaging.structure.MPSLayout");
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.packaging.structure.MPSLayout") && MPSBuild_Behavior.isInMPSBuild_1239995424995();
+  }
+
+  public static boolean baseMappingRule_Condition_4652190774247141284(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.packaging.structure.MPSLayout") && !(MPSBuild_Behavior.isInMPSBuild_1239995424995());
   }
 
   public static boolean baseMappingRule_Condition_1238505255171(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.custommps.structure.MPSBuild", false, new String[]{})).isNotEmpty();
+    return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.custommps.structure.MPSBuild", false, new String[]{})).isNotEmpty() && !(MPSBuild_Behavior.isInMPSBuild_1239995424995());
   }
 
   public static boolean baseMappingRule_Condition_1238511930684(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -137,14 +140,6 @@ public class QueriesGenerated {
     return SamplesInfo.SAMPLES_IN_USER_HOME_DIR;
   }
 
-  public static Object propertyMacro_GetPropertyValue_1239130486816(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return MPSBuild_Behavior.getMPSBuildToolsZipName_1234294616845();
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1239129898181(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return MPSBuild_Behavior.getMPSBuildToolsZipName_1234294616845();
-  }
-
   public static Object propertyMacro_GetPropertyValue_2521628527372165853(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SamplesInfo.SAMPLES_IN_MPS_HOME_ZIP;
   }
@@ -197,6 +192,10 @@ public class QueriesGenerated {
     return _context.createUniqueName("add.libraries", null);
   }
 
+  public static Object propertyMacro_GetPropertyValue_4652190774247141216(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return MPSBuild_Behavior.getMPSBuildToolsZipName_1234294616845();
+  }
+
   public static Object referenceMacro_GetReferent_1233931081841(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode output = _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "UndeclaredVariableReferenceToVariable");
     if (output == null) {
@@ -225,11 +224,7 @@ public class QueriesGenerated {
     return output;
   }
 
-  public static Object referenceMacro_GetReferent_1239130486844(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "CustomMPSBuildToUnpackZipAntcall");
-  }
-
-  public static Object referenceMacro_GetReferent_1239129956195(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_4652190774247141259(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "CustomMPSBuildToUnpackZipAntcall");
   }
 
@@ -239,14 +234,6 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1238071255691(final IOperationContext operationContext, final IfMacroContext _context) {
     return !(MPSBuild_Behavior.isInMPSBuild_1239995424995());
-  }
-
-  public static boolean ifMacro_Condition_1239130486822(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(new File(PathManager.getHomePath() + File.separator + "lib" + File.separator + "mps.jar").exists());
-  }
-
-  public static boolean ifMacro_Condition_1239129903106(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(new File(PathManager.getHomePath() + File.separator + "lib" + File.separator + "mps.jar").exists());
   }
 
   public static boolean ifMacro_Condition_2521628527372173391(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -340,6 +327,10 @@ public class QueriesGenerated {
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1236880980817(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+    return _context.getCopiedOutputNodeForInputNode(SNodeOperations.getParent(_context.getNode()));
+  }
+
+  public static SNode weaving_MappingRule_ContextNodeQuery_4652190774247141275(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
     return _context.getCopiedOutputNodeForInputNode(SNodeOperations.getParent(_context.getNode()));
   }
 
