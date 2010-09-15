@@ -2,6 +2,7 @@ package jetbrains.mps.stubs;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.Processor;
 import jetbrains.mps.lang.stubs.structure.LibraryStubDescriptor;
@@ -399,12 +400,12 @@ public class StubReloadManager implements ApplicationComponent {
       VirtualFile file = VFileSystem.getFile(myStubPath.getPath());
       if (file == null) return 0L;
       final long[] timeStamp = {file.getTimeStamp()};
-      VFileSystem.processFilesRecursively(file, new Processor<VirtualFile>() {
-        public boolean process(VirtualFile virtualFile) {
-          timeStamp[0] = Math.max(timeStamp[0], virtualFile.getTimeStamp());
-          return true;
-        }
-      });
+      VfsUtil.processFilesRecursively(file, new Processor<VirtualFile>() {
+          public boolean process(VirtualFile virtualFile) {
+            timeStamp[0] = Math.max(timeStamp[0], virtualFile.getTimeStamp());
+            return true;
+          }
+        });
 
       return timeStamp[0];
     }

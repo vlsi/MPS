@@ -28,6 +28,7 @@ import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.impl.ProjectLevelVcsManagerImpl;
 import com.intellij.openapi.vcs.impl.ProjectLevelVcsManagerImpl.IBackgroundVcsOperationsListener;
+import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.vfs.VirtualFileManagerListener;
@@ -243,12 +244,12 @@ public class ModelChangesWatcher implements ApplicationComponent {
           if (file == null) continue;
           if (file.isDirectory() && file.exists() && (file.getChildren() != null) && file.isInLocalFileSystem()) {
             if (isUnderSignificantRoots(VFileSystem.toFile(file))) {
-              VFileSystem.processFilesRecursively(file, new Processor<VirtualFile>() {
-                public boolean process(VirtualFile file) {
-                  processBeforeEvent(new VFileEventDecorator(event, file.getPath()), file.getPath(), reloadSession);
-                  return true;
-                }
-              });
+              VfsUtil.processFilesRecursively(file, new Processor<VirtualFile>() {
+                          public boolean process(VirtualFile file) {
+                            processBeforeEvent(new VFileEventDecorator(event, file.getPath()), file.getPath(), reloadSession);
+                            return true;
+                          }
+                        });
             }
           } else if (!file.isDirectory()) {
             processBeforeEvent(event, filePath, reloadSession);
