@@ -354,8 +354,6 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     IFile metadataFile = getMetadataFile(dsm.getModelFile());
     if (!metadataFile.exists()) {
       metadataFile.createNewFile();
-      VirtualFile file = VFileSystem.getFile(metadataFile);
-      VcsMigrationUtil.getHandler().addFilesToVcs(Collections.singletonList(file), false, false);
     }
 
     DefaultMetadataPersistence.save(metadataFile, metadata);

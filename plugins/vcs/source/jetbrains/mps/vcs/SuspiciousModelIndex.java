@@ -35,6 +35,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vcs.queue.TaskQueue;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.watching.ModelChangesWatcher;
@@ -193,7 +194,7 @@ public class SuspiciousModelIndex implements ApplicationComponent {
     for (Conflictable conflictable : conflictableList) {
       IFile ifile = conflictable.getFile();
       if (VCSUtil.isInConflict(ifile, true)) {
-        VirtualFile vfile = VFileSystem.getFile(ifile);
+        VirtualFile vfile = FileSystem.getInstance().getVirtualFile(ifile);
         Conflictable prev = fileToConflictable.put(vfile, conflictable);
         if (prev == null) { // since we process the file first time, we need to find a project for it
           Project project = VCSUtil.getProjectForFile(vfile);

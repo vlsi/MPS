@@ -184,7 +184,6 @@ public class ModelChangesWatcher implements ApplicationComponent {
    * @return List of all opened project basedirs, all project libraries, all vcs roots, all global libraries.
    */
   public Set<VirtualFile> getSignificantRoots() {
-
     Set<VirtualFile> roots = new HashSet<VirtualFile>();
     for (Project p : myProjectManager.getOpenProjects()) {
       roots.add(p.getBaseDir());

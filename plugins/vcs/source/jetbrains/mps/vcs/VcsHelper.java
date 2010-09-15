@@ -120,7 +120,7 @@ public class VcsHelper {
   }
 
   private static boolean showDiffDialog(final SModel diskModel, final SModel memoryModel, IFile modelFile, final Project project) {
-    final VirtualFile file = VFileSystem.getFile(modelFile);
+    final VirtualFile file = modelFile.toVirtualFile();
     LOG.assertLog(file != null);
 
     final ModelDifferenceDialog dialog = ModelAccess.instance().runReadAction(new Computable<ModelDifferenceDialog>() {
@@ -154,7 +154,7 @@ public class VcsHelper {
   }  
 
   public static boolean showMergeDialog(final SModel base, final SModel mine, final SModel repo, IFile modelFile, final Project project) {
-    final VirtualFile file = VFileSystem.getFile(modelFile);
+    final VirtualFile file = modelFile.toVirtualFile();
     LOG.assertLog(file != null);
 
     final MergeModelsDialog dialog = ModelAccess.instance().runReadAction(new Computable<MergeModelsDialog>() {

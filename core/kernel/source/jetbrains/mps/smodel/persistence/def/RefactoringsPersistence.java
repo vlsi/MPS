@@ -34,8 +34,6 @@ public class RefactoringsPersistence {
     IFile refactoringsFile = getRefactoringsFile(modelFile);
     if (!refactoringsFile.exists()) {
       refactoringsFile.createNewFile();
-      VirtualFile file = VFileSystem.getFile(refactoringsFile);
-      VcsMigrationUtil.getHandler().addFilesToVcs(Collections.singletonList(file), false, false);
     }
 
     Document document = new Document(refactorings.toElement());

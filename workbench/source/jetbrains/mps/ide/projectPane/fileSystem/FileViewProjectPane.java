@@ -58,6 +58,7 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vcs.ChangedListener;
 import jetbrains.mps.vcs.GlobalClassPathIndex;
 import jetbrains.mps.vcs.VcsMigrationUtil;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NotNull;
@@ -391,7 +392,11 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
         SModelDescriptor d = smodel.getModelDescriptor();
         if (!(d instanceof EditableSModelDescriptor)) return false;
 
-        VirtualFile realFile = VFileSystem.getFile(((EditableSModelDescriptor) d).getModelFile());
+        IFile modelFile = ((EditableSModelDescriptor) d).getModelFile();
+        VirtualFile realFile = null;
+        if (modelFile != null) {
+          realFile = modelFile.toVirtualFile();
+        }
 
         myFile = realFile;
         if ((realFile == null) || (isInitialized() && getNode(realFile) == null)) return false;

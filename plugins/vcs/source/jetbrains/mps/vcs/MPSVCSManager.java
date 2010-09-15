@@ -267,8 +267,7 @@ public class MPSVCSManager implements ProjectComponent {
 
     public void modelFileChanged(SModelDescriptor modelDescriptor, IFile ifrom) {
       if (ifrom == null) return;
-      VirtualFile from = VFileSystem.getFile(ifrom);
-      deleteFromDiskAndRemoveFromVcs(Collections.singleton(from), true);
+      ifrom.delete();
       modelDescriptor.addModelListener(myNewModelSavedListener);
     }
   }

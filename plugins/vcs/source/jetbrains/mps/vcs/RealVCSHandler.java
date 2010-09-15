@@ -43,7 +43,7 @@ public class RealVCSHandler implements VCSHandler, ApplicationComponent {
     VCSUtil.removeFilesFromVcs(files, silently);
   }
 
-  public VcsRevisionNumber getRevisionNumber(VirtualFile file) {
+  public VcsRevisionNumber getRevisionNumber(IFile file) {
     return VCSUtil.getRevisionNumber(file);
   }
 

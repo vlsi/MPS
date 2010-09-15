@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.Hack;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.VFileSystem;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
@@ -397,7 +398,8 @@ public class StubReloadManager implements ApplicationComponent {
 
     private long getTimestamp() {
       //todo this can be rewritten using filesystem listeners
-      VirtualFile file = VFileSystem.getFile(myStubPath.getPath());
+      FileSystem fileSystem = FileSystem.getInstance();
+      VirtualFile file = fileSystem.getVirtualFile(fileSystem.getFileByPath(myStubPath.getPath()));
       if (file == null) return 0L;
       final long[] timeStamp = {file.getTimeStamp()};
       VfsUtil.processFilesRecursively(file, new Processor<VirtualFile>() {

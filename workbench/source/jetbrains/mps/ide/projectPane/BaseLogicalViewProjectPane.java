@@ -374,7 +374,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
         EditableSModelDescriptor emd = (EditableSModelDescriptor) descriptor;
         IFile ifile = emd.getModelFile();
         if (ifile == null) continue;
-        VirtualFile vfile = VFileSystem.getFile(ifile);
+        VirtualFile vfile = ifile.toVirtualFile();
         if (vfile == null) continue;
         selectedFilesList.add(vfile);
       }
@@ -386,14 +386,14 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
       for (IModule module : modules) {
         IFile home = module.getBundleHome();
         if (home != null) {
-          VirtualFile vfile = VFileSystem.getFile(home);
+          VirtualFile vfile = home.toVirtualFile();
           if (vfile != null) {
             selectedFilesList.add(vfile);
           }
         }
         IFile ifile = module.getDescriptorFile();
         if (ifile != null) {
-          VirtualFile vfile = VFileSystem.getFile(ifile);
+          VirtualFile vfile = ifile.toVirtualFile();
           if (vfile != null) {
             selectedFilesList.add(vfile);
           }

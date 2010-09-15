@@ -22,6 +22,7 @@ import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.VcsDirectoryMapping;
+import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.containers.ConcurrentHashSet;
 import jetbrains.mps.logging.Logger;
@@ -33,6 +34,7 @@ import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vcs.ui.VcsIdeSettings.VcsRootsDiscoveryPolicy;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.NonNls;
@@ -58,7 +60,7 @@ public class VcsRootsManager implements ProjectComponent {
         if (!(sm instanceof EditableSModelDescriptor)) return;
         IFile modelFile = ((EditableSModelDescriptor) sm).getModelFile();
         if (modelFile == null) return;
-        VirtualFile file = VFileSystem.getFile(modelFile.getParent());
+        VirtualFile file = modelFile.getParent().toVirtualFile();
         if (file == null) return;
         AbstractVcs vcs = myVcsManager.findVersioningVcs(file);
         if (vcs == null || !Arrays.asList(myVcsManager.getAllActiveVcss()).contains(vcs)) return;
@@ -130,12 +132,12 @@ public class VcsRootsManager implements ProjectComponent {
       if (module.isPackaged()) continue;
       IFile descriptor = module.getDescriptorFile();
       if (descriptor == null) continue;
-      VirtualFile file = VFileSystem.getFile(descriptor.getParent());
+      VirtualFile file = FileSystem.getInstance().getVirtualFile(descriptor.getParent());
 
       discoverMappingsForFile(vcss, file);
       List<SModelRoot> modelRoots = module.getSModelRoots();
       for (SModelRoot root : modelRoots) {
-        discoverMappingsForFile(vcss, VFileSystem.getFile(root.getPath()));
+        discoverMappingsForFile(vcss, LocalFileSystem.getInstance().findFileByPath(root.getPath()));
       }
     }
 

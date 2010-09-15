@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.vcs;
 
-import com.intellij.openapi.extensions.ExtensionPointName;
 import com.intellij.openapi.vcs.history.VcsRevisionNumber;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.project.AbstractModule;
@@ -23,7 +22,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 
-import java.io.File;
 import java.util.List;
 
 public interface VCSHandler {
@@ -41,7 +39,7 @@ public interface VCSHandler {
 
   //-----misc
 
-  VcsRevisionNumber getRevisionNumber(VirtualFile file);
+  VcsRevisionNumber getRevisionNumber(IFile file);
 
   boolean isInConflict(IFile iFile, boolean synchronously);
 

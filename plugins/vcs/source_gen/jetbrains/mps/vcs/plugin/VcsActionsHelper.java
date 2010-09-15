@@ -41,7 +41,7 @@ public class VcsActionsHelper {
 
   public static void showDiffrence(Frame frame, final IOperationContext context, SModel model, final SNode node, Project project) {
     try {
-      VirtualFile file = VFileSystem.getFile(((EditableSModelDescriptor) model.getModelDescriptor()).getModelFile());
+      VirtualFile file = ((EditableSModelDescriptor) model.getModelDescriptor()).getModelFile().toVirtualFile();
       AbstractVcs vcs = ProjectLevelVcsManager.getInstance(project).getVcsFor(file);
       final VcsRevisionNumber revisionNumber = vcs.getDiffProvider().getCurrentRevision(file);
       ContentRevision content = vcs.getDiffProvider().createFileContent(revisionNumber, file);

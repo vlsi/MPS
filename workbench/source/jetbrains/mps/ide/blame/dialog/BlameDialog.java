@@ -33,6 +33,8 @@ import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vcs.VcsMigrationUtil;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -164,7 +166,7 @@ public class BlameDialog extends BaseDialog {
   }
 
   private String getRevisionNumber() {
-    VirtualFile file = VFileSystem.getFile(PathManager.getHomePath());
+    IFile file = FileSystem.getInstance().getFileByPath(PathManager.getHomePath());
     if (file == null) return "";
     VcsRevisionNumber revisionNumber = VcsMigrationUtil.getHandler().getRevisionNumber(file);
     if (revisionNumber == null) {

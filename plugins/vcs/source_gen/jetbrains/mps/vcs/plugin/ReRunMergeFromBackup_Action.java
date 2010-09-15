@@ -53,7 +53,7 @@ public class ReRunMergeFromBackup_Action extends GeneratedAction {
     if (!(ReRunMergeFromBackup_Action.this.model instanceof EditableSModelDescriptor)) {
       return false;
     }
-    VirtualFile file = VFileSystem.getFile(ReRunMergeFromBackup_Action.this.getModelFile());
+    VirtualFile file = ReRunMergeFromBackup_Action.this.getModelFile().toVirtualFile();
     if (file == null) {
       return false;
     }

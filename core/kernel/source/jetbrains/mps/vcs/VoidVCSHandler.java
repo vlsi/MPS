@@ -41,7 +41,7 @@ public class VoidVCSHandler implements VCSHandler {
 
   }
 
-  public VcsRevisionNumber getRevisionNumber(VirtualFile file) {
+  public VcsRevisionNumber getRevisionNumber(IFile file) {
     return null;
   }
 

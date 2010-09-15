@@ -33,7 +33,7 @@ public class ModuleData implements NodeData {
     if (this.myModule instanceof AbstractModule) {
       IFile file = ((AbstractModule) this.myModule).getDescriptorFile();
       if (file != null) {
-        VirtualFile virtualFile = VFileSystem.getFile(file);
+        VirtualFile virtualFile = file.toVirtualFile();
         if (virtualFile != null) {
           return virtualFile.getFileType().getIcon();
         }

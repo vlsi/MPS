@@ -65,8 +65,9 @@ public class VCSUtil {
   }
 
   @Nullable
-  public static VcsRevisionNumber getRevisionNumber(VirtualFile file) {
-    AbstractVcs vcs = getVcsForFile(file);
+  public static VcsRevisionNumber getRevisionNumber(IFile file) {
+    VirtualFile virtualFile = file.toVirtualFile();
+    AbstractVcs vcs = getVcsForFile(virtualFile);
     if (vcs == null) {
       return null;
     }
@@ -74,11 +75,11 @@ public class VCSUtil {
     if (diffProvider == null) {
       return null;
     }
-    return diffProvider.getCurrentRevision(file);
+    return diffProvider.getCurrentRevision(virtualFile);
   }
 
   public static boolean isInConflict(IFile ifile, boolean synchronously) {
-    VirtualFile vfile = VFileSystem.getFile(ifile);
+    VirtualFile vfile = ifile.toVirtualFile();
     if ((vfile != null) && (vfile.exists())) {
       for (Project project : getProjects()) {
         boolean isInConflict = MPSVCSManager.getInstance(project).isInConflict(vfile, synchronously);

@@ -27,23 +27,9 @@ import java.io.File;
 public class VFileSystem {
 
   public static VirtualFile getFile(String path) {
-    if (path.contains("!")) {
-      int index = path.indexOf("!");
-      String jarFileName = path.substring(0, index);
-      String entryPath = path.substring(index + 1);
-
-      if (entryPath.startsWith("/")) {
-        entryPath = entryPath.substring(1);
-      }
-
-      VirtualFile result = getJarEntryFile(new File(jarFileName), entryPath);
-
-      if (result != null) {
-        return result;
-      }
-    }
-
-    return getFile(new File(path));
+    IFile fileByPath = FileSystem.getInstance().getFileByPath(path);
+    if (fileByPath == null) return null;
+    return fileByPath.toVirtualFile();
   }
 
   private static VirtualFile getJarEntryFile(File jarRootFile, String entryPath) {
@@ -53,11 +39,6 @@ public class VFileSystem {
 
     VirtualFile entryFile = jarRoot.findFileByRelativePath(entryPath);
     return entryFile;
-  }
-
-  public static VirtualFile getFile(File file) {
-    LocalFileSystem lfs = LocalFileSystem.getInstance();
-    return lfs.findFileByIoFile(file);
   }
 
   /**
@@ -75,13 +56,9 @@ public class VFileSystem {
 
   public static VirtualFile getJarFileRoot(File file) {
     JarFileSystem jfs = JarFileSystem.getInstance();
-    VirtualFile vfile = getFile(file);
+    VirtualFile vfile = LocalFileSystem.getInstance().findFileByIoFile(file);
     if (vfile == null) return null;
     return jfs.getJarRootForLocalFile(vfile);
-  }
-
-  public static VirtualFile getDefaultDirectory() {
-    return getFile(new File(PathManager.getHomePath()));
   }
 
   public static IFile toIFile(VirtualFile f) {
@@ -107,7 +84,7 @@ public class VFileSystem {
     }
   }
 
-  public static VirtualFile getFile(IFile file) {
+  static VirtualFile getFile(IFile file) {
     if (file == null) return null;
     if (file instanceof FileSystemFile) {
       LocalFileSystem lfs = LocalFileSystem.getInstance();
