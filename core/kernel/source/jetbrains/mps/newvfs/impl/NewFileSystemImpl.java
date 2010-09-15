@@ -32,7 +32,7 @@ public class NewFileSystemImpl extends NewFileSystem {
   @Override
   public VirtualFile getVirtualFile(INewFile file) {
     if (file instanceof IdeaFile) {
-      return ((IdeaFile) file).getVirtualFile();
+      return ((IdeaFile) file).toVirtualFile();
     }
     return null;
   }

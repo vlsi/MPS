@@ -15,11 +15,16 @@
  */
 package jetbrains.mps.newvfs;
 
+import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.Nullable;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 
 /**
@@ -27,16 +32,20 @@ import java.util.List;
  */
 public interface INewFile {
   String getName();
-  String getPath();
+  String getAbsolutePath(); // TODO rename to getPath()
+  String getCanonicalPath(); // TODO refactor to using FileUtil.getCanonicalPath()  
   INewFile getParent();
-  List<? extends INewFile> getChildren();
+
+  List<INewFile> list(); // TODO rename to getChildren()
+  List<INewFile> list(INewFileNameFilter filter); // TODO rename to getChildren()
+  INewFile child(String suffix); // TODO rename to getDescendant()
   @Nullable
-  INewFile findChild(String name);
+  INewFile findChild(String name); // TODO check if this method is needed
 
   boolean isDirectory();
   boolean isReadOnly();
   long lastModified();
-
+  long length();
 
   boolean createNewFile();
   boolean mkdirs();
@@ -46,4 +55,9 @@ public interface INewFile {
 
   InputStream openInputStream() throws IOException;
   OutputStream openOutputStream() throws IOException;
+
+  File toFile(); // TODO remove all usages
+  VirtualFile toVirtualFile(); // TODO change all usages to using factory method
+
+  URL toURL() throws MalformedURLException; // TODO change all usages to using factory method
 }

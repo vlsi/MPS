@@ -7,10 +7,16 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.sun.istack.internal.NotNull;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.newvfs.INewFile;
+import jetbrains.mps.newvfs.INewFileNameFilter;
+import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.*;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -25,24 +31,28 @@ public class IdeaFile implements INewFileEx {
   private String myPath = null;
   private VirtualFile myVirtualFile = null;
 
-  public IdeaFile(IdeaFileSystemProvider provider, @NotNull String path) {
+  IdeaFile(IdeaFileSystemProvider provider, @NotNull String path) {
     myProvider = provider;
     myPath = path;
   }
 
-  @Deprecated
-  IdeaFile(@NotNull IdeaFileSystemProvider provider, @NotNull VirtualFile virtualFile) {
+  private IdeaFile(@NotNull IdeaFileSystemProvider provider, @NotNull VirtualFile virtualFile) {
     myProvider = provider;
     myVirtualFile = virtualFile;
   }
 
   @Override
-  public String getPath() {
+  public String getAbsolutePath() {
     if (findVirtualFile()) {
       return myVirtualFile.getPath();
     } else {
       return myPath;
     }
+  }
+
+  @Override
+  public String getCanonicalPath() {
+    return FileUtil.getCanonicalPath(getAbsolutePath());
   }
 
   @Override
@@ -68,10 +78,10 @@ public class IdeaFile implements INewFileEx {
   }
 
   @Override
-  public List<IdeaFile> getChildren() {
+  public List<INewFile> list() {
     if (findVirtualFile()) {
       VirtualFile[] children = myVirtualFile.getChildren();
-      IdeaFile[] result = new IdeaFile[children.length];
+      INewFile[] result = new IdeaFile[children.length];
       for (int i = 0; i < children.length; i++) {
         result[i] = new IdeaFile(myProvider, children[i]);
       }
@@ -79,6 +89,27 @@ public class IdeaFile implements INewFileEx {
     } else {
       return Arrays.asList();
     }
+  }
+
+  @Override
+  public List<INewFile> list(INewFileNameFilter filter) {
+    if (findVirtualFile()) {
+      VirtualFile[] children = myVirtualFile.getChildren();
+      ArrayList<INewFile> result = new ArrayList<INewFile>();
+      for (VirtualFile child : children) {
+        if (filter.accept(this, child.getName())) {
+          result.add(new IdeaFile(myProvider, child));
+        }
+      }
+      return Collections.unmodifiableList(result);
+    } else {
+      return Arrays.asList();
+    }
+  }
+
+  @Override
+  public INewFile child(String suffix) {
+    return new IdeaFile(myProvider, getAbsolutePath() + File.separator + suffix);
   }
 
   @Override
@@ -120,6 +151,15 @@ public class IdeaFile implements INewFileEx {
       return myVirtualFile.getModificationStamp();
     } else {
       return -1;
+    }
+  }
+
+  @Override
+  public long length() {
+    if (findVirtualFile()) {
+      return myVirtualFile.getLength();
+    } else {
+      return 0L;
     }
   }
 
@@ -201,13 +241,28 @@ public class IdeaFile implements INewFileEx {
   }
 
   @Override
-  public boolean isPackaged() {
-    return findVirtualFile() && myVirtualFile.getFileSystem() instanceof JarFileSystem;
+  public File toFile() {
+    return new File(getAbsolutePath());
   }
 
+  // TODO make package-private and rename to getVirtualFile()
   @Nullable
-  VirtualFile getVirtualFile() {
+  public VirtualFile toVirtualFile() {
     return myVirtualFile;
+  }
+
+  @Override
+  public URL toURL() throws MalformedURLException {
+    if (findVirtualFile()) {
+      return new URL(myVirtualFile.getPresentableUrl());
+    } else {
+      return new File(myPath).toURI().toURL();
+    }
+  }
+
+  @Override
+  public boolean isPackaged() {
+    return findVirtualFile() && myVirtualFile.getFileSystem() instanceof JarFileSystem;
   }
 
   private boolean findVirtualFile() {
