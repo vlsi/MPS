@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.OldFileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.MPSDataKeys;
 import org.apache.commons.logging.Log;
@@ -121,7 +121,7 @@ public class GetModelContentsFromSource_Action extends GeneratedAction {
         }
       }
       if (initial != null) {
-        treeFileChooser.setInitialFile(FileSystem.getFile(initial));
+        treeFileChooser.setInitialFile(OldFileSystem.getFile(initial));
       }
       IFile result = treeFileChooser.showDialog(GetModelContentsFromSource_Action.this.frame);
       if (result != null) {

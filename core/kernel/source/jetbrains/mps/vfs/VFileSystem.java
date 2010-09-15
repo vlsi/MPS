@@ -18,8 +18,6 @@ package jetbrains.mps.vfs;
 import com.intellij.openapi.vfs.JarFileSystem;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vcs.actions.VcsContextFactory;
-import com.intellij.openapi.vcs.FilePath;
 import com.intellij.util.Processor;
 import jetbrains.mps.util.PathManager;
 import org.jetbrains.annotations.NotNull;
@@ -90,14 +88,14 @@ public class VFileSystem {
 
   public static IFile toIFile(VirtualFile f) {
     if (f.getFileSystem() instanceof LocalFileSystem) {
-      return FileSystem.getFile(f.getPath());
+      return OldFileSystem.getFile(f.getPath());
     } else if (f.getFileSystem() instanceof JarFileSystem) {
       JarFileSystem jfs = JarFileSystem.getInstance();
       VirtualFile fileForJar = jfs.getVirtualFileForJar(f);
       assert fileForJar != null;
       String jarPath = fileForJar.getPath();
       String entryPath = f.getPath().substring(jarPath.length());
-      return FileSystem.getFile(jarPath + entryPath);
+      return OldFileSystem.getFile(jarPath + entryPath);
     } else {
       throw new RuntimeException();
     }

@@ -19,7 +19,7 @@ import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.OldFileSystem;
 import jetbrains.mps.vfs.IFile;
 
 import java.io.File;
@@ -33,7 +33,7 @@ public class FileGenerationUtil {
   }
 
   public static File getDefaultOutputDir(SModelDescriptor inputModelDescriptor, File outputRootDir) {
-    return getDefaultOutputDir(inputModelDescriptor, FileSystem.getFile(outputRootDir)).toFile();
+    return getDefaultOutputDir(inputModelDescriptor, OldFileSystem.getFile(outputRootDir)).toFile();
   }
 
   public static IFile getDefaultOutputDir(SModel inputModel, IFile outputRootDir) {
@@ -41,11 +41,11 @@ public class FileGenerationUtil {
   }
 
   public static File getDefaultOutputDir(SModelReference inputModel, File outputRootDir) {
-      return getDefaultOutputDir(inputModel, FileSystem.getFile(outputRootDir)).toFile();
+      return getDefaultOutputDir(inputModel, OldFileSystem.getFile(outputRootDir)).toFile();
   }
 
   public static File getDefaultOutputDir(SModel inputModel, File outputRootDir) {
-    return getDefaultOutputDir(inputModel, FileSystem.getFile(outputRootDir)).toFile();    
+    return getDefaultOutputDir(inputModel, OldFileSystem.getFile(outputRootDir)).toFile();
   }
 
   public static File getCachesOutputDir(File outputDir) {

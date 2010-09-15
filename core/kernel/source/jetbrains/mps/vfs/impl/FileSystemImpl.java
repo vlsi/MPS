@@ -1,16 +1,18 @@
-package jetbrains.mps.newvfs.impl;
+package jetbrains.mps.vfs.impl;
 
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.newvfs.FileSystemProvider;
-import jetbrains.mps.newvfs.INewFile;
-import jetbrains.mps.newvfs.NewFileSystem;
+import jetbrains.mps.vfs.FileSystemProvider;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.io.File;
 
 /**
  * @author Evgeny Gerashchenko
  */
-public class NewFileSystemImpl extends NewFileSystem {
+public class FileSystemImpl extends FileSystem {
   private FileSystemProvider myFileSystemProvider = new IdeaFileSystemProvider();
 
   @Override
@@ -20,17 +22,26 @@ public class NewFileSystemImpl extends NewFileSystem {
 
   @Override
   @Nullable
-  public INewFile getFileByPath(@NotNull String path) {
+  public IFile getFileByPath(@NotNull String path) {
     return myFileSystemProvider.getFile(path);
   }
 
   @Override
-  public boolean isPackaged(INewFile file) {
-    return file instanceof INewFileEx && ((INewFileEx) file).isPackaged();  
+  public boolean isPackaged(IFile file) {
+    return file instanceof IFileEx && ((IFileEx) file).isPackaged();
   }
 
   @Override
-  public VirtualFile getVirtualFile(INewFile file) {
+  public File getBundleHome(IFile file) {
+    if (file instanceof IFileEx) {
+      return ((IFileEx) file).getBundleHome();
+    } else {
+      return null;
+    }
+  }
+
+  @Override
+  public VirtualFile getVirtualFile(IFile file) {
     if (file instanceof IdeaFile) {
       return ((IdeaFile) file).toVirtualFile();
     }

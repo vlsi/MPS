@@ -21,8 +21,7 @@ import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.vcs.VCSUtil;
-import jetbrains.mps.vcs.VcsMigrationUtil;
-import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.OldFileSystem;
 
 import java.util.Collections;
 
@@ -35,7 +34,7 @@ class BeforeModelEventProcessor extends EventProcessor {
 
   @Override
   protected void processDelete(VFileEvent event, ReloadSession reloadSession) {
-    final SModelDescriptor model = SModelRepository.getInstance().findModel(FileSystem.getFile(event.getPath()));
+    final SModelDescriptor model = SModelRepository.getInstance().findModel(OldFileSystem.getFile(event.getPath()));
     if (model == null) {
       // if model is null, then it was removed by user
       VirtualFile vfile = getVFile(event);

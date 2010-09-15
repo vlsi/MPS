@@ -1,4 +1,4 @@
-package jetbrains.mps.newvfs;
+package jetbrains.mps.vfs;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -8,5 +8,5 @@ import org.jetbrains.annotations.Nullable;
  */
 public interface FileSystemProvider {
   @Nullable
-  public INewFile getFile(@NotNull String path);
+  public IFile getFile(@NotNull String path);
 }

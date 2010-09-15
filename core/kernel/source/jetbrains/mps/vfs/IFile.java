@@ -16,52 +16,47 @@
 package jetbrains.mps.vfs;
 
 import com.intellij.openapi.vfs.VirtualFile;
+import org.jetbrains.annotations.Nullable;
 
-import java.io.*;
-import java.util.List;
-import java.net.URL;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.List;
 
+/**
+ * @author Evgeny Gerashchenko
+ */
 public interface IFile {
   String getName();
-
+  String getAbsolutePath(); // TODO rename to getPath()
+  String getCanonicalPath(); // TODO refactor to using FileUtil.getCanonicalPath()  
   IFile getParent();
 
-  List<IFile> list();
-
-  IFile child(String suffix);
-
-  List<IFile> list(IFileNameFilter filter);
+  List<IFile> list(); // TODO rename to getChildren()
+  List<IFile> list(IFileNameFilter filter); // TODO rename to getChildren()
+  IFile child(String suffix); // TODO rename to getDescendant()
+  @Nullable
+  IFile findChild(String name); // TODO check if this method is needed
 
   boolean isDirectory();
-
-  String getAbsolutePath();
-
-  String getCanonicalPath();
-
+  boolean isReadOnly();
   long lastModified();
-
-  boolean exists();
+  long length();
 
   boolean createNewFile();
-
   boolean mkdirs();
 
+  boolean exists();
   boolean delete();
 
   InputStream openInputStream() throws IOException;
   OutputStream openOutputStream() throws IOException;
 
-  boolean isReadOnly();
+  File toFile(); // TODO remove all usages
+  VirtualFile toVirtualFile(); // TODO change all usages to using factory method
 
-  @Deprecated
-  File toFile();
-
-  @Deprecated
-  VirtualFile toVirtualFile();
-
-  long length();
-
-  @Deprecated
-  URL toURL() throws MalformedURLException;
+  URL toURL() throws MalformedURLException; // TODO change all usages to using factory method
 }

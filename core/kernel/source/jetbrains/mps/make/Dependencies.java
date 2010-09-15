@@ -22,7 +22,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.OldFileSystem;
 import jetbrains.mps.vfs.IFile;
 
 import java.io.File;
@@ -66,7 +66,7 @@ class Dependencies {
     if (m == null) return null;
 
     String outputPath = m.getGeneratorOutputPath() + File.separator + fqName.replace('.', File.separatorChar) + MPSExtentions.DOT_JAVAFILE;
-    return FileSystem.getFile(outputPath);
+    return OldFileSystem.getFile(outputPath);
   }
 
   private void collectDependencies(IModule m) {

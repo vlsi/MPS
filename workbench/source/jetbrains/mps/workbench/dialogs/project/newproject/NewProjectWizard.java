@@ -39,7 +39,7 @@ import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.OldFileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -230,7 +230,7 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
     if (!(dir.exists())) {
       dir.mkdirs();
     }
-    Language language = Language.createLanguage(myOptions.getLanguageNamespace(), FileSystem.getFile(descriptorFile), mpsProject);
+    Language language = Language.createLanguage(myOptions.getLanguageNamespace(), OldFileSystem.getFile(descriptorFile), mpsProject);
     LanguageDescriptor languageDescriptor = language.getModuleDescriptor();
     ModuleReference ref = LanguageDesign_DevKit.MODULE_REFERENCE;
     languageDescriptor.getUsedDevkits().add(ref);
@@ -245,7 +245,7 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
   }
 
   private IFile createNewSolution() {
-    IFile solutionFile = FileSystem.getFile(getSolutionFileName());
+    IFile solutionFile = OldFileSystem.getFile(getSolutionFileName());
     String fileName = solutionFile.getName();
 
     SolutionDescriptor solutionDescriptor = new SolutionDescriptor();

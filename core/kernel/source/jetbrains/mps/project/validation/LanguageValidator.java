@@ -21,7 +21,7 @@ import jetbrains.mps.project.structure.modules.StubModelsEntry;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.OldFileSystem;
 import jetbrains.mps.vfs.IFile;
 
 import java.util.ArrayList;
@@ -50,7 +50,7 @@ public class LanguageValidator extends BaseModuleValidator<Language>{
       }
     }
     for (StubModelsEntry stubModelsEntry : myModule.getModuleDescriptor().getRuntimeStubModels()) {
-      IFile file = FileSystem.getFile(stubModelsEntry.getPath());
+      IFile file = OldFileSystem.getFile(stubModelsEntry.getPath());
       if (file == null || !file.exists()) {
         errors.add("Can't find runtime library: " + stubModelsEntry.getPath());
       }

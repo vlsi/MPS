@@ -21,7 +21,7 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.StubModelsEntry;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.OldFileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
@@ -59,7 +59,7 @@ public class BaseModuleValidator<T extends IModule> implements ModuleValidator {
 
     if (descriptor.getSourcePaths() != null && !myModule.isPackaged()) {
       for (String sourcePath : descriptor.getSourcePaths()) {
-        IFile file = FileSystem.getFile(sourcePath);
+        IFile file = OldFileSystem.getFile(sourcePath);
         if (file == null || !file.exists()) {
           errors.add("Can't find source path: " + sourcePath);
         }
@@ -67,7 +67,7 @@ public class BaseModuleValidator<T extends IModule> implements ModuleValidator {
     }
     if (descriptor.getStubModelEntries() != null) {
       for (StubModelsEntry stubModelsEntry : descriptor.getStubModelEntries()) {
-        IFile file = FileSystem.getFile(stubModelsEntry.getPath());
+        IFile file = OldFileSystem.getFile(stubModelsEntry.getPath());
         if (file == null || !file.exists()) {
           errors.add("Can't find library: " + stubModelsEntry.getPath());
         }

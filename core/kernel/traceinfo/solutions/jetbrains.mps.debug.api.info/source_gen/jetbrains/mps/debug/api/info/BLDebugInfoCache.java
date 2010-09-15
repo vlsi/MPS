@@ -5,6 +5,7 @@ package jetbrains.mps.debug.api.info;
 import jetbrains.mps.generator.fileGenerator.BaseModelCache;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.generator.fileGenerator.FileGenerationManager;
+import jetbrains.mps.vfs.OldFileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.fileGenerator.CacheGenerationContext;
@@ -22,7 +23,6 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import java.io.InputStream;
 import org.jdom.JDOMException;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.vfs.FileSystem;
 import com.intellij.openapi.application.ApplicationManager;
 
 public class BLDebugInfoCache extends BaseModelCache<DebugInfo> {
@@ -102,7 +102,7 @@ public class BLDebugInfoCache extends BaseModelCache<DebugInfo> {
       LOG.assertLog(false, "Can not generate trace info for a packaged module.");
     }
 
-    return FileSystem.getFile(outputPath);
+    return OldFileSystem.getFile(outputPath);
   }
 
   public static BLDebugInfoCache getInstance() {

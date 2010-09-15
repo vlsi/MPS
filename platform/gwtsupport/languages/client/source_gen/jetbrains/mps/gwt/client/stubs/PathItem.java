@@ -5,7 +5,7 @@ package jetbrains.mps.gwt.client.stubs;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.OldFileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileNameFilter;
 
@@ -21,14 +21,14 @@ public abstract class PathItem {
     IFile container = null;
     for (String p : path.split("!")) {
       if (container == null) {
-        container = FileSystem.getFile((this.isJar(p) ?
+        container = OldFileSystem.getFile((this.isJar(p) ?
           p + "!/" :
           p
         ));
       } else {
-        File cf = asFile(FileSystem.getFile(container.getAbsolutePath() + p));
+        File cf = asFile(OldFileSystem.getFile(container.getAbsolutePath() + p));
         // '!' would have been added by JarFileEntryFile 
-        container = FileSystem.getFile(cf.getPath() + "!/");
+        container = OldFileSystem.getFile(cf.getPath() + "!/");
         // can't simply pass a file, must be a path with a '!' at the end 
       }
     }
@@ -129,7 +129,7 @@ public abstract class PathItem {
   }
 
   private static File asFile(IFile ifile) {
-    if (!FileSystem.isPackaged(ifile)) {
+    if (!OldFileSystem.isPackaged(ifile)) {
       return new File(ifile.getAbsolutePath());
     }
     OutputStream os = null;

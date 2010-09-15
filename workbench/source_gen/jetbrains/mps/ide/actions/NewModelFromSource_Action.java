@@ -14,7 +14,7 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.OldFileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.dialogs.project.creation.NewModelDialog;
@@ -168,7 +168,7 @@ public class NewModelFromSource_Action extends GeneratedAction {
           }
         }
         if (initial != null) {
-          treeFileChooser.setInitialFile(FileSystem.getFile(initial));
+          treeFileChooser.setInitialFile(OldFileSystem.getFile(initial));
         }
         IFile resultFile = treeFileChooser.showDialog(NewModelFromSource_Action.this.frame);
         if (resultFile != null) {

@@ -98,6 +98,11 @@ class JarFileEntryFile implements IFile {
     return new JarFileEntryFile(myJarFileData, myJarFile, path);
   }
 
+  @Override
+  public IFile findChild(String name) {
+    return child(name);
+  }
+
   public boolean isDirectory() {
     if (myJarFileData == null) {
       return false;

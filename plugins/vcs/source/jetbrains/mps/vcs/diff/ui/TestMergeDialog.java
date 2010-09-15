@@ -24,7 +24,7 @@ import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vcs.ModelUtils;
-import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.OldFileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.*;
 
@@ -105,7 +105,7 @@ public class TestMergeDialog {
         }
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            IFile iFile = FileSystem.getFile(args[3]);
+            IFile iFile = OldFileSystem.getFile(args[3]);
             if (!iFile.exists()) iFile.createNewFile();
             ModelPersistence.saveModel(result, iFile, true, false);
           }

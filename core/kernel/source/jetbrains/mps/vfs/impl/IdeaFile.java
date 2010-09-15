@@ -1,4 +1,4 @@
-package jetbrains.mps.newvfs.impl;
+package jetbrains.mps.vfs.impl;
 
 import com.intellij.openapi.vfs.JarFileSystem;
 import com.intellij.openapi.vfs.LocalFileSystem;
@@ -6,8 +6,8 @@ import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.sun.istack.internal.NotNull;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.newvfs.INewFile;
-import jetbrains.mps.newvfs.INewFileNameFilter;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.IFileNameFilter;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.Nullable;
 
@@ -22,7 +22,7 @@ import java.util.List;
 /**
  * @author Evgeny Gerashchenko
  */
-public class IdeaFile implements INewFileEx {
+public class IdeaFile implements IFileEx {
   private static final Logger LOG = Logger.getLogger(IdeaFileSystemProvider.class);
 
   private IdeaFileSystemProvider myProvider;
@@ -78,10 +78,10 @@ public class IdeaFile implements INewFileEx {
   }
 
   @Override
-  public List<INewFile> list() {
+  public List<IFile> list() {
     if (findVirtualFile()) {
       VirtualFile[] children = myVirtualFile.getChildren();
-      INewFile[] result = new IdeaFile[children.length];
+      IFile[] result = new IdeaFile[children.length];
       for (int i = 0; i < children.length; i++) {
         result[i] = new IdeaFile(myProvider, children[i]);
       }
@@ -92,10 +92,10 @@ public class IdeaFile implements INewFileEx {
   }
 
   @Override
-  public List<INewFile> list(INewFileNameFilter filter) {
+  public List<IFile> list(IFileNameFilter filter) {
     if (findVirtualFile()) {
       VirtualFile[] children = myVirtualFile.getChildren();
-      ArrayList<INewFile> result = new ArrayList<INewFile>();
+      ArrayList<IFile> result = new ArrayList<IFile>();
       for (VirtualFile child : children) {
         if (filter.accept(this, child.getName())) {
           result.add(new IdeaFile(myProvider, child));
@@ -108,13 +108,13 @@ public class IdeaFile implements INewFileEx {
   }
 
   @Override
-  public INewFile child(String suffix) {
+  public IFile child(String suffix) {
     return new IdeaFile(myProvider, getAbsolutePath() + File.separator + suffix);
   }
 
   @Override
   @Nullable
-  public INewFile findChild(String name) {
+  public IFile findChild(String name) {
     if (findVirtualFile()) {
       VirtualFile child = myVirtualFile.findChild(name);
       if (child == null) {
@@ -263,6 +263,27 @@ public class IdeaFile implements INewFileEx {
   @Override
   public boolean isPackaged() {
     return findVirtualFile() && myVirtualFile.getFileSystem() instanceof JarFileSystem;
+  }
+
+  @Override
+  public File getBundleHome() {
+    if (findVirtualFile()) {
+      if (myVirtualFile.getFileSystem() instanceof JarFileSystem) {
+        VirtualFile fileForJar = ((JarFileSystem) myVirtualFile.getFileSystem()).getVirtualFileForJar(myVirtualFile);
+        if (fileForJar == null) {
+          return null;
+        }
+        return new File(fileForJar.getPath());
+      } else {
+        return new File(myVirtualFile.getParent().getPath());
+      }
+    } else {
+      if (myPath.contains("!")) {
+        return new File(myPath.substring(0, myPath.indexOf("!")));
+      } else {
+        return new File(myPath.substring(0, myPath.lastIndexOf(File.pathSeparator)));
+      }
+    }
   }
 
   private boolean findVirtualFile() {

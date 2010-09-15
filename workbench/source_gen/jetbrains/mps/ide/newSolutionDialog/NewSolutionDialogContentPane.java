@@ -26,7 +26,7 @@ import com.intellij.openapi.progress.Task;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.OldFileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.util.FileUtil;
 
@@ -228,7 +228,7 @@ public class NewSolutionDialogContentPane extends JPanel {
         indicator.setIndeterminate(true);
         ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {
-            myThis.setResult(myThis.createNewSolution(FileSystem.getFile(file)));
+            myThis.setResult(myThis.createNewSolution(OldFileSystem.getFile(file)));
           }
         });
       }

@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
 import jetbrains.mps.smodel.persistence.def.ModelFileReadException;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.PersistenceVersionNotFoundException;
-import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.OldFileSystem;
 import jetbrains.mps.vfs.IFile;
 
 import java.io.File;
@@ -84,7 +84,7 @@ public class ModelsExtractor {
     } else {
       tmpmodules = ModelAccess.instance().runWriteAction(new Computable<List<IModule>>() {
         public List<IModule> compute() {
-          IFile file = FileSystem.getFile(moduleFile.getPath());
+          IFile file = OldFileSystem.getFile(moduleFile.getPath());
           return MPSModuleRepository.getInstance().readModuleDescriptors(file.isDirectory() ? file : file.getParent(), new MPSModuleOwner() {
           });
         }
@@ -113,7 +113,7 @@ public class ModelsExtractor {
   }
 
   private void processModelFile(Collection<SModelDescriptor> modelDescriptors, File f) {
-    final IFile ifile = FileSystem.getFile(f);
+    final IFile ifile = OldFileSystem.getFile(f);
 
     // try to find if model is loaded
     SModelDescriptor model = SModelRepository.getInstance().findModel(ifile);

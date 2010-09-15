@@ -1,62 +1,32 @@
-/*
- * Copyright 2003-2010 JetBrains s.r.o.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package jetbrains.mps.vfs;
 
-import jetbrains.mps.util.PathManager;
+import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.vfs.impl.FileSystemImpl;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 
-public class FileSystem {
-  public static IFile getFile(String path) {
+/**
+ * @author Evgeny Gerashchenko
+ */
+public abstract class FileSystem {
+  private static final FileSystem INSTANCE = new FileSystemImpl();
 
-    if (path.contains("!")) {
-      int index = path.indexOf("!");
-      String jarFileName = path.substring(0, index);
-      String entryPath = path.substring(index + 1);
+  public abstract void setFileSystemProvider(@NotNull FileSystemProvider fileSystemProvider);
 
-      if (entryPath.startsWith("/")) {
-        entryPath = entryPath.substring(1);
-      }
+  @Nullable
+  public abstract IFile getFileByPath(@NotNull String path);
 
-      File jarFile = new File(jarFileName);
-      JarFileEntryFile root = new JarFileEntryFile(JarFileDataCache.instance().getDataFor(jarFile), jarFile, entryPath);
+  public abstract boolean isPackaged(IFile file);
 
-      return root;
-    } else {
-      return new FileSystemFile(new File(path));
-    }
-  }
+  public abstract File getBundleHome(IFile file); 
 
-  public static IFile getFile(File file) {
-    return new FileSystemFile(file);
-  }
+  // This method should not be used in MPS kernel, only in workbench
+  @Nullable
+  public abstract VirtualFile getVirtualFile(IFile file);
 
-  public static boolean isPackaged(IFile file) {
-    return file instanceof JarFileEntryFile;
-  }
-
-  public static File getBundleHome(IFile file) {
-    if (file != null) {
-      if (FileSystem.isPackaged(file)) {
-        return ((JarFileEntryFile) file).getJarFile();
-      }
-
-      return file.getParent().toFile();
-    }
-
-    return null;
+  public static FileSystem getInstance() {
+    return INSTANCE;
   }
 }

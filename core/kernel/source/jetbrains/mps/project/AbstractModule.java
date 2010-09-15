@@ -35,7 +35,7 @@ import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.vcs.VcsMigrationUtil;
-import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.OldFileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
@@ -279,7 +279,7 @@ public abstract class AbstractModule implements IModule {
     Set<StubModelsEntry> visited = new HashSet<StubModelsEntry>();
     List<StubModelsEntry> remove = new ArrayList<StubModelsEntry>();
     for (StubModelsEntry entry : descriptor.getStubModelEntries()) {
-      IFile cp = FileSystem.getFile(entry.getPath());
+      IFile cp = OldFileSystem.getFile(entry.getPath());
       if ((!cp.exists()) || cp.isDirectory() || visited.contains(entry)) {
         remove.add(entry);
       }
@@ -402,7 +402,7 @@ public abstract class AbstractModule implements IModule {
   private IFile getClassesDirParent() {
     if (isPackaged()) {
       String filename = getBundleHome().getAbsolutePath() + "!";
-      return FileSystem.getFile(filename);
+      return OldFileSystem.getFile(filename);
     } else {
       if (getDescriptorFile() == null) return null;
       return getDescriptorFile().getParent();
@@ -506,7 +506,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   public File getBundleHome() {
-    return FileSystem.getBundleHome(getDescriptorFile());
+    return OldFileSystem.getBundleHome(getDescriptorFile());
   }
 
   public boolean isCompileInMPS() {

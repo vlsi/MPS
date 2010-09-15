@@ -31,7 +31,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.util.Macros;
-import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.OldFileSystem;
 import javax.swing.JComponent;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.MPSColors;
@@ -673,7 +673,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     if (s == null) {
       return false;
     }
-    return FileSystem.getFile(s).exists();
+    return OldFileSystem.getFile(s).exists();
   }
 
   private static JComponent _QueryFunction_JComponent_ueqr71_a2c0(SNode node, EditorContext editorContext) {

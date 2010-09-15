@@ -14,7 +14,7 @@ import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.OldFileSystem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -71,7 +71,7 @@ public class ModelCheckerCheckinHandler extends CheckinHandler {
     final SModelRepository repository = SModelRepository.getInstance();
     return Sequence.fromIterable(files).select(new ISelector<File, SModelDescriptor>() {
       public SModelDescriptor select(File file) {
-        return repository.findModel(FileSystem.getFile(file));
+        return repository.findModel(OldFileSystem.getFile(file));
       }
     }).where(new IWhereFilter<SModelDescriptor>() {
       public boolean accept(SModelDescriptor modelDescriptor) {

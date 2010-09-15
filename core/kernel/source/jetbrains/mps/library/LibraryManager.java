@@ -27,7 +27,7 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.stubs.StubReloadManager;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.workbench.WorkbenchPathManager;
-import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.OldFileSystem;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
 
@@ -134,7 +134,7 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
     for (Library l : getLibraries()) {
       if (!(l instanceof PredefinedLibrary)) continue;
       MPSModuleOwner owner = (l.isBootstrap() ? myBootstrapLibrariesOwner : myPredefinedLibrariesOwner);
-      List<IModule> modules = myRepository.readModuleDescriptors(FileSystem.getFile(l.getPath()), owner);
+      List<IModule> modules = myRepository.readModuleDescriptors(OldFileSystem.getFile(l.getPath()), owner);
 
       if (l.isBootstrap()) {
         for (IModule m : modules) {

@@ -22,7 +22,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.samples.SamplesManager;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.OldFileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
@@ -86,7 +86,7 @@ public abstract class Macros {
   }
 
   public final String expandPath(String path, File anchorFile) {
-    return expandPath(path, FileSystem.getFile(anchorFile));
+    return expandPath(path, OldFileSystem.getFile(anchorFile));
   }
 
   public final String expandPath(String path, IFile anchorFile) {
@@ -108,7 +108,7 @@ public abstract class Macros {
       String prefix = "${" + macro + "}";
       if (path.startsWith(prefix)) {
         String relativePath = removePrefix(path, prefix);
-        result = FileSystem.getFile(PathMacros.getInstance().getValue(macro)).child(relativePath);
+        result = OldFileSystem.getFile(PathMacros.getInstance().getValue(macro)).child(relativePath);
         break;
       }
     }
@@ -118,7 +118,7 @@ public abstract class Macros {
     if (result != null) return result.getCanonicalPath();
 
     if (!path.startsWith("${")) {
-      result = FileSystem.getFile(path);
+      result = OldFileSystem.getFile(path);
       return result.getCanonicalPath();
     }
 
@@ -133,13 +133,13 @@ public abstract class Macros {
   private IFile tryToExpandWith(String path, String macroName, String macroValue) {
     if (path.startsWith(macroName)) {
       String relativePath = removePrefix(path, macroName);
-      return FileSystem.getFile(macroValue).child(relativePath);
+      return OldFileSystem.getFile(macroValue).child(relativePath);
     }
     return null;
   }
 
   public final String shrinkPath(String path, File anchor) {
-    return shrinkPath(path, FileSystem.getFile(anchor));
+    return shrinkPath(path, OldFileSystem.getFile(anchor));
   }
 
   public final String shrinkPath(String absolutePath, IFile anchorFile) {

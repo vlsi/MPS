@@ -3,23 +3,17 @@ package jetbrains.mps.workbench.dialogs;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.ui.TextFieldWithBrowseButton;
-import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.fileChooser.FileChooserDialog;
 import com.intellij.openapi.fileChooser.FileChooserFactory;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
-import com.intellij.ui.DocumentAdapter;
 import com.intellij.ui.IdeBorderFactory;
-import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
-import jetbrains.mps.ide.dialogs.BaseDialog;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.OldFileSystem;
 
 import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
-import javax.swing.event.DocumentEvent;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -38,7 +32,7 @@ public class MoveFileDialog extends DialogWrapper {
           public void run() {
             FileChooserDescriptor chooser = new FileChooserDescriptor(false, true, false, false, false, false);
             FileChooserDialog dialog = FileChooserFactory.getInstance().createFileChooser(chooser, getOwner());
-            VirtualFile[] selectedFiles = dialog.choose(FileSystem.getFile(initialText).toVirtualFile(), project);
+            VirtualFile[] selectedFiles = dialog.choose(OldFileSystem.getFile(initialText).toVirtualFile(), project);
             if (selectedFiles.length > 0 && selectedFiles[0] != null) {
               myDirectoryField.setText(selectedFiles[0].getPath());
             }

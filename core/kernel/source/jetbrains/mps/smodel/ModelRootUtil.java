@@ -3,7 +3,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.OldFileSystem;
 import jetbrains.mps.vfs.IFile;
 
 import java.util.HashSet;
@@ -27,7 +27,7 @@ public class ModelRootUtil {
     for (IModule module : model.getModules()) {
       for (SModelRoot modelRoot : module.getSModelRoots()) {
         String modelFilePath = modelFile.getCanonicalPath();
-        String rootFilePath = FileSystem.getFile(modelRoot.getPath()).getCanonicalPath();
+        String rootFilePath = OldFileSystem.getFile(modelRoot.getPath()).getCanonicalPath();
 
         if (modelFilePath.startsWith(rootFilePath)){
           result.add(modelRoot);

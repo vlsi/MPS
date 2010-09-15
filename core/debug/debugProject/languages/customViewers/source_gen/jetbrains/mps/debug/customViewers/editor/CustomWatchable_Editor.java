@@ -23,7 +23,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.lang.structure.editor.EditorUtil;
 import jetbrains.mps.plugins.MacrosUtil;
-import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.OldFileSystem;
 import javax.swing.JComponent;
 
 public class CustomWatchable_Editor extends DefaultNodeEditor {
@@ -177,7 +177,7 @@ public class CustomWatchable_Editor extends DefaultNodeEditor {
     if (module != null) {
       path = MacrosUtil.expandPath(SPropertyOperations.getString(node, "iconPath"), module.getModuleFqName());
     }
-    return path != null && FileSystem.getFile(path).exists();
+    return path != null && OldFileSystem.getFile(path).exists();
   }
 
   private static JComponent _QueryFunction_JComponent_rpujt6_a2b0(SNode node, EditorContext editorContext) {

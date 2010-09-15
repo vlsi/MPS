@@ -20,15 +20,12 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.OldFileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.util.*;
 
 public abstract class BaseModelCache<T> implements ApplicationComponent {
@@ -127,7 +124,7 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
       }
       return descriptorFile.getParent().getParent().child(FileGenerationUtil.getCachesPath(suffix));
     } else {
-      return FileSystem.getFile(FileGenerationUtil.getCachesOutputDir(new File(outputPath)));
+      return OldFileSystem.getFile(FileGenerationUtil.getCachesOutputDir(new File(outputPath)));
     }
   }
 

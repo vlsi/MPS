@@ -33,7 +33,6 @@ import jetbrains.mps.vcs.ModelUtils.Version;
 import jetbrains.mps.vcs.diff.ui.MergeModelsDialog;
 import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.watching.ModelChangesWatcher;

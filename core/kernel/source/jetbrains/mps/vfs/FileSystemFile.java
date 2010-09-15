@@ -99,6 +99,11 @@ class FileSystemFile implements IFile {
     return new FileSystemFile(new File(myFile, suffix));
   }
 
+  @Override
+  public IFile findChild(String name) {
+    return child(name);
+  }
+
   public List<IFile> list(IFileNameFilter filter) {
     List<IFile> result = new ArrayList<IFile>();
 

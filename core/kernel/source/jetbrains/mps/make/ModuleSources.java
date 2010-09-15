@@ -19,7 +19,7 @@ import com.intellij.openapi.fileTypes.FileTypeManager;
 import jetbrains.mps.generator.fileGenerator.AllCaches;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.OldFileSystem;
 import jetbrains.mps.vfs.IFile;
 
 import java.util.*;
@@ -65,7 +65,7 @@ public class ModuleSources {
 
   private void collectInputFilesInfo() {
     for (String source : myModule.getSourcePaths()) {
-      collectInput(FileSystem.getFile(source), "");
+      collectInput(OldFileSystem.getFile(source), "");
     }
   }
 
