@@ -24,7 +24,7 @@ import java.util.*;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
-public class JarFileData {
+class JarFileData {
   private File myFile;
   private ZipFile myZipFile;
 

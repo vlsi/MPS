@@ -21,7 +21,6 @@ import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.vfs.IFile;
 
 import java.io.*;
@@ -245,8 +244,8 @@ public class JarFileClassPathItem extends RealClassPathItem {
   }
 
   private static File transformFile(IFile f) throws IOException {
-    if (f instanceof FileSystemFile) {
-      return ((FileSystemFile) f).getFile();
+    if (!FileSystem.isPackaged(f)) {
+      return new File(f.getAbsolutePath());
     }
 
     File tmpFile = File.createTempFile(f.getName(), "tmp");

@@ -16,7 +16,6 @@
 package jetbrains.mps.newvfs;
 
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;

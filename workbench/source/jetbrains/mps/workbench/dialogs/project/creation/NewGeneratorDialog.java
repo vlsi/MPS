@@ -35,7 +35,7 @@ import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.vfs.FileSystemFile;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
@@ -100,7 +100,7 @@ public class NewGeneratorDialog extends BaseDialog {
         chooser.setMode(TreeFileChooser.MODE_DIRECTORIES);
 
         if (oldPath != null && oldPath.length() != 0) {
-          chooser.setInitialFile(new FileSystemFile(oldPath));
+          chooser.setInitialFile(FileSystem.getFile(oldPath));
         }
 
         IFile result = chooser.showDialog();

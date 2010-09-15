@@ -59,4 +59,20 @@ public class FileSystem {
   public static IFile getDefaultDirectory() {
     return new FileSystemFile(new File(PathManager.getHomePath()));
   }
+
+  public static boolean isPackaged(IFile file) {
+    return file instanceof JarFileEntryFile;
+  }
+
+  public static File getBundleHome(IFile file) {
+    if (file != null) {
+      if (FileSystem.isPackaged(file)) {
+        return ((JarFileEntryFile) file).getJarFile();
+      }
+
+      return FileSystem.toFile(file.getParent());
+    }
+
+    return null;
+  }
 }

@@ -61,13 +61,12 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionFactory;
@@ -2646,7 +2645,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           if (!(md instanceof EditableSModelDescriptor)) return null;
           IFile ifile = ((EditableSModelDescriptor) md).getModelFile();
           if (ifile == null ||!ifile.exists()) return null;
-          VirtualFile vfile = VFileSystem.getFile(ifile);
+          VirtualFile vfile = ifile.toVirtualFile();
           if (vfile == null) return null;
           return new VirtualFile[]{vfile};
         }

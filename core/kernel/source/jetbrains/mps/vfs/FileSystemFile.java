@@ -25,7 +25,7 @@ import java.util.List;
 import java.net.URL;
 import java.net.MalformedURLException;
 
-public class FileSystemFile implements IFile {
+class FileSystemFile implements IFile {
   private File myFile;
 
   public FileSystemFile(@NotNull String file) {

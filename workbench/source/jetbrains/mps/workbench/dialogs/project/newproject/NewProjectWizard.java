@@ -24,9 +24,8 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
-import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.startup.StartupManager;
-
+import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.library.LanguageDesign_DevKit;
 import jetbrains.mps.project.MPSExtentions;
@@ -40,7 +39,7 @@ import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.vfs.FileSystemFile;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -231,7 +230,7 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
     if (!(dir.exists())) {
       dir.mkdirs();
     }
-    Language language = Language.createLanguage(myOptions.getLanguageNamespace(), new FileSystemFile(descriptorFile), mpsProject);
+    Language language = Language.createLanguage(myOptions.getLanguageNamespace(), FileSystem.getFile(descriptorFile), mpsProject);
     LanguageDescriptor languageDescriptor = language.getModuleDescriptor();
     ModuleReference ref = LanguageDesign_DevKit.MODULE_REFERENCE;
     languageDescriptor.getUsedDevkits().add(ref);
@@ -246,7 +245,7 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
   }
 
   private IFile createNewSolution() {
-    FileSystemFile solutionFile = new FileSystemFile(getSolutionFileName());
+    IFile solutionFile = FileSystem.getFile(getSolutionFileName());
     String fileName = solutionFile.getName();
 
     SolutionDescriptor solutionDescriptor = new SolutionDescriptor();

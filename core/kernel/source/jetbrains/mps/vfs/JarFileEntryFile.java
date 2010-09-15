@@ -25,7 +25,7 @@ import java.util.List;
 import java.net.URL;
 import java.net.MalformedURLException;
 
-public class JarFileEntryFile implements IFile {
+class JarFileEntryFile implements IFile {
   private JarFileData myJarFileData;
   private File myJarFile;
   private String myEntryPath;

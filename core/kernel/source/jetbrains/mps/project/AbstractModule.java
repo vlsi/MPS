@@ -16,7 +16,6 @@
 package jetbrains.mps.project;
 
 import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.lang.generator.structure.Generator_Language;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.dependency.DependencyManager;
@@ -38,8 +37,6 @@ import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.JarFileEntryFile;
-import jetbrains.mps.vfs.VFileSystem;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 
@@ -405,9 +402,7 @@ public abstract class AbstractModule implements IModule {
   private IFile getClassesDirParent() {
     if (isPackaged()) {
       String filename = getBundleHome().getAbsolutePath() + "!";
-      VirtualFile file = VFileSystem.getFile(filename);
-      if (file == null) return null;
-      return VFileSystem.toIFile(file);
+      return FileSystem.getFile(filename);
     } else {
       if (getDescriptorFile() == null) return null;
       return getDescriptorFile().getParent();
@@ -511,17 +506,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   public File getBundleHome() {
-    IFile descriptorFile = getDescriptorFile();
-
-    if (descriptorFile != null) {
-      if (descriptorFile instanceof JarFileEntryFile) {
-        return ((JarFileEntryFile) descriptorFile).getJarFile();
-      }
-
-      return FileSystem.toFile(descriptorFile.getParent());
-    }
-
-    return null;
+    return FileSystem.getBundleHome(getDescriptorFile());
   }
 
   public boolean isCompileInMPS() {
