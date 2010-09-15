@@ -1,5 +1,11 @@
 package jetbrains.mps.testbench;
 
+import jetbrains.mps.build.ant.WhatToDo;
+import jetbrains.mps.build.ant.make.MakeWorker;
+import jetbrains.mps.testbench.util.FilesCollector;
+import jetbrains.mps.testbench.util.FilesCollector.FilePattern;
+import jetbrains.mps.testbench.util.FilesCollector.FilePattern.Type;
+import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.util.JavaEnvUtils;
 
 import java.io.*;
@@ -16,13 +22,43 @@ import java.util.concurrent.CyclicBarrier;
  */
 public class MpsMakeHelper {
 
+  private static Object [][] PATTERNS = new Object [][] {
+    {Type.EXCLUDE, "**/classes/**"},
+    {Type.EXCLUDE, "**/classes_gen/**"},
+    {Type.EXCLUDE, "**/lib/**"},
+    {Type.EXCLUDE, "**/testMaterial/**"},
+    {Type.EXCLUDE, "**/**transformationTest**/**"},
+    {Type.EXCLUDE, "**/**testLogger**/**"},
+    {Type.EXCLUDE, "**/**sandbox**/**"},
+    {Type.EXCLUDE, "**/**Sandbox**/**"},
+    {Type.INCLUDE, "**/**.mpl"},
+    {Type.INCLUDE, "**/**.msd"},
+    {Type.EXCLUDE, "**/resolve.msd"},
+  } ;
+
+  private static String [] JVM_ARGS = {
+    "-Xss1024k",
+    "-Xmx1000m",
+    "-XX:MaxPermSize=92m",
+    "-XX:+HeapDumpOnOutOfMemoryError",
+  };
+
+  private static final boolean DIRECT_MAKE = true;
+
   public void make() {
+    if (DIRECT_MAKE) {
+      directMake();
+    } else {
+      makeWithAnt();
+    }
+  }
+
+  private void makeWithAnt() {
     String antHome = System.getProperty("ant.home");
-    if (antHome == null || !new File (antHome).exists()) {
+    if (antHome == null || !new File(antHome).exists()) {
       return;
     }
     
-    StringBuffer classPath = new StringBuffer(System.getProperty("java.class.path"));
     String fileSeparator = System.getProperty("file.separator");
     ProcessBuilder pb = new ProcessBuilder(
       JavaEnvUtils.getJreExecutable("java"),
@@ -35,6 +71,10 @@ public class MpsMakeHelper {
     );
     pb.directory(new File(System.getProperty("user.dir")));
 
+    executeProcess(pb);
+  }
+
+  private void executeProcess(ProcessBuilder pb) {
     final CyclicBarrier barrier = new CyclicBarrier(3);
     try {
       Process p = pb.start();
@@ -53,6 +93,123 @@ public class MpsMakeHelper {
     catch (BrokenBarrierException e) {}
   }
 
+  public void directMake () {
+    WhatToDo toDo = new WhatToDo();
+    List<File> path = Collections.singletonList(new File(System.getProperty("user.dir")));
+    List<FilePattern> filePtns = new ArrayList<FilePattern>();
+    for (Object[] ptns : PATTERNS) {
+      filePtns.add (FilesCollector.FilePattern.fromTypeAndPattern(ptns));
+    }
+    for (File f: FilesCollector.fastCollectFiles(filePtns, path)) {
+      toDo.addModuleFile(f);
+    }
+    toDo.updateLogLevel(2); // INFO
+    toDo.putProperty("mps.home", System.getProperty("user.dir"));
+
+//    MakeWorker worker = new MakeWorker(toDo, new SystemOutLogger());
+//    worker.work();
+    spawnWorkerAndWait(toDo);
+  }
+
+  private void spawnWorkerAndWait(WhatToDo myWhatToDo) {
+    String currentClassPathString = System.getProperty("java.class.path");
+    Set<File> classPaths = calculateClassPath(new File (System.getProperty("user.dir")));
+
+    List<String> commandLine = new ArrayList<String>();
+    commandLine.add(JavaEnvUtils.getJreExecutable("java"));
+    commandLine.addAll(Arrays.asList(JVM_ARGS));
+    StringBuilder sb = new StringBuilder ();
+    String pathSeparator = System.getProperty("path.separator");
+    for (File cp : classPaths) {
+      sb.append(pathSeparator);
+      sb.append(cp.getAbsolutePath());
+    }
+    commandLine.add("-classpath");
+    commandLine.add(currentClassPathString + sb.toString());
+
+    commandLine.add(MakeWorker.class.getCanonicalName());
+    try {
+      commandLine.add(myWhatToDo.dumpToTmpFile().getAbsolutePath());
+    } catch (FileNotFoundException e) {
+      throw new BuildException(e);
+    }
+
+    ProcessBuilder pb = new ProcessBuilder(
+      JavaEnvUtils.getJreExecutable("java")
+    );
+    pb.command(commandLine);
+    pb.directory(new File(System.getProperty("user.dir")));
+
+    executeProcess(pb);
+  }
+
+
+  private Set<File> calculateClassPath(File mpsHome) {
+    File[] pathsToLook;
+    if (new File(mpsHome.getAbsolutePath() + File.separator + "classes").exists()) {
+      pathsToLook = new File[]{new File(mpsHome.getAbsolutePath() + File.separator + "core"),
+        new File(mpsHome.getAbsolutePath() + File.separator + "workbench" + File.separator + "classes"),
+        new File(mpsHome.getAbsolutePath() + File.separator + "lib"),
+        new File(mpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "buildlanguage" + File.separator + "ant"),
+//        new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "uiLanguage"),
+        new File(mpsHome.getAbsolutePath() + File.separator + "core" + File.separator + "kernel" + File.separator + "xmlQuery" + File.separator + "runtime"),
+//        new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "gtext"),
+//        new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "builders"),
+        new File(mpsHome.getAbsolutePath() + File.separator + "MPSPlugin" + File.separator + "apiclasses")};
+    } else {
+      pathsToLook = new File[]{new File(mpsHome.getAbsolutePath() + File.separator + "lib"),
+        new File(mpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "generate.ant.task.jar"),
+        new File(mpsHome.getAbsolutePath() + File.separator + "plugin")};
+    }
+
+    Set<File> classPaths = new LinkedHashSet<File>();
+    for (File path : pathsToLook) {
+      if (!path.exists() || (!path.isDirectory() && !path.getAbsolutePath().endsWith(".jar"))) {
+        throw new BuildException(mpsHome + " is invalid MPS home path: path " + path + " does not exist or is not a directory or a jar file.");
+      } else if (!path.isDirectory()) {
+        classPaths.add(path.getAbsoluteFile());
+      } else {
+        gatherAllClassesAndJarsUnder(path, classPaths);
+      }
+    }
+    File mpsClasses = new File(mpsHome + File.separator + "classes");
+    if (mpsClasses.exists()) {
+      classPaths.add(mpsClasses);
+    }
+    return classPaths;
+  }
+
+  private void gatherAllClassesAndJarsUnder(File dir, Set<File> result) {
+    if (dir.getName().equals("classes") || dir.getName().equals("classes_gen") || dir.getName().equals("apiclasses")) {
+      result.add(dir);
+      return;
+    }
+
+    File[] children = dir.listFiles();
+
+    // we do not want trove different from ours in $mps.home$/lib
+    String troveJar = "trove" + File.separator + "lib" + File.separator + "trove";
+    // to provide right order of class loading,
+    // files go first
+    for (File f : children) {
+      if (!f.isDirectory()) {
+        if (f.getName().endsWith(".jar") && !f.getName().contains("ant.jar") && !f.getPath().contains(troveJar)) {
+          result.add(f);
+        }
+      }
+    }
+
+    for (File f : children) {
+      if (f.isDirectory()) {
+        if (f.getName().equals("classes") || f.getName().equals("classes_gen")) {
+          result.add(f);
+        } else {
+          gatherAllClassesAndJarsUnder(f, result);
+        }
+      }
+    }
+  }
+
   private void copyStream(final InputStream from, final PrintStream to, final CyclicBarrier barrier) {
     new Thread() {
       @Override
@@ -69,6 +226,5 @@ public class MpsMakeHelper {
       }
     }.start();
   }
-
 
 }
