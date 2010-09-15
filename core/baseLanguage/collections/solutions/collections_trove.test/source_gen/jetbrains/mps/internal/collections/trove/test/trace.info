@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="PrimMap_Test.java" startLine="30" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.internal.collections.trove.test.PrimMap_Test" />
+  <unitInfo fileName="PrimList_Test.java" startLine="25" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.internal.collections.trove.test.PrimList_Test" />
+  <unitInfo fileName="PrimSet_Test.java" startLine="30" startPosition="0" endLine="132" endPosition="0" unitName="jetbrains.mps.internal.collections.trove.test.PrimSet_Test" />
   <root nodeId="2767227637715419112">
     <nodeInfo nodeId="4485853999107907694" fileName="PrimList_Test.java" startLine="26" startPosition="49" endLine="27" endPosition="112" />
     <nodeInfo nodeId="4485853999107907704" fileName="PrimList_Test.java" startLine="27" startPosition="112" endLine="28" endPosition="99" />
@@ -46,6 +49,9 @@
     <nodeInfo nodeId="4485853999107906411" fileName="PrimList_Test.java" startLine="25" startPosition="45" endLine="40" endPosition="0" />
     <nodeInfo nodeId="2921267027982585625" fileName="PrimList_Test.java" startLine="68" startPosition="0" endLine="83" endPosition="0" />
     <nodeInfo nodeId="2767227637715625442" fileName="PrimList_Test.java" startLine="49" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="2921267027982585636" fileName="PrimList_Test.java" startLine="74" startPosition="0" endLine="74" endPosition="38">
+      <varInfo nodeId="2921267027982585637" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="2921267027982585639" fileName="PrimList_Test.java" startLine="74" startPosition="38" endLine="74" endPosition="38" />
     <scopeInfo nodeId="2921267027982585594" fileName="PrimList_Test.java" startLine="54" startPosition="43" endLine="55" endPosition="50" />
     <scopeInfo nodeId="2921267027982585684" fileName="PrimList_Test.java" startLine="61" startPosition="43" endLine="62" endPosition="49" />
