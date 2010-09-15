@@ -20,7 +20,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.vfs.OldFileSystem;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -124,7 +124,7 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
       }
       return descriptorFile.getParent().getParent().child(FileGenerationUtil.getCachesPath(suffix));
     } else {
-      return OldFileSystem.getFile(FileGenerationUtil.getCachesOutputDir(new File(outputPath)));
+      return FileSystem.getInstance().getFileByPath(FileGenerationUtil.getCachesOutputDir(new File(outputPath)).getAbsolutePath());
     }
   }
 

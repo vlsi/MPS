@@ -20,8 +20,8 @@ import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.OldFileSystem;
 import jetbrains.mps.smodel.SModelRepository;
 
 public class ChangeModelProcessor {
@@ -116,7 +116,7 @@ public class ChangeModelProcessor {
 
   public SModelDescriptor getModelDescriptorByName(String name) {
     String path = TEST_RESOURCES_PATH + name + ".mps";
-    IFile file = OldFileSystem.getFile(path);
+    IFile file = FileSystem.getInstance().getFileByPath(path);
     return SModelRepository.getInstance().findModel(file);
   }
 

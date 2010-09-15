@@ -22,7 +22,7 @@ import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.vfs.OldFileSystem;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -48,7 +48,7 @@ public class TreeFileChooser {
   /////////////////////////////
 
   @NotNull
-  private static IFile ourInitialSelectedFile = OldFileSystem.getFile(PathManager.getHomePath());
+  private static IFile ourInitialSelectedFile = FileSystem.getInstance().getFileByPath(PathManager.getHomePath());
 
   private int myMode = MODE_FILES;
   private IFileFilter myFileFilter = ALL_FILES_FILTER;
@@ -123,7 +123,7 @@ public class TreeFileChooser {
         if (file.isDirectory() && myDirectoriesAlwaysVisible) {
           return true;
         }
-        return myFileFilter.accept(OldFileSystem.getFile(file.getPath()));
+        return myFileFilter.accept(FileSystem.getInstance().getFileByPath(file.getPath()));
       }
     };
     descriptor.setTitle(myTitle == null ? "Select File" : myTitle);
@@ -133,7 +133,7 @@ public class TreeFileChooser {
 
     VirtualFile selection = LocalFileSystem.getInstance().findFileByIoFile(ourInitialSelectedFile.toFile());
     for (VirtualFile file : dialog.choose(selection, null)) {
-      res.add(OldFileSystem.getFile(file.getPath()));
+      res.add(FileSystem.getInstance().getFileByPath(file.getPath()));
     }
 
     if (!res.isEmpty()) ourInitialSelectedFile = res.get(0);

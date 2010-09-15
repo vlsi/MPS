@@ -20,8 +20,7 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ReadUtil;
-import jetbrains.mps.vfs.OldFileSystem;
-import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.*;
 
 import java.io.*;
 import java.net.MalformedURLException;
@@ -47,7 +46,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
   private static final HashSet<String> DEFAULT_VALUE = new HashSet<String>(0);
 
   protected JarFileClassPathItem(String path) {
-    this(OldFileSystem.getFile(path));
+    this(FileSystem.getInstance().getFileByPath(path));
   }
 
   private JarFileClassPathItem(IFile file) {
@@ -244,7 +243,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
   }
 
   private static File transformFile(IFile f) throws IOException {
-    if (!OldFileSystem.isPackaged(f)) {
+    if (!FileSystem.getInstance().isPackaged(f)) {
       return new File(f.getAbsolutePath());
     }
 

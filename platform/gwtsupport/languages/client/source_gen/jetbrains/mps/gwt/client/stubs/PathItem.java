@@ -5,10 +5,12 @@ package jetbrains.mps.gwt.client.stubs;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.vfs.OldFileSystem;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileNameFilter;
 
+import java.io.File;
+import java.lang.String;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,14 +23,15 @@ public abstract class PathItem {
     IFile container = null;
     for (String p : path.split("!")) {
       if (container == null) {
-        container = OldFileSystem.getFile((this.isJar(p) ?
+        File file1 = (this.isJar(p) ?
           p + "!/" :
           p
-        ));
+        );
+        container = FileSystem.getInstance().getFileByPath(file1.getAbsolutePath());
       } else {
-        File cf = asFile(OldFileSystem.getFile(container.getAbsolutePath() + p));
+        File cf = asFile(FileSystem.getInstance().getFileByPath(container.getAbsolutePath() + p));
         // '!' would have been added by JarFileEntryFile 
-        container = OldFileSystem.getFile(cf.getPath() + "!/");
+        container = FileSystem.getInstance().getFileByPath(cf.getPath() + "!/");
         // can't simply pass a file, must be a path with a '!' at the end 
       }
     }
@@ -129,7 +132,7 @@ public abstract class PathItem {
   }
 
   private static File asFile(IFile ifile) {
-    if (!OldFileSystem.isPackaged(ifile)) {
+    if (!FileSystem.getInstance().isPackaged(ifile)) {
       return new File(ifile.getAbsolutePath());
     }
     OutputStream os = null;

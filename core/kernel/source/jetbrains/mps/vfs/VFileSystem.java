@@ -26,6 +26,7 @@ import java.io.File;
 import java.util.LinkedList;
 import java.util.Arrays;
 
+@Deprecated
 public class VFileSystem {
 
   public static VirtualFile getFile(String path) {
@@ -88,14 +89,14 @@ public class VFileSystem {
 
   public static IFile toIFile(VirtualFile f) {
     if (f.getFileSystem() instanceof LocalFileSystem) {
-      return OldFileSystem.getFile(f.getPath());
+      return FileSystem.getInstance().getFileByPath(f.getPath());
     } else if (f.getFileSystem() instanceof JarFileSystem) {
       JarFileSystem jfs = JarFileSystem.getInstance();
       VirtualFile fileForJar = jfs.getVirtualFileForJar(f);
       assert fileForJar != null;
       String jarPath = fileForJar.getPath();
       String entryPath = f.getPath().substring(jarPath.length());
-      return OldFileSystem.getFile(jarPath + entryPath);
+      return FileSystem.getInstance().getFileByPath(jarPath + entryPath);
     } else {
       throw new RuntimeException();
     }

@@ -266,22 +266,22 @@ public class IdeaFile implements IFileEx {
   }
 
   @Override
-  public File getBundleHome() {
+  public IFile getBundleHome() {
     if (findVirtualFile()) {
       if (myVirtualFile.getFileSystem() instanceof JarFileSystem) {
         VirtualFile fileForJar = ((JarFileSystem) myVirtualFile.getFileSystem()).getVirtualFileForJar(myVirtualFile);
         if (fileForJar == null) {
           return null;
         }
-        return new File(fileForJar.getPath());
+        return new IdeaFile(myProvider, fileForJar);
       } else {
-        return new File(myVirtualFile.getParent().getPath());
+        return getParent();
       }
     } else {
       if (myPath.contains("!")) {
-        return new File(myPath.substring(0, myPath.indexOf("!")));
+        return new IdeaFile(myProvider, myPath.substring(0, myPath.indexOf("!")));
       } else {
-        return new File(myPath.substring(0, myPath.lastIndexOf(File.pathSeparator)));
+        return getParent();
       }
     }
   }

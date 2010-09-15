@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Macros;
-import jetbrains.mps.vfs.OldFileSystem;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
 import javax.swing.AbstractAction;
@@ -42,7 +42,7 @@ public class SelectImageFileButton extends JButton {
           Frame frame = (Frame) root;
           TreeFileChooser chooser = new TreeFileChooser();
           if (baseFile != null && baseFile.exists()) {
-            chooser.setInitialFile(OldFileSystem.getFile(baseFile.getAbsolutePath()));
+            chooser.setInitialFile(FileSystem.getInstance().getFileByPath(baseFile.getAbsolutePath()));
           }
           IFile result = chooser.showDialog(frame);
           if (result == null) {

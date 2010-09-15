@@ -31,7 +31,7 @@ import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vcs.VcsMigrationUtil;
-import jetbrains.mps.vfs.OldFileSystem;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
@@ -249,7 +249,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   }
 
   public boolean isPackaged() {
-    return OldFileSystem.isPackaged(getModelFile());
+    return FileSystem.getInstance().isPackaged(getModelFile());
   }
 
   public void replaceModel(SModel newModel) {

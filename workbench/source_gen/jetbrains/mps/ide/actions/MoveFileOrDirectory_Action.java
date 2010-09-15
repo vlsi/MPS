@@ -5,7 +5,7 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 
-import jetbrains.mps.vfs.OldFileSystem;
+import jetbrains.mps.vfs.FileSystem;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -118,7 +118,7 @@ public class MoveFileOrDirectory_Action extends GeneratedAction {
       JOptionPane.showMessageDialog(MoveFileOrDirectory_Action.this.frame, "Enter valid name");
       return true;
     }
-    if (OldFileSystem.getFile(result).toVirtualFile().findChild(MoveFileOrDirectory_Action.this.selectedFile.getName()) != null) {
+    if (FileSystem.getInstance().getFileByPath(result).toVirtualFile().findChild(MoveFileOrDirectory_Action.this.selectedFile.getName()) != null) {
       JOptionPane.showMessageDialog(MoveFileOrDirectory_Action.this.frame, MoveFileOrDirectory_Action.this.selectedFile.getName() + " already exists");
       return true;
     }

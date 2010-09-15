@@ -35,7 +35,7 @@ import jetbrains.mps.lang.plugin.behavior.BaseToolDeclaration_Behavior;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.lang.structure.editor.EditorUtil;
 import jetbrains.mps.plugins.MacrosUtil;
-import jetbrains.mps.vfs.OldFileSystem;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import javax.swing.JComponent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -581,7 +581,7 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
     if (module != null) {
       path = MacrosUtil.expandPath(SPropertyOperations.getString(node, "icon"), module.getModuleFqName());
     }
-    return path != null && OldFileSystem.getFile(path).exists();
+    return path != null && FileSystem.getInstance().getFileByPath(path).exists();
   }
 
   private static boolean renderingCondition_du6pr9_a6b1a(SNode node, EditorContext editorContext, IScope scope) {

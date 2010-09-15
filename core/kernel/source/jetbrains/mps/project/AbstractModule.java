@@ -35,12 +35,11 @@ import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.vcs.VcsMigrationUtil;
-import jetbrains.mps.vfs.OldFileSystem;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
@@ -279,7 +278,7 @@ public abstract class AbstractModule implements IModule {
     Set<StubModelsEntry> visited = new HashSet<StubModelsEntry>();
     List<StubModelsEntry> remove = new ArrayList<StubModelsEntry>();
     for (StubModelsEntry entry : descriptor.getStubModelEntries()) {
-      IFile cp = OldFileSystem.getFile(entry.getPath());
+      IFile cp = FileSystem.getInstance().getFileByPath(entry.getPath());
       if ((!cp.exists()) || cp.isDirectory() || visited.contains(entry)) {
         remove.add(entry);
       }
@@ -287,10 +286,10 @@ public abstract class AbstractModule implements IModule {
     }
     descriptor.getStubModelEntries().removeAll(remove);
 
-    File bundleHomeFile = getBundleHome();
+    IFile bundleHomeFile = getBundleHome();
     if (bundleHomeFile == null) return;
 
-    String bundleHomePath = bundleHomeFile.getPath();
+    String bundleHomePath = bundleHomeFile.getAbsolutePath();
     boolean contains = false;
     for (StubModelsEntry v : visited) {
       if (EqualUtil.equals(v.getPath(), bundleHomePath)) {
@@ -402,7 +401,7 @@ public abstract class AbstractModule implements IModule {
   private IFile getClassesDirParent() {
     if (isPackaged()) {
       String filename = getBundleHome().getAbsolutePath() + "!";
-      return OldFileSystem.getFile(filename);
+      return FileSystem.getInstance().getFileByPath(filename);
     } else {
       if (getDescriptorFile() == null) return null;
       return getDescriptorFile().getParent();
@@ -505,8 +504,8 @@ public abstract class AbstractModule implements IModule {
     }
   }
 
-  public File getBundleHome() {
-    return OldFileSystem.getBundleHome(getDescriptorFile());
+  public IFile getBundleHome() {
+    return FileSystem.getInstance().getBundleHome(getDescriptorFile());
   }
 
   public boolean isCompileInMPS() {

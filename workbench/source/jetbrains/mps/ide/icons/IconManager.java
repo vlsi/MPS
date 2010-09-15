@@ -27,7 +27,7 @@ import jetbrains.mps.project.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.util.Macros;
-import jetbrains.mps.vfs.OldFileSystem;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
@@ -307,7 +307,7 @@ public class IconManager {
   public static Icon loadIcon(String iconPath, boolean cache) {
     Icon icon = ourPathsToIcons.get(iconPath);
     if (icon == null) {
-      IFile file = OldFileSystem.getFile(iconPath);
+      IFile file = FileSystem.getInstance().getFileByPath(iconPath);
       icon = getIconFor(file);
       if (icon != null && cache) {
         ourPathsToIcons.put(iconPath, icon);

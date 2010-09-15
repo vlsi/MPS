@@ -6,7 +6,7 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vcs.VcsMigrationUtil;
-import jetbrains.mps.vfs.OldFileSystem;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import org.jdom.Document;
@@ -27,7 +27,7 @@ public class RefactoringsPersistence {
     String modelPath = modelFile.getAbsolutePath();
     String refactoringsPath = modelPath.substring(0, modelPath.length() - MPSExtentions.DOT_MODEL.length())
       + MPSExtentions.DOT_REFACTORINGS;
-    return OldFileSystem.getFile(refactoringsPath);
+    return FileSystem.getInstance().getFileByPath(refactoringsPath);
   }
 
   public static void save(IFile modelFile, RefactoringHistory refactorings) {

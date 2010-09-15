@@ -255,7 +255,7 @@ public class TestMakeOnRealProject {
     if (!(dir.exists())) {
       dir.mkdirs();
     }
-    Language language = Language.createLanguage(languageNamespace, OldFileSystem.getFile(descriptorFile), myModuleOwner);
+    Language language = Language.createLanguage(languageNamespace, FileSystem.getInstance().getFileByPath(descriptorFile.getAbsolutePath()), myModuleOwner);
     language.save();
 
     return language;
@@ -263,7 +263,7 @@ public class TestMakeOnRealProject {
 
   private Solution createNewSolution() {
     String solutionFileName = myTmpDir.getPath() + File.separator + "TestSolution" + File.separator + "testSolution" + MPSExtentions.DOT_SOLUTION;
-    IFile solutionFile = OldFileSystem.getFile(solutionFileName);
+    IFile solutionFile = FileSystem.getInstance().getFileByPath(solutionFileName);
 
     IFile dir = solutionFile.getParent();
     if (!(dir.exists())) {

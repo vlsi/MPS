@@ -3,7 +3,7 @@ package jetbrains.mps.reloading;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.annotation.UseCarefully;
-import jetbrains.mps.vfs.OldFileSystem;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nullable;
 
@@ -30,7 +30,7 @@ public class ClassPathFactory {
   }
 
   public RealClassPathItem createFromPath(String path, @Nullable IModule module) throws IOException {
-    IFile file = OldFileSystem.getFile(path);
+    IFile file = FileSystem.getInstance().getFileByPath(path);
 
     if (!file.exists()) {
       String moduleString = module == null ? "" : (" in " + module.toString());
@@ -68,7 +68,7 @@ public class ClassPathFactory {
 
   private RealClassPathItem get(String path) {
     if (!myCache.containsKey(path)) {
-      if (OldFileSystem.getFile(path).isDirectory()) {
+      if (FileSystem.getInstance().getFileByPath(path).isDirectory()) {
         myCache.put(path, new FileClassPathItem(path));
       } else {
         myCache.put(path, new JarFileClassPathItem(path));

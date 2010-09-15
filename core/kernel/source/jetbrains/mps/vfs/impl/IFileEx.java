@@ -7,5 +7,5 @@ import java.io.File;
 interface IFileEx extends IFile {
   boolean isPackaged();
 
-  File getBundleHome();
+  IFile getBundleHome();
 }

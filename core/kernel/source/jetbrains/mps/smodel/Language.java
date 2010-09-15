@@ -41,7 +41,7 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.vfs.OldFileSystem;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.MPSExtentions;
 import org.apache.commons.lang.ObjectUtils;
@@ -714,7 +714,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       for (StubModelsEntry entry : getRuntimeModelsEntries()) {
         String s = entry.getPath();
         try {
-          IFile file = OldFileSystem.getFile(s);
+          IFile file = FileSystem.getInstance().getFileByPath(s);
           if (!file.exists()) {
             LOG.debug("Can't find " + s);
             continue;
@@ -742,7 +742,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       Set<StubModelsEntry> visited = new HashSet<StubModelsEntry>();
       List<StubModelsEntry> remove = new ArrayList<StubModelsEntry>();
       for (StubModelsEntry entry : myLanguageDescriptor.getRuntimeStubModels()) {
-        IFile cp = OldFileSystem.getFile(entry.getPath());
+        IFile cp = FileSystem.getInstance().getFileByPath(entry.getPath());
         if ((!cp.exists()) || cp.isDirectory() || visited.contains(entry)) {
           remove.add(entry);
         }
@@ -750,7 +750,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       }
       myLanguageDescriptor.getRuntimeStubModels().removeAll(remove);
 
-      File bundleParent = getBundleHome().getParentFile();
+      File bundleParent = getBundleHome().getParent().toFile();
       String jarName = getModuleFqName() + "." + MPSExtentions.RUNTIME_ARCH;
       File jarFile = new File(bundleParent, jarName);
       String path = jarFile.getPath();

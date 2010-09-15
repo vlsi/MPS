@@ -21,7 +21,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.uiLanguage.runtime.events.Events;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vcs.VcsMigrationUtil;
-import jetbrains.mps.vfs.OldFileSystem;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import org.jdesktop.beansbinding.AutoBinding;
@@ -253,7 +253,7 @@ public class NewDevKitDialogContentPane extends JPanel {
     }
     DevkitDescriptor descriptor = new DevkitDescriptor();
     descriptor.setNamespace(myThis.getDevkitName());
-    IFile devkitFile = OldFileSystem.getFile(devkitPath);
+    IFile devkitFile = FileSystem.getInstance().getFileByPath(devkitPath.getAbsolutePath());
     DevkitDescriptorPersistence.saveDevKitDescriptor(descriptor, devkitFile);
     DevKit devkit = myThis.getProject().addProjectDevKit(devkitFile);
     ApplicationManager.getApplication().invokeLater(new Runnable() {

@@ -27,7 +27,7 @@ import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Macros;
-import jetbrains.mps.vfs.OldFileSystem;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -85,7 +85,7 @@ public abstract class BaseLibraryManager implements BaseComponent, Configurable,
         };
         for (Library l : getLibraries()) {
           if (l instanceof PredefinedLibrary) continue;
-          myRepository.readModuleDescriptors(OldFileSystem.getFile(l.getPath()), myOwner);
+          myRepository.readModuleDescriptors(FileSystem.getInstance().getFileByPath(l.getPath()), myOwner);
         }
         fireOnLoad(myOwner);
 

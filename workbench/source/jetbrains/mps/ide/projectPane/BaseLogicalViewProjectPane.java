@@ -384,7 +384,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     List<IModule> modules = getSelectedModules();
     if (modules != null) {
       for (IModule module : modules) {
-        File home = module.getBundleHome();
+        IFile home = module.getBundleHome();
         if (home != null) {
           VirtualFile vfile = VFileSystem.getFile(home);
           if (vfile != null) {

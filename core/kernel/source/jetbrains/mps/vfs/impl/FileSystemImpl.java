@@ -7,8 +7,6 @@ import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.io.File;
-
 /**
  * @author Evgeny Gerashchenko
  */
@@ -32,7 +30,7 @@ public class FileSystemImpl extends FileSystem {
   }
 
   @Override
-  public File getBundleHome(IFile file) {
+  public IFile getBundleHome(IFile file) {
     if (file instanceof IFileEx) {
       return ((IFileEx) file).getBundleHome();
     } else {

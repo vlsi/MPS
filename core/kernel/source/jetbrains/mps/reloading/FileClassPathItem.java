@@ -20,7 +20,7 @@ import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ReadUtil;
-import jetbrains.mps.vfs.OldFileSystem;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
 import java.io.File;
@@ -63,7 +63,7 @@ public class FileClassPathItem extends RealClassPathItem {
     }
 
     String path = myClassPath + File.separatorChar + name.replace('.', File.separatorChar) + MPSExtentions.DOT_CLASSFILE;
-    IFile file = OldFileSystem.getFile(path);
+    IFile file = FileSystem.getInstance().getFileByPath(path);
     try {
       byte[] result = null;
       InputStream inp = null;
@@ -84,7 +84,7 @@ public class FileClassPathItem extends RealClassPathItem {
 
   public ClassifierKind getClassifierKind(String name) {
     String path = myClassPath + File.separatorChar + name.replace('.', File.separatorChar) + MPSExtentions.DOT_CLASSFILE;
-    IFile file = OldFileSystem.getFile(path);
+    IFile file = FileSystem.getInstance().getFileByPath(path);
     try {
       InputStream inp = null;
       try {
@@ -103,7 +103,7 @@ public class FileClassPathItem extends RealClassPathItem {
   public URL getResource(String name) {
     checkValidity();
     try {
-      IFile resourceFile = OldFileSystem.getFile(myClassPath + File.separator + name.replace('/', File.separatorChar));
+      IFile resourceFile = FileSystem.getInstance().getFileByPath(myClassPath + File.separator + name.replace('/', File.separatorChar));
       if (!resourceFile.exists()) return null;
       return resourceFile.toURL();
     } catch (MalformedURLException e) {
@@ -195,7 +195,7 @@ public class FileClassPathItem extends RealClassPathItem {
   public IFile getModelDir(String namespace) {
     checkValidity();
     if (namespace == null) namespace = "";
-    return OldFileSystem.getFile(myClassPath + File.separatorChar + namespace.replace('.', File.separatorChar));
+    return FileSystem.getInstance().getFileByPath(myClassPath + File.separatorChar + namespace.replace('.', File.separatorChar));
   }
 
 

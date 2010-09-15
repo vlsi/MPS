@@ -68,7 +68,7 @@ public interface IModule extends ModelOwner {
 
   IFile getClassesGen();
 
-  File getBundleHome();
+  IFile getBundleHome();
 
   @NotNull
   IScope getScope();

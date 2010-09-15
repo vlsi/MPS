@@ -22,7 +22,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Macros;
-import jetbrains.mps.vfs.OldFileSystem;
+import jetbrains.mps.vfs.FileSystem;
 
 import javax.swing.SwingUtilities;
 import java.awt.Graphics;
@@ -124,7 +124,7 @@ public class EditorCell_Image extends EditorCell_Basic {
   }
 
   protected void setImageFileName(String fileName) {
-    if (fileName != null && OldFileSystem.getFile(fileName).exists()) {
+    if (fileName != null && FileSystem.getInstance().getFileByPath(fileName).exists()) {
       myImage = Toolkit.getDefaultToolkit().getImage(fileName);
     }
   }

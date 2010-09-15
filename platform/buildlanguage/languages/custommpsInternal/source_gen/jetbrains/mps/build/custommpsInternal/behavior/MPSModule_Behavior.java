@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.build.packaging.behavior.Module_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import java.io.File;
+import jetbrains.mps.vcs.IFile
 import jetbrains.mps.util.Macros;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -28,7 +28,7 @@ public class MPSModule_Behavior {
   public static SNode call_createPathFromMPSHome_1240033962895(SNode thisNode) {
     SNode compositePath = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.CompositePathComponent", null);
     IModule module = Module_Behavior.call_getModule_1213877515148(thisNode);
-    File moduleHome = module.getBundleHome();
+    IFile moduleHome = module.getBundleHome();
     String relativePath = Macros.mpsHomeMacros().shrinkPath(moduleHome.getAbsolutePath(), new File(PathManager.getHomePath()));
     relativePath = relativePath.substring(relativePath.indexOf("}" + Macros.SEPARATOR_CHAR) + 2);
     SNode pathComponent = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.PathComponent", null);

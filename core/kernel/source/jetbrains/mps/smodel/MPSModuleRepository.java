@@ -26,7 +26,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.ManyToManyMap;
-import jetbrains.mps.vfs.OldFileSystem;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.MPSExtentions;
 import org.jetbrains.annotations.NonNls;
@@ -429,7 +429,7 @@ public class MPSModuleRepository implements ApplicationComponent {
 
     while (roots.hasNext()) {
       RootReference root = roots.next();
-      IFile moduleRoot = OldFileSystem.getFile(root.getPath());
+      IFile moduleRoot = FileSystem.getInstance().getFileByPath(root.getPath());
 
       if (moduleRoot.exists()) {
         readModuleDescriptors(moduleRoot, owner);
@@ -473,7 +473,7 @@ public class MPSModuleRepository implements ApplicationComponent {
       if (excludes.contains(childDir)) continue;
 
       if (childDir.getName().endsWith(MPSExtentions.MPS_ARCH)) {
-        IFile dirInJar = OldFileSystem.getFile(childDir.getAbsolutePath() + "!/" + AbstractModule.MODULE_DIR);
+        IFile dirInJar = FileSystem.getInstance().getFileByPath(childDir.getAbsolutePath() + "!/" + AbstractModule.MODULE_DIR);
         result.addAll(readModuleDescriptors(dirInJar, owner, excludes));
       }
 
@@ -500,7 +500,7 @@ public class MPSModuleRepository implements ApplicationComponent {
       module = (AbstractModule) registerModule(dir, owner, cls);
 
       for (String sourceDir : module.getSourcePaths()) {
-        excludes.add(OldFileSystem.getFile(sourceDir));
+        excludes.add(FileSystem.getInstance().getFileByPath(sourceDir));
       }
       if (module.getGeneratorOutputPath() != null) {
         excludes.add(BaseModelCache.getCachesDir(module, module.getGeneratorOutputPath()));
@@ -509,14 +509,14 @@ public class MPSModuleRepository implements ApplicationComponent {
         excludes.add(BaseModelCache.getCachesDir(module, module.getTestsGeneratorOutputPath()));
       }
       for (SModelRoot root : module.getSModelRoots()) {
-        excludes.add(OldFileSystem.getFile(root.getPath()));
+        excludes.add(FileSystem.getInstance().getFileByPath(root.getPath()));
       }
 
       if (module.getClassesGen() != null) {
         excludes.add(module.getClassesGen());
       }
       for (StubPath sp : module.getStubPaths()) {
-        excludes.add(OldFileSystem.getFile(sp.getPath()));
+        excludes.add(FileSystem.getInstance().getFileByPath(sp.getPath()));
       }
     } catch (Throwable t) {
       LOG.error("Fail to load module from descriptor " + dir.getAbsolutePath(), t);

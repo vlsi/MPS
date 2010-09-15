@@ -5,8 +5,6 @@ import jetbrains.mps.vfs.impl.FileSystemImpl;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.io.File;
-
 /**
  * @author Evgeny Gerashchenko
  */
@@ -20,7 +18,7 @@ public abstract class FileSystem {
 
   public abstract boolean isPackaged(IFile file);
 
-  public abstract File getBundleHome(IFile file); 
+  public abstract IFile getBundleHome(IFile file); 
 
   // This method should not be used in MPS kernel, only in workbench
   @Nullable

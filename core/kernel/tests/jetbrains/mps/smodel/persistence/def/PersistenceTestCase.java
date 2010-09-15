@@ -23,7 +23,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.persistence.def.v4.ModelReader4;
 import jetbrains.mps.smodel.persistence.def.v4.ModelWriter4;
-import jetbrains.mps.vfs.OldFileSystem;
+import jetbrains.mps.vfs.FileSystem;
 import org.jdom.Document;
 
 import java.io.File;
@@ -46,7 +46,7 @@ public class PersistenceTestCase extends BaseMPSTest {
   }
 
   private void doWriteReadConsistencyTest(final IModelReader reader, final IModelWriter writer) {
-    final SModelDescriptor modelDescriptor = SModelRepository.getInstance().findModel(OldFileSystem.getFile("workbench" + File.separator +
+    final SModelDescriptor modelDescriptor = SModelRepository.getInstance().findModel(FileSystem.getInstance().getFileByPath("workbench" + File.separator +
       "ideSolution" + File.separator +
       "jetbrains" + File.separator +
       "mps" + File.separator +

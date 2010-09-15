@@ -5,7 +5,7 @@ package jetbrains.mps.debug.api.info;
 import jetbrains.mps.generator.fileGenerator.BaseModelCache;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.generator.fileGenerator.FileGenerationManager;
-import jetbrains.mps.vfs.OldFileSystem;
+import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.fileGenerator.CacheGenerationContext;
@@ -102,7 +102,7 @@ public class BLDebugInfoCache extends BaseModelCache<DebugInfo> {
       LOG.assertLog(false, "Can not generate trace info for a packaged module.");
     }
 
-    return OldFileSystem.getFile(outputPath);
+    return FileSystem.getInstance().getFileByPath(outputPath);
   }
 
   public static BLDebugInfoCache getInstance() {

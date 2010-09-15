@@ -20,7 +20,7 @@ import jetbrains.mps.vcs.ModelUtils;
 import jetbrains.mps.vcs.ModelUtils.Version;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.vfs.OldFileSystem;
+import jetbrains.mps.vfs.FileSystem;
 
 import java.io.File;
 import java.io.IOException;
@@ -32,7 +32,7 @@ public class MergeTestUtil {
   }
 
   public static void saveTestModel(final SModel model, final File file) {
-    ModelPersistence.saveModel(model, OldFileSystem.getFile(file), true, false);
+    ModelPersistence.saveModel(model, FileSystem.getInstance().getFileByPath(file.getAbsolutePath()), true, false);
   }
 
   public static enum TestVersion implements Version {

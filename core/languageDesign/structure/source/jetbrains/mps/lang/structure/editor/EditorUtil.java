@@ -23,7 +23,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.Macros;
-import jetbrains.mps.vfs.OldFileSystem;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
 import javax.swing.*;
@@ -57,7 +57,7 @@ public class EditorUtil {
         chooser.setContext(context.getOperationContext());
 
         if (baseFile != null && baseFile.exists()) {
-          chooser.setInitialFile(OldFileSystem.getFile(baseFile));
+          chooser.setInitialFile(FileSystem.getInstance().getFileByPath(baseFile.getAbsolutePath()));
         }
 
         IFile result = chooser.showDialog(frame);

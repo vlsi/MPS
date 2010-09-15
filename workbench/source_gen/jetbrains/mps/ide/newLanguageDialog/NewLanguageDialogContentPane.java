@@ -25,7 +25,7 @@ import jetbrains.mps.uiLanguage.runtime.events.Events;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vcs.VcsMigrationUtil;
-import jetbrains.mps.vfs.OldFileSystem;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.VFileSystem;
 import org.jdesktop.beansbinding.AutoBinding;
 import org.jdesktop.beansbinding.BeanProperty;
@@ -304,7 +304,7 @@ public class NewLanguageDialogContentPane extends JPanel {
     if (!(dir.exists())) {
       dir.mkdirs();
     }
-    final Language language = Language.createLanguage(myThis.getLanguageNamespace(), OldFileSystem.getFile(descriptorFile), myThis.getProject());
+    final Language language = Language.createLanguage(myThis.getLanguageNamespace(), FileSystem.getInstance().getFileByPath(descriptorFile.getAbsolutePath()), myThis.getProject());
     LanguageDescriptor languageDescriptor = language.getModuleDescriptor();
     ModuleReference devkitRef = LanguageDesign_DevKit.MODULE_REFERENCE;
     languageDescriptor.getUsedDevkits().add(devkitRef);
@@ -326,7 +326,7 @@ public class NewLanguageDialogContentPane extends JPanel {
   /*package*/ Solution createRuntimeSolution() {
     String descriptorPath = myThis.getLanguagePath() + File.separator + "runtime" + File.separator + myThis.getLanguageNamespace() + ".runtime" + MPSExtentions.DOT_SOLUTION;
     final File file = new File(descriptorPath);
-    Solution solution = NewModuleUtil.createNewSolution(OldFileSystem.getFile(file), myThis.getProject());
+    Solution solution = NewModuleUtil.createNewSolution(FileSystem.getInstance().getFileByPath(file.getAbsolutePath()), myThis.getProject());
     solution.getModuleDescriptor().setCompileInMPS(myThis.getCompileInMPS());
     return solution;
   }
@@ -334,7 +334,7 @@ public class NewLanguageDialogContentPane extends JPanel {
   /*package*/ Solution createSandboxSolution() {
     String descriptorPath = myThis.getLanguagePath() + File.separator + "sandbox" + File.separator + myThis.getLanguageNamespace() + ".sandbox" + MPSExtentions.DOT_SOLUTION;
     final File file = new File(descriptorPath);
-    Solution solution = NewModuleUtil.createNewSolution(OldFileSystem.getFile(file), myThis.getProject());
+    Solution solution = NewModuleUtil.createNewSolution(FileSystem.getInstance().getFileByPath(file.getAbsolutePath()), myThis.getProject());
     solution.getModuleDescriptor().setCompileInMPS(myThis.getCompileInMPS());
     return solution;
   }
