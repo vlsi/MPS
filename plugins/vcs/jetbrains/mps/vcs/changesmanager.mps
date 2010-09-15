@@ -2976,7 +2976,7 @@
               <node role="logExpression:0" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="3367145324776993280" />
               <node role="exception:0" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3367145324776993281">
                 <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="3367145324776993283">
-                  <link role="baseMethodDeclaration:3" targetNodeId="49.~AssertionError.&lt;init&gt;(java.lang.String)" resolveInfo="AssertionError" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="49.~AssertionError.&lt;init&gt;(java.lang.Object)" resolveInfo="AssertionError" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="3367145324776993284">
                     <property name="value:3" value="adding change to model without base version" />
                   </node>
@@ -3197,7 +3197,7 @@
               <node role="logExpression:0" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="3367145324776993297" />
               <node role="exception:0" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3367145324776993298">
                 <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="3367145324776993299">
-                  <link role="baseMethodDeclaration:3" targetNodeId="49.~AssertionError.&lt;init&gt;(java.lang.String)" resolveInfo="AssertionError" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="49.~AssertionError.&lt;init&gt;(java.lang.Object)" resolveInfo="AssertionError" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="3367145324776993300">
                     <property name="value:3" value="removing change from model without base version" />
                   </node>
@@ -6087,8 +6087,8 @@
           <node role="catchClause:3" type="jetbrains.mps.baseLanguage.structure.CatchClause:3" id="1281598945698463658">
             <node role="throwable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1281598945698463659">
               <property name="name:3" value="exception" />
-              <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1281598945698463660">
-                <link role="classifier:3" targetNodeId="49.~Throwable" resolveInfo="Throwable" />
+              <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7752549342364864265">
+                <link role="classifier:3" targetNodeId="49.~Exception" resolveInfo="Exception" />
               </node>
             </node>
             <node role="catchBody:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1281598945698463661">

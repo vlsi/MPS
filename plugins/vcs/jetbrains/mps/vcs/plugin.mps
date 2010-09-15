@@ -1368,30 +1368,6 @@
                   <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ContinueStatement:3" id="7545884443035896346" />
                 </node>
               </node>
-              <node role="catchClause:3" type="jetbrains.mps.baseLanguage.structure.CatchClause:3" id="7545884443035896347">
-                <node role="throwable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7545884443035896348">
-                  <property name="name:3" value="e" />
-                  <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7545884443035896349">
-                    <link role="classifier:3" targetNodeId="11.~ModelDiffTool$ReadException" resolveInfo="ModelDiffTool.ReadException" />
-                  </node>
-                </node>
-                <node role="catchBody:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7545884443035896350">
-                  <node role="statement:3" type="jetbrains.mps.baseLanguage.logging.structure.LogStatement:0" id="7545884443035896351">
-                    <property name="severity:0" value="warn" />
-                    <property name="hasException:0" value="true" />
-                    <node role="logExpression:0" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="7545884443035896352" />
-                    <node role="exception:0" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7545884443035896353">
-                      <link role="variableDeclaration:3" targetNodeId="7545884443035896348" resolveInfo="e" />
-                    </node>
-                  </node>
-                  <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="7545884443035896354">
-                    <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="7545884443035896355">
-                      <property name="text:3" value="Skip this backup" />
-                    </node>
-                  </node>
-                  <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ContinueStatement:3" id="7545884443035896356" />
-                </node>
-              </node>
             </node>
           </node>
         </node>

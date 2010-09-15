@@ -81,16 +81,14 @@ public class ModelUtils {
       modelDescriptor.replaceModel(model);
     } catch (IOException e) {
       LOG.error(e);
-    } catch (ReadException e) {
-      LOG.error(e);
     }
   }
 
-  public static SModel[] loadZippedModels(File zipfile, Version[] versions) throws IOException, ReadException {
+  public static SModel[] loadZippedModels(File zipfile, Version[] versions) throws IOException {
     return loadZippedModels(zipfile, versions, true);
   }
 
-  public static SModel[] loadZippedModels(File zipfile, Version[] versions, boolean useZipName) throws IOException, ReadException {
+  public static SModel[] loadZippedModels(File zipfile, Version[] versions, boolean useZipName) throws IOException {
     File tmpdir = jetbrains.mps.util.FileUtil.createTmpDir();
     UnzipUtil.unzip(zipfile, tmpdir);
 
@@ -135,7 +133,7 @@ public class ModelUtils {
     return models;
   }
 
-  public static SModel readModel(byte[] bytes, String path) throws IOException, ReadException {
+  public static SModel readModel(byte[] bytes, String path) throws IOException {
     final String[] modelNameAndStereotype = getModelNameAndStereotype(path);
     try {
       if (bytes.length == 0) {
@@ -147,12 +145,12 @@ public class ModelUtils {
           return ModelPersistence.readModel(document, modelNameAndStereotype[0], modelNameAndStereotype[1]);
         }
       });
-    } catch (Throwable t) {
+    } catch (Exception t) {
       throw new ReadException(t);
     }
   }
 
-  public static SModel readModel(String content, String path) throws IOException, ReadException {
+  public static SModel readModel(String content, String path) throws IOException {
     final String[] modelNameAndStereotype = getModelNameAndStereotype(path);
     try {
       if (content.isEmpty()) {
@@ -164,7 +162,7 @@ public class ModelUtils {
           return ModelPersistence.readModel(document, modelNameAndStereotype[0], modelNameAndStereotype[1]);
         }
       });
-    } catch (Throwable t) {
+    } catch (Exception t) {
       throw new ReadException(t);
     }
   }

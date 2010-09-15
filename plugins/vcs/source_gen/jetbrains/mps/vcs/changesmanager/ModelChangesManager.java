@@ -646,7 +646,7 @@ __switch__:
           statusManager.fileStatusChanged(virtualFile);
         }
       }
-    } catch (Throwable exception) {
+    } catch (Exception exception) {
       if (log.isWarnEnabled()) {
         log.warn("Exception during updating changes for model " + myModelDescriptor.getLongName(), exception);
       }

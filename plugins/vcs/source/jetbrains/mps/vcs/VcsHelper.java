@@ -114,8 +114,6 @@ public class VcsHelper {
       return showDiffDialog(onDisk, inMemory, modelFile, ProjectManager.getInstance().getOpenProjects()[0]);
     } catch (IOException e) {
       LOG.error(e);
-    } catch (ReadException e) {
-      LOG.error(e);
     }
     return true;
   }

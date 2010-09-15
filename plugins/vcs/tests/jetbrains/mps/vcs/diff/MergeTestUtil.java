@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.vcs.diff;
 
-import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
 import jetbrains.mps.vcs.ModelUtils;
 import jetbrains.mps.vcs.ModelUtils.Version;
 import jetbrains.mps.smodel.SModel;
@@ -27,7 +26,7 @@ import java.io.IOException;
 
 public class MergeTestUtil {
 
-  public static SModel[] loadTestModels(File zipfile) throws IOException, ReadException {
+  public static SModel[] loadTestModels(File zipfile) throws IOException {
     return ModelUtils.loadZippedModels(zipfile, TestVersion.values());
   }
 

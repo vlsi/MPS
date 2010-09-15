@@ -76,8 +76,6 @@ public class ModelDiffTool implements DiffTool {
       };
       d.addAction(action);
       d.showDialog();
-    } catch (IOException e) {
-      e.printStackTrace();
     } catch (ReadException e) {
       // if we cant read model from file
       // we try to use idea diff tool instead
@@ -86,6 +84,8 @@ public class ModelDiffTool implements DiffTool {
       if (ideaDiffTool.canShow(request)) {
         ideaDiffTool.show(request);
       }
+    } catch (IOException e) {
+      e.printStackTrace();
     }
   }
 
@@ -98,7 +98,7 @@ public class ModelDiffTool implements DiffTool {
     return "";
   }
 
-  public static SModel readModel(DiffContent content, String path) throws IOException, ReadException {
+  public static SModel readModel(DiffContent content, String path) throws IOException {
     if (content instanceof DocumentContent || content instanceof FileContent) {
       SModelRepository modelRepository = SModelRepository.getInstance();
       final SModelDescriptor modelDescriptor = modelRepository.findModel(VFileSystem.toIFile(content.getFile()));
@@ -128,8 +128,8 @@ public class ModelDiffTool implements DiffTool {
     return type.equals(MPSFileTypeFactory.MODEL_FILE_TYPE);
   }
 
-  public static class ReadException extends Throwable {
-    public ReadException(Throwable t) {
+  public static class ReadException extends IOException {
+    public ReadException(Exception t) {
       super(t);
     }
   }
