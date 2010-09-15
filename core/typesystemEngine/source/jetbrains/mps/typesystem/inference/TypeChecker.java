@@ -103,6 +103,7 @@ public class TypeChecker implements ApplicationComponent {
     return myRuntimeSupport;
   }
 
+  //todo sync
   public SubtypingCache getSubtypingCache() {
     return mySubtypingCache;
   }
