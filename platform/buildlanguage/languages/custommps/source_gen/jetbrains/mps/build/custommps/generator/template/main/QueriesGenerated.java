@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.packaging.behavior.IVariableHolder_Behavior;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -254,15 +253,6 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1237901351779(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "licencePath", true);
-  }
-
-  public static SNode sourceNodeQuery_1237471483870(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode module = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Module", null);
-    SPropertyOperations.set(module, "id", SPropertyOperations.getString(_context.getNode(), "id"));
-    for (SNode config : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "configuration", true))) {
-      ListSequence.fromList(SLinkOperations.getTargets(module, "configuration", true)).addElement(config);
-    }
-    return module;
   }
 
   public static SNode sourceNodeQuery_2521628527372173469(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

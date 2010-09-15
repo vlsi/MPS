@@ -55,7 +55,7 @@ public class CheckIncludedLanguages_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       List<Language> langs = MPSModuleRepository.getInstance().getAllLanguages();
-      for (SNode moduleNode : ListSequence.fromList(SModelOperations.getNodes(SNodeOperations.getModel(SNodeOperations.getNode("r:2d21a960-b27b-446c-b511-65afab987b27(jetbrains.mps.build.custommps.modules)", "4062013737453621622")), "jetbrains.mps.build.custommpsInternal.structure.MPSModule"))) {
+      for (SNode moduleNode : ListSequence.fromList(SModelOperations.getNodes(SNodeOperations.getModel(SNodeOperations.getNode("r:2d21a960-b27b-446c-b511-65afab987b27(jetbrains.mps.build.custommps.modules)", "4062013737453621622")), "jetbrains.mps.build.packaging.structure.Module"))) {
         IModule module = Module_Behavior.call_getModule_1213877515148(moduleNode);
         if (!(module instanceof Language)) {
           continue;

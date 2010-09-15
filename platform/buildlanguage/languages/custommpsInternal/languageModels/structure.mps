@@ -25,14 +25,6 @@
   <maxImportIndex value="2" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="7" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1240033962434">
-    <property name="name:0" value="MPSModule" />
-    <link role="extends:0" targetNodeId="2.1203599702327:7" resolveInfo="Module" />
-    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1240033962435">
-      <property name="value:0" value="mpsmodule" />
-      <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1240033962436">
     <property name="name:0" value="UndeclaredVariableReference" />
     <property name="rootable:0" value="false" />

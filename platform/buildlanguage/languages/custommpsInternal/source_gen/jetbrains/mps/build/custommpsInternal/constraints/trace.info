@@ -2,12 +2,7 @@
 <debugInfo>
   <unitInfo fileName="IfProjectComponent_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.build.custommpsInternal.constraints.IfProjectComponent_Constraints" />
   <unitInfo fileName="UndeclaredVariableReference_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.build.custommpsInternal.constraints.UndeclaredVariableReference_Constraints" />
-  <unitInfo fileName="MPSModule_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.build.custommpsInternal.constraints.MPSModule_Constraints" />
   <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.build.custommpsInternal.constraints.ConstraintsDescriptor" />
-  <root nodeId="1240033963211">
-    <nodeInfo nodeId="1240033963214" fileName="MPSModule_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="83" />
-    <scopeInfo nodeId="1240033963213" fileName="MPSModule_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="83" />
-  </root>
   <root nodeId="1240033963218">
     <nodeInfo nodeId="1240033963221" fileName="UndeclaredVariableReference_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="83" />
     <scopeInfo nodeId="1240033963220" fileName="UndeclaredVariableReference_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="83" />
