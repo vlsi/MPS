@@ -991,5 +991,37 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8431776905956256046" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="8431776905956790251">
+    <link role="concept" targetNodeId="1.8431776905956790237" resolveInfo="UndeclaredVariableReference" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="8431776905956790252">
+      <property name="name" value="getValue" />
+      <link role="overriddenMethod" targetNodeId="9.1213877173054" resolveInfo="getValue" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8431776905956790253">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="8431776905956790254">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="8431776905956790255">
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="8431776905956790256">
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="8431776905956790257">
+                <property name="value:3" value="$" />
+              </node>
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8431776905956790258">
+                <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="8431776905956790259" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="8431776905956790260">
+                  <link role="property:16" targetNodeId="1.8431776905956790240" resolveInfo="antName" />
+                </node>
+              </node>
+            </node>
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="8431776905956790261">
+              <property name="value:3" value="$" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="8431776905956790262" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8431776905956790263" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="8431776905956790264">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8431776905956790265" />
+    </node>
+  </node>
 </model>
 

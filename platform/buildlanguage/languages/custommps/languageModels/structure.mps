@@ -3,6 +3,7 @@
   <persistence version="4" />
   <refactoringHistory />
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
+  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
@@ -100,6 +101,28 @@
     </node>
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="2235195415637073417">
       <link role="intfc:0" targetNodeId="2v.1240832649054:7" resolveInfo="INotBuildableComponent" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="8431776905956790237">
+    <property name="name:0" value="UndeclaredVariableReference" />
+    <property name="rootable:0" value="false" />
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="8431776905956790238">
+      <link role="intfc:0" targetNodeId="2v.1205339194346:7" resolveInfo="IStringExpression" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="8431776905956790239">
+      <property name="value:0" value="undeclared variable" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
+    </node>
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="8431776905956790240">
+      <property name="name:0" value="antName" />
+      <link role="dataType:0" targetNodeId="2v.1223640176546:7" resolveInfo="StringWithoutSpaces" />
+    </node>
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="8431776905956790241">
+      <property name="name:0" value="name" />
+      <link role="dataType:0" targetNodeId="2v.1223640176546:7" resolveInfo="StringWithoutSpaces" />
+    </node>
+    <node role="export$attribute:0" type="jetbrains.mps.lang.core.structure.ExportScopeNamespace:0" id="8431776905956790242">
+      <property name="namespace:0" value="jetbrains.mps.build" />
     </node>
   </node>
 </model>

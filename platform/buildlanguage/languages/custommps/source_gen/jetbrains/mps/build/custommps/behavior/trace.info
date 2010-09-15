@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="UndeclaredVariableReference_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.UndeclaredVariableReference_Behavior" />
   <unitInfo fileName="MPSDistribution_Behavior.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.MPSDistribution_Behavior" />
   <unitInfo fileName="LibraryFolder_Behavior.java" startLine="11" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.LibraryFolder_Behavior" />
   <unitInfo fileName="MPSBuild_Behavior.java" startLine="31" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.MPSBuild_Behavior" />
@@ -114,6 +115,11 @@
     <scopeInfo nodeId="8431776905956256051" fileName="MPSDistribution_Behavior.java" startLine="13" startPosition="82" endLine="18" endPosition="31">
       <varInfo nodeId="8431776905956256053" varName="parentScriptsFolder" />
     </scopeInfo>
+  </root>
+  <root nodeId="8431776905956790251">
+    <nodeInfo nodeId="8431776905956790254" fileName="UndeclaredVariableReference_Behavior.java" startLine="12" startPosition="71" endLine="13" endPosition="74" />
+    <scopeInfo nodeId="8431776905956790265" fileName="UndeclaredVariableReference_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="8431776905956790253" fileName="UndeclaredVariableReference_Behavior.java" startLine="12" startPosition="71" endLine="13" endPosition="74" />
   </root>
 </debugInfo>
 

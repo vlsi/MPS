@@ -25,28 +25,5 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="4" />
   <maxImportIndex value="2" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="7" />
-  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1240033962436">
-    <property name="name:0" value="UndeclaredVariableReference" />
-    <property name="rootable:0" value="false" />
-    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1240033962437">
-      <link role="intfc:0" targetNodeId="2.1205339194346:7" resolveInfo="IStringExpression" />
-    </node>
-    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1240033962440">
-      <property name="value:0" value="undeclared variable" />
-      <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
-    </node>
-    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1240033962441">
-      <property name="name:0" value="antName" />
-      <link role="dataType:0" targetNodeId="2.1223640176546:7" resolveInfo="StringWithoutSpaces" />
-    </node>
-    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1240318544266">
-      <property name="name:0" value="name" />
-      <link role="dataType:0" targetNodeId="2.1223640176546:7" resolveInfo="StringWithoutSpaces" />
-    </node>
-    <node role="export$attribute:0" type="jetbrains.mps.lang.core.structure.ExportScopeNamespace:0" id="8431776905956787006">
-      <property name="namespace:0" value="jetbrains.mps.build" />
-    </node>
-  </node>
 </model>
 

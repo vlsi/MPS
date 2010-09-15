@@ -45,7 +45,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1234878205127(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.custommpsInternal.structure.UndeclaredVariableReference", false, new String[]{})).isNotEmpty();
+    return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.custommps.structure.UndeclaredVariableReference", false, new String[]{})).isNotEmpty();
   }
 
   public static boolean baseMappingRule_Condition_1236880986480(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -245,7 +245,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1234877027528(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    Iterable<SNode> undeclaredVariables = ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.custommpsInternal.structure.UndeclaredVariableReference", false, new String[]{})).distinct();
+    Iterable<SNode> undeclaredVariables = ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.custommps.structure.UndeclaredVariableReference", false, new String[]{})).distinct();
     return Sequence.fromIterable(undeclaredVariables).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (IVariableHolder_Behavior.call_findVariable_1234876428215(_context.getCopiedOutputNodeForInputNode(_context.getNode()), SPropertyOperations.getString(it, "name"), SPropertyOperations.getString(it, "antName")) == null);

@@ -350,5 +350,27 @@
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical:32" id="2235195415637073456" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="8431776905956790243">
+    <link role="conceptDeclaration:32" targetNodeId="1.8431776905956790237" resolveInfo="UndeclaredVariableReference" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="8431776905956790244">
+      <property name="vertical:32" value="false" />
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="8431776905956790245">
+        <link role="styleClass:32" targetNodeId="1233937712403" resolveInfo="undeclaredVaribale" />
+        <link role="relationDeclaration:32" targetNodeId="1.8431776905956790241" resolveInfo="name" />
+      </node>
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="8431776905956790246" />
+    </node>
+    <node role="inspectedCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="8431776905956790247">
+      <property name="vertical:32" value="false" />
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="8431776905956790248">
+        <property name="text:32" value="ant name" />
+        <link role="styleClass:32" targetNodeId="4.1203598923024" resolveInfo="keyword" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="8431776905956790249">
+        <link role="relationDeclaration:32" targetNodeId="1.8431776905956790240" resolveInfo="antName" />
+      </node>
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="8431776905956790250" />
+    </node>
+  </node>
 </model>
 

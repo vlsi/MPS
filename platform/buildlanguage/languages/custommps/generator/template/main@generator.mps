@@ -127,7 +127,7 @@
       </node>
     </node>
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="1233931194398">
-      <link role="applicableConcept:2" targetNodeId="16.1240033962436" resolveInfo="UndeclaredVariableReference" />
+      <link role="applicableConcept:2" targetNodeId="1.8431776905956790237" resolveInfo="UndeclaredVariableReference" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="1233931206835">
         <link role="template:2" targetNodeId="1233926023574" resolveInfo="reduce_UndeclaredVariableReference" />
       </node>
@@ -153,7 +153,7 @@
       </node>
     </node>
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="1234891498528">
-      <link role="applicableConcept:2" targetNodeId="16.1240033962436" resolveInfo="UndeclaredVariableReference" />
+      <link role="applicableConcept:2" targetNodeId="1.8431776905956790237" resolveInfo="UndeclaredVariableReference" />
       <node role="conditionFunction:2" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition:2" id="1234891560671">
         <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1234891560672">
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1238405427011">
@@ -185,7 +185,7 @@
     </node>
     <node role="mappingLabel:2" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration:2" id="1233931087363">
       <property name="name:2" value="UndeclaredVariableReferenceToVariable" />
-      <link role="sourceConcept:2" targetNodeId="16.1240033962436" resolveInfo="UndeclaredVariableReference" />
+      <link role="sourceConcept:2" targetNodeId="1.8431776905956790237" resolveInfo="UndeclaredVariableReference" />
       <link role="targetConcept:2" targetNodeId="22.1205335290326:7" resolveInfo="Variable" />
     </node>
     <node role="mappingLabel:2" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration:2" id="1234780647459">
@@ -243,7 +243,7 @@
                 <property name="name:3" value="undeclaredVariables" />
                 <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType:7" id="1234878628936">
                   <node role="elementType:7" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1234878628937">
-                    <link role="concept:16" targetNodeId="16.1240033962436" resolveInfo="UndeclaredVariableReference" />
+                    <link role="concept:16" targetNodeId="1.8431776905956790237" resolveInfo="UndeclaredVariableReference" />
                   </node>
                 </node>
                 <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1234878628939">
@@ -252,7 +252,7 @@
                     <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation:16" id="1234878628942">
                       <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="1234878628943">
                         <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="1234878628944">
-                          <link role="conceptDeclaration:16" targetNodeId="16.1240033962436" resolveInfo="UndeclaredVariableReference" />
+                          <link role="conceptDeclaration:16" targetNodeId="1.8431776905956790237" resolveInfo="UndeclaredVariableReference" />
                         </node>
                       </node>
                     </node>
@@ -287,7 +287,7 @@
                                   <link role="variableDeclaration:3" targetNodeId="1234878901184" resolveInfo="it" />
                                 </node>
                                 <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1234878901182">
-                                  <link role="property:16" targetNodeId="16.1240033962441" resolveInfo="antName" />
+                                  <link role="property:16" targetNodeId="1.8431776905956790240" resolveInfo="antName" />
                                 </node>
                               </node>
                             </node>
@@ -334,7 +334,7 @@
                 <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation:16" id="1234878206182">
                   <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="1234878206183">
                     <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="1234878206184">
-                      <link role="conceptDeclaration:16" targetNodeId="16.1240033962436" resolveInfo="UndeclaredVariableReference" />
+                      <link role="conceptDeclaration:16" targetNodeId="1.8431776905956790237" resolveInfo="UndeclaredVariableReference" />
                     </node>
                   </node>
                 </node>
@@ -435,7 +435,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1233926023574">
     <property name="name:2" value="reduce_UndeclaredVariableReferenceInLayout" />
-    <link role="applicableConcept:2" targetNodeId="16.1240033962436" resolveInfo="UndeclaredVariableReference" />
+    <link role="applicableConcept:2" targetNodeId="1.8431776905956790237" resolveInfo="UndeclaredVariableReference" />
     <node role="contentNode:2" type="jetbrains.mps.build.packaging.structure.MPSLayout:7" id="1233926062533">
       <property name="name:7" value="some" />
       <node role="component:7" type="jetbrains.mps.build.packaging.structure.File:7" id="1233926079045">
@@ -495,7 +495,7 @@
                             <node role="actualArgument:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1238405961340">
                               <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="1238405961341" />
                               <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1238405961342">
-                                <link role="property:16" targetNodeId="16.1240033962441" resolveInfo="antName" />
+                                <link role="property:16" targetNodeId="1.8431776905956790240" resolveInfo="antName" />
                               </node>
                             </node>
                           </node>
@@ -538,7 +538,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1233931547920">
     <property name="name:2" value="weave_UndeclaredVariableReferenceDeclaration" />
-    <link role="applicableConcept:2" targetNodeId="16.1240033962436" resolveInfo="UndeclaredVariableReference" />
+    <link role="applicableConcept:2" targetNodeId="1.8431776905956790237" resolveInfo="UndeclaredVariableReference" />
     <node role="contentNode:2" type="jetbrains.mps.build.packaging.structure.MPSLayout:7" id="1233931547926">
       <property name="name:7" value="some" />
       <node role="configuration:7" type="jetbrains.mps.build.packaging.structure.Configuration:7" id="1233931547927">
@@ -561,7 +561,7 @@
                 <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1233931578419">
                   <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="1233931578360" />
                   <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1233938622197">
-                    <link role="property:16" targetNodeId="16.1240033962441" resolveInfo="antName" />
+                    <link role="property:16" targetNodeId="1.8431776905956790240" resolveInfo="antName" />
                   </node>
                 </node>
               </node>
@@ -1186,7 +1186,7 @@
         <node role="left:7" type="jetbrains.mps.build.packaging.structure.CompositeString:7" id="1234787771751">
           <node role="right:7" type="jetbrains.mps.build.packaging.structure.Space:7" id="1234787771752" />
           <node role="left:7" type="jetbrains.mps.build.packaging.structure.CompositeString:7" id="1234787771753">
-            <node role="right:7" type="jetbrains.mps.build.custommpsInternal.structure.UndeclaredVariableReference" id="1234787781924">
+            <node role="right:7" type="jetbrains.mps.build.custommps.structure.UndeclaredVariableReference" id="1234787781924">
               <property name="antName" value="version" />
               <property name="name" value="version" />
             </node>
@@ -1203,7 +1203,7 @@
             <property name="name:7" value=")" />
           </node>
           <node role="left:7" type="jetbrains.mps.build.packaging.structure.CompositeString:7" id="1234787771761">
-            <node role="right:7" type="jetbrains.mps.build.custommpsInternal.structure.UndeclaredVariableReference" id="1234787790522">
+            <node role="right:7" type="jetbrains.mps.build.custommps.structure.UndeclaredVariableReference" id="1234787790522">
               <property name="name" value="build" />
               <property name="antName" value="build.number" />
             </node>
@@ -1229,18 +1229,18 @@
     <node role="company:0" type="jetbrains.mps.build.packaging.structure.SimpleString:7" id="1234787810905">
       <property name="name:7" value="JetBrains" />
     </node>
-    <node role="buildVersion:0" type="jetbrains.mps.build.custommpsInternal.structure.UndeclaredVariableReference" id="1234787836926">
+    <node role="buildVersion:0" type="jetbrains.mps.build.custommps.structure.UndeclaredVariableReference" id="1234787836926">
       <property name="name" value="build" />
       <property name="antName" value="build.number" />
     </node>
-    <node role="releaseVersion:0" type="jetbrains.mps.build.custommpsInternal.structure.UndeclaredVariableReference" id="1234787850632">
+    <node role="releaseVersion:0" type="jetbrains.mps.build.custommps.structure.UndeclaredVariableReference" id="1234787850632">
       <property name="name" value="version" />
       <property name="antName" value="version" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1234891595846">
     <property name="name:2" value="reduce_UndeclaredVariableReferenceInDistConfig" />
-    <link role="applicableConcept:2" targetNodeId="16.1240033962436" resolveInfo="UndeclaredVariableReference" />
+    <link role="applicableConcept:2" targetNodeId="1.8431776905956790237" resolveInfo="UndeclaredVariableReference" />
     <node role="contentNode:2" type="jetbrains.mps.build.distrib.structure.ExternalVariableReference:0" id="1234891642705">
       <node role="templateFragment$attribute:0" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="1234891647530" />
       <node role="referenceMacro$link_attribute$variable:0" type="jetbrains.mps.lang.generator.structure.ReferenceMacro:2" id="1234891647533">
@@ -1287,7 +1287,7 @@
                       <node role="actualArgument:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1234891649644">
                         <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="1234891649645" />
                         <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1234891649646">
-                          <link role="property:16" targetNodeId="16.1240033962441" resolveInfo="antName" />
+                          <link role="property:16" targetNodeId="1.8431776905956790240" resolveInfo="antName" />
                         </node>
                       </node>
                     </node>
@@ -1575,7 +1575,7 @@
                             <node role="left:7" type="jetbrains.mps.build.packaging.structure.CompositeString:7" id="2235195415637077272">
                               <node role="right:7" type="jetbrains.mps.build.packaging.structure.Space:7" id="2235195415637077273" />
                               <node role="left:7" type="jetbrains.mps.build.packaging.structure.CompositeString:7" id="2235195415637077274">
-                                <node role="right:7" type="jetbrains.mps.build.custommpsInternal.structure.UndeclaredVariableReference" id="2235195415637077275">
+                                <node role="right:7" type="jetbrains.mps.build.custommps.structure.UndeclaredVariableReference" id="2235195415637077275">
                                   <property name="name" value="version" />
                                   <property name="antName" value="version" />
                                 </node>

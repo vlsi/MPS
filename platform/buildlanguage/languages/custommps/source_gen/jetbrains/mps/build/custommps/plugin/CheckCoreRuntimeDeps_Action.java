@@ -60,12 +60,12 @@ public class CheckCoreRuntimeDeps_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       List<SNode> coreBlocks = new ArrayList<SNode>();
-      ListSequence.fromList(coreBlocks).addElement(SNodeOperations.getNode("r:2d21a960-b27b-446c-b511-65afab987b27(jetbrains.mps.build.custommps.modules)", "4062013737453621622"));
-      ListSequence.fromList(coreBlocks).addElement(SNodeOperations.getNode("r:2d21a960-b27b-446c-b511-65afab987b27(jetbrains.mps.build.custommps.modules)", "767042628922931192"));
-      ListSequence.fromList(coreBlocks).addElement(SNodeOperations.getNode("r:2d21a960-b27b-446c-b511-65afab987b27(jetbrains.mps.build.custommps.modules)", "701559220729385454"));
-      ListSequence.fromList(coreBlocks).addElement(SNodeOperations.getNode("r:2d21a960-b27b-446c-b511-65afab987b27(jetbrains.mps.build.custommps.modules)", "7678729833318422579"));
-      ListSequence.fromList(coreBlocks).addElement(SNodeOperations.getNode("r:2d21a960-b27b-446c-b511-65afab987b27(jetbrains.mps.build.custommps.modules)", "4062013737453621614"));
-      ListSequence.fromList(coreBlocks).addElement(SNodeOperations.getNode("r:2d21a960-b27b-446c-b511-65afab987b27(jetbrains.mps.build.custommps.modules)", "4062013737453609732"));
+      ListSequence.fromList(coreBlocks).addElement(SNodeOperations.getNode("r:972ae1d5-2beb-44b3-a739-a548d8eb423d(jetbrains.mps.build.mpsautobuild)", "8431776905956472858"));
+      ListSequence.fromList(coreBlocks).addElement(SNodeOperations.getNode("r:972ae1d5-2beb-44b3-a739-a548d8eb423d(jetbrains.mps.build.mpsautobuild)", "8431776905956472940"));
+      ListSequence.fromList(coreBlocks).addElement(SNodeOperations.getNode("r:972ae1d5-2beb-44b3-a739-a548d8eb423d(jetbrains.mps.build.mpsautobuild)", "8431776905956472865"));
+      ListSequence.fromList(coreBlocks).addElement(SNodeOperations.getNode("r:972ae1d5-2beb-44b3-a739-a548d8eb423d(jetbrains.mps.build.mpsautobuild)", "8431776905956472896"));
+      ListSequence.fromList(coreBlocks).addElement(SNodeOperations.getNode("r:972ae1d5-2beb-44b3-a739-a548d8eb423d(jetbrains.mps.build.mpsautobuild)", "8431776905956472902"));
+      ListSequence.fromList(coreBlocks).addElement(SNodeOperations.getNode("r:972ae1d5-2beb-44b3-a739-a548d8eb423d(jetbrains.mps.build.mpsautobuild)", "8431776905956472907"));
 
       Iterable<IModule> coreModules = ListSequence.fromList(coreBlocks).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode it) {
