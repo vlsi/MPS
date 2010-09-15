@@ -34,8 +34,8 @@ import java.io.OutputStream;
 public abstract class XmlBasedModelCache<T> extends BaseModelCache<T> {
   private static final Logger LOG = Logger.getLogger(XmlBasedModelCache.class);
 
-  protected XmlBasedModelCache(FileGenerationManager fileGeneratorManager, AllCaches allCaches) {
-    super(fileGeneratorManager, allCaches);
+  protected XmlBasedModelCache(AllCaches allCaches) {
+    super(allCaches);
   }
 
   protected abstract Element toXml(T t);

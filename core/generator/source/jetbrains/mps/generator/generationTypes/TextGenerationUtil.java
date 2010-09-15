@@ -26,6 +26,7 @@ import java.util.List;
 import java.util.Map;
 
 public class TextGenerationUtil {
+
   public static TextGenerationResult generateText(IOperationContext context, SNode node) {
     String nodeText;
     boolean containsErrors = false;

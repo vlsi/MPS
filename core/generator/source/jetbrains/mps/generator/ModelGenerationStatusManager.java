@@ -26,7 +26,6 @@ import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.FileBasedIndex.ValueProcessor;
 import jetbrains.mps.generator.fileGenerator.CacheGenerationContext;
 import jetbrains.mps.generator.fileGenerator.CacheGenerator;
-import jetbrains.mps.generator.fileGenerator.FileGenerationManager;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.ide.generator.index.ModelDigestIndex;
 import jetbrains.mps.logging.Logger;
@@ -50,6 +49,7 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
   public static final String HASH_PREFIX = ".hash.";
 
   private static final Logger LOG = Logger.getLogger(ModelGenerationStatusManager.class);
+  private CacheGenerator myCacheGenerator;
 
   public static ModelGenerationStatusManager getInstance() {
     return ApplicationManager.getApplication().getComponent(ModelGenerationStatusManager.class);
@@ -63,7 +63,6 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
   private List<ModelGenerationStatusListener> myListeners = new ArrayList<ModelGenerationStatusListener>();
 
   private final GlobalSModelEventsManager myGlobalEventsManager;
-  private final FileGenerationManager myFileGenerationManager;
   private final SModelAdapter mySmodelReloadListener = new SModelAdapter() {
     @Override
     public void modelReplaced(SModelDescriptor sm) {
@@ -71,9 +70,13 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     }
   };
 
-  public ModelGenerationStatusManager(FileGenerationManager fileGenerationManager, GlobalSModelEventsManager globalEventsManager) {
-    myFileGenerationManager = fileGenerationManager;
+  public ModelGenerationStatusManager(GlobalSModelEventsManager globalEventsManager) {
     myGlobalEventsManager = globalEventsManager;
+    myCacheGenerator = new CacheGenerator() {
+      public File generateCache(CacheGenerationContext context) {
+        return generateHashFile(context);
+      }
+    };
   }
 
   @NotNull
@@ -82,16 +85,15 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
   }
 
   public void initComponent() {
-    myFileGenerationManager.addCachesGenerator(new CacheGenerator() {
-      public File generateCache(CacheGenerationContext context) {
-        return generateHashFile(context);
-      }
-    });
     myGlobalEventsManager.addGlobalModelListener(mySmodelReloadListener);
   }
 
   public void disposeComponent() {
     myGlobalEventsManager.removeGlobalModelListener(mySmodelReloadListener);
+  }
+
+  public CacheGenerator getCacheGenerator() {
+    return myCacheGenerator;
   }
 
   public boolean generationRequired(SModelDescriptor sm, Project project, @NotNull NoCachesStrategy strategy) {

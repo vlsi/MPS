@@ -4,7 +4,6 @@ package jetbrains.mps.debug.api.info;
 
 import jetbrains.mps.generator.fileGenerator.BaseModelCache;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.generator.fileGenerator.FileGenerationManager;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.fileGenerator.CacheGenerationContext;
@@ -29,8 +28,8 @@ public class BLDebugInfoCache extends BaseModelCache<DebugInfo> {
   private static final Logger LOG = Logger.getLogger(BLDebugInfoCache.class);
   public static final String TRACE_FILE_NAME = "trace.info";
 
-  public BLDebugInfoCache(FileGenerationManager fileGeneratorManager) {
-    super(fileGeneratorManager);
+  public BLDebugInfoCache() {
+    super(null);
   }
 
   @NonNls

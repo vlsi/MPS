@@ -2629,16 +2629,8 @@
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4494976841093543352" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4494976841093543353">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation:3" id="8178225738272059155">
-          <link role="baseMethodDeclaration:3" targetNodeId="6.~BaseModelCache.&lt;init&gt;(jetbrains.mps.generator.fileGenerator.FileGenerationManager)" resolveInfo="BaseModelCache" />
-          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="8178225738272059156">
-            <link role="variableDeclaration:3" targetNodeId="4494976841093550698" resolveInfo="fileGeneratorManager" />
-          </node>
-        </node>
-      </node>
-      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4494976841093550698">
-        <property name="name:3" value="fileGeneratorManager" />
-        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4494976841093550699">
-          <link role="classifier:3" targetNodeId="6.~FileGenerationManager" resolveInfo="FileGenerationManager" />
+          <link role="baseMethodDeclaration:3" targetNodeId="6.~BaseModelCache.&lt;init&gt;(jetbrains.mps.generator.fileGenerator.AllCaches)" resolveInfo="BaseModelCache" />
+          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="6191743176392072479" />
         </node>
       </node>
     </node>

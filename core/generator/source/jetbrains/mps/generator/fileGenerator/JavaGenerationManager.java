@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.generator.fileGenerator;
 
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.baseLanguage.textGen.BLDependenciesCache;
 import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
 import jetbrains.mps.baseLanguage.textGen.RootDependencies;
@@ -42,34 +40,18 @@ import java.io.File;
 import java.io.IOException;
 import java.util.*;
 
-public class FileGenerationManager implements ApplicationComponent {
-  private static final Logger LOG = Logger.getLogger(FileGenerationManager.class);
+public class JavaGenerationManager {
+  private static final Logger LOG = Logger.getLogger(JavaGenerationManager.class);
 
-  private final List<FileGenerationListener> myGenerationListeners = new ArrayList<FileGenerationListener>();
+  private CacheGenerator[] myCacheGenerators;
 
-  public static FileGenerationManager getInstance() {
-    return ApplicationManager.getApplication().getComponent(FileGenerationManager.class);
+  public JavaGenerationManager(CacheGenerator ...generators) {
+    myCacheGenerators = generators;
   }
-
-  private List<CacheGenerator> myCacheGenerators = new ArrayList<CacheGenerator>();
 
   @NotNull
   public String getComponentName() {
     return "File Generation Manager";
-  }
-
-  public void initComponent() {
-  }
-
-  public void disposeComponent() {
-  }
-
-  public void addCachesGenerator(CacheGenerator g) {
-    myCacheGenerators.add(g);
-  }
-
-  public void removeCachesGenerator(CacheGenerator g) {
-    myCacheGenerators.remove(g);
   }
 
   public boolean handleOutput(IOperationContext context, GenerationStatus status, File outputRoot) {
@@ -94,7 +76,7 @@ public class FileGenerationManager implements ApplicationComponent {
     return true;
   }
 
-  public static List<File> processDeletion(
+  private static List<File> processDeletion(
     final SModel inputModel,
     final Set<File> outputDirs,
     final Set<File> generatedFiles) {
@@ -236,18 +218,6 @@ public class FileGenerationManager implements ApplicationComponent {
     }
   }
 
-  private void touchOutputDir(GenerationStatus status, File outputRootDirectory) {
-    File outDir = FileGenerationUtil.getDefaultOutputDir(status.getInputModel(), outputRootDirectory);
-    if (!outDir.exists()) {
-      if (!outDir.mkdirs()) {
-        throw new RuntimeException("Can't create " + outDir);
-      }
-    }
-    if (!outDir.setLastModified(System.currentTimeMillis())) {
-      throw new RuntimeException("Can't touch " + outDir);
-    }
-  }
-
   private Set<File> generateFiles(GenerationStatus status, File outputRootDirectory, Map<SNode, String> outputNodeContents) {
     Set<File> generatedFiles = new HashSet<File>();
     Map<String, GenerationRootDependencies> dependenciesByFile = null;
@@ -260,33 +230,6 @@ public class FileGenerationManager implements ApplicationComponent {
 
         if (generatedFile != null) {
           generatedFiles.add(generatedFile);
-
-          // invoke post processing 
-          Set<File> newfiles = fireFileGenerated(generatedFile);
-          if (newfiles != null) {
-            for (File n : newfiles) {
-              if (generatedFiles.add(n)) {
-                GenerationDependencies dependencies = status.getDependencies();
-                if (dependencies != null) {
-                  // calc map
-                  if (dependenciesByFile == null) {
-                    dependenciesByFile = new HashMap<String, GenerationRootDependencies>();
-                    for (GenerationRootDependencies rd : dependencies.getRootDependencies()) {
-                      for (String file : rd.getFiles()) {
-                        dependenciesByFile.put(file, rd);
-                      }
-                    }
-                  }
-
-                  // register as generated file
-                  GenerationRootDependencies rdep = dependenciesByFile.get(generatedFile.getName());
-                  if (rdep != null) {
-                    rdep.addGeneratedFile(n.getName());
-                  }
-                }
-              }
-            }
-          }
         }
       } catch (IOException e) {
         LOG.error(e);
@@ -344,7 +287,7 @@ public class FileGenerationManager implements ApplicationComponent {
       }
     }
 
-    Set<File> generatedCaches = new HashSet<File>(myCacheGenerators.size());
+    Set<File> generatedCaches = new HashSet<File>(myCacheGenerators.length);
 
     for (CacheGenerator g : myCacheGenerators) {
       try {
@@ -358,45 +301,5 @@ public class FileGenerationManager implements ApplicationComponent {
     }
 
     return generatedCaches;
-  }
-
-  public Set<File> fireFileGenerated(File file) {
-    Set<File> generated = null;
-    synchronized (myGenerationListeners) {
-      for (FileGenerationListener l : myGenerationListeners) {
-        try {
-          Set<File> res = l.fileGenerated(file);
-          if (res != null && !res.isEmpty()) {
-            if (generated == null) {
-              generated = res;
-            } else {
-              if (!(generated instanceof HashSet)) {
-                generated = new HashSet<File>(generated);
-              }
-              generated.addAll(res);
-            }
-          }
-        } catch (Throwable t) {
-          LOG.error(t);
-        }
-      }
-    }
-    return generated;
-  }
-
-  public void addGenerationListener(FileGenerationListener l) {
-    synchronized (myGenerationListeners) {
-      myGenerationListeners.add(l);
-    }
-  }
-
-  public void removeGenerationListener(FileGenerationListener l) {
-    synchronized (myGenerationListeners) {
-      myGenerationListeners.remove(l);
-    }
-  }
-
-  public interface FileGenerationListener {
-    Set<File> fileGenerated(File file);
   }
 }

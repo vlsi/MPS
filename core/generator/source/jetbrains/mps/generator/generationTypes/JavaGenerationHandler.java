@@ -17,11 +17,14 @@ package jetbrains.mps.generator.generationTypes;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.baseLanguage.textGen.BLDependenciesCache;
+import jetbrains.mps.debug.api.info.BLDebugInfoCache;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
-import jetbrains.mps.generator.fileGenerator.FileGenerationManager;
+import jetbrains.mps.generator.fileGenerator.JavaGenerationManager;
+import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.make.CompilationResult;
@@ -63,7 +66,12 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
     String targetDir = module.getOutputFor(inputModel);
 
     long startJobTime = System.currentTimeMillis();
-    boolean result = FileGenerationManager.getInstance().handleOutput(invocationContext, status, new File(targetDir));
+    boolean result = new JavaGenerationManager(
+      ModelGenerationStatusManager.getInstance().getCacheGenerator(),
+      BLDependenciesCache.getInstance().getGenerator(),
+      BLDebugInfoCache.getInstance().getGenerator(),
+      GenerationDependenciesCache.getInstance().getGenerator()
+      ).handleOutput(invocationContext, status, new File(targetDir));
 
     if (!result) {
       info("there were errors.");

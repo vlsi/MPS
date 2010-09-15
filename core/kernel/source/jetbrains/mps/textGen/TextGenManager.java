@@ -180,7 +180,7 @@ public class TextGenManager {
     }
 
     try {
-      SNodeTextGen result = (SNodeTextGen) textgenClass.newInstance();
+      SNodeTextGen result = textgenClass.newInstance();
       result.setContext(context);
       return result;
     } catch (InstantiationException e) {

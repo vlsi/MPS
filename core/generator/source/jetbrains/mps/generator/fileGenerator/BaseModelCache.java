@@ -32,7 +32,6 @@ import java.util.WeakHashMap;
 
 public abstract class BaseModelCache<T> implements ApplicationComponent {
 
-  private final FileGenerationManager myFileGeneratorManager;
   @Nullable
   private final AllCaches myAllCaches;
 
@@ -48,25 +47,22 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
 
   protected abstract String getCacheFileName();
 
-  protected BaseModelCache(FileGenerationManager fileGeneratorManager) {
-    this(fileGeneratorManager, null);
-  }
-
-  protected BaseModelCache(FileGenerationManager fileGeneratorManager, AllCaches allCaches) {
-    myFileGeneratorManager = fileGeneratorManager;
+  protected BaseModelCache(AllCaches allCaches) {
     myAllCaches = allCaches;
     myCacheGenerator = new MyCacheGenerator();
+  }
+
+  public CacheGenerator getGenerator() {
+    return myCacheGenerator;
   }
 
   public void initComponent() {
     if (myAllCaches != null) {
       myAllCaches.registerCache(this);
     }
-    myFileGeneratorManager.addCachesGenerator(myCacheGenerator);
   }
 
   public void disposeComponent() {
-    myFileGeneratorManager.removeCachesGenerator(myCacheGenerator);
   }
 
   @Nullable
