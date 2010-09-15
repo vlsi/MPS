@@ -102,6 +102,9 @@
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="2235195415637073417">
       <link role="intfc:0" targetNodeId="2v.1240832649054:7" resolveInfo="INotBuildableComponent" />
     </node>
+    <node role="export$attribute:0" type="jetbrains.mps.lang.core.structure.ExportScopeNamespace:0" id="8431776905956861662">
+      <property name="namespace:0" value="jetbrains.mps.build" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="8431776905956790237">
     <property name="name:0" value="UndeclaredVariableReference" />
@@ -121,9 +124,7 @@
       <property name="name:0" value="name" />
       <link role="dataType:0" targetNodeId="2v.1223640176546:7" resolveInfo="StringWithoutSpaces" />
     </node>
-    <node role="export$attribute:0" type="jetbrains.mps.lang.core.structure.ExportScopeNamespace:0" id="8431776905956790242">
-      <property name="namespace:0" value="jetbrains.mps.build" />
-    </node>
+    <node role="export$attribute:0" type="jetbrains.mps.lang.core.structure.ExportScopeModule:0" id="8431776905956861661" />
   </node>
 </model>
 
