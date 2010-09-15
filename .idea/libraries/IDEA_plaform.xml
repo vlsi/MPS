@@ -18,8 +18,38 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$PROJECT_DIR$/lib/sources/idea-platform-src.zip!/" />
-      <root url="jar://$PROJECT_DIR$/lib/sources/idea-external-src.zip!/" />
+      <root url="jar://$PROJECT_DIR$/platform_src/platform.src.zip!/usageView" />
+      <root url="jar://$PROJECT_DIR$/platform_src/platform.src.zip!/xdebugger-api" />
+      <root url="jar://$PROJECT_DIR$/platform_src/platform.src.zip!/forms-compiler" />
+      <root url="jar://$PROJECT_DIR$/platform_src/platform.src.zip!/bootstrap" />
+      <root url="jar://$PROJECT_DIR$/platform_src/platform.src.zip!/svn4idea" />
+      <root url="jar://$PROJECT_DIR$/platform_src/platform.src.zip!/extensions" />
+      <root url="jar://$PROJECT_DIR$/platform_src/platform.src.zip!/lvcs-api" />
+      <root url="jar://$PROJECT_DIR$/platform_src/platform.src.zip!/smartcvs-src" />
+      <root url="jar://$PROJECT_DIR$/platform_src/platform.src.zip!/forms_rt" />
+      <root url="jar://$PROJECT_DIR$/platform_src/platform.src.zip!/javacvs-src" />
+      <root url="jar://$PROJECT_DIR$/platform_src/platform.src.zip!/testRunner" />
+      <root url="jar://$PROJECT_DIR$/platform_src/platform.src.zip!/tests_bootstrap" />
+      <root url="jar://$PROJECT_DIR$/platform_src/platform.src.zip!/execution-openapi" />
+      <root url="jar://$PROJECT_DIR$/platform_src/platform.src.zip!/boot" />
+      <root url="jar://$PROJECT_DIR$/platform_src/platform.src.zip!/git4idea" />
+      <root url="jar://$PROJECT_DIR$/platform_src/platform.src.zip!/platform-api" />
+      <root url="jar://$PROJECT_DIR$/platform_src/platform.src.zip!/xdebugger-impl" />
+      <root url="jar://$PROJECT_DIR$/platform_src/platform.src.zip!/xml" />
+      <root url="jar://$PROJECT_DIR$/platform_src/platform.src.zip!/cvs-plugin" />
+      <root url="jar://$PROJECT_DIR$/platform_src/platform.src.zip!/platform-main" />
+      <root url="jar://$PROJECT_DIR$/platform_src/platform.src.zip!/vcs-api" />
+      <root url="jar://$PROJECT_DIR$/platform_src/platform.src.zip!/lvcs-impl" />
+      <root url="jar://$PROJECT_DIR$/platform_src/platform.src.zip!/vcs-impl" />
+      <root url="jar://$PROJECT_DIR$/platform_src/platform.src.zip!/smRunner" />
+      <root url="jar://$PROJECT_DIR$/platform_src/platform.src.zip!/platform-impl" />
+      <root url="jar://$PROJECT_DIR$/platform_src/platform.src.zip!/annotations" />
+      <root url="jar://$PROJECT_DIR$/platform_src/platform.src.zip!/xml-openapi" />
+      <root url="jar://$PROJECT_DIR$/platform_src/platform.src.zip!/images" />
+      <root url="jar://$PROJECT_DIR$/platform_src/platform.src.zip!/lang-api" />
+      <root url="jar://$PROJECT_DIR$/platform_src/platform.src.zip!/cvs-core" />
+      <root url="jar://$PROJECT_DIR$/platform_src/platform.src.zip!/lang-impl" />
+      <root url="jar://$PROJECT_DIR$/platform_src/platform.src.zip!/util" />
     </SOURCES>
   </library>
 </component>
