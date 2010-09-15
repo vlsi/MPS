@@ -135,6 +135,7 @@ public class CommonPaths {
 
     addIfExists(result, "/lib/platform-api.jar");
     addIfExists(result, "/lib/platform.jar");
+    addIfExists(result, "/lib/annotations.jar");
     addIfExists(result, "/lib/execution-api.jar");
     addIfExists(result, "/lib/util.jar");
     addIfExists(result, "/lib/extensions.jar");
