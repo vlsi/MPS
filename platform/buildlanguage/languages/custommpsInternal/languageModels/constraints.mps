@@ -81,20 +81,5 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="4435815598243980826">
-    <property name="package:8" value="projectComponents.conditions" />
-    <link role="concept:8" targetNodeId="1.4435815598243878832" resolveInfo="IfProjectComponent" />
-    <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="4435815598244012781">
-      <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4435815598244012782">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="4435815598244012783">
-          <node role="expression:3" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall:16" id="4435815598244012784">
-            <link role="baseMethodDeclaration:16" targetNodeId="3.1238403397946" resolveInfo="isInCustomMPSGenerator" />
-            <link role="concept:16" targetNodeId="2.1233149592028" resolveInfo="MPSBuild" />
-            <node role="actualArgument:16" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_operationContext:0" id="4435815598244012785" />
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
 </model>
 
