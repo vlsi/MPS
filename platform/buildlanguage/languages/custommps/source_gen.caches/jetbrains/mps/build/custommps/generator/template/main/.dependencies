@@ -7,6 +7,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.custommps.behavior.LibraryFolder_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.custommps.behavior.MPSBuild_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.custommps.behavior.MPSDistribution_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IVariableHolder_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.Module_Behavior" />

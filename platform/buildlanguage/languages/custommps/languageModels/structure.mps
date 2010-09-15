@@ -76,5 +76,31 @@
       <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="2235195415637073414">
+    <property name="name:0" value="MPSDistribution" />
+    <link role="extends:0" targetNodeId="2v.1203598300291:7" resolveInfo="AbstractProjectComponent" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="2235195415637073457">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="pathToBuildToolsZip" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="2v.1220973916698:7" resolveInfo="Path" />
+    </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="2235195415637073458">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="licencePath" />
+      <property name="sourceCardinality:0" value="0..1" />
+      <link role="target:0" targetNodeId="2v.1220973916698:7" resolveInfo="Path" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="2235195415637073419">
+      <property name="value:0" value="mps-dist" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
+    </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="2235195415637073415">
+      <link role="intfc:0" targetNodeId="2v.1203617883391:7" resolveInfo="ICompositeComponent" />
+    </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="2235195415637073417">
+      <link role="intfc:0" targetNodeId="2v.1240832649054:7" resolveInfo="INotBuildableComponent" />
+    </node>
+  </node>
 </model>
 
