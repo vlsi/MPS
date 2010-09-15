@@ -1,4 +1,4 @@
-<project name="help-build-src">
+<project name="help-build">
   <target name="repack.sources">
     <fail unless="input.dir" message="Property input.dir unspecified." />
     <fail unless="output.dir" message="Property output.dir unspecified." />

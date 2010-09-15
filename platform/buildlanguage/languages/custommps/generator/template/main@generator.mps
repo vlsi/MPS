@@ -1952,7 +1952,7 @@
   </node>
   <visible index="4" modelUID="r:7a6a35c6-e369-4565-b91b-c7c8dfa2c8d7(jetbrains.mps.build.generictasks.generated)" />
   <node type="jetbrains.mps.buildlanguage.structure.Project:21" id="8716889635481488580">
-    <property name="name:21" value="help-build-pckg" />
+    <property name="name:21" value="help-build" />
     <node role="property:21" type="jetbrains.mps.buildlanguage.structure.ExternalPropertyDeclaration:21" id="8716889635481488581">
       <property name="name:21" value="input.dir" />
       <node role="type:21" type="jetbrains.mps.buildlanguage.structure.FileType:21" id="8716889635481488582" />
