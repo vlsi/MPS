@@ -125,7 +125,7 @@ public class MpsMakeHelper {
       sb.append(cp.getAbsolutePath());
     }
     commandLine.add("-classpath");
-    commandLine.add(currentClassPathString + sb.toString());
+    commandLine.add(sb.toString());
 
     commandLine.add(MakeWorker.class.getCanonicalName());
     try {

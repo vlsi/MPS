@@ -84,7 +84,7 @@ public abstract class MpsWorker {
     try {
       work();
       System.exit(0);
-    } catch (Exception e) {
+    } catch (Throwable e) {
       log(e);
       System.exit(1);
     }
