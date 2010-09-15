@@ -13,11 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.generator.cache;
+package jetbrains.mps.generator.fileGenerator;
 
-import jetbrains.mps.generator.GenerationStatus;
-import jetbrains.mps.generator.fileGenerator.StreamHandler;
+import org.jdom.Element;
 
-public interface CacheGenerator {
-  void generateCache(GenerationStatus status, StreamHandler handler);
+/**
+ * Evgeny Gryaznov, Sep 15, 2010
+ */
+public interface StreamHandler {
+
+  void saveStream(String name, String content, boolean isCache);
+
+  void saveStream(String name, Element content, boolean isCache);
+
+  boolean touch(String name, boolean isCache);
+
+  void dispose();
 }

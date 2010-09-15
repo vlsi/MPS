@@ -21,9 +21,7 @@ import jetbrains.mps.baseLanguage.textGen.RootDependencies;
 import jetbrains.mps.debug.api.info.*;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.TransientSModel;
-import jetbrains.mps.generator.cache.CacheGenerationContext;
 import jetbrains.mps.generator.cache.CacheGenerator;
-import jetbrains.mps.generator.fileGenerator.vcs.FileProcessor;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil.TextGenerationResult;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
@@ -34,77 +32,32 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.textGen.TextGenManager;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
-import org.jetbrains.annotations.NotNull;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.*;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class JavaFileGenerator {
   private static final Logger LOG = Logger.getLogger(JavaFileGenerator.class);
 
+  private final StreamHandler myStreamHandler;
   private CacheGenerator[] myCacheGenerators;
 
-  public JavaFileGenerator(CacheGenerator ...generators) {
+  public JavaFileGenerator(StreamHandler streamHandler, CacheGenerator ...generators) {
+    myStreamHandler = streamHandler;
     myCacheGenerators = generators;
   }
 
-  @NotNull
-  public String getComponentName() {
-    return "File Generation Manager";
-  }
-
-  public boolean handleOutput(IOperationContext context, GenerationStatus status, File outputRoot) {
-    if (outputRoot == null) throw new RuntimeException("unspecified output path for file generation.");
+  public boolean handleOutput(IOperationContext context, GenerationStatus status) {
     if (!status.isOk()) return false;
 
     Map<SNode, String> outputNodeContents = new LinkedHashMap<SNode, String>();
     if (!generateText(context, status, outputNodeContents)) return false;
 
-    Set<File> generatedFiles = generateFiles(status, outputRoot, outputNodeContents);
-    FileProcessor.processVCSAddition(outputRoot, context, generatedFiles);
-
-    File cachesOutput = FileGenerationUtil.getCachesOutputDir(outputRoot);
-    Set<File> generatedCaches = generateCaches(status, cachesOutput);
-    FileProcessor.processVCSAddition(cachesOutput, context, generatedCaches);
-
-    // we have to clean garbage in both dirs simultaneously, since caches might be located in source_gen
-    List<File> filesToDelete = processDeletion(status.getInputModel(), CollectionUtil.set(outputRoot, cachesOutput),
-      CollectionUtil.union(generatedFiles, generatedCaches));
-    FileProcessor.processVCSDeletion(filesToDelete);
-
+    generateFiles(status, outputNodeContents);
+    generateCaches(status);
     return true;
   }
-
-  private static List<File> processDeletion(
-    final SModel inputModel,
-    final Set<File> outputDirs,
-    final Set<File> generatedFiles) {
-
-    Set<File> directories = new HashSet<File>();
-    for (File f : generatedFiles) {
-      directories.add(f.getParentFile());
-    }
-    for (File outputDir : outputDirs) {
-      directories.add(FileGenerationUtil.getDefaultOutputDir(inputModel, outputDir));
-    }
-
-    // clear garbage
-    final List<File> filesToDelete = new ArrayList<File>();
-    for (File dir : directories) {
-      File[] files = dir.listFiles();
-      if (files == null) continue;
-      for (File outputDirectoryFile : files) {
-        if (outputDirectoryFile.isDirectory()) continue;
-        if (generatedFiles.contains(outputDirectoryFile)) continue;
-        filesToDelete.add(outputDirectoryFile);
-      }
-    }
-    return filesToDelete;
-  }
-
 
   private boolean generateText(IOperationContext context, GenerationStatus status, Map<SNode, String> outputNodeContents) {
     boolean hasErrors = false;
@@ -220,22 +173,15 @@ public class JavaFileGenerator {
     }
   }
 
-  private Set<File> generateFiles(GenerationStatus status, File outputRootDirectory, Map<SNode, String> outputNodeContents) {
-    Set<File> generatedFiles = new HashSet<File>();
-    Map<String, GenerationRootDependencies> dependenciesByFile = null;
+  private String getFileName(SNode outputRootNode) {
+    String extension = TextGenManager.instance().getExtension(outputRootNode);
+    return (extension == null) ? outputRootNode.getName() : outputRootNode.getName() + "." + extension;
+  }
 
-    DefaultFileGenerator fileGenerator = new DefaultFileGenerator();
+  private void generateFiles(GenerationStatus status, Map<SNode, String> outputNodeContents) {
     for (SNode outputRootNode : outputNodeContents.keySet()) {
-      try {
-        SNode originalInputNode = null;
-        File generatedFile = fileGenerator.generateFile(outputRootNode, originalInputNode, status.getInputModel(), outputNodeContents.get(outputRootNode), outputRootDirectory);
-
-        if (generatedFile != null) {
-          generatedFiles.add(generatedFile);
-        }
-      } catch (IOException e) {
-        LOG.error(e);
-      }
+      String name = getFileName(outputRootNode);
+      myStreamHandler.saveStream(name, outputNodeContents.get(outputRootNode), false);
     }
 
     DebugInfo debugInfoCache = null;
@@ -243,15 +189,10 @@ public class JavaFileGenerator {
 
     GenerationDependencies dependencies = status.getDependencies();
     if (dependencies != null) {
-      File outputDir = FileGenerationUtil.getDefaultOutputDir(status.getInputModel(), outputRootDirectory);
-
       // process unchanged files
       for (GenerationRootDependencies rdep : dependencies.getUnchangedDependencies()) {
         for (String filename : rdep.getFiles()) {
-          File file = new File(outputDir, filename);
-          if (file.exists()) {
-            generatedFiles.add(file);
-
+          if (myStreamHandler.touch(filename, false)) {
             // re-register baselanguage dependencies
             if (modelDep == null) {
               modelDep = BLDependenciesCache.getInstance().get(status.getOriginalInputModel());
@@ -277,31 +218,15 @@ public class JavaFileGenerator {
         }
       }
     }
-
-    return generatedFiles;
   }
 
-  private Set<File> generateCaches(GenerationStatus status, File outputRootDirectory) {
-    File modelOutput = FileGenerationUtil.getDefaultOutputDir(status.getInputModel(), outputRootDirectory);
-    if (!modelOutput.exists()) {
-      if (!modelOutput.mkdirs()) {
-        LOG.error("Can't create output dir");
-      }
-    }
-
-    Set<File> generatedCaches = new HashSet<File>(myCacheGenerators.length);
-
+  private void generateCaches(GenerationStatus status) {
     for (CacheGenerator g : myCacheGenerators) {
       try {
-        File cacheFile = g.generateCache(new CacheGenerationContext(status, outputRootDirectory));
-        if (cacheFile != null) {
-          generatedCaches.add(cacheFile);
-        }
+        g.generateCache(status, myStreamHandler);
       } catch (Throwable t) {
         LOG.error(t);
       }
     }
-
-    return generatedCaches;
   }
 }

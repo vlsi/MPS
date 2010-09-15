@@ -31,18 +31,9 @@ public class FileProcessor {
   private static List<Runnable> ourQueue = new LinkedList<Runnable>();
   private static final Object LOCK = new Object();
 
-  public static void processVCSAddition(final File outputRoot, final IOperationContext context,
-                                        final Set<File> generatedFiles) {
+  public static void invalidateRoot(final File outputRoot, final IOperationContext context) {
     Runnable runnable = new Runnable() {
       public void run() {
-        List<VirtualFile> filesToAdd = new ArrayList<VirtualFile>(generatedFiles.size());
-        for (File f : generatedFiles) {
-          VirtualFile file = VFileSystem.refreshAndGetFile(f);
-          assert file != null : "Can not find virtual file for " + f;
-          filesToAdd.add(file);
-        }
-        VcsMigrationUtil.getHandler().addFilesToVcs(filesToAdd, false, false);
-
         final VirtualFile outputRootVirtualFile = VFileSystem.refreshAndGetFile(outputRoot);
 
         RefreshSession session = RefreshQueue.getInstance().createSession(true, true, new Runnable() {
@@ -52,6 +43,23 @@ public class FileProcessor {
         });
         session.addAllFiles(Arrays.asList(outputRootVirtualFile));
         session.launch();
+      }
+    };
+    synchronized (LOCK) {
+      ourQueue.add(runnable);
+    }
+  }
+
+  public static void processVCSAddition(final Set<File> generatedFiles) {
+    Runnable runnable = new Runnable() {
+      public void run() {
+        List<VirtualFile> filesToAdd = new ArrayList<VirtualFile>(generatedFiles.size());
+        for (File f : generatedFiles) {
+          VirtualFile file = VFileSystem.refreshAndGetFile(f);
+          assert file != null : "Can not find virtual file for " + f;
+          filesToAdd.add(file);
+        }
+        VcsMigrationUtil.getHandler().addFilesToVcs(filesToAdd, false, false);
       }
     };
     synchronized (LOCK) {

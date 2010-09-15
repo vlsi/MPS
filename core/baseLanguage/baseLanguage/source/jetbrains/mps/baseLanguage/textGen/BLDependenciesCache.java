@@ -16,9 +16,9 @@
 package jetbrains.mps.baseLanguage.textGen;
 
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.generator.cache.CacheGenerationContext;
-import jetbrains.mps.generator.cache.XmlBasedModelCache;
+import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.cache.AllCaches;
+import jetbrains.mps.generator.cache.XmlBasedModelCache;
 import jetbrains.mps.util.JDOMUtil;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -56,8 +56,8 @@ public class BLDependenciesCache extends XmlBasedModelCache<ModelDependencies> {
     return ModelDependencies.fromXml(e);
   }
 
-  protected ModelDependencies generateCache(CacheGenerationContext context) {
-    return context.getBLDependencies();
+  protected ModelDependencies generateCache(GenerationStatus status) {
+    return status.getBLDependencies();
   }
 
   @Override

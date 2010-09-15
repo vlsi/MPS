@@ -24,15 +24,14 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.FileBasedIndex.ValueProcessor;
-import jetbrains.mps.generator.cache.CacheGenerationContext;
 import jetbrains.mps.generator.cache.CacheGenerator;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
+import jetbrains.mps.generator.fileGenerator.StreamHandler;
 import jetbrains.mps.ide.generator.index.ModelDigestIndex;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -73,8 +72,11 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
   public ModelGenerationStatusManager(GlobalSModelEventsManager globalEventsManager) {
     myGlobalEventsManager = globalEventsManager;
     myCacheGenerator = new CacheGenerator() {
-      public File generateCache(CacheGenerationContext context) {
-        return generateHashFile(context);
+      public void generateCache(GenerationStatus status, StreamHandler handler) {
+        String hashName = generateHashFileName(status);
+        if(hashName != null) {
+          handler.saveStream(hashName, "", true);
+        }
       }
     };
   }
@@ -206,10 +208,8 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     return result;
   }
 
-  private File generateHashFile(CacheGenerationContext context) {
-    File outputDir = context.getOutputDir();
-
-    SModelDescriptor descriptor = context.getOriginalInputModel();
+  private String generateHashFileName(GenerationStatus status) {
+    SModelDescriptor descriptor = status.getOriginalInputModel();
     if (!(descriptor instanceof EditableSModelDescriptor)) return null;
 
     IFile file = ((EditableSModelDescriptor) descriptor).getModelFile();
@@ -234,19 +234,7 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     }
 
     String hash = ModelDigestHelper.hash(content);
-    File result = new File(FileGenerationUtil.getDefaultOutputDir(context.getInputModel(), outputDir), ModelGenerationStatusManager.HASH_PREFIX + hash);
-    if (!result.exists()) {
-      try {
-        if (!result.createNewFile()) {
-          LOG.error("Can't create hash file");
-        } else {
-          FileUtil.write(result, hash);
-        }
-      } catch (IOException e) {
-        LOG.error(e);
-      }
-    }
-    return result;
+    return ModelGenerationStatusManager.HASH_PREFIX + hash;
   }
 
 }

@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.cache;
 
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
+import jetbrains.mps.generator.fileGenerator.StreamHandler;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -27,10 +28,8 @@ import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
 
 public abstract class XmlBasedModelCache<T> extends BaseModelCache<T> {
   private static final Logger LOG = Logger.getLogger(XmlBasedModelCache.class);
@@ -69,31 +68,8 @@ public abstract class XmlBasedModelCache<T> extends BaseModelCache<T> {
   }
 
   @Override
-  protected File saveCache(@NotNull T cache, SModelDescriptor model) {
-    IFile cacheFile = getCacheFile(model);
-    if (cacheFile == null) return null;
-
-    OutputStream os = null;
-    try {
-      os = cacheFile.openOutputStream();
-      save(cache, os);
-    } catch (IOException e) {
-      LOG.error(e);
-    } finally {
-      if (os != null) {
-        try {
-          os.close();
-        } catch (IOException e) {
-          LOG.error(e);
-        }
-      }
-    }
-    return cacheFile.toFile();
-  }
-
-  protected void save(T t, OutputStream os) throws IOException {
-    Element xml = toXml(t);
-    JDOMUtil.writeDocument(new Document(xml), os);
+  protected void saveCache(@NotNull T cache, SModelDescriptor model, StreamHandler handler) {
+    handler.saveStream(getCacheFileName(), toXml(cache), true);
   }
 
   protected T load(InputStream is) throws IOException {

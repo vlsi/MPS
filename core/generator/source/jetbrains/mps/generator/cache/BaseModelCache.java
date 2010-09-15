@@ -16,7 +16,9 @@
 package jetbrains.mps.generator.cache;
 
 import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
+import jetbrains.mps.generator.fileGenerator.StreamHandler;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -42,9 +44,9 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
   @Nullable
   protected abstract T readCache(SModelDescriptor model);
 
-  protected abstract File saveCache(@NotNull T t, SModelDescriptor model);
+  protected abstract void saveCache(@NotNull T t, SModelDescriptor model, StreamHandler handler);
 
-  protected abstract T generateCache(CacheGenerationContext context);
+  protected abstract T generateCache(GenerationStatus status);
 
   protected abstract String getCacheFileName();
 
@@ -132,17 +134,17 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
   }
 
   protected class MyCacheGenerator implements CacheGenerator {
-    public File generateCache(CacheGenerationContext context) {
-      T cache = BaseModelCache.this.generateCache(context);
-      if (cache == null) return null;
+    public void generateCache(GenerationStatus status, StreamHandler handler) {
+      T cache = BaseModelCache.this.generateCache(status);
+      if (cache == null) return;
 
-      SModelDescriptor model = context.getOriginalInputModel();
+      SModelDescriptor model = status.getOriginalInputModel();
 
       synchronized (myCache) {
         myCache.put(model, cache);
       }
 
-      return saveCache(cache, model);
+      saveCache(cache, model, handler);
     }
   }
 }

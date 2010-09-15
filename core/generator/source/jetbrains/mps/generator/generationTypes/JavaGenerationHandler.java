@@ -23,7 +23,10 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
+import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.fileGenerator.JavaFileGenerator;
+import jetbrains.mps.generator.fileGenerator.StreamHandler;
+import jetbrains.mps.generator.fileGenerator.vcs.FileProcessor;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
@@ -35,10 +38,15 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.Pair;
+import org.jdom.Document;
+import org.jdom.Element;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -66,12 +74,21 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
     String targetDir = module.getOutputFor(inputModel);
 
     long startJobTime = System.currentTimeMillis();
-    boolean result = new JavaFileGenerator(
-      ModelGenerationStatusManager.getInstance().getCacheGenerator(),
-      BLDependenciesCache.getInstance().getGenerator(),
-      BLDebugInfoCache.getInstance().getGenerator(),
-      GenerationDependenciesCache.getInstance().getGenerator()
-      ).handleOutput(invocationContext, status, new File(targetDir));
+
+    boolean result = false;
+    if (status.isOk()) {
+      JavaStreamHandler javaStreamHandler = new JavaStreamHandler(inputModel, new File(targetDir), invocationContext);
+      try {
+        result = new JavaFileGenerator(javaStreamHandler,
+          ModelGenerationStatusManager.getInstance().getCacheGenerator(),
+          BLDependenciesCache.getInstance().getGenerator(),
+          BLDebugInfoCache.getInstance().getGenerator(),
+          GenerationDependenciesCache.getInstance().getGenerator()
+        ).handleOutput(invocationContext, status);
+      } finally {
+        javaStreamHandler.dispose();
+      }
+    }
 
     if (!result) {
       info("there were errors.");
@@ -215,5 +232,100 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
   @Override
   public String toString() {
     return "Generate Files";
+  }
+
+  private static class JavaStreamHandler implements StreamHandler {
+    private final SModelDescriptor myModelDescriptor;
+    private final File myOutputDir;
+    private final IOperationContext myContext;
+    private final File myCachesOutputDir;
+    private Set<File> myCreated;
+    private Set<File> myTouched;
+
+    private JavaStreamHandler(SModelDescriptor modelDescriptor, File outputDir, IOperationContext context) {
+      myModelDescriptor = modelDescriptor;
+      myOutputDir = outputDir;
+      myContext = context;
+      myCachesOutputDir = FileGenerationUtil.getCachesOutputDir(outputDir);
+    }
+
+    private void register(File file, boolean isNew) {
+      if (isNew) {
+        if (myCreated == null) {
+          myCreated = new HashSet<File>();
+        }
+      } else {
+        if (myTouched == null) {
+          myTouched = new HashSet<File>();
+        }
+      }
+      (isNew ? myCreated : myTouched).add(file);
+    }
+
+    @Override
+    public void saveStream(String name, String content, boolean isCache) {
+      File folder = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, isCache ? myCachesOutputDir : myOutputDir);
+      File file = new File(folder, name);
+      try {
+        register(file, !file.exists());
+        FileUtil.writeFile(file, content);
+      } catch (IOException e) {
+        LOG.error(e);
+      }
+    }
+
+    @Override
+    public void saveStream(String name, Element content, boolean isCache) {
+      File folder = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, isCache ? myCachesOutputDir : myOutputDir);
+      File file = new File(folder, name);
+      try {
+        register(file, !file.exists());
+        JDOMUtil.writeDocument(new Document(content), file);
+      } catch (IOException e) {
+        LOG.error(e);
+      }
+    }
+
+    @Override
+    public boolean touch(String name, boolean isCache) {
+      File folder = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, isCache ? myCachesOutputDir : myOutputDir);
+      File file = new File(folder, name);
+      if (file.exists()) {
+        register(file, false);
+        return true;
+      }
+      return false;
+    }
+
+    @Override
+    public void dispose() {
+      Set<File> directories = new HashSet<File>();
+      directories.add(myOutputDir);
+      directories.add(myCachesOutputDir);
+      for (File f : myTouched) {
+        directories.add(f.getParentFile());
+      }
+      for (File f : myCreated) {
+        directories.add(f.getParentFile());
+      }
+
+      // clear garbage
+      final List<File> filesToDelete = new ArrayList<File>();
+      for (File dir : directories) {
+        File[] files = dir.listFiles();
+        if (files == null) continue;
+        for (File outputDirectoryFile : files) {
+          if (outputDirectoryFile.isDirectory()) continue;
+          if (myTouched.contains(outputDirectoryFile)) continue;
+          if (myCreated.contains(outputDirectoryFile)) continue;
+          filesToDelete.add(outputDirectoryFile);
+        }
+      }
+
+      FileProcessor.processVCSAddition(myCreated);
+      FileProcessor.processVCSDeletion(filesToDelete);
+      FileProcessor.invalidateRoot(myOutputDir, myContext);
+      FileProcessor.invalidateRoot(myCachesOutputDir, myContext);
+    }
   }
 }

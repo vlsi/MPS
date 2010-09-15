@@ -6,20 +6,17 @@ import jetbrains.mps.generator.cache.BaseModelCache;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.generator.cache.CacheGenerationContext;
-import java.io.File;
+import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
-import java.io.OutputStream;
-import org.jdom.Element;
-import jetbrains.mps.util.JDOMUtil;
-import org.jdom.Document;
-import java.io.IOException;
+import jetbrains.mps.generator.fileGenerator.StreamHandler;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import java.io.InputStream;
+import org.jdom.Document;
+import jetbrains.mps.util.JDOMUtil;
+import java.io.IOException;
 import org.jdom.JDOMException;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.vfs.FileSystem;
 import com.intellij.openapi.application.ApplicationManager;
@@ -42,36 +39,12 @@ public class BLDebugInfoCache extends BaseModelCache<DebugInfo> {
     return TRACE_FILE_NAME;
   }
 
-  protected DebugInfo generateCache(CacheGenerationContext ctx) {
-    return ctx.getDebugInfo();
+  protected DebugInfo generateCache(GenerationStatus status) {
+    return status.getDebugInfo();
   }
 
-  protected File saveCache(@NotNull DebugInfo debugInfo, SModelDescriptor model) {
-    IFile defaultOutputDir = FileGenerationUtil.getDefaultOutputDir(model, getOutputDirForWriting(model.getModule(), model.getModule().getOutputFor(model)));
-    check_xy6085_a1a3(defaultOutputDir);
-    IFile cacheFile = check_xy6085_a0c0d(defaultOutputDir, TRACE_FILE_NAME);
-    if (cacheFile == null) {
-      return null;
-    }
-
-    OutputStream os = null;
-    try {
-      os = cacheFile.openOutputStream();
-      Element element = debugInfo.toXml();
-      JDOMUtil.writeDocument(new Document(element), os);
-    } catch (IOException e) {
-      LOG.error(e);
-    } finally {
-      if (os != null) {
-        try {
-          os.close();
-        } catch (IOException e) {
-          LOG.error(e);
-        }
-      }
-    }
-
-    return cacheFile.toFile();
+  protected void saveCache(@NotNull DebugInfo debugInfo, SModelDescriptor descriptor, StreamHandler handler) {
+    handler.saveStream(TRACE_FILE_NAME, debugInfo.toXml(), false);
   }
 
   @Nullable
@@ -106,20 +79,6 @@ public class BLDebugInfoCache extends BaseModelCache<DebugInfo> {
 
   public static BLDebugInfoCache getInstance() {
     return ApplicationManager.getApplication().getComponent(BLDebugInfoCache.class);
-  }
-
-  private static Boolean check_xy6085_a1a3(IFile p) {
-    if (null == p) {
-      return null;
-    }
-    return p.mkdirs();
-  }
-
-  private static IFile check_xy6085_a0c0d(IFile p, String TRACE_FILE_NAME) {
-    if (null == p) {
-      return null;
-    }
-    return p.child(TRACE_FILE_NAME);
   }
 
   private static InputStream check_xy6085_a0b0e(ClassLoader p, SModelDescriptor descriptor, String TRACE_FILE_NAME) {
