@@ -434,7 +434,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1233926023574">
-    <property name="name:2" value="reduce_UndeclaredVariableReference" />
+    <property name="name:2" value="reduce_UndeclaredVariableReferenceInLayout" />
     <link role="applicableConcept:2" targetNodeId="16.1240033962436" resolveInfo="UndeclaredVariableReference" />
     <node role="contentNode:2" type="jetbrains.mps.build.packaging.structure.MPSLayout:7" id="1233926062533">
       <property name="name:7" value="some" />
@@ -537,7 +537,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1233931547920">
-    <property name="name:2" value="weave_UndeclaredVariableReference" />
+    <property name="name:2" value="weave_UndeclaredVariableReferenceDeclaration" />
     <link role="applicableConcept:2" targetNodeId="16.1240033962436" resolveInfo="UndeclaredVariableReference" />
     <node role="contentNode:2" type="jetbrains.mps.build.packaging.structure.MPSLayout:7" id="1233931547926">
       <property name="name:7" value="some" />
@@ -1378,7 +1378,7 @@
   </node>
   <visible index="3" modelUID="r:19a13561-830e-4400-a084-e2990744f9e1(jetbrains.mps.build.packaging.defaultVariables)" />
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="2521628527372173250">
-    <property name="name:2" value="reduce_MPSBuildFromBuild" />
+    <property name="name:2" value="reduce_MPSBuild" />
     <link role="applicableConcept:2" targetNodeId="1.1233149592028" resolveInfo="MPSBuild" />
     <node role="contentNode:2" type="jetbrains.mps.build.packaging.structure.MPSLayout:7" id="2521628527372173251">
       <property name="name:7" value="MPSBuildStructure" />
