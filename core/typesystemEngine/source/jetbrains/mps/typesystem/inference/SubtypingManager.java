@@ -37,8 +37,6 @@ public class SubtypingManager {
 
   protected final TypeChecker myTypeChecker;
 
-  private final Object CACHE_ACCESS = new Object();
-
   public SubtypingManager(TypeChecker typeChecker) {
     myTypeChecker = typeChecker;
   }
@@ -86,29 +84,27 @@ public class SubtypingManager {
    * may produce side effects, such as creating new type equations
    */
   public  boolean isSubtype(final IWrapper subtype, final IWrapper supertype, @Nullable final EquationManager equationManager, @Nullable final EquationInfo errorInfo, final boolean isWeak) {
-    synchronized (CACHE_ACCESS) {
-      return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<Boolean>() {
-        public Boolean compute() {
-          IWrapper subRepresentator = subtype;
-          IWrapper superRepresentator = supertype;
-          if (equationManager != null) {
-            subRepresentator = equationManager.getRepresentatorWrapper(subtype);
-            superRepresentator = equationManager.getRepresentatorWrapper(supertype);
-          }
-
-          //reflexivity:
-          if (subRepresentator == superRepresentator) return true;
-          if (subRepresentator == null || superRepresentator == null) return false;
-
-          if (superRepresentator.matchesWith(subRepresentator, equationManager, errorInfo)) {
-            return true;
-          }
-
-          // transitivity:
-          return isStrictSubtype(subRepresentator, superRepresentator, equationManager, errorInfo, isWeak);
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<Boolean>() {
+      public Boolean compute() {
+        IWrapper subRepresentator = subtype;
+        IWrapper superRepresentator = supertype;
+        if (equationManager != null) {
+          subRepresentator = equationManager.getRepresentatorWrapper(subtype);
+          superRepresentator = equationManager.getRepresentatorWrapper(supertype);
         }
-      });
-    }
+
+        //reflexivity:
+        if (subRepresentator == superRepresentator) return true;
+        if (subRepresentator == null || superRepresentator == null) return false;
+
+        if (superRepresentator.matchesWith(subRepresentator, equationManager, errorInfo)) {
+          return true;
+        }
+
+        // transitivity:
+        return isStrictSubtype(subRepresentator, superRepresentator, equationManager, errorInfo, isWeak);
+      }
+    });
   }
 
   /**
@@ -351,7 +347,7 @@ public class SubtypingManager {
         for (SubtypingRule_Runtime subtypingRule : subtypingRule_runtimes) {
           List<SNode> supertypes = subtypingRule.getSubOrSuperTypes(node, null);    //todo should typeCheckingContext really be null?
           if (supertypes != null) {
-            result.addAll(toWrappers(new HashSet<SNode>(supertypes), null));            
+            result.addAll(toWrappers(new HashSet<SNode>(supertypes), null));
           }
         }
       }
@@ -586,49 +582,47 @@ System.out.println("alltypes = " + allTypes);*/
       return result;
     }
 
-    synchronized (CACHE_ACCESS) {
-      //asking the cache
-      return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<SNode>() {
-        public SNode compute() {
+    //asking the cache
+    return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<SNode>() {
+      public SNode compute() {
 
-          SubtypingCache cache = myTypeChecker.getSubtypingCache();
-          if (cache != null) {
-            Pair<Boolean, SNode> nodePair = cache.getCoerced(subtype, pattern, isWeak);
-            if (nodePair.o1) {
-              return nodePair.o2;
-            }
+        SubtypingCache cache = myTypeChecker.getSubtypingCache();
+        if (cache != null) {
+          Pair<Boolean, SNode> nodePair = cache.getCoerced(subtype, pattern, isWeak);
+          if (nodePair.o1) {
+            return nodePair.o2;
           }
-          cache = myTypeChecker.getGlobalSubtypingCache();
-          if (cache != null) {
-            Pair<Boolean, SNode> nodePair = cache.getCoerced(subtype, pattern, isWeak);
-            if (nodePair.o1) {
-              return nodePair.o2;
-            }
-          }
-
-          CoersionMatcher coersionMatcher = new CoersionMatcher(pattern);
-          boolean success = searchInSupertypes(NodeWrapper.fromNode(subtype, equationManager, true), coersionMatcher, equationManager, null, isWeak);
-          SNode result;
-          if (!success) {
-            result = null;
-          } else {
-            result = coersionMatcher.getResult();
-          }
-
-          //writing to the cache
-          SubtypingCache subtypingCache = myTypeChecker.getSubtypingCache();
-          if (subtypingCache != null) {
-            subtypingCache.addCacheEntry(subtype, pattern, result, isWeak);
-          }
-          subtypingCache = myTypeChecker.getGlobalSubtypingCache();
-          if (subtypingCache != null) {
-            subtypingCache.addCacheEntry(subtype, pattern, result, isWeak);
-          }
-
-          return result;
         }
-      });
-    }
+        cache = myTypeChecker.getGlobalSubtypingCache();
+        if (cache != null) {
+          Pair<Boolean, SNode> nodePair = cache.getCoerced(subtype, pattern, isWeak);
+          if (nodePair.o1) {
+            return nodePair.o2;
+          }
+        }
+
+        CoersionMatcher coersionMatcher = new CoersionMatcher(pattern);
+        boolean success = searchInSupertypes(NodeWrapper.fromNode(subtype, equationManager, true), coersionMatcher, equationManager, null, isWeak);
+        SNode result;
+        if (!success) {
+          result = null;
+        } else {
+          result = coersionMatcher.getResult();
+        }
+
+        //writing to the cache
+        SubtypingCache subtypingCache = myTypeChecker.getSubtypingCache();
+        if (subtypingCache != null) {
+          subtypingCache.addCacheEntry(subtype, pattern, result, isWeak);
+        }
+        subtypingCache = myTypeChecker.getGlobalSubtypingCache();
+        if (subtypingCache != null) {
+          subtypingCache.addCacheEntry(subtype, pattern, result, isWeak);
+        }
+
+        return result;
+      }
+    });
   }
 
   public SNode coerceSubtyping(SNode subtype, final IMatchingPattern pattern, EquationManager equationManager) {

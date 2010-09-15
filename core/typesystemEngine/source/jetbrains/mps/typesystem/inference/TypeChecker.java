@@ -21,6 +21,7 @@ import jetbrains.mps.lang.typesystem.runtime.performance.RuntimeSupport_Tracer;
 import jetbrains.mps.lang.typesystem.runtime.performance.SubtypingManager_Tracer;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.typesystem.inference.util.ConcurrentSubtypingCache;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -145,7 +146,7 @@ public class TypeChecker implements ApplicationComponent {
   }
 
   private SubtypingCache createSubtypingCache() {
-    return new SubtypingCache();
+    return new ConcurrentSubtypingCache();
   }
 
   /* package */ Pair<SNode, Boolean> getTypeComputedForCompletion(SNode node) {
