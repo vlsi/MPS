@@ -7,11 +7,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraintsManager" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
   </dependency>
-  <dependency className="jetbrains.mps.build.custommpsInternal.constraints.CreateIfNotExists_Constraints" file="CreateIfNotExists_Constraints.java">
-    <classNode dependClassName="jetbrains.mps.build.custommps.behavior.MPSBuild_Behavior" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.CanBeAChildContext" />
-  </dependency>
   <dependency className="jetbrains.mps.build.custommpsInternal.constraints.IfProjectComponent_Constraints" file="IfProjectComponent_Constraints.java">
     <classNode dependClassName="jetbrains.mps.build.custommps.behavior.MPSBuild_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />

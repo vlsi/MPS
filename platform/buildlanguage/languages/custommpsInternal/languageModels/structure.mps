@@ -25,24 +25,6 @@
   <maxImportIndex value="2" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="7" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1239995796746">
-    <property name="name:0" value="CreateIfNotExists" />
-    <link role="extends:0" targetNodeId="2.1203598300291:7" resolveInfo="AbstractProjectComponent" />
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1239995796747">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="create" />
-      <property name="sourceCardinality:0" value="1" />
-      <link role="target:0" targetNodeId="2.1203598300291:7" resolveInfo="AbstractProjectComponent" />
-    </node>
-    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1239995796748">
-      <property name="name:0" value="artifactName" />
-      <link role="dataType:0" targetNodeId="2v.1082983041843:0" resolveInfo="string" />
-    </node>
-    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1239995796749">
-      <property name="value:0" value="create if not exists" />
-      <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1240033962434">
     <property name="name:0" value="MPSModule" />
     <link role="extends:0" targetNodeId="2.1203599702327:7" resolveInfo="Module" />

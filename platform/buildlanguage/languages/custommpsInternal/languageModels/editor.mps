@@ -34,27 +34,6 @@
   <import index="1" modelUID="r:3440a6a7-d645-4c49-b3b3-9d0c36859a49(jetbrains.mps.build.custommpsInternal.structure)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895904d5(jetbrains.mps.build.packaging.editor)" version="-1" />
   <import index="4" modelUID="r:e349d949-52e2-480e-b3d2-1f6a387b356a(jetbrains.mps.build.custommps.editor)" version="-1" />
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1239995796833">
-    <link role="conceptDeclaration:32" targetNodeId="1.1239995796746" resolveInfo="CreateIfNotExists" />
-    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1239995796834">
-      <property name="vertical:32" value="false" />
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1239995796835">
-        <property name="text:32" value="if" />
-        <link role="styleClass:32" targetNodeId="3.1203598923024" resolveInfo="keyword" />
-      </node>
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="1239995796836">
-        <link role="relationDeclaration:32" targetNodeId="1.1239995796748" resolveInfo="artifactName" />
-      </node>
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1239995796837">
-        <property name="text:32" value="not exists" />
-        <link role="styleClass:32" targetNodeId="3.1203598923024" resolveInfo="keyword" />
-      </node>
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="1239995796838">
-        <link role="relationDeclaration:32" targetNodeId="1.1239995796747" />
-      </node>
-      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="1239995796839" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1240033962790">
     <link role="conceptDeclaration:32" targetNodeId="1.1240033962436" resolveInfo="UndeclaredVariableReference" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1240033962791">

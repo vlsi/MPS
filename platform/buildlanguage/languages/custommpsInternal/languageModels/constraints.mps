@@ -5,6 +5,7 @@
   <language namespace="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
   <language namespace="13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.lang.sharedConcepts)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
+  <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="8" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
@@ -66,20 +67,6 @@
   <import index="1" modelUID="r:3440a6a7-d645-4c49-b3b3-9d0c36859a49(jetbrains.mps.build.custommpsInternal.structure)" version="-1" />
   <import index="2" modelUID="r:896f64dd-7cfe-4bc4-b401-38e2a027e9ae(jetbrains.mps.build.custommps.structure)" version="-1" />
   <import index="3" modelUID="r:0053416c-db1b-459c-a55a-a05cf9d1cf89(jetbrains.mps.build.custommps.behavior)" version="-1" />
-  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1239995796905">
-    <link role="concept:8" targetNodeId="1.1239995796746" resolveInfo="CreateIfNotExists" />
-    <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="1239995796906">
-      <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1239995796907">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1239995796908">
-          <node role="expression:3" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall:16" id="1239995796909">
-            <link role="concept:16" targetNodeId="2.1233149592028" resolveInfo="MPSBuild" />
-            <link role="baseMethodDeclaration:16" targetNodeId="3.1238403397946" resolveInfo="isInCustomMPSGenerator" />
-            <node role="actualArgument:16" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_operationContext:0" id="1239995796910" />
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1240033963211">
     <link role="concept:8" targetNodeId="1.1240033962434" resolveInfo="MPSModule" />
     <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="1240033963212">
