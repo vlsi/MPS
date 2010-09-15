@@ -13,22 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem;
+package jetbrains.mps.newTypesystem.Difference;
 
+import jetbrains.mps.newTypesystem.State.State;
 import jetbrains.mps.smodel.SNode;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Sep 10, 2010
- * Time: 6:11:49 PM
+ * Date: Sep 15, 2010
+ * Time: 1:04:39 PM
  * To change this template use File | Settings | File Templates.
  */
-public class Difference {
+public class NodeToErrorDifference extends Difference{
+  private SNode myNode;
 
+  public NodeToErrorDifference(SNode node) {
+     myNode = node;
+  }
 
-
+  @Override
+  public void rollBack(State state) {
+    state.getNodeMaps().rollBackError(myNode);
+  }
 }

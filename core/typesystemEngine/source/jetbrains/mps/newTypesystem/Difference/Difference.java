@@ -13,37 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem;
+package jetbrains.mps.newTypesystem.Difference;
 
-
-import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.typesystem.inference.IWrapper;
+import jetbrains.mps.newTypesystem.State.State;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
  * Date: Sep 10, 2010
- * Time: 6:09:38 PM
+ * Time: 6:11:49 PM
  * To change this template use File | Settings | File Templates.
  */
-public class State {
-  private Equations myEquations = new Equations();
-  private Inequalities myInequalities = new Inequalities();
-  private NodeMaps myNodeMaps = new NodeMaps();
+public abstract class Difference {
+   protected String myName = "";
 
-  public void rollBack(Difference difference) {
-    myEquations.rollBack();
-    myInequalities.rollBack();
-    //myNodeMaps.rollBack();
-  }
+   public abstract void rollBack(State state);     
 
-  public Equations getEquations() {
-    return myEquations;
-  }
-
-  public Difference addEquation(IWrapper left, IWrapper right, EquationInfo info) {
-    myEquations.addEquation(left, right);
-    return null;
-  }
-
+   public String getName() {
+     return myName;
+   }
 }

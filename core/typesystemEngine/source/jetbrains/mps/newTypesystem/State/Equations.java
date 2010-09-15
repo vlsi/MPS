@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem;
+package jetbrains.mps.newTypesystem.State;
 
 import jetbrains.mps.typesystem.inference.IWrapper;
 
@@ -27,7 +27,12 @@ import java.util.*;
  * To change this template use File | Settings | File Templates.
  */
 public class Equations {
-  Map<IWrapper, IWrapper> myRepresentatives = new HashMap<IWrapper, IWrapper>();
+  private Map<IWrapper, IWrapper> myRepresentatives = new HashMap<IWrapper, IWrapper>();
+  private State myState;
+
+  public Equations(State state) {
+    myState = state;
+  }
 
   public IWrapper getRepresentative(IWrapper wrapper) {
     IWrapper parent = myRepresentatives.get(wrapper);
@@ -57,7 +62,7 @@ public class Equations {
     
   }
 
-  public void rollBack() {
-    
+  public void rollBack(IWrapper previous, IWrapper current) {
+
   }
 }

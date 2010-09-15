@@ -13,14 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem;
+package jetbrains.mps.newTypesystem.State;
 
-import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.IWrapper;
 
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 /**
@@ -31,6 +28,8 @@ import java.util.Set;
  * To change this template use File | Settings | File Templates.
  */
 public class Inequalities {
+  private State myState;
+
   private Set<InequalityMapPair> myInequalities = new HashSet<InequalityMapPair>();
 
   private InequalityMapPair myWeakInequalities = new InequalityMapPair();
@@ -40,7 +39,8 @@ public class Inequalities {
 
   private InequalityMapPair myComparableTypes = new InequalityMapPair();
 
-  public Inequalities() {
+  public Inequalities(State state) {
+    myState = state;
     myInequalities.add(myWeakInequalities);
     myInequalities.add(myStrongInequalities);
     myInequalities.add(myWeakCheckInequalities);
@@ -48,6 +48,10 @@ public class Inequalities {
   }
 
   public void rollBack() {
+    
+  }
+
+  public void addSubTyping() {
     
   }
 

@@ -13,47 +13,40 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem;
+package jetbrains.mps.newTypesystem.State;
+
 
 import jetbrains.mps.newTypesystem.Difference.Difference;
-import jetbrains.mps.newTypesystem.State.State;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.IWrapper;
-import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-
-import java.util.Stack;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
  * Date: Sep 10, 2010
- * Time: 4:32:55 PM
+ * Time: 6:09:38 PM
  * To change this template use File | Settings | File Templates.
  */
-public class TypeCheckingContextNew extends TypeCheckingContext {
+public class State {
+  private Equations myEquations;
+  private Inequalities myInequalities;
+  private NodeMaps myNodeMaps = new NodeMaps();
 
-  private State myState = new State();
-  private Stack<Difference> myDifferenceStack = new Stack<Difference>();
-
-  public TypeCheckingContextNew(SNode rootNode, TypeChecker typeChecker) {
-    super(rootNode, typeChecker);
+  public State() {
+    myEquations = new Equations(this);
+    myInequalities = new Inequalities(this);
   }
 
-  private void rollBack() {
-    if (myDifferenceStack.isEmpty()) {
-      return;
-    }
-    myDifferenceStack.pop().rollBack(myState);
+  public Equations getEquations() {
+    return myEquations;
   }
 
-  @Override
-  public void createEquation(IWrapper left, IWrapper right, EquationInfo equationInfo) {
-    myDifferenceStack.add(myState.addEquation(left, right, equationInfo));
+  public Difference addEquation(IWrapper left, IWrapper right, EquationInfo info) {
+    myEquations.addEquation(left, right);
+    return null;
   }
 
-
-
-
+  public NodeMaps getNodeMaps() {
+    return myNodeMaps;
+  }
 }
