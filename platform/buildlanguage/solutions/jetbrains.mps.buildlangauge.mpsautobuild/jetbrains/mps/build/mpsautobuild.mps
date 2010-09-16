@@ -1007,8 +1007,8 @@
           <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472452">
             <property name="path:7" value="lib" />
           </node>
-          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472453">
-            <property name="path:7" value="ant-1.7.0" />
+          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="138963089124649523">
+            <property name="path:7" value="ant" />
           </node>
         </node>
       </node>

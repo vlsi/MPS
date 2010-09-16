@@ -20,7 +20,7 @@
     <mkdir dir="${deploy.dir}" />
     <mkdir dir="${deploy.dir}/MPS/bin" />
     <mkdir dir="${deploy.dir}/MPS/lib/beansbinding" />
-    <mkdir dir="${deploy.dir}/MPS/lib/ant-1.7.0" />
+    <mkdir dir="${deploy.dir}/MPS/lib/ant" />
     <mkdir dir="${deploy.dir}/MPS/lib/asm" />
     <mkdir dir="${deploy.dir}/MPS/lib/commons-codec" />
     <mkdir dir="${deploy.dir}/MPS/lib/commons-collections" />
@@ -86,8 +86,8 @@
     <copy todir="${deploy.dir}/MPS/lib/beansbinding">
       <fileset dir="${mps_home}/lib/beansbinding" excludes="**/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS/lib/ant-1.7.0">
-      <fileset dir="${mps_home}/lib/ant-1.7.0" excludes="**/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
+    <copy todir="${deploy.dir}/MPS/lib/ant">
+      <fileset dir="${mps_home}/lib/ant" excludes="**/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/asm">
       <fileset dir="${mps_home}/lib/asm" excludes="**/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
