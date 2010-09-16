@@ -38,6 +38,7 @@ import java.io.File;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.buildlanguage.behavior.Project_Behavior;
 import jetbrains.mps.baseLanguage.util.plugin.run.RunUtil;
 import com.intellij.execution.configurations.RunnerSettings;
@@ -148,7 +149,7 @@ public class DefaultBuildLanguageApplication_Configuration extends BaseRunConfig
                   final Wrappers._T<File> file = new Wrappers._T<File>();
                   ModelAccess.instance().runReadAction(new Runnable() {
                     public void run() {
-                      file.value = FileGenerationUtil.getDefaultOutputDir(SNodeOperations.getModel(node), new File(SNodeOperations.getModel(node).getModelDescriptor().getModule().getGeneratorOutputPath()));
+                      file.value = FileGenerationUtil.getDefaultOutputDir(SNodeOperations.getModel(node), FileSystem.getFile(new File(SNodeOperations.getModel(node).getModelDescriptor().getModule().getGeneratorOutputPath()))).toFile();
                       file.value = new File(file.value, Project_Behavior.call_getFileName_1213877351819(node));
                     }
                   });

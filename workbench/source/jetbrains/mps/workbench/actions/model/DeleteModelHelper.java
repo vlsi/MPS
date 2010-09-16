@@ -39,6 +39,7 @@ import jetbrains.mps.refactoring.framework.*;
 import jetbrains.mps.refactoring.framework.RefactoringUtil.Applicability;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.vcs.VcsMigrationUtil;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
 import org.jetbrains.annotations.NonNls;
@@ -75,8 +76,8 @@ public class DeleteModelHelper {
   public static void deleteGeneratedFiles(Project project, SModelDescriptor modelDescriptor) {
     File moduleOutput = new File(modelDescriptor.getModule().getOutputFor(modelDescriptor));
     List<File> directoriesToDelete = new ArrayList<File>();
-    directoriesToDelete.add(FileGenerationUtil.getDefaultOutputDir(modelDescriptor, moduleOutput));
-    directoriesToDelete.add(FileGenerationUtil.getDefaultOutputDir(modelDescriptor, FileGenerationUtil.getCachesOutputDir(moduleOutput)));
+    directoriesToDelete.add(FileGenerationUtil.getDefaultOutputDir(modelDescriptor, FileSystem.getFile(moduleOutput)).toFile());
+    directoriesToDelete.add(FileGenerationUtil.getDefaultOutputDir(modelDescriptor, FileSystem.getFile(new File(FileGenerationUtil.getCachesPath(moduleOutput.getAbsolutePath())))).toFile());
     for (File directory : directoriesToDelete) {
       if (directory.exists()) {
         VcsMigrationUtil.deleteFromDiskAndRemoveFromVcs(Arrays.asList(directory.listFiles(new FilenameFilter() {

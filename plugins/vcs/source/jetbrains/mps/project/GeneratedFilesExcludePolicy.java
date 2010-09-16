@@ -7,7 +7,6 @@ import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.vcs.MPSVcsProjectConfiguration;
-import jetbrains.mps.vcs.VcsMigrationUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;

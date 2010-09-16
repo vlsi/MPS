@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.util.JavaNameUtil;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
 import java.io.File;
@@ -27,38 +26,21 @@ import java.io.File;
 public class FileGenerationUtil {
   private static final String CACHES_SUFFIX = ".caches";
 
+  public static String getCachesPath(String outputDir) {
+    return outputDir + CACHES_SUFFIX;
+  }
+
   public static IFile getDefaultOutputDir(SModelDescriptor inputModelDescriptor, IFile outputRootDir) {
     SModelReference reference = inputModelDescriptor.getSModelReference();
     return getDefaultOutputDir(reference, outputRootDir);
   }
 
-  public static File getDefaultOutputDir(SModelDescriptor inputModelDescriptor, File outputRootDir) {
-    return getDefaultOutputDir(inputModelDescriptor, FileSystem.getFile(outputRootDir)).toFile();
-  }
-
-  private static IFile getDefaultOutputDir(SModel inputModel, IFile outputRootDir) {
+  public static IFile getDefaultOutputDir(SModel inputModel, IFile outputRootDir) {
     return getDefaultOutputDir(inputModel.getSModelReference(), outputRootDir);
   }
 
-  public static File getDefaultOutputDir(SModelReference inputModel, File outputRootDir) {
-    return getDefaultOutputDir(inputModel, FileSystem.getFile(outputRootDir)).toFile();
-  }
-
-  public static File getDefaultOutputDir(SModel inputModel, File outputRootDir) {
-    return getDefaultOutputDir(inputModel, FileSystem.getFile(outputRootDir)).toFile();
-  }
-
-  public static File getCachesOutputDir(File outputDir) {
-    return new File(getCachesPath(outputDir.getAbsolutePath()));
-  }
-
-  public static String getCachesPath(String outputDir) {
-    return outputDir + CACHES_SUFFIX;
-  }
-
-  private static IFile getDefaultOutputDir(SModelReference reference, IFile outputRootDir) {
+  public static IFile getDefaultOutputDir(SModelReference reference, IFile outputRootDir) {
     String packageName = JavaNameUtil.packageNameForModelUID(reference);
     return outputRootDir.child(packageName.replace('.', File.separatorChar));
   }
-
 }

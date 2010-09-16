@@ -33,6 +33,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.ReadUtil;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
@@ -188,8 +189,8 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
       throw new IllegalStateException();
     }
 
-    File outputPath = FileGenerationUtil.getCachesOutputDir(new File(module.getOutputFor(sm)));
-    File sourcesDir = FileGenerationUtil.getDefaultOutputDir(sm, outputPath);
+    File outputPath = new File(FileGenerationUtil.getCachesPath(new File(module.getOutputFor(sm)).getAbsolutePath()));
+    File sourcesDir = FileGenerationUtil.getDefaultOutputDir(sm, FileSystem.getFile(outputPath)).toFile();
 
     File[] files = sourcesDir.listFiles();
     String result = null;

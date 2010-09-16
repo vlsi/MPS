@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="Buildlanguage_ApplicationPlugin.java" startLine="7" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.buildlanguage.plugin.Buildlanguage_ApplicationPlugin" />
+  <unitInfo fileName="DefaultBuildLanguageApplication_Editor.java" startLine="22" startPosition="47" endLine="26" endPosition="7" unitName="jetbrains.mps.buildlanguage.plugin.DefaultBuildLanguageApplication_Editor$2" />
+  <unitInfo fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="137" startPosition="42" endLine="141" endPosition="13" unitName="jetbrains.mps.buildlanguage.plugin.DefaultBuildLanguageApplication_Configuration$2" />
+  <unitInfo fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="226" startPosition="45" endLine="230" endPosition="5" unitName="jetbrains.mps.buildlanguage.plugin.DefaultBuildLanguageApplication_Configuration$2" />
+  <unitInfo fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="258" startPosition="66" endLine="262" endPosition="7" unitName="jetbrains.mps.buildlanguage.plugin.DefaultBuildLanguageApplication_Configuration$4" />
+  <unitInfo fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="240" startPosition="45" endLine="245" endPosition="5" unitName="jetbrains.mps.buildlanguage.plugin.DefaultBuildLanguageApplication_Configuration$3" />
+  <unitInfo fileName="AntRunnerPreferences_PreferencesComponent.java" startLine="99" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.buildlanguage.plugin.AntRunnerPreferences_PreferencesComponent$MyState" />
+  <unitInfo fileName="Buildlanguage_ProjectPlugin.java" startLine="12" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.buildlanguage.plugin.Buildlanguage_ProjectPlugin" />
+  <unitInfo fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="126" startPosition="90" endLine="133" endPosition="13" unitName="jetbrains.mps.buildlanguage.plugin.DefaultBuildLanguageApplication_Configuration$2" />
+  <unitInfo fileName="DefaultBuildLanguageApplication_Editor.java" startLine="19" startPosition="74" endLine="29" endPosition="3" unitName="jetbrains.mps.buildlanguage.plugin.DefaultBuildLanguageApplication_Editor$1" />
+  <unitInfo fileName="DefaultBuildLanguageApplication_Factory.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.buildlanguage.plugin.DefaultBuildLanguageApplication_Factory" />
+  <unitInfo fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="316" startPosition="0" endLine="332" endPosition="0" unitName="jetbrains.mps.buildlanguage.plugin.DefaultBuildLanguageApplication_Configuration$MyState" />
+  <unitInfo fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="145" startPosition="52" endLine="166" endPosition="13" unitName="jetbrains.mps.buildlanguage.plugin.DefaultBuildLanguageApplication_Configuration$2" />
+  <unitInfo fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="333" startPosition="0" endLine="356" endPosition="0" unitName="jetbrains.mps.buildlanguage.plugin.DefaultBuildLanguageApplication_Configuration$MyExecutionResult" />
+  <unitInfo fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="357" startPosition="0" endLine="382" endPosition="0" unitName="jetbrains.mps.buildlanguage.plugin.DefaultBuildLanguageApplication_Configuration$MyExecutionConsole" />
+  <unitInfo fileName="BuildLanguage_ConfigurationType.java" startLine="18" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.buildlanguage.plugin.BuildLanguage_ConfigurationType" />
+  <unitInfo fileName="DefaultBuildLanguageConfigurationFromNode.java" startLine="18" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.buildlanguage.plugin.DefaultBuildLanguageConfigurationFromNode" />
+  <unitInfo fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="272" startPosition="0" endLine="315" endPosition="0" unitName="jetbrains.mps.buildlanguage.plugin.DefaultBuildLanguageApplication_Configuration$MySettingsEditor" />
+  <unitInfo fileName="DefaultBuildLanguageApplication_Editor.java" startLine="17" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.buildlanguage.plugin.DefaultBuildLanguageApplication_Editor" />
+  <unitInfo fileName="AntRunnerPreferences_AntRunner_PreferencesPage.java" startLine="12" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.buildlanguage.plugin.AntRunnerPreferences_AntRunner_PreferencesPage" />
+  <unitInfo fileName="AntRunnerPreferences_PreferencesComponent.java" startLine="29" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.buildlanguage.plugin.AntRunnerPreferences_PreferencesComponent" />
+  <unitInfo fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="109" startPosition="15" endLine="193" endPosition="5" unitName="jetbrains.mps.buildlanguage.plugin.DefaultBuildLanguageApplication_Configuration$1" />
+  <unitInfo fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="59" startPosition="0" endLine="383" endPosition="0" unitName="jetbrains.mps.buildlanguage.plugin.DefaultBuildLanguageApplication_Configuration" />
   <root nodeId="1225567253971">
     <nodeInfo nodeId="1225567253972" fileName="BuildScriptRunner.java" startLine="21" startPosition="51" endLine="22" endPosition="49" />
     <nodeInfo nodeId="1447676209062946461" fileName="BuildScriptRunner.java" startLine="24" startPosition="66" endLine="25" endPosition="16" />
@@ -89,6 +112,9 @@
     <nodeInfo nodeId="1225567253975" fileName="BuildScriptRunner.java" startLine="28" startPosition="0" endLine="76" endPosition="0" />
     <scopeInfo nodeId="2444892561513600778" fileName="BuildScriptRunner.java" startLine="47" startPosition="29" endLine="47" endPosition="29" />
     <scopeInfo nodeId="2444892561513600782" fileName="BuildScriptRunner.java" startLine="50" startPosition="28" endLine="50" endPosition="28" />
+    <scopeInfo nodeId="1225567254069" fileName="BuildScriptRunner.java" startLine="73" startPosition="0" endLine="73" endPosition="37">
+      <varInfo nodeId="1225567254070" varName="exception" />
+    </scopeInfo>
     <scopeInfo nodeId="1225567254072" fileName="BuildScriptRunner.java" startLine="73" startPosition="37" endLine="73" endPosition="37" />
     <scopeInfo nodeId="2444892561513600774" fileName="BuildScriptRunner.java" startLine="43" startPosition="28" endLine="44" endPosition="28" />
     <scopeInfo nodeId="1236003169554" fileName="BuildScriptRunner.java" startLine="56" startPosition="31" endLine="57" endPosition="69" />
@@ -625,25 +651,25 @@
     <unitInfo nodeId="5842104767987897097" fileName="DefaultBuildLanguageConfigurationFromNode.java" startLine="34" startPosition="66" endLine="34" endPosition="258" unitName="jetbrains.mps.buildlanguage.plugin.DefaultBuildLanguageConfigurationFromNode$1" />
   </root>
   <root nodeId="7234763849538404662">
-    <nodeInfo nodeId="823693461259574608" fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="146" startPosition="21" endLine="147" endPosition="82" />
-    <nodeInfo nodeId="809981953580477383" fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="147" startPosition="82" endLine="148" endPosition="73" />
-    <nodeInfo nodeId="809981953580477398" fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="150" startPosition="39" endLine="151" endPosition="206" />
-    <nodeInfo nodeId="4286406969142020076" fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="151" startPosition="206" endLine="152" endPosition="111" />
-    <nodeInfo nodeId="5522848303920891523" fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="155" startPosition="78" endLine="156" endPosition="66" />
-    <nodeInfo nodeId="823693461259574819" fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="157" startPosition="19" endLine="158" endPosition="59" />
-    <nodeInfo nodeId="823693461259504378" fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="158" startPosition="59" endLine="159" endPosition="109" />
-    <nodeInfo nodeId="5522848303920887442" fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="154" startPosition="21" endLine="157" endPosition="19" />
-    <nodeInfo nodeId="809981953580477374" fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="149" startPosition="71" endLine="154" endPosition="0" />
-    <nodeInfo nodeId="809981953580477373" fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="148" startPosition="73" endLine="154" endPosition="21" />
-    <scopeInfo nodeId="5522848303920887443" fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="155" startPosition="78" endLine="156" endPosition="66" />
-    <scopeInfo nodeId="809981953580477375" fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="150" startPosition="39" endLine="152" endPosition="111" />
-    <scopeInfo nodeId="809981953580477374" fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="149" startPosition="71" endLine="154" endPosition="0" />
-    <scopeInfo nodeId="9185618041547065139" fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="146" startPosition="21" endLine="159" endPosition="109">
+    <nodeInfo nodeId="823693461259574608" fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="147" startPosition="21" endLine="148" endPosition="82" />
+    <nodeInfo nodeId="809981953580477383" fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="148" startPosition="82" endLine="149" endPosition="73" />
+    <nodeInfo nodeId="809981953580477398" fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="151" startPosition="39" endLine="152" endPosition="235" />
+    <nodeInfo nodeId="4286406969142020076" fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="152" startPosition="235" endLine="153" endPosition="111" />
+    <nodeInfo nodeId="5522848303920891523" fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="156" startPosition="78" endLine="157" endPosition="66" />
+    <nodeInfo nodeId="823693461259574819" fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="158" startPosition="19" endLine="159" endPosition="59" />
+    <nodeInfo nodeId="823693461259504378" fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="159" startPosition="59" endLine="160" endPosition="109" />
+    <nodeInfo nodeId="5522848303920887442" fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="155" startPosition="21" endLine="158" endPosition="19" />
+    <nodeInfo nodeId="809981953580477374" fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="150" startPosition="71" endLine="155" endPosition="0" />
+    <nodeInfo nodeId="809981953580477373" fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="149" startPosition="73" endLine="155" endPosition="21" />
+    <scopeInfo nodeId="5522848303920887443" fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="156" startPosition="78" endLine="157" endPosition="66" />
+    <scopeInfo nodeId="809981953580477375" fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="151" startPosition="39" endLine="153" endPosition="111" />
+    <scopeInfo nodeId="809981953580477374" fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="150" startPosition="71" endLine="155" endPosition="0" />
+    <scopeInfo nodeId="9185618041547065139" fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="147" startPosition="21" endLine="160" endPosition="109">
       <varInfo nodeId="823693461259574820" varName="process" />
       <varInfo nodeId="809981953580477384" varName="file" />
       <varInfo nodeId="823693461259574609" varName="runner" />
     </scopeInfo>
-    <unitInfo nodeId="809981953580477374" fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="149" startPosition="59" endLine="154" endPosition="19" unitName="jetbrains.mps.buildlanguage.plugin.DefaultBuildLanguageApplication_Configuration$3" />
+    <unitInfo nodeId="809981953580477374" fileName="DefaultBuildLanguageApplication_Configuration.java" startLine="150" startPosition="59" endLine="155" endPosition="19" unitName="jetbrains.mps.buildlanguage.plugin.DefaultBuildLanguageApplication_Configuration$3" />
   </root>
   <root nodeId="823693461259265263">
     <nodeInfo nodeId="823693461259265263" fileName="AntScriptRunner.java" startLine="20" startPosition="49" endLine="21" endPosition="70" />
@@ -702,6 +728,9 @@
     <scopeInfo nodeId="823693461259265335" fileName="AntScriptRunner.java" startLine="48" startPosition="9" endLine="49" endPosition="36" />
     <scopeInfo nodeId="823693461259575680" fileName="AntScriptRunner.java" startLine="74" startPosition="36" endLine="75" endPosition="49" />
     <scopeInfo nodeId="823693461259265785" fileName="AntScriptRunner.java" startLine="82" startPosition="58" endLine="83" endPosition="100" />
+    <scopeInfo nodeId="823693461259265428" fileName="AntScriptRunner.java" startLine="50" startPosition="0" endLine="52" endPosition="117">
+      <varInfo nodeId="823693461259265429" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="823693461259265431" fileName="AntScriptRunner.java" startLine="50" startPosition="29" endLine="52" endPosition="117" />
     <scopeInfo nodeId="3038691514509218379" fileName="AntScriptRunner.java" startLine="24" startPosition="0" endLine="27" endPosition="3">
       <varInfo nodeId="3038691514509232663" varName="parameters" />

@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
+import jetbrains.mps.vfs.FileSystem;
 import org.jdom.Document;
 import org.jdom.Element;
 
@@ -48,7 +49,7 @@ class JavaStreamHandler implements StreamHandler {
     myModelDescriptor = modelDescriptor;
     myOutputDir = outputDir;
     myContext = context;
-    myCachesOutputDir = FileGenerationUtil.getCachesOutputDir(outputDir);
+    myCachesOutputDir = new File(FileGenerationUtil.getCachesPath(outputDir.getAbsolutePath()));
     myProcessor = processor;
   }
 
@@ -67,7 +68,8 @@ class JavaStreamHandler implements StreamHandler {
 
   @Override
   public void saveStream(String name, String content, boolean isCache) {
-    File folder = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, isCache ? myCachesOutputDir : myOutputDir);
+    File outputRootDir = isCache ? myCachesOutputDir : myOutputDir;
+    File folder = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, FileSystem.getFile(outputRootDir)).toFile();
     File file = new File(folder, name);
     try {
       register(file, !file.exists());
@@ -79,7 +81,8 @@ class JavaStreamHandler implements StreamHandler {
 
   @Override
   public void saveStream(String name, Element content, boolean isCache) {
-    File folder = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, isCache ? myCachesOutputDir : myOutputDir);
+    File outputRootDir = isCache ? myCachesOutputDir : myOutputDir;
+    File folder = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, FileSystem.getFile(outputRootDir)).toFile();
     File file = new File(folder, name);
     try {
       register(file, !file.exists());
@@ -91,7 +94,8 @@ class JavaStreamHandler implements StreamHandler {
 
   @Override
   public boolean touch(String name, boolean isCache) {
-    File folder = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, isCache ? myCachesOutputDir : myOutputDir);
+    File outputRootDir = isCache ? myCachesOutputDir : myOutputDir;
+    File folder = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, FileSystem.getFile(outputRootDir)).toFile();
     File file = new File(folder, name);
     if (file.exists()) {
       register(file, false);

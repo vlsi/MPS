@@ -29,6 +29,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vcs.VcsMigrationUtil;
+import jetbrains.mps.vfs.FileSystem;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -179,7 +180,7 @@ public class LanguageRenamer {
     List<SModelDescriptor> inputModels = GeneratorConfigUtil.getLanguageModels(myLanguage);
 
     for (SModelDescriptor d : inputModels) {
-      result.add(FileGenerationUtil.getDefaultOutputDir(d, sourceDir));
+      result.add(FileGenerationUtil.getDefaultOutputDir(d, FileSystem.getFile(sourceDir)).toFile());
     }
 
     return result;
