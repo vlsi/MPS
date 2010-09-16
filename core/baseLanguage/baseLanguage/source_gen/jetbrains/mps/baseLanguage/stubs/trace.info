@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="JavaStubs.java" startLine="39" startPosition="77" endLine="43" endPosition="5" unitName="jetbrains.mps.baseLanguage.stubs.JavaStubs$1" />
+  <unitInfo fileName="Testbench_StubDescriptor.java" startLine="12" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.stubs.Testbench_StubDescriptor" />
   <unitInfo fileName="MPS_StubDescriptor.java" startLine="12" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.stubs.MPS_StubDescriptor" />
   <unitInfo fileName="JDK_StubDescriptor.java" startLine="12" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.stubs.JDK_StubDescriptor" />
   <unitInfo fileName="JavaStubs_JDK.java" startLine="13" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.stubs.JavaStubs_JDK" />
@@ -9,6 +10,10 @@
   <root nodeId="2974122604715433683">
     <nodeInfo nodeId="6324573423433975456" fileName="MPS_StubDescriptor.java" startLine="17" startPosition="34" endLine="18" endPosition="95" />
     <scopeInfo nodeId="2974122604715433685" fileName="MPS_StubDescriptor.java" startLine="17" startPosition="34" endLine="18" endPosition="95" />
+  </root>
+  <root nodeId="4381823297881500018">
+    <nodeInfo nodeId="4381823297881500021" fileName="Testbench_StubDescriptor.java" startLine="17" startPosition="34" endLine="18" endPosition="101" />
+    <scopeInfo nodeId="4381823297881500020" fileName="Testbench_StubDescriptor.java" startLine="17" startPosition="34" endLine="18" endPosition="101" />
   </root>
   <root nodeId="5516999836374025628">
     <nodeInfo nodeId="5516999836375057048" fileName="JavaStubs.java" startLine="50" startPosition="79" endLine="51" endPosition="73" />

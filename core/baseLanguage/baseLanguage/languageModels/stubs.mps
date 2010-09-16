@@ -809,5 +809,26 @@
       <property name="namespace:0" value="jetbrains.mps" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.stubs.structure.LibraryStubDescriptor" id="4381823297881500018">
+    <property name="name" value="Testbench" />
+    <property name="moduleName" value="Testbench" />
+    <property name="moduleId" value="920eaa0e-ecca-46bc-bee7-4e5c59213dd6" />
+    <link role="creator" targetNodeId="5516999836374025628" resolveInfo="JavaStubs" />
+    <node role="rootsBlock" type="jetbrains.mps.lang.stubs.structure.GetRootsBlock" id="4381823297881500019">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4381823297881500020">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4381823297881500021">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="4381823297881500022">
+            <node role="creator:3" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit:7" id="4381823297881500023">
+              <node role="copyFrom:7" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="4381823297881520429">
+                <link role="baseMethodDeclaration:3" targetNodeId="6.~CommonPaths.getTestbenchPaths():java.util.List" resolveInfo="getTestbenchPaths" />
+                <link role="classConcept:3" targetNodeId="6.~CommonPaths" resolveInfo="CommonPaths" />
+              </node>
+              <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="4381823297881500025" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

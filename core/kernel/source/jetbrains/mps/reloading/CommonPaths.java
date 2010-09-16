@@ -47,6 +47,10 @@ public class CommonPaths {
     return itemToPath(getMPSClassPath());
   }
 
+  public static List<String> getTestbenchPaths() {
+    return itemToPath(getTestbenchClassPath());
+  }
+
   public static List<String> getJDKPath() {
     return itemToPath(getJDKClassPath());
   }
@@ -145,6 +149,16 @@ public class CommonPaths {
     addIfExists(result, "/lib/picocontainer.jar");
     addIfExists(result, "/lib/jdom.jar");
     addIfExists(result, "/lib/eclipse-compiler/ecj.jar");
+
+    return result;
+  }
+
+
+  public static IClassPathItem getTestbenchClassPath() {
+    CompositeClassPathItem result = new CompositeClassPathItem();
+
+    addIfExists(result, "/testbench/classes");
+    addIfExists(result, "/testbench/testclasses");
 
     return result;
   }
