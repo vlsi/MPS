@@ -13,9 +13,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
-import jetbrains.mps.generator.NoCachesStrategy;
-import jetbrains.mps.ide.generator.GeneratorFacade;
 import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.ide.generator.GeneratorFacade;
 
 public class RunUtil {
   public RunUtil() {
@@ -32,7 +31,7 @@ public class RunUtil {
         public void run() {
           SModelDescriptor md = SNodeOperations.getModel(node).getModelDescriptor();
           if (md instanceof EditableSModelDescriptor) {
-            if (!(ListSequence.fromList(models).contains((EditableSModelDescriptor) md)) && ModelGenerationStatusManager.getInstance().generationRequired(md, project, NoCachesStrategy.createBuildCachesStrategy())) {
+            if (!(ListSequence.fromList(models).contains((EditableSModelDescriptor) md)) && ModelGenerationStatusManager.getInstance().generationRequired(md, ProjectOperationContext.get(project))) {
               ListSequence.fromList(models).addElement((EditableSModelDescriptor) md);
             }
 

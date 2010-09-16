@@ -35,6 +35,10 @@ public class ModelDigestHelper {
   }
 
   public Map<String, String> getGenerationHashes(SModelDescriptor sm, IOperationContext operationContext) {
+    return getGenerationHashes(sm, operationContext, false);
+  }
+
+  public Map<String, String> getGenerationHashes(SModelDescriptor sm, IOperationContext operationContext, boolean useCacheOnly) {
     if (!(sm instanceof EditableSModelDescriptor)) return null;
     EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
     if (esm.isPackaged()) return null;
@@ -48,6 +52,10 @@ public class ModelDigestHelper {
       if (result != null) {
         return result;
       }
+    }
+
+    if(useCacheOnly) {
+      return null;
     }
 
     return ModelDigestUtil.calculateHashes(modelFile);

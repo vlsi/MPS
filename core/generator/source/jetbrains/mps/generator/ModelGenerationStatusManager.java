@@ -17,18 +17,10 @@ package jetbrains.mps.generator;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.progress.ProcessCanceledException;
-import com.intellij.openapi.project.IndexNotReadyException;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.psi.search.GlobalSearchScope;
-import com.intellij.util.indexing.FileBasedIndex;
-import com.intellij.util.indexing.FileBasedIndex.ValueProcessor;
 import jetbrains.mps.generator.cache.BaseModelCache;
 import jetbrains.mps.generator.cache.CacheGenerator;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
-import jetbrains.mps.ide.generator.index.ModelDigestIndex;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
@@ -98,17 +90,7 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     return myCacheGenerator;
   }
 
-  public boolean generationRequired(SModelDescriptor sm, Project project, @NotNull NoCachesStrategy strategy) {
-    try {
-      return generationRequired(sm, project);
-    } catch (IndexNotReadyException e) {
-      return strategy.compute(project, sm, getGenerationHash(sm));
-    } catch (ProcessCanceledException e) {
-      return strategy.compute(project, sm, getGenerationHash(sm));
-    }
-  }
-
-  public boolean generationRequired(SModelDescriptor sm, Project project) {
+  public boolean generationRequiredFast(SModelDescriptor sm, IOperationContext operationContext, boolean defaultValue) {
     if (!(sm instanceof EditableSModelDescriptor)) return false;
     EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
     if (esm.isPackaged()) return false;
@@ -117,26 +99,31 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     if (SModelRepository.getInstance().isChanged(esm)) return true;
     if (isEmpty(esm)) return false;
 
+    Map<String, String> generationHashes = ModelDigestHelper.getInstance().getGenerationHashes(sm, operationContext, true);
+    if(generationHashes == null) return defaultValue;
+
     String generatedHash = getGenerationHash(sm);
     if (generatedHash == null) return true;
 
-    IFile modelFile = esm.getModelFile();
-    if (modelFile == null) return true;
-    VirtualFile file = modelFile.toVirtualFile();
-    if (file == null) return true;
-
-    return checkGenerationRequired(project, file, generatedHash);
+    return !generatedHash.equals(generationHashes.get(ModelDigestHelper.FILE));
   }
 
-  private boolean checkGenerationRequired(final Project project, @NotNull VirtualFile f, String generatedHash) {
-    final String[] valueArray = new String[1];
-    FileBasedIndex.getInstance().processValues(ModelDigestIndex.NAME, FileBasedIndex.getFileId(f), f, new ValueProcessor<Map<String, String>>() {
-      public boolean process(VirtualFile file, Map<String, String> values) {
-        valueArray[0] = values.get(ModelDigestHelper.FILE);
-        return true;
-      }
-    }, GlobalSearchScope.allScope(project));
-    return !(generatedHash.equals(valueArray[0]));
+  public boolean generationRequired(SModelDescriptor sm, IOperationContext operationContext) {
+    if (!(sm instanceof EditableSModelDescriptor)) return false;
+    EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
+    if (esm.isPackaged()) return false;
+    if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) return false;
+    if (GeneratorManager.isDoNotGenerate(sm)) return false;
+    if (SModelRepository.getInstance().isChanged(esm)) return true;
+    if (isEmpty(esm)) return false;
+
+    Map<String, String> generationHashes = ModelDigestHelper.getInstance().getGenerationHashes(sm, operationContext);
+    if(generationHashes == null) return true;
+
+    String generatedHash = getGenerationHash(sm);
+    if (generatedHash == null) return true;
+
+    return !generatedHash.equals(generationHashes.get(ModelDigestHelper.FILE));
   }
 
   private boolean isEmpty(SModelDescriptor sm) {

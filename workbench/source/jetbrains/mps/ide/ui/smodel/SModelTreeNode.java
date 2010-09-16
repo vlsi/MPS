@@ -33,6 +33,7 @@ import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.smodel.SModelEventsDispatcher.SModelEventsListener;
 import jetbrains.mps.lang.annotations.structure.AttributeConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -367,14 +368,8 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     Project project = getOperationContext().getProject();
     if (DumbService.getInstance(project).isDumb()) return GenerationStatus.UPDATING;
 
-    try {
-      boolean required = ModelGenerationStatusManager.getInstance().generationRequired(getSModelDescriptor(), project);
-      return required ? GenerationStatus.REQUIRED : GenerationStatus.NOT_REQUIRED;
-    } catch (IndexNotReadyException e) {
-      return GenerationStatus.UPDATING;
-    } catch (ProcessCanceledException e) {
-      return GenerationStatus.UPDATING;
-    }
+    boolean required = ModelGenerationStatusManager.getInstance().generationRequired(getSModelDescriptor(), ProjectOperationContext.get(project));
+    return required ? GenerationStatus.REQUIRED : GenerationStatus.NOT_REQUIRED;
   }
 
   private boolean isPackaged() {

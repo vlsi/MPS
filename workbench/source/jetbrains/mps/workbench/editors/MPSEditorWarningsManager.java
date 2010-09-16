@@ -24,9 +24,7 @@ import com.intellij.openapi.fileEditor.FileEditorManagerListener;
 import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
-import jetbrains.mps.generator.NoCachesStrategy;
 import jetbrains.mps.generator.TransientModelsModule.TransientSModelDescriptor;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.IdeMain;
@@ -36,6 +34,8 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
 import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -135,7 +135,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
     final Set<Language> outdatedLanguages = new HashSet<Language>();
     for (Language l : model.getSModel().getLanguages(GlobalScope.getInstance())) {
       if (l.getEditorModelDescriptor() != null &&
-        ModelGenerationStatusManager.getInstance().generationRequired(l.getEditorModelDescriptor(), project, NoCachesStrategy.createDefaultStrategy(false, null))) {
+        ModelGenerationStatusManager.getInstance().generationRequiredFast(l.getEditorModelDescriptor(), ProjectOperationContext.get(project), false)) {
         outdatedLanguages.add(l);
       }
     }

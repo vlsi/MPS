@@ -25,7 +25,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
-import jetbrains.mps.generator.NoCachesStrategy;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.generationTypes.java.JavaGenerationHandler;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
@@ -33,8 +32,8 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import jetbrains.mps.ide.messages.MessagesViewTool;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 
@@ -46,7 +45,6 @@ import java.util.*;
  */
 public class GeneratorFacade {
 
-  private static final Logger LOG = Logger.getLogger(GeneratorFacade.class);
   private static final GeneratorFacade INSTANCE = new GeneratorFacade();
 
   private GeneratorFacade() {
@@ -225,13 +223,13 @@ public class GeneratorFacade {
     ModelGenerationStatusManager statusManager = ModelGenerationStatusManager.getInstance();
     for (Generator g : GenerationPartitioningUtil.getAllPossiblyEngagedGenerators(model.getSModel(), module.getScope() )) {
       for (SModelDescriptor sm : g.getOwnModelDescriptors()) {
-        if (SModelStereotype.isUserModel(sm) && statusManager.generationRequired(sm, project, NoCachesStrategy.createBuildCachesStrategy())) {
+        if (SModelStereotype.isUserModel(sm) && statusManager.generationRequired(sm, ProjectOperationContext.get(project))) {
           result.add(sm);
         }
       }
 
       for (SModelDescriptor sm : g.getSourceLanguage().getAspectModelDescriptors()) {
-        if (statusManager.generationRequired(sm, project, NoCachesStrategy.createBuildCachesStrategy())) {
+        if (statusManager.generationRequired(sm, ProjectOperationContext.get(project))) {
           result.add(sm);
         }
       }

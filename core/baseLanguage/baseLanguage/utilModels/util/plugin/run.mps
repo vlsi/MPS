@@ -2522,16 +2522,16 @@
                               <link role="classConcept:3" targetNodeId="26.~ModelGenerationStatusManager" resolveInfo="ModelGenerationStatusManager" />
                             </node>
                             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5434412145310422940">
-                              <link role="baseMethodDeclaration:3" targetNodeId="26.~ModelGenerationStatusManager.generationRequired(jetbrains.mps.smodel.SModelDescriptor,com.intellij.openapi.project.Project,jetbrains.mps.generator.NoCachesStrategy):boolean" resolveInfo="generationRequired" />
+                              <link role="baseMethodDeclaration:3" targetNodeId="26.~ModelGenerationStatusManager.generationRequired(jetbrains.mps.smodel.SModelDescriptor,jetbrains.mps.smodel.IOperationContext):boolean" resolveInfo="generationRequired" />
                               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5434412145310422941">
                                 <link role="variableDeclaration:3" targetNodeId="8492459591399148626" resolveInfo="md" />
                               </node>
-                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="5434412145310422942">
-                                <link role="variableDeclaration:3" targetNodeId="8492459591399148673" resolveInfo="project" />
-                              </node>
-                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5434412145310422943">
-                                <link role="classConcept:3" targetNodeId="26.~NoCachesStrategy" resolveInfo="NoCachesStrategy" />
-                                <link role="baseMethodDeclaration:3" targetNodeId="26.~NoCachesStrategy.createBuildCachesStrategy():jetbrains.mps.generator.NoCachesStrategy" resolveInfo="createBuildCachesStrategy" />
+                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2925308412866501424">
+                                <link role="baseMethodDeclaration:3" targetNodeId="35.~ProjectOperationContext.get(com.intellij.openapi.project.Project):jetbrains.mps.project.ProjectOperationContext" resolveInfo="get" />
+                                <link role="classConcept:3" targetNodeId="35.~ProjectOperationContext" resolveInfo="ProjectOperationContext" />
+                                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="2925308412866501425">
+                                  <link role="variableDeclaration:3" targetNodeId="8492459591399148673" resolveInfo="project" />
+                                </node>
                               </node>
                             </node>
                           </node>
