@@ -37,6 +37,9 @@ class ModelFileProcessor extends EventProcessor {
 
   @Override
   protected void processContentChanged(VFileEvent event, ReloadSession reloadSession) {
+    if (!event.isFromRefresh()) {
+      return;
+    }
     EditableSModelDescriptor model = (EditableSModelDescriptor) SModelRepository.getInstance().findModel(FileSystem.getInstance().getFileByPath(event.getPath()));
     LOG.debug("Content change event for model file " + event.getPath() + ". Found model " + model + "." + (model != null ? " Needs reloading " + model.needsReloading() : ""));
     if ((model != null) && (model.needsReloading())) {

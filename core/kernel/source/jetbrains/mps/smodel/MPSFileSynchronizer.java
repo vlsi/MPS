@@ -42,11 +42,11 @@ public class MPSFileSynchronizer implements ApplicationComponent {
   private Set<IFile> myFilesToSynchronize = new HashSet<IFile>();
 
   public void requestSync(IFile file) {
-    if (CommandProcessor.getInstance().getCurrentCommand() != null) {
-      myFilesToSynchronize.add(file);
-    } else {
-      VFileSystem.refreshFileSynchronously(file);
-    }
+//    if (CommandProcessor.getInstance().getCurrentCommand() != null) {
+//      myFilesToSynchronize.add(file);
+//    } else {
+//      VFileSystem.refreshFileSynchronously(file);
+//    }
   }
 
   public void initComponent() {

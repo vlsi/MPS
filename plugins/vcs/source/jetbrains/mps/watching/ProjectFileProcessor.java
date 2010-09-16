@@ -30,6 +30,9 @@ class ProjectFileProcessor extends EventProcessor {
 
   @Override
   protected void processContentChanged(VFileEvent event, ReloadSession reloadSession) {
+    if (!event.isFromRefresh()) {
+      return;
+    }
     Project[] projects = ProjectManager.getInstance().getOpenProjects();
     VirtualFile vfile = refreshAndGetVFile(event);
     for (Project project : projects) {

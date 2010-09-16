@@ -33,6 +33,9 @@ class ModuleFileProcessor extends EventProcessor {
 
   @Override
   protected void processContentChanged(VFileEvent event, ReloadSession reloadSession) {
+    if (!event.isFromRefresh()) {
+      return;
+    }
     IModule module = getModuleByEvent(event);
     if ((module != null) && (module.needReloading())) {
       reloadSession.addChangedModule(module);
