@@ -17,18 +17,24 @@ package jetbrains.mps.plugins.pluginparts.prefs;
 
 import com.intellij.openapi.extensions.Extensions;
 import com.intellij.openapi.options.Configurable;
+import com.intellij.openapi.options.ConfigurableEP;
 import com.intellij.openapi.options.NonDefaultProjectConfigurable;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
 
-public abstract class BasePrefsPage implements Configurable, NonDefaultProjectConfigurable {
+public abstract class BasePrefsPage extends ConfigurableEP implements Configurable, NonDefaultProjectConfigurable {
   private Project myProject;
   private BaseProjectPrefsComponent myPrefsComponent;
 
   protected BasePrefsPage(Project project, BaseProjectPrefsComponent prefsComponent) {
     myProject = project;
     myPrefsComponent = prefsComponent;
+  }
+
+  @Override
+  public Configurable createConfigurable() {
+    return this;
   }
 
   public Project getProject() {
