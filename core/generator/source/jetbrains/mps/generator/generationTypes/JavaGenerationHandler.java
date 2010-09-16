@@ -46,10 +46,7 @@ import org.jdom.Element;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Stores files on disk, compiles and reloads classes.
@@ -239,8 +236,8 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
     private final File myOutputDir;
     private final IOperationContext myContext;
     private final File myCachesOutputDir;
-    private Set<File> myCreated;
-    private Set<File> myTouched;
+    private Set<File> myCreated = Collections.emptySet();
+    private Set<File> myTouched = Collections.emptySet();
 
     private JavaStreamHandler(SModelDescriptor modelDescriptor, File outputDir, IOperationContext context) {
       myModelDescriptor = modelDescriptor;
@@ -251,11 +248,11 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
 
     private void register(File file, boolean isNew) {
       if (isNew) {
-        if (myCreated == null) {
+        if (myCreated.isEmpty()) {
           myCreated = new HashSet<File>();
         }
       } else {
-        if (myTouched == null) {
+        if (myTouched.isEmpty()) {
           myTouched = new HashSet<File>();
         }
       }
