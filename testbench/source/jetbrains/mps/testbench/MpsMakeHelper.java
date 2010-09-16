@@ -100,7 +100,7 @@ public class MpsMakeHelper {
     for (Object[] ptns : PATTERNS) {
       filePtns.add (FilesCollector.FilePattern.fromTypeAndPattern(ptns));
     }
-    for (File f: FilesCollector.fastCollectFiles(filePtns, path)) {
+    for (File f: FilesCollector.collectFiles(filePtns, path)) {
       toDo.addModuleFile(f);
     }
     toDo.updateLogLevel(2); // INFO
