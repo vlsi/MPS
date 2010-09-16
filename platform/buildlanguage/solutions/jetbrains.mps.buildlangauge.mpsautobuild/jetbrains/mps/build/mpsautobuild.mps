@@ -1013,102 +1013,6 @@
         </node>
       </node>
     </node>
-    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Folder:7" id="8431776905956472454">
-      <property name="file:7" value="false" />
-      <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="8431776905956472455">
-        <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="8431776905956472456">
-          <property name="name:7" value="mps_home" />
-        </node>
-        <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="8431776905956472457">
-          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472458">
-            <property name="path:7" value="lib" />
-          </node>
-          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472459">
-            <property name="path:7" value="asm" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Folder:7" id="8431776905956472460">
-      <property name="file:7" value="false" />
-      <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="8431776905956472461">
-        <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="8431776905956472462">
-          <property name="name:7" value="mps_home" />
-        </node>
-        <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="8431776905956472463">
-          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472464">
-            <property name="path:7" value="lib" />
-          </node>
-          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472465">
-            <property name="path:7" value="commons-codec" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Folder:7" id="8431776905956472466">
-      <property name="file:7" value="false" />
-      <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="8431776905956472467">
-        <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="8431776905956472468">
-          <property name="name:7" value="mps_home" />
-        </node>
-        <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="8431776905956472469">
-          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472470">
-            <property name="path:7" value="lib" />
-          </node>
-          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472471">
-            <property name="path:7" value="commons-collections" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Folder:7" id="8431776905956472472">
-      <property name="file:7" value="false" />
-      <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="8431776905956472473">
-        <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="8431776905956472474">
-          <property name="name:7" value="mps_home" />
-        </node>
-        <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="8431776905956472475">
-          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472476">
-            <property name="path:7" value="lib" />
-          </node>
-          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472477">
-            <property name="path:7" value="commons-lang" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Folder:7" id="8431776905956472478">
-      <property name="file:7" value="false" />
-      <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="8431776905956472479">
-        <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="8431776905956472480">
-          <property name="name:7" value="mps_home" />
-        </node>
-        <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="8431776905956472481">
-          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472482">
-            <property name="path:7" value="lib" />
-          </node>
-          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472483">
-            <property name="path:7" value="commons-logging" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Folder:7" id="8431776905956472484">
-      <property name="file:7" value="false" />
-      <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="8431776905956472485">
-        <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="8431776905956472486">
-          <property name="name:7" value="mps_home" />
-        </node>
-        <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="8431776905956472487">
-          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472488">
-            <property name="path:7" value="lib" />
-          </node>
-          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472489">
-            <property name="path:7" value="commons-net" />
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Folder:7" id="8431776905956472490">
       <property name="file:7" value="false" />
       <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="8431776905956472491">
@@ -1121,38 +1025,6 @@
           </node>
           <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472495">
             <property name="path:7" value="eclipse-compiler" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Folder:7" id="8431776905956472496">
-      <property name="file:7" value="false" />
-      <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="8431776905956472497">
-        <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="8431776905956472498">
-          <property name="name:7" value="mps_home" />
-        </node>
-        <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="8431776905956472499">
-          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472500">
-            <property name="path:7" value="lib" />
-          </node>
-          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472501">
-            <property name="path:7" value="jdom" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Folder:7" id="8431776905956472502">
-      <property name="file:7" value="false" />
-      <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="8431776905956472503">
-        <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="8431776905956472504">
-          <property name="name:7" value="mps_home" />
-        </node>
-        <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="8431776905956472505">
-          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472506">
-            <property name="path:7" value="lib" />
-          </node>
-          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472507">
-            <property name="path:7" value="jgoodies" />
           </node>
         </node>
       </node>
@@ -1185,118 +1057,6 @@
           </node>
           <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472519">
             <property name="path:7" value="jna" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Folder:7" id="8431776905956472520">
-      <property name="file:7" value="false" />
-      <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="8431776905956472521">
-        <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="8431776905956472522">
-          <property name="name:7" value="mps_home" />
-        </node>
-        <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="8431776905956472523">
-          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472524">
-            <property name="path:7" value="lib" />
-          </node>
-          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472525">
-            <property name="path:7" value="jmock2.4" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Folder:7" id="8431776905956472526">
-      <property name="file:7" value="false" />
-      <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="8431776905956472527">
-        <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="8431776905956472528">
-          <property name="name:7" value="mps_home" />
-        </node>
-        <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="8431776905956472529">
-          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472530">
-            <property name="path:7" value="lib" />
-          </node>
-          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472531">
-            <property name="path:7" value="joda-time" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Folder:7" id="8431776905956472532">
-      <property name="file:7" value="false" />
-      <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="8431776905956472533">
-        <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="8431776905956472534">
-          <property name="name:7" value="mps_home" />
-        </node>
-        <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="8431776905956472535">
-          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472536">
-            <property name="path:7" value="lib" />
-          </node>
-          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472537">
-            <property name="path:7" value="junit4" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Folder:7" id="8431776905956472538">
-      <property name="file:7" value="false" />
-      <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="8431776905956472539">
-        <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="8431776905956472540">
-          <property name="name:7" value="mps_home" />
-        </node>
-        <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="8431776905956472541">
-          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472542">
-            <property name="path:7" value="lib" />
-          </node>
-          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472543">
-            <property name="path:7" value="log4j" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Folder:7" id="8431776905956472544">
-      <property name="file:7" value="false" />
-      <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="8431776905956472545">
-        <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="8431776905956472546">
-          <property name="name:7" value="mps_home" />
-        </node>
-        <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="8431776905956472547">
-          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472548">
-            <property name="path:7" value="lib" />
-          </node>
-          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472549">
-            <property name="path:7" value="nanoxml" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Folder:7" id="8431776905956472550">
-      <property name="file:7" value="false" />
-      <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="8431776905956472551">
-        <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="8431776905956472552">
-          <property name="name:7" value="mps_home" />
-        </node>
-        <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="8431776905956472553">
-          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472554">
-            <property name="path:7" value="lib" />
-          </node>
-          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472555">
-            <property name="path:7" value="trove4j" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Folder:7" id="8431776905956472556">
-      <property name="file:7" value="false" />
-      <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="8431776905956472557">
-        <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="8431776905956472558">
-          <property name="name:7" value="mps_home" />
-        </node>
-        <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="8431776905956472559">
-          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472560">
-            <property name="path:7" value="lib" />
-          </node>
-          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472561">
-            <property name="path:7" value="yjp" />
           </node>
         </node>
       </node>
@@ -1348,6 +1108,21 @@
         </node>
       </node>
     </node>
+    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.File:7" id="138963089124698757">
+      <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="138963089124698758">
+        <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="138963089124698759">
+          <property name="name:7" value="mps_home" />
+        </node>
+        <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="138963089124698760">
+          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="138963089124698761">
+            <property name="path:7" value="lib" />
+          </node>
+          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="138963089124698763">
+            <property name="path:7" value="asm.jar" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="entry:7" type="jetbrains.mps.build.packaging.structure.File:7" id="8431776905956472580">
       <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="8431776905956472581">
         <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="8431776905956472582">
@@ -1374,6 +1149,81 @@
           </node>
           <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472591">
             <property name="path:7" value="bootstrap.jar" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.File:7" id="138963089124698764">
+      <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="138963089124698765">
+        <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="138963089124698766">
+          <property name="name:7" value="mps_home" />
+        </node>
+        <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="138963089124698767">
+          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="138963089124698768">
+            <property name="path:7" value="lib" />
+          </node>
+          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="138963089124698770">
+            <property name="path:7" value="commons-codec-1.3.jar" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.File:7" id="138963089124698771">
+      <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="138963089124698772">
+        <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="138963089124698773">
+          <property name="name:7" value="mps_home" />
+        </node>
+        <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="138963089124698774">
+          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="138963089124698775">
+            <property name="path:7" value="lib" />
+          </node>
+          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="138963089124698789">
+            <property name="path:7" value="commons-collections.jar" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.File:7" id="138963089124698777">
+      <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="138963089124698778">
+        <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="138963089124698779">
+          <property name="name:7" value="mps_home" />
+        </node>
+        <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="138963089124698780">
+          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="138963089124698781">
+            <property name="path:7" value="lib" />
+          </node>
+          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="138963089124698790">
+            <property name="path:7" value="commons-lang-2.4.jar" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.File:7" id="138963089124698783">
+      <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="138963089124698784">
+        <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="138963089124698785">
+          <property name="name:7" value="mps_home" />
+        </node>
+        <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="138963089124698786">
+          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="138963089124698787">
+            <property name="path:7" value="lib" />
+          </node>
+          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="138963089124698791">
+            <property name="path:7" value="commons-logging" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.File:7" id="138963089124698792">
+      <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="138963089124698793">
+        <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="138963089124698794">
+          <property name="name:7" value="mps_home" />
+        </node>
+        <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="138963089124698795">
+          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="138963089124698796">
+            <property name="path:7" value="lib" />
+          </node>
+          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="138963089124698798">
+            <property name="path:7" value="commons-net-2.0-patched.jar" />
           </node>
         </node>
       </node>
@@ -1438,6 +1288,66 @@
         </node>
       </node>
     </node>
+    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.File:7" id="138963089124698799">
+      <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="138963089124698800">
+        <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="138963089124698801">
+          <property name="name:7" value="mps_home" />
+        </node>
+        <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="138963089124698802">
+          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="138963089124698803">
+            <property name="path:7" value="lib" />
+          </node>
+          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="138963089124698805">
+            <property name="path:7" value="jdom.jar" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.File:7" id="138963089124698807">
+      <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="138963089124698808">
+        <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="138963089124698809">
+          <property name="name:7" value="mps_home" />
+        </node>
+        <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="138963089124698810">
+          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="138963089124698811">
+            <property name="path:7" value="lib" />
+          </node>
+          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="138963089124698813">
+            <property name="path:7" value="jgoodies-forms.jar" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.File:7" id="138963089124698820">
+      <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="138963089124698821">
+        <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="138963089124698822">
+          <property name="name:7" value="mps_home" />
+        </node>
+        <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="138963089124698823">
+          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="138963089124698824">
+            <property name="path:7" value="lib" />
+          </node>
+          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="138963089124698832">
+            <property name="path:7" value="junit-4.7.jar" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.File:7" id="138963089124698826">
+      <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="138963089124698827">
+        <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="138963089124698828">
+          <property name="name:7" value="mps_home" />
+        </node>
+        <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="138963089124698829">
+          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="138963089124698830">
+            <property name="path:7" value="lib" />
+          </node>
+          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="138963089124698833">
+            <property name="path:7" value="junit.jar" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="entry:7" type="jetbrains.mps.build.packaging.structure.File:7" id="8431776905956472616">
       <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="8431776905956472617">
         <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="8431776905956472618">
@@ -1447,7 +1357,22 @@
           <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472620">
             <property name="path:7" value="lib" />
           </node>
-          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472621">
+          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="138963089124698840">
+            <property name="path:7" value="log4j.jar" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.File:7" id="138963089124698834">
+      <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="138963089124698835">
+        <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="138963089124698836">
+          <property name="name:7" value="mps_home" />
+        </node>
+        <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="138963089124698837">
+          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="138963089124698838">
+            <property name="path:7" value="lib" />
+          </node>
+          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="138963089124698839">
             <property name="path:7" value="looks-2.2.2.jar" />
           </node>
         </node>
@@ -1464,6 +1389,21 @@
           </node>
           <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472627">
             <property name="path:7" value="microba.jar" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.File:7" id="138963089124698842">
+      <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="138963089124698843">
+        <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="138963089124698844">
+          <property name="name:7" value="mps_home" />
+        </node>
+        <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="138963089124698845">
+          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="138963089124698846">
+            <property name="path:7" value="lib" />
+          </node>
+          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="138963089124698848">
+            <property name="path:7" value="nanoxml-2.2.3.jar" />
           </node>
         </node>
       </node>
@@ -1554,6 +1494,21 @@
           </node>
           <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472663">
             <property name="path:7" value="resources_en.jar" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.File:7" id="138963089124698849">
+      <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="138963089124698850">
+        <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="138963089124698851">
+          <property name="name:7" value="mps_home" />
+        </node>
+        <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="138963089124698852">
+          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="138963089124698853">
+            <property name="path:7" value="lib" />
+          </node>
+          <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="138963089124698855">
+            <property name="path:7" value="trove4j.jar" />
           </node>
         </node>
       </node>
