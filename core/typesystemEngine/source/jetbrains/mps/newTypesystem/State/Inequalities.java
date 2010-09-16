@@ -15,6 +15,10 @@
  */
 package jetbrains.mps.newTypesystem.State;
 
+import jetbrains.mps.newTypesystem.Difference.Difference;
+import jetbrains.mps.newTypesystem.Difference.Equation.InequalityDifference;
+import jetbrains.mps.newTypesystem.Difference.SubTypingDifference;
+import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.IWrapper;
 
 import java.util.HashSet;
@@ -30,7 +34,7 @@ import java.util.Set;
 public class Inequalities {
   private State myState;
 
-  private Set<InequalityMapPair> myInequalities = new HashSet<InequalityMapPair>();
+  private Set<InequalityMapPair> myInequalities = new HashSet<InequalityMapPair>(5);
 
   private InequalityMapPair myWeakInequalities = new InequalityMapPair();
   private InequalityMapPair myStrongInequalities = new InequalityMapPair();
@@ -41,23 +45,45 @@ public class Inequalities {
 
   public Inequalities(State state) {
     myState = state;
-    myInequalities.add(myWeakInequalities);
-    myInequalities.add(myStrongInequalities);
-    myInequalities.add(myWeakCheckInequalities);
-    myInequalities.add(myStrongCheckInequalities);
   }
 
-  public void rollBack() {
-    
+  public void rollBackSubstitute(InequalityDifference difference, IWrapper previous, IWrapper current) {
+    myWeakInequalities.rollBack(difference.getWeakInequalities(), previous, current);
+    myStrongInequalities.rollBack(difference.getStrongInequalities(), previous, current);
+    myWeakCheckInequalities.rollBack(difference.getWeakCheckInequalities(), previous, current);
+    myStrongCheckInequalities.rollBack(difference.getStrongCheckInequalities(), previous, current);
   }
 
-  public void addSubTyping() {
-    
+  public InequalityDifference substitute(IWrapper var, IWrapper type) {
+    return new InequalityDifference(myWeakInequalities.substitute(var, type),
+                                    myStrongInequalities.substitute(var, type),
+                                    myWeakCheckInequalities.substitute(var, type),
+                                    myStrongCheckInequalities.substitute(var, type));
   }
 
-  public void substitute(IWrapper var, IWrapper type) {
-    for (InequalityMapPair inequalityMap : myInequalities) {
-      inequalityMap.substitute(var, type);
+  public Difference addSubTyping(IWrapper subType, IWrapper superType, boolean isWeak, boolean check, EquationInfo info) {
+    if (isWeak) {
+      InequalityMapPair inequality = check ? myWeakCheckInequalities : myWeakInequalities;
+      inequality.add(subType, superType, info);
+    } else {
+      InequalityMapPair inequality = check ? myStrongCheckInequalities : myStrongInequalities;
+      inequality.add(subType, superType, info);
     }
+    return new SubTypingDifference(subType, superType, isWeak, check);
+  }
+
+  public void removeSubTyping(IWrapper subType, IWrapper superType, boolean isWeak, boolean check) {
+    if (isWeak) {
+      InequalityMapPair inequality = check ? myWeakCheckInequalities : myWeakInequalities;
+      inequality.remove(subType, superType);
+    } else {
+      InequalityMapPair inequality = check ? myStrongCheckInequalities : myStrongInequalities;
+      inequality.remove(subType, superType);
+    }
+  }
+
+  //----------------DEBUG
+  void print() {
+    myWeakCheckInequalities.print();
   }
 }

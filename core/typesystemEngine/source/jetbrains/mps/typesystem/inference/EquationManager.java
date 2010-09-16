@@ -738,8 +738,7 @@ public class EquationManager {
       SimpleErrorReporter reporter = new SimpleErrorReporter(nodeWithError, ((RuntimeErrorType) typeVar).getErrorText(), errorInfo.getRuleModel(), errorInfo.getRuleId());
       reporter.setIntentionProvider(errorInfo.getIntentionProvider());
       reporter.setAdditionalRulesIds(errorInfo.getAdditionalRulesIds());
-      myTypeCheckingContext.reportMessage(
-        nodeWithError, reporter);
+      myTypeCheckingContext.reportMessage(nodeWithError, reporter);
     }
     if (reverse) {
       type.fireRepresentatorSet(var, this);
