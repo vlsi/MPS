@@ -24,6 +24,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.FileBasedIndex.ValueProcessor;
+import jetbrains.mps.generator.cache.BaseModelCache;
 import jetbrains.mps.generator.cache.CacheGenerator;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
@@ -33,11 +34,9 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.ReadUtil;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -189,13 +188,13 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
       throw new IllegalStateException();
     }
 
-    File outputPath = new File(FileGenerationUtil.getCachesPath(new File(module.getOutputFor(sm)).getAbsolutePath()));
-    File sourcesDir = FileGenerationUtil.getDefaultOutputDir(sm, FileSystem.getFile(outputPath)).toFile();
+    IFile outputPath = BaseModelCache.getCachesDir(module, module.getOutputFor(sm));
+    IFile sourcesDir = FileGenerationUtil.getDefaultOutputDir(sm, outputPath);
 
-    File[] files = sourcesDir.listFiles();
+    List<IFile> files = sourcesDir.list();
     String result = null;
     if (files != null) {
-      for (File f : files) {
+      for (IFile f : files) {
         String name = f.getName();
         if (name.startsWith(HASH_PREFIX)) {
           if (result != null) {
