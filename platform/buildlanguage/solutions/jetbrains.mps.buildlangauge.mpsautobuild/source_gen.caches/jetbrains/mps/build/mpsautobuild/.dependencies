@@ -4,6 +4,6 @@
   <dependency className="jetbrains.mps.build.mpsautobuild.MPS-external" file="MPS-external.xml" />
   <dependency className="jetbrains.mps.build.mpsautobuild.MPS-languages" file="MPS-languages.xml" />
   <dependency className="jetbrains.mps.build.mpsautobuild.MPS" file="MPS.properties" />
-  <dependency className="jetbrains.mps.build.mpsautobuild.help-build-src" file="help-build-src.xml" />
+  <dependency className="jetbrains.mps.build.mpsautobuild.help-build" file="help-build.xml" />
 </dependenciesRoot>
 
