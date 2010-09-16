@@ -22,10 +22,7 @@
     <mkdir dir="${deploy.dir}/MPS/lib/beansbinding" />
     <mkdir dir="${deploy.dir}/MPS/lib/ant" />
     <mkdir dir="${deploy.dir}/MPS/lib/eclipse-compiler" />
-    <mkdir dir="${deploy.dir}/MPS/lib/sources" />
-    <mkdir dir="${deploy.dir}/MPS/lib/jna" />
     <mkdir dir="${deploy.dir}/MPS/lib/httpclient" />
-    <mkdir dir="${deploy.dir}/MPS/lib/tools" />
     <mkdir dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources/core" />
     <mkdir dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources/platform" />
     <mkdir dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources/plugin" />
@@ -77,49 +74,12 @@
     <copy todir="${deploy.dir}/MPS/lib/eclipse-compiler">
       <fileset dir="${mps_home}/lib/eclipse-compiler" excludes="**/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS/lib/sources">
-      <fileset dir="${mps_home}/lib/sources" excludes="**/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
-    </copy>
-    <copy todir="${deploy.dir}/MPS/lib/jna">
-      <fileset dir="${mps_home}/lib/jna" excludes="**/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
-    </copy>
     <copy todir="${deploy.dir}/MPS/lib/httpclient">
       <fileset dir="${mps_home}/lib/httpclient" excludes="**/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS/lib/tools">
-      <fileset dir="${mps_home}/lib/tools" excludes="**/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
+    <copy todir="${deploy.dir}/MPS/lib">
+      <fileset dir="${mps_home}/lib" excludes="**/*.zip, **/*.iml, **/*.iws" includes="*.java, **/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
-    <copy file="${mps_home}/lib/annotations.jar" tofile="${deploy.dir}/MPS/lib/annotations.jar" />
-    <copy file="${mps_home}/lib/asm.jar" tofile="${deploy.dir}/MPS/lib/asm.jar" />
-    <copy file="${mps_home}/lib/boot.jar" tofile="${deploy.dir}/MPS/lib/boot.jar" />
-    <copy file="${mps_home}/lib/bootstrap.jar" tofile="${deploy.dir}/MPS/lib/bootstrap.jar" />
-    <copy file="${mps_home}/lib/commons-codec-1.3.jar" tofile="${deploy.dir}/MPS/lib/commons-codec-1.3.jar" />
-    <copy file="${mps_home}/lib/commons-collections.jar" tofile="${deploy.dir}/MPS/lib/commons-collections.jar" />
-    <copy file="${mps_home}/lib/commons-lang-2.4.jar" tofile="${deploy.dir}/MPS/lib/commons-lang-2.4.jar" />
-    <copy file="${mps_home}/lib/commons-logging" tofile="${deploy.dir}/MPS/lib/commons-logging" />
-    <copy file="${mps_home}/lib/commons-net-2.0-patched.jar" tofile="${deploy.dir}/MPS/lib/commons-net-2.0-patched.jar" />
-    <copy file="${mps_home}/lib/extensions.jar" tofile="${deploy.dir}/MPS/lib/extensions.jar" />
-    <copy file="${mps_home}/lib/forms_rt.jar" tofile="${deploy.dir}/MPS/lib/forms_rt.jar" />
-    <copy file="${mps_home}/lib/icons.jar" tofile="${deploy.dir}/MPS/lib/icons.jar" />
-    <copy file="${mps_home}/lib/jh.jar" tofile="${deploy.dir}/MPS/lib/jh.jar" />
-    <copy file="${mps_home}/lib/jdom.jar" tofile="${deploy.dir}/MPS/lib/jdom.jar" />
-    <copy file="${mps_home}/lib/jgoodies-forms.jar" tofile="${deploy.dir}/MPS/lib/jgoodies-forms.jar" />
-    <copy file="${mps_home}/lib/junit-4.7.jar" tofile="${deploy.dir}/MPS/lib/junit-4.7.jar" />
-    <copy file="${mps_home}/lib/junit.jar" tofile="${deploy.dir}/MPS/lib/junit.jar" />
-    <copy file="${mps_home}/lib/log4j.jar" tofile="${deploy.dir}/MPS/lib/log4j.jar" />
-    <copy file="${mps_home}/lib/looks-2.2.2.jar" tofile="${deploy.dir}/MPS/lib/looks-2.2.2.jar" />
-    <copy file="${mps_home}/lib/microba.jar" tofile="${deploy.dir}/MPS/lib/microba.jar" />
-    <copy file="${mps_home}/lib/nanoxml-2.2.3.jar" tofile="${deploy.dir}/MPS/lib/nanoxml-2.2.3.jar" />
-    <copy file="${mps_home}/lib/oromatcher.jar" tofile="${deploy.dir}/MPS/lib/oromatcher.jar" />
-    <copy file="${mps_home}/lib/picocontainer.jar" tofile="${deploy.dir}/MPS/lib/picocontainer.jar" />
-    <copy file="${mps_home}/lib/platform-api.jar" tofile="${deploy.dir}/MPS/lib/platform-api.jar" />
-    <copy file="${mps_home}/lib/platform.jar" tofile="${deploy.dir}/MPS/lib/platform.jar" />
-    <copy file="${mps_home}/lib/resources.jar" tofile="${deploy.dir}/MPS/lib/resources.jar" />
-    <copy file="${mps_home}/lib/resources_en.jar" tofile="${deploy.dir}/MPS/lib/resources_en.jar" />
-    <copy file="${mps_home}/lib/trove4j.jar" tofile="${deploy.dir}/MPS/lib/trove4j.jar" />
-    <copy file="${mps_home}/lib/util.jar" tofile="${deploy.dir}/MPS/lib/util.jar" />
-    <copy file="${mps_home}/lib/xmlrpc-2.0.jar" tofile="${deploy.dir}/MPS/lib/xmlrpc-2.0.jar" />
-    <copy file="${mps_home}/lib/xstream.jar" tofile="${deploy.dir}/MPS/lib/xstream.jar" />
     <copy todir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp">
       <fileset dir="${mps_home}/source" excludes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, **/classes/**/trace.info, **/*.zip, **/*.iml, **/*.iws" includes="**/*.java, **/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
@@ -152,7 +112,6 @@
       <zipfileset dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp" excludes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, **/classes/**/trace.info, **/*.zip, **/*.iml, **/*.iws" includes="**/*.java, **/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </zip>
     <delete dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp" />
-    <copy file="${mps_home}/lib/sources/idea-external-src.zip" tofile="${deploy.dir}/MPS/lib/IDEA-src.zip" />
     <copy todir="${deploy.dir}/MPS/lib/idea-patch.jar.tmp">
       <fileset dir="${mps_home}/core/idea-patch/classes" excludes="**/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
@@ -190,7 +149,7 @@
     <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
       <fileset dir="${mps_home}/core/kernel/classes" excludes="idea/MPSApplicationInfo.xml, **/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
-    <antcall target="replace_a01pb1a" />
+    <antcall target="replace_a01h1a" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps.jar.tmp/idea" />
     <copy todir="${deploy.dir}/MPS/lib/mps.jar.tmp">
       <fileset dir="${mps_home}/MPSPlugin/apiclasses" excludes="**/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
@@ -384,7 +343,6 @@
     <copy file="${mps_home}/releaseNotes.txt" tofile="${deploy.dir}/MPS/releaseNotes.txt" />
     <copy file="${mps_home}/about.txt" tofile="${deploy.dir}/MPS/about.txt" />
     <mkdir dir="${deploy.dir}/MPS" />
-    <copy file="${mps_home}/lib/sources/idea-platform-src.zip" tofile="${deploy.dir}/idea-platform-src.zip" />
     <antcall target="help-build.pack.mps.src" inheritall="true">
       <param name="deploy.dir" value="${deploy.dir}" />
       <param name="input.dir" value="${deploy.dir}/help-build.pack.mps.src" />
@@ -414,7 +372,7 @@
     <delete dir="${deploy.dir}/MPS/plugins/samples.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/platform/generate.ant.task.jar.tmp" />
   </target>
-  <target name="replace_a01pb1a">
+  <target name="replace_a01h1a">
     <fail unless="mps_home" message="Property mps_home unspecified." />
     <copy file="${mps_home}/core/kernel/classes/idea/MPSApplicationInfo.xml" tofile="${deploy.dir}/MPS/lib/mps.jar.tmp/idea/MPSApplicationInfo.xml" />
     <replace file="${deploy.dir}/MPS/lib/mps.jar.tmp/idea/MPSApplicationInfo.xml" token="__BUILD_NUMBER__" value="${build.number}" />

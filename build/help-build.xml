@@ -38,7 +38,6 @@
         <exclude name="integrationBuild*" />
         <exclude name=".git/**" />
       </zipfileset>
-      <zipfileset file="lib/sources/idea-external-src.zip" prefix="MPS/lib/sources" />
     </zip>
     <delete dir="${tmpdir}" />
   </target>
