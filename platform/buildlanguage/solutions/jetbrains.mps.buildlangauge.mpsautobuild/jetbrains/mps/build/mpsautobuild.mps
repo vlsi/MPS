@@ -2188,6 +2188,10 @@
       <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Module:7" id="8431776905956472881">
         <property name="id:7" value="2ebbb458-8ebb-481e-a5d7-9e27903323d4" />
       </node>
+      <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Module:7" id="6403884080056419735">
+        <property name="id:7" value="cab85f8b-9525-42cb-8e6d-258ca6e56432" />
+        <property name="name:7" value="jetbrains.mps.baseLanguage.index" />
+      </node>
       <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Module:7" id="8431776905956472882">
         <property name="id:7" value="f2801650-65d5-424e-bb1b-463a8781b786" />
       </node>
@@ -2258,9 +2262,15 @@
       <property name="file:7" value="false" />
       <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Module:7" id="8431776905956472904">
         <property name="id:7" value="fbc25dd2-5da4-483a-8b19-70928e1b62d7" />
+        <property name="name:7" value="jetbrains.mps.devkit.general-purpose" />
       </node>
       <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Module:7" id="8431776905956472905">
         <property name="id:7" value="2677cb18-f558-4e33-bc38-a5139cee06dc" />
+        <property name="name:7" value="jetbrains.mps.devkit.language-design" />
+      </node>
+      <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Module:7" id="6403884080056419733">
+        <property name="id:7" value="e073aac8-8c71-4c23-be71-86bf7a6df0a2" />
+        <property name="name:7" value="jetbrains.mps.devkit.bootstrap-languages" />
       </node>
       <node role="title:7" type="jetbrains.mps.build.packaging.structure.SimpleString:7" id="8431776905956472906">
         <property name="name:7" value="devkits" />
