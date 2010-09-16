@@ -81,8 +81,9 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
         }
       }
     }
+    result.addAll(LibraryInitializer.getInstance().getBootstrapModules(cls));
 
-    LibraryInitializer.getInstance().addGenerators(cls, new ArrayList<M>(result));
+    LibraryInitializer.getInstance().addGenerators(cls, result);
 
     return result;
   }

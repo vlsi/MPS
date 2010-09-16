@@ -77,7 +77,6 @@ public abstract class BaseLibraryManager implements BaseComponent, Configurable,
     MyState result = new MyState();
     for (Entry<String, Library> entry : state.getLibraries().entrySet()) {
       result.getLibraries().put(entry.getKey(), removeMacros(entry.getValue()));
-
     }
     return result;
   }

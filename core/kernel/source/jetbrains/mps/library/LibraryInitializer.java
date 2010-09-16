@@ -88,7 +88,7 @@ public class LibraryInitializer {
 
   //----------bootstrap modules
 
-  public Collection<IModule> getModules(String path) {
+   public Collection<IModule> getModules(String path) {
     return myRepo.getModules(myLibsToOwners.get(path));
   }
 
@@ -101,7 +101,7 @@ public class LibraryInitializer {
     return new HashSet<M>(result);
   }
 
-  public <M extends IModule> void addGenerators(Class<M> cls, List<M> result) {
+  public <M extends IModule> void addGenerators(Class<M> cls, Collection<M> result) {
     for (M m : new ArrayList<M>(result)) {
       if (m instanceof Language) {
         if (cls == null || cls.isAssignableFrom(Generator.class)) {
