@@ -42,6 +42,9 @@
     <projectService serviceInterface="com.intellij.codeStyle.CodeStyleFacade"
                     serviceImplementation="jetbrains.mps.intentions.MPSCodeStyleFacade"/>
 
+    <projectService serviceInterface="com.intellij.ui.EditorTextFieldProvider"
+                    serviceImplementation="jetbrains.mps.EditorTextFieldProviderImpl"/>
+
     <projectService serviceInterface="com.intellij.openapi.vcs.impl.ExcludedFileIndex"
                     serviceImplementation="jetbrains.mps.vcs.MPSExcludedFileIndex"/>
     <projectService serviceInterface="com.intellij.openapi.vcs.impl.DefaultVcsRootPolicy"
