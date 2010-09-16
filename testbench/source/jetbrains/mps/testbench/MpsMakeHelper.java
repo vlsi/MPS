@@ -157,7 +157,8 @@ public class MpsMakeHelper {
   private Set<File> calculateClassPath(File mpsHome) {
     File[] pathsToLook;
     if (new File(mpsHome.getAbsolutePath() + File.separator + "classes").exists()) {
-      pathsToLook = new File[]{new File(mpsHome.getAbsolutePath() + File.separator + "core"),
+      pathsToLook = new File[]{
+        new File(mpsHome.getAbsolutePath() + File.separator + "core"),
         new File(mpsHome.getAbsolutePath() + File.separator + "workbench" + File.separator + "classes"),
         new File(mpsHome.getAbsolutePath() + File.separator + "lib"),
         new File(mpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "buildlanguage" + File.separator + "ant"),
@@ -165,7 +166,9 @@ public class MpsMakeHelper {
         new File(mpsHome.getAbsolutePath() + File.separator + "core" + File.separator + "kernel" + File.separator + "xmlQuery" + File.separator + "runtime"),
 //        new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "gtext"),
 //        new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "builders"),
-        new File(mpsHome.getAbsolutePath() + File.separator + "MPSPlugin" + File.separator + "apiclasses")};
+        new File(mpsHome.getAbsolutePath() + File.separator + "MPSPlugin" + File.separator + "apiclasses"),
+        new File(mpsHome.getAbsolutePath() + File.separator + "testbench"),
+      };
     } else {
       pathsToLook = new File[]{new File(mpsHome.getAbsolutePath() + File.separator + "lib"),
         new File(mpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "generate.ant.task.jar"),
@@ -211,7 +214,7 @@ public class MpsMakeHelper {
 
     for (File f : children) {
       if (f.isDirectory()) {
-        if (f.getName().equals("classes") || f.getName().equals("classes_gen")) {
+        if (f.getName().equals("classes") || f.getName().equals("classes_gen")|| f.getName().equals("testclasses")) {
           result.add(f);
         } else {
           gatherAllClassesAndJarsUnder(f, result);
