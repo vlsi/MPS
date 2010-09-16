@@ -124,6 +124,15 @@ public class MpsMakeHelper {
       sb.append(pathSeparator);
       sb.append(cp.getAbsolutePath());
     }
+
+    // copy ant libs
+    for (String entry: currentClassPathString.split(pathSeparator)) {
+      if (entry.indexOf("ant") >= 0) {
+        sb.append(pathSeparator);
+        sb.append(entry);
+      }
+    }
+
     commandLine.add("-classpath");
     commandLine.add(sb.toString());
 
