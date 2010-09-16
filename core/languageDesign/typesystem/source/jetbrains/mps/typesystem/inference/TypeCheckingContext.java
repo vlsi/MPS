@@ -44,6 +44,7 @@ public class TypeCheckingContext {
   private Stack<NodeTypesComponent> myTemporaryComponentsStack = new Stack<NodeTypesComponent>();
   private Stack<SNode> myNodesToComputeDuringResolve = new Stack<SNode>();
   private IOperationContext myOperationContext;
+  boolean myIsNonTypesystemComputation = false;
 
   public TypeCheckingContext(SNode rootNode, TypeChecker typeChecker) {
     if (rootNode == null) {
@@ -81,13 +82,23 @@ public class TypeCheckingContext {
   }
 
   public void setInEditorQueriesMode() {
+    if (myIsNonTypesystemComputation) return;
     myIsInEditorQueriesStack.push(true);
   }
 
   public void resetIsInEditorQueriesMode() {
+    if (myIsNonTypesystemComputation) return;
     if (!myIsInEditorQueriesStack.isEmpty()) {
       myIsInEditorQueriesStack.pop();
     }
+  }
+
+  public void setIsNonTypesystemComputation() {
+    myIsNonTypesystemComputation = true;
+  }
+
+  public void resetIsNonTypesystemComputation() {
+    myIsNonTypesystemComputation = false;
   }
 
   public ISlicer getCurrentSlicer() {
