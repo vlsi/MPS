@@ -1,6 +1,5 @@
 package jetbrains.mps.testbench;
 
-import jetbrains.mps.build.ant.MpsWorker.SystemOutLogger;
 import jetbrains.mps.build.ant.WhatToDo;
 import jetbrains.mps.build.ant.make.MakeWorker;
 import jetbrains.mps.testbench.util.FilesCollector;
@@ -107,9 +106,9 @@ public class MpsMakeHelper {
     toDo.updateLogLevel(2); // INFO
     toDo.putProperty("mps.home", System.getProperty("user.dir"));
 
-    MakeWorker worker = new MakeWorker(toDo, new SystemOutLogger());
-    worker.work();
-//    spawnWorkerAndWait(toDo);
+//    MakeWorker worker = new MakeWorker(toDo, new SystemOutLogger());
+//    worker.work();
+    spawnWorkerAndWait(toDo);
   }
 
   private void spawnWorkerAndWait(WhatToDo myWhatToDo) {
