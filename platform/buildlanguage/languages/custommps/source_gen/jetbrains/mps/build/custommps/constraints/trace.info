@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="UndeclaredVariableReference_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.build.custommps.constraints.UndeclaredVariableReference_Constraints" />
   <unitInfo fileName="MPSBuild_Constraints.java" startLine="12" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.build.custommps.constraints.MPSBuild_Constraints" />
   <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.build.custommps.constraints.ConstraintsDescriptor" />
   <unitInfo fileName="MPSBuild_name_PropertyConstraint.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.build.custommps.constraints.MPSBuild_name_PropertyConstraint" />
@@ -16,6 +17,10 @@
     <scopeInfo nodeId="1233156640381" fileName="MPSBuild_name_PropertyConstraint.java" startLine="25" startPosition="80" endLine="29" endPosition="114" />
     <scopeInfo nodeId="1239989584661" fileName="MPSBuild_Constraints.java" startLine="13" startPosition="114" endLine="18" endPosition="21" />
     <unitInfo nodeId="1240846456211" fileName="MPSBuild_Constraints.java" startLine="14" startPosition="210" endLine="18" endPosition="5" unitName="jetbrains.mps.build.custommps.constraints.IWhereFilter$anonymous" />
+  </root>
+  <root nodeId="8431776905956790266">
+    <nodeInfo nodeId="8431776905956790269" fileName="UndeclaredVariableReference_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="83" />
+    <scopeInfo nodeId="8431776905956790268" fileName="UndeclaredVariableReference_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="83" />
   </root>
 </debugInfo>
 

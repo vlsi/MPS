@@ -23,7 +23,6 @@
   <property name="jetbrains.mps.baseLanguage.unitTest.runtime.classes" value="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
   <property name="jetbrains.mps.bash.classes" value="platform/bash/languages/bash/classes_gen" />
   <property name="jetbrains.mps.build.custommps.classes" value="platform/buildlanguage/languages/custommps/classes_gen" />
-  <property name="jetbrains.mps.build.custommpsInternal.classes" value="platform/buildlanguage/languages/custommpsInternal/classes_gen" />
   <property name="jetbrains.mps.build.dependency.classes" value="platform/buildlanguage/languages/dependency/classes_gen" />
   <property name="jetbrains.mps.build.distrib.classes" value="platform/buildlanguage/languages/distrib/classes_gen" />
   <property name="jetbrains.mps.build.generictasks.classes" value="platform/buildlanguage/languages/generictasks/classes_gen" />
@@ -68,16 +67,14 @@
     <path path="core/javaParser/classes" />
     <path path="core/kernel/classes" />
     <path path="core/kernel/xmlQuery/runtime/classes" />
-    <path path="core/runtime/classes" />
     <path path="core/typesystemEngine/classes" />
     <path path="lib/annotations.jar" />
-    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/eclipse-compiler/ecj.jar" />
-    <path path="lib/execution-api.jar" />
     <path path="lib/extensions.jar" />
-    <path path="lib/jdom.jar" />
-    <path path="lib/junit-4.7.jar" />
-    <path path="lib/log4j.jar" />
+    <path path="lib/jdom/jdom.jar" />
+    <path path="lib/junit4/junit-4.8.2.jar" />
+    <path path="lib/log4j/log4j.jar" />
     <path path="lib/picocontainer.jar" />
     <path path="lib/platform-api.jar" />
     <path path="lib/platform.jar" />
@@ -156,7 +153,6 @@
   </path>
   <path id="cycle.jetbrains.mps.build.custommps_tjc.src">
     <path path="platform/buildlanguage/languages/custommps/source_gen" />
-    <path path="platform/buildlanguage/languages/custommpsInternal/source_gen" />
   </path>
   <path id="cycle.jetbrains.mps.build.dependency_tjc.src">
     <path path="platform/buildlanguage/languages/dependency/source_gen" />
@@ -278,7 +274,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -291,6 +286,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/languageDesign/actions/classes" />
@@ -324,12 +320,14 @@
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/runtime/classes" />
     <path path="lib/annotations.jar" />
-    <path path="lib/asm.jar" />
+    <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
-    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/commons-logging/commons-logging-1.1.jar" />
-    <path path="lib/junit-4.7.jar" />
+    <path path="lib/joda-time/joda-time-1.6.jar" />
+    <path path="lib/junit4/junit-4.8.2.jar" />
     <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -379,7 +377,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -392,6 +389,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/languageDesign/actions/classes" />
@@ -425,12 +423,14 @@
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/runtime/classes" />
     <path path="lib/annotations.jar" />
-    <path path="lib/asm.jar" />
+    <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
-    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/commons-logging/commons-logging-1.1.jar" />
-    <path path="lib/junit-4.7.jar" />
+    <path path="lib/joda-time/joda-time-1.6.jar" />
+    <path path="lib/junit4/junit-4.8.2.jar" />
     <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -480,7 +480,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -493,6 +492,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/languageDesign/actions/classes" />
@@ -526,12 +526,14 @@
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/runtime/classes" />
     <path path="lib/annotations.jar" />
-    <path path="lib/asm.jar" />
+    <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
-    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/commons-logging/commons-logging-1.1.jar" />
-    <path path="lib/junit-4.7.jar" />
+    <path path="lib/joda-time/joda-time-1.6.jar" />
+    <path path="lib/junit4/junit-4.8.2.jar" />
     <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -581,7 +583,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -594,6 +595,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/languageDesign/actions/classes" />
@@ -627,12 +629,14 @@
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/runtime/classes" />
     <path path="lib/annotations.jar" />
-    <path path="lib/asm.jar" />
+    <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
-    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/commons-logging/commons-logging-1.1.jar" />
-    <path path="lib/junit-4.7.jar" />
+    <path path="lib/joda-time/joda-time-1.6.jar" />
+    <path path="lib/junit4/junit-4.8.2.jar" />
     <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -682,7 +686,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -695,6 +698,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/languageDesign/actions/classes" />
@@ -728,12 +732,14 @@
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/runtime/classes" />
     <path path="lib/annotations.jar" />
-    <path path="lib/asm.jar" />
+    <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
-    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/commons-logging/commons-logging-1.1.jar" />
-    <path path="lib/junit-4.7.jar" />
+    <path path="lib/joda-time/joda-time-1.6.jar" />
+    <path path="lib/junit4/junit-4.8.2.jar" />
     <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -783,7 +789,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -796,6 +801,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/languageDesign/actions/classes" />
@@ -829,12 +835,14 @@
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/runtime/classes" />
     <path path="lib/annotations.jar" />
-    <path path="lib/asm.jar" />
+    <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
-    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/commons-logging/commons-logging-1.1.jar" />
-    <path path="lib/junit-4.7.jar" />
+    <path path="lib/joda-time/joda-time-1.6.jar" />
+    <path path="lib/junit4/junit-4.8.2.jar" />
     <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -884,7 +892,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -897,6 +904,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/languageDesign/actions/classes" />
@@ -930,12 +938,14 @@
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/runtime/classes" />
     <path path="lib/annotations.jar" />
-    <path path="lib/asm.jar" />
+    <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
-    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/commons-logging/commons-logging-1.1.jar" />
-    <path path="lib/junit-4.7.jar" />
+    <path path="lib/joda-time/joda-time-1.6.jar" />
+    <path path="lib/junit4/junit-4.8.2.jar" />
     <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -986,7 +996,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -999,6 +1008,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/languageDesign/actions/classes" />
@@ -1032,12 +1042,14 @@
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/runtime/classes" />
     <path path="lib/annotations.jar" />
-    <path path="lib/asm.jar" />
+    <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
-    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/commons-logging/commons-logging-1.1.jar" />
-    <path path="lib/junit-4.7.jar" />
+    <path path="lib/joda-time/joda-time-1.6.jar" />
+    <path path="lib/junit4/junit-4.8.2.jar" />
     <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -1067,9 +1079,8 @@
   <path id="cycle.jetbrains.mps.baseLanguage.dates.runtime_tjc.classpaths">
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/dates/runtime/lib/joda-time-1.6.jar" />
+    <path path="lib/joda-time/joda-time-1.6.jar" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.extensionMethods_tjc.classpaths">
@@ -1095,7 +1106,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -1108,6 +1118,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/languageDesign/actions/classes" />
@@ -1141,12 +1152,14 @@
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/runtime/classes" />
     <path path="lib/annotations.jar" />
-    <path path="lib/asm.jar" />
+    <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
-    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/commons-logging/commons-logging-1.1.jar" />
-    <path path="lib/junit-4.7.jar" />
+    <path path="lib/joda-time/joda-time-1.6.jar" />
+    <path path="lib/junit4/junit-4.8.2.jar" />
     <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -1196,7 +1209,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -1209,6 +1221,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/languageDesign/actions/classes" />
@@ -1242,12 +1255,14 @@
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/runtime/classes" />
     <path path="lib/annotations.jar" />
-    <path path="lib/asm.jar" />
+    <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
-    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/commons-logging/commons-logging-1.1.jar" />
-    <path path="lib/junit-4.7.jar" />
+    <path path="lib/joda-time/joda-time-1.6.jar" />
+    <path path="lib/junit4/junit-4.8.2.jar" />
     <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -1297,7 +1312,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -1310,6 +1324,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/languageDesign/actions/classes" />
@@ -1343,12 +1358,14 @@
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/runtime/classes" />
     <path path="lib/annotations.jar" />
-    <path path="lib/asm.jar" />
+    <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
-    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/commons-logging/commons-logging-1.1.jar" />
-    <path path="lib/junit-4.7.jar" />
+    <path path="lib/joda-time/joda-time-1.6.jar" />
+    <path path="lib/junit4/junit-4.8.2.jar" />
     <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -1398,7 +1415,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -1411,6 +1427,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/languageDesign/actions/classes" />
@@ -1444,12 +1461,14 @@
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/runtime/classes" />
     <path path="lib/annotations.jar" />
-    <path path="lib/asm.jar" />
+    <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
-    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/commons-logging/commons-logging-1.1.jar" />
-    <path path="lib/junit-4.7.jar" />
+    <path path="lib/joda-time/joda-time-1.6.jar" />
+    <path path="lib/junit4/junit-4.8.2.jar" />
     <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -1501,7 +1520,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -1514,6 +1532,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/languageDesign/actions/classes" />
@@ -1547,12 +1566,14 @@
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/runtime/classes" />
     <path path="lib/annotations.jar" />
-    <path path="lib/asm.jar" />
+    <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
-    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/commons-logging/commons-logging-1.1.jar" />
-    <path path="lib/junit-4.7.jar" />
+    <path path="lib/joda-time/joda-time-1.6.jar" />
+    <path path="lib/junit4/junit-4.8.2.jar" />
     <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -1602,7 +1623,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -1615,6 +1635,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/languageDesign/actions/classes" />
@@ -1648,12 +1669,14 @@
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/runtime/classes" />
     <path path="lib/annotations.jar" />
-    <path path="lib/asm.jar" />
+    <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
-    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/commons-logging/commons-logging-1.1.jar" />
-    <path path="lib/junit-4.7.jar" />
+    <path path="lib/joda-time/joda-time-1.6.jar" />
+    <path path="lib/junit4/junit-4.8.2.jar" />
     <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -1710,7 +1733,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -1723,6 +1745,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/languageDesign/actions/classes" />
@@ -1756,12 +1779,14 @@
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/runtime/classes" />
     <path path="lib/annotations.jar" />
-    <path path="lib/asm.jar" />
+    <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
-    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/commons-logging/commons-logging-1.1.jar" />
-    <path path="lib/junit-4.7.jar" />
+    <path path="lib/joda-time/joda-time-1.6.jar" />
+    <path path="lib/junit4/junit-4.8.2.jar" />
     <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -1813,7 +1838,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -1826,6 +1850,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/languageDesign/actions/classes" />
@@ -1859,12 +1884,14 @@
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/runtime/classes" />
     <path path="lib/annotations.jar" />
-    <path path="lib/asm.jar" />
+    <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
-    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/commons-logging/commons-logging-1.1.jar" />
-    <path path="lib/junit-4.7.jar" />
+    <path path="lib/joda-time/joda-time-1.6.jar" />
+    <path path="lib/junit4/junit-4.8.2.jar" />
     <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -1892,7 +1919,9 @@
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.unitTest.lib_tjc.classpaths">
-    <path path="lib/junit-4.7.jar" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
+    <path path="lib/junit4/junit-4.8.2.jar" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.bash_tjc.classpaths">
@@ -1918,7 +1947,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -1931,6 +1959,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/languageDesign/actions/classes" />
@@ -1964,12 +1993,14 @@
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/runtime/classes" />
     <path path="lib/annotations.jar" />
-    <path path="lib/asm.jar" />
+    <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
-    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/commons-logging/commons-logging-1.1.jar" />
-    <path path="lib/junit-4.7.jar" />
+    <path path="lib/joda-time/joda-time-1.6.jar" />
+    <path path="lib/junit4/junit-4.8.2.jar" />
     <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -1999,8 +2030,6 @@
   </path>
   <path id="cycle.jetbrains.mps.build.custommps_tjc.classpaths">
     <path path="platform/buildlanguage/languages/custommps/classes_gen" />
-    <path path="platform/buildlanguage/languages/custommpsInternal/classes_gen" />
-    <path path="platform/buildlanguage/languages/custommpsInternal/classes_gen" />
     <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
     <path path="core/baseLanguage/blTypes/classes" />
@@ -2022,7 +2051,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -2035,6 +2063,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/languageDesign/actions/classes" />
@@ -2068,13 +2097,15 @@
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/runtime/classes" />
     <path path="lib/annotations.jar" />
-    <path path="lib/ant/lib/ant.jar" />
-    <path path="lib/asm.jar" />
+    <path path="lib/ant-1.7.0/lib/ant.jar" />
+    <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
-    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/commons-logging/commons-logging-1.1.jar" />
-    <path path="lib/junit-4.7.jar" />
+    <path path="lib/joda-time/joda-time-1.6.jar" />
+    <path path="lib/junit4/junit-4.8.2.jar" />
     <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -2083,13 +2114,13 @@
     <path path="platform/buildlanguage/languages/buildlanguage/classes" />
     <path path="platform/buildlanguage/languages/buildlanguage/classes_gen" />
     <path path="platform/buildlanguage/languages/custommps/classes_gen" />
-    <path path="platform/buildlanguage/languages/custommpsInternal/classes_gen" />
     <path path="platform/buildlanguage/languages/dependency/classes_gen" />
     <path path="platform/buildlanguage/languages/distrib/classes_gen" />
     <path path="platform/buildlanguage/languages/generictasks/classes_gen" />
     <path path="platform/buildlanguage/languages/packaging/classes" />
     <path path="platform/buildlanguage/languages/packaging/classes_gen" />
     <path path="platform/buildlanguage/languages/property/classes_gen" />
+    <path path="platform/buildlanguage/solutions/jetbrains.mps.buildlangauge.mpsautobuild/classes_gen" />
     <path path="platform/extensionMethod/classes_gen" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
@@ -2139,7 +2170,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -2152,6 +2182,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/languageDesign/actions/classes" />
@@ -2185,13 +2216,15 @@
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/runtime/classes" />
     <path path="lib/annotations.jar" />
-    <path path="lib/ant/lib/ant.jar" />
-    <path path="lib/asm.jar" />
+    <path path="lib/ant-1.7.0/lib/ant.jar" />
+    <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
-    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/commons-logging/commons-logging-1.1.jar" />
-    <path path="lib/junit-4.7.jar" />
+    <path path="lib/joda-time/joda-time-1.6.jar" />
+    <path path="lib/junit4/junit-4.8.2.jar" />
     <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -2250,7 +2283,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -2263,6 +2295,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/languageDesign/actions/classes" />
@@ -2296,13 +2329,15 @@
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/runtime/classes" />
     <path path="lib/annotations.jar" />
-    <path path="lib/ant/lib/ant.jar" />
-    <path path="lib/asm.jar" />
+    <path path="lib/ant-1.7.0/lib/ant.jar" />
+    <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
-    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/commons-logging/commons-logging-1.1.jar" />
-    <path path="lib/junit-4.7.jar" />
+    <path path="lib/joda-time/joda-time-1.6.jar" />
+    <path path="lib/junit4/junit-4.8.2.jar" />
     <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -2365,7 +2400,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -2378,6 +2412,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/languageDesign/actions/classes" />
@@ -2411,13 +2446,15 @@
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/runtime/classes" />
     <path path="lib/annotations.jar" />
-    <path path="lib/ant/lib/ant.jar" />
-    <path path="lib/asm.jar" />
+    <path path="lib/ant-1.7.0/lib/ant.jar" />
+    <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
-    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/commons-logging/commons-logging-1.1.jar" />
-    <path path="lib/junit-4.7.jar" />
+    <path path="lib/joda-time/joda-time-1.6.jar" />
+    <path path="lib/junit4/junit-4.8.2.jar" />
     <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -2473,7 +2510,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -2486,6 +2522,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/languageDesign/actions/classes" />
@@ -2519,12 +2556,14 @@
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/runtime/classes" />
     <path path="lib/annotations.jar" />
-    <path path="lib/asm.jar" />
+    <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
-    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/commons-logging/commons-logging-1.1.jar" />
-    <path path="lib/junit-4.7.jar" />
+    <path path="lib/joda-time/joda-time-1.6.jar" />
+    <path path="lib/junit4/junit-4.8.2.jar" />
     <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -2574,7 +2613,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -2587,6 +2625,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/languageDesign/actions/classes" />
@@ -2620,12 +2659,14 @@
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/runtime/classes" />
     <path path="lib/annotations.jar" />
-    <path path="lib/asm.jar" />
+    <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
-    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/commons-logging/commons-logging-1.1.jar" />
-    <path path="lib/junit-4.7.jar" />
+    <path path="lib/joda-time/joda-time-1.6.jar" />
+    <path path="lib/junit4/junit-4.8.2.jar" />
     <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -2675,7 +2716,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -2688,6 +2728,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/languageDesign/actions/classes" />
@@ -2721,12 +2762,14 @@
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/runtime/classes" />
     <path path="lib/annotations.jar" />
-    <path path="lib/asm.jar" />
+    <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
-    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/commons-logging/commons-logging-1.1.jar" />
-    <path path="lib/junit-4.7.jar" />
+    <path path="lib/joda-time/joda-time-1.6.jar" />
+    <path path="lib/junit4/junit-4.8.2.jar" />
     <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -2756,7 +2799,7 @@
   <path id="cycle.jetbrains.mps.gtext.runtime_tjc.classpaths">
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
-    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="platform/gtext/runtime/classes_gen" />
     <path refid="common.classpath" />
   </path>
@@ -2783,7 +2826,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -2796,6 +2838,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/languageDesign/actions/classes" />
@@ -2829,12 +2872,14 @@
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/runtime/classes" />
     <path path="lib/annotations.jar" />
-    <path path="lib/asm.jar" />
+    <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
-    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/commons-logging/commons-logging-1.1.jar" />
-    <path path="lib/junit-4.7.jar" />
+    <path path="lib/joda-time/joda-time-1.6.jar" />
+    <path path="lib/junit4/junit-4.8.2.jar" />
     <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -2889,7 +2934,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -2902,6 +2946,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/languageDesign/actions/classes" />
@@ -2935,12 +2980,14 @@
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/runtime/classes" />
     <path path="lib/annotations.jar" />
-    <path path="lib/asm.jar" />
+    <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
-    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/commons-logging/commons-logging-1.1.jar" />
-    <path path="lib/junit-4.7.jar" />
+    <path path="lib/joda-time/joda-time-1.6.jar" />
+    <path path="lib/junit4/junit-4.8.2.jar" />
     <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -2990,7 +3037,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -3003,6 +3049,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/languageDesign/actions/classes" />
@@ -3036,12 +3083,14 @@
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/runtime/classes" />
     <path path="lib/annotations.jar" />
-    <path path="lib/asm.jar" />
+    <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
-    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/commons-logging/commons-logging-1.1.jar" />
-    <path path="lib/junit-4.7.jar" />
+    <path path="lib/joda-time/joda-time-1.6.jar" />
+    <path path="lib/junit4/junit-4.8.2.jar" />
     <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -3091,7 +3140,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -3104,6 +3152,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/languageDesign/actions/classes" />
@@ -3137,12 +3186,14 @@
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/runtime/classes" />
     <path path="lib/annotations.jar" />
-    <path path="lib/asm.jar" />
+    <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
-    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/commons-logging/commons-logging-1.1.jar" />
-    <path path="lib/junit-4.7.jar" />
+    <path path="lib/joda-time/joda-time-1.6.jar" />
+    <path path="lib/junit4/junit-4.8.2.jar" />
     <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -3193,7 +3244,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -3206,6 +3256,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/languageDesign/actions/classes" />
@@ -3239,12 +3290,14 @@
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/runtime/classes" />
     <path path="lib/annotations.jar" />
-    <path path="lib/asm.jar" />
+    <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
-    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/commons-logging/commons-logging-1.1.jar" />
-    <path path="lib/junit-4.7.jar" />
+    <path path="lib/joda-time/joda-time-1.6.jar" />
+    <path path="lib/junit4/junit-4.8.2.jar" />
     <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -3299,7 +3352,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -3312,6 +3364,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/languageDesign/actions/classes" />
@@ -3345,12 +3398,14 @@
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/runtime/classes" />
     <path path="lib/annotations.jar" />
-    <path path="lib/asm.jar" />
+    <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
-    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/commons-logging/commons-logging-1.1.jar" />
-    <path path="lib/junit-4.7.jar" />
+    <path path="lib/joda-time/joda-time-1.6.jar" />
+    <path path="lib/junit4/junit-4.8.2.jar" />
     <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -3411,7 +3466,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -3424,6 +3478,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/languageDesign/actions/classes" />
@@ -3457,12 +3512,14 @@
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/runtime/classes" />
     <path path="lib/annotations.jar" />
-    <path path="lib/asm.jar" />
+    <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
-    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/commons-logging/commons-logging-1.1.jar" />
-    <path path="lib/junit-4.7.jar" />
+    <path path="lib/joda-time/joda-time-1.6.jar" />
+    <path path="lib/junit4/junit-4.8.2.jar" />
     <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -3524,7 +3581,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -3537,6 +3593,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/languageDesign/actions/classes" />
@@ -3570,12 +3627,14 @@
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/runtime/classes" />
     <path path="lib/annotations.jar" />
-    <path path="lib/asm.jar" />
+    <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
-    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/commons-logging/commons-logging-1.1.jar" />
-    <path path="lib/junit-4.7.jar" />
+    <path path="lib/joda-time/joda-time-1.6.jar" />
+    <path path="lib/junit4/junit-4.8.2.jar" />
     <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -3644,7 +3703,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -3657,6 +3715,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/languageDesign/actions/classes" />
@@ -3690,12 +3749,14 @@
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/runtime/classes" />
     <path path="lib/annotations.jar" />
-    <path path="lib/asm.jar" />
+    <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
-    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/commons-logging/commons-logging-1.1.jar" />
-    <path path="lib/junit-4.7.jar" />
+    <path path="lib/joda-time/joda-time-1.6.jar" />
+    <path path="lib/junit4/junit-4.8.2.jar" />
     <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -3747,7 +3808,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -3760,6 +3820,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/languageDesign/actions/classes" />
@@ -3793,12 +3854,14 @@
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/runtime/classes" />
     <path path="lib/annotations.jar" />
-    <path path="lib/asm.jar" />
+    <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
-    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/commons-logging/commons-logging-1.1.jar" />
-    <path path="lib/junit-4.7.jar" />
+    <path path="lib/joda-time/joda-time-1.6.jar" />
+    <path path="lib/junit4/junit-4.8.2.jar" />
     <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -3849,7 +3912,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -3862,6 +3924,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/languageDesign/actions/classes" />
@@ -3895,12 +3958,14 @@
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/runtime/classes" />
     <path path="lib/annotations.jar" />
-    <path path="lib/asm.jar" />
+    <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
-    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/commons-logging/commons-logging-1.1.jar" />
-    <path path="lib/junit-4.7.jar" />
+    <path path="lib/joda-time/joda-time-1.6.jar" />
+    <path path="lib/junit4/junit-4.8.2.jar" />
     <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -3952,7 +4017,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -3965,6 +4029,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/languageDesign/actions/classes" />
@@ -3998,12 +4063,14 @@
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/runtime/classes" />
     <path path="lib/annotations.jar" />
-    <path path="lib/asm.jar" />
+    <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
-    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/commons-logging/commons-logging-1.1.jar" />
-    <path path="lib/junit-4.7.jar" />
+    <path path="lib/joda-time/joda-time-1.6.jar" />
+    <path path="lib/junit4/junit-4.8.2.jar" />
     <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -4053,7 +4120,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -4066,6 +4132,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/languageDesign/actions/classes" />
@@ -4099,12 +4166,14 @@
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/runtime/classes" />
     <path path="lib/annotations.jar" />
-    <path path="lib/asm.jar" />
+    <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
-    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/commons-logging/commons-logging-1.1.jar" />
-    <path path="lib/junit-4.7.jar" />
+    <path path="lib/joda-time/joda-time-1.6.jar" />
+    <path path="lib/junit4/junit-4.8.2.jar" />
     <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -4157,7 +4226,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -4170,6 +4238,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/languageDesign/actions/classes" />
@@ -4203,12 +4272,14 @@
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/runtime/classes" />
     <path path="lib/annotations.jar" />
-    <path path="lib/asm.jar" />
+    <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
-    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/commons-logging/commons-logging-1.1.jar" />
-    <path path="lib/junit-4.7.jar" />
+    <path path="lib/joda-time/joda-time-1.6.jar" />
+    <path path="lib/junit4/junit-4.8.2.jar" />
     <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -4258,7 +4329,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -4271,6 +4341,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/languageDesign/actions/classes" />
@@ -4304,12 +4375,14 @@
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/runtime/classes" />
     <path path="lib/annotations.jar" />
-    <path path="lib/asm.jar" />
+    <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
-    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/commons-logging/commons-logging-1.1.jar" />
-    <path path="lib/junit-4.7.jar" />
+    <path path="lib/joda-time/joda-time-1.6.jar" />
+    <path path="lib/junit4/junit-4.8.2.jar" />
     <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -4360,7 +4433,6 @@
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
     <path path="core/baseLanguage/logging/classes_gen" />
     <path path="core/baseLanguage/math/classes" />
@@ -4373,6 +4445,7 @@
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
+    <path path="core/baseLanguage/unitTest/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/debug/debugProject/languages/privateMembers/classes_gen" />
     <path path="core/languageDesign/actions/classes" />
@@ -4406,12 +4479,14 @@
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="core/languageDesign/textGen/classes" />
     <path path="core/languageDesign/typesystem/classes" />
+    <path path="core/runtime/classes" />
     <path path="lib/annotations.jar" />
-    <path path="lib/asm.jar" />
+    <path path="lib/asm/asm.jar" />
     <path path="lib/beansbinding/beansbinding-1.2.1.jar" />
-    <path path="lib/commons-lang-2.4.jar" />
+    <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/commons-logging/commons-logging-1.1.jar" />
-    <path path="lib/junit-4.7.jar" />
+    <path path="lib/joda-time/joda-time-1.6.jar" />
+    <path path="lib/junit4/junit-4.8.2.jar" />
     <path path="lib/tools/tools.jar" />
     <path path="platform/analyzers/languages/analyzers/classes_gen" />
     <path path="platform/analyzers/solutions/jetbrains.mps.analyzers.runtime/classes_gen" />
@@ -4780,21 +4855,14 @@
   <target name="compile.cycle.jetbrains.mps.build.custommps_tjc" depends="compile.cycle.jetbrains.mps.build.distrib_tjc">
     <property name="classes.dump" value="${jetbrains.mps.build.custommps.classes}.tmp" />
     <mkdir dir="platform/buildlanguage/languages/custommps/source_gen" />
-    <mkdir dir="platform/buildlanguage/languages/custommpsInternal/source_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.build.custommps.classes}" />
-    <mkdir dir="${jetbrains.mps.build.custommpsInternal.classes}" />
     <javac classpathref="cycle.jetbrains.mps.build.custommps_tjc.classpaths" destdir="${classes.dump}">
       <src refid="cycle.jetbrains.mps.build.custommps_tjc.src" />
     </javac>
     <javac classpathref="cycle.jetbrains.mps.build.custommps_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.custommps.classes}">
       <src>
         <path path="platform/buildlanguage/languages/custommps/source_gen" />
-      </src>
-    </javac>
-    <javac classpathref="cycle.jetbrains.mps.build.custommps_tjc.classpaths" classpath="${classes.dump}" destdir="${jetbrains.mps.build.custommpsInternal.classes}">
-      <src>
-        <path path="platform/buildlanguage/languages/custommpsInternal/source_gen" />
       </src>
     </javac>
     <delete dir="${classes.dump}" />
@@ -5285,7 +5353,6 @@
     <delete dir="${jetbrains.mps.baseLanguage.unitTest.lib.classes}" />
     <delete dir="${jetbrains.mps.bash.classes}" />
     <delete dir="${jetbrains.mps.build.custommps.classes}" />
-    <delete dir="${jetbrains.mps.build.custommpsInternal.classes}" />
     <delete dir="${jetbrains.mps.build.dependency.classes}" />
     <delete dir="${jetbrains.mps.build.packaging.classes}" />
     <delete dir="${jetbrains.mps.build.distrib.classes}" />
