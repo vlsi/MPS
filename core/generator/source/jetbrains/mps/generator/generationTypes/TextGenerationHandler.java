@@ -2,7 +2,8 @@ package jetbrains.mps.generator.generationTypes;
 
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.IGeneratorLogger;
-import jetbrains.mps.generator.generationTypes.TextGenerationUtil.TextGenerationResult;
+import jetbrains.mps.generator.fileGenerator.TextGenerationUtil;
+import jetbrains.mps.generator.fileGenerator.TextGenerationUtil.TextGenerationResult;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;

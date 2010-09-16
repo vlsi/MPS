@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.generator.fileGenerator;
+package jetbrains.mps.generator.generationTypes.java;
 
 import jetbrains.mps.baseLanguage.textGen.BLDependenciesCache;
 import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
@@ -22,8 +22,9 @@ import jetbrains.mps.debug.api.info.*;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.generator.cache.CacheGenerator;
-import jetbrains.mps.generator.generationTypes.TextGenerationUtil;
-import jetbrains.mps.generator.generationTypes.TextGenerationUtil.TextGenerationResult;
+import jetbrains.mps.generator.generationTypes.StreamHandler;
+import jetbrains.mps.generator.fileGenerator.TextGenerationUtil;
+import jetbrains.mps.generator.fileGenerator.TextGenerationUtil.TextGenerationResult;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
 import jetbrains.mps.generator.template.TemplateQueryContext;
@@ -37,7 +38,7 @@ import jetbrains.mps.util.NameUtil;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class JavaFileGenerator {
+class JavaFileGenerator {
   private static final Logger LOG = Logger.getLogger(JavaFileGenerator.class);
 
   private final StreamHandler myStreamHandler;

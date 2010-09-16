@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.generator.fileGenerator.vcs;
+package jetbrains.mps.generator.generationTypes.java;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
@@ -27,7 +27,7 @@ import jetbrains.mps.vfs.VFileSystem;
 import java.io.File;
 import java.util.*;
 
-public class FileProcessor {
+class FileProcessor {
   private static List<Runnable> ourQueue = new LinkedList<Runnable>();
   private static final Object LOCK = new Object();
 

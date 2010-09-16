@@ -26,7 +26,7 @@ import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.FileBasedIndex.ValueProcessor;
 import jetbrains.mps.generator.cache.CacheGenerator;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
-import jetbrains.mps.generator.fileGenerator.StreamHandler;
+import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.ide.generator.index.ModelDigestIndex;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;

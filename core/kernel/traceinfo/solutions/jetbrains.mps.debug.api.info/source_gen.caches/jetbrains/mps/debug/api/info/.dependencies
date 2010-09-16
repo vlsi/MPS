@@ -8,7 +8,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.debug.api.info.DebugInfo" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationStatus" />
-    <classNode dependClassName="jetbrains.mps.generator.fileGenerator.StreamHandler" />
+    <classNode dependClassName="jetbrains.mps.generator.generationTypes.StreamHandler" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.reloading.ClassLoaderManager" />

@@ -31,7 +31,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590553(jetbrains.mps.uiLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959054e(jetbrains.mps.uiLanguage.constraints)" version="26" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" />
-  <maxImportIndex value="40" />
+  <maxImportIndex value="41" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.workbench.editors(jetbrains.mps.workbench.editors@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.vfs(jetbrains.mps.vfs@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
@@ -54,6 +54,7 @@
   <import index="38" modelUID="f:java_stub#jetbrains.mps.reloading(jetbrains.mps.reloading@java_stub)" version="-1" />
   <import index="39" modelUID="f:java_stub#jetbrains.mps.generator.cache(jetbrains.mps.generator.cache@java_stub)" version="-1" />
   <import index="40" modelUID="f:java_stub#jetbrains.mps.generator(jetbrains.mps.generator@java_stub)" version="-1" />
+  <import index="41" modelUID="f:java_stub#jetbrains.mps.generator.generationTypes(jetbrains.mps.generator.generationTypes@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4494976841093370185">
     <property name="name:3" value="DebugInfoRoot" />
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="4494976841093370186">
@@ -2718,8 +2719,8 @@
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1452949648709360034">
         <property name="name:3" value="handler" />
-        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1452949648709360035">
-          <link role="classifier:3" targetNodeId="6.~StreamHandler" resolveInfo="StreamHandler" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1298088246261422831">
+          <link role="classifier:3" targetNodeId="41.~StreamHandler" resolveInfo="StreamHandler" />
         </node>
       </node>
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1452949648709360036">
@@ -2729,7 +2730,7 @@
               <link role="variableDeclaration:3" targetNodeId="1452949648709360034" resolveInfo="handler" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1452949648709360043">
-              <link role="baseMethodDeclaration:3" targetNodeId="6.~StreamHandler.saveStream(java.lang.String,org.jdom.Element,boolean):void" resolveInfo="saveStream" />
+              <link role="baseMethodDeclaration:3" targetNodeId="41.~StreamHandler.saveStream(java.lang.String,org.jdom.Element,boolean):void" resolveInfo="saveStream" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference:3" id="1452949648709360044">
                 <link role="variableDeclaration:3" targetNodeId="4806149635758532322" resolveInfo="TRACE_FILE_NAME" />
               </node>

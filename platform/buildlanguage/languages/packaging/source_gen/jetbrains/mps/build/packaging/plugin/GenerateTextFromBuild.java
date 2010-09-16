@@ -14,7 +14,7 @@ import jetbrains.mps.build.packaging.behavior.MPSLayout_Behavior;
 import jetbrains.mps.build.packaging.behavior.Configuration_Behavior;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.generationTypes.TextGenerationHandler;
-import jetbrains.mps.generator.generationTypes.TextGenerationUtil;
+import jetbrains.mps.generator.fileGenerator.TextGenerationUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.ide.generator.GeneratorFacade;
 import jetbrains.mps.internal.collections.runtime.ListSequence;

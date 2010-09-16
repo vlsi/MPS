@@ -8,7 +8,7 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.generator.fileGenerator.StreamHandler;
+import jetbrains.mps.generator.generationTypes.StreamHandler;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import java.io.InputStream;

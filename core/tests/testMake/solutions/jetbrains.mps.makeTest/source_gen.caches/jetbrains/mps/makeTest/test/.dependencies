@@ -59,7 +59,7 @@
     <classNode dependClassName="java.lang.reflect.Method" />
     <classNode dependClassName="jetbrains.mps.TestMain" />
     <classNode dependClassName="jetbrains.mps.generator.generationTypes.IGenerationHandler" />
-    <classNode dependClassName="jetbrains.mps.generator.generationTypes.JavaGenerationHandler" />
+    <classNode dependClassName="jetbrains.mps.generator.generationTypes.java.JavaGenerationHandler" />
     <classNode dependClassName="jetbrains.mps.ide.IdeMain" />
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
     <classNode dependClassName="jetbrains.mps.ide.progress.ITaskProgressHelper" />

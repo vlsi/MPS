@@ -24,7 +24,7 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationListener;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
-import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
+import jetbrains.mps.generator.generationTypes.java.JavaGenerationHandler;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;

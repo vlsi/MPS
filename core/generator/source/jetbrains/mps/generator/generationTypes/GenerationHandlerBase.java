@@ -53,4 +53,8 @@ public abstract class GenerationHandlerBase implements IGenerationHandler {
   protected void checkMonitorCanceled(ITaskProgressHelper progressHelper) throws GenerationCanceledException {
     if (progressHelper.isCancelled()) throw new GenerationCanceledException();
   }
+
+  @Override
+  public void generationCompleted() {
+  }
 }

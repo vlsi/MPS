@@ -57,4 +57,9 @@ public interface IGenerationHandler {
    * Post-process generated output: compile, reload, etc. Once per generation cycle.
    */
   boolean compile(IOperationContext operationContext, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws GenerationCanceledException, IOException;
+
+  /**
+   * This method is invoked outside of a model lock after generation
+   */
+  void generationCompleted();
 }

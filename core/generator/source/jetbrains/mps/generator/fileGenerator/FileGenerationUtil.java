@@ -36,7 +36,7 @@ public class FileGenerationUtil {
     return getDefaultOutputDir(inputModelDescriptor, FileSystem.getFile(outputRootDir)).toFile();
   }
 
-  public static IFile getDefaultOutputDir(SModel inputModel, IFile outputRootDir) {
+  private static IFile getDefaultOutputDir(SModel inputModel, IFile outputRootDir) {
     return getDefaultOutputDir(inputModel.getSModelReference(), outputRootDir);
   }
 

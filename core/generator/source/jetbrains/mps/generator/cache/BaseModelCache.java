@@ -18,7 +18,7 @@ package jetbrains.mps.generator.cache;
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
-import jetbrains.mps.generator.fileGenerator.StreamHandler;
+import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelDescriptor;

@@ -19,7 +19,7 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
+import jetbrains.mps.generator.generationTypes.java.JavaGenerationHandler;
 
 public class MakeAssert {
   private static final String MESSAGE_COMPILATION_FAILED = "Compilation failed";
@@ -103,7 +103,7 @@ public class MakeAssert {
     });
   }
 
-  private static JavaGenerationHandler getFilesGenHandler() {
+  private static IGenerationHandler getFilesGenHandler() {
     return new JavaGenerationHandler();
   }
 }

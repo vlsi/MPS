@@ -19,7 +19,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
-import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
+import jetbrains.mps.generator.generationTypes.java.JavaGenerationHandler;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.project.IModule;

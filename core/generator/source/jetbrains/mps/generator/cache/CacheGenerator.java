@@ -16,7 +16,7 @@
 package jetbrains.mps.generator.cache;
 
 import jetbrains.mps.generator.GenerationStatus;
-import jetbrains.mps.generator.fileGenerator.StreamHandler;
+import jetbrains.mps.generator.generationTypes.StreamHandler;
 
 public interface CacheGenerator {
   void generateCache(GenerationStatus status, StreamHandler handler);

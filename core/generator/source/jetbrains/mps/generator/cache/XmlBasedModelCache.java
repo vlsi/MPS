@@ -16,7 +16,7 @@
 package jetbrains.mps.generator.cache;
 
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
-import jetbrains.mps.generator.fileGenerator.StreamHandler;
+import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;

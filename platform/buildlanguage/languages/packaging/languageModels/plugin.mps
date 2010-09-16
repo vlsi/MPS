@@ -53,7 +53,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c7(jetbrains.mps.buildlanguage.plugin)" version="0" />
   <languageAspect modelUID="r:550fbd90-c9f2-4576-a8a6-223eca16d68b(jetbrains.mps.baseLanguage.runConfigurations.structure)" version="0" />
-  <maxImportIndex value="99" />
+  <maxImportIndex value="100" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="7" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.generator(jetbrains.mps.generator@java_stub)" version="-1" />
@@ -103,6 +103,7 @@
   <import index="96" modelUID="r:82f15792-6966-47aa-8004-b293ab2bcfd2(jetbrains.mps.lang.plugin.run)" version="-1" />
   <import index="97" modelUID="f:java_stub#jetbrains.mps.smodel.descriptor(jetbrains.mps.smodel.descriptor@java_stub)" version="-1" />
   <import index="99" modelUID="f:java_stub#jetbrains.mps.ide.generator(jetbrains.mps.ide.generator@java_stub)" version="-1" />
+  <import index="100" modelUID="f:java_stub#jetbrains.mps.generator.fileGenerator(jetbrains.mps.generator.fileGenerator@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration:23" id="1218726094600">
     <property name="name:23" value="ProjectPaneModelAddition" />
     <node role="contents:23" type="jetbrains.mps.lang.plugin.structure.ElementListContents:23" id="1218726094601">
@@ -11798,8 +11799,8 @@
                     </node>
                     <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="6053328609845221157">
                       <property name="name:3" value="result" />
-                      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6053328609845221158">
-                        <link role="classifier:3" targetNodeId="5.~TextGenerationUtil$TextGenerationResult" resolveInfo="TextGenerationUtil.TextGenerationResult" />
+                      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8206966519416302182">
+                        <link role="classifier:3" targetNodeId="100.~TextGenerationUtil$TextGenerationResult" resolveInfo="TextGenerationUtil.TextGenerationResult" />
                       </node>
                     </node>
                     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6053328609845221159">
@@ -11863,7 +11864,7 @@
                               <link role="variableDeclaration:3" targetNodeId="6053328609845221157" resolveInfo="result" />
                             </node>
                             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6053328609845221789">
-                              <link role="baseMethodDeclaration:3" targetNodeId="5.~TextGenerationUtil$TextGenerationResult.getText():java.lang.String" resolveInfo="getText" />
+                              <link role="baseMethodDeclaration:3" targetNodeId="100.~TextGenerationUtil$TextGenerationResult.getText():java.lang.String" resolveInfo="getText" />
                             </node>
                           </node>
                         </node>

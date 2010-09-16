@@ -94,14 +94,6 @@ public class TesterGenerationHandler extends InMemoryJavaGenerationHandler {
     return outputNode.substring(outputModel.getLongName().length() + 1);
   }
 
-  public File getOutputDir(SModel outputModel) {
-    if (myOutputModelToPath.isEmpty()) {
-      return null;
-    }
-    File outputDir = new File(myOutputModelToPath.get(outputModel));
-    return FileGenerationUtil.getDefaultOutputDir(outputModel, outputDir);
-  }
-
   public File getOutputDir(SModelReference outputModelRef) {
     if (myOutputModelRefToPath.isEmpty()) {
       return null;
