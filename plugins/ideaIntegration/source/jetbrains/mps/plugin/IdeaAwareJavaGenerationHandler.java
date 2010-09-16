@@ -48,7 +48,6 @@ public class IdeaAwareJavaGenerationHandler extends JavaGenerationHandler {
       long compilationStart = System.currentTimeMillis();
       boolean needToReload = false;
 
-      Set<SModelDescriptor> toInvalidate = new HashSet<SModelDescriptor>();
       for (Pair<IModule, List<SModelDescriptor>> moduleListPair : input) {
         IModule module = moduleListPair.o1;
         if (module != null && module.reloadClassesAfterGeneration()) {
@@ -56,10 +55,6 @@ public class IdeaAwareJavaGenerationHandler extends JavaGenerationHandler {
         }
         boolean compilationResult = compileModule(module, projectHandler, ideaIsFresh, progressHelper);
         compiledSuccessfully = compiledSuccessfully && compilationResult;
-        toInvalidate.addAll(moduleListPair.o2);
-      }
-      for (SModelDescriptor sm : toInvalidate) {
-        ModelGenerationStatusManager.getInstance().invalidateData(sm);
       }
       if (compiledSuccessfully && needToReload) {
         reloadClasses(progressHelper);

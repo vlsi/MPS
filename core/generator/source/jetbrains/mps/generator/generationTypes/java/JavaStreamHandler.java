@@ -133,5 +133,6 @@ class JavaStreamHandler implements StreamHandler {
     myProcessor.processVCSDeletion(filesToDelete);
     myProcessor.invalidateRoot(myOutputDir, myContext);
     myProcessor.invalidateRoot(myCachesOutputDir, myContext);
+    myProcessor.invalidateModel(myModelDescriptor);
   }
 }

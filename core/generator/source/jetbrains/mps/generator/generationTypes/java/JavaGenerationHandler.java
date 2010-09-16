@@ -121,7 +121,6 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
       long compilationStart = System.currentTimeMillis();
       boolean needToReload = false;
 
-      Set<SModelDescriptor> toInvalidate = new HashSet<SModelDescriptor>();
       for (Pair<IModule, List<SModelDescriptor>> moduleListPair : input) {
         IModule module = moduleListPair.o1;
         if (module != null && module.reloadClassesAfterGeneration()) {
@@ -129,10 +128,6 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
         }
         boolean compilationResult = compileModuleInMPS(module, progressHelper);
         compiledSuccessfully = compiledSuccessfully && compilationResult;
-        toInvalidate.addAll(moduleListPair.o2);
-      }
-      for (SModelDescriptor sm : toInvalidate) {
-        ModelGenerationStatusManager.getInstance().invalidateData(sm);
       }
       if (compiledSuccessfully && needToReload) {
         reloadClasses(progressHelper);

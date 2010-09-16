@@ -21,7 +21,9 @@ import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.RefreshQueue;
 import com.intellij.openapi.vfs.newvfs.RefreshSession;
+import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vfs.VFileSystem;
 
@@ -30,6 +32,7 @@ import java.util.*;
 
 class FileProcessor {
 
+  private final List<SModelDescriptor> myModels = new ArrayList<SModelDescriptor>();
   private final List<File> myAdded = new ArrayList<File>();
   private final List<File> myRemoved = new ArrayList<File>();
   private final Map<Project,List<File>> myRefresh = new HashMap<Project,List<File>>(2);
@@ -46,6 +49,12 @@ class FileProcessor {
         }
         files.add(outputRoot);
       }
+    }
+  }
+
+  public void invalidateModel(SModelDescriptor modelDescriptor) {
+    synchronized (LOCK) {
+      myModels.add(modelDescriptor);
     }
   }
 
@@ -95,6 +104,9 @@ class FileProcessor {
           session.addAllFiles(foldersToRefresh);
           session.launch();
         }
+
+        // refresh status
+        ModelGenerationStatusManager.getInstance().invalidateData(myModels);
       }
     });
   }

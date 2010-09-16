@@ -31,10 +31,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class ModelGenerationStatusManager implements ApplicationComponent {
   public static final String HASH_PREFIX = ".hash.";
@@ -57,7 +54,7 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
   private final SModelAdapter mySmodelReloadListener = new SModelAdapter() {
     @Override
     public void modelReplaced(SModelDescriptor sm) {
-      ModelGenerationStatusManager.this.invalidateData(sm);
+      ModelGenerationStatusManager.this.invalidateData(Collections.singletonList(sm));
     }
   };
 
@@ -149,9 +146,11 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     return myGeneratedFilesHashes.get(sm);
   }
 
-  public void invalidateData(SModelDescriptor sm) {
-    myGeneratedFilesHashes.remove(sm);
-    fireStatusChange(sm);
+  public void invalidateData(List<SModelDescriptor> models) {
+    for(SModelDescriptor model : models) {
+      myGeneratedFilesHashes.remove(model);
+      fireStatusChange(model);
+    }
   }
 
   public void addGenerationStatusListener(ModelGenerationStatusListener l) {
