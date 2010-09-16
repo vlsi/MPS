@@ -27,7 +27,6 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -125,7 +124,7 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
       }
       return descriptorFile.getParent().getParent().child(FileGenerationUtil.getCachesPath(suffix));
     } else {
-      return FileSystem.getFile(FileGenerationUtil.getCachesPath(new File(outputPath).getAbsolutePath()));
+      return FileSystem.getFile(FileGenerationUtil.getCachesPath(FileSystem.getAbsolutePath(outputPath)));
     }
   }
 

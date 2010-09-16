@@ -59,4 +59,8 @@ public class FileSystem {
   public static IFile getDefaultDirectory() {
     return new FileSystemFile(new File(PathManager.getHomePath()));
   }
+
+  public static String getAbsolutePath(String path) {
+    return new File(path).getAbsolutePath();
+  }
 }
