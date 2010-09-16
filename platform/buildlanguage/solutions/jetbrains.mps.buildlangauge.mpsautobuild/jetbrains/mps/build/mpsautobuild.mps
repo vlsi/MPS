@@ -747,6 +747,15 @@
               </node>
             </node>
           </node>
+          <node role="nested:22" type="jetbrains.mps.build.generictasks.structure.TaskCall:22" id="8375061986520656486">
+            <link role="declaration:22" targetNodeId="3v.353793545802811560" resolveInfo="exclude" />
+            <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="8375061986520656487">
+              <link role="attributeDeclaration:22" targetNodeId="3v.353793545802814494" resolveInfo="name" />
+              <node role="value:22" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="8375061986520656488">
+                <property name="value:21" value=".git/**" />
+              </node>
+            </node>
+          </node>
           <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="2235195415637076953">
             <link role="attributeDeclaration:22" targetNodeId="3v.353793545802811856" resolveInfo="dir" />
             <node role="value:22" type="jetbrains.mps.buildlanguage.structure.FileName:21" id="2235195415637076954">
@@ -854,7 +863,7 @@
     <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Zip:7" id="8431776905956472401">
       <property name="file:7" value="true" />
       <property name="includes:7" value="**/*.java" />
-      <property name="excludes:7" value="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html" />
+      <property name="excludes:7" value="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, **/classes/**/trace.info" />
       <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Copy:7" id="8431776905956472402">
         <property name="file:7" value="false" />
         <property name="name:7" value="" />
