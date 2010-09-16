@@ -1,5 +1,7 @@
 package jetbrains.mps.vfs.impl;
 
+import com.intellij.openapi.application.Application;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.vfs.JarFileSystem;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VfsUtil;
@@ -163,20 +165,41 @@ public class IdeaFile implements IFileEx {
     }
   }
 
+  // TODO this is a temporary method for generator
+  private void performCreationRoutines(final Runnable r) {
+    if (ApplicationManager.getApplication().isWriteAccessAllowed()) {
+      r.run();
+    } else {
+      LOG.warning("Performing VirtualFile creations outside of write action");
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
+        @Override
+        public void run() {
+          ApplicationManager.getApplication().runWriteAction(r);
+        }
+      });
+    }
+  }
+
   @Override
   public boolean createNewFile() {
     if (findVirtualFile()) {
       return !myVirtualFile.isDirectory();
     } else {
-      try {
-        VirtualFile directory = VfsUtil.createDirectories(myPath.substring(0, myPath.lastIndexOf(File.separator)));
-        myVirtualFile = directory.createChildData(IdeaFileSystemProvider.class, myPath.substring(myPath.lastIndexOf(File.separator) + 1));
-        myPath = null;
-        return true;
-      } catch (IOException e) {
-        LOG.error(e);
-        return false;
-      }
+      // TODO this is a temporary solution for generator
+      performCreationRoutines(new Runnable() {
+        @Override
+        public void run() {
+          VirtualFile directory = null;
+          try {
+            directory = VfsUtil.createDirectories(myPath.substring(0, myPath.lastIndexOf(File.separator)));
+            myVirtualFile = directory.createChildData(IdeaFileSystemProvider.class, myPath.substring(myPath.lastIndexOf(File.separator) + 1));
+            myPath = null;
+          } catch (IOException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+          }
+        }
+      });
+      return true;
     }
   }
 
@@ -185,14 +208,19 @@ public class IdeaFile implements IFileEx {
     if (findVirtualFile()) {
       return myVirtualFile.isDirectory();
     } else {
-      try {
-        myVirtualFile = VfsUtil.createDirectories(myPath);
-        myPath = null;
-        return true;
-      } catch (IOException e) {
-        LOG.error(e);
-        return false;
-      }
+      // TODO this is a temporary solution for generator
+      performCreationRoutines(new Runnable() {
+        @Override
+        public void run() {
+          try {
+            myVirtualFile = VfsUtil.createDirectories(myPath);
+            myPath = null;
+          } catch (IOException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+          }
+        }
+      });
+      return true;
     }
   }
 
@@ -233,7 +261,12 @@ public class IdeaFile implements IFileEx {
       return myVirtualFile.getOutputStream(IdeaFileSystemProvider.class);
     } else {
       if (createNewFile()) {
-        return myVirtualFile.getOutputStream(IdeaFileSystemProvider.class);
+        // TODO this is a temporary solution for generator
+        if (myVirtualFile == null) {
+          return new FileOutputStream(myPath);
+        } else {
+          return myVirtualFile.getOutputStream(IdeaFileSystemProvider.class);
+        }
       } else {
         throw new IOException("Could not create file: " + myPath);
       }

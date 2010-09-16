@@ -13,7 +13,6 @@ public abstract class FileSystem {
 
   public abstract void setFileSystemProvider(@NotNull FileSystemProvider fileSystemProvider);
 
-  @Nullable
   public abstract IFile getFileByPath(@NotNull String path);
 
   public abstract boolean isPackaged(IFile file);

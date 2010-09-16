@@ -7,6 +7,5 @@ import org.jetbrains.annotations.Nullable;
  * @author Evgeny Gerashchenko
  */
 public interface FileSystemProvider {
-  @Nullable
   public IFile getFile(@NotNull String path);
 }

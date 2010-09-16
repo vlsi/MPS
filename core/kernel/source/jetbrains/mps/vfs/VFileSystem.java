@@ -98,14 +98,10 @@ public class VFileSystem {
   }
 
   public static VirtualFile refreshAndGetFile(@NotNull IFile file) {
-    if (file instanceof FileSystemFile) {
-      LocalFileSystem lfs = LocalFileSystem.getInstance();
-      return lfs.refreshAndFindFileByIoFile(file.toFile());
-    } else if (file instanceof JarFileEntryFile) {
-      JarFileEntryFile jfef = (JarFileEntryFile) file;
-      return getFileFromJarEntry(jfef);
+    if (FileSystem.getInstance().isPackaged(file)) {
+      return file.toVirtualFile();
     } else {
-      throw new RuntimeException("Unknown file type. " + file);
+      return LocalFileSystem.getInstance().refreshAndFindFileByPath(file.getAbsolutePath());
     }
   }
 

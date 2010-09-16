@@ -19,7 +19,6 @@ public class FileSystemImpl extends FileSystem {
   }
 
   @Override
-  @Nullable
   public IFile getFileByPath(@NotNull String path) {
     return myFileSystemProvider.getFile(path);
   }
