@@ -1525,7 +1525,7 @@
         <node role="entry" type="jetbrains.mps.build.packaging.structure.Folder:7" id="2235195415637077175">
           <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Copy:7" id="2235195415637077176">
             <property name="name:7" value="" />
-            <property name="excludes:7" value="" />
+            <property name="excludes:7" value="samples/**, build/**, **/MPS-buildTools.zip" />
             <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="2235195415637077177">
               <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="2235195415637077178">
                 <property name="name:7" value="mps_home" />
