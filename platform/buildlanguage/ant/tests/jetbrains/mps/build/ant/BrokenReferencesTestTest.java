@@ -43,7 +43,7 @@ public class BrokenReferencesTestTest extends TestCase {
     WhatToDo whatToDo = new WhatToDo();
     whatToDo.addModelFile(new File(destdir.getAbsolutePath() + File.separator + "Broken.sandbox" + File.separator + "broken" + File.separator + "model.mps"));
     whatToDo.addLibrary(solutionName, destdir, false);
-    whatToDo.updateLogLevel(3); // debug log level
+    whatToDo.updateLogLevel(org.apache.tools.ant.Project.MSG_WARN);
     final boolean[] brokenReferenceFound = new boolean[]{false};
     TestBrokenReferencesWorker worker = new TestBrokenReferencesWorker(whatToDo, new SystemOutLogger()) {
       @Override
