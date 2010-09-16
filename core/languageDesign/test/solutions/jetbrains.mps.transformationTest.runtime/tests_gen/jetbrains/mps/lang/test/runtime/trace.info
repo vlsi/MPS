@@ -246,8 +246,17 @@
     <scopeInfo nodeId="1223216130573" fileName="BaseTransformationTest.java" startLine="93" startPosition="25" endLine="94" endPosition="108" />
     <scopeInfo nodeId="1225557852266" fileName="BaseTransformationTest.java" startLine="97" startPosition="31" endLine="98" endPosition="25" />
     <scopeInfo nodeId="1228143641858" fileName="BaseTransformationTest.java" startLine="104" startPosition="9" endLine="105" endPosition="46" />
+    <scopeInfo nodeId="1228143641867" fileName="BaseTransformationTest.java" startLine="106" startPosition="0" endLine="107" endPosition="26">
+      <varInfo nodeId="1228143641868" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="1228143641870" fileName="BaseTransformationTest.java" startLine="106" startPosition="39" endLine="107" endPosition="26" />
+    <scopeInfo nodeId="1228143641875" fileName="BaseTransformationTest.java" startLine="108" startPosition="0" endLine="109" endPosition="26">
+      <varInfo nodeId="1228143641876" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="1228143641878" fileName="BaseTransformationTest.java" startLine="108" startPosition="40" endLine="109" endPosition="26" />
+    <scopeInfo nodeId="1228143641883" fileName="BaseTransformationTest.java" startLine="110" startPosition="0" endLine="111" endPosition="31">
+      <varInfo nodeId="1228143641884" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="1228143641886" fileName="BaseTransformationTest.java" startLine="110" startPosition="43" endLine="111" endPosition="31" />
     <scopeInfo nodeId="1217508601917" fileName="BaseTransformationTest.java" startLine="116" startPosition="56" endLine="117" endPosition="23" />
     <scopeInfo nodeId="1223217167468" fileName="BaseTransformationTest.java" startLine="43" startPosition="29" endLine="45" endPosition="76">
@@ -338,9 +347,15 @@
     <nodeInfo nodeId="1215702411270" fileName="ProjectContainer.java" startLine="31" startPosition="45" endLine="50" endPosition="5" />
     <nodeInfo nodeId="1215702411263" fileName="ProjectContainer.java" startLine="30" startPosition="0" endLine="52" endPosition="0" />
     <scopeInfo nodeId="1215702258124" fileName="ProjectContainer.java" startLine="14" startPosition="29" endLine="14" endPosition="29" />
+    <scopeInfo nodeId="1217513108759" fileName="ProjectContainer.java" startLine="26" startPosition="0" endLine="27" endPosition="26">
+      <varInfo nodeId="1217513108760" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="1217513108762" fileName="ProjectContainer.java" startLine="26" startPosition="27" endLine="27" endPosition="26" />
     <scopeInfo nodeId="1215702411271" fileName="ProjectContainer.java" startLine="32" startPosition="50" endLine="33" endPosition="30" />
     <scopeInfo nodeId="5509631981732024067" fileName="ProjectContainer.java" startLine="39" startPosition="31" endLine="40" endPosition="58" />
+    <scopeInfo nodeId="5509631981732024054" fileName="ProjectContainer.java" startLine="43" startPosition="0" endLine="44" endPosition="30">
+      <varInfo nodeId="5509631981732024055" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="5509631981732024057" fileName="ProjectContainer.java" startLine="43" startPosition="31" endLine="44" endPosition="30" />
     <scopeInfo nodeId="1215702258121" fileName="ProjectContainer.java" startLine="13" startPosition="0" endLine="15" endPosition="3" />
     <scopeInfo nodeId="1217513124851" fileName="ProjectContainer.java" startLine="20" startPosition="27" endLine="23" endPosition="51" />
@@ -382,8 +397,14 @@
     <scopeInfo nodeId="1216388077852" fileName="TransformationTestRuner.java" startLine="11" startPosition="36" endLine="11" endPosition="36" />
     <scopeInfo nodeId="1216388444239" fileName="TransformationTestRuner.java" startLine="16" startPosition="9" endLine="17" endPosition="25" />
     <scopeInfo nodeId="1216388915932" fileName="TransformationTestRuner.java" startLine="25" startPosition="27" endLine="26" endPosition="77" />
+    <scopeInfo nodeId="1216388885086" fileName="TransformationTestRuner.java" startLine="29" startPosition="0" endLine="30" endPosition="26">
+      <varInfo nodeId="1216388885087" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="1216388885089" fileName="TransformationTestRuner.java" startLine="29" startPosition="27" endLine="30" endPosition="26" />
     <scopeInfo nodeId="1216388077849" fileName="TransformationTestRuner.java" startLine="10" startPosition="57" endLine="12" endPosition="3" />
+    <scopeInfo nodeId="1216388444245" fileName="TransformationTestRuner.java" startLine="18" startPosition="0" endLine="20" endPosition="21">
+      <varInfo nodeId="1216388444246" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="1216388444248" fileName="TransformationTestRuner.java" startLine="18" startPosition="27" endLine="20" endPosition="21" />
     <scopeInfo nodeId="1216388915929" fileName="TransformationTestRuner.java" startLine="24" startPosition="51" endLine="28" endPosition="0" />
     <scopeInfo nodeId="1216388885084" fileName="TransformationTestRuner.java" startLine="23" startPosition="9" endLine="28" endPosition="9" />
@@ -538,6 +559,9 @@
     <nodeInfo nodeId="1225991088737" fileName="BaseEditorTestBody.java" startLine="125" startPosition="0" endLine="146" endPosition="0" />
     <scopeInfo nodeId="4840161274939429357" fileName="BaseEditorTestBody.java" startLine="123" startPosition="49" endLine="123" endPosition="49" />
     <scopeInfo nodeId="5364632142688376254" fileName="BaseEditorTestBody.java" startLine="54" startPosition="13" endLine="55" endPosition="69" />
+    <scopeInfo nodeId="5364632142688376296" fileName="BaseEditorTestBody.java" startLine="56" startPosition="0" endLine="57" endPosition="30">
+      <varInfo nodeId="5364632142688376297" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="5364632142688376299" fileName="BaseEditorTestBody.java" startLine="56" startPosition="31" endLine="57" endPosition="30" />
     <scopeInfo nodeId="5364632142688376130" fileName="BaseEditorTestBody.java" startLine="66" startPosition="30" endLine="67" endPosition="30" />
     <scopeInfo nodeId="1229267201984" fileName="BaseEditorTestBody.java" startLine="85" startPosition="55" endLine="86" endPosition="18" />
