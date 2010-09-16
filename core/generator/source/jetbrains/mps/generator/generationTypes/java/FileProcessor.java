@@ -28,10 +28,10 @@ import java.io.File;
 import java.util.*;
 
 class FileProcessor {
-  private static List<Runnable> ourQueue = new LinkedList<Runnable>();
-  private static final Object LOCK = new Object();
+  private List<Runnable> ourQueue = new LinkedList<Runnable>();
+  private final Object LOCK = new Object();
 
-  public static void invalidateRoot(final File outputRoot, final IOperationContext context) {
+  public void invalidateRoot(final File outputRoot, final IOperationContext context) {
     Runnable runnable = new Runnable() {
       public void run() {
         final VirtualFile outputRootVirtualFile = VFileSystem.refreshAndGetFile(outputRoot);
@@ -50,7 +50,7 @@ class FileProcessor {
     }
   }
 
-  public static void processVCSAddition(final Set<File> generatedFiles) {
+  public void processVCSAddition(final Set<File> generatedFiles) {
     Runnable runnable = new Runnable() {
       public void run() {
         List<VirtualFile> filesToAdd = new ArrayList<VirtualFile>(generatedFiles.size());
@@ -67,7 +67,7 @@ class FileProcessor {
     }
   }
 
-  public static void processVCSDeletion(final List<File> filesToDelete) {
+  public void processVCSDeletion(final List<File> filesToDelete) {
     Runnable runnable = new Runnable() {
       public void run() {
         VcsMigrationUtil.deleteFromDiskAndRemoveFromVcs(filesToDelete, false);
@@ -78,7 +78,7 @@ class FileProcessor {
     }
   }
 
-  public static void invoke() {
+  public void invoke() {
     List<Runnable> queue;
     synchronized (LOCK) {
       queue = ourQueue;

@@ -42,12 +42,14 @@ class JavaStreamHandler implements StreamHandler {
   private final File myCachesOutputDir;
   private Set<File> myCreated = Collections.emptySet();
   private Set<File> myTouched = Collections.emptySet();
+  private FileProcessor myProcessor;
 
-  JavaStreamHandler(SModelDescriptor modelDescriptor, File outputDir, IOperationContext context) {
+  JavaStreamHandler(SModelDescriptor modelDescriptor, File outputDir, IOperationContext context, FileProcessor processor) {
     myModelDescriptor = modelDescriptor;
     myOutputDir = outputDir;
     myContext = context;
     myCachesOutputDir = FileGenerationUtil.getCachesOutputDir(outputDir);
+    myProcessor = processor;
   }
 
   private void register(File file, boolean isNew) {
@@ -123,9 +125,9 @@ class JavaStreamHandler implements StreamHandler {
       }
     }
 
-    FileProcessor.processVCSAddition(myCreated);
-    FileProcessor.processVCSDeletion(filesToDelete);
-    FileProcessor.invalidateRoot(myOutputDir, myContext);
-    FileProcessor.invalidateRoot(myCachesOutputDir, myContext);
+    myProcessor.processVCSAddition(myCreated);
+    myProcessor.processVCSDeletion(filesToDelete);
+    myProcessor.invalidateRoot(myOutputDir, myContext);
+    myProcessor.invalidateRoot(myCachesOutputDir, myContext);
   }
 }

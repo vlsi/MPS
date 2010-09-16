@@ -47,6 +47,13 @@ import java.util.*;
  * Evgeny Gryaznov, Jan 21, 2010
  */
 public class JavaGenerationHandler extends GenerationHandlerBase {
+
+  private FileProcessor myProcessor;
+
+  public JavaGenerationHandler() {
+    myProcessor = new FileProcessor();
+  }
+
   @Override
   public boolean canHandle(SModelDescriptor inputModel) {
     return SModelStereotype.isUserModel(inputModel);
@@ -67,7 +74,7 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
 
     boolean result = false;
     if (status.isOk()) {
-      JavaStreamHandler javaStreamHandler = new JavaStreamHandler(inputModel, new File(targetDir), invocationContext);
+      JavaStreamHandler javaStreamHandler = new JavaStreamHandler(inputModel, new File(targetDir), invocationContext, myProcessor);
       try {
         result = new JavaFileGenerator(javaStreamHandler,
           ModelGenerationStatusManager.getInstance().getCacheGenerator(),
@@ -221,7 +228,8 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
 
   @Override
   public void generationCompleted() {
-    FileProcessor.invoke();
+    myProcessor.invoke();
+    myProcessor = null;
   }
 
   @Override
