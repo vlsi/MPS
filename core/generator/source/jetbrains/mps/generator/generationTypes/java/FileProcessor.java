@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.generationTypes.java;
 
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.RefreshQueue;
@@ -28,64 +29,73 @@ import java.io.File;
 import java.util.*;
 
 class FileProcessor {
-  private List<Runnable> ourQueue = new LinkedList<Runnable>();
+
+  private final List<File> myAdded = new ArrayList<File>();
+  private final List<File> myRemoved = new ArrayList<File>();
+  private final Map<Project,List<File>> myRefresh = new HashMap<Project,List<File>>(2);
   private final Object LOCK = new Object();
 
   public void invalidateRoot(final File outputRoot, final IOperationContext context) {
-    Runnable runnable = new Runnable() {
-      public void run() {
-        final VirtualFile outputRootVirtualFile = VFileSystem.refreshAndGetFile(outputRoot);
-
-        RefreshSession session = RefreshQueue.getInstance().createSession(true, true, new Runnable() {
-          public void run() {
-            VcsDirtyScopeManager.getInstance(context.getProject()).filesDirty(null, Arrays.asList(outputRootVirtualFile));
-          }
-        });
-        session.addAllFiles(Arrays.asList(outputRootVirtualFile));
-        session.launch();
+    final Project p = context.getProject();
+    if(p != null) {
+      synchronized (LOCK) {
+        List<File> files = myRefresh.get(p);
+        if(files == null) {
+          files = new ArrayList<File>();
+          myRefresh.put(p, files);
+        }
+        files.add(outputRoot);
       }
-    };
-    synchronized (LOCK) {
-      ourQueue.add(runnable);
     }
   }
 
   public void processVCSAddition(final Set<File> generatedFiles) {
-    Runnable runnable = new Runnable() {
+    synchronized (LOCK) {
+      myAdded.addAll(generatedFiles);
+    }
+  }
+
+  public void processVCSDeletion(final List<File> filesToDelete) {
+    synchronized (LOCK) {
+      myRemoved.addAll(filesToDelete);
+    }
+  }
+
+  public void invoke() {
+    ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
+      @Override
       public void run() {
-        List<VirtualFile> filesToAdd = new ArrayList<VirtualFile>(generatedFiles.size());
-        for (File f : generatedFiles) {
+        // add
+        List<VirtualFile> filesToAdd = new ArrayList<VirtualFile>(myAdded.size());
+        for (File f : myAdded) {
           VirtualFile file = VFileSystem.refreshAndGetFile(f);
           assert file != null : "Can not find virtual file for " + f;
           filesToAdd.add(file);
         }
         VcsMigrationUtil.getHandler().addFilesToVcs(filesToAdd, false, false);
-      }
-    };
-    synchronized (LOCK) {
-      ourQueue.add(runnable);
-    }
-  }
 
-  public void processVCSDeletion(final List<File> filesToDelete) {
-    Runnable runnable = new Runnable() {
-      public void run() {
-        VcsMigrationUtil.deleteFromDiskAndRemoveFromVcs(filesToDelete, false);
-      }
-    };
-    synchronized (LOCK) {
-      ourQueue.add(runnable);
-    }
-  }
+        // remove
+        VcsMigrationUtil.deleteFromDiskAndRemoveFromVcs(myRemoved, false);
 
-  public void invoke() {
-    List<Runnable> queue;
-    synchronized (LOCK) {
-      queue = ourQueue;
-      ourQueue = new ArrayList<Runnable>();
-    }
-    for (Runnable q : queue) {
-      ApplicationManager.getApplication().executeOnPooledThread(q);
-    }
+        // refresh
+        for(Map.Entry<Project,List<File>> entry : myRefresh.entrySet()) {
+          final Project p = entry.getKey();
+          final List<VirtualFile> foldersToRefresh = new ArrayList<VirtualFile>(entry.getValue().size());
+          for (File f : entry.getValue()) {
+            VirtualFile folder = VFileSystem.refreshAndGetFile(f);
+            assert folder != null : "Can not find virtual file for " + f;
+            foldersToRefresh.add(folder);
+          }
+
+          RefreshSession session = RefreshQueue.getInstance().createSession(true, true, new Runnable() {
+            public void run() {
+              VcsDirtyScopeManager.getInstance(p).filesDirty(null, foldersToRefresh);
+            }
+          });
+          session.addAllFiles(foldersToRefresh);
+          session.launch();
+        }
+      }
+    });
   }
 }
