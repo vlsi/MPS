@@ -17,11 +17,8 @@ package jetbrains.mps.newTypesystem.State;
 
 
 import jetbrains.mps.newTypesystem.Difference.Difference;
-import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.IWrapper;
-import jetbrains.mps.typesystem.inference.NodeWrapper;
 
 /**
  * Created by IntelliJ IDEA.
@@ -31,18 +28,13 @@ import jetbrains.mps.typesystem.inference.NodeWrapper;
  * To change this template use File | Settings | File Templates.
  */
 public class State {
-  private TypeCheckingContextNew myTypeCheckingContext;
-
   private Equations myEquations;
   private Inequalities myInequalities;
-  private NodeMaps myNodeMaps;
+  private NodeMaps myNodeMaps = new NodeMaps();
 
-  public State(TypeCheckingContextNew tcc) {
-    myTypeCheckingContext = tcc;
-
+  public State() {
     myEquations = new Equations(this);
     myInequalities = new Inequalities(this);
-    myNodeMaps = new NodeMaps();
   }
 
   public Equations getEquations() {
@@ -50,33 +42,11 @@ public class State {
   }
 
   public Difference addEquation(IWrapper left, IWrapper right, EquationInfo info) {
-    return myEquations.addEquation(left, right, info);
-  }
-
-  public Difference addInequality(IWrapper subType, IWrapper superType, boolean isWeak, boolean check, EquationInfo info) {
-    return myInequalities.addSubTyping(subType, superType, isWeak, check, info);
+    myEquations.addEquation(left, right);
+    return null;
   }
 
   public NodeMaps getNodeMaps() {
     return myNodeMaps;
   }
-
-  public Inequalities getInequalities() {
-    return myInequalities;
-  }
-
-  public TypeCheckingContextNew getTypeCheckingContext() {
-    return myTypeCheckingContext;
-  }
-
-
-  ///DEBUG ----------------------------------
-
-  public void print() {
-    System.out.println("-----State---------");
-    myEquations.print();
-    myInequalities.print();
-    System.out.println("-------------------");
-  }
-
 }

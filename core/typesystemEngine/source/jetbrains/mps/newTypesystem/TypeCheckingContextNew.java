@@ -34,21 +34,18 @@ import java.util.Stack;
  */
 public class TypeCheckingContextNew extends TypeCheckingContext {
 
-  private State myState;
+  private State myState = new State();
   private Stack<Difference> myDifferenceStack = new Stack<Difference>();
 
   public TypeCheckingContextNew(SNode rootNode, TypeChecker typeChecker) {
     super(rootNode, typeChecker);
-    myState = new State(this);
   }
 
-  public void rollBack() {
+  private void rollBack() {
     if (myDifferenceStack.isEmpty()) {
       return;
     }
-    Difference diff = myDifferenceStack.pop();
-    System.out.println("Rolled back " + diff.getName());
-    diff.rollBack(myState);
+    myDifferenceStack.pop().rollBack(myState);
   }
 
   @Override
@@ -56,13 +53,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     myDifferenceStack.add(myState.addEquation(left, right, equationInfo));
   }
 
-  public void createInequality(IWrapper left, IWrapper right, EquationInfo equationInfo) {
-    myDifferenceStack.add(myState.addInequality(left, right, true, true, equationInfo));
-  }
 
 
-  ///debug
-  public void printState() {
-    myState.print();
-  }
+
 }

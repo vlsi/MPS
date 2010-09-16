@@ -13,14 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.State;
+package jetbrains.mps.newTypesystem;
+
+import jetbrains.mps.nodeEditor.IErrorReporter;
+import jetbrains.mps.smodel.SNode;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Sep 15, 2010
- * Time: 5:56:54 PM
+ * Date: Sep 10, 2010
+ * Time: 6:38:28 PM
  * To change this template use File | Settings | File Templates.
  */
-public class WhenConcreteEntry {
+public class NodeMaps {
+  private Map<SNode, SNode> myNodeToTypes = new HashMap<SNode, SNode>();
+  private Map<SNode, List<IErrorReporter>> myNodesToErrors = new HashMap<SNode, List<IErrorReporter>>();
+
+  public void rollBack(Map<SNode, SNode> difference) {
+    for (SNode node :difference.keySet()) {
+      myNodeToTypes.remove(node);
+    }
+  }
 }

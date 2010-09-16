@@ -15,11 +15,6 @@
  */
 package jetbrains.mps.newTypesystem.State;
 
-import jetbrains.mps.newTypesystem.Difference.Difference;
-import jetbrains.mps.newTypesystem.Difference.Equation.EquationDifference;
-import jetbrains.mps.newTypesystem.Difference.Equation.InequalityDifference;
-import jetbrains.mps.newTypesystem.test.TestWrapper;
-import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.IWrapper;
 
 import java.util.*;
@@ -58,40 +53,16 @@ public class Equations {
     return current;
   }
 
-  public Difference addEquation(IWrapper left, IWrapper right, EquationInfo info) {
-    IWrapper lRepresentative = getRepresentative(left);
-    IWrapper rRepresentative = getRepresentative(right);
-    if (lRepresentative == null || rRepresentative == null || lRepresentative.equals(rRepresentative)) {
-      return null;
-    }
-    return processEquation(lRepresentative, rRepresentative, info);
+  public void addEquation(IWrapper left, IWrapper right) {
+     IWrapper lRepresentative = getRepresentative(left);
+     IWrapper rRepresentative = getRepresentative(right);
+     if (lRepresentative == null || rRepresentative == null || lRepresentative.equals(rRepresentative)) {
+       return; // We don't need such equations
+     }
+    
   }
 
-  private Difference processEquation(IWrapper var, IWrapper type, EquationInfo errorInfo) {
-    IWrapper parent = type;
-    IWrapper child = var;
-    if (var.getDegree() > type.getDegree()) {
-      parent = var;
-      child = type;
-    }
-    myRepresentatives.put(child, parent);
-    InequalityDifference inequalityDifference = myState.getInequalities().substitute(child, parent);
-    // todo process whenConcrete
-    return new EquationDifference(child, parent, inequalityDifference);
-  }
-
-  public void rollBack(EquationDifference diff) {
-    myRepresentatives.remove(diff.getPrevious());
-    myState.getInequalities().rollBackSubstitute(diff.getInequalityDifference(), diff.getPrevious(), diff.getCurrent());
-  }
-
-
-  ///////////DEBUG
-  public void print() {
-    for (Map.Entry<IWrapper, IWrapper> entry : myRepresentatives.entrySet()) {
-      System.out.println(((TestWrapper)entry.getKey()).getName() + " -> " +((TestWrapper)entry.getValue()).getName() );
-    }
+  public void rollBack(IWrapper previous, IWrapper current) {
 
   }
-
 }
