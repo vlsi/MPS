@@ -2443,7 +2443,7 @@
                   <link role="variableDeclaration:3" targetNodeId="4060390951635973378" resolveInfo="file" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4060390951635973392">
-                  <link role="baseMethodDeclaration:3" targetNodeId="6.~IFile.getPath():java.lang.String" resolveInfo="getPath" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="6.~IFile.getAbsolutePath():java.lang.String" resolveInfo="getAbsolutePath" />
                 </node>
               </node>
             </node>

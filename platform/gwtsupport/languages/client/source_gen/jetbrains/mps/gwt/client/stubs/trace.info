@@ -36,204 +36,213 @@
     <unitInfo nodeId="1952954857169826366" fileName="PathItemsReloadableCache.java" startLine="11" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.gwt.client.stubs.PathItemsReloadableCache" />
   </root>
   <root nodeId="5420647633057638332">
-    <nodeInfo nodeId="5420647633057638333" fileName="PathItem.java" startLine="22" startPosition="32" endLine="23" endPosition="90" />
-    <nodeInfo nodeId="5420647633057638340" fileName="PathItem.java" startLine="24" startPosition="0" endLine="25" endPosition="21" />
-    <nodeInfo nodeId="317177617693969210" fileName="PathItem.java" startLine="27" startPosition="32" endLine="28" endPosition="27" />
-    <nodeInfo nodeId="317177617693969266" fileName="PathItem.java" startLine="35" startPosition="14" endLine="36" endPosition="70" />
-    <nodeInfo nodeId="317177617693969330" fileName="PathItem.java" startLine="36" startPosition="70" endLine="37" endPosition="57" />
-    <nodeInfo nodeId="317177617693969322" fileName="PathItem.java" startLine="37" startPosition="57" endLine="38" endPosition="60" />
-    <nodeInfo nodeId="5526906139114107656" fileName="PathItem.java" startLine="38" startPosition="60" endLine="39" endPosition="74" />
-    <nodeInfo nodeId="317177617693969334" fileName="PathItem.java" startLine="41" startPosition="5" endLine="42" endPosition="26" />
-    <nodeInfo nodeId="5420647633057638350" fileName="PathItem.java" startLine="46" startPosition="32" endLine="47" endPosition="33" />
-    <nodeInfo nodeId="5420647633057638358" fileName="PathItem.java" startLine="48" startPosition="5" endLine="49" endPosition="40" />
-    <nodeInfo nodeId="5420647633057638367" fileName="PathItem.java" startLine="50" startPosition="22" endLine="51" endPosition="33" />
-    <nodeInfo nodeId="5420647633057638372" fileName="PathItem.java" startLine="52" startPosition="5" endLine="53" endPosition="33" />
-    <nodeInfo nodeId="5420647633057638387" fileName="PathItem.java" startLine="55" startPosition="38" endLine="56" endPosition="31" />
-    <nodeInfo nodeId="5420647633057638396" fileName="PathItem.java" startLine="59" startPosition="39" endLine="60" endPosition="57" />
-    <nodeInfo nodeId="5420647633057638414" fileName="PathItem.java" startLine="66" startPosition="32" endLine="67" endPosition="33" />
-    <nodeInfo nodeId="5420647633057638422" fileName="PathItem.java" startLine="68" startPosition="5" endLine="69" endPosition="40" />
-    <nodeInfo nodeId="5420647633057638431" fileName="PathItem.java" startLine="70" startPosition="22" endLine="71" endPosition="33" />
-    <nodeInfo nodeId="5420647633057638436" fileName="PathItem.java" startLine="72" startPosition="5" endLine="73" endPosition="46" />
-    <nodeInfo nodeId="6487379123666620506" fileName="PathItem.java" startLine="75" startPosition="37" endLine="76" endPosition="36" />
-    <nodeInfo nodeId="6487379123666616171" fileName="PathItem.java" startLine="82" startPosition="32" endLine="83" endPosition="30" />
-    <nodeInfo nodeId="6487379123666616177" fileName="PathItem.java" startLine="84" startPosition="5" endLine="85" endPosition="40" />
-    <nodeInfo nodeId="6487379123666620234" fileName="PathItem.java" startLine="86" startPosition="22" endLine="87" endPosition="30" />
-    <nodeInfo nodeId="6487379123666620241" fileName="PathItem.java" startLine="88" startPosition="5" endLine="89" endPosition="33" />
-    <nodeInfo nodeId="6487379123666620397" fileName="PathItem.java" startLine="91" startPosition="38" endLine="92" endPosition="57" />
-    <nodeInfo nodeId="6487379123666620418" fileName="PathItem.java" startLine="95" startPosition="23" endLine="96" endPosition="30" />
-    <nodeInfo nodeId="6487379123666460643" fileName="PathItem.java" startLine="97" startPosition="5" endLine="98" endPosition="34" />
-    <nodeInfo nodeId="2933295961970814887" fileName="PathItem.java" startLine="106" startPosition="28" endLine="107" endPosition="23" />
-    <nodeInfo nodeId="5420647633057638484" fileName="PathItem.java" startLine="108" startPosition="5" endLine="109" endPosition="26" />
-    <nodeInfo nodeId="5420647633057638494" fileName="PathItem.java" startLine="111" startPosition="28" endLine="112" endPosition="17" />
-    <nodeInfo nodeId="5420647633057638500" fileName="PathItem.java" startLine="113" startPosition="7" endLine="114" endPosition="35" />
-    <nodeInfo nodeId="5420647633057638515" fileName="PathItem.java" startLine="116" startPosition="40" endLine="117" endPosition="58" />
-    <nodeInfo nodeId="5420647633057638530" fileName="PathItem.java" startLine="120" startPosition="24" endLine="121" endPosition="14" />
-    <nodeInfo nodeId="5420647633057638540" fileName="PathItem.java" startLine="123" startPosition="5" endLine="124" endPosition="15" />
-    <nodeInfo nodeId="6096693818321927187" fileName="PathItem.java" startLine="134" startPosition="37" endLine="135" endPosition="58" />
-    <nodeInfo nodeId="317177617693838392" fileName="PathItem.java" startLine="139" startPosition="42" endLine="140" endPosition="48" />
-    <nodeInfo nodeId="317177617693876459" fileName="PathItem.java" startLine="141" startPosition="5" endLine="142" endPosition="27" />
-    <nodeInfo nodeId="317177617693876468" fileName="PathItem.java" startLine="142" startPosition="27" endLine="143" endPosition="26" />
-    <nodeInfo nodeId="317177617693876528" fileName="PathItem.java" startLine="144" startPosition="9" endLine="145" endPosition="65" />
-    <nodeInfo nodeId="317177617693876536" fileName="PathItem.java" startLine="145" startPosition="65" endLine="146" endPosition="29" />
-    <nodeInfo nodeId="317177617693876555" fileName="PathItem.java" startLine="146" startPosition="29" endLine="147" endPosition="60" />
-    <nodeInfo nodeId="317177617693876570" fileName="PathItem.java" startLine="147" startPosition="60" endLine="148" endPosition="67" />
-    <nodeInfo nodeId="317177617693876583" fileName="PathItem.java" startLine="148" startPosition="67" endLine="149" endPosition="12" />
-    <nodeInfo nodeId="317177617693876610" fileName="PathItem.java" startLine="150" startPosition="37" endLine="151" endPosition="20" />
-    <nodeInfo nodeId="317177617693876619" fileName="PathItem.java" startLine="152" startPosition="7" endLine="153" endPosition="21" />
-    <nodeInfo nodeId="317177617693876548" fileName="PathItem.java" startLine="154" startPosition="30" endLine="155" endPosition="37" />
-    <nodeInfo nodeId="317177617693876503" fileName="PathItem.java" startLine="158" startPosition="25" endLine="159" endPosition="21" />
-    <nodeInfo nodeId="317177617693876517" fileName="PathItem.java" startLine="164" startPosition="25" endLine="165" endPosition="21" />
-    <nodeInfo nodeId="5420647633057638468" fileName="PathItem.java" startLine="100" startPosition="0" endLine="102" endPosition="0" />
-    <nodeInfo nodeId="5420647633057638472" fileName="PathItem.java" startLine="102" startPosition="0" endLine="104" endPosition="0" />
-    <nodeInfo nodeId="5420647633057638348" fileName="PathItem.java" startLine="45" startPosition="53" endLine="48" endPosition="5" />
-    <nodeInfo nodeId="5420647633057638365" fileName="PathItem.java" startLine="49" startPosition="40" endLine="52" endPosition="5" />
-    <nodeInfo nodeId="5420647633057638412" fileName="PathItem.java" startLine="65" startPosition="45" endLine="68" endPosition="5" />
-    <nodeInfo nodeId="5420647633057638429" fileName="PathItem.java" startLine="69" startPosition="40" endLine="72" endPosition="5" />
-    <nodeInfo nodeId="6487379123666615418" fileName="PathItem.java" startLine="81" startPosition="88" endLine="84" endPosition="5" />
-    <nodeInfo nodeId="6487379123666620226" fileName="PathItem.java" startLine="85" startPosition="40" endLine="88" endPosition="5" />
-    <nodeInfo nodeId="6487379123666620416" fileName="PathItem.java" startLine="94" startPosition="7" endLine="97" endPosition="5" />
-    <nodeInfo nodeId="2933295961970814780" fileName="PathItem.java" startLine="105" startPosition="43" endLine="108" endPosition="5" />
-    <nodeInfo nodeId="5420647633057638492" fileName="PathItem.java" startLine="110" startPosition="45" endLine="113" endPosition="7" />
-    <nodeInfo nodeId="5420647633057638528" fileName="PathItem.java" startLine="119" startPosition="9" endLine="122" endPosition="7" />
-    <nodeInfo nodeId="317177617693838380" fileName="PathItem.java" startLine="138" startPosition="43" endLine="141" endPosition="5" />
-    <nodeInfo nodeId="317177617693876587" fileName="PathItem.java" startLine="149" startPosition="12" endLine="152" endPosition="7" />
-    <nodeInfo nodeId="317177617693876492" fileName="PathItem.java" startLine="157" startPosition="11" endLine="160" endPosition="9" />
-    <nodeInfo nodeId="317177617693876512" fileName="PathItem.java" startLine="163" startPosition="11" endLine="166" endPosition="9" />
-    <nodeInfo nodeId="317177617693969227" fileName="PathItem.java" startLine="30" startPosition="30" endLine="34" endPosition="11" />
-    <nodeInfo nodeId="5420647633057638385" fileName="PathItem.java" startLine="54" startPosition="71" endLine="58" endPosition="0" />
-    <nodeInfo nodeId="5420647633057638394" fileName="PathItem.java" startLine="58" startPosition="46" endLine="62" endPosition="0" />
-    <nodeInfo nodeId="5420647633057638451" fileName="PathItem.java" startLine="74" startPosition="77" endLine="78" endPosition="0" />
-    <nodeInfo nodeId="6487379123666620395" fileName="PathItem.java" startLine="90" startPosition="81" endLine="94" endPosition="0" />
-    <nodeInfo nodeId="5420647633057638513" fileName="PathItem.java" startLine="115" startPosition="76" endLine="119" endPosition="0" />
-    <nodeInfo nodeId="5420647633057638545" fileName="PathItem.java" startLine="127" startPosition="51" endLine="131" endPosition="6" />
-    <nodeInfo nodeId="6096693818321927184" fileName="PathItem.java" startLine="133" startPosition="0" endLine="137" endPosition="0" />
-    <nodeInfo nodeId="317177617693969235" fileName="PathItem.java" startLine="35" startPosition="12" endLine="40" endPosition="7" />
-    <nodeInfo nodeId="5420647633057638446" fileName="PathItem.java" startLine="73" startPosition="46" endLine="78" endPosition="24" />
-    <nodeInfo nodeId="6487379123666620389" fileName="PathItem.java" startLine="89" startPosition="33" endLine="94" endPosition="7" />
-    <nodeInfo nodeId="5420647633057638507" fileName="PathItem.java" startLine="114" startPosition="35" endLine="119" endPosition="9" />
-    <nodeInfo nodeId="317177617693876485" fileName="PathItem.java" startLine="156" startPosition="15" endLine="162" endPosition="7" />
-    <nodeInfo nodeId="317177617693876510" fileName="PathItem.java" startLine="162" startPosition="7" endLine="168" endPosition="7" />
-    <nodeInfo nodeId="5420647633057638542" fileName="PathItem.java" startLine="126" startPosition="0" endLine="133" endPosition="0" />
-    <nodeInfo nodeId="5420647633057638379" fileName="PathItem.java" startLine="53" startPosition="33" endLine="62" endPosition="24" />
-    <nodeInfo nodeId="317177617693969215" fileName="PathItem.java" startLine="29" startPosition="38" endLine="40" endPosition="7" />
-    <nodeInfo nodeId="317177617693969288" fileName="PathItem.java" startLine="28" startPosition="27" endLine="41" endPosition="5" />
-    <nodeInfo nodeId="5420647633057638490" fileName="PathItem.java" startLine="109" startPosition="26" endLine="123" endPosition="5" />
-    <nodeInfo nodeId="5420647633057638409" fileName="PathItem.java" startLine="64" startPosition="0" endLine="80" endPosition="0" />
-    <nodeInfo nodeId="5420647633057638564" fileName="PathItem.java" startLine="26" startPosition="0" endLine="43" endPosition="3" />
-    <nodeInfo nodeId="5420647633057638343" fileName="PathItem.java" startLine="44" startPosition="0" endLine="64" endPosition="0" />
-    <nodeInfo nodeId="6487379123666460588" fileName="PathItem.java" startLine="80" startPosition="0" endLine="100" endPosition="0" />
-    <nodeInfo nodeId="5420647633057638478" fileName="PathItem.java" startLine="104" startPosition="0" endLine="126" endPosition="0" />
-    <nodeInfo nodeId="317177617693876481" fileName="PathItem.java" startLine="143" startPosition="26" endLine="169" endPosition="5" />
-    <nodeInfo nodeId="317177617693835410" fileName="PathItem.java" startLine="137" startPosition="0" endLine="171" endPosition="0" />
-    <scopeInfo nodeId="317177617693876490" fileName="PathItem.java" startLine="161" startPosition="36" endLine="161" endPosition="36" />
-    <scopeInfo nodeId="317177617693876524" fileName="PathItem.java" startLine="167" startPosition="36" endLine="167" endPosition="36" />
-    <scopeInfo nodeId="5420647633057638349" fileName="PathItem.java" startLine="46" startPosition="32" endLine="47" endPosition="33" />
-    <scopeInfo nodeId="5420647633057638366" fileName="PathItem.java" startLine="50" startPosition="22" endLine="51" endPosition="33" />
-    <scopeInfo nodeId="5420647633057638386" fileName="PathItem.java" startLine="55" startPosition="38" endLine="56" endPosition="31" />
-    <scopeInfo nodeId="5420647633057638395" fileName="PathItem.java" startLine="59" startPosition="39" endLine="60" endPosition="57" />
-    <scopeInfo nodeId="5420647633057638413" fileName="PathItem.java" startLine="66" startPosition="32" endLine="67" endPosition="33" />
-    <scopeInfo nodeId="5420647633057638430" fileName="PathItem.java" startLine="70" startPosition="22" endLine="71" endPosition="33" />
-    <scopeInfo nodeId="5420647633057638452" fileName="PathItem.java" startLine="75" startPosition="37" endLine="76" endPosition="36" />
-    <scopeInfo nodeId="6487379123666615419" fileName="PathItem.java" startLine="82" startPosition="32" endLine="83" endPosition="30" />
-    <scopeInfo nodeId="6487379123666620227" fileName="PathItem.java" startLine="86" startPosition="22" endLine="87" endPosition="30" />
-    <scopeInfo nodeId="6487379123666620396" fileName="PathItem.java" startLine="91" startPosition="38" endLine="92" endPosition="57" />
-    <scopeInfo nodeId="6487379123666620417" fileName="PathItem.java" startLine="95" startPosition="23" endLine="96" endPosition="30" />
-    <scopeInfo nodeId="2933295961970814781" fileName="PathItem.java" startLine="106" startPosition="28" endLine="107" endPosition="23" />
-    <scopeInfo nodeId="5420647633057638493" fileName="PathItem.java" startLine="111" startPosition="28" endLine="112" endPosition="17" />
-    <scopeInfo nodeId="5420647633057638514" fileName="PathItem.java" startLine="116" startPosition="40" endLine="117" endPosition="58" />
-    <scopeInfo nodeId="5420647633057638529" fileName="PathItem.java" startLine="120" startPosition="24" endLine="121" endPosition="14" />
-    <scopeInfo nodeId="6096693818321927186" fileName="PathItem.java" startLine="134" startPosition="37" endLine="135" endPosition="58" />
-    <scopeInfo nodeId="317177617693838382" fileName="PathItem.java" startLine="139" startPosition="42" endLine="140" endPosition="48" />
-    <scopeInfo nodeId="317177617693876589" fileName="PathItem.java" startLine="150" startPosition="37" endLine="151" endPosition="20" />
-    <scopeInfo nodeId="317177617693876543" fileName="PathItem.java" startLine="154" startPosition="30" endLine="155" endPosition="37" />
-    <scopeInfo nodeId="317177617693876494" fileName="PathItem.java" startLine="158" startPosition="25" endLine="159" endPosition="21" />
-    <scopeInfo nodeId="317177617693876516" fileName="PathItem.java" startLine="164" startPosition="25" endLine="165" endPosition="21" />
-    <scopeInfo nodeId="5420647633057638468" fileName="PathItem.java" startLine="100" startPosition="0" endLine="102" endPosition="0" />
-    <scopeInfo nodeId="5420647633057638472" fileName="PathItem.java" startLine="102" startPosition="0" endLine="104" endPosition="0">
+    <nodeInfo nodeId="5420647633057638333" fileName="PathItem.java" startLine="21" startPosition="32" endLine="22" endPosition="90" />
+    <nodeInfo nodeId="5420647633057638340" fileName="PathItem.java" startLine="23" startPosition="0" endLine="24" endPosition="21" />
+    <nodeInfo nodeId="317177617693969210" fileName="PathItem.java" startLine="26" startPosition="32" endLine="27" endPosition="27" />
+    <nodeInfo nodeId="317177617693969266" fileName="PathItem.java" startLine="34" startPosition="14" endLine="35" endPosition="98" />
+    <nodeInfo nodeId="317177617693969330" fileName="PathItem.java" startLine="35" startPosition="98" endLine="36" endPosition="57" />
+    <nodeInfo nodeId="317177617693969322" fileName="PathItem.java" startLine="36" startPosition="57" endLine="37" endPosition="80" />
+    <nodeInfo nodeId="5526906139114107656" fileName="PathItem.java" startLine="37" startPosition="80" endLine="38" endPosition="74" />
+    <nodeInfo nodeId="317177617693969334" fileName="PathItem.java" startLine="40" startPosition="5" endLine="41" endPosition="26" />
+    <nodeInfo nodeId="5420647633057638350" fileName="PathItem.java" startLine="45" startPosition="32" endLine="46" endPosition="33" />
+    <nodeInfo nodeId="5420647633057638358" fileName="PathItem.java" startLine="47" startPosition="5" endLine="48" endPosition="40" />
+    <nodeInfo nodeId="5420647633057638367" fileName="PathItem.java" startLine="49" startPosition="22" endLine="50" endPosition="33" />
+    <nodeInfo nodeId="5420647633057638372" fileName="PathItem.java" startLine="51" startPosition="5" endLine="52" endPosition="33" />
+    <nodeInfo nodeId="5420647633057638387" fileName="PathItem.java" startLine="54" startPosition="38" endLine="55" endPosition="31" />
+    <nodeInfo nodeId="5420647633057638396" fileName="PathItem.java" startLine="58" startPosition="39" endLine="59" endPosition="57" />
+    <nodeInfo nodeId="5420647633057638414" fileName="PathItem.java" startLine="65" startPosition="32" endLine="66" endPosition="33" />
+    <nodeInfo nodeId="5420647633057638422" fileName="PathItem.java" startLine="67" startPosition="5" endLine="68" endPosition="40" />
+    <nodeInfo nodeId="5420647633057638431" fileName="PathItem.java" startLine="69" startPosition="22" endLine="70" endPosition="33" />
+    <nodeInfo nodeId="5420647633057638436" fileName="PathItem.java" startLine="71" startPosition="5" endLine="72" endPosition="46" />
+    <nodeInfo nodeId="6487379123666620506" fileName="PathItem.java" startLine="74" startPosition="37" endLine="75" endPosition="36" />
+    <nodeInfo nodeId="6487379123666616171" fileName="PathItem.java" startLine="81" startPosition="32" endLine="82" endPosition="30" />
+    <nodeInfo nodeId="6487379123666616177" fileName="PathItem.java" startLine="83" startPosition="5" endLine="84" endPosition="40" />
+    <nodeInfo nodeId="6487379123666620234" fileName="PathItem.java" startLine="85" startPosition="22" endLine="86" endPosition="30" />
+    <nodeInfo nodeId="6487379123666620241" fileName="PathItem.java" startLine="87" startPosition="5" endLine="88" endPosition="33" />
+    <nodeInfo nodeId="6487379123666620397" fileName="PathItem.java" startLine="90" startPosition="38" endLine="91" endPosition="65" />
+    <nodeInfo nodeId="6487379123666620418" fileName="PathItem.java" startLine="94" startPosition="23" endLine="95" endPosition="30" />
+    <nodeInfo nodeId="6487379123666460643" fileName="PathItem.java" startLine="96" startPosition="5" endLine="97" endPosition="34" />
+    <nodeInfo nodeId="2933295961970814887" fileName="PathItem.java" startLine="105" startPosition="28" endLine="106" endPosition="23" />
+    <nodeInfo nodeId="5420647633057638484" fileName="PathItem.java" startLine="107" startPosition="5" endLine="108" endPosition="26" />
+    <nodeInfo nodeId="5420647633057638494" fileName="PathItem.java" startLine="110" startPosition="28" endLine="111" endPosition="17" />
+    <nodeInfo nodeId="5420647633057638500" fileName="PathItem.java" startLine="112" startPosition="7" endLine="113" endPosition="35" />
+    <nodeInfo nodeId="5420647633057638515" fileName="PathItem.java" startLine="115" startPosition="40" endLine="116" endPosition="58" />
+    <nodeInfo nodeId="5420647633057638530" fileName="PathItem.java" startLine="119" startPosition="24" endLine="120" endPosition="14" />
+    <nodeInfo nodeId="5420647633057638540" fileName="PathItem.java" startLine="122" startPosition="5" endLine="123" endPosition="15" />
+    <nodeInfo nodeId="6096693818321927187" fileName="PathItem.java" startLine="133" startPosition="37" endLine="134" endPosition="58" />
+    <nodeInfo nodeId="317177617693838392" fileName="PathItem.java" startLine="138" startPosition="56" endLine="139" endPosition="47" />
+    <nodeInfo nodeId="317177617693876459" fileName="PathItem.java" startLine="140" startPosition="5" endLine="141" endPosition="27" />
+    <nodeInfo nodeId="317177617693876468" fileName="PathItem.java" startLine="141" startPosition="27" endLine="142" endPosition="26" />
+    <nodeInfo nodeId="317177617693876528" fileName="PathItem.java" startLine="143" startPosition="9" endLine="144" endPosition="65" />
+    <nodeInfo nodeId="317177617693876536" fileName="PathItem.java" startLine="144" startPosition="65" endLine="145" endPosition="29" />
+    <nodeInfo nodeId="317177617693876555" fileName="PathItem.java" startLine="145" startPosition="29" endLine="146" endPosition="60" />
+    <nodeInfo nodeId="317177617693876570" fileName="PathItem.java" startLine="146" startPosition="60" endLine="147" endPosition="67" />
+    <nodeInfo nodeId="317177617693876583" fileName="PathItem.java" startLine="147" startPosition="67" endLine="148" endPosition="12" />
+    <nodeInfo nodeId="317177617693876610" fileName="PathItem.java" startLine="149" startPosition="37" endLine="150" endPosition="20" />
+    <nodeInfo nodeId="317177617693876619" fileName="PathItem.java" startLine="151" startPosition="7" endLine="152" endPosition="21" />
+    <nodeInfo nodeId="317177617693876548" fileName="PathItem.java" startLine="153" startPosition="30" endLine="154" endPosition="37" />
+    <nodeInfo nodeId="317177617693876503" fileName="PathItem.java" startLine="157" startPosition="25" endLine="158" endPosition="21" />
+    <nodeInfo nodeId="317177617693876517" fileName="PathItem.java" startLine="163" startPosition="25" endLine="164" endPosition="21" />
+    <nodeInfo nodeId="5420647633057638468" fileName="PathItem.java" startLine="99" startPosition="0" endLine="101" endPosition="0" />
+    <nodeInfo nodeId="5420647633057638472" fileName="PathItem.java" startLine="101" startPosition="0" endLine="103" endPosition="0" />
+    <nodeInfo nodeId="5420647633057638348" fileName="PathItem.java" startLine="44" startPosition="53" endLine="47" endPosition="5" />
+    <nodeInfo nodeId="5420647633057638365" fileName="PathItem.java" startLine="48" startPosition="40" endLine="51" endPosition="5" />
+    <nodeInfo nodeId="5420647633057638412" fileName="PathItem.java" startLine="64" startPosition="45" endLine="67" endPosition="5" />
+    <nodeInfo nodeId="5420647633057638429" fileName="PathItem.java" startLine="68" startPosition="40" endLine="71" endPosition="5" />
+    <nodeInfo nodeId="6487379123666615418" fileName="PathItem.java" startLine="80" startPosition="88" endLine="83" endPosition="5" />
+    <nodeInfo nodeId="6487379123666620226" fileName="PathItem.java" startLine="84" startPosition="40" endLine="87" endPosition="5" />
+    <nodeInfo nodeId="6487379123666620416" fileName="PathItem.java" startLine="93" startPosition="7" endLine="96" endPosition="5" />
+    <nodeInfo nodeId="2933295961970814780" fileName="PathItem.java" startLine="104" startPosition="43" endLine="107" endPosition="5" />
+    <nodeInfo nodeId="5420647633057638492" fileName="PathItem.java" startLine="109" startPosition="45" endLine="112" endPosition="7" />
+    <nodeInfo nodeId="5420647633057638528" fileName="PathItem.java" startLine="118" startPosition="9" endLine="121" endPosition="7" />
+    <nodeInfo nodeId="317177617693838380" fileName="PathItem.java" startLine="137" startPosition="43" endLine="140" endPosition="5" />
+    <nodeInfo nodeId="317177617693876587" fileName="PathItem.java" startLine="148" startPosition="12" endLine="151" endPosition="7" />
+    <nodeInfo nodeId="317177617693876492" fileName="PathItem.java" startLine="156" startPosition="11" endLine="159" endPosition="9" />
+    <nodeInfo nodeId="317177617693876512" fileName="PathItem.java" startLine="162" startPosition="11" endLine="165" endPosition="9" />
+    <nodeInfo nodeId="317177617693969227" fileName="PathItem.java" startLine="29" startPosition="30" endLine="33" endPosition="11" />
+    <nodeInfo nodeId="5420647633057638385" fileName="PathItem.java" startLine="53" startPosition="71" endLine="57" endPosition="0" />
+    <nodeInfo nodeId="5420647633057638394" fileName="PathItem.java" startLine="57" startPosition="46" endLine="61" endPosition="0" />
+    <nodeInfo nodeId="5420647633057638451" fileName="PathItem.java" startLine="73" startPosition="77" endLine="77" endPosition="0" />
+    <nodeInfo nodeId="6487379123666620395" fileName="PathItem.java" startLine="89" startPosition="81" endLine="93" endPosition="0" />
+    <nodeInfo nodeId="5420647633057638513" fileName="PathItem.java" startLine="114" startPosition="76" endLine="118" endPosition="0" />
+    <nodeInfo nodeId="5420647633057638545" fileName="PathItem.java" startLine="126" startPosition="51" endLine="130" endPosition="6" />
+    <nodeInfo nodeId="6096693818321927184" fileName="PathItem.java" startLine="132" startPosition="0" endLine="136" endPosition="0" />
+    <nodeInfo nodeId="317177617693969235" fileName="PathItem.java" startLine="34" startPosition="12" endLine="39" endPosition="7" />
+    <nodeInfo nodeId="5420647633057638446" fileName="PathItem.java" startLine="72" startPosition="46" endLine="77" endPosition="24" />
+    <nodeInfo nodeId="6487379123666620389" fileName="PathItem.java" startLine="88" startPosition="33" endLine="93" endPosition="7" />
+    <nodeInfo nodeId="5420647633057638507" fileName="PathItem.java" startLine="113" startPosition="35" endLine="118" endPosition="9" />
+    <nodeInfo nodeId="317177617693876485" fileName="PathItem.java" startLine="155" startPosition="15" endLine="161" endPosition="7" />
+    <nodeInfo nodeId="317177617693876510" fileName="PathItem.java" startLine="161" startPosition="7" endLine="167" endPosition="7" />
+    <nodeInfo nodeId="5420647633057638542" fileName="PathItem.java" startLine="125" startPosition="0" endLine="132" endPosition="0" />
+    <nodeInfo nodeId="5420647633057638379" fileName="PathItem.java" startLine="52" startPosition="33" endLine="61" endPosition="24" />
+    <nodeInfo nodeId="317177617693969215" fileName="PathItem.java" startLine="28" startPosition="38" endLine="39" endPosition="7" />
+    <nodeInfo nodeId="317177617693969288" fileName="PathItem.java" startLine="27" startPosition="27" endLine="40" endPosition="5" />
+    <nodeInfo nodeId="5420647633057638490" fileName="PathItem.java" startLine="108" startPosition="26" endLine="122" endPosition="5" />
+    <nodeInfo nodeId="5420647633057638409" fileName="PathItem.java" startLine="63" startPosition="0" endLine="79" endPosition="0" />
+    <nodeInfo nodeId="5420647633057638564" fileName="PathItem.java" startLine="25" startPosition="0" endLine="42" endPosition="3" />
+    <nodeInfo nodeId="5420647633057638343" fileName="PathItem.java" startLine="43" startPosition="0" endLine="63" endPosition="0" />
+    <nodeInfo nodeId="6487379123666460588" fileName="PathItem.java" startLine="79" startPosition="0" endLine="99" endPosition="0" />
+    <nodeInfo nodeId="5420647633057638478" fileName="PathItem.java" startLine="103" startPosition="0" endLine="125" endPosition="0" />
+    <nodeInfo nodeId="317177617693876481" fileName="PathItem.java" startLine="142" startPosition="26" endLine="168" endPosition="5" />
+    <nodeInfo nodeId="317177617693835410" fileName="PathItem.java" startLine="136" startPosition="0" endLine="170" endPosition="0" />
+    <scopeInfo nodeId="317177617693876487" fileName="PathItem.java" startLine="160" startPosition="0" endLine="160" endPosition="36">
+      <varInfo nodeId="317177617693876488" varName="ignore" />
+    </scopeInfo>
+    <scopeInfo nodeId="317177617693876490" fileName="PathItem.java" startLine="160" startPosition="36" endLine="160" endPosition="36" />
+    <scopeInfo nodeId="317177617693876521" fileName="PathItem.java" startLine="166" startPosition="0" endLine="166" endPosition="36">
+      <varInfo nodeId="317177617693876522" varName="ignore" />
+    </scopeInfo>
+    <scopeInfo nodeId="317177617693876524" fileName="PathItem.java" startLine="166" startPosition="36" endLine="166" endPosition="36" />
+    <scopeInfo nodeId="5420647633057638349" fileName="PathItem.java" startLine="45" startPosition="32" endLine="46" endPosition="33" />
+    <scopeInfo nodeId="5420647633057638366" fileName="PathItem.java" startLine="49" startPosition="22" endLine="50" endPosition="33" />
+    <scopeInfo nodeId="5420647633057638386" fileName="PathItem.java" startLine="54" startPosition="38" endLine="55" endPosition="31" />
+    <scopeInfo nodeId="5420647633057638395" fileName="PathItem.java" startLine="58" startPosition="39" endLine="59" endPosition="57" />
+    <scopeInfo nodeId="5420647633057638413" fileName="PathItem.java" startLine="65" startPosition="32" endLine="66" endPosition="33" />
+    <scopeInfo nodeId="5420647633057638430" fileName="PathItem.java" startLine="69" startPosition="22" endLine="70" endPosition="33" />
+    <scopeInfo nodeId="5420647633057638452" fileName="PathItem.java" startLine="74" startPosition="37" endLine="75" endPosition="36" />
+    <scopeInfo nodeId="6487379123666615419" fileName="PathItem.java" startLine="81" startPosition="32" endLine="82" endPosition="30" />
+    <scopeInfo nodeId="6487379123666620227" fileName="PathItem.java" startLine="85" startPosition="22" endLine="86" endPosition="30" />
+    <scopeInfo nodeId="6487379123666620396" fileName="PathItem.java" startLine="90" startPosition="38" endLine="91" endPosition="65" />
+    <scopeInfo nodeId="6487379123666620417" fileName="PathItem.java" startLine="94" startPosition="23" endLine="95" endPosition="30" />
+    <scopeInfo nodeId="2933295961970814781" fileName="PathItem.java" startLine="105" startPosition="28" endLine="106" endPosition="23" />
+    <scopeInfo nodeId="5420647633057638493" fileName="PathItem.java" startLine="110" startPosition="28" endLine="111" endPosition="17" />
+    <scopeInfo nodeId="5420647633057638514" fileName="PathItem.java" startLine="115" startPosition="40" endLine="116" endPosition="58" />
+    <scopeInfo nodeId="5420647633057638529" fileName="PathItem.java" startLine="119" startPosition="24" endLine="120" endPosition="14" />
+    <scopeInfo nodeId="6096693818321927186" fileName="PathItem.java" startLine="133" startPosition="37" endLine="134" endPosition="58" />
+    <scopeInfo nodeId="317177617693838382" fileName="PathItem.java" startLine="138" startPosition="56" endLine="139" endPosition="47" />
+    <scopeInfo nodeId="317177617693876589" fileName="PathItem.java" startLine="149" startPosition="37" endLine="150" endPosition="20" />
+    <scopeInfo nodeId="317177617693876540" fileName="PathItem.java" startLine="153" startPosition="0" endLine="154" endPosition="37">
+      <varInfo nodeId="317177617693876541" varName="ex" />
+    </scopeInfo>
+    <scopeInfo nodeId="317177617693876543" fileName="PathItem.java" startLine="153" startPosition="30" endLine="154" endPosition="37" />
+    <scopeInfo nodeId="317177617693876494" fileName="PathItem.java" startLine="157" startPosition="25" endLine="158" endPosition="21" />
+    <scopeInfo nodeId="317177617693876516" fileName="PathItem.java" startLine="163" startPosition="25" endLine="164" endPosition="21" />
+    <scopeInfo nodeId="5420647633057638468" fileName="PathItem.java" startLine="99" startPosition="0" endLine="101" endPosition="0" />
+    <scopeInfo nodeId="5420647633057638472" fileName="PathItem.java" startLine="101" startPosition="0" endLine="103" endPosition="0">
       <varInfo nodeId="5420647633057638473" varName="res" />
     </scopeInfo>
-    <scopeInfo nodeId="317177617693876486" fileName="PathItem.java" startLine="157" startPosition="11" endLine="160" endPosition="9" />
-    <scopeInfo nodeId="317177617693876511" fileName="PathItem.java" startLine="163" startPosition="11" endLine="166" endPosition="9" />
-    <scopeInfo nodeId="317177617693969216" fileName="PathItem.java" startLine="30" startPosition="30" endLine="34" endPosition="11" />
-    <scopeInfo nodeId="317177617693969236" fileName="PathItem.java" startLine="35" startPosition="14" endLine="39" endPosition="74">
+    <scopeInfo nodeId="317177617693876486" fileName="PathItem.java" startLine="156" startPosition="11" endLine="159" endPosition="9" />
+    <scopeInfo nodeId="317177617693876511" fileName="PathItem.java" startLine="162" startPosition="11" endLine="165" endPosition="9" />
+    <scopeInfo nodeId="317177617693969216" fileName="PathItem.java" startLine="29" startPosition="30" endLine="33" endPosition="11" />
+    <scopeInfo nodeId="317177617693969236" fileName="PathItem.java" startLine="34" startPosition="14" endLine="38" endPosition="74">
       <varInfo nodeId="317177617693969267" varName="cf" />
     </scopeInfo>
-    <scopeInfo nodeId="5420647633057638385" fileName="PathItem.java" startLine="54" startPosition="71" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="5420647633057638394" fileName="PathItem.java" startLine="58" startPosition="46" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="5420647633057638451" fileName="PathItem.java" startLine="74" startPosition="77" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="6487379123666620395" fileName="PathItem.java" startLine="90" startPosition="81" endLine="94" endPosition="0" />
-    <scopeInfo nodeId="5420647633057638513" fileName="PathItem.java" startLine="115" startPosition="76" endLine="119" endPosition="0" />
-    <scopeInfo nodeId="5420647633057638544" fileName="PathItem.java" startLine="127" startPosition="51" endLine="131" endPosition="6" />
-    <scopeInfo nodeId="6096693818321927184" fileName="PathItem.java" startLine="133" startPosition="0" endLine="137" endPosition="0">
+    <scopeInfo nodeId="5420647633057638385" fileName="PathItem.java" startLine="53" startPosition="71" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="5420647633057638394" fileName="PathItem.java" startLine="57" startPosition="46" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="5420647633057638451" fileName="PathItem.java" startLine="73" startPosition="77" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="6487379123666620395" fileName="PathItem.java" startLine="89" startPosition="81" endLine="93" endPosition="0" />
+    <scopeInfo nodeId="5420647633057638513" fileName="PathItem.java" startLine="114" startPosition="76" endLine="118" endPosition="0" />
+    <scopeInfo nodeId="5420647633057638544" fileName="PathItem.java" startLine="126" startPosition="51" endLine="130" endPosition="6" />
+    <scopeInfo nodeId="6096693818321927184" fileName="PathItem.java" startLine="132" startPosition="0" endLine="136" endPosition="0">
       <varInfo nodeId="6096693818321927198" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="5420647633057638542" fileName="PathItem.java" startLine="126" startPosition="0" endLine="133" endPosition="0">
+    <scopeInfo nodeId="5420647633057638542" fileName="PathItem.java" startLine="125" startPosition="0" endLine="132" endPosition="0">
       <varInfo nodeId="5420647633057638561" varName="name" />
       <varInfo nodeId="5420647633057638559" varName="pkg" />
     </scopeInfo>
-    <scopeInfo nodeId="317177617693876482" fileName="PathItem.java" startLine="144" startPosition="9" endLine="153" endPosition="21">
+    <scopeInfo nodeId="317177617693876482" fileName="PathItem.java" startLine="143" startPosition="9" endLine="152" endPosition="21">
       <varInfo nodeId="317177617693876584" varName="c" />
       <varInfo nodeId="317177617693876529" varName="tmpFile" />
     </scopeInfo>
-    <scopeInfo nodeId="317177617693969290" fileName="PathItem.java" startLine="29" startPosition="38" endLine="40" endPosition="7" />
-    <scopeInfo nodeId="5420647633057638491" fileName="PathItem.java" startLine="110" startPosition="45" endLine="122" endPosition="7">
+    <scopeInfo nodeId="317177617693969290" fileName="PathItem.java" startLine="28" startPosition="38" endLine="39" endPosition="7" />
+    <scopeInfo nodeId="5420647633057638491" fileName="PathItem.java" startLine="109" startPosition="45" endLine="121" endPosition="7">
       <varInfo nodeId="5420647633057638501" varName="lst" />
     </scopeInfo>
-    <scopeInfo nodeId="317177617693876484" fileName="PathItem.java" startLine="156" startPosition="15" endLine="168" endPosition="7" />
-    <scopeInfo nodeId="317177617693969288" fileName="PathItem.java" startLine="28" startPosition="27" endLine="41" endPosition="5">
+    <scopeInfo nodeId="317177617693876484" fileName="PathItem.java" startLine="155" startPosition="15" endLine="167" endPosition="7" />
+    <scopeInfo nodeId="317177617693969288" fileName="PathItem.java" startLine="27" startPosition="27" endLine="40" endPosition="5">
       <varInfo nodeId="317177617693969289" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="5420647633057638411" fileName="PathItem.java" startLine="65" startPosition="45" endLine="78" endPosition="24">
+    <scopeInfo nodeId="5420647633057638411" fileName="PathItem.java" startLine="64" startPosition="45" endLine="77" endPosition="24">
       <varInfo nodeId="5420647633057638423" varName="fld" />
       <varInfo nodeId="5420647633057638437" varName="lst" />
     </scopeInfo>
-    <scopeInfo nodeId="5420647633057638490" fileName="PathItem.java" startLine="109" startPosition="26" endLine="123" endPosition="5">
+    <scopeInfo nodeId="5420647633057638490" fileName="PathItem.java" startLine="108" startPosition="26" endLine="122" endPosition="5">
       <varInfo nodeId="5420647633057638534" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="5420647633057638569" fileName="PathItem.java" startLine="27" startPosition="32" endLine="42" endPosition="26">
+    <scopeInfo nodeId="5420647633057638569" fileName="PathItem.java" startLine="26" startPosition="32" endLine="41" endPosition="26">
       <varInfo nodeId="317177617693969211" varName="container" />
     </scopeInfo>
-    <scopeInfo nodeId="5420647633057638409" fileName="PathItem.java" startLine="64" startPosition="0" endLine="80" endPosition="0">
+    <scopeInfo nodeId="5420647633057638409" fileName="PathItem.java" startLine="63" startPosition="0" endLine="79" endPosition="0">
       <varInfo nodeId="5420647633057638466" varName="pkg" />
     </scopeInfo>
-    <scopeInfo nodeId="5420647633057638564" fileName="PathItem.java" startLine="26" startPosition="0" endLine="43" endPosition="3">
+    <scopeInfo nodeId="5420647633057638564" fileName="PathItem.java" startLine="25" startPosition="0" endLine="42" endPosition="3">
       <varInfo nodeId="5420647633057638565" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="5420647633057638347" fileName="PathItem.java" startLine="45" startPosition="53" endLine="62" endPosition="24">
+    <scopeInfo nodeId="5420647633057638347" fileName="PathItem.java" startLine="44" startPosition="53" endLine="61" endPosition="24">
       <varInfo nodeId="5420647633057638359" varName="fld" />
       <varInfo nodeId="5420647633057638373" varName="lst" />
     </scopeInfo>
-    <scopeInfo nodeId="6487379123666460591" fileName="PathItem.java" startLine="81" startPosition="88" endLine="98" endPosition="34">
+    <scopeInfo nodeId="6487379123666460591" fileName="PathItem.java" startLine="80" startPosition="88" endLine="97" endPosition="34">
       <varInfo nodeId="6487379123666620390" varName="file" />
       <varInfo nodeId="6487379123666616178" varName="fld" />
       <varInfo nodeId="6487379123666620242" varName="lst" />
     </scopeInfo>
-    <scopeInfo nodeId="5420647633057638483" fileName="PathItem.java" startLine="105" startPosition="43" endLine="124" endPosition="15">
+    <scopeInfo nodeId="5420647633057638483" fileName="PathItem.java" startLine="104" startPosition="43" endLine="123" endPosition="15">
       <varInfo nodeId="5420647633057638485" varName="fld" />
     </scopeInfo>
-    <scopeInfo nodeId="5420647633057638343" fileName="PathItem.java" startLine="44" startPosition="0" endLine="64" endPosition="0">
+    <scopeInfo nodeId="5420647633057638343" fileName="PathItem.java" startLine="43" startPosition="0" endLine="63" endPosition="0">
       <varInfo nodeId="5420647633057638344" varName="pkg" />
     </scopeInfo>
-    <scopeInfo nodeId="6487379123666460588" fileName="PathItem.java" startLine="80" startPosition="0" endLine="100" endPosition="0">
+    <scopeInfo nodeId="6487379123666460588" fileName="PathItem.java" startLine="79" startPosition="0" endLine="99" endPosition="0">
       <varInfo nodeId="6487379123666620219" varName="pkg" />
       <varInfo nodeId="6487379123666460640" varName="resName" />
     </scopeInfo>
-    <scopeInfo nodeId="5420647633057638478" fileName="PathItem.java" startLine="104" startPosition="0" endLine="126" endPosition="0">
+    <scopeInfo nodeId="5420647633057638478" fileName="PathItem.java" startLine="103" startPosition="0" endLine="125" endPosition="0">
       <varInfo nodeId="5420647633057638481" varName="pkg" />
     </scopeInfo>
-    <scopeInfo nodeId="317177617693835413" fileName="PathItem.java" startLine="138" startPosition="43" endLine="169" endPosition="5">
+    <scopeInfo nodeId="317177617693835413" fileName="PathItem.java" startLine="137" startPosition="43" endLine="168" endPosition="5">
       <varInfo nodeId="317177617693876460" varName="os" />
       <varInfo nodeId="317177617693876469" varName="is" />
     </scopeInfo>
-    <scopeInfo nodeId="317177617693835410" fileName="PathItem.java" startLine="137" startPosition="0" endLine="171" endPosition="0">
+    <scopeInfo nodeId="317177617693835410" fileName="PathItem.java" startLine="136" startPosition="0" endLine="170" endPosition="0">
       <varInfo nodeId="317177617693838377" varName="ifile" />
     </scopeInfo>
-    <unitInfo nodeId="5420647633057638385" fileName="PathItem.java" startLine="54" startPosition="48" endLine="58" endPosition="5" unitName="jetbrains.mps.gwt.client.stubs.IWhereFilter$anonymous" />
-    <unitInfo nodeId="5420647633057638394" fileName="PathItem.java" startLine="58" startPosition="18" endLine="62" endPosition="5" unitName="jetbrains.mps.gwt.client.stubs.ISelector$anonymous" />
-    <unitInfo nodeId="5420647633057638451" fileName="PathItem.java" startLine="74" startPosition="49" endLine="78" endPosition="5" unitName="jetbrains.mps.gwt.client.stubs.ISelector$anonymous" />
-    <unitInfo nodeId="6487379123666620395" fileName="PathItem.java" startLine="90" startPosition="58" endLine="94" endPosition="5" unitName="jetbrains.mps.gwt.client.stubs.PathItem$4" />
-    <unitInfo nodeId="5420647633057638513" fileName="PathItem.java" startLine="115" startPosition="53" endLine="119" endPosition="7" unitName="jetbrains.mps.gwt.client.stubs.PathItem$5" />
-    <unitInfo nodeId="5420647633057638332" fileName="PathItem.java" startLine="22" startPosition="0" endLine="172" endPosition="0" unitName="jetbrains.mps.gwt.client.stubs.PathItem" />
+    <unitInfo nodeId="5420647633057638385" fileName="PathItem.java" startLine="53" startPosition="48" endLine="57" endPosition="5" unitName="jetbrains.mps.gwt.client.stubs.IWhereFilter$anonymous" />
+    <unitInfo nodeId="5420647633057638394" fileName="PathItem.java" startLine="57" startPosition="18" endLine="61" endPosition="5" unitName="jetbrains.mps.gwt.client.stubs.ISelector$anonymous" />
+    <unitInfo nodeId="5420647633057638451" fileName="PathItem.java" startLine="73" startPosition="49" endLine="77" endPosition="5" unitName="jetbrains.mps.gwt.client.stubs.ISelector$anonymous" />
+    <unitInfo nodeId="6487379123666620395" fileName="PathItem.java" startLine="89" startPosition="58" endLine="93" endPosition="5" unitName="jetbrains.mps.gwt.client.stubs.PathItem$4" />
+    <unitInfo nodeId="5420647633057638513" fileName="PathItem.java" startLine="114" startPosition="53" endLine="118" endPosition="7" unitName="jetbrains.mps.gwt.client.stubs.PathItem$5" />
+    <unitInfo nodeId="5420647633057638332" fileName="PathItem.java" startLine="21" startPosition="0" endLine="171" endPosition="0" unitName="jetbrains.mps.gwt.client.stubs.PathItem" />
   </root>
   <root nodeId="5420647633057638577">
     <nodeInfo nodeId="5420647633057638635" fileName="GWTModulePathItem.java" startLine="8" startPosition="49" endLine="9" endPosition="50" />
@@ -325,11 +334,23 @@
     <nodeInfo nodeId="6487379123666154212" fileName="GWTModuleStubs.java" startLine="120" startPosition="70" endLine="136" endPosition="5" />
     <nodeInfo nodeId="6487379123666449544" fileName="GWTModuleStubs.java" startLine="85" startPosition="7" endLine="104" endPosition="5" />
     <nodeInfo nodeId="6487379123666154166" fileName="GWTModuleStubs.java" startLine="117" startPosition="0" endLine="138" endPosition="0" />
+    <scopeInfo nodeId="6487379123666460728" fileName="GWTModuleStubs.java" startLine="101" startPosition="0" endLine="101" endPosition="33">
+      <varInfo nodeId="6487379123666460729" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="6487379123666460731" fileName="GWTModuleStubs.java" startLine="101" startPosition="33" endLine="101" endPosition="33" />
     <scopeInfo nodeId="6487379123666460884" fileName="GWTModuleStubs.java" startLine="78" startPosition="60" endLine="79" endPosition="51" />
     <scopeInfo nodeId="6487379123666460893" fileName="GWTModuleStubs.java" startLine="82" startPosition="60" endLine="83" endPosition="55" />
+    <scopeInfo nodeId="6487379123666460667" fileName="GWTModuleStubs.java" startLine="91" startPosition="0" endLine="92" endPosition="28">
+      <varInfo nodeId="6487379123666460668" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="6487379123666460670" fileName="GWTModuleStubs.java" startLine="91" startPosition="31" endLine="92" endPosition="28" />
+    <scopeInfo nodeId="6487379123666502187" fileName="GWTModuleStubs.java" startLine="93" startPosition="0" endLine="94" endPosition="28">
+      <varInfo nodeId="6487379123666502188" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="6487379123666502190" fileName="GWTModuleStubs.java" startLine="93" startPosition="33" endLine="94" endPosition="28" />
+    <scopeInfo nodeId="6487379123666461976" fileName="GWTModuleStubs.java" startLine="95" startPosition="0" endLine="96" endPosition="28">
+      <varInfo nodeId="6487379123666461977" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="6487379123666461979" fileName="GWTModuleStubs.java" startLine="95" startPosition="44" endLine="96" endPosition="28" />
     <scopeInfo nodeId="6487379123666460726" fileName="GWTModuleStubs.java" startLine="99" startPosition="13" endLine="100" endPosition="21" />
     <scopeInfo nodeId="6487379123666157443" fileName="GWTModuleStubs.java" startLine="146" startPosition="59" endLine="147" endPosition="98" />

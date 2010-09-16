@@ -2190,11 +2190,16 @@
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7196776143116382805">
               <link role="classifier:3" targetNodeId="5.~IFile" resolveInfo="IFile" />
             </node>
-            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7196776143116382806">
-              <link role="classConcept:3" targetNodeId="5.~FileSystem" resolveInfo="FileSystem" />
-              <link role="baseMethodDeclaration:3" targetNodeId="5.~FileSystem.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolveInfo="getFile" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7196776143116382807">
-                <link role="variableDeclaration:3" targetNodeId="7196776143116382796" resolveInfo="path" />
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5609063547583680724">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5609063547583680722">
+                <link role="baseMethodDeclaration:3" targetNodeId="5.~FileSystem.getInstance():jetbrains.mps.vfs.FileSystem" resolveInfo="getInstance" />
+                <link role="classConcept:3" targetNodeId="5.~FileSystem" resolveInfo="FileSystem" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5609063547583680728">
+                <link role="baseMethodDeclaration:3" targetNodeId="5.~FileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolveInfo="getFileByPath" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5609063547583685093">
+                  <link role="variableDeclaration:3" targetNodeId="7196776143116382796" resolveInfo="path" />
+                </node>
               </node>
             </node>
           </node>

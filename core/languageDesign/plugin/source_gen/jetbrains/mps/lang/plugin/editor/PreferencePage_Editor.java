@@ -30,7 +30,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.lang.structure.editor.EditorUtil;
 import jetbrains.mps.plugins.MacrosUtil;
 import jetbrains.mps.vfs.FileSystem;
-
 import javax.swing.JComponent;
 
 public class PreferencePage_Editor extends DefaultNodeEditor {

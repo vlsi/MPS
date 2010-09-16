@@ -2556,8 +2556,8 @@
     <scopeInfo nodeId="5923576889075046415" fileName="MappingSelectTree.java" startLine="67" startPosition="59" endLine="78" endPosition="0" />
     <scopeInfo nodeId="5923576889075046617" fileName="MappingSelectTree.java" startLine="111" startPosition="134" endLine="125" endPosition="20">
       <varInfo nodeId="5923576889075046650" varName="itemListener" />
-      <varInfo nodeId="5923576889075046634" varName="node" />
       <varInfo nodeId="5923576889075046619" varName="editor" />
+      <varInfo nodeId="5923576889075046634" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="5923576889075046602" fileName="MappingSelectTree.java" startLine="110" startPosition="0" endLine="127" endPosition="0">
       <varInfo nodeId="5923576889075046609" varName="selected" />
@@ -2568,13 +2568,13 @@
       <varInfo nodeId="5923576889075046615" varName="row" />
     </scopeInfo>
     <scopeInfo nodeId="5923576889075046490" fileName="MappingSelectTree.java" startLine="90" startPosition="40" endLine="108" endPosition="18">
-      <varInfo nodeId="5923576889075046500" varName="data" />
       <varInfo nodeId="5923576889075046492" varName="checkbox" />
+      <varInfo nodeId="5923576889075046500" varName="data" />
     </scopeInfo>
     <scopeInfo nodeId="5923576889075046487" fileName="MappingSelectTree.java" startLine="89" startPosition="0" endLine="110" endPosition="0" />
     <scopeInfo nodeId="5923576889075046327" fileName="MappingSelectTree.java" startLine="52" startPosition="154" endLine="79" endPosition="24">
-      <varInfo nodeId="5923576889075046397" varName="text" />
       <varInfo nodeId="5923576889075046391" varName="node" />
+      <varInfo nodeId="5923576889075046397" varName="text" />
       <varInfo nodeId="5923576889075046344" varName="textBackground" />
       <varInfo nodeId="5923576889075046329" varName="selectionForeground" />
       <varInfo nodeId="5923576889075046339" varName="textForeground" />
@@ -2585,8 +2585,8 @@
       <varInfo nodeId="5923576889075046313" varName="tree" />
       <varInfo nodeId="5923576889075046315" varName="value" />
       <varInfo nodeId="5923576889075046321" varName="leaf" />
-      <varInfo nodeId="5923576889075046325" varName="hasFocus" />
       <varInfo nodeId="5923576889075046319" varName="expanded" />
+      <varInfo nodeId="5923576889075046325" varName="hasFocus" />
       <varInfo nodeId="5923576889075046323" varName="row" />
     </scopeInfo>
     <unitInfo nodeId="5923576889075046654" fileName="MappingSelectTree.java" startLine="115" startPosition="38" endLine="121" endPosition="7" unitName="jetbrains.mps.ide.properties.MappingSelectTree$1" />
@@ -2848,8 +2848,8 @@
     </scopeInfo>
     <scopeInfo nodeId="5923576889075047200" fileName="EditOperandDialog.java" startLine="86" startPosition="115" endLine="90" endPosition="32">
       <varInfo nodeId="5923576889075047216" varName="nodeNode" />
-      <varInfo nodeId="5923576889075047210" varName="nodeData" />
       <varInfo nodeId="5923576889075047202" varName="np" />
+      <varInfo nodeId="5923576889075047210" varName="nodeData" />
     </scopeInfo>
     <scopeInfo nodeId="5923576889075047226" fileName="EditOperandDialog.java" startLine="94" startPosition="0" endLine="98" endPosition="0" />
     <scopeInfo nodeId="5923576889075047246" fileName="EditOperandDialog.java" startLine="103" startPosition="0" endLine="107" endPosition="0" />
@@ -2904,8 +2904,8 @@
     </scopeInfo>
     <scopeInfo nodeId="5923576889075047312" fileName="EditOperandDialog.java" startLine="110" startPosition="56" endLine="119" endPosition="7" />
     <scopeInfo nodeId="5923576889075047554" fileName="EditOperandDialog.java" startLine="173" startPosition="96" endLine="182" endPosition="5">
-      <varInfo nodeId="5923576889075047567" varName="children" />
       <varInfo nodeId="5923576889075047556" varName="nodeRef" />
+      <varInfo nodeId="5923576889075047567" varName="children" />
     </scopeInfo>
     <scopeInfo nodeId="5923576889075047079" fileName="EditOperandDialog.java" startLine="65" startPosition="75" endLine="75" endPosition="5">
       <varInfo nodeId="5923576889075047081" varName="nodeData" />
@@ -2922,8 +2922,8 @@
       <varInfo nodeId="5923576889075047932" varName="children" />
     </scopeInfo>
     <scopeInfo nodeId="5923576889075047975" fileName="EditOperandDialog.java" startLine="270" startPosition="64" endLine="280" endPosition="23">
-      <varInfo nodeId="5923576889075048016" varName="checksUnder" />
       <varInfo nodeId="5923576889075047977" varName="childChecks" />
+      <varInfo nodeId="5923576889075048016" varName="checksUnder" />
       <varInfo nodeId="5923576889075048008" varName="rootData" />
       <varInfo nodeId="5923576889075047981" varName="children" />
     </scopeInfo>
@@ -3012,8 +3012,8 @@
       <varInfo nodeId="5923576889075047362" varName="operand" />
     </scopeInfo>
     <scopeInfo nodeId="5923576889075046943" fileName="EditOperandDialog.java" startLine="38" startPosition="0" endLine="63" endPosition="3">
-      <varInfo nodeId="5923576889075046950" varName="operand" />
       <varInfo nodeId="5923576889075046947" varName="depGenerators" />
+      <varInfo nodeId="5923576889075046950" varName="operand" />
       <varInfo nodeId="5923576889075046952" varName="isLeft" />
       <varInfo nodeId="5923576889075046945" varName="currentGen" />
     </scopeInfo>

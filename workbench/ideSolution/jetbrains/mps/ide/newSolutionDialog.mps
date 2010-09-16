@@ -394,11 +394,21 @@
                                     <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="1218130121692" />
                                     <node role="operation:3" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation:0" id="1218130121693">
                                       <link role="member:0" targetNodeId="1203608542333" resolveInfo="createNewSolution" />
-                                      <node role="actualArgument:0" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1218130121697">
-                                        <link role="baseMethodDeclaration:3" targetNodeId="8.~FileSystem.getFile(java.io.File):jetbrains.mps.vfs.IFile" resolveInfo="getFile" />
-                                        <link role="classConcept:3" targetNodeId="8.~FileSystem" resolveInfo="FileSystem" />
-                                        <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5890305283801268038">
-                                          <link role="variableDeclaration:3" targetNodeId="1203609799598" resolveInfo="file" />
+                                      <node role="actualArgument:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7786882890812639531">
+                                        <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7786882890812639529">
+                                          <link role="baseMethodDeclaration:3" targetNodeId="8.~FileSystem.getInstance():jetbrains.mps.vfs.FileSystem" resolveInfo="getInstance" />
+                                          <link role="classConcept:3" targetNodeId="8.~FileSystem" resolveInfo="FileSystem" />
+                                        </node>
+                                        <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7786882890812639535">
+                                          <link role="baseMethodDeclaration:3" targetNodeId="8.~FileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolveInfo="getFileByPath" />
+                                          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7786882890812639648">
+                                            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7786882890812639647">
+                                              <link role="variableDeclaration:3" targetNodeId="1203609799598" resolveInfo="file" />
+                                            </node>
+                                            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7786882890812639652">
+                                              <link role="baseMethodDeclaration:3" targetNodeId="2.~File.getAbsolutePath():java.lang.String" resolveInfo="getAbsolutePath" />
+                                            </node>
+                                          </node>
                                         </node>
                                       </node>
                                     </node>

@@ -3456,8 +3456,8 @@
                           <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4771114505329668171">
                             <link role="variableDeclaration:3" targetNodeId="4771114505329668084" resolveInfo="cacheDir" />
                           </node>
-                          <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4771114505329668163">
-                            <link role="baseMethodDeclaration:3" targetNodeId="7.~IFile.getPath():java.lang.String" resolveInfo="getPath" />
+                          <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5609063547583689509">
+                            <link role="baseMethodDeclaration:3" targetNodeId="7.~IFile.getAbsolutePath():java.lang.String" resolveInfo="getAbsolutePath" />
                           </node>
                         </node>
                         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4771114505329668164">
@@ -5416,8 +5416,8 @@
                                     <link role="baseMethodDeclaration:3" targetNodeId="11.~JarFileClassPathItem.getIFile():jetbrains.mps.vfs.IFile" resolveInfo="getIFile" />
                                   </node>
                                 </node>
-                                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8223737516323747325">
-                                  <link role="baseMethodDeclaration:3" targetNodeId="7.~IFile.getPath():java.lang.String" resolveInfo="getPath" />
+                                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5609063547583686976">
+                                  <link role="baseMethodDeclaration:3" targetNodeId="7.~IFile.getAbsolutePath():java.lang.String" resolveInfo="getAbsolutePath" />
                                 </node>
                               </node>
                             </node>
@@ -5438,8 +5438,8 @@
                                     <link role="baseMethodDeclaration:3" targetNodeId="11.~JarFileClassPathItem.getIFile():jetbrains.mps.vfs.IFile" resolveInfo="getIFile" />
                                   </node>
                                 </node>
-                                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1040213783748331994">
-                                  <link role="baseMethodDeclaration:3" targetNodeId="7.~IFile.getPath():java.lang.String" resolveInfo="getPath" />
+                                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5609063547583686978">
+                                  <link role="baseMethodDeclaration:3" targetNodeId="7.~IFile.getAbsolutePath():java.lang.String" resolveInfo="getAbsolutePath" />
                                 </node>
                               </node>
                             </node>

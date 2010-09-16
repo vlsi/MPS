@@ -10,7 +10,6 @@ import javax.swing.Icon;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.vfs.IFile;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.ide.projectPane.Icons;
 
 public class ModuleData implements NodeData {

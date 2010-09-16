@@ -448,11 +448,11 @@
     <nodeInfo nodeId="1222950820946" fileName="BuildGeneratorUtil.java" startLine="36" startPosition="43" endLine="37" endPosition="14" />
     <nodeInfo nodeId="689680155165949416" fileName="BuildGeneratorUtil.java" startLine="42" startPosition="27" endLine="43" endPosition="105" />
     <nodeInfo nodeId="1222950820981" fileName="BuildGeneratorUtil.java" startLine="46" startPosition="5" endLine="47" endPosition="33" />
-    <nodeInfo nodeId="1222950592408" fileName="BuildGeneratorUtil.java" startLine="50" startPosition="109" endLine="51" endPosition="60" />
+    <nodeInfo nodeId="1222950592408" fileName="BuildGeneratorUtil.java" startLine="50" startPosition="109" endLine="51" endPosition="80" />
     <nodeInfo nodeId="1222950592415" fileName="BuildGeneratorUtil.java" startLine="52" startPosition="34" endLine="53" endPosition="27" />
     <nodeInfo nodeId="1222950592423" fileName="BuildGeneratorUtil.java" startLine="54" startPosition="5" endLine="55" endPosition="107" />
-    <nodeInfo nodeId="1222950592433" fileName="BuildGeneratorUtil.java" startLine="55" startPosition="107" endLine="56" endPosition="68" />
-    <nodeInfo nodeId="1222950592438" fileName="BuildGeneratorUtil.java" startLine="56" startPosition="68" endLine="57" endPosition="28" />
+    <nodeInfo nodeId="1222950592433" fileName="BuildGeneratorUtil.java" startLine="55" startPosition="107" endLine="56" endPosition="88" />
+    <nodeInfo nodeId="1222950592438" fileName="BuildGeneratorUtil.java" startLine="56" startPosition="88" endLine="57" endPosition="28" />
     <nodeInfo nodeId="1240327588373" fileName="BuildGeneratorUtil.java" startLine="60" startPosition="34" endLine="61" endPosition="90" />
     <nodeInfo nodeId="1222950592461" fileName="BuildGeneratorUtil.java" startLine="64" startPosition="39" endLine="65" endPosition="37" />
     <nodeInfo nodeId="1240328311944" fileName="BuildGeneratorUtil.java" startLine="66" startPosition="34" endLine="67" endPosition="87" />
@@ -475,7 +475,7 @@
     <nodeInfo nodeId="1222950292814" fileName="BuildGeneratorUtil.java" startLine="26" startPosition="33" endLine="28" endPosition="3" />
     <nodeInfo nodeId="1240328429137" fileName="BuildGeneratorUtil.java" startLine="68" startPosition="12" endLine="70" endPosition="7" />
     <nodeInfo nodeId="1222950592470" fileName="BuildGeneratorUtil.java" startLine="71" startPosition="10" endLine="73" endPosition="5" />
-    <nodeInfo nodeId="1222950592413" fileName="BuildGeneratorUtil.java" startLine="51" startPosition="60" endLine="54" endPosition="5" />
+    <nodeInfo nodeId="1222950592413" fileName="BuildGeneratorUtil.java" startLine="51" startPosition="80" endLine="54" endPosition="5" />
     <nodeInfo nodeId="1222950820940" fileName="BuildGeneratorUtil.java" startLine="34" startPosition="84" endLine="38" endPosition="7" />
     <nodeInfo nodeId="689680155165949414" fileName="BuildGeneratorUtil.java" startLine="41" startPosition="60" endLine="45" endPosition="0" />
     <nodeInfo nodeId="1240327566451" fileName="BuildGeneratorUtil.java" startLine="59" startPosition="87" endLine="63" endPosition="0" />
@@ -1251,65 +1251,65 @@
     <unitInfo nodeId="1223050119523" fileName="LanguagesStep.java" startLine="27" startPosition="0" endLine="179" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.LanguagesStep" />
   </root>
   <root nodeId="1223050119955">
-    <nodeInfo nodeId="1223050119956" fileName="ModuleData.java" startLine="16" startPosition="45" endLine="17" endPosition="33" />
-    <nodeInfo nodeId="1224167919271" fileName="ModuleData.java" startLine="17" startPosition="33" endLine="18" endPosition="28" />
-    <nodeInfo nodeId="1223050119964" fileName="ModuleData.java" startLine="20" startPosition="37" endLine="21" endPosition="27" />
-    <nodeInfo nodeId="1223050119977" fileName="ModuleData.java" startLine="24" startPosition="27" endLine="25" endPosition="43" />
-    <nodeInfo nodeId="1223050119989" fileName="ModuleData.java" startLine="28" startPosition="39" endLine="29" endPosition="60" />
-    <nodeInfo nodeId="1223493513227" fileName="ModuleData.java" startLine="33" startPosition="50" endLine="34" endPosition="72" />
-    <nodeInfo nodeId="1223493573353" fileName="ModuleData.java" startLine="35" startPosition="25" endLine="36" endPosition="60" />
-    <nodeInfo nodeId="1223493573360" fileName="ModuleData.java" startLine="37" startPosition="34" endLine="38" endPosition="53" />
-    <nodeInfo nodeId="1223050119995" fileName="ModuleData.java" startLine="41" startPosition="5" endLine="42" endPosition="31" />
-    <nodeInfo nodeId="1223492740756" fileName="ModuleData.java" startLine="45" startPosition="30" endLine="46" endPosition="25" />
-    <nodeInfo nodeId="1223664090049" fileName="ModuleData.java" startLine="49" startPosition="36" endLine="50" endPosition="17" />
-    <nodeInfo nodeId="1224168168231" fileName="ModuleData.java" startLine="56" startPosition="31" endLine="57" endPosition="25" />
-    <nodeInfo nodeId="1224168177272" fileName="ModuleData.java" startLine="60" startPosition="42" endLine="61" endPosition="27" />
-    <nodeInfo nodeId="1223050119960" fileName="ModuleData.java" startLine="19" startPosition="0" endLine="22" endPosition="3" />
-    <nodeInfo nodeId="1223493573358" fileName="ModuleData.java" startLine="36" startPosition="60" endLine="39" endPosition="9" />
-    <nodeInfo nodeId="1224165273963" fileName="ModuleData.java" startLine="52" startPosition="0" endLine="55" endPosition="0" />
-    <nodeInfo nodeId="1223050119973" fileName="ModuleData.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
-    <nodeInfo nodeId="1223050119983" fileName="ModuleData.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <nodeInfo nodeId="1223492729293" fileName="ModuleData.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <nodeInfo nodeId="1223664083671" fileName="ModuleData.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
-    <nodeInfo nodeId="1224167912941" fileName="ModuleData.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
-    <nodeInfo nodeId="1224168173122" fileName="ModuleData.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
-    <nodeInfo nodeId="1223493559685" fileName="ModuleData.java" startLine="34" startPosition="72" endLine="40" endPosition="7" />
-    <nodeInfo nodeId="1223493470353" fileName="ModuleData.java" startLine="32" startPosition="41" endLine="41" endPosition="5" />
-    <nodeInfo nodeId="1223050119991" fileName="ModuleData.java" startLine="31" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="1224165273968" fileName="ModuleData.java" startLine="53" startPosition="46" endLine="53" endPosition="46" />
-    <scopeInfo nodeId="1223050119963" fileName="ModuleData.java" startLine="20" startPosition="37" endLine="21" endPosition="27" />
-    <scopeInfo nodeId="1223050119976" fileName="ModuleData.java" startLine="24" startPosition="27" endLine="25" endPosition="43" />
-    <scopeInfo nodeId="1223050119988" fileName="ModuleData.java" startLine="28" startPosition="39" endLine="29" endPosition="60" />
-    <scopeInfo nodeId="1223493573359" fileName="ModuleData.java" startLine="37" startPosition="34" endLine="38" endPosition="53" />
-    <scopeInfo nodeId="1223492729296" fileName="ModuleData.java" startLine="45" startPosition="30" endLine="46" endPosition="25" />
-    <scopeInfo nodeId="1223664083674" fileName="ModuleData.java" startLine="49" startPosition="36" endLine="50" endPosition="17" />
-    <scopeInfo nodeId="1224167912944" fileName="ModuleData.java" startLine="56" startPosition="31" endLine="57" endPosition="25" />
-    <scopeInfo nodeId="1224168173127" fileName="ModuleData.java" startLine="60" startPosition="42" endLine="61" endPosition="27" />
-    <scopeInfo nodeId="1223050119960" fileName="ModuleData.java" startLine="19" startPosition="0" endLine="22" endPosition="3">
+    <nodeInfo nodeId="1223050119956" fileName="ModuleData.java" startLine="15" startPosition="45" endLine="16" endPosition="33" />
+    <nodeInfo nodeId="1224167919271" fileName="ModuleData.java" startLine="16" startPosition="33" endLine="17" endPosition="28" />
+    <nodeInfo nodeId="1223050119964" fileName="ModuleData.java" startLine="19" startPosition="37" endLine="20" endPosition="27" />
+    <nodeInfo nodeId="1223050119977" fileName="ModuleData.java" startLine="23" startPosition="27" endLine="24" endPosition="43" />
+    <nodeInfo nodeId="1223050119989" fileName="ModuleData.java" startLine="27" startPosition="39" endLine="28" endPosition="60" />
+    <nodeInfo nodeId="1223493513227" fileName="ModuleData.java" startLine="32" startPosition="50" endLine="33" endPosition="72" />
+    <nodeInfo nodeId="1223493573353" fileName="ModuleData.java" startLine="34" startPosition="25" endLine="35" endPosition="55" />
+    <nodeInfo nodeId="1223493573360" fileName="ModuleData.java" startLine="36" startPosition="34" endLine="37" endPosition="53" />
+    <nodeInfo nodeId="1223050119995" fileName="ModuleData.java" startLine="40" startPosition="5" endLine="41" endPosition="31" />
+    <nodeInfo nodeId="1223492740756" fileName="ModuleData.java" startLine="44" startPosition="30" endLine="45" endPosition="25" />
+    <nodeInfo nodeId="1223664090049" fileName="ModuleData.java" startLine="48" startPosition="36" endLine="49" endPosition="17" />
+    <nodeInfo nodeId="1224168168231" fileName="ModuleData.java" startLine="55" startPosition="31" endLine="56" endPosition="25" />
+    <nodeInfo nodeId="1224168177272" fileName="ModuleData.java" startLine="59" startPosition="42" endLine="60" endPosition="27" />
+    <nodeInfo nodeId="1223050119960" fileName="ModuleData.java" startLine="18" startPosition="0" endLine="21" endPosition="3" />
+    <nodeInfo nodeId="1223493573358" fileName="ModuleData.java" startLine="35" startPosition="55" endLine="38" endPosition="9" />
+    <nodeInfo nodeId="1224165273963" fileName="ModuleData.java" startLine="51" startPosition="0" endLine="54" endPosition="0" />
+    <nodeInfo nodeId="1223050119973" fileName="ModuleData.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
+    <nodeInfo nodeId="1223050119983" fileName="ModuleData.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
+    <nodeInfo nodeId="1223492729293" fileName="ModuleData.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
+    <nodeInfo nodeId="1223664083671" fileName="ModuleData.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <nodeInfo nodeId="1224167912941" fileName="ModuleData.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
+    <nodeInfo nodeId="1224168173122" fileName="ModuleData.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
+    <nodeInfo nodeId="1223493559685" fileName="ModuleData.java" startLine="33" startPosition="72" endLine="39" endPosition="7" />
+    <nodeInfo nodeId="1223493470353" fileName="ModuleData.java" startLine="31" startPosition="41" endLine="40" endPosition="5" />
+    <nodeInfo nodeId="1223050119991" fileName="ModuleData.java" startLine="30" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="1224165273968" fileName="ModuleData.java" startLine="52" startPosition="46" endLine="52" endPosition="46" />
+    <scopeInfo nodeId="1223050119963" fileName="ModuleData.java" startLine="19" startPosition="37" endLine="20" endPosition="27" />
+    <scopeInfo nodeId="1223050119976" fileName="ModuleData.java" startLine="23" startPosition="27" endLine="24" endPosition="43" />
+    <scopeInfo nodeId="1223050119988" fileName="ModuleData.java" startLine="27" startPosition="39" endLine="28" endPosition="60" />
+    <scopeInfo nodeId="1223493573359" fileName="ModuleData.java" startLine="36" startPosition="34" endLine="37" endPosition="53" />
+    <scopeInfo nodeId="1223492729296" fileName="ModuleData.java" startLine="44" startPosition="30" endLine="45" endPosition="25" />
+    <scopeInfo nodeId="1223664083674" fileName="ModuleData.java" startLine="48" startPosition="36" endLine="49" endPosition="17" />
+    <scopeInfo nodeId="1224167912944" fileName="ModuleData.java" startLine="55" startPosition="31" endLine="56" endPosition="25" />
+    <scopeInfo nodeId="1224168173127" fileName="ModuleData.java" startLine="59" startPosition="42" endLine="60" endPosition="27" />
+    <scopeInfo nodeId="1223050119960" fileName="ModuleData.java" startLine="18" startPosition="0" endLine="21" endPosition="3">
       <varInfo nodeId="1223050119970" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="1224165273963" fileName="ModuleData.java" startLine="52" startPosition="0" endLine="55" endPosition="0">
+    <scopeInfo nodeId="1224165273963" fileName="ModuleData.java" startLine="51" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="1224165273966" varName="nodeData" />
     </scopeInfo>
-    <scopeInfo nodeId="1223050119973" fileName="ModuleData.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="1223050119983" fileName="ModuleData.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="1223493559686" fileName="ModuleData.java" startLine="35" startPosition="25" endLine="39" endPosition="9">
+    <scopeInfo nodeId="1223050119973" fileName="ModuleData.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="1223050119983" fileName="ModuleData.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="1223493559686" fileName="ModuleData.java" startLine="34" startPosition="25" endLine="38" endPosition="9">
       <varInfo nodeId="1223493573354" varName="virtualFile" />
     </scopeInfo>
-    <scopeInfo nodeId="1223492729293" fileName="ModuleData.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="1223664083671" fileName="ModuleData.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="1224167912941" fileName="ModuleData.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="1224168173122" fileName="ModuleData.java" startLine="59" startPosition="0" endLine="63" endPosition="0">
+    <scopeInfo nodeId="1223492729293" fileName="ModuleData.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="1223664083671" fileName="ModuleData.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="1224167912941" fileName="ModuleData.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="1224168173122" fileName="ModuleData.java" startLine="58" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="1224168173125" varName="parent" />
     </scopeInfo>
-    <scopeInfo nodeId="1223493470354" fileName="ModuleData.java" startLine="33" startPosition="50" endLine="40" endPosition="7">
+    <scopeInfo nodeId="1223493470354" fileName="ModuleData.java" startLine="32" startPosition="50" endLine="39" endPosition="7">
       <varInfo nodeId="1223493513228" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="1223050119994" fileName="ModuleData.java" startLine="32" startPosition="41" endLine="42" endPosition="31" />
-    <scopeInfo nodeId="1223050119991" fileName="ModuleData.java" startLine="31" startPosition="0" endLine="44" endPosition="0">
+    <scopeInfo nodeId="1223050119994" fileName="ModuleData.java" startLine="31" startPosition="41" endLine="41" endPosition="31" />
+    <scopeInfo nodeId="1223050119991" fileName="ModuleData.java" startLine="30" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="1223663680981" varName="expanded" />
     </scopeInfo>
-    <unitInfo nodeId="1223050119955" fileName="ModuleData.java" startLine="16" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.ModuleData" />
+    <unitInfo nodeId="1223050119955" fileName="ModuleData.java" startLine="15" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.ModuleData" />
   </root>
   <root nodeId="1223050119997">
     <nodeInfo nodeId="1223050119998" fileName="ModulesListData.java" startLine="12" startPosition="50" endLine="13" endPosition="90" />

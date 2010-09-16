@@ -53,7 +53,6 @@
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.VcsMigrationUtil" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
-    <classNode dependClassName="jetbrains.mps.vfs.FileSystemFile" />
     <classNode dependClassName="jetbrains.mps.vfs.VFileSystem" />
     <classNode dependClassName="org.jdesktop.beansbinding.AutoBinding" />
     <classNode dependClassName="org.jdesktop.beansbinding.BeanProperty" />

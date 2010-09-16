@@ -5,7 +5,6 @@ package jetbrains.mps.debug.api.info;
 import jetbrains.mps.generator.fileGenerator.BaseModelCache;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.generator.fileGenerator.FileGenerationManager;
-import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.fileGenerator.CacheGenerationContext;
@@ -23,6 +22,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import java.io.InputStream;
 import org.jdom.JDOMException;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.vfs.FileSystem;
 import com.intellij.openapi.application.ApplicationManager;
 
 public class BLDebugInfoCache extends BaseModelCache<DebugInfo> {

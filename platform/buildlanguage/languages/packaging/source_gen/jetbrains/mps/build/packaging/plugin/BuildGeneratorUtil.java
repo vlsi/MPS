@@ -10,9 +10,8 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-
+import jetbrains.mps.vfs.FileSystem;
 import java.io.File;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.IModule;

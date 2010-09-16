@@ -21,7 +21,7 @@
     <nodeInfo nodeId="1203611204703" fileName="NewSolutionDialogContentPane.java" startLine="222" startPosition="62" endLine="223" endPosition="13" />
     <nodeInfo nodeId="3734045384532741042" fileName="NewSolutionDialogContentPane.java" startLine="224" startPosition="5" endLine="225" endPosition="33" />
     <nodeInfo nodeId="1218129046623" fileName="NewSolutionDialogContentPane.java" startLine="227" startPosition="61" endLine="228" endPosition="41" />
-    <nodeInfo nodeId="1218130121689" fileName="NewSolutionDialogContentPane.java" startLine="230" startPosition="29" endLine="231" endPosition="81" />
+    <nodeInfo nodeId="1218130121689" fileName="NewSolutionDialogContentPane.java" startLine="230" startPosition="29" endLine="231" endPosition="119" />
     <nodeInfo nodeId="3734045384532741037" fileName="NewSolutionDialogContentPane.java" startLine="238" startPosition="31" endLine="239" endPosition="33" />
     <nodeInfo nodeId="5890305283801268145" fileName="NewSolutionDialogContentPane.java" startLine="242" startPosition="78" endLine="243" endPosition="101" />
     <nodeInfo nodeId="5890305283801268166" fileName="NewSolutionDialogContentPane.java" startLine="243" startPosition="101" endLine="244" endPosition="77" />
@@ -45,7 +45,7 @@
     <nodeInfo nodeId="1218128973228" fileName="NewSolutionDialogContentPane.java" startLine="225" startPosition="33" endLine="235" endPosition="7" />
     <nodeInfo nodeId="1203676067041" fileName="NewSolutionDialogContentPane.java" startLine="247" startPosition="0" endLine="258" endPosition="0" />
     <nodeInfo nodeId="1203599983021" fileName="NewSolutionDialogContentPane.java" startLine="199" startPosition="0" endLine="237" endPosition="0" />
-    <scopeInfo nodeId="1218130113686" fileName="NewSolutionDialogContentPane.java" startLine="230" startPosition="29" endLine="231" endPosition="81" />
+    <scopeInfo nodeId="1218130113686" fileName="NewSolutionDialogContentPane.java" startLine="230" startPosition="29" endLine="231" endPosition="119" />
     <scopeInfo nodeId="1203599986637" fileName="NewSolutionDialogContentPane.java" startLine="238" startPosition="31" endLine="239" endPosition="33" />
     <scopeInfo nodeId="1203679190578" fileName="NewSolutionDialogContentPane.java" startLine="249" startPosition="38" endLine="250" endPosition="13" />
     <scopeInfo nodeId="1203676180746" fileName="NewSolutionDialogContentPane.java" startLine="254" startPosition="96" endLine="255" endPosition="64" />

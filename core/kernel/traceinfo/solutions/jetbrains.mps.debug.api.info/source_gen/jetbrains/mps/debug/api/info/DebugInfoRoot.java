@@ -6,14 +6,13 @@ import jetbrains.mps.logging.Logger;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.TreeSet;
-
-import jetbrains.mps.vfs.FileSystem;
 import org.jdom.Element;
 import org.jdom.DataConversionException;
 import java.util.List;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.io.File;
+import jetbrains.mps.vfs.FileSystem;
 
 public class DebugInfoRoot {
   private static final String NODE_INFO = "nodeInfo";

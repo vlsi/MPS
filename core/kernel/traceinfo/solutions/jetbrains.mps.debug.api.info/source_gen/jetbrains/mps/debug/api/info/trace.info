@@ -211,7 +211,7 @@
     <nodeInfo nodeId="4494976841093370228" fileName="DebugInfoRoot.java" startLine="105" startPosition="5" endLine="106" endPosition="18" />
     <nodeInfo nodeId="4494976841093370236" fileName="DebugInfoRoot.java" startLine="109" startPosition="85" endLine="110" endPosition="72" />
     <nodeInfo nodeId="4494976841093370246" fileName="DebugInfoRoot.java" startLine="110" startPosition="72" endLine="111" endPosition="94" />
-    <nodeInfo nodeId="4494976841093370260" fileName="DebugInfoRoot.java" startLine="111" startPosition="94" endLine="112" endPosition="70" />
+    <nodeInfo nodeId="4494976841093370260" fileName="DebugInfoRoot.java" startLine="111" startPosition="94" endLine="112" endPosition="90" />
     <nodeInfo nodeId="4494976841093370524" fileName="DebugInfoRoot.java" startLine="28" startPosition="0" endLine="31" endPosition="3" />
     <nodeInfo nodeId="4872275249399768725" fileName="DebugInfoRoot.java" startLine="33" startPosition="50" endLine="36" endPosition="5" />
     <nodeInfo nodeId="4837185610456269835" fileName="DebugInfoRoot.java" startLine="40" startPosition="60" endLine="43" endPosition="5" />
@@ -267,7 +267,7 @@
     <scopeInfo nodeId="5166158193670442812" fileName="DebugInfoRoot.java" startLine="102" startPosition="5" endLine="105" endPosition="5">
       <varInfo nodeId="5166158193670442813" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4494976841093370235" fileName="DebugInfoRoot.java" startLine="109" startPosition="85" endLine="112" endPosition="70">
+    <scopeInfo nodeId="4494976841093370235" fileName="DebugInfoRoot.java" startLine="109" startPosition="85" endLine="112" endPosition="90">
       <varInfo nodeId="4494976841093370247" varName="debugPath" />
       <varInfo nodeId="4494976841093370237" varName="modelName" />
     </scopeInfo>
@@ -619,7 +619,7 @@
     <nodeInfo nodeId="4806149635758415146" fileName="BLDebugInfoCache.java" startLine="99" startPosition="5" endLine="100" endPosition="0" />
     <nodeInfo nodeId="2112847400037516666" fileName="BLDebugInfoCache.java" startLine="101" startPosition="30" endLine="102" endPosition="81" />
     <nodeInfo nodeId="4806149635758415189" fileName="BLDebugInfoCache.java" startLine="103" startPosition="5" endLine="104" endPosition="0" />
-    <nodeInfo nodeId="4806149635758415190" fileName="BLDebugInfoCache.java" startLine="104" startPosition="0" endLine="105" endPosition="42" />
+    <nodeInfo nodeId="4806149635758415190" fileName="BLDebugInfoCache.java" startLine="104" startPosition="0" endLine="105" endPosition="62" />
     <nodeInfo nodeId="4494976841093545527" fileName="BLDebugInfoCache.java" startLine="108" startPosition="48" endLine="109" endPosition="84" />
     <nodeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="113" startPosition="20" endLine="114" endPosition="18" />
     <nodeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="115" startPosition="5" endLine="116" endPosition="22" />
@@ -654,11 +654,23 @@
     <scopeInfo nodeId="4494976841093543971" fileName="BLDebugInfoCache.java" startLine="42" startPosition="39" endLine="43" endPosition="27" />
     <scopeInfo nodeId="4494976841093543967" fileName="BLDebugInfoCache.java" startLine="46" startPosition="65" endLine="47" endPosition="30" />
     <scopeInfo nodeId="4806149635758432692" fileName="BLDebugInfoCache.java" startLine="54" startPosition="28" endLine="55" endPosition="18" />
+    <scopeInfo nodeId="4806149635758432723" fileName="BLDebugInfoCache.java" startLine="63" startPosition="0" endLine="64" endPosition="19">
+      <varInfo nodeId="4806149635758432724" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="4806149635758432726" fileName="BLDebugInfoCache.java" startLine="63" startPosition="29" endLine="64" endPosition="19" />
     <scopeInfo nodeId="4806149635758432739" fileName="BLDebugInfoCache.java" startLine="67" startPosition="13" endLine="68" endPosition="21" />
+    <scopeInfo nodeId="4806149635758432744" fileName="BLDebugInfoCache.java" startLine="69" startPosition="0" endLine="70" endPosition="23">
+      <varInfo nodeId="4806149635758432745" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="4806149635758432747" fileName="BLDebugInfoCache.java" startLine="69" startPosition="33" endLine="70" endPosition="23" />
     <scopeInfo nodeId="4641257602950179471" fileName="BLDebugInfoCache.java" startLine="82" startPosition="25" endLine="83" endPosition="18" />
+    <scopeInfo nodeId="4806149635758536014" fileName="BLDebugInfoCache.java" startLine="88" startPosition="0" endLine="89" endPosition="19">
+      <varInfo nodeId="4806149635758536015" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="4806149635758536017" fileName="BLDebugInfoCache.java" startLine="88" startPosition="29" endLine="89" endPosition="19" />
+    <scopeInfo nodeId="4806149635758536050" fileName="BLDebugInfoCache.java" startLine="90" startPosition="0" endLine="91" endPosition="19">
+      <varInfo nodeId="4806149635758536051" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="4806149635758536053" fileName="BLDebugInfoCache.java" startLine="90" startPosition="31" endLine="91" endPosition="19" />
     <scopeInfo nodeId="4806149635758415143" fileName="BLDebugInfoCache.java" startLine="97" startPosition="29" endLine="98" endPosition="18" />
     <scopeInfo nodeId="4806149635758415148" fileName="BLDebugInfoCache.java" startLine="101" startPosition="30" endLine="102" endPosition="81" />
@@ -689,7 +701,7 @@
     <scopeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="111" startPosition="0" endLine="118" endPosition="0" />
     <scopeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="118" startPosition="0" endLine="125" endPosition="0" />
     <scopeInfo nodeId="4494976841093543348" fileName="BLDebugInfoCache.java" startLine="125" startPosition="0" endLine="132" endPosition="0" />
-    <scopeInfo nodeId="4806149635758415138" fileName="BLDebugInfoCache.java" startLine="96" startPosition="82" endLine="105" endPosition="42" />
+    <scopeInfo nodeId="4806149635758415138" fileName="BLDebugInfoCache.java" startLine="96" startPosition="82" endLine="105" endPosition="62" />
     <scopeInfo nodeId="4806149635758415135" fileName="BLDebugInfoCache.java" startLine="95" startPosition="0" endLine="107" endPosition="0">
       <varInfo nodeId="4806149635758415195" varName="outputPath" />
       <varInfo nodeId="4806149635758415193" varName="module" />
@@ -1086,6 +1098,9 @@
     <scopeInfo nodeId="5166158193670392700" fileName="DebugInfo.java" startLine="266" startPosition="34" endLine="267" endPosition="92" />
     <scopeInfo nodeId="5166158193670463068" fileName="DebugInfo.java" startLine="285" startPosition="42" endLine="286" endPosition="26" />
     <scopeInfo nodeId="5166158193670462724" fileName="DebugInfo.java" startLine="302" startPosition="32" endLine="303" endPosition="77" />
+    <scopeInfo nodeId="5166158193670442705" fileName="DebugInfo.java" startLine="310" startPosition="0" endLine="311" endPosition="36">
+      <varInfo nodeId="5166158193670442706" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="5166158193670442708" fileName="DebugInfo.java" startLine="310" startPosition="41" endLine="311" endPosition="36" />
     <scopeInfo nodeId="5166158193670371782" fileName="DebugInfo.java" startLine="31" startPosition="0" endLine="33" endPosition="3" />
     <scopeInfo nodeId="5166158193670462873" fileName="DebugInfo.java" startLine="48" startPosition="27" endLine="50" endPosition="57" />
