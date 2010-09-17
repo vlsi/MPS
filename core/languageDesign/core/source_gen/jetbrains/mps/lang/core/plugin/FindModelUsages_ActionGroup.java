@@ -22,6 +22,6 @@ public class FindModelUsages_ActionGroup extends GeneratedActionGroup {
   }
 
   public void adjust() {
-    this.insertGroupIntoAnother(ModelActions_ActionGroup.ID, null);
+    this.insertGroupIntoAnother(ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_modelUsages);
   }
 }

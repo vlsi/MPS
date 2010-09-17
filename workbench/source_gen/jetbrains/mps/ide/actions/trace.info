@@ -103,11 +103,11 @@
   <unitInfo fileName="StepOver_Action.java" startLine="17" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ide.actions.StepOver_Action" />
   <unitInfo fileName="Pause_Action.java" startLine="17" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ide.actions.Pause_Action" />
   <unitInfo fileName="Resume_Action.java" startLine="17" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ide.actions.Resume_Action" />
-  <unitInfo fileName="ModelActions_ActionGroup.java" startLine="10" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.ide.actions.ModelActions_ActionGroup" />
   <unitInfo fileName="RemoveTransientModels_Action.java" startLine="18" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.ide.actions.RemoveTransientModels_Action" />
   <unitInfo fileName="NamespaceInternalActions_ActionGroup.java" startLine="24" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.ide.actions.NamespaceInternalActions_ActionGroup" />
   <unitInfo fileName="ViewBreakpoints_Action.java" startLine="19" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.actions.ViewBreakpoints_Action" />
   <unitInfo fileName="LanguageActions_ActionGroup.java" startLine="8" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.ide.actions.LanguageActions_ActionGroup" />
+  <unitInfo fileName="ModelActions_ActionGroup.java" startLine="10" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.ide.actions.ModelActions_ActionGroup" />
   <unitInfo fileName="PasteAsJavaClass_Action.java" startLine="16" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.ide.actions.PasteAsJavaClass_Action" />
   <unitInfo fileName="CellProperties_Action.java" startLine="16" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.ide.actions.CellProperties_Action" />
   <unitInfo fileName="AddMissingImports_Action.java" startLine="16" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.ide.actions.AddMissingImports_Action" />
@@ -465,43 +465,44 @@
     <nodeInfo nodeId="7527830168167546274" fileName="NodeActions_ActionGroup.java" startLine="56" startPosition="89" endLine="57" endPosition="50" />
   </root>
   <root nodeId="1204991218714">
-    <nodeInfo nodeId="1420252515663987819" fileName="ModelActions_ActionGroup.java" startLine="25" startPosition="9" endLine="26" endPosition="92" />
-    <nodeInfo nodeId="5533671870987200982" fileName="ModelActions_ActionGroup.java" startLine="26" startPosition="92" endLine="27" endPosition="113" />
-    <nodeInfo nodeId="4071906384529167646" fileName="ModelActions_ActionGroup.java" startLine="27" startPosition="113" endLine="28" endPosition="120" />
-    <nodeInfo nodeId="1204909227967" fileName="ModelActions_ActionGroup.java" startLine="28" startPosition="120" endLine="29" endPosition="51" />
-    <nodeInfo nodeId="3575273646046443963" fileName="ModelActions_ActionGroup.java" startLine="29" startPosition="51" endLine="30" endPosition="116" />
-    <nodeInfo nodeId="1215874907325" fileName="ModelActions_ActionGroup.java" startLine="30" startPosition="116" endLine="31" endPosition="114" />
-    <nodeInfo nodeId="1236184233848" fileName="ModelActions_ActionGroup.java" startLine="31" startPosition="114" endLine="32" endPosition="117" />
-    <nodeInfo nodeId="3784529850623730317" fileName="ModelActions_ActionGroup.java" startLine="32" startPosition="117" endLine="33" endPosition="51" />
-    <nodeInfo nodeId="6079405495679904871" fileName="ModelActions_ActionGroup.java" startLine="33" startPosition="51" endLine="34" endPosition="130" />
-    <nodeInfo nodeId="6079405495679904869" fileName="ModelActions_ActionGroup.java" startLine="34" startPosition="130" endLine="35" endPosition="51" />
-    <nodeInfo nodeId="1236354294303" fileName="ModelActions_ActionGroup.java" startLine="35" startPosition="51" endLine="36" endPosition="124" />
-    <nodeInfo nodeId="1215868147906" fileName="ModelActions_ActionGroup.java" startLine="36" startPosition="124" endLine="37" endPosition="121" />
-    <nodeInfo nodeId="7796696880649580093" fileName="ModelActions_ActionGroup.java" startLine="37" startPosition="121" endLine="38" endPosition="132" />
-    <nodeInfo nodeId="2510134983999478400" fileName="ModelActions_ActionGroup.java" startLine="38" startPosition="132" endLine="39" endPosition="90" />
-    <nodeInfo nodeId="1204909245350" fileName="ModelActions_ActionGroup.java" startLine="39" startPosition="90" endLine="40" endPosition="51" />
-    <nodeInfo nodeId="8071957793010769916" fileName="ModelActions_ActionGroup.java" startLine="40" startPosition="51" endLine="41" endPosition="114" />
-    <nodeInfo nodeId="1204909253120" fileName="ModelActions_ActionGroup.java" startLine="41" startPosition="114" endLine="42" endPosition="51" />
-    <nodeInfo nodeId="3906874221886741856" fileName="ModelActions_ActionGroup.java" startLine="42" startPosition="51" endLine="43" endPosition="185" />
-    <nodeInfo nodeId="2280359988539783705" fileName="ModelActions_ActionGroup.java" startLine="43" startPosition="185" endLine="44" endPosition="184" />
-    <nodeInfo nodeId="3906874221886741858" fileName="ModelActions_ActionGroup.java" startLine="44" startPosition="184" endLine="45" endPosition="159" />
-    <nodeInfo nodeId="2360909385709190614" fileName="ModelActions_ActionGroup.java" startLine="45" startPosition="159" endLine="46" endPosition="128" />
-    <nodeInfo nodeId="1204909572396" fileName="ModelActions_ActionGroup.java" startLine="46" startPosition="128" endLine="47" endPosition="51" />
-    <nodeInfo nodeId="1216120960664" fileName="ModelActions_ActionGroup.java" startLine="47" startPosition="51" endLine="48" endPosition="123" />
-    <nodeInfo nodeId="1215889790375" fileName="ModelActions_ActionGroup.java" startLine="48" startPosition="123" endLine="49" endPosition="113" />
-    <nodeInfo nodeId="1222173593116" fileName="ModelActions_ActionGroup.java" startLine="49" startPosition="113" endLine="50" endPosition="51" />
-    <nodeInfo nodeId="1222173595836" fileName="ModelActions_ActionGroup.java" startLine="50" startPosition="51" endLine="51" endPosition="93" />
-    <nodeInfo nodeId="3905468763930415933" fileName="ModelActions_ActionGroup.java" startLine="51" startPosition="93" endLine="52" endPosition="134" />
-    <nodeInfo nodeId="1221757534230" fileName="ModelActions_ActionGroup.java" startLine="52" startPosition="134" endLine="53" endPosition="51" />
-    <nodeInfo nodeId="2834677590308140822" fileName="ModelActions_ActionGroup.java" startLine="53" startPosition="51" endLine="54" endPosition="91" />
-    <nodeInfo nodeId="2834677590308140820" fileName="ModelActions_ActionGroup.java" startLine="54" startPosition="91" endLine="55" endPosition="51" />
-    <nodeInfo nodeId="7545884443035896628" fileName="ModelActions_ActionGroup.java" startLine="55" startPosition="51" endLine="56" endPosition="88" />
-    <nodeInfo nodeId="7545884443035896629" fileName="ModelActions_ActionGroup.java" startLine="56" startPosition="88" endLine="57" endPosition="51" />
-    <nodeInfo nodeId="1221757535813" fileName="ModelActions_ActionGroup.java" startLine="57" startPosition="51" endLine="58" endPosition="89" />
-    <nodeInfo nodeId="1204909603015" fileName="ModelActions_ActionGroup.java" startLine="58" startPosition="89" endLine="59" endPosition="51" />
-    <nodeInfo nodeId="4555696683442018021" fileName="ModelActions_ActionGroup.java" startLine="59" startPosition="51" endLine="60" endPosition="89" />
-    <nodeInfo nodeId="4555696683442018023" fileName="ModelActions_ActionGroup.java" startLine="60" startPosition="89" endLine="61" endPosition="51" />
-    <nodeInfo nodeId="1235220262925" fileName="ModelActions_ActionGroup.java" startLine="61" startPosition="51" endLine="62" endPosition="119" />
+    <nodeInfo nodeId="1420252515663987819" fileName="ModelActions_ActionGroup.java" startLine="26" startPosition="9" endLine="27" endPosition="92" />
+    <nodeInfo nodeId="5533671870987200982" fileName="ModelActions_ActionGroup.java" startLine="27" startPosition="92" endLine="28" endPosition="113" />
+    <nodeInfo nodeId="4071906384529167646" fileName="ModelActions_ActionGroup.java" startLine="28" startPosition="113" endLine="29" endPosition="120" />
+    <nodeInfo nodeId="1204909227967" fileName="ModelActions_ActionGroup.java" startLine="29" startPosition="120" endLine="30" endPosition="51" />
+    <nodeInfo nodeId="3575273646046443963" fileName="ModelActions_ActionGroup.java" startLine="30" startPosition="51" endLine="31" endPosition="116" />
+    <nodeInfo nodeId="1215874907325" fileName="ModelActions_ActionGroup.java" startLine="31" startPosition="116" endLine="32" endPosition="114" />
+    <nodeInfo nodeId="1236184233848" fileName="ModelActions_ActionGroup.java" startLine="32" startPosition="114" endLine="33" endPosition="117" />
+    <nodeInfo nodeId="3784529850623730317" fileName="ModelActions_ActionGroup.java" startLine="33" startPosition="117" endLine="34" endPosition="51" />
+    <nodeInfo nodeId="6079405495679904871" fileName="ModelActions_ActionGroup.java" startLine="34" startPosition="51" endLine="35" endPosition="130" />
+    <nodeInfo nodeId="6079405495679904869" fileName="ModelActions_ActionGroup.java" startLine="35" startPosition="130" endLine="36" endPosition="51" />
+    <nodeInfo nodeId="1236354294303" fileName="ModelActions_ActionGroup.java" startLine="36" startPosition="51" endLine="37" endPosition="124" />
+    <nodeInfo nodeId="1215868147906" fileName="ModelActions_ActionGroup.java" startLine="37" startPosition="124" endLine="38" endPosition="121" />
+    <nodeInfo nodeId="7796696880649580093" fileName="ModelActions_ActionGroup.java" startLine="38" startPosition="121" endLine="39" endPosition="132" />
+    <nodeInfo nodeId="2510134983999478400" fileName="ModelActions_ActionGroup.java" startLine="39" startPosition="132" endLine="40" endPosition="90" />
+    <nodeInfo nodeId="1204909245350" fileName="ModelActions_ActionGroup.java" startLine="40" startPosition="90" endLine="41" endPosition="51" />
+    <nodeInfo nodeId="8071957793010769916" fileName="ModelActions_ActionGroup.java" startLine="41" startPosition="51" endLine="42" endPosition="114" />
+    <nodeInfo nodeId="1123160817407996484" fileName="ModelActions_ActionGroup.java" startLine="42" startPosition="114" endLine="43" endPosition="93" />
+    <nodeInfo nodeId="1204909253120" fileName="ModelActions_ActionGroup.java" startLine="43" startPosition="93" endLine="44" endPosition="51" />
+    <nodeInfo nodeId="3906874221886741856" fileName="ModelActions_ActionGroup.java" startLine="44" startPosition="51" endLine="45" endPosition="185" />
+    <nodeInfo nodeId="2280359988539783705" fileName="ModelActions_ActionGroup.java" startLine="45" startPosition="185" endLine="46" endPosition="184" />
+    <nodeInfo nodeId="3906874221886741858" fileName="ModelActions_ActionGroup.java" startLine="46" startPosition="184" endLine="47" endPosition="159" />
+    <nodeInfo nodeId="2360909385709190614" fileName="ModelActions_ActionGroup.java" startLine="47" startPosition="159" endLine="48" endPosition="128" />
+    <nodeInfo nodeId="1204909572396" fileName="ModelActions_ActionGroup.java" startLine="48" startPosition="128" endLine="49" endPosition="51" />
+    <nodeInfo nodeId="1216120960664" fileName="ModelActions_ActionGroup.java" startLine="49" startPosition="51" endLine="50" endPosition="123" />
+    <nodeInfo nodeId="1215889790375" fileName="ModelActions_ActionGroup.java" startLine="50" startPosition="123" endLine="51" endPosition="113" />
+    <nodeInfo nodeId="1222173593116" fileName="ModelActions_ActionGroup.java" startLine="51" startPosition="113" endLine="52" endPosition="51" />
+    <nodeInfo nodeId="1222173595836" fileName="ModelActions_ActionGroup.java" startLine="52" startPosition="51" endLine="53" endPosition="93" />
+    <nodeInfo nodeId="3905468763930415933" fileName="ModelActions_ActionGroup.java" startLine="53" startPosition="93" endLine="54" endPosition="134" />
+    <nodeInfo nodeId="1221757534230" fileName="ModelActions_ActionGroup.java" startLine="54" startPosition="134" endLine="55" endPosition="51" />
+    <nodeInfo nodeId="2834677590308140822" fileName="ModelActions_ActionGroup.java" startLine="55" startPosition="51" endLine="56" endPosition="91" />
+    <nodeInfo nodeId="2834677590308140820" fileName="ModelActions_ActionGroup.java" startLine="56" startPosition="91" endLine="57" endPosition="51" />
+    <nodeInfo nodeId="7545884443035896628" fileName="ModelActions_ActionGroup.java" startLine="57" startPosition="51" endLine="58" endPosition="88" />
+    <nodeInfo nodeId="7545884443035896629" fileName="ModelActions_ActionGroup.java" startLine="58" startPosition="88" endLine="59" endPosition="51" />
+    <nodeInfo nodeId="1221757535813" fileName="ModelActions_ActionGroup.java" startLine="59" startPosition="51" endLine="60" endPosition="89" />
+    <nodeInfo nodeId="1204909603015" fileName="ModelActions_ActionGroup.java" startLine="60" startPosition="89" endLine="61" endPosition="51" />
+    <nodeInfo nodeId="4555696683442018021" fileName="ModelActions_ActionGroup.java" startLine="61" startPosition="51" endLine="62" endPosition="89" />
+    <nodeInfo nodeId="4555696683442018023" fileName="ModelActions_ActionGroup.java" startLine="62" startPosition="89" endLine="63" endPosition="51" />
+    <nodeInfo nodeId="1235220262925" fileName="ModelActions_ActionGroup.java" startLine="63" startPosition="51" endLine="64" endPosition="119" />
   </root>
   <root nodeId="1204991220529">
     <nodeInfo nodeId="1204910715381" fileName="ProjectActions_ActionGroup.java" startLine="19" startPosition="9" endLine="20" endPosition="96" />

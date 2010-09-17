@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="Core_ProjectPlugin.java" startLine="7" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.Core_ProjectPlugin" />
+  <unitInfo fileName="Core_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.Core_ApplicationPlugin" />
+  <unitInfo fileName="CoreActions_ActionGroup.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.CoreActions_ActionGroup" />
+  <unitInfo fileName="FindModelUsages_ActionGroup.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.FindModelUsages_ActionGroup" />
+  <unitInfo fileName="FindLanguageUsages_ActionGroup.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.FindLanguageUsages_ActionGroup" />
+  <unitInfo fileName="FindModelUsages_Action.java" startLine="24" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.FindModelUsages_Action" />
+  <unitInfo fileName="FindLanguageUsages_Action.java" startLine="24" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.FindLanguageUsages_Action" />
+  <unitInfo fileName="ShowNodeMessages_Action.java" startLine="20" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.ShowNodeMessages_Action" />
+  <unitInfo fileName="FindLanguageConceptsUsages_Action.java" startLine="28" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.lang.core.plugin.FindLanguageConceptsUsages_Action" />
   <root nodeId="1209308509191">
     <nodeInfo nodeId="1217420645601" fileName="FindModelUsages_Action.java" startLine="27" startPosition="0" endLine="28" endPosition="23" />
     <nodeInfo nodeId="1217420647958" fileName="FindModelUsages_Action.java" startLine="28" startPosition="23" endLine="29" endPosition="36" />
