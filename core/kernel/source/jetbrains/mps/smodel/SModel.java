@@ -232,7 +232,7 @@ public class SModel implements Iterable<SNode> {
     return myLoading;
   }
 
-  public synchronized SModelDescriptor getModelDescriptor() {
+  public SModelDescriptor getModelDescriptor() {
     return myModelDescriptor;
   }
 
