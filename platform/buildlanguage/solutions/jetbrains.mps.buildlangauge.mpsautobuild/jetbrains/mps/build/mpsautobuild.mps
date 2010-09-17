@@ -1495,7 +1495,7 @@
       </node>
       <node role="delete:7" type="jetbrains.mps.build.packaging.structure.Delete:7" id="8431776905956472849" />
       <node role="title:7" type="jetbrains.mps.build.packaging.structure.SimpleString:7" id="8431776905956472850">
-        <property name="name:7" value="ideaIntegration.jar" />
+        <property name="name:7" value="vcs.jar" />
       </node>
     </node>
   </node>
