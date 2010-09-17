@@ -1,5 +1,7 @@
 package jetbrains.mps.generator;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Evgeny Gryaznov, Apr 26, 2010
  */
@@ -16,25 +18,33 @@ public class GenerationOptions {
   private final boolean myStrictMode;
   private final boolean myRebuildAll;
   private final boolean myIncremental;
-  private final boolean myShowErrorsOnly;
   private final boolean myGenerateInParallel;
   private final int myNumberOfThreads;
   private final int myTracingMode;
 
+  private final boolean myShowInfo;
+  private final boolean myShowWarnings;
+  private final boolean myKeepModelsWithWarnings;
+  private final int myNumberOfModelsToKeep;
+
   private IGenerationTracer myGenerationTracer;
 
-  public GenerationOptions(boolean strictMode, boolean saveTransientModels, boolean rebuildAll, boolean incremental, boolean showErrorsOnly, boolean generateInParallel,
-                           int numberOfThreads, int tracingMode,
-                           IGenerationTracer generationTracer) {
+  public GenerationOptions(boolean strictMode, boolean saveTransientModels, boolean rebuildAll, boolean incremental,
+                           boolean generateInParallel, int numberOfThreads, int tracingMode, boolean showInfo,
+                           boolean showWarnings, boolean keepModelsWithWarnings, int numberOfModelsToKeep,
+                           @NotNull IGenerationTracer generationTracer) {
     mySaveTransientModels = saveTransientModels;
     myGenerateInParallel = generateInParallel;
     myStrictMode = strictMode;
     myRebuildAll = rebuildAll;
     myIncremental = incremental;
-    myShowErrorsOnly = showErrorsOnly;
-    myGenerationTracer = generationTracer;
     myNumberOfThreads = numberOfThreads;
     myTracingMode = tracingMode;
+    myNumberOfModelsToKeep = numberOfModelsToKeep;
+    myShowInfo = showInfo;
+    myShowWarnings = showWarnings;
+    myKeepModelsWithWarnings = keepModelsWithWarnings;
+    myGenerationTracer = generationTracer;
   }
 
   public boolean isSaveTransientModels() {
@@ -54,7 +64,7 @@ public class GenerationOptions {
   }
 
   public boolean isShowErrorsOnly() {
-    return myShowErrorsOnly;
+    return !myShowInfo && !myShowWarnings;
   }
 
   public boolean isIncremental() {
@@ -74,5 +84,21 @@ public class GenerationOptions {
       return TRACE_STEPS;
     }
     return myTracingMode;
+  }
+
+  public boolean isShowInfo() {
+    return myShowInfo;
+  }
+
+  public boolean isShowWarnings() {
+    return myShowWarnings;
+  }
+
+  public boolean isKeepModelsWithWarnings() {
+    return myKeepModelsWithWarnings;
+  }
+
+  public int getNumberOfModelsToKeep() {
+    return myNumberOfModelsToKeep;
   }
 }

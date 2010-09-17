@@ -22,8 +22,6 @@ import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.impl.GenerationController;
 import jetbrains.mps.generator.impl.GeneratorLoggerAdapter;
-import jetbrains.mps.ide.generator.GenerationSettings;
-import jetbrains.mps.lang.generator.plugin.debug.GenerationTracer;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.smodel.IOperationContext;
@@ -72,28 +70,35 @@ public class GeneratorManager {
                                 final boolean saveTransientModels,
                                 final boolean rebuildAll) {
 
+    // default options
+    GenerationOptions options = new GenerationOptions(
+      false, saveTransientModels, rebuildAll, false,
+      false, 2,
+      GenerationOptions.TRACE_OFF,
+      false, true, true,
+      16, new NullGenerationTracer());
+
+    return generateModels(inputModels, invocationContext, generationHandler, progress, messages, options);
+  }
+
+  /**
+   * @return false if canceled
+   */
+  public boolean generateModels(final List<SModelDescriptor> inputModels,
+                                final IOperationContext invocationContext,
+                                final IGenerationHandler generationHandler,
+                                final ProgressIndicator progress,
+                                final IMessageHandler messages,
+                                final GenerationOptions options) {
     final boolean[] result = new boolean[1];
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        myProject.getComponent(TransientModelsModule.class).startGeneration(GenerationSettings.getInstance().getNumberOfModelsToKeep());
-        if (!saveTransientModels) {
-          myProject.getComponent(GenerationTracer.class).discardTracing();
-        }
+        myProject.getComponent(TransientModelsModule.class).startGeneration(options.getNumberOfModelsToKeep());
 
-        IGenerationTracer tracer = saveTransientModels
-          ? myProject.getComponent(GenerationTracer.class)
-          : new NullGenerationTracer();
-        tracer.startTracing();
-
-        GenerationSettings settings = GenerationSettings.getInstance();
-
-        GenerationOptions options = new GenerationOptions(
-          settings.isStrictMode(), saveTransientModels, rebuildAll, settings.isGenerateDependencies(), !settings.isShowWarnings() && !settings.isShowInfo(), settings.isParallelGenerator(),
-          settings.getNumberOfParallelThreads(), settings.getPerformanceTracingLevel(), tracer);
-
+        options.getGenerationTracer().startTracing();
         fireBeforeGeneration(inputModels, options, invocationContext);
 
-        GeneratorLoggerAdapter logger = new GeneratorLoggerAdapter(messages, settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings());
+        GeneratorLoggerAdapter logger = new GeneratorLoggerAdapter(messages, options.isShowInfo(), options.isShowWarnings(), options.isKeepModelsWithWarnings());
 
         final GenerationController gc = new GenerationController(inputModels, options, generationHandler, new GeneratorNotifierHelper(), logger, invocationContext, progress);
         result[0] = UndoHelper.getInstance().runNonUndoableAction(new Computable<Boolean>() {
@@ -102,7 +107,7 @@ public class GeneratorManager {
             return gc.generate();
           }
         });
-        tracer.finishTracing();
+        options.getGenerationTracer().finishTracing();
         fireAfterGeneration(inputModels, options, invocationContext);
 
         myProject.getComponent(TransientModelsModule.class).publishAll();
