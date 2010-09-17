@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="ToggleMultiLine_Intention.java" startLine="11" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.intentions.ToggleMultiLine_Intention" />
+  <unitInfo fileName="replace_invokeOperation_with_compactInvoke_Intention.java" startLine="63" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.intentions.replace_invokeOperation_with_compactInvoke_Intention$QuotationClass_fknil1_a0a0b0h" />
+  <unitInfo fileName="add_throws_to_FunctionType_Intention.java" startLine="12" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.intentions.add_throws_to_FunctionType_Intention" />
+  <unitInfo fileName="convert_to_restricted_Intention.java" startLine="15" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.intentions.convert_to_restricted_Intention" />
+  <unitInfo fileName="convert_to_unrestricted_Intention.java" startLine="15" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.intentions.convert_to_unrestricted_Intention" />
+  <unitInfo fileName="convert_to_from_unrestricted_Intention.java" startLine="16" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.intentions.convert_to_from_unrestricted_Intention" />
+  <unitInfo fileName="replace_invokeOperation_with_compactInvoke_Intention.java" startLine="19" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.intentions.replace_invokeOperation_with_compactInvoke_Intention" />
   <root nodeId="1229717881949">
     <nodeInfo nodeId="1229717905641" fileName="add_throws_to_FunctionType_Intention.java" startLine="32" startPosition="85" endLine="33" endPosition="31" />
     <nodeInfo nodeId="1229717928382" fileName="add_throws_to_FunctionType_Intention.java" startLine="43" startPosition="90" endLine="44" endPosition="97" />

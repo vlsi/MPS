@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="UnboundClosureParameterDeclaration_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.constraints.UnboundClosureParameterDeclaration_Constraints" />
+  <unitInfo fileName="InvokeFunctionOperation_Constraints.java" startLine="12" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.constraints.InvokeFunctionOperation_Constraints" />
+  <unitInfo fileName="FunctionMethodDeclaration_isAbstract_PropertyConstraint.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.constraints.FunctionMethodDeclaration_isAbstract_PropertyConstraint" />
+  <unitInfo fileName="FunctionMethodDeclaration_name_PropertyConstraint.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.constraints.FunctionMethodDeclaration_name_PropertyConstraint" />
+  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.constraints.ConstraintsDescriptor" />
+  <unitInfo fileName="ControlAbstractionContainer_DefaultSearchScope.java" startLine="13" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.constraints.ControlAbstractionContainer_DefaultSearchScope" />
+  <unitInfo fileName="FunctionType_runtimeIface_ReferentConstraint.java" startLine="17" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.constraints.FunctionType_runtimeIface_ReferentConstraint" />
   <root nodeId="100821637069090025">
     <nodeInfo nodeId="100821637069106778" fileName="FunctionType_runtimeIface_ReferentConstraint.java" startLine="31" startPosition="40" endLine="32" endPosition="99" />
     <nodeInfo nodeId="100821637069106774" fileName="FunctionType_runtimeIface_ReferentConstraint.java" startLine="30" startPosition="210" endLine="34" endPosition="0" />

@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="YieldStatement_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.dataFlow.YieldStatement_DataFlow" />
+  <unitInfo fileName="YieldAllStatement_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.dataFlow.YieldAllStatement_DataFlow" />
+  <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.dataFlow.DFABuilders" />
+  <unitInfo fileName="InvokeFunctionOperation_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.dataFlow.InvokeFunctionOperation_DataFlow" />
+  <unitInfo fileName="ClosureLiteral_DataFlow.java" startLine="12" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.dataFlow.ClosureLiteral_DataFlow" />
+  <unitInfo fileName="ClosureControlStatement_DataFlow.java" startLine="11" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.dataFlow.ClosureControlStatement_DataFlow" />
+  <unitInfo fileName="CompactInvokeFunctionExpression_DataFlow.java" startLine="11" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.dataFlow.CompactInvokeFunctionExpression_DataFlow" />
   <root nodeId="1216646381341">
     <nodeInfo nodeId="1216727098945" fileName="ClosureLiteral_DataFlow.java" startLine="17" startPosition="159" endLine="18" endPosition="42" />
     <nodeInfo nodeId="1216727098943" fileName="ClosureLiteral_DataFlow.java" startLine="16" startPosition="102" endLine="19" endPosition="5" />

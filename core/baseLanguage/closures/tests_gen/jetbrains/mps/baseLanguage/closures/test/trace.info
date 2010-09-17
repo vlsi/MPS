@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="ClosureLiteralDataFlow_Test.java" startLine="20" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.test.ClosureLiteralDataFlow_Test$TestBody" />
+  <unitInfo fileName="ClosureDataFlow_Test.java" startLine="20" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.test.ClosureDataFlow_Test$TestBody" />
+  <unitInfo fileName="ClosureLiteralDataFlow_Test.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.test.ClosureLiteralDataFlow_Test" />
+  <unitInfo fileName="ClosureDataFlow_Test.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.test.ClosureDataFlow_Test" />
   <root nodeId="1227886714745">
     <nodeInfo nodeId="1227886714778" fileName="ClosureDataFlow_Test.java" startLine="22" startPosition="57" endLine="23" endPosition="40" />
     <nodeInfo nodeId="1227886714781" fileName="ClosureDataFlow_Test.java" startLine="23" startPosition="40" endLine="24" endPosition="160" />

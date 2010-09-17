@@ -5,8 +5,8 @@
     <output-test url="file://$MODULE_DIR$/../../../classes/test/testMake/testclasses" />
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../../testbench/modules/testMake">
-      <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.makeTest/source_gen" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.testModels/source_gen" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../testbench/modules/testMake/solutions/jetbrains.mps.makeTest/source_gen" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../testbench/modules/testMake/solutions/jetbrains.mps.testModels/source_gen" isTestSource="true" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
