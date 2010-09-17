@@ -54,7 +54,7 @@ public class NameUtil {
       "under", "underneath", "until", "up", "upon", "with", "within", "without"};
     PREPOSITIONS = new HashSet<String>(Arrays.asList(preps));
 
-    String[] articles = {"a", "the"};
+    String[] articles = {"a", "an", "the"};
     ARTICLES = new HashSet<String>(Arrays.asList(articles));
 
     String[] particles = {"and", "or", "not", "as"};
