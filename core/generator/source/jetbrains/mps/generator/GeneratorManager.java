@@ -75,7 +75,7 @@ public class GeneratorManager {
     final boolean[] result = new boolean[1];
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        myProject.getComponent(TransientModelsModule.class).clearAll();
+        myProject.getComponent(TransientModelsModule.class).startGeneration(GenerationSettings.getInstance().getNumberOfModelsToKeep());
         if (!saveTransientModels) {
           myProject.getComponent(GenerationTracer.class).discardTracing();
         }

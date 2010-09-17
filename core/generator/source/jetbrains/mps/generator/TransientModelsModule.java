@@ -18,7 +18,6 @@ package jetbrains.mps.generator;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.util.containers.ConcurrentHashSet;
-import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
@@ -40,7 +39,7 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
 
   private Project myProject;
   private IModule myInvocationContext;
-  private int myNumber = ourModuleCounter.getAndIncrement();
+  private int myModelsToKeepMax = 0 /* unlimited */;
 
   private Set<String> myModelsToKeep = new ConcurrentHashSet<String>();
   private Map<SModelFqName, SModelDescriptor> myModels = new ConcurrentHashMap<SModelFqName, SModelDescriptor>();
@@ -52,7 +51,7 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
 
   public TransientModelsModule(Project project, MPSProject mpsProject) {
     myProject = project;
-    ModuleReference reference = ModuleReference.fromString("TransientModule " + myNumber);
+    ModuleReference reference = ModuleReference.fromString("TransientModule " + ourModuleCounter.getAndIncrement());
     setModuleReference(reference);
   }
 
@@ -123,6 +122,11 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
     clearAll();
   }
 
+  public void startGeneration(int modelsToKeep) {
+    clearAll();
+    myModelsToKeepMax = modelsToKeep;
+  }
+
   public void clearAll() {
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
     SModelRepository.getInstance().removeUnusedDescriptors();
@@ -144,8 +148,7 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
 
   public boolean addModelToKeep(SModel model, boolean force) {
     assert model instanceof TransientSModel;
-    int modelsToKeep = GenerationSettings.getInstance().getNumberOfModelsToKeep();
-    if ((modelsToKeep >= 0 && myModelsToKeep.size() >= modelsToKeep) && !force) {
+    if ((myModelsToKeepMax >= 0 && myModelsToKeep.size() >= myModelsToKeepMax) && !force) {
       // maximum number of models reached
       return myModelsToKeep.contains(model.getSModelReference().toString());
     }
