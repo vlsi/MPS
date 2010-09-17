@@ -57,8 +57,8 @@ public class PluginUtil {
       modules.add(dk);
     }
 
-    modules.addAll(LibraryManager.getInstance().getGlobalModules(Language.class));
-    modules.addAll(LibraryManager.getInstance().getGlobalModules(DevKit.class));
+    modules.addAll(MPSModuleRepository.getInstance().getAllLanguages());
+    modules.addAll(MPSModuleRepository.getInstance().getAllDevkits());
 
     return modules;
   }
