@@ -17,13 +17,12 @@ package jetbrains.mps.generator.impl;
 
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.cleanup.CleanupManager;
-import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationCanceledException;
+import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.GeneratorManager.GeneratorNotifierHelper;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.SimpleGenerationTaskPool;
-import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.ide.progress.TaskProgressHelper;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
@@ -91,7 +90,7 @@ public class GenerationController {
   }
 
   public boolean generate() {
-    clearMessageVew();
+    myLogger.clear();
     long startJobTime = System.currentTimeMillis();
 
     myGenerationHandler.startGeneration(myLogger);
@@ -284,13 +283,6 @@ public class GenerationController {
 
   private void fireAfterModelsCompiled(boolean success) {
     myNotifierHelper.fireAfterModelsCompiled(Collections.unmodifiableList(myInputModels), success);
-  }
-
-  private void clearMessageVew() {
-    MessagesViewTool messagesView = myOperationContext.getComponent(MessagesViewTool.class);
-    if (messagesView != null) {
-      messagesView.clear();
-    }
   }
 
   protected void checkMonitorCanceled() throws GenerationCanceledException {
