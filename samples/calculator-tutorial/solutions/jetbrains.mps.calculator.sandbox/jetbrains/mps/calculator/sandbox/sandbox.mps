@@ -10,7 +10,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <maxImportIndex value="0" />
-  <node type="jetbrains.mps.calculator.structure.Calcualtor" id="1241366278147">
+  <node type="jetbrains.mps.calculator.structure.Calculator" id="1241366278147">
     <property name="name" value="mySalary" />
     <node role="outputField" type="jetbrains.mps.calculator.structure.OutputField" id="1241366333402">
       <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1241366339999">

@@ -2,6 +2,7 @@ package jetbrains.mps.testbench.junit;
 
 import jetbrains.mps.testbench.util.CachingAppender;
 import jetbrains.mps.testbench.util.CachingPrintStream;
+import jetbrains.mps.testbench.util.ThreadWatcher;
 import jetbrains.mps.util.misc.hash.HashMap;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -10,7 +11,6 @@ import org.junit.runner.notification.Failure;
 import org.junit.runner.notification.RunNotifier;
 import org.junit.runner.notification.StoppedByUserException;
 
-import java.io.PrintStream;
 import java.util.Map;
 
 /**
@@ -23,33 +23,44 @@ import java.util.Map;
 public class WatchingRunNotifier extends DelegatingRunNotifier {
   private static final Level WATCH_LEVEL = Level.ERROR;
 
-  private static final com.intellij.openapi.diagnostic.Logger IGNORED_LOG = com.intellij.openapi.diagnostic.Logger.getInstance("#com.intellij.openapi.application.impl.LaterInvocator");
+  private static final com.intellij.openapi.diagnostic.Logger IGNORED_LOGGERS[] = new com.intellij.openapi.diagnostic.Logger []
+    {
+      com.intellij.openapi.diagnostic.Logger.getInstance("#com.intellij.openapi.application.impl.LaterInvocator"),
+      com.intellij.openapi.diagnostic.Logger.getInstance("#com.intellij.application.impl.ApplicationImpl"),
+    };
 
   private Level oldLevel;
-  private PrintStream stdOut;
-  private PrintStream stdErr;
   private CachingPrintStream cacheOut;
   private CachingPrintStream cacheErr;
   private CachingAppender app;
   private Map<Description, Object> testsToIgnore = new HashMap<Description, Object>();
+  private ThreadWatcher threadWatcher;
 
   public WatchingRunNotifier(RunNotifier delegate) {
     super(delegate);
-    init();
   }
 
-  private void init () {
-    this.stdOut = System.out;
-    this.stdErr = System.err;
-    this.cacheOut = new CachingPrintStream(System.out, "output");
-    this.cacheErr = new CachingPrintStream(System.err, "error");
-    System.setOut(cacheOut);
-    System.setErr(cacheErr);
+  public void dispose () {
   }
 
-  public void dispose() {
-    System.setOut(stdOut);
-    System.setErr(stdErr);
+  private void initCaches () {
+    System.out.flush();
+    System.err.flush();
+    System.setOut(this.cacheOut = new CachingPrintStream(System.out, "output"));
+    System.setErr(this.cacheErr = new CachingPrintStream(System.err, "error"));
+    cacheOut.clear();
+    cacheOut.startCaching();
+    cacheErr.clear();
+    cacheErr.startCaching();
+  }
+
+  private void disposeCaches() {
+    cacheOut.flush();
+    cacheOut.stopCaching();
+    System.setOut(cacheOut.getOut());
+    cacheErr.flush();
+    cacheErr.stopCaching();
+    System.setErr(cacheErr.getOut());
   }
 
   @Override
@@ -96,29 +107,29 @@ public class WatchingRunNotifier extends DelegatingRunNotifier {
     this.oldLevel = Logger.getRootLogger().getLevel();
     Logger.getRootLogger().setLevel(WATCH_LEVEL);
 
-    cacheOut.clear();
-    cacheOut.startCaching();
-    cacheErr.clear();
-    cacheErr.startCaching();
+    initCaches();
 
     app = new CachingAppender();
     Logger.getRootLogger().addAppender(app);
-    
-    IGNORED_LOG.setLevel(Level.FATAL);
+
+    for (com.intellij.openapi.diagnostic.Logger ignore: IGNORED_LOGGERS) {
+      ignore.setLevel(Level.FATAL);
+    }
+
+    this.threadWatcher = new ThreadWatcher(true);
   }
 
   private void afterTest (Description desc) {
-    cacheOut.flush();
-    cacheOut.stopCaching();
-    cacheErr.flush();
-    cacheErr.stopCaching();
+    threadWatcher.waitUntilSettled(5000);
+    
+    disposeCaches();
 
     Logger.getRootLogger().removeAppender(app);
     Logger.getRootLogger().setLevel(oldLevel);
 
     Failure fail = null;
-    if (!testsToIgnore.containsKey(desc) && (cacheOut.isNotEmpty()|| cacheErr.isNotEmpty()||app.isNotEmpty())) {
-      fail = new Failure(desc, new UncleanTestExecutionException(cacheOut, cacheErr, app));
+    if (!testsToIgnore.containsKey(desc) && (cacheOut.isNotEmpty()|| cacheErr.isNotEmpty()||app.isNotEmpty()||threadWatcher.isNotEmpty())) {
+      fail = new Failure(desc, new UncleanTestExecutionException(cacheOut, cacheErr, app, threadWatcher));
     }
     cacheOut.clear();
     cacheErr.clear();

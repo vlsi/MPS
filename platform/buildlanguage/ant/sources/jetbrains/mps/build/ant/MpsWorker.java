@@ -28,6 +28,7 @@ import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.library.BaseLibraryManager.MyState;
 import jetbrains.mps.library.Library;
+import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
@@ -251,7 +252,7 @@ public abstract class MpsWorker {
     LibraryManager.getInstance().loadState(state);
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        LibraryManager.getInstance().update();
+        LibraryInitializer.getInstance().update();
       }
     });
   }

@@ -43,6 +43,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.stubs.structure.LibraryStubDescriptor" file="LibraryStubDescriptor.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.structure.ExportScope" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.INamedConcept" />
     <classNode dependClassName="jetbrains.mps.lang.stubs.structure.GetRootsBlock" />
     <classNode dependClassName="jetbrains.mps.lang.stubs.structure.StubsCreatorDeclaration" />

@@ -59,7 +59,7 @@ public class ReplaceEqualsWithEquality_Intention extends BaseIntention implement
     SNode equalsExpression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EqualsExpression", null);
     SLinkOperations.setTarget(equalsExpression, "leftExpression", leftExpr, true);
     SLinkOperations.setTarget(equalsExpression, "rightExpression", rightExpression, true);
-    SNodeOperations.replaceWithAnother(node, equalsExpression);
+    SNodeOperations.replaceWithAnother(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.DotExpression", false, false), equalsExpression);
   }
 
   public String getLocationString() {

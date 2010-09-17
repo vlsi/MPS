@@ -64,6 +64,7 @@ public class EvaluationUtils {
     });
   }
 
+  @NotNull
   public static Field findField(ClassType referenceType, String fieldName) throws InvalidEvaluatedExpressionException {
     Field field = referenceType.fieldByName(fieldName);
     if (field == null) {
@@ -76,6 +77,7 @@ public class EvaluationUtils {
     return referenceType.fields();
   }
 
+  @NotNull
   public static Method findConstructor(ClassType referenceType, String jniSignature) throws InvalidEvaluatedExpressionException {
     List<Method> methods = referenceType.methodsByName("<init>", jniSignature);
     if (methods.size() == 0) {
@@ -94,6 +96,7 @@ public class EvaluationUtils {
     return constructor;
   }
 
+  @NotNull
   public static Method findMethod(ClassType referenceType, String methodsName, String jniSignature) throws InvalidEvaluatedExpressionException {
     List<Method> methods = referenceType.methodsByName(methodsName, jniSignature);
     if (methods.size() == 0) {
@@ -174,10 +177,12 @@ public class EvaluationUtils {
     return MirrorUtil.getValueProxy(v, reference);
   }
 
+  @NotNull
   public static <T extends IValueProxy> Iterable<T> toIterable(IObjectValueProxy valueProxy) {
     return new IterableProxy<T>(valueProxy);
   }
 
+  @NotNull
   public static <T extends IValueProxy> Iterable<T> toIterable(IArrayValueProxy valueProxy) {
     return new IterableArrayProxy<T>(valueProxy);
   }
@@ -197,12 +202,14 @@ public class EvaluationUtils {
     return (IObjectValueProxy) MirrorUtil.getValueProxy(EvaluationUtils.invokeConstructorInternal(className, jniSignature, threadReference, args), threadReference);
   }
 
+  @NotNull
   public static IValueProxy getClassValue(String className, ThreadReference threadReference) throws InvalidEvaluatedExpressionException {
     ClassType referenceType = (ClassType)findClassType(className, threadReference.virtualMachine());
     ClassObjectReference classObject = referenceType.classObject();
     return MirrorUtil.getValueProxy(classObject, threadReference);
   }
 
+  @NotNull
   public static IObjectValueProxy box(PrimitiveValueProxy primitiveValueProxy, ThreadReference threadReference) throws EvaluationException {
     PrimitiveValue primitiveValue = primitiveValueProxy.getPrimitiveValue();
     if (primitiveValue instanceof BooleanValue) {

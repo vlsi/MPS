@@ -5,6 +5,7 @@ package jetbrains.mps.lang.stubs.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.core.structure.ExportScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -19,6 +20,7 @@ public class LibraryStubDescriptor extends BaseConcept implements INamedConcept 
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String CREATOR = "creator";
   public static final String ROOTS_BLOCK = "rootsBlock";
+  public static final String EXPORT = "export";
 
   public LibraryStubDescriptor(SNode node) {
     super(node);
@@ -86,6 +88,14 @@ public class LibraryStubDescriptor extends BaseConcept implements INamedConcept 
 
   public void setRootsBlock(GetRootsBlock node) {
     super.setChild(LibraryStubDescriptor.ROOTS_BLOCK, node);
+  }
+
+  public ExportScope getExport() {
+    return (ExportScope) this.getChild(ExportScope.class, LibraryStubDescriptor.EXPORT);
+  }
+
+  public void setExport(ExportScope node) {
+    super.setChild(LibraryStubDescriptor.EXPORT, node);
   }
 
   public static LibraryStubDescriptor newInstance(SModel sm, boolean init) {

@@ -189,7 +189,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
       roots.add(p.getBaseDir());
       ProjectLibraryManager projectLibraryManager = p.getComponent(ProjectLibraryManager.class);
       if (projectLibraryManager != null) {
-        for (Library lib : projectLibraryManager.getLibraries()) {
+        for (Library lib : projectLibraryManager.getUILibraries()) {
           VirtualFile file = VFileSystem.getFile(lib.getPath());
           if (file != null) {
             roots.add(file);
@@ -203,7 +203,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
     }
 
     LibraryManager libraryManager = LibraryManager.getInstance();
-    for (Library lib : libraryManager.getLibraries()) {
+    for (Library lib : libraryManager.getUILibraries()) {
       VirtualFile file = VFileSystem.getFile(lib.getPath());
       if (file != null) {
         roots.add(file);

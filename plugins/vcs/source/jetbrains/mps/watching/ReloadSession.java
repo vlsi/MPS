@@ -21,6 +21,7 @@ import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
@@ -73,7 +74,7 @@ class ReloadSession {
               progressIndicator.setText("Reloading libraries... Please wait.");
               ModelAccess.instance().runWriteAction(new Runnable() {
                 public void run() {
-                  LibraryManager.getInstance().update();
+                  LibraryInitializer.getInstance().update();
                 }
               });
             }

@@ -236,7 +236,7 @@ public class SModel implements Iterable<SNode> {
     return myModelDescriptor;
   }
 
-  public synchronized void setModelDescritor(SModelDescriptor modelDescriptor) {
+  public synchronized void setModelDescriptor(SModelDescriptor modelDescriptor) {
     myModelDescriptor = modelDescriptor;
   }
 

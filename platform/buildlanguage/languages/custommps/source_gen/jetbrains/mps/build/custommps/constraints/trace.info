@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="MPSBuild_Constraints.java" startLine="12" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.build.custommps.constraints.MPSBuild_Constraints" />
+  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.build.custommps.constraints.ConstraintsDescriptor" />
+  <unitInfo fileName="MPSBuild_name_PropertyConstraint.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.build.custommps.constraints.MPSBuild_name_PropertyConstraint" />
   <root nodeId="1233156632875">
     <nodeInfo nodeId="1240846456213" fileName="MPSBuild_Constraints.java" startLine="15" startPosition="39" endLine="16" endPosition="100" />
     <nodeInfo nodeId="1233156647633" fileName="MPSBuild_name_PropertyConstraint.java" startLine="26" startPosition="67" endLine="27" endPosition="16" />

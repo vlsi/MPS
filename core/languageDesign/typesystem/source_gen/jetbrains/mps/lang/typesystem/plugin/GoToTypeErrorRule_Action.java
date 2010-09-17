@@ -34,7 +34,7 @@ public class GoToTypeErrorRule_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    IErrorReporter error = GoToTypeErrorRule_Action.this.editorComponent.getTypeCheckingContext().getTypeMessageDontCheck(GoToTypeErrorRule_Action.this.node);
+    IErrorReporter error = GoToTypeErrorRule_Action.this.editorComponent.getErrorReporterFor(GoToTypeErrorRule_Action.this.editorComponent.getSelectedCell());
     return !(error == null || error.getRuleId() == null || error.getRuleModel() == null || !(error.getAdditionalRulesIds().isEmpty()));
   }
 

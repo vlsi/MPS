@@ -53,7 +53,7 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
       if (!(matchNeeded)) {
         return true;
       }
-      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), new PatternOrPattern_Test.TestBody.QuotationClass_qttyfe_a1a0g0b0().createNode()), ListSequence.fromListAndArray(new ArrayList<SNode>(), (SNode) pattern.getFieldValue("PatternVar_s"))));
+      Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), new PatternOrPattern_Test.TestBody.QuotationClass_qttyfe_a1a0g0b0().createNode()), ListSequence.fromListAndArray(new ArrayList<SNode>(), (SNode) pattern.getFieldValue("PatternVar_ds"))));
       return true;
     }
 
@@ -107,7 +107,7 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
 
     public static class Pattern_qttyfe_a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
       /*package*/ SNode PatternVar_body;
-      /*package*/ SNode PatternVar_s;
+      /*package*/ SNode PatternVar_ds;
       private GeneratedMatchingPattern myOrPattern_7ozj7q_a0a;
 
       public Pattern_qttyfe_a0a1a1a() {
@@ -187,7 +187,7 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
       public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
         if (pattern != null && pattern.getClass() == this.getClass()) {
           this.PatternVar_body = (SNode) pattern.getFieldValue("PatternVar_body");
-          this.PatternVar_s = (SNode) pattern.getFieldValue("PatternVar_s");
+          this.PatternVar_ds = (SNode) pattern.getFieldValue("PatternVar_ds");
         }
       }
 
@@ -195,7 +195,7 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
         if ("PatternVar_body".equals(fieldName)) {
           return this.PatternVar_body;
         }
-        if ("PatternVar_s".equals(fieldName)) {
+        if ("PatternVar_ds".equals(fieldName)) {
           return myOrPattern_7ozj7q_a0a.getFieldValue(fieldName);
         }
         return null;
@@ -205,7 +205,7 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
       }
 
       public static class Pattern_qttyfe_a0a0a2a2a1a1a1a1a1a2a0a0a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
-        /*package*/ SNode PatternVar_s;
+        /*package*/ SNode PatternVar_ds;
 
         public Pattern_qttyfe_a0a0a2a2a1a1a1a1a1a2a0a0a0a1a1a() {
         }
@@ -224,7 +224,11 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
               }
               {
                 SNode childVar_7ozj7q_a0a0a0 = nodeToMatch_7ozj7q_a0a0a.getChildren(childRole_7ozj7q__2).get(0);
-                this.PatternVar_s = childVar_7ozj7q_a0a0a0;
+                {
+                  SNode nodeToMatch_7ozj7q_a0a0a0;
+                  nodeToMatch_7ozj7q_a0a0a0 = childVar_7ozj7q_a0a0a0;
+                  PatternVar_ds = nodeToMatch_7ozj7q_a0a0a0;
+                }
               }
             }
             {
@@ -235,9 +239,9 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
               {
                 SNode childVar_7ozj7q_a0a0a0_0 = nodeToMatch_7ozj7q_a0a0a.getChildren(childRole_7ozj7q__3).get(0);
                 {
-                  SNode nodeToMatch_7ozj7q_a0a0a0;
-                  nodeToMatch_7ozj7q_a0a0a0 = childVar_7ozj7q_a0a0a0_0;
-                  if (!("jetbrains.mps.baseLanguage.structure.NullLiteral".equals(nodeToMatch_7ozj7q_a0a0a0.getConceptFqName()))) {
+                  SNode nodeToMatch_7ozj7q_a0a0a0_0;
+                  nodeToMatch_7ozj7q_a0a0a0_0 = childVar_7ozj7q_a0a0a0_0;
+                  if (!("jetbrains.mps.baseLanguage.structure.NullLiteral".equals(nodeToMatch_7ozj7q_a0a0a0_0.getConceptFqName()))) {
                     return false;
                   }
                 }
@@ -253,13 +257,13 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
 
         public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
           if (pattern != null && pattern.getClass() == this.getClass()) {
-            this.PatternVar_s = (SNode) pattern.getFieldValue("PatternVar_s");
+            this.PatternVar_ds = (SNode) pattern.getFieldValue("PatternVar_ds");
           }
         }
 
         public Object getFieldValue(String fieldName) {
-          if ("PatternVar_s".equals(fieldName)) {
-            return this.PatternVar_s;
+          if ("PatternVar_ds".equals(fieldName)) {
+            return this.PatternVar_ds;
           }
           return null;
         }
@@ -269,7 +273,7 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
       }
 
       public static class Pattern_qttyfe_a0a0a3a2a1a1a1a1a1a2a0a0a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
-        /*package*/ SNode PatternVar_s;
+        /*package*/ SNode PatternVar_ds;
 
         public Pattern_qttyfe_a0a0a3a2a1a1a1a1a1a2a0a0a0a1a1a() {
         }
@@ -304,7 +308,11 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
               }
               {
                 SNode childVar_7ozj7q_a0b0a0_0 = nodeToMatch_7ozj7q_a1a0a.getChildren(childRole_7ozj7q__5).get(0);
-                this.PatternVar_s = childVar_7ozj7q_a0b0a0_0;
+                {
+                  SNode nodeToMatch_7ozj7q_a0b0a0_0;
+                  nodeToMatch_7ozj7q_a0b0a0_0 = childVar_7ozj7q_a0b0a0_0;
+                  PatternVar_ds = nodeToMatch_7ozj7q_a0b0a0_0;
+                }
               }
             }
           }
@@ -317,13 +325,13 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
 
         public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
           if (pattern != null && pattern.getClass() == this.getClass()) {
-            this.PatternVar_s = (SNode) pattern.getFieldValue("PatternVar_s");
+            this.PatternVar_ds = (SNode) pattern.getFieldValue("PatternVar_ds");
           }
         }
 
         public Object getFieldValue(String fieldName) {
-          if ("PatternVar_s".equals(fieldName)) {
-            return this.PatternVar_s;
+          if ("PatternVar_ds".equals(fieldName)) {
+            return this.PatternVar_ds;
           }
           return null;
         }

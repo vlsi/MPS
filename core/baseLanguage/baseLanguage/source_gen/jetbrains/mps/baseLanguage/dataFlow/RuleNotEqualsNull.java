@@ -7,6 +7,7 @@ import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 
 public class RuleNotEqualsNull extends DataFlowConstructor {
   private GeneratedMatchingPattern myPattern = new RuleNotEqualsNull.Pattern_yrsk32_a0a();
@@ -121,15 +122,19 @@ public class RuleNotEqualsNull extends DataFlowConstructor {
         Object object = getFieldValue("PatternVar_ifStatement");
         if (((Program) o).contains(object)) {
           position = ((Program) (o)).getEnd(object);
-          ((Program) (o)).insert(new nullableInstruction((SNode) getFieldValue("PatternVar_p")), position, true);
+          Instruction instruction = new nullableInstruction((SNode) getFieldValue("PatternVar_p"));
+          instruction.setSource(getFieldValue("PatternVar_ifStatement"));
+          ((Program) (o)).insert(instruction, position, true);
         }
       }
       {
         int position = 0;
         Object object = getFieldValue("PatternVar_ifTrue");
         if (((Program) o).contains(object)) {
-          position = ((Program) (o)).getStart(getFieldValue("PatternVar_ifTrue"));
-          ((Program) (o)).insert(new notNullInstruction((SNode) getFieldValue("PatternVar_p")), position, true);
+          position = ((Program) (o)).getStart(object);
+          Instruction instruction = new notNullInstruction((SNode) getFieldValue("PatternVar_p"));
+          instruction.setSource(getFieldValue("PatternVar_ifTrue"));
+          ((Program) (o)).insert(instruction, position, true);
         }
       }
     }
@@ -154,7 +159,11 @@ public class RuleNotEqualsNull extends DataFlowConstructor {
             }
             {
               SNode childVar_yrsk32_a0a0a0a = nodeToMatch_yrsk32_a0a0a0.getChildren(childRole_yrsk32__1).get(0);
-              this.PatternVar_p = childVar_yrsk32_a0a0a0a;
+              {
+                SNode nodeToMatch_yrsk32_a0a0a0a;
+                nodeToMatch_yrsk32_a0a0a0a = childVar_yrsk32_a0a0a0a;
+                PatternVar_p = nodeToMatch_yrsk32_a0a0a0a;
+              }
             }
           }
           {
@@ -165,9 +174,9 @@ public class RuleNotEqualsNull extends DataFlowConstructor {
             {
               SNode childVar_yrsk32_a0a0a0a_0 = nodeToMatch_yrsk32_a0a0a0.getChildren(childRole_yrsk32__2).get(0);
               {
-                SNode nodeToMatch_yrsk32_a0a0a0a;
-                nodeToMatch_yrsk32_a0a0a0a = childVar_yrsk32_a0a0a0a_0;
-                if (!("jetbrains.mps.baseLanguage.structure.NullLiteral".equals(nodeToMatch_yrsk32_a0a0a0a.getConceptFqName()))) {
+                SNode nodeToMatch_yrsk32_a0a0a0a_0;
+                nodeToMatch_yrsk32_a0a0a0a_0 = childVar_yrsk32_a0a0a0a_0;
+                if (!("jetbrains.mps.baseLanguage.structure.NullLiteral".equals(nodeToMatch_yrsk32_a0a0a0a_0.getConceptFqName()))) {
                   return false;
                 }
               }
@@ -234,7 +243,11 @@ public class RuleNotEqualsNull extends DataFlowConstructor {
             }
             {
               SNode childVar_yrsk32_a0b0a0a_0 = nodeToMatch_yrsk32_a1a0a0.getChildren(childRole_yrsk32__4).get(0);
-              this.PatternVar_p = childVar_yrsk32_a0b0a0a_0;
+              {
+                SNode nodeToMatch_yrsk32_a0b0a0a_0;
+                nodeToMatch_yrsk32_a0b0a0a_0 = childVar_yrsk32_a0b0a0a_0;
+                PatternVar_p = nodeToMatch_yrsk32_a0b0a0a_0;
+              }
             }
           }
         }

@@ -12,31 +12,10 @@ import org.junit.runners.model.InitializationError;
 import org.junit.runners.model.Statement;
 import org.junit.runners.model.TestClass;
 
-import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.*;
 
 public class FilepathParameterized extends Suite {
-  private static final Sorter SORTER = new Sorter(new Comparator<Description>(){
-    @Override
-    public int compare(Description a, Description b) {
-      if (a.getTestClass() != b.getTestClass()) {
-        return a.getTestClass().getName().compareTo(b.getTestClass().getName());
-      }
-      if (a.getMethodName().equals(b.getMethodName())) {
-        return 0;
-      }
-      for (Method m: a.getTestClass().getMethods()) {
-        if (m.getName().equals(a.getMethodName())) {
-          return -1;
-        }
-        else if (m.getName().equals(b.getMethodName())) {
-          return 1;
-        }
-      };
-      throw new IllegalArgumentException("Method(s) not found : either "+a+" or "+b);
-    }                    
-  });
 
   private class TestClassRunnerForParameters extends
           BlockJUnit4ClassRunner {
@@ -103,7 +82,6 @@ public class FilepathParameterized extends Suite {
 		List<Object[]> parametersList= getParametersList(getTestClass());
 		for (int i= 0; i < parametersList.size(); i++) {
                   TestClassRunnerForParameters runner = new TestClassRunnerForParameters(getTestClass().getJavaClass(), parametersList, i);
-                  runner.sort(SORTER);
                   runners.add(runner);
                 }
 	}

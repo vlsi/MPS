@@ -22,7 +22,7 @@ import jetbrains.mps.lang.refactoring.structure.OldRefactoring;
 import jetbrains.mps.lang.refactoring.structure.Refactoring;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
-import jetbrains.mps.library.LibraryManager;
+import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.dependency.LanguageDepsManager;
@@ -338,7 +338,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   public boolean isBootstrap() {
-    return LibraryManager.getInstance().getBootstrapModules(Language.class).contains(this);
+    return LibraryInitializer.getInstance().getBootstrapModules(Language.class).contains(this);
   }
 
   public int getVersion() {

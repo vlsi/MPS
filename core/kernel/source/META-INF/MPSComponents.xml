@@ -6,6 +6,9 @@
 
   <application-components>
     <component>
+      <implementation-class>jetbrains.mps.ide.MPSWorkbench</implementation-class>
+    </component>
+    <component>
       <implementation-class>com.intellij.openapi.components.impl.ServiceManagerImpl</implementation-class>
     </component>
     <component>
@@ -353,10 +356,6 @@
 
     <component>
       <implementation-class>jetbrains.mps.workbench.actions.goTo.index.StubsNodeDescriptorsCache</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.ide.MPSWorkbench</implementation-class>
     </component>
   </application-components>
 

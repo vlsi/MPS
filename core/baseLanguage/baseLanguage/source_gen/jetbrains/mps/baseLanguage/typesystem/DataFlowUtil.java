@@ -108,10 +108,18 @@ public class DataFlowUtil {
         localReference = SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(read, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"), "lValue", true), "jetbrains.mps.baseLanguage.structure.ILocalReference");
       }
       if (localReference != null && !(ILocalDeclaration_Behavior.call_isReferencedInClosure_3262277503800823422(ILocalReference_Behavior.call_getDeclaration_3262277503800831941(localReference)))) {
-        {
-          BaseIntentionProvider intentionProvider = null;
-          IErrorTarget errorTarget = new NodeErrorTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(read, "Variable used before it is initialized", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3652446454730672493", intentionProvider, errorTarget);
+        if (SNodeOperations.getAncestor(read, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false) == null) {
+          {
+            BaseIntentionProvider intentionProvider = null;
+            IErrorTarget errorTarget = new NodeErrorTarget();
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(read, "Variable used before it is initialized", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1529050434900907669", intentionProvider, errorTarget);
+          }
+        } else if (localReference != null && ILocalReference_Behavior.call_getDeclaration_3262277503800831941(localReference) != null && SNodeOperations.getAncestor(ILocalReference_Behavior.call_getDeclaration_3262277503800831941(localReference), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false) != null) {
+          {
+            BaseIntentionProvider intentionProvider = null;
+            IErrorTarget errorTarget = new NodeErrorTarget();
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(read, "Variable used before it is initialized", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1529050434900907718", intentionProvider, errorTarget);
+          }
         }
       }
     }

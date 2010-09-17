@@ -18,4 +18,8 @@ public class CommentedStatementsBlock_Behavior {
   public static void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
     // do nothing 
   }
+
+  public static int virtual_getMetaLevelChange_201537367881074474(SNode thisNode) {
+    return Integer.MAX_VALUE;
+  }
 }

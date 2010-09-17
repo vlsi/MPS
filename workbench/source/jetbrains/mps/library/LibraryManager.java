@@ -1,0 +1,128 @@
+/*
+ * Copyright 2003-2010 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package jetbrains.mps.library;
+
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.components.State;
+import com.intellij.openapi.components.Storage;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
+import jetbrains.mps.stubs.StubReloadManager;
+import jetbrains.mps.util.PathManager;
+import jetbrains.mps.workbench.WorkbenchPathManager;
+import org.jetbrains.annotations.Nls;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.*;
+
+
+@State(
+  name = "LibraryManager",
+  storages = {
+    @Storage(
+      id = "other",
+      file = "$APP_CONFIG$/libraryManager.xml"
+    )}
+)
+public class LibraryManager extends BaseLibraryManager implements ApplicationComponent {
+  public static LibraryManager getInstance() {
+    return ApplicationManager.getApplication().getComponent(LibraryManager.class);
+  }
+
+  public LibraryManager(MPSModuleRepository repo, ModelConstraintsManager cm, StubReloadManager loader, ClassLoaderManager clm) {
+    super(repo);
+  }
+
+  private boolean myInitializing = false;
+  private Map<String, Library> myCustomBuiltInLibraries = new HashMap<String, Library>();
+  private Set<Library> myLibs = createLibs();
+
+  public void initComponent() {
+    //todo hack
+    if (myInitializing) return;
+    myInitializing = true;
+    try {
+      myCustomBuiltInLibraries = BuiltInLibrariesIO.readBuiltInLibraries();
+      super.initComponent();
+    } finally {
+      myInitializing = false;
+    }
+  }
+
+  public Set<Library> getUILibraries() {
+    Set<Library> result = new HashSet<Library>(super.getUILibraries());
+    result.addAll(myLibs);
+    result.addAll(myCustomBuiltInLibraries.values());
+    return result;
+  }
+
+  public <M extends IModule> Set<M> getGlobalModules(Class<M> cls) {
+    Set<M> result = new HashSet<M>();
+    for (String path : getLibraries()) {
+      for (IModule m : LibraryInitializer.getInstance().getModules(path)) {
+        if (cls.isAssignableFrom(m.getClass())) {
+          result.add((M) m);
+        }
+      }
+    }
+
+    LibraryInitializer.getInstance().addGenerators(cls, new ArrayList<M>(result));
+
+    return result;
+  }
+
+  private Set<Library> createLibs() {
+    Set<Library> result = new HashSet<Library>();
+    result.add(new Library("mps.platform") {
+      @NotNull
+      public String getPath() {
+        return PathManager.getPlatformPath();
+      }
+    });
+
+    //todo replace with lib contributor. This can be removed when there will be a possibility to load plugin without module
+    result.add(new Library("mps.workbench") {
+      @NotNull
+      public String getPath() {
+        return WorkbenchPathManager.getWorkbenchPath();
+      }
+    });
+
+    //todo replace with lib contributor
+    result.add(new Library("mps.languages") {
+      @NotNull
+      public String getPath() {
+        return WorkbenchPathManager.getLanguagesPath();
+      }
+    });
+    return result;
+  }
+
+  //---------------------
+
+  @Nls
+  public String getDisplayName() {
+    return "Library Manager (IDE)";
+  }
+
+  @NotNull
+  public String getComponentName() {
+    return LibraryManager.class.getSimpleName();
+  }
+}

@@ -19,7 +19,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class ModelDigestHelper {
 
   public static final String HEADER = "header";
-  public static final String FILE = "model";
+  public static final String  FILE = "model";
 
   private static ModelDigestHelper ourInstance = new ModelDigestHelper();
   private List<DigestProvider> myProviders = new CopyOnWriteArrayList<DigestProvider>();

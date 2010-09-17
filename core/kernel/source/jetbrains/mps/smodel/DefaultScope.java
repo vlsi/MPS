@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.library.LibraryManager;
+import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
@@ -138,7 +138,7 @@ public abstract class DefaultScope extends BaseScope {
 
     Set<DevKit> usedDevkits = new HashSet<DevKit>();
 
-    usedDevkits.addAll(LibraryManager.getInstance().getBootstrapModules(DevKit.class));
+    usedDevkits.addAll(LibraryInitializer.getInstance().getBootstrapModules(DevKit.class));
 
     for (IModule m : getInitialModules()) {
       if (m instanceof DevKit) {

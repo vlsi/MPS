@@ -99,6 +99,7 @@ public class LibraryStubDescriptor_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(this.createCollection_y9570a_a0b1a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_y9570a_b0b1a(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_y9570a_c0b1a(editorContext, node));
     return editorCell;
   }
 
@@ -123,6 +124,18 @@ public class LibraryStubDescriptor_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createConstant_y9570a_a1a1b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_y9570a_b1a1b0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_y9570a_c0b1a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_y9570a_c0b1a");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.addEditorCell(this.createConstant_y9570a_a2a1b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_y9570a_b2a1b0(editorContext, node));
     return editorCell;
   }
 
@@ -151,6 +164,13 @@ public class LibraryStubDescriptor_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_y9570a_a1a1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "creator:");
     editorCell.setCellId("Constant_y9570a_a1a1b0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_y9570a_a2a1b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "export:");
+    editorCell.setCellId("Constant_y9570a_a2a1b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -201,6 +221,23 @@ public class LibraryStubDescriptor_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_moduleName");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new LibraryStubDescriptor_Editor.LibraryStubDescriptor_generic_cellMenu_a0b0a1b0(), new LibraryStubDescriptor_Editor.LibraryStubDescriptor_generic_cellMenu_b0b0a1b0()}));
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_y9570a_b2a1b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("export");
+    provider.setNoTargetText("do not set");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

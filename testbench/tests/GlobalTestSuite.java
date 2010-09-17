@@ -5,7 +5,6 @@ import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite.SuiteClasses;
 
-
 @SuiteClasses({jetbrains.mps.baseLanguage.closures.test.ClosureLiteralDataFlow_Test.class,
 jetbrains.mps.baseLanguage.closures.test.ClosureDataFlow_Test.class,
 jetbrains.mps.internalCollections.test.compareOperations.SubtractTest_Test.class,
@@ -65,8 +64,8 @@ jetbrains.mps.make.dependencies.GraphTestCase.class,
 jetbrains.mps.make.TestMakeOnRealProject.class,
 jetbrains.mps.make.dependencies.FindStronglyConnectedComponentsTestCase.class,
 jetbrains.mps.diff.DiffTestCase.class,
+jetbrains.mps.smodel.test.reflection.SNodeGetReferencesOperation_Test.class,
 jetbrains.mps.smodel.test.reflection.SNodeGetReferenceOperation_Test.class,
-jetbrains.mps.smodel.test.reflection.SNodeGetReterencesOperation_Test.class,
 jetbrains.mps.smodel.test.smodelOperations.SLinkImplicitSelect_Test.class,
 jetbrains.mps.smodel.test.reflection.SNodeGetChildrenOperation_Test.class,
 jetbrains.mps.smodel.test.smodelOperations.SLinkListAccess_ListModifyingOperaions_Test.class,
@@ -351,6 +350,7 @@ jetbrains.mps.vcs.diff.MergeNotLoseExternalChangesTest.class,
 jetbrains.mps.vcs.diff.MergeReferencesTest.class,
 jetbrains.mps.vcs.diff.MergeConceptAndImportsTest.class,
 jetbrains.mps.refactoring.RefactoringTest.class,
+jetbrains.mps.generator.test.ParallelPoolTest.class,
 tests.Match_Test.class,
 tests.PerlReplace_Test.class,
 tests.Statements_Test.class,
@@ -367,7 +367,8 @@ jetbrains.mps.baseLanguage.collections.unittest.query_operations.Where_Select_Te
 jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Contains_Test.class,
 jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Concat_Test_Test.class,
 jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Distinct_Test.class,
-jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Union_Test.class})@RunWith(WatchingSuite.class)
+jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Union_Test.class})
+@RunWith(WatchingSuite.class)
 public class GlobalTestSuite extends TestSuite {
   @BeforeClass
   public static void make () throws Exception {

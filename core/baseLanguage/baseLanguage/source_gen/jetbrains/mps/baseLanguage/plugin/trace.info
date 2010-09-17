@@ -1,5 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="DefaultJavaApplication_Editor.java" startLine="24" startPosition="47" endLine="28" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Editor$2" />
+  <unitInfo fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="31" startPosition="87" endLine="35" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.DebugInfoInitializer_CustomApplicationPlugin$1" />
+  <unitInfo fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="36" startPosition="94" endLine="40" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.DebugInfoInitializer_CustomApplicationPlugin$2" />
+  <unitInfo fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="41" startPosition="100" endLine="45" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.DebugInfoInitializer_CustomApplicationPlugin$3" />
+  <unitInfo fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="46" startPosition="99" endLine="50" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.DebugInfoInitializer_CustomApplicationPlugin$4" />
+  <unitInfo fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="51" startPosition="94" endLine="55" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.DebugInfoInitializer_CustomApplicationPlugin$5" />
+  <unitInfo fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="67" startPosition="89" endLine="71" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.DebugInfoInitializer_CustomApplicationPlugin$7" />
+  <unitInfo fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="72" startPosition="85" endLine="76" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.DebugInfoInitializer_CustomApplicationPlugin$8" />
+  <unitInfo fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="77" startPosition="84" endLine="81" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.DebugInfoInitializer_CustomApplicationPlugin$9" />
+  <unitInfo fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="82" startPosition="86" endLine="86" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.DebugInfoInitializer_CustomApplicationPlugin$10" />
+  <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="150" startPosition="42" endLine="154" endPosition="13" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$2" />
+  <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="239" startPosition="45" endLine="243" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$2" />
+  <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="271" startPosition="66" endLine="275" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$4" />
+  <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="253" startPosition="45" endLine="258" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$3" />
+  <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="139" startPosition="90" endLine="146" endPosition="13" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$2" />
+  <unitInfo fileName="DefaultJavaApplication_Editor.java" startLine="21" startPosition="74" endLine="31" endPosition="3" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Editor$1" />
+  <unitInfo fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="56" startPosition="86" endLine="66" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.DebugInfoInitializer_CustomApplicationPlugin$6" />
+  <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="280" startPosition="35" endLine="290" endPosition="9" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$5" />
+  <unitInfo fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="87" startPosition="81" endLine="99" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.DebugInfoInitializer_CustomApplicationPlugin$11" />
+  <unitInfo fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="100" startPosition="84" endLine="112" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.DebugInfoInitializer_CustomApplicationPlugin$12" />
+  <unitInfo fileName="DefaultJavaApplication_Factory.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Factory" />
+  <unitInfo fileName="DefaultJavaApplication_Editor.java" startLine="31" startPosition="18" endLine="46" endPosition="3" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Editor$2" />
+  <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="345" startPosition="0" endLine="361" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$MyState" />
+  <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="158" startPosition="52" endLine="175" endPosition="13" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$2" />
+  <unitInfo fileName="BaseLanguageModelActionsInternal_ActionGroup.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguageModelActionsInternal_ActionGroup" />
+  <unitInfo fileName="BaseLanguage_ProjectPlugin.java" startLine="14" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguage_ProjectPlugin" />
+  <unitInfo fileName="AnalyzersActions_ActionGroup.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.AnalyzersActions_ActionGroup" />
+  <unitInfo fileName="BaseLanguageToolsAddition_ActionGroup.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguageToolsAddition_ActionGroup" />
+  <unitInfo fileName="TodoViewer_Tool.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.TodoViewer_Tool" />
+  <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="362" startPosition="0" endLine="385" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$MyExecutionResult" />
+  <unitInfo fileName="RefactoringAddition_ActionGroup.java" startLine="9" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.RefactoringAddition_ActionGroup" />
+  <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="386" startPosition="0" endLine="411" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$MyExecutionConsole" />
+  <unitInfo fileName="BaseLanguageEditorPopup_ActionGroup.java" startLine="11" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguageEditorPopup_ActionGroup" />
+  <unitInfo fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="11" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguageCustomPlugin_CustomProjectPlugin" />
+  <unitInfo fileName="BaseLanguage_ApplicationPlugin.java" startLine="13" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguage_ApplicationPlugin" />
+  <unitInfo fileName="AnalyzeStacktrace_Tool.java" startLine="22" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.AnalyzeStacktrace_Tool" />
+  <unitInfo fileName="JavaApplication_ConfigurationType.java" startLine="18" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.JavaApplication_ConfigurationType" />
+  <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="301" startPosition="0" endLine="344" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$MySettingsEditor" />
+  <unitInfo fileName="DefaultJavaAppFromMainMethod.java" startLine="19" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaAppFromMainMethod" />
+  <unitInfo fileName="ShowTodoViewer_Action.java" startLine="16" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.ShowTodoViewer_Action" />
+  <unitInfo fileName="DefaultJavaAppFromClass.java" startLine="19" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaAppFromClass" />
+  <unitInfo fileName="DefaultJavaApplication_Editor.java" startLine="19" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Editor" />
+  <unitInfo fileName="AnalyzeStacktrace_Action.java" startLine="15" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.AnalyzeStacktrace_Action" />
+  <unitInfo fileName="ShowNullDFA_Action.java" startLine="20" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.ShowNullDFA_Action" />
+  <unitInfo fileName="PrintNodePosition_Action.java" startLine="18" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.PrintNodePosition_Action" />
+  <unitInfo fileName="UncommentStatements_Action.java" startLine="17" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.UncommentStatements_Action" />
+  <unitInfo fileName="CommentLine_Action.java" startLine="16" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.CommentLine_Action" />
+  <unitInfo fileName="UncommentLine_Action.java" startLine="17" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.UncommentLine_Action" />
+  <unitInfo fileName="CommentStatements_Action.java" startLine="19" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.CommentStatements_Action" />
+  <unitInfo fileName="RenameVariable_Action.java" startLine="20" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.RenameVariable_Action" />
+  <unitInfo fileName="ShowMembers_Action.java" startLine="22" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.ShowMembers_Action" />
+  <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="111" startPosition="15" endLine="202" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$1" />
+  <unitInfo fileName="IntroduceField_Action.java" startLine="21" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.IntroduceField_Action" />
+  <unitInfo fileName="IntroduceVariable_Action.java" startLine="21" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.IntroduceVariable_Action" />
+  <unitInfo fileName="InlineMethod_Action.java" startLine="22" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.InlineMethod_Action" />
+  <unitInfo fileName="ExtractMethod_Action.java" startLine="25" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.ExtractMethod_Action" />
+  <unitInfo fileName="InlineLocalVariable_Action.java" startLine="19" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.InlineLocalVariable_Action" />
+  <unitInfo fileName="DebugInfoInitializer_CustomApplicationPlugin.java" startLine="23" startPosition="0" endLine="132" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DebugInfoInitializer_CustomApplicationPlugin" />
+  <unitInfo fileName="GoToOverridenMethod_Action.java" startLine="34" startPosition="0" endLine="162" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.GoToOverridenMethod_Action" />
+  <unitInfo fileName="GoToInheritedClassifier_Action.java" startLine="34" startPosition="0" endLine="181" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.GoToInheritedClassifier_Action" />
+  <unitInfo fileName="GoToOverridingMethod_Action.java" startLine="37" startPosition="0" endLine="193" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.GoToOverridingMethod_Action" />
+  <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="61" startPosition="0" endLine="412" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration" />
   <root nodeId="1108208212555615250">
     <nodeInfo nodeId="1108208212555649458" fileName="GoToOverridenMethod_Action.java" startLine="37" startPosition="0" endLine="38" endPosition="29" />
     <nodeInfo nodeId="1430599794086139565" fileName="GoToOverridenMethod_Action.java" startLine="38" startPosition="29" endLine="39" endPosition="42" />

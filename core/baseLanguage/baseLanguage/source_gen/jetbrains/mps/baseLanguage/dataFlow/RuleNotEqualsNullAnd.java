@@ -7,6 +7,7 @@ import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 
 public class RuleNotEqualsNullAnd extends DataFlowConstructor {
   private GeneratedMatchingPattern myPattern = new RuleNotEqualsNullAnd.Pattern_ehdml9_a0a();
@@ -163,15 +164,19 @@ public class RuleNotEqualsNullAnd extends DataFlowConstructor {
         Object object = getFieldValue("PatternVar_body");
         if (((Program) o).contains(object)) {
           position = ((Program) (o)).getEnd(object);
-          ((Program) (o)).insert(new nullableInstruction((SNode) getFieldValue("PatternVar_p")), position, true);
+          Instruction instruction = new nullableInstruction((SNode) getFieldValue("PatternVar_p"));
+          instruction.setSource(getFieldValue("PatternVar_body"));
+          ((Program) (o)).insert(instruction, position, true);
         }
       }
       {
         int position = 0;
         Object object = getFieldValue("PatternVar_ifTrue");
         if (((Program) o).contains(object)) {
-          position = ((Program) (o)).getStart(getFieldValue("PatternVar_ifTrue"));
-          ((Program) (o)).insert(new notNullInstruction((SNode) getFieldValue("PatternVar_p")), position, true);
+          position = ((Program) (o)).getStart(object);
+          Instruction instruction = new notNullInstruction((SNode) getFieldValue("PatternVar_p"));
+          instruction.setSource(getFieldValue("PatternVar_ifTrue"));
+          ((Program) (o)).insert(instruction, position, true);
         }
       }
       {
@@ -179,7 +184,9 @@ public class RuleNotEqualsNullAnd extends DataFlowConstructor {
         Object object = getFieldValue("PatternVar_notEquals");
         if (((Program) o).contains(object)) {
           position = ((Program) (o)).getEnd(object);
-          ((Program) (o)).insert(new notNullInstruction((SNode) getFieldValue("PatternVar_p")), position, true);
+          Instruction instruction = new notNullInstruction((SNode) getFieldValue("PatternVar_p"));
+          instruction.setSource(getFieldValue("PatternVar_notEquals"));
+          ((Program) (o)).insert(instruction, position, true);
         }
       }
     }

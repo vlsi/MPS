@@ -224,7 +224,11 @@ public class PatternOrPattern2_Test extends BaseTransformationTest {
               }
               {
                 SNode childVar_pf9dr6_a0a0a0 = nodeToMatch_pf9dr6_a0a0a.getChildren(childRole_pf9dr6__2).get(0);
-                this.PatternVar_s = childVar_pf9dr6_a0a0a0;
+                {
+                  SNode nodeToMatch_pf9dr6_a0a0a0;
+                  nodeToMatch_pf9dr6_a0a0a0 = childVar_pf9dr6_a0a0a0;
+                  PatternVar_s = nodeToMatch_pf9dr6_a0a0a0;
+                }
               }
             }
             {
@@ -235,9 +239,9 @@ public class PatternOrPattern2_Test extends BaseTransformationTest {
               {
                 SNode childVar_pf9dr6_a0a0a0_0 = nodeToMatch_pf9dr6_a0a0a.getChildren(childRole_pf9dr6__3).get(0);
                 {
-                  SNode nodeToMatch_pf9dr6_a0a0a0;
-                  nodeToMatch_pf9dr6_a0a0a0 = childVar_pf9dr6_a0a0a0_0;
-                  if (!("jetbrains.mps.baseLanguage.structure.NullLiteral".equals(nodeToMatch_pf9dr6_a0a0a0.getConceptFqName()))) {
+                  SNode nodeToMatch_pf9dr6_a0a0a0_0;
+                  nodeToMatch_pf9dr6_a0a0a0_0 = childVar_pf9dr6_a0a0a0_0;
+                  if (!("jetbrains.mps.baseLanguage.structure.NullLiteral".equals(nodeToMatch_pf9dr6_a0a0a0_0.getConceptFqName()))) {
                     return false;
                   }
                 }
@@ -304,7 +308,11 @@ public class PatternOrPattern2_Test extends BaseTransformationTest {
               }
               {
                 SNode childVar_pf9dr6_a0b0a0_0 = nodeToMatch_pf9dr6_a1a0a.getChildren(childRole_pf9dr6__5).get(0);
-                this.PatternVar_s = childVar_pf9dr6_a0b0a0_0;
+                {
+                  SNode nodeToMatch_pf9dr6_a0b0a0_0;
+                  nodeToMatch_pf9dr6_a0b0a0_0 = childVar_pf9dr6_a0b0a0_0;
+                  PatternVar_s = nodeToMatch_pf9dr6_a0b0a0_0;
+                }
               }
             }
           }

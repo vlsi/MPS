@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="Calculator_ProjectPlugin.java" startLine="7" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.calculator.plugin.Calculator_ProjectPlugin" />
+  <unitInfo fileName="Calculator_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.calculator.plugin.Calculator_ApplicationPlugin" />
+  <unitInfo fileName="NodeActionsAddition_ActionGroup.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.calculator.plugin.NodeActionsAddition_ActionGroup" />
+  <unitInfo fileName="ExecuteCalculator_Action.java" startLine="16" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.calculator.plugin.ExecuteCalculator_Action" />
   <root nodeId="1241364911745">
     <nodeInfo nodeId="1241364981992" fileName="ExecuteCalculator_Action.java" startLine="19" startPosition="0" endLine="20" endPosition="25" />
     <nodeInfo nodeId="1241368452581" fileName="ExecuteCalculator_Action.java" startLine="33" startPosition="52" endLine="34" endPosition="65" />
@@ -25,10 +29,19 @@
     <nodeInfo nodeId="1241368401211" fileName="ExecuteCalculator_Action.java" startLine="101" startPosition="0" endLine="113" endPosition="0" />
     <nodeInfo nodeId="1241365883103" fileName="ExecuteCalculator_Action.java" startLine="74" startPosition="9" endLine="90" endPosition="7" />
     <scopeInfo nodeId="1241367246476" fileName="ExecuteCalculator_Action.java" startLine="33" startPosition="52" endLine="34" endPosition="65" />
+    <scopeInfo nodeId="1241365883214" fileName="ExecuteCalculator_Action.java" startLine="82" startPosition="0" endLine="83" endPosition="34">
+      <varInfo nodeId="1241365883215" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="1241365883217" fileName="ExecuteCalculator_Action.java" startLine="82" startPosition="35" endLine="83" endPosition="34" />
+    <scopeInfo nodeId="1241365883226" fileName="ExecuteCalculator_Action.java" startLine="88" startPosition="0" endLine="89" endPosition="28">
+      <varInfo nodeId="1241365883227" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="1241365883229" fileName="ExecuteCalculator_Action.java" startLine="88" startPosition="29" endLine="89" endPosition="28" />
     <scopeInfo nodeId="1241368479525" fileName="ExecuteCalculator_Action.java" startLine="104" startPosition="20" endLine="105" endPosition="18" />
     <scopeInfo nodeId="1241368503242" fileName="ExecuteCalculator_Action.java" startLine="107" startPosition="9" endLine="108" endPosition="67" />
+    <scopeInfo nodeId="1241368503244" fileName="ExecuteCalculator_Action.java" startLine="109" startPosition="0" endLine="110" endPosition="18">
+      <varInfo nodeId="1241368503245" varName="e" />
+    </scopeInfo>
     <scopeInfo nodeId="1241368503247" fileName="ExecuteCalculator_Action.java" startLine="109" startPosition="39" endLine="110" endPosition="18" />
     <scopeInfo nodeId="1241365883202" fileName="ExecuteCalculator_Action.java" startLine="79" startPosition="17" endLine="81" endPosition="54">
       <varInfo nodeId="1241368935645" varName="args" />

@@ -18,7 +18,7 @@ package jetbrains.mps.ide.library;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.library.BaseLibraryManager;
 import jetbrains.mps.library.Library;
-import jetbrains.mps.library.PredefinedLibrary;
+import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.vfs.IFile;
@@ -86,7 +86,8 @@ public class LibraryManagerPreferences {
         int index = myLibrariesList.getSelectedIndex();
         if (index < 0) return;
         Library l = (Library) myListModel.get(index);
-        boolean predefined = l instanceof PredefinedLibrary;
+        //todo add predef lib to view
+        boolean predefined = false;
         myEditButton.setEnabled(!predefined);
         myRemoveButton.setEnabled(!predefined);
       }
@@ -98,15 +99,11 @@ public class LibraryManagerPreferences {
   }
 
 
-  private void updateModel() {
-    updateModel(true);
-  }
-
   private void updateModel(final boolean updateManager) {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         Library oldSelection = (Library) myLibrariesList.getSelectedValue();
-        List<Library> libraries = new ArrayList<Library>(myManager.getLibraries());
+        List<Library> libraries = new ArrayList<Library>(myManager.getUILibraries());
         Collections.sort(libraries, new ToStringComparator());
         myListModel.clear();
         for (Library l : libraries) {
@@ -118,7 +115,7 @@ public class LibraryManagerPreferences {
         }
 
         if (updateManager) {
-          myManager.update();
+          LibraryInitializer.getInstance().update();
         }
       }
     });
@@ -130,7 +127,7 @@ public class LibraryManagerPreferences {
       return;
     }
     myManager.remove((Library) myListModel.get(index));
-    updateModel();
+    updateModel(true);
     myChanged = true;
   }
 
@@ -143,7 +140,8 @@ public class LibraryManagerPreferences {
 
     Library l = (Library) myListModel.get(index);
 
-    if (l instanceof PredefinedLibrary) {
+    //add support of predefined libs
+    if (false) {
       JOptionPane.showMessageDialog(myMainPanel, "You can't edit a predefined library", "Error", JOptionPane.ERROR_MESSAGE);
       return;
     }
@@ -158,7 +156,7 @@ public class LibraryManagerPreferences {
 
     l.setPath(path);
 
-    updateModel();
+    updateModel(true);
     myChanged = true;
   }
 
@@ -178,8 +176,8 @@ public class LibraryManagerPreferences {
     if (result == null) return;
     path = result.getAbsolutePath();
 
-    myManager.newLibrary(name).setPath(path);
-    updateModel();
+    myManager.addLibrary(name).setPath(path);
+    updateModel(true);
 
     myChanged = true;
   }

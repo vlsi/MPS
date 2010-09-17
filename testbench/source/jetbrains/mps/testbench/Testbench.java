@@ -4,6 +4,7 @@ import com.intellij.openapi.application.PathMacros;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.util.PathUtil;
 import jetbrains.mps.library.BaseLibraryManager.MyState;
+import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
@@ -60,7 +61,7 @@ public class Testbench {
     LibraryManager.getInstance().loadState(state);
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        LibraryManager.getInstance().update();
+        LibraryInitializer.getInstance().update();
       }
     });
   }

@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class EditorExtensionHelper {
@@ -70,10 +71,10 @@ public class EditorExtensionHelper {
 
       public SNode create(final SNode context) {
         final Wrappers._T<SNode> eht = new Wrappers._T<SNode>();
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-          public void run() {
+        ModelAccess.instance().runWriteActionInCommand(new Computable<SNode>() {
+          public SNode compute() {
             eht.value = SModelOperations.createNewRootNode(eventsModel, "jetbrains.mps.ui.modeling.structure.EventHandlerTemplate", null);
-            SLinkOperations.setTarget(eht.value, "event", context, false);
+            return SLinkOperations.setTarget(eht.value, "event", context, false);
           }
         });
         return eht.value;

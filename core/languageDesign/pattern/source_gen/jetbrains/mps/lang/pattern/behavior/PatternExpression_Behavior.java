@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -24,6 +25,9 @@ public class PatternExpression_Behavior {
     ListSequence.fromList(variables).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", false, new String[]{})));
     ListSequence.fromList(variables).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration", false, new String[]{})));
     ListSequence.fromList(variables).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", false, new String[]{})));
+    if (SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.lang.pattern.structure.OrPatternClause")) {
+      ListSequence.fromList(variables).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.pattern.structure.OrPattern"), "variable", true)));
+    }
     return variables;
   }
 
@@ -35,6 +39,17 @@ public class PatternExpression_Behavior {
       if (!(names.contains(SPropertyOperations.getString(var, "name")))) {
         ListSequence.fromList(result).addElement(var);
         names.add(SPropertyOperations.getString(var, "name"));
+      }
+    }
+    return result;
+  }
+
+  public static List<SNode> call_getOwnVariables_8288845019109059987(SNode thisNode) {
+    List<SNode> variables = PatternExpression_Behavior.call_getVariables_4855904478357072957(thisNode);
+    List<SNode> result = new ArrayList<SNode>();
+    for (SNode var : variables) {
+      if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(var), "jetbrains.mps.lang.pattern.structure.OrPattern") && SNodeOperations.getParent(var) != thisNode)) {
+        ListSequence.fromList(result).addElement(var);
       }
     }
     return result;

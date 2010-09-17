@@ -83,6 +83,10 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
       return new HashSet<EditorMessage>(0);
     }
 
+    if (rootNode.getModel().isDisposed()) {
+      return new HashSet<EditorMessage>(0);
+    }
+
     final Map<SNode, SNode> reResolvedTargets = new HashMap<SNode, SNode>();
 
     if (!wasCheckedOnce) {

@@ -70,6 +70,38 @@ public class PasteWrappers {
         return statement;
       }
     });
+    ListSequence.fromList(result).addElement(new PasteWrapper() {
+      public String getSourceConceptFqName() {
+        return "jetbrains.mps.baseLanguage.structure.AbstractCreator";
+      }
+
+      public String getTargetConceptFqName() {
+        return "jetbrains.mps.baseLanguage.structure.Expression";
+      }
+
+      public SNode wrap(PasteWrapperContext _context) {
+        SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.GenericNewExpression", null);
+        SLinkOperations.setTarget(result, "creator", _context.getSourceNode(), true);
+        return result;
+      }
+    });
+    ListSequence.fromList(result).addElement(new PasteWrapper() {
+      public String getSourceConceptFqName() {
+        return "jetbrains.mps.baseLanguage.structure.AbstractCreator";
+      }
+
+      public String getTargetConceptFqName() {
+        return "jetbrains.mps.baseLanguage.structure.Statement";
+      }
+
+      public SNode wrap(PasteWrapperContext _context) {
+        SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
+        SNode newExpression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.GenericNewExpression", null);
+        SLinkOperations.setTarget(newExpression, "creator", _context.getSourceNode(), true);
+        SLinkOperations.setTarget(result, "expression", newExpression, true);
+        return result;
+      }
+    });
     return result;
   }
 }

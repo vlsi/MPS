@@ -3409,7 +3409,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="jetbrains.mps.javaParser.paste.JavaPaster" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.datatransfer.JavaPaster" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
@@ -3424,7 +3424,7 @@
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.javaParser.FeatureKind" />
-    <classNode dependClassName="jetbrains.mps.javaParser.paste.JavaPaster" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.datatransfer.JavaPaster" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
@@ -3439,7 +3439,7 @@
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.javaParser.FeatureKind" />
-    <classNode dependClassName="jetbrains.mps.javaParser.paste.JavaPaster" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.datatransfer.JavaPaster" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
@@ -3460,11 +3460,11 @@
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.datatransfer.CopyPasteUtil" />
-    <classNode dependClassName="jetbrains.mps.datatransfer.NodePaster" />
     <classNode dependClassName="jetbrains.mps.datatransfer.PasteEnv" />
     <classNode dependClassName="jetbrains.mps.datatransfer.PasteNodeData" />
     <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.ProjectPane" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.datatransfer.NodePaster" />
     <classNode dependClassName="jetbrains.mps.plugins.MacrosUtil" />
     <classNode dependClassName="jetbrains.mps.resolve.Resolver" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />

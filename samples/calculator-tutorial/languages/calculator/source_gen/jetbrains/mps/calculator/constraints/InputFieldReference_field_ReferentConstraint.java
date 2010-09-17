@@ -25,7 +25,7 @@ public class InputFieldReference_field_ReferentConstraint extends BaseNodeRefere
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    SNode calc = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.calculator.structure.Calcualtor", false, false);
+    SNode calc = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.calculator.structure.Calculator", false, false);
     return SLinkOperations.getTargets(calc, "inputField", true);
   }
 
