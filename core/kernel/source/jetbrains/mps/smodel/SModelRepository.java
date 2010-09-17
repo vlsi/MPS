@@ -546,6 +546,7 @@ public class SModelRepository implements ApplicationComponent {
       Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
       for (SModelDescriptor md : myModelDescriptors) {
         if (!(md instanceof EditableSModelDescriptor)) continue;
+        if (!SModelStereotype.isUserModel(md)) continue;
         if (((EditableSModelDescriptor) md).isChanged()) result.add(md);
       }
       return result;
