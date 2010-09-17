@@ -969,19 +969,12 @@ public class QueriesGenerated {
             place = entryCopy;
           }
           SNodeOperations.deleteNode(blockRef);
-          if (eq_x583g4_a0e0c0a0a0wg(SNodeOperations.getModel(block), _context.getModel())) {
-            // we do not want blocks to be generated, so if they are in generated model we delete them 
-            SNodeOperations.deleteNode(block);
-          }
         }
       }
     }
-  }
-
-  private static boolean eq_x583g4_a0e0c0a0a0wg(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
+    // blocks aren't generated so we delete them 
+    for (SNode block : ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.packaging.structure.Block"))) {
+      SNodeOperations.deleteNode(block);
+    }
   }
 }
