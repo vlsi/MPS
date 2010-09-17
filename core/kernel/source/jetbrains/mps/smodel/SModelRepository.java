@@ -40,12 +40,12 @@ public class SModelRepository implements ApplicationComponent {
   }
 
   private final Map<String, SModelDescriptor> myCanonicalPathsToModelDescriptorMap = new ConcurrentHashMap<String, SModelDescriptor>();
+  private final Map<SModelId, SModelDescriptor> myIdToModelDescriptorMap = new ConcurrentHashMap<SModelId, SModelDescriptor>();
+  private final Map<SModelFqName, SModelDescriptor> myFqNameToModelDescriptorMap = new ConcurrentHashMap<SModelFqName, SModelDescriptor>();
 
   private final Object myModelsLock = new Object();
   private final Set<SModelDescriptor> myModelDescriptors = new LinkedHashSet<SModelDescriptor>();
   private final Set<SModelDescriptor> myModelsWithNoOwners = new LinkedHashSet<SModelDescriptor>();
-  private final Map<SModelId, SModelDescriptor> myIdToModelDescriptorMap = new LinkedHashMap<SModelId, SModelDescriptor>();
-  private final Map<SModelFqName, SModelDescriptor> myFqNameToModelDescriptorMap = new LinkedHashMap<SModelFqName, SModelDescriptor>();
   private final ManyToManyMap<SModelDescriptor, ModelOwner> myModelsToOwners = new ManyToManyMap<SModelDescriptor, ModelOwner>();
 
   private final Object myListenersLock = new Object();
@@ -278,18 +278,14 @@ public class SModelRepository implements ApplicationComponent {
 
   public SModelDescriptor getModelDescriptor(SModelReference modelReference) {
     if (modelReference == null) return null;
-    synchronized (myModelsLock) {
-      if (modelReference.getSModelId() != null) {
-        return myIdToModelDescriptorMap.get(modelReference.getSModelId());
-      }
-      return myFqNameToModelDescriptorMap.get(modelReference.getSModelFqName());
+    if (modelReference.getSModelId() != null) {
+      return myIdToModelDescriptorMap.get(modelReference.getSModelId());
     }
+    return myFqNameToModelDescriptorMap.get(modelReference.getSModelFqName());
   }
 
   public SModelDescriptor getModelDescriptor(SModelFqName modelFqName) {
-    synchronized (myModelsLock) {
-      return myFqNameToModelDescriptorMap.get(modelFqName);
-    }
+    return myFqNameToModelDescriptorMap.get(modelFqName);
   }
 
   public SModelDescriptor getModelDescriptor(SModelReference modelReference, ModelOwner owner) {
