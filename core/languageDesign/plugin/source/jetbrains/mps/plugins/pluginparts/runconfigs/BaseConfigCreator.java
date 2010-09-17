@@ -16,6 +16,7 @@
 package jetbrains.mps.plugins.pluginparts.runconfigs;
 
 import com.intellij.execution.Location;
+import com.intellij.execution.RunnerAndConfigurationSettings;
 import com.intellij.execution.actions.ConfigurationContext;
 import com.intellij.execution.configurations.ConfigurationType;
 import com.intellij.execution.configurations.RunConfiguration;
@@ -51,7 +52,7 @@ public abstract class BaseConfigCreator<T> extends RuntimeConfigurationProducer 
     return myContext;
   }
 
-  protected RunnerAndConfigurationSettingsImpl createConfigurationByElement(Location location, ConfigurationContext context) {
+  protected RunnerAndConfigurationSettings createConfigurationByElement(Location location, ConfigurationContext context) {
     myContext = context;
     if (!(location instanceof MPSLocation)) return null;
     MPSLocation mpsLocation = (MPSLocation) location;
