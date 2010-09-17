@@ -1764,6 +1764,10 @@
       <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Module:7" id="8431776905956472938">
         <property name="id:7" value="ef703a71-a5a3-42af-b53c-ddced816ad5c" />
       </node>
+      <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Module:7" id="8447281171170208180">
+        <property name="id:7" value="b02ae39f-4c16-4545-8dfa-88df16804e7e" />
+        <property name="name:7" value="jetbrains.mps.lang.smodelTests" />
+      </node>
       <node role="title:7" type="jetbrains.mps.build.packaging.structure.SimpleString:7" id="8431776905956472939">
         <property name="name:7" value="languageDesign" />
       </node>
@@ -1876,6 +1880,10 @@
     </node>
     <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Module:7" id="8431776905956472980">
       <property name="id:7" value="dd61a7d7-8e1b-45a1-9aa3-8585ec2b60fc" />
+    </node>
+    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Module:7" id="8447281171170208178">
+      <property name="id:7" value="12ea451d-94b2-4e3a-8ff9-08f91d5769cd" />
+      <property name="name:7" value="jetbrains.mps.build.mpsautobuild" />
     </node>
   </node>
   <node type="jetbrains.mps.build.packaging.structure.Block:7" id="8431776905956472981">
