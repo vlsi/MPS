@@ -281,6 +281,7 @@ public class IdeaFile implements IFileEx {
   // TODO make package-private and rename to getVirtualFile()
   @Nullable
   public VirtualFile toVirtualFile() {
+    findVirtualFile();
     return myVirtualFile;
   }
 
