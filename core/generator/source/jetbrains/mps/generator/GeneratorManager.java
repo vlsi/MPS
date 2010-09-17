@@ -17,6 +17,7 @@ package jetbrains.mps.generator;
 
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.impl.GenerationController;
@@ -28,6 +29,7 @@ import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
 import java.util.ArrayList;
@@ -93,8 +95,13 @@ public class GeneratorManager {
 
         GeneratorLoggerAdapter logger = new GeneratorLoggerAdapter(messages, settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings());
 
-        GenerationController gc = new GenerationController(inputModels, options, generationHandler, new GeneratorNotifierHelper(), logger, invocationContext, progress);
-        result[0] = gc.generate();
+        final GenerationController gc = new GenerationController(inputModels, options, generationHandler, new GeneratorNotifierHelper(), logger, invocationContext, progress);
+        result[0] = UndoHelper.getInstance().runNonUndoableAction(new Computable<Boolean>() {
+          @Override
+          public Boolean compute() {
+            return gc.generate();
+          }
+        });
         tracer.finishTracing();
         fireAfterGeneration(inputModels, options, invocationContext);
 

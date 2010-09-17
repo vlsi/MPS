@@ -19,8 +19,10 @@ import com.intellij.openapi.util.Computable;
 
 public class UndoHelper {
 
+  private static UndoHandler DEFAULT = new DefaultUndoHandler();
+
   private static UndoHelper ourInstance = new UndoHelper();
-  private UndoHandler myHandler = new DefaultUndoHandler();
+  private UndoHandler myHandler = DEFAULT;
 
   public static UndoHelper getInstance() {
     return ourInstance;
@@ -38,7 +40,18 @@ public class UndoHelper {
   }
 
   public <T> T runNonUndoableAction(Computable<T> t) {
-    return myHandler.runNonUndoableAction(t);
+    if(ModelAccess.instance().canWrite() && myHandler != DEFAULT) {
+      // locks optimization, install temporary dummy handler
+      UndoHandler old = myHandler;
+      try {
+        myHandler = DEFAULT;
+        return t.compute();
+      } finally {
+        myHandler = old;
+      }
+    } else {
+      return myHandler.runNonUndoableAction(t);
+    }
   }
 
   boolean needRegisterUndo(SModel model) {
