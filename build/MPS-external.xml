@@ -35,12 +35,6 @@
     <mkdir dir="${deploy.dir}/MPS/lib/mps.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/lib" />
     <mkdir dir="${deploy.dir}/MPS/license" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/ideaIntegration.jar.tmp/META-INF" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/ideaIntegration.jar.tmp" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/vcs.jar.tmp/META-INF" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/vcs.jar.tmp" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/samples.jar.tmp/META-INF" />
-    <mkdir dir="${deploy.dir}/MPS/plugins/samples.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/plugins" />
     <mkdir dir="${deploy.dir}/MPS/samples.zip.tmp/MPSSamples" />
     <mkdir dir="${deploy.dir}/MPS/samples.zip.tmp" />
@@ -162,36 +156,18 @@
     <copy todir="${deploy.dir}/MPS/license">
       <fileset dir="${mps_home}/license" excludes="**/*.iml, **/*.iws" />
     </copy>
-    <copy todir="${deploy.dir}/MPS/plugins/ideaIntegration.jar.tmp/META-INF">
-      <fileset dir="${mps_home}/plugins/ideaIntegration/META-INF" excludes="**/*.zip, ideaIntegration/**, vcs/**, samples/**, **/*.iml, **/*.iws" includes="**/plugin.xml, " />
-    </copy>
-    <copy todir="${deploy.dir}/MPS/plugins/ideaIntegration.jar.tmp">
-      <fileset dir="${mps_home}/plugins/ideaIntegration/classes" excludes="**/*.zip, ideaIntegration/**, vcs/**, samples/**, **/*.iml, **/*.iws" />
-    </copy>
-    <jar destfile="${deploy.dir}/MPS/plugins/ideaIntegration.jar" duplicate="preserve" filesonly="true">
-      <fileset dir="${deploy.dir}/MPS/plugins/ideaIntegration.jar.tmp" excludes="**/*.zip, ideaIntegration/**, vcs/**, samples/**, **/*.iml, **/*.iws" />
+    <jar destfile="${deploy.dir}/MPS/plugins/ideaIntegration.jar" filesonly="true" duplicate="preserve" compress="true">
+      <zipfileset dir="${mps_home}/plugins/ideaIntegration/META-INF" includes="**/plugin.xml" prefix="META-INF" />
+      <zipfileset dir="${mps_home}/plugins/ideaIntegration/classes" prefix="" />
     </jar>
-    <delete dir="${deploy.dir}/MPS/plugins/ideaIntegration.jar.tmp" />
-    <copy todir="${deploy.dir}/MPS/plugins/vcs.jar.tmp/META-INF">
-      <fileset dir="${mps_home}/plugins/vcs/META-INF" excludes="**/*.zip, ideaIntegration/**, vcs/**, samples/**, **/*.iml, **/*.iws" includes="**/plugin.xml, " />
-    </copy>
-    <copy todir="${deploy.dir}/MPS/plugins/vcs.jar.tmp">
-      <fileset dir="${mps_home}/plugins/vcs/classes" excludes="**/*.zip, ideaIntegration/**, vcs/**, samples/**, **/*.iml, **/*.iws" />
-    </copy>
-    <jar destfile="${deploy.dir}/MPS/plugins/vcs.jar" duplicate="preserve" filesonly="true">
-      <fileset dir="${deploy.dir}/MPS/plugins/vcs.jar.tmp" excludes="**/*.zip, ideaIntegration/**, vcs/**, samples/**, **/*.iml, **/*.iws" />
+    <jar destfile="${deploy.dir}/MPS/plugins/vcs.jar" filesonly="true" duplicate="preserve" compress="true">
+      <zipfileset dir="${mps_home}/plugins/vcs/META-INF" includes="**/plugin.xml" prefix="META-INF" />
+      <zipfileset dir="${mps_home}/plugins/vcs/classes" prefix="" />
     </jar>
-    <delete dir="${deploy.dir}/MPS/plugins/vcs.jar.tmp" />
-    <copy todir="${deploy.dir}/MPS/plugins/samples.jar.tmp/META-INF">
-      <fileset dir="${mps_home}/plugins/samples/META-INF" excludes="**/*.zip, ideaIntegration/**, vcs/**, samples/**, **/*.iml, **/*.iws" includes="**/plugin.xml, " />
-    </copy>
-    <copy todir="${deploy.dir}/MPS/plugins/samples.jar.tmp">
-      <fileset dir="${mps_home}/plugins/samples/classes" excludes="**/*.zip, ideaIntegration/**, vcs/**, samples/**, **/*.iml, **/*.iws" />
-    </copy>
-    <jar destfile="${deploy.dir}/MPS/plugins/samples.jar" duplicate="preserve" filesonly="true">
-      <fileset dir="${deploy.dir}/MPS/plugins/samples.jar.tmp" excludes="**/*.zip, ideaIntegration/**, vcs/**, samples/**, **/*.iml, **/*.iws" />
+    <jar destfile="${deploy.dir}/MPS/plugins/samples.jar" filesonly="true" duplicate="preserve" compress="true">
+      <zipfileset dir="${mps_home}/plugins/samples/META-INF" includes="**/plugin.xml" prefix="META-INF" />
+      <zipfileset dir="${mps_home}/plugins/samples/classes" prefix="" />
     </jar>
-    <delete dir="${deploy.dir}/MPS/plugins/samples.jar.tmp" />
     <copy todir="${deploy.dir}/MPS/plugins">
       <fileset dir="${mps_home}/plugins" excludes="**/*.zip, ideaIntegration/**, vcs/**, samples/**, **/*.iml, **/*.iws" />
     </copy>
@@ -369,9 +345,6 @@
     <delete dir="${deploy.dir}/MPS-buildTools.zip.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/idea-patch.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/mps.jar.tmp" />
-    <delete dir="${deploy.dir}/MPS/plugins/ideaIntegration.jar.tmp" />
-    <delete dir="${deploy.dir}/MPS/plugins/vcs.jar.tmp" />
-    <delete dir="${deploy.dir}/MPS/plugins/samples.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/platform/generate.ant.task.jar.tmp" />
   </target>
   <target name="replace_a01h1a">

@@ -344,6 +344,16 @@
       </node>
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical:32" id="1239880076112" />
     </node>
+    <node role="inspectedCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="4159241239519649228">
+      <property name="vertical:32" value="true" />
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Component:32" id="4159241239519649229">
+        <link role="editorComponent:32" targetNodeId="1204116610828" resolveInfo="ConfigurationReferencesEditorComponent" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Component:32" id="4159241239519649232">
+        <link role="editorComponent:32" targetNodeId="1206440283018" resolveInfo="IncludeExcludeInInspector" />
+      </node>
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical:32" id="4159241239519649230" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1203598612021">
     <property name="package:32" value="projectComponents" />
@@ -2076,6 +2086,33 @@
         </node>
         <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="701559220729218494" />
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="4159241239519649211">
+    <property name="package:32" value="projectComponents" />
+    <link role="conceptDeclaration:32" targetNodeId="1.4159241239519649208:7" resolveInfo="Plugin" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="4159241239519649213">
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty:32" id="4159241239519649216">
+        <link role="relationDeclaration:32" targetNodeId="2.1137473891462:0" resolveInfo="alias" />
+        <link role="styleClass:32" targetNodeId="1203598953979" resolveInfo="projectComponent" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="4159241239519649218">
+        <link role="relationDeclaration:32" targetNodeId="1.1205340441197:7" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="4159241239519649220">
+        <property name="text:32" value="from" />
+        <link role="styleClass:32" targetNodeId="1203598923024" resolveInfo="keyword" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="4159241239519649222">
+        <link role="relationDeclaration:32" targetNodeId="1.4159241239519649209:7" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Component:32" id="4159241239519649224">
+        <link role="editorComponent:32" targetNodeId="1204116610828" resolveInfo="ConfigurationReferencesEditorComponent" />
+      </node>
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="4159241239519649215" />
+    </node>
+    <node role="inspectedCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Component:32" id="4159241239519649226">
+      <link role="editorComponent:32" targetNodeId="1204116610828" resolveInfo="ConfigurationReferencesEditorComponent" />
     </node>
   </node>
 </model>

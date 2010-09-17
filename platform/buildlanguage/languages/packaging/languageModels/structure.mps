@@ -1321,5 +1321,20 @@
       <link role="target:0" targetNodeId="1216905728562:7" resolveInfo="ModuleCycle" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4159241239519649208">
+    <property name="package:0" value="projectComponents" />
+    <property name="name:0" value="Plugin" />
+    <link role="extends:0" targetNodeId="1203598300291:7" resolveInfo="AbstractProjectComponent" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="4159241239519649209">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="sourcePath" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="1220973916698:7" resolveInfo="Path" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="4159241239519649210">
+      <property name="value:0" value="plugin" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="3.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

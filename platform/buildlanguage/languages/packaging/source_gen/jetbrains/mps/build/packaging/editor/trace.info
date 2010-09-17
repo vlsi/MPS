@@ -60,6 +60,7 @@
   <unitInfo fileName="Manifest_Editor.java" startLine="23" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Manifest_Editor" />
   <unitInfo fileName="ManifestAttribute_Editor.java" startLine="26" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.ManifestAttribute_Editor" />
   <unitInfo fileName="IncludeExcludeInInspector.java" startLine="16" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.IncludeExcludeInInspector" />
+  <unitInfo fileName="Plugin_Editor.java" startLine="18" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Plugin_Editor" />
   <unitInfo fileName="CompositecomponentEntriesEditorComponent.java" startLine="23" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.CompositecomponentEntriesEditorComponent" />
   <unitInfo fileName="Variable_Editor.java" startLine="18" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Variable_Editor" />
   <unitInfo fileName="MacroReference_Editor.java" startLine="29" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.MacroReference_Editor" />
@@ -67,7 +68,7 @@
   <unitInfo fileName="File_Editor.java" startLine="22" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.File_Editor" />
   <unitInfo fileName="IncludeExcludeEditorComponent.java" startLine="20" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.IncludeExcludeEditorComponent" />
   <unitInfo fileName="ConfigurationReferencesEditorComponent.java" startLine="26" startPosition="0" endLine="140" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.ConfigurationReferencesEditorComponent" />
-  <unitInfo fileName="Jar_Editor.java" startLine="22" startPosition="0" endLine="143" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Jar_Editor" />
+  <unitInfo fileName="Jar_Editor.java" startLine="22" startPosition="0" endLine="167" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Jar_Editor" />
   <unitInfo fileName="Echo_Editor.java" startLine="25" startPosition="0" endLine="194" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Echo_Editor" />
   <unitInfo fileName="Replace_Editor.java" startLine="29" startPosition="0" endLine="216" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Replace_Editor" />
   <unitInfo fileName="Zip_Editor.java" startLine="23" startPosition="0" endLine="212" endPosition="0" unitName="jetbrains.mps.build.packaging.editor.Zip_Editor" />
