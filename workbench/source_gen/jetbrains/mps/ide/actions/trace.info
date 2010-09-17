@@ -43,10 +43,10 @@
   <unitInfo fileName="LanguageNewActions_ActionGroup.java" startLine="8" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.ide.actions.LanguageNewActions_ActionGroup" />
   <unitInfo fileName="Generate_ActionGroup.java" startLine="8" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ide.actions.Generate_ActionGroup" />
   <unitInfo fileName="DevkitActions_ActionGroup.java" startLine="8" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ide.actions.DevkitActions_ActionGroup" />
-  <unitInfo fileName="Mac_KeymapChanges.java" startLine="7" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.ide.actions.Mac_KeymapChanges" />
   <unitInfo fileName="DebugRunMenu_ActionGroup.java" startLine="8" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.ide.actions.DebugRunMenu_ActionGroup" />
   <unitInfo fileName="Edit_ActionGroup.java" startLine="8" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.ide.actions.Edit_ActionGroup" />
   <unitInfo fileName="ProjectActions_ActionGroup.java" startLine="9" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.ide.actions.ProjectActions_ActionGroup" />
+  <unitInfo fileName="Mac_KeymapChanges.java" startLine="7" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.ide.actions.Mac_KeymapChanges" />
   <unitInfo fileName="Favorites_ActionGroup.java" startLine="8" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.ide.actions.Favorites_ActionGroup" />
   <unitInfo fileName="EditorInternal_ActionGroup.java" startLine="8" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.ide.actions.EditorInternal_ActionGroup" />
   <unitInfo fileName="AbstractFileActions_ActionGroup.java" startLine="9" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.ide.actions.AbstractFileActions_ActionGroup" />
