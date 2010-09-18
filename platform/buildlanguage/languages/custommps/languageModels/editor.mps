@@ -95,6 +95,21 @@
         </node>
         <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="1239879966130" />
       </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="8868408063537994604">
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="8868408063537994605">
+          <property name="flag:32" value="false" />
+        </node>
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Indent:32" id="8868408063537994608" />
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="8868408063537994610">
+          <property name="text:32" value="build tools" />
+          <link role="styleClass:32" targetNodeId="4.1203598923024" resolveInfo="keyword" />
+        </node>
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="8868408063537994613">
+          <property name="attractsFocus:32" value="2" />
+          <link role="relationDeclaration:32" targetNodeId="1.1234290845440" />
+        </node>
+        <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="8868408063537994607" />
+      </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Component:32" id="1233159047869">
         <link role="editorComponent:32" targetNodeId="4.1233152376761" resolveInfo="CompositecomponentEntriesEditorComponent" />
       </node>
@@ -116,29 +131,6 @@
         </node>
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="1234287621254">
           <property name="flag:32" value="false" />
-        </node>
-        <node role="renderingCondition:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition:32" id="1236884802694">
-          <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1236884802695">
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1236884902200">
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1236884905654">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1236884902201">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1236884902202">
-                    <link role="baseMethodDeclaration:3" targetNodeId="2.~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolveInfo="getInstance" />
-                    <link role="classConcept:3" targetNodeId="2.~MPSModuleRepository" resolveInfo="MPSModuleRepository" />
-                  </node>
-                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1236884902203">
-                    <link role="baseMethodDeclaration:3" targetNodeId="2.~MPSModuleRepository.getLanguage(java.lang.String):jetbrains.mps.smodel.Language" resolveInfo="getLanguage" />
-                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1236884902204">
-                      <property name="value:3" value="jetbrains.mps.build.packaging" />
-                    </node>
-                  </node>
-                </node>
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1236884908530">
-                  <link role="baseMethodDeclaration:3" targetNodeId="3.~AbstractModule.isPackaged():boolean" resolveInfo="isPackaged" />
-                </node>
-              </node>
-            </node>
-          </node>
         </node>
         <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="1239879966141" />
       </node>

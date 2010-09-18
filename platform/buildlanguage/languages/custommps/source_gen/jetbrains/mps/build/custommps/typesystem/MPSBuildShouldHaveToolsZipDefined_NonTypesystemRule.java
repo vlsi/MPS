@@ -6,30 +6,35 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import java.util.Set;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.library.LibraryInitializer;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.build.custommps.behavior.MPSBuild_Behavior;
+import java.io.File;
+import jetbrains.mps.build.packaging.behavior.IPath_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class MPSBuildShouldHaveToolsZipDefined_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public MPSBuildShouldHaveToolsZipDefined_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode mPSBuild, final TypeCheckingContext typeCheckingContext) {
-    Set<Language> bootstrapModules = LibraryInitializer.getInstance().getBootstrapModules(Language.class);
-    assert !(SetSequence.fromSet(bootstrapModules).isEmpty());
-    if (SetSequence.fromSet(bootstrapModules).first().isPackaged() && (SLinkOperations.getTarget(mPSBuild, "pathToBuildToolsZip", true) == null)) {
+  public void applyRule(final SNode mpsBuild, final TypeCheckingContext typeCheckingContext) {
+    if ((SLinkOperations.getTarget(mpsBuild, "pathToBuildToolsZip", true) == null)) {
       {
         BaseIntentionProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mPSBuild, "Path to " + MPSBuild_Behavior.getMPSBuildToolsZipName_1234294616845() + " is not set.", "r:60aa75c8-3091-4b06-9278-1b723842355e(jetbrains.mps.build.custommps.typesystem)", "1238771106116", intentionProvider, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mpsBuild, "Path to " + MPSBuild_Behavior.getMPSBuildToolsZipName_1234294616845() + " is not set.", "r:60aa75c8-3091-4b06-9278-1b723842355e(jetbrains.mps.build.custommps.typesystem)", "1238771106116", intentionProvider, errorTarget);
+      }
+      return;
+    }
+    File file = IPath_Behavior.call_getFile_1233322718999(SLinkOperations.getTarget(mpsBuild, "pathToBuildToolsZip", true));
+    if (file != null && (!(file.exists()) || !(file.isFile()))) {
+      {
+        BaseIntentionProvider intentionProvider = null;
+        IErrorTarget errorTarget = new NodeErrorTarget();
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(mpsBuild, "pathToBuildToolsZip", true), "Path to " + MPSBuild_Behavior.getMPSBuildToolsZipName_1234294616845() + " is not valid.", "r:60aa75c8-3091-4b06-9278-1b723842355e(jetbrains.mps.build.custommps.typesystem)", "512310472859159199", intentionProvider, errorTarget);
       }
     }
   }

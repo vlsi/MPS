@@ -193,7 +193,21 @@
       </node>
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1233155892820">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1233155892821" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1233155892821">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8868408063538039041">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8868408063538040175">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8868408063538039043">
+              <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="8868408063538039042" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="8868408063538040174">
+                <link role="link:16" targetNodeId="1.1234290845440" />
+              </node>
+            </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation:16" id="8868408063538040179">
+              <node role="linkTarget:16" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="8868408063538040182" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1233155913966">
       <property name="name" value="getChildrenTargetDir" />
