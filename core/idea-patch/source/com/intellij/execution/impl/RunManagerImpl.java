@@ -103,6 +103,24 @@ public class RunManagerImpl extends RunManagerEx implements JDOMExternalizable, 
     return result.toArray(new ConfigurationType[result.size()]);
   }
 
+  // used in RunConfigurable
+  public void removeConfigurations(@NotNull final ConfigurationType type) {
+
+    //for (Iterator<Pair<RunConfiguration, JavaProgramRunner>> it = myRunnerPerConfigurationSettings.keySet().iterator(); it.hasNext();) {
+    //  final Pair<RunConfiguration, JavaProgramRunner> pair = it.next();
+    //  if (type.equals(pair.getFirst().getType())) {
+    //    it.remove();
+    //  }
+    //}
+    for (Iterator<RunnerAndConfigurationSettings> it = getSortedConfigurations().iterator(); it.hasNext();) {
+      final RunnerAndConfigurationSettings configuration = it.next();
+      final ConfigurationType configurationType = configuration.getType();
+      if (configurationType != null && type.getId().equals(configurationType.getId())) {
+        it.remove();
+      }
+    }
+  }
+
   @Patch
   @Override
   public Collection<RunnerAndConfigurationSettings> getSortedConfigurations() {
