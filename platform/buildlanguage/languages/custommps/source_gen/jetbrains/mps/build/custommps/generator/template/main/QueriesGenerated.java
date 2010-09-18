@@ -233,7 +233,11 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_2235195415637091992(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "pathToBuildToolsZip", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "pathToBuildToolsZip", true), "macro", true);
+  }
+
+  public static SNode sourceNodeQuery_144296692409079125(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "pathToBuildToolsZip", true), "compositePathComponent", true);
   }
 
   public static SNode sourceNodeQuery_2235195415637082611(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -249,7 +253,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_6128676491055373718(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromListAndArray(new ArrayList<SNode>(), new QueriesGenerated.QuotationClass_x583g4_a1a0a05().createNode(), new QueriesGenerated.QuotationClass_x583g4_a2a0a05().createNode());
+    return ListSequence.fromListAndArray(new ArrayList<SNode>(), new QueriesGenerated.QuotationClass_x583g4_a1a0a15().createNode(), new QueriesGenerated.QuotationClass_x583g4_a2a0a15().createNode());
   }
 
   public static Iterable sourceNodesQuery_2235195415637077365(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -292,8 +296,8 @@ public class QueriesGenerated {
     return _context.getCopiedOutputNodeForInputNode(_context.getNode());
   }
 
-  public static class QuotationClass_x583g4_a1a0a05 {
-    public QuotationClass_x583g4_a1a0a05() {
+  public static class QuotationClass_x583g4_a1a0a15 {
+    public QuotationClass_x583g4_a1a0a15() {
     }
 
     public SNode createNode() {
@@ -311,8 +315,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a2a0a05 {
-    public QuotationClass_x583g4_a2a0a05() {
+  public static class QuotationClass_x583g4_a2a0a15 {
+    public QuotationClass_x583g4_a2a0a15() {
     }
 
     public SNode createNode() {

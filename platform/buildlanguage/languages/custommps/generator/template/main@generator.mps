@@ -1830,10 +1830,15 @@
               <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="2235195415637091992">
                 <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2235195415637091993">
                   <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2235195415637091994">
-                    <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2235195415637091996">
-                      <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="2235195415637091995" />
-                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="2235195415637092000">
-                        <link role="link:16" targetNodeId="1.1234290845440" />
+                    <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="144296692409079118">
+                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2235195415637091996">
+                        <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="2235195415637091995" />
+                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="144296692409079117">
+                          <link role="link:16" targetNodeId="1.1234290845440" />
+                        </node>
+                      </node>
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="144296692409079122">
+                        <link role="link:16" targetNodeId="22.1220976095387:7" />
                       </node>
                     </node>
                   </node>
@@ -1841,7 +1846,27 @@
               </node>
             </node>
           </node>
-          <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="2235195415637077173" />
+          <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="2235195415637077173">
+            <node role="nodeMacro$attribute:7" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="144296692409079124">
+              <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="144296692409079125">
+                <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="144296692409079126">
+                  <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="144296692409079127">
+                    <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="144296692409079134">
+                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="144296692409079129">
+                        <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="144296692409079128" />
+                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="144296692409079133">
+                          <link role="link:16" targetNodeId="1.1234290845440" />
+                        </node>
+                      </node>
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="144296692409079139">
+                        <link role="link:16" targetNodeId="22.1220974249696:7" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="2235195415637077174" />
         <node role="licencePath" type="jetbrains.mps.build.packaging.structure.Path:7" id="2235195415637082606">

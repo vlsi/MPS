@@ -259,6 +259,57 @@
         </node>
         <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="2235195415637073429" />
       </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="144296692408987442">
+        <property name="vertical:32" value="false" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="144296692408987443">
+          <property name="flag:32" value="false" />
+        </node>
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Indent:32" id="144296692409003951" />
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="144296692408987444">
+          <property name="text:32" value="build tools" />
+          <link role="styleClass:32" targetNodeId="4.1203598923024" resolveInfo="keyword" />
+        </node>
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="144296692408987445">
+          <link role="relationDeclaration:32" targetNodeId="1.2235195415637073457" />
+        </node>
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="144296692408987446">
+          <property name="flag:32" value="false" />
+        </node>
+        <node role="renderingCondition:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition:32" id="144296692408987447">
+          <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="144296692408987448">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="144296692408987449">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.OrExpression:3" id="144296692408987450">
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression:3" id="144296692408987451">
+                  <node role="classType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="144296692408987452">
+                    <link role="classifier:3" targetNodeId="2.~Generator" resolveInfo="Generator" />
+                  </node>
+                  <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="144296692408987453">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="144296692408987454">
+                      <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="144296692408987455">
+                        <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="144296692408987456">
+                          <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="144296692408987457" />
+                          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation:16" id="144296692408987458" />
+                        </node>
+                      </node>
+                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="144296692408987459">
+                        <link role="baseMethodDeclaration:3" targetNodeId="2.~SModel.getModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
+                      </node>
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="144296692408987460">
+                      <link role="baseMethodDeclaration:3" targetNodeId="2.~SModelDescriptor.getModule():jetbrains.mps.project.IModule" resolveInfo="getModule" />
+                    </node>
+                  </node>
+                </node>
+                <node role="leftExpression:3" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall:16" id="144296692408987461">
+                  <link role="baseMethodDeclaration:16" targetNodeId="3v.1239995424995" resolveInfo="isInMPSBuild" />
+                  <link role="concept:16" targetNodeId="1.1233149592028" resolveInfo="MPSBuild" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="144296692408987462" />
+      </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Component:32" id="2235195415637073430">
         <link role="editorComponent:32" targetNodeId="4.1233152376761" resolveInfo="CompositecomponentEntriesEditorComponent" />
       </node>
