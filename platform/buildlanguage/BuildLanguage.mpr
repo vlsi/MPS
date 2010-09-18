@@ -29,7 +29,7 @@
       <languagePath path="${project}/languages/buildlanguage/buildlanguage.mpl" folder="buildlanguage" />
       <languagePath path="${project}/languages/custommps/custommps.mpl" folder="customMPS" />
       <languagePath path="${project}/languages/dependency/dependency.mpl" folder="packaging" />
-      <languagePath path="${project}/languages/distrib/distrib.mpl" folder="packaging" />
+      <languagePath path="${project}/languages/distrib/distrib.mpl" folder="customMPS" />
       <languagePath path="${project}/languages/generictasks/generictasks.mpl" folder="buildlanguage" />
       <languagePath path="${project}/languages/packaging/packaging.mpl" folder="packaging" />
       <languagePath path="${project}/languages/property/property.mpl" folder="buildlanguage" />
