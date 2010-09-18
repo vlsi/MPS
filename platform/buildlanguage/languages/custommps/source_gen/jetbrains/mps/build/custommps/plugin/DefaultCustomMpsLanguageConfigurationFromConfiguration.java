@@ -46,7 +46,7 @@ public class DefaultCustomMpsLanguageConfigurationFromConfiguration extends Base
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         layout.value = SNodeOperations.getAncestor(parameter, "jetbrains.mps.build.packaging.structure.MPSLayout", false, true);
-        isApplicable.value = (layout.value != null) && ListSequence.fromList(SNodeOperations.getDescendants(layout.value, "jetbrains.mps.build.custommps.structure.MPSBuild", false, new String[]{})).isNotEmpty();
+        isApplicable.value = (layout.value != null) && (ListSequence.fromList(SNodeOperations.getDescendants(layout.value, "jetbrains.mps.build.custommps.structure.MPSBuild", false, new String[]{})).isNotEmpty() || ListSequence.fromList(SNodeOperations.getDescendants(layout.value, "jetbrains.mps.build.custommps.structure.MPSDistribution", false, new String[]{})).isNotEmpty());
         configurationId.value = parameter.getId();
       }
     });
@@ -66,7 +66,7 @@ public class DefaultCustomMpsLanguageConfigurationFromConfiguration extends Base
         }
       }.invoke());
       DefaultCustomMpsApplication_Configuration _config = new DefaultCustomMpsApplication_Configuration(DefaultCustomMpsLanguageConfigurationFromConfiguration.this.getContext().getProject(), findFactory(configType, "DefaultCustomMpsApplication"), "NewConfig");
-      _config.setName(SPropertyOperations.getString(layout.value, "") + "." + SPropertyOperations.getString(parameter, ""));
+      _config.setName(SPropertyOperations.getString(layout.value, "name") + "." + SPropertyOperations.getString(parameter, "name"));
       _config.getStateObject().nodeId = layout.value.getId();
       _config.getStateObject().modelId = layout.value.getModel().getModelDescriptor().getSModelReference().toString();
       _config.getStateObject().configurationId = configurationId.value;

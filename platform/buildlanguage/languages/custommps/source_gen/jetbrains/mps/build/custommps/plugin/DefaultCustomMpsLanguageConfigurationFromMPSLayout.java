@@ -44,7 +44,7 @@ public class DefaultCustomMpsLanguageConfigurationFromMPSLayout extends BaseConf
     final Wrappers._boolean isApplicable = new Wrappers._boolean();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        isApplicable.value = ListSequence.fromList(SNodeOperations.getDescendants(parameter, "jetbrains.mps.build.custommps.structure.MPSBuild", false, new String[]{})).isNotEmpty();
+        isApplicable.value = ListSequence.fromList(SNodeOperations.getDescendants(parameter, "jetbrains.mps.build.custommps.structure.MPSBuild", false, new String[]{})).isNotEmpty() || ListSequence.fromList(SNodeOperations.getDescendants(parameter, "jetbrains.mps.build.custommps.structure.MPSDistribution", false, new String[]{})).isNotEmpty();
       }
     });
     if (!(isApplicable.value)) {
@@ -70,7 +70,7 @@ public class DefaultCustomMpsLanguageConfigurationFromMPSLayout extends BaseConf
         }
       }.invoke());
       DefaultCustomMpsApplication_Configuration _config = new DefaultCustomMpsApplication_Configuration(DefaultCustomMpsLanguageConfigurationFromMPSLayout.this.getContext().getProject(), findFactory(configType, "DefaultCustomMpsApplication"), "NewConfig");
-      _config.setName(SPropertyOperations.getString(parameter, ""));
+      _config.setName(SPropertyOperations.getString(parameter, "name"));
       _config.getStateObject().nodeId = parameter.getId();
       _config.getStateObject().modelId = parameter.getModel().getModelDescriptor().getSModelReference().toString();
       _config.getStateObject().configurationId = id.value;

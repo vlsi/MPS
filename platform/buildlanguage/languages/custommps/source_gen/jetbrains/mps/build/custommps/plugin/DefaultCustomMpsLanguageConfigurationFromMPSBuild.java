@@ -75,7 +75,7 @@ public class DefaultCustomMpsLanguageConfigurationFromMPSBuild extends BaseConfi
         }
       }.invoke());
       DefaultCustomMpsApplication_Configuration _config = new DefaultCustomMpsApplication_Configuration(DefaultCustomMpsLanguageConfigurationFromMPSBuild.this.getContext().getProject(), findFactory(configType, "DefaultCustomMpsApplication"), "NewConfig");
-      _config.setName(SPropertyOperations.getString(layout.value, "") + ".mpsbuild." + SPropertyOperations.getString(configuration.value, ""));
+      _config.setName(SPropertyOperations.getString(layout.value, "name") + ".mpsbuild." + SPropertyOperations.getString(configuration.value, "name"));
       _config.getStateObject().nodeId = layout.value.getId();
       _config.getStateObject().modelId = layout.value.getModel().getModelDescriptor().getSModelReference().toString();
       _config.getStateObject().configurationId = configurationId.value;
