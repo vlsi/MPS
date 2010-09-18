@@ -21,7 +21,6 @@ public class Antcall extends AbstractProjectComponent implements ICompositeCompo
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String PROJECT = "project";
   public static final String TARGET_DECLARATION = "targetDeclaration";
-  public static final String TARGET_REFERENCE = "targetReference";
   public static final String DELETE = "delete";
   public static final String ENTRY = "entry";
 
@@ -91,14 +90,6 @@ public class Antcall extends AbstractProjectComponent implements ICompositeCompo
 
   public void setTargetDeclaration(TargetDeclaration node) {
     super.setReferent(Antcall.TARGET_DECLARATION, node);
-  }
-
-  public BuildLanguageTargetReference getTargetReference() {
-    return (BuildLanguageTargetReference) this.getChild(BuildLanguageTargetReference.class, Antcall.TARGET_REFERENCE);
-  }
-
-  public void setTargetReference(BuildLanguageTargetReference node) {
-    super.setChild(Antcall.TARGET_REFERENCE, node);
   }
 
   public Delete getDelete() {

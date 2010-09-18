@@ -55,7 +55,7 @@
   <unitInfo fileName="Folder.java" startLine="12" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.Folder" />
   <unitInfo fileName="Block.java" startLine="14" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.Block" />
   <unitInfo fileName="Zip.java" startLine="12" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.Zip" />
-  <unitInfo fileName="Antcall.java" startLine="14" startPosition="0" endLine="140" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.Antcall" />
+  <unitInfo fileName="Antcall.java" startLine="14" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.Antcall" />
   <unitInfo fileName="MPSLayout.java" startLine="15" startPosition="0" endLine="237" endPosition="0" unitName="jetbrains.mps.build.packaging.structure.MPSLayout" />
 </debugInfo>
 

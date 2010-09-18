@@ -18,7 +18,6 @@
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.build.packaging.structure.AbstractProjectComponent" />
-    <classNode dependClassName="jetbrains.mps.build.packaging.structure.BuildLanguageTargetReference" />
     <classNode dependClassName="jetbrains.mps.build.packaging.structure.Delete" />
     <classNode dependClassName="jetbrains.mps.build.packaging.structure.ICompositeComponent" />
     <classNode dependClassName="jetbrains.mps.buildlanguage.structure.Project" />

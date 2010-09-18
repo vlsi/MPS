@@ -192,7 +192,7 @@ public class QueriesGenerated {
     return output;
   }
 
-  public static Object referenceMacro_GetReferent_4652190774247141259(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_6128676491055272269(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "CustomMPSBuildToUnpackZipAntcall");
   }
 

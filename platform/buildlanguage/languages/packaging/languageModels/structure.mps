@@ -898,12 +898,6 @@
       <property name="sourceCardinality:0" value="1" />
       <link role="target:0" targetNodeId="4.1196851099544:21" resolveInfo="TargetDeclaration" />
     </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1210777854685">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="targetReference" />
-      <property name="sourceCardinality:0" value="1" />
-      <link role="target:0" targetNodeId="1210777902405:7" resolveInfo="BuildLanguageTargetReference" />
-    </node>
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1210852534988">
       <property name="metaClass:0" value="aggregation" />
       <property name="role:0" value="delete" />
