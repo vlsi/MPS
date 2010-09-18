@@ -931,9 +931,7 @@ public class QueriesGenerated {
   }
 
   public static void mappingScript_CodeBlock_1238426776124(final IOperationContext operationContext, final MappingScriptContext _context) {
-    if (!(operationContext.isTestMode())) {
-      return;
-    }
+    // <node> 
     List<SNode> layouts = SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.packaging.structure.MPSLayout");
     for (SNode layout : ListSequence.fromList(layouts)) {
       Set<IModule> modules = SetSequence.fromSet(new HashSet<IModule>());
@@ -942,6 +940,12 @@ public class QueriesGenerated {
       }
       for (IModule module : SetSequence.fromSet(modules)) {
         Set<IModule> dependency = module.getDependenciesManager().getAllDependOnModules();
+        if (module instanceof DevKit) {
+          DevKit d = (DevKit) module;
+          dependency.addAll(d.getAllExportedLanguages());
+          dependency.addAll(d.getAllExportedSolutions());
+          dependency.addAll(d.getAllExtendedDevkits());
+        }
         for (IModule dependent : SetSequence.fromSet(dependency)) {
           if (!(dependent instanceof Generator) && !(SetSequence.fromSet(modules).contains(dependent)) && !(dependent.isPackaged()) && dependent.getDescriptorFile() != null) {
             String errorText = "Required module " + dependent.getModuleFqName() + " is absent. Used by module " + module.getModuleFqName() + ".";
