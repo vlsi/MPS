@@ -14,567 +14,576 @@
     <nodeInfo nodeId="8274502957383614851" fileName="EditorComponentChangesHighligher.java" startLine="59" startPosition="42" endLine="60" endPosition="57" />
     <nodeInfo nodeId="6080400160196253731" fileName="EditorComponentChangesHighligher.java" startLine="60" startPosition="57" endLine="61" endPosition="52" />
     <nodeInfo nodeId="8601487597690772758" fileName="EditorComponentChangesHighligher.java" startLine="61" startPosition="52" endLine="62" endPosition="28" />
-    <nodeInfo nodeId="76450717690085773" fileName="EditorComponentChangesHighligher.java" startLine="64" startPosition="131" endLine="65" endPosition="40" />
-    <nodeInfo nodeId="8274502957383621991" fileName="EditorComponentChangesHighligher.java" startLine="65" startPosition="40" endLine="66" endPosition="63" />
-    <nodeInfo nodeId="8274502957383622008" fileName="EditorComponentChangesHighligher.java" startLine="66" startPosition="63" endLine="67" endPosition="93" />
-    <nodeInfo nodeId="8601487597690773705" fileName="EditorComponentChangesHighligher.java" startLine="67" startPosition="93" endLine="68" endPosition="24" />
-    <nodeInfo nodeId="166132277801288837" fileName="EditorComponentChangesHighligher.java" startLine="68" startPosition="24" endLine="69" endPosition="0" />
-    <nodeInfo nodeId="6099081905063733777" fileName="EditorComponentChangesHighligher.java" startLine="73" startPosition="29" endLine="74" endPosition="93" />
-    <nodeInfo nodeId="6080400160196253743" fileName="EditorComponentChangesHighligher.java" startLine="75" startPosition="70" endLine="76" endPosition="104" />
-    <nodeInfo nodeId="6080400160196253646" fileName="EditorComponentChangesHighligher.java" startLine="76" startPosition="104" endLine="77" endPosition="89" />
-    <nodeInfo nodeId="3935103675993738614" fileName="EditorComponentChangesHighligher.java" startLine="78" startPosition="20" endLine="79" endPosition="21" />
-    <nodeInfo nodeId="3544903338194823671" fileName="EditorComponentChangesHighligher.java" startLine="80" startPosition="13" endLine="81" endPosition="0" />
-    <nodeInfo nodeId="1998524321632141964" fileName="EditorComponentChangesHighligher.java" startLine="85" startPosition="94" endLine="86" endPosition="36" />
-    <nodeInfo nodeId="8974964540305863434" fileName="EditorComponentChangesHighligher.java" startLine="89" startPosition="153" endLine="90" endPosition="50" />
-    <nodeInfo nodeId="8974964540305863450" fileName="EditorComponentChangesHighligher.java" startLine="92" startPosition="11" endLine="93" endPosition="66" />
-    <nodeInfo nodeId="8974964540305863466" fileName="EditorComponentChangesHighligher.java" startLine="95" startPosition="31" endLine="96" endPosition="46" />
-    <nodeInfo nodeId="2590518353162693836" fileName="EditorComponentChangesHighligher.java" startLine="100" startPosition="43" endLine="101" endPosition="72" />
-    <nodeInfo nodeId="166132277801275732" fileName="EditorComponentChangesHighligher.java" startLine="109" startPosition="71" endLine="110" endPosition="61" />
-    <nodeInfo nodeId="94490962879300525" fileName="EditorComponentChangesHighligher.java" startLine="110" startPosition="61" endLine="111" endPosition="86" />
-    <nodeInfo nodeId="5455599429139860991" fileName="EditorComponentChangesHighligher.java" startLine="113" startPosition="25" endLine="114" endPosition="68" />
-    <nodeInfo nodeId="8601487597690662160" fileName="EditorComponentChangesHighligher.java" startLine="114" startPosition="68" endLine="115" endPosition="61" />
-    <nodeInfo nodeId="8601487597690666434" fileName="EditorComponentChangesHighligher.java" startLine="116" startPosition="60" endLine="117" endPosition="17" />
-    <nodeInfo nodeId="5455599429139860997" fileName="EditorComponentChangesHighligher.java" startLine="118" startPosition="9" endLine="119" endPosition="44" />
-    <nodeInfo nodeId="3225080925238796257" fileName="EditorComponentChangesHighligher.java" startLine="120" startPosition="62" endLine="121" endPosition="17" />
-    <nodeInfo nodeId="94490962879273089" fileName="EditorComponentChangesHighligher.java" startLine="122" startPosition="9" endLine="123" endPosition="60" />
-    <nodeInfo nodeId="4549443622024151073" fileName="EditorComponentChangesHighligher.java" startLine="123" startPosition="60" endLine="124" endPosition="56" />
-    <nodeInfo nodeId="94490962879300555" fileName="EditorComponentChangesHighligher.java" startLine="125" startPosition="68" endLine="126" endPosition="17" />
-    <nodeInfo nodeId="4410510979167112713" fileName="EditorComponentChangesHighligher.java" startLine="130" startPosition="31" endLine="131" endPosition="94" />
-    <nodeInfo nodeId="4410510979167112727" fileName="EditorComponentChangesHighligher.java" startLine="134" startPosition="16" endLine="135" endPosition="63" />
-    <nodeInfo nodeId="4410510979167112736" fileName="EditorComponentChangesHighligher.java" startLine="139" startPosition="29" endLine="140" endPosition="18" />
-    <nodeInfo nodeId="4056424511791891720" fileName="EditorComponentChangesHighligher.java" startLine="141" startPosition="5" endLine="142" endPosition="0" />
-    <nodeInfo nodeId="7627490208786691767" fileName="EditorComponentChangesHighligher.java" startLine="142" startPosition="0" endLine="143" endPosition="66" />
-    <nodeInfo nodeId="7627490208786700337" fileName="EditorComponentChangesHighligher.java" startLine="145" startPosition="25" endLine="146" endPosition="87" />
-    <nodeInfo nodeId="6833816562330967563" fileName="EditorComponentChangesHighligher.java" startLine="149" startPosition="31" endLine="150" endPosition="18" />
-    <nodeInfo nodeId="4056424511791932073" fileName="EditorComponentChangesHighligher.java" startLine="151" startPosition="5" endLine="152" endPosition="0" />
-    <nodeInfo nodeId="94490962879300562" fileName="EditorComponentChangesHighligher.java" startLine="152" startPosition="0" endLine="153" endPosition="45" />
-    <nodeInfo nodeId="94490962879300581" fileName="EditorComponentChangesHighligher.java" startLine="153" startPosition="45" endLine="154" endPosition="12" />
-    <nodeInfo nodeId="94490962879300607" fileName="EditorComponentChangesHighligher.java" startLine="155" startPosition="33" endLine="156" endPosition="32" />
-    <nodeInfo nodeId="8259090432009594284" fileName="EditorComponentChangesHighligher.java" startLine="157" startPosition="43" endLine="158" endPosition="34" />
-    <nodeInfo nodeId="4634477401956479084" fileName="EditorComponentChangesHighligher.java" startLine="159" startPosition="43" endLine="160" endPosition="34" />
-    <nodeInfo nodeId="4634477401956479106" fileName="EditorComponentChangesHighligher.java" startLine="161" startPosition="12" endLine="162" endPosition="18" />
-    <nodeInfo nodeId="94490962879304472" fileName="EditorComponentChangesHighligher.java" startLine="164" startPosition="42" endLine="165" endPosition="37" />
-    <nodeInfo nodeId="94490962879304478" fileName="EditorComponentChangesHighligher.java" startLine="165" startPosition="37" endLine="166" endPosition="18" />
-    <nodeInfo nodeId="166132277801275741" fileName="EditorComponentChangesHighligher.java" startLine="167" startPosition="5" endLine="168" endPosition="65" />
-    <nodeInfo nodeId="1284337655903948646" fileName="EditorComponentChangesHighligher.java" startLine="170" startPosition="71" endLine="171" endPosition="20" />
-    <nodeInfo nodeId="489904387623459357" fileName="EditorComponentChangesHighligher.java" startLine="172" startPosition="7" endLine="173" endPosition="117" />
-    <nodeInfo nodeId="76450717690093267" fileName="EditorComponentChangesHighligher.java" startLine="174" startPosition="38" endLine="175" endPosition="20" />
-    <nodeInfo nodeId="166132277801275893" fileName="EditorComponentChangesHighligher.java" startLine="176" startPosition="7" endLine="177" endPosition="66" />
-    <nodeInfo nodeId="967454776205089938" fileName="EditorComponentChangesHighligher.java" startLine="178" startPosition="5" endLine="179" endPosition="19" />
-    <nodeInfo nodeId="166132277801275922" fileName="EditorComponentChangesHighligher.java" startLine="182" startPosition="67" endLine="183" endPosition="26" />
-    <nodeInfo nodeId="489904387623459354" fileName="EditorComponentChangesHighligher.java" startLine="184" startPosition="38" endLine="185" endPosition="67" />
-    <nodeInfo nodeId="166132277801275932" fileName="EditorComponentChangesHighligher.java" startLine="186" startPosition="90" endLine="187" endPosition="20" />
-    <nodeInfo nodeId="166132277801275955" fileName="EditorComponentChangesHighligher.java" startLine="188" startPosition="7" endLine="189" endPosition="63" />
-    <nodeInfo nodeId="967454776205088825" fileName="EditorComponentChangesHighligher.java" startLine="190" startPosition="5" endLine="191" endPosition="19" />
-    <nodeInfo nodeId="2808258374191492258" fileName="EditorComponentChangesHighligher.java" startLine="195" startPosition="113" endLine="196" endPosition="32" />
-    <nodeInfo nodeId="3525805834279458658" fileName="EditorComponentChangesHighligher.java" startLine="197" startPosition="5" endLine="198" endPosition="46" />
-    <nodeInfo nodeId="2835519241762199189" fileName="EditorComponentChangesHighligher.java" startLine="198" startPosition="46" endLine="199" endPosition="96" />
-    <nodeInfo nodeId="1216651720809581175" fileName="EditorComponentChangesHighligher.java" startLine="201" startPosition="27" endLine="202" endPosition="69" />
-    <nodeInfo nodeId="6406850599534507789" fileName="EditorComponentChangesHighligher.java" startLine="202" startPosition="69" endLine="203" endPosition="32" />
-    <nodeInfo nodeId="9048291698849215262" fileName="EditorComponentChangesHighligher.java" startLine="209" startPosition="52" endLine="210" endPosition="29" />
-    <nodeInfo nodeId="9048291698849221243" fileName="EditorComponentChangesHighligher.java" startLine="214" startPosition="94" endLine="215" endPosition="99" />
-    <nodeInfo nodeId="2530613801598691639" fileName="EditorComponentChangesHighligher.java" startLine="218" startPosition="43" endLine="219" endPosition="24" />
-    <nodeInfo nodeId="2530613801598704345" fileName="EditorComponentChangesHighligher.java" startLine="219" startPosition="24" endLine="220" endPosition="60" />
-    <nodeInfo nodeId="3499023120082618407" fileName="EditorComponentChangesHighligher.java" startLine="225" startPosition="49" endLine="226" endPosition="18" />
-    <nodeInfo nodeId="3499023120082618787" fileName="EditorComponentChangesHighligher.java" startLine="227" startPosition="5" endLine="228" endPosition="59" />
-    <nodeInfo nodeId="3499023120082619111" fileName="EditorComponentChangesHighligher.java" startLine="230" startPosition="72" endLine="231" endPosition="49" />
-    <nodeInfo nodeId="3499023120082620442" fileName="EditorComponentChangesHighligher.java" startLine="238" startPosition="49" endLine="239" endPosition="18" />
-    <nodeInfo nodeId="3499023120082620448" fileName="EditorComponentChangesHighligher.java" startLine="240" startPosition="5" endLine="241" endPosition="107" />
-    <nodeInfo nodeId="3499023120082621852" fileName="EditorComponentChangesHighligher.java" startLine="243" startPosition="72" endLine="244" endPosition="35" />
-    <nodeInfo nodeId="3768510864479102981" fileName="EditorComponentChangesHighligher.java" startLine="250" startPosition="31" endLine="251" endPosition="13" />
-    <nodeInfo nodeId="1266358454280365045" fileName="EditorComponentChangesHighligher.java" startLine="252" startPosition="5" endLine="253" endPosition="112" />
-    <nodeInfo nodeId="7767298435310782268" fileName="EditorComponentChangesHighligher.java" startLine="253" startPosition="112" endLine="254" endPosition="81" />
-    <nodeInfo nodeId="1266358454280365070" fileName="EditorComponentChangesHighligher.java" startLine="254" startPosition="81" endLine="255" endPosition="49" />
-    <nodeInfo nodeId="7767298435310782957" fileName="EditorComponentChangesHighligher.java" startLine="255" startPosition="49" endLine="256" endPosition="48" />
-    <nodeInfo nodeId="6378762527268294426" fileName="EditorComponentChangesHighligher.java" startLine="256" startPosition="48" endLine="257" endPosition="59" />
-    <nodeInfo nodeId="1266358454280406956" fileName="EditorComponentChangesHighligher.java" startLine="260" startPosition="72" endLine="261" endPosition="61" />
-    <nodeInfo nodeId="3499023120082622521" fileName="EditorComponentChangesHighligher.java" startLine="264" startPosition="68" endLine="265" endPosition="57" />
-    <nodeInfo nodeId="3499023120082623952" fileName="EditorComponentChangesHighligher.java" startLine="268" startPosition="82" endLine="269" endPosition="58" />
-    <nodeInfo nodeId="3499023120082624539" fileName="EditorComponentChangesHighligher.java" startLine="272" startPosition="78" endLine="273" endPosition="54" />
-    <nodeInfo nodeId="2107542654406138052" fileName="EditorComponentChangesHighligher.java" startLine="278" startPosition="86" endLine="279" endPosition="31" />
-    <nodeInfo nodeId="7317795005505906199" fileName="EditorComponentChangesHighligher.java" startLine="281" startPosition="8" endLine="282" endPosition="47" />
-    <nodeInfo nodeId="3525805834279458640" fileName="EditorComponentChangesHighligher.java" startLine="285" startPosition="54" endLine="286" endPosition="49" />
-    <nodeInfo nodeId="7152638585749154613" fileName="EditorComponentChangesHighligher.java" startLine="290" startPosition="48" endLine="291" endPosition="80" />
-    <nodeInfo nodeId="7152638585749154669" fileName="EditorComponentChangesHighligher.java" startLine="293" startPosition="49" endLine="294" endPosition="63" />
-    <nodeInfo nodeId="7152638585749154644" fileName="EditorComponentChangesHighligher.java" startLine="297" startPosition="12" endLine="298" endPosition="19" />
-    <nodeInfo nodeId="166132277801266530" fileName="EditorComponentChangesHighligher.java" startLine="303" startPosition="20" endLine="304" endPosition="18" />
-    <nodeInfo nodeId="166132277801266530" fileName="EditorComponentChangesHighligher.java" startLine="305" startPosition="5" endLine="306" endPosition="24" />
-    <nodeInfo nodeId="166132277801266530" fileName="EditorComponentChangesHighligher.java" startLine="310" startPosition="20" endLine="311" endPosition="18" />
-    <nodeInfo nodeId="166132277801266530" fileName="EditorComponentChangesHighligher.java" startLine="312" startPosition="5" endLine="313" endPosition="35" />
-    <nodeInfo nodeId="6746101208730297912" fileName="EditorComponentChangesHighligher.java" startLine="316" startPosition="68" endLine="317" endPosition="28" />
-    <nodeInfo nodeId="7429456937243134764" fileName="EditorComponentChangesHighligher.java" startLine="317" startPosition="28" endLine="318" endPosition="42" />
-    <nodeInfo nodeId="6149144798615862361" fileName="EditorComponentChangesHighligher.java" startLine="320" startPosition="119" endLine="321" endPosition="101" />
-    <nodeInfo nodeId="6746101208730314160" fileName="EditorComponentChangesHighligher.java" startLine="321" startPosition="101" endLine="322" endPosition="24" />
-    <nodeInfo nodeId="6707717378011982907" fileName="EditorComponentChangesHighligher.java" startLine="325" startPosition="38" endLine="326" endPosition="76" />
-    <nodeInfo nodeId="4434895596490125495" fileName="EditorComponentChangesHighligher.java" startLine="329" startPosition="83" endLine="330" endPosition="49" />
-    <nodeInfo nodeId="4434895596490125473" fileName="EditorComponentChangesHighligher.java" startLine="330" startPosition="49" endLine="331" endPosition="337" />
-    <nodeInfo nodeId="4434895596490168925" fileName="EditorComponentChangesHighligher.java" startLine="335" startPosition="50" endLine="336" endPosition="51" />
-    <nodeInfo nodeId="4434895596490168879" fileName="EditorComponentChangesHighligher.java" startLine="336" startPosition="51" endLine="337" endPosition="78" />
-    <nodeInfo nodeId="4434895596490168932" fileName="EditorComponentChangesHighligher.java" startLine="337" startPosition="78" endLine="338" endPosition="94" />
-    <nodeInfo nodeId="4434895596490168943" fileName="EditorComponentChangesHighligher.java" startLine="339" startPosition="62" endLine="340" endPosition="66" />
-    <nodeInfo nodeId="4434895596490168961" fileName="EditorComponentChangesHighligher.java" startLine="341" startPosition="16" endLine="342" endPosition="109" />
-    <nodeInfo nodeId="4434895596490168872" fileName="EditorComponentChangesHighligher.java" startLine="344" startPosition="14" endLine="345" endPosition="18" />
-    <nodeInfo nodeId="3719874279484891751" fileName="EditorComponentChangesHighligher.java" startLine="350" startPosition="64" endLine="351" endPosition="106" />
-    <nodeInfo nodeId="3719874279484891790" fileName="EditorComponentChangesHighligher.java" startLine="352" startPosition="33" endLine="353" endPosition="20" />
-    <nodeInfo nodeId="3717011451301308939" fileName="EditorComponentChangesHighligher.java" startLine="355" startPosition="26" endLine="356" endPosition="81" />
-    <nodeInfo nodeId="3717011451301331772" fileName="EditorComponentChangesHighligher.java" startLine="357" startPosition="45" endLine="358" endPosition="72" />
-    <nodeInfo nodeId="3719874279484891794" fileName="EditorComponentChangesHighligher.java" startLine="359" startPosition="16" endLine="360" endPosition="27" />
-    <nodeInfo nodeId="3719874279484891803" fileName="EditorComponentChangesHighligher.java" startLine="362" startPosition="29" endLine="363" endPosition="28" />
-    <nodeInfo nodeId="5687497293128287234" fileName="EditorComponentChangesHighligher.java" startLine="364" startPosition="14" endLine="365" endPosition="66" />
-    <nodeInfo nodeId="3176852462137000047" fileName="EditorComponentChangesHighligher.java" startLine="370" startPosition="95" endLine="371" endPosition="83" />
-    <nodeInfo nodeId="263447985294205829" fileName="EditorComponentChangesHighligher.java" startLine="372" startPosition="138" endLine="373" endPosition="57" />
-    <nodeInfo nodeId="2936752800012777362" fileName="EditorComponentChangesHighligher.java" startLine="375" startPosition="54" endLine="376" endPosition="96" />
-    <nodeInfo nodeId="7152638585749145247" fileName="EditorComponentChangesHighligher.java" startLine="377" startPosition="37" endLine="378" endPosition="82" />
-    <nodeInfo nodeId="7152638585749145391" fileName="EditorComponentChangesHighligher.java" startLine="378" startPosition="82" endLine="379" endPosition="0" />
-    <nodeInfo nodeId="7152638585749130603" fileName="EditorComponentChangesHighligher.java" startLine="380" startPosition="56" endLine="381" endPosition="63" />
-    <nodeInfo nodeId="7152638585749145393" fileName="EditorComponentChangesHighligher.java" startLine="381" startPosition="63" endLine="382" endPosition="21" />
-    <nodeInfo nodeId="7152638585749117358" fileName="EditorComponentChangesHighligher.java" startLine="383" startPosition="13" endLine="384" endPosition="0" />
-    <nodeInfo nodeId="1536420391249840119" fileName="EditorComponentChangesHighligher.java" startLine="384" startPosition="0" endLine="385" endPosition="164" />
-    <nodeInfo nodeId="2936752800012731773" fileName="EditorComponentChangesHighligher.java" startLine="385" startPosition="164" endLine="386" endPosition="48" />
-    <nodeInfo nodeId="2936752800012777733" fileName="EditorComponentChangesHighligher.java" startLine="387" startPosition="27" endLine="388" endPosition="20" />
-    <nodeInfo nodeId="2936752800012777742" fileName="EditorComponentChangesHighligher.java" startLine="389" startPosition="68" endLine="390" endPosition="69" />
-    <nodeInfo nodeId="2936752800012777747" fileName="EditorComponentChangesHighligher.java" startLine="391" startPosition="22" endLine="392" endPosition="112" />
-    <nodeInfo nodeId="2936752800012777792" fileName="EditorComponentChangesHighligher.java" startLine="393" startPosition="15" endLine="394" endPosition="44" />
-    <nodeInfo nodeId="2936752800012777806" fileName="EditorComponentChangesHighligher.java" startLine="394" startPosition="44" endLine="395" endPosition="73" />
-    <nodeInfo nodeId="2451109806934128328" fileName="EditorComponentChangesHighligher.java" startLine="396" startPosition="20" endLine="397" endPosition="59" />
-    <nodeInfo nodeId="2936752800012781024" fileName="EditorComponentChangesHighligher.java" startLine="397" startPosition="59" endLine="398" endPosition="20" />
-    <nodeInfo nodeId="2936752800012781029" fileName="EditorComponentChangesHighligher.java" startLine="399" startPosition="68" endLine="400" endPosition="69" />
-    <nodeInfo nodeId="2936752800012781045" fileName="EditorComponentChangesHighligher.java" startLine="401" startPosition="22" endLine="402" endPosition="112" />
-    <nodeInfo nodeId="2451109806934128330" fileName="EditorComponentChangesHighligher.java" startLine="403" startPosition="15" endLine="404" endPosition="32" />
-    <nodeInfo nodeId="2451109806934128337" fileName="EditorComponentChangesHighligher.java" startLine="404" startPosition="32" endLine="405" endPosition="48" />
-    <nodeInfo nodeId="977382291400359302" fileName="EditorComponentChangesHighligher.java" startLine="405" startPosition="48" endLine="406" endPosition="0" />
-    <nodeInfo nodeId="2936752800012781063" fileName="EditorComponentChangesHighligher.java" startLine="406" startPosition="0" endLine="407" endPosition="44" />
-    <nodeInfo nodeId="2936752800012781069" fileName="EditorComponentChangesHighligher.java" startLine="407" startPosition="44" endLine="408" endPosition="46" />
-    <nodeInfo nodeId="2451109806934128349" fileName="EditorComponentChangesHighligher.java" startLine="408" startPosition="46" endLine="409" endPosition="101" />
-    <nodeInfo nodeId="2451109806934128513" fileName="EditorComponentChangesHighligher.java" startLine="409" startPosition="101" endLine="410" endPosition="101" />
-    <nodeInfo nodeId="977382291400359301" fileName="EditorComponentChangesHighligher.java" startLine="410" startPosition="101" endLine="411" endPosition="0" />
-    <nodeInfo nodeId="977382291400331957" fileName="EditorComponentChangesHighligher.java" startLine="411" startPosition="0" endLine="412" endPosition="86" />
-    <nodeInfo nodeId="977382291400331966" fileName="EditorComponentChangesHighligher.java" startLine="412" startPosition="86" endLine="413" endPosition="101" />
-    <nodeInfo nodeId="977382291400331993" fileName="EditorComponentChangesHighligher.java" startLine="413" startPosition="101" endLine="414" endPosition="101" />
-    <nodeInfo nodeId="2718986346898855352" fileName="EditorComponentChangesHighligher.java" startLine="415" startPosition="13" endLine="416" endPosition="19" />
-    <nodeInfo nodeId="6172777473367030196" fileName="EditorComponentChangesHighligher.java" startLine="422" startPosition="12" endLine="423" endPosition="44" />
-    <nodeInfo nodeId="6172777473367030189" fileName="EditorComponentChangesHighligher.java" startLine="423" startPosition="44" endLine="424" endPosition="75" />
-    <nodeInfo nodeId="7429456937243134868" fileName="EditorComponentChangesHighligher.java" startLine="428" startPosition="53" endLine="429" endPosition="34" />
-    <nodeInfo nodeId="3719874279484892358" fileName="EditorComponentChangesHighligher.java" startLine="434" startPosition="29" endLine="435" endPosition="46" />
-    <nodeInfo nodeId="531813502180021745" fileName="EditorComponentChangesHighligher.java" startLine="439" startPosition="31" endLine="440" endPosition="22" />
-    <nodeInfo nodeId="1994185481787546085" fileName="EditorComponentChangesHighligher.java" startLine="444" startPosition="37" endLine="445" endPosition="18" />
-    <nodeInfo nodeId="7752093726709244934" fileName="EditorComponentChangesHighligher.java" startLine="450" startPosition="37" endLine="451" endPosition="59" />
-    <nodeInfo nodeId="6371186153576917403" fileName="EditorComponentChangesHighligher.java" startLine="455" startPosition="35" endLine="456" endPosition="18" />
-    <nodeInfo nodeId="7240192589568741091" fileName="EditorComponentChangesHighligher.java" startLine="461" startPosition="44" endLine="462" endPosition="31" />
-    <nodeInfo nodeId="7240192589568741097" fileName="EditorComponentChangesHighligher.java" startLine="463" startPosition="14" endLine="464" endPosition="41" />
-    <nodeInfo nodeId="7240192589568741101" fileName="EditorComponentChangesHighligher.java" startLine="470" startPosition="44" endLine="471" endPosition="17" />
-    <nodeInfo nodeId="7240192589568741108" fileName="EditorComponentChangesHighligher.java" startLine="472" startPosition="14" endLine="473" endPosition="42" />
-    <nodeInfo nodeId="7542415519011417063" fileName="EditorComponentChangesHighligher.java" startLine="478" startPosition="60" endLine="479" endPosition="104" />
-    <nodeInfo nodeId="7542415519011417482" fileName="EditorComponentChangesHighligher.java" startLine="479" startPosition="104" endLine="480" endPosition="106" />
-    <nodeInfo nodeId="967454776205090401" fileName="EditorComponentChangesHighligher.java" startLine="485" startPosition="76" endLine="486" endPosition="59" />
-    <nodeInfo nodeId="928328222692503836" fileName="EditorComponentChangesHighligher.java" startLine="487" startPosition="33" endLine="488" endPosition="77" />
-    <nodeInfo nodeId="967454776205091700" fileName="EditorComponentChangesHighligher.java" startLine="488" startPosition="77" endLine="489" endPosition="72" />
-    <nodeInfo nodeId="967454776205090735" fileName="EditorComponentChangesHighligher.java" startLine="493" startPosition="78" endLine="494" endPosition="63" />
-    <nodeInfo nodeId="967454776205091981" fileName="EditorComponentChangesHighligher.java" startLine="495" startPosition="35" endLine="496" endPosition="76" />
-    <nodeInfo nodeId="928328222692503824" fileName="EditorComponentChangesHighligher.java" startLine="496" startPosition="76" endLine="497" endPosition="77" />
-    <nodeInfo nodeId="8974964540305863488" fileName="EditorComponentChangesHighligher.java" startLine="508" startPosition="121" endLine="509" endPosition="74" />
-    <nodeInfo nodeId="967454776205093346" fileName="EditorComponentChangesHighligher.java" startLine="510" startPosition="87" endLine="511" endPosition="54" />
-    <nodeInfo nodeId="967454776205099353" fileName="EditorComponentChangesHighligher.java" startLine="513" startPosition="83" endLine="514" endPosition="50" />
-    <nodeInfo nodeId="967454776205100320" fileName="EditorComponentChangesHighligher.java" startLine="515" startPosition="9" endLine="516" endPosition="63" />
-    <nodeInfo nodeId="967454776205100699" fileName="EditorComponentChangesHighligher.java" startLine="518" startPosition="29" endLine="519" endPosition="44" />
-    <nodeInfo nodeId="2343602534332756996" fileName="EditorComponentChangesHighligher.java" startLine="521" startPosition="11" endLine="522" endPosition="55" />
-    <nodeInfo nodeId="2343602534332756988" fileName="EditorComponentChangesHighligher.java" startLine="522" startPosition="55" endLine="523" endPosition="57" />
-    <nodeInfo nodeId="3935103675993728982" fileName="EditorComponentChangesHighligher.java" startLine="78" startPosition="18" endLine="80" endPosition="13" />
-    <nodeInfo nodeId="4410510979167112725" fileName="EditorComponentChangesHighligher.java" startLine="134" startPosition="14" endLine="136" endPosition="9" />
-    <nodeInfo nodeId="94490962879304446" fileName="EditorComponentChangesHighligher.java" startLine="161" startPosition="10" endLine="163" endPosition="5" />
-    <nodeInfo nodeId="7152638585749154642" fileName="EditorComponentChangesHighligher.java" startLine="297" startPosition="10" endLine="299" endPosition="5" />
-    <nodeInfo nodeId="4434895596490168905" fileName="EditorComponentChangesHighligher.java" startLine="341" startPosition="14" endLine="343" endPosition="9" />
-    <nodeInfo nodeId="4434895596490168870" fileName="EditorComponentChangesHighligher.java" startLine="344" startPosition="12" endLine="346" endPosition="7" />
-    <nodeInfo nodeId="3717011451301331781" fileName="EditorComponentChangesHighligher.java" startLine="359" startPosition="14" endLine="361" endPosition="9" />
-    <nodeInfo nodeId="3719874279484891777" fileName="EditorComponentChangesHighligher.java" startLine="364" startPosition="12" endLine="366" endPosition="7" />
-    <nodeInfo nodeId="2936752800012777745" fileName="EditorComponentChangesHighligher.java" startLine="391" startPosition="20" endLine="393" endPosition="15" />
-    <nodeInfo nodeId="2936752800012781043" fileName="EditorComponentChangesHighligher.java" startLine="401" startPosition="20" endLine="403" endPosition="15" />
-    <nodeInfo nodeId="7240192589568741095" fileName="EditorComponentChangesHighligher.java" startLine="463" startPosition="12" endLine="465" endPosition="7" />
-    <nodeInfo nodeId="7240192589568741106" fileName="EditorComponentChangesHighligher.java" startLine="472" startPosition="12" endLine="474" endPosition="7" />
-    <nodeInfo nodeId="5264204858747865439" fileName="EditorComponentChangesHighligher.java" startLine="481" startPosition="0" endLine="483" endPosition="5" />
-    <nodeInfo nodeId="1998524321632141961" fileName="EditorComponentChangesHighligher.java" startLine="84" startPosition="39" endLine="87" endPosition="11" />
-    <nodeInfo nodeId="8974964540305863410" fileName="EditorComponentChangesHighligher.java" startLine="88" startPosition="44" endLine="91" endPosition="13" />
-    <nodeInfo nodeId="2590518353162693826" fileName="EditorComponentChangesHighligher.java" startLine="99" startPosition="64" endLine="102" endPosition="13" />
-    <nodeInfo nodeId="8601487597690662340" fileName="EditorComponentChangesHighligher.java" startLine="115" startPosition="61" endLine="118" endPosition="9" />
-    <nodeInfo nodeId="3225080925238796239" fileName="EditorComponentChangesHighligher.java" startLine="119" startPosition="44" endLine="122" endPosition="9" />
-    <nodeInfo nodeId="94490962879300542" fileName="EditorComponentChangesHighligher.java" startLine="124" startPosition="56" endLine="127" endPosition="9" />
-    <nodeInfo nodeId="5950168457933946601" fileName="EditorComponentChangesHighligher.java" startLine="138" startPosition="7" endLine="141" endPosition="5" />
-    <nodeInfo nodeId="6833816562330962378" fileName="EditorComponentChangesHighligher.java" startLine="148" startPosition="7" endLine="151" endPosition="5" />
-    <nodeInfo nodeId="1284337655903948130" fileName="EditorComponentChangesHighligher.java" startLine="169" startPosition="38" endLine="172" endPosition="7" />
-    <nodeInfo nodeId="76450717690093255" fileName="EditorComponentChangesHighligher.java" startLine="173" startPosition="117" endLine="176" endPosition="7" />
-    <nodeInfo nodeId="166132277801275930" fileName="EditorComponentChangesHighligher.java" startLine="185" startPosition="67" endLine="188" endPosition="7" />
-    <nodeInfo nodeId="2808258374191492239" fileName="EditorComponentChangesHighligher.java" startLine="194" startPosition="25" endLine="197" endPosition="5" />
-    <nodeInfo nodeId="3499023120082618405" fileName="EditorComponentChangesHighligher.java" startLine="224" startPosition="112" endLine="227" endPosition="5" />
-    <nodeInfo nodeId="3499023120082620440" fileName="EditorComponentChangesHighligher.java" startLine="237" startPosition="108" endLine="240" endPosition="5" />
-    <nodeInfo nodeId="3768510864479102973" fileName="EditorComponentChangesHighligher.java" startLine="249" startPosition="96" endLine="252" endPosition="5" />
-    <nodeInfo nodeId="166132277801266530" fileName="EditorComponentChangesHighligher.java" startLine="302" startPosition="61" endLine="305" endPosition="5" />
-    <nodeInfo nodeId="166132277801266530" fileName="EditorComponentChangesHighligher.java" startLine="309" startPosition="77" endLine="312" endPosition="5" />
-    <nodeInfo nodeId="3719874279484891781" fileName="EditorComponentChangesHighligher.java" startLine="351" startPosition="106" endLine="354" endPosition="7" />
-    <nodeInfo nodeId="1041446044406864801" fileName="EditorComponentChangesHighligher.java" startLine="500" startPosition="0" endLine="503" endPosition="0" />
-    <nodeInfo nodeId="7542415519011416804" fileName="EditorComponentChangesHighligher.java" startLine="503" startPosition="0" endLine="506" endPosition="0" />
-    <nodeInfo nodeId="967454776205093008" fileName="EditorComponentChangesHighligher.java" startLine="509" startPosition="74" endLine="512" endPosition="9" />
-    <nodeInfo nodeId="967454776205093019" fileName="EditorComponentChangesHighligher.java" startLine="512" startPosition="9" endLine="515" endPosition="9" />
-    <nodeInfo nodeId="8974964540305863464" fileName="EditorComponentChangesHighligher.java" startLine="94" startPosition="58" endLine="98" endPosition="0" />
-    <nodeInfo nodeId="4410510979167112711" fileName="EditorComponentChangesHighligher.java" startLine="129" startPosition="63" endLine="133" endPosition="0" />
-    <nodeInfo nodeId="7627490208786700325" fileName="EditorComponentChangesHighligher.java" startLine="144" startPosition="57" endLine="148" endPosition="0" />
-    <nodeInfo nodeId="94490962879304459" fileName="EditorComponentChangesHighligher.java" startLine="163" startPosition="5" endLine="167" endPosition="5" />
-    <nodeInfo nodeId="2590518353162693846" fileName="EditorComponentChangesHighligher.java" startLine="200" startPosition="40" endLine="204" endPosition="7" />
-    <nodeInfo nodeId="3499023120082619109" fileName="EditorComponentChangesHighligher.java" startLine="229" startPosition="143" endLine="233" endPosition="0" />
-    <nodeInfo nodeId="3499023120082621850" fileName="EditorComponentChangesHighligher.java" startLine="242" startPosition="144" endLine="246" endPosition="0" />
-    <nodeInfo nodeId="5444017747357185959" fileName="EditorComponentChangesHighligher.java" startLine="259" startPosition="0" endLine="263" endPosition="0" />
-    <nodeInfo nodeId="5444017747357185935" fileName="EditorComponentChangesHighligher.java" startLine="263" startPosition="0" endLine="267" endPosition="0" />
-    <nodeInfo nodeId="3499023120082622733" fileName="EditorComponentChangesHighligher.java" startLine="267" startPosition="0" endLine="271" endPosition="0" />
-    <nodeInfo nodeId="3499023120082624535" fileName="EditorComponentChangesHighligher.java" startLine="271" startPosition="0" endLine="275" endPosition="0" />
-    <nodeInfo nodeId="2107542654406138048" fileName="EditorComponentChangesHighligher.java" startLine="277" startPosition="211" endLine="281" endPosition="0" />
-    <nodeInfo nodeId="3525805834279458636" fileName="EditorComponentChangesHighligher.java" startLine="284" startPosition="0" endLine="288" endPosition="0" />
-    <nodeInfo nodeId="7152638585749154664" fileName="EditorComponentChangesHighligher.java" startLine="292" startPosition="112" endLine="296" endPosition="0" />
-    <nodeInfo nodeId="6149144798615862332" fileName="EditorComponentChangesHighligher.java" startLine="319" startPosition="0" endLine="323" endPosition="5" />
-    <nodeInfo nodeId="6707717378011964265" fileName="EditorComponentChangesHighligher.java" startLine="324" startPosition="0" endLine="328" endPosition="0" />
-    <nodeInfo nodeId="7152638585749130007" fileName="EditorComponentChangesHighligher.java" startLine="379" startPosition="0" endLine="383" endPosition="13" />
-    <nodeInfo nodeId="3719874279484891809" fileName="EditorComponentChangesHighligher.java" startLine="418" startPosition="9" endLine="422" endPosition="12" />
-    <nodeInfo nodeId="7429456937243134864" fileName="EditorComponentChangesHighligher.java" startLine="427" startPosition="0" endLine="431" endPosition="0" />
-    <nodeInfo nodeId="967454776205090453" fileName="EditorComponentChangesHighligher.java" startLine="486" startPosition="59" endLine="490" endPosition="7" />
-    <nodeInfo nodeId="967454776205091104" fileName="EditorComponentChangesHighligher.java" startLine="494" startPosition="63" endLine="498" endPosition="7" />
-    <nodeInfo nodeId="967454776205100697" fileName="EditorComponentChangesHighligher.java" startLine="517" startPosition="56" endLine="521" endPosition="0" />
-    <nodeInfo nodeId="3375103409259077543" fileName="EditorComponentChangesHighligher.java" startLine="87" startPosition="11" endLine="92" endPosition="11" />
-    <nodeInfo nodeId="8974964540305863462" fileName="EditorComponentChangesHighligher.java" startLine="93" startPosition="66" endLine="98" endPosition="13" />
-    <nodeInfo nodeId="2590518353162693822" fileName="EditorComponentChangesHighligher.java" startLine="98" startPosition="13" endLine="103" endPosition="11" />
-    <nodeInfo nodeId="4410510979167112710" fileName="EditorComponentChangesHighligher.java" startLine="128" startPosition="58" endLine="133" endPosition="13" />
-    <nodeInfo nodeId="7627490208786700324" fileName="EditorComponentChangesHighligher.java" startLine="143" startPosition="66" endLine="148" endPosition="7" />
-    <nodeInfo nodeId="9048291698849195342" fileName="EditorComponentChangesHighligher.java" startLine="207" startPosition="0" endLine="212" endPosition="0" />
-    <nodeInfo nodeId="9048291698849221221" fileName="EditorComponentChangesHighligher.java" startLine="212" startPosition="0" endLine="217" endPosition="0" />
-    <nodeInfo nodeId="2530613801598691635" fileName="EditorComponentChangesHighligher.java" startLine="217" startPosition="0" endLine="222" endPosition="0" />
-    <nodeInfo nodeId="3499023120082618999" fileName="EditorComponentChangesHighligher.java" startLine="228" startPosition="59" endLine="233" endPosition="7" />
-    <nodeInfo nodeId="3499023120082621406" fileName="EditorComponentChangesHighligher.java" startLine="241" startPosition="107" endLine="246" endPosition="7" />
-    <nodeInfo nodeId="2107542654406138031" fileName="EditorComponentChangesHighligher.java" startLine="276" startPosition="69" endLine="281" endPosition="8" />
-    <nodeInfo nodeId="7152638585749154620" fileName="EditorComponentChangesHighligher.java" startLine="291" startPosition="80" endLine="296" endPosition="9" />
-    <nodeInfo nodeId="4434895596490112855" fileName="EditorComponentChangesHighligher.java" startLine="328" startPosition="0" endLine="333" endPosition="0" />
-    <nodeInfo nodeId="4434895596490168889" fileName="EditorComponentChangesHighligher.java" startLine="338" startPosition="94" endLine="343" endPosition="9" />
-    <nodeInfo nodeId="3717011451301331761" fileName="EditorComponentChangesHighligher.java" startLine="356" startPosition="81" endLine="361" endPosition="9" />
-    <nodeInfo nodeId="2936752800012777697" fileName="EditorComponentChangesHighligher.java" startLine="388" startPosition="20" endLine="393" endPosition="15" />
-    <nodeInfo nodeId="2936752800012781027" fileName="EditorComponentChangesHighligher.java" startLine="398" startPosition="20" endLine="403" endPosition="15" />
-    <nodeInfo nodeId="531813502180021741" fileName="EditorComponentChangesHighligher.java" startLine="437" startPosition="0" endLine="442" endPosition="0" />
-    <nodeInfo nodeId="1994185481787540152" fileName="EditorComponentChangesHighligher.java" startLine="442" startPosition="0" endLine="447" endPosition="0" />
-    <nodeInfo nodeId="6371186153576896351" fileName="EditorComponentChangesHighligher.java" startLine="453" startPosition="0" endLine="458" endPosition="0" />
-    <nodeInfo nodeId="7240192589568741085" fileName="EditorComponentChangesHighligher.java" startLine="460" startPosition="52" endLine="465" endPosition="7" />
-    <nodeInfo nodeId="7240192589568741099" fileName="EditorComponentChangesHighligher.java" startLine="469" startPosition="53" endLine="474" endPosition="7" />
-    <nodeInfo nodeId="967454776205100695" fileName="EditorComponentChangesHighligher.java" startLine="516" startPosition="63" endLine="521" endPosition="11" />
-    <nodeInfo nodeId="5643745088231029815" fileName="EditorComponentChangesHighligher.java" startLine="74" startPosition="93" endLine="80" endPosition="13" />
-    <nodeInfo nodeId="1216651720809581163" fileName="EditorComponentChangesHighligher.java" startLine="199" startPosition="96" endLine="205" endPosition="5" />
-    <nodeInfo nodeId="7429456937243134896" fileName="EditorComponentChangesHighligher.java" startLine="431" startPosition="0" endLine="437" endPosition="0" />
-    <nodeInfo nodeId="4589042405947503392" fileName="EditorComponentChangesHighligher.java" startLine="447" startPosition="0" endLine="453" endPosition="0" />
-    <nodeInfo nodeId="3375103409259077554" fileName="EditorComponentChangesHighligher.java" startLine="183" startPosition="26" endLine="190" endPosition="5" />
-    <nodeInfo nodeId="166132277801266530" fileName="EditorComponentChangesHighligher.java" startLine="301" startPosition="0" endLine="308" endPosition="0" />
-    <nodeInfo nodeId="166132277801266530" fileName="EditorComponentChangesHighligher.java" startLine="308" startPosition="0" endLine="315" endPosition="0" />
-    <nodeInfo nodeId="4366048675740426755" fileName="EditorComponentChangesHighligher.java" startLine="484" startPosition="0" endLine="492" endPosition="0" />
-    <nodeInfo nodeId="4366048675740426771" fileName="EditorComponentChangesHighligher.java" startLine="492" startPosition="0" endLine="500" endPosition="0" />
-    <nodeInfo nodeId="4410510979167112701" fileName="EditorComponentChangesHighligher.java" startLine="127" startPosition="9" endLine="136" endPosition="9" />
-    <nodeInfo nodeId="94490962879300591" fileName="EditorComponentChangesHighligher.java" startLine="154" startPosition="12" endLine="163" endPosition="5" />
-    <nodeInfo nodeId="6105081101195305255" fileName="EditorComponentChangesHighligher.java" startLine="275" startPosition="0" endLine="284" endPosition="0" />
-    <nodeInfo nodeId="7240192589568729035" fileName="EditorComponentChangesHighligher.java" startLine="458" startPosition="0" endLine="467" endPosition="0" />
-    <nodeInfo nodeId="7240192589568729029" fileName="EditorComponentChangesHighligher.java" startLine="467" startPosition="0" endLine="476" endPosition="0" />
-    <nodeInfo nodeId="3375103409259077549" fileName="EditorComponentChangesHighligher.java" startLine="168" startPosition="65" endLine="178" endPosition="5" />
-    <nodeInfo nodeId="7152638585749154597" fileName="EditorComponentChangesHighligher.java" startLine="289" startPosition="72" endLine="299" endPosition="5" />
-    <nodeInfo nodeId="6099081905063733762" fileName="EditorComponentChangesHighligher.java" startLine="72" startPosition="61" endLine="83" endPosition="0" />
-    <nodeInfo nodeId="3768510864479102966" fileName="EditorComponentChangesHighligher.java" startLine="248" startPosition="0" endLine="259" endPosition="0" />
-    <nodeInfo nodeId="6099081905063733761" fileName="EditorComponentChangesHighligher.java" startLine="71" startPosition="25" endLine="83" endPosition="11" />
-    <nodeInfo nodeId="166132277801275918" fileName="EditorComponentChangesHighligher.java" startLine="181" startPosition="0" endLine="193" endPosition="0" />
-    <nodeInfo nodeId="4434895596490168862" fileName="EditorComponentChangesHighligher.java" startLine="334" startPosition="63" endLine="346" endPosition="7" />
-    <nodeInfo nodeId="3719874279484891755" fileName="EditorComponentChangesHighligher.java" startLine="354" startPosition="7" endLine="366" endPosition="7" />
-    <nodeInfo nodeId="3499023120082550362" fileName="EditorComponentChangesHighligher.java" startLine="222" startPosition="0" endLine="235" endPosition="0" />
-    <nodeInfo nodeId="3499023120082619230" fileName="EditorComponentChangesHighligher.java" startLine="235" startPosition="0" endLine="248" endPosition="0" />
-    <nodeInfo nodeId="7152638585749154568" fileName="EditorComponentChangesHighligher.java" startLine="288" startPosition="0" endLine="301" endPosition="0" />
-    <nodeInfo nodeId="6080400160196253706" fileName="EditorComponentChangesHighligher.java" startLine="193" startPosition="0" endLine="207" endPosition="0" />
-    <nodeInfo nodeId="4434895596490168857" fileName="EditorComponentChangesHighligher.java" startLine="333" startPosition="0" endLine="348" endPosition="0" />
-    <nodeInfo nodeId="967454776205092308" fileName="EditorComponentChangesHighligher.java" startLine="507" startPosition="40" endLine="524" endPosition="7" />
-    <nodeInfo nodeId="2936752800012781013" fileName="EditorComponentChangesHighligher.java" startLine="396" startPosition="18" endLine="415" endPosition="13" />
-    <nodeInfo nodeId="3719874279484891743" fileName="EditorComponentChangesHighligher.java" startLine="348" startPosition="0" endLine="368" endPosition="0" />
-    <nodeInfo nodeId="7542415519011416849" fileName="EditorComponentChangesHighligher.java" startLine="506" startPosition="0" endLine="526" endPosition="0" />
-    <nodeInfo nodeId="1998524321632141959" fileName="EditorComponentChangesHighligher.java" startLine="83" startPosition="11" endLine="104" endPosition="9" />
-    <nodeInfo nodeId="5455599429139860995" fileName="EditorComponentChangesHighligher.java" startLine="112" startPosition="57" endLine="138" endPosition="0" />
-    <nodeInfo nodeId="5455599429139860994" fileName="EditorComponentChangesHighligher.java" startLine="111" startPosition="86" endLine="138" endPosition="7" />
-    <nodeInfo nodeId="1536420391249887147" fileName="EditorComponentChangesHighligher.java" startLine="386" startPosition="48" endLine="415" endPosition="13" />
-    <nodeInfo nodeId="1998524321632141957" fileName="EditorComponentChangesHighligher.java" startLine="70" startPosition="82" endLine="106" endPosition="0" />
-    <nodeInfo nodeId="1998524321632141950" fileName="EditorComponentChangesHighligher.java" startLine="69" startPosition="0" endLine="106" endPosition="7" />
-    <nodeInfo nodeId="2936752800012777372" fileName="EditorComponentChangesHighligher.java" startLine="376" startPosition="96" endLine="417" endPosition="11" />
-    <nodeInfo nodeId="166132277801270114" fileName="EditorComponentChangesHighligher.java" startLine="63" startPosition="0" endLine="107" endPosition="3" />
-    <nodeInfo nodeId="1536420391249840114" fileName="EditorComponentChangesHighligher.java" startLine="374" startPosition="14" endLine="418" endPosition="9" />
-    <nodeInfo nodeId="6149144798615862419" fileName="EditorComponentChangesHighligher.java" startLine="374" startPosition="12" endLine="425" endPosition="7" />
-    <nodeInfo nodeId="6149144798615862405" fileName="EditorComponentChangesHighligher.java" startLine="371" startPosition="83" endLine="425" endPosition="7" />
-    <nodeInfo nodeId="6149144798615862395" fileName="EditorComponentChangesHighligher.java" startLine="368" startPosition="0" endLine="427" endPosition="0" />
-    <nodeInfo nodeId="166132277801275728" fileName="EditorComponentChangesHighligher.java" startLine="108" startPosition="0" endLine="181" endPosition="0" />
-    <scopeInfo nodeId="5264204858747865442" fileName="EditorComponentChangesHighligher.java" startLine="482" startPosition="31" endLine="482" endPosition="31" />
-    <scopeInfo nodeId="1041446044406864808" fileName="EditorComponentChangesHighligher.java" startLine="501" startPosition="94" endLine="501" endPosition="94" />
-    <scopeInfo nodeId="7542415519011416807" fileName="EditorComponentChangesHighligher.java" startLine="504" startPosition="39" endLine="504" endPosition="39" />
-    <scopeInfo nodeId="3935103675993728983" fileName="EditorComponentChangesHighligher.java" startLine="78" startPosition="20" endLine="79" endPosition="21" />
-    <scopeInfo nodeId="1998524321632141963" fileName="EditorComponentChangesHighligher.java" startLine="85" startPosition="94" endLine="86" endPosition="36" />
-    <scopeInfo nodeId="8974964540305863413" fileName="EditorComponentChangesHighligher.java" startLine="89" startPosition="153" endLine="90" endPosition="50" />
-    <scopeInfo nodeId="8974964540305863465" fileName="EditorComponentChangesHighligher.java" startLine="95" startPosition="31" endLine="96" endPosition="46" />
-    <scopeInfo nodeId="2590518353162693828" fileName="EditorComponentChangesHighligher.java" startLine="100" startPosition="43" endLine="101" endPosition="72" />
-    <scopeInfo nodeId="8601487597690662341" fileName="EditorComponentChangesHighligher.java" startLine="116" startPosition="60" endLine="117" endPosition="17" />
-    <scopeInfo nodeId="3225080925238796240" fileName="EditorComponentChangesHighligher.java" startLine="120" startPosition="62" endLine="121" endPosition="17" />
-    <scopeInfo nodeId="94490962879300543" fileName="EditorComponentChangesHighligher.java" startLine="125" startPosition="68" endLine="126" endPosition="17" />
-    <scopeInfo nodeId="4410510979167112712" fileName="EditorComponentChangesHighligher.java" startLine="130" startPosition="31" endLine="131" endPosition="94" />
-    <scopeInfo nodeId="4410510979167112726" fileName="EditorComponentChangesHighligher.java" startLine="134" startPosition="16" endLine="135" endPosition="63" />
-    <scopeInfo nodeId="5950168457933946602" fileName="EditorComponentChangesHighligher.java" startLine="139" startPosition="29" endLine="140" endPosition="18" />
-    <scopeInfo nodeId="7627490208786700326" fileName="EditorComponentChangesHighligher.java" startLine="145" startPosition="25" endLine="146" endPosition="87" />
-    <scopeInfo nodeId="6833816562330962379" fileName="EditorComponentChangesHighligher.java" startLine="149" startPosition="31" endLine="150" endPosition="18" />
-    <scopeInfo nodeId="94490962879300592" fileName="EditorComponentChangesHighligher.java" startLine="155" startPosition="33" endLine="156" endPosition="32" />
-    <scopeInfo nodeId="94490962879304423" fileName="EditorComponentChangesHighligher.java" startLine="157" startPosition="43" endLine="158" endPosition="34" />
-    <scopeInfo nodeId="4634477401956479070" fileName="EditorComponentChangesHighligher.java" startLine="159" startPosition="43" endLine="160" endPosition="34" />
-    <scopeInfo nodeId="94490962879304447" fileName="EditorComponentChangesHighligher.java" startLine="161" startPosition="12" endLine="162" endPosition="18" />
-    <scopeInfo nodeId="1284337655903948131" fileName="EditorComponentChangesHighligher.java" startLine="170" startPosition="71" endLine="171" endPosition="20" />
-    <scopeInfo nodeId="76450717690093256" fileName="EditorComponentChangesHighligher.java" startLine="174" startPosition="38" endLine="175" endPosition="20" />
-    <scopeInfo nodeId="166132277801275931" fileName="EditorComponentChangesHighligher.java" startLine="186" startPosition="90" endLine="187" endPosition="20" />
-    <scopeInfo nodeId="2808258374191492242" fileName="EditorComponentChangesHighligher.java" startLine="195" startPosition="113" endLine="196" endPosition="32" />
-    <scopeInfo nodeId="9048291698849195345" fileName="EditorComponentChangesHighligher.java" startLine="209" startPosition="52" endLine="210" endPosition="29" />
-    <scopeInfo nodeId="9048291698849221224" fileName="EditorComponentChangesHighligher.java" startLine="214" startPosition="94" endLine="215" endPosition="99" />
-    <scopeInfo nodeId="3499023120082618406" fileName="EditorComponentChangesHighligher.java" startLine="225" startPosition="49" endLine="226" endPosition="18" />
-    <scopeInfo nodeId="3499023120082619110" fileName="EditorComponentChangesHighligher.java" startLine="230" startPosition="72" endLine="231" endPosition="49" />
-    <scopeInfo nodeId="3499023120082620441" fileName="EditorComponentChangesHighligher.java" startLine="238" startPosition="49" endLine="239" endPosition="18" />
-    <scopeInfo nodeId="3499023120082621851" fileName="EditorComponentChangesHighligher.java" startLine="243" startPosition="72" endLine="244" endPosition="35" />
-    <scopeInfo nodeId="3768510864479102975" fileName="EditorComponentChangesHighligher.java" startLine="250" startPosition="31" endLine="251" endPosition="13" />
-    <scopeInfo nodeId="5444017747357185964" fileName="EditorComponentChangesHighligher.java" startLine="260" startPosition="72" endLine="261" endPosition="61" />
-    <scopeInfo nodeId="5444017747357185938" fileName="EditorComponentChangesHighligher.java" startLine="264" startPosition="68" endLine="265" endPosition="57" />
-    <scopeInfo nodeId="3499023120082622736" fileName="EditorComponentChangesHighligher.java" startLine="268" startPosition="82" endLine="269" endPosition="58" />
-    <scopeInfo nodeId="3499023120082624538" fileName="EditorComponentChangesHighligher.java" startLine="272" startPosition="78" endLine="273" endPosition="54" />
-    <scopeInfo nodeId="2107542654406138049" fileName="EditorComponentChangesHighligher.java" startLine="278" startPosition="86" endLine="279" endPosition="31" />
-    <scopeInfo nodeId="3525805834279458639" fileName="EditorComponentChangesHighligher.java" startLine="285" startPosition="54" endLine="286" endPosition="49" />
-    <scopeInfo nodeId="7152638585749154665" fileName="EditorComponentChangesHighligher.java" startLine="293" startPosition="49" endLine="294" endPosition="63" />
-    <scopeInfo nodeId="7152638585749154643" fileName="EditorComponentChangesHighligher.java" startLine="297" startPosition="12" endLine="298" endPosition="19" />
-    <scopeInfo nodeId="166132277801266530" fileName="EditorComponentChangesHighligher.java" startLine="303" startPosition="20" endLine="304" endPosition="18" />
-    <scopeInfo nodeId="166132277801266530" fileName="EditorComponentChangesHighligher.java" startLine="310" startPosition="20" endLine="311" endPosition="18" />
-    <scopeInfo nodeId="6707717378011964268" fileName="EditorComponentChangesHighligher.java" startLine="325" startPosition="38" endLine="326" endPosition="76" />
-    <scopeInfo nodeId="4434895596490168890" fileName="EditorComponentChangesHighligher.java" startLine="339" startPosition="62" endLine="340" endPosition="66" />
-    <scopeInfo nodeId="4434895596490168906" fileName="EditorComponentChangesHighligher.java" startLine="341" startPosition="16" endLine="342" endPosition="109" />
-    <scopeInfo nodeId="4434895596490168871" fileName="EditorComponentChangesHighligher.java" startLine="344" startPosition="14" endLine="345" endPosition="18" />
-    <scopeInfo nodeId="3719874279484891782" fileName="EditorComponentChangesHighligher.java" startLine="352" startPosition="33" endLine="353" endPosition="20" />
-    <scopeInfo nodeId="3717011451301331762" fileName="EditorComponentChangesHighligher.java" startLine="357" startPosition="45" endLine="358" endPosition="72" />
-    <scopeInfo nodeId="3717011451301331782" fileName="EditorComponentChangesHighligher.java" startLine="359" startPosition="16" endLine="360" endPosition="27" />
-    <scopeInfo nodeId="3719874279484891771" fileName="EditorComponentChangesHighligher.java" startLine="362" startPosition="29" endLine="363" endPosition="28" />
-    <scopeInfo nodeId="3719874279484891778" fileName="EditorComponentChangesHighligher.java" startLine="364" startPosition="14" endLine="365" endPosition="66" />
-    <scopeInfo nodeId="6149144798615862406" fileName="EditorComponentChangesHighligher.java" startLine="372" startPosition="138" endLine="373" endPosition="57" />
-    <scopeInfo nodeId="2936752800012777698" fileName="EditorComponentChangesHighligher.java" startLine="389" startPosition="68" endLine="390" endPosition="69" />
-    <scopeInfo nodeId="2936752800012777746" fileName="EditorComponentChangesHighligher.java" startLine="391" startPosition="22" endLine="392" endPosition="112" />
-    <scopeInfo nodeId="2936752800012781028" fileName="EditorComponentChangesHighligher.java" startLine="399" startPosition="68" endLine="400" endPosition="69" />
-    <scopeInfo nodeId="2936752800012781044" fileName="EditorComponentChangesHighligher.java" startLine="401" startPosition="22" endLine="402" endPosition="112" />
-    <scopeInfo nodeId="7429456937243134867" fileName="EditorComponentChangesHighligher.java" startLine="428" startPosition="53" endLine="429" endPosition="34" />
-    <scopeInfo nodeId="7429456937243134899" fileName="EditorComponentChangesHighligher.java" startLine="434" startPosition="29" endLine="435" endPosition="46" />
-    <scopeInfo nodeId="531813502180021744" fileName="EditorComponentChangesHighligher.java" startLine="439" startPosition="31" endLine="440" endPosition="22" />
-    <scopeInfo nodeId="1994185481787540155" fileName="EditorComponentChangesHighligher.java" startLine="444" startPosition="37" endLine="445" endPosition="18" />
-    <scopeInfo nodeId="4589042405947503395" fileName="EditorComponentChangesHighligher.java" startLine="450" startPosition="37" endLine="451" endPosition="59" />
-    <scopeInfo nodeId="6371186153576896354" fileName="EditorComponentChangesHighligher.java" startLine="455" startPosition="35" endLine="456" endPosition="18" />
-    <scopeInfo nodeId="7240192589568741086" fileName="EditorComponentChangesHighligher.java" startLine="461" startPosition="44" endLine="462" endPosition="31" />
-    <scopeInfo nodeId="7240192589568741096" fileName="EditorComponentChangesHighligher.java" startLine="463" startPosition="14" endLine="464" endPosition="41" />
-    <scopeInfo nodeId="7240192589568741100" fileName="EditorComponentChangesHighligher.java" startLine="470" startPosition="44" endLine="471" endPosition="17" />
-    <scopeInfo nodeId="7240192589568741107" fileName="EditorComponentChangesHighligher.java" startLine="472" startPosition="14" endLine="473" endPosition="42" />
-    <scopeInfo nodeId="967454776205093013" fileName="EditorComponentChangesHighligher.java" startLine="510" startPosition="87" endLine="511" endPosition="54" />
-    <scopeInfo nodeId="967454776205093024" fileName="EditorComponentChangesHighligher.java" startLine="513" startPosition="83" endLine="514" endPosition="50" />
-    <scopeInfo nodeId="967454776205100698" fileName="EditorComponentChangesHighligher.java" startLine="518" startPosition="29" endLine="519" endPosition="44" />
-    <scopeInfo nodeId="5643745088231029816" fileName="EditorComponentChangesHighligher.java" startLine="75" startPosition="70" endLine="77" endPosition="89" />
-    <scopeInfo nodeId="94490962879304460" fileName="EditorComponentChangesHighligher.java" startLine="164" startPosition="42" endLine="166" endPosition="18" />
-    <scopeInfo nodeId="2590518353162693848" fileName="EditorComponentChangesHighligher.java" startLine="201" startPosition="27" endLine="203" endPosition="32" />
-    <scopeInfo nodeId="2530613801598691638" fileName="EditorComponentChangesHighligher.java" startLine="218" startPosition="43" endLine="220" endPosition="60" />
-    <scopeInfo nodeId="6149144798615862335" fileName="EditorComponentChangesHighligher.java" startLine="320" startPosition="119" endLine="322" endPosition="24" />
-    <scopeInfo nodeId="4434895596490112858" fileName="EditorComponentChangesHighligher.java" startLine="329" startPosition="83" endLine="331" endPosition="337">
+    <nodeInfo nodeId="7090398860987849184" fileName="EditorComponentChangesHighligher.java" startLine="62" startPosition="28" endLine="63" endPosition="37" />
+    <nodeInfo nodeId="7090398860987900910" fileName="EditorComponentChangesHighligher.java" startLine="63" startPosition="37" endLine="64" endPosition="53" />
+    <nodeInfo nodeId="76450717690085773" fileName="EditorComponentChangesHighligher.java" startLine="66" startPosition="131" endLine="67" endPosition="40" />
+    <nodeInfo nodeId="8274502957383621991" fileName="EditorComponentChangesHighligher.java" startLine="67" startPosition="40" endLine="68" endPosition="63" />
+    <nodeInfo nodeId="8274502957383622008" fileName="EditorComponentChangesHighligher.java" startLine="68" startPosition="63" endLine="69" endPosition="93" />
+    <nodeInfo nodeId="8601487597690773705" fileName="EditorComponentChangesHighligher.java" startLine="69" startPosition="93" endLine="70" endPosition="24" />
+    <nodeInfo nodeId="166132277801288837" fileName="EditorComponentChangesHighligher.java" startLine="70" startPosition="24" endLine="71" endPosition="0" />
+    <nodeInfo nodeId="7090398860987902384" fileName="EditorComponentChangesHighligher.java" startLine="75" startPosition="27" endLine="76" endPosition="19" />
+    <nodeInfo nodeId="6099081905063733777" fileName="EditorComponentChangesHighligher.java" startLine="80" startPosition="29" endLine="81" endPosition="93" />
+    <nodeInfo nodeId="6080400160196253743" fileName="EditorComponentChangesHighligher.java" startLine="82" startPosition="70" endLine="83" endPosition="104" />
+    <nodeInfo nodeId="6080400160196253646" fileName="EditorComponentChangesHighligher.java" startLine="83" startPosition="104" endLine="84" endPosition="89" />
+    <nodeInfo nodeId="3935103675993738614" fileName="EditorComponentChangesHighligher.java" startLine="85" startPosition="20" endLine="86" endPosition="21" />
+    <nodeInfo nodeId="1998524321632141964" fileName="EditorComponentChangesHighligher.java" startLine="91" startPosition="94" endLine="92" endPosition="36" />
+    <nodeInfo nodeId="8974964540305863434" fileName="EditorComponentChangesHighligher.java" startLine="95" startPosition="153" endLine="96" endPosition="50" />
+    <nodeInfo nodeId="8974964540305863450" fileName="EditorComponentChangesHighligher.java" startLine="98" startPosition="11" endLine="99" endPosition="66" />
+    <nodeInfo nodeId="8974964540305863466" fileName="EditorComponentChangesHighligher.java" startLine="101" startPosition="31" endLine="102" endPosition="46" />
+    <nodeInfo nodeId="2590518353162693836" fileName="EditorComponentChangesHighligher.java" startLine="106" startPosition="43" endLine="107" endPosition="72" />
+    <nodeInfo nodeId="166132277801275732" fileName="EditorComponentChangesHighligher.java" startLine="115" startPosition="71" endLine="116" endPosition="61" />
+    <nodeInfo nodeId="94490962879300525" fileName="EditorComponentChangesHighligher.java" startLine="116" startPosition="61" endLine="117" endPosition="86" />
+    <nodeInfo nodeId="5455599429139860991" fileName="EditorComponentChangesHighligher.java" startLine="119" startPosition="25" endLine="120" endPosition="68" />
+    <nodeInfo nodeId="8601487597690662160" fileName="EditorComponentChangesHighligher.java" startLine="120" startPosition="68" endLine="121" endPosition="61" />
+    <nodeInfo nodeId="8601487597690666434" fileName="EditorComponentChangesHighligher.java" startLine="122" startPosition="60" endLine="123" endPosition="17" />
+    <nodeInfo nodeId="5455599429139860997" fileName="EditorComponentChangesHighligher.java" startLine="124" startPosition="9" endLine="125" endPosition="44" />
+    <nodeInfo nodeId="3225080925238796257" fileName="EditorComponentChangesHighligher.java" startLine="126" startPosition="62" endLine="127" endPosition="17" />
+    <nodeInfo nodeId="94490962879273089" fileName="EditorComponentChangesHighligher.java" startLine="128" startPosition="9" endLine="129" endPosition="60" />
+    <nodeInfo nodeId="4549443622024151073" fileName="EditorComponentChangesHighligher.java" startLine="129" startPosition="60" endLine="130" endPosition="56" />
+    <nodeInfo nodeId="94490962879300555" fileName="EditorComponentChangesHighligher.java" startLine="131" startPosition="68" endLine="132" endPosition="17" />
+    <nodeInfo nodeId="4410510979167112713" fileName="EditorComponentChangesHighligher.java" startLine="136" startPosition="31" endLine="137" endPosition="94" />
+    <nodeInfo nodeId="4410510979167112727" fileName="EditorComponentChangesHighligher.java" startLine="140" startPosition="16" endLine="141" endPosition="63" />
+    <nodeInfo nodeId="4410510979167112736" fileName="EditorComponentChangesHighligher.java" startLine="145" startPosition="29" endLine="146" endPosition="18" />
+    <nodeInfo nodeId="4056424511791891720" fileName="EditorComponentChangesHighligher.java" startLine="147" startPosition="5" endLine="148" endPosition="0" />
+    <nodeInfo nodeId="7627490208786691767" fileName="EditorComponentChangesHighligher.java" startLine="148" startPosition="0" endLine="149" endPosition="66" />
+    <nodeInfo nodeId="7627490208786700337" fileName="EditorComponentChangesHighligher.java" startLine="151" startPosition="25" endLine="152" endPosition="87" />
+    <nodeInfo nodeId="6833816562330967563" fileName="EditorComponentChangesHighligher.java" startLine="155" startPosition="31" endLine="156" endPosition="18" />
+    <nodeInfo nodeId="4056424511791932073" fileName="EditorComponentChangesHighligher.java" startLine="157" startPosition="5" endLine="158" endPosition="0" />
+    <nodeInfo nodeId="94490962879300562" fileName="EditorComponentChangesHighligher.java" startLine="158" startPosition="0" endLine="159" endPosition="45" />
+    <nodeInfo nodeId="94490962879300581" fileName="EditorComponentChangesHighligher.java" startLine="159" startPosition="45" endLine="160" endPosition="12" />
+    <nodeInfo nodeId="94490962879300607" fileName="EditorComponentChangesHighligher.java" startLine="161" startPosition="33" endLine="162" endPosition="32" />
+    <nodeInfo nodeId="8259090432009594284" fileName="EditorComponentChangesHighligher.java" startLine="163" startPosition="43" endLine="164" endPosition="34" />
+    <nodeInfo nodeId="4634477401956479084" fileName="EditorComponentChangesHighligher.java" startLine="165" startPosition="43" endLine="166" endPosition="34" />
+    <nodeInfo nodeId="4634477401956479106" fileName="EditorComponentChangesHighligher.java" startLine="167" startPosition="12" endLine="168" endPosition="18" />
+    <nodeInfo nodeId="94490962879304472" fileName="EditorComponentChangesHighligher.java" startLine="170" startPosition="42" endLine="171" endPosition="37" />
+    <nodeInfo nodeId="94490962879304478" fileName="EditorComponentChangesHighligher.java" startLine="171" startPosition="37" endLine="172" endPosition="18" />
+    <nodeInfo nodeId="166132277801275741" fileName="EditorComponentChangesHighligher.java" startLine="173" startPosition="5" endLine="174" endPosition="65" />
+    <nodeInfo nodeId="1284337655903948646" fileName="EditorComponentChangesHighligher.java" startLine="176" startPosition="71" endLine="177" endPosition="20" />
+    <nodeInfo nodeId="489904387623459357" fileName="EditorComponentChangesHighligher.java" startLine="178" startPosition="7" endLine="179" endPosition="117" />
+    <nodeInfo nodeId="76450717690093267" fileName="EditorComponentChangesHighligher.java" startLine="180" startPosition="38" endLine="181" endPosition="20" />
+    <nodeInfo nodeId="166132277801275893" fileName="EditorComponentChangesHighligher.java" startLine="182" startPosition="7" endLine="183" endPosition="66" />
+    <nodeInfo nodeId="967454776205089938" fileName="EditorComponentChangesHighligher.java" startLine="184" startPosition="5" endLine="185" endPosition="19" />
+    <nodeInfo nodeId="166132277801275922" fileName="EditorComponentChangesHighligher.java" startLine="188" startPosition="67" endLine="189" endPosition="26" />
+    <nodeInfo nodeId="489904387623459354" fileName="EditorComponentChangesHighligher.java" startLine="190" startPosition="38" endLine="191" endPosition="67" />
+    <nodeInfo nodeId="166132277801275932" fileName="EditorComponentChangesHighligher.java" startLine="192" startPosition="90" endLine="193" endPosition="20" />
+    <nodeInfo nodeId="166132277801275955" fileName="EditorComponentChangesHighligher.java" startLine="194" startPosition="7" endLine="195" endPosition="63" />
+    <nodeInfo nodeId="967454776205088825" fileName="EditorComponentChangesHighligher.java" startLine="196" startPosition="5" endLine="197" endPosition="19" />
+    <nodeInfo nodeId="7090398860987902391" fileName="EditorComponentChangesHighligher.java" startLine="201" startPosition="35" endLine="202" endPosition="24" />
+    <nodeInfo nodeId="2808258374191492258" fileName="EditorComponentChangesHighligher.java" startLine="204" startPosition="113" endLine="205" endPosition="32" />
+    <nodeInfo nodeId="3525805834279458658" fileName="EditorComponentChangesHighligher.java" startLine="206" startPosition="5" endLine="207" endPosition="46" />
+    <nodeInfo nodeId="2835519241762199189" fileName="EditorComponentChangesHighligher.java" startLine="207" startPosition="46" endLine="208" endPosition="96" />
+    <nodeInfo nodeId="1216651720809581175" fileName="EditorComponentChangesHighligher.java" startLine="210" startPosition="27" endLine="211" endPosition="69" />
+    <nodeInfo nodeId="6406850599534507789" fileName="EditorComponentChangesHighligher.java" startLine="211" startPosition="69" endLine="212" endPosition="32" />
+    <nodeInfo nodeId="9048291698849215262" fileName="EditorComponentChangesHighligher.java" startLine="218" startPosition="52" endLine="219" endPosition="29" />
+    <nodeInfo nodeId="9048291698849221243" fileName="EditorComponentChangesHighligher.java" startLine="223" startPosition="94" endLine="224" endPosition="99" />
+    <nodeInfo nodeId="2530613801598691639" fileName="EditorComponentChangesHighligher.java" startLine="227" startPosition="43" endLine="228" endPosition="24" />
+    <nodeInfo nodeId="2530613801598704345" fileName="EditorComponentChangesHighligher.java" startLine="228" startPosition="24" endLine="229" endPosition="60" />
+    <nodeInfo nodeId="3499023120082618407" fileName="EditorComponentChangesHighligher.java" startLine="234" startPosition="49" endLine="235" endPosition="18" />
+    <nodeInfo nodeId="3499023120082618787" fileName="EditorComponentChangesHighligher.java" startLine="236" startPosition="5" endLine="237" endPosition="59" />
+    <nodeInfo nodeId="3499023120082619111" fileName="EditorComponentChangesHighligher.java" startLine="239" startPosition="72" endLine="240" endPosition="49" />
+    <nodeInfo nodeId="3499023120082620442" fileName="EditorComponentChangesHighligher.java" startLine="247" startPosition="49" endLine="248" endPosition="18" />
+    <nodeInfo nodeId="3499023120082620448" fileName="EditorComponentChangesHighligher.java" startLine="249" startPosition="5" endLine="250" endPosition="107" />
+    <nodeInfo nodeId="3499023120082621852" fileName="EditorComponentChangesHighligher.java" startLine="252" startPosition="72" endLine="253" endPosition="35" />
+    <nodeInfo nodeId="3768510864479102981" fileName="EditorComponentChangesHighligher.java" startLine="259" startPosition="31" endLine="260" endPosition="13" />
+    <nodeInfo nodeId="1266358454280365045" fileName="EditorComponentChangesHighligher.java" startLine="261" startPosition="5" endLine="262" endPosition="112" />
+    <nodeInfo nodeId="7767298435310782268" fileName="EditorComponentChangesHighligher.java" startLine="262" startPosition="112" endLine="263" endPosition="81" />
+    <nodeInfo nodeId="1266358454280365070" fileName="EditorComponentChangesHighligher.java" startLine="263" startPosition="81" endLine="264" endPosition="49" />
+    <nodeInfo nodeId="7767298435310782957" fileName="EditorComponentChangesHighligher.java" startLine="264" startPosition="49" endLine="265" endPosition="48" />
+    <nodeInfo nodeId="6378762527268294426" fileName="EditorComponentChangesHighligher.java" startLine="265" startPosition="48" endLine="266" endPosition="59" />
+    <nodeInfo nodeId="1266358454280406956" fileName="EditorComponentChangesHighligher.java" startLine="269" startPosition="72" endLine="270" endPosition="61" />
+    <nodeInfo nodeId="3499023120082622521" fileName="EditorComponentChangesHighligher.java" startLine="273" startPosition="68" endLine="274" endPosition="57" />
+    <nodeInfo nodeId="3499023120082623952" fileName="EditorComponentChangesHighligher.java" startLine="277" startPosition="82" endLine="278" endPosition="58" />
+    <nodeInfo nodeId="3499023120082624539" fileName="EditorComponentChangesHighligher.java" startLine="281" startPosition="78" endLine="282" endPosition="54" />
+    <nodeInfo nodeId="2107542654406138052" fileName="EditorComponentChangesHighligher.java" startLine="287" startPosition="86" endLine="288" endPosition="31" />
+    <nodeInfo nodeId="7317795005505906199" fileName="EditorComponentChangesHighligher.java" startLine="290" startPosition="8" endLine="291" endPosition="47" />
+    <nodeInfo nodeId="3525805834279458640" fileName="EditorComponentChangesHighligher.java" startLine="294" startPosition="54" endLine="295" endPosition="49" />
+    <nodeInfo nodeId="7152638585749154613" fileName="EditorComponentChangesHighligher.java" startLine="299" startPosition="48" endLine="300" endPosition="80" />
+    <nodeInfo nodeId="7152638585749154669" fileName="EditorComponentChangesHighligher.java" startLine="302" startPosition="49" endLine="303" endPosition="63" />
+    <nodeInfo nodeId="7152638585749154644" fileName="EditorComponentChangesHighligher.java" startLine="306" startPosition="12" endLine="307" endPosition="19" />
+    <nodeInfo nodeId="166132277801266530" fileName="EditorComponentChangesHighligher.java" startLine="312" startPosition="20" endLine="313" endPosition="18" />
+    <nodeInfo nodeId="166132277801266530" fileName="EditorComponentChangesHighligher.java" startLine="314" startPosition="5" endLine="315" endPosition="24" />
+    <nodeInfo nodeId="166132277801266530" fileName="EditorComponentChangesHighligher.java" startLine="319" startPosition="20" endLine="320" endPosition="18" />
+    <nodeInfo nodeId="166132277801266530" fileName="EditorComponentChangesHighligher.java" startLine="321" startPosition="5" endLine="322" endPosition="35" />
+    <nodeInfo nodeId="6746101208730297912" fileName="EditorComponentChangesHighligher.java" startLine="325" startPosition="68" endLine="326" endPosition="28" />
+    <nodeInfo nodeId="7429456937243134764" fileName="EditorComponentChangesHighligher.java" startLine="326" startPosition="28" endLine="327" endPosition="42" />
+    <nodeInfo nodeId="6149144798615862361" fileName="EditorComponentChangesHighligher.java" startLine="329" startPosition="119" endLine="330" endPosition="101" />
+    <nodeInfo nodeId="6746101208730314160" fileName="EditorComponentChangesHighligher.java" startLine="330" startPosition="101" endLine="331" endPosition="24" />
+    <nodeInfo nodeId="6707717378011982907" fileName="EditorComponentChangesHighligher.java" startLine="334" startPosition="38" endLine="335" endPosition="76" />
+    <nodeInfo nodeId="4434895596490125495" fileName="EditorComponentChangesHighligher.java" startLine="338" startPosition="83" endLine="339" endPosition="49" />
+    <nodeInfo nodeId="4434895596490125473" fileName="EditorComponentChangesHighligher.java" startLine="339" startPosition="49" endLine="340" endPosition="337" />
+    <nodeInfo nodeId="4434895596490168925" fileName="EditorComponentChangesHighligher.java" startLine="344" startPosition="50" endLine="345" endPosition="51" />
+    <nodeInfo nodeId="4434895596490168879" fileName="EditorComponentChangesHighligher.java" startLine="345" startPosition="51" endLine="346" endPosition="78" />
+    <nodeInfo nodeId="4434895596490168932" fileName="EditorComponentChangesHighligher.java" startLine="346" startPosition="78" endLine="347" endPosition="94" />
+    <nodeInfo nodeId="4434895596490168943" fileName="EditorComponentChangesHighligher.java" startLine="348" startPosition="62" endLine="349" endPosition="66" />
+    <nodeInfo nodeId="4434895596490168961" fileName="EditorComponentChangesHighligher.java" startLine="350" startPosition="16" endLine="351" endPosition="109" />
+    <nodeInfo nodeId="4434895596490168872" fileName="EditorComponentChangesHighligher.java" startLine="353" startPosition="14" endLine="354" endPosition="18" />
+    <nodeInfo nodeId="3719874279484891751" fileName="EditorComponentChangesHighligher.java" startLine="359" startPosition="64" endLine="360" endPosition="106" />
+    <nodeInfo nodeId="3719874279484891790" fileName="EditorComponentChangesHighligher.java" startLine="361" startPosition="33" endLine="362" endPosition="20" />
+    <nodeInfo nodeId="3717011451301308939" fileName="EditorComponentChangesHighligher.java" startLine="364" startPosition="26" endLine="365" endPosition="81" />
+    <nodeInfo nodeId="3717011451301331772" fileName="EditorComponentChangesHighligher.java" startLine="366" startPosition="45" endLine="367" endPosition="72" />
+    <nodeInfo nodeId="3719874279484891794" fileName="EditorComponentChangesHighligher.java" startLine="368" startPosition="16" endLine="369" endPosition="27" />
+    <nodeInfo nodeId="3719874279484891803" fileName="EditorComponentChangesHighligher.java" startLine="371" startPosition="29" endLine="372" endPosition="28" />
+    <nodeInfo nodeId="5687497293128287234" fileName="EditorComponentChangesHighligher.java" startLine="373" startPosition="14" endLine="374" endPosition="66" />
+    <nodeInfo nodeId="3176852462137000047" fileName="EditorComponentChangesHighligher.java" startLine="379" startPosition="95" endLine="380" endPosition="83" />
+    <nodeInfo nodeId="263447985294205829" fileName="EditorComponentChangesHighligher.java" startLine="381" startPosition="138" endLine="382" endPosition="57" />
+    <nodeInfo nodeId="2936752800012777362" fileName="EditorComponentChangesHighligher.java" startLine="384" startPosition="54" endLine="385" endPosition="96" />
+    <nodeInfo nodeId="7152638585749145247" fileName="EditorComponentChangesHighligher.java" startLine="386" startPosition="37" endLine="387" endPosition="82" />
+    <nodeInfo nodeId="7152638585749145391" fileName="EditorComponentChangesHighligher.java" startLine="387" startPosition="82" endLine="388" endPosition="0" />
+    <nodeInfo nodeId="7152638585749130603" fileName="EditorComponentChangesHighligher.java" startLine="389" startPosition="56" endLine="390" endPosition="63" />
+    <nodeInfo nodeId="7152638585749145393" fileName="EditorComponentChangesHighligher.java" startLine="390" startPosition="63" endLine="391" endPosition="21" />
+    <nodeInfo nodeId="7152638585749117358" fileName="EditorComponentChangesHighligher.java" startLine="392" startPosition="13" endLine="393" endPosition="0" />
+    <nodeInfo nodeId="1536420391249840119" fileName="EditorComponentChangesHighligher.java" startLine="393" startPosition="0" endLine="394" endPosition="164" />
+    <nodeInfo nodeId="2936752800012731773" fileName="EditorComponentChangesHighligher.java" startLine="394" startPosition="164" endLine="395" endPosition="48" />
+    <nodeInfo nodeId="2936752800012777733" fileName="EditorComponentChangesHighligher.java" startLine="396" startPosition="27" endLine="397" endPosition="20" />
+    <nodeInfo nodeId="2936752800012777742" fileName="EditorComponentChangesHighligher.java" startLine="398" startPosition="68" endLine="399" endPosition="69" />
+    <nodeInfo nodeId="2936752800012777747" fileName="EditorComponentChangesHighligher.java" startLine="400" startPosition="22" endLine="401" endPosition="112" />
+    <nodeInfo nodeId="2936752800012777792" fileName="EditorComponentChangesHighligher.java" startLine="402" startPosition="15" endLine="403" endPosition="44" />
+    <nodeInfo nodeId="2936752800012777806" fileName="EditorComponentChangesHighligher.java" startLine="403" startPosition="44" endLine="404" endPosition="73" />
+    <nodeInfo nodeId="2451109806934128328" fileName="EditorComponentChangesHighligher.java" startLine="405" startPosition="20" endLine="406" endPosition="59" />
+    <nodeInfo nodeId="2936752800012781024" fileName="EditorComponentChangesHighligher.java" startLine="406" startPosition="59" endLine="407" endPosition="20" />
+    <nodeInfo nodeId="2936752800012781029" fileName="EditorComponentChangesHighligher.java" startLine="408" startPosition="68" endLine="409" endPosition="69" />
+    <nodeInfo nodeId="2936752800012781045" fileName="EditorComponentChangesHighligher.java" startLine="410" startPosition="22" endLine="411" endPosition="112" />
+    <nodeInfo nodeId="2451109806934128330" fileName="EditorComponentChangesHighligher.java" startLine="412" startPosition="15" endLine="413" endPosition="32" />
+    <nodeInfo nodeId="2451109806934128337" fileName="EditorComponentChangesHighligher.java" startLine="413" startPosition="32" endLine="414" endPosition="48" />
+    <nodeInfo nodeId="977382291400359302" fileName="EditorComponentChangesHighligher.java" startLine="414" startPosition="48" endLine="415" endPosition="0" />
+    <nodeInfo nodeId="2936752800012781063" fileName="EditorComponentChangesHighligher.java" startLine="415" startPosition="0" endLine="416" endPosition="44" />
+    <nodeInfo nodeId="2936752800012781069" fileName="EditorComponentChangesHighligher.java" startLine="416" startPosition="44" endLine="417" endPosition="46" />
+    <nodeInfo nodeId="2451109806934128349" fileName="EditorComponentChangesHighligher.java" startLine="417" startPosition="46" endLine="418" endPosition="101" />
+    <nodeInfo nodeId="2451109806934128513" fileName="EditorComponentChangesHighligher.java" startLine="418" startPosition="101" endLine="419" endPosition="101" />
+    <nodeInfo nodeId="977382291400359301" fileName="EditorComponentChangesHighligher.java" startLine="419" startPosition="101" endLine="420" endPosition="0" />
+    <nodeInfo nodeId="977382291400331957" fileName="EditorComponentChangesHighligher.java" startLine="420" startPosition="0" endLine="421" endPosition="86" />
+    <nodeInfo nodeId="977382291400331966" fileName="EditorComponentChangesHighligher.java" startLine="421" startPosition="86" endLine="422" endPosition="101" />
+    <nodeInfo nodeId="977382291400331993" fileName="EditorComponentChangesHighligher.java" startLine="422" startPosition="101" endLine="423" endPosition="101" />
+    <nodeInfo nodeId="2718986346898855352" fileName="EditorComponentChangesHighligher.java" startLine="424" startPosition="13" endLine="425" endPosition="19" />
+    <nodeInfo nodeId="6172777473367030196" fileName="EditorComponentChangesHighligher.java" startLine="431" startPosition="12" endLine="432" endPosition="44" />
+    <nodeInfo nodeId="6172777473367030189" fileName="EditorComponentChangesHighligher.java" startLine="432" startPosition="44" endLine="433" endPosition="75" />
+    <nodeInfo nodeId="7429456937243134868" fileName="EditorComponentChangesHighligher.java" startLine="437" startPosition="53" endLine="438" endPosition="34" />
+    <nodeInfo nodeId="3719874279484892358" fileName="EditorComponentChangesHighligher.java" startLine="443" startPosition="29" endLine="444" endPosition="46" />
+    <nodeInfo nodeId="531813502180021745" fileName="EditorComponentChangesHighligher.java" startLine="448" startPosition="31" endLine="449" endPosition="22" />
+    <nodeInfo nodeId="1994185481787546085" fileName="EditorComponentChangesHighligher.java" startLine="453" startPosition="37" endLine="454" endPosition="18" />
+    <nodeInfo nodeId="7752093726709244934" fileName="EditorComponentChangesHighligher.java" startLine="459" startPosition="37" endLine="460" endPosition="59" />
+    <nodeInfo nodeId="6371186153576917403" fileName="EditorComponentChangesHighligher.java" startLine="464" startPosition="35" endLine="465" endPosition="18" />
+    <nodeInfo nodeId="7240192589568741091" fileName="EditorComponentChangesHighligher.java" startLine="470" startPosition="44" endLine="471" endPosition="31" />
+    <nodeInfo nodeId="7240192589568741097" fileName="EditorComponentChangesHighligher.java" startLine="472" startPosition="14" endLine="473" endPosition="41" />
+    <nodeInfo nodeId="7240192589568741101" fileName="EditorComponentChangesHighligher.java" startLine="479" startPosition="44" endLine="480" endPosition="17" />
+    <nodeInfo nodeId="7240192589568741108" fileName="EditorComponentChangesHighligher.java" startLine="481" startPosition="14" endLine="482" endPosition="42" />
+    <nodeInfo nodeId="7542415519011417063" fileName="EditorComponentChangesHighligher.java" startLine="487" startPosition="60" endLine="488" endPosition="104" />
+    <nodeInfo nodeId="7542415519011417482" fileName="EditorComponentChangesHighligher.java" startLine="488" startPosition="104" endLine="489" endPosition="106" />
+    <nodeInfo nodeId="967454776205090401" fileName="EditorComponentChangesHighligher.java" startLine="494" startPosition="76" endLine="495" endPosition="59" />
+    <nodeInfo nodeId="928328222692503836" fileName="EditorComponentChangesHighligher.java" startLine="496" startPosition="33" endLine="497" endPosition="77" />
+    <nodeInfo nodeId="967454776205091700" fileName="EditorComponentChangesHighligher.java" startLine="497" startPosition="77" endLine="498" endPosition="72" />
+    <nodeInfo nodeId="967454776205090735" fileName="EditorComponentChangesHighligher.java" startLine="502" startPosition="78" endLine="503" endPosition="63" />
+    <nodeInfo nodeId="967454776205091981" fileName="EditorComponentChangesHighligher.java" startLine="504" startPosition="35" endLine="505" endPosition="76" />
+    <nodeInfo nodeId="928328222692503824" fileName="EditorComponentChangesHighligher.java" startLine="505" startPosition="76" endLine="506" endPosition="77" />
+    <nodeInfo nodeId="8974964540305863488" fileName="EditorComponentChangesHighligher.java" startLine="517" startPosition="121" endLine="518" endPosition="74" />
+    <nodeInfo nodeId="967454776205093346" fileName="EditorComponentChangesHighligher.java" startLine="519" startPosition="87" endLine="520" endPosition="54" />
+    <nodeInfo nodeId="967454776205099353" fileName="EditorComponentChangesHighligher.java" startLine="522" startPosition="83" endLine="523" endPosition="50" />
+    <nodeInfo nodeId="967454776205100320" fileName="EditorComponentChangesHighligher.java" startLine="524" startPosition="9" endLine="525" endPosition="63" />
+    <nodeInfo nodeId="967454776205100699" fileName="EditorComponentChangesHighligher.java" startLine="527" startPosition="29" endLine="528" endPosition="44" />
+    <nodeInfo nodeId="2343602534332756996" fileName="EditorComponentChangesHighligher.java" startLine="530" startPosition="11" endLine="531" endPosition="55" />
+    <nodeInfo nodeId="2343602534332756988" fileName="EditorComponentChangesHighligher.java" startLine="531" startPosition="55" endLine="532" endPosition="57" />
+    <nodeInfo nodeId="3935103675993728982" fileName="EditorComponentChangesHighligher.java" startLine="85" startPosition="18" endLine="87" endPosition="13" />
+    <nodeInfo nodeId="4410510979167112725" fileName="EditorComponentChangesHighligher.java" startLine="140" startPosition="14" endLine="142" endPosition="9" />
+    <nodeInfo nodeId="94490962879304446" fileName="EditorComponentChangesHighligher.java" startLine="167" startPosition="10" endLine="169" endPosition="5" />
+    <nodeInfo nodeId="7152638585749154642" fileName="EditorComponentChangesHighligher.java" startLine="306" startPosition="10" endLine="308" endPosition="5" />
+    <nodeInfo nodeId="4434895596490168905" fileName="EditorComponentChangesHighligher.java" startLine="350" startPosition="14" endLine="352" endPosition="9" />
+    <nodeInfo nodeId="4434895596490168870" fileName="EditorComponentChangesHighligher.java" startLine="353" startPosition="12" endLine="355" endPosition="7" />
+    <nodeInfo nodeId="3717011451301331781" fileName="EditorComponentChangesHighligher.java" startLine="368" startPosition="14" endLine="370" endPosition="9" />
+    <nodeInfo nodeId="3719874279484891777" fileName="EditorComponentChangesHighligher.java" startLine="373" startPosition="12" endLine="375" endPosition="7" />
+    <nodeInfo nodeId="2936752800012777745" fileName="EditorComponentChangesHighligher.java" startLine="400" startPosition="20" endLine="402" endPosition="15" />
+    <nodeInfo nodeId="2936752800012781043" fileName="EditorComponentChangesHighligher.java" startLine="410" startPosition="20" endLine="412" endPosition="15" />
+    <nodeInfo nodeId="7240192589568741095" fileName="EditorComponentChangesHighligher.java" startLine="472" startPosition="12" endLine="474" endPosition="7" />
+    <nodeInfo nodeId="7240192589568741106" fileName="EditorComponentChangesHighligher.java" startLine="481" startPosition="12" endLine="483" endPosition="7" />
+    <nodeInfo nodeId="5264204858747865439" fileName="EditorComponentChangesHighligher.java" startLine="490" startPosition="0" endLine="492" endPosition="5" />
+    <nodeInfo nodeId="7090398860987902382" fileName="EditorComponentChangesHighligher.java" startLine="74" startPosition="39" endLine="77" endPosition="11" />
+    <nodeInfo nodeId="1998524321632141961" fileName="EditorComponentChangesHighligher.java" startLine="90" startPosition="39" endLine="93" endPosition="11" />
+    <nodeInfo nodeId="8974964540305863410" fileName="EditorComponentChangesHighligher.java" startLine="94" startPosition="44" endLine="97" endPosition="13" />
+    <nodeInfo nodeId="2590518353162693826" fileName="EditorComponentChangesHighligher.java" startLine="105" startPosition="64" endLine="108" endPosition="13" />
+    <nodeInfo nodeId="8601487597690662340" fileName="EditorComponentChangesHighligher.java" startLine="121" startPosition="61" endLine="124" endPosition="9" />
+    <nodeInfo nodeId="3225080925238796239" fileName="EditorComponentChangesHighligher.java" startLine="125" startPosition="44" endLine="128" endPosition="9" />
+    <nodeInfo nodeId="94490962879300542" fileName="EditorComponentChangesHighligher.java" startLine="130" startPosition="56" endLine="133" endPosition="9" />
+    <nodeInfo nodeId="5950168457933946601" fileName="EditorComponentChangesHighligher.java" startLine="144" startPosition="7" endLine="147" endPosition="5" />
+    <nodeInfo nodeId="6833816562330962378" fileName="EditorComponentChangesHighligher.java" startLine="154" startPosition="7" endLine="157" endPosition="5" />
+    <nodeInfo nodeId="1284337655903948130" fileName="EditorComponentChangesHighligher.java" startLine="175" startPosition="38" endLine="178" endPosition="7" />
+    <nodeInfo nodeId="76450717690093255" fileName="EditorComponentChangesHighligher.java" startLine="179" startPosition="117" endLine="182" endPosition="7" />
+    <nodeInfo nodeId="166132277801275930" fileName="EditorComponentChangesHighligher.java" startLine="191" startPosition="67" endLine="194" endPosition="7" />
+    <nodeInfo nodeId="7090398860987902387" fileName="EditorComponentChangesHighligher.java" startLine="200" startPosition="25" endLine="203" endPosition="5" />
+    <nodeInfo nodeId="2808258374191492239" fileName="EditorComponentChangesHighligher.java" startLine="203" startPosition="5" endLine="206" endPosition="5" />
+    <nodeInfo nodeId="3499023120082618405" fileName="EditorComponentChangesHighligher.java" startLine="233" startPosition="112" endLine="236" endPosition="5" />
+    <nodeInfo nodeId="3499023120082620440" fileName="EditorComponentChangesHighligher.java" startLine="246" startPosition="108" endLine="249" endPosition="5" />
+    <nodeInfo nodeId="3768510864479102973" fileName="EditorComponentChangesHighligher.java" startLine="258" startPosition="96" endLine="261" endPosition="5" />
+    <nodeInfo nodeId="166132277801266530" fileName="EditorComponentChangesHighligher.java" startLine="311" startPosition="61" endLine="314" endPosition="5" />
+    <nodeInfo nodeId="166132277801266530" fileName="EditorComponentChangesHighligher.java" startLine="318" startPosition="77" endLine="321" endPosition="5" />
+    <nodeInfo nodeId="3719874279484891781" fileName="EditorComponentChangesHighligher.java" startLine="360" startPosition="106" endLine="363" endPosition="7" />
+    <nodeInfo nodeId="1041446044406864801" fileName="EditorComponentChangesHighligher.java" startLine="509" startPosition="0" endLine="512" endPosition="0" />
+    <nodeInfo nodeId="7542415519011416804" fileName="EditorComponentChangesHighligher.java" startLine="512" startPosition="0" endLine="515" endPosition="0" />
+    <nodeInfo nodeId="967454776205093008" fileName="EditorComponentChangesHighligher.java" startLine="518" startPosition="74" endLine="521" endPosition="9" />
+    <nodeInfo nodeId="967454776205093019" fileName="EditorComponentChangesHighligher.java" startLine="521" startPosition="9" endLine="524" endPosition="9" />
+    <nodeInfo nodeId="8974964540305863464" fileName="EditorComponentChangesHighligher.java" startLine="100" startPosition="58" endLine="104" endPosition="0" />
+    <nodeInfo nodeId="4410510979167112711" fileName="EditorComponentChangesHighligher.java" startLine="135" startPosition="63" endLine="139" endPosition="0" />
+    <nodeInfo nodeId="7627490208786700325" fileName="EditorComponentChangesHighligher.java" startLine="150" startPosition="57" endLine="154" endPosition="0" />
+    <nodeInfo nodeId="94490962879304459" fileName="EditorComponentChangesHighligher.java" startLine="169" startPosition="5" endLine="173" endPosition="5" />
+    <nodeInfo nodeId="2590518353162693846" fileName="EditorComponentChangesHighligher.java" startLine="209" startPosition="40" endLine="213" endPosition="7" />
+    <nodeInfo nodeId="3499023120082619109" fileName="EditorComponentChangesHighligher.java" startLine="238" startPosition="143" endLine="242" endPosition="0" />
+    <nodeInfo nodeId="3499023120082621850" fileName="EditorComponentChangesHighligher.java" startLine="251" startPosition="144" endLine="255" endPosition="0" />
+    <nodeInfo nodeId="5444017747357185959" fileName="EditorComponentChangesHighligher.java" startLine="268" startPosition="0" endLine="272" endPosition="0" />
+    <nodeInfo nodeId="5444017747357185935" fileName="EditorComponentChangesHighligher.java" startLine="272" startPosition="0" endLine="276" endPosition="0" />
+    <nodeInfo nodeId="3499023120082622733" fileName="EditorComponentChangesHighligher.java" startLine="276" startPosition="0" endLine="280" endPosition="0" />
+    <nodeInfo nodeId="3499023120082624535" fileName="EditorComponentChangesHighligher.java" startLine="280" startPosition="0" endLine="284" endPosition="0" />
+    <nodeInfo nodeId="2107542654406138048" fileName="EditorComponentChangesHighligher.java" startLine="286" startPosition="211" endLine="290" endPosition="0" />
+    <nodeInfo nodeId="3525805834279458636" fileName="EditorComponentChangesHighligher.java" startLine="293" startPosition="0" endLine="297" endPosition="0" />
+    <nodeInfo nodeId="7152638585749154664" fileName="EditorComponentChangesHighligher.java" startLine="301" startPosition="112" endLine="305" endPosition="0" />
+    <nodeInfo nodeId="6149144798615862332" fileName="EditorComponentChangesHighligher.java" startLine="328" startPosition="0" endLine="332" endPosition="5" />
+    <nodeInfo nodeId="6707717378011964265" fileName="EditorComponentChangesHighligher.java" startLine="333" startPosition="0" endLine="337" endPosition="0" />
+    <nodeInfo nodeId="7152638585749130007" fileName="EditorComponentChangesHighligher.java" startLine="388" startPosition="0" endLine="392" endPosition="13" />
+    <nodeInfo nodeId="3719874279484891809" fileName="EditorComponentChangesHighligher.java" startLine="427" startPosition="9" endLine="431" endPosition="12" />
+    <nodeInfo nodeId="7429456937243134864" fileName="EditorComponentChangesHighligher.java" startLine="436" startPosition="0" endLine="440" endPosition="0" />
+    <nodeInfo nodeId="967454776205090453" fileName="EditorComponentChangesHighligher.java" startLine="495" startPosition="59" endLine="499" endPosition="7" />
+    <nodeInfo nodeId="967454776205091104" fileName="EditorComponentChangesHighligher.java" startLine="503" startPosition="63" endLine="507" endPosition="7" />
+    <nodeInfo nodeId="967454776205100697" fileName="EditorComponentChangesHighligher.java" startLine="526" startPosition="56" endLine="530" endPosition="0" />
+    <nodeInfo nodeId="7090398860987902378" fileName="EditorComponentChangesHighligher.java" startLine="73" startPosition="25" endLine="78" endPosition="9" />
+    <nodeInfo nodeId="3375103409259077543" fileName="EditorComponentChangesHighligher.java" startLine="93" startPosition="11" endLine="98" endPosition="11" />
+    <nodeInfo nodeId="8974964540305863462" fileName="EditorComponentChangesHighligher.java" startLine="99" startPosition="66" endLine="104" endPosition="13" />
+    <nodeInfo nodeId="2590518353162693822" fileName="EditorComponentChangesHighligher.java" startLine="104" startPosition="13" endLine="109" endPosition="11" />
+    <nodeInfo nodeId="4410510979167112710" fileName="EditorComponentChangesHighligher.java" startLine="134" startPosition="58" endLine="139" endPosition="13" />
+    <nodeInfo nodeId="7627490208786700324" fileName="EditorComponentChangesHighligher.java" startLine="149" startPosition="66" endLine="154" endPosition="7" />
+    <nodeInfo nodeId="9048291698849195342" fileName="EditorComponentChangesHighligher.java" startLine="216" startPosition="0" endLine="221" endPosition="0" />
+    <nodeInfo nodeId="9048291698849221221" fileName="EditorComponentChangesHighligher.java" startLine="221" startPosition="0" endLine="226" endPosition="0" />
+    <nodeInfo nodeId="2530613801598691635" fileName="EditorComponentChangesHighligher.java" startLine="226" startPosition="0" endLine="231" endPosition="0" />
+    <nodeInfo nodeId="3499023120082618999" fileName="EditorComponentChangesHighligher.java" startLine="237" startPosition="59" endLine="242" endPosition="7" />
+    <nodeInfo nodeId="3499023120082621406" fileName="EditorComponentChangesHighligher.java" startLine="250" startPosition="107" endLine="255" endPosition="7" />
+    <nodeInfo nodeId="2107542654406138031" fileName="EditorComponentChangesHighligher.java" startLine="285" startPosition="69" endLine="290" endPosition="8" />
+    <nodeInfo nodeId="7152638585749154620" fileName="EditorComponentChangesHighligher.java" startLine="300" startPosition="80" endLine="305" endPosition="9" />
+    <nodeInfo nodeId="4434895596490112855" fileName="EditorComponentChangesHighligher.java" startLine="337" startPosition="0" endLine="342" endPosition="0" />
+    <nodeInfo nodeId="4434895596490168889" fileName="EditorComponentChangesHighligher.java" startLine="347" startPosition="94" endLine="352" endPosition="9" />
+    <nodeInfo nodeId="3717011451301331761" fileName="EditorComponentChangesHighligher.java" startLine="365" startPosition="81" endLine="370" endPosition="9" />
+    <nodeInfo nodeId="2936752800012777697" fileName="EditorComponentChangesHighligher.java" startLine="397" startPosition="20" endLine="402" endPosition="15" />
+    <nodeInfo nodeId="2936752800012781027" fileName="EditorComponentChangesHighligher.java" startLine="407" startPosition="20" endLine="412" endPosition="15" />
+    <nodeInfo nodeId="531813502180021741" fileName="EditorComponentChangesHighligher.java" startLine="446" startPosition="0" endLine="451" endPosition="0" />
+    <nodeInfo nodeId="1994185481787540152" fileName="EditorComponentChangesHighligher.java" startLine="451" startPosition="0" endLine="456" endPosition="0" />
+    <nodeInfo nodeId="6371186153576896351" fileName="EditorComponentChangesHighligher.java" startLine="462" startPosition="0" endLine="467" endPosition="0" />
+    <nodeInfo nodeId="7240192589568741085" fileName="EditorComponentChangesHighligher.java" startLine="469" startPosition="52" endLine="474" endPosition="7" />
+    <nodeInfo nodeId="7240192589568741099" fileName="EditorComponentChangesHighligher.java" startLine="478" startPosition="53" endLine="483" endPosition="7" />
+    <nodeInfo nodeId="967454776205100695" fileName="EditorComponentChangesHighligher.java" startLine="525" startPosition="63" endLine="530" endPosition="11" />
+    <nodeInfo nodeId="5643745088231029815" fileName="EditorComponentChangesHighligher.java" startLine="81" startPosition="93" endLine="87" endPosition="13" />
+    <nodeInfo nodeId="1216651720809581163" fileName="EditorComponentChangesHighligher.java" startLine="208" startPosition="96" endLine="214" endPosition="5" />
+    <nodeInfo nodeId="7429456937243134896" fileName="EditorComponentChangesHighligher.java" startLine="440" startPosition="0" endLine="446" endPosition="0" />
+    <nodeInfo nodeId="4589042405947503392" fileName="EditorComponentChangesHighligher.java" startLine="456" startPosition="0" endLine="462" endPosition="0" />
+    <nodeInfo nodeId="3375103409259077554" fileName="EditorComponentChangesHighligher.java" startLine="189" startPosition="26" endLine="196" endPosition="5" />
+    <nodeInfo nodeId="166132277801266530" fileName="EditorComponentChangesHighligher.java" startLine="310" startPosition="0" endLine="317" endPosition="0" />
+    <nodeInfo nodeId="166132277801266530" fileName="EditorComponentChangesHighligher.java" startLine="317" startPosition="0" endLine="324" endPosition="0" />
+    <nodeInfo nodeId="4366048675740426755" fileName="EditorComponentChangesHighligher.java" startLine="493" startPosition="0" endLine="501" endPosition="0" />
+    <nodeInfo nodeId="4366048675740426771" fileName="EditorComponentChangesHighligher.java" startLine="501" startPosition="0" endLine="509" endPosition="0" />
+    <nodeInfo nodeId="4410510979167112701" fileName="EditorComponentChangesHighligher.java" startLine="133" startPosition="9" endLine="142" endPosition="9" />
+    <nodeInfo nodeId="94490962879300591" fileName="EditorComponentChangesHighligher.java" startLine="160" startPosition="12" endLine="169" endPosition="5" />
+    <nodeInfo nodeId="6105081101195305255" fileName="EditorComponentChangesHighligher.java" startLine="284" startPosition="0" endLine="293" endPosition="0" />
+    <nodeInfo nodeId="7240192589568729035" fileName="EditorComponentChangesHighligher.java" startLine="467" startPosition="0" endLine="476" endPosition="0" />
+    <nodeInfo nodeId="7240192589568729029" fileName="EditorComponentChangesHighligher.java" startLine="476" startPosition="0" endLine="485" endPosition="0" />
+    <nodeInfo nodeId="6099081905063733762" fileName="EditorComponentChangesHighligher.java" startLine="79" startPosition="61" endLine="89" endPosition="0" />
+    <nodeInfo nodeId="3375103409259077549" fileName="EditorComponentChangesHighligher.java" startLine="174" startPosition="65" endLine="184" endPosition="5" />
+    <nodeInfo nodeId="7152638585749154597" fileName="EditorComponentChangesHighligher.java" startLine="298" startPosition="72" endLine="308" endPosition="5" />
+    <nodeInfo nodeId="6099081905063733761" fileName="EditorComponentChangesHighligher.java" startLine="78" startPosition="9" endLine="89" endPosition="11" />
+    <nodeInfo nodeId="3768510864479102966" fileName="EditorComponentChangesHighligher.java" startLine="257" startPosition="0" endLine="268" endPosition="0" />
+    <nodeInfo nodeId="166132277801275918" fileName="EditorComponentChangesHighligher.java" startLine="187" startPosition="0" endLine="199" endPosition="0" />
+    <nodeInfo nodeId="4434895596490168862" fileName="EditorComponentChangesHighligher.java" startLine="343" startPosition="63" endLine="355" endPosition="7" />
+    <nodeInfo nodeId="3719874279484891755" fileName="EditorComponentChangesHighligher.java" startLine="363" startPosition="7" endLine="375" endPosition="7" />
+    <nodeInfo nodeId="3499023120082550362" fileName="EditorComponentChangesHighligher.java" startLine="231" startPosition="0" endLine="244" endPosition="0" />
+    <nodeInfo nodeId="3499023120082619230" fileName="EditorComponentChangesHighligher.java" startLine="244" startPosition="0" endLine="257" endPosition="0" />
+    <nodeInfo nodeId="7152638585749154568" fileName="EditorComponentChangesHighligher.java" startLine="297" startPosition="0" endLine="310" endPosition="0" />
+    <nodeInfo nodeId="4434895596490168857" fileName="EditorComponentChangesHighligher.java" startLine="342" startPosition="0" endLine="357" endPosition="0" />
+    <nodeInfo nodeId="6080400160196253706" fileName="EditorComponentChangesHighligher.java" startLine="199" startPosition="0" endLine="216" endPosition="0" />
+    <nodeInfo nodeId="967454776205092308" fileName="EditorComponentChangesHighligher.java" startLine="516" startPosition="40" endLine="533" endPosition="7" />
+    <nodeInfo nodeId="2936752800012781013" fileName="EditorComponentChangesHighligher.java" startLine="405" startPosition="18" endLine="424" endPosition="13" />
+    <nodeInfo nodeId="3719874279484891743" fileName="EditorComponentChangesHighligher.java" startLine="357" startPosition="0" endLine="377" endPosition="0" />
+    <nodeInfo nodeId="7542415519011416849" fileName="EditorComponentChangesHighligher.java" startLine="515" startPosition="0" endLine="535" endPosition="0" />
+    <nodeInfo nodeId="1998524321632141959" fileName="EditorComponentChangesHighligher.java" startLine="89" startPosition="11" endLine="110" endPosition="9" />
+    <nodeInfo nodeId="5455599429139860995" fileName="EditorComponentChangesHighligher.java" startLine="118" startPosition="57" endLine="144" endPosition="0" />
+    <nodeInfo nodeId="5455599429139860994" fileName="EditorComponentChangesHighligher.java" startLine="117" startPosition="86" endLine="144" endPosition="7" />
+    <nodeInfo nodeId="1536420391249887147" fileName="EditorComponentChangesHighligher.java" startLine="395" startPosition="48" endLine="424" endPosition="13" />
+    <nodeInfo nodeId="1998524321632141957" fileName="EditorComponentChangesHighligher.java" startLine="72" startPosition="82" endLine="112" endPosition="0" />
+    <nodeInfo nodeId="1998524321632141950" fileName="EditorComponentChangesHighligher.java" startLine="71" startPosition="0" endLine="112" endPosition="7" />
+    <nodeInfo nodeId="2936752800012777372" fileName="EditorComponentChangesHighligher.java" startLine="385" startPosition="96" endLine="426" endPosition="11" />
+    <nodeInfo nodeId="1536420391249840114" fileName="EditorComponentChangesHighligher.java" startLine="383" startPosition="14" endLine="427" endPosition="9" />
+    <nodeInfo nodeId="166132277801270114" fileName="EditorComponentChangesHighligher.java" startLine="65" startPosition="0" endLine="113" endPosition="3" />
+    <nodeInfo nodeId="6149144798615862419" fileName="EditorComponentChangesHighligher.java" startLine="383" startPosition="12" endLine="434" endPosition="7" />
+    <nodeInfo nodeId="6149144798615862405" fileName="EditorComponentChangesHighligher.java" startLine="380" startPosition="83" endLine="434" endPosition="7" />
+    <nodeInfo nodeId="6149144798615862395" fileName="EditorComponentChangesHighligher.java" startLine="377" startPosition="0" endLine="436" endPosition="0" />
+    <nodeInfo nodeId="166132277801275728" fileName="EditorComponentChangesHighligher.java" startLine="114" startPosition="0" endLine="187" endPosition="0" />
+    <scopeInfo nodeId="5264204858747865442" fileName="EditorComponentChangesHighligher.java" startLine="491" startPosition="31" endLine="491" endPosition="31" />
+    <scopeInfo nodeId="1041446044406864808" fileName="EditorComponentChangesHighligher.java" startLine="510" startPosition="94" endLine="510" endPosition="94" />
+    <scopeInfo nodeId="7542415519011416807" fileName="EditorComponentChangesHighligher.java" startLine="513" startPosition="39" endLine="513" endPosition="39" />
+    <scopeInfo nodeId="7090398860987902383" fileName="EditorComponentChangesHighligher.java" startLine="75" startPosition="27" endLine="76" endPosition="19" />
+    <scopeInfo nodeId="3935103675993728983" fileName="EditorComponentChangesHighligher.java" startLine="85" startPosition="20" endLine="86" endPosition="21" />
+    <scopeInfo nodeId="1998524321632141963" fileName="EditorComponentChangesHighligher.java" startLine="91" startPosition="94" endLine="92" endPosition="36" />
+    <scopeInfo nodeId="8974964540305863413" fileName="EditorComponentChangesHighligher.java" startLine="95" startPosition="153" endLine="96" endPosition="50" />
+    <scopeInfo nodeId="8974964540305863465" fileName="EditorComponentChangesHighligher.java" startLine="101" startPosition="31" endLine="102" endPosition="46" />
+    <scopeInfo nodeId="2590518353162693828" fileName="EditorComponentChangesHighligher.java" startLine="106" startPosition="43" endLine="107" endPosition="72" />
+    <scopeInfo nodeId="8601487597690662341" fileName="EditorComponentChangesHighligher.java" startLine="122" startPosition="60" endLine="123" endPosition="17" />
+    <scopeInfo nodeId="3225080925238796240" fileName="EditorComponentChangesHighligher.java" startLine="126" startPosition="62" endLine="127" endPosition="17" />
+    <scopeInfo nodeId="94490962879300543" fileName="EditorComponentChangesHighligher.java" startLine="131" startPosition="68" endLine="132" endPosition="17" />
+    <scopeInfo nodeId="4410510979167112712" fileName="EditorComponentChangesHighligher.java" startLine="136" startPosition="31" endLine="137" endPosition="94" />
+    <scopeInfo nodeId="4410510979167112726" fileName="EditorComponentChangesHighligher.java" startLine="140" startPosition="16" endLine="141" endPosition="63" />
+    <scopeInfo nodeId="5950168457933946602" fileName="EditorComponentChangesHighligher.java" startLine="145" startPosition="29" endLine="146" endPosition="18" />
+    <scopeInfo nodeId="7627490208786700326" fileName="EditorComponentChangesHighligher.java" startLine="151" startPosition="25" endLine="152" endPosition="87" />
+    <scopeInfo nodeId="6833816562330962379" fileName="EditorComponentChangesHighligher.java" startLine="155" startPosition="31" endLine="156" endPosition="18" />
+    <scopeInfo nodeId="94490962879300592" fileName="EditorComponentChangesHighligher.java" startLine="161" startPosition="33" endLine="162" endPosition="32" />
+    <scopeInfo nodeId="94490962879304423" fileName="EditorComponentChangesHighligher.java" startLine="163" startPosition="43" endLine="164" endPosition="34" />
+    <scopeInfo nodeId="4634477401956479070" fileName="EditorComponentChangesHighligher.java" startLine="165" startPosition="43" endLine="166" endPosition="34" />
+    <scopeInfo nodeId="94490962879304447" fileName="EditorComponentChangesHighligher.java" startLine="167" startPosition="12" endLine="168" endPosition="18" />
+    <scopeInfo nodeId="1284337655903948131" fileName="EditorComponentChangesHighligher.java" startLine="176" startPosition="71" endLine="177" endPosition="20" />
+    <scopeInfo nodeId="76450717690093256" fileName="EditorComponentChangesHighligher.java" startLine="180" startPosition="38" endLine="181" endPosition="20" />
+    <scopeInfo nodeId="166132277801275931" fileName="EditorComponentChangesHighligher.java" startLine="192" startPosition="90" endLine="193" endPosition="20" />
+    <scopeInfo nodeId="7090398860987902389" fileName="EditorComponentChangesHighligher.java" startLine="201" startPosition="35" endLine="202" endPosition="24" />
+    <scopeInfo nodeId="2808258374191492242" fileName="EditorComponentChangesHighligher.java" startLine="204" startPosition="113" endLine="205" endPosition="32" />
+    <scopeInfo nodeId="9048291698849195345" fileName="EditorComponentChangesHighligher.java" startLine="218" startPosition="52" endLine="219" endPosition="29" />
+    <scopeInfo nodeId="9048291698849221224" fileName="EditorComponentChangesHighligher.java" startLine="223" startPosition="94" endLine="224" endPosition="99" />
+    <scopeInfo nodeId="3499023120082618406" fileName="EditorComponentChangesHighligher.java" startLine="234" startPosition="49" endLine="235" endPosition="18" />
+    <scopeInfo nodeId="3499023120082619110" fileName="EditorComponentChangesHighligher.java" startLine="239" startPosition="72" endLine="240" endPosition="49" />
+    <scopeInfo nodeId="3499023120082620441" fileName="EditorComponentChangesHighligher.java" startLine="247" startPosition="49" endLine="248" endPosition="18" />
+    <scopeInfo nodeId="3499023120082621851" fileName="EditorComponentChangesHighligher.java" startLine="252" startPosition="72" endLine="253" endPosition="35" />
+    <scopeInfo nodeId="3768510864479102975" fileName="EditorComponentChangesHighligher.java" startLine="259" startPosition="31" endLine="260" endPosition="13" />
+    <scopeInfo nodeId="5444017747357185964" fileName="EditorComponentChangesHighligher.java" startLine="269" startPosition="72" endLine="270" endPosition="61" />
+    <scopeInfo nodeId="5444017747357185938" fileName="EditorComponentChangesHighligher.java" startLine="273" startPosition="68" endLine="274" endPosition="57" />
+    <scopeInfo nodeId="3499023120082622736" fileName="EditorComponentChangesHighligher.java" startLine="277" startPosition="82" endLine="278" endPosition="58" />
+    <scopeInfo nodeId="3499023120082624538" fileName="EditorComponentChangesHighligher.java" startLine="281" startPosition="78" endLine="282" endPosition="54" />
+    <scopeInfo nodeId="2107542654406138049" fileName="EditorComponentChangesHighligher.java" startLine="287" startPosition="86" endLine="288" endPosition="31" />
+    <scopeInfo nodeId="3525805834279458639" fileName="EditorComponentChangesHighligher.java" startLine="294" startPosition="54" endLine="295" endPosition="49" />
+    <scopeInfo nodeId="7152638585749154665" fileName="EditorComponentChangesHighligher.java" startLine="302" startPosition="49" endLine="303" endPosition="63" />
+    <scopeInfo nodeId="7152638585749154643" fileName="EditorComponentChangesHighligher.java" startLine="306" startPosition="12" endLine="307" endPosition="19" />
+    <scopeInfo nodeId="166132277801266530" fileName="EditorComponentChangesHighligher.java" startLine="312" startPosition="20" endLine="313" endPosition="18" />
+    <scopeInfo nodeId="166132277801266530" fileName="EditorComponentChangesHighligher.java" startLine="319" startPosition="20" endLine="320" endPosition="18" />
+    <scopeInfo nodeId="6707717378011964268" fileName="EditorComponentChangesHighligher.java" startLine="334" startPosition="38" endLine="335" endPosition="76" />
+    <scopeInfo nodeId="4434895596490168890" fileName="EditorComponentChangesHighligher.java" startLine="348" startPosition="62" endLine="349" endPosition="66" />
+    <scopeInfo nodeId="4434895596490168906" fileName="EditorComponentChangesHighligher.java" startLine="350" startPosition="16" endLine="351" endPosition="109" />
+    <scopeInfo nodeId="4434895596490168871" fileName="EditorComponentChangesHighligher.java" startLine="353" startPosition="14" endLine="354" endPosition="18" />
+    <scopeInfo nodeId="3719874279484891782" fileName="EditorComponentChangesHighligher.java" startLine="361" startPosition="33" endLine="362" endPosition="20" />
+    <scopeInfo nodeId="3717011451301331762" fileName="EditorComponentChangesHighligher.java" startLine="366" startPosition="45" endLine="367" endPosition="72" />
+    <scopeInfo nodeId="3717011451301331782" fileName="EditorComponentChangesHighligher.java" startLine="368" startPosition="16" endLine="369" endPosition="27" />
+    <scopeInfo nodeId="3719874279484891771" fileName="EditorComponentChangesHighligher.java" startLine="371" startPosition="29" endLine="372" endPosition="28" />
+    <scopeInfo nodeId="3719874279484891778" fileName="EditorComponentChangesHighligher.java" startLine="373" startPosition="14" endLine="374" endPosition="66" />
+    <scopeInfo nodeId="6149144798615862406" fileName="EditorComponentChangesHighligher.java" startLine="381" startPosition="138" endLine="382" endPosition="57" />
+    <scopeInfo nodeId="2936752800012777698" fileName="EditorComponentChangesHighligher.java" startLine="398" startPosition="68" endLine="399" endPosition="69" />
+    <scopeInfo nodeId="2936752800012777746" fileName="EditorComponentChangesHighligher.java" startLine="400" startPosition="22" endLine="401" endPosition="112" />
+    <scopeInfo nodeId="2936752800012781028" fileName="EditorComponentChangesHighligher.java" startLine="408" startPosition="68" endLine="409" endPosition="69" />
+    <scopeInfo nodeId="2936752800012781044" fileName="EditorComponentChangesHighligher.java" startLine="410" startPosition="22" endLine="411" endPosition="112" />
+    <scopeInfo nodeId="7429456937243134867" fileName="EditorComponentChangesHighligher.java" startLine="437" startPosition="53" endLine="438" endPosition="34" />
+    <scopeInfo nodeId="7429456937243134899" fileName="EditorComponentChangesHighligher.java" startLine="443" startPosition="29" endLine="444" endPosition="46" />
+    <scopeInfo nodeId="531813502180021744" fileName="EditorComponentChangesHighligher.java" startLine="448" startPosition="31" endLine="449" endPosition="22" />
+    <scopeInfo nodeId="1994185481787540155" fileName="EditorComponentChangesHighligher.java" startLine="453" startPosition="37" endLine="454" endPosition="18" />
+    <scopeInfo nodeId="4589042405947503395" fileName="EditorComponentChangesHighligher.java" startLine="459" startPosition="37" endLine="460" endPosition="59" />
+    <scopeInfo nodeId="6371186153576896354" fileName="EditorComponentChangesHighligher.java" startLine="464" startPosition="35" endLine="465" endPosition="18" />
+    <scopeInfo nodeId="7240192589568741086" fileName="EditorComponentChangesHighligher.java" startLine="470" startPosition="44" endLine="471" endPosition="31" />
+    <scopeInfo nodeId="7240192589568741096" fileName="EditorComponentChangesHighligher.java" startLine="472" startPosition="14" endLine="473" endPosition="41" />
+    <scopeInfo nodeId="7240192589568741100" fileName="EditorComponentChangesHighligher.java" startLine="479" startPosition="44" endLine="480" endPosition="17" />
+    <scopeInfo nodeId="7240192589568741107" fileName="EditorComponentChangesHighligher.java" startLine="481" startPosition="14" endLine="482" endPosition="42" />
+    <scopeInfo nodeId="967454776205093013" fileName="EditorComponentChangesHighligher.java" startLine="519" startPosition="87" endLine="520" endPosition="54" />
+    <scopeInfo nodeId="967454776205093024" fileName="EditorComponentChangesHighligher.java" startLine="522" startPosition="83" endLine="523" endPosition="50" />
+    <scopeInfo nodeId="967454776205100698" fileName="EditorComponentChangesHighligher.java" startLine="527" startPosition="29" endLine="528" endPosition="44" />
+    <scopeInfo nodeId="5643745088231029816" fileName="EditorComponentChangesHighligher.java" startLine="82" startPosition="70" endLine="84" endPosition="89" />
+    <scopeInfo nodeId="94490962879304460" fileName="EditorComponentChangesHighligher.java" startLine="170" startPosition="42" endLine="172" endPosition="18" />
+    <scopeInfo nodeId="2590518353162693848" fileName="EditorComponentChangesHighligher.java" startLine="210" startPosition="27" endLine="212" endPosition="32" />
+    <scopeInfo nodeId="2530613801598691638" fileName="EditorComponentChangesHighligher.java" startLine="227" startPosition="43" endLine="229" endPosition="60" />
+    <scopeInfo nodeId="6149144798615862335" fileName="EditorComponentChangesHighligher.java" startLine="329" startPosition="119" endLine="331" endPosition="24" />
+    <scopeInfo nodeId="4434895596490112858" fileName="EditorComponentChangesHighligher.java" startLine="338" startPosition="83" endLine="340" endPosition="337">
       <varInfo nodeId="4434895596490125496" varName="cell" />
     </scopeInfo>
-    <scopeInfo nodeId="7152638585749130008" fileName="EditorComponentChangesHighligher.java" startLine="380" startPosition="56" endLine="382" endPosition="21" />
-    <scopeInfo nodeId="5264204858747865439" fileName="EditorComponentChangesHighligher.java" startLine="481" startPosition="0" endLine="483" endPosition="5" />
-    <scopeInfo nodeId="967454776205090454" fileName="EditorComponentChangesHighligher.java" startLine="487" startPosition="33" endLine="489" endPosition="72" />
-    <scopeInfo nodeId="967454776205091105" fileName="EditorComponentChangesHighligher.java" startLine="495" startPosition="35" endLine="497" endPosition="77" />
-    <scopeInfo nodeId="1998524321632141961" fileName="EditorComponentChangesHighligher.java" startLine="84" startPosition="39" endLine="87" endPosition="11" />
-    <scopeInfo nodeId="3375103409259077545" fileName="EditorComponentChangesHighligher.java" startLine="88" startPosition="44" endLine="91" endPosition="13" />
-    <scopeInfo nodeId="8974964540305863410" fileName="EditorComponentChangesHighligher.java" startLine="88" startPosition="44" endLine="91" endPosition="13" />
-    <scopeInfo nodeId="2590518353162693824" fileName="EditorComponentChangesHighligher.java" startLine="99" startPosition="64" endLine="102" endPosition="13" />
-    <scopeInfo nodeId="2808258374191492239" fileName="EditorComponentChangesHighligher.java" startLine="194" startPosition="25" endLine="197" endPosition="5" />
-    <scopeInfo nodeId="1041446044406864801" fileName="EditorComponentChangesHighligher.java" startLine="500" startPosition="0" endLine="503" endPosition="0">
+    <scopeInfo nodeId="7152638585749130008" fileName="EditorComponentChangesHighligher.java" startLine="389" startPosition="56" endLine="391" endPosition="21" />
+    <scopeInfo nodeId="5264204858747865439" fileName="EditorComponentChangesHighligher.java" startLine="490" startPosition="0" endLine="492" endPosition="5" />
+    <scopeInfo nodeId="967454776205090454" fileName="EditorComponentChangesHighligher.java" startLine="496" startPosition="33" endLine="498" endPosition="72" />
+    <scopeInfo nodeId="967454776205091105" fileName="EditorComponentChangesHighligher.java" startLine="504" startPosition="35" endLine="506" endPosition="77" />
+    <scopeInfo nodeId="7090398860987902380" fileName="EditorComponentChangesHighligher.java" startLine="74" startPosition="39" endLine="77" endPosition="11" />
+    <scopeInfo nodeId="1998524321632141961" fileName="EditorComponentChangesHighligher.java" startLine="90" startPosition="39" endLine="93" endPosition="11" />
+    <scopeInfo nodeId="3375103409259077545" fileName="EditorComponentChangesHighligher.java" startLine="94" startPosition="44" endLine="97" endPosition="13" />
+    <scopeInfo nodeId="8974964540305863410" fileName="EditorComponentChangesHighligher.java" startLine="94" startPosition="44" endLine="97" endPosition="13" />
+    <scopeInfo nodeId="2590518353162693824" fileName="EditorComponentChangesHighligher.java" startLine="105" startPosition="64" endLine="108" endPosition="13" />
+    <scopeInfo nodeId="2808258374191492239" fileName="EditorComponentChangesHighligher.java" startLine="203" startPosition="5" endLine="206" endPosition="5" />
+    <scopeInfo nodeId="1041446044406864801" fileName="EditorComponentChangesHighligher.java" startLine="509" startPosition="0" endLine="512" endPosition="0">
       <varInfo nodeId="1041446044406864806" varName="model" />
       <varInfo nodeId="1041446044406864804" varName="newFileStatus" />
     </scopeInfo>
-    <scopeInfo nodeId="7542415519011416804" fileName="EditorComponentChangesHighligher.java" startLine="503" startPosition="0" endLine="506" endPosition="0" />
-    <scopeInfo nodeId="967454776205093008" fileName="EditorComponentChangesHighligher.java" startLine="509" startPosition="74" endLine="512" endPosition="9" />
-    <scopeInfo nodeId="967454776205093019" fileName="EditorComponentChangesHighligher.java" startLine="512" startPosition="9" endLine="515" endPosition="9" />
-    <scopeInfo nodeId="8974964540305863464" fileName="EditorComponentChangesHighligher.java" startLine="94" startPosition="58" endLine="98" endPosition="0" />
-    <scopeInfo nodeId="4410510979167112711" fileName="EditorComponentChangesHighligher.java" startLine="129" startPosition="63" endLine="133" endPosition="0" />
-    <scopeInfo nodeId="7627490208786700325" fileName="EditorComponentChangesHighligher.java" startLine="144" startPosition="57" endLine="148" endPosition="0" />
-    <scopeInfo nodeId="1216651720809581164" fileName="EditorComponentChangesHighligher.java" startLine="200" startPosition="40" endLine="204" endPosition="7" />
-    <scopeInfo nodeId="3499023120082619109" fileName="EditorComponentChangesHighligher.java" startLine="229" startPosition="143" endLine="233" endPosition="0" />
-    <scopeInfo nodeId="3499023120082621850" fileName="EditorComponentChangesHighligher.java" startLine="242" startPosition="144" endLine="246" endPosition="0" />
-    <scopeInfo nodeId="5444017747357185959" fileName="EditorComponentChangesHighligher.java" startLine="259" startPosition="0" endLine="263" endPosition="0">
+    <scopeInfo nodeId="7542415519011416804" fileName="EditorComponentChangesHighligher.java" startLine="512" startPosition="0" endLine="515" endPosition="0" />
+    <scopeInfo nodeId="967454776205093008" fileName="EditorComponentChangesHighligher.java" startLine="518" startPosition="74" endLine="521" endPosition="9" />
+    <scopeInfo nodeId="967454776205093019" fileName="EditorComponentChangesHighligher.java" startLine="521" startPosition="9" endLine="524" endPosition="9" />
+    <scopeInfo nodeId="8974964540305863464" fileName="EditorComponentChangesHighligher.java" startLine="100" startPosition="58" endLine="104" endPosition="0" />
+    <scopeInfo nodeId="4410510979167112711" fileName="EditorComponentChangesHighligher.java" startLine="135" startPosition="63" endLine="139" endPosition="0" />
+    <scopeInfo nodeId="7627490208786700325" fileName="EditorComponentChangesHighligher.java" startLine="150" startPosition="57" endLine="154" endPosition="0" />
+    <scopeInfo nodeId="1216651720809581164" fileName="EditorComponentChangesHighligher.java" startLine="209" startPosition="40" endLine="213" endPosition="7" />
+    <scopeInfo nodeId="3499023120082619109" fileName="EditorComponentChangesHighligher.java" startLine="238" startPosition="143" endLine="242" endPosition="0" />
+    <scopeInfo nodeId="3499023120082621850" fileName="EditorComponentChangesHighligher.java" startLine="251" startPosition="144" endLine="255" endPosition="0" />
+    <scopeInfo nodeId="5444017747357185959" fileName="EditorComponentChangesHighligher.java" startLine="268" startPosition="0" endLine="272" endPosition="0">
       <varInfo nodeId="5444017747357185960" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="5444017747357185935" fileName="EditorComponentChangesHighligher.java" startLine="263" startPosition="0" endLine="267" endPosition="0">
+    <scopeInfo nodeId="5444017747357185935" fileName="EditorComponentChangesHighligher.java" startLine="272" startPosition="0" endLine="276" endPosition="0">
       <varInfo nodeId="5444017747357185957" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="3499023120082622733" fileName="EditorComponentChangesHighligher.java" startLine="267" startPosition="0" endLine="271" endPosition="0">
+    <scopeInfo nodeId="3499023120082622733" fileName="EditorComponentChangesHighligher.java" startLine="276" startPosition="0" endLine="280" endPosition="0">
       <varInfo nodeId="3499023120082623746" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="3499023120082624535" fileName="EditorComponentChangesHighligher.java" startLine="271" startPosition="0" endLine="275" endPosition="0">
+    <scopeInfo nodeId="3499023120082624535" fileName="EditorComponentChangesHighligher.java" startLine="280" startPosition="0" endLine="284" endPosition="0">
       <varInfo nodeId="3499023120082624546" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2107542654406138048" fileName="EditorComponentChangesHighligher.java" startLine="277" startPosition="211" endLine="281" endPosition="0" />
-    <scopeInfo nodeId="3525805834279458636" fileName="EditorComponentChangesHighligher.java" startLine="284" startPosition="0" endLine="288" endPosition="0" />
-    <scopeInfo nodeId="7152638585749154664" fileName="EditorComponentChangesHighligher.java" startLine="292" startPosition="112" endLine="296" endPosition="0" />
-    <scopeInfo nodeId="166132277801266530" fileName="EditorComponentChangesHighligher.java" startLine="302" startPosition="61" endLine="306" endPosition="24" />
-    <scopeInfo nodeId="166132277801266530" fileName="EditorComponentChangesHighligher.java" startLine="309" startPosition="77" endLine="313" endPosition="35" />
-    <scopeInfo nodeId="6149144798615862332" fileName="EditorComponentChangesHighligher.java" startLine="319" startPosition="0" endLine="323" endPosition="5">
+    <scopeInfo nodeId="2107542654406138048" fileName="EditorComponentChangesHighligher.java" startLine="286" startPosition="211" endLine="290" endPosition="0" />
+    <scopeInfo nodeId="3525805834279458636" fileName="EditorComponentChangesHighligher.java" startLine="293" startPosition="0" endLine="297" endPosition="0" />
+    <scopeInfo nodeId="7152638585749154664" fileName="EditorComponentChangesHighligher.java" startLine="301" startPosition="112" endLine="305" endPosition="0" />
+    <scopeInfo nodeId="166132277801266530" fileName="EditorComponentChangesHighligher.java" startLine="311" startPosition="61" endLine="315" endPosition="24" />
+    <scopeInfo nodeId="166132277801266530" fileName="EditorComponentChangesHighligher.java" startLine="318" startPosition="77" endLine="322" endPosition="35" />
+    <scopeInfo nodeId="6149144798615862332" fileName="EditorComponentChangesHighligher.java" startLine="328" startPosition="0" endLine="332" endPosition="5">
       <varInfo nodeId="6149144798615862356" varName="messageTarget" />
       <varInfo nodeId="6149144798615862351" varName="node" />
       <varInfo nodeId="6149144798615862353" varName="color" />
       <varInfo nodeId="6746101208730314147" varName="change" />
     </scopeInfo>
-    <scopeInfo nodeId="6707717378011964265" fileName="EditorComponentChangesHighligher.java" startLine="324" startPosition="0" endLine="328" endPosition="0" />
-    <scopeInfo nodeId="7429456937243134864" fileName="EditorComponentChangesHighligher.java" startLine="427" startPosition="0" endLine="431" endPosition="0">
+    <scopeInfo nodeId="6707717378011964265" fileName="EditorComponentChangesHighligher.java" startLine="333" startPosition="0" endLine="337" endPosition="0" />
+    <scopeInfo nodeId="7429456937243134864" fileName="EditorComponentChangesHighligher.java" startLine="436" startPosition="0" endLine="440" endPosition="0">
       <varInfo nodeId="7429456937243134874" varName="highlighted" />
     </scopeInfo>
-    <scopeInfo nodeId="967454776205100697" fileName="EditorComponentChangesHighligher.java" startLine="517" startPosition="56" endLine="521" endPosition="0" />
-    <scopeInfo nodeId="4410510979167112702" fileName="EditorComponentChangesHighligher.java" startLine="128" startPosition="58" endLine="133" endPosition="13" />
-    <scopeInfo nodeId="3375103409259077556" fileName="EditorComponentChangesHighligher.java" startLine="184" startPosition="38" endLine="189" endPosition="63" />
-    <scopeInfo nodeId="9048291698849195342" fileName="EditorComponentChangesHighligher.java" startLine="207" startPosition="0" endLine="212" endPosition="0" />
-    <scopeInfo nodeId="9048291698849221221" fileName="EditorComponentChangesHighligher.java" startLine="212" startPosition="0" endLine="217" endPosition="0" />
-    <scopeInfo nodeId="2530613801598691635" fileName="EditorComponentChangesHighligher.java" startLine="217" startPosition="0" endLine="222" endPosition="0">
+    <scopeInfo nodeId="967454776205100697" fileName="EditorComponentChangesHighligher.java" startLine="526" startPosition="56" endLine="530" endPosition="0" />
+    <scopeInfo nodeId="4410510979167112702" fileName="EditorComponentChangesHighligher.java" startLine="134" startPosition="58" endLine="139" endPosition="13" />
+    <scopeInfo nodeId="3375103409259077556" fileName="EditorComponentChangesHighligher.java" startLine="190" startPosition="38" endLine="195" endPosition="63" />
+    <scopeInfo nodeId="9048291698849195342" fileName="EditorComponentChangesHighligher.java" startLine="216" startPosition="0" endLine="221" endPosition="0" />
+    <scopeInfo nodeId="9048291698849221221" fileName="EditorComponentChangesHighligher.java" startLine="221" startPosition="0" endLine="226" endPosition="0" />
+    <scopeInfo nodeId="2530613801598691635" fileName="EditorComponentChangesHighligher.java" startLine="226" startPosition="0" endLine="231" endPosition="0">
       <varInfo nodeId="2530613801598691645" varName="enabled" />
     </scopeInfo>
-    <scopeInfo nodeId="4434895596490112855" fileName="EditorComponentChangesHighligher.java" startLine="328" startPosition="0" endLine="333" endPosition="0">
+    <scopeInfo nodeId="4434895596490112855" fileName="EditorComponentChangesHighligher.java" startLine="337" startPosition="0" endLine="342" endPosition="0">
       <varInfo nodeId="4434895596490125485" varName="editorComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="531813502180021741" fileName="EditorComponentChangesHighligher.java" startLine="437" startPosition="0" endLine="442" endPosition="0" />
-    <scopeInfo nodeId="1994185481787540152" fileName="EditorComponentChangesHighligher.java" startLine="442" startPosition="0" endLine="447" endPosition="0" />
-    <scopeInfo nodeId="6371186153576896351" fileName="EditorComponentChangesHighligher.java" startLine="453" startPosition="0" endLine="458" endPosition="0" />
-    <scopeInfo nodeId="7240192589568729040" fileName="EditorComponentChangesHighligher.java" startLine="460" startPosition="52" endLine="465" endPosition="7" />
-    <scopeInfo nodeId="7240192589568729034" fileName="EditorComponentChangesHighligher.java" startLine="469" startPosition="53" endLine="474" endPosition="7" />
-    <scopeInfo nodeId="4366048675740426760" fileName="EditorComponentChangesHighligher.java" startLine="485" startPosition="76" endLine="490" endPosition="7">
+    <scopeInfo nodeId="531813502180021741" fileName="EditorComponentChangesHighligher.java" startLine="446" startPosition="0" endLine="451" endPosition="0" />
+    <scopeInfo nodeId="1994185481787540152" fileName="EditorComponentChangesHighligher.java" startLine="451" startPosition="0" endLine="456" endPosition="0" />
+    <scopeInfo nodeId="6371186153576896351" fileName="EditorComponentChangesHighligher.java" startLine="462" startPosition="0" endLine="467" endPosition="0" />
+    <scopeInfo nodeId="7240192589568729040" fileName="EditorComponentChangesHighligher.java" startLine="469" startPosition="52" endLine="474" endPosition="7" />
+    <scopeInfo nodeId="7240192589568729034" fileName="EditorComponentChangesHighligher.java" startLine="478" startPosition="53" endLine="483" endPosition="7" />
+    <scopeInfo nodeId="4366048675740426760" fileName="EditorComponentChangesHighligher.java" startLine="494" startPosition="76" endLine="499" endPosition="7">
       <varInfo nodeId="967454776205090402" varName="addedMessage" />
     </scopeInfo>
-    <scopeInfo nodeId="4366048675740426776" fileName="EditorComponentChangesHighligher.java" startLine="493" startPosition="78" endLine="498" endPosition="7">
+    <scopeInfo nodeId="4366048675740426776" fileName="EditorComponentChangesHighligher.java" startLine="502" startPosition="78" endLine="507" endPosition="7">
       <varInfo nodeId="967454776205090736" varName="removedMessage" />
     </scopeInfo>
-    <scopeInfo nodeId="6105081101195305258" fileName="EditorComponentChangesHighligher.java" startLine="276" startPosition="69" endLine="282" endPosition="47" />
-    <scopeInfo nodeId="7152638585749154598" fileName="EditorComponentChangesHighligher.java" startLine="290" startPosition="48" endLine="296" endPosition="9">
+    <scopeInfo nodeId="6105081101195305258" fileName="EditorComponentChangesHighligher.java" startLine="285" startPosition="69" endLine="291" endPosition="47" />
+    <scopeInfo nodeId="7152638585749154598" fileName="EditorComponentChangesHighligher.java" startLine="299" startPosition="48" endLine="305" endPosition="9">
       <varInfo nodeId="7152638585749154614" varName="collectionCell" />
     </scopeInfo>
-    <scopeInfo nodeId="3719874279484891756" fileName="EditorComponentChangesHighligher.java" startLine="355" startPosition="26" endLine="361" endPosition="9">
+    <scopeInfo nodeId="3719874279484891756" fileName="EditorComponentChangesHighligher.java" startLine="364" startPosition="26" endLine="370" endPosition="9">
       <varInfo nodeId="3717011451301308940" varName="saturated" />
     </scopeInfo>
-    <scopeInfo nodeId="7429456937243134896" fileName="EditorComponentChangesHighligher.java" startLine="431" startPosition="0" endLine="437" endPosition="0" />
-    <scopeInfo nodeId="4589042405947503392" fileName="EditorComponentChangesHighligher.java" startLine="447" startPosition="0" endLine="453" endPosition="0" />
-    <scopeInfo nodeId="166132277801266530" fileName="EditorComponentChangesHighligher.java" startLine="301" startPosition="0" endLine="308" endPosition="0" />
-    <scopeInfo nodeId="166132277801266530" fileName="EditorComponentChangesHighligher.java" startLine="308" startPosition="0" endLine="315" endPosition="0" />
-    <scopeInfo nodeId="6099081905063733763" fileName="EditorComponentChangesHighligher.java" startLine="73" startPosition="29" endLine="81" endPosition="0">
+    <scopeInfo nodeId="7429456937243134896" fileName="EditorComponentChangesHighligher.java" startLine="440" startPosition="0" endLine="446" endPosition="0" />
+    <scopeInfo nodeId="4589042405947503392" fileName="EditorComponentChangesHighligher.java" startLine="456" startPosition="0" endLine="462" endPosition="0" />
+    <scopeInfo nodeId="6099081905063733763" fileName="EditorComponentChangesHighligher.java" startLine="80" startPosition="29" endLine="87" endPosition="13">
       <varInfo nodeId="6099081905063733778" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="3375103409259077551" fileName="EditorComponentChangesHighligher.java" startLine="169" startPosition="38" endLine="177" endPosition="66" />
-    <scopeInfo nodeId="3768510864479102969" fileName="EditorComponentChangesHighligher.java" startLine="249" startPosition="96" endLine="257" endPosition="59">
+    <scopeInfo nodeId="166132277801266530" fileName="EditorComponentChangesHighligher.java" startLine="310" startPosition="0" endLine="317" endPosition="0" />
+    <scopeInfo nodeId="166132277801266530" fileName="EditorComponentChangesHighligher.java" startLine="317" startPosition="0" endLine="324" endPosition="0" />
+    <scopeInfo nodeId="3375103409259077551" fileName="EditorComponentChangesHighligher.java" startLine="175" startPosition="38" endLine="183" endPosition="66" />
+    <scopeInfo nodeId="3768510864479102969" fileName="EditorComponentChangesHighligher.java" startLine="258" startPosition="96" endLine="266" endPosition="59">
       <varInfo nodeId="1266358454280365046" varName="wholeCell" />
       <varInfo nodeId="7767298435310782269" varName="leafCell" />
     </scopeInfo>
-    <scopeInfo nodeId="4434895596490168864" fileName="EditorComponentChangesHighligher.java" startLine="335" startPosition="50" endLine="343" endPosition="9">
+    <scopeInfo nodeId="4434895596490168864" fileName="EditorComponentChangesHighligher.java" startLine="344" startPosition="50" endLine="352" endPosition="9">
       <varInfo nodeId="4434895596490168880" varName="collectionCell" />
       <varInfo nodeId="4434895596490168926" varName="cell" />
       <varInfo nodeId="4434895596490168933" varName="nextChildIndex" />
     </scopeInfo>
-    <scopeInfo nodeId="1536420391249887148" fileName="EditorComponentChangesHighligher.java" startLine="387" startPosition="27" endLine="395" endPosition="73">
+    <scopeInfo nodeId="1536420391249887148" fileName="EditorComponentChangesHighligher.java" startLine="396" startPosition="27" endLine="404" endPosition="73">
       <varInfo nodeId="2936752800012777734" varName="y" />
     </scopeInfo>
-    <scopeInfo nodeId="4366048675740426755" fileName="EditorComponentChangesHighligher.java" startLine="484" startPosition="0" endLine="492" endPosition="0">
+    <scopeInfo nodeId="4366048675740426755" fileName="EditorComponentChangesHighligher.java" startLine="493" startPosition="0" endLine="501" endPosition="0">
       <varInfo nodeId="2652739098952684298" varName="model" />
       <varInfo nodeId="4366048675740426758" varName="change" />
     </scopeInfo>
-    <scopeInfo nodeId="4366048675740426771" fileName="EditorComponentChangesHighligher.java" startLine="492" startPosition="0" endLine="500" endPosition="0">
+    <scopeInfo nodeId="4366048675740426771" fileName="EditorComponentChangesHighligher.java" startLine="501" startPosition="0" endLine="509" endPosition="0">
       <varInfo nodeId="2652739098952684301" varName="model" />
       <varInfo nodeId="4366048675740426774" varName="change" />
     </scopeInfo>
-    <scopeInfo nodeId="166132277801275921" fileName="EditorComponentChangesHighligher.java" startLine="182" startPosition="67" endLine="191" endPosition="19">
+    <scopeInfo nodeId="166132277801275921" fileName="EditorComponentChangesHighligher.java" startLine="188" startPosition="67" endLine="197" endPosition="19">
       <varInfo nodeId="166132277801275923" varName="message" />
     </scopeInfo>
-    <scopeInfo nodeId="3499023120082550365" fileName="EditorComponentChangesHighligher.java" startLine="224" startPosition="112" endLine="233" endPosition="7">
+    <scopeInfo nodeId="3499023120082550365" fileName="EditorComponentChangesHighligher.java" startLine="233" startPosition="112" endLine="242" endPosition="7">
       <varInfo nodeId="3499023120082618788" varName="topY" />
     </scopeInfo>
-    <scopeInfo nodeId="3499023120082619233" fileName="EditorComponentChangesHighligher.java" startLine="237" startPosition="108" endLine="246" endPosition="7">
+    <scopeInfo nodeId="3499023120082619233" fileName="EditorComponentChangesHighligher.java" startLine="246" startPosition="108" endLine="255" endPosition="7">
       <varInfo nodeId="3499023120082620449" varName="bottomY" />
     </scopeInfo>
-    <scopeInfo nodeId="6105081101195305255" fileName="EditorComponentChangesHighligher.java" startLine="275" startPosition="0" endLine="284" endPosition="0">
+    <scopeInfo nodeId="6105081101195305255" fileName="EditorComponentChangesHighligher.java" startLine="284" startPosition="0" endLine="293" endPosition="0">
       <varInfo nodeId="6105081101195305293" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="7240192589568729035" fileName="EditorComponentChangesHighligher.java" startLine="458" startPosition="0" endLine="467" endPosition="0">
+    <scopeInfo nodeId="7240192589568729035" fileName="EditorComponentChangesHighligher.java" startLine="467" startPosition="0" endLine="476" endPosition="0">
       <varInfo nodeId="7240192589568729038" varName="component" />
     </scopeInfo>
-    <scopeInfo nodeId="7240192589568729029" fileName="EditorComponentChangesHighligher.java" startLine="467" startPosition="0" endLine="476" endPosition="0">
+    <scopeInfo nodeId="7240192589568729029" fileName="EditorComponentChangesHighligher.java" startLine="476" startPosition="0" endLine="485" endPosition="0">
       <varInfo nodeId="7240192589568729032" varName="component" />
     </scopeInfo>
-    <scopeInfo nodeId="7152638585749154571" fileName="EditorComponentChangesHighligher.java" startLine="289" startPosition="72" endLine="299" endPosition="5" />
-    <scopeInfo nodeId="6099081905063733762" fileName="EditorComponentChangesHighligher.java" startLine="72" startPosition="61" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="6080400160196253709" fileName="EditorComponentChangesHighligher.java" startLine="194" startPosition="25" endLine="205" endPosition="5" />
-    <scopeInfo nodeId="3768510864479102966" fileName="EditorComponentChangesHighligher.java" startLine="248" startPosition="0" endLine="259" endPosition="0">
+    <scopeInfo nodeId="6099081905063733762" fileName="EditorComponentChangesHighligher.java" startLine="79" startPosition="61" endLine="89" endPosition="0" />
+    <scopeInfo nodeId="7152638585749154571" fileName="EditorComponentChangesHighligher.java" startLine="298" startPosition="72" endLine="308" endPosition="5" />
+    <scopeInfo nodeId="3768510864479102966" fileName="EditorComponentChangesHighligher.java" startLine="257" startPosition="0" endLine="268" endPosition="0">
       <varInfo nodeId="3768510864479102971" varName="messageGroup" />
     </scopeInfo>
-    <scopeInfo nodeId="166132277801275918" fileName="EditorComponentChangesHighligher.java" startLine="181" startPosition="0" endLine="193" endPosition="0">
+    <scopeInfo nodeId="166132277801275918" fileName="EditorComponentChangesHighligher.java" startLine="187" startPosition="0" endLine="199" endPosition="0">
       <varInfo nodeId="166132277801275969" varName="change" />
     </scopeInfo>
-    <scopeInfo nodeId="4434895596490168860" fileName="EditorComponentChangesHighligher.java" startLine="334" startPosition="63" endLine="346" endPosition="7" />
-    <scopeInfo nodeId="3499023120082550362" fileName="EditorComponentChangesHighligher.java" startLine="222" startPosition="0" endLine="235" endPosition="0">
+    <scopeInfo nodeId="4434895596490168860" fileName="EditorComponentChangesHighligher.java" startLine="343" startPosition="63" endLine="355" endPosition="7" />
+    <scopeInfo nodeId="3499023120082550362" fileName="EditorComponentChangesHighligher.java" startLine="231" startPosition="0" endLine="244" endPosition="0">
       <varInfo nodeId="3499023120082617929" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="3499023120082619230" fileName="EditorComponentChangesHighligher.java" startLine="235" startPosition="0" endLine="248" endPosition="0">
+    <scopeInfo nodeId="3499023120082619230" fileName="EditorComponentChangesHighligher.java" startLine="244" startPosition="0" endLine="257" endPosition="0">
       <varInfo nodeId="3499023120082620598" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="7152638585749154568" fileName="EditorComponentChangesHighligher.java" startLine="288" startPosition="0" endLine="301" endPosition="0">
+    <scopeInfo nodeId="7152638585749154568" fileName="EditorComponentChangesHighligher.java" startLine="297" startPosition="0" endLine="310" endPosition="0">
       <varInfo nodeId="7152638585749154594" varName="cell" />
     </scopeInfo>
-    <scopeInfo nodeId="6080400160196253706" fileName="EditorComponentChangesHighligher.java" startLine="193" startPosition="0" endLine="207" endPosition="0" />
-    <scopeInfo nodeId="4434895596490168857" fileName="EditorComponentChangesHighligher.java" startLine="333" startPosition="0" endLine="348" endPosition="0">
+    <scopeInfo nodeId="6080400160196253709" fileName="EditorComponentChangesHighligher.java" startLine="200" startPosition="25" endLine="214" endPosition="5" />
+    <scopeInfo nodeId="4434895596490168857" fileName="EditorComponentChangesHighligher.java" startLine="342" startPosition="0" endLine="357" endPosition="0">
       <varInfo nodeId="4434895596490168866" varName="editorComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="967454776205092309" fileName="EditorComponentChangesHighligher.java" startLine="508" startPosition="121" endLine="523" endPosition="57">
+    <scopeInfo nodeId="967454776205092309" fileName="EditorComponentChangesHighligher.java" startLine="517" startPosition="121" endLine="532" endPosition="57">
       <varInfo nodeId="8974964540305863489" varName="nodeHighlightManager" />
     </scopeInfo>
-    <scopeInfo nodeId="3719874279484891746" fileName="EditorComponentChangesHighligher.java" startLine="350" startPosition="64" endLine="366" endPosition="7" />
-    <scopeInfo nodeId="7542415519011416852" fileName="EditorComponentChangesHighligher.java" startLine="507" startPosition="40" endLine="524" endPosition="7" />
-    <scopeInfo nodeId="2936752800012781014" fileName="EditorComponentChangesHighligher.java" startLine="396" startPosition="20" endLine="414" endPosition="101">
+    <scopeInfo nodeId="3719874279484891746" fileName="EditorComponentChangesHighligher.java" startLine="359" startPosition="64" endLine="375" endPosition="7" />
+    <scopeInfo nodeId="6080400160196253706" fileName="EditorComponentChangesHighligher.java" startLine="199" startPosition="0" endLine="216" endPosition="0" />
+    <scopeInfo nodeId="7542415519011416852" fileName="EditorComponentChangesHighligher.java" startLine="516" startPosition="40" endLine="533" endPosition="7" />
+    <scopeInfo nodeId="2936752800012781014" fileName="EditorComponentChangesHighligher.java" startLine="405" startPosition="20" endLine="423" endPosition="101">
       <varInfo nodeId="2451109806934128331" varName="y1" />
       <varInfo nodeId="2451109806934128338" varName="y2" />
       <varInfo nodeId="2936752800012781025" varName="x" />
     </scopeInfo>
-    <scopeInfo nodeId="1998524321632141960" fileName="EditorComponentChangesHighligher.java" startLine="84" startPosition="39" endLine="103" endPosition="11" />
-    <scopeInfo nodeId="3719874279484891743" fileName="EditorComponentChangesHighligher.java" startLine="348" startPosition="0" endLine="368" endPosition="0">
+    <scopeInfo nodeId="1998524321632141960" fileName="EditorComponentChangesHighligher.java" startLine="90" startPosition="39" endLine="109" endPosition="11" />
+    <scopeInfo nodeId="3719874279484891743" fileName="EditorComponentChangesHighligher.java" startLine="357" startPosition="0" endLine="377" endPosition="0">
       <varInfo nodeId="3719874279484891749" varName="defaultColor" />
     </scopeInfo>
-    <scopeInfo nodeId="7542415519011416849" fileName="EditorComponentChangesHighligher.java" startLine="506" startPosition="0" endLine="526" endPosition="0" />
-    <scopeInfo nodeId="5455599429139860996" fileName="EditorComponentChangesHighligher.java" startLine="113" startPosition="25" endLine="136" endPosition="9">
+    <scopeInfo nodeId="7542415519011416849" fileName="EditorComponentChangesHighligher.java" startLine="515" startPosition="0" endLine="535" endPosition="0" />
+    <scopeInfo nodeId="5455599429139860996" fileName="EditorComponentChangesHighligher.java" startLine="119" startPosition="25" endLine="142" endPosition="9">
       <varInfo nodeId="94490962879273090" varName="affectedNodeId" />
       <varInfo nodeId="5455599429139860992" varName="model" />
       <varInfo nodeId="8601487597690662161" varName="editedNode" />
     </scopeInfo>
-    <scopeInfo nodeId="5455599429139860995" fileName="EditorComponentChangesHighligher.java" startLine="112" startPosition="57" endLine="138" endPosition="0" />
-    <scopeInfo nodeId="1998524321632141958" fileName="EditorComponentChangesHighligher.java" startLine="71" startPosition="25" endLine="104" endPosition="9" />
-    <scopeInfo nodeId="1998524321632141957" fileName="EditorComponentChangesHighligher.java" startLine="70" startPosition="82" endLine="106" endPosition="0" />
-    <scopeInfo nodeId="2936752800012777373" fileName="EditorComponentChangesHighligher.java" startLine="377" startPosition="37" endLine="416" endPosition="19">
+    <scopeInfo nodeId="5455599429139860995" fileName="EditorComponentChangesHighligher.java" startLine="118" startPosition="57" endLine="144" endPosition="0" />
+    <scopeInfo nodeId="1998524321632141958" fileName="EditorComponentChangesHighligher.java" startLine="73" startPosition="25" endLine="110" endPosition="9" />
+    <scopeInfo nodeId="2936752800012777373" fileName="EditorComponentChangesHighligher.java" startLine="386" startPosition="37" endLine="425" endPosition="19">
       <varInfo nodeId="2936752800012731774" varName="bounds" />
       <varInfo nodeId="1536420391249840120" varName="vertical" />
       <varInfo nodeId="7152638585749145248" varName="collectionCell" />
     </scopeInfo>
-    <scopeInfo nodeId="166132277801270118" fileName="EditorComponentChangesHighligher.java" startLine="64" startPosition="131" endLine="106" endPosition="7" />
-    <scopeInfo nodeId="1536420391249840115" fileName="EditorComponentChangesHighligher.java" startLine="375" startPosition="54" endLine="417" endPosition="11">
+    <scopeInfo nodeId="1998524321632141957" fileName="EditorComponentChangesHighligher.java" startLine="72" startPosition="82" endLine="112" endPosition="0" />
+    <scopeInfo nodeId="1536420391249840115" fileName="EditorComponentChangesHighligher.java" startLine="384" startPosition="54" endLine="426" endPosition="11">
       <varInfo nodeId="2936752800012777363" varName="nextChildIndex" />
     </scopeInfo>
-    <scopeInfo nodeId="166132277801270114" fileName="EditorComponentChangesHighligher.java" startLine="63" startPosition="0" endLine="107" endPosition="3">
+    <scopeInfo nodeId="166132277801270118" fileName="EditorComponentChangesHighligher.java" startLine="66" startPosition="131" endLine="112" endPosition="7" />
+    <scopeInfo nodeId="166132277801270114" fileName="EditorComponentChangesHighligher.java" startLine="65" startPosition="0" endLine="113" endPosition="3">
       <varInfo nodeId="8601487597690772311" varName="enabled" />
       <varInfo nodeId="166132277801275270" varName="project" />
       <varInfo nodeId="76450717690085769" varName="editorComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="6149144798615862420" fileName="EditorComponentChangesHighligher.java" startLine="374" startPosition="14" endLine="424" endPosition="75">
+    <scopeInfo nodeId="6149144798615862420" fileName="EditorComponentChangesHighligher.java" startLine="383" startPosition="14" endLine="433" endPosition="75">
       <varInfo nodeId="6172777473367030197" varName="bounds" />
     </scopeInfo>
-    <scopeInfo nodeId="6149144798615862404" fileName="EditorComponentChangesHighligher.java" startLine="370" startPosition="95" endLine="425" endPosition="7">
+    <scopeInfo nodeId="6149144798615862404" fileName="EditorComponentChangesHighligher.java" startLine="379" startPosition="95" endLine="434" endPosition="7">
       <varInfo nodeId="3176852462137000048" varName="targetIsNode" />
     </scopeInfo>
-    <scopeInfo nodeId="6149144798615862395" fileName="EditorComponentChangesHighligher.java" startLine="368" startPosition="0" endLine="427" endPosition="0">
+    <scopeInfo nodeId="6149144798615862395" fileName="EditorComponentChangesHighligher.java" startLine="377" startPosition="0" endLine="436" endPosition="0">
       <varInfo nodeId="6149144798615862400" varName="component" />
       <varInfo nodeId="6149144798615862402" varName="cell" />
       <varInfo nodeId="6149144798615862398" varName="graphics" />
     </scopeInfo>
-    <scopeInfo nodeId="166132277801275731" fileName="EditorComponentChangesHighligher.java" startLine="109" startPosition="71" endLine="179" endPosition="19">
+    <scopeInfo nodeId="166132277801275731" fileName="EditorComponentChangesHighligher.java" startLine="115" startPosition="71" endLine="185" endPosition="19">
       <varInfo nodeId="166132277801275742" varName="message" />
       <varInfo nodeId="94490962879300526" varName="messageTarget" />
       <varInfo nodeId="166132277801275733" varName="node" />
@@ -582,23 +591,23 @@
       <varInfo nodeId="7627490208786691768" varName="isOurChange" />
       <varInfo nodeId="94490962879300563" varName="type" />
     </scopeInfo>
-    <scopeInfo nodeId="166132277801275728" fileName="EditorComponentChangesHighligher.java" startLine="108" startPosition="0" endLine="181" endPosition="0">
+    <scopeInfo nodeId="166132277801275728" fileName="EditorComponentChangesHighligher.java" startLine="114" startPosition="0" endLine="187" endPosition="0">
       <varInfo nodeId="166132277801275914" varName="change" />
     </scopeInfo>
-    <unitInfo nodeId="8974964540305863464" fileName="EditorComponentChangesHighligher.java" startLine="94" startPosition="46" endLine="98" endPosition="11" unitName="jetbrains.mps.vcs.changesmanager.EditorComponentChangesHighligher$5" />
-    <unitInfo nodeId="4410510979167112711" fileName="EditorComponentChangesHighligher.java" startLine="129" startPosition="51" endLine="133" endPosition="11" unitName="jetbrains.mps.vcs.changesmanager.EditorComponentChangesHighligher$3" />
-    <unitInfo nodeId="7627490208786700325" fileName="EditorComponentChangesHighligher.java" startLine="144" startPosition="45" endLine="148" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.EditorComponentChangesHighligher$3" />
-    <unitInfo nodeId="3499023120082619109" fileName="EditorComponentChangesHighligher.java" startLine="229" startPosition="87" endLine="233" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.EditorComponentChangesHighligher$5" />
-    <unitInfo nodeId="3499023120082621850" fileName="EditorComponentChangesHighligher.java" startLine="242" startPosition="88" endLine="246" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.EditorComponentChangesHighligher$6" />
-    <unitInfo nodeId="2107542654406138048" fileName="EditorComponentChangesHighligher.java" startLine="277" startPosition="136" endLine="281" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.EditorComponentChangesHighligher$7" />
-    <unitInfo nodeId="7152638585749154664" fileName="EditorComponentChangesHighligher.java" startLine="292" startPosition="84" endLine="296" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.EditorComponentChangesHighligher$1" />
-    <unitInfo nodeId="967454776205100697" fileName="EditorComponentChangesHighligher.java" startLine="517" startPosition="44" endLine="521" endPosition="9" unitName="jetbrains.mps.vcs.changesmanager.EditorComponentChangesHighligher$1" />
-    <unitInfo nodeId="6099081905063733762" fileName="EditorComponentChangesHighligher.java" startLine="72" startPosition="49" endLine="83" endPosition="9" unitName="jetbrains.mps.vcs.changesmanager.EditorComponentChangesHighligher$5" />
-    <unitInfo nodeId="5455599429139860995" fileName="EditorComponentChangesHighligher.java" startLine="112" startPosition="45" endLine="138" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.EditorComponentChangesHighligher$2" />
-    <unitInfo nodeId="1998524321632141957" fileName="EditorComponentChangesHighligher.java" startLine="70" startPosition="70" endLine="106" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.EditorComponentChangesHighligher$4" />
-    <unitInfo nodeId="5264204858747865437" fileName="EditorComponentChangesHighligher.java" startLine="478" startPosition="0" endLine="527" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.EditorComponentChangesHighligher$MyChangeListener" />
-    <unitInfo nodeId="6149144798615862330" fileName="EditorComponentChangesHighligher.java" startLine="316" startPosition="0" endLine="477" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.EditorComponentChangesHighligher$ChangeEditorMessage" />
-    <unitInfo nodeId="166132277801266530" fileName="EditorComponentChangesHighligher.java" startLine="49" startPosition="0" endLine="528" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.EditorComponentChangesHighligher" />
+    <unitInfo nodeId="8974964540305863464" fileName="EditorComponentChangesHighligher.java" startLine="100" startPosition="46" endLine="104" endPosition="11" unitName="jetbrains.mps.vcs.changesmanager.EditorComponentChangesHighligher$5" />
+    <unitInfo nodeId="4410510979167112711" fileName="EditorComponentChangesHighligher.java" startLine="135" startPosition="51" endLine="139" endPosition="11" unitName="jetbrains.mps.vcs.changesmanager.EditorComponentChangesHighligher$3" />
+    <unitInfo nodeId="7627490208786700325" fileName="EditorComponentChangesHighligher.java" startLine="150" startPosition="45" endLine="154" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.EditorComponentChangesHighligher$3" />
+    <unitInfo nodeId="3499023120082619109" fileName="EditorComponentChangesHighligher.java" startLine="238" startPosition="87" endLine="242" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.EditorComponentChangesHighligher$5" />
+    <unitInfo nodeId="3499023120082621850" fileName="EditorComponentChangesHighligher.java" startLine="251" startPosition="88" endLine="255" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.EditorComponentChangesHighligher$6" />
+    <unitInfo nodeId="2107542654406138048" fileName="EditorComponentChangesHighligher.java" startLine="286" startPosition="136" endLine="290" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.EditorComponentChangesHighligher$7" />
+    <unitInfo nodeId="7152638585749154664" fileName="EditorComponentChangesHighligher.java" startLine="301" startPosition="84" endLine="305" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.EditorComponentChangesHighligher$1" />
+    <unitInfo nodeId="967454776205100697" fileName="EditorComponentChangesHighligher.java" startLine="526" startPosition="44" endLine="530" endPosition="9" unitName="jetbrains.mps.vcs.changesmanager.EditorComponentChangesHighligher$1" />
+    <unitInfo nodeId="6099081905063733762" fileName="EditorComponentChangesHighligher.java" startLine="79" startPosition="49" endLine="89" endPosition="9" unitName="jetbrains.mps.vcs.changesmanager.EditorComponentChangesHighligher$5" />
+    <unitInfo nodeId="5455599429139860995" fileName="EditorComponentChangesHighligher.java" startLine="118" startPosition="45" endLine="144" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.EditorComponentChangesHighligher$2" />
+    <unitInfo nodeId="1998524321632141957" fileName="EditorComponentChangesHighligher.java" startLine="72" startPosition="70" endLine="112" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.EditorComponentChangesHighligher$4" />
+    <unitInfo nodeId="5264204858747865437" fileName="EditorComponentChangesHighligher.java" startLine="487" startPosition="0" endLine="536" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.EditorComponentChangesHighligher$MyChangeListener" />
+    <unitInfo nodeId="6149144798615862330" fileName="EditorComponentChangesHighligher.java" startLine="325" startPosition="0" endLine="486" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.EditorComponentChangesHighligher$ChangeEditorMessage" />
+    <unitInfo nodeId="166132277801266530" fileName="EditorComponentChangesHighligher.java" startLine="49" startPosition="0" endLine="537" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.EditorComponentChangesHighligher" />
   </root>
   <root nodeId="2253323551303625635">
     <nodeInfo nodeId="2253323551303625635" fileName="VCSUtils.java" startLine="18" startPosition="23" endLine="19" endPosition="63" />

@@ -16315,6 +16315,23 @@
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="6080400160196253707" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="6080400160196253708" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6080400160196253709">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SynchronizedStatement:3" id="7090398860987902387">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="7090398860987902390">
+            <link role="variableDeclaration:3" targetNodeId="7090398860987900910" resolveInfo="myDisposedLock" />
+          </node>
+          <node role="block:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7090398860987902389">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7090398860987902391">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="7090398860987902392">
+                <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="7090398860987902393">
+                  <property name="value:3" value="true" />
+                </node>
+                <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="7090398860987902394">
+                  <link role="variableDeclaration:3" targetNodeId="7090398860987849184" resolveInfo="myDisposed" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement:7" id="2808258374191492239">
           <node role="variable:7" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable:7" id="2808258374191492240">
             <property name="name:7" value="change" />
@@ -16502,6 +16519,27 @@
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="8601487597690772759" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="8601487597690772848" />
     </node>
+    <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="7090398860987849184">
+      <property name="name:3" value="myDisposed" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="7090398860987849185" />
+      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="7090398860987900893" />
+      <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="7090398860987900895">
+        <property name="value:3" value="false" />
+      </node>
+    </node>
+    <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="7090398860987900910">
+      <property name="name:3" value="myDisposedLock" />
+      <property name="isFinal:3" value="true" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="7090398860987900911" />
+      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7090398860987900913">
+        <link role="classifier:3" targetNodeId="49.~Object" resolveInfo="Object" />
+      </node>
+      <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="7090398860987902375">
+        <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="7090398860987902376">
+          <link role="baseMethodDeclaration:3" targetNodeId="49.~Object.&lt;init&gt;()" resolveInfo="Object" />
+        </node>
+      </node>
+    </node>
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="166132277801266531" />
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="166132277801270114">
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="166132277801270115" />
@@ -16577,6 +16615,21 @@
               <link role="baseMethodDeclaration:3" targetNodeId="3722815385094377489" resolveInfo="runTask" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral:3" id="1998524321632141957">
                 <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1998524321632141958">
+                  <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SynchronizedStatement:3" id="7090398860987902378">
+                    <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="7090398860987902381">
+                      <link role="variableDeclaration:3" targetNodeId="7090398860987900910" resolveInfo="myDisposedLock" />
+                    </node>
+                    <node role="block:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7090398860987902380">
+                      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="7090398860987902382">
+                        <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7090398860987902383">
+                          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="7090398860987902384" />
+                        </node>
+                        <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="7090398860987902385">
+                          <link role="variableDeclaration:3" targetNodeId="7090398860987849184" resolveInfo="myDisposed" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                   <node role="statement:3" type="jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement:23" id="6099081905063733761">
                     <node role="commandClosureLiteral:23" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral:23" id="6099081905063733762">
                       <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6099081905063733763">
@@ -16666,7 +16719,6 @@
                             </node>
                           </node>
                         </node>
-                        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="3544903338194823671" />
                       </node>
                     </node>
                   </node>
