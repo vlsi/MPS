@@ -42,7 +42,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
-  <maxImportIndex value="88" />
+  <maxImportIndex value="89" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.ide.dialogs(jetbrains.mps.ide.dialogs@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.ide.ui(jetbrains.mps.ide.ui@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.debug.evaluation(jetbrains.mps.debug.evaluation@java_stub)" version="-1" />
@@ -91,6 +91,7 @@
   <import index="83" modelUID="f:java_stub#jetbrains.mps.stubs.javastub.classpath(jetbrains.mps.stubs.javastub.classpath@java_stub)" version="-1" />
   <import index="84" modelUID="f:java_stub#com.intellij.openapi.actionSystem(com.intellij.openapi.actionSystem@java_stub)" version="-1" />
   <import index="88" modelUID="f:java_stub#jetbrains.mps.datatransfer(jetbrains.mps.datatransfer@java_stub)" version="-1" />
+  <import index="89" modelUID="f:java_stub#jetbrains.mps.traceInfo(jetbrains.mps.traceInfo@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5849716370568348282">
     <property name="name:3" value="EvaluationDialog" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5849716370568348283" />
@@ -5513,12 +5514,12 @@
                               <property name="name:3" value="nodesUnitName" />
                               <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="672360099287477336" />
                               <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="672360099287477337">
-                                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="672360099287477338">
-                                  <link role="classConcept:3" targetNodeId="69.~DebugInfoManager" resolveInfo="DebugInfoManager" />
-                                  <link role="baseMethodDeclaration:3" targetNodeId="69.~DebugInfoManager.getInstance():jetbrains.mps.debug.api.DebugInfoManager" resolveInfo="getInstance" />
+                                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7262648675653978599">
+                                  <link role="baseMethodDeclaration:3" targetNodeId="89.~TraceInfoManager.getInstance():jetbrains.mps.traceInfo.TraceInfoManager" resolveInfo="getInstance" />
+                                  <link role="classConcept:3" targetNodeId="89.~TraceInfoManager" resolveInfo="TraceInfoManager" />
                                 </node>
                                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="672360099287477339">
-                                  <link role="baseMethodDeclaration:3" targetNodeId="69.~DebugInfoManager.getUnitName(jetbrains.mps.smodel.SNode):java.lang.String" resolveInfo="getUnitName" />
+                                  <link role="baseMethodDeclaration:3" targetNodeId="89.~TraceInfoManager.getUnitName(jetbrains.mps.smodel.SNode):java.lang.String" resolveInfo="getUnitName" />
                                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="672360099287477340">
                                     <link role="variableDeclaration:3" targetNodeId="672360099287477321" resolveInfo="node" />
                                   </node>

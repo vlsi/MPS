@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.textGen;
 
-import jetbrains.mps.debug.api.DebugInfoManager;
 import jetbrains.mps.debug.api.info.PositionInfo;
 import jetbrains.mps.debug.api.info.ScopePositionInfo;
 import jetbrains.mps.debug.api.info.UnitPositionInfo;
@@ -27,6 +26,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.traceInfo.TraceInfoManager;
 import jetbrains.mps.util.NameUtil;
 
 import java.util.*;
@@ -125,13 +125,13 @@ public class TextGenManager {
       info.setEndLine(buffer.getLineNumber());
       info.setEndPosition(buffer.getPosition());
 
-      if (DebugInfoManager.getInstance().isDebuggableNode(node)) {
+      if (TraceInfoManager.getInstance().isTracebleNode(node)) {
         myPositions.put(node, info);
       }
-      if (DebugInfoManager.getInstance().isScopeNode(node)) {
+      if (TraceInfoManager.getInstance().isScopeNode(node)) {
         ScopePositionInfo scopePositionInfo = new ScopePositionInfo();
         scopePositionInfo.fillFrom(info);
-        List<SNode> vars = DebugInfoManager.getInstance().getVarsInScope(node);
+        List<SNode> vars = TraceInfoManager.getInstance().getVarsInScope(node);
         for (SNode var : vars) {
           if (var != null) {
             scopePositionInfo.addVarInfo(var);
@@ -139,10 +139,10 @@ public class TextGenManager {
         }
         myScopePositions.put(node, scopePositionInfo);
       }
-      if (DebugInfoManager.getInstance().isUnitNode(node)) {
+      if (TraceInfoManager.getInstance().isUnitNode(node)) {
         UnitPositionInfo unitPositionInfo = new UnitPositionInfo();
         unitPositionInfo.fillFrom(info);
-        unitPositionInfo.setUnitName(DebugInfoManager.getInstance().getUnitName(node));
+        unitPositionInfo.setUnitName(TraceInfoManager.getInstance().getUnitName(node));
         myUnitPositions.put(node, unitPositionInfo);
       }
     } catch (Exception e) {

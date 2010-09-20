@@ -9,6 +9,7 @@
     <classNode dependClassName="jetbrains.mps.nanoc.debug.breakpoints.GDBBreakpoint" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.traceInfo.TraceInfoManager" />
     <classNode dependClassName="jetbrains.mps.util.Mapper2" />
     <classNode extendsClassName="jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin" />
   </dependency>

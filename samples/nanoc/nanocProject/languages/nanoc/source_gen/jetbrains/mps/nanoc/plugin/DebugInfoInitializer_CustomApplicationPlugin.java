@@ -11,6 +11,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
 import jetbrains.mps.nanoc.debug.breakpoints.GDBBreakpoint;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.traceInfo.TraceInfoManager;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 
 public class DebugInfoInitializer_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
@@ -21,16 +22,22 @@ public class DebugInfoInitializer_CustomApplicationPlugin extends BaseCustomAppl
 
   public void doInit() {
     DebugInfoManager manager = DebugInfoManager.getInstance();
-    manager.addDebuggableConcept("jetbrains.mps.nanoc.structure.CStatement", new Mapper2<SNode, Project, AbstractMPSBreakpoint>() {
+    manager.addConceptBreakpointCreator("jetbrains.mps.nanoc.structure.CStatement", new Mapper2<SNode, Project, AbstractMPSBreakpoint>() {
       public AbstractMPSBreakpoint value(SNode debuggableNode, Project project) {
         return new GDBBreakpoint(new SNodePointer(debuggableNode), project);
       }
     });
+
+    TraceInfoManager traceInfoManager = TraceInfoManager.getInstance();
+    traceInfoManager.addTracebleConcept("jetbrains.mps.nanoc.structure.CStatement");
     BreakpointManagerComponent.notifyDebuggableConceptsAdded();
   }
 
   public void doDispose() {
     DebugInfoManager manager = DebugInfoManager.getInstance();
-    manager.removeDebuggableConcept("jetbrains.mps.nanoc.structure.CStatement");
+    manager.removeConceptBreakpointCreator("jetbrains.mps.nanoc.structure.CStatement");
+
+    TraceInfoManager traceInfoManager = TraceInfoManager.getInstance();
+    traceInfoManager.removeTracebleConcept("jetbrains.mps.nanoc.structure.CStatement");
   }
 }

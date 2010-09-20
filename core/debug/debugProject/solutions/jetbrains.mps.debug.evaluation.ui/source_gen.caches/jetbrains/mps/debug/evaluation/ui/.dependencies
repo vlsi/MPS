@@ -177,7 +177,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.AbstractClassifiersScope" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.IClassifiersSearchScope" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.ReachableClassifiersScope" />
-    <classNode dependClassName="jetbrains.mps.debug.api.DebugInfoManager" />
     <classNode dependClassName="jetbrains.mps.debug.api.info.DebugInfoUtil" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.DebugSession" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.JavaUiState" />
@@ -210,6 +209,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.stubs.StubReloadManager" />
     <classNode dependClassName="jetbrains.mps.stubs.javastub.classpath.StubHelper" />
+    <classNode dependClassName="jetbrains.mps.traceInfo.TraceInfoManager" />
     <classNode dependClassName="jetbrains.mps.util.Condition" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

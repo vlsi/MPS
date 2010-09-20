@@ -20,6 +20,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.traceInfo.TraceInfoManager;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.Mapper2;
 import org.jetbrains.annotations.NotNull;
@@ -28,48 +29,54 @@ import org.jetbrains.annotations.Nullable;
 import java.util.*;
 
 public class DebugInfoManager implements ApplicationComponent {
+  private final TraceInfoManager myTraceInfoManager;
+
   public static DebugInfoManager getInstance() {
     return ApplicationManager.getApplication().getComponent(DebugInfoManager.class);
   }
 
-  private final Map<String, Mapper2<SNode, Project, AbstractMPSBreakpoint>> myDebuggableConcepts =
-    new HashMap<String, Mapper2<SNode, Project, AbstractMPSBreakpoint>>();
-  private final Map<String, Mapper<SNode, List<SNode>>> myScopeConceptsAndGetters =
-    new HashMap<String, Mapper<SNode, List<SNode>>>();
-  private final Map<String, Mapper<SNode, String>> myUnitConceptsToUnitNameGetters = new LinkedHashMap<String, Mapper<SNode, String>>();
+  private final Map<String, Mapper2<SNode, Project, AbstractMPSBreakpoint>> myDebuggableConcepts =  new HashMap<String, Mapper2<SNode, Project, AbstractMPSBreakpoint>>();
 
   @NotNull
   public String getComponentName() {
     return "Debug Info Manager";
   }
 
-  @Deprecated
-  public void addDebuggableConcept(String fqName) {
-    myDebuggableConcepts.put(fqName, null);
+  public DebugInfoManager(TraceInfoManager manager) {
+    myTraceInfoManager = manager;
   }
 
-  public void addDebuggableConcept(String fqName, Mapper2<SNode, Project, AbstractMPSBreakpoint> breakpointCreator) {
+  @Deprecated
+  public void addDebuggableConcept(String fqName) {
+    addConceptBreakpointCreator(fqName, null);
+  }
+
+  public void addConceptBreakpointCreator(String fqName, Mapper2<SNode, Project, AbstractMPSBreakpoint> breakpointCreator) {
     myDebuggableConcepts.put(fqName, breakpointCreator);
   }
 
-  public void removeDebuggableConcept(String fqName) {
+  public void removeConceptBreakpointCreator(String fqName) {
     myDebuggableConcepts.remove(fqName);
   }
 
+  @Deprecated
   public void addScopeConcept(String fqName, Mapper<SNode, List<SNode>> varsGetter) {
-    myScopeConceptsAndGetters.put(fqName, varsGetter);
+    myTraceInfoManager.addScopeConcept(fqName, varsGetter);
   }
 
+  @Deprecated
   public void removeScopeConcept(String fqName) {
-    myScopeConceptsAndGetters.remove(fqName);
+    myTraceInfoManager.removeScopeConcept(fqName);
   }
 
+  @Deprecated
   public void addUnitConcept(String fqName, Mapper<SNode, String> nameGetter) {
-    myUnitConceptsToUnitNameGetters.put(fqName, nameGetter);
+    myTraceInfoManager.addUnitConcept(fqName, nameGetter);
   }
 
+  @Deprecated
   public void removeUnitConcept(String fqName) {
-    myUnitConceptsToUnitNameGetters.remove(fqName);
+    myTraceInfoManager.removeUnitConcept(fqName);
   }
 
   public boolean isDebuggableNode(SNode node) {
@@ -79,33 +86,6 @@ public class DebugInfoManager implements ApplicationComponent {
     return false;
   }
 
-  public boolean isScopeNode(SNode node) {
-    for (String concept : myScopeConceptsAndGetters.keySet()) {
-      if (SNodeOperations.isInstanceOf(node, concept)) {
-        return true;
-      }
-    }
-    return false;
-  }
-
-  public boolean isUnitNode(SNode node) {
-    for (String concept : myUnitConceptsToUnitNameGetters.keySet()) {
-      if (SNodeOperations.isInstanceOf(node, concept)) {
-        return true;
-      }
-    }
-    return false;
-  }
-
-  public List<SNode> getVarsInScope(SNode scopeNode) {
-    for (String concept : myScopeConceptsAndGetters.keySet()) {
-      if (SNodeOperations.isInstanceOf(scopeNode, concept)) {
-        return myScopeConceptsAndGetters.get(concept).value(scopeNode);
-      }
-    }
-    return new ArrayList<SNode>(0);
-  }
-
   @Nullable
   public AbstractMPSBreakpoint createBreakpoint(SNode debuggableNode, Project project) {
     for (String concept : myDebuggableConcepts.keySet()) {
@@ -113,18 +93,6 @@ public class DebugInfoManager implements ApplicationComponent {
         Mapper2<SNode, Project, AbstractMPSBreakpoint> mapper2 = myDebuggableConcepts.get(concept);
         if (mapper2 == null) return null; //TODO wtf? how about telling someone something is wrong?
         return mapper2.value(debuggableNode, project);
-      }
-    }
-    return null;
-  }
-
-  @Nullable
-  public String getUnitName(SNode unitNode) {
-    for (String concept : myUnitConceptsToUnitNameGetters.keySet()) {
-      if (SNodeOperations.isInstanceOf(unitNode, concept)) {
-        Mapper<SNode, String> mapper = myUnitConceptsToUnitNameGetters.get(concept);
-        if (mapper == null) return null;
-        return mapper.value(unitNode);
       }
     }
     return null;

@@ -326,6 +326,10 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.traceInfo.TraceInfoManager</implementation-class>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.debug.api.info.DebugInfoCache</implementation-class>
     </component>
 
