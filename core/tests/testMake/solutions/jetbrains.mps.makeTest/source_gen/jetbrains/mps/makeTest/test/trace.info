@@ -254,48 +254,50 @@
     <nodeInfo nodeId="7196776143116382694" fileName="ChangeModelProcessor.java" startLine="101" startPosition="80" endLine="102" endPosition="69" />
     <nodeInfo nodeId="7196776143116382700" fileName="ChangeModelProcessor.java" startLine="102" startPosition="69" endLine="103" endPosition="78" />
     <nodeInfo nodeId="7196776143116382727" fileName="ChangeModelProcessor.java" startLine="106" startPosition="49" endLine="107" endPosition="67" />
-    <nodeInfo nodeId="7196776143116382734" fileName="ChangeModelProcessor.java" startLine="110" startPosition="6" endLine="111" endPosition="67" />
-    <nodeInfo nodeId="7196776143116382743" fileName="ChangeModelProcessor.java" startLine="111" startPosition="67" endLine="112" endPosition="142" />
-    <nodeInfo nodeId="7196776143116382758" fileName="ChangeModelProcessor.java" startLine="112" startPosition="142" endLine="113" endPosition="66" />
-    <nodeInfo nodeId="7196776143116382767" fileName="ChangeModelProcessor.java" startLine="113" startPosition="66" endLine="114" endPosition="19" />
-    <nodeInfo nodeId="7196776143116382795" fileName="ChangeModelProcessor.java" startLine="117" startPosition="65" endLine="118" endPosition="54" />
-    <nodeInfo nodeId="7196776143116382803" fileName="ChangeModelProcessor.java" startLine="118" startPosition="54" endLine="119" endPosition="42" />
-    <nodeInfo nodeId="7196776143116382808" fileName="ChangeModelProcessor.java" startLine="119" startPosition="42" endLine="120" endPosition="58" />
-    <nodeInfo nodeId="7196776143116393545" fileName="ChangeModelProcessor.java" startLine="123" startPosition="32" endLine="124" endPosition="43" />
-    <nodeInfo nodeId="7196776143116393530" fileName="ChangeModelProcessor.java" startLine="127" startPosition="36" endLine="128" endPosition="47" />
-    <nodeInfo nodeId="7196776143116393474" fileName="ChangeModelProcessor.java" startLine="131" startPosition="67" endLine="132" endPosition="46" />
-    <nodeInfo nodeId="7196776143116393485" fileName="ChangeModelProcessor.java" startLine="134" startPosition="25" endLine="135" endPosition="47" />
-    <nodeInfo nodeId="7196776143116393495" fileName="ChangeModelProcessor.java" startLine="137" startPosition="7" endLine="138" endPosition="20" />
+    <nodeInfo nodeId="7196776143116382734" fileName="ChangeModelProcessor.java" startLine="113" startPosition="6" endLine="114" endPosition="67" />
+    <nodeInfo nodeId="7196776143116382743" fileName="ChangeModelProcessor.java" startLine="114" startPosition="67" endLine="115" endPosition="142" />
+    <nodeInfo nodeId="7196776143116382758" fileName="ChangeModelProcessor.java" startLine="115" startPosition="142" endLine="116" endPosition="66" />
+    <nodeInfo nodeId="7196776143116382767" fileName="ChangeModelProcessor.java" startLine="116" startPosition="66" endLine="117" endPosition="19" />
+    <nodeInfo nodeId="7196776143116382795" fileName="ChangeModelProcessor.java" startLine="120" startPosition="65" endLine="121" endPosition="54" />
+    <nodeInfo nodeId="7196776143116382803" fileName="ChangeModelProcessor.java" startLine="121" startPosition="54" endLine="122" endPosition="42" />
+    <nodeInfo nodeId="7196776143116382808" fileName="ChangeModelProcessor.java" startLine="122" startPosition="42" endLine="123" endPosition="58" />
+    <nodeInfo nodeId="7196776143116393545" fileName="ChangeModelProcessor.java" startLine="126" startPosition="32" endLine="127" endPosition="43" />
+    <nodeInfo nodeId="7196776143116393530" fileName="ChangeModelProcessor.java" startLine="130" startPosition="36" endLine="131" endPosition="47" />
+    <nodeInfo nodeId="7196776143116393474" fileName="ChangeModelProcessor.java" startLine="134" startPosition="67" endLine="135" endPosition="46" />
+    <nodeInfo nodeId="7196776143116393485" fileName="ChangeModelProcessor.java" startLine="137" startPosition="25" endLine="138" endPosition="47" />
+    <nodeInfo nodeId="7196776143116393495" fileName="ChangeModelProcessor.java" startLine="140" startPosition="7" endLine="141" endPosition="20" />
     <nodeInfo nodeId="7196776143116382611" fileName="ChangeModelProcessor.java" startLine="80" startPosition="10" endLine="82" endPosition="5" />
     <nodeInfo nodeId="7196776143116382720" fileName="ChangeModelProcessor.java" startLine="105" startPosition="39" endLine="108" endPosition="9" />
+    <nodeInfo nodeId="4526112498887464191" fileName="ChangeModelProcessor.java" startLine="110" startPosition="0" endLine="113" endPosition="0" />
     <nodeInfo nodeId="7196776143116385112" fileName="ChangeModelProcessor.java" startLine="48" startPosition="55" endLine="52" endPosition="0" />
     <nodeInfo nodeId="7196776143116386521" fileName="ChangeModelProcessor.java" startLine="61" startPosition="55" endLine="65" endPosition="0" />
     <nodeInfo nodeId="7196776143116382584" fileName="ChangeModelProcessor.java" startLine="73" startPosition="57" endLine="77" endPosition="0" />
     <nodeInfo nodeId="7196776143116382624" fileName="ChangeModelProcessor.java" startLine="83" startPosition="57" endLine="87" endPosition="0" />
     <nodeInfo nodeId="7196776143116384896" fileName="ChangeModelProcessor.java" startLine="91" startPosition="0" endLine="95" endPosition="0" />
     <nodeInfo nodeId="7196776143116384924" fileName="ChangeModelProcessor.java" startLine="95" startPosition="0" endLine="99" endPosition="0" />
-    <nodeInfo nodeId="7196776143116393433" fileName="ChangeModelProcessor.java" startLine="122" startPosition="0" endLine="126" endPosition="0" />
-    <nodeInfo nodeId="7196776143116393200" fileName="ChangeModelProcessor.java" startLine="126" startPosition="0" endLine="130" endPosition="0" />
-    <nodeInfo nodeId="7196776143116393483" fileName="ChangeModelProcessor.java" startLine="133" startPosition="57" endLine="137" endPosition="0" />
+    <nodeInfo nodeId="7196776143116393433" fileName="ChangeModelProcessor.java" startLine="125" startPosition="0" endLine="129" endPosition="0" />
+    <nodeInfo nodeId="7196776143116393200" fileName="ChangeModelProcessor.java" startLine="129" startPosition="0" endLine="133" endPosition="0" />
+    <nodeInfo nodeId="7196776143116393483" fileName="ChangeModelProcessor.java" startLine="136" startPosition="57" endLine="140" endPosition="0" />
     <nodeInfo nodeId="7196776143116385105" fileName="ChangeModelProcessor.java" startLine="47" startPosition="25" endLine="52" endPosition="11" />
     <nodeInfo nodeId="7196776143116386516" fileName="ChangeModelProcessor.java" startLine="60" startPosition="25" endLine="65" endPosition="11" />
     <nodeInfo nodeId="7196776143116382583" fileName="ChangeModelProcessor.java" startLine="72" startPosition="65" endLine="77" endPosition="7" />
     <nodeInfo nodeId="7196776143116382604" fileName="ChangeModelProcessor.java" startLine="77" startPosition="7" endLine="82" endPosition="5" />
     <nodeInfo nodeId="7196776143116382623" fileName="ChangeModelProcessor.java" startLine="82" startPosition="5" endLine="87" endPosition="7" />
-    <nodeInfo nodeId="7196776143116393482" fileName="ChangeModelProcessor.java" startLine="132" startPosition="46" endLine="137" endPosition="7" />
+    <nodeInfo nodeId="7196776143116393482" fileName="ChangeModelProcessor.java" startLine="135" startPosition="46" endLine="140" endPosition="7" />
     <nodeInfo nodeId="7196776143116381097" fileName="ChangeModelProcessor.java" startLine="36" startPosition="0" endLine="42" endPosition="3" />
     <nodeInfo nodeId="7196776143116382714" fileName="ChangeModelProcessor.java" startLine="104" startPosition="53" endLine="110" endPosition="0" />
-    <nodeInfo nodeId="7196776143116382786" fileName="ChangeModelProcessor.java" startLine="116" startPosition="0" endLine="122" endPosition="0" />
-    <nodeInfo nodeId="7196776143116382707" fileName="ChangeModelProcessor.java" startLine="103" startPosition="78" endLine="110" endPosition="6" />
+    <nodeInfo nodeId="7196776143116382786" fileName="ChangeModelProcessor.java" startLine="119" startPosition="0" endLine="125" endPosition="0" />
     <nodeInfo nodeId="7196776143116385103" fileName="ChangeModelProcessor.java" startLine="46" startPosition="37" endLine="54" endPosition="0" />
     <nodeInfo nodeId="7196776143116386514" fileName="ChangeModelProcessor.java" startLine="59" startPosition="37" endLine="67" endPosition="0" />
     <nodeInfo nodeId="7196776143116385061" fileName="ChangeModelProcessor.java" startLine="45" startPosition="57" endLine="54" endPosition="44" />
     <nodeInfo nodeId="7196776143116385094" fileName="ChangeModelProcessor.java" startLine="58" startPosition="57" endLine="67" endPosition="44" />
-    <nodeInfo nodeId="7196776143116393454" fileName="ChangeModelProcessor.java" startLine="130" startPosition="0" endLine="140" endPosition="0" />
+    <nodeInfo nodeId="7196776143116382707" fileName="ChangeModelProcessor.java" startLine="103" startPosition="78" endLine="113" endPosition="6" />
+    <nodeInfo nodeId="7196776143116393454" fileName="ChangeModelProcessor.java" startLine="133" startPosition="0" endLine="143" endPosition="0" />
     <nodeInfo nodeId="7196776143116385016" fileName="ChangeModelProcessor.java" startLine="43" startPosition="0" endLine="56" endPosition="0" />
     <nodeInfo nodeId="7196776143116385072" fileName="ChangeModelProcessor.java" startLine="56" startPosition="0" endLine="69" endPosition="0" />
-    <nodeInfo nodeId="7196776143116382663" fileName="ChangeModelProcessor.java" startLine="99" startPosition="0" endLine="116" endPosition="0" />
+    <nodeInfo nodeId="7196776143116382663" fileName="ChangeModelProcessor.java" startLine="99" startPosition="0" endLine="119" endPosition="0" />
     <nodeInfo nodeId="7196776143116382552" fileName="ChangeModelProcessor.java" startLine="69" startPosition="0" endLine="91" endPosition="0" />
+    <scopeInfo nodeId="4526112498887464194" fileName="ChangeModelProcessor.java" startLine="111" startPosition="27" endLine="111" endPosition="27" />
     <scopeInfo nodeId="7196776143116385113" fileName="ChangeModelProcessor.java" startLine="49" startPosition="29" endLine="50" endPosition="74" />
     <scopeInfo nodeId="7196776143116386522" fileName="ChangeModelProcessor.java" startLine="62" startPosition="29" endLine="63" endPosition="76" />
     <scopeInfo nodeId="7196776143116382585" fileName="ChangeModelProcessor.java" startLine="74" startPosition="25" endLine="75" endPosition="143" />
@@ -305,11 +307,12 @@
     <scopeInfo nodeId="7196776143116384899" fileName="ChangeModelProcessor.java" startLine="92" startPosition="79" endLine="93" endPosition="62" />
     <scopeInfo nodeId="7196776143116384927" fileName="ChangeModelProcessor.java" startLine="96" startPosition="83" endLine="97" endPosition="66" />
     <scopeInfo nodeId="7196776143116382726" fileName="ChangeModelProcessor.java" startLine="106" startPosition="49" endLine="107" endPosition="67" />
-    <scopeInfo nodeId="7196776143116393436" fileName="ChangeModelProcessor.java" startLine="123" startPosition="32" endLine="124" endPosition="43" />
-    <scopeInfo nodeId="7196776143116393203" fileName="ChangeModelProcessor.java" startLine="127" startPosition="36" endLine="128" endPosition="47" />
-    <scopeInfo nodeId="7196776143116393484" fileName="ChangeModelProcessor.java" startLine="134" startPosition="25" endLine="135" endPosition="47" />
+    <scopeInfo nodeId="7196776143116393436" fileName="ChangeModelProcessor.java" startLine="126" startPosition="32" endLine="127" endPosition="43" />
+    <scopeInfo nodeId="7196776143116393203" fileName="ChangeModelProcessor.java" startLine="130" startPosition="36" endLine="131" endPosition="47" />
+    <scopeInfo nodeId="7196776143116393484" fileName="ChangeModelProcessor.java" startLine="137" startPosition="25" endLine="138" endPosition="47" />
     <scopeInfo nodeId="7196776143116382719" fileName="ChangeModelProcessor.java" startLine="105" startPosition="39" endLine="108" endPosition="9" />
-    <scopeInfo nodeId="7196776143116382789" fileName="ChangeModelProcessor.java" startLine="117" startPosition="65" endLine="120" endPosition="58">
+    <scopeInfo nodeId="4526112498887464191" fileName="ChangeModelProcessor.java" startLine="110" startPosition="0" endLine="113" endPosition="0" />
+    <scopeInfo nodeId="7196776143116382789" fileName="ChangeModelProcessor.java" startLine="120" startPosition="65" endLine="123" endPosition="58">
       <varInfo nodeId="7196776143116382804" varName="file" />
       <varInfo nodeId="7196776143116382796" varName="path" />
     </scopeInfo>
@@ -324,9 +327,9 @@
     <scopeInfo nodeId="7196776143116384924" fileName="ChangeModelProcessor.java" startLine="95" startPosition="0" endLine="99" endPosition="0">
       <varInfo nodeId="7196776143116384942" varName="generationHandler" />
     </scopeInfo>
-    <scopeInfo nodeId="7196776143116393433" fileName="ChangeModelProcessor.java" startLine="122" startPosition="0" endLine="126" endPosition="0" />
-    <scopeInfo nodeId="7196776143116393200" fileName="ChangeModelProcessor.java" startLine="126" startPosition="0" endLine="130" endPosition="0" />
-    <scopeInfo nodeId="7196776143116393483" fileName="ChangeModelProcessor.java" startLine="133" startPosition="57" endLine="137" endPosition="0" />
+    <scopeInfo nodeId="7196776143116393433" fileName="ChangeModelProcessor.java" startLine="125" startPosition="0" endLine="129" endPosition="0" />
+    <scopeInfo nodeId="7196776143116393200" fileName="ChangeModelProcessor.java" startLine="129" startPosition="0" endLine="133" endPosition="0" />
+    <scopeInfo nodeId="7196776143116393483" fileName="ChangeModelProcessor.java" startLine="136" startPosition="57" endLine="140" endPosition="0" />
     <scopeInfo nodeId="7196776143116385104" fileName="ChangeModelProcessor.java" startLine="47" startPosition="25" endLine="52" endPosition="11" />
     <scopeInfo nodeId="7196776143116386515" fileName="ChangeModelProcessor.java" startLine="60" startPosition="25" endLine="65" endPosition="11" />
     <scopeInfo nodeId="7196776143116381097" fileName="ChangeModelProcessor.java" startLine="36" startPosition="0" endLine="42" endPosition="3">
@@ -337,10 +340,10 @@
     <scopeInfo nodeId="7196776143116382714" fileName="ChangeModelProcessor.java" startLine="104" startPosition="53" endLine="110" endPosition="0">
       <varInfo nodeId="7196776143116382717" varName="msg" />
     </scopeInfo>
-    <scopeInfo nodeId="7196776143116382786" fileName="ChangeModelProcessor.java" startLine="116" startPosition="0" endLine="122" endPosition="0">
+    <scopeInfo nodeId="7196776143116382786" fileName="ChangeModelProcessor.java" startLine="119" startPosition="0" endLine="125" endPosition="0">
       <varInfo nodeId="7196776143116382790" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="7196776143116393457" fileName="ChangeModelProcessor.java" startLine="131" startPosition="67" endLine="138" endPosition="20">
+    <scopeInfo nodeId="7196776143116393457" fileName="ChangeModelProcessor.java" startLine="134" startPosition="67" endLine="141" endPosition="20">
       <varInfo nodeId="7196776143116393475" varName="model" />
     </scopeInfo>
     <scopeInfo nodeId="7196776143116385103" fileName="ChangeModelProcessor.java" startLine="46" startPosition="37" endLine="54" endPosition="0" />
@@ -351,7 +354,7 @@
     <scopeInfo nodeId="7196776143116385075" fileName="ChangeModelProcessor.java" startLine="57" startPosition="67" endLine="67" endPosition="44">
       <varInfo nodeId="7196776143116386507" varName="modelToChange" />
     </scopeInfo>
-    <scopeInfo nodeId="7196776143116393454" fileName="ChangeModelProcessor.java" startLine="130" startPosition="0" endLine="140" endPosition="0">
+    <scopeInfo nodeId="7196776143116393454" fileName="ChangeModelProcessor.java" startLine="133" startPosition="0" endLine="143" endPosition="0">
       <varInfo nodeId="7196776143116393471" varName="modelDescriptor" />
     </scopeInfo>
     <scopeInfo nodeId="7196776143116385016" fileName="ChangeModelProcessor.java" startLine="43" startPosition="0" endLine="56" endPosition="0">
@@ -360,18 +363,18 @@
     <scopeInfo nodeId="7196776143116385072" fileName="ChangeModelProcessor.java" startLine="56" startPosition="0" endLine="69" endPosition="0">
       <varInfo nodeId="7196776143116385092" varName="generationHandler" />
     </scopeInfo>
-    <scopeInfo nodeId="7196776143116382666" fileName="ChangeModelProcessor.java" startLine="100" startPosition="95" endLine="114" endPosition="19">
+    <scopeInfo nodeId="7196776143116382666" fileName="ChangeModelProcessor.java" startLine="100" startPosition="95" endLine="117" endPosition="19">
       <varInfo nodeId="7196776143116382695" varName="models" />
       <varInfo nodeId="7196776143116382701" varName="gm" />
       <varInfo nodeId="7196776143116382688" varName="results" />
       <varInfo nodeId="7196776143116382708" varName="handler" />
     </scopeInfo>
-    <scopeInfo nodeId="7196776143116382663" fileName="ChangeModelProcessor.java" startLine="99" startPosition="0" endLine="116" endPosition="0">
-      <varInfo nodeId="7196776143116382670" varName="model" />
-      <varInfo nodeId="7196776143116382674" varName="generationHandler" />
-    </scopeInfo>
     <scopeInfo nodeId="7196776143116382555" fileName="ChangeModelProcessor.java" startLine="70" startPosition="100" endLine="89" endPosition="24">
       <varInfo nodeId="7196776143116382576" varName="cr" />
+    </scopeInfo>
+    <scopeInfo nodeId="7196776143116382663" fileName="ChangeModelProcessor.java" startLine="99" startPosition="0" endLine="119" endPosition="0">
+      <varInfo nodeId="7196776143116382670" varName="model" />
+      <varInfo nodeId="7196776143116382674" varName="generationHandler" />
     </scopeInfo>
     <scopeInfo nodeId="7196776143116382552" fileName="ChangeModelProcessor.java" startLine="69" startPosition="0" endLine="91" endPosition="0">
       <varInfo nodeId="7196776143116382558" varName="runnable" />
@@ -382,11 +385,11 @@
     <unitInfo nodeId="7196776143116386521" fileName="ChangeModelProcessor.java" startLine="61" startPosition="43" endLine="65" endPosition="9" unitName="Anonymous in run() in jetbrains.mps.makeTest.test.Runnable$anonymous" />
     <unitInfo nodeId="7196776143116382584" fileName="ChangeModelProcessor.java" startLine="73" startPosition="45" endLine="77" endPosition="5" unitName="jetbrains.mps.makeTest.test.ChangeModelProcessor$3" />
     <unitInfo nodeId="7196776143116382624" fileName="ChangeModelProcessor.java" startLine="83" startPosition="45" endLine="87" endPosition="5" unitName="jetbrains.mps.makeTest.test.ChangeModelProcessor$4" />
-    <unitInfo nodeId="7196776143116393483" fileName="ChangeModelProcessor.java" startLine="133" startPosition="45" endLine="137" endPosition="5" unitName="jetbrains.mps.makeTest.test.ChangeModelProcessor$6" />
-    <unitInfo nodeId="7196776143116382712" fileName="ChangeModelProcessor.java" startLine="104" startPosition="34" endLine="110" endPosition="5" unitName="jetbrains.mps.makeTest.test.ChangeModelProcessor$5" />
+    <unitInfo nodeId="7196776143116393483" fileName="ChangeModelProcessor.java" startLine="136" startPosition="45" endLine="140" endPosition="5" unitName="jetbrains.mps.makeTest.test.ChangeModelProcessor$6" />
     <unitInfo nodeId="7196776143116385103" fileName="ChangeModelProcessor.java" startLine="46" startPosition="25" endLine="54" endPosition="5" unitName="jetbrains.mps.makeTest.test.Runnable$anonymous" />
     <unitInfo nodeId="7196776143116386514" fileName="ChangeModelProcessor.java" startLine="59" startPosition="25" endLine="67" endPosition="5" unitName="jetbrains.mps.makeTest.test.Runnable$anonymous" />
-    <unitInfo nodeId="7196776143116381095" fileName="ChangeModelProcessor.java" startLine="27" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.makeTest.test.ChangeModelProcessor" />
+    <unitInfo nodeId="7196776143116382712" fileName="ChangeModelProcessor.java" startLine="104" startPosition="34" endLine="113" endPosition="5" unitName="jetbrains.mps.makeTest.test.ChangeModelProcessor$5" />
+    <unitInfo nodeId="7196776143116381095" fileName="ChangeModelProcessor.java" startLine="27" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.makeTest.test.ChangeModelProcessor" />
   </root>
 </debugInfo>
 

@@ -42,4 +42,8 @@ public class DefaultMessageHandler implements IMessageHandler {
       myMessagesViewTool.add(msg);
     }
   }
+
+  public void clear() {
+    myMessagesViewTool.clear();
+  }
 }

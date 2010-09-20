@@ -2058,6 +2058,12 @@
                       </node>
                     </node>
                   </node>
+                  <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="4526112498887464191">
+                    <property name="name:3" value="clear" />
+                    <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4526112498887464192" />
+                    <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="4526112498887464193" />
+                    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4526112498887464194" />
+                  </node>
                 </node>
               </node>
             </node>
