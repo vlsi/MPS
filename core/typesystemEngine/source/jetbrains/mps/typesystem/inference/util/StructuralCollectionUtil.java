@@ -17,9 +17,6 @@ package jetbrains.mps.typesystem.inference.util;
 
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.misc.ObjectCache;
-import jetbrains.mps.util.misc.ObjectCache.DeletedPairsListener;
-import jetbrains.mps.logging.Logger;
 
 import java.util.*;
 

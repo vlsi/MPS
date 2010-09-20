@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.typesystem.inference.util;
 
-import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.typesystem.inference.IWrapper;
 
 import java.util.*;
