@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="LambdaCalculus_ApplicationPlugin.java" startLine="7" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.plugin.LambdaCalculus_ApplicationPlugin" />
+  <unitInfo fileName="LambdaCalculus_ProjectPlugin.java" startLine="7" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.plugin.LambdaCalculus_ProjectPlugin" />
+  <unitInfo fileName="DefaultLambdaCalculusProgram_Editor.java" startLine="22" startPosition="47" endLine="26" endPosition="7" unitName="jetbrains.mps.samples.lambdaCalculus.plugin.DefaultLambdaCalculusProgram_Editor$2" />
+  <unitInfo fileName="DefaultLambdaCalculusProgram_Configuration.java" startLine="149" startPosition="42" endLine="153" endPosition="13" unitName="jetbrains.mps.samples.lambdaCalculus.plugin.DefaultLambdaCalculusProgram_Configuration$2" />
+  <unitInfo fileName="DefaultLambdaCalculusProgram_Configuration.java" startLine="238" startPosition="45" endLine="242" endPosition="5" unitName="jetbrains.mps.samples.lambdaCalculus.plugin.DefaultLambdaCalculusProgram_Configuration$2" />
+  <unitInfo fileName="DefaultLambdaCalculusProgram_Configuration.java" startLine="270" startPosition="66" endLine="274" endPosition="7" unitName="jetbrains.mps.samples.lambdaCalculus.plugin.DefaultLambdaCalculusProgram_Configuration$4" />
+  <unitInfo fileName="DefaultLambdaCalculusProgram_Configuration.java" startLine="252" startPosition="45" endLine="257" endPosition="5" unitName="jetbrains.mps.samples.lambdaCalculus.plugin.DefaultLambdaCalculusProgram_Configuration$3" />
+  <unitInfo fileName="DefaultLambdaCalculusProgram_Configuration.java" startLine="138" startPosition="90" endLine="145" endPosition="13" unitName="jetbrains.mps.samples.lambdaCalculus.plugin.DefaultLambdaCalculusProgram_Configuration$2" />
+  <unitInfo fileName="DefaultLambdaCalculusProgram_Editor.java" startLine="19" startPosition="74" endLine="29" endPosition="3" unitName="jetbrains.mps.samples.lambdaCalculus.plugin.DefaultLambdaCalculusProgram_Editor$1" />
+  <unitInfo fileName="DefaultLambdaCalculusProgram_Factory.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.plugin.DefaultLambdaCalculusProgram_Factory" />
+  <unitInfo fileName="DefaultLambdaCalculusProgram_Configuration.java" startLine="328" startPosition="0" endLine="344" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.plugin.DefaultLambdaCalculusProgram_Configuration$MyState" />
+  <unitInfo fileName="DefaultLambdaCalculusProgram_Configuration.java" startLine="157" startPosition="52" endLine="174" endPosition="13" unitName="jetbrains.mps.samples.lambdaCalculus.plugin.DefaultLambdaCalculusProgram_Configuration$2" />
+  <unitInfo fileName="DefaultLambdaCalculusProgram_Configuration.java" startLine="345" startPosition="0" endLine="368" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.plugin.DefaultLambdaCalculusProgram_Configuration$MyExecutionResult" />
+  <unitInfo fileName="DefaultLambdaCalculusProgram_Configuration.java" startLine="369" startPosition="0" endLine="394" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.plugin.DefaultLambdaCalculusProgram_Configuration$MyExecutionConsole" />
+  <unitInfo fileName="LambdaCalculus_ConfigurationType.java" startLine="18" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.plugin.LambdaCalculus_ConfigurationType" />
+  <unitInfo fileName="DefaultLambdaCalculusFromProgram.java" startLine="18" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.plugin.DefaultLambdaCalculusFromProgram" />
+  <unitInfo fileName="DefaultLambdaCalculusProgram_Configuration.java" startLine="284" startPosition="0" endLine="327" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.plugin.DefaultLambdaCalculusProgram_Configuration$MySettingsEditor" />
+  <unitInfo fileName="DefaultLambdaCalculusProgram_Editor.java" startLine="17" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.plugin.DefaultLambdaCalculusProgram_Editor" />
+  <unitInfo fileName="DefaultLambdaCalculusProgram_Configuration.java" startLine="110" startPosition="15" endLine="201" endPosition="5" unitName="jetbrains.mps.samples.lambdaCalculus.plugin.DefaultLambdaCalculusProgram_Configuration$1" />
+  <unitInfo fileName="DefaultLambdaCalculusProgram_Configuration.java" startLine="60" startPosition="0" endLine="395" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.plugin.DefaultLambdaCalculusProgram_Configuration" />
   <root nodeId="2566054628276075478">
     <nodeInfo nodeId="2566054628276106082" fileName="DefaultLambdaCalculusFromProgram.java" startLine="30" startPosition="52" endLine="31" endPosition="89" />
     <nodeInfo nodeId="2566054628276106089" fileName="DefaultLambdaCalculusFromProgram.java" startLine="32" startPosition="5" endLine="33" endPosition="186" />
