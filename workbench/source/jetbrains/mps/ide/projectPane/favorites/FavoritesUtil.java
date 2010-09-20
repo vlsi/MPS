@@ -1,16 +1,14 @@
 package jetbrains.mps.ide.projectPane.favorites;
 
-import com.intellij.openapi.project.Project;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.projectPane.favorites.root.FavoritesRoot;
+import jetbrains.mps.ide.ui.MPSTreeNode;
 
 import javax.swing.tree.TreeNode;
-import java.util.List;
 import java.util.ArrayList;
-
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.projectPane.favorites.root.FavoritesRoot;
+import java.util.List;
 
 public class FavoritesUtil {
   public static FavoritesProjectPane getCurrentPane(Project project) {

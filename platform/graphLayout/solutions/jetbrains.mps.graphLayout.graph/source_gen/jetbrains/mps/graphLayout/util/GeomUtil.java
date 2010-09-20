@@ -4,6 +4,11 @@ package jetbrains.mps.graphLayout.util;
 
 import java.awt.Rectangle;
 import java.awt.Point;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class GeomUtil {
   public static boolean insideOpenSegment(int end1, int end2, int mid) {
@@ -55,7 +60,63 @@ public class GeomUtil {
     return null;
   }
 
+  public static Point moveToBorder(Rectangle rect, Point b, Point e) {
+    List<Point> rectPoints = ListSequence.fromList(new ArrayList<Point>());
+    boolean ver = b.x == e.x;
+    ListSequence.fromList(rectPoints).addElement(new Point(rect.x, rect.y));
+    ListSequence.fromList(rectPoints).addElement(new Point(rect.x, rect.y + rect.height));
+    ListSequence.fromList(rectPoints).addElement(new Point(rect.x + rect.width, rect.y));
+    ListSequence.fromList(rectPoints).addElement(new Point(rect.x + rect.width, rect.y + rect.height));
+    for (Point p : ListSequence.fromList(rectPoints)) {
+      if (ver) {
+        if (p.x == b.x && (p.y - b.y) * (p.y - e.y) < 0) {
+          return p;
+        }
+      } else {
+        if (p.y == b.y && (p.x - b.x) * (p.x - e.x) < 0) {
+          return p;
+        }
+      }
+    }
+    return null;
+  }
+
   public static boolean intersects(int minX, int maxX, int minY, int maxY) {
     return Math.min(maxX, maxY) >= Math.max(minX, minY);
+  }
+
+  public static Point pull(Point point, Point center, Map<Direction2D, Integer> shift) {
+    int newX = point.x;
+    if (point.x > center.x) {
+      newX += MapSequence.fromMap(shift).get(Direction2D.RIGHT);
+    }
+    if (point.x < center.x) {
+      newX -= MapSequence.fromMap(shift).get(Direction2D.LEFT);
+    }
+    int newY = point.y;
+    if (point.y > center.y) {
+      newY += MapSequence.fromMap(shift).get(Direction2D.UP);
+    }
+    if (point.y < center.y) {
+      newY -= MapSequence.fromMap(shift).get(Direction2D.DOWN);
+    }
+    return new Point(newX, newY);
+  }
+
+  public static Direction2D getDirection(Point begin, Point end) {
+    int dx = getDirection(begin.x, end.x);
+    int dy = getDirection(begin.y, end.y);
+    return Direction2D.getByShifts(dx, dy);
+  }
+
+  public static int getDirection(int begin, int end) {
+    int direction = 0;
+    if (begin > end) {
+      direction = -1;
+    }
+    if (begin < end) {
+      direction = 1;
+    }
+    return direction;
   }
 }

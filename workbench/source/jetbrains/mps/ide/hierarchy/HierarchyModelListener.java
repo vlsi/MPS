@@ -29,7 +29,7 @@ public class HierarchyModelListener extends SModelAdapter {
 
   private void structureEvent(List<SNode> searchedNodes) {
     List<SNode> nodeInTree = new ArrayList<SNode>();
-    MPSTreeNode treeNode  = myHierarchyTree.getRootNode();
+    MPSTreeNode treeNode = myHierarchyTree.getRootNode();
     collectNodes(treeNode, nodeInTree);
     for (SNode searchedNode : searchedNodes) {
       if (searchedNode == null) continue;

@@ -18,7 +18,7 @@ package jetbrains.mps.generator.template;
 import jetbrains.mps.generator.impl.TemplateContext;
 import jetbrains.mps.smodel.SNode;
 
-public class IfMacroContext  extends TemplateQueryContext {
+public class IfMacroContext extends TemplateQueryContext {
   private SNode myMacro;
 
   public IfMacroContext(SNode node, SNode ifMacro, TemplateContext context, ITemplateGenerator generator) {

@@ -62,7 +62,7 @@ public class JavaArrayValue extends JavaValue {
   }
 
   public int getSize() {
-    return ((ArrayReference)myValue).length();
+    return ((ArrayReference) myValue).length();
   }
 
   public List<JavaValue> getAllElements() {

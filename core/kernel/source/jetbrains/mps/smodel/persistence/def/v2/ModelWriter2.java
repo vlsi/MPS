@@ -98,7 +98,7 @@ public class ModelWriter2 implements IModelWriter {
       SModelDescriptor importedModelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
       if (importedModelDescriptor instanceof EditableSModelDescriptor) {
         version = ((EditableSModelDescriptor) importedModelDescriptor).getVersion();
-      }      
+      }
       if (version > -1) {
         importElem.setAttribute(ModelPersistence.VERSION, version + "");
       }

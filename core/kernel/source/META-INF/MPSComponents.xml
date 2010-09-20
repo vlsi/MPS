@@ -191,7 +191,7 @@
     <component>
       <implementation-class>jetbrains.mps.nodeEditor.CaretBlinker</implementation-class>
     </component>
-    
+
     <component>
       <implementation-class>jetbrains.mps.ide.MPSAdapter</implementation-class>
     </component>
@@ -226,11 +226,6 @@
 
     <component>
       <implementation-class>jetbrains.mps.typesystem.inference.TypeContextManager
-      </implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.typesystem.integration.TypesystemPreferencesComponent
       </implementation-class>
     </component>
 
@@ -323,11 +318,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.generator.fileGenerator.FileGenerationManager</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.generator.fileGenerator.AllCaches</implementation-class>
+      <implementation-class>jetbrains.mps.generator.cache.AllCaches</implementation-class>
     </component>
 
     <component>
@@ -357,6 +348,7 @@
     <component>
       <implementation-class>jetbrains.mps.workbench.actions.goTo.index.StubsNodeDescriptorsCache</implementation-class>
     </component>
+
   </application-components>
 
   <project-components>
@@ -375,12 +367,6 @@
       <headless-implementation-class>com.intellij.testFramework.TestEditorManagerImpl
       </headless-implementation-class>
       <option name="workspace" value="true"/>
-      <skipForDummyProject/>
-    </component>
-
-    <component>
-      <interface-class>com.intellij.history.LocalHistory</interface-class>
-      <implementation-class>com.intellij.history.DeafLocalHistory</implementation-class>
       <skipForDummyProject/>
     </component>
 
@@ -448,7 +434,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.refactoring.RefactoringView</implementation-class>
+      <implementation-class>jetbrains.mps.ide.refactoring.RefactoringView</implementation-class>
       <skipForDummyProject/>
     </component>
 
@@ -593,7 +579,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.make.StartupModuleMaker</implementation-class>
+      <implementation-class>jetbrains.mps.ide.make.StartupModuleMaker</implementation-class>
     </component>
 
     <component>

@@ -26,6 +26,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
 import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
 import jetbrains.mps.smodel.*;
 
@@ -141,7 +142,12 @@ public class RefactoringUtil {
   private static List<SModel> getLanguageModelsList(Project project, Language l) {
     ModuleTestConfiguration languageConfig = new ModuleTestConfiguration();
     languageConfig.setModuleRef(l.getModuleReference());
-    return languageConfig.getGenParams(project, true).getSModels();
+    try {
+      return languageConfig.getGenParams(project, true).getSModels();
+    } catch (IllegalGeneratorConfigurationException e) {
+      // FIXME handle
+      throw new RuntimeException(e);
+    }
   }
 
   @Deprecated

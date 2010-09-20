@@ -1,16 +1,11 @@
 package jetbrains.mps.debug.evaluation;
 
 import com.sun.jdi.*;
-import jetbrains.mps.debug.evaluation.EvaluationUtils.Invocatable;
 import jetbrains.mps.debug.evaluation.proxies.IObjectValueProxy;
 import jetbrains.mps.debug.evaluation.proxies.IValueProxy;
-import jetbrains.mps.debug.evaluation.proxies.IterableProxy;
 import jetbrains.mps.debug.evaluation.proxies.MirrorUtil;
 import jetbrains.mps.debug.runtime.JavaUiState;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.List;
 
 public abstract class Evaluator {
   private JavaUiState myUiState;

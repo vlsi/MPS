@@ -8,7 +8,10 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelOwner;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 import javax.swing.*;
@@ -31,7 +34,8 @@ public class ShowImplementationComponent extends JPanel {
 
   public ShowImplementationComponent(List<SNode> nodes, IOperationContext context) {
     myNodes = nodes;
-    myEditor = new EmbeddableEditor(context, new ModelOwner() {}, SNodeOperations.copyNode(nodes.get(0)), false);
+    myEditor = new EmbeddableEditor(context, new ModelOwner() {
+    }, SNodeOperations.copyNode(nodes.get(0)), false);
     for (SNode node : myNodes) {
       myItemToNode.put(node.getModel().getSModelReference() + ":" + node.getSNodeId(), node);
     }

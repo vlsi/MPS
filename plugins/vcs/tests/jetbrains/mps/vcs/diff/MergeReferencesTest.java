@@ -17,47 +17,45 @@ package jetbrains.mps.vcs.diff;
 
 import java.io.IOException;
 
-import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
-
 public class MergeReferencesTest extends MergeTestCase {
 
-  public void testSimpleStructure() throws IOException, ReadException {
+  public void testSimpleStructure() throws IOException {
     testZip("resources/structure.mps.zip", false);
   }
 
-  public void testEditorWithNewConcepts() throws IOException, ReadException {
+  public void testEditorWithNewConcepts() throws IOException {
     testZip("resources/editor.mps.zip", false);
   }
 
-  public void testConflictInternalReferencesInNewNodesChange() throws IOException, ReadException {
+  public void testConflictInternalReferencesInNewNodesChange() throws IOException {
     testZip("resources/conflictInternalRefNew.mps.zip", false);
   }
 
-  public void testNonConflictInternalReferencesInNewNodesChange() throws IOException, ReadException {
+  public void testNonConflictInternalReferencesInNewNodesChange() throws IOException {
     testZip("resources/nonConflictInternalRefNew.mps.zip", false);
   }
 
-  public void testConflictInternalReferencesChange() throws IOException, ReadException {
+  public void testConflictInternalReferencesChange() throws IOException {
     testZip("resources/conflictInternalRef.mps.zip", false);
   }
 
-  public void testConflictExternalReferencesChange() throws IOException, ReadException {
+  public void testConflictExternalReferencesChange() throws IOException {
     testZip("resources/conflictExternalRef.mps.zip", false);
   }
 
-  public void testNonConflictExternalReferencesChange() throws IOException, ReadException {
+  public void testNonConflictExternalReferencesChange() throws IOException {
     testZip("resources/nonConflictExternalRef.mps.zip", false);
   }
 
-  public void testNonConflictExternalReferencesChange3() throws IOException, ReadException {
+  public void testNonConflictExternalReferencesChange3() throws IOException {
     testZip("resources/nonConflictExternalRef2.mps.zip", false);
   }
 
-  public void testConflictedAndNotConflictedReferencesWright() throws IOException, ReadException {
+  public void testConflictedAndNotConflictedReferencesWright() throws IOException {
     testZip("resources/conflictedAndNotConflictedReferencesWright.mps.zip", false);
   }
 
-  public void testConflictedAndNotConflictedReferences() throws IOException, ReadException {
+  public void testConflictedAndNotConflictedReferences() throws IOException {
     testZip("resources/conflictedAndNotConflictedReferences.mps.zip", false);
   }
 }

@@ -17,39 +17,27 @@ package jetbrains.mps.generator;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.progress.ProcessCanceledException;
-import com.intellij.openapi.project.IndexNotReadyException;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.psi.search.GlobalSearchScope;
-import com.intellij.util.indexing.FileBasedIndex;
-import com.intellij.util.indexing.FileBasedIndex.ValueProcessor;
-import jetbrains.mps.generator.fileGenerator.CacheGenerationContext;
-import jetbrains.mps.generator.fileGenerator.CacheGenerator;
-import jetbrains.mps.generator.fileGenerator.FileGenerationManager;
+import jetbrains.mps.generator.cache.BaseModelCache;
+import jetbrains.mps.generator.cache.CacheGenerator;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
-import jetbrains.mps.ide.generator.index.ModelDigestIndex;
+import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class ModelGenerationStatusManager implements ApplicationComponent {
   public static final String HASH_PREFIX = ".hash.";
 
   private static final Logger LOG = Logger.getLogger(ModelGenerationStatusManager.class);
+  private CacheGenerator myCacheGenerator;
 
   public static ModelGenerationStatusManager getInstance() {
     return ApplicationManager.getApplication().getComponent(ModelGenerationStatusManager.class);
@@ -63,17 +51,23 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
   private List<ModelGenerationStatusListener> myListeners = new ArrayList<ModelGenerationStatusListener>();
 
   private final GlobalSModelEventsManager myGlobalEventsManager;
-  private final FileGenerationManager myFileGenerationManager;
   private final SModelAdapter mySmodelReloadListener = new SModelAdapter() {
     @Override
     public void modelReplaced(SModelDescriptor sm) {
-      ModelGenerationStatusManager.this.invalidateData(sm);
+      ModelGenerationStatusManager.this.invalidateData(Collections.singletonList(sm));
     }
   };
 
-  public ModelGenerationStatusManager(FileGenerationManager fileGenerationManager, GlobalSModelEventsManager globalEventsManager) {
-    myFileGenerationManager = fileGenerationManager;
+  public ModelGenerationStatusManager(GlobalSModelEventsManager globalEventsManager) {
     myGlobalEventsManager = globalEventsManager;
+    myCacheGenerator = new CacheGenerator() {
+      public void generateCache(GenerationStatus status, StreamHandler handler) {
+        String hashName = generateHashFileName(status);
+        if(hashName != null) {
+          handler.saveStream(hashName, "", true);
+        }
+      }
+    };
   }
 
   @NotNull
@@ -82,11 +76,6 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
   }
 
   public void initComponent() {
-    myFileGenerationManager.addCachesGenerator(new CacheGenerator() {
-      public File generateCache(CacheGenerationContext context) {
-        return generateHashFile(context);
-      }
-    });
     myGlobalEventsManager.addGlobalModelListener(mySmodelReloadListener);
   }
 
@@ -94,17 +83,11 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     myGlobalEventsManager.removeGlobalModelListener(mySmodelReloadListener);
   }
 
-  public boolean generationRequired(SModelDescriptor sm, Project project, @NotNull NoCachesStrategy strategy) {
-    try {
-      return generationRequired(sm, project);
-    } catch (IndexNotReadyException e) {
-      return strategy.compute(project, sm, getGenerationHash(sm));
-    } catch (ProcessCanceledException e) {
-      return strategy.compute(project, sm, getGenerationHash(sm));
-    }
+  public CacheGenerator getCacheGenerator() {
+    return myCacheGenerator;
   }
 
-  public boolean generationRequired(SModelDescriptor sm, Project project) {
+  public boolean generationRequiredFast(SModelDescriptor sm, IOperationContext operationContext, boolean defaultValue) {
     if (!(sm instanceof EditableSModelDescriptor)) return false;
     EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
     if (esm.isPackaged()) return false;
@@ -113,34 +96,39 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     if (SModelRepository.getInstance().isChanged(esm)) return true;
     if (isEmpty(esm)) return false;
 
+    Map<String, String> generationHashes = ModelDigestHelper.getInstance().getGenerationHashes(sm, operationContext, true);
+    if(generationHashes == null) return defaultValue;
+
     String generatedHash = getGenerationHash(sm);
     if (generatedHash == null) return true;
 
-    IFile modelFile = esm.getModelFile();
-    if (modelFile==null) return true;
-    VirtualFile file = modelFile.toVirtualFile();
-    if (file == null) return true;
-
-    return checkGenerationRequired(project, file, generatedHash);
+    return !generatedHash.equals(generationHashes.get(ModelDigestHelper.FILE));
   }
 
-  private boolean checkGenerationRequired(final Project project, @NotNull VirtualFile f, String generatedHash) {
-    final String[] valueArray = new String[1];
-    FileBasedIndex.getInstance().processValues(ModelDigestIndex.NAME, FileBasedIndex.getFileId(f), f, new ValueProcessor<Map<String, String>>() {
-      public boolean process(VirtualFile file, Map<String, String> values) {
-        valueArray[0] = values.get(ModelDigestHelper.FILE);
-        return true;
-      }
-    }, GlobalSearchScope.allScope(project));
-    return !(generatedHash.equals(valueArray[0]));
+  public boolean generationRequired(SModelDescriptor sm, IOperationContext operationContext) {
+    if (!(sm instanceof EditableSModelDescriptor)) return false;
+    EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
+    if (esm.isPackaged()) return false;
+    if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) return false;
+    if (GeneratorManager.isDoNotGenerate(sm)) return false;
+    if (SModelRepository.getInstance().isChanged(esm)) return true;
+    if (isEmpty(esm)) return false;
+
+    Map<String, String> generationHashes = ModelDigestHelper.getInstance().getGenerationHashes(sm, operationContext);
+    if(generationHashes == null) return true;
+
+    String generatedHash = getGenerationHash(sm);
+    if (generatedHash == null) return true;
+
+    return !generatedHash.equals(generationHashes.get(ModelDigestHelper.FILE));
   }
 
   private boolean isEmpty(SModelDescriptor sm) {
-    if(!(sm instanceof EditableSModelDescriptor)) {
+    if (!(sm instanceof EditableSModelDescriptor)) {
       return sm.isEmpty();
     }
 
-    if (myEmptyStatus.containsKey(sm) && myEmptyStatusRetrievalTime.get(sm) >= ((EditableSModelDescriptor)sm).lastChangeTime()) {
+    if (myEmptyStatus.containsKey(sm) && myEmptyStatusRetrievalTime.get(sm) >= ((EditableSModelDescriptor) sm).lastChangeTime()) {
       return myEmptyStatus.get(sm);
     }
 
@@ -158,9 +146,11 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     return myGeneratedFilesHashes.get(sm);
   }
 
-  public void invalidateData(SModelDescriptor sm) {
-    myGeneratedFilesHashes.remove(sm);
-    fireStatusChange(sm);
+  public void invalidateData(List<SModelDescriptor> models) {
+    for(SModelDescriptor model : models) {
+      myGeneratedFilesHashes.remove(model);
+      fireStatusChange(model);
+    }
   }
 
   public void addGenerationStatusListener(ModelGenerationStatusListener l) {
@@ -184,13 +174,13 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
       throw new IllegalStateException();
     }
 
-    File outputPath = FileGenerationUtil.getCachesOutputDir(new File(module.getOutputFor(sm)));
-    File sourcesDir = FileGenerationUtil.getDefaultOutputDir(sm, outputPath);
+    IFile outputPath = BaseModelCache.getCachesDir(module, module.getOutputFor(sm));
+    IFile sourcesDir = FileGenerationUtil.getDefaultOutputDir(sm, outputPath);
 
-    File[] files = sourcesDir.listFiles();
+    List<IFile> files = sourcesDir.list();
     String result = null;
     if (files != null) {
-      for (File f : files) {
+      for (IFile f : files) {
         String name = f.getName();
         if (name.startsWith(HASH_PREFIX)) {
           if (result != null) {
@@ -204,13 +194,11 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     return result;
   }
 
-  private File generateHashFile(CacheGenerationContext context) {
-    File outputDir = context.getOutputDir();
+  private String generateHashFileName(GenerationStatus status) {
+    SModelDescriptor descriptor = status.getOriginalInputModel();
+    if (!(descriptor instanceof EditableSModelDescriptor)) return null;
 
-    SModelDescriptor descriptor = context.getOriginalInputModel();
-    if(!(descriptor instanceof EditableSModelDescriptor)) return null;
-
-    IFile file = ((EditableSModelDescriptor)descriptor).getModelFile();
+    IFile file = ((EditableSModelDescriptor) descriptor).getModelFile();
     if (file == null) return null;
 
     byte[] content = new byte[(int) file.length()];
@@ -232,19 +220,7 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     }
 
     String hash = ModelDigestHelper.hash(content);
-    File result = new File(FileGenerationUtil.getDefaultOutputDir(context.getInputModel(), outputDir), ModelGenerationStatusManager.HASH_PREFIX + hash);
-    if (!result.exists()) {
-      try {
-        if (!result.createNewFile()) {
-          LOG.error("Can't create hash file");
-        } else {
-          FileUtil.write(result, hash);
-        }
-      } catch (IOException e) {
-        LOG.error(e);
-      }
-    }
-    return result;
+    return ModelGenerationStatusManager.HASH_PREFIX + hash;
   }
 
 }

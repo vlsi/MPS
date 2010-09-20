@@ -1,8 +1,8 @@
 package jetbrains.mps.ide.ui.smodel;
 
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTree;
+import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.smodel.*;
 
 public abstract class SimpleModelListener extends SModelAdapter {
   private MPSTreeNode myTreeNode;
@@ -51,7 +51,7 @@ public abstract class SimpleModelListener extends SModelAdapter {
     updateNodePresentation(true, true);
   }
 
-  public boolean isValid(){
+  public boolean isValid() {
     if (getTree() == null) return false;
 
     //module has been already removed

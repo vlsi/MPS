@@ -5,6 +5,8 @@ import jetbrains.mps.vfs.impl.FileSystemImpl;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.io.File;
+
 /**
  * @author Evgeny Gerashchenko
  */
@@ -25,5 +27,9 @@ public abstract class FileSystem {
 
   public static FileSystem getInstance() {
     return INSTANCE;
+  }
+
+  public static String getAbsolutePath(String path) {
+    return new File(path).getAbsolutePath();
   }
 }

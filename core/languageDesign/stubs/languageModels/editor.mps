@@ -502,6 +502,11 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4293145514664530016">
     <property name="name:3" value="StubSolutionCreateHelper" />
+    <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="1910096640874368520">
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1910096640874368521" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1910096640874368522" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1910096640874368523" />
+    </node>
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="4293145514664530024">
       <property name="name:3" value="getAvailableStubSolutions" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="4293145514664537348">
@@ -738,7 +743,7 @@
               <link role="baseMethodDeclaration:3" targetNodeId="2.~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolveInfo="instance" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4293145514664643832">
-              <link role="baseMethodDeclaration:3" targetNodeId="2.~ModelAccess.runCommandInEDT(java.lang.Runnable):void" resolveInfo="runCommandInEDT" />
+              <link role="baseMethodDeclaration:3" targetNodeId="2.~ModelCommandExecutor.runCommandInEDT(java.lang.Runnable):void" resolveInfo="runCommandInEDT" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral:3" id="4293145514664643833">
                 <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4293145514664643834">
                   <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="4293145514664643835">

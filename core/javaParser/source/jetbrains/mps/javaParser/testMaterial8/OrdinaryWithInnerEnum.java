@@ -15,57 +15,53 @@
  */
 package jetbrains.mps.javaParser.testMaterial8;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
 public class OrdinaryWithInnerEnum<U> {
 
-    public static enum Kind {
-        UNION,
-        INTERSECTION,
-        SUBSTRACTION,
-        DISJUNCTION
+  public static enum Kind {
+    UNION,
+    INTERSECTION,
+    SUBSTRACTION,
+    DISJUNCTION
+  }
+
+  private final Kind kind = Kind.DISJUNCTION;
+
+  private class ComparingIterator {
+
+    private void init() {
+      switch (kind) {
+
+        case SUBSTRACTION:
+        case INTERSECTION:
+        case UNION:
+        case DISJUNCTION:
+        default:
+          break;
+      }
     }
 
-    private final Kind kind = Kind.DISJUNCTION;
+    private void moveToNext() {
+      do {
+        switch (kind) {
 
-    private class ComparingIterator {
+          case SUBSTRACTION:
 
-        private void init () {
-            switch (kind) {
+          case INTERSECTION:
 
-            case SUBSTRACTION:
-            case INTERSECTION:
-            case UNION:
-            case DISJUNCTION:
-            default:
-                break;
-            }
+
+          case UNION:
+
+
+          case DISJUNCTION:
+
+
+          default:
+            break;
         }
-
-        private void moveToNext () {
-            do {
-                switch (kind) {
-
-                case SUBSTRACTION:
-
-                case INTERSECTION:
-
-
-                case UNION:
-
-
-                case DISJUNCTION:
-
-
-                default:
-                    break;
-                }
-            } while (true);
-
-        }
+      } while (true);
 
     }
+
+  }
 
 }

@@ -27,7 +27,7 @@ public class DebuggableFramesSelector implements IDebuggableFramesSelector {
   public boolean isDebuggableFrame(@NotNull IStackFrame frame) {
     ILocation location = frame.getLocation();
     if (location instanceof NullLocation) return false;
-    
+
     SNode node = DebugInfoUtil.getNode(location.getUnitName(), location.getFileName(), location.getLineNumber());
     if (node != null) {
       return true;

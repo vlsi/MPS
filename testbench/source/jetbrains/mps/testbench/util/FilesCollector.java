@@ -2,6 +2,9 @@ package jetbrains.mps.testbench.util;
 
 import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.util.io.FileUtil;
+import org.apache.tools.ant.Project;
+import org.apache.tools.ant.types.FileSet;
+import org.apache.tools.ant.types.resources.FileResource;
 
 import java.io.File;
 import java.util.*;
@@ -51,8 +54,23 @@ public class FilesCollector {
     return Collections.unmodifiableCollection(files);
   }
 
+  public static Iterable<File> fastCollectFiles(Iterable<FilePattern> filePtns, Iterable<File> path) {
+    Project p = new Project();
+    ArrayList<File> res = new ArrayList<File>();
+    for (File dir: path) {
+      FileSet fs = new FileSet();
+      fs.setProject(p);
+      fs.setDir(dir);
+      for (FilePattern fp : filePtns) {
+        (fp.include ? fs.createInclude() : fs.createExclude()).setName(fp.filePtn);
+      }
+      for (Iterator it = fs.iterator(); it.hasNext();) {
+        res.add(((FileResource) it.next()).getFile());
+      }
+    }
+    return res;
+  }
 
- 
   public static class FilePattern {
 
     public static enum Type {

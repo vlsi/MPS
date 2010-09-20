@@ -1,7 +1,7 @@
 package jetbrains.mps.uiLanguage.runtime;
 
-import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
+import javax.swing.JRadioButton;
 
 public class JbRadioButton extends JRadioButton {
   private ButtonGroup myGroup;

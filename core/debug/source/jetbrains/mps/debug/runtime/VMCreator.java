@@ -21,13 +21,13 @@ import com.sun.jdi.connect.IllegalConnectorArgumentsException;
 import com.sun.jdi.connect.ListeningConnector;
 import jetbrains.mps.debug.DebuggerKeys;
 import jetbrains.mps.debug.api.AbstractDebugSessionCreator;
-import jetbrains.mps.debug.integration.runconfigs.RemoteDebugProcessHandler;
-import jetbrains.mps.debug.integration.runconfigs.RemoteRunProfileState;
+import jetbrains.mps.debug.api.ToDebugAPI;
 import jetbrains.mps.debug.api.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debug.api.runtime.execution.DebuggerManagerThread;
 import jetbrains.mps.debug.api.runtime.execution.IDebuggerManagerThread;
+import jetbrains.mps.debug.integration.runconfigs.RemoteDebugProcessHandler;
+import jetbrains.mps.debug.integration.runconfigs.RemoteRunProfileState;
 import jetbrains.mps.debug.runtime.settings.DebugConnectionSettings;
-import jetbrains.mps.debug.api.ToDebugAPI;
 import jetbrains.mps.debug.runtime.settings.LocalConnectionSettings;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
@@ -93,9 +93,9 @@ public class VMCreator extends AbstractDebugSessionCreator {
   @Nullable
   @ToDebugAPI
   public ExecutionResult startSession(final Executor executor,
-                                              final ProgramRunner runner,
-                                              final RunProfileState state,
-                                              Project project
+                                      final ProgramRunner runner,
+                                      final RunProfileState state,
+                                      Project project
   ) throws ExecutionException {
     assert ThreadUtils.isEventDispatchThread() : "must be called from EDT only";
     // LOG.assertTrue(isInInitialState());
@@ -135,11 +135,11 @@ public class VMCreator extends AbstractDebugSessionCreator {
       processHandler.addProcessListener(new ProcessAdapter() {
         public void processWillTerminate(ProcessEvent event, boolean willBeDestroyed) {
           if (event.getProcessHandler() != processHandler) return;
-            // if current thread is a "debugger manager thread", stop will execute synchronously
-            session.getEventsProcessor().stop(willBeDestroyed);
+          // if current thread is a "debugger manager thread", stop will execute synchronously
+          session.getEventsProcessor().stop(willBeDestroyed);
 
-            // wait at most 10 seconds: the problem is that debugProcess.stop() can hang if there are troubles in the debuggee
-            // if processWillTerminate() is called from AWT thread debugProcess.waitFor() will block it and the whole app will hang
+          // wait at most 10 seconds: the problem is that debugProcess.stop() can hang if there are troubles in the debuggee
+          // if processWillTerminate() is called from AWT thread debugProcess.waitFor() will block it and the whole app will hang
 //            if (!DebuggerManagerThread.isManagerThread()) {
 //              session.getEventsProcessor().waitFor(10000);
 //            }

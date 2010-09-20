@@ -72,21 +72,6 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
     return result;
   }
 
-  public <M extends IModule> Set<M> getGlobalModules(Class<M> cls) {
-    Set<M> result = new HashSet<M>();
-    for (String path : getLibraries()) {
-      for (IModule m : LibraryInitializer.getInstance().getModules(path)) {
-        if (cls.isAssignableFrom(m.getClass())) {
-          result.add((M) m);
-        }
-      }
-    }
-
-    LibraryInitializer.getInstance().addGenerators(cls, new ArrayList<M>(result));
-
-    return result;
-  }
-
   private Set<Library> createLibs() {
     Set<Library> result = new HashSet<Library>();
     result.add(new Library("mps.platform") {

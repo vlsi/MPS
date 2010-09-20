@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="Modeling_ApplicationPlugin.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ui.modeling.plugin.Modeling_ApplicationPlugin" />
+  <unitInfo fileName="Modeling_ProjectPlugin.java" startLine="18" startPosition="35" endLine="30" endPosition="5" unitName="jetbrains.mps.ui.modeling.plugin.Modeling_ProjectPlugin$1" />
+  <unitInfo fileName="Modeling_ProjectPlugin.java" startLine="31" startPosition="35" endLine="43" endPosition="5" unitName="jetbrains.mps.ui.modeling.plugin.Modeling_ProjectPlugin$2" />
+  <unitInfo fileName="EditorExtensions_CustomApplicationPlugin.java" startLine="8" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ui.modeling.plugin.EditorExtensions_CustomApplicationPlugin" />
+  <unitInfo fileName="Event_editor_TabbedEditor.java" startLine="31" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.ui.modeling.plugin.Event_editor_TabbedEditor$Structure_Tab" />
+  <unitInfo fileName="UIObject_editor_TabbedEditor.java" startLine="31" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.ui.modeling.plugin.UIObject_editor_TabbedEditor$Structure_Tab" />
+  <unitInfo fileName="Modeling_ProjectPlugin.java" startLine="15" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.ui.modeling.plugin.Modeling_ProjectPlugin" />
+  <unitInfo fileName="Event_editor_TabbedEditor.java" startLine="57" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.ui.modeling.plugin.Event_editor_TabbedEditor$Code_Tab" />
+  <unitInfo fileName="UIObject_editor_TabbedEditor.java" startLine="57" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.ui.modeling.plugin.UIObject_editor_TabbedEditor$Code_Tab" />
+  <unitInfo fileName="Event_editor_TabbedEditor.java" startLine="24" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.ui.modeling.plugin.Event_editor_TabbedEditor" />
+  <unitInfo fileName="UIObject_editor_TabbedEditor.java" startLine="24" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.ui.modeling.plugin.UIObject_editor_TabbedEditor" />
   <root nodeId="1790847182535106542">
     <nodeInfo nodeId="1790847182535108011" fileName="Modeling_ProjectPlugin.java" startLine="19" startPosition="71" endLine="20" endPosition="143" />
     <nodeInfo nodeId="1790847182535108024" fileName="Event_editor_TabbedEditor.java" startLine="44" startPosition="38" endLine="45" endPosition="18" />

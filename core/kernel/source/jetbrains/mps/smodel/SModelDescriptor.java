@@ -55,7 +55,7 @@ public interface SModelDescriptor {
   //------
 
   boolean isEmpty();
-  
+
   void rename(SModelFqName newModelFqName, boolean changeFile);
 
   SModelDescriptor resolveModel(SModelReference reference);

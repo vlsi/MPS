@@ -1,14 +1,9 @@
 package jetbrains.mps.debug.api.integration.ui;
 
-import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debug.api.programState.IWatchable;
-import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.action.ActionUtils;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 import java.util.List;
@@ -47,16 +42,16 @@ public class WatchableNode extends AbstractWatchableNode {
   }
 
   protected Icon getNodeIcon() {
-  //  if (myNode != null) {
-  //    return jetbrains.mps.ide.projectPane.Icons.DEFAULT_ICON;
-  //  }
+    //  if (myNode != null) {
+    //    return jetbrains.mps.ide.projectPane.Icons.DEFAULT_ICON;
+    //  }
     return myWatchable.getPresentationIcon();
   }
 
   protected String calculateNodeId() {
     return myWatchable.getName()
-        + " = "
-        + getValuePresentation(myWatchable.getValue());
+      + " = "
+      + getValuePresentation(myWatchable.getValue());
   }
 
   @NotNull

@@ -29,6 +29,12 @@ public class OrthogonalRepresentation_Test extends TestCase {
     test(graph);
   }
 
+  public void test_temp() throws Exception {
+    String graphString = "4 6  0 1  1 2  2 3  3 0  0 2  1 3";
+    Graph graph = GraphIO.scanGraph(new Scanner(graphString));
+    test(graph);
+  }
+
   public void test_test2() throws Exception {
     String graphString = "5 9  0 1  0 2  0 3  0 4  1 2  1 3  1 4  2 3  2 4";
     Graph graph = GraphIO.scanGraph(new Scanner(graphString));
@@ -53,15 +59,20 @@ public class OrthogonalRepresentation_Test extends TestCase {
     test(graph);
   }
 
+  public void test_test6() throws Exception {
+    String graphString = "3 3  0 1  1 2  2 0";
+    Graph graph = GraphIO.scanGraph(new Scanner(graphString));
+    test(graph);
+  }
+
   public void test(Graph graph) {
     EmbeddedGraph embeddedGraph = new PQPlanarizationFinder().find(graph);
     checkFullEmbedding(embeddedGraph);
+    System.out.println(embeddedGraph);
     Map<Dart, Integer> bends = MapSequence.fromMap(new HashMap<Dart, Integer>());
     Map<Dart, Integer> angles = MapSequence.fromMap(new HashMap<Dart, Integer>());
     OrthogonalRepresentation.getRepresentation(embeddedGraph, bends, angles);
-    OrthogonalRepresentationChecker.checkBends(graph, bends);
     OrthogonalRepresentation.replaceBendsByNodes(embeddedGraph, bends, angles);
-    OrthogonalRepresentationChecker.checkBends(graph, bends);
     for (Dart bend : SetSequence.fromSet(MapSequence.fromMap(bends).keySet())) {
       Assert.assertTrue(MapSequence.fromMap(bends).get(bend) == 0);
     }

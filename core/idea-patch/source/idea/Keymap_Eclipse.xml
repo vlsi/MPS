@@ -79,9 +79,6 @@
     <action id="EditorCutLineEnd">
       <keyboard-shortcut first-keystroke="shift control DELETE" />
     </action>
-    <action id="EditorDeleteLine">
-      <keyboard-shortcut first-keystroke="control D" />
-    </action>
     <action id="EditorDuplicate">
       <keyboard-shortcut first-keystroke="control alt UP" />
       <keyboard-shortcut first-keystroke="control alt DOWN" />

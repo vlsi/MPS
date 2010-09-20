@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.smodel.*;
 

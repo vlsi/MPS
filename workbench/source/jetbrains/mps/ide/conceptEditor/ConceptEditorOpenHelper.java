@@ -15,24 +15,12 @@
  */
 package jetbrains.mps.ide.conceptEditor;
 
-import jetbrains.mps.workbench.editors.MPSEditorOpenHandler;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.intentions.structure.IntentionDeclaration;
-import jetbrains.mps.lang.findUsages.structure.FinderDeclaration;
-import jetbrains.mps.lang.generator.structure.TemplateDeclaration;
-import jetbrains.mps.lang.generator.structure.RootTemplateAnnotation_AnnotationLink;
-import jetbrains.mps.lang.generator.structure.RootTemplateAnnotation;
 import jetbrains.mps.lang.core.structure.BaseConcept;
-import jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration;
-import jetbrains.mps.lang.constraints.structure.ConceptConstraints;
-import jetbrains.mps.lang.behavior.structure.ConceptBehavior;
-import jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration;
-import jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration;
-import jetbrains.mps.lang.typesystem.structure.AbstractRule;
-import jetbrains.mps.lang.typesystem.structure.ConceptReference;
+import jetbrains.mps.lang.generator.structure.RootTemplateAnnotation;
+import jetbrains.mps.lang.generator.structure.RootTemplateAnnotation_AnnotationLink;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.smodel.*;
 
 public class ConceptEditorOpenHelper {
   public static SNode getBaseNode(IOperationContext context, SNode node) {

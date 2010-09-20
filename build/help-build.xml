@@ -1,9 +1,4 @@
-<project name="help-build" default="nothing">
-  <property name="executable.dir" value="/executable" />
-  <property name="data.dir" value="/data" />
-  <target name="nothing">
-    <echo>Doing nothing...</echo>
-  </target>
+<project name="help-build">
   <target name="repack.sources">
     <fail unless="input.dir" message="Property input.dir unspecified." />
     <fail unless="output.dir" message="Property output.dir unspecified." />
@@ -11,20 +6,6 @@
       <mapper type="regexp" from="(.*)(/|\\)(src|sources|source|source_gen|tests)(/|\\)(.*)" to="\5" />
       <fileset dir="${input.dir}" />
     </copy>
-  </target>
-  <target name="append.mps.version">
-    <property name="build.number.file" value="${input.dir}/build.number" />
-    <property name="prefix" value="jetbrains.mps." />
-    <fail unless="mps_home" message="Property mps_home unspecified." />
-    <fail unless="output.dir" message="Property output.dir unspecified." />
-    <fail unless="input.dir" message="Property input.dir unspecified." />
-    <loadfile srcfile="${mps_home}/build.number" property="mps.buildinfo">
-      <filterchain>
-        <prefixlines prefix="${prefix}" />
-      </filterchain>
-    </loadfile>
-    <echo file="${build.number.file}">${mps.buildinfo}</echo>
-    <copy file="${build.number.file}" todir="${output.dir}" />
   </target>
   <target name="append.idea.version">
     <property name="build.number.file" value="${input.dir}/build.number" />
@@ -55,8 +36,8 @@
         <exclude name="system/**" />
         <exclude name="**/*.hprof" />
         <exclude name="integrationBuild*" />
+        <exclude name=".git/**" />
       </zipfileset>
-      <zipfileset file="lib/sources/idea-external-src.zip" prefix="MPS/lib/sources" />
     </zip>
     <delete dir="${tmpdir}" />
   </target>

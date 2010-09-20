@@ -56,7 +56,7 @@ public class RefactoringsPersistence {
     }
     try {
       Element root = JDOMUtil.loadDocument(refactoringsFile).getRootElement();
-      if(RefactoringHistory.REFACTORING_HISTORY.equals(root.getName())) {
+      if (RefactoringHistory.REFACTORING_HISTORY.equals(root.getName())) {
         return new RefactoringHistory().fromElement(root);
       }
       return null;
@@ -75,9 +75,9 @@ public class RefactoringsPersistence {
     }
     try {
       Element root = JDOMUtil.loadDocument(modelFile).getRootElement();
-      if(ModelPersistence.MODEL.equals(root.getName())) {
+      if (ModelPersistence.MODEL.equals(root.getName())) {
         Element child = root.getChild(RefactoringHistory.REFACTORING_HISTORY);
-        if(child != null) {
+        if (child != null) {
           return new RefactoringHistory().fromElement(child);
         }
       }

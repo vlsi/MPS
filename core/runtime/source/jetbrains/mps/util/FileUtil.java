@@ -212,7 +212,56 @@ public class FileUtil {
     return result;
   }
 
+  public static void writeFile(final File file, final String content) throws IOException {
+    if (!file.getParentFile().exists()) {
+      file.getParentFile().mkdirs();
+    }
 
+    if (file.exists()) {
+      try {
+        String existingContents = FileUtil.read(file);
+        if (existingContents != null && existingContents.equals(content)) {
+          return;
+        }
+      } catch (RuntimeException ex) {
+        /* ignore */
+      }
+      file.delete();
+    }
+
+    boolean fileCreated = false;
+    IOException lastExc = null;
+    for (int i = 1; i <= 20; i++) {
+      try {
+        file.createNewFile();
+        fileCreated = true;
+        break;
+      } catch (IOException ex) {
+        lastExc = ex;
+        //sometimes:
+        //java.io.IOException: Access is denied
+        //at java.io.WinNTFileSystem.createFileExclusively(Native Method)
+        //at java.io.File.createNewFile(File.java:850)
+        // so we'll try 5(20) times
+      }
+      try {
+        Thread.sleep(100);
+      } catch (InterruptedException ie) {
+        //ok
+      }
+    }
+
+    if (fileCreated) {
+      FileUtil.write(file, content);
+    } else {
+      throw lastExc == null ? new IOException("Can't create " + file.getPath()) : lastExc;
+    }
+  }
+
+  /*
+   * use writeFile
+   */
+  @Deprecated
   public static void write(File file, String content) {
     PrintWriter writer = null;
     try {

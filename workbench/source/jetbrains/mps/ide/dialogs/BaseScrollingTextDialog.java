@@ -33,7 +33,7 @@ public class BaseScrollingTextDialog extends BaseDialog {
   public BaseScrollingTextDialog(Frame mainFrame, String caption, String text) throws HeadlessException {
     super(mainFrame, caption);
 
-                                                                   
+
     JLabel label = new JLabel("<html>" + text.replaceAll("\n", "<br>") + "</html>");
     JPanel innerPanel = new JPanel(new BorderLayout());
     innerPanel.add(label, BorderLayout.NORTH);

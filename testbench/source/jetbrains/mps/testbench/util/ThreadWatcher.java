@@ -17,10 +17,25 @@ import java.util.regex.Pattern;
 public class ThreadWatcher implements Output {
   private ThreadState base;
   private String errors;
+  private String desc = "threads difference";
 
   private static class ThreadState {
 
-    private static Pattern IGNORED_THREAD = Pattern.compile("(AWT\\-.*)|(Image Fetch.*)");
+    private static Pattern IGNORED_THREAD = Pattern.compile(
+        "(AWT\\-.*)|" +
+        "(Image Fetch.*)|" +
+        "(Keep\\-Alive.*)|" +
+        "(Finalizer.*)|" +
+        "(caret blinker.*)|" +
+        "(ApplicationImpl.*)|" +
+        "(Executor)|" +
+        "(TimerQueue)|" +
+        "(Change List.*)|" +
+        "(Reference.*)|" +
+        "(Periodic task.*)|" +
+        "(Java2D.*)|" +
+        "(LowMemoryWatcher)|" +
+        "(Timer\\-.*)");
 
     private TLongObjectHashMap<ThreadInfo> allThreads = new TLongObjectHashMap<ThreadInfo> ();
     private TLongObjectHashMap<ThreadInfo> runningThreads = new TLongObjectHashMap<ThreadInfo> ();
@@ -111,7 +126,7 @@ public class ThreadWatcher implements Output {
 
   @Override
   public String getDescription() {
-    return "threads difference";
+    return desc;
   }
 
   @Override
@@ -130,6 +145,7 @@ public class ThreadWatcher implements Output {
       current.captureState();
       diff = current.diff(base);
       if (diff[0].allThreads.isEmpty() && diff[1].allThreads.isEmpty()) return true;
+      if (diff[0].allThreads.isEmpty()) break;
       try {
         Thread.sleep(step);
       } catch (InterruptedException ignore) {}
@@ -138,16 +154,23 @@ public class ThreadWatcher implements Output {
 
     StringBuilder sb = new StringBuilder();
     sb.append("After ").append(millis).append(" ms. --\n");
+    StringBuilder sb2 = new StringBuilder();
+    String sep2 = "";
+    String pr2 = "no";
     if (!diff[0].allThreads.isEmpty()) {
+      sb2.append (String.valueOf(diff[0].allThreads.size())).append(" new"); sep2=", "; pr2="";
       sb.append("  New:\n");
       diff[0].dump(sb, "    ");
       sb.append("\n");
     }
     if (!diff[1].allThreads.isEmpty()) {
+      sb2.append (sep2).append(String.valueOf(diff[1].allThreads.size())).append(" killed"); pr2="";
       sb.append("  Killed:\n");
       diff[1].dump(sb, "    ");
       sb.append("\n");
     }
+    sb2.append(pr2).append(" threads");
+    this.desc = sb2.toString();
     this.errors = sb.toString();
 
     return false;

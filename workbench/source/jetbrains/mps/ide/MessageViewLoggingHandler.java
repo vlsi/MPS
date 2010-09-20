@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.ide;
 
-import jetbrains.mps.messages.Message;
-import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
+import jetbrains.mps.messages.Message;
+import jetbrains.mps.messages.MessageKind;
 
 public class MessageViewLoggingHandler implements ILoggingHandler {
   private MessagesViewTool myMessagesView;

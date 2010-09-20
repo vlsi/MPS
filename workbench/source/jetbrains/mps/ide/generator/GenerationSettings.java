@@ -22,6 +22,7 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.options.SearchableConfigurable;
+import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.ide.generator.GenerationSettings.MyState;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NonNls;
@@ -43,10 +44,6 @@ import javax.swing.JComponent;
 )
 public class GenerationSettings implements PersistentStateComponent<MyState>, ApplicationComponent, SearchableConfigurable {
 
-  public static final int TRACE_OFF = 0;
-  public static final int TRACE_STEPS = 1;
-  public static final int TRACE_LANGS = 2;
-  public static final int TRACE_TYPES = 3;
 
   public static GenerationSettings getInstance() {
     return ApplicationManager.getApplication().getComponent(GenerationSettings.class);
@@ -259,7 +256,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     private boolean myParallelGenerator = false;
     private boolean myStrictMode = false;
     private int myNumberOfParallelThreads = 2;
-    private int myPerformanceTracingLevel = TRACE_OFF;
+    private int myPerformanceTracingLevel = GenerationOptions.TRACE_OFF;
     private int myNumberOfModelsToKeep = -1;
     private boolean myShowInfo = false;
     private boolean myShowWarnings = true;

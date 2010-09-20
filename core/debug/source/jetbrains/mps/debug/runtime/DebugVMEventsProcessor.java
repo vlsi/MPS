@@ -23,12 +23,12 @@ import com.sun.jdi.VirtualMachine;
 import com.sun.jdi.event.*;
 import com.sun.jdi.request.EventRequest;
 import com.sun.jdi.request.StepRequest;
+import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.debug.api.IDebuggableFramesSelector;
 import jetbrains.mps.debug.api.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debug.api.runtime.execution.DebuggerManagerThread;
 import jetbrains.mps.debug.api.runtime.execution.IDebuggerManagerThread;
 import jetbrains.mps.debug.runtime.requests.LocatableEventRequestor;
-import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 

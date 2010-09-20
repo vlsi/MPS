@@ -24,11 +24,12 @@ package jetbrains.mps.javaParser.testMaterial4;
  */
 public interface OrdinaryInterfaceWithInnerClasses {
   public void foo();
+
   public class Ddd {
     public Ddd() {
 
     }
-   
+
   }
 
   public static class Fff {

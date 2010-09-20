@@ -43,7 +43,7 @@ public class SimpleConsoleProcessHandler extends OSProcessHandler {
       this.myConsoleView.print(s, ConsoleViewContentType.NORMAL_OUTPUT);
     }
   }
-  
+
   public void input(String s) {
     try {
       getProcessInputWriter().append(s);

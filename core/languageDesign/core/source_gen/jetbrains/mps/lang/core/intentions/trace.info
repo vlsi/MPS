@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="AddMissingLanguageImport_Intention.java" startLine="12" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.lang.core.intentions.AddMissingLanguageImport_Intention" />
+  <unitInfo fileName="AddMissingDependency_Intention.java" startLine="15" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.lang.core.intentions.AddMissingDependency_Intention" />
+  <unitInfo fileName="SetExportAnnotation_Intention.java" startLine="21" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.lang.core.intentions.SetExportAnnotation_Intention" />
   <root nodeId="1209383918929">
     <nodeInfo nodeId="1209383934311" fileName="AddMissingLanguageImport_Intention.java" startLine="32" startPosition="85" endLine="33" endPosition="80" />
     <nodeInfo nodeId="1209383977800" fileName="AddMissingLanguageImport_Intention.java" startLine="43" startPosition="90" endLine="44" endPosition="62" />

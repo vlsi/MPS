@@ -77,21 +77,89 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 @SuppressWarnings({"AssignmentToStaticFieldFromInstanceMethod"})
 public class ApplicationImpl extends ComponentManagerImpl implements ApplicationEx {
+
+  @Patch
+  public void exit(final boolean force) {
+    if (!force && getDefaultModalityState() != ModalityState.NON_MODAL) {
+      return;
+    }
+
+    Runnable runnable = new Runnable() {
+      public void run() {
+        if (!force) {
+          if (!showConfirmation()) {
+            saveAllIfNeeded(); // Patched by MPS to avoid forced models saving on closing IDE
+            return;
+          }
+        }
+
+        saveAllDocumentsIfNeeded(); // Patched by MPS to avoid forced models saving on closing IDE
+
+        saveSettings();
+
+        if (!canExit()) return;
+
+        if (disposeSelf()) System.exit(0);
+      }
+    };
+
+    if (!isDispatchThread()) {
+      invokeLater(runnable, ModalityState.NON_MODAL);
+    }
+    else {
+      runnable.run();
+    }
+  }
+
+  /**
+   * MPS patch: added this method to save model only if any of
+   * "save on frame deactivation" or "auto save if inactive" global options are enabled
+   */
+  @Patch
+  public void saveAllDocumentsIfNeeded() {
+    if (GeneralSettings.getInstance().isSaveOnFrameDeactivation() ||
+      GeneralSettings.getInstance().isAutoSaveIfInactive()) {
+      FileDocumentManager.getInstance().saveAllDocuments();
+    }
+  }
+
+  /**
+   * MPS patch: added this method to save everything except for models
+   */
+  @Patch
+  private void saveAllIfNeeded() {
+    if (myDoNotSave || isUnitTestMode() || isHeadlessEnvironment()) return;
+
+    saveAllDocumentsIfNeeded();
+
+    Project[] openProjects = ProjectManager.getInstance().getOpenProjects();
+    for (Project openProject : openProjects) {
+      ProjectEx project = (ProjectEx)openProject;
+      project.save();
+    }
+
+    saveSettings();
+  }
+
+  //==============MPS PATCH END
+  //==============MPS PATCH END
+  //==============MPS PATCH END
+
   private static final Logger LOG = Logger.getInstance("#com.intellij.application.impl.ApplicationImpl");
   private final ModalityState MODALITY_STATE_NONE = ModalityState.NON_MODAL;
   private final ModalityInvokator myInvokator = new ModalityInvokatorImpl();
 
   private final EventDispatcher<ApplicationListener> myDispatcher = EventDispatcher.create(ApplicationListener.class);
 
-  private boolean myTestModeFlag = false;
-  private boolean myHeadlessMode = false;
-  private boolean myCommandLineMode = false;
+  private final boolean myTestModeFlag;
+  private final boolean myHeadlessMode;
+  private final boolean myCommandLineMode;
 
-  private boolean myIsInternal = false;
+  private final boolean myIsInternal;
   private final String myName;
 
   private final ReentrantWriterPreferenceReadWriteLock myActionsLock = new ReentrantWriterPreferenceReadWriteLock();
-  private final Stack<Runnable> myWriteActionsStack = new Stack<Runnable>();
+  private final Stack<Runnable> myWriteActionsStack = new Stack<Runnable>(); // accessed from EDT only, no need to sync
 
   private volatile Runnable myExceptionalThreadWithReadAccessRunnable;
 
@@ -105,12 +173,13 @@ public class ApplicationImpl extends ComponentManagerImpl implements Application
   private final ExecutorService ourThreadExecutorsService = new ThreadPoolExecutor(
     3,
     Integer.MAX_VALUE,
-    30 * 60L,
+    5 * 60L,
     TimeUnit.SECONDS,
     new SynchronousQueue<Runnable>(),
     new ThreadFactory() {
+      int i;
       public Thread newThread(Runnable r) {
-        final Thread thread = new Thread(r, "ApplicationImpl pooled thread") {
+        final Thread thread = new Thread(r, "ApplicationImpl pooled thread "+i++) {
           public void interrupt() {
             if (LOG.isDebugEnabled()) {
               LOG.debug("Interrupted worker, will remove from pool");
@@ -138,6 +207,8 @@ public class ApplicationImpl extends ComponentManagerImpl implements Application
   @NonNls private static final String WAS_EVER_SHOWN = "was.ever.shown";
 
   private Boolean myActive;
+
+  private static final ThreadLocal<Integer> ourEdtSafe = new ThreadLocal<Integer>();
 
   protected void boostrapPicoContainer() {
     super.boostrapPicoContainer();
@@ -225,6 +296,7 @@ public class ApplicationImpl extends ComponentManagerImpl implements Application
   }
 
   private boolean disposeSelf() {
+    myDisposeInProgress = true;
     Project[] openProjects = ProjectManagerEx.getInstanceEx().getOpenProjects();
     final boolean[] canClose = {true};
     for (final Project project : openProjects) {
@@ -236,7 +308,6 @@ public class ApplicationImpl extends ComponentManagerImpl implements Application
       }, ApplicationBundle.message("command.exit"), null);
       if (!canClose[0]) return false;
     }
-    myDisposeInProgress = true;
     Disposer.dispose(this);
 
     Disposer.assertIsEmpty();
@@ -257,7 +328,7 @@ public class ApplicationImpl extends ComponentManagerImpl implements Application
       LOG.error(ex);
       PluginId pluginId = PluginManager.getPluginByClassName(componentClassName);
       @NonNls final String errorMessage = "Plugin " + pluginId.getIdString() + " failed to initialize and will be disabled:\n" + ex.getMessage() +
-                                          "\nPlease restart " + ApplicationNamesInfo.getInstance().getFullProductName() + ".";
+        "\nPlease restart " + ApplicationNamesInfo.getInstance().getFullProductName() + ".";
       PluginManager.disablePlugin(pluginId.getIdString());
       if (!myHeadlessMode) {
         JOptionPane.showMessageDialog(null, errorMessage);
@@ -271,8 +342,8 @@ public class ApplicationImpl extends ComponentManagerImpl implements Application
     else if (fatal) {
       LOG.error(ex);
       @NonNls final String errorMessage = "Fatal error initializing class " + componentClassName + ":\n" +
-                                          ex.toString() +
-                                          "\nComplete error stacktrace was written to idea.log";
+        ex.toString() +
+        "\nComplete error stacktrace was written to idea.log";
       if (!myHeadlessMode) {
         JOptionPane.showMessageDialog(null, errorMessage);
       }
@@ -320,7 +391,7 @@ public class ApplicationImpl extends ComponentManagerImpl implements Application
     return PluginsFacade.INSTANCE.getPlugins();
   }
 
-  public Future<?> executeOnPooledThread(final Runnable action) {
+  public Future<?> executeOnPooledThread(@NotNull final Runnable action) {
     return ourThreadExecutorsService.submit(new Runnable() {
       public void run() {
         try {
@@ -351,19 +422,19 @@ public class ApplicationImpl extends ComponentManagerImpl implements Application
   }
 
 
-  public void invokeLater(final Runnable runnable) {
+  public void invokeLater(@NotNull final Runnable runnable) {
     myInvokator.invokeLater(runnable);
   }
 
-  public void invokeLater(final Runnable runnable, @NotNull final Condition expired) {
+  public void invokeLater(@NotNull final Runnable runnable, @NotNull final Condition expired) {
     myInvokator.invokeLater(runnable, expired);
   }
 
-  public void invokeLater(final Runnable runnable, @NotNull final ModalityState state) {
+  public void invokeLater(@NotNull final Runnable runnable, @NotNull final ModalityState state) {
     myInvokator.invokeLater(runnable, state);
   }
 
-  public void invokeLater(final Runnable runnable, @NotNull final ModalityState state, @NotNull final Condition expired) {
+  public void invokeLater(@NotNull final Runnable runnable, @NotNull final ModalityState state, @NotNull final Condition expired) {
     myInvokator.invokeLater(runnable, state, expired);
   }
 
@@ -448,12 +519,12 @@ public class ApplicationImpl extends ComponentManagerImpl implements Application
   }
 
   public boolean runProcessWithProgressSynchronously(final Runnable process, final String progressTitle, final boolean canBeCanceled, @Nullable final Project project,
-                                                       final JComponent parentComponent, final String cancelText) {
+                                                     final JComponent parentComponent, final String cancelText) {
     assertIsDispatchThread();
 
     if (myExceptionalThreadWithReadAccessRunnable != null ||
-        ApplicationManager.getApplication().isUnitTestMode() ||
-        ApplicationManager.getApplication().isHeadlessEnvironment()) {
+      ApplicationManager.getApplication().isUnitTestMode() ||
+      ApplicationManager.getApplication().isHeadlessEnvironment()) {
       try {
         ProgressManager.getInstance().runProcess(process, new EmptyProgressIndicator());
       }
@@ -473,7 +544,7 @@ public class ApplicationImpl extends ComponentManagerImpl implements Application
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
           if (myExceptionalThreadWithReadAccessRunnable != process) {
-              LOG.error("myExceptionalThreadWithReadAccessRunnable != process, process = " + myExceptionalThreadWithReadAccessRunnable);
+            LOG.error("myExceptionalThreadWithReadAccessRunnable != process, process = " + myExceptionalThreadWithReadAccessRunnable);
           }
 
           executeOnPooledThread(new Runnable() {
@@ -490,6 +561,10 @@ public class ApplicationImpl extends ComponentManagerImpl implements Application
               catch (ProcessCanceledException e) {
                 progress.cancel();
                 // ok to ignore.
+              }
+              catch (RuntimeException e) {
+                progress.cancel();
+                throw e;
               }
               finally {
                 setExceptionalThreadWithReadAccessFlag(old);
@@ -556,7 +631,7 @@ public class ApplicationImpl extends ComponentManagerImpl implements Application
     return result;
   }
 
-  public void invokeAndWait(Runnable runnable, @NotNull ModalityState modalityState) {
+  public void invokeAndWait(@NotNull Runnable runnable, @NotNull ModalityState modalityState) {
     if (isDispatchThread()) {
       LOG.error("invokeAndWait must not be called from event queue thread");
       runnable.run();
@@ -580,7 +655,7 @@ public class ApplicationImpl extends ComponentManagerImpl implements Application
     return entities.length > 0 ? new ModalityStateEx(entities) : getNoneModalityState();
   }
 
-  public ModalityState getModalityStateForComponent(Component c) {
+  public ModalityState getModalityStateForComponent(@NotNull Component c) {
     Window window = c instanceof Window ? (Window)c : SwingUtilities.windowForComponent(c);
     if (window == null) return getNoneModalityState(); //?
     return LaterInvocator.modalityStateForWindow(window);
@@ -610,39 +685,6 @@ public class ApplicationImpl extends ComponentManagerImpl implements Application
 
   public void exit() {
     exit(false);
-  }
-
-  @Patch
-  public void exit(final boolean force) {
-    if (!force && getDefaultModalityState() != ModalityState.NON_MODAL) {
-      return;
-    }
-
-    Runnable runnable = new Runnable() {
-      public void run() {
-        if (!force) {
-          if (!showConfirmation()) {
-            saveAllIfNeeded(); // Patched by MPS to avoid forced models saving on closing IDE
-            return;
-          }
-        }
-
-        saveAllDocumentsIfNeeded(); // Patched by MPS to avoid forced models saving on closing IDE
-
-        saveSettings();
-
-        if (!canExit()) return;
-
-        if (disposeSelf()) System.exit(0);
-      }
-    };
-
-    if (!isDispatchThread()) {
-      invokeLater(runnable, ModalityState.NON_MODAL);
-    }
-    else {
-      runnable.run();
-    }
   }
 
   private static boolean showConfirmation() {
@@ -675,7 +717,7 @@ public class ApplicationImpl extends ComponentManagerImpl implements Application
     return true;
   }
 
-  public void runReadAction(final Runnable action) {
+  public void runReadAction(@NotNull final Runnable action) {
     /** if we are inside read action, do not try to acquire read lock again since it will deadlock if there is a pending writeAction
      * see {@link com.intellij.util.concurrency.ReentrantWriterPreferenceReadWriteLock#allowReader()} */
     boolean mustAcquire = !isReadAccessAllowed();
@@ -717,7 +759,7 @@ public class ApplicationImpl extends ComponentManagerImpl implements Application
     return old;
   }
 
-  public <T> T runReadAction(final Computable<T> computation) {
+  public <T> T runReadAction(@NotNull final Computable<T> computation) {
     final Ref<T> ref = Ref.create(null);
     runReadAction(new Runnable() {
       public void run() {
@@ -727,7 +769,7 @@ public class ApplicationImpl extends ComponentManagerImpl implements Application
     return ref.get();
   }
 
-  public void runWriteAction(final Runnable action) {
+  public void runWriteAction(@NotNull final Runnable action) {
     assertCanRunWriteAction();
 
     ActivityTracker.getInstance().inc();
@@ -742,9 +784,7 @@ public class ApplicationImpl extends ComponentManagerImpl implements Application
     }
 
     try {
-      synchronized (myWriteActionsStack) {
-        myWriteActionsStack.push(action);
-      }
+      myWriteActionsStack.push(action);
 
       fireWriteActionStarted(action);
 
@@ -754,9 +794,7 @@ public class ApplicationImpl extends ComponentManagerImpl implements Application
       try {
         fireWriteActionFinished(action);
 
-        synchronized (myWriteActionsStack) {
-          myWriteActionsStack.pop();
-        }
+        myWriteActionsStack.pop();
       }
       finally {
         myActionsLock.writeLock().release();
@@ -764,7 +802,7 @@ public class ApplicationImpl extends ComponentManagerImpl implements Application
     }
   }
 
-  public <T> T runWriteAction(final Computable<T> computation) {
+  public <T> T runWriteAction(@NotNull final Computable<T> computation) {
     final Ref<T> ref = Ref.create(null);
     runWriteAction(new Runnable() {
       public void run() {
@@ -774,18 +812,18 @@ public class ApplicationImpl extends ComponentManagerImpl implements Application
     return ref.get();
   }
 
-  public Object getCurrentWriteAction(Class actionClass) {
-    synchronized (myWriteActionsStack) {
-      for (int i = myWriteActionsStack.size() - 1; i >= 0; i--) {
-        Runnable action = myWriteActionsStack.get(i);
-        if (actionClass == null || ReflectionCache.isAssignable(actionClass, action.getClass())) return action;
-      }
+  public <T>  T getCurrentWriteAction(@Nullable Class<T> actionClass) {
+    assertCanRunWriteAction();
+
+    for (int i = myWriteActionsStack.size() - 1; i >= 0; i--) {
+      Runnable action = myWriteActionsStack.get(i);
+      if (actionClass == null || ReflectionCache.isAssignable(actionClass, action.getClass())) return (T)action;
     }
     return null;
   }
 
   public void assertReadAccessAllowed() {
-    if (myTestModeFlag || myHeadlessMode) return;
+    if (myHeadlessMode) return;
     if (!isReadAccessAllowed()) {
       LOG.error(
         "Read access is allowed from event dispatch thread or inside read-action only (see com.intellij.openapi.application.Application.runReadAction())",
@@ -817,10 +855,10 @@ public class ApplicationImpl extends ComponentManagerImpl implements Application
   public boolean isReadAccessAllowed() {
     Thread currentThread = Thread.currentThread();
     return ourDispatchThread == currentThread ||
-           isExceptionalThreadWithReadAccess() ||
-           myActionsLock.isReadLockAcquired() ||
-           myActionsLock.isWriteLockAcquired() ||
-           isDispatchThread();
+      isExceptionalThreadWithReadAccess() ||
+      myActionsLock.isReadLockAcquired() ||
+      myActionsLock.isWriteLockAcquired() ||
+      isDispatchThread();
   }
 
   public void assertReadAccessToDocumentsAllowed() {
@@ -847,7 +885,7 @@ public class ApplicationImpl extends ComponentManagerImpl implements Application
   }
 
   private void assertIsDispatchThread(String message) {
-    if (myTestModeFlag || myHeadlessMode || ShutDownTracker.isShutdownHookRunning()) return;
+    if (myHeadlessMode || ShutDownTracker.isShutdownHookRunning()) return;
     final Thread currentThread = Thread.currentThread();
     if (ourDispatchThread == currentThread) return;
 
@@ -856,10 +894,30 @@ public class ApplicationImpl extends ComponentManagerImpl implements Application
     }
     if (ourDispatchThread == currentThread) return;
 
+    Integer safeCounter = ourEdtSafe.get();
+    if (safeCounter != null && safeCounter > 0) return;
+
     LOG.error(message,
-              "Current thread: " + describe(Thread.currentThread()),
-              "Our dispatch thread:" + describe(ourDispatchThread),
-              "SystemEventQueueThread: " + describe(getEventQueueThread()));
+      "Current thread: " + describe(Thread.currentThread()),
+      "Our dispatch thread:" + describe(ourDispatchThread),
+      "SystemEventQueueThread: " + describe(getEventQueueThread()));
+  }
+
+  public void runEdtSafeAction(@NotNull Runnable runnable) {
+    Integer value = ourEdtSafe.get();
+    if (value == null) {
+      value = Integer.valueOf(0);
+    }
+
+    ourEdtSafe.set(value + 1);
+
+    try {
+      runnable.run();
+    }
+    finally {
+      int newValue = ourEdtSafe.get() - 1;
+      ourEdtSafe.set(newValue >= 1 ? newValue : null);
+    }
   }
 
   public void assertIsDispatchThread(@Nullable final JComponent component) {
@@ -880,6 +938,11 @@ public class ApplicationImpl extends ComponentManagerImpl implements Application
         assertIsDispatchThread();
       }
     }
+  }
+
+  public void assertTimeConsuming() {
+    if (myTestModeFlag || myHeadlessMode || ShutDownTracker.isShutdownHookRunning()) return;
+    LOG.assertTrue(!isDispatchThread(), "This operation is time consuming and must not be called on EDT");
   }
 
   public boolean tryRunReadAction(@NotNull Runnable action) {
@@ -942,7 +1005,7 @@ public class ApplicationImpl extends ComponentManagerImpl implements Application
 
   public void assertWriteAccessAllowed() {
     LOG.assertTrue(isWriteAccessAllowed(),
-                   "Write access is allowed inside write-action only (see com.intellij.openapi.application.Application.runWriteAction())");
+      "Write access is allowed inside write-action only (see com.intellij.openapi.application.Application.runWriteAction())");
   }
 
   public boolean isWriteAccessAllowed() {
@@ -958,15 +1021,15 @@ public class ApplicationImpl extends ComponentManagerImpl implements Application
     LOG.assertTrue(myInEditorPaintCounter >= 0);
   }
 
-  public void addApplicationListener(ApplicationListener l) {
+  public void addApplicationListener(@NotNull ApplicationListener l) {
     myDispatcher.addListener(l);
   }
 
-  public void addApplicationListener(ApplicationListener l, Disposable parent) {
+  public void addApplicationListener(@NotNull ApplicationListener l, @NotNull Disposable parent) {
     myDispatcher.addListener(l, parent);
   }
 
-  public void removeApplicationListener(ApplicationListener l) {
+  public void removeApplicationListener(@NotNull ApplicationListener l) {
     myDispatcher.removeListener(l);
   }
 
@@ -986,7 +1049,7 @@ public class ApplicationImpl extends ComponentManagerImpl implements Application
     myDispatcher.getMulticaster().writeActionFinished(action);
   }
 
-  public void _saveSettings() { // for testing purposes
+  public void _saveSettings() { // public for testing purposes
     if (mySaveSettingsIsInProgress.compareAndSet(false, true)) {
       try {
         doSave();
@@ -1004,14 +1067,14 @@ public class ApplicationImpl extends ComponentManagerImpl implements Application
                 final PluginException pluginException = (PluginException)ex;
                 PluginManager.disablePlugin(pluginException.getPluginId().getIdString());
                 Messages.showMessageDialog("The plugin " +
-                                           pluginException.getPluginId() +
-                                           " failed to save settings and has been disabled. Please restart " +
-                                           ApplicationNamesInfo.getInstance().getFullProductName(), CommonBundle.getErrorTitle(),
-                                           Messages.getErrorIcon());
+                  pluginException.getPluginId() +
+                  " failed to save settings and has been disabled. Please restart " +
+                  ApplicationNamesInfo.getInstance().getFullProductName(), CommonBundle.getErrorTitle(),
+                  Messages.getErrorIcon());
               }
               else {
                 Messages.showMessageDialog(ApplicationBundle.message("application.save.settings.error", ex.getLocalizedMessage()),
-                                           CommonBundle.getErrorTitle(), Messages.getErrorIcon());
+                  CommonBundle.getErrorTitle(), Messages.getErrorIcon());
 
               }
             }
@@ -1025,44 +1088,15 @@ public class ApplicationImpl extends ComponentManagerImpl implements Application
   }
 
   public void saveSettings() {
-    if (myDoNotSave || isUnitTestMode() || isHeadlessEnvironment()) return;
-    _saveSettings();
+    if (!myDoNotSave && !isUnitTestMode() && !isHeadlessEnvironment()) {
+      _saveSettings();
+    }
   }
 
   public void saveAll() {
     if (myDoNotSave || isUnitTestMode() || isHeadlessEnvironment()) return;
 
     FileDocumentManager.getInstance().saveAllDocuments();
-
-    Project[] openProjects = ProjectManager.getInstance().getOpenProjects();
-    for (Project openProject : openProjects) {
-      ProjectEx project = (ProjectEx)openProject;
-      project.save();
-    }
-
-    saveSettings();
-  }
-
-  /**
-   * MPS patch: added this method to save model only if any of
-   * "save on frame deactivation" or "auto save if inactive" global options are enabled
-   */
-  @Patch
-  public void saveAllDocumentsIfNeeded() {
-    if (GeneralSettings.getInstance().isSaveOnFrameDeactivation() ||
-              GeneralSettings.getInstance().isAutoSaveIfInactive()) {
-      FileDocumentManager.getInstance().saveAllDocuments();
-    }
-  }
-
-  /**
-   * MPS patch: added this method to save everything except for models
-   */
-  @Patch
-  private void saveAllIfNeeded() {
-    if (myDoNotSave || isUnitTestMode() || isHeadlessEnvironment()) return;
-
-    saveAllDocumentsIfNeeded();
 
     Project[] openProjects = ProjectManager.getInstance().getOpenProjects();
     for (Project openProject : openProjects) {
@@ -1091,16 +1125,19 @@ public class ApplicationImpl extends ComponentManagerImpl implements Application
   }
 
   public boolean isRestartCapable() {
-    return SystemInfo.isWindows;
+    return SystemInfo.isWindows || SystemInfo.isMacOSSnowLeopard;
   }
 
   public void restart() {
-   if (SystemInfo.isWindows) {
-     Win32Restarter.restart();
+    if (SystemInfo.isWindows) {
+      Win32Restarter.restart();
+    }
+    else if (SystemInfo.isMacOSSnowLeopard) {
+      MacRestarter.restart();
     }
     else {
-     exit();
-   }
+      exit();
+    }
   }
 
   public boolean isSaving() {

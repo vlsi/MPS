@@ -17,7 +17,6 @@ package jetbrains.mps.workbench.dialogs.project.utildialogs.addmodelimport;
 
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -166,7 +165,8 @@ public class ImportProperties {
       return mySourceModule.getModuleReference();
     }
     for (IModule owner : owners) {
-      if (mySourceModule.getDependenciesManager().getAllDependOnModules().contains(owner)) return owner.getModuleReference();
+      if (mySourceModule.getDependenciesManager().getAllDependOnModules().contains(owner))
+        return owner.getModuleReference();
     }
 
     return null;

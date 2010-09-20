@@ -9,11 +9,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.baseLanguage.index.ClassifierSuccessorsFinder;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.baseLanguage.index.ClassifierSuccessorsFinder;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
@@ -39,16 +38,7 @@ public class DerivedMethods_Finder extends GeneratedFinder {
   protected void doFind(SNode node, IScope scope, final List<SNode> _results, ProgressIndicator indicator) {
     SNode classifier = (SNode) SNodeOperations.getParent(node);
     final SNode instanceMethod = node;
-    List<SNode> derivedClassifiers = ClassifierSuccessorsFinder.getDerivedClassifiers(SNodeOperations.getParent(node), scope);
-    for (SNode derivedClassifier : ListSequence.fromList(derivedClassifiers).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        return SNodeOperations.as(it, "jetbrains.mps.baseLanguage.structure.Classifier");
-      }
-    }).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return it != null;
-      }
-    })) {
+    for (SNode derivedClassifier : ListSequence.fromList(ClassifierSuccessorsFinder.getDerivedClassifiers(classifier, scope))) {
       ListSequence.fromList(SLinkOperations.getTargets(derivedClassifier, "method", true)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(instanceMethod, it);

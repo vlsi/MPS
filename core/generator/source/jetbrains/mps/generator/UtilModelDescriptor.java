@@ -16,16 +16,15 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.smodel.BaseSModelDescriptor;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * @deprecated TODO get rid of it, substitute  
+ * @deprecated TODO get rid of it, substitute
  */
 @Deprecated
-public abstract class UtilModelDescriptor extends BaseSModelDescriptor{
+public abstract class UtilModelDescriptor extends BaseSModelDescriptor {
   protected UtilModelDescriptor(@NotNull SModelReference modelReference) {
     super(IModelRootManager.NULL_MANAGER, modelReference, false);
   }

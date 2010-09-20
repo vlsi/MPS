@@ -26,10 +26,7 @@ public class AbstractModuleAdjuster implements ApplicationComponent {
   }
 
   public void initComponent() {
-    AbstractModule.registerModelCreationListener(new GeneratorModelCreationListener());
     AbstractModule.registerModelCreationListener(new TestsModelCreationListener());
-    AbstractModule.registerModelCreationListener(new LanguageAspectCreationListener());
-    AbstractModule.registerModelCreationListener(new LanguageModelCreationListener());
   }
 
   public void disposeComponent() {

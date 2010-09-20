@@ -89,7 +89,7 @@ public class HighlighterMessage extends EditorMessageWithTarget {
   private void paintDecorations(Graphics g, EditorCell cell) {
     if (cell == null) return;
     if (isWarning()) {
-      cell.paintSelection(g, new Color(250, 247, 158), false);
+      cell.paintSelection(g, new Color(246, 235, 188), false);
     } else {
       ColorAndGraphicsUtil.drawWaveUnderCell(g, getColor(), cell);
     }

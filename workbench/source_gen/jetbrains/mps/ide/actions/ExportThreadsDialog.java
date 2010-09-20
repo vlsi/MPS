@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
 import jetbrains.mps.datatransfer.CopyPasteUtil;
+import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 
 public class ExportThreadsDialog extends BaseDialog {
   private final StringBuffer myThreads;
@@ -38,5 +39,10 @@ public class ExportThreadsDialog extends BaseDialog {
   @BaseDialog.Button(position = 1, name = "Close", mnemonic = 'C', defaultButton = false)
   public void buttonClose() {
     dispose();
+  }
+
+  @Override
+  public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
+    return new DialogDimensionsSettings.DialogDimensions(200, 200, 600, 600);
   }
 }

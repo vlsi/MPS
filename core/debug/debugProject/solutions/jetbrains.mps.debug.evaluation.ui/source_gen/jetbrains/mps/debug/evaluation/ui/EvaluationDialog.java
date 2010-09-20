@@ -13,6 +13,7 @@ import com.sun.jdi.ThreadReference;
 import jetbrains.mps.debug.runtime.DebugSession;
 import jetbrains.mps.nodeEditor.Highlighter;
 import jetbrains.mps.debug.runtime.JavaUiState;
+import com.intellij.openapi.project.Project;
 import java.awt.Dimension;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNode;
@@ -42,8 +43,19 @@ import jetbrains.mps.debug.api.integration.ui.WatchableNode;
 import jetbrains.mps.debug.runtime.java.programState.watchables.CalculatedWatchable;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.TextTreeNode;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import java.awt.Color;
 import jetbrains.mps.ide.messages.Icons;
+import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.datatransfer.CopyPasteUtil;
+import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
+import java.io.StringWriter;
+import java.io.PrintWriter;
 
 public class EvaluationDialog extends BaseDialog {
   private static final Logger LOG = Logger.getLogger(EvaluationDialog.class);
@@ -63,8 +75,8 @@ public class EvaluationDialog extends BaseDialog {
 
   public EvaluationDialog(final IOperationContext context, JavaUiState uiState, final DebugSession debugSession) {
     super(context.getMainFrame(), "Evaluate");
-    this.myContext = context;
-    this.myHighlighter = myContext.getProject().getComponent(Highlighter.class);
+    Project project = context.getProject();
+    myHighlighter = project.getComponent(Highlighter.class);
     myClassFQName = uiState.getStackFrame().getLocation().getUnitName();
     myThreadReference = uiState.getThread().getThread();
     myDebugSession = debugSession;
@@ -74,7 +86,8 @@ public class EvaluationDialog extends BaseDialog {
     mySessionChangeListener = new EvaluationDialog.MySessionChangeListener();
     debugSession.addChangeListener(mySessionChangeListener);
 
-    this.myEvaluationLogic = AbstractEvaluationLogic.createInstance(context, uiState, debugSession);
+    myEvaluationLogic = AbstractEvaluationLogic.createInstance(project, uiState, debugSession);
+    myContext = myEvaluationLogic.getContext();
     if (myEvaluationLogic.isDeveloperMode()) {
       myEvaluationLogic.addGenerationListener(new _FunctionTypes._void_P1_E0<SNode>() {
         public void invoke(SNode result) {
@@ -196,11 +209,7 @@ public class EvaluationDialog extends BaseDialog {
     invokeLaterIfNeeded(new Runnable() {
       public void run() {
         if (error != null) {
-          if (error.getMessage() != null) {
-            myTree.setError(error.getMessage());
-          } else {
-            myTree.setError(error.toString());
-          }
+          myTree.setError(error);
         } else {
           myTree.setError(message);
         }
@@ -312,15 +321,24 @@ public class EvaluationDialog extends BaseDialog {
   }
 
   private static class FailureState extends EvaluationDialog.EvaluationState {
-    @NotNull
-    private final String myErrorText;
+    @Nullable
+    private String myErrorText;
+    private Throwable myError;
 
     public FailureState(String errorText) {
       myErrorText = errorText;
     }
 
+    private FailureState(Throwable error) {
+      myError = error;
+    }
+
     public void rebuild(MPSTreeNode rootTreeNode) {
-      rootTreeNode.add(new EvaluationDialog.ErrorTreeNode(myErrorText));
+      if (myError != null) {
+        rootTreeNode.add(new EvaluationDialog.ErrorTreeNode(myError));
+      } else {
+        rootTreeNode.add(new EvaluationDialog.ErrorTreeNode(myErrorText));
+      }
     }
   }
 
@@ -344,6 +362,10 @@ public class EvaluationDialog extends BaseDialog {
       myState = new EvaluationDialog.FailureState(text);
     }
 
+    private void setError(@NotNull Throwable error) {
+      myState = new EvaluationDialog.FailureState(error);
+    }
+
     private void setEvaluating() {
       myState = new EvaluationDialog.EvaluationInProgressState();
     }
@@ -359,15 +381,31 @@ public class EvaluationDialog extends BaseDialog {
   }
 
   private static class ErrorTreeNode extends TextTreeNode {
-    public ErrorTreeNode(@NotNull String text) {
+    private final List<String> myExtendedMessage = ListSequence.fromList(new ArrayList<String>());
+
+    public ErrorTreeNode(@NotNull String text, String... extendedMessage) {
       super(text);
 
+      if (extendedMessage != null && extendedMessage.length > 0) {
+        for (int i = 0; i < extendedMessage.length; i++) {
+          ListSequence.fromList(myExtendedMessage).addElement(extendedMessage[i]);
+        }
+      }
+
       updatePresentation();
+      doInit();
+    }
+
+    public ErrorTreeNode(Throwable t) {
+      this((t.getMessage() == null ?
+        t.toString() :
+        t.getMessage()
+      ), getStackTrace(t));
     }
 
     @Override
     public boolean isLeaf() {
-      return true;
+      return ListSequence.fromList(myExtendedMessage).count() == 0;
     }
 
     @Override
@@ -376,6 +414,41 @@ public class EvaluationDialog extends BaseDialog {
 
       setColor(Color.RED);
       setIcon(Icons.ERROR_ICON);
+    }
+
+    @Override
+    protected void doInit() {
+      for (String messagePart : ListSequence.fromList(myExtendedMessage)) {
+        TextTreeNode node = new TextTreeNode(messagePart) {
+          @Override
+          public boolean isLeaf() {
+            return true;
+          }
+        };
+        add(node);
+        node.setIcon(Icons.ERROR_ICON);
+      }
+    }
+
+    @Override
+    public ActionGroup getActionGroup() {
+      DefaultActionGroup defaultActionGroup = new DefaultActionGroup();
+      defaultActionGroup.add(new AnAction("Copy Stacktrace To Clipboard") {
+        public void actionPerformed(AnActionEvent event) {
+          CopyPasteUtil.copyTextToClipboard(getText() + ListSequence.fromList(myExtendedMessage).foldLeft("", new ILeftCombinator<String, String>() {
+            public String combine(String s, String it) {
+              return s + "\n" + it;
+            }
+          }));
+        }
+      });
+      return defaultActionGroup;
+    }
+
+    private static String[] getStackTrace(Throwable t) {
+      StringWriter writer = new StringWriter();
+      t.printStackTrace(new PrintWriter(writer));
+      return writer.toString().split("\n");
     }
   }
 

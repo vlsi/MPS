@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="RemoveBuiltInVariables_MigrationScript.java" startLine="19" startPosition="28" endLine="53" endPosition="5" unitName="jetbrains.mps.build.packaging.scripts.RemoveBuiltInVariables_MigrationScript$1" />
+  <unitInfo fileName="RemoveBuiltInVariables_MigrationScript.java" startLine="16" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.build.packaging.scripts.RemoveBuiltInVariables_MigrationScript" />
   <root nodeId="7323449223785111020">
     <nodeInfo nodeId="7323449223785111026" fileName="RemoveBuiltInVariables_MigrationScript.java" startLine="32" startPosition="59" endLine="33" endPosition="109" />
     <nodeInfo nodeId="7323449223785135329" fileName="RemoveBuiltInVariables_MigrationScript.java" startLine="40" startPosition="48" endLine="41" endPosition="163" />

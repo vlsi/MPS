@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
-import jetbrains.mps.generator.NoCachesStrategy;
+import jetbrains.mps.project.ProjectOperationContext;
 
 public class GenerateTemplateQueries_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -100,7 +100,7 @@ public class GenerateTemplateQueries_Action extends GeneratedAction {
           if (!(GenerateTemplateQueries_Action.this.regenerate)) {
             models.value = ListSequence.fromList(models.value).where(new IWhereFilter<SModelDescriptor>() {
               public boolean accept(SModelDescriptor it) {
-                return ModelGenerationStatusManager.getInstance().generationRequired(it, GenerateTemplateQueries_Action.this.project, NoCachesStrategy.createBuildCachesStrategy());
+                return ModelGenerationStatusManager.getInstance().generationRequired(it, ProjectOperationContext.get(GenerateTemplateQueries_Action.this.project));
               }
             }).toListSequence();
           }

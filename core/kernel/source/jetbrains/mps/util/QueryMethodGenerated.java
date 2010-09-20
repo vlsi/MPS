@@ -166,7 +166,7 @@ public class QueryMethodGenerated implements ApplicationComponent {
       cls = l.getClass(adapterName);
 
       if (cls == null) {
-        throw new ClassNotFoundException(adapterName);
+        throw new ClassNotFoundException("class " + adapterName + " was not found in language: " + languageNamespace);
       }
 
       Constructor ctor = cls.isInterface() ?

@@ -134,7 +134,7 @@ public class EventsCollector {
     public void commandStarted() {
       myEvents.clear();
       myCurrentCommand = myCommandProcessor.getCurrentCommand();
-      if (myCurrentCommand==null){
+      if (myCurrentCommand == null) {
         return;
       }
     }

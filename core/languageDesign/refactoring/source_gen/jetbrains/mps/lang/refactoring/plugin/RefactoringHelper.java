@@ -5,7 +5,7 @@ package jetbrains.mps.lang.refactoring.plugin;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.workbench.action.ActionFactory;
-import jetbrains.mps.refactoring.framework.GenericRefactoringAction;
+import jetbrains.mps.ide.refactoring.GenericRefactoringAction;
 
 public class RefactoringHelper {
   public static BaseAction getActionForRefactoring(IRefactoring refactoring) {

@@ -739,7 +739,7 @@
                   <link role="baseMethodDeclaration:3" targetNodeId="8.~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolveInfo="instance" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2053915240767703946">
-                  <link role="baseMethodDeclaration:3" targetNodeId="8.~ModelAccess.runReadAction(com.intellij.openapi.util.Computable):java.lang.Object" resolveInfo="runReadAction" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="8.~ModelCommandExecutor.runReadAction(com.intellij.openapi.util.Computable):java.lang.Object" resolveInfo="runReadAction" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2053915240767703947">
                     <link role="variableDeclaration:3" targetNodeId="2053915240767703919" resolveInfo="c" />
                   </node>

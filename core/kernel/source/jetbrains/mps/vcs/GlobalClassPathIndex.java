@@ -15,16 +15,11 @@
  */
 package jetbrains.mps.vcs;
 
-import com.intellij.ide.projectView.ProjectView;
-import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.vcs.FilePath;
 import com.intellij.openapi.vcs.actions.VcsContextFactory;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.ide.projectPane.fileSystem.FileViewProjectPane;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.EachClassPathItemVisitor;
@@ -79,20 +74,21 @@ public class GlobalClassPathIndex implements ApplicationComponent {
   };
 
   private void callChangedListeners() {
-    for (ChangedListener l:myListeners){
+    for (ChangedListener l : myListeners) {
       l.changed();
     }
   }
 
-  public void addChangedListener(ChangedListener l){
+  public void addChangedListener(ChangedListener l) {
     myListeners.add(l);
   }
 
-  public void removeChangedListener(ChangedListener l){
+  public void removeChangedListener(ChangedListener l) {
     myListeners.remove(l);
   }
 
-  @SuppressWarnings({"UnusedDeclaration"}) //component dependency 
+  @SuppressWarnings({"UnusedDeclaration"})
+  //component dependency
   public GlobalClassPathIndex(final MPSModuleRepository moduleRepository, VcsContextFactory factory) {
     myModuleRepository = moduleRepository;
   }

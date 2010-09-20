@@ -10,6 +10,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class StatementList_Behavior {
   public static void init(SNode thisNode) {
@@ -69,5 +70,15 @@ public class StatementList_Behavior {
     for (SNode statement : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "statement", true))) {
       Statement_Behavior.call_collectUncaughtMethodThrowables_5412515780383134223(statement, throwables, ignoreMayBeThrowables);
     }
+  }
+
+  public static SNode call_getFirstStatement_5420652334935371934(SNode thisNode) {
+    for (SNode statement : SLinkOperations.getTargets(thisNode, "statement", true)) {
+      if (SNodeOperations.isInstanceOf(statement, "jetbrains.mps.baseLanguage.structure.SingleLineComment") || SNodeOperations.isInstanceOf(statement, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock") || SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(statement), "jetbrains.mps.baseLanguage.structure.Statement")) {
+        continue;
+      }
+      return statement;
+    }
+    return null;
   }
 }

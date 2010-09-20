@@ -14,7 +14,8 @@ public class ModelChangedCaster {
   private List<NodeModelChangedListener> myListeners = new ArrayList<NodeModelChangedListener>();
   private static ModelChangedCaster ourInstance = new ModelChangedCaster();
 
-  private ModelChangedCaster() {}
+  private ModelChangedCaster() {
+  }
 
   public static ModelChangedCaster getInstance() {
     return ourInstance;

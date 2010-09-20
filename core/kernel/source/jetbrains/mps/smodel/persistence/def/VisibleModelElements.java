@@ -21,7 +21,7 @@ import jetbrains.mps.smodel.SModelReference;
  * Evgeny Gryaznov, Aug 6, 2010
  */
 public interface VisibleModelElements {
-  
+
   SModelReference getModelUID(int importIndex);
 
   int getVisibleModelIndex(SModelReference targetModelReference);

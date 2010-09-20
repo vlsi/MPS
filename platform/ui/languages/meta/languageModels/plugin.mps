@@ -874,7 +874,7 @@
                       <link role="variableDeclaration" targetNodeId="3812105808561105137" resolveInfo="LOG" />
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="3812105808561169690">
-                      <link role="baseMethodDeclaration" targetNodeId="18.~Category.warn(java.lang.Object):void" resolveInfo="warn" />
+                      <link role="baseMethodDeclaration" targetNodeId="18.~Category.info(java.lang.Object):void" resolveInfo="info" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3812105808561169691">
                         <property name="value" value="EditorExtensions.runDelayed called after dispose" />
                       </node>
@@ -972,7 +972,7 @@
                       <link role="variableDeclaration" targetNodeId="3812105808561105137" resolveInfo="LOG" />
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="3812105808561169668">
-                      <link role="baseMethodDeclaration" targetNodeId="18.~Category.warn(java.lang.Object):void" resolveInfo="warn" />
+                      <link role="baseMethodDeclaration" targetNodeId="18.~Category.info(java.lang.Object):void" resolveInfo="info" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3812105808561169669">
                         <property name="value" value="EditorExtensions.runOnDispose called after dispose" />
                       </node>
@@ -2088,7 +2088,7 @@
                             <link role="classConcept" targetNodeId="16.~ModelAccess" resolveInfo="ModelAccess" />
                           </node>
                           <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="9003987136928286577">
-                            <link role="baseMethodDeclaration" targetNodeId="16.~ModelAccess.runWriteActionInCommand(java.lang.Runnable):void" resolveInfo="runWriteActionInCommand" />
+                            <link role="baseMethodDeclaration" targetNodeId="16.~ModelCommandExecutor.runWriteActionInCommand(java.lang.Runnable):void" resolveInfo="runWriteActionInCommand" />
                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="9003987136928286578">
                               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="9003987136928286579">
                                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="9003987136928286580">
@@ -2305,7 +2305,7 @@
                             <link role="classConcept" targetNodeId="16.~ModelAccess" resolveInfo="ModelAccess" />
                           </node>
                           <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="9003987136928286555">
-                            <link role="baseMethodDeclaration" targetNodeId="16.~ModelAccess.runWriteActionInCommand(com.intellij.openapi.util.Computable):java.lang.Object" resolveInfo="runWriteActionInCommand" />
+                            <link role="baseMethodDeclaration" targetNodeId="16.~ModelCommandExecutor.runWriteActionInCommand(com.intellij.openapi.util.Computable):java.lang.Object" resolveInfo="runWriteActionInCommand" />
                             <node role="actualArgument" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="9003987136928286556">
                               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="9003987136928286557">
                                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="9003987136928286562">

@@ -1,6 +1,5 @@
 package jetbrains.mps.debug.api;
 
-import com.sun.jdi.StackFrame;
 import jetbrains.mps.debug.api.programState.IStackFrame;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -15,11 +14,15 @@ import java.util.List;
 // but for that purpose at least MPSBreakpoint and Breakpoint Manager and CurrentLinePositionComponent
 // should also be refactored.
 // currently there's no such task.
+
 public interface IDebuggableFramesSelector {
   @Nullable
   IStackFrame findDeepestDebuggableFrame(List<IStackFrame> frames);
+
   boolean isDebuggableFrame(@NotNull IStackFrame frame);
+
   boolean isDebuggablePosition(String unitName, String fileName, int position);
+
   /**
    * Tells if two position in code correspond to the same node.
    */

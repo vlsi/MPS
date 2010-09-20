@@ -97,7 +97,7 @@ public class PersistenceSettings implements SearchableConfigurable, PersistentSt
     return null;
   }
 
-   @Nls
+  @Nls
   public String getDisplayName() {
     return "Model Persistence";
   }
@@ -150,7 +150,7 @@ public class PersistenceSettings implements SearchableConfigurable, PersistentSt
         myButtonGroup.add(radioButton);
       }
       radioButton = new JRadioButton("Always update to the latest version");
-      myRadioButtons[myRadioButtons.length-1] = radioButton;
+      myRadioButtons[myRadioButtons.length - 1] = radioButton;
       myButtonGroup.add(radioButton);
       reset();
 
@@ -176,7 +176,7 @@ public class PersistenceSettings implements SearchableConfigurable, PersistentSt
           return;
         }
       }
-      if(myRadioButtons[myRadioButtons.length-1].isSelected()) {
+      if (myRadioButtons[myRadioButtons.length - 1].isSelected()) {
         myUserPersistenceVersion = VERSION_UPDATE_TO_THE_LATEST;
       } else {
         myUserPersistenceVersion = VERSION_UNDEFINED;
@@ -189,7 +189,7 @@ public class PersistenceSettings implements SearchableConfigurable, PersistentSt
         JRadioButton radioButton = myRadioButtons[i - MIN_VERSION + 1];
         radioButton.setSelected(myUserPersistenceVersion == i);
       }
-      myRadioButtons[myRadioButtons.length-1].setSelected(myUserPersistenceVersion == VERSION_UPDATE_TO_THE_LATEST);
+      myRadioButtons[myRadioButtons.length - 1].setSelected(myUserPersistenceVersion == VERSION_UPDATE_TO_THE_LATEST);
     }
 
     public boolean isModified() {
@@ -201,10 +201,10 @@ public class PersistenceSettings implements SearchableConfigurable, PersistentSt
           }
         }
       }
-      if(myRadioButtons[0].isSelected()) {
+      if (myRadioButtons[0].isSelected()) {
         return myUserPersistenceVersion != VERSION_UNDEFINED;
       }
-      if(myRadioButtons[myRadioButtons.length-1].isSelected()) {
+      if (myRadioButtons[myRadioButtons.length - 1].isSelected()) {
         return myUserPersistenceVersion != VERSION_UPDATE_TO_THE_LATEST;
       }
       return false;

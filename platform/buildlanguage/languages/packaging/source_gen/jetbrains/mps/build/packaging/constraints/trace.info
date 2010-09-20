@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="BaseDirPath_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.BaseDirPath_Constraints" />
+  <unitInfo fileName="Configuration_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Configuration_Constraints" />
+  <unitInfo fileName="Variable_Constraints.java" startLine="10" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Variable_Constraints" />
+  <unitInfo fileName="Delete_Constraints.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Delete_Constraints" />
+  <unitInfo fileName="Configuration_fullName_PropertyConstraint.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Configuration_fullName_PropertyConstraint" />
+  <unitInfo fileName="MacroReference_path_PropertyConstraint.java" startLine="14" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.MacroReference_path_PropertyConstraint" />
+  <unitInfo fileName="Antcall_project_ReferentConstraint.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Antcall_project_ReferentConstraint" />
+  <unitInfo fileName="AbstractProjectComponent_name_PropertyConstraint.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.AbstractProjectComponent_name_PropertyConstraint" />
+  <unitInfo fileName="Echo_name_PropertyConstraint.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Echo_name_PropertyConstraint" />
+  <unitInfo fileName="Variable_DefaultSearchScope.java" startLine="15" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Variable_DefaultSearchScope" />
+  <unitInfo fileName="Folder_name_PropertyConstraint.java" startLine="14" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Folder_name_PropertyConstraint" />
+  <unitInfo fileName="File_name_PropertyConstraint.java" startLine="15" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.File_name_PropertyConstraint" />
+  <unitInfo fileName="Module_name_PropertyConstraint.java" startLine="16" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Module_name_PropertyConstraint" />
+  <unitInfo fileName="Antcall_targetDeclaration_ReferentConstraint.java" startLine="17" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Antcall_targetDeclaration_ReferentConstraint" />
+  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.ConstraintsDescriptor" />
   <root nodeId="1213104846985">
     <nodeInfo nodeId="1213104846991" fileName="Folder_name_PropertyConstraint.java" startLine="27" startPosition="134" endLine="28" endPosition="107" />
     <nodeInfo nodeId="1213104847015" fileName="Folder_name_PropertyConstraint.java" startLine="30" startPosition="67" endLine="31" endPosition="16" />

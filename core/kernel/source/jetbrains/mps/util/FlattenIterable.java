@@ -5,7 +5,7 @@ import java.util.Iterator;
 
 /**
  * Evgeny Gryaznov, Feb 10, 2010
- *
+ * <p/>
  * Iterates over superposition of Iterables.
  */
 public class FlattenIterable<T> implements Iterable<T> {
@@ -15,7 +15,7 @@ public class FlattenIterable<T> implements Iterable<T> {
   public FlattenIterable(Collection<Iterable<T>> content) {
     myContent = content;
   }
-  
+
   public void add(Iterable<T> e) {
     myContent.add(e);
   }
@@ -45,13 +45,13 @@ public class FlattenIterable<T> implements Iterable<T> {
       }
 
       private T nextInternal() {
-        if(currentInner != null && currentInner.hasNext()) {
+        if (currentInner != null && currentInner.hasNext()) {
           return currentInner.next();
         }
-        while(currentOuter.hasNext()) {
+        while (currentOuter.hasNext()) {
           Iterable<T> innerIterable = currentOuter.next();
           currentInner = innerIterable != null ? innerIterable.iterator() : null;
-          if(currentInner != null && currentInner.hasNext()) {
+          if (currentInner != null && currentInner.hasNext()) {
             return currentInner.next();
           }
         }

@@ -20,10 +20,10 @@ import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.*;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.net.URL;
-import java.net.MalformedURLException;
 
 class FileSystemFile implements IFile {
   private File myFile;

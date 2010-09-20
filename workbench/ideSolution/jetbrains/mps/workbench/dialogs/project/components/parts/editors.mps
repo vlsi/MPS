@@ -1517,7 +1517,7 @@
                             <link role="variableDeclaration:3" targetNodeId="8571970830724172997" resolveInfo="model" />
                           </node>
                           <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Model_RootsOperation:16" id="8571970830724173007">
-                            <link role="concept:16" targetNodeId="27.5553449326502622462" resolveInfo="ModelManagerDeclaration" />
+                            <link role="concept:16" targetNodeId="27.3671542447677113727" resolveInfo="StubsCreatorDeclaration" />
                           </node>
                         </node>
                       </node>

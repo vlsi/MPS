@@ -25,34 +25,26 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
-import jetbrains.mps.generator.NoCachesStrategy;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
-import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
+import jetbrains.mps.generator.generationTypes.java.JavaGenerationHandler;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import jetbrains.mps.ide.messages.MessagesViewTool;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.messages.Message;
-import jetbrains.mps.messages.MessageKind;
-import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JOptionPane;
-import java.util.ArrayList;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Evgeny Gryaznov, Aug 24, 2010
  */
 public class GeneratorFacade {
 
-  private static final Logger LOG = Logger.getLogger(GeneratorFacade.class);
   private static final GeneratorFacade INSTANCE = new GeneratorFacade();
 
   private GeneratorFacade() {
@@ -86,44 +78,25 @@ public class GeneratorFacade {
                                 final IGenerationHandler generationHandler,
                                 boolean rebuildAll,
                                 boolean skipRequirementsGeneration) {
-    Project project = operationContext.getProject();
-    assert project != null : "Cannot generate models without a project";
-    
-    try {
-      List<Pair<SModelDescriptor, IOperationContext>> modelsWithContext = new ArrayList<Pair<SModelDescriptor, IOperationContext>>(inputModels.size());
-      MessagesViewTool messagesTool = project.getComponent(MessagesViewTool.class);
-      messagesTool.resetAutoscrollOption();
-      for (SModelDescriptor model : inputModels) {
-        assert model != null;
-        ModuleContext moduleContext = ModuleContext.create(model, project);
-        if (moduleContext == null) {
-          messagesTool.add(new Message(MessageKind.WARNING, GeneratorManager.class, "Model " + model.getLongName() + " won't be generated"));
-          continue;
-        }
-        modelsWithContext.add(new Pair<SModelDescriptor, IOperationContext>(model, moduleContext));
-      }
-
-      return generateModelsWithProgressWindow(project, modelsWithContext, generationHandler, rebuildAll, skipRequirementsGeneration);
-
-    } catch (Throwable t) {
-      LOG.error(t);
-      return false;
-    }
+    return generateModelsWithProgressWindow(operationContext, inputModels, generationHandler, rebuildAll, skipRequirementsGeneration);
   }
 
   /**
    * @return false if canceled
    */
-  private boolean generateModelsWithProgressWindow(final Project project, final List<Pair<SModelDescriptor, IOperationContext>> inputModels,
+  private boolean generateModelsWithProgressWindow(final IOperationContext invocationContext,
+                                                   final List<SModelDescriptor> inputModels,
                                                    final IGenerationHandler generationHandler,
                                                    final boolean rebuildAll, boolean skipRequirementsGeneration) {
-    
+
     if (inputModels.isEmpty()) {
       return true;
     }
 
-    final IOperationContext invocationContext = inputModels.get(0).o2;
-    final DefaultMessageHandler messages = new DefaultMessageHandler(invocationContext.getProject());
+    final Project project = invocationContext.getProject();
+    assert project != null : "Cannot generate models without a project";
+
+    final DefaultMessageHandler messages = new DefaultMessageHandler(project);
     final GenerationSettings settings = GenerationSettings.getInstance();
 
     // confirm saving transient models
@@ -168,14 +141,14 @@ public class GeneratorFacade {
         final Set<SModelDescriptor> requirements = new LinkedHashSet<SModelDescriptor>();
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            for (Pair<SModelDescriptor, IOperationContext> inputModel : inputModels) {
-              requirements.addAll(getModelsToGenerateBeforeGeneration(inputModel.o1, inputModel.o2));
+            for (SModelDescriptor inputModel : inputModels) {
+              requirements.addAll(getModelsToGenerateBeforeGeneration(inputModel, project));
             }
           }
         });
 
-        for (Pair<SModelDescriptor, IOperationContext> inputModel : inputModels) {
-          requirements.remove(inputModel.o1);
+        for (SModelDescriptor inputModel : inputModels) {
+          requirements.remove(inputModel);
         }
 
         if (!requirements.isEmpty()) {
@@ -222,7 +195,7 @@ public class GeneratorFacade {
     ProgressManager.getInstance().run(new Modal(invocationContext.getProject(), "Generation", true) {
       public void run(@NotNull ProgressIndicator progress) {
         GeneratorManager generatorManager = project.getComponent(GeneratorManager.class);
-        result[0] = generatorManager.generateModels(inputModels, generationHandler, progress, messages, saveTransientModels, rebuildAll);
+        result[0] = generatorManager.generateModels(inputModels, invocationContext, generationHandler, progress, messages, saveTransientModels, rebuildAll);
       }
     });
     return result[0];
@@ -239,19 +212,24 @@ public class GeneratorFacade {
     return settings.getGenerateRequirementsPolicy() != GenerationSettings.GenerateRequirementsPolicy.NEVER;
   }
 
-  private List<SModelDescriptor> getModelsToGenerateBeforeGeneration(SModelDescriptor model, IOperationContext context) {
+  private List<SModelDescriptor> getModelsToGenerateBeforeGeneration(SModelDescriptor model, Project project) {
+    IModule module = model.getModule();
+    if(module == null) {
+      return Collections.emptyList();
+    }
+
     List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
 
     ModelGenerationStatusManager statusManager = ModelGenerationStatusManager.getInstance();
-    for (Generator g : GenerationPartitioningUtil.getAllPossiblyEngagedGenerators(model.getSModel(), context.getScope())) {
+    for (Generator g : GenerationPartitioningUtil.getAllPossiblyEngagedGenerators(model.getSModel(), module.getScope() )) {
       for (SModelDescriptor sm : g.getOwnModelDescriptors()) {
-        if (SModelStereotype.isUserModel(sm) && statusManager.generationRequired(sm, context.getProject(), NoCachesStrategy.createBuildCachesStrategy())) {
+        if (SModelStereotype.isUserModel(sm) && statusManager.generationRequired(sm, ProjectOperationContext.get(project))) {
           result.add(sm);
         }
       }
 
       for (SModelDescriptor sm : g.getSourceLanguage().getAspectModelDescriptors()) {
-        if (statusManager.generationRequired(sm, context.getProject(), NoCachesStrategy.createBuildCachesStrategy())) {
+        if (statusManager.generationRequired(sm, ProjectOperationContext.get(project))) {
           result.add(sm);
         }
       }

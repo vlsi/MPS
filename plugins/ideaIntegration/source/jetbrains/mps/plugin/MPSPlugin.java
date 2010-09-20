@@ -48,7 +48,7 @@ public class MPSPlugin {
 
   @Deprecated
   public IProjectHandler getProjectHandler(Project project) {
-    LOG.assertNotInEDT();
+    assertNotInEDT();
 
     File mpsProject = project.getComponent(MPSProject.class).getProjectFile();
 
@@ -70,7 +70,7 @@ public class MPSPlugin {
 
   //NOTE: this can return true while project in Idea does not match project in MPS
   public boolean isIDEAPresent() {
-    LOG.assertNotInEDT();
+    assertNotInEDT();
 
     try {
       IMPSPlugin plugin = getPlugin();
@@ -87,7 +87,7 @@ public class MPSPlugin {
   }
 
   public boolean openConnectionPresent() {
-    LOG.assertNotInEDT();
+    assertNotInEDT();
 
     if (myPlugin == null) return false;
 
@@ -114,5 +114,9 @@ public class MPSPlugin {
     }
 
     return myPlugin;
+  }
+
+  private static void assertNotInEDT() {
+    LOG.assertLog(!ThreadUtils.isEventDispatchThread(), "You should not do this in EDT");
   }
 }

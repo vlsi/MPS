@@ -61,7 +61,7 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
               context.checkRoot();
             } catch (Throwable t) {
               LOG.error(t);
-              typesComponent.setChecked();
+              typesComponent.setCheckedTypesystem();
               return;
             }
           }
@@ -72,8 +72,10 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
               myMessagesChanged = true;
               context.setIsNonTypesystemComputation();
               typesComponent.applyNonTypesystemRulesToRoot(operationContext);
+              typesComponent.setCheckedNonTypesystem();
             } catch (Throwable t) {
               LOG.error(t);
+              typesComponent.setCheckedNonTypesystem();
             } finally {
               context.resetIsNonTypesystemComputation();
             }
@@ -154,7 +156,9 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
 
   public EditorMessageOwner getOwner(SNode node, EditorComponent editorComponent) {
     if (node == null) return null;
-    return editorComponent.getTypeCheckingContext();
+    TypeCheckingContext context = editorComponent.getTypeCheckingContext();
+    if (context == null) return null;
+    return new Owner(context, this);
   }
 
   protected boolean isPropertyEventDramatical(SModelPropertyEvent event) {
@@ -174,5 +178,35 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
 
   public void checkingIterationFinished() {
     myMessagesChanged = false;
+  }
+
+  public static class Owner implements EditorMessageOwner {
+    private TypeCheckingContext myTypeCheckingContext;
+    private TypesEditorChecker myTypesEditorChecker;
+
+    public Owner(TypeCheckingContext context, TypesEditorChecker checker) {
+      myTypeCheckingContext = context;
+      myTypesEditorChecker = checker;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) return true;
+      if (o == null || getClass() != o.getClass()) return false;
+
+      Owner owner = (Owner) o;
+
+      if (!myTypeCheckingContext.equals(owner.myTypeCheckingContext)) return false;
+      if (!myTypesEditorChecker.equals(owner.myTypesEditorChecker)) return false;
+
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      int result = myTypeCheckingContext.hashCode();
+      result = 31 * result + myTypesEditorChecker.hashCode();
+      return result;
+    }
   }
 }

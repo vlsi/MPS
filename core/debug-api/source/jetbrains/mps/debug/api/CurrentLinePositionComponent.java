@@ -107,20 +107,20 @@ public class CurrentLinePositionComponent implements ProjectComponent {
 
   private void detachPainter(AbstractDebugSession newDebugSession) {
     final CurrentLinePainter painter;
-    
+
     synchronized (mySessionToContextPainterMap) {
       painter = mySessionToContextPainterMap.get(newDebugSession);
       mySessionToContextPainterMap.remove(newDebugSession);
     }
 
     if (painter != null) {
-        ApplicationManager.getApplication().invokeLater(new Runnable() {
-          @Override
-          public void run() {
-            detachPainter(painter);
-          }
-        });
-      }
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
+        @Override
+        public void run() {
+          detachPainter(painter);
+        }
+      });
+    }
   }
 
   private void detachPainter(@NotNull CurrentLinePainter painter) {

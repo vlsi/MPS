@@ -19,10 +19,11 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
-import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
+import jetbrains.mps.generator.generationTypes.java.JavaGenerationHandler;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.util.Pair;
 
@@ -37,17 +38,16 @@ import java.util.Set;
 public class IdeaAwareJavaGenerationHandler extends JavaGenerationHandler {
 
   @Override
-  public boolean compile(Project p, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws IOException, GenerationCanceledException {
+  public boolean compile(IOperationContext operationContext, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws IOException, GenerationCanceledException {
     boolean compiledSuccessfully = generationOK;
     boolean[] ideaIsFresh = new boolean[]{false};
 
-    IProjectHandler projectHandler = getProjectHandler(p);
+    IProjectHandler projectHandler = getProjectHandler(operationContext.getProject());
 
     if (generationOK) {
       long compilationStart = System.currentTimeMillis();
       boolean needToReload = false;
 
-      Set<SModelDescriptor> toInvalidate = new HashSet<SModelDescriptor>();
       for (Pair<IModule, List<SModelDescriptor>> moduleListPair : input) {
         IModule module = moduleListPair.o1;
         if (module != null && module.reloadClassesAfterGeneration()) {
@@ -55,10 +55,6 @@ public class IdeaAwareJavaGenerationHandler extends JavaGenerationHandler {
         }
         boolean compilationResult = compileModule(module, projectHandler, ideaIsFresh, progressHelper);
         compiledSuccessfully = compiledSuccessfully && compilationResult;
-        toInvalidate.addAll(moduleListPair.o2);
-      }
-      for (SModelDescriptor sm : toInvalidate) {
-        ModelGenerationStatusManager.getInstance().invalidateData(sm);
       }
       if (compiledSuccessfully && needToReload) {
         reloadClasses(progressHelper);

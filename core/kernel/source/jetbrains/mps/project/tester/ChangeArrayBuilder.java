@@ -18,9 +18,9 @@ package jetbrains.mps.project.tester;
 
 import jetbrains.mps.project.tester.TestComparator.ChangeArrayManager;
 
-import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class ChangeArrayBuilder {
   private int myOld;

@@ -16,7 +16,7 @@
 package jetbrains.mps.refactoring.framework;
 
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.findUsages.UsagesList;
 import jetbrains.mps.lang.refactoring.structure.Refactoring_Language;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
@@ -73,7 +73,7 @@ public class RefactoringContext {
   //-----------------
 
   //other
-  private SearchResults myUsages;
+  private UsagesList myUsages;
   private Set<String> myTransientParameters = new HashSet<String>();
   private boolean myIsLocal = false;
   private boolean myDoesGenerateModels = true;
@@ -163,11 +163,11 @@ public class RefactoringContext {
 
   public
   @Nullable
-  SearchResults getUsages() {
+  UsagesList getUsages() {
     return myUsages;
   }
 
-  public void setUsages(SearchResults usages) {
+  public void setUsages(UsagesList usages) {
     myUsages = usages;
   }
 
@@ -185,7 +185,7 @@ public class RefactoringContext {
       result.add(firstModel);
     }
     if (myUsages != null) {
-      for (SModel m : (Set<SModel>)myUsages.getModelsWithResults()) {
+      for (SModel m : myUsages.getAffectedModels()) {
         if (m != firstModel) {
           result.add(m);
         }

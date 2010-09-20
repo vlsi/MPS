@@ -1,23 +1,23 @@
 package jetbrains.mps.debug.evaluation.ui;
 
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.baseLanguage.structure.BaseLanguage_Language;
 import jetbrains.mps.baseLanguage.stubs.JavaStubs;
 import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.model.ModelRootManager;
-import jetbrains.mps.baseLanguage.structure.BaseLanguage_Language;
-import com.intellij.openapi.project.Project;
-
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import java.util.UUID;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
 
 public class EvaluationAuxModule extends AbstractModule {
   private static final ModelRootManager STUBS_MANAGER = new ModelRootManager(BaseLanguage_Language.MODULE_REFERENCE.getModuleId().toString(), JavaStubs.class.getName());

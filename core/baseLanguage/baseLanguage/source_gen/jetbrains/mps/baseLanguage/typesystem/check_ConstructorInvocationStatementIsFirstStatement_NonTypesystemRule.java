@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.baseLanguage.behavior.StatementList_Behavior;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
@@ -21,27 +21,16 @@ public class check_ConstructorInvocationStatementIsFirstStatement_NonTypesystemR
   }
 
   public void applyRule(final SNode constructorInvocation, final TypeCheckingContext typeCheckingContext) {
-    boolean hasError = false;
-    if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(constructorInvocation)), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(constructorInvocation), "jetbrains.mps.baseLanguage.structure.StatementList"))) {
-      hasError = true;
-    } else {
-      SNode list = SNodeOperations.cast(SNodeOperations.getParent(constructorInvocation), "jetbrains.mps.baseLanguage.structure.StatementList");
-      for (SNode statement : SLinkOperations.getTargets(list, "statement", true)) {
-        if (statement == constructorInvocation) {
-          return;
+    SNode constructor = SNodeOperations.getAncestor(constructorInvocation, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", false, false);
+    if (constructor != null) {
+      SNode statementList = SLinkOperations.getTarget(constructor, "body", true);
+      SNode firstStatement = StatementList_Behavior.call_getFirstStatement_5420652334935371934(statementList);
+      if (firstStatement != constructorInvocation) {
+        {
+          BaseIntentionProvider intentionProvider = null;
+          IErrorTarget errorTarget = new NodeErrorTarget();
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(constructorInvocation, "Call to '" + BaseConcept_Behavior.call_getPresentation_1213877396640(constructorInvocation) + "' must be first statement in constructor body", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3133930811460325358", intentionProvider, errorTarget);
         }
-        if (SNodeOperations.isInstanceOf(statement, "jetbrains.mps.baseLanguage.structure.SingleLineComment") || SNodeOperations.isInstanceOf(statement, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock") || ListSequence.fromList(SNodeOperations.getDescendants(statement, null, false, new String[]{})).count() == 0) {
-          continue;
-        }
-        hasError = true;
-        break;
-      }
-    }
-    if (hasError) {
-      {
-        BaseIntentionProvider intentionProvider = null;
-        IErrorTarget errorTarget = new NodeErrorTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(constructorInvocation, "Call to '" + BaseConcept_Behavior.call_getPresentation_1213877396640(constructorInvocation) + "' must be first statement in constructor body", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3133930811460325358", intentionProvider, errorTarget);
       }
     }
   }

@@ -14,6 +14,7 @@ import java.util.Map;
 public class CounterMap<K> {
   public interface CounterMapHandler<K> {
     void counterZero(@NotNull K key);
+
     void counterNonZero(@NotNull K key);
   }
 

@@ -21,6 +21,7 @@ import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.ContentManagerAdapter;
 import com.intellij.ui.content.ContentManagerEvent;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.INavigateableTool;
 import jetbrains.mps.ide.findusages.INavigator;
 import jetbrains.mps.ide.findusages.UsagesViewTracker;
@@ -45,7 +46,9 @@ public abstract class TabbedUsagesTool extends BaseProjectTool implements INavig
 
   @Nullable
   public INavigator getCurrentNavigateableView() {
-    LOG.checkEDT();
+    if (!ThreadUtils.isEventDispatchThread()) {
+      throw new IllegalStateException("Can't use this outside of EDT");
+    }
 
     int index = getCurrentTabIndex();
     if (index == -1) return null;

@@ -26,5 +26,6 @@ import jetbrains.mps.reloading.IClassPathItem;
  */
 public interface ClasspathObserver {
   public void classPathAdded(IClassPathItem classPath);
+
   public void classPathRemoved(IClassPathItem classPath);
 }

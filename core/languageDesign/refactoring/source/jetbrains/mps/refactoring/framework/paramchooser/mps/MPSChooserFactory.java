@@ -25,7 +25,6 @@ import jetbrains.mps.refactoring.framework.paramchooser.mps.internal.ChooserType
 import jetbrains.mps.refactoring.framework.paramchooser.mps.internal.ChooserType.ModuleChooserType;
 import jetbrains.mps.refactoring.framework.paramchooser.mps.internal.MPSNodeChooser;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 

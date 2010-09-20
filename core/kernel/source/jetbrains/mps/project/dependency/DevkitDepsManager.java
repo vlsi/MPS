@@ -17,10 +17,8 @@ package jetbrains.mps.project.dependency;
 
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.Language;
 
 import java.util.List;
-import java.util.Set;
 
 public class DevkitDepsManager extends ModuleDepsManager<DevKit> {
   public DevkitDepsManager(DevKit dk) {

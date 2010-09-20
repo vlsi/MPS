@@ -57,12 +57,10 @@
     <orderEntry type="library" exported="" name="Trove4j" level="project" />
     <orderEntry type="library" exported="" name="XmlRpc" level="project" />
     <orderEntry type="library" exported="" name="XStream" level="project" />
-    <orderEntry type="library" exported="" name="jfcUnit" level="project" />
     <orderEntry type="module" module-name="debug-api" exported="" />
     <orderEntry type="module" module-name="debug" exported="" />
     <orderEntry type="module" module-name="generator-engine" exported="" />
     <orderEntry type="module" module-name="typesystemEngine" exported="" />
-    <orderEntry type="library" name="JMock" level="project" />
   </component>
   <component name="copyright">
     <Base>

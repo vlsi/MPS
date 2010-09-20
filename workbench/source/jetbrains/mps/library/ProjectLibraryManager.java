@@ -20,7 +20,6 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Macros;
 import jetbrains.mps.util.PathManager;
 import org.jetbrains.annotations.Nls;
@@ -67,7 +66,7 @@ public class ProjectLibraryManager extends BaseLibraryManager implements Project
 
   private File getAnchorFile() {
     String projectUrl = myProject.getPresentableUrl();
-    if (projectUrl!=null )return new File(projectUrl);
+    if (projectUrl != null) return new File(projectUrl);
     return new File(PathManager.getHomePath());
   }
 }

@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.workbench.actions.help;
 
-import jetbrains.mps.ide.blame.command.Command;
-
 public class ShowDefaultKeymap extends ShowSiteAction {
   public ShowDefaultKeymap() {
     super("Default Keymap Reference");

@@ -140,7 +140,7 @@ public class EditorExtensions {
   public static void runDelayed(_FunctionTypes._void_P1_E0<? super EditorExtensions> block) {
     synchronized (EditorExtensions.class) {
       if (INSTANCE == null && DISPOSED) {
-        LOG.warn("EditorExtensions.runDelayed called after dispose");
+        LOG.info("EditorExtensions.runDelayed called after dispose");
       } else {
         ListSequence.fromList(InitDelayedBlocks).addElement(block);
       }
@@ -153,7 +153,7 @@ public class EditorExtensions {
   public static void runOnDispose(_FunctionTypes._void_P1_E0<? super EditorExtensions> block) {
     synchronized (EditorExtensions.class) {
       if (INSTANCE == null && DISPOSED) {
-        LOG.warn("EditorExtensions.runOnDispose called after dispose");
+        LOG.info("EditorExtensions.runOnDispose called after dispose");
       } else {
         ListSequence.fromList(DisposeDelayedBlocks).addElement(block);
       }

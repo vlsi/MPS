@@ -7,13 +7,19 @@ import java.util.List;
 import junit.framework.Test;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
 import junit.framework.TestResult;
+import junit.framework.TestCase;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import org.junit.Ignore;
 import java.io.PrintStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import junit.framework.TestSuite;
+import java.io.File;
+import java.io.LineNumberReader;
+import java.io.FileReader;
+import org.apache.commons.lang.StringUtils;
 
 public class TestRunner extends BaseTestRunner {
   public TestRunner() {
@@ -21,22 +27,7 @@ public class TestRunner extends BaseTestRunner {
 
   public void start(String[] argv) throws Throwable {
     List<Test> tests = ListSequence.fromList(new ArrayList<Test>());
-    for (int i = 0; i < argv.length; i++) {
-      if ("-c".equals(argv[i])) {
-        i++;
-        Test test = this.getTest(argv[i]);
-        ListSequence.fromList(tests).addElement(test);
-      } else if ("-m".equals(argv[i])) {
-        i++;
-        String s = argv[i];
-        int index = s.lastIndexOf('.');
-        String testCase = s.substring(0, index);
-        String method = s.substring(index + 1);
-        Class<? extends TestCase> testClass = (Class<? extends TestCase>) this.loadSuiteClass(testCase);
-        Test test = TestSuite.createTest(testClass, method);
-        ListSequence.fromList(tests).addElement(test);
-      }
-    }
+    this.loadTests(argv, tests);
     TestResult testResult = new TestResult() {
       protected void run(TestCase test) {
         try {
@@ -68,6 +59,42 @@ public class TestRunner extends BaseTestRunner {
         continue;
       }
       test.run(testResult);
+    }
+  }
+
+  private void loadTests(String[] argv, List<Test> tests) throws ClassNotFoundException, FileNotFoundException, IOException {
+    for (int i = 0; i < argv.length; i++) {
+      if ("-c".equals(argv[i])) {
+        i++;
+        Test test = this.getTest(argv[i]);
+        ListSequence.fromList(tests).addElement(test);
+      } else if ("-m".equals(argv[i])) {
+        i++;
+        String s = argv[i];
+        int index = s.lastIndexOf('.');
+        String testCase = s.substring(0, index);
+        String method = s.substring(index + 1);
+        Class<? extends TestCase> testClass = (Class<? extends TestCase>) this.loadSuiteClass(testCase);
+        Test test = TestSuite.createTest(testClass, method);
+        ListSequence.fromList(tests).addElement(test);
+      } else if ("-f".equals(argv[i])) {
+        i++;
+        String filename = argv[i];
+        new File(filename).deleteOnExit();
+        LineNumberReader reader = new LineNumberReader(new FileReader(filename));
+        List<String> fileContents = ListSequence.fromList(new ArrayList<String>());
+        while (true) {
+          String line = reader.readLine();
+          if (line == null) {
+            break;
+          }
+          if (StringUtils.isEmpty(line)) {
+            continue;
+          }
+          ListSequence.fromList(fileContents).addElement(line);
+        }
+        loadTests(ListSequence.fromList(fileContents).toGenericArray(String.class), tests);
+      }
     }
   }
 

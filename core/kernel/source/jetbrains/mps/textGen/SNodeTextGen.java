@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.textGen;
 
-import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.JavaNameUtil;
 
 /**
  * Author: Sergey Dmitriev
@@ -57,6 +57,7 @@ public abstract class SNodeTextGen<BA extends INodeAdapter> {
   }
 
   //not to generate stub method in each MPS text gen
+
   protected void doGenerateText(SNode node) {
   }
 

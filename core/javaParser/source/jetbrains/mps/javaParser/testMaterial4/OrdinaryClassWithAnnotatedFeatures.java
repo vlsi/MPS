@@ -30,7 +30,9 @@ public class OrdinaryClassWithAnnotatedFeatures {
     @NotNull Object a = null;
   }
 
-  public @OrdinaryAnnotation(foo = "hello " + "world") class FooBar {
+  public
+  @OrdinaryAnnotation(foo = "hello " + "world")
+  class FooBar {
 
   }
 }

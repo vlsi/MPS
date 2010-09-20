@@ -1,14 +1,11 @@
 package jetbrains.mps.generator.impl;
 
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.ModelDigestHelper;
 import jetbrains.mps.generator.impl.dependencies.*;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder.NullDependenciesBuilder;
 import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 
@@ -23,31 +20,31 @@ public class GenerationFilter {
   private static final String CONDITIONALS_ID = "";
 
   private SModelDescriptor myModel;
-  private GenerationProcessContext myGenerationContext;
-  private Project myProject;
+  private GenerationOptions myGenerationOptions;
+  private IOperationContext myOperationContext;
   private Set<SNode> myUnchangedRoots;
   private int myRootsCount;
   private boolean myConditionalsUnchanged;
   private Map<String, String> myGenerationHashes;
   private GenerationDependencies mySavedDependencies;
 
-  public GenerationFilter(SModelDescriptor model, Project project, GenerationProcessContext generationContext) {
+  public GenerationFilter(SModelDescriptor model, IOperationContext operationContext, GenerationOptions options) {
     myModel = model;
-    myGenerationContext = generationContext;
-    myProject = project;
+    myGenerationOptions = options;
+    myOperationContext = operationContext;
     myUnchangedRoots = Collections.emptySet();
     myConditionalsUnchanged = false;
     init();
   }
 
   private void init() {
-    if (!myGenerationContext.isGenerateDependencies()) {
+    if (!myGenerationOptions.isIncremental()) {
       return;
     }
 
-    myGenerationHashes = ModelDigestHelper.getInstance().getGenerationHashes(myModel, myProject);
+    myGenerationHashes = ModelDigestHelper.getInstance().getGenerationHashes(myModel, myOperationContext);
 
-    if (myGenerationContext.isRebuildAll()) {
+    if (myGenerationOptions.isRebuildAll()) {
       return;
     }
 
@@ -110,7 +107,7 @@ public class GenerationFilter {
         }
         continue;
       }
-      Map<String, String> map = ModelDigestHelper.getInstance().getGenerationHashes(sm, myProject);
+      Map<String, String> map = ModelDigestHelper.getInstance().getGenerationHashes(sm, myOperationContext);
       String newHash = map != null ? map.get(ModelDigestHelper.FILE) : null;
       if (newHash == null || !oldHash.equals(newHash)) {
         changedModels.add(modelReference);
@@ -277,12 +274,8 @@ public class GenerationFilter {
     return myModel;
   }
 
-  public GenerationProcessContext getGenerationContext() {
-    return myGenerationContext;
-  }
-
   public DependenciesBuilder createDependenciesBuilder() {
-    if (!myGenerationContext.isGenerateDependencies()) {
+    if (!myGenerationOptions.isIncremental()) {
       return new NullDependenciesBuilder();
     }
 

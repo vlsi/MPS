@@ -29,7 +29,7 @@ public class ModelRootUtil {
         String modelFilePath = modelFile.getCanonicalPath();
         String rootFilePath = FileSystem.getInstance().getFileByPath(modelRoot.getPath()).getCanonicalPath();
 
-        if (modelFilePath.startsWith(rootFilePath)){
+        if (modelFilePath.startsWith(rootFilePath)) {
           result.add(modelRoot);
         }
       }

@@ -18,20 +18,19 @@ package jetbrains.mps.project;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
-
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch;
 import jetbrains.mps.compiler.CompilationResultAdapter;
-import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
-import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
 import jetbrains.mps.generator.GenParameters;
-import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.messages.Message;
+import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
+import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.messages.Message;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
 import jetbrains.mps.project.tester.DiffReporter;
 import jetbrains.mps.project.tester.TesterGenerationHandler;
@@ -39,7 +38,8 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
-import junit.framework.*;
+import junit.framework.TestCase;
+import junit.framework.TestFailure;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.jetbrains.annotations.NotNull;
@@ -125,7 +125,7 @@ public class ProjectTester {
           boolean isTestCase = testCaseClass.isAssignableFrom(testClass);
 
           for (Method method : testClass.getMethods()) {
-            if (method.getAnnotation((Class<Annotation>)classLoader.loadClass(org.junit.Test.class.getName())) != null
+            if (method.getAnnotation((Class<Annotation>) classLoader.loadClass(org.junit.Test.class.getName())) != null
               || (method.getName().startsWith("test") && isTestCase)) {
               testMethods.add(method);
             }
@@ -243,7 +243,7 @@ public class ProjectTester {
                   compilationResultList.add(r);
                 }
               };
-              generationHandler.compile(ITaskProgressHelper.EMPTY,listener);
+              generationHandler.compile(ITaskProgressHelper.EMPTY, listener);
 
               System.out.println("Compiled " + compilationResultList.size() + " compilation units in " + (System.currentTimeMillis() - start));
               compilationResults.addAll(createCompilationProblemsList(compilationResultList));

@@ -41,8 +41,14 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.runtime.TestRunner" file="TestRunner.java">
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.io.FileNotFoundException" />
+    <classNode dependClassName="java.io.FileReader" />
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.io.LineNumberReader" />
     <classNode dependClassName="java.io.PrintStream" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.ClassNotFoundException" />
     <classNode dependClassName="java.lang.NoSuchMethodException" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
@@ -58,6 +64,7 @@
     <classNode dependClassName="junit.framework.TestCase" />
     <classNode dependClassName="junit.framework.TestResult" />
     <classNode dependClassName="junit.framework.TestSuite" />
+    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="org.junit.Ignore" />
     <classNode extendsClassName="junit.runner.BaseTestRunner" />
   </dependency>

@@ -3,7 +3,9 @@ package jetbrains.mps.debug.api.integration;
 import com.intellij.execution.ExecutionException;
 import com.intellij.execution.ExecutionResult;
 import com.intellij.execution.Executor;
-import com.intellij.execution.configurations.*;
+import com.intellij.execution.configurations.RunConfiguration;
+import com.intellij.execution.configurations.RunProfile;
+import com.intellij.execution.configurations.RunProfileState;
 import com.intellij.execution.executors.DefaultDebugExecutor;
 import com.intellij.execution.runners.ExecutionEnvironment;
 import com.intellij.execution.runners.GenericProgramRunner;
@@ -12,7 +14,6 @@ import com.intellij.openapi.options.SettingsEditor;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.AbstractDebugSessionCreator;
-import jetbrains.mps.debug.api.integration.DebugContentBuilder;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunConfig;
 import jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunProfileState;
@@ -29,7 +30,7 @@ import org.jetbrains.annotations.Nullable;
 public class MPSDebugRunner extends GenericProgramRunner {
 
   public boolean canRun(@NotNull final String executorId, @NotNull final RunProfile profile) {
-    return executorId.equals(DefaultDebugExecutor.EXECUTOR_ID) && (profile instanceof BaseRunConfig) && (((BaseRunConfig)profile).isDebuggable());
+    return executorId.equals(DefaultDebugExecutor.EXECUTOR_ID) && (profile instanceof BaseRunConfig) && (((BaseRunConfig) profile).isDebuggable());
   }
 
   @NotNull
@@ -60,7 +61,6 @@ public class MPSDebugRunner extends GenericProgramRunner {
       throw new RuntimeException("Unknown Run Profile State");
     }
   }
-
 
 
   public SettingsEditor getSettingsEditor(final Executor executor, RunConfiguration configuration) {

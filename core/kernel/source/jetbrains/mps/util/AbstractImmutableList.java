@@ -25,6 +25,7 @@ public abstract class AbstractImmutableList<T> extends AbstractCollection<T> imp
   }
 
   protected abstract T next(T node);
+
   protected abstract T prev(T node);
 
   @Override
@@ -34,12 +35,12 @@ public abstract class AbstractImmutableList<T> extends AbstractCollection<T> imp
 
   @Override
   public T get(int index) {
-    if(index < 0 || mySize >= 0 && index >= mySize) {
+    if (index < 0 || mySize >= 0 && index >= mySize) {
       throw new IndexOutOfBoundsException();
     }
     T current = myFirst;
-    while(current != null) {
-      if(index-- == 0) {
+    while (current != null) {
+      if (index-- == 0) {
         return current;
       }
       current = next(current);
@@ -51,14 +52,14 @@ public abstract class AbstractImmutableList<T> extends AbstractCollection<T> imp
   public int indexOf(Object o) {
     int count = 0;
     T current = myFirst;
-    if(mySize == 0 || o == null) {
+    if (mySize == 0 || o == null) {
       return -1;
     }
-    while(current != null) {
-      if(current.equals(o)) {
+    while (current != null) {
+      if (current.equals(o)) {
         return count;
       }
-      if(++count == mySize) {
+      if (++count == mySize) {
         return -1;
       }
       current = next(current);
@@ -71,14 +72,14 @@ public abstract class AbstractImmutableList<T> extends AbstractCollection<T> imp
     int lastIndex = -1;
     int count = 0;
     T current = myFirst;
-    if(mySize == 0 || o == null) {
+    if (mySize == 0 || o == null) {
       return -1;
     }
-    while(current != null) {
-      if(current.equals(o)) {
+    while (current != null) {
+      if (current.equals(o)) {
         lastIndex = count;
       }
-      if(++count == mySize) {
+      if (++count == mySize) {
         return lastIndex;
       }
       current = next(current);
@@ -93,18 +94,18 @@ public abstract class AbstractImmutableList<T> extends AbstractCollection<T> imp
 
   @Override
   public ListIterator<T> listIterator(int index) {
-    if(index == 0) {
+    if (index == 0) {
       return listIterator();
     } else {
-      if(index < 0 || index > size()) {
+      if (index < 0 || index > size()) {
         throw new IndexOutOfBoundsException();
       }
-      if(index == size()) {
-        ListItr itr = new ListItr(get(index-1), index-1);
+      if (index == size()) {
+        ListItr itr = new ListItr(get(index - 1), index - 1);
         itr.next();
         return itr;
       } else {
-        return new ListItr(get(index),index);
+        return new ListItr(get(index), index);
       }
     }
   }
@@ -113,7 +114,7 @@ public abstract class AbstractImmutableList<T> extends AbstractCollection<T> imp
 
   @Override
   public List<T> subList(int fromIndex, int toIndex) {
-    if(fromIndex < toIndex) {
+    if (fromIndex < toIndex) {
       return subList(get(fromIndex), toIndex - fromIndex);
     } else {
       return Collections.emptyList();
@@ -122,10 +123,10 @@ public abstract class AbstractImmutableList<T> extends AbstractCollection<T> imp
 
   @Override
   public int size() {
-    if(mySize == -1) {
+    if (mySize == -1) {
       T node = myFirst;
       mySize = 0;
-      while(node != null) {
+      while (node != null) {
         mySize++;
         node = next(node);
       }
@@ -172,7 +173,7 @@ public abstract class AbstractImmutableList<T> extends AbstractCollection<T> imp
 
     @Override
     public T next() {
-      if(myCurrent == null) {
+      if (myCurrent == null) {
         return null;
       }
       myPrev = myCurrent;
@@ -188,7 +189,7 @@ public abstract class AbstractImmutableList<T> extends AbstractCollection<T> imp
 
     @Override
     public T previous() {
-      if(myPrev == null) {
+      if (myPrev == null) {
         return null;
       }
       myCurrent = myPrev;

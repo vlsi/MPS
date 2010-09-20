@@ -200,7 +200,9 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   }
 
   public void activate() {
-    LOG.checkEDT();
+    if (!ThreadUtils.isEventDispatchThread()) {
+      throw new IllegalStateException("Can't use this outside of EDT");
+    }
     activatePane(new PaneActivator(false), true);
   }
 
@@ -244,7 +246,9 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   }
 
   public void selectModel(@NotNull final SModelDescriptor model) {
-    LOG.checkEDT();
+    if (!ThreadUtils.isEventDispatchThread()) {
+      throw new IllegalStateException("Can't use this outside of EDT");
+    }
     activatePane(new PaneActivator(true) {
       @Override
       public void doOnPaneActivation() {
@@ -265,7 +269,9 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   }
 
   public void selectNode(@NotNull final SNode node) {
-    LOG.checkEDT();
+    if (!ThreadUtils.isEventDispatchThread()) {
+      throw new IllegalStateException("Can't use this outside of EDT");
+    }
     activatePane(new PaneActivator(true) {
       @Override
       public void doOnPaneActivation() {

@@ -43,7 +43,7 @@ public class Interner {
 
   private static class DumbLRUCache<K> {
 
-    private ThreadLocal<SubstituteKeyHolder<K>> myThreadKey = new ThreadLocal<SubstituteKeyHolder<K>> () {
+    private ThreadLocal<SubstituteKeyHolder<K>> myThreadKey = new ThreadLocal<SubstituteKeyHolder<K>>() {
       @Override
       protected SubstituteKeyHolder<K> initialValue() {
         return new SubstituteKeyHolder<K>();
@@ -52,9 +52,9 @@ public class Interner {
 
     private ConcurrentHashMap<KeyHolder<K>, KeyHolder<K>> myMap = new ConcurrentHashMap<KeyHolder<K>, KeyHolder<K>>();
 
-    private ReferenceQueue<K> myRefQueue = new ReferenceQueue<K> ();
+    private ReferenceQueue<K> myRefQueue = new ReferenceQueue<K>();
 
-    public K cacheObject (K k) {
+    public K cacheObject(K k) {
       purge();
 
       SubstituteKeyHolder<K> substituteKeyHolder = myThreadKey.get();
@@ -74,7 +74,7 @@ public class Interner {
       finally {
         substituteKeyHolder.myKey = null;
       }
-      
+
       return res;
     }
 
@@ -84,13 +84,13 @@ public class Interner {
 
     private void purge() {
       SoftKeyHolder<K> ref = null;
-      while ((ref = (SoftKeyHolder<K>)myRefQueue.poll()) != null) {
+      while ((ref = (SoftKeyHolder<K>) myRefQueue.poll()) != null) {
         myMap.remove(ref);
       }
     }
 
     private interface KeyHolder<T> {
-      T get ();
+      T get();
     }
 
     private static class SubstituteKeyHolder<T> implements KeyHolder<T> {
@@ -110,7 +110,7 @@ public class Interner {
         if (obj == null) return false;
         if (obj == this) return true;
         if (obj instanceof KeyHolder) {
-          return eq (myKey, ((KeyHolder)obj).get());
+          return eq(myKey, ((KeyHolder) obj).get());
         }
         return false;
       }
@@ -120,7 +120,7 @@ public class Interner {
       int myHash;
 
       private SoftKeyHolder(T ref, ReferenceQueue queue) {
-        super (ref, queue);
+        super(ref, queue);
         myHash = ref.hashCode();
       }
 
@@ -131,7 +131,7 @@ public class Interner {
 
       @Override
       public T get() {
-        return super.get ();
+        return super.get();
       }
 
       @Override
@@ -139,13 +139,13 @@ public class Interner {
         if (obj == null) return false;
         if (obj == this) return true;
         if (obj instanceof KeyHolder) {
-          return eq (get(), ((KeyHolder)obj).get());
+          return eq(get(), ((KeyHolder) obj).get());
         }
         return false;
       }
     }
 
-    private static boolean eq (Object a, Object b) {
+    private static boolean eq(Object a, Object b) {
       return a == null ? b == null : a.equals(b);
     }
   }

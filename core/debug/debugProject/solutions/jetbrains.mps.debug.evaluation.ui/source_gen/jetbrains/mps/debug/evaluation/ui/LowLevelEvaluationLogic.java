@@ -8,8 +8,8 @@ import java.util.Map;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.debug.runtime.JavaUiState;
 import jetbrains.mps.debug.runtime.DebugSession;
 import jetbrains.mps.smodel.ModelAccess;
@@ -74,8 +74,8 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
   private AbstractClassifiersScope myScope;
   private final Map<String, SNode> myUsedVars = MapSequence.fromMap(new HashMap<String, SNode>());
 
-  public LowLevelEvaluationLogic(@NotNull IOperationContext context, @NotNull JavaUiState state, @NotNull DebugSession debugSession) {
-    super(context, state, debugSession);
+  public LowLevelEvaluationLogic(Project project, @NotNull JavaUiState state, @NotNull DebugSession debugSession) {
+    super(project, state, debugSession);
 
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
@@ -86,7 +86,7 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
     });
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        IModule locationModule = getLocationModel().getModelDescriptor().getModule();
+        IModule locationModule = LowLevelEvaluationLogic.this.getLocationModule();
         IClassPathItem classPath = AbstractModule.getDependenciesClasspath(Collections.singleton(locationModule), true);
         final Set<StubPath> pathsToAdd = SetSequence.fromSet(new HashSet<StubPath>());
         classPath.accept(new EachClassPathItemVisitor() {

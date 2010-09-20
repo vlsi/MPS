@@ -57,7 +57,7 @@ public class CachesManager implements ApplicationComponent {
         SModelReference reference = modelDescriptor.getSModelReference();
         for (Object key : myDependsOnModels.keySet()) {
           List<SModelDescriptor> dependsOnModels = myDependsOnModels.get(key);
-          if(dependsOnModels == null) {
+          if (dependsOnModels == null) {
             continue;
           }
           for (SModelDescriptor dependsOnModel : dependsOnModels) {
@@ -100,7 +100,7 @@ public class CachesManager implements ApplicationComponent {
 
     // publish
     AbstractCache existing = myCaches.putIfAbsent(key, cache);
-    if(existing != null) {
+    if (existing != null) {
       // already exists => cleanup
       myModelEventRouters.remove(cache);
       myDependsOnModels.remove(key);
@@ -120,8 +120,8 @@ public class CachesManager implements ApplicationComponent {
     }
     result = creator.create(key, element);
     Set<SModelDescriptor> descriptorSet = result.getDependsOnModels(element);
-    if (descriptorSet.contains(null)){
-      LOG.error("Dependent models for cache contains null",new Throwable());
+    if (descriptorSet.contains(null)) {
+      LOG.error("Dependent models for cache contains null", new Throwable());
       descriptorSet.remove(null);
     }
     return putCache(key, result, new ArrayList<SModelDescriptor>(descriptorSet));
@@ -129,12 +129,12 @@ public class CachesManager implements ApplicationComponent {
 
   public void removeCache(Object key) {
     AbstractCache cache = myCaches.remove(key);
-    if(cache == null) {
+    if (cache == null) {
       return;
     }
     ModelEventRouter eventRouter = myModelEventRouters.remove(cache);
     List<SModelDescriptor> dependsOnModels = myDependsOnModels.remove(key);
-    if(eventRouter != null && dependsOnModels != null) {
+    if (eventRouter != null && dependsOnModels != null) {
       for (SModelDescriptor dependsOnModel : dependsOnModels) {
         dependsOnModel.removeModelListener(eventRouter);
       }
@@ -143,7 +143,7 @@ public class CachesManager implements ApplicationComponent {
   }
 
   private void removeAllCaches() {
-    while(!myCaches.isEmpty()) {
+    while (!myCaches.isEmpty()) {
       List keys = new ArrayList(myCaches.keySet());
       for (Object key : keys) {
         removeCache(key);

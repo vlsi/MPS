@@ -16,16 +16,16 @@
 package jetbrains.mps.debug;
 
 import com.sun.jdi.*;
-import com.sun.jdi.event.*;
-import com.sun.jdi.request.EventRequestManager;
-import com.sun.jdi.request.ClassPrepareRequest;
 import com.sun.jdi.connect.AttachingConnector;
-import com.sun.jdi.connect.IllegalConnectorArgumentsException;
 import com.sun.jdi.connect.Connector.Argument;
+import com.sun.jdi.connect.IllegalConnectorArgumentsException;
+import com.sun.jdi.event.*;
+import com.sun.jdi.request.ClassPrepareRequest;
+import com.sun.jdi.request.EventRequestManager;
 
-import java.util.Map;
-import java.util.List;
 import java.io.IOException;
+import java.util.List;
+import java.util.Map;
 
 public class TestDebug {
   private static final String CLAZZ = "com.intellij.ide.actions.AboutAction";

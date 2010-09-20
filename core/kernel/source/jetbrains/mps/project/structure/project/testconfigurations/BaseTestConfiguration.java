@@ -16,8 +16,6 @@
 package jetbrains.mps.project.structure.project.testconfigurations;
 
 import com.intellij.openapi.project.Project;
-
-import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
 import jetbrains.mps.generator.GenParameters;
 
 public abstract class BaseTestConfiguration {

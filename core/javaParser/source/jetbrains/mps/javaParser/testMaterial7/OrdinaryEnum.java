@@ -8,5 +8,5 @@ package jetbrains.mps.javaParser.testMaterial7;
  * To change this template use File | Settings | File Templates.
  */
 public enum OrdinaryEnum {
-  X,Y,Z;
+  X, Y, Z;
 }

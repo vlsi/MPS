@@ -27,5 +27,10 @@
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.IModelConstraints" />
     <classNode extendsClassName="jetbrains.mps.smodel.constraints.INodePropertyGetter" />
   </dependency>
+  <dependency className="jetbrains.mps.build.custommps.constraints.UndeclaredVariableReference_Constraints" file="UndeclaredVariableReference_Constraints.java">
+    <classNode dependClassName="jetbrains.mps.build.custommps.behavior.MPSBuild_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.CanBeAChildContext" />
+  </dependency>
 </dependenciesRoot>
 

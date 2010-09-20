@@ -20,7 +20,8 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ReadUtil;
-import jetbrains.mps.vfs.*;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 
 import java.io.*;
 import java.net.MalformedURLException;
@@ -171,7 +172,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
     return "jar-cp: " + myIFile;
   }
 
-  private void ensureInitialized(){
+  private void ensureInitialized() {
     if (myIsInitialized) return;
     myIsInitialized = true;
     buildCaches();
@@ -272,7 +273,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
   }
 
   //do not touch this class if you are not sure in your changes - this can lead to excess memory consumption (see #53513)
-  private static class MyCache{
+  private static class MyCache {
     private Map<String, Set<String>> myClasses = new HashMap<String, Set<String>>();
     private Map<String, Set<String>> mySubpackages = new HashMap<String, Set<String>>();
 
@@ -291,15 +292,15 @@ public class JarFileClassPathItem extends RealClassPathItem {
     }
 
     public void addClass(String pack, String className) {
-      if (!myClasses.containsKey(pack)){
-        myClasses.put(pack,new HashSet<String>(2));
+      if (!myClasses.containsKey(pack)) {
+        myClasses.put(pack, new HashSet<String>(2));
       }
       myClasses.get(pack).add(className);
     }
 
     public void addPackage(String namespace, String pack) {
-      if (!mySubpackages.containsKey(pack)){
-        mySubpackages.put(pack,new HashSet<String>(2));
+      if (!mySubpackages.containsKey(pack)) {
+        mySubpackages.put(pack, new HashSet<String>(2));
       }
       mySubpackages.get(pack).add(namespace);
     }

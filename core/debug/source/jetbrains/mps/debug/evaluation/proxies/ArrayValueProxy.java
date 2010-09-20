@@ -3,7 +3,6 @@ package jetbrains.mps.debug.evaluation.proxies;
 import com.sun.jdi.*;
 import jetbrains.mps.debug.evaluation.EvaluationException;
 import jetbrains.mps.debug.evaluation.EvaluationUtils;
-import jetbrains.mps.debug.evaluation.Evaluator;
 import jetbrains.mps.debug.evaluation.EvaluationUtils.Invocatable;
 import org.jetbrains.annotations.NotNull;
 
@@ -36,7 +35,7 @@ class ArrayValueProxy extends ValueProxy implements IArrayValueProxy, IObjectVal
 
   @Override
   public int getLength() {
-    return getArrayValue().length();    
+    return getArrayValue().length();
   }
 
   @Override

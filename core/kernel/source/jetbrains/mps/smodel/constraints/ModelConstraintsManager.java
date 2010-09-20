@@ -54,6 +54,17 @@ public class ModelConstraintsManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(ModelConstraintsManager.class);
 
   private static final Pattern CONCEPT_FQNAME = Pattern.compile("(.*)\\.structure\\.(\\w+)$");
+  private static INodePropertyGetter NULL_GETTER = new INodePropertyGetter() {
+    public Object execPropertyGet(SNode node, String propertyName, IScope scope) { return null; }
+    public void registerSelf(ModelConstraintsManager manager) { }
+    public void unRegisterSelf(ModelConstraintsManager manager) { }
+  };
+
+  private static INodePropertySetter NULL_SETTER = new INodePropertySetter() {
+    public void execPropertySet(SNode node, String propertyName, String value, IScope scope) { }
+    public void registerSelf(ModelConstraintsManager manager) { }
+    public void unRegisterSelf(ModelConstraintsManager manager) { }
+  };
 
   public static ModelConstraintsManager getInstance() {
     return ApplicationManager.getApplication().getComponent(ModelConstraintsManager.class);
@@ -62,8 +73,8 @@ public class ModelConstraintsManager implements ApplicationComponent {
   private Object myLock = new Object();
   private Map<String, List<IModelConstraints>> myAddedLanguageNamespaces = new HashMap<String, List<IModelConstraints>>();
   private Map<String, INodeReferentSetEventHandler> myNodeReferentSetEventHandlersMap = new HashMap<String, INodeReferentSetEventHandler>();
-  private Map<String, INodePropertyGetter> myNodePropertyGettersCache = new HashMap<String, INodePropertyGetter>();
-  private Map<String, INodePropertySetter> myNodePropertySettersCache = new HashMap<String, INodePropertySetter>();
+  private Map<String, INodePropertyGetter> myNodePropertyGettersCache = new ConcurrentHashMap<String, INodePropertyGetter>();
+  private Map<String, INodePropertySetter> myNodePropertySettersCache = new ConcurrentHashMap<String, INodePropertySetter>();
   private Map<String, INodePropertyValidator> myNodePropertyValidatorsCache = new HashMap<String, INodePropertyValidator>();
 
   private Map<String, INodePropertyGetter> myNodePropertyGettersMap = new ConcurrentHashMap<String, INodePropertyGetter>();
@@ -125,44 +136,36 @@ public class ModelConstraintsManager implements ApplicationComponent {
   public void registerNodePropertyGetter(String conceptFqName, String propertyName, INodePropertyGetter getter) {
     String key = conceptFqName + "#" + propertyName;
     INodePropertyGetter old = myNodePropertyGettersMap.put(key, getter);
-    if(old != null) {
+    if (old != null) {
       LOG.error("property getter is already registered for key '" + key + "' : " + old);
     }
-    synchronized (myLock) {
-      myNodePropertyGettersCache.clear();
-    }
+    myNodePropertyGettersCache.clear();
   }
 
   public void unRegisterNodePropertyGetter(String conceptFqName, String propertyName) {
     myNodePropertyGettersMap.remove(conceptFqName + "#" + propertyName);
-    synchronized (myLock) {
-      myNodePropertyGettersCache.clear();
-    }
+    myNodePropertyGettersCache.clear();
   }
 
   public void registerNodePropertySetter(String conceptFqName, String propertyName, INodePropertySetter setter) {
     String key = conceptFqName + "#" + propertyName;
     INodePropertySetter old = myNodePropertySettersMap.put(key, setter);
-    if(old != null) {
+    if (old != null) {
       LOG.error("property setter is already registered for key '" + key + "' : " + old);
     }
 
-    synchronized (myLock) {
-      myNodePropertySettersCache.clear();
-    }
+    myNodePropertySettersCache.clear();
   }
 
   public void unRegisterNodePropertySetter(String conceptFqName, String propertyName) {
     myNodePropertySettersMap.remove(conceptFqName + "#" + propertyName);
-    synchronized (myLock) {
-      myNodePropertySettersCache.clear();
-    }
+    myNodePropertySettersCache.clear();
   }
 
   public void registerNodePropertyValidator(String conceptFqName, String propertyName, INodePropertyValidator validator) {
     String key = conceptFqName + "#" + propertyName;
     INodePropertyValidator old = myNodePropertyValidatorsMap.put(key, validator);
-    if(old != null) {
+    if (old != null) {
       LOG.error("property validator is already registered for key '" + key + "' : " + old);
     }
     synchronized (myLock) {
@@ -181,7 +184,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
     String key = conceptFqName + "#" + referentRole;
     synchronized (myLock) {
       INodeReferentSetEventHandler old = myNodeReferentSetEventHandlersMap.put(key, eventHandler);
-      if(old != null) {
+      if (old != null) {
         LOG.error("'set referent' event handler is already registered for key '" + key + "' : " + old);
       }
     }
@@ -223,7 +226,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
   public void registerNodeReferentSearchScopeProvider(String conceptFqName, String referenceRole, INodeReferentSearchScopeProvider provider) {
     String key = conceptFqName + "#" + referenceRole;
     INodeReferentSearchScopeProvider old = myNodeReferentSearchScopeProvidersMap.put(key, provider);
-    if(old != null) {
+    if (old != null) {
       LOG.error("search scope provider is already registered for key '" + key + "' : " + old);
     }
   }
@@ -234,7 +237,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
   public void registerNodeDefaultSearchScopeProvider(String conceptFqName, INodeReferentSearchScopeProvider provider) {
     INodeReferentSearchScopeProvider old = myNodeDefaultSearchScopeProvidersMap.put(conceptFqName, provider);
-    if(old != null) {
+    if (old != null) {
       LOG.error("default search scope provider is already registered for concept '" + conceptFqName + "' : " + old);
     }
   }
@@ -287,56 +290,56 @@ public class ModelConstraintsManager implements ApplicationComponent {
       builder.append(prefixedPropertyName);
       final String originalKey = builder.toString();
 
-      synchronized (myLock) {
-        if (isSetter) {
-          if (myNodePropertySettersCache.containsKey(originalKey)) {
-            return myNodePropertySettersCache.get(originalKey);
-          }
-        } else {
-          if (myNodePropertyGettersCache.containsKey(originalKey)) {
-            return myNodePropertyGettersCache.get(originalKey);
-          }
+      if (isSetter) {
+        INodePropertySetter setter = myNodePropertySettersCache.get(originalKey);
+        if (setter != null) {
+          return setter == NULL_SETTER ? null : setter;
         }
-
-        return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<IModelConstraints>() {
-          public IModelConstraints compute() {
-            AbstractConceptDeclaration conceptDeclaration = SModelUtil_new.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
-            List<AbstractConceptDeclaration> hierarchy = SModelUtil_new.getConceptAndSuperConcepts(conceptDeclaration);
-
-            for (final AbstractConceptDeclaration concept : hierarchy) {
-              Language l = SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());
-              ensureLanguageAdded(l);
-
-              final String conceptFqName = NameUtil.nodeFQName(concept);
-              final IModelConstraints result;
-              builder.setLength(0);
-              builder.append(conceptFqName);
-              builder.append(prefixedPropertyName);
-              if (isSetter) {
-                result = myNodePropertySettersMap.get(builder.toString());
-              } else {
-                result = myNodePropertyGettersMap.get(builder.toString());
-              }
-              if (result != null) {
-                if (isSetter) {
-                  myNodePropertySettersCache.put(originalKey, (INodePropertySetter) result);
-                } else {
-                  myNodePropertyGettersCache.put(originalKey, (INodePropertyGetter) result);
-                }
-                return result;
-              }
-            }
-
-            // no setter/getter found
-            if (isSetter) {
-              myNodePropertySettersCache.put(originalKey, null);
-            } else {
-              myNodePropertyGettersCache.put(originalKey, null);
-            }
-            return null;
-          }
-        });
+      } else {
+        INodePropertyGetter getter = myNodePropertyGettersCache.get(originalKey);
+        if (getter != null) {
+          return getter == NULL_GETTER ? null : getter;
+        }
       }
+
+      return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<IModelConstraints>() {
+        public IModelConstraints compute() {
+          AbstractConceptDeclaration conceptDeclaration = SModelUtil_new.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
+          List<AbstractConceptDeclaration> hierarchy = SModelUtil_new.getConceptAndSuperConcepts(conceptDeclaration);
+
+          for (final AbstractConceptDeclaration concept : hierarchy) {
+            Language l = SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());
+            ensureLanguageAdded(l);
+
+            final String conceptFqName = NameUtil.nodeFQName(concept);
+            final IModelConstraints result;
+            builder.setLength(0);
+            builder.append(conceptFqName);
+            builder.append(prefixedPropertyName);
+            if (isSetter) {
+              result = myNodePropertySettersMap.get(builder.toString());
+            } else {
+              result = myNodePropertyGettersMap.get(builder.toString());
+            }
+            if (result != null) {
+              if (isSetter) {
+                myNodePropertySettersCache.put(originalKey, (INodePropertySetter) result);
+              } else {
+                myNodePropertyGettersCache.put(originalKey, (INodePropertyGetter) result);
+              }
+              return result;
+            }
+          }
+
+          // no setter/getter found
+          if (isSetter) {
+            myNodePropertySettersCache.put(originalKey, NULL_SETTER);
+          } else {
+            myNodePropertyGettersCache.put(originalKey, NULL_GETTER);
+          }
+          return null;
+        }
+      });
     }
     finally {
       StringBuilderSpinAllocator.dispose(builder);
@@ -618,7 +621,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
    * @return node of broken constraint block or null if constraint was not broken for all ancestors
    */
   public SNode canBeAncestorReturnBlock(SNode parentNode, SNode childConcept, IOperationContext context) {
-    if (parentNode == null)  return null;
+    if (parentNode == null) return null;
     Method m = getCanBeAncestorMethod(parentNode, context);
     if (m != null) {
       try {
@@ -671,7 +674,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
       if (topConcept != null) {
         List<AbstractConceptDeclaration> conceptAndSuperConcepts = SModelUtil_new.getConceptAndSuperConcepts(topConcept);
-  
+
         for (AbstractConceptDeclaration concept : conceptAndSuperConcepts) {
           String fqName = NameUtil.nodeFQName(concept);
           Language language = scope.getLanguage(NameUtil.namespaceFromConcept(concept));

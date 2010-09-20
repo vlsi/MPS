@@ -1,6 +1,5 @@
 package jetbrains.mps.debug.runtime.java.programState.proxies;
 
-import com.sun.jdi.ObjectReference;
 import com.sun.jdi.StringReference;
 import com.sun.jdi.ThreadReference;
 import com.sun.jdi.Value;

@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
-import jetbrains.mps.typesystem.integration.TypesystemPreferencesComponent;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.pattern.ConceptMatchingPattern;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
@@ -39,14 +38,7 @@ public class SubtypingCache {
   private Map<CacheNodeHandler, Map<Class, Pair<SNode, GeneratedMatchingPattern>>> myCoerceToPatternsCacheWeak
     = new HashMap<CacheNodeHandler, Map<Class, Pair<SNode, GeneratedMatchingPattern>>>();
 
-  private boolean myCoersionSimpleCached = TypesystemPreferencesComponent.getInstance().isCoersionSimpleCached();
-  private boolean myCoersionPatternCached = TypesystemPreferencesComponent.getInstance().isCoersionPatternCached();
-  private boolean mySubtypingCached = TypesystemPreferencesComponent.getInstance().isSubtypingCached();
-
   public void addCacheEntry(SNode subtype, SNode supertype, boolean answer, boolean isWeak) {
-    if (!mySubtypingCached) {
-      return;
-    }
     boolean bothMaps = answer != isWeak;
     Map<CacheNodeHandler, Map<CacheNodeHandler, Boolean>> cache1 = isWeak ? myCacheWeak : myCache;
     Map<CacheNodeHandler, Map<CacheNodeHandler, Boolean>> cache2 = isWeak ? myCache : myCacheWeak;
@@ -69,9 +61,6 @@ public class SubtypingCache {
   }
 
   public Boolean getAnswer(SNode subtype, SNode supertype, boolean isWeak) {
-    if (!mySubtypingCached) {
-      return null;
-    }
     Map<CacheNodeHandler, Map<CacheNodeHandler, Boolean>> cache = isWeak ? myCacheWeak : myCache;
     Map<CacheNodeHandler, Boolean> supertypes = cache.get(new CacheNodeHandler(subtype));
     if (supertypes == null) return null;
@@ -79,10 +68,6 @@ public class SubtypingCache {
   }
 
   private Pair<Boolean, SNode> getCoerced(SNode subtype, String conceptFQName, boolean isWeak) {
-    if (!myCoersionSimpleCached) {
-      return new Pair<Boolean, SNode>(false, null);
-    }
-
     Map<CacheNodeHandler, Map<String, SNode>> cache = isWeak ? myCoerceToConceptsCacheWeak : myCoerceToConceptsCache;
     Map<String, SNode> map = cache.get(new CacheNodeHandler(subtype));
     if (map != null && map.containsKey(conceptFQName)) {
@@ -99,9 +84,6 @@ public class SubtypingCache {
   }
 
   private Pair<Boolean, SNode> getCoerced(SNode subtype, Class c, GeneratedMatchingPattern pattern, boolean isWeak) {
-    if (!myCoersionPatternCached) {
-      return new Pair<Boolean, SNode>(false, null);
-    }
     Map<CacheNodeHandler, Map<Class, Pair<SNode, GeneratedMatchingPattern>>> cache
       = isWeak ? myCoerceToPatternsCacheWeak : myCoerceToPatternsCache;
     Map<Class, Pair<SNode, GeneratedMatchingPattern>> map = cache.get(new CacheNodeHandler(subtype));
@@ -121,10 +103,6 @@ public class SubtypingCache {
   }
 
   private void addCacheEntry(SNode subtype, String conceptFQName, SNode result, boolean isWeak) {
-    if (!myCoersionSimpleCached) {
-      return;
-    }
-
     boolean answer = result != null;
     boolean bothMaps = answer != isWeak;
     Map<CacheNodeHandler, Map<String, SNode>> cache1 = isWeak ? myCoerceToConceptsCacheWeak : myCoerceToConceptsCache;
@@ -152,10 +130,6 @@ public class SubtypingCache {
   }
 
   private void addCacheEntry(SNode subtype, Class c, SNode result, GeneratedMatchingPattern pattern, boolean isWeak) {
-    if (!myCoersionPatternCached) {
-      return;
-    }
-
     boolean answer = result != null;
     boolean bothMaps = answer != isWeak;
     Map<CacheNodeHandler, Map<Class, Pair<SNode, GeneratedMatchingPattern>>> cache1 = isWeak ? myCoerceToPatternsCacheWeak : myCoerceToPatternsCache;

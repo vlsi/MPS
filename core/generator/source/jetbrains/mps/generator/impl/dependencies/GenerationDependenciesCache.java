@@ -1,10 +1,9 @@
 package jetbrains.mps.generator.impl.dependencies;
 
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.generator.fileGenerator.AllCaches;
-import jetbrains.mps.generator.fileGenerator.CacheGenerationContext;
-import jetbrains.mps.generator.fileGenerator.FileGenerationManager;
-import jetbrains.mps.generator.fileGenerator.XmlBasedModelCache;
+import jetbrains.mps.generator.GenerationStatus;
+import jetbrains.mps.generator.cache.AllCaches;
+import jetbrains.mps.generator.cache.XmlBasedModelCache;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -13,8 +12,8 @@ import org.jetbrains.annotations.NotNull;
  * Evgeny Gryaznov, May 14, 2010
  */
 public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDependencies> {
-  public GenerationDependenciesCache(FileGenerationManager fileGeneratorManager, AllCaches allCaches) {
-    super(fileGeneratorManager, allCaches);
+  public GenerationDependenciesCache(AllCaches allCaches) {
+    super(allCaches);
   }
 
   @NonNls
@@ -35,8 +34,8 @@ public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDe
     return GenerationDependencies.fromXml(e);
   }
 
-  protected GenerationDependencies generateCache(CacheGenerationContext ctx) {
-    return ctx.getDependencies();
+  protected GenerationDependencies generateCache(GenerationStatus status) {
+    return status.getDependencies();
   }
 
   public static GenerationDependenciesCache getInstance() {

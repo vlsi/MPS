@@ -1,9 +1,7 @@
 package jetbrains.mps.debug.evaluation.proxies;
 
-import com.sun.jdi.ObjectReference;
 import jetbrains.mps.debug.evaluation.EvaluationException;
 import jetbrains.mps.debug.evaluation.InvalidEvaluatedExpressionException;
-import jetbrains.mps.debug.evaluation.TargetVMEvaluationException;
 import org.jetbrains.annotations.Nullable;
 
 public interface IObjectValueProxy extends IValueProxy {

@@ -69,7 +69,7 @@ public class ProjectTree extends MPSTree {
     return root;
   }
 
-  public ProjectModulesPoolTreeNode getModulesPoolNode(){
+  public ProjectModulesPoolTreeNode getModulesPoolNode() {
     return myModulesPoolTreeNode;
   }
 

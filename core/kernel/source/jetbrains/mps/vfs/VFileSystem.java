@@ -18,12 +18,10 @@ package jetbrains.mps.vfs;
 import com.intellij.openapi.vfs.JarFileSystem;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.util.PathManager;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 
-@Deprecated
 public class VFileSystem {
 
   public static VirtualFile getFile(String path) {
@@ -37,8 +35,7 @@ public class VFileSystem {
 
     if (jarRoot == null) return null;
 
-    VirtualFile entryFile = jarRoot.findFileByRelativePath(entryPath);
-    return entryFile;
+    return jarRoot.findFileByRelativePath(entryPath);
   }
 
   /**

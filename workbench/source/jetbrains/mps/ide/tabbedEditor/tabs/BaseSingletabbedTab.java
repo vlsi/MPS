@@ -19,18 +19,13 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.tabbedEditor.AbstractLazyTab;
-import jetbrains.mps.ide.tabbedEditor.TabChangeListener;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.util.Pair;
-import org.apache.commons.lang.ObjectUtils;
-import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JComponent;
 import javax.swing.SwingUtilities;
@@ -75,7 +70,7 @@ public abstract class BaseSingletabbedTab extends AbstractLazyTab {
 
   }
 
-  public SNodePointer getLoadableNodePointer(){
+  public SNodePointer getLoadableNodePointer() {
     return myLoadableNode;
   }
 

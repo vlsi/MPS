@@ -3,7 +3,6 @@ package jetbrains.mps.debug.runtime.java.programState.proxies;
 import com.sun.jdi.*;
 import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debug.customViewers.CustomViewersManager;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

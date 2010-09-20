@@ -21,12 +21,12 @@ import java.util.Collections;
 import java.util.List;
 
 /**
-* Created by IntelliJ IDEA.
-* User: Cyril.Konopko
-* Date: 09.04.2010
-* Time: 17:12:37
-* To change this template use File | Settings | File Templates.
-*/ // This class is immutable
+ * Created by IntelliJ IDEA.
+ * User: Cyril.Konopko
+ * Date: 09.04.2010
+ * Time: 17:12:37
+ * To change this template use File | Settings | File Templates.
+ */ // This class is immutable
 public class JavaUiState extends AbstractUiState {
   private static Logger LOG = Logger.getLogger(JavaUiState.class);
 
@@ -117,19 +117,20 @@ public class JavaUiState extends AbstractUiState {
   }
 
   protected JavaStackFrame findStackFrame() {
-      return (JavaStackFrame) super.findStackFrame();
-    }
+    return (JavaStackFrame) super.findStackFrame();
+  }
 
   @Nullable
-    public ObjectReference getThisObject() {
+  public ObjectReference getThisObject() {
     JavaStackFrame javaStackFrame = getStackFrame();
     if (javaStackFrame != null) {
-        return javaStackFrame.getStackFrame().thisObject();
-      }
-      return null;
+      return javaStackFrame.getStackFrame().thisObject();
     }
+    return null;
+  }
 
   // changes state on pause/resume
+
   JavaUiState paused(SuspendContext context) {
     // we select new context even if we are already on some other context
     // user probably wants to know about new paused contexts
@@ -158,6 +159,7 @@ public class JavaUiState extends AbstractUiState {
   }
 
   // changes state on user selection
+
   protected JavaUiState selectThreadInternal(@Nullable IThread thread) {
     return new JavaUiState(this, (JavaThread) thread, myDebugSession);
   }
@@ -213,10 +215,10 @@ public class JavaUiState extends AbstractUiState {
     return myDebugSession.getExecutionState();
   }
 
-   @Deprecated
+  @Deprecated
   public Value getVariableValue(LocalVariable variable) {
-     JavaStackFrame stackFrame = getStackFrame();
-     if (stackFrame != null) {
+    JavaStackFrame stackFrame = getStackFrame();
+    if (stackFrame != null) {
       return stackFrame.getStackFrame().getValue(variable);
     }
     return null;

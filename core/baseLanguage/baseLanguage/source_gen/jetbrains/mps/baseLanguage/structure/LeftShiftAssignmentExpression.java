@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class LeftShiftAssignmentExpression extends BaseAssignmentExpression {
+public class LeftShiftAssignmentExpression extends OperationAssignmentExpression {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.LeftShiftAssignmentExpression";
 
   public LeftShiftAssignmentExpression(SNode node) {

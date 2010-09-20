@@ -1,11 +1,7 @@
 package jetbrains.mps.generator.impl.dependencies;
 
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.ModelDigestHelper;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.textGen.TextGenManager;
 import org.jdom.Element;
 
@@ -72,11 +68,11 @@ public class GenerationDependencies {
     }
     String[] models = myUsedModelsHashes.keySet().toArray(new String[myUsedModelsHashes.size()]);
     Arrays.sort(models);
-    for(String model : models) {
+    for (String model : models) {
       Element e = new Element(NODE_MODEL);
       e.setAttribute(ATTR_MODEL_ID, model);
       String hash = myUsedModelsHashes.get(model);
-      if(hash != null) {
+      if (hash != null) {
         e.setAttribute(ATTR_HASH, hash);
       }
       root.addContent(e);
@@ -97,13 +93,13 @@ public class GenerationDependencies {
       /* regenerate all */
       return null;
     }
-    Map<String,String> externalHashes = new HashMap<String, String>();
+    Map<String, String> externalHashes = new HashMap<String, String>();
     for (Element e : ((List<Element>) root.getChildren(NODE_MODEL))) {
       String modelReference = GenerationRootDependencies.getValue(e, ATTR_MODEL_ID);
       String rootHash = GenerationRootDependencies.getValue(e, ATTR_HASH);
-      if(modelReference != null) {
+      if (modelReference != null) {
         externalHashes.put(modelReference, rootHash);
-      }      
+      }
     }
     List<GenerationRootDependencies> data = new ArrayList<GenerationRootDependencies>();
     for (Element e : ((List<Element>) root.getChildren(NODE_COMMON))) {
@@ -122,7 +118,7 @@ public class GenerationDependencies {
     return (extension == null) ? outputRootNode.getName() : outputRootNode.getName() + "." + extension;
   }
 
-  public static GenerationDependencies fromData(Map<SNode, SNode> currentToOriginalMap, RootDependenciesBuilder[] roots, String modelHash, Project project) {
+  public static GenerationDependencies fromData(Map<SNode, SNode> currentToOriginalMap, RootDependenciesBuilder[] roots, String modelHash, IOperationContext operationContext) {
     Map<String, List<String>> generatedFiles = new HashMap<String, List<String>>();
     Map<String, String> externalHashes = new HashMap<String, String>();
 
@@ -156,10 +152,10 @@ public class GenerationDependencies {
         dep = GenerationRootDependencies.fromData(l, files);
       }
       rootDependencies.add(dep);
-      for(String modelReference : dep.getExternal()) {
-        if(!externalHashes.containsKey(modelReference)) {
+      for (String modelReference : dep.getExternal()) {
+        if (!externalHashes.containsKey(modelReference)) {
           SModelDescriptor sm = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(modelReference));
-          Map<String, String> hashes = ModelDigestHelper.getInstance().getGenerationHashes(sm, project);
+          Map<String, String> hashes = ModelDigestHelper.getInstance().getGenerationHashes(sm, operationContext);
           String value = hashes != null ? hashes.get(ModelDigestHelper.FILE) : null;
           externalHashes.put(modelReference, value);
         }

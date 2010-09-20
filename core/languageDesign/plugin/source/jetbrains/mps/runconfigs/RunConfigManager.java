@@ -40,10 +40,7 @@ import jetbrains.mps.plugins.pluginparts.runconfigs.BaseConfigCreator;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.*;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -212,7 +209,7 @@ public class RunConfigManager implements ProjectComponent {
       languages.add(l);
     }
 
-    languages.addAll(LibraryManager.getInstance().getGlobalModules(Language.class));
+    languages.addAll(MPSModuleRepository.getInstance().getAllLanguages());
 
     for (Language language : languages) {
       if (LanguageAspect.PLUGIN.get(language) != null) {
@@ -252,7 +249,7 @@ public class RunConfigManager implements ProjectComponent {
       languages.add(l);
     }
 
-    languages.addAll(LibraryManager.getInstance().getGlobalModules(Language.class));
+    languages.addAll(MPSModuleRepository.getInstance().getAllLanguages());
 
     for (Language language : languages) {
       if (LanguageAspect.PLUGIN.get(language) != null) {

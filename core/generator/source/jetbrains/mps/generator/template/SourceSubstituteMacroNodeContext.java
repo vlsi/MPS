@@ -19,7 +19,7 @@ import jetbrains.mps.generator.impl.TemplateContext;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 
-public class SourceSubstituteMacroNodeContext extends TemplateQueryContext{
+public class SourceSubstituteMacroNodeContext extends TemplateQueryContext {
   private SNode myMacro;
 
   public SourceSubstituteMacroNodeContext(SNode inputNode, SNode macroNode, @NotNull TemplateContext context, ITemplateGenerator generator) {

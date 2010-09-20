@@ -36,14 +36,6 @@ public class check_Export_NonTypesystemRule extends AbstractNonTypesystemRule_Ru
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "usage of nonpublic API", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "402007580867616197", intentionProvider, errorTarget);
       }
     }
-    // just check this to understand situation 
-    if (ExportScope_Behavior.getNamespace_2565736246230026649(SNodeOperations.getConceptDeclaration(node)) == null) {
-      {
-        BaseIntentionProvider intentionProvider = null;
-        IErrorTarget errorTarget = new NodeErrorTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(node, "no target namespace", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "4427695773496933176", intentionProvider, errorTarget);
-      }
-    }
     // check references 
     for (SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(node))) {
       if (!(ExportScope_Behavior.checkExport_2565736246230031479(false, SLinkOperations.getTargetNode(ref), namespace))) {
@@ -52,15 +44,6 @@ public class check_Export_NonTypesystemRule extends AbstractNonTypesystemRule_Ru
           IErrorTarget errorTarget = new NodeErrorTarget();
           errorTarget = new ReferenceErrorTarget(SLinkOperations.getRole(ref));
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "usage of nonpublic API", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "402007580867616261", intentionProvider, errorTarget);
-        }
-      }
-      // just check this to understand situation 
-      if (ExportScope_Behavior.getNamespace_2565736246230026649(SLinkOperations.getTargetNode(ref)) == null) {
-        {
-          BaseIntentionProvider intentionProvider = null;
-          IErrorTarget errorTarget = new NodeErrorTarget();
-          errorTarget = new ReferenceErrorTarget(SLinkOperations.getRole(ref));
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(node, "no target namespace", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "4427695773496933184", intentionProvider, errorTarget);
         }
       }
     }

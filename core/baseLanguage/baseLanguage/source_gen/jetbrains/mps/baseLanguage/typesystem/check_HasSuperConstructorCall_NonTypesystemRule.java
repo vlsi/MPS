@@ -6,10 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.behavior.ConstructorDeclaration_Behavior;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
@@ -21,25 +18,13 @@ public class check_HasSuperConstructorCall_NonTypesystemRule extends AbstractNon
   }
 
   public void applyRule(final SNode constructorDeclaration, final TypeCheckingContext typeCheckingContext) {
-    List<SNode> statements = SLinkOperations.getTargets(SLinkOperations.getTarget(constructorDeclaration, "body", true), "statement", true);
-    if (ListSequence.fromList(statements).isEmpty() || !(SNodeOperations.isInstanceOf(ListSequence.fromList(statements).first(), "jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement"))) {
-      SNode classConcept = SNodeOperations.getAncestor(constructorDeclaration, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-      SNode classifierType = SLinkOperations.getTarget(classConcept, "superclass", true);
-      SNode classifier = SLinkOperations.getTarget(classifierType, "classifier", false);
-      if ((classifier != null) && SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept") && classifier != SNodeOperations.getNode("f:java_stub#java.lang(java.lang@java_stub)", "~Object") && classifier != SNodeOperations.getNode("f:java_stub#java.lang(java.lang@java_stub)", "~Enum")) {
-        List<SNode> constructors = SLinkOperations.getTargets(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true);
-        if (ListSequence.fromList(constructors).isEmpty()) {
-          return;
-        }
-        for (SNode constructor : constructors) {
-          if (ListSequence.fromList(SLinkOperations.getTargets(constructor, "parameter", true)).isEmpty()) {
-            return;
-          }
-        }
+    if (ConstructorDeclaration_Behavior.call_containsImplicitSuperConstructorCall_7152041109751551503(constructorDeclaration)) {
+      SNode superConstructor = ConstructorDeclaration_Behavior.call_getSuperDefaultConstructor_7152041109751601013(constructorDeclaration);
+      if (superConstructor == null) {
         {
           BaseIntentionProvider intentionProvider = null;
           IErrorTarget errorTarget = new NodeErrorTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(constructorDeclaration, "there is no default constructor available in '" + classifier + "'", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2782601603365247587", intentionProvider, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(constructorDeclaration, "there is no default constructor available in superclass", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2782601603365247587", intentionProvider, errorTarget);
         }
       }
     }

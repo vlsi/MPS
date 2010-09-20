@@ -12,8 +12,12 @@ import java.util.Map;
  */
 public interface IStackFrame {
   public ILocation getLocation();
+
   public IThread getThread();
+
   public Map<IWatchable, IValue> getWatchableValues();
+
   public IValue getValue(IWatchable watchable);
+
   public List<IWatchable> getVisibleWatchables();
 }

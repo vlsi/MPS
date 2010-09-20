@@ -16,7 +16,6 @@
 package jetbrains.mps.workbench.choose.modules;
 
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.project.MPSProject;
 
 public abstract class BaseSolutionModel extends BaseModuleModel {
   public BaseSolutionModel(Project project) {

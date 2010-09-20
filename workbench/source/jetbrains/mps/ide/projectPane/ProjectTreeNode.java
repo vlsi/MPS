@@ -46,7 +46,7 @@ class ProjectTreeNode extends MPSTreeNode {
     setErrorState(myProject.getErrors() != null ? ErrorState.ERROR : ErrorState.NONE);
     if (ideaProject.getBaseDir() != null) {
       //noinspection ConstantConditions
-      setAdditionalText(ideaProject .getBaseDir().getPresentableUrl());
+      setAdditionalText(ideaProject.getBaseDir().getPresentableUrl());
     }
     setTooltipText(myProject.getErrors());
   }

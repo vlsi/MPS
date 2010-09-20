@@ -10547,23 +10547,6 @@
         </node>
       </node>
     </node>
-    <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1218039406173">
-      <link role="classifier:3" targetNodeId="44.~DefaultFileGenerator" resolveInfo="DefaultFileGenerator" />
-      <node role="referenceMacro$link_attribute$classifier:3" type="jetbrains.mps.lang.generator.structure.ReferenceMacro:2" id="1218039406174">
-        <node role="referentFunction:2" type="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent:2" id="1218039406175">
-          <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1218039406176">
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1218039406177">
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1218039406178">
-                <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="1218039406179" />
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1218039406180">
-                  <link role="link:16" targetNodeId="1.1218036658157:23" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1218039675872">
       <property name="name:3" value="a" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1218039675888" />
@@ -10579,6 +10562,23 @@
                 <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="1218039703251" />
                 <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="1218039711697">
                   <link role="link:16" targetNodeId="1.1218039436749:23" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6288891811420846548">
+      <link role="classifier:3" targetNodeId="2.~Object" resolveInfo="Object" />
+      <node role="referenceMacro$link_attribute$classifier:3" type="jetbrains.mps.lang.generator.structure.ReferenceMacro:2" id="6288891811420846549">
+        <node role="referentFunction:2" type="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent:2" id="6288891811420846550">
+          <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6288891811420846551">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6288891811420846552">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6288891811420846553">
+                <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="6288891811420846554" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="6288891811420846555">
+                  <link role="link:16" targetNodeId="1.1218036658157:23" />
                 </node>
               </node>
             </node>

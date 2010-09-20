@@ -360,10 +360,9 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.intentions.GenerateConstructor_Intention" file="GenerateConstructor_Intention.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="com.intellij.openapi.util.Computable" />
     <classNode dependClassName="java.awt.Frame" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Void" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />

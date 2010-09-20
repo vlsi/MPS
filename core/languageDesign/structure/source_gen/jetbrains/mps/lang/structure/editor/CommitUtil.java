@@ -12,7 +12,7 @@ import jetbrains.mps.lang.structure.refactorings.RenameConcept;
 import jetbrains.mps.lang.structure.refactorings.RenameProperty;
 import jetbrains.mps.lang.structure.refactorings.RenameLink;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import jetbrains.mps.refactoring.RefactoringFacade;
+import jetbrains.mps.ide.refactoring.RefactoringFacade;
 import jetbrains.mps.nodeEditor.EditorContext;
 import javax.swing.JOptionPane;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;

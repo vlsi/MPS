@@ -1,9 +1,5 @@
 package jetbrains.mps.javaParser.testMaterial7;
 
-import jetbrains.mps.javaParser.testMaterial7.OrdinaryInterfaceWithNested.Iterator;
-
-import java.util.List;
-
 /**
  * Created by IntelliJ IDEA.
  * Date: 03.06.2010

@@ -15,15 +15,12 @@
  */
 package jetbrains.mps.workbench.dataExtraction.fileChooser;
 
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import com.intellij.openapi.actionSystem.DataProvider;
-import com.intellij.openapi.vfs.VirtualFileSystem;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.ide.impl.dataRules.GetDataRule;
-import org.jetbrains.annotations.Nullable;
+import com.intellij.openapi.actionSystem.DataProvider;
+import com.intellij.openapi.vfs.LocalFileSystem;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.MPSDataKeys;
+import org.jetbrains.annotations.Nullable;
 
 public class ProjectFileRule implements GetDataRule {
   @Nullable

@@ -1,6 +1,7 @@
-import jetbrains.mps.testbench.junit.runners.WatchingParameterized;
 import jetbrains.mps.testbench.BrokenReferencesTestHelper;
 import jetbrains.mps.testbench.BrokenReferencesTestHelper.Token;
+import jetbrains.mps.testbench.MpsMakeHelper;
+import jetbrains.mps.testbench.junit.runners.WatchingParameterized;
 import jetbrains.mps.testbench.util.FilesCollector;
 import jetbrains.mps.testbench.util.FilesCollector.FilePattern;
 import jetbrains.mps.testbench.util.FilesCollector.FilePattern.Type;
@@ -12,6 +13,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
 
 import java.io.File;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -52,10 +54,15 @@ public class BrokenReferencesTest {
       filePtns.add (FilesCollector.FilePattern.fromTypeAndPattern(ptns));
     }
     ArrayList<Object[]> res = new ArrayList<Object[]>();
-    for (File f: FilesCollector.collectFiles(filePtns, path)) {
+    for (File f: FilesCollector.fastCollectFiles(filePtns, path)) {
       res.add(new Object[]{f});
     }
     return res;
+  }
+
+  @BeforeClass
+  public static void make () throws Exception {
+    new MpsMakeHelper().make();
   }
 
   @BeforeClass
@@ -67,7 +74,7 @@ public class BrokenReferencesTest {
     for (Object[] ptns : patterns) {
       filePtns.add (FilesCollector.FilePattern.fromTypeAndPattern(ptns));
     }
-    HELPER.load(FilesCollector.collectFiles(filePtns, path));
+    HELPER.load(FilesCollector.fastCollectFiles(filePtns, path));
   }
 
   @AfterClass

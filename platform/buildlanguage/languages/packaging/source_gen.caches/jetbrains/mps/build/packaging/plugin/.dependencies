@@ -386,8 +386,8 @@
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.Configuration_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.MPSLayout_Behavior" />
     <classNode dependClassName="jetbrains.mps.generator.GeneratorManager" />
+    <classNode dependClassName="jetbrains.mps.generator.fileGenerator.TextGenerationUtil" />
     <classNode dependClassName="jetbrains.mps.generator.generationTypes.TextGenerationHandler" />
-    <classNode dependClassName="jetbrains.mps.generator.generationTypes.TextGenerationUtil" />
     <classNode dependClassName="jetbrains.mps.ide.generator.GeneratorFacade" />
     <classNode dependClassName="jetbrains.mps.ide.messages.DefaultMessageHandler" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

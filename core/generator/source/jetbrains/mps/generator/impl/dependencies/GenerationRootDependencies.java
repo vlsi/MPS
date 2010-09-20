@@ -11,8 +11,8 @@ import java.util.Collections;
 import java.util.List;
 
 /**
-* Evgeny Gryaznov, Jun 1, 2010
-*/
+ * Evgeny Gryaznov, Jun 1, 2010
+ */
 public class GenerationRootDependencies {
 
   private static final String ATTR_ID = "id";
@@ -76,29 +76,29 @@ public class GenerationRootDependencies {
   }
 
   public void saveTo(Element element) {
-    if(myRootId != null) {
+    if (myRootId != null) {
       element.setAttribute(ATTR_ID, this.myRootId);
     }
-    if(myRootName != null) {
+    if (myRootName != null) {
       element.setAttribute(ATTR_NAME, this.myRootName);
     }
-    if(myHash != null) {
+    if (myHash != null) {
       element.setAttribute(ATTR_HASH, this.myHash);
     }
-    if(myDependsOnConditionals) {
+    if (myDependsOnConditionals) {
       element.setAttribute(ATTR_DEPENDS_ON_CONDITIONALS, TRUE);
     }
-    for(String id : myLocal) {
+    for (String id : myLocal) {
       Element node = new Element(NODE_DEPENDS_ON);
       node.setAttribute(ATTR_ROOT_ID, id);
       element.addContent(node);
     }
-    for(String id : myExternal) {
+    for (String id : myExternal) {
       Element node = new Element(NODE_DEPENDS_ON);
       node.setAttribute(ATTR_MODEL_ID, id);
       element.addContent(node);
     }
-    for(String file : myGeneratedFiles) {
+    for (String file : myGeneratedFiles) {
       Element node = new Element(NODE_FILE);
       node.setAttribute(ATTR_NAME, file);
       element.addContent(node);
@@ -120,15 +120,15 @@ public class GenerationRootDependencies {
     List<String> files = new ArrayList<String>();
     for (Element e : ((List<Element>) element.getChildren(NODE_DEPENDS_ON))) {
       Attribute attr = e.getAttribute(ATTR_ROOT_ID);
-      if(attr != null) {
+      if (attr != null) {
         local.add(attr.getValue());
-      } else if((attr = e.getAttribute(ATTR_MODEL_ID)) != null) {
+      } else if ((attr = e.getAttribute(ATTR_MODEL_ID)) != null) {
         external.add(attr.getValue());
       }
     }
     for (Element e : ((List<Element>) element.getChildren(NODE_FILE))) {
       String v = getValue(e, ATTR_NAME);
-      if(v != null) {
+      if (v != null) {
         files.add(v);
       }
     }
@@ -140,13 +140,13 @@ public class GenerationRootDependencies {
     final Collection<SModelDescriptor> externalModels = l.getDependsOnModels();
 
     List<String> local = new ArrayList<String>(localNodes.size());
-    for(SNode n : localNodes) {
+    for (SNode n : localNodes) {
       local.add(n.getId());
     }
     Collections.sort(local);
 
     List<String> external = new ArrayList<String>(externalModels.size());
-    for(SModelDescriptor m : externalModels) {
+    for (SModelDescriptor m : externalModels) {
       external.add(m.getSModelReference().toString());
     }
     Collections.sort(external);

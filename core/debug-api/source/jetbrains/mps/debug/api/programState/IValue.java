@@ -12,7 +12,10 @@ import java.util.List;
  */
 public interface IValue {
   public String getValuePresentation();
+
   public Icon getPresentationIcon();
+
   public boolean isStructure();
+
   public List<IWatchable> getSubvalues();
 }

@@ -12,7 +12,7 @@ public class StepRequestor implements Requestor {
   private static final Logger LOG = Logger.getLogger(StepRequestor.class);
 
   private final int myStepType;
-  
+
   private String myDeclaringType;
   private int myLineNumber;
   private int myFrameCount;

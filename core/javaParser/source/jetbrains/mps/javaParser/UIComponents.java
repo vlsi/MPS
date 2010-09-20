@@ -37,7 +37,7 @@ import java.util.*;
 public class UIComponents {
   private static final Logger LOG = Logger.getLogger(UIComponents.class);
 
-  public static MyDialog createClasspathsDialog(IOperationContext context,final File sourceDir, List<String> classFqNames) {
+  public static MyDialog createClasspathsDialog(IOperationContext context, final File sourceDir, List<String> classFqNames) {
     return new MyDialog(context, sourceDir, classFqNames);
   }
 
@@ -93,7 +93,7 @@ public class UIComponents {
       result.setCellRenderer(renderer);
       result.init();
       return result;
-    }                                        
+    }
 
     @Override
     public DialogDimensions getDefaultDimensionSettings() {

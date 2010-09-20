@@ -27,8 +27,9 @@ public interface INodeReferentSearchScopeProvider extends IModelConstraints {
   String getPresentation(IOperationContext operationContext, PresentationReferentConstraintContext _context);
 
   /**
-   *  For convenience navigation from errors in search scope to the checking function
-   * @return pointer to corresponding ConceptFunction node or null 
+   * For convenience navigation from errors in search scope to the checking function
+   *
+   * @return pointer to corresponding ConceptFunction node or null
    */
   SNodePointer getSearchScopeValidatorNodePointer();
 }

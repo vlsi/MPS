@@ -17,15 +17,12 @@ package jetbrains.mps.project;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.wm.WindowManager;
-
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.awt.Frame;
 import java.util.Set;
 
 public class ModuleContext extends StandaloneMPSContext {
@@ -72,7 +69,8 @@ public class ModuleContext extends StandaloneMPSContext {
   @NotNull
   public IScope getScope() {
     IModule module = getModule();
-    if (module == null) throw new IllegalStateException("Mostly happens when some actions are performed 'later'. Look for 'later' invocations in stacktrace");
+    if (module == null)
+      throw new IllegalStateException("Mostly happens when some actions are performed 'later'. Look for 'later' invocations in stacktrace");
     return module.getScope();
   }
 

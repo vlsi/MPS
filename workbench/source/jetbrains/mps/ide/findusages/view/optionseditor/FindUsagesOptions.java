@@ -19,8 +19,6 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.BaseOptions;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.MPSProject;
 import org.jdom.Element;
 
 import java.lang.reflect.InvocationTargetException;

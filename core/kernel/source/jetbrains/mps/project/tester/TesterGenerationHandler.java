@@ -15,9 +15,6 @@
  */
 package jetbrains.mps.project.tester;
 
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
@@ -25,11 +22,12 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
-import java.rmi.RemoteException;
 import java.util.*;
 
 /**
@@ -50,12 +48,12 @@ public class TesterGenerationHandler extends InMemoryJavaGenerationHandler {
   }
 
   @Override
-  public boolean compile(Project p, List<Pair<IModule,List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) {
+  public boolean compile(IOperationContext operationContext, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) {
     return true;
   }
 
   @Override
-  public long estimateCompilationMillis(List<Pair<IModule,List<SModelDescriptor>>> input) {
+  public long estimateCompilationMillis(List<Pair<IModule, List<SModelDescriptor>>> input) {
     return 0;
   }
 
@@ -68,7 +66,7 @@ public class TesterGenerationHandler extends InMemoryJavaGenerationHandler {
     List<String> roots = new ArrayList<String>();
     myOutputModelRefToRoots.put(outputModel.getSModelReference(), roots);
     for (SNode outputRoot : outputModel.getRoots()) {
-      if(outputRoot.getName() == null) {
+      if (outputRoot.getName() == null) {
         continue;
       }
       roots.add(getKey(outputModel.getSModelReference(), outputRoot));
@@ -97,20 +95,12 @@ public class TesterGenerationHandler extends InMemoryJavaGenerationHandler {
     return outputNode.substring(outputModel.getLongName().length() + 1);
   }
 
-  public File getOutputDir(SModel outputModel) {
-    if (myOutputModelToPath.isEmpty()) {
-      return null;
-    }
-    File outputDir = new File(myOutputModelToPath.get(outputModel));
-    return FileGenerationUtil.getDefaultOutputDir(outputModel, outputDir);
-  }
-
   public File getOutputDir(SModelReference outputModelRef) {
     if (myOutputModelRefToPath.isEmpty()) {
       return null;
     }
     File outputDir = new File(myOutputModelRefToPath.get(outputModelRef));
-    return FileGenerationUtil.getDefaultOutputDir(outputModelRef, outputDir);
+    return FileGenerationUtil.getDefaultOutputDir(outputModelRef, FileSystem.getInstance().getFileByPath(outputDir.getAbsolutePath())).toFile();
   }
 
   @Override

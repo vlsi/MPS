@@ -46,10 +46,10 @@ public class RecentMPSProjectsManager extends RecentProjectsManagerBase {
     return project.getPresentableUrl();
   }
 
-  protected void doOpenProject(String projectPath, Project projectToClose) {
+  protected void doOpenProject(String projectPath, Project projectToClose, boolean forceNewFrame) {
     final VirtualFile projectFile = LocalFileSystem.getInstance().findFileByPath(FileUtil.toSystemIndependentName(projectPath));
     if (projectFile != null) {
-      ProjectUtil.openProject(projectPath, projectToClose, false);
+      ProjectUtil.openProject(projectPath, projectToClose, forceNewFrame);
     }
   }
 }

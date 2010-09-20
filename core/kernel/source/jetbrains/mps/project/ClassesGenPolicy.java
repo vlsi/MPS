@@ -7,7 +7,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 
 public class ClassesGenPolicy extends BaseDirectoryIndexExcludePolicy {
   protected ClassesGenPolicy(@NotNull Project project) {

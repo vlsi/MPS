@@ -18,19 +18,19 @@ package jetbrains.mps.generator.impl;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
+import jetbrains.mps.generator.impl.FastRuleFinder.BlockedReductionsData;
+import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.impl.dependencies.DependenciesReadListener;
 import jetbrains.mps.generator.impl.dependencies.RootDependenciesBuilder;
-import jetbrains.mps.generator.impl.FastRuleFinder.BlockedReductionsData;
-import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
 import jetbrains.mps.generator.impl.reference.PostponedReference;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_CopiedInputNode;
 import jetbrains.mps.generator.impl.template.QueryExecutionContextWithDependencyRecording;
 import jetbrains.mps.generator.impl.template.QueryExecutionContextWithTracing;
-import jetbrains.mps.generator.template.*;
-import jetbrains.mps.ide.generator.GenerationSettings;
+import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
+import jetbrains.mps.generator.template.QueryExecutionContext;
+import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.core.structure.INamedConcept;
-import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.lang.sharedConcepts.structure.Options_DefaultTrue;
@@ -77,18 +77,18 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   public TemplateGenerator(GenerationSessionContext operationContext, ProgressIndicator progressMonitor,
                            IGeneratorLogger logger, RuleManager ruleManager,
-                           SModel inputModel, SModel outputModel, GenerationProcessContext generationContext,
+                           SModel inputModel, SModel outputModel, GenerationOptions options,
                            DependenciesBuilder dependenciesBuilder, IPerformanceTracer performanceTracer) {
 
     super(operationContext, progressMonitor, logger, inputModel, outputModel);
     myRuleManager = ruleManager;
     myGenerationTracer = getGeneratorSessionContext().getGenerationTracer();
-    myIsStrict = generationContext.isStrictMode();
+    myIsStrict = options.isStrictMode();
     myDelayedChanges = new DelayedChanges(this);
     myDependenciesBuilder = dependenciesBuilder;
     ttrace = performanceTracer;
     myOutputRoots = new ArrayList<SNode>();
-    myExecutionContext = generationContext.getTracingMode() >= GenerationSettings.TRACE_LANGS
+    myExecutionContext = options.getTracingMode() >= GenerationOptions.TRACE_LANGS
       ? new QueryExecutionContextWithTracing(new DefaultQueryExecutionContext(this), performanceTracer)
       : new DefaultQueryExecutionContext(this);
 

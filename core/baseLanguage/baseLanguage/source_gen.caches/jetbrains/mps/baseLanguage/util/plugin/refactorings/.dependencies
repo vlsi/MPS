@@ -486,11 +486,11 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ProblemsDialog" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
+    <classNode dependClassName="jetbrains.mps.ide.refactoring.RefactoringView" />
+    <classNode dependClassName="jetbrains.mps.ide.refactoring.RefactoringViewAction" />
+    <classNode dependClassName="jetbrains.mps.ide.refactoring.RefactoringViewItem" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.refactoring.RefactoringView" />
-    <classNode dependClassName="jetbrains.mps.refactoring.RefactoringViewAction" />
-    <classNode dependClassName="jetbrains.mps.refactoring.RefactoringViewItem" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />

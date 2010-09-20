@@ -24,6 +24,8 @@
   <unitInfo fileName="DefaultJavaApplication_Editor.java" startLine="31" startPosition="18" endLine="46" endPosition="3" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Editor$2" />
   <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="345" startPosition="0" endLine="361" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$MyState" />
   <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="158" startPosition="52" endLine="175" endPosition="13" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$2" />
+  <unitInfo fileName="BaseLanguageNodeActionsInternal_ActionGroup.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguageNodeActionsInternal_ActionGroup" />
+  <unitInfo fileName="BaseLanguageEditorPopupInternal_ActionGroup.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguageEditorPopupInternal_ActionGroup" />
   <unitInfo fileName="BaseLanguageModelActionsInternal_ActionGroup.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguageModelActionsInternal_ActionGroup" />
   <unitInfo fileName="BaseLanguage_ProjectPlugin.java" startLine="14" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.BaseLanguage_ProjectPlugin" />
   <unitInfo fileName="AnalyzersActions_ActionGroup.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.AnalyzersActions_ActionGroup" />
@@ -53,6 +55,7 @@
   <unitInfo fileName="ShowMembers_Action.java" startLine="22" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.ShowMembers_Action" />
   <unitInfo fileName="DefaultJavaApplication_Configuration.java" startLine="111" startPosition="15" endLine="202" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaApplication_Configuration$1" />
   <unitInfo fileName="IntroduceField_Action.java" startLine="21" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.IntroduceField_Action" />
+  <unitInfo fileName="IntroduceConstant_Action.java" startLine="21" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.IntroduceConstant_Action" />
   <unitInfo fileName="IntroduceVariable_Action.java" startLine="21" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.IntroduceVariable_Action" />
   <unitInfo fileName="InlineMethod_Action.java" startLine="22" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.InlineMethod_Action" />
   <unitInfo fileName="ExtractMethod_Action.java" startLine="25" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.ExtractMethod_Action" />
@@ -1066,343 +1069,331 @@
     <unitInfo nodeId="4606119813988096179" fileName="DefaultJavaAppFromMainMethod.java" startLine="41" startPosition="57" endLine="41" endPosition="218" unitName="jetbrains.mps.baseLanguage.plugin.DefaultJavaAppFromMainMethod$1" />
   </root>
   <root nodeId="5002400195357779994">
-    <nodeInfo nodeId="6268328477151491179" fileName="OverrideMethodsChecker.java" startLine="40" startPosition="66" endLine="41" endPosition="50" />
-    <nodeInfo nodeId="1869159242676070981" fileName="OverrideMethodsChecker.java" startLine="41" startPosition="50" endLine="42" endPosition="40" />
-    <nodeInfo nodeId="5249197957043185047" fileName="OverrideMethodsChecker.java" startLine="42" startPosition="40" endLine="43" endPosition="59" />
-    <nodeInfo nodeId="2374396819863263340" fileName="OverrideMethodsChecker.java" startLine="44" startPosition="0" endLine="45" endPosition="37" />
-    <nodeInfo nodeId="3859623152551848484" fileName="OverrideMethodsChecker.java" startLine="52" startPosition="39" endLine="53" endPosition="187" />
-    <nodeInfo nodeId="64535904967688141" fileName="OverrideMethodsChecker.java" startLine="55" startPosition="7" endLine="56" endPosition="104" />
-    <nodeInfo nodeId="3859623152551848325" fileName="OverrideMethodsChecker.java" startLine="57" startPosition="82" endLine="58" endPosition="36" />
-    <nodeInfo nodeId="5002400195358075952" fileName="OverrideMethodsChecker.java" startLine="59" startPosition="5" endLine="60" endPosition="82" />
-    <nodeInfo nodeId="3836499504550209438" fileName="OverrideMethodsChecker.java" startLine="61" startPosition="74" endLine="62" endPosition="71" />
-    <nodeInfo nodeId="2326364852992438505" fileName="OverrideMethodsChecker.java" startLine="62" startPosition="71" endLine="63" endPosition="59" />
-    <nodeInfo nodeId="427992486439391467" fileName="OverrideMethodsChecker.java" startLine="63" startPosition="59" endLine="64" endPosition="60" />
-    <nodeInfo nodeId="5002400195358075934" fileName="OverrideMethodsChecker.java" startLine="65" startPosition="5" endLine="66" endPosition="18" />
-    <nodeInfo nodeId="1271531489078190430" fileName="OverrideMethodsChecker.java" startLine="69" startPosition="87" endLine="70" endPosition="76" />
-    <nodeInfo nodeId="5249197957043258397" fileName="OverrideMethodsChecker.java" startLine="71" startPosition="87" endLine="72" endPosition="48" />
-    <nodeInfo nodeId="5249197957043258418" fileName="OverrideMethodsChecker.java" startLine="72" startPosition="48" endLine="73" endPosition="29" />
-    <nodeInfo nodeId="1271531489078190556" fileName="OverrideMethodsChecker.java" startLine="73" startPosition="29" endLine="74" endPosition="99" />
-    <nodeInfo nodeId="1922058634759502476" fileName="OverrideMethodsChecker.java" startLine="76" startPosition="59" endLine="77" endPosition="74" />
-    <nodeInfo nodeId="5249197957043259429" fileName="OverrideMethodsChecker.java" startLine="80" startPosition="116" endLine="81" endPosition="51" />
-    <nodeInfo nodeId="5249197957043259559" fileName="OverrideMethodsChecker.java" startLine="85" startPosition="11" endLine="86" endPosition="39" />
-    <nodeInfo nodeId="5249197957043259564" fileName="OverrideMethodsChecker.java" startLine="86" startPosition="39" endLine="87" endPosition="71" />
-    <nodeInfo nodeId="5249197957043259571" fileName="OverrideMethodsChecker.java" startLine="87" startPosition="71" endLine="88" endPosition="28" />
-    <nodeInfo nodeId="5249197957043259764" fileName="OverrideMethodsChecker.java" startLine="89" startPosition="27" endLine="90" endPosition="29" />
-    <nodeInfo nodeId="5249197957043259583" fileName="OverrideMethodsChecker.java" startLine="91" startPosition="55" endLine="92" endPosition="34" />
-    <nodeInfo nodeId="5249197957043259588" fileName="OverrideMethodsChecker.java" startLine="92" startPosition="34" endLine="93" endPosition="18" />
-    <nodeInfo nodeId="5249197957043258465" fileName="OverrideMethodsChecker.java" startLine="96" startPosition="7" endLine="97" endPosition="137" />
-    <nodeInfo nodeId="1037184397602703779" fileName="OverrideMethodsChecker.java" startLine="101" startPosition="86" endLine="102" endPosition="127" />
-    <nodeInfo nodeId="1037184397602703795" fileName="OverrideMethodsChecker.java" startLine="104" startPosition="37" endLine="105" endPosition="89" />
-    <nodeInfo nodeId="1037184397602703803" fileName="OverrideMethodsChecker.java" startLine="108" startPosition="39" endLine="109" endPosition="28" />
-    <nodeInfo nodeId="1037184397602703811" fileName="OverrideMethodsChecker.java" startLine="112" startPosition="62" endLine="113" endPosition="13" />
-    <nodeInfo nodeId="1037184397602734847" fileName="OverrideMethodsChecker.java" startLine="114" startPosition="5" endLine="115" endPosition="116" />
-    <nodeInfo nodeId="1037184397602734854" fileName="OverrideMethodsChecker.java" startLine="115" startPosition="116" endLine="116" endPosition="61" />
-    <nodeInfo nodeId="1037184397602734888" fileName="OverrideMethodsChecker.java" startLine="127" startPosition="77" endLine="128" endPosition="54" />
-    <nodeInfo nodeId="1037184397602734893" fileName="OverrideMethodsChecker.java" startLine="128" startPosition="54" endLine="129" endPosition="80" />
-    <nodeInfo nodeId="7770368474366338950" fileName="OverrideMethodsChecker.java" startLine="131" startPosition="197" endLine="132" endPosition="58" />
-    <nodeInfo nodeId="7770368474366338959" fileName="OverrideMethodsChecker.java" startLine="132" startPosition="58" endLine="133" endPosition="85" />
-    <nodeInfo nodeId="1037184397602734901" fileName="OverrideMethodsChecker.java" startLine="137" startPosition="5" endLine="138" endPosition="149" />
-    <nodeInfo nodeId="1037184397602735577" fileName="OverrideMethodsChecker.java" startLine="138" startPosition="149" endLine="139" endPosition="0" />
-    <nodeInfo nodeId="4988944197752016190" fileName="OverrideMethodsChecker.java" startLine="139" startPosition="0" endLine="140" endPosition="102" />
-    <nodeInfo nodeId="4988944197752016455" fileName="OverrideMethodsChecker.java" startLine="142" startPosition="39" endLine="143" endPosition="58" />
-    <nodeInfo nodeId="4988944197752016616" fileName="OverrideMethodsChecker.java" startLine="145" startPosition="9" endLine="146" endPosition="143" />
-    <nodeInfo nodeId="4988944197752016801" fileName="OverrideMethodsChecker.java" startLine="148" startPosition="58" endLine="149" endPosition="13" />
-    <nodeInfo nodeId="4988944197752016953" fileName="OverrideMethodsChecker.java" startLine="150" startPosition="5" endLine="151" endPosition="137" />
-    <nodeInfo nodeId="8312250104772460519" fileName="OverrideMethodsChecker.java" startLine="152" startPosition="118" endLine="153" endPosition="91" />
-    <nodeInfo nodeId="8312250104772460526" fileName="OverrideMethodsChecker.java" startLine="153" startPosition="91" endLine="154" endPosition="53" />
-    <nodeInfo nodeId="8312250104772460540" fileName="OverrideMethodsChecker.java" startLine="158" startPosition="9" endLine="159" endPosition="28" />
-    <nodeInfo nodeId="8312250104772460545" fileName="OverrideMethodsChecker.java" startLine="159" startPosition="28" endLine="160" endPosition="29" />
-    <nodeInfo nodeId="1491958191742118922" fileName="OverrideMethodsChecker.java" startLine="161" startPosition="155" endLine="162" endPosition="43" />
-    <nodeInfo nodeId="8312250104772460557" fileName="OverrideMethodsChecker.java" startLine="162" startPosition="43" endLine="163" endPosition="39" />
-    <nodeInfo nodeId="8312250104772460562" fileName="OverrideMethodsChecker.java" startLine="163" startPosition="39" endLine="164" endPosition="85" />
-    <nodeInfo nodeId="8312250104772460571" fileName="OverrideMethodsChecker.java" startLine="165" startPosition="69" endLine="166" endPosition="41" />
-    <nodeInfo nodeId="8312250104772460576" fileName="OverrideMethodsChecker.java" startLine="166" startPosition="41" endLine="167" endPosition="32" />
-    <nodeInfo nodeId="8312250104772460581" fileName="OverrideMethodsChecker.java" startLine="167" startPosition="32" endLine="168" endPosition="16" />
-    <nodeInfo nodeId="8312250104772460604" fileName="OverrideMethodsChecker.java" startLine="170" startPosition="7" endLine="171" endPosition="135" />
-    <nodeInfo nodeId="4988944197752016902" fileName="OverrideMethodsChecker.java" startLine="175" startPosition="150" endLine="176" endPosition="90" />
-    <nodeInfo nodeId="4717960406884226835" fileName="OverrideMethodsChecker.java" startLine="179" startPosition="41" endLine="180" endPosition="57" />
-    <nodeInfo nodeId="4988944197752017095" fileName="OverrideMethodsChecker.java" startLine="182" startPosition="11" endLine="183" endPosition="142" />
-    <nodeInfo nodeId="4988944197752062103" fileName="OverrideMethodsChecker.java" startLine="184" startPosition="37" endLine="185" endPosition="19" />
-    <nodeInfo nodeId="4988944197752062146" fileName="OverrideMethodsChecker.java" startLine="188" startPosition="43" endLine="189" endPosition="115" />
-    <nodeInfo nodeId="4053237040709225123" fileName="OverrideMethodsChecker.java" startLine="192" startPosition="38" endLine="193" endPosition="98" />
-    <nodeInfo nodeId="4988944197752062269" fileName="OverrideMethodsChecker.java" startLine="193" startPosition="98" endLine="194" endPosition="85" />
-    <nodeInfo nodeId="4053237040709225464" fileName="OverrideMethodsChecker.java" startLine="195" startPosition="84" endLine="196" endPosition="79" />
-    <nodeInfo nodeId="1491958191742118838" fileName="OverrideMethodsChecker.java" startLine="197" startPosition="64" endLine="198" endPosition="126" />
-    <nodeInfo nodeId="4053237040709225913" fileName="OverrideMethodsChecker.java" startLine="199" startPosition="68" endLine="200" endPosition="30" />
-    <nodeInfo nodeId="4988944197752016943" fileName="OverrideMethodsChecker.java" startLine="206" startPosition="5" endLine="207" endPosition="18" />
-    <nodeInfo nodeId="2374396819863378964" fileName="OverrideMethodsChecker.java" startLine="212" startPosition="34" endLine="213" endPosition="18" />
-    <nodeInfo nodeId="1594966379432123429" fileName="OverrideMethodsChecker.java" startLine="216" startPosition="88" endLine="217" endPosition="20" />
-    <nodeInfo nodeId="1594966379432185661" fileName="OverrideMethodsChecker.java" startLine="219" startPosition="46" endLine="220" endPosition="63" />
-    <nodeInfo nodeId="1594966379433195692" fileName="OverrideMethodsChecker.java" startLine="220" startPosition="63" endLine="221" endPosition="44" />
-    <nodeInfo nodeId="1594966379433196303" fileName="OverrideMethodsChecker.java" startLine="221" startPosition="44" endLine="222" endPosition="53" />
-    <nodeInfo nodeId="1594966379433196321" fileName="OverrideMethodsChecker.java" startLine="222" startPosition="53" endLine="223" endPosition="48" />
-    <nodeInfo nodeId="1594966379433196384" fileName="OverrideMethodsChecker.java" startLine="224" startPosition="286" endLine="225" endPosition="22" />
-    <nodeInfo nodeId="1594966379433196324" fileName="OverrideMethodsChecker.java" startLine="226" startPosition="9" endLine="227" endPosition="63" />
-    <nodeInfo nodeId="1594966379433196299" fileName="OverrideMethodsChecker.java" startLine="228" startPosition="273" endLine="229" endPosition="22" />
-    <nodeInfo nodeId="1594966379433196482" fileName="OverrideMethodsChecker.java" startLine="230" startPosition="9" endLine="231" endPosition="101" />
-    <nodeInfo nodeId="1594966379433196477" fileName="OverrideMethodsChecker.java" startLine="232" startPosition="610" endLine="233" endPosition="22" />
-    <nodeInfo nodeId="1594966379433199295" fileName="OverrideMethodsChecker.java" startLine="234" startPosition="9" endLine="235" endPosition="39" />
-    <nodeInfo nodeId="1594966379433199291" fileName="OverrideMethodsChecker.java" startLine="236" startPosition="282" endLine="237" endPosition="22" />
-    <nodeInfo nodeId="1594966379433202433" fileName="OverrideMethodsChecker.java" startLine="239" startPosition="121" endLine="240" endPosition="22" />
-    <nodeInfo nodeId="1594966379432185677" fileName="OverrideMethodsChecker.java" startLine="243" startPosition="50" endLine="244" endPosition="75" />
-    <nodeInfo nodeId="7326920176342419281" fileName="OverrideMethodsChecker.java" startLine="244" startPosition="75" endLine="245" endPosition="61" />
-    <nodeInfo nodeId="7326920176342419316" fileName="OverrideMethodsChecker.java" startLine="245" startPosition="61" endLine="246" endPosition="53" />
-    <nodeInfo nodeId="7326920176342419331" fileName="OverrideMethodsChecker.java" startLine="246" startPosition="53" endLine="247" endPosition="51" />
-    <nodeInfo nodeId="7326920176342419837" fileName="OverrideMethodsChecker.java" startLine="248" startPosition="403" endLine="249" endPosition="22" />
-    <nodeInfo nodeId="7326920176342419809" fileName="OverrideMethodsChecker.java" startLine="251" startPosition="279" endLine="252" endPosition="22" />
-    <nodeInfo nodeId="7326920176342419762" fileName="OverrideMethodsChecker.java" startLine="254" startPosition="131" endLine="255" endPosition="22" />
-    <nodeInfo nodeId="2090290412713904634" fileName="OverrideMethodsChecker.java" startLine="258" startPosition="49" endLine="259" endPosition="72" />
-    <nodeInfo nodeId="2090290412713988194" fileName="OverrideMethodsChecker.java" startLine="259" startPosition="72" endLine="260" endPosition="45" />
-    <nodeInfo nodeId="2090290412713988240" fileName="OverrideMethodsChecker.java" startLine="261" startPosition="111" endLine="262" endPosition="22" />
-    <nodeInfo nodeId="1594966379432123414" fileName="OverrideMethodsChecker.java" startLine="265" startPosition="5" endLine="266" endPosition="17" />
-    <nodeInfo nodeId="1491958191742118865" fileName="OverrideMethodsChecker.java" startLine="270" startPosition="96" endLine="271" endPosition="118" />
-    <nodeInfo nodeId="1491958191742118884" fileName="OverrideMethodsChecker.java" startLine="273" startPosition="109" endLine="274" endPosition="133" />
-    <nodeInfo nodeId="1491958191742118893" fileName="OverrideMethodsChecker.java" startLine="275" startPosition="5" endLine="276" endPosition="73" />
-    <nodeInfo nodeId="7523932196475815266" fileName="OverrideMethodsChecker.java" startLine="279" startPosition="62" endLine="280" endPosition="75" />
-    <nodeInfo nodeId="7770368474366338979" fileName="OverrideMethodsChecker.java" startLine="283" startPosition="77" endLine="284" endPosition="88" />
-    <nodeInfo nodeId="7326920176342413343" fileName="OverrideMethodsChecker.java" startLine="287" startPosition="54" endLine="288" endPosition="51" />
-    <nodeInfo nodeId="7326920176342413367" fileName="OverrideMethodsChecker.java" startLine="289" startPosition="108" endLine="290" endPosition="18" />
-    <nodeInfo nodeId="7326920176342413383" fileName="OverrideMethodsChecker.java" startLine="292" startPosition="92" endLine="293" endPosition="37" />
-    <nodeInfo nodeId="7326920176342413390" fileName="OverrideMethodsChecker.java" startLine="294" startPosition="5" endLine="295" endPosition="17" />
-    <nodeInfo nodeId="5002400195357779996" fileName="OverrideMethodsChecker.java" startLine="46" startPosition="0" endLine="48" endPosition="3" />
-    <nodeInfo nodeId="3859623152551848311" fileName="OverrideMethodsChecker.java" startLine="56" startPosition="104" endLine="59" endPosition="5" />
-    <nodeInfo nodeId="1037184397602703809" fileName="OverrideMethodsChecker.java" startLine="111" startPosition="7" endLine="114" endPosition="5" />
-    <nodeInfo nodeId="4988944197752016783" fileName="OverrideMethodsChecker.java" startLine="147" startPosition="5" endLine="150" endPosition="5" />
-    <nodeInfo nodeId="4988944197752062067" fileName="OverrideMethodsChecker.java" startLine="183" startPosition="142" endLine="186" endPosition="9" />
-    <nodeInfo nodeId="4053237040709225859" fileName="OverrideMethodsChecker.java" startLine="198" startPosition="126" endLine="201" endPosition="15" />
-    <nodeInfo nodeId="2374396819863378957" fileName="OverrideMethodsChecker.java" startLine="211" startPosition="63" endLine="214" endPosition="5" />
-    <nodeInfo nodeId="1594966379432123417" fileName="OverrideMethodsChecker.java" startLine="215" startPosition="61" endLine="218" endPosition="7" />
-    <nodeInfo nodeId="1594966379433196330" fileName="OverrideMethodsChecker.java" startLine="223" startPosition="48" endLine="226" endPosition="9" />
-    <nodeInfo nodeId="1594966379433195768" fileName="OverrideMethodsChecker.java" startLine="227" startPosition="63" endLine="230" endPosition="9" />
-    <nodeInfo nodeId="1594966379433196402" fileName="OverrideMethodsChecker.java" startLine="231" startPosition="101" endLine="234" endPosition="9" />
-    <nodeInfo nodeId="1594966379433196484" fileName="OverrideMethodsChecker.java" startLine="235" startPosition="39" endLine="238" endPosition="9" />
-    <nodeInfo nodeId="1594966379433202413" fileName="OverrideMethodsChecker.java" startLine="238" startPosition="9" endLine="241" endPosition="9" />
-    <nodeInfo nodeId="7326920176342419346" fileName="OverrideMethodsChecker.java" startLine="247" startPosition="51" endLine="250" endPosition="9" />
-    <nodeInfo nodeId="7326920176342419720" fileName="OverrideMethodsChecker.java" startLine="250" startPosition="9" endLine="253" endPosition="9" />
-    <nodeInfo nodeId="7326920176342419739" fileName="OverrideMethodsChecker.java" startLine="253" startPosition="9" endLine="256" endPosition="9" />
-    <nodeInfo nodeId="2090290412713988161" fileName="OverrideMethodsChecker.java" startLine="260" startPosition="45" endLine="263" endPosition="9" />
-    <nodeInfo nodeId="1491958191742118851" fileName="OverrideMethodsChecker.java" startLine="269" startPosition="46" endLine="272" endPosition="5" />
-    <nodeInfo nodeId="1491958191742118872" fileName="OverrideMethodsChecker.java" startLine="272" startPosition="5" endLine="275" endPosition="5" />
-    <nodeInfo nodeId="7326920176342413355" fileName="OverrideMethodsChecker.java" startLine="288" startPosition="51" endLine="291" endPosition="5" />
-    <nodeInfo nodeId="7326920176342413371" fileName="OverrideMethodsChecker.java" startLine="291" startPosition="5" endLine="294" endPosition="5" />
-    <nodeInfo nodeId="3859623152551848450" fileName="OverrideMethodsChecker.java" startLine="51" startPosition="204" endLine="55" endPosition="0" />
-    <nodeInfo nodeId="1922058634759502454" fileName="OverrideMethodsChecker.java" startLine="75" startPosition="181" endLine="79" endPosition="0" />
-    <nodeInfo nodeId="1922058634759503019" fileName="OverrideMethodsChecker.java" startLine="81" startPosition="51" endLine="85" endPosition="11" />
-    <nodeInfo nodeId="5249197957043259576" fileName="OverrideMethodsChecker.java" startLine="90" startPosition="29" endLine="94" endPosition="11" />
-    <nodeInfo nodeId="1037184397602703793" fileName="OverrideMethodsChecker.java" startLine="103" startPosition="124" endLine="107" endPosition="0" />
-    <nodeInfo nodeId="1037184397602703801" fileName="OverrideMethodsChecker.java" startLine="107" startPosition="40" endLine="111" endPosition="0" />
-    <nodeInfo nodeId="1037184397602734861" fileName="OverrideMethodsChecker.java" startLine="117" startPosition="81" endLine="121" endPosition="9" />
-    <nodeInfo nodeId="1037184397602734876" fileName="OverrideMethodsChecker.java" startLine="122" startPosition="12" endLine="126" endPosition="9" />
-    <nodeInfo nodeId="7770368474366338934" fileName="OverrideMethodsChecker.java" startLine="130" startPosition="108" endLine="134" endPosition="11" />
-    <nodeInfo nodeId="4988944197752016445" fileName="OverrideMethodsChecker.java" startLine="141" startPosition="134" endLine="145" endPosition="0" />
-    <nodeInfo nodeId="8312250104772460532" fileName="OverrideMethodsChecker.java" startLine="154" startPosition="53" endLine="158" endPosition="9" />
-    <nodeInfo nodeId="4717960406884226833" fileName="OverrideMethodsChecker.java" startLine="178" startPosition="167" endLine="182" endPosition="0" />
-    <nodeInfo nodeId="4988944197752062137" fileName="OverrideMethodsChecker.java" startLine="187" startPosition="105" endLine="191" endPosition="0" />
-    <nodeInfo nodeId="7523932196475726704" fileName="OverrideMethodsChecker.java" startLine="278" startPosition="0" endLine="282" endPosition="0" />
-    <nodeInfo nodeId="7770368474366338968" fileName="OverrideMethodsChecker.java" startLine="282" startPosition="0" endLine="286" endPosition="0" />
-    <nodeInfo nodeId="3859623152551802603" fileName="OverrideMethodsChecker.java" startLine="50" startPosition="175" endLine="55" endPosition="7" />
-    <nodeInfo nodeId="2326364852992438471" fileName="OverrideMethodsChecker.java" startLine="60" startPosition="82" endLine="65" endPosition="5" />
-    <nodeInfo nodeId="1922058634759501911" fileName="OverrideMethodsChecker.java" startLine="74" startPosition="99" endLine="79" endPosition="22" />
-    <nodeInfo nodeId="8312250104772460569" fileName="OverrideMethodsChecker.java" startLine="164" startPosition="85" endLine="169" endPosition="9" />
-    <nodeInfo nodeId="4988944197752062109" fileName="OverrideMethodsChecker.java" startLine="186" startPosition="9" endLine="191" endPosition="11" />
-    <nodeInfo nodeId="7770368474366338916" fileName="OverrideMethodsChecker.java" startLine="129" startPosition="80" endLine="135" endPosition="9" />
-    <nodeInfo nodeId="4053237040709225583" fileName="OverrideMethodsChecker.java" startLine="196" startPosition="79" endLine="202" endPosition="13" />
-    <nodeInfo nodeId="5249197957043259694" fileName="OverrideMethodsChecker.java" startLine="88" startPosition="28" endLine="95" endPosition="9" />
-    <nodeInfo nodeId="4988944197752016418" fileName="OverrideMethodsChecker.java" startLine="140" startPosition="102" endLine="147" endPosition="5" />
-    <nodeInfo nodeId="2090290412713904620" fileName="OverrideMethodsChecker.java" startLine="257" startPosition="7" endLine="264" endPosition="7" />
-    <nodeInfo nodeId="1037184397602703785" fileName="OverrideMethodsChecker.java" startLine="102" startPosition="127" endLine="111" endPosition="7" />
-    <nodeInfo nodeId="4053237040709225080" fileName="OverrideMethodsChecker.java" startLine="194" startPosition="85" endLine="203" endPosition="11" />
-    <nodeInfo nodeId="1037184397602734884" fileName="OverrideMethodsChecker.java" startLine="126" startPosition="9" endLine="136" endPosition="7" />
-    <nodeInfo nodeId="8312250104772460549" fileName="OverrideMethodsChecker.java" startLine="160" startPosition="29" endLine="170" endPosition="7" />
-    <nodeInfo nodeId="1491958191742118815" fileName="OverrideMethodsChecker.java" startLine="268" startPosition="0" endLine="278" endPosition="0" />
-    <nodeInfo nodeId="323605094887038193" fileName="OverrideMethodsChecker.java" startLine="286" startPosition="0" endLine="297" endPosition="0" />
-    <nodeInfo nodeId="4988944197752062252" fileName="OverrideMethodsChecker.java" startLine="191" startPosition="11" endLine="204" endPosition="9" />
-    <nodeInfo nodeId="1037184397602734874" fileName="OverrideMethodsChecker.java" startLine="122" startPosition="10" endLine="137" endPosition="5" />
-    <nodeInfo nodeId="1594966379432185646" fileName="OverrideMethodsChecker.java" startLine="242" startPosition="7" endLine="257" endPosition="7" />
-    <nodeInfo nodeId="5249197957043259264" fileName="OverrideMethodsChecker.java" startLine="79" startPosition="22" endLine="96" endPosition="7" />
-    <nodeInfo nodeId="5002400195358006646" fileName="OverrideMethodsChecker.java" startLine="49" startPosition="0" endLine="68" endPosition="0" />
-    <nodeInfo nodeId="1037184397602734859" fileName="OverrideMethodsChecker.java" startLine="116" startPosition="61" endLine="137" endPosition="5" />
-    <nodeInfo nodeId="8312250104772460434" fileName="OverrideMethodsChecker.java" startLine="151" startPosition="137" endLine="172" endPosition="5" />
-    <nodeInfo nodeId="1594966379432185121" fileName="OverrideMethodsChecker.java" startLine="218" startPosition="7" endLine="242" endPosition="7" />
-    <nodeInfo nodeId="5249197957043258330" fileName="OverrideMethodsChecker.java" startLine="70" startPosition="76" endLine="98" endPosition="5" />
-    <nodeInfo nodeId="4988944197752017014" fileName="OverrideMethodsChecker.java" startLine="177" startPosition="79" endLine="205" endPosition="7" />
-    <nodeInfo nodeId="4988944197752017003" fileName="OverrideMethodsChecker.java" startLine="176" startPosition="90" endLine="206" endPosition="5" />
-    <nodeInfo nodeId="427992486439366054" fileName="OverrideMethodsChecker.java" startLine="68" startPosition="0" endLine="100" endPosition="0" />
-    <nodeInfo nodeId="4988944197752016811" fileName="OverrideMethodsChecker.java" startLine="174" startPosition="0" endLine="209" endPosition="0" />
-    <nodeInfo nodeId="1594966379432123406" fileName="OverrideMethodsChecker.java" startLine="214" startPosition="5" endLine="265" endPosition="5" />
-    <nodeInfo nodeId="9033318990679763482" fileName="OverrideMethodsChecker.java" startLine="209" startPosition="0" endLine="268" endPosition="0" />
-    <nodeInfo nodeId="2326364852992438480" fileName="OverrideMethodsChecker.java" startLine="100" startPosition="0" endLine="174" endPosition="0" />
-    <scopeInfo nodeId="5002400195357779999" fileName="OverrideMethodsChecker.java" startLine="47" startPosition="35" endLine="47" endPosition="35" />
-    <scopeInfo nodeId="3859623152551848451" fileName="OverrideMethodsChecker.java" startLine="52" startPosition="39" endLine="53" endPosition="187" />
-    <scopeInfo nodeId="3859623152551848312" fileName="OverrideMethodsChecker.java" startLine="57" startPosition="82" endLine="58" endPosition="36" />
-    <scopeInfo nodeId="1922058634759502455" fileName="OverrideMethodsChecker.java" startLine="76" startPosition="59" endLine="77" endPosition="74" />
-    <scopeInfo nodeId="1037184397602703794" fileName="OverrideMethodsChecker.java" startLine="104" startPosition="37" endLine="105" endPosition="89" />
-    <scopeInfo nodeId="1037184397602703802" fileName="OverrideMethodsChecker.java" startLine="108" startPosition="39" endLine="109" endPosition="28" />
-    <scopeInfo nodeId="1037184397602703810" fileName="OverrideMethodsChecker.java" startLine="112" startPosition="62" endLine="113" endPosition="13" />
-    <scopeInfo nodeId="4988944197752016446" fileName="OverrideMethodsChecker.java" startLine="142" startPosition="39" endLine="143" endPosition="58" />
-    <scopeInfo nodeId="4988944197752016421" fileName="OverrideMethodsChecker.java" startLine="145" startPosition="9" endLine="146" endPosition="143" />
-    <scopeInfo nodeId="4988944197752016784" fileName="OverrideMethodsChecker.java" startLine="148" startPosition="58" endLine="149" endPosition="13" />
-    <scopeInfo nodeId="4717960406884226834" fileName="OverrideMethodsChecker.java" startLine="179" startPosition="41" endLine="180" endPosition="57" />
-    <scopeInfo nodeId="4988944197752062068" fileName="OverrideMethodsChecker.java" startLine="184" startPosition="37" endLine="185" endPosition="19" />
-    <scopeInfo nodeId="4988944197752062138" fileName="OverrideMethodsChecker.java" startLine="188" startPosition="43" endLine="189" endPosition="115" />
-    <scopeInfo nodeId="4053237040709225860" fileName="OverrideMethodsChecker.java" startLine="199" startPosition="68" endLine="200" endPosition="30" />
-    <scopeInfo nodeId="2374396819863378958" fileName="OverrideMethodsChecker.java" startLine="212" startPosition="34" endLine="213" endPosition="18" />
-    <scopeInfo nodeId="1594966379432123419" fileName="OverrideMethodsChecker.java" startLine="216" startPosition="88" endLine="217" endPosition="20" />
-    <scopeInfo nodeId="1594966379433196331" fileName="OverrideMethodsChecker.java" startLine="224" startPosition="286" endLine="225" endPosition="22" />
-    <scopeInfo nodeId="1594966379433195769" fileName="OverrideMethodsChecker.java" startLine="228" startPosition="273" endLine="229" endPosition="22" />
-    <scopeInfo nodeId="1594966379433196403" fileName="OverrideMethodsChecker.java" startLine="232" startPosition="610" endLine="233" endPosition="22" />
-    <scopeInfo nodeId="1594966379433196485" fileName="OverrideMethodsChecker.java" startLine="236" startPosition="282" endLine="237" endPosition="22" />
-    <scopeInfo nodeId="1594966379433202414" fileName="OverrideMethodsChecker.java" startLine="239" startPosition="121" endLine="240" endPosition="22" />
-    <scopeInfo nodeId="7326920176342419347" fileName="OverrideMethodsChecker.java" startLine="248" startPosition="403" endLine="249" endPosition="22" />
-    <scopeInfo nodeId="7326920176342419721" fileName="OverrideMethodsChecker.java" startLine="251" startPosition="279" endLine="252" endPosition="22" />
-    <scopeInfo nodeId="7326920176342419740" fileName="OverrideMethodsChecker.java" startLine="254" startPosition="131" endLine="255" endPosition="22" />
-    <scopeInfo nodeId="2090290412713988162" fileName="OverrideMethodsChecker.java" startLine="261" startPosition="111" endLine="262" endPosition="22" />
-    <scopeInfo nodeId="1491958191742118853" fileName="OverrideMethodsChecker.java" startLine="270" startPosition="96" endLine="271" endPosition="118" />
-    <scopeInfo nodeId="1491958191742118873" fileName="OverrideMethodsChecker.java" startLine="273" startPosition="109" endLine="274" endPosition="133" />
-    <scopeInfo nodeId="7523932196475726707" fileName="OverrideMethodsChecker.java" startLine="279" startPosition="62" endLine="280" endPosition="75" />
-    <scopeInfo nodeId="7770368474366338971" fileName="OverrideMethodsChecker.java" startLine="283" startPosition="77" endLine="284" endPosition="88" />
-    <scopeInfo nodeId="7326920176342413356" fileName="OverrideMethodsChecker.java" startLine="289" startPosition="108" endLine="290" endPosition="18" />
-    <scopeInfo nodeId="7326920176342413372" fileName="OverrideMethodsChecker.java" startLine="292" startPosition="92" endLine="293" endPosition="37" />
-    <scopeInfo nodeId="5002400195357779996" fileName="OverrideMethodsChecker.java" startLine="46" startPosition="0" endLine="48" endPosition="3" />
-    <scopeInfo nodeId="5249197957043259577" fileName="OverrideMethodsChecker.java" startLine="91" startPosition="55" endLine="93" endPosition="18" />
-    <scopeInfo nodeId="7770368474366338937" fileName="OverrideMethodsChecker.java" startLine="131" startPosition="197" endLine="133" endPosition="85" />
-    <scopeInfo nodeId="2326364852992438474" fileName="OverrideMethodsChecker.java" startLine="61" startPosition="74" endLine="64" endPosition="60" />
-    <scopeInfo nodeId="8312250104772460570" fileName="OverrideMethodsChecker.java" startLine="165" startPosition="69" endLine="168" endPosition="16" />
-    <scopeInfo nodeId="3859623152551848450" fileName="OverrideMethodsChecker.java" startLine="51" startPosition="204" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="1922058634759502454" fileName="OverrideMethodsChecker.java" startLine="75" startPosition="181" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="1037184397602703793" fileName="OverrideMethodsChecker.java" startLine="103" startPosition="124" endLine="107" endPosition="0" />
-    <scopeInfo nodeId="1037184397602703801" fileName="OverrideMethodsChecker.java" startLine="107" startPosition="40" endLine="111" endPosition="0" />
-    <scopeInfo nodeId="1037184397602734860" fileName="OverrideMethodsChecker.java" startLine="117" startPosition="81" endLine="121" endPosition="9" />
-    <scopeInfo nodeId="7770368474366338917" fileName="OverrideMethodsChecker.java" startLine="130" startPosition="108" endLine="134" endPosition="11" />
-    <scopeInfo nodeId="7770368474366338934" fileName="OverrideMethodsChecker.java" startLine="130" startPosition="108" endLine="134" endPosition="11" />
-    <scopeInfo nodeId="4988944197752016445" fileName="OverrideMethodsChecker.java" startLine="141" startPosition="134" endLine="145" endPosition="0" />
-    <scopeInfo nodeId="4717960406884226833" fileName="OverrideMethodsChecker.java" startLine="178" startPosition="167" endLine="182" endPosition="0" />
-    <scopeInfo nodeId="4988944197752062137" fileName="OverrideMethodsChecker.java" startLine="187" startPosition="105" endLine="191" endPosition="0" />
-    <scopeInfo nodeId="4053237040709225584" fileName="OverrideMethodsChecker.java" startLine="197" startPosition="64" endLine="201" endPosition="15" />
-    <scopeInfo nodeId="7523932196475726704" fileName="OverrideMethodsChecker.java" startLine="278" startPosition="0" endLine="282" endPosition="0">
+    <nodeInfo nodeId="6268328477151491179" fileName="OverrideMethodsChecker.java" startLine="39" startPosition="66" endLine="40" endPosition="50" />
+    <nodeInfo nodeId="1869159242676070981" fileName="OverrideMethodsChecker.java" startLine="40" startPosition="50" endLine="41" endPosition="40" />
+    <nodeInfo nodeId="5249197957043185047" fileName="OverrideMethodsChecker.java" startLine="41" startPosition="40" endLine="42" endPosition="59" />
+    <nodeInfo nodeId="2374396819863263340" fileName="OverrideMethodsChecker.java" startLine="43" startPosition="0" endLine="44" endPosition="37" />
+    <nodeInfo nodeId="3859623152551848484" fileName="OverrideMethodsChecker.java" startLine="51" startPosition="39" endLine="52" endPosition="187" />
+    <nodeInfo nodeId="64535904967688141" fileName="OverrideMethodsChecker.java" startLine="54" startPosition="7" endLine="55" endPosition="104" />
+    <nodeInfo nodeId="3859623152551848325" fileName="OverrideMethodsChecker.java" startLine="56" startPosition="82" endLine="57" endPosition="51" />
+    <nodeInfo nodeId="5002400195358075952" fileName="OverrideMethodsChecker.java" startLine="58" startPosition="5" endLine="59" endPosition="82" />
+    <nodeInfo nodeId="3836499504550209438" fileName="OverrideMethodsChecker.java" startLine="60" startPosition="74" endLine="61" endPosition="71" />
+    <nodeInfo nodeId="2326364852992438505" fileName="OverrideMethodsChecker.java" startLine="61" startPosition="71" endLine="62" endPosition="59" />
+    <nodeInfo nodeId="427992486439391467" fileName="OverrideMethodsChecker.java" startLine="62" startPosition="59" endLine="63" endPosition="60" />
+    <nodeInfo nodeId="5002400195358075934" fileName="OverrideMethodsChecker.java" startLine="64" startPosition="5" endLine="65" endPosition="18" />
+    <nodeInfo nodeId="1271531489078190430" fileName="OverrideMethodsChecker.java" startLine="68" startPosition="87" endLine="69" endPosition="76" />
+    <nodeInfo nodeId="5249197957043258397" fileName="OverrideMethodsChecker.java" startLine="70" startPosition="87" endLine="71" endPosition="48" />
+    <nodeInfo nodeId="5249197957043258418" fileName="OverrideMethodsChecker.java" startLine="71" startPosition="48" endLine="72" endPosition="29" />
+    <nodeInfo nodeId="1271531489078190556" fileName="OverrideMethodsChecker.java" startLine="72" startPosition="29" endLine="73" endPosition="99" />
+    <nodeInfo nodeId="1922058634759502476" fileName="OverrideMethodsChecker.java" startLine="75" startPosition="59" endLine="76" endPosition="74" />
+    <nodeInfo nodeId="5249197957043259429" fileName="OverrideMethodsChecker.java" startLine="79" startPosition="116" endLine="80" endPosition="51" />
+    <nodeInfo nodeId="5249197957043259559" fileName="OverrideMethodsChecker.java" startLine="84" startPosition="11" endLine="85" endPosition="39" />
+    <nodeInfo nodeId="5249197957043259564" fileName="OverrideMethodsChecker.java" startLine="85" startPosition="39" endLine="86" endPosition="71" />
+    <nodeInfo nodeId="5249197957043259571" fileName="OverrideMethodsChecker.java" startLine="86" startPosition="71" endLine="87" endPosition="28" />
+    <nodeInfo nodeId="5249197957043259764" fileName="OverrideMethodsChecker.java" startLine="88" startPosition="27" endLine="89" endPosition="29" />
+    <nodeInfo nodeId="5249197957043259583" fileName="OverrideMethodsChecker.java" startLine="90" startPosition="55" endLine="91" endPosition="34" />
+    <nodeInfo nodeId="5249197957043259588" fileName="OverrideMethodsChecker.java" startLine="91" startPosition="34" endLine="92" endPosition="18" />
+    <nodeInfo nodeId="5249197957043258465" fileName="OverrideMethodsChecker.java" startLine="95" startPosition="7" endLine="96" endPosition="137" />
+    <nodeInfo nodeId="1037184397602703779" fileName="OverrideMethodsChecker.java" startLine="100" startPosition="86" endLine="101" endPosition="124" />
+    <nodeInfo nodeId="1037184397602703811" fileName="OverrideMethodsChecker.java" startLine="102" startPosition="62" endLine="103" endPosition="13" />
+    <nodeInfo nodeId="1037184397602734847" fileName="OverrideMethodsChecker.java" startLine="104" startPosition="5" endLine="105" endPosition="116" />
+    <nodeInfo nodeId="1037184397602734854" fileName="OverrideMethodsChecker.java" startLine="105" startPosition="116" endLine="106" endPosition="61" />
+    <nodeInfo nodeId="1037184397602734888" fileName="OverrideMethodsChecker.java" startLine="117" startPosition="77" endLine="118" endPosition="54" />
+    <nodeInfo nodeId="1037184397602734893" fileName="OverrideMethodsChecker.java" startLine="118" startPosition="54" endLine="119" endPosition="80" />
+    <nodeInfo nodeId="7770368474366338950" fileName="OverrideMethodsChecker.java" startLine="121" startPosition="197" endLine="122" endPosition="58" />
+    <nodeInfo nodeId="7770368474366338959" fileName="OverrideMethodsChecker.java" startLine="122" startPosition="58" endLine="123" endPosition="85" />
+    <nodeInfo nodeId="1037184397602734901" fileName="OverrideMethodsChecker.java" startLine="127" startPosition="5" endLine="128" endPosition="149" />
+    <nodeInfo nodeId="1037184397602735577" fileName="OverrideMethodsChecker.java" startLine="128" startPosition="149" endLine="129" endPosition="0" />
+    <nodeInfo nodeId="4988944197752016190" fileName="OverrideMethodsChecker.java" startLine="129" startPosition="0" endLine="130" endPosition="102" />
+    <nodeInfo nodeId="4988944197752016455" fileName="OverrideMethodsChecker.java" startLine="132" startPosition="39" endLine="133" endPosition="58" />
+    <nodeInfo nodeId="4988944197752016616" fileName="OverrideMethodsChecker.java" startLine="135" startPosition="9" endLine="136" endPosition="143" />
+    <nodeInfo nodeId="4988944197752016801" fileName="OverrideMethodsChecker.java" startLine="138" startPosition="58" endLine="139" endPosition="13" />
+    <nodeInfo nodeId="4988944197752016953" fileName="OverrideMethodsChecker.java" startLine="140" startPosition="5" endLine="141" endPosition="137" />
+    <nodeInfo nodeId="8312250104772460519" fileName="OverrideMethodsChecker.java" startLine="142" startPosition="118" endLine="143" endPosition="91" />
+    <nodeInfo nodeId="8312250104772460526" fileName="OverrideMethodsChecker.java" startLine="143" startPosition="91" endLine="144" endPosition="53" />
+    <nodeInfo nodeId="8312250104772460540" fileName="OverrideMethodsChecker.java" startLine="148" startPosition="9" endLine="149" endPosition="28" />
+    <nodeInfo nodeId="8312250104772460545" fileName="OverrideMethodsChecker.java" startLine="149" startPosition="28" endLine="150" endPosition="29" />
+    <nodeInfo nodeId="1491958191742118922" fileName="OverrideMethodsChecker.java" startLine="151" startPosition="155" endLine="152" endPosition="43" />
+    <nodeInfo nodeId="8312250104772460557" fileName="OverrideMethodsChecker.java" startLine="152" startPosition="43" endLine="153" endPosition="39" />
+    <nodeInfo nodeId="8312250104772460562" fileName="OverrideMethodsChecker.java" startLine="153" startPosition="39" endLine="154" endPosition="85" />
+    <nodeInfo nodeId="8312250104772460571" fileName="OverrideMethodsChecker.java" startLine="155" startPosition="69" endLine="156" endPosition="41" />
+    <nodeInfo nodeId="8312250104772460576" fileName="OverrideMethodsChecker.java" startLine="156" startPosition="41" endLine="157" endPosition="32" />
+    <nodeInfo nodeId="8312250104772460581" fileName="OverrideMethodsChecker.java" startLine="157" startPosition="32" endLine="158" endPosition="16" />
+    <nodeInfo nodeId="8312250104772460604" fileName="OverrideMethodsChecker.java" startLine="160" startPosition="7" endLine="161" endPosition="135" />
+    <nodeInfo nodeId="4988944197752016902" fileName="OverrideMethodsChecker.java" startLine="165" startPosition="150" endLine="166" endPosition="90" />
+    <nodeInfo nodeId="4717960406884226835" fileName="OverrideMethodsChecker.java" startLine="169" startPosition="41" endLine="170" endPosition="57" />
+    <nodeInfo nodeId="4988944197752017095" fileName="OverrideMethodsChecker.java" startLine="172" startPosition="11" endLine="173" endPosition="142" />
+    <nodeInfo nodeId="4988944197752062103" fileName="OverrideMethodsChecker.java" startLine="174" startPosition="37" endLine="175" endPosition="19" />
+    <nodeInfo nodeId="4988944197752062146" fileName="OverrideMethodsChecker.java" startLine="178" startPosition="43" endLine="179" endPosition="115" />
+    <nodeInfo nodeId="4053237040709225123" fileName="OverrideMethodsChecker.java" startLine="182" startPosition="38" endLine="183" endPosition="98" />
+    <nodeInfo nodeId="4988944197752062269" fileName="OverrideMethodsChecker.java" startLine="183" startPosition="98" endLine="184" endPosition="85" />
+    <nodeInfo nodeId="4053237040709225464" fileName="OverrideMethodsChecker.java" startLine="185" startPosition="84" endLine="186" endPosition="79" />
+    <nodeInfo nodeId="1491958191742118838" fileName="OverrideMethodsChecker.java" startLine="187" startPosition="64" endLine="188" endPosition="126" />
+    <nodeInfo nodeId="4053237040709225913" fileName="OverrideMethodsChecker.java" startLine="189" startPosition="68" endLine="190" endPosition="30" />
+    <nodeInfo nodeId="4988944197752016943" fileName="OverrideMethodsChecker.java" startLine="196" startPosition="5" endLine="197" endPosition="18" />
+    <nodeInfo nodeId="2374396819863378964" fileName="OverrideMethodsChecker.java" startLine="202" startPosition="34" endLine="203" endPosition="18" />
+    <nodeInfo nodeId="1594966379432123429" fileName="OverrideMethodsChecker.java" startLine="206" startPosition="88" endLine="207" endPosition="20" />
+    <nodeInfo nodeId="1594966379432185661" fileName="OverrideMethodsChecker.java" startLine="209" startPosition="46" endLine="210" endPosition="63" />
+    <nodeInfo nodeId="1594966379433195692" fileName="OverrideMethodsChecker.java" startLine="210" startPosition="63" endLine="211" endPosition="44" />
+    <nodeInfo nodeId="1594966379433196303" fileName="OverrideMethodsChecker.java" startLine="211" startPosition="44" endLine="212" endPosition="53" />
+    <nodeInfo nodeId="1594966379433196321" fileName="OverrideMethodsChecker.java" startLine="212" startPosition="53" endLine="213" endPosition="48" />
+    <nodeInfo nodeId="1594966379433196384" fileName="OverrideMethodsChecker.java" startLine="214" startPosition="286" endLine="215" endPosition="22" />
+    <nodeInfo nodeId="1594966379433196324" fileName="OverrideMethodsChecker.java" startLine="216" startPosition="9" endLine="217" endPosition="63" />
+    <nodeInfo nodeId="1594966379433196299" fileName="OverrideMethodsChecker.java" startLine="218" startPosition="273" endLine="219" endPosition="22" />
+    <nodeInfo nodeId="1594966379433196482" fileName="OverrideMethodsChecker.java" startLine="220" startPosition="9" endLine="221" endPosition="101" />
+    <nodeInfo nodeId="1594966379433196477" fileName="OverrideMethodsChecker.java" startLine="222" startPosition="610" endLine="223" endPosition="22" />
+    <nodeInfo nodeId="1594966379433199295" fileName="OverrideMethodsChecker.java" startLine="224" startPosition="9" endLine="225" endPosition="39" />
+    <nodeInfo nodeId="1594966379433199291" fileName="OverrideMethodsChecker.java" startLine="226" startPosition="282" endLine="227" endPosition="22" />
+    <nodeInfo nodeId="1594966379433202433" fileName="OverrideMethodsChecker.java" startLine="229" startPosition="121" endLine="230" endPosition="22" />
+    <nodeInfo nodeId="1594966379432185677" fileName="OverrideMethodsChecker.java" startLine="233" startPosition="50" endLine="234" endPosition="75" />
+    <nodeInfo nodeId="7326920176342419281" fileName="OverrideMethodsChecker.java" startLine="234" startPosition="75" endLine="235" endPosition="61" />
+    <nodeInfo nodeId="7326920176342419316" fileName="OverrideMethodsChecker.java" startLine="235" startPosition="61" endLine="236" endPosition="53" />
+    <nodeInfo nodeId="7326920176342419331" fileName="OverrideMethodsChecker.java" startLine="236" startPosition="53" endLine="237" endPosition="51" />
+    <nodeInfo nodeId="7326920176342419837" fileName="OverrideMethodsChecker.java" startLine="238" startPosition="403" endLine="239" endPosition="22" />
+    <nodeInfo nodeId="7326920176342419809" fileName="OverrideMethodsChecker.java" startLine="241" startPosition="279" endLine="242" endPosition="22" />
+    <nodeInfo nodeId="7326920176342419762" fileName="OverrideMethodsChecker.java" startLine="244" startPosition="131" endLine="245" endPosition="22" />
+    <nodeInfo nodeId="2090290412713904634" fileName="OverrideMethodsChecker.java" startLine="248" startPosition="49" endLine="249" endPosition="72" />
+    <nodeInfo nodeId="2090290412713988194" fileName="OverrideMethodsChecker.java" startLine="249" startPosition="72" endLine="250" endPosition="45" />
+    <nodeInfo nodeId="2090290412713988240" fileName="OverrideMethodsChecker.java" startLine="251" startPosition="111" endLine="252" endPosition="22" />
+    <nodeInfo nodeId="1594966379432123414" fileName="OverrideMethodsChecker.java" startLine="255" startPosition="5" endLine="256" endPosition="17" />
+    <nodeInfo nodeId="1491958191742118865" fileName="OverrideMethodsChecker.java" startLine="260" startPosition="96" endLine="261" endPosition="118" />
+    <nodeInfo nodeId="1491958191742118884" fileName="OverrideMethodsChecker.java" startLine="263" startPosition="109" endLine="264" endPosition="133" />
+    <nodeInfo nodeId="1491958191742118893" fileName="OverrideMethodsChecker.java" startLine="265" startPosition="5" endLine="266" endPosition="73" />
+    <nodeInfo nodeId="7523932196475815266" fileName="OverrideMethodsChecker.java" startLine="269" startPosition="62" endLine="270" endPosition="75" />
+    <nodeInfo nodeId="7770368474366338979" fileName="OverrideMethodsChecker.java" startLine="273" startPosition="77" endLine="274" endPosition="88" />
+    <nodeInfo nodeId="7326920176342413343" fileName="OverrideMethodsChecker.java" startLine="277" startPosition="54" endLine="278" endPosition="51" />
+    <nodeInfo nodeId="7326920176342413367" fileName="OverrideMethodsChecker.java" startLine="279" startPosition="108" endLine="280" endPosition="18" />
+    <nodeInfo nodeId="7326920176342413383" fileName="OverrideMethodsChecker.java" startLine="282" startPosition="92" endLine="283" endPosition="37" />
+    <nodeInfo nodeId="7326920176342413390" fileName="OverrideMethodsChecker.java" startLine="284" startPosition="5" endLine="285" endPosition="17" />
+    <nodeInfo nodeId="5002400195357779996" fileName="OverrideMethodsChecker.java" startLine="45" startPosition="0" endLine="47" endPosition="3" />
+    <nodeInfo nodeId="3859623152551848311" fileName="OverrideMethodsChecker.java" startLine="55" startPosition="104" endLine="58" endPosition="5" />
+    <nodeInfo nodeId="1037184397602703809" fileName="OverrideMethodsChecker.java" startLine="101" startPosition="124" endLine="104" endPosition="5" />
+    <nodeInfo nodeId="4988944197752016783" fileName="OverrideMethodsChecker.java" startLine="137" startPosition="5" endLine="140" endPosition="5" />
+    <nodeInfo nodeId="4988944197752062067" fileName="OverrideMethodsChecker.java" startLine="173" startPosition="142" endLine="176" endPosition="9" />
+    <nodeInfo nodeId="4053237040709225859" fileName="OverrideMethodsChecker.java" startLine="188" startPosition="126" endLine="191" endPosition="15" />
+    <nodeInfo nodeId="2374396819863378957" fileName="OverrideMethodsChecker.java" startLine="201" startPosition="63" endLine="204" endPosition="5" />
+    <nodeInfo nodeId="1594966379432123417" fileName="OverrideMethodsChecker.java" startLine="205" startPosition="61" endLine="208" endPosition="7" />
+    <nodeInfo nodeId="1594966379433196330" fileName="OverrideMethodsChecker.java" startLine="213" startPosition="48" endLine="216" endPosition="9" />
+    <nodeInfo nodeId="1594966379433195768" fileName="OverrideMethodsChecker.java" startLine="217" startPosition="63" endLine="220" endPosition="9" />
+    <nodeInfo nodeId="1594966379433196402" fileName="OverrideMethodsChecker.java" startLine="221" startPosition="101" endLine="224" endPosition="9" />
+    <nodeInfo nodeId="1594966379433196484" fileName="OverrideMethodsChecker.java" startLine="225" startPosition="39" endLine="228" endPosition="9" />
+    <nodeInfo nodeId="1594966379433202413" fileName="OverrideMethodsChecker.java" startLine="228" startPosition="9" endLine="231" endPosition="9" />
+    <nodeInfo nodeId="7326920176342419346" fileName="OverrideMethodsChecker.java" startLine="237" startPosition="51" endLine="240" endPosition="9" />
+    <nodeInfo nodeId="7326920176342419720" fileName="OverrideMethodsChecker.java" startLine="240" startPosition="9" endLine="243" endPosition="9" />
+    <nodeInfo nodeId="7326920176342419739" fileName="OverrideMethodsChecker.java" startLine="243" startPosition="9" endLine="246" endPosition="9" />
+    <nodeInfo nodeId="2090290412713988161" fileName="OverrideMethodsChecker.java" startLine="250" startPosition="45" endLine="253" endPosition="9" />
+    <nodeInfo nodeId="1491958191742118851" fileName="OverrideMethodsChecker.java" startLine="259" startPosition="46" endLine="262" endPosition="5" />
+    <nodeInfo nodeId="1491958191742118872" fileName="OverrideMethodsChecker.java" startLine="262" startPosition="5" endLine="265" endPosition="5" />
+    <nodeInfo nodeId="7326920176342413355" fileName="OverrideMethodsChecker.java" startLine="278" startPosition="51" endLine="281" endPosition="5" />
+    <nodeInfo nodeId="7326920176342413371" fileName="OverrideMethodsChecker.java" startLine="281" startPosition="5" endLine="284" endPosition="5" />
+    <nodeInfo nodeId="3859623152551848450" fileName="OverrideMethodsChecker.java" startLine="50" startPosition="204" endLine="54" endPosition="0" />
+    <nodeInfo nodeId="1922058634759502454" fileName="OverrideMethodsChecker.java" startLine="74" startPosition="181" endLine="78" endPosition="0" />
+    <nodeInfo nodeId="1922058634759503019" fileName="OverrideMethodsChecker.java" startLine="80" startPosition="51" endLine="84" endPosition="11" />
+    <nodeInfo nodeId="5249197957043259576" fileName="OverrideMethodsChecker.java" startLine="89" startPosition="29" endLine="93" endPosition="11" />
+    <nodeInfo nodeId="1037184397602734861" fileName="OverrideMethodsChecker.java" startLine="107" startPosition="81" endLine="111" endPosition="9" />
+    <nodeInfo nodeId="1037184397602734876" fileName="OverrideMethodsChecker.java" startLine="112" startPosition="12" endLine="116" endPosition="9" />
+    <nodeInfo nodeId="7770368474366338934" fileName="OverrideMethodsChecker.java" startLine="120" startPosition="108" endLine="124" endPosition="11" />
+    <nodeInfo nodeId="4988944197752016445" fileName="OverrideMethodsChecker.java" startLine="131" startPosition="134" endLine="135" endPosition="0" />
+    <nodeInfo nodeId="8312250104772460532" fileName="OverrideMethodsChecker.java" startLine="144" startPosition="53" endLine="148" endPosition="9" />
+    <nodeInfo nodeId="4717960406884226833" fileName="OverrideMethodsChecker.java" startLine="168" startPosition="167" endLine="172" endPosition="0" />
+    <nodeInfo nodeId="4988944197752062137" fileName="OverrideMethodsChecker.java" startLine="177" startPosition="105" endLine="181" endPosition="0" />
+    <nodeInfo nodeId="7523932196475726704" fileName="OverrideMethodsChecker.java" startLine="268" startPosition="0" endLine="272" endPosition="0" />
+    <nodeInfo nodeId="7770368474366338968" fileName="OverrideMethodsChecker.java" startLine="272" startPosition="0" endLine="276" endPosition="0" />
+    <nodeInfo nodeId="3859623152551802603" fileName="OverrideMethodsChecker.java" startLine="49" startPosition="175" endLine="54" endPosition="7" />
+    <nodeInfo nodeId="2326364852992438471" fileName="OverrideMethodsChecker.java" startLine="59" startPosition="82" endLine="64" endPosition="5" />
+    <nodeInfo nodeId="1922058634759501911" fileName="OverrideMethodsChecker.java" startLine="73" startPosition="99" endLine="78" endPosition="22" />
+    <nodeInfo nodeId="8312250104772460569" fileName="OverrideMethodsChecker.java" startLine="154" startPosition="85" endLine="159" endPosition="9" />
+    <nodeInfo nodeId="4988944197752062109" fileName="OverrideMethodsChecker.java" startLine="176" startPosition="9" endLine="181" endPosition="11" />
+    <nodeInfo nodeId="7770368474366338916" fileName="OverrideMethodsChecker.java" startLine="119" startPosition="80" endLine="125" endPosition="9" />
+    <nodeInfo nodeId="4053237040709225583" fileName="OverrideMethodsChecker.java" startLine="186" startPosition="79" endLine="192" endPosition="13" />
+    <nodeInfo nodeId="5249197957043259694" fileName="OverrideMethodsChecker.java" startLine="87" startPosition="28" endLine="94" endPosition="9" />
+    <nodeInfo nodeId="4988944197752016418" fileName="OverrideMethodsChecker.java" startLine="130" startPosition="102" endLine="137" endPosition="5" />
+    <nodeInfo nodeId="2090290412713904620" fileName="OverrideMethodsChecker.java" startLine="247" startPosition="7" endLine="254" endPosition="7" />
+    <nodeInfo nodeId="4053237040709225080" fileName="OverrideMethodsChecker.java" startLine="184" startPosition="85" endLine="193" endPosition="11" />
+    <nodeInfo nodeId="1037184397602734884" fileName="OverrideMethodsChecker.java" startLine="116" startPosition="9" endLine="126" endPosition="7" />
+    <nodeInfo nodeId="8312250104772460549" fileName="OverrideMethodsChecker.java" startLine="150" startPosition="29" endLine="160" endPosition="7" />
+    <nodeInfo nodeId="1491958191742118815" fileName="OverrideMethodsChecker.java" startLine="258" startPosition="0" endLine="268" endPosition="0" />
+    <nodeInfo nodeId="323605094887038193" fileName="OverrideMethodsChecker.java" startLine="276" startPosition="0" endLine="287" endPosition="0" />
+    <nodeInfo nodeId="4988944197752062252" fileName="OverrideMethodsChecker.java" startLine="181" startPosition="11" endLine="194" endPosition="9" />
+    <nodeInfo nodeId="1037184397602734874" fileName="OverrideMethodsChecker.java" startLine="112" startPosition="10" endLine="127" endPosition="5" />
+    <nodeInfo nodeId="1594966379432185646" fileName="OverrideMethodsChecker.java" startLine="232" startPosition="7" endLine="247" endPosition="7" />
+    <nodeInfo nodeId="5249197957043259264" fileName="OverrideMethodsChecker.java" startLine="78" startPosition="22" endLine="95" endPosition="7" />
+    <nodeInfo nodeId="5002400195358006646" fileName="OverrideMethodsChecker.java" startLine="48" startPosition="0" endLine="67" endPosition="0" />
+    <nodeInfo nodeId="1037184397602734859" fileName="OverrideMethodsChecker.java" startLine="106" startPosition="61" endLine="127" endPosition="5" />
+    <nodeInfo nodeId="8312250104772460434" fileName="OverrideMethodsChecker.java" startLine="141" startPosition="137" endLine="162" endPosition="5" />
+    <nodeInfo nodeId="1594966379432185121" fileName="OverrideMethodsChecker.java" startLine="208" startPosition="7" endLine="232" endPosition="7" />
+    <nodeInfo nodeId="5249197957043258330" fileName="OverrideMethodsChecker.java" startLine="69" startPosition="76" endLine="97" endPosition="5" />
+    <nodeInfo nodeId="4988944197752017014" fileName="OverrideMethodsChecker.java" startLine="167" startPosition="79" endLine="195" endPosition="7" />
+    <nodeInfo nodeId="4988944197752017003" fileName="OverrideMethodsChecker.java" startLine="166" startPosition="90" endLine="196" endPosition="5" />
+    <nodeInfo nodeId="427992486439366054" fileName="OverrideMethodsChecker.java" startLine="67" startPosition="0" endLine="99" endPosition="0" />
+    <nodeInfo nodeId="4988944197752016811" fileName="OverrideMethodsChecker.java" startLine="164" startPosition="0" endLine="199" endPosition="0" />
+    <nodeInfo nodeId="1594966379432123406" fileName="OverrideMethodsChecker.java" startLine="204" startPosition="5" endLine="255" endPosition="5" />
+    <nodeInfo nodeId="9033318990679763482" fileName="OverrideMethodsChecker.java" startLine="199" startPosition="0" endLine="258" endPosition="0" />
+    <nodeInfo nodeId="2326364852992438480" fileName="OverrideMethodsChecker.java" startLine="99" startPosition="0" endLine="164" endPosition="0" />
+    <scopeInfo nodeId="5002400195357779999" fileName="OverrideMethodsChecker.java" startLine="46" startPosition="35" endLine="46" endPosition="35" />
+    <scopeInfo nodeId="3859623152551848451" fileName="OverrideMethodsChecker.java" startLine="51" startPosition="39" endLine="52" endPosition="187" />
+    <scopeInfo nodeId="3859623152551848312" fileName="OverrideMethodsChecker.java" startLine="56" startPosition="82" endLine="57" endPosition="51" />
+    <scopeInfo nodeId="1922058634759502455" fileName="OverrideMethodsChecker.java" startLine="75" startPosition="59" endLine="76" endPosition="74" />
+    <scopeInfo nodeId="1037184397602703810" fileName="OverrideMethodsChecker.java" startLine="102" startPosition="62" endLine="103" endPosition="13" />
+    <scopeInfo nodeId="4988944197752016446" fileName="OverrideMethodsChecker.java" startLine="132" startPosition="39" endLine="133" endPosition="58" />
+    <scopeInfo nodeId="4988944197752016421" fileName="OverrideMethodsChecker.java" startLine="135" startPosition="9" endLine="136" endPosition="143" />
+    <scopeInfo nodeId="4988944197752016784" fileName="OverrideMethodsChecker.java" startLine="138" startPosition="58" endLine="139" endPosition="13" />
+    <scopeInfo nodeId="4717960406884226834" fileName="OverrideMethodsChecker.java" startLine="169" startPosition="41" endLine="170" endPosition="57" />
+    <scopeInfo nodeId="4988944197752062068" fileName="OverrideMethodsChecker.java" startLine="174" startPosition="37" endLine="175" endPosition="19" />
+    <scopeInfo nodeId="4988944197752062138" fileName="OverrideMethodsChecker.java" startLine="178" startPosition="43" endLine="179" endPosition="115" />
+    <scopeInfo nodeId="4053237040709225860" fileName="OverrideMethodsChecker.java" startLine="189" startPosition="68" endLine="190" endPosition="30" />
+    <scopeInfo nodeId="2374396819863378958" fileName="OverrideMethodsChecker.java" startLine="202" startPosition="34" endLine="203" endPosition="18" />
+    <scopeInfo nodeId="1594966379432123419" fileName="OverrideMethodsChecker.java" startLine="206" startPosition="88" endLine="207" endPosition="20" />
+    <scopeInfo nodeId="1594966379433196331" fileName="OverrideMethodsChecker.java" startLine="214" startPosition="286" endLine="215" endPosition="22" />
+    <scopeInfo nodeId="1594966379433195769" fileName="OverrideMethodsChecker.java" startLine="218" startPosition="273" endLine="219" endPosition="22" />
+    <scopeInfo nodeId="1594966379433196403" fileName="OverrideMethodsChecker.java" startLine="222" startPosition="610" endLine="223" endPosition="22" />
+    <scopeInfo nodeId="1594966379433196485" fileName="OverrideMethodsChecker.java" startLine="226" startPosition="282" endLine="227" endPosition="22" />
+    <scopeInfo nodeId="1594966379433202414" fileName="OverrideMethodsChecker.java" startLine="229" startPosition="121" endLine="230" endPosition="22" />
+    <scopeInfo nodeId="7326920176342419347" fileName="OverrideMethodsChecker.java" startLine="238" startPosition="403" endLine="239" endPosition="22" />
+    <scopeInfo nodeId="7326920176342419721" fileName="OverrideMethodsChecker.java" startLine="241" startPosition="279" endLine="242" endPosition="22" />
+    <scopeInfo nodeId="7326920176342419740" fileName="OverrideMethodsChecker.java" startLine="244" startPosition="131" endLine="245" endPosition="22" />
+    <scopeInfo nodeId="2090290412713988162" fileName="OverrideMethodsChecker.java" startLine="251" startPosition="111" endLine="252" endPosition="22" />
+    <scopeInfo nodeId="1491958191742118853" fileName="OverrideMethodsChecker.java" startLine="260" startPosition="96" endLine="261" endPosition="118" />
+    <scopeInfo nodeId="1491958191742118873" fileName="OverrideMethodsChecker.java" startLine="263" startPosition="109" endLine="264" endPosition="133" />
+    <scopeInfo nodeId="7523932196475726707" fileName="OverrideMethodsChecker.java" startLine="269" startPosition="62" endLine="270" endPosition="75" />
+    <scopeInfo nodeId="7770368474366338971" fileName="OverrideMethodsChecker.java" startLine="273" startPosition="77" endLine="274" endPosition="88" />
+    <scopeInfo nodeId="7326920176342413356" fileName="OverrideMethodsChecker.java" startLine="279" startPosition="108" endLine="280" endPosition="18" />
+    <scopeInfo nodeId="7326920176342413372" fileName="OverrideMethodsChecker.java" startLine="282" startPosition="92" endLine="283" endPosition="37" />
+    <scopeInfo nodeId="5002400195357779996" fileName="OverrideMethodsChecker.java" startLine="45" startPosition="0" endLine="47" endPosition="3" />
+    <scopeInfo nodeId="5249197957043259577" fileName="OverrideMethodsChecker.java" startLine="90" startPosition="55" endLine="92" endPosition="18" />
+    <scopeInfo nodeId="7770368474366338937" fileName="OverrideMethodsChecker.java" startLine="121" startPosition="197" endLine="123" endPosition="85" />
+    <scopeInfo nodeId="2326364852992438474" fileName="OverrideMethodsChecker.java" startLine="60" startPosition="74" endLine="63" endPosition="60" />
+    <scopeInfo nodeId="8312250104772460570" fileName="OverrideMethodsChecker.java" startLine="155" startPosition="69" endLine="158" endPosition="16" />
+    <scopeInfo nodeId="3859623152551848450" fileName="OverrideMethodsChecker.java" startLine="50" startPosition="204" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="1922058634759502454" fileName="OverrideMethodsChecker.java" startLine="74" startPosition="181" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="1037184397602734860" fileName="OverrideMethodsChecker.java" startLine="107" startPosition="81" endLine="111" endPosition="9" />
+    <scopeInfo nodeId="7770368474366338917" fileName="OverrideMethodsChecker.java" startLine="120" startPosition="108" endLine="124" endPosition="11" />
+    <scopeInfo nodeId="7770368474366338934" fileName="OverrideMethodsChecker.java" startLine="120" startPosition="108" endLine="124" endPosition="11" />
+    <scopeInfo nodeId="4988944197752016445" fileName="OverrideMethodsChecker.java" startLine="131" startPosition="134" endLine="135" endPosition="0" />
+    <scopeInfo nodeId="4717960406884226833" fileName="OverrideMethodsChecker.java" startLine="168" startPosition="167" endLine="172" endPosition="0" />
+    <scopeInfo nodeId="4988944197752062137" fileName="OverrideMethodsChecker.java" startLine="177" startPosition="105" endLine="181" endPosition="0" />
+    <scopeInfo nodeId="4053237040709225584" fileName="OverrideMethodsChecker.java" startLine="187" startPosition="64" endLine="191" endPosition="15" />
+    <scopeInfo nodeId="7523932196475726704" fileName="OverrideMethodsChecker.java" startLine="268" startPosition="0" endLine="272" endPosition="0">
       <varInfo nodeId="7523932196475740040" varName="classifier" />
     </scopeInfo>
-    <scopeInfo nodeId="7770368474366338968" fileName="OverrideMethodsChecker.java" startLine="282" startPosition="0" endLine="286" endPosition="0">
+    <scopeInfo nodeId="7770368474366338968" fileName="OverrideMethodsChecker.java" startLine="272" startPosition="0" endLine="276" endPosition="0">
       <varInfo nodeId="7770368474366338977" varName="enumConstantDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="2326364852992438471" fileName="OverrideMethodsChecker.java" startLine="60" startPosition="82" endLine="65" endPosition="5" />
-    <scopeInfo nodeId="5249197957043259695" fileName="OverrideMethodsChecker.java" startLine="89" startPosition="27" endLine="94" endPosition="11" />
-    <scopeInfo nodeId="2090290412713904621" fileName="OverrideMethodsChecker.java" startLine="258" startPosition="49" endLine="263" endPosition="9">
+    <scopeInfo nodeId="2326364852992438471" fileName="OverrideMethodsChecker.java" startLine="59" startPosition="82" endLine="64" endPosition="5" />
+    <scopeInfo nodeId="5249197957043259695" fileName="OverrideMethodsChecker.java" startLine="88" startPosition="27" endLine="93" endPosition="11" />
+    <scopeInfo nodeId="2090290412713904621" fileName="OverrideMethodsChecker.java" startLine="248" startPosition="49" endLine="253" endPosition="9">
       <varInfo nodeId="2090290412713988195" varName="node" />
       <varInfo nodeId="2090290412713904635" varName="propertyEvent" />
     </scopeInfo>
-    <scopeInfo nodeId="4988944197752016418" fileName="OverrideMethodsChecker.java" startLine="140" startPosition="102" endLine="147" endPosition="5" />
-    <scopeInfo nodeId="4053237040709225081" fileName="OverrideMethodsChecker.java" startLine="195" startPosition="84" endLine="202" endPosition="13" />
-    <scopeInfo nodeId="1491958191742118818" fileName="OverrideMethodsChecker.java" startLine="269" startPosition="46" endLine="276" endPosition="73" />
-    <scopeInfo nodeId="1037184397602734887" fileName="OverrideMethodsChecker.java" startLine="127" startPosition="77" endLine="135" endPosition="9" />
-    <scopeInfo nodeId="8312250104772460550" fileName="OverrideMethodsChecker.java" startLine="161" startPosition="155" endLine="169" endPosition="9">
+    <scopeInfo nodeId="4988944197752016418" fileName="OverrideMethodsChecker.java" startLine="130" startPosition="102" endLine="137" endPosition="5" />
+    <scopeInfo nodeId="4053237040709225081" fileName="OverrideMethodsChecker.java" startLine="185" startPosition="84" endLine="192" endPosition="13" />
+    <scopeInfo nodeId="1491958191742118818" fileName="OverrideMethodsChecker.java" startLine="259" startPosition="46" endLine="266" endPosition="73" />
+    <scopeInfo nodeId="1037184397602734887" fileName="OverrideMethodsChecker.java" startLine="117" startPosition="77" endLine="125" endPosition="9" />
+    <scopeInfo nodeId="8312250104772460550" fileName="OverrideMethodsChecker.java" startLine="151" startPosition="155" endLine="159" endPosition="9">
       <varInfo nodeId="1491958191742118923" varName="overridingMethod" />
     </scopeInfo>
-    <scopeInfo nodeId="1594966379433202438" fileName="OverrideMethodsChecker.java" startLine="287" startPosition="54" endLine="295" endPosition="17">
+    <scopeInfo nodeId="1594966379433202438" fileName="OverrideMethodsChecker.java" startLine="277" startPosition="54" endLine="285" endPosition="17">
       <varInfo nodeId="7326920176342413344" varName="parent" />
     </scopeInfo>
-    <scopeInfo nodeId="1037184397602734884" fileName="OverrideMethodsChecker.java" startLine="126" startPosition="9" endLine="136" endPosition="7" />
-    <scopeInfo nodeId="8312250104772460549" fileName="OverrideMethodsChecker.java" startLine="160" startPosition="29" endLine="170" endPosition="7">
+    <scopeInfo nodeId="1037184397602734884" fileName="OverrideMethodsChecker.java" startLine="116" startPosition="9" endLine="126" endPosition="7" />
+    <scopeInfo nodeId="8312250104772460549" fileName="OverrideMethodsChecker.java" startLine="150" startPosition="29" endLine="160" endPosition="7">
       <varInfo nodeId="8312250104772460590" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1491958191742118815" fileName="OverrideMethodsChecker.java" startLine="268" startPosition="0" endLine="278" endPosition="0">
+    <scopeInfo nodeId="1491958191742118815" fileName="OverrideMethodsChecker.java" startLine="258" startPosition="0" endLine="268" endPosition="0">
       <varInfo nodeId="1491958191742118849" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4988944197752062253" fileName="OverrideMethodsChecker.java" startLine="192" startPosition="38" endLine="203" endPosition="11">
+    <scopeInfo nodeId="4988944197752062253" fileName="OverrideMethodsChecker.java" startLine="182" startPosition="38" endLine="193" endPosition="11">
       <varInfo nodeId="4053237040709225124" varName="overridingMethods" />
     </scopeInfo>
-    <scopeInfo nodeId="323605094887038193" fileName="OverrideMethodsChecker.java" startLine="286" startPosition="0" endLine="297" endPosition="0">
+    <scopeInfo nodeId="323605094887038193" fileName="OverrideMethodsChecker.java" startLine="276" startPosition="0" endLine="287" endPosition="0">
       <varInfo nodeId="7326920176342332039" varName="type" />
     </scopeInfo>
-    <scopeInfo nodeId="1594966379432185647" fileName="OverrideMethodsChecker.java" startLine="243" startPosition="50" endLine="256" endPosition="9">
+    <scopeInfo nodeId="1594966379432185647" fileName="OverrideMethodsChecker.java" startLine="233" startPosition="50" endLine="246" endPosition="9">
       <varInfo nodeId="7326920176342419332" varName="referenceRole" />
       <varInfo nodeId="7326920176342419317" varName="sourceNode" />
       <varInfo nodeId="1594966379432185678" varName="referenceEvent" />
       <varInfo nodeId="7326920176342419282" varName="reference" />
     </scopeInfo>
-    <scopeInfo nodeId="1037184397602734875" fileName="OverrideMethodsChecker.java" startLine="122" startPosition="12" endLine="136" endPosition="7" />
-    <scopeInfo nodeId="5249197957043259265" fileName="OverrideMethodsChecker.java" startLine="80" startPosition="116" endLine="95" endPosition="9">
+    <scopeInfo nodeId="1037184397602734875" fileName="OverrideMethodsChecker.java" startLine="112" startPosition="12" endLine="126" endPosition="7" />
+    <scopeInfo nodeId="5249197957043259265" fileName="OverrideMethodsChecker.java" startLine="79" startPosition="116" endLine="94" endPosition="9">
       <varInfo nodeId="5249197957043259430" varName="overridenClassifier" />
     </scopeInfo>
-    <scopeInfo nodeId="5002400195358006659" fileName="OverrideMethodsChecker.java" startLine="50" startPosition="175" endLine="66" endPosition="18">
+    <scopeInfo nodeId="5002400195358006659" fileName="OverrideMethodsChecker.java" startLine="49" startPosition="175" endLine="65" endPosition="18">
       <varInfo nodeId="5002400195358075953" varName="result" />
       <varInfo nodeId="3859623152551802604" varName="classifiers" />
     </scopeInfo>
-    <scopeInfo nodeId="5249197957043259264" fileName="OverrideMethodsChecker.java" startLine="79" startPosition="22" endLine="96" endPosition="7">
+    <scopeInfo nodeId="5249197957043259264" fileName="OverrideMethodsChecker.java" startLine="78" startPosition="22" endLine="95" endPosition="7">
       <varInfo nodeId="5249197957043259267" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="5002400195358006646" fileName="OverrideMethodsChecker.java" startLine="49" startPosition="0" endLine="68" endPosition="0">
+    <scopeInfo nodeId="5002400195358006646" fileName="OverrideMethodsChecker.java" startLine="48" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="3238664143031470885" varName="editorContext" />
       <varInfo nodeId="5002400195358006650" varName="rootNode" />
       <varInfo nodeId="5002400195358006654" varName="events" />
       <varInfo nodeId="5002400195358006652" varName="operationContext" />
       <varInfo nodeId="5002400195358006657" varName="wasCheckedOnce" />
     </scopeInfo>
-    <scopeInfo nodeId="8312250104772460437" fileName="OverrideMethodsChecker.java" startLine="152" startPosition="118" endLine="171" endPosition="135">
+    <scopeInfo nodeId="8312250104772460437" fileName="OverrideMethodsChecker.java" startLine="142" startPosition="118" endLine="161" endPosition="135">
       <varInfo nodeId="8312250104772460520" varName="overriden" />
       <varInfo nodeId="8312250104772460546" varName="messageCounter" />
       <varInfo nodeId="8312250104772460527" varName="tooltip" />
     </scopeInfo>
-    <scopeInfo nodeId="8312250104772460434" fileName="OverrideMethodsChecker.java" startLine="151" startPosition="137" endLine="172" endPosition="5" />
-    <scopeInfo nodeId="4988944197752017017" fileName="OverrideMethodsChecker.java" startLine="182" startPosition="11" endLine="204" endPosition="9">
+    <scopeInfo nodeId="8312250104772460434" fileName="OverrideMethodsChecker.java" startLine="141" startPosition="137" endLine="162" endPosition="5" />
+    <scopeInfo nodeId="4988944197752017017" fileName="OverrideMethodsChecker.java" startLine="172" startPosition="11" endLine="194" endPosition="9">
       <varInfo nodeId="4988944197752017096" varName="similarMethods" />
       <varInfo nodeId="4988944197752062110" varName="overridenMethod" />
     </scopeInfo>
-    <scopeInfo nodeId="1594966379432185122" fileName="OverrideMethodsChecker.java" startLine="219" startPosition="46" endLine="241" endPosition="9">
+    <scopeInfo nodeId="1594966379432185122" fileName="OverrideMethodsChecker.java" startLine="209" startPosition="46" endLine="231" endPosition="9">
       <varInfo nodeId="1594966379433195693" varName="child" />
       <varInfo nodeId="1594966379433196304" varName="childRole" />
       <varInfo nodeId="1594966379432185662" varName="childEvent" />
     </scopeInfo>
-    <scopeInfo nodeId="5249197957043258333" fileName="OverrideMethodsChecker.java" startLine="71" startPosition="87" endLine="97" endPosition="137">
+    <scopeInfo nodeId="5249197957043258333" fileName="OverrideMethodsChecker.java" startLine="70" startPosition="87" endLine="96" endPosition="137">
       <varInfo nodeId="1922058634759501912" varName="overrides" />
       <varInfo nodeId="1271531489078190557" varName="overridenMethods" />
       <varInfo nodeId="5249197957043258419" varName="messageCounter" />
       <varInfo nodeId="5249197957043258398" varName="tooltip" />
     </scopeInfo>
-    <scopeInfo nodeId="5249197957043258330" fileName="OverrideMethodsChecker.java" startLine="70" startPosition="76" endLine="98" endPosition="5" />
-    <scopeInfo nodeId="4988944197752017006" fileName="OverrideMethodsChecker.java" startLine="177" startPosition="79" endLine="205" endPosition="7" />
-    <scopeInfo nodeId="4988944197752017014" fileName="OverrideMethodsChecker.java" startLine="177" startPosition="79" endLine="205" endPosition="7" />
-    <scopeInfo nodeId="427992486439366057" fileName="OverrideMethodsChecker.java" startLine="69" startPosition="87" endLine="98" endPosition="5">
+    <scopeInfo nodeId="5249197957043258330" fileName="OverrideMethodsChecker.java" startLine="69" startPosition="76" endLine="97" endPosition="5" />
+    <scopeInfo nodeId="4988944197752017006" fileName="OverrideMethodsChecker.java" startLine="167" startPosition="79" endLine="195" endPosition="7" />
+    <scopeInfo nodeId="4988944197752017014" fileName="OverrideMethodsChecker.java" startLine="167" startPosition="79" endLine="195" endPosition="7" />
+    <scopeInfo nodeId="427992486439366057" fileName="OverrideMethodsChecker.java" startLine="68" startPosition="87" endLine="97" endPosition="5">
       <varInfo nodeId="1271531489078190431" varName="finder" />
     </scopeInfo>
-    <scopeInfo nodeId="4988944197752017003" fileName="OverrideMethodsChecker.java" startLine="176" startPosition="90" endLine="206" endPosition="5" />
-    <scopeInfo nodeId="427992486439366054" fileName="OverrideMethodsChecker.java" startLine="68" startPosition="0" endLine="100" endPosition="0">
+    <scopeInfo nodeId="4988944197752017003" fileName="OverrideMethodsChecker.java" startLine="166" startPosition="90" endLine="196" endPosition="5" />
+    <scopeInfo nodeId="427992486439366054" fileName="OverrideMethodsChecker.java" startLine="67" startPosition="0" endLine="99" endPosition="0">
       <varInfo nodeId="427992486439388048" varName="container" />
       <varInfo nodeId="427992486439389544" varName="messages" />
     </scopeInfo>
-    <scopeInfo nodeId="4988944197752016814" fileName="OverrideMethodsChecker.java" startLine="175" startPosition="150" endLine="207" endPosition="18">
+    <scopeInfo nodeId="4988944197752016814" fileName="OverrideMethodsChecker.java" startLine="165" startPosition="150" endLine="197" endPosition="18">
       <varInfo nodeId="4988944197752016903" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="4988944197752016811" fileName="OverrideMethodsChecker.java" startLine="174" startPosition="0" endLine="209" endPosition="0">
+    <scopeInfo nodeId="4988944197752016811" fileName="OverrideMethodsChecker.java" startLine="164" startPosition="0" endLine="199" endPosition="0">
       <varInfo nodeId="4988944197752016850" varName="nameToMethodsMap" />
       <varInfo nodeId="4988944197752016857" varName="derivedClassifiers" />
     </scopeInfo>
-    <scopeInfo nodeId="1594966379432123409" fileName="OverrideMethodsChecker.java" startLine="215" startPosition="61" endLine="264" endPosition="7" />
-    <scopeInfo nodeId="1594966379432123406" fileName="OverrideMethodsChecker.java" startLine="214" startPosition="5" endLine="265" endPosition="5" />
-    <scopeInfo nodeId="9033318990679763488" fileName="OverrideMethodsChecker.java" startLine="211" startPosition="63" endLine="266" endPosition="17" />
-    <scopeInfo nodeId="9033318990679763482" fileName="OverrideMethodsChecker.java" startLine="209" startPosition="0" endLine="268" endPosition="0">
+    <scopeInfo nodeId="1594966379432123409" fileName="OverrideMethodsChecker.java" startLine="205" startPosition="61" endLine="254" endPosition="7" />
+    <scopeInfo nodeId="1594966379432123406" fileName="OverrideMethodsChecker.java" startLine="204" startPosition="5" endLine="255" endPosition="5" />
+    <scopeInfo nodeId="9033318990679763488" fileName="OverrideMethodsChecker.java" startLine="201" startPosition="63" endLine="256" endPosition="17" />
+    <scopeInfo nodeId="9033318990679763482" fileName="OverrideMethodsChecker.java" startLine="199" startPosition="0" endLine="258" endPosition="0">
       <varInfo nodeId="9033318990679763485" varName="events" />
     </scopeInfo>
-    <scopeInfo nodeId="2326364852992438483" fileName="OverrideMethodsChecker.java" startLine="101" startPosition="86" endLine="172" endPosition="5">
+    <scopeInfo nodeId="2326364852992438483" fileName="OverrideMethodsChecker.java" startLine="100" startPosition="86" endLine="162" endPosition="5">
       <varInfo nodeId="4988944197752016954" varName="overridenToOverridingMethodsMap" />
       <varInfo nodeId="4988944197752016191" varName="nameToMethodsMap" />
-      <varInfo nodeId="1037184397602703780" varName="rawDerivedClassifiers" />
       <varInfo nodeId="1037184397602734848" varName="isInterface" />
-      <varInfo nodeId="1037184397602703786" varName="derivedClassifiers" />
+      <varInfo nodeId="1037184397602703780" varName="derivedClassifiers" />
       <varInfo nodeId="1037184397602734855" varName="superClassifierTooltip" />
     </scopeInfo>
-    <scopeInfo nodeId="2326364852992438480" fileName="OverrideMethodsChecker.java" startLine="100" startPosition="0" endLine="174" endPosition="0">
+    <scopeInfo nodeId="2326364852992438480" fileName="OverrideMethodsChecker.java" startLine="99" startPosition="0" endLine="164" endPosition="0">
       <varInfo nodeId="2326364852992438525" varName="container" />
       <varInfo nodeId="2326364852992438533" varName="messages" />
     </scopeInfo>
-    <unitInfo nodeId="3859623152551848450" fileName="OverrideMethodsChecker.java" startLine="51" startPosition="181" endLine="55" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.OverrideMethodsChecker$1" />
-    <unitInfo nodeId="1922058634759502454" fileName="OverrideMethodsChecker.java" startLine="75" startPosition="140" endLine="79" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.OverrideMethodsChecker$2" />
-    <unitInfo nodeId="1037184397602703793" fileName="OverrideMethodsChecker.java" startLine="103" startPosition="97" endLine="107" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.OverrideMethodsChecker$3" />
-    <unitInfo nodeId="1037184397602703801" fileName="OverrideMethodsChecker.java" startLine="107" startPosition="17" endLine="111" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.OverrideMethodsChecker$4" />
-    <unitInfo nodeId="4988944197752016445" fileName="OverrideMethodsChecker.java" startLine="141" startPosition="111" endLine="145" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.OverrideMethodsChecker$5" />
-    <unitInfo nodeId="4717960406884226833" fileName="OverrideMethodsChecker.java" startLine="178" startPosition="144" endLine="182" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.OverrideMethodsChecker$7" />
-    <unitInfo nodeId="4988944197752062137" fileName="OverrideMethodsChecker.java" startLine="187" startPosition="82" endLine="191" endPosition="9" unitName="jetbrains.mps.baseLanguage.plugin.OverrideMethodsChecker$6" />
-    <unitInfo nodeId="5002400195357779994" fileName="OverrideMethodsChecker.java" startLine="40" startPosition="0" endLine="298" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.OverrideMethodsChecker" />
+    <unitInfo nodeId="3859623152551848450" fileName="OverrideMethodsChecker.java" startLine="50" startPosition="181" endLine="54" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.OverrideMethodsChecker$1" />
+    <unitInfo nodeId="1922058634759502454" fileName="OverrideMethodsChecker.java" startLine="74" startPosition="140" endLine="78" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.OverrideMethodsChecker$2" />
+    <unitInfo nodeId="4988944197752016445" fileName="OverrideMethodsChecker.java" startLine="131" startPosition="111" endLine="135" endPosition="5" unitName="jetbrains.mps.baseLanguage.plugin.OverrideMethodsChecker$3" />
+    <unitInfo nodeId="4717960406884226833" fileName="OverrideMethodsChecker.java" startLine="168" startPosition="144" endLine="172" endPosition="7" unitName="jetbrains.mps.baseLanguage.plugin.OverrideMethodsChecker$5" />
+    <unitInfo nodeId="4988944197752062137" fileName="OverrideMethodsChecker.java" startLine="177" startPosition="82" endLine="181" endPosition="9" unitName="jetbrains.mps.baseLanguage.plugin.OverrideMethodsChecker$4" />
+    <unitInfo nodeId="5002400195357779994" fileName="OverrideMethodsChecker.java" startLine="39" startPosition="0" endLine="288" endPosition="0" unitName="jetbrains.mps.baseLanguage.plugin.OverrideMethodsChecker" />
   </root>
   <root nodeId="5002400195358095186">
     <nodeInfo nodeId="113917032267619129" fileName="OverridenMethodEditorMessage.java" startLine="14" startPosition="81" endLine="15" endPosition="123" />

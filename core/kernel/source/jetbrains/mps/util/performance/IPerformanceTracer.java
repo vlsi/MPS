@@ -6,14 +6,14 @@ package jetbrains.mps.util.performance;
 public interface IPerformanceTracer {
 
   void push(String taskName, boolean isMajor);
-  
+
   void pop();
 
-  String report(String ...separate);
+  String report(String... separate);
 
 
   /**
-   *  Default implementation.
+   * Default implementation.
    */
   public static class NullPerformanceTracer implements IPerformanceTracer {
 
@@ -26,7 +26,7 @@ public interface IPerformanceTracer {
     }
 
     @Override
-    public String report(String ...separate) {
+    public String report(String... separate) {
       return null;
     }
   }

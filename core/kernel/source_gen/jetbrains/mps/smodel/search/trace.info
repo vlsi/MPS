@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="4642948870877862679">
+    <nodeInfo nodeId="4642948870877888900" fileName="IReferenceInfoResolver.java" startLine="8" startPosition="41" endLine="9" endPosition="83" />
+    <scopeInfo nodeId="4642948870877888900" fileName="IReferenceInfoResolver.java" startLine="8" startPosition="41" endLine="9" endPosition="83">
+      <varInfo nodeId="4642948870877888905" varName="targetModelReference" />
+      <varInfo nodeId="4642948870877888903" varName="referenceInfo" />
+    </scopeInfo>
+    <unitInfo nodeId="4642948870877862679" fileName="IReferenceInfoResolver.java" startLine="8" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.smodel.search.IReferenceInfoResolver" />
+  </root>
+  <root nodeId="4642948870877886449">
+    <nodeInfo nodeId="4642948870877886452" fileName="SimpleSearchScope.java" startLine="13" startPosition="60" endLine="14" endPosition="39" />
+    <nodeInfo nodeId="4642948870877886462" fileName="SimpleSearchScope.java" startLine="16" startPosition="40" endLine="17" endPosition="41" />
+    <nodeInfo nodeId="4642948870877886490" fileName="SimpleSearchScope.java" startLine="19" startPosition="34" endLine="20" endPosition="34" />
+    <nodeInfo nodeId="4642948870877886479" fileName="SimpleSearchScope.java" startLine="21" startPosition="14" endLine="22" endPosition="53" />
+    <nodeInfo nodeId="4642948870877886503" fileName="SimpleSearchScope.java" startLine="27" startPosition="40" endLine="28" endPosition="42" />
+    <nodeInfo nodeId="4642948870877886515" fileName="SimpleSearchScope.java" startLine="29" startPosition="23" endLine="30" endPosition="24" />
+    <nodeInfo nodeId="4642948870877886528" fileName="SimpleSearchScope.java" startLine="35" startPosition="59" endLine="36" endPosition="62" />
+    <nodeInfo nodeId="4642948870877886549" fileName="SimpleSearchScope.java" startLine="38" startPosition="32" endLine="39" endPosition="25" />
+    <nodeInfo nodeId="4642948870877886554" fileName="SimpleSearchScope.java" startLine="41" startPosition="5" endLine="42" endPosition="18" />
+    <nodeInfo nodeId="4642948870877886477" fileName="SimpleSearchScope.java" startLine="21" startPosition="12" endLine="23" endPosition="7" />
+    <nodeInfo nodeId="4642948870877886510" fileName="SimpleSearchScope.java" startLine="28" startPosition="42" endLine="31" endPosition="5" />
+    <nodeInfo nodeId="4642948870877886543" fileName="SimpleSearchScope.java" startLine="37" startPosition="32" endLine="40" endPosition="7" />
+    <nodeInfo nodeId="4642948870877886473" fileName="SimpleSearchScope.java" startLine="18" startPosition="31" endLine="23" endPosition="7" />
+    <nodeInfo nodeId="4642948870877886538" fileName="SimpleSearchScope.java" startLine="36" startPosition="62" endLine="41" endPosition="5" />
+    <nodeInfo nodeId="4642948870877886497" fileName="SimpleSearchScope.java" startLine="26" startPosition="0" endLine="32" endPosition="3" />
+    <nodeInfo nodeId="4642948870877886468" fileName="SimpleSearchScope.java" startLine="17" startPosition="41" endLine="24" endPosition="5" />
+    <nodeInfo nodeId="4642948870877886456" fileName="SimpleSearchScope.java" startLine="15" startPosition="0" endLine="25" endPosition="3" />
+    <nodeInfo nodeId="4642948870877886520" fileName="SimpleSearchScope.java" startLine="33" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="4642948870877886489" fileName="SimpleSearchScope.java" startLine="19" startPosition="34" endLine="20" endPosition="34" />
+    <scopeInfo nodeId="4642948870877886478" fileName="SimpleSearchScope.java" startLine="21" startPosition="14" endLine="22" endPosition="53" />
+    <scopeInfo nodeId="4642948870877886514" fileName="SimpleSearchScope.java" startLine="29" startPosition="23" endLine="30" endPosition="24" />
+    <scopeInfo nodeId="4642948870877886548" fileName="SimpleSearchScope.java" startLine="38" startPosition="32" endLine="39" endPosition="25" />
+    <scopeInfo nodeId="4642948870877886542" fileName="SimpleSearchScope.java" startLine="37" startPosition="32" endLine="40" endPosition="7" />
+    <scopeInfo nodeId="4642948870877886502" fileName="SimpleSearchScope.java" startLine="27" startPosition="40" endLine="31" endPosition="5" />
+    <scopeInfo nodeId="4642948870877886472" fileName="SimpleSearchScope.java" startLine="18" startPosition="31" endLine="23" endPosition="7" />
+    <scopeInfo nodeId="4642948870877886538" fileName="SimpleSearchScope.java" startLine="36" startPosition="62" endLine="41" endPosition="5">
+      <varInfo nodeId="4642948870877886540" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4642948870877886497" fileName="SimpleSearchScope.java" startLine="26" startPosition="0" endLine="32" endPosition="3">
+      <varInfo nodeId="4642948870877886500" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4642948870877886468" fileName="SimpleSearchScope.java" startLine="17" startPosition="41" endLine="24" endPosition="5">
+      <varInfo nodeId="4642948870877886470" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4642948870877886527" fileName="SimpleSearchScope.java" startLine="35" startPosition="59" endLine="42" endPosition="18">
+      <varInfo nodeId="4642948870877886529" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="4642948870877886461" fileName="SimpleSearchScope.java" startLine="16" startPosition="40" endLine="24" endPosition="5" />
+    <scopeInfo nodeId="4642948870877886456" fileName="SimpleSearchScope.java" startLine="15" startPosition="0" endLine="25" endPosition="3">
+      <varInfo nodeId="4642948870877886459" varName="nodes" />
+    </scopeInfo>
+    <scopeInfo nodeId="4642948870877886520" fileName="SimpleSearchScope.java" startLine="33" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="4642948870877886524" varName="condition" />
+    </scopeInfo>
+    <unitInfo nodeId="4642948870877886449" fileName="SimpleSearchScope.java" startLine="13" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.smodel.search.SimpleSearchScope" />
+  </root>
+  <root nodeId="4642948870877886557">
+    <nodeInfo nodeId="4642948870877886560" fileName="ModelAndImportedModelsScope.java" startLine="15" startPosition="70" endLine="16" endPosition="88" />
+    <nodeInfo nodeId="4642948870877886565" fileName="ModelAndImportedModelsScope.java" startLine="17" startPosition="0" endLine="18" endPosition="25" />
+    <nodeInfo nodeId="4642948870877886568" fileName="ModelAndImportedModelsScope.java" startLine="18" startPosition="25" endLine="19" endPosition="30" />
+    <nodeInfo nodeId="4642948870877886571" fileName="ModelAndImportedModelsScope.java" startLine="19" startPosition="30" endLine="20" endPosition="25" />
+    <nodeInfo nodeId="4642948870877886574" fileName="ModelAndImportedModelsScope.java" startLine="20" startPosition="25" endLine="21" endPosition="42" />
+    <nodeInfo nodeId="4642948870877886588" fileName="ModelAndImportedModelsScope.java" startLine="23" startPosition="85" endLine="24" endPosition="20" />
+    <nodeInfo nodeId="4642948870877886592" fileName="ModelAndImportedModelsScope.java" startLine="24" startPosition="20" endLine="25" endPosition="28" />
+    <nodeInfo nodeId="4642948870877886596" fileName="ModelAndImportedModelsScope.java" startLine="25" startPosition="28" endLine="26" endPosition="20" />
+    <nodeInfo nodeId="4642948870877886632" fileName="ModelAndImportedModelsScope.java" startLine="32" startPosition="28" endLine="33" endPosition="54" />
+    <nodeInfo nodeId="4642948870877886616" fileName="ModelAndImportedModelsScope.java" startLine="34" startPosition="14" endLine="35" endPosition="54" />
+    <nodeInfo nodeId="4642948870877886623" fileName="ModelAndImportedModelsScope.java" startLine="35" startPosition="54" endLine="36" endPosition="54" />
+    <nodeInfo nodeId="4642948870877886639" fileName="ModelAndImportedModelsScope.java" startLine="38" startPosition="5" endLine="39" endPosition="20" />
+    <nodeInfo nodeId="4642948870877886650" fileName="ModelAndImportedModelsScope.java" startLine="43" startPosition="59" endLine="44" endPosition="48" />
+    <nodeInfo nodeId="4642948870877886655" fileName="ModelAndImportedModelsScope.java" startLine="44" startPosition="48" endLine="45" endPosition="48" />
+    <nodeInfo nodeId="4642948870877886735" fileName="ModelAndImportedModelsScope.java" startLine="47" startPosition="45" endLine="48" endPosition="61" />
+    <nodeInfo nodeId="4642948870877886690" fileName="ModelAndImportedModelsScope.java" startLine="53" startPosition="30" endLine="54" endPosition="21" />
+    <nodeInfo nodeId="4642948870877886708" fileName="ModelAndImportedModelsScope.java" startLine="56" startPosition="57" endLine="57" endPosition="77" />
+    <nodeInfo nodeId="4642948870877886714" fileName="ModelAndImportedModelsScope.java" startLine="57" startPosition="77" endLine="58" endPosition="111" />
+    <nodeInfo nodeId="4642948870877886697" fileName="ModelAndImportedModelsScope.java" startLine="59" startPosition="18" endLine="60" endPosition="65" />
+    <nodeInfo nodeId="4642948870877886674" fileName="ModelAndImportedModelsScope.java" startLine="62" startPosition="31" endLine="63" endPosition="69" />
+    <nodeInfo nodeId="4642948870877886745" fileName="ModelAndImportedModelsScope.java" startLine="66" startPosition="5" endLine="67" endPosition="18" />
+    <nodeInfo nodeId="4642948870877886695" fileName="ModelAndImportedModelsScope.java" startLine="59" startPosition="16" endLine="61" endPosition="11" />
+    <nodeInfo nodeId="4642948870877886614" fileName="ModelAndImportedModelsScope.java" startLine="34" startPosition="12" endLine="37" endPosition="7" />
+    <nodeInfo nodeId="4642948870877886730" fileName="ModelAndImportedModelsScope.java" startLine="46" startPosition="22" endLine="49" endPosition="7" />
+    <nodeInfo nodeId="4642948870877886685" fileName="ModelAndImportedModelsScope.java" startLine="52" startPosition="13" endLine="55" endPosition="11" />
+    <nodeInfo nodeId="4642948870877886578" fileName="ModelAndImportedModelsScope.java" startLine="22" startPosition="0" endLine="27" endPosition="3" />
+    <nodeInfo nodeId="4642948870877886610" fileName="ModelAndImportedModelsScope.java" startLine="31" startPosition="27" endLine="37" endPosition="7" />
+    <nodeInfo nodeId="4642948870877886691" fileName="ModelAndImportedModelsScope.java" startLine="55" startPosition="11" endLine="61" endPosition="11" />
+    <nodeInfo nodeId="4642948870877886605" fileName="ModelAndImportedModelsScope.java" startLine="30" startPosition="45" endLine="38" endPosition="5" />
+    <nodeInfo nodeId="4642948870877886600" fileName="ModelAndImportedModelsScope.java" startLine="28" startPosition="0" endLine="41" endPosition="0" />
+    <nodeInfo nodeId="4642948870877886671" fileName="ModelAndImportedModelsScope.java" startLine="51" startPosition="45" endLine="64" endPosition="9" />
+    <nodeInfo nodeId="4642948870877886666" fileName="ModelAndImportedModelsScope.java" startLine="50" startPosition="12" endLine="65" endPosition="7" />
+    <nodeInfo nodeId="4642948870877886664" fileName="ModelAndImportedModelsScope.java" startLine="50" startPosition="10" endLine="66" endPosition="5" />
+    <nodeInfo nodeId="4642948870877886662" fileName="ModelAndImportedModelsScope.java" startLine="45" startPosition="48" endLine="66" endPosition="5" />
+    <nodeInfo nodeId="4642948870877886642" fileName="ModelAndImportedModelsScope.java" startLine="41" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="4642948870877886631" fileName="ModelAndImportedModelsScope.java" startLine="32" startPosition="28" endLine="33" endPosition="54" />
+    <scopeInfo nodeId="4642948870877886734" fileName="ModelAndImportedModelsScope.java" startLine="47" startPosition="45" endLine="48" endPosition="61" />
+    <scopeInfo nodeId="4642948870877886689" fileName="ModelAndImportedModelsScope.java" startLine="53" startPosition="30" endLine="54" endPosition="21" />
+    <scopeInfo nodeId="4642948870877886696" fileName="ModelAndImportedModelsScope.java" startLine="59" startPosition="18" endLine="60" endPosition="65" />
+    <scopeInfo nodeId="4642948870877886672" fileName="ModelAndImportedModelsScope.java" startLine="62" startPosition="0" endLine="63" endPosition="69">
+      <varInfo nodeId="4642948870877886682" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="4642948870877886673" fileName="ModelAndImportedModelsScope.java" startLine="62" startPosition="31" endLine="63" endPosition="69" />
+    <scopeInfo nodeId="4642948870877886615" fileName="ModelAndImportedModelsScope.java" startLine="34" startPosition="14" endLine="36" endPosition="54" />
+    <scopeInfo nodeId="4642948870877886707" fileName="ModelAndImportedModelsScope.java" startLine="56" startPosition="57" endLine="58" endPosition="111">
+      <varInfo nodeId="4642948870877886709" varName="isInstance" />
+    </scopeInfo>
+    <scopeInfo nodeId="4642948870877886587" fileName="ModelAndImportedModelsScope.java" startLine="23" startPosition="85" endLine="26" endPosition="20" />
+    <scopeInfo nodeId="4642948870877886729" fileName="ModelAndImportedModelsScope.java" startLine="46" startPosition="22" endLine="49" endPosition="7" />
+    <scopeInfo nodeId="4642948870877886730" fileName="ModelAndImportedModelsScope.java" startLine="46" startPosition="22" endLine="49" endPosition="7">
+      <varInfo nodeId="4642948870877886732" varName="model" />
+    </scopeInfo>
+    <scopeInfo nodeId="4642948870877886578" fileName="ModelAndImportedModelsScope.java" startLine="22" startPosition="0" endLine="27" endPosition="3">
+      <varInfo nodeId="4642948870877886581" varName="model" />
+      <varInfo nodeId="4642948870877886585" varName="scope" />
+      <varInfo nodeId="4642948870877886583" varName="rootsOnly" />
+    </scopeInfo>
+    <scopeInfo nodeId="4642948870877886609" fileName="ModelAndImportedModelsScope.java" startLine="31" startPosition="27" endLine="37" endPosition="7" />
+    <scopeInfo nodeId="4642948870877886604" fileName="ModelAndImportedModelsScope.java" startLine="30" startPosition="45" endLine="39" endPosition="20" />
+    <scopeInfo nodeId="4642948870877886684" fileName="ModelAndImportedModelsScope.java" startLine="52" startPosition="13" endLine="61" endPosition="11" />
+    <scopeInfo nodeId="4642948870877886600" fileName="ModelAndImportedModelsScope.java" startLine="28" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="4642948870877886670" fileName="ModelAndImportedModelsScope.java" startLine="51" startPosition="45" endLine="64" endPosition="9" />
+    <scopeInfo nodeId="4642948870877886665" fileName="ModelAndImportedModelsScope.java" startLine="50" startPosition="12" endLine="65" endPosition="7" />
+    <scopeInfo nodeId="4642948870877886666" fileName="ModelAndImportedModelsScope.java" startLine="50" startPosition="12" endLine="65" endPosition="7">
+      <varInfo nodeId="4642948870877886668" varName="model" />
+    </scopeInfo>
+    <scopeInfo nodeId="4642948870877886649" fileName="ModelAndImportedModelsScope.java" startLine="43" startPosition="59" endLine="67" endPosition="18">
+      <varInfo nodeId="4642948870877886651" varName="models" />
+      <varInfo nodeId="4642948870877886656" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="4642948870877886642" fileName="ModelAndImportedModelsScope.java" startLine="41" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="4642948870877886646" varName="condition" />
+    </scopeInfo>
+    <unitInfo nodeId="4642948870877886557" fileName="ModelAndImportedModelsScope.java" startLine="15" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.smodel.search.ModelAndImportedModelsScope" />
+  </root>
+  <root nodeId="4642948870877886748">
+    <nodeInfo nodeId="4642948870877886763" fileName="UndefinedSearchScope.java" startLine="17" startPosition="59" endLine="18" endPosition="46" />
+    <nodeInfo nodeId="4642948870877886775" fileName="UndefinedSearchScope.java" startLine="22" startPosition="76" endLine="23" endPosition="46" />
+    <nodeInfo nodeId="4642948870877886789" fileName="UndefinedSearchScope.java" startLine="27" startPosition="78" endLine="28" endPosition="46" />
+    <nodeInfo nodeId="4642948870877886799" fileName="UndefinedSearchScope.java" startLine="31" startPosition="40" endLine="32" endPosition="46" />
+    <nodeInfo nodeId="4642948870877886807" fileName="UndefinedSearchScope.java" startLine="36" startPosition="33" endLine="37" endPosition="46" />
+    <nodeInfo nodeId="4642948870877886819" fileName="UndefinedSearchScope.java" startLine="40" startPosition="121" endLine="41" endPosition="46" />
+    <nodeInfo nodeId="4642948870877886751" fileName="UndefinedSearchScope.java" startLine="12" startPosition="59" endLine="14" endPosition="3" />
+    <nodeInfo nodeId="4642948870877886793" fileName="UndefinedSearchScope.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <nodeInfo nodeId="4642948870877886811" fileName="UndefinedSearchScope.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <nodeInfo nodeId="4642948870877886755" fileName="UndefinedSearchScope.java" startLine="15" startPosition="0" endLine="20" endPosition="0" />
+    <nodeInfo nodeId="4642948870877886767" fileName="UndefinedSearchScope.java" startLine="20" startPosition="0" endLine="25" endPosition="0" />
+    <nodeInfo nodeId="4642948870877886779" fileName="UndefinedSearchScope.java" startLine="25" startPosition="0" endLine="30" endPosition="0" />
+    <nodeInfo nodeId="4642948870877886802" fileName="UndefinedSearchScope.java" startLine="34" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="4642948870877886754" fileName="UndefinedSearchScope.java" startLine="13" startPosition="33" endLine="13" endPosition="33" />
+    <scopeInfo nodeId="4642948870877886762" fileName="UndefinedSearchScope.java" startLine="17" startPosition="59" endLine="18" endPosition="46" />
+    <scopeInfo nodeId="4642948870877886774" fileName="UndefinedSearchScope.java" startLine="22" startPosition="76" endLine="23" endPosition="46" />
+    <scopeInfo nodeId="4642948870877886788" fileName="UndefinedSearchScope.java" startLine="27" startPosition="78" endLine="28" endPosition="46" />
+    <scopeInfo nodeId="4642948870877886798" fileName="UndefinedSearchScope.java" startLine="31" startPosition="40" endLine="32" endPosition="46" />
+    <scopeInfo nodeId="4642948870877886806" fileName="UndefinedSearchScope.java" startLine="36" startPosition="33" endLine="37" endPosition="46" />
+    <scopeInfo nodeId="4642948870877886818" fileName="UndefinedSearchScope.java" startLine="40" startPosition="121" endLine="41" endPosition="46" />
+    <scopeInfo nodeId="4642948870877886751" fileName="UndefinedSearchScope.java" startLine="12" startPosition="59" endLine="14" endPosition="3" />
+    <scopeInfo nodeId="4642948870877886793" fileName="UndefinedSearchScope.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="4642948870877886796" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4642948870877886811" fileName="UndefinedSearchScope.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="4642948870877886814" varName="referenceNode" />
+      <varInfo nodeId="4642948870877886816" varName="targetConcept" />
+    </scopeInfo>
+    <scopeInfo nodeId="4642948870877886755" fileName="UndefinedSearchScope.java" startLine="15" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="4642948870877886759" varName="condition" />
+    </scopeInfo>
+    <scopeInfo nodeId="4642948870877886767" fileName="UndefinedSearchScope.java" startLine="20" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="4642948870877886771" varName="condition" />
+    </scopeInfo>
+    <scopeInfo nodeId="4642948870877886779" fileName="UndefinedSearchScope.java" startLine="25" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="4642948870877886785" varName="adapterClass" />
+    </scopeInfo>
+    <scopeInfo nodeId="4642948870877886802" fileName="UndefinedSearchScope.java" startLine="34" startPosition="0" endLine="39" endPosition="0" />
+    <unitInfo nodeId="4642948870877886748" fileName="UndefinedSearchScope.java" startLine="12" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.smodel.search.UndefinedSearchScope" />
+  </root>
+  <root nodeId="4642948870877886822">
+    <nodeInfo nodeId="4642948870877886825" fileName="ModelNodesSearchScope.java" startLine="11" startPosition="64" endLine="12" endPosition="25" />
+    <nodeInfo nodeId="4642948870877886834" fileName="ModelNodesSearchScope.java" startLine="14" startPosition="46" endLine="15" endPosition="20" />
+    <nodeInfo nodeId="4642948870877886846" fileName="ModelNodesSearchScope.java" startLine="19" startPosition="59" endLine="20" endPosition="39" />
+    <nodeInfo nodeId="4642948870877886828" fileName="ModelNodesSearchScope.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
+    <nodeInfo nodeId="4642948870877886838" fileName="ModelNodesSearchScope.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="4642948870877886833" fileName="ModelNodesSearchScope.java" startLine="14" startPosition="46" endLine="15" endPosition="20" />
+    <scopeInfo nodeId="4642948870877886845" fileName="ModelNodesSearchScope.java" startLine="19" startPosition="59" endLine="20" endPosition="39" />
+    <scopeInfo nodeId="4642948870877886828" fileName="ModelNodesSearchScope.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="4642948870877886831" varName="model" />
+    </scopeInfo>
+    <scopeInfo nodeId="4642948870877886838" fileName="ModelNodesSearchScope.java" startLine="17" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="4642948870877886842" varName="condition" />
+    </scopeInfo>
+    <unitInfo nodeId="4642948870877886822" fileName="ModelNodesSearchScope.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.smodel.search.ModelNodesSearchScope" />
+  </root>
+  <root nodeId="4642948870877886852">
+    <nodeInfo nodeId="4642948870877886855" fileName="SubnodesSearchScope.java" startLine="11" startPosition="62" endLine="12" endPosition="32" />
+    <nodeInfo nodeId="4642948870877886864" fileName="SubnodesSearchScope.java" startLine="14" startPosition="51" endLine="15" endPosition="36" />
+    <nodeInfo nodeId="4642948870877886881" fileName="SubnodesSearchScope.java" startLine="20" startPosition="34" endLine="21" endPosition="36" />
+    <nodeInfo nodeId="4642948870877886885" fileName="SubnodesSearchScope.java" startLine="22" startPosition="5" endLine="23" endPosition="53" />
+    <nodeInfo nodeId="4642948870877886858" fileName="SubnodesSearchScope.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
+    <nodeInfo nodeId="4642948870877886876" fileName="SubnodesSearchScope.java" startLine="19" startPosition="59" endLine="22" endPosition="5" />
+    <nodeInfo nodeId="4642948870877886868" fileName="SubnodesSearchScope.java" startLine="17" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="4642948870877886863" fileName="SubnodesSearchScope.java" startLine="14" startPosition="51" endLine="15" endPosition="36" />
+    <scopeInfo nodeId="4642948870877886880" fileName="SubnodesSearchScope.java" startLine="20" startPosition="34" endLine="21" endPosition="36" />
+    <scopeInfo nodeId="4642948870877886858" fileName="SubnodesSearchScope.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="4642948870877886861" varName="enclosingNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4642948870877886875" fileName="SubnodesSearchScope.java" startLine="19" startPosition="59" endLine="23" endPosition="53" />
+    <scopeInfo nodeId="4642948870877886868" fileName="SubnodesSearchScope.java" startLine="17" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="4642948870877886872" varName="condition" />
+    </scopeInfo>
+    <unitInfo nodeId="4642948870877886852" fileName="SubnodesSearchScope.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.smodel.search.SubnodesSearchScope" />
+  </root>
+  <root nodeId="4642948870877886891">
+    <nodeInfo nodeId="4642948870877887007" fileName="AbstractSearchScope.java" startLine="16" startPosition="38" endLine="17" endPosition="18" />
+    <nodeInfo nodeId="4642948870877887015" fileName="AbstractSearchScope.java" startLine="27" startPosition="36" endLine="28" endPosition="22" />
+    <nodeInfo nodeId="4642948870877887030" fileName="AbstractSearchScope.java" startLine="31" startPosition="60" endLine="32" endPosition="24" />
+    <nodeInfo nodeId="4642948870877887032" fileName="AbstractSearchScope.java" startLine="34" startPosition="9" endLine="35" endPosition="20" />
+    <nodeInfo nodeId="4642948870877886935" fileName="AbstractSearchScope.java" startLine="41" startPosition="39" endLine="42" endPosition="36" />
+    <nodeInfo nodeId="4642948870877887035" fileName="AbstractSearchScope.java" startLine="48" startPosition="40" endLine="49" endPosition="59" />
+    <nodeInfo nodeId="4642948870877887042" fileName="AbstractSearchScope.java" startLine="57" startPosition="45" endLine="58" endPosition="62" />
+    <nodeInfo nodeId="4642948870877887050" fileName="AbstractSearchScope.java" startLine="65" startPosition="35" endLine="66" endPosition="25" />
+    <nodeInfo nodeId="4642948870877886907" fileName="AbstractSearchScope.java" startLine="20" startPosition="0" endLine="22" endPosition="3" />
+    <nodeInfo nodeId="4642948870877887010" fileName="AbstractSearchScope.java" startLine="26" startPosition="88" endLine="29" endPosition="9" />
+    <nodeInfo nodeId="4642948870877887022" fileName="AbstractSearchScope.java" startLine="30" startPosition="39" endLine="33" endPosition="11" />
+    <nodeInfo nodeId="4642948870877886902" fileName="AbstractSearchScope.java" startLine="15" startPosition="83" endLine="19" endPosition="0" />
+    <nodeInfo nodeId="4642948870877886954" fileName="AbstractSearchScope.java" startLine="47" startPosition="67" endLine="51" endPosition="0" />
+    <nodeInfo nodeId="4642948870877886977" fileName="AbstractSearchScope.java" startLine="56" startPosition="64" endLine="60" endPosition="0" />
+    <nodeInfo nodeId="4642948870877886999" fileName="AbstractSearchScope.java" startLine="64" startPosition="44" endLine="68" endPosition="0" />
+    <nodeInfo nodeId="4642948870877886894" fileName="AbstractSearchScope.java" startLine="14" startPosition="67" endLine="19" endPosition="4" />
+    <nodeInfo nodeId="4642948870877887017" fileName="AbstractSearchScope.java" startLine="29" startPosition="9" endLine="34" endPosition="9" />
+    <nodeInfo nodeId="4642948870877886930" fileName="AbstractSearchScope.java" startLine="39" startPosition="0" endLine="44" endPosition="0" />
+    <nodeInfo nodeId="4642948870877886947" fileName="AbstractSearchScope.java" startLine="46" startPosition="82" endLine="51" endPosition="8" />
+    <nodeInfo nodeId="4642948870877886970" fileName="AbstractSearchScope.java" startLine="55" startPosition="84" endLine="60" endPosition="7" />
+    <nodeInfo nodeId="4642948870877886991" fileName="AbstractSearchScope.java" startLine="63" startPosition="46" endLine="68" endPosition="18" />
+    <nodeInfo nodeId="4642948870877886985" fileName="AbstractSearchScope.java" startLine="62" startPosition="0" endLine="70" endPosition="0" />
+    <nodeInfo nodeId="4642948870877886939" fileName="AbstractSearchScope.java" startLine="44" startPosition="0" endLine="53" endPosition="0" />
+    <nodeInfo nodeId="4642948870877886960" fileName="AbstractSearchScope.java" startLine="53" startPosition="0" endLine="62" endPosition="0" />
+    <nodeInfo nodeId="4642948870877886923" fileName="AbstractSearchScope.java" startLine="25" startPosition="41" endLine="37" endPosition="0" />
+    <nodeInfo nodeId="4642948870877886919" fileName="AbstractSearchScope.java" startLine="24" startPosition="121" endLine="37" endPosition="6" />
+    <nodeInfo nodeId="4642948870877886911" fileName="AbstractSearchScope.java" startLine="23" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="4642948870877886910" fileName="AbstractSearchScope.java" startLine="21" startPosition="32" endLine="21" endPosition="32" />
+    <scopeInfo nodeId="4642948870877887006" fileName="AbstractSearchScope.java" startLine="16" startPosition="38" endLine="17" endPosition="18" />
+    <scopeInfo nodeId="4642948870877887014" fileName="AbstractSearchScope.java" startLine="27" startPosition="36" endLine="28" endPosition="22" />
+    <scopeInfo nodeId="4642948870877887029" fileName="AbstractSearchScope.java" startLine="31" startPosition="60" endLine="32" endPosition="24" />
+    <scopeInfo nodeId="4642948870877886934" fileName="AbstractSearchScope.java" startLine="41" startPosition="39" endLine="42" endPosition="36" />
+    <scopeInfo nodeId="4642948870877887034" fileName="AbstractSearchScope.java" startLine="48" startPosition="40" endLine="49" endPosition="59" />
+    <scopeInfo nodeId="4642948870877887041" fileName="AbstractSearchScope.java" startLine="57" startPosition="45" endLine="58" endPosition="62" />
+    <scopeInfo nodeId="4642948870877887049" fileName="AbstractSearchScope.java" startLine="65" startPosition="35" endLine="66" endPosition="25" />
+    <scopeInfo nodeId="4642948870877886907" fileName="AbstractSearchScope.java" startLine="20" startPosition="0" endLine="22" endPosition="3" />
+    <scopeInfo nodeId="4642948870877887021" fileName="AbstractSearchScope.java" startLine="30" startPosition="39" endLine="33" endPosition="11" />
+    <scopeInfo nodeId="4642948870877886902" fileName="AbstractSearchScope.java" startLine="15" startPosition="83" endLine="19" endPosition="0">
+      <varInfo nodeId="4642948870877886905" varName="object" />
+    </scopeInfo>
+    <scopeInfo nodeId="4642948870877886954" fileName="AbstractSearchScope.java" startLine="47" startPosition="67" endLine="51" endPosition="0">
+      <varInfo nodeId="4642948870877886957" varName="object" />
+    </scopeInfo>
+    <scopeInfo nodeId="4642948870877886977" fileName="AbstractSearchScope.java" startLine="56" startPosition="64" endLine="60" endPosition="0">
+      <varInfo nodeId="4642948870877886980" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4642948870877886999" fileName="AbstractSearchScope.java" startLine="64" startPosition="44" endLine="68" endPosition="0">
+      <varInfo nodeId="4642948870877887002" varName="n" />
+    </scopeInfo>
+    <scopeInfo nodeId="4642948870877887017" fileName="AbstractSearchScope.java" startLine="29" startPosition="9" endLine="34" endPosition="9">
+      <varInfo nodeId="4642948870877887019" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4642948870877886930" fileName="AbstractSearchScope.java" startLine="39" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="4642948870877886946" fileName="AbstractSearchScope.java" startLine="46" startPosition="82" endLine="51" endPosition="8" />
+    <scopeInfo nodeId="4642948870877886969" fileName="AbstractSearchScope.java" startLine="55" startPosition="84" endLine="60" endPosition="7" />
+    <scopeInfo nodeId="4642948870877886990" fileName="AbstractSearchScope.java" startLine="63" startPosition="46" endLine="68" endPosition="18" />
+    <scopeInfo nodeId="4642948870877886985" fileName="AbstractSearchScope.java" startLine="62" startPosition="0" endLine="70" endPosition="0">
+      <varInfo nodeId="4642948870877886988" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4642948870877887009" fileName="AbstractSearchScope.java" startLine="26" startPosition="88" endLine="35" endPosition="20" />
+    <scopeInfo nodeId="4642948870877886939" fileName="AbstractSearchScope.java" startLine="44" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="4642948870877886943" varName="condition" />
+    </scopeInfo>
+    <scopeInfo nodeId="4642948870877886960" fileName="AbstractSearchScope.java" startLine="53" startPosition="0" endLine="62" endPosition="0">
+      <varInfo nodeId="4642948870877886966" varName="adapterClass" />
+    </scopeInfo>
+    <scopeInfo nodeId="4642948870877886923" fileName="AbstractSearchScope.java" startLine="25" startPosition="41" endLine="37" endPosition="0">
+      <varInfo nodeId="4642948870877886928" varName="targetModelReference" />
+      <varInfo nodeId="4642948870877886926" varName="referenceInfo" />
+    </scopeInfo>
+    <scopeInfo nodeId="4642948870877886918" fileName="AbstractSearchScope.java" startLine="24" startPosition="121" endLine="37" endPosition="6" />
+    <scopeInfo nodeId="4642948870877886911" fileName="AbstractSearchScope.java" startLine="23" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="4642948870877886914" varName="referenceNode" />
+      <varInfo nodeId="4642948870877886916" varName="targetConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="4642948870877886900" fileName="AbstractSearchScope.java" startLine="15" startPosition="63" endLine="19" endPosition="3" unitName="jetbrains.mps.smodel.search.AbstractSearchScope$1" />
+    <unitInfo nodeId="4642948870877886952" fileName="AbstractSearchScope.java" startLine="47" startPosition="47" endLine="51" endPosition="5" unitName="jetbrains.mps.smodel.search.AbstractSearchScope$3" />
+    <unitInfo nodeId="4642948870877886975" fileName="AbstractSearchScope.java" startLine="56" startPosition="37" endLine="60" endPosition="5" unitName="jetbrains.mps.smodel.search.AbstractSearchScope$4" />
+    <unitInfo nodeId="4642948870877886997" fileName="AbstractSearchScope.java" startLine="64" startPosition="24" endLine="68" endPosition="5" unitName="jetbrains.mps.smodel.search.AbstractSearchScope$5" />
+    <unitInfo nodeId="4642948870877886922" fileName="AbstractSearchScope.java" startLine="25" startPosition="15" endLine="37" endPosition="5" unitName="jetbrains.mps.smodel.search.AbstractSearchScope$2" />
+    <unitInfo nodeId="4642948870877886891" fileName="AbstractSearchScope.java" startLine="14" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.smodel.search.AbstractSearchScope" />
+  </root>
+  <root nodeId="4642948870877887054">
+    <nodeInfo nodeId="4642948870877887057" fileName="SearchScopeWithNode.java" startLine="7" startPosition="71" endLine="8" endPosition="32" />
+    <nodeInfo nodeId="4642948870877887066" fileName="SearchScopeWithNode.java" startLine="10" startPosition="51" endLine="11" endPosition="36" />
+    <nodeInfo nodeId="4642948870877887074" fileName="SearchScopeWithNode.java" startLine="14" startPosition="35" endLine="15" endPosition="27" />
+    <nodeInfo nodeId="4642948870877887060" fileName="SearchScopeWithNode.java" startLine="9" startPosition="0" endLine="12" endPosition="3" />
+    <nodeInfo nodeId="4642948870877887070" fileName="SearchScopeWithNode.java" startLine="13" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="4642948870877887065" fileName="SearchScopeWithNode.java" startLine="10" startPosition="51" endLine="11" endPosition="36" />
+    <scopeInfo nodeId="4642948870877887073" fileName="SearchScopeWithNode.java" startLine="14" startPosition="35" endLine="15" endPosition="27" />
+    <scopeInfo nodeId="4642948870877887060" fileName="SearchScopeWithNode.java" startLine="9" startPosition="0" endLine="12" endPosition="3">
+      <varInfo nodeId="4642948870877887063" varName="enclosingNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4642948870877887070" fileName="SearchScopeWithNode.java" startLine="13" startPosition="0" endLine="17" endPosition="0" />
+    <unitInfo nodeId="4642948870877887054" fileName="SearchScopeWithNode.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.smodel.search.SearchScopeWithNode" />
+  </root>
+  <root nodeId="4642948870877887076">
+    <nodeInfo nodeId="4642948870877887079" fileName="NodeListChildrenSearchScope.java" startLine="11" startPosition="70" endLine="12" endPosition="35" />
+    <nodeInfo nodeId="4642948870877887090" fileName="NodeListChildrenSearchScope.java" startLine="14" startPosition="57" endLine="15" endPosition="47" />
+    <nodeInfo nodeId="4642948870877887107" fileName="NodeListChildrenSearchScope.java" startLine="19" startPosition="59" endLine="20" endPosition="53" />
+    <nodeInfo nodeId="4642948870877887140" fileName="NodeListChildrenSearchScope.java" startLine="23" startPosition="97" endLine="24" endPosition="28" />
+    <nodeInfo nodeId="4642948870877887145" fileName="NodeListChildrenSearchScope.java" startLine="27" startPosition="5" endLine="28" endPosition="18" />
+    <nodeInfo nodeId="4642948870877887083" fileName="NodeListChildrenSearchScope.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
+    <nodeInfo nodeId="4642948870877887126" fileName="NodeListChildrenSearchScope.java" startLine="22" startPosition="46" endLine="25" endPosition="9" />
+    <nodeInfo nodeId="4642948870877887119" fileName="NodeListChildrenSearchScope.java" startLine="21" startPosition="32" endLine="26" endPosition="7" />
+    <nodeInfo nodeId="4642948870877887114" fileName="NodeListChildrenSearchScope.java" startLine="20" startPosition="53" endLine="27" endPosition="5" />
+    <nodeInfo nodeId="4642948870877887099" fileName="NodeListChildrenSearchScope.java" startLine="17" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="4642948870877887089" fileName="NodeListChildrenSearchScope.java" startLine="14" startPosition="57" endLine="15" endPosition="47" />
+    <scopeInfo nodeId="4642948870877887139" fileName="NodeListChildrenSearchScope.java" startLine="23" startPosition="97" endLine="24" endPosition="28" />
+    <scopeInfo nodeId="4642948870877887083" fileName="NodeListChildrenSearchScope.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="4642948870877887086" varName="nodes" />
+    </scopeInfo>
+    <scopeInfo nodeId="4642948870877887125" fileName="NodeListChildrenSearchScope.java" startLine="22" startPosition="46" endLine="25" endPosition="9" />
+    <scopeInfo nodeId="4642948870877887118" fileName="NodeListChildrenSearchScope.java" startLine="21" startPosition="32" endLine="26" endPosition="7" />
+    <scopeInfo nodeId="4642948870877887119" fileName="NodeListChildrenSearchScope.java" startLine="21" startPosition="32" endLine="26" endPosition="7">
+      <varInfo nodeId="4642948870877887123" varName="child" />
+    </scopeInfo>
+    <scopeInfo nodeId="4642948870877887114" fileName="NodeListChildrenSearchScope.java" startLine="20" startPosition="53" endLine="27" endPosition="5">
+      <varInfo nodeId="4642948870877887116" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4642948870877887106" fileName="NodeListChildrenSearchScope.java" startLine="19" startPosition="59" endLine="28" endPosition="18">
+      <varInfo nodeId="4642948870877887108" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="4642948870877887099" fileName="NodeListChildrenSearchScope.java" startLine="17" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="4642948870877887103" varName="condition" />
+    </scopeInfo>
+    <unitInfo nodeId="4642948870877887076" fileName="NodeListChildrenSearchScope.java" startLine="11" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.smodel.search.NodeListChildrenSearchScope" />
+  </root>
+  <root nodeId="4642948870877888908">
+    <nodeInfo nodeId="4642948870877888923" fileName="EmptySearchScope.java" startLine="18" startPosition="59" endLine="19" endPosition="34" />
+    <nodeInfo nodeId="4642948870877888948" fileName="EmptySearchScope.java" startLine="24" startPosition="88" endLine="25" endPosition="20" />
+    <nodeInfo nodeId="4642948870877888911" fileName="EmptySearchScope.java" startLine="13" startPosition="59" endLine="15" endPosition="3" />
+    <nodeInfo nodeId="4642948870877888940" fileName="EmptySearchScope.java" startLine="23" startPosition="41" endLine="27" endPosition="0" />
+    <nodeInfo nodeId="4642948870877888915" fileName="EmptySearchScope.java" startLine="16" startPosition="0" endLine="21" endPosition="0" />
+    <nodeInfo nodeId="4642948870877888936" fileName="EmptySearchScope.java" startLine="22" startPosition="121" endLine="27" endPosition="6" />
+    <nodeInfo nodeId="4642948870877888928" fileName="EmptySearchScope.java" startLine="21" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="4642948870877888914" fileName="EmptySearchScope.java" startLine="14" startPosition="29" endLine="14" endPosition="29" />
+    <scopeInfo nodeId="4642948870877888922" fileName="EmptySearchScope.java" startLine="18" startPosition="59" endLine="19" endPosition="34" />
+    <scopeInfo nodeId="4642948870877888947" fileName="EmptySearchScope.java" startLine="24" startPosition="88" endLine="25" endPosition="20" />
+    <scopeInfo nodeId="4642948870877888911" fileName="EmptySearchScope.java" startLine="13" startPosition="59" endLine="15" endPosition="3" />
+    <scopeInfo nodeId="4642948870877888940" fileName="EmptySearchScope.java" startLine="23" startPosition="41" endLine="27" endPosition="0">
+      <varInfo nodeId="4642948870877888945" varName="targetModelReference" />
+      <varInfo nodeId="4642948870877888943" varName="referenceInfo" />
+    </scopeInfo>
+    <scopeInfo nodeId="4642948870877888915" fileName="EmptySearchScope.java" startLine="16" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="4642948870877888919" varName="condition" />
+    </scopeInfo>
+    <scopeInfo nodeId="4642948870877888935" fileName="EmptySearchScope.java" startLine="22" startPosition="121" endLine="27" endPosition="6" />
+    <scopeInfo nodeId="4642948870877888928" fileName="EmptySearchScope.java" startLine="21" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="4642948870877888931" varName="referenceNode" />
+      <varInfo nodeId="4642948870877888933" varName="targetConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="4642948870877888939" fileName="EmptySearchScope.java" startLine="23" startPosition="15" endLine="27" endPosition="5" unitName="jetbrains.mps.smodel.search.EmptySearchScope$1" />
+    <unitInfo nodeId="4642948870877888908" fileName="EmptySearchScope.java" startLine="13" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.smodel.search.EmptySearchScope" />
+  </root>
+  <root nodeId="4642948870877889221">
+    <nodeInfo nodeId="4642948870877889252" fileName="ISearchScope.java" startLine="18" startPosition="77" endLine="19" endPosition="39" />
+    <nodeInfo nodeId="4642948870877889264" fileName="ISearchScope.java" startLine="21" startPosition="32" endLine="22" endPosition="120" />
+    <nodeInfo nodeId="4642948870877889223" fileName="ISearchScope.java" startLine="12" startPosition="31" endLine="14" endPosition="58" />
+    <nodeInfo nodeId="4642948870877889232" fileName="ISearchScope.java" startLine="14" startPosition="58" endLine="16" endPosition="75" />
+    <nodeInfo nodeId="4642948870877889241" fileName="ISearchScope.java" startLine="16" startPosition="75" endLine="18" endPosition="77" />
+    <nodeInfo nodeId="4642948870877889258" fileName="ISearchScope.java" startLine="19" startPosition="39" endLine="21" endPosition="32" />
+    <scopeInfo nodeId="4642948870877889252" fileName="ISearchScope.java" startLine="18" startPosition="77" endLine="19" endPosition="39">
+      <varInfo nodeId="4642948870877889255" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4642948870877889264" fileName="ISearchScope.java" startLine="21" startPosition="32" endLine="22" endPosition="120">
+      <varInfo nodeId="4642948870877889267" varName="referenceNode" />
+      <varInfo nodeId="4642948870877889269" varName="targetConcept" />
+    </scopeInfo>
+    <scopeInfo nodeId="4642948870877889223" fileName="ISearchScope.java" startLine="12" startPosition="31" endLine="14" endPosition="58">
+      <varInfo nodeId="4642948870877889227" varName="condition" />
+    </scopeInfo>
+    <scopeInfo nodeId="4642948870877889232" fileName="ISearchScope.java" startLine="14" startPosition="58" endLine="16" endPosition="75">
+      <varInfo nodeId="4642948870877889236" varName="condition" />
+    </scopeInfo>
+    <scopeInfo nodeId="4642948870877889241" fileName="ISearchScope.java" startLine="16" startPosition="75" endLine="18" endPosition="77">
+      <varInfo nodeId="4642948870877889247" varName="adapterClass" />
+    </scopeInfo>
+    <scopeInfo nodeId="4642948870877889258" fileName="ISearchScope.java" startLine="19" startPosition="39" endLine="21" endPosition="32" />
+    <unitInfo nodeId="4642948870877889221" fileName="ISearchScope.java" startLine="12" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.smodel.search.ISearchScope" />
+  </root>
+  <root nodeId="4642948870877889272">
+    <nodeInfo nodeId="4642948870877889276" fileName="IsInstanceCondition.java" startLine="10" startPosition="62" endLine="11" endPosition="33" />
+    <nodeInfo nodeId="4642948870877889285" fileName="IsInstanceCondition.java" startLine="13" startPosition="42" endLine="14" endPosition="57" />
+    <nodeInfo nodeId="4642948870877889297" fileName="IsInstanceCondition.java" startLine="17" startPosition="77" endLine="18" endPosition="50" />
+    <nodeInfo nodeId="4642948870877889306" fileName="IsInstanceCondition.java" startLine="21" startPosition="45" endLine="22" endPosition="29" />
+    <nodeInfo nodeId="4642948870877889314" fileName="IsInstanceCondition.java" startLine="25" startPosition="36" endLine="26" endPosition="27" />
+    <nodeInfo nodeId="4642948870877889322" fileName="IsInstanceCondition.java" startLine="29" startPosition="34" endLine="30" endPosition="53" />
+    <nodeInfo nodeId="4642948870877889279" fileName="IsInstanceCondition.java" startLine="12" startPosition="0" endLine="15" endPosition="3" />
+    <nodeInfo nodeId="4642948870877889291" fileName="IsInstanceCondition.java" startLine="16" startPosition="0" endLine="19" endPosition="3" />
+    <nodeInfo nodeId="4642948870877889300" fileName="IsInstanceCondition.java" startLine="20" startPosition="0" endLine="23" endPosition="3" />
+    <nodeInfo nodeId="4642948870877889310" fileName="IsInstanceCondition.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <nodeInfo nodeId="4642948870877889316" fileName="IsInstanceCondition.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="4642948870877889284" fileName="IsInstanceCondition.java" startLine="13" startPosition="42" endLine="14" endPosition="57" />
+    <scopeInfo nodeId="4642948870877889296" fileName="IsInstanceCondition.java" startLine="17" startPosition="77" endLine="18" endPosition="50" />
+    <scopeInfo nodeId="4642948870877889305" fileName="IsInstanceCondition.java" startLine="21" startPosition="45" endLine="22" endPosition="29" />
+    <scopeInfo nodeId="4642948870877889313" fileName="IsInstanceCondition.java" startLine="25" startPosition="36" endLine="26" endPosition="27" />
+    <scopeInfo nodeId="4642948870877889321" fileName="IsInstanceCondition.java" startLine="29" startPosition="34" endLine="30" endPosition="53" />
+    <scopeInfo nodeId="4642948870877889279" fileName="IsInstanceCondition.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="4642948870877889282" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4642948870877889291" fileName="IsInstanceCondition.java" startLine="16" startPosition="0" endLine="19" endPosition="3">
+      <varInfo nodeId="4642948870877889294" varName="conceptDeclaration" />
+    </scopeInfo>
+    <scopeInfo nodeId="4642948870877889300" fileName="IsInstanceCondition.java" startLine="20" startPosition="0" endLine="23" endPosition="3">
+      <varInfo nodeId="4642948870877889303" varName="fqName" />
+    </scopeInfo>
+    <scopeInfo nodeId="4642948870877889310" fileName="IsInstanceCondition.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="4642948870877889316" fileName="IsInstanceCondition.java" startLine="28" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="4642948870877889319" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="4642948870877889272" fileName="IsInstanceCondition.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.smodel.search.IsInstanceCondition" />
+  </root>
+</debugInfo>
+

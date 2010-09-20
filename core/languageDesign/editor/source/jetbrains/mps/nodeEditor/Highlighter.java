@@ -52,6 +52,8 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private static final Object UPDATE_EDITOR_LOCK = new Object();
   private static final Object ADD_EDITORS_LOCK = new Object();
 
+  private static final Object PENDING_LOCK = new Object();
+
   private boolean myStopThread = false;
   private GlobalSModelEventsManager myGlobalSModelEventsManager;
   private ClassLoaderManager myClassLoaderManager;
@@ -63,6 +65,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private Set<Object> myCheckedOnceInspectors = new WeakSet<Object>();
   private EditorsProvider myEditorsProvider;
   private InspectorTool myInspectorTool;
+  private List<Runnable> myPendingActions = new ArrayList<Runnable>();
 
   private volatile long myLastCommandTime = 0;
 
@@ -70,9 +73,14 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
 
   private ReloadListener myReloadListener = new ReloadAdapter() {
     public void unload() {
-      myCheckedOnceEditors.clear();
-      myCheckedOnceInspectors.clear();
-      clearAdditionalEditors();
+      addPendingAction(new Runnable() {
+        @Override
+        public void run() {
+          myCheckedOnceEditors.clear();
+          myCheckedOnceInspectors.clear();
+          clearAdditionalEditors();
+        }
+      });
     }
   };
   private SModelCommandListener myModelCommandListener = new SModelCommandListener() {
@@ -149,6 +157,21 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     return myThread;
   }
 
+  private void addPendingAction(Runnable r) {
+    synchronized (PENDING_LOCK) {
+      myPendingActions.add(r);
+    }
+  }
+
+  private void processPendingActions() {
+    synchronized (PENDING_LOCK) {
+      for (Runnable r : myPendingActions) {
+        r.run();
+      }
+      myPendingActions.clear();
+    }
+  }
+
   public void addChecker(IEditorChecker checker) {
     if (MPSCore.getInstance().isTestMode()) return;
 
@@ -156,6 +179,12 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       synchronized (CHECKERS_LOCK) {
         myCheckers.add(checker);
       }
+      addPendingAction(new Runnable() {
+        public void run() {
+          myCheckedOnceEditors.clear();
+          myCheckedOnceInspectors.clear();
+        }
+      });
     }
   }
 
@@ -350,7 +379,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
    * to createMessages() on next visible (active) editor change
    */
   private void cleanupCheckedOnce(List<EditorComponent> allEditorComponents) {
-    myCheckedOnceEditors.retainAll(allEditorComponents);    
+    myCheckedOnceEditors.retainAll(allEditorComponents);
   }
 
   private boolean wasCheckedOnce(EditorComponent editorComponent) {
@@ -385,7 +414,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       final boolean[] messagesChangedContainer = {false};
       Runnable runnable = new Runnable() {
         public void run() {
-          SNode node = editor.getEditedNode();          
+          SNode node = editor.getEditedNode();
           if (node == null || node.isDisposed()) return;
           owners[0] = checker.getOwner(node, editor);
           EditorContext editorContext = editor.getEditorContext();
@@ -464,6 +493,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
           }
 
           doUpdate();
+          processPendingActions();
           if (myStopThread) {
             break;
           }

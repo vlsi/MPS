@@ -17,14 +17,12 @@ package jetbrains.mps.ide;
 
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.fileEditor.FileEditorStateLevel;
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.cells.DefaultCellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.workbench.MPSDataKeys;
 import org.apache.commons.lang.ObjectUtils;
 import org.jdom.Element;
@@ -149,6 +147,10 @@ public class NodeEditor implements IEditor {
       if (editorComponent != null) {
         EditorComponent inspector = editorComponent.getInspector();
         result.myInspectorMemento = inspector.getEditorContext().createMemento(full);
+        EditorCell selectedCell = editorComponent.getSelectedCell();
+        if (selectedCell != null) {
+          result.mySelectedCell = new DefaultCellInfo(selectedCell);
+        }
       }
     }
     return result;
@@ -169,16 +171,39 @@ public class NodeEditor implements IEditor {
         editorComponent.getInspector().getEditorContext().setMemento(s.myInspectorMemento);
       }
     }
+    if (s.myIsExternal && s.mySelectedCell != null) {
+      NodeEditorComponent editorComponent = (NodeEditorComponent) getCurrentEditorComponent();
+      if (editorComponent != null) {
+        EditorCell closestCell = s.mySelectedCell.findClosestCell(editorComponent);
+        if (closestCell != null) {
+          editorComponent.changeSelection(closestCell);
+        }
+      }
+    }
   }
 
   public static class MyFileEditorState implements MPSEditorState {
+    private static final String SELECTED_CELL = "selectedCell";
+
     private Object myMemento;
     private Object myInspectorMemento;
+    private boolean myIsExternal = false;
+    private DefaultCellInfo mySelectedCell;
 
     public void save(Element e) {
+      if (mySelectedCell != null) {
+        Element cellElem = new Element(SELECTED_CELL);
+        mySelectedCell.saveTo(cellElem);
+        e.addContent(cellElem);
+      }
     }
 
     public void load(Element e) {
+      Element cellElem = e.getChild(SELECTED_CELL);
+      if (cellElem != null) {
+        mySelectedCell = DefaultCellInfo.loadFrom(cellElem);
+      }
+      myIsExternal = true;
     }
 
     public int hashCode() {

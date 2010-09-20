@@ -24,7 +24,6 @@ import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.ModelAccess;
 
 public abstract class MultiTabPropertyProvider {
   protected SNode getCurrentEditedNode(Project project, VirtualFile file) {

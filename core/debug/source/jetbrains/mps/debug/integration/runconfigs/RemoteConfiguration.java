@@ -32,6 +32,7 @@ public class RemoteConfiguration extends BaseRunConfig {
   public SettingsEditor<? extends RunConfiguration> getConfigurationEditor() {
     return new SettingsEditor<RemoteConfiguration>() {
       private RemoteSettingsEditor myRemoteSettingsEditor;
+
       @Override
       protected void resetEditorFrom(RemoteConfiguration s) {
         myRemoteSettingsEditor.reset(mySettings);

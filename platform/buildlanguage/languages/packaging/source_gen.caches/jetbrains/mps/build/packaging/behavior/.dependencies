@@ -284,8 +284,8 @@
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IAbstractCompositeComponent_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.ModuleUtil" />
-    <classNode dependClassName="jetbrains.mps.generator.fileGenerator.AllCaches" />
-    <classNode dependClassName="jetbrains.mps.generator.fileGenerator.BaseModelCache" />
+    <classNode dependClassName="jetbrains.mps.generator.cache.AllCaches" />
+    <classNode dependClassName="jetbrains.mps.generator.cache.BaseModelCache" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />

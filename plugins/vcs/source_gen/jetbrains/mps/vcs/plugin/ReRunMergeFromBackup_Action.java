@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.vcs.ModelUtils;
 import jetbrains.mps.vcs.VcsHelper;
 import java.io.IOException;
-import jetbrains.mps.vcs.diff.ui.ModelDiffTool;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.generator.ModelDigestHelper;
 import jetbrains.mps.vfs.IFile;
@@ -107,12 +106,6 @@ public class ReRunMergeFromBackup_Action extends GeneratedAction {
           ReRunMergeFromBackup_Action.this.doMerge(models[VcsHelper.VcsMergeVersion.MINE.ordinal()], models[VcsHelper.VcsMergeVersion.BASE.ordinal()], models[VcsHelper.VcsMergeVersion.REPOSITORY.ordinal()]);
           return;
         } catch (IOException e) {
-          if (log.isWarnEnabled()) {
-            log.warn("", e);
-          }
-          // Skip this backup 
-          continue;
-        } catch (ModelDiffTool.ReadException e) {
           if (log.isWarnEnabled()) {
             log.warn("", e);
           }

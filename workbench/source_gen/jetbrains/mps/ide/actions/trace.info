@@ -3,31 +3,56 @@
   <unitInfo fileName="Default_KeymapChanges.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ide.actions.Default_KeymapChanges" />
   <unitInfo fileName="PersistentOptions_PreferencesComponent.java" startLine="50" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.ide.actions.PersistentOptions_PreferencesComponent$MyState" />
   <unitInfo fileName="XWin_KeymapChanges.java" startLine="7" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.ide.actions.XWin_KeymapChanges" />
+  <unitInfo fileName="JUnitTestMethodActions_ActionGroup.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.ide.actions.JUnitTestMethodActions_ActionGroup" />
+  <unitInfo fileName="JUnitTestCaseActions_ActionGroup.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.ide.actions.JUnitTestCaseActions_ActionGroup" />
   <unitInfo fileName="ModelActionsInternal_ActionGroup.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.ide.actions.ModelActionsInternal_ActionGroup" />
+  <unitInfo fileName="RuntimeFolderActions_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ide.actions.RuntimeFolderActions_ActionGroup" />
+  <unitInfo fileName="PropertyNodeActions_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ide.actions.PropertyNodeActions_ActionGroup" />
+  <unitInfo fileName="ReferenceNodeActions_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ide.actions.ReferenceNodeActions_ActionGroup" />
   <unitInfo fileName="TransientModulesActions_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ide.actions.TransientModulesActions_ActionGroup" />
+  <unitInfo fileName="AccessoriesGroupActions_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ide.actions.AccessoriesGroupActions_ActionGroup" />
+  <unitInfo fileName="NamespaceActions_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ide.actions.NamespaceActions_ActionGroup" />
+  <unitInfo fileName="ModuleActions_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ide.actions.ModuleActions_ActionGroup" />
+  <unitInfo fileName="FolderActions_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ide.actions.FolderActions_ActionGroup" />
   <unitInfo fileName="FileActions_ActionGroup.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ide.actions.FileActions_ActionGroup" />
   <unitInfo fileName="Ide_ProjectPlugin.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.ide.actions.Ide_ProjectPlugin" />
+  <unitInfo fileName="PackageNewActions_ActionGroup.java" startLine="8" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ide.actions.PackageNewActions_ActionGroup" />
   <unitInfo fileName="NodeActionsInternal_ActionGroup.java" startLine="8" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ide.actions.NodeActionsInternal_ActionGroup" />
+  <unitInfo fileName="Breakpoints_ActionGroup.java" startLine="8" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.ide.actions.Breakpoints_ActionGroup" />
+  <unitInfo fileName="ModelRefactoring_ActionGroup.java" startLine="8" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.ide.actions.ModelRefactoring_ActionGroup" />
+  <unitInfo fileName="SolutionRefactoring_ActionGroup.java" startLine="8" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.ide.actions.SolutionRefactoring_ActionGroup" />
+  <unitInfo fileName="LanguageRefactoring_ActionGroup.java" startLine="8" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.ide.actions.LanguageRefactoring_ActionGroup" />
   <unitInfo fileName="ToolsUpgrade_ActionGroup.java" startLine="8" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.ide.actions.ToolsUpgrade_ActionGroup" />
   <unitInfo fileName="SaveTransientModels_ActionGroup.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.ide.actions.SaveTransientModels_ActionGroup" />
+  <unitInfo fileName="FileSystemNewActions_ActionGroup.java" startLine="8" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.ide.actions.FileSystemNewActions_ActionGroup" />
+  <unitInfo fileName="PackageActions_ActionGroup.java" startLine="8" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.ide.actions.PackageActions_ActionGroup" />
+  <unitInfo fileName="GeneratorNewActions_ActionGroup.java" startLine="8" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.ide.actions.GeneratorNewActions_ActionGroup" />
   <unitInfo fileName="SolutionNewActions_ActionGroup.java" startLine="8" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.ide.actions.SolutionNewActions_ActionGroup" />
   <unitInfo fileName="CreateRootNode_ActionGroup.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.ide.actions.CreateRootNode_ActionGroup" />
+  <unitInfo fileName="Build_ActionGroup.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.ide.actions.Build_ActionGroup" />
   <unitInfo fileName="ProjectNewActions_ActionGroup.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.ide.actions.ProjectNewActions_ActionGroup" />
   <unitInfo fileName="LanguageNewCustomPartActions_ActionGroup.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.ide.actions.LanguageNewCustomPartActions_ActionGroup" />
   <unitInfo fileName="FavoritesPopup_ActionGroup.java" startLine="8" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.ide.actions.FavoritesPopup_ActionGroup" />
   <unitInfo fileName="GenerateModule_ActionGroup.java" startLine="9" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.ide.actions.GenerateModule_ActionGroup" />
   <unitInfo fileName="ModelNewActions_ActionGroup.java" startLine="8" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.ide.actions.ModelNewActions_ActionGroup" />
   <unitInfo fileName="GenerateModels_ActionGroup.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.ide.actions.GenerateModels_ActionGroup" />
+  <unitInfo fileName="DebugTool_ActionGroup.java" startLine="8" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.ide.actions.DebugTool_ActionGroup" />
   <unitInfo fileName="ToolsInternal_ActionGroup.java" startLine="8" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.ide.actions.ToolsInternal_ActionGroup" />
+  <unitInfo fileName="InEditorActions_ActionGroup.java" startLine="8" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.ide.actions.InEditorActions_ActionGroup" />
+  <unitInfo fileName="Search_ActionGroup.java" startLine="8" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.ide.actions.Search_ActionGroup" />
   <unitInfo fileName="LanguageNewActions_ActionGroup.java" startLine="8" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.ide.actions.LanguageNewActions_ActionGroup" />
+  <unitInfo fileName="Generate_ActionGroup.java" startLine="8" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ide.actions.Generate_ActionGroup" />
   <unitInfo fileName="DevkitActions_ActionGroup.java" startLine="8" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ide.actions.DevkitActions_ActionGroup" />
-  <unitInfo fileName="Mac_KeymapChanges.java" startLine="7" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.ide.actions.Mac_KeymapChanges" />
+  <unitInfo fileName="DebugRunMenu_ActionGroup.java" startLine="8" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.ide.actions.DebugRunMenu_ActionGroup" />
   <unitInfo fileName="Edit_ActionGroup.java" startLine="8" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.ide.actions.Edit_ActionGroup" />
   <unitInfo fileName="ProjectActions_ActionGroup.java" startLine="9" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.ide.actions.ProjectActions_ActionGroup" />
+  <unitInfo fileName="Mac_KeymapChanges.java" startLine="7" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.ide.actions.Mac_KeymapChanges" />
   <unitInfo fileName="Favorites_ActionGroup.java" startLine="8" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.ide.actions.Favorites_ActionGroup" />
   <unitInfo fileName="EditorInternal_ActionGroup.java" startLine="8" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.ide.actions.EditorInternal_ActionGroup" />
   <unitInfo fileName="AbstractFileActions_ActionGroup.java" startLine="9" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.ide.actions.AbstractFileActions_ActionGroup" />
   <unitInfo fileName="NodeExplorer_Tool.java" startLine="20" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.ide.actions.NodeExplorer_Tool" />
+  <unitInfo fileName="EditorTabActions_ActionGroup.java" startLine="8" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.ide.actions.EditorTabActions_ActionGroup" />
+  <unitInfo fileName="Tools_ActionGroup.java" startLine="8" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.ide.actions.Tools_ActionGroup" />
   <unitInfo fileName="GeneratorActions_ActionGroup.java" startLine="8" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.ide.actions.GeneratorActions_ActionGroup" />
   <unitInfo fileName="ModelRepository_Tool.java" startLine="19" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.ide.actions.ModelRepository_Tool" />
   <unitInfo fileName="Goto_ActionGroup.java" startLine="15" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.ide.actions.Goto_ActionGroup" />
@@ -38,66 +63,149 @@
   <unitInfo fileName="GenerateFavorites_ActionGroup.java" startLine="26" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.ide.actions.GenerateFavorites_ActionGroup" />
   <unitInfo fileName="DumpKeyStrokes_Action.java" startLine="13" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.ide.actions.DumpKeyStrokes_Action" />
   <unitInfo fileName="UpgradeModulePersistenceGlobally_Action.java" startLine="15" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.ide.actions.UpgradeModulePersistenceGlobally_Action" />
+  <unitInfo fileName="AddGeneralPurposeDevKitToLanguageModels_Action.java" startLine="19" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.ide.actions.AddGeneralPurposeDevKitToLanguageModels_Action" />
   <unitInfo fileName="RemoveLanguageDesignDevKitFromModels_Action.java" startLine="19" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.ide.actions.RemoveLanguageDesignDevKitFromModels_Action" />
   <unitInfo fileName="SolutionActions_ActionGroup.java" startLine="8" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.ide.actions.SolutionActions_ActionGroup" />
   <unitInfo fileName="ShowErrorMessage_Action.java" startLine="12" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowErrorMessage_Action" />
   <unitInfo fileName="PrintNodeID_Action.java" startLine="14" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.ide.actions.PrintNodeID_Action" />
+  <unitInfo fileName="End_Action.java" startLine="15" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.ide.actions.End_Action" />
+  <unitInfo fileName="Home_Action.java" startLine="15" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.ide.actions.Home_Action" />
+  <unitInfo fileName="RootEnd_Action.java" startLine="15" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.ide.actions.RootEnd_Action" />
+  <unitInfo fileName="RootHome_Action.java" startLine="15" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.ide.actions.RootHome_Action" />
+  <unitInfo fileName="LocalHome_Action.java" startLine="15" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.ide.actions.LocalHome_Action" />
+  <unitInfo fileName="LocalEnd_Action.java" startLine="15" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.ide.actions.LocalEnd_Action" />
+  <unitInfo fileName="CopyModuleName_Action.java" startLine="15" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.ide.actions.CopyModuleName_Action" />
+  <unitInfo fileName="CopyModelName_Action.java" startLine="15" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.ide.actions.CopyModelName_Action" />
+  <unitInfo fileName="ShowBookmarks_Action.java" startLine="15" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowBookmarks_Action" />
+  <unitInfo fileName="RemoveAllBookmarks_Action.java" startLine="15" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.ide.actions.RemoveAllBookmarks_Action" />
+  <unitInfo fileName="GoToBookmark9_Action.java" startLine="15" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToBookmark9_Action" />
+  <unitInfo fileName="GoToBookmark8_Action.java" startLine="15" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToBookmark8_Action" />
+  <unitInfo fileName="GoToBookmark7_Action.java" startLine="15" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToBookmark7_Action" />
+  <unitInfo fileName="GoToBookmark6_Action.java" startLine="15" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToBookmark6_Action" />
+  <unitInfo fileName="GoToBookmark5_Action.java" startLine="15" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToBookmark5_Action" />
+  <unitInfo fileName="GoToBookmark4_Action.java" startLine="15" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToBookmark4_Action" />
+  <unitInfo fileName="GoToBookmark3_Action.java" startLine="15" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToBookmark3_Action" />
+  <unitInfo fileName="GoToBookmark2_Action.java" startLine="15" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToBookmark2_Action" />
+  <unitInfo fileName="GoToBookmark0_Action.java" startLine="15" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToBookmark0_Action" />
   <unitInfo fileName="GoToBookmark1_Action.java" startLine="15" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToBookmark1_Action" />
   <unitInfo fileName="NodeActions_ActionGroup.java" startLine="8" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.ide.actions.NodeActions_ActionGroup" />
   <unitInfo fileName="EditorPopup_ActionGroup.java" startLine="9" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.ide.actions.EditorPopup_ActionGroup" />
   <unitInfo fileName="Find_Action.java" startLine="14" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.ide.actions.Find_Action" />
+  <unitInfo fileName="UpgradeModelPersistenceGlobally_Action.java" startLine="15" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.ide.actions.UpgradeModelPersistenceGlobally_Action" />
+  <unitInfo fileName="CheckModelsBeforeGeneration_Action.java" startLine="15" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.ide.actions.CheckModelsBeforeGeneration_Action" />
+  <unitInfo fileName="MPSProjectPaths_Action.java" startLine="15" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.ide.actions.MPSProjectPaths_Action" />
+  <unitInfo fileName="ShowModelRepository_Action.java" startLine="15" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowModelRepository_Action" />
   <unitInfo fileName="ShowModuleRepository_Action.java" startLine="15" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowModuleRepository_Action" />
   <unitInfo fileName="AddToFavoritesGroup_ActionGroup.java" startLine="25" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.ide.actions.AddToFavoritesGroup_ActionGroup" />
   <unitInfo fileName="ShowBookmarksDialog_Action.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowBookmarksDialog_Action" />
+  <unitInfo fileName="StepOut_Action.java" startLine="17" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ide.actions.StepOut_Action" />
+  <unitInfo fileName="StepInto_Action.java" startLine="17" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ide.actions.StepInto_Action" />
+  <unitInfo fileName="StepOver_Action.java" startLine="17" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ide.actions.StepOver_Action" />
+  <unitInfo fileName="Pause_Action.java" startLine="17" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ide.actions.Pause_Action" />
   <unitInfo fileName="Resume_Action.java" startLine="17" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ide.actions.Resume_Action" />
-  <unitInfo fileName="ModelActions_ActionGroup.java" startLine="10" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.ide.actions.ModelActions_ActionGroup" />
   <unitInfo fileName="RemoveTransientModels_Action.java" startLine="18" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.ide.actions.RemoveTransientModels_Action" />
   <unitInfo fileName="NamespaceInternalActions_ActionGroup.java" startLine="24" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.ide.actions.NamespaceInternalActions_ActionGroup" />
   <unitInfo fileName="ViewBreakpoints_Action.java" startLine="19" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.actions.ViewBreakpoints_Action" />
   <unitInfo fileName="LanguageActions_ActionGroup.java" startLine="8" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.ide.actions.LanguageActions_ActionGroup" />
+  <unitInfo fileName="ModelActions_ActionGroup.java" startLine="10" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.ide.actions.ModelActions_ActionGroup" />
+  <unitInfo fileName="PasteAsJavaClass_Action.java" startLine="16" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.ide.actions.PasteAsJavaClass_Action" />
+  <unitInfo fileName="CellProperties_Action.java" startLine="16" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.ide.actions.CellProperties_Action" />
   <unitInfo fileName="AddMissingImports_Action.java" startLine="16" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.ide.actions.AddMissingImports_Action" />
+  <unitInfo fileName="PasteAsJavaMethods_Action.java" startLine="17" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.actions.PasteAsJavaMethods_Action" />
   <unitInfo fileName="PasteAsJavaStatements_Action.java" startLine="17" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.actions.PasteAsJavaStatements_Action" />
+  <unitInfo fileName="CheckProject_Action.java" startLine="18" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.actions.CheckProject_Action" />
+  <unitInfo fileName="RenameAspects_Action.java" startLine="18" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.actions.RenameAspects_Action" />
   <unitInfo fileName="ShowCellInExplorer_Action.java" startLine="18" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowCellInExplorer_Action" />
+  <unitInfo fileName="FixDependenciesEverywhere_Action.java" startLine="21" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.ide.actions.FixDependenciesEverywhere_Action" />
   <unitInfo fileName="RebuildAllModules_Action.java" startLine="21" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.ide.actions.RebuildAllModules_Action" />
   <unitInfo fileName="MakeAllModules_Action.java" startLine="23" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.ide.actions.MakeAllModules_Action" />
+  <unitInfo fileName="CopyNodeName_Action.java" startLine="15" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.ide.actions.CopyNodeName_Action" />
+  <unitInfo fileName="RevertMemoryChanges_Action.java" startLine="15" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.ide.actions.RevertMemoryChanges_Action" />
   <unitInfo fileName="SaveModel_Action.java" startLine="15" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.ide.actions.SaveModel_Action" />
+  <unitInfo fileName="UpgradeModelPersistenceInProject_Action.java" startLine="16" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.actions.UpgradeModelPersistenceInProject_Action" />
+  <unitInfo fileName="UpgradeModelPersistenceInModule_Action.java" startLine="16" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.actions.UpgradeModelPersistenceInModule_Action" />
+  <unitInfo fileName="UpgradeModelPersistenceInModel_Action.java" startLine="16" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.actions.UpgradeModelPersistenceInModel_Action" />
+  <unitInfo fileName="SetBookmarkNoNumber_Action.java" startLine="16" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.actions.SetBookmarkNoNumber_Action" />
+  <unitInfo fileName="SetBookmark9_Action.java" startLine="16" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.actions.SetBookmark9_Action" />
+  <unitInfo fileName="SetBookmark8_Action.java" startLine="16" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.actions.SetBookmark8_Action" />
+  <unitInfo fileName="SetBookmark7_Action.java" startLine="16" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.actions.SetBookmark7_Action" />
+  <unitInfo fileName="SetBookmark6_Action.java" startLine="16" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.actions.SetBookmark6_Action" />
+  <unitInfo fileName="SetBookmark5_Action.java" startLine="16" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.actions.SetBookmark5_Action" />
+  <unitInfo fileName="SetBookmark4_Action.java" startLine="16" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.actions.SetBookmark4_Action" />
+  <unitInfo fileName="SetBookmark3_Action.java" startLine="16" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.actions.SetBookmark3_Action" />
+  <unitInfo fileName="SetBookmark2_Action.java" startLine="16" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.actions.SetBookmark2_Action" />
+  <unitInfo fileName="SetBookmark1_Action.java" startLine="16" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.actions.SetBookmark1_Action" />
   <unitInfo fileName="SetBookmark0_Action.java" startLine="16" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.actions.SetBookmark0_Action" />
+  <unitInfo fileName="FindPrevious_Action.java" startLine="14" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.ide.actions.FindPrevious_Action" />
   <unitInfo fileName="FindNext_Action.java" startLine="14" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.ide.actions.FindNext_Action" />
+  <unitInfo fileName="ReloadStubs_Action.java" startLine="16" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.actions.ReloadStubs_Action" />
+  <unitInfo fileName="ShowModuleDependencies_Action.java" startLine="16" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowModuleDependencies_Action" />
+  <unitInfo fileName="TestNodePath_Action.java" startLine="16" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.actions.TestNodePath_Action" />
   <unitInfo fileName="AnalyzeClasspath_Action.java" startLine="16" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.actions.AnalyzeClasspath_Action" />
   <unitInfo fileName="EvaluateExpression_Action.java" startLine="18" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.ide.actions.EvaluateExpression_Action" />
   <unitInfo fileName="ReloadAll_Action.java" startLine="21" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.ide.actions.ReloadAll_Action" />
+  <unitInfo fileName="GoToFile_Action.java" startLine="13" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToFile_Action" />
+  <unitInfo fileName="GoToDevkit_Action.java" startLine="13" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToDevkit_Action" />
+  <unitInfo fileName="GoToSolution_Action.java" startLine="13" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToSolution_Action" />
+  <unitInfo fileName="GoToLanguage_Action.java" startLine="13" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToLanguage_Action" />
+  <unitInfo fileName="GoToModel_Action.java" startLine="13" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToModel_Action" />
+  <unitInfo fileName="GoToNamedNode_Action.java" startLine="13" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToNamedNode_Action" />
+  <unitInfo fileName="GoToRootNode_Action.java" startLine="13" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToRootNode_Action" />
+  <unitInfo fileName="GoToAction_Action.java" startLine="13" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToAction_Action" />
   <unitInfo fileName="SelectInActionAdapter_Action.java" startLine="13" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.actions.SelectInActionAdapter_Action" />
+  <unitInfo fileName="RebuildProject_Action.java" startLine="21" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.ide.actions.RebuildProject_Action" />
   <unitInfo fileName="MakeProject_Action.java" startLine="21" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.ide.actions.MakeProject_Action" />
   <unitInfo fileName="CleanAllModules_Action.java" startLine="24" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.ide.actions.CleanAllModules_Action" />
+  <unitInfo fileName="GenerateProject_Action.java" startLine="13" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.actions.GenerateProject_Action" />
+  <unitInfo fileName="GenerateModulesInProject_Action.java" startLine="13" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.actions.GenerateModulesInProject_Action" />
+  <unitInfo fileName="RegenerateProject_Action.java" startLine="13" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.actions.RegenerateProject_Action" />
+  <unitInfo fileName="RegenerateModule_Action.java" startLine="13" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.actions.RegenerateModule_Action" />
   <unitInfo fileName="GenerateModule_Action.java" startLine="13" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.actions.GenerateModule_Action" />
+  <unitInfo fileName="RegenerateFilesFromModel_Action.java" startLine="15" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.ide.actions.RegenerateFilesFromModel_Action" />
+  <unitInfo fileName="GenerateTextFromModel_Action.java" startLine="15" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.ide.actions.GenerateTextFromModel_Action" />
   <unitInfo fileName="GenerateFilesFromModel_Action.java" startLine="15" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.ide.actions.GenerateFilesFromModel_Action" />
   <unitInfo fileName="ToggleBreakpoint_Action.java" startLine="17" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.ide.actions.ToggleBreakpoint_Action" />
+  <unitInfo fileName="ModelPropertiesWOShortcut_Action.java" startLine="19" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.ide.actions.ModelPropertiesWOShortcut_Action" />
   <unitInfo fileName="ExpandNode_Action.java" startLine="19" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.ide.actions.ExpandNode_Action" />
   <unitInfo fileName="OptimizeImportsInGlobalScope_Action.java" startLine="23" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.ide.actions.OptimizeImportsInGlobalScope_Action" />
   <unitInfo fileName="RenameSolution_Action.java" startLine="17" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.ide.actions.RenameSolution_Action" />
   <unitInfo fileName="DeleteFavoritesList_Action.java" startLine="18" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.ide.actions.DeleteFavoritesList_Action" />
   <unitInfo fileName="GoToConceptDeclaration_Action.java" startLine="20" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToConceptDeclaration_Action" />
+  <unitInfo fileName="DeletePropertyAction_Action.java" startLine="16" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.ide.actions.DeletePropertyAction_Action" />
+  <unitInfo fileName="DeleteReferenceAction_Action.java" startLine="16" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.ide.actions.DeleteReferenceAction_Action" />
   <unitInfo fileName="ShowNodeInInspector_Action.java" startLine="16" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowNodeInInspector_Action" />
   <unitInfo fileName="ShowNodeInExplorer_Action.java" startLine="17" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowNodeInExplorer_Action" />
+  <unitInfo fileName="RebuildModule_Action.java" startLine="18" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.ide.actions.RebuildModule_Action" />
   <unitInfo fileName="MakeModule_Action.java" startLine="18" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.ide.actions.MakeModule_Action" />
+  <unitInfo fileName="ShowInProject_Action.java" startLine="19" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowInProject_Action" />
   <unitInfo fileName="GeneratorProperties_Action.java" startLine="19" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.ide.actions.GeneratorProperties_Action" />
   <unitInfo fileName="CopyNodeReference_Action.java" startLine="19" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.ide.actions.CopyNodeReference_Action" />
   <unitInfo fileName="InstallIDEAPlugin_Action.java" startLine="20" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.ide.actions.InstallIDEAPlugin_Action" />
   <unitInfo fileName="QuickCreate_Action.java" startLine="24" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.ide.actions.QuickCreate_Action" />
   <unitInfo fileName="ShowModelChecker_Action.java" startLine="17" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowModelChecker_Action" />
   <unitInfo fileName="LanguageHierarchy_Action.java" startLine="21" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.ide.actions.LanguageHierarchy_Action" />
+  <unitInfo fileName="RenameLanguage_Action.java" startLine="18" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.ide.actions.RenameLanguage_Action" />
+  <unitInfo fileName="AddLanguageImport_Action.java" startLine="18" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.ide.actions.AddLanguageImport_Action" />
   <unitInfo fileName="AddModelImport_Action.java" startLine="18" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.ide.actions.AddModelImport_Action" />
   <unitInfo fileName="OptimizeModelImports_Action.java" startLine="22" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.ide.actions.OptimizeModelImports_Action" />
+  <unitInfo fileName="RenameFavoritesList_Action.java" startLine="22" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.ide.actions.RenameFavoritesList_Action" />
+  <unitInfo fileName="SolutionProperties_Action.java" startLine="22" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.ide.actions.SolutionProperties_Action" />
+  <unitInfo fileName="LanguageProperties_Action.java" startLine="22" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.ide.actions.LanguageProperties_Action" />
   <unitInfo fileName="DevkitProperties_Action.java" startLine="22" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.ide.actions.DevkitProperties_Action" />
+  <unitInfo fileName="EditNodeExplicit_Action.java" startLine="19" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.ide.actions.EditNodeExplicit_Action" />
+  <unitInfo fileName="NewDevKit_Action.java" startLine="19" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.ide.actions.NewDevKit_Action" />
   <unitInfo fileName="EditNode_Action.java" startLine="19" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.ide.actions.EditNode_Action" />
   <unitInfo fileName="FileDelete_Action.java" startLine="16" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.ide.actions.FileDelete_Action" />
+  <unitInfo fileName="SelectLocalHome_Action.java" startLine="20" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.ide.actions.SelectLocalHome_Action" />
   <unitInfo fileName="SelectLocalEnd_Action.java" startLine="20" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.ide.actions.SelectLocalEnd_Action" />
   <unitInfo fileName="CopyNode_Action.java" startLine="21" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.ide.actions.CopyNode_Action" />
   <unitInfo fileName="GetModuleContentsFromSource_Action.java" startLine="20" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.ide.actions.GetModuleContentsFromSource_Action" />
   <unitInfo fileName="HighlightCellDependencies_Action.java" startLine="21" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.ide.actions.HighlightCellDependencies_Action" />
   <unitInfo fileName="RemoveFromFavorites_Action.java" startLine="20" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.ide.actions.RemoveFromFavorites_Action" />
   <unitInfo fileName="CleanModule_Action.java" startLine="22" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.ide.actions.CleanModule_Action" />
+  <unitInfo fileName="AddToNewFavoritesList_Action.java" startLine="23" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.ide.actions.AddToNewFavoritesList_Action" />
   <unitInfo fileName="FixVirtualPackges_Action.java" startLine="23" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.ide.actions.FixVirtualPackges_Action" />
+  <unitInfo fileName="ShowMappingsPartitioning_Action.java" startLine="19" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowMappingsPartitioning_Action" />
   <unitInfo fileName="ModelProperties_Action.java" startLine="19" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.ide.actions.ModelProperties_Action" />
   <unitInfo fileName="ShowReferencesToMissingStuff_Action.java" startLine="22" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowReferencesToMissingStuff_Action" />
   <unitInfo fileName="GenerateFiles_Action.java" startLine="23" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.ide.actions.GenerateFiles_Action" />
@@ -109,9 +217,11 @@
   <unitInfo fileName="GoToNodeById_Action.java" startLine="21" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToNodeById_Action" />
   <unitInfo fileName="GoByReference_ActionGroup.java" startLine="26" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.ide.actions.GoByReference_ActionGroup" />
   <unitInfo fileName="OptimizeProjectImports_Action.java" startLine="26" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.ide.actions.OptimizeProjectImports_Action" />
+  <unitInfo fileName="AddModuleToProject_Action.java" startLine="21" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.ide.actions.AddModuleToProject_Action" />
   <unitInfo fileName="NewGenerator_Action.java" startLine="21" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.ide.actions.NewGenerator_Action" />
   <unitInfo fileName="AddToFavorites_Action.java" startLine="19" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.ide.actions.AddToFavorites_Action" />
   <unitInfo fileName="LanguagePaths_Action.java" startLine="26" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.ide.actions.LanguagePaths_Action" />
+  <unitInfo fileName="DeleteGenerator_Action.java" startLine="22" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.ide.actions.DeleteGenerator_Action" />
   <unitInfo fileName="AddModelImportByRoot_Action.java" startLine="22" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.ide.actions.AddModelImportByRoot_Action" />
   <unitInfo fileName="DeleteModels_Action.java" startLine="23" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.ide.actions.DeleteModels_Action" />
   <unitInfo fileName="CloneModel_Action.java" startLine="20" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.ide.actions.CloneModel_Action" />
@@ -119,6 +229,7 @@
   <unitInfo fileName="RenameModel_Action.java" startLine="23" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.ide.actions.RenameModel_Action" />
   <unitInfo fileName="FastFindNodeUsages_Action.java" startLine="26" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.ide.actions.FastFindNodeUsages_Action" />
   <unitInfo fileName="SetModuleFolder_Action.java" startLine="19" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.ide.actions.SetModuleFolder_Action" />
+  <unitInfo fileName="RenamePackage_Action.java" startLine="23" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.ide.actions.RenamePackage_Action" />
   <unitInfo fileName="ShowParameters_Action.java" startLine="23" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowParameters_Action" />
   <unitInfo fileName="HighlightInstances_Action.java" startLine="24" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.ide.actions.HighlightInstances_Action" />
   <unitInfo fileName="GoToUsageInMappingConfig_Action.java" startLine="23" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToUsageInMappingConfig_Action" />
@@ -130,6 +241,7 @@
   <unitInfo fileName="HighlightUsages_Action.java" startLine="27" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.ide.actions.HighlightUsages_Action" />
   <unitInfo fileName="ShowClassInHierarchy_Action.java" startLine="19" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowClassInHierarchy_Action" />
   <unitInfo fileName="NewSolution_Action.java" startLine="20" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.ide.actions.NewSolution_Action" />
+  <unitInfo fileName="NewDirectory_Action.java" startLine="24" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.ide.actions.NewDirectory_Action" />
   <unitInfo fileName="NewFile_Action.java" startLine="24" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.ide.actions.NewFile_Action" />
   <unitInfo fileName="NewAccessoryModel_Action.java" startLine="25" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.ide.actions.NewAccessoryModel_Action" />
   <unitInfo fileName="ShowGenerationTraceback_Action.java" startLine="22" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowGenerationTraceback_Action" />
@@ -142,7 +254,7 @@
   <unitInfo fileName="GenerateTemplateQueries_Action.java" startLine="28" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.ide.actions.GenerateTemplateQueries_Action" />
   <unitInfo fileName="RenameFileOrDirectory_Action.java" startLine="22" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.ide.actions.RenameFileOrDirectory_Action" />
   <unitInfo fileName="CutNode_Action.java" startLine="24" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.ide.actions.CutNode_Action" />
-  <unitInfo fileName="MoveFileOrDirectory_Action.java" startLine="25" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.ide.actions.MoveFileOrDirectory_Action" />
+  <unitInfo fileName="MoveFileOrDirectory_Action.java" startLine="26" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.ide.actions.MoveFileOrDirectory_Action" />
   <unitInfo fileName="RemoveModuleFromProject_Action.java" startLine="28" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.ide.actions.RemoveModuleFromProject_Action" />
   <unitInfo fileName="GetModelContentsFromSource_Action.java" startLine="26" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.ide.actions.GetModelContentsFromSource_Action" />
   <unitInfo fileName="NewRuntimeModule_Action.java" startLine="33" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.ide.actions.NewRuntimeModule_Action" />
@@ -353,43 +465,44 @@
     <nodeInfo nodeId="7527830168167546274" fileName="NodeActions_ActionGroup.java" startLine="56" startPosition="89" endLine="57" endPosition="50" />
   </root>
   <root nodeId="1204991218714">
-    <nodeInfo nodeId="1420252515663987819" fileName="ModelActions_ActionGroup.java" startLine="25" startPosition="9" endLine="26" endPosition="92" />
-    <nodeInfo nodeId="5533671870987200982" fileName="ModelActions_ActionGroup.java" startLine="26" startPosition="92" endLine="27" endPosition="113" />
-    <nodeInfo nodeId="4071906384529167646" fileName="ModelActions_ActionGroup.java" startLine="27" startPosition="113" endLine="28" endPosition="120" />
-    <nodeInfo nodeId="1204909227967" fileName="ModelActions_ActionGroup.java" startLine="28" startPosition="120" endLine="29" endPosition="51" />
-    <nodeInfo nodeId="3575273646046443963" fileName="ModelActions_ActionGroup.java" startLine="29" startPosition="51" endLine="30" endPosition="116" />
-    <nodeInfo nodeId="1215874907325" fileName="ModelActions_ActionGroup.java" startLine="30" startPosition="116" endLine="31" endPosition="114" />
-    <nodeInfo nodeId="1236184233848" fileName="ModelActions_ActionGroup.java" startLine="31" startPosition="114" endLine="32" endPosition="117" />
-    <nodeInfo nodeId="3784529850623730317" fileName="ModelActions_ActionGroup.java" startLine="32" startPosition="117" endLine="33" endPosition="51" />
-    <nodeInfo nodeId="6079405495679904871" fileName="ModelActions_ActionGroup.java" startLine="33" startPosition="51" endLine="34" endPosition="130" />
-    <nodeInfo nodeId="6079405495679904869" fileName="ModelActions_ActionGroup.java" startLine="34" startPosition="130" endLine="35" endPosition="51" />
-    <nodeInfo nodeId="1236354294303" fileName="ModelActions_ActionGroup.java" startLine="35" startPosition="51" endLine="36" endPosition="124" />
-    <nodeInfo nodeId="1215868147906" fileName="ModelActions_ActionGroup.java" startLine="36" startPosition="124" endLine="37" endPosition="121" />
-    <nodeInfo nodeId="7796696880649580093" fileName="ModelActions_ActionGroup.java" startLine="37" startPosition="121" endLine="38" endPosition="132" />
-    <nodeInfo nodeId="2510134983999478400" fileName="ModelActions_ActionGroup.java" startLine="38" startPosition="132" endLine="39" endPosition="90" />
-    <nodeInfo nodeId="1204909245350" fileName="ModelActions_ActionGroup.java" startLine="39" startPosition="90" endLine="40" endPosition="51" />
-    <nodeInfo nodeId="8071957793010769916" fileName="ModelActions_ActionGroup.java" startLine="40" startPosition="51" endLine="41" endPosition="114" />
-    <nodeInfo nodeId="1204909253120" fileName="ModelActions_ActionGroup.java" startLine="41" startPosition="114" endLine="42" endPosition="51" />
-    <nodeInfo nodeId="3906874221886741856" fileName="ModelActions_ActionGroup.java" startLine="42" startPosition="51" endLine="43" endPosition="185" />
-    <nodeInfo nodeId="2280359988539783705" fileName="ModelActions_ActionGroup.java" startLine="43" startPosition="185" endLine="44" endPosition="184" />
-    <nodeInfo nodeId="3906874221886741858" fileName="ModelActions_ActionGroup.java" startLine="44" startPosition="184" endLine="45" endPosition="159" />
-    <nodeInfo nodeId="2360909385709190614" fileName="ModelActions_ActionGroup.java" startLine="45" startPosition="159" endLine="46" endPosition="128" />
-    <nodeInfo nodeId="1204909572396" fileName="ModelActions_ActionGroup.java" startLine="46" startPosition="128" endLine="47" endPosition="51" />
-    <nodeInfo nodeId="1216120960664" fileName="ModelActions_ActionGroup.java" startLine="47" startPosition="51" endLine="48" endPosition="123" />
-    <nodeInfo nodeId="1215889790375" fileName="ModelActions_ActionGroup.java" startLine="48" startPosition="123" endLine="49" endPosition="113" />
-    <nodeInfo nodeId="1222173593116" fileName="ModelActions_ActionGroup.java" startLine="49" startPosition="113" endLine="50" endPosition="51" />
-    <nodeInfo nodeId="1222173595836" fileName="ModelActions_ActionGroup.java" startLine="50" startPosition="51" endLine="51" endPosition="93" />
-    <nodeInfo nodeId="3905468763930415933" fileName="ModelActions_ActionGroup.java" startLine="51" startPosition="93" endLine="52" endPosition="134" />
-    <nodeInfo nodeId="1221757534230" fileName="ModelActions_ActionGroup.java" startLine="52" startPosition="134" endLine="53" endPosition="51" />
-    <nodeInfo nodeId="2834677590308140822" fileName="ModelActions_ActionGroup.java" startLine="53" startPosition="51" endLine="54" endPosition="91" />
-    <nodeInfo nodeId="2834677590308140820" fileName="ModelActions_ActionGroup.java" startLine="54" startPosition="91" endLine="55" endPosition="51" />
-    <nodeInfo nodeId="7545884443035896628" fileName="ModelActions_ActionGroup.java" startLine="55" startPosition="51" endLine="56" endPosition="88" />
-    <nodeInfo nodeId="7545884443035896629" fileName="ModelActions_ActionGroup.java" startLine="56" startPosition="88" endLine="57" endPosition="51" />
-    <nodeInfo nodeId="1221757535813" fileName="ModelActions_ActionGroup.java" startLine="57" startPosition="51" endLine="58" endPosition="89" />
-    <nodeInfo nodeId="1204909603015" fileName="ModelActions_ActionGroup.java" startLine="58" startPosition="89" endLine="59" endPosition="51" />
-    <nodeInfo nodeId="4555696683442018021" fileName="ModelActions_ActionGroup.java" startLine="59" startPosition="51" endLine="60" endPosition="89" />
-    <nodeInfo nodeId="4555696683442018023" fileName="ModelActions_ActionGroup.java" startLine="60" startPosition="89" endLine="61" endPosition="51" />
-    <nodeInfo nodeId="1235220262925" fileName="ModelActions_ActionGroup.java" startLine="61" startPosition="51" endLine="62" endPosition="119" />
+    <nodeInfo nodeId="1420252515663987819" fileName="ModelActions_ActionGroup.java" startLine="26" startPosition="9" endLine="27" endPosition="92" />
+    <nodeInfo nodeId="5533671870987200982" fileName="ModelActions_ActionGroup.java" startLine="27" startPosition="92" endLine="28" endPosition="113" />
+    <nodeInfo nodeId="4071906384529167646" fileName="ModelActions_ActionGroup.java" startLine="28" startPosition="113" endLine="29" endPosition="120" />
+    <nodeInfo nodeId="1204909227967" fileName="ModelActions_ActionGroup.java" startLine="29" startPosition="120" endLine="30" endPosition="51" />
+    <nodeInfo nodeId="3575273646046443963" fileName="ModelActions_ActionGroup.java" startLine="30" startPosition="51" endLine="31" endPosition="116" />
+    <nodeInfo nodeId="1215874907325" fileName="ModelActions_ActionGroup.java" startLine="31" startPosition="116" endLine="32" endPosition="114" />
+    <nodeInfo nodeId="1236184233848" fileName="ModelActions_ActionGroup.java" startLine="32" startPosition="114" endLine="33" endPosition="117" />
+    <nodeInfo nodeId="3784529850623730317" fileName="ModelActions_ActionGroup.java" startLine="33" startPosition="117" endLine="34" endPosition="51" />
+    <nodeInfo nodeId="6079405495679904871" fileName="ModelActions_ActionGroup.java" startLine="34" startPosition="51" endLine="35" endPosition="130" />
+    <nodeInfo nodeId="6079405495679904869" fileName="ModelActions_ActionGroup.java" startLine="35" startPosition="130" endLine="36" endPosition="51" />
+    <nodeInfo nodeId="1236354294303" fileName="ModelActions_ActionGroup.java" startLine="36" startPosition="51" endLine="37" endPosition="124" />
+    <nodeInfo nodeId="1215868147906" fileName="ModelActions_ActionGroup.java" startLine="37" startPosition="124" endLine="38" endPosition="121" />
+    <nodeInfo nodeId="7796696880649580093" fileName="ModelActions_ActionGroup.java" startLine="38" startPosition="121" endLine="39" endPosition="132" />
+    <nodeInfo nodeId="2510134983999478400" fileName="ModelActions_ActionGroup.java" startLine="39" startPosition="132" endLine="40" endPosition="90" />
+    <nodeInfo nodeId="1204909245350" fileName="ModelActions_ActionGroup.java" startLine="40" startPosition="90" endLine="41" endPosition="51" />
+    <nodeInfo nodeId="8071957793010769916" fileName="ModelActions_ActionGroup.java" startLine="41" startPosition="51" endLine="42" endPosition="114" />
+    <nodeInfo nodeId="1123160817407996484" fileName="ModelActions_ActionGroup.java" startLine="42" startPosition="114" endLine="43" endPosition="93" />
+    <nodeInfo nodeId="1204909253120" fileName="ModelActions_ActionGroup.java" startLine="43" startPosition="93" endLine="44" endPosition="51" />
+    <nodeInfo nodeId="3906874221886741856" fileName="ModelActions_ActionGroup.java" startLine="44" startPosition="51" endLine="45" endPosition="185" />
+    <nodeInfo nodeId="2280359988539783705" fileName="ModelActions_ActionGroup.java" startLine="45" startPosition="185" endLine="46" endPosition="184" />
+    <nodeInfo nodeId="3906874221886741858" fileName="ModelActions_ActionGroup.java" startLine="46" startPosition="184" endLine="47" endPosition="159" />
+    <nodeInfo nodeId="2360909385709190614" fileName="ModelActions_ActionGroup.java" startLine="47" startPosition="159" endLine="48" endPosition="128" />
+    <nodeInfo nodeId="1204909572396" fileName="ModelActions_ActionGroup.java" startLine="48" startPosition="128" endLine="49" endPosition="51" />
+    <nodeInfo nodeId="1216120960664" fileName="ModelActions_ActionGroup.java" startLine="49" startPosition="51" endLine="50" endPosition="123" />
+    <nodeInfo nodeId="1215889790375" fileName="ModelActions_ActionGroup.java" startLine="50" startPosition="123" endLine="51" endPosition="113" />
+    <nodeInfo nodeId="1222173593116" fileName="ModelActions_ActionGroup.java" startLine="51" startPosition="113" endLine="52" endPosition="51" />
+    <nodeInfo nodeId="1222173595836" fileName="ModelActions_ActionGroup.java" startLine="52" startPosition="51" endLine="53" endPosition="93" />
+    <nodeInfo nodeId="3905468763930415933" fileName="ModelActions_ActionGroup.java" startLine="53" startPosition="93" endLine="54" endPosition="134" />
+    <nodeInfo nodeId="1221757534230" fileName="ModelActions_ActionGroup.java" startLine="54" startPosition="134" endLine="55" endPosition="51" />
+    <nodeInfo nodeId="2834677590308140822" fileName="ModelActions_ActionGroup.java" startLine="55" startPosition="51" endLine="56" endPosition="91" />
+    <nodeInfo nodeId="2834677590308140820" fileName="ModelActions_ActionGroup.java" startLine="56" startPosition="91" endLine="57" endPosition="51" />
+    <nodeInfo nodeId="7545884443035896628" fileName="ModelActions_ActionGroup.java" startLine="57" startPosition="51" endLine="58" endPosition="88" />
+    <nodeInfo nodeId="7545884443035896629" fileName="ModelActions_ActionGroup.java" startLine="58" startPosition="88" endLine="59" endPosition="51" />
+    <nodeInfo nodeId="1221757535813" fileName="ModelActions_ActionGroup.java" startLine="59" startPosition="51" endLine="60" endPosition="89" />
+    <nodeInfo nodeId="1204909603015" fileName="ModelActions_ActionGroup.java" startLine="60" startPosition="89" endLine="61" endPosition="51" />
+    <nodeInfo nodeId="4555696683442018021" fileName="ModelActions_ActionGroup.java" startLine="61" startPosition="51" endLine="62" endPosition="89" />
+    <nodeInfo nodeId="4555696683442018023" fileName="ModelActions_ActionGroup.java" startLine="62" startPosition="89" endLine="63" endPosition="51" />
+    <nodeInfo nodeId="1235220262925" fileName="ModelActions_ActionGroup.java" startLine="63" startPosition="51" endLine="64" endPosition="119" />
   </root>
   <root nodeId="1204991220529">
     <nodeInfo nodeId="1204910715381" fileName="ProjectActions_ActionGroup.java" startLine="19" startPosition="9" endLine="20" endPosition="96" />
@@ -1703,7 +1816,7 @@
     <nodeInfo nodeId="1229274590396" fileName="GenerateTemplateQueries_Action.java" startLine="94" startPosition="9" endLine="95" endPosition="98" />
     <nodeInfo nodeId="1229274613437" fileName="GenerateTemplateQueries_Action.java" startLine="95" startPosition="98" endLine="96" endPosition="155" />
     <nodeInfo nodeId="1229274829917" fileName="GenerateTemplateQueries_Action.java" startLine="98" startPosition="27" endLine="99" endPosition="160" />
-    <nodeInfo nodeId="1232133232068" fileName="GenerateTemplateQueries_Action.java" startLine="102" startPosition="58" endLine="103" endPosition="180" />
+    <nodeInfo nodeId="1232133232068" fileName="GenerateTemplateQueries_Action.java" startLine="102" startPosition="58" endLine="103" endPosition="163" />
     <nodeInfo nodeId="1079232116104306699" fileName="GenerateTemplateQueries_Action.java" startLine="108" startPosition="9" endLine="109" endPosition="135" />
     <nodeInfo nodeId="1229276371800" fileName="GenerateTemplateQueries_Action.java" startLine="51" startPosition="7" endLine="55" endPosition="26" />
     <nodeInfo nodeId="1232133232066" fileName="GenerateTemplateQueries_Action.java" startLine="101" startPosition="107" endLine="105" endPosition="0" />
@@ -1711,7 +1824,7 @@
     <nodeInfo nodeId="1232133172658" fileName="GenerateTemplateQueries_Action.java" startLine="99" startPosition="160" endLine="106" endPosition="11" />
     <nodeInfo nodeId="1229274630272" fileName="GenerateTemplateQueries_Action.java" startLine="97" startPosition="59" endLine="108" endPosition="0" />
     <nodeInfo nodeId="1229274630271" fileName="GenerateTemplateQueries_Action.java" startLine="96" startPosition="155" endLine="108" endPosition="9" />
-    <scopeInfo nodeId="1232133232067" fileName="GenerateTemplateQueries_Action.java" startLine="102" startPosition="58" endLine="103" endPosition="180" />
+    <scopeInfo nodeId="1232133232067" fileName="GenerateTemplateQueries_Action.java" startLine="102" startPosition="58" endLine="103" endPosition="163" />
     <scopeInfo nodeId="1232133232066" fileName="GenerateTemplateQueries_Action.java" startLine="101" startPosition="107" endLine="105" endPosition="0" />
     <scopeInfo nodeId="1232133172659" fileName="GenerateTemplateQueries_Action.java" startLine="100" startPosition="66" endLine="105" endPosition="32" />
     <scopeInfo nodeId="1229276370314" fileName="GenerateTemplateQueries_Action.java" startLine="51" startPosition="7" endLine="57" endPosition="150">
@@ -2732,55 +2845,55 @@
     <unitInfo nodeId="835030696107857551" fileName="RenameFileOrDirectory_Action.java" startLine="87" startPosition="57" endLine="103" endPosition="7" unitName="jetbrains.mps.ide.actions.RenameFileOrDirectory_Action$1" />
   </root>
   <root nodeId="2589658255268083877">
-    <nodeInfo nodeId="4044729767330008710" fileName="MoveFileOrDirectory_Action.java" startLine="28" startPosition="0" endLine="29" endPosition="35" />
-    <nodeInfo nodeId="7950928758727213183" fileName="MoveFileOrDirectory_Action.java" startLine="29" startPosition="35" endLine="30" endPosition="26" />
-    <nodeInfo nodeId="6134778262076358089" fileName="MoveFileOrDirectory_Action.java" startLine="30" startPosition="26" endLine="31" endPosition="22" />
-    <nodeInfo nodeId="4044729767330008705" fileName="MoveFileOrDirectory_Action.java" startLine="82" startPosition="9" endLine="83" endPosition="87" />
-    <nodeInfo nodeId="1025587571450947911" fileName="MoveFileOrDirectory_Action.java" startLine="83" startPosition="87" endLine="84" endPosition="156" />
-    <nodeInfo nodeId="4044729767330008426" fileName="MoveFileOrDirectory_Action.java" startLine="84" startPosition="156" endLine="85" endPosition="20" />
-    <nodeInfo nodeId="1557895745570983243" fileName="MoveFileOrDirectory_Action.java" startLine="86" startPosition="29" endLine="87" endPosition="15" />
-    <nodeInfo nodeId="859814836892231118" fileName="MoveFileOrDirectory_Action.java" startLine="88" startPosition="7" endLine="89" endPosition="47" />
-    <nodeInfo nodeId="7454493598691787133" fileName="MoveFileOrDirectory_Action.java" startLine="93" startPosition="69" endLine="94" endPosition="21" />
-    <nodeInfo nodeId="859814836892231143" fileName="MoveFileOrDirectory_Action.java" startLine="95" startPosition="13" endLine="96" endPosition="66" />
-    <nodeInfo nodeId="859814836892231129" fileName="MoveFileOrDirectory_Action.java" startLine="96" startPosition="66" endLine="97" endPosition="81" />
-    <nodeInfo nodeId="3812855676554060548" fileName="MoveFileOrDirectory_Action.java" startLine="97" startPosition="81" endLine="98" endPosition="87" />
-    <nodeInfo nodeId="3812855676554060559" fileName="MoveFileOrDirectory_Action.java" startLine="100" startPosition="33" endLine="101" endPosition="198" />
-    <nodeInfo nodeId="6134778262076358054" fileName="MoveFileOrDirectory_Action.java" startLine="116" startPosition="49" endLine="117" endPosition="95" />
-    <nodeInfo nodeId="6134778262076358060" fileName="MoveFileOrDirectory_Action.java" startLine="117" startPosition="95" endLine="118" endPosition="18" />
-    <nodeInfo nodeId="6134778262076358064" fileName="MoveFileOrDirectory_Action.java" startLine="120" startPosition="127" endLine="121" endPosition="151" />
-    <nodeInfo nodeId="6134778262076358072" fileName="MoveFileOrDirectory_Action.java" startLine="121" startPosition="151" endLine="122" endPosition="18" />
-    <nodeInfo nodeId="6134778262076358084" fileName="MoveFileOrDirectory_Action.java" startLine="123" startPosition="5" endLine="124" endPosition="17" />
-    <nodeInfo nodeId="1557895745570983229" fileName="MoveFileOrDirectory_Action.java" startLine="85" startPosition="20" endLine="88" endPosition="7" />
-    <nodeInfo nodeId="7454493598691787104" fileName="MoveFileOrDirectory_Action.java" startLine="92" startPosition="15" endLine="95" endPosition="13" />
-    <nodeInfo nodeId="3812855676554060557" fileName="MoveFileOrDirectory_Action.java" startLine="99" startPosition="55" endLine="103" endPosition="0" />
-    <nodeInfo nodeId="6134778262076358043" fileName="MoveFileOrDirectory_Action.java" startLine="115" startPosition="49" endLine="119" endPosition="5" />
-    <nodeInfo nodeId="6134778262076358062" fileName="MoveFileOrDirectory_Action.java" startLine="119" startPosition="5" endLine="123" endPosition="5" />
-    <nodeInfo nodeId="3812855676554060555" fileName="MoveFileOrDirectory_Action.java" startLine="98" startPosition="87" endLine="103" endPosition="15" />
-    <nodeInfo nodeId="7454493598691787108" fileName="MoveFileOrDirectory_Action.java" startLine="114" startPosition="0" endLine="126" endPosition="0" />
-    <nodeInfo nodeId="835030696107935343" fileName="MoveFileOrDirectory_Action.java" startLine="91" startPosition="27" endLine="105" endPosition="11" />
-    <nodeInfo nodeId="835030696107857557" fileName="MoveFileOrDirectory_Action.java" startLine="90" startPosition="69" endLine="107" endPosition="0" />
-    <nodeInfo nodeId="835030696107857556" fileName="MoveFileOrDirectory_Action.java" startLine="89" startPosition="47" endLine="107" endPosition="9" />
-    <scopeInfo nodeId="835030696107935346" fileName="MoveFileOrDirectory_Action.java" startLine="104" startPosition="0" endLine="104" endPosition="35">
+    <nodeInfo nodeId="4044729767330008710" fileName="MoveFileOrDirectory_Action.java" startLine="29" startPosition="0" endLine="30" endPosition="35" />
+    <nodeInfo nodeId="7950928758727213183" fileName="MoveFileOrDirectory_Action.java" startLine="30" startPosition="35" endLine="31" endPosition="26" />
+    <nodeInfo nodeId="6134778262076358089" fileName="MoveFileOrDirectory_Action.java" startLine="31" startPosition="26" endLine="32" endPosition="22" />
+    <nodeInfo nodeId="4044729767330008705" fileName="MoveFileOrDirectory_Action.java" startLine="83" startPosition="9" endLine="84" endPosition="87" />
+    <nodeInfo nodeId="1025587571450947911" fileName="MoveFileOrDirectory_Action.java" startLine="84" startPosition="87" endLine="85" endPosition="156" />
+    <nodeInfo nodeId="4044729767330008426" fileName="MoveFileOrDirectory_Action.java" startLine="85" startPosition="156" endLine="86" endPosition="20" />
+    <nodeInfo nodeId="1557895745570983243" fileName="MoveFileOrDirectory_Action.java" startLine="87" startPosition="29" endLine="88" endPosition="15" />
+    <nodeInfo nodeId="859814836892231118" fileName="MoveFileOrDirectory_Action.java" startLine="89" startPosition="7" endLine="90" endPosition="47" />
+    <nodeInfo nodeId="7454493598691787133" fileName="MoveFileOrDirectory_Action.java" startLine="94" startPosition="69" endLine="95" endPosition="21" />
+    <nodeInfo nodeId="859814836892231143" fileName="MoveFileOrDirectory_Action.java" startLine="96" startPosition="13" endLine="97" endPosition="91" />
+    <nodeInfo nodeId="859814836892231129" fileName="MoveFileOrDirectory_Action.java" startLine="97" startPosition="91" endLine="98" endPosition="81" />
+    <nodeInfo nodeId="3812855676554060548" fileName="MoveFileOrDirectory_Action.java" startLine="98" startPosition="81" endLine="99" endPosition="87" />
+    <nodeInfo nodeId="3812855676554060559" fileName="MoveFileOrDirectory_Action.java" startLine="101" startPosition="33" endLine="102" endPosition="198" />
+    <nodeInfo nodeId="6134778262076358054" fileName="MoveFileOrDirectory_Action.java" startLine="117" startPosition="49" endLine="118" endPosition="95" />
+    <nodeInfo nodeId="6134778262076358060" fileName="MoveFileOrDirectory_Action.java" startLine="118" startPosition="95" endLine="119" endPosition="18" />
+    <nodeInfo nodeId="6134778262076358064" fileName="MoveFileOrDirectory_Action.java" startLine="121" startPosition="140" endLine="122" endPosition="151" />
+    <nodeInfo nodeId="6134778262076358072" fileName="MoveFileOrDirectory_Action.java" startLine="122" startPosition="151" endLine="123" endPosition="18" />
+    <nodeInfo nodeId="6134778262076358084" fileName="MoveFileOrDirectory_Action.java" startLine="124" startPosition="5" endLine="125" endPosition="17" />
+    <nodeInfo nodeId="1557895745570983229" fileName="MoveFileOrDirectory_Action.java" startLine="86" startPosition="20" endLine="89" endPosition="7" />
+    <nodeInfo nodeId="7454493598691787104" fileName="MoveFileOrDirectory_Action.java" startLine="93" startPosition="15" endLine="96" endPosition="13" />
+    <nodeInfo nodeId="3812855676554060557" fileName="MoveFileOrDirectory_Action.java" startLine="100" startPosition="55" endLine="104" endPosition="0" />
+    <nodeInfo nodeId="6134778262076358043" fileName="MoveFileOrDirectory_Action.java" startLine="116" startPosition="49" endLine="120" endPosition="5" />
+    <nodeInfo nodeId="6134778262076358062" fileName="MoveFileOrDirectory_Action.java" startLine="120" startPosition="5" endLine="124" endPosition="5" />
+    <nodeInfo nodeId="3812855676554060555" fileName="MoveFileOrDirectory_Action.java" startLine="99" startPosition="87" endLine="104" endPosition="15" />
+    <nodeInfo nodeId="7454493598691787108" fileName="MoveFileOrDirectory_Action.java" startLine="115" startPosition="0" endLine="127" endPosition="0" />
+    <nodeInfo nodeId="835030696107935343" fileName="MoveFileOrDirectory_Action.java" startLine="92" startPosition="27" endLine="106" endPosition="11" />
+    <nodeInfo nodeId="835030696107857557" fileName="MoveFileOrDirectory_Action.java" startLine="91" startPosition="69" endLine="108" endPosition="0" />
+    <nodeInfo nodeId="835030696107857556" fileName="MoveFileOrDirectory_Action.java" startLine="90" startPosition="47" endLine="108" endPosition="9" />
+    <scopeInfo nodeId="835030696107935346" fileName="MoveFileOrDirectory_Action.java" startLine="105" startPosition="0" endLine="105" endPosition="35">
       <varInfo nodeId="835030696107935347" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="835030696107935349" fileName="MoveFileOrDirectory_Action.java" startLine="104" startPosition="35" endLine="104" endPosition="35" />
-    <scopeInfo nodeId="1557895745570983230" fileName="MoveFileOrDirectory_Action.java" startLine="86" startPosition="29" endLine="87" endPosition="15" />
-    <scopeInfo nodeId="7454493598691787105" fileName="MoveFileOrDirectory_Action.java" startLine="93" startPosition="69" endLine="94" endPosition="21" />
-    <scopeInfo nodeId="3812855676554060558" fileName="MoveFileOrDirectory_Action.java" startLine="100" startPosition="33" endLine="101" endPosition="198" />
-    <scopeInfo nodeId="6134778262076358053" fileName="MoveFileOrDirectory_Action.java" startLine="116" startPosition="49" endLine="118" endPosition="18" />
-    <scopeInfo nodeId="6134778262076358063" fileName="MoveFileOrDirectory_Action.java" startLine="120" startPosition="127" endLine="122" endPosition="18" />
-    <scopeInfo nodeId="3812855676554060557" fileName="MoveFileOrDirectory_Action.java" startLine="99" startPosition="55" endLine="103" endPosition="0" />
-    <scopeInfo nodeId="7454493598691787110" fileName="MoveFileOrDirectory_Action.java" startLine="115" startPosition="49" endLine="124" endPosition="17" />
-    <scopeInfo nodeId="835030696107935344" fileName="MoveFileOrDirectory_Action.java" startLine="92" startPosition="15" endLine="103" endPosition="15">
+    <scopeInfo nodeId="835030696107935349" fileName="MoveFileOrDirectory_Action.java" startLine="105" startPosition="35" endLine="105" endPosition="35" />
+    <scopeInfo nodeId="1557895745570983230" fileName="MoveFileOrDirectory_Action.java" startLine="87" startPosition="29" endLine="88" endPosition="15" />
+    <scopeInfo nodeId="7454493598691787105" fileName="MoveFileOrDirectory_Action.java" startLine="94" startPosition="69" endLine="95" endPosition="21" />
+    <scopeInfo nodeId="3812855676554060558" fileName="MoveFileOrDirectory_Action.java" startLine="101" startPosition="33" endLine="102" endPosition="198" />
+    <scopeInfo nodeId="6134778262076358053" fileName="MoveFileOrDirectory_Action.java" startLine="117" startPosition="49" endLine="119" endPosition="18" />
+    <scopeInfo nodeId="6134778262076358063" fileName="MoveFileOrDirectory_Action.java" startLine="121" startPosition="140" endLine="123" endPosition="18" />
+    <scopeInfo nodeId="3812855676554060557" fileName="MoveFileOrDirectory_Action.java" startLine="100" startPosition="55" endLine="104" endPosition="0" />
+    <scopeInfo nodeId="7454493598691787110" fileName="MoveFileOrDirectory_Action.java" startLine="116" startPosition="49" endLine="125" endPosition="17" />
+    <scopeInfo nodeId="835030696107935344" fileName="MoveFileOrDirectory_Action.java" startLine="93" startPosition="15" endLine="104" endPosition="15">
       <varInfo nodeId="859814836892231144" varName="virtualFile" />
     </scopeInfo>
-    <scopeInfo nodeId="7454493598691787108" fileName="MoveFileOrDirectory_Action.java" startLine="114" startPosition="0" endLine="126" endPosition="0">
+    <scopeInfo nodeId="7454493598691787108" fileName="MoveFileOrDirectory_Action.java" startLine="115" startPosition="0" endLine="127" endPosition="0">
       <varInfo nodeId="7454493598691787112" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="835030696107857558" fileName="MoveFileOrDirectory_Action.java" startLine="91" startPosition="27" endLine="105" endPosition="11" />
-    <scopeInfo nodeId="835030696107857557" fileName="MoveFileOrDirectory_Action.java" startLine="90" startPosition="69" endLine="107" endPosition="0" />
-    <unitInfo nodeId="3812855676554060557" fileName="MoveFileOrDirectory_Action.java" startLine="99" startPosition="43" endLine="103" endPosition="13" unitName="jetbrains.mps.ide.actions.MoveFileOrDirectory_Action$2" />
-    <unitInfo nodeId="835030696107857557" fileName="MoveFileOrDirectory_Action.java" startLine="90" startPosition="57" endLine="107" endPosition="7" unitName="jetbrains.mps.ide.actions.MoveFileOrDirectory_Action$1" />
+    <scopeInfo nodeId="835030696107857558" fileName="MoveFileOrDirectory_Action.java" startLine="92" startPosition="27" endLine="106" endPosition="11" />
+    <scopeInfo nodeId="835030696107857557" fileName="MoveFileOrDirectory_Action.java" startLine="91" startPosition="69" endLine="108" endPosition="0" />
+    <unitInfo nodeId="3812855676554060557" fileName="MoveFileOrDirectory_Action.java" startLine="100" startPosition="43" endLine="104" endPosition="13" unitName="jetbrains.mps.ide.actions.MoveFileOrDirectory_Action$2" />
+    <unitInfo nodeId="835030696107857557" fileName="MoveFileOrDirectory_Action.java" startLine="91" startPosition="57" endLine="108" endPosition="7" unitName="jetbrains.mps.ide.actions.MoveFileOrDirectory_Action$1" />
   </root>
   <root nodeId="2721881173282450312">
     <nodeInfo nodeId="2721881173282450315" fileName="NewSubTestModel_Action.java" startLine="33" startPosition="0" endLine="34" endPosition="30" />
@@ -3597,39 +3710,43 @@
     <unitInfo nodeId="3125192926426105545" fileName="GoToEditorDeclaration_Action.java" startLine="160" startPosition="37" endLine="164" endPosition="7" unitName="jetbrains.mps.ide.actions.GoToEditorDeclaration_Action$3" />
   </root>
   <root nodeId="3850687401316246086">
-    <nodeInfo nodeId="3850687401316263707" fileName="ExportThreadsDialog.java" startLine="12" startPosition="53" endLine="13" endPosition="39" />
-    <nodeInfo nodeId="3850687401316263752" fileName="ExportThreadsDialog.java" startLine="13" startPosition="39" endLine="14" endPosition="43" />
-    <nodeInfo nodeId="3850687401316263694" fileName="ExportThreadsDialog.java" startLine="16" startPosition="79" endLine="17" endPosition="52" />
-    <nodeInfo nodeId="3850687401316327377" fileName="ExportThreadsDialog.java" startLine="17" startPosition="52" endLine="18" endPosition="20" />
-    <nodeInfo nodeId="3850687401316327382" fileName="ExportThreadsDialog.java" startLine="18" startPosition="20" endLine="19" endPosition="0" />
-    <nodeInfo nodeId="3850687401316327384" fileName="ExportThreadsDialog.java" startLine="19" startPosition="0" endLine="20" endPosition="24" />
-    <nodeInfo nodeId="3850687401316327388" fileName="ExportThreadsDialog.java" startLine="20" startPosition="24" endLine="21" endPosition="0" />
-    <nodeInfo nodeId="3850687401316327348" fileName="ExportThreadsDialog.java" startLine="21" startPosition="0" endLine="22" endPosition="41" />
-    <nodeInfo nodeId="3850687401316327403" fileName="ExportThreadsDialog.java" startLine="22" startPosition="41" endLine="23" endPosition="32" />
-    <nodeInfo nodeId="3850687401316327355" fileName="ExportThreadsDialog.java" startLine="23" startPosition="32" endLine="24" endPosition="43" />
-    <nodeInfo nodeId="3850687401316263767" fileName="ExportThreadsDialog.java" startLine="24" startPosition="43" endLine="25" endPosition="48" />
-    <nodeInfo nodeId="4479696837437783858" fileName="ExportThreadsDialog.java" startLine="25" startPosition="48" endLine="26" endPosition="11" />
-    <nodeInfo nodeId="3850687401316263763" fileName="ExportThreadsDialog.java" startLine="29" startPosition="40" endLine="30" endPosition="27" />
-    <nodeInfo nodeId="3850687401316327393" fileName="ExportThreadsDialog.java" startLine="34" startPosition="39" endLine="35" endPosition="60" />
-    <nodeInfo nodeId="3850687401316327389" fileName="ExportThreadsDialog.java" startLine="39" startPosition="29" endLine="40" endPosition="14" />
-    <nodeInfo nodeId="3850687401316263758" fileName="ExportThreadsDialog.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <nodeInfo nodeId="3850687401316263719" fileName="ExportThreadsDialog.java" startLine="32" startPosition="0" endLine="37" endPosition="0" />
-    <nodeInfo nodeId="3850687401316263738" fileName="ExportThreadsDialog.java" startLine="37" startPosition="0" endLine="42" endPosition="0" />
-    <nodeInfo nodeId="3850687401316246088" fileName="ExportThreadsDialog.java" startLine="15" startPosition="0" endLine="27" endPosition="3" />
-    <scopeInfo nodeId="3850687401316263761" fileName="ExportThreadsDialog.java" startLine="29" startPosition="40" endLine="30" endPosition="27" />
-    <scopeInfo nodeId="3850687401316263722" fileName="ExportThreadsDialog.java" startLine="34" startPosition="39" endLine="35" endPosition="60" />
-    <scopeInfo nodeId="3850687401316263741" fileName="ExportThreadsDialog.java" startLine="39" startPosition="29" endLine="40" endPosition="14" />
-    <scopeInfo nodeId="3850687401316263758" fileName="ExportThreadsDialog.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="3850687401316263719" fileName="ExportThreadsDialog.java" startLine="32" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="3850687401316263738" fileName="ExportThreadsDialog.java" startLine="37" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="3850687401316246091" fileName="ExportThreadsDialog.java" startLine="16" startPosition="79" endLine="26" endPosition="11">
+    <nodeInfo nodeId="3850687401316263707" fileName="ExportThreadsDialog.java" startLine="13" startPosition="53" endLine="14" endPosition="39" />
+    <nodeInfo nodeId="3850687401316263752" fileName="ExportThreadsDialog.java" startLine="14" startPosition="39" endLine="15" endPosition="43" />
+    <nodeInfo nodeId="3850687401316263694" fileName="ExportThreadsDialog.java" startLine="17" startPosition="79" endLine="18" endPosition="52" />
+    <nodeInfo nodeId="3850687401316327377" fileName="ExportThreadsDialog.java" startLine="18" startPosition="52" endLine="19" endPosition="20" />
+    <nodeInfo nodeId="3850687401316327382" fileName="ExportThreadsDialog.java" startLine="19" startPosition="20" endLine="20" endPosition="0" />
+    <nodeInfo nodeId="3850687401316327384" fileName="ExportThreadsDialog.java" startLine="20" startPosition="0" endLine="21" endPosition="24" />
+    <nodeInfo nodeId="3850687401316327388" fileName="ExportThreadsDialog.java" startLine="21" startPosition="24" endLine="22" endPosition="0" />
+    <nodeInfo nodeId="3850687401316327348" fileName="ExportThreadsDialog.java" startLine="22" startPosition="0" endLine="23" endPosition="41" />
+    <nodeInfo nodeId="3850687401316327403" fileName="ExportThreadsDialog.java" startLine="23" startPosition="41" endLine="24" endPosition="32" />
+    <nodeInfo nodeId="3850687401316327355" fileName="ExportThreadsDialog.java" startLine="24" startPosition="32" endLine="25" endPosition="43" />
+    <nodeInfo nodeId="3850687401316263767" fileName="ExportThreadsDialog.java" startLine="25" startPosition="43" endLine="26" endPosition="48" />
+    <nodeInfo nodeId="4479696837437783858" fileName="ExportThreadsDialog.java" startLine="26" startPosition="48" endLine="27" endPosition="11" />
+    <nodeInfo nodeId="3850687401316263763" fileName="ExportThreadsDialog.java" startLine="30" startPosition="40" endLine="31" endPosition="27" />
+    <nodeInfo nodeId="3850687401316327393" fileName="ExportThreadsDialog.java" startLine="35" startPosition="39" endLine="36" endPosition="60" />
+    <nodeInfo nodeId="3850687401316327389" fileName="ExportThreadsDialog.java" startLine="40" startPosition="29" endLine="41" endPosition="14" />
+    <nodeInfo nodeId="3092312734536401245" fileName="ExportThreadsDialog.java" startLine="45" startPosition="82" endLine="46" endPosition="77" />
+    <nodeInfo nodeId="3850687401316263758" fileName="ExportThreadsDialog.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <nodeInfo nodeId="3850687401316263719" fileName="ExportThreadsDialog.java" startLine="33" startPosition="0" endLine="38" endPosition="0" />
+    <nodeInfo nodeId="3850687401316263738" fileName="ExportThreadsDialog.java" startLine="38" startPosition="0" endLine="43" endPosition="0" />
+    <nodeInfo nodeId="3092312734536401238" fileName="ExportThreadsDialog.java" startLine="43" startPosition="0" endLine="48" endPosition="0" />
+    <nodeInfo nodeId="3850687401316246088" fileName="ExportThreadsDialog.java" startLine="16" startPosition="0" endLine="28" endPosition="3" />
+    <scopeInfo nodeId="3850687401316263761" fileName="ExportThreadsDialog.java" startLine="30" startPosition="40" endLine="31" endPosition="27" />
+    <scopeInfo nodeId="3850687401316263722" fileName="ExportThreadsDialog.java" startLine="35" startPosition="39" endLine="36" endPosition="60" />
+    <scopeInfo nodeId="3850687401316263741" fileName="ExportThreadsDialog.java" startLine="40" startPosition="29" endLine="41" endPosition="14" />
+    <scopeInfo nodeId="3092312734536401241" fileName="ExportThreadsDialog.java" startLine="45" startPosition="82" endLine="46" endPosition="77" />
+    <scopeInfo nodeId="3850687401316263758" fileName="ExportThreadsDialog.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="3850687401316263719" fileName="ExportThreadsDialog.java" startLine="33" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="3850687401316263738" fileName="ExportThreadsDialog.java" startLine="38" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="3092312734536401238" fileName="ExportThreadsDialog.java" startLine="43" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="3850687401316246091" fileName="ExportThreadsDialog.java" startLine="17" startPosition="79" endLine="27" endPosition="11">
       <varInfo nodeId="3850687401316327349" varName="textArea" />
     </scopeInfo>
-    <scopeInfo nodeId="3850687401316246088" fileName="ExportThreadsDialog.java" startLine="15" startPosition="0" endLine="27" endPosition="3">
+    <scopeInfo nodeId="3850687401316246088" fileName="ExportThreadsDialog.java" startLine="16" startPosition="0" endLine="28" endPosition="3">
       <varInfo nodeId="3850687401316263704" varName="threads" />
       <varInfo nodeId="3850687401316263692" varName="context" />
     </scopeInfo>
-    <unitInfo nodeId="3850687401316246086" fileName="ExportThreadsDialog.java" startLine="12" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.ide.actions.ExportThreadsDialog" />
+    <unitInfo nodeId="3850687401316246086" fileName="ExportThreadsDialog.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.ide.actions.ExportThreadsDialog" />
   </root>
   <root nodeId="3858094006307618579">
     <nodeInfo nodeId="3858094006307660682" fileName="NewFile_Action.java" startLine="27" startPosition="0" endLine="28" endPosition="35" />
@@ -5149,7 +5266,7 @@
     <nodeInfo nodeId="122396442507799566" fileName="GetModelContentsFromSource_Action.java" startLine="113" startPosition="9" endLine="114" endPosition="29" />
     <nodeInfo nodeId="122396442507799591" fileName="GetModelContentsFromSource_Action.java" startLine="115" startPosition="34" endLine="116" endPosition="100" />
     <nodeInfo nodeId="122396442507799607" fileName="GetModelContentsFromSource_Action.java" startLine="117" startPosition="37" endLine="118" endPosition="34" />
-    <nodeInfo nodeId="122396442507799623" fileName="GetModelContentsFromSource_Action.java" startLine="122" startPosition="28" endLine="123" endPosition="68" />
+    <nodeInfo nodeId="122396442507799623" fileName="GetModelContentsFromSource_Action.java" startLine="122" startPosition="28" endLine="123" endPosition="106" />
     <nodeInfo nodeId="122396442507799118" fileName="GetModelContentsFromSource_Action.java" startLine="124" startPosition="7" endLine="125" endPosition="94" />
     <nodeInfo nodeId="576893074390180835" fileName="GetModelContentsFromSource_Action.java" startLine="126" startPosition="27" endLine="127" endPosition="141" />
     <nodeInfo nodeId="576893074390180842" fileName="GetModelContentsFromSource_Action.java" startLine="127" startPosition="141" endLine="128" endPosition="31" />
@@ -5166,7 +5283,7 @@
     <scopeInfo nodeId="122396442507792610" fileName="GetModelContentsFromSource_Action.java" startLine="101" startPosition="43" endLine="102" endPosition="90" />
     <scopeInfo nodeId="122396442507799493" fileName="GetModelContentsFromSource_Action.java" startLine="111" startPosition="37" endLine="112" endPosition="64" />
     <scopeInfo nodeId="122396442507799588" fileName="GetModelContentsFromSource_Action.java" startLine="117" startPosition="37" endLine="118" endPosition="34" />
-    <scopeInfo nodeId="122396442507799615" fileName="GetModelContentsFromSource_Action.java" startLine="122" startPosition="28" endLine="123" endPosition="68" />
+    <scopeInfo nodeId="122396442507799615" fileName="GetModelContentsFromSource_Action.java" startLine="122" startPosition="28" endLine="123" endPosition="106" />
     <scopeInfo nodeId="576893074390180828" fileName="GetModelContentsFromSource_Action.java" startLine="126" startPosition="27" endLine="128" endPosition="31">
       <varInfo nodeId="576893074390180836" varName="javaCompiler" />
     </scopeInfo>
@@ -5862,7 +5979,7 @@
     <nodeInfo nodeId="2880878974640576847" fileName="ModelCheckerCheckinHandler.java" startLine="64" startPosition="5" endLine="65" endPosition="0" />
     <nodeInfo nodeId="4723698989263467108" fileName="ModelCheckerCheckinHandler.java" startLine="65" startPosition="0" endLine="66" endPosition="211" />
     <nodeInfo nodeId="6585330428895867546" fileName="ModelCheckerCheckinHandler.java" startLine="69" startPosition="89" endLine="70" endPosition="71" />
-    <nodeInfo nodeId="6585330428895941789" fileName="ModelCheckerCheckinHandler.java" startLine="72" startPosition="49" endLine="73" endPosition="62" />
+    <nodeInfo nodeId="6585330428895941789" fileName="ModelCheckerCheckinHandler.java" startLine="72" startPosition="49" endLine="73" endPosition="100" />
     <nodeInfo nodeId="6585330428895942668" fileName="ModelCheckerCheckinHandler.java" startLine="76" startPosition="63" endLine="77" endPosition="39" />
     <nodeInfo nodeId="5955430226583724027" fileName="ModelCheckerCheckinHandler.java" startLine="87" startPosition="68" endLine="88" endPosition="71" />
     <nodeInfo nodeId="5955430226583724008" fileName="ModelCheckerCheckinHandler.java" startLine="82" startPosition="87" endLine="84" endPosition="5" />
@@ -5885,7 +6002,7 @@
     <scopeInfo nodeId="6220902061650994278" fileName="ModelCheckerCheckinHandler.java" startLine="47" startPosition="34" endLine="48" endPosition="97" />
     <scopeInfo nodeId="6220902061650994282" fileName="ModelCheckerCheckinHandler.java" startLine="51" startPosition="31" endLine="52" endPosition="97" />
     <scopeInfo nodeId="5955430226583660993" fileName="ModelCheckerCheckinHandler.java" startLine="62" startPosition="70" endLine="63" endPosition="48" />
-    <scopeInfo nodeId="6585330428895941780" fileName="ModelCheckerCheckinHandler.java" startLine="72" startPosition="49" endLine="73" endPosition="62" />
+    <scopeInfo nodeId="6585330428895941780" fileName="ModelCheckerCheckinHandler.java" startLine="72" startPosition="49" endLine="73" endPosition="100" />
     <scopeInfo nodeId="6585330428895942649" fileName="ModelCheckerCheckinHandler.java" startLine="76" startPosition="63" endLine="77" endPosition="39" />
     <scopeInfo nodeId="5955430226583724026" fileName="ModelCheckerCheckinHandler.java" startLine="87" startPosition="68" endLine="88" endPosition="71" />
     <scopeInfo nodeId="6220902061650994166" fileName="ModelCheckerCheckinHandler.java" startLine="31" startPosition="81" endLine="33" endPosition="20" />
@@ -6347,7 +6464,7 @@
     <nodeInfo nodeId="6747753996184177289" fileName="NewModelFromSource_Action.java" startLine="164" startPosition="11" endLine="165" endPosition="31" />
     <nodeInfo nodeId="6747753996184177295" fileName="NewModelFromSource_Action.java" startLine="166" startPosition="36" endLine="167" endPosition="102" />
     <nodeInfo nodeId="6747753996184177307" fileName="NewModelFromSource_Action.java" startLine="168" startPosition="39" endLine="169" endPosition="36" />
-    <nodeInfo nodeId="6747753996184177322" fileName="NewModelFromSource_Action.java" startLine="173" startPosition="30" endLine="174" endPosition="70" />
+    <nodeInfo nodeId="6747753996184177322" fileName="NewModelFromSource_Action.java" startLine="173" startPosition="30" endLine="174" endPosition="108" />
     <nodeInfo nodeId="6747753996184177332" fileName="NewModelFromSource_Action.java" startLine="175" startPosition="9" endLine="176" endPosition="92" />
     <nodeInfo nodeId="6747753996184177343" fileName="NewModelFromSource_Action.java" startLine="177" startPosition="33" endLine="178" endPosition="170" />
     <nodeInfo nodeId="6747753996184177354" fileName="NewModelFromSource_Action.java" startLine="178" startPosition="170" endLine="179" endPosition="33" />
@@ -6389,7 +6506,7 @@
     <scopeInfo nodeId="6747753996184177236" fileName="NewModelFromSource_Action.java" startLine="152" startPosition="45" endLine="153" endPosition="92" />
     <scopeInfo nodeId="6747753996184177275" fileName="NewModelFromSource_Action.java" startLine="162" startPosition="39" endLine="163" endPosition="66" />
     <scopeInfo nodeId="6747753996184177306" fileName="NewModelFromSource_Action.java" startLine="168" startPosition="39" endLine="169" endPosition="36" />
-    <scopeInfo nodeId="6747753996184177321" fileName="NewModelFromSource_Action.java" startLine="173" startPosition="30" endLine="174" endPosition="70" />
+    <scopeInfo nodeId="6747753996184177321" fileName="NewModelFromSource_Action.java" startLine="173" startPosition="30" endLine="174" endPosition="108" />
     <scopeInfo nodeId="6747753996184177000" fileName="NewModelFromSource_Action.java" startLine="192" startPosition="80" endLine="193" endPosition="92" />
     <scopeInfo nodeId="6747753996184177022" fileName="NewModelFromSource_Action.java" startLine="199" startPosition="80" endLine="200" endPosition="87" />
     <scopeInfo nodeId="6747753996184177042" fileName="NewModelFromSource_Action.java" startLine="205" startPosition="35" endLine="206" endPosition="16" />

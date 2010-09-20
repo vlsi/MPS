@@ -1,6 +1,6 @@
 package jetbrains.mps.generator.impl.dependencies;
 
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 
@@ -12,7 +12,7 @@ public interface DependenciesBuilder {
   void scriptApplied(SModel newmodel);
 
   RootDependenciesBuilder getRootBuilder(SNode inputNode);
-  
+
   void registerRoot(SNode outputRoot, SNode inputNode);
 
   void updateModel(SModel newInputModel);
@@ -21,13 +21,13 @@ public interface DependenciesBuilder {
 
   void dropModel();
 
-  GenerationDependencies getResult(Project project);
+  GenerationDependencies getResult(IOperationContext operationContext);
 
   public static class NullDependenciesBuilder implements DependenciesBuilder {
 
     @Override
     public void scriptApplied(SModel newmodel) {
-}
+    }
 
     @Override
     public RootDependenciesBuilder getRootBuilder(SNode inputNode) {
@@ -51,7 +51,7 @@ public interface DependenciesBuilder {
     }
 
     @Override
-    public GenerationDependencies getResult(Project project) {
+    public GenerationDependencies getResult(IOperationContext operationContext) {
       return null;
     }
   }

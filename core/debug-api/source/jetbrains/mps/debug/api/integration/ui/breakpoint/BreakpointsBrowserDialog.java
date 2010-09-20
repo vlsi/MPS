@@ -39,11 +39,17 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
     myBreakpointsManager = myContext.getComponent(BreakpointManagerComponent.class);
 
     myBreakpointsTable = new JTable();
+    myBreakpointsTable.setTableHeader(null);
     myBreakpointsTableModel = new MyAbstractTableModel();
     createBreakpointsTable(myBreakpointsTableModel);
 
     myMainPanel = new JScrollPane(myBreakpointsTable);
+    myMainPanel.getViewport().setBackground(getBackgroundColor());
     addActions();
+  }
+
+  private Color getBackgroundColor() {
+    return UIManager.getColor("Table.background");
   }
 
   private void createBreakpointsTable(MyAbstractTableModel model) {
@@ -52,7 +58,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
     myBreakpointsTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
     myBreakpointsTable.setShowHorizontalLines(false);
 
-    myBreakpointsTable.getColumnModel().getColumn(0).setCellEditor( new AbstractTableCellEditor() {
+    myBreakpointsTable.getColumnModel().getColumn(0).setCellEditor(new AbstractTableCellEditor() {
       JPanelWithCheckbox myPanelWithCheckBox;
 
       @Override
@@ -206,7 +212,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
       if (isSelected) {
         bg = UIManager.getColor("Table.selectionBackground");
       } else {
-        bg = UIManager.getColor("Table.background");
+        bg = getBackgroundColor();
       }
       this.setBackground(bg);
       this.setLayout(new GridBagLayout());
@@ -250,7 +256,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
       int count = getRowCount();
       if (count == 0) return;
       int index;
-      if (count <= row)  {
+      if (count <= row) {
         index = row - 1;
       } else {
         index = row;
@@ -265,7 +271,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
       Collections.sort(bpList, new Comparator<AbstractMPSBreakpoint>() {
         @Override
         public int compare(AbstractMPSBreakpoint o1, AbstractMPSBreakpoint o2) {
-          return  (int) (o1.getCreationTime() - o2.getCreationTime());
+          return (int) (o1.getCreationTime() - o2.getCreationTime());
         }
       });
       return bpList;
@@ -308,6 +314,11 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
 
     public AbstractMPSBreakpoint getBreakpointAt(int row) {
       return myBreakpointsList.get(row);
+    }
+
+    @Override
+    public String getColumnName(int column) {
+      return "";
     }
   }
 

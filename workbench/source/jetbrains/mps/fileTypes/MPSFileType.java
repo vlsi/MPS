@@ -18,11 +18,10 @@ package jetbrains.mps.fileTypes;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.fileTypes.ex.FileTypeIdentifiableByVirtualFile;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
-
-import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 
 public class MPSFileType implements FileType, FileTypeIdentifiableByVirtualFile {
   @NotNull

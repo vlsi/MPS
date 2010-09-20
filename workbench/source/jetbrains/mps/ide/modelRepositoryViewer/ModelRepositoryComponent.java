@@ -17,7 +17,6 @@ package jetbrains.mps.ide.modelRepositoryViewer;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.command.CommandProcessor;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.icons.IconManager;
@@ -122,13 +121,13 @@ public class ModelRepositoryComponent {
       protected void doUpdatePresentation() {
         setIcon(IconManager.getIconFor(myModelDescriptor));
         if ((myModelDescriptor instanceof EditableSModelDescriptor) &&
-        SModelRepository.getInstance().isChanged(((EditableSModelDescriptor) myModelDescriptor))) {
+          SModelRepository.getInstance().isChanged(((EditableSModelDescriptor) myModelDescriptor))) {
           setFontStyle(getFontStyle() | Font.BOLD);
           //setColor(new Color(0x00, 0x00, 0x90));
         }
         setColor(Color.BLACK);
         setNodeIdentifier(myModelDescriptor.getLongName());
-        setText(myModelDescriptor.getLongName() + ("("+myModelDescriptor.getLoadingState().toString()+")"));
+        setText(myModelDescriptor.getLongName() + ("(" + myModelDescriptor.getLoadingState().toString() + ")"));
       }
     }
 
@@ -176,20 +175,20 @@ public class ModelRepositoryComponent {
     });
   }
 
-  private class DeferringEventHandler{
+  private class DeferringEventHandler {
     private SModelRepositoryListener myRepoListener = new SModelRepositoryAdapter() {
       public void modelRepositoryChanged() {
         requestUpdate();
       }
     };
 
-    private SModelListener myModelListener = new SModelAdapter(){
-      public void modelLoadingStateChanged(SModelDescriptor sm,ModelLoadingState oldState, ModelLoadingState newState) {
+    private SModelListener myModelListener = new SModelAdapter() {
+      public void modelLoadingStateChanged(SModelDescriptor sm, ModelLoadingState oldState, ModelLoadingState newState) {
         requestUpdate();
       }
     };
 
-    private ModelAccessListener myModelAccessListener = new ModelAccessAdapter(){
+    private ModelAccessListener myModelAccessListener = new ModelAccessAdapter() {
       public void commandFinished() {
         requestUpdate();
       }

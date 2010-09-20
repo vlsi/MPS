@@ -45,6 +45,9 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class RulesFunctions_BaseLanguage {
   private static boolean TRACE_METHOD_TYPES = false;
 
+  public RulesFunctions_BaseLanguage() {
+  }
+
   @InferenceMethod
   public static void comparisonOp(final TypeCheckingContext typeCheckingContext, SNode binOp) {
     {
@@ -527,11 +530,16 @@ __switch__:
   }
 
   @CheckingMethod
-  /*package*/ static void check(final TypeCheckingContext typeCheckingContext, Set<SNode> throwables, SNode mainNode) {
+  public static void check(final TypeCheckingContext typeCheckingContext, Set<SNode> throwables, SNode mainNode) {
+    check(typeCheckingContext, throwables, mainNode, "uncaught exceptions:");
+  }
+
+  @CheckingMethod
+  /*package*/ static void check(final TypeCheckingContext typeCheckingContext, Set<SNode> throwables, SNode mainNode, String message) {
     List<SNode> throwTypes = ListSequence.fromListWithValues(new ArrayList<SNode>(), throwables);
     ListSequence.fromList(throwTypes).removeWhere(new IWhereFilter<SNode>() {
       public boolean accept(SNode tt) {
-        return TypeChecker.getInstance().getSubtypingManager().isSubtype(tt, new RulesFunctions_BaseLanguage.QuotationClass_5ahx9e_a1a0a0a0a0b0o_0().createNode(typeCheckingContext)) || TypeChecker.getInstance().getSubtypingManager().isSubtype(tt, new RulesFunctions_BaseLanguage.QuotationClass_5ahx9e_a1a0a0a0a0b0o().createNode(typeCheckingContext));
+        return TypeChecker.getInstance().getSubtypingManager().isSubtype(tt, new RulesFunctions_BaseLanguage.QuotationClass_5ahx9e_a1a0a0a0a0b0p_0().createNode(typeCheckingContext)) || TypeChecker.getInstance().getSubtypingManager().isSubtype(tt, new RulesFunctions_BaseLanguage.QuotationClass_5ahx9e_a1a0a0a0a0b0p().createNode(typeCheckingContext));
       }
     });
     if (ListSequence.fromList(throwTypes).isEmpty()) {
@@ -545,18 +553,18 @@ with_anc:
         return;
       }
       do {
-        SNode matchedNode_5ahx9e_b0f0o = anc;
+        SNode matchedNode_5ahx9e_b0f0p = anc;
         {
-          boolean matches_5ahx9e_a1a5a41 = false;
+          boolean matches_5ahx9e_a1a5a51 = false;
           {
-            SNode matchingNode_5ahx9e_a1a5a41 = anc;
-            if (matchingNode_5ahx9e_a1a5a41 != null) {
-              matches_5ahx9e_a1a5a41 = SModelUtil_new.isAssignableConcept(matchingNode_5ahx9e_a1a5a41.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.TryStatement");
+            SNode matchingNode_5ahx9e_a1a5a51 = anc;
+            if (matchingNode_5ahx9e_a1a5a51 != null) {
+              matches_5ahx9e_a1a5a51 = SModelUtil_new.isAssignableConcept(matchingNode_5ahx9e_a1a5a51.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.TryStatement");
             }
           }
-          if (matches_5ahx9e_a1a5a41) {
-            if (ListSequence.fromList(ancSLs).contains(SLinkOperations.getTarget(matchedNode_5ahx9e_b0f0o, "body", true))) {
-              for (final SNode cc : SLinkOperations.getTargets(matchedNode_5ahx9e_b0f0o, "catchClause", true)) {
+          if (matches_5ahx9e_a1a5a51) {
+            if (ListSequence.fromList(ancSLs).contains(SLinkOperations.getTarget(matchedNode_5ahx9e_b0f0p, "body", true))) {
+              for (final SNode cc : SLinkOperations.getTargets(matchedNode_5ahx9e_b0f0p, "catchClause", true)) {
                 ListSequence.fromList(throwTypes).removeWhere(new IWhereFilter<SNode>() {
                   public boolean accept(SNode tt) {
                     return TypeChecker.getInstance().getSubtypingManager().isSubtype(tt, SLinkOperations.getTarget(SLinkOperations.getTarget(cc, "throwable", true), "type", true));
@@ -568,16 +576,16 @@ with_anc:
           }
         }
         {
-          boolean matches_5ahx9e_b1a5a41 = false;
+          boolean matches_5ahx9e_b1a5a51 = false;
           {
-            SNode matchingNode_5ahx9e_b1a5a41 = anc;
-            if (matchingNode_5ahx9e_b1a5a41 != null) {
-              matches_5ahx9e_b1a5a41 = SModelUtil_new.isAssignableConcept(matchingNode_5ahx9e_b1a5a41.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.TryCatchStatement");
+            SNode matchingNode_5ahx9e_b1a5a51 = anc;
+            if (matchingNode_5ahx9e_b1a5a51 != null) {
+              matches_5ahx9e_b1a5a51 = SModelUtil_new.isAssignableConcept(matchingNode_5ahx9e_b1a5a51.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.TryCatchStatement");
             }
           }
-          if (matches_5ahx9e_b1a5a41) {
-            if (ListSequence.fromList(ancSLs).contains(SLinkOperations.getTarget(matchedNode_5ahx9e_b0f0o, "body", true))) {
-              for (final SNode cc : SLinkOperations.getTargets(matchedNode_5ahx9e_b0f0o, "catchClause", true)) {
+          if (matches_5ahx9e_b1a5a51) {
+            if (ListSequence.fromList(ancSLs).contains(SLinkOperations.getTarget(matchedNode_5ahx9e_b0f0p, "body", true))) {
+              for (final SNode cc : SLinkOperations.getTargets(matchedNode_5ahx9e_b0f0p, "catchClause", true)) {
                 ListSequence.fromList(throwTypes).removeWhere(new IWhereFilter<SNode>() {
                   public boolean accept(SNode tt) {
                     return TypeChecker.getInstance().getSubtypingManager().isSubtype(tt, SLinkOperations.getTarget(SLinkOperations.getTarget(cc, "throwable", true), "type", true));
@@ -605,7 +613,7 @@ with_anc:
       }
     }
     if (!(ListSequence.fromList(throwTypes).isEmpty())) {
-      String errorString = "uncaught exceptions:";
+      String errorString = message;
       for (SNode exc : throwTypes) {
         errorString = errorString + " " + exc;
       }
@@ -827,8 +835,8 @@ with_anc:
     }
   }
 
-  public static class QuotationClass_5ahx9e_a1a0a0a0a0b0o {
-    public QuotationClass_5ahx9e_a1a0a0a0a0b0o() {
+  public static class QuotationClass_5ahx9e_a1a0a0a0a0b0p {
+    public QuotationClass_5ahx9e_a1a0a0a0a0b0p() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
@@ -858,8 +866,8 @@ with_anc:
     }
   }
 
-  public static class QuotationClass_5ahx9e_a1a0a0a0a0b0o_0 {
-    public QuotationClass_5ahx9e_a1a0a0a0a0b0o_0() {
+  public static class QuotationClass_5ahx9e_a1a0a0a0a0b0p_0 {
+    public QuotationClass_5ahx9e_a1a0a0a0a0b0p_0() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {

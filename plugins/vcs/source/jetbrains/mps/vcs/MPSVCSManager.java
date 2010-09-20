@@ -24,15 +24,14 @@ import com.intellij.openapi.vcs.changes.*;
 import com.intellij.openapi.vcs.impl.ProjectLevelVcsManagerImpl;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.generator.CompilationListener;
+import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationListener;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
-import jetbrains.mps.watching.ModelChangesWatcher;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -228,9 +227,8 @@ public class MPSVCSManager implements ProjectComponent {
   }
 
   private class GenerationWatcher implements GenerationListener {
-    public void beforeGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
-      for (Pair<SModelDescriptor, IOperationContext> pair : inputModels) {
-        SModelDescriptor smodelDescriptor = pair.o1;
+    public void beforeGeneration(List<SModelDescriptor> inputModels, GenerationOptions options, IOperationContext operationContext) {
+      for (SModelDescriptor smodelDescriptor : inputModels) {
         if (smodelDescriptor instanceof EditableSModelDescriptor && ((EditableSModelDescriptor) smodelDescriptor).needsReloading()) {
           ((EditableSModelDescriptor) smodelDescriptor).reloadFromDisk();
           LOG.info("Model " + smodelDescriptor + " reloaded from disk.");
@@ -240,22 +238,22 @@ public class MPSVCSManager implements ProjectComponent {
       myRemoveOperationScheduler.banProcessing();
     }
 
-    public void modelsGenerated(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
+    public void modelsGenerated(List<SModelDescriptor> models, boolean success) {
 
     }
 
-    public void afterGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
+    public void afterGeneration(List<SModelDescriptor> inputModels, GenerationOptions options, IOperationContext operationContext) {
       myAddOperationScheduler.removeProcessingBan();
       myRemoveOperationScheduler.removeProcessingBan();
     }
   }
 
   private class CompilationWatcher implements CompilationListener {
-    public void beforeModelsCompiled(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
+    public void beforeModelsCompiled(List<SModelDescriptor> models, boolean success) {
       myRemoveOperationScheduler.removeAllProcessingBans();
     }
 
-    public void afterModelsCompiled(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
+    public void afterModelsCompiled(List<SModelDescriptor> models, boolean success) {
 
     }
   }
@@ -301,6 +299,10 @@ public class MPSVCSManager implements ProjectComponent {
     }
 
     public void setListsToDisappear(Collection<String> names) {
+    }
+
+    public FileStatus getStatus(VirtualFile virtualFile) {
+      return FileStatus.NOT_CHANGED;
     }
   }
 

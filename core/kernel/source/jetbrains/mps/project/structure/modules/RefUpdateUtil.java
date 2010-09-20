@@ -15,12 +15,11 @@
  */
 package jetbrains.mps.project.structure.modules;
 
-import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
+import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
-
-import org.jetbrains.annotations.NotNull;
 
 public class RefUpdateUtil {
   public static boolean updateModelRefs(List<SModelReference> refs) {

@@ -36,9 +36,9 @@ public class JDOMUtil {
   private static final String ENCODING = "UTF-8";
 
   private static SAXParserFactory factory = null;
-  
+
   public static SAXParser createSAXParser() throws SAXException, ParserConfigurationException {
-    if(factory == null) {
+    if (factory == null) {
       factory = SAXParserFactory.newInstance();
     }
     return factory.newSAXParser();

@@ -20,6 +20,7 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
@@ -63,7 +64,9 @@ public abstract class MigrationScriptsView {
   private JButton myApplyButton;
 
   public MigrationScriptsView(MigrationScriptFinder finder, IResultProvider provider, SearchQuery query, MigrationScriptsTool tool, Project project) {
-    LOG.checkEDT();
+    if (!ThreadUtils.isEventDispatchThread()) {
+      throw new IllegalStateException("Can't use this outside of EDT");
+    }
 
     myFinder = finder;
     myQuery = query;
@@ -100,7 +103,9 @@ public abstract class MigrationScriptsView {
   public abstract void close();
 
   private void applyMigrations() {
-    LOG.checkEDT();
+    if (!ThreadUtils.isEventDispatchThread()) {
+      throw new IllegalStateException("Can't use this outside of EDT");
+    }
     final List<SearchResult<SNode>> aliveIncludedResults = new ArrayList<SearchResult<SNode>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {

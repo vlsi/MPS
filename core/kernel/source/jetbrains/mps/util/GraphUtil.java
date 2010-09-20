@@ -23,22 +23,22 @@ import java.util.Stack;
 /**
  * <code>int[][] graph;</code> defines an oriented graph of {graph.length} vertices, where
  * graph[i] is an array of edges from vertex i (Adjacency list)
- *
+ * <p/>
  * Evgeny Gryaznov, Jan 11, 2010
  */
 public class GraphUtil {
 
   public static int[] setToList(int[] set) {
     int size = 0;
-    for(int i = 0; i < set.length; i++) {
-      if(set[i] == 1) {
+    for (int i = 0; i < set.length; i++) {
+      if (set[i] == 1) {
         size++;
       }
     }
     int[] res = new int[size];
     int e = 0;
-    for(int i = 0; i < set.length; i++) {
-      if(set[i] == 1) {
+    for (int i = 0; i < set.length; i++) {
+      if (set[i] == 1) {
         res[e++] = i;
       }
     }
@@ -53,19 +53,19 @@ public class GraphUtil {
     int count = graph.length;
     int[] size = new int[count];
     Arrays.fill(size, 0);
-    for(int vertex = 0; vertex < count; vertex++) {
-      for(int target : graph[vertex]) {
+    for (int vertex = 0; vertex < count; vertex++) {
+      for (int target : graph[vertex]) {
         size[target]++;
       }
     }
 
     int[][] result = new int[count][];
-    for(int vertex = 0; vertex < count; vertex++) {
+    for (int vertex = 0; vertex < count; vertex++) {
       result[vertex] = new int[size[vertex]];
       size[vertex] = 0;
     }
-    for(int vertex = 0; vertex < count; vertex++) {
-      for(int target : graph[vertex]) {
+    for (int vertex = 0; vertex < count; vertex++) {
+      for (int target : graph[vertex]) {
         result[target][size[target]++] = vertex;
       }
     }
@@ -77,7 +77,7 @@ public class GraphUtil {
     int[] data = new int[count];
     int[][] result = new int[count][];
 
-    for(int vertex = 0; vertex < count; vertex++) {
+    for (int vertex = 0; vertex < count; vertex++) {
       int size = mergeSortedArrays(data, graph1[vertex], graph2[vertex]);
       result[vertex] = new int[size];
       System.arraycopy(data, 0, result[vertex], 0, size);
@@ -87,20 +87,21 @@ public class GraphUtil {
 
   private static int mergeSortedArrays(int[] target, int[] source1, int[] source2) {
     int size = 0, i1 = 0, i2 = 0;
-    while(i1 < source1.length && i2 < source2.length) {
-      if(source1[i1] < source2[i2]) {
+    while (i1 < source1.length && i2 < source2.length) {
+      if (source1[i1] < source2[i2]) {
         target[size++] = source1[i1++];
-      } else if(source1[i1] > source2[i2]) {
+      } else if (source1[i1] > source2[i2]) {
         target[size++] = source2[i2++];
       } else {
         target[size++] = source1[i1];
-        i1++; i2++;
+        i1++;
+        i2++;
       }
     }
-    while(i1 < source1.length) {
+    while (i1 < source1.length) {
       target[size++] = source1[i1++];
     }
-    while(i2 < source2.length) {
+    while (i2 < source2.length) {
       target[size++] = source2[i2++];
     }
     return size;
@@ -110,9 +111,9 @@ public class GraphUtil {
     int count = graph.length;
     List<int[]> result = new ArrayList<int[]>();
 
-    if(count < 2) {
-      if(count == 1) {
-        result.add(new int[]{ 0 });
+    if (count < 2) {
+      if (count == 1) {
+        result.add(new int[]{0});
       }
       return result.toArray(new int[result.size()][]);
     }
@@ -124,16 +125,16 @@ public class GraphUtil {
     Stack<Integer> stack = new Stack<Integer>();
     int nextVertex = 0;
 
-    while(nextVertex < count) {
+    while (nextVertex < count) {
       int componentSize = 0;
       stack.add(nextVertex);
       state[nextVertex] = 1;
       nextVertex++;
-      while(!stack.isEmpty()) {
+      while (!stack.isEmpty()) {
         int current = stack.pop();
         component[componentSize++] = current;
-        for(int target : graph[current]) {
-          if(state[target] == 0) {
+        for (int target : graph[current]) {
+          if (state[target] == 0) {
             state[target] = 1;
             stack.push(target);
           }
@@ -143,7 +144,7 @@ public class GraphUtil {
       System.arraycopy(component, 0, res, 0, componentSize);
       result.add(res);
 
-      while(nextVertex < count && state[nextVertex] != 0) {
+      while (nextVertex < count && state[nextVertex] != 0) {
         nextVertex++;
       }
     }
@@ -173,15 +174,15 @@ public class GraphUtil {
     }
 
     private int[][] run() {
-      if(graph.length < 2) {
-        if(graph.length == 1) {
-          result.add(new int[]{ 0 });
+      if (graph.length < 2) {
+        if (graph.length == 1) {
+          result.add(new int[]{0});
         }
         return result.toArray(new int[result.size()][]);
       }
 
-      for(int v = 0; v < graph.length; v++) {
-        if(index[v] == -1) {
+      for (int v = 0; v < graph.length; v++) {
+        if (index[v] == -1) {
           tarjan(v);
         }
       }
@@ -194,20 +195,20 @@ public class GraphUtil {
       current++;
       stack[stackTop++] = v;
       onstack[v] = true;
-      for(int vt : graph[v]) {
-        if(index[vt] == -1) {
+      for (int vt : graph[v]) {
+        if (index[vt] == -1) {
           tarjan(vt);
           lowlink[v] = Math.min(lowlink[v], lowlink[vt]);
-        } else if(onstack[vt]) {
+        } else if (onstack[vt]) {
           lowlink[v] = Math.min(lowlink[v], index[vt]);
         }
       }
-      if(lowlink[v] == index[v]) {
+      if (lowlink[v] == index[v]) {
         int stackSize = stackTop;
         do {
           stackTop--;
           onstack[stack[stackTop]] = false;
-        } while(stack[stackTop] != v);
+        } while (stack[stackTop] != v);
         int[] res = new int[stackSize - stackTop];
         System.arraycopy(stack, stackTop, res, 0, stackSize - stackTop);
         result.add(res);
@@ -220,10 +221,10 @@ public class GraphUtil {
   }
 
   public static void printGraph(int[][] graph, Object[] associated) {
-    for(int v = 0; v < graph.length; v++) {
+    for (int v = 0; v < graph.length; v++) {
       System.out.println(v + " (" + (associated != null ? associated[v] : "?") + ")");
       System.out.print("     ");
-      for(int i : graph[v]) {
+      for (int i : graph[v]) {
         System.out.print(" ");
         System.out.print(i);
       }

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.generator;
 
+import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.ide.generator.GenerationSettings.GenerateRequirementsPolicy;
 import jetbrains.mps.ide.projectPane.Icons;
 import org.jetbrains.annotations.Nullable;
@@ -35,7 +36,7 @@ class GenerationSettingsPreferencesPage {
   private JCheckBox myCheckModelsBeforeGenerationCheckBox = new JCheckBox("Check models for errors before generation");
   private JCheckBox myStrictMode = new JCheckBox("Strict mode");
   private JCheckBox myUseNewGenerator = new JCheckBox("Generate in parallel.");
-  private JFormattedTextField myNumberOfParallelThreads = new JFormattedTextField(new RangeDecimalFormatter(2,32));
+  private JFormattedTextField myNumberOfParallelThreads = new JFormattedTextField(new RangeDecimalFormatter(2, 32));
   private JCheckBox myGenerateDependencies = new JCheckBox("Save generation dependencies (experimental)");
 
   private JRadioButton myTraceNone = new JRadioButton("None");
@@ -47,7 +48,7 @@ class GenerationSettingsPreferencesPage {
   private JCheckBox myShowWarnings = new JCheckBox("Show warnings");
   private JCheckBox myKeepModelsWithWarnings = new JCheckBox("Keep transient models with warnings");
   private JCheckBox myLimitNumberOfModels = new JCheckBox("Maximum number of transient models to keep:");
-  private JFormattedTextField myNumberOfModelsToKeep = new JFormattedTextField(new RangeDecimalFormatter(0,1000));
+  private JFormattedTextField myNumberOfModelsToKeep = new JFormattedTextField(new RangeDecimalFormatter(0, 1000));
 
   private GenerationSettings myGenerationSettings;
 
@@ -225,10 +226,10 @@ class GenerationSettingsPreferencesPage {
 
   private int getTracingLevel() {
     return
-      myTraceTypes.isSelected() ? GenerationSettings.TRACE_TYPES :
-        myTraceLanguages.isSelected() ? GenerationSettings.TRACE_LANGS :
-          myTraceSteps.isSelected() ? GenerationSettings.TRACE_STEPS
-            : GenerationSettings.TRACE_OFF;
+      myTraceTypes.isSelected() ? GenerationOptions.TRACE_TYPES :
+        myTraceLanguages.isSelected() ? GenerationOptions.TRACE_LANGS :
+          myTraceSteps.isSelected() ? GenerationOptions.TRACE_STEPS
+            : GenerationOptions.TRACE_OFF;
   }
 
   private int getNumberOfModelsToKeep() {

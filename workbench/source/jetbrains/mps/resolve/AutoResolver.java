@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.resolve;
 
+import com.intellij.openapi.command.CommandProcessor;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.nodeEditor.EditorCheckerAdapter;
 import jetbrains.mps.nodeEditor.EditorContext;
@@ -22,16 +23,14 @@ import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.IEditorChecker;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.typesystem.checking.TypesEditorChecker;
 import jetbrains.mps.typesystem.checking.HighlightUtil;
+import jetbrains.mps.typesystem.checking.TypesEditorChecker;
 
 import java.util.*;
 
-import com.intellij.openapi.command.CommandProcessor;
-
 public class AutoResolver extends EditorCheckerAdapter {
 
-  public Set<EditorMessage> createMessages(SNode rootNode, 
+  public Set<EditorMessage> createMessages(SNode rootNode,
                                            IOperationContext operationContext, List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext) {
     Set<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
     if (rootNode.getModel() == null || rootNode.getModel().getModelDescriptor() == null) {
@@ -50,7 +49,7 @@ public class AutoResolver extends EditorCheckerAdapter {
       Set<SReference> badReferences = collectBadReferences(rootNode);
       if (!badReferences.isEmpty()) {
         yetBadReferences = Resolver.resolveReferences(badReferences, operationContext, resolveResultArrayList, false);
-        for (Iterator<ResolveResult> it = resolveResultArrayList.iterator(); it.hasNext(); ) {
+        for (Iterator<ResolveResult> it = resolveResultArrayList.iterator(); it.hasNext();) {
           ResolveResult resolveResult = it.next();
           if (isNewTargetFromAnotherModel(resolveResult)) {
             yetBadReferences.add(getResolvedReference(resolveResult));

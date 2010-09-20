@@ -17,7 +17,6 @@
 package jetbrains.mps.project;
 
 import com.intellij.openapi.project.Project;
-
 import jetbrains.mps.smodel.DefaultScope;
 import jetbrains.mps.smodel.Language;
 

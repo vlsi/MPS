@@ -26,13 +26,15 @@ import jetbrains.mps.ide.findusages.view.treeholder.tree.DataTree;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.IChangeListener;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.*;
+import javax.swing.Icon;
+import javax.swing.JComponent;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 import java.awt.BorderLayout;
 import java.util.*;
@@ -63,7 +65,7 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
   public UsagesTreeComponent(ViewOptions defaultOptions) {
     super(new BorderLayout());
 
-    myTree = new UsagesTree(UsagesTreeComponent.this.getProject()) ;
+    myTree = new UsagesTree(UsagesTreeComponent.this.getProject());
     myTree.setBorder(new EmptyBorder(3, 5, 3, 5));
 
     JScrollPane treePane = new JScrollPane(myTree);
@@ -349,7 +351,7 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
         myCategoryPathButtons.clear();
         for (CategoryKind kind : categoryKinds) {
           myCategoryPathButtons.add(new MyBasePathToggleAction(
-                                      PathItemRole.getCategoryRole(kind), kind.getTooltip(), kind.getIcon()));
+            PathItemRole.getCategoryRole(kind), kind.getTooltip(), kind.getIcon()));
         }
 
         myModulePathButton = new MyBasePathToggleAction(PathItemRole.ROLE_MODULE, "Group by module", Icons.MODULE_ICON);

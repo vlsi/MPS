@@ -65,8 +65,6 @@ public class ModelMergeTool implements DiffTool {
         byte[] bytes = ModelUtils.modelToBytes(dialog.getResultModel());
         mrequest.resolved(bytes);
       }
-    } catch (IOException e) {
-      LOG.error(e);
     } catch (ReadException e) {
       // if we cant read model from file
       // we try to use idea diff tool instead
@@ -75,6 +73,8 @@ public class ModelMergeTool implements DiffTool {
       if (ideaDiffTool.canShow(request)) {
         ideaDiffTool.show(request);
       }
+    } catch (IOException e) {
+      LOG.error(e);
     }
   }
 

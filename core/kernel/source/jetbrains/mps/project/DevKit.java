@@ -31,7 +31,10 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.vfs.IFile;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.UUID;
 
 public class DevKit extends AbstractModule implements MPSModuleOwner {
   private static final Logger LOG = Logger.getLogger(DevKit.class);
@@ -71,7 +74,7 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
   private MPSModuleOwner myGenerationOnlyModelsModelOwner = this;
 
   public DevKit() {
-    
+
   }
 
   public IFile getDescriptorFile() {

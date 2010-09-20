@@ -30,7 +30,7 @@ import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.IndexableFileSet;
-import jetbrains.mps.make.StartupModuleMaker;
+import jetbrains.mps.ide.make.StartupModuleMaker;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
@@ -68,7 +68,7 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
     startupManager.registerPreStartupActivity(new Runnable() {
       public void run() {
         startupManager.registerCacheUpdater(updater);
-        myIndex.registerIndexableSet(MPSFileBasedIndexProjectHandler.this);
+        myIndex.registerIndexableSet(MPSFileBasedIndexProjectHandler.this, myProject);
         DumbServiceImpl.getInstance(myProject).queueCacheUpdate(Collections.<CacheUpdater>singletonList(new MPSUnindexedFilesUpdater(myIndex)));
       }
     });

@@ -336,7 +336,9 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   }
 
   public void setVersion(int newVersion) {
-    System.err.println("setting version for model " + this + ": " + newVersion);
+    if (myIsTestRefactoringMode) {
+      System.err.println("setting version for model " + this + ": " + newVersion);
+    }
     setAttribute(VERSION, "" + newVersion);
   }
 

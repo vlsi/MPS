@@ -19,7 +19,6 @@ import jetbrains.mps.ModelAssert;
 import jetbrains.mps.vcs.diff.MergeTestUtil.TestVersion;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
 import junit.framework.TestCase;
 
 import java.io.File;
@@ -27,7 +26,7 @@ import java.io.IOException;
 import java.net.URL;
 
 public class MergeTestCase extends TestCase {
-  protected void testZip(String pathToZip, final boolean saveResult) throws IOException, ReadException {
+  protected void testZip(String pathToZip, final boolean saveResult) throws IOException {
 //    IdeMain.setTestMode(TestMode.CORE_TEST) ;
     jetbrains.mps.TestMain.configureMPS();
 

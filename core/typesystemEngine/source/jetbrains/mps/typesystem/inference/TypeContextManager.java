@@ -74,7 +74,7 @@ public class TypeContextManager implements ApplicationComponent {
   public void initComponent() {
     myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
       public void unload() {
-        clear();
+        clearForClassesUnload();
       }
     });
     myTimer = new Timer(true);
@@ -159,18 +159,11 @@ public class TypeContextManager implements ApplicationComponent {
     }
   }
 
-  public void clear() {
+  public void clearForClassesUnload() {
     synchronized (myLock) {
       for (Pair<TypeCheckingContext,List<ITypeContextOwner>> context : myTypeCheckingContexts.values()) {
-        context.o1.dispose();
+        context.o1.clear();
       }
-      myTypeCheckingContexts.clear();
-
-      for (SModelDescriptor d : myListeningForModels) {
-        d.removeModelListener(myModelListener);
-      }
-      myListeningForModels.clear();
-      myAccessTimes.clear();
     }
   }
 

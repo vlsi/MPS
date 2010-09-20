@@ -104,7 +104,7 @@ public class BlameDialog extends BaseDialog {
   }
 
   public void setDescription(String message) {
-    myDescription.setText(message);  
+    myDescription.setText(message);
   }
 
   private void init() {

@@ -14,6 +14,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
   public ConstraintsDescriptor() {
     ListSequence.fromList(this.myConstraints).addElement(new EnumerationDataTypeDeclaration_hasNoDefaultMember_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new AnnotationLinkDeclaration_name_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new LinkDeclaration_sourceCardinality_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new LinkDeclaration_role_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new ConceptLinkDeclaration_name_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new ConceptDeclaration_extends_ReferentConstraint());

@@ -38,7 +38,7 @@ public class MissingDependenciesFixer {
   }
 
   @Deprecated
-  public void fix(){
+  public void fix() {
     fix(true);
   }
 

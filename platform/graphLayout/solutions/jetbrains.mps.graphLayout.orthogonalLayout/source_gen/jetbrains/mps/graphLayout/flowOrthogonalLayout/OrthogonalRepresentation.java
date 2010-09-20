@@ -101,6 +101,10 @@ public class OrthogonalRepresentation {
       MapSequence.fromMap(bends).put(dart, MapSequence.fromMap(circulation).get(MapSequence.fromMap(dartBendMap).get(dart)));
       MapSequence.fromMap(angles).put(dart, MapSequence.fromMap(circulation).get(MapSequence.fromMap(dartAngleMap).get(dart)));
     }
+    if (SHOW_INFO > 0) {
+      System.out.println("bends: " + bends);
+      System.out.println("angles: " + angles);
+    }
   }
 
   public static void getRepresentation(EmbeddedGraph embeddedGraph, Map<Dart, Integer> bends, Map<Dart, Integer> angles) {

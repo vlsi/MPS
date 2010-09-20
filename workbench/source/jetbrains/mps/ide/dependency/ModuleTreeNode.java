@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.dependency;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -28,8 +29,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
-import com.intellij.openapi.project.Project;
 
 public class ModuleTreeNode extends MPSTreeNode {
   private Project myProject;

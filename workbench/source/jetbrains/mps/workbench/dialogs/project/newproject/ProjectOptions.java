@@ -19,8 +19,9 @@ public class ProjectOptions {
   private String myProjectPath;
   private String myProjectName;
 
-  private boolean myCreateNewSolution;
   private boolean myCreateNewLanguage;
+  private boolean myCreateNewSolution;
+  private boolean myCreateModel;
 
   private String myLanguageNamespace;
   private String myLanguagePath;
@@ -90,5 +91,13 @@ public class ProjectOptions {
 
   public void setSolutionPath(String solutionPath) {
     mySolutionPath = solutionPath;
+  }
+
+  public boolean getCreateModel() {
+    return myCreateModel;
+  }
+
+  public void setCreateModel(boolean value) {
+    myCreateModel = value;
   }
 }

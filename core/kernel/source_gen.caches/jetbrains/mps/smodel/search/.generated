@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="-9wfuzmr4stmjsdcojy28mxr4vzd3q2n">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-aw2culdpzxmm7q9xn76kkfde2ex42eu" />
+  <common hash="-azej6q9wbu4v4cm5erp0rbbosy5h3sh" />
+  <source id="4642948870877886449" name="SimpleSearchScope" hash="172xih8ofwehnu092pj4ycautulltx1">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="SimpleSearchScope.java" />
+  </source>
+  <source id="4642948870877886557" name="ModelAndImportedModelsScope" hash="-ba1bwav4ieou8xng0ikl870o9rfcs2t">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ModelAndImportedModelsScope.java" />
+  </source>
+  <source id="4642948870877886748" name="UndefinedSearchScope" hash="-ace2atypq0azc6ulaggbmj49xlgy5hs">
+    <file name="UndefinedSearchScope.java" />
+  </source>
+  <source id="4642948870877886822" name="ModelNodesSearchScope" hash="5zf9usyagxmcg5n5pd0kv569tjt4zxs">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ModelNodesSearchScope.java" />
+  </source>
+  <source id="4642948870877886852" name="SubnodesSearchScope" hash="-5hxiw9m5g8b36taknqdnj02p6awckkc">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="SubnodesSearchScope.java" />
+  </source>
+  <source id="4642948870877886891" name="AbstractSearchScope" hash="8orba06hva2qjtf6v8r0q24at3bmgw9">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="AbstractSearchScope.java" />
+  </source>
+  <source id="4642948870877887054" name="SearchScopeWithNode" hash="7patw80ue961tnfztys0myhw7wf0z0x">
+    <file name="SearchScopeWithNode.java" />
+  </source>
+  <source id="4642948870877887076" name="NodeListChildrenSearchScope" hash="-apkqqw6514degwxfa1bjfv8c081ozyb">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="NodeListChildrenSearchScope.java" />
+  </source>
+  <source id="4642948870877862679" name="IReferenceInfoResolver" hash="4acf5fh8ui6gkwuu41z1v7j65souk3t">
+    <file name="IReferenceInfoResolver.java" />
+  </source>
+  <source id="4642948870877888908" name="EmptySearchScope" hash="5c370r5ijcugs2ks12h2dlko8sgqexu">
+    <file name="EmptySearchScope.java" />
+  </source>
+  <source id="4642948870877889221" name="ISearchScope" hash="ciw445r1wqs3ezd0vorpoous9evmv0x">
+    <file name="ISearchScope.java" />
+  </source>
+  <source id="4642948870877889272" name="IsInstanceCondition" hash="1lozuy56nyz3f5ooycl4ow45dobptzx">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="IsInstanceCondition.java" />
+  </source>
+</dependencies>
+

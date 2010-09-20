@@ -1,7 +1,7 @@
 package jetbrains.mps.generator.impl.dependencies;
 
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.ModelDigestHelper;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
@@ -13,7 +13,7 @@ import java.util.Map;
 
 /**
  * Dependencies collector. Created once per model generation.
- *
+ * <p/>
  * Evgeny Gryaznov, May 11, 2010
  */
 public class DefaultDependenciesBuilder implements DependenciesBuilder {
@@ -41,14 +41,14 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
 
   private void initData(SNode[] roots, Map<String, String> generationHashes) {
     myConditionalsBuilder = new RootDependenciesBuilder(null, this, generationHashes != null ? generationHashes.get(ModelDigestHelper.HEADER) : "");
-    currentToOriginalMap = new HashMap<SNode, SNode>(roots.length*3/2);
-    myAllBuilders = new RootDependenciesBuilder[roots.length+1];
+    currentToOriginalMap = new HashMap<SNode, SNode>(roots.length * 3 / 2);
+    myAllBuilders = new RootDependenciesBuilder[roots.length + 1];
     int e = 0;
     myAllBuilders[e++] = myConditionalsBuilder;
-    for(SNode root : roots) {
+    for (SNode root : roots) {
       myAllBuilders[e] = new RootDependenciesBuilder(root, this, generationHashes != null ? generationHashes.get(root.getId()) : null);
       myRootBuilders.put(root, myAllBuilders[e++]);
-      currentToOriginalMap.put(root,root);
+      currentToOriginalMap.put(root, root);
     }
   }
 
@@ -60,11 +60,11 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
   @Override
   public void scriptApplied(SModel newmodel) {
     Map<SNodeId, SNode> oldidsToOriginal = new HashMap<SNodeId, SNode>();
-    for(Map.Entry<SNode, SNode> entry : currentToOriginalMap.entrySet()) {
+    for (Map.Entry<SNode, SNode> entry : currentToOriginalMap.entrySet()) {
       oldidsToOriginal.put(entry.getKey().getSNodeId(), entry.getValue());
     }
     currentToOriginalMap = new HashMap<SNode, SNode>();
-    for(SNode root : newmodel.getRoots()) {
+    for (SNode root : newmodel.getRoots()) {
       SNodeId id = root.getSNodeId();
       SNode original = oldidsToOriginal.get(id);
       currentToOriginalMap.put(root, original);
@@ -75,10 +75,10 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
 
   @Override
   public void registerRoot(SNode outputRoot, SNode inputNode) {
-    if(nextStepToOriginalMap == null) {
+    if (nextStepToOriginalMap == null) {
       nextStepToOriginalMap = new HashMap<SNode, SNode>();
     }
-    if(inputNode == null) {
+    if (inputNode == null) {
       nextStepToOriginalMap.put(outputRoot, null);
       return;
     }
@@ -88,7 +88,7 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
 
   @Override
   public void updateModel(SModel newInputModel) {
-    if(nextStepToOriginalMap != null) {
+    if (nextStepToOriginalMap != null) {
       currentToOriginalMap = nextStepToOriginalMap;
       nextStepToOriginalMap = null;
     } else {
@@ -114,14 +114,14 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
 
   @Override
   public RootDependenciesBuilder getRootBuilder(SNode inputNode) {
-    if(inputNode == null || !inputNode.isRegistered()) {
+    if (inputNode == null || !inputNode.isRegistered()) {
       return myConditionalsBuilder;
     }
     inputNode = inputNode.getTopmostAncestor();
     SNode originalRoot = currentToOriginalMap.get(inputNode);
-    if(originalRoot != null) {
+    if (originalRoot != null) {
       return myRootBuilders.get(originalRoot);
-    } else if(currentToOriginalMap.containsKey(inputNode)) {
+    } else if (currentToOriginalMap.containsKey(inputNode)) {
       return myConditionalsBuilder;
     }
     // shouldn't happen
@@ -129,7 +129,7 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
   }
 
   @Override
-  public GenerationDependencies getResult(Project project) {
-    return GenerationDependencies.fromData(currentToOriginalMap, myAllBuilders, myModelHash, project);
+  public GenerationDependencies getResult(IOperationContext operationContext) {
+    return GenerationDependencies.fromData(currentToOriginalMap, myAllBuilders, myModelHash, operationContext);
   }
 }

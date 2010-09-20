@@ -46,8 +46,8 @@ import java.util.List;
 
 public class CommonChoosers {
   private static List<SModelDescriptor> showDialogModelChooser_internal(final Component parent, final List<SModelDescriptor> models,
-                                                      @Nullable List<SModelDescriptor> nonProjectModels,
-                                                      boolean multiSelection) {
+                                                                        @Nullable List<SModelDescriptor> nonProjectModels,
+                                                                        boolean multiSelection) {
     Window window = parent instanceof Window ? (Window) parent : SwingUtilities.getWindowAncestor(parent);
     ModelChooserDialog dialog;
     if (window instanceof Frame) {
@@ -60,8 +60,8 @@ public class CommonChoosers {
   }
 
   private static <T extends IModule> List<T> showDialogModuleChooser_internal(final Component parent, String entityString, final List<T> modules,
-                                                                       @Nullable List<T> nonProjectModules,
-                                                                       boolean multiSelection) {
+                                                                              @Nullable List<T> nonProjectModules,
+                                                                              boolean multiSelection) {
     Window window = parent instanceof Window ? (Window) parent : SwingUtilities.getWindowAncestor(parent);
     ModuleChooserDialog<T> dialog;
     if (window instanceof Frame) {

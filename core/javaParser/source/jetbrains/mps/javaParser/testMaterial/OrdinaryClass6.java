@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.javaParser.testMaterial;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.

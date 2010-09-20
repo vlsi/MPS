@@ -20,12 +20,11 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataContext;
 import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.ide.refactoring.GenericRefactoringAction;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.lang.core.scripts.SafeDelete;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
-import jetbrains.mps.refactoring.framework.GenericRefactoringAction;
 import jetbrains.mps.refactoring.framework.IRefactoring;
-import jetbrains.mps.refactoring.framework.OldRefactoringAdapter;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import jetbrains.mps.refactoring.framework.RefactoringUtil.Applicability;
 import jetbrains.mps.smodel.BaseAdapter;
@@ -40,7 +39,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-public class                       DeleteNodesHelper {
+public class DeleteNodesHelper {
   private List<SNode> myNodes;
   private IOperationContext myContext;
   private boolean mySafe;
@@ -104,7 +103,7 @@ public class                       DeleteNodesHelper {
 
   private void safeDelete(final IOperationContext context, final SNode node) {
     IRefactoring ref = RefactoringUtil.getRefactoringByClassName(SafeDelete.class.getName());
-    final GenericRefactoringAction safeDeleteAction = new GenericRefactoringAction(ref){
+    final GenericRefactoringAction safeDeleteAction = new GenericRefactoringAction(ref) {
       protected Applicability getMinApplicabilityLevel() {
         return Applicability.OVERRIDDEN;
       }

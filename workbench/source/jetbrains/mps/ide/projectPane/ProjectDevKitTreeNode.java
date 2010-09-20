@@ -24,7 +24,6 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.action.ActionUtils;
 
 
-
 class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
   private DevKit myDevKit;
   private boolean myShortNameOnly;

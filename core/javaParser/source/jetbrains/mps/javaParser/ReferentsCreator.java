@@ -15,21 +15,20 @@
  */
 package jetbrains.mps.javaParser;
 
-import org.eclipse.jdt.internal.compiler.lookup.*;
-import org.eclipse.jdt.internal.compiler.ASTVisitor;
-import org.eclipse.jdt.internal.compiler.ast.*;
-import org.eclipse.jdt.internal.compiler.ast.AnnotationMethodDeclaration;
-import org.eclipse.jdt.internal.compiler.ast.Expression;
-import org.eclipse.jdt.internal.compiler.ast.FieldDeclaration;
-import org.eclipse.jdt.internal.compiler.ast.ConstructorDeclaration;
-import org.eclipse.jdt.internal.compiler.ast.TryStatement;
-import org.eclipse.jdt.internal.compiler.ast.Annotation;
-import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.smodel.INodeAdapter;
+import jetbrains.mps.smodel.SModel;
+import org.eclipse.jdt.internal.compiler.ASTVisitor;
+import org.eclipse.jdt.internal.compiler.ast.*;
+import org.eclipse.jdt.internal.compiler.ast.Annotation;
+import org.eclipse.jdt.internal.compiler.ast.AnnotationMethodDeclaration;
+import org.eclipse.jdt.internal.compiler.ast.ConstructorDeclaration;
+import org.eclipse.jdt.internal.compiler.ast.Expression;
+import org.eclipse.jdt.internal.compiler.ast.FieldDeclaration;
+import org.eclipse.jdt.internal.compiler.ast.TryStatement;
+import org.eclipse.jdt.internal.compiler.lookup.*;
 import org.eclipse.jdt.internal.compiler.problem.AbortCompilationUnit;
 
 import java.util.*;
@@ -339,6 +338,7 @@ public class ReferentsCreator {
     }
 
     //either a Field or a StaticField
+
     private VariableDeclaration createField(FieldBinding binding,
                                             Classifier enclosingClassifier,
                                             String name) {
@@ -363,7 +363,7 @@ public class ReferentsCreator {
       if (binding != null) {
         field.setIsFinal(binding.isFinal());
         field.setType(type);
-        ((ClassifierMember)field).setVisibility(getFieldVisibility(binding));
+        ((ClassifierMember) field).setVisibility(getFieldVisibility(binding));
         myReferentsCreator.myBindingMap.put(binding, field);
       }
       field.setName(name);
@@ -564,49 +564,49 @@ public class ReferentsCreator {
   }
 
   public void traverse(
-		ASTVisitor visitor,
-		CompilationUnitDeclaration unitDecl) {
+    ASTVisitor visitor,
+    CompilationUnitDeclaration unitDecl) {
 
-		try {
-			if (visitor.visit(unitDecl, unitDecl.scope)) {
-				if (unitDecl.types != null && unitDecl.isPackageInfo()) {
-		            // resolve synthetic type declaration
-					final TypeDeclaration syntheticTypeDeclaration = unitDecl.types[0];
-					// resolve javadoc package if any
-					final MethodScope methodScope = syntheticTypeDeclaration.staticInitializerScope;
-					if (unitDecl.javadoc != null) {
-						unitDecl.javadoc.traverse(visitor, methodScope);
-					}
-					if (unitDecl.currentPackage != null) {
-						final Annotation[] annotations = unitDecl.currentPackage.annotations;
-						if (annotations != null) {
-							int annotationsLength = annotations.length;
-							for (int i = 0; i < annotationsLength; i++) {
-								annotations[i].traverse(visitor, methodScope);
-							}
-						}
-					}
-				}
-				if (unitDecl.currentPackage != null) {
-					unitDecl.currentPackage.traverse(visitor, unitDecl.scope);
-				}
-				if (unitDecl.imports != null) {
-					int importLength = unitDecl.imports.length;
-					for (int i = 0; i < importLength; i++) {
-						unitDecl.imports[i].traverse(visitor, unitDecl.scope);
-					}
-				}
-				if (unitDecl.types != null) {
-					int typesLength = unitDecl.types.length;
-					for (int i = 0; i < typesLength; i++) {
-						unitDecl.types[i].traverse(visitor, unitDecl.scope);
-					}
-				}
-			}
-			visitor.endVisit(unitDecl, unitDecl.scope);
-		} catch (AbortCompilationUnit e) {
-			// ignore
-		}
-	}
+    try {
+      if (visitor.visit(unitDecl, unitDecl.scope)) {
+        if (unitDecl.types != null && unitDecl.isPackageInfo()) {
+          // resolve synthetic type declaration
+          final TypeDeclaration syntheticTypeDeclaration = unitDecl.types[0];
+          // resolve javadoc package if any
+          final MethodScope methodScope = syntheticTypeDeclaration.staticInitializerScope;
+          if (unitDecl.javadoc != null) {
+            unitDecl.javadoc.traverse(visitor, methodScope);
+          }
+          if (unitDecl.currentPackage != null) {
+            final Annotation[] annotations = unitDecl.currentPackage.annotations;
+            if (annotations != null) {
+              int annotationsLength = annotations.length;
+              for (int i = 0; i < annotationsLength; i++) {
+                annotations[i].traverse(visitor, methodScope);
+              }
+            }
+          }
+        }
+        if (unitDecl.currentPackage != null) {
+          unitDecl.currentPackage.traverse(visitor, unitDecl.scope);
+        }
+        if (unitDecl.imports != null) {
+          int importLength = unitDecl.imports.length;
+          for (int i = 0; i < importLength; i++) {
+            unitDecl.imports[i].traverse(visitor, unitDecl.scope);
+          }
+        }
+        if (unitDecl.types != null) {
+          int typesLength = unitDecl.types.length;
+          for (int i = 0; i < typesLength; i++) {
+            unitDecl.types[i].traverse(visitor, unitDecl.scope);
+          }
+        }
+      }
+      visitor.endVisit(unitDecl, unitDecl.scope);
+    } catch (AbortCompilationUnit e) {
+      // ignore
+    }
+  }
 
 }

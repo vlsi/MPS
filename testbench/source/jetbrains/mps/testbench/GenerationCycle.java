@@ -4,7 +4,7 @@ import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.generator.GenParameters;
 import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
+import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.make.dependencies.StronglyConnectedModules;
 import jetbrains.mps.make.dependencies.StronglyConnectedModules.IModuleDecorator;
@@ -13,11 +13,12 @@ import jetbrains.mps.make.dependencies.graph.IVertex;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.testbench.Testbench;
-import jetbrains.mps.util.Pair;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelDescriptor;
 
 import java.io.File;
 import java.util.*;
@@ -119,15 +120,14 @@ public class GenerationCycle {
     }
 
     public void generate(GeneratorManager gm, IGenerationHandler generationHandler, IMessageHandler messageHandler) {
-      List<Pair<SModelDescriptor, IOperationContext>> modelsToContext = new ArrayList<Pair<SModelDescriptor, IOperationContext>>();
+      List<SModelDescriptor> inputModels = new ArrayList<SModelDescriptor>();
       for (IModule module : myModules) {
-        ModuleContext moduleContext = new ModuleContext(module, myProject);
         List<SModelDescriptor> modelsToGenerateNow = myModuleToModels.get(module);
         for (SModelDescriptor model : modelsToGenerateNow) {
-          modelsToContext.add(new Pair<SModelDescriptor, IOperationContext>(model, moduleContext));
+          inputModels.add(model);
         }
       }
-      gm.generateModels(modelsToContext, generationHandler, new EmptyProgressIndicator(), messageHandler, false, true);
+      gm.generateModels(inputModels, ProjectOperationContext.get(myProject.getProject()), generationHandler, new EmptyProgressIndicator(), messageHandler, false, true);
     }
 
     @Override

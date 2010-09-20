@@ -26,7 +26,7 @@ import jetbrains.mps.util.annotation.Hack;
  */
 public class OrdinaryClassWithMultipleFor {
   public static void main(String[] args) {
-    for (@Hack int i = 2, j = 3; i <= 4; i++, j++ ) {
+    for (@Hack int i = 2, j = 3; i <= 4; i++, j++) {
       i++;
       j++;
     }

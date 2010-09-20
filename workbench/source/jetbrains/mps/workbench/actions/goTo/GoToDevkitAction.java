@@ -22,17 +22,14 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
-
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.choose.base.FakePsiContext;
 import jetbrains.mps.workbench.choose.modules.BaseDevkitModel;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
-import org.jetbrains.annotations.NotNull;
 
 public class GoToDevkitAction extends BaseAction {
   public void doExecute(AnActionEvent e) {

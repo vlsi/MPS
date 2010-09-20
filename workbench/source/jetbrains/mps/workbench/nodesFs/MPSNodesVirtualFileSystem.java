@@ -229,13 +229,9 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
         updateModificationStamp(root);
       }
 
-      SwingUtilities.invokeLater(new Runnable() {
+      ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          ModelAccess.instance().runWriteAction(new Runnable() {
-            public void run() {
-              onModelReplaced(sm);
-            }
-          });
+          onModelReplaced(sm);
         }
       });
     }

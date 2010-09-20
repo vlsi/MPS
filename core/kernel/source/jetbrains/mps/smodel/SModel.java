@@ -70,7 +70,7 @@ public class SModel implements Iterable<SNode> {
   private int myPersistenceVersion = -1;
 
   private SModelDescriptor myModelDescriptor;
-  private static final SModelListener[] EMPTY_LISTENERS = new SModelListener[0];
+  private static final List<SModelListener> EMPTY_LISTENERS = Collections.emptyList();
 
   public SModel(@NotNull SModelReference modelReference) {
     myReference = modelReference;
@@ -232,7 +232,7 @@ public class SModel implements Iterable<SNode> {
     return myLoading;
   }
 
-  public synchronized SModelDescriptor getModelDescriptor() {
+  public SModelDescriptor getModelDescriptor() {
     return myModelDescriptor;
   }
 
@@ -244,7 +244,7 @@ public class SModel implements Iterable<SNode> {
     return !myLoading;
   }
 
-  private SModelListener[] getModelListeners() {
+  private Collection<SModelListener> getModelListeners() {
     BaseSModelDescriptor modelDescriptor = (BaseSModelDescriptor) getModelDescriptor();
     return modelDescriptor != null ? modelDescriptor.getModelListeners() : EMPTY_LISTENERS;
   }
@@ -382,9 +382,9 @@ public class SModel implements Iterable<SNode> {
   }
 
   void fireBeforeChildRemovedEvent(@NotNull SNode parent,
-                                          @NotNull String role,
-                                          @NotNull SNode child,
-                                          SNode anchor) {
+                                   @NotNull String role,
+                                   @NotNull SNode child,
+                                   SNode anchor) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
@@ -699,7 +699,7 @@ public class SModel implements Iterable<SNode> {
 
   public void removeUnusedLanguageAspectModelElements() {
     Set<SModelReference> dependencies = getDependenciesModelUIDs();
-    for (Iterator<ImportElement> iter = myAdditionalModelsVersions.iterator(); iter.hasNext(); ) {
+    for (Iterator<ImportElement> iter = myAdditionalModelsVersions.iterator(); iter.hasNext();) {
       ImportElement elem = iter.next();
       if (!dependencies.contains(elem.getModelReference())) {
         iter.remove();
@@ -862,13 +862,13 @@ public class SModel implements Iterable<SNode> {
   @Nullable
   public SNode getNodeById(SNodeId nodeId) {
     checkNotDisposed();
-    if(myDisposed) return null;
+    if (myDisposed) return null;
     return myIdToNodeMap.get(nodeId);
   }
 
   public Set<SNodeId> getNodeIds() {
     checkNotDisposed();
-    if(myDisposed) return Collections.emptySet();
+    if (myDisposed) return Collections.emptySet();
     return new HashSet<SNodeId>(myIdToNodeMap.keySet());
   }
 
@@ -881,7 +881,7 @@ public class SModel implements Iterable<SNode> {
   static void resetIdCounter() {
     ourCounter.set(Math.abs(new SecureRandom().nextLong()));
   }
-  
+
   public static SNodeId generateUniqueId() {
     long id = Math.abs(ourCounter.incrementAndGet());
     return new SNodeId.Regular(id);
@@ -889,17 +889,17 @@ public class SModel implements Iterable<SNode> {
 
   void registerNode(@NotNull SNode node) {
     checkNotDisposed();
-    if(myDisposed) return;
-    
+    if (myDisposed) return;
+
     if (myRegistrationsForbidden) {
       LOG.error("Registration in model " + getSModelReference() + " is temporarily forbidden");
     }
 
     SNodeId id = node.hasId() ? node.getSNodeId() : null;
     SNode existingNode = id != null ? myIdToNodeMap.get(id) : null;
-    if(id == null || existingNode != null && existingNode != node) {
+    if (id == null || existingNode != null && existingNode != node) {
       id = generateUniqueId();
-      while(myIdToNodeMap.containsKey(id)) {
+      while (myIdToNodeMap.containsKey(id)) {
         resetIdCounter();
         id = generateUniqueId();
       }
@@ -911,14 +911,14 @@ public class SModel implements Iterable<SNode> {
   void unregisterNode(@NotNull SNode node) {
     checkNotDisposed();
     SNodeId id = node.getSNodeId();
-    if(myDisposed || id == null) return;
+    if (myDisposed || id == null) return;
     myIdToNodeMap.remove(id);
   }
 
   @NotNull
   public Collection<SNode> getAllNodesWithIds() {
     checkNotDisposed();
-    if(myDisposed) return Collections.emptySet();
+    if (myDisposed) return Collections.emptySet();
     return Collections.unmodifiableCollection(myIdToNodeMap.values());
   }
 
@@ -938,7 +938,7 @@ public class SModel implements Iterable<SNode> {
 
   public void dispose() {
     ModelChange.assertLegalChange(this);
-    if(myDisposed) return;
+    if (myDisposed) return;
 
     myDisposed = true;
     for (SNode sn : myIdToNodeMap.values()) {
@@ -985,7 +985,7 @@ public class SModel implements Iterable<SNode> {
 
   public void validateLanguagesAndImports(boolean respectModulesScopes, boolean firstVersion) {
     ModelChange.assertLegalChange(this);
-    
+
     GlobalScope scope = GlobalScope.getInstance();
     SModelDescriptor modelDescriptor = this.getModelDescriptor();
     IModule module = modelDescriptor == null ? null : modelDescriptor.getModule();
@@ -1036,7 +1036,7 @@ public class SModel implements Iterable<SNode> {
 
   public SNode getNodeByCondition(Condition<SNode> c) {
     checkNotDisposed();
-    if(myDisposed) return null;
+    if (myDisposed) return null;
 
     for (SNode node : myIdToNodeMap.values()) {
       if (c.met(node)) {
@@ -1118,7 +1118,7 @@ public class SModel implements Iterable<SNode> {
 
   void updateImportedModelUsedVersion(SModelReference sModelReference, int currentVersion) {
     ModelChange.assertLegalChange(this);
-    
+
     ImportElement importElement = getImportElement(sModelReference);
     if (importElement != null) {
       importElement.myUsedVersion = currentVersion;
@@ -1174,10 +1174,10 @@ public class SModel implements Iterable<SNode> {
   void validateLanguages(SNode node) {
     Collection<ModuleReference> allrefs = getLanguageRefs(GlobalScope.getInstance());
     Set<String> available = new HashSet<String>(allrefs.size());
-    for(ModuleReference ref : allrefs) {
+    for (ModuleReference ref : allrefs) {
       available.add(ref.getModuleFqName());
     }
-    for(SNode n : node.getDescendantsIterable(null, true)) {
+    for (SNode n : node.getDescendantsIterable(null, true)) {
       String namespace = n.getLanguageNamespace();
       if (!available.contains(namespace)) {
         available.add(namespace);
@@ -1252,7 +1252,7 @@ public class SModel implements Iterable<SNode> {
     SModel model = this;
     List<SNode> result = new ArrayList<SNode>(this.size());
     for (SNode root : model.getRoots()) {
-      for(SNode i : root.getDescendantsIterable(null, true)) {
+      for (SNode i : root.getDescendantsIterable(null, true)) {
         result.add(i);
       }
     }
@@ -1269,7 +1269,7 @@ public class SModel implements Iterable<SNode> {
     List<SNode> resultNodes = new ArrayList<SNode>();
 
     for (SNode node : getRoots()) {
-      for(SNode i : node.getDescendantsIterable(condition, true)) {
+      for (SNode i : node.getDescendantsIterable(condition, true)) {
         resultNodes.add(i);
       }
     }
@@ -1430,7 +1430,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   public synchronized void disposeFastNodeFinder() {
-    if(myFastNodeFinder != null) {
+    if (myFastNodeFinder != null) {
       myFastNodeFinder.dispose();
       myFastNodeFinder = null;
     }
@@ -1459,7 +1459,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void checkNotDisposed() {
-    if(myDisposed) {
+    if (myDisposed) {
       LOG.error(new IllegalModelAccessError("accessing disposed model"));
     }
   }

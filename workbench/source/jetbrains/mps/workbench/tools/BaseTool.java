@@ -28,9 +28,8 @@ import com.intellij.ui.content.ContentFactoryImpl;
 import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.ContentManagerListener;
 
-import jetbrains.mps.util.annotation.Hack;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -92,7 +91,9 @@ public abstract class BaseTool {
   }
 
   public boolean toolIsOpened() {
-    LOG.checkEDT();
+    if (!ThreadUtils.isEventDispatchThread()) {
+      throw new IllegalStateException("Can't use this outside of EDT");
+    }
     return getToolWindow().isVisible();
   }
 
@@ -133,7 +134,9 @@ public abstract class BaseTool {
    * @return whether the tool is visible by user (in the panel)
    */
   public boolean isAvailable() {
-    LOG.checkEDT();
+    if (!ThreadUtils.isEventDispatchThread()) {
+      throw new IllegalStateException("Can't use this outside of EDT");
+    }
     return getToolWindow().isAvailable();
   }
 
@@ -173,7 +176,9 @@ public abstract class BaseTool {
   }
 
   public ToolWindow getToolWindow() {
-    LOG.checkEDT();
+    if (!ThreadUtils.isEventDispatchThread()) {
+      throw new IllegalStateException("Can't use this outside of EDT");
+    }
 
     if (!isRegistered()) register();
     return myWindowManager.getToolWindow(myId);

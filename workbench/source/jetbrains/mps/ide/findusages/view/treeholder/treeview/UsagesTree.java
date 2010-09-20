@@ -24,6 +24,7 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.SystemInfo;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowType;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.DataNode;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.DataTree;
@@ -162,7 +163,9 @@ public class UsagesTree extends MPSTree {
   }
 
   public void rebuildNow() {
-    LOG.checkEDT();
+    if (!ThreadUtils.isEventDispatchThread()) {
+      throw new IllegalStateException("Can't use this outside of EDT");
+    }
 
     UsagesTree.super.rebuildNow();
     int i;
@@ -617,7 +620,7 @@ public class UsagesTree extends MPSTree {
       }
 
       DataNode userObject = parent.getUserObject();
-      if (userObject != null){
+      if (userObject != null) {
         if (isAliveResultNode(userObject)) return parent;
       }
 

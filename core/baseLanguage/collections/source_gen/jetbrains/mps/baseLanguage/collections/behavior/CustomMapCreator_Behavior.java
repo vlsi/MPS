@@ -32,7 +32,12 @@ public class CustomMapCreator_Behavior {
     ListSequence.fromList(SNodeOperations.getChildren(res)).toListSequence().visitAll(new IVisitor<SNode>() {
       public void visit(SNode chld) {
         if (SNodeOperations.isInstanceOf(chld, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
-          SNodeOperations.replaceWithAnother(chld, SNodeOperations.copyNode(ListSequence.fromList(params).getElement(ListSequence.fromList(tvars).indexOf(SLinkOperations.getTarget(SNodeOperations.cast(chld, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false)))));
+          int index = ListSequence.fromList(tvars).indexOf(SLinkOperations.getTarget(SNodeOperations.cast(chld, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false));
+          SNode realType = ((index >= 0 && index < ListSequence.fromList(params).count()) ?
+            SNodeOperations.copyNode(ListSequence.fromList(params).getElement(index)) :
+            (SNode) null
+          );
+          SNodeOperations.replaceWithAnother(chld, realType);
         }
       }
     });

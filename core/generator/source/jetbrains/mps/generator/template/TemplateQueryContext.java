@@ -30,7 +30,7 @@ import java.util.List;
 public class TemplateQueryContext {
   // key for 'node user object' used to keep track of 'original input node' for a generated node
   // only used when output node has been created as a 'copy' of 'original input node'
-  public static final String ORIGINAL_INPUT_NODE = "originalInputNode"; 
+  public static final String ORIGINAL_INPUT_NODE = "originalInputNode";
   public static final String ORIGINAL_DEBUG_NODE = "originalDebugNode";
 
   private final SNode myInputNode;
@@ -101,7 +101,7 @@ public class TemplateQueryContext {
   }
 
   public SNode getOutputNodeByMappingLabel(String label) {
-    if(!myGenerator.areMappingsAvailable()) {
+    if (!myGenerator.areMappingsAvailable()) {
       myGenerator.getLogger().error(getTemplateNodeForLogging(), "'get output by label' cannot be used here");
     }
     return myGenerator.findOutputNodeByInputNodeAndMappingName(null, label);
@@ -109,7 +109,7 @@ public class TemplateQueryContext {
 
   public SNode getOutputNodeByInputNodeAndMappingLabel(SNode inputNode, String label) {
     if (inputNode == null) return null;
-    if(!myGenerator.areMappingsAvailable()) {
+    if (!myGenerator.areMappingsAvailable()) {
       myGenerator.getLogger().error(getTemplateNodeForLogging(), "'get output by input and label' cannot be used here");
     }
     return myGenerator.findOutputNodeByInputNodeAndMappingName(inputNode, label);
@@ -123,7 +123,7 @@ public class TemplateQueryContext {
 
   public List<SNode> getAllOutputNodesByInputNodeAndMappingLabel(SNode inputNode, String label) {
     if (inputNode == null) return null;
-    if(!myGenerator.areMappingsAvailable()) {
+    if (!myGenerator.areMappingsAvailable()) {
       myGenerator.getLogger().error(getTemplateNodeForLogging(), "'get all output by input and label' cannot be used here");
     }
     return myGenerator.findAllOutputNodesByInputNodeAndMappingName(inputNode, label);
@@ -135,7 +135,7 @@ public class TemplateQueryContext {
 
   public SNode getCopiedOutputNodeForInputNode(SNode inputNode) {
     if (inputNode == null) return null;
-    if(!myGenerator.areMappingsAvailable()) {
+    if (!myGenerator.areMappingsAvailable()) {
       myGenerator.getLogger().error(getTemplateNodeForLogging(), "'get copied node for input' cannot be used here");
     }
     return myGenerator.findCopiedOutputNodeForInputNode(inputNode);

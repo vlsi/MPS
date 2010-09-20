@@ -16,19 +16,20 @@
 package jetbrains.mps.generator.impl;
 
 import com.intellij.openapi.progress.ProgressIndicator;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.GeneratorManager.GeneratorNotifierHelper;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
+import jetbrains.mps.generator.impl.IGenerationTaskPool.SimpleGenerationTaskPool;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.ide.progress.TaskProgressHelper;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -39,47 +40,53 @@ import jetbrains.mps.util.performance.IPerformanceTracer.NullPerformanceTracer;
 import jetbrains.mps.util.performance.PerformanceTracer;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class GenerationController {
   protected static Logger LOG = Logger.getLogger(GenerationController.class);
 
   private GeneratorNotifierHelper myNotifierHelper;
-  private List<Pair<SModelDescriptor, IOperationContext>> myInputModels;
+  private List<SModelDescriptor> myInputModels;
+  private final IOperationContext myOperationContext;
   protected final IGenerationHandler myGenerationHandler;
   protected ProgressIndicator myProgress;
   protected GeneratorLoggerAdapter myLogger;
-  private GenerationProcessContext myGenerationContext;
+  private GenerationOptions myOptions;
+  private IGenerationTaskPool myParallelTaskPool;
 
   protected List<Pair<IModule, List<SModelDescriptor>>> myModuleSequence = new ArrayList<Pair<IModule, List<SModelDescriptor>>>();
-  protected Map<IModule, IOperationContext> myModulesToContexts = new HashMap<IModule, IOperationContext>();
 
-  public GenerationController(GenerationProcessContext parameters,
-                              GeneratorNotifierHelper notifierHelper,
-                              List<Pair<SModelDescriptor, IOperationContext>> _inputModels,
-                              GeneratorLoggerAdapter generatorLogger,
-                              IGenerationHandler generationHandler) {
+  public GenerationController(List<SModelDescriptor> _inputModels, GenerationOptions options,
+                              IGenerationHandler generationHandler, GeneratorNotifierHelper notifierHelper,
+                              GeneratorLoggerAdapter generatorLogger, IOperationContext operationContext, ProgressIndicator progress) {
 
     myNotifierHelper = notifierHelper;
     myInputModels = _inputModels;
+    myOperationContext = operationContext;
     myGenerationHandler = generationHandler;
-    myProgress = parameters.getProgressIndicator();
+    myProgress = progress;
     myLogger = generatorLogger;
-    myGenerationContext = parameters;
+    myOptions = options;
   }
 
   private void initMaps() {
     IModule current = null;
     ArrayList<SModelDescriptor> currentList = null;
-    for (Pair<SModelDescriptor, IOperationContext> inputModel : myInputModels) {
-      IModule newModule = inputModel.o2.getModule();
+    for (SModelDescriptor inputModel : myInputModels) {
+      IModule newModule = inputModel.getModule();
+      if(newModule == null) {
+        myLogger.warning("Model " + inputModel.getLongName() + " won't be generated");
+        continue;
+      }
+
       if (current == null || newModule != current) {
         current = newModule;
         currentList = new ArrayList<SModelDescriptor>();
         myModuleSequence.add(new Pair<IModule, List<SModelDescriptor>>(current, currentList));
-        myModulesToContexts.put(current, inputModel.o2);
       }
-      currentList.add(inputModel.o1);
+      currentList.add(inputModel);
     }
   }
 
@@ -99,7 +106,10 @@ public class GenerationController {
           generationOK = generationOK && result;
         }
       } finally {
-        myGenerationContext.cleanup();
+        if (myParallelTaskPool != null) {
+          myParallelTaskPool.dispose();
+          myParallelTaskPool = null;
+        }
       }
       if (generationOK) {
         if (myLogger.needsInfo()) {
@@ -128,7 +138,7 @@ public class GenerationController {
 
   private boolean compile(ITaskProgressHelper progressHelper, boolean generationOK) throws IOException, GenerationCanceledException {
     fireBeforeModelsCompiled(generationOK);
-    generationOK = generationOK && myGenerationHandler.compile(getProject(), myModuleSequence, generationOK, progressHelper);
+    generationOK = generationOK && myGenerationHandler.compile(myOperationContext, myModuleSequence, generationOK, progressHelper);
     fireAfterModelsCompiled(generationOK);
     return generationOK;
   }
@@ -136,13 +146,14 @@ public class GenerationController {
   protected boolean generateModelsInModule(IModule module, List<SModelDescriptor> inputModels, ITaskProgressHelper progressHelper) throws Exception {
     boolean currentGenerationOK = true;
 
-    IOperationContext invocationContext = myModulesToContexts.get(module);
-    myGenerationHandler.startModule(module, inputModels, getProject(), progressHelper);
+    // TODO fix context
+    IOperationContext invocationContext = new ModuleContext(module, myOperationContext.getProject());
+    myGenerationHandler.startModule(module, inputModels, myOperationContext, progressHelper);
 
     //++ generation
     String wasLoggingThreshold = null;
     try {
-      if (myGenerationContext.isShowErrorsOnly()) {
+      if (myOptions.isShowErrorsOnly()) {
         wasLoggingThreshold = Logger.setThreshold("ERROR");
       }
 
@@ -167,15 +178,15 @@ public class GenerationController {
   private boolean generateModel(final SModelDescriptor inputModel, final IModule module, final IOperationContext invocationContext, final ITaskProgressHelper progressHelper) throws GenerationCanceledException {
     boolean currentGenerationOK = false;
 
-    IPerformanceTracer ttrace = myGenerationContext.getTracingMode() != GenerationSettings.TRACE_OFF
+    IPerformanceTracer ttrace = myOptions.getTracingMode() != GenerationOptions.TRACE_OFF
       ? new PerformanceTracer("model " + NameUtil.shortNameFromLongName(inputModel.getLongName()))
       : new NullPerformanceTracer();
 
-    boolean traceTypes = myGenerationContext.getTracingMode() == GenerationSettings.TRACE_TYPES;
+    boolean traceTypes = myOptions.getTracingMode() == GenerationOptions.TRACE_TYPES;
     TypeChecker.getInstance().setIsGeneration(true, traceTypes ? ttrace : null);
 
-    final GenerationSession generationSession = new GenerationSession(
-      inputModel, invocationContext, myProgress, myLogger, ttrace, myGenerationContext);
+    final GenerationSession generationSession = new GenerationSession(this,
+      inputModel, invocationContext, myProgress, myLogger, ttrace, myOptions);
 
     try {
       Logger.addLoggingHandler(generationSession.getLoggingHandler());
@@ -192,11 +203,11 @@ public class GenerationController {
       progressHelper.startLeafTask(taskName);
       if (myLogger.needsInfo()) {
         myLogger.info("[model " + inputModel.getSModelReference().getSModelFqName() +
-          (myGenerationContext.isRebuildAll()
+          (myOptions.isRebuildAll()
             ? ", rebuilding"
             : "") +
-          (myGenerationContext.isGenerateInParallel()
-            ? ", using " + myGenerationContext.getNumberOfThreads() + " threads]"
+          (myOptions.isGenerateInParallel()
+            ? ", using " + myOptions.getNumberOfThreads() + " threads]"
             : "]"));
       }
 
@@ -240,6 +251,16 @@ public class GenerationController {
     return currentGenerationOK;
   }
 
+  public IGenerationTaskPool getTaskPool() {
+    if (myParallelTaskPool != null || !myOptions.isGenerateInParallel()) {
+      return myParallelTaskPool;
+    }
+    myParallelTaskPool = GenerationOptions.USE_PARALLEL_POOL
+      ? new GenerationTaskPool(myProgress, myOptions.getNumberOfThreads())
+      : new SimpleGenerationTaskPool();
+    return myParallelTaskPool;
+  }
+
   private long estimateGenerationTime() {
     long totalJob = myGenerationHandler.estimateCompilationMillis(myModuleSequence);
 
@@ -265,16 +286,8 @@ public class GenerationController {
     myNotifierHelper.fireAfterModelsCompiled(Collections.unmodifiableList(myInputModels), success);
   }
 
-  private IOperationContext getFirstContext() {
-    return myInputModels.get(0).o2;
-  }
-
-  private Project getProject() {
-    return getFirstContext().getProject();
-  }
-
   private void clearMessageVew() {
-    MessagesViewTool messagesView = getProject().getComponent(MessagesViewTool.class);
+    MessagesViewTool messagesView = myOperationContext.getComponent(MessagesViewTool.class);
     if (messagesView != null) {
       messagesView.clear();
     }

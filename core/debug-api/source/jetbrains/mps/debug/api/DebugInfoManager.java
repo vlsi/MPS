@@ -15,19 +15,17 @@
  */
 package jetbrains.mps.debug.api;
 
-import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.Project;
-import org.jetbrains.annotations.NotNull;
-
-import java.util.*;
-
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.Mapper2;
-import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.*;
 
 public class DebugInfoManager implements ApplicationComponent {
   public static DebugInfoManager getInstance() {
@@ -38,7 +36,7 @@ public class DebugInfoManager implements ApplicationComponent {
     new HashMap<String, Mapper2<SNode, Project, AbstractMPSBreakpoint>>();
   private final Map<String, Mapper<SNode, List<SNode>>> myScopeConceptsAndGetters =
     new HashMap<String, Mapper<SNode, List<SNode>>>();
-  private final Map<String, Mapper<SNode, String>> myUnitConceptsToUnitNameGetters = new LinkedHashMap<String, Mapper<SNode, String>>(); 
+  private final Map<String, Mapper<SNode, String>> myUnitConceptsToUnitNameGetters = new LinkedHashMap<String, Mapper<SNode, String>>();
 
   @NotNull
   public String getComponentName() {
@@ -122,7 +120,7 @@ public class DebugInfoManager implements ApplicationComponent {
 
   @Nullable
   public String getUnitName(SNode unitNode) {
-    for (String concept: myUnitConceptsToUnitNameGetters.keySet()) {
+    for (String concept : myUnitConceptsToUnitNameGetters.keySet()) {
       if (SNodeOperations.isInstanceOf(unitNode, concept)) {
         Mapper<SNode, String> mapper = myUnitConceptsToUnitNameGetters.get(concept);
         if (mapper == null) return null;

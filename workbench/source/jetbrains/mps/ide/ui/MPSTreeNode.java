@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.ide.ui;
 
-import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.ThreadUtils;
@@ -313,12 +313,12 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               IOperationContext context = getOperationContext();
-              if (context==null) return;
+              if (context == null) return;
               if (!context.isValid()) return;
               Project project = context.getProject();
-              if (project==null) return;
+              if (project == null) return;
               if (project.isDisposed()) return;
-              
+
               updatePresentation();
               updateNodePresentationInTree();
             }

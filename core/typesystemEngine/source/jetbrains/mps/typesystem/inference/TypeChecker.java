@@ -21,6 +21,7 @@ import jetbrains.mps.lang.typesystem.runtime.performance.RuntimeSupport_Tracer;
 import jetbrains.mps.lang.typesystem.runtime.performance.SubtypingManager_Tracer;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.typesystem.inference.util.ConcurrentSubtypingCache;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -103,6 +104,7 @@ public class TypeChecker implements ApplicationComponent {
     return myRuntimeSupport;
   }
 
+  //todo sync
   public SubtypingCache getSubtypingCache() {
     return mySubtypingCache;
   }
@@ -112,7 +114,7 @@ public class TypeChecker implements ApplicationComponent {
   }
 
   public void enableGlobalSubtypingCache() {
-    myGlobalSubtypingCache = new SubtypingCache();
+    myGlobalSubtypingCache = createSubtypingCache();
   }
 
   public void clearGlobalSubtypingCache() {
@@ -131,7 +133,7 @@ public class TypeChecker implements ApplicationComponent {
     //todo add assertion that it is in synchronized with below (e.g. in write action)
     myComputedTypesForCompletion = new HashMap<SNode, SNode>();
     if (mySubtypingCache == null) {
-      mySubtypingCache = new SubtypingCache();
+      mySubtypingCache = createSubtypingCache();
     }
   }
 
@@ -141,6 +143,10 @@ public class TypeChecker implements ApplicationComponent {
     if (!isGenerationMode()) {
       mySubtypingCache = null;
     }
+  }
+
+  private SubtypingCache createSubtypingCache() {
+    return new ConcurrentSubtypingCache();
   }
 
   /* package */ Pair<SNode, Boolean> getTypeComputedForCompletion(SNode node) {
@@ -164,7 +170,7 @@ public class TypeChecker implements ApplicationComponent {
   public void setIsGeneration(boolean isGeneration, IPerformanceTracer performanceTracer) {
     myIsGeneration = isGeneration;
     if (isGeneration) {
-      mySubtypingCache = new SubtypingCache();
+      mySubtypingCache = createSubtypingCache();
       initTracing(performanceTracer);
     } else {
       disposeTracing();

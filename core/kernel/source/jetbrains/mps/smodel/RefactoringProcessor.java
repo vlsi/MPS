@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.findUsages.UsagesList;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.refactoring.framework.IRefactoring;
@@ -46,7 +46,7 @@ public class RefactoringProcessor {
     assert refactoringContext.getRefactoring() instanceof ILoggableRefactoring;
 
     refactoringContext.computeCaches();
-    SearchResults usages = refactoringContext.getUsages();
+    UsagesList usages = refactoringContext.getUsages();
 
     if (!refactoringContext.isLocal()) {
       writeIntoLog((EditableSModelDescriptor) modelDescriptor, refactoringContext);
@@ -54,7 +54,7 @@ public class RefactoringProcessor {
     } else {
       Set<SModel> modelsToProcess = new LinkedHashSet<SModel>();
       if (usages != null) {
-        modelsToProcess.addAll(usages.getModelsWithResults());
+        modelsToProcess.addAll(usages.getAffectedModels());
       }
 
       for (SModel anotherModel : modelsToProcess) {
@@ -70,7 +70,7 @@ public class RefactoringProcessor {
         try {
           ((ILoggableRefactoring) refactoring).updateModel(model, refactoringContext);
         } catch (Throwable t) {
-          LOG.error("An exception was thrown by refactoring " + refactoring.getUserFriendlyName() + " while updating model " + model.getLongName() + ". Models could have been corrupted." ,t);
+          LOG.error("An exception was thrown by refactoring " + refactoring.getUserFriendlyName() + " while updating model " + model.getLongName() + ". Models could have been corrupted.", t);
         }
 
         if (!refactoringContext.isLocal()) {

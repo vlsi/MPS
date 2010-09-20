@@ -248,6 +248,7 @@
     <property name="name:23" value="FindModelUsages" />
     <node role="modifier:23" type="jetbrains.mps.lang.plugin.structure.ModificationStatement:23" id="1209309519622">
       <link role="modifiedGroup:23" targetNodeId="20.1204991218714" resolveInfo="ProjectPaneModelActions" />
+      <link role="point:23" targetNodeId="20.1123160817407996484" resolveInfo="modelUsages" />
     </node>
     <node role="contents:23" type="jetbrains.mps.lang.plugin.structure.ElementListContents:23" id="1209309494792">
       <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="1209309503949">

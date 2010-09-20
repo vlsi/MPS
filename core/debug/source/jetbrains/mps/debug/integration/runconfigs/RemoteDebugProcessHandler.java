@@ -4,7 +4,10 @@ import com.intellij.execution.process.ProcessHandler;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
-import jetbrains.mps.debug.runtime.*;
+import jetbrains.mps.debug.runtime.DebugProcessAdapter;
+import jetbrains.mps.debug.runtime.DebugSession;
+import jetbrains.mps.debug.runtime.DebugVMEventsProcessor;
+import jetbrains.mps.debug.runtime.VMEventsProcessorManagerComponent;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.OutputStream;

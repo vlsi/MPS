@@ -31,12 +31,13 @@ import jetbrains.mps.compiler.CompilationResultAdapter;
 import jetbrains.mps.compiler.JavaCompiler;
 import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
-import jetbrains.mps.generator.GenParameters;
-import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.library.Library;
+import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
+import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
 import jetbrains.mps.project.tester.DiffReporter;
 import jetbrains.mps.project.tester.TesterGenerationHandler;
 import jetbrains.mps.reloading.EachClassPathItemVisitor;
@@ -47,7 +48,6 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.AbstractClassLoader;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.project.MPSExtentions;
 import junit.framework.TestCase;
@@ -197,19 +197,19 @@ public class TestGenerationWorker extends GeneratorWorker {
     if (isGeneratePerfomanceReport()) {
       return new GenerationAdapter() {
         @Override
-        public void beforeGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
+        public void beforeGeneration(List<SModelDescriptor> inputModels, GenerationOptions options, IOperationContext operationContext) {
           Long startTime = System.currentTimeMillis();
-          for (Pair<SModelDescriptor, IOperationContext> pair : inputModels) {
-            myPerfomanceMap.put(pair.o1, startTime);
+          for (SModelDescriptor model : inputModels) {
+            myPerfomanceMap.put(model, startTime);
           }
         }
 
         @Override
-        public void afterGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
+        public void afterGeneration(List<SModelDescriptor> inputModels, GenerationOptions options, IOperationContext operationContext) {
           Long finishTime = System.currentTimeMillis();
-          for (Pair<SModelDescriptor, IOperationContext> pair : inputModels) {
-            Long startTime = myPerfomanceMap.get(pair.o1);
-            myPerfomanceMap.put(pair.o1, finishTime - startTime);
+          for (SModelDescriptor model : inputModels) {
+            Long startTime = myPerfomanceMap.get(model);
+            myPerfomanceMap.put(model, finishTime - startTime);
           }
         }
       };
@@ -526,7 +526,7 @@ public class TestGenerationWorker extends GeneratorWorker {
 
     public void generate(GeneratorManager gm, IGenerationHandler generationHandler, IMessageHandler messageHandler) {
       gm.generateModels(Collections.<SModelDescriptor>singletonList(mySModel),
-        new ModuleContext(myModule, myProject),
+        ProjectOperationContext.get(myProject.getProject()),
         generationHandler,
         new EmptyProgressIndicator(),
         messageHandler,

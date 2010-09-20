@@ -1,15 +1,14 @@
 package jetbrains.mps.ide.progress;
 
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.ide.progress.TaskProgressSettings;
 import jetbrains.mps.util.TimePresentationUtil;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
-* Evgeny Gryaznov, Jan 20, 2010
-*/
+ * Evgeny Gryaznov, Jan 20, 2010
+ */
 public class TaskProgressHelper implements ITaskProgressHelper {
 
   private static final int TIMER_DELAY = 100; //milliseconds
@@ -73,13 +72,13 @@ public class TaskProgressHelper implements ITaskProgressHelper {
   }
 
   public void finishTask() {
-    if(myStartTime == 0) {
+    if (myStartTime == 0) {
       return;
     }
     long elapsedTaskTime = System.currentTimeMillis() - myStartTime;
     long elapsedJob = System.currentTimeMillis() - myStartJobTime;
     myTotalJob += elapsedTaskTime - myEstimatedTime;
-    if(myTotalJob < 1) {
+    if (myTotalJob < 1) {
       myTotalJob = 1;
     }
     TaskProgressSettings.getInstance().addEstimatedTimeMillis(myTaskName, elapsedTaskTime);

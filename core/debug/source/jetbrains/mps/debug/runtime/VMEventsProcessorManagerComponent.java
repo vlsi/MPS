@@ -61,13 +61,13 @@ public class VMEventsProcessorManagerComponent implements ProjectComponent {
     }
   }
 
-    private Set<DebugVMEventsProcessor> getDebugProcesses() {
+  private Set<DebugVMEventsProcessor> getDebugProcesses() {
     synchronized (myEventProcessorToSessionMap) {
       return new HashSet<DebugVMEventsProcessor>(myEventProcessorToSessionMap.keySet());
     }
   }
 
-   private void removeDebugProcess(DebugVMEventsProcessor process) {
+  private void removeDebugProcess(DebugVMEventsProcessor process) {
     synchronized (myEventProcessorToSessionMap) {
       DebugSession debugSession = myEventProcessorToSessionMap.remove(process);
       myDebugManager.removeDebugSession(debugSession);
@@ -87,11 +87,11 @@ public class VMEventsProcessorManagerComponent implements ProjectComponent {
   }
 
   public void addDebugSession(DebugSession debugSession) {
-     DebugVMEventsProcessor process = debugSession.getEventsProcessor();
-      synchronized (myEventProcessorToSessionMap) {
-        myEventProcessorToSessionMap.put(process, debugSession);
-      }
-      process.addDebugProcessListener(myListener);
+    DebugVMEventsProcessor process = debugSession.getEventsProcessor();
+    synchronized (myEventProcessorToSessionMap) {
+      myEventProcessorToSessionMap.put(process, debugSession);
+    }
+    process.addDebugProcessListener(myListener);
   }
 
 

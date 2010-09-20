@@ -15,27 +15,21 @@
  */
 package jetbrains.mps.ide;
 
+import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
-import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
+import jetbrains.mps.findUsages.ProxyFindUsagesManager;
+import jetbrains.mps.ide.PerformanceSettings.MyState;
+import jetbrains.mps.workbench.actions.goTo.GoToNamedNodeAction;
+import jetbrains.mps.workbench.actions.goTo.GoToRootNodeAction;
+import jetbrains.mps.workbench.actions.imports.ImportHelper;
 import org.jetbrains.annotations.Nls;
 
 import javax.swing.*;
-
-import jetbrains.mps.ide.PerformanceSettings.MyState;
-import jetbrains.mps.workbench.actions.goTo.GoToRootNodeAction;
-import jetbrains.mps.workbench.actions.goTo.GoToNamedNodeAction;
-import jetbrains.mps.workbench.actions.imports.ImportHelper;
-import jetbrains.mps.findUsages.ProxyFindUsagesManager;
-
-import java.awt.GridLayout;
-import java.awt.BorderLayout;
-import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import java.awt.GridBagLayout;
 
 @State(
   name = "PerformanceSettings",

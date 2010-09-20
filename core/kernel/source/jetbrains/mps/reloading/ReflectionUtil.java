@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.reloading;
 
-import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.JavaNameUtil;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;

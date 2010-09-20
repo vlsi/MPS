@@ -15,18 +15,13 @@
  */
 package jetbrains.mps;
 
-import com.intellij.ide.license.LicenseManager;
 import com.intellij.idea.MainImpl;
-import com.intellij.openapi.application.PathManager;
-import jetbrains.mps.workbench.license.MPSLicenseManager;
 
 import java.lang.reflect.Method;
 
 public class MPSMainImpl {
   public static void start(final String[] args) {
     try {
-      LicenseManager.setInstance(new MPSLicenseManager());
-
       Class mainImplCls = MainImpl.class;
       Method method = mainImplCls.getDeclaredMethod("start", String[].class);
       method.setAccessible(true);

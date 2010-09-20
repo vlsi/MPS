@@ -120,7 +120,7 @@ public class WatchingRunNotifier extends DelegatingRunNotifier {
   }
 
   private void afterTest (Description desc) {
-    threadWatcher.waitUntilSettled(5000);
+    threadWatcher.waitUntilSettled(15000);
     
     disposeCaches();
 

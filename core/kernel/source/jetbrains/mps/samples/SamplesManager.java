@@ -31,13 +31,13 @@ public class SamplesManager {
 
   }
 
-  public void registerSamplesInfo(SamplesInfo component){
+  public void registerSamplesInfo(SamplesInfo component) {
     myComponents.add(component);
   }
 
-  public List<String> getSamplesPaths(){
-    List<String> result  = new ArrayList<String>();
-    for (SamplesInfo info:myComponents){
+  public List<String> getSamplesPaths() {
+    List<String> result = new ArrayList<String>();
+    for (SamplesInfo info : myComponents) {
       result.add(info.getSamplesPath());
     }
     return result;

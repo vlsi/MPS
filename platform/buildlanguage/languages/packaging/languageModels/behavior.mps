@@ -37,7 +37,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
-  <maxImportIndex value="22" />
+  <maxImportIndex value="23" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="7" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -53,6 +53,7 @@
   <import index="18" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="20" modelUID="f:java_stub#jetbrains.mps.lang.structure.editor(jetbrains.mps.lang.structure.editor@java_stub)" version="-1" />
   <import index="21" modelUID="f:java_stub#org.apache.commons.lang(org.apache.commons.lang@java_stub)" version="-1" />
+  <import index="23" modelUID="f:java_stub#jetbrains.mps.generator.cache(jetbrains.mps.generator.cache@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877173053">
     <property name="package" value="variables" />
     <link role="concept" targetNodeId="1.1205339194346:7" resolveInfo="IStringExpression" />
@@ -3379,22 +3380,22 @@
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7250370422265908620">
             <property name="name:3" value="caches" />
             <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="627603934122280945">
-              <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="627603934122280946">
-                <link role="classifier:3" targetNodeId="15.~BaseModelCache" resolveInfo="BaseModelCache" />
+              <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6680694810768402054">
+                <link role="classifier:3" targetNodeId="23.~BaseModelCache" resolveInfo="BaseModelCache" />
               </node>
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="7250370422265908625">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit:7" id="627603934122280983">
-                <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="627603934122280984">
-                  <link role="classifier:3" targetNodeId="15.~BaseModelCache" resolveInfo="BaseModelCache" />
+                <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6680694810768402081">
+                  <link role="classifier:3" targetNodeId="23.~BaseModelCache" resolveInfo="BaseModelCache" />
                 </node>
                 <node role="copyFrom:7" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="627603934122281021">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="627603934122281022">
-                    <link role="baseMethodDeclaration:3" targetNodeId="15.~AllCaches.getInstance():jetbrains.mps.generator.fileGenerator.AllCaches" resolveInfo="getInstance" />
-                    <link role="classConcept:3" targetNodeId="15.~AllCaches" resolveInfo="AllCaches" />
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6680694810768402096">
+                    <link role="baseMethodDeclaration:3" targetNodeId="23.~AllCaches.getInstance():jetbrains.mps.generator.cache.AllCaches" resolveInfo="getInstance" />
+                    <link role="classConcept:3" targetNodeId="23.~AllCaches" resolveInfo="AllCaches" />
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="627603934122281023">
-                    <link role="baseMethodDeclaration:3" targetNodeId="15.~AllCaches.getCaches():java.util.Set" resolveInfo="getCaches" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="23.~AllCaches.getCaches():java.util.Set" resolveInfo="getCaches" />
                   </node>
                 </node>
               </node>
@@ -3430,7 +3431,7 @@
                     <link role="variableDeclaration:3" targetNodeId="627603934122280648" resolveInfo="cache" />
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8715456793545854801">
-                    <link role="baseMethodDeclaration:3" targetNodeId="15.~BaseModelCache.getCachesDirs(jetbrains.mps.project.IModule):java.util.List" resolveInfo="getCachesDirs" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="23.~BaseModelCache.getCachesDirs(jetbrains.mps.project.IModule):java.util.List" resolveInfo="getCachesDirs" />
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8715456793545854802">
                       <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="8715456793545854803" />
                       <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="8715456793545854804">
@@ -3492,8 +3493,8 @@
           </node>
           <node role="variable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="627603934122280648">
             <property name="name:3" value="cache" />
-            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="627603934122280682">
-              <link role="classifier:3" targetNodeId="15.~BaseModelCache" resolveInfo="BaseModelCache" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6680694810768402113">
+              <link role="classifier:3" targetNodeId="23.~BaseModelCache" resolveInfo="BaseModelCache" />
             </node>
           </node>
         </node>

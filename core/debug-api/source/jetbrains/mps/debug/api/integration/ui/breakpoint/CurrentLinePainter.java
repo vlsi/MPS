@@ -23,7 +23,6 @@ import org.jetbrains.annotations.NotNull;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Image;
 import java.awt.Rectangle;
 
 public class CurrentLinePainter extends EditorCellPainter<SNode> {

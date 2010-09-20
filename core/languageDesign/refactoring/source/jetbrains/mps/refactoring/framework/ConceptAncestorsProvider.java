@@ -15,14 +15,13 @@
  */
 package jetbrains.mps.refactoring.framework;
 
-import jetbrains.mps.lang.structure.structure.InterfaceConceptReference;
-import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.InterfaceConceptReference;
+import jetbrains.mps.smodel.INodeAdapter;
 
-import java.util.Set;
 import java.util.HashSet;
+import java.util.Set;
 
 public class ConceptAncestorsProvider implements IDescendantsProvider {
   public Set<INodeAdapter> getDescendants(INodeAdapter nodeAdapter) {

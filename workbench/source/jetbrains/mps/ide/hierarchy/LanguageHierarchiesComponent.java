@@ -313,7 +313,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
 
   @Nullable
   public Object getData(@NonNls String dataId) {
-    if (dataId.equals(MPSDataKeys.NODE.getName())){
+    if (dataId.equals(MPSDataKeys.NODE.getName())) {
       return ModelAccess.instance().runReadAction(new Computable<Object>() {
         public Object compute() {
           return getSelectedConcept().getNode();

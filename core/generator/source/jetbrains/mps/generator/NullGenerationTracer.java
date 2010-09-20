@@ -13,6 +13,8 @@ import java.util.List;
  */
 public class NullGenerationTracer implements IGenerationTracer {
 
+  public final static IGenerationTracer INSTANCE = new NullGenerationTracer();
+
   @Override
   public void pushInputNode(SNode node) {
   }

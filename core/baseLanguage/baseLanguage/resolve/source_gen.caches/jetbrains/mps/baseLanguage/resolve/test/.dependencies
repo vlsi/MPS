@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.baseLanguage.resolve.test.ABC" file="ABC.java">
+    <classNode dependClassName="java.lang.IndexOutOfBoundsException" />
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.resolve.test.ABCV" file="ABCV.java" />
+  <dependency className="jetbrains.mps.baseLanguage.resolve.test.ExtractSample" file="ExtractSample.java">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.regex.Matcher" />
+    <classNode dependClassName="java.util.regex.Pattern" />
+    <classNode extendsClassName="java.util.Comparator" />
+  </dependency>
+</dependenciesRoot>
+

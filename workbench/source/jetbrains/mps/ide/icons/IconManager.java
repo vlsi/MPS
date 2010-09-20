@@ -297,7 +297,7 @@ public class IconManager {
       }
 
       icon = new ImageIcon(image);
-      if ((icon.getImageLoadStatus() &  IMAGE_LOADED) == 0) {
+      if ((icon.getImageLoadStatus() & IMAGE_LOADED) == 0) {
         icon = null;
       }
     }
@@ -317,49 +317,49 @@ public class IconManager {
   }
 
   public static Icon getIconForAspect(LanguageAspect aspect) {
-    if(LanguageAspect.ACTIONS.equals(aspect)) {
+    if (LanguageAspect.ACTIONS.equals(aspect)) {
       return Icons.ACTIONS_MODEL_ICON;
 
-    } else if(LanguageAspect.BEHAVIOR.equals(aspect)) {
+    } else if (LanguageAspect.BEHAVIOR.equals(aspect)) {
       return Icons.BEHAVIOR_MODEL_ICON;
 
-    } else if(LanguageAspect.CONSTRAINTS.equals(aspect)) {
+    } else if (LanguageAspect.CONSTRAINTS.equals(aspect)) {
       return Icons.CONSTRAINTS_MODEL_ICON;
 
-    } else if(LanguageAspect.DATA_FLOW.equals(aspect)) {
+    } else if (LanguageAspect.DATA_FLOW.equals(aspect)) {
       return Icons.DATA_FLOW_MODEL_ICON;
 
-    } else if(LanguageAspect.EDITOR.equals(aspect)) {
+    } else if (LanguageAspect.EDITOR.equals(aspect)) {
       return Icons.EDITOR_MODEL_ICON;
 
-    } else if(LanguageAspect.FIND_USAGES.equals(aspect)) {
+    } else if (LanguageAspect.FIND_USAGES.equals(aspect)) {
       return Icons.FIND_USAGES_MODEL_ICON;
 
-    } else if(LanguageAspect.INTENTIONS.equals(aspect)) {
+    } else if (LanguageAspect.INTENTIONS.equals(aspect)) {
       return Icons.INTENTIONS_MODEL_ICON;
 
-    } else if(LanguageAspect.PLUGIN.equals(aspect)) {
+    } else if (LanguageAspect.PLUGIN.equals(aspect)) {
       return Icons.PLUGIN_MODEL_ICON;
 
-    } else if(LanguageAspect.REFACTORINGS.equals(aspect)) {
+    } else if (LanguageAspect.REFACTORINGS.equals(aspect)) {
       return Icons.REFACTORINGS_MODEL_ICON;
 
-    } else if(LanguageAspect.SCRIPTS.equals(aspect)) {
+    } else if (LanguageAspect.SCRIPTS.equals(aspect)) {
       // no icon
 
-    } else if(LanguageAspect.STRUCTURE.equals(aspect)) {
+    } else if (LanguageAspect.STRUCTURE.equals(aspect)) {
       return Icons.STRUCTURE_MODEL_ICON;
 
-    } else if(LanguageAspect.STUBS.equals(aspect)) {
+    } else if (LanguageAspect.STUBS.equals(aspect)) {
       return Icons.STUBS_MODEL_ICON;
 
-    } else if(LanguageAspect.TEST.equals(aspect)) {
+    } else if (LanguageAspect.TEST.equals(aspect)) {
       return Icons.TEST_MODEL_ICON;
 
-    } else if(LanguageAspect.TEXT_GEN.equals(aspect)) {
+    } else if (LanguageAspect.TEXT_GEN.equals(aspect)) {
       return Icons.TEXT_GEN_MODEL_ICON;
 
-    } else if(LanguageAspect.TYPESYSTEM.equals(aspect)) {
+    } else if (LanguageAspect.TYPESYSTEM.equals(aspect)) {
       return Icons.TYPESYSTEM_MODEL_ICON;
     }
     return Icons.MODEL_ICON;

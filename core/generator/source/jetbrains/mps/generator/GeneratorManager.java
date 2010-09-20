@@ -17,11 +17,10 @@ package jetbrains.mps.generator;
 
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.cleanup.CleanupManager;
-import jetbrains.mps.generator.fileGenerator.vcs.FileProcessor;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.impl.GenerationController;
-import jetbrains.mps.generator.impl.GenerationProcessContext;
 import jetbrains.mps.generator.impl.GeneratorLoggerAdapter;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.lang.generator.plugin.debug.GenerationTracer;
@@ -30,8 +29,8 @@ import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.util.Pair;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,49 +64,14 @@ public class GeneratorManager {
   /**
    * @return false if canceled
    */
-  @Deprecated
   public boolean generateModels(final List<SModelDescriptor> inputModels,
                                 final IOperationContext invocationContext,
-                                final IGenerationHandler generationHandler,
-                                final ProgressIndicator progress,
-                                final IMessageHandler messages,
-                                boolean saveTransientModels) {
-    return generateModels(inputModels, invocationContext, generationHandler, progress, messages, saveTransientModels, true);
-  }
-
-  /**
-   * @return false if canceled
-   */
-  public boolean generateModels(final List<SModelDescriptor> inputModels,
-                                final IOperationContext invocationContext,
-                                final IGenerationHandler generationHandler,
-                                final ProgressIndicator progress,
-                                final IMessageHandler messages,
-                                boolean saveTransientModels,
-                                boolean rebuildAll) {
-    List<Pair<SModelDescriptor, IOperationContext>> inputModelPairs = new ArrayList<Pair<SModelDescriptor, IOperationContext>>();
-    for (SModelDescriptor model : inputModels) {
-      inputModelPairs.add(new Pair<SModelDescriptor, IOperationContext>(model, invocationContext));
-    }
-    return generateModels(
-      inputModelPairs,
-      generationHandler,
-      progress,
-      messages,
-      saveTransientModels,
-      rebuildAll);
-  }
-
-  /**
-   * @return false if canceled
-   */
-  public boolean generateModels(final List<Pair<SModelDescriptor, IOperationContext>> inputModels,
                                 final IGenerationHandler generationHandler,
                                 final ProgressIndicator progress,
                                 final IMessageHandler messages,
                                 final boolean saveTransientModels,
-                                final boolean rebuildAll
-  ) {
+                                final boolean rebuildAll) {
+
     final boolean[] result = new boolean[1];
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
@@ -121,44 +85,48 @@ public class GeneratorManager {
           : new NullGenerationTracer();
         tracer.startTracing();
 
-        fireBeforeGeneration(inputModels);
-
         GenerationSettings settings = GenerationSettings.getInstance();
 
-        GenerationProcessContext parameters = new GenerationProcessContext(
-          saveTransientModels, settings.isParallelGenerator(), settings.isStrictMode(), rebuildAll, settings.isGenerateDependencies(),
-          !settings.isShowWarnings() && !settings.isShowInfo(),
-          progress, tracer, settings.getNumberOfParallelThreads(), settings.getPerformanceTracingLevel());
+        GenerationOptions options = new GenerationOptions(
+          settings.isStrictMode(), saveTransientModels, rebuildAll, settings.isGenerateDependencies(), !settings.isShowWarnings() && !settings.isShowInfo(), settings.isParallelGenerator(),
+          settings.getNumberOfParallelThreads(), settings.getPerformanceTracingLevel(), tracer);
+
+        fireBeforeGeneration(inputModels, options, invocationContext);
 
         GeneratorLoggerAdapter logger = new GeneratorLoggerAdapter(messages, settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings());
 
-        GenerationController gc = new GenerationController(parameters, new GeneratorNotifierHelper(), inputModels, logger, generationHandler);
-        result[0] = gc.generate();
+        final GenerationController gc = new GenerationController(inputModels, options, generationHandler, new GeneratorNotifierHelper(), logger, invocationContext, progress);
+        result[0] = UndoHelper.getInstance().runNonUndoableAction(new Computable<Boolean>() {
+          @Override
+          public Boolean compute() {
+            return gc.generate();
+          }
+        });
         tracer.finishTracing();
-        fireAfterGeneration(inputModels);
+        fireAfterGeneration(inputModels, options, invocationContext);
 
         myProject.getComponent(TransientModelsModule.class).publishAll();
         CleanupManager.getInstance().cleanup();
       }
     });
-    FileProcessor.invoke();
+    generationHandler.generationCompleted();
     return result[0];
   }
 
-  private void fireBeforeGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
+  private void fireBeforeGeneration(List<SModelDescriptor> inputModels, GenerationOptions options, IOperationContext operationContext) {
     for (GenerationListener l : myGenerationListeners) {
       try {
-        l.beforeGeneration(inputModels);
+        l.beforeGeneration(inputModels, options, operationContext);
       } catch (Throwable t) {
         LOG.error(t);
       }
     }
   }
 
-  private void fireAfterGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
+  private void fireAfterGeneration(List<SModelDescriptor> inputModels, GenerationOptions options, IOperationContext operationContext) {
     for (GenerationListener l : myGenerationListeners) {
       try {
-        l.afterGeneration(inputModels);
+        l.afterGeneration(inputModels, options, operationContext);
       } catch (Throwable t) {
         LOG.error(t);
       }
@@ -167,7 +135,7 @@ public class GeneratorManager {
 
   public class GeneratorNotifierHelper {
 
-    public void fireModelsGenerated(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
+    public void fireModelsGenerated(List<SModelDescriptor> models, boolean success) {
       for (GenerationListener l : myGenerationListeners) {
         try {
           l.modelsGenerated(models, success);
@@ -177,7 +145,7 @@ public class GeneratorManager {
       }
     }
 
-    public void fireBeforeModelsCompiled(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
+    public void fireBeforeModelsCompiled(List<SModelDescriptor> models, boolean success) {
       for (CompilationListener l : myCompilationListeners) {
         try {
           l.beforeModelsCompiled(models, success);
@@ -187,7 +155,7 @@ public class GeneratorManager {
       }
     }
 
-    public void fireAfterModelsCompiled(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
+    public void fireAfterModelsCompiled(List<SModelDescriptor> models, boolean success) {
       for (CompilationListener l : myCompilationListeners) {
         try {
           l.afterModelsCompiled(models, success);

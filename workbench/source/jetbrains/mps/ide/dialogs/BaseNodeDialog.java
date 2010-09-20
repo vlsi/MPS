@@ -22,6 +22,7 @@ import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.util.JSplitPaneWithoutBorders;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.UIEditorComponent;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
@@ -29,7 +30,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.ide.util.JSplitPaneWithoutBorders;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;

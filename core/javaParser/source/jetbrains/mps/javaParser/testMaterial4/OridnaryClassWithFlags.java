@@ -24,6 +24,7 @@ package jetbrains.mps.javaParser.testMaterial4;
  */
 public class OridnaryClassWithFlags {
   public static final boolean FLAG = false;
+
   public static void foo() {
     int count = FLAG ? 1 : 0;
     for (int i = count; i < 5; i++) {

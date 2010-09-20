@@ -19,8 +19,6 @@ import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
 import jetbrains.mps.smodel.SNode;
 
 import java.awt.Color;
-import java.awt.Image;
-import java.awt.event.MouseListener;
 
 /**
  * Created by IntelliJ IDEA.

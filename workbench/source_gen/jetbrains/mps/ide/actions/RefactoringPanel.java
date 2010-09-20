@@ -109,7 +109,7 @@ public class RefactoringPanel {
     IRefactoring refactoring = refactoringContext.getRefactoring();
     String name = refactoring.getUserFriendlyName();
     if (name == null) {
-      component.add(new JLabel("<html><i>Broken refactofing</i></html>"), gridBagConstraints);
+      component.add(new JLabel("<html><i>Broken refactoring</i></html>"), gridBagConstraints);
       return;
     }
     JComponent itemPanel = new JPanel(new GridLayout(1, 3));

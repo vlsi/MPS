@@ -22,7 +22,6 @@ import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.IdeFocusManager;
@@ -34,7 +33,6 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.ColorAndGraphicsUtil;
-import jetbrains.mps.workbench.MPSDataKeys;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
 
@@ -45,7 +43,9 @@ import javax.swing.event.TreeWillExpandListener;
 import javax.swing.plaf.basic.BasicGraphicsUtils;
 import javax.swing.tree.*;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.*;
 import java.util.List;
 
@@ -323,7 +323,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     JPopupMenu defaultMenu = createDefaultPopupMenu();
     if (defaultMenu == null) return;
     defaultMenu.show(this, x, y);
-    }
+  }
 
   @Nullable
   public Comparator<Object> getChildrenComparator() {

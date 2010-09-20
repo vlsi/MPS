@@ -20,7 +20,7 @@ public interface IGeneratorLogger {
   void warning(SNode node, String message, ProblemDescription... descriptions);
 
   void error(String message);
-  
+
   void error(SNode node, String message, ProblemDescription... descriptions);
 
   void handleException(Throwable t);

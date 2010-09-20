@@ -23,5 +23,5 @@ package jetbrains.mps.javaParser.testMaterial5;
  * To change this template use File | Settings | File Templates.
  */
 public enum OrdinaryEnum2 {
-  A,B,C,D
+  A, B, C, D
 }

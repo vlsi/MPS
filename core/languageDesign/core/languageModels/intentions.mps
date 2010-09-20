@@ -557,7 +557,7 @@
             </node>
             <node role="ifFalse:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="4075196924244344465">
               <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4075196924244344468">
-                <property name="value:3" value=") Annotation" />
+                <property name="value:3" value=" Annotation" />
               </node>
               <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="4075196924244438702">
                 <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4075196924244438713">
@@ -570,7 +570,7 @@
                   </node>
                 </node>
                 <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4075196924244344464">
-                  <property name="value:3" value="Set @export(" />
+                  <property name="value:3" value="Set " />
                 </node>
               </node>
             </node>

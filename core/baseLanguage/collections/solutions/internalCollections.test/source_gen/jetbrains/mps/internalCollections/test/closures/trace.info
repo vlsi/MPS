@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="Runtime_Test.java" startLine="8" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.Runtime_Test" />
+  <unitInfo fileName="RemoveWhereTest_Test.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.RemoveWhereTest_Test" />
+  <unitInfo fileName="ForEach_Test.java" startLine="9" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.ForEach_Test" />
+  <unitInfo fileName="Where_Test.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.Where_Test" />
+  <unitInfo fileName="ChainedOperations_Test.java" startLine="14" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.ChainedOperations_Test" />
+  <unitInfo fileName="Advanced_Test.java" startLine="10" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.Advanced_Test" />
+  <unitInfo fileName="Util_Test.java" startLine="15" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.Util_Test" />
+  <unitInfo fileName="Sort_Test.java" startLine="15" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.Sort_Test" />
+  <unitInfo fileName="VisitAll_Test.java" startLine="17" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.VisitAll_Test" />
+  <unitInfo fileName="SelectTest_Test.java" startLine="18" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.SelectTest_Test" />
+  <unitInfo fileName="ReduceFold_Test.java" startLine="12" startPosition="0" endLine="147" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.ReduceFold_Test" />
+  <unitInfo fileName="Find_Test.java" startLine="14" startPosition="0" endLine="229" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.Find_Test" />
+  <unitInfo fileName="Mapper_Test.java" startLine="19" startPosition="0" endLine="634" endPosition="0" unitName="jetbrains.mps.internalCollections.test.closures.Mapper_Test" />
   <root nodeId="1203180268870">
     <nodeInfo nodeId="1203883107824" fileName="Where_Test.java" startLine="17" startPosition="51" endLine="18" endPosition="66" />
     <nodeInfo nodeId="1203883121582" fileName="Where_Test.java" startLine="20" startPosition="41" endLine="21" endPosition="27" />
@@ -41,6 +54,7 @@
     <scopeInfo nodeId="3343985444902960476" fileName="Where_Test.java" startLine="42" startPosition="41" endLine="43" endPosition="27" />
     <scopeInfo nodeId="3343985444902960511" fileName="Where_Test.java" startLine="47" startPosition="41" endLine="48" endPosition="27" />
     <scopeInfo nodeId="1241360757813" fileName="Where_Test.java" startLine="56" startPosition="40" endLine="57" endPosition="26" />
+    <scopeInfo nodeId="1241360792896" fileName="Where_Test.java" startLine="67" startPosition="0" endLine="68" endPosition="28" />
     <scopeInfo nodeId="1241360792896" fileName="Where_Test.java" startLine="67" startPosition="40" endLine="68" endPosition="28" />
     <scopeInfo nodeId="1241360792896" fileName="Where_Test.java" startLine="64" startPosition="9" endLine="66" endPosition="20" />
     <scopeInfo nodeId="1203883107838" fileName="Where_Test.java" startLine="19" startPosition="69" endLine="23" endPosition="0" />
@@ -955,6 +969,7 @@
     <scopeInfo nodeId="1204793880608" fileName="Util_Test.java" startLine="97" startPosition="41" endLine="98" endPosition="34" />
     <scopeInfo nodeId="1204981312412" fileName="Util_Test.java" startLine="101" startPosition="43" endLine="102" endPosition="41" />
     <scopeInfo nodeId="1241362803926" fileName="Util_Test.java" startLine="106" startPosition="29" endLine="107" endPosition="38" />
+    <scopeInfo nodeId="1241362803936" fileName="Util_Test.java" startLine="113" startPosition="0" endLine="114" endPosition="28" />
     <scopeInfo nodeId="1241362803936" fileName="Util_Test.java" startLine="113" startPosition="40" endLine="114" endPosition="28" />
     <scopeInfo nodeId="1241362803936" fileName="Util_Test.java" startLine="110" startPosition="9" endLine="112" endPosition="20" />
     <scopeInfo nodeId="1205510374413" fileName="Util_Test.java" startLine="31" startPosition="35" endLine="34" endPosition="5">

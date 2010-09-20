@@ -7189,23 +7189,6 @@
                     <link role="variableDeclaration:3" targetNodeId="9027273598492312154" resolveInfo="blocks" />
                   </node>
                   <node role="body:7" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="9027273598492312178">
-                    <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="9027273598492312217">
-                      <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="9027273598492312218">
-                        <property name="name:3" value="blockParent" />
-                        <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="9027273598492312219">
-                          <link role="concept:16" targetNodeId="1.1203598300291:7" resolveInfo="AbstractProjectComponent" />
-                        </node>
-                        <node role="initializer:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="9027273598492312220">
-                          <link role="concept:16" targetNodeId="1.1203598300291:7" resolveInfo="AbstractProjectComponent" />
-                          <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="9027273598492312221">
-                            <node role="operand:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="9027273598492312222">
-                              <link role="variable:7" targetNodeId="9027273598492312176" resolveInfo="blockRef" />
-                            </node>
-                            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation:16" id="9027273598492312223" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
                     <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="9027273598492312283">
                       <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="9027273598492312284">
                         <property name="name:3" value="block" />
@@ -7287,6 +7270,32 @@
                           <link role="variable:7" targetNodeId="9027273598492312176" resolveInfo="blockRef" />
                         </node>
                         <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation:16" id="4062013737451938752" />
+                      </node>
+                    </node>
+                    <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="8431776905956582046">
+                      <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8431776905956582047">
+                        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="8431776905956588382">
+                          <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="8431776905956588383">
+                            <property name="text:3" value="we do not want blocks to be generated, so if they are in generated model we delete them" />
+                          </node>
+                        </node>
+                        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8431776905956582060">
+                          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8431776905956582062">
+                            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8431776905956582061">
+                              <link role="variableDeclaration:3" targetNodeId="9027273598492312284" resolveInfo="block" />
+                            </node>
+                            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation:16" id="8431776905956582066" />
+                          </node>
+                        </node>
+                      </node>
+                      <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression:3" id="8431776905956582056">
+                        <node role="rightExpression:3" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model:0" id="8431776905956582059" />
+                        <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8431776905956582051">
+                          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8431776905956582050">
+                            <link role="variableDeclaration:3" targetNodeId="9027273598492312284" resolveInfo="block" />
+                          </node>
+                          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation:16" id="8431776905956582055" />
+                        </node>
                       </node>
                     </node>
                   </node>

@@ -20,10 +20,10 @@ import com.intellij.openapi.util.Pair;
 import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioner;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
-import jetbrains.mps.messages.Message;
-import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.lang.generator.structure.MappingConfiguration;
+import jetbrains.mps.messages.Message;
+import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.*;
@@ -102,7 +102,7 @@ public class PartitioningHelper {
 
     // other
     List<SNode> roots = new ArrayList<SNode>();
-    for(SModelDescriptor md : models) {
+    for (SModelDescriptor md : models) {
       SModel model = md.getSModel();
       for (SNode root : model.getRoots()) {
         roots.add(root);

@@ -39,8 +39,8 @@ abstract class AbstractWatchableNode extends MPSTreeNode {
     if (project != null && context != null) {
       ModelAccess.instance().executeCommand(new Runnable() {
         public void run() {
-            MPSEditorOpener opener = project.getComponent(MPSEditorOpener.class);
-            assert opener != null;
+          MPSEditorOpener opener = project.getComponent(MPSEditorOpener.class);
+          assert opener != null;
           opener.openNode(myNode, context, focus, select);
         }
       });

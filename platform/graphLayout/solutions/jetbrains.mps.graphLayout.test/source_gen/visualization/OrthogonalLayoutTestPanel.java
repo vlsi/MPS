@@ -5,10 +5,11 @@ package visualization;
 import javax.swing.JPanel;
 import java.awt.Dimension;
 import javax.swing.JTextArea;
-import jetbrains.mps.graphLayout.stOrthogonalLayout.RectOrthogonalLayouter;
+import jetbrains.mps.graphLayout.flowOrthogonalLayout.OrthogonalFlowLayouter;
 import jetbrains.mps.graphLayout.graphLayout.GraphLayout;
 import javax.swing.JTextField;
 import java.awt.GridBagLayout;
+import jetbrains.mps.graphLayout.stOrthogonalLayout.RectOrthogonalLayouter;
 import java.awt.GridBagConstraints;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -36,13 +37,13 @@ import java.awt.Graphics;
 
 public class OrthogonalLayoutTestPanel extends JPanel {
   private static Dimension FRAME_DIMENSION = new Dimension(800, 600);
-  private static final int DEFAULT_NODE_SIZE = 40;
+  private static final int DEFAULT_NODE_SIZE = 30;
   private static final int DEFAULT_EDGE_X_SIZE = 50;
   private static final int DEFAULT_EDGE_Y_SIZE = 20;
 
   private JTextArea myTextArea;
   private OrthogonalLayoutTestPanel.MyGraphLabel myGraphLabel;
-  private RectOrthogonalLayouter myLayouter;
+  private OrthogonalFlowLayouter myLayouter;
   private LayoutPainter myPainter;
   private GraphLayout myCurrentLayout;
   private JTextField myNumEdgesField;
@@ -56,8 +57,13 @@ public class OrthogonalLayoutTestPanel extends JPanel {
     createLayoutChoiceButtons();
     createTextPanel();
     createGraphPanel();
-    myLayouter = new RectOrthogonalLayouter();
-    myLayouter.setEdgeDistance(20);
+    /*
+      myLayouter = new RectOrthogonalLayouter();
+    */
+    myLayouter = new OrthogonalFlowLayouter();
+    /*
+      myLayouter.setEdgeDistance(20);
+    */
     myCurrentLayout = null;
     myPainter = new LayoutPainter();
   }
@@ -92,7 +98,7 @@ public class OrthogonalLayoutTestPanel extends JPanel {
           int numNodes = Integer.parseInt(myNumNodesField.getText());
           int numEdges = Integer.parseInt(myNumEdgesField.getText());
           Graph g;
-          g = RandomGraphGenerator.generateSimple(numNodes, numEdges);
+          g = RandomGraphGenerator.generateSimpleConnectedGraph(numNodes, numEdges);
           writeGraph(g);
         } catch (Exception e) {
           JOptionPane.showMessageDialog(OrthogonalLayoutTestPanel.this, "enter number of nodes and edges...\n" + e.toString());
@@ -131,7 +137,9 @@ public class OrthogonalLayoutTestPanel extends JPanel {
   }
 
   private void layoutGraph() {
-    myLayouter.setLayoutLevel(myLayoutChoice.getSelectedLayoutLavel());
+    /*
+      myLayouter.setLayoutLevel(myLayoutChoice.getSelectedLayoutLavel());
+    */
     Scanner scanner = new Scanner(myTextArea.getText());
     Map<Node, Dimension> nodeDimensions = MapSequence.fromMap(new HashMap<Node, Dimension>());
     Map<Edge, Dimension> edgeDimensions = MapSequence.fromMap(new HashMap<Edge, Dimension>());
@@ -170,7 +178,7 @@ public class OrthogonalLayoutTestPanel extends JPanel {
           }
         }
       }
-      myCurrentLayout = myLayouter.doLayout(g, nodeDimensions, edgeDimensions);
+      myCurrentLayout = myLayouter.doLayout(g, nodeDimensions);
     }
   }
 
