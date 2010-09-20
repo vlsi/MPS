@@ -13250,7 +13250,7 @@
               <link role="variableDeclaration:3" targetNodeId="6689774051117081799" resolveInfo="traceInfoManager" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6689774051117067077">
-              <link role="baseMethodDeclaration:3" targetNodeId="95.~TraceInfoManager.addTracebleConcept(java.lang.String):void" resolveInfo="addTracebleConcept" />
+              <link role="baseMethodDeclaration:3" targetNodeId="95.~TraceInfoManager.addTraceableConcept(java.lang.String):void" resolveInfo="addTraceableConcept" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="6689774051117067078">
                 <property name="value:3" value="" />
                 <node role="propertyMacro$property_attribute$value:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="6689774051117067079">
@@ -13575,7 +13575,7 @@
               <link role="variableDeclaration:3" targetNodeId="6689774051117081793" resolveInfo="traceInfoManager" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6689774051117081771">
-              <link role="baseMethodDeclaration:3" targetNodeId="95.~TraceInfoManager.removeTracebleConcept(java.lang.String):void" resolveInfo="removeTracebleConcept" />
+              <link role="baseMethodDeclaration:3" targetNodeId="95.~TraceInfoManager.removeTraceableConcept(java.lang.String):void" resolveInfo="removeTraceableConcept" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="6689774051117081772">
                 <property name="value:3" value="" />
                 <node role="propertyMacro$property_attribute$value:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="6689774051117081773">

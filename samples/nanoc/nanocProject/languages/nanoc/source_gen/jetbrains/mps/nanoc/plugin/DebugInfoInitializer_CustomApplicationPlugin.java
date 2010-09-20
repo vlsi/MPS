@@ -29,7 +29,7 @@ public class DebugInfoInitializer_CustomApplicationPlugin extends BaseCustomAppl
     });
 
     TraceInfoManager traceInfoManager = TraceInfoManager.getInstance();
-    traceInfoManager.addTracebleConcept("jetbrains.mps.nanoc.structure.CStatement");
+    traceInfoManager.addTraceableConcept("jetbrains.mps.nanoc.structure.CStatement");
     BreakpointManagerComponent.notifyDebuggableConceptsAdded();
   }
 
@@ -38,6 +38,6 @@ public class DebugInfoInitializer_CustomApplicationPlugin extends BaseCustomAppl
     manager.removeConceptBreakpointCreator("jetbrains.mps.nanoc.structure.CStatement");
 
     TraceInfoManager traceInfoManager = TraceInfoManager.getInstance();
-    traceInfoManager.removeTracebleConcept("jetbrains.mps.nanoc.structure.CStatement");
+    traceInfoManager.removeTraceableConcept("jetbrains.mps.nanoc.structure.CStatement");
   }
 }

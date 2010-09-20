@@ -60,6 +60,7 @@ public class StacktraceUtil {
     opener.editNode(node, operationContext);
   }
 
+  @Deprecated
   public static ConsoleViewImpl createConsoleView(Project project) {
     ConsoleViewImpl result = new ConsoleViewImpl(project, false);
     result.addMessageFilter(new StacktraceUtil.StackTraceFilter());

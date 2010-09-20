@@ -51,10 +51,10 @@ public class DebugInfoInitializer_CustomApplicationPlugin extends BaseCustomAppl
     });
 
     TraceInfoManager traceInfoManager = TraceInfoManager.getInstance();
-    traceInfoManager.addTracebleConcept("jetbrains.mps.baseLanguage.structure.Statement");
-    traceInfoManager.addTracebleConcept("jetbrains.mps.baseLanguage.structure.FieldDeclaration");
-    traceInfoManager.addTracebleConcept("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
-    traceInfoManager.addTracebleConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+    traceInfoManager.addTraceableConcept("jetbrains.mps.baseLanguage.structure.Statement");
+    traceInfoManager.addTraceableConcept("jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+    traceInfoManager.addTraceableConcept("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
+    traceInfoManager.addTraceableConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
     traceInfoManager.addScopeConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", new Mapper<SNode, List<SNode>>() {
       public List<SNode> value(SNode scopeNode) {
         return SLinkOperations.getTargets(scopeNode, "parameter", true);
@@ -128,10 +128,10 @@ public class DebugInfoInitializer_CustomApplicationPlugin extends BaseCustomAppl
     manager.removeConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
 
     TraceInfoManager traceInfoManager = TraceInfoManager.getInstance();
-    traceInfoManager.removeTracebleConcept("jetbrains.mps.baseLanguage.structure.Statement");
-    traceInfoManager.removeTracebleConcept("jetbrains.mps.baseLanguage.structure.FieldDeclaration");
-    traceInfoManager.removeTracebleConcept("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
-    traceInfoManager.removeTracebleConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+    traceInfoManager.removeTraceableConcept("jetbrains.mps.baseLanguage.structure.Statement");
+    traceInfoManager.removeTraceableConcept("jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+    traceInfoManager.removeTraceableConcept("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
+    traceInfoManager.removeTraceableConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
     traceInfoManager.removeScopeConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
     traceInfoManager.removeScopeConcept("jetbrains.mps.baseLanguage.structure.StatementList");
     traceInfoManager.removeScopeConcept("jetbrains.mps.baseLanguage.structure.ForeachStatement");

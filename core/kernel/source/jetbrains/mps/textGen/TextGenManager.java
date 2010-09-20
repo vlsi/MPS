@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.textGen;
 
-import jetbrains.mps.debug.api.info.PositionInfo;
-import jetbrains.mps.debug.api.info.ScopePositionInfo;
-import jetbrains.mps.debug.api.info.UnitPositionInfo;
+import jetbrains.mps.traceInfo.PositionInfo;
+import jetbrains.mps.traceInfo.ScopePositionInfo;
+import jetbrains.mps.traceInfo.UnitPositionInfo;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
@@ -125,7 +125,7 @@ public class TextGenManager {
       info.setEndLine(buffer.getLineNumber());
       info.setEndPosition(buffer.getPosition());
 
-      if (TraceInfoManager.getInstance().isTracebleNode(node)) {
+      if (TraceInfoManager.getInstance().isTraceableNode(node)) {
         myPositions.put(node, info);
       }
       if (TraceInfoManager.getInstance().isScopeNode(node)) {

@@ -563,8 +563,8 @@
       <zipfileset dir="core/devkits" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
     </jar>
   </target>
-  <target name="pack.jetbrains.mps.debug.api.info_f5a">
-    <jar destfile="${deploy.dir}/MPS/core/jetbrains.mps.debug.api.info.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+  <target name="pack.jetbrains.mps.traceInfo_f5a">
+    <jar destfile="${deploy.dir}/MPS/core/jetbrains.mps.traceInfo.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/jetbrains.mps.debug.api.info.msd" prefix="module" />
       <zipfileset dir="core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
     </jar>
