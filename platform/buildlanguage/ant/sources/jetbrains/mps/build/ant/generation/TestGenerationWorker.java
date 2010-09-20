@@ -17,7 +17,6 @@ package jetbrains.mps.build.ant.generation;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.TestMain;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch;
 import jetbrains.mps.build.ant.IBuildServerMessageFormat;
@@ -110,7 +109,15 @@ public class TestGenerationWorker extends GeneratorWorker {
     for (File file : mpsProjects.keySet()) {
       if (!file.getName().endsWith(MPSExtentions.DOT_MPS_PROJECT)) continue;
 
-      final MPSProject p = TestMain.loadProject(file);
+      MPSProject p;
+      try {
+        Class<?> cls = Class.forName("jetbrains.mps.TestMain");
+        Method meth = cls.getMethod("loadProject", File.class);
+        p = (MPSProject) meth.invoke(null, file);
+      }
+      catch (Exception ex) {
+        throw new RuntimeException(ex);
+      }
       info("Loaded project " + p);
 
       executeTask(p, new ObjectsToProcess(Collections.singleton(p), new java.util.HashSet<IModule>(), new java.util.HashSet<SModelDescriptor>()));

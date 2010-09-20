@@ -15,34 +15,25 @@
  */
 package jetbrains.mps.build.ant.brokenRefs;
 
-import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.TestMain;
 import jetbrains.mps.build.ant.IBuildServerMessageFormat;
 import jetbrains.mps.build.ant.MpsWorker;
 import jetbrains.mps.build.ant.TeamCityMessageFormat;
 import jetbrains.mps.build.ant.WhatToDo;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.generator.structure.ReferenceMacro_AnnotationLink;
-import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.PathManager;
-import jetbrains.mps.vfs.MPSExtentions;
 
 import java.io.File;
 import java.lang.management.ManagementFactory;
 import java.lang.management.MemoryMXBean;
-import java.util.Collections;
-import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Map;
 
 public class TestBrokenReferencesWorker extends MpsWorker {
   private final IBuildServerMessageFormat myBuildServerMessageFormat = TestBrokenReferencesWorker.getBuildServerMessageFormat();

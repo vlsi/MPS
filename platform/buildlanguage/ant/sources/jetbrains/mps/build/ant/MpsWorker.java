@@ -21,7 +21,6 @@ import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.util.Computable;
 import com.intellij.util.PathUtil;
-import jetbrains.mps.TestMain;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
@@ -59,6 +58,7 @@ import javax.swing.SwingUtilities;
 import java.io.File;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.lang.reflect.Method;
 import java.util.*;
 
 public abstract class MpsWorker {
@@ -149,7 +149,14 @@ public abstract class MpsWorker {
     jetbrains.mps.logging.Logger.addLoggingHandler(new MyMessageHandlerAppender());
 
     IdeMain.setTestMode(TestMode.CORE_TEST);
-    TestMain.configureMPS();
+    try {
+      Class<?> cls = Class.forName("jetbrains.mps.TestMain");
+      Method meth = cls.getMethod("configureMPS");
+      meth.invoke(null);
+    }
+    catch (Exception ex) {
+      throw new RuntimeException(ex);
+    }
 
     setMacro();
     loadLibraries();
@@ -266,7 +273,16 @@ public abstract class MpsWorker {
   private void collectFromProjects(Set<MPSProject> projects) {
     for (File projectFile : myWhatToDo.getMPSProjectFiles().keySet()) {
       if (projectFile.getAbsolutePath().endsWith(MPSExtentions.DOT_MPS_PROJECT)) {
-        final MPSProject project = TestMain.loadProject(projectFile);
+        MPSProject project;
+        try {
+          Class<?> cls = Class.forName("jetbrains.mps.TestMain");
+          Method meth = cls.getMethod("loadProject", File.class);
+          project = (MPSProject) meth.invoke(null, projectFile);
+        }
+        catch (Exception ex) {
+          throw new RuntimeException(ex);
+        }
+
         info("Loaded project " + project);
         projects.add(project);
       }
