@@ -209,7 +209,7 @@ class JavaFileGenerator {
 
         // re-register debug
         if (debugInfoCache == null) {
-          debugInfoCache = BLDebugInfoCache.getInstance().get(status.getOriginalInputModel());
+          debugInfoCache = DebugInfoCache.getInstance().get(status.getOriginalInputModel());
         }
         if (debugInfoCache != null) {
           DebugInfoRoot infoRoot = debugInfoCache.getRootInfo(rdep.getRootId());

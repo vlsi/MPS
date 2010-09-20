@@ -326,7 +326,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.debug.api.info.BLDebugInfoCache</implementation-class>
+      <implementation-class>jetbrains.mps.debug.api.info.DebugInfoCache</implementation-class>
     </component>
 
     <component>

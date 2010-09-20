@@ -2625,7 +2625,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4494976841093543348">
-    <property name="name:3" value="BLDebugInfoCache" />
+    <property name="name:3" value="DebugInfoCache" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4494976841093543349" />
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="4494976841093543350">
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="4494976841093543351" />
@@ -2656,7 +2656,7 @@
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4494976841093543961">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="4494976841093543976">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4494976841093550702">
-            <property name="value:3" value="BL Debug Info Cache" />
+            <property name="value:3" value="Debug Info Cache" />
           </node>
         </node>
       </node>

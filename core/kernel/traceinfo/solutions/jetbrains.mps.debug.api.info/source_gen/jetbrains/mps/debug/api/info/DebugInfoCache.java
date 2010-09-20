@@ -21,18 +21,18 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.vfs.FileSystem;
 import com.intellij.openapi.application.ApplicationManager;
 
-public class BLDebugInfoCache extends BaseModelCache<DebugInfo> {
-  private static final Logger LOG = Logger.getLogger(BLDebugInfoCache.class);
+public class DebugInfoCache extends BaseModelCache<DebugInfo> {
+  private static final Logger LOG = Logger.getLogger(DebugInfoCache.class);
   public static final String TRACE_FILE_NAME = "trace.info";
 
-  public BLDebugInfoCache() {
+  public DebugInfoCache() {
     super(null);
   }
 
   @NonNls
   @NotNull
   public String getComponentName() {
-    return "BL Debug Info Cache";
+    return "Debug Info Cache";
   }
 
   protected String getCacheFileName() {
@@ -50,7 +50,7 @@ public class BLDebugInfoCache extends BaseModelCache<DebugInfo> {
   @Nullable
   protected DebugInfo readCache(SModelDescriptor descriptor) {
     ClassLoader classLoader = ClassLoaderManager.getInstance().getClassLoaderFor(descriptor.getModule());
-    InputStream stream = check_xy6085_a0b0e(classLoader, descriptor, TRACE_FILE_NAME);
+    InputStream stream = check_4fn2v4_a0b0e(classLoader, descriptor, TRACE_FILE_NAME);
     if (stream == null) {
       return null;
     }
@@ -77,11 +77,11 @@ public class BLDebugInfoCache extends BaseModelCache<DebugInfo> {
     return FileSystem.getFile(outputPath);
   }
 
-  public static BLDebugInfoCache getInstance() {
-    return ApplicationManager.getApplication().getComponent(BLDebugInfoCache.class);
+  public static DebugInfoCache getInstance() {
+    return ApplicationManager.getApplication().getComponent(DebugInfoCache.class);
   }
 
-  private static InputStream check_xy6085_a0b0e(ClassLoader p, SModelDescriptor descriptor, String TRACE_FILE_NAME) {
+  private static InputStream check_4fn2v4_a0b0e(ClassLoader p, SModelDescriptor descriptor, String TRACE_FILE_NAME) {
     if (null == p) {
       return null;
     }

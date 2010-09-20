@@ -35,7 +35,7 @@ public class DebugInfoUtil {
         continue;
       }
 
-      final DebugInfo info = BLDebugInfoCache.getInstance().get(descriptor);
+      final DebugInfo info = DebugInfoCache.getInstance().get(descriptor);
       if (info == null) {
         continue;
       }
@@ -107,7 +107,7 @@ public class DebugInfoUtil {
   public static String getGeneratedFileName(SNode node) {
     SNode snode = ((SNode) node);
     SModel model = snode.getModel();
-    DebugInfo debugInfo = BLDebugInfoCache.getInstance().get(model.getModelDescriptor());
+    DebugInfo debugInfo = DebugInfoCache.getInstance().get(model.getModelDescriptor());
     if (debugInfo == null) {
       return null;
     }

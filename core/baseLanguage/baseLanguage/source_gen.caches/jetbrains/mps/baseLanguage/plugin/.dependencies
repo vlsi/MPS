@@ -698,8 +698,8 @@
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="jetbrains.mps.debug.api.info.BLDebugInfoCache" />
     <classNode dependClassName="jetbrains.mps.debug.api.info.DebugInfo" />
+    <classNode dependClassName="jetbrains.mps.debug.api.info.DebugInfoCache" />
     <classNode dependClassName="jetbrains.mps.debug.api.info.PositionInfo" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
