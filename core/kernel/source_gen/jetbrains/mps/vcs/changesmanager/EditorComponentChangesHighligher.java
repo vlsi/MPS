@@ -60,6 +60,8 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
   private ChangesFoldingAreaPainter myFoldingAreaPainter;
   private ModelChangesManager myModelChangesManager;
   private boolean myEnabled;
+  private boolean myDisposed = false;
+  private final Object myDisposedLock = new Object();
 
   public EditorComponentChangesHighligher(final Project project, @NotNull final EditorComponent editorComponent, boolean enabled) {
     myEditorComponent = editorComponent;
@@ -69,16 +71,21 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
 
     ChangesManager.getInstance(project).getCommandQueue().runTask(new Runnable() {
       public void run() {
+        synchronized (myDisposedLock) {
+          // Hack for MPS-10139 
+          if (myDisposed) {
+            return;
+          }
+        }
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            final SModel model = check_7ugudc_a0a0a0a0a0f0a(editorComponent.getEditedNode());
+            final SModel model = check_7ugudc_a0a0a1a0a0f0a(editorComponent.getEditedNode());
             if (model != null && model.getModelDescriptor() != null) {
               myModelChangesManager = ChangesManager.getInstance(project).getModelChangesManager(model);
               myChangeListener = new EditorComponentChangesHighligher.MyChangeListener();
             } else {
               return;
             }
-
           }
         });
         if (myChangeListener != null) {
@@ -192,6 +199,10 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
   }
 
   public void dispose() {
+    synchronized (myDisposedLock) {
+      // Hack for MPS-10139 
+      myDisposed = true;
+    }
     for (Change change : SetSequence.fromSet(MapSequence.fromMap(myChangesMessages).keySet()).toListSequence()) {
       unhighlightChange(change);
     }
@@ -299,7 +310,7 @@ public class EditorComponentChangesHighligher implements EditorMessageOwner {
     }
   }
 
-  private static SModel check_7ugudc_a0a0a0a0a0f0a(SNode p) {
+  private static SModel check_7ugudc_a0a0a1a0a0f0a(SNode p) {
     if (null == p) {
       return null;
     }
