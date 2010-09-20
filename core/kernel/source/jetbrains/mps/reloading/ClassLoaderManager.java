@@ -344,6 +344,11 @@ public class ClassLoaderManager implements ApplicationComponent {
         boolean bootstrapModule = bootstrapLanguages.contains(l);
         for (LanguageAspect aspect : LanguageAspect.values()) {
           if (bootstrapModule && aspect == LanguageAspect.STRUCTURE) {
+            // HACK: avoid loading "unittest" models of the bootstrap langs
+            // TODO: tests must be declared explicitly
+            SModelDescriptor modelDescriptor = aspect.get(l);
+            myExcludedPackages.add(modelDescriptor.getLongName().replaceAll("\\.structure$", ".unittest"));
+            
             // Always loading STRUCTURE aspects of bootstrap modules using "boot" classloader (classloader of this class)
             continue;
           }
