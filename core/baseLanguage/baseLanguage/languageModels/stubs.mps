@@ -829,6 +829,9 @@
         </node>
       </node>
     </node>
+    <node role="export" type="jetbrains.mps.lang.core.structure.ExportScopeNamespace:0" id="379978803686994072">
+      <property name="namespace:0" value="jetbrains.mps" />
+    </node>
   </node>
 </model>
 

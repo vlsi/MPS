@@ -5,6 +5,7 @@
   <unitInfo fileName="MPS_StubDescriptor.java" startLine="12" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.stubs.MPS_StubDescriptor" />
   <unitInfo fileName="JDK_StubDescriptor.java" startLine="12" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.stubs.JDK_StubDescriptor" />
   <unitInfo fileName="JavaStubs_JDK.java" startLine="13" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.stubs.JavaStubs_JDK" />
+  <unitInfo fileName="JavaStubs_Testbench.java" startLine="14" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.stubs.JavaStubs_Testbench" />
   <unitInfo fileName="JavaStubs_MPS.java" startLine="14" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.stubs.JavaStubs_MPS" />
   <unitInfo fileName="JavaStubs.java" startLine="30" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
   <root nodeId="2974122604715433683">

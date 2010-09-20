@@ -11,7 +11,7 @@ import jetbrains.mps.reloading.CommonPaths;
 
 public class Testbench_StubDescriptor extends BaseLibStubDescriptor {
   public Testbench_StubDescriptor() {
-    super("Testbench", "920eaa0e-ecca-46bc-bee7-4e5c59213dd6", new ModelRootManager("f3061a53-9226-4cc5-a443-f952ceaf5816", "jetbrains.mps.baseLanguage.stubs.JavaStubs"));
+    super("Testbench", "920eaa0e-ecca-46bc-bee7-4e5c59213dd6", new ModelRootManager("f3061a53-9226-4cc5-a443-f952ceaf5816", "jetbrains.mps.baseLanguage.stubs.JavaStubs_Testbench"));
   }
 
   public List<String> getPaths() {
