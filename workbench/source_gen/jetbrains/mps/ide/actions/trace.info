@@ -252,10 +252,10 @@
   <unitInfo fileName="AddAccessoryModel_Action.java" startLine="28" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.ide.actions.AddAccessoryModel_Action" />
   <unitInfo fileName="CheckModule_Action.java" startLine="20" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.ide.actions.CheckModule_Action" />
   <unitInfo fileName="GenerateTemplateQueries_Action.java" startLine="28" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.ide.actions.GenerateTemplateQueries_Action" />
-  <unitInfo fileName="RenameFileOrDirectory_Action.java" startLine="22" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.ide.actions.RenameFileOrDirectory_Action" />
   <unitInfo fileName="CutNode_Action.java" startLine="24" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.ide.actions.CutNode_Action" />
   <unitInfo fileName="MoveFileOrDirectory_Action.java" startLine="25" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.ide.actions.MoveFileOrDirectory_Action" />
   <unitInfo fileName="RemoveModuleFromProject_Action.java" startLine="28" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.ide.actions.RemoveModuleFromProject_Action" />
+  <unitInfo fileName="RenameFileOrDirectory_Action.java" startLine="22" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.ide.actions.RenameFileOrDirectory_Action" />
   <unitInfo fileName="GetModelContentsFromSource_Action.java" startLine="26" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.ide.actions.GetModelContentsFromSource_Action" />
   <unitInfo fileName="NewRuntimeModule_Action.java" startLine="33" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.ide.actions.NewRuntimeModule_Action" />
   <unitInfo fileName="Ide_ApplicationPlugin.java" startLine="17" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.ide.actions.Ide_ApplicationPlugin" />
@@ -2811,7 +2811,7 @@
     <nodeInfo nodeId="7694845294337390390" fileName="RenameFileOrDirectory_Action.java" startLine="96" startPosition="33" endLine="97" endPosition="178" />
     <nodeInfo nodeId="6134778262076357764" fileName="RenameFileOrDirectory_Action.java" startLine="112" startPosition="49" endLine="113" endPosition="97" />
     <nodeInfo nodeId="7454493598691787148" fileName="RenameFileOrDirectory_Action.java" startLine="113" startPosition="97" endLine="114" endPosition="18" />
-    <nodeInfo nodeId="6134778262076353731" fileName="RenameFileOrDirectory_Action.java" startLine="116" startPosition="95" endLine="117" endPosition="105" />
+    <nodeInfo nodeId="6134778262076353731" fileName="RenameFileOrDirectory_Action.java" startLine="116" startPosition="105" endLine="117" endPosition="105" />
     <nodeInfo nodeId="6134778262076357780" fileName="RenameFileOrDirectory_Action.java" startLine="117" startPosition="105" endLine="118" endPosition="18" />
     <nodeInfo nodeId="7454493598691787152" fileName="RenameFileOrDirectory_Action.java" startLine="119" startPosition="5" endLine="120" endPosition="17" />
     <nodeInfo nodeId="1557895745570983212" fileName="RenameFileOrDirectory_Action.java" startLine="82" startPosition="20" endLine="85" endPosition="7" />
@@ -2832,7 +2832,7 @@
     <scopeInfo nodeId="1720891269475708584" fileName="RenameFileOrDirectory_Action.java" startLine="90" startPosition="71" endLine="91" endPosition="21" />
     <scopeInfo nodeId="3812855676554060516" fileName="RenameFileOrDirectory_Action.java" startLine="96" startPosition="33" endLine="97" endPosition="178" />
     <scopeInfo nodeId="7454493598691787142" fileName="RenameFileOrDirectory_Action.java" startLine="112" startPosition="49" endLine="114" endPosition="18" />
-    <scopeInfo nodeId="6134778262076353711" fileName="RenameFileOrDirectory_Action.java" startLine="116" startPosition="95" endLine="118" endPosition="18" />
+    <scopeInfo nodeId="6134778262076353711" fileName="RenameFileOrDirectory_Action.java" startLine="116" startPosition="105" endLine="118" endPosition="18" />
     <scopeInfo nodeId="3812855676554060515" fileName="RenameFileOrDirectory_Action.java" startLine="95" startPosition="55" endLine="99" endPosition="0" />
     <scopeInfo nodeId="7454493598691787136" fileName="RenameFileOrDirectory_Action.java" startLine="111" startPosition="49" endLine="120" endPosition="17" />
     <scopeInfo nodeId="835030696107935358" fileName="RenameFileOrDirectory_Action.java" startLine="89" startPosition="15" endLine="99" endPosition="15" />
