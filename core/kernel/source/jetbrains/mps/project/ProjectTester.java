@@ -297,9 +297,6 @@ public class ProjectTester {
 
       }
     }
-
-    public void clear() {
-    }
   }
 
   private static class MyILoggingHandler implements ILoggingHandler {

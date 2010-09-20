@@ -19,11 +19,7 @@ public interface IMessageHandler {
   public static final IMessageHandler NULL_HANDLER = new IMessageHandler() {
     public void handle(Message msg) {
     }
-    public void clear() {
-    }
   };
 
   void handle(Message msg);
-
-  void clear();
 }

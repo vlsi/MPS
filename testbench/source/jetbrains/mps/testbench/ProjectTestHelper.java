@@ -260,9 +260,6 @@ public class ProjectTestHelper {
       myGenerationErrors.clear();
       myGenerationWarnings.clear();
     }
-
-    public void clear() {
-    }
   }
 
 
