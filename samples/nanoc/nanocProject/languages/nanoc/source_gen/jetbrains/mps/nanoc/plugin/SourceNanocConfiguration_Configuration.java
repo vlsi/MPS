@@ -26,7 +26,7 @@ import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.ExecutionResult;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.impl.ConsoleViewImpl;
-import jetbrains.mps.debug.api.info.StacktraceUtil;
+import jetbrains.mps.ide.common.JavaConsoleCreator;
 import jetbrains.mps.workbench.MPSDataKeys;
 import javax.swing.JComponent;
 import java.util.List;
@@ -112,7 +112,7 @@ public class SourceNanocConfiguration_Configuration extends BaseRunConfig {
     return new BaseRunProfileState() {
       @Nullable
       public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
-        final ConsoleViewImpl consoleView_22042010 = StacktraceUtil.createConsoleView(MPSDataKeys.PROJECT.getData(environment.getDataContext()));
+        final ConsoleViewImpl consoleView_22042010 = JavaConsoleCreator.createConsoleView(MPSDataKeys.PROJECT.getData(environment.getDataContext()));
         JComponent consoleComponent_22042010 = null;
         Runnable consoleDispose_22042010 = null;
         final List<AnAction> actions_22042010 = ListSequence.fromList(new ArrayList<AnAction>());

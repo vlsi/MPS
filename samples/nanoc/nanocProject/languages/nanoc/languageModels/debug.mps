@@ -24,7 +24,6 @@
   <import index="15" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="16" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="17" modelUID="f:java_stub#com.intellij.execution.impl(com.intellij.execution.impl@java_stub)" version="-1" />
-  <import index="18" modelUID="r:af5efca5-3385-45cc-9441-f2124214c2e2(jetbrains.mps.debug.api.info)" version="-1" />
   <import index="19" modelUID="f:java_stub#com.intellij.execution.ui(com.intellij.execution.ui@java_stub)" version="-1" />
   <import index="20" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
   <import index="21" modelUID="f:java_stub#com.intellij.openapi.components(com.intellij.openapi.components@java_stub)" version="-1" />
@@ -683,11 +682,15 @@
                 <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3990508698139426535">
                   <link role="classifier:3" targetNodeId="17.~ConsoleViewImpl" />
                 </node>
-                <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3990508698139426536">
-                  <link role="classConcept:3" targetNodeId="18.4494976841093370953" resolveInfo="StacktraceUtil" />
-                  <link role="baseMethodDeclaration:3" targetNodeId="18.1412418657078202477" resolveInfo="createConsoleView" />
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3990508698139426537">
-                    <link role="variableDeclaration:3" targetNodeId="3990508698139426468" resolveInfo="project" />
+                <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6381374415295429445">
+                  <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="6381374415295434737">
+                    <link role="baseMethodDeclaration:3" targetNodeId="17.~ConsoleViewImpl.&lt;init&gt;(com.intellij.openapi.project.Project,boolean)" resolveInfo="ConsoleViewImpl" />
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="6381374415295434739">
+                      <link role="variableDeclaration:3" targetNodeId="3990508698139426468" resolveInfo="project" />
+                    </node>
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="6381374415295434741">
+                      <property name="value:3" value="false" />
+                    </node>
                   </node>
                 </node>
               </node>

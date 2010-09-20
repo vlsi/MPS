@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="CStatement_TextGen.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.nanoc.textGen.CStatement_TextGen" />
+  <unitInfo fileName="IntConst_TextGen.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.nanoc.textGen.IntConst_TextGen" />
+  <unitInfo fileName="CType_TextGen.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.nanoc.textGen.CType_TextGen" />
+  <unitInfo fileName="VarRef_TextGen.java" startLine="10" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.nanoc.textGen.VarRef_TextGen" />
+  <unitInfo fileName="CExpressionStatement_TextGen.java" startLine="10" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.nanoc.textGen.CExpressionStatement_TextGen" />
+  <unitInfo fileName="CParenthesis_TextGen.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.nanoc.textGen.CParenthesis_TextGen" />
+  <unitInfo fileName="CAssignmentExpression_TextGen.java" startLine="10" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.nanoc.textGen.CAssignmentExpression_TextGen" />
+  <unitInfo fileName="CBody_TextGen.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.nanoc.textGen.CBody_TextGen" />
+  <unitInfo fileName="CBinaryOp_TextGen.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.nanoc.textGen.CBinaryOp_TextGen" />
+  <unitInfo fileName="VarDecl_TextGen.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.nanoc.textGen.VarDecl_TextGen" />
+  <unitInfo fileName="CWhile_TextGen.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.nanoc.textGen.CWhile_TextGen" />
+  <unitInfo fileName="File_TextGen.java" startLine="10" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.nanoc.textGen.File_TextGen" />
+  <unitInfo fileName="VarDeclStatement_TextGen.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.nanoc.textGen.VarDeclStatement_TextGen" />
+  <unitInfo fileName="CFor_TextGen.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.nanoc.textGen.CFor_TextGen" />
   <root nodeId="6585869519574796033">
     <nodeInfo nodeId="4211204866430805103" fileName="File_TextGen.java" startLine="11" startPosition="42" endLine="12" endPosition="32" />
     <nodeInfo nodeId="4211204866430805103" fileName="File_TextGen.java" startLine="12" startPosition="32" endLine="13" endPosition="25" />
