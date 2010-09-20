@@ -202,106 +202,108 @@
     <nodeInfo nodeId="1224595559072" fileName="BaseTransformationTest.java" startLine="67" startPosition="94" endLine="68" endPosition="69" />
     <nodeInfo nodeId="1221574097386" fileName="BaseTransformationTest.java" startLine="71" startPosition="117" endLine="72" endPosition="62" />
     <nodeInfo nodeId="1221574149058" fileName="BaseTransformationTest.java" startLine="74" startPosition="25" endLine="75" endPosition="90" />
-    <nodeInfo nodeId="9011639092856261494" fileName="BaseTransformationTest.java" startLine="75" startPosition="90" endLine="76" endPosition="69" />
-    <nodeInfo nodeId="9011639092856261503" fileName="BaseTransformationTest.java" startLine="76" startPosition="69" endLine="77" endPosition="90" />
-    <nodeInfo nodeId="1230307322029" fileName="BaseTransformationTest.java" startLine="77" startPosition="90" endLine="78" endPosition="128" />
-    <nodeInfo nodeId="1221574127234" fileName="BaseTransformationTest.java" startLine="80" startPosition="7" endLine="81" endPosition="49" />
-    <nodeInfo nodeId="1221574127240" fileName="BaseTransformationTest.java" startLine="81" startPosition="49" endLine="82" endPosition="69" />
-    <nodeInfo nodeId="1225466942005" fileName="BaseTransformationTest.java" startLine="82" startPosition="69" endLine="83" endPosition="63" />
-    <nodeInfo nodeId="1225557807335" fileName="BaseTransformationTest.java" startLine="83" startPosition="63" endLine="84" endPosition="51" />
-    <nodeInfo nodeId="3740450423773773626" fileName="BaseTransformationTest.java" startLine="89" startPosition="31" endLine="90" endPosition="100" />
-    <nodeInfo nodeId="3740450423773768918" fileName="BaseTransformationTest.java" startLine="95" startPosition="12" endLine="96" endPosition="92" />
-    <nodeInfo nodeId="1223216130574" fileName="BaseTransformationTest.java" startLine="99" startPosition="25" endLine="100" endPosition="108" />
-    <nodeInfo nodeId="1225557865759" fileName="BaseTransformationTest.java" startLine="103" startPosition="31" endLine="104" endPosition="25" />
-    <nodeInfo nodeId="1228143817266" fileName="BaseTransformationTest.java" startLine="108" startPosition="78" endLine="109" endPosition="31" />
-    <nodeInfo nodeId="1228143641859" fileName="BaseTransformationTest.java" startLine="110" startPosition="9" endLine="111" endPosition="46" />
-    <nodeInfo nodeId="1228143641871" fileName="BaseTransformationTest.java" startLine="112" startPosition="39" endLine="113" endPosition="26" />
-    <nodeInfo nodeId="1228143641879" fileName="BaseTransformationTest.java" startLine="114" startPosition="40" endLine="115" endPosition="26" />
-    <nodeInfo nodeId="1228143641887" fileName="BaseTransformationTest.java" startLine="116" startPosition="43" endLine="117" endPosition="31" />
-    <nodeInfo nodeId="1228143641893" fileName="BaseTransformationTest.java" startLine="118" startPosition="5" endLine="119" endPosition="21" />
-    <nodeInfo nodeId="1217508627112" fileName="BaseTransformationTest.java" startLine="122" startPosition="56" endLine="123" endPosition="23" />
-    <nodeInfo nodeId="3740450423773768916" fileName="BaseTransformationTest.java" startLine="95" startPosition="10" endLine="97" endPosition="5" />
+    <nodeInfo nodeId="9011639092856261494" fileName="BaseTransformationTest.java" startLine="76" startPosition="92" endLine="77" endPosition="71" />
+    <nodeInfo nodeId="9011639092856261503" fileName="BaseTransformationTest.java" startLine="77" startPosition="71" endLine="78" endPosition="92" />
+    <nodeInfo nodeId="1230307322029" fileName="BaseTransformationTest.java" startLine="78" startPosition="92" endLine="79" endPosition="130" />
+    <nodeInfo nodeId="1221574127234" fileName="BaseTransformationTest.java" startLine="82" startPosition="7" endLine="83" endPosition="49" />
+    <nodeInfo nodeId="1221574127240" fileName="BaseTransformationTest.java" startLine="83" startPosition="49" endLine="84" endPosition="69" />
+    <nodeInfo nodeId="1225466942005" fileName="BaseTransformationTest.java" startLine="84" startPosition="69" endLine="85" endPosition="63" />
+    <nodeInfo nodeId="1225557807335" fileName="BaseTransformationTest.java" startLine="85" startPosition="63" endLine="86" endPosition="51" />
+    <nodeInfo nodeId="3740450423773773626" fileName="BaseTransformationTest.java" startLine="91" startPosition="31" endLine="92" endPosition="100" />
+    <nodeInfo nodeId="3740450423773768918" fileName="BaseTransformationTest.java" startLine="97" startPosition="12" endLine="98" endPosition="92" />
+    <nodeInfo nodeId="1223216130574" fileName="BaseTransformationTest.java" startLine="101" startPosition="25" endLine="102" endPosition="108" />
+    <nodeInfo nodeId="1225557865759" fileName="BaseTransformationTest.java" startLine="105" startPosition="31" endLine="106" endPosition="25" />
+    <nodeInfo nodeId="1228143817266" fileName="BaseTransformationTest.java" startLine="110" startPosition="78" endLine="111" endPosition="31" />
+    <nodeInfo nodeId="1228143641859" fileName="BaseTransformationTest.java" startLine="112" startPosition="9" endLine="113" endPosition="46" />
+    <nodeInfo nodeId="1228143641871" fileName="BaseTransformationTest.java" startLine="114" startPosition="39" endLine="115" endPosition="26" />
+    <nodeInfo nodeId="1228143641879" fileName="BaseTransformationTest.java" startLine="116" startPosition="40" endLine="117" endPosition="26" />
+    <nodeInfo nodeId="1228143641887" fileName="BaseTransformationTest.java" startLine="118" startPosition="43" endLine="119" endPosition="31" />
+    <nodeInfo nodeId="1228143641893" fileName="BaseTransformationTest.java" startLine="120" startPosition="5" endLine="121" endPosition="21" />
+    <nodeInfo nodeId="1217508627112" fileName="BaseTransformationTest.java" startLine="124" startPosition="56" endLine="125" endPosition="23" />
+    <nodeInfo nodeId="3740450423773768916" fileName="BaseTransformationTest.java" startLine="97" startPosition="10" endLine="99" endPosition="5" />
     <nodeInfo nodeId="1215696484422" fileName="BaseTransformationTest.java" startLine="31" startPosition="0" endLine="34" endPosition="3" />
-    <nodeInfo nodeId="1225557852265" fileName="BaseTransformationTest.java" startLine="102" startPosition="7" endLine="105" endPosition="5" />
+    <nodeInfo nodeId="1225557852265" fileName="BaseTransformationTest.java" startLine="104" startPosition="7" endLine="107" endPosition="5" />
     <nodeInfo nodeId="1226945257421" fileName="BaseTransformationTest.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
-    <nodeInfo nodeId="3740450423773773624" fileName="BaseTransformationTest.java" startLine="88" startPosition="73" endLine="92" endPosition="0" />
-    <nodeInfo nodeId="1223216130572" fileName="BaseTransformationTest.java" startLine="98" startPosition="58" endLine="102" endPosition="0" />
-    <nodeInfo nodeId="1217508601914" fileName="BaseTransformationTest.java" startLine="121" startPosition="0" endLine="125" endPosition="0" />
+    <nodeInfo nodeId="3740450423773773624" fileName="BaseTransformationTest.java" startLine="90" startPosition="73" endLine="94" endPosition="0" />
+    <nodeInfo nodeId="1223216130572" fileName="BaseTransformationTest.java" startLine="100" startPosition="58" endLine="104" endPosition="0" />
+    <nodeInfo nodeId="1217508601914" fileName="BaseTransformationTest.java" startLine="123" startPosition="0" endLine="127" endPosition="0" />
     <nodeInfo nodeId="7189304461457241467" fileName="BaseTransformationTest.java" startLine="35" startPosition="0" endLine="40" endPosition="3" />
     <nodeInfo nodeId="1223217167467" fileName="BaseTransformationTest.java" startLine="48" startPosition="71" endLine="53" endPosition="0" />
-    <nodeInfo nodeId="3740450423773773623" fileName="BaseTransformationTest.java" startLine="87" startPosition="27" endLine="92" endPosition="13" />
-    <nodeInfo nodeId="1223216130571" fileName="BaseTransformationTest.java" startLine="97" startPosition="5" endLine="102" endPosition="7" />
+    <nodeInfo nodeId="2701509133537101859" fileName="BaseTransformationTest.java" startLine="75" startPosition="90" endLine="80" endPosition="9" />
+    <nodeInfo nodeId="3740450423773773623" fileName="BaseTransformationTest.java" startLine="89" startPosition="27" endLine="94" endPosition="13" />
+    <nodeInfo nodeId="1223216130571" fileName="BaseTransformationTest.java" startLine="99" startPosition="5" endLine="104" endPosition="7" />
     <nodeInfo nodeId="1223217167466" fileName="BaseTransformationTest.java" startLine="47" startPosition="25" endLine="53" endPosition="11" />
-    <nodeInfo nodeId="1221573548364" fileName="BaseTransformationTest.java" startLine="73" startPosition="57" endLine="80" endPosition="0" />
-    <nodeInfo nodeId="1221573548363" fileName="BaseTransformationTest.java" startLine="72" startPosition="62" endLine="80" endPosition="7" />
-    <nodeInfo nodeId="3740450423773768935" fileName="BaseTransformationTest.java" startLine="86" startPosition="51" endLine="94" endPosition="0" />
+    <nodeInfo nodeId="3740450423773768935" fileName="BaseTransformationTest.java" startLine="88" startPosition="51" endLine="96" endPosition="0" />
     <nodeInfo nodeId="1223213850226" fileName="BaseTransformationTest.java" startLine="46" startPosition="49" endLine="55" endPosition="0" />
     <nodeInfo nodeId="1224595504357" fileName="BaseTransformationTest.java" startLine="61" startPosition="0" endLine="70" endPosition="0" />
-    <nodeInfo nodeId="3740450423773768929" fileName="BaseTransformationTest.java" startLine="85" startPosition="23" endLine="94" endPosition="9" />
-    <nodeInfo nodeId="1228143641857" fileName="BaseTransformationTest.java" startLine="109" startPosition="31" endLine="118" endPosition="5" />
+    <nodeInfo nodeId="1221573548364" fileName="BaseTransformationTest.java" startLine="73" startPosition="57" endLine="82" endPosition="0" />
+    <nodeInfo nodeId="3740450423773768929" fileName="BaseTransformationTest.java" startLine="87" startPosition="23" endLine="96" endPosition="9" />
+    <nodeInfo nodeId="1228143641857" fileName="BaseTransformationTest.java" startLine="111" startPosition="31" endLine="120" endPosition="5" />
     <nodeInfo nodeId="1223213841255" fileName="BaseTransformationTest.java" startLine="45" startPosition="108" endLine="55" endPosition="7" />
-    <nodeInfo nodeId="3740450423773768901" fileName="BaseTransformationTest.java" startLine="84" startPosition="51" endLine="97" endPosition="5" />
-    <nodeInfo nodeId="1228143641847" fileName="BaseTransformationTest.java" startLine="107" startPosition="0" endLine="121" endPosition="0" />
+    <nodeInfo nodeId="1221573548363" fileName="BaseTransformationTest.java" startLine="72" startPosition="62" endLine="82" endPosition="7" />
+    <nodeInfo nodeId="3740450423773768901" fileName="BaseTransformationTest.java" startLine="86" startPosition="51" endLine="99" endPosition="5" />
+    <nodeInfo nodeId="1228143641847" fileName="BaseTransformationTest.java" startLine="109" startPosition="0" endLine="123" endPosition="0" />
     <nodeInfo nodeId="1217253486858" fileName="BaseTransformationTest.java" startLine="41" startPosition="0" endLine="57" endPosition="0" />
-    <nodeInfo nodeId="1221572156036" fileName="BaseTransformationTest.java" startLine="70" startPosition="0" endLine="107" endPosition="0" />
+    <nodeInfo nodeId="1221572156036" fileName="BaseTransformationTest.java" startLine="70" startPosition="0" endLine="109" endPosition="0" />
     <scopeInfo nodeId="1215696484425" fileName="BaseTransformationTest.java" startLine="32" startPosition="35" endLine="33" endPosition="51" />
     <scopeInfo nodeId="1226945257424" fileName="BaseTransformationTest.java" startLine="58" startPosition="49" endLine="59" endPosition="60" />
-    <scopeInfo nodeId="3740450423773773625" fileName="BaseTransformationTest.java" startLine="89" startPosition="31" endLine="90" endPosition="100" />
-    <scopeInfo nodeId="3740450423773768917" fileName="BaseTransformationTest.java" startLine="95" startPosition="12" endLine="96" endPosition="92" />
-    <scopeInfo nodeId="1223216130573" fileName="BaseTransformationTest.java" startLine="99" startPosition="25" endLine="100" endPosition="108" />
-    <scopeInfo nodeId="1225557852266" fileName="BaseTransformationTest.java" startLine="103" startPosition="31" endLine="104" endPosition="25" />
-    <scopeInfo nodeId="1228143641858" fileName="BaseTransformationTest.java" startLine="110" startPosition="9" endLine="111" endPosition="46" />
-    <scopeInfo nodeId="1228143641867" fileName="BaseTransformationTest.java" startLine="112" startPosition="0" endLine="113" endPosition="26">
+    <scopeInfo nodeId="3740450423773773625" fileName="BaseTransformationTest.java" startLine="91" startPosition="31" endLine="92" endPosition="100" />
+    <scopeInfo nodeId="3740450423773768917" fileName="BaseTransformationTest.java" startLine="97" startPosition="12" endLine="98" endPosition="92" />
+    <scopeInfo nodeId="1223216130573" fileName="BaseTransformationTest.java" startLine="101" startPosition="25" endLine="102" endPosition="108" />
+    <scopeInfo nodeId="1225557852266" fileName="BaseTransformationTest.java" startLine="105" startPosition="31" endLine="106" endPosition="25" />
+    <scopeInfo nodeId="1228143641858" fileName="BaseTransformationTest.java" startLine="112" startPosition="9" endLine="113" endPosition="46" />
+    <scopeInfo nodeId="1228143641867" fileName="BaseTransformationTest.java" startLine="114" startPosition="0" endLine="115" endPosition="26">
       <varInfo nodeId="1228143641868" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="1228143641870" fileName="BaseTransformationTest.java" startLine="112" startPosition="39" endLine="113" endPosition="26" />
-    <scopeInfo nodeId="1228143641875" fileName="BaseTransformationTest.java" startLine="114" startPosition="0" endLine="115" endPosition="26">
+    <scopeInfo nodeId="1228143641870" fileName="BaseTransformationTest.java" startLine="114" startPosition="39" endLine="115" endPosition="26" />
+    <scopeInfo nodeId="1228143641875" fileName="BaseTransformationTest.java" startLine="116" startPosition="0" endLine="117" endPosition="26">
       <varInfo nodeId="1228143641876" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="1228143641878" fileName="BaseTransformationTest.java" startLine="114" startPosition="40" endLine="115" endPosition="26" />
-    <scopeInfo nodeId="1228143641883" fileName="BaseTransformationTest.java" startLine="116" startPosition="0" endLine="117" endPosition="31">
+    <scopeInfo nodeId="1228143641878" fileName="BaseTransformationTest.java" startLine="116" startPosition="40" endLine="117" endPosition="26" />
+    <scopeInfo nodeId="1228143641883" fileName="BaseTransformationTest.java" startLine="118" startPosition="0" endLine="119" endPosition="31">
       <varInfo nodeId="1228143641884" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="1228143641886" fileName="BaseTransformationTest.java" startLine="116" startPosition="43" endLine="117" endPosition="31" />
-    <scopeInfo nodeId="1217508601917" fileName="BaseTransformationTest.java" startLine="122" startPosition="56" endLine="123" endPosition="23" />
+    <scopeInfo nodeId="1228143641886" fileName="BaseTransformationTest.java" startLine="118" startPosition="43" endLine="119" endPosition="31" />
+    <scopeInfo nodeId="1217508601917" fileName="BaseTransformationTest.java" startLine="124" startPosition="56" endLine="125" endPosition="23" />
     <scopeInfo nodeId="1223217167468" fileName="BaseTransformationTest.java" startLine="49" startPosition="29" endLine="51" endPosition="76">
       <varInfo nodeId="1224595493895" varName="modelDescriptor" />
     </scopeInfo>
     <scopeInfo nodeId="1215696484422" fileName="BaseTransformationTest.java" startLine="31" startPosition="0" endLine="34" endPosition="3" />
     <scopeInfo nodeId="7189304461457241470" fileName="BaseTransformationTest.java" startLine="36" startPosition="84" endLine="39" endPosition="40" />
-    <scopeInfo nodeId="1226945257421" fileName="BaseTransformationTest.java" startLine="57" startPosition="0" endLine="61" endPosition="0">
-      <varInfo nodeId="1226945275279" varName="project" />
-    </scopeInfo>
-    <scopeInfo nodeId="1221573548365" fileName="BaseTransformationTest.java" startLine="74" startPosition="25" endLine="78" endPosition="128">
+    <scopeInfo nodeId="2701509133537101860" fileName="BaseTransformationTest.java" startLine="76" startPosition="92" endLine="79" endPosition="130">
       <varInfo nodeId="9011639092856261504" varName="module" />
       <varInfo nodeId="9011639092856261495" varName="classloader" />
     </scopeInfo>
-    <scopeInfo nodeId="3740450423773773624" fileName="BaseTransformationTest.java" startLine="88" startPosition="73" endLine="92" endPosition="0" />
-    <scopeInfo nodeId="1223216130572" fileName="BaseTransformationTest.java" startLine="98" startPosition="58" endLine="102" endPosition="0" />
-    <scopeInfo nodeId="1217508601914" fileName="BaseTransformationTest.java" startLine="121" startPosition="0" endLine="125" endPosition="0" />
+    <scopeInfo nodeId="1226945257421" fileName="BaseTransformationTest.java" startLine="57" startPosition="0" endLine="61" endPosition="0">
+      <varInfo nodeId="1226945275279" varName="project" />
+    </scopeInfo>
+    <scopeInfo nodeId="3740450423773773624" fileName="BaseTransformationTest.java" startLine="90" startPosition="73" endLine="94" endPosition="0" />
+    <scopeInfo nodeId="1223216130572" fileName="BaseTransformationTest.java" startLine="100" startPosition="58" endLine="104" endPosition="0" />
+    <scopeInfo nodeId="1217508601914" fileName="BaseTransformationTest.java" startLine="123" startPosition="0" endLine="127" endPosition="0" />
     <scopeInfo nodeId="7189304461457241467" fileName="BaseTransformationTest.java" startLine="35" startPosition="0" endLine="40" endPosition="3">
       <varInfo nodeId="7189304461457253868" varName="project" />
       <varInfo nodeId="7189304461457253870" varName="modelDescriptor" />
     </scopeInfo>
     <scopeInfo nodeId="1223217167467" fileName="BaseTransformationTest.java" startLine="48" startPosition="71" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="3740450423773768938" fileName="BaseTransformationTest.java" startLine="87" startPosition="27" endLine="92" endPosition="13" />
+    <scopeInfo nodeId="3740450423773768938" fileName="BaseTransformationTest.java" startLine="89" startPosition="27" endLine="94" endPosition="13" />
     <scopeInfo nodeId="1223213850229" fileName="BaseTransformationTest.java" startLine="47" startPosition="25" endLine="53" endPosition="11" />
     <scopeInfo nodeId="1224595504360" fileName="BaseTransformationTest.java" startLine="62" startPosition="74" endLine="68" endPosition="69">
       <varInfo nodeId="1224595559044" varName="module" />
       <varInfo nodeId="1224595559035" varName="context" />
     </scopeInfo>
-    <scopeInfo nodeId="1221573548364" fileName="BaseTransformationTest.java" startLine="73" startPosition="57" endLine="80" endPosition="0" />
-    <scopeInfo nodeId="3740450423773768935" fileName="BaseTransformationTest.java" startLine="86" startPosition="51" endLine="94" endPosition="0" />
+    <scopeInfo nodeId="1221573548365" fileName="BaseTransformationTest.java" startLine="74" startPosition="25" endLine="80" endPosition="9" />
+    <scopeInfo nodeId="3740450423773768935" fileName="BaseTransformationTest.java" startLine="88" startPosition="51" endLine="96" endPosition="0" />
     <scopeInfo nodeId="1223213850226" fileName="BaseTransformationTest.java" startLine="46" startPosition="49" endLine="55" endPosition="0" />
     <scopeInfo nodeId="1224595504357" fileName="BaseTransformationTest.java" startLine="61" startPosition="0" endLine="70" endPosition="0">
       <varInfo nodeId="1224595537930" varName="modelDescriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="3740450423773768902" fileName="BaseTransformationTest.java" startLine="85" startPosition="23" endLine="94" endPosition="9" />
-    <scopeInfo nodeId="1228143641856" fileName="BaseTransformationTest.java" startLine="108" startPosition="78" endLine="119" endPosition="21">
+    <scopeInfo nodeId="1221573548364" fileName="BaseTransformationTest.java" startLine="73" startPosition="57" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="3740450423773768902" fileName="BaseTransformationTest.java" startLine="87" startPosition="23" endLine="96" endPosition="9" />
+    <scopeInfo nodeId="1228143641856" fileName="BaseTransformationTest.java" startLine="110" startPosition="78" endLine="121" endPosition="21">
       <varInfo nodeId="1228143817267" varName="exception" />
     </scopeInfo>
     <scopeInfo nodeId="1217253486861" fileName="BaseTransformationTest.java" startLine="42" startPosition="81" endLine="55" endPosition="7" />
-    <scopeInfo nodeId="1228143641847" fileName="BaseTransformationTest.java" startLine="107" startPosition="0" endLine="121" endPosition="0">
+    <scopeInfo nodeId="1228143641847" fileName="BaseTransformationTest.java" startLine="109" startPosition="0" endLine="123" endPosition="0">
       <varInfo nodeId="1228143641854" varName="obj" />
       <varInfo nodeId="1228143641852" varName="methodName" />
       <varInfo nodeId="1228143641850" varName="clazz" />
@@ -310,23 +312,23 @@
       <varInfo nodeId="1217253515489" varName="model" />
       <varInfo nodeId="1217253515487" varName="projectName" />
     </scopeInfo>
-    <scopeInfo nodeId="1221572156039" fileName="BaseTransformationTest.java" startLine="71" startPosition="117" endLine="105" endPosition="5">
+    <scopeInfo nodeId="1221572156039" fileName="BaseTransformationTest.java" startLine="71" startPosition="117" endLine="107" endPosition="5">
       <varInfo nodeId="1225557807336" varName="exception" />
       <varInfo nodeId="1221574127235" varName="obj" />
       <varInfo nodeId="1221574097387" varName="clazz" />
     </scopeInfo>
-    <scopeInfo nodeId="1221572156036" fileName="BaseTransformationTest.java" startLine="70" startPosition="0" endLine="107" endPosition="0">
+    <scopeInfo nodeId="1221572156036" fileName="BaseTransformationTest.java" startLine="70" startPosition="0" endLine="109" endPosition="0">
       <varInfo nodeId="1228143548761" varName="runInCommand" />
       <varInfo nodeId="1221572178950" varName="className" />
       <varInfo nodeId="1221572185608" varName="methodName" />
     </scopeInfo>
-    <unitInfo nodeId="3740450423773773624" fileName="BaseTransformationTest.java" startLine="88" startPosition="61" endLine="92" endPosition="11" unitName="jetbrains.mps.lang.test.runtime.BaseTransformationTest$4" />
-    <unitInfo nodeId="1223216130572" fileName="BaseTransformationTest.java" startLine="98" startPosition="46" endLine="102" endPosition="5" unitName="jetbrains.mps.lang.test.runtime.BaseTransformationTest$4" />
+    <unitInfo nodeId="3740450423773773624" fileName="BaseTransformationTest.java" startLine="90" startPosition="61" endLine="94" endPosition="11" unitName="jetbrains.mps.lang.test.runtime.BaseTransformationTest$4" />
+    <unitInfo nodeId="1223216130572" fileName="BaseTransformationTest.java" startLine="100" startPosition="46" endLine="104" endPosition="5" unitName="jetbrains.mps.lang.test.runtime.BaseTransformationTest$4" />
     <unitInfo nodeId="1223217167467" fileName="BaseTransformationTest.java" startLine="48" startPosition="59" endLine="53" endPosition="9" unitName="jetbrains.mps.lang.test.runtime.BaseTransformationTest$2" />
-    <unitInfo nodeId="1221573548364" fileName="BaseTransformationTest.java" startLine="73" startPosition="45" endLine="80" endPosition="5" unitName="jetbrains.mps.lang.test.runtime.BaseTransformationTest$2" />
-    <unitInfo nodeId="3740450423773768933" fileName="BaseTransformationTest.java" startLine="86" startPosition="39" endLine="94" endPosition="7" unitName="jetbrains.mps.lang.test.runtime.BaseTransformationTest$3" />
+    <unitInfo nodeId="3740450423773768933" fileName="BaseTransformationTest.java" startLine="88" startPosition="39" endLine="96" endPosition="7" unitName="jetbrains.mps.lang.test.runtime.BaseTransformationTest$3" />
     <unitInfo nodeId="1223213850224" fileName="BaseTransformationTest.java" startLine="46" startPosition="37" endLine="55" endPosition="5" unitName="jetbrains.mps.lang.test.runtime.BaseTransformationTest$1" />
-    <unitInfo nodeId="1215696484420" fileName="BaseTransformationTest.java" startLine="25" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+    <unitInfo nodeId="1221573548364" fileName="BaseTransformationTest.java" startLine="73" startPosition="45" endLine="82" endPosition="5" unitName="jetbrains.mps.lang.test.runtime.BaseTransformationTest$2" />
+    <unitInfo nodeId="1215696484420" fileName="BaseTransformationTest.java" startLine="25" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </root>
   <root nodeId="1215702258119">
     <nodeInfo nodeId="5509631981731996915" fileName="ProjectContainer.java" startLine="10" startPosition="31" endLine="11" endPosition="29" />
