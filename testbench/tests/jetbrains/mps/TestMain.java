@@ -691,6 +691,11 @@ public class TestMain {
 
         }
       }
+
+      @Override
+      public void clear() {
+
+      }
     }
 
     private static class MyILoggingHandler implements ILoggingHandler {
