@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.idea.LoggerFactory;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.util.Macros;
@@ -15,7 +16,6 @@ import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.impl.CloneUtil;
@@ -31,6 +31,12 @@ public class BaseTransformationTest extends TestCase {
 
   public BaseTransformationTest() {
     Logger.setFactory(LoggerFactory.getInstance());
+  }
+
+  public BaseTransformationTest(Project project, SModelDescriptor modelDescriptor) {
+    this();
+    setProject(project);
+    setModelDescriptor(modelDescriptor);
   }
 
   public void initTest(String projectName, final String model) throws Exception {
@@ -49,11 +55,11 @@ public class BaseTransformationTest extends TestCase {
     });
   }
 
-  public void setProject(Project project) {
+  public final void setProject(Project project) {
     this.myProject = project.getComponent(MPSProject.class);
   }
 
-  public void setModelDescriptor(SModelDescriptor modelDescriptor) {
+  public final void setModelDescriptor(SModelDescriptor modelDescriptor) {
     this.myModel = modelDescriptor;
     ModuleContext context = ModuleContext.create(this.myModel, this.myProject.getProject());
     TransientModelsModule module = context.getComponent(TransientModelsModule.class);

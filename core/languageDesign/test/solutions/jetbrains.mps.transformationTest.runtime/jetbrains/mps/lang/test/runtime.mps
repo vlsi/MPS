@@ -126,6 +126,21 @@
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1215078294636" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1215078294637" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1215078294638">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertFalse" id="4277730795458375643">
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.OrExpression:3" id="4277730795458375646">
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4277730795458375649">
+              <link role="variableDeclaration:3" targetNodeId="852155438141020164" resolveInfo="allowWarnings" />
+            </node>
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4277730795458375645">
+              <link role="variableDeclaration:3" targetNodeId="852155438140970277" resolveInfo="allowErrors" />
+            </node>
+          </node>
+          <node role="message" type="jetbrains.mps.baseLanguage.unitTest.structure.Message" id="4277730795458375650">
+            <node role="message" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4277730795458375651">
+              <property name="value:3" value="should be false (never used anyway)" />
+            </node>
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="8042441407353529721">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="8042441407353529722">
             <property name="name:3" value="typeCheckingContext" />
@@ -1416,6 +1431,7 @@
     </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1226945257421">
       <property name="name:3" value="setProject" />
+      <property name="isFinal:3" value="true" />
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1226945275279">
         <property name="name:3" value="project" />
         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3339131993541770899">
@@ -1450,6 +1466,7 @@
     </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1224595504357">
       <property name="name:3" value="setModelDescriptor" />
+      <property name="isFinal:3" value="true" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1224595504358" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1224595504359" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1224595504360">
@@ -2000,6 +2017,43 @@
               <link role="classConcept:3" targetNodeId="36.~LoggerFactory" resolveInfo="LoggerFactory" />
             </node>
           </node>
+        </node>
+      </node>
+    </node>
+    <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="7189304461457241467">
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="7189304461457241468" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7189304461457241469" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7189304461457241470">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation:3" id="7189304461457253877">
+          <link role="baseMethodDeclaration:3" targetNodeId="1215696484422" resolveInfo="BaseTransformationTest" />
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7189304461457253879">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="7189304461457253880">
+            <link role="baseMethodDeclaration:3" targetNodeId="1226945257421" resolveInfo="setProject" />
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="7189304461457253881">
+              <link role="variableDeclaration:3" targetNodeId="7189304461457253868" resolveInfo="project" />
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7189304461457253883">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="7189304461457253884">
+            <link role="baseMethodDeclaration:3" targetNodeId="1224595504357" resolveInfo="setModelDescriptor" />
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="7189304461457253885">
+              <link role="variableDeclaration:3" targetNodeId="7189304461457253870" resolveInfo="modelDescriptor" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="7189304461457253868">
+        <property name="name:3" value="project" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7189304461457253869">
+          <link role="classifier:3" targetNodeId="12.~Project" resolveInfo="Project" />
+        </node>
+      </node>
+      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="7189304461457253870">
+        <property name="name:3" value="modelDescriptor" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7189304461457253872">
+          <link role="classifier:3" targetNodeId="17.~SModelDescriptor" resolveInfo="SModelDescriptor" />
         </node>
       </node>
     </node>

@@ -18,7 +18,9 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
-import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
+import java.lang.reflect.Method;
+import java.lang.reflect.Constructor;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior;
 
 public class RunTestInMPS_Action extends GeneratedAction {
@@ -108,13 +110,13 @@ public class RunTestInMPS_Action extends GeneratedAction {
       final String testName = ITestMethod_Behavior.call_getTestName_1216136419751(test);
       System.out.println("Test " + className + "." + testName);
       final Class c = RunTestInMPS_Action.this.model.getModelDescriptor().getModule().getClass(ITestCase_Behavior.call_getClassName_1216136193905(ITestMethod_Behavior.call_getTestCase_1216134500045(test)));
-      final BaseTransformationTest testClass = (BaseTransformationTest) c.newInstance();
-      testClass.setProject(RunTestInMPS_Action.this.project);
-      testClass.setModelDescriptor(RunTestInMPS_Action.this.model.getModelDescriptor());
+      final Method meth = c.getMethod("runTest", String.class, String.class, Boolean.TYPE);
+      Constructor ctor = c.getConstructor(Project.class, SModelDescriptor.class);
+      final Object testClass = ctor.newInstance(RunTestInMPS_Action.this.project, RunTestInMPS_Action.this.model.getModelDescriptor());
       Thread thread = new Thread(new Runnable() {
         public void run() {
           try {
-            testClass.runTest(className + "$" + NodesTestCase_Behavior.getTestBodyName_1224602741295(), testName, true);
+            meth.invoke(testClass, className + "$" + NodesTestCase_Behavior.getTestBodyName_1224602741295(), testName, true);
           } catch (Throwable e) {
             e.printStackTrace();
           }

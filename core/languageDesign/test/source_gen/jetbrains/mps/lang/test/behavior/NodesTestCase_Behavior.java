@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.unitTest.runtime.TestRunParameters;
 import com.intellij.util.lang.UrlClassLoader;
 import java.net.URL;
-import jetbrains.mps.lang.test.runtime.TransformationTestRuner;
 
 public class NodesTestCase_Behavior {
   public static void init(SNode thisNode) {
@@ -61,7 +60,7 @@ public class NodesTestCase_Behavior {
     List<String> vmParams = ListSequence.fromList(new ArrayList<String>());
     ListSequence.fromList(vmParams).addElement("-Xmx1024m");
     result.setVmParameters(vmParams);
-    result.setTestRunner(TransformationTestRuner.class.getName());
+    result.setTestRunner("jetbrains.mps.lang.test.TransformationTestRunner");
     return result;
   }
 
