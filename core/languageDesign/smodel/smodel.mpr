@@ -22,6 +22,7 @@
       <solutionPath path="${project}/solutions/samples/smodelLanguage-samples.msd" />
       <solutionPath path="${project}/solutions/sandbox/sandbox.msd" />
       <solutionPath path="${project}/solutions/typetest/smodelLanguage_typetest.msd" />
+      <solutionPath path="${project}/solutions/jetbrains.mps.lang.smodel.unittest/jetbrains.mps.lang.smodel.unittest.msd" folder="" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpl" />
@@ -65,6 +66,7 @@
     <option name="mySupportsUserInfoFilter" value="true" />
   </component>
   <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="" />
     <mapping directory="$APPLICATION_HOME_DIR$" vcs="Git" />
   </component>
 </project>
