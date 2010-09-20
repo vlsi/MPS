@@ -22,7 +22,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <maxImportIndex value="16" />
+  <maxImportIndex value="17" />
   <import index="3" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
   <import index="4" modelUID="f:java_stub#jetbrains.mps.ide.ui.filechoosers.treefilechooser(jetbrains.mps.ide.ui.filechoosers.treefilechooser@java_stub)" version="-1" />
   <import index="5" modelUID="f:java_stub#jetbrains.mps.vfs(jetbrains.mps.vfs@java_stub)" version="-1" />
@@ -35,8 +35,8 @@
   <import index="12" modelUID="f:java_stub#com.intellij.execution.ui(com.intellij.execution.ui@java_stub)" version="-1" />
   <import index="13" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="14" modelUID="f:java_stub#com.intellij.openapi.project(com.intellij.openapi.project@java_stub)" version="-1" />
-  <import index="15" modelUID="r:af5efca5-3385-45cc-9441-f2124214c2e2(jetbrains.mps.debug.api.info)" version="-1" />
   <import index="16" modelUID="f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" version="-1" />
+  <import index="17" modelUID="f:java_stub#jetbrains.mps.debug.api.info(jetbrains.mps.debug.api.info@java_stub)" version="-1" />
   <node type="jetbrains.mps.uiLanguage.structure.ComponentDeclaration:1" id="1203601634745">
     <property name="name:1" value="PathField" />
     <node role="root:1" type="jetbrains.mps.uiLanguage.structure.ComponentInstance:1" id="1203601640840">
@@ -496,13 +496,13 @@
             <property name="name:3" value="nodeToShow" />
             <property name="isFinal:3" value="true" />
             <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="144575100359734114" />
-            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="144575100359734115">
-              <link role="baseMethodDeclaration:3" targetNodeId="15.3400923024996848864" resolveInfo="getNodes" />
-              <link role="classConcept:3" targetNodeId="15.3400923024996819942" resolveInfo="DebugInfoUtil" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="144575100359734116">
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5169126600544654991">
+              <link role="baseMethodDeclaration:3" targetNodeId="17.~DebugInfoUtil.getNodes(java.lang.String,java.lang.String):jetbrains.mps.smodel.SNode" resolveInfo="getNodes" />
+              <link role="classConcept:3" targetNodeId="17.~DebugInfoUtil" resolveInfo="DebugInfoUtil" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5169126600544654992">
                 <link role="variableDeclaration:3" targetNodeId="144575100359734080" resolveInfo="methodName" />
               </node>
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="144575100359734117">
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5169126600544654993">
                 <link role="variableDeclaration:3" targetNodeId="144575100359734103" resolveInfo="position" />
               </node>
             </node>
