@@ -16,8 +16,8 @@
 package jetbrains.mps.project;
 
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.generator.UtilModelDescriptor;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.persistence.IModelRootManager;
 
 /**
  * Igor Alshannikov
@@ -51,9 +51,9 @@ public class AuxilaryRuntimeModel implements ModelOwner {
     return modelDescriptor;
   }
 
-  private static class AuxModelDescriptor extends UtilModelDescriptor {
+  private static class AuxModelDescriptor extends BaseSModelDescriptor {
     public AuxModelDescriptor() {
-      super(AuxilaryRuntimeModel.MY_MODEL_REFERENCE);
+      super(IModelRootManager.NULL_MANAGER, AuxilaryRuntimeModel.MY_MODEL_REFERENCE, false);
     }
 
     protected SModel loadModel() {
