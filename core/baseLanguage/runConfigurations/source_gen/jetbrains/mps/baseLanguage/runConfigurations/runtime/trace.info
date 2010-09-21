@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="JavaConfigOptions.java" startLine="164" startPosition="36" endLine="168" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.JavaConfigOptions$2" />
+  <unitInfo fileName="JavaConfigOptions.java" startLine="183" startPosition="36" endLine="187" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.JavaConfigOptions$3" />
+  <unitInfo fileName="JavaConfigOptions.java" startLine="202" startPosition="36" endLine="206" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.JavaConfigOptions$4" />
+  <unitInfo fileName="JavaConfigOptions.java" startLine="221" startPosition="36" endLine="225" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.JavaConfigOptions$5" />
+  <unitInfo fileName="JavaConfigOptions.java" startLine="233" startPosition="36" endLine="237" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.JavaConfigOptions$6" />
+  <unitInfo fileName="ParameterBrowser.java" startLine="17" startPosition="32" endLine="23" endPosition="3" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.ParameterBrowser$1" />
+  <unitInfo fileName="FieldWithBrowseButton.java" startLine="18" startPosition="32" endLine="24" endPosition="3" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.FieldWithBrowseButton$1" />
+  <unitInfo fileName="JavaConfigOptions.java" startLine="40" startPosition="32" endLine="46" endPosition="3" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.JavaConfigOptions$1" />
+  <unitInfo fileName="ParameterBrowser.java" startLine="12" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.ParameterBrowser" />
+  <unitInfo fileName="FieldWithBrowseButton.java" startLine="12" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.FieldWithBrowseButton" />
+  <unitInfo fileName="JavaConfigOptions.java" startLine="22" startPosition="0" endLine="350" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.JavaConfigOptions" />
   <root nodeId="1447676209063346076">
     <nodeInfo nodeId="1447676209063346282" fileName="JavaConfigOptions.java" startLine="61" startPosition="31" endLine="62" endPosition="34" />
     <nodeInfo nodeId="1447676209063346084" fileName="JavaConfigOptions.java" startLine="302" startPosition="25" endLine="303" endPosition="61" />
@@ -280,276 +291,306 @@
     <unitInfo nodeId="2178855608171213717" fileName="IJavaNodeChangeListener.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.IJavaNodeChangeListener" />
   </root>
   <root nodeId="3225885096401341897">
-    <nodeInfo nodeId="3225885096401356791" fileName="GlobalFileteredScope.java" startLine="22" startPosition="55" endLine="23" endPosition="56" />
-    <nodeInfo nodeId="3225885096401366383" fileName="GlobalFileteredScope.java" startLine="30" startPosition="43" endLine="31" endPosition="65" />
-    <nodeInfo nodeId="3225885096401445244" fileName="GlobalFileteredScope.java" startLine="35" startPosition="41" endLine="36" endPosition="58" />
-    <nodeInfo nodeId="3225885096401445344" fileName="GlobalFileteredScope.java" startLine="41" startPosition="73" endLine="42" endPosition="95" />
-    <nodeInfo nodeId="3225885096401445405" fileName="GlobalFileteredScope.java" startLine="43" startPosition="39" endLine="44" endPosition="24" />
-    <nodeInfo nodeId="3225885096401445436" fileName="GlobalFileteredScope.java" startLine="45" startPosition="5" endLine="46" endPosition="16" />
-    <nodeInfo nodeId="3225885096401445625" fileName="GlobalFileteredScope.java" startLine="51" startPosition="52" endLine="52" endPosition="88" />
-    <nodeInfo nodeId="3225885096401445685" fileName="GlobalFileteredScope.java" startLine="55" startPosition="50" endLine="56" endPosition="57" />
-    <nodeInfo nodeId="3225885096401445815" fileName="GlobalFileteredScope.java" startLine="63" startPosition="52" endLine="64" endPosition="68" />
-    <nodeInfo nodeId="3225885096401445823" fileName="GlobalFileteredScope.java" startLine="67" startPosition="50" endLine="68" endPosition="57" />
-    <nodeInfo nodeId="3225885096401363094" fileName="GlobalFileteredScope.java" startLine="73" startPosition="62" endLine="74" endPosition="166" />
-    <nodeInfo nodeId="3225885096401367910" fileName="GlobalFileteredScope.java" startLine="77" startPosition="45" endLine="78" endPosition="78" />
-    <nodeInfo nodeId="3225885096401356813" fileName="GlobalFileteredScope.java" startLine="81" startPosition="52" endLine="82" endPosition="23" />
-    <nodeInfo nodeId="3225885096401356801" fileName="GlobalFileteredScope.java" startLine="85" startPosition="10" endLine="86" endPosition="45" />
-    <nodeInfo nodeId="3225885096401341899" fileName="GlobalFileteredScope.java" startLine="24" startPosition="0" endLine="26" endPosition="3" />
-    <nodeInfo nodeId="3225885096401445370" fileName="GlobalFileteredScope.java" startLine="42" startPosition="95" endLine="45" endPosition="5" />
-    <nodeInfo nodeId="3225885096401366381" fileName="GlobalFileteredScope.java" startLine="29" startPosition="80" endLine="33" endPosition="0" />
-    <nodeInfo nodeId="3225885096401445242" fileName="GlobalFileteredScope.java" startLine="34" startPosition="114" endLine="38" endPosition="0" />
-    <nodeInfo nodeId="3225885096401445614" fileName="GlobalFileteredScope.java" startLine="50" startPosition="96" endLine="54" endPosition="0" />
-    <nodeInfo nodeId="3225885096401445665" fileName="GlobalFileteredScope.java" startLine="54" startPosition="52" endLine="58" endPosition="0" />
-    <nodeInfo nodeId="3225885096401445813" fileName="GlobalFileteredScope.java" startLine="62" startPosition="96" endLine="66" endPosition="0" />
-    <nodeInfo nodeId="3225885096401445821" fileName="GlobalFileteredScope.java" startLine="66" startPosition="52" endLine="70" endPosition="0" />
-    <nodeInfo nodeId="3225885096401363087" fileName="GlobalFileteredScope.java" startLine="72" startPosition="0" endLine="76" endPosition="0" />
-    <nodeInfo nodeId="3225885096401366454" fileName="GlobalFileteredScope.java" startLine="76" startPosition="0" endLine="80" endPosition="0" />
-    <nodeInfo nodeId="3225885096401356808" fileName="GlobalFileteredScope.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
-    <nodeInfo nodeId="3225885096401366368" fileName="GlobalFileteredScope.java" startLine="28" startPosition="43" endLine="33" endPosition="7" />
-    <nodeInfo nodeId="3225885096401368783" fileName="GlobalFileteredScope.java" startLine="33" startPosition="7" endLine="38" endPosition="8" />
-    <nodeInfo nodeId="3225885096401363053" fileName="GlobalFileteredScope.java" startLine="40" startPosition="0" endLine="48" endPosition="0" />
-    <nodeInfo nodeId="3225885096401445466" fileName="GlobalFileteredScope.java" startLine="49" startPosition="77" endLine="58" endPosition="24" />
-    <nodeInfo nodeId="3225885096401445807" fileName="GlobalFileteredScope.java" startLine="61" startPosition="55" endLine="70" endPosition="24" />
-    <nodeInfo nodeId="3225885096401363062" fileName="GlobalFileteredScope.java" startLine="48" startPosition="0" endLine="60" endPosition="0" />
-    <nodeInfo nodeId="3225885096401363073" fileName="GlobalFileteredScope.java" startLine="60" startPosition="0" endLine="72" endPosition="0" />
-    <nodeInfo nodeId="3225885096401356816" fileName="GlobalFileteredScope.java" startLine="27" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="3225885096401341902" fileName="GlobalFileteredScope.java" startLine="25" startPosition="33" endLine="25" endPosition="33" />
-    <scopeInfo nodeId="3225885096401366382" fileName="GlobalFileteredScope.java" startLine="30" startPosition="43" endLine="31" endPosition="65" />
-    <scopeInfo nodeId="3225885096401445243" fileName="GlobalFileteredScope.java" startLine="35" startPosition="41" endLine="36" endPosition="58" />
-    <scopeInfo nodeId="3225885096401445371" fileName="GlobalFileteredScope.java" startLine="43" startPosition="39" endLine="44" endPosition="24" />
-    <scopeInfo nodeId="3225885096401445615" fileName="GlobalFileteredScope.java" startLine="51" startPosition="52" endLine="52" endPosition="88" />
-    <scopeInfo nodeId="3225885096401445666" fileName="GlobalFileteredScope.java" startLine="55" startPosition="50" endLine="56" endPosition="57" />
-    <scopeInfo nodeId="3225885096401445814" fileName="GlobalFileteredScope.java" startLine="63" startPosition="52" endLine="64" endPosition="68" />
-    <scopeInfo nodeId="3225885096401445822" fileName="GlobalFileteredScope.java" startLine="67" startPosition="50" endLine="68" endPosition="57" />
-    <scopeInfo nodeId="3225885096401363090" fileName="GlobalFileteredScope.java" startLine="73" startPosition="62" endLine="74" endPosition="166" />
-    <scopeInfo nodeId="3225885096401366457" fileName="GlobalFileteredScope.java" startLine="77" startPosition="45" endLine="78" endPosition="78" />
-    <scopeInfo nodeId="3225885096401356811" fileName="GlobalFileteredScope.java" startLine="81" startPosition="52" endLine="82" endPosition="23" />
-    <scopeInfo nodeId="3225885096401356798" fileName="GlobalFileteredScope.java" startLine="85" startPosition="10" endLine="86" endPosition="45" />
-    <scopeInfo nodeId="3225885096401341899" fileName="GlobalFileteredScope.java" startLine="24" startPosition="0" endLine="26" endPosition="3" />
-    <scopeInfo nodeId="3225885096401366381" fileName="GlobalFileteredScope.java" startLine="29" startPosition="80" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="3225885096401445242" fileName="GlobalFileteredScope.java" startLine="34" startPosition="114" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="3225885096401445614" fileName="GlobalFileteredScope.java" startLine="50" startPosition="96" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="3225885096401445665" fileName="GlobalFileteredScope.java" startLine="54" startPosition="52" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="3225885096401445813" fileName="GlobalFileteredScope.java" startLine="62" startPosition="96" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="3225885096401445821" fileName="GlobalFileteredScope.java" startLine="66" startPosition="52" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="3225885096401363087" fileName="GlobalFileteredScope.java" startLine="72" startPosition="0" endLine="76" endPosition="0">
-      <varInfo nodeId="3225885096401363092" varName="descriptor" />
-    </scopeInfo>
-    <scopeInfo nodeId="3225885096401366454" fileName="GlobalFileteredScope.java" startLine="76" startPosition="0" endLine="80" endPosition="0">
-      <varInfo nodeId="3225885096401366524" varName="m" />
-    </scopeInfo>
-    <scopeInfo nodeId="3225885096401356808" fileName="GlobalFileteredScope.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="3225885096401363056" fileName="GlobalFileteredScope.java" startLine="41" startPosition="73" endLine="46" endPosition="16">
+    <nodeInfo nodeId="3225885096401366383" fileName="GlobalFilteredScope.java" startLine="29" startPosition="43" endLine="30" endPosition="65" />
+    <nodeInfo nodeId="3225885096401445244" fileName="GlobalFilteredScope.java" startLine="34" startPosition="41" endLine="35" endPosition="57" />
+    <nodeInfo nodeId="3225885096401445344" fileName="GlobalFilteredScope.java" startLine="40" startPosition="73" endLine="41" endPosition="95" />
+    <nodeInfo nodeId="3225885096401445405" fileName="GlobalFilteredScope.java" startLine="42" startPosition="39" endLine="43" endPosition="24" />
+    <nodeInfo nodeId="3225885096401445436" fileName="GlobalFilteredScope.java" startLine="44" startPosition="5" endLine="45" endPosition="16" />
+    <nodeInfo nodeId="3225885096401445625" fileName="GlobalFilteredScope.java" startLine="50" startPosition="52" endLine="51" endPosition="88" />
+    <nodeInfo nodeId="3225885096401445685" fileName="GlobalFilteredScope.java" startLine="54" startPosition="50" endLine="55" endPosition="56" />
+    <nodeInfo nodeId="3225885096401445815" fileName="GlobalFilteredScope.java" startLine="62" startPosition="52" endLine="63" endPosition="68" />
+    <nodeInfo nodeId="3225885096401445823" fileName="GlobalFilteredScope.java" startLine="66" startPosition="50" endLine="67" endPosition="56" />
+    <nodeInfo nodeId="8687286369497022162" fileName="GlobalFilteredScope.java" startLine="73" startPosition="165" endLine="74" endPosition="51" />
+    <nodeInfo nodeId="8687286369497022185" fileName="GlobalFilteredScope.java" startLine="75" startPosition="35" endLine="76" endPosition="110" />
+    <nodeInfo nodeId="8687286369497022182" fileName="GlobalFilteredScope.java" startLine="77" startPosition="7" endLine="78" endPosition="18" />
+    <nodeInfo nodeId="8687286369497022154" fileName="GlobalFilteredScope.java" startLine="79" startPosition="5" endLine="80" endPosition="17" />
+    <nodeInfo nodeId="8687286369497019900" fileName="GlobalFilteredScope.java" startLine="84" startPosition="71" endLine="85" endPosition="19" />
+    <nodeInfo nodeId="8687286369497019916" fileName="GlobalFilteredScope.java" startLine="86" startPosition="5" endLine="87" endPosition="49" />
+    <nodeInfo nodeId="8687286369497019913" fileName="GlobalFilteredScope.java" startLine="88" startPosition="33" endLine="89" endPosition="18" />
+    <nodeInfo nodeId="3988558424674357121" fileName="GlobalFilteredScope.java" startLine="90" startPosition="5" endLine="91" endPosition="85" />
+    <nodeInfo nodeId="8687286369497019878" fileName="GlobalFilteredScope.java" startLine="95" startPosition="41" endLine="96" endPosition="16" />
+    <nodeInfo nodeId="3225885096401341899" fileName="GlobalFilteredScope.java" startLine="23" startPosition="54" endLine="25" endPosition="3" />
+    <nodeInfo nodeId="3225885096401445370" fileName="GlobalFilteredScope.java" startLine="41" startPosition="95" endLine="44" endPosition="5" />
+    <nodeInfo nodeId="8687286369497022157" fileName="GlobalFilteredScope.java" startLine="74" startPosition="51" endLine="77" endPosition="7" />
+    <nodeInfo nodeId="8687286369497019883" fileName="GlobalFilteredScope.java" startLine="83" startPosition="45" endLine="86" endPosition="5" />
+    <nodeInfo nodeId="8687286369497019904" fileName="GlobalFilteredScope.java" startLine="87" startPosition="49" endLine="90" endPosition="5" />
+    <nodeInfo nodeId="3225885096401366381" fileName="GlobalFilteredScope.java" startLine="28" startPosition="80" endLine="32" endPosition="0" />
+    <nodeInfo nodeId="3225885096401445242" fileName="GlobalFilteredScope.java" startLine="33" startPosition="114" endLine="37" endPosition="0" />
+    <nodeInfo nodeId="3225885096401445614" fileName="GlobalFilteredScope.java" startLine="49" startPosition="96" endLine="53" endPosition="0" />
+    <nodeInfo nodeId="3225885096401445665" fileName="GlobalFilteredScope.java" startLine="53" startPosition="52" endLine="57" endPosition="0" />
+    <nodeInfo nodeId="3225885096401445813" fileName="GlobalFilteredScope.java" startLine="61" startPosition="96" endLine="65" endPosition="0" />
+    <nodeInfo nodeId="3225885096401445821" fileName="GlobalFilteredScope.java" startLine="65" startPosition="52" endLine="69" endPosition="0" />
+    <nodeInfo nodeId="3225885096401366368" fileName="GlobalFilteredScope.java" startLine="27" startPosition="43" endLine="32" endPosition="7" />
+    <nodeInfo nodeId="3225885096401368783" fileName="GlobalFilteredScope.java" startLine="32" startPosition="7" endLine="37" endPosition="8" />
+    <nodeInfo nodeId="8687286369496944955" fileName="GlobalFilteredScope.java" startLine="93" startPosition="0" endLine="98" endPosition="0" />
+    <nodeInfo nodeId="8687286369497022131" fileName="GlobalFilteredScope.java" startLine="72" startPosition="62" endLine="79" endPosition="5" />
+    <nodeInfo nodeId="3225885096401363053" fileName="GlobalFilteredScope.java" startLine="39" startPosition="0" endLine="47" endPosition="0" />
+    <nodeInfo nodeId="3225885096401445466" fileName="GlobalFilteredScope.java" startLine="48" startPosition="77" endLine="57" endPosition="24" />
+    <nodeInfo nodeId="3225885096401445807" fileName="GlobalFilteredScope.java" startLine="60" startPosition="55" endLine="69" endPosition="24" />
+    <nodeInfo nodeId="3225885096401363087" fileName="GlobalFilteredScope.java" startLine="71" startPosition="0" endLine="82" endPosition="0" />
+    <nodeInfo nodeId="3225885096401366454" fileName="GlobalFilteredScope.java" startLine="82" startPosition="0" endLine="93" endPosition="0" />
+    <nodeInfo nodeId="3225885096401363062" fileName="GlobalFilteredScope.java" startLine="47" startPosition="0" endLine="59" endPosition="0" />
+    <nodeInfo nodeId="3225885096401363073" fileName="GlobalFilteredScope.java" startLine="59" startPosition="0" endLine="71" endPosition="0" />
+    <nodeInfo nodeId="3225885096401356816" fileName="GlobalFilteredScope.java" startLine="26" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="3225885096401341902" fileName="GlobalFilteredScope.java" startLine="24" startPosition="32" endLine="24" endPosition="32" />
+    <scopeInfo nodeId="3225885096401366382" fileName="GlobalFilteredScope.java" startLine="29" startPosition="43" endLine="30" endPosition="65" />
+    <scopeInfo nodeId="3225885096401445243" fileName="GlobalFilteredScope.java" startLine="34" startPosition="41" endLine="35" endPosition="57" />
+    <scopeInfo nodeId="3225885096401445371" fileName="GlobalFilteredScope.java" startLine="42" startPosition="39" endLine="43" endPosition="24" />
+    <scopeInfo nodeId="3225885096401445615" fileName="GlobalFilteredScope.java" startLine="50" startPosition="52" endLine="51" endPosition="88" />
+    <scopeInfo nodeId="3225885096401445666" fileName="GlobalFilteredScope.java" startLine="54" startPosition="50" endLine="55" endPosition="56" />
+    <scopeInfo nodeId="3225885096401445814" fileName="GlobalFilteredScope.java" startLine="62" startPosition="52" endLine="63" endPosition="68" />
+    <scopeInfo nodeId="3225885096401445822" fileName="GlobalFilteredScope.java" startLine="66" startPosition="50" endLine="67" endPosition="56" />
+    <scopeInfo nodeId="8687286369497022158" fileName="GlobalFilteredScope.java" startLine="75" startPosition="35" endLine="76" endPosition="110" />
+    <scopeInfo nodeId="8687286369497019884" fileName="GlobalFilteredScope.java" startLine="84" startPosition="71" endLine="85" endPosition="19" />
+    <scopeInfo nodeId="8687286369497019905" fileName="GlobalFilteredScope.java" startLine="88" startPosition="33" endLine="89" endPosition="18" />
+    <scopeInfo nodeId="8687286369496944958" fileName="GlobalFilteredScope.java" startLine="95" startPosition="41" endLine="96" endPosition="16" />
+    <scopeInfo nodeId="3225885096401341899" fileName="GlobalFilteredScope.java" startLine="23" startPosition="54" endLine="25" endPosition="3" />
+    <scopeInfo nodeId="3225885096401366381" fileName="GlobalFilteredScope.java" startLine="28" startPosition="80" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="3225885096401445242" fileName="GlobalFilteredScope.java" startLine="33" startPosition="114" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="3225885096401445614" fileName="GlobalFilteredScope.java" startLine="49" startPosition="96" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="3225885096401445665" fileName="GlobalFilteredScope.java" startLine="53" startPosition="52" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="3225885096401445813" fileName="GlobalFilteredScope.java" startLine="61" startPosition="96" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="3225885096401445821" fileName="GlobalFilteredScope.java" startLine="65" startPosition="52" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="3225885096401363056" fileName="GlobalFilteredScope.java" startLine="40" startPosition="73" endLine="45" endPosition="16">
       <varInfo nodeId="3225885096401445345" varName="descriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="3225885096401363053" fileName="GlobalFileteredScope.java" startLine="40" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="8687286369497022132" fileName="GlobalFilteredScope.java" startLine="73" startPosition="165" endLine="78" endPosition="18">
+      <varInfo nodeId="8687286369497022163" varName="requiredModule" />
+    </scopeInfo>
+    <scopeInfo nodeId="8687286369496944955" fileName="GlobalFilteredScope.java" startLine="93" startPosition="0" endLine="98" endPosition="0" />
+    <scopeInfo nodeId="3225885096401363053" fileName="GlobalFilteredScope.java" startLine="39" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="3225885096401363057" varName="reference" />
     </scopeInfo>
-    <scopeInfo nodeId="3225885096401363065" fileName="GlobalFileteredScope.java" startLine="49" startPosition="77" endLine="58" endPosition="24" />
-    <scopeInfo nodeId="3225885096401363076" fileName="GlobalFileteredScope.java" startLine="61" startPosition="55" endLine="70" endPosition="24" />
-    <scopeInfo nodeId="3225885096401356819" fileName="GlobalFileteredScope.java" startLine="28" startPosition="43" endLine="38" endPosition="8">
+    <scopeInfo nodeId="3225885096401363090" fileName="GlobalFilteredScope.java" startLine="72" startPosition="62" endLine="80" endPosition="17" />
+    <scopeInfo nodeId="3225885096401366457" fileName="GlobalFilteredScope.java" startLine="83" startPosition="45" endLine="91" endPosition="85">
+      <varInfo nodeId="8687286369497019917" varName="requiredModule" />
+    </scopeInfo>
+    <scopeInfo nodeId="3225885096401363065" fileName="GlobalFilteredScope.java" startLine="48" startPosition="77" endLine="57" endPosition="24" />
+    <scopeInfo nodeId="3225885096401363076" fileName="GlobalFilteredScope.java" startLine="60" startPosition="55" endLine="69" endPosition="24" />
+    <scopeInfo nodeId="3225885096401356819" fileName="GlobalFilteredScope.java" startLine="27" startPosition="43" endLine="37" endPosition="8">
       <varInfo nodeId="3225885096401366369" varName="s" />
     </scopeInfo>
-    <scopeInfo nodeId="3225885096401363062" fileName="GlobalFileteredScope.java" startLine="48" startPosition="0" endLine="60" endPosition="0">
+    <scopeInfo nodeId="3225885096401363087" fileName="GlobalFilteredScope.java" startLine="71" startPosition="0" endLine="82" endPosition="0">
+      <varInfo nodeId="3225885096401363092" varName="descriptor" />
+    </scopeInfo>
+    <scopeInfo nodeId="3225885096401366454" fileName="GlobalFilteredScope.java" startLine="82" startPosition="0" endLine="93" endPosition="0">
+      <varInfo nodeId="3225885096401366524" varName="m" />
+    </scopeInfo>
+    <scopeInfo nodeId="3225885096401363062" fileName="GlobalFilteredScope.java" startLine="47" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="3225885096401363066" varName="modelName" />
     </scopeInfo>
-    <scopeInfo nodeId="3225885096401363073" fileName="GlobalFileteredScope.java" startLine="60" startPosition="0" endLine="72" endPosition="0" />
-    <scopeInfo nodeId="3225885096401356816" fileName="GlobalFileteredScope.java" startLine="27" startPosition="0" endLine="40" endPosition="0" />
-    <unitInfo nodeId="3225885096401366381" fileName="GlobalFileteredScope.java" startLine="29" startPosition="51" endLine="33" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.GlobalFileteredScope$1" />
-    <unitInfo nodeId="3225885096401445242" fileName="GlobalFileteredScope.java" startLine="34" startPosition="89" endLine="38" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.IWhereFilter$anonymous" />
-    <unitInfo nodeId="3225885096401445614" fileName="GlobalFileteredScope.java" startLine="50" startPosition="58" endLine="54" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.ISequenceClosure$anonymous" />
-    <unitInfo nodeId="3225885096401445665" fileName="GlobalFileteredScope.java" startLine="54" startPosition="18" endLine="58" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.IWhereFilter$anonymous" />
-    <unitInfo nodeId="3225885096401445813" fileName="GlobalFileteredScope.java" startLine="62" startPosition="58" endLine="66" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.ISequenceClosure$anonymous" />
-    <unitInfo nodeId="3225885096401445821" fileName="GlobalFileteredScope.java" startLine="66" startPosition="18" endLine="70" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.IWhereFilter$anonymous" />
-    <unitInfo nodeId="3225885096401341897" fileName="GlobalFileteredScope.java" startLine="22" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.GlobalFileteredScope" />
+    <scopeInfo nodeId="3225885096401363073" fileName="GlobalFilteredScope.java" startLine="59" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="3225885096401356816" fileName="GlobalFilteredScope.java" startLine="26" startPosition="0" endLine="39" endPosition="0" />
+    <unitInfo nodeId="3225885096401366381" fileName="GlobalFilteredScope.java" startLine="28" startPosition="51" endLine="32" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.GlobalFilteredScope$1" />
+    <unitInfo nodeId="3225885096401445242" fileName="GlobalFilteredScope.java" startLine="33" startPosition="89" endLine="37" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.IWhereFilter$anonymous" />
+    <unitInfo nodeId="3225885096401445614" fileName="GlobalFilteredScope.java" startLine="49" startPosition="58" endLine="53" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.ISequenceClosure$anonymous" />
+    <unitInfo nodeId="3225885096401445665" fileName="GlobalFilteredScope.java" startLine="53" startPosition="18" endLine="57" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.IWhereFilter$anonymous" />
+    <unitInfo nodeId="3225885096401445813" fileName="GlobalFilteredScope.java" startLine="61" startPosition="58" endLine="65" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.ISequenceClosure$anonymous" />
+    <unitInfo nodeId="3225885096401445821" fileName="GlobalFilteredScope.java" startLine="65" startPosition="18" endLine="69" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.IWhereFilter$anonymous" />
+    <unitInfo nodeId="3225885096401341897" fileName="GlobalFilteredScope.java" startLine="23" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.GlobalFilteredScope" />
   </root>
   <root nodeId="6937689104170748691">
-    <nodeInfo nodeId="6937689104170748702" fileName="MainNodeChooser.java" startLine="35" startPosition="90" endLine="36" endPosition="23" />
-    <nodeInfo nodeId="2178855608171431968" fileName="MainNodeChooser.java" startLine="36" startPosition="23" endLine="37" endPosition="124" />
-    <nodeInfo nodeId="7247071346992921610" fileName="MainNodeChooser.java" startLine="37" startPosition="124" endLine="38" endPosition="45" />
-    <nodeInfo nodeId="6937689104170748710" fileName="MainNodeChooser.java" startLine="40" startPosition="135" endLine="41" endPosition="12" />
-    <nodeInfo nodeId="6937689104170748711" fileName="MainNodeChooser.java" startLine="41" startPosition="12" endLine="42" endPosition="0" />
-    <nodeInfo nodeId="6937689104170748712" fileName="MainNodeChooser.java" startLine="42" startPosition="0" endLine="43" endPosition="41" />
-    <nodeInfo nodeId="6937689104170748718" fileName="MainNodeChooser.java" startLine="43" startPosition="41" endLine="44" endPosition="31" />
-    <nodeInfo nodeId="7247071346992921616" fileName="MainNodeChooser.java" startLine="44" startPosition="31" endLine="45" endPosition="49" />
-    <nodeInfo nodeId="6937689104170748724" fileName="MainNodeChooser.java" startLine="45" startPosition="49" endLine="46" endPosition="0" />
-    <nodeInfo nodeId="6937689104170748739" fileName="MainNodeChooser.java" startLine="48" startPosition="51" endLine="49" endPosition="0" />
-    <nodeInfo nodeId="6937689104170748740" fileName="MainNodeChooser.java" startLine="49" startPosition="0" endLine="50" endPosition="84" />
-    <nodeInfo nodeId="6937689104170748744" fileName="MainNodeChooser.java" startLine="50" startPosition="84" endLine="51" endPosition="134" />
-    <nodeInfo nodeId="977355701051636832" fileName="MainNodeChooser.java" startLine="51" startPosition="134" endLine="52" endPosition="0" />
-    <nodeInfo nodeId="6937689104170748752" fileName="MainNodeChooser.java" startLine="52" startPosition="0" endLine="53" endPosition="85" />
-    <nodeInfo nodeId="1053283424753659279" fileName="MainNodeChooser.java" startLine="55" startPosition="29" endLine="56" endPosition="197" />
-    <nodeInfo nodeId="1053283424753661078" fileName="MainNodeChooser.java" startLine="57" startPosition="58" endLine="58" endPosition="142" />
-    <nodeInfo nodeId="1053283424753661235" fileName="MainNodeChooser.java" startLine="61" startPosition="49" endLine="62" endPosition="68" />
-    <nodeInfo nodeId="6937689104170748784" fileName="MainNodeChooser.java" startLine="67" startPosition="11" endLine="68" endPosition="0" />
-    <nodeInfo nodeId="6937689104170748785" fileName="MainNodeChooser.java" startLine="68" startPosition="0" endLine="69" endPosition="108" />
-    <nodeInfo nodeId="6937689104170748791" fileName="MainNodeChooser.java" startLine="69" startPosition="108" endLine="70" endPosition="51" />
-    <nodeInfo nodeId="7247071346992907999" fileName="MainNodeChooser.java" startLine="72" startPosition="7" endLine="73" endPosition="0" />
-    <nodeInfo nodeId="7247071346992921596" fileName="MainNodeChooser.java" startLine="75" startPosition="54" endLine="76" endPosition="38" />
-    <nodeInfo nodeId="7247071346992922023" fileName="MainNodeChooser.java" startLine="77" startPosition="40" endLine="78" endPosition="24" />
-    <nodeInfo nodeId="7247071346992922027" fileName="MainNodeChooser.java" startLine="78" startPosition="24" endLine="79" endPosition="17" />
-    <nodeInfo nodeId="7247071346992922030" fileName="MainNodeChooser.java" startLine="80" startPosition="9" endLine="81" endPosition="44" />
-    <nodeInfo nodeId="7247071346992922047" fileName="MainNodeChooser.java" startLine="82" startPosition="27" endLine="83" endPosition="24" />
-    <nodeInfo nodeId="7247071346992922050" fileName="MainNodeChooser.java" startLine="83" startPosition="24" endLine="84" endPosition="17" />
-    <nodeInfo nodeId="7247071346992922051" fileName="MainNodeChooser.java" startLine="85" startPosition="9" endLine="86" endPosition="0" />
-    <nodeInfo nodeId="7247071346992922061" fileName="MainNodeChooser.java" startLine="86" startPosition="0" endLine="87" endPosition="101" />
-    <nodeInfo nodeId="7247071346992922865" fileName="MainNodeChooser.java" startLine="91" startPosition="33" endLine="92" endPosition="55" />
-    <nodeInfo nodeId="5908604687501237034" fileName="MainNodeChooser.java" startLine="95" startPosition="149" endLine="96" endPosition="35" />
-    <nodeInfo nodeId="5908604687501237048" fileName="MainNodeChooser.java" startLine="98" startPosition="45" endLine="99" endPosition="56" />
-    <nodeInfo nodeId="5908604687501237059" fileName="MainNodeChooser.java" startLine="100" startPosition="28" endLine="101" endPosition="81" />
-    <nodeInfo nodeId="5908604687501251044" fileName="MainNodeChooser.java" startLine="105" startPosition="61" endLine="106" endPosition="32" />
-    <nodeInfo nodeId="5908604687501295838" fileName="MainNodeChooser.java" startLine="107" startPosition="24" endLine="108" endPosition="64" />
-    <nodeInfo nodeId="4041819447319315360" fileName="MainNodeChooser.java" startLine="115" startPosition="7" endLine="116" endPosition="0" />
-    <nodeInfo nodeId="7247071346992922014" fileName="MainNodeChooser.java" startLine="116" startPosition="0" endLine="117" endPosition="14" />
-    <nodeInfo nodeId="6937689104170748809" fileName="MainNodeChooser.java" startLine="120" startPosition="26" endLine="121" endPosition="23" />
-    <nodeInfo nodeId="2178855608171473744" fileName="MainNodeChooser.java" startLine="125" startPosition="30" endLine="126" endPosition="13" />
-    <nodeInfo nodeId="6937689104170748821" fileName="MainNodeChooser.java" startLine="129" startPosition="32" endLine="130" endPosition="27" />
-    <nodeInfo nodeId="3416915311942187052" fileName="MainNodeChooser.java" startLine="130" startPosition="27" endLine="131" endPosition="15" />
-    <nodeInfo nodeId="3416915311942187042" fileName="MainNodeChooser.java" startLine="132" startPosition="14" endLine="133" endPosition="22" />
-    <nodeInfo nodeId="6937689104170748836" fileName="MainNodeChooser.java" startLine="135" startPosition="12" endLine="136" endPosition="25" />
-    <nodeInfo nodeId="6937689104170748845" fileName="MainNodeChooser.java" startLine="138" startPosition="27" endLine="139" endPosition="56" />
-    <nodeInfo nodeId="2178855608171473858" fileName="MainNodeChooser.java" startLine="142" startPosition="5" endLine="143" endPosition="27" />
-    <nodeInfo nodeId="7247071346992929418" fileName="MainNodeChooser.java" startLine="147" startPosition="96" endLine="148" endPosition="144" />
-    <nodeInfo nodeId="7247071346992929428" fileName="MainNodeChooser.java" startLine="149" startPosition="12" endLine="150" endPosition="69" />
-    <nodeInfo nodeId="7247071346992929439" fileName="MainNodeChooser.java" startLine="151" startPosition="32" endLine="152" endPosition="44" />
-    <nodeInfo nodeId="7247071346992929447" fileName="MainNodeChooser.java" startLine="153" startPosition="7" endLine="154" endPosition="59" />
-    <nodeInfo nodeId="2178855608171472279" fileName="MainNodeChooser.java" startLine="158" startPosition="80" endLine="159" endPosition="65" />
-    <nodeInfo nodeId="2178855608171472751" fileName="MainNodeChooser.java" startLine="162" startPosition="74" endLine="163" endPosition="68" />
-    <nodeInfo nodeId="2178855608171473236" fileName="MainNodeChooser.java" startLine="168" startPosition="53" endLine="169" endPosition="52" />
-    <nodeInfo nodeId="6937689104170748692" fileName="MainNodeChooser.java" startLine="31" startPosition="76" endLine="33" endPosition="34" />
-    <nodeInfo nodeId="6937689104170748696" fileName="MainNodeChooser.java" startLine="33" startPosition="34" endLine="35" endPosition="90" />
-    <nodeInfo nodeId="5908604687501237057" fileName="MainNodeChooser.java" startLine="100" startPosition="26" endLine="102" endPosition="21" />
-    <nodeInfo nodeId="5908604687501295836" fileName="MainNodeChooser.java" startLine="107" startPosition="22" endLine="109" endPosition="17" />
-    <nodeInfo nodeId="3416915311942173064" fileName="MainNodeChooser.java" startLine="132" startPosition="12" endLine="134" endPosition="7" />
-    <nodeInfo nodeId="5908604687501237032" fileName="MainNodeChooser.java" startLine="94" startPosition="51" endLine="97" endPosition="21" />
-    <nodeInfo nodeId="2178855608171473511" fileName="MainNodeChooser.java" startLine="124" startPosition="41" endLine="127" endPosition="5" />
-    <nodeInfo nodeId="7247071346992929437" fileName="MainNodeChooser.java" startLine="150" startPosition="69" endLine="153" endPosition="7" />
-    <nodeInfo nodeId="1053283424753661233" fileName="MainNodeChooser.java" startLine="60" startPosition="158" endLine="64" endPosition="0" />
-    <nodeInfo nodeId="7247071346992922005" fileName="MainNodeChooser.java" startLine="76" startPosition="38" endLine="80" endPosition="9" />
-    <nodeInfo nodeId="7247071346992922038" fileName="MainNodeChooser.java" startLine="81" startPosition="44" endLine="85" endPosition="9" />
-    <nodeInfo nodeId="6937689104170748805" fileName="MainNodeChooser.java" startLine="119" startPosition="0" endLine="123" endPosition="0" />
-    <nodeInfo nodeId="6937689104170748843" fileName="MainNodeChooser.java" startLine="137" startPosition="59" endLine="141" endPosition="0" />
-    <nodeInfo nodeId="2178855608171471898" fileName="MainNodeChooser.java" startLine="157" startPosition="0" endLine="161" endPosition="0" />
-    <nodeInfo nodeId="2178855608171472394" fileName="MainNodeChooser.java" startLine="161" startPosition="0" endLine="165" endPosition="0" />
-    <nodeInfo nodeId="2178855608171473197" fileName="MainNodeChooser.java" startLine="167" startPosition="94" endLine="171" endPosition="0" />
-    <nodeInfo nodeId="1053283424753661224" fileName="MainNodeChooser.java" startLine="59" startPosition="20" endLine="64" endPosition="34" />
-    <nodeInfo nodeId="5908604687501237046" fileName="MainNodeChooser.java" startLine="97" startPosition="21" endLine="102" endPosition="21" />
-    <nodeInfo nodeId="5908604687501251034" fileName="MainNodeChooser.java" startLine="104" startPosition="19" endLine="109" endPosition="17" />
-    <nodeInfo nodeId="6937689104170748842" fileName="MainNodeChooser.java" startLine="136" startPosition="25" endLine="141" endPosition="9" />
-    <nodeInfo nodeId="2178855608171473126" fileName="MainNodeChooser.java" startLine="166" startPosition="34" endLine="171" endPosition="7" />
-    <nodeInfo nodeId="1053283424753661189" fileName="MainNodeChooser.java" startLine="59" startPosition="18" endLine="65" endPosition="13" />
-    <nodeInfo nodeId="6937689104170748819" fileName="MainNodeChooser.java" startLine="128" startPosition="23" endLine="134" endPosition="7" />
-    <nodeInfo nodeId="7247071346992929424" fileName="MainNodeChooser.java" startLine="149" startPosition="10" endLine="155" endPosition="5" />
-    <nodeInfo nodeId="6937689104170748834" fileName="MainNodeChooser.java" startLine="135" startPosition="10" endLine="142" endPosition="5" />
-    <nodeInfo nodeId="2178855608171472935" fileName="MainNodeChooser.java" startLine="165" startPosition="0" endLine="173" endPosition="0" />
-    <nodeInfo nodeId="1053283424753660826" fileName="MainNodeChooser.java" startLine="56" startPosition="197" endLine="65" endPosition="13" />
-    <nodeInfo nodeId="7247071346992929398" fileName="MainNodeChooser.java" startLine="146" startPosition="39" endLine="155" endPosition="5" />
-    <nodeInfo nodeId="5908604687501237030" fileName="MainNodeChooser.java" startLine="93" startPosition="136" endLine="104" endPosition="0" />
-    <nodeInfo nodeId="5908604687501237021" fileName="MainNodeChooser.java" startLine="92" startPosition="55" endLine="104" endPosition="19" />
-    <nodeInfo nodeId="7247071346992929388" fileName="MainNodeChooser.java" startLine="145" startPosition="0" endLine="157" endPosition="0" />
-    <nodeInfo nodeId="977355701051644787" fileName="MainNodeChooser.java" startLine="54" startPosition="61" endLine="67" endPosition="0" />
-    <nodeInfo nodeId="977355701051644786" fileName="MainNodeChooser.java" startLine="53" startPosition="85" endLine="67" endPosition="11" />
-    <nodeInfo nodeId="6937689104170748817" fileName="MainNodeChooser.java" startLine="127" startPosition="5" endLine="142" endPosition="5" />
-    <nodeInfo nodeId="7247071346992922088" fileName="MainNodeChooser.java" startLine="90" startPosition="65" endLine="111" endPosition="0" />
-    <nodeInfo nodeId="7247071346992922087" fileName="MainNodeChooser.java" startLine="89" startPosition="64" endLine="111" endPosition="15" />
-    <nodeInfo nodeId="6937689104170748813" fileName="MainNodeChooser.java" startLine="123" startPosition="0" endLine="145" endPosition="0" />
-    <nodeInfo nodeId="6937689104170748733" fileName="MainNodeChooser.java" startLine="47" startPosition="36" endLine="72" endPosition="0" />
-    <nodeInfo nodeId="7247071346992922081" fileName="MainNodeChooser.java" startLine="88" startPosition="86" endLine="113" endPosition="0" />
-    <nodeInfo nodeId="6937689104170748725" fileName="MainNodeChooser.java" startLine="46" startPosition="0" endLine="72" endPosition="7" />
-    <nodeInfo nodeId="7247071346992922074" fileName="MainNodeChooser.java" startLine="87" startPosition="101" endLine="113" endPosition="11" />
-    <nodeInfo nodeId="7247071346992921582" fileName="MainNodeChooser.java" startLine="74" startPosition="44" endLine="115" endPosition="0" />
-    <nodeInfo nodeId="7247071346992921575" fileName="MainNodeChooser.java" startLine="73" startPosition="0" endLine="115" endPosition="7" />
-    <nodeInfo nodeId="6937689104170748706" fileName="MainNodeChooser.java" startLine="39" startPosition="0" endLine="118" endPosition="3" />
-    <scopeInfo nodeId="1053283424753660827" fileName="MainNodeChooser.java" startLine="57" startPosition="58" endLine="58" endPosition="142" />
-    <scopeInfo nodeId="1053283424753661234" fileName="MainNodeChooser.java" startLine="61" startPosition="49" endLine="62" endPosition="68" />
-    <scopeInfo nodeId="5908604687501237033" fileName="MainNodeChooser.java" startLine="95" startPosition="149" endLine="96" endPosition="35" />
-    <scopeInfo nodeId="5908604687501237047" fileName="MainNodeChooser.java" startLine="98" startPosition="45" endLine="99" endPosition="56" />
-    <scopeInfo nodeId="5908604687501237058" fileName="MainNodeChooser.java" startLine="100" startPosition="28" endLine="101" endPosition="81" />
-    <scopeInfo nodeId="5908604687501251035" fileName="MainNodeChooser.java" startLine="105" startPosition="61" endLine="106" endPosition="32" />
-    <scopeInfo nodeId="5908604687501295837" fileName="MainNodeChooser.java" startLine="107" startPosition="24" endLine="108" endPosition="64" />
-    <scopeInfo nodeId="6937689104170748808" fileName="MainNodeChooser.java" startLine="120" startPosition="26" endLine="121" endPosition="23" />
-    <scopeInfo nodeId="2178855608171473512" fileName="MainNodeChooser.java" startLine="125" startPosition="30" endLine="126" endPosition="13" />
-    <scopeInfo nodeId="3416915311942173065" fileName="MainNodeChooser.java" startLine="132" startPosition="14" endLine="133" endPosition="22" />
-    <scopeInfo nodeId="6937689104170748844" fileName="MainNodeChooser.java" startLine="138" startPosition="27" endLine="139" endPosition="56" />
-    <scopeInfo nodeId="7247071346992929400" fileName="MainNodeChooser.java" startLine="147" startPosition="96" endLine="148" endPosition="144" />
-    <scopeInfo nodeId="7247071346992929438" fileName="MainNodeChooser.java" startLine="151" startPosition="32" endLine="152" endPosition="44" />
-    <scopeInfo nodeId="2178855608171471901" fileName="MainNodeChooser.java" startLine="158" startPosition="80" endLine="159" endPosition="65" />
-    <scopeInfo nodeId="2178855608171472397" fileName="MainNodeChooser.java" startLine="162" startPosition="74" endLine="163" endPosition="68" />
-    <scopeInfo nodeId="2178855608171473198" fileName="MainNodeChooser.java" startLine="168" startPosition="53" endLine="169" endPosition="52" />
-    <scopeInfo nodeId="7247071346992922006" fileName="MainNodeChooser.java" startLine="77" startPosition="40" endLine="79" endPosition="17" />
-    <scopeInfo nodeId="7247071346992922039" fileName="MainNodeChooser.java" startLine="82" startPosition="27" endLine="84" endPosition="17" />
-    <scopeInfo nodeId="6937689104170748820" fileName="MainNodeChooser.java" startLine="129" startPosition="32" endLine="131" endPosition="15" />
-    <scopeInfo nodeId="1053283424753661233" fileName="MainNodeChooser.java" startLine="60" startPosition="158" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="6937689104170748805" fileName="MainNodeChooser.java" startLine="119" startPosition="0" endLine="123" endPosition="0" />
-    <scopeInfo nodeId="6937689104170748843" fileName="MainNodeChooser.java" startLine="137" startPosition="59" endLine="141" endPosition="0" />
-    <scopeInfo nodeId="2178855608171471898" fileName="MainNodeChooser.java" startLine="157" startPosition="0" endLine="161" endPosition="0">
+    <nodeInfo nodeId="6937689104170748702" fileName="MainNodeChooser.java" startLine="36" startPosition="90" endLine="37" endPosition="23" />
+    <nodeInfo nodeId="2178855608171431968" fileName="MainNodeChooser.java" startLine="37" startPosition="23" endLine="38" endPosition="124" />
+    <nodeInfo nodeId="7247071346992921610" fileName="MainNodeChooser.java" startLine="38" startPosition="124" endLine="39" endPosition="44" />
+    <nodeInfo nodeId="6937689104170748710" fileName="MainNodeChooser.java" startLine="41" startPosition="141" endLine="42" endPosition="12" />
+    <nodeInfo nodeId="6937689104170748711" fileName="MainNodeChooser.java" startLine="42" startPosition="12" endLine="43" endPosition="0" />
+    <nodeInfo nodeId="6937689104170748712" fileName="MainNodeChooser.java" startLine="43" startPosition="0" endLine="44" endPosition="36" />
+    <nodeInfo nodeId="6937689104170748718" fileName="MainNodeChooser.java" startLine="44" startPosition="36" endLine="45" endPosition="26" />
+    <nodeInfo nodeId="8687286369497022266" fileName="MainNodeChooser.java" startLine="45" startPosition="26" endLine="46" endPosition="0" />
+    <nodeInfo nodeId="8687286369497022269" fileName="MainNodeChooser.java" startLine="46" startPosition="0" endLine="47" endPosition="67" />
+    <nodeInfo nodeId="8687286369497022275" fileName="MainNodeChooser.java" startLine="49" startPosition="25" endLine="50" endPosition="96" />
+    <nodeInfo nodeId="8687286369497022263" fileName="MainNodeChooser.java" startLine="56" startPosition="45" endLine="57" endPosition="28" />
+    <nodeInfo nodeId="6937689104170748724" fileName="MainNodeChooser.java" startLine="59" startPosition="6" endLine="60" endPosition="0" />
+    <nodeInfo nodeId="6937689104170748739" fileName="MainNodeChooser.java" startLine="62" startPosition="51" endLine="63" endPosition="0" />
+    <nodeInfo nodeId="6937689104170748740" fileName="MainNodeChooser.java" startLine="63" startPosition="0" endLine="64" endPosition="84" />
+    <nodeInfo nodeId="6937689104170748744" fileName="MainNodeChooser.java" startLine="64" startPosition="84" endLine="65" endPosition="134" />
+    <nodeInfo nodeId="977355701051636832" fileName="MainNodeChooser.java" startLine="65" startPosition="134" endLine="66" endPosition="0" />
+    <nodeInfo nodeId="6937689104170748752" fileName="MainNodeChooser.java" startLine="66" startPosition="0" endLine="67" endPosition="85" />
+    <nodeInfo nodeId="1053283424753659279" fileName="MainNodeChooser.java" startLine="69" startPosition="29" endLine="70" endPosition="197" />
+    <nodeInfo nodeId="1053283424753661078" fileName="MainNodeChooser.java" startLine="71" startPosition="58" endLine="72" endPosition="142" />
+    <nodeInfo nodeId="1053283424753661235" fileName="MainNodeChooser.java" startLine="75" startPosition="49" endLine="76" endPosition="68" />
+    <nodeInfo nodeId="6937689104170748784" fileName="MainNodeChooser.java" startLine="81" startPosition="11" endLine="82" endPosition="0" />
+    <nodeInfo nodeId="6937689104170748785" fileName="MainNodeChooser.java" startLine="82" startPosition="0" endLine="83" endPosition="108" />
+    <nodeInfo nodeId="6937689104170748791" fileName="MainNodeChooser.java" startLine="83" startPosition="108" endLine="84" endPosition="51" />
+    <nodeInfo nodeId="7247071346992907999" fileName="MainNodeChooser.java" startLine="86" startPosition="7" endLine="87" endPosition="0" />
+    <nodeInfo nodeId="7247071346992921596" fileName="MainNodeChooser.java" startLine="89" startPosition="54" endLine="90" endPosition="38" />
+    <nodeInfo nodeId="7247071346992922023" fileName="MainNodeChooser.java" startLine="91" startPosition="40" endLine="92" endPosition="24" />
+    <nodeInfo nodeId="7247071346992922027" fileName="MainNodeChooser.java" startLine="92" startPosition="24" endLine="93" endPosition="17" />
+    <nodeInfo nodeId="7247071346992922030" fileName="MainNodeChooser.java" startLine="94" startPosition="9" endLine="95" endPosition="44" />
+    <nodeInfo nodeId="7247071346992922047" fileName="MainNodeChooser.java" startLine="96" startPosition="27" endLine="97" endPosition="24" />
+    <nodeInfo nodeId="7247071346992922050" fileName="MainNodeChooser.java" startLine="97" startPosition="24" endLine="98" endPosition="17" />
+    <nodeInfo nodeId="7247071346992922051" fileName="MainNodeChooser.java" startLine="99" startPosition="9" endLine="100" endPosition="0" />
+    <nodeInfo nodeId="7247071346992922061" fileName="MainNodeChooser.java" startLine="100" startPosition="0" endLine="101" endPosition="101" />
+    <nodeInfo nodeId="7247071346992922865" fileName="MainNodeChooser.java" startLine="105" startPosition="33" endLine="106" endPosition="55" />
+    <nodeInfo nodeId="5908604687501237034" fileName="MainNodeChooser.java" startLine="109" startPosition="149" endLine="110" endPosition="35" />
+    <nodeInfo nodeId="5908604687501237048" fileName="MainNodeChooser.java" startLine="112" startPosition="45" endLine="113" endPosition="56" />
+    <nodeInfo nodeId="5908604687501237059" fileName="MainNodeChooser.java" startLine="114" startPosition="28" endLine="115" endPosition="81" />
+    <nodeInfo nodeId="5908604687501251044" fileName="MainNodeChooser.java" startLine="119" startPosition="61" endLine="120" endPosition="32" />
+    <nodeInfo nodeId="5908604687501295838" fileName="MainNodeChooser.java" startLine="121" startPosition="24" endLine="122" endPosition="64" />
+    <nodeInfo nodeId="4041819447319315360" fileName="MainNodeChooser.java" startLine="129" startPosition="7" endLine="130" endPosition="0" />
+    <nodeInfo nodeId="7247071346992922014" fileName="MainNodeChooser.java" startLine="130" startPosition="0" endLine="131" endPosition="14" />
+    <nodeInfo nodeId="6937689104170748809" fileName="MainNodeChooser.java" startLine="134" startPosition="26" endLine="135" endPosition="23" />
+    <nodeInfo nodeId="2178855608171473744" fileName="MainNodeChooser.java" startLine="139" startPosition="30" endLine="140" endPosition="13" />
+    <nodeInfo nodeId="6937689104170748821" fileName="MainNodeChooser.java" startLine="143" startPosition="32" endLine="144" endPosition="27" />
+    <nodeInfo nodeId="3416915311942187052" fileName="MainNodeChooser.java" startLine="144" startPosition="27" endLine="145" endPosition="15" />
+    <nodeInfo nodeId="3416915311942187042" fileName="MainNodeChooser.java" startLine="146" startPosition="14" endLine="147" endPosition="22" />
+    <nodeInfo nodeId="6937689104170748836" fileName="MainNodeChooser.java" startLine="149" startPosition="12" endLine="150" endPosition="25" />
+    <nodeInfo nodeId="6937689104170748845" fileName="MainNodeChooser.java" startLine="152" startPosition="27" endLine="153" endPosition="56" />
+    <nodeInfo nodeId="2178855608171473858" fileName="MainNodeChooser.java" startLine="156" startPosition="5" endLine="157" endPosition="27" />
+    <nodeInfo nodeId="7247071346992929418" fileName="MainNodeChooser.java" startLine="161" startPosition="96" endLine="162" endPosition="144" />
+    <nodeInfo nodeId="7247071346992929428" fileName="MainNodeChooser.java" startLine="163" startPosition="12" endLine="164" endPosition="69" />
+    <nodeInfo nodeId="7247071346992929439" fileName="MainNodeChooser.java" startLine="165" startPosition="32" endLine="166" endPosition="44" />
+    <nodeInfo nodeId="7247071346992929447" fileName="MainNodeChooser.java" startLine="167" startPosition="7" endLine="168" endPosition="59" />
+    <nodeInfo nodeId="2178855608171472279" fileName="MainNodeChooser.java" startLine="172" startPosition="80" endLine="173" endPosition="65" />
+    <nodeInfo nodeId="2178855608171472751" fileName="MainNodeChooser.java" startLine="176" startPosition="74" endLine="177" endPosition="68" />
+    <nodeInfo nodeId="2178855608171473236" fileName="MainNodeChooser.java" startLine="182" startPosition="53" endLine="183" endPosition="52" />
+    <nodeInfo nodeId="6937689104170748692" fileName="MainNodeChooser.java" startLine="32" startPosition="76" endLine="34" endPosition="34" />
+    <nodeInfo nodeId="6937689104170748696" fileName="MainNodeChooser.java" startLine="34" startPosition="34" endLine="36" endPosition="90" />
+    <nodeInfo nodeId="5908604687501237057" fileName="MainNodeChooser.java" startLine="114" startPosition="26" endLine="116" endPosition="21" />
+    <nodeInfo nodeId="5908604687501295836" fileName="MainNodeChooser.java" startLine="121" startPosition="22" endLine="123" endPosition="17" />
+    <nodeInfo nodeId="3416915311942173064" fileName="MainNodeChooser.java" startLine="146" startPosition="12" endLine="148" endPosition="7" />
+    <nodeInfo nodeId="5908604687501237032" fileName="MainNodeChooser.java" startLine="108" startPosition="51" endLine="111" endPosition="21" />
+    <nodeInfo nodeId="2178855608171473511" fileName="MainNodeChooser.java" startLine="138" startPosition="41" endLine="141" endPosition="5" />
+    <nodeInfo nodeId="7247071346992929437" fileName="MainNodeChooser.java" startLine="164" startPosition="69" endLine="167" endPosition="7" />
+    <nodeInfo nodeId="8687286369497022273" fileName="MainNodeChooser.java" startLine="48" startPosition="57" endLine="52" endPosition="0" />
+    <nodeInfo nodeId="1053283424753661233" fileName="MainNodeChooser.java" startLine="74" startPosition="158" endLine="78" endPosition="0" />
+    <nodeInfo nodeId="7247071346992922005" fileName="MainNodeChooser.java" startLine="90" startPosition="38" endLine="94" endPosition="9" />
+    <nodeInfo nodeId="7247071346992922038" fileName="MainNodeChooser.java" startLine="95" startPosition="44" endLine="99" endPosition="9" />
+    <nodeInfo nodeId="6937689104170748805" fileName="MainNodeChooser.java" startLine="133" startPosition="0" endLine="137" endPosition="0" />
+    <nodeInfo nodeId="6937689104170748843" fileName="MainNodeChooser.java" startLine="151" startPosition="59" endLine="155" endPosition="0" />
+    <nodeInfo nodeId="2178855608171471898" fileName="MainNodeChooser.java" startLine="171" startPosition="0" endLine="175" endPosition="0" />
+    <nodeInfo nodeId="2178855608171472394" fileName="MainNodeChooser.java" startLine="175" startPosition="0" endLine="179" endPosition="0" />
+    <nodeInfo nodeId="2178855608171473197" fileName="MainNodeChooser.java" startLine="181" startPosition="94" endLine="185" endPosition="0" />
+    <nodeInfo nodeId="8687286369497022272" fileName="MainNodeChooser.java" startLine="47" startPosition="67" endLine="52" endPosition="7" />
+    <nodeInfo nodeId="1053283424753661224" fileName="MainNodeChooser.java" startLine="73" startPosition="20" endLine="78" endPosition="34" />
+    <nodeInfo nodeId="5908604687501237046" fileName="MainNodeChooser.java" startLine="111" startPosition="21" endLine="116" endPosition="21" />
+    <nodeInfo nodeId="5908604687501251034" fileName="MainNodeChooser.java" startLine="118" startPosition="19" endLine="123" endPosition="17" />
+    <nodeInfo nodeId="6937689104170748842" fileName="MainNodeChooser.java" startLine="150" startPosition="25" endLine="155" endPosition="9" />
+    <nodeInfo nodeId="2178855608171473126" fileName="MainNodeChooser.java" startLine="180" startPosition="34" endLine="185" endPosition="7" />
+    <nodeInfo nodeId="8687286369497022220" fileName="MainNodeChooser.java" startLine="53" startPosition="41" endLine="59" endPosition="0" />
+    <nodeInfo nodeId="1053283424753661189" fileName="MainNodeChooser.java" startLine="73" startPosition="18" endLine="79" endPosition="13" />
+    <nodeInfo nodeId="6937689104170748819" fileName="MainNodeChooser.java" startLine="142" startPosition="23" endLine="148" endPosition="7" />
+    <nodeInfo nodeId="7247071346992929424" fileName="MainNodeChooser.java" startLine="163" startPosition="10" endLine="169" endPosition="5" />
+    <nodeInfo nodeId="7247071346992921616" fileName="MainNodeChooser.java" startLine="52" startPosition="7" endLine="59" endPosition="6" />
+    <nodeInfo nodeId="6937689104170748834" fileName="MainNodeChooser.java" startLine="149" startPosition="10" endLine="156" endPosition="5" />
+    <nodeInfo nodeId="2178855608171472935" fileName="MainNodeChooser.java" startLine="179" startPosition="0" endLine="187" endPosition="0" />
+    <nodeInfo nodeId="1053283424753660826" fileName="MainNodeChooser.java" startLine="70" startPosition="197" endLine="79" endPosition="13" />
+    <nodeInfo nodeId="7247071346992929398" fileName="MainNodeChooser.java" startLine="160" startPosition="39" endLine="169" endPosition="5" />
+    <nodeInfo nodeId="5908604687501237030" fileName="MainNodeChooser.java" startLine="107" startPosition="136" endLine="118" endPosition="0" />
+    <nodeInfo nodeId="5908604687501237021" fileName="MainNodeChooser.java" startLine="106" startPosition="55" endLine="118" endPosition="19" />
+    <nodeInfo nodeId="7247071346992929388" fileName="MainNodeChooser.java" startLine="159" startPosition="0" endLine="171" endPosition="0" />
+    <nodeInfo nodeId="977355701051644787" fileName="MainNodeChooser.java" startLine="68" startPosition="61" endLine="81" endPosition="0" />
+    <nodeInfo nodeId="977355701051644786" fileName="MainNodeChooser.java" startLine="67" startPosition="85" endLine="81" endPosition="11" />
+    <nodeInfo nodeId="6937689104170748817" fileName="MainNodeChooser.java" startLine="141" startPosition="5" endLine="156" endPosition="5" />
+    <nodeInfo nodeId="7247071346992922088" fileName="MainNodeChooser.java" startLine="104" startPosition="65" endLine="125" endPosition="0" />
+    <nodeInfo nodeId="7247071346992922087" fileName="MainNodeChooser.java" startLine="103" startPosition="64" endLine="125" endPosition="15" />
+    <nodeInfo nodeId="6937689104170748813" fileName="MainNodeChooser.java" startLine="137" startPosition="0" endLine="159" endPosition="0" />
+    <nodeInfo nodeId="6937689104170748733" fileName="MainNodeChooser.java" startLine="61" startPosition="36" endLine="86" endPosition="0" />
+    <nodeInfo nodeId="7247071346992922081" fileName="MainNodeChooser.java" startLine="102" startPosition="86" endLine="127" endPosition="0" />
+    <nodeInfo nodeId="6937689104170748725" fileName="MainNodeChooser.java" startLine="60" startPosition="0" endLine="86" endPosition="7" />
+    <nodeInfo nodeId="7247071346992922074" fileName="MainNodeChooser.java" startLine="101" startPosition="101" endLine="127" endPosition="11" />
+    <nodeInfo nodeId="7247071346992921582" fileName="MainNodeChooser.java" startLine="88" startPosition="44" endLine="129" endPosition="0" />
+    <nodeInfo nodeId="7247071346992921575" fileName="MainNodeChooser.java" startLine="87" startPosition="0" endLine="129" endPosition="7" />
+    <nodeInfo nodeId="6937689104170748706" fileName="MainNodeChooser.java" startLine="40" startPosition="0" endLine="132" endPosition="3" />
+    <scopeInfo nodeId="8687286369497022274" fileName="MainNodeChooser.java" startLine="49" startPosition="25" endLine="50" endPosition="96" />
+    <scopeInfo nodeId="8687286369497022224" fileName="MainNodeChooser.java" startLine="56" startPosition="45" endLine="57" endPosition="28" />
+    <scopeInfo nodeId="1053283424753660827" fileName="MainNodeChooser.java" startLine="71" startPosition="58" endLine="72" endPosition="142" />
+    <scopeInfo nodeId="1053283424753661234" fileName="MainNodeChooser.java" startLine="75" startPosition="49" endLine="76" endPosition="68" />
+    <scopeInfo nodeId="5908604687501237033" fileName="MainNodeChooser.java" startLine="109" startPosition="149" endLine="110" endPosition="35" />
+    <scopeInfo nodeId="5908604687501237047" fileName="MainNodeChooser.java" startLine="112" startPosition="45" endLine="113" endPosition="56" />
+    <scopeInfo nodeId="5908604687501237058" fileName="MainNodeChooser.java" startLine="114" startPosition="28" endLine="115" endPosition="81" />
+    <scopeInfo nodeId="5908604687501251035" fileName="MainNodeChooser.java" startLine="119" startPosition="61" endLine="120" endPosition="32" />
+    <scopeInfo nodeId="5908604687501295837" fileName="MainNodeChooser.java" startLine="121" startPosition="24" endLine="122" endPosition="64" />
+    <scopeInfo nodeId="6937689104170748808" fileName="MainNodeChooser.java" startLine="134" startPosition="26" endLine="135" endPosition="23" />
+    <scopeInfo nodeId="2178855608171473512" fileName="MainNodeChooser.java" startLine="139" startPosition="30" endLine="140" endPosition="13" />
+    <scopeInfo nodeId="3416915311942173065" fileName="MainNodeChooser.java" startLine="146" startPosition="14" endLine="147" endPosition="22" />
+    <scopeInfo nodeId="6937689104170748844" fileName="MainNodeChooser.java" startLine="152" startPosition="27" endLine="153" endPosition="56" />
+    <scopeInfo nodeId="7247071346992929400" fileName="MainNodeChooser.java" startLine="161" startPosition="96" endLine="162" endPosition="144" />
+    <scopeInfo nodeId="7247071346992929438" fileName="MainNodeChooser.java" startLine="165" startPosition="32" endLine="166" endPosition="44" />
+    <scopeInfo nodeId="2178855608171471901" fileName="MainNodeChooser.java" startLine="172" startPosition="80" endLine="173" endPosition="65" />
+    <scopeInfo nodeId="2178855608171472397" fileName="MainNodeChooser.java" startLine="176" startPosition="74" endLine="177" endPosition="68" />
+    <scopeInfo nodeId="2178855608171473198" fileName="MainNodeChooser.java" startLine="182" startPosition="53" endLine="183" endPosition="52" />
+    <scopeInfo nodeId="7247071346992922006" fileName="MainNodeChooser.java" startLine="91" startPosition="40" endLine="93" endPosition="17" />
+    <scopeInfo nodeId="7247071346992922039" fileName="MainNodeChooser.java" startLine="96" startPosition="27" endLine="98" endPosition="17" />
+    <scopeInfo nodeId="6937689104170748820" fileName="MainNodeChooser.java" startLine="143" startPosition="32" endLine="145" endPosition="15" />
+    <scopeInfo nodeId="8687286369497022273" fileName="MainNodeChooser.java" startLine="48" startPosition="57" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="1053283424753661233" fileName="MainNodeChooser.java" startLine="74" startPosition="158" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="6937689104170748805" fileName="MainNodeChooser.java" startLine="133" startPosition="0" endLine="137" endPosition="0" />
+    <scopeInfo nodeId="6937689104170748843" fileName="MainNodeChooser.java" startLine="151" startPosition="59" endLine="155" endPosition="0" />
+    <scopeInfo nodeId="2178855608171471898" fileName="MainNodeChooser.java" startLine="171" startPosition="0" endLine="175" endPosition="0">
       <varInfo nodeId="2178855608171472202" varName="listener" />
     </scopeInfo>
-    <scopeInfo nodeId="2178855608171472394" fileName="MainNodeChooser.java" startLine="161" startPosition="0" endLine="165" endPosition="0">
+    <scopeInfo nodeId="2178855608171472394" fileName="MainNodeChooser.java" startLine="175" startPosition="0" endLine="179" endPosition="0">
       <varInfo nodeId="2178855608171472641" varName="listener" />
     </scopeInfo>
-    <scopeInfo nodeId="2178855608171473197" fileName="MainNodeChooser.java" startLine="167" startPosition="94" endLine="171" endPosition="0" />
-    <scopeInfo nodeId="1053283424753661190" fileName="MainNodeChooser.java" startLine="59" startPosition="20" endLine="64" endPosition="34" />
-    <scopeInfo nodeId="7247071346992929425" fileName="MainNodeChooser.java" startLine="149" startPosition="12" endLine="154" endPosition="59">
+    <scopeInfo nodeId="2178855608171473197" fileName="MainNodeChooser.java" startLine="181" startPosition="94" endLine="185" endPosition="0" />
+    <scopeInfo nodeId="1053283424753661190" fileName="MainNodeChooser.java" startLine="73" startPosition="20" endLine="78" endPosition="34" />
+    <scopeInfo nodeId="7247071346992929425" fileName="MainNodeChooser.java" startLine="163" startPosition="12" endLine="168" endPosition="59">
       <varInfo nodeId="7247071346992929429" varName="longName" />
     </scopeInfo>
-    <scopeInfo nodeId="2178855608171472938" fileName="MainNodeChooser.java" startLine="166" startPosition="34" endLine="171" endPosition="7" />
-    <scopeInfo nodeId="6937689104170748818" fileName="MainNodeChooser.java" startLine="128" startPosition="23" endLine="134" endPosition="7" />
-    <scopeInfo nodeId="6937689104170748835" fileName="MainNodeChooser.java" startLine="135" startPosition="12" endLine="141" endPosition="9" />
-    <scopeInfo nodeId="5908604687501237031" fileName="MainNodeChooser.java" startLine="94" startPosition="51" endLine="102" endPosition="21" />
-    <scopeInfo nodeId="2178855608171472935" fileName="MainNodeChooser.java" startLine="165" startPosition="0" endLine="173" endPosition="0" />
-    <scopeInfo nodeId="7247071346992929391" fileName="MainNodeChooser.java" startLine="146" startPosition="39" endLine="155" endPosition="5" />
-    <scopeInfo nodeId="977355701051644788" fileName="MainNodeChooser.java" startLine="55" startPosition="29" endLine="65" endPosition="13">
+    <scopeInfo nodeId="2178855608171472938" fileName="MainNodeChooser.java" startLine="180" startPosition="34" endLine="185" endPosition="7" />
+    <scopeInfo nodeId="8687286369497022220" fileName="MainNodeChooser.java" startLine="53" startPosition="41" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="6937689104170748818" fileName="MainNodeChooser.java" startLine="142" startPosition="23" endLine="148" endPosition="7" />
+    <scopeInfo nodeId="6937689104170748835" fileName="MainNodeChooser.java" startLine="149" startPosition="12" endLine="155" endPosition="9" />
+    <scopeInfo nodeId="5908604687501237031" fileName="MainNodeChooser.java" startLine="108" startPosition="51" endLine="116" endPosition="21" />
+    <scopeInfo nodeId="2178855608171472935" fileName="MainNodeChooser.java" startLine="179" startPosition="0" endLine="187" endPosition="0" />
+    <scopeInfo nodeId="7247071346992929391" fileName="MainNodeChooser.java" startLine="160" startPosition="39" endLine="169" endPosition="5" />
+    <scopeInfo nodeId="977355701051644788" fileName="MainNodeChooser.java" startLine="69" startPosition="29" endLine="79" endPosition="13">
       <varInfo nodeId="1053283424753659280" varName="instances" />
     </scopeInfo>
-    <scopeInfo nodeId="5908604687501237030" fileName="MainNodeChooser.java" startLine="93" startPosition="136" endLine="104" endPosition="0" />
-    <scopeInfo nodeId="7247071346992929388" fileName="MainNodeChooser.java" startLine="145" startPosition="0" endLine="157" endPosition="0">
+    <scopeInfo nodeId="5908604687501237030" fileName="MainNodeChooser.java" startLine="107" startPosition="136" endLine="118" endPosition="0" />
+    <scopeInfo nodeId="7247071346992929388" fileName="MainNodeChooser.java" startLine="159" startPosition="0" endLine="171" endPosition="0">
       <varInfo nodeId="7247071346992929396" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="977355701051644787" fileName="MainNodeChooser.java" startLine="54" startPosition="61" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="7247071346992922089" fileName="MainNodeChooser.java" startLine="91" startPosition="33" endLine="109" endPosition="17">
+    <scopeInfo nodeId="977355701051644787" fileName="MainNodeChooser.java" startLine="68" startPosition="61" endLine="81" endPosition="0" />
+    <scopeInfo nodeId="7247071346992922089" fileName="MainNodeChooser.java" startLine="105" startPosition="33" endLine="123" endPosition="17">
       <varInfo nodeId="7247071346992922866" varName="smodel" />
       <varInfo nodeId="5908604687501237022" varName="nodes" />
     </scopeInfo>
-    <scopeInfo nodeId="6937689104170748816" fileName="MainNodeChooser.java" startLine="124" startPosition="41" endLine="143" endPosition="27" />
-    <scopeInfo nodeId="7247071346992922088" fileName="MainNodeChooser.java" startLine="90" startPosition="65" endLine="111" endPosition="0" />
-    <scopeInfo nodeId="6937689104170748738" fileName="MainNodeChooser.java" startLine="48" startPosition="51" endLine="70" endPosition="51">
+    <scopeInfo nodeId="6937689104170748816" fileName="MainNodeChooser.java" startLine="138" startPosition="41" endLine="157" endPosition="27" />
+    <scopeInfo nodeId="7247071346992922088" fileName="MainNodeChooser.java" startLine="104" startPosition="65" endLine="125" endPosition="0" />
+    <scopeInfo nodeId="6937689104170748738" fileName="MainNodeChooser.java" startLine="62" startPosition="51" endLine="84" endPosition="51">
       <varInfo nodeId="6937689104170748786" varName="selectedNode" />
       <varInfo nodeId="6937689104170748741" varName="findUsegesManager" />
       <varInfo nodeId="6937689104170748745" varName="progressAdapter" />
       <varInfo nodeId="6937689104170748753" varName="toChooseFrom" />
     </scopeInfo>
-    <scopeInfo nodeId="7247071346992922082" fileName="MainNodeChooser.java" startLine="89" startPosition="64" endLine="111" endPosition="15" />
-    <scopeInfo nodeId="6937689104170748813" fileName="MainNodeChooser.java" startLine="123" startPosition="0" endLine="145" endPosition="0">
+    <scopeInfo nodeId="7247071346992922082" fileName="MainNodeChooser.java" startLine="103" startPosition="64" endLine="125" endPosition="15" />
+    <scopeInfo nodeId="6937689104170748813" fileName="MainNodeChooser.java" startLine="137" startPosition="0" endLine="159" endPosition="0">
       <varInfo nodeId="6937689104170748852" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6937689104170748733" fileName="MainNodeChooser.java" startLine="47" startPosition="36" endLine="72" endPosition="0">
+    <scopeInfo nodeId="6937689104170748733" fileName="MainNodeChooser.java" startLine="61" startPosition="36" endLine="86" endPosition="0">
       <varInfo nodeId="6937689104170748736" varName="p0" />
     </scopeInfo>
-    <scopeInfo nodeId="7247071346992922081" fileName="MainNodeChooser.java" startLine="88" startPosition="86" endLine="113" endPosition="0" />
-    <scopeInfo nodeId="7247071346992921587" fileName="MainNodeChooser.java" startLine="75" startPosition="54" endLine="113" endPosition="11">
+    <scopeInfo nodeId="7247071346992922081" fileName="MainNodeChooser.java" startLine="102" startPosition="86" endLine="127" endPosition="0" />
+    <scopeInfo nodeId="7247071346992921587" fileName="MainNodeChooser.java" startLine="89" startPosition="54" endLine="127" endPosition="11">
       <varInfo nodeId="7247071346992921597" varName="text" />
       <varInfo nodeId="7247071346992922031" varName="lastDot" />
       <varInfo nodeId="7247071346992922062" varName="descriptors" />
     </scopeInfo>
-    <scopeInfo nodeId="7247071346992921582" fileName="MainNodeChooser.java" startLine="74" startPosition="44" endLine="115" endPosition="0">
+    <scopeInfo nodeId="7247071346992921582" fileName="MainNodeChooser.java" startLine="88" startPosition="44" endLine="129" endPosition="0">
       <varInfo nodeId="7247071346992921585" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="6937689104170748709" fileName="MainNodeChooser.java" startLine="40" startPosition="135" endLine="117" endPosition="14" />
-    <scopeInfo nodeId="6937689104170748706" fileName="MainNodeChooser.java" startLine="39" startPosition="0" endLine="118" endPosition="3">
+    <scopeInfo nodeId="6937689104170748709" fileName="MainNodeChooser.java" startLine="41" startPosition="141" endLine="131" endPosition="14">
+      <varInfo nodeId="8687286369497022270" varName="module" />
+    </scopeInfo>
+    <scopeInfo nodeId="6937689104170748706" fileName="MainNodeChooser.java" startLine="40" startPosition="0" endLine="132" endPosition="3">
       <varInfo nodeId="6937689104170748799" varName="acceptor" />
       <varInfo nodeId="6937689104170748796" varName="targetConcept" />
     </scopeInfo>
-    <unitInfo nodeId="1053283424753661233" fileName="MainNodeChooser.java" startLine="60" startPosition="135" endLine="64" endPosition="15" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser$3" />
-    <unitInfo nodeId="6937689104170748843" fileName="MainNodeChooser.java" startLine="137" startPosition="47" endLine="141" endPosition="7" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser$3" />
-    <unitInfo nodeId="2178855608171473197" fileName="MainNodeChooser.java" startLine="167" startPosition="57" endLine="171" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser$4" />
-    <unitInfo nodeId="5908604687501237030" fileName="MainNodeChooser.java" startLine="93" startPosition="113" endLine="104" endPosition="17" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser$5" />
-    <unitInfo nodeId="977355701051644787" fileName="MainNodeChooser.java" startLine="54" startPosition="49" endLine="67" endPosition="9" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser$2" />
-    <unitInfo nodeId="7247071346992922088" fileName="MainNodeChooser.java" startLine="90" startPosition="53" endLine="111" endPosition="13" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser$4" />
-    <unitInfo nodeId="6937689104170748731" fileName="MainNodeChooser.java" startLine="47" startPosition="18" endLine="72" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser$1" />
-    <unitInfo nodeId="7247071346992922081" fileName="MainNodeChooser.java" startLine="88" startPosition="56" endLine="113" endPosition="9" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser$3" />
-    <unitInfo nodeId="7247071346992921580" fileName="MainNodeChooser.java" startLine="74" startPosition="26" endLine="115" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser$2" />
-    <unitInfo nodeId="6937689104170748691" fileName="MainNodeChooser.java" startLine="31" startPosition="0" endLine="174" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser" />
+    <unitInfo nodeId="8687286369497022273" fileName="MainNodeChooser.java" startLine="48" startPosition="45" endLine="52" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser$1" />
+    <unitInfo nodeId="1053283424753661233" fileName="MainNodeChooser.java" startLine="74" startPosition="135" endLine="78" endPosition="15" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser$5" />
+    <unitInfo nodeId="6937689104170748843" fileName="MainNodeChooser.java" startLine="151" startPosition="47" endLine="155" endPosition="7" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser$5" />
+    <unitInfo nodeId="2178855608171473197" fileName="MainNodeChooser.java" startLine="181" startPosition="57" endLine="185" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser$6" />
+    <unitInfo nodeId="8687286369497022218" fileName="MainNodeChooser.java" startLine="53" startPosition="18" endLine="59" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser$2" />
+    <unitInfo nodeId="5908604687501237030" fileName="MainNodeChooser.java" startLine="107" startPosition="113" endLine="118" endPosition="17" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser$7" />
+    <unitInfo nodeId="977355701051644787" fileName="MainNodeChooser.java" startLine="68" startPosition="49" endLine="81" endPosition="9" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser$4" />
+    <unitInfo nodeId="7247071346992922088" fileName="MainNodeChooser.java" startLine="104" startPosition="53" endLine="125" endPosition="13" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser$6" />
+    <unitInfo nodeId="6937689104170748731" fileName="MainNodeChooser.java" startLine="61" startPosition="18" endLine="86" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser$3" />
+    <unitInfo nodeId="7247071346992922081" fileName="MainNodeChooser.java" startLine="102" startPosition="56" endLine="127" endPosition="9" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser$5" />
+    <unitInfo nodeId="7247071346992921580" fileName="MainNodeChooser.java" startLine="88" startPosition="26" endLine="129" endPosition="5" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser$4" />
+    <unitInfo nodeId="6937689104170748691" fileName="MainNodeChooser.java" startLine="32" startPosition="0" endLine="188" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.runtime.MainNodeChooser" />
   </root>
   <root nodeId="8255351389869681567">
     <nodeInfo nodeId="8255351389869715942" fileName="JavaRunProfileState.java" startLine="14" startPosition="81" endLine="15" endPosition="34" />

@@ -9,15 +9,16 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import java.util.Set;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
 import org.apache.commons.lang.StringUtils;
@@ -35,14 +36,27 @@ public class MainNodeChooser<C extends SNode> extends BaseChooserComponent {
   private final _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> myAcceptor;
   private SNode myNode;
   private final List<IJavaNodeChangeListener> myListeners = ListSequence.fromList(new ArrayList<IJavaNodeChangeListener>());
-  private final GlobalFileteredScope myScope;
+  private final GlobalFilteredScope myScope;
 
-  public MainNodeChooser(@NotNull C targetConcept, @Nullable _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> acceptor) {
+  public MainNodeChooser(@NotNull final C targetConcept, @Nullable _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> acceptor) {
     super();
 
-    this.myTargetConcept = targetConcept;
-    this.myAcceptor = acceptor;
-    myScope = GlobalFileteredScope.getInstance();
+    myTargetConcept = targetConcept;
+    myAcceptor = acceptor;
+
+    final Wrappers._T<IModule> module = new Wrappers._T<IModule>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        module.value = SNodeOperations.getModel(targetConcept).getModelDescriptor().getModule();
+      }
+    });
+    myScope = new GlobalFilteredScope() {
+      @Nullable
+      @Override
+      protected IModule getRequiredModule() {
+        return module.value;
+      }
+    };
 
     this.init(new ActionListener() {
       public void actionPerformed(ActionEvent p0) {

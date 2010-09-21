@@ -18,11 +18,10 @@ import java.util.List;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.smodel.Generator;
+import org.jetbrains.annotations.Nullable;
 
-public class GlobalFileteredScope extends GlobalScope {
-  private static final GlobalFileteredScope ourInstance;
-
-  public GlobalFileteredScope() {
+public class GlobalFilteredScope extends GlobalScope {
+  public GlobalFilteredScope() {
   }
 
   public Set<IModule> getVisibleModules() {
@@ -33,7 +32,7 @@ public class GlobalFileteredScope extends GlobalScope {
     });
     return SetSequence.fromSetAndArray(new HashSet(), Sequence.fromIterable(s).where(new IWhereFilter<IModule>() {
       public boolean accept(IModule it) {
-        return GlobalFileteredScope.this.acceptModule(it);
+        return GlobalFilteredScope.this.acceptModule(it);
       }
     }));
   }
@@ -53,7 +52,7 @@ public class GlobalFileteredScope extends GlobalScope {
       }
     })).where(new IWhereFilter<SModelDescriptor>() {
       public boolean accept(SModelDescriptor it) {
-        return GlobalFileteredScope.this.acceptModel(it);
+        return GlobalFilteredScope.this.acceptModel(it);
       }
     }).toListSequence();
   }
@@ -65,24 +64,35 @@ public class GlobalFileteredScope extends GlobalScope {
       }
     })).where(new IWhereFilter<SModelDescriptor>() {
       public boolean accept(SModelDescriptor it) {
-        return GlobalFileteredScope.this.acceptModel(it);
+        return GlobalFilteredScope.this.acceptModel(it);
       }
     }).toListSequence();
   }
 
   protected boolean acceptModel(SModelDescriptor descriptor) {
-    return SModelStereotype.isUserModel(descriptor) && !(SModelStereotype.isGeneratorModel(descriptor)) && !(descriptor.getModule() instanceof TransientModelsModule);
+    if (SModelStereotype.isUserModel(descriptor) && !(SModelStereotype.isGeneratorModel(descriptor)) && !(descriptor.getModule() instanceof TransientModelsModule)) {
+      IModule requiredModule = getRequiredModule();
+      if (requiredModule != null) {
+        return descriptor.getModule().getDependenciesManager().getAllUsedLanguages().contains(requiredModule);
+      }
+      return true;
+    }
+    return false;
   }
 
   protected boolean acceptModule(IModule m) {
-    return !(m instanceof TransientModelsModule) && !(m instanceof Generator);
+    if (m instanceof TransientModelsModule || m instanceof Generator) {
+      return false;
+    }
+    IModule requiredModule = getRequiredModule();
+    if (requiredModule == null) {
+      return true;
+    }
+    return m.getDependenciesManager().getAllUsedLanguages().contains(requiredModule);
   }
 
-  public static GlobalFileteredScope getInstance() {
-    return ourInstance;
-  }
-
-  static {
-    ourInstance = new GlobalFileteredScope();
+  @Nullable
+  protected IModule getRequiredModule() {
+    return null;
   }
 }
