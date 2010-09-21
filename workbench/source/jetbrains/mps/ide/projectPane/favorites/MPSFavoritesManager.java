@@ -79,22 +79,19 @@ public class MPSFavoritesManager implements ProjectComponent, JDOMExternalizable
   }
 
   private void onListAdded(String name) {
-    //copy operation is necessary cause we can add/remove listeners in listeners
-    for (MPSFavoritesListener listener : new ArrayList<MPSFavoritesListener>(myListeners)) {
+    for (MPSFavoritesListener listener : myListeners) {
       listener.listAdded(name);
     }
   }
 
   private void onListChanged(String name) {
-    //copy operation is necessary cause we can add/remove listeners in listeners
-    for (MPSFavoritesListener listener : new ArrayList<MPSFavoritesListener>(myListeners)) {
+    for (MPSFavoritesListener listener : myListeners) {
       listener.rootsChanged(name);
     }
   }
 
   private void onListRemoved(String name) {
-    //copy operation is necessary cause we can add/remove listeners in listeners
-    for (MPSFavoritesListener listener : new ArrayList<MPSFavoritesListener>(myListeners)) {
+    for (MPSFavoritesListener listener : myListeners) {
       listener.listRemoved(name);
     }
   }
