@@ -1220,7 +1220,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           nodeProxiesToDelete.add(nodeProxy);
           continue;
         }
-        addOurListeners(model);
+        if (!newDeps.contains(model.getSModelReference())) {
+          addOurListeners(model);
+        }
       }
       refTargetsWhichEditorDependsOn.removeAll(nodeProxiesToDelete);
     }

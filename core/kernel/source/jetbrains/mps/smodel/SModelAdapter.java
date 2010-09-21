@@ -24,7 +24,6 @@ import java.util.Comparator;
  * @author Kostik
  */
 public class SModelAdapter implements SModelListener {
-  public static final SModelListenerComparator COMPARATOR = new SModelListenerComparator();
   private SModelListenerPriority myPriority;
 
   public SModelAdapter() {
@@ -150,13 +149,5 @@ public class SModelAdapter implements SModelListener {
   @Override
   public SModelListenerPriority getPriority() {
     return myPriority;
-  }
-
-  private static class SModelListenerComparator implements Comparator<SModelListener> {
-
-    @Override
-    public int compare(SModelListener listener1, SModelListener listener2) {
-      return listener1.getPriority().ordinal() - listener2.getPriority().ordinal();
-    }
   }
 }

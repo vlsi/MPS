@@ -70,7 +70,6 @@ public class SModel implements Iterable<SNode> {
   private int myPersistenceVersion = -1;
 
   private SModelDescriptor myModelDescriptor;
-  private static final SModelListener[] EMPTY_LISTENERS = new SModelListener[0];
 
   public SModel(@NotNull SModelReference modelReference) {
     myReference = modelReference;
@@ -244,9 +243,9 @@ public class SModel implements Iterable<SNode> {
     return !myLoading;
   }
 
-  private SModelListener[] getModelListeners() {
+  private List<SModelListener> getModelListeners() {
     BaseSModelDescriptor modelDescriptor = (BaseSModelDescriptor) getModelDescriptor();
-    return modelDescriptor != null ? modelDescriptor.getModelListeners() : EMPTY_LISTENERS;
+    return modelDescriptor != null ? modelDescriptor.getModelListeners() : Collections.<SModelListener>emptyList();
   }
 
   private void fireDevKitAddedEvent(@NotNull ModuleReference ref) {
