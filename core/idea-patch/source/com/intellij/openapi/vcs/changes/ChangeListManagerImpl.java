@@ -66,12 +66,6 @@ import java.util.concurrent.ScheduledExecutorService;
  * @author max
  */
 public class ChangeListManagerImpl extends ChangeListManagerEx implements ProjectComponent, ChangeListOwner, JDOMExternalizable {
-  /* MPS patch: made this method public */
-  @Patch
-  public List<VirtualFile> getUnversionedFiles() {
-    return new ArrayList<VirtualFile>(myComposite.getVFHolder(FileHolder.HolderType.UNVERSIONED).getFiles());
-  }
-
   @Patch
   public boolean isIgnoredFile(@NotNull VirtualFile file) {
     // MPS Patch begin
@@ -131,6 +125,11 @@ public class ChangeListManagerImpl extends ChangeListManagerEx implements Projec
   private boolean myShowLocalChangesInvalidated;
 
   private final DelayedNotificator myDelayedNotificator;
+
+  public List<VirtualFile> getUnversionedFiles() {
+    return myComposite.getVFHolder(FileHolder.HolderType.UNVERSIONED).getFiles();
+  }
+
 
   private final VcsListener myVcsListener = new VcsListener() {
     public void directoryMappingChanged() {
