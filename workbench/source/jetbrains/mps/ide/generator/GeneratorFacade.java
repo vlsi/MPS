@@ -205,7 +205,7 @@ public class GeneratorFacade {
           : new NullGenerationTracer();
 
         GenerationOptions options = new GenerationOptions(
-          settings.isStrictMode(), saveTransientModels, rebuildAll, settings.isGenerateDependencies(),
+          settings.isStrictMode(), saveTransientModels, rebuildAll, settings.isIncremental(),
           settings.isParallelGenerator(), settings.getNumberOfParallelThreads(),
           settings.getPerformanceTracingLevel(),
           settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings(),

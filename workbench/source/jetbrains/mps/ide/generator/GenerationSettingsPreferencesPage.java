@@ -37,7 +37,7 @@ class GenerationSettingsPreferencesPage {
   private JCheckBox myStrictMode = new JCheckBox("Strict mode");
   private JCheckBox myUseNewGenerator = new JCheckBox("Generate in parallel.");
   private JFormattedTextField myNumberOfParallelThreads = new JFormattedTextField(new RangeDecimalFormatter(2, 32));
-  private JCheckBox myGenerateDependencies = new JCheckBox("Save generation dependencies (experimental)");
+  private JCheckBox myIncremental = new JCheckBox("Incremental generation");
 
   private JRadioButton myTraceNone = new JRadioButton("None");
   private JRadioButton myTraceSteps = new JRadioButton("Generation steps only");
@@ -106,7 +106,13 @@ class GenerationSettingsPreferencesPage {
     c.ipady = 0;
     optionsPanel.add(createParallelGenerationGroup(), c);
     c.ipady = 2;
-    optionsPanel.add(myGenerateDependencies, c);
+    optionsPanel.add(myIncremental, c);
+    final ChangeListener listener = new ChangeListener() {
+      public void stateChanged(ChangeEvent e) {
+        myIncremental.setEnabled(myStrictMode.isSelected());
+      }
+    };
+    myStrictMode.addChangeListener(listener);
     optionsPanel.setBorder(BorderFactory.createTitledBorder("General"));
     return optionsPanel;
   }
@@ -221,7 +227,7 @@ class GenerationSettingsPreferencesPage {
     myGenerationSettings.setShowWarnings(myShowWarnings.isSelected());
     myGenerationSettings.setKeepModelsWithWarnings(myKeepModelsWithWarnings.isSelected());
     myGenerationSettings.setNumberOfModelsToKeep(getNumberOfModelsToKeep());
-    myGenerationSettings.setGenerateDependencies(myGenerateDependencies.isSelected());
+    myGenerationSettings.setIncremental(myIncremental.isSelected());
   }
 
   private int getTracingLevel() {
@@ -248,7 +254,7 @@ class GenerationSettingsPreferencesPage {
       myGenerationSettings.getNumberOfParallelThreads() == ((Integer) myNumberOfParallelThreads.getValue()).intValue() &&
       myGenerationSettings.getPerformanceTracingLevel() == getTracingLevel() &&
       myGenerationSettings.isStrictMode() == myStrictMode.isSelected() &&
-      myGenerationSettings.isGenerateDependencies() == myGenerateDependencies.isSelected());
+      myGenerationSettings.isIncremental() == myIncremental.isSelected());
   }
 
   public void update() {
@@ -256,10 +262,11 @@ class GenerationSettingsPreferencesPage {
     myGenerateRequirementsComboBox.setSelectedItem(myGenerationSettings.getGenerateRequirementsPolicy());
     myCheckModelsBeforeGenerationCheckBox.setSelected(myGenerationSettings.isCheckModelsBeforeGeneration());
     myUseNewGenerator.setSelected(myGenerationSettings.isParallelGenerator());
-    myGenerateDependencies.setSelected(myGenerationSettings.isGenerateDependencies());
+    myIncremental.setSelected(myGenerationSettings.isIncremental());
 
     myStrictMode.setSelected(myGenerationSettings.isStrictMode());
     myUseNewGenerator.setEnabled(myGenerationSettings.isStrictMode());
+    myIncremental.setEnabled(myGenerationSettings.isStrictMode());
     myNumberOfParallelThreads.setEditable(myGenerationSettings.isParallelGenerator() && myGenerationSettings.isStrictMode());
     myNumberOfParallelThreads.setValue(myGenerationSettings.getNumberOfParallelThreads());
 

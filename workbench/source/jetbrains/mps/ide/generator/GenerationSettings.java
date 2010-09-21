@@ -223,12 +223,12 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     myState.myKeepModelsWithWarnings = keepModelsWithWarnings;
   }
 
-  public boolean isGenerateDependencies() {
-    return myState.myGenerateDependencies;
+  public boolean isIncremental() {
+    return myState.myIncremental;
   }
 
-  public void setGenerateDependencies(boolean generateDependencies) {
-    myState.myGenerateDependencies = generateDependencies;
+  public void setIncremental(boolean isIncremental) {
+    myState.myIncremental = isIncremental;
   }
 
   public enum GenerateRequirementsPolicy {
@@ -261,7 +261,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     private boolean myShowInfo = false;
     private boolean myShowWarnings = true;
     private boolean myKeepModelsWithWarnings = true;
-    private boolean myGenerateDependencies = false;
+    private boolean myIncremental = false;
 
     public int getNumberOfModelsToKeep() {
       return myNumberOfModelsToKeep;
@@ -359,12 +359,12 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
       myPerformanceTracingLevel = performanceTracingLevel;
     }
 
-    public boolean isGenerateDependencies() {
-      return myGenerateDependencies;
+    public boolean isIncremental() {
+      return myIncremental;
     }
 
-    public void setGenerateDependencies(boolean generateDependencies) {
-      myGenerateDependencies = generateDependencies;
+    public void setIncremental(boolean incremental) {
+      myIncremental = incremental;
     }
   }
 }
