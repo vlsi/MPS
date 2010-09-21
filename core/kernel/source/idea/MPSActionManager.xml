@@ -156,9 +156,5 @@
       <add-to-group group-id="MainMenu" anchor="after" relative-to-action="EditMenu"/>
     </group>
 
-    <!--Fixing exeception in ToolWindowContentUi which uses this action-->
-    <action id="ShowContent" class="com.intellij.ide.actions.ShowContentAction"/>
-    <!--Fix another exception, in InternalDecorator this time-->
-    <action id="ToggleContentUiTypeMode" class="com.intellij.ide.actions.ToggleContentUiTypeAction"/>
   </actions>
 </component>

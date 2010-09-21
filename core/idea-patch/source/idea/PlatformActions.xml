@@ -272,13 +272,8 @@
         <action id="ToggleDockMode" class="com.intellij.ide.actions.ToggleDockModeAction"/>
         <action id="ToggleFloatingMode" class="com.intellij.ide.actions.ToggleFloatingModeAction"/>
         <action id="ToggleSideMode" class="com.intellij.ide.actions.ToggleSideModeAction"/>
-
-        <!--MPS Patch Start-->
-        <!--
         <action id="ToggleContentUiTypeMode" class="com.intellij.ide.actions.ToggleContentUiTypeAction"/>
         <action id="ShowContent" class="com.intellij.ide.actions.ShowContentAction"/>
-        -->
-        <!--MPS Patch End-->
         <group id="ResizeToolWindowGroup" popup="true">
           <action id="ResizeToolWindowLeft" class="com.intellij.ide.actions.ResizeToolWindowAction$Left"/>
           <action id="ResizeToolWindowRight" class="com.intellij.ide.actions.ResizeToolWindowAction$Right"/>
