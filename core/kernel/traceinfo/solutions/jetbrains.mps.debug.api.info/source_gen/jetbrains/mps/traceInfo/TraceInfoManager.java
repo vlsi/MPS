@@ -106,16 +106,13 @@ public class TraceInfoManager implements ApplicationComponent {
   }
 
   @NotNull
-  @Override
   public String getComponentName() {
     return "Trace Info Manager";
   }
 
-  @Override
   public void initComponent() {
   }
 
-  @Override
   public void disposeComponent() {
   }
 

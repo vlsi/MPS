@@ -826,27 +826,18 @@
       <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="2897370900776703315">
         <link role="annotation:3" targetNodeId="8.~NotNull" />
       </node>
-      <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="2897370900776703316">
-        <link role="annotation:3" targetNodeId="2v.~Override" />
-      </node>
     </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="2897370900776703317">
       <property name="name:3" value="initComponent" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="2897370900776703318" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="2897370900776703319" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2897370900776703320" />
-      <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="2897370900776703321">
-        <link role="annotation:3" targetNodeId="2v.~Override" />
-      </node>
     </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="2897370900776703322">
       <property name="name:3" value="disposeComponent" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="2897370900776703323" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="2897370900776703324" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2897370900776703325" />
-      <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="2897370900776703326">
-        <link role="annotation:3" targetNodeId="2v.~Override" />
-      </node>
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="2897370900776710748">

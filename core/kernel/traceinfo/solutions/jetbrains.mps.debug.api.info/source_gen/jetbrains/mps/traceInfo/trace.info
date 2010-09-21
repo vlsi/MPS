@@ -26,20 +26,20 @@
     <nodeInfo nodeId="2897370900776703278" fileName="TraceInfoManager.java" startLine="99" startPosition="79" endLine="100" endPosition="60" />
     <nodeInfo nodeId="2897370900776703290" fileName="TraceInfoManager.java" startLine="103" startPosition="48" endLine="104" endPosition="82" />
     <nodeInfo nodeId="2897370900776703299" fileName="TraceInfoManager.java" startLine="104" startPosition="82" endLine="105" endPosition="69" />
-    <nodeInfo nodeId="2897370900776703313" fileName="TraceInfoManager.java" startLine="110" startPosition="36" endLine="111" endPosition="32" />
-    <nodeInfo nodeId="2897370900776703050" fileName="TraceInfoManager.java" startLine="122" startPosition="48" endLine="123" endPosition="84" />
+    <nodeInfo nodeId="2897370900776703313" fileName="TraceInfoManager.java" startLine="109" startPosition="36" endLine="110" endPosition="32" />
+    <nodeInfo nodeId="2897370900776703050" fileName="TraceInfoManager.java" startLine="119" startPosition="48" endLine="120" endPosition="84" />
     <nodeInfo nodeId="2897370900776703042" fileName="TraceInfoManager.java" startLine="27" startPosition="0" endLine="29" endPosition="3" />
     <nodeInfo nodeId="2897370900776703066" fileName="TraceInfoManager.java" startLine="32" startPosition="48" endLine="35" endPosition="7" />
     <nodeInfo nodeId="2897370900776703088" fileName="TraceInfoManager.java" startLine="41" startPosition="63" endLine="44" endPosition="7" />
     <nodeInfo nodeId="2897370900776703110" fileName="TraceInfoManager.java" startLine="50" startPosition="69" endLine="53" endPosition="7" />
     <nodeInfo nodeId="2897370900776703133" fileName="TraceInfoManager.java" startLine="59" startPosition="63" endLine="62" endPosition="7" />
     <nodeInfo nodeId="2897370900776703178" fileName="TraceInfoManager.java" startLine="71" startPosition="84" endLine="74" endPosition="9" />
+    <nodeInfo nodeId="2897370900776703317" fileName="TraceInfoManager.java" startLine="112" startPosition="0" endLine="115" endPosition="0" />
+    <nodeInfo nodeId="2897370900776703322" fileName="TraceInfoManager.java" startLine="115" startPosition="0" endLine="118" endPosition="0" />
     <nodeInfo nodeId="2897370900776703193" fileName="TraceInfoManager.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
     <nodeInfo nodeId="2897370900776703225" fileName="TraceInfoManager.java" startLine="89" startPosition="0" endLine="93" endPosition="0" />
     <nodeInfo nodeId="2897370900776703268" fileName="TraceInfoManager.java" startLine="98" startPosition="0" endLine="102" endPosition="0" />
-    <nodeInfo nodeId="2897370900776703317" fileName="TraceInfoManager.java" startLine="113" startPosition="0" endLine="117" endPosition="0" />
-    <nodeInfo nodeId="2897370900776703322" fileName="TraceInfoManager.java" startLine="117" startPosition="0" endLine="121" endPosition="0" />
-    <nodeInfo nodeId="2897370900776703046" fileName="TraceInfoManager.java" startLine="121" startPosition="0" endLine="125" endPosition="0" />
+    <nodeInfo nodeId="2897370900776703046" fileName="TraceInfoManager.java" startLine="118" startPosition="0" endLine="122" endPosition="0" />
     <nodeInfo nodeId="2897370900776703061" fileName="TraceInfoManager.java" startLine="31" startPosition="46" endLine="36" endPosition="5" />
     <nodeInfo nodeId="2897370900776703081" fileName="TraceInfoManager.java" startLine="40" startPosition="42" endLine="45" endPosition="5" />
     <nodeInfo nodeId="2897370900776703103" fileName="TraceInfoManager.java" startLine="49" startPosition="41" endLine="54" endPosition="5" />
@@ -47,7 +47,7 @@
     <nodeInfo nodeId="2897370900776703204" fileName="TraceInfoManager.java" startLine="84" startPosition="0" endLine="89" endPosition="0" />
     <nodeInfo nodeId="2897370900776703242" fileName="TraceInfoManager.java" startLine="93" startPosition="0" endLine="98" endPosition="0" />
     <nodeInfo nodeId="2897370900776703284" fileName="TraceInfoManager.java" startLine="102" startPosition="0" endLine="107" endPosition="0" />
-    <nodeInfo nodeId="2897370900776703309" fileName="TraceInfoManager.java" startLine="107" startPosition="0" endLine="113" endPosition="0" />
+    <nodeInfo nodeId="2897370900776703309" fileName="TraceInfoManager.java" startLine="107" startPosition="0" endLine="112" endPosition="0" />
     <nodeInfo nodeId="2897370900776703164" fileName="TraceInfoManager.java" startLine="69" startPosition="69" endLine="76" endPosition="7" />
     <nodeInfo nodeId="2897370900776703055" fileName="TraceInfoManager.java" startLine="30" startPosition="0" endLine="39" endPosition="0" />
     <nodeInfo nodeId="2897370900776703075" fileName="TraceInfoManager.java" startLine="39" startPosition="0" endLine="48" endPosition="0" />
@@ -56,8 +56,8 @@
     <nodeInfo nodeId="2897370900776703157" fileName="TraceInfoManager.java" startLine="68" startPosition="45" endLine="77" endPosition="5" />
     <nodeInfo nodeId="2897370900776703151" fileName="TraceInfoManager.java" startLine="66" startPosition="0" endLine="80" endPosition="0" />
     <scopeInfo nodeId="2897370900776703045" fileName="TraceInfoManager.java" startLine="28" startPosition="29" endLine="28" endPosition="29" />
-    <scopeInfo nodeId="2897370900776703320" fileName="TraceInfoManager.java" startLine="115" startPosition="31" endLine="115" endPosition="31" />
-    <scopeInfo nodeId="2897370900776703325" fileName="TraceInfoManager.java" startLine="119" startPosition="34" endLine="119" endPosition="34" />
+    <scopeInfo nodeId="2897370900776703320" fileName="TraceInfoManager.java" startLine="113" startPosition="31" endLine="113" endPosition="31" />
+    <scopeInfo nodeId="2897370900776703325" fileName="TraceInfoManager.java" startLine="116" startPosition="34" endLine="116" endPosition="34" />
     <scopeInfo nodeId="2897370900776703070" fileName="TraceInfoManager.java" startLine="33" startPosition="56" endLine="34" endPosition="20" />
     <scopeInfo nodeId="2897370900776703092" fileName="TraceInfoManager.java" startLine="42" startPosition="56" endLine="43" endPosition="20" />
     <scopeInfo nodeId="2897370900776703114" fileName="TraceInfoManager.java" startLine="51" startPosition="56" endLine="52" endPosition="20" />
@@ -66,8 +66,8 @@
     <scopeInfo nodeId="2897370900776703198" fileName="TraceInfoManager.java" startLine="81" startPosition="50" endLine="82" endPosition="36" />
     <scopeInfo nodeId="2897370900776703235" fileName="TraceInfoManager.java" startLine="90" startPosition="85" endLine="91" endPosition="54" />
     <scopeInfo nodeId="2897370900776703277" fileName="TraceInfoManager.java" startLine="99" startPosition="79" endLine="100" endPosition="60" />
-    <scopeInfo nodeId="2897370900776703312" fileName="TraceInfoManager.java" startLine="110" startPosition="36" endLine="111" endPosition="32" />
-    <scopeInfo nodeId="2897370900776703049" fileName="TraceInfoManager.java" startLine="122" startPosition="48" endLine="123" endPosition="84" />
+    <scopeInfo nodeId="2897370900776703312" fileName="TraceInfoManager.java" startLine="109" startPosition="36" endLine="110" endPosition="32" />
+    <scopeInfo nodeId="2897370900776703049" fileName="TraceInfoManager.java" startLine="119" startPosition="48" endLine="120" endPosition="84" />
     <scopeInfo nodeId="2897370900776703042" fileName="TraceInfoManager.java" startLine="27" startPosition="0" endLine="29" endPosition="3" />
     <scopeInfo nodeId="2897370900776703209" fileName="TraceInfoManager.java" startLine="85" startPosition="53" endLine="87" endPosition="65">
       <varInfo nodeId="2897370900776703211" varName="result" />
@@ -82,6 +82,8 @@
     <scopeInfo nodeId="2897370900776703087" fileName="TraceInfoManager.java" startLine="41" startPosition="63" endLine="44" endPosition="7" />
     <scopeInfo nodeId="2897370900776703109" fileName="TraceInfoManager.java" startLine="50" startPosition="69" endLine="53" endPosition="7" />
     <scopeInfo nodeId="2897370900776703132" fileName="TraceInfoManager.java" startLine="59" startPosition="63" endLine="62" endPosition="7" />
+    <scopeInfo nodeId="2897370900776703317" fileName="TraceInfoManager.java" startLine="112" startPosition="0" endLine="115" endPosition="0" />
+    <scopeInfo nodeId="2897370900776703322" fileName="TraceInfoManager.java" startLine="115" startPosition="0" endLine="118" endPosition="0" />
     <scopeInfo nodeId="2897370900776703193" fileName="TraceInfoManager.java" startLine="80" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="2897370900776703196" varName="fqName" />
     </scopeInfo>
@@ -93,9 +95,7 @@
       <varInfo nodeId="2897370900776703271" varName="fqName" />
       <varInfo nodeId="2897370900776703273" varName="nameGetter" />
     </scopeInfo>
-    <scopeInfo nodeId="2897370900776703317" fileName="TraceInfoManager.java" startLine="113" startPosition="0" endLine="117" endPosition="0" />
-    <scopeInfo nodeId="2897370900776703322" fileName="TraceInfoManager.java" startLine="117" startPosition="0" endLine="121" endPosition="0" />
-    <scopeInfo nodeId="2897370900776703046" fileName="TraceInfoManager.java" startLine="121" startPosition="0" endLine="125" endPosition="0" />
+    <scopeInfo nodeId="2897370900776703046" fileName="TraceInfoManager.java" startLine="118" startPosition="0" endLine="122" endPosition="0" />
     <scopeInfo nodeId="2897370900776703061" fileName="TraceInfoManager.java" startLine="31" startPosition="46" endLine="36" endPosition="5">
       <varInfo nodeId="2897370900776703063" varName="concept" />
     </scopeInfo>
@@ -120,11 +120,11 @@
     <scopeInfo nodeId="2897370900776703284" fileName="TraceInfoManager.java" startLine="102" startPosition="0" endLine="107" endPosition="0">
       <varInfo nodeId="2897370900776703287" varName="fqName" />
     </scopeInfo>
+    <scopeInfo nodeId="2897370900776703309" fileName="TraceInfoManager.java" startLine="107" startPosition="0" endLine="112" endPosition="0" />
     <scopeInfo nodeId="2897370900776703060" fileName="TraceInfoManager.java" startLine="31" startPosition="46" endLine="37" endPosition="17" />
     <scopeInfo nodeId="2897370900776703080" fileName="TraceInfoManager.java" startLine="40" startPosition="42" endLine="46" endPosition="17" />
     <scopeInfo nodeId="2897370900776703102" fileName="TraceInfoManager.java" startLine="49" startPosition="41" endLine="55" endPosition="17" />
     <scopeInfo nodeId="2897370900776703125" fileName="TraceInfoManager.java" startLine="58" startPosition="54" endLine="64" endPosition="35" />
-    <scopeInfo nodeId="2897370900776703309" fileName="TraceInfoManager.java" startLine="107" startPosition="0" endLine="113" endPosition="0" />
     <scopeInfo nodeId="2897370900776703163" fileName="TraceInfoManager.java" startLine="69" startPosition="69" endLine="76" endPosition="7" />
     <scopeInfo nodeId="2897370900776703055" fileName="TraceInfoManager.java" startLine="30" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="2897370900776703058" varName="node" />
@@ -145,7 +145,7 @@
     <scopeInfo nodeId="2897370900776703151" fileName="TraceInfoManager.java" startLine="66" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="2897370900776703154" varName="unitNode" />
     </scopeInfo>
-    <unitInfo nodeId="2897370900776702999" fileName="TraceInfoManager.java" startLine="21" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.traceInfo.TraceInfoManager" />
+    <unitInfo nodeId="2897370900776702999" fileName="TraceInfoManager.java" startLine="21" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.traceInfo.TraceInfoManager" />
   </root>
   <root nodeId="2897370900776710748">
     <nodeInfo nodeId="2897370900776710752" fileName="VarPositionInfo.java" startLine="8" startPosition="51" endLine="9" endPosition="45" />
