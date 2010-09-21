@@ -1245,6 +1245,7 @@
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1213104855889">
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1213104855890">
               <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="1213104855891">
+                <property name="asCast:16" value="true" />
                 <link role="concept:16" targetNodeId="2.1169194658468:0" resolveInfo="INamedConcept" />
                 <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1213104855892">
                   <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node:8" id="1213104855893" />
@@ -1290,6 +1291,7 @@
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1213104855909">
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1213104855910">
               <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="1213104855911">
+                <property name="asCast:16" value="true" />
                 <link role="concept:16" targetNodeId="2.1196978630214:0" resolveInfo="IResolveInfo" />
                 <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1213104855912">
                   <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node:8" id="1213104855913" />
