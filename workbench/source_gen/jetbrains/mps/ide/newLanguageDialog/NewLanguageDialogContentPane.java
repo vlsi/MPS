@@ -35,15 +35,10 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.library.LanguageDesign_DevKit;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.vfs.VFileSystem;
-import jetbrains.mps.vcs.VcsMigrationUtil;
-import java.util.Collections;
-import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.util.FileUtil;
 
@@ -303,12 +298,8 @@ public class NewLanguageDialogContentPane extends JPanel {
 
   /*package*/ Language createNewLanguage() {
     String descriptorFileName = myThis.getLanguageName();
-    final File descriptorFile = new File(myThis.getLanguagePath(), descriptorFileName + MPSExtentions.DOT_LANGUAGE);
-    File dir = descriptorFile.getParentFile();
-    if (!(dir.exists())) {
-      dir.mkdirs();
-    }
-    final Language language = Language.createLanguage(myThis.getLanguageNamespace(), FileSystem.getInstance().getFileByPath(descriptorFile.getAbsolutePath()), myThis.getProject());
+    IFile descriptorFile = FileSystem.getInstance().getFileByPath(myThis.getLanguagePath() + File.separator + descriptorFileName + MPSExtentions.DOT_LANGUAGE);
+    final Language language = Language.createLanguage(myThis.getLanguageNamespace(), descriptorFile, myThis.getProject());
     LanguageDescriptor languageDescriptor = language.getModuleDescriptor();
     ModuleReference devkitRef = LanguageDesign_DevKit.MODULE_REFERENCE;
     languageDescriptor.getUsedDevkits().add(devkitRef);
@@ -317,28 +308,21 @@ public class NewLanguageDialogContentPane extends JPanel {
     language.save();
     myThis.getProject().addProjectLanguage(language);
     myThis.setResult(language);
-    // add to vcs 
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
-      public void run() {
-        VirtualFile file = VFileSystem.refreshAndGetFile(descriptorFile.getParentFile());
-        VcsMigrationUtil.getHandler().addFilesToVcs(Collections.singletonList(file), false, true);
-      }
-    }, ModalityState.NON_MODAL);
     return language;
   }
 
   /*package*/ Solution createRuntimeSolution() {
     String descriptorPath = myThis.getLanguagePath() + File.separator + "runtime" + File.separator + myThis.getLanguageNamespace() + ".runtime" + MPSExtentions.DOT_SOLUTION;
-    final File file = new File(descriptorPath);
-    Solution solution = NewModuleUtil.createNewSolution(FileSystem.getInstance().getFileByPath(file.getAbsolutePath()), myThis.getProject());
+    IFile descriptorFile = FileSystem.getInstance().getFileByPath(descriptorPath);
+    Solution solution = NewModuleUtil.createNewSolution(descriptorFile, myThis.getProject());
     solution.getModuleDescriptor().setCompileInMPS(myThis.getCompileInMPS());
     return solution;
   }
 
   /*package*/ Solution createSandboxSolution() {
     String descriptorPath = myThis.getLanguagePath() + File.separator + "sandbox" + File.separator + myThis.getLanguageNamespace() + ".sandbox" + MPSExtentions.DOT_SOLUTION;
-    final File file = new File(descriptorPath);
-    Solution solution = NewModuleUtil.createNewSolution(FileSystem.getInstance().getFileByPath(file.getAbsolutePath()), myThis.getProject());
+    IFile descriptorFile = FileSystem.getInstance().getFileByPath(descriptorPath);
+    Solution solution = NewModuleUtil.createNewSolution(descriptorFile, myThis.getProject());
     solution.getModuleDescriptor().setCompileInMPS(myThis.getCompileInMPS());
     return solution;
   }

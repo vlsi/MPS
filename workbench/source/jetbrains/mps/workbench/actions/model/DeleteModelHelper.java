@@ -19,7 +19,6 @@ import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataContext;
-import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
@@ -38,18 +37,13 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.refactoring.framework.*;
 import jetbrains.mps.refactoring.framework.RefactoringUtil.Applicability;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
 
-import java.io.File;
-import java.io.FilenameFilter;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Set;
 
 public class DeleteModelHelper {
@@ -64,7 +58,7 @@ public class DeleteModelHelper {
       return;
     }
 
-    deleteGeneratedFiles(project, modelDescriptor);
+    deleteGeneratedFiles(modelDescriptor);
 
     if (safeDelete) {
       safeDelete(project, modelDescriptor, deleteFiles);
@@ -73,22 +67,10 @@ public class DeleteModelHelper {
     }
   }
 
-  public static void deleteGeneratedFiles(Project project, SModelDescriptor modelDescriptor) {
-    File moduleOutput = new File(modelDescriptor.getModule().getOutputFor(modelDescriptor));
-    List<File> directoriesToDelete = new ArrayList<File>();
-    directoriesToDelete.add(FileGenerationUtil.getDefaultOutputDir(modelDescriptor, FileSystem.getInstance().getFileByPath(moduleOutput.getPath())).toFile());
-    directoriesToDelete.add(FileGenerationUtil.getDefaultOutputDir(modelDescriptor, FileSystem.getInstance().getFileByPath(FileGenerationUtil.getCachesPath(moduleOutput.getAbsolutePath()))).toFile());
-    for (File directory : directoriesToDelete) {
-      if (directory.exists()) {
-        VcsMigrationUtil.deleteFromDiskAndRemoveFromVcs(Arrays.asList(directory.listFiles(new FilenameFilter() {
-          @Override
-          public boolean accept(File dir, String name) {
-            return !FileTypeManager.getInstance().isFileIgnored(name);
-          }
-        })), false);
-        VcsMigrationUtil.deleteFromDiskAndRemoveFromVcs(Arrays.asList(directory), false);
-      }
-    }
+  public static void deleteGeneratedFiles(SModelDescriptor modelDescriptor) {
+    IFile moduleOutput = FileSystem.getInstance().getFileByPath(modelDescriptor.getModule().getOutputFor(modelDescriptor));
+    FileGenerationUtil.getDefaultOutputDir(modelDescriptor, moduleOutput).delete();
+    FileGenerationUtil.getDefaultOutputDir(modelDescriptor, FileGenerationUtil.getCachesDir(moduleOutput)).delete();
   }
 
   public static void delete(IModule contextModule, SModelDescriptor modelDescriptor, boolean deleteFiles) {

@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.util.JavaNameUtil;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
 import java.io.File;
@@ -28,6 +29,10 @@ public class FileGenerationUtil {
 
   public static String getCachesPath(String outputDir) {
     return outputDir + CACHES_SUFFIX;
+  }
+
+  public static IFile getCachesDir(IFile outputDir) {
+    return FileSystem.getInstance().getFileByPath(outputDir.getAbsolutePath() + CACHES_SUFFIX);
   }
 
   public static IFile getDefaultOutputDir(SModelDescriptor inputModelDescriptor, IFile outputRootDir) {

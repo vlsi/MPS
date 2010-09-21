@@ -25,7 +25,6 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.File;
 import java.util.List;
 import java.util.Set;
 

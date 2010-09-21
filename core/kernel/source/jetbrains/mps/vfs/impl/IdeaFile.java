@@ -1,6 +1,5 @@
 package jetbrains.mps.vfs.impl;
 
-import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.vfs.JarFileSystem;
 import com.intellij.openapi.vfs.LocalFileSystem;
@@ -8,9 +7,9 @@ import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.sun.istack.internal.NotNull;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileNameFilter;
-import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.*;
@@ -62,7 +61,7 @@ public class IdeaFile implements IFileEx {
     if (findVirtualFile()) {
       return myVirtualFile.getName();
     } else {
-      return myPath.substring(myPath.lastIndexOf(File.separator) + 1);
+      return truncFileName(myPath);
     }
   }
 
@@ -75,7 +74,7 @@ public class IdeaFile implements IFileEx {
       }
       return null;
     } else {
-      return new IdeaFile(myProvider, myPath.substring(0, myPath.lastIndexOf(File.separator)));
+      return new IdeaFile(myProvider, truncDirPath(myPath));
     }
   }
 
@@ -166,11 +165,11 @@ public class IdeaFile implements IFileEx {
   }
 
   // TODO this is a temporary method for generator
-  private void performCreationRoutines(final Runnable r) {
+  private void performWriteRoutines(final Runnable r) {
     if (ApplicationManager.getApplication().isWriteAccessAllowed()) {
       r.run();
     } else {
-      LOG.warning("Performing VirtualFile creations outside of write action");
+      LOG.warning("Performing VirtualFile writings outside of write action");
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         @Override
         public void run() {
@@ -186,13 +185,13 @@ public class IdeaFile implements IFileEx {
       return !myVirtualFile.isDirectory();
     } else {
       // TODO this is a temporary solution for generator
-      performCreationRoutines(new Runnable() {
+      performWriteRoutines(new Runnable() {
         @Override
         public void run() {
           VirtualFile directory = null;
           try {
-            directory = VfsUtil.createDirectories(myPath.substring(0, myPath.lastIndexOf(File.separator)));
-            myVirtualFile = directory.createChildData(IdeaFileSystemProvider.class, myPath.substring(myPath.lastIndexOf(File.separator) + 1));
+            directory = VfsUtil.createDirectories(truncDirPath(myPath));
+            myVirtualFile = directory.createChildData(IdeaFileSystemProvider.class, truncFileName(myPath));
             myPath = null;
           } catch (IOException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
@@ -209,7 +208,7 @@ public class IdeaFile implements IFileEx {
       return myVirtualFile.isDirectory();
     } else {
       // TODO this is a temporary solution for generator
-      performCreationRoutines(new Runnable() {
+      performWriteRoutines(new Runnable() {
         @Override
         public void run() {
           try {
@@ -258,6 +257,7 @@ public class IdeaFile implements IFileEx {
   @Override
   public OutputStream openOutputStream() throws IOException {
     if (findVirtualFile()) {
+
       return myVirtualFile.getOutputStream(IdeaFileSystemProvider.class);
     } else {
       if (createNewFile()) {
@@ -348,5 +348,23 @@ public class IdeaFile implements IFileEx {
       myPath = null;
     }
     return myVirtualFile != null;
+  }
+
+  private static String truncDirPath(String path) {
+    int index = Math.max(path.lastIndexOf('/'), path.lastIndexOf('\\'));
+    if (index == -1) {
+      return null;
+    } else {
+      return path.substring(0, index);
+    }
+  }
+
+  private static String truncFileName(String path) {
+    int index = Math.max(path.lastIndexOf('/'), path.lastIndexOf('\\'));
+    if (index == -1) {
+      return path;
+    } else {
+      return path.substring(index + 1);
+    }
   }
 }

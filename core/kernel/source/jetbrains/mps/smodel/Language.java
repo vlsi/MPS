@@ -43,7 +43,6 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.project.MPSExtentions;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -361,17 +360,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     LanguageDescriptor languageDescriptor = getModuleDescriptor();
     languageDescriptor.setNamespace(newNamespace);
     setLanguageDescriptor(languageDescriptor, false);
-  }
-
-  public File getSourceDir() {
-    File sourceDir = new File(myDescriptorFile.getParent().toFile(), "source_gen");
-    if (getModuleDescriptor().getGenPath() != null) {
-      sourceDir = new File(getModuleDescriptor().getGenPath());
-    }
-    if (!sourceDir.exists()) {
-      sourceDir.mkdirs();
-    }
-    return sourceDir;
   }
 
   public String getGeneratorOutputPath() {

@@ -32,9 +32,7 @@ public class RefactoringsPersistence {
 
   public static void save(IFile modelFile, RefactoringHistory refactorings) {
     IFile refactoringsFile = getRefactoringsFile(modelFile);
-    if (!refactoringsFile.exists()) {
-      refactoringsFile.createNewFile();
-    }
+    refactoringsFile.createNewFile();
 
     Document document = new Document(refactorings.toElement());
     if (refactoringsFile.isReadOnly()) {

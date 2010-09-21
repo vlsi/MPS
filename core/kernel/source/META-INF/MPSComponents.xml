@@ -581,10 +581,6 @@
     <component>
       <implementation-class>jetbrains.mps.ide.make.StartupModuleMaker</implementation-class>
     </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.vcs.queue.VCSQueue</implementation-class>
-    </component>
   </project-components>
 
 </components>

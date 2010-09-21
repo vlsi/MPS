@@ -16,9 +16,9 @@
 package jetbrains.mps.smodel.persistence;
 
 import com.intellij.openapi.fileTypes.FileTypeManager;
-import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import jetbrains.mps.smodel.*;
@@ -31,14 +31,16 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.ModelRefCreator;
 import jetbrains.mps.vcs.VcsMigrationUtil;
-import jetbrains.mps.vcs.queue.VCSQueue;
-import jetbrains.mps.vfs.*;
-import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.*;
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * @author Kostik
@@ -74,27 +76,10 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
 
     try {
       model.setLoading(true);
-      boolean needToSave = false;
-
-      //this code is for migration from old models (with no IDS)
-      if (model.getSModelReference().getSModelId() == null) {
-        model.changeModelReference(dsm.getSModelReference());
-        //todo FIXME update on save?
-        needToSave = true;
-      }
-
-      if (model.updateSModelReferences()) {
-        //todo FIXME update on save?
-        needToSave = true;
-      }
-
-      if (model.updateModuleReferences()) {
-        //todo FIXME update on save?
-        needToSave = true;
-      }
+      boolean needToSave = model.updateSModelReferences() || model.updateModuleReferences();
 
       if (needToSave && !dsm.getModelFile().isReadOnly()) {
-        ModelPersistence.saveModel(model, dsm.getModelFile(), false, false);
+        SModelRepository.getInstance().markChanged(model);
       }
     } finally {
       model.setLoading(false);
@@ -303,8 +288,6 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
 
     SModelDescriptor result = getInstance(manager, newFile.getAbsolutePath(), newModelReference, owner, true);
 
-    fileRenamed(modelFile, newFile);
-
     return result;
   }
 
@@ -392,7 +375,6 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     dsm.changeModelFile(newFile);
     dsm.save();
     oldFile.delete();
-    fileRenamed(oldFile, newFile);
   }
 
   public void changeSModelRoot(SModelDescriptor sm, SModelRoot modelRoot) {
@@ -402,13 +384,6 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     dsm.changeModelFile(newFile);
     dsm.save();
     oldFile.delete();
-    fileRenamed(oldFile, newFile);
-  }
-
-  private void fileRenamed(IFile modelFile, IFile newFile) {
-    // todo use listeners
-    VCSQueue.instance().addToVcsLater(newFile.toFile());
-    VCSQueue.instance().removeFromVcsLater(modelFile.toFile());
   }
 }
 

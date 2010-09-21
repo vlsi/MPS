@@ -16,7 +16,6 @@
 package jetbrains.mps.refactoring.renameLanguage;
 
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.generator.GeneratorConfigUtil;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.project.SModelRoot;
@@ -27,15 +26,8 @@ import jetbrains.mps.refactoring.framework.OldRefactoringAdapter;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vfs.FileSystem;
-
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import jetbrains.mps.vfs.IFile;
 
 public class LanguageRenamer {
   private Project myProject;
@@ -55,22 +47,18 @@ public class LanguageRenamer {
     checkPreconditions();
 
     String oldFqName = myLanguage.getModuleFqName();
-    List<File> oldFiles = null;
-    if (deleteOldFiles) {
-      oldFiles = getModelOutputRoots();
-    }
+    IFile oldOutputDir = FileSystem.getInstance().getFileByPath(myLanguage.getGeneratorOutputPath());
+    IFile oldCachesDir = FileGenerationUtil.getCachesDir(oldOutputDir);
+    IFile oldClassesGen = myLanguage.getClassesGen();
 
     renameLanguage(oldFqName);
     renameGenerators(oldFqName);
 
     if (deleteOldFiles) {
-      deleteOldFiles(oldFiles);
+      oldOutputDir.delete();
+      oldCachesDir.delete();
+      oldClassesGen.delete();
     }
-  }
-
-  private void deleteOldFiles(List<File> oldModelRoots) {
-    List<File> newModelRoots = getModelOutputRoots();
-    VcsMigrationUtil.deleteFromDiskAndRemoveFromVcs(getFilesToDelete(oldModelRoots, newModelRoots), true);
   }
 
   private void renameLanguage(String oldFqName) {
@@ -138,52 +126,6 @@ public class LanguageRenamer {
         throw new IllegalArgumentException();
       }
     }
-  }
-
-  private List<File> getFilesToDelete(List<File> oldModelRoots, List<File> newModelRoots) {
-    if (oldModelRoots.size() == 0) return Collections.emptyList();
-    if (newModelRoots.size() == 0) return Arrays.asList(myLanguage.getSourceDir().listFiles());
-
-    File oldFile = FileUtil.getMaxContainingFile(oldModelRoots);
-    assert FileUtil.isParentUp(myLanguage.getSourceDir(), oldFile);
-    File newFile = FileUtil.getMaxContainingFile(newModelRoots);
-    assert FileUtil.isParentUp(myLanguage.getSourceDir(), newFile);
-
-    if (FileUtil.isParentUp(oldFile, newFile)) {
-      List<File> filesToRemove = new ArrayList<File>();
-      for (File f : oldModelRoots) {
-        File containingFile = FileUtil.getMaxContainingFile(newFile, f);
-        filesToRemove.add(getContainingChildren(containingFile, f));
-      }
-      return filesToRemove;
-    }
-
-    File containingFile = FileUtil.getMaxContainingFile(oldFile, newFile);
-    assert containingFile != null;
-    assert FileUtil.isParentUp(myLanguage.getSourceDir(), containingFile);
-    return Collections.singletonList(getContainingChildren(containingFile, oldFile));
-  }
-
-  private File getContainingChildren(File parent, File children) {
-    for (File child : parent.listFiles()) {
-      if (FileUtil.isParentUp(child, children)) {
-        return child;
-      }
-    }
-    return children;
-  }
-
-  private List<File> getModelOutputRoots() {
-    List<File> result = new ArrayList<File>();
-    File sourceDir = myLanguage.getSourceDir();
-
-    List<SModelDescriptor> inputModels = GeneratorConfigUtil.getLanguageModels(myLanguage);
-
-    for (SModelDescriptor d : inputModels) {
-      result.add(FileGenerationUtil.getDefaultOutputDir(d, FileSystem.getInstance().getFileByPath(sourceDir.getAbsolutePath())).toFile());
-    }
-
-    return result;
   }
 
   public static class MyRefactoring extends AbstractLoggableRefactoring {
