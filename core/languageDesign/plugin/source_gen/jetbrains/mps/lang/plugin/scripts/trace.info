@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="Rename_S_ActionParameters_MigrationScript.java" startLine="73" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.Rename_S_ActionParameters_MigrationScript$QuotationClass_obtej7_a0a0a0d0a0a0b0a" />
+  <unitInfo fileName="Rename_S_ActionParameters_MigrationScript.java" startLine="92" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.Rename_S_ActionParameters_MigrationScript$QuotationClass_obtej7_a0a0a0a4a0a0a1a0" />
+  <unitInfo fileName="Rename_S_ActionParameters_MigrationScript.java" startLine="111" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.Rename_S_ActionParameters_MigrationScript$QuotationClass_obtej7_a0a0a0d0a0a0c0a" />
+  <unitInfo fileName="Rename_S_ActionParameters_MigrationScript.java" startLine="130" startPosition="0" endLine="148" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.Rename_S_ActionParameters_MigrationScript$QuotationClass_obtej7_a0a0a0a4a0a0a2a0" />
+  <unitInfo fileName="Rename_S_ActionParameters_MigrationScript.java" startLine="21" startPosition="28" endLine="45" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.Rename_S_ActionParameters_MigrationScript$1" />
+  <unitInfo fileName="Rename_S_ActionParameters_MigrationScript.java" startLine="46" startPosition="28" endLine="70" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.Rename_S_ActionParameters_MigrationScript$2" />
+  <unitInfo fileName="ConvertUpdateMethod_MigrationScript.java" startLine="16" startPosition="28" endLine="42" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.ConvertUpdateMethod_MigrationScript$1" />
+  <unitInfo fileName="ConvertUpdateMethod_MigrationScript.java" startLine="13" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.ConvertUpdateMethod_MigrationScript" />
+  <unitInfo fileName="FixToolInitAndDispose_MigrationScript.java" startLine="18" startPosition="28" endLine="61" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.FixToolInitAndDispose_MigrationScript$1" />
+  <unitInfo fileName="FixToolInitAndDispose_MigrationScript.java" startLine="62" startPosition="28" endLine="105" endPosition="5" unitName="jetbrains.mps.lang.plugin.scripts.FixToolInitAndDispose_MigrationScript$2" />
+  <unitInfo fileName="FixToolInitAndDispose_MigrationScript.java" startLine="15" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.FixToolInitAndDispose_MigrationScript" />
+  <unitInfo fileName="Rename_S_ActionParameters_MigrationScript.java" startLine="18" startPosition="0" endLine="149" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.Rename_S_ActionParameters_MigrationScript" />
   <root nodeId="1171743928472194518">
     <nodeInfo nodeId="1171743928472218640" fileName="Rename_S_ActionParameters_MigrationScript.java" startLine="34" startPosition="59" endLine="35" endPosition="220" />
     <nodeInfo nodeId="1171743928472218664" fileName="Rename_S_ActionParameters_MigrationScript.java" startLine="38" startPosition="52" endLine="39" endPosition="212" />

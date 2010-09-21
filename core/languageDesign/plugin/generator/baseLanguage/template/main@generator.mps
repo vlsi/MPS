@@ -7065,15 +7065,21 @@
         <property name="name:3" value="models" />
         <property name="isFinal:3" value="true" />
         <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="1238672240900">
-          <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1238672240901">
-            <link role="classifier:3" targetNodeId="49.~Pair" resolveInfo="Pair" />
-            <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1238672240902">
-              <link role="classifier:3" targetNodeId="24.~SModelDescriptor" resolveInfo="SModelDescriptor" />
-            </node>
-            <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1238672240903">
-              <link role="classifier:3" targetNodeId="24.~IOperationContext" resolveInfo="IOperationContext" />
-            </node>
+          <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8871719840296847116">
+            <link role="classifier:3" targetNodeId="24.~SModelDescriptor" resolveInfo="SModelDescriptor" />
           </node>
+        </node>
+      </node>
+      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="8871719840296847117">
+        <property name="name:3" value="options" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8871719840296847590">
+          <link role="classifier:3" targetNodeId="84.~GenerationOptions" resolveInfo="GenerationOptions" />
+        </node>
+      </node>
+      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="8871719840296847591">
+        <property name="name:3" value="operationContext" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8871719840296847593">
+          <link role="classifier:3" targetNodeId="24.~IOperationContext" resolveInfo="IOperationContext" />
         </node>
       </node>
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1210094632730">
@@ -7104,14 +7110,8 @@
         <property name="name:3" value="models" />
         <property name="isFinal:3" value="true" />
         <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="1238672240829">
-          <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1238672240830">
-            <link role="classifier:3" targetNodeId="49.~Pair" resolveInfo="Pair" />
-            <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1238672240831">
-              <link role="classifier:3" targetNodeId="24.~SModelDescriptor" resolveInfo="SModelDescriptor" />
-            </node>
-            <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1238672240832">
-              <link role="classifier:3" targetNodeId="24.~IOperationContext" resolveInfo="IOperationContext" />
-            </node>
+          <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8871719840296847602">
+            <link role="classifier:3" targetNodeId="24.~SModelDescriptor" resolveInfo="SModelDescriptor" />
           </node>
         </node>
       </node>
@@ -7146,23 +7146,29 @@
     </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1213049088544">
       <property name="name:3" value="afterGeneration" />
-      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1213049088545" />
-      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1213049088546" />
-      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1213049088547">
+      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="8871719840296847594">
         <property name="name:3" value="models" />
         <property name="isFinal:3" value="true" />
-        <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="1238672240652">
-          <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1238672240653">
-            <link role="classifier:3" targetNodeId="49.~Pair" resolveInfo="Pair" />
-            <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1238672240654">
-              <link role="classifier:3" targetNodeId="24.~SModelDescriptor" resolveInfo="SModelDescriptor" />
-            </node>
-            <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1238672240655">
-              <link role="classifier:3" targetNodeId="24.~IOperationContext" resolveInfo="IOperationContext" />
-            </node>
+        <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="8871719840296847595">
+          <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8871719840296847596">
+            <link role="classifier:3" targetNodeId="24.~SModelDescriptor" resolveInfo="SModelDescriptor" />
           </node>
         </node>
       </node>
+      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="8871719840296847597">
+        <property name="name:3" value="options" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8871719840296847598">
+          <link role="classifier:3" targetNodeId="84.~GenerationOptions" resolveInfo="GenerationOptions" />
+        </node>
+      </node>
+      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="8871719840296847599">
+        <property name="name:3" value="operationContext" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8871719840296847600">
+          <link role="classifier:3" targetNodeId="24.~IOperationContext" resolveInfo="IOperationContext" />
+        </node>
+      </node>
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1213049088545" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1213049088546" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213049088552">
         <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="1213049088553">
           <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="1213049088554">
