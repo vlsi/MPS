@@ -51,7 +51,6 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
   private FileProcessor myProcessor;
 
   public JavaGenerationHandler() {
-    myProcessor = new FileProcessor();
   }
 
   @Override
@@ -63,6 +62,7 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
   public void startGeneration(IGeneratorLogger logger) {
     super.startGeneration(logger);
     info("generating files");
+    myProcessor = new FileProcessor();
   }
 
   @Override
@@ -223,8 +223,10 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
 
   @Override
   public void generationCompleted() {
-    myProcessor.invoke();
-    myProcessor = null;
+    if(myProcessor != null) {
+      myProcessor.invoke();
+      myProcessor = null;
+    }
   }
 
   @Override
