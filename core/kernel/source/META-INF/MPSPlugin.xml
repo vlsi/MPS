@@ -104,6 +104,8 @@
 
     <editorTabTitleProvider implementation="jetbrains.mps.workbench.editors.EditorTabTitleProviderImpl"/>
 
+    <fileIconProvider implementation="jetbrains.mps.workbench.editors.MPSIconProvider"/>
+
     <configurationType implementation="jetbrains.mps.debug.integration.runconfigs.RemoteConfigurationType"/>
   </extensions>
 </idea-plugin>
