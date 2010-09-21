@@ -8,10 +8,10 @@ import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.util.containers.ContainerUtil;
 import com.intellij.openapi.extensions.Extensions;
 import com.intellij.execution.configurations.ConfigurationType;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.plugins.pluginparts.runconfigs.MPSPsiElement;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.ConfigurationFactory;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class JUnitConfigFromModule extends BaseConfigCreator<IModule> implements Cloneable {
   private RunConfiguration myConfig;
@@ -26,9 +26,8 @@ public class JUnitConfigFromModule extends BaseConfigCreator<IModule> implements
   }
 
   private void createConfig(final IModule parameter) {
-    if (Sequence.fromIterable(TestRunUtil.getModuleTests(parameter.getModuleFqName())).isEmpty()) {
-      return;
-    }
+    // commented out due to perfomance problems 
+    // <node> 
     final String name = parameter.getModuleFqName();
     JUnitConfigFromModule.this.setSourceElement(new MPSPsiElement(parameter));
     {

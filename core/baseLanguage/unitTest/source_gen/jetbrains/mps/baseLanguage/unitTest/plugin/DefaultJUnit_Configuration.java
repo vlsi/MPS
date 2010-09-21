@@ -54,6 +54,7 @@ import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import com.intellij.openapi.progress.ProgressManager;
 import javax.swing.JLabel;
 import com.intellij.execution.ui.ExecutionConsole;
 
@@ -139,6 +140,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
             final UnitTestExecutionController parameter = new _FunctionTypes._return_P0_E0<UnitTestExecutionController>() {
               public UnitTestExecutionController invoke() {
                 MPSProject mpsProject = project_22042010.getComponent(MPSProject.class);
+
                 List<SNode> stuffToTest = DefaultJUnit_Configuration.this.collectWhatToTest(mpsProject);
 
                 if (javaRunParameters.getMake()) {
@@ -251,13 +253,23 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
 
   private List<SNode> collectWhatToTest(final MPSProject mpsProject) {
     final List<SNode> all = new ArrayList<SNode>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        if (DefaultJUnit_Configuration.this.getStateObject().type != null) {
-          ListSequence.fromList(all).addSequence(Sequence.fromIterable(DefaultJUnit_Configuration.this.getStateObject().type.collect(DefaultJUnit_Configuration.this, mpsProject)));
+    if (DefaultJUnit_Configuration.this.getStateObject().type != null) {
+      Runnable collect = new Runnable() {
+        public void run() {
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              ListSequence.fromList(all).addSequence(Sequence.fromIterable(DefaultJUnit_Configuration.this.getStateObject().type.collect(DefaultJUnit_Configuration.this, mpsProject)));
+            }
+          });
         }
+      };
+      if (DefaultJUnit_Configuration.this.getStateObject().type.equals(JUnitRunTypes.PROJECT) || DefaultJUnit_Configuration.this.getStateObject().type.equals(JUnitRunTypes.MODULE)) {
+        // collecting for module/project is slow, so execute under progress 
+        ProgressManager.getInstance().runProcessWithProgressSynchronously(collect, "Collecting Tests To Run", false, mpsProject.getProject());
+      } else {
+        collect.run();
       }
-    });
+    }
     return all;
   }
 
