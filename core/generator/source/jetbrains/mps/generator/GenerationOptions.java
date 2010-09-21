@@ -29,7 +29,7 @@ public class GenerationOptions {
 
   private IGenerationTracer myGenerationTracer;
 
-  public GenerationOptions(boolean strictMode, boolean saveTransientModels, boolean rebuildAll, boolean incremental,
+  private GenerationOptions(boolean strictMode, boolean saveTransientModels, boolean rebuildAll, boolean incremental,
                            boolean generateInParallel, int numberOfThreads, int tracingMode, boolean showInfo,
                            boolean showWarnings, boolean keepModelsWithWarnings, int numberOfModelsToKeep,
                            @NotNull IGenerationTracer generationTracer) {
@@ -100,5 +100,81 @@ public class GenerationOptions {
 
   public int getNumberOfModelsToKeep() {
     return myNumberOfModelsToKeep;
+  }
+
+  public static OptionsBuilder getDefaults() {
+    return new OptionsBuilder();
+  }
+
+  /**
+   * Options builder
+   * Usage:
+   *    GenerationOptions.getDefaults().saveTransientModels(true).reporting(true, true, true, 4);
+   */
+  public static class OptionsBuilder {
+
+    private boolean mySaveTransientModels = false;
+    private boolean myStrictMode = false;
+    private boolean myRebuildAll = true;
+    private boolean myIncremental = false;
+    private boolean myGenerateInParallel = false;
+    private int myNumberOfThreads = 4;
+    private int myTracingMode = TRACE_OFF;
+
+    private boolean myShowInfo = false;
+    private boolean myShowWarnings = true;
+    private boolean myKeepModelsWithWarnings = true;
+    private int myNumberOfModelsToKeep = 16;
+
+    private IGenerationTracer myGenerationTracer = NullGenerationTracer.INSTANCE;
+
+    private OptionsBuilder() {
+    }
+
+    public GenerationOptions create() {
+      return new GenerationOptions(myStrictMode, mySaveTransientModels, myRebuildAll, myIncremental,
+        myGenerateInParallel, myNumberOfThreads, myTracingMode, myShowInfo, myShowWarnings,
+        myKeepModelsWithWarnings, myNumberOfModelsToKeep, myGenerationTracer);
+    }
+
+    public OptionsBuilder saveTransientModels(boolean saveTransientModels) {
+      mySaveTransientModels = saveTransientModels;
+      return this;
+    }
+
+    public OptionsBuilder strictMode(boolean strictMode) {
+      myStrictMode = strictMode;
+      return this;
+    }
+
+    public OptionsBuilder rebuildAll(boolean rebuildAll) {
+      myRebuildAll = rebuildAll;
+      return this;
+    }
+
+    public OptionsBuilder incremental(boolean incremental) {
+      myIncremental = incremental;
+      return this;
+    }
+
+    public OptionsBuilder generateInParallel(boolean generateInParallel, int numberOfThreads) {
+      myGenerateInParallel = generateInParallel;
+      myNumberOfThreads = numberOfThreads;
+      return this;
+    }
+
+    public OptionsBuilder reporting(boolean showInfo, boolean showWarnings, boolean keepModelsWithWarnings, int numberOfModelsToKeep) {
+      myShowInfo = showInfo;
+      myShowWarnings = showWarnings;
+      myKeepModelsWithWarnings = keepModelsWithWarnings;
+      myNumberOfModelsToKeep = numberOfModelsToKeep;
+      return this;
+    }
+
+    public OptionsBuilder tracing(int tracingMode, IGenerationTracer generationTracer) {
+      myTracingMode = tracingMode;
+      myGenerationTracer = generationTracer;
+      return this;
+    }
   }
 }

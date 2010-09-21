@@ -71,12 +71,9 @@ public class GeneratorManager {
                                 final boolean rebuildAll) {
 
     // default options
-    GenerationOptions options = new GenerationOptions(
-      false, saveTransientModels, rebuildAll, false,
-      false, 2,
-      GenerationOptions.TRACE_OFF,
-      false, true, true,
-      16, new NullGenerationTracer());
+    GenerationOptions options = GenerationOptions.getDefaults()
+      .saveTransientModels(saveTransientModels)
+      .rebuildAll(rebuildAll).create();
 
     return generateModels(inputModels, invocationContext, generationHandler, progress, messages, options);
   }
