@@ -16,41 +16,29 @@
 package jetbrains.mps.generator.generationTypes.java;
 
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.newvfs.RefreshQueue;
-import com.intellij.openapi.vfs.newvfs.RefreshSession;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.vcs.VcsMigrationUtil;
-import jetbrains.mps.vfs.VFileSystem;
+import jetbrains.mps.util.JDOMUtil;
+import jetbrains.mps.vfs.IFile;
+import org.jdom.Document;
+import org.jdom.Element;
 
-import java.io.File;
-import java.util.*;
+import java.io.BufferedOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 class FileProcessor {
+  private static final Logger LOG = Logger.getLogger(FileProcessor.class);
 
   private final List<SModelDescriptor> myModels = new ArrayList<SModelDescriptor>();
-  private final List<File> myAdded = new ArrayList<File>();
-  private final List<File> myRemoved = new ArrayList<File>();
-  private final Map<Project,List<File>> myRefresh = new HashMap<Project,List<File>>(2);
-  private final Object LOCK = new Object();
+  private final List<FileAndContent> myFilesAndContents = new ArrayList<FileAndContent>();
+  private final List<IFile> myFilesToDelete = new ArrayList<IFile>();
 
-  public void invalidateRoot(final File outputRoot, final IOperationContext context) {
-    final Project p = context.getProject();
-    if(p != null) {
-      synchronized (LOCK) {
-        List<File> files = myRefresh.get(p);
-        if(files == null) {
-          files = new ArrayList<File>();
-          myRefresh.put(p, files);
-        }
-        files.add(outputRoot);
-      }
-    }
-  }
+  private final Object LOCK = new Object();
 
   public void invalidateModel(SModelDescriptor modelDescriptor) {
     synchronized (LOCK) {
@@ -58,56 +46,98 @@ class FileProcessor {
     }
   }
 
-  public void processVCSAddition(final Set<File> generatedFiles) {
-    synchronized (LOCK) {
-      myAdded.addAll(generatedFiles);
-    }
+  public void saveContent(IFile file, String content) {
+    myFilesAndContents.add(new FileAndContent(file, new StringFileContent(content)));
   }
 
-  public void processVCSDeletion(final List<File> filesToDelete) {
-    synchronized (LOCK) {
-      myRemoved.addAll(filesToDelete);
-    }
+  public void saveContent(IFile file, Element content) {
+    myFilesAndContents.add(new FileAndContent(file, new XMLFileContent(content)));
+  }
+
+  public void filesToDelete(Collection<IFile> files) {
+    myFilesToDelete.addAll(files);
   }
 
   public void invoke() {
-    ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
       @Override
       public void run() {
-        // add
-        List<VirtualFile> filesToAdd = new ArrayList<VirtualFile>(myAdded.size());
-        for (File f : myAdded) {
-          VirtualFile file = VFileSystem.refreshAndGetFile(f);
-          assert file != null : "Can not find virtual file for " + f;
-          filesToAdd.add(file);
-        }
-        VcsMigrationUtil.getHandler().addFilesToVcs(filesToAdd, false, false);
-
-        // remove
-        VcsMigrationUtil.deleteFromDiskAndRemoveFromVcs(myRemoved, false);
-
-        // refresh
-        for(Map.Entry<Project,List<File>> entry : myRefresh.entrySet()) {
-          final Project p = entry.getKey();
-          final List<VirtualFile> foldersToRefresh = new ArrayList<VirtualFile>(entry.getValue().size());
-          for (File f : entry.getValue()) {
-            VirtualFile folder = VFileSystem.refreshAndGetFile(f);
-            assert folder != null : "Can not find virtual file for " + f;
-            foldersToRefresh.add(folder);
-          }
-
-          RefreshSession session = RefreshQueue.getInstance().createSession(true, true, new Runnable() {
-            public void run() {
-              VcsDirtyScopeManager.getInstance(p).filesDirty(null, foldersToRefresh);
+        ApplicationManager.getApplication().runWriteAction(new Runnable() {
+          @Override
+          public void run() {
+            // TODO add progress indication
+            for (FileAndContent filesAndContent : myFilesAndContents) {
+              filesAndContent.save();
             }
-          });
-          session.addAllFiles(foldersToRefresh);
-          session.launch();
-        }
 
-        // refresh status
-        ModelGenerationStatusManager.getInstance().invalidateData(myModels);
+            for (IFile file : myFilesToDelete) {
+              file.delete();
+            }
+
+            ModelGenerationStatusManager.getInstance().invalidateData(myModels);
+          }
+        });
       }
     });
+  }
+
+  private static class FileAndContent {
+    private IFile myFile;
+    private FileContent myContent;
+
+    private FileAndContent(IFile file, FileContent content) {
+      myFile = file;
+      myContent = content;
+    }
+
+    private void save() {
+      myContent.saveToFile(myFile);
+    }
+  }
+
+  private interface FileContent {
+    void saveToFile(IFile file);
+  }
+
+  private static class StringFileContent implements FileContent {
+    private String myContent;
+
+    private StringFileContent(String content) {
+      myContent = content;
+    }
+
+    @Override
+    public void saveToFile(IFile file) {
+      OutputStreamWriter writer = null;
+      try {
+        writer = new OutputStreamWriter(new BufferedOutputStream(file.openOutputStream()));
+        writer.write(myContent);
+      } catch (IOException e) {
+        LOG.error(e);
+      } finally {
+        if (writer != null) {
+          try {
+            writer.close();
+          } catch (IOException ignored) {}
+        }
+      }
+    }
+  }
+
+  private static class XMLFileContent implements FileContent {
+    private Element myElement;
+
+    private XMLFileContent(Element element) {
+      myElement = element;
+    }
+
+    @Override
+    public void saveToFile(IFile file) {
+      try {
+        JDOMUtil.writeDocument(new Document(myElement), file);
+      } catch (IOException e) {
+        LOG.error(e);
+      }
+    }
   }
 }

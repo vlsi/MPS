@@ -36,10 +36,11 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 
-import java.io.File;
 import java.io.IOException;
-import java.util.*;
+import java.util.List;
 
 /**
  * Stores files on disk, compiles and reloads classes.
@@ -68,13 +69,13 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
   @Override
   public boolean handleOutput(IModule module, SModelDescriptor inputModel, GenerationStatus status, IOperationContext invocationContext, ITaskProgressHelper progressHelper) {
     info("handling output...");
-    String targetDir = module.getOutputFor(inputModel);
+    IFile targetDir = FileSystem.getInstance().getFileByPath(module.getOutputFor(inputModel));
 
     long startJobTime = System.currentTimeMillis();
 
     boolean result = false;
     if (status.isOk()) {
-      JavaStreamHandler javaStreamHandler = new JavaStreamHandler(inputModel, new File(targetDir), invocationContext, myProcessor);
+      JavaStreamHandler javaStreamHandler = new JavaStreamHandler(inputModel, targetDir, myProcessor);
       try {
         result = new JavaFileGenerator(javaStreamHandler,
           ModelGenerationStatusManager.getInstance().getCacheGenerator(),
@@ -101,12 +102,6 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
     progressHelper.setText2("module " + module);
 
     String outputFolder = module != null ? module.getGeneratorOutputPath() : null;
-    prepareOutputFolder(outputFolder);
-
-    if (containsTestModels(inputModels)) {
-      String testsOutputFolder = module != null ? module.getTestsGeneratorOutputPath() : null;
-      prepareOutputFolder(testsOutputFolder);
-    }
 
     if (myLogger.needsInfo()) {
       myLogger.info("module " + module + "; folder = " + outputFolder + "");
@@ -213,12 +208,6 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
       if (SModelStereotype.isTestModel(sm)) return true;
     }
     return false;
-  }
-
-  protected final void prepareOutputFolder(String outputFolder) {
-    if (outputFolder != null && !new File(outputFolder).exists()) {
-      new File(outputFolder).mkdirs();
-    }
   }
 
   @Override

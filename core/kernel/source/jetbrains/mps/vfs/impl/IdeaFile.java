@@ -10,6 +10,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileNameFilter;
+import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.*;
@@ -365,6 +366,25 @@ public class IdeaFile implements IFileEx {
       return path;
     } else {
       return path.substring(index + 1);
+    }
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+
+    IdeaFile ideaFile = (IdeaFile) o;
+
+    return ObjectUtils.equals(FileUtil.getCanonicalPath(getAbsolutePath()), FileUtil.getCanonicalPath(ideaFile.getAbsolutePath()));
+  }
+
+  @Override
+  public int hashCode() {
+    if (getAbsolutePath() == null) {
+      return 0;
+    } else {
+      return FileUtil.getCanonicalPath(getAbsolutePath()).hashCode();
     }
   }
 }
