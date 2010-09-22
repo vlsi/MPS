@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.project;
+package jetbrains.mps.save;
 
 import com.intellij.ide.GeneralSettings;
 import com.intellij.openapi.components.ProjectComponent;
@@ -61,9 +61,7 @@ public class ProjectSaveChecker implements ProjectComponent {
 
   private class MyProjectListener extends ProjectManagerAdapter {
     private boolean myIgnoredSaving = false;
-
-    @Override
-
+    
     public boolean canCloseProject(Project project) {
       if (MPSCore.getInstance().isTestMode()) return true;
 

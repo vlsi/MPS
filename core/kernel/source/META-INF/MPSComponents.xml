@@ -456,11 +456,11 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.project.ProjectSaveChecker</implementation-class>
+      <implementation-class>jetbrains.mps.save.ProjectSaveChecker</implementation-class>
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.project.ModelsSaver</implementation-class>
+      <implementation-class>jetbrains.mps.save.ModelsSaver</implementation-class>
     </component>
 
     <component>
