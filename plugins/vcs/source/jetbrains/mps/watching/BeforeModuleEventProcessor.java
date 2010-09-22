@@ -15,14 +15,8 @@
  */
 package jetbrains.mps.watching;
 
-import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
-import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.vcs.VCSUtil;
-import jetbrains.mps.vcs.VcsMigrationUtil;
-
-import java.util.Collections;
 
 class BeforeModuleEventProcessor extends EventProcessor {
   private static final BeforeModuleEventProcessor INSTANCE = new BeforeModuleEventProcessor();
@@ -37,13 +31,6 @@ class BeforeModuleEventProcessor extends EventProcessor {
     if (module != null) {
       // we should unload module
       reloadSession.addDeletedModule(module);
-    } else {
-      // if module is null, then it was removed by user
-      VirtualFile vfile = getVFile(event);
-      if (vfile == null) return;
-      if (MPSFileTypesManager.instance().isModuleFile(vfile)) {
-        VCSUtil.removeFilesFromVcs(Collections.singletonList(vfile), true);
-      }
     }
   }
 }

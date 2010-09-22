@@ -37,7 +37,6 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vcs.queue.TaskQueue;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.watching.ModelChangesWatcher;
 import jetbrains.mps.watching.ModelChangesWatcher.IReloadListener;
 import org.jetbrains.annotations.NonNls;
@@ -301,9 +300,4 @@ public class SuspiciousModelIndex implements ApplicationComponent {
     }
   }
 
-  public interface IModelsMergeListener {
-    public void mergeStarted();
-
-    public void mergeEnded();
-  }
 }

@@ -20,8 +20,6 @@ import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.io.FileUtil;
-import com.intellij.openapi.vcs.FilePath;
-import com.intellij.openapi.vcs.actions.VcsContextFactory;
 import com.intellij.openapi.vcs.impl.AbstractVcsHelperImpl;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.WindowManager;
@@ -31,10 +29,8 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.vcs.ModelUtils.Version;
 import jetbrains.mps.vcs.diff.ui.MergeModelsDialog;
-import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.watching.ModelChangesWatcher;
 
 import javax.swing.JFrame;
@@ -175,38 +171,6 @@ public class VcsHelper {
       return false;
     }
     return true;
-  }
-
-  public static FilePath getFilePath(IFile file) {
-    return getFilePath(file.toFile());
-  }
-
-  public static FilePath getFilePath(String file) {
-    return getFilePath(new File(file));
-  }
-
-  public static FilePath getFilePath(VirtualFile file) {
-    return VcsContextFactory.SERVICE.getInstance().createFilePathOn(file);
-  }
-
-  public static FilePath getFilePath(File file) {
-    return VcsContextFactory.SERVICE.getInstance().createFilePathOn(file);
-  }
-
-  public static FilePath getFilePath(VcsContextFactory factory, IFile file) {
-    return getFilePath(factory, file.toFile());
-  }
-
-  public static FilePath getFilePath(VcsContextFactory factory, String file) {
-    return getFilePath(factory, new File(file));
-  }
-
-  public static FilePath getFilePath(VcsContextFactory factory, VirtualFile file) {
-    return factory.createFilePathOn(file);
-  }
-
-  public static FilePath getFilePath(VcsContextFactory factory, File file) {
-    return factory.createFilePathOn(file);
   }
 
   public static enum FsMemoryMergeVersion implements Version {

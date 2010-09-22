@@ -27,8 +27,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-abstract class AbstractShowInFileWiew extends AbstractVcsAction {
-
+abstract class AbstractShowInFileView extends AbstractVcsAction {
   protected void actionPerformed(VcsContext e) {
     final Project project = e.getProject();
     VirtualFile selectedFile = calculateSelectedFile(e);

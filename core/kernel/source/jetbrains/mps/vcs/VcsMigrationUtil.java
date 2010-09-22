@@ -16,12 +16,6 @@
 package jetbrains.mps.vcs;
 
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.vfs.VFileSystem;
-
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
 
 public class VcsMigrationUtil {
   private static final VoidVCSHandler VOID_HANDLER = new VoidVCSHandler();
@@ -29,21 +23,5 @@ public class VcsMigrationUtil {
   public static VCSHandler getHandler() {
     VCSHandler handler = ApplicationManager.getApplication().getComponent(VCSHandler.class);
     return handler == null ? VOID_HANDLER : handler;
-  }
-
-  public static void deleteFromDiskAndRemoveFromVcs(List<File> files, boolean silently) {
-    if (files.size() == 0) return;
-
-    List<VirtualFile> filesToRemove = new ArrayList<VirtualFile>(files.size());
-    for (File f : files) {
-      VirtualFile file = VFileSystem.refreshAndGetFile(f);
-      assert file != null : "Can not find virtual file for " + f;
-      filesToRemove.add(file);
-    }
-
-    for (File f : files) {
-      f.delete();
-    }
-    getHandler().removeFromVcs(filesToRemove, silently);
   }
 }

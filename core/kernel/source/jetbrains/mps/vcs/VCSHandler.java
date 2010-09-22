@@ -16,13 +16,10 @@
 package jetbrains.mps.vcs;
 
 import com.intellij.openapi.vcs.history.VcsRevisionNumber;
-import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
-
-import java.util.List;
 
 public interface VCSHandler {
   //-----suspicious
@@ -30,12 +27,6 @@ public interface VCSHandler {
   void addSuspiciousModule(AbstractModule abstractModule, boolean isInConflict);
 
   void addSuspiciousModel(EditableSModelDescriptor modelDescriptor, boolean isInConflict);
-
-  //-----add/remove
-
-  void addFilesToVcs(List<VirtualFile> files, boolean recursive, boolean silently);
-
-  void removeFromVcs(List<VirtualFile> files, boolean silently);
 
   //-----misc
 

@@ -109,7 +109,7 @@
   <extensions defaultExtensionNs="com.intellij">
     <vcs.fileStatusProvider implementation="jetbrains.mps.vcs.changesmanager.ChangesManagerFileStatusProvider"/>
     <checkoutListener implementation="jetbrains.mps.vcs.ProjectCheckoutListener"/>
-    <checkinHandlerFactory implementation="jetbrains.mps.vcs.OptimizeImportsCheckinHandlerFactory"/>
+    <checkinHandlerFactory implementation="jetbrains.mps.vcs.OptimizeImportsCheckinHandler$OptimizeImportsCheckinHandlerFactory"/>
     <checkinHandlerFactory
             implementation="jetbrains.mps.ide.actions.ModelCheckerCheckinHandler$ModelCheckerCheckinHandlerFactory"/>
     <applicationConfigurable implementation="jetbrains.mps.vcs.ui.VcsSettingsConfigurable"/>
