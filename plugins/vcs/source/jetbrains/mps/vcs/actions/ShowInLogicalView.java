@@ -51,7 +51,7 @@ public class ShowInLogicalView extends AbstractVcsAction {
     } else if (MPSFileTypesManager.instance().isModuleFile(selectedFile)) {
       IModule module = ModelAccess.instance().runReadAction(new Computable<IModule>() {
         public IModule compute() {
-          return MPSModuleRepository.getInstance().getModuleByFile(VFileSystem.toFile(selectedFile));
+          return MPSModuleRepository.getInstance().getModuleByFile(VFileSystem.toIFile(selectedFile));
         }
       });
       if (module != null) {

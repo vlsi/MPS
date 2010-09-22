@@ -62,7 +62,7 @@ public class DevkitDescriptorPersistence {
         }
       }.invoke();
 
-      ModuleDescriptorPersistence.setTimestamp(descriptor, file, false);
+      ModuleDescriptorPersistence.setTimestamp(descriptor, file);
       return descriptor;
     } catch (Exception e) {
       throw new ModuleReadException(e);
@@ -130,6 +130,6 @@ public class DevkitDescriptorPersistence {
       }
     }
 
-    ModuleDescriptorPersistence.setTimestamp(descriptor, file, true);
+    ModuleDescriptorPersistence.setTimestamp(descriptor, file);
   }
 }

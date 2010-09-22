@@ -200,16 +200,10 @@ public class MPSModuleRepository implements ApplicationComponent {
     return registerModule(file, owner, Solution.class);
   }
 
-  public IModule getModuleByFile(File file) {
+  public IModule getModuleByFile(IFile file) {
     assertCanRead();
 
-    return myFileToModuleMap.get(FileUtil.getCanonicalPath(file));
-  }
-
-  public IModule getModuleByPath(String path) {
-    assertCanRead();
-
-    return myFileToModuleMap.get(path);
+    return myFileToModuleMap.get(file.getCanonicalPath());
   }
 
   //todo rename to getByFqName
@@ -620,10 +614,10 @@ public class MPSModuleRepository implements ApplicationComponent {
     return getAllModules(IModule.class);
   }
 
-  public List<IModule> getAllModulesInDirectory(File file) {
+  public List<IModule> getAllModulesInDirectory(IFile file) {
     assertCanRead();
 
-    String path = FileUtil.getCanonicalPath(file);
+    String path = file.getCanonicalPath();
     List<IModule> result = new ArrayList<IModule>();
     for (IModule m : getAllModules()) {
       IFile descriptorFile = m.getDescriptorFile();

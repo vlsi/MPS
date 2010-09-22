@@ -26,10 +26,9 @@ import jetbrains.mps.generator.GenerationListener;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -52,9 +51,7 @@ public class MPSVCSManager implements ProjectComponent {
   private volatile boolean myChangeListManagerInitialized = false;
 
   private final GenerationListener myGenerationListener = new GenerationWatcher();
-  private final SModelRepositoryListener myModelRepositoryListener = new MySModelRepositoryListener();
-  private final GlobalModelSavedListener myGlobalModelSavedListener = new GlobalModelSavedListener();
-    private final ChangeListAdapter myChangeListUpdateListener = new ChangeListAdapter() {
+  private final ChangeListAdapter myChangeListUpdateListener = new ChangeListAdapter() {
     public void changeListUpdateDone() {
       myChangeListManagerInitialized = true;
     }
@@ -118,29 +115,16 @@ public class MPSVCSManager implements ProjectComponent {
 
   public void initComponent() {
     myProject.getComponent(GeneratorManager.class).addGenerationListener(myGenerationListener);
-    SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
-    GlobalSModelEventsManager.getInstance().addGlobalModelListener(myGlobalModelSavedListener);
     myChangeListManager.addChangeListListener(myChangeListUpdateListener);
   }
 
   public void disposeComponent() {
     myProject.getComponent(GeneratorManager.class).removeGenerationListener(myGenerationListener);
-    GlobalSModelEventsManager.getInstance().removeGlobalModelListener(myGlobalModelSavedListener);
-    SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
     myChangeListManager.removeChangeListListener(myChangeListUpdateListener);
   }
 
   public List<VirtualFile> getUnversionedFilesFromChangeListManager() {
     return ChangeListManagerImpl.getInstanceImpl(myProject).getUnversionedFiles();
-  }
-
-  private class GlobalModelSavedListener extends SModelAdapter {
-    public void modelSaved(SModelDescriptor sm) {
-      if (!(sm instanceof EditableSModelDescriptor)) return;
-      final IFile modelFile = ((EditableSModelDescriptor) sm).getModelFile();
-      if (modelFile == null) return;
-      VcsDirtyScopeManager.getInstance(myProject).fileDirty(VFileSystem.refreshAndGetFile(modelFile));
-    }
   }
 
   private class GenerationWatcher implements GenerationListener {
@@ -157,13 +141,6 @@ public class MPSVCSManager implements ProjectComponent {
     }
 
     public void afterGeneration(List<SModelDescriptor> inputModels, GenerationOptions options, IOperationContext operationContext) {
-    }
-  }
-
-  private class MySModelRepositoryListener extends SModelRepositoryAdapter {
-    public void modelFileChanged(SModelDescriptor modelDescriptor, IFile ifrom) {
-      if (ifrom == null) return;
-      ifrom.delete();
     }
   }
 

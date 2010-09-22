@@ -168,9 +168,8 @@ class ReloadSession {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (VirtualFile virtualFile : myNewModelVFiles) {
-          File file = VFileSystem.toFile(virtualFile);
-          if (!file.exists()) continue;
-          IModule module = MPSModuleRepository.getInstance().getModuleForModelFile(FileUtil.getCanonicalPath(file));
+          if (!virtualFile.exists()) continue;
+          IModule module = MPSModuleRepository.getInstance().getModuleForModelFile(FileUtil.getCanonicalPath(virtualFile.getPath()));
           if (module != null) {
             myChangedModules.add(module);
           }

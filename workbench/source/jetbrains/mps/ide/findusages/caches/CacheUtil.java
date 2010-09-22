@@ -47,7 +47,6 @@ class CacheUtil {
   }
 
   public static boolean checkFile(VirtualFile file) {
-    if (FileTypeManager.getInstance().isFileIgnored(file.getName())) return false;
-    return true;
+    return !FileTypeManager.getInstance().isFileIgnored(file.getName());
   }
 }

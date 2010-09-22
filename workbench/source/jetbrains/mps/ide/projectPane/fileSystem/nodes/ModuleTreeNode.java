@@ -27,7 +27,7 @@ public class ModuleTreeNode extends AbstractFileTreeNode {
   private final IModule myModule;
 
   public ModuleTreeNode(Project project, IModule m) {
-    super(project, VFileSystem.refreshAndGetFile(m.getDescriptorFile().getParent()));
+    super(project, m.getDescriptorFile().getParent().toVirtualFile());
 
     myModule = m;
 

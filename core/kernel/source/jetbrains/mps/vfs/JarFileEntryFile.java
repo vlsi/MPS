@@ -165,7 +165,7 @@ class JarFileEntryFile implements IFile {
   }
 
   public VirtualFile toVirtualFile() {
-    return VFileSystem.getFile(this);
+    throw new UnsupportedOperationException();
   }
 
   public URL toURL() throws MalformedURLException {

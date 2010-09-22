@@ -143,7 +143,7 @@ public class LanguageDescriptorPersistence {
       throw new ModuleReadException(e);
     }
 
-    ModuleDescriptorPersistence.setTimestamp(descriptor, file, false);
+    ModuleDescriptorPersistence.setTimestamp(descriptor, file);
     return descriptor;
   }
 
@@ -271,6 +271,6 @@ public class LanguageDescriptorPersistence {
         log.error("", e);
       }
     }
-    ModuleDescriptorPersistence.setTimestamp(descriptor, file, true);
+    ModuleDescriptorPersistence.setTimestamp(descriptor, file);
   }
 }

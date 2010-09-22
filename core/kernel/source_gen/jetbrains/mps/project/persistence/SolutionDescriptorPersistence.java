@@ -81,7 +81,7 @@ public class SolutionDescriptorPersistence {
     } catch (Exception e) {
       throw new ModuleReadException(e);
     }
-    ModuleDescriptorPersistence.setTimestamp(descriptor, file, false);
+    ModuleDescriptorPersistence.setTimestamp(descriptor, file);
     return descriptor;
   }
 
@@ -154,6 +154,6 @@ public class SolutionDescriptorPersistence {
       }
     }
 
-    ModuleDescriptorPersistence.setTimestamp(descriptor, file, true);
+    ModuleDescriptorPersistence.setTimestamp(descriptor, file);
   }
 }
