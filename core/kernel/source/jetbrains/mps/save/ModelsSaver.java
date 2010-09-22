@@ -18,6 +18,7 @@ package jetbrains.mps.save;
 
 import com.intellij.AppTopics;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.fileEditor.FileDocumentManagerAdapter;
 import com.intellij.util.messages.MessageBusConnection;
@@ -25,10 +26,15 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.NotNull;
 
-public class ModelsSaver implements ProjectComponent {
+public class ModelsSaver implements ApplicationComponent {
   private MessageBusConnection myMessageBusConnection;
 
-  public void projectOpened() {
+  @NotNull
+  public String getComponentName() {
+    return "VCS Project Helper";
+  }
+
+  public void initComponent() {
     myMessageBusConnection = ApplicationManager.getApplication().getMessageBus().connect();
     myMessageBusConnection.subscribe(AppTopics.FILE_DOCUMENT_SYNC, new FileDocumentManagerAdapter() {
       public void beforeAllDocumentsSaving() {
@@ -41,20 +47,7 @@ public class ModelsSaver implements ProjectComponent {
     });
   }
 
-  public void projectClosed() {
-    myMessageBusConnection.disconnect();
-  }
-
-  @NotNull
-  public String getComponentName() {
-    return "VCS Project Helper";
-  }
-
-  public void initComponent() {
-
-  }
-
   public void disposeComponent() {
-
+    myMessageBusConnection.disconnect();
   }
 }
