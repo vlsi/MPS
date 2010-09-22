@@ -343,6 +343,10 @@
     <component>
       <implementation-class>jetbrains.mps.save.ModelsSaver</implementation-class>
     </component>
+    
+    <component>
+      <implementation-class>jetbrains.mps.ide.generator.GeneratorCacheComponent</implementation-class>
+    </component>
   </application-components>
 
   <project-components>

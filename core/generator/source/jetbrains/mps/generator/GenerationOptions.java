@@ -17,7 +17,10 @@ public class GenerationOptions {
   private final boolean mySaveTransientModels;
   private final boolean myStrictMode;
   private final boolean myRebuildAll;
+
   private final boolean myIncremental;
+  private final GenerationCacheContainer myIncrementalCacheContainer;
+
   private final boolean myGenerateInParallel;
   private final int myNumberOfThreads;
   private final int myTracingMode;
@@ -32,7 +35,7 @@ public class GenerationOptions {
   private GenerationOptions(boolean strictMode, boolean saveTransientModels, boolean rebuildAll, boolean incremental,
                            boolean generateInParallel, int numberOfThreads, int tracingMode, boolean showInfo,
                            boolean showWarnings, boolean keepModelsWithWarnings, int numberOfModelsToKeep,
-                           @NotNull IGenerationTracer generationTracer) {
+                           @NotNull IGenerationTracer generationTracer, GenerationCacheContainer cacheContainer) {
     mySaveTransientModels = saveTransientModels;
     myGenerateInParallel = generateInParallel;
     myStrictMode = strictMode;
@@ -45,6 +48,7 @@ public class GenerationOptions {
     myShowWarnings = showWarnings;
     myKeepModelsWithWarnings = keepModelsWithWarnings;
     myGenerationTracer = generationTracer;
+    myIncrementalCacheContainer = cacheContainer;
   }
 
   public boolean isSaveTransientModels() {
@@ -69,6 +73,10 @@ public class GenerationOptions {
 
   public boolean isIncremental() {
     return myIncremental;
+  }
+
+  public GenerationCacheContainer getIncrementalCacheContainer() {
+    return myIncrementalCacheContainer;
   }
 
   public IGenerationTracer getGenerationTracer() {
@@ -117,6 +125,7 @@ public class GenerationOptions {
     private boolean myStrictMode = false;
     private boolean myRebuildAll = true;
     private boolean myIncremental = false;
+    private GenerationCacheContainer myIncrementalCacheContainer = null;
     private boolean myGenerateInParallel = false;
     private int myNumberOfThreads = 4;
     private int myTracingMode = TRACE_OFF;
@@ -134,7 +143,7 @@ public class GenerationOptions {
     public GenerationOptions create() {
       return new GenerationOptions(myStrictMode, mySaveTransientModels, myRebuildAll, myIncremental,
         myGenerateInParallel, myNumberOfThreads, myTracingMode, myShowInfo, myShowWarnings,
-        myKeepModelsWithWarnings, myNumberOfModelsToKeep, myGenerationTracer);
+        myKeepModelsWithWarnings, myNumberOfModelsToKeep, myGenerationTracer, myIncrementalCacheContainer);
     }
 
     public OptionsBuilder saveTransientModels(boolean saveTransientModels) {
@@ -152,8 +161,9 @@ public class GenerationOptions {
       return this;
     }
 
-    public OptionsBuilder incremental(boolean incremental) {
+    public OptionsBuilder incremental(boolean incremental, GenerationCacheContainer cacheContainer) {
       myIncremental = incremental;
+      myIncrementalCacheContainer = cacheContainer;
       return this;
     }
 

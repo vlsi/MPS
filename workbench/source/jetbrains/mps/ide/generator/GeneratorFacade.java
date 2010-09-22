@@ -204,11 +204,13 @@ public class GeneratorFacade {
           ? project.getComponent(GenerationTracer.class)
           : new NullGenerationTracer();
 
+        GenerationCacheContainer cacheContainer = GeneratorCacheComponent.getInstance().getCache();
+
         GenerationOptions options = GenerationOptions.getDefaults()
           .saveTransientModels(saveTransientModels)
           .strictMode(settings.isStrictMode())
           .rebuildAll(rebuildAll)
-          .incremental(settings.isIncremental())
+          .incremental(settings.isIncremental(), cacheContainer)
           .generateInParallel(settings.isParallelGenerator(), settings.getNumberOfParallelThreads())
           .tracing(settings.getPerformanceTracingLevel(), tracer)
           .reporting(settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings(), settings.getNumberOfModelsToKeep())

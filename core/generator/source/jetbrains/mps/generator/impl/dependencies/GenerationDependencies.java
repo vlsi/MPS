@@ -44,6 +44,10 @@ public class GenerationDependencies {
     }
   }
 
+  public String getModelHash() {
+    return myModelHash;
+  }
+
   public GenerationRootDependencies getDependenciesFor(String rootId) {
     return myRootDependenciesMap.get(rootId);
   }

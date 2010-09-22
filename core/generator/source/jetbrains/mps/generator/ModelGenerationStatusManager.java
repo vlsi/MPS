@@ -147,23 +147,27 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
   }
 
   public void invalidateData(List<SModelDescriptor> models) {
+    ModelGenerationStatusListener[] copy;
+    synchronized (myListeners) {
+      copy = myListeners.toArray(new ModelGenerationStatusListener[myListeners.size()]);
+    }
     for(SModelDescriptor model : models) {
       myGeneratedFilesHashes.remove(model);
-      fireStatusChange(model);
+      for (ModelGenerationStatusListener l : copy) {
+        l.generatedFilesChanged(model);
+      }
     }
   }
 
   public void addGenerationStatusListener(ModelGenerationStatusListener l) {
-    myListeners.add(l);
+    synchronized (myListeners) {
+      myListeners.add(l);
+    }
   }
 
   public void removeGenerationStatusListener(ModelGenerationStatusListener l) {
-    myListeners.remove(l);
-  }
-
-  private void fireStatusChange(SModelDescriptor sm) {
-    for (ModelGenerationStatusListener l : myListeners) {
-      l.generatedFilesChanged(sm);
+    synchronized (myListeners) {
+      myListeners.remove(l);
     }
   }
 

@@ -1,7 +1,10 @@
 package jetbrains.mps.generator.impl;
 
+import jetbrains.mps.generator.GenerationCacheContainer;
+import jetbrains.mps.generator.GenerationCacheContainer.ModelCacheContainer;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.ModelDigestHelper;
+import jetbrains.mps.generator.impl.cache.IntermediateModelsCache;
 import jetbrains.mps.generator.impl.dependencies.*;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder.NullDependenciesBuilder;
 import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner;
@@ -22,16 +25,20 @@ public class GenerationFilter {
   private SModelDescriptor myModel;
   private GenerationOptions myGenerationOptions;
   private IOperationContext myOperationContext;
+  private final String myPlanSignature;
   private Set<SNode> myUnchangedRoots;
   private int myRootsCount;
   private boolean myConditionalsUnchanged;
   private Map<String, String> myGenerationHashes;
   private GenerationDependencies mySavedDependencies;
+  private IntermediateModelsCache myCache;
+  private IntermediateModelsCache myNewCache;
 
-  public GenerationFilter(SModelDescriptor model, IOperationContext operationContext, GenerationOptions options) {
+  public GenerationFilter(SModelDescriptor model, IOperationContext operationContext, GenerationOptions options, String planSignature) {
     myModel = model;
     myGenerationOptions = options;
     myOperationContext = operationContext;
+    myPlanSignature = planSignature;
     myUnchangedRoots = Collections.emptySet();
     myConditionalsUnchanged = false;
     init();
@@ -50,10 +57,74 @@ public class GenerationFilter {
 
     GenerationDependencies dependencies = GenerationDependenciesCache.getInstance().get(myModel);
     if (dependencies != null && myGenerationHashes != null) {
+      loadCaches(dependencies);
       analyzeDependencies(dependencies);
       if (!myUnchangedRoots.isEmpty() || myConditionalsUnchanged) {
         mySavedDependencies = dependencies;
       }
+    }
+  }
+
+  public void storeModel(int step, SModel model) {
+    if(myNewCache == null) {
+      return;
+    }
+
+    myNewCache.storeModel(step, model);
+  }
+
+  public void createNewCache() {
+    if (!myGenerationOptions.isIncremental()) {
+      return;
+    }
+
+    GenerationCacheContainer incrementalCacheContainer = myGenerationOptions.getIncrementalCacheContainer();
+    if(incrementalCacheContainer == null) {
+      return;
+    }
+
+    String currentHash = myGenerationHashes.get(ModelDigestHelper.FILE);
+    ModelCacheContainer cacheContainer = incrementalCacheContainer.getCache(myModel, currentHash, true);
+    if(cacheContainer == null) {
+      return;
+    }
+
+    myNewCache = new IntermediateModelsCache(cacheContainer, myPlanSignature);
+  }
+
+  private void loadCaches(GenerationDependencies dependencies) {
+    GenerationCacheContainer incrementalCacheContainer = myGenerationOptions.getIncrementalCacheContainer();
+    if(incrementalCacheContainer == null) {
+      return;
+    }
+
+    String currentHash = myGenerationHashes.get(ModelDigestHelper.FILE);
+    String oldHash = dependencies.getModelHash();
+    if(currentHash.equals(oldHash)) {
+      // regenerating model, do not use caches
+      return;
+    }
+
+    ModelCacheContainer cacheContainer = incrementalCacheContainer.getCache(myModel, oldHash, false);
+    if(cacheContainer == null) {
+      return;
+    }
+
+    IntermediateModelsCache c = IntermediateModelsCache.load(cacheContainer);
+    if(c != null && myPlanSignature.equals(c.getSignature())) {
+      myCache = c;
+    }
+  }
+
+  public void cleanup(boolean success) {
+    if(myNewCache == null) {
+      return;
+    }
+
+    if(success) {
+      myNewCache.store();
+    } else {
+      myNewCache.remove();
     }
   }
 

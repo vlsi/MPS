@@ -11,10 +11,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.util.CollectionUtil;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Evgeny Gryaznov, Jan 18, 2010
@@ -24,8 +21,10 @@ public class GenerationPlan {
   private Set<Language> myLanguages = new HashSet<Language>();
   private List<List<MappingConfiguration>> myPlan;
   private Set<MappingPriorityRule> myConflictingPriorityRules;
+  private final String myInputName;
 
   public GenerationPlan(@NotNull SModel inputModel) {
+    myInputName = inputModel.getLongName();
     try {
       myGenerators = GenerationPartitioningUtil.getAllPossiblyEngagedGenerators(inputModel, GlobalScope.getInstance());
       for (Generator generator : myGenerators) {
@@ -82,5 +81,32 @@ public class GenerationPlan {
 
   public List<Pair<MappingPriorityRule, String>> getConflictingPriorityRulesAsStrings() {
     return GenerationPartitioningUtil.toStrings(myConflictingPriorityRules, true);
+  }
+
+  public String getSignature() {
+    StringBuilder sb = new StringBuilder();
+    sb.append(myInputName);
+    sb.append(", ");
+    sb.append(myPlan.size());
+    sb.append(" steps\n");
+    int i = 0;
+    for(List<MappingConfiguration> step : myPlan) {
+      sb.append("[" + (i++) + "]\n" );
+      List<String> res = new ArrayList<String>(step.size());
+      for(MappingConfiguration mconfig : step) {
+        res.add(toString(mconfig));
+      }
+      Collections.sort(res);
+      for(String s : res) {
+        sb.append(s);
+        sb.append('\n');
+      }
+    }
+    return sb.toString();
+  }
+
+  private static String toString(MappingConfiguration mappingConfig) {
+    SModel model = mappingConfig.getModel();
+    return model.getLongName() + "#" + mappingConfig.getName();
   }
 }

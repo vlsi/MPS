@@ -89,7 +89,7 @@ public class GenerationSession {
       // throw new GenerationCanceledException();
     }
 
-    GenerationFilter filter = new GenerationFilter(myOriginalInputModel, myInvocationContext, myGenerationOptions);
+    GenerationFilter filter = new GenerationFilter(myOriginalInputModel, myInvocationContext, myGenerationOptions, myGenerationPlan.getSignature());
     myDependenciesBuilder = filter.createDependenciesBuilder();
 
     if (!filter.getUnchangedRoots().isEmpty() || !filter.areConditionalsDirty()) {
@@ -104,6 +104,9 @@ public class GenerationSession {
       }
     }
 
+    boolean success = false;
+
+    filter.createNewCache();
     try {
       SModel currInputModel = myOriginalInputModel.getSModel();
       SModel currOutput = null;
@@ -116,6 +119,7 @@ public class GenerationSession {
         //ttrace.push("step " + (myMajorStep + 1), false);
         currOutput = executeMajorStep(currInputModel);
         //ttrace.pop();
+        filter.storeModel(myMajorStep, currOutput);
         if (currOutput == null || myLogger.getErrorCount() > 0) {
           break;
         }
@@ -132,10 +136,11 @@ public class GenerationSession {
         mySessionContext.clearTransientObjects();
       }
 
-      return new GenerationStatus(myOriginalInputModel.getSModel(), currOutput,
+      GenerationStatus generationStatus = new GenerationStatus(myOriginalInputModel.getSModel(), currOutput,
         myDependenciesBuilder.getResult(myInvocationContext), myLogger.getErrorCount() > 0,
         myLogger.getWarningCount() > 0, false);
-
+      success = generationStatus.isOk();
+      return generationStatus;
     } catch (GenerationCanceledException gce) {
       throw gce;
     } catch (GenerationFailureException gfe) {
@@ -147,6 +152,8 @@ public class GenerationSession {
       myLogger.handleException(e);
       myLogger.error("model \"" + myOriginalInputModel.getSModelReference().getSModelFqName() + "\" generation failed : " + e);
       return new GenerationStatus.ERROR(myOriginalInputModel.getSModel());
+    } finally {
+      filter.cleanup(success);
     }
   }
 
