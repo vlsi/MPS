@@ -1,6 +1,9 @@
 package jetbrains.mps.testbench.util;
 
+
+import com.intellij.openapi.util.Pair;
 import org.apache.log4j.AppenderSkeleton;
+import org.apache.log4j.Priority;
 import org.apache.log4j.spi.LoggingEvent;
 
 import java.util.ArrayList;
@@ -18,17 +21,33 @@ public class CachingAppender extends AppenderSkeleton implements Output {
 
   private int events;
   private List<String> messages = new ArrayList<String>();
+  private List<Pair<Integer, String>> expectedEvents = new ArrayList<Pair<Integer, String>>();
+  private List<Pair<Integer, String>> receivedExpectedEvents = new ArrayList<Pair<Integer, String>>();
 
   @Override
   protected void append(LoggingEvent loggingEvent) {
-    events++;
-    messages.add (loggingEvent.getRenderedMessage());
-    String[] stackTrace = loggingEvent.getThrowableStrRep();
-    if (stackTrace != null) {
-      messages.add("++ =============StackTrace================");
-      messages.addAll(Arrays.asList(stackTrace));
-      messages.add("-- =============StackTrace================");
+    if (!isExpected(loggingEvent)) {
+      events++;
+      messages.add (loggingEvent.getRenderedMessage());
+      String[] stackTrace = loggingEvent.getThrowableStrRep();
+      if (stackTrace != null) {
+        messages.add("++ =============StackTrace================");
+        messages.addAll(Arrays.asList(stackTrace));
+        messages.add("-- =============StackTrace================");
+      }
     }
+  }
+
+  private boolean isExpected(LoggingEvent event) {
+    for (Pair<Integer, String> pr: expectedEvents) {
+      if (event.level.isGreaterOrEqual(Priority.toPriority(pr.first))) {
+        if (pr.second == null || pr.second.equals(event.getRenderedMessage())) {
+          receivedExpectedEvents.add (pr);
+          return true;
+        }
+      }
+    }
+    return false;
   }
 
   @Override
@@ -62,11 +81,16 @@ public class CachingAppender extends AppenderSkeleton implements Output {
     return false;
   }
 
-  public int getEventsCount() {
-    return events;
+  public void sealEvents() {
+    List<Pair<Integer, String>> list = new ArrayList<Pair<Integer, String>>(expectedEvents);
+    list.removeAll(receivedExpectedEvents);
+    for (Pair<Integer, String> pr: list) {
+      events++;
+      messages.add ("MISSING: "+pr.second);
+    }
   }
 
-  public Iterable<String> getMessages () {
-    return messages;
+  public void expectEvent(int level, String text) {
+    expectedEvents.add (new Pair<Integer, String>(level, text));
   }
 }

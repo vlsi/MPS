@@ -106,11 +106,15 @@ public class WatchingRunNotifier extends DelegatingRunNotifier {
   private void beforeTest (Description desc) {
     this.oldLevel = Logger.getRootLogger().getLevel();
     Logger.getRootLogger().setLevel(WATCH_LEVEL);
-
     initCaches();
 
-    app = new CachingAppender();
+    this.app = new CachingAppender();
     Logger.getRootLogger().addAppender(app);
+
+    ExpectLogEvent ignoreEvent = desc.getAnnotation(ExpectLogEvent.class);
+    if (ignoreEvent != null) {
+      app.expectEvent(ignoreEvent.level(), ignoreEvent.text());
+    }
 
     for (com.intellij.openapi.diagnostic.Logger ignore: IGNORED_LOGGERS) {
       ignore.setLevel(Level.FATAL);
@@ -123,6 +127,7 @@ public class WatchingRunNotifier extends DelegatingRunNotifier {
     threadWatcher.waitUntilSettled(15000);
     
     disposeCaches();
+    app.sealEvents();
 
     Logger.getRootLogger().removeAppender(app);
     Logger.getRootLogger().setLevel(oldLevel);

@@ -20,7 +20,11 @@ import com.intellij.util.io.ZipUtil;
 import jetbrains.mps.BaseMPSTest;
 import jetbrains.mps.build.ant.generation.GenerateTask;
 import jetbrains.mps.build.ant.generation.GeneratorWorker;
+import jetbrains.mps.testbench.junit.ExpectLogEvent;
 import junit.framework.TestCase;
+import org.apache.log4j.Priority;
+import org.junit.After;
+import org.junit.Test;
 
 import java.io.File;
 import java.io.FilenameFilter;
@@ -29,13 +33,13 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GenerateTaskFilesCreationTest extends BaseMPSTest {
+public class GenerateTaskFilesCreationTest {
   private static final String CONCEPT_NAME = "SomeConcept";
   private final List<File> myTmpDirstoDelete = new ArrayList<File>();
 
-  @Override
-  protected void tearDown() throws Exception {
-    super.tearDown();
+  @After
+  public void tearDown() throws Exception {
+    BaseMPSTest.waitForEDTTasksToComplete();
 
     for (File f : myTmpDirstoDelete) {
       FileUtil.delete(f);
@@ -43,6 +47,9 @@ public class GenerateTaskFilesCreationTest extends BaseMPSTest {
     myTmpDirstoDelete.clear();
   }
 
+  @Test
+  @ExpectLogEvent(level = Priority.WARN_INT, text = "Model file broken.model was modified externally!\n" +
+    "You might want to turn \"Synchronize files on frame activation/deactivation\" option on to avoid conflicts.")
   public void testOneFileForOneConcept() throws IOException {
     String projectName = "FileTestProject";
     String languageName = "FileTestProjectLanguage";
@@ -52,6 +59,7 @@ public class GenerateTaskFilesCreationTest extends BaseMPSTest {
     assertStructureGenerated(projectName, languageName, destdir, CONCEPT_NAME);
   }
 
+  @Test
   public void testSeveralFilesForOneConcept() throws IOException {
     String projectName = "TestProjectWithOneConcept";
     String languageName = projectName + "Language";
@@ -63,6 +71,7 @@ public class GenerateTaskFilesCreationTest extends BaseMPSTest {
     assertBehaviorGenerated(projectName, languageName, destdir, CONCEPT_NAME);
   }
 
+  @Test
   public void testLanguageAndSolution() throws IOException {
     String projectName = "TestProjectWithLanguageAndSolution";
     String languageName = projectName + "Language";
@@ -79,6 +88,7 @@ public class GenerateTaskFilesCreationTest extends BaseMPSTest {
     TestCase.assertTrue(someConceptInstanceFile.exists());
   }
 
+  @Test
   public void testLanguageOnly() throws IOException {
     String projectName = "TestProjectWithLanguageAndSolution";
     String languageName = projectName + "Language";

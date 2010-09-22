@@ -15,14 +15,12 @@
  */
 package jetbrains.mps;
 
+import jetbrains.mps.project.TestResult;
+import jetbrains.mps.refactoring.framework.tests.IRefactoringTester;
 import junit.framework.TestCase;
 
-import java.io.File;
-
-import jetbrains.mps.refactoring.framework.tests.IRefactoringTester;
-import jetbrains.mps.project.TestResult;
-
 import javax.swing.SwingUtilities;
+import java.io.File;
 
 public class BaseMPSTest extends TestCase {
   protected void setUp() throws Exception {
@@ -34,7 +32,7 @@ public class BaseMPSTest extends TestCase {
     waitForEDTTasksToComplete();
   }
 
-  protected void waitForEDTTasksToComplete() {
+  public  static void waitForEDTTasksToComplete() {
     for (int i = 0; i < 5; i++) {
       try {
         SwingUtilities.invokeAndWait(new Runnable() {
