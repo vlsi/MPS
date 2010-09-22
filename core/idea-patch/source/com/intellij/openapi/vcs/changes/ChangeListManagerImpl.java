@@ -72,9 +72,6 @@ public class ChangeListManagerImpl extends ChangeListManagerEx implements Projec
     // This is a hack to fix MPS-8678 and MPS-8789
     VirtualFile currentFile = file;
     while (currentFile != null) {
-      if (FileTypeManager.getInstance().isFileIgnored(currentFile.getName())) {
-        return true;
-      }
       if (DirectoryIndex.getInstance(myProject) != null &&
         DirectoryIndex.getInstance(myProject).isProjectExcludeRoot(currentFile)) {
         return true;
