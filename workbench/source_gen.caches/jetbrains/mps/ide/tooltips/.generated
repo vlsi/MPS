@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="-d1ma98nag5awrgunt05kxcsgxgrl12s">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-aw2culdpzxmm7q9xn76kkfde2ex42eu" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="18qm7j9ycb7xu3seoxf04ai2tc0z3dd" />
+  <common hash="-d96thnw7uwo2nn7uxy3mnuii8trko82" />
+  <source id="5522183980949036968" name="ToolTip" hash="bgzs2lgy9n33l29uh53u5wad1qlaz9x">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ToolTip.java" />
+  </source>
+  <source id="1657638272963062314" name="ToolTipData" hash="9cjsq1jff5c0iemol757kn80kkg8971">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ToolTipData.java" />
+  </source>
+  <source id="1657638272963439183" name="MPSToolTipManager" hash="-ckc8339h985fm4fwfuc3xnvpmnpmaas">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="MPSToolTipManager.java" />
+  </source>
+</dependencies>
+

@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.embeddableEditor.EmbeddableEditor;
 import jetbrains.mps.ide.findusages.view.optionseditor.components.ScopeEditor;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.ide.embeddableEditor.TemporaryModelOwner;
+import jetbrains.mps.kernel.model.TemporaryModelOwner;
 import jetbrains.mps.smodel.Language;
 import java.awt.Dimension;
 import jetbrains.mps.smodel.ModelAccess;

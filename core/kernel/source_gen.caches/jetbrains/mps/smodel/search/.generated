@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-9wfuzmr4stmjsdcojy28mxr4vzd3q2n">
+<dependencies version="2" modelHash="-7cdyoxxy3265vitors4nmdgx7rapvc4">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-aw2culdpzxmm7q9xn76kkfde2ex42eu" />
-  <common hash="-azej6q9wbu4v4cm5erp0rbbosy5h3sh" />
+  <common hash="c5fltxztypgqlbajvp05vfyff2w9ac3" />
   <source id="4642948870877886449" name="SimpleSearchScope" hash="172xih8ofwehnu092pj4ycautulltx1">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="SimpleSearchScope.java" />

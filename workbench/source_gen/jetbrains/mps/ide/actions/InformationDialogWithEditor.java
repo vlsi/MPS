@@ -9,7 +9,7 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.ide.embeddableEditor.EmbeddableEditor;
-import jetbrains.mps.ide.embeddableEditor.TemporaryModelOwner;
+import jetbrains.mps.kernel.model.TemporaryModelOwner;
 import javax.swing.JLabel;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
