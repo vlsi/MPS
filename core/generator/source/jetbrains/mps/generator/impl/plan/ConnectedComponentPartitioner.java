@@ -28,13 +28,16 @@ import java.util.*;
  */
 public class ConnectedComponentPartitioner {
 
+  private static Component[] EMPTY_COMPONENTS = new Component[0];
+
   private int count;
   private SNode[] myRoots;
-  private List<SNode[]> myResult;
+  private int[][] myDependencies;
 
   public ConnectedComponentPartitioner(List<SNode> roots) {
     this.count = roots.size();
     this.myRoots = roots.toArray(new SNode[this.count]);
+    myDependencies = buildDependencies();
   }
 
   private int[][] buildDependencies() {
@@ -75,28 +78,73 @@ public class ConnectedComponentPartitioner {
   }
 
   public List<SNode[]> partition() {
-    int[][] dependencies = buildDependencies();
-    dependencies = GraphUtil.removeOrientation(dependencies);
-    int[][] partitions = GraphUtil.components(dependencies);
+    int[][] partitions = GraphUtil.components(GraphUtil.removeOrientation(myDependencies));
 
-    myResult = new ArrayList<SNode[]>(partitions.length + 1);
+    List<SNode[]> result = new ArrayList<SNode[]>(partitions.length + 1);
     for (int i = 0; i < partitions.length; i++) {
       SNode[] proots = new SNode[partitions[i].length];
       for (int e = 0; e < proots.length; e++) {
         proots[e] = myRoots[partitions[i][e]];
       }
-      myResult.add(proots);
+      result.add(proots);
     }
-    myResult.add(new SNode[0]);
-    return myResult;
+    result.add(new SNode[0]);
+    return result;
+  }
+
+  public Component[] partitionStrong() {
+    int[][] partitions = GraphUtil.tarjan(myDependencies);
+
+    // temporary
+    byte[] dependencies = new byte[partitions.length];
+    int[] rootToComponent = new int[myRoots.length];
+    Arrays.fill(rootToComponent, -1);
+
+    Component[] result = new Component[partitions.length];
+    for (int i = 0; i < partitions.length; i++) {
+
+      // create roots array
+      SNode[] roots = new SNode[partitions[i].length];
+      for (int e = 0; e < roots.length; e++) {
+        int rootIndex = partitions[i][e];
+        roots[e] = myRoots[rootIndex];
+        rootToComponent[rootIndex] = i;
+      }
+
+      // calc dependencies
+      int count = 0;
+      Arrays.fill(dependencies, (byte)0);
+      for (int e = 0; e < roots.length; e++) {
+        int rootIndex = partitions[i][e];
+        for(int dependsOn : myDependencies[rootIndex]) {
+          int componentIndex = rootToComponent[dependsOn];
+          assert componentIndex >= 0;
+          if(componentIndex < i && dependencies[componentIndex] == 0) {
+            dependencies[componentIndex] = 1;
+            count++;
+          }
+        }
+      }
+
+      Component[] dep = count > 0 ? new Component[count] : EMPTY_COMPONENTS;
+      for(int e = 0; count > 0 && e < i; e++) {
+        if(dependencies[e] == 1) {
+          dep[--count] = result[e];
+        }
+      }
+
+      result[i] = new Component(roots, dep);
+    }
+
+    return result;
   }
 
 
   public String toString() {
-    int[][] dependencies = buildDependencies();
-    int[][] strongPartitions = GraphUtil.tarjan(dependencies);
-    dependencies = GraphUtil.removeOrientation(dependencies);
-    int[][] partitions = GraphUtil.components(dependencies);
+    Component[] components = partitionStrong();
+
+    int[][] strongPartitions = GraphUtil.tarjan(myDependencies);
+    int[][] partitions = GraphUtil.components(GraphUtil.removeOrientation(myDependencies));
 
     return printPartitions(partitions) + "\n\nStrong:\n" + printPartitions(strongPartitions);
   }
@@ -112,5 +160,23 @@ public class ConnectedComponentPartitioner {
       sb.append('\n');
     }
     return sb.toString();
+  }
+
+  public class Component {
+    private final SNode[] roots;
+    private final Component[] dependsOn;
+
+    public Component(SNode[] roots, Component[] dependsOn) {
+      this.roots = roots;
+      this.dependsOn = dependsOn;
+    }
+
+    public SNode[] getRoots() {
+      return roots;
+    }
+
+    public Component[] getDependsOn() {
+      return dependsOn;
+    }
   }
 }

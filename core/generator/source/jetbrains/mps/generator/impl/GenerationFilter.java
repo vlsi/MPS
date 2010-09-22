@@ -151,7 +151,7 @@ public class GenerationFilter {
       return;
     }
 
-    // check model header
+    // check model header, rebuild all if changed
     {
       String oldHash = commonDeps.getHash();
       String newHash = myGenerationHashes.get(ModelDigestHelper.HEADER);
@@ -160,7 +160,7 @@ public class GenerationFilter {
       }
     }
 
-    // check external dependencies
+    // collect changed models
     Set<String> changedModels = new HashSet<String>();
     Map<String, String> externalHashes = dependencies.getExternalHashes();
     for (Entry<String, String> entry : externalHashes.entrySet()) {
@@ -185,7 +185,7 @@ public class GenerationFilter {
       }
     }
 
-    // check roots
+    // collect unchanged roots (same hash; external dependencies are unchanged)
     List<SNode> rootsList = myModel.getSModel().getRoots();
     myRootsCount = rootsList.size();
     Map<String, SNode> rootById = new HashMap<String, SNode>();
@@ -214,6 +214,7 @@ public class GenerationFilter {
       }
     }
 
+    // all roots are dirty? rebuild all
     if (myUnchangedRoots.isEmpty()) {
       return;
     }
