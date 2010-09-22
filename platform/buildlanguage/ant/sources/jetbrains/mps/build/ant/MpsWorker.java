@@ -62,13 +62,21 @@ import java.lang.reflect.Method;
 import java.util.*;
 
 public abstract class MpsWorker {
+
+  private static Logger LOG = Logger.getLogger(MpsWorker.class);
+
   protected final List<String> myErrors = new ArrayList<String>();
   protected final List<String> myWarnings = new ArrayList<String>();
   protected final WhatToDo myWhatToDo;
   private final AntLogger myLogger;
+  private MpsWorker.MyMessageHandlerAppender myMessageHandler = new MyMessageHandlerAppender();
 
   private MpsWorker() {
     this(null, (AntLogger) null);
+  }
+
+  public MpsWorker(WhatToDo whatToDo) {
+    this(whatToDo, new LogLogger());
   }
 
   public MpsWorker(WhatToDo whatToDo, ProjectComponent component) {
@@ -130,6 +138,7 @@ public abstract class MpsWorker {
         e.printStackTrace();
       }
     }
+    jetbrains.mps.logging.Logger.removeLoggingHandler(myMessageHandler);
   }
 
   protected void disposeProject(final MPSProject p) {
@@ -146,7 +155,7 @@ public abstract class MpsWorker {
   protected void setupEnvironment() {
     BasicConfigurator.configure(new NullAppender());
     Logger.getRootLogger().setLevel(getLog4jLevel());
-    jetbrains.mps.logging.Logger.addLoggingHandler(new MyMessageHandlerAppender());
+    jetbrains.mps.logging.Logger.addLoggingHandler(myMessageHandler);
 
     IdeMain.setTestMode(TestMode.CORE_TEST);
     try {
@@ -487,13 +496,26 @@ public abstract class MpsWorker {
     }
   }
 
-  public static class SystemOutLogger implements AntLogger {
+  public static class LogLogger implements AntLogger {
 
     public void log(String text, int level) {
-      if (level == Project.MSG_ERR) {
-        System.err.println(text);
-      } else {
-        System.out.println(text);
+      switch (level) {
+        case Project.MSG_ERR:
+          LOG.error(text);
+          break;
+        case Project.MSG_WARN:
+          LOG.warn(text);
+          break;
+        case Project.MSG_INFO:
+          LOG.info(text);
+          break;
+        case Project.MSG_DEBUG:
+        case Project.MSG_VERBOSE:
+          LOG.debug(text);
+          break;
+        default:
+          LOG.fatal("[unknown level "+level+"] " +text);
+          break;
       }
     }
   }

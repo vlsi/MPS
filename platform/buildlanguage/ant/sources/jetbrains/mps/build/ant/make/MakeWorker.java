@@ -19,28 +19,24 @@ import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.build.ant.MpsWorker;
 import jetbrains.mps.build.ant.WhatToDo;
-import jetbrains.mps.library.Library;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.make.CompilationResult;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import org.apache.tools.ant.ProjectComponent;
 
 import java.io.File;
 import java.util.LinkedHashSet;
-import java.util.List;
 import java.util.Set;
 
 public class MakeWorker extends MpsWorker {
 
   public static void main(String[] args) {
-    MakeWorker generator = new MakeWorker(WhatToDo.fromDumpInFile(new File(args[0])), new SystemOutLogger());
+    MakeWorker generator = new MakeWorker(WhatToDo.fromDumpInFile(new File(args[0])), new LogLogger());
     generator.workFromMain();
   }
 

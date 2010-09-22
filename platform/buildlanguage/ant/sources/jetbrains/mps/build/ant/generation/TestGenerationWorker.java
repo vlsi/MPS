@@ -88,7 +88,7 @@ public class TestGenerationWorker extends GeneratorWorker {
   };
 
   public static void main(String[] args) {
-    TestGenerationWorker generator = new TestGenerationWorker(WhatToDo.fromDumpInFile(new File(args[0])), new SystemOutLogger());
+    TestGenerationWorker generator = new TestGenerationWorker(WhatToDo.fromDumpInFile(new File(args[0])), new LogLogger());
     generator.workFromMain();
   }
 

@@ -40,7 +40,7 @@ public class TestBrokenReferencesWorker extends MpsWorker {
   private long usedHeap;
   private long usedNonHeap;
 
-  public TestBrokenReferencesWorker(WhatToDo whatToDo, SystemOutLogger systemOutLogger) {
+  public TestBrokenReferencesWorker(WhatToDo whatToDo, LogLogger systemOutLogger) {
     super(whatToDo, systemOutLogger);
     MemoryMXBean mmbean = ManagementFactory.getMemoryMXBean();
     this.usedHeap = mmbean.getHeapMemoryUsage().getUsed();
@@ -48,7 +48,7 @@ public class TestBrokenReferencesWorker extends MpsWorker {
   }
 
   public static void main(String[] args) {
-    MpsWorker generator = new TestBrokenReferencesWorker(WhatToDo.fromDumpInFile(new File(args[0])), new SystemOutLogger());
+    MpsWorker generator = new TestBrokenReferencesWorker(WhatToDo.fromDumpInFile(new File(args[0])), new LogLogger());
     generator.workFromMain();
   }
 

@@ -15,22 +15,19 @@
  */
 package jetbrains.mps.build.ant;
 
-import junit.framework.TestCase;
 import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.util.io.ZipUtil;
+import jetbrains.mps.BaseMPSTest;
+import jetbrains.mps.build.ant.generation.GenerateTask;
+import jetbrains.mps.build.ant.generation.GeneratorWorker;
+import junit.framework.TestCase;
 
 import java.io.File;
-import java.io.IOException;
 import java.io.FilenameFilter;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-
-import org.apache.tools.ant.ProjectComponent;
-import org.apache.tools.ant.Project;
-import jetbrains.mps.BaseMPSTest;
-import jetbrains.mps.build.ant.generation.GeneratorWorker;
-import jetbrains.mps.build.ant.generation.GenerateTask;
 
 public class GenerateTaskFilesCreationTest extends BaseMPSTest {
   private static final String CONCEPT_NAME = "SomeConcept";
@@ -146,19 +143,7 @@ public class GenerateTaskFilesCreationTest extends BaseMPSTest {
   }
 
   private void doGenerate(WhatToDo whatToDo) {
-    MpsWorker mpsWorker = new GeneratorWorker(whatToDo, new ProjectComponent() {
-      public void log(String msg) {
-        System.out.println(msg);
-      }
-
-      @Override
-      public void log(String msg, int msgLevel) {
-        //supress all messages except error ones
-        if (msgLevel == Project.MSG_ERR){
-          System.out.println("ERROR" + ": " + msg);
-        }
-      }
-    });
+    MpsWorker mpsWorker = new GeneratorWorker(whatToDo);
     mpsWorker.work();
   }
 
