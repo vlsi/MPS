@@ -139,9 +139,9 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
             // calculate parameter 
             final UnitTestExecutionController parameter = new _FunctionTypes._return_P0_E0<UnitTestExecutionController>() {
               public UnitTestExecutionController invoke() {
-                MPSProject mpsProject = project_22042010.getComponent(MPSProject.class);
+                final MPSProject mpsProject = project_22042010.getComponent(MPSProject.class);
 
-                List<SNode> stuffToTest = DefaultJUnit_Configuration.this.collectWhatToTest(mpsProject);
+                List<SNode> stuffToTest = DefaultJUnit_Configuration.this.collectWhatToTestUnderProgress(mpsProject);
 
                 if (javaRunParameters.getMake()) {
                   RunUtil.makeBeforeRun(project_22042010, stuffToTest);
@@ -252,25 +252,51 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
   }
 
   private List<SNode> collectWhatToTest(final MPSProject mpsProject) {
-    final List<SNode> all = new ArrayList<SNode>();
+    final List<SNode>[] all = (List<SNode>[]) new List[1];
     if (DefaultJUnit_Configuration.this.getStateObject().type != null) {
-      Runnable collect = new Runnable() {
+      ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
+          all[0] = Sequence.fromIterable(DefaultJUnit_Configuration.this.getStateObject().type.collect(DefaultJUnit_Configuration.this, mpsProject)).toListSequence();
+        }
+      });
+    }
+    return all[0];
+  }
+
+  private List<SNode> collectWhatToTestUnderProgress(final MPSProject mpsProject) {
+    final List<SNode> stuffToTest = new ArrayList<SNode>();
+    Runnable collect = new Runnable() {
+      public void run() {
+        if (DefaultJUnit_Configuration.this.getStateObject().type != null) {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
-              ListSequence.fromList(all).addSequence(Sequence.fromIterable(DefaultJUnit_Configuration.this.getStateObject().type.collect(DefaultJUnit_Configuration.this, mpsProject)));
+              ListSequence.fromList(stuffToTest).addSequence(Sequence.fromIterable(DefaultJUnit_Configuration.this.getStateObject().type.collect(DefaultJUnit_Configuration.this, mpsProject)));
             }
           });
         }
-      };
-      if (DefaultJUnit_Configuration.this.getStateObject().type.equals(JUnitRunTypes.PROJECT) || DefaultJUnit_Configuration.this.getStateObject().type.equals(JUnitRunTypes.MODULE)) {
-        // collecting for module/project is slow, so execute under progress 
-        ProgressManager.getInstance().runProcessWithProgressSynchronously(collect, "Collecting Tests To Run", false, mpsProject.getProject());
-      } else {
-        collect.run();
       }
+    };
+    if (eq_yzqu2q_a0a2a11_0(DefaultJUnit_Configuration.this.getStateObject().type, JUnitRunTypes.PROJECT) || eq_yzqu2q_a0a2a11(DefaultJUnit_Configuration.this.getStateObject().type, JUnitRunTypes.MODULE)) {
+      // collecting for module/project is slow, so execute under progress 
+      ProgressManager.getInstance().runProcessWithProgressSynchronously(collect, "Collecting Tests To Run", false, mpsProject.getProject());
+    } else {
+      collect.run();
     }
-    return all;
+    return stuffToTest;
+  }
+
+  private static boolean eq_yzqu2q_a0a2a11(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_yzqu2q_a0a2a11_0(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 
   private static class MySettingsEditor extends SettingsEditor<DefaultJUnit_Configuration> {
