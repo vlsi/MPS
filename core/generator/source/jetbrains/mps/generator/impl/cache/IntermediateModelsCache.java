@@ -17,9 +17,6 @@ package jetbrains.mps.generator.impl.cache;
 
 import jetbrains.mps.generator.GenerationCacheContainer.ModelCacheContainer;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.util.JDOMUtil;
-import org.jdom.Document;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -54,7 +51,7 @@ public class IntermediateModelsCache {
         StringBuilder signature = new StringBuilder();
         char[] buff = new char[512];
         int size;
-        while((size = reader.read(buff)) > 0) {
+        while ((size = reader.read(buff)) > 0) {
           signature.append(buff, 0, size);
         }
         return new IntermediateModelsCache(cacheContainer, signature.toString());
@@ -70,12 +67,7 @@ public class IntermediateModelsCache {
   public void storeModel(int step, SModel model) {
     try {
       OutputStream stream = myCacheContainer.createStream(STEP + step);
-      try {
-        Document doc = ModelPersistence.saveModel(model, false);
-        JDOMUtil.writeDocument(doc, stream);
-      } finally {
-        stream.close();
-      }
+      TransientModelPersistence.saveModel(model, stream);
 
     } catch (IOException e) {
       isOk = false;
@@ -91,7 +83,7 @@ public class IntermediateModelsCache {
         writer.close();
       }
 
-      if(isOk) {
+      if (isOk) {
         myCacheContainer.commit();
       } else {
         myCacheContainer.revert();

@@ -1164,7 +1164,7 @@ public final class SNode {
     return references;
   }
 
-  public Iterable<SReference> getReferencesIterable() {
+  public Collection<SReference> getReferencesIterable() {
     return new AbstractList<SReference>() {
       @Override
       public SReference get(int index) {
