@@ -9,12 +9,13 @@
   <unitInfo fileName="Antcall_project_ReferentConstraint.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Antcall_project_ReferentConstraint" />
   <unitInfo fileName="AbstractProjectComponent_name_PropertyConstraint.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.AbstractProjectComponent_name_PropertyConstraint" />
   <unitInfo fileName="Echo_name_PropertyConstraint.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Echo_name_PropertyConstraint" />
+  <unitInfo fileName="Plugin_name_PropertyConstraint.java" startLine="14" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Plugin_name_PropertyConstraint" />
   <unitInfo fileName="Variable_DefaultSearchScope.java" startLine="15" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Variable_DefaultSearchScope" />
   <unitInfo fileName="Folder_name_PropertyConstraint.java" startLine="14" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Folder_name_PropertyConstraint" />
   <unitInfo fileName="File_name_PropertyConstraint.java" startLine="15" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.File_name_PropertyConstraint" />
+  <unitInfo fileName="Antcall_targetDeclaration_ReferentConstraint.java" startLine="16" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Antcall_targetDeclaration_ReferentConstraint" />
   <unitInfo fileName="Module_name_PropertyConstraint.java" startLine="16" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Module_name_PropertyConstraint" />
-  <unitInfo fileName="Antcall_targetDeclaration_ReferentConstraint.java" startLine="17" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.Antcall_targetDeclaration_ReferentConstraint" />
-  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.ConstraintsDescriptor" />
+  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.build.packaging.constraints.ConstraintsDescriptor" />
   <root nodeId="1213104846985">
     <nodeInfo nodeId="1213104846991" fileName="Folder_name_PropertyConstraint.java" startLine="27" startPosition="134" endLine="28" endPosition="107" />
     <nodeInfo nodeId="1213104847015" fileName="Folder_name_PropertyConstraint.java" startLine="30" startPosition="67" endLine="31" endPosition="16" />
@@ -77,14 +78,14 @@
   </root>
   <root nodeId="1224178310365">
     <nodeInfo nodeId="1230212831783" fileName="Antcall_project_ReferentConstraint.java" startLine="25" startPosition="45" endLine="26" endPosition="81" />
-    <nodeInfo nodeId="1224178454279" fileName="Antcall_targetDeclaration_ReferentConstraint.java" startLine="30" startPosition="93" endLine="31" endPosition="59" />
-    <nodeInfo nodeId="1224178569933" fileName="Antcall_targetDeclaration_ReferentConstraint.java" startLine="32" startPosition="5" endLine="33" endPosition="168" />
+    <nodeInfo nodeId="1224178454279" fileName="Antcall_targetDeclaration_ReferentConstraint.java" startLine="29" startPosition="93" endLine="30" endPosition="59" />
+    <nodeInfo nodeId="1224178569933" fileName="Antcall_targetDeclaration_ReferentConstraint.java" startLine="31" startPosition="5" endLine="32" endPosition="128" />
     <nodeInfo nodeId="1230212779009" fileName="Antcall_project_ReferentConstraint.java" startLine="24" startPosition="138" endLine="27" endPosition="5" />
-    <nodeInfo nodeId="1224178398811" fileName="Antcall_targetDeclaration_ReferentConstraint.java" startLine="29" startPosition="132" endLine="32" endPosition="5" />
+    <nodeInfo nodeId="1224178398811" fileName="Antcall_targetDeclaration_ReferentConstraint.java" startLine="28" startPosition="132" endLine="31" endPosition="5" />
     <scopeInfo nodeId="1230212779010" fileName="Antcall_project_ReferentConstraint.java" startLine="25" startPosition="45" endLine="26" endPosition="81" />
-    <scopeInfo nodeId="1224178398813" fileName="Antcall_targetDeclaration_ReferentConstraint.java" startLine="30" startPosition="93" endLine="31" endPosition="59" />
+    <scopeInfo nodeId="1224178398813" fileName="Antcall_targetDeclaration_ReferentConstraint.java" startLine="29" startPosition="93" endLine="30" endPosition="59" />
     <scopeInfo nodeId="1224178817167" fileName="Antcall_project_ReferentConstraint.java" startLine="24" startPosition="138" endLine="27" endPosition="5" />
-    <scopeInfo nodeId="1224178316889" fileName="Antcall_targetDeclaration_ReferentConstraint.java" startLine="29" startPosition="132" endLine="33" endPosition="168" />
+    <scopeInfo nodeId="1224178316889" fileName="Antcall_targetDeclaration_ReferentConstraint.java" startLine="28" startPosition="132" endLine="32" endPosition="128" />
   </root>
   <root nodeId="1226494817331">
     <nodeInfo nodeId="1226494824130" fileName="BaseDirPath_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="119" />
@@ -96,6 +97,13 @@
     <nodeInfo nodeId="1239623941091" fileName="AbstractProjectComponent_name_PropertyConstraint.java" startLine="25" startPosition="80" endLine="28" endPosition="5" />
     <scopeInfo nodeId="1239623941097" fileName="AbstractProjectComponent_name_PropertyConstraint.java" startLine="26" startPosition="67" endLine="27" endPosition="16" />
     <scopeInfo nodeId="1239623940215" fileName="AbstractProjectComponent_name_PropertyConstraint.java" startLine="25" startPosition="80" endLine="29" endPosition="114" />
+  </root>
+  <root nodeId="4159241239519649233">
+    <nodeInfo nodeId="4159241239519681806" fileName="Plugin_name_PropertyConstraint.java" startLine="27" startPosition="67" endLine="28" endPosition="125" />
+    <nodeInfo nodeId="4159241239519681821" fileName="Plugin_name_PropertyConstraint.java" startLine="29" startPosition="5" endLine="30" endPosition="114" />
+    <nodeInfo nodeId="4159241239519649237" fileName="Plugin_name_PropertyConstraint.java" startLine="26" startPosition="80" endLine="29" endPosition="5" />
+    <scopeInfo nodeId="4159241239519649239" fileName="Plugin_name_PropertyConstraint.java" startLine="27" startPosition="67" endLine="28" endPosition="125" />
+    <scopeInfo nodeId="4159241239519649236" fileName="Plugin_name_PropertyConstraint.java" startLine="26" startPosition="80" endLine="30" endPosition="114" />
   </root>
 </debugInfo>
 

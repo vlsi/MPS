@@ -9,7 +9,18 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="MPS" />
+    <orderEntry type="module" module-name="baseLanguage" />
+    <orderEntry type="module" module-name="generator-engine" />
+    <orderEntry type="module" module-name="kernel" />
+    <orderEntry type="module" module-name="core" />
+    <orderEntry type="module" module-name="editor" />
+    <orderEntry type="module" module-name="intentions" />
+    <orderEntry type="module" module-name="pattern" />
+    <orderEntry type="module" module-name="smodel" />
+    <orderEntry type="module" module-name="structure" />
+    <orderEntry type="module" module-name="typesystem" />
+    <orderEntry type="module" module-name="runtime" />
+    <orderEntry type="module" module-name="workbench" />
   </component>
 </module>
 

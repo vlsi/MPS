@@ -122,14 +122,50 @@
               </node>
             </node>
           </node>
-          <node role="entry:7" type="jetbrains.mps.build.packaging.structure.BlockReference:7" id="2235195415637077002">
-            <link role="block:7" targetNodeId="8431776905956472705" resolveInfo="ideaIntegration.jar" />
+          <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Plugin:7" id="4169262926912883426">
+            <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="4169262926912883427">
+              <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="4169262926912883430">
+                <property name="name:7" value="mps_home" />
+              </node>
+              <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="4169262926912883429">
+                <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="4169262926912883431">
+                  <property name="path:7" value="plugins" />
+                </node>
+                <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="4169262926912883433">
+                  <property name="path:7" value="ideaIntegration" />
+                </node>
+              </node>
+            </node>
           </node>
-          <node role="entry:7" type="jetbrains.mps.build.packaging.structure.BlockReference:7" id="2235195415637077003">
-            <link role="block:7" targetNodeId="8431776905956472833" resolveInfo="vcs.jar" />
+          <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Plugin:7" id="888657369809591775">
+            <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="888657369809591776">
+              <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="888657369809591779">
+                <property name="name:7" value="mps_home" />
+              </node>
+              <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="888657369809591778">
+                <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="888657369809591780">
+                  <property name="path:7" value="plugins" />
+                </node>
+                <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="888657369809591782">
+                  <property name="path:7" value="vcs" />
+                </node>
+              </node>
+            </node>
           </node>
-          <node role="entry:7" type="jetbrains.mps.build.packaging.structure.BlockReference:7" id="2235195415637077004">
-            <link role="block:7" targetNodeId="8431776905956472815" resolveInfo="samples.jar" />
+          <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Plugin:7" id="4169262926912883434">
+            <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="4169262926912883435">
+              <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="4169262926912883436">
+                <property name="name:7" value="mps_home" />
+              </node>
+              <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="4169262926912883437">
+                <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="4169262926912883438">
+                  <property name="path:7" value="plugins" />
+                </node>
+                <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="4169262926912883440">
+                  <property name="path:7" value="samples" />
+                </node>
+              </node>
+            </node>
           </node>
         </node>
         <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Zip:7" id="2235195415637077005">
@@ -204,76 +240,74 @@
             <link role="block:7" targetNodeId="8431776905956472851" resolveInfo="workbench" />
           </node>
         </node>
-        <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Antcall:7" id="2235195415637077039">
+        <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Antcall:7" id="6128676491055265548">
           <property name="excludes:7" value="" />
-          <link role="project:7" targetNodeId="2235195415637076848" resolveInfo="help-build-src" />
+          <link role="project:7" targetNodeId="2235195415637076848" resolveInfo="help-build" />
           <link role="targetDeclaration:7" targetNodeId="2235195415637076873" resolveInfo="append.idea.version" />
-          <node role="delete:7" type="jetbrains.mps.build.packaging.structure.Delete:7" id="2235195415637077040" />
-          <node role="targetReference:7" type="jetbrains.mps.build.packaging.structure.BuildLanguageTargetReference:7" id="2235195415637077041" />
-          <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Echo:7" id="2235195415637077042">
-            <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="2235195415637077043">
-              <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="2235195415637077044">
+          <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Echo:7" id="6128676491055265550">
+            <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="6128676491055265551">
+              <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="6128676491055265552">
                 <property name="name:7" value="basedir" />
               </node>
-              <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="2235195415637077045" />
+              <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="6128676491055265553" />
             </node>
-            <node role="message:7" type="jetbrains.mps.build.packaging.structure.CompositeString:7" id="2235195415637077046">
-              <node role="left:7" type="jetbrains.mps.build.packaging.structure.SimpleString:7" id="2235195415637077047">
+            <node role="message:7" type="jetbrains.mps.build.packaging.structure.CompositeString:7" id="6128676491055265554">
+              <node role="left:7" type="jetbrains.mps.build.packaging.structure.SimpleString:7" id="6128676491055265555">
                 <property name="name:7" value="build.number=" />
               </node>
-              <node role="right:7" type="jetbrains.mps.build.packaging.structure.CompositeString:7" id="2235195415637077048">
-                <node role="left:7" type="jetbrains.mps.build.packaging.structure.VariableReference:7" id="2235195415637077109">
+              <node role="right:7" type="jetbrains.mps.build.packaging.structure.CompositeString:7" id="6128676491055265556">
+                <node role="left:7" type="jetbrains.mps.build.packaging.structure.VariableReference:7" id="6128676491055265557">
                   <link role="variable:7" targetNodeId="2235195415637077105" resolveInfo="build" />
                 </node>
-                <node role="right:7" type="jetbrains.mps.build.packaging.structure.CompositeString:7" id="2235195415637077050">
-                  <node role="left:7" type="jetbrains.mps.build.packaging.structure.CompositeString:7" id="2235195415637077051">
-                    <node role="left:7" type="jetbrains.mps.build.packaging.structure.CompositeString:7" id="2235195415637077052">
-                      <node role="left:7" type="jetbrains.mps.build.packaging.structure.VariableReference:7" id="2235195415637077053">
+                <node role="right:7" type="jetbrains.mps.build.packaging.structure.CompositeString:7" id="6128676491055265558">
+                  <node role="left:7" type="jetbrains.mps.build.packaging.structure.CompositeString:7" id="6128676491055265559">
+                    <node role="left:7" type="jetbrains.mps.build.packaging.structure.CompositeString:7" id="6128676491055265560">
+                      <node role="left:7" type="jetbrains.mps.build.packaging.structure.VariableReference:7" id="6128676491055265561">
                         <link role="variable:7" targetNodeId="2v.5558646027962551662" resolveInfo="\n" />
                       </node>
-                      <node role="right:7" type="jetbrains.mps.build.packaging.structure.SimpleString:7" id="2235195415637077054">
+                      <node role="right:7" type="jetbrains.mps.build.packaging.structure.SimpleString:7" id="6128676491055265562">
                         <property name="name:7" value="date=" />
                       </node>
                     </node>
-                    <node role="right:7" type="jetbrains.mps.build.packaging.structure.CompositeString:7" id="2235195415637077055">
-                      <node role="left:7" type="jetbrains.mps.build.packaging.structure.VariableReference:7" id="2235195415637077056">
+                    <node role="right:7" type="jetbrains.mps.build.packaging.structure.CompositeString:7" id="6128676491055265563">
+                      <node role="left:7" type="jetbrains.mps.build.packaging.structure.VariableReference:7" id="6128676491055265564">
                         <link role="variable:7" targetNodeId="2v.5558646027962551661" resolveInfo="date" />
                       </node>
-                      <node role="right:7" type="jetbrains.mps.build.packaging.structure.VariableReference:7" id="2235195415637077057">
+                      <node role="right:7" type="jetbrains.mps.build.packaging.structure.VariableReference:7" id="6128676491055265565">
                         <link role="variable:7" targetNodeId="2v.5558646027962551662" resolveInfo="\n" />
                       </node>
                     </node>
                   </node>
-                  <node role="right:7" type="jetbrains.mps.build.packaging.structure.CompositeString:7" id="2235195415637077058">
-                    <node role="left:7" type="jetbrains.mps.build.packaging.structure.SimpleString:7" id="2235195415637077059">
+                  <node role="right:7" type="jetbrains.mps.build.packaging.structure.CompositeString:7" id="6128676491055265566">
+                    <node role="left:7" type="jetbrains.mps.build.packaging.structure.SimpleString:7" id="6128676491055265567">
                       <property name="name:7" value="revision.number=" />
                     </node>
-                    <node role="right:7" type="jetbrains.mps.build.packaging.structure.CompositeString:7" id="2235195415637077060">
-                      <node role="left:7" type="jetbrains.mps.build.packaging.structure.VariableReference:7" id="2235195415637077110">
+                    <node role="right:7" type="jetbrains.mps.build.packaging.structure.CompositeString:7" id="6128676491055265568">
+                      <node role="left:7" type="jetbrains.mps.build.packaging.structure.VariableReference:7" id="6128676491055265569">
                         <link role="variable:7" targetNodeId="2235195415637077106" resolveInfo="revision" />
                       </node>
-                      <node role="right:7" type="jetbrains.mps.build.packaging.structure.CompositeString:7" id="2235195415637077062">
-                        <node role="left:7" type="jetbrains.mps.build.packaging.structure.VariableReference:7" id="2235195415637077063">
+                      <node role="right:7" type="jetbrains.mps.build.packaging.structure.CompositeString:7" id="6128676491055265570">
+                        <node role="left:7" type="jetbrains.mps.build.packaging.structure.VariableReference:7" id="6128676491055265571">
                           <link role="variable:7" targetNodeId="2v.5558646027962551662" resolveInfo="\n" />
                         </node>
-                        <node role="right:7" type="jetbrains.mps.build.packaging.structure.CompositeString:7" id="2235195415637077064">
-                          <node role="right:7" type="jetbrains.mps.build.packaging.structure.CompositeString:7" id="2235195415637077065">
-                            <node role="right:7" type="jetbrains.mps.build.packaging.structure.VariableReference:7" id="2235195415637077112">
+                        <node role="right:7" type="jetbrains.mps.build.packaging.structure.CompositeString:7" id="6128676491055265572">
+                          <node role="right:7" type="jetbrains.mps.build.packaging.structure.CompositeString:7" id="6128676491055265573">
+                            <node role="right:7" type="jetbrains.mps.build.packaging.structure.VariableReference:7" id="6128676491055265574">
                               <link role="variable:7" targetNodeId="2235195415637077108" resolveInfo="version" />
                             </node>
-                            <node role="left:7" type="jetbrains.mps.build.packaging.structure.SimpleString:7" id="2235195415637077067">
+                            <node role="left:7" type="jetbrains.mps.build.packaging.structure.SimpleString:7" id="6128676491055265575">
                               <property name="name:7" value="version=" />
                             </node>
                           </node>
-                          <node role="left:7" type="jetbrains.mps.build.packaging.structure.CompositeString:7" id="2235195415637077068">
-                            <node role="right:7" type="jetbrains.mps.build.packaging.structure.VariableReference:7" id="2235195415637077069">
+                          <node role="left:7" type="jetbrains.mps.build.packaging.structure.CompositeString:7" id="6128676491055265576">
+                            <node role="right:7" type="jetbrains.mps.build.packaging.structure.VariableReference:7" id="6128676491055265577">
                               <link role="variable:7" targetNodeId="2v.5558646027962551662" resolveInfo="\n" />
                             </node>
-                            <node role="left:7" type="jetbrains.mps.build.packaging.structure.CompositeString:7" id="2235195415637077070">
-                              <node role="left:7" type="jetbrains.mps.build.packaging.structure.SimpleString:7" id="2235195415637077071">
+                            <node role="left:7" type="jetbrains.mps.build.packaging.structure.CompositeString:7" id="6128676491055265578">
+                              <node role="left:7" type="jetbrains.mps.build.packaging.structure.SimpleString:7" id="6128676491055265579">
                                 <property name="name:7" value="configuration.name=" />
                               </node>
-                              <node role="right:7" type="jetbrains.mps.build.packaging.structure.VariableReference:7" id="2235195415637077111">
+                              <node role="right:7" type="jetbrains.mps.build.packaging.structure.VariableReference:7" id="6128676491055265580">
                                 <link role="variable:7" targetNodeId="2235195415637077107" resolveInfo="configuration" />
                               </node>
                             </node>
@@ -285,10 +319,11 @@
                 </node>
               </node>
             </node>
-            <node role="title:7" type="jetbrains.mps.build.packaging.structure.SimpleString:7" id="2235195415637077073">
+            <node role="title:7" type="jetbrains.mps.build.packaging.structure.SimpleString:7" id="6128676491055265581">
               <property name="name:7" value="build.number" />
             </node>
           </node>
+          <node role="delete:7" type="jetbrains.mps.build.packaging.structure.Delete:7" id="6128676491055265549" />
         </node>
         <node role="entry:7" type="jetbrains.mps.build.packaging.structure.File:7" id="2235195415637077074">
           <property name="file:7" value="true" />
@@ -357,12 +392,11 @@
         <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="2235195415637073474" />
       </node>
     </node>
-    <node role="component:7" type="jetbrains.mps.build.packaging.structure.Antcall:7" id="2235195415637077139">
+    <node role="component:7" type="jetbrains.mps.build.packaging.structure.Antcall:7" id="6128676491055265583">
       <property name="excludes:7" value="" />
-      <link role="project:7" targetNodeId="2235195415637076848" resolveInfo="help-build-src" />
+      <link role="project:7" targetNodeId="2235195415637076848" resolveInfo="help-build" />
       <link role="targetDeclaration:7" targetNodeId="2235195415637076901" resolveInfo="pack.mps.src" />
-      <node role="delete:7" type="jetbrains.mps.build.packaging.structure.Delete:7" id="2235195415637077140" />
-      <node role="targetReference:7" type="jetbrains.mps.build.packaging.structure.BuildLanguageTargetReference:7" id="2235195415637077141" />
+      <node role="delete:7" type="jetbrains.mps.build.packaging.structure.Delete:7" id="6128676491055265584" />
     </node>
     <node role="component:7" type="jetbrains.mps.build.packaging.structure.Zip:7" id="2235195415637077143">
       <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Folder:7" id="2235195415637077144">
@@ -1064,58 +1098,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.build.packaging.structure.Block:7" id="8431776905956472705">
-    <property name="name:7" value="ideaIntegration.jar" />
-    <property name="package:7" value="components" />
-    <link role="layout:7" targetNodeId="2235195415637073459" resolveInfo="MPS" />
-    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Jar:7" id="8431776905956472706">
-      <property name="excludes:7" value="" />
-      <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Folder:7" id="8431776905956472707">
-        <property name="excludes:7" value="" />
-        <property name="includes:7" value="**/plugin.xml" />
-        <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="8431776905956472708">
-          <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="8431776905956472709">
-            <property name="name:7" value="mps_home" />
-          </node>
-          <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="8431776905956472710">
-            <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472711">
-              <property name="path:7" value="plugins" />
-            </node>
-            <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472712">
-              <property name="path:7" value="ideaIntegration" />
-            </node>
-            <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472713">
-              <property name="path:7" value="META-INF" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Copy:7" id="8431776905956472714">
-        <property name="name:7" value="" />
-        <property name="excludes:7" value="" />
-        <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="8431776905956472715">
-          <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="8431776905956472716">
-            <property name="name:7" value="mps_home" />
-          </node>
-          <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="8431776905956472717">
-            <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472718">
-              <property name="path:7" value="plugins" />
-            </node>
-            <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472719">
-              <property name="path:7" value="ideaIntegration" />
-            </node>
-            <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472720">
-              <property name="path:7" value="classes" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="delete:7" type="jetbrains.mps.build.packaging.structure.Delete:7" id="8431776905956472721" />
-      <node role="title:7" type="jetbrains.mps.build.packaging.structure.SimpleString:7" id="8431776905956472722">
-        <property name="name:7" value="ideaIntegration.jar" />
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.build.packaging.structure.Block:7" id="8431776905956472723">
     <property name="name:7" value="mps.jar" />
     <property name="package:7" value="components" />
@@ -1395,110 +1377,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.build.packaging.structure.Block:7" id="8431776905956472815">
-    <property name="name:7" value="samples.jar" />
-    <property name="package:7" value="components" />
-    <link role="layout:7" targetNodeId="2235195415637073459" resolveInfo="MPS" />
-    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Jar:7" id="8431776905956472816">
-      <property name="excludes:7" value="" />
-      <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Folder:7" id="8431776905956472817">
-        <property name="excludes:7" value="" />
-        <property name="includes:7" value="**/plugin.xml" />
-        <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="8431776905956472818">
-          <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="8431776905956472819">
-            <property name="name:7" value="mps_home" />
-          </node>
-          <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="8431776905956472820">
-            <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472821">
-              <property name="path:7" value="plugins" />
-            </node>
-            <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472822">
-              <property name="path:7" value="samples" />
-            </node>
-            <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472823">
-              <property name="path:7" value="META-INF" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Copy:7" id="8431776905956472824">
-        <property name="name:7" value="" />
-        <property name="excludes:7" value="" />
-        <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="8431776905956472825">
-          <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="8431776905956472826">
-            <property name="name:7" value="mps_home" />
-          </node>
-          <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="8431776905956472827">
-            <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472828">
-              <property name="path:7" value="plugins" />
-            </node>
-            <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472829">
-              <property name="path:7" value="samples" />
-            </node>
-            <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472830">
-              <property name="path:7" value="classes" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="delete:7" type="jetbrains.mps.build.packaging.structure.Delete:7" id="8431776905956472831" />
-      <node role="title:7" type="jetbrains.mps.build.packaging.structure.SimpleString:7" id="8431776905956472832">
-        <property name="name:7" value="samples.jar" />
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.build.packaging.structure.Block:7" id="8431776905956472833">
-    <property name="name:7" value="vcs.jar" />
-    <property name="package:7" value="components" />
-    <link role="layout:7" targetNodeId="2235195415637073459" resolveInfo="MPS" />
-    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Jar:7" id="8431776905956472834">
-      <property name="excludes:7" value="" />
-      <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Folder:7" id="8431776905956472835">
-        <property name="excludes:7" value="" />
-        <property name="includes:7" value="**/plugin.xml" />
-        <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="8431776905956472836">
-          <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="8431776905956472837">
-            <property name="name:7" value="mps_home" />
-          </node>
-          <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="8431776905956472838">
-            <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472839">
-              <property name="path:7" value="plugins" />
-            </node>
-            <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472840">
-              <property name="path:7" value="vcs" />
-            </node>
-            <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472841">
-              <property name="path:7" value="META-INF" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Copy:7" id="8431776905956472842">
-        <property name="name:7" value="" />
-        <property name="excludes:7" value="" />
-        <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="8431776905956472843">
-          <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="8431776905956472844">
-            <property name="name:7" value="mps_home" />
-          </node>
-          <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="8431776905956472845">
-            <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472846">
-              <property name="path:7" value="plugins" />
-            </node>
-            <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472847">
-              <property name="path:7" value="vcs" />
-            </node>
-            <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="8431776905956472848">
-              <property name="path:7" value="classes" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="delete:7" type="jetbrains.mps.build.packaging.structure.Delete:7" id="8431776905956472849" />
-      <node role="title:7" type="jetbrains.mps.build.packaging.structure.SimpleString:7" id="8431776905956472850">
-        <property name="name:7" value="vcs.jar" />
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.build.packaging.structure.Block:7" id="8431776905956472851">
     <property name="name:7" value="workbench" />
     <property name="package:7" value="modules" />
@@ -1764,6 +1642,10 @@
       <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Module:7" id="8431776905956472938">
         <property name="id:7" value="ef703a71-a5a3-42af-b53c-ddced816ad5c" />
       </node>
+      <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Module:7" id="8447281171170208180">
+        <property name="id:7" value="b02ae39f-4c16-4545-8dfa-88df16804e7e" />
+        <property name="name:7" value="jetbrains.mps.lang.smodelTests" />
+      </node>
       <node role="title:7" type="jetbrains.mps.build.packaging.structure.SimpleString:7" id="8431776905956472939">
         <property name="name:7" value="languageDesign" />
       </node>
@@ -1876,6 +1758,10 @@
     </node>
     <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Module:7" id="8431776905956472980">
       <property name="id:7" value="dd61a7d7-8e1b-45a1-9aa3-8585ec2b60fc" />
+    </node>
+    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Module:7" id="8447281171170208178">
+      <property name="id:7" value="12ea451d-94b2-4e3a-8ff9-08f91d5769cd" />
+      <property name="name:7" value="jetbrains.mps.build.mpsautobuild" />
     </node>
   </node>
   <node type="jetbrains.mps.build.packaging.structure.Block:7" id="8431776905956472981">

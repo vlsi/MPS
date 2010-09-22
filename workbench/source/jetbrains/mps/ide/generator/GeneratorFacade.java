@@ -23,8 +23,7 @@ import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
-import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.generator.ModelGenerationStatusManager;
+import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.generationTypes.java.JavaGenerationHandler;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
@@ -32,6 +31,7 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import jetbrains.mps.ide.messages.MessagesViewTool;
+import jetbrains.mps.lang.generator.plugin.debug.GenerationTracer;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.*;
@@ -195,7 +195,23 @@ public class GeneratorFacade {
     ProgressManager.getInstance().run(new Modal(invocationContext.getProject(), "Generation", true) {
       public void run(@NotNull ProgressIndicator progress) {
         GeneratorManager generatorManager = project.getComponent(GeneratorManager.class);
-        result[0] = generatorManager.generateModels(inputModels, invocationContext, generationHandler, progress, messages, saveTransientModels, rebuildAll);
+
+        if (!saveTransientModels) {
+          project.getComponent(GenerationTracer.class).discardTracing();
+        }
+
+        IGenerationTracer tracer = saveTransientModels
+          ? project.getComponent(GenerationTracer.class)
+          : new NullGenerationTracer();
+
+        GenerationOptions options = new GenerationOptions(
+          settings.isStrictMode(), saveTransientModels, rebuildAll, settings.isGenerateDependencies(),
+          settings.isParallelGenerator(), settings.getNumberOfParallelThreads(),
+          settings.getPerformanceTracingLevel(),
+          settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings(),
+          settings.getNumberOfModelsToKeep(), tracer);
+
+        result[0] = generatorManager.generateModels(inputModels, invocationContext, generationHandler, progress, messages, options);
       }
     });
     return result[0];
@@ -214,14 +230,14 @@ public class GeneratorFacade {
 
   private List<SModelDescriptor> getModelsToGenerateBeforeGeneration(SModelDescriptor model, Project project) {
     IModule module = model.getModule();
-    if(module == null) {
+    if (module == null) {
       return Collections.emptyList();
     }
 
     List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
 
     ModelGenerationStatusManager statusManager = ModelGenerationStatusManager.getInstance();
-    for (Generator g : GenerationPartitioningUtil.getAllPossiblyEngagedGenerators(model.getSModel(), module.getScope() )) {
+    for (Generator g : GenerationPartitioningUtil.getAllPossiblyEngagedGenerators(model.getSModel(), module.getScope())) {
       for (SModelDescriptor sm : g.getOwnModelDescriptors()) {
         if (SModelStereotype.isUserModel(sm) && statusManager.generationRequired(sm, ProjectOperationContext.get(project))) {
           result.add(sm);

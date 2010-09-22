@@ -19,6 +19,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
     ListSequence.fromList(this.myConstraints).addElement(new MacroReference_path_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new Configuration_fullName_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new AbstractProjectComponent_name_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new Plugin_name_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new Antcall_targetDeclaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new Antcall_project_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new Variable_DefaultSearchScope());

@@ -27,7 +27,7 @@ public class DefaultCustomMpsApplication_Editor extends JPanel {
       final Wrappers._T<SNode> c = new Wrappers._T<SNode>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          c.value = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
+          c.value = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.packaging.structure.MPSLayout");
         }
       });
       return c.value;
@@ -38,7 +38,7 @@ public class DefaultCustomMpsApplication_Editor extends JPanel {
         final Wrappers._boolean isApplicable = new Wrappers._boolean();
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            isApplicable.value = ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.build.custommps.structure.MPSBuild", false, new String[]{})).isNotEmpty();
+            isApplicable.value = ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.build.custommps.structure.MPSBuild", false, new String[]{})).isNotEmpty() || ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.build.custommps.structure.MPSDistribution", false, new String[]{})).isNotEmpty();
           }
         });
         return isApplicable.value;

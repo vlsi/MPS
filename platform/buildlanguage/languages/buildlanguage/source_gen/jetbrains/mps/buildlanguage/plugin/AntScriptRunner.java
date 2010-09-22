@@ -58,7 +58,7 @@ public class AntScriptRunner extends BaseRunner {
     ListSequence.fromList(parameters).addElement(AntScriptRunner.getJavaCommand(javaHome));
     addVmOptions(parameters);
     ListSequence.fromList(parameters).addElement("-Djava.home=" + javaHome);
-    String antHome = PathManager.getHomePath() + File.separator + "lib" + File.separator + "ant-1.7.0";
+    String antHome = PathManager.getHomePath() + File.separator + "lib" + File.separator + "ant";
     ListSequence.fromList(parameters).addElement("-Dant.home=" + antHome);
     ListSequence.fromList(parameters).addElement("-cp");
     String antLib = antHome + File.separator + "lib" + File.separator;

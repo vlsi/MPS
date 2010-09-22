@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class Antcall_targetDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
@@ -30,7 +29,7 @@ public class Antcall_targetDeclaration_ReferentConstraint extends BaseNodeRefere
     if ((SLinkOperations.getTarget(_context.getReferenceNode(), "project", false) == null)) {
       return new SimpleSearchScope(new ArrayList<SNode>());
     }
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getReferenceNode(), "project", false), "target", true)).toListSequence();
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getReferenceNode(), "project", false), "target", true);
   }
 
   public SNodePointer getSearchScopeValidatorNodePointer() {

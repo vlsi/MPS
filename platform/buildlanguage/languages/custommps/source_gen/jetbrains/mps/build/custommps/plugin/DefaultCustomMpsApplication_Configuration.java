@@ -36,8 +36,8 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.plugin.run.DefaultProcessHandler;
-import jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_Behavior;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.project.ModuleContext;
 import java.io.File;
@@ -166,7 +166,11 @@ public class DefaultCustomMpsApplication_Configuration extends BaseRunConfig {
                   final Wrappers._boolean isMPSBuildIncluded = new Wrappers._boolean();
                   ModelAccess.instance().runReadAction(new Runnable() {
                     public void run() {
-                      isMPSBuildIncluded.value = AbstractProjectComponent_Behavior.call_included_1213877333807(ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.build.custommps.structure.MPSBuild", false, new String[]{})).first(), configuration);
+                      SNode mpsbuild = ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.build.custommps.structure.MPSBuild", false, new String[]{})).first();
+                      if ((mpsbuild == null)) {
+                        mpsbuild = ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.build.custommps.structure.MPSDistribution", false, new String[]{})).first();
+                      }
+                      isMPSBuildIncluded.value = AbstractProjectComponent_Behavior.call_included_1213877333807(mpsbuild, configuration);
                     }
                   });
 
@@ -312,7 +316,7 @@ public class DefaultCustomMpsApplication_Configuration extends BaseRunConfig {
             final Wrappers._boolean isApplicable = new Wrappers._boolean();
             ModelAccess.instance().runReadAction(new Runnable() {
               public void run() {
-                isApplicable.value = ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.build.custommps.structure.MPSBuild", false, new String[]{})).isNotEmpty();
+                isApplicable.value = ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.build.custommps.structure.MPSBuild", false, new String[]{})).isNotEmpty() || ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.build.custommps.structure.MPSDistribution", false, new String[]{})).isNotEmpty();
               }
             });
             return isApplicable.value;

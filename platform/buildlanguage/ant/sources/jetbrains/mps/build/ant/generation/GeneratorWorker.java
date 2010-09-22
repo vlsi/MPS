@@ -302,6 +302,9 @@ public class GeneratorWorker extends MpsWorker {
       myGenerationErrors.clear();
       myGenerationWarnings.clear();
     }
+
+    public void clear() {
+    }
   }
 
   private static class ModuleDecorator implements IModuleDecorator<IModule> {

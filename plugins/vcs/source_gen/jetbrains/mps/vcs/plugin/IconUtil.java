@@ -7,12 +7,18 @@ import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
 
 public class IconUtil {
+  private static final String FILE = "file:";
+
   public IconUtil() {
   }
 
   public static void useIcon(Object anchor, Presentation p, String path) {
     // todo this MUST be removed after it will be possible to load icons not via modules 
     String file = anchor.getClass().getClassLoader().getResource(path).getFile();
+    if (file.startsWith(FILE)) {
+      // when icon file is located in the jar, the file string has prefix "file:", so we remove it heres 
+      file = file.substring(FILE.length());
+    }
     Icon icon = IconManager.loadIcon(file, true);
     p.setIcon(icon);
   }

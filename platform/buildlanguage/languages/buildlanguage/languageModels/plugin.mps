@@ -5073,7 +5073,7 @@
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="2178855608170366076" />
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="2178855608170366077">
               <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="2178855608170366078">
-                <property name="value:3" value="ant-1.7.0" />
+                <property name="value:3" value="ant" />
               </node>
               <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="2178855608170366079">
                 <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="2178855608170366080">

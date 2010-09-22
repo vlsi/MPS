@@ -24,6 +24,10 @@ public class Jar_Editor extends DefaultNodeEditor {
     return this.createCollection_5vbi94_a(editorContext, node);
   }
 
+  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
+    return this.createCollection_5vbi94_a_0(editorContext, node);
+  }
+
   private EditorCell createCollection_5vbi94_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_5vbi94_a");
@@ -60,6 +64,14 @@ public class Jar_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createCollection_5vbi94_a_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
+    editorCell.setCellId("Collection_5vbi94_a_0");
+    editorCell.addEditorCell(this.createComponent_5vbi94_a0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_5vbi94_b0(editorContext, node));
+    return editorCell;
+  }
+
   private EditorCell createComponent_5vbi94_c0a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new IncludeExcludeEditorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
@@ -74,6 +86,18 @@ public class Jar_Editor extends DefaultNodeEditor {
 
   private EditorCell createComponent_5vbi94_c0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new CompositecomponentEntriesEditorComponent(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
+    return editorCell;
+  }
+
+  private EditorCell createComponent_5vbi94_a0(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new ConfigurationReferencesEditorComponent(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
+    return editorCell;
+  }
+
+  private EditorCell createComponent_5vbi94_b0(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new IncludeExcludeInInspector(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }

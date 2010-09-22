@@ -125,4 +125,8 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
     }
     return message;
   }
+
+  void clear() {
+    myMessageHandler.clear();
+  }
 }

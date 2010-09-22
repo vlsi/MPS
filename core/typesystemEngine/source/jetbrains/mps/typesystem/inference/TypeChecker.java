@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.typesystem.inference;
 
-import jetbrains.mps.generator.UtilModelDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.RuntimeSupport;
 import jetbrains.mps.lang.typesystem.runtime.performance.RuntimeSupport_Tracer;
 import jetbrains.mps.lang.typesystem.runtime.performance.SubtypingManager_Tracer;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.typesystem.inference.util.ConcurrentSubtypingCache;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -344,9 +344,9 @@ public class TypeChecker implements ApplicationComponent {
     }
   }
 
-  private static class RuntimeTypesModelDescriptor extends UtilModelDescriptor {
+  private static class RuntimeTypesModelDescriptor extends BaseSModelDescriptor {
     public RuntimeTypesModelDescriptor(SModelFqName fqName) {
-      super(new SModelReference(fqName, SModelId.generate()));
+      super(IModelRootManager.NULL_MANAGER, new SModelReference(fqName, SModelId.generate()), false);
     }
 
     protected SModel loadModel() {

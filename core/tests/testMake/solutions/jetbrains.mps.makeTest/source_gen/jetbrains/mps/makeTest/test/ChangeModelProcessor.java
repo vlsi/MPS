@@ -107,6 +107,9 @@ public class ChangeModelProcessor {
           ListSequence.fromList(results).addElement(msg.getText());
         }
       }
+
+      public void clear() {
+      }
     };
     model.getModule().getModuleDescriptor().setCompileInMPS(false);
     gm.generateModels(models, new ModuleContext(model.getModule(), this.myProject), generationHandler, new EmptyProgressIndicator(), handler);
