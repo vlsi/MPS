@@ -1166,10 +1166,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private void setRootCell(EditorCell rootCell) {
-    Set<SNode> nodesWhichEditorDependedOn = myCellsToNodesToDependOnMap.get(myRootCell);
-    if (nodesWhichEditorDependedOn == null) {
-      nodesWhichEditorDependedOn = new HashSet<SNode>();
-    }
+    Set<SNode> oldNodesToDependOn = myCellsToNodesToDependOnMap.get(myRootCell);
+    Set<SNodePointer> oldRefTargetsToDependsOn = myCellsToRefTargetsToDependOnMap.get(myRootCell);
 
     if (myRootCell != null) {
       ((EditorCell_Basic) myRootCell).onRemove();
@@ -1183,59 +1181,51 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     requestRelayout();
 
-    Set<SNode> nodesWhichEditorDependsOn = myCellsToNodesToDependOnMap.get(myRootCell);
-    if (nodesWhichEditorDependsOn == null) {
-      nodesWhichEditorDependsOn = new HashSet<SNode>();
-    }
+    Set<SModelDescriptor> oldModelsToDependOn = getModels(oldNodesToDependOn);
+    Set<SModelDescriptor> newModelsToDependOn = getModels(myCellsToNodesToDependOnMap.get(myRootCell));
+    oldModelsToDependOn.addAll(getModelsAndPurgeOrphaned(oldRefTargetsToDependsOn));
+    newModelsToDependOn.addAll(getModelsAndPurgeOrphaned(myCellsToRefTargetsToDependOnMap.get(myRootCell)));
 
-    Set<SModelReference> oldsDeps = getModels(nodesWhichEditorDependedOn);
-    Set<SModelReference> newDeps = getModels(nodesWhichEditorDependsOn);
-
-    IScope scope = GlobalScope.getInstance();
-
-    for (SModelReference newDep : newDeps) {
-      if (!oldsDeps.contains(newDep)) {
-        SModelDescriptor sm = scope.getModelDescriptor(newDep);
-        if (sm != null) {
-          addOurListeners(sm);
-        }
+    for (SModelDescriptor newDep : newModelsToDependOn) {
+      if (!oldModelsToDependOn.contains(newDep)) {
+        addOurListeners(newDep);
       }
     }
-    for (SModelReference oldDep : oldsDeps) {
-      if (!newDeps.contains(oldDep)) {
-        SModelDescriptor sm = scope.getModelDescriptor(oldDep);
-        if (sm != null) {
-          removeOurListeners(sm);
-        }
+    for (SModelDescriptor oldDep : oldModelsToDependOn) {
+      if (!newModelsToDependOn.contains(oldDep)) {
+        removeOurListeners(oldDep);
       }
     }
-
-
-    Set<SNodePointer> refTargetsWhichEditorDependsOn = myCellsToRefTargetsToDependOnMap.get(myRootCell);
-    if (refTargetsWhichEditorDependsOn != null) {
-      Set<SNodePointer> nodeProxiesToDelete = new HashSet<SNodePointer>();
-      for (SNodePointer nodeProxy : refTargetsWhichEditorDependsOn) {
-        SModelDescriptor model = nodeProxy.getModel();
-        if (model == null) {
-          nodeProxiesToDelete.add(nodeProxy);
-          continue;
-        }
-        if (!newDeps.contains(model.getSModelReference())) {
-          addOurListeners(model);
-        }
-      }
-      refTargetsWhichEditorDependsOn.removeAll(nodeProxiesToDelete);
-    }
-
 
     revalidate();
     repaint();
   }
 
-  private Set<SModelReference> getModels(Set<SNode> nodes) {
-    Set<SModelReference> result = new HashSet<SModelReference>();
+  private Set<SModelDescriptor> getModelsAndPurgeOrphaned(Set<SNodePointer> nodePointers) {
+    if (nodePointers == null) {
+      return Collections.emptySet();
+    }
+    Set<SModelDescriptor> modelDescriptors = new HashSet<SModelDescriptor>();
+    Set<SNodePointer> nodeProxiesToDelete = new HashSet<SNodePointer>();
+    for (SNodePointer nodeProxy : nodePointers) {
+      SModelDescriptor model = nodeProxy.getModel();
+      if (model == null) {
+        nodeProxiesToDelete.add(nodeProxy);
+      } else {
+        modelDescriptors.add(model);
+      }
+    }
+    nodePointers.removeAll(nodeProxiesToDelete);
+    return modelDescriptors;
+  }
+
+  private Set<SModelDescriptor> getModels(@Nullable Set<SNode> nodes) {
+    if (nodes == null) {
+      return Collections.emptySet();
+    }
+    Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
     for (SNode node : nodes) {
-      result.add(node.getModel().getSModelReference());
+      result.add(node.getModel().getModelDescriptor());
     }
     return result;
   }
