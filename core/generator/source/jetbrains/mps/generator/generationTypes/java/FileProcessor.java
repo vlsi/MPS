@@ -65,7 +65,6 @@ class FileProcessor {
         ApplicationManager.getApplication().runWriteAction(new Runnable() {
           @Override
           public void run() {
-            // TODO add progress indication
             for (FileAndContent filesAndContent : myFilesAndContents) {
               filesAndContent.save();
             }

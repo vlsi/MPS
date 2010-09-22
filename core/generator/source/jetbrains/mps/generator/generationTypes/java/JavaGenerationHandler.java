@@ -203,13 +203,6 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
     return totalJob;
   }
 
-  protected final boolean containsTestModels(List<SModelDescriptor> sms) {
-    for (SModelDescriptor sm : sms) {
-      if (SModelStereotype.isTestModel(sm)) return true;
-    }
-    return false;
-  }
-
   @Override
   public void generationCompleted() {
     myProcessor.invoke();
