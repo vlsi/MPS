@@ -65,6 +65,7 @@ public class ProjectSaveChecker implements ProjectComponent {
     public boolean canCloseProject(Project project) {
       if (MPSCore.getInstance().isTestMode()) return true;
 
+      //this is needed because this method is called twice on closing application
       if (myIgnoredSaving) {
         myIgnoredSaving = false;
         return true;
