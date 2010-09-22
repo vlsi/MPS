@@ -34,7 +34,7 @@
                         serviceImplementation="com.intellij.execution.ui.layout.impl.RunnerLayoutSettings"/>
 
     <projectService serviceInterface="com.intellij.openapi.vcs.changes.patch.PatchBaseDirectoryDetector"
-                    serviceImplementation="com.intellij.openapi.vcs.changes.patch.PsiPatchBaseDirectoryDetector"/>
+                    serviceImplementation="jetbrains.mps.MPSPatchBaseDirectoryDetector"/>
     <projectService serviceInterface="com.intellij.find.FindManager"
                     serviceImplementation="com.intellij.find.impl.FindManagerImpl"/>
     <projectService serviceInterface="com.intellij.usages.UsageViewManager"

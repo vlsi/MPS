@@ -14,10 +14,11 @@
  * limitations under the License.
  */
 
-package com.intellij.openapi.vcs.changes.patch;
+package jetbrains.mps;
 
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.vcs.changes.patch.PatchBaseDirectoryDetector;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiDirectory;
 import com.intellij.psi.PsiFile;
@@ -29,15 +30,11 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Collection;
 
-/**
- * Patched by MPS in order to find patched file outside of project dir.
- *
- * @author yole
- */
-public class PsiPatchBaseDirectoryDetector extends PatchBaseDirectoryDetector {
+//copied from PsiPatchBaseDirectoryDetector, except that allScope is used instead of projectScope
+public class MPSPatchBaseDirectoryDetector extends PatchBaseDirectoryDetector {
   private final Project myProject;
 
-  public PsiPatchBaseDirectoryDetector(final Project project) {
+  public MPSPatchBaseDirectoryDetector(final Project project) {
     myProject = project;
   }
 
@@ -66,12 +63,9 @@ public class PsiPatchBaseDirectoryDetector extends PatchBaseDirectoryDetector {
     return null;
   }
 
-  @Patch
   public Collection<VirtualFile> findFiles(final String fileName) {
-//    MPS Patch Start
-//    use allScope instead of project scope 
+    // MPS Patch Start
     return FilenameIndex.getVirtualFilesByName(myProject, fileName, GlobalSearchScope.allScope(myProject));
-//    return FilenameIndex.getVirtualFilesByName(myProject, fileName, GlobalSearchScope.projectScope(myProject));
-//    MPS Patch End
+    // MPS Patch End
   }
 }
