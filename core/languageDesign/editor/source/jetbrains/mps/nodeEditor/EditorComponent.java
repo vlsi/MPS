@@ -1225,7 +1225,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
     Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
     for (SNode node : nodes) {
-      result.add(node.getModel().getModelDescriptor());
+      SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
+      if (modelDescriptor != null) {
+        result.add(modelDescriptor);
+      }
     }
     return result;
   }
