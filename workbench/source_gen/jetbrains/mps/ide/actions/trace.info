@@ -2058,7 +2058,7 @@
     <nodeInfo nodeId="1241020246052" fileName="AddModuleToProject_Action.java" startLine="86" startPosition="41" endLine="87" endPosition="92" />
     <nodeInfo nodeId="1241020312796" fileName="AddModuleToProject_Action.java" startLine="88" startPosition="48" endLine="89" endPosition="50" />
     <nodeInfo nodeId="1241020316366" fileName="AddModuleToProject_Action.java" startLine="89" startPosition="50" endLine="90" endPosition="30" />
-    <nodeInfo nodeId="1241020326952" fileName="AddModuleToProject_Action.java" startLine="90" startPosition="30" endLine="91" endPosition="86" />
+    <nodeInfo nodeId="1241020326952" fileName="AddModuleToProject_Action.java" startLine="90" startPosition="30" endLine="91" endPosition="77" />
     <nodeInfo nodeId="1241020402657" fileName="AddModuleToProject_Action.java" startLine="92" startPosition="46" endLine="93" endPosition="50" />
     <nodeInfo nodeId="1241020354573" fileName="AddModuleToProject_Action.java" startLine="93" startPosition="50" endLine="94" endPosition="30" />
     <nodeInfo nodeId="1241020354577" fileName="AddModuleToProject_Action.java" startLine="94" startPosition="30" endLine="95" endPosition="75" />
@@ -2069,7 +2069,7 @@
     <scopeInfo nodeId="8918545961567434031" fileName="AddModuleToProject_Action.java" startLine="41" startPosition="84" endLine="42" endPosition="21" />
     <scopeInfo nodeId="1241020218840" fileName="AddModuleToProject_Action.java" startLine="86" startPosition="41" endLine="87" endPosition="92" />
     <scopeInfo nodeId="8918545961567433998" fileName="AddModuleToProject_Action.java" startLine="40" startPosition="67" endLine="43" endPosition="7" />
-    <scopeInfo nodeId="1241020270357" fileName="AddModuleToProject_Action.java" startLine="88" startPosition="48" endLine="91" endPosition="86">
+    <scopeInfo nodeId="1241020270357" fileName="AddModuleToProject_Action.java" startLine="88" startPosition="48" endLine="91" endPosition="77">
       <varInfo nodeId="1241020312797" varName="file" />
     </scopeInfo>
     <scopeInfo nodeId="1241020354566" fileName="AddModuleToProject_Action.java" startLine="92" startPosition="46" endLine="95" endPosition="75">

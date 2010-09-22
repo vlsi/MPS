@@ -88,7 +88,7 @@ public class AddModuleToProject_Action extends GeneratedAction {
         } else if (module instanceof Solution) {
           IFile file = module.getDescriptorFile();
           assert file != null;
-          AddModuleToProject_Action.this.mpsProject.addProjectSolution(file.toFile());
+          AddModuleToProject_Action.this.mpsProject.addProjectSolution(file);
         } else if (module instanceof DevKit) {
           IFile file = module.getDescriptorFile();
           assert file != null;

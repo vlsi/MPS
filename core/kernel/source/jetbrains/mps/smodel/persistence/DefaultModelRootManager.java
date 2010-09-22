@@ -30,6 +30,7 @@ import jetbrains.mps.smodel.persistence.def.RefactoringsPersistence;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.ModelRefCreator;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -56,12 +57,8 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
   public SModel loadModel(final @NotNull SModelDescriptor sm) {
     DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
 
-    if (!dsm.getModelFile().isReadOnly()) {
-      final File file = dsm.getModelFile().toFile();
-
-      if (!file.exists()) {
-        return new SModel(dsm.getSModelReference());
-      }
+    if (!dsm.getModelFile().isReadOnly() && dsm.getModelFile().exists()) {
+      return new SModel(dsm.getSModelReference());
     }
 
     SModel model;
@@ -268,8 +265,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
       filenameSuffix = filenameSuffix + '@' + fqName.getStereotype();
     }
 
-    IFile modelFile = FileSystem.getInstance().getFileByPath(path + File.separator + filenameSuffix.replace('.', File.separatorChar) + MPSExtentions.DOT_MODEL);
-    return modelFile;
+    return FileSystem.getInstance().getFileByPath(path + File.separator + NameUtil.pathFromNamespace(filenameSuffix) + MPSExtentions.DOT_MODEL);
   }
 
   private SModelDescriptor recreateFileAndGetInstance(IModelRootManager manager, String fileName, SModelReference modelReference, ModelOwner owner, SModelRoot root) {
@@ -286,9 +282,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     FileUtil.copyFile(modelFile.toFile(), newFile.toFile());
     modelFile.delete();
 
-    SModelDescriptor result = getInstance(manager, newFile.getAbsolutePath(), newModelReference, owner, true);
-
-    return result;
+    return getInstance(manager, newFile.getAbsolutePath(), newModelReference, owner, true);
   }
 
   private static SModelDescriptor getInstance(IModelRootManager manager, String fileName, SModelReference modelReference, ModelOwner owner, boolean fireModelCreated) {

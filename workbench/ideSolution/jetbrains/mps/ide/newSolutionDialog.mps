@@ -930,14 +930,9 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="5890305283801268299">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5890305283801268300">
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5890305283801268301">
-              <link role="baseMethodDeclaration:3" targetNodeId="4.~MPSProject.addProjectSolution(java.io.File):jetbrains.mps.project.Solution" resolveInfo="addProjectSolution" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5890305283801268302">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="5890305283801268303">
-                  <link role="variableDeclaration:3" targetNodeId="5890305283801268196" resolveInfo="solutionFile" />
-                </node>
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5890305283801268304">
-                  <link role="baseMethodDeclaration:3" targetNodeId="8.~IFile.toFile():java.io.File" resolveInfo="toFile" />
-                </node>
+              <link role="baseMethodDeclaration:3" targetNodeId="4.~MPSProject.addProjectSolution(jetbrains.mps.vfs.IFile):jetbrains.mps.project.Solution" resolveInfo="addProjectSolution" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="5890305283801268303">
+                <link role="variableDeclaration:3" targetNodeId="5890305283801268196" resolveInfo="solutionFile" />
               </node>
             </node>
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="5890305283801268305">

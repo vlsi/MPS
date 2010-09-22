@@ -463,6 +463,10 @@ public class NameUtil {
     return namespace.replace('.', File.separatorChar);
   }
 
+  public static String namespaceFromPath(String path) {
+    return path.replace('/', '.').replace(File.separatorChar, '.'); 
+  }
+
   /**
    * Strips optional quotes from the beggining and ending of the quotedString.
    *

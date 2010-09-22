@@ -24,6 +24,6 @@ public class NewModuleUtil {
     modelRoot.setPath(solutionFile.getParent().getAbsolutePath());
     solutionDescriptor.getModelRoots().add(modelRoot);
     SolutionDescriptorPersistence.saveSolutionDescriptor(solutionFile, solutionDescriptor);
-    return project.addProjectSolution(solutionFile.toFile());
+    return project.addProjectSolution(solutionFile);
   }
 }

@@ -163,7 +163,7 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
 
         if (myOptions.getCreateNewSolution()) {
           IFile solutionDescriptorFile = createNewSolution();
-          myCreatedSolution = mpsProject.addProjectSolution(solutionDescriptorFile.toFile());
+          myCreatedSolution = mpsProject.addProjectSolution(solutionDescriptorFile);
           myCreatedSolution.save();
         }
 

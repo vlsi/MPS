@@ -28,6 +28,7 @@ import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryAdapter;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
@@ -153,7 +154,7 @@ public class GlobalClassPathIndex implements ApplicationComponent {
       @Override
       public void visit(FileClassPathItem cpItem) {
         String classPath = cpItem.getClassPath();
-        if (new File(classPath).isDirectory()) {
+        if (FileSystem.getInstance().getFileByPath(classPath).isDirectory()) {
           dealWithClassPathOnModuleInit(module, classPath);
         }
       }
@@ -198,7 +199,7 @@ public class GlobalClassPathIndex implements ApplicationComponent {
       @Override
       public void visit(FileClassPathItem cpItem) {
         String classPath = cpItem.getClassPath();
-        if (new File(classPath).isDirectory()) {
+        if (FileSystem.getInstance().getFileByPath(classPath).isDirectory()) {
           dealWithClassPathOnModuleRemove(module, classPath);
         }
       }
@@ -231,7 +232,7 @@ public class GlobalClassPathIndex implements ApplicationComponent {
       @Override
       public void visit(FileClassPathItem cpItem) {
         String classPath = cpItem.getClassPath();
-        if (new File(classPath).isDirectory()) {
+        if (FileSystem.getInstance().getFileByPath(classPath).isDirectory()) {
           dealWithClassPathOnModuleAdd(module, classPath);
         }
       }

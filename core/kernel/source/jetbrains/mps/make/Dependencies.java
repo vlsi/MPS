@@ -22,6 +22,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
@@ -65,7 +66,7 @@ class Dependencies {
     IModule m = myModules.get(fqName);
     if (m == null) return null;
 
-    String outputPath = m.getGeneratorOutputPath() + File.separator + fqName.replace('.', File.separatorChar) + MPSExtentions.DOT_JAVAFILE;
+    String outputPath = m.getGeneratorOutputPath() + File.separator + NameUtil.pathFromNamespace(fqName) + MPSExtentions.DOT_JAVAFILE;
     return FileSystem.getInstance().getFileByPath(outputPath);
   }
 

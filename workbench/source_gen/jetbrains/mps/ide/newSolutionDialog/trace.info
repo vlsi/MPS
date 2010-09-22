@@ -96,12 +96,12 @@
     <nodeInfo nodeId="5890305283801268259" fileName="NewModuleUtil.java" startLine="23" startPosition="28" endLine="24" endPosition="66" />
     <nodeInfo nodeId="5890305283801268268" fileName="NewModuleUtil.java" startLine="24" startPosition="66" endLine="25" endPosition="54" />
     <nodeInfo nodeId="5890305283801268275" fileName="NewModuleUtil.java" startLine="25" startPosition="54" endLine="26" endPosition="91" />
-    <nodeInfo nodeId="5890305283801268299" fileName="NewModuleUtil.java" startLine="26" startPosition="91" endLine="27" endPosition="61" />
+    <nodeInfo nodeId="5890305283801268299" fileName="NewModuleUtil.java" startLine="26" startPosition="91" endLine="27" endPosition="52" />
     <nodeInfo nodeId="5890305283801268308" fileName="NewModuleUtil.java" startLine="12" startPosition="28" endLine="14" endPosition="3" />
     <nodeInfo nodeId="5890305283801268195" fileName="NewModuleUtil.java" startLine="15" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="5890305283801268311" fileName="NewModuleUtil.java" startLine="13" startPosition="26" endLine="13" endPosition="26" />
     <scopeInfo nodeId="5890305283801268308" fileName="NewModuleUtil.java" startLine="12" startPosition="28" endLine="14" endPosition="3" />
-    <scopeInfo nodeId="5890305283801268201" fileName="NewModuleUtil.java" startLine="16" startPosition="90" endLine="27" endPosition="61">
+    <scopeInfo nodeId="5890305283801268201" fileName="NewModuleUtil.java" startLine="16" startPosition="90" endLine="27" endPosition="52">
       <varInfo nodeId="5890305283801268221" varName="solutionDescriptor" />
       <varInfo nodeId="5890305283801268231" varName="fileName" />
       <varInfo nodeId="5890305283801268250" varName="modelRoot" />

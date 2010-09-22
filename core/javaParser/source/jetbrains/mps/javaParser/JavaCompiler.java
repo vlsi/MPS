@@ -86,7 +86,7 @@ public class JavaCompiler {
     if (myPrefix == null) {
       return null; //no source files detected
     }
-    String prefixPath = myPrefix.replace('.', File.separatorChar);
+    String prefixPath = NameUtil.pathFromNamespace(myPrefix);
     String sourcePath = mySourceDir.getPath();
     if (prefixPath.endsWith(File.separator)) {
       prefixPath = prefixPath.substring(0, prefixPath.length() - 1);

@@ -62,7 +62,7 @@ public class FileClassPathItem extends RealClassPathItem {
       return null;
     }
 
-    String path = myClassPath + File.separatorChar + name.replace('.', File.separatorChar) + MPSExtentions.DOT_CLASSFILE;
+    String path = myClassPath + File.separatorChar + NameUtil.pathFromNamespace(name) + MPSExtentions.DOT_CLASSFILE;
     IFile file = FileSystem.getInstance().getFileByPath(path);
     try {
       byte[] result = null;
@@ -83,7 +83,7 @@ public class FileClassPathItem extends RealClassPathItem {
   }
 
   public ClassifierKind getClassifierKind(String name) {
-    String path = myClassPath + File.separatorChar + name.replace('.', File.separatorChar) + MPSExtentions.DOT_CLASSFILE;
+    String path = myClassPath + File.separatorChar + NameUtil.pathFromNamespace(name) + MPSExtentions.DOT_CLASSFILE;
     IFile file = FileSystem.getInstance().getFileByPath(path);
     try {
       InputStream inp = null;
@@ -195,7 +195,7 @@ public class FileClassPathItem extends RealClassPathItem {
   public IFile getModelDir(String namespace) {
     checkValidity();
     if (namespace == null) namespace = "";
-    return FileSystem.getInstance().getFileByPath(myClassPath + File.separatorChar + namespace.replace('.', File.separatorChar));
+    return FileSystem.getInstance().getFileByPath(myClassPath + File.separatorChar + NameUtil.pathFromNamespace(namespace));
   }
 
 

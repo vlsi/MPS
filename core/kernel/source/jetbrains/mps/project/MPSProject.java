@@ -305,7 +305,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent,
   //--solutions
 
   @NotNull
-  public Solution addProjectSolution(@NotNull File solutionDescriptionFile) {
+  public Solution addProjectSolution(@NotNull IFile solutionDescriptionFile) {
     ProjectDescriptor projectDescriptor = getProjectDescriptor();
     projectDescriptor.addSolution(solutionDescriptionFile.getAbsolutePath());
     setProjectDescriptor(projectDescriptor);

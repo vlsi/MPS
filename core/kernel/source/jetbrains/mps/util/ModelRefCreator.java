@@ -40,7 +40,7 @@ public class ModelRefCreator {
     if (longName == null) return null;
 
     String namespace = NameUtil.namespaceFromLongName(longName);
-    namespace = namespace.replace(File.separatorChar, '.').replace('/', '.');
+    namespace = NameUtil.namespaceFromPath(namespace);
 
     if (namespacePrefix != null && namespacePrefix.length() > 0) {
       namespace = namespacePrefix + ((namespace.length() > 0) ? "." + namespace : "");

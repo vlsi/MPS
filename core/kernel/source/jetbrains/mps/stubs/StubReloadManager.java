@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.VFileSystem;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

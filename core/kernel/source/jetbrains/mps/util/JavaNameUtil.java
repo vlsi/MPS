@@ -49,12 +49,6 @@ public final class JavaNameUtil {
     return packageNameForModelUID(model.getSModelReference());
   }
 
-  public static String withoutStructure(String ns) {
-    assert ns.endsWith(".structure");
-    ns = ns.substring(0, ns.length() - ".structure".length());
-    return ns;
-  }
-
   public static String packageName(String fqName) {
     if (fqName == null) {
       return fqName;

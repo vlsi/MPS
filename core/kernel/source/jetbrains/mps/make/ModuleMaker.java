@@ -284,7 +284,7 @@ public class ModuleMaker {
       if (cr.getErrors() != null) {
         for (final CategorizedProblem cp : cr.getErrors()) {
           String fileName = new String(cp.getOriginatingFileName());
-          final String fqName = fileName.substring(0, fileName.length() - MPSExtentions.DOT_JAVAFILE.length()).replace(File.separatorChar, '.');
+          final String fqName = NameUtil.namespaceFromPath(fileName.substring(0, fileName.length() - MPSExtentions.DOT_JAVAFILE.length()));
           classesWithErrors.add(fqName);
 
           IModule containingModule = myContainingModules.get(fqName);
@@ -325,7 +325,7 @@ public class ModuleMaker {
           IModule m = myContainingModules.get(containerClassName);
           File classesGen = m.getClassesGen().toFile();
           String packageName = NameUtil.namespaceFromLongName(fqName);
-          File outputDir = new File(classesGen + File.separator + packageName.replace('.', File.separatorChar));
+          File outputDir = new File(classesGen + File.separator + NameUtil.pathFromNamespace(packageName));
           if (!outputDir.exists()) {
             if (!outputDir.mkdirs()) {
               throw new RuntimeException("Can't create " + outputDir.getPath() + " directory");
