@@ -1183,6 +1183,11 @@ public class SModel implements Iterable<SNode> {
         Language lang = GlobalScope.getInstance().getLanguage(namespace);
         if (lang != null) {
           addLanguage_internal(lang.getModuleReference());
+          // add language also to module if necessary
+          IModule module = getModelDescriptor() == null ? null : getModelDescriptor().getModule();
+          if (module != null && module.getModuleDescriptor() != null && !module.getDependenciesManager().getAllUsedLanguages().contains(lang)) {
+            module.addUsedLanguage(lang.getModuleReference());
+          }
         }
       }
     }
