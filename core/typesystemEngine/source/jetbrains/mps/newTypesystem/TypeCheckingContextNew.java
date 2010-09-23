@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.newTypesystem;
 
-import jetbrains.mps.newTypesystem.Difference.Difference;
-import jetbrains.mps.newTypesystem.State.State;
+import jetbrains.mps.newTypesystem.differences.Difference;
+import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.IWrapper;
@@ -34,26 +34,52 @@ import java.util.Stack;
  */
 public class TypeCheckingContextNew extends TypeCheckingContext {
 
-  private State myState = new State();
+  private State myState;
   private Stack<Difference> myDifferenceStack = new Stack<Difference>();
 
   public TypeCheckingContextNew(SNode rootNode, TypeChecker typeChecker) {
     super(rootNode, typeChecker);
+    myState = new State(this);
   }
 
-  private void rollBack() {
+  public void rollBack() {
     if (myDifferenceStack.isEmpty()) {
       return;
     }
-    myDifferenceStack.pop().rollBack(myState);
+    Difference diff = myDifferenceStack.pop();
+    System.out.println("Rolled back (" + diff.getPresentation()+")");
+    diff.rollBack(myState);
   }
 
   @Override
   public void createEquation(IWrapper left, IWrapper right, EquationInfo equationInfo) {
-    myDifferenceStack.add(myState.addEquation(left, right, equationInfo));
+    myState.addEquation(left, right, equationInfo);
+  }
+
+  public void createInequality(IWrapper left, IWrapper right, EquationInfo equationInfo) {
+    myState.addInequality(left, right, true, true, equationInfo);
+  }
+
+  public void createNonConcrete(IWrapper left, IWrapper right, boolean isShallow) {
+    myState.addNonConcrete(left, right, isShallow);
+  }
+
+  @Override
+  public void checkRoot() {
+  }
+
+  public void addDifference(Difference diff) {
+    myDifferenceStack.add(diff);
   }
 
 
-
-
+  ///debug
+  public void printState() {
+    myState.print();
+    System.out.println("---Difference-----");
+    for (Difference diff : myDifferenceStack) {
+      System.out.println(diff.getPresentation());
+    }
+    System.out.println("----------------");
+  }
 }

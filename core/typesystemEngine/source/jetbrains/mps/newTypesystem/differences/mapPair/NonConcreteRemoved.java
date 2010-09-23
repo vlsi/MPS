@@ -13,40 +13,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.State;
+package jetbrains.mps.newTypesystem.differences.mapPair;
 
-
-import jetbrains.mps.newTypesystem.Difference.Difference;
-import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.newTypesystem.states.NonConcreteMapPair;
+import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.typesystem.inference.IWrapper;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Sep 10, 2010
- * Time: 6:09:38 PM
+ * Date: Sep 23, 2010
+ * Time: 6:42:27 PM
  * To change this template use File | Settings | File Templates.
  */
-public class State {
-  private Equations myEquations;
-  private Inequalities myInequalities;
-  private NodeMaps myNodeMaps = new NodeMaps();
-
-  public State() {
-    myEquations = new Equations(this);
-    myInequalities = new Inequalities(this);
+public class NonConcreteRemoved extends MapPairDifference {
+  public NonConcreteRemoved(IWrapper keyType, IWrapper valueType, NonConcreteMapPair mapPair) {
+    super(keyType, valueType, mapPair);
   }
 
-  public Equations getEquations() {
-    return myEquations;
+  @Override
+  public void rollBack(State state) {
+    ((NonConcreteMapPair)myMapPair).add(myKeyType, myValueType);
   }
 
-  public Difference addEquation(IWrapper left, IWrapper right, EquationInfo info) {
-    myEquations.addEquation(left, right);
-    return null;
-  }
-
-  public NodeMaps getNodeMaps() {
-    return myNodeMaps;
+  public String getPresentation() {
+    return "NonConcrete removed " + myKeyType + " " + myValueType;
   }
 }

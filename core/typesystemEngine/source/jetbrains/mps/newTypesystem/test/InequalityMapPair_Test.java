@@ -13,27 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.Difference;
+package jetbrains.mps.newTypesystem.test;
 
-import jetbrains.mps.newTypesystem.State.State;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.ConceptWrapper;
+import jetbrains.mps.typesystem.inference.IWrapper;
+import junit.framework.TestCase;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Sep 15, 2010
- * Time: 1:04:39 PM
+ * Date: Sep 13, 2010
+ * Time: 7:35:24 PM
  * To change this template use File | Settings | File Templates.
  */
-public class NodeToTypeDifference extends Difference{
-  private SNode myNode;
+public class InequalityMapPair_Test extends TestCase {
+  void testSubstitute() {
+   
+    IWrapper var1 = new ConceptWrapper("a");
+    IWrapper var2 = new ConceptWrapper("b");
+    IWrapper var3 = new ConceptWrapper("c");
 
-  public NodeToTypeDifference(SNode node) {
-     myNode = node;
-  }
-
-  @Override
-  public void rollBack(State state) {
-    state.getNodeMaps().rollBackType(myNode);
+    
   }
 }

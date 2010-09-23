@@ -15,7 +15,11 @@
  */
 package jetbrains.mps.newTypesystem.test;
 
+import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
+import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.typesystem.inference.IWrapper;
 import junit.framework.TestCase;
+import org.junit.Test;
 
 /**
  * Created by IntelliJ IDEA.
@@ -25,5 +29,32 @@ import junit.framework.TestCase;
  * To change this template use File | Settings | File Templates.
  */
 public class TestEq extends TestCase{
-  
+
+
+  @Test
+  public void test() {
+    TypeCheckingContextNew tcc = new TypeCheckingContextNew(null, null);
+    IWrapper w1 = new TestWrapper("a");
+    IWrapper w2 = new TestWrapper("b");
+    IWrapper w3 = new TestWrapper("c");
+    IWrapper w4 = new TestWrapper("d");    
+    tcc.createNonConcrete(w2,w4, true);
+    tcc.createNonConcrete(w1,w4, true);
+    tcc.createNonConcrete(w3,w1, true);
+
+    tcc.createInequality(w3, w2, new EquationInfo(null, ""));
+    tcc.createInequality(w1, w4, new EquationInfo(null, ""));
+    tcc.printState();
+    tcc.createEquation(w1,w2,new EquationInfo(null, ""));
+    tcc.printState();
+    tcc.rollBack();
+
+    tcc.printState();
+    tcc.rollBack();
+    tcc.printState();
+    tcc.rollBack();
+    tcc.rollBack();
+    tcc.printState();
+  }
+
 }

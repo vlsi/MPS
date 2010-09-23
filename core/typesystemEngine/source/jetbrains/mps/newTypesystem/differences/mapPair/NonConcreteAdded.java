@@ -13,23 +13,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.Difference;
+package jetbrains.mps.newTypesystem.differences.mapPair;
 
-import jetbrains.mps.newTypesystem.State.State;
+import jetbrains.mps.newTypesystem.states.NonConcreteMapPair;
+import jetbrains.mps.newTypesystem.states.State;
+import jetbrains.mps.typesystem.inference.IWrapper;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Sep 10, 2010
- * Time: 6:11:49 PM
+ * Date: Sep 23, 2010
+ * Time: 6:42:15 PM
  * To change this template use File | Settings | File Templates.
  */
-public abstract class Difference {
-   protected String myName = "";
+public class NonConcreteAdded extends MapPairDifference {
+  public NonConcreteAdded(IWrapper keyType, IWrapper valueType, NonConcreteMapPair mapPair) {
+    super(keyType, valueType, mapPair);
+  }
 
-   public abstract void rollBack(State state);     
+  @Override
+  public void rollBack(State state) {
+    myMapPair.remove(myKeyType, myValueType);
+  }
 
-   public String getName() {
-     return myName;
-   }
+  public String getPresentation() {
+    return "NonConcrete added " + myKeyType + " " + myValueType;
+  }
 }

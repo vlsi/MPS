@@ -13,30 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.Difference;
+package jetbrains.mps.newTypesystem.differences;
 
-import jetbrains.mps.newTypesystem.State.State;
-import jetbrains.mps.typesystem.inference.IWrapper;
+import jetbrains.mps.newTypesystem.states.State;
+import jetbrains.mps.smodel.SNode;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
  * Date: Sep 15, 2010
- * Time: 12:54:50 PM
+ * Time: 1:04:39 PM
  * To change this template use File | Settings | File Templates.
  */
-public class EquationDifference extends Difference {
-  private IWrapper myPrevious;
-  private IWrapper myCurrent;
+public class NodeToTypeDifference extends Difference{
+  private SNode myNode;
 
-  public EquationDifference(IWrapper prev, IWrapper cur) {
-    myPrevious = prev;
-    myCurrent = cur;
-    myName = "Equation added";
+  public NodeToTypeDifference(SNode node) {
+     myNode = node;
   }
 
   @Override
   public void rollBack(State state) {
-    state.getEquations().rollBack(myPrevious, myCurrent);  
+    state.getNodeMaps().rollBackType(myNode);
   }
 }

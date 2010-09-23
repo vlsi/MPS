@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.State;
+package jetbrains.mps.newTypesystem.states;
 
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.smodel.SNode;
