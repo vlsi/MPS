@@ -49,6 +49,7 @@ import com.intellij.openapi.wm.ex.ToolWindowManagerEx;
 import com.intellij.ui.content.*;
 import com.intellij.util.EventDispatcher;
 import com.intellij.util.concurrency.Semaphore;
+import com.intellij.util.containers.ContainerUtil;
 import com.intellij.util.containers.HashMap;
 import jetbrains.mps.util.annotation.Patch;
 import org.jetbrains.annotations.NotNull;
@@ -93,7 +94,7 @@ public class RunContentManagerImpl implements RunContentManager, Disposable {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         if (myProject.isDisposed()) return;
-        ((ToolWindowManagerEx) ToolWindowManager.getInstance(myProject)).addToolWindowManagerListener(new ToolWindowManagerAdapter() {
+        ((ToolWindowManagerEx)ToolWindowManager.getInstance(myProject)).addToolWindowManagerListener(new ToolWindowManagerAdapter() {
           public void stateChanged() {
             if (myProject.isDisposed()) return;
 
@@ -102,7 +103,7 @@ public class RunContentManagerImpl implements RunContentManager, Disposable {
             Set<String> currentWindows = new HashSet<String>();
             String[] toolWindowIds = toolWindowManager.getToolWindowIds();
 
-            currentWindows.addAll(Arrays.asList(toolWindowIds));
+            ContainerUtil.addAll(currentWindows, toolWindowIds);
             myToolwindowIdZbuffer.retainAll(currentWindows);
 
             final String activeToolWindowId = toolWindowManager.getActiveToolWindowId();
@@ -140,13 +141,13 @@ public class RunContentManagerImpl implements RunContentManager, Disposable {
     final ContentManager contentManager = toolWindow.getContentManager();
     class MyDataProvider implements DataProvider {
       private int myInsideGetData = 0;
-
       public Object getData(String dataId) {
-        myInsideGetData++;
+        myInsideGetData ++;
         try {
-          if (PlatformDataKeys.HELP_ID.is(dataId)) {
+          if(PlatformDataKeys.HELP_ID.is(dataId)) {
             return executor.getHelpId();
-          } else {
+          }
+          else {
             return myInsideGetData == 1 ? DataManager.getInstance().getDataContext(contentManager.getComponent()).getData(dataId) : null;
           }
         } finally {
@@ -255,21 +256,22 @@ public class RunContentManagerImpl implements RunContentManager, Disposable {
   }
 
   public void showRunContent(@NotNull final Executor executor, final RunContentDescriptor descriptor) {
-    if (ApplicationManager.getApplication().isUnitTestMode()) return;
+    if(ApplicationManager.getApplication().isUnitTestMode()) return;
 
     final ToolWindow toolWindow = ToolWindowManager.getInstance(myProject).getToolWindow(executor.getToolWindowId());
     final boolean wasInActiveWindow = toolWindow != null && toolWindow.isActive();
 
-    final ContentManager contentManager = getContentManagerForRunner(executor);
+    final ContentManager contentManager  = getContentManagerForRunner(executor);
     RunContentDescriptor oldDescriptor = chooseReuseContentForDescriptor(contentManager, descriptor);
 
     final Content content;
 
-    if (oldDescriptor != null) {
+    if(oldDescriptor != null) {
       content = oldDescriptor.getAttachedContent();
       myEventDispatcher.getMulticaster().contentRemoved(oldDescriptor, executor.getToolWindowId());
       oldDescriptor.dispose(); // is of the same category, can be reused
-    } else {
+    }
+    else {
       content = createNewContent(contentManager, descriptor, executor.getToolWindowId());
       final Icon icon = descriptor.getIcon();
       content.setIcon(icon == null ? executor.getToolWindowIcon() : icon);
@@ -321,18 +323,18 @@ public class RunContentManagerImpl implements RunContentManager, Disposable {
         toolWindow.activate(null);
         // MPS Patch End
         toolWindow.show(null);
-      }
+        }
     });
   }
 
   @Nullable
   public RunContentDescriptor getReuseContent(final Executor requestor, DataContext dataContext) {
-    if (ApplicationManager.getApplication().isUnitTestMode()) return null;
+    if(ApplicationManager.getApplication().isUnitTestMode()) return null;
     return getReuseContent(requestor, GenericProgramRunner.CONTENT_TO_REUSE_DATA_KEY.getData(dataContext));
   }
 
   public RunContentDescriptor getReuseContent(Executor requestor, @Nullable RunContentDescriptor contentToReuse) {
-    if (ApplicationManager.getApplication().isUnitTestMode()) return null;
+    if(ApplicationManager.getApplication().isUnitTestMode()) return null;
     if (contentToReuse != null) return contentToReuse;
 
     final ContentManager contentManager = getContentManagerForRunner(requestor);
@@ -344,7 +346,7 @@ public class RunContentManagerImpl implements RunContentManager, Disposable {
   }
 
   public void showRunContent(@NotNull final Executor info, RunContentDescriptor descriptor, RunContentDescriptor contentToReuse) {
-    if (contentToReuse != null) {
+    if(contentToReuse != null) {
       descriptor.setAttachedContent(contentToReuse.getAttachedContent());
     }
     showRunContent(info, descriptor);
@@ -394,7 +396,8 @@ public class RunContentManagerImpl implements RunContentManager, Disposable {
     final RunContentDescriptor descriptor = getRunContentDescriptorByContent(content);
     if (descriptor == null) {
       return true;
-    } else {
+    }
+    else {
       final ProcessHandler processHandler = descriptor.getProcessHandler();
       return processHandler == null || processHandler.isProcessTerminated();
     }
@@ -418,13 +421,13 @@ public class RunContentManagerImpl implements RunContentManager, Disposable {
   public void addRunContentListener(final RunContentListener listener, final Executor executor) {
     myEventDispatcher.addListener(new MyRunContentListener() {
       public void contentSelected(RunContentDescriptor descriptor, String toolwindowId) {
-        if (toolwindowId.equals(executor.getToolWindowId())) {
+        if(toolwindowId.equals(executor.getToolWindowId())) {
           listener.contentSelected(descriptor);
         }
       }
 
       public void contentRemoved(RunContentDescriptor descriptor, String toolwindowId) {
-        if (toolwindowId.equals(executor.getToolWindowId())) {
+        if(toolwindowId.equals(executor.getToolWindowId())) {
           listener.contentRemoved(descriptor);
         }
       }
@@ -566,7 +569,8 @@ public class RunContentManagerImpl implements RunContentManager, Disposable {
       final boolean destroyProcess;
       if (Boolean.TRUE.equals(processHandler.getUserData(ProcessHandler.SILENTLY_DESTROY_ON_CLOSE))) {
         destroyProcess = true;
-      } else {
+      }
+      else {
         final TerminateRemoteProcessDialog terminateDialog = new TerminateRemoteProcessDialog(myProject, descriptor.getDisplayName(),
           processHandler.detachIsDefault());
         terminateDialog.show();
@@ -575,7 +579,8 @@ public class RunContentManagerImpl implements RunContentManager, Disposable {
       }
       if (destroyProcess) {
         processHandler.destroyProcess();
-      } else {
+      }
+      else {
         processHandler.detachProcess();
       }
       waitForProcess(descriptor);
@@ -584,63 +589,55 @@ public class RunContentManagerImpl implements RunContentManager, Disposable {
   }
 
   private void waitForProcess(final RunContentDescriptor descriptor) {
-    String progressTitle = ExecutionBundle.message("terminating.process.progress.title", descriptor.getDisplayName());
-
     ProgressManager.getInstance().runProcessWithProgressSynchronously(new Runnable() {
-      private ProgressIndicator myProgressIndicator;
-      private final Semaphore mySemaphore = new Semaphore();
+      public void run() {
+        final Semaphore semaphore = new Semaphore();
+        semaphore.down();
 
-      private final Runnable myWaitThread = new Runnable() {
-        public void run() {
-          descriptor.getProcessHandler().waitFor();
-          mySemaphore.up();
-        }
-      };
-
-      private final Runnable myCancelListener = new Runnable() {
-        public void run() {
-          while (true) {
-            if (myProgressIndicator != null && (myProgressIndicator.isCanceled() || !myProgressIndicator.isRunning())) {
-              mySemaphore.up();
-              break;
-            }
+        ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
+          public void run() {
+            final ProcessHandler processHandler = descriptor.getProcessHandler();
             try {
-              synchronized (this) {
-                wait(2000);
+              if (processHandler != null) {
+                processHandler.waitFor();
               }
             }
-            catch (InterruptedException ignore) {
+            finally {
+              semaphore.up();
             }
           }
+        });
+
+        final ProgressIndicator progressIndicator = ProgressManager.getInstance().getProgressIndicator();
+
+        if (progressIndicator != null) {
+          progressIndicator.setText(ExecutionBundle.message("waiting.for.vm.detach.progress.text"));
+          ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
+            public void run() {
+              while(true) {
+                if(progressIndicator.isCanceled() || !progressIndicator.isRunning()) {
+                  semaphore.up();
+                  break;
+                }
+                try {
+                  synchronized (this) {
+                    wait(2000L);
+                  }
+                }
+                catch (InterruptedException ignore) {
+                }
+              }
+            }
+          });
         }
-      };
 
-      @Patch
-      public void run() {
-        myProgressIndicator = ProgressManager.getInstance().getProgressIndicator();
-        if (myProgressIndicator != null) {
-          myProgressIndicator.setText(ExecutionBundle.message("waiting.for.vm.detach.progress.text"));
-        }
-        // MPS Patch Start
-        // mySemaphore.down was executed after pooled thread ops, moved here in order to fix
-        // MPS-8458 MPS hanged forever waiting for a process to die (while apparently the process is dead already).
-        // fixed in newest idea versions
-        // TODO remove hack after platform update
-        mySemaphore.down();
-
-        ApplicationManager.getApplication().executeOnPooledThread(myWaitThread);
-        ApplicationManager.getApplication().executeOnPooledThread(myCancelListener);
-
-        // MPS Patch End
-        
-        mySemaphore.waitFor();
+        semaphore.waitFor();
       }
-    }, progressTitle, true, myProject);
+    }, ExecutionBundle.message("terminating.process.progress.title", descriptor.getDisplayName()), true, myProject);
   }
 
   public interface MyRunContentListener extends EventListener {
     void contentSelected(RunContentDescriptor descriptor, String toolwindowId);
-
-    void contentRemoved(RunContentDescriptor descriptor, String toolwindowId);
+    void contentRemoved (RunContentDescriptor descriptor, String toolwindowId);
   }
 }
