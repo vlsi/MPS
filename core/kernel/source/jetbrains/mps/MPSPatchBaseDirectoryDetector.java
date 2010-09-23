@@ -16,14 +16,10 @@
 
 package jetbrains.mps;
 
-import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.changes.patch.PatchBaseDirectoryDetector;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.psi.PsiDirectory;
-import com.intellij.psi.PsiFile;
 import com.intellij.psi.search.FilenameIndex;
-import com.intellij.psi.search.FilenameIndex.FileNavigationItem;
 import com.intellij.psi.search.GlobalSearchScope;
 import jetbrains.mps.util.annotation.Patch;
 import org.jetbrains.annotations.Nullable;
@@ -39,7 +35,6 @@ public class MPSPatchBaseDirectoryDetector extends PatchBaseDirectoryDetector {
   }
 
   @Nullable
-  @Patch
   public Result detectBaseDirectory(final String patchFileName) {
     String[] nameComponents = patchFileName.split("/");
     String patchName = nameComponents[nameComponents.length - 1];
@@ -47,10 +42,10 @@ public class MPSPatchBaseDirectoryDetector extends PatchBaseDirectoryDetector {
       return null;
     }
     // MPS Patch Start
-    final NavigationItem[] psiFiles = FilenameIndex.getFilesByName(myProject, patchName, GlobalSearchScope.allScope(myProject));
+    final Collection<VirtualFile> vfiles = FilenameIndex.getVirtualFilesByName(myProject, patchName, GlobalSearchScope.allScope(myProject));
     // MPS Patch End
-    if (psiFiles.length == 1) {
-      VirtualFile parent = ((FileNavigationItem)psiFiles[0]).getVirtualFile().getParent();
+    if (vfiles.size() == 1) {
+      VirtualFile parent = vfiles.iterator().next().getParent();
       for (int i = nameComponents.length - 2; i >= 0; i--) {
         if (!parent.getName().equals(nameComponents[i]) || parent == myProject.getBaseDir()) {
           return new Result(parent.getPresentableUrl(), i + 1);
