@@ -729,6 +729,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     public Component getTreeCellRendererComponent(JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row, boolean hasFocus) {
       Color foreground;
       Color additionalForeground;
+      setOpaque(false);
       if (selected) {
         foreground = UIManager.getColor("Tree.selectionForeground");
         additionalForeground = foreground;
