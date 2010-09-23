@@ -17,13 +17,10 @@
 package com.intellij.psi.search;
 
 import com.intellij.ide.impl.ProjectUtil;
-import com.intellij.navigation.ItemPresentation;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ex.ApplicationEx;
-import com.intellij.openapi.editor.colors.TextAttributesKey;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vcs.FileStatus;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.ArrayUtil;
 import com.intellij.util.indexing.*;
@@ -32,10 +29,7 @@ import com.intellij.util.io.KeyDescriptor;
 import jetbrains.mps.util.annotation.Patch;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
-import javax.swing.Icon;
-import java.io.File;
 import java.util.*;
 
 /**
@@ -111,103 +105,4 @@ public class FilenameIndex extends ScalarIndexExtension<String> {
     }
   }
 
-  @Patch
-  public static class FileNavigationItem implements NavigationItem {
-    private String name;
-    private VirtualFile file;
-    private Project project;
-
-    public FileNavigationItem(String name, VirtualFile file, Project project) {
-      this.name = name;
-      this.file = file;
-      this.project = project;
-    }
-
-    public VirtualFile getVirtualFile() {
-      return file;
-    }
-
-    @Override
-    public String getName() {
-      return name;
-    }
-
-    @Override
-    public ItemPresentation getPresentation() {
-      return new ItemPresentation() {
-        @Override
-        public String getPresentableText() {
-          return name;
-        }
-
-        @Override
-        public String getLocationString() {
-          return getContainerText();
-        }
-
-        //copied from IDEA's class GotoFileCellRenderer
-        private String getContainerText() {
-          final String directory = file.getPath();
-          if (directory == null) return null;
-          final String relativePath = getRelativePath(project);
-          if (relativePath == null) return "( " + File.separator + " )";
-          return "(" + relativePath + ")";
-        }
-
-        //copied from IDEA's class GotoFileCellRenderer
-        @Nullable
-        private String getRelativePath(final Project project) {
-          String url = file.getPresentableUrl();
-          if (project == null) {
-            return url;
-          }
-          final VirtualFile baseDir = project.getBaseDir();
-          if (baseDir != null) {
-            //noinspection ConstantConditions
-            final String projectHomeUrl = baseDir.getPresentableUrl();
-            if (url.startsWith(projectHomeUrl)) {
-              final String cont = url.substring(projectHomeUrl.length());
-              if (cont.length() == 0) return null;
-              url = "..." + cont;
-            }
-          }
-          return url;
-        }
-
-        @Override
-        public Icon getIcon(boolean open) {
-          return file.getIcon();
-        }
-
-        @Override
-        public TextAttributesKey getTextAttributesKey() {
-          return null;
-        }
-      };
-    }
-
-    @Override
-    public FileStatus getFileStatus() {
-      return FileStatus.NOT_CHANGED;
-    }
-
-    @Override
-    public void navigate(boolean requestFocus) {
-    }
-
-    @Override
-    public boolean canNavigate() {
-      return true;
-    }
-
-    @Override
-    public boolean canNavigateToSource() {
-      return true;
-    }
-
-    @Override
-    public String toString() {
-      return getName();
-    }
-  }
 }
