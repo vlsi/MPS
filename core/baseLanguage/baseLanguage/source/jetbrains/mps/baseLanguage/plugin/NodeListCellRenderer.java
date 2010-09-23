@@ -13,15 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.intellij.ide.util;
+package jetbrains.mps.baseLanguage.plugin;
 
-import com.intellij.ide.ui.UISettings;
-import com.intellij.openapi.ui.popup.PopupChooserBuilder;
-import com.intellij.psi.PsiElement;
 import com.intellij.ui.ColoredListCellRenderer;
-import com.intellij.ui.ListSpeedSearch;
 import com.intellij.ui.SimpleTextAttributes;
-import com.intellij.util.Function;
 import com.intellij.util.ui.UIUtil;
 import org.jetbrains.annotations.Nullable;
 
@@ -32,8 +27,6 @@ import java.awt.Component;
 import java.awt.Font;
 import java.util.Comparator;
 
-//copied from PsiElementListCellRenderer in IDEA, patched for nodes
-// TODO if so, this class should not be here, in idea-patch
 public abstract class NodeListCellRenderer<T> extends JPanel implements ListCellRenderer {
   protected NodeListCellRenderer() {
     super(new BorderLayout());
@@ -99,10 +92,6 @@ public abstract class NodeListCellRenderer<T> extends JPanel implements ListCell
 
   @Nullable
   protected DefaultListCellRenderer getRightCellRenderer() {
-    if (UISettings.getInstance().SHOW_ICONS_IN_QUICK_NAVIGATION) {
-      return null;
-      //return ModuleRendererFactory.getInstance().getModuleRenderer();
-    }
     return null;
   }
 
@@ -123,34 +112,6 @@ public abstract class NodeListCellRenderer<T> extends JPanel implements ListCell
         String elementText = getElementText(element);
         String containerText = getContainerText(element, elementText);
         return containerText != null ? elementText + " " + containerText : elementText;
-      }
-    };
-  }
-
-  public void installSpeedSearch(PopupChooserBuilder builder) {
-    builder.setFilteringEnabled(new Function<Object, String>() {
-      public String fun(Object o) {
-        if (o instanceof PsiElement) {
-          return NodeListCellRenderer.this.getElementText((T) o);
-        } else {
-          return o.toString();
-        }
-      }
-    });
-  }
-
-  /**
-   * User {@link #installSpeedSearch(com.intellij.openapi.ui.popup.PopupChooserBuilder)} instead
-   */
-  @Deprecated
-  public void installSpeedSearch(JList list) {
-    new ListSpeedSearch(list) {
-      protected String getElementText(Object o) {
-        if (o instanceof PsiElement) {
-          return NodeListCellRenderer.this.getElementText((T) o);
-        } else {
-          return o.toString();
-        }
       }
     };
   }
