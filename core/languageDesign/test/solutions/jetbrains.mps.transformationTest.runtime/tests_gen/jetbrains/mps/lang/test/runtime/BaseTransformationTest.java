@@ -5,6 +5,7 @@ package jetbrains.mps.lang.test.runtime;
 import junit.framework.TestCase;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.kernel.model.TemporaryModelOwner;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.idea.LoggerFactory;
 import com.intellij.openapi.project.Project;
@@ -16,8 +17,7 @@ import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.generator.TransientModelsModule;
+import jetbrains.mps.smodel.ProjectModels;
 import jetbrains.mps.generator.impl.CloneUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.lang.reflect.InvocationTargetException;
@@ -28,6 +28,7 @@ public class BaseTransformationTest extends TestCase {
   private SModelDescriptor myModel;
   private SModelDescriptor myTransidentModel;
   private MPSProject myProject;
+  private TemporaryModelOwner myModelOwner;
 
   public BaseTransformationTest() {
     Logger.setFactory(LoggerFactory.getInstance());
@@ -60,12 +61,14 @@ public class BaseTransformationTest extends TestCase {
   }
 
   public final void setModelDescriptor(SModelDescriptor modelDescriptor) {
-    this.myModel = modelDescriptor;
-    ModuleContext context = ModuleContext.create(this.myModel, this.myProject.getProject());
-    TransientModelsModule module = context.getComponent(TransientModelsModule.class);
-    this.myTransidentModel = module.createTestModel("testTransidentModel", "testTransidentModel");
-    CloneUtil.cloneModel(this.myModel.getSModel(), this.myTransidentModel.getSModel(), false);
-    this.myTransidentModel.getSModel().validateLanguagesAndImports();
+    myModel = modelDescriptor;
+    myTransidentModel = ProjectModels.createDescriptorFor(myModelOwner = new TemporaryModelOwner());
+    myTransidentModel.getSModel().runLoadingAction(new Runnable() {
+      public void run() {
+        CloneUtil.cloneModel(myModel.getSModel(), myTransidentModel.getSModel(), false);
+      }
+    });
+    myTransidentModel.getSModel().validateLanguagesAndImports();
   }
 
   public void runTest(final String className, final String methodName, final boolean runInCommand) throws Throwable {
@@ -97,7 +100,8 @@ public class BaseTransformationTest extends TestCase {
     }
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        SModelRepository.getInstance().removeModelDescriptor(BaseTransformationTest.this.myTransidentModel);
+        SModelRepository.getInstance().removeModelDescriptor(myTransidentModel);
+        myModelOwner.unregisterModelOwner();
       }
     });
     if (exception[0] != null) {
