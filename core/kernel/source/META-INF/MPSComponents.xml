@@ -459,10 +459,6 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.save.ProjectSaveChecker</implementation-class>
-    </component>
-
-    <component>
       <implementation-class>jetbrains.mps.library.ProjectLibraryManager</implementation-class>
     </component>
 
