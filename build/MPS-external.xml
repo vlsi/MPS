@@ -28,6 +28,7 @@
     <mkdir dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources/plugin" />
     <mkdir dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources/resources" />
     <mkdir dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources/workbench" />
+    <mkdir dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources/testbench" />
     <mkdir dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources" />
     <mkdir dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp" />
     <mkdir dir="${deploy.dir}/MPS/lib/idea-patch.jar.tmp" />
@@ -74,12 +75,6 @@
     <copy todir="${deploy.dir}/MPS/lib">
       <fileset dir="${mps_home}/lib" excludes="**/*.zip, **/*.iml, **/*.iws" includes="*.java, **/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
-    <copy todir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp">
-      <fileset dir="${mps_home}/source" excludes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, **/classes/**/trace.info, **/*.zip, **/*.iml, **/*.iws" includes="**/*.java, **/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
-    </copy>
-    <copy todir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp">
-      <fileset dir="${mps_home}/tests" excludes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, **/classes/**/trace.info, **/*.zip, **/*.iml, **/*.iws" includes="**/*.java, **/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
-    </copy>
     <copy todir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources/core">
       <fileset dir="${mps_home}/core" excludes="**/sandbox/**, **/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, **/classes/**/trace.info, **/*.zip, **/*.iml, **/*.iws" includes="**/*.java, **/*.java, **/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
@@ -94,6 +89,9 @@
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources/workbench">
       <fileset dir="${mps_home}/workbench" excludes="**/sandbox/**, **/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, **/classes/**/trace.info, **/*.zip, **/*.iml, **/*.iws" includes="**/*.java, **/*.java, **/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp/help-build.repack.sources/testbench">
+      <fileset dir="${mps_home}/testbench" excludes="**/sandbox/**, **/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, **/classes/**/trace.info, **/*.zip, **/*.iml, **/*.iws" includes="**/*.java, **/*.java, **/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
     <antcall target="help-build.repack.sources" inheritall="true">
       <param name="deploy.dir" value="${deploy.dir}" />
