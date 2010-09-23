@@ -35,7 +35,6 @@ public class GenerationFilter {
   private Map<String, String> myGenerationHashes;
   private GenerationDependencies mySavedDependencies;
   private IntermediateModelsCache myCache;
-  private IntermediateModelsCache myNewCache;
 
   public GenerationFilter(SModelDescriptor model, IOperationContext operationContext, GenerationOptions options, String planSignature) {
     myModel = model;
@@ -70,31 +69,23 @@ public class GenerationFilter {
     }
   }
 
-  public void storeModel(int step, SModel model) {
-    if(myNewCache == null) {
-      return;
-    }
-
-    myNewCache.storeModel(step, model);
-  }
-
-  public void createNewCache() {
+  public IntermediateModelsCache createNewCache() {
     if (!myGenerationOptions.isIncremental()) {
-      return;
+      return null;
     }
 
     GenerationCacheContainer incrementalCacheContainer = myGenerationOptions.getIncrementalCacheContainer();
     if(incrementalCacheContainer == null) {
-      return;
+      return null;
     }
 
     String currentHash = myGenerationHashes.get(ModelDigestHelper.FILE);
     ModelCacheContainer cacheContainer = incrementalCacheContainer.getCache(myModel, currentHash, true);
     if(cacheContainer == null) {
-      return;
+      return null;
     }
 
-    myNewCache = new IntermediateModelsCache(cacheContainer, myPlanSignature);
+    return new IntermediateModelsCache(cacheContainer, myPlanSignature);
   }
 
   private void loadCaches(GenerationDependencies dependencies) {
@@ -103,13 +94,7 @@ public class GenerationFilter {
       return;
     }
 
-    String currentHash = myGenerationHashes.get(ModelDigestHelper.FILE);
     String oldHash = dependencies.getModelHash();
-    if(currentHash.equals(oldHash)) {
-      // regenerating model, do not use caches
-      return;
-    }
-
     ModelCacheContainer cacheContainer = incrementalCacheContainer.getCache(myModel, oldHash, false);
     if(cacheContainer == null) {
       return;
@@ -118,18 +103,6 @@ public class GenerationFilter {
     IntermediateModelsCache c = IntermediateModelsCache.load(cacheContainer);
     if(c != null && myPlanSignature.equals(c.getSignature())) {
       myCache = c;
-    }
-  }
-
-  public void cleanup(boolean success) {
-    if(myNewCache == null) {
-      return;
-    }
-
-    if(success) {
-      myNewCache.store();
-    } else {
-      myNewCache.remove();
     }
   }
 

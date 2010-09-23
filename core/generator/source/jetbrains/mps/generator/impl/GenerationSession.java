@@ -17,6 +17,7 @@ package jetbrains.mps.generator.impl;
 
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.*;
+import jetbrains.mps.generator.impl.cache.IntermediateModelsCache;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
@@ -57,6 +58,7 @@ public class GenerationSession {
   private final GenerationSessionLogger myLogger;
   private DependenciesBuilder myDependenciesBuilder;
 
+  private IntermediateModelsCache myNewCache;
   private GenerationSessionContext mySessionContext;
   private IPerformanceTracer ttrace;
 
@@ -110,7 +112,7 @@ public class GenerationSession {
 
     boolean success = false;
 
-    filter.createNewCache();
+    myNewCache = filter.createNewCache();
     try {
       SModel currInputModel = myOriginalInputModel.getSModel();
       SModel currOutput = null;
@@ -123,7 +125,6 @@ public class GenerationSession {
         //ttrace.push("step " + (myMajorStep + 1), false);
         currOutput = executeMajorStep(currInputModel);
         //ttrace.pop();
-        filter.storeModel(myMajorStep, currOutput);
         if (currOutput == null || myLogger.getErrorCount() > 0) {
           break;
         }
@@ -157,7 +158,13 @@ public class GenerationSession {
       myLogger.error("model \"" + myOriginalInputModel.getSModelReference().getSModelFqName() + "\" generation failed : " + e);
       return new GenerationStatus.ERROR(myOriginalInputModel.getSModel());
     } finally {
-      filter.cleanup(success);
+      if(myNewCache != null) {
+        if(success) {
+          myNewCache.store();
+        } else {
+          myNewCache.remove();
+        }
+      }
     }
   }
 
@@ -282,21 +289,26 @@ public class GenerationSession {
 
   private boolean applyRules(SModel currentInputModel, SModel currentOutputModel, final boolean isPrimary,
                              RuleManager ruleManager) throws GenerationFailureException, GenerationCanceledException {
+    boolean result;
     myDependenciesBuilder.setOutputModel(currentOutputModel);
     final TemplateGenerator tg =
       myGenerationOptions.isGenerateInParallel()
         ? new ParallelTemplateGenerator(myController, mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentOutputModel, myGenerationOptions, myDependenciesBuilder, ttrace)
         : new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentOutputModel, myGenerationOptions, myDependenciesBuilder, ttrace);
     if (tg instanceof ParallelTemplateGenerator) {
-      return GeneratorUtil.runReadInWrite(new GenerationComputable<Boolean>() {
+      result = GeneratorUtil.runReadInWrite(new GenerationComputable<Boolean>() {
         @Override
         public Boolean compute() throws GenerationCanceledException, GenerationFailureException {
           return tg.apply(isPrimary);
         }
       });
     } else {
-      return tg.apply(isPrimary);
+      result = tg.apply(isPrimary);
     }
+    if(isPrimary && myNewCache != null) {
+      myNewCache.storeModel(myMajorStep, currentOutputModel, tg.getMappings());
+    }
+    return result;
   }
 
   private SModel preProcessModel(RuleManager ruleManager, SModel currentInputModel) throws GenerationFailureException {

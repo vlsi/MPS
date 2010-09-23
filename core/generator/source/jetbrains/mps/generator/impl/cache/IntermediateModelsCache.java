@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.impl.cache;
 
 import jetbrains.mps.generator.GenerationCacheContainer.ModelCacheContainer;
+import jetbrains.mps.generator.impl.GeneratorMappings;
 import jetbrains.mps.smodel.SModel;
 
 import java.io.IOException;
@@ -64,7 +65,7 @@ public class IntermediateModelsCache {
     return null;
   }
 
-  public void storeModel(int step, SModel model) {
+  public void storeModel(int step, SModel model, GeneratorMappings mappings) {
     try {
       OutputStream stream = myCacheContainer.createStream(STEP + step);
       TransientModelPersistence.saveModel(model, stream);

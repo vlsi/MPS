@@ -81,7 +81,7 @@ public class GeneratorCacheComponent implements ApplicationComponent {
           }
         }
 
-        File hashDir = new File(modelCacheDir, hash);
+        File hashDir = new File(modelCacheDir, create ? hash + ".gen" : hash);
         if(!hashDir.exists()) {
           if(!create) {
             return null;
@@ -133,10 +133,16 @@ public class GeneratorCacheComponent implements ApplicationComponent {
       if(myReadOnly) {
         return;
       }
-      for (File child : myFolder.listFiles()) {
-        if(!myHash.equals(child.getName())) {
-          FileUtil.delete(child);
+      try {
+        for (File child : myFolder.listFiles()) {
+          if(!myHashDir.getName().equals(child.getName())) {
+            FileUtil.delete(child);
+          }
         }
+
+        myHashDir.renameTo(new File(myFolder, myHash));
+      } catch(SecurityException ex) {
+        LOG.error(ex);
       }
     }
 
@@ -145,7 +151,11 @@ public class GeneratorCacheComponent implements ApplicationComponent {
       if(myReadOnly) {
         return;
       }
-      FileUtil.delete(myHashDir);
+      try {
+        FileUtil.delete(myHashDir);
+      } catch(SecurityException ex) {
+        LOG.error(ex);
+      }
     }
   }
 }
