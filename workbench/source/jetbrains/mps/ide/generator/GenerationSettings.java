@@ -231,6 +231,14 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     myState.myIncremental = isIncremental;
   }
 
+  public boolean isIncrementalUseCache() {
+    return myState.myIncrementalUseCache;
+  }
+
+  public void setIncrementalUseCache(boolean incrementalUseCache) {
+    myState.myIncrementalUseCache = incrementalUseCache;
+  }
+
   public enum GenerateRequirementsPolicy {
     ALWAYS("Always generate"), ASK("Ask"), NEVER("Never generate");
 
@@ -262,6 +270,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     private boolean myShowWarnings = true;
     private boolean myKeepModelsWithWarnings = true;
     private boolean myIncremental = false;
+    private boolean myIncrementalUseCache = true;
 
     public int getNumberOfModelsToKeep() {
       return myNumberOfModelsToKeep;
@@ -365,6 +374,14 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
 
     public void setIncremental(boolean incremental) {
       myIncremental = incremental;
+    }
+
+    public boolean isIncrementalUseCache() {
+      return myIncrementalUseCache;
+    }
+
+    public void setIncrementalUseCache(boolean incrementalUseCache) {
+      myIncrementalUseCache = incrementalUseCache;
     }
   }
 }

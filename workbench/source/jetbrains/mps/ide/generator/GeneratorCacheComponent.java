@@ -22,6 +22,7 @@ import jetbrains.mps.generator.GenerationCacheContainer;
 import jetbrains.mps.generator.GenerationCacheContainer.ModelCacheContainer;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.*;
@@ -134,8 +135,7 @@ public class GeneratorCacheComponent implements ApplicationComponent {
       }
       for (File child : myFolder.listFiles()) {
         if(!myHash.equals(child.getName())) {
-          // TODO FileUtil.delete(child);
-          LOG.debug("trying to delete " + child.getAbsolutePath());
+          FileUtil.delete(child);
         }
       }
     }
@@ -145,8 +145,7 @@ public class GeneratorCacheComponent implements ApplicationComponent {
       if(myReadOnly) {
         return;
       }
-      // TODO FileUtil.delete(myHashDir);
-      LOG.debug("trying to delete " + myHashDir.getAbsolutePath());
+      FileUtil.delete(myHashDir);
     }
   }
 }

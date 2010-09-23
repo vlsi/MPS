@@ -204,7 +204,10 @@ public class GeneratorFacade {
           ? project.getComponent(GenerationTracer.class)
           : new NullGenerationTracer();
 
-        GenerationCacheContainer cacheContainer = GeneratorCacheComponent.getInstance().getCache();
+        GenerationCacheContainer cacheContainer = null;
+        if(settings.isIncremental() && settings.isIncrementalUseCache()) {
+          cacheContainer = GeneratorCacheComponent.getInstance().getCache();
+        }
 
         GenerationOptions options = GenerationOptions.getDefaults()
           .saveTransientModels(saveTransientModels)
