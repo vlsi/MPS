@@ -731,26 +731,9 @@ public class SModel implements Iterable<SNode> {
 
   @NotNull
   public Set<SModelDescriptor> getDependenciesModels() {
-    Set<SModelDescriptor> modelDescriptors = new HashSet<SModelDescriptor>();
-    Set<Language> languages = new HashSet<Language>();
-    Set<Language> frontier = new HashSet<Language>(getLanguages(GlobalScope.getInstance()));
-    Set<Language> newFrontier = new HashSet<Language>();
-    while (!frontier.isEmpty()) {
-      for (Language l : frontier) {
-        if (languages.contains(l)) continue;
-        languages.add(l);
-        newFrontier.addAll(l.getExtendedLanguages());
-      }
-      frontier = newFrontier;
-      newFrontier = new HashSet<Language>();
-    }
-    for (Language language : languages) {
-      for (SModelDescriptor modelDescriptor : language.getAspectModelDescriptors()) {
-        modelDescriptors.add(modelDescriptor);
-      }
-    }
-    for (SModelDescriptor modelDescriptor : allImportedModels(GlobalScope.getInstance())) {
-      modelDescriptors.add(modelDescriptor);
+    Set<SModelDescriptor> modelDescriptors = new HashSet<SModelDescriptor>(allImportedModels(GlobalScope.getInstance()));
+    for (Language language : getLanguages(GlobalScope.getInstance())) {
+      modelDescriptors.addAll(language.getAspectModelDescriptors());
     }
     return modelDescriptors;
   }
