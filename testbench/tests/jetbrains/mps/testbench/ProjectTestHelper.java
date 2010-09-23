@@ -170,6 +170,13 @@ public class ProjectTestHelper {
 
     List<Cycle> order = myGenerationCycle.computeGenerationOrder(project);
 
+    if (System.getProperty("per.root.generation") != null) {
+      boolean perRootGeneration = Boolean.parseBoolean(System.getProperty("per.root.generation"));
+      GenerationSettings.getInstance().setParallelGenerator(perRootGeneration);
+      GenerationSettings.getInstance().setStrictMode(perRootGeneration);
+      Testbench.LOG.info("Per-root generation set to " + perRootGeneration);
+    }
+
     for (Cycle cycle : order) {
       doGenerate(gm, cycle);
     }
