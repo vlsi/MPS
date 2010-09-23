@@ -198,9 +198,11 @@ public class RootDependenciesBuilder implements DependenciesReadListener {
     return isUnchanged;
   }
 
-  public void loadDependencies(GenerationRootDependencies previous) {
-    mySavedDependencies = previous;
-    isUnchanged = true;
+  public void loadDependencies(GenerationRootDependencies previous, boolean isRequired) {
+    if(!isRequired) {
+      mySavedDependencies = previous;
+      isUnchanged = true;
+    }
   }
 
   public GenerationRootDependencies getSavedDependencies() {

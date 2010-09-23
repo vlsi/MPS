@@ -102,6 +102,10 @@ public class GenerationSession {
         return new GenerationStatus(myOriginalInputModel.getSModel(), null,
           myDependenciesBuilder.getResult(myInvocationContext), false, false, false);
       }
+
+      if(!filter.getRequiredRoots().isEmpty() || filter.requireConditionals()) {
+        myLogger.info((!filter.requireConditionals() ? "" : "descriptors and ") + filter.getRequiredRoots().size() + " roots can be used from cache");
+      }
     }
 
     boolean success = false;

@@ -43,7 +43,7 @@ public class GenerationFilter {
     myOperationContext = operationContext;
     myPlanSignature = planSignature;
     myUnchangedRoots = Collections.emptySet();
-    myRequiredRoots = null;
+    myRequiredRoots = Collections.emptySet();
     myConditionalsUnchanged = false;
     myConditionalsRequired = false;
     init();
@@ -64,7 +64,7 @@ public class GenerationFilter {
     if (dependencies != null && myGenerationHashes != null) {
       loadCaches(dependencies);
       analyzeDependencies(dependencies);
-      if (!myUnchangedRoots.isEmpty() || myConditionalsUnchanged) {
+      if (canOptimize()) {
         mySavedDependencies = dependencies;
       }
     }
@@ -142,12 +142,16 @@ public class GenerationFilter {
     return Collections.unmodifiableSet(myUnchangedRoots);
   }
 
-  public boolean isDirty(SNode root) {
-    return !myUnchangedRoots.contains(root);
+  public Set<SNode> getRequiredRoots() {
+    return Collections.unmodifiableSet(myRequiredRoots);
   }
 
   public boolean canIgnoreConditionals() {
-    return !myConditionalsUnchanged;
+    return myConditionalsUnchanged;
+  }
+
+  public boolean requireConditionals() {
+    return myConditionalsRequired;
   }
 
   public int getRootsCount() {
@@ -296,9 +300,11 @@ public class GenerationFilter {
     // at this point unchanged roots can be excluded from generation at all (there is no
     // references/dependency between them and dirty roots)
 
-    myRequiredRoots.removeAll(myUnchangedRoots);
-    if(myConditionalsUnchanged) {
-      myConditionalsRequired = false;
+    if(!myRequiredRoots.isEmpty()) {
+      myRequiredRoots.removeAll(myUnchangedRoots);
+      if(myConditionalsUnchanged) {
+        myConditionalsRequired = false;
+      }
     }
   }
 
@@ -462,17 +468,20 @@ public class GenerationFilter {
     }
 
     for (SNode root : myUnchangedRoots) {
-      propagateDependencies(result.getRootBuilder(root), mySavedDependencies.getDependenciesFor(root.getId()));
+      propagateDependencies(result.getRootBuilder(root), mySavedDependencies.getDependenciesFor(root.getId()), false);
     }
-    if (myConditionalsUnchanged) {
-      propagateDependencies(result.getRootBuilder(null), mySavedDependencies.getDependenciesFor(ModelDigestHelper.HEADER));
+    for (SNode root : myRequiredRoots) {
+      propagateDependencies(result.getRootBuilder(root), mySavedDependencies.getDependenciesFor(root.getId()), true);
+    }
+    if (myConditionalsUnchanged || myConditionalsRequired) {
+      propagateDependencies(result.getRootBuilder(null), mySavedDependencies.getDependenciesFor(ModelDigestHelper.HEADER), myConditionalsRequired);
     }
 
     return result;
   }
 
-  private void propagateDependencies(RootDependenciesBuilder builder, GenerationRootDependencies deps) {
+  private void propagateDependencies(RootDependenciesBuilder builder, GenerationRootDependencies deps, boolean isRequired) {
     assert deps.getHash().equals(builder.getHash());
-    builder.loadDependencies(deps);
+    builder.loadDependencies(deps, isRequired);
   }
 }
