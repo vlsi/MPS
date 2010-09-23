@@ -1,5 +1,5 @@
 /*
- * Copyright 2000-2009 JetBrains s.r.o.
+ * Copyright 2003-2010 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,8 +37,8 @@ import com.intellij.openapi.ui.popup.JBPopupListener;
 import com.intellij.openapi.ui.popup.LightweightWindowEvent;
 import com.intellij.openapi.util.IconLoader;
 import com.intellij.psi.PsiFile;
-import com.intellij.psi.search.FilenameIndex.FileNavigationItem;
 import com.intellij.navigation.NavigationItem;
+import jetbrains.mps.MPSGoToFileContributor.FileNavigationItem;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.BoxLayout;
@@ -80,6 +80,7 @@ public class GotoFileAction extends GotoActionBase implements DumbAware {
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           @Patch
           public void run() {
+            //patched in order to navigate to our files, not using PSI
             if (item instanceof FileNavigationItem) {
               final OpenFileDescriptor descriptor =
                   new OpenFileDescriptor(project, ((FileNavigationItem) item).getVirtualFile(), popup.getLinePosition(), popup.getColumnPosition());
