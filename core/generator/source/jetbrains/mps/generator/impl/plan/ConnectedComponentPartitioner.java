@@ -165,6 +165,7 @@ public class ConnectedComponentPartitioner {
   public class Component {
     private final SNode[] roots;
     private final Component[] dependsOn;
+    private boolean isDirty;
 
     public Component(SNode[] roots, Component[] dependsOn) {
       this.roots = roots;
@@ -177,6 +178,14 @@ public class ConnectedComponentPartitioner {
 
     public Component[] getDependsOn() {
       return dependsOn;
+    }
+
+    public boolean isDirty() {
+      return isDirty;
+    }
+
+    public void setDirty(boolean dirty) {
+      isDirty = dirty;
     }
   }
 }

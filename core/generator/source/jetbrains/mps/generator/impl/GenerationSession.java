@@ -92,12 +92,12 @@ public class GenerationSession {
     GenerationFilter filter = new GenerationFilter(myOriginalInputModel, myInvocationContext, myGenerationOptions, myGenerationPlan.getSignature());
     myDependenciesBuilder = filter.createDependenciesBuilder();
 
-    if (!filter.getUnchangedRoots().isEmpty() || !filter.areConditionalsDirty()) {
-      int unchanged = filter.getUnchangedRoots().size();
+    if (filter.canOptimize()) {
+      int ignored = filter.getIgnoredRoots().size();
       int total = filter.getRootsCount();
-      myLogger.info((filter.areConditionalsDirty() ? "" : "descriptors and ") + unchanged + " of " + total + " roots are unchanged");
+      myLogger.info((!filter.canIgnoreConditionals() ? "" : "descriptors and ") + ignored + " of " + total + " roots are unchanged");
 
-      if (total > 0 && unchanged == total && !filter.areConditionalsDirty()) {
+      if (total > 0 && ignored == total && filter.canIgnoreConditionals()) {
         myLogger.info("generated files are up-to-date");
         return new GenerationStatus(myOriginalInputModel.getSModel(), null,
           myDependenciesBuilder.getResult(myInvocationContext), false, false, false);

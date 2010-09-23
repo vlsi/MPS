@@ -8,6 +8,7 @@ import jetbrains.mps.generator.impl.cache.IntermediateModelsCache;
 import jetbrains.mps.generator.impl.dependencies.*;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder.NullDependenciesBuilder;
 import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner;
+import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner.Component;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
@@ -27,8 +28,10 @@ public class GenerationFilter {
   private IOperationContext myOperationContext;
   private final String myPlanSignature;
   private Set<SNode> myUnchangedRoots;
-  private int myRootsCount;
+  private Set<SNode> myRequiredRoots;
   private boolean myConditionalsUnchanged;
+  private boolean myConditionalsRequired;
+  private int myRootsCount;
   private Map<String, String> myGenerationHashes;
   private GenerationDependencies mySavedDependencies;
   private IntermediateModelsCache myCache;
@@ -40,7 +43,9 @@ public class GenerationFilter {
     myOperationContext = operationContext;
     myPlanSignature = planSignature;
     myUnchangedRoots = Collections.emptySet();
+    myRequiredRoots = null;
     myConditionalsUnchanged = false;
+    myConditionalsRequired = false;
     init();
   }
 
@@ -128,7 +133,12 @@ public class GenerationFilter {
     }
   }
 
-  public Set<SNode> getUnchangedRoots() {
+  public boolean canOptimize() {
+    return !myUnchangedRoots.isEmpty() || myConditionalsUnchanged ||
+      !myRequiredRoots.isEmpty() || myConditionalsRequired;
+  }
+
+  public Set<SNode> getIgnoredRoots() {
     return Collections.unmodifiableSet(myUnchangedRoots);
   }
 
@@ -136,7 +146,7 @@ public class GenerationFilter {
     return !myUnchangedRoots.contains(root);
   }
 
-  public boolean areConditionalsDirty() {
+  public boolean canIgnoreConditionals() {
     return !myConditionalsUnchanged;
   }
 
@@ -144,9 +154,9 @@ public class GenerationFilter {
     return myRootsCount;
   }
 
-  private void analyzeDependencies(@NotNull GenerationDependencies dependencies) {
+  private void analyzeDependencies(@NotNull GenerationDependencies oldDependencies) {
 
-    GenerationRootDependencies commonDeps = dependencies.getDependenciesFor(ModelDigestHelper.HEADER);
+    GenerationRootDependencies commonDeps = oldDependencies.getDependenciesFor(ModelDigestHelper.HEADER);
     if (commonDeps == null) {
       return;
     }
@@ -162,7 +172,7 @@ public class GenerationFilter {
 
     // collect changed models
     Set<String> changedModels = new HashSet<String>();
-    Map<String, String> externalHashes = dependencies.getExternalHashes();
+    Map<String, String> externalHashes = oldDependencies.getExternalHashes();
     for (Entry<String, String> entry : externalHashes.entrySet()) {
       String modelReference = entry.getKey();
       SModelDescriptor sm = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(modelReference));
@@ -188,12 +198,11 @@ public class GenerationFilter {
     // collect unchanged roots (same hash; external dependencies are unchanged)
     List<SNode> rootsList = myModel.getSModel().getRoots();
     myRootsCount = rootsList.size();
-    Map<String, SNode> rootById = new HashMap<String, SNode>();
 
     myUnchangedRoots = new HashSet<SNode>();
     for (SNode root : rootsList) {
       String id = root.getId();
-      GenerationRootDependencies rd = dependencies.getDependenciesFor(id);
+      GenerationRootDependencies rd = oldDependencies.getDependenciesFor(id);
       String oldHash;
       if (rd == null || (oldHash = rd.getHash()) == null) {
         continue;
@@ -219,23 +228,59 @@ public class GenerationFilter {
       return;
     }
 
-    for (SNode root : rootsList) {
-      rootById.put(root.getId(), root);
+    // calculate which unchanged roots should be re-generated according with
+    // saved dependencies and references between roots
+
+    myConditionalsUnchanged = true;
+
+    Map<String, Set<String>> savedDep = getDependencies(oldDependencies, myUnchangedRoots);
+    ConnectedComponentPartitioner partitioner = null;
+    boolean changed;
+
+    // Phase 1: build closure using strongly connected components (only if we have cache)
+    if(myCache != null) {
+      closureUsingSavedDependencies(savedDep);
+
+      if (myUnchangedRoots.isEmpty() && myConditionalsUnchanged == false) {
+        return;
+      }
+
+      partitioner = new ConnectedComponentPartitioner(rootsList);
+      Component[] strongComponents = partitioner.partitionStrong();
+      changed = closureUsingStrongComponents(strongComponents, savedDep);
+
+      // repeat
+      while (changed) {
+        if (myUnchangedRoots.isEmpty() && myConditionalsUnchanged == false) {
+          return;
+        }
+        changed = closureUsingSavedDependencies(savedDep);
+        if (changed) {
+          changed = closureUsingStrongComponents(strongComponents, savedDep);
+        }
+      }
+
+      // at this point dirty component can depend on "clean" component: we need to
+      // load "clean" component roots from cache
+      myRequiredRoots = new HashSet<SNode>(myUnchangedRoots);
+      myConditionalsRequired = myConditionalsUnchanged;
     }
 
-    // closure using saved dependencies graph
-    myConditionalsUnchanged = true;
-    Map<String, Set<String>> savedDep = getDependenciesWithoutOrientation(dependencies, myUnchangedRoots);
+
+    // Phase 2: build closure using connected components
+    addIncomingDependencies(oldDependencies, savedDep);
     closureUsingSavedDependencies(savedDep);
 
-    if (myUnchangedRoots.isEmpty()) {
+    if (myUnchangedRoots.isEmpty() && myConditionalsUnchanged == false) {
       return;
     }
 
     // closure using current dependencies
-    ConnectedComponentPartitioner partitioner = new ConnectedComponentPartitioner(rootsList);
+    if(partitioner == null) {
+      partitioner = new ConnectedComponentPartitioner(rootsList);
+    }
     List<SNode[]> components = partitioner.partition();
-    boolean changed = closureUsingReferences(components, savedDep);
+    changed = closureUsingReferences(components, savedDep);
 
     // repeat
     while (changed) {
@@ -247,8 +292,19 @@ public class GenerationFilter {
         changed = closureUsingReferences(components, savedDep);
       }
     }
+
+    // at this point unchanged roots can be excluded from generation at all (there is no
+    // references/dependency between them and dirty roots)
+
+    myRequiredRoots.removeAll(myUnchangedRoots);
+    if(myConditionalsUnchanged) {
+      myConditionalsRequired = false;
+    }
   }
 
+  /*
+   *
+   */
   private boolean closureUsingReferences(List<SNode[]> components, Map<String, Set<String>> dep) {
     boolean result = false;
     for (SNode[] component : components) {
@@ -272,6 +328,46 @@ public class GenerationFilter {
     return result;
   }
 
+  /*
+   *  1. all roots in a single component should have the same dirty state
+   *  2. unchanged component which has dependency on dirty component is marked as dirty
+   *
+   *  components array is topologically sorted
+   */
+  private boolean closureUsingStrongComponents(Component[] components, Map<String, Set<String>> dep) {
+    boolean result = false;
+    for(int i = 0; i < components.length; i++) {
+      Component component = components[i];
+      boolean hasUnchanged = false;
+      boolean hasChanged = false;
+      for (SNode n : component.getRoots()) {
+        if (myUnchangedRoots.contains(n)) {
+          hasUnchanged = true;
+        } else {
+          hasChanged = true;
+        }
+      }
+      for(Component c : component.getDependsOn()) {
+        if(c.isDirty()) {
+          hasChanged = true;
+        }
+      }
+      if (hasUnchanged && hasChanged) {
+        for (SNode n : component.getRoots()) {
+          if(myUnchangedRoots.remove(n)) {
+            dep.remove(n.getId());
+            result = true;
+          }
+        }
+      }
+      component.setDirty(hasChanged);
+    }
+    return result;
+  }
+
+  /*
+   *  unchanged root which has dependency on dirty root is marked as dirty
+   */
   private boolean closureUsingSavedDependencies(Map<String, Set<String>> dep) {
     boolean result = false;
     boolean changed = true;
@@ -310,7 +406,26 @@ public class GenerationFilter {
     return result;
   }
 
-  private static Map<String, Set<String>> getDependenciesWithoutOrientation(GenerationDependencies dependencies, Set<SNode> selectedRoots) {
+  private static void addIncomingDependencies(GenerationDependencies dependencies, Map<String, Set<String>> graph) {
+    for (GenerationRootDependencies rd : dependencies.getRootDependencies()) {
+      String id = rd.getRootId();
+      if (id == null) {
+        id = CONDITIONALS_ID;
+      }
+      // reversed
+      if (rd.isDependsOnConditionals()) {
+        graph.get(CONDITIONALS_ID).add(id);
+      }
+      for (String s : rd.getLocal()) {
+        Set<String> r = graph.get(s);
+        if (r != null) {
+          r.add(id);
+        }
+      }
+    }
+  }
+
+  private static Map<String, Set<String>> getDependencies(GenerationDependencies dependencies, Set<SNode> selectedRoots) {
     Map<String, Set<String>> graph = new HashMap<String, Set<String>>();
     for (SNode n : selectedRoots) {
       graph.put(n.getId(), new HashSet<String>());
@@ -326,16 +441,6 @@ public class GenerationFilter {
         currentDeps.addAll(rd.getLocal());
         if (rd.isDependsOnConditionals()) {
           currentDeps.add(CONDITIONALS_ID);
-        }
-      }
-      // reversed
-      if (rd.isDependsOnConditionals()) {
-        graph.get(CONDITIONALS_ID).add(id);
-      }
-      for (String s : rd.getLocal()) {
-        Set<String> r = graph.get(s);
-        if (r != null) {
-          r.add(id);
         }
       }
     }
