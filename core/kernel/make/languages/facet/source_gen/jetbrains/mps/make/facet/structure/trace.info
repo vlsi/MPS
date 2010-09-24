@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="IFacet.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.make.facet.structure.IFacet" />
+  <unitInfo fileName="Facet_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.make.facet.structure.Facet_Language" />
+  <unitInfo fileName="TargetConfiguration.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.make.facet.structure.TargetConfiguration" />
+  <unitInfo fileName="TargetDependency.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.make.facet.structure.TargetDependency" />
+  <unitInfo fileName="FacetDeclaration.java" startLine="14" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.make.facet.structure.FacetDeclaration" />
+  <unitInfo fileName="TargetDeclaration.java" startLine="14" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.make.facet.structure.TargetDeclaration" />
+</debugInfo>
+

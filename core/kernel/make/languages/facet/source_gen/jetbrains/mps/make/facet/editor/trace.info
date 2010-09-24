@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="TargetDependency_Editor.java" startLine="91" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.make.facet.editor.TargetDependency_Editor$_Inline_x08tk8_a1a" />
+  <unitInfo fileName="FacetDeclaration_Editor.java" startLine="150" startPosition="0" endLine="182" endPosition="0" unitName="jetbrains.mps.make.facet.editor.FacetDeclaration_Editor$_Inline_aj8zjo_a2a0" />
+  <unitInfo fileName="TargetDeclaration_Editor.java" startLine="169" startPosition="0" endLine="201" endPosition="0" unitName="jetbrains.mps.make.facet.editor.TargetDeclaration_Editor$_Inline_xfdsch_a2a0" />
+  <unitInfo fileName="FacetDeclaration_Editor.java" startLine="183" startPosition="0" endLine="220" endPosition="0" unitName="jetbrains.mps.make.facet.editor.FacetDeclaration_Editor$targetDeclarationListHandler_aj8zjo_a1b0" />
+  <unitInfo fileName="TargetDeclaration_Editor.java" startLine="202" startPosition="0" endLine="239" endPosition="0" unitName="jetbrains.mps.make.facet.editor.TargetDeclaration_Editor$dependencyListHandler_xfdsch_a1b0" />
+  <unitInfo fileName="TargetDependency_Editor.java" startLine="19" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.make.facet.editor.TargetDependency_Editor" />
+  <unitInfo fileName="FacetDeclaration_Editor.java" startLine="29" startPosition="0" endLine="221" endPosition="0" unitName="jetbrains.mps.make.facet.editor.FacetDeclaration_Editor" />
+  <unitInfo fileName="TargetDeclaration_Editor.java" startLine="30" startPosition="0" endLine="240" endPosition="0" unitName="jetbrains.mps.make.facet.editor.TargetDeclaration_Editor" />
+</debugInfo>
+

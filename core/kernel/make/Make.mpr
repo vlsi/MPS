@@ -5,8 +5,11 @@
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="MPSProject">
-    <projectSolutions />
+    <projectSolutions>
+      <solutionPath path="${project}/solutions/jetbrains.mps.make.sandbox/jetbrains.mps.make.sandbox.msd" />
+    </projectSolutions>
     <projectLanguages>
+      <languagePath path="${project}/languages/facet/facet.mpl" />
       <languagePath path="${project}/languages/script/script.mpl" folder="" />
     </projectLanguages>
     <projectDevkits />
