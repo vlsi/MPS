@@ -108,8 +108,11 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
     currentOutputModel = model;
   }
 
-  public SNode getOriginalRoot(SNode outputNode) {
-    return currentToOriginalMap.get(outputNode);
+  public SNode getOriginalForOutput(SNode outputNode) {
+    if(nextStepToOriginalMap == null) {
+      return null;
+    }
+    return nextStepToOriginalMap.get(outputNode);
   }
 
   @Override

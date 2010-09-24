@@ -33,40 +33,26 @@ public class TransientModelPersistence {
 
   private static final int VERSION = 1;
 
-  public static void saveModel(SModel sourceModel, OutputStream stream) throws IOException {
-    ObjectOutputStream os = new ObjectOutputStream(new BufferedOutputStream(stream));
-    try {
-      os.writeInt(VERSION);
-      os.writeUTF(sourceModel.getSModelReference().toString());
-      saveNodes(sourceModel.getRoots(), os);
-    } finally {
-      os.close();
-    }
+  public static void saveModel(SModel sourceModel, ObjectOutputStream os) throws IOException {
+    os.writeInt(VERSION);
+    os.writeUTF(sourceModel.getSModelReference().toString());
+    saveNodes(sourceModel.getRoots(), os);
   }
 
-  public static SModel loadModel(InputStream stream) throws IOException {
-    ObjectInputStream is = new ObjectInputStream(new BufferedInputStream(stream));
-    try {
-      int version = is.readInt();
-      if (version != VERSION) {
-        return null;
-      }
-
-      String modelReference = is.readUTF();
-      SModel m = new TransientSModel(SModelReference.fromString(modelReference));
-      m.setLoading(true);
-      try {
-        List<SNode> roots = loadNodes(m, is);
-        for(SNode root : roots) {
-          m.addRoot(root);
-        }
-      } catch(ClassNotFoundException ex) {
-        throw new IOException("cannot load: " + ex.toString());
-      }
-      return m;
-    } finally {
-      is.close();
+  public static SModel loadModel(ObjectInputStream is) throws IOException, ClassNotFoundException {
+    int version = is.readInt();
+    if (version != VERSION) {
+      return null;
     }
+
+    String modelReference = is.readUTF();
+    SModel m = new TransientSModel(SModelReference.fromString(modelReference));
+    m.setLoading(true);
+    List<SNode> roots = loadNodes(m, is);
+    for(SNode root : roots) {
+      m.addRoot(root);
+    }
+    return m;
   }
 
   private static void saveNodes(Collection<SNode> nodes, ObjectOutputStream os) throws IOException {

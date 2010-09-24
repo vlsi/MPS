@@ -16,13 +16,8 @@
 package jetbrains.mps.generator.impl.cache;
 
 import jetbrains.mps.generator.GenerationCacheContainer.ModelCacheContainer;
-import jetbrains.mps.generator.impl.GeneratorMappings;
-import jetbrains.mps.smodel.SModel;
 
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
+import java.io.*;
 
 /**
  * Evgeny Gryaznov, Sep 21, 2010
@@ -65,14 +60,33 @@ public class IntermediateModelsCache {
     return null;
   }
 
-  public void storeModel(int step, SModel model, GeneratorMappings mappings) {
+  public void store(int step, TransientModelWithMetainfo model) {
     try {
       OutputStream stream = myCacheContainer.createStream(STEP + step);
-      TransientModelPersistence.saveModel(model, stream);
-
+      ObjectOutputStream os = new ObjectOutputStream(new BufferedOutputStream(stream));
+      try {
+        model.save(os);
+      } finally {
+        os.close();
+      }
     } catch (IOException e) {
       isOk = false;
     }
+  }
+
+  public TransientModelWithMetainfo load(int step) {
+    try {
+      InputStream stream = myCacheContainer.openStream(STEP + step);
+      ObjectInputStream is = new ObjectInputStream(new BufferedInputStream(stream));
+      try {
+        return TransientModelWithMetainfo.load(is);
+      } finally {
+        is.close();
+      }
+    } catch (IOException e) {
+      isOk = false;
+    }
+    return null;
   }
 
   public void store() {

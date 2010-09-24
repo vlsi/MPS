@@ -31,8 +31,10 @@ public interface GenerationCacheContainer {
 
   public interface ModelCacheContainer {
 
+    @NotNull
     InputStream openStream(String name) throws IOException;
 
+    @NotNull
     OutputStream createStream(String name) throws IOException;
 
     void commit();

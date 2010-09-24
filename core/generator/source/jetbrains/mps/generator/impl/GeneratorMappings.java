@@ -2,6 +2,7 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
+import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
@@ -152,5 +153,8 @@ public class GeneratorMappings {
   public boolean isInputNodeHasUniqueCopiedOutputNode(SNode inputNode) {
     Object o = myCopiedOutputNodeForInputNode.get(inputNode);
     return !(o instanceof List);
+  }
+
+  public void serialize(TransientModelWithMetainfo to) {
   }
 }

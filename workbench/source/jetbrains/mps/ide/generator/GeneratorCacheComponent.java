@@ -114,13 +114,14 @@ public class GeneratorCacheComponent implements ApplicationComponent {
       myReadOnly = readOnly;
     }
 
-
     @Override
+    @NotNull
     public InputStream openStream(String name) throws IOException {
       return new FileInputStream(new File(myHashDir, name));
     }
 
     @Override
+    @NotNull
     public OutputStream createStream(String name) throws IOException {
       if(myReadOnly) {
         throw new IOException("cannot create stream in read-only cache");

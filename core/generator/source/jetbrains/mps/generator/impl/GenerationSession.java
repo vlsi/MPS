@@ -18,6 +18,7 @@ package jetbrains.mps.generator.impl;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.impl.cache.IntermediateModelsCache;
+import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
@@ -306,7 +307,8 @@ public class GenerationSession {
       result = tg.apply(isPrimary);
     }
     if(isPrimary && myNewCache != null) {
-      myNewCache.storeModel(myMajorStep, currentOutputModel, tg.getMappings());
+      TransientModelWithMetainfo modelWithMetaInfo = TransientModelWithMetainfo.create(currentOutputModel, tg.getMappings(), myDependenciesBuilder);
+      myNewCache.store(myMajorStep, modelWithMetaInfo);
     }
     return result;
   }
