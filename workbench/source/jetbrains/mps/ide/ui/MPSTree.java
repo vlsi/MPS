@@ -26,6 +26,8 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.openapi.wm.impl.IdeFocusManagerHeadless;
+import com.intellij.ui.ColoredTreeCellRenderer;
+import com.intellij.ui.SimpleTextAttributes;
 import com.intellij.ui.TreeToolTipHandler;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
@@ -40,7 +42,6 @@ import javax.swing.*;
 import javax.swing.event.TreeExpansionEvent;
 import javax.swing.event.TreeExpansionListener;
 import javax.swing.event.TreeWillExpandListener;
-import javax.swing.plaf.basic.BasicGraphicsUtils;
 import javax.swing.tree.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -712,36 +713,12 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     myTreeNodeListeners.clear();
   }
 
-  protected static class NewMPSTreeCellRenderer extends JPanel implements TreeCellRenderer {
-    private JLabel myMainTextLabel = new JLabel();
-    private JLabel myAdditionalTextLabel = new JLabel();
-    private boolean mySelected;
-    private boolean myHasFocus;
-    private MPSTreeNode myNode;
-
-    public NewMPSTreeCellRenderer() {
-      setLayout(new BorderLayout());
-      setOpaque(false);
-      add(myMainTextLabel, BorderLayout.CENTER);
-      add(myAdditionalTextLabel, BorderLayout.EAST);
-    }
-
-    public Component getTreeCellRendererComponent(JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row, boolean hasFocus) {
-      Color foreground;
-      Color additionalForeground;
-      setOpaque(false);
-      if (selected) {
-        foreground = UIManager.getColor("Tree.selectionForeground");
-        additionalForeground = foreground;
-      } else {
-        foreground = UIManager.getColor("Tree.textForeground");
-        additionalForeground = Color.GRAY;
-      }
-      myMainTextLabel.setForeground(foreground);
-      myAdditionalTextLabel.setForeground(additionalForeground);
-
-      Icon icon = null;
-      String text = value.toString();
+  protected static class NewMPSTreeCellRenderer extends ColoredTreeCellRenderer {
+    @Override
+    public void customizeCellRenderer(JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row, boolean hasFocus) {
+      SimpleTextAttributes foregroundAttributes = SimpleTextAttributes.REGULAR_ATTRIBUTES;
+      Icon icon;
+      String text;
       String additionalText = null;
       if (value instanceof MPSTreeNode) {
         MPSTreeNode treeNode = (MPSTreeNode) value;
@@ -749,28 +726,23 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
         text = treeNode.getText();
         additionalText = treeNode.getAdditionalText();
 
-        Font newFont = tree.getFont().deriveFont(treeNode.getFontStyle());
-        myMainTextLabel.setFont(newFont);
-        myAdditionalTextLabel.setFont(tree.getFont());
-
+        int style = SimpleTextAttributes.STYLE_PLAIN;
+        Color foregroundColor = null;
         if (!selected) {
-          myMainTextLabel.setForeground(treeNode.getColor());
+          foregroundColor = treeNode.getColor();
         }
-        myNode = treeNode;
-      } else {
-        myMainTextLabel.setFont(tree.getFont());
-        myAdditionalTextLabel.setFont(tree.getFont());
-        myNode = null;
-      }
 
-      myMainTextLabel.setText(text);
-      if (additionalText != null) {
-        myAdditionalTextLabel.setText(" (" + additionalText + ") ");
-      } else {
-        myAdditionalTextLabel.setText(" ");
-      }
+        Color waveColor = null;
+        if (treeNode.getAggregatedErrorState() != ErrorState.NONE) {
+          waveColor = treeNode.getAggregatedErrorState() == ErrorState.ERROR ? Color.RED : Color.YELLOW;
+          style = style | SimpleTextAttributes.STYLE_WAVED;
+        }
 
-      if (icon == null) {
+        if (foregroundColor != null || waveColor != null) {
+          foregroundAttributes = new SimpleTextAttributes(style, foregroundColor, waveColor);
+        }
+      } else {
+        text = value.toString();
         if (leaf) {
           icon = UIManager.getIcon("Tree.leafIcon");
         } else if (expanded) {
@@ -779,57 +751,14 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
           icon = UIManager.getIcon("Tree.closedIcon");
         }
       }
-      myMainTextLabel.setIcon(icon);
-      mySelected = selected;
-      myHasFocus = hasFocus;
 
-      return this;
-    }
-
-    public void paint(Graphics g) {
-      Color background;
-      if (mySelected) {
-        background = UIManager.getColor("Tree.selectionBackground");
+      append(text, foregroundAttributes);
+      if (additionalText != null) {
+        append(" (" + additionalText + ") ", SimpleTextAttributes.GRAY_ATTRIBUTES);
       } else {
-        background = UIManager.getColor("Tree.textBackground");
-        if (background == null) {
-          background = getBackground();
-        }
+        append(" ", SimpleTextAttributes.GRAY_ATTRIBUTES);
       }
-
-      int imageOffset;
-      Icon icon = myMainTextLabel.getIcon();
-      if (icon != null) {
-        imageOffset = icon.getIconWidth() + Math.max(0, myMainTextLabel.getIconTextGap() - 1);
-      } else {
-        imageOffset = 0;
-      }
-
-      if (background != null) {
-        g.setColor(background);
-        g.fillRect(imageOffset, 0, getWidth() - imageOffset, getHeight());
-      }
-
-      if (myHasFocus) {
-        Boolean drawDashedFocusIndicator = (Boolean) UIManager.get("Tree.drawDashedFocusIndicator");
-        if (drawDashedFocusIndicator != null && drawDashedFocusIndicator) {
-          BasicGraphicsUtils.drawDashedRect(g, imageOffset, 0, getWidth() - imageOffset - 1, getHeight() - 1);
-        } else {
-          g.setColor(UIManager.getColor("Tree.selectionBorderColor"));
-          g.drawRect(imageOffset, 0, getWidth() - imageOffset - 1, getHeight() - 1);
-        }
-      }
-
-      super.paint(g);
-
-      if (myNode != null && myNode.getAggregatedErrorState() != ErrorState.NONE) {
-        if (myNode.getAggregatedErrorState() == ErrorState.ERROR) {
-          g.setColor(Color.RED);
-        } else {
-          g.setColor(Color.YELLOW);
-        }
-        ColorAndGraphicsUtil.drawWave(g, imageOffset, getWidth(), getHeight() - ColorAndGraphicsUtil.WAVE_HEIGHT - 1);
-      }
+      setIcon(icon);
     }
   }
 
