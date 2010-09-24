@@ -273,10 +273,6 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.runconfigs.RunConfigInitializer</implementation-class>
-    </component>
-
-    <component>
       <implementation-class>jetbrains.mps.ide.blame.dialog.BlameDialogComponent</implementation-class>
     </component>
 
