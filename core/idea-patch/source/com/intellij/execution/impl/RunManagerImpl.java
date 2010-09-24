@@ -65,26 +65,7 @@ public class RunManagerImpl extends RunManagerEx implements JDOMExternalizable, 
     myTypes = new ConfigurationType[0];
   }
 
-  @Patch
-  // separate method needed for tests
-  public final void initializeConfigurationTypes(@NotNull final ConfigurationType[] factories) {
-    Arrays.sort(factories, new Comparator<ConfigurationType>() {
-      public int compare(final ConfigurationType o1, final ConfigurationType o2) {
-        return o1.getDisplayName().compareTo(o2.getDisplayName());
-      }
-    });
 
-    final ArrayList<ConfigurationType> types = new ArrayList<ConfigurationType>(Arrays.asList(factories));
-    types.add(UnknownConfigurationType.INSTANCE);
-    myTypes = types.toArray(new ConfigurationType[types.size()]);
-
-    for (final ConfigurationType type : factories) {
-      myTypesByName.put(type.getId(), type);
-    }
-
-    final UnknownConfigurationType broken = UnknownConfigurationType.INSTANCE;
-    myTypesByName.put(broken.getId(), broken);
-  }
 
   /*
   * For usage in RunConfigManager class
@@ -310,6 +291,26 @@ public class RunManagerImpl extends RunManagerEx implements JDOMExternalizable, 
     }
 
     return configurationTypes;
+  }
+
+  // separate method needed for tests
+  public final void initializeConfigurationTypes(@NotNull final ConfigurationType[] factories) {
+    Arrays.sort(factories, new Comparator<ConfigurationType>() {
+      public int compare(final ConfigurationType o1, final ConfigurationType o2) {
+        return o1.getDisplayName().compareTo(o2.getDisplayName());
+      }
+    });
+
+    final ArrayList<ConfigurationType> types = new ArrayList<ConfigurationType>(Arrays.asList(factories));
+    types.add(UnknownConfigurationType.INSTANCE);
+    myTypes = types.toArray(new ConfigurationType[types.size()]);
+
+    for (final ConfigurationType type : factories) {
+      myTypesByName.put(type.getId(), type);
+    }
+
+    final UnknownConfigurationType broken = UnknownConfigurationType.INSTANCE;
+    myTypesByName.put(broken.getId(), broken);
   }
 
   /**
