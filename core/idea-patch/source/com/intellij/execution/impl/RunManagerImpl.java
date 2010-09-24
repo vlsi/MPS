@@ -65,43 +65,6 @@ public class RunManagerImpl extends RunManagerEx implements JDOMExternalizable, 
     myTypes = new ConfigurationType[0];
   }
 
-
-
-  /*
-  * For usage in RunConfigManager class
-  */
-  @Patch
-  public ConfigurationType[] getConfigurationTypes() {
-    final ConfigurationType[] configurationTypes = Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP);
-    final List<ConfigurationType> result = new ArrayList<ConfigurationType>();
-    Set<String> uniqTypes = new HashSet<String>();
-    for (ConfigurationType type : configurationTypes) {
-      if (!uniqTypes.contains(type.getClass().getName())) {
-        result.add(type);
-        uniqTypes.add(type.getClass().getName());
-      }
-    }
-    return result.toArray(new ConfigurationType[result.size()]);
-  }
-
-  // used in RunConfigurable
-  public void removeConfigurations(@NotNull final ConfigurationType type) {
-
-    //for (Iterator<Pair<RunConfiguration, JavaProgramRunner>> it = myRunnerPerConfigurationSettings.keySet().iterator(); it.hasNext();) {
-    //  final Pair<RunConfiguration, JavaProgramRunner> pair = it.next();
-    //  if (type.equals(pair.getFirst().getType())) {
-    //    it.remove();
-    //  }
-    //}
-    for (Iterator<RunnerAndConfigurationSettings> it = getSortedConfigurations().iterator(); it.hasNext();) {
-      final RunnerAndConfigurationSettings configuration = it.next();
-      final ConfigurationType configurationType = configuration.getType();
-      if (configurationType != null && type.getId().equals(configurationType.getId())) {
-        it.remove();
-      }
-    }
-  }
-
   @Patch
   @Override
   public Collection<RunnerAndConfigurationSettings> getSortedConfigurations() {
@@ -189,6 +152,17 @@ public class RunManagerImpl extends RunManagerEx implements JDOMExternalizable, 
     }
     return settings;
   }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -311,6 +285,17 @@ public class RunManagerImpl extends RunManagerEx implements JDOMExternalizable, 
 
     final UnknownConfigurationType broken = UnknownConfigurationType.INSTANCE;
     myTypesByName.put(broken.getId(), broken);
+  }
+
+  // used in RunConfigurable
+  public void removeConfigurations(@NotNull final ConfigurationType type) {
+    for (Iterator<RunnerAndConfigurationSettings> it = getSortedConfigurations().iterator(); it.hasNext();) {
+      final RunnerAndConfigurationSettings configuration = it.next();
+      final ConfigurationType configurationType = configuration.getType();
+      if (configurationType != null && type.getId().equals(configurationType.getId())) {
+        it.remove();
+      }
+    }
   }
 
   /**
