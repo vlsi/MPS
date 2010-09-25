@@ -23,6 +23,7 @@ import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.openapi.vcs.impl.AbstractVcsHelperImpl;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.WindowManager;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalOperationContext;
 import jetbrains.mps.project.ModuleContext;
@@ -114,7 +115,7 @@ public class VcsHelper {
   }
 
   private static boolean showDiffDialog(final SModel diskModel, final SModel memoryModel, IFile modelFile, final Project project) {
-    final VirtualFile file = modelFile.toVirtualFile();
+    final VirtualFile file = VirtualFileUtils.getVirtualFile(modelFile);
     LOG.assertLog(file != null);
 
     final ModelDifferenceDialog dialog = ModelAccess.instance().runReadAction(new Computable<ModelDifferenceDialog>() {
@@ -148,7 +149,7 @@ public class VcsHelper {
   }  
 
   public static boolean showMergeDialog(final SModel base, final SModel mine, final SModel repo, IFile modelFile, final Project project) {
-    final VirtualFile file = modelFile.toVirtualFile();
+    final VirtualFile file = VirtualFileUtils.getVirtualFile(modelFile);
     LOG.assertLog(file != null);
 
     final MergeModelsDialog dialog = ModelAccess.instance().runReadAction(new Computable<MergeModelsDialog>() {

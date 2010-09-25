@@ -30,6 +30,7 @@ import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.findUsages.ProxyFindUsagesManager;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.*;
@@ -37,7 +38,6 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.VFileSystem;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.jetbrains.annotations.NotNull;
 
@@ -176,7 +176,7 @@ public class FastFindUsagesManager extends FindUsagesManager {
       if (!(sm instanceof EditableSModelDescriptor)) continue;
       IFile modelFile = ((EditableSModelDescriptor) sm).getModelFile();
       if (modelFile == null) continue;
-      scopeFiles.add(modelFile.toVirtualFile());
+      scopeFiles.add(VirtualFileUtils.getVirtualFile(modelFile));
     }
     return scopeFiles;
   }
@@ -223,7 +223,7 @@ public class FastFindUsagesManager extends FindUsagesManager {
     }
     Set<SNode> result = new HashSet<SNode>();
     for (VirtualFile file : candidates) {
-      SModelDescriptor sm = SModelRepository.getInstance().findModel(VFileSystem.toIFile(file));
+      SModelDescriptor sm = SModelRepository.getInstance().findModel(VirtualFileUtils.toIFile(file));
       if (sm == null) continue;
       sm.getSModel();
       if (isExact) {
@@ -241,7 +241,7 @@ public class FastFindUsagesManager extends FindUsagesManager {
     final Set<VirtualFile> candidates = getCandidates(scopeFiles, nodeId);
     Set<SReference> result = new HashSet<SReference>();
     for (VirtualFile file : candidates) {
-      SModelDescriptor sm = SModelRepository.getInstance().findModel(VFileSystem.toIFile(file));
+      SModelDescriptor sm = SModelRepository.getInstance().findModel(VirtualFileUtils.toIFile(file));
       if (sm == null) continue;
       sm.getSModel();
       result.addAll(new ModelFindOperations(sm).findUsages(node));

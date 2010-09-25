@@ -5,6 +5,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.Processor;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.lang.stubs.structure.LibraryStubDescriptor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
@@ -17,7 +18,6 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.Hack;
-import jetbrains.mps.vfs.FileSystem;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -397,8 +397,7 @@ public class StubReloadManager implements ApplicationComponent {
 
     private long getTimestamp() {
       //todo this can be rewritten using filesystem listeners
-      FileSystem fileSystem = FileSystem.getInstance();
-      VirtualFile file = fileSystem.getVirtualFile(fileSystem.getFileByPath(myStubPath.getPath()));
+      VirtualFile file = VirtualFileUtils.getVirtualFile(myStubPath.getPath());
       if (file == null) return 0L;
       final long[] timeStamp = {file.getTimeStamp()};
       VfsUtil.processFilesRecursively(file, new Processor<VirtualFile>() {

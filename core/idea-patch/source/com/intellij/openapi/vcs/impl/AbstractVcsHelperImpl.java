@@ -80,11 +80,11 @@ import com.intellij.util.ui.ConfirmationDialog;
 import com.intellij.util.ui.ErrorTreeView;
 import com.intellij.util.ui.MessageCategory;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.annotation.Patch;
 import jetbrains.mps.vcs.VcsMigrationUtil;
-import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -717,7 +717,7 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
     List<VirtualFile> toMerge = new ArrayList<VirtualFile>();
     List<VirtualFile> alreadyResolved = new ArrayList<VirtualFile>();
     for (VirtualFile f : files) {
-      if (!doStatusRecheck || VcsMigrationUtil.getHandler().isInConflict(VFileSystem.toIFile(f), true)) {
+      if (!doStatusRecheck || VcsMigrationUtil.getHandler().isInConflict(VirtualFileUtils.toIFile(f), true)) {
         toMerge.add(f);
       } else {
         alreadyResolved.add(f);

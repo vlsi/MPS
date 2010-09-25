@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.vfs;
 
-import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.util.FileUtil;
 
 import java.io.*;
@@ -161,10 +160,6 @@ class JarFileEntryFile implements IFile {
   }
 
   public File toFile() {
-    throw new UnsupportedOperationException();
-  }
-
-  public VirtualFile toVirtualFile() {
     throw new UnsupportedOperationException();
   }
 

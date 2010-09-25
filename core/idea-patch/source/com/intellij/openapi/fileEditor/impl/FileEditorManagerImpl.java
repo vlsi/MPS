@@ -1228,7 +1228,7 @@ public class FileEditorManagerImpl extends FileEditorManagerEx implements Projec
 private final class MyVirtualFileListener extends VirtualFileAdapter {
   public void beforeFileDeletion(final VirtualFileEvent e) {
     assertDispatchThread();
-    final VirtualFile file = e.getFile();
+    final VirtualFile file = e.getVirtualFile();
     final VirtualFile[] openFiles = getOpenFiles();
     for (int i = openFiles.length - 1; i >= 0; i--) {
       if (VfsUtil.isAncestor(file, openFiles[i], false)) {
@@ -1240,7 +1240,7 @@ private final class MyVirtualFileListener extends VirtualFileAdapter {
   public void propertyChanged(final VirtualFilePropertyEvent e) {
     if (VirtualFile.PROP_WRITABLE.equals(e.getPropertyName())) {
       assertDispatchThread();
-      final VirtualFile file = e.getFile();
+      final VirtualFile file = e.getVirtualFile();
       if (isFileOpen(file)) {
         if (file.equals(getSelectedFiles()[0])) { // update "write" status
           final StatusBarEx statusBar = (StatusBarEx)WindowManager.getInstance().getStatusBar(myProject);

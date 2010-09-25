@@ -8,6 +8,7 @@ import com.intellij.openapi.fileChooser.FileChooserDialog;
 import com.intellij.openapi.fileChooser.FileChooserFactory;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.ui.IdeBorderFactory;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.vfs.FileSystem;
 
 import javax.swing.JComponent;
@@ -32,7 +33,7 @@ public class MoveFileDialog extends DialogWrapper {
           public void run() {
             FileChooserDescriptor chooser = new FileChooserDescriptor(false, true, false, false, false, false);
             FileChooserDialog dialog = FileChooserFactory.getInstance().createFileChooser(chooser, getOwner());
-            VirtualFile[] selectedFiles = dialog.choose(FileSystem.getInstance().getFileByPath(initialText).toVirtualFile(), project);
+            VirtualFile[] selectedFiles = dialog.choose(VirtualFileUtils.getVirtualFile(FileSystem.getInstance().getFileByPath(initialText)), project);
             if (selectedFiles.length > 0 && selectedFiles[0] != null) {
               myDirectoryField.setText(selectedFiles[0].getPath());
             }

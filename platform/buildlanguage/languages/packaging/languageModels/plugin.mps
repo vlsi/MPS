@@ -53,7 +53,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c7(jetbrains.mps.buildlanguage.plugin)" version="0" />
   <languageAspect modelUID="r:550fbd90-c9f2-4576-a8a6-223eca16d68b(jetbrains.mps.baseLanguage.runConfigurations.structure)" version="0" />
-  <maxImportIndex value="100" />
+  <maxImportIndex value="101" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="7" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.generator(jetbrains.mps.generator@java_stub)" version="-1" />
@@ -104,6 +104,7 @@
   <import index="97" modelUID="f:java_stub#jetbrains.mps.smodel.descriptor(jetbrains.mps.smodel.descriptor@java_stub)" version="-1" />
   <import index="99" modelUID="f:java_stub#jetbrains.mps.ide.generator(jetbrains.mps.ide.generator@java_stub)" version="-1" />
   <import index="100" modelUID="f:java_stub#jetbrains.mps.generator.fileGenerator(jetbrains.mps.generator.fileGenerator@java_stub)" version="-1" />
+  <import index="101" modelUID="f:java_stub#jetbrains.mps.ide.vfs(jetbrains.mps.ide.vfs@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration:23" id="1218726094600">
     <property name="name:23" value="ProjectPaneModelAddition" />
     <node role="contents:23" type="jetbrains.mps.lang.plugin.structure.ElementListContents:23" id="1218726094601">
@@ -3334,14 +3335,9 @@
                                     <link role="classConcept:3" targetNodeId="4.~MPSModuleRepository" resolveInfo="MPSModuleRepository" />
                                   </node>
                                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1240327588376">
-                                    <link role="baseMethodDeclaration:3" targetNodeId="4.~MPSModuleRepository.getModuleByFile(java.io.File):jetbrains.mps.project.IModule" resolveInfo="getModuleByFile" />
-                                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1240327588377">
-                                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1240327588378">
-                                        <link role="variableDeclaration:3" targetNodeId="1222950592434" resolveInfo="solutionFile" />
-                                      </node>
-                                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1240327588379">
-                                        <link role="baseMethodDeclaration:3" targetNodeId="25.~IFile.toFile():java.io.File" resolveInfo="toFile" />
-                                      </node>
+                                    <link role="baseMethodDeclaration:3" targetNodeId="4.~MPSModuleRepository.getModuleByFile(jetbrains.mps.vfs.IFile):jetbrains.mps.project.IModule" resolveInfo="getModuleByFile" />
+                                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1240327588378">
+                                      <link role="variableDeclaration:3" targetNodeId="1222950592434" resolveInfo="solutionFile" />
                                     </node>
                                   </node>
                                 </node>
@@ -8532,22 +8528,15 @@
                 <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1223493513229">
                   <link role="classifier:3" targetNodeId="25.~IFile" resolveInfo="IFile" />
                 </node>
-                <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1223493513230">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="1223493513231">
-                    <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="1223493513232">
-                      <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1223493513233">
-                        <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1223493513234">
-                          <link role="fieldDeclaration:3" targetNodeId="1223050119956" resolveInfo="myModule" />
-                        </node>
-                        <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1223493513235" />
-                      </node>
-                      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1223493513236">
-                        <link role="classifier:3" targetNodeId="2.~AbstractModule" resolveInfo="AbstractModule" />
-                      </node>
+                <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4354975180528399484">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4354975180528399481">
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="4354975180528399482">
+                      <link role="fieldDeclaration:3" targetNodeId="1223050119956" resolveInfo="myModule" />
                     </node>
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="4354975180528399483" />
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1223493513237">
-                    <link role="baseMethodDeclaration:3" targetNodeId="2.~AbstractModule.getDescriptorFile():jetbrains.mps.vfs.IFile" resolveInfo="getDescriptorFile" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4354975180528399488">
+                    <link role="baseMethodDeclaration:3" targetNodeId="2.~IModule.getDescriptorFile():jetbrains.mps.vfs.IFile" resolveInfo="getDescriptorFile" />
                   </node>
                 </node>
               </node>
@@ -8560,12 +8549,11 @@
                     <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1223493573355">
                       <link role="classifier:3" targetNodeId="23.~VirtualFile" resolveInfo="VirtualFile" />
                     </node>
-                    <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5609063547583709358">
-                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5609063547583709357">
+                    <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="4354975180528261045">
+                      <link role="baseMethodDeclaration:3" targetNodeId="101.~VirtualFileUtils.getVirtualFile(jetbrains.mps.vfs.IFile):com.intellij.openapi.vfs.VirtualFile" resolveInfo="getVirtualFile" />
+                      <link role="classConcept:3" targetNodeId="101.~VirtualFileUtils" resolveInfo="VirtualFileUtils" />
+                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4354975180528261046">
                         <link role="variableDeclaration:3" targetNodeId="1223493513228" resolveInfo="file" />
-                      </node>
-                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5609063547583709362">
-                        <link role="baseMethodDeclaration:3" targetNodeId="25.~IFile.toVirtualFile():com.intellij.openapi.vfs.VirtualFile" resolveInfo="toVirtualFile" />
                       </node>
                     </node>
                   </node>

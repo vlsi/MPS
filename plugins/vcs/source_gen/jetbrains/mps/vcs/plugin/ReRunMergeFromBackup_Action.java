@@ -13,6 +13,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.workbench.MPSDataKeys;
 import java.io.File;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -51,7 +52,7 @@ public class ReRunMergeFromBackup_Action extends GeneratedAction {
     if (!(ReRunMergeFromBackup_Action.this.model instanceof EditableSModelDescriptor)) {
       return false;
     }
-    VirtualFile file = ReRunMergeFromBackup_Action.this.getModelFile().toVirtualFile();
+    VirtualFile file = VirtualFileUtils.getVirtualFile(ReRunMergeFromBackup_Action.this.getModelFile());
     if (file == null) {
       return false;
     }

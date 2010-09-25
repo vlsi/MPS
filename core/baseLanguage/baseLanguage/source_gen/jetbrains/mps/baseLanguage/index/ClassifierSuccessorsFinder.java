@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
@@ -63,7 +64,7 @@ public class ClassifierSuccessorsFinder {
           }
         }
       } else {
-        SetSequence.fromSet(unModifiedModelFiles).addElement(modelFile.toVirtualFile());
+        SetSequence.fromSet(unModifiedModelFiles).addElement(VirtualFileUtils.getVirtualFile(modelFile));
       }
     }
     List<SNode> result = new ArrayList<SNode>();

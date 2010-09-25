@@ -8,7 +8,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <maxImportIndex value="10" />
+  <maxImportIndex value="11" />
   <import index="1" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.awt.datatransfer(java.awt.datatransfer@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
@@ -18,6 +18,7 @@
   <import index="7" modelUID="f:java_stub#jetbrains.mps.project.structure.modules(jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
   <import index="8" modelUID="f:java_stub#jetbrains.mps.vfs(jetbrains.mps.vfs@java_stub)" version="-1" />
   <import index="10" modelUID="f:java_stub#com.intellij.openapi.vfs(com.intellij.openapi.vfs@java_stub)" version="-1" />
+  <import index="11" modelUID="f:java_stub#jetbrains.mps.ide.vfs(jetbrains.mps.ide.vfs@java_stub)" version="-1" />
   <visible index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1560298786499494350">
     <property name="name:3" value="CopySupport" />
@@ -639,10 +640,10 @@
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1866989091100461818">
               <link role="classifier:3" targetNodeId="10.~VirtualFile" resolveInfo="VirtualFile" />
             </node>
-            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1866989091100461819">
-              <link role="baseMethodDeclaration:3" targetNodeId="8.~VFileSystem.getFile(java.lang.String):com.intellij.openapi.vfs.VirtualFile" resolveInfo="getFile" />
-              <link role="classConcept:3" targetNodeId="8.~VFileSystem" resolveInfo="VFileSystem" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1866989091100461821">
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="4354975180528261959">
+              <link role="classConcept:3" targetNodeId="11.~VirtualFileUtils" resolveInfo="VirtualFileUtils" />
+              <link role="baseMethodDeclaration:3" targetNodeId="11.~VirtualFileUtils.getVirtualFile(java.lang.String):com.intellij.openapi.vfs.VirtualFile" resolveInfo="getVirtualFile" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4354975180528261960">
                 <link role="variableDeclaration:3" targetNodeId="1866989091100461793" resolveInfo="path" />
               </node>
             </node>

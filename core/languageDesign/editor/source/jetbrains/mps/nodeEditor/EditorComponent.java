@@ -33,6 +33,7 @@ import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.GoByCurrentReference_Action;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.mps.ide.ui.MPSErrorDialog;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.intentions.IntentionsManager;
@@ -2666,7 +2667,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           if (!(md instanceof EditableSModelDescriptor)) return null;
           IFile ifile = ((EditableSModelDescriptor) md).getModelFile();
           if (ifile == null ||!ifile.exists()) return null;
-          VirtualFile vfile = ifile.toVirtualFile();
+          VirtualFile vfile = VirtualFileUtils.getVirtualFile(ifile);
           if (vfile == null) return null;
           return new VirtualFile[]{vfile};
         }

@@ -21,6 +21,7 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.vfs.FileSystem;
 
 import java.io.File;
 
@@ -73,7 +74,7 @@ class ModuleFileProcessor extends EventProcessor {
   public static IModule getModuleByEvent(final VFileEvent event) {
     return ModelAccess.instance().runReadAction(new Computable<IModule>() {
       public IModule compute() {
-        return MPSModuleRepository.getInstance().getModuleByFile(new File(event.getPath()));
+        return MPSModuleRepository.getInstance().getModuleByFile(FileSystem.getInstance().getFileByPath(event.getPath()));
       }
     });
   }

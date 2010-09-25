@@ -58,7 +58,7 @@ public class VFSBenchmark {
     /*System.out.println("IFile         " + measure(new Runnable() {
       public void run() {
         try {
-          final IFile ourFile = FileSystem.getFile(tmpJar);
+          final IFile ourFile = FileSystem.getVirtualFile(tmpJar);
           test(new IFileAdapter(ourFile));
         } catch (Throwable t) {
         }

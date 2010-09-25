@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.vfs;
 
-import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.NotNull;
 
@@ -151,10 +150,6 @@ class FileSystemFile implements IFile {
 
   public File toFile() {
     return myFile;
-  }
-
-  public VirtualFile toVirtualFile() {
-    throw new UnsupportedOperationException();
   }
 
   public URL toURL() throws MalformedURLException {

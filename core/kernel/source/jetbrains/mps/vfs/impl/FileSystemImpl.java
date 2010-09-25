@@ -1,17 +1,17 @@
 package jetbrains.mps.vfs.impl;
 
-import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemProvider;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.ex.IFileEx;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 /**
  * @author Evgeny Gerashchenko
  */
 public class FileSystemImpl extends FileSystem {
-  private FileSystemProvider myFileSystemProvider = new IdeaFileSystemProvider();
+  // TODO provide java.io implementation
+  private FileSystemProvider myFileSystemProvider = null;
 
   @Override
   public void setFileSystemProvider(@NotNull FileSystemProvider fileSystemProvider) {
@@ -35,13 +35,5 @@ public class FileSystemImpl extends FileSystem {
     } else {
       return null;
     }
-  }
-
-  @Override
-  public VirtualFile getVirtualFile(IFile file) {
-    if (file instanceof IdeaFile) {
-      return ((IdeaFile) file).toVirtualFile();
-    }
-    return null;
   }
 }

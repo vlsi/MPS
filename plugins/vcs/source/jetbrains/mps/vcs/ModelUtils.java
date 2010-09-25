@@ -17,6 +17,7 @@ package jetbrains.mps.vcs;
 
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
@@ -28,7 +29,6 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.UnzipUtil;
 import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
-import jetbrains.mps.vfs.VFileSystem;
 import org.jdom.Document;
 import org.jdom.JDOMException;
 
@@ -75,7 +75,7 @@ public class ModelUtils {
   }
 
   public static void replaceModelWithBytes(VirtualFile modelFile, byte[] bytesToReplaceWith) {
-    final EditableSModelDescriptor modelDescriptor = (EditableSModelDescriptor) SModelRepository.getInstance().findModel(VFileSystem.toIFile(modelFile));
+    final EditableSModelDescriptor modelDescriptor = (EditableSModelDescriptor) SModelRepository.getInstance().findModel(VirtualFileUtils.toIFile(modelFile));
     if (modelDescriptor == null) return;
 
     try {

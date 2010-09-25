@@ -320,7 +320,6 @@ public class JavaCompiler {
           } else {
             String message = problem.getMessage();
             LOG.warning(message + " (line: " + problem.getSourceLineNumber() + ")");
-            //, new FileWithPosition(javaFile.getFile(), cp.getSourceStart()));
           }
         }
       }

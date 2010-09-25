@@ -1,9 +1,7 @@
 package jetbrains.mps.vfs;
 
-import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.vfs.impl.FileSystemImpl;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 
@@ -22,8 +20,6 @@ public abstract class FileSystem {
   public abstract IFile getBundleHome(IFile file); 
 
   // This method should not be used in MPS kernel, only in workbench
-  @Nullable
-  public abstract VirtualFile getVirtualFile(IFile file);
 
   public static FileSystem getInstance() {
     return INSTANCE;

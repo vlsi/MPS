@@ -49,6 +49,7 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import jetbrains.mps.vcs.ModelUtils;
@@ -589,7 +590,7 @@ __switch__:
     if (modelFile == null) {
       return;
     }
-    VirtualFile modelVFile = modelFile.toVirtualFile();
+    VirtualFile modelVFile = VirtualFileUtils.getVirtualFile(modelFile);
 
     assert myProject.getComponent(VcsFileStatusProvider.class) != null;
 

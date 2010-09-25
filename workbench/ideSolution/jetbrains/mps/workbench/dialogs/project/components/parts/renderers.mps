@@ -8,7 +8,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
-  <maxImportIndex value="21" />
+  <maxImportIndex value="22" />
   <import index="1" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.project.structure.project(jetbrains.mps.project.structure.project@java_stub)" version="-1" />
@@ -30,6 +30,7 @@
   <import index="19" modelUID="f:java_stub#jetbrains.mps.project.structure.project.testconfigurations(jetbrains.mps.project.structure.project.testconfigurations@java_stub)" version="-1" />
   <import index="20" modelUID="r:54883260-1d2e-4108-8311-3a1f6d27f2b4(jetbrains.mps.workbench.dialogs.project.components.parts)" version="-1" />
   <import index="21" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
+  <import index="22" modelUID="f:java_stub#jetbrains.mps.ide.vfs(jetbrains.mps.ide.vfs@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1560298786499489409">
     <property name="name:3" value="PathRenderer" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1560298786499489410" />
@@ -590,15 +591,15 @@
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1560298786499490175">
               <link role="classifier:3" targetNodeId="8.~VirtualFile" />
             </node>
-            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1560298786499490176">
-              <link role="classConcept:3" targetNodeId="9.~VFileSystem" />
-              <link role="baseMethodDeclaration:3" targetNodeId="9.~VFileSystem.getFile(java.lang.String):com.intellij.openapi.vfs.VirtualFile" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499490177">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1560298786499490178">
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="4354975180528301819">
+              <link role="baseMethodDeclaration:3" targetNodeId="22.~VirtualFileUtils.getVirtualFile(java.lang.String):com.intellij.openapi.vfs.VirtualFile" resolveInfo="getVirtualFile" />
+              <link role="classConcept:3" targetNodeId="22.~VirtualFileUtils" resolveInfo="VirtualFileUtils" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4354975180528301820">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4354975180528301821">
                   <link role="variableDeclaration:3" targetNodeId="1560298786499490130" resolveInfo="path" />
                 </node>
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499490179">
-                  <link role="baseMethodDeclaration:3" targetNodeId="3.~Path.getPath():java.lang.String" />
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4354975180528301822">
+                  <link role="baseMethodDeclaration:3" targetNodeId="3.~Path.getPath():java.lang.String" resolveInfo="getPath" />
                 </node>
               </node>
             </node>

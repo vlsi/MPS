@@ -13,18 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vfs;
+package jetbrains.mps.ide.vfs;
 
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 
 import java.io.File;
 
-public class VFileSystem {
-  public static VirtualFile getFile(String path) {
-    IFile fileByPath = FileSystem.getInstance().getFileByPath(path);
-    if (fileByPath == null) return null;
-    return fileByPath.toVirtualFile();
+public class VirtualFileUtils {
+  public static VirtualFile getVirtualFile(String path) {
+    return getVirtualFile(FileSystem.getInstance().getFileByPath(path));
+  }
+
+  public static VirtualFile getVirtualFile(IFile file) {
+    if (file instanceof IdeaFile) {
+      return ((IdeaFile) file).getVirtualFile();
+    } else {
+      return null;
+    }
   }
 
   public static IFile toIFile(VirtualFile f) {
@@ -38,5 +46,4 @@ public class VFileSystem {
       throw new RuntimeException("Attempt to get File for non local file.");
     }
   }
-
 }

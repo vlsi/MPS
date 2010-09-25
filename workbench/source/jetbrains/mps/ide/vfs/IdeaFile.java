@@ -1,4 +1,4 @@
-package jetbrains.mps.vfs.impl;
+package jetbrains.mps.ide.vfs;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.vfs.JarFileSystem;
@@ -10,6 +10,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileNameFilter;
+import jetbrains.mps.vfs.ex.IFileEx;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.Nullable;
 
@@ -242,8 +243,8 @@ public class IdeaFile implements IFileEx {
   }
 
   // TODO make package-private and rename to getVirtualFile()
-  @Nullable
-  public VirtualFile toVirtualFile() {
+
+  VirtualFile getVirtualFile() {
     findVirtualFile();
     return myVirtualFile;
   }

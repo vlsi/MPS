@@ -23,12 +23,12 @@ import com.intellij.openapi.vcs.actions.VcsContext;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.vfs.VFileSystem;
 
 public class ShowInLogicalView extends AbstractVcsAction {
   protected void actionPerformed(VcsContext e) {
@@ -42,7 +42,7 @@ public class ShowInLogicalView extends AbstractVcsAction {
     if (MPSFileTypesManager.instance().isModelFile(selectedFile)) {
       SModelDescriptor model = ModelAccess.instance().runReadAction(new Computable<SModelDescriptor>() {
         public SModelDescriptor compute() {
-          return SModelRepository.getInstance().findModel(VFileSystem.toIFile(selectedFile));
+          return SModelRepository.getInstance().findModel(VirtualFileUtils.toIFile(selectedFile));
         }
       });
       if (model != null) {
@@ -51,7 +51,7 @@ public class ShowInLogicalView extends AbstractVcsAction {
     } else if (MPSFileTypesManager.instance().isModuleFile(selectedFile)) {
       IModule module = ModelAccess.instance().runReadAction(new Computable<IModule>() {
         public IModule compute() {
-          return MPSModuleRepository.getInstance().getModuleByFile(VFileSystem.toIFile(selectedFile));
+          return MPSModuleRepository.getInstance().getModuleByFile(VirtualFileUtils.toIFile(selectedFile));
         }
       });
       if (module != null) {

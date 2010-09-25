@@ -58,7 +58,7 @@ public class BuildGeneratorUtil {
     if (solutionFile.exists()) {
       IModule module = ModelAccess.instance().runReadAction(new Computable<IModule>() {
         public IModule compute() {
-          return MPSModuleRepository.getInstance().getModuleByFile(solutionFile.toFile());
+          return MPSModuleRepository.getInstance().getModuleByFile(solutionFile);
         }
       });
       if (module instanceof Solution) {

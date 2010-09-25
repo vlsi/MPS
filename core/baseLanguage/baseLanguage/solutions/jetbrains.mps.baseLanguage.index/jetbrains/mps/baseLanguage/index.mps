@@ -16,7 +16,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <maxImportIndex value="32" />
+  <maxImportIndex value="33" />
   <import index="13" modelUID="f:java_stub#com.intellij.util.io(com.intellij.util.io@java_stub)" version="-1" />
   <import index="15" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="17" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
@@ -35,6 +35,7 @@
   <import index="30" modelUID="f:java_stub#jetbrains.mps.smodel.persistence.def(jetbrains.mps.smodel.persistence.def@java_stub)" version="-1" />
   <import index="31" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="32" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
+  <import index="33" modelUID="f:java_stub#jetbrains.mps.ide.vfs(jetbrains.mps.ide.vfs@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4575917870415845925">
     <property name="name:3" value="ListExternalizer" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4575917870415845926" />
@@ -1423,12 +1424,11 @@
                         <link role="variableDeclaration:3" targetNodeId="4575917870416216632" resolveInfo="unModifiedModelFiles" />
                       </node>
                       <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation:7" id="4575917870416217338">
-                        <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4575917870416217340">
-                          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4575917870416217341">
+                        <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="4354975180528214449">
+                          <link role="baseMethodDeclaration:3" targetNodeId="33.~VirtualFileUtils.getVirtualFile(jetbrains.mps.vfs.IFile):com.intellij.openapi.vfs.VirtualFile" resolveInfo="getVirtualFile" />
+                          <link role="classConcept:3" targetNodeId="33.~VirtualFileUtils" resolveInfo="VirtualFileUtils" />
+                          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4354975180528214450">
                             <link role="variableDeclaration:3" targetNodeId="4575917870415846209" resolveInfo="modelFile" />
-                          </node>
-                          <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4575917870416217342">
-                            <link role="baseMethodDeclaration:3" targetNodeId="25.~IFile.toVirtualFile():com.intellij.openapi.vfs.VirtualFile" resolveInfo="toVirtualFile" />
                           </node>
                         </node>
                       </node>

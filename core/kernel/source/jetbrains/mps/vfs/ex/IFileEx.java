@@ -1,10 +1,10 @@
-package jetbrains.mps.vfs.impl;
+package jetbrains.mps.vfs.ex;
 
 import jetbrains.mps.vfs.IFile;
 
 import java.io.File;
 
-interface IFileEx extends IFile {
+public interface IFileEx extends IFile {
   boolean isPackaged();
 
   IFile getBundleHome();

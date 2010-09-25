@@ -40,11 +40,11 @@ import com.intellij.util.messages.MessageBusConnection;
 import com.intellij.util.ui.Timer;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.library.Library;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.library.ProjectLibraryManager;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -190,7 +190,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
       ProjectLibraryManager projectLibraryManager = p.getComponent(ProjectLibraryManager.class);
       if (projectLibraryManager != null) {
         for (Library lib : projectLibraryManager.getUILibraries()) {
-          VirtualFile file = VFileSystem.getFile(lib.getPath());
+          VirtualFile file = VirtualFileUtils.getVirtualFile(lib.getPath());
           if (file != null) {
             roots.add(file);
           }
@@ -204,7 +204,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
 
     LibraryManager libraryManager = LibraryManager.getInstance();
     for (Library lib : libraryManager.getUILibraries()) {
-      VirtualFile file = VFileSystem.getFile(lib.getPath());
+      VirtualFile file = VirtualFileUtils.getVirtualFile(lib.getPath());
       if (file != null) {
         roots.add(file);
       }
@@ -216,7 +216,7 @@ public class ModelChangesWatcher implements ApplicationComponent {
   private boolean isUnderSignificantRoots(File file) {
     for (VirtualFile f : getSignificantRoots()) {
       try {
-        if (FileUtil.isAncestor(VFileSystem.toFile(f), file, false)) {
+        if (FileUtil.isAncestor(VirtualFileUtils.toFile(f), file, false)) {
           return true;
         }
       } catch (IOException e) {
@@ -239,10 +239,10 @@ public class ModelChangesWatcher implements ApplicationComponent {
 
         for (final VFileEvent event : events) {
           String filePath = event.getPath();
-          VirtualFile file = VFileSystem.getFile(filePath);
+          VirtualFile file = VirtualFileUtils.getVirtualFile(filePath);
           if (file == null) continue;
           if (file.isDirectory() && file.exists() && (file.getChildren() != null) && file.isInLocalFileSystem()) {
-            if (isUnderSignificantRoots(VFileSystem.toFile(file))) {
+            if (isUnderSignificantRoots(VirtualFileUtils.toFile(file))) {
               VfsUtil.processFilesRecursively(file, new Processor<VirtualFile>() {
                           public boolean process(VirtualFile file) {
                             processBeforeEvent(new VFileEventDecorator(event, file.getPath()), file.getPath(), reloadSession);

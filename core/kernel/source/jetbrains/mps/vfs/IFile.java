@@ -56,7 +56,6 @@ public interface IFile {
   OutputStream openOutputStream() throws IOException;
 
   File toFile(); // TODO remove all usages
-  VirtualFile toVirtualFile(); // TODO change all usages to using factory method
 
   URL toURL() throws MalformedURLException; // TODO change all usages to using factory method
 }

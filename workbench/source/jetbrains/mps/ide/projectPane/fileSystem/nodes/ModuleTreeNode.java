@@ -19,19 +19,19 @@ import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.actions.ModuleActions_ActionGroup;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.workbench.action.ActionUtils;
 
 public class ModuleTreeNode extends AbstractFileTreeNode {
   private final IModule myModule;
 
   public ModuleTreeNode(Project project, IModule m) {
-    super(project, m.getDescriptorFile().getParent().toVirtualFile());
+    super(project, VirtualFileUtils.getVirtualFile(m.getDescriptorFile().getParent()));
 
     myModule = m;
 
-    add(new FolderTreeNode(project, m.getDescriptorFile().getParent().toVirtualFile(), true));
+    add(new FolderTreeNode(project, VirtualFileUtils.getVirtualFile(m.getDescriptorFile().getParent()), true));
 
     updatePresentation();
   }
@@ -41,7 +41,7 @@ public class ModuleTreeNode extends AbstractFileTreeNode {
     super.doUpdatePresentation();
     setText(myModule.getModuleFqName());
     setNodeIdentifier(getFile().getPath());
-    VirtualFile file = myModule.getDescriptorFile().toVirtualFile();
+    VirtualFile file = VirtualFileUtils.getVirtualFile(myModule.getDescriptorFile());
     if (file != null) {
       setIcon(file.getFileType().getIcon());
     }

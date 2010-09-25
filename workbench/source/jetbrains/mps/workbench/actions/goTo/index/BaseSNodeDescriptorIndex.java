@@ -31,7 +31,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vcs.VcsMigrationUtil;
-import jetbrains.mps.vfs.VFileSystem;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
 
@@ -123,7 +123,7 @@ public abstract class BaseSNodeDescriptorIndex extends SingleEntryFileBasedIndex
     private void handleException(Exception e, FileContent inputData) {
       VirtualFile file = inputData.getFile();
       if (MPSFileTypesManager.instance().isModelFile(file)) {
-        SModelDescriptor modelDescriptor = SModelRepository.getInstance().findModel(VFileSystem.toIFile(file));
+        SModelDescriptor modelDescriptor = SModelRepository.getInstance().findModel(VirtualFileUtils.toIFile(file));
         if (modelDescriptor == null) return;
         VcsMigrationUtil.getHandler().addSuspiciousModel(((EditableSModelDescriptor) modelDescriptor), false);
         LOG.error(e.getMessage());

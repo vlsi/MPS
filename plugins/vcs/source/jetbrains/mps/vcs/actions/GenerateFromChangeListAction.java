@@ -23,11 +23,11 @@ import com.intellij.openapi.vcs.actions.VcsContext;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.ide.generator.GeneratorFacade;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.vfs.VFileSystem;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -48,7 +48,7 @@ public abstract class GenerateFromChangeListAction extends AbstractVcsAction {
     List<SModelDescriptor> modelsToGenerate = new ArrayList<SModelDescriptor>();
     for (VirtualFile f : filesCollection) {
       if (f.exists() && !f.isDirectory()) {
-        SModelDescriptor model = SModelRepository.getInstance().findModel(VFileSystem.toIFile(f));
+        SModelDescriptor model = SModelRepository.getInstance().findModel(VirtualFileUtils.toIFile(f));
         if(model != null) {
           modelsToGenerate.add(model);
         }

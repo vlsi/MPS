@@ -21,6 +21,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.ID;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
@@ -66,7 +67,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
       EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
       IFile modelFile = esm.getModelFile();
       if (modelFile == null) continue;
-      VirtualFile vf = modelFile.toVirtualFile();
+      VirtualFile vf = VirtualFileUtils.getVirtualFile(modelFile);
       if (vf == null) continue; // e.g. model was deleted
 
       int fileId = FileBasedIndex.getFileId(vf);

@@ -22,6 +22,7 @@ import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.diff.DiffProvider;
 import com.intellij.openapi.vcs.history.VcsRevisionNumber;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nullable;
 
@@ -56,7 +57,7 @@ public class VCSUtil {
 
   @Nullable
   public static VcsRevisionNumber getRevisionNumber(IFile file) {
-    VirtualFile virtualFile = file.toVirtualFile();
+    VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(file);
     AbstractVcs vcs = getVcsForFile(virtualFile);
     if (vcs == null) {
       return null;
@@ -69,7 +70,7 @@ public class VCSUtil {
   }
 
   public static boolean isInConflict(IFile ifile, boolean synchronously) {
-    VirtualFile vfile = ifile.toVirtualFile();
+    VirtualFile vfile = VirtualFileUtils.getVirtualFile(ifile);
     if ((vfile != null) && (vfile.exists())) {
       for (Project project : getProjects()) {
         boolean isInConflict = MPSVCSManager.getInstance(project).isInConflict(vfile, synchronously);

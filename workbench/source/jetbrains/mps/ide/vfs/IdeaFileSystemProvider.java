@@ -1,4 +1,4 @@
-package jetbrains.mps.vfs.impl;
+package jetbrains.mps.ide.vfs;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.vfs.FileSystemProvider;

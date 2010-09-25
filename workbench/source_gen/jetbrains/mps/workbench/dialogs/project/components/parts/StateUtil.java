@@ -7,9 +7,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.VFileSystem;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
@@ -30,7 +28,7 @@ public class StateUtil {
   }
 
   public static boolean isAvailable(String path) {
-    VirtualFile file = VFileSystem.getFile(path);
+    VirtualFile file = VirtualFileUtils.getVirtualFile(path);
     if (file == null || !(file.exists())) {
       return false;
     }

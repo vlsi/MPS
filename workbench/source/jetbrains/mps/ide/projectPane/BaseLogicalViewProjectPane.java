@@ -25,6 +25,7 @@ import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.smodel.PackageNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
@@ -34,7 +35,6 @@ import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -44,7 +44,6 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.JTree;
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.LinkedList;
@@ -374,7 +373,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
         EditableSModelDescriptor emd = (EditableSModelDescriptor) descriptor;
         IFile ifile = emd.getModelFile();
         if (ifile == null) continue;
-        VirtualFile vfile = ifile.toVirtualFile();
+        VirtualFile vfile = VirtualFileUtils.getVirtualFile(ifile);
         if (vfile == null) continue;
         selectedFilesList.add(vfile);
       }
@@ -386,14 +385,14 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
       for (IModule module : modules) {
         IFile home = module.getBundleHome();
         if (home != null) {
-          VirtualFile vfile = home.toVirtualFile();
+          VirtualFile vfile = VirtualFileUtils.getVirtualFile(home);
           if (vfile != null) {
             selectedFilesList.add(vfile);
           }
         }
         IFile ifile = module.getDescriptorFile();
         if (ifile != null) {
-          VirtualFile vfile = ifile.toVirtualFile();
+          VirtualFile vfile = VirtualFileUtils.getVirtualFile(ifile);
           if (vfile != null) {
             selectedFilesList.add(vfile);
           }

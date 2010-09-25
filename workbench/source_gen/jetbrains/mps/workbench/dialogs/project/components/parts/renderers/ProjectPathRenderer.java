@@ -7,7 +7,7 @@ import java.awt.Component;
 import javax.swing.JList;
 import jetbrains.mps.project.structure.project.Path;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.vfs.VFileSystem;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import java.awt.Color;
 
 public class ProjectPathRenderer extends PathRenderer {
@@ -30,7 +30,7 @@ public class ProjectPathRenderer extends PathRenderer {
         break;
       }
     }
-    VirtualFile file = VFileSystem.getFile(path.getPath());
+    VirtualFile file = VirtualFileUtils.getVirtualFile(path.getPath());
     if (file != null && file.exists() && !(isContained)) {
       setForeground(new Color(128, 0, 128));
     }

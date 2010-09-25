@@ -29,7 +29,7 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.vcs.VCSSettingsHolder;
 import jetbrains.mps.vcs.ModelUtils;
-import jetbrains.mps.vfs.VFileSystem;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JFrame;
@@ -101,7 +101,7 @@ public class ModelDiffTool implements DiffTool {
   public static SModel readModel(DiffContent content, String path) throws IOException {
     if (content instanceof DocumentContent || content instanceof FileContent) {
       SModelRepository modelRepository = SModelRepository.getInstance();
-      final SModelDescriptor modelDescriptor = modelRepository.findModel(VFileSystem.toIFile(content.getFile()));
+      final SModelDescriptor modelDescriptor = modelRepository.findModel(VirtualFileUtils.toIFile(content.getFile()));
       if (modelDescriptor != null) {
         return ModelAccess.instance().runReadAction(new Computable<SModel>() {
           public SModel compute() {
