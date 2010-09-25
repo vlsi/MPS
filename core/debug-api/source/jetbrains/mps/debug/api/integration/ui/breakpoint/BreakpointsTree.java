@@ -18,6 +18,7 @@ package jetbrains.mps.debug.api.integration.ui.breakpoint;
 import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.debug.api.integration.ui.breakpoint.GroupedTree.GroupKind;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -56,6 +57,12 @@ public class BreakpointsTree extends BreakpointsView {
     };
     myTree.setRootVisible(false);
     myTree.rebuildLater();
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+      @Override
+      public void run() {
+        myTree.expandAll();
+      }
+    });
   }
 
   @Override
