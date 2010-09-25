@@ -31,7 +31,7 @@ public abstract class GroupedTree<D> extends MPSTree {
   }
 
   protected abstract MPSTreeNode createDataNode(IOperationContext operationContext, D breakpoint);
-  protected abstract BreakpointGroupKind<D, Object> createRootGroupKind();
+  protected abstract GroupKind<D, Object> createRootGroupKind();
   protected abstract Collection<D> getData();
 
   @Override
@@ -39,7 +39,7 @@ public abstract class GroupedTree<D> extends MPSTree {
     return new GroupTreeNode<Object>(myContext, createRootGroupKind(), new Object(), getData());
   }
 
-  public static abstract class BreakpointGroupKind<D, T> {
+  public static abstract class GroupKind<D, T> {
     public abstract T getGroup(D data);
 
     @Nullable
@@ -48,7 +48,7 @@ public abstract class GroupedTree<D> extends MPSTree {
     }
 
     @Nullable
-    public BreakpointGroupKind getSubGroupKind() {
+    public GroupKind getSubGroupKind() {
       return null;
     }
 
@@ -72,15 +72,15 @@ public abstract class GroupedTree<D> extends MPSTree {
   private class GroupTreeNode<T> extends MPSTreeNode {
     private final Collection<D> myBreakpoints;
     private final T myGroup;
-    private final BreakpointGroupKind<D, T> myKind;
+    private final GroupKind<D, T> myKind;
 
-    public GroupTreeNode(IOperationContext operationContext, BreakpointGroupKind<D, T> kind, T group, Collection<D> breakpoints) {
+    public GroupTreeNode(IOperationContext operationContext, GroupKind<D, T> kind, T group, Collection<D> breakpoints) {
       super(operationContext);
       myBreakpoints = breakpoints;
       myGroup = group;
       myKind = kind;
 
-      BreakpointGroupKind<D, Object> subGroupKind = kind.getSubGroupKind();
+      GroupKind<D, Object> subGroupKind = kind.getSubGroupKind();
       if (subGroupKind == null) {
         for (D breakpoint : myBreakpoints) {
           add(createDataNode(operationContext, breakpoint));
