@@ -1,6 +1,6 @@
 package jetbrains.mps.debug.api.integration.ui.breakpoint;
 
-import com.intellij.openapi.actionSystem.DataProvider;
+import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.util.ui.AbstractTableCellEditor;
@@ -26,7 +26,7 @@ import java.util.List;
 public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider {
   private static final String COMMAND_SHOW_NODE = "COMMAND_SHOW_NODE";
 
-  private final JScrollPane myMainPanel;
+  private final JPanel myMainPanel;
   private final JTable myBreakpointsTable;
   private final IOperationContext myContext;
   private final BreakpointManagerComponent myBreakpointsManager;
@@ -43,9 +43,14 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
     myBreakpointsTableModel = new MyAbstractTableModel();
     createBreakpointsTable(myBreakpointsTableModel);
 
-    myMainPanel = new JScrollPane(myBreakpointsTable);
-    myMainPanel.getViewport().setBackground(getBackgroundColor());
-    addActions();
+    myMainPanel = new JPanel(new BorderLayout());
+
+    JScrollPane breakpointsScrollPane = new JScrollPane(myBreakpointsTable);
+    breakpointsScrollPane.getViewport().setBackground(getBackgroundColor());
+    myMainPanel.add(breakpointsScrollPane, BorderLayout.CENTER);
+
+    ActionToolbar actionToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, createActions(), true);
+    myMainPanel.add(actionToolbar.getComponent(), BorderLayout.NORTH);
   }
 
   private Color getBackgroundColor() {
@@ -99,33 +104,41 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
     });
   }
 
-  private void addActions() {
-    // show on enter
-    myBreakpointsTable.getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), COMMAND_SHOW_NODE);
-    myBreakpointsTable.getActionMap().put(COMMAND_SHOW_NODE, new AbstractAction() {
+  private ActionGroup createActions() {
+    // create actions
+
+    final AnAction showNodeAction = new AnAction("View Source", "View Source", jetbrains.mps.ide.projectPane.Icons.TEXT_ICON) {
       @Override
-      public void actionPerformed(ActionEvent e) {
+      public void actionPerformed(AnActionEvent e) {
         AbstractMPSBreakpoint breakpoint = getSelectedBreakpoint();
         if (breakpoint == null) return;
         openNode(breakpoint, false, true);
       }
-    });
 
-    // open on f4
-    myBreakpointsTable.registerKeyboardAction(new AbstractAction() {
       @Override
-      public void actionPerformed(ActionEvent e) {
+      public void update(AnActionEvent e) {
+        e.getPresentation().setEnabled(getSelectedBreakpoint() != null);
+      }
+    };
+
+    final AnAction gotoNodeAction = new AnAction("Go To", "Go To Source", jetbrains.mps.ide.projectPane.Icons.REFERENCE_ICON) {
+      @Override
+      public void actionPerformed(AnActionEvent e) {
         AbstractMPSBreakpoint breakpoint = getSelectedBreakpoint();
         if (breakpoint == null) return;
         dispose();
         openNode(breakpoint, true, true);
       }
-    }, KeyStroke.getKeyStroke("F4"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
-    // delete on del
-    myBreakpointsTable.registerKeyboardAction(new AbstractAction() {
       @Override
-      public void actionPerformed(ActionEvent e) {
+      public void update(AnActionEvent e) {
+        e.getPresentation().setEnabled(getSelectedBreakpoint() != null);
+      }
+    };
+
+    final AnAction deleteBreakpointAction = new AnAction("Delete", "Delete Breakpoint", jetbrains.mps.workbench.dialogs.project.components.parts.actions.icons.Icons.REMOVE) {
+      @Override
+      public void actionPerformed(AnActionEvent e) {
         int selectedRow = myBreakpointsTable.getSelectedRow();
         final AbstractMPSBreakpoint breakpoint = getSelectedBreakpoint();
         if (breakpoint == null) return;
@@ -136,6 +149,42 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
           }
         });
         myBreakpointsTableModel.breakpointDeleted(selectedRow);
+      }
+
+      @Override
+      public void update(AnActionEvent e) {
+        e.getPresentation().setEnabled(getSelectedBreakpoint() != null);
+      }
+    };
+
+    // add to action group
+    DefaultActionGroup group = new DefaultActionGroup();
+    group.add(gotoNodeAction);
+    group.add(showNodeAction);
+    group.add(deleteBreakpointAction);
+
+    // register keyboard/mouse actions
+
+    // show on enter
+    myBreakpointsTable.getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), COMMAND_SHOW_NODE);
+    myBreakpointsTable.getActionMap().put(COMMAND_SHOW_NODE, new AbstractAction() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        showNodeAction.actionPerformed(null);
+      }
+    });
+    // open on f4
+    myBreakpointsTable.registerKeyboardAction(new AbstractAction() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        gotoNodeAction.actionPerformed(null);
+      }
+    }, KeyStroke.getKeyStroke("F4"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    // delete on del
+    myBreakpointsTable.registerKeyboardAction(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        deleteBreakpointAction.actionPerformed(null);
       }
     }, KeyStroke.getKeyStroke("DELETE"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
@@ -151,6 +200,8 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
         }
       }
     });
+
+    return group;
   }
 
   private void openNode(final AbstractMPSBreakpoint breakpoint, final boolean focus, final boolean select) {
