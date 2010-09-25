@@ -142,7 +142,7 @@
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeContextManager" />
     <classNode dependClassName="junit.framework.Assert" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.test.runtime.TransformationTestRuner" file="TransformationTestRuner.java">
+  <dependency className="jetbrains.mps.lang.test.runtime.TransformationTestRunner" file="TransformationTestRunner.java">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.application.impl.ApplicationImpl" />
     <classNode dependClassName="java.lang.Exception" />

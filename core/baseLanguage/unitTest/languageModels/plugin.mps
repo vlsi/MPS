@@ -5933,7 +5933,7 @@
         </node>
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1216642142029">
-        <property name="name:3" value="addictionClassPath" />
+        <property name="name:3" value="additionalClassPath" />
         <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="1237046408844">
           <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1237046408845" />
         </node>

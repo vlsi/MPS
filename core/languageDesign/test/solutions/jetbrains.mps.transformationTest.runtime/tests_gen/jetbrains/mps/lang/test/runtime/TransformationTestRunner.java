@@ -7,8 +7,8 @@ import javax.swing.SwingUtilities;
 import com.intellij.openapi.application.impl.ApplicationImpl;
 import com.intellij.openapi.application.ApplicationManager;
 
-public class TransformationTestRuner extends TestRunner {
-  public TransformationTestRuner() {
+public class TransformationTestRunner extends TestRunner {
+  public TransformationTestRunner() {
   }
 
   public static void main(String[] argv) {

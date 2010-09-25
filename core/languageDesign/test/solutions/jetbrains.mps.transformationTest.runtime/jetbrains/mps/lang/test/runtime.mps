@@ -2459,7 +2459,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1216388077847">
-    <property name="name:3" value="TransformationTestRuner" />
+    <property name="name:3" value="TransformationTestRunner" />
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="1216388444229">
       <property name="name:3" value="main" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1216388444230" />
