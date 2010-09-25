@@ -167,7 +167,7 @@ public class TestMakeOnRealProject {
 
   private void checkModuleCompiled(IModule module) {
     IFile classesGen = module.getClassesGen();
-    List<File> classes = collectSpecificFilesFromDir(classesGen.toFile(), "class");
+    List<File> classes = collectSpecificFilesFromDir(new File(classesGen.getAbsolutePath()), "class");
     List<File> sources = new ArrayList<File>();
     for (String path : module.getSourcePaths()) {
       collectSpecificFilesFromDir(new File(path), "java", sources);
@@ -177,7 +177,7 @@ public class TestMakeOnRealProject {
 
   private void checkResourcesCopied(IModule module) {
     IFile classesGen = module.getClassesGen();
-    List<File> classes = collectSpecificFilesFromDir(classesGen.toFile(), "txt");
+    List<File> classes = collectSpecificFilesFromDir(new File(classesGen.getAbsolutePath()), "txt");
 
     Assert.assertTrue("resources should be copied ", 1 == classes.size());
   }

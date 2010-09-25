@@ -64,7 +64,7 @@ public class ModuleMaker {
         if (indicator.isCanceled()) break;
 
         indicator.setText2("Cleaning " + m.getModuleFqName() + "...");
-        FileUtil.delete(m.getClassesGen().toFile());
+        FileUtil.delete(new File(m.getClassesGen().getAbsolutePath()));
       }
       invalidateClasspath(modules);
     } finally {
@@ -164,8 +164,8 @@ public class ModuleMaker {
         String path = fqName.replace('/', File.separatorChar) + toCopy.getFile().getName();
 
         FileUtil.copyFile(
-          toCopy.getFile().toFile(),
-          module.getClassesGen().child(path).toFile()
+          new File(toCopy.getFile().getAbsolutePath()),
+          new File(module.getClassesGen().child(path).getAbsolutePath())
         );
       }
     }
@@ -323,7 +323,7 @@ public class ModuleMaker {
         }
         if (myContainingModules.containsKey(containerClassName)) {
           IModule m = myContainingModules.get(containerClassName);
-          File classesGen = m.getClassesGen().toFile();
+          File classesGen = new File(m.getClassesGen().getAbsolutePath());
           String packageName = NameUtil.namespaceFromLongName(fqName);
           File outputDir = new File(classesGen + File.separator + NameUtil.pathFromNamespace(packageName));
           if (!outputDir.exists()) {

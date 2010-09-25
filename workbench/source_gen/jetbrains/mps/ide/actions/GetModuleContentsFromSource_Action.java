@@ -16,6 +16,7 @@ import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.IFileFilter;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.javaParser.JavaCompiler;
+import java.io.File;
 
 public class GetModuleContentsFromSource_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -38,6 +39,7 @@ public class GetModuleContentsFromSource_Action extends GeneratedAction {
 
   public void doUpdate(@NotNull AnActionEvent event) {
     try {
+      this.enable(event.getPresentation());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "GetModuleContentsFromSource", t);
@@ -84,7 +86,7 @@ public class GetModuleContentsFromSource_Action extends GeneratedAction {
       });
       IFile result = treeFileChooser.showDialog(GetModuleContentsFromSource_Action.this.frame);
       if (result != null) {
-        JavaCompiler javaCompiler = new JavaCompiler(GetModuleContentsFromSource_Action.this.context, GetModuleContentsFromSource_Action.this.module, result.toFile(), true);
+        JavaCompiler javaCompiler = new JavaCompiler(GetModuleContentsFromSource_Action.this.context, GetModuleContentsFromSource_Action.this.module, new File(result.getAbsolutePath()), true);
         javaCompiler.compile();
       }
     } catch (Throwable t) {

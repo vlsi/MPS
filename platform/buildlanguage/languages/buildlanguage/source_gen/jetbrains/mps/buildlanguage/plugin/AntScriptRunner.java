@@ -5,12 +5,14 @@ package jetbrains.mps.buildlanguage.plugin;
 import jetbrains.mps.baseLanguage.util.plugin.run.BaseRunner;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.baseLanguage.util.plugin.run.ConfigRunParameters;
-import java.io.File;
+import jetbrains.mps.vfs.IFile;
 import com.intellij.execution.process.ProcessNotCreatedException;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.vfs.FileSystem;
+import java.io.File;
 import java.io.IOException;
 import com.intellij.openapi.application.PathManager;
 import com.intellij.openapi.application.PathMacros;
@@ -26,7 +28,7 @@ public class AntScriptRunner extends BaseRunner {
     super(parameters);
   }
 
-  public Process run(File file) throws ProcessNotCreatedException {
+  public Process run(IFile file) throws ProcessNotCreatedException {
     List<String> parameters = ListSequence.fromList(new ArrayList<String>());
 
     addBasicParameters(parameters, file);
@@ -37,23 +39,23 @@ public class AntScriptRunner extends BaseRunner {
     this.myBuilder = new ProcessBuilder(ListSequence.fromListWithValues(new ArrayList<String>(), parameters));
 
     // set woring dir 
-    File workingDirFile;
+    IFile workingDir;
     if (this.myRunParameters.getWorkingDirectory() != null && StringUtils.isNotEmpty(this.myRunParameters.getWorkingDirectory())) {
-      workingDirFile = new File(this.myRunParameters.getWorkingDirectory());
+      workingDir = FileSystem.getInstance().getFileByPath(this.myRunParameters.getWorkingDirectory());
     } else {
-      workingDirFile = file.getParentFile();
+      workingDir = file.getParent();
     }
-    this.myBuilder.directory(workingDirFile);
+    this.myBuilder.directory(new File(workingDir.getAbsolutePath()));
 
     try {
       return this.myBuilder.start();
     } catch (IOException e) {
       LOG.error("Can't run script " + file + ": " + e.getMessage(), e);
-      throw new ProcessNotCreatedException(e.getMessage(), e, this.getCommandLine(workingDirFile.getAbsolutePath()));
+      throw new ProcessNotCreatedException(e.getMessage(), e, this.getCommandLine(workingDir.getAbsolutePath()));
     }
   }
 
-  private void addBasicParameters(List<String> parameters, File file) {
+  private void addBasicParameters(List<String> parameters, IFile file) {
     String javaHome = this.getJavaHome();
     ListSequence.fromList(parameters).addElement(AntScriptRunner.getJavaCommand(javaHome));
     addVmOptions(parameters);

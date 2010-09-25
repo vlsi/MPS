@@ -150,7 +150,7 @@ public class NewModelFromSource_Action extends GeneratedAction {
         final SModel sModel = result.getSModel();
         treeFileChooser.setFileFilter(new IFileFilter() {
           public boolean accept(IFile file) {
-            return JavaCompiler.checkBaseModelMatchesSourceDirectory(sModel, file.toFile());
+            return JavaCompiler.checkBaseModelMatchesSourceDirectory(sModel, new File(file.getAbsolutePath()));
           }
         });
         String generatorOutputPath = NewModelFromSource_Action.this.module.getGeneratorOutputPath();
@@ -175,7 +175,7 @@ public class NewModelFromSource_Action extends GeneratedAction {
         }
         IFile resultFile = treeFileChooser.showDialog(NewModelFromSource_Action.this.frame);
         if (resultFile != null) {
-          JavaCompiler javaCompiler = new JavaCompiler(NewModelFromSource_Action.this.context, NewModelFromSource_Action.this.module, resultFile.toFile(), false, sModel);
+          JavaCompiler javaCompiler = new JavaCompiler(NewModelFromSource_Action.this.context, NewModelFromSource_Action.this.module, new File(resultFile.getAbsolutePath()), false, sModel);
           javaCompiler.compile();
         }
         SModelDescriptor modelDescriptor = result;

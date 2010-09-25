@@ -237,20 +237,13 @@ public class IdeaFile implements IFileEx {
     }
   }
 
-  @Override
-  public File toFile() {
-    return new File(getAbsolutePath());
-  }
-
-  // TODO make package-private and rename to getVirtualFile()
-
   VirtualFile getVirtualFile() {
     findVirtualFile();
     return myVirtualFile;
   }
 
   @Override
-  public URL toURL() throws MalformedURLException {
+  public URL getURL() throws MalformedURLException {
     if (findVirtualFile()) {
       return new URL(myVirtualFile.getPresentableUrl());
     } else {

@@ -738,10 +738,10 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       }
       myLanguageDescriptor.getRuntimeStubModels().removeAll(remove);
 
-      File bundleParent = getBundleHome().getParent().toFile();
+      IFile bundleParent = getBundleHome().getParent();
       String jarName = getModuleFqName() + "." + MPSExtentions.RUNTIME_ARCH;
-      File jarFile = new File(bundleParent, jarName);
-      String path = jarFile.getPath();
+      IFile jarFile = bundleParent.child(jarName);
+      String path = jarFile.getAbsolutePath();
 
       StubModelsEntry tmp = new StubModelsEntry();
       tmp.setPath(path);
@@ -772,7 +772,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     languageDescriptor.setNamespace(languageNamespace);
     languageDescriptor.setUUID(UUID.randomUUID().toString());
 
-    File languageModels = new File(descriptorFile.getParent().toFile(), LANGUAGE_MODELS);
+    IFile languageModels = descriptorFile.getParent().child(LANGUAGE_MODELS);
     if (languageModels.exists()) {
       throw new IllegalStateException("Trying to create a language in an existing language's directory");
     }

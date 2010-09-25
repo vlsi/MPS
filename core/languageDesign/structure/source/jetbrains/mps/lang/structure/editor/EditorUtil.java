@@ -63,7 +63,7 @@ public class EditorUtil {
         IFile result = chooser.showDialog(frame);
         if (result == null) return;
 
-        String selectedPath = FileUtil.getCanonicalPath(result.toFile());
+        String selectedPath = FileUtil.getCanonicalPath(result.getAbsolutePath());
         final String pathToShow;
         if (finalModule != null) {
           pathToShow = macros.shrinkPath(selectedPath, finalModule.getDescriptorFile());

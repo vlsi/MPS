@@ -6,6 +6,9 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.ex.IFileEx;
 import org.jetbrains.annotations.NotNull;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
 /**
  * @author Evgeny Gerashchenko
  */
@@ -32,6 +35,15 @@ public class FileSystemImpl extends FileSystem {
   public IFile getBundleHome(IFile file) {
     if (file instanceof IFileEx) {
       return ((IFileEx) file).getBundleHome();
+    } else {
+      return null;
+    }
+  }
+
+  @Override
+  public URL getURL(IFile file) throws MalformedURLException {
+    if (file instanceof IFileEx) {
+      return ((IFileEx) file).getURL();
     } else {
       return null;
     }

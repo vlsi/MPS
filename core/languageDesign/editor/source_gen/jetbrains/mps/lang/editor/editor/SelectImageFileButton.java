@@ -48,7 +48,7 @@ public class SelectImageFileButton extends JButton {
           if (result == null) {
             return;
           }
-          String selectedPath = FileUtil.getCanonicalPath(result.toFile());
+          String selectedPath = FileUtil.getCanonicalPath(result.getAbsolutePath());
           final String pathToShow = Macros.languageDescriptor().shrinkPath(selectedPath, language.getDescriptorFile());
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {

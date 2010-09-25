@@ -34,7 +34,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.plugin.run.DefaultProcessHandler;
-import java.io.File;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -146,11 +146,11 @@ public class DefaultBuildLanguageApplication_Configuration extends BaseRunConfig
               public DefaultProcessHandler invoke() {
                 try {
                   AntScriptRunner runner = new AntScriptRunner(javaRunParameters);
-                  final Wrappers._T<File> file = new Wrappers._T<File>();
+                  final Wrappers._T<IFile> file = new Wrappers._T<IFile>();
                   ModelAccess.instance().runReadAction(new Runnable() {
                     public void run() {
-                      file.value = FileGenerationUtil.getDefaultOutputDir(SNodeOperations.getModel(node), FileSystem.getInstance().getFileByPath(SNodeOperations.getModel(node).getModelDescriptor().getModule().getGeneratorOutputPath())).toFile();
-                      file.value = new File(file.value, Project_Behavior.call_getFileName_1213877351819(node));
+                      file.value = FileGenerationUtil.getDefaultOutputDir(SNodeOperations.getModel(node), FileSystem.getInstance().getFileByPath(SNodeOperations.getModel(node).getModelDescriptor().getModule().getGeneratorOutputPath()));
+                      file.value = file.value.child(Project_Behavior.call_getFileName_1213877351819(node));
                     }
                   });
                   if (javaRunParameters.getMake() || !(file.value.exists())) {

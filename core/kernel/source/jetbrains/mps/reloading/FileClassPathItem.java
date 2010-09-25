@@ -105,7 +105,7 @@ public class FileClassPathItem extends RealClassPathItem {
     try {
       IFile resourceFile = FileSystem.getInstance().getFileByPath(myClassPath + File.separator + name.replace('/', File.separatorChar));
       if (!resourceFile.exists()) return null;
-      return resourceFile.toURL();
+      return FileSystem.getInstance().getURL(resourceFile);
     } catch (MalformedURLException e) {
       return null;
     }

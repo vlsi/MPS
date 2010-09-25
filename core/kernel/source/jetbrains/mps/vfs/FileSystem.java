@@ -4,6 +4,8 @@ import jetbrains.mps.vfs.impl.FileSystemImpl;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 /**
  * @author Evgeny Gerashchenko
@@ -17,7 +19,9 @@ public abstract class FileSystem {
 
   public abstract boolean isPackaged(IFile file);
 
-  public abstract IFile getBundleHome(IFile file); 
+  public abstract IFile getBundleHome(IFile file);
+
+  public abstract URL getURL(IFile file) throws MalformedURLException;
 
   // This method should not be used in MPS kernel, only in workbench
 

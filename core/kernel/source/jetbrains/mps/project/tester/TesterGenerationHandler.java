@@ -25,6 +25,7 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
@@ -99,8 +100,9 @@ public class TesterGenerationHandler extends InMemoryJavaGenerationHandler {
     if (myOutputModelRefToPath.isEmpty()) {
       return null;
     }
-    File outputDir = new File(myOutputModelRefToPath.get(outputModelRef));
-    return FileGenerationUtil.getDefaultOutputDir(outputModelRef, FileSystem.getInstance().getFileByPath(outputDir.getAbsolutePath())).toFile();
+    IFile outputRootDir = FileSystem.getInstance().getFileByPath(myOutputModelRefToPath.get(outputModelRef));
+    IFile outputDir = FileGenerationUtil.getDefaultOutputDir(outputModelRef, outputRootDir);
+    return new File(outputDir.getAbsolutePath());
   }
 
   @Override

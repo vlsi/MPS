@@ -24,6 +24,7 @@ import jetbrains.mps.vfs.IFileNameFilter;
 
 import javax.swing.Icon;
 import javax.swing.filechooser.FileSystemView;
+import java.io.File;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -61,13 +62,13 @@ public abstract class FileTreeNode extends MPSTreeNode {
     } else if (extension.equals(MPSExtentions.MODEL)) {
       icon = Icons.MODEL_ICON;
     } else {
-      icon = fsView.getSystemIcon(file.toFile());
+      icon = fsView.getSystemIcon(new File(file.getAbsolutePath()));
     }
 
 
     String caption = filename;
     if (!isDisk) {
-      if (file.toFile().isHidden()) {
+      if (new File(file.getAbsolutePath()).isHidden()) {
         caption = "<html><font color='gray'>" + caption + "</font></html>";
         //todo: set new icon
       }

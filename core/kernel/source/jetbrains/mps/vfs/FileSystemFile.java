@@ -148,10 +148,6 @@ class FileSystemFile implements IFile {
     return false;
   }
 
-  public File toFile() {
-    return myFile;
-  }
-
   public URL toURL() throws MalformedURLException {
     return myFile.toURL();
   }

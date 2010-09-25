@@ -199,9 +199,9 @@
   <unitInfo fileName="SelectLocalHome_Action.java" startLine="20" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.ide.actions.SelectLocalHome_Action" />
   <unitInfo fileName="SelectLocalEnd_Action.java" startLine="20" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.ide.actions.SelectLocalEnd_Action" />
   <unitInfo fileName="CopyNode_Action.java" startLine="21" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.ide.actions.CopyNode_Action" />
-  <unitInfo fileName="GetModuleContentsFromSource_Action.java" startLine="20" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.ide.actions.GetModuleContentsFromSource_Action" />
   <unitInfo fileName="HighlightCellDependencies_Action.java" startLine="21" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.ide.actions.HighlightCellDependencies_Action" />
   <unitInfo fileName="RemoveFromFavorites_Action.java" startLine="20" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.ide.actions.RemoveFromFavorites_Action" />
+  <unitInfo fileName="GetModuleContentsFromSource_Action.java" startLine="21" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.ide.actions.GetModuleContentsFromSource_Action" />
   <unitInfo fileName="CleanModule_Action.java" startLine="22" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.ide.actions.CleanModule_Action" />
   <unitInfo fileName="AddToNewFavoritesList_Action.java" startLine="23" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.ide.actions.AddToNewFavoritesList_Action" />
   <unitInfo fileName="FixVirtualPackges_Action.java" startLine="23" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.ide.actions.FixVirtualPackges_Action" />
@@ -4799,27 +4799,27 @@
     <unitInfo nodeId="5735282328623448762" fileName="GoByCurrentReference_Action.java" startLine="133" startPosition="12" endLine="144" endPosition="9" unitName="jetbrains.mps.ide.actions.GoByCurrentReference_Action$1" />
   </root>
   <root nodeId="5408201126509038596">
-    <nodeInfo nodeId="4393431345216734597" fileName="GetModuleContentsFromSource_Action.java" startLine="23" startPosition="0" endLine="24" endPosition="22" />
-    <nodeInfo nodeId="4393431345216734600" fileName="GetModuleContentsFromSource_Action.java" startLine="24" startPosition="22" endLine="25" endPosition="36" />
-    <nodeInfo nodeId="5408201126509038597" fileName="GetModuleContentsFromSource_Action.java" startLine="25" startPosition="36" endLine="26" endPosition="25" />
-    <nodeInfo nodeId="2042640167017164587" fileName="GetModuleContentsFromSource_Action.java" startLine="76" startPosition="9" endLine="77" endPosition="62" />
-    <nodeInfo nodeId="2042640167017164592" fileName="GetModuleContentsFromSource_Action.java" startLine="77" startPosition="62" endLine="78" endPosition="59" />
-    <nodeInfo nodeId="2042640167017164597" fileName="GetModuleContentsFromSource_Action.java" startLine="78" startPosition="59" endLine="79" endPosition="64" />
-    <nodeInfo nodeId="2042640167017164624" fileName="GetModuleContentsFromSource_Action.java" startLine="81" startPosition="43" endLine="82" endPosition="36" />
-    <nodeInfo nodeId="2042640167017164633" fileName="GetModuleContentsFromSource_Action.java" startLine="84" startPosition="9" endLine="85" endPosition="95" />
-    <nodeInfo nodeId="2042640167017164644" fileName="GetModuleContentsFromSource_Action.java" startLine="86" startPosition="27" endLine="87" endPosition="173" />
-    <nodeInfo nodeId="2042640167017164655" fileName="GetModuleContentsFromSource_Action.java" startLine="87" startPosition="173" endLine="88" endPosition="31" />
-    <nodeInfo nodeId="2042640167017164618" fileName="GetModuleContentsFromSource_Action.java" startLine="80" startPosition="55" endLine="84" endPosition="0" />
-    <nodeInfo nodeId="2042640167017164642" fileName="GetModuleContentsFromSource_Action.java" startLine="85" startPosition="95" endLine="89" endPosition="7" />
-    <nodeInfo nodeId="2042640167017164610" fileName="GetModuleContentsFromSource_Action.java" startLine="79" startPosition="64" endLine="84" endPosition="9" />
-    <scopeInfo nodeId="2042640167017164623" fileName="GetModuleContentsFromSource_Action.java" startLine="81" startPosition="43" endLine="82" endPosition="36" />
-    <scopeInfo nodeId="2042640167017164643" fileName="GetModuleContentsFromSource_Action.java" startLine="86" startPosition="27" endLine="88" endPosition="31">
+    <nodeInfo nodeId="4393431345216734597" fileName="GetModuleContentsFromSource_Action.java" startLine="24" startPosition="0" endLine="25" endPosition="22" />
+    <nodeInfo nodeId="4393431345216734600" fileName="GetModuleContentsFromSource_Action.java" startLine="25" startPosition="22" endLine="26" endPosition="36" />
+    <nodeInfo nodeId="5408201126509038597" fileName="GetModuleContentsFromSource_Action.java" startLine="26" startPosition="36" endLine="27" endPosition="25" />
+    <nodeInfo nodeId="2042640167017164587" fileName="GetModuleContentsFromSource_Action.java" startLine="78" startPosition="9" endLine="79" endPosition="62" />
+    <nodeInfo nodeId="2042640167017164592" fileName="GetModuleContentsFromSource_Action.java" startLine="79" startPosition="62" endLine="80" endPosition="59" />
+    <nodeInfo nodeId="2042640167017164597" fileName="GetModuleContentsFromSource_Action.java" startLine="80" startPosition="59" endLine="81" endPosition="64" />
+    <nodeInfo nodeId="2042640167017164624" fileName="GetModuleContentsFromSource_Action.java" startLine="83" startPosition="43" endLine="84" endPosition="36" />
+    <nodeInfo nodeId="2042640167017164633" fileName="GetModuleContentsFromSource_Action.java" startLine="86" startPosition="9" endLine="87" endPosition="95" />
+    <nodeInfo nodeId="2042640167017164644" fileName="GetModuleContentsFromSource_Action.java" startLine="88" startPosition="27" endLine="89" endPosition="192" />
+    <nodeInfo nodeId="2042640167017164655" fileName="GetModuleContentsFromSource_Action.java" startLine="89" startPosition="192" endLine="90" endPosition="31" />
+    <nodeInfo nodeId="2042640167017164618" fileName="GetModuleContentsFromSource_Action.java" startLine="82" startPosition="55" endLine="86" endPosition="0" />
+    <nodeInfo nodeId="2042640167017164642" fileName="GetModuleContentsFromSource_Action.java" startLine="87" startPosition="95" endLine="91" endPosition="7" />
+    <nodeInfo nodeId="2042640167017164610" fileName="GetModuleContentsFromSource_Action.java" startLine="81" startPosition="64" endLine="86" endPosition="9" />
+    <scopeInfo nodeId="2042640167017164623" fileName="GetModuleContentsFromSource_Action.java" startLine="83" startPosition="43" endLine="84" endPosition="36" />
+    <scopeInfo nodeId="2042640167017164643" fileName="GetModuleContentsFromSource_Action.java" startLine="88" startPosition="27" endLine="90" endPosition="31">
       <varInfo nodeId="2042640167017164645" varName="javaCompiler" />
     </scopeInfo>
-    <scopeInfo nodeId="2042640167017164618" fileName="GetModuleContentsFromSource_Action.java" startLine="80" startPosition="55" endLine="84" endPosition="0">
+    <scopeInfo nodeId="2042640167017164618" fileName="GetModuleContentsFromSource_Action.java" startLine="82" startPosition="55" endLine="86" endPosition="0">
       <varInfo nodeId="2042640167017164621" varName="file" />
     </scopeInfo>
-    <unitInfo nodeId="2042640167017164616" fileName="GetModuleContentsFromSource_Action.java" startLine="80" startPosition="40" endLine="84" endPosition="7" unitName="jetbrains.mps.ide.actions.GetModuleContentsFromSource_Action$1" />
+    <unitInfo nodeId="2042640167017164616" fileName="GetModuleContentsFromSource_Action.java" startLine="82" startPosition="40" endLine="86" endPosition="7" unitName="jetbrains.mps.ide.actions.GetModuleContentsFromSource_Action$1" />
   </root>
   <root nodeId="5533671870987003804">
     <nodeInfo nodeId="5533671870987003865" fileName="HighlightUsages_Action.java" startLine="30" startPosition="0" endLine="31" endPosition="42" />
@@ -5256,7 +5256,7 @@
     <nodeInfo nodeId="122396442507724797" fileName="GetModelContentsFromSource_Action.java" startLine="96" startPosition="62" endLine="97" endPosition="59" />
     <nodeInfo nodeId="122396442507724806" fileName="GetModelContentsFromSource_Action.java" startLine="97" startPosition="59" endLine="98" endPosition="64" />
     <nodeInfo nodeId="122396442507792615" fileName="GetModelContentsFromSource_Action.java" startLine="98" startPosition="64" endLine="99" endPosition="85" />
-    <nodeInfo nodeId="122396442507792611" fileName="GetModelContentsFromSource_Action.java" startLine="101" startPosition="43" endLine="102" endPosition="90" />
+    <nodeInfo nodeId="122396442507792611" fileName="GetModelContentsFromSource_Action.java" startLine="101" startPosition="43" endLine="102" endPosition="109" />
     <nodeInfo nodeId="122396442507799454" fileName="GetModelContentsFromSource_Action.java" startLine="104" startPosition="9" endLine="105" endPosition="67" />
     <nodeInfo nodeId="122396442507799480" fileName="GetModelContentsFromSource_Action.java" startLine="105" startPosition="67" endLine="106" endPosition="26" />
     <nodeInfo nodeId="122396442507799461" fileName="GetModelContentsFromSource_Action.java" startLine="106" startPosition="26" endLine="107" endPosition="50" />
@@ -5268,8 +5268,8 @@
     <nodeInfo nodeId="122396442507799607" fileName="GetModelContentsFromSource_Action.java" startLine="117" startPosition="37" endLine="118" endPosition="34" />
     <nodeInfo nodeId="122396442507799623" fileName="GetModelContentsFromSource_Action.java" startLine="122" startPosition="28" endLine="123" endPosition="106" />
     <nodeInfo nodeId="122396442507799118" fileName="GetModelContentsFromSource_Action.java" startLine="124" startPosition="7" endLine="125" endPosition="94" />
-    <nodeInfo nodeId="576893074390180835" fileName="GetModelContentsFromSource_Action.java" startLine="126" startPosition="27" endLine="127" endPosition="141" />
-    <nodeInfo nodeId="576893074390180842" fileName="GetModelContentsFromSource_Action.java" startLine="127" startPosition="141" endLine="128" endPosition="31" />
+    <nodeInfo nodeId="576893074390180835" fileName="GetModelContentsFromSource_Action.java" startLine="126" startPosition="27" endLine="127" endPosition="160" />
+    <nodeInfo nodeId="576893074390180842" fileName="GetModelContentsFromSource_Action.java" startLine="127" startPosition="160" endLine="128" endPosition="31" />
     <nodeInfo nodeId="576893074390181268" fileName="GetModelContentsFromSource_Action.java" startLine="46" startPosition="78" endLine="49" endPosition="5" />
     <nodeInfo nodeId="122396442507799492" fileName="GetModelContentsFromSource_Action.java" startLine="110" startPosition="70" endLine="113" endPosition="9" />
     <nodeInfo nodeId="122396442507799587" fileName="GetModelContentsFromSource_Action.java" startLine="116" startPosition="100" endLine="119" endPosition="11" />
@@ -5280,7 +5280,7 @@
     <nodeInfo nodeId="122396442507799555" fileName="GetModelContentsFromSource_Action.java" startLine="114" startPosition="29" endLine="120" endPosition="9" />
     <nodeInfo nodeId="122396442507799469" fileName="GetModelContentsFromSource_Action.java" startLine="107" startPosition="50" endLine="121" endPosition="7" />
     <scopeInfo nodeId="576893074390181269" fileName="GetModelContentsFromSource_Action.java" startLine="47" startPosition="25" endLine="48" endPosition="19" />
-    <scopeInfo nodeId="122396442507792610" fileName="GetModelContentsFromSource_Action.java" startLine="101" startPosition="43" endLine="102" endPosition="90" />
+    <scopeInfo nodeId="122396442507792610" fileName="GetModelContentsFromSource_Action.java" startLine="101" startPosition="43" endLine="102" endPosition="109" />
     <scopeInfo nodeId="122396442507799493" fileName="GetModelContentsFromSource_Action.java" startLine="111" startPosition="37" endLine="112" endPosition="64" />
     <scopeInfo nodeId="122396442507799588" fileName="GetModelContentsFromSource_Action.java" startLine="117" startPosition="37" endLine="118" endPosition="34" />
     <scopeInfo nodeId="122396442507799615" fileName="GetModelContentsFromSource_Action.java" startLine="122" startPosition="28" endLine="123" endPosition="106" />
@@ -6454,7 +6454,7 @@
     <nodeInfo nodeId="6747753996184177205" fileName="NewModelFromSource_Action.java" startLine="147" startPosition="64" endLine="148" endPosition="61" />
     <nodeInfo nodeId="6747753996184177210" fileName="NewModelFromSource_Action.java" startLine="148" startPosition="61" endLine="149" endPosition="66" />
     <nodeInfo nodeId="6747753996184177215" fileName="NewModelFromSource_Action.java" startLine="149" startPosition="66" endLine="150" endPosition="49" />
-    <nodeInfo nodeId="6747753996184177237" fileName="NewModelFromSource_Action.java" startLine="152" startPosition="45" endLine="153" endPosition="92" />
+    <nodeInfo nodeId="6747753996184177237" fileName="NewModelFromSource_Action.java" startLine="152" startPosition="45" endLine="153" endPosition="111" />
     <nodeInfo nodeId="6747753996184177243" fileName="NewModelFromSource_Action.java" startLine="155" startPosition="11" endLine="156" endPosition="100" />
     <nodeInfo nodeId="6747753996184177249" fileName="NewModelFromSource_Action.java" startLine="156" startPosition="100" endLine="157" endPosition="28" />
     <nodeInfo nodeId="6747753996184177253" fileName="NewModelFromSource_Action.java" startLine="157" startPosition="28" endLine="158" endPosition="52" />
@@ -6466,8 +6466,8 @@
     <nodeInfo nodeId="6747753996184177307" fileName="NewModelFromSource_Action.java" startLine="168" startPosition="39" endLine="169" endPosition="36" />
     <nodeInfo nodeId="6747753996184177322" fileName="NewModelFromSource_Action.java" startLine="173" startPosition="30" endLine="174" endPosition="108" />
     <nodeInfo nodeId="6747753996184177332" fileName="NewModelFromSource_Action.java" startLine="175" startPosition="9" endLine="176" endPosition="92" />
-    <nodeInfo nodeId="6747753996184177343" fileName="NewModelFromSource_Action.java" startLine="177" startPosition="33" endLine="178" endPosition="170" />
-    <nodeInfo nodeId="6747753996184177354" fileName="NewModelFromSource_Action.java" startLine="178" startPosition="170" endLine="179" endPosition="33" />
+    <nodeInfo nodeId="6747753996184177343" fileName="NewModelFromSource_Action.java" startLine="177" startPosition="33" endLine="178" endPosition="189" />
+    <nodeInfo nodeId="6747753996184177354" fileName="NewModelFromSource_Action.java" startLine="178" startPosition="189" endLine="179" endPosition="33" />
     <nodeInfo nodeId="6747753996184177172" fileName="NewModelFromSource_Action.java" startLine="180" startPosition="9" endLine="181" endPosition="50" />
     <nodeInfo nodeId="6747753996184177176" fileName="NewModelFromSource_Action.java" startLine="181" startPosition="50" endLine="182" endPosition="101" />
     <nodeInfo nodeId="6747753996184177001" fileName="NewModelFromSource_Action.java" startLine="192" startPosition="80" endLine="193" endPosition="92" />
@@ -6503,7 +6503,7 @@
     <scopeInfo nodeId="6747753996184177072" fileName="NewModelFromSource_Action.java" startLine="61" startPosition="51" endLine="62" endPosition="20" />
     <scopeInfo nodeId="4578016341099784787" fileName="NewModelFromSource_Action.java" startLine="122" startPosition="45" endLine="123" endPosition="17" />
     <scopeInfo nodeId="4578016341099784793" fileName="NewModelFromSource_Action.java" startLine="124" startPosition="16" endLine="125" endPosition="129" />
-    <scopeInfo nodeId="6747753996184177236" fileName="NewModelFromSource_Action.java" startLine="152" startPosition="45" endLine="153" endPosition="92" />
+    <scopeInfo nodeId="6747753996184177236" fileName="NewModelFromSource_Action.java" startLine="152" startPosition="45" endLine="153" endPosition="111" />
     <scopeInfo nodeId="6747753996184177275" fileName="NewModelFromSource_Action.java" startLine="162" startPosition="39" endLine="163" endPosition="66" />
     <scopeInfo nodeId="6747753996184177306" fileName="NewModelFromSource_Action.java" startLine="168" startPosition="39" endLine="169" endPosition="36" />
     <scopeInfo nodeId="6747753996184177321" fileName="NewModelFromSource_Action.java" startLine="173" startPosition="30" endLine="174" endPosition="108" />

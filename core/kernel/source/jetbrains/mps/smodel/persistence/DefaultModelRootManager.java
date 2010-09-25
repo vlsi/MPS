@@ -34,6 +34,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.IFileUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -57,7 +58,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
   public SModel loadModel(final @NotNull SModelDescriptor sm) {
     DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
 
-    if (!dsm.getModelFile().isReadOnly() && !dsm.getModelFile().exists()) {
+    if (!dsm.getModelFile().isReadOnly() && dsm.getModelFile().exists()) {
       return new SModel(dsm.getSModelReference());
     }
 
@@ -279,7 +280,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     SModelReference newModelReference = ModelPersistence.upgradeModelUID(modelReference);
     IFile newFile = createFileForModelUID(root, newModelReference.getSModelFqName());//ModelPersistence.upgradeFile(modelFile);
     newFile.createNewFile();
-    FileUtil.copyFile(modelFile.toFile(), newFile.toFile());
+    IFileUtils.copyFileContent(modelFile, newFile);
     modelFile.delete();
 
     return getInstance(manager, newFile.getAbsolutePath(), newModelReference, owner, true);

@@ -99,7 +99,7 @@ public class GetModelContentsFromSource_Action extends GeneratedAction {
       final SModel sModel = GetModelContentsFromSource_Action.this.model.getSModel();
       treeFileChooser.setFileFilter(new IFileFilter() {
         public boolean accept(IFile file) {
-          return JavaCompiler.checkBaseModelMatchesSourceDirectory(sModel, file.toFile());
+          return JavaCompiler.checkBaseModelMatchesSourceDirectory(sModel, new File(file.getAbsolutePath()));
         }
       });
       String generatorOutputPath = module.getGeneratorOutputPath();
@@ -124,7 +124,7 @@ public class GetModelContentsFromSource_Action extends GeneratedAction {
       }
       IFile result = treeFileChooser.showDialog(GetModelContentsFromSource_Action.this.frame);
       if (result != null) {
-        JavaCompiler javaCompiler = new JavaCompiler(GetModelContentsFromSource_Action.this.context, module, result.toFile(), false, sModel);
+        JavaCompiler javaCompiler = new JavaCompiler(GetModelContentsFromSource_Action.this.context, module, new File(result.getAbsolutePath()), false, sModel);
         javaCompiler.compile();
       }
     } catch (Throwable t) {

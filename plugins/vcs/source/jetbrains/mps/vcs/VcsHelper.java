@@ -94,7 +94,7 @@ public class VcsHelper {
     File tmp = jetbrains.mps.util.FileUtil.createTmpDir();
     AbstractVcsHelperImpl.writeContentsToFile(ModelUtils.modelToBytes(inMemory), modelFile.getName(), tmp, FsMemoryMergeVersion.MEMORY.getSuffix());
     if (modelFile.exists()) {
-      FileUtil.copy(modelFile.toFile(), new File(tmp.getAbsolutePath() + File.separator + modelFile.getName() + "." + FsMemoryMergeVersion.FILE_SYSTEM.getSuffix()));
+      FileUtil.copy(new File(modelFile.getAbsolutePath()), new File(tmp.getAbsolutePath(), modelFile.getName() + "." + FsMemoryMergeVersion.FILE_SYSTEM.getSuffix()));
     }
     File zipfile = ModelUtils.chooseZipFileNameForModelFile(modelFile.getAbsolutePath());
     jetbrains.mps.util.FileUtil.zip(tmp, zipfile);
@@ -106,7 +106,7 @@ public class VcsHelper {
 
   private static boolean openDiffDialog(IFile modelFile, final SModel inMemory) {
     try {
-      final SModel onDisk = ModelUtils.readModel(FileUtil.loadFileBytes(modelFile.toFile()), modelFile.getAbsolutePath());
+      final SModel onDisk = ModelUtils.readModel(FileUtil.loadFileBytes(new File(modelFile.getAbsolutePath())), modelFile.getAbsolutePath());
       return showDiffDialog(onDisk, inMemory, modelFile, ProjectManager.getInstance().getOpenProjects()[0]);
     } catch (IOException e) {
       LOG.error(e);

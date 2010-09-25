@@ -65,24 +65,21 @@ public class Module_Behavior {
     return SetSequence.fromSet(result).toListSequence();
   }
 
-  public static String call_findMPSProjectFile_1213877514840(SNode thisNode, File file) {
+  public static IFile call_findMPSProjectFile_1213877514840(SNode thisNode, IFile file) {
     if (AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode).getAbsolutePath().startsWith(file.getAbsolutePath()) && !(AbstractProjectComponent_Behavior.call_getHomePath_1213877333764(thisNode).getAbsolutePath().equals(file.getAbsolutePath()))) {
       return null;
     }
-    File[] children = file.listFiles();
-    if (children == null) {
-      return null;
-    }
-    for (File child : children) {
+    List<IFile> children = file.list();
+    for (IFile child : children) {
       if (!(child.isDirectory()) && (child.getAbsolutePath().endsWith(MPSExtentions.DOT_MPS_PROJECT))) {
         return child.getParent();
       }
     }
-    return Module_Behavior.call_findMPSProjectFile_1213877514840(thisNode, file.getParentFile());
+    return Module_Behavior.call_findMPSProjectFile_1213877514840(thisNode, file.getParent());
   }
 
   public static String call_getProjectBasedir_1213877514893(SNode thisNode) {
-    return Module_Behavior.call_findMPSProjectFile_1213877514840(thisNode, Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile().getParent().toFile());
+    return Module_Behavior.call_findMPSProjectFile_1213877514840(thisNode, Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile().getParent()).getAbsolutePath();
   }
 
   public static String call_getChildrenTargetDir_1213877514970(SNode thisNode) {

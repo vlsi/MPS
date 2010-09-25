@@ -54,8 +54,4 @@ public interface IFile {
 
   InputStream openInputStream() throws IOException;
   OutputStream openOutputStream() throws IOException;
-
-  File toFile(); // TODO remove all usages
-
-  URL toURL() throws MalformedURLException; // TODO change all usages to using factory method
 }

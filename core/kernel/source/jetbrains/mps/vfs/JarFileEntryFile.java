@@ -159,10 +159,6 @@ class JarFileEntryFile implements IFile {
     return true;
   }
 
-  public File toFile() {
-    throw new UnsupportedOperationException();
-  }
-
   public URL toURL() throws MalformedURLException {
     throw new UnsupportedOperationException("Jar File Entry File currently does not support getting url.");
   }

@@ -20,6 +20,7 @@ import com.intellij.openapi.fileChooser.FileChooserDialog;
 import com.intellij.openapi.fileChooser.FileChooserFactory;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
@@ -131,7 +132,7 @@ public class TreeFileChooser {
 
     FileChooserDialog dialog = FileChooserFactory.getInstance().createFileChooser(descriptor, owner);
 
-    VirtualFile selection = LocalFileSystem.getInstance().findFileByIoFile(ourInitialSelectedFile.toFile());
+    VirtualFile selection = VirtualFileUtils.getVirtualFile(ourInitialSelectedFile);
     for (VirtualFile file : dialog.choose(selection, null)) {
       res.add(FileSystem.getInstance().getFileByPath(file.getPath()));
     }
