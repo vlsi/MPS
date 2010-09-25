@@ -535,8 +535,8 @@
   </target>
   <target name="pack.jetbrains.mps.lang.smodelTests_eb3f0">
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.smodelTests.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="core/languageDesign/smodelTests/smodelTests.mpl" prefix="module" />
-      <zipfileset dir="core/languageDesign/smodelTests" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset file="core/languageDesign/smodel/languages/smodelTests/smodelTests.mpl" prefix="module" />
+      <zipfileset dir="core/languageDesign/smodel/languages/smodelTests" excludes="**/*.iml, **/*.java, **/*.class, **/trace.info, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.devkit.general-purpose_a4f0">
