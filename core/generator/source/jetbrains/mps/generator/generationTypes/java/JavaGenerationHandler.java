@@ -18,7 +18,7 @@ package jetbrains.mps.generator.generationTypes.java;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.baseLanguage.textGen.BLDependenciesCache;
-import jetbrains.mps.debug.api.info.DebugInfoCache;
+import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.IGeneratorLogger;
@@ -79,7 +79,7 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
         result = new JavaFileGenerator(javaStreamHandler,
           ModelGenerationStatusManager.getInstance().getCacheGenerator(),
           BLDependenciesCache.getInstance().getGenerator(),
-          DebugInfoCache.getInstance().getGenerator(),
+          TraceInfoCache.getInstance().getGenerator(),
           GenerationDependenciesCache.getInstance().getGenerator()
         ).handleOutput(invocationContext, status);
       } finally {

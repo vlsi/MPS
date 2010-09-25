@@ -35,7 +35,7 @@ public class DebugSession extends AbstractDebugSession<JavaUiState> {
 
   public void resume() {
     SuspendContext context = getUiState().getContext();
-    LOG.assertLog(context != null);
+    assert context != null : "Context is null while debug session state is " + myExecutionState;
     myEventsProcessor.resume(context);
   }
 
@@ -74,8 +74,8 @@ public class DebugSession extends AbstractDebugSession<JavaUiState> {
   private void step(StepType type) {
     JavaUiState state = getUiState();
     SuspendContext context = state.getContext();
-    LOG.assertLog(context != null);
-    LOG.assertLog(state.isPausedOnBreakpoint());
+    assert context != null : "Context is null while debug session state is " + myExecutionState;
+    assert state.isPausedOnBreakpoint() : "State is not paused on breakpoint.";
     myEventsProcessor.step(type, context);
   }
 

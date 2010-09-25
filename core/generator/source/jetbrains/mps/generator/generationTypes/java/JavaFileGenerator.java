@@ -18,7 +18,7 @@ package jetbrains.mps.generator.generationTypes.java;
 import jetbrains.mps.baseLanguage.textGen.BLDependenciesCache;
 import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
 import jetbrains.mps.baseLanguage.textGen.RootDependencies;
-import jetbrains.mps.debug.api.info.DebugInfoCache;
+import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.traceInfo.*;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.TransientSModel;
@@ -210,7 +210,7 @@ class JavaFileGenerator {
 
         // re-register debug
         if (debugInfoCache == null) {
-          debugInfoCache = DebugInfoCache.getInstance().get(status.getOriginalInputModel());
+          debugInfoCache = TraceInfoCache.getInstance().get(status.getOriginalInputModel());
         }
         if (debugInfoCache != null) {
           DebugInfoRoot infoRoot = debugInfoCache.getRootInfo(rdep.getRootId());

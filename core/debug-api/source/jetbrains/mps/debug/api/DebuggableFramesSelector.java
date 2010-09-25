@@ -1,6 +1,6 @@
 package jetbrains.mps.debug.api;
 
-import jetbrains.mps.debug.api.info.DebugInfoUtil;
+import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import jetbrains.mps.debug.api.programState.ILocation;
 import jetbrains.mps.debug.api.programState.IStackFrame;
 import jetbrains.mps.debug.api.programState.NullLocation;
@@ -28,7 +28,7 @@ public class DebuggableFramesSelector implements IDebuggableFramesSelector {
     ILocation location = frame.getLocation();
     if (location instanceof NullLocation) return false;
 
-    SNode node = DebugInfoUtil.getNode(location.getUnitName(), location.getFileName(), location.getLineNumber());
+    SNode node = TraceInfoUtil.getNode(location.getUnitName(), location.getFileName(), location.getLineNumber());
     if (node != null) {
       return true;
     }
@@ -37,7 +37,7 @@ public class DebuggableFramesSelector implements IDebuggableFramesSelector {
 
   @Override
   public boolean isDebuggablePosition(String unitName, String fileName, int position) {
-    SNode node = DebugInfoUtil.getNode(unitName, fileName, position);
+    SNode node = TraceInfoUtil.getNode(unitName, fileName, position);
     if (node != null) {
       return true;
     }
@@ -50,8 +50,8 @@ public class DebuggableFramesSelector implements IDebuggableFramesSelector {
       return true;
     }
 
-    SNode lastNode = DebugInfoUtil.getNode(lastUnitName, lastFileName, lastLineNumber);
-    SNode nextNode = DebugInfoUtil.getNode(nextUnitName, nextFileName, nextLineNumber);
+    SNode lastNode = TraceInfoUtil.getNode(lastUnitName, lastFileName, lastLineNumber);
+    SNode nextNode = TraceInfoUtil.getNode(nextUnitName, nextFileName, nextLineNumber);
     return lastNode == nextNode;
   }
 }

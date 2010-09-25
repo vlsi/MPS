@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.traceInfo.DebugInfo;
-import jetbrains.mps.debug.api.info.DebugInfoCache;
+import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.traceInfo.PositionInfo;
 
 public class PrintNodePosition_Action extends GeneratedAction {
@@ -76,7 +76,7 @@ public class PrintNodePosition_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      DebugInfo result = DebugInfoCache.getInstance().get(PrintNodePosition_Action.this.model);
+      DebugInfo result = TraceInfoCache.getInstance().get(PrintNodePosition_Action.this.model);
       if (result != null) {
         PositionInfo positionInfo = result.getPositionForNode(PrintNodePosition_Action.this.node.getSNodeId().toString());
         System.out.println(positionInfo);

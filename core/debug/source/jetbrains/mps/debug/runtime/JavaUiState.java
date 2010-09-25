@@ -191,10 +191,7 @@ public class JavaUiState extends AbstractUiState {
   }
 
   public boolean isPausedOnBreakpoint() {
-    if (myContext != null) {
-      return getEventsProcessor().getSuspendManager().getPausedContexts().contains(myContext);
-    }
-    return false;
+    return myContext != null && getEventsProcessor().getSuspendManager().getPausedContexts().contains(myContext);
   }
 
   @Nullable

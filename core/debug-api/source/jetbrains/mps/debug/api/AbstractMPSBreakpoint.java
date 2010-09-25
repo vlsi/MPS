@@ -2,7 +2,7 @@ package jetbrains.mps.debug.api;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.debug.api.info.DebugInfoCache;
+import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.traceInfo.PositionInfo;
 import jetbrains.mps.smodel.ModelAccess;
@@ -116,7 +116,7 @@ public abstract class AbstractMPSBreakpoint {
   }
 
   public PositionInfo getTargetCodePosition() {
-    DebugInfo debugInfo = DebugInfoCache.getInstance().get(myNodePointer.getModel());
+    DebugInfo debugInfo = TraceInfoCache.getInstance().get(myNodePointer.getModel());
     if (debugInfo == null) {
       return null;
     }
@@ -124,7 +124,7 @@ public abstract class AbstractMPSBreakpoint {
   }
 
   public String getTargetUnitName() {
-    DebugInfo debugInfo = DebugInfoCache.getInstance().get(myNodePointer.getModel());
+    DebugInfo debugInfo = TraceInfoCache.getInstance().get(myNodePointer.getModel());
     if (debugInfo == null) {
       return null;
     }

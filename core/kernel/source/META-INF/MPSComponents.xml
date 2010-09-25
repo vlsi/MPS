@@ -321,7 +321,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.debug.api.info.DebugInfoCache</implementation-class>
+      <implementation-class>jetbrains.mps.generator.traceInfo.TraceInfoCache</implementation-class>
     </component>
 
     <component>

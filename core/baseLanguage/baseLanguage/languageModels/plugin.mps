@@ -59,7 +59,7 @@
   <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
   <languageAspect modelUID="r:550fbd90-c9f2-4576-a8a6-223eca16d68b(jetbrains.mps.baseLanguage.runConfigurations.structure)" version="0" />
   <languageAspect modelUID="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.analyzers.structure)" version="0" />
-  <maxImportIndex value="198" />
+  <maxImportIndex value="199" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" />
   <import index="4" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
@@ -117,6 +117,7 @@
   <import index="196" modelUID="f:java_stub#jetbrains.mps.ide.common(jetbrains.mps.ide.common@java_stub)" version="-1" />
   <import index="197" modelUID="f:java_stub#jetbrains.mps.debug.api.info(jetbrains.mps.debug.api.info@java_stub)" version="-1" />
   <import index="198" modelUID="f:java_stub#jetbrains.mps.traceInfo(jetbrains.mps.traceInfo@java_stub)" version="-1" />
+  <import index="199" modelUID="f:java_stub#jetbrains.mps.generator.traceInfo(jetbrains.mps.generator.traceInfo@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration:23" id="1205247737002">
     <property name="name:23" value="BaseLanguageModelActionsInternal" />
     <property name="package:23" value="Actions.Groups" />
@@ -5386,9 +5387,9 @@
               <link role="classifier:3" targetNodeId="198.~DebugInfo" resolveInfo="DebugInfo" />
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7358399876271371818">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5169126600544578029">
-                <link role="baseMethodDeclaration:3" targetNodeId="197.~DebugInfoCache.getInstance():jetbrains.mps.debug.api.info.DebugInfoCache" resolveInfo="getInstance" />
-                <link role="classConcept:3" targetNodeId="197.~DebugInfoCache" resolveInfo="DebugInfoCache" />
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="4403001791240048482">
+                <link role="baseMethodDeclaration:3" targetNodeId="199.~TraceInfoCache.getInstance():jetbrains.mps.generator.traceInfo.TraceInfoCache" resolveInfo="getInstance" />
+                <link role="classConcept:3" targetNodeId="199.~TraceInfoCache" resolveInfo="TraceInfoCache" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7358399876271371820">
                 <link role="baseMethodDeclaration:3" targetNodeId="193.~BaseModelCache.get(jetbrains.mps.smodel.SModelDescriptor):java.lang.Object" resolveInfo="get" />

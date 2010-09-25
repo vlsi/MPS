@@ -42,44 +42,6 @@
     <modules />
   </component>
   <component name="ProjectRootManager" version="2" />
-  <component name="ProjectRunConfigurationManager">
-    <configuration default="false" name="test_byteByte" type="JUnit" factoryName="JUnit">
-      <MyState>
-        <option name="myJavaRunParameters">
-          <ConfigRunParameters>
-            <option name="VMParameters" value="" />
-            <option name="alternativeJRE" value="" />
-            <option name="make" value="false" />
-            <option name="programParameters" value="" />
-            <option name="useAlternativeJRE" value="false" />
-            <option name="workingDirectory" value="" />
-          </ConfigRunParameters>
-        </option>
-        <option name="node" />
-        <option name="nodes">
-          <list>
-            <option value="jetbrains.mps.internal.collections.trove.test.PrimList_Test" />
-          </list>
-        </option>
-        <option name="model" value="jetbrains.mps.internal.collections.trove.test" />
-        <option name="module" value="collections_trove.test" />
-        <option name="method" />
-        <option name="methods" />
-        <option name="fullMethodNames">
-          <list>
-            <option value="jetbrains.mps.internal.collections.trove.test.PrimMap_Test#test_byteByte" />
-            <option value="jetbrains.mps.baseLanguage.collections.unittest.query_operations.Mapping_Test1#test__yieldNull" />
-          </list>
-        </option>
-        <option name="type" value="NODE" />
-      </MyState>
-      <RunnerSettings RunnerId="Default Debug Runner" />
-      <RunnerSettings RunnerId="Default Runner" />
-      <ConfigurationWrapper RunnerId="Default Debug Runner" />
-      <ConfigurationWrapper RunnerId="Default Runner" />
-      <method />
-    </configuration>
-  </component>
   <component name="StarteamConfiguration">
     <option name="SERVER" value="" />
     <option name="PORT" value="49201" />

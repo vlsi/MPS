@@ -5,7 +5,7 @@ package jetbrains.mps.ide.common;
 import com.intellij.execution.filters.Filter;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.debug.api.info.DebugInfoUtil;
+import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import com.intellij.execution.filters.HyperlinkInfo;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
@@ -35,7 +35,7 @@ public class JavaConsoleCreator {
     }
 
     String position = tmpStr.substring(parenIndex + 1, closingParenIndex);
-    final SNode nodeToShow = DebugInfoUtil.getNodes(methodName, position);
+    final SNode nodeToShow = TraceInfoUtil.getNodes(methodName, position);
     if (nodeToShow == null) {
       return null;
     }
