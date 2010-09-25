@@ -17,9 +17,9 @@ package jetbrains.mps.debug.api.integration.ui.breakpoint;
 
 import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
+import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelReference;
@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.Nullable;
 
+import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.tree.TreePath;
 import java.util.*;
@@ -83,6 +84,11 @@ public class BreakpointsTree extends BreakpointsView {
     public abstract T getGroup(AbstractMPSBreakpoint breakpoint);
 
     @Nullable
+    public Icon getIcon(T group) {
+      return null;
+    }
+
+    @Nullable
     public BreakpointGroupKind getSubGroupKind() {
       return null;
     }
@@ -106,6 +112,7 @@ public class BreakpointsTree extends BreakpointsView {
 
   private static class AllGroupKind extends BreakpointGroupKind<Object> {
     private static final Object ALL_GROUP = new Object();
+
     @Override
     public Object getGroup(AbstractMPSBreakpoint breakpoint) {
       return ALL_GROUP;
@@ -127,6 +134,11 @@ public class BreakpointsTree extends BreakpointsView {
     public BreakpointGroupKind getSubGroupKind() {
       return new ModelGroupKind();
     }
+
+    @Override
+    public Icon getIcon(IModule m) {
+      return IconManager.getIconFor(m);
+    }
   }
 
   private static class ModelGroupKind extends BreakpointGroupKind<SModelReference> {
@@ -139,6 +151,11 @@ public class BreakpointsTree extends BreakpointsView {
     public BreakpointGroupKind getSubGroupKind() {
       return new RootGroupKind();
     }
+
+    @Override
+    public Icon getIcon(SModelReference model) {
+      return IconManager.getIconFor(SModelRepository.getInstance().getModelDescriptor(model));
+    }
   }
 
   private static class RootGroupKind extends BreakpointGroupKind<SNodePointer> {
@@ -146,16 +163,23 @@ public class BreakpointsTree extends BreakpointsView {
     public SNodePointer getGroup(AbstractMPSBreakpoint breakpoint) {
       return new SNodePointer(breakpoint.getNodePointer().getNode().getContainingRoot());
     }
+
+    @Override
+    public Icon getIcon(SNodePointer group) {
+      return IconManager.getIconFor(group.getNode());
+    }
   }
 
   private class GroupTreeNode<T> extends MPSTreeNode {
     private final Collection<AbstractMPSBreakpoint> myBreakpoints;
     private final T myGroup;
+    private final BreakpointGroupKind<T> myKind;
 
     public GroupTreeNode(IOperationContext operationContext, BreakpointGroupKind<T> kind, T group, Collection<AbstractMPSBreakpoint> breakpoints) {
       super(operationContext);
       myBreakpoints = breakpoints;
       myGroup = group;
+      myKind = kind;
 
       BreakpointGroupKind<Object> subGroupKind = kind.getSubGroupKind();
       if (subGroupKind == null) {
@@ -176,6 +200,10 @@ public class BreakpointsTree extends BreakpointsView {
     protected void updatePresentation() {
       setText(myGroup.toString());
       setNodeIdentifier(getText());
+      Icon icon = myKind.getIcon(myGroup);
+      if (icon != null) {
+        setIcon(icon);
+      }
     }
   }
 
