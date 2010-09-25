@@ -29,7 +29,6 @@ import javax.swing.table.TableCellRenderer;
 import java.awt.Component;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
-import java.util.*;
 
 public class BreakpointsTable extends BreakpointsView {
   private final JTable myBreakpointsTable;
@@ -102,8 +101,7 @@ public class BreakpointsTable extends BreakpointsView {
       return null;
     }
     model.getBreakpointAt(selectedRow);
-    AbstractMPSBreakpoint breakpoint = model.getBreakpointAt(myBreakpointsTable.getSelectedRow());
-    return breakpoint;
+    return model.getBreakpointAt(myBreakpointsTable.getSelectedRow());
   }
 
   public void breakpointDeleted(int row) {
