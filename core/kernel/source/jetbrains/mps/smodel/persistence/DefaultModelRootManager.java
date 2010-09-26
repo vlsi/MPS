@@ -58,7 +58,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
   public SModel loadModel(final @NotNull SModelDescriptor sm) {
     DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
 
-    if (!dsm.getModelFile().isReadOnly() && dsm.getModelFile().exists()) {
+    if (!dsm.getModelFile().isReadOnly() && !dsm.getModelFile().exists()) {
       return new SModel(dsm.getSModelReference());
     }
 
