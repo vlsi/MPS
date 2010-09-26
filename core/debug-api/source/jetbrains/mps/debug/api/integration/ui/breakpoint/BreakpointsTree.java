@@ -27,6 +27,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.workbench.MPSDataKeys;
+import org.jetbrains.annotations.NonNls;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -43,6 +45,7 @@ public class BreakpointsTree extends BreakpointsView {
   public BreakpointsTree(IOperationContext context, BreakpointManagerComponent breakpointsManager) {
     super(breakpointsManager);
     myContext = context;
+    // todo checkboxes!
     myTree = new GroupedTree<AbstractMPSBreakpoint>(myContext) {
       protected BreakpointTreeNode createDataNode(IOperationContext operationContext, AbstractMPSBreakpoint breakpoint) {
         return new BreakpointTreeNode(operationContext, breakpoint);
@@ -66,32 +69,6 @@ public class BreakpointsTree extends BreakpointsView {
         myTree.expandAll();
       }
     });
-  }
-
-  @Override
-  public void breakpointDeleted(int row) {
-    // todo this stuff is not needed. the tree should update its selection by itself
-    updateBreakpoints();
-    myTree.rebuildLater();
-  }
-
-  @Override
-  public int getSelectedBreakpointIndex() {
-    // todo get rid of this stuff also
-    return getBreakpointsList().indexOf(getSelectedBreakpoint());
-  }
-
-  @Override
-  public AbstractMPSBreakpoint getSelectedBreakpoint() {
-    // todo put this stuff into the context
-    TreePath path = myTree.getSelectionPath();
-    if (path == null) return null;
-    Object node = path.getLastPathComponent();
-    if (node instanceof BreakpointTreeNode) {
-      BreakpointTreeNode breakpointNode = (BreakpointTreeNode) node;
-      return breakpointNode.myBreakpoint;
-    }
-    return null;
   }
 
   @Override
@@ -125,7 +102,23 @@ public class BreakpointsTree extends BreakpointsView {
   }
 
   public void update() {
+    updateBreakpoints();
     myTree.rebuildLater();
+  }
+
+  @Override
+  public Object getData(@NonNls String dataId) {
+    TreePath path = myTree.getSelectionPath();
+    if (path == null) return null;
+    Object node = path.getLastPathComponent();
+    if (MPS_BREAKPOINT.is(dataId)) {
+      if (node instanceof BreakpointTreeNode) {
+        BreakpointTreeNode breakpointNode = (BreakpointTreeNode) node;
+        return breakpointNode.myBreakpoint;
+      }
+      return null;
+    }
+    return null;
   }
 
   private class AllGroupKind extends GroupKind<AbstractMPSBreakpoint, Object> {

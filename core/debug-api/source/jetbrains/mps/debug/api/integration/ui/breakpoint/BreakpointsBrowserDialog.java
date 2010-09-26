@@ -56,7 +56,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
     myGotoNodeAction = new AnAction("Go To", "Go To Source", jetbrains.mps.ide.projectPane.Icons.REFERENCE_ICON) {
       @Override
       public void actionPerformed(AnActionEvent e) {
-        AbstractMPSBreakpoint breakpoint = myBreakpointsView.getSelectedBreakpoint();
+        AbstractMPSBreakpoint breakpoint = getBreakpoint(e);
         if (breakpoint == null) return;
         dispose();
         openNode(breakpoint, true, true);
@@ -64,29 +64,28 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
 
       @Override
       public void update(AnActionEvent e) {
-        e.getPresentation().setEnabled(myBreakpointsView.getSelectedBreakpoint() != null);
+        e.getPresentation().setEnabled(getBreakpoint(e) != null);
       }
     };
     group.add(myGotoNodeAction);
     myShowNodeAction = new AnAction("View Source", "View Source", jetbrains.mps.ide.projectPane.Icons.TEXT_ICON) {
       @Override
       public void actionPerformed(AnActionEvent e) {
-        AbstractMPSBreakpoint breakpoint = myBreakpointsView.getSelectedBreakpoint();
+        AbstractMPSBreakpoint breakpoint = getBreakpoint(e);
         if (breakpoint == null) return;
         openNode(breakpoint, false, true);
       }
 
       @Override
       public void update(AnActionEvent e) {
-        e.getPresentation().setEnabled(myBreakpointsView.getSelectedBreakpoint() != null);
+        e.getPresentation().setEnabled(getBreakpoint(e) != null);
       }
     };
     group.add(myShowNodeAction);
     myDeleteBreakpointAction = new AnAction("Delete", "Delete Breakpoint", jetbrains.mps.workbench.dialogs.project.components.parts.actions.icons.Icons.REMOVE) {
       @Override
       public void actionPerformed(AnActionEvent e) {
-        int selectedRow = myBreakpointsView.getSelectedBreakpointIndex();
-        final AbstractMPSBreakpoint breakpoint = myBreakpointsView.getSelectedBreakpoint();
+        final AbstractMPSBreakpoint breakpoint = getBreakpoint(e);
         if (breakpoint == null) return;
         ModelAccess.instance().runReadAction(new Runnable() {
           @Override
@@ -94,12 +93,12 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
             myBreakpointsManager.removeBreakpoint(breakpoint);
           }
         });
-        myBreakpointsView.breakpointDeleted(selectedRow);
+        myBreakpointsView.breakpointDeleted(breakpoint); //todo get rid of that!
       }
 
       @Override
       public void update(AnActionEvent e) {
-        e.getPresentation().setEnabled(myBreakpointsView.getSelectedBreakpoint() != null);
+        e.getPresentation().setEnabled(getBreakpoint(e) != null);
       }
     };
     group.add(myDeleteBreakpointAction);
@@ -192,7 +191,13 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
         tree.update();
       }
     });
+    // todo save the state of the dialog, tree, selection
+    // todo add expand/collape buttons
     return group;
+  }
+
+  private AbstractMPSBreakpoint getBreakpoint(AnActionEvent e) {
+    return BreakpointsView.MPS_BREAKPOINT.getData(e.getDataContext());
   }
 
   private boolean isTreeView() {
@@ -234,7 +239,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
       @Override
       public void mouseClicked(MouseEvent e) {
         if (e.getClickCount() == 2) {
-          AbstractMPSBreakpoint breakpoint = myBreakpointsView.getSelectedBreakpoint();
+          AbstractMPSBreakpoint breakpoint = BreakpointsView.MPS_BREAKPOINT.getData(myBreakpointsView);
           if (breakpoint == null) return;
           dispose();
           openNode(breakpoint, true, true);
@@ -272,12 +277,6 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
   @Override
   @Nullable
   public Object getData(@NonNls String dataId) {
-    if (dataId.equals(MPSDataKeys.NODE.getName())) {
-      AbstractMPSBreakpoint breakpoint = myBreakpointsView.getSelectedBreakpoint();
-      if (breakpoint != null) {
-        return breakpoint.getSNode();
-      }
-    }
-    return null;
+    return myBreakpointsView.getData(dataId);
   }
 }
