@@ -183,7 +183,7 @@ public class EvaluationUtils {
   }
 
   @NotNull
-  public static <T extends IValueProxy> Iterable<T> toIterable(IArrayValueProxy valueProxy) {
+  public static <T extends IValueProxy> Iterable<T> toIterableFromArray(IArrayValueProxy valueProxy) {
     return new IterableArrayProxy<T>(valueProxy);
   }
 

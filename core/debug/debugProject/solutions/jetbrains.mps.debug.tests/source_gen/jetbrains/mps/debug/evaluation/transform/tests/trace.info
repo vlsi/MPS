@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="TransformationUtil_Expressions_Test.java" startLine="1875" startPosition="0" endLine="1898" endPosition="0" unitName="jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test.TestBody$QuotationClass_n7zrdh_a0a45a21a" />
+  <unitInfo fileName="TransformationUtil_Expressions_Test.java" startLine="1899" startPosition="0" endLine="1922" endPosition="0" unitName="jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test.TestBody$QuotationClass_n7zrdh_a0a45a51a" />
+  <unitInfo fileName="TransformationUtil_Complex_Test.java" startLine="163" startPosition="0" endLine="1437" endPosition="0" unitName="jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test$TestBody" />
+  <unitInfo fileName="TransformationUtil_Complex_Test.java" startLine="17" startPosition="0" endLine="1438" endPosition="0" unitName="jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Complex_Test" />
+  <unitInfo fileName="TransformationUtil_Expressions_Test.java" startLine="201" startPosition="0" endLine="1923" endPosition="0" unitName="jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test$TestBody" />
+  <unitInfo fileName="TransformationUtil_Expressions_Test.java" startLine="25" startPosition="0" endLine="1924" endPosition="0" unitName="jetbrains.mps.debug.evaluation.transform.tests.TransformationUtil_Expressions_Test" />
   <root nodeId="5543996881668550053">
     <nodeInfo nodeId="5543996881668550054" fileName="TransformationUtil_Expressions_Test.java" startLine="203" startPosition="58" endLine="204" endPosition="46" />
     <nodeInfo nodeId="5543996881668550054" fileName="TransformationUtil_Expressions_Test.java" startLine="204" startPosition="46" endLine="205" endPosition="46" />
