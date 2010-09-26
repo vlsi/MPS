@@ -40,6 +40,8 @@ public abstract class GroupedTree<D> extends MPSTree {
   }
 
   public static abstract class GroupKind<D, T> {
+    private boolean myIsVisible = true;
+
     public abstract T getGroup(D data);
 
     @Nullable
@@ -67,6 +69,14 @@ public abstract class GroupedTree<D> extends MPSTree {
 
       return result;
     }
+
+    public boolean isVisible() {
+      return myIsVisible;
+    }
+
+    public void setVisible(boolean isVisible) {
+      myIsVisible = isVisible;
+    }
   }
 
   private class GroupTreeNode<T> extends MPSTreeNode {
@@ -81,6 +91,10 @@ public abstract class GroupedTree<D> extends MPSTree {
       myKind = kind;
 
       GroupKind<D, Object> subGroupKind = kind.getSubGroupKind();
+      while (subGroupKind != null && !subGroupKind.isVisible()) {
+        subGroupKind = subGroupKind.getSubGroupKind();
+      }
+      
       if (subGroupKind == null) {
         for (D breakpoint : myBreakpoints) {
           add(createDataNode(operationContext, breakpoint));

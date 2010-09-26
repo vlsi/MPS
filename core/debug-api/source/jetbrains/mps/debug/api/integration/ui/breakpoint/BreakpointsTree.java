@@ -36,6 +36,9 @@ import java.util.Collection;
 public class BreakpointsTree extends BreakpointsView {
   private final IOperationContext myContext;
   private final MPSTree myTree;
+  private GroupKind myModuleKind = new ModuleGroupKind();
+  private GroupKind myModelKind = new ModelGroupKind();
+  private GroupKind myRootKind = new RootGroupKind();
 
   public BreakpointsTree(IOperationContext context, BreakpointManagerComponent breakpointsManager) {
     super(breakpointsManager);
@@ -96,21 +99,49 @@ public class BreakpointsTree extends BreakpointsView {
     return myTree;
   }
 
-  private static class AllGroupKind extends GroupKind<AbstractMPSBreakpoint, Object> {
-    private static final Object ALL_GROUP = new Object();
+  // todo: refactor
+  public void toggleModuleGroup(boolean value) {
+    myModuleKind.setVisible(value);
+  }
+
+  public void toggleRootGroup(boolean value) {
+    myRootKind.setVisible(value);
+  }
+
+  public void toggleModelGroup(boolean value) {
+    myModelKind.setVisible(value);
+  }
+
+  public boolean isModuleGroupVisible() {
+    return myModuleKind.isVisible();
+  }
+
+  public boolean isRootGroupVisible() {
+    return myRootKind.isVisible();
+  }
+
+  public boolean isModelGroupVisible() {
+    return myModelKind.isVisible();
+  }
+
+  public void update() {
+    myTree.rebuildLater();
+  }
+
+  private class AllGroupKind extends GroupKind<AbstractMPSBreakpoint, Object> {
 
     @Override
     public Object getGroup(AbstractMPSBreakpoint breakpoint) {
-      return ALL_GROUP;
+      return new Object();
     }
 
     @Override
     public GroupKind getSubGroupKind() {
-      return new ModuleGroupKind();
+      return myModuleKind;
     }
   }
 
-  private static class ModuleGroupKind extends GroupKind<AbstractMPSBreakpoint, IModule> {
+  private class ModuleGroupKind extends GroupKind<AbstractMPSBreakpoint, IModule> {
     @Override
     public IModule getGroup(AbstractMPSBreakpoint breakpoint) {
       return SModelRepository.getInstance().getModelDescriptor(breakpoint.getNodePointer().getModelReference()).getModule();
@@ -118,7 +149,7 @@ public class BreakpointsTree extends BreakpointsView {
 
     @Override
     public GroupKind getSubGroupKind() {
-      return new ModelGroupKind();
+      return myModelKind;
     }
 
     @Override
@@ -127,7 +158,7 @@ public class BreakpointsTree extends BreakpointsView {
     }
   }
 
-  private static class ModelGroupKind extends GroupKind<AbstractMPSBreakpoint, SModelReference> {
+  private class ModelGroupKind extends GroupKind<AbstractMPSBreakpoint, SModelReference> {
     @Override
     public SModelReference getGroup(AbstractMPSBreakpoint breakpoint) {
       return breakpoint.getNodePointer().getModelReference();
@@ -135,7 +166,7 @@ public class BreakpointsTree extends BreakpointsView {
 
     @Override
     public GroupKind getSubGroupKind() {
-      return new RootGroupKind();
+      return myRootKind;
     }
 
     @Override
@@ -144,7 +175,7 @@ public class BreakpointsTree extends BreakpointsView {
     }
   }
 
-  private static class RootGroupKind extends GroupKind<AbstractMPSBreakpoint, SNodePointer> {
+  private class RootGroupKind extends GroupKind<AbstractMPSBreakpoint, SNodePointer> {
     @Override
     public SNodePointer getGroup(AbstractMPSBreakpoint breakpoint) {
       return new SNodePointer(breakpoint.getNodePointer().getNode().getContainingRoot());

@@ -15,7 +15,7 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
-import java.awt.*;
+import java.awt.BorderLayout;
 import java.awt.event.*;
 
 public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider {
@@ -109,7 +109,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
 
       @Override
       public boolean isSelected(AnActionEvent e) {
-        return myBreakpointsView instanceof BreakpointsTree;
+        return isTreeView();
       }
 
       @Override
@@ -123,7 +123,80 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
         }
       }
     });
+    group.add(new ToggleAction("Group By Module", "Group By Module", jetbrains.mps.ide.findusages.view.icons.Icons.MODULE_ICON) {
+      @Override
+      public void update(AnActionEvent e) {
+        super.update(e);
+        e.getPresentation().setEnabled(isTreeView());
+      }
+
+      @Override
+      public boolean isSelected(AnActionEvent e) {
+        if (!isTreeView()) {
+          return false;
+        }
+        BreakpointsTree tree = (BreakpointsTree) myBreakpointsView;
+        return tree.isModuleGroupVisible();
+      }
+
+      @Override
+      public void setSelected(AnActionEvent e, boolean state) {
+        BreakpointsTree tree = (BreakpointsTree) myBreakpointsView;
+        tree.toggleModuleGroup(state);
+        tree.update();
+      }
+    });
+    group.add(new ToggleAction("Group By Model", "Group By Model", jetbrains.mps.ide.findusages.view.icons.Icons.MODEL_ICON) {
+      @Override
+      public void update(AnActionEvent e) {
+        super.update(e);
+        e.getPresentation().setEnabled(isTreeView());
+      }
+
+      @Override
+      public boolean isSelected(AnActionEvent e) {
+        if (!isTreeView()) {
+          return false;
+        }
+        BreakpointsTree tree = (BreakpointsTree) myBreakpointsView;
+        return tree.isModelGroupVisible();
+      }
+
+      @Override
+      public void setSelected(AnActionEvent e, boolean state) {
+        BreakpointsTree tree = (BreakpointsTree) myBreakpointsView;
+        tree.toggleModelGroup(state);
+        tree.update();
+      }
+    });
+    group.add(new ToggleAction("Group By Root", "Group By Root", jetbrains.mps.ide.findusages.view.icons.Icons.ROOT_ICON) {
+      @Override
+      public void update(AnActionEvent e) {
+        super.update(e);
+        e.getPresentation().setEnabled(isTreeView());
+      }
+
+      @Override
+      public boolean isSelected(AnActionEvent e) {
+        if (!isTreeView()) {
+          return false;
+        }
+        BreakpointsTree tree = (BreakpointsTree) myBreakpointsView;
+        return tree.isRootGroupVisible();
+      }
+
+      @Override
+      public void setSelected(AnActionEvent e, boolean state) {
+        BreakpointsTree tree = (BreakpointsTree) myBreakpointsView;
+        tree.toggleRootGroup(state);
+        tree.update();
+      }
+    });
     return group;
+  }
+
+  private boolean isTreeView() {
+    return myBreakpointsView instanceof BreakpointsTree;
   }
 
   private void switchView(BreakpointsView breakpointsView) {
