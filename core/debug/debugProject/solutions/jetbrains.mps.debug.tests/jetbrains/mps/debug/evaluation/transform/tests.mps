@@ -6716,6 +6716,9 @@
                   </node>
                 </node>
               </node>
+              <node role="typeArgument:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1227646886970841436">
+                <link role="classifier:3" targetNodeId="1.~PrimitiveValueProxy" resolveInfo="PrimitiveValueProxy" />
+              </node>
             </node>
           </node>
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1774703052633005916">
@@ -7069,6 +7072,9 @@
                     </node>
                   </node>
                 </node>
+              </node>
+              <node role="typeArgument:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1227646886970841434">
+                <link role="classifier:3" targetNodeId="1.~IObjectValueProxy" resolveInfo="IObjectValueProxy" />
               </node>
             </node>
           </node>
