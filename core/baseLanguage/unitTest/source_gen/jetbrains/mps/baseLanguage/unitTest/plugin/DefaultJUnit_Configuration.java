@@ -348,12 +348,9 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
 
   public static class MyState implements Cloneable {
     public ConfigRunParameters myJavaRunParameters = new ConfigRunParameters();
-    public String node;
     public ClonableList<String> nodes = new ClonableList<String>();
     public String model;
     public String module;
-    public String method;
-    public ClonableList<String> methods = new ClonableList<String>();
     public ClonableList<String> fullMethodNames = new ClonableList<String>();
     public JUnitRunTypes type;
 
@@ -367,9 +364,6 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
       }
       if (this.nodes != null) {
         object.nodes = (ClonableList) this.nodes.clone();
-      }
-      if (this.methods != null) {
-        object.methods = (ClonableList) this.methods.clone();
       }
       if (this.fullMethodNames != null) {
         object.fullMethodNames = (ClonableList) this.fullMethodNames.clone();
