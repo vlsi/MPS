@@ -25,7 +25,7 @@ import java.util.List;
 /**
  * @author Evgeny Gerashchenko
  */
-public class IdeaFile implements IFileEx {
+class IdeaFile implements IFileEx {
   private static final Logger LOG = Logger.getLogger(IdeaFileSystemProvider.class);
 
   private IdeaFileSystemProvider myProvider;
@@ -341,6 +341,15 @@ public class IdeaFile implements IFileEx {
       return 0;
     } else {
       return FileUtil.getCanonicalPath(getAbsolutePath()).hashCode();
+    }
+  }
+
+  @Override
+  public String toString() {
+    if (myVirtualFile != null) {
+      return "IdeaFile{" + myVirtualFile + "}";
+    } else {
+      return "IdeaFile{path: " + myPath + "}";
     }
   }
 }

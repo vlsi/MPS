@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vfs;
+package jetbrains.mps.vfs.impl;
 
 import jetbrains.mps.util.CollectionUtil;
 
@@ -42,10 +42,6 @@ class JarFileData {
     return myFile;
   }
 
-  public ZipFile getZipFile() {
-    return myZipFile;
-  }
-
   Set<String> getFiles(String dir) {
     return Collections.unmodifiableSet(myFiles.get(dir));
   }
@@ -63,15 +59,7 @@ class JarFileData {
       return myEntries.get(path).isDirectory();
     }
 
-    if (myFiles.get(path) != null) {
-      return true;
-    }
-
-    if (mySubDirectories.get(path) != null) {
-      return true;
-    }
-
-    return false;
+    return myFiles.get(path) != null || mySubDirectories.get(path) != null;
   }
 
   InputStream openStream(String path) throws IOException {

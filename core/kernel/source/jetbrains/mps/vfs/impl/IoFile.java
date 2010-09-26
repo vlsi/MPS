@@ -13,9 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vfs;
+package jetbrains.mps.vfs.impl;
 
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.IFileNameFilter;
+import jetbrains.mps.vfs.ex.IFileEx;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.*;
@@ -24,14 +27,14 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-class FileSystemFile implements IFile {
+public class IoFile implements IFileEx {
   private File myFile;
 
-  public FileSystemFile(@NotNull String file) {
-    this(new File(file));
+  IoFile(@NotNull String path) {
+    this(new File(path));
   }
 
-  public FileSystemFile(@NotNull File file) {
+  IoFile(@NotNull File file) {
     myFile = file;
   }
 
@@ -42,7 +45,7 @@ class FileSystemFile implements IFile {
   public IFile getParent() {
     File parentFile = myFile.getAbsoluteFile().getParentFile();
     if (parentFile == null) return null;
-    return new FileSystemFile(parentFile);
+    return new IoFile(parentFile);
   }
 
   public boolean isDirectory() {
@@ -89,13 +92,13 @@ class FileSystemFile implements IFile {
 
     List<IFile> result = new ArrayList<IFile>(files.length);
     for (File f : files) {
-      result.add(new FileSystemFile(f));
+      result.add(new IoFile(f));
     }
     return result;
   }
 
   public IFile child(String suffix) {
-    return new FileSystemFile(new File(myFile, suffix));
+    return new IoFile(new File(myFile, suffix));
   }
 
   @Override
@@ -115,7 +118,7 @@ class FileSystemFile implements IFile {
 
     for (File f : files) {
       if (filter.accept(this, f.getName())) {
-        result.add(new FileSystemFile(f));
+        result.add(new IoFile(f));
       }
     }
 
@@ -124,10 +127,6 @@ class FileSystemFile implements IFile {
 
   public File getFile() {
     return myFile;
-  }
-
-  public Writer openWriter() throws IOException {
-    return new FileWriter(myFile);
   }
 
   public InputStream openInputStream() throws IOException {
@@ -148,10 +147,6 @@ class FileSystemFile implements IFile {
     return false;
   }
 
-  public URL toURL() throws MalformedURLException {
-    return myFile.toURL();
-  }
-
   public long length() {
     return myFile.length();
   }
@@ -161,15 +156,30 @@ class FileSystemFile implements IFile {
   }
 
   public boolean equals(Object obj) {
-    if (!(obj instanceof FileSystemFile)) {
+    if (!(obj instanceof IoFile)) {
       return false;
     }
 
-    FileSystemFile fsf = (FileSystemFile) obj;
-    return fsf.myFile.equals(myFile);
+    IoFile ioFile = (IoFile) obj;
+    return ioFile.myFile.equals(myFile);
   }
 
   public String toString() {
     return myFile.toString();
+  }
+
+  @Override
+  public boolean isPackaged() {
+    return false;
+  }
+
+  @Override
+  public IFile getBundleHome() {
+    return getParent();
+  }
+
+  @Override
+  public URL getURL() throws MalformedURLException {
+    return myFile.toURI().toURL();
   }
 }

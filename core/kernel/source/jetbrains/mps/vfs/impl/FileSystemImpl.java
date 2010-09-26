@@ -13,8 +13,7 @@ import java.net.URL;
  * @author Evgeny Gerashchenko
  */
 public class FileSystemImpl extends FileSystem {
-  // TODO provide java.io implementation
-  private FileSystemProvider myFileSystemProvider = null;
+  private FileSystemProvider myFileSystemProvider = new IoFileSystemProvider();
 
   @Override
   public void setFileSystemProvider(@NotNull FileSystemProvider fileSystemProvider) {

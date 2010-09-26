@@ -8,7 +8,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * @author Evgeny Gerashchenko
  */
-public class IdeaFileSystemProvider implements FileSystemProvider {
+class IdeaFileSystemProvider implements FileSystemProvider {
   static final Logger LOG = Logger.getLogger(IdeaFileSystemProvider.class);
 
   @Override

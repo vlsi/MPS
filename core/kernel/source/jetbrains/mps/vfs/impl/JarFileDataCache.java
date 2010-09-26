@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vfs;
+package jetbrains.mps.vfs.impl;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.FileUtil;

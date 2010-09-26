@@ -13,27 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vfs;
+package jetbrains.mps.vfs.impl;
 
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.IFileNameFilter;
+import jetbrains.mps.vfs.ex.IFileEx;
 
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-class JarFileEntryFile implements IFile {
+public class JarEntryFile implements IFileEx {
   private JarFileData myJarFileData;
   private File myJarFile;
   private String myEntryPath;
 
-  JarFileEntryFile(File zipFile) {
-    this(JarFileDataCache.instance().getDataFor(zipFile), zipFile, "");
-  }
-
-  JarFileEntryFile(JarFileData jarFileData, File jarFile, String path) {
+  JarEntryFile(JarFileData jarFileData, File jarFile, String path) {
     myJarFileData = jarFileData;
     myJarFile = jarFile;
     myEntryPath = path.replace(File.separator, "/");
@@ -52,12 +54,8 @@ class JarFileEntryFile implements IFile {
     return result;
   }
 
-  public File getJarFile() {
-    return myJarFile;
-  }
-
   public IFile getParent() {
-    return new JarFileEntryFile(myJarFileData, myJarFile, myJarFileData.getParentDirectory(myEntryPath));
+    return new JarEntryFile(myJarFileData, myJarFile, myJarFileData.getParentDirectory(myEntryPath));
   }
 
   public List<IFile> list() {
@@ -67,10 +65,10 @@ class JarFileEntryFile implements IFile {
 
     List<IFile> result = new ArrayList<IFile>();
     for (String e : myJarFileData.getSubdirectories(myEntryPath)) {
-      result.add(new JarFileEntryFile(myJarFileData, myJarFile, e));
+      result.add(new JarEntryFile(myJarFileData, myJarFile, e));
     }
     for (String e : myJarFileData.getFiles(myEntryPath)) {
-      result.add(new JarFileEntryFile(myJarFileData, myJarFile, myEntryPath.length() > 0 ? myEntryPath + "/" + e : e));
+      result.add(new JarEntryFile(myJarFileData, myJarFile, myEntryPath.length() > 0 ? myEntryPath + "/" + e : e));
     }
 
     return result;
@@ -94,7 +92,7 @@ class JarFileEntryFile implements IFile {
 
   public IFile child(String suffix) {
     String path = myEntryPath.length() > 0 ? myEntryPath + "/" + suffix : suffix;
-    return new JarFileEntryFile(myJarFileData, myJarFile, path);
+    return new JarEntryFile(myJarFileData, myJarFile, path);
   }
 
   @Override
@@ -103,10 +101,7 @@ class JarFileEntryFile implements IFile {
   }
 
   public boolean isDirectory() {
-    if (myJarFileData == null) {
-      return false;
-    }
-    return myJarFileData.isDirectory(myEntryPath);
+    return myJarFileData != null && myJarFileData.isDirectory(myEntryPath);
   }
 
   public String getAbsolutePath() {
@@ -122,10 +117,7 @@ class JarFileEntryFile implements IFile {
   }
 
   public boolean exists() {
-    if (myJarFileData == null) {
-      return false;
-    }
-    return myJarFileData.exists(myEntryPath);
+    return myJarFileData != null && myJarFileData.exists(myEntryPath);
   }
 
   public boolean createNewFile() {
@@ -138,10 +130,6 @@ class JarFileEntryFile implements IFile {
 
   public boolean delete() {
     return false;
-  }
-
-  public Writer openWriter() throws IOException {
-    throw new UnsupportedOperationException();
   }
 
   public InputStream openInputStream() throws IOException {
@@ -159,10 +147,6 @@ class JarFileEntryFile implements IFile {
     return true;
   }
 
-  public URL toURL() throws MalformedURLException {
-    throw new UnsupportedOperationException("Jar File Entry File currently does not support getting url.");
-  }
-
   public long length() {
     if (myJarFileData == null) {
       return -1;
@@ -172,5 +156,20 @@ class JarFileEntryFile implements IFile {
 
   public String toString() {
     return myEntryPath;
+  }
+
+  @Override
+  public boolean isPackaged() {
+    return true;
+  }
+
+  @Override
+  public IFile getBundleHome() {
+    return new IoFile(myJarFile);
+  }
+
+  @Override
+  public URL getURL() throws MalformedURLException {
+    throw new UnsupportedOperationException("Not implemented yet"); 
   }
 }
