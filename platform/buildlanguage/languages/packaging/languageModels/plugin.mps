@@ -12388,8 +12388,22 @@
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2864298211886202324">
                   <link role="baseMethodDeclaration:3" targetNodeId="73.823693461259265267:0" resolveInfo="run" />
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2864298211886202325">
-                    <link role="variableDeclaration:3" targetNodeId="2864298211886201453" resolveInfo="file" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3398641613518591053">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3398641613518591052">
+                      <link role="baseMethodDeclaration:3" targetNodeId="25.~FileSystem.getInstance():jetbrains.mps.vfs.FileSystem" resolveInfo="getInstance" />
+                      <link role="classConcept:3" targetNodeId="25.~FileSystem" resolveInfo="FileSystem" />
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3398641613518591057">
+                      <link role="baseMethodDeclaration:3" targetNodeId="25.~FileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolveInfo="getFileByPath" />
+                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3398641613518591059">
+                        <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3398641613518591058">
+                          <link role="variableDeclaration:3" targetNodeId="2864298211886201453" resolveInfo="file" />
+                        </node>
+                        <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3398641613518591063">
+                          <link role="baseMethodDeclaration:3" targetNodeId="16.~File.getAbsolutePath():java.lang.String" resolveInfo="getAbsolutePath" />
+                        </node>
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>

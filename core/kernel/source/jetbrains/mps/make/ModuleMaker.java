@@ -134,7 +134,7 @@ public class ModuleMaker {
       ModuleSources sources = getModuleSources(m);
 
       for (IFile f : sources.getFilesToDelete()) {
-        f.delete();
+        new File(f.getAbsolutePath()).delete();
         modulesWithRemovals.add(m);
       }
 

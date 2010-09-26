@@ -13,6 +13,7 @@ import java.io.File;
 import java.util.List;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class CheckSamples_Action extends GeneratedAction {
@@ -57,7 +58,7 @@ public class CheckSamples_Action extends GeneratedAction {
       }
 
       String samplesPath = PathManager.getHomePath() + File.separator + "samples";
-      List<IModule> sampleModules = MPSModuleRepository.getInstance().getAllModulesInDirectory(new File(samplesPath));
+      List<IModule> sampleModules = MPSModuleRepository.getInstance().getAllModulesInDirectory(FileSystem.getInstance().getFileByPath(samplesPath));
       for (IModule module : ListSequence.fromList(sampleModules)) {
         if (!(module.isCompileInMPS())) {
           String msg = "Module " + module.getModuleFqName() + " is a sample, but is not compiled in MPS";

@@ -3,94 +3,94 @@
   <unitInfo fileName="UndeclaredVariableReference_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.UndeclaredVariableReference_Behavior" />
   <unitInfo fileName="MPSDistribution_Behavior.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.MPSDistribution_Behavior" />
   <unitInfo fileName="LibraryFolder_Behavior.java" startLine="11" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.LibraryFolder_Behavior" />
-  <unitInfo fileName="MPSBuild_Behavior.java" startLine="31" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.MPSBuild_Behavior" />
+  <unitInfo fileName="MPSBuild_Behavior.java" startLine="33" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.build.custommps.behavior.MPSBuild_Behavior" />
   <root nodeId="1233155892819">
-    <nodeInfo nodeId="8868408063538039041" fileName="MPSBuild_Behavior.java" startLine="32" startPosition="43" endLine="33" endPosition="75" />
-    <nodeInfo nodeId="1233155998228" fileName="MPSBuild_Behavior.java" startLine="36" startPosition="83" endLine="37" endPosition="92" />
-    <nodeInfo nodeId="1233680226706" fileName="MPSBuild_Behavior.java" startLine="40" startPosition="95" endLine="41" endPosition="70" />
-    <nodeInfo nodeId="1233680424016" fileName="MPSBuild_Behavior.java" startLine="42" startPosition="300" endLine="43" endPosition="101" />
-    <nodeInfo nodeId="1233680383854" fileName="MPSBuild_Behavior.java" startLine="44" startPosition="5" endLine="45" endPosition="16" />
-    <nodeInfo nodeId="1241536385032" fileName="MPSBuild_Behavior.java" startLine="48" startPosition="76" endLine="49" endPosition="186" />
-    <nodeInfo nodeId="1241536395452" fileName="MPSBuild_Behavior.java" startLine="50" startPosition="38" endLine="51" endPosition="21" />
-    <nodeInfo nodeId="1241536408545" fileName="MPSBuild_Behavior.java" startLine="52" startPosition="5" endLine="53" endPosition="31" />
-    <nodeInfo nodeId="1234294639906" fileName="MPSBuild_Behavior.java" startLine="56" startPosition="64" endLine="57" endPosition="32" />
-    <nodeInfo nodeId="7144889424322124878" fileName="MPSBuild_Behavior.java" startLine="60" startPosition="97" endLine="61" endPosition="103" />
-    <nodeInfo nodeId="1238403427100" fileName="MPSBuild_Behavior.java" startLine="61" startPosition="103" endLine="62" endPosition="88" />
-    <nodeInfo nodeId="1238403427111" fileName="MPSBuild_Behavior.java" startLine="63" startPosition="27" endLine="64" endPosition="19" />
-    <nodeInfo nodeId="1238403468557" fileName="MPSBuild_Behavior.java" startLine="65" startPosition="5" endLine="66" endPosition="72" />
-    <nodeInfo nodeId="1238502072964" fileName="MPSBuild_Behavior.java" startLine="69" startPosition="82" endLine="70" endPosition="47" />
-    <nodeInfo nodeId="1238502072970" fileName="MPSBuild_Behavior.java" startLine="70" startPosition="47" endLine="71" endPosition="106" />
-    <nodeInfo nodeId="1238502072984" fileName="MPSBuild_Behavior.java" startLine="71" startPosition="106" endLine="72" endPosition="96" />
-    <nodeInfo nodeId="1238504082419" fileName="MPSBuild_Behavior.java" startLine="72" startPosition="96" endLine="73" endPosition="82" />
-    <nodeInfo nodeId="1238504045863" fileName="MPSBuild_Behavior.java" startLine="75" startPosition="39" endLine="76" endPosition="46" />
-    <nodeInfo nodeId="1238504119789" fileName="MPSBuild_Behavior.java" startLine="76" startPosition="46" endLine="77" endPosition="69" />
-    <nodeInfo nodeId="1238504130081" fileName="MPSBuild_Behavior.java" startLine="77" startPosition="69" endLine="78" endPosition="170" />
-    <nodeInfo nodeId="1238504189314" fileName="MPSBuild_Behavior.java" startLine="81" startPosition="68" endLine="82" endPosition="94" />
-    <nodeInfo nodeId="1238504189319" fileName="MPSBuild_Behavior.java" startLine="82" startPosition="94" endLine="83" endPosition="110" />
-    <nodeInfo nodeId="1238504189325" fileName="MPSBuild_Behavior.java" startLine="83" startPosition="110" endLine="84" endPosition="108" />
-    <nodeInfo nodeId="1238504189340" fileName="MPSBuild_Behavior.java" startLine="84" startPosition="108" endLine="85" endPosition="52" />
-    <nodeInfo nodeId="1238504189347" fileName="MPSBuild_Behavior.java" startLine="86" startPosition="39" endLine="87" endPosition="46" />
-    <nodeInfo nodeId="1238504189353" fileName="MPSBuild_Behavior.java" startLine="87" startPosition="46" endLine="88" endPosition="66" />
-    <nodeInfo nodeId="1238504189360" fileName="MPSBuild_Behavior.java" startLine="88" startPosition="66" endLine="89" endPosition="107" />
-    <nodeInfo nodeId="1238504189369" fileName="MPSBuild_Behavior.java" startLine="90" startPosition="60" endLine="91" endPosition="108" />
-    <nodeInfo nodeId="1238504189375" fileName="MPSBuild_Behavior.java" startLine="91" startPosition="108" endLine="92" endPosition="116" />
-    <nodeInfo nodeId="1238504189391" fileName="MPSBuild_Behavior.java" startLine="92" startPosition="116" endLine="93" endPosition="56" />
-    <nodeInfo nodeId="1238503942233" fileName="MPSBuild_Behavior.java" startLine="98" startPosition="45" endLine="99" endPosition="57" />
-    <nodeInfo nodeId="1239995437916" fileName="MPSBuild_Behavior.java" startLine="104" startPosition="54" endLine="105" endPosition="110" />
-    <nodeInfo nodeId="1233680283599" fileName="MPSBuild_Behavior.java" startLine="41" startPosition="70" endLine="44" endPosition="5" />
-    <nodeInfo nodeId="1241536387114" fileName="MPSBuild_Behavior.java" startLine="49" startPosition="186" endLine="52" endPosition="5" />
-    <nodeInfo nodeId="1238403427109" fileName="MPSBuild_Behavior.java" startLine="62" startPosition="88" endLine="65" endPosition="5" />
-    <nodeInfo nodeId="1238503942231" fileName="MPSBuild_Behavior.java" startLine="97" startPosition="84" endLine="101" endPosition="0" />
-    <nodeInfo nodeId="1238504045861" fileName="MPSBuild_Behavior.java" startLine="74" startPosition="63" endLine="79" endPosition="7" />
-    <nodeInfo nodeId="1238504189367" fileName="MPSBuild_Behavior.java" startLine="89" startPosition="107" endLine="94" endPosition="9" />
-    <nodeInfo nodeId="1238502073085" fileName="MPSBuild_Behavior.java" startLine="96" startPosition="5" endLine="101" endPosition="13" />
-    <nodeInfo nodeId="1238504015485" fileName="MPSBuild_Behavior.java" startLine="73" startPosition="82" endLine="80" endPosition="5" />
-    <nodeInfo nodeId="1238504189345" fileName="MPSBuild_Behavior.java" startLine="85" startPosition="52" endLine="95" endPosition="7" />
-    <nodeInfo nodeId="1238502072992" fileName="MPSBuild_Behavior.java" startLine="80" startPosition="5" endLine="96" endPosition="5" />
-    <scopeInfo nodeId="1233155892821" fileName="MPSBuild_Behavior.java" startLine="32" startPosition="43" endLine="33" endPosition="75" />
-    <scopeInfo nodeId="1233155913968" fileName="MPSBuild_Behavior.java" startLine="36" startPosition="83" endLine="37" endPosition="92" />
-    <scopeInfo nodeId="1233680283600" fileName="MPSBuild_Behavior.java" startLine="42" startPosition="300" endLine="43" endPosition="101" />
-    <scopeInfo nodeId="1241536387115" fileName="MPSBuild_Behavior.java" startLine="50" startPosition="38" endLine="51" endPosition="21" />
-    <scopeInfo nodeId="1234294616847" fileName="MPSBuild_Behavior.java" startLine="56" startPosition="64" endLine="57" endPosition="32" />
-    <scopeInfo nodeId="1238403427110" fileName="MPSBuild_Behavior.java" startLine="63" startPosition="27" endLine="64" endPosition="19" />
-    <scopeInfo nodeId="1238503942232" fileName="MPSBuild_Behavior.java" startLine="98" startPosition="45" endLine="99" endPosition="57" />
-    <scopeInfo nodeId="1239995424998" fileName="MPSBuild_Behavior.java" startLine="104" startPosition="54" endLine="105" endPosition="110" />
-    <scopeInfo nodeId="1233680283599" fileName="MPSBuild_Behavior.java" startLine="41" startPosition="70" endLine="44" endPosition="5">
+    <nodeInfo nodeId="8868408063538039041" fileName="MPSBuild_Behavior.java" startLine="34" startPosition="43" endLine="35" endPosition="75" />
+    <nodeInfo nodeId="1233155998228" fileName="MPSBuild_Behavior.java" startLine="38" startPosition="83" endLine="39" endPosition="92" />
+    <nodeInfo nodeId="1233680226706" fileName="MPSBuild_Behavior.java" startLine="42" startPosition="95" endLine="43" endPosition="70" />
+    <nodeInfo nodeId="1233680424016" fileName="MPSBuild_Behavior.java" startLine="44" startPosition="300" endLine="45" endPosition="101" />
+    <nodeInfo nodeId="1233680383854" fileName="MPSBuild_Behavior.java" startLine="46" startPosition="5" endLine="47" endPosition="16" />
+    <nodeInfo nodeId="1241536385032" fileName="MPSBuild_Behavior.java" startLine="50" startPosition="76" endLine="51" endPosition="186" />
+    <nodeInfo nodeId="1241536395452" fileName="MPSBuild_Behavior.java" startLine="52" startPosition="38" endLine="53" endPosition="21" />
+    <nodeInfo nodeId="1241536408545" fileName="MPSBuild_Behavior.java" startLine="54" startPosition="5" endLine="55" endPosition="31" />
+    <nodeInfo nodeId="1234294639906" fileName="MPSBuild_Behavior.java" startLine="58" startPosition="64" endLine="59" endPosition="32" />
+    <nodeInfo nodeId="7144889424322124878" fileName="MPSBuild_Behavior.java" startLine="62" startPosition="97" endLine="63" endPosition="103" />
+    <nodeInfo nodeId="1238403427100" fileName="MPSBuild_Behavior.java" startLine="63" startPosition="103" endLine="64" endPosition="88" />
+    <nodeInfo nodeId="1238403427111" fileName="MPSBuild_Behavior.java" startLine="65" startPosition="27" endLine="66" endPosition="19" />
+    <nodeInfo nodeId="1238403468557" fileName="MPSBuild_Behavior.java" startLine="67" startPosition="5" endLine="68" endPosition="72" />
+    <nodeInfo nodeId="1238502072964" fileName="MPSBuild_Behavior.java" startLine="71" startPosition="82" endLine="72" endPosition="47" />
+    <nodeInfo nodeId="1238502072970" fileName="MPSBuild_Behavior.java" startLine="72" startPosition="47" endLine="73" endPosition="137" />
+    <nodeInfo nodeId="1238502072984" fileName="MPSBuild_Behavior.java" startLine="73" startPosition="137" endLine="74" endPosition="96" />
+    <nodeInfo nodeId="1238504082419" fileName="MPSBuild_Behavior.java" startLine="74" startPosition="96" endLine="75" endPosition="82" />
+    <nodeInfo nodeId="1238504045863" fileName="MPSBuild_Behavior.java" startLine="77" startPosition="39" endLine="78" endPosition="46" />
+    <nodeInfo nodeId="1238504119789" fileName="MPSBuild_Behavior.java" startLine="78" startPosition="46" endLine="79" endPosition="69" />
+    <nodeInfo nodeId="1238504130081" fileName="MPSBuild_Behavior.java" startLine="79" startPosition="69" endLine="80" endPosition="170" />
+    <nodeInfo nodeId="1238504189314" fileName="MPSBuild_Behavior.java" startLine="83" startPosition="68" endLine="84" endPosition="94" />
+    <nodeInfo nodeId="1238504189319" fileName="MPSBuild_Behavior.java" startLine="84" startPosition="94" endLine="85" endPosition="110" />
+    <nodeInfo nodeId="1238504189325" fileName="MPSBuild_Behavior.java" startLine="85" startPosition="110" endLine="86" endPosition="108" />
+    <nodeInfo nodeId="1238504189340" fileName="MPSBuild_Behavior.java" startLine="86" startPosition="108" endLine="87" endPosition="52" />
+    <nodeInfo nodeId="1238504189347" fileName="MPSBuild_Behavior.java" startLine="88" startPosition="39" endLine="89" endPosition="46" />
+    <nodeInfo nodeId="1238504189353" fileName="MPSBuild_Behavior.java" startLine="89" startPosition="46" endLine="90" endPosition="66" />
+    <nodeInfo nodeId="1238504189360" fileName="MPSBuild_Behavior.java" startLine="90" startPosition="66" endLine="91" endPosition="107" />
+    <nodeInfo nodeId="1238504189369" fileName="MPSBuild_Behavior.java" startLine="92" startPosition="60" endLine="93" endPosition="108" />
+    <nodeInfo nodeId="1238504189375" fileName="MPSBuild_Behavior.java" startLine="93" startPosition="108" endLine="94" endPosition="116" />
+    <nodeInfo nodeId="1238504189391" fileName="MPSBuild_Behavior.java" startLine="94" startPosition="116" endLine="95" endPosition="56" />
+    <nodeInfo nodeId="1238503942233" fileName="MPSBuild_Behavior.java" startLine="100" startPosition="45" endLine="101" endPosition="57" />
+    <nodeInfo nodeId="1239995437916" fileName="MPSBuild_Behavior.java" startLine="106" startPosition="54" endLine="107" endPosition="110" />
+    <nodeInfo nodeId="1233680283599" fileName="MPSBuild_Behavior.java" startLine="43" startPosition="70" endLine="46" endPosition="5" />
+    <nodeInfo nodeId="1241536387114" fileName="MPSBuild_Behavior.java" startLine="51" startPosition="186" endLine="54" endPosition="5" />
+    <nodeInfo nodeId="1238403427109" fileName="MPSBuild_Behavior.java" startLine="64" startPosition="88" endLine="67" endPosition="5" />
+    <nodeInfo nodeId="1238503942231" fileName="MPSBuild_Behavior.java" startLine="99" startPosition="84" endLine="103" endPosition="0" />
+    <nodeInfo nodeId="1238504045861" fileName="MPSBuild_Behavior.java" startLine="76" startPosition="63" endLine="81" endPosition="7" />
+    <nodeInfo nodeId="1238504189367" fileName="MPSBuild_Behavior.java" startLine="91" startPosition="107" endLine="96" endPosition="9" />
+    <nodeInfo nodeId="1238502073085" fileName="MPSBuild_Behavior.java" startLine="98" startPosition="5" endLine="103" endPosition="13" />
+    <nodeInfo nodeId="1238504015485" fileName="MPSBuild_Behavior.java" startLine="75" startPosition="82" endLine="82" endPosition="5" />
+    <nodeInfo nodeId="1238504189345" fileName="MPSBuild_Behavior.java" startLine="87" startPosition="52" endLine="97" endPosition="7" />
+    <nodeInfo nodeId="1238502072992" fileName="MPSBuild_Behavior.java" startLine="82" startPosition="5" endLine="98" endPosition="5" />
+    <scopeInfo nodeId="1233155892821" fileName="MPSBuild_Behavior.java" startLine="34" startPosition="43" endLine="35" endPosition="75" />
+    <scopeInfo nodeId="1233155913968" fileName="MPSBuild_Behavior.java" startLine="38" startPosition="83" endLine="39" endPosition="92" />
+    <scopeInfo nodeId="1233680283600" fileName="MPSBuild_Behavior.java" startLine="44" startPosition="300" endLine="45" endPosition="101" />
+    <scopeInfo nodeId="1241536387115" fileName="MPSBuild_Behavior.java" startLine="52" startPosition="38" endLine="53" endPosition="21" />
+    <scopeInfo nodeId="1234294616847" fileName="MPSBuild_Behavior.java" startLine="58" startPosition="64" endLine="59" endPosition="32" />
+    <scopeInfo nodeId="1238403427110" fileName="MPSBuild_Behavior.java" startLine="65" startPosition="27" endLine="66" endPosition="19" />
+    <scopeInfo nodeId="1238503942232" fileName="MPSBuild_Behavior.java" startLine="100" startPosition="45" endLine="101" endPosition="57" />
+    <scopeInfo nodeId="1239995424998" fileName="MPSBuild_Behavior.java" startLine="106" startPosition="54" endLine="107" endPosition="110" />
+    <scopeInfo nodeId="1233680283599" fileName="MPSBuild_Behavior.java" startLine="43" startPosition="70" endLine="46" endPosition="5">
       <varInfo nodeId="1233680283602" varName="currentComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="1238504045862" fileName="MPSBuild_Behavior.java" startLine="75" startPosition="39" endLine="78" endPosition="170">
+    <scopeInfo nodeId="1238504045862" fileName="MPSBuild_Behavior.java" startLine="77" startPosition="39" endLine="80" endPosition="170">
       <varInfo nodeId="1238504045864" varName="language" />
     </scopeInfo>
-    <scopeInfo nodeId="1238504189368" fileName="MPSBuild_Behavior.java" startLine="90" startPosition="60" endLine="93" endPosition="56" />
-    <scopeInfo nodeId="1238503942231" fileName="MPSBuild_Behavior.java" startLine="97" startPosition="84" endLine="101" endPosition="0" />
-    <scopeInfo nodeId="1233680013342" fileName="MPSBuild_Behavior.java" startLine="40" startPosition="95" endLine="45" endPosition="16">
+    <scopeInfo nodeId="1238504189368" fileName="MPSBuild_Behavior.java" startLine="92" startPosition="60" endLine="95" endPosition="56" />
+    <scopeInfo nodeId="1238503942231" fileName="MPSBuild_Behavior.java" startLine="99" startPosition="84" endLine="103" endPosition="0" />
+    <scopeInfo nodeId="1233680013342" fileName="MPSBuild_Behavior.java" startLine="42" startPosition="95" endLine="47" endPosition="16">
       <varInfo nodeId="1233680226707" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="1241536330060" fileName="MPSBuild_Behavior.java" startLine="48" startPosition="76" endLine="53" endPosition="31">
+    <scopeInfo nodeId="1241536330060" fileName="MPSBuild_Behavior.java" startLine="50" startPosition="76" endLine="55" endPosition="31">
       <varInfo nodeId="1241536385033" varName="parentScriptsFolder" />
     </scopeInfo>
-    <scopeInfo nodeId="1238504015488" fileName="MPSBuild_Behavior.java" startLine="74" startPosition="63" endLine="79" endPosition="7" />
-    <scopeInfo nodeId="1238403397948" fileName="MPSBuild_Behavior.java" startLine="60" startPosition="97" endLine="66" endPosition="72">
+    <scopeInfo nodeId="1238504015488" fileName="MPSBuild_Behavior.java" startLine="76" startPosition="63" endLine="81" endPosition="7" />
+    <scopeInfo nodeId="1238403397948" fileName="MPSBuild_Behavior.java" startLine="62" startPosition="97" endLine="68" endPosition="72">
       <varInfo nodeId="1238403427101" varName="moduleId" />
       <varInfo nodeId="7144889424322124879" varName="language" />
     </scopeInfo>
-    <scopeInfo nodeId="1238504015485" fileName="MPSBuild_Behavior.java" startLine="73" startPosition="82" endLine="80" endPosition="5" />
-    <scopeInfo nodeId="1238504189346" fileName="MPSBuild_Behavior.java" startLine="86" startPosition="39" endLine="94" endPosition="9">
+    <scopeInfo nodeId="1238504015485" fileName="MPSBuild_Behavior.java" startLine="75" startPosition="82" endLine="82" endPosition="5" />
+    <scopeInfo nodeId="1238504189346" fileName="MPSBuild_Behavior.java" startLine="88" startPosition="39" endLine="96" endPosition="9">
       <varInfo nodeId="1238504189348" varName="language" />
       <varInfo nodeId="1238504189354" varName="runtimeCP" />
     </scopeInfo>
-    <scopeInfo nodeId="1238502072995" fileName="MPSBuild_Behavior.java" startLine="81" startPosition="68" endLine="95" endPosition="7">
+    <scopeInfo nodeId="1238502072995" fileName="MPSBuild_Behavior.java" startLine="83" startPosition="68" endLine="97" endPosition="7">
       <varInfo nodeId="1238504189320" varName="path" />
       <varInfo nodeId="1238504189315" varName="moduleProperName" />
     </scopeInfo>
-    <scopeInfo nodeId="1238502072992" fileName="MPSBuild_Behavior.java" startLine="80" startPosition="5" endLine="96" endPosition="5" />
-    <scopeInfo nodeId="1238502072963" fileName="MPSBuild_Behavior.java" startLine="69" startPosition="82" endLine="101" endPosition="13">
+    <scopeInfo nodeId="1238502072992" fileName="MPSBuild_Behavior.java" startLine="82" startPosition="5" endLine="98" endPosition="5" />
+    <scopeInfo nodeId="1238502072963" fileName="MPSBuild_Behavior.java" startLine="71" startPosition="82" endLine="103" endPosition="13">
       <varInfo nodeId="1238502072985" varName="modulesList" />
       <varInfo nodeId="1238504082420" varName="modulesInClasspath" />
       <varInfo nodeId="1238502072965" varName="paths" />
       <varInfo nodeId="1238502072971" varName="dir" />
     </scopeInfo>
-    <unitInfo nodeId="1238503942231" fileName="MPSBuild_Behavior.java" startLine="97" startPosition="49" endLine="101" endPosition="5" unitName="jetbrains.mps.build.custommps.behavior.MPSBuild_Behavior$1" />
+    <unitInfo nodeId="1238503942231" fileName="MPSBuild_Behavior.java" startLine="99" startPosition="49" endLine="103" endPosition="5" unitName="jetbrains.mps.build.custommps.behavior.MPSBuild_Behavior$1" />
   </root>
   <root nodeId="1238590347504">
     <nodeInfo nodeId="1238590354835" fileName="LibraryFolder_Behavior.java" startLine="12" startPosition="43" endLine="13" endPosition="66" />

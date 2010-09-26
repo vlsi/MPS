@@ -44,6 +44,7 @@ import java.io.File;
 import jetbrains.mps.build.packaging.plugin.GenerateTextFromBuild;
 import jetbrains.mps.build.distrib.behavior.DistribConfiguration_Behavior;
 import jetbrains.mps.buildlanguage.plugin.AntScriptRunner;
+import jetbrains.mps.vfs.FileSystem;
 import com.intellij.execution.configurations.RunnerSettings;
 import com.intellij.execution.configurations.ConfigurationPerRunnerSettings;
 import com.intellij.openapi.util.JDOMExternalizable;
@@ -196,7 +197,7 @@ public class DefaultCustomMpsApplication_Configuration extends BaseRunConfig {
                   }
 
                   AntScriptRunner runner = new AntScriptRunner(javaRunParameters);
-                  Process process = runner.run(file);
+                  Process process = runner.run(FileSystem.getInstance().getFileByPath(file.getAbsolutePath()));
                   return new DefaultProcessHandler(consoleView_22042010, process, runner.getCommandString());
                 } catch (ExecutionException e) {
                   ex.value = e;

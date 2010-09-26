@@ -38,6 +38,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.util.PathManager" />
+    <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
+    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
   </dependency>
   <dependency className="jetbrains.mps.build.custommps.behavior.MPSDistribution_Behavior" file="MPSDistribution_Behavior.java">
     <classNode dependClassName="java.lang.String" />
