@@ -214,6 +214,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "canWrap", true), "body", true);
   }
 
+  public static SNode sourceNodeQuery_4599835250971300521(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "valueProxyType", true);
+  }
+
   public static SNode sourceNodeQuery_8275758777999550705(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "value", true);
   }
@@ -289,7 +293,7 @@ public class QueriesGenerated {
 
   public static void mappingScript_CodeBlock_264293128390891135(final IOperationContext operationContext, final MappingScriptContext _context) {
     for (SNode classConcept : ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
-      if (eq_x583g4_a0a0a0a26(SLinkOperations.getTarget(SLinkOperations.getTarget(classConcept, "superclass", true), "classifier", false), SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a26().createNode(), "classifier", false)) && SPropertyOperations.getString(classConcept, "name").endsWith("_WrapperFactory")) {
+      if (eq_x583g4_a0a0a0a36(SLinkOperations.getTarget(SLinkOperations.getTarget(classConcept, "superclass", true), "classifier", false), SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a36().createNode(), "classifier", false)) && SPropertyOperations.getString(classConcept, "name").endsWith("_WrapperFactory")) {
         for (SNode method : ListSequence.fromList(SNodeOperations.getDescendants(classConcept, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, new String[]{})).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return (SLinkOperations.getTarget(it, AttributesRolesUtil.childRoleFromAttributeRole("toProcessMethod"), true) != null);
@@ -304,15 +308,24 @@ public class QueriesGenerated {
     }
   }
 
-  private static boolean eq_x583g4_a0a0a0a26(Object a, Object b) {
+  public static void mappingScript_CodeBlock_4599835250971319477(final IOperationContext operationContext, final MappingScriptContext _context) {
+    for (SNode viewer : ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.debug.customViewers.structure.HighLevelCustomViewer"))) {
+      SNode valueProxyType = TransformationUtil.getValueProxyTypeFromType(HighLevelCustomViewer_Behavior.call_getValueTypeCopy_43370322128260022(viewer));
+      for (SNode valueParameter : ListSequence.fromList(SNodeOperations.getDescendants(viewer, "jetbrains.mps.debug.customViewers.structure.HighLevelValue_ConceptFunctionParameter", false, new String[]{}))) {
+        SLinkOperations.setTarget(valueParameter, "valueProxyType", SNodeOperations.copyNode(valueProxyType), true);
+      }
+    }
+  }
+
+  private static boolean eq_x583g4_a0a0a0a36(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0a26 {
-    public QuotationClass_x583g4_a0a0a0a0a26() {
+  public static class QuotationClass_x583g4_a0a0a0a0a36 {
+    public QuotationClass_x583g4_a0a0a0a0a36() {
     }
 
     public SNode createNode() {

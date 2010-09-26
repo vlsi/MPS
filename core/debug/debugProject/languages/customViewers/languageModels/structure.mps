@@ -606,6 +606,11 @@
       <property name="value:0" value="value" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
     </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="4599835250971319482">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="valueProxyType" />
+      <link role="target:0" targetNodeId="2.1068431790189:3" resolveInfo="Type" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="43370322128285902">
     <property name="package:0" value="highLevel" />
