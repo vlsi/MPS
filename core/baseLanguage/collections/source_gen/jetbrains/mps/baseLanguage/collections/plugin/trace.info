@@ -1,16 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="Collections_ProjectPlugin.java" startLine="7" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.Collections_ProjectPlugin" />
+  <unitInfo fileName="CollectionsWatchables.java" startLine="13" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.CollectionsWatchables$MyWatchable_element" />
+  <unitInfo fileName="CollectionsWatchables.java" startLine="25" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.CollectionsWatchables$MyWatchable_entry" />
+  <unitInfo fileName="CollectionsWatchables.java" startLine="37" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.CollectionsWatchables$MyWatchable_key" />
+  <unitInfo fileName="CollectionsWatchables.java" startLine="49" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.CollectionsWatchables$MyWatchable_value" />
+  <unitInfo fileName="CollectionsWatchables.java" startLine="61" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.CollectionsWatchables$MyWatchable_size" />
+  <unitInfo fileName="Collections_ApplicationPlugin.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.Collections_ApplicationPlugin" />
+  <unitInfo fileName="Collections_CustomApplicationPlugin.java" startLine="8" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.Collections_CustomApplicationPlugin" />
+  <unitInfo fileName="CustomViewersDescriptor.java" startLine="7" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.CustomViewersDescriptor" />
+  <unitInfo fileName="ListViewer_WrapperFactory.java" startLine="44" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.ListViewer_WrapperFactory$ListViewerWrapper" />
+  <unitInfo fileName="SetViewer_WrapperFactory.java" startLine="44" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.SetViewer_WrapperFactory$SetViewerWrapper" />
+  <unitInfo fileName="MapViewer_WrapperFactory.java" startLine="44" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.MapViewer_WrapperFactory$MapViewerWrapper" />
+  <unitInfo fileName="SampleCustomContainers_CustomApplicationPlugin.java" startLine="18" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.SampleCustomContainers_CustomApplicationPlugin" />
+  <unitInfo fileName="MapEntryViewer_WrapperFactory.java" startLine="44" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.MapEntryViewer_WrapperFactory$MapEntryViewerWrapper" />
+  <unitInfo fileName="ListViewer_WrapperFactory.java" startLine="20" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.ListViewer_WrapperFactory" />
+  <unitInfo fileName="SetViewer_WrapperFactory.java" startLine="20" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.SetViewer_WrapperFactory" />
+  <unitInfo fileName="MapViewer_WrapperFactory.java" startLine="20" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.MapViewer_WrapperFactory" />
+  <unitInfo fileName="CollectionsWatchables.java" startLine="9" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.CollectionsWatchables" />
+  <unitInfo fileName="MapEntryViewer_WrapperFactory.java" startLine="20" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.MapEntryViewer_WrapperFactory" />
   <root nodeId="5116701553466303326">
     <nodeInfo nodeId="6367352481823138411" fileName="ListViewer_WrapperFactory.java" startLine="57" startPosition="110" endLine="58" endPosition="82" />
     <nodeInfo nodeId="6367352481823138410" fileName="ListViewer_WrapperFactory.java" startLine="58" startPosition="82" endLine="59" endPosition="0" />
     <nodeInfo nodeId="6367352481823138403" fileName="ListViewer_WrapperFactory.java" startLine="59" startPosition="0" endLine="60" endPosition="91" />
     <nodeInfo nodeId="1067996875388370558" fileName="ListViewer_WrapperFactory.java" startLine="60" startPosition="91" endLine="61" endPosition="145" />
     <nodeInfo nodeId="1842653058275013458" fileName="ListViewer_WrapperFactory.java" startLine="61" startPosition="145" endLine="62" endPosition="0" />
-    <nodeInfo nodeId="1067996875388372935" fileName="ListViewer_WrapperFactory.java" startLine="63" startPosition="94" endLine="64" endPosition="156" />
+    <nodeInfo nodeId="1067996875388372935" fileName="ListViewer_WrapperFactory.java" startLine="63" startPosition="103" endLine="64" endPosition="156" />
     <nodeInfo nodeId="6367352481823138420" fileName="ListViewer_WrapperFactory.java" startLine="65" startPosition="7" endLine="66" endPosition="0" />
     <nodeInfo nodeId="6367352481823138422" fileName="ListViewer_WrapperFactory.java" startLine="66" startPosition="0" endLine="67" endPosition="24" />
     <nodeInfo nodeId="6367352481823164548" fileName="ListViewer_WrapperFactory.java" startLine="62" startPosition="0" endLine="65" endPosition="7" />
-    <scopeInfo nodeId="6367352481823164550" fileName="ListViewer_WrapperFactory.java" startLine="63" startPosition="94" endLine="64" endPosition="156" />
+    <scopeInfo nodeId="6367352481823164550" fileName="ListViewer_WrapperFactory.java" startLine="63" startPosition="103" endLine="64" endPosition="156" />
     <scopeInfo nodeId="6367352481823164548" fileName="ListViewer_WrapperFactory.java" startLine="62" startPosition="0" endLine="65" endPosition="7">
       <varInfo nodeId="6367352481823164549" varName="element" />
     </scopeInfo>
@@ -67,11 +86,11 @@
     <nodeInfo nodeId="7785669630792592744" fileName="SetViewer_WrapperFactory.java" startLine="60" startPosition="0" endLine="61" endPosition="91" />
     <nodeInfo nodeId="7785669630792592750" fileName="SetViewer_WrapperFactory.java" startLine="61" startPosition="91" endLine="62" endPosition="145" />
     <nodeInfo nodeId="7785669630792592757" fileName="SetViewer_WrapperFactory.java" startLine="62" startPosition="145" endLine="63" endPosition="0" />
-    <nodeInfo nodeId="7785669630792592762" fileName="SetViewer_WrapperFactory.java" startLine="64" startPosition="94" endLine="65" endPosition="156" />
+    <nodeInfo nodeId="7785669630792592762" fileName="SetViewer_WrapperFactory.java" startLine="64" startPosition="103" endLine="65" endPosition="156" />
     <nodeInfo nodeId="7785669630792592770" fileName="SetViewer_WrapperFactory.java" startLine="66" startPosition="7" endLine="67" endPosition="0" />
     <nodeInfo nodeId="7785669630792592771" fileName="SetViewer_WrapperFactory.java" startLine="67" startPosition="0" endLine="68" endPosition="24" />
     <nodeInfo nodeId="7785669630792592758" fileName="SetViewer_WrapperFactory.java" startLine="63" startPosition="0" endLine="66" endPosition="7" />
-    <scopeInfo nodeId="7785669630792592761" fileName="SetViewer_WrapperFactory.java" startLine="64" startPosition="94" endLine="65" endPosition="156" />
+    <scopeInfo nodeId="7785669630792592761" fileName="SetViewer_WrapperFactory.java" startLine="64" startPosition="103" endLine="65" endPosition="156" />
     <scopeInfo nodeId="7785669630792592758" fileName="SetViewer_WrapperFactory.java" startLine="63" startPosition="0" endLine="66" endPosition="7">
       <varInfo nodeId="7785669630792592759" varName="element" />
     </scopeInfo>
@@ -115,8 +134,14 @@
     <nodeInfo nodeId="8536718853245025647" fileName="CollectionsLanguage.java" startLine="36" startPosition="0" endLine="48" endPosition="0" />
     <scopeInfo nodeId="8536718853245025326" fileName="CollectionsLanguage.java" startLine="21" startPosition="65" endLine="22" endPosition="45" />
     <scopeInfo nodeId="8536718853245025588" fileName="CollectionsLanguage.java" startLine="28" startPosition="13" endLine="29" endPosition="95" />
+    <scopeInfo nodeId="8536718853245025590" fileName="CollectionsLanguage.java" startLine="30" startPosition="0" endLine="31" endPosition="57">
+      <varInfo nodeId="8536718853245025591" varName="thr" />
+    </scopeInfo>
     <scopeInfo nodeId="8536718853245025593" fileName="CollectionsLanguage.java" startLine="30" startPosition="33" endLine="31" endPosition="57" />
     <scopeInfo nodeId="8536718853245025807" fileName="CollectionsLanguage.java" startLine="40" startPosition="13" endLine="41" endPosition="90" />
+    <scopeInfo nodeId="8536718853245025815" fileName="CollectionsLanguage.java" startLine="42" startPosition="0" endLine="43" endPosition="57">
+      <varInfo nodeId="8536718853245025816" varName="thr" />
+    </scopeInfo>
     <scopeInfo nodeId="8536718853245025818" fileName="CollectionsLanguage.java" startLine="42" startPosition="33" endLine="43" endPosition="57" />
     <scopeInfo nodeId="8536718853245008405" fileName="CollectionsLanguage.java" startLine="49" startPosition="51" endLine="50" endPosition="20" />
     <scopeInfo nodeId="8536718853245025345" fileName="CollectionsLanguage.java" startLine="55" startPosition="29" endLine="56" endPosition="31" />
