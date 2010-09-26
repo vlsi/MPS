@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.make.runtime.Foo" file="Foo.java" />
+  <dependency className="jetbrains.mps.make.runtime.IFacet" file="IFacet.java">
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="jetbrains.mps.make.runtime.IResource" />
+    <classNode dependClassName="jetbrains.mps.make.runtime.ITarget" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.runtime.IResource" file="IResource.java" />
+  <dependency className="jetbrains.mps.make.runtime.IScript" file="IScript.java">
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="jetbrains.mps.make.runtime.ITarget" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.runtime.ITarget" file="ITarget.java">
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="jetbrains.mps.make.runtime.IResource" />
+    <classNode dependClassName="jetbrains.mps.make.runtime.ITask" />
+  </dependency>
+  <dependency className="jetbrains.mps.make.runtime.ITask" file="ITask.java" />
+  <dependency className="jetbrains.mps.make.runtime.Script" file="Script.java" />
+  <dependency className="jetbrains.mps.make.runtime.Target" file="Target.java" />
+  <dependency className="jetbrains.mps.make.runtime.Task" file="Task.java" />
+</dependenciesRoot>
+

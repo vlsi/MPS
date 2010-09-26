@@ -7,6 +7,7 @@
   <component name="MPSProject">
     <projectSolutions>
       <solutionPath path="${project}/solutions/jetbrains.mps.make.sandbox/jetbrains.mps.make.sandbox.msd" />
+      <solutionPath path="${project}/solutions/jetbrains.mps.make.runtime/jetbrains.mps.make.runtime.msd" folder="" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/languages/facet/facet.mpl" />
@@ -20,6 +21,7 @@
   </component>
   <component name="ProjectRootManager" version="2" />
   <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="" />
     <mapping directory="" vcs="" />
   </component>
 </project>
