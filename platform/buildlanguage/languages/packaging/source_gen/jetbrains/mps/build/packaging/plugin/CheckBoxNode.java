@@ -16,6 +16,7 @@ public class CheckBoxNode<N extends NodeData> extends MPSTreeNode {
     if (createChildren) {
       this.createChildren();
     }
+    setText(getNodeText());
   }
 
   public String getNodeText() {

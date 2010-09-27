@@ -84,7 +84,7 @@ public class RunConfigManager implements ProjectComponent {
 
     addConfigTypes();
 
-    final ConfigurationType[] configurationTypes = getRunManager().getConfigurationTypes();
+    final ConfigurationType[] configurationTypes = getConfigurationTypes();
     getRunManager().initializeConfigurationTypes(configurationTypes);
 
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -110,6 +110,19 @@ public class RunConfigManager implements ProjectComponent {
     }
 
     myLoaded = true;
+  }
+
+  public ConfigurationType[] getConfigurationTypes() {
+    final ConfigurationType[] configurationTypes = Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP);
+    final List<ConfigurationType> result = new ArrayList<ConfigurationType>();
+    Set<String> uniqTypes = new HashSet<String>();
+    for (ConfigurationType type : configurationTypes) {
+      if (!uniqTypes.contains(type.getClass().getName())) {
+        result.add(type);
+        uniqTypes.add(type.getClass().getName());
+      }
+    }
+    return result.toArray(new ConfigurationType[result.size()]);
   }
 
   public void firstInit() {

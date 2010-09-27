@@ -2793,7 +2793,6 @@
   </node>
   <visible index="3" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration:23" id="7482942963841965839">
-    <property name="package:23" value="wizard" />
     <property name="name:23" value="InternalChecks" />
     <property name="isInternal:23" value="true" />
     <property name="isPopup:23" value="true" />
@@ -2814,7 +2813,6 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="7482942963841967330">
-    <property name="package:23" value="wizard" />
     <property name="name:23" value="CheckSamples" />
     <property name="caption:23" value="Check Samples" />
     <node role="executeFunction:23" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock:23" id="7482942963841967331">
@@ -2940,7 +2938,6 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="7482942963841969131">
-    <property name="package:23" value="wizard" />
     <property name="name:23" value="CheckCoreRuntimeDeps" />
     <property name="caption:23" value="Check Core Runtime Deps" />
     <node role="executeFunction:23" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock:23" id="7482942963841969132">
@@ -3277,7 +3274,6 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="5735046895052034082">
-    <property name="package:23" value="wizard" />
     <property name="name:23" value="CheckIncludedLanguages" />
     <property name="caption:23" value="Check Included Languages" />
     <node role="executeFunction:23" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock:23" id="5735046895052034083">

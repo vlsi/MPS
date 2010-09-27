@@ -23,6 +23,6 @@ public class ConstructorDeclaration_name_PropertyConstraint implements IModelCon
   }
 
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
-    return SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
+    return SPropertyOperations.getString(SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
   }
 }

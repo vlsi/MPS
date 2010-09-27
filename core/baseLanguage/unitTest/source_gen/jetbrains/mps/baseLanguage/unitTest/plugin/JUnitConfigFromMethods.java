@@ -12,8 +12,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.plugins.pluginparts.runconfigs.MPSPsiElement;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
@@ -35,15 +35,12 @@ public class JUnitConfigFromMethods extends BaseConfigCreator<List> implements C
     JUnitConfigFromMethods.this.setSourceElement(new MPSPsiElement(parameter));
 
     List<String> methodNames = ListSequence.fromList(new ArrayList<String>());
-    List<String> nodeNames = ListSequence.fromList(new ArrayList<String>());
     for (SNode method : parameter) {
-      ListSequence.fromList(methodNames).addElement(ITestMethod_Behavior.call_getTestName_1216136419751(method));
-      if (ListSequence.fromList(nodeNames).contains(INamedConcept_Behavior.call_getFqName_1213877404258(ITestMethod_Behavior.call_getTestCase_1216134500045(method)))) {
-        continue;
+      String fqName = INamedConcept_Behavior.call_getFqName_1213877404258(ITestMethod_Behavior.call_getTestCase_1216134500045(method));
+      if (fqName != null) {
+        ListSequence.fromList(methodNames).addElement(fqName + TestRunUtil.SEPARATOR + ITestMethod_Behavior.call_getTestName_1216136419751(method));
       }
-      ListSequence.fromList(nodeNames).addElement(INamedConcept_Behavior.call_getFqName_1213877404258(ITestMethod_Behavior.call_getTestCase_1216134500045(method)));
     }
-
     {
       JUnit_ConfigurationType configType = ContainerUtil.findInstance(Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP), JUnit_ConfigurationType.class);
       DefaultJUnit_Configuration _config = new DefaultJUnit_Configuration(JUnitConfigFromMethods.this.getContext().getProject(), findFactory(configType, "DefaultJUnit"), "NewConfig") {
@@ -54,8 +51,7 @@ public class JUnitConfigFromMethods extends BaseConfigCreator<List> implements C
       };
       _config.setName(ITestMethod_Behavior.call_getTestName_1216136419751(Sequence.fromIterable(parameter).first()) + ",...");
       _config.getStateObject().type = JUnitRunTypes.METHOD;
-      _config.getStateObject().methods = new ClonableList<String>(methodNames);
-      _config.getStateObject().nodes = new ClonableList<String>(nodeNames);
+      _config.getStateObject().fullMethodNames = new ClonableList<String>(methodNames);
       JUnitConfigFromMethods.this.myConfig = _config;
     }
   }

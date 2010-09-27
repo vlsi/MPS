@@ -644,52 +644,53 @@
     <nodeInfo nodeId="1223647521416" fileName="CheckBoxNode.java" startLine="13" startPosition="16" endLine="14" endPosition="33" />
     <nodeInfo nodeId="1223050118742" fileName="CheckBoxNode.java" startLine="14" startPosition="33" endLine="15" endPosition="27" />
     <nodeInfo nodeId="1223655630386" fileName="CheckBoxNode.java" startLine="16" startPosition="25" endLine="17" endPosition="28" />
-    <nodeInfo nodeId="1223050118718" fileName="CheckBoxNode.java" startLine="21" startPosition="31" endLine="22" endPosition="33" />
-    <nodeInfo nodeId="1223050118728" fileName="CheckBoxNode.java" startLine="25" startPosition="49" endLine="26" endPosition="41" />
-    <nodeInfo nodeId="1223490045181" fileName="CheckBoxNode.java" startLine="29" startPosition="22" endLine="30" endPosition="23" />
-    <nodeInfo nodeId="1223490168653" fileName="CheckBoxNode.java" startLine="33" startPosition="30" endLine="34" endPosition="28" />
-    <nodeInfo nodeId="1223490182156" fileName="CheckBoxNode.java" startLine="37" startPosition="43" endLine="38" endPosition="31" />
-    <nodeInfo nodeId="1223655611840" fileName="CheckBoxNode.java" startLine="42" startPosition="58" endLine="43" endPosition="57" />
-    <nodeInfo nodeId="1223664177168" fileName="CheckBoxNode.java" startLine="47" startPosition="27" endLine="48" endPosition="44" />
+    <nodeInfo nodeId="7055215836390137441" fileName="CheckBoxNode.java" startLine="18" startPosition="5" endLine="19" endPosition="27" />
+    <nodeInfo nodeId="1223050118718" fileName="CheckBoxNode.java" startLine="22" startPosition="31" endLine="23" endPosition="33" />
+    <nodeInfo nodeId="1223050118728" fileName="CheckBoxNode.java" startLine="26" startPosition="49" endLine="27" endPosition="41" />
+    <nodeInfo nodeId="1223490045181" fileName="CheckBoxNode.java" startLine="30" startPosition="22" endLine="31" endPosition="23" />
+    <nodeInfo nodeId="1223490168653" fileName="CheckBoxNode.java" startLine="34" startPosition="30" endLine="35" endPosition="28" />
+    <nodeInfo nodeId="1223490182156" fileName="CheckBoxNode.java" startLine="38" startPosition="43" endLine="39" endPosition="31" />
+    <nodeInfo nodeId="1223655611840" fileName="CheckBoxNode.java" startLine="43" startPosition="58" endLine="44" endPosition="57" />
+    <nodeInfo nodeId="1223664177168" fileName="CheckBoxNode.java" startLine="48" startPosition="27" endLine="49" endPosition="44" />
     <nodeInfo nodeId="1223655618387" fileName="CheckBoxNode.java" startLine="15" startPosition="27" endLine="18" endPosition="5" />
-    <nodeInfo nodeId="1223655611833" fileName="CheckBoxNode.java" startLine="41" startPosition="33" endLine="44" endPosition="5" />
-    <nodeInfo nodeId="1223050118715" fileName="CheckBoxNode.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
-    <nodeInfo nodeId="1223050118725" fileName="CheckBoxNode.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
-    <nodeInfo nodeId="1223490037308" fileName="CheckBoxNode.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <nodeInfo nodeId="1223490140023" fileName="CheckBoxNode.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <nodeInfo nodeId="1223490172176" fileName="CheckBoxNode.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <nodeInfo nodeId="1223664145266" fileName="CheckBoxNode.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
-    <nodeInfo nodeId="1223655611827" fileName="CheckBoxNode.java" startLine="40" startPosition="0" endLine="46" endPosition="0" />
-    <nodeInfo nodeId="1223050118736" fileName="CheckBoxNode.java" startLine="11" startPosition="0" endLine="19" endPosition="3" />
+    <nodeInfo nodeId="1223655611833" fileName="CheckBoxNode.java" startLine="42" startPosition="33" endLine="45" endPosition="5" />
+    <nodeInfo nodeId="1223050118715" fileName="CheckBoxNode.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <nodeInfo nodeId="1223050118725" fileName="CheckBoxNode.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
+    <nodeInfo nodeId="1223490037308" fileName="CheckBoxNode.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <nodeInfo nodeId="1223490140023" fileName="CheckBoxNode.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
+    <nodeInfo nodeId="1223490172176" fileName="CheckBoxNode.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
+    <nodeInfo nodeId="1223664145266" fileName="CheckBoxNode.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <nodeInfo nodeId="1223655611827" fileName="CheckBoxNode.java" startLine="41" startPosition="0" endLine="47" endPosition="0" />
+    <nodeInfo nodeId="1223050118736" fileName="CheckBoxNode.java" startLine="11" startPosition="0" endLine="20" endPosition="3" />
     <scopeInfo nodeId="1223655618388" fileName="CheckBoxNode.java" startLine="16" startPosition="25" endLine="17" endPosition="28" />
-    <scopeInfo nodeId="1223050118717" fileName="CheckBoxNode.java" startLine="21" startPosition="31" endLine="22" endPosition="33" />
-    <scopeInfo nodeId="1223050118727" fileName="CheckBoxNode.java" startLine="25" startPosition="49" endLine="26" endPosition="41" />
-    <scopeInfo nodeId="1223490037311" fileName="CheckBoxNode.java" startLine="29" startPosition="22" endLine="30" endPosition="23" />
-    <scopeInfo nodeId="1223490140026" fileName="CheckBoxNode.java" startLine="33" startPosition="30" endLine="34" endPosition="28" />
-    <scopeInfo nodeId="1223490172179" fileName="CheckBoxNode.java" startLine="37" startPosition="43" endLine="38" endPosition="31" />
-    <scopeInfo nodeId="1223655611839" fileName="CheckBoxNode.java" startLine="42" startPosition="58" endLine="43" endPosition="57" />
-    <scopeInfo nodeId="1223664145269" fileName="CheckBoxNode.java" startLine="47" startPosition="27" endLine="48" endPosition="44" />
-    <scopeInfo nodeId="1223655611832" fileName="CheckBoxNode.java" startLine="41" startPosition="33" endLine="44" endPosition="5" />
-    <scopeInfo nodeId="1223655611833" fileName="CheckBoxNode.java" startLine="41" startPosition="33" endLine="44" endPosition="5">
+    <scopeInfo nodeId="1223050118717" fileName="CheckBoxNode.java" startLine="22" startPosition="31" endLine="23" endPosition="33" />
+    <scopeInfo nodeId="1223050118727" fileName="CheckBoxNode.java" startLine="26" startPosition="49" endLine="27" endPosition="41" />
+    <scopeInfo nodeId="1223490037311" fileName="CheckBoxNode.java" startLine="30" startPosition="22" endLine="31" endPosition="23" />
+    <scopeInfo nodeId="1223490140026" fileName="CheckBoxNode.java" startLine="34" startPosition="30" endLine="35" endPosition="28" />
+    <scopeInfo nodeId="1223490172179" fileName="CheckBoxNode.java" startLine="38" startPosition="43" endLine="39" endPosition="31" />
+    <scopeInfo nodeId="1223655611839" fileName="CheckBoxNode.java" startLine="43" startPosition="58" endLine="44" endPosition="57" />
+    <scopeInfo nodeId="1223664145269" fileName="CheckBoxNode.java" startLine="48" startPosition="27" endLine="49" endPosition="44" />
+    <scopeInfo nodeId="1223655611832" fileName="CheckBoxNode.java" startLine="42" startPosition="33" endLine="45" endPosition="5" />
+    <scopeInfo nodeId="1223655611833" fileName="CheckBoxNode.java" startLine="42" startPosition="33" endLine="45" endPosition="5">
       <varInfo nodeId="1223655611837" varName="childNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1223050118715" fileName="CheckBoxNode.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="1223050118725" fileName="CheckBoxNode.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
+    <scopeInfo nodeId="1223050118715" fileName="CheckBoxNode.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="1223050118725" fileName="CheckBoxNode.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="1223663707395" varName="expanded" />
     </scopeInfo>
-    <scopeInfo nodeId="1223490037308" fileName="CheckBoxNode.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="1223490140023" fileName="CheckBoxNode.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="1223490172176" fileName="CheckBoxNode.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+    <scopeInfo nodeId="1223490037308" fileName="CheckBoxNode.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1223490140023" fileName="CheckBoxNode.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="1223490172176" fileName="CheckBoxNode.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="1223490178165" varName="checked" />
     </scopeInfo>
-    <scopeInfo nodeId="1223664145266" fileName="CheckBoxNode.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="1223050118739" fileName="CheckBoxNode.java" startLine="12" startPosition="59" endLine="18" endPosition="5" />
-    <scopeInfo nodeId="1223655611827" fileName="CheckBoxNode.java" startLine="40" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="1223050118736" fileName="CheckBoxNode.java" startLine="11" startPosition="0" endLine="19" endPosition="3">
+    <scopeInfo nodeId="1223664145266" fileName="CheckBoxNode.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="1223655611827" fileName="CheckBoxNode.java" startLine="41" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="1223050118739" fileName="CheckBoxNode.java" startLine="12" startPosition="59" endLine="19" endPosition="27" />
+    <scopeInfo nodeId="1223050118736" fileName="CheckBoxNode.java" startLine="11" startPosition="0" endLine="20" endPosition="3">
       <varInfo nodeId="1223655549896" varName="createChildren" />
       <varInfo nodeId="1223050118765" varName="rootNode" />
     </scopeInfo>
-    <unitInfo nodeId="1223050118711" fileName="CheckBoxNode.java" startLine="8" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.CheckBoxNode" />
+    <unitInfo nodeId="1223050118711" fileName="CheckBoxNode.java" startLine="8" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.build.packaging.plugin.CheckBoxNode" />
   </root>
   <root nodeId="1223050118770">
     <nodeInfo nodeId="1223050118781" fileName="CheckBoxTree.java" startLine="17" startPosition="62" endLine="18" endPosition="29" />

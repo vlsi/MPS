@@ -20,13 +20,6 @@ import jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunProfileState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 05.02.2010
- * Time: 19:48:50
- * To change this template use File | Settings | File Templates.
- */
 public class MPSDebugRunner extends GenericProgramRunner {
 
   public boolean canRun(@NotNull final String executorId, @NotNull final RunProfile profile) {

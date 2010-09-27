@@ -11,7 +11,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.unitTest.runtime.TestRunParameters;
 import com.intellij.util.lang.UrlClassLoader;
 import java.net.URL;
-import jetbrains.mps.lang.test.runtime.TransformationTestRuner;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.project.StubPath;
+import jetbrains.mps.project.structure.modules.Dependency;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class NodesTestCase_Behavior {
   public static void init(SNode thisNode) {
@@ -42,7 +47,7 @@ public class NodesTestCase_Behavior {
   }
 
   public static List<String> getIdeaClassPath_1217424542979() {
-    List<String> result = ListSequence.fromList(new ArrayList<String>());
+    final List<String> result = ListSequence.fromList(new ArrayList<String>());
     ClassLoader classLoader = UrlClassLoader.class.getClassLoader();
     Class cls = classLoader.getClass();
     try {
@@ -51,6 +56,16 @@ public class NodesTestCase_Behavior {
         ListSequence.fromList(result).addElement(url.getFile());
       }
     } catch (Throwable e) {
+    }
+    Language testsLanguage = (Language) SNodeOperations.getModel(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodesTestCase")).getModelDescriptor().getModule();
+    for (StubPath path : ListSequence.fromList(testsLanguage.getRuntimeStubPaths())) {
+      ListSequence.fromList(result).addElement(path.getPath());
+    }
+    for (Dependency dep : ListSequence.fromList(testsLanguage.getRuntimeDependOn())) {
+      AbstractModule module = (AbstractModule) MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
+      for (StubPath path : ListSequence.fromList(module.getStubPaths())) {
+        ListSequence.fromList(result).addElement(path.getPath());
+      }
     }
     return result;
   }
@@ -61,7 +76,8 @@ public class NodesTestCase_Behavior {
     List<String> vmParams = ListSequence.fromList(new ArrayList<String>());
     ListSequence.fromList(vmParams).addElement("-Xmx1024m");
     result.setVmParameters(vmParams);
-    result.setTestRunner(TransformationTestRuner.class.getName());
+    // wtf, could not run tests because of typo 
+    result.setTestRunner("jetbrains.mps.lang.test.runtime.TransformationTestRunner");
     return result;
   }
 

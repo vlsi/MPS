@@ -117,39 +117,6 @@ import java.util.List;
     )}
 )
 public final class ProjectViewImpl extends ProjectView implements PersistentStateComponent<Element>, Disposable, QuickActionProvider {
-  @Patch
-  private boolean viewSelectionChanged() {
-    Pair<String, String> ids = (Pair<String, String>) myCombo.getSelectedItem();
-    if (ids == null) return false;
-    final String id = ids.first;
-    String subId = ids.second;
-    if (ids.equals(Pair.create(myCurrentViewId, myCurrentViewSubId))) return false;
-    final AbstractProjectViewPane newPane = getProjectViewPaneById(id);
-    if (newPane == null) return false;
-
-
-    newPane.setSubId(subId);
-    String[] subIds = newPane.getSubIds();
-
-    if (subId == null && subIds.length != 0) {
-      final String firstNonTrivialSubId = subIds[0];
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          changeView(id, firstNonTrivialSubId);
-          newPane.setSubId(firstNonTrivialSubId);
-          //begin patch
-          newPane.restoreExpandedPaths();
-          //end patch
-        }
-      });
-    } else {
-      showPane(newPane);
-      //begin patch
-      newPane.restoreExpandedPaths();
-      //end patch
-    }
-    return true;
-  }
 
   @Patch
   private void createToolbarActions() {
@@ -192,6 +159,33 @@ public final class ProjectViewImpl extends ProjectView implements PersistentStat
 
 
 
+
+  private boolean viewSelectionChanged() {
+    Pair<String, String> ids = (Pair<String, String>) myCombo.getSelectedItem();
+    if (ids == null) return false;
+    final String id = ids.first;
+    String subId = ids.second;
+    if (ids.equals(Pair.create(myCurrentViewId, myCurrentViewSubId))) return false;
+    final AbstractProjectViewPane newPane = getProjectViewPaneById(id);
+    if (newPane == null) return false;
+
+
+    newPane.setSubId(subId);
+    String[] subIds = newPane.getSubIds();
+
+    if (subId == null && subIds.length != 0) {
+      final String firstNonTrivialSubId = subIds[0];
+      SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+          changeView(id, firstNonTrivialSubId);
+          newPane.setSubId(firstNonTrivialSubId);
+        }
+      });
+    } else {
+      showPane(newPane);
+    }
+    return true;
+  }
 
   private static final Logger LOG = Logger.getInstance("#com.intellij.ide.projectView.impl.ProjectViewImpl");
   private final CopyPasteDelegator myCopyPasteDelegator;

@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="QuickQueryLanguage_ProjectPlugin.java" startLine="12" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.QuickQueryLanguage_ProjectPlugin" />
+  <unitInfo fileName="QuickQueryLanguage_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.QuickQueryLanguage_ApplicationPlugin" />
+  <unitInfo fileName="FindInstancesByConditionGroup_ActionGroup.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByConditionGroup_ActionGroup" />
+  <unitInfo fileName="FindInstancesByConditionAndNodeGroup_ActionGroup.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByConditionAndNodeGroup_ActionGroup" />
+  <unitInfo fileName="RunReplacement_Tool.java" startLine="21" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.RunReplacement_Tool" />
+  <unitInfo fileName="ReplacementQueryAction_Action.java" startLine="15" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplacementQueryAction_Action" />
+  <unitInfo fileName="FindInstancesByCondition_Action.java" startLine="15" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByCondition_Action" />
+  <unitInfo fileName="ReplacementQueryActionWithNode_Action.java" startLine="17" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.ReplacementQueryActionWithNode_Action" />
+  <unitInfo fileName="FindInstancesByConditionAndNode_Action.java" startLine="17" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByConditionAndNode_Action" />
   <root nodeId="1219056224639">
     <nodeInfo nodeId="1220257798123" fileName="QueryExecutor.java" startLine="6" startPosition="28" endLine="7" endPosition="64" />
     <nodeInfo nodeId="1235926499683" fileName="QueryExecutor.java" startLine="8" startPosition="0" endLine="10" endPosition="3" />
@@ -145,6 +154,9 @@
     <scopeInfo nodeId="1219672944711" fileName="FindInstancesDialog.java" startLine="90" startPosition="25" endLine="91" endPosition="200" />
     <scopeInfo nodeId="5658679531526817450" fileName="FindInstancesDialog.java" startLine="101" startPosition="27" endLine="102" endPosition="158" />
     <scopeInfo nodeId="1238845560683" fileName="FindInstancesDialog.java" startLine="111" startPosition="27" endLine="112" endPosition="203" />
+    <scopeInfo nodeId="1219938391860" fileName="FindInstancesDialog.java" startLine="115" startPosition="0" endLine="116" endPosition="26">
+      <varInfo nodeId="1219938391861" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="1219938391863" fileName="FindInstancesDialog.java" startLine="115" startPosition="27" endLine="116" endPosition="26" />
     <scopeInfo nodeId="1235929414122" fileName="FindInstancesDialog.java" startLine="130" startPosition="88" endLine="131" endPosition="136" />
     <scopeInfo nodeId="1235929414140" fileName="FindInstancesDialog.java" startLine="132" startPosition="16" endLine="133" endPosition="53" />
@@ -287,6 +299,9 @@
     <scopeInfo nodeId="1219749141723" fileName="ReplaceDialog.java" startLine="76" startPosition="25" endLine="77" endPosition="194" />
     <scopeInfo nodeId="5658679531526822187" fileName="ReplaceDialog.java" startLine="87" startPosition="27" endLine="88" endPosition="152" />
     <scopeInfo nodeId="1238845527642" fileName="ReplaceDialog.java" startLine="97" startPosition="27" endLine="98" endPosition="191" />
+    <scopeInfo nodeId="1219931825359" fileName="ReplaceDialog.java" startLine="103" startPosition="0" endLine="104" endPosition="26">
+      <varInfo nodeId="1219931825360" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="1219931825362" fileName="ReplaceDialog.java" startLine="103" startPosition="27" endLine="104" endPosition="26" />
     <scopeInfo nodeId="1235929460021" fileName="ReplaceDialog.java" startLine="118" startPosition="88" endLine="119" endPosition="136" />
     <scopeInfo nodeId="1235929460039" fileName="ReplaceDialog.java" startLine="120" startPosition="16" endLine="121" endPosition="53" />
@@ -394,6 +409,9 @@
     <nodeInfo nodeId="1219918588184" fileName="ReplacementView.java" startLine="36" startPosition="0" endLine="76" endPosition="3" />
     <scopeInfo nodeId="1219919492681" fileName="ReplacementView.java" startLine="40" startPosition="27" endLine="41" endPosition="67" />
     <scopeInfo nodeId="1220015646507" fileName="ReplacementView.java" startLine="51" startPosition="47" endLine="52" endPosition="38" />
+    <scopeInfo nodeId="1220264681081" fileName="ReplacementView.java" startLine="55" startPosition="0" endLine="56" endPosition="105">
+      <varInfo nodeId="1220264681082" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="1220264681084" fileName="ReplacementView.java" startLine="55" startPosition="35" endLine="56" endPosition="105" />
     <scopeInfo nodeId="1219926284691" fileName="ReplacementView.java" startLine="78" startPosition="36" endLine="79" endPosition="28" />
     <scopeInfo nodeId="1243856755134022091" fileName="ReplacementView.java" startLine="82" startPosition="25" endLine="83" endPosition="32" />
@@ -460,6 +478,9 @@
     <nodeInfo nodeId="1220269822120" fileName="QueryFinder.java" startLine="31" startPosition="46" endLine="37" endPosition="7" />
     <nodeInfo nodeId="1219923106412" fileName="QueryFinder.java" startLine="29" startPosition="87" endLine="38" endPosition="5" />
     <nodeInfo nodeId="1219922585243" fileName="QueryFinder.java" startLine="24" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="1220269822123" fileName="QueryFinder.java" startLine="36" startPosition="0" endLine="36" endPosition="29">
+      <varInfo nodeId="1220269822124" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="1220269822126" fileName="QueryFinder.java" startLine="36" startPosition="29" endLine="36" endPosition="29" />
     <scopeInfo nodeId="1219922562116" fileName="QueryFinder.java" startLine="21" startPosition="35" endLine="22" endPosition="25" />
     <scopeInfo nodeId="1219923106434" fileName="QueryFinder.java" startLine="33" startPosition="63" endLine="34" endPosition="22" />

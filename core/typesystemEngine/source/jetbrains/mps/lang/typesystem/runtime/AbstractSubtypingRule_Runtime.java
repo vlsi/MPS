@@ -17,7 +17,6 @@ package jetbrains.mps.lang.typesystem.runtime;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.typesystem.inference.EquationManager;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 
 import java.util.List;

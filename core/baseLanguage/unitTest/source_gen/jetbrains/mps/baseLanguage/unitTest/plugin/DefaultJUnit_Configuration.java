@@ -24,7 +24,7 @@ import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.ExecutionResult;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.impl.ConsoleViewImpl;
-import jetbrains.mps.debug.api.info.StacktraceUtil;
+import jetbrains.mps.ide.common.JavaConsoleCreator;
 import javax.swing.JComponent;
 import java.util.List;
 import com.intellij.openapi.actionSystem.AnAction;
@@ -54,6 +54,7 @@ import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import com.intellij.openapi.progress.ProgressManager;
 import javax.swing.JLabel;
 import com.intellij.execution.ui.ExecutionConsole;
 
@@ -113,7 +114,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
     return new JavaRunProfileState() {
       @Nullable
       public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
-        final ConsoleViewImpl consoleView_22042010 = StacktraceUtil.createConsoleView(MPSDataKeys.PROJECT.getData(environment.getDataContext()));
+        final ConsoleViewImpl consoleView_22042010 = JavaConsoleCreator.createConsoleView(MPSDataKeys.PROJECT.getData(environment.getDataContext()));
         JComponent consoleComponent_22042010 = null;
         Runnable consoleDispose_22042010 = null;
         final List<AnAction> actions_22042010 = ListSequence.fromList(new ArrayList<AnAction>());
@@ -138,8 +139,9 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
             // calculate parameter 
             final UnitTestExecutionController parameter = new _FunctionTypes._return_P0_E0<UnitTestExecutionController>() {
               public UnitTestExecutionController invoke() {
-                MPSProject mpsProject = project_22042010.getComponent(MPSProject.class);
-                List<SNode> stuffToTest = DefaultJUnit_Configuration.this.collectWhatToTest(mpsProject);
+                final MPSProject mpsProject = project_22042010.getComponent(MPSProject.class);
+
+                List<SNode> stuffToTest = DefaultJUnit_Configuration.this.collectWhatToTestUnderProgress(mpsProject);
 
                 if (javaRunParameters.getMake()) {
                   RunUtil.makeBeforeRun(project_22042010, stuffToTest);
@@ -250,15 +252,51 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
   }
 
   private List<SNode> collectWhatToTest(final MPSProject mpsProject) {
-    final List<SNode> all = new ArrayList<SNode>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    final List<SNode>[] all = (List<SNode>[]) new List[1];
+    if (DefaultJUnit_Configuration.this.getStateObject().type != null) {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          all[0] = Sequence.fromIterable(DefaultJUnit_Configuration.this.getStateObject().type.collect(DefaultJUnit_Configuration.this, mpsProject)).toListSequence();
+        }
+      });
+    }
+    return all[0];
+  }
+
+  private List<SNode> collectWhatToTestUnderProgress(final MPSProject mpsProject) {
+    final List<SNode> stuffToTest = new ArrayList<SNode>();
+    Runnable collect = new Runnable() {
       public void run() {
         if (DefaultJUnit_Configuration.this.getStateObject().type != null) {
-          ListSequence.fromList(all).addSequence(Sequence.fromIterable(DefaultJUnit_Configuration.this.getStateObject().type.collect(DefaultJUnit_Configuration.this, mpsProject)));
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              ListSequence.fromList(stuffToTest).addSequence(Sequence.fromIterable(DefaultJUnit_Configuration.this.getStateObject().type.collect(DefaultJUnit_Configuration.this, mpsProject)));
+            }
+          });
         }
       }
-    });
-    return all;
+    };
+    if (eq_yzqu2q_a0a2a11_0(DefaultJUnit_Configuration.this.getStateObject().type, JUnitRunTypes.PROJECT) || eq_yzqu2q_a0a2a11(DefaultJUnit_Configuration.this.getStateObject().type, JUnitRunTypes.MODULE)) {
+      // collecting for module/project is slow, so execute under progress 
+      ProgressManager.getInstance().runProcessWithProgressSynchronously(collect, "Collecting Tests To Run", false, mpsProject.getProject());
+    } else {
+      collect.run();
+    }
+    return stuffToTest;
+  }
+
+  private static boolean eq_yzqu2q_a0a2a11(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_yzqu2q_a0a2a11_0(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 
   private static class MySettingsEditor extends SettingsEditor<DefaultJUnit_Configuration> {
@@ -310,12 +348,9 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
 
   public static class MyState implements Cloneable {
     public ConfigRunParameters myJavaRunParameters = new ConfigRunParameters();
-    public String node;
     public ClonableList<String> nodes = new ClonableList<String>();
     public String model;
     public String module;
-    public String method;
-    public ClonableList<String> methods = new ClonableList<String>();
     public ClonableList<String> fullMethodNames = new ClonableList<String>();
     public JUnitRunTypes type;
 
@@ -329,9 +364,6 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
       }
       if (this.nodes != null) {
         object.nodes = (ClonableList) this.nodes.clone();
-      }
-      if (this.methods != null) {
-        object.methods = (ClonableList) this.methods.clone();
       }
       if (this.fullMethodNames != null) {
         object.fullMethodNames = (ClonableList) this.fullMethodNames.clone();

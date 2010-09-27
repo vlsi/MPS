@@ -46,6 +46,7 @@
     <classNode dependClassName="com.intellij.execution.runners.ProgramRunner" />
     <classNode dependClassName="com.intellij.ide.DataManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
+    <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.util.Disposer" />
     <classNode dependClassName="com.intellij.openapi.util.InvalidDataException" />
@@ -76,7 +77,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.ConfigRunParameters" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.run.RunUtil" />
     <classNode dependClassName="jetbrains.mps.debug.DebuggerKeys" />
-    <classNode dependClassName="jetbrains.mps.debug.api.info.StacktraceUtil" />
+    <classNode dependClassName="jetbrains.mps.ide.common.JavaConsoleCreator" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
@@ -126,7 +127,6 @@
     <classNode dependClassName="java.awt.GridBagLayout" />
     <classNode dependClassName="java.awt.event.ActionEvent" />
     <classNode dependClassName="java.awt.event.ActionListener" />
-    <classNode dependClassName="java.lang.Math" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -228,6 +228,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.DefaultJUnit_Configuration" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitRunTypes" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnit_ConfigurationType" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.TestRunUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -253,6 +254,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.DefaultJUnit_Configuration" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitRunTypes" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnit_ConfigurationType" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.TestRunUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
@@ -296,7 +298,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.DefaultJUnit_Configuration" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitRunTypes" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnit_ConfigurationType" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.TestRunUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.plugins.pluginparts.runconfigs.MPSPsiElement" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
@@ -316,7 +317,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.DefaultJUnit_Configuration" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitRunTypes" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.JUnit_ConfigurationType" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.plugin.TestRunUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.plugins.pluginparts.runconfigs.MPSPsiElement" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
@@ -646,9 +646,7 @@
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequenceClosure" />

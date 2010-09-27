@@ -448,11 +448,6 @@ public class JUnitConfigEditor extends JPanel {
   public void apply(final DefaultJUnit_Configuration config) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        // clear legacy properties 
-        config.getStateObject().node = null;
-        config.getStateObject().method = null;
-        config.getStateObject().methods = null;
-
         // five of them, so we do not mind going twice 
         int index = Sequence.fromIterable(Sequence.fromArray(myThis.getButtons())).indexOf(Sequence.fromIterable(Sequence.fromArray(myThis.getButtons())).findFirst(new IWhereFilter<JRadioButton>() {
           public boolean accept(JRadioButton it) {
@@ -500,7 +495,7 @@ public class JUnitConfigEditor extends JPanel {
     }
 
     // nodes 
-    List<String> nodes = Sequence.fromIterable(TestRunUtil.getValues(config.getStateObject().node, config.getStateObject().nodes)).toListSequence();
+    List<String> nodes = config.getStateObject().nodes;
     myThis.setNodes(new ArrayList<SNode>());
     myThis.myTestCases_d0.clear();
     for (String nodeName : nodes) {
@@ -526,12 +521,6 @@ public class JUnitConfigEditor extends JPanel {
 
     // methods 
     myThis.setMethods(new ArrayList<SNode>());
-    // legacy: in case config has methods instead of full methods 
-    List<String> methods = Sequence.fromIterable(TestRunUtil.getValues(config.getStateObject().method, config.getStateObject().methods)).toListSequence();
-    myThis.myTestMethods_e0.clear();
-    for (int i = 0; i < Math.min(ListSequence.fromList(methods).count(), ListSequence.fromList(nodes).count()); i++) {
-      myThis.addMethodValue(ListSequence.fromList(nodes).getElement(i), ListSequence.fromList(methods).getElement(i));
-    }
     for (String methodName : ListSequence.fromList(config.getStateObject().fullMethodNames)) {
       int separatorIndex = methodName.lastIndexOf(TestRunUtil.SEPARATOR);
       myThis.addMethodValue(methodName.substring(0, separatorIndex), methodName.substring(separatorIndex + 1));

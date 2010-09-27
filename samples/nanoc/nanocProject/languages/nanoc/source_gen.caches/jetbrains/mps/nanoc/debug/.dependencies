@@ -48,7 +48,6 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="jetbrains.mps.debug.api.AbstractDebugSession" />
-    <classNode dependClassName="jetbrains.mps.debug.api.info.StacktraceUtil" />
     <classNode dependClassName="jetbrains.mps.debug.executable.SimpleConsoleProcessHandler" />
     <classNode dependClassName="jetbrains.mps.nanoc.debug.CppDebugSession" />
     <classNode dependClassName="jetbrains.mps.nanoc.debug.ProgramsLocationUtil" />

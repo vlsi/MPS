@@ -16,11 +16,9 @@
 package jetbrains.mps.lang.typesystem.runtime;
 
 import jetbrains.mps.typesystem.inference.util.IDependency_Runtime;
-import jetbrains.mps.typesystem.inference.IVariableProvider;
 import jetbrains.mps.typesystem.inference.IVariableConverter_Runtime;
 
 import java.util.Set;
-import java.util.Map;
 
 public interface IHelginsDescriptor {
   public Set<InferenceRule_Runtime> getInferenceRules();

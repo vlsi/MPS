@@ -499,7 +499,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
-  <maxImportIndex value="36" />
+  <maxImportIndex value="37" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="8" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
@@ -516,6 +516,7 @@
   <import index="33" modelUID="f:java_stub#com.intellij.execution.runners(com.intellij.execution.runners@java_stub)" version="-1" />
   <import index="35" modelUID="f:java_stub#com.intellij.execution.impl(com.intellij.execution.impl@java_stub)" version="-1" />
   <import index="36" modelUID="f:java_stub#jetbrains.mps.debug.api(jetbrains.mps.debug.api@java_stub)" version="-1" />
+  <import index="37" modelUID="f:java_stub#jetbrains.mps.generator(jetbrains.mps.generator@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1203071646776">
     <property name="name:0" value="ActionDeclaration" />
     <property name="rootable:0" value="true" />
@@ -1589,6 +1590,14 @@
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target:0" targetNodeId="1210094339163:23" resolveInfo="GenerationListener_models" />
     </node>
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="8871719840296827743">
+      <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target:0" targetNodeId="8871719840296751250:23" resolveInfo="GenerationListener_options" />
+    </node>
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="8871719840296827745">
+      <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target:0" targetNodeId="1204039194827:23" resolveInfo="ConceptFunctionParameter_OperationContext" />
+    </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1215038387068">
       <property name="value:0" value="before generation" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473891462:0" resolveInfo="alias" />
@@ -1604,14 +1613,8 @@
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1210094339164">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545963098:3" resolveInfo="conceptFunctionParameterType" />
       <node role="target:0" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="1210094339165">
-        <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1210094339166">
-          <link role="classifier:3" targetNodeId="18.~Pair" resolveInfo="Pair" />
-          <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1210094339167">
-            <link role="classifier:3" targetNodeId="16.~SModelDescriptor" resolveInfo="SModelDescriptor" />
-          </node>
-          <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1210094339168">
-            <link role="classifier:3" targetNodeId="16.~IOperationContext" resolveInfo="IOperationContext" />
-          </node>
+        <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8871719840296751249">
+          <link role="classifier:3" targetNodeId="16.~SModelDescriptor" resolveInfo="SModelDescriptor" />
         </node>
       </node>
     </node>
@@ -1905,6 +1908,14 @@
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="1213048754926">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target:0" targetNodeId="1210094339163:23" resolveInfo="GenerationListener_models" />
+    </node>
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="8871719840296827747">
+      <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target:0" targetNodeId="8871719840296751250:23" resolveInfo="GenerationListener_options" />
+    </node>
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="8871719840296827748">
+      <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target:0" targetNodeId="1204039194827:23" resolveInfo="ConceptFunctionParameter_OperationContext" />
     </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1215038387073">
       <property name="value:0" value="after generation" />
@@ -4473,6 +4484,24 @@
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="3680762252127977704">
       <property name="value:0" value="project" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="8871719840296751250">
+    <property name="package:0" value="GenerationListener" />
+    <property name="name:0" value="GenerationListener_options" />
+    <link role="extends:0" targetNodeId="2.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="8871719840296751251">
+      <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545963098:3" resolveInfo="conceptFunctionParameterType" />
+      <node role="target:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8871719840296818188">
+        <link role="classifier:3" targetNodeId="37.~GenerationOptions" resolveInfo="GenerationOptions" />
+      </node>
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="8871719840296818189">
+      <property name="value:0" value="options" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473891462:0" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="8871719840296818191">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473994950:0" resolveInfo="dontSubstituteByDefault" />
     </node>
   </node>
 </model>

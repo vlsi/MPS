@@ -29,7 +29,7 @@ public class Logger {
   private static List<ILoggingHandler> ourLoggingHandlers = new ArrayList<ILoggingHandler>();
 
   static {
-    addLoggingHandler(new Log4jLogginHandler());
+    addLoggingHandler(new Log4jLoggingHandler());
   }
 
   /**

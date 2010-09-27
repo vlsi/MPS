@@ -207,7 +207,7 @@
     <classNode dependClassName="jetbrains.mps.build.packaging.plugin.DefaultPackagingLanguageApplication_Editor" />
     <classNode dependClassName="jetbrains.mps.build.packaging.plugin.GenerateTextFromBuild" />
     <classNode dependClassName="jetbrains.mps.buildlanguage.plugin.AntScriptRunner" />
-    <classNode dependClassName="jetbrains.mps.debug.api.info.StacktraceUtil" />
+    <classNode dependClassName="jetbrains.mps.ide.common.JavaConsoleCreator" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.run.DefaultProcessHandler" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />

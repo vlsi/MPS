@@ -50,7 +50,7 @@
     <classNode dependClassName="javax.swing.JTextField" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.runConfigurations.runtime.BaseFieldWithButtonComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.runConfigurations.runtime.GlobalFileteredScope" file="GlobalFileteredScope.java">
+  <dependency className="jetbrains.mps.baseLanguage.runConfigurations.runtime.GlobalFilteredScope" file="GlobalFilteredScope.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashSet" />
@@ -68,6 +68,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.project.GlobalScope" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.runConfigurations.runtime.IJavaNodeChangeListener" file="IJavaNodeChangeListener.java">
@@ -108,6 +109,7 @@
     <classNode dependClassName="java.awt.event.ActionListener" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -115,7 +117,7 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.runConfigurations.runtime.GlobalFileteredScope" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.runConfigurations.runtime.GlobalFilteredScope" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.runConfigurations.runtime.IJavaNodeChangeListener" />
     <classNode dependClassName="jetbrains.mps.findUsages.FindUsagesManager" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
@@ -126,6 +128,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" />
+    <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />

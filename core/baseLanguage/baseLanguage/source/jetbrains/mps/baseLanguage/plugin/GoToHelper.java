@@ -15,16 +15,13 @@
  */
 package jetbrains.mps.baseLanguage.plugin;
 
-import com.intellij.ide.util.NodeListCellRenderer;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.popup.PopupChooserBuilder;
 import com.intellij.openapi.util.Computable;
 import com.intellij.ui.awt.RelativePoint;
-import jetbrains.mps.baseLanguage.icons.Icons;
 import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;

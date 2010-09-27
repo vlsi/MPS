@@ -4,7 +4,7 @@ import com.sun.jdi.AbsentInformationException;
 import com.sun.jdi.Location;
 import com.sun.jdi.ObjectReference;
 import com.sun.jdi.ThreadReference;
-import jetbrains.mps.debug.api.info.DebugInfoUtil;
+import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
@@ -58,7 +58,7 @@ public class JavaThisObject extends JavaBreakpointWatchable implements IWatchabl
   public SNode getNode() {
     try {
       Location location = myStackFrame.getStackFrame().location();
-      SNode snode = DebugInfoUtil.getUnitNode(location.declaringType().name(),
+      SNode snode = TraceInfoUtil.getUnitNode(location.declaringType().name(),
         location.sourceName(), location.lineNumber());
       return snode;
     } catch (AbsentInformationException ex) {

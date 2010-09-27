@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
-import jetbrains.mps.ide.embeddableEditor.TemporaryModelOwner;
+import jetbrains.mps.kernel.model.TemporaryModelOwner;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;

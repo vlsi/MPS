@@ -1244,7 +1244,7 @@
           <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1239643276798">
             <link role="attributeDeclaration:22" targetNodeId="2v.353793545802813314" resolveInfo="eof" />
             <node role="value:22" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239643282310">
-              <property name="value:21" value="asis" />
+              <property name="value:21" value="add" />
             </node>
           </node>
         </node>
@@ -1265,7 +1265,7 @@
           <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1239643284952">
             <link role="attributeDeclaration:22" targetNodeId="2v.353793545802813314" resolveInfo="eof" />
             <node role="value:22" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239643284953">
-              <property name="value:21" value="asis" />
+              <property name="value:21" value="add" />
             </node>
           </node>
           <node role="nodeMacro$attribute:22" type="jetbrains.mps.lang.generator.structure.IfMacro:2" id="1239643296241">
@@ -4051,8 +4051,8 @@
           </node>
           <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1239642274930">
             <link role="attributeDeclaration:22" targetNodeId="2v.353793545802813314" resolveInfo="eof" />
-            <node role="value:22" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239642281249">
-              <property name="value:21" value="asis" />
+            <node role="value:22" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="9063727853129536103">
+              <property name="value:21" value="add" />
             </node>
           </node>
           <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1239642297101">
@@ -4087,13 +4087,13 @@
           <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1239642509625">
             <link role="attributeDeclaration:22" targetNodeId="2v.353793545802813314" resolveInfo="eof" />
             <node role="value:22" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239642516681">
-              <property name="value:21" value="asis" />
+              <property name="value:21" value="remove" />
             </node>
           </node>
           <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1239642518317">
             <link role="attributeDeclaration:22" targetNodeId="2v.353793545802813320" resolveInfo="eol" />
-            <node role="value:22" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239642523410">
-              <property name="value:21" value="dos" />
+            <node role="value:22" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="9063727853129418976">
+              <property name="value:21" value="unix" />
             </node>
           </node>
           <node role="nodeMacro$attribute:22" type="jetbrains.mps.lang.generator.structure.IfMacro:2" id="1239642527335">
@@ -4286,6 +4286,7 @@
             </node>
           </node>
           <node role="nested:22" type="jetbrains.mps.build.generictasks.structure.TaskCall:22" id="5311051194232934145">
+            <property name="shortDescription:22" value="in win, vmoptions are located in exe.vmoprions" />
             <link role="declaration:22" targetNodeId="2v.353793545802815941" resolveInfo="zipfileset" />
             <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="5311051194232934146">
               <link role="attributeDeclaration:22" targetNodeId="2v.353793545802811537" resolveInfo="file" />
@@ -4298,7 +4299,7 @@
               <node role="value:22" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="5311051194232934884">
                 <node role="right:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="5311051194232934885">
                   <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="5311051194232934886">
-                    <property name="value:21" value="path.to.vmoptions.location" />
+                    <property name="value:21" value="path.to.exe.vmoptions.file" />
                     <node role="propertyMacro$property_attribute$value:21" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="5311051194232934887">
                       <node role="propertyValueFunction:2" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue:2" id="5311051194232934888">
                         <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5311051194232934889">

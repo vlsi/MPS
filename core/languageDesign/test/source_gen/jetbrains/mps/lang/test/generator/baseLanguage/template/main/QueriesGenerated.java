@@ -173,11 +173,11 @@ public class QueriesGenerated {
     return SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(_context.getNode()));
   }
 
-  public static SNode sourceNodeQuery_1215080487278(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_4277730795458378995(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "nodeToCheck", true);
   }
 
-  public static SNode sourceNodeQuery_1217431328926(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_4277730795458379007(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "nodeToCheck", true);
   }
 

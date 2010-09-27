@@ -24,8 +24,6 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.MPSProject;
 import java.util.List;
-import java.util.Iterator;
-import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class TestRunUtil {
@@ -135,95 +133,6 @@ public class TestRunUtil {
     return null;
   }
 
-  public static Iterable<String> getValues(final String simple, final List<String> collection) {
-    return Sequence.fromClosure(new ISequenceClosure<String>() {
-      public Iterable<String> iterable() {
-        return new Iterable<String>() {
-          public Iterator<String> iterator() {
-            return new YieldingIterator<String>() {
-              private int __CP__ = 0;
-              private String _7__yield_nd277x_a0b0a0a0j;
-              private Iterator<String> _7__yield_nd277x_a0b0a0a0j_it;
-
-              protected boolean moveToNext() {
-__loop__:
-                do {
-__switch__:
-                  switch (this.__CP__) {
-                    case -1:
-                      assert false : "Internal error";
-                      return false;
-                    case 7:
-                      this._7__yield_nd277x_a0b0a0a0j_it = collection.iterator();
-                    case 8:
-                      if (!(this._7__yield_nd277x_a0b0a0a0j_it.hasNext())) {
-                        this.__CP__ = 1;
-                        break;
-                      }
-                      this._7__yield_nd277x_a0b0a0a0j = this._7__yield_nd277x_a0b0a0a0j_it.next();
-                      this.__CP__ = 9;
-                      break;
-                    case 2:
-                      if (simple != null) {
-                        this.__CP__ = 3;
-                        break;
-                      }
-                      this.__CP__ = 4;
-                      break;
-                    case 4:
-                      if (collection != null) {
-                        this.__CP__ = 6;
-                        break;
-                      }
-                      this.__CP__ = 1;
-                      break;
-                    case 5:
-                      this.__CP__ = 4;
-                      this.yield(simple);
-                      return true;
-                    case 10:
-                      this.__CP__ = 8;
-                      this.yield(_7__yield_nd277x_a0b0a0a0j);
-                      return true;
-                    case 0:
-                      this.__CP__ = 2;
-                      break;
-                    case 3:
-                      this.__CP__ = 5;
-                      break;
-                    case 6:
-                      this.__CP__ = 7;
-                      break;
-                    case 9:
-                      this.__CP__ = 10;
-                      break;
-                    default:
-                      break __loop__;
-                  }
-                } while (true);
-                return false;
-              }
-            };
-          }
-        };
-      }
-    });
-  }
-
-  public static boolean validateMethods(String simpleNode, List<String> listNode, String simpleMethod, List<String> listMethod) {
-    List<String> nodes = Sequence.fromIterable(getValues(simpleNode, listNode)).toListSequence();
-    List<String> methods = Sequence.fromIterable(getValues(simpleMethod, listMethod)).toListSequence();
-    if (ListSequence.fromList(nodes).count() != ListSequence.fromList(methods).count()) {
-      return false;
-    }
-    for (int i = 0; i < ListSequence.fromList(nodes).count(); i++) {
-      if ((getTestMethod(ListSequence.fromList(nodes).getElement(i), ListSequence.fromList(methods).getElement(i)) == null)) {
-        return false;
-      }
-    }
-    return true;
-  }
-
   public static boolean validateMethods(List<String> methods) {
     if (methods == null) {
       return false;
@@ -237,9 +146,8 @@ __switch__:
     return true;
   }
 
-  public static boolean validateNodes(String simple, List<String> collection) {
-    Iterable<String> nodes = getValues(simple, collection);
-    for (String node : nodes) {
+  public static boolean validateNodes(List<String> collection) {
+    for (String node : collection) {
       if ((getTestNode(node) == null)) {
         return false;
       }

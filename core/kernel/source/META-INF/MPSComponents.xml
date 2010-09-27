@@ -252,11 +252,6 @@
     </component>
 
     <component>
-      <interface-class>com.intellij.ide.IconProvider</interface-class>
-      <implementation-class>jetbrains.mps.workbench.editors.MPSIconProvider</implementation-class>
-    </component>
-
-    <component>
       <implementation-class>jetbrains.mps.lang.generator.plugin.RootTemplateAnnotator</implementation-class>
     </component>
 
@@ -275,10 +270,6 @@
 
     <component>
       <implementation-class>jetbrains.mps.plugins.PluginReloader</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.runconfigs.RunConfigInitializer</implementation-class>
     </component>
 
     <component>
@@ -322,7 +313,11 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.debug.api.info.BLDebugInfoCache</implementation-class>
+      <implementation-class>jetbrains.mps.traceInfo.TraceInfoManager</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.generator.traceInfo.TraceInfoCache</implementation-class>
     </component>
 
     <component>
@@ -345,6 +340,9 @@
       <implementation-class>jetbrains.mps.workbench.actions.goTo.index.StubsNodeDescriptorsCache</implementation-class>
     </component>
 
+    <component>
+      <implementation-class>jetbrains.mps.save.ModelsSaver</implementation-class>
+    </component>
   </application-components>
 
   <project-components>
@@ -360,8 +358,7 @@
     <component>
       <interface-class>com.intellij.openapi.fileEditor.FileEditorManager</interface-class>
       <implementation-class>com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl</implementation-class>
-      <headless-implementation-class>com.intellij.testFramework.TestEditorManagerImpl
-      </headless-implementation-class>
+      <headless-implementation-class>jetbrains.mps.MPSTestEditorManagerImpl</headless-implementation-class>
       <option name="workspace" value="true"/>
       <skipForDummyProject/>
     </component>
@@ -451,14 +448,6 @@
 
     <component>
       <implementation-class>jetbrains.mps.project.MPSProject</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.project.ProjectSaveChecker</implementation-class>
-    </component>
-
-    <component>
-      <implementation-class>jetbrains.mps.project.ModelsSaver</implementation-class>
     </component>
 
     <component>

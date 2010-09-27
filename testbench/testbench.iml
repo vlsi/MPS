@@ -20,7 +20,6 @@
     <orderEntry type="module" module-name="MPS" />
     <orderEntry type="module" module-name="regexp" />
     <orderEntry type="module" module-name="runtime" />
-    <orderEntry type="module" module-name="smodelTests" />
     <orderEntry type="module" module-name="workbench" />
     <orderEntry type="module" module-name="Tuples" />
     <orderEntry type="module" module-name="baseLanguage.test" />

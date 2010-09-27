@@ -28,7 +28,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debug.runtime.java.programState.proxies.JavaStackFrame;
 import com.sun.jdi.StackFrame;
 import com.sun.jdi.Location;
-import jetbrains.mps.debug.api.info.DebugInfoUtil;
+import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.debug.evaluation.Evaluator;
 import jetbrains.mps.debug.evaluation.EvaluationException;
@@ -100,7 +100,7 @@ public abstract class AbstractEvaluationLogic {
       if (stackFrame != null) {
         try {
           Location location = stackFrame.location();
-          locationNode = DebugInfoUtil.getNode(location.declaringType().name(), location.sourceName(), location.lineNumber());
+          locationNode = TraceInfoUtil.getNode(location.declaringType().name(), location.sourceName(), location.lineNumber());
         } catch (Throwable t) {
           LOG.error(t);
         }

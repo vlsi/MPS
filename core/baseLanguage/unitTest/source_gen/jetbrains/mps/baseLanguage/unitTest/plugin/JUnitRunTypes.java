@@ -26,10 +26,9 @@ public enum JUnitRunTypes {
             public Iterator<SNode> iterator() {
               return new YieldingIterator<SNode>() {
                 private int __CP__ = 0;
-                private int _9_i;
-                private String _16_methodName;
-                private Iterator<String> _16_methodName_it;
-                private int _20_separatorIndex;
+                private String _4_methodName;
+                private Iterator<String> _4_methodName_it;
+                private int _8_separatorIndex;
 
                 protected boolean moveToNext() {
 __loop__:
@@ -39,85 +38,36 @@ __switch__:
                       case -1:
                         assert false : "Internal error";
                         return false;
-                      case 9:
-                        this._9_i = 0;
-                      case 10:
-                        if (!(_9_i < configuration.getStateObject().methods.size())) {
-                          this.__CP__ = 8;
-                          break;
-                        }
-                        this.__CP__ = 11;
-                        break;
-                      case 12:
-                        _9_i++;
-                        this.__CP__ = 10;
-                        break;
-                      case 16:
-                        this._16_methodName_it = ListSequence.fromList(configuration.getStateObject().fullMethodNames).iterator();
-                      case 17:
-                        if (!(this._16_methodName_it.hasNext())) {
+                      case 4:
+                        this._4_methodName_it = ListSequence.fromList(configuration.getStateObject().fullMethodNames).iterator();
+                      case 5:
+                        if (!(this._4_methodName_it.hasNext())) {
                           this.__CP__ = 1;
                           break;
                         }
-                        this._16_methodName = this._16_methodName_it.next();
-                        this.__CP__ = 18;
+                        this._4_methodName = this._4_methodName_it.next();
+                        this.__CP__ = 6;
                         break;
-                      case 3:
-                        if (configuration.getStateObject().node != null && configuration.getStateObject().method != null) {
-                          this.__CP__ = 4;
-                          break;
-                        }
-                        this.__CP__ = 5;
-                        break;
-                      case 5:
-                        if (configuration.getStateObject().nodes != null && configuration.getStateObject().methods != null) {
-                          this.__CP__ = 7;
-                          break;
-                        }
-                        this.__CP__ = 8;
-                        break;
-                      case 14:
+                      case 2:
                         if (configuration.getStateObject().fullMethodNames != null) {
-                          this.__CP__ = 15;
+                          this.__CP__ = 3;
                           break;
                         }
                         this.__CP__ = 1;
                         break;
-                      case 6:
+                      case 9:
                         this.__CP__ = 5;
-                        this.yield(TestRunUtil.getTestMethod(configuration.getStateObject().node, configuration.getStateObject().method));
-                        return true;
-                      case 13:
-                        this.__CP__ = 12;
-                        this.yield(TestRunUtil.getTestMethod(configuration.getStateObject().nodes.get(_9_i), configuration.getStateObject().methods.get(_9_i)));
-                        return true;
-                      case 21:
-                        this.__CP__ = 17;
-                        this.yield(TestRunUtil.getTestMethod(_16_methodName.substring(0, _20_separatorIndex), _16_methodName.substring(_20_separatorIndex + 1)));
+                        this.yield(TestRunUtil.getTestMethod(_4_methodName.substring(0, _8_separatorIndex), _4_methodName.substring(_8_separatorIndex + 1)));
                         return true;
                       case 0:
-                        // legacy, we use fullMethodNames now 
-                        this.__CP__ = 3;
+                        this.__CP__ = 2;
                         break;
-                      case 8:
-
-                        this.__CP__ = 14;
+                      case 3:
+                        this.__CP__ = 4;
                         break;
-                      case 4:
-                        this.__CP__ = 6;
-                        break;
-                      case 7:
+                      case 6:
+                        this._8_separatorIndex = _4_methodName.lastIndexOf(TestRunUtil.SEPARATOR);
                         this.__CP__ = 9;
-                        break;
-                      case 11:
-                        this.__CP__ = 13;
-                        break;
-                      case 15:
-                        this.__CP__ = 16;
-                        break;
-                      case 18:
-                        this._20_separatorIndex = _16_methodName.lastIndexOf(TestRunUtil.SEPARATOR);
-                        this.__CP__ = 21;
                         break;
                       default:
                         break __loop__;
@@ -140,14 +90,6 @@ __switch__:
           return "methods are not valid";
         }
       }
-
-      // legacy 
-      if (Sequence.fromIterable(TestRunUtil.getValues(configuration.getStateObject().method, configuration.getStateObject().methods)).isEmpty()) {
-        return "methods list is empty";
-      } else if (!(TestRunUtil.validateMethods(configuration.getStateObject().node, configuration.getStateObject().nodes, configuration.getStateObject().method, configuration.getStateObject().methods))) {
-        return "methods are not valid";
-      }
-
       return null;
     }
 
@@ -161,9 +103,8 @@ __switch__:
             public Iterator<SNode> iterator() {
               return new YieldingIterator<SNode>() {
                 private int __CP__ = 0;
-                private SNode _6_testNode;
-                private SNode _16_testNode;
-                private int _11_i;
+                private SNode _9_testNode;
+                private int _4_i;
 
                 protected boolean moveToNext() {
 __loop__:
@@ -173,74 +114,49 @@ __switch__:
                       case -1:
                         assert false : "Internal error";
                         return false;
-                      case 11:
-                        this._11_i = 0;
-                      case 12:
-                        if (!(_11_i < configuration.getStateObject().nodes.size())) {
+                      case 4:
+                        this._4_i = 0;
+                      case 5:
+                        if (!(_4_i < configuration.getStateObject().nodes.size())) {
                           this.__CP__ = 1;
                           break;
                         }
-                        this.__CP__ = 13;
-                        break;
-                      case 14:
-                        _11_i++;
-                        this.__CP__ = 12;
-                        break;
-                      case 2:
-                        if (configuration.getStateObject().node != null) {
-                          this.__CP__ = 3;
-                          break;
-                        }
-                        this.__CP__ = 4;
+                        this.__CP__ = 6;
                         break;
                       case 7:
-                        if (ListSequence.fromList(ITestCase_Behavior.call_getTestSet_1216130724401(_6_testNode)).isNotEmpty()) {
-                          this.__CP__ = 8;
-                          break;
-                        }
-                        this.__CP__ = 4;
+                        _4_i++;
+                        this.__CP__ = 5;
                         break;
-                      case 4:
+                      case 2:
                         if (configuration.getStateObject().nodes != null) {
-                          this.__CP__ = 10;
+                          this.__CP__ = 3;
                           break;
                         }
                         this.__CP__ = 1;
                         break;
-                      case 17:
-                        if (ListSequence.fromList(ITestCase_Behavior.call_getTestSet_1216130724401(_16_testNode)).isNotEmpty()) {
-                          this.__CP__ = 18;
+                      case 10:
+                        if (ListSequence.fromList(ITestCase_Behavior.call_getTestSet_1216130724401(_9_testNode)).isNotEmpty()) {
+                          this.__CP__ = 11;
                           break;
                         }
-                        this.__CP__ = 14;
+                        this.__CP__ = 7;
                         break;
-                      case 9:
-                        this.__CP__ = 4;
-                        this.yield(_6_testNode);
-                        return true;
-                      case 19:
-                        this.__CP__ = 14;
-                        this.yield(_16_testNode);
+                      case 12:
+                        this.__CP__ = 7;
+                        this.yield(_9_testNode);
                         return true;
                       case 0:
                         this.__CP__ = 2;
                         break;
                       case 3:
-                        this._6_testNode = TestRunUtil.getTestNode(configuration.getStateObject().node);
-                        this.__CP__ = 7;
+                        this.__CP__ = 4;
                         break;
-                      case 8:
-                        this.__CP__ = 9;
+                      case 6:
+                        this._9_testNode = TestRunUtil.getTestNode(configuration.getStateObject().nodes.get(_4_i));
+                        this.__CP__ = 10;
                         break;
-                      case 10:
-                        this.__CP__ = 11;
-                        break;
-                      case 13:
-                        this._16_testNode = TestRunUtil.getTestNode(configuration.getStateObject().nodes.get(_11_i));
-                        this.__CP__ = 17;
-                        break;
-                      case 18:
-                        this.__CP__ = 19;
+                      case 11:
+                        this.__CP__ = 12;
                         break;
                       default:
                         break __loop__;
@@ -257,9 +173,9 @@ __switch__:
 
     public String check(DefaultJUnit_Configuration configuration) {
       String errorReport = null;
-      if (Sequence.fromIterable(TestRunUtil.getValues(configuration.getStateObject().node, configuration.getStateObject().nodes)).isEmpty()) {
+      if (configuration.getStateObject().nodes.isEmpty()) {
         errorReport = "classes list is empty";
-      } else if (!(TestRunUtil.validateNodes(configuration.getStateObject().node, configuration.getStateObject().nodes))) {
+      } else if (!(TestRunUtil.validateNodes(configuration.getStateObject().nodes))) {
         errorReport = "nodes are not valid";
       }
       return errorReport;

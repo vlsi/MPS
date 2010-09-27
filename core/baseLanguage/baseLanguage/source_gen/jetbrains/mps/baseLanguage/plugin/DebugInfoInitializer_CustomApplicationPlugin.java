@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
 import jetbrains.mps.debug.runtime.MPSBreakpoint;
+import jetbrains.mps.traceInfo.TraceInfoManager;
 import jetbrains.mps.util.Mapper;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -28,32 +29,38 @@ public class DebugInfoInitializer_CustomApplicationPlugin extends BaseCustomAppl
 
   public void doInit() {
     DebugInfoManager manager = DebugInfoManager.getInstance();
-    manager.addDebuggableConcept("jetbrains.mps.baseLanguage.structure.Statement", new Mapper2<SNode, Project, AbstractMPSBreakpoint>() {
+    manager.addConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.Statement", new Mapper2<SNode, Project, AbstractMPSBreakpoint>() {
       public AbstractMPSBreakpoint value(SNode debuggableNode, Project project) {
         return new MPSBreakpoint(debuggableNode, project);
       }
     });
-    manager.addDebuggableConcept("jetbrains.mps.baseLanguage.structure.FieldDeclaration", new Mapper2<SNode, Project, AbstractMPSBreakpoint>() {
+    manager.addConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.FieldDeclaration", new Mapper2<SNode, Project, AbstractMPSBreakpoint>() {
       public AbstractMPSBreakpoint value(SNode debuggableNode, Project project) {
         return new MPSBreakpoint(debuggableNode, project);
       }
     });
-    manager.addDebuggableConcept("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", new Mapper2<SNode, Project, AbstractMPSBreakpoint>() {
+    manager.addConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", new Mapper2<SNode, Project, AbstractMPSBreakpoint>() {
       public AbstractMPSBreakpoint value(SNode debuggableNode, Project project) {
         return new MPSBreakpoint(debuggableNode, project);
       }
     });
-    manager.addDebuggableConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", new Mapper2<SNode, Project, AbstractMPSBreakpoint>() {
+    manager.addConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", new Mapper2<SNode, Project, AbstractMPSBreakpoint>() {
       public AbstractMPSBreakpoint value(SNode debuggableNode, Project project) {
         return new MPSBreakpoint(debuggableNode, project);
       }
     });
-    manager.addScopeConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", new Mapper<SNode, List<SNode>>() {
+
+    TraceInfoManager traceInfoManager = TraceInfoManager.getInstance();
+    traceInfoManager.addTraceableConcept("jetbrains.mps.baseLanguage.structure.Statement");
+    traceInfoManager.addTraceableConcept("jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+    traceInfoManager.addTraceableConcept("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
+    traceInfoManager.addTraceableConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+    traceInfoManager.addScopeConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", new Mapper<SNode, List<SNode>>() {
       public List<SNode> value(SNode scopeNode) {
         return SLinkOperations.getTargets(scopeNode, "parameter", true);
       }
     });
-    manager.addScopeConcept("jetbrains.mps.baseLanguage.structure.StatementList", new Mapper<SNode, List<SNode>>() {
+    traceInfoManager.addScopeConcept("jetbrains.mps.baseLanguage.structure.StatementList", new Mapper<SNode, List<SNode>>() {
       public List<SNode> value(SNode scopeNode) {
         List<SNode> result = new ArrayList<SNode>();
         for (SNode statement : SLinkOperations.getTargets(scopeNode, "statement", true)) {
@@ -64,27 +71,27 @@ public class DebugInfoInitializer_CustomApplicationPlugin extends BaseCustomAppl
         return result;
       }
     });
-    manager.addScopeConcept("jetbrains.mps.baseLanguage.structure.ForeachStatement", new Mapper<SNode, List<SNode>>() {
+    traceInfoManager.addScopeConcept("jetbrains.mps.baseLanguage.structure.ForeachStatement", new Mapper<SNode, List<SNode>>() {
       public List<SNode> value(SNode scopeNode) {
         return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(scopeNode, "variable", true));
       }
     });
-    manager.addScopeConcept("jetbrains.mps.baseLanguage.structure.ForStatement", new Mapper<SNode, List<SNode>>() {
+    traceInfoManager.addScopeConcept("jetbrains.mps.baseLanguage.structure.ForStatement", new Mapper<SNode, List<SNode>>() {
       public List<SNode> value(SNode scopeNode) {
         return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(scopeNode, "variable", true));
       }
     });
-    manager.addScopeConcept("jetbrains.mps.baseLanguage.structure.CatchClause", new Mapper<SNode, List<SNode>>() {
+    traceInfoManager.addScopeConcept("jetbrains.mps.baseLanguage.structure.CatchClause", new Mapper<SNode, List<SNode>>() {
       public List<SNode> value(SNode scopeNode) {
         return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(scopeNode, "throwable", true));
       }
     });
-    manager.addUnitConcept("jetbrains.mps.baseLanguage.structure.AnonymousClass", new Mapper<SNode, String>() {
+    traceInfoManager.addUnitConcept("jetbrains.mps.baseLanguage.structure.AnonymousClass", new Mapper<SNode, String>() {
       public String value(SNode unitNode) {
         return AnonymousClass_Behavior.call_getJavaName_2977939203456914071(unitNode);
       }
     });
-    manager.addUnitConcept("jetbrains.mps.baseLanguage.structure.Interface", new Mapper<SNode, String>() {
+    traceInfoManager.addUnitConcept("jetbrains.mps.baseLanguage.structure.Interface", new Mapper<SNode, String>() {
       public String value(SNode unitNode) {
         String fqName = INamedConcept_Behavior.call_getFqName_1213877404258(unitNode);
         if (SNodeOperations.getAncestor(unitNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) == null) {
@@ -97,7 +104,7 @@ public class DebugInfoInitializer_CustomApplicationPlugin extends BaseCustomAppl
         return fqName.substring(0, index) + "$" + fqName.substring(index + 1);
       }
     });
-    manager.addUnitConcept("jetbrains.mps.baseLanguage.structure.ClassConcept", new Mapper<SNode, String>() {
+    traceInfoManager.addUnitConcept("jetbrains.mps.baseLanguage.structure.ClassConcept", new Mapper<SNode, String>() {
       public String value(SNode unitNode) {
         String fqName = INamedConcept_Behavior.call_getFqName_1213877404258(unitNode);
         if (SNodeOperations.getAncestor(unitNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) == null) {
@@ -115,17 +122,23 @@ public class DebugInfoInitializer_CustomApplicationPlugin extends BaseCustomAppl
 
   public void doDispose() {
     DebugInfoManager manager = DebugInfoManager.getInstance();
-    manager.removeDebuggableConcept("jetbrains.mps.baseLanguage.structure.Statement");
-    manager.removeDebuggableConcept("jetbrains.mps.baseLanguage.structure.FieldDeclaration");
-    manager.removeDebuggableConcept("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
-    manager.removeDebuggableConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
-    manager.removeScopeConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
-    manager.removeScopeConcept("jetbrains.mps.baseLanguage.structure.StatementList");
-    manager.removeScopeConcept("jetbrains.mps.baseLanguage.structure.ForeachStatement");
-    manager.removeScopeConcept("jetbrains.mps.baseLanguage.structure.ForStatement");
-    manager.removeScopeConcept("jetbrains.mps.baseLanguage.structure.CatchClause");
-    manager.removeScopeConcept("jetbrains.mps.baseLanguage.structure.AnonymousClass");
-    manager.removeScopeConcept("jetbrains.mps.baseLanguage.structure.Interface");
-    manager.removeScopeConcept("jetbrains.mps.baseLanguage.structure.ClassConcept");
+    manager.removeConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.Statement");
+    manager.removeConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+    manager.removeConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
+    manager.removeConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+
+    TraceInfoManager traceInfoManager = TraceInfoManager.getInstance();
+    traceInfoManager.removeTraceableConcept("jetbrains.mps.baseLanguage.structure.Statement");
+    traceInfoManager.removeTraceableConcept("jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+    traceInfoManager.removeTraceableConcept("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
+    traceInfoManager.removeTraceableConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+    traceInfoManager.removeScopeConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+    traceInfoManager.removeScopeConcept("jetbrains.mps.baseLanguage.structure.StatementList");
+    traceInfoManager.removeScopeConcept("jetbrains.mps.baseLanguage.structure.ForeachStatement");
+    traceInfoManager.removeScopeConcept("jetbrains.mps.baseLanguage.structure.ForStatement");
+    traceInfoManager.removeScopeConcept("jetbrains.mps.baseLanguage.structure.CatchClause");
+    traceInfoManager.removeUnitConcept("jetbrains.mps.baseLanguage.structure.AnonymousClass");
+    traceInfoManager.removeUnitConcept("jetbrains.mps.baseLanguage.structure.Interface");
+    traceInfoManager.removeUnitConcept("jetbrains.mps.baseLanguage.structure.ClassConcept");
   }
 }

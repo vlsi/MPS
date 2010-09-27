@@ -240,6 +240,6 @@
   <!--MPS Patch Start: goto file-->
   <projectService serviceInterface="com.intellij.ide.actions.GotoFileConfiguration"
                   serviceImplementation="com.intellij.ide.actions.GotoFileConfiguration"/>
-  <gotoFileContributor implementation="com.intellij.ide.util.gotoByName.DefaultFileNavigationContributor"/>
+  <gotoFileContributor implementation="jetbrains.mps.MPSGoToFileContributor"/>
   <!--MPS Patch End-->
 </extensions>

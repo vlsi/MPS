@@ -40,6 +40,9 @@
     <scopeInfo nodeId="3990508698139427108" fileName="RecordValue.java" startLine="14" startPosition="64" endLine="15" endPosition="35" />
     <scopeInfo nodeId="3990508698139427120" fileName="RecordValue.java" startLine="18" startPosition="57" endLine="19" endPosition="35" />
     <scopeInfo nodeId="3990508698139427143" fileName="RecordValue.java" startLine="24" startPosition="39" endLine="25" endPosition="47" />
+    <scopeInfo nodeId="3990508698139427170" fileName="RecordValue.java" startLine="36" startPosition="0" endLine="37" endPosition="20">
+      <varInfo nodeId="3990508698139427174" varName="ex" />
+    </scopeInfo>
     <scopeInfo nodeId="3990508698139427171" fileName="RecordValue.java" startLine="36" startPosition="42" endLine="37" endPosition="20" />
     <scopeInfo nodeId="3990508698139427097" fileName="RecordValue.java" startLine="10" startPosition="0" endLine="12" endPosition="3" />
     <scopeInfo nodeId="3990508698139427176" fileName="RecordValue.java" startLine="33" startPosition="11" endLine="35" endPosition="22">
@@ -312,6 +315,9 @@
     <scopeInfo nodeId="3990508698139428043" fileName="GDBAnswerProducer.java" startLine="161" startPosition="38" endLine="162" endPosition="22" />
     <scopeInfo nodeId="3990508698139428384" fileName="GDBAnswerProducer.java" startLine="270" startPosition="35" endLine="271" endPosition="23" />
     <scopeInfo nodeId="3990508698139428390" fileName="GDBAnswerProducer.java" startLine="274" startPosition="29" endLine="275" endPosition="22" />
+    <scopeInfo nodeId="3990508698139427596" fileName="GDBAnswerProducer.java" startLine="19" startPosition="0" endLine="21" endPosition="24">
+      <varInfo nodeId="3990508698139427606" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="3990508698139427597" fileName="GDBAnswerProducer.java" startLine="19" startPosition="27" endLine="21" endPosition="24" />
     <scopeInfo nodeId="3990508698139427654" fileName="GDBAnswerProducer.java" startLine="30" startPosition="21" endLine="32" endPosition="15" />
     <scopeInfo nodeId="3990508698139427714" fileName="GDBAnswerProducer.java" startLine="59" startPosition="46" endLine="61" endPosition="17" />

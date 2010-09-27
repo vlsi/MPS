@@ -16,13 +16,10 @@
 package jetbrains.mps.typesystem.inference.util;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.pattern.ConceptMatchingPattern;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
-import jetbrains.mps.lang.smodel.structure.SNodeType;
 
 import java.util.Map;
 import java.util.HashMap;

@@ -35,7 +35,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <maxImportIndex value="56" />
+  <maxImportIndex value="57" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590510(jetbrains.mps.quickQueryLanguage.structure)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="5" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
@@ -66,6 +66,7 @@
   <import index="50" modelUID="f:java_stub#jetbrains.mps.lang.structure.findUsages(jetbrains.mps.lang.structure.findUsages@java_stub)" version="-1" />
   <import index="54" modelUID="f:java_stub#jetbrains.mps.kernel.model(jetbrains.mps.kernel.model@java_stub)" version="-1" />
   <import index="55" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
+  <import index="57" modelUID="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1219056224639">
     <property name="name:3" value="QueryExecutor" />
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="1235926499683">
@@ -1090,12 +1091,12 @@
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="3939031372534980293">
       <property name="name:3" value="myModelOwner" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="3939031372534980294" />
-      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3939031372534980297">
-        <link role="classifier:3" targetNodeId="35.3939031372534916902" resolveInfo="TemporaryModelOwner" />
+      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="57703609997437396">
+        <link role="classifier:3" targetNodeId="57.507022825981353176" resolveInfo="TemporaryModelOwner" />
       </node>
       <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3939031372534980299">
         <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="3939031372534980301">
-          <link role="baseMethodDeclaration:3" targetNodeId="35.3939031372534916904" resolveInfo="TemporaryModelOwner" />
+          <link role="baseMethodDeclaration:3" targetNodeId="57.507022825981353190" resolveInfo="TemporaryModelOwner" />
         </node>
       </node>
     </node>
@@ -1535,7 +1536,7 @@
               <link role="variableDeclaration:3" targetNodeId="3939031372534980293" resolveInfo="myModelOwner" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3939031372534980311">
-              <link role="baseMethodDeclaration:3" targetNodeId="35.3939031372534977711" resolveInfo="disposeModelOwner" />
+              <link role="baseMethodDeclaration:3" targetNodeId="57.507022825981353177" resolveInfo="unregisterModelOwner" />
             </node>
           </node>
         </node>
@@ -2180,7 +2181,7 @@
               <link role="variableDeclaration:3" targetNodeId="9187915919898140233" resolveInfo="myModelOwner" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="9187915919898141345">
-              <link role="baseMethodDeclaration:3" targetNodeId="35.3939031372534977711" resolveInfo="unregisterModelOwner" />
+              <link role="baseMethodDeclaration:3" targetNodeId="57.507022825981353177" resolveInfo="unregisterModelOwner" />
             </node>
           </node>
         </node>
@@ -2237,12 +2238,12 @@
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="9187915919898140233">
       <property name="name:3" value="myModelOwner" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="9187915919898140234" />
-      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="9187915919898140235">
-        <link role="classifier:3" targetNodeId="35.3939031372534916902" resolveInfo="TemporaryModelOwner" />
+      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="57703609997437397">
+        <link role="classifier:3" targetNodeId="57.507022825981353176" resolveInfo="TemporaryModelOwner" />
       </node>
       <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="9187915919898140236">
         <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="9187915919898140237">
-          <link role="baseMethodDeclaration:3" targetNodeId="35.3939031372534916904" resolveInfo="TemporaryModelOwner" />
+          <link role="baseMethodDeclaration:3" targetNodeId="57.507022825981353190" resolveInfo="TemporaryModelOwner" />
         </node>
       </node>
     </node>

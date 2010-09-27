@@ -16,10 +16,10 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
-import jetbrains.mps.debug.api.info.DebugInfo;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.util.Status;
 import org.jetbrains.annotations.Nullable;
 

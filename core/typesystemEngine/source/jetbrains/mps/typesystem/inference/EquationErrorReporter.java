@@ -16,17 +16,10 @@
 package jetbrains.mps.typesystem.inference;
 
 import jetbrains.mps.typesystem.uiActions.PresentationManager;
-import jetbrains.mps.typesystem.inference.IWrapper;
-import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.nodeEditor.MessageStatus;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.nodeEditor.AbstractErrorReporter;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.Pair;
-
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Collections;
 
 public class EquationErrorReporter extends AbstractErrorReporter implements IErrorReporter {
   private EquationManager myEquationManager;

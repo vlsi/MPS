@@ -113,10 +113,17 @@ public class RenameFileOrDirectory_Action extends GeneratedAction {
       JOptionPane.showMessageDialog(RenameFileOrDirectory_Action.this.frame, "Enter valid name");
       return true;
     }
-    if (RenameFileOrDirectory_Action.this.selectedFile.getParent().findChild(result) != null) {
+    if (check_g7rid4_a0b0a(RenameFileOrDirectory_Action.this.selectedFile.getParent(), result) != null) {
       JOptionPane.showMessageDialog(RenameFileOrDirectory_Action.this.frame, result + " already exists");
       return true;
     }
     return false;
+  }
+
+  private static VirtualFile check_g7rid4_a0b0a(VirtualFile p, String result) {
+    if (null == p) {
+      return null;
+    }
+    return p.findChild(result);
   }
 }

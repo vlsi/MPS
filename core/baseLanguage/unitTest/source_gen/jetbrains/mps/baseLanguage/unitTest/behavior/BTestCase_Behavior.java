@@ -8,8 +8,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.unitTest.runtime.TestRunParameters;
 import jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -28,7 +28,12 @@ public class BTestCase_Behavior {
 
   public static List<SNode> virtual_getTestSet_1216130724401(SNode thisNode) {
     SNode node = thisNode;
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "testMethodList", true), "testMethod", true)).where(new IWhereFilter<SNode>() {
+    List<SNode> methods = new ArrayList<SNode>();
+    if ((SLinkOperations.getTarget(node, "superclass", true) != null) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "superclass", true), "classifier", false), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")) {
+      List<SNode> superMethods = ITestCase_Behavior.call_getTestSet_1216130724401(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "superclass", true), "classifier", false), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"));
+      ListSequence.fromList(methods).addSequence(ListSequence.fromList(superMethods));
+    }
+    ListSequence.fromList(methods).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "testMethodList", true), "testMethod", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode method) {
         return (ListSequence.fromList(SLinkOperations.getTargets(method, "annotation", true)).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode annotation) {
@@ -36,7 +41,8 @@ public class BTestCase_Behavior {
           }
         }) == null);
       }
-    }).toListSequence();
+    }));
+    return methods;
   }
 
   public static String virtual_getClassName_1216136193905(SNode thisNode) {

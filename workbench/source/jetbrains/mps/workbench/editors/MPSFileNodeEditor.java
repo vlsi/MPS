@@ -45,7 +45,7 @@ import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor, DocumentsEditor {
+public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor {
   private static final Logger LOG = Logger.getLogger(MPSFileNodeEditor.class);
 
   private IEditor myNodeEditor;
@@ -96,11 +96,6 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor,
       }
     });
     return docRefs.toArray(new DocumentReference[docRefs.size()]);
-  }
-
-  public Document[] getDocuments() {
-    //todo this is a workaround for MPS-2447: [build:913] update failed for AnAction with ID=$Undo
-    return new Document[0];
   }
 
   @NotNull

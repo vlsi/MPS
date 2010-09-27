@@ -11,7 +11,7 @@
     <projectLanguages />
     <projectDevkits />
     <genConfs>
-      <genConfModule name="info" moduleRef="jetbrains.mps.debug.api.info" />
+      <genConfModule name="info" moduleRef="jetbrains.mps.traceInfo" />
     </genConfs>
   </component>
   <component name="ProjectModuleManager">

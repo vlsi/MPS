@@ -70,7 +70,6 @@ public class SModel implements Iterable<SNode> {
   private int myPersistenceVersion = -1;
 
   private SModelDescriptor myModelDescriptor;
-  private static final SModelListener[] EMPTY_LISTENERS = new SModelListener[0];
 
   public SModel(@NotNull SModelReference modelReference) {
     myReference = modelReference;
@@ -244,9 +243,9 @@ public class SModel implements Iterable<SNode> {
     return !myLoading;
   }
 
-  private SModelListener[] getModelListeners() {
+  private List<SModelListener> getModelListeners() {
     BaseSModelDescriptor modelDescriptor = (BaseSModelDescriptor) getModelDescriptor();
-    return modelDescriptor != null ? modelDescriptor.getModelListeners() : EMPTY_LISTENERS;
+    return modelDescriptor != null ? modelDescriptor.getModelListeners() : Collections.<SModelListener>emptyList();
   }
 
   private void fireDevKitAddedEvent(@NotNull ModuleReference ref) {
@@ -732,26 +731,9 @@ public class SModel implements Iterable<SNode> {
 
   @NotNull
   public Set<SModelDescriptor> getDependenciesModels() {
-    Set<SModelDescriptor> modelDescriptors = new HashSet<SModelDescriptor>();
-    Set<Language> languages = new HashSet<Language>();
-    Set<Language> frontier = new HashSet<Language>(getLanguages(GlobalScope.getInstance()));
-    Set<Language> newFrontier = new HashSet<Language>();
-    while (!frontier.isEmpty()) {
-      for (Language l : frontier) {
-        if (languages.contains(l)) continue;
-        languages.add(l);
-        newFrontier.addAll(l.getExtendedLanguages());
-      }
-      frontier = newFrontier;
-      newFrontier = new HashSet<Language>();
-    }
-    for (Language language : languages) {
-      for (SModelDescriptor modelDescriptor : language.getAspectModelDescriptors()) {
-        modelDescriptors.add(modelDescriptor);
-      }
-    }
-    for (SModelDescriptor modelDescriptor : allImportedModels(GlobalScope.getInstance())) {
-      modelDescriptors.add(modelDescriptor);
+    Set<SModelDescriptor> modelDescriptors = new HashSet<SModelDescriptor>(allImportedModels(GlobalScope.getInstance()));
+    for (Language language : getLanguages(GlobalScope.getInstance())) {
+      modelDescriptors.addAll(language.getAspectModelDescriptors());
     }
     return modelDescriptors;
   }
@@ -1184,6 +1166,11 @@ public class SModel implements Iterable<SNode> {
         Language lang = GlobalScope.getInstance().getLanguage(namespace);
         if (lang != null) {
           addLanguage_internal(lang.getModuleReference());
+          // add language also to module if necessary
+          IModule module = getModelDescriptor() == null ? null : getModelDescriptor().getModule();
+          if (module != null && module.getModuleDescriptor() != null && !module.getDependenciesManager().getAllUsedLanguages().contains(lang)) {
+            module.addUsedLanguage(lang.getModuleReference());
+          }
         }
       }
     }

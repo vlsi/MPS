@@ -4,15 +4,25 @@ package jetbrains.mps.debug.customViewers.structure;
 
 import jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.Type;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class HighLevelValue_ConceptFunctionParameter extends ConceptFunctionParameter {
   public static final String concept = "jetbrains.mps.debug.customViewers.structure.HighLevelValue_ConceptFunctionParameter";
+  public static final String VALUE_PROXY_TYPE = "valueProxyType";
 
   public HighLevelValue_ConceptFunctionParameter(SNode node) {
     super(node);
+  }
+
+  public Type getValueProxyType() {
+    return (Type) this.getChild(Type.class, HighLevelValue_ConceptFunctionParameter.VALUE_PROXY_TYPE);
+  }
+
+  public void setValueProxyType(Type node) {
+    super.setChild(HighLevelValue_ConceptFunctionParameter.VALUE_PROXY_TYPE, node);
   }
 
   public static HighLevelValue_ConceptFunctionParameter newInstance(SModel sm, boolean init) {

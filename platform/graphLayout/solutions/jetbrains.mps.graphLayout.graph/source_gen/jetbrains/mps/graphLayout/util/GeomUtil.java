@@ -27,6 +27,20 @@ public class GeomUtil {
     return new Rectangle(minX, minY, maxX - minX, maxY - minY);
   }
 
+  public static Rectangle getContainingRectangle(List<Point> points) {
+    int minX = Integer.MAX_VALUE;
+    int minY = Integer.MAX_VALUE;
+    int maxX = Integer.MIN_VALUE;
+    int maxY = Integer.MIN_VALUE;
+    for (Point point : ListSequence.fromList(points)) {
+      minX = Math.min(minX, point.x);
+      minY = Math.min(minY, point.y);
+      maxX = Math.max(maxX, point.x);
+      maxY = Math.max(maxY, point.y);
+    }
+    return new Rectangle(minX, minY, maxX - minX, maxY - minY);
+  }
+
   public static boolean onBorder(Point p, Rectangle rect) {
     boolean res = false;
     res |= p.x == rect.x && insideClosedSegment(rect.y, rect.y + rect.height, p.y);

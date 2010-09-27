@@ -43,13 +43,13 @@ import com.sun.jdi.CharType;
 import com.sun.jdi.ArrayType;
 import jetbrains.mps.debug.runtime.java.programState.proxies.JavaStackFrame;
 import com.sun.jdi.Location;
-import jetbrains.mps.debug.api.info.DebugInfoUtil;
+import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import com.sun.jdi.AbsentInformationException;
 import com.sun.jdi.ObjectReference;
 import java.util.List;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.debug.api.DebugInfoManager;
+import jetbrains.mps.traceInfo.TraceInfoManager;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -152,7 +152,7 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
     if (frame != null) {
       Location location = frame.getLocation().getLocation();
       try {
-        final String unitType = DebugInfoUtil.getUnitName(location.declaringType().name(), location.sourceName(), location.lineNumber());
+        final String unitType = TraceInfoUtil.getUnitName(location.declaringType().name(), location.sourceName(), location.lineNumber());
         if (unitType == null) {
           return null;
         }
@@ -188,7 +188,7 @@ public class LowLevelEvaluationLogic extends AbstractEvaluationLogic {
           return false;
         }
 
-        String nodesUnitName = DebugInfoManager.getInstance().getUnitName(node);
+        String nodesUnitName = TraceInfoManager.getInstance().getUnitName(node);
         if (StringUtils.isEmpty(nodesUnitName)) {
           return false;
         }

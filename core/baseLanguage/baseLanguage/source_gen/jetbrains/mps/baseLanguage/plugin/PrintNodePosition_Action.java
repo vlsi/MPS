@@ -11,9 +11,9 @@ import jetbrains.mps.project.IModule;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.debug.api.info.DebugInfo;
-import jetbrains.mps.debug.api.info.BLDebugInfoCache;
-import jetbrains.mps.debug.api.info.PositionInfo;
+import jetbrains.mps.traceInfo.DebugInfo;
+import jetbrains.mps.generator.traceInfo.TraceInfoCache;
+import jetbrains.mps.traceInfo.PositionInfo;
 
 public class PrintNodePosition_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -76,7 +76,7 @@ public class PrintNodePosition_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      DebugInfo result = BLDebugInfoCache.getInstance().get(PrintNodePosition_Action.this.model);
+      DebugInfo result = TraceInfoCache.getInstance().get(PrintNodePosition_Action.this.model);
       if (result != null) {
         PositionInfo positionInfo = result.getPositionForNode(PrintNodePosition_Action.this.node.getSNodeId().toString());
         System.out.println(positionInfo);

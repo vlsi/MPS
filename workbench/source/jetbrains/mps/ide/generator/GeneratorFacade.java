@@ -204,12 +204,15 @@ public class GeneratorFacade {
           ? project.getComponent(GenerationTracer.class)
           : new NullGenerationTracer();
 
-        GenerationOptions options = new GenerationOptions(
-          settings.isStrictMode(), saveTransientModels, rebuildAll, settings.isGenerateDependencies(),
-          settings.isParallelGenerator(), settings.getNumberOfParallelThreads(),
-          settings.getPerformanceTracingLevel(),
-          settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings(),
-          settings.getNumberOfModelsToKeep(), tracer);
+        GenerationOptions options = GenerationOptions.getDefaults()
+          .saveTransientModels(saveTransientModels)
+          .strictMode(settings.isStrictMode())
+          .rebuildAll(rebuildAll)
+          .incremental(settings.isIncremental())
+          .generateInParallel(settings.isParallelGenerator(), settings.getNumberOfParallelThreads())
+          .tracing(settings.getPerformanceTracingLevel(), tracer)
+          .reporting(settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings(), settings.getNumberOfModelsToKeep())
+          .create();
 
         result[0] = generatorManager.generateModels(inputModels, invocationContext, generationHandler, progress, messages, options);
       }

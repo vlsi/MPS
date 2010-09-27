@@ -26,9 +26,8 @@ public class JUnitConfigFromProject extends BaseConfigCreator<MPSProject> implem
   }
 
   private void createConfig(final MPSProject parameter) {
-    if (!(TestRunUtil.containsTest(parameter))) {
-      return;
-    }
+    // commented out due to perfomance problems 
+    // <node> 
 
     JUnitConfigFromProject.this.setSourceElement(new MPSPsiElement(parameter));
 

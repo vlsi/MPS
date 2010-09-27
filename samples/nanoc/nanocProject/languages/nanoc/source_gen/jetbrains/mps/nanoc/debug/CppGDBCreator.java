@@ -15,7 +15,6 @@ import jetbrains.mps.nanoc.jetbrains.mps.nanoc.pluginutil.NanocConfigRunPreparat
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
 import com.intellij.execution.impl.ConsoleViewImpl;
-import jetbrains.mps.debug.api.info.StacktraceUtil;
 import jetbrains.mps.debug.executable.SimpleConsoleProcessHandler;
 import com.intellij.execution.ui.ExecutionConsole;
 import javax.swing.JComponent;
@@ -65,7 +64,7 @@ public class CppGDBCreator extends AbstractDebugSessionCreator {
       processBuilder.directory(gdbFile.getParentFile());
       processBuilder.command(gdbFile.getAbsolutePath(), "-quiet", "--interpreter=mi");
       Process process = processBuilder.start();
-      final ConsoleViewImpl consoleView = StacktraceUtil.createConsoleView(project);
+      final ConsoleViewImpl consoleView = new ConsoleViewImpl(project, false);
       SimpleConsoleProcessHandler processHandler = new SimpleConsoleProcessHandler(consoleView, process, gdbFile.getAbsolutePath());
       processHandler.addProcessListener(new CppGDBCreator.MyProcessListener());
       ExecutionConsole executionConsole = new ExecutionConsole() {

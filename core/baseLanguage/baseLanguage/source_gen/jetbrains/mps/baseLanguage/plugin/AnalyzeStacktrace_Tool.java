@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.icons.IconManager;
 import com.intellij.openapi.wm.ToolWindowAnchor;
-import jetbrains.mps.debug.api.info.StacktraceUtil;
+import jetbrains.mps.ide.common.JavaConsoleCreator;
 import java.awt.BorderLayout;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.tools.CloseAction;
@@ -30,7 +30,7 @@ public class AnalyzeStacktrace_Tool extends GeneratedTool {
 
   public void init(Project project) {
     super.init(project);
-    AnalyzeStacktrace_Tool.this.myConsoleView = StacktraceUtil.createConsoleView(AnalyzeStacktrace_Tool.this.getProject());
+    AnalyzeStacktrace_Tool.this.myConsoleView = JavaConsoleCreator.createConsoleView(AnalyzeStacktrace_Tool.this.getProject());
     AnalyzeStacktrace_Tool.this.myComponent = new JPanel(new BorderLayout());
     AnalyzeStacktrace_Tool.this.myComponent.add(AnalyzeStacktrace_Tool.this.myConsoleView.getComponent());
     DefaultActionGroup actions = new DefaultActionGroup();

@@ -244,13 +244,13 @@
   </root>
   <root nodeId="1213104855885">
     <nodeInfo nodeId="1213107437661" fileName="ConstructorDeclaration_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="225" />
-    <nodeInfo nodeId="1213104855889" fileName="ConstructorDeclaration_name_PropertyConstraint.java" startLine="25" startPosition="80" endLine="26" endPosition="155" />
+    <nodeInfo nodeId="1213104855889" fileName="ConstructorDeclaration_name_PropertyConstraint.java" startLine="25" startPosition="80" endLine="26" endPosition="153" />
     <nodeInfo nodeId="1213104855899" fileName="ConstructorDeclaration_nestedName_PropertyConstraint.java" startLine="25" startPosition="80" endLine="26" endPosition="155" />
-    <nodeInfo nodeId="1213104855909" fileName="ConstructorDeclaration_resolveInfo_PropertyConstraint.java" startLine="25" startPosition="80" endLine="26" endPosition="161" />
+    <nodeInfo nodeId="1213104855909" fileName="ConstructorDeclaration_resolveInfo_PropertyConstraint.java" startLine="25" startPosition="80" endLine="26" endPosition="159" />
     <scopeInfo nodeId="1213107437660" fileName="ConstructorDeclaration_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="225" />
-    <scopeInfo nodeId="1213104855888" fileName="ConstructorDeclaration_name_PropertyConstraint.java" startLine="25" startPosition="80" endLine="26" endPosition="155" />
+    <scopeInfo nodeId="1213104855888" fileName="ConstructorDeclaration_name_PropertyConstraint.java" startLine="25" startPosition="80" endLine="26" endPosition="153" />
     <scopeInfo nodeId="1213104855898" fileName="ConstructorDeclaration_nestedName_PropertyConstraint.java" startLine="25" startPosition="80" endLine="26" endPosition="155" />
-    <scopeInfo nodeId="1213104855908" fileName="ConstructorDeclaration_resolveInfo_PropertyConstraint.java" startLine="25" startPosition="80" endLine="26" endPosition="161" />
+    <scopeInfo nodeId="1213104855908" fileName="ConstructorDeclaration_resolveInfo_PropertyConstraint.java" startLine="25" startPosition="80" endLine="26" endPosition="159" />
   </root>
   <root nodeId="1213104856125">
     <nodeInfo nodeId="1213104856129" fileName="ClassifierMember_shortDescription_PropertyConstraint.java" startLine="26" startPosition="80" endLine="27" endPosition="122" />

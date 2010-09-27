@@ -40,6 +40,7 @@
   <stubSolutions>
     <stubSolution moduleName="JDK" moduleId="6354ebe7-c22a-4a0f-ac54-50b52ab9b065" />
     <stubSolution moduleName="MPS.Classpath" moduleId="37a3367b-1fb2-44d8-aa6b-18075e74e003" />
+    <stubSolution moduleName="Testbench" moduleId="920eaa0e-ecca-46bc-bee7-4e5c59213dd6" />
   </stubSolutions>
   <sourcePath />
   <dependencies>
@@ -51,7 +52,7 @@
     <dependency reexport="false">f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)</dependency>
     <dependency reexport="false">a0c108f0-1637-416e-a249-3effbaa4c998(jetbrains.mps.baseLanguage.search)</dependency>
     <dependency reexport="false">2af156ab-65c1-4a62-bd0d-ea734f71eab6(jetbrains.mps.dataFlow.runtime)</dependency>
-    <dependency reexport="false">9b67baf0-e986-49af-b77c-998667f458cb(jetbrains.mps.debug.api.info)</dependency>
+    <dependency reexport="false">9b67baf0-e986-49af-b77c-998667f458cb(jetbrains.mps.traceInfo)</dependency>
     <dependency reexport="false">019b622b-0aef-4dd3-86d0-4eef01f3f6bb(jetbrains.mps.ide)</dependency>
     <dependency reexport="false">aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.lang.actions)</dependency>
     <dependency reexport="false">af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)</dependency>

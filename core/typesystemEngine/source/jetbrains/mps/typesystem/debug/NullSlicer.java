@@ -16,7 +16,6 @@
 package jetbrains.mps.typesystem.debug;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
 import java.util.List;

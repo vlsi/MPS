@@ -21,7 +21,6 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.debug.api.info.DebugInfoUtil" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.EvaluationException" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.Evaluator" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.InvocationTargetEvaluationException" />
@@ -34,6 +33,7 @@
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaStackFrame" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationStatus" />
     <classNode dependClassName="jetbrains.mps.generator.GeneratorManager" />
+    <classNode dependClassName="jetbrains.mps.generator.traceInfo.TraceInfoUtil" />
     <classNode dependClassName="jetbrains.mps.ide.messages.DefaultMessageHandler" />
     <classNode dependClassName="jetbrains.mps.ide.progress.ITaskProgressHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -177,11 +177,10 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.AbstractClassifiersScope" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.IClassifiersSearchScope" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.ReachableClassifiersScope" />
-    <classNode dependClassName="jetbrains.mps.debug.api.DebugInfoManager" />
-    <classNode dependClassName="jetbrains.mps.debug.api.info.DebugInfoUtil" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.DebugSession" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.JavaUiState" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaStackFrame" />
+    <classNode dependClassName="jetbrains.mps.generator.traceInfo.TraceInfoUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
@@ -210,6 +209,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.stubs.StubReloadManager" />
     <classNode dependClassName="jetbrains.mps.stubs.javastub.classpath.StubHelper" />
+    <classNode dependClassName="jetbrains.mps.traceInfo.TraceInfoManager" />
     <classNode dependClassName="jetbrains.mps.util.Condition" />
     <classNode dependClassName="org.apache.commons.lang.StringUtils" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

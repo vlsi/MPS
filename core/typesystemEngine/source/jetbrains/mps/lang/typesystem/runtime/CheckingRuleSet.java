@@ -15,10 +15,5 @@
  */
 package jetbrains.mps.lang.typesystem.runtime;
 
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-
-import java.util.Set;
-
 public class CheckingRuleSet<T extends ICheckingRule_Runtime> extends RuleSet<T> {
 }

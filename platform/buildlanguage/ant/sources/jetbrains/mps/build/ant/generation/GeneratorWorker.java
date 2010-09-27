@@ -53,8 +53,12 @@ public class GeneratorWorker extends MpsWorker {
   protected final MyMessageHandler myMessageHandler = new MyMessageHandler();
 
   public static void main(String[] args) {
-    MpsWorker mpsWorker = new GeneratorWorker(WhatToDo.fromDumpInFile(new File(args[0])), new SystemOutLogger());
+    MpsWorker mpsWorker = new GeneratorWorker(WhatToDo.fromDumpInFile(new File(args[0])), new LogLogger());
     mpsWorker.workFromMain();
+  }
+
+  public GeneratorWorker(WhatToDo whatToDo) {
+    super(whatToDo);
   }
 
   public GeneratorWorker(WhatToDo whatToDo, ProjectComponent component) {

@@ -1,6 +1,6 @@
 package jetbrains.mps.debug.api.integration.ui.breakpoint;
 
-import com.intellij.openapi.actionSystem.DataProvider;
+import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.util.ui.AbstractTableCellEditor;
@@ -26,108 +26,65 @@ import java.util.List;
 public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider {
   private static final String COMMAND_SHOW_NODE = "COMMAND_SHOW_NODE";
 
-  private final JScrollPane myMainPanel;
-  private final JTable myBreakpointsTable;
+  private final JPanel myMainPanel;
   private final IOperationContext myContext;
   private final BreakpointManagerComponent myBreakpointsManager;
-  private final MyAbstractTableModel myBreakpointsTableModel;
+  private BreakpointsView myBreakpointsView;
 
   public BreakpointsBrowserDialog(IOperationContext context) {
     super(context.getMainFrame(), "Breakpoints");
 
     myContext = context;
     myBreakpointsManager = myContext.getComponent(BreakpointManagerComponent.class);
+    myBreakpointsView = new BreakpointsTable(myBreakpointsManager);
 
-    myBreakpointsTable = new JTable();
-    myBreakpointsTable.setTableHeader(null);
-    myBreakpointsTableModel = new MyAbstractTableModel();
-    createBreakpointsTable(myBreakpointsTableModel);
+    myMainPanel = new JPanel(new BorderLayout());
 
-    myMainPanel = new JScrollPane(myBreakpointsTable);
-    myMainPanel.getViewport().setBackground(getBackgroundColor());
-    addActions();
+    JScrollPane breakpointsScrollPane = new JScrollPane(myBreakpointsView.getMainComponent());
+    breakpointsScrollPane.getViewport().setBackground(UIManager.getColor("Table.background"));
+    myMainPanel.add(breakpointsScrollPane, BorderLayout.CENTER);
+
+    ActionToolbar actionToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, createActions(), true);
+    myMainPanel.add(actionToolbar.getComponent(), BorderLayout.NORTH);
   }
 
-  private Color getBackgroundColor() {
-    return UIManager.getColor("Table.background");
-  }
+  private ActionGroup createActions() {
+    // create actions
 
-  private void createBreakpointsTable(MyAbstractTableModel model) {
-    myBreakpointsTable.setModel(model);
-
-    myBreakpointsTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-    myBreakpointsTable.setShowHorizontalLines(false);
-
-    myBreakpointsTable.getColumnModel().getColumn(0).setCellEditor(new AbstractTableCellEditor() {
-      JPanelWithCheckbox myPanelWithCheckBox;
-
+    final AnAction showNodeAction = new AnAction("View Source", "View Source", jetbrains.mps.ide.projectPane.Icons.TEXT_ICON) {
       @Override
-      public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
-        MyAbstractTableModel model = (MyAbstractTableModel) table.getModel();
-        if (value != null) {
-          AbstractMPSBreakpoint bp = model.getBreakpointAt(row);
-          myPanelWithCheckBox = new JPanelWithCheckbox(bp, true);
-          myPanelWithCheckBox.getCheckBox().addItemListener(new ItemListener() {
-            @Override
-            public void itemStateChanged(ItemEvent e) {
-              if (stopCellEditing()) {
-                fireEditingStopped();
-              }
-            }
-          });
-          return myPanelWithCheckBox;
-        }
-        return new JLabel();
-      }
-
-      @Override
-      public Object getCellEditorValue() {
-        return myPanelWithCheckBox.getCheckBox().isSelected();
-      }
-    });
-
-    myBreakpointsTable.getColumnModel().getColumn(0).setCellRenderer(new TableCellRenderer() {
-      @Override
-      public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
-        MyAbstractTableModel model = (MyAbstractTableModel) table.getModel();
-        if (value != null) {
-          AbstractMPSBreakpoint bp = model.getBreakpointAt(row);
-          return new JPanelWithCheckbox(bp, isSelected);
-        }
-        return new JLabel();
-      }
-    });
-  }
-
-  private void addActions() {
-    // show on enter
-    myBreakpointsTable.getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), COMMAND_SHOW_NODE);
-    myBreakpointsTable.getActionMap().put(COMMAND_SHOW_NODE, new AbstractAction() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        AbstractMPSBreakpoint breakpoint = getSelectedBreakpoint();
+      public void actionPerformed(AnActionEvent e) {
+        AbstractMPSBreakpoint breakpoint = myBreakpointsView.getSelectedBreakpoint();
         if (breakpoint == null) return;
         openNode(breakpoint, false, true);
       }
-    });
 
-    // open on f4
-    myBreakpointsTable.registerKeyboardAction(new AbstractAction() {
       @Override
-      public void actionPerformed(ActionEvent e) {
-        AbstractMPSBreakpoint breakpoint = getSelectedBreakpoint();
+      public void update(AnActionEvent e) {
+        e.getPresentation().setEnabled(myBreakpointsView.getSelectedBreakpoint() != null);
+      }
+    };
+
+    final AnAction gotoNodeAction = new AnAction("Go To", "Go To Source", jetbrains.mps.ide.projectPane.Icons.REFERENCE_ICON) {
+      @Override
+      public void actionPerformed(AnActionEvent e) {
+        AbstractMPSBreakpoint breakpoint = myBreakpointsView.getSelectedBreakpoint();
         if (breakpoint == null) return;
         dispose();
         openNode(breakpoint, true, true);
       }
-    }, KeyStroke.getKeyStroke("F4"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
-    // delete on del
-    myBreakpointsTable.registerKeyboardAction(new AbstractAction() {
       @Override
-      public void actionPerformed(ActionEvent e) {
-        int selectedRow = myBreakpointsTable.getSelectedRow();
-        final AbstractMPSBreakpoint breakpoint = getSelectedBreakpoint();
+      public void update(AnActionEvent e) {
+        e.getPresentation().setEnabled(myBreakpointsView.getSelectedBreakpoint() != null);
+      }
+    };
+
+    final AnAction deleteBreakpointAction = new AnAction("Delete", "Delete Breakpoint", jetbrains.mps.workbench.dialogs.project.components.parts.actions.icons.Icons.REMOVE) {
+      @Override
+      public void actionPerformed(AnActionEvent e) {
+        int selectedRow = myBreakpointsView.getSelectedBreakpointIndex();
+        final AbstractMPSBreakpoint breakpoint = myBreakpointsView.getSelectedBreakpoint();
         if (breakpoint == null) return;
         ModelAccess.instance().runReadAction(new Runnable() {
           @Override
@@ -135,22 +92,60 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
             myBreakpointsManager.removeBreakpoint(breakpoint);
           }
         });
-        myBreakpointsTableModel.breakpointDeleted(selectedRow);
+        myBreakpointsView.breakpointDeleted(selectedRow);
+      }
+
+      @Override
+      public void update(AnActionEvent e) {
+        e.getPresentation().setEnabled(myBreakpointsView.getSelectedBreakpoint() != null);
+      }
+    };
+
+    // add to action group
+    DefaultActionGroup group = new DefaultActionGroup();
+    group.add(gotoNodeAction);
+    group.add(showNodeAction);
+    group.add(deleteBreakpointAction);
+
+    // register keyboard/mouse actions
+
+    // show on enter
+    myBreakpointsView.getMainComponent().getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), COMMAND_SHOW_NODE);
+    myBreakpointsView.getMainComponent().getActionMap().put(COMMAND_SHOW_NODE, new AbstractAction() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        showNodeAction.actionPerformed(null);
+      }
+    });
+    // open on f4
+    myBreakpointsView.getMainComponent().registerKeyboardAction(new AbstractAction() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        gotoNodeAction.actionPerformed(null);
+      }
+    }, KeyStroke.getKeyStroke("F4"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    // delete on del
+    myBreakpointsView.getMainComponent().registerKeyboardAction(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        deleteBreakpointAction.actionPerformed(null);
       }
     }, KeyStroke.getKeyStroke("DELETE"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     // open on double click
-    myBreakpointsTable.addMouseListener(new MouseAdapter() {
+    myBreakpointsView.getMainComponent().addMouseListener(new MouseAdapter() {
       @Override
       public void mouseClicked(MouseEvent e) {
         if (e.getClickCount() == 2) {
-          AbstractMPSBreakpoint breakpoint = getSelectedBreakpoint();
+          AbstractMPSBreakpoint breakpoint = myBreakpointsView.getSelectedBreakpoint();
           if (breakpoint == null) return;
           dispose();
           openNode(breakpoint, true, true);
         }
       }
     });
+
+    return group;
   }
 
   private void openNode(final AbstractMPSBreakpoint breakpoint, final boolean focus, final boolean select) {
@@ -183,143 +178,11 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
   @Nullable
   public Object getData(@NonNls String dataId) {
     if (dataId.equals(MPSDataKeys.NODE.getName())) {
-      AbstractMPSBreakpoint breakpoint = getSelectedBreakpoint();
+      AbstractMPSBreakpoint breakpoint = myBreakpointsView.getSelectedBreakpoint();
       if (breakpoint != null) {
         return breakpoint.getSNode();
       }
     }
     return null;
   }
-
-  private AbstractMPSBreakpoint getSelectedBreakpoint() {
-    MyAbstractTableModel model = (MyAbstractTableModel) myBreakpointsTable.getModel();
-    int selectedRow = myBreakpointsTable.getSelectedRow();
-    if (selectedRow < 0 || selectedRow >= model.getRowCount()) {
-      return null;
-    }
-    model.getBreakpointAt(selectedRow);
-    AbstractMPSBreakpoint breakpoint = model.getBreakpointAt(myBreakpointsTable.getSelectedRow());
-    return breakpoint;
-  }
-
-
-  private class JPanelWithCheckbox extends JPanel {
-    private JCheckBox myCheckBox;
-    private JLabel myIconLabel;
-
-    public JPanelWithCheckbox(AbstractMPSBreakpoint breakpoint, boolean isSelected) {
-      Color bg;
-      if (isSelected) {
-        bg = UIManager.getColor("Table.selectionBackground");
-      } else {
-        bg = getBackgroundColor();
-      }
-      this.setBackground(bg);
-      this.setLayout(new GridBagLayout());
-      myCheckBox = new JCheckBox();
-      myCheckBox.setSelected(breakpoint.isEnabled());
-      myCheckBox.setMargin(new Insets(0, 0, 0, 0));
-      myCheckBox.setBackground(bg);
-      myIconLabel = new JLabel(breakpoint.getPresentation(), BreakpointIconRenderer.getIconFor(breakpoint), SwingConstants.LEFT);
-
-      GridBagConstraints constraints = new GridBagConstraints();
-      constraints.gridy = 0;
-      constraints.gridx = 0;
-      constraints.weighty = 1;
-      constraints.weightx = 0;
-      add(myCheckBox, constraints);
-      constraints.gridx = 1;
-      constraints.weightx = 1;
-      constraints.anchor = GridBagConstraints.WEST;
-      add(myIconLabel, constraints);
-    }
-
-    public JCheckBox getCheckBox() {
-      return myCheckBox;
-    }
-  }
-
-  private class MyAbstractTableModel extends AbstractTableModel {
-    private List<AbstractMPSBreakpoint> myBreakpointsList;
-
-    public MyAbstractTableModel() {
-      myBreakpointsList = loadBreakpoints();
-    }
-
-    public void breakpointDeleted(int row) {
-      ApplicationManager.getApplication().assertIsDispatchThread();
-
-      List<AbstractMPSBreakpoint> bpList = loadBreakpoints();
-      //  int size = myBreakpointsList.size();
-      myBreakpointsList = bpList;
-      fireTableRowsDeleted(row, row);
-      int count = getRowCount();
-      if (count == 0) return;
-      int index;
-      if (count <= row) {
-        index = row - 1;
-      } else {
-        index = row;
-      }
-      myBreakpointsTable.getSelectionModel().setSelectionInterval(index, index);
-    }
-
-    private List<AbstractMPSBreakpoint> loadBreakpoints() {
-      Set<AbstractMPSBreakpoint> mpsBreakpoints = myBreakpointsManager.getAllBreakpoints();
-      final List<AbstractMPSBreakpoint> bpList = new ArrayList<AbstractMPSBreakpoint>(mpsBreakpoints);
-
-      Collections.sort(bpList, new Comparator<AbstractMPSBreakpoint>() {
-        @Override
-        public int compare(AbstractMPSBreakpoint o1, AbstractMPSBreakpoint o2) {
-          return (int) (o1.getCreationTime() - o2.getCreationTime());
-        }
-      });
-      return bpList;
-    }
-
-    @Override
-    public int getRowCount() {
-      return myBreakpointsList.size();
-    }
-
-    @Override
-    public int getColumnCount() {
-      return 1;
-    }
-
-    @Override
-    public Object getValueAt(int rowIndex, int columnIndex) {
-      if (columnIndex == 0) {
-        AbstractMPSBreakpoint breakpoint = myBreakpointsList.get(rowIndex);
-        return breakpoint.isEnabled();
-      }
-      return null;
-    }
-
-    @Override
-    public void setValueAt(Object value, int rowIndex, int columnIndex) {
-      if (!(value instanceof Boolean)) return;
-      if (columnIndex != 0) return;
-      AbstractMPSBreakpoint breakpoint = myBreakpointsList.get(rowIndex);
-      if (breakpoint.supportsDisable()) {
-        breakpoint.setEnabled((Boolean) value);
-      }
-    }
-
-    @Override
-    public boolean isCellEditable(int rowIndex, int columnIndex) {
-      if (columnIndex != 0) return false;
-      return myBreakpointsList.get(rowIndex).supportsDisable();
-    }
-
-    public AbstractMPSBreakpoint getBreakpointAt(int row) {
-      return myBreakpointsList.get(row);
-    }
-
-    @Override
-    public String getColumnName(int column) {
-      return "";
-    }
-  }
-
 }

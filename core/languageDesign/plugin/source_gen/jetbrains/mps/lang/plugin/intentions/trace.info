@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="15" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.plugin.intentions.SurroundWithExecuteLightweightCommandStatement_Intention" />
+  <unitInfo fileName="ExtractGroup_Intention.java" startLine="14" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.plugin.intentions.ExtractGroup_Intention" />
   <root nodeId="1204990433124">
     <nodeInfo nodeId="1204990483179" fileName="ExtractGroup_Intention.java" startLine="34" startPosition="85" endLine="35" endPosition="27" />
     <nodeInfo nodeId="1205510388542" fileName="ExtractGroup_Intention.java" startLine="45" startPosition="90" endLine="46" endPosition="51" />

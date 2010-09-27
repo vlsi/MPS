@@ -16,11 +16,8 @@
 package jetbrains.mps.typesystem.inference.util;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.lang.pattern.util.IMatchModifier;
-import jetbrains.mps.typesystem.inference.NodeWrapper;
 
 import java.util.*;
 
