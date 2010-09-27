@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="6707053336947670409">
+    <nodeInfo nodeId="6707053336947672783" fileName="ResourceNameService.java" startLine="10" startPosition="34" endLine="11" endPosition="104" />
+    <nodeInfo nodeId="6707053336947681700" fileName="ResourceNameService.java" startLine="18" startPosition="67" endLine="19" endPosition="35" />
+    <nodeInfo nodeId="6707053336947672848" fileName="ResourceNameService.java" startLine="26" startPosition="35" endLine="27" endPosition="41" />
+    <nodeInfo nodeId="6707053336947672858" fileName="ResourceNameService.java" startLine="29" startPosition="5" endLine="30" endPosition="69" />
+    <nodeInfo nodeId="6707053336947672793" fileName="ResourceNameService.java" startLine="33" startPosition="60" endLine="34" endPosition="58" />
+    <nodeInfo nodeId="6707053336947672802" fileName="ResourceNameService.java" startLine="37" startPosition="62" endLine="38" endPosition="61" />
+    <nodeInfo nodeId="6707053336947670411" fileName="ResourceNameService.java" startLine="12" startPosition="0" endLine="14" endPosition="3" />
+    <nodeInfo nodeId="6707053336947672838" fileName="ResourceNameService.java" startLine="25" startPosition="68" endLine="28" endPosition="7" />
+    <nodeInfo nodeId="6707053336947681696" fileName="ResourceNameService.java" startLine="17" startPosition="104" endLine="21" endPosition="0" />
+    <nodeInfo nodeId="6707053336947672691" fileName="ResourceNameService.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
+    <nodeInfo nodeId="6707053336947672698" fileName="ResourceNameService.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <nodeInfo nodeId="6707053336947681689" fileName="ResourceNameService.java" startLine="16" startPosition="46" endLine="21" endPosition="7" />
+    <nodeInfo nodeId="6707053336947672833" fileName="ResourceNameService.java" startLine="24" startPosition="88" endLine="29" endPosition="5" />
+    <nodeInfo nodeId="6707053336947672546" fileName="ResourceNameService.java" startLine="15" startPosition="0" endLine="23" endPosition="0" />
+    <nodeInfo nodeId="6707053336947672678" fileName="ResourceNameService.java" startLine="23" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="6707053336947670414" fileName="ResourceNameService.java" startLine="13" startPosition="32" endLine="13" endPosition="32" />
+    <scopeInfo nodeId="6707053336947681697" fileName="ResourceNameService.java" startLine="18" startPosition="67" endLine="19" endPosition="35" />
+    <scopeInfo nodeId="6707053336947672840" fileName="ResourceNameService.java" startLine="26" startPosition="35" endLine="27" endPosition="41" />
+    <scopeInfo nodeId="6707053336947672694" fileName="ResourceNameService.java" startLine="33" startPosition="60" endLine="34" endPosition="58" />
+    <scopeInfo nodeId="6707053336947672701" fileName="ResourceNameService.java" startLine="37" startPosition="62" endLine="38" endPosition="61" />
+    <scopeInfo nodeId="6707053336947670411" fileName="ResourceNameService.java" startLine="12" startPosition="0" endLine="14" endPosition="3" />
+    <scopeInfo nodeId="6707053336947672836" fileName="ResourceNameService.java" startLine="25" startPosition="68" endLine="28" endPosition="7" />
+    <scopeInfo nodeId="6707053336947681696" fileName="ResourceNameService.java" startLine="17" startPosition="104" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="6707053336947672691" fileName="ResourceNameService.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="6707053336947672695" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="6707053336947672698" fileName="ResourceNameService.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="6707053336947672702" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="6707053336947672549" fileName="ResourceNameService.java" startLine="16" startPosition="46" endLine="21" endPosition="7" />
+    <scopeInfo nodeId="6707053336947672833" fileName="ResourceNameService.java" startLine="24" startPosition="88" endLine="29" endPosition="5" />
+    <scopeInfo nodeId="6707053336947672681" fileName="ResourceNameService.java" startLine="24" startPosition="88" endLine="30" endPosition="69" />
+    <scopeInfo nodeId="6707053336947672546" fileName="ResourceNameService.java" startLine="15" startPosition="0" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="6707053336947672678" fileName="ResourceNameService.java" startLine="23" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="6707053336947672683" varName="resourceName" />
+    </scopeInfo>
+    <unitInfo nodeId="6707053336947681696" fileName="ResourceNameService.java" startLine="17" startPosition="58" endLine="21" endPosition="5" unitName="jetbrains.mps.make.runtime.resources.ITranslator2$anonymous" />
+    <unitInfo nodeId="6707053336947670409" fileName="ResourceNameService.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.make.runtime.resources.ResourceNameService" />
+  </root>
+  <root nodeId="6707053336947670417">
+    <nodeInfo nodeId="6707053336947681736" fileName="IResource.java" startLine="6" startPosition="28" endLine="7" endPosition="32" />
+    <nodeInfo nodeId="6707053336947672560" fileName="IResource.java" startLine="7" startPosition="32" endLine="8" endPosition="29" />
+    <nodeInfo nodeId="6707053336947672625" fileName="IResource.java" startLine="8" startPosition="29" endLine="9" endPosition="41" />
+    <scopeInfo nodeId="6707053336947681736" fileName="IResource.java" startLine="6" startPosition="28" endLine="7" endPosition="32" />
+    <scopeInfo nodeId="6707053336947672560" fileName="IResource.java" startLine="7" startPosition="32" endLine="8" endPosition="29" />
+    <scopeInfo nodeId="6707053336947672625" fileName="IResource.java" startLine="8" startPosition="29" endLine="9" endPosition="41" />
+    <unitInfo nodeId="6707053336947670417" fileName="IResource.java" startLine="6" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.make.runtime.resources.IResource" />
+  </root>
+  <root nodeId="6707053336947672517">
+    <nodeInfo nodeId="6707053336947681707" fileName="ResourcePool.java" startLine="9" startPosition="27" endLine="10" endPosition="111" />
+    <nodeInfo nodeId="6707053336947681726" fileName="ResourcePool.java" startLine="15" startPosition="34" endLine="16" endPosition="59" />
+    <nodeInfo nodeId="6707053336947693800" fileName="ResourcePool.java" startLine="19" startPosition="46" endLine="20" endPosition="52" />
+    <nodeInfo nodeId="6707053336947672542" fileName="ResourcePool.java" startLine="11" startPosition="0" endLine="13" endPosition="3" />
+    <nodeInfo nodeId="6707053336947672518" fileName="ResourcePool.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
+    <nodeInfo nodeId="6707053336947672524" fileName="ResourcePool.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="6707053336947672545" fileName="ResourcePool.java" startLine="12" startPosition="25" endLine="12" endPosition="25" />
+    <scopeInfo nodeId="6707053336947672521" fileName="ResourcePool.java" startLine="15" startPosition="34" endLine="16" endPosition="59" />
+    <scopeInfo nodeId="6707053336947672526" fileName="ResourcePool.java" startLine="19" startPosition="46" endLine="20" endPosition="52" />
+    <scopeInfo nodeId="6707053336947672542" fileName="ResourcePool.java" startLine="11" startPosition="0" endLine="13" endPosition="3" />
+    <scopeInfo nodeId="6707053336947672518" fileName="ResourcePool.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="6707053336947672522" varName="res" />
+    </scopeInfo>
+    <scopeInfo nodeId="6707053336947672524" fileName="ResourcePool.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
+      <varInfo nodeId="6707053336947672528" varName="name" />
+    </scopeInfo>
+    <unitInfo nodeId="6707053336947672517" fileName="ResourcePool.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.make.runtime.resources.ResourcePool" />
+  </root>
+  <root nodeId="6707053336947672672">
+    <nodeInfo nodeId="6707053336947672674" fileName="ResourceName.java" startLine="6" startPosition="27" endLine="8" endPosition="3" />
+    <scopeInfo nodeId="6707053336947672677" fileName="ResourceName.java" startLine="7" startPosition="25" endLine="7" endPosition="25" />
+    <scopeInfo nodeId="6707053336947672674" fileName="ResourceName.java" startLine="6" startPosition="27" endLine="8" endPosition="3" />
+    <unitInfo nodeId="6707053336947672672" fileName="ResourceName.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.make.runtime.resources.ResourceName" />
+  </root>
+  <root nodeId="6707053336947672685">
+    <nodeInfo nodeId="6707053336947672687" fileName="IResourceProvider.java" startLine="6" startPosition="36" endLine="7" endPosition="45" />
+    <nodeInfo nodeId="6707053336947672708" fileName="IResourceProvider.java" startLine="7" startPosition="45" endLine="8" endPosition="87" />
+    <nodeInfo nodeId="6707053336947672811" fileName="IResourceProvider.java" startLine="8" startPosition="87" endLine="9" endPosition="49" />
+    <scopeInfo nodeId="6707053336947672687" fileName="IResourceProvider.java" startLine="6" startPosition="36" endLine="7" endPosition="45" />
+    <scopeInfo nodeId="6707053336947672708" fileName="IResourceProvider.java" startLine="7" startPosition="45" endLine="8" endPosition="87">
+      <varInfo nodeId="6707053336947672713" varName="resourceName" />
+    </scopeInfo>
+    <scopeInfo nodeId="6707053336947672811" fileName="IResourceProvider.java" startLine="8" startPosition="87" endLine="9" endPosition="49">
+      <varInfo nodeId="6707053336947672816" varName="resourceName" />
+    </scopeInfo>
+    <unitInfo nodeId="6707053336947672685" fileName="IResourceProvider.java" startLine="6" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.make.runtime.resources.IResourceProvider" />
+  </root>
+  <root nodeId="6707053336947672818">
+    <nodeInfo nodeId="6707053336947672827" fileName="ResourceNotFoundException.java" startLine="7" startPosition="48" endLine="8" endPosition="15" />
+    <nodeInfo nodeId="6707053336947672820" fileName="ResourceNotFoundException.java" startLine="6" startPosition="58" endLine="9" endPosition="3" />
+    <scopeInfo nodeId="6707053336947672823" fileName="ResourceNotFoundException.java" startLine="7" startPosition="48" endLine="8" endPosition="15" />
+    <scopeInfo nodeId="6707053336947672820" fileName="ResourceNotFoundException.java" startLine="6" startPosition="58" endLine="9" endPosition="3">
+      <varInfo nodeId="6707053336947672825" varName="msg" />
+    </scopeInfo>
+    <unitInfo nodeId="6707053336947672818" fileName="ResourceNotFoundException.java" startLine="6" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.make.runtime.resources.ResourceNotFoundException" />
+  </root>
+</debugInfo>
+

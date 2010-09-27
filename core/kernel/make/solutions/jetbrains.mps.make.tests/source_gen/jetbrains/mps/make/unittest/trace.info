@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="FacetRegistry_Test.java" startLine="13" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.make.unittest.FacetRegistry_Test" />
+  <unitInfo fileName="ScriptBuilder_Test.java" startLine="19" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.make.unittest.ScriptBuilder_Test" />
+  <root nodeId="3564492719942580100">
+    <nodeInfo nodeId="3564492719942580128" fileName="Mocker.java" startLine="14" startPosition="66" endLine="15" endPosition="56" />
+    <nodeInfo nodeId="3564492719942657245" fileName="Mocker.java" startLine="17" startPosition="7" endLine="18" endPosition="42" />
+    <nodeInfo nodeId="3564492719942657266" fileName="Mocker.java" startLine="18" startPosition="42" endLine="19" endPosition="54" />
+    <nodeInfo nodeId="3564492719942657278" fileName="Mocker.java" startLine="21" startPosition="7" endLine="22" endPosition="15" />
+    <nodeInfo nodeId="8963054271157683901" fileName="Mocker.java" startLine="25" startPosition="68" endLine="26" endPosition="58" />
+    <nodeInfo nodeId="8963054271157683919" fileName="Mocker.java" startLine="28" startPosition="7" endLine="29" endPosition="42" />
+    <nodeInfo nodeId="8963054271157683929" fileName="Mocker.java" startLine="29" startPosition="42" endLine="30" endPosition="55" />
+    <nodeInfo nodeId="8963054271157683937" fileName="Mocker.java" startLine="32" startPosition="7" endLine="33" endPosition="15" />
+    <nodeInfo nodeId="3564492719942580102" fileName="Mocker.java" startLine="10" startPosition="21" endLine="12" endPosition="3" />
+    <nodeInfo nodeId="3564492719942580137" fileName="Mocker.java" startLine="15" startPosition="56" endLine="21" endPosition="7" />
+    <nodeInfo nodeId="8963054271157683909" fileName="Mocker.java" startLine="26" startPosition="58" endLine="32" endPosition="7" />
+    <nodeInfo nodeId="3564492719942580106" fileName="Mocker.java" startLine="13" startPosition="0" endLine="24" endPosition="0" />
+    <nodeInfo nodeId="8963054271157683898" fileName="Mocker.java" startLine="24" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="3564492719942580105" fileName="Mocker.java" startLine="11" startPosition="19" endLine="11" endPosition="19" />
+    <scopeInfo nodeId="3564492719942580102" fileName="Mocker.java" startLine="10" startPosition="21" endLine="12" endPosition="3" />
+    <scopeInfo nodeId="3564492719942580357" fileName="Mocker.java" startLine="17" startPosition="7" endLine="19" endPosition="54" />
+    <scopeInfo nodeId="8963054271157683918" fileName="Mocker.java" startLine="28" startPosition="7" endLine="30" endPosition="55" />
+    <scopeInfo nodeId="3564492719942580109" fileName="Mocker.java" startLine="14" startPosition="66" endLine="22" endPosition="15">
+      <varInfo nodeId="3564492719942580129" varName="fct" />
+    </scopeInfo>
+    <scopeInfo nodeId="8963054271157683900" fileName="Mocker.java" startLine="25" startPosition="68" endLine="33" endPosition="15">
+      <varInfo nodeId="8963054271157683902" varName="trg" />
+    </scopeInfo>
+    <scopeInfo nodeId="3564492719942580106" fileName="Mocker.java" startLine="13" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="3564492719942580113" varName="name" />
+      <varInfo nodeId="3564492719942580111" varName="context" />
+    </scopeInfo>
+    <scopeInfo nodeId="8963054271157683898" fileName="Mocker.java" startLine="24" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="8963054271157683942" varName="name" />
+      <varInfo nodeId="8963054271157683940" varName="context" />
+    </scopeInfo>
+    <unitInfo nodeId="3564492719942580354" fileName="Mocker.java" startLine="16" startPosition="25" endLine="21" endPosition="5" unitName="jetbrains.mps.make.unittest.Mocker$1" />
+    <unitInfo nodeId="8963054271157683915" fileName="Mocker.java" startLine="27" startPosition="25" endLine="32" endPosition="5" unitName="jetbrains.mps.make.unittest.Mocker$2" />
+    <unitInfo nodeId="3564492719942580100" fileName="Mocker.java" startLine="10" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.make.unittest.Mocker" />
+  </root>
+  <root nodeId="8963054271157682179">
+    <nodeInfo nodeId="8963054271157683437" fileName="ScriptBuilder_Test.java" startLine="19" startPosition="50" endLine="20" endPosition="26" />
+    <nodeInfo nodeId="8963054271157683440" fileName="ScriptBuilder_Test.java" startLine="20" startPosition="26" endLine="21" endPosition="26" />
+    <nodeInfo nodeId="8963054271157683564" fileName="ScriptBuilder_Test.java" startLine="23" startPosition="51" endLine="24" endPosition="44" />
+    <nodeInfo nodeId="1103977116241830513" fileName="ScriptBuilder_Test.java" startLine="26" startPosition="43" endLine="27" endPosition="27" />
+    <nodeInfo nodeId="8963054271157683576" fileName="ScriptBuilder_Test.java" startLine="29" startPosition="8" endLine="30" endPosition="45" />
+    <nodeInfo nodeId="8963054271157683583" fileName="ScriptBuilder_Test.java" startLine="30" startPosition="45" endLine="31" endPosition="31" />
+    <nodeInfo nodeId="8963054271157683589" fileName="ScriptBuilder_Test.java" startLine="31" startPosition="31" endLine="32" endPosition="29" />
+    <nodeInfo nodeId="1103977116241820132" fileName="ScriptBuilder_Test.java" startLine="35" startPosition="43" endLine="36" endPosition="36" />
+    <nodeInfo nodeId="1103977116241823489" fileName="ScriptBuilder_Test.java" startLine="36" startPosition="36" endLine="37" endPosition="44" />
+    <nodeInfo nodeId="1103977116241823498" fileName="ScriptBuilder_Test.java" startLine="39" startPosition="7" endLine="40" endPosition="27" />
+    <nodeInfo nodeId="1103977116241823507" fileName="ScriptBuilder_Test.java" startLine="40" startPosition="27" endLine="41" endPosition="36" />
+    <nodeInfo nodeId="1103977116241830411" fileName="ScriptBuilder_Test.java" startLine="43" startPosition="7" endLine="44" endPosition="47" />
+    <nodeInfo nodeId="1103977116241830427" fileName="ScriptBuilder_Test.java" startLine="44" startPosition="47" endLine="45" endPosition="26" />
+    <nodeInfo nodeId="1103977116241830492" fileName="ScriptBuilder_Test.java" startLine="50" startPosition="73" endLine="51" endPosition="49" />
+    <nodeInfo nodeId="8963054271157683445" fileName="ScriptBuilder_Test.java" startLine="52" startPosition="5" endLine="53" endPosition="32" />
+    <nodeInfo nodeId="8963054271157683432" fileName="ScriptBuilder_Test.java" startLine="53" startPosition="32" endLine="54" endPosition="21" />
+    <nodeInfo nodeId="8963054271157683435" fileName="ScriptBuilder_Test.java" startLine="58" startPosition="43" endLine="59" endPosition="18" />
+    <nodeInfo nodeId="8963054271157683456" fileName="ScriptBuilder_Test.java" startLine="59" startPosition="18" endLine="60" endPosition="33" />
+    <nodeInfo nodeId="8963054271157683463" fileName="ScriptBuilder_Test.java" startLine="60" startPosition="33" endLine="61" endPosition="55" />
+    <nodeInfo nodeId="8963054271157683469" fileName="ScriptBuilder_Test.java" startLine="61" startPosition="55" endLine="62" endPosition="53" />
+    <nodeInfo nodeId="8963054271157684038" fileName="ScriptBuilder_Test.java" startLine="62" startPosition="53" endLine="63" endPosition="55" />
+    <nodeInfo nodeId="8963054271157683475" fileName="ScriptBuilder_Test.java" startLine="63" startPosition="55" endLine="64" endPosition="61" />
+    <nodeInfo nodeId="8963054271157684044" fileName="ScriptBuilder_Test.java" startLine="64" startPosition="61" endLine="65" endPosition="63" />
+    <nodeInfo nodeId="8447334236392455641" fileName="ScriptBuilder_Test.java" startLine="67" startPosition="7" endLine="68" endPosition="35" />
+    <nodeInfo nodeId="8447334236392455650" fileName="ScriptBuilder_Test.java" startLine="68" startPosition="35" endLine="69" endPosition="35" />
+    <nodeInfo nodeId="8963054271157684198" fileName="ScriptBuilder_Test.java" startLine="69" startPosition="35" endLine="70" endPosition="40" />
+    <nodeInfo nodeId="8963054271157684206" fileName="ScriptBuilder_Test.java" startLine="70" startPosition="40" endLine="71" endPosition="62" />
+    <nodeInfo nodeId="8963054271157684215" fileName="ScriptBuilder_Test.java" startLine="71" startPosition="62" endLine="72" endPosition="64" />
+    <nodeInfo nodeId="8963054271157684226" fileName="ScriptBuilder_Test.java" startLine="72" startPosition="64" endLine="73" endPosition="63" />
+    <nodeInfo nodeId="8963054271157683491" fileName="ScriptBuilder_Test.java" startLine="73" startPosition="63" endLine="74" endPosition="39" />
+    <nodeInfo nodeId="8963054271157683499" fileName="ScriptBuilder_Test.java" startLine="74" startPosition="39" endLine="75" endPosition="67" />
+    <nodeInfo nodeId="8963054271157684051" fileName="ScriptBuilder_Test.java" startLine="75" startPosition="67" endLine="76" endPosition="63" />
+    <nodeInfo nodeId="8963054271157684075" fileName="ScriptBuilder_Test.java" startLine="76" startPosition="63" endLine="77" endPosition="67" />
+    <nodeInfo nodeId="8963054271157683508" fileName="ScriptBuilder_Test.java" startLine="77" startPosition="67" endLine="78" endPosition="43" />
+    <nodeInfo nodeId="8963054271157683516" fileName="ScriptBuilder_Test.java" startLine="78" startPosition="43" endLine="79" endPosition="73" />
+    <nodeInfo nodeId="8963054271157684093" fileName="ScriptBuilder_Test.java" startLine="79" startPosition="73" endLine="80" endPosition="67" />
+    <nodeInfo nodeId="8963054271157684104" fileName="ScriptBuilder_Test.java" startLine="80" startPosition="67" endLine="81" endPosition="71" />
+    <nodeInfo nodeId="8963054271157683526" fileName="ScriptBuilder_Test.java" startLine="83" startPosition="7" endLine="84" endPosition="48" />
+    <nodeInfo nodeId="8963054271157683531" fileName="ScriptBuilder_Test.java" startLine="84" startPosition="48" endLine="85" endPosition="47" />
+    <nodeInfo nodeId="8963054271157683536" fileName="ScriptBuilder_Test.java" startLine="85" startPosition="47" endLine="86" endPosition="51" />
+    <nodeInfo nodeId="8963054271157683541" fileName="ScriptBuilder_Test.java" startLine="86" startPosition="51" endLine="87" endPosition="54" />
+    <nodeInfo nodeId="1103977116241830482" fileName="ScriptBuilder_Test.java" startLine="49" startPosition="46" endLine="52" endPosition="5" />
+    <nodeInfo nodeId="1103977116241830509" fileName="ScriptBuilder_Test.java" startLine="25" startPosition="114" endLine="29" endPosition="0" />
+    <nodeInfo nodeId="8963054271157683569" fileName="ScriptBuilder_Test.java" startLine="24" startPosition="44" endLine="29" endPosition="8" />
+    <nodeInfo nodeId="1103977116241820151" fileName="ScriptBuilder_Test.java" startLine="37" startPosition="44" endLine="43" endPosition="7" />
+    <nodeInfo nodeId="8963054271157683421" fileName="ScriptBuilder_Test.java" startLine="47" startPosition="0" endLine="56" endPosition="0" />
+    <nodeInfo nodeId="8963054271157683558" fileName="ScriptBuilder_Test.java" startLine="22" startPosition="0" endLine="34" endPosition="0" />
+    <nodeInfo nodeId="1103977116241817020" fileName="ScriptBuilder_Test.java" startLine="34" startPosition="0" endLine="47" endPosition="0" />
+    <nodeInfo nodeId="8963054271157683481" fileName="ScriptBuilder_Test.java" startLine="65" startPosition="63" endLine="83" endPosition="7" />
+    <nodeInfo nodeId="8963054271157683426" fileName="ScriptBuilder_Test.java" startLine="56" startPosition="0" endLine="89" endPosition="0" />
+    <scopeInfo nodeId="1103977116241830510" fileName="ScriptBuilder_Test.java" startLine="26" startPosition="43" endLine="27" endPosition="27" />
+    <scopeInfo nodeId="1103977116241830485" fileName="ScriptBuilder_Test.java" startLine="50" startPosition="73" endLine="51" endPosition="49" />
+    <scopeInfo nodeId="1103977116241823488" fileName="ScriptBuilder_Test.java" startLine="39" startPosition="7" endLine="41" endPosition="36" />
+    <scopeInfo nodeId="1103977116241830482" fileName="ScriptBuilder_Test.java" startLine="49" startPosition="46" endLine="52" endPosition="5" />
+    <scopeInfo nodeId="1103977116241830509" fileName="ScriptBuilder_Test.java" startLine="25" startPosition="114" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="8963054271157683425" fileName="ScriptBuilder_Test.java" startLine="49" startPosition="46" endLine="54" endPosition="21" />
+    <scopeInfo nodeId="8963054271157683561" fileName="ScriptBuilder_Test.java" startLine="23" startPosition="51" endLine="32" endPosition="29">
+      <varInfo nodeId="8963054271157683565" varName="scb" />
+      <varInfo nodeId="8963054271157683584" varName="sc" />
+    </scopeInfo>
+    <scopeInfo nodeId="8963054271157683421" fileName="ScriptBuilder_Test.java" startLine="47" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="1103977116241817023" fileName="ScriptBuilder_Test.java" startLine="35" startPosition="43" endLine="45" endPosition="26">
+      <varInfo nodeId="1103977116241823490" varName="t" />
+      <varInfo nodeId="1103977116241820133" varName="m" />
+    </scopeInfo>
+    <scopeInfo nodeId="8963054271157683558" fileName="ScriptBuilder_Test.java" startLine="22" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="1103977116241817020" fileName="ScriptBuilder_Test.java" startLine="34" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="8963054271157683490" fileName="ScriptBuilder_Test.java" startLine="67" startPosition="7" endLine="81" endPosition="71" />
+    <scopeInfo nodeId="8963054271157683430" fileName="ScriptBuilder_Test.java" startLine="58" startPosition="43" endLine="87" endPosition="54">
+      <varInfo nodeId="8963054271157683464" varName="fmake" />
+      <varInfo nodeId="8963054271157683470" varName="fgen" />
+      <varInfo nodeId="8963054271157683476" varName="ftextgen" />
+      <varInfo nodeId="8963054271157684039" varName="tgen" />
+      <varInfo nodeId="8963054271157684045" varName="ttextgen" />
+    </scopeInfo>
+    <scopeInfo nodeId="8963054271157683426" fileName="ScriptBuilder_Test.java" startLine="56" startPosition="0" endLine="89" endPosition="0" />
+    <unitInfo nodeId="1103977116241830509" fileName="ScriptBuilder_Test.java" startLine="25" startPosition="80" endLine="29" endPosition="5" unitName="jetbrains.mps.make.unittest.ScriptBuilder_Test$1" />
+    <unitInfo nodeId="1103977116241823485" fileName="ScriptBuilder_Test.java" startLine="38" startPosition="19" endLine="43" endPosition="5" unitName="jetbrains.mps.make.unittest.ScriptBuilder_Test$2" />
+    <unitInfo nodeId="8963054271157683487" fileName="ScriptBuilder_Test.java" startLine="66" startPosition="25" endLine="83" endPosition="5" unitName="jetbrains.mps.make.unittest.ScriptBuilder_Test$3" />
+  </root>
+  <root nodeId="8963054271157683627">
+    <nodeInfo nodeId="8963054271157683651" fileName="FacetRegistry_Test.java" startLine="13" startPosition="50" endLine="14" endPosition="26" />
+    <nodeInfo nodeId="8963054271157683778" fileName="FacetRegistry_Test.java" startLine="16" startPosition="58" endLine="17" endPosition="55" />
+    <nodeInfo nodeId="8963054271157683784" fileName="FacetRegistry_Test.java" startLine="17" startPosition="55" endLine="18" endPosition="30" />
+    <nodeInfo nodeId="8963054271157683786" fileName="FacetRegistry_Test.java" startLine="18" startPosition="30" endLine="19" endPosition="52" />
+    <nodeInfo nodeId="8963054271157683790" fileName="FacetRegistry_Test.java" startLine="19" startPosition="52" endLine="20" endPosition="30" />
+    <nodeInfo nodeId="8963054271157683792" fileName="FacetRegistry_Test.java" startLine="20" startPosition="30" endLine="21" endPosition="22" />
+    <nodeInfo nodeId="8963054271157683797" fileName="FacetRegistry_Test.java" startLine="21" startPosition="22" endLine="22" endPosition="96" />
+    <nodeInfo nodeId="8963054271157683806" fileName="FacetRegistry_Test.java" startLine="22" startPosition="96" endLine="23" endPosition="66" />
+    <nodeInfo nodeId="8963054271157683814" fileName="FacetRegistry_Test.java" startLine="23" startPosition="66" endLine="24" endPosition="24" />
+    <nodeInfo nodeId="8963054271157683819" fileName="FacetRegistry_Test.java" startLine="24" startPosition="24" endLine="25" endPosition="91" />
+    <nodeInfo nodeId="8963054271157683827" fileName="FacetRegistry_Test.java" startLine="25" startPosition="91" endLine="26" endPosition="61" />
+    <nodeInfo nodeId="8963054271157683646" fileName="FacetRegistry_Test.java" startLine="30" startPosition="46" endLine="31" endPosition="21" />
+    <nodeInfo nodeId="8963054271157683649" fileName="FacetRegistry_Test.java" startLine="35" startPosition="43" endLine="36" endPosition="18" />
+    <nodeInfo nodeId="8963054271157683657" fileName="FacetRegistry_Test.java" startLine="36" startPosition="18" endLine="37" endPosition="39" />
+    <nodeInfo nodeId="8963054271157683656" fileName="FacetRegistry_Test.java" startLine="37" startPosition="39" endLine="38" endPosition="0" />
+    <nodeInfo nodeId="8963054271157683635" fileName="FacetRegistry_Test.java" startLine="28" startPosition="0" endLine="33" endPosition="0" />
+    <nodeInfo nodeId="8963054271157683640" fileName="FacetRegistry_Test.java" startLine="33" startPosition="0" endLine="40" endPosition="0" />
+    <nodeInfo nodeId="8963054271157683774" fileName="FacetRegistry_Test.java" startLine="15" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="8963054271157683639" fileName="FacetRegistry_Test.java" startLine="30" startPosition="46" endLine="31" endPosition="21" />
+    <scopeInfo nodeId="8963054271157683644" fileName="FacetRegistry_Test.java" startLine="35" startPosition="43" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="8963054271157683635" fileName="FacetRegistry_Test.java" startLine="28" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="8963054271157683640" fileName="FacetRegistry_Test.java" startLine="33" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="8963054271157683777" fileName="FacetRegistry_Test.java" startLine="16" startPosition="58" endLine="26" endPosition="61">
+      <varInfo nodeId="8963054271157683787" varName="reg" />
+      <varInfo nodeId="8963054271157683779" varName="fct" />
+    </scopeInfo>
+    <scopeInfo nodeId="8963054271157683774" fileName="FacetRegistry_Test.java" startLine="15" startPosition="0" endLine="28" endPosition="0" />
+  </root>
+</debugInfo>
+

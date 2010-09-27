@@ -4,10 +4,10 @@ package jetbrains.mps.make.runtime;
 
 
 public interface IScript {
-  public Iterable<ITarget> targets();
-  public IScript.ExecResult execute(ITarget trg);
-  public class ExecResult {
-    public ExecResult() {
+  public Iterable<ITarget> allTargets();
+  public IScript.Result execute(ITarget trg, IMonitor monit);
+  public class Result {
+    public Result() {
     }
   }
 

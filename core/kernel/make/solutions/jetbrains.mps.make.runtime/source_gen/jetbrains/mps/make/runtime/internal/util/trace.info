@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="_Replacer_a0a0c0c.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.make.runtime.internal.util._Replacer_a0a0c0c" />
+  <root nodeId="5105453120349025843">
+    <nodeInfo nodeId="8321680453184998988" fileName="SmartWrapper.java" startLine="11" startPosition="30" endLine="12" endPosition="105" />
+    <nodeInfo nodeId="5105453120349025843" fileName="SmartWrapper.java" startLine="12" startPosition="105" endLine="13" endPosition="81" />
+    <nodeInfo nodeId="5105453120349025855" fileName="SmartWrapper.java" startLine="14" startPosition="0" endLine="15" endPosition="25" />
+    <nodeInfo nodeId="5105453120349025858" fileName="SmartWrapper.java" startLine="17" startPosition="33" endLine="18" endPosition="25" />
+    <nodeInfo nodeId="8321680453184998970" fileName="_Replacer_a0a0c0c.java" startLine="17" startPosition="42" endLine="18" endPosition="28" />
+    <nodeInfo nodeId="5105453120349025884" fileName="SmartWrapper.java" startLine="21" startPosition="21" endLine="22" endPosition="18" />
+    <nodeInfo nodeId="5105453120349025874" fileName="SmartWrapper.java" startLine="25" startPosition="28" endLine="26" endPosition="54" />
+    <nodeInfo nodeId="8321680453184999020" fileName="SmartWrapper.java" startLine="29" startPosition="35" endLine="30" endPosition="39" />
+    <nodeInfo nodeId="8321680453184999027" fileName="SmartWrapper.java" startLine="31" startPosition="64" endLine="32" endPosition="59" />
+    <nodeInfo nodeId="8321680453184998951" fileName="SmartWrapper.java" startLine="33" startPosition="5" endLine="34" endPosition="117" />
+    <nodeInfo nodeId="8321680453184999034" fileName="SmartWrapper.java" startLine="34" startPosition="117" endLine="35" endPosition="42" />
+    <nodeInfo nodeId="8321680453184999044" fileName="SmartWrapper.java" startLine="35" startPosition="42" endLine="36" endPosition="59" />
+    <nodeInfo nodeId="8321680453184998979" fileName="SmartWrapper.java" startLine="36" startPosition="59" endLine="37" endPosition="19" />
+    <nodeInfo nodeId="5105453120349026016" fileName="SmartWrapper.java" startLine="43" startPosition="23" endLine="44" endPosition="18" />
+    <nodeInfo nodeId="5105453120349025903" fileName="SmartWrapper.java" startLine="46" startPosition="42" endLine="47" endPosition="19" />
+    <nodeInfo nodeId="5105453120349025907" fileName="SmartWrapper.java" startLine="48" startPosition="5" endLine="49" endPosition="70" />
+    <nodeInfo nodeId="5105453120349025968" fileName="SmartWrapper.java" startLine="53" startPosition="25" endLine="54" endPosition="15" />
+    <nodeInfo nodeId="5105453120349026004" fileName="SmartWrapper.java" startLine="58" startPosition="6" endLine="59" endPosition="13" />
+    <nodeInfo nodeId="5105453120349025845" fileName="SmartWrapper.java" startLine="16" startPosition="0" endLine="19" endPosition="3" />
+    <nodeInfo nodeId="8321680453184999002" fileName="SmartWrapper.java" startLine="30" startPosition="39" endLine="33" endPosition="5" />
+    <nodeInfo nodeId="5105453120349026007" fileName="SmartWrapper.java" startLine="42" startPosition="38" endLine="45" endPosition="5" />
+    <nodeInfo nodeId="5105453120349025893" fileName="SmartWrapper.java" startLine="45" startPosition="5" endLine="48" endPosition="5" />
+    <nodeInfo nodeId="5105453120349025864" fileName="SmartWrapper.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <nodeInfo nodeId="5105453120349025869" fileName="SmartWrapper.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <nodeInfo nodeId="5105453120349025974" fileName="SmartWrapper.java" startLine="54" startPosition="15" endLine="58" endPosition="6" />
+    <nodeInfo nodeId="5105453120349025843" fileName="SmartWrapper.java" startLine="62" startPosition="62" endLine="66" endPosition="6" />
+    <nodeInfo nodeId="5105453120349025843" fileName="SmartWrapper.java" startLine="61" startPosition="0" endLine="68" endPosition="0" />
+    <nodeInfo nodeId="5105453120349025948" fileName="SmartWrapper.java" startLine="51" startPosition="0" endLine="61" endPosition="0" />
+    <nodeInfo nodeId="8321680453184998947" fileName="SmartWrapper.java" startLine="28" startPosition="0" endLine="39" endPosition="0" />
+    <nodeInfo nodeId="5105453120349025886" fileName="SmartWrapper.java" startLine="39" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="5105453120349025848" fileName="SmartWrapper.java" startLine="17" startPosition="33" endLine="18" endPosition="25" />
+    <scopeInfo nodeId="8321680453184998969" fileName="_Replacer_a0a0c0c.java" startLine="17" startPosition="42" endLine="18" endPosition="28" />
+    <scopeInfo nodeId="5105453120349025867" fileName="SmartWrapper.java" startLine="21" startPosition="21" endLine="22" endPosition="18" />
+    <scopeInfo nodeId="5105453120349025872" fileName="SmartWrapper.java" startLine="25" startPosition="28" endLine="26" endPosition="54" />
+    <scopeInfo nodeId="8321680453184999003" fileName="SmartWrapper.java" startLine="31" startPosition="64" endLine="32" endPosition="59" />
+    <scopeInfo nodeId="5105453120349026008" fileName="SmartWrapper.java" startLine="43" startPosition="23" endLine="44" endPosition="18" />
+    <scopeInfo nodeId="5105453120349025895" fileName="SmartWrapper.java" startLine="46" startPosition="42" endLine="47" endPosition="19" />
+    <scopeInfo nodeId="5105453120349025845" fileName="SmartWrapper.java" startLine="16" startPosition="0" endLine="19" endPosition="3">
+      <varInfo nodeId="5105453120349025850" varName="towrap" />
+    </scopeInfo>
+    <scopeInfo nodeId="5105453120349025864" fileName="SmartWrapper.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="5105453120349025869" fileName="SmartWrapper.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="5105453120349025843" fileName="SmartWrapper.java" startLine="62" startPosition="62" endLine="66" endPosition="6" />
+    <scopeInfo nodeId="5105453120349025951" fileName="SmartWrapper.java" startLine="53" startPosition="25" endLine="59" endPosition="13">
+      <varInfo nodeId="5105453120349025969" varName="h" />
+    </scopeInfo>
+    <scopeInfo nodeId="5105453120349025889" fileName="SmartWrapper.java" startLine="42" startPosition="38" endLine="49" endPosition="70" />
+    <scopeInfo nodeId="5105453120349025843" fileName="SmartWrapper.java" startLine="61" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="8321680453184998950" fileName="SmartWrapper.java" startLine="29" startPosition="35" endLine="37" endPosition="19">
+      <varInfo nodeId="8321680453184998945" varName="sn" />
+      <varInfo nodeId="8321680453184999035" varName="toCache" />
+      <varInfo nodeId="8321680453184999021" varName="name" />
+    </scopeInfo>
+    <scopeInfo nodeId="5105453120349025948" fileName="SmartWrapper.java" startLine="51" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="8321680453184998947" fileName="SmartWrapper.java" startLine="28" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="5105453120349025886" fileName="SmartWrapper.java" startLine="39" startPosition="0" endLine="51" endPosition="0">
+      <varInfo nodeId="5105453120349025891" varName="that" />
+    </scopeInfo>
+    <unitInfo nodeId="5105453120349025843" fileName="SmartWrapper.java" startLine="11" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.make.runtime.internal.util.SmartWrapper" />
+  </root>
+</debugInfo>
+
