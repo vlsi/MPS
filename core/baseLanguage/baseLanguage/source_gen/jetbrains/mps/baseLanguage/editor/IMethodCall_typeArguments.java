@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.smodel.IScope;
@@ -62,11 +61,7 @@ public class IMethodCall_typeArguments extends AbstractCellProvider {
   private EditorCell createConstant_q1hswy_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_q1hswy_a0a");
-    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    }
+    BaseLanguageStyle_StyleSheet.getLeftAngleBracket(editorCell).apply(editorCell);
     IMethodCall_DeleteTypeArguments.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
@@ -75,14 +70,9 @@ public class IMethodCall_typeArguments extends AbstractCellProvider {
   private EditorCell createConstant_q1hswy_c0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_q1hswy_c0a");
-    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightAngleBracket(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-      style.set(StyleAttributes.EDITABLE, false);
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
       style.set(StyleAttributes.LAST_POSITION_ALLOWED, true);
     }
     IMethodCall_DeleteTypeArguments.setCellActions(editorCell, node, editorContext);

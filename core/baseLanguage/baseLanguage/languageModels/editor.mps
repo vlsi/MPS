@@ -10366,16 +10366,20 @@
         <property name="style:32" value="PLAIN" />
       </node>
     </node>
-    <node role="styleClass:32" type="jetbrains.mps.lang.editor.structure.StyleSheetClass:32" id="1215010868182">
-      <property name="name:32" value="Parenthesis" />
-      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNoWrapClassItem:32" id="1240252144198">
+    <node role="styleClass:32" type="jetbrains.mps.lang.editor.structure.StyleSheetClass:32" id="8171260302110651860">
+      <property name="name:32" value="AnyBracket" />
+      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNoWrapClassItem:32" id="8171260302110651861">
         <property name="flag:32" value="true" />
       </node>
+      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem:32" id="8171260302110651863" />
+    </node>
+    <node role="styleClass:32" type="jetbrains.mps.lang.editor.structure.StyleSheetClass:32" id="1215010868182">
+      <property name="name:32" value="Parenthesis" />
       <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem:32" id="1238094796622">
         <property name="labelName:32" value="parenthesis" />
       </node>
-      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem:32" id="1215010896172">
-        <property name="style:32" value="PLAIN" />
+      <node role="extendedClass:32" type="jetbrains.mps.lang.editor.structure.StyleSheetClassReference:32" id="8171260302110651865">
+        <link role="styleSheetClass:32" targetNodeId="8171260302110651860" resolveInfo="AnyBracket" />
       </node>
     </node>
     <node role="styleClass:32" type="jetbrains.mps.lang.editor.structure.StyleSheetClass:32" id="1215087929380">
@@ -10407,14 +10411,11 @@
     </node>
     <node role="styleClass:32" type="jetbrains.mps.lang.editor.structure.StyleSheetClass:32" id="1215010874200">
       <property name="name:32" value="Brace" />
-      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem:32" id="1215010897126">
-        <property name="style:32" value="PLAIN" />
-      </node>
       <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem:32" id="1238094870675">
         <property name="labelName:32" value="brace" />
       </node>
-      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNoWrapClassItem:32" id="1240252135296">
-        <property name="flag:32" value="true" />
+      <node role="extendedClass:32" type="jetbrains.mps.lang.editor.structure.StyleSheetClassReference:32" id="8171260302110651869">
+        <link role="styleSheetClass:32" targetNodeId="8171260302110651860" resolveInfo="AnyBracket" />
       </node>
     </node>
     <node role="styleClass:32" type="jetbrains.mps.lang.editor.structure.StyleSheetClass:32" id="1215091279307">
@@ -10434,8 +10435,8 @@
       <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem:32" id="1238094882486">
         <property name="labelName:32" value="bracket" />
       </node>
-      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem:32" id="1215010897861">
-        <property name="style:32" value="PLAIN" />
+      <node role="extendedClass:32" type="jetbrains.mps.lang.editor.structure.StyleSheetClassReference:32" id="8171260302110651872">
+        <link role="styleSheetClass:32" targetNodeId="8171260302110651860" resolveInfo="AnyBracket" />
       </node>
     </node>
     <node role="styleClass:32" type="jetbrains.mps.lang.editor.structure.StyleSheetClass:32" id="1233923571622">
@@ -10454,6 +10455,36 @@
       </node>
       <node role="extendedClass:32" type="jetbrains.mps.lang.editor.structure.StyleSheetClassReference:32" id="1233923745739">
         <link role="styleSheetClass:32" targetNodeId="1215010871495" resolveInfo="Bracket" />
+      </node>
+    </node>
+    <node role="styleClass:32" type="jetbrains.mps.lang.editor.structure.StyleSheetClass:32" id="8171260302110651845">
+      <property name="name:32" value="AngleBracket" />
+      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem:32" id="8171260302110651846">
+        <property name="labelName:32" value="angleBracket" />
+      </node>
+      <node role="extendedClass:32" type="jetbrains.mps.lang.editor.structure.StyleSheetClassReference:32" id="8171260302110651874">
+        <link role="styleSheetClass:32" targetNodeId="8171260302110651860" resolveInfo="AnyBracket" />
+      </node>
+    </node>
+    <node role="styleClass:32" type="jetbrains.mps.lang.editor.structure.StyleSheetClass:32" id="8171260302110651849">
+      <property name="name:32" value="LeftAngleBracket" />
+      <node role="extendedClass:32" type="jetbrains.mps.lang.editor.structure.StyleSheetClassReference:32" id="8171260302110651853">
+        <link role="styleSheetClass:32" targetNodeId="8171260302110651845" resolveInfo="AngleBracket" />
+      </node>
+      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem:32" id="8171260302110651858">
+        <property name="flag:32" value="true" />
+      </node>
+    </node>
+    <node role="styleClass:32" type="jetbrains.mps.lang.editor.structure.StyleSheetClass:32" id="8171260302110651850">
+      <property name="name:32" value="RightAngleBracket" />
+      <node role="extendedClass:32" type="jetbrains.mps.lang.editor.structure.StyleSheetClassReference:32" id="8171260302110651855">
+        <link role="styleSheetClass:32" targetNodeId="8171260302110651845" resolveInfo="AngleBracket" />
+      </node>
+      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem:32" id="8171260302110651859">
+        <property name="flag:32" value="true" />
+      </node>
+      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem:32" id="8171260302110811613">
+        <property name="flag:32" value="true" />
       </node>
     </node>
     <node role="styleClass:32" type="jetbrains.mps.lang.editor.structure.StyleSheetClass:32" id="1215090647074">
@@ -14904,10 +14935,7 @@
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="4972241301747186356">
         <property name="text:32" value="&lt;" />
         <link role="actionMap:32" targetNodeId="4972241301747194480" resolveInfo="IMethodCall_DeleteTypeArguments" />
-        <link role="styleClass:32" targetNodeId="1215087929380" resolveInfo="LeftParen" />
-        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem:32" id="4972241301747186357">
-          <property name="style:32" value="PLAIN" />
-        </node>
+        <link role="styleClass:32" targetNodeId="8171260302110651849" resolveInfo="LeftAngleBracket" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList:32" id="4972241301747186358">
         <property name="separatorText:32" value="," />
@@ -14928,21 +14956,8 @@
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="4972241301747186374">
         <property name="text:32" value="&gt;" />
-        <link role="styleClass:32" targetNodeId="1215088010675" resolveInfo="RightParen" />
         <link role="actionMap:32" targetNodeId="4972241301747194480" resolveInfo="IMethodCall_DeleteTypeArguments" />
-        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="4972241301747186394" />
-        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem:32" id="4972241301747186395">
-          <property name="style:32" value="PLAIN" />
-        </node>
-        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem:32" id="4972241301747186396">
-          <property name="flag:32" value="false" />
-        </node>
-        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem:32" id="863669384468523973">
-          <property name="flag:32" value="true" />
-        </node>
-        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem:32" id="4761946706539676829">
-          <property name="flag:32" value="true" />
-        </node>
+        <link role="styleClass:32" targetNodeId="8171260302110651850" resolveInfo="RightAngleBracket" />
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem:32" id="4761946706539968821">
           <property name="flag:32" value="true" />
         </node>
