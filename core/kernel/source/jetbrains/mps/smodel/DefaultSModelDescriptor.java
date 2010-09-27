@@ -485,10 +485,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     return myMetadata;
   }
 
-  public void setNameVersion(int newNameVersion) {
-    setAttribute(VERSION, "" + newNameVersion);
-  }
-
   void changeSModelUID(SModelReference newModelReference) {
     myModelReference = newModelReference;
     getSModel().changeModelReference(newModelReference);
