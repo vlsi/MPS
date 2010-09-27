@@ -15,25 +15,31 @@
  */
 package jetbrains.mps.generator.impl.cache;
 
-import java.io.BufferedInputStream;
-import java.io.DataInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Evgeny Gryaznov, Sep 27, 2010
  */
 public class ModelInputStream extends DataInputStream {
 
+  private List<String> myStrings = new ArrayList<String>(2048);
+
   public ModelInputStream(InputStream in) {
-    super(new BufferedInputStream(in));
+    super(new BufferedInputStream(in, 65536));
   }
 
   public String readString() throws IOException {
     int c = readByte();
     if(c == 0x70) {
       return null;
+    } else if(c == 1) {
+      int index = readInt();
+      return myStrings.get(index);
     }
-    return readUTF();
+    String res = readUTF();
+    myStrings.add(res);
+    return res;
   }
 }

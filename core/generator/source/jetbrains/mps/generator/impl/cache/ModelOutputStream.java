@@ -21,22 +21,34 @@ import java.io.BufferedOutputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Evgeny Gryaznov, Sep 27, 2010
  */
 public class ModelOutputStream extends DataOutputStream {
 
+  private Map<String,Integer> stringToIndex = new HashMap<String, Integer>();
+  private int myIndex = 0;
+
   public ModelOutputStream(OutputStream out) {
-    super(new BufferedOutputStream(out));
+    super(new BufferedOutputStream(out, 65536));
   }
 
   public void writeString(@Nullable String s) throws IOException {
-    if(s == null) {
+    if (s == null) {
       writeByte(0x70);
     } else {
-      writeByte(0);
-      writeUTF(s);
+      Integer index = stringToIndex.get(s);
+      if(index == null) {
+        stringToIndex.put(s, myIndex++);
+        writeByte(0);
+        writeUTF(s);
+      } else {
+        writeByte(1);
+        writeInt(index);
+      }
     }
   }
 }
