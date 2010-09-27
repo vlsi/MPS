@@ -51,15 +51,15 @@ public class IntermediateModelsCache {
 
   public static IntermediateModelsCache load(ModelCacheContainer cacheContainer) {
     try {
-      ObjectInputStream is = new ObjectInputStream(cacheContainer.openStream(STEPS));
+      ModelInputStream is = new ModelInputStream(cacheContainer.openStream(STEPS));
       List<Integer> steps;
       try {
         int count = is.readInt();
-        if(count > 10000) {
+        if (count > 10000) {
           throw new IOException("illegal data");
         }
         steps = new ArrayList<Integer>(count);
-        for(int i = 0; i < count; i++) {
+        for (int i = 0; i < count; i++) {
           steps.add(is.readInt());
         }
       } finally {
@@ -96,15 +96,14 @@ public class IntermediateModelsCache {
 
   public void store(int majorStep, int minor, TransientModelWithMetainfo model) {
     try {
-      if(majorStep == mySteps.size()) {
+      if (majorStep == mySteps.size()) {
         mySteps.add(0);
       }
       int minorStep = mySteps.get(majorStep);
-      mySteps.set(majorStep, minorStep+1);
+      mySteps.set(majorStep, minorStep + 1);
       assert minor == minorStep;
 
-      OutputStream stream = myCacheContainer.createStream(getStorageName(majorStep, minorStep));
-      ObjectOutputStream os = new ObjectOutputStream(new BufferedOutputStream(stream));
+      ModelOutputStream os = new ModelOutputStream(myCacheContainer.createStream(getStorageName(majorStep, minorStep)));
       try {
         model.save(os);
       } finally {
@@ -118,7 +117,7 @@ public class IntermediateModelsCache {
   public TransientModelWithMetainfo load(int majorStep, int minorStep) {
     try {
       InputStream stream = myCacheContainer.openStream(getStorageName(majorStep, minorStep));
-      ObjectInputStream is = new ObjectInputStream(new BufferedInputStream(stream));
+      ModelInputStream is = new ModelInputStream(stream);
       try {
         return TransientModelWithMetainfo.load(is);
       } finally {
@@ -132,10 +131,10 @@ public class IntermediateModelsCache {
 
   public void store() {
     try {
-      ObjectOutputStream os = new ObjectOutputStream(myCacheContainer.createStream(STEPS));
+      ModelOutputStream os = new ModelOutputStream(myCacheContainer.createStream(STEPS));
       try {
         os.writeInt(mySteps.size());
-        for(Integer i : mySteps) {
+        for (Integer i : mySteps) {
           os.writeInt(i);
         }
       } finally {

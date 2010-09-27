@@ -19,7 +19,7 @@ import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.InternUtil;
 
-import java.io.*;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -33,13 +33,13 @@ public class TransientModelPersistence {
 
   private static final int VERSION = 1;
 
-  public static void saveModel(SModel sourceModel, ObjectOutputStream os) throws IOException {
+  public static void saveModel(SModel sourceModel, ModelOutputStream os) throws IOException {
     os.writeInt(VERSION);
     os.writeUTF(sourceModel.getSModelReference().toString());
     saveNodes(sourceModel.getRoots(), os);
   }
 
-  public static SModel loadModel(ObjectInputStream is) throws IOException, ClassNotFoundException {
+  public static SModel loadModel(ModelInputStream is) throws IOException, ClassNotFoundException {
     int version = is.readInt();
     if (version != VERSION) {
       return null;
@@ -49,33 +49,33 @@ public class TransientModelPersistence {
     SModel m = new TransientSModel(SModelReference.fromString(modelReference));
     m.setLoading(true);
     List<SNode> roots = loadNodes(m, is);
-    for(SNode root : roots) {
+    for (SNode root : roots) {
       m.addRoot(root);
     }
     return m;
   }
 
-  private static void saveNodes(Collection<SNode> nodes, ObjectOutputStream os) throws IOException {
+  private static void saveNodes(Collection<SNode> nodes, ModelOutputStream os) throws IOException {
     os.writeInt(nodes.size());
     for (SNode n : nodes) {
       saveNode(n, os);
     }
   }
 
-  private static List<SNode> loadNodes(SModel model, ObjectInputStream is) throws IOException, ClassNotFoundException {
+  private static List<SNode> loadNodes(SModel model, ModelInputStream is) throws IOException, ClassNotFoundException {
     int size = is.readInt();
     List<SNode> nodes = new ArrayList<SNode>(size);
-    for(int i = 0; i < size; i++) {
+    for (int i = 0; i < size; i++) {
       nodes.add(loadNode(model, is));
     }
     return nodes;
   }
 
-  private static SNode loadNode(SModel model, ObjectInputStream is) throws ClassNotFoundException, IOException {
-    String conceptFqName = (String) is.readObject();
-    String nodeId = (String) is.readObject();
-    String nodeRole = (String) is.readObject();
-    if(is.readByte() != '{') {
+  private static SNode loadNode(SModel model, ModelInputStream is) throws ClassNotFoundException, IOException {
+    String conceptFqName = is.readString();
+    String nodeId = is.readString();
+    String nodeRole = is.readString();
+    if (is.readByte() != '{') {
       throw new IOException("bad stream, no '{'");
     }
 
@@ -84,29 +84,29 @@ public class TransientModelPersistence {
     node.setId(SNodeId.fromString(nodeId));
 
     int properties = is.readInt();
-    for(; properties > 0; properties--) {
-      String key = (String) is.readObject();
-      String value = (String) is.readObject();
+    for (; properties > 0; properties--) {
+      String key = is.readString();
+      String value = is.readString();
       node.setProperty(InternUtil.intern(key), InternUtil.intern(value), false);
     }
 
     int references = is.readInt();
-    for(; references > 0; references--) {
+    for (; references > 0; references--) {
       int kind = is.readInt();
-      String targetNodeId = kind == 1 ? (String) is.readObject() : null;
+      String targetNodeId = kind == 1 ? is.readString() : null;
 
-      String role = (String) is.readObject();
-      String targetModelRef = (String) is.readObject();
-      String resolveInfo = (String) is.readObject();
-      if(kind == 1) {
+      String role = is.readString();
+      String targetModelRef = is.readString();
+      String resolveInfo = is.readString();
+      if (kind == 1) {
         node.addReference(
-           new StaticReference(
-             role,
-             node,
-             targetModelRef != null ? SModelReference.fromString(targetModelRef) : null,
-             targetNodeId != null ? SNodeId.fromString(targetNodeId) : null,
-             resolveInfo));
-      } else if(kind == 2) {
+          new StaticReference(
+            role,
+            node,
+            targetModelRef != null ? SModelReference.fromString(targetModelRef) : null,
+            targetNodeId != null ? SNodeId.fromString(targetNodeId) : null,
+            resolveInfo));
+      } else if (kind == 2) {
         node.addReference(
           new DynamicReference(
             role,
@@ -125,23 +125,23 @@ public class TransientModelPersistence {
       node.addChild(role, child);
     }
 
-    if(is.readByte() != '}') {
+    if (is.readByte() != '}') {
       throw new IOException("bad stream, no '}'");
     }
     return node;
   }
 
-  private static void saveNode(SNode node, ObjectOutputStream os) throws IOException {
-    os.writeObject(node.getConceptFqName());
-    os.writeObject(node.getId());
-    os.writeObject(node.getRole_());
+  private static void saveNode(SNode node, ModelOutputStream os) throws IOException {
+    os.writeString(node.getConceptFqName());
+    os.writeString(node.getId());
+    os.writeString(node.getRole_());
     os.writeByte('{');
 
     Map<String, String> properties = node.getProperties();
     os.writeInt(properties.size());
     for (Entry<String, String> entry : properties.entrySet()) {
-      os.writeObject(entry.getKey());
-      os.writeObject(entry.getValue());
+      os.writeString(entry.getKey());
+      os.writeString(entry.getValue());
     }
 
     Collection<SReference> refs = node.getReferencesIterable();
@@ -151,15 +151,15 @@ public class TransientModelPersistence {
       if (reference instanceof StaticReference) {
         os.writeInt(1);
         SNodeId targetId = reference.getTargetNodeId();
-        os.writeObject(targetId != null ? targetId.toString() : null);
+        os.writeString(targetId != null ? targetId.toString() : null);
       } else if (reference instanceof DynamicReference) {
         os.writeInt(2);
       } else {
         throw new IOException("cannot store reference: " + reference.toString());
       }
-      os.writeObject(reference.getRole());
-      os.writeObject(targetModelReference != null ? targetModelReference.toString() : null);
-      os.writeObject(reference.getResolveInfo());
+      os.writeString(reference.getRole());
+      os.writeString(targetModelReference != null ? targetModelReference.toString() : null);
+      os.writeString(reference.getResolveInfo());
     }
 
     saveNodes(node.getChildren(), os);
