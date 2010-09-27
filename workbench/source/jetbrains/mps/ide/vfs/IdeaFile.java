@@ -97,18 +97,7 @@ class IdeaFile implements IFileEx {
       }
       return Collections.unmodifiableList(result);
     } else {
-      // TODO this is a hack for class loaders
-      File[] children = new File(myPath).listFiles();
-      ArrayList<IFile> result = new ArrayList<IFile>();
-      if (children == null) {
-        return Arrays.asList();
-      }
-      for (File child : children) {
-        if (filter.accept(this, child.getName())) {
-          result.add(new IdeaFile(myProvider, child.getAbsolutePath()));
-        }
-      }
-      return result;
+      return Arrays.asList();
     }
   }
 
@@ -128,8 +117,7 @@ class IdeaFile implements IFileEx {
         return new IdeaFile(myProvider, child);
       }
     } else {
-      // TODO this is a hack for class loaders
-      return new IdeaFile(myProvider, myPath + File.separator + name);
+      return null;
     }
   }
 
@@ -148,8 +136,7 @@ class IdeaFile implements IFileEx {
     if (findVirtualFile()) {
       return myVirtualFile.getModificationStamp();
     } else {
-      // TODO this is a hack for class loaders
-      return new File(myPath).lastModified();
+      return -1;
     }
   }
 
@@ -158,8 +145,7 @@ class IdeaFile implements IFileEx {
     if (findVirtualFile()) {
       return myVirtualFile.getLength();
     } else {
-      // TODO this is a hack for class loaders
-      return new File(myPath).length();
+      return -1;
     }
   }
 
@@ -199,7 +185,7 @@ class IdeaFile implements IFileEx {
 
   @Override
   public boolean exists() {
-    return findVirtualFile() && myVirtualFile.exists() || new File(myPath).exists(); // TODO this is a hack for class loaders
+    return findVirtualFile() && myVirtualFile.exists();
   }
 
   @Override
@@ -224,8 +210,7 @@ class IdeaFile implements IFileEx {
     if (findVirtualFile()) {
       return myVirtualFile.getInputStream();
     } else {
-      // TODO this is a hack for class loaders
-      return new FileInputStream(myPath);
+      throw new FileNotFoundException("File not found: " + myPath);
     }
   }
 

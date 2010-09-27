@@ -20,10 +20,10 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ReadUtil;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.IFile;
 
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.*;
@@ -32,8 +32,6 @@ import java.util.zip.ZipFile;
 
 public class JarFileClassPathItem extends RealClassPathItem {
   private static final Logger LOG = Logger.getLogger(JarFileClassPathItem.class);
-
-  private IFile myIFile;
 
   //computed during init
   private boolean myIsInitialized = false;
@@ -47,24 +45,18 @@ public class JarFileClassPathItem extends RealClassPathItem {
   private static final HashSet<String> DEFAULT_VALUE = new HashSet<String>(0);
 
   protected JarFileClassPathItem(String path) {
-    this(FileSystem.getInstance().getFileByPath(path));
-  }
-
-  private JarFileClassPathItem(IFile file) {
-    myIFile = file;
-
     try {
-      myFile = transformFile(myIFile);
-      myPrefix = "jar:" + myFile.toURL() + "!/";
+      myFile = new File(path);
+      myPrefix = "jar:" + myFile.toURI().toURL() + "!/";
       myZipFile = new ZipFile(myFile);
     } catch (IOException e) {
       LOG.error(e);
     }
   }
 
-  public IFile getIFile() {
+  public String getAbsolutePath() {
     checkValidity();
-    return myIFile;
+    return myFile.getAbsolutePath(); 
   }
 
   public File getFile() {
@@ -153,7 +145,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
 
   public long getTimestamp() {
     checkValidity();
-    return myIFile.lastModified();
+    return myFile.lastModified();
   }
 
   public List<IClassPathItem> flatten() {
@@ -169,7 +161,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
   }
 
   public String toString() {
-    return "jar-cp: " + myIFile;
+    return "jar-cp: " + myFile;
   }
 
   private void ensureInitialized() {
@@ -241,35 +233,6 @@ public class JarFileClassPathItem extends RealClassPathItem {
     int lastDot = pack.lastIndexOf(".");
     if (lastDot == -1) return "";
     return pack.substring(0, lastDot);
-  }
-
-  private static File transformFile(IFile f) throws IOException {
-    if (!FileSystem.getInstance().isPackaged(f)) {
-      return new File(f.getAbsolutePath());
-    }
-
-    File tmpFile = File.createTempFile(f.getName(), "tmp");
-    tmpFile.deleteOnExit();
-
-    OutputStream os = null;
-    InputStream is = null;
-    try {
-      is = new BufferedInputStream(f.openInputStream());
-      os = new BufferedOutputStream(new FileOutputStream(tmpFile));
-      int result;
-      while ((result = is.read()) != -1) {
-        os.write(result);
-      }
-    } finally {
-      if (is != null) {
-        is.close();
-      }
-      if (os != null) {
-        os.close();
-      }
-    }
-
-    return tmpFile;
   }
 
   //do not touch this class if you are not sure in your changes - this can lead to excess memory consumption (see #53513)

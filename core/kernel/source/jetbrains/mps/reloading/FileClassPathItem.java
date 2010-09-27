@@ -20,10 +20,9 @@ import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ReadUtil;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.IFile;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
@@ -63,12 +62,11 @@ public class FileClassPathItem extends RealClassPathItem {
     }
 
     String path = myClassPath + File.separatorChar + NameUtil.pathFromNamespace(name) + MPSExtentions.DOT_CLASSFILE;
-    IFile file = FileSystem.getInstance().getFileByPath(path);
     try {
       byte[] result = null;
       InputStream inp = null;
       try {
-        inp = file.openInputStream();
+        inp = new FileInputStream(path);
         result = ReadUtil.read(inp);
       } finally {
         if (inp != null) {
@@ -84,11 +82,10 @@ public class FileClassPathItem extends RealClassPathItem {
 
   public ClassifierKind getClassifierKind(String name) {
     String path = myClassPath + File.separatorChar + NameUtil.pathFromNamespace(name) + MPSExtentions.DOT_CLASSFILE;
-    IFile file = FileSystem.getInstance().getFileByPath(path);
     try {
       InputStream inp = null;
       try {
-        inp = file.openInputStream();
+        inp = new FileInputStream(path);
         return ClassifierKind.getClassifierKind(inp);
       } finally {
         if (inp != null) {
@@ -103,9 +100,9 @@ public class FileClassPathItem extends RealClassPathItem {
   public URL getResource(String name) {
     checkValidity();
     try {
-      IFile resourceFile = FileSystem.getInstance().getFileByPath(myClassPath + File.separator + name.replace('/', File.separatorChar));
+      File resourceFile = new File(myClassPath + File.separator + name.replace('/', File.separatorChar));
       if (!resourceFile.exists()) return null;
-      return FileSystem.getInstance().getURL(resourceFile);
+      return resourceFile.toURI().toURL();
     } catch (MalformedURLException e) {
       return null;
     }
@@ -139,15 +136,15 @@ public class FileClassPathItem extends RealClassPathItem {
     namespace = InternUtil.intern(namespace);
     Set<String> subpacks = null;
     Set<String> classes = null;
-    IFile dir = getModelDir(namespace);
+    File dir = getModelDir(namespace);
 
-    List<IFile> files = dir.list();
+    File[] files = dir.listFiles();
     if (files != null) {
-      for (IFile file : files) {
+      for (File file : files) {
         String name = file.getName();
         if (name.endsWith(MPSExtentions.DOT_CLASSFILE)) { //isDirectory is quite expensive operation
           if (classes == null) {
-            classes = new HashSet<String>(files.size());
+            classes = new HashSet<String>(files.length);
           }
           classes.add(name.substring(0, name.length() - MPSExtentions.DOT_CLASSFILE.length()));
         } else {
@@ -167,10 +164,10 @@ public class FileClassPathItem extends RealClassPathItem {
 
   public long getClassesTimestamp(String namespace) {
     checkValidity();
-    IFile dir = getModelDir(namespace);
+    File dir = getModelDir(namespace);
     long result = dir.lastModified();
     if (dir.exists()) {
-      for (IFile file : dir.list()) {
+      for (File file : dir.listFiles()) {
         if (file.getName().endsWith(MPSExtentions.DOT_CLASSFILE)) {
           result = Math.max(result, file.lastModified());
         }
@@ -192,10 +189,10 @@ public class FileClassPathItem extends RealClassPathItem {
     visitor.visit(this);
   }
 
-  public IFile getModelDir(String namespace) {
+  private File getModelDir(String namespace) {
     checkValidity();
     if (namespace == null) namespace = "";
-    return FileSystem.getInstance().getFileByPath(myClassPath + File.separatorChar + NameUtil.pathFromNamespace(namespace));
+    return new File(myClassPath + File.separatorChar + NameUtil.pathFromNamespace(namespace));
   }
 
 

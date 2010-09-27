@@ -5320,7 +5320,7 @@
                       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1040213783748331929" />
                       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1040213783748331930" />
                       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1040213783748331931">
-                        <property name="name:3" value="p0" />
+                        <property name="name:3" value="item" />
                         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1040213783748331932">
                           <link role="classifier:3" targetNodeId="11.~FileClassPathItem" resolveInfo="FileClassPathItem" />
                         </node>
@@ -5377,7 +5377,7 @@
                       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1040213783748331942" />
                       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1040213783748331943" />
                       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1040213783748331944">
-                        <property name="name:3" value="p0" />
+                        <property name="name:3" value="item" />
                         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1040213783748331945">
                           <link role="classifier:3" targetNodeId="11.~JarFileClassPathItem" resolveInfo="JarFileClassPathItem" />
                         </node>
@@ -5398,17 +5398,12 @@
                             </node>
                             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8223737516323747320">
                               <link role="baseMethodDeclaration:3" targetNodeId="18.~List.contains(java.lang.Object):boolean" resolveInfo="contains" />
-                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8223737516323747321">
-                                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8223737516323747322">
-                                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="8223737516323747323">
-                                    <link role="variableDeclaration:3" targetNodeId="1040213783748331944" resolveInfo="p0" />
-                                  </node>
-                                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8223737516323747324">
-                                    <link role="baseMethodDeclaration:3" targetNodeId="11.~JarFileClassPathItem.getIFile():jetbrains.mps.vfs.IFile" resolveInfo="getIFile" />
-                                  </node>
+                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8223737516323747322">
+                                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="8223737516323747323">
+                                  <link role="variableDeclaration:3" targetNodeId="1040213783748331944" resolveInfo="p0" />
                                 </node>
-                                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5609063547583686976">
-                                  <link role="baseMethodDeclaration:3" targetNodeId="7.~IFile.getAbsolutePath():java.lang.String" resolveInfo="getAbsolutePath" />
+                                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8223737516323747324">
+                                  <link role="baseMethodDeclaration:3" targetNodeId="11.~JarFileClassPathItem.getAbsolutePath():java.lang.String" resolveInfo="getAbsolutePath" />
                                 </node>
                               </node>
                             </node>
@@ -5420,17 +5415,12 @@
                               <link role="variableDeclaration:3" targetNodeId="1218648416969" resolveInfo="result" />
                             </node>
                             <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="1040213783748331972">
-                              <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1040213783748331988">
-                                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1040213783748331979">
-                                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1040213783748331976">
-                                    <link role="variableDeclaration:3" targetNodeId="1040213783748331944" resolveInfo="p0" />
-                                  </node>
-                                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1040213783748331985">
-                                    <link role="baseMethodDeclaration:3" targetNodeId="11.~JarFileClassPathItem.getIFile():jetbrains.mps.vfs.IFile" resolveInfo="getIFile" />
-                                  </node>
+                              <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1040213783748331979">
+                                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1040213783748331976">
+                                  <link role="variableDeclaration:3" targetNodeId="1040213783748331944" resolveInfo="p0" />
                                 </node>
-                                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5609063547583686978">
-                                  <link role="baseMethodDeclaration:3" targetNodeId="7.~IFile.getAbsolutePath():java.lang.String" resolveInfo="getAbsolutePath" />
+                                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1040213783748331985">
+                                  <link role="baseMethodDeclaration:3" targetNodeId="11.~JarFileClassPathItem.getAbsolutePath():java.lang.String" resolveInfo="getAbsolutePath" />
                                 </node>
                               </node>
                             </node>
