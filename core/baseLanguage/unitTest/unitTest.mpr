@@ -41,12 +41,9 @@
             <option name="workingDirectory" />
           </ConfigRunParameters>
         </option>
-        <option name="node" value="jetbrains.mps.internalCollections.test.basicOperations.Sequence_Test" />
         <option name="nodes" />
         <option name="model" value="jetbrains.mps.internalCollections.test.basicOperations" />
         <option name="module" value="internalCollections.test" />
-        <option name="method" />
-        <option name="methods" />
         <option name="fullMethodNames">
           <list />
         </option>
