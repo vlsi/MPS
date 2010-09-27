@@ -90,6 +90,10 @@ public class IntermediateModelsCache {
     mySteps = steps;
   }
 
+  public int getMinorCount(int majorStep) {
+    return mySteps.get(majorStep);
+  }
+
   public void store(int majorStep, int minor, TransientModelWithMetainfo model) {
     try {
       if(majorStep == mySteps.size()) {

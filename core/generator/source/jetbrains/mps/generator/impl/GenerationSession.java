@@ -291,7 +291,7 @@ public class GenerationSession {
   private boolean applyRules(SModel currentInputModel, SModel currentOutputModel, final boolean isPrimary,
                              RuleManager ruleManager) throws GenerationFailureException, GenerationCanceledException {
     boolean hasChanges;
-    myDependenciesBuilder.setOutputModel(currentOutputModel);
+    myDependenciesBuilder.setOutputModel(currentOutputModel, myMajorStep, myMinorStep);
     final TemplateGenerator tg =
       myGenerationOptions.isGenerateInParallel()
         ? new ParallelTemplateGenerator(myController, mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentOutputModel, myGenerationOptions, myDependenciesBuilder, ttrace)
@@ -367,7 +367,7 @@ public class GenerationSession {
       myDependenciesBuilder.scriptApplied(currentInputModel);
       if(myNewCache != null) {
         TransientModelWithMetainfo modelWithMetaInfo = TransientModelWithMetainfo.create(currentInputModel, null, myDependenciesBuilder);
-        myNewCache.store(myMajorStep, 0, modelWithMetaInfo);
+        myNewCache.store(myMajorStep, myMinorStep, modelWithMetaInfo);
       }
       recycleWasteModel(toRecycle);
     }
@@ -414,6 +414,10 @@ public class GenerationSession {
     }
     if (needToCloneModel) {
       myDependenciesBuilder.scriptApplied(currentModel);
+      if(myNewCache != null) {
+        TransientModelWithMetainfo modelWithMetaInfo = TransientModelWithMetainfo.create(currentModel, null, myDependenciesBuilder);
+        myNewCache.store(myMajorStep, myMinorStep, modelWithMetaInfo);
+      }
       recycleWasteModel(toRecycle);
     }
     if (myLogger.needsInfo() && postProcessed) {

@@ -1,5 +1,7 @@
 package jetbrains.mps.generator.impl.dependencies;
 
+import jetbrains.mps.generator.impl.GenerationFailureException;
+import jetbrains.mps.generator.impl.GeneratorMappings;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
@@ -19,11 +21,13 @@ public interface DependenciesBuilder {
 
   void updateModel(SModel newInputModel);
 
-  void setOutputModel(SModel model);
+  void setOutputModel(SModel model, int majorStep, int minorStep);
 
   void dropModel();
 
   GenerationDependencies getResult(IOperationContext operationContext);
+
+  void reloadRequired(GeneratorMappings mappings) throws GenerationFailureException;
 
   public static class NullDependenciesBuilder implements DependenciesBuilder {
 
@@ -50,7 +54,7 @@ public interface DependenciesBuilder {
     }
 
     @Override
-    public void setOutputModel(SModel model) {
+    public void setOutputModel(SModel model, int majorStep, int minorStep) {
     }
 
     @Override
@@ -60,6 +64,10 @@ public interface DependenciesBuilder {
     @Override
     public GenerationDependencies getResult(IOperationContext operationContext) {
       return null;
+    }
+
+    @Override
+    public void reloadRequired(GeneratorMappings mappings) {
     }
   }
 }

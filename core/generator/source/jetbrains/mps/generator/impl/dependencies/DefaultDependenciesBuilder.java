@@ -1,15 +1,18 @@
 package jetbrains.mps.generator.impl.dependencies;
 
+import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.ModelDigestHelper;
+import jetbrains.mps.generator.impl.GenerationFailureException;
+import jetbrains.mps.generator.impl.GeneratorMappings;
+import jetbrains.mps.generator.impl.cache.IntermediateModelsCache;
+import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Dependencies collector. Created once per model generation.
@@ -23,6 +26,7 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
   private Map<SNode, RootDependenciesBuilder> myRootBuilders = new HashMap<SNode, RootDependenciesBuilder>();
   private RootDependenciesBuilder[] myAllBuilders;
   private String myModelHash;
+  private Set<String> myRequiredSet;
 
   /* next step input -> original */
   Map<SNode, SNode> nextStepToOriginalMap;
@@ -30,13 +34,18 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
   /* current step data */
   Map<SNode, SNode> currentToOriginalMap;
   SModel currentInputModel;
+  private final IntermediateModelsCache myCache;
   SModel currentOutputModel;
+  int myMajorStep = -1;
+  int myMinorStep = -1;
 
-  public DefaultDependenciesBuilder(SModel originalInputModel, @Nullable Map<String, String> generationHashes) {
+  public DefaultDependenciesBuilder(SModel originalInputModel, @Nullable Map<String, String> generationHashes, IntermediateModelsCache cache) {
     currentInputModel = originalInputModel;
+    myCache = cache;
     currentOutputModel = null;
     myModelHash = generationHashes == null ? null : generationHashes.get(ModelDigestHelper.FILE);
     initData(getRoots(originalInputModel), generationHashes);
+    myRequiredSet = new HashSet<String>();
   }
 
   private void initData(SNode[] roots, Map<String, String> generationHashes) {
@@ -104,8 +113,10 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
     currentOutputModel = null;
   }
 
-  public void setOutputModel(SModel model) {
+  public void setOutputModel(SModel model, int majorStep, int minorStep) {
     currentOutputModel = model;
+    myMajorStep = majorStep;
+    myMinorStep = minorStep;
   }
 
   public SNode getOriginalForOutput(SNode outputNode) {
@@ -134,5 +145,38 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
   @Override
   public GenerationDependencies getResult(IOperationContext operationContext) {
     return GenerationDependencies.fromData(currentToOriginalMap, myAllBuilders, myModelHash, operationContext);
+  }
+
+  @Override
+  public void reloadRequired(GeneratorMappings mappings) throws GenerationFailureException {
+    if(myCache == null || myRequiredSet.isEmpty()) {
+      assert myRequiredSet.isEmpty();
+      return;
+    }
+
+    int stepsCount = myCache.getMinorCount(myMajorStep);
+    // TODO if(myMinorStep >= stepCount) copy from current input model
+    TransientModelWithMetainfo model = myCache.load(myMajorStep, myMinorStep >= stepsCount ? stepsCount - 1 : myMinorStep);
+    if(model == null) {
+      throw new GenerationFailureException("Cannot load required data from cache. Try to regenerate model.");
+    }
+
+    List<SNode> toCopy = new ArrayList<SNode>(myRequiredSet.size()*2 + 16);
+    for(Iterator<SNode> it = model.getModel().roots(); it.hasNext(); ) {
+      SNode root = it.next();
+      String originalId = model.getOriginal(root);
+      if(myRequiredSet.contains(originalId)) {
+        toCopy.add(root);
+      }
+    }
+
+    for(SNode node : toCopy) {
+      currentOutputModel.addRoot(node);
+    }
+  }
+
+  public void addRequired(RootDependenciesBuilder rootDependenciesBuilder) {
+    SNode root = rootDependenciesBuilder.getOriginalRoot();
+    myRequiredSet.add(root == null ? TransientModelWithMetainfo.CONDITIONALS_ID : root.getId());
   }
 }

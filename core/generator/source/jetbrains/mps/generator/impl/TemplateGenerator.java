@@ -114,6 +114,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       myOutputModel.addRoot(outputRoot);
     }
 
+    // reload "required" roots from cache
+    myDependenciesBuilder.reloadRequired(myMappings);
+
     // weaving
     ttrace.push("weavings", false);
     applyWeaving_MappingRules();
@@ -302,7 +305,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return false;
   }
 
-  /**
+  /*
    * Unsynchronized
    */
   @Nullable
@@ -333,8 +336,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return myExecutionContext;
   }
 
-  /**
-   * @return null if no reductions found
+  /*
+   * returns null if no reductions found
    */
   @Nullable
   List<SNode> tryToReduce(SNode inputNode, String mappingName, @NotNull ReductionContext reductionContext) throws GenerationFailureException, GenerationCanceledException {

@@ -33,7 +33,7 @@ import java.util.Map.Entry;
  */
 public class TransientModelWithMetainfo {
 
-  private static final String CONDITIONALS_ID = "";
+  public static final String CONDITIONALS_ID = "";
 
   private SModel myModel;
   private Map<String,String> myRootToOriginal;
@@ -41,6 +41,14 @@ public class TransientModelWithMetainfo {
   public TransientModelWithMetainfo(SModel model) {
     myModel = model;
     myRootToOriginal = new HashMap<String, String>();
+  }
+
+  public SModel getModel() {
+    return myModel;
+  }
+
+  public String getOriginal(SNode root) {
+    return myRootToOriginal.get(root.getId());
   }
 
   public void save(ObjectOutputStream os) throws IOException {

@@ -20,6 +20,7 @@ public class RootDependenciesBuilder implements DependenciesReadListener {
   private final DefaultDependenciesBuilder myBuilder;
   private final String myHash;
   private boolean isUnchanged;
+  private boolean isRequired;
 
   private boolean dependsOnConditionals = false;
   private Set<SNode> dependsOn = new HashSet<SNode>();
@@ -31,6 +32,7 @@ public class RootDependenciesBuilder implements DependenciesReadListener {
     myBuilder = builder;
     myHash = hash;
     isUnchanged = false;
+    isRequired = false;
   }
 
   private void addNodeAccess(SNode node) {
@@ -198,10 +200,16 @@ public class RootDependenciesBuilder implements DependenciesReadListener {
     return isUnchanged;
   }
 
-  public void loadDependencies(GenerationRootDependencies previous, boolean isRequired) {
-    if(!isRequired) {
-      mySavedDependencies = previous;
-      isUnchanged = true;
+  public boolean isRequired() {
+    return isRequired;
+  }
+
+  public void loadDependencies(GenerationRootDependencies previous, boolean required) {
+    mySavedDependencies = previous;
+    isUnchanged = true;
+    if(required) {
+      isRequired = true;
+      myBuilder.addRequired(this);
     }
   }
 

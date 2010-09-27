@@ -435,11 +435,7 @@ public class GenerationFilter {
       return new NullDependenciesBuilder();
     }
 
-    DefaultDependenciesBuilder result = new DefaultDependenciesBuilder(myModel.getSModel(), myGenerationHashes);
-    if (myUnchangedRoots.isEmpty() && myConditionalsUnchanged == false) {
-      return result;
-    }
-
+    DefaultDependenciesBuilder result = new DefaultDependenciesBuilder(myModel.getSModel(), myGenerationHashes, myCache);
     for (SNode root : myUnchangedRoots) {
       propagateDependencies(result.getRootBuilder(root), mySavedDependencies.getDependenciesFor(root.getId()), false);
     }
@@ -449,7 +445,6 @@ public class GenerationFilter {
     if (myConditionalsUnchanged || myConditionalsRequired) {
       propagateDependencies(result.getRootBuilder(null), mySavedDependencies.getDependenciesFor(ModelDigestHelper.HEADER), myConditionalsRequired);
     }
-
     return result;
   }
 
