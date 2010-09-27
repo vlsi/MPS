@@ -57,6 +57,11 @@ public class BreakpointsTable extends BreakpointsView {
   }
 
   @Override
+  public String getTitle() {
+    return "Table View";
+  }
+
+  @Override
   public void update() {
     updateBreakpoints();
     myBreakpointsTableModel.fireTableDataChanged();

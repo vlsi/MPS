@@ -101,6 +101,11 @@ public class BreakpointsTree extends BreakpointsView {
     return myModelKind.isVisible();
   }
 
+  @Override
+  public String getTitle() {
+    return "Tree View";
+  }
+
   public void update() {
     updateBreakpoints();
     myTree.rebuildLater();

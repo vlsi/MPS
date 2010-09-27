@@ -9,7 +9,6 @@ import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
@@ -24,30 +23,31 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
   private final JPanel myMainPanel;
   private final IOperationContext myContext;
   private final BreakpointManagerComponent myBreakpointsManager;
-  private BreakpointsView myBreakpointsView;
   private AnAction myShowNodeAction;
   private AnAction myGotoNodeAction;
   private AnAction myDeleteBreakpointAction;
   private final JScrollPane myBreakpointsScrollPane;
+  private final BreakpointsView[] myViews;
+  private int myCurrentViewIndex = 0;
 
   public BreakpointsBrowserDialog(IOperationContext context) {
     super(context.getMainFrame(), "Breakpoints");
 
     myContext = context;
     myBreakpointsManager = myContext.getComponent(BreakpointManagerComponent.class);
-    myBreakpointsView = new BreakpointsTable(myBreakpointsManager);
+    myViews = new BreakpointsView[]{new BreakpointsTable(myBreakpointsManager), new BreakpointsTree(myContext, myBreakpointsManager)};
 
     myMainPanel = new JPanel(new BorderLayout());
 
-    myBreakpointsScrollPane = new JScrollPane(myBreakpointsView.getMainComponent());
+    myBreakpointsScrollPane = new JScrollPane(myViews[myCurrentViewIndex].getMainComponent());
     myBreakpointsScrollPane.getViewport().setBackground(UIManager.getColor("Table.background"));
     myMainPanel.add(myBreakpointsScrollPane, BorderLayout.CENTER);
 
     ActionToolbar actionToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, createActions(), true);
     myMainPanel.add(actionToolbar.getComponent(), BorderLayout.NORTH);
 
-    // register keyboard/mouse actions on the view
-    registerActionsOnTheView();
+    // register keyboard/mouse actions on all views
+    registerActionsOnViews();
   }
 
   private ActionGroup createActions() {
@@ -93,7 +93,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
             myBreakpointsManager.removeBreakpoint(breakpoint);
           }
         });
-        myBreakpointsView.breakpointDeleted(breakpoint); //todo get rid of that!
+        myViews[myCurrentViewIndex].breakpointDeleted(breakpoint); //todo get rid of that!
       }
 
       @Override
@@ -113,13 +113,8 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
 
       @Override
       public void setSelected(AnActionEvent e, boolean state) {
-        if (state) {
-          switchView(new BreakpointsTree(myContext, myBreakpointsManager));
-          e.getPresentation().setText("List View");
-        } else {
-          switchView(new BreakpointsTable(myBreakpointsManager));
-          e.getPresentation().setText("Tree View");
-        }
+        switchView();
+        e.getPresentation().setText(myViews[1 - myCurrentViewIndex].getTitle());
       }
     });
     group.add(new ToggleAction("Group By Module", "Group By Module", jetbrains.mps.ide.findusages.view.icons.Icons.MODULE_ICON) {
@@ -134,13 +129,13 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
         if (!isTreeView()) {
           return false;
         }
-        BreakpointsTree tree = (BreakpointsTree) myBreakpointsView;
+        BreakpointsTree tree = (BreakpointsTree) myViews[myCurrentViewIndex];
         return tree.isModuleGroupVisible();
       }
 
       @Override
       public void setSelected(AnActionEvent e, boolean state) {
-        BreakpointsTree tree = (BreakpointsTree) myBreakpointsView;
+        BreakpointsTree tree = (BreakpointsTree) myViews[myCurrentViewIndex];
         tree.toggleModuleGroup(state);
         tree.update();
       }
@@ -157,13 +152,13 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
         if (!isTreeView()) {
           return false;
         }
-        BreakpointsTree tree = (BreakpointsTree) myBreakpointsView;
+        BreakpointsTree tree = (BreakpointsTree) myViews[myCurrentViewIndex];
         return tree.isModelGroupVisible();
       }
 
       @Override
       public void setSelected(AnActionEvent e, boolean state) {
-        BreakpointsTree tree = (BreakpointsTree) myBreakpointsView;
+        BreakpointsTree tree = (BreakpointsTree) myViews[myCurrentViewIndex];
         tree.toggleModelGroup(state);
         tree.update();
       }
@@ -180,13 +175,13 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
         if (!isTreeView()) {
           return false;
         }
-        BreakpointsTree tree = (BreakpointsTree) myBreakpointsView;
+        BreakpointsTree tree = (BreakpointsTree) myViews[myCurrentViewIndex];
         return tree.isRootGroupVisible();
       }
 
       @Override
       public void setSelected(AnActionEvent e, boolean state) {
-        BreakpointsTree tree = (BreakpointsTree) myBreakpointsView;
+        BreakpointsTree tree = (BreakpointsTree) myViews[myCurrentViewIndex];
         tree.toggleRootGroup(state);
         tree.update();
       }
@@ -201,51 +196,52 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
   }
 
   private boolean isTreeView() {
-    return myBreakpointsView instanceof BreakpointsTree;
+    return myViews[myCurrentViewIndex] instanceof BreakpointsTree;
   }
 
-  private void switchView(BreakpointsView breakpointsView) {
-    myBreakpointsView = breakpointsView;
-    myBreakpointsScrollPane.setViewportView(myBreakpointsView.getMainComponent());
-    registerActionsOnTheView();
+  private void switchView() {
+    myCurrentViewIndex = 1 - myCurrentViewIndex;
+    myBreakpointsScrollPane.setViewportView(myViews[myCurrentViewIndex].getMainComponent());
   }
 
-  private void registerActionsOnTheView() {
-    // show on enter
-    myBreakpointsView.getMainComponent().getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), COMMAND_SHOW_NODE);
-    myBreakpointsView.getMainComponent().getActionMap().put(COMMAND_SHOW_NODE, new AbstractAction() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        myShowNodeAction.actionPerformed(null);
-      }
-    });
-    // open on f4
-    myBreakpointsView.getMainComponent().registerKeyboardAction(new AbstractAction() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        myGotoNodeAction.actionPerformed(null);
-      }
-    }, KeyStroke.getKeyStroke("F4"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-    // delete on del
-    myBreakpointsView.getMainComponent().registerKeyboardAction(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        myDeleteBreakpointAction.actionPerformed(null);
-      }
-    }, KeyStroke.getKeyStroke("DELETE"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-
-    // open on double click
-    myBreakpointsView.getMainComponent().addMouseListener(new MouseAdapter() {
-      @Override
-      public void mouseClicked(MouseEvent e) {
-        if (e.getClickCount() == 2) {
-          AbstractMPSBreakpoint breakpoint = BreakpointsView.MPS_BREAKPOINT.getData(myBreakpointsView);
-          if (breakpoint == null) return;
-          dispose();
-          openNode(breakpoint, true, true);
+  private void registerActionsOnViews() {
+    for (int index = 0; index < myViews.length; index++) {
+      // show on enter
+      myViews[index].getMainComponent().getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), COMMAND_SHOW_NODE);
+      myViews[index].getMainComponent().getActionMap().put(COMMAND_SHOW_NODE, new AbstractAction() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          myShowNodeAction.actionPerformed(null);
         }
-      }
-    });
+      });
+      // open on f4
+      myViews[index].getMainComponent().registerKeyboardAction(new AbstractAction() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          myGotoNodeAction.actionPerformed(null);
+        }
+      }, KeyStroke.getKeyStroke("F4"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+      // delete on del
+      myViews[index].getMainComponent().registerKeyboardAction(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          myDeleteBreakpointAction.actionPerformed(null);
+        }
+      }, KeyStroke.getKeyStroke("DELETE"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+
+      // open on double click
+      myViews[index].getMainComponent().addMouseListener(new MouseAdapter() {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+          if (e.getClickCount() == 2) {
+            AbstractMPSBreakpoint breakpoint = BreakpointsView.MPS_BREAKPOINT.getData(myViews[myCurrentViewIndex]);
+            if (breakpoint == null) return;
+            dispose();
+            openNode(breakpoint, true, true);
+          }
+        }
+      });
+    }
   }
 
   private void openNode(final AbstractMPSBreakpoint breakpoint, final boolean focus, final boolean select) {
@@ -277,6 +273,6 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
   @Override
   @Nullable
   public Object getData(@NonNls String dataId) {
-    return myBreakpointsView.getData(dataId);
+    return myViews[myCurrentViewIndex].getData(dataId);
   }
 }
