@@ -18,6 +18,7 @@ package jetbrains.mps.debug.api.integration.ui.breakpoint;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
@@ -47,6 +48,10 @@ public abstract class GroupedTree<D> extends MPSTree {
     @Nullable
     public Icon getIcon(T group) {
       return null;
+    }
+
+    public String getText(@NotNull T group) {
+      return group.toString();
     }
 
     @Nullable
@@ -81,10 +86,12 @@ public abstract class GroupedTree<D> extends MPSTree {
 
   private class GroupTreeNode<T> extends MPSTreeNode {
     private final Collection<D> myBreakpoints;
+    @NotNull
     private final T myGroup;
+    @NotNull
     private final GroupKind<D, T> myKind;
 
-    public GroupTreeNode(IOperationContext operationContext, GroupKind<D, T> kind, T group, Collection<D> breakpoints) {
+    public GroupTreeNode(IOperationContext operationContext, @NotNull GroupKind<D, T> kind, @NotNull T group, Collection<D> breakpoints) {
       super(operationContext);
       myBreakpoints = breakpoints;
       myGroup = group;
@@ -111,7 +118,7 @@ public abstract class GroupedTree<D> extends MPSTree {
 
     @Override
     protected void updatePresentation() {
-      setText(myGroup.toString());
+      setText(myKind.getText(myGroup));
       setNodeIdentifier(getText());
       Icon icon = myKind.getIcon(myGroup);
       if (icon != null) {

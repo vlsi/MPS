@@ -29,6 +29,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -165,6 +166,11 @@ public class BreakpointsTree extends BreakpointsView {
     @Override
     public GroupKind getSubGroupKind() {
       return myRootKind;
+    }
+
+    @Override
+    public String getText(@NotNull SModelReference group) {
+      return group.getLongName();
     }
 
     @Override
