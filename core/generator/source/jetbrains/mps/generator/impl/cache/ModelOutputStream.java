@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.generator.impl.cache;
 
-import com.sun.istack.internal.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.BufferedOutputStream;
 import java.io.DataOutputStream;
