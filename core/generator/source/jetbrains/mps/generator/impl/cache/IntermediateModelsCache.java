@@ -18,6 +18,8 @@ package jetbrains.mps.generator.impl.cache;
 import jetbrains.mps.generator.GenerationCacheContainer.ModelCacheContainer;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Evgeny Gryaznov, Sep 21, 2010
@@ -25,23 +27,45 @@ import java.io.*;
 public class IntermediateModelsCache {
 
   private static final String SIGNATURE = "signature";
-  private static final String STEP = "step";
+  private static final String STEPS = "steps";
 
   private final ModelCacheContainer myCacheContainer;
   private final String mySignature;
   private boolean isOk = true;
 
+  private List<Integer> mySteps;
+
   public IntermediateModelsCache(ModelCacheContainer cacheContainer, String signature) {
     myCacheContainer = cacheContainer;
     mySignature = signature;
+    mySteps = new ArrayList<Integer>();
   }
 
   public String getSignature() {
     return mySignature;
   }
 
+  private String getStorageName(int major, int minor) {
+    return "step" + major + "_" + minor;
+  }
+
   public static IntermediateModelsCache load(ModelCacheContainer cacheContainer) {
     try {
+      ObjectInputStream is = new ObjectInputStream(cacheContainer.openStream(STEPS));
+      List<Integer> steps;
+      try {
+        int count = is.readInt();
+        if(count > 10000) {
+          throw new IOException("illegal data");
+        }
+        steps = new ArrayList<Integer>(count);
+        for(int i = 0; i < count; i++) {
+          steps.add(is.readInt());
+        }
+      } finally {
+        is.close();
+      }
+
       InputStreamReader reader = new InputStreamReader(cacheContainer.openStream(SIGNATURE));
       try {
         StringBuilder signature = new StringBuilder();
@@ -50,7 +74,9 @@ public class IntermediateModelsCache {
         while ((size = reader.read(buff)) > 0) {
           signature.append(buff, 0, size);
         }
-        return new IntermediateModelsCache(cacheContainer, signature.toString());
+        IntermediateModelsCache result = new IntermediateModelsCache(cacheContainer, signature.toString());
+        result.setSteps(steps);
+        return result;
       } finally {
         reader.close();
       }
@@ -60,9 +86,20 @@ public class IntermediateModelsCache {
     return null;
   }
 
-  public void store(int step, TransientModelWithMetainfo model) {
+  private void setSteps(List<Integer> steps) {
+    mySteps = steps;
+  }
+
+  public void store(int majorStep, int minor, TransientModelWithMetainfo model) {
     try {
-      OutputStream stream = myCacheContainer.createStream(STEP + step);
+      if(majorStep == mySteps.size()) {
+        mySteps.add(0);
+      }
+      int minorStep = mySteps.get(majorStep);
+      mySteps.set(majorStep, minorStep+1);
+      assert minor == minorStep;
+
+      OutputStream stream = myCacheContainer.createStream(getStorageName(majorStep, minorStep));
       ObjectOutputStream os = new ObjectOutputStream(new BufferedOutputStream(stream));
       try {
         model.save(os);
@@ -74,9 +111,9 @@ public class IntermediateModelsCache {
     }
   }
 
-  public TransientModelWithMetainfo load(int step) {
+  public TransientModelWithMetainfo load(int majorStep, int minorStep) {
     try {
-      InputStream stream = myCacheContainer.openStream(STEP + step);
+      InputStream stream = myCacheContainer.openStream(getStorageName(majorStep, minorStep));
       ObjectInputStream is = new ObjectInputStream(new BufferedInputStream(stream));
       try {
         return TransientModelWithMetainfo.load(is);
@@ -91,6 +128,16 @@ public class IntermediateModelsCache {
 
   public void store() {
     try {
+      ObjectOutputStream os = new ObjectOutputStream(myCacheContainer.createStream(STEPS));
+      try {
+        os.writeInt(mySteps.size());
+        for(Integer i : mySteps) {
+          os.writeInt(i);
+        }
+      } finally {
+        os.close();
+      }
+
       OutputStreamWriter writer = new OutputStreamWriter(myCacheContainer.createStream(SIGNATURE));
       try {
         writer.write(mySignature);

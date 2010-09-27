@@ -86,7 +86,9 @@ public class TransientModelWithMetainfo {
       String originalId = node == null ? CONDITIONALS_ID : node.getId();
       metainfo.myRootToOriginal.put(root.getId(), originalId);
     }
-    mappings.serialize(metainfo);
+    if(mappings != null) {
+      mappings.serialize(metainfo);
+    }
     return metainfo;
   }
 }

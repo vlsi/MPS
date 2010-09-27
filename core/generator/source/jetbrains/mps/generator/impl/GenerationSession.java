@@ -64,7 +64,7 @@ public class GenerationSession {
   private IPerformanceTracer ttrace;
 
   private int myMajorStep = 0;
-  private int myTransientModelsCount = 0;
+  private int myMinorStep = -1;
   private GenerationOptions myGenerationOptions;
 
   public GenerationSession(GenerationController controller, @NotNull SModelDescriptor inputModel, IOperationContext invocationContext,
@@ -170,7 +170,7 @@ public class GenerationSession {
   }
 
   private SModel executeMajorStep(SModel inputModel) throws GenerationCanceledException, GenerationFailureException {
-    myTransientModelsCount = 0;
+    myMinorStep = -1;
 
     if (myGenerationPlan.getMappingConfigurations(myMajorStep).isEmpty()) {
       if (inputModel.getRoots().size() > 0) {
@@ -251,7 +251,7 @@ public class GenerationSession {
         myDependenciesBuilder.dropModel();
         tracer.discardTracing(currentInputModel, transientModel);
         mySessionContext.getModule().removeModel(transientModel.getModelDescriptor());
-        myTransientModelsCount--;
+        myMinorStep--;
         if (myLogger.needsInfo()) {
           myLogger.info("unchanged, empty model '" + transientModel.getSModelFqName().getStereotype() + "' removed");
         }
@@ -290,27 +290,27 @@ public class GenerationSession {
 
   private boolean applyRules(SModel currentInputModel, SModel currentOutputModel, final boolean isPrimary,
                              RuleManager ruleManager) throws GenerationFailureException, GenerationCanceledException {
-    boolean result;
+    boolean hasChanges;
     myDependenciesBuilder.setOutputModel(currentOutputModel);
     final TemplateGenerator tg =
       myGenerationOptions.isGenerateInParallel()
         ? new ParallelTemplateGenerator(myController, mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentOutputModel, myGenerationOptions, myDependenciesBuilder, ttrace)
         : new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentOutputModel, myGenerationOptions, myDependenciesBuilder, ttrace);
     if (tg instanceof ParallelTemplateGenerator) {
-      result = GeneratorUtil.runReadInWrite(new GenerationComputable<Boolean>() {
+      hasChanges = GeneratorUtil.runReadInWrite(new GenerationComputable<Boolean>() {
         @Override
         public Boolean compute() throws GenerationCanceledException, GenerationFailureException {
           return tg.apply(isPrimary);
         }
       });
     } else {
-      result = tg.apply(isPrimary);
+      hasChanges = tg.apply(isPrimary);
     }
-    if(isPrimary && myNewCache != null) {
+    if(myNewCache != null && (isPrimary || hasChanges)) {
       TransientModelWithMetainfo modelWithMetaInfo = TransientModelWithMetainfo.create(currentOutputModel, tg.getMappings(), myDependenciesBuilder);
-      myNewCache.store(myMajorStep, modelWithMetaInfo);
+      myNewCache.store(myMajorStep, myMinorStep, modelWithMetaInfo);
     }
-    return result;
+    return hasChanges;
   }
 
   private SModel preProcessModel(RuleManager ruleManager, SModel currentInputModel) throws GenerationFailureException {
@@ -365,6 +365,10 @@ public class GenerationSession {
     }
     if (needToCloneInputModel) {
       myDependenciesBuilder.scriptApplied(currentInputModel);
+      if(myNewCache != null) {
+        TransientModelWithMetainfo modelWithMetaInfo = TransientModelWithMetainfo.create(currentInputModel, null, myDependenciesBuilder);
+        myNewCache.store(myMajorStep, 0, modelWithMetaInfo);
+      }
       recycleWasteModel(toRecycle);
     }
     if (myLogger.needsInfo() && preProcessed) {
@@ -421,9 +425,8 @@ public class GenerationSession {
 
   private SModel createTransientModel() {
     String longName = myOriginalInputModel.getLongName();
-    String stereotype = Integer.toString(myMajorStep + 1) + "_" + myTransientModelsCount;
+    String stereotype = Integer.toString(myMajorStep + 1) + "_" + ++myMinorStep;
     SModelDescriptor transientModel = mySessionContext.getModule().createTransientModel(longName, stereotype);
-    myTransientModelsCount++;
     transientModel.getSModel().setLoading(true); // we dont need any events to be cast
     return transientModel.getSModel();
   }
