@@ -82,16 +82,7 @@ class IdeaFile implements IFileEx {
 
   @Override
   public List<IFile> list() {
-    if (findVirtualFile()) {
-      VirtualFile[] children = myVirtualFile.getChildren();
-      IFile[] result = new IdeaFile[children.length];
-      for (int i = 0; i < children.length; i++) {
-        result[i] = new IdeaFile(myProvider, children[i]);
-      }
-      return Arrays.asList(result);
-    } else {
-      return Arrays.asList();
-    }
+    return list(new MyAllFilter());
   }
 
   @Override
@@ -106,7 +97,18 @@ class IdeaFile implements IFileEx {
       }
       return Collections.unmodifiableList(result);
     } else {
-      return Arrays.asList();
+      // TODO this is a hack for class loaders
+      File[] children = new File(myPath).listFiles();
+      ArrayList<IFile> result = new ArrayList<IFile>();
+      if (children == null) {
+        return Arrays.asList();
+      }
+      for (File child : children) {
+        if (filter.accept(this, child.getName())) {
+          result.add(new IdeaFile(myProvider, child.getAbsolutePath()));
+        }
+      }
+      return result;
     }
   }
 
@@ -126,13 +128,14 @@ class IdeaFile implements IFileEx {
         return new IdeaFile(myProvider, child);
       }
     } else {
-      return null;
+      // TODO this is a hack for class loaders
+      return new IdeaFile(myProvider, myPath + File.separator + name);
     }
   }
 
   @Override
   public boolean isDirectory() {
-    return findVirtualFile() && myVirtualFile.isDirectory();
+    return findVirtualFile() ? myVirtualFile.isDirectory() : new File(myPath).isDirectory();
   }
 
   @Override
@@ -145,7 +148,8 @@ class IdeaFile implements IFileEx {
     if (findVirtualFile()) {
       return myVirtualFile.getModificationStamp();
     } else {
-      return -1;
+      // TODO this is a hack for class loaders
+      return new File(myPath).lastModified();
     }
   }
 
@@ -154,7 +158,8 @@ class IdeaFile implements IFileEx {
     if (findVirtualFile()) {
       return myVirtualFile.getLength();
     } else {
-      return 0L;
+      // TODO this is a hack for class loaders
+      return new File(myPath).length();
     }
   }
 
@@ -194,7 +199,7 @@ class IdeaFile implements IFileEx {
 
   @Override
   public boolean exists() {
-    return findVirtualFile() && myVirtualFile.exists();
+    return findVirtualFile() && myVirtualFile.exists() || new File(myPath).exists(); // TODO this is a hack for class loaders
   }
 
   @Override
@@ -219,7 +224,8 @@ class IdeaFile implements IFileEx {
     if (findVirtualFile()) {
       return myVirtualFile.getInputStream();
     } else {
-      throw new FileNotFoundException("File not found: " + myPath);
+      // TODO this is a hack for class loaders
+      return new FileInputStream(myPath);
     }
   }
 
@@ -350,6 +356,13 @@ class IdeaFile implements IFileEx {
       return "IdeaFile{" + myVirtualFile + "}";
     } else {
       return "IdeaFile{path: " + myPath + "}";
+    }
+  }
+
+  private static class MyAllFilter implements IFileNameFilter {
+    @Override
+    public boolean accept(IFile parent, String name) {
+      return true;
     }
   }
 }

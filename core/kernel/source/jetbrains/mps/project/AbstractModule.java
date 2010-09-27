@@ -40,6 +40,7 @@ import jetbrains.mps.vfs.IFile;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
@@ -193,7 +194,7 @@ public abstract class AbstractModule implements IModule {
 
   public List<StubPath> getOwnStubPaths() {
     ArrayList<StubPath> result = new ArrayList<StubPath>();
-    if (isCompileInMPS() && getClassesGen() != null && getClassesGen().exists()) {
+    if (isCompileInMPS() && getClassesGen() != null && new File(getClassesGen().getAbsolutePath()).exists()) {
       result.add(new StubPath(getClassesGen().getCanonicalPath(), LanguageID.JAVA_MANAGER));
     }
     return result;
