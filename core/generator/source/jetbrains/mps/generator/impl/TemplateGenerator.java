@@ -60,7 +60,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private final DelayedChanges myDelayedChanges;
   private final Map<SNode, SNode> myNewToOldRoot = new HashMap<SNode, SNode>();
   private final Map<SNode, Object> myAdditionalInputNodes = new ConcurrentHashMap<SNode, Object>();
-  protected final ArrayList<SNode> myOutputRoots;
+  protected final List<SNode> myOutputRoots;
 
   private final QueryExecutionContext myExecutionContext;
   private Map<DependenciesReadListener, QueryExecutionContext> myExecutionContextMap;
@@ -115,7 +115,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
 
     // reload "required" roots from cache
+    ttrace.push("reloading roots from cache", false);
     myDependenciesBuilder.reloadRequired(myMappings);
+    ttrace.pop();
 
     // weaving
     ttrace.push("weavings", false);

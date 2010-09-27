@@ -87,6 +87,7 @@ public class GenerationSession {
     }
 
     // create a plan
+    ttrace.push("analyzing dependencies", false);
     myGenerationPlan = new GenerationPlan(myOriginalInputModel.getSModel());
     if (!checkGenerationPlan(myGenerationPlan)) {
       // throw new GenerationCanceledException();
@@ -102,6 +103,7 @@ public class GenerationSession {
 
       if (total > 0 && ignored == total && filter.canIgnoreConditionals()) {
         myLogger.info("generated files are up-to-date");
+        ttrace.pop();
         return new GenerationStatus(myOriginalInputModel.getSModel(), null,
           myDependenciesBuilder.getResult(myInvocationContext), false, false, false);
       }
@@ -114,6 +116,7 @@ public class GenerationSession {
     boolean success = false;
 
     myNewCache = filter.createNewCache();
+    ttrace.pop();
     try {
       SModel currInputModel = myOriginalInputModel.getSModel();
       SModel currOutput = null;

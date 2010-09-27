@@ -1,11 +1,11 @@
 package jetbrains.mps.generator.impl.dependencies;
 
-import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.ModelDigestHelper;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.GeneratorMappings;
 import jetbrains.mps.generator.impl.cache.IntermediateModelsCache;
 import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
@@ -21,12 +21,14 @@ import java.util.*;
  */
 public class DefaultDependenciesBuilder implements DependenciesBuilder {
 
+  private static final Logger LOG = Logger.getLogger(DefaultDependenciesBuilder.class);
+
   /* generation data */
   private RootDependenciesBuilder myConditionalsBuilder;
   private Map<SNode, RootDependenciesBuilder> myRootBuilders = new HashMap<SNode, RootDependenciesBuilder>();
   private RootDependenciesBuilder[] myAllBuilders;
   private String myModelHash;
-  private Set<String> myRequiredSet;
+  private Map<String, SNode> myRequiredSet;
 
   /* next step input -> original */
   Map<SNode, SNode> nextStepToOriginalMap;
@@ -45,7 +47,7 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
     currentOutputModel = null;
     myModelHash = generationHashes == null ? null : generationHashes.get(ModelDigestHelper.FILE);
     initData(getRoots(originalInputModel), generationHashes);
-    myRequiredSet = new HashSet<String>();
+    myRequiredSet = new HashMap<String, SNode>();
   }
 
   private void initData(SNode[] roots, Map<String, String> generationHashes) {
@@ -139,6 +141,7 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
       return myConditionalsBuilder;
     }
     // shouldn't happen
+    LOG.error("consistency problem in dependencies map");
     return null;
   }
 
@@ -165,7 +168,12 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
     for(Iterator<SNode> it = model.getModel().roots(); it.hasNext(); ) {
       SNode root = it.next();
       String originalId = model.getOriginal(root);
-      if(myRequiredSet.contains(originalId)) {
+      if(myRequiredSet.containsKey(originalId)) {
+        SNode originalRoot = myRequiredSet.get(originalId);
+        if (nextStepToOriginalMap == null) {
+          nextStepToOriginalMap = new HashMap<SNode, SNode>();
+        }
+        nextStepToOriginalMap.put(root, originalRoot);
         toCopy.add(root);
       }
     }
@@ -177,6 +185,6 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
 
   public void addRequired(RootDependenciesBuilder rootDependenciesBuilder) {
     SNode root = rootDependenciesBuilder.getOriginalRoot();
-    myRequiredSet.add(root == null ? TransientModelWithMetainfo.CONDITIONALS_ID : root.getId());
+    myRequiredSet.put(root == null ? TransientModelWithMetainfo.CONDITIONALS_ID : root.getId(), root);
   }
 }
