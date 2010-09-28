@@ -34,6 +34,10 @@ public class BaseMethodDeclaration_BodyComponent extends AbstractCellProvider {
   private EditorCell createCollection_fao2ea_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_fao2ea_a");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
     editorCell.setCanBeFolded(true);
     editorCell.setFoldedCell(this.createComponent_fao2ea_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_fao2ea_a0(editorContext, node));
@@ -45,10 +49,6 @@ public class BaseMethodDeclaration_BodyComponent extends AbstractCellProvider {
   private EditorCell createComponent_fao2ea_a0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new GenericDeclaration_FoldedCodeBlock_Component(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
     return editorCell;
   }
 
@@ -81,7 +81,6 @@ public class BaseMethodDeclaration_BodyComponent extends AbstractCellProvider {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.POSITION, "next-line");
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
     editorCell.setDefaultText("");
     return editorCell;

@@ -7,16 +7,18 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -40,9 +42,22 @@ public class Annotation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_mr1gse_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_mr1gse_c0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_mr1gse_d0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_mr1gse_e0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_mr1gse_f0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_mr1gse_g0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_mr1gse_e0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_mr1gse_e0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_mr1gse_e0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
+    editorCell.setCanBeFolded(renderingCondition_mr1gse_a4a(node, editorContext, editorContext.getOperationContext().getScope()));
+    editorCell.setFoldedCell(this.createComponent_mr1gse_a4a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_mr1gse_a4a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_mr1gse_b4a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_mr1gse_c4a(editorContext, node));
     return editorCell;
   }
 
@@ -66,6 +81,12 @@ public class Annotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createComponent_mr1gse_a4a(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new GenericDeclaration_FoldedCodeBlock_Component(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
+    return editorCell;
+  }
+
   private EditorCell createConstant_mr1gse_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@interface");
     editorCell.setCellId("Constant_mr1gse_c0");
@@ -78,9 +99,9 @@ public class Annotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_mr1gse_e0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_mr1gse_a4a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_mr1gse_e0");
+    editorCell.setCellId("Constant_mr1gse_a4a");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -90,14 +111,10 @@ public class Annotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_mr1gse_g0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_mr1gse_c4a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_mr1gse_g0");
+    editorCell.setCellId("Constant_mr1gse_c4a");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -113,8 +130,8 @@ public class Annotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_mr1gse_f0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new Annotation_Editor.annotationMethodListHandler_mr1gse_f0(node, "annotationMethod", editorContext);
+  private EditorCell createRefNodeList_mr1gse_b4a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new Annotation_Editor.annotationMethodListHandler_mr1gse_b4a(node, "annotationMethod", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_annotationMethod");
     {
@@ -161,8 +178,12 @@ public class Annotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class annotationMethodListHandler_mr1gse_f0 extends RefNodeListHandler {
-    public annotationMethodListHandler_mr1gse_f0(SNode ownerNode, String childRole, EditorContext context) {
+  private static boolean renderingCondition_mr1gse_a4a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SNodeOperations.getParent(node) != null);
+  }
+
+  private static class annotationMethodListHandler_mr1gse_b4a extends RefNodeListHandler {
+    public annotationMethodListHandler_mr1gse_b4a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -185,7 +206,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_mr1gse_a5a(editorContext, node);
+      return this.createConstant_mr1gse_a1e0(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -202,9 +223,9 @@ public class Annotation_Editor extends DefaultNodeEditor {
       }
     }
 
-    private EditorCell createConstant_mr1gse_a5a(EditorContext editorContext, SNode node) {
+    private EditorCell createConstant_mr1gse_a1e0(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-      editorCell.setCellId("Constant_mr1gse_a5a");
+      editorCell.setCellId("Constant_mr1gse_a1e0");
       {
         Style style = editorCell.getStyle();
         style.set(StyleAttributes.EDITABLE, true);
