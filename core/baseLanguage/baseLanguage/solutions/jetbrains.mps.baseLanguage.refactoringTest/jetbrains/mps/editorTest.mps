@@ -2344,64 +2344,6 @@
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1236090523881">
     <property name="package:4" value="sideDelete" />
     <property name="name:4" value="SideDeleteAtEndWhithBackSpace" />
-    <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1236090550299">
-      <property name="name:3" value="Clazz" />
-      <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1236090580737">
-        <property name="name:3" value="method" />
-        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1236090580738" />
-        <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1236090580739" />
-        <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1236090580740" />
-      </node>
-      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1236090550300" />
-      <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="1236090550301">
-        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1236090550302" />
-        <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1236090550303" />
-        <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1236090550304">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1237736743899">
-            <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.GreaterThanExpression:3" id="1237736752254">
-              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1237736752481">
-                <property name="value:3" value="0" />
-              </node>
-              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1237736746494">
-                <link role="variableDeclaration:3" targetNodeId="1236090565605" resolveInfo="t" />
-              </node>
-            </node>
-            <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1237736743901" />
-            <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="2576168041330045360">
-              <property name="isLastPosition:4" value="true" />
-              <property name="useLabelSelection:4" value="true" />
-              <property name="selectionStart:4" value="1" />
-              <property name="selectionEnd:4" value="1" />
-              <property name="cellId:4" value="Constant_eb7h0d_c4a" />
-            </node>
-          </node>
-        </node>
-        <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1236090565605">
-          <property name="name:3" value="t" />
-          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1236090565606" />
-        </node>
-      </node>
-    </node>
-    <node role="result:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1236090557432">
-      <property name="name:3" value="Clazz" />
-      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1236090557433" />
-      <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="1236090557434">
-        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1236090557435" />
-        <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1236090557436" />
-        <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1236090557437" />
-        <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1236090594955">
-          <property name="name:3" value="t" />
-          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1236090594956" />
-        </node>
-      </node>
-      <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="2576168041330045361">
-        <property name="isLastPosition:4" value="true" />
-        <property name="useLabelSelection:4" value="true" />
-        <property name="selectionStart:4" value="0" />
-        <property name="selectionEnd:4" value="0" />
-        <property name="cellId:4" value="Constant_uj0cpq_a22a" />
-      </node>
-    </node>
     <node role="code:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1236090613501">
       <node role="statement:3" type="jetbrains.mps.lang.test.structure.PressKeyStatement:4" id="1236090613502">
         <node role="keyStrokes:4" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke:23" id="1236090613503">
@@ -2436,6 +2378,66 @@
       <node role="statement:3" type="jetbrains.mps.lang.test.structure.PressKeyStatement:4" id="1236090706857">
         <node role="keyStrokes:4" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke:23" id="1236090706858">
           <property name="keycode:23" value="VK_BACK_SPACE" />
+        </node>
+      </node>
+    </node>
+    <node role="result:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4784396099375331532">
+      <property name="nonStatic:3" value="true" />
+      <property name="name:3" value="Clazz" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4784396099375331533" />
+      <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="4784396099375331534">
+        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="4784396099375331535" />
+        <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4784396099375331536" />
+        <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4784396099375331537" />
+        <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4784396099375331538">
+          <property name="name:3" value="t" />
+          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="4784396099375331539" />
+        </node>
+      </node>
+      <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="4784396099375331553">
+        <property name="isLastPosition:4" value="true" />
+        <property name="useLabelSelection:4" value="true" />
+        <property name="selectionStart:4" value="0" />
+        <property name="selectionEnd:4" value="0" />
+        <property name="cellId:4" value="Constant_uj0cpq_a9n0" />
+      </node>
+    </node>
+    <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="4784396099375357250">
+      <property name="nonStatic:3" value="true" />
+      <property name="name:3" value="Clazz" />
+      <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="4784396099375357267">
+        <property name="name:3" value="method" />
+        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="4784396099375357268" />
+        <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4784396099375357269" />
+        <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4784396099375357270" />
+      </node>
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4784396099375357251" />
+      <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="4784396099375357252">
+        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="4784396099375357253" />
+        <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4784396099375357254" />
+        <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4784396099375357255">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="4784396099375357256">
+            <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.GreaterThanExpression:3" id="4784396099375357262">
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="4784396099375357265">
+                <property name="value:3" value="0" />
+              </node>
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4784396099375357261">
+                <link role="variableDeclaration:3" targetNodeId="4784396099375357259" resolveInfo="t" />
+              </node>
+            </node>
+            <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4784396099375357258" />
+            <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="4784396099375357266">
+              <property name="isLastPosition:4" value="true" />
+              <property name="useLabelSelection:4" value="true" />
+              <property name="selectionStart:4" value="1" />
+              <property name="selectionEnd:4" value="1" />
+              <property name="cellId:4" value="Constant_eb7h0d_c4a" />
+            </node>
+          </node>
+        </node>
+        <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4784396099375357259">
+          <property name="name:3" value="t" />
+          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="4784396099375357260" />
         </node>
       </node>
     </node>
