@@ -776,6 +776,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.lang.editor.structure.CellLayout" />
     <classNode dependClassName="jetbrains.mps.lang.editor.structure.EditorCellModel" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />

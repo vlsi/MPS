@@ -17,6 +17,7 @@ public class CellModel_Collection extends EditorCellModel {
   public static final String USES_FOLDING = "usesFolding";
   public static final String FOLDED_CELL_MODEL = "foldedCellModel";
   public static final String CELL_LAYOUT = "cellLayout";
+  public static final String USES_FOLDING_CONDITION = "usesFoldingCondition";
   public static final String CHILD_CELL_MODEL = "childCellModel";
 
   public CellModel_Collection(SNode node) {
@@ -69,6 +70,14 @@ public class CellModel_Collection extends EditorCellModel {
 
   public void setCellLayout(CellLayout node) {
     super.setChild(CellModel_Collection.CELL_LAYOUT, node);
+  }
+
+  public QueryFunction_NodeCondition getUsesFoldingCondition() {
+    return (QueryFunction_NodeCondition) this.getChild(QueryFunction_NodeCondition.class, CellModel_Collection.USES_FOLDING_CONDITION);
+  }
+
+  public void setUsesFoldingCondition(QueryFunction_NodeCondition node) {
+    super.setChild(CellModel_Collection.USES_FOLDING_CONDITION, node);
   }
 
   public int getChildCellModelsCount() {

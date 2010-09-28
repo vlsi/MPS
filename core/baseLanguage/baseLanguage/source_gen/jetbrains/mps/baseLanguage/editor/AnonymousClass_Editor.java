@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
@@ -92,7 +93,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_msf9u8_b0");
     editorCell.setCanBeFolded(true);
-    editorCell.setFoldedCell(this.createConstant_msf9u8_a1a_0(editorContext, node));
+    editorCell.setFoldedCell(this.createComponent_msf9u8_a1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_msf9u8_a1a(editorContext, node));
     if (renderingCondition_msf9u8_a1b0(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_msf9u8_b1a(editorContext, node));
@@ -165,6 +166,12 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     }
     editorCell.addEditorCell(this.createConstant_msf9u8_a6b0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createComponent_msf9u8_a1a(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new GenericDeclaration_FoldedCodeBlock_Component(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
@@ -263,14 +270,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
     }
     AnonymousClass_CurlyBraces.setCellActions(editorCell, node, editorContext);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_msf9u8_a1a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{...}");
-    editorCell.setCellId("Constant_msf9u8_a1a_0");
-    BaseLanguageStyle_StyleSheet.getFoldedCell(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }

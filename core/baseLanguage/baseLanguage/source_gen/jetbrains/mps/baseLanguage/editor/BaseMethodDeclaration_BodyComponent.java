@@ -35,10 +35,16 @@ public class BaseMethodDeclaration_BodyComponent extends AbstractCellProvider {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_fao2ea_a");
     editorCell.setCanBeFolded(true);
-    editorCell.setFoldedCell(this.createConstant_fao2ea_a0_0(editorContext, node));
+    editorCell.setFoldedCell(this.createComponent_fao2ea_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_fao2ea_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_fao2ea_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_fao2ea_c0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createComponent_fao2ea_a0(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new GenericDeclaration_FoldedCodeBlock_Component(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
@@ -71,18 +77,6 @@ public class BaseMethodDeclaration_BodyComponent extends AbstractCellProvider {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.POSITION, "next-line");
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_fao2ea_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{...}");
-    editorCell.setCellId("Constant_fao2ea_a0_0");
-    BaseLanguageStyle_StyleSheet.getFoldedCell(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
     editorCell.setDefaultText("");
