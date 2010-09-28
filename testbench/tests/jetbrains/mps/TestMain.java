@@ -18,12 +18,16 @@ package jetbrains.mps;
 import com.intellij.ide.IdeEventQueue;
 import com.intellij.idea.IdeaTestApplication;
 import com.intellij.idea.LoggerFactory;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.InvalidDataException;
+import com.intellij.openapi.vfs.LocalFileSystem;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch;
 import jetbrains.mps.compiler.CompilationResultAdapter;
@@ -67,10 +71,7 @@ import java.io.StringWriter;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedHashSet;
-import java.util.List;
+import java.util.*;
 
 public class TestMain {
   public static void main(String[] args) {
@@ -207,25 +208,27 @@ public class TestMain {
     return project.getProject().getComponent(ProjectScope.class).getLanguage("testRefactoringTargetLang");
   }
 
-  public static boolean testRefactoringOnProject(final File projectDirectory, final IRefactoringTester refactoringTester) {
+  public static boolean testRefactoringOnProject(final File sourceProjectDir, final IRefactoringTester refactoringTester) {
     IdeMain.setTestMode(TestMode.CORE_TEST);
     TestMain.configureMPS();
     final boolean[] b = new boolean[]{true};
 
 
-    final File destination = new File(PathManager.getHomePath(), "TEST_REFACTORING");
-    if (destination.exists()) {
-      FileUtil.delete(destination);
+    final File destinationProjectDir = new File(PathManager.getHomePath(), "TEST_REFACTORING");
+    if (destinationProjectDir.exists()) {
+      FileUtil.delete(destinationProjectDir);
     }
-    FileUtil.copyDir(projectDirectory, destination);
+    FileUtil.copyDir(sourceProjectDir, destinationProjectDir);
     final MPSProject[] projectArray = new MPSProject[]{null};
-
     //loading a project
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
         try {
-          File projectFile = new File(destination, "testRefactoring" + MPSExtentions.DOT_MPS_PROJECT);
+          File projectFile = new File(destinationProjectDir, "testRefactoring" + MPSExtentions.DOT_MPS_PROJECT);
           projectArray[0] = loadProject(projectFile);
+          VirtualFile projectVirtualDir = LocalFileSystem.getInstance().refreshAndFindFileByIoFile(destinationProjectDir);
+          assert projectVirtualDir != null;
+          projectVirtualDir.refresh(false, true);
         } catch (Throwable t) {
           t.printStackTrace();
         }
@@ -241,7 +244,7 @@ public class TestMain {
         if (project != null) {
           project.dispose();
         }
-        FileUtil.delete(destination);
+        FileUtil.delete(destinationProjectDir);
       }
     };
 
@@ -264,7 +267,7 @@ public class TestMain {
 
             ClassPathEntry cpEntry1 = new ClassPathEntry();
             ClassPathEntry cpEntry2 = new ClassPathEntry();
-            String classPath = destination.getAbsolutePath() + "/classes";
+            String classPath = destinationProjectDir.getAbsolutePath() + "/classes";
             cpEntry1.setPath(classPath);
             cpEntry2.setPath(classPath);
 
@@ -296,6 +299,11 @@ public class TestMain {
       t.printStackTrace();
       return false;
     } finally {
+      // Wait until last invokeLater() is executed
+      ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+        @Override
+        public void run() {}
+      }, ModalityState.NON_MODAL);
       ThreadUtils.runInUIThreadAndWait(continuation);
     }
   }
