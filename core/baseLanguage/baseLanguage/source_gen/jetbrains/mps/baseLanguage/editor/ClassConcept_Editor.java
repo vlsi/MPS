@@ -196,6 +196,10 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_uj0cpq_a31a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new GenericDeclaration_FoldedCodeBlock_Component(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
     return editorCell;
   }
 

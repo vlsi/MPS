@@ -677,6 +677,9 @@
         </node>
         <node role="foldedCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Component:32" id="8709572687796750360">
           <link role="editorComponent:32" targetNodeId="8709572687796750356" resolveInfo="GenericDeclaration_FoldedCodeBlock_Componen" />
+          <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="1822203275565544299">
+            <property name="flag:32" value="true" />
+          </node>
         </node>
         <node role="usesFoldingCondition:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition:32" id="2944474240501862424">
           <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2944474240501862425">
@@ -17088,6 +17091,9 @@
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="6827006320070687178" />
       <node role="foldedCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Component:32" id="8709572687796861275">
         <link role="editorComponent:32" targetNodeId="8709572687796750356" resolveInfo="GenericDeclaration_FoldedCodeBlock_Componen" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="1822203275565544298">
+          <property name="flag:32" value="true" />
+        </node>
       </node>
     </node>
   </node>
@@ -17140,9 +17146,6 @@
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="8709572687796750358">
       <property name="text:32" value="{...}" />
       <link role="styleClass:32" targetNodeId="5179638159363031272" resolveInfo="FoldedCell" />
-      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="8709572687796750359">
-        <property name="flag:32" value="true" />
-      </node>
     </node>
   </node>
 </model>
