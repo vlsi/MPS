@@ -2257,13 +2257,13 @@
               <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1179161049683">
                 <property name="name:3" value="model" />
                 <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SModelType:16" id="1179161049684" />
-                <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1207843575448">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1179161307919">
-                    <link role="baseMethodDeclaration:3" targetNodeId="14.~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker" resolveInfo="getInstance" />
-                    <link role="classConcept:3" targetNodeId="14.~TypeChecker" resolveInfo="TypeChecker" />
+                <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7631678193867594876">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7631678193867594875">
+                    <link role="baseMethodDeclaration:3" targetNodeId="13.~AuxilaryRuntimeModel.getDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getDescriptor" />
+                    <link role="classConcept:3" targetNodeId="13.~AuxilaryRuntimeModel" resolveInfo="AuxilaryRuntimeModel" />
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1207843575449">
-                    <link role="baseMethodDeclaration:3" targetNodeId="14.~TypeChecker.getRuntimeTypesModel():jetbrains.mps.smodel.SModel" resolveInfo="getRuntimeTypesModel" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7631678193867596055">
+                    <link role="baseMethodDeclaration:3" targetNodeId="12.~SModelDescriptor.getSModel():jetbrains.mps.smodel.SModel" resolveInfo="getSModel" />
                   </node>
                 </node>
               </node>

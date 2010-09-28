@@ -19,6 +19,7 @@ import jetbrains.mps.lang.typesystem.runtime.*;
 import jetbrains.mps.lang.typesystem.structure.RuntimeErrorType;
 import jetbrains.mps.lang.typesystem.structure.MeetType;
 import jetbrains.mps.nodeEditor.NodeReadAccessCasterInEditor;
+import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.typesystem.inference.util.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
@@ -359,7 +360,7 @@ public class SubtypingManager {
   public IWrapper leastCommonSupertype(Set<IWrapper> types, boolean isWeak, EquationManager equationManager) {
     Set<IWrapper> lcss = leastCommonSupertypesWrappers(types, isWeak);
     if (lcss.size() != 1) {
-      RuntimeErrorType type = RuntimeErrorType.newInstance(myTypeChecker.getRuntimeTypesModel());
+      RuntimeErrorType type = RuntimeErrorType.newInstance(AuxilaryRuntimeModel.getDescriptor().getSModel());
       type.setErrorText("uncomparable types");
       return NodeWrapper.createWrapperFromNode(BaseAdapter.fromAdapter(type), equationManager);
     }
@@ -655,17 +656,13 @@ System.out.println("alltypes = " + allTypes);*/
     return false;
   }
 
-  public SModel getRuntimeTypesModel() {
-    return getTypeChecker().getRuntimeTypesModel();
-  }
-
   public SNode mostSpecificType(Set<SNode> nodes) {
     Set<SNode> residualNodes = mostSpecificTypes(nodes);
     if (residualNodes.size() == 1) {
       return residualNodes.iterator().next();
     }
     if (residualNodes.size() > 1) {
-      MeetType meetType = MeetType.newInstance(getRuntimeTypesModel());
+      MeetType meetType = MeetType.newInstance(AuxilaryRuntimeModel.getDescriptor().getSModel());
       for (SNode node : residualNodes) {
         meetType.addArgument((BaseConcept) node.getAdapter());
       }

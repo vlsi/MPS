@@ -7,6 +7,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -43,7 +44,7 @@ public class TypeUtil_Collections {
     // TEMP FIX FOR DNQ 
     // TODO: extract generics information 
     if (type != null) {
-      SModel model = TypeChecker.getInstance().getRuntimeTypesModel();
+      SModel model = AuxilaryRuntimeModel.getDescriptor().getSModel();
       GlobalScope scope = GlobalScope.getInstance();
       SNode entity = SNodeOperations.cast(SModelUtil.findNodeByFQName("com.jetbrains.teamsys.database.Entity", SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"), scope), "jetbrains.mps.baseLanguage.structure.Classifier");
       if (entity == null) {

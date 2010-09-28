@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.typesystem.inference;
 
+import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.LanguageHierarchyCache.CacheReadAccessListener;
 import jetbrains.mps.smodel.LanguageHierarchyCache.CacheChangeListener;
@@ -460,7 +461,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
   }
 
   private SNode expandTypeAndPutToContext(SNode term) {
-    SNode type = expandType(term, myNodesToTypesMap.get(term), myTypeChecker.getRuntimeTypesModel());
+    SNode type = expandType(term, myNodesToTypesMap.get(term), AuxilaryRuntimeModel.getDescriptor().getSModel());
     myNodesToTypesMap.put(term, type);
     return type;
   }
