@@ -27,7 +27,6 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.behavior.CellModel_Collection_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -533,7 +532,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_cvgoyj_a2a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "usesFolding");
+    return CellModel_Collection_Behavior.call_isFoldingEnabled_1822203275565710635(node);
   }
 
   private static boolean renderingCondition_cvgoyj_a0a0(SNode node, EditorContext editorContext, IScope scope) {
@@ -541,7 +540,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_cvgoyj_a2b0a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "usesFolding");
+    return CellModel_Collection_Behavior.call_isFoldingEnabled_1822203275565710635(node);
   }
 
   private static boolean renderingCondition_cvgoyj_a1a0(SNode node, EditorContext editorContext, IScope scope) {
@@ -553,7 +552,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_cvgoyj_a2a0(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "usesFolding");
+    return CellModel_Collection_Behavior.call_isFoldingEnabled_1822203275565710635(node);
   }
 
   private static boolean renderingCondition_cvgoyj_a1c3a(SNode node, EditorContext editorContext, IScope scope) {

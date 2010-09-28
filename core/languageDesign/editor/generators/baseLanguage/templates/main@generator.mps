@@ -792,8 +792,8 @@
                       </node>
                       <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6845024055069759800">
                         <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="6845024055069759801" />
-                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="6845024055069759802">
-                          <link role="property:16" targetNodeId="38.1160590353935:32" resolveInfo="usesFolding" />
+                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1822203275566347225">
+                          <link role="baseMethodDeclaration:16" targetNodeId="62.1822203275565710635" resolveInfo="isFoldingEnabled" />
                         </node>
                       </node>
                     </node>

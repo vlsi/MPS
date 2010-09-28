@@ -1,5 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="QueryFunction_StyleParameter_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_StyleParameter_Behavior" />
+  <unitInfo fileName="QueryFunction_Color_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_Color_Behavior" />
+  <unitInfo fileName="FontStyleStyleClassItem_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.FontStyleStyleClassItem_Behavior" />
+  <unitInfo fileName="ColorStyleClassItem_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.ColorStyleClassItem_Behavior" />
+  <unitInfo fileName="CellMenuComponentFeature_Property_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuComponentFeature_Property_Behavior" />
+  <unitInfo fileName="CellMenuComponentFeature_Link_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuComponentFeature_Link_Behavior" />
+  <unitInfo fileName="CellMenuPart_ReplaceNode_CustomNodeConcept_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceNode_CustomNodeConcept_Behavior" />
+  <unitInfo fileName="HorizontalGapStyleClassItem_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.HorizontalGapStyleClassItem_Behavior" />
+  <unitInfo fileName="CellModel_AttributedPropertyCell_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_AttributedPropertyCell_Behavior" />
+  <unitInfo fileName="CellModel_AttributedNodeCell_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_AttributedNodeCell_Behavior" />
+  <unitInfo fileName="CellModel_AttributedLinkCell_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_AttributedLinkCell_Behavior" />
+  <unitInfo fileName="StrikeOutStyleSheet_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.StrikeOutStyleSheet_Behavior" />
+  <unitInfo fileName="CellModel_Constant_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_Constant_Behavior" />
+  <unitInfo fileName="LastPositionAllowedStyleClassItem_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.LastPositionAllowedStyleClassItem_Behavior" />
+  <unitInfo fileName="FirstPositionAllowedStyleClassItem_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.FirstPositionAllowedStyleClassItem_Behavior" />
+  <unitInfo fileName="TextBackgroundColorStyleClassItem_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.TextBackgroundColorStyleClassItem_Behavior" />
+  <unitInfo fileName="TextBackgroundColorSelectedStyleClassItem_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.TextBackgroundColorSelectedStyleClassItem_Behavior" />
+  <unitInfo fileName="EditableStyleClassItem_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.EditableStyleClassItem_Behavior" />
+  <unitInfo fileName="ForegroundNullColorStyleClassItem_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.ForegroundNullColorStyleClassItem_Behavior" />
+  <unitInfo fileName="ForegroundColorStyleClassItem_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.ForegroundColorStyleClassItem_Behavior" />
+  <unitInfo fileName="InlineEditorComponent_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.InlineEditorComponent_Behavior" />
+  <unitInfo fileName="PaddingTopStyleClassItem_Behavior.java" startLine="7" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.PaddingTopStyleClassItem_Behavior" />
+  <unitInfo fileName="PaddingBottomStyleClassItem_Behavior.java" startLine="7" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.PaddingBottomStyleClassItem_Behavior" />
+  <unitInfo fileName="CellModel_ReadOnlyModelAccessor_Behavior.java" startLine="7" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_ReadOnlyModelAccessor_Behavior" />
+  <unitInfo fileName="CellModel_TransactionalProperty_Behavior.java" startLine="7" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_TransactionalProperty_Behavior" />
+  <unitInfo fileName="CellModel_ModelAccess_Behavior.java" startLine="7" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_ModelAccess_Behavior" />
+  <unitInfo fileName="CellModel_Custom_Behavior.java" startLine="7" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_Custom_Behavior" />
+  <unitInfo fileName="CellModel_Error_Behavior.java" startLine="7" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_Error_Behavior" />
+  <unitInfo fileName="RGBColor_Behavior.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.RGBColor_Behavior" />
+  <unitInfo fileName="CellKeyMapItem_Behavior.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellKeyMapItem_Behavior" />
+  <unitInfo fileName="BaseEditorComponent_Behavior.java" startLine="15" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.BaseEditorComponent_Behavior" />
+  <unitInfo fileName="CellModel_Alternation_Behavior.java" startLine="7" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_Alternation_Behavior" />
+  <unitInfo fileName="CellModel_NonEmptyProperty_Behavior.java" startLine="7" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_NonEmptyProperty_Behavior" />
+  <unitInfo fileName="StyleSheet_Behavior.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.StyleSheet_Behavior" />
+  <unitInfo fileName="CellModel_ListWithRole_Behavior.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_ListWithRole_Behavior" />
+  <unitInfo fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="27" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceChild_Item_Create_Behavior$QuotationClass_jf8h0a_a0e0b" />
+  <unitInfo fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="27" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceChild_Group_Create_Behavior$QuotationClass_tzpw84_a0e0b" />
+  <unitInfo fileName="AbstractComponent_Behavior.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.AbstractComponent_Behavior" />
+  <unitInfo fileName="CellMenuDescriptor_Behavior.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuDescriptor_Behavior" />
+  <unitInfo fileName="CellModel_Component_Behavior.java" startLine="10" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_Component_Behavior" />
+  <unitInfo fileName="CellModel_Property_Behavior.java" startLine="11" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_Property_Behavior" />
+  <unitInfo fileName="CellKeyMapKeystroke_Behavior.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellKeyMapKeystroke_Behavior" />
+  <unitInfo fileName="AbstractPaddingStyleClassItem_Behavior.java" startLine="9" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.AbstractPaddingStyleClassItem_Behavior" />
+  <unitInfo fileName="CellModel_RefNodeList_Behavior.java" startLine="11" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_RefNodeList_Behavior" />
+  <unitInfo fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="28" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceChild_Group_Query_Behavior$QuotationClass_ygqhl6_a0a0c0b" />
+  <unitInfo fileName="QueryFunction_ParametersList_Behavior.java" startLine="39" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_ParametersList_Behavior$QuotationClass_1gao1h_a0a0c0b" />
+  <unitInfo fileName="BooleanStyleSheetItem_Behavior.java" startLine="15" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.BooleanStyleSheetItem_Behavior" />
+  <unitInfo fileName="CellMenuPart_Abstract_Behavior.java" startLine="9" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuPart_Abstract_Behavior" />
+  <unitInfo fileName="CellModel_RefNode_Behavior.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_RefNode_Behavior" />
+  <unitInfo fileName="CellModel_RefCell_Behavior.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_RefCell_Behavior" />
+  <unitInfo fileName="CellModel_ConceptProperty_Behavior.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_ConceptProperty_Behavior" />
+  <unitInfo fileName="StyleSheetClass_Behavior.java" startLine="11" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.StyleSheetClass_Behavior" />
+  <unitInfo fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="28" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuPart_AbstractGroup_Query_Behavior$QuotationClass_b08ikr_a0d0b" />
+  <unitInfo fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="51" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceChild_Group_Query_Behavior$QuotationClass_ygqhl6_a0a3a1" />
+  <unitInfo fileName="QueryFunction_ParametersList_Behavior.java" startLine="62" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_ParametersList_Behavior$QuotationClass_1gao1h_a0d0b" />
+  <unitInfo fileName="IQueryFunction_Color_Behavior.java" startLine="9" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.IQueryFunction_Color_Behavior" />
+  <unitInfo fileName="EditorComponentDeclaration_Behavior.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.EditorComponentDeclaration_Behavior" />
+  <unitInfo fileName="CellMenuComponent_Behavior.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuComponent_Behavior" />
+  <unitInfo fileName="CellKeyMapDeclaration_Behavior.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellKeyMapDeclaration_Behavior" />
+  <unitInfo fileName="CellActionMapDeclaration_Behavior.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellActionMapDeclaration_Behavior" />
+  <unitInfo fileName="StyleClassItem_Behavior.java" startLine="11" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.StyleClassItem_Behavior" />
+  <unitInfo fileName="IStyleContainer_Behavior.java" startLine="14" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.IStyleContainer_Behavior" />
+  <unitInfo fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="13" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceChild_Item_Create_Behavior" />
+  <unitInfo fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="13" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceChild_Group_Create_Behavior" />
+  <unitInfo fileName="CellModel_WithRole_Behavior.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_WithRole_Behavior" />
+  <unitInfo fileName="ScriptKindClassItem_Behavior.java" startLine="10" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.ScriptKindClassItem_Behavior" />
+  <unitInfo fileName="DefaultBaseLine_Behavior.java" startLine="10" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.DefaultBaseLine_Behavior" />
+  <unitInfo fileName="CellModel_URL_Behavior.java" startLine="11" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_URL_Behavior" />
+  <unitInfo fileName="SelectOperation_Behavior.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.SelectOperation_Behavior" />
+  <unitInfo fileName="CellMenuPart_AbstractGroup_Query_Behavior.java" startLine="15" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuPart_AbstractGroup_Query_Behavior" />
+  <unitInfo fileName="ConceptEditorDeclaration_Behavior.java" startLine="14" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.ConceptEditorDeclaration_Behavior" />
+  <unitInfo fileName="CellModel_Collection_Behavior.java" startLine="10" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_Collection_Behavior" />
+  <unitInfo fileName="CellMenuPart_ReplaceChild_Group_Query_Behavior.java" startLine="15" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceChild_Group_Query_Behavior" />
+  <unitInfo fileName="QueryFunction_ParametersList_Behavior.java" startLine="16" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.QueryFunction_ParametersList_Behavior" />
+  <unitInfo fileName="EditorCellModel_Behavior.java" startLine="18" startPosition="0" endLine="255" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior" />
   <root nodeId="1213877183870">
     <nodeInfo nodeId="1216378145858" fileName="CellModel_RefCell_Behavior.java" startLine="14" startPosition="77" endLine="15" endPosition="116" />
     <nodeInfo nodeId="1216812405508" fileName="CellModel_RefCell_Behavior.java" startLine="18" startPosition="100" endLine="19" endPosition="129" />
@@ -283,6 +358,9 @@
     <scopeInfo nodeId="1219420248546" fileName="EditorCellModel_Behavior.java" startLine="50" startPosition="30" endLine="51" endPosition="18" />
     <scopeInfo nodeId="1225468896183" fileName="EditorCellModel_Behavior.java" startLine="66" startPosition="30" endLine="67" endPosition="18" />
     <scopeInfo nodeId="1225470014181" fileName="EditorCellModel_Behavior.java" startLine="71" startPosition="13" endLine="72" endPosition="164" />
+    <scopeInfo nodeId="1225470014183" fileName="EditorCellModel_Behavior.java" startLine="73" startPosition="0" endLine="74" endPosition="22">
+      <varInfo nodeId="1225470014184" varName="nfe" />
+    </scopeInfo>
     <scopeInfo nodeId="1225470014186" fileName="EditorCellModel_Behavior.java" startLine="73" startPosition="45" endLine="74" endPosition="22" />
     <scopeInfo nodeId="9118191388513060191" fileName="EditorCellModel_Behavior.java" startLine="79" startPosition="78" endLine="80" endPosition="18" />
     <scopeInfo nodeId="1225468896235" fileName="EditorCellModel_Behavior.java" startLine="83" startPosition="9" endLine="84" endPosition="113" />
@@ -310,6 +388,9 @@
     <scopeInfo nodeId="1237383418150" fileName="EditorCellModel_Behavior.java" startLine="207" startPosition="71" endLine="208" endPosition="208" />
     <scopeInfo nodeId="1237383562602" fileName="EditorCellModel_Behavior.java" startLine="211" startPosition="78" endLine="212" endPosition="217" />
     <scopeInfo nodeId="1241444787152" fileName="EditorCellModel_Behavior.java" startLine="58" startPosition="30" endLine="60" endPosition="107" />
+    <scopeInfo nodeId="1225468896248" fileName="EditorCellModel_Behavior.java" startLine="85" startPosition="0" endLine="87" endPosition="18">
+      <varInfo nodeId="1225468896249" varName="t" />
+    </scopeInfo>
     <scopeInfo nodeId="1225468896251" fileName="EditorCellModel_Behavior.java" startLine="85" startPosition="27" endLine="87" endPosition="18" />
     <scopeInfo nodeId="1220960215406" fileName="EditorCellModel_Behavior.java" startLine="91" startPosition="77" endLine="93" endPosition="80">
       <varInfo nodeId="1220965073769" varName="item" />
@@ -319,6 +400,9 @@
     </scopeInfo>
     <scopeInfo nodeId="1220972190904" fileName="EditorCellModel_Behavior.java" startLine="101" startPosition="81" endLine="103" endPosition="80">
       <varInfo nodeId="1220972190906" varName="item" />
+    </scopeInfo>
+    <scopeInfo nodeId="1221054045952" fileName="EditorCellModel_Behavior.java" startLine="134" startPosition="0" endLine="136" endPosition="87">
+      <varInfo nodeId="1221054045953" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="1221054045955" fileName="EditorCellModel_Behavior.java" startLine="134" startPosition="27" endLine="136" endPosition="87" />
     <scopeInfo nodeId="1216811674577" fileName="EditorCellModel_Behavior.java" startLine="28" startPosition="76" endLine="33" endPosition="18">
@@ -577,20 +661,21 @@
     <nodeInfo nodeId="1239872947850" fileName="CellModel_Collection_Behavior.java" startLine="38" startPosition="75" endLine="39" endPosition="289" />
     <nodeInfo nodeId="1237380261473" fileName="CellModel_Collection_Behavior.java" startLine="42" startPosition="73" endLine="43" endPosition="288" />
     <nodeInfo nodeId="1237380280825" fileName="CellModel_Collection_Behavior.java" startLine="46" startPosition="75" endLine="47" endPosition="154" />
-    <nodeInfo nodeId="1237451103979" fileName="CellModel_Collection_Behavior.java" startLine="51" startPosition="87" endLine="52" endPosition="19" />
-    <nodeInfo nodeId="1237481324619" fileName="CellModel_Collection_Behavior.java" startLine="54" startPosition="82" endLine="55" endPosition="18" />
-    <nodeInfo nodeId="1237451163300" fileName="CellModel_Collection_Behavior.java" startLine="58" startPosition="211" endLine="59" endPosition="20" />
-    <nodeInfo nodeId="1237451200098" fileName="CellModel_Collection_Behavior.java" startLine="61" startPosition="266" endLine="62" endPosition="20" />
-    <nodeInfo nodeId="1237451122560" fileName="CellModel_Collection_Behavior.java" startLine="64" startPosition="5" endLine="65" endPosition="17" />
+    <nodeInfo nodeId="1822203275565710640" fileName="CellModel_Collection_Behavior.java" startLine="50" startPosition="83" endLine="51" endPosition="146" />
+    <nodeInfo nodeId="1237451103979" fileName="CellModel_Collection_Behavior.java" startLine="55" startPosition="87" endLine="56" endPosition="19" />
+    <nodeInfo nodeId="1237481324619" fileName="CellModel_Collection_Behavior.java" startLine="58" startPosition="82" endLine="59" endPosition="18" />
+    <nodeInfo nodeId="1237451163300" fileName="CellModel_Collection_Behavior.java" startLine="62" startPosition="211" endLine="63" endPosition="20" />
+    <nodeInfo nodeId="1237451200098" fileName="CellModel_Collection_Behavior.java" startLine="65" startPosition="266" endLine="66" endPosition="20" />
+    <nodeInfo nodeId="1237451122560" fileName="CellModel_Collection_Behavior.java" startLine="68" startPosition="5" endLine="69" endPosition="17" />
     <nodeInfo nodeId="1237382108946" fileName="CellModel_Collection_Behavior.java" startLine="19" startPosition="10" endLine="21" endPosition="5" />
     <nodeInfo nodeId="1237382128525" fileName="CellModel_Collection_Behavior.java" startLine="29" startPosition="10" endLine="31" endPosition="5" />
-    <nodeInfo nodeId="1237451030598" fileName="CellModel_Collection_Behavior.java" startLine="50" startPosition="77" endLine="53" endPosition="5" />
-    <nodeInfo nodeId="1237481317844" fileName="CellModel_Collection_Behavior.java" startLine="53" startPosition="5" endLine="56" endPosition="5" />
-    <nodeInfo nodeId="1237451148741" fileName="CellModel_Collection_Behavior.java" startLine="57" startPosition="86" endLine="60" endPosition="7" />
-    <nodeInfo nodeId="1237451166758" fileName="CellModel_Collection_Behavior.java" startLine="60" startPosition="7" endLine="63" endPosition="7" />
+    <nodeInfo nodeId="1237451030598" fileName="CellModel_Collection_Behavior.java" startLine="54" startPosition="77" endLine="57" endPosition="5" />
+    <nodeInfo nodeId="1237481317844" fileName="CellModel_Collection_Behavior.java" startLine="57" startPosition="5" endLine="60" endPosition="5" />
+    <nodeInfo nodeId="1237451148741" fileName="CellModel_Collection_Behavior.java" startLine="61" startPosition="86" endLine="64" endPosition="7" />
+    <nodeInfo nodeId="1237451166758" fileName="CellModel_Collection_Behavior.java" startLine="64" startPosition="7" endLine="67" endPosition="7" />
     <nodeInfo nodeId="1220339813605" fileName="CellModel_Collection_Behavior.java" startLine="14" startPosition="77" endLine="21" endPosition="5" />
     <nodeInfo nodeId="1220339826371" fileName="CellModel_Collection_Behavior.java" startLine="24" startPosition="77" endLine="31" endPosition="5" />
-    <nodeInfo nodeId="1237451108062" fileName="CellModel_Collection_Behavior.java" startLine="56" startPosition="5" endLine="64" endPosition="5" />
+    <nodeInfo nodeId="1237451108062" fileName="CellModel_Collection_Behavior.java" startLine="60" startPosition="5" endLine="68" endPosition="5" />
     <scopeInfo nodeId="1220339802199" fileName="CellModel_Collection_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
     <scopeInfo nodeId="1220339813607" fileName="CellModel_Collection_Behavior.java" startLine="15" startPosition="80" endLine="16" endPosition="18" />
     <scopeInfo nodeId="1237382098611" fileName="CellModel_Collection_Behavior.java" startLine="17" startPosition="91" endLine="18" endPosition="18" />
@@ -602,17 +687,18 @@
     <scopeInfo nodeId="1239872947849" fileName="CellModel_Collection_Behavior.java" startLine="38" startPosition="75" endLine="39" endPosition="289" />
     <scopeInfo nodeId="1237380252719" fileName="CellModel_Collection_Behavior.java" startLine="42" startPosition="73" endLine="43" endPosition="288" />
     <scopeInfo nodeId="1237380273400" fileName="CellModel_Collection_Behavior.java" startLine="46" startPosition="75" endLine="47" endPosition="154" />
-    <scopeInfo nodeId="1237451030600" fileName="CellModel_Collection_Behavior.java" startLine="51" startPosition="87" endLine="52" endPosition="19" />
-    <scopeInfo nodeId="1237481317845" fileName="CellModel_Collection_Behavior.java" startLine="54" startPosition="82" endLine="55" endPosition="18" />
-    <scopeInfo nodeId="1237451148742" fileName="CellModel_Collection_Behavior.java" startLine="58" startPosition="211" endLine="59" endPosition="20" />
-    <scopeInfo nodeId="1237451166759" fileName="CellModel_Collection_Behavior.java" startLine="61" startPosition="266" endLine="62" endPosition="20" />
-    <scopeInfo nodeId="1237451108063" fileName="CellModel_Collection_Behavior.java" startLine="57" startPosition="86" endLine="63" endPosition="7" />
+    <scopeInfo nodeId="1822203275565710638" fileName="CellModel_Collection_Behavior.java" startLine="50" startPosition="83" endLine="51" endPosition="146" />
+    <scopeInfo nodeId="1237451030600" fileName="CellModel_Collection_Behavior.java" startLine="55" startPosition="87" endLine="56" endPosition="19" />
+    <scopeInfo nodeId="1237481317845" fileName="CellModel_Collection_Behavior.java" startLine="58" startPosition="82" endLine="59" endPosition="18" />
+    <scopeInfo nodeId="1237451148742" fileName="CellModel_Collection_Behavior.java" startLine="62" startPosition="211" endLine="63" endPosition="20" />
+    <scopeInfo nodeId="1237451166759" fileName="CellModel_Collection_Behavior.java" startLine="65" startPosition="266" endLine="66" endPosition="20" />
+    <scopeInfo nodeId="1237451108063" fileName="CellModel_Collection_Behavior.java" startLine="61" startPosition="86" endLine="67" endPosition="7" />
     <scopeInfo nodeId="1220339803813" fileName="CellModel_Collection_Behavior.java" startLine="14" startPosition="77" endLine="21" endPosition="5" />
     <scopeInfo nodeId="1220339806615" fileName="CellModel_Collection_Behavior.java" startLine="24" startPosition="77" endLine="31" endPosition="5" />
-    <scopeInfo nodeId="1237451108062" fileName="CellModel_Collection_Behavior.java" startLine="56" startPosition="5" endLine="64" endPosition="5">
+    <scopeInfo nodeId="1237451108062" fileName="CellModel_Collection_Behavior.java" startLine="60" startPosition="5" endLine="68" endPosition="5">
       <varInfo nodeId="1237451108066" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="1237451001941" fileName="CellModel_Collection_Behavior.java" startLine="50" startPosition="77" endLine="65" endPosition="17" />
+    <scopeInfo nodeId="1237451001941" fileName="CellModel_Collection_Behavior.java" startLine="54" startPosition="77" endLine="69" endPosition="17" />
   </root>
   <root nodeId="1220339884256">
     <nodeInfo nodeId="1220339889374" fileName="CellModel_Custom_Behavior.java" startLine="11" startPosition="77" endLine="12" endPosition="15" />

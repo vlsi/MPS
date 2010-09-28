@@ -1097,7 +1097,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_6845024055069759791(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SPropertyOperations.getBoolean(_context.getNode(), "usesFolding") && SLinkOperations.getTarget(_context.getNode(), "foldedCellModel", true) != null;
+    return CellModel_Collection_Behavior.call_isFoldingEnabled_1822203275565710635(_context.getNode()) && SLinkOperations.getTarget(_context.getNode(), "foldedCellModel", true) != null;
   }
 
   public static boolean ifMacro_Condition_1182977255664(final IOperationContext operationContext, final IfMacroContext _context) {

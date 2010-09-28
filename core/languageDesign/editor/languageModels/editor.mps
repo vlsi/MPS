@@ -350,8 +350,8 @@
                 <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7723470090030249339">
                   <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7723470090030249341">
                     <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="7723470090030249340" />
-                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="7723470090030249345">
-                      <link role="property:16" targetNodeId="2.1160590353935:32" resolveInfo="usesFolding" />
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1822203275565727121">
+                      <link role="baseMethodDeclaration:16" targetNodeId="30.1822203275565710635" resolveInfo="isFoldingEnabled" />
                     </node>
                   </node>
                 </node>
@@ -431,8 +431,8 @@
                 <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7723470090030872885">
                   <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7723470090030872887">
                     <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="7723470090030872886" />
-                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="7723470090030872891">
-                      <link role="property:16" targetNodeId="2.1160590353935:32" resolveInfo="usesFolding" />
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1822203275565727119">
+                      <link role="baseMethodDeclaration:16" targetNodeId="30.1822203275565710635" resolveInfo="isFoldingEnabled" />
                     </node>
                   </node>
                 </node>
@@ -528,8 +528,8 @@
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7723470090030966953">
                 <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7723470090030966955">
                   <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="7723470090030966954" />
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="7723470090030966959">
-                    <link role="property:16" targetNodeId="2.1160590353935:32" resolveInfo="usesFolding" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1822203275565727120">
+                    <link role="baseMethodDeclaration:16" targetNodeId="30.1822203275565710635" resolveInfo="isFoldingEnabled" />
                   </node>
                 </node>
               </node>

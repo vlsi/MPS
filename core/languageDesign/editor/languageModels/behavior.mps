@@ -4320,6 +4320,32 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1237380275495" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1822203275565710635">
+      <property name="name" value="isFoldingEnabled" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1822203275565710636" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="1822203275565710639" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1822203275565710638">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1822203275565710640">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.OrExpression:3" id="1822203275565710648">
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1822203275565710657">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1822203275565710652">
+                <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1822203275565710651" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1822203275565710656">
+                  <link role="link:16" targetNodeId="1.8709572687796959088:32" />
+                </node>
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation:16" id="1822203275565710661" />
+            </node>
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1822203275565710643">
+              <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1822203275565710642" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1822203275565710647">
+                <link role="property:16" targetNodeId="1.1160590353935:32" resolveInfo="usesFolding" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1237451001939">
       <property name="name" value="isVerticalIndent" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="1237451009142" />
