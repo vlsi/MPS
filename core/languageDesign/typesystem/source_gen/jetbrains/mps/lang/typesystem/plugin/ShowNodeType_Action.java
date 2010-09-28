@@ -14,8 +14,8 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.smodel.ModelAccess;
 import javax.swing.JOptionPane;
 import jetbrains.mps.workbench.actions.nodes.MyBaseNodeDialog;
@@ -83,11 +83,12 @@ public class ShowNodeType_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      final TypeCheckingContext typeCheckingContext = ShowNodeType_Action.this.editorComponent.getTypeCheckingContext();
+      final Wrappers._T<TypeCheckingContext> typeCheckingContext = new Wrappers._T<TypeCheckingContext>();
       final Wrappers._T<SNode> type = new Wrappers._T<SNode>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          type.value = typeCheckingContext.getTypeDontCheck(ShowNodeType_Action.this.node);
+          typeCheckingContext.value = ShowNodeType_Action.this.editorComponent.getTypeCheckingContext();
+          type.value = typeCheckingContext.value.getTypeDontCheck(ShowNodeType_Action.this.node);
         }
       });
       if (type.value == null) {
@@ -98,7 +99,7 @@ public class ShowNodeType_Action extends GeneratedAction {
       final Wrappers._T<IErrorReporter> reporter = new Wrappers._T<IErrorReporter>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          reporter.value = typeCheckingContext.getTypeMessageDontCheck(ShowNodeType_Action.this.node);
+          reporter.value = typeCheckingContext.value.getTypeMessageDontCheck(ShowNodeType_Action.this.node);
         }
       });
       dialog = new MyBaseNodeDialog(ShowNodeType_Action.this.context, ShowNodeType_Action.this.node, type.value, reporter.value);
