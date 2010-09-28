@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
+import jetbrains.mps.ide.tooltips.TooltipComponent;
 import jetbrains.mps.nodeEditor.EditorComponent.MyScrollBar;
 import jetbrains.mps.nodeEditor.icons.Icons;
 
@@ -141,7 +142,7 @@ public class MessagesGutter extends JPanel {
     myMessagesGutter.dispose();
   }
 
-  private class MyMessagesGutter extends JPanel {
+  private class MyMessagesGutter extends JPanel implements TooltipComponent {
     public MyMessagesGutter() {
       MPSToolTipManager.getInstance().registerComponentRightAligned(this);
 
@@ -263,7 +264,7 @@ public class MessagesGutter extends JPanel {
       return getMessagesAreaShift() + (int) (msg.getStart(myEditorComponent) * (((double) getMessagesAreaHeight()) / ((double) myEditorComponent.getHeight())));
     }
 
-    public String getToolTipText(MouseEvent event) {
+    public String getMPSTooltipText(MouseEvent event) {
       int y = event.getY();
 
       List<EditorMessage> messages = getMessagesAt(y);

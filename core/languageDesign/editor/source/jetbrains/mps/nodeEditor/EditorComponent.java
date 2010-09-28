@@ -32,6 +32,7 @@ import jetbrains.mps.ide.actions.EditorInternal_ActionGroup;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.GoByCurrentReference_Action;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
+import jetbrains.mps.ide.tooltips.TooltipComponent;
 import jetbrains.mps.ide.ui.MPSErrorDialog;
 import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
@@ -94,7 +95,7 @@ import java.lang.reflect.Field;
 import java.util.*;
 import java.util.List;
 
-public abstract class EditorComponent extends JComponent implements Scrollable, DataProvider, ITypeContextOwner {
+public abstract class EditorComponent extends JComponent implements Scrollable, DataProvider, ITypeContextOwner, TooltipComponent {
   private static final Logger LOG = Logger.getLogger(EditorComponent.class);
   public static final String EDITOR_POPUP_MENU_ACTIONS = EditorPopup_ActionGroup.ID;
   public static final String EDITOR_POPUP_MENU_ACTIONS_INTERNAL = EditorInternal_ActionGroup.ID;
@@ -669,7 +670,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return new SNodePointer(myNode);
   }
 
-  public String getToolTipText(final MouseEvent event) {
+  public String getMPSTooltipText(final MouseEvent event) {
     return ModelAccess.instance().tryRead(new Computable<String>() {
       public String compute() {
         if (myRootCell == null) {
