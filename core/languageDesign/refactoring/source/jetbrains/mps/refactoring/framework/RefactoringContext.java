@@ -38,6 +38,7 @@ import java.util.Map.Entry;
 
 public class RefactoringContext {
   private static final String OLD_STRUCTURE_LANGUAGE_NAMESPACE = "jetbrains.mps.bootstrap.structureLanguage";
+  private static final String NEW_STRUCTURE_LANGUAGE_NAMESPACE = "jetbrains.mps.lang.structure";
 
   private static final Logger LOG = Logger.getLogger(RefactoringContext.class);
 
@@ -91,7 +92,7 @@ public class RefactoringContext {
   //-----------------
 
   public RefactoringContext(IRefactoring refactoring) {
-    myRefactoring = refactoring;
+    setRefactoring(refactoring);
   }
 
   public RefactoringContext(Element e) {
@@ -495,6 +496,9 @@ public class RefactoringContext {
   }
 
   public IRefactoring getRefactoring() {
+    if (myRefactoring == null && myRefactoringClassName != null) {
+      myRefactoring = getRefactoring(myRefactoringClassName);
+    }
     return myRefactoring;
   }
 
@@ -508,8 +512,9 @@ public class RefactoringContext {
     {
       Element refactoringElement = new Element(REFACTORING);
       if (myRefactoring == null) {
-        LOG.error("saving refactoring: refactoring " + myRefactoringClassName + " is null");
-        if (myRefactoringClassName != null) {
+        if (myRefactoringClassName == null) {
+          LOG.error("saving refactoring: refactoring is null");
+        } else {
           refactoringElement.setAttribute(REFACTORING_CLASS, myRefactoringClassName);
         }
       } else {
@@ -684,54 +689,13 @@ public class RefactoringContext {
       myModelVersion = -1;
       LOG.error(t);
     }
-    {
-      myRefactoring = null;
-      Element refactoringElement = element.getChild(REFACTORING);
-      String className = refactoringElement.getAttributeValue(REFACTORING_CLASS);
 
-      if (className.startsWith(OLD_STRUCTURE_LANGUAGE_NAMESPACE + ".")) {
-        className = "jetbrains.mps.lang.structure" + className.substring(OLD_STRUCTURE_LANGUAGE_NAMESPACE.length());
-      }
-
-      myRefactoringClassName = className;
-
-      try {
-        String namespace = NameUtil.namespaceFromLongName(
-          NameUtil.namespaceFromLongName(className));//remove ".scripts.%ClassName%"
-        Language l = MPSModuleRepository.getInstance().getLanguage(namespace);
-
-        if (l == null) {
-          //if we weren't able to find a language then it should be loaded from core
-          //we can use any bootstrap language for it, for example, refactoring lang
-          l = Refactoring_Language.get();
-        }
-
-        if (l == null) {
-          LOG.errorWithTrace("can't find a language " + namespace);
-        } else {
-          Class refactoringClass = l.getClass(className);
-          if (refactoringClass == null) {
-            LOG.errorWithTrace("can't find a class " + className + " in a language " + namespace);
-          } else {
-            Constructor constructor = refactoringClass.getConstructor();
-            Object refactoring = constructor.newInstance();
-            if (refactoring instanceof AbstractLoggableRefactoring) {
-              myRefactoring = OldRefactoringAdapter.createAdapterFor(((AbstractLoggableRefactoring) refactoring));
-            } else {
-              myRefactoring = (IRefactoring) refactoring;
-            }
-            if (!(myRefactoring instanceof ILoggableRefactoring)){
-              LOG.error("Non-loggable refactoring was logged: "+myRefactoring.getUserFriendlyName());
-            }
-          }
-        }
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-      if (myRefactoring == null) {
-        LOG.error("refactoring for " + className + " was not loaded");
-      }
+    myRefactoring = null;
+    myRefactoringClassName = element.getChild(REFACTORING).getAttributeValue(REFACTORING_CLASS);
+    if (myRefactoringClassName.startsWith(OLD_STRUCTURE_LANGUAGE_NAMESPACE + ".")) {
+      myRefactoringClassName = NEW_STRUCTURE_LANGUAGE_NAMESPACE + myRefactoringClassName.substring(OLD_STRUCTURE_LANGUAGE_NAMESPACE.length());
     }
+
     {
       Element moveMapElement = element.getChild(MOVE_MAP);
       if (moveMapElement != null) {
@@ -782,6 +746,47 @@ public class RefactoringContext {
       return ((OldRefactoringAdapter) refactoring).getRefactoringClassName();
     }
     return refactoring.getClass().getName();
+  }
+
+  private static IRefactoring getRefactoring(String className) {
+    IRefactoring result = null;
+    try {
+      String namespace = NameUtil.namespaceFromLongName(
+        NameUtil.namespaceFromLongName(className));//remove ".scripts.%ClassName%"
+      Language l = MPSModuleRepository.getInstance().getLanguage(namespace);
+
+      if (l == null) {
+        //if we weren't able to find a language then it should be loaded from core
+        //we can use any bootstrap language for it, for example, refactoring lang
+        l = Refactoring_Language.get();
+      }
+
+      if (l == null) {
+        LOG.errorWithTrace("can't find a language " + namespace);
+      } else {
+        Class refactoringClass = l.getClass(className);
+        if (refactoringClass == null) {
+          LOG.errorWithTrace("can't find a class " + className + " in a language " + namespace);
+        } else {
+          Constructor constructor = refactoringClass.getConstructor();
+          Object refactoring = constructor.newInstance();
+          if (refactoring instanceof AbstractLoggableRefactoring) {
+            result = OldRefactoringAdapter.createAdapterFor(((AbstractLoggableRefactoring) refactoring));
+          } else {
+            result = (IRefactoring) refactoring;
+          }
+          if (!(result instanceof ILoggableRefactoring)){
+            LOG.error("Non-loggable refactoring was logged: "+result.getUserFriendlyName());
+          }
+        }
+      }
+    } catch (Throwable t) {
+      LOG.error(t);
+    }
+    if (result == null) {
+      LOG.error("refactoring for " + className + " was not loaded");
+    }
+    return result;
   }
 
   private void serialize(Element element, Object value) {
