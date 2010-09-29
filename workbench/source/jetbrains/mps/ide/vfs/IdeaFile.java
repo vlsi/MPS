@@ -5,6 +5,7 @@ import com.intellij.openapi.vfs.JarFileSystem;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.newvfs.NewVirtualFile;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
@@ -134,7 +135,7 @@ class IdeaFile implements IFileEx {
   @Override
   public long lastModified() {
     if (findVirtualFile()) {
-      return myVirtualFile.getModificationStamp();
+      return myVirtualFile.getTimeStamp();
     } else {
       return -1;
     }
@@ -243,6 +244,19 @@ class IdeaFile implements IFileEx {
   }
 
   @Override
+  public boolean setTimeStamp(long time) {
+    if (findVirtualFile() && myVirtualFile instanceof NewVirtualFile) {
+      try {
+        ((NewVirtualFile) myVirtualFile).setTimeStamp(time);
+        return true;
+      } catch (IOException e) {
+        LOG.warning("", e);
+      }
+    }
+    return false;
+  }
+
+  @Override
   public boolean isPackaged() {
     return findVirtualFile() && myVirtualFile.getFileSystem() instanceof JarFileSystem;
   }
@@ -269,6 +283,10 @@ class IdeaFile implements IFileEx {
   }
 
   private boolean findVirtualFile() {
+    if (myVirtualFile != null && !myVirtualFile.isValid()) {
+      myPath = myVirtualFile.getPath();
+      myVirtualFile = null;
+    }
     if (myVirtualFile == null) {
       if (myPath.contains("!")) {
         int index = myPath.indexOf("!");

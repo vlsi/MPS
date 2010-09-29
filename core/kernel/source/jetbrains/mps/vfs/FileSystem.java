@@ -23,6 +23,8 @@ public abstract class FileSystem {
 
   public abstract URL getURL(IFile file) throws MalformedURLException;
 
+  public abstract boolean setTimeStamp(IFile file, long time);
+
   // This method should not be used in MPS kernel, only in workbench
 
   public static FileSystem getInstance() {

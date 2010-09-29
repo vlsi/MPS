@@ -172,4 +172,9 @@ public class JarEntryFile implements IFileEx {
   public URL getURL() throws MalformedURLException {
     throw new UnsupportedOperationException("Not implemented yet"); 
   }
+
+  @Override
+  public boolean setTimeStamp(long time) {
+    return false;
+  }
 }

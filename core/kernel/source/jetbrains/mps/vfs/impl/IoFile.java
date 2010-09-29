@@ -182,4 +182,9 @@ public class IoFile implements IFileEx {
   public URL getURL() throws MalformedURLException {
     return myFile.toURI().toURL();
   }
+
+  @Override
+  public boolean setTimeStamp(long time) {
+    return myFile.setLastModified(time);
+  }
 }

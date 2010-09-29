@@ -47,4 +47,9 @@ public class FileSystemImpl extends FileSystem {
       return null;
     }
   }
+
+  @Override
+  public boolean setTimeStamp(IFile file, long time) {
+    return file instanceof IFileEx && ((IFileEx) file).setTimeStamp(time);
+  }
 }

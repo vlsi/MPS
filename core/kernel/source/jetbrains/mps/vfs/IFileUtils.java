@@ -3,6 +3,7 @@ package jetbrains.mps.vfs;
 import jetbrains.mps.logging.Logger;
 
 import java.io.BufferedInputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
 
@@ -36,5 +37,17 @@ public class IFileUtils {
       }
     }
     return false;
+  }
+
+  public static IFile createTmpDir() {
+    IFile tmpHome = FileSystem.getInstance().getFileByPath(System.getProperty("java.io.tmpdir"));
+    int i = 0;
+    while (tmpHome.child("mpstemp" + i).exists()) {
+      i++;
+    }
+
+    IFile result = tmpHome.child("mpstemp" + i);
+    result.mkdirs();
+    return result;
   }
 }

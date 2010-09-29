@@ -11,4 +11,6 @@ public interface IFileEx extends IFile {
   IFile getBundleHome();
 
   URL getURL() throws MalformedURLException;
+
+  boolean setTimeStamp(long time);
 }
