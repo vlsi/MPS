@@ -371,8 +371,10 @@
       <reference ref="Forward"/>
       <separator/>
       <reference ref="ShowSettings"/>
-      <separator/>
-      <reference ref="HelpTopics"/>
+      <!-- MPS Patch Start
+        <separator/>
+        <reference ref="HelpTopics"/>
+      MPS Patch End-->
 
     </group>
 
