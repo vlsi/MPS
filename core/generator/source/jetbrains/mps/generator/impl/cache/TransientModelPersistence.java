@@ -18,6 +18,7 @@ package jetbrains.mps.generator.impl.cache;
 import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.InternUtil;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -32,20 +33,27 @@ import java.util.Map.Entry;
 public class TransientModelPersistence {
 
   private static final int VERSION = 1;
+  private static final String LOCAL = "$local$";
 
-  public static void saveModel(SModel sourceModel, ModelOutputStream os) throws IOException {
+  private final String myModelReference;
+
+  public TransientModelPersistence(@NotNull String modelReference) {
+    myModelReference = modelReference;
+  }
+
+  public void saveModel(SModel sourceModel, ModelOutputStream os) throws IOException {
     os.writeInt(VERSION);
-    os.writeUTF(sourceModel.getSModelReference().toString());
+    os.writeString(sourceModel.getSModelReference().toString());
     saveNodes(sourceModel.getRoots(), os);
   }
 
-  public static SModel loadModel(ModelInputStream is) throws IOException, ClassNotFoundException {
+  public SModel loadModel(ModelInputStream is) throws IOException, ClassNotFoundException {
     int version = is.readInt();
     if (version != VERSION) {
       return null;
     }
 
-    String modelReference = is.readUTF();
+    String modelReference = is.readString();
     SModel m = new TransientSModel(SModelReference.fromString(modelReference));
     m.setLoading(true);
     List<SNode> roots = loadNodes(m, is);
@@ -55,14 +63,14 @@ public class TransientModelPersistence {
     return m;
   }
 
-  private static void saveNodes(Collection<SNode> nodes, ModelOutputStream os) throws IOException {
+  private void saveNodes(Collection<SNode> nodes, ModelOutputStream os) throws IOException {
     os.writeInt(nodes.size());
     for (SNode n : nodes) {
       saveNode(n, os);
     }
   }
 
-  private static List<SNode> loadNodes(SModel model, ModelInputStream is) throws IOException, ClassNotFoundException {
+  private List<SNode> loadNodes(SModel model, ModelInputStream is) throws IOException, ClassNotFoundException {
     int size = is.readInt();
     List<SNode> nodes = new ArrayList<SNode>(size);
     for (int i = 0; i < size; i++) {
@@ -71,7 +79,7 @@ public class TransientModelPersistence {
     return nodes;
   }
 
-  private static SNode loadNode(SModel model, ModelInputStream is) throws ClassNotFoundException, IOException {
+  private SNode loadNode(SModel model, ModelInputStream is) throws ClassNotFoundException, IOException {
     String conceptFqName = is.readString();
     String nodeId = is.readString();
     String nodeRole = is.readString();
@@ -97,6 +105,9 @@ public class TransientModelPersistence {
 
       String role = is.readString();
       String targetModelRef = is.readString();
+      if(targetModelRef != null && LOCAL.equals(targetModelRef)) {
+        targetModelRef = myModelReference;
+      }
       String resolveInfo = is.readString();
       if (kind == 1) {
         node.addReference(
@@ -131,7 +142,7 @@ public class TransientModelPersistence {
     return node;
   }
 
-  private static void saveNode(SNode node, ModelOutputStream os) throws IOException {
+  private void saveNode(SNode node, ModelOutputStream os) throws IOException {
     os.writeString(node.getConceptFqName());
     os.writeString(node.getId());
     os.writeString(node.getRole_());
@@ -158,7 +169,8 @@ public class TransientModelPersistence {
         throw new IOException("cannot store reference: " + reference.toString());
       }
       os.writeString(reference.getRole());
-      os.writeString(targetModelReference != null ? targetModelReference.toString() : null);
+      String targetModelRef = targetModelReference != null ? targetModelReference.toString() : null;
+      os.writeString(targetModelRef != null && targetModelRef.equals(myModelReference) ? LOCAL : targetModelRef);
       os.writeString(reference.getResolveInfo());
     }
 

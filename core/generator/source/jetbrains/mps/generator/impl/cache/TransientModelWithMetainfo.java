@@ -50,7 +50,7 @@ public class TransientModelWithMetainfo {
   }
 
   public void save(ModelOutputStream os) throws IOException {
-    TransientModelPersistence.saveModel(myModel, os);
+    new TransientModelPersistence(myModel.getSModelReference().toString()).saveModel(myModel, os);
     saveMetainfo(os);
   }
 
@@ -72,9 +72,9 @@ public class TransientModelWithMetainfo {
   }
 
 
-  public static TransientModelWithMetainfo load(ModelInputStream is) throws IOException {
+  public static TransientModelWithMetainfo load(ModelInputStream is, String modelReference) throws IOException {
     try {
-      SModel model = TransientModelPersistence.loadModel(is);
+      SModel model = new TransientModelPersistence(modelReference).loadModel(is);
       TransientModelWithMetainfo result = new TransientModelWithMetainfo(model);
       result.loadMetainfo(is);
       return result;

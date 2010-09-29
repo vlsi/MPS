@@ -114,12 +114,12 @@ public class IntermediateModelsCache {
     }
   }
 
-  public TransientModelWithMetainfo load(int majorStep, int minorStep) {
+  public TransientModelWithMetainfo load(int majorStep, int minorStep, String modelReference) {
     try {
       InputStream stream = myCacheContainer.openStream(getStorageName(majorStep, minorStep));
       ModelInputStream is = new ModelInputStream(stream);
       try {
-        return TransientModelWithMetainfo.load(is);
+        return TransientModelWithMetainfo.load(is, modelReference);
       } finally {
         is.close();
       }

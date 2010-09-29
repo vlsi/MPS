@@ -159,7 +159,7 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
 
     int stepsCount = myCache.getMinorCount(myMajorStep);
     // TODO if(myMinorStep >= stepCount) copy from current input model
-    TransientModelWithMetainfo model = myCache.load(myMajorStep, myMinorStep >= stepsCount ? stepsCount - 1 : myMinorStep);
+    TransientModelWithMetainfo model = myCache.load(myMajorStep, myMinorStep >= stepsCount ? stepsCount - 1 : myMinorStep, currentOutputModel.getSModelReference().toString());
     if(model == null) {
       throw new GenerationFailureException("Cannot load required data from cache. Try to regenerate model.");
     }
