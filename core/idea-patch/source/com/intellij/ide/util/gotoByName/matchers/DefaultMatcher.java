@@ -37,18 +37,16 @@ import java.util.*;
 public abstract class DefaultMatcher implements EntityMatcher {
   private static final Logger LOG = Logger.getInstance("#com.intellij.ide.util.gotoByName.matcher.DefaultMatcher");
 
-  private ChooseByNameBase myBase;
   private ChooseByNameModel myModel;
   private WeakReference<PsiElement> myContext;
 
-  public DefaultMatcher(ChooseByNameBase base, ChooseByNameModel model, WeakReference<PsiElement> context) {
-    myBase = base;
+  public DefaultMatcher(ChooseByNameModel model, PsiElement context) {
     myModel = model;
-    myContext = context;
+    myContext = new WeakReference<PsiElement>(context);
   }
 
-  public boolean addElementsByPattern(Set<Object> result, String pattern, String[] names,boolean checkboxState,int maxCount, Computable<Boolean> isCancelled) {
-    String namePattern = myBase.getNamePattern(pattern);
+  public boolean addElementsByPattern(Set<Object> result, String pattern, String[] names, boolean checkboxState, int maxCount, Computable<Boolean> isCancelled) {
+    String namePattern = getNamePattern(pattern);
     String qualifierPattern = getQualifierPattern(pattern);
 
     boolean empty = namePattern.length() == 0 || namePattern.equals("@");    // TODO[yole]: remove implicit dependency
@@ -85,8 +83,7 @@ public abstract class DefaultMatcher implements EntityMatcher {
             break All;
           }
         }
-      }
-      else if (elements.length == 1 && matchesQualifier(elements[0], qualifierPattern)) {
+      } else if (elements.length == 1 && matchesQualifier(elements[0], qualifierPattern)) {
         result.add(elements[0]);
         if (result.size() >= maxCount) {
           overflow = true;
@@ -139,7 +136,7 @@ public abstract class DefaultMatcher implements EntityMatcher {
     final List<Pair<String, NameUtil.Matcher>> patternsAndMatchers =
       ContainerUtil.map2List(split(qualifierPattern), new Function<String, Pair<String, NameUtil.Matcher>>() {
         public Pair<String, NameUtil.Matcher> fun(String s) {
-          final String pattern = myBase.getNamePattern(s);
+          final String pattern = getNamePattern(s);
           final NameUtil.Matcher matcher = buildPatternMatcher(pattern);
 
           return new Pair<String, NameUtil.Matcher>(pattern, matcher);
@@ -174,6 +171,10 @@ public abstract class DefaultMatcher implements EntityMatcher {
     return true;
   }
 
+  private String getNamePattern(String s) {
+    return ChooseByNameBase.getNamePattern_static(myModel, s);
+  }
+
   private String getQualifierPattern(String pattern) {
     final String[] separators = myModel.getSeparators();
     int lastSeparatorOccurence = 0;
@@ -187,11 +188,10 @@ public abstract class DefaultMatcher implements EntityMatcher {
     boolean matches = false;
     if (name != null) {
       if (myModel instanceof CustomMatcherModel) {
-        if (((CustomMatcherModel)myModel).matches(name, pattern)) {
+        if (((CustomMatcherModel) myModel).matches(name, pattern)) {
           matches = true;
         }
-      }
-      else if (pattern.length() == 0 || matcher.matches(name)) {
+      } else if (pattern.length() == 0 || matcher.matches(name)) {
         matches = true;
       }
     }

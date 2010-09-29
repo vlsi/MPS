@@ -128,7 +128,7 @@ public abstract class ChooseByNameBase {
    */
   protected ChooseByNameBase(Project project, ChooseByNameModel model, String initialText, final PsiElement context) {
     this(project, model, initialText);
-    myMatcher = new DefaultMatcher(this, model, new WeakReference<PsiElement>(context)) {
+    myMatcher = new DefaultMatcher(model, context) {
       protected boolean canShowListForEmptyPattern() {
         return ChooseByNameBase.this.canShowListForEmptyPattern();
       }
@@ -198,22 +198,20 @@ public abstract class ChooseByNameBase {
         }
 
         if (element instanceof DataProvider) {
-          return ((DataProvider)element).getData(dataId);
+          return ((DataProvider) element).getData(dataId);
         }
-      }
-      else if (LangDataKeys.PSI_ELEMENT_ARRAY.is(dataId)) {
+      } else if (LangDataKeys.PSI_ELEMENT_ARRAY.is(dataId)) {
         final List<Object> chosenElements = getChosenElements();
         if (chosenElements != null) {
           List<PsiElement> result = new ArrayList<PsiElement>();
           for (Object element : chosenElements) {
             if (element instanceof PsiElement) {
-              result.add((PsiElement)element);
+              result.add((PsiElement) element);
             }
           }
           return result.toArray(new PsiElement[result.size()]);
         }
-      }
-      else if (PlatformDataKeys.DOMINANT_HINT_AREA_RECTANGLE.is(dataId)) {
+      } else if (PlatformDataKeys.DOMINANT_HINT_AREA_RECTANGLE.is(dataId)) {
         return getBounds();
       }
       return null;
@@ -290,7 +288,7 @@ public abstract class ChooseByNameBase {
     GridBagLayout gb = new GridBagLayout();
     JPanel eastWrapper = new JPanel(gb);
     gb.setConstraints(hBox, new GridBagConstraints(0, 0, 0, 0, 1, 1, GridBagConstraints.SOUTHEAST, GridBagConstraints.NONE,
-                                                   new Insets(0, 0, 0, 0), 0, 0));
+      new Insets(0, 0, 0, 0), 0, 0));
     eastWrapper.add(hBox);
 
     caption2Tools.add(eastWrapper, BorderLayout.CENTER);
@@ -306,8 +304,7 @@ public abstract class ChooseByNameBase {
     if (myModel.getPromptText() != null) {
       checkBoxPanel.setLayout(new BoxLayout(checkBoxPanel, BoxLayout.X_AXIS));
       checkBoxPanel.add(myCheckBox);
-    }
-    else {
+    } else {
       checkBoxPanel.setLayout(new BoxLayout(checkBoxPanel, BoxLayout.LINE_AXIS));
       checkBoxPanel.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
       checkBoxPanel.add(myCheckBox);
@@ -351,7 +348,7 @@ public abstract class ChooseByNameBase {
         }
         final Object chosenElement = getChosenElement();
         if (chosenElement instanceof PsiElement) {
-          CopyReferenceAction.doCopy((PsiElement)chosenElement, myProject);
+          CopyReferenceAction.doCopy((PsiElement) chosenElement, myProject);
         }
       }
     });
@@ -377,8 +374,7 @@ public abstract class ChooseByNameBase {
                     }
                   }
                 });
-              }
-              else {
+              } else {
                 hideHint();
               }
             }
@@ -452,8 +448,7 @@ public abstract class ChooseByNameBase {
             myMaximumListSizeLimit += MAXIMUM_LIST_SIZE_LIMIT;
             rebuildList(myList.getSelectedIndex(), REBUILD_DELAY, null, ModalityState.current(), e);
             e.consume();
-          }
-          else {
+          } else {
             doClose(true);
           }
         }
@@ -501,12 +496,11 @@ public abstract class ChooseByNameBase {
     final Object element = getChosenElement();
     if (hint != null) {
       if (element instanceof PsiElement) {
-        myTextFieldPanel.updateHint((PsiElement)element);
-      }
-      else if (element instanceof DataProvider) {
-        final Object o = ((DataProvider)element).getData(LangDataKeys.PSI_ELEMENT.getName());
+        myTextFieldPanel.updateHint((PsiElement) element);
+      } else if (element instanceof DataProvider) {
+        final Object o = ((DataProvider) element).getData(LangDataKeys.PSI_ELEMENT.getName());
         if (o instanceof PsiElement) {
-          myTextFieldPanel.updateHint((PsiElement)o);
+          myTextFieldPanel.updateHint((PsiElement) o);
         }
       }
     }
@@ -544,7 +538,7 @@ public abstract class ChooseByNameBase {
     int index = checkboxState ? 1 : 0;
     if (myNames[index] != null) return;
 
-    Window window = (Window)SwingUtilities.getAncestorOfClass(Window.class, myTextField);
+    Window window = (Window) SwingUtilities.getAncestorOfClass(Window.class, myTextField);
     //LOG.assertTrue (myTextField != null);
     //LOG.assertTrue (window != null);
     Window ownerWindow = null;
@@ -609,17 +603,15 @@ public abstract class ChooseByNameBase {
     Component parent = UIUtil.findUltimateParent(window);
 
     if (parent instanceof JFrame) {
-      layeredPane = ((JFrame)parent).getLayeredPane();
-    }
-    else if (parent instanceof JDialog) {
-      layeredPane = ((JDialog)parent).getLayeredPane();
-    }
-    else {
+      layeredPane = ((JFrame) parent).getLayeredPane();
+    } else if (parent instanceof JDialog) {
+      layeredPane = ((JDialog) parent).getLayeredPane();
+    } else {
       throw new IllegalStateException("cannot find parent window: project=" +
-                                      myProject +
-                                      (myProject != null ? "; open=" + myProject.isOpen() : "") +
-                                      "; window=" +
-                                      window);
+        myProject +
+        (myProject != null ? "; open=" + myProject.isOpen() : "") +
+        "; window=" +
+        window);
     }
     return layeredPane;
   }
@@ -677,8 +669,7 @@ public abstract class ChooseByNameBase {
 
         if (delay > 0) {
           myAlarm.addRequest(request, delay, ModalityState.stateForComponent(myTextField));
-        }
-        else {
+        } else {
           request.run();
         }
       }
@@ -738,8 +729,7 @@ public abstract class ChooseByNameBase {
     if (!commands.isEmpty()) {
       showList();
       myListUpdater.appendToModel(commands, pos);
-    }
-    else {
+    } else {
       if (pos == 0) {
         pos = detectBestStatisticalPosition();
       }
@@ -777,7 +767,11 @@ public abstract class ChooseByNameBase {
   }
 
   public String getNamePattern(String pattern) {
-    final String[] separators = myModel.getSeparators();
+    return getNamePattern_static(myModel, pattern);
+  }
+
+  public static String getNamePattern_static(ChooseByNameModel model, String pattern) {
+    final String[] separators = model.getSeparators();
     int lastSeparatorOccurence = 0;
     for (String separator : separators) {
       final int idx = pattern.lastIndexOf(separator);
@@ -817,8 +811,7 @@ public abstract class ChooseByNameBase {
     public void apply() {
       if (idx < myListModel.size()) {
         myListModel.add(idx, element);
-      }
-      else {
+      } else {
         myListModel.addElement(element);
       }
     }
@@ -857,8 +850,7 @@ public abstract class ChooseByNameBase {
 
           if (!myCommands.isEmpty()) {
             myAlarm.addRequest(this, DELAY);
-          }
-          else {
+          } else {
             doPostponedOkIfNeeded();
           }
           if (!myDisposedFlag) {
@@ -882,8 +874,7 @@ public abstract class ChooseByNameBase {
     if (myPosponedOkAction != null) {
       if (success) {
         myPosponedOkAction.setDone();
-      }
-      else {
+      } else {
         myPosponedOkAction.setRejected();
       }
     }
@@ -953,7 +944,7 @@ public abstract class ChooseByNameBase {
       final Shortcut[] shortcuts = KeymapManager.getInstance().getActiveKeymap().getShortcuts(actionCodeCompletion);
       for (final Shortcut shortcut : shortcuts) {
         if (shortcut instanceof KeyboardShortcut) {
-          return ((KeyboardShortcut)shortcut).getFirstKeyStroke();
+          return ((KeyboardShortcut) shortcut).getFirstKeyStroke();
         }
       }
       return null;
@@ -1029,8 +1020,7 @@ public abstract class ChooseByNameBase {
           final String string = name.toLowerCase();
           if (commonPrefix == null) {
             commonPrefix = string;
-          }
-          else {
+          } else {
             while (commonPrefix.length() > 0) {
               if (string.startsWith(commonPrefix)) {
                 break;
@@ -1124,7 +1114,7 @@ public abstract class ChooseByNameBase {
                 break;
               }
               if (elem instanceof PsiElement) {
-                final PsiElement psiElement = (PsiElement)elem;
+                final PsiElement psiElement = (PsiElement) elem;
                 psiElement.isWritable(); // That will cache writable flag in VirtualFile. Taking the action here makes it canceleable.
               }
             }
@@ -1146,8 +1136,7 @@ public abstract class ChooseByNameBase {
         myCheckboxState = true;
         ApplicationManager.getApplication().runReadAction(action);
         cardToShow = elements.isEmpty() ? NOT_FOUND_CARD : NOT_FOUND_IN_PROJECT_CARD;
-      }
-      else {
+      } else {
         cardToShow = elements.isEmpty() ? NOT_FOUND_CARD : CHECK_BOX_CARD;
       }
       showCard(cardToShow, 0);
