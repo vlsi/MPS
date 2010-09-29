@@ -34,7 +34,6 @@ import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.lang.plugin.structure.RunConfigCreator;
 import jetbrains.mps.lang.plugin.structure.RunConfigurationTypeDeclaration;
 import jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator;
-import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.runconfigs.BaseConfigCreator;
 import jetbrains.mps.project.IModule;
@@ -45,7 +44,6 @@ import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.*;
 
@@ -82,10 +80,22 @@ public class RunConfigManager implements ProjectComponent {
     if (myLoaded) return;
     if (IdeMain.getTestMode() != TestMode.NO_TEST) return;
 
-    addConfigTypes();
+    final ExtensionPoint<ConfigurationType> epConfigType = Extensions.getArea(null).getExtensionPoint(ConfigurationType.CONFIGURATION_TYPE_EP);
+    synchronized (myConfigsLock) {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          mySortedConfigs = createConfigs(myProject);
+          for (ConfigurationType ct : mySortedConfigs) {
+            epConfigType.registerExtension(ct);
+          }
+        }
+      });
+    }
 
     final ConfigurationType[] configurationTypes = getConfigurationTypes();
     getRunManager().initializeConfigurationTypes(configurationTypes);
+
+    reinitRunManager();
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -125,30 +135,6 @@ public class RunConfigManager implements ProjectComponent {
     return result.toArray(new ConfigurationType[result.size()]);
   }
 
-  public void firstInit() {
-    if (myProject.isDisposed()) return;
-    if (myLoaded) return;
-    if (IdeMain.getTestMode() != TestMode.NO_TEST) return;
-
-    addConfigTypes();
-
-    myLoaded = true;
-  }
-
-  private void addConfigTypes() {
-    final ExtensionPoint<ConfigurationType> epConfigType = Extensions.getArea(null).getExtensionPoint(ConfigurationType.CONFIGURATION_TYPE_EP);
-    synchronized (myConfigsLock) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          mySortedConfigs = createConfigs(myProject);
-          for (ConfigurationType ct : mySortedConfigs) {
-            epConfigType.registerExtension(ct);
-          }
-        }
-      });
-    }
-  }
-
   public void disposeRunConfigs() {
     //assert ThreadUtils.isEventDispatchThread() : "should be called from EDT only";
     assert !myProject.isDisposed();
@@ -157,10 +143,10 @@ public class RunConfigManager implements ProjectComponent {
     ExecutionManager executionManager = myProject.getComponent(ExecutionManager.class);
     RunContentManagerImpl contentManager = (RunContentManagerImpl) executionManager.getContentManager();
     for (RunContentDescriptor d : contentManager.getAllDescriptors()) {
-      if (d.getAttachedContent() == null ){
+      if (d.getAttachedContent() == null) {
         LOG.warning("Attached content of descriptor " + d.getDisplayName() + " is null.");
       } else if (d.getAttachedContent().getManager() == null) {
-        LOG.warning("Manager of attached content of descriptor " + d.getDisplayName() + " is null.");  
+        LOG.warning("Manager of attached content of descriptor " + d.getDisplayName() + " is null.");
       } else {
         d.getAttachedContent().getManager().removeAllContents(true);
       }
@@ -196,7 +182,7 @@ public class RunConfigManager implements ProjectComponent {
     }
 
     mySharedState = getSharedConfigurationManager().getState();
-    getRunManager().cleanup();
+    reinitRunManager();
 
     myLoaded = false;
   }
@@ -298,6 +284,18 @@ public class RunConfigManager implements ProjectComponent {
       } catch (Throwable e) {
         LOG.error(e);
       }
+    }
+  }
+
+  private void reinitRunManager() {
+    Element newState = new Element("root");
+    try {
+      getRunManager().writeExternal(newState);
+      getRunManager().readExternal(newState);
+    } catch (WriteExternalException e) {
+      LOG.error(e);
+    } catch (InvalidDataException e) {
+      LOG.error(e);
     }
   }
 
