@@ -18,7 +18,11 @@ package jetbrains.mps.lang.typesystem.runtime;
 import jetbrains.mps.smodel.SNode;
 
 public interface IRuleWithTwoApplicableNodes extends IApplicableTo2Concepts {
+  @Deprecated
   public boolean isApplicable1(SNode node);
 
+  @Deprecated
   public boolean isApplicable2(SNode node);
+
+  public IsApplicable2Status isApplicableAndPatterns(SNode node1, SNode node2);
 }

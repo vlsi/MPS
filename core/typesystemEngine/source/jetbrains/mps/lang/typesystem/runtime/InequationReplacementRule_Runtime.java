@@ -21,8 +21,16 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 public abstract class InequationReplacementRule_Runtime implements IRuleWithTwoApplicableNodes {
   public abstract void processInequation(SNode subtype, SNode supertype, EquationInfo errorInfo);
 
+  @Deprecated
   public boolean isApplicable(SNode subtype, SNode supertype) {
     return isApplicableSubtype(subtype) && isApplicableSupertype(supertype) && isApplicableCustom(subtype, supertype);
+  }
+
+  public IsApplicable2Status isApplicableAndPatterns(SNode node1, SNode node2) {
+    boolean b = isApplicableSubtype(node1)
+      && isApplicableSupertype(node2)
+      && isApplicableCustom(node1, node2);
+    return new IsApplicable2Status(b, null, null);
   }
 
   public abstract boolean isApplicableSubtype(SNode node);
@@ -53,7 +61,10 @@ public abstract class InequationReplacementRule_Runtime implements IRuleWithTwoA
     return false;
   }
 
+  //todo should also have IsApplicableStatus or patterns as parameters
   public boolean isApplicableCustom(SNode subtype, SNode supertype) {
     return true;
   }
+
+
 }

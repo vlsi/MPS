@@ -24,7 +24,13 @@ public abstract class ComparisonRule_Runtime implements IRuleWithTwoApplicableNo
     return false;
   }
 
+  @Deprecated
   public boolean isApplicable(SNode node1, SNode node2) {
     return isApplicable1(node1) && isApplicable2(node2);
+  }
+
+  public IsApplicable2Status isApplicableAndPatterns(SNode node1, SNode node2) {
+    boolean b = isApplicable1(node1) && isApplicable2(node2);
+    return new IsApplicable2Status(b, null, null);
   }
 }

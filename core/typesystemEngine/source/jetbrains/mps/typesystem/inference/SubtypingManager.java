@@ -68,9 +68,9 @@ public class SubtypingManager {
   }
 
   boolean isSubtypeByReplacementRules(SNode subtype, SNode supertype) {
-    Set<InequationReplacementRule_Runtime> inequationReplacementRules = myTypeChecker.getRulesManager().getReplacementRules(subtype, supertype);
-    for (InequationReplacementRule_Runtime inequationReplacementRule : inequationReplacementRules) {
-      if (inequationReplacementRule.checkInequation(subtype, supertype, new EquationInfo(null, null))) {
+    Set<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>> inequationReplacementRules = myTypeChecker.getRulesManager().getReplacementRules(subtype, supertype);
+    for (Pair<InequationReplacementRule_Runtime, IsApplicable2Status> inequationReplacementRule : inequationReplacementRules) {
+      if (inequationReplacementRule.o1.checkInequation(subtype, supertype, new EquationInfo(null, null))) {
         return true;
       }
     }
@@ -640,16 +640,16 @@ System.out.println("alltypes = " + allTypes);*/
       return false;
     }
 
-    Set<ComparisonRule_Runtime> comparisonRule_runtimes = myTypeChecker.getRulesManager().getComparisonRules(term1, term2, isWeak);
+    Set<Pair<ComparisonRule_Runtime, IsApplicable2Status>> comparisonRule_runtimes = myTypeChecker.getRulesManager().getComparisonRules(term1, term2, isWeak);
     if (comparisonRule_runtimes != null) {
-      for (ComparisonRule_Runtime comparisonRule_runtime : comparisonRule_runtimes) {
-        if (comparisonRule_runtime.areComparable(term1, term2)) return true;
+      for (Pair<ComparisonRule_Runtime, IsApplicable2Status> comparisonRule_runtime : comparisonRule_runtimes) {
+        if (comparisonRule_runtime.o1.areComparable(term1, term2)) return true;
       }
     }
     comparisonRule_runtimes = myTypeChecker.getRulesManager().getComparisonRules(term2, term1, isWeak);
     if (comparisonRule_runtimes != null) {
-      for (ComparisonRule_Runtime comparisonRule_runtime : comparisonRule_runtimes) {
-        if (comparisonRule_runtime.areComparable(term2, term1)) return true;
+      for (Pair<ComparisonRule_Runtime, IsApplicable2Status> comparisonRule_runtime : comparisonRule_runtimes) {
+        if (comparisonRule_runtime.o1.areComparable(term2, term1)) return true;
       }
     }
 

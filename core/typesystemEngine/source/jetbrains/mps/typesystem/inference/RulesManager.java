@@ -217,30 +217,34 @@ public class RulesManager {
     }
   }
 
-  public Set<ComparisonRule_Runtime> getComparisonRules(final SNode node1, final SNode node2, final boolean isWeak) {
+  public Set<Pair<ComparisonRule_Runtime, IsApplicable2Status>> getComparisonRules(final SNode node1, final SNode node2, final boolean isWeak) {
     synchronized (RULES_LOCK) {
       loadLanguage(node1.getLanguageNamespace());
       loadLanguage(node2.getLanguageNamespace());
-      Set<ComparisonRule_Runtime> result = new HashSet<ComparisonRule_Runtime>();
-      result.addAll(
-        CollectionUtil.filter(myComparisonRules.getRules(node1, node2), new Condition<ComparisonRule_Runtime>() {
-          public boolean met(ComparisonRule_Runtime object) {
-            return (isWeak || !object.isWeak()) && object.isApplicable(node1, node2);
+      Set<Pair<ComparisonRule_Runtime, IsApplicable2Status>> result = new HashSet<Pair<ComparisonRule_Runtime, IsApplicable2Status>>();
+      Set<ComparisonRule_Runtime> ruleSet = myComparisonRules.getRules(node1, node2);
+      for (ComparisonRule_Runtime rule : ruleSet) {
+        if (isWeak || !rule.isWeak()) {
+          IsApplicable2Status status = rule.isApplicableAndPatterns(node1, node2);
+          if (status.isApplicable()) {
+            result.add(new Pair<ComparisonRule_Runtime, IsApplicable2Status>(rule, status));
           }
-        }));
+        }
+      }
       return result;
     }
   }
 
-  public Set<InequationReplacementRule_Runtime> getReplacementRules(final SNode node1, final SNode node2) {
+  public Set<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>> getReplacementRules(final SNode node1, final SNode node2) {
     synchronized (RULES_LOCK) {
-      Set<InequationReplacementRule_Runtime> result = new HashSet<InequationReplacementRule_Runtime>();
-      result.addAll(
-        CollectionUtil.filter(myReplacementRules.getRules(node1, node2), new Condition<InequationReplacementRule_Runtime>() {
-          public boolean met(InequationReplacementRule_Runtime object) {
-            return object.isApplicable(node1, node2);
-          }
-        }));
+      Set<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>> result = new HashSet<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>>();
+      Set<InequationReplacementRule_Runtime> ruleSet = myReplacementRules.getRules(node1, node2);
+      for (InequationReplacementRule_Runtime rule : ruleSet) {
+        IsApplicable2Status status = rule.isApplicableAndPatterns(node1, node2);
+        if (status.isApplicable()) {
+          result.add(new Pair<InequationReplacementRule_Runtime, IsApplicable2Status>(rule, status));
+        }
+      }
       return result;
     }
   }
