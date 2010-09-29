@@ -19,6 +19,7 @@ import com.intellij.ide.DataManager;
 import com.intellij.ide.util.gotoByName.ChooseByNameBase;
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent.Callback;
+import com.intellij.ide.util.gotoByName.matchers.EntityMatcher;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.choose.base.FakePsiContext;
@@ -28,10 +29,16 @@ import javax.swing.JPanel;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.util.List;
 
 public class SmartChooseByNamePanel extends ChooseByNameBase {
   private JPanel myPanel;
   private boolean myCheckboxVisible = false;
+
+  public SmartChooseByNamePanel(ChooseByNameModel model, boolean checkboxVisible, EntityMatcher matcher) {
+    super(MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext()), model, "", matcher);
+    myCheckboxVisible = checkboxVisible;
+  }
 
   public SmartChooseByNamePanel(ChooseByNameModel model, boolean checkboxVisible) {
     super(MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext()), model, "", new FakePsiContext());
@@ -58,6 +65,10 @@ public class SmartChooseByNamePanel extends ChooseByNameBase {
 
   public JComponent getPreferredFocusedComponent() {
     return myTextField;
+  }
+
+  public List<Object> getChosenElements() {
+    return super.getChosenElements();
   }
 
   protected void showList() {

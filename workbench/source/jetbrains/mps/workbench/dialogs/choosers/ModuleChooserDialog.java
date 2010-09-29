@@ -27,6 +27,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.workbench.actions.goTo.matcher.MPSMatcher;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 import jetbrains.mps.workbench.choose.modules.BaseModuleModel;
 import org.jetbrains.annotations.Nullable;
@@ -95,7 +96,11 @@ class ModuleChooserDialog<T> extends BaseDialog {
       }
     };
 
-    myChooser = new SmartChooseByNamePanel(goToModuleModel, !myNonProjectModules.isEmpty());
+    myChooser = new SmartChooseByNamePanel(goToModuleModel, !myNonProjectModules.isEmpty(), new MPSMatcher(goToModuleModel) {
+      protected boolean canShowListForEmptyPattern() {
+        return true;
+      }
+    });
     myChooser.invoke(new Callback() {
       public void elementChosen(Object element) {
         if (!myOkDone) {

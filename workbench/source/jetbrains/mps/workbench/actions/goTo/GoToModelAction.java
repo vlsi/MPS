@@ -71,6 +71,7 @@ public class GoToModelAction extends BaseAction {
     };
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToModelModel, new FakePsiContext());
 
+    popup.setShowListForEmptyPattern(true);
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
       }

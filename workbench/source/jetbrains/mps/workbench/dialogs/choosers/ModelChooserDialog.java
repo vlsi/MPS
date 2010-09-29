@@ -26,6 +26,7 @@ import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.workbench.actions.goTo.matcher.MPSMatcher;
 import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
 import org.jetbrains.annotations.Nullable;
@@ -95,7 +96,11 @@ class ModelChooserDialog extends BaseDialog {
       }
     };
 
-    myChooser = new SmartChooseByNamePanel(goToModelModel, !myNonProjectModels.isEmpty());
+    myChooser = new SmartChooseByNamePanel(goToModelModel, !myNonProjectModels.isEmpty(), new MPSMatcher(goToModelModel) {
+      protected boolean canShowListForEmptyPattern() {
+        return true;
+      }
+    });
     myChooser.invoke(new Callback() {
       public void elementChosen(Object element) {
         if (!myOkDone) {
