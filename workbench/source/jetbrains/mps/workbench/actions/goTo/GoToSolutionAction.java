@@ -27,6 +27,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.workbench.actions.goTo.matcher.DefaultMatcherFactory;
 import jetbrains.mps.workbench.choose.base.FakePsiContext;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 import jetbrains.mps.workbench.choose.modules.BaseSolutionModel;
@@ -63,7 +64,7 @@ public class GoToSolutionAction extends BaseAction {
         return solutions.toArray(new Solution[0]);
       }
     };
-    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToSolutionModel, new FakePsiContext());
+    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToSolutionModel, DefaultMatcherFactory.createAllMatcher(goToSolutionModel));
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {

@@ -31,6 +31,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.workbench.actions.goTo.matcher.DefaultMatcherFactory;
 import jetbrains.mps.workbench.choose.base.FakePsiContext;
 import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
@@ -69,7 +70,7 @@ public class GoToModelAction extends BaseAction {
         return modelDescriptors.toArray(new SModelDescriptor[0]);
       }
     };
-    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToModelModel, new FakePsiContext());
+    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToModelModel, DefaultMatcherFactory.createAllMatcher(goToModelModel));
 
     popup.setShowListForEmptyPattern(true);
     popup.invoke(new ChooseByNamePopupComponent.Callback() {

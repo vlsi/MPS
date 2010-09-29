@@ -27,6 +27,7 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.workbench.actions.goTo.matcher.DefaultMatcherFactory;
 import jetbrains.mps.workbench.choose.base.FakePsiContext;
 import jetbrains.mps.workbench.choose.modules.BaseDevkitModel;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
@@ -54,7 +55,7 @@ public class GoToDevkitAction extends BaseAction {
         return scope.getVisibleDevkits().toArray(new DevKit[0]);
       }
     };
-    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToDevkitModel, new FakePsiContext());
+    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToDevkitModel, DefaultMatcherFactory.createAllMatcher(goToDevkitModel));
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {

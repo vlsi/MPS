@@ -27,6 +27,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.workbench.actions.goTo.matcher.DefaultMatcherFactory;
 import jetbrains.mps.workbench.choose.base.FakePsiContext;
 import jetbrains.mps.workbench.choose.modules.BaseLanguageModel;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
@@ -58,7 +59,7 @@ public class GoToLanguageAction extends BaseAction {
         return "Go to language:";
       }
     };
-    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToLanguageModel, new FakePsiContext());
+    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToLanguageModel, DefaultMatcherFactory.createAllMatcher(goToLanguageModel));
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
