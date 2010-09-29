@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.workbench.actions.goTo.matcher;
 
+import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.ide.util.gotoByName.matchers.EntityMatcher;
 import com.intellij.openapi.progress.ProcessCanceledException;
 import com.intellij.openapi.util.Computable;
@@ -25,9 +26,9 @@ import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import java.util.*;
 
 public abstract class MPSMatcher implements EntityMatcher {
-  private BaseMPSChooseModel myModel;
+  private ChooseByNameModel myModel;
 
-  protected MPSMatcher(BaseMPSChooseModel model) {
+  protected MPSMatcher(ChooseByNameModel model) {
     myModel = model;
   }
 
