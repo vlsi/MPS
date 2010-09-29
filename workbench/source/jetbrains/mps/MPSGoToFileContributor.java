@@ -20,6 +20,7 @@ import com.intellij.navigation.ChooseByNameContributor;
 import com.intellij.navigation.ItemPresentation;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.editor.colors.TextAttributesKey;
+import com.intellij.openapi.fileEditor.OpenFileDescriptor;
 import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.DumbAware;
@@ -97,7 +98,10 @@ public class MPSGoToFileContributor implements ChooseByNameContributor, DumbAwar
     }
 
     public void navigate(boolean requestFocus) {
-
+      OpenFileDescriptor descriptor = new OpenFileDescriptor(myProject, getVirtualFile(), -1);
+      if (descriptor.canNavigate()) {
+        descriptor.navigate(true);
+      }
     }
 
     public boolean canNavigate() {
