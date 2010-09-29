@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.typesystem.inference;
 
+import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.lang.typesystem.runtime.*;
 import jetbrains.mps.lang.typesystem.runtime.AbstractDependentComputation_Runtime.DependentComputationWrapper;
@@ -22,6 +23,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.util.Pair;
 
 import java.util.Set;
 import java.util.HashSet;
@@ -152,34 +154,51 @@ public class RulesManager {
     }
   }
 
-  public Set<InferenceRule_Runtime> getInferenceRules(final SNode node) {
+  public Set<Pair<InferenceRule_Runtime, IsApplicableStatus>> getInferenceRules(final SNode node) {
     synchronized (RULES_LOCK) {
-      return CollectionUtil.filter(myInferenceRules.getRules(node), new Condition<InferenceRule_Runtime>() {
-        public boolean met(InferenceRule_Runtime object) {
-          return object.isApplicable(node);
+      Set<Pair<InferenceRule_Runtime, IsApplicableStatus>> result =
+        new HashSet<Pair<InferenceRule_Runtime, IsApplicableStatus>>();
+      Set<InferenceRule_Runtime> ruleSet = myInferenceRules.getRules(node);
+      for (InferenceRule_Runtime rule : ruleSet) {
+        IsApplicableStatus status = rule.isApplicableAndPattern(node);
+        if (status.isApplicable()) {
+          result.add(new Pair<InferenceRule_Runtime, IsApplicableStatus>(rule, status));
         }
-      });
+      }
+      return result;
     }
   }
 
-  public Set<NonTypesystemRule_Runtime> getNonTypesystemRules(final SNode node) {
+  public Set<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>> getNonTypesystemRules(final SNode node) {
     synchronized (RULES_LOCK) {
-      return CollectionUtil.filter(myNonTypesystemRules.getRules(node), new Condition<NonTypesystemRule_Runtime>() {
-        public boolean met(NonTypesystemRule_Runtime object) {
-          return object.isApplicable(node);
+    Set<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>> result =
+        new HashSet<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>>();
+      Set<NonTypesystemRule_Runtime> ruleSet = myNonTypesystemRules.getRules(node);
+      for (NonTypesystemRule_Runtime rule : ruleSet) {
+        IsApplicableStatus status = rule.isApplicableAndPattern(node);
+        if (status.isApplicable()) {
+          result.add(new Pair<NonTypesystemRule_Runtime, IsApplicableStatus>(rule, status));
         }
-      });
+      }
+      return result;
     }
   }
 
-  public Set<SubtypingRule_Runtime> getSubtypingRules(final SNode node, final boolean isWeak) {
+  public Set<Pair<SubtypingRule_Runtime, IsApplicableStatus>> getSubtypingRules(final SNode node, final boolean isWeak) {
     synchronized (RULES_LOCK) {
       loadLanguage(node.getLanguageNamespace());
-      return CollectionUtil.filter(mySubtypingRules.getRules(node), new Condition<SubtypingRule_Runtime>() {
-        public boolean met(SubtypingRule_Runtime object) {
-          return (isWeak || !object.isWeak()) && object.isApplicable(node);
+      Set<Pair<SubtypingRule_Runtime, IsApplicableStatus>> result =
+        new HashSet<Pair<SubtypingRule_Runtime, IsApplicableStatus>>();
+      Set<SubtypingRule_Runtime> ruleSet = mySubtypingRules.getRules(node);
+      for (SubtypingRule_Runtime rule : ruleSet) {
+        if ((isWeak || !rule.isWeak())) {
+          IsApplicableStatus status = rule.isApplicableAndPattern(node);
+          if (status.isApplicable()) {
+            result.add(new Pair<SubtypingRule_Runtime, IsApplicableStatus>(rule, status));
+          }
         }
-      });
+      }
+      return result;
     }
   }
 
@@ -190,7 +209,7 @@ public class RulesManager {
         if (!isWeak && rule.isWeak()) {
           continue;
         }
-        if (!rule.isApplicable(node)) {
+        if (!rule.isApplicableAndPattern(node).isApplicable()) {
           return false;
         }
       }

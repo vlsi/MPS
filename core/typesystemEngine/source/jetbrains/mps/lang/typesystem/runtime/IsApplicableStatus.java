@@ -16,11 +16,28 @@
 package jetbrains.mps.lang.typesystem.runtime;
 
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.Pair;
 
-public interface Rule_Runtime extends IApplicableToConcept {
-  @Deprecated
-  boolean isApplicable(SNode argument);
-  IsApplicableStatus isApplicableAndPattern(SNode argument);
+/**
+ * Created by IntelliJ IDEA.
+ * User: Cyril.Konopko
+ * Date: 29.09.2010
+ * Time: 18:59:52
+ * To change this template use File | Settings | File Templates.
+ */
+public class IsApplicableStatus {
+  private boolean myIsApplicable;
+  private GeneratedMatchingPattern myPattern;
+
+  public IsApplicableStatus(boolean isApplicable, GeneratedMatchingPattern pattern) {
+    myIsApplicable = isApplicable;
+    myPattern = pattern;
+  }
+
+  public boolean isApplicable() {
+    return myIsApplicable;
+  }
+
+  public GeneratedMatchingPattern getPattern() {
+    return myPattern;
+  }
 }

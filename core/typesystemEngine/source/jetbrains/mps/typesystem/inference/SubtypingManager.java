@@ -299,14 +299,14 @@ public class SubtypingManager {
     if (term == null) {
       return;
     }
-    Set<SubtypingRule_Runtime> subtypingRule_runtimes = myTypeChecker.getRulesManager().getSubtypingRules(term, isWeak);
+    Set<Pair<SubtypingRule_Runtime, IsApplicableStatus>> subtypingRule_runtimes = myTypeChecker.getRulesManager().getSubtypingRules(term, isWeak);
     boolean possiblyBlindAlley = false;
     if (supertypeConceptFQName != null && !(supertypeConceptFQName.equals(term.getConceptFqName()))) {
       possiblyBlindAlley = myTypeChecker.getRulesManager().subtypingRulesByNodeAreAllByConcept(term, isWeak);
     }
     if (subtypingRule_runtimes != null) {
-      for (final SubtypingRule_Runtime subtypingRule : subtypingRule_runtimes) {
-        if (possiblyBlindAlley && subtypingRule.surelyKeepsConcept()) {
+      for (final Pair<SubtypingRule_Runtime, IsApplicableStatus> subtypingRule : subtypingRule_runtimes) {
+        if (possiblyBlindAlley && subtypingRule.o1.surelyKeepsConcept()) {
           //skip a rule, it will give us nothing
           continue;
         }
@@ -316,7 +316,7 @@ public class SubtypingManager {
             return UndoHelper.getInstance().runNonUndoableAction(new Computable<List<SNode>>() {
               @Override
               public List<SNode> compute() {
-                return subtypingRule.getSubOrSuperTypes(term, tcContext);
+                return subtypingRule.o1.getSubOrSuperTypes(term, tcContext);
               }
             });
           }
@@ -343,10 +343,10 @@ public class SubtypingManager {
         return result;
       }
 
-      Set<SubtypingRule_Runtime> subtypingRule_runtimes = myTypeChecker.getRulesManager().getSubtypingRules(node, isWeak);
+      Set<Pair<SubtypingRule_Runtime, IsApplicableStatus>> subtypingRule_runtimes = myTypeChecker.getRulesManager().getSubtypingRules(node, isWeak);
       if (subtypingRule_runtimes != null) {
-        for (SubtypingRule_Runtime subtypingRule : subtypingRule_runtimes) {
-          List<SNode> supertypes = subtypingRule.getSubOrSuperTypes(node, null);    //todo should typeCheckingContext really be null?
+        for (Pair<SubtypingRule_Runtime, IsApplicableStatus> subtypingRule : subtypingRule_runtimes) {
+          List<SNode> supertypes = subtypingRule.o1.getSubOrSuperTypes(node, null);    //todo should typeCheckingContext really be null?
           if (supertypes != null) {
             result.addAll(toWrappers(new HashSet<SNode>(supertypes), null));
           }

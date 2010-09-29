@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.lang.typesystem.runtime;
 
+import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
@@ -22,6 +23,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import java.util.List;
 import java.util.ArrayList;
 
+import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 
 public abstract class AbstractSubtypingRule_Runtime implements ISubtypingRule_Runtime {
@@ -54,5 +56,10 @@ public abstract class AbstractSubtypingRule_Runtime implements ISubtypingRule_Ru
 
   public boolean isWeak() {
     return false;
+  }
+
+  @Override
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    return new IsApplicableStatus(isApplicable(argument), null);
   }
 }
