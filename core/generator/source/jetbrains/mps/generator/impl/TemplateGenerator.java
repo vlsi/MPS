@@ -536,7 +536,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
             inputReference.getRole(),
             outputNode,
             targetModelReference,
-            ((StaticReference) inputReference).getTargetNodeId(),
+            inputReference.getTargetNodeId(),
             inputReference.getResolveInfo()));
         } else if (inputReference instanceof DynamicReference) {
           outputNode.addReference(new DynamicReference(
@@ -620,7 +620,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   private void revalidateAllReferences(SNode node) throws GenerationCanceledException {
     for (SReference reference : node.getReferencesArray()) {
-      checkMonitorCanceled();
       if (reference instanceof PostponedReference) {
         ((PostponedReference) reference).validateAndReplace();
       }
@@ -628,7 +627,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
     List<SNode> children = node.getChildren();
     for (SNode child : children) {
-      checkMonitorCanceled();
       revalidateAllReferences(child);
     }
   }

@@ -86,8 +86,13 @@ public class PostponedReference extends SReference {
 
     SNode outputTargetNode = myReferenceInfo.doResolve_Straightforward(myGenerator);
     if (outputTargetNode != null) {
-      myReplacementReference = new StaticReference(role, outputSourceNode, outputTargetNode);
-    } else if (SReferenceUtil.isDynamicResolve(role, outputSourceNode)) {
+//      if (checkResolvedTarget(outputSourceNode, role, outputTargetNode)) {
+//        // ok
+        myReplacementReference = new StaticReference(role, outputSourceNode, outputTargetNode);
+//      } else {
+//        myReplacementReference = new StaticReference(role, outputSourceNode, targetModelReference, null, myReferenceInfo.getResolveInfoForNothing());
+//      }
+    } else if (SReferenceUtil.isDynamicResolve(role, outputSourceNode) && myReferenceInfo.getResolveInfoForDynamicResolve() != null) {
       myReplacementReference = new DynamicReference(
         role,
         outputSourceNode,
