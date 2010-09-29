@@ -13,10 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.intellij.ide.util.gotoByName;
+package com.intellij.ide.util.gotoByName.matchers;
 
+import com.intellij.openapi.util.Computable;
+
+import java.util.List;
 import java.util.Set;
 
-public interface Chooser {
-  public void addElementsByPattern(Set<Object> elementsArray, String pattern);
+public interface EntityMatcher {
+  boolean addElementsByPattern(Set<Object> result,
+                               String pattern,
+                               String[] names,
+                               boolean checkboxState,
+                               int maxCount,
+                               Computable<Boolean> isCancelled);
+
+  void getNamesByPattern(final List<String> list, String pattern, String[] names, Computable<Boolean> isCancelled);
 }
