@@ -306,7 +306,9 @@
 
       <!-- Help -->
       <group id="HelpMenu" popup="true">
-        <action id="HelpTopics" class="com.intellij.ide.actions.HelpTopicsAction" icon="/actions/menu-help.png"/>
+        <!-- MPS Patch Start
+          <action id="HelpTopics" class="com.intellij.ide.actions.HelpTopicsAction" icon="/actions/menu-help.png"/>
+        MPS Patch End-->
         <action id="ShowTips" class="com.intellij.ide.actions.ShowTipsAction"/>
         <action id="ProductivityGude" class="com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsAction"/>
         <!--MPS Patch Start-->
