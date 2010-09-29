@@ -70,6 +70,9 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     return true;
   }
 
+  /**
+   * @return loaded model that is not connected to SModelDescriptor (getSModelDescriptor() returns null)
+   */
   protected abstract SModel loadModel();
 
   public void refresh() {

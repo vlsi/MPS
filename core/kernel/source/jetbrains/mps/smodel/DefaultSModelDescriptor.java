@@ -333,7 +333,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
 
   protected SModel loadModel() {
     SModel result = myModelRootManager.loadModel(this);
-    updateModelWithRefactorings(result);
+    //updateModelWithRefactorings(result);
+    RefactoringProcessor.updateModelOnLoad(result);
 
     myRefactoringHistory = null;
     tryFixingVersion();
@@ -366,6 +367,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     return file.lastModified();
   }
 
+/*
   private void updateModelWithRefactorings(SModel model) {
     assert model != null;
     if (!PlayRefactoringsFlag.refactoringsPlaybackEnabled()) {
@@ -390,6 +392,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
       model.setLoading(wasLoading);
     }
   }
+*/
 
   private void tryFixingVersion() {
     if (getVersion() != -1) return;
@@ -405,6 +408,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     }
   }
 
+/*
   //true if any refactoring was played
 
   private boolean playUsedModelDescriptorsRefactoring(SModel model, EditableSModelDescriptor usedModelDescriptor) {
@@ -449,6 +453,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
 
     return false;
   }
+*/
 
   public String toString() {
     return getSModelReference().toString();

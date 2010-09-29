@@ -17,11 +17,14 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.findUsages.UsagesList;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.refactoring.PlayRefactoringsFlag;
 import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -29,41 +32,38 @@ import java.util.Set;
 public class RefactoringProcessor {
   protected static final Logger LOG = Logger.getLogger(RefactoringProcessor.class);
 
-  public void updateLoadedModels(SModelReference initialModelReference, EditableSModelDescriptor model, RefactoringContext refactoringContext) {
+  public static void updateLoadedModels(SModelReference initialModelReference, EditableSModelDescriptor model, RefactoringContext refactoringContext) {
     for (SModelDescriptor anotherDescriptor : SModelRepository.getInstance().getModelDescriptors()) {
       if (!SModelStereotype.isUserModel(anotherDescriptor)) continue;
       if (anotherDescriptor.getLoadingState() == ModelLoadingState.NOT_LOADED) continue;
       SModel anotherModel = anotherDescriptor.getSModel();
 
       Set<SModelReference> dependenciesModels = anotherModel.getDependenciesModelUIDs();
-      if (model != anotherDescriptor
-        && !dependenciesModels.contains(initialModelReference)) continue;
+      if (/*model != anotherDescriptor
+        &&*/ !dependenciesModels.contains(initialModelReference)) continue;
       updateModel(anotherModel, model, refactoringContext);
     }
   }
 
-  protected void updateModels(SModelDescriptor modelDescriptor, RefactoringContext refactoringContext, ILoggableRefactoring refactoring, SModelReference initialModelReference) {
+  protected static void updateModels(SModelDescriptor modelDescriptor, RefactoringContext refactoringContext, ILoggableRefactoring refactoring, SModelReference initialModelReference) {
     assert refactoringContext.getRefactoring() instanceof ILoggableRefactoring;
 
     refactoringContext.computeCaches();
-    UsagesList usages = refactoringContext.getUsages();
 
     if (!refactoringContext.isLocal()) {
       writeIntoLog((EditableSModelDescriptor) modelDescriptor, refactoringContext);
       updateLoadedModels(initialModelReference, (EditableSModelDescriptor) modelDescriptor, refactoringContext);
     } else {
-      Set<SModel> modelsToProcess = new LinkedHashSet<SModel>();
+      UsagesList usages = refactoringContext.getUsages();
       if (usages != null) {
-        modelsToProcess.addAll(usages.getAffectedModels());
-      }
-
-      for (SModel anotherModel : modelsToProcess) {
-        updateModel(anotherModel, modelDescriptor, refactoringContext);
+        for (SModel anotherModel : usages.getAffectedModels()) {
+          updateModel(anotherModel, modelDescriptor, refactoringContext);
+        }
       }
     }
   }
 
-  protected void updateModel(final SModel model, final SModelDescriptor usedModel, final RefactoringContext refactoringContext) {
+  protected static void updateModel(final SModel model, final SModelDescriptor usedModel, final RefactoringContext refactoringContext) {
     model.runLoadingAction(new Runnable() {
       public void run() {
         IRefactoring refactoring = refactoringContext.getRefactoring();
@@ -81,7 +81,7 @@ public class RefactoringProcessor {
     });
   }
 
-  public void writeIntoLog(EditableSModelDescriptor model, RefactoringContext refactoringContext) {
+  public static void writeIntoLog(EditableSModelDescriptor model, RefactoringContext refactoringContext) {
     assert !refactoringContext.isLocal();
     assert refactoringContext.getRefactoring() instanceof ILoggableRefactoring;
 
@@ -92,5 +92,87 @@ public class RefactoringProcessor {
     refactoringContext.setModelVersion(model.getVersion());
     SModelRepository.getInstance().markChanged(model, true);
     model.saveRefactoringHistory();
+  }
+
+  /**
+   * Silently update model with "loggable" refactorings from other models without loading other models
+   * @param model - model to update
+   * @return true if model was updated with refactoring
+   */
+  public static boolean updateModelOnLoad(/*DefaultSModelDescriptor descriptor,*/ SModel model) {
+    assert model != null;
+    boolean result = false;
+    if (!PlayRefactoringsFlag.refactoringsPlaybackEnabled()) {
+      return false;
+    }
+    if (!SModelStereotype.isUserModel(model)) {
+      return false;
+    }
+    boolean wasLoading = model.setLoading(true);
+    try {
+      boolean played;
+      do {
+        played = false;
+        for (SModelDescriptor usedModelDescriptor : model.getDependenciesModels()) {
+          if (!(usedModelDescriptor instanceof EditableSModelDescriptor)) continue;
+          if (playUsedModelDescriptorsRefactoring(/*descriptor,*/ model, (EditableSModelDescriptor) usedModelDescriptor)) {
+            result = played = true;
+          }
+        }
+      } while (played);
+    } finally {
+      model.setLoading(wasLoading);
+    }
+    return result;
+  }
+
+  // true if any refactoring was played
+  private static boolean playUsedModelDescriptorsRefactoring(/*DefaultSModelDescriptor descriptor,*/ SModel model, EditableSModelDescriptor usedModelDescriptor) {
+    int currentVersion = usedModelDescriptor.getVersion();
+    int usedVersion = model.getUsedVersion(usedModelDescriptor.getSModelReference());
+
+    if (currentVersion > usedVersion) {
+      boolean result = false;
+      RefactoringHistory refactoringHistory = usedModelDescriptor.getRefactoringHistory();
+      for (RefactoringContext refactoringContext : refactoringHistory.getRefactoringContexts()) {
+        if (refactoringContext.getModelVersion() <= usedVersion) continue;
+
+        result = true;
+        playRefactoring(model, refactoringContext);
+/*
+        IRefactoring refactoring = refactoringContext.getRefactoring();
+        if (!(refactoring instanceof ILoggableRefactoring)) {
+          LOG.error("Non-loggable refactoring was logged: " + refactoring.getClass().getName());
+        } else {
+          try {
+            ((ILoggableRefactoring) refactoring).updateModel(model, refactoringContext);
+          } catch (Throwable t) {
+            LOG.error("An exception was thrown by refactoring " + refactoring.getUserFriendlyName() + " while updating model " + model.getLongName() + ". Models could have been corrupted.", t);
+          }
+        }
+*/
+      }
+      model.updateImportedModelUsedVersion(usedModelDescriptor.getSModelReference(), currentVersion);
+//      IFile modelFile = descriptor.getModelFile();
+//      if (modelFile != null && !modelFile.isReadOnly()) {
+//        SModelRepository.getInstance().markChanged(descriptor, true);
+//      }
+      return result;
+    }
+
+    // broken model fixing code
+    if (currentVersion < usedVersion) {
+      LOG.error("Model version mismatch for import " + usedModelDescriptor.getSModelReference().getSModelFqName() + " in model " + model.getSModelFqName());
+      LOG.error("Used version = " + usedVersion + ", current version = " + currentVersion);
+      model.updateImportedModelUsedVersion(usedModelDescriptor.getSModelReference(), currentVersion);
+//      SModelRepository.getInstance().markChanged(descriptor, true);
+      LOG.error("Mismatch fixed");
+    }
+
+    return false;
+  }
+
+  private static void/*boolean*/ playRefactoring(@NotNull SModel model, @NotNull RefactoringContext context) {
+    context.updateModelWithMaps(model);
   }
 }

@@ -456,7 +456,7 @@ public class RefactoringContext {
         }
       }
     }
-    model.validateLanguagesAndImports(true, true);
+    model.validateLanguagesAndImports(true, true);  // not a good place for this validation, should be on higher level or exact import adding
   }
 
   public void setUpMembersAccessModifier(RefactoringNodeMembersAccessModifier modifier) {
