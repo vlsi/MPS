@@ -16,9 +16,11 @@
 package jetbrains.mps.smodel;
 
 import com.intellij.openapi.command.UndoConfirmationPolicy;
+import com.intellij.openapi.progress.Progressive;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.InternalFlag;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Evgeny Gryaznov, Sep 3, 2010
@@ -215,5 +217,11 @@ public class DefaultModelAccess extends ModelAccess {
 
   @Override
   public void removeCommandListener(ModelAccessListener l) {
+  }
+
+  @Override
+  public void runWriteActionWithProgressSynchronously(@NotNull Progressive process, String progressTitle, boolean canBeCanceled,
+                                                      Project project) {
+    throw new UnsupportedOperationException("cannot run with progress");
   }
 }

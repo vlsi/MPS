@@ -18,6 +18,9 @@ package jetbrains.mps.ide.smodel;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.command.UndoConfirmationPolicy;
+import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Progressive;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.util.containers.ConcurrentHashSet;
@@ -27,6 +30,7 @@ import jetbrains.mps.smodel.IllegalModelAccessError;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelAccessListener;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.SwingUtilities;
 import java.util.ArrayList;
@@ -101,6 +105,33 @@ public class WorkbenchModelAccess extends ModelAccess {
     } else {
       ApplicationManager.getApplication().runReadAction(runnable);
     }
+  }
+
+  @Override
+  public void runWriteActionWithProgressSynchronously(@NotNull final Progressive process, final String progressTitle, final boolean canBeCanceled,
+                                                      final Project project) {
+
+    assert ThreadUtils.isEventDispatchThread() : "should be event dispatch thread";
+    assert !canRead() : "should be outside of read actions";
+
+    ApplicationManager.getApplication().runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        ProgressManager.getInstance().runProcessWithProgressSynchronously(new Runnable() {
+          public void run() {
+            ProgressIndicator progressIndicator = ProgressManager.getInstance().getProgressIndicator();
+            progressIndicator.pushState();
+            getWriteLock().lock();
+            try {
+              process.run(progressIndicator);
+            } finally {
+              getWriteLock().unlock();
+              progressIndicator.popState();
+            }
+          }
+        }, progressTitle, canBeCanceled, project);
+      }
+    });
   }
 
   private void assertNotWriteFromRead() {
