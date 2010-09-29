@@ -17,6 +17,8 @@ package jetbrains.mps.workbench.dialogs.choosers;
 
 import com.intellij.ide.DataManager;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent.Callback;
+import com.intellij.ide.util.gotoByName.matchers.DefaultMatcher;
+import com.intellij.ide.util.gotoByName.matchers.EntityMatcher;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.application.ModalityState;
@@ -27,7 +29,10 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.workbench.actions.goTo.matcher.CompositeMatcher;
+import jetbrains.mps.workbench.actions.goTo.matcher.DefaultMatcherFactory;
 import jetbrains.mps.workbench.actions.goTo.matcher.MPSMatcher;
+import jetbrains.mps.workbench.choose.base.FakePsiContext;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 import jetbrains.mps.workbench.choose.modules.BaseModuleModel;
 import org.jetbrains.annotations.Nullable;
@@ -96,11 +101,7 @@ class ModuleChooserDialog<T> extends BaseDialog {
       }
     };
 
-    myChooser = new SmartChooseByNamePanel(goToModuleModel, !myNonProjectModules.isEmpty(), new MPSMatcher(goToModuleModel) {
-      protected boolean canShowListForEmptyPattern() {
-        return true;
-      }
-    });
+    myChooser = new SmartChooseByNamePanel(goToModuleModel, !myNonProjectModules.isEmpty(), DefaultMatcherFactory.createAllMatcher(goToModuleModel));
     myChooser.invoke(new Callback() {
       public void elementChosen(Object element) {
         if (!myOkDone) {

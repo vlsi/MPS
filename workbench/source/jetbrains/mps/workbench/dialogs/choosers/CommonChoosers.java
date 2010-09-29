@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.workbench.actions.goTo.matcher.DefaultMatcherFactory;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.choose.base.FakePsiContext;
 import jetbrains.mps.workbench.choose.models.BaseModelItem;
@@ -170,7 +171,7 @@ public class CommonChoosers {
       }
     };
 
-    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToModelModel, new FakePsiContext());
+    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToModelModel, DefaultMatcherFactory.createAllMatcher(goToModelModel));
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
@@ -211,7 +212,7 @@ public class CommonChoosers {
         return (T[]) modules.toArray();
       }
     };
-    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToModuleModel, new FakePsiContext());
+    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToModuleModel, DefaultMatcherFactory.createAllMatcher(goToModuleModel));
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
