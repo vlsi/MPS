@@ -29,7 +29,9 @@ public abstract class MPSMatcher extends DefaultMatcher implements EntityMatcher
   }
 
   public boolean addElementsByPattern(Set<Object> result, String pattern, String[] names, boolean checkboxState, int maxCount, Computable<Boolean> isCancelled) {
-    String newPattern = pattern.endsWith(" ") ? pattern : pattern + ".*";
-    return super.addElementsByPattern(result, newPattern, names, checkboxState, maxCount, isCancelled);
+    if (!pattern.endsWith(" ")){
+      pattern += ".*";
+    }
+    return super.addElementsByPattern(result, pattern, names, checkboxState, maxCount, isCancelled);
   }
 }
