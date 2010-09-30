@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.baseLanguage.typesystem.DataFlowUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -14,7 +15,7 @@ public class check_AbstractSubtypingRule_NonTypesystemRule extends AbstractNonTy
   public check_AbstractSubtypingRule_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode abstractSubtypingRule, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode abstractSubtypingRule, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     DataFlowUtil.checkDataFlow(typeCheckingContext, SLinkOperations.getTarget(abstractSubtypingRule, "body", true));
   }
 

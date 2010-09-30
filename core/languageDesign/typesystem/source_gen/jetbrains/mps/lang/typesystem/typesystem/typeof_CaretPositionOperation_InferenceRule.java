@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -20,7 +21,7 @@ public class typeof_CaretPositionOperation_InferenceRule extends AbstractInferen
   public typeof_CaretPositionOperation_InferenceRule() {
   }
 
-  public void applyRule(final SNode caretPositionOperation, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode caretPositionOperation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode _nodeToCheck_1029348928467 = caretPositionOperation;
       BaseIntentionProvider intentionProvider = null;

@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -18,7 +19,7 @@ public class typeOf_ReportErrorStatement_InferenceRule extends AbstractInference
   public typeOf_ReportErrorStatement_InferenceRule() {
   }
 
-  public void applyRule(final SNode reportErrorStatement, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode reportErrorStatement, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(reportErrorStatement, "errorString", true);
       BaseIntentionProvider intentionProvider = null;

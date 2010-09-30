@@ -2061,12 +2061,6 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateSwitch:2" id="1174651920252">
     <property name="name:2" value="Rule_to_main_method_switch" />
-    <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="1212662537529">
-      <link role="applicableConcept:2" targetNodeId="1.1174643105530:3" resolveInfo="InferenceRule" />
-      <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="1212662557070">
-        <link role="template:2" targetNodeId="1174651925300" resolveInfo="Rule_to_main_method_inference" />
-      </node>
-    </node>
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="1174651965520">
       <property name="applyToConceptInheritors:2" value="true" />
       <link role="applicableConcept:2" targetNodeId="1.1195213580585:3" resolveInfo="AbstractCheckingRule" />
@@ -2148,6 +2142,12 @@
         <property name="name:3" value="typeCheckingContext" />
         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1222180279724">
           <link role="classifier:3" targetNodeId="6.~TypeCheckingContext" resolveInfo="TypeCheckingContext" />
+        </node>
+      </node>
+      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="8736997966968159744">
+        <property name="name:3" value="status" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8736997966968163785">
+          <link role="classifier:3" targetNodeId="15.~IsApplicableStatus" resolveInfo="IsApplicableStatus" />
         </node>
       </node>
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1174652020947">

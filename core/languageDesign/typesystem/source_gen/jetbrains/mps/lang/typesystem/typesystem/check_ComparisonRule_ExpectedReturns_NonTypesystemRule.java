@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.baseLanguage.typesystem.DataFlowUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -14,7 +15,7 @@ public class check_ComparisonRule_ExpectedReturns_NonTypesystemRule extends Abst
   public check_ComparisonRule_ExpectedReturns_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode comparisonRule, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode comparisonRule, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     DataFlowUtil.checkReturns(typeCheckingContext, SLinkOperations.getTarget(comparisonRule, "body", true));
   }
 

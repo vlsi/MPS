@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -15,7 +16,7 @@ public class typeOf_applicableNodeReference_InferenceRule extends AbstractInfere
   public typeOf_applicableNodeReference_InferenceRule() {
   }
 
-  public void applyRule(final SNode anr, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode anr, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode applicableNodeRef = anr;
     {
       SNode _nodeToCheck_1029348928467 = applicableNodeRef;
