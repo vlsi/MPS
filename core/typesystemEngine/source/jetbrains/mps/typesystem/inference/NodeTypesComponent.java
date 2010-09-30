@@ -731,7 +731,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
       SNode oldCheckedNode = myCurrentCheckedNode;
       myCurrentCheckedNode = node;
       for (Pair<InferenceRule_Runtime, IsApplicableStatus> rule : newRules) {
-        applyRuleToNode(node, rule.o1);
+        applyRuleToNode(node, rule.o1, rule.o2);
       }
       myCurrentCheckedNode = oldCheckedNode;
       result = myCurrentTypeAffected;
@@ -785,7 +785,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
           myNonTypesystemRuleAndNodeBeingChecked = new Pair<SNode, NonTypesystemRule_Runtime>(node, rule.o1);
         }
         try {
-          applyRuleToNode(node, rule.o1);
+          applyRuleToNode(node, rule.o1, rule.o2);
         } finally {
           myNonTypesystemRuleAndNodeBeingChecked = null;
           if (isIncrementalMode()) {
@@ -819,15 +819,9 @@ public class NodeTypesComponent implements EditorMessageOwner {
     }
   }
 
-  private void applyRuleToNode(SNode node, ICheckingRule_Runtime rule) {
+  private void applyRuleToNode(SNode node, ICheckingRule_Runtime rule, IsApplicableStatus status) {
     try {
-      if (rule instanceof AbstractInferenceRule_Runtime) {
-        ((AbstractInferenceRule_Runtime) rule).applyRule(node, getTypeCheckingContext());
-      } else if (rule instanceof AbstractNonTypesystemRule_Runtime) {
-        ((AbstractNonTypesystemRule_Runtime) rule).applyRule(node, getTypeCheckingContext());
-      } else {
-        rule.applyRule(node);
-      }
+      rule.applyRule(node, getTypeCheckingContext(), status);
     } catch (Throwable t) {
       LOG.error("an error occurred while applying rule to node " + node, t, node);
     }

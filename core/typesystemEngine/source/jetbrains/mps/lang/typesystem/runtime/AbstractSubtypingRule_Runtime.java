@@ -28,6 +28,15 @@ import org.jetbrains.annotations.Nullable;
 
 public abstract class AbstractSubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
+  @Override
+  public List<SNode> getSubOrSuperTypes(SNode type, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    SNode subOrSuperType = getSubOrSuperType(type, typeCheckingContext, status);
+    if (subOrSuperType != null) {
+      return CollectionUtil.list(subOrSuperType);
+    }
+    return getSubOrSuperTypes(type, typeCheckingContext);
+  }
+
   public List<SNode> getSubOrSuperTypes(SNode type, @Nullable TypeCheckingContext typeCheckingContext) {
     SNode subOrSuperType = getSubOrSuperType(type, typeCheckingContext);
     if (subOrSuperType != null) {
@@ -36,8 +45,13 @@ public abstract class AbstractSubtypingRule_Runtime implements ISubtypingRule_Ru
     return getSubOrSuperTypes(type);
   }
 
+  @Deprecated
   public SNode getSubOrSuperType(SNode type, TypeCheckingContext typeCheckingContext) {
     return getSubOrSuperType(type);
+  }
+
+  public SNode getSubOrSuperType(SNode type, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    return getSubOrSuperType(type, typeCheckingContext);
   }
 
   @Deprecated

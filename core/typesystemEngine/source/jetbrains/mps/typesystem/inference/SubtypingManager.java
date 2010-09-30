@@ -316,7 +316,7 @@ public class SubtypingManager {
             return UndoHelper.getInstance().runNonUndoableAction(new Computable<List<SNode>>() {
               @Override
               public List<SNode> compute() {
-                return subtypingRule.o1.getSubOrSuperTypes(term, tcContext);
+                return subtypingRule.o1.getSubOrSuperTypes(term, tcContext, subtypingRule.o2);
               }
             });
           }
@@ -346,7 +346,7 @@ public class SubtypingManager {
       Set<Pair<SubtypingRule_Runtime, IsApplicableStatus>> subtypingRule_runtimes = myTypeChecker.getRulesManager().getSubtypingRules(node, isWeak);
       if (subtypingRule_runtimes != null) {
         for (Pair<SubtypingRule_Runtime, IsApplicableStatus> subtypingRule : subtypingRule_runtimes) {
-          List<SNode> supertypes = subtypingRule.o1.getSubOrSuperTypes(node, null);    //todo should typeCheckingContext really be null?
+          List<SNode> supertypes = subtypingRule.o1.getSubOrSuperTypes(node, null, subtypingRule.o2);    //todo should typeCheckingContext really be null?
           if (supertypes != null) {
             result.addAll(toWrappers(new HashSet<SNode>(supertypes), null));
           }

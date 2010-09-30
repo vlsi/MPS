@@ -21,14 +21,14 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.util.Pair;
 
 public abstract class AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-  public abstract void applyRule(SNode argument, TypeCheckingContext typeCheckingContext);
-
-  public void applyRule(SNode argument) {
-    applyRule(argument, null);
-  }
 
   @Override
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     return new IsApplicableStatus(isApplicable(argument), null);
+  }
+
+  @Override
+  public void applyRule(SNode argument, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    applyRule(argument, typeCheckingContext);
   }
 }
