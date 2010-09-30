@@ -1852,20 +1852,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (myNodeRangeSelection.isActive()) {
       myNodeRangeSelection.deactivate();
     }
-    Stack<EditorCell_Collection> foldedParents = new Stack<EditorCell_Collection>();
-    if (newSelectedCell != null) {
-      for (EditorCell_Collection collection : CollectionUtil.asIterable(newSelectedCell.parents())) {
-        if (collection.isFolded()) {
-          foldedParents.push(collection);
-        }
-      }
-      boolean toRelayout = !foldedParents.isEmpty();
-      while (!foldedParents.isEmpty()) {
-        EditorCell_Collection collection = foldedParents.pop();
-        collection.unfold(true);
-      }
-      if (toRelayout) relayout();
-    }
     setSelectionDontClearStack(newSelectedCell, resetLastCaretX, scroll);
   }
 

@@ -7,6 +7,10 @@ import jetbrains.mps.workbench.action.BaseKeymapChanges;
 public class Default_KeymapChanges extends BaseKeymapChanges {
   public Default_KeymapChanges() {
     this.addAction("jetbrains.mps.ide.actions.QuickCreate_Action", "jetbrains.mps.ide", "alt INSERT", "ctrl alt INSERT");
+    this.addAction("jetbrains.mps.ide.actions.Expand_Action", "jetbrains.mps.ide", "ctrl ADD", "ctrl EQUALS");
+    this.addAction("jetbrains.mps.ide.actions.Collapse_Action", "jetbrains.mps.ide", "ctrl SUBTRACT", "ctrl MINUS");
+    this.addAction("jetbrains.mps.ide.actions.ExpandAll_Action", "jetbrains.mps.ide", "ctrl shift ADD", "ctrl shift EQUALS");
+    this.addAction("jetbrains.mps.ide.actions.CollapseAll_Action", "jetbrains.mps.ide", "ctrl shift SUBTRACT", "ctrl shift MINUS");
   }
 
   public String getScheme() {

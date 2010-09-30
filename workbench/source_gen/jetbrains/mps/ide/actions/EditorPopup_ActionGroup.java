@@ -11,6 +11,7 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.EditorPopup";
   public static final String LABEL_ID_goByRef = ID + "goByRef";
   public static final String LABEL_ID_structure = ID + "structure";
+  public static final String LABEL_ID_folding = ID + "folding";
   public static final String LABEL_ID_generateModel = ID + "generateModel";
   public static final String LABEL_ID_find_instances = ID + "find_instances";
   public static final String LABEL_ID_vcs = ID + "vcs";
@@ -34,6 +35,8 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
       EditorPopup_ActionGroup.this.addSeparator();
       EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.PasteAsJavaStatements_Action", "jetbrains.mps.ide");
       EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.PasteAsJavaMethods_Action", "jetbrains.mps.ide");
+      EditorPopup_ActionGroup.this.addSeparator();
+      EditorPopup_ActionGroup.this.addAnchor(EditorPopup_ActionGroup.LABEL_ID_folding);
       EditorPopup_ActionGroup.this.addSeparator();
       EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToConceptDeclaration_Action", "jetbrains.mps.ide");
       EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToEditorDeclaration_Action", "jetbrains.mps.ide");
