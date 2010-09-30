@@ -34,6 +34,7 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
+import javax.swing.UIManager;
 import javax.swing.tree.TreePath;
 import java.awt.Color;
 import java.util.Collection;
@@ -215,7 +216,7 @@ public class BreakpointsTree extends BreakpointsView {
 
     @Override
     public Color getColor() {
-      return Color.BLACK;
+      return UIManager.getColor("Tree.textForeground");
     }
 
     @Override

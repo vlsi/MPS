@@ -25,6 +25,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
+import javax.swing.UIManager;
 import java.awt.Color;
 import java.util.*;
 
@@ -118,7 +119,7 @@ public abstract class GroupedTree<D> extends MPSTree {
 
     @Override
     public Color getColor() {
-      return Color.BLACK;
+      return UIManager.getColor("Tree.textForeground");
     }
 
     @Override
