@@ -23,10 +23,8 @@ import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class RefactoringProcessor {
@@ -99,7 +97,7 @@ public class RefactoringProcessor {
    * @param model - model to update
    * @return true if model was updated with refactoring
    */
-  public static boolean updateModelOnLoad(/*DefaultSModelDescriptor descriptor,*/ SModel model) {
+  public static boolean updateModelOnLoad(SModel model) {
     assert model != null;
     boolean result = false;
     if (!PlayRefactoringsFlag.refactoringsPlaybackEnabled()) {
@@ -127,18 +125,18 @@ public class RefactoringProcessor {
   }
 
   // true if any refactoring was played
-  private static boolean playUsedModelDescriptorsRefactoring(/*DefaultSModelDescriptor descriptor,*/ SModel model, EditableSModelDescriptor usedModelDescriptor) {
+  private static boolean playUsedModelDescriptorsRefactoring(SModel model, EditableSModelDescriptor usedModelDescriptor) {
     int currentVersion = usedModelDescriptor.getVersion();
     int usedVersion = model.getUsedVersion(usedModelDescriptor.getSModelReference());
 
     if (currentVersion > usedVersion) {
-      boolean result = false;
+      boolean played = false;
       RefactoringHistory refactoringHistory = usedModelDescriptor.getRefactoringHistory();
       for (RefactoringContext refactoringContext : refactoringHistory.getRefactoringContexts()) {
         if (refactoringContext.getModelVersion() <= usedVersion) continue;
 
-        result = true;
         playRefactoring(model, refactoringContext);
+        played = true;
 /*
         IRefactoring refactoring = refactoringContext.getRefactoring();
         if (!(refactoring instanceof ILoggableRefactoring)) {
@@ -153,11 +151,7 @@ public class RefactoringProcessor {
 */
       }
       model.updateImportedModelUsedVersion(usedModelDescriptor.getSModelReference(), currentVersion);
-//      IFile modelFile = descriptor.getModelFile();
-//      if (modelFile != null && !modelFile.isReadOnly()) {
-//        SModelRepository.getInstance().markChanged(descriptor, true);
-//      }
-      return result;
+      return played;
     }
 
     // broken model fixing code
@@ -165,14 +159,15 @@ public class RefactoringProcessor {
       LOG.error("Model version mismatch for import " + usedModelDescriptor.getSModelReference().getSModelFqName() + " in model " + model.getSModelFqName());
       LOG.error("Used version = " + usedVersion + ", current version = " + currentVersion);
       model.updateImportedModelUsedVersion(usedModelDescriptor.getSModelReference(), currentVersion);
-//      SModelRepository.getInstance().markChanged(descriptor, true);
       LOG.error("Mismatch fixed");
+      return true;
     }
 
     return false;
   }
 
-  private static void/*boolean*/ playRefactoring(@NotNull SModel model, @NotNull RefactoringContext context) {
+  private static boolean playRefactoring(@NotNull SModel model, @NotNull RefactoringContext context) {
     context.updateModelWithMaps(model);
+    return true;    // todo: rewrite previous call to return real status of update
   }
 }

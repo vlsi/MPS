@@ -26,6 +26,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
@@ -44,6 +45,8 @@ public class RefactoringContext {
 
   //elements names
   public static final String REFACTORING_CONTEXT = "refactoringContext";
+  public static final String DEPENDENCIES = "dependencies";
+  public static final String DEPEND_MODEL = "model";
   public static final String MOVE_MAP = "moveMap";
   public static final String SOURCE_MAP = "sourceMap";
   public static final String CONCEPT_FEATURE_MAP = "conceptFeatureMap";
@@ -64,6 +67,7 @@ public class RefactoringContext {
   private int myModelVersion = -1;
   private IRefactoring myRefactoring;
   private String myRefactoringClassName = null;
+  private List<Dependency> myDependencies = new ArrayList<Dependency>();
   //-----------------
 
   //transient caches
@@ -486,6 +490,19 @@ public class RefactoringContext {
     return myModelVersion;
   }
 
+  public void addDependencyModel(SModelReference modelReference, int version) {
+    if (myDependencies == null)  myDependencies = new ArrayList<Dependency>();
+    myDependencies.add(new Dependency(modelReference, version));
+  }
+
+  public void addDependencyModel(EditableSModelDescriptor model) {
+    addDependencyModel(model.getSModelReference(), model.getVersion());
+  }
+
+  public List<Dependency> getDependencies() {
+    return myDependencies;
+  }
+
   public void setRefactoring(IRefactoring refactoring) {
     myRefactoring = refactoring;
     if (myRefactoring != null) {
@@ -509,6 +526,15 @@ public class RefactoringContext {
     if (myModelVersion != -1) {
       refactoringContextElement.setAttribute(MODEL_VERSION, myModelVersion + "");
     }
+
+    if (myDependencies != null) {
+      Element dependencies = new Element(DEPENDENCIES);
+      for (Dependency dep : myDependencies) {
+        dependencies.addContent(dep.toElement(new Element(DEPEND_MODEL)));
+      }
+      refactoringContextElement.addContent(dependencies);
+    }
+
     {
       Element refactoringElement = new Element(REFACTORING);
       if (myRefactoring == null) {
@@ -688,6 +714,17 @@ public class RefactoringContext {
     } catch (Throwable t) {
       myModelVersion = -1;
       LOG.error(t);
+    }
+
+    // If dependencies element absent then it is an old version of refactoring context and dependencies are implicit
+    Element dependencies = element.getChild(DEPENDENCIES);
+    if (dependencies == null) {
+      myDependencies = null;
+    } else {
+      myDependencies = new ArrayList<Dependency>();
+      for (Element elem : (List<Element>) dependencies.getChildren(DEPEND_MODEL)) {
+        myDependencies.add(new Dependency(elem));
+      }
     }
 
     myRefactoring = null;
@@ -883,6 +920,48 @@ public class RefactoringContext {
 
   public boolean getDoesGenerateModels() {
     return myDoesGenerateModels;
+  }
+
+  public static class Dependency {
+    private final String MODEL_UID = "modelUID";
+    private final String MODEL_VERSION = "version";
+
+    private SModelReference myModelReference;
+    private int myVersion = -1;
+
+    public Dependency(SModelReference modelReference, int version) {
+      myModelReference = modelReference;
+      myVersion = version;
+    }
+
+    public Dependency(Element element){
+      fromElement(element);
+    }
+
+    public SModelReference getModelReference() {
+      return myModelReference;
+    }
+
+    public int getUsedVersion() {
+      return myVersion;
+    }
+
+    public Element toElement(Element element) {
+      return element.setAttribute(MODEL_UID, myModelReference.toString()).setAttribute(MODEL_VERSION, myVersion + "");
+    }
+
+    public void fromElement(Element element) {
+      myModelReference = SModelReference.fromString(element.getAttributeValue(MODEL_UID));
+      myVersion = -1;
+      String versionString = element.getAttributeValue(MODEL_VERSION);
+      if (versionString != null) {
+        try {
+          myVersion = Integer.parseInt(versionString);
+        } catch (NumberFormatException t) {
+          LOG.error(t);
+        }
+      }
+    }
   }
 
   public static class FullNodeId implements Comparable<FullNodeId> {
