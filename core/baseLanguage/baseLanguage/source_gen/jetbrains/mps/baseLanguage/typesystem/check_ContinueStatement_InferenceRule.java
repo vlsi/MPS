@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -21,7 +22,7 @@ public class check_ContinueStatement_InferenceRule extends AbstractInferenceRule
   public check_ContinueStatement_InferenceRule() {
   }
 
-  public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(SPropertyOperations.hasValue(nodeToCheck, "label", null))) {
       final String lbl = SPropertyOperations.getString(nodeToCheck, "label");
       Iterable<SNode> matchingLoops = ListSequence.fromList(SNodeOperations.getAncestors(nodeToCheck, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).where(new IWhereFilter<SNode>() {
@@ -41,8 +42,11 @@ public class check_ContinueStatement_InferenceRule extends AbstractInferenceRule
     return "jetbrains.mps.baseLanguage.structure.ContinueStatement";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

@@ -11,6 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
 import java.util.HashSet;
@@ -73,8 +74,11 @@ public class subtyping_classifier_SubtypingRule extends SubtypingRule_Runtime im
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean isWeak() {

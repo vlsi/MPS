@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.List;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
@@ -20,7 +21,7 @@ public class check_DuplicateMethods_NonTypesystemRule extends AbstractNonTypesys
   public check_DuplicateMethods_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode classifier, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode classifier, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> ownMethods = Classifier_Behavior.call_getOwnMethods_1906502351318572840(classifier);
     ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(((Classifier) SNodeOperations.getAdapter(classifier)), IClassifiersSearchScope.INSTANCE_METHOD | IClassifiersSearchScope.STATIC_METHOD);
     for (SNode ownMethod : ownMethods) {
@@ -36,8 +37,11 @@ public class check_DuplicateMethods_NonTypesystemRule extends AbstractNonTypesys
     return "jetbrains.mps.baseLanguage.structure.Classifier";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

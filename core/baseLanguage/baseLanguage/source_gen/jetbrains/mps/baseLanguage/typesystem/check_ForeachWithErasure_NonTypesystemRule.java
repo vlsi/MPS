@@ -7,6 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -31,7 +32,7 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
   public check_ForeachWithErasure_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode foreachStatement, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode foreachStatement, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode iterableType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(foreachStatement, "iterable", true));
     if (SNodeOperations.isInstanceOf(iterableType, "jetbrains.mps.baseLanguage.structure.ArrayType")) {
       return;
@@ -57,8 +58,11 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
     return "jetbrains.mps.baseLanguage.structure.ForeachStatement";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

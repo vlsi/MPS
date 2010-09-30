@@ -10,6 +10,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class PrimitiveSubtyping_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
@@ -28,8 +29,11 @@ public class PrimitiveSubtyping_SubtypingRule extends SubtypingRule_Runtime impl
     return "jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean isWeak() {

@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -20,7 +21,7 @@ public class check_InnerClassesCantHaveStaticDeclarations_NonTypesystemRule exte
   public check_InnerClassesCantHaveStaticDeclarations_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode classConcept, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode classConcept, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (Classifier_Behavior.call_isInner_521412098689998677(classConcept) && !(Classifier_Behavior.call_isStatic_521412098689998668(classConcept)) && (ListSequence.fromList(SLinkOperations.getTargets(classConcept, "staticField", true)).isNotEmpty() || (SLinkOperations.getTarget(classConcept, "classInitializer", true) != null) || ListSequence.fromList(SLinkOperations.getTargets(classConcept, "staticMethod", true)).isNotEmpty())) {
       {
         BaseIntentionProvider intentionProvider = null;
@@ -37,8 +38,11 @@ public class check_InnerClassesCantHaveStaticDeclarations_NonTypesystemRule exte
     return "jetbrains.mps.baseLanguage.structure.ClassConcept";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

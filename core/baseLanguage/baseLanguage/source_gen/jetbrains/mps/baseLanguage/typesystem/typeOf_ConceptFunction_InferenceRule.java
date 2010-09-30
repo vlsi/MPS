@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -27,7 +28,7 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
   public typeOf_ConceptFunction_InferenceRule() {
   }
 
-  public void applyRule(final SNode func, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode func, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode expectedRetType = ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(func);
     boolean noReturnExpected = ((expectedRetType == null) || TypeChecker.getInstance().getSubtypingManager().isSubtype(expectedRetType, new typeOf_ConceptFunction_InferenceRule.QuotationClass_bbraw4_a1a0a0a1a0().createNode(typeCheckingContext)));
     if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(expectedRetType), "jetbrains.mps.baseLanguage.structure.WildCardType")) {
@@ -108,8 +109,11 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
     return "jetbrains.mps.baseLanguage.structure.ConceptFunction";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

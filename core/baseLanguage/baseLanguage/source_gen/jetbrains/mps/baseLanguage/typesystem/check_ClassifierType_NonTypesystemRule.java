@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.intentions.BaseIntentionProvider;
@@ -30,7 +31,7 @@ public class check_ClassifierType_NonTypesystemRule extends AbstractNonTypesyste
   public check_ClassifierType_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode classifierType, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode classifierType, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode classifier = SLinkOperations.getTarget(classifierType, "classifier", false);
     if (!(ListSequence.fromList(SLinkOperations.getTargets(classifierType, "parameter", true)).count() == 0 || ListSequence.fromList(SLinkOperations.getTargets(classifierType, "parameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).count())) {
       BaseIntentionProvider intentionProvider = null;
@@ -105,8 +106,11 @@ public class check_ClassifierType_NonTypesystemRule extends AbstractNonTypesyste
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

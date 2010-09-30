@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
@@ -19,7 +20,7 @@ public class check_InnerClassesCantHaveStaticMethods_NonTypesystemRule extends A
   public check_InnerClassesCantHaveStaticMethods_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode staticMethodDeclaration, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode staticMethodDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(staticMethodDeclaration)) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept")) {
       SNode classConcept = (SNode) SNodeOperations.getParent(staticMethodDeclaration);
       if (Classifier_Behavior.call_isInner_521412098689998677(classConcept) && !(Classifier_Behavior.call_isStatic_521412098689998668(classConcept))) {
@@ -39,8 +40,11 @@ public class check_InnerClassesCantHaveStaticMethods_NonTypesystemRule extends A
     return "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

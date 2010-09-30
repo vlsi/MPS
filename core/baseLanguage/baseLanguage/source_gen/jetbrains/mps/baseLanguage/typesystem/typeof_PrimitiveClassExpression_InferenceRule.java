@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -23,7 +24,7 @@ public class typeof_PrimitiveClassExpression_InferenceRule extends AbstractInfer
   public typeof_PrimitiveClassExpression_InferenceRule() {
   }
 
-  public void applyRule(final SNode primitiveClassExpression, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode primitiveClassExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode unboxedType = Type_Behavior.call_getUnboxedType_1213877337320(SLinkOperations.getTarget(primitiveClassExpression, "primitiveType", true));
     if (SNodeOperations.isInstanceOf(unboxedType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
       {
@@ -39,8 +40,11 @@ public class typeof_PrimitiveClassExpression_InferenceRule extends AbstractInfer
     return "jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

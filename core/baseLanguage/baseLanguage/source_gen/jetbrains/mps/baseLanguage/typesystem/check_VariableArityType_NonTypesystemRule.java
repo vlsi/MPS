@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.intentions.BaseIntentionProvider;
@@ -17,7 +18,7 @@ public class check_VariableArityType_NonTypesystemRule extends AbstractNonTypesy
   public check_VariableArityType_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode variableArityType, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode variableArityType, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     do {
       SNode matchedNode_x4f43m_a0 = SNodeOperations.getParent(variableArityType);
       {
@@ -51,8 +52,11 @@ public class check_VariableArityType_NonTypesystemRule extends AbstractNonTypesy
     return "jetbrains.mps.baseLanguage.structure.VariableArityType";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

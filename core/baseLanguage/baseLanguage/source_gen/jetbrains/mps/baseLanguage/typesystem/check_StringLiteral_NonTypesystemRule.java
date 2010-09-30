@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.baseLanguage.behavior.StringLiteral_Behavior;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
@@ -17,7 +18,7 @@ public class check_StringLiteral_NonTypesystemRule extends AbstractNonTypesystem
   public check_StringLiteral_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode stringLiteral, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode stringLiteral, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(StringLiteral_Behavior.call_isCorrect_1221565233201(stringLiteral))) {
       {
         BaseIntentionProvider intentionProvider = null;
@@ -31,8 +32,11 @@ public class check_StringLiteral_NonTypesystemRule extends AbstractNonTypesystem
     return "jetbrains.mps.baseLanguage.structure.StringLiteral";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -24,7 +25,7 @@ public class typeof_UnaryMinus_InferenceRule extends AbstractInferenceRule_Runti
   public typeof_UnaryMinus_InferenceRule() {
   }
 
-  public void applyRule(final SNode minus, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode minus, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode expressionType_typevar_7602524515424797598 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(minus, "expression", true);
@@ -60,8 +61,11 @@ public class typeof_UnaryMinus_InferenceRule extends AbstractInferenceRule_Runti
     return "jetbrains.mps.baseLanguage.structure.UnaryMinus";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

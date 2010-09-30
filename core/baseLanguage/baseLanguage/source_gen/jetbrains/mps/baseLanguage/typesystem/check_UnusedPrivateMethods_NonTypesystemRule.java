@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -21,7 +22,7 @@ public class check_UnusedPrivateMethods_NonTypesystemRule extends AbstractNonTyp
   public check_UnusedPrivateMethods_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode classifierMember, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode classifierMember, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(classifierMember, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
       do {
         final SNode matchedNode_sl9v9q_a0a0 = classifierMember;
@@ -69,8 +70,11 @@ public class check_UnusedPrivateMethods_NonTypesystemRule extends AbstractNonTyp
     return "jetbrains.mps.baseLanguage.structure.ClassifierMember";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

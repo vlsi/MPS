@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -20,7 +21,7 @@ public class check_parametersCount_NonTypesystemRule extends AbstractNonTypesyst
   public check_parametersCount_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode iMethodCall, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode iMethodCall, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode baseMethodDeclaration = SLinkOperations.getTarget(iMethodCall, "baseMethodDeclaration", false);
     boolean b = true;
     if (baseMethodDeclaration != null) {
@@ -50,8 +51,11 @@ public class check_parametersCount_NonTypesystemRule extends AbstractNonTypesyst
     return "jetbrains.mps.baseLanguage.structure.IMethodCall";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {
