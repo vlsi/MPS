@@ -109,14 +109,6 @@ public class CheckBoxNodeRenderer implements TreeCellRenderer {
       return selected ? UIManager.getColor("Tree.selectionForeground") : UIManager.getColor("Tree.textForeground");
     }
 
-    @Override
-    public Dimension getPreferredSize() {
-      Dimension cbSize = myCheckBox.getPreferredSize();
-      Dimension labelSize = myTextLabel.getPreferredSize();
-      Dimension iconSize = myIconLabel.getPreferredSize();
-
-      return new Dimension((int) (cbSize.getWidth() + labelSize.getWidth() + iconSize.getWidth()), (int) Math.max(cbSize.getHeight(), Math.max(labelSize.getHeight(), iconSize.getHeight())));
-    }
   }
 
   public static interface NodeData {
