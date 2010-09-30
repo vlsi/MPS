@@ -205,24 +205,24 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
   }
 
   private void registerActionsOnViews() {
-    for (int index = 0; index < myViews.length; index++) {
+    for (BreakpointsView myView : myViews) {
       // show on enter
-      myViews[index].getMainComponent().getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), COMMAND_SHOW_NODE);
-      myViews[index].getMainComponent().getActionMap().put(COMMAND_SHOW_NODE, new AbstractAction() {
+      myView.getMainComponent().getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), COMMAND_SHOW_NODE);
+      myView.getMainComponent().getActionMap().put(COMMAND_SHOW_NODE, new AbstractAction() {
         @Override
         public void actionPerformed(ActionEvent e) {
           myShowNodeAction.actionPerformed(null);
         }
       });
       // open on f4
-      myViews[index].getMainComponent().registerKeyboardAction(new AbstractAction() {
+      myView.getMainComponent().registerKeyboardAction(new AbstractAction() {
         @Override
         public void actionPerformed(ActionEvent e) {
           myGotoNodeAction.actionPerformed(null);
         }
       }, KeyStroke.getKeyStroke("F4"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
       // delete on del
-      myViews[index].getMainComponent().registerKeyboardAction(new ActionListener() {
+      myView.getMainComponent().registerKeyboardAction(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
           myDeleteBreakpointAction.actionPerformed(null);
@@ -230,7 +230,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
       }, KeyStroke.getKeyStroke("DELETE"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
       // open on double click
-      myViews[index].getMainComponent().addMouseListener(new MouseAdapter() {
+      myView.getMainComponent().addMouseListener(new MouseAdapter() {
         @Override
         public void mouseClicked(MouseEvent e) {
           if (e.getClickCount() == 2) {
