@@ -1,5 +1,6 @@
 package jetbrains.mps.debug.api.integration.ui.breakpoint;
 
+import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
@@ -15,6 +16,7 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
+import java.awt.Component;
 import java.awt.event.*;
 
 public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider {
@@ -211,21 +213,21 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
       myView.getMainComponent().getActionMap().put(COMMAND_SHOW_NODE, new AbstractAction() {
         @Override
         public void actionPerformed(ActionEvent e) {
-          myShowNodeAction.actionPerformed(null);
+          myShowNodeAction.actionPerformed(createEvent(myShowNodeAction));
         }
       });
       // open on f4
       myView.getMainComponent().registerKeyboardAction(new AbstractAction() {
         @Override
         public void actionPerformed(ActionEvent e) {
-          myGotoNodeAction.actionPerformed(null);
+          myGotoNodeAction.actionPerformed(createEvent(myGotoNodeAction));
         }
       }, KeyStroke.getKeyStroke("F4"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
       // delete on del
       myView.getMainComponent().registerKeyboardAction(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-          myDeleteBreakpointAction.actionPerformed(null);
+          myDeleteBreakpointAction.actionPerformed(createEvent(myDeleteBreakpointAction));
         }
       }, KeyStroke.getKeyStroke("DELETE"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
@@ -242,6 +244,10 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
         }
       });
     }
+  }
+
+  private AnActionEvent createEvent(AnAction action) {
+    return new AnActionEvent(null, DataManager.getInstance().getDataContext(this), ActionPlaces.UNKNOWN, action.getTemplatePresentation(), ActionManager.getInstance(), 0);
   }
 
   private void openNode(final AbstractMPSBreakpoint breakpoint, final boolean focus, final boolean select) {

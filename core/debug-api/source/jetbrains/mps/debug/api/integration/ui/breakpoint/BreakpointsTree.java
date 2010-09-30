@@ -20,6 +20,7 @@ import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.debug.api.integration.ui.breakpoint.GroupedTree.GroupKind;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.ui.CheckBoxNodeRenderer.NodeData;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.project.IModule;
@@ -34,6 +35,7 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.tree.TreePath;
+import java.awt.Color;
 import java.util.Collection;
 
 public class BreakpointsTree extends BreakpointsView {
@@ -48,8 +50,16 @@ public class BreakpointsTree extends BreakpointsView {
     myContext = context;
     // todo checkboxes!
     myTree = new GroupedTree<AbstractMPSBreakpoint>(myContext) {
-      protected BreakpointTreeNode createDataNode(IOperationContext operationContext, AbstractMPSBreakpoint breakpoint) {
-        return new BreakpointTreeNode(operationContext, breakpoint);
+      protected BreakpointTreeNode createDataNode(IOperationContext operationContext, AbstractMPSBreakpoint data) {
+        return new BreakpointTreeNode(operationContext, data);
+      }
+
+      @Override
+      protected NodeData createNodeData(boolean selected, NodeData nodeData) {
+        if (nodeData instanceof BreakpointNodeData)  {
+          ((BreakpointNodeData)nodeData).myBreakpoint.setEnabled(selected);
+        }
+        return nodeData;
       }
 
       @Override
@@ -120,7 +130,7 @@ public class BreakpointsTree extends BreakpointsView {
     if (MPS_BREAKPOINT.is(dataId)) {
       if (node instanceof BreakpointTreeNode) {
         BreakpointTreeNode breakpointNode = (BreakpointTreeNode) node;
-        return breakpointNode.myBreakpoint;
+        return ((BreakpointNodeData)breakpointNode.getUserObject()).myBreakpoint;
       }
       return null;
     }
@@ -191,19 +201,46 @@ public class BreakpointsTree extends BreakpointsView {
     }
   }
 
-  private class BreakpointTreeNode extends MPSTreeNode {
+  private class BreakpointNodeData implements NodeData {
     private final AbstractMPSBreakpoint myBreakpoint;
 
-    public BreakpointTreeNode(IOperationContext operationContext, AbstractMPSBreakpoint breakpoint) {
-      super(operationContext);
+    public BreakpointNodeData(AbstractMPSBreakpoint breakpoint) {
       myBreakpoint = breakpoint;
+    }
+
+    @Override
+    public Icon getIcon(boolean expanded) {
+      return BreakpointIconRenderer.getIconFor(myBreakpoint);
+    }
+
+    @Override
+    public Color getColor() {
+      return Color.BLACK;
+    }
+
+    @Override
+    public String getText() {
+      return myBreakpoint.getPresentation();
+    }
+
+    @Override
+    public boolean isSelected() {
+      return myBreakpoint.isEnabled();
+    }
+  }
+
+  private class BreakpointTreeNode extends MPSTreeNode {
+
+    public BreakpointTreeNode(IOperationContext operationContext, AbstractMPSBreakpoint breakpoint) {
+      super(new BreakpointNodeData(breakpoint), operationContext);
       updatePresentation();
     }
 
     @Override
     protected void updatePresentation() {
-      setIcon(BreakpointIconRenderer.getIconFor(myBreakpoint));
-      setText(myBreakpoint.getPresentation());
+      BreakpointNodeData bp = (BreakpointNodeData) getUserObject();
+      setIcon(bp.getIcon(true));
+      setText(bp.getText());
       setNodeIdentifier(getText());
     }
 

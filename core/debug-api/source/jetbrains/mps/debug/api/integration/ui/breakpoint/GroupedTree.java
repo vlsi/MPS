@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.debug.api.integration.ui.breakpoint;
 
+import jetbrains.mps.ide.ui.CheckBoxNodeRenderer;
+import jetbrains.mps.ide.ui.CheckBoxNodeRenderer.CheckBoxNodeEditor;
+import jetbrains.mps.ide.ui.CheckBoxNodeRenderer.NodeData;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.smodel.IOperationContext;
@@ -22,6 +25,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
+import java.awt.Color;
 import java.util.*;
 
 public abstract class GroupedTree<D> extends MPSTree {
@@ -29,9 +33,23 @@ public abstract class GroupedTree<D> extends MPSTree {
 
   public GroupedTree(IOperationContext context) {
     myContext = context;
+    setCellRenderer(new CheckBoxNodeRenderer());
+    setCellEditor(new CheckBoxNodeEditor() {
+      @Override
+      protected NodeData createNodeData(boolean selected) {
+        NodeData data = getObject();
+        if (data instanceof GroupData) {
+          return data;
+        } else {
+          return GroupedTree.this.createNodeData(selected, data);
+        }
+      }
+    });
+    setEditable(true);
   }
 
-  protected abstract MPSTreeNode createDataNode(IOperationContext operationContext, D breakpoint);
+  protected abstract MPSTreeNode createDataNode(IOperationContext operationContext, D data);
+  protected abstract NodeData createNodeData(boolean selected, NodeData nodeData);
   protected abstract GroupKind<D, Object> createRootGroupKind();
   protected abstract Collection<D> getData();
 
@@ -84,18 +102,52 @@ public abstract class GroupedTree<D> extends MPSTree {
     }
   }
 
-  private class GroupTreeNode<T> extends MPSTreeNode {
-    private final Collection<D> myBreakpoints;
-    @NotNull
-    private final T myGroup;
-    @NotNull
-    private final GroupKind<D, T> myKind;
+  private class GroupData<D, T> implements NodeData {
+   private final @NotNull GroupKind<D, T> myKind;
+   private final @NotNull T myGroup;
 
-    public GroupTreeNode(IOperationContext operationContext, @NotNull GroupKind<D, T> kind, @NotNull T group, Collection<D> breakpoints) {
-      super(operationContext);
-      myBreakpoints = breakpoints;
+    public GroupData(T group, GroupKind<D, T> kind) {
       myGroup = group;
       myKind = kind;
+    }
+
+    @Override
+    public Icon getIcon(boolean expanded) {
+      return myKind.getIcon(myGroup);
+    }
+
+    @Override
+    public Color getColor() {
+      return Color.BLACK;
+    }
+
+    @Override
+    public String getText() {
+      return myKind.getText(myGroup);
+    }
+
+    @Override
+    public boolean isSelected() {
+      return false;
+    }
+
+    @NotNull
+    public GroupKind<D, T> getKind() {
+      return myKind;
+    }
+
+    @NotNull
+    public T getGroup() {
+      return myGroup;
+    }
+  }
+
+  private class GroupTreeNode<T> extends MPSTreeNode {
+    private final Collection<D> myData;
+
+    public GroupTreeNode(IOperationContext operationContext, @NotNull GroupKind<D, T> kind, @NotNull T group, Collection<D> data) {
+      super(new GroupData(group, kind), operationContext);
+      myData = data;
 
       GroupKind<D, Object> subGroupKind = kind.getSubGroupKind();
       while (subGroupKind != null && !subGroupKind.isVisible()) {
@@ -103,11 +155,11 @@ public abstract class GroupedTree<D> extends MPSTree {
       }
       
       if (subGroupKind == null) {
-        for (D breakpoint : myBreakpoints) {
+        for (D breakpoint : myData) {
           add(createDataNode(operationContext, breakpoint));
         }
       } else {
-        Map<Object, Set<D>> sorted = subGroupKind.sortByGroups(myBreakpoints);
+        Map<Object, Set<D>> sorted = subGroupKind.sortByGroups(myData);
         for (Object subGroup : sorted.keySet()) {
           add(new GroupTreeNode<Object>(operationContext, subGroupKind, subGroup, sorted.get(subGroup)));
         }
@@ -118,9 +170,10 @@ public abstract class GroupedTree<D> extends MPSTree {
 
     @Override
     protected void updatePresentation() {
-      setText(myKind.getText(myGroup));
+      GroupData groupData = (GroupData) getUserObject();
+      setText(groupData.getText());
       setNodeIdentifier(getText());
-      Icon icon = myKind.getIcon(myGroup);
+      Icon icon = groupData.getIcon(false);
       if (icon != null) {
         setIcon(icon);
       }
