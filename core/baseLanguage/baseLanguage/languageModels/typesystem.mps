@@ -22867,8 +22867,13 @@
         </node>
         <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="4663972844383684985">
           <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="4663972844383684978">
-            <node role="term:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="4663972844383684980">
-              <link role="applicableNode:3" targetNodeId="4663972844383684976" resolveInfo="synchronizedStatement" />
+            <node role="term:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3794810057024076861">
+              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="4663972844383684980">
+                <link role="applicableNode:3" targetNodeId="4663972844383684976" resolveInfo="synchronizedStatement" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="3794810057024109346">
+                <link role="link:16" targetNodeId="1.1170075728144:3" />
+              </node>
             </node>
           </node>
         </node>
