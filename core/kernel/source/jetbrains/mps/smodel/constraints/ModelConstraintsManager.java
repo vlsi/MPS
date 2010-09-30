@@ -273,10 +273,11 @@ public class ModelConstraintsManager implements ApplicationComponent {
     String namespace = NameUtil.namespaceFromConceptFQName(conceptFqName);
 
     // 'bootstrap' properties
-    if (namespace.equals("jetbrains.mps.bootstrap.structureLanguage") && propertyName.equals(INamedConcept.NAME)
-      && !conceptFqName.equals("jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration")) {
+    if (namespace.equals("jetbrains.mps.lang.structure") && propertyName.equals(INamedConcept.NAME)
+      && !conceptFqName.equals("jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration")) {
       return null;
     }
+
     if (conceptFqName.equals(RuntimeTypeVariable.concept)) {
       // helgins ku-ku!
       return null;
