@@ -127,6 +127,8 @@ public class CheckBoxNodeRenderer implements TreeCellRenderer {
     String getText();
 
     boolean isSelected();
+
+    void setSelected(boolean selected); 
   }
 
   public static abstract class CheckBoxNodeEditor<N extends NodeData> extends AbstractCellEditor implements TreeCellEditor {

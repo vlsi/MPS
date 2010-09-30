@@ -29,7 +29,7 @@ import javax.swing.UIManager;
 import java.awt.Color;
 import java.util.*;
 
-public abstract class GroupedTree<D> extends MPSTree {
+public abstract class GroupedTree<D extends NodeData> extends MPSTree {
   private final IOperationContext myContext;
 
   public GroupedTree(IOperationContext context) {
@@ -39,18 +39,14 @@ public abstract class GroupedTree<D> extends MPSTree {
       @Override
       protected NodeData createNodeData(boolean selected) {
         NodeData data = getObject();
-        if (data instanceof GroupData) {
-          return data;
-        } else {
-          return GroupedTree.this.createNodeData(selected, data);
-        }
+        data.setSelected(selected);
+        return data;
       }
     });
     setEditable(true);
   }
 
   protected abstract MPSTreeNode createDataNode(IOperationContext operationContext, D data);
-  protected abstract NodeData createNodeData(boolean selected, NodeData nodeData);
   protected abstract GroupKind<D, Object> createRootGroupKind();
   protected abstract Collection<D> getData();
 
@@ -103,13 +99,15 @@ public abstract class GroupedTree<D> extends MPSTree {
     }
   }
 
-  private class GroupData<D, T> implements NodeData {
+  private class GroupData<D extends NodeData, T> implements NodeData {
    private final @NotNull GroupKind<D, T> myKind;
    private final @NotNull T myGroup;
+   private final Collection<D> myData;
 
-    public GroupData(T group, GroupKind<D, T> kind) {
+    public GroupData(T group, GroupKind<D, T> kind, Collection<D> data) {
       myGroup = group;
       myKind = kind;
+      myData = data;
     }
 
     @Override
@@ -129,7 +127,12 @@ public abstract class GroupedTree<D> extends MPSTree {
 
     @Override
     public boolean isSelected() {
-      return false;
+      for (D d : myData) {
+        if (!d.isSelected()) {
+          return false;
+        }
+      }
+      return true;
     }
 
     @NotNull
@@ -141,13 +144,19 @@ public abstract class GroupedTree<D> extends MPSTree {
     public T getGroup() {
       return myGroup;
     }
+
+    public void setSelected(boolean selected) {
+      for (D d : myData) {
+        d.setSelected(selected);
+      }
+    }
   }
 
   private class GroupTreeNode<T> extends MPSTreeNode {
     private final Collection<D> myData;
 
     public GroupTreeNode(IOperationContext operationContext, @NotNull GroupKind<D, T> kind, @NotNull T group, Collection<D> data) {
-      super(new GroupData(group, kind), operationContext);
+      super(new GroupData(group, kind, data), operationContext);
       myData = data;
 
       GroupKind<D, Object> subGroupKind = kind.getSubGroupKind();
