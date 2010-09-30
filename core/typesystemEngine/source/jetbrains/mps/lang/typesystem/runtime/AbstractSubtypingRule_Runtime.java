@@ -76,4 +76,9 @@ public abstract class AbstractSubtypingRule_Runtime implements ISubtypingRule_Ru
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     return new IsApplicableStatus(isApplicable(argument), null);
   }
+
+  @Deprecated
+  public boolean isApplicable(SNode argument) {
+    return false;
+  }
 }

@@ -44,8 +44,11 @@ public class typeof_ConceptClauseLinkInfo_InferenceRule extends AbstractInferenc
     return "jetbrains.mps.lang.typesystem.structure.ConceptClauseLinkInfo";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {
