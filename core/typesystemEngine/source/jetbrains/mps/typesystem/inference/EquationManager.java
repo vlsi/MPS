@@ -322,7 +322,7 @@ public class EquationManager {
       SNode node2 = supertypeRepresentator.getNode();
       Set<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>> inequationReplacementRules = myTypeChecker.getRulesManager().getReplacementRules(node1, node2);
       for (Pair<InequationReplacementRule_Runtime, IsApplicable2Status> inequationReplacementRule : inequationReplacementRules) {
-        processInequationWithReplacementRule(inequationReplacementRule.o1, node1, node2, equationInfo, myTypeCheckingContext);
+        processInequationWithReplacementRule(inequationReplacementRule.o1, node1, node2, equationInfo, myTypeCheckingContext, inequationReplacementRule.o2);
         return;
       }
     }
@@ -376,11 +376,16 @@ public class EquationManager {
     //  myTypeChecker.getSubtypingManager().isSubtype(subtypeRepresentator, supertypeRepresentator, this, equationInfo, isWeak);
   }
 
-  private static void processInequationWithReplacementRule(InequationReplacementRule_Runtime rule, SNode node1, SNode node2, EquationInfo equationInfo, TypeCheckingContext typeCheckingContext) {
+  private static void processInequationWithReplacementRule(InequationReplacementRule_Runtime rule,
+                                                           SNode node1,
+                                                           SNode node2,
+                                                           EquationInfo equationInfo,
+                                                           TypeCheckingContext typeCheckingContext,
+                                                           IsApplicable2Status status) {
     if (rule instanceof AbstractInequationReplacementRule_Runtime) {
       ((AbstractInequationReplacementRule_Runtime) rule).processInequation(node1, node2, equationInfo, typeCheckingContext);
     } else {
-      rule.processInequation(node1, node2, equationInfo);
+      rule.processInequation(node1, node2, equationInfo, status);
     }
   }
 

@@ -70,7 +70,7 @@ public class SubtypingManager {
   boolean isSubtypeByReplacementRules(SNode subtype, SNode supertype) {
     Set<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>> inequationReplacementRules = myTypeChecker.getRulesManager().getReplacementRules(subtype, supertype);
     for (Pair<InequationReplacementRule_Runtime, IsApplicable2Status> inequationReplacementRule : inequationReplacementRules) {
-      if (inequationReplacementRule.o1.checkInequation(subtype, supertype, new EquationInfo(null, null))) {
+      if (inequationReplacementRule.o1.checkInequation(subtype, supertype, new EquationInfo(null, null), inequationReplacementRule.o2)) {
         return true;
       }
     }

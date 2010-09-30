@@ -29,6 +29,8 @@ public class IsApplicable2Status {
   private GeneratedMatchingPattern myPattern1;
   private GeneratedMatchingPattern myPattern2;
 
+  public static final IsApplicable2Status FALSE_STATUS = new IsApplicable2Status(false, null, null);
+
   public IsApplicable2Status(boolean isApplicable, GeneratedMatchingPattern pattern1, GeneratedMatchingPattern pattern2) {
     myIsApplicable = isApplicable;
     myPattern1 = pattern1;
