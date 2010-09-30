@@ -42,9 +42,9 @@ import java.util.Collection;
 public class BreakpointsTree extends BreakpointsView {
   private final IOperationContext myContext;
   private final MPSTree myTree;
-  private GroupKind myModuleKind = new ModuleGroupKind();
-  private GroupKind myModelKind = new ModelGroupKind();
-  private GroupKind myRootKind = new RootGroupKind();
+  private final GroupKind myModuleKind = new ModuleGroupKind();
+  private final GroupKind myModelKind = new ModelGroupKind();
+  private final GroupKind myRootKind = new RootGroupKind();
 
   public BreakpointsTree(IOperationContext context, BreakpointManagerComponent breakpointsManager) {
     super(breakpointsManager);
