@@ -34,8 +34,8 @@ public abstract class GroupedTree<D> extends MPSTree {
 
   public GroupedTree(IOperationContext context) {
     myContext = context;
-    setCellRenderer(new CheckBoxNodeRenderer());
-    setCellEditor(new CheckBoxNodeEditor() {
+    setCellRenderer(new CheckBoxNodeRenderer(true));
+    setCellEditor(new CheckBoxNodeEditor(true) {
       @Override
       protected NodeData createNodeData(boolean selected) {
         NodeData data = getObject();

@@ -26,90 +26,123 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
 public class CheckBoxNodeRenderer implements TreeCellRenderer {
-  private JLabel myIconLabel = new JLabel();
-  private JPanelWithCheckBox myPanel = new JPanelWithCheckBox(new BorderLayout());
+  private final JPanelWithCheckBox myPanel;
 
   public CheckBoxNodeRenderer() {
-    Font font = UIManager.getFont("Tree.font");
-    if (font != null) {
-      myPanel.getCheckBox().setFont(font);
-    }
-    Boolean iconBorder = (Boolean) UIManager.get("Tree.drawsFocusBorderAroundIcon");
-    myPanel.setOpaque(false);
-    myPanel.getCheckBox().setFocusPainted((iconBorder != null) && iconBorder);
-    myPanel.add(myIconLabel, BorderLayout.WEST);
-    myPanel.add(myPanel.getCheckBox(), BorderLayout.CENTER);
+    this(false);
   }
 
-  public JCheckBox getCheckBox() {
-    return myPanel.getCheckBox();
+  public CheckBoxNodeRenderer(boolean isCheckboxLeft) {
+    myPanel = new JPanelWithCheckBox(isCheckboxLeft);
+  }
+
+  public boolean isSelected() {
+    return myPanel.myCheckBox.isSelected();
   }
 
   public Component getTreeCellRendererComponent(JTree tree, Object value, boolean selected, final boolean expanded, boolean leaf, int row, boolean hasFocus) {
-    Color selectionForeground = UIManager.getColor("Tree.selectionForeground");
-    Color selectionBackground = UIManager.getColor("Tree.selectionBackground");
-    Color textForeground = UIManager.getColor("Tree.textForeground");
-    Color textBackground = UIManager.getColor("Tree.textBackground");
+    String text = tree.convertValueToText(value, selected, expanded, leaf, row, hasFocus);
+    Object userObject = ((DefaultMutableTreeNode) value).getUserObject();
+    myPanel.updateView(tree.isEnabled(), selected, expanded, userObject, text);
+    return myPanel;
+  }
 
-    final JCheckBox checkBox = myPanel.getCheckBox();
-    checkBox.setEnabled(tree.isEnabled());
-    if (selected) {
-      checkBox.setForeground(selectionForeground);
-      checkBox.setBackground(selectionBackground);
-    } else {
-      checkBox.setForeground(textForeground);
-      checkBox.setBackground(textBackground);
+  private static class JPanelWithCheckBox extends JPanel {
+    private final JLabel myIconLabel = new JLabel();
+    private final JLabel myTextLabel = new JLabel();
+    private final JCheckBox myCheckBox = new JCheckBox();
+
+    public JPanelWithCheckBox(boolean isCheckboxLeft) {
+      super(new BorderLayout());
+      Font font = UIManager.getFont("Tree.font");
+      if (font != null) {
+        myTextLabel.setFont(font);
+      }
+      Boolean iconBorder = (Boolean) UIManager.get("Tree.drawsFocusBorderAroundIcon");
+      setOpaque(true);
+      myCheckBox.setFocusPainted((iconBorder != null) && iconBorder);
+      add(myCheckBox, isCheckboxLeft ? BorderLayout.WEST : BorderLayout.CENTER);
+      add(myIconLabel, isCheckboxLeft ? BorderLayout.CENTER : BorderLayout.WEST);
+      add(myTextLabel, BorderLayout.EAST);
     }
 
-    final DefaultMutableTreeNode node = (DefaultMutableTreeNode) value;
+    public void addItemListener(ItemListener listener) {
+      myCheckBox.addItemListener(listener);
+    }
 
-    final String text = tree.convertValueToText(value, selected, expanded, leaf, row, hasFocus);
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        if (node.getUserObject() instanceof NodeData) {
-          NodeData data = (NodeData) node.getUserObject();
-          myIconLabel.setIcon(data.getIcon(expanded));
-          Color color = data.getColor();
-          if (color != null) {
-            checkBox.setForeground(color);
+    public void updateView(boolean enabled, boolean selected, final boolean expanded, final Object userObject, final String text) {
+
+      myCheckBox.setEnabled(enabled);
+
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          if (userObject instanceof NodeData) {
+            NodeData data = (NodeData) userObject;
+            myIconLabel.setIcon(data.getIcon(expanded));
+            Color color = data.getColor();
+            if (color != null) {
+              myCheckBox.setForeground(color);
+              myTextLabel.setForeground(color);
+            }
+            myTextLabel.setText(data.getText());
+            myCheckBox.setSelected(data.isSelected());
+          } else {
+            myIconLabel.setIcon(null);
+            myTextLabel.setText(text);
+            myCheckBox.setSelected(false);
           }
-          checkBox.setText(data.getText());
-          checkBox.setSelected(data.isSelected());
-        } else {
-          myIconLabel.setIcon(null);
-          checkBox.setText(text);
-          checkBox.setSelected(false);
         }
-      }
-    });
-    return myPanel;
+      });
+
+      myCheckBox.setForeground(getForeground(selected));
+      myCheckBox.setBackground(getBackground(selected));
+      setForeground(getForeground(selected));
+      setBackground(getBackground(selected));
+
+    }
+
+    private Color getBackground(boolean selected) {
+      return selected ? UIManager.getColor("Tree.selectionBackground") : UIManager.getColor("Tree.textBackground");
+    }
+
+    private Color getForeground(boolean selected) {
+      return selected ? UIManager.getColor("Tree.selectionForeground") : UIManager.getColor("Tree.textForeground");
+    }
+
+    @Override
+    public Dimension getPreferredSize() {
+      Dimension cbSize = myCheckBox.getPreferredSize();
+      Dimension labelSize = myTextLabel.getPreferredSize();
+      Dimension iconSize = myIconLabel.getPreferredSize();
+
+      return new Dimension((int) (cbSize.getWidth() + labelSize.getWidth() + iconSize.getWidth()), (int) Math.max(cbSize.getHeight(), Math.max(labelSize.getHeight(), iconSize.getHeight())));
+    }
   }
 
   public static interface NodeData {
     Icon getIcon(boolean expanded);
+
     Color getColor();
+
     String getText();
+
     boolean isSelected();
   }
 
-  private static class JPanelWithCheckBox extends JPanel {
-    private JCheckBox myCheckBox = new JCheckBox();
-
-    public JPanelWithCheckBox(LayoutManager layoutManager) {
-      super(layoutManager);
-    }
-
-    public JCheckBox getCheckBox() {
-      return myCheckBox;
-    }
-  }
-
   public static abstract class CheckBoxNodeEditor<N extends NodeData> extends AbstractCellEditor implements TreeCellEditor {
-    private CheckBoxNodeRenderer myRenderer = new CheckBoxNodeRenderer();
+    private final CheckBoxNodeRenderer myRenderer;
     private N myObject;
 
+    public CheckBoxNodeEditor() {
+      this(false);
+    }
+
+    public CheckBoxNodeEditor(boolean isCheckboxLeft) {
+      myRenderer = new CheckBoxNodeRenderer(isCheckboxLeft);
+    }
+
     public Object getCellEditorValue() {
-      return createNodeData(myRenderer.getCheckBox().isSelected());
+      return createNodeData(myRenderer.isSelected());
     }
 
     protected abstract N createNodeData(boolean selected);
@@ -128,7 +161,7 @@ public class CheckBoxNodeRenderer implements TreeCellRenderer {
         }
       };
       if (editor instanceof JPanelWithCheckBox) {
-        ((JPanelWithCheckBox) editor).getCheckBox().addItemListener(itemListener);
+        ((JPanelWithCheckBox) editor).addItemListener(itemListener);
       }
       return editor;
     }

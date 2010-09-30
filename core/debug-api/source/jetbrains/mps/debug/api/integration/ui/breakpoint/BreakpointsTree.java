@@ -49,7 +49,6 @@ public class BreakpointsTree extends BreakpointsView {
   public BreakpointsTree(IOperationContext context, BreakpointManagerComponent breakpointsManager) {
     super(breakpointsManager);
     myContext = context;
-    // todo checkboxes!
     myTree = new GroupedTree<AbstractMPSBreakpoint>(myContext) {
       protected BreakpointTreeNode createDataNode(IOperationContext operationContext, AbstractMPSBreakpoint data) {
         return new BreakpointTreeNode(operationContext, data);
