@@ -41,26 +41,21 @@ public class TransientModelPersistence {
     myModelReference = modelReference;
   }
 
-  public void saveModel(SModel sourceModel, ModelOutputStream os) throws IOException {
+  public void saveModel(List<SNode> roots, ModelOutputStream os) throws IOException {
     os.writeInt(VERSION);
-    os.writeString(sourceModel.getSModelReference().toString());
-    saveNodes(sourceModel.getRoots(), os);
+    saveNodes(roots, os);
   }
 
-  public SModel loadModel(ModelInputStream is) throws IOException, ClassNotFoundException {
+  public List<SNode> loadModel(ModelInputStream is) throws IOException, ClassNotFoundException {
     int version = is.readInt();
     if (version != VERSION) {
       return null;
     }
 
-    String modelReference = is.readString();
-    SModel m = new TransientSModel(SModelReference.fromString(modelReference));
+    SModel m = new TransientSModel(myModelReference);
     m.setLoading(true);
     List<SNode> roots = loadNodes(m, is);
-    for (SNode root : roots) {
-      m.addRoot(root);
-    }
-    return m;
+    return roots;
   }
 
   private void saveNodes(Collection<SNode> nodes, ModelOutputStream os) throws IOException {

@@ -60,12 +60,20 @@ public class GenerationFilter {
     }
 
     GenerationDependencies dependencies = GenerationDependenciesCache.getInstance().get(myModel);
-    if (dependencies != null && myGenerationHashes != null) {
-      loadCaches(dependencies);
-      analyzeDependencies(dependencies);
-      if (canOptimize()) {
-        mySavedDependencies = dependencies;
-      }
+    if (dependencies == null || myGenerationHashes == null) {
+      return;
+    }
+
+    loadCaches(dependencies);
+    if(myCache == null && myGenerationOptions.isIncremental() && myGenerationOptions.getIncrementalCacheContainer() != null) {
+      // if we are creating a new cache without the previous one => rebuild all
+      return;
+    }
+
+    // trying to optimize
+    analyzeDependencies(dependencies);
+    if (canOptimize()) {
+      mySavedDependencies = dependencies;
     }
   }
 
@@ -436,20 +444,7 @@ public class GenerationFilter {
     }
 
     DefaultDependenciesBuilder result = new DefaultDependenciesBuilder(myModel.getSModel(), myGenerationHashes, myCache);
-    for (SNode root : myUnchangedRoots) {
-      propagateDependencies(result.getRootBuilder(root), mySavedDependencies.getDependenciesFor(root.getId()), false);
-    }
-    for (SNode root : myRequiredRoots) {
-      propagateDependencies(result.getRootBuilder(root), mySavedDependencies.getDependenciesFor(root.getId()), true);
-    }
-    if (myConditionalsUnchanged || myConditionalsRequired) {
-      propagateDependencies(result.getRootBuilder(null), mySavedDependencies.getDependenciesFor(ModelDigestHelper.HEADER), myConditionalsRequired);
-    }
+    result.propagateDependencies(myUnchangedRoots, myRequiredRoots, myConditionalsUnchanged, myConditionalsRequired, mySavedDependencies);
     return result;
-  }
-
-  private void propagateDependencies(RootDependenciesBuilder builder, GenerationRootDependencies deps, boolean isRequired) {
-    assert deps.getHash().equals(builder.getHash());
-    builder.loadDependencies(deps, isRequired);
   }
 }

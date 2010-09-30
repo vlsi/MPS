@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.impl.cache;
 
+import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.GeneratorMappings;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
 import jetbrains.mps.smodel.SModel;
@@ -25,6 +26,7 @@ import jetbrains.mps.smodel.SNodeId;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -35,16 +37,22 @@ public class TransientModelWithMetainfo {
 
   public static final String CONDITIONALS_ID = "";
 
-  private SModel myModel;
+  private SModelReference myReference;
+  private List<SNode> myRoots;
   private Map<SNodeId, SNodeId> myRootToOriginal;
 
-  public TransientModelWithMetainfo(SModel model) {
-    myModel = model;
+  public TransientModelWithMetainfo(SModelReference reference, List<SNode> roots) {
+    myReference = reference;
+    myRoots = roots;
     myRootToOriginal = new HashMap<SNodeId, SNodeId>();
   }
 
-  public SModel getModel() {
-    return myModel;
+  public TransientModelWithMetainfo(SModel model) {
+    this(model.getSModelReference(), model.getRoots());
+  }
+
+  public List<SNode> getRoots() {
+    return myRoots;
   }
 
   public String getOriginal(SNode root) {
@@ -55,8 +63,12 @@ public class TransientModelWithMetainfo {
     return id.toString();
   }
 
+  public void setOriginal(SNodeId sNodeId, String originalId) {
+    myRootToOriginal.put(sNodeId, originalId.equals(CONDITIONALS_ID) ? null : SNodeId.fromString(originalId));
+  }
+
   public void save(ModelOutputStream os) throws IOException {
-    new TransientModelPersistence(myModel.getSModelReference()).saveModel(myModel, os);
+    new TransientModelPersistence(myReference).saveModel(myRoots, os);
     saveMetainfo(os);
   }
 
@@ -80,8 +92,8 @@ public class TransientModelWithMetainfo {
 
   public static TransientModelWithMetainfo load(ModelInputStream is, SModelReference modelReference) throws IOException {
     try {
-      SModel model = new TransientModelPersistence(modelReference).loadModel(is);
-      TransientModelWithMetainfo result = new TransientModelWithMetainfo(model);
+      List<SNode> roots = new TransientModelPersistence(modelReference).loadModel(is);
+      TransientModelWithMetainfo result = new TransientModelWithMetainfo(modelReference, roots);
       result.loadMetainfo(is);
       return result;
     } catch (ClassNotFoundException ex) {
@@ -89,7 +101,7 @@ public class TransientModelWithMetainfo {
     }
   }
 
-  public static TransientModelWithMetainfo create(SModel model, GeneratorMappings mappings, DependenciesBuilder builder) {
+  public static TransientModelWithMetainfo create(SModel model, GeneratorMappings mappings, DependenciesBuilder builder) throws GenerationFailureException {
     TransientModelWithMetainfo metainfo = new TransientModelWithMetainfo(model);
     Iterator<SNode> it = model.roots();
     while (it.hasNext()) {
@@ -100,6 +112,7 @@ public class TransientModelWithMetainfo {
     if (mappings != null) {
       mappings.serialize(metainfo);
     }
+    builder.updateUnchanged(metainfo);
     return metainfo;
   }
 }

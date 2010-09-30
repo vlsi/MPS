@@ -24,11 +24,11 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
   private static final Logger LOG = Logger.getLogger(DefaultDependenciesBuilder.class);
 
   /* generation data */
+  private final Map<SNode, RootDependenciesBuilder> myRootBuilders = new HashMap<SNode, RootDependenciesBuilder>();
+  private final String myModelHash;
+  private final IntermediateModelsCache myCache;
   private RootDependenciesBuilder myConditionalsBuilder;
-  private Map<SNode, RootDependenciesBuilder> myRootBuilders = new HashMap<SNode, RootDependenciesBuilder>();
   private RootDependenciesBuilder[] myAllBuilders;
-  private String myModelHash;
-  private Map<String, SNode> myRequiredSet;
 
   /* next step input -> original */
   Map<SNode, SNode> nextStepToOriginalMap;
@@ -36,18 +36,22 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
   /* current step data */
   Map<SNode, SNode> currentToOriginalMap;
   SModel currentInputModel;
-  private final IntermediateModelsCache myCache;
   SModel currentOutputModel;
-  int myMajorStep = -1;
-  int myMinorStep = -1;
+  private TransientModelWithMetainfo myCachedModel;
+  private int myMajorStep = -1;
+  private int myMinorStep = -1;
 
-  public DefaultDependenciesBuilder(SModel originalInputModel, @Nullable Map<String, String> generationHashes, IntermediateModelsCache cache) {
+  /* make data */
+  private Map<String, SNode> myUnchangedSet;
+  private Map<String, SNode> myRequiredSet;
+
+  public DefaultDependenciesBuilder(SModel originalInputModel, @Nullable Map<String, String> generationHashes,
+                                    IntermediateModelsCache cache) {
     currentInputModel = originalInputModel;
     myCache = cache;
     currentOutputModel = null;
     myModelHash = generationHashes == null ? null : generationHashes.get(ModelDigestHelper.FILE);
     initData(getRoots(originalInputModel), generationHashes);
-    myRequiredSet = new HashMap<String, SNode>();
   }
 
   private void initData(SNode[] roots, Map<String, String> generationHashes) {
@@ -61,6 +65,27 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
       myRootBuilders.put(root, myAllBuilders[e++]);
       currentToOriginalMap.put(root, root);
     }
+  }
+
+  public void propagateDependencies(Set<SNode> unchangedRoots, Set<SNode> requiredRoots, boolean conditionalsUnchanged, boolean conditionalsRequired, GenerationDependencies saved) {
+    myUnchangedSet = new HashMap<String, SNode>(unchangedRoots.size() + 1);
+    myRequiredSet = new HashMap<String, SNode>(requiredRoots.size() + 1);
+    for (SNode root : unchangedRoots) {
+      propagateDependencies(getRootBuilder(root), saved.getDependenciesFor(root.getId()), false);
+    }
+    for (SNode root : requiredRoots) {
+      propagateDependencies(getRootBuilder(root), saved.getDependenciesFor(root.getId()), true);
+    }
+    if (conditionalsUnchanged || conditionalsRequired) {
+      propagateDependencies(getRootBuilder(null), saved.getDependenciesFor(ModelDigestHelper.HEADER), conditionalsRequired);
+    }
+  }
+
+  private void propagateDependencies(RootDependenciesBuilder builder, GenerationRootDependencies deps, boolean isRequired) {
+    assert deps.getHash().equals(builder.getHash());
+    builder.loadDependencies(deps);
+    SNode root = builder.getOriginalRoot();
+    (isRequired ? myRequiredSet : myUnchangedSet).put(root != null ? root.getId() : TransientModelWithMetainfo.CONDITIONALS_ID, root);
   }
 
   private static SNode[] getRoots(SModel model) {
@@ -119,10 +144,11 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
     currentOutputModel = model;
     myMajorStep = majorStep;
     myMinorStep = minorStep;
+    myCachedModel = null;
   }
 
   public SNode getOriginalForOutput(SNode outputNode) {
-    if(nextStepToOriginalMap == null) {
+    if (nextStepToOriginalMap == null) {
       return null;
     }
     return nextStepToOriginalMap.get(outputNode);
@@ -150,24 +176,30 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
     return GenerationDependencies.fromData(currentToOriginalMap, myAllBuilders, myModelHash, operationContext);
   }
 
+  /* working with cache */
+
+  private void loadCachedModel() throws GenerationFailureException {
+    // TODO if(myMinorStep >= stepCount) copy from current input model
+    int stepsCount = myCache.getMinorCount(myMajorStep);
+    TransientModelWithMetainfo model = myCache.load(myMajorStep, myMinorStep >= stepsCount ? stepsCount - 1 : myMinorStep, currentOutputModel.getSModelReference());
+    if (model == null) {
+      throw new GenerationFailureException("Cannot load required data from cache. Try to regenerate model.");
+    }
+    myCachedModel = model;
+  }
+
   @Override
   public void reloadRequired(GeneratorMappings mappings) throws GenerationFailureException {
-    if(myCache == null || myRequiredSet.isEmpty()) {
+    if(myRequiredSet.isEmpty()) {
       assert myRequiredSet.isEmpty();
       return;
     }
 
-    int stepsCount = myCache.getMinorCount(myMajorStep);
-    // TODO if(myMinorStep >= stepCount) copy from current input model
-    TransientModelWithMetainfo model = myCache.load(myMajorStep, myMinorStep >= stepsCount ? stepsCount - 1 : myMinorStep, currentOutputModel.getSModelReference());
-    if(model == null) {
-      throw new GenerationFailureException("Cannot load required data from cache. Try to regenerate model.");
-    }
+    loadCachedModel();
 
     List<SNode> toCopy = new ArrayList<SNode>(myRequiredSet.size()*2 + 16);
-    for(Iterator<SNode> it = model.getModel().roots(); it.hasNext(); ) {
-      SNode root = it.next();
-      String originalId = model.getOriginal(root);
+    for (SNode root : myCachedModel.getRoots()) {
+      String originalId = myCachedModel.getOriginal(root);
       if(myRequiredSet.containsKey(originalId)) {
         SNode originalRoot = myRequiredSet.get(originalId);
         if (nextStepToOriginalMap == null) {
@@ -178,13 +210,27 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
       }
     }
 
-    for(SNode node : toCopy) {
+    for (SNode node : toCopy) {
       currentOutputModel.addRoot(node);
     }
   }
 
-  public void addRequired(RootDependenciesBuilder rootDependenciesBuilder) {
-    SNode root = rootDependenciesBuilder.getOriginalRoot();
-    myRequiredSet.put(root == null ? TransientModelWithMetainfo.CONDITIONALS_ID : root.getId(), root);
+  @Override
+  public void updateUnchanged(TransientModelWithMetainfo model) throws GenerationFailureException {
+    if (myCache == null || myUnchangedSet.isEmpty()) {
+      return;
+    }
+
+    if (myCachedModel == null) {
+      loadCachedModel();
+    }
+
+    for (SNode root : myCachedModel.getRoots()) {
+      String originalId = myCachedModel.getOriginal(root);
+      if(myUnchangedSet.containsKey(originalId)) {
+        model.getRoots().add(root);
+        model.setOriginal(root.getSNodeId(), originalId);
+      }
+    }
   }
 }
