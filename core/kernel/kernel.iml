@@ -9,8 +9,6 @@
       <sourceFolder url="file://$MODULE_DIR$/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/traceinfo/solutions/jetbrains.mps.debug.api.info/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/make/solutions/jetbrains.mps.make.runtime/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/make/solutions/jetbrains.mps.make.tests/source_gen" isTestSource="true" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -25,7 +23,6 @@
     <orderEntry type="module" module-name="xmlQuery-runtime" />
     <orderEntry type="library" name="asm" level="project" />
     <orderEntry type="library" name="OROMatcher" level="project" />
-    <orderEntry type="module" module-name="testbench" scope="TEST" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
@@ -47,6 +44,7 @@
         </SOURCES>
       </library>
     </orderEntry>
+    <orderEntry type="module" module-name="testbench" scope="TEST" />
   </component>
 </module>
 

@@ -11,9 +11,8 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.make.runtime.ITarget;
 import jetbrains.mps.make.runtime.internal.Script;
 import junit.framework.Assert;
-import org.jmock.integration.junit3.JUnit3Mockery;
-import org.jmock.Expectations;
 import jetbrains.mps.make.runtime.internal.FacetRegistry;
+import org.jmock.Expectations;
 import java.util.Map;
 
 public class ScriptBuilder_Test extends TestCase {
@@ -30,19 +29,6 @@ public class ScriptBuilder_Test extends TestCase {
     scb.withTarget(new ITarget.Name("make"));
     Script sc = scb.toScript();
     Assert.assertNotNull(sc);
-  }
-
-  public void test_foo() throws Exception {
-    Mockery m = new JUnit3Mockery();
-    final ITarget t = m.mock(ITarget.class);
-    m.checking(new Expectations() {
-      {
-        oneOf(t).getName();
-        will(returnValue("foobar"));
-      }
-    });
-    Assert.assertEquals("foobar", t.getName());
-    m.assertIsSatisfied();
   }
 
   @Override

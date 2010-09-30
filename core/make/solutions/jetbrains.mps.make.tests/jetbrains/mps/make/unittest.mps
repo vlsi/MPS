@@ -211,7 +211,7 @@
                               </node>
                             </node>
                             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8963054271157683928">
-                              <link role="baseMethodDeclaration:3" targetNodeId="1.4409813349651792916" resolveInfo="getName" />
+                              <link role="baseMethodDeclaration:3" targetNodeId="1.4409813349651792933" resolveInfo="getName" />
                             </node>
                           </node>
                         </node>
@@ -389,117 +389,6 @@
           <node role="statement:3" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertInNotNull" id="8963054271157683589">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8963054271157683590">
               <link role="variableDeclaration:3" targetNodeId="8963054271157683584" resolveInfo="sc" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1103977116241817020">
-        <property name="methodName" value="foo" />
-        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1103977116241817021" />
-        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1103977116241817022" />
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1103977116241817023">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1103977116241820132">
-            <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1103977116241820133">
-              <property name="name:3" value="m" />
-              <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1103977116241820134">
-                <link role="classifier:3" targetNodeId="7.~Mockery" resolveInfo="Mockery" />
-              </node>
-              <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1103977116241820136">
-                <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1103977116241820138">
-                  <link role="baseMethodDeclaration:3" targetNodeId="13.~JUnit3Mockery.&lt;init&gt;()" resolveInfo="JUnit3Mockery" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1103977116241823489">
-            <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1103977116241823490">
-              <property name="name:3" value="t" />
-              <property name="isFinal:3" value="true" />
-              <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1103977116241823491">
-                <link role="classifier:3" targetNodeId="1.4409813349651792711" resolveInfo="ITarget" />
-              </node>
-              <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1103977116241823492">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1103977116241823493">
-                  <link role="variableDeclaration:3" targetNodeId="1103977116241820133" resolveInfo="m" />
-                </node>
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1103977116241823494">
-                  <link role="baseMethodDeclaration:3" targetNodeId="7.~Mockery.mock(java.lang.Class):java.lang.Object" resolveInfo="mock" />
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression:3" id="1103977116241823495">
-                    <link role="classifier:3" targetNodeId="1.4409813349651792711" resolveInfo="ITarget" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1103977116241820151">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1103977116241820153">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1103977116241820152">
-                <link role="variableDeclaration:3" targetNodeId="1103977116241820133" resolveInfo="m" />
-              </node>
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1103977116241820158">
-                <link role="baseMethodDeclaration:3" targetNodeId="7.~Mockery.checking(org.jmock.internal.ExpectationBuilder):void" resolveInfo="checking" />
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1103977116241820159">
-                  <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="1103977116241823484">
-                    <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="1103977116241823485">
-                      <property name="nonStatic:3" value="true" />
-                      <link role="classifier:3" targetNodeId="7.~Expectations" resolveInfo="Expectations" />
-                      <link role="baseMethodDeclaration:3" targetNodeId="7.~Expectations.&lt;init&gt;()" resolveInfo="Expectations" />
-                      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1103977116241823486" />
-                      <node role="instanceInitializer:3" type="jetbrains.mps.baseLanguage.structure.InstanceInitializer:3" id="1103977116241823487">
-                        <node role="statementList:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1103977116241823488">
-                          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1103977116241823498">
-                            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1103977116241823501">
-                              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="1103977116241823499">
-                                <link role="baseMethodDeclaration:3" targetNodeId="7.~Expectations.oneOf(java.lang.Object):java.lang.Object" resolveInfo="oneOf" />
-                                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1103977116241823500">
-                                  <link role="variableDeclaration:3" targetNodeId="1103977116241823490" resolveInfo="t" />
-                                </node>
-                              </node>
-                              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1103977116241823505">
-                                <link role="baseMethodDeclaration:3" targetNodeId="1.4409813349651792933" resolveInfo="getName" />
-                              </node>
-                            </node>
-                          </node>
-                          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1103977116241823507">
-                            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall:3" id="1103977116241823508">
-                              <link role="baseMethodDeclaration:3" targetNodeId="7.~Expectations.will(org.jmock.api.Action):void" resolveInfo="will" />
-                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall:3" id="1103977116241830401">
-                                <link role="baseMethodDeclaration:3" targetNodeId="7.~Expectations.returnValue(java.lang.Object):org.jmock.api.Action" resolveInfo="returnValue" />
-                                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1103977116241830402">
-                                  <property name="value:3" value="foobar" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" id="1103977116241830411">
-            <node role="expected" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1103977116241830414">
-              <property name="value:3" value="foobar" />
-            </node>
-            <node role="actual" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1103977116241830421">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1103977116241830420">
-                <link role="variableDeclaration:3" targetNodeId="1103977116241823490" resolveInfo="t" />
-              </node>
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1103977116241830425">
-                <link role="baseMethodDeclaration:3" targetNodeId="1.4409813349651792933" resolveInfo="getName" />
-              </node>
-            </node>
-          </node>
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1103977116241830427">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1103977116241830429">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1103977116241830428">
-                <link role="variableDeclaration:3" targetNodeId="1103977116241820133" resolveInfo="m" />
-              </node>
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1103977116241830433">
-                <link role="baseMethodDeclaration:3" targetNodeId="7.~Mockery.assertIsSatisfied():void" resolveInfo="assertIsSatisfied" />
-              </node>
             </node>
           </node>
         </node>
