@@ -47,15 +47,29 @@ class FileProcessor {
   }
 
   public void saveContent(IFile file, String content) {
-    myFilesAndContents.add(new FileAndContent(file, new StringFileContent(content)));
+    saveContent(new FileAndContent(file, new StringFileContent(content)));
   }
 
   public void saveContent(IFile file, Element content) {
-    myFilesAndContents.add(new FileAndContent(file, new XMLFileContent(content)));
+    saveContent(new FileAndContent(file, new XMLFileContent(content)));
+  }
+
+  private void saveContent(FileAndContent fileAndContent) {
+    if (ApplicationManager.getApplication().isWriteAccessAllowed()) {
+      fileAndContent.save();
+    } else {
+      myFilesAndContents.add(fileAndContent);
+    }
   }
 
   public void filesToDelete(Collection<IFile> files) {
-    myFilesToDelete.addAll(files);
+    if (ApplicationManager.getApplication().isWriteAccessAllowed()) {
+      for (IFile file : files) {
+        file.delete();
+      }
+    } else {
+      myFilesToDelete.addAll(files);
+    }
   }
 
   public void invoke() {

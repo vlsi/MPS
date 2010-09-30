@@ -25,6 +25,7 @@ import jetbrains.mps.generator.GenerationListener;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.generationTypes.java.JavaGenerationHandler;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
@@ -113,14 +114,19 @@ public class GeneratorWorker extends MpsWorker {
       s.append(m);
     }
     info(s.toString());
-    GeneratorManager gm = project.getProject().getComponent(GeneratorManager.class);
-    GenerationListener generationListener = getGenerationListener();
+    final GeneratorManager gm = project.getProject().getComponent(GeneratorManager.class);
+    final GenerationListener generationListener = getGenerationListener();
     gm.addGenerationListener(generationListener);
 
     List<Cycle> order = computeGenerationOrder(project, go);
 
-    for (Cycle cycle : order) {
-      generateModulesCycle(gm, cycle);
+    for (final Cycle cycle : order) {
+      ThreadUtils.runInUIThreadAndWait(new Runnable() {
+        @Override
+        public void run() {
+          generateModulesCycle(gm, cycle);
+        }
+      });
     }
 
     gm.removeGenerationListener(generationListener);
