@@ -155,8 +155,8 @@ public abstract class GroupedTree<D> extends MPSTree {
       }
       
       if (subGroupKind == null) {
-        for (D breakpoint : myData) {
-          add(createDataNode(operationContext, breakpoint));
+        for (D d : myData) {
+          add(createDataNode(operationContext, d));
         }
       } else {
         Map<Object, Set<D>> sorted = subGroupKind.sortByGroups(myData);
