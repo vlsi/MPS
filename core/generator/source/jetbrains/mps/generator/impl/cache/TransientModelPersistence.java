@@ -33,11 +33,11 @@ import java.util.Map.Entry;
 public class TransientModelPersistence {
 
   private static final int VERSION = 1;
-  private static final String LOCAL = "$local$";
+  private static final SModelReference LOCAL = SModelReference.fromString("$LOCAL$");
 
-  private final String myModelReference;
+  private final SModelReference myModelReference;
 
-  public TransientModelPersistence(@NotNull String modelReference) {
+  public TransientModelPersistence(@NotNull SModelReference modelReference) {
     myModelReference = modelReference;
   }
 
@@ -81,7 +81,7 @@ public class TransientModelPersistence {
 
   private SNode loadNode(SModel model, ModelInputStream is) throws ClassNotFoundException, IOException {
     String conceptFqName = is.readString();
-    String nodeId = is.readString();
+    SNodeId nodeId = is.readNodeId();
     String nodeRole = is.readString();
     if (is.readByte() != '{') {
       throw new IOException("bad stream, no '{'");
@@ -89,7 +89,7 @@ public class TransientModelPersistence {
 
     SNode node = new SNode(model, conceptFqName, true);
     node.setRoleInParent(nodeRole);
-    node.setId(SNodeId.fromString(nodeId));
+    node.setId(nodeId);
 
     int properties = is.readInt();
     for (; properties > 0; properties--) {
@@ -101,12 +101,12 @@ public class TransientModelPersistence {
     int references = is.readInt();
     for (; references > 0; references--) {
       int kind = is.readInt();
-      String targetNodeId = kind == 1 ? is.readString() : null;
+      SNodeId targetNodeId = kind == 1 ? is.readNodeId() : null;
 
       String role = is.readString();
-      String targetModelRef = is.readString();
-      if(targetModelRef != null && LOCAL.equals(targetModelRef)) {
-        targetModelRef = myModelReference;
+      SModelReference modelRef = is.readModelReference();
+      if(modelRef != null && LOCAL.equals(modelRef)) {
+        modelRef = myModelReference;
       }
       String resolveInfo = is.readString();
       if (kind == 1) {
@@ -114,15 +114,16 @@ public class TransientModelPersistence {
           new StaticReference(
             role,
             node,
-            targetModelRef != null ? SModelReference.fromString(targetModelRef) : null,
-            targetNodeId != null ? SNodeId.fromString(targetNodeId) : null,
+            modelRef,
+            targetNodeId,
             resolveInfo));
       } else if (kind == 2) {
+        assert modelRef != null;
         node.addReference(
           new DynamicReference(
             role,
             node,
-            SModelReference.fromString(targetModelRef),
+            modelRef,
             resolveInfo));
       } else {
         throw new IOException("unknown reference type");
@@ -144,7 +145,7 @@ public class TransientModelPersistence {
 
   private void saveNode(SNode node, ModelOutputStream os) throws IOException {
     os.writeString(node.getConceptFqName());
-    os.writeString(node.getId());
+    os.writeNodeId(node.getSNodeId());
     os.writeString(node.getRole_());
     os.writeByte('{');
 
@@ -161,16 +162,14 @@ public class TransientModelPersistence {
       SModelReference targetModelReference = reference.getTargetSModelReference();
       if (reference instanceof StaticReference) {
         os.writeInt(1);
-        SNodeId targetId = reference.getTargetNodeId();
-        os.writeString(targetId != null ? targetId.toString() : null);
+        os.writeNodeId(reference.getTargetNodeId());
       } else if (reference instanceof DynamicReference) {
         os.writeInt(2);
       } else {
         throw new IOException("cannot store reference: " + reference.toString());
       }
       os.writeString(reference.getRole());
-      String targetModelRef = targetModelReference != null ? targetModelReference.toString() : null;
-      os.writeString(targetModelRef != null && targetModelRef.equals(myModelReference) ? LOCAL : targetModelRef);
+      os.writeModelReference(targetModelReference != null && targetModelReference.equals(myModelReference) ? LOCAL : targetModelReference);
       os.writeString(reference.getResolveInfo());
     }
 

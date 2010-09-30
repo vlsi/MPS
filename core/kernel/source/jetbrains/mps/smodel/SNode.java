@@ -48,9 +48,6 @@ public final class SNode {
   public static final String PACK = "package";
   private static final ModelConstraintsManager CONSTRAINTS_MANAGER = ModelConstraintsManager.getInstance();
 
-  public static final Object STATUS = new Object();
-  public static final Object LAST_UPDATE = new Object();
-
   public static final String RIGHT_TRANSFORM_HINT = "right_transfrom_hint";
   public static final String LEFT_TRANSFORM_HINT = "left_transfrom_hint";
 

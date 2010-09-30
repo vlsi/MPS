@@ -168,6 +168,7 @@ public class GenerationSession {
         } else {
           myNewCache.remove();
         }
+        myLogger.info("time spent saving cache: " + myNewCache.getTimeSpent());
       }
     }
   }

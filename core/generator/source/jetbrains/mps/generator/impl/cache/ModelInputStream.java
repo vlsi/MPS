@@ -15,9 +15,17 @@
  */
 package jetbrains.mps.generator.impl.cache;
 
+import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.smodel.SModelId;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.SNodeId.Foreign;
+import jetbrains.mps.smodel.SNodeId.Regular;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Evgeny Gryaznov, Sep 27, 2010
@@ -25,6 +33,7 @@ import java.util.List;
 public class ModelInputStream extends DataInputStream {
 
   private List<String> myStrings = new ArrayList<String>(2048);
+  private List<SModelReference> myModelRefs = new ArrayList<SModelReference>(1024);
 
   public ModelInputStream(InputStream in) {
     super(new BufferedInputStream(in, 65536));
@@ -41,5 +50,49 @@ public class ModelInputStream extends DataInputStream {
     String res = readUTF();
     myStrings.add(res);
     return res;
+  }
+
+  public SModelReference readModelReference() throws IOException {
+    int c = readByte();
+    if(c == 0x70) {
+      return null;
+    } else if(c == 9) {
+      int index = readInt();
+      return myModelRefs.get(index);
+    }
+
+    SModelId id = null;
+    if(c == 7) {
+      id = readModelID();
+    }
+    SModelReference ref = new SModelReference(SModelFqName.fromString(readString()), id);
+    myModelRefs.add(ref);
+    return ref;
+  }
+
+  public SModelId readModelID() throws IOException {
+    int c = readByte();
+    if(c == 0x70) {
+      return null;
+    } else if(c == 0x28) {
+      UUID uuid = new UUID(readLong(), readLong());
+      return SModelId.regular(uuid);
+    } else if(c == 0x27) {
+      return SModelId.foreign(readString());
+    } else {
+      throw new IOException("unknown id");
+    }
+  }
+
+  public SNodeId readNodeId() throws IOException {
+    int c = readByte();
+    if(c == 0x70) {
+      return null;
+    } else if(c == 0x18) {
+      return new Regular(readLong());
+    } else if(c == 0x17) {
+      return new Foreign(readString());
+    }
+    throw new IOException("no id");
   }
 }

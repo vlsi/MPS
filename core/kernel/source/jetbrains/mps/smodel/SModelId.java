@@ -65,11 +65,15 @@ public abstract class SModelId {
     return fromString(toString());
   }
 
-  private static class RegularSModelId extends SModelId {
+  public final static class RegularSModelId extends SModelId {
     private UUID myId;
 
     private RegularSModelId(UUID id) {
       myId = id;
+    }
+
+    public UUID getId() {
+      return myId;
     }
 
     public boolean equals(Object obj) {
@@ -86,11 +90,15 @@ public abstract class SModelId {
     }
   }
 
-  private static class ForeignSModelId extends SModelId {
+  public final static class ForeignSModelId extends SModelId {
     private String myId;
 
     private ForeignSModelId(String id) {
       myId = InternUtil.intern(id);
+    }
+
+    public String getId() {
+      return myId;
     }
 
     public boolean equals(Object obj) {

@@ -18,7 +18,9 @@ package jetbrains.mps.generator.impl.cache;
 import jetbrains.mps.generator.impl.GeneratorMappings;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeId;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -34,11 +36,11 @@ public class TransientModelWithMetainfo {
   public static final String CONDITIONALS_ID = "";
 
   private SModel myModel;
-  private Map<String, String> myRootToOriginal;
+  private Map<SNodeId, SNodeId> myRootToOriginal;
 
   public TransientModelWithMetainfo(SModel model) {
     myModel = model;
-    myRootToOriginal = new HashMap<String, String>();
+    myRootToOriginal = new HashMap<SNodeId, SNodeId>();
   }
 
   public SModel getModel() {
@@ -46,33 +48,37 @@ public class TransientModelWithMetainfo {
   }
 
   public String getOriginal(SNode root) {
-    return myRootToOriginal.get(root.getId());
+    SNodeId id = myRootToOriginal.get(root.getSNodeId());
+    if(id == null) {
+      return CONDITIONALS_ID;
+    }
+    return id.toString();
   }
 
   public void save(ModelOutputStream os) throws IOException {
-    new TransientModelPersistence(myModel.getSModelReference().toString()).saveModel(myModel, os);
+    new TransientModelPersistence(myModel.getSModelReference()).saveModel(myModel, os);
     saveMetainfo(os);
   }
 
   private void saveMetainfo(ModelOutputStream os) throws IOException {
     os.writeInt(myRootToOriginal.size());
-    for (Entry<String, String> e : myRootToOriginal.entrySet()) {
-      os.writeString(e.getKey());
-      os.writeString(e.getValue());
+    for (Entry<SNodeId, SNodeId> e : myRootToOriginal.entrySet()) {
+      os.writeNodeId(e.getKey());
+      os.writeNodeId(e.getValue());
     }
   }
 
   private void loadMetainfo(ModelInputStream is) throws ClassNotFoundException, IOException {
     int size = is.readInt();
     for (; size > 0; size--) {
-      String key = is.readString();
-      String value = is.readString();
+      SNodeId key = is.readNodeId();
+      SNodeId value = is.readNodeId();
       myRootToOriginal.put(key, value);
     }
   }
 
 
-  public static TransientModelWithMetainfo load(ModelInputStream is, String modelReference) throws IOException {
+  public static TransientModelWithMetainfo load(ModelInputStream is, SModelReference modelReference) throws IOException {
     try {
       SModel model = new TransientModelPersistence(modelReference).loadModel(is);
       TransientModelWithMetainfo result = new TransientModelWithMetainfo(model);
@@ -89,8 +95,7 @@ public class TransientModelWithMetainfo {
     while (it.hasNext()) {
       SNode root = it.next();
       SNode node = builder.getOriginalForOutput(root);
-      String originalId = node == null ? CONDITIONALS_ID : node.getId();
-      metainfo.myRootToOriginal.put(root.getId(), originalId);
+      metainfo.myRootToOriginal.put(root.getSNodeId(), node == null ? null: node.getSNodeId());
     }
     if (mappings != null) {
       mappings.serialize(metainfo);
