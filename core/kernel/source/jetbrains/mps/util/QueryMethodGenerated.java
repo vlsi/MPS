@@ -29,6 +29,8 @@ import org.jetbrains.annotations.NotNull;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -36,7 +38,7 @@ import java.util.concurrent.ConcurrentMap;
 public class QueryMethodGenerated implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(QueryMethodGenerated.class);
 
-  private static ConcurrentMap<Pair<SModelReference, String>, Method> ourMethods = new ConcurrentHashMap<Pair<SModelReference, String>, Method>();
+  private static ConcurrentMap<SModelReference, Map<String, Method>> ourMethods = new ConcurrentHashMap<SModelReference, Map<String, Method>>();
   private static ConcurrentMap<String, Constructor> ourAdaptorsConstructors = new ConcurrentHashMap<String, Constructor>();
   private static Set<String> ourClassesReportedAsNotFound = new ConcurrentHashSet<String>();
 
@@ -76,50 +78,49 @@ public class QueryMethodGenerated implements ApplicationComponent {
   }
 
   private static Method getQueryMethod(SModel sourceModel, String methodName, boolean suppressErrorLogging) throws ClassNotFoundException, NoSuchMethodException {
-    Pair<SModelReference, String> key = new Pair<SModelReference, String>(sourceModel.getSModelReference(), methodName);
-    Method result = ourMethods.get(key);
-    if (result != null) {
-      return result;
-    }
+    Map<String,Method> methods = ourMethods.get(sourceModel.getSModelReference());
 
-    String packageName = JavaNameUtil.packageNameForModelUID(sourceModel.getSModelReference());
-    String queriesClassName = packageName + ".QueriesGenerated";
-    Class queriesClass;
-    IModule module = findModuleForModel(sourceModel);
-    assert module != null;
+    if(methods == null) {
+      String queriesClassName = JavaNameUtil.packageNameForModelUID(sourceModel.getSModelReference()) + ".QueriesGenerated";
+      Class queriesClass;
+      IModule module = findModuleForModel(sourceModel);
+      assert module != null;
 
-    queriesClass = module.getClass(queriesClassName);
+      queriesClass = module.getClass(queriesClassName);
 
-    if (queriesClass == null) {
-      if (!suppressErrorLogging) {
-        if (needReport(queriesClassName)) {
-          LOG.error("couldn't find class 'QueriesGenerated' for model '" + sourceModel.getSModelReference() + "' : TRY TO GENERATE");
+      if (queriesClass == null) {
+        if (!suppressErrorLogging) {
+          if (needReport(queriesClassName)) {
+            LOG.error("couldn't find class 'QueriesGenerated' for model '" + sourceModel.getSModelReference() + "' : TRY TO GENERATE");
+          }
         }
+        throw new ClassNotFoundException("'" + queriesClassName + "' in module " + module.getModuleFqName());
       }
-      throw new ClassNotFoundException("'" + queriesClassName + "' in module " + module.getModuleFqName());
+
+      methods = ourMethods.get(sourceModel.getSModelReference());
+      if(methods == null) {
+        methods = new HashMap<String, Method>();
+        Method[] declaredMethods = queriesClass.getDeclaredMethods();
+        for (Method declaredMethod : declaredMethods) {
+          String name = declaredMethod.getName();
+          declaredMethod.setAccessible(true);
+          methods.put(name, declaredMethod);
+        }
+
+        ourMethods.putIfAbsent(sourceModel.getSModelReference(), methods);
+      }
     }
 
-    Method method = null;
 
-    Method[] declaredMethods = queriesClass.getDeclaredMethods();
-    for (Method declaredMethod : declaredMethods) {
-      if (declaredMethod.getName().equals(methodName)) {
-        method = declaredMethod;
-        break;
-      }
-    }
-
+    Method method = methods.get(methodName);
     if (method == null) {
+      String className = JavaNameUtil.packageNameForModelUID(sourceModel.getSModelReference()) + ".QueriesGenerated";
       if (!suppressErrorLogging) {
-        LOG.error("couldn't find method '" + methodName + "' in '" + queriesClassName + "' : TRY TO GENERATE model '" + sourceModel.getSModelReference() + "'");
+        LOG.error("couldn't find method '" + methodName + "' in '" + className + "' : TRY TO GENERATE model '" + sourceModel.getSModelReference() + "'");
       }
-      throw new NoSuchMethodException("couldn't find method '" + methodName + "' in '" + queriesClassName + "'");
+      throw new NoSuchMethodException("couldn't find method '" + methodName + "' in '" + className + "'");
     }
-
-    method.setAccessible(true);
-
-    result = ourMethods.putIfAbsent(key, method);
-    return result != null ? result : method;
+    return method;
   }
 
   public static Object invoke(String methodName, IOperationContext context, Object contextObject, SModel sourceModel) throws ClassNotFoundException, NoSuchMethodException {
