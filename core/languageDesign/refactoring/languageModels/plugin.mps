@@ -211,33 +211,26 @@
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7464679235281555563">
               <link role="classifier:3" targetNodeId="19.~BaseAction" resolveInfo="BaseAction" />
             </node>
-            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="7464679235281555564">
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="7464679235281555565">
-                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7464679235281555566">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7464679235281555567">
-                    <link role="baseMethodDeclaration:3" targetNodeId="19.~ActionFactory.getInstance():jetbrains.mps.workbench.action.ActionFactory" resolveInfo="getInstance" />
-                    <link role="classConcept:3" targetNodeId="19.~ActionFactory" resolveInfo="ActionFactory" />
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7464679235281555566">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7464679235281555567">
+                <link role="baseMethodDeclaration:3" targetNodeId="19.~ActionFactory.getInstance():jetbrains.mps.workbench.action.ActionFactory" resolveInfo="getInstance" />
+                <link role="classConcept:3" targetNodeId="19.~ActionFactory" resolveInfo="ActionFactory" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7464679235281555568">
+                <link role="baseMethodDeclaration:3" targetNodeId="19.~ActionFactory.acquireRegisteredAction(java.lang.String,java.lang.String,java.lang.Object...):jetbrains.mps.workbench.action.BaseAction" resolveInfo="acquireRegisteredAction" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7464679235281555569">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression:3" id="2519804468357702495">
+                    <link role="classifier:3" targetNodeId="22.~GenericRefactoringAction" resolveInfo="GenericRefactoringAction" />
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7464679235281555568">
-                    <link role="baseMethodDeclaration:3" targetNodeId="19.~ActionFactory.acquireRegisteredAction(java.lang.String,java.lang.String,java.lang.Object...):jetbrains.mps.workbench.action.BaseAction" resolveInfo="acquireRegisteredAction" />
-                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7464679235281555569">
-                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression:3" id="2519804468357702495">
-                        <link role="classifier:3" targetNodeId="22.~GenericRefactoringAction" resolveInfo="GenericRefactoringAction" />
-                      </node>
-                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7464679235281555571">
-                        <link role="baseMethodDeclaration:3" targetNodeId="21.~Class.getName():java.lang.String" resolveInfo="getName" />
-                      </node>
-                    </node>
-                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="7464679235281555572">
-                      <property name="value:3" value="jetbrains.mps.ide" />
-                    </node>
-                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="7464679235281555577">
-                      <link role="variableDeclaration:3" targetNodeId="7464679235281555575" resolveInfo="refactoring" />
-                    </node>
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7464679235281555571">
+                    <link role="baseMethodDeclaration:3" targetNodeId="21.~Class.getName():java.lang.String" resolveInfo="getName" />
                   </node>
                 </node>
-                <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7464679235281555574">
-                  <link role="classifier:3" targetNodeId="19.~BaseAction" resolveInfo="BaseAction" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="7464679235281555572">
+                  <property name="value:3" value="jetbrains.mps.ide" />
+                </node>
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="7464679235281555577">
+                  <link role="variableDeclaration:3" targetNodeId="7464679235281555575" resolveInfo="refactoring" />
                 </node>
               </node>
             </node>

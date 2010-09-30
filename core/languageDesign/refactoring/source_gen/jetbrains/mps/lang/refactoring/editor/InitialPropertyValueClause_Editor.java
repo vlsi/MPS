@@ -18,7 +18,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperati
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior;
 import java.util.List;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
@@ -91,7 +90,7 @@ public class InitialPropertyValueClause_Editor extends DefaultNodeEditor {
         }
         result.append(")->");
         SNode expectedReturnType = TypeChecker.getInstance().getTypeOf(node);
-        result.append(BaseConcept_Behavior.call_getPresentation_1213877396640(expectedReturnType));
+        result.append(expectedReturnType.getPresentation());
         return result.toString();
       }
 

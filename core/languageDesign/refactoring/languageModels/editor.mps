@@ -38,13 +38,14 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <maxImportIndex value="12" />
+  <maxImportIndex value="13" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)" version="1" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" version="-1" />
   <import index="10" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="11" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="12" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
+  <import index="13" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1189693958814">
     <property name="package:32" value="Deprecated" />
     <link role="conceptDeclaration:32" targetNodeId="1.1189693830529:1" />
@@ -779,7 +780,7 @@
         </node>
         <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell:32" id="5497648299878742151">
           <property name="noTargetText:32" value="&lt;nothing&gt;" />
-          <link role="relationDeclaration:32" targetNodeId="1.1199455378190:1" />
+          <link role="relationDeclaration:32" targetNodeId="1.6895093993902236387:1" />
           <node role="editorComponent:32" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent:32" id="5497648299878742152">
             <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="5497648299878742153">
               <property name="readOnly:32" value="true" />
@@ -1272,20 +1273,20 @@
         <link role="styleClass:32" targetNodeId="4.1186415544875" resolveInfo="KeyWord" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="3302086321379400342">
-        <link role="relationDeclaration:32" targetNodeId="1.1197386861552:1" />
+        <link role="relationDeclaration:32" targetNodeId="1.3302086321379400331:1" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="3302086321379400343">
         <property name="text:32" value="-&gt;" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="3302086321379400344">
-        <link role="relationDeclaration:32" targetNodeId="1.1197386874459:1" />
+        <link role="relationDeclaration:32" targetNodeId="1.3302086321379400332:1" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="3302086321379400345">
         <property name="text:32" value=":" />
         <link role="styleClass:32" targetNodeId="4.1186415544875" resolveInfo="KeyWord" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="3302086321379400346">
-        <link role="relationDeclaration:32" targetNodeId="1.1197386900758:1" />
+        <link role="relationDeclaration:32" targetNodeId="1.3302086321379400333:1" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="3302086321379400347">
         <property name="text:32" value=")" />
@@ -1304,7 +1305,7 @@
         <link role="styleClass:32" targetNodeId="4.1186415544875" resolveInfo="KeyWord" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="3302086321379403355">
-        <link role="relationDeclaration:32" targetNodeId="1.1204722988476:1" />
+        <link role="relationDeclaration:32" targetNodeId="1.3302086321379403348:1" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="3302086321379403356">
         <property name="text:32" value=")" />
@@ -1514,11 +1515,13 @@
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6635062342941213785">
                     <link role="baseMethodDeclaration:3" targetNodeId="10.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6635062342941213786">
-                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6635062342941213787">
-                        <link role="variableDeclaration:3" targetNodeId="6635062342941213731" resolveInfo="expectedReturnType" />
+                      <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="4627605142145381586">
+                        <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6635062342941213787">
+                          <link role="variableDeclaration:3" targetNodeId="6635062342941213731" resolveInfo="expectedReturnType" />
+                        </node>
                       </node>
-                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="6635062342941213788">
-                        <link role="baseMethodDeclaration:16" targetNodeId="12.1213877396640" resolveInfo="getPresentation" />
+                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4627605142145381588">
+                        <link role="baseMethodDeclaration:3" targetNodeId="13.~SNode.getPresentation():java.lang.String" resolveInfo="getPresentation" />
                       </node>
                     </node>
                   </node>
