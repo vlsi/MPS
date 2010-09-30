@@ -44,25 +44,19 @@ public class ScriptBuilder_Test extends TestCase {
   protected void setUp() throws Exception {
     super.setUp();
     this.context = new Mockery();
-    final IFacet fmake = Mocker.facet(context, "Make");
-    final IFacet fgen = Mocker.facet(context, "Gen");
-    final ITarget tgen = Mocker.target(context, "gen");
-    final IFacet ftextgen = Mocker.facet(context, "Textgen");
-    final ITarget ttextgen = Mocker.target(context, "textgen");
+    final IFacet fmake = Mocks.facet(context, "Make");
+    final IFacet fgen = Mocks.facet(context, "Gen");
+    final ITarget tgen = Mocks.target(context, "gen");
+    final IFacet ftextgen = Mocks.facet(context, "Textgen");
+    final ITarget ttextgen = Mocks.target(context, "textgen");
     context.checking(new Expectations() {
       {
-        ignoring(fmake).extended();
-        ignoring(fmake).optional();
-        atLeast(1).of(fmake).required();
-        will(returnValue(Sequence.fromArray(new IFacet[]{})));
-        atLeast(1).of(fmake).targets(with(aNonNull(Map.class)));
-        will(returnValue(Sequence.fromArray(new ITarget[]{})));
         atLeast(1).of(fgen).required();
-        will(returnValue(Sequence.fromArray(new IFacet[]{fmake})));
+        will(returnValue(Sequence.fromArray(new IFacet.Name[]{fmake.getName()})));
         atLeast(1).of(fgen).targets(with(aNonNull(Map.class)));
         will(returnValue(Sequence.fromArray(new ITarget[]{tgen})));
         atLeast(1).of(ftextgen).required();
-        will(returnValue(Sequence.fromArray(new IFacet[]{fmake, fgen})));
+        will(returnValue(Sequence.fromArray(new IFacet.Name[]{fmake.getName(), fgen.getName()})));
         atLeast(1).of(ftextgen).targets(with(aNonNull(Map.class)));
         will(returnValue(Sequence.fromArray(new ITarget[]{ttextgen})));
       }
@@ -70,6 +64,9 @@ public class ScriptBuilder_Test extends TestCase {
     FacetRegistry.getInstance().register(fmake);
     FacetRegistry.getInstance().register(fgen);
     FacetRegistry.getInstance().register(ftextgen);
+    Mocks.allowing(context, fmake);
+    Mocks.allowing(context, fgen);
+    Mocks.allowing(context, ftextgen);
     this.facets = new IFacet[]{fmake, fgen, ftextgen};
   }
 }

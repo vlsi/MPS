@@ -5,10 +5,12 @@ package jetbrains.mps.make.unittest;
 import jetbrains.mps.make.runtime.IFacet;
 import org.jmock.Mockery;
 import org.jmock.Expectations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.Map;
 import jetbrains.mps.make.runtime.ITarget;
 
-public class Mocker {
-  public Mocker() {
+public class Mocks {
+  public Mocks() {
   }
 
   public static IFacet facet(Mockery context, final String name) {
@@ -20,6 +22,21 @@ public class Mocker {
       }
     });
     return fct;
+  }
+
+  public static void allowing(Mockery context, final IFacet fct) {
+    context.checking(new Expectations() {
+      {
+        this.allowing(fct).extended();
+        this.will(returnValue(Sequence.fromArray(new IFacet.Name[]{})));
+        this.allowing(fct).required();
+        this.will(returnValue(Sequence.fromArray(new IFacet.Name[]{})));
+        this.allowing(fct).optional();
+        this.will(returnValue(Sequence.fromArray(new IFacet.Name[]{})));
+        this.allowing(fct).targets(this.with(aNonNull(Map.class)));
+        this.will(returnValue(Sequence.fromArray(new ITarget[]{})));
+      }
+    });
   }
 
   public static ITarget target(Mockery context, final String name) {

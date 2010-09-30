@@ -14,7 +14,7 @@ public class FacetRegistry_Test extends TestCase {
   private Mockery context;
 
   public void test_registerUnregister() throws Exception {
-    final IFacet fct = Mocker.facet(context, "foobar");
+    final IFacet fct = Mocks.facet(context, "foobar");
     Assert.assertNotNull(fct);
     FacetRegistry reg = FacetRegistry.getInstance();
     Assert.assertNotNull(reg);
