@@ -64,6 +64,7 @@ public class CellMenuPart_ReplaceChild_Group_Editor extends DefaultNodeEditor {
     }
     editorCell.setGridLayout(true);
     editorCell.setCanBeFolded(true);
+    editorCell.setCanBeFolded(true);
     editorCell.addEditorCell(this.createCollection_2287jw_a1b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_2287jw_b1b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_2287jw_c1b0(editorContext, node));

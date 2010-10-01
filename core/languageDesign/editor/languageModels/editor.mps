@@ -603,9 +603,6 @@
           <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="1106271317033">
             <property name="noTargetText:32" value="&lt;no layout&gt;" />
             <link role="relationDeclaration:32" targetNodeId="2.1106270802874:32" />
-            <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem:32" id="1214314941913">
-              <property name="flag:32" value="true" />
-            </node>
           </node>
           <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="1214310996234">
             <property name="flag:32" value="false" />
@@ -622,9 +619,6 @@
           </node>
           <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="1139417057972">
             <link role="relationDeclaration:32" targetNodeId="2.1139416841293:32" />
-            <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem:32" id="1214314942030">
-              <property name="flag:32" value="true" />
-            </node>
           </node>
           <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="1214310997944">
             <property name="flag:32" value="false" />
@@ -639,83 +633,74 @@
             <property name="text:32" value="uses folding" />
             <link role="styleClass:32" targetNodeId="1214480913160" resolveInfo="property" />
           </node>
-          <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="1160590466391">
-            <link role="relationDeclaration:32" targetNodeId="2.1160590353935:32" />
-            <node role="renderingCondition:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition:32" id="8709572687796966302">
-              <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8709572687796966303">
-                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8709572687796966304">
-                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8709572687796966311">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8709572687796966306">
-                      <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="8709572687796966305" />
-                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="8709572687796966310">
+          <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Alternation:32" id="4172501465791156101">
+            <property name="vertical:32" value="true" />
+            <node role="alternationCondition:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition:32" id="4172501465791156103">
+              <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4172501465791156104">
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4172501465791167598">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4172501465791167605">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4172501465791167600">
+                      <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="4172501465791167599" />
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="4172501465791167604">
                         <link role="link:16" targetNodeId="2.8709572687796959088:32" />
                       </node>
                     </node>
-                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation:16" id="8709572687796966315" />
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation:16" id="4172501465791167609" />
                   </node>
                 </node>
               </node>
             </node>
-            <node role="menuDescriptor:32" type="jetbrains.mps.lang.editor.structure.CellMenuDescriptor:32" id="8709572687796966335">
-              <node role="cellMenuPart:32" type="jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues:32" id="8709572687796966336">
-                <node role="valuesFunction:32" type="jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues_GetValues:32" id="8709572687796966337">
-                  <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8709572687796966338">
-                    <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8709572687797011137">
-                      <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="8709572687797011138">
-                        <node role="creator:3" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit:7" id="8709572687797050790">
-                          <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="8709572687797050792" />
-                          <node role="initValue:7" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="8709572687797050794">
-                            <property name="value:3" value="true" />
-                          </node>
-                          <node role="initValue:7" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="8709572687797050797">
-                            <property name="value:3" value="false" />
+            <node role="ifTrueCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="4172501465791167610">
+              <link role="relationDeclaration:32" targetNodeId="2.1160590353935:32" resolveInfo="usesFolding" />
+              <node role="menuDescriptor:32" type="jetbrains.mps.lang.editor.structure.CellMenuDescriptor:32" id="4172501465791167619">
+                <node role="cellMenuPart:32" type="jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues:32" id="4172501465791167620">
+                  <node role="valuesFunction:32" type="jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues_GetValues:32" id="4172501465791167621">
+                    <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4172501465791167622">
+                      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4172501465791167623">
+                        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="4172501465791167624">
+                          <node role="creator:3" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit:7" id="4172501465791167625">
+                            <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="4172501465791167626" />
+                            <node role="initValue:7" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4172501465791167627">
+                              <property name="value:3" value="true" />
+                            </node>
+                            <node role="initValue:7" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4172501465791167628">
+                              <property name="value:3" value="false" />
+                            </node>
                           </node>
                         </node>
                       </node>
                     </node>
                   </node>
                 </node>
-              </node>
-              <node role="cellMenuPart:32" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item:32" id="8709572687797050799">
-                <property name="matchingText:32" value="query" />
-                <node role="handlerFunction:32" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item_Handler:32" id="8709572687797050800">
-                  <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8709572687797050801">
-                    <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8709572687797050802">
-                      <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8709572687797050809">
-                        <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8709572687797050804">
-                          <node role="operand:3" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode:32" id="8709572687797050803" />
-                          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="8709572687797050808">
-                            <link role="link:16" targetNodeId="2.8709572687796959088:32" />
+                <node role="cellMenuPart:32" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item:32" id="4172501465791167629">
+                  <property name="matchingText:32" value="query" />
+                  <node role="handlerFunction:32" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item_Handler:32" id="4172501465791167630">
+                    <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4172501465791167631">
+                      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4172501465791167632">
+                        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4172501465791167633">
+                          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4172501465791167634">
+                            <node role="operand:3" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode:32" id="4172501465791167635" />
+                            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="4172501465791167636">
+                              <link role="link:16" targetNodeId="2.8709572687796959088:32" />
+                            </node>
                           </node>
+                          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation:16" id="4172501465791167637" />
                         </node>
-                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation:16" id="8709572687797050813" />
                       </node>
                     </node>
                   </node>
                 </node>
               </node>
             </node>
-          </node>
-          <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="8709572687796966317">
-            <link role="relationDeclaration:32" targetNodeId="2.8709572687796959088:32" />
-            <node role="renderingCondition:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition:32" id="8709572687796966318">
-              <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8709572687796966319">
-                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8709572687796966320">
-                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8709572687796966327">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8709572687796966322">
-                      <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="8709572687796966321" />
-                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="8709572687796966326">
-                        <link role="link:16" targetNodeId="2.8709572687796959088:32" />
-                      </node>
-                    </node>
-                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation:16" id="8709572687796966331" />
-                  </node>
-                </node>
-              </node>
+            <node role="ifFalseCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="4172501465791167639">
+              <link role="relationDeclaration:32" targetNodeId="2.8709572687796959088:32" />
             </node>
           </node>
           <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="1214310993979">
             <property name="flag:32" value="false" />
+          </node>
+          <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem:32" id="4172501465791156099">
+            <property name="flag:32" value="true" />
           </node>
           <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="1239878593842" />
         </node>
@@ -5677,8 +5662,8 @@
                   <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6046489571270847691">
                     <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6046489571270847693">
                       <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="6046489571270847692" />
-                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="6046489571270847697">
-                        <link role="property:16" targetNodeId="2.1160590307797:32" resolveInfo="usesFolding" />
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="4212343982984309144">
+                        <link role="baseMethodDeclaration:16" targetNodeId="30.4601216887035799532" resolveInfo="isFoldingEnabled" />
                       </node>
                     </node>
                   </node>

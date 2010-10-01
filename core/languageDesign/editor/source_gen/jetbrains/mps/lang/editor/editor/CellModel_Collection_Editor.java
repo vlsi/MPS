@@ -63,6 +63,18 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createAlternation_cvgoyj_b2d0(EditorContext editorContext, SNode node) {
+    boolean alternationCondition = true;
+    alternationCondition = CellModel_Collection_Editor.renderingCondition_cvgoyj_a1c3a(node, editorContext, editorContext.getOperationContext().getScope());
+    EditorCell editorCell = null;
+    if (alternationCondition) {
+      editorCell = this.createProperty_cvgoyj_a1c3a(editorContext, node);
+    } else {
+      editorCell = this.createRefNode_cvgoyj_a1c3a(editorContext, node);
+    }
+    return editorCell;
+  }
+
   private EditorCell createCollection_cvgoyj_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_cvgoyj_a0");
@@ -228,14 +240,10 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.DRAW_BORDER, true);
     }
     editorCell.addEditorCell(this.createConstant_cvgoyj_a2d0(editorContext, node));
-    if (renderingCondition_cvgoyj_a1c3a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createProperty_cvgoyj_b2d0(editorContext, node));
-    }
-    if (renderingCondition_cvgoyj_a2c3a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createRefNode_cvgoyj_c2d0(editorContext, node));
-    }
+    editorCell.addEditorCell(this.createAlternation_cvgoyj_b2d0(editorContext, node));
     return editorCell;
   }
 
@@ -460,10 +468,6 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_usesBraces");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.DRAW_BORDER, true);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -475,14 +479,14 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_cvgoyj_b2d0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_cvgoyj_a1c3a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("usesFolding");
     provider.setNoTargetText("<no usesFolding>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_usesFolding");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new CellModel_Collection_Editor.CellModel_Collection_usesFolding_cellMenu_a0b2d0(), new CellModel_Collection_Editor.CellModel_Collection_generic_cellMenu_b0b2d0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new CellModel_Collection_Editor.CellModel_Collection_usesFolding_cellMenu_a0a1c3a(), new CellModel_Collection_Editor.CellModel_Collection_generic_cellMenu_b0a1c3a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -499,10 +503,6 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no layout>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.DRAW_BORDER, true);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -514,7 +514,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_cvgoyj_c2d0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_cvgoyj_a1c3a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("usesFoldingCondition");
     provider.setNoTargetText("<no usesFoldingCondition>");
@@ -557,10 +557,6 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_cvgoyj_a1c3a(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "usesFoldingCondition", true) == null);
-  }
-
-  private static boolean renderingCondition_cvgoyj_a2c3a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "usesFoldingCondition", true) != null);
   }
 
   private static Color _StyleParameter_QueryFunction_cvgoyj_a0d0a0(SNode node, EditorContext editorContext) {
@@ -693,8 +689,8 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class CellModel_Collection_usesFolding_cellMenu_a0b2d0 extends AbstractCellMenuPart_PropertyValues {
-    public CellModel_Collection_usesFolding_cellMenu_a0b2d0() {
+  public static class CellModel_Collection_usesFolding_cellMenu_a0a1c3a extends AbstractCellMenuPart_PropertyValues {
+    public CellModel_Collection_usesFolding_cellMenu_a0a1c3a() {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
@@ -702,8 +698,8 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class CellModel_Collection_generic_cellMenu_b0b2d0 extends AbstractCellMenuPart_Generic_Item {
-    public CellModel_Collection_generic_cellMenu_b0b2d0() {
+  public static class CellModel_Collection_generic_cellMenu_b0a1c3a extends AbstractCellMenuPart_Generic_Item {
+    public CellModel_Collection_generic_cellMenu_b0a1c3a() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
