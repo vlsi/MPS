@@ -162,13 +162,14 @@ public class GeneratorMappings {
 
   // serialization
 
-  public void export(TransientModelWithMetainfo into, DependenciesBuilder builder) {
+  public void export(TransientModelWithMetainfo model, DependenciesBuilder builder) {
     for (Entry<String, Map<SNode, Object>> o : myMappingNameAndInputNodeToOutputNodeMap.entrySet()) {
       String label = o.getKey();
       for(Entry<SNode, Object> i : o.getValue().entrySet()) {
         SNode inputNode = i.getKey();
         SNode originalRoot = inputNode == null ? null : builder.getOriginalForInput(inputNode.getTopmostAncestor());
-        into.addLabel(originalRoot, inputNode, label, i.getValue());
+        PersistableMappings mappings = model.getMappings(originalRoot, true);
+        mappings.addOutputNodeByInputNodeAndMappingName(inputNode == null ? null : inputNode.getSNodeId(), label, i.getValue());
       }
     }
   }
@@ -195,11 +196,14 @@ public class GeneratorMappings {
           }
         }
       }
-
     }
   }
 
   private void addOutputNode(Map<SNode, Object> currentMapping, SNode inputNode, SNode outputNode) {
+    if(outputNode == null) {
+      // TODO report?
+      return;
+    }
     Object o = currentMapping.get(inputNode);
     if (o == null) {
       currentMapping.put(inputNode, outputNode);

@@ -63,6 +63,16 @@ public class TransientModelWithMetainfo {
     return myMappings.get(SNodeId.fromString(originalId));
   }
 
+  public PersistableMappings getMappings(SNode originalRoot, boolean create) {
+    SNodeId key = originalRoot == null ? null : originalRoot.getSNodeId();
+    PersistableMappings persistableMappings = myMappings.get(key);
+    if(persistableMappings == null && create) {
+      persistableMappings = new PersistableMappings();
+      myMappings.put(key, persistableMappings);
+    }
+    return persistableMappings;
+  }
+
   public void updateMappings(String originalId, PersistableMappings mappings) {
     myMappings.put(SNodeId.fromString(originalId), mappings);
   }
@@ -131,7 +141,7 @@ public class TransientModelWithMetainfo {
     }
   }
 
-  public static TransientModelWithMetainfo create(SModel model, GeneratorMappings mappings, DependenciesBuilder builder) throws GenerationFailureException {
+  public static TransientModelWithMetainfo create(SModel model, DependenciesBuilder builder) throws GenerationFailureException {
     TransientModelWithMetainfo metainfo = new TransientModelWithMetainfo(model);
     Iterator<SNode> it = model.roots();
     while (it.hasNext()) {
@@ -139,20 +149,7 @@ public class TransientModelWithMetainfo {
       SNode node = builder.getOriginalForOutput(root);
       metainfo.myRootToOriginal.put(root.getSNodeId(), node == null ? null: node.getSNodeId());
     }
-    if (mappings != null) {
-      mappings.export(metainfo, builder);
-    }
     builder.updateUnchanged(metainfo);
     return metainfo;
-  }
-
-  public void addLabel(SNode originalRoot, SNode input, String label, Object value) {
-    SNodeId key = originalRoot == null ? null : originalRoot.getSNodeId();
-    PersistableMappings persistableMappings = myMappings.get(key);
-    if(persistableMappings == null) {
-      persistableMappings = new PersistableMappings();
-      myMappings.put(key, persistableMappings);
-    }
-    persistableMappings.addOutputNodeByInputNodeAndMappingName(input == null ? null : input.getSNodeId(), label, value);
   }
 }

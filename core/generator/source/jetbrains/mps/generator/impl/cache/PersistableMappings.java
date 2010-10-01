@@ -35,7 +35,7 @@ public class PersistableMappings {
 
   // add functions
 
-  void addOutputNodeByInputNodeAndMappingName(SNodeId inputNode, String mappingName, Object value) {
+  public void addOutputNodeByInputNodeAndMappingName(SNodeId inputNode, String mappingName, Object value) {
     if (mappingName == null) return;
     Map<SNodeId, Object> currentMapping = myMappingNameAndInputNodeToOutputNodeMap.get(mappingName);
     if (currentMapping == null) {
@@ -62,6 +62,8 @@ public class PersistableMappings {
   // serialization
 
   public void save(ModelOutputStream os) throws IOException {
+
+    /* mapping,input -> output */
     os.writeInt(myMappingNameAndInputNodeToOutputNodeMap.size());
     for(Entry<String, Map<SNodeId, Object>> e : myMappingNameAndInputNodeToOutputNodeMap.entrySet()) {
       os.writeString(e.getKey());
@@ -81,11 +83,15 @@ public class PersistableMappings {
         }
       }
     }
+
+    /* check */
     os.writeByte('!');
   }
 
   public static PersistableMappings load(ModelInputStream is) throws IOException {
     PersistableMappings mappings = new PersistableMappings();
+
+    /* mapping,input -> output */
     for(int size = is.readInt(); size > 0; size--) {
       String label = is.readString();
       int mapSize = is.readInt();
@@ -105,6 +111,8 @@ public class PersistableMappings {
       }
       mappings.myMappingNameAndInputNodeToOutputNodeMap.put(label, innerMap);
     }
+
+    /* check */
     if(is.readByte() != '!') {
       throw new IOException("inconsistent cache");
     }

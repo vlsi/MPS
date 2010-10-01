@@ -311,7 +311,8 @@ public class GenerationSession {
       hasChanges = tg.apply(isPrimary);
     }
     if(myNewCache != null && (isPrimary || hasChanges)) {
-      TransientModelWithMetainfo modelWithMetaInfo = TransientModelWithMetainfo.create(currentOutputModel, tg.getMappings(), myDependenciesBuilder);
+      TransientModelWithMetainfo modelWithMetaInfo = TransientModelWithMetainfo.create(currentOutputModel, myDependenciesBuilder);
+      tg.getMappings().export(modelWithMetaInfo, myDependenciesBuilder);
       myNewCache.store(myMajorStep, myMinorStep, modelWithMetaInfo);
     }
     return hasChanges;
@@ -370,7 +371,7 @@ public class GenerationSession {
     if (needToCloneInputModel) {
       myDependenciesBuilder.scriptApplied(currentInputModel);
       if(myNewCache != null) {
-        TransientModelWithMetainfo modelWithMetaInfo = TransientModelWithMetainfo.create(currentInputModel, null, myDependenciesBuilder);
+        TransientModelWithMetainfo modelWithMetaInfo = TransientModelWithMetainfo.create(currentInputModel, myDependenciesBuilder);
         myNewCache.store(myMajorStep, myMinorStep, modelWithMetaInfo);
       }
       recycleWasteModel(toRecycle);
@@ -419,7 +420,7 @@ public class GenerationSession {
     if (needToCloneModel) {
       myDependenciesBuilder.scriptApplied(currentModel);
       if(myNewCache != null) {
-        TransientModelWithMetainfo modelWithMetaInfo = TransientModelWithMetainfo.create(currentModel, null, myDependenciesBuilder);
+        TransientModelWithMetainfo modelWithMetaInfo = TransientModelWithMetainfo.create(currentModel, myDependenciesBuilder);
         myNewCache.store(myMajorStep, myMinorStep, modelWithMetaInfo);
       }
       recycleWasteModel(toRecycle);
