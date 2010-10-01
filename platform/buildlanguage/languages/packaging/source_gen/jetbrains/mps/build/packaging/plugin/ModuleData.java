@@ -10,7 +10,7 @@ import javax.swing.Icon;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.vfs.IFile;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.vfs.VFileSystem;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.ide.projectPane.Icons;
 
 public class ModuleData implements NodeData {
@@ -31,9 +31,9 @@ public class ModuleData implements NodeData {
 
   public Icon getIcon(boolean expanded) {
     if (this.myModule instanceof AbstractModule) {
-      IFile file = ((AbstractModule) this.myModule).getDescriptorFile();
+      IFile file = this.myModule.getDescriptorFile();
       if (file != null) {
-        VirtualFile virtualFile = VFileSystem.getFile(file);
+        VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(file);
         if (virtualFile != null) {
           return virtualFile.getFileType().getIcon();
         }

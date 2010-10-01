@@ -124,12 +124,12 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
       }
       return descriptorFile.getParent().getParent().child(FileGenerationUtil.getCachesPath(suffix));
     } else {
-      return FileSystem.getFile(FileGenerationUtil.getCachesPath(FileSystem.getAbsolutePath(outputPath)));
+      return FileSystem.getInstance().getFileByPath(FileGenerationUtil.getCachesPath(FileSystem.getAbsolutePath(outputPath)));
     }
   }
 
-  public boolean isCacheFile(IFile file) {
-    return (file.getName().endsWith(getCacheFileName()));
+  public boolean isCacheFile(String fileName) {
+    return fileName.endsWith(getCacheFileName());
   }
 
   protected class MyCacheGenerator implements CacheGenerator {

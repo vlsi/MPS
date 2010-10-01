@@ -86,7 +86,7 @@ public abstract class Macros {
   }
 
   public final String expandPath(String path, File anchorFile) {
-    return expandPath(path, FileSystem.getFile(anchorFile));
+    return expandPath(path, FileSystem.getInstance().getFileByPath(anchorFile.getAbsolutePath()));
   }
 
   public final String expandPath(String path, IFile anchorFile) {
@@ -108,7 +108,7 @@ public abstract class Macros {
       String prefix = "${" + macro + "}";
       if (path.startsWith(prefix)) {
         String relativePath = removePrefix(path, prefix);
-        result = FileSystem.getFile(PathMacros.getInstance().getValue(macro)).child(relativePath);
+        result = FileSystem.getInstance().getFileByPath(PathMacros.getInstance().getValue(macro)).child(relativePath);
         break;
       }
     }
@@ -118,7 +118,7 @@ public abstract class Macros {
     if (result != null) return result.getCanonicalPath();
 
     if (!path.startsWith("${")) {
-      result = FileSystem.getFile(path);
+      result = FileSystem.getInstance().getFileByPath(path);
       return result.getCanonicalPath();
     }
 
@@ -133,13 +133,13 @@ public abstract class Macros {
   private IFile tryToExpandWith(String path, String macroName, String macroValue) {
     if (path.startsWith(macroName)) {
       String relativePath = removePrefix(path, macroName);
-      return FileSystem.getFile(macroValue).child(relativePath);
+      return FileSystem.getInstance().getFileByPath(macroValue).child(relativePath);
     }
     return null;
   }
 
   public final String shrinkPath(String path, File anchor) {
-    return shrinkPath(path, FileSystem.getFile(anchor));
+    return shrinkPath(path, FileSystem.getInstance().getFileByPath(anchor.getAbsolutePath()));
   }
 
   public final String shrinkPath(String absolutePath, IFile anchorFile) {
@@ -269,7 +269,7 @@ public abstract class Macros {
     protected String shrinkPath_internal(String absolutePath, IFile projectDescriptor) {
       String prefix;
 
-      if (projectDescriptor.isFile()) {
+      if (!projectDescriptor.isDirectory()) {
         prefix = projectDescriptor.getParent().getCanonicalPath();
       } else {
         prefix = projectDescriptor.getCanonicalPath();

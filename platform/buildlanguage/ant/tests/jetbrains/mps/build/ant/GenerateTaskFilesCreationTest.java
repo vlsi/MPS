@@ -48,8 +48,6 @@ public class GenerateTaskFilesCreationTest {
   }
 
   @Test
-  @ExpectLogEvent(level = Priority.WARN_INT, text = "Model file broken.model was modified externally!\n" +
-    "You might want to turn \"Synchronize files on frame activation/deactivation\" option on to avoid conflicts.")
   public void testOneFileForOneConcept() throws IOException {
     String projectName = "FileTestProject";
     String languageName = "FileTestProjectLanguage";

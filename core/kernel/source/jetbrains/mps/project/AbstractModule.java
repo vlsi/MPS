@@ -16,7 +16,6 @@
 package jetbrains.mps.project;
 
 import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.lang.generator.structure.Generator_Language;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.dependency.DependencyManager;
@@ -38,8 +37,6 @@ import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.vcs.VcsMigrationUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.JarFileEntryFile;
-import jetbrains.mps.vfs.VFileSystem;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 
@@ -197,7 +194,7 @@ public abstract class AbstractModule implements IModule {
 
   public List<StubPath> getOwnStubPaths() {
     ArrayList<StubPath> result = new ArrayList<StubPath>();
-    if (isCompileInMPS() && getClassesGen() != null && getClassesGen().exists()) {
+    if (isCompileInMPS() && getClassesGen() != null && new File(getClassesGen().getAbsolutePath()).exists()) {
       result.add(new StubPath(getClassesGen().getCanonicalPath(), LanguageID.JAVA_MANAGER));
     }
     return result;
@@ -282,7 +279,7 @@ public abstract class AbstractModule implements IModule {
     Set<StubModelsEntry> visited = new HashSet<StubModelsEntry>();
     List<StubModelsEntry> remove = new ArrayList<StubModelsEntry>();
     for (StubModelsEntry entry : descriptor.getStubModelEntries()) {
-      IFile cp = FileSystem.getFile(entry.getPath());
+      IFile cp = FileSystem.getInstance().getFileByPath(entry.getPath());
       if ((!cp.exists()) || cp.isDirectory() || visited.contains(entry)) {
         remove.add(entry);
       }
@@ -290,10 +287,10 @@ public abstract class AbstractModule implements IModule {
     }
     descriptor.getStubModelEntries().removeAll(remove);
 
-    File bundleHomeFile = getBundleHome();
+    IFile bundleHomeFile = getBundleHome();
     if (bundleHomeFile == null) return;
 
-    String bundleHomePath = bundleHomeFile.getPath();
+    String bundleHomePath = bundleHomeFile.getAbsolutePath();
     boolean contains = false;
     for (StubModelsEntry v : visited) {
       if (EqualUtil.equals(v.getPath(), bundleHomePath)) {
@@ -405,9 +402,7 @@ public abstract class AbstractModule implements IModule {
   private IFile getClassesDirParent() {
     if (isPackaged()) {
       String filename = getBundleHome().getAbsolutePath() + "!";
-      VirtualFile file = VFileSystem.getFile(filename);
-      if (file == null) return null;
-      return VFileSystem.toIFile(file);
+      return FileSystem.getInstance().getFileByPath(filename);
     } else {
       if (getDescriptorFile() == null) return null;
       return getDescriptorFile().getParent();
@@ -510,18 +505,8 @@ public abstract class AbstractModule implements IModule {
     }
   }
 
-  public File getBundleHome() {
-    IFile descriptorFile = getDescriptorFile();
-
-    if (descriptorFile != null) {
-      if (descriptorFile instanceof JarFileEntryFile) {
-        return ((JarFileEntryFile) descriptorFile).getJarFile();
-      }
-
-      return FileSystem.toFile(descriptorFile.getParent());
-    }
-
-    return null;
+  public IFile getBundleHome() {
+    return FileSystem.getInstance().getBundleHome(getDescriptorFile());
   }
 
   public boolean isCompileInMPS() {

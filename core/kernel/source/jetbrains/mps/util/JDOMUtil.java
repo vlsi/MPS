@@ -114,10 +114,6 @@ public class JDOMUtil {
   }
 
   public static void writeDocument(Document document, IFile file) throws IOException {
-    if (!file.getParent().exists()) {
-      file.getParent().mkdirs();
-    }
-
     if (!file.exists()) {
       file.createNewFile();
     }

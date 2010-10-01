@@ -19,7 +19,7 @@ import java.io.File;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.vfs.FileSystemFile;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.openapi.vcs.checkin.CheckinHandlerFactory;
 import org.jetbrains.annotations.NotNull;
@@ -70,7 +70,7 @@ public class ModelCheckerCheckinHandler extends CheckinHandler {
     final SModelRepository repository = SModelRepository.getInstance();
     return Sequence.fromIterable(files).select(new ISelector<File, SModelDescriptor>() {
       public SModelDescriptor select(File file) {
-        return repository.findModel(new FileSystemFile(file));
+        return repository.findModel(FileSystem.getInstance().getFileByPath(file.getAbsolutePath()));
       }
     }).where(new IWhereFilter<SModelDescriptor>() {
       public boolean accept(SModelDescriptor modelDescriptor) {

@@ -17,7 +17,7 @@ import java.awt.Component;
 import javax.swing.SwingUtilities;
 import java.awt.Frame;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
-import jetbrains.mps.vfs.FileSystemFile;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.smodel.ModelAccess;
@@ -42,13 +42,13 @@ public class SelectImageFileButton extends JButton {
           Frame frame = (Frame) root;
           TreeFileChooser chooser = new TreeFileChooser();
           if (baseFile != null && baseFile.exists()) {
-            chooser.setInitialFile(new FileSystemFile(baseFile.getAbsolutePath()));
+            chooser.setInitialFile(FileSystem.getInstance().getFileByPath(baseFile.getAbsolutePath()));
           }
           IFile result = chooser.showDialog(frame);
           if (result == null) {
             return;
           }
-          String selectedPath = FileUtil.getCanonicalPath(result.toFile());
+          String selectedPath = FileUtil.getCanonicalPath(result.getAbsolutePath());
           final String pathToShow = Macros.languageDescriptor().shrinkPath(selectedPath, language.getDescriptorFile());
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {

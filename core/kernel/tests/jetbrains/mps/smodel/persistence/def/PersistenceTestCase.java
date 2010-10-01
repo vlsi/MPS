@@ -21,14 +21,9 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.persistence.def.v2.ModelReader2;
-import jetbrains.mps.smodel.persistence.def.v2.ModelWriter2;
-import jetbrains.mps.smodel.persistence.def.v3.ModelReader3;
-import jetbrains.mps.smodel.persistence.def.v3.ModelWriter3;
 import jetbrains.mps.smodel.persistence.def.v4.ModelReader4;
 import jetbrains.mps.smodel.persistence.def.v4.ModelWriter4;
 import jetbrains.mps.vfs.FileSystem;
-import junit.framework.TestCase;
 import org.jdom.Document;
 
 import java.io.File;
@@ -51,7 +46,7 @@ public class PersistenceTestCase extends BaseMPSTest {
   }
 
   private void doWriteReadConsistencyTest(final IModelReader reader, final IModelWriter writer) {
-    final SModelDescriptor modelDescriptor = SModelRepository.getInstance().findModel(FileSystem.getFile("workbench" + File.separator +
+    final SModelDescriptor modelDescriptor = SModelRepository.getInstance().findModel(FileSystem.getInstance().getFileByPath("workbench" + File.separator +
       "ideSolution" + File.separator +
       "jetbrains" + File.separator +
       "mps" + File.separator +

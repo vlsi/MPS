@@ -18,8 +18,7 @@ package jetbrains.mps.ide.generator;
 import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.extensions.ExtensionPointName;
 import com.intellij.openapi.progress.ProgressIndicator;
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.Task.Modal;
+import com.intellij.openapi.progress.Progressive;
 import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
@@ -192,7 +191,8 @@ public class GeneratorFacade {
     IdeEventQueue.getInstance().flushQueue();
 
     final boolean[] result = new boolean[]{false};
-    ProgressManager.getInstance().run(new Modal(invocationContext.getProject(), "Generation", true) {
+
+    ModelAccess.instance().runWriteActionWithProgressSynchronously(new Progressive(){
       public void run(@NotNull ProgressIndicator progress) {
         GeneratorManager generatorManager = project.getComponent(GeneratorManager.class);
 
@@ -216,7 +216,8 @@ public class GeneratorFacade {
 
         result[0] = generatorManager.generateModels(inputModels, invocationContext, generationHandler, progress, messages, options);
       }
-    });
+    }, "Generation", true, invocationContext.getProject());
+
     return result[0];
   }
 

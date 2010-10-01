@@ -17,122 +17,76 @@ package jetbrains.mps.generator.generationTypes.java;
 
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.JDOMUtil;
-import jetbrains.mps.vfs.FileSystem;
-import org.jdom.Document;
+import jetbrains.mps.vfs.IFile;
 import org.jdom.Element;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 /**
 * Evgeny Gryaznov, Sep 16, 2010
 */
 class JavaStreamHandler implements StreamHandler {
-
-  private static final Logger LOG = Logger.getLogger(JavaStreamHandler.class);
-
   private final SModelDescriptor myModelDescriptor;
-  private final File myOutputDir;
-  private final IOperationContext myContext;
-  private final File myCachesOutputDir;
-  private Set<File> myCreated = Collections.emptySet();
-  private Set<File> myTouched = Collections.emptySet();
+  private final IFile myOutputDir;
+  private final IFile myCachesOutputDir;
+  private final Set<IFile> mySavedFiles = new HashSet<IFile>();
   private FileProcessor myProcessor;
 
-  JavaStreamHandler(SModelDescriptor modelDescriptor, File outputDir, IOperationContext context, FileProcessor processor) {
+  JavaStreamHandler(SModelDescriptor modelDescriptor, IFile outputDir, FileProcessor processor) {
     myModelDescriptor = modelDescriptor;
     myOutputDir = outputDir;
-    myContext = context;
-    myCachesOutputDir = new File(FileGenerationUtil.getCachesPath(outputDir.getAbsolutePath()));
+    myCachesOutputDir = FileGenerationUtil.getCachesDir(outputDir);
     myProcessor = processor;
-  }
-
-  private void register(File file, boolean isNew) {
-    if (isNew) {
-      if (myCreated.isEmpty()) {
-        myCreated = new HashSet<File>();
-      }
-    } else {
-      if (myTouched.isEmpty()) {
-        myTouched = new HashSet<File>();
-      }
-    }
-    (isNew ? myCreated : myTouched).add(file);
   }
 
   @Override
   public void saveStream(String name, String content, boolean isCache) {
-    File outputRootDir = isCache ? myCachesOutputDir : myOutputDir;
-    File folder = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, FileSystem.getFile(outputRootDir)).toFile();
-    File file = new File(folder, name);
-    try {
-      register(file, !file.exists());
-      FileUtil.writeFile(file, content);
-    } catch (IOException e) {
-      LOG.error(e);
-    }
+    IFile outputRootDir = isCache ? myCachesOutputDir : myOutputDir;
+    IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, outputRootDir).child(name);
+    myProcessor.saveContent(file, content);
+    mySavedFiles.add(file);
   }
 
   @Override
   public void saveStream(String name, Element content, boolean isCache) {
-    File outputRootDir = isCache ? myCachesOutputDir : myOutputDir;
-    File folder = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, FileSystem.getFile(outputRootDir)).toFile();
-    File file = new File(folder, name);
-    try {
-      register(file, !file.exists());
-      JDOMUtil.writeDocument(new Document(content), file);
-    } catch (IOException e) {
-      LOG.error(e);
-    }
+    IFile outputRootDir = isCache ? myCachesOutputDir : myOutputDir;
+    IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, outputRootDir).child(name);
+    myProcessor.saveContent(file, content);
+    mySavedFiles.add(file);
   }
 
   @Override
   public boolean touch(String name, boolean isCache) {
-    File outputRootDir = isCache ? myCachesOutputDir : myOutputDir;
-    File folder = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, FileSystem.getFile(outputRootDir)).toFile();
-    File file = new File(folder, name);
-    if (file.exists()) {
-      register(file, false);
-      return true;
-    }
-    return false;
+    IFile outputRootDir = isCache ? myCachesOutputDir : myOutputDir;
+    IFile file = FileGenerationUtil.getDefaultOutputDir(myModelDescriptor, outputRootDir).child(name);
+    mySavedFiles.add(file);
+    return file.exists();
   }
 
   @Override
   public void dispose() {
-    Set<File> directories = new HashSet<File>();
+    Set<IFile> directories = new HashSet<IFile>();
     directories.add(myOutputDir);
     directories.add(myCachesOutputDir);
-    for (File f : myTouched) {
-      directories.add(f.getParentFile());
-    }
-    for (File f : myCreated) {
-      directories.add(f.getParentFile());
+    for (IFile f : mySavedFiles) {
+      directories.add(f.getParent());
     }
 
     // clear garbage
-    final List<File> filesToDelete = new ArrayList<File>();
-    for (File dir : directories) {
-      File[] files = dir.listFiles();
-      if (files == null) continue;
-      for (File outputDirectoryFile : files) {
+    final List<IFile> filesToDelete = new ArrayList<IFile>();
+    for (IFile dir : directories) {
+      for (IFile outputDirectoryFile : dir.list()) {
         if (outputDirectoryFile.isDirectory()) continue;
-        if (myTouched.contains(outputDirectoryFile)) continue;
-        if (myCreated.contains(outputDirectoryFile)) continue;
+        if (mySavedFiles.contains(outputDirectoryFile)) continue;
         filesToDelete.add(outputDirectoryFile);
       }
     }
 
-    myProcessor.processVCSAddition(myCreated);
-    myProcessor.processVCSDeletion(filesToDelete);
-    myProcessor.invalidateRoot(myOutputDir, myContext);
-    myProcessor.invalidateRoot(myCachesOutputDir, myContext);
+    myProcessor.filesToDelete(filesToDelete);
     myProcessor.invalidateModel(myModelDescriptor);
   }
 }

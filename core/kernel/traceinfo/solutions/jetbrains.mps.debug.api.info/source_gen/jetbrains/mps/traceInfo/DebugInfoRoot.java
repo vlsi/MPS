@@ -107,6 +107,6 @@ public class DebugInfoRoot {
   public static IFile getDebugFileOfModel(String outputDir, SModelDescriptor model) {
     String modelName = model.getLongName().replace(".", File.separator);
     String debugPath = modelName.substring(0, modelName.length()) + File.separator + ".debug";
-    return FileSystem.getFile(outputDir + File.separator + debugPath);
+    return FileSystem.getInstance().getFileByPath(outputDir + File.separator + debugPath);
   }
 }

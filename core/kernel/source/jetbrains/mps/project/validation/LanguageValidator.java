@@ -15,14 +15,14 @@
  */
 package jetbrains.mps.project.validation;
 
-import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.StubModelsEntry;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.vfs.VFileSystem;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,8 +50,8 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
       }
     }
     for (StubModelsEntry stubModelsEntry : myModule.getModuleDescriptor().getRuntimeStubModels()) {
-      VirtualFile vfile = VFileSystem.getFile(stubModelsEntry.getPath());
-      if (vfile == null || !vfile.exists()) {
+      IFile file = FileSystem.getInstance().getFileByPath(stubModelsEntry.getPath());
+      if (file == null || !file.exists()) {
         errors.add("Can't find runtime library: " + stubModelsEntry.getPath());
       }
     }

@@ -143,18 +143,18 @@ public class LanguageDescriptorPersistence {
       throw new ModuleReadException(e);
     }
 
-    ModuleDescriptorPersistence.setTimestamp(descriptor, file, false);
+    ModuleDescriptorPersistence.setTimestamp(descriptor, file);
     return descriptor;
   }
 
   public static void saveLanguageDescriptor(File file, LanguageDescriptor descriptor) {
-    saveLanguageDescriptor(FileSystem.getFile(file), descriptor);
+    saveLanguageDescriptor(FileSystem.getInstance().getFileByPath(file.getAbsolutePath()), descriptor);
   }
 
   public static void saveLanguageDescriptor(final IFile file, final LanguageDescriptor descriptor) {
     if (file.isReadOnly()) {
       if (log.isErrorEnabled()) {
-        log.error("Cant't save " + file.getPath());
+        log.error("Cant't save " + file.getAbsolutePath());
       }
       return;
     }
@@ -271,6 +271,6 @@ public class LanguageDescriptorPersistence {
         log.error("", e);
       }
     }
-    ModuleDescriptorPersistence.setTimestamp(descriptor, file, true);
+    ModuleDescriptorPersistence.setTimestamp(descriptor, file);
   }
 }

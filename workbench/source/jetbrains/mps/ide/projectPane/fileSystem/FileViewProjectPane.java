@@ -49,6 +49,7 @@ import jetbrains.mps.ide.projectPane.fileSystem.nodes.FileTreeNode;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
@@ -56,7 +57,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vcs.ChangedListener;
 import jetbrains.mps.vcs.GlobalClassPathIndex;
-import jetbrains.mps.vfs.VFileSystem;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -80,7 +81,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
   private final IdeDocumentHistory myIdeDocumentHistory;
   private final ProjectView myProjectView;
   private final FileEditorManager myEditorManager;
-
+ 
   private ChangeListListener myChangeListListener;
   private MessageBusConnection myMessageBusConnection;
   private FileStatusListener myFileStatusListener;
@@ -388,7 +389,11 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
         SModelDescriptor d = smodel.getModelDescriptor();
         if (!(d instanceof EditableSModelDescriptor)) return false;
 
-        VirtualFile realFile = VFileSystem.getFile(((EditableSModelDescriptor) d).getModelFile());
+        IFile modelFile = ((EditableSModelDescriptor) d).getModelFile();
+        VirtualFile realFile = null;
+        if (modelFile != null) {
+          realFile = VirtualFileUtils.getVirtualFile(modelFile);
+        }
 
         myFile = realFile;
         if ((realFile == null) || (isInitialized() && getNode(realFile) == null)) return false;

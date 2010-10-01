@@ -37,7 +37,10 @@ class ModelFileProcessor extends EventProcessor {
 
   @Override
   protected void processContentChanged(VFileEvent event, ReloadSession reloadSession) {
-    EditableSModelDescriptor model = (EditableSModelDescriptor) SModelRepository.getInstance().findModel(FileSystem.getFile(event.getPath()));
+    if (!event.isFromRefresh()) {
+      return;
+    }
+    EditableSModelDescriptor model = (EditableSModelDescriptor) SModelRepository.getInstance().findModel(FileSystem.getInstance().getFileByPath(event.getPath()));
     LOG.debug("Content change event for model file " + event.getPath() + ". Found model " + model + "." + (model != null ? " Needs reloading " + model.needsReloading() : ""));
     if ((model != null) && (model.needsReloading())) {
       reloadSession.addChangedModel(model);
@@ -60,7 +63,7 @@ class ModelFileProcessor extends EventProcessor {
 
   @Override
   protected void processCreate(VFileEvent event, ReloadSession reloadSession) {
-    IFile ifile = FileSystem.getFile(event.getPath());
+    IFile ifile = FileSystem.getInstance().getFileByPath(event.getPath());
     SModelDescriptor model = SModelRepository.getInstance().findModel(ifile);
     if (model == null) {
       VirtualFile vfile = refreshAndGetVFile(event);
@@ -70,7 +73,7 @@ class ModelFileProcessor extends EventProcessor {
   }
 
   private void fileDeleted(String path, ReloadSession reloadSession) {
-    IFile ifile = FileSystem.getFile(path);
+    IFile ifile = FileSystem.getInstance().getFileByPath(path);
     final SModelDescriptor model = SModelRepository.getInstance().findModel(ifile);
     if (model != null) {
       reloadSession.addDeletedModelFilePath(path);

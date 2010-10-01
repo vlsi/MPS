@@ -21,6 +21,7 @@ import jetbrains.mps.vfs.IFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -39,7 +40,7 @@ public class ModelRefCreator {
     if (longName == null) return null;
 
     String namespace = NameUtil.namespaceFromLongName(longName);
-    namespace = namespace.replace(File.separatorChar, '.').replace('/', '.');
+    namespace = NameUtil.namespaceFromPath(namespace);
 
     if (namespacePrefix != null && namespacePrefix.length() > 0) {
       namespace = namespacePrefix + ((namespace.length() > 0) ? "." + namespace : "");
@@ -49,7 +50,7 @@ public class ModelRefCreator {
 
   private static SModelReference getFileUID(IFile modelFile) {
     try {
-      String secondLine = FileUtil.readLine(modelFile.openReader(), 1);
+      String secondLine = FileUtil.readLine(new InputStreamReader(modelFile.openInputStream()), 1);
       if (secondLine == null) {
         return null;
       }

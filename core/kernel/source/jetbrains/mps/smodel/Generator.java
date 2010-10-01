@@ -27,7 +27,6 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.*;
 import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.vfs.IFile;
 
-import java.io.File;
 import java.net.URL;
 import java.util.*;
 
@@ -242,7 +241,7 @@ public class Generator extends AbstractModule {
     return mySourceLanguage.isCompileInMPS();
   }
 
-  public File getBundleHome() {
+  public IFile getBundleHome() {
     return null;
   }
 

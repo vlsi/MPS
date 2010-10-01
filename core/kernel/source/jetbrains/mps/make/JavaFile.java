@@ -19,6 +19,7 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
 
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class JavaFile {
   private IFile myFile;
@@ -39,7 +40,7 @@ public class JavaFile {
 
   String getContents() {
     try {
-      return FileUtil.read(myFile.openReader());
+      return FileUtil.read(new InputStreamReader(myFile.openInputStream()));
     } catch (IOException e) {
       throw new RuntimeException(e);
     }

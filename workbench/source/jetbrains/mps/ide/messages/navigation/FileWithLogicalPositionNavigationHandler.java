@@ -10,6 +10,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.messages.FileWithLogicalPosition;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 
 import java.io.File;
 
@@ -23,8 +24,7 @@ import java.io.File;
 public class FileWithLogicalPositionNavigationHandler implements INavigationHandler<FileWithLogicalPosition> {
   @Override
   public void navigate(Project project, FileWithLogicalPosition pos, boolean focus, boolean select) {
-    File ioFile = pos.getFile().toFile();
-    VirtualFile vf = LocalFileSystem.getInstance().refreshAndFindFileByIoFile(ioFile);
+    VirtualFile vf = VirtualFileUtils.getVirtualFile(pos.getFile());
 
     if (vf == null) return;
 

@@ -73,7 +73,7 @@ public class TraceInfoCache extends BaseModelCache<DebugInfo> {
       LOG.assertLog(false, "Can not generate trace info for a packaged module.");
     }
 
-    return FileSystem.getFile(outputPath);
+    return FileSystem.getInstance().getFileByPath(outputPath);
   }
 
   public static TraceInfoCache getInstance() {

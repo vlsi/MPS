@@ -54,6 +54,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import java.io.CharArrayReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.HashMap;
 import java.util.Map;
@@ -195,7 +196,7 @@ public class ModelPersistence {
     int modelPersistenceVersion = getModelPersistenceVersion(document);
     IModelReader reader = modelReaders.get(modelPersistenceVersion);
     if (reader == null) {
-      return handleNullReaderForPersistence(" file " + file.getPath());
+      return handleNullReaderForPersistence(" file " + file.getAbsolutePath());
     }
     return reader.readModel(document, modelName, modelStereotype);
   }
@@ -292,7 +293,7 @@ public class ModelPersistence {
     final int[] version = new int[]{-1};
     try {
       SAXParser parser = JDOMUtil.createSAXParser();
-      parser.parse(new InputSource(file.openReader()), new DefaultHandler() {
+      parser.parse(new InputSource(new InputStreamReader(file.openInputStream())), new DefaultHandler() {
         @Override
         public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
           if (version[0] == -1 && MODEL.equals(qName)) {
@@ -364,7 +365,7 @@ public class ModelPersistence {
     LOG.debug("Save model " + model.getSModelReference() + " to file " + file.getAbsolutePath());
 
     if (file.isReadOnly()) {
-      LOG.error("Can't write to " + file.getPath());
+      LOG.error("Can't write to " + file.getAbsolutePath());
       return null;
     }
 

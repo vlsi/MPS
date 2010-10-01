@@ -18,7 +18,7 @@ import org.jdesktop.beansbinding.Property;
 import org.jdesktop.beansbinding.BeanProperty;
 import org.jdesktop.beansbinding.Bindings;
 import java.io.File;
-import jetbrains.mps.vfs.MPSExtentions;
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.ide.NewModuleCheckUtil;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.progress.ProgressManager;
@@ -26,16 +26,11 @@ import com.intellij.openapi.progress.Task;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
-import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.vfs.VFileSystem;
-import jetbrains.mps.vcs.VcsMigrationUtil;
-import java.util.Collections;
-import com.intellij.openapi.application.ModalityState;
 
 public class NewDevKitDialogContentPane extends JPanel {
   public NewDevKitDialogContentPane myThis;
@@ -221,7 +216,7 @@ public class NewDevKitDialogContentPane extends JPanel {
         indicator.setIndeterminate(true);
         ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {
-            localResult[0] = myThis.createNewDevKit(new File(devkitPath));
+            localResult[0] = myThis.createNewDevKit(FileSystem.getInstance().getFileByPath(devkitPath));
           }
         });
       }
@@ -244,22 +239,12 @@ public class NewDevKitDialogContentPane extends JPanel {
     }
   }
 
-  /*package*/ DevKit createNewDevKit(final File devkitPath) {
-    File dir = new File(myThis.getDevkitDir());
-    if (!(dir.exists())) {
-      dir.mkdirs();
-    }
+  /*package*/ DevKit createNewDevKit(final IFile devkitFile) {
     DevkitDescriptor descriptor = new DevkitDescriptor();
     descriptor.setNamespace(myThis.getDevkitName());
-    FileSystemFile devkitFile = new FileSystemFile(devkitPath);
+    devkitFile.createNewFile();
     DevkitDescriptorPersistence.saveDevKitDescriptor(descriptor, devkitFile);
     DevKit devkit = myThis.getProject().addProjectDevKit(devkitFile);
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
-      public void run() {
-        VirtualFile file = VFileSystem.refreshAndGetFile(devkitPath);
-        VcsMigrationUtil.getHandler().addFilesToVcs(Collections.singletonList(file), false, true);
-      }
-    }, ModalityState.NON_MODAL);
     return devkit;
   }
 }

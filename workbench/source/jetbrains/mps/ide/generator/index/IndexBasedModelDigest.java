@@ -24,6 +24,7 @@ import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.FileBasedIndex.ValueProcessor;
 import jetbrains.mps.generator.ModelDigestHelper;
 import jetbrains.mps.generator.ModelDigestHelper.DigestProvider;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -46,7 +47,7 @@ public class IndexBasedModelDigest implements ApplicationComponent {
       @Override
       public Map<String, String> getGenerationHashes(final IOperationContext operationContext, @NotNull IFile modelFile) {
         try {
-          VirtualFile file = modelFile.toVirtualFile();
+          VirtualFile file = VirtualFileUtils.getVirtualFile(modelFile);
           if (file == null) return null;
 
           final Map<String, String>[] valueArray = new Map[]{null};

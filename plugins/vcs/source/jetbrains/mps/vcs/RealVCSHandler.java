@@ -17,14 +17,11 @@ package jetbrains.mps.vcs;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.vcs.history.VcsRevisionNumber;
-import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.List;
 
 public class RealVCSHandler implements VCSHandler, ApplicationComponent {
   public void addSuspiciousModule(AbstractModule abstractModule, boolean isInConflict) {
@@ -35,15 +32,7 @@ public class RealVCSHandler implements VCSHandler, ApplicationComponent {
     SuspiciousModelIndex.instance().addModel(modelDescriptor, isInConflict);
   }
 
-  public void addFilesToVcs(List<VirtualFile> files, boolean recursive, boolean silently) {
-    VCSUtil.addFilesToVcs(files, recursive, silently);
-  }
-
-  public void removeFromVcs(List<VirtualFile> files, boolean silently) {
-    VCSUtil.removeFilesFromVcs(files, silently);
-  }
-
-  public VcsRevisionNumber getRevisionNumber(VirtualFile file) {
+  public VcsRevisionNumber getRevisionNumber(IFile file) {
     return VCSUtil.getRevisionNumber(file);
   }
 

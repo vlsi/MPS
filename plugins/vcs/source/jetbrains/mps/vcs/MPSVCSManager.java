@@ -21,23 +21,20 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.*;
 import com.intellij.openapi.vcs.actions.VcsContextFactory;
 import com.intellij.openapi.vcs.changes.*;
-import com.intellij.openapi.vcs.impl.ProjectLevelVcsManagerImpl;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.generator.CompilationListener;
-import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationListener;
+import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.io.File;
-import java.util.*;
+import java.util.Collection;
+import java.util.List;
 
 public class MPSVCSManager implements ProjectComponent {
   private static final Logger LOG = Logger.getLogger(MPSVCSManager.class);
@@ -49,30 +46,12 @@ public class MPSVCSManager implements ProjectComponent {
   private final Project myProject;
   private final ProjectLevelVcsManager myManager;
   private final ChangeListManager myChangeListManager;
-  private final VcsShowConfirmationOptionImpl myRemoveOption;
-  private final VcsShowConfirmationOptionImpl myAddOption;
 
   private boolean myIsInitialized = false;
   private volatile boolean myChangeListManagerInitialized = false;
-  private final Object myMonitor = new Object();
-
-  private final VcsOperationsScheduler<AddOperation> myAddOperationScheduler = new VcsOperationsScheduler<AddOperation>(true) {
-    public void processTask(AddOperation operation) {
-      perform(operation);
-    }
-  };
-  private final VcsOperationsScheduler<RemoveOperation> myRemoveOperationScheduler = new VcsOperationsScheduler<RemoveOperation>(true) {
-    public void processTask(RemoveOperation operation) {
-      perform(operation);
-    }
-  };
 
   private final GenerationListener myGenerationListener = new GenerationWatcher();
-  private final CompilationListener myCompilationListener = new CompilationWatcher();
-  private final SModelRepositoryListener myModelRepositoryListener = new MySModelRepositoryListener();
-  private final NewModelSavedListener myNewModelSavedListener = new NewModelSavedListener();
-  private final GlobalModelSavedListener myGlobalModelSavedListener = new GlobalModelSavedListener();
-    private final ChangeListAdapter myChangeListUpdateListener = new ChangeListAdapter() {
+  private final ChangeListAdapter myChangeListUpdateListener = new ChangeListAdapter() {
     public void changeListUpdateDone() {
       myChangeListManagerInitialized = true;
     }
@@ -82,46 +61,6 @@ public class MPSVCSManager implements ProjectComponent {
     myProject = project;
     myManager = manager;
     myChangeListManager = clmanager;
-    myAddOption = ((ProjectLevelVcsManagerImpl) myManager).getConfirmation(VcsConfiguration.StandardConfirmation.ADD);
-    myRemoveOption = ((ProjectLevelVcsManagerImpl) myManager).getConfirmation(VcsConfiguration.StandardConfirmation.REMOVE);
-  }
-
-  private boolean isProjectUnderVcs() {
-    return myManager.getAllVersionedRoots().length > 0;
-  }
-
-  public void deleteFromDiskAndRemoveFromVcs(final List<File> files, final boolean silently) {
-    if (files.size() == 0) return;
-    for (File f : files) {
-      f.delete();
-    }
-    if (!isProjectUnderVcs()) return;
-    removeFromVcs(files, silently);
-  }
-
-  public void deleteFromDiskAndRemoveFromVcs(final Set<VirtualFile> virtualFiles, final boolean silently) {
-    List<File> files = new ArrayList<File>();
-    for (VirtualFile f : virtualFiles) {
-      files.add(VFileSystem.toFile(f));
-    }
-    deleteFromDiskAndRemoveFromVcs(files, silently);
-  }
-
-  public void removeFromVcs(List<File> files, boolean silently) {
-    myRemoveOperationScheduler.invokeLater(new RemoveOperation(files, myManager, myProject,
-      myRemoveOption, silently));
-  }
-
-  public void addFilesToVcs(final List<File> files, final boolean recursive, final boolean silently) {
-    if ((files.size() == 0) || (!isProjectUnderVcs())) return;
-    myAddOperationScheduler.invokeLater(new AddOperation(files, myManager, myProject,
-      myAddOption, recursive, silently));
-  }
-
-  public void addVirtualFilesToVcs(final Set<VirtualFile> files, final boolean recursive, final boolean silently) {
-    if (files.size() == 0 || (!isProjectUnderVcs())) return;
-    myAddOperationScheduler.invokeLater(new AddOperation(files, myManager, myProject,
-      myAddOption, recursive, silently));
   }
 
   boolean isInConflict(final VirtualFile vfile, boolean synchronously) {
@@ -150,16 +89,6 @@ public class MPSVCSManager implements ProjectComponent {
     return builder.isInConflict();
   }
 
-  private void perform(final VcsOperation operation) {
-    operation.runPerform(new Runnable() {
-      public void run() {
-        synchronized (myMonitor) {
-          operation.performInternal();
-        }
-      }
-    });
-  }
-
   public void projectOpened() {
   }
 
@@ -186,44 +115,16 @@ public class MPSVCSManager implements ProjectComponent {
 
   public void initComponent() {
     myProject.getComponent(GeneratorManager.class).addGenerationListener(myGenerationListener);
-    myProject.getComponent(GeneratorManager.class).addCompilationListener(myCompilationListener);
-    SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
-    GlobalSModelEventsManager.getInstance().addGlobalModelListener(myGlobalModelSavedListener);
     myChangeListManager.addChangeListListener(myChangeListUpdateListener);
   }
 
   public void disposeComponent() {
     myProject.getComponent(GeneratorManager.class).removeGenerationListener(myGenerationListener);
-    myProject.getComponent(GeneratorManager.class).removeCompilationListener(myCompilationListener);
-    GlobalSModelEventsManager.getInstance().removeGlobalModelListener(myGlobalModelSavedListener);
-    SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
     myChangeListManager.removeChangeListListener(myChangeListUpdateListener);
-
-    myAddOperationScheduler.removeProcessingBan();
-    myRemoveOperationScheduler.removeProcessingBan();
   }
 
   public List<VirtualFile> getUnversionedFilesFromChangeListManager() {
     return ChangeListManagerImpl.getInstanceImpl(myProject).getUnversionedFiles();
-  }
-
-  private class NewModelSavedListener extends SModelAdapter {
-    public void modelSaved(SModelDescriptor sm) {
-      if (!(sm instanceof EditableSModelDescriptor)) return;
-      final IFile modelFile = ((EditableSModelDescriptor) sm).getModelFile();
-      if (modelFile == null) return;
-      addFilesToVcs(Collections.singletonList(modelFile.toFile()), false, false);
-      sm.removeModelListener(this);
-    }
-  }
-
-  private class GlobalModelSavedListener extends SModelAdapter {
-    public void modelSaved(SModelDescriptor sm) {
-      if (!(sm instanceof EditableSModelDescriptor)) return;
-      final IFile modelFile = ((EditableSModelDescriptor) sm).getModelFile();
-      if (modelFile == null) return;
-      VcsDirtyScopeManager.getInstance(myProject).fileDirty(VFileSystem.refreshAndGetFile(modelFile));
-    }
   }
 
   private class GenerationWatcher implements GenerationListener {
@@ -234,40 +135,12 @@ public class MPSVCSManager implements ProjectComponent {
           LOG.info("Model " + smodelDescriptor + " reloaded from disk.");
         }
       }
-      myAddOperationScheduler.banProcessing();
-      myRemoveOperationScheduler.banProcessing();
     }
 
     public void modelsGenerated(List<SModelDescriptor> models, boolean success) {
-
     }
 
     public void afterGeneration(List<SModelDescriptor> inputModels, GenerationOptions options, IOperationContext operationContext) {
-      myAddOperationScheduler.removeProcessingBan();
-      myRemoveOperationScheduler.removeProcessingBan();
-    }
-  }
-
-  private class CompilationWatcher implements CompilationListener {
-    public void beforeModelsCompiled(List<SModelDescriptor> models, boolean success) {
-      myRemoveOperationScheduler.removeAllProcessingBans();
-    }
-
-    public void afterModelsCompiled(List<SModelDescriptor> models, boolean success) {
-
-    }
-  }
-
-  private class MySModelRepositoryListener extends SModelRepositoryAdapter {
-    public void modelCreated(SModelDescriptor modelDescriptor) {
-      modelDescriptor.addModelListener(myNewModelSavedListener);
-    }
-
-    public void modelFileChanged(SModelDescriptor modelDescriptor, IFile ifrom) {
-      if (ifrom == null) return;
-      VirtualFile from = VFileSystem.getFile(ifrom);
-      deleteFromDiskAndRemoveFromVcs(Collections.singleton(from), true);
-      modelDescriptor.addModelListener(myNewModelSavedListener);
     }
   }
 

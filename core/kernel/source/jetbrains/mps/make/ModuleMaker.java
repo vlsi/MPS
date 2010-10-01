@@ -30,7 +30,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.MPSExtentions;
+import jetbrains.mps.project.MPSExtentions;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.ClassFile;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
@@ -64,7 +64,7 @@ public class ModuleMaker {
         if (indicator.isCanceled()) break;
 
         indicator.setText2("Cleaning " + m.getModuleFqName() + "...");
-        FileUtil.delete(m.getClassesGen().toFile());
+        FileUtil.delete(new File(m.getClassesGen().getAbsolutePath()));
       }
       invalidateClasspath(modules);
     } finally {
@@ -133,7 +133,7 @@ public class ModuleMaker {
 
       ModuleSources sources = getModuleSources(m);
 
-      for (IFile f : sources.getFilesToDelete()) {
+      for (File f : sources.getFilesToDelete()) {
         f.delete();
         modulesWithRemovals.add(m);
       }
@@ -163,10 +163,12 @@ public class ModuleMaker {
         fqName = fqName.substring(0, fqName.length() - toCopy.getFile().getName().length());
         String path = fqName.replace('/', File.separatorChar) + toCopy.getFile().getName();
 
-        FileUtil.copyFile(
-          toCopy.getFile().toFile(),
-          module.getClassesGen().child(path).toFile()
-        );
+        if (new File(toCopy.getFile().getAbsolutePath()).exists()) {
+          FileUtil.copyFile(
+            new File(toCopy.getFile().getAbsolutePath()),
+            new File(module.getClassesGen().child(path).getAbsolutePath())
+          );
+        }
       }
     }
 
@@ -205,7 +207,7 @@ public class ModuleMaker {
     Map<IModule, Set<IModule>> backDependencies = new HashMap<IModule, Set<IModule>>();
 
     for (IModule m : modules) {
-      for (IModule dep : (List<IModule>) new ArrayList<IModule>(m.getDependenciesManager().getDependOnModules())) {
+      for (IModule dep : new ArrayList<IModule>(m.getDependenciesManager().getDependOnModules())) {
         if (!backDependencies.containsKey(dep)) {
           backDependencies.put(dep, new HashSet<IModule>());
         }
@@ -284,7 +286,7 @@ public class ModuleMaker {
       if (cr.getErrors() != null) {
         for (final CategorizedProblem cp : cr.getErrors()) {
           String fileName = new String(cp.getOriginatingFileName());
-          final String fqName = fileName.substring(0, fileName.length() - MPSExtentions.DOT_JAVAFILE.length()).replace(File.separatorChar, '.');
+          final String fqName = NameUtil.namespaceFromPath(fileName.substring(0, fileName.length() - MPSExtentions.DOT_JAVAFILE.length()));
           classesWithErrors.add(fqName);
 
           IModule containingModule = myContainingModules.get(fqName);
@@ -323,9 +325,9 @@ public class ModuleMaker {
         }
         if (myContainingModules.containsKey(containerClassName)) {
           IModule m = myContainingModules.get(containerClassName);
-          File classesGen = m.getClassesGen().toFile();
+          File classesGen = new File(m.getClassesGen().getAbsolutePath());
           String packageName = NameUtil.namespaceFromLongName(fqName);
-          File outputDir = new File(classesGen + File.separator + packageName.replace('.', File.separatorChar));
+          File outputDir = new File(classesGen + File.separator + NameUtil.pathFromNamespace(packageName));
           if (!outputDir.exists()) {
             if (!outputDir.mkdirs()) {
               throw new RuntimeException("Can't create " + outputDir.getPath() + " directory");

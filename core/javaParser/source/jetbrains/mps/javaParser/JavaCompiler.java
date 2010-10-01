@@ -29,7 +29,7 @@ import jetbrains.mps.reloading.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.vfs.MPSExtentions;
+import jetbrains.mps.project.MPSExtentions;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.core.compiler.IProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
@@ -86,7 +86,7 @@ public class JavaCompiler {
     if (myPrefix == null) {
       return null; //no source files detected
     }
-    String prefixPath = myPrefix.replace('.', File.separatorChar);
+    String prefixPath = NameUtil.pathFromNamespace(myPrefix);
     String sourcePath = mySourceDir.getPath();
     if (prefixPath.endsWith(File.separator)) {
       prefixPath = prefixPath.substring(0, prefixPath.length() - 1);
@@ -320,7 +320,6 @@ public class JavaCompiler {
           } else {
             String message = problem.getMessage();
             LOG.warning(message + " (line: " + problem.getSourceLineNumber() + ")");
-            //, new FileWithPosition(javaFile.getFile(), cp.getSourceStart()));
           }
         }
       }

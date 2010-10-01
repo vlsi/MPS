@@ -13,7 +13,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import java.io.File;
-import jetbrains.mps.vfs.MPSExtentions;
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.IModule;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -48,17 +48,17 @@ public class BuildGeneratorUtil {
   }
 
   public static Solution createSolution(MPSProject mpsProject, String solutionName, String solutionBaseDir) {
-    IFile baseDirFile = FileSystem.getFile(solutionBaseDir);
+    IFile baseDirFile = FileSystem.getInstance().getFileByPath(solutionBaseDir);
     if (!(baseDirFile.exists())) {
       baseDirFile.mkdirs();
     }
     String solutionFilePath = solutionBaseDir + File.separator + solutionName + MPSExtentions.DOT_SOLUTION;
-    final IFile solutionFile = FileSystem.getFile(solutionFilePath);
+    final IFile solutionFile = FileSystem.getInstance().getFileByPath(solutionFilePath);
     final Solution solution;
     if (solutionFile.exists()) {
       IModule module = ModelAccess.instance().runReadAction(new Computable<IModule>() {
         public IModule compute() {
-          return MPSModuleRepository.getInstance().getModuleByFile(solutionFile.toFile());
+          return MPSModuleRepository.getInstance().getModuleByFile(solutionFile);
         }
       });
       if (module instanceof Solution) {

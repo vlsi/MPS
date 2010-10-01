@@ -19,6 +19,8 @@ import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.util.io.ZipUtil;
 import jetbrains.mps.build.ant.MpsWorker.LogLogger;
 import jetbrains.mps.build.ant.brokenRefs.TestBrokenReferencesWorker;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelRepository;
 import junit.framework.TestCase;
 
 import java.io.File;
@@ -30,7 +32,7 @@ public class BrokenReferencesTestTest extends TestCase {
   public void testFailOnBrokenReferences() throws IOException {
     String solutionName = "brokenSolution";
     URL resource = BrokenReferencesTestTest.class.getResource(solutionName + ".zip");
-    File destdir = FileUtil.createTempDirectory(solutionName, "");
+    final File destdir = FileUtil.createTempDirectory(solutionName, "");
     ZipUtil.extract(new File(resource.getFile()), destdir, new FilenameFilter() {
       public boolean accept(File dir, String name) {
         return true;
@@ -53,7 +55,13 @@ public class BrokenReferencesTestTest extends TestCase {
     };
     worker.work();
 
-    FileUtil.delete(destdir);
+    ModelAccess.instance().runCommandInEDT(new Runnable() {
+      @Override
+      public void run() {
+        SModelRepository.getInstance().saveAll();
+        FileUtil.delete(destdir);
+      }
+    });
 
     assertTrue("Did not find any broken references in solution.", brokenReferenceFound[0]);
   }

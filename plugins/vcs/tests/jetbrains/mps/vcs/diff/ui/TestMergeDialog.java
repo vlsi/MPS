@@ -109,7 +109,7 @@ public class TestMergeDialog {
         }
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            IFile iFile = FileSystem.getFile(args[3]);
+            IFile iFile = FileSystem.getInstance().getFileByPath(args[3]);
             if (!iFile.exists()) iFile.createNewFile();
             ModelPersistence.saveModel(result, iFile, true, false);
           }

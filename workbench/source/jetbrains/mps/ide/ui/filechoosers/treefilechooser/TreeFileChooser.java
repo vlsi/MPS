@@ -20,9 +20,10 @@ import com.intellij.openapi.fileChooser.FileChooserDialog;
 import com.intellij.openapi.fileChooser.FileChooserFactory;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.vfs.FileSystemFile;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -48,7 +49,7 @@ public class TreeFileChooser {
   /////////////////////////////
 
   @NotNull
-  private static IFile ourInitialSelectedFile = new FileSystemFile(PathManager.getHomePath());
+  private static IFile ourInitialSelectedFile = FileSystem.getInstance().getFileByPath(PathManager.getHomePath());
 
   private int myMode = MODE_FILES;
   private IFileFilter myFileFilter = ALL_FILES_FILTER;
@@ -123,7 +124,7 @@ public class TreeFileChooser {
         if (file.isDirectory() && myDirectoriesAlwaysVisible) {
           return true;
         }
-        return myFileFilter.accept(new FileSystemFile(file.getPath()));
+        return myFileFilter.accept(FileSystem.getInstance().getFileByPath(file.getPath()));
       }
     };
     descriptor.setTitle(myTitle == null ? "Select File" : myTitle);
@@ -131,9 +132,9 @@ public class TreeFileChooser {
 
     FileChooserDialog dialog = FileChooserFactory.getInstance().createFileChooser(descriptor, owner);
 
-    VirtualFile selection = LocalFileSystem.getInstance().findFileByIoFile(ourInitialSelectedFile.toFile());
+    VirtualFile selection = VirtualFileUtils.getVirtualFile(ourInitialSelectedFile);
     for (VirtualFile file : dialog.choose(selection, null)) {
-      res.add(new FileSystemFile(file.getPath()));
+      res.add(FileSystem.getInstance().getFileByPath(file.getPath()));
     }
 
     if (!res.isEmpty()) ourInitialSelectedFile = res.get(0);

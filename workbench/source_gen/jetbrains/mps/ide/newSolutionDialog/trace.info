@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="NewSolutionDialogContentPane.java" startLine="46" startPosition="32" endLine="52" endPosition="3" unitName="jetbrains.mps.ide.newSolutionDialog.NewSolutionDialogContentPane$1" />
+  <unitInfo fileName="NewSolutionDialog.java" startLine="12" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.ide.newSolutionDialog.NewSolutionDialog" />
+  <unitInfo fileName="NewSolutionDialogContentPane.java" startLine="33" startPosition="0" endLine="259" endPosition="0" unitName="jetbrains.mps.ide.newSolutionDialog.NewSolutionDialogContentPane" />
+  <root nodeId="1203593910897">
+    <nodeInfo nodeId="1203677539392" fileName="NewSolutionDialogContentPane.java" startLine="62" startPosition="31" endLine="63" endPosition="31" />
+    <nodeInfo nodeId="1203677557221" fileName="NewSolutionDialogContentPane.java" startLine="63" startPosition="31" endLine="64" endPosition="42" />
+    <nodeInfo nodeId="1237027937420" fileName="NewSolutionDialogContentPane.java" startLine="64" startPosition="42" endLine="65" endPosition="37" />
+    <nodeInfo nodeId="1237027937425" fileName="NewSolutionDialogContentPane.java" startLine="65" startPosition="37" endLine="66" endPosition="37" />
+    <nodeInfo nodeId="3734045384532741057" fileName="NewSolutionDialogContentPane.java" startLine="201" startPosition="49" endLine="202" endPosition="66" />
+    <nodeInfo nodeId="1203609667930" fileName="NewSolutionDialogContentPane.java" startLine="202" startPosition="66" endLine="203" endPosition="13" />
+    <nodeInfo nodeId="3734045384532741050" fileName="NewSolutionDialogContentPane.java" startLine="205" startPosition="49" endLine="206" endPosition="61" />
+    <nodeInfo nodeId="1203609685687" fileName="NewSolutionDialogContentPane.java" startLine="206" startPosition="61" endLine="207" endPosition="13" />
+    <nodeInfo nodeId="3734045384532741046" fileName="NewSolutionDialogContentPane.java" startLine="209" startPosition="93" endLine="210" endPosition="65" />
+    <nodeInfo nodeId="1203609715274" fileName="NewSolutionDialogContentPane.java" startLine="210" startPosition="65" endLine="211" endPosition="13" />
+    <nodeInfo nodeId="1203609752877" fileName="NewSolutionDialogContentPane.java" startLine="212" startPosition="5" endLine="213" endPosition="126" />
+    <nodeInfo nodeId="1203609799597" fileName="NewSolutionDialogContentPane.java" startLine="213" startPosition="126" endLine="214" endPosition="47" />
+    <nodeInfo nodeId="1203609837750" fileName="NewSolutionDialogContentPane.java" startLine="214" startPosition="47" endLine="215" endPosition="36" />
+    <nodeInfo nodeId="4015801747712958710" fileName="NewSolutionDialogContentPane.java" startLine="215" startPosition="36" endLine="216" endPosition="106" />
+    <nodeInfo nodeId="4015801747712958719" fileName="NewSolutionDialogContentPane.java" startLine="217" startPosition="26" endLine="218" endPosition="47" />
+    <nodeInfo nodeId="4015801747712958721" fileName="NewSolutionDialogContentPane.java" startLine="218" startPosition="47" endLine="219" endPosition="13" />
+    <nodeInfo nodeId="3734045384532741056" fileName="NewSolutionDialogContentPane.java" startLine="221" startPosition="23" endLine="222" endPosition="62" />
+    <nodeInfo nodeId="1203611204703" fileName="NewSolutionDialogContentPane.java" startLine="222" startPosition="62" endLine="223" endPosition="13" />
+    <nodeInfo nodeId="3734045384532741042" fileName="NewSolutionDialogContentPane.java" startLine="224" startPosition="5" endLine="225" endPosition="33" />
+    <nodeInfo nodeId="1218129046623" fileName="NewSolutionDialogContentPane.java" startLine="227" startPosition="61" endLine="228" endPosition="41" />
+    <nodeInfo nodeId="1218130121689" fileName="NewSolutionDialogContentPane.java" startLine="230" startPosition="29" endLine="231" endPosition="119" />
+    <nodeInfo nodeId="3734045384532741037" fileName="NewSolutionDialogContentPane.java" startLine="238" startPosition="31" endLine="239" endPosition="33" />
+    <nodeInfo nodeId="5890305283801268145" fileName="NewSolutionDialogContentPane.java" startLine="242" startPosition="78" endLine="243" endPosition="101" />
+    <nodeInfo nodeId="5890305283801268166" fileName="NewSolutionDialogContentPane.java" startLine="243" startPosition="101" endLine="244" endPosition="77" />
+    <nodeInfo nodeId="5890305283801268161" fileName="NewSolutionDialogContentPane.java" startLine="244" startPosition="77" endLine="245" endPosition="20" />
+    <nodeInfo nodeId="1203679196194" fileName="NewSolutionDialogContentPane.java" startLine="249" startPosition="38" endLine="250" endPosition="13" />
+    <nodeInfo nodeId="1203676097254" fileName="NewSolutionDialogContentPane.java" startLine="251" startPosition="5" endLine="252" endPosition="98" />
+    <nodeInfo nodeId="1203676147982" fileName="NewSolutionDialogContentPane.java" startLine="252" startPosition="98" endLine="253" endPosition="73" />
+    <nodeInfo nodeId="1203676214757" fileName="NewSolutionDialogContentPane.java" startLine="254" startPosition="96" endLine="255" endPosition="64" />
+    <nodeInfo nodeId="1203679190577" fileName="NewSolutionDialogContentPane.java" startLine="248" startPosition="41" endLine="251" endPosition="5" />
+    <nodeInfo nodeId="1203676180745" fileName="NewSolutionDialogContentPane.java" startLine="253" startPosition="73" endLine="256" endPosition="5" />
+    <nodeInfo nodeId="1203609641409" fileName="NewSolutionDialogContentPane.java" startLine="200" startPosition="27" endLine="204" endPosition="5" />
+    <nodeInfo nodeId="1203609669182" fileName="NewSolutionDialogContentPane.java" startLine="204" startPosition="5" endLine="208" endPosition="5" />
+    <nodeInfo nodeId="1203609690220" fileName="NewSolutionDialogContentPane.java" startLine="208" startPosition="5" endLine="212" endPosition="5" />
+    <nodeInfo nodeId="4015801747712958717" fileName="NewSolutionDialogContentPane.java" startLine="216" startPosition="106" endLine="220" endPosition="5" />
+    <nodeInfo nodeId="1203611190216" fileName="NewSolutionDialogContentPane.java" startLine="220" startPosition="5" endLine="224" endPosition="5" />
+    <nodeInfo nodeId="1218130113685" fileName="NewSolutionDialogContentPane.java" startLine="229" startPosition="62" endLine="233" endPosition="0" />
+    <nodeInfo nodeId="1203599986635" fileName="NewSolutionDialogContentPane.java" startLine="237" startPosition="0" endLine="241" endPosition="0" />
+    <nodeInfo nodeId="1218130113684" fileName="NewSolutionDialogContentPane.java" startLine="228" startPosition="41" endLine="233" endPosition="11" />
+    <nodeInfo nodeId="1203608542333" fileName="NewSolutionDialogContentPane.java" startLine="241" startPosition="0" endLine="247" endPosition="0" />
+    <nodeInfo nodeId="1218129026239" fileName="NewSolutionDialogContentPane.java" startLine="226" startPosition="107" endLine="235" endPosition="0" />
+    <nodeInfo nodeId="1218128973228" fileName="NewSolutionDialogContentPane.java" startLine="225" startPosition="33" endLine="235" endPosition="7" />
+    <nodeInfo nodeId="1203676067041" fileName="NewSolutionDialogContentPane.java" startLine="247" startPosition="0" endLine="258" endPosition="0" />
+    <nodeInfo nodeId="1203599983021" fileName="NewSolutionDialogContentPane.java" startLine="199" startPosition="0" endLine="237" endPosition="0" />
+    <scopeInfo nodeId="1218130113686" fileName="NewSolutionDialogContentPane.java" startLine="230" startPosition="29" endLine="231" endPosition="119" />
+    <scopeInfo nodeId="1203599986637" fileName="NewSolutionDialogContentPane.java" startLine="238" startPosition="31" endLine="239" endPosition="33" />
+    <scopeInfo nodeId="1203679190578" fileName="NewSolutionDialogContentPane.java" startLine="249" startPosition="38" endLine="250" endPosition="13" />
+    <scopeInfo nodeId="1203676180746" fileName="NewSolutionDialogContentPane.java" startLine="254" startPosition="96" endLine="255" endPosition="64" />
+    <scopeInfo nodeId="1203609641410" fileName="NewSolutionDialogContentPane.java" startLine="201" startPosition="49" endLine="203" endPosition="13" />
+    <scopeInfo nodeId="1203609669183" fileName="NewSolutionDialogContentPane.java" startLine="205" startPosition="49" endLine="207" endPosition="13" />
+    <scopeInfo nodeId="1203609690221" fileName="NewSolutionDialogContentPane.java" startLine="209" startPosition="93" endLine="211" endPosition="13" />
+    <scopeInfo nodeId="4015801747712958718" fileName="NewSolutionDialogContentPane.java" startLine="217" startPosition="26" endLine="219" endPosition="13" />
+    <scopeInfo nodeId="1203611190217" fileName="NewSolutionDialogContentPane.java" startLine="221" startPosition="23" endLine="223" endPosition="13" />
+    <scopeInfo nodeId="1203608542335" fileName="NewSolutionDialogContentPane.java" startLine="242" startPosition="78" endLine="245" endPosition="20">
+      <varInfo nodeId="5890305283801268146" varName="solution" />
+    </scopeInfo>
+    <scopeInfo nodeId="1203593931550" fileName="NewSolutionDialogContentPane.java" startLine="62" startPosition="31" endLine="66" endPosition="37" />
+    <scopeInfo nodeId="1218130113685" fileName="NewSolutionDialogContentPane.java" startLine="229" startPosition="62" endLine="233" endPosition="0" />
+    <scopeInfo nodeId="1203599986635" fileName="NewSolutionDialogContentPane.java" startLine="237" startPosition="0" endLine="241" endPosition="0" />
+    <scopeInfo nodeId="1218129026245" fileName="NewSolutionDialogContentPane.java" startLine="227" startPosition="61" endLine="233" endPosition="11" />
+    <scopeInfo nodeId="1203608542333" fileName="NewSolutionDialogContentPane.java" startLine="241" startPosition="0" endLine="247" endPosition="0">
+      <varInfo nodeId="1203608561247" varName="solutionDescriptorFile" />
+    </scopeInfo>
+    <scopeInfo nodeId="1203676067043" fileName="NewSolutionDialogContentPane.java" startLine="248" startPosition="41" endLine="256" endPosition="5">
+      <varInfo nodeId="1203676147983" varName="prefix" />
+      <varInfo nodeId="1203676097255" varName="path" />
+    </scopeInfo>
+    <scopeInfo nodeId="1218129026239" fileName="NewSolutionDialogContentPane.java" startLine="226" startPosition="107" endLine="235" endPosition="0">
+      <varInfo nodeId="1218129026242" varName="indicator" />
+    </scopeInfo>
+    <scopeInfo nodeId="1203676067041" fileName="NewSolutionDialogContentPane.java" startLine="247" startPosition="0" endLine="258" endPosition="0" />
+    <scopeInfo nodeId="1203599983023" fileName="NewSolutionDialogContentPane.java" startLine="200" startPosition="27" endLine="235" endPosition="7">
+      <varInfo nodeId="4015801747712958711" varName="message" />
+      <varInfo nodeId="1203609837751" varName="dir" />
+      <varInfo nodeId="1203609799598" varName="file" />
+      <varInfo nodeId="1203609752878" varName="descriptorPath" />
+    </scopeInfo>
+    <scopeInfo nodeId="1203599983021" fileName="NewSolutionDialogContentPane.java" startLine="199" startPosition="0" endLine="237" endPosition="0" />
+    <unitInfo nodeId="1218130113685" fileName="NewSolutionDialogContentPane.java" startLine="229" startPosition="50" endLine="233" endPosition="9" unitName="jetbrains.mps.ide.newSolutionDialog.NewSolutionDialogContentPane$3" />
+    <unitInfo nodeId="1218128984797" fileName="NewSolutionDialogContentPane.java" startLine="226" startPosition="42" endLine="235" endPosition="5" unitName="jetbrains.mps.ide.newSolutionDialog.NewSolutionDialogContentPane$2" />
+  </root>
+  <root nodeId="5890305283801268194">
+    <nodeInfo nodeId="423413075176930145" fileName="NewModuleUtil.java" startLine="16" startPosition="90" endLine="17" endPosition="33" />
+    <nodeInfo nodeId="5890305283801268220" fileName="NewModuleUtil.java" startLine="17" startPosition="33" endLine="18" endPosition="69" />
+    <nodeInfo nodeId="5890305283801268225" fileName="NewModuleUtil.java" startLine="18" startPosition="69" endLine="19" endPosition="50" />
+    <nodeInfo nodeId="5890305283801268230" fileName="NewModuleUtil.java" startLine="19" startPosition="50" endLine="20" endPosition="45" />
+    <nodeInfo nodeId="5890305283801268236" fileName="NewModuleUtil.java" startLine="20" startPosition="45" endLine="21" endPosition="82" />
+    <nodeInfo nodeId="5890305283801268249" fileName="NewModuleUtil.java" startLine="21" startPosition="82" endLine="22" endPosition="42" />
+    <nodeInfo nodeId="5890305283801268254" fileName="NewModuleUtil.java" startLine="22" startPosition="42" endLine="23" endPosition="28" />
+    <nodeInfo nodeId="5890305283801268259" fileName="NewModuleUtil.java" startLine="23" startPosition="28" endLine="24" endPosition="66" />
+    <nodeInfo nodeId="5890305283801268268" fileName="NewModuleUtil.java" startLine="24" startPosition="66" endLine="25" endPosition="54" />
+    <nodeInfo nodeId="5890305283801268275" fileName="NewModuleUtil.java" startLine="25" startPosition="54" endLine="26" endPosition="91" />
+    <nodeInfo nodeId="5890305283801268299" fileName="NewModuleUtil.java" startLine="26" startPosition="91" endLine="27" endPosition="52" />
+    <nodeInfo nodeId="5890305283801268308" fileName="NewModuleUtil.java" startLine="12" startPosition="28" endLine="14" endPosition="3" />
+    <nodeInfo nodeId="5890305283801268195" fileName="NewModuleUtil.java" startLine="15" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="5890305283801268311" fileName="NewModuleUtil.java" startLine="13" startPosition="26" endLine="13" endPosition="26" />
+    <scopeInfo nodeId="5890305283801268308" fileName="NewModuleUtil.java" startLine="12" startPosition="28" endLine="14" endPosition="3" />
+    <scopeInfo nodeId="5890305283801268201" fileName="NewModuleUtil.java" startLine="16" startPosition="90" endLine="27" endPosition="52">
+      <varInfo nodeId="5890305283801268221" varName="solutionDescriptor" />
+      <varInfo nodeId="5890305283801268231" varName="fileName" />
+      <varInfo nodeId="5890305283801268250" varName="modelRoot" />
+    </scopeInfo>
+    <scopeInfo nodeId="5890305283801268195" fileName="NewModuleUtil.java" startLine="15" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="5890305283801268198" varName="project" />
+      <varInfo nodeId="5890305283801268196" varName="solutionFile" />
+    </scopeInfo>
+    <unitInfo nodeId="5890305283801268194" fileName="NewModuleUtil.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.ide.newSolutionDialog.NewModuleUtil" />
+  </root>
+</debugInfo>
+

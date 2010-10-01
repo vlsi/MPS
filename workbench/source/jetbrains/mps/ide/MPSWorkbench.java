@@ -18,8 +18,10 @@ package jetbrains.mps.ide;
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.ide.smodel.WorkbenchModelAccess;
 import jetbrains.mps.ide.undo.WorkbenchUndoHandler;
+import jetbrains.mps.ide.vfs.IdeaFileSystemProvider;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.UndoHelper;
+import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -34,6 +36,9 @@ public class MPSWorkbench implements ApplicationComponent {
 
   @Override
   public void initComponent() {
+    // setup filesystem provider
+    FileSystem.getInstance().setFileSystemProvider(new IdeaFileSystemProvider());
+
     // setup undo
     UndoHelper.getInstance().setUndoHandler(new WorkbenchUndoHandler());
 

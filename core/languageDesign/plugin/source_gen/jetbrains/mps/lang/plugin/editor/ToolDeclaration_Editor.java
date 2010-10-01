@@ -581,7 +581,7 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
     if (module != null) {
       path = MacrosUtil.expandPath(SPropertyOperations.getString(node, "icon"), module.getModuleFqName());
     }
-    return path != null && FileSystem.getFile(path).exists();
+    return path != null && FileSystem.getInstance().getFileByPath(path).exists();
   }
 
   private static boolean renderingCondition_du6pr9_a6b1a(SNode node, EditorContext editorContext, IScope scope) {

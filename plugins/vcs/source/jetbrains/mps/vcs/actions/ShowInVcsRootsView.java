@@ -15,15 +15,15 @@
  */
 package jetbrains.mps.vcs.actions;
 
+import com.intellij.ide.projectView.ProjectView;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.actions.VcsContext;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.ide.projectView.ProjectView;
 import jetbrains.mps.ide.projectPane.fileSystem.VCSRootsProjectView;
 
 import java.util.List;
 
-public class ShowInVcsRootsView extends AbstractShowInFileWiew {
+public class ShowInVcsRootsView extends AbstractShowInFileView {
 
   protected VCSRootsProjectView getView(Project project) {
     return (VCSRootsProjectView) ProjectView.getInstance(project).getProjectViewPaneById(VCSRootsProjectView.ID);

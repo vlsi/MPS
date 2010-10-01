@@ -69,7 +69,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
   <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="45" />
+  <maxImportIndex value="46" />
   <import index="1" modelUID="r:896f64dd-7cfe-4bc4-b401-38e2a027e9ae(jetbrains.mps.build.custommps.structure)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#com.intellij.openapi.actionSystem(com.intellij.openapi.actionSystem@java_stub)" version="-1" />
@@ -102,6 +102,7 @@
   <import index="43" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="7" />
   <import index="44" modelUID="f:java_stub#jetbrains.mps.project.dependency(jetbrains.mps.project.dependency@java_stub)" version="-1" />
   <import index="45" modelUID="r:972ae1d5-2beb-44b3-a739-a548d8eb423d(jetbrains.mps.build.mpsautobuild)" version="-1" />
+  <import index="46" modelUID="f:java_stub#jetbrains.mps.vfs(jetbrains.mps.vfs@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="1241450087965">
     <property name="name:23" value="GenerateCustomMPSBuildForProjectAction" />
     <property name="caption:23" value="Custom MPS Build Script" />
@@ -2096,8 +2097,22 @@
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1325286122617618176">
                   <link role="baseMethodDeclaration:3" targetNodeId="6.823693461259265267:0" resolveInfo="run" />
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1325286122617618177">
-                    <link role="variableDeclaration:3" targetNodeId="1325286122617618142" resolveInfo="file" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3398641613518561266">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3398641613518561265">
+                      <link role="baseMethodDeclaration:3" targetNodeId="46.~FileSystem.getInstance():jetbrains.mps.vfs.FileSystem" resolveInfo="getInstance" />
+                      <link role="classConcept:3" targetNodeId="46.~FileSystem" resolveInfo="FileSystem" />
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3398641613518561270">
+                      <link role="baseMethodDeclaration:3" targetNodeId="46.~FileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolveInfo="getFileByPath" />
+                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3398641613518561272">
+                        <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3398641613518561271">
+                          <link role="variableDeclaration:3" targetNodeId="1325286122617618142" resolveInfo="file" />
+                        </node>
+                        <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3398641613518561276">
+                          <link role="baseMethodDeclaration:3" targetNodeId="5.~File.getAbsolutePath():java.lang.String" resolveInfo="getAbsolutePath" />
+                        </node>
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
@@ -2848,11 +2863,15 @@
                 <link role="baseMethodDeclaration:3" targetNodeId="21.~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolveInfo="getInstance" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7482942963841967357">
-                <link role="baseMethodDeclaration:3" targetNodeId="21.~MPSModuleRepository.getAllModulesInDirectory(java.io.File):java.util.List" resolveInfo="getAllModulesInDirectory" />
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="7482942963841967358">
-                  <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="7482942963841967359">
-                    <link role="baseMethodDeclaration:3" targetNodeId="5.~File.&lt;init&gt;(java.lang.String)" resolveInfo="File" />
-                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7482942963841967360">
+                <link role="baseMethodDeclaration:3" targetNodeId="21.~MPSModuleRepository.getAllModulesInDirectory(jetbrains.mps.vfs.IFile):java.util.List" resolveInfo="getAllModulesInDirectory" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3398641613518636005">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3398641613518636004">
+                    <link role="baseMethodDeclaration:3" targetNodeId="46.~FileSystem.getInstance():jetbrains.mps.vfs.FileSystem" resolveInfo="getInstance" />
+                    <link role="classConcept:3" targetNodeId="46.~FileSystem" resolveInfo="FileSystem" />
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3398641613518636009">
+                    <link role="baseMethodDeclaration:3" targetNodeId="46.~FileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolveInfo="getFileByPath" />
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3398641613518636010">
                       <link role="variableDeclaration:3" targetNodeId="7482942963841967344" resolveInfo="samplesPath" />
                     </node>
                   </node>

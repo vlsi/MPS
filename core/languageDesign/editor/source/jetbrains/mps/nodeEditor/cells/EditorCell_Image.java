@@ -29,7 +29,6 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.image.ImageObserver;
-import java.util.Set;
 
 public class EditorCell_Image extends EditorCell_Basic {
 
@@ -125,7 +124,7 @@ public class EditorCell_Image extends EditorCell_Basic {
   }
 
   protected void setImageFileName(String fileName) {
-    if (fileName != null && FileSystem.getFile(fileName).exists()) {
+    if (fileName != null && FileSystem.getInstance().getFileByPath(fileName).exists()) {
       myImage = Toolkit.getDefaultToolkit().getImage(fileName);
     }
   }

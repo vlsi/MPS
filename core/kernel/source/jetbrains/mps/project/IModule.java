@@ -25,7 +25,6 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.File;
 import java.util.List;
 import java.util.Set;
 
@@ -67,7 +66,7 @@ public interface IModule extends ModelOwner {
 
   IFile getClassesGen();
 
-  File getBundleHome();
+  IFile getBundleHome();
 
   @NotNull
   IScope getScope();

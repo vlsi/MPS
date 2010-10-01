@@ -5,26 +5,16 @@ package jetbrains.mps.ide.newSolutionDialog;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.MPSProject;
-import java.io.File;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.vfs.VFileSystem;
-import jetbrains.mps.vcs.VcsMigrationUtil;
-import java.util.Collections;
-import com.intellij.openapi.application.ModalityState;
 
 public class NewModuleUtil {
   public NewModuleUtil() {
   }
 
   public static Solution createNewSolution(final IFile solutionFile, MPSProject project) {
-    File dir = solutionFile.toFile().getParentFile();
-    if (!(dir.exists())) {
-      dir.mkdirs();
-    }
+    solutionFile.createNewFile();
     SolutionDescriptor solutionDescriptor = new SolutionDescriptor();
     solutionDescriptor.setExternallyVisible(true);
     String fileName = solutionFile.getName();
@@ -34,12 +24,6 @@ public class NewModuleUtil {
     modelRoot.setPath(solutionFile.getParent().getAbsolutePath());
     solutionDescriptor.getModelRoots().add(modelRoot);
     SolutionDescriptorPersistence.saveSolutionDescriptor(solutionFile, solutionDescriptor);
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
-      public void run() {
-        VirtualFile file = VFileSystem.refreshAndGetFile(solutionFile);
-        VcsMigrationUtil.getHandler().addFilesToVcs(Collections.singletonList(file), false, true);
-      }
-    }, ModalityState.NON_MODAL);
-    return project.addProjectSolution(solutionFile.toFile());
+    return project.addProjectSolution(solutionFile);
   }
 }

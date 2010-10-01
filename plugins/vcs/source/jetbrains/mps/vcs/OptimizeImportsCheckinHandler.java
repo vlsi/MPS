@@ -20,14 +20,19 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.CheckinProjectPanel;
 import com.intellij.openapi.vcs.VcsConfiguration;
 import com.intellij.openapi.vcs.checkin.CheckinHandler;
+import com.intellij.openapi.vcs.checkin.CheckinHandlerFactory;
 import com.intellij.openapi.vcs.ui.RefreshableOnComponent;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.OptimizeImportsHelper;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.vfs.FileSystemFile;
+import jetbrains.mps.vfs.FileSystem;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JCheckBox;
 import javax.swing.JComponent;
@@ -84,7 +89,7 @@ public class OptimizeImportsCheckinHandler extends CheckinHandler {
 
       SModelRepository modelRepository = SModelRepository.getInstance();
       for (File file : affectedFiles) {
-        SModelDescriptor model = modelRepository.findModel(new FileSystemFile(file));
+        SModelDescriptor model = modelRepository.findModel(FileSystem.getInstance().getFileByPath(file.getAbsolutePath()));
         if (model == null) continue;
         affectedModels.add(model);
       }
@@ -105,5 +110,13 @@ public class OptimizeImportsCheckinHandler extends CheckinHandler {
       }
     }
     return CheckinHandler.ReturnResult.COMMIT;
+  }
+
+  public static class OptimizeImportsCheckinHandlerFactory extends CheckinHandlerFactory {
+    @NotNull
+    @Override
+    public CheckinHandler createHandler(CheckinProjectPanel panel) {
+      return new OptimizeImportsCheckinHandler(panel.getProject(), panel);
+    }
   }
 }

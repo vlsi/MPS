@@ -15,23 +15,25 @@
  */
 package jetbrains.mps.vcs;
 
-import jetbrains.mps.smodel.*;
+import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.UnzipUtil;
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
-import jetbrains.mps.logging.Logger;
+import org.jdom.Document;
+import org.jdom.JDOMException;
 
 import java.io.*;
 import java.util.Calendar;
-
-import org.jdom.Document;
-import org.jdom.JDOMException;
-import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.vfs.VirtualFile;
 
 public class ModelUtils {
   private static final Logger LOG = Logger.getLogger(ModelUtils.class);
@@ -73,7 +75,7 @@ public class ModelUtils {
   }
 
   public static void replaceModelWithBytes(VirtualFile modelFile, byte[] bytesToReplaceWith) {
-    final EditableSModelDescriptor modelDescriptor = (EditableSModelDescriptor) SModelRepository.getInstance().findModel(VFileSystem.toIFile(modelFile));
+    final EditableSModelDescriptor modelDescriptor = (EditableSModelDescriptor) SModelRepository.getInstance().findModel(VirtualFileUtils.toIFile(modelFile));
     if (modelDescriptor == null) return;
 
     try {
@@ -209,11 +211,6 @@ public class ModelUtils {
         return fullName.contains(modelFilePath) && fullName.endsWith(".zip");
       }
     });
-  }
-
-  public static void writeModel(final SModel model, String modelPath) throws IOException {
-    Document document = modelToDom(model);
-    JDOMUtil.writeDocument(document, modelPath);
   }
 
   private static Document modelToDom(final SModel model) {

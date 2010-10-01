@@ -1567,11 +1567,16 @@
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1204740202077">
                   <link role="baseMethodDeclaration:3" targetNodeId="31.~IFile.exists():boolean" resolveInfo="exists" />
                 </node>
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1210083540113">
-                  <link role="classConcept:3" targetNodeId="31.~FileSystem" resolveInfo="FileSystem" />
-                  <link role="baseMethodDeclaration:3" targetNodeId="31.~FileSystem.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolveInfo="getFile" />
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1210083543504">
-                    <link role="variableDeclaration:3" targetNodeId="1161166135929" resolveInfo="s" />
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5609063547583647493">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5609063547583647491">
+                    <link role="baseMethodDeclaration:3" targetNodeId="31.~FileSystem.getInstance():jetbrains.mps.vfs.FileSystem" resolveInfo="getInstance" />
+                    <link role="classConcept:3" targetNodeId="31.~FileSystem" resolveInfo="FileSystem" />
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5609063547583647497">
+                    <link role="baseMethodDeclaration:3" targetNodeId="31.~FileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolveInfo="getFileByPath" />
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5609063547583651640">
+                      <link role="variableDeclaration:3" targetNodeId="1161166135929" resolveInfo="s" />
+                    </node>
                   </node>
                 </node>
               </node>

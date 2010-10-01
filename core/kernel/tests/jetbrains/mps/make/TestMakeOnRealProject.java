@@ -15,41 +15,45 @@
  */
 package jetbrains.mps.make;
 
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.util.Condition;
-import com.intellij.util.FilteringProcessor;
 import com.intellij.util.CommonProcessors.CollectProcessor;
-
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.*;
-
+import com.intellij.util.FilteringProcessor;
+import jetbrains.mps.TestMain;
 import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.IdeMain.TestMode;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleOwner;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.misc.hash.LinkedHashSet;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.IdeMain.TestMode;
-import jetbrains.mps.TestMain;
-import jetbrains.mps.make.CompilationResult;
-import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.vfs.*;
-import junit.framework.TestCase;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.IFileUtils;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+import java.util.*;
+
 public class TestMakeOnRealProject {
   private static final String TEST_JAVA_FILE = "Test.java";
 
-  private File myTmpDir;
+  private IFile myTmpDir;
   private Language myCreatedLanguage;
   private Solution myCreatedSolution;
   private MPSModuleOwner myModuleOwner = new MPSModuleOwner() {
@@ -72,7 +76,18 @@ public class TestMakeOnRealProject {
     });
 
     ModelAccess.instance().flushEventQueue();
-    FileUtil.delete(myTmpDir);
+    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+      @Override
+      public void run() {
+        ModelAccess.instance().runWriteAction(new Runnable() {
+          @Override
+          public void run() {
+            myTmpDir.delete();
+            myTmpDir = null;
+          }
+        });
+      }
+    }, ModalityState.NON_MODAL);
   }
 
   /**
@@ -135,16 +150,25 @@ public class TestMakeOnRealProject {
   public void testCompileAfterTouch() throws InterruptedException {
     doSolutionsCompilation();
 
-    // select and touch
-    IModule module = myCreatedSolution;
-    
-    File javaFile = new File(module.getGeneratorOutputPath(), TEST_JAVA_FILE);
-    long time = Math.max(System.currentTimeMillis(), javaFile.lastModified() + 1);
-    if (!javaFile.setLastModified(time)) {
-      Assert.fail("Can't touch the file " + javaFile);
-    }
+    // Touch file
+    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+      @Override
+      public void run() {
+        ApplicationManager.getApplication().runWriteAction(new Runnable() {
+          @Override
+          public void run() {
+            IFile outputPath = FileSystem.getInstance().getFileByPath(myCreatedSolution.getGeneratorOutputPath());
+            IFile javaFile = outputPath.child(TEST_JAVA_FILE);
+            long time = Math.max(System.currentTimeMillis(), javaFile.lastModified() + 1);
+            if (!FileSystem.getInstance().setTimeStamp(javaFile, time)) {
+              Assert.fail("Can't touch the file " + javaFile);
+            }
+          }
+        });
+      }
+    }, ModalityState.NON_MODAL);
 
-    ModuleSources sources = new ModuleSources(module, new Dependencies(Collections.EMPTY_SET));        
+    ModuleSources sources = new ModuleSources(myCreatedSolution, new Dependencies(Collections.EMPTY_SET));
     Set<JavaFile> filesToCompile = sources.getFilesToCompile();
     Assert.assertEquals(1, filesToCompile.size());
   }
@@ -153,22 +177,29 @@ public class TestMakeOnRealProject {
   public void testFileDelete() throws InterruptedException {
     doSolutionsCompilation();
 
-    IModule module = myCreatedSolution;
-    File javaFile = new File(module.getGeneratorOutputPath(), TEST_JAVA_FILE);
+    // Touch file
+    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+      @Override
+      public void run() {
+        ApplicationManager.getApplication().runWriteAction(new Runnable() {
+          @Override
+          public void run() {
+            IFile outputPath = FileSystem.getInstance().getFileByPath(myCreatedSolution.getGeneratorOutputPath());
+            outputPath.child(TEST_JAVA_FILE).delete();
+          }
+        });
+      }
+    }, ModalityState.NON_MODAL);
 
-    if (!javaFile.delete()) {
-      Assert.fail("Can't delete the file " + javaFile);
-    }
-
-    ModuleSources sources = new ModuleSources(module, new Dependencies(Arrays.asList((IModule) module)));
-    Set<IFile> filesToDelete = sources.getFilesToDelete();
+    ModuleSources sources = new ModuleSources(myCreatedSolution, new Dependencies(Arrays.asList((IModule) myCreatedSolution)));
+    Set<File> filesToDelete = sources.getFilesToDelete();
     Assert.assertEquals(1, filesToDelete.size());
   }
 
 
   private void checkModuleCompiled(IModule module) {
     IFile classesGen = module.getClassesGen();
-    List<File> classes = collectSpecificFilesFromDir(classesGen.toFile(), "class");
+    List<File> classes = collectSpecificFilesFromDir(new File(classesGen.getAbsolutePath()), "class");
     List<File> sources = new ArrayList<File>();
     for (String path : module.getSourcePaths()) {
       collectSpecificFilesFromDir(new File(path), "java", sources);
@@ -178,7 +209,7 @@ public class TestMakeOnRealProject {
 
   private void checkResourcesCopied(IModule module) {
     IFile classesGen = module.getClassesGen();
-    List<File> classes = collectSpecificFilesFromDir(classesGen.toFile(), "txt");
+    List<File> classes = collectSpecificFilesFromDir(new File(classesGen.getAbsolutePath()), "txt");
 
     Assert.assertTrue("resources should be copied ", 1 == classes.size());
   }
@@ -201,35 +232,42 @@ public class TestMakeOnRealProject {
     IdeMain.setTestMode(TestMode.CORE_TEST);
     TestMain.configureMPS();
 
-    myTmpDir = FileUtil.createTmpDir();
-
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+      @Override
       public void run() {
-        myCreatedLanguage = createNewLanguage();
-        createJavaFiles(myCreatedLanguage);
+        ModelAccess.instance().runWriteAction(new Runnable() {
+          @Override
+          public void run() {
+            myTmpDir = IFileUtils.createTmpDir();
 
-        myCreatedSolution = createNewSolution();
-        createJavaFiles(myCreatedSolution);
+            myCreatedLanguage = createNewLanguage();
+            createJavaFiles(myCreatedLanguage);
 
-        String generatorOutputPath = myCreatedSolution.getGeneratorOutputPath();
-        String resourcePath = new File(generatorOutputPath).getParentFile() + File.separator + "resources";
-        myCreatedSolution.getModuleDescriptor().getSourcePaths().add(resourcePath);
-        createFile(resourcePath, "res.0.1/test.txt", "test");
+            myCreatedSolution = createNewSolution();
+            createJavaFiles(myCreatedSolution);
+
+            String generatorOutputPath = myCreatedSolution.getGeneratorOutputPath();
+            IFile resourceDir = FileSystem.getInstance().getFileByPath(generatorOutputPath).getParent().child("resources");
+            myCreatedSolution.getModuleDescriptor().getSourcePaths().add(resourceDir.getAbsolutePath());
+            createFile(resourceDir, "res.0.1/test.txt", "test");
+          }
+        });
       }
-    });
+    }, ModalityState.NON_MODAL);
   }
 
   public void createJavaFiles(IModule module) {
-    String path = module.getGeneratorOutputPath();
-    createFile(path, TEST_JAVA_FILE, "class Test {}");
+    createFile(FileSystem.getInstance().getFileByPath(module.getGeneratorOutputPath()), TEST_JAVA_FILE, "class Test {}");
   }
 
-  private void createFile(String path, String fileName, String text) {
-    File file = new File(path, fileName);
-    file.getParentFile().mkdirs();
-    FileWriter writer = null;
+  private void createFile(IFile dir, String fileName, String text) {
+    // should be invoked in write action
+    FileSystem fileSystem = FileSystem.getInstance();
+    IFile ifile = dir.child(fileName);
+    ifile.createNewFile();
+    Writer writer = null;
     try {
-      writer = new FileWriter(file);
+      writer = new OutputStreamWriter(ifile.openOutputStream());
       writer.append(text);
       writer.flush();
     } catch (IOException e) {
@@ -243,35 +281,25 @@ public class TestMakeOnRealProject {
         }
       }
     }
-    if (!file.setLastModified(System.currentTimeMillis() - 1000)) {
-      Assert.fail("Can't touch the file " + file);
+    if (!fileSystem.setTimeStamp(ifile, System.currentTimeMillis() - 1000)) {
+      Assert.fail("Can't touch the file " + ifile);
     }
   }
 
   private Language createNewLanguage() {
-    String languageNamespace = "TestLanguage";
-    String descriptorFileName = NameUtil.shortNameFromLongName(languageNamespace);
-    File descriptorFile = new File(new File(myTmpDir, "TestLanguage"), descriptorFileName + MPSExtentions.DOT_LANGUAGE);
-    File dir = descriptorFile.getParentFile();
-    if (!(dir.exists())) {
-      dir.mkdirs();
-    }
-    Language language = Language.createLanguage(languageNamespace, new FileSystemFile(descriptorFile), myModuleOwner);
+    String languageNamespace = "TestLanguasge";
+    IFile descriptorFile = myTmpDir.child(languageNamespace + File.separator + languageNamespace + MPSExtentions.DOT_LANGUAGE);
+    Language language = Language.createLanguage(languageNamespace, descriptorFile, myModuleOwner);
+    descriptorFile.createNewFile();
     language.save();
 
     return language;
   }
 
   private Solution createNewSolution() {
-    String solutionFileName = myTmpDir.getPath() + File.separator + "TestSolution" + File.separator + "testSolution" + MPSExtentions.DOT_SOLUTION;
-    FileSystemFile solutionFile = new FileSystemFile(solutionFileName);
+    IFile descriptorFile = myTmpDir.child("TestSolution" + File.separator + "testSolution" + MPSExtentions.DOT_SOLUTION);
 
-    IFile dir = solutionFile.getParent();
-    if (!(dir.exists())) {
-      dir.mkdirs();
-    }
-
-    String fileName = solutionFile.getName();
+    String fileName = descriptorFile.getName();
 
     SolutionDescriptor solutionDescriptor = new SolutionDescriptor();
     solutionDescriptor.setExternallyVisible(true);
@@ -281,12 +309,15 @@ public class TestMakeOnRealProject {
 
     ModelRoot modelRoot = new ModelRoot();
     modelRoot.setPrefix("");
-    modelRoot.setPath(solutionFile.getParent().getAbsolutePath());
+    modelRoot.setPath(descriptorFile.getParent().getAbsolutePath());
 
     solutionDescriptor.getModelRoots().add(modelRoot);
-    SolutionDescriptorPersistence.saveSolutionDescriptor(solutionFile, solutionDescriptor);
+    
+    descriptorFile.createNewFile();
 
-    return Solution.newInstance(solutionFile, myModuleOwner);
+    SolutionDescriptorPersistence.saveSolutionDescriptor(descriptorFile, solutionDescriptor);
+
+    return Solution.newInstance(descriptorFile, myModuleOwner);
   }
 
 }

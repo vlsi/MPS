@@ -17,11 +17,11 @@ package jetbrains.mps.ide.findusages.caches;
 
 import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.vfs.VFileSystem;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -34,7 +34,7 @@ class CacheUtil {
       for (final SModelRoot root : m.getSModelRoots()) {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            VirtualFile file = VFileSystem.getFile(root.getPath());
+            VirtualFile file = VirtualFileUtils.getVirtualFile(root.getPath());
             if (file != null) { //i.e. files doesn't exist
               files.add(file);
             }
@@ -47,7 +47,6 @@ class CacheUtil {
   }
 
   public static boolean checkFile(VirtualFile file) {
-    if (FileTypeManager.getInstance().isFileIgnored(file.getName())) return false;
-    return true;
+    return !FileTypeManager.getInstance().isFileIgnored(file.getName());
   }
 }

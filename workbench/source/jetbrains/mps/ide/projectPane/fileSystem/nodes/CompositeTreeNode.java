@@ -19,9 +19,9 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.VcsDirectoryMapping;
+import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.vfs.VFileSystem;
 
 import java.io.File;
 import java.util.LinkedHashSet;
@@ -54,9 +54,9 @@ public class CompositeTreeNode extends MPSTreeNode {
     }
 
     for (String dir : roots) {
-      VirtualFile file = VFileSystem.getFile(dir);
-      if (file != null) {
-        add(new FolderTreeNode(project, file, true));
+      VirtualFile virtualDirectory = LocalFileSystem.getInstance().findFileByPath(dir);
+      if (virtualDirectory != null) {
+        add(new FolderTreeNode(project, virtualDirectory, true));
       }
     }
 

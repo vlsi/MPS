@@ -18,10 +18,11 @@ package jetbrains.mps.make;
 import com.intellij.openapi.fileTypes.FileTypeManager;
 import jetbrains.mps.generator.cache.AllCaches;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.MPSExtentions;
 
+import java.io.File;
 import java.util.*;
 
 public class ModuleSources {
@@ -30,7 +31,7 @@ public class ModuleSources {
   private Map<String, JavaFile> myJavaFiles = new HashMap<String, JavaFile>();
   private Map<String, ResourceFile> myResourceFiles = new HashMap<String, ResourceFile>();
 
-  private Set<IFile> myFilesToDelete = new HashSet<IFile>();
+  private Set<File> myFilesToDelete = new HashSet<File>();
   private Set<JavaFile> myFilesToCompile = new HashSet<JavaFile>();
 
   private Set<ResourceFile> myResourcesToCopy = new HashSet<ResourceFile>();
@@ -43,7 +44,7 @@ public class ModuleSources {
     collectOutputFilesInfo();
   }
 
-  public Set<IFile> getFilesToDelete() {
+  public Set<File> getFilesToDelete() {
     return Collections.unmodifiableSet(myFilesToDelete);
   }
 
@@ -65,7 +66,7 @@ public class ModuleSources {
 
   private void collectInputFilesInfo() {
     for (String source : myModule.getSourcePaths()) {
-      collectInput(FileSystem.getFile(source), "");
+      collectInput(FileSystem.getInstance().getFileByPath(source), "");
     }
   }
 
@@ -74,7 +75,7 @@ public class ModuleSources {
     if (list == null) return;
 
     for (IFile child : list) {
-      if (isIgnored(child)) continue;
+      if (isIgnoredFileName(child.getName())) continue;
 
       if (isJavaFile(child)) {
         String className = child.getName().substring(0, child.getName().length() - MPSExtentions.DOT_JAVAFILE.length());
@@ -82,7 +83,7 @@ public class ModuleSources {
         myJavaFiles.put(fqName, new JavaFile(child, fqName));
       }
 
-      if (isResourceFile(child)) {
+      if (!child.isDirectory() && isResourceFileName(child.getName())) {
         String resourceName = child.getName();
         String childPath = addSubPath(path, resourceName);
         myResourceFiles.put(childPath, new ResourceFile(child, childPath));
@@ -98,15 +99,15 @@ public class ModuleSources {
 
     IFile classesGen = myModule.getClassesGen();
     if (classesGen == null) return;
-    collectOutput(classesGen, "", myFilesToCompile, myFilesToDelete, myResourcesToCopy);
+    collectOutput(new File(classesGen.getAbsolutePath()), "", myFilesToCompile, myFilesToDelete, myResourcesToCopy);
   }
 
-  private void collectOutput(IFile current, String path, Set<JavaFile> toCompile, Set<IFile> toDelete, Set<ResourceFile> resourcesToCopy) {
-    List<IFile> files = current.list();
+  private void collectOutput(File classesGen, String path, Set<JavaFile> toCompile, Set<File> toDelete, Set<ResourceFile> resourcesToCopy) {
+    File[] files = classesGen.listFiles();
     if (files == null) return;
 
-    for (IFile file : files) {
-      if (isIgnored(file)) continue;
+    for (File file : files) {
+      if (isIgnoredFileName(file.getName())) continue;
 
       if (file.getName().endsWith(MPSExtentions.DOT_CLASSFILE)) {
         boolean isInnerClass = false;
@@ -122,7 +123,7 @@ public class ModuleSources {
         } else if (!isInnerClass && isFileUpToDate(javaFile, file.lastModified())) {
           toCompile.remove(javaFile);
         }
-      } else if (isResourceFile(file)) {
+      } else if (!file.isDirectory() && isResourceFileName(file.getName())) {
         String childPath = addSubPath(path, file.getName());
         ResourceFile resourceFile = myResourceFiles.get(childPath);
         if (resourceFile == null) {
@@ -151,8 +152,8 @@ public class ModuleSources {
     return false;
   }
 
-  private boolean isIgnored(IFile file) {
-    return FileTypeManager.getInstance().isFileIgnored(file.getName());
+  private boolean isIgnoredFileName(String fileName) {
+    return FileTypeManager.getInstance().isFileIgnored(fileName);
   }
 
   private String addSubPath(String path, String name) {
@@ -168,15 +169,14 @@ public class ModuleSources {
   }
 
   private boolean isJavaFile(IFile file) {
-    return file.isFile() && file.getName().endsWith(MPSExtentions.DOT_JAVAFILE);
+    return !file.isDirectory() && file.getName().endsWith(MPSExtentions.DOT_JAVAFILE);
   }
 
-  private boolean isResourceFile(IFile file) {
-    int extPos = file.getName().lastIndexOf('.');
+  private boolean isResourceFileName(String fileName) {
+    int extPos = fileName.lastIndexOf('.');
     if (extPos == -1) return false;
-    return file.isFile() &&
-      !file.getName().endsWith(MPSExtentions.DOT_JAVAFILE) &&
-      !file.getName().endsWith(MPSExtentions.DOT_CLASSFILE) &&
-      !AllCaches.getInstance().isCacheFile(file);
+    return !fileName.endsWith(MPSExtentions.DOT_JAVAFILE) &&
+      !fileName.endsWith(MPSExtentions.DOT_CLASSFILE) &&
+      !AllCaches.getInstance().isCacheFile(fileName);
   }
 }

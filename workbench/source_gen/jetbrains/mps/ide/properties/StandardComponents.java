@@ -97,7 +97,7 @@ import jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurat
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListRemoveAction;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListEditAction;
 import jetbrains.mps.project.structure.project.Path;
-import jetbrains.mps.vfs.MPSExtentions;
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.workbench.dialogs.project.components.parts.creators.ModulePathChooser;
 import jetbrains.mps.workbench.dialogs.project.components.parts.renderers.PathRenderer;
 import jetbrains.mps.InternalFlag;
@@ -371,7 +371,7 @@ public class StandardComponents {
   public static JPanel createFilePanel(String label, IFile file) {
     String initText = ((file == null) ?
       "<no file>" :
-      file.getPath()
+      file.getAbsolutePath()
     );
     boolean isValid;
     try {

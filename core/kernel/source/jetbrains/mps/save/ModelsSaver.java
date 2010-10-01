@@ -38,7 +38,7 @@ public class ModelsSaver implements ApplicationComponent {
     myMessageBusConnection = ApplicationManager.getApplication().getMessageBus().connect();
     myMessageBusConnection.subscribe(AppTopics.FILE_DOCUMENT_SYNC, new FileDocumentManagerAdapter() {
       public void beforeAllDocumentsSaving() {
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        ModelAccess.instance().runCommandInEDT(new Runnable() {
           public void run() {
             SModelRepository.getInstance().saveAll();
           }

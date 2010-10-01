@@ -17,7 +17,6 @@ package jetbrains.mps.generator.cache;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
@@ -50,9 +49,9 @@ public class AllCaches implements ApplicationComponent {
     return Collections.unmodifiableSet(myCaches);
   }
 
-  public boolean isCacheFile(IFile file) {
+  public boolean isCacheFile(String fileName) {
     for (BaseModelCache cache : myCaches) {
-      if (cache.isCacheFile(file)) {
+      if (cache.isCacheFile(fileName)) {
         return true;
       }
     }

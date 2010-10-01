@@ -673,7 +673,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     if (s == null) {
       return false;
     }
-    return FileSystem.getFile(s).exists();
+    return FileSystem.getInstance().getFileByPath(s).exists();
   }
 
   private static JComponent _QueryFunction_JComponent_ueqr71_a2c0(SNode node, EditorContext editorContext) {

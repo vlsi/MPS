@@ -9020,14 +9020,18 @@
                                     </node>
                                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1239462031028">
                                       <link role="baseMethodDeclaration:3" targetNodeId="41.~TreeFileChooser.setInitialFile(jetbrains.mps.vfs.IFile):void" resolveInfo="setInitialFile" />
-                                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1239462274475">
-                                        <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1239462278869">
-                                          <link role="baseMethodDeclaration:3" targetNodeId="42.~FileSystemFile.&lt;init&gt;(java.lang.String)" resolveInfo="FileSystemFile" />
-                                          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1239462287373">
-                                            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1239462285809">
+                                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5609063547583460244">
+                                        <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5609063547583460243">
+                                          <link role="baseMethodDeclaration:3" targetNodeId="42.~FileSystem.getInstance():jetbrains.mps.vfs.FileSystem" resolveInfo="getInstance" />
+                                          <link role="classConcept:3" targetNodeId="42.~FileSystem" resolveInfo="FileSystem" />
+                                        </node>
+                                        <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5609063547583460249">
+                                          <link role="baseMethodDeclaration:3" targetNodeId="42.~FileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolveInfo="getFileByPath" />
+                                          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5609063547583460250">
+                                            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5609063547583460251">
                                               <link role="variableDeclaration:3" targetNodeId="1239461697847" resolveInfo="baseFile" />
                                             </node>
-                                            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1239462288549">
+                                            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5609063547583460252">
                                               <link role="baseMethodDeclaration:3" targetNodeId="28.~File.getAbsolutePath():java.lang.String" resolveInfo="getAbsolutePath" />
                                             </node>
                                           </node>
@@ -9089,14 +9093,14 @@
                                 <property name="name:3" value="selectedPath" />
                                 <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="4853609160933269559" />
                                 <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1239462371828">
-                                  <link role="baseMethodDeclaration:3" targetNodeId="38.~FileUtil.getCanonicalPath(java.io.File):java.lang.String" resolveInfo="getCanonicalPath" />
                                   <link role="classConcept:3" targetNodeId="38.~FileUtil" resolveInfo="FileUtil" />
+                                  <link role="baseMethodDeclaration:3" targetNodeId="38.~FileUtil.getCanonicalPath(java.lang.String):java.lang.String" resolveInfo="getCanonicalPath" />
                                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1239462382364">
                                     <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1239462382365">
                                       <link role="variableDeclaration:3" targetNodeId="1239462293319" resolveInfo="result" />
                                     </node>
                                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1239462382366">
-                                      <link role="baseMethodDeclaration:3" targetNodeId="42.~IFile.toFile():java.io.File" resolveInfo="toFile" />
+                                      <link role="baseMethodDeclaration:3" targetNodeId="42.~IFile.getAbsolutePath():java.lang.String" resolveInfo="getAbsolutePath" />
                                     </node>
                                   </node>
                                 </node>

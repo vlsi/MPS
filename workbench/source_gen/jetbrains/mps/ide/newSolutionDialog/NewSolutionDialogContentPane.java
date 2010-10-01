@@ -19,7 +19,7 @@ import org.jdesktop.beansbinding.BeanProperty;
 import org.jdesktop.beansbinding.Bindings;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import java.io.File;
-import jetbrains.mps.vfs.MPSExtentions;
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.ide.NewModuleCheckUtil;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
@@ -228,7 +228,7 @@ public class NewSolutionDialogContentPane extends JPanel {
         indicator.setIndeterminate(true);
         ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {
-            myThis.setResult(myThis.createNewSolution(FileSystem.getFile(file)));
+            myThis.setResult(myThis.createNewSolution(FileSystem.getInstance().getFileByPath(file.getAbsolutePath())));
           }
         });
       }

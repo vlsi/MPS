@@ -138,7 +138,7 @@
     <nodeInfo nodeId="1162559222378" fileName="ConceptDeclaration_Editor.java" startLine="669" startPosition="20" endLine="670" endPosition="19" />
     <nodeInfo nodeId="1161166135928" fileName="ConceptDeclaration_Editor.java" startLine="671" startPosition="5" endLine="672" endPosition="126" />
     <nodeInfo nodeId="1161722913887" fileName="ConceptDeclaration_Editor.java" startLine="673" startPosition="20" endLine="674" endPosition="19" />
-    <nodeInfo nodeId="1161166287878" fileName="ConceptDeclaration_Editor.java" startLine="675" startPosition="5" endLine="676" endPosition="42" />
+    <nodeInfo nodeId="1161166287878" fileName="ConceptDeclaration_Editor.java" startLine="675" startPosition="5" endLine="676" endPosition="62" />
     <nodeInfo nodeId="1176492672998" fileName="ConceptDeclaration_Editor.java" startLine="679" startPosition="108" endLine="680" endPosition="66" />
     <nodeInfo nodeId="1182234409419" fileName="ConceptDeclaration_Editor.java" startLine="821" startPosition="71" endLine="822" endPosition="148" />
     <nodeInfo nodeId="1182234438111" fileName="ConceptDeclaration_Editor.java" startLine="822" startPosition="148" endLine="823" endPosition="66" />
@@ -175,7 +175,7 @@
     <scopeInfo nodeId="1193064081516" fileName="ConceptDeclaration_Editor.java" startLine="1074" startPosition="106" endLine="1077" endPosition="106">
       <varInfo nodeId="1193064081518" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1161165530949" fileName="ConceptDeclaration_Editor.java" startLine="667" startPosition="111" endLine="676" endPosition="42">
+    <scopeInfo nodeId="1161165530949" fileName="ConceptDeclaration_Editor.java" startLine="667" startPosition="111" endLine="676" endPosition="62">
       <varInfo nodeId="1161166135929" varName="s" />
       <varInfo nodeId="1161165897339" varName="l" />
     </scopeInfo>

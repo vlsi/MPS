@@ -16,7 +16,7 @@
   <unitInfo fileName="ForceRefreshModelChanges_Action.java" startLine="18" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.vcs.plugin.ForceRefreshModelChanges_Action" />
   <unitInfo fileName="AddToVcs_Action.java" startLine="20" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.vcs.plugin.AddToVcs_Action" />
   <unitInfo fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="21" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.vcs.plugin.ShowDifferencesWithModelOnDisk_Action" />
-  <unitInfo fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="25" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.vcs.plugin.ShowDiffererenesWithCurrentRevision_Action" />
+  <unitInfo fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="26" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.vcs.plugin.ShowDiffererenesWithCurrentRevision_Action" />
   <unitInfo fileName="ReRunMergeFromBackup_Action.java" startLine="29" startPosition="0" endLine="164" endPosition="0" unitName="jetbrains.mps.vcs.plugin.ReRunMergeFromBackup_Action" />
   <root nodeId="1596063027222054292">
     <nodeInfo nodeId="1596063027222054307" fileName="IconUtil.java" startLine="13" startPosition="74" endLine="14" endPosition="89" />
@@ -117,7 +117,7 @@
     <nodeInfo nodeId="7545884443035896085" fileName="ReRunMergeFromBackup_Action.java" startLine="47" startPosition="52" endLine="48" endPosition="114" />
     <nodeInfo nodeId="7545884443035896094" fileName="ReRunMergeFromBackup_Action.java" startLine="49" startPosition="53" endLine="50" endPosition="19" />
     <nodeInfo nodeId="7545884443035896105" fileName="ReRunMergeFromBackup_Action.java" startLine="52" startPosition="88" endLine="53" endPosition="19" />
-    <nodeInfo nodeId="7545884443035896113" fileName="ReRunMergeFromBackup_Action.java" startLine="54" startPosition="5" endLine="55" endPosition="92" />
+    <nodeInfo nodeId="7545884443035896113" fileName="ReRunMergeFromBackup_Action.java" startLine="54" startPosition="5" endLine="55" endPosition="104" />
     <nodeInfo nodeId="7545884443035896122" fileName="ReRunMergeFromBackup_Action.java" startLine="56" startPosition="23" endLine="57" endPosition="19" />
     <nodeInfo nodeId="7545884443035896127" fileName="ReRunMergeFromBackup_Action.java" startLine="58" startPosition="5" endLine="59" endPosition="43" />
     <nodeInfo nodeId="7545884443035896297" fileName="ReRunMergeFromBackup_Action.java" startLine="100" startPosition="45" endLine="101" endPosition="34" />
@@ -131,7 +131,7 @@
     <nodeInfo nodeId="7545884443035896137" fileName="ReRunMergeFromBackup_Action.java" startLine="125" startPosition="69" endLine="126" endPosition="129" />
     <nodeInfo nodeId="7545884443035896151" fileName="ReRunMergeFromBackup_Action.java" startLine="127" startPosition="28" endLine="128" endPosition="13" />
     <nodeInfo nodeId="7545884443035896155" fileName="ReRunMergeFromBackup_Action.java" startLine="129" startPosition="5" endLine="130" endPosition="150" />
-    <nodeInfo nodeId="7545884443035896178" fileName="ReRunMergeFromBackup_Action.java" startLine="133" startPosition="35" endLine="134" endPosition="109" />
+    <nodeInfo nodeId="7545884443035896178" fileName="ReRunMergeFromBackup_Action.java" startLine="133" startPosition="35" endLine="134" endPosition="117" />
     <nodeInfo nodeId="7545884443035896187" fileName="ReRunMergeFromBackup_Action.java" startLine="137" startPosition="40" endLine="138" endPosition="57" />
     <nodeInfo nodeId="7545884443035896193" fileName="ReRunMergeFromBackup_Action.java" startLine="138" startPosition="57" endLine="139" endPosition="48" />
     <nodeInfo nodeId="7545884443035896202" fileName="ReRunMergeFromBackup_Action.java" startLine="142" startPosition="32" endLine="143" endPosition="94" />
@@ -146,7 +146,7 @@
     <nodeInfo nodeId="7545884443035896277" fileName="ReRunMergeFromBackup_Action.java" startLine="158" startPosition="12" endLine="160" endPosition="7" />
     <nodeInfo nodeId="7545884443035896092" fileName="ReRunMergeFromBackup_Action.java" startLine="48" startPosition="114" endLine="51" endPosition="5" />
     <nodeInfo nodeId="7545884443035896103" fileName="ReRunMergeFromBackup_Action.java" startLine="51" startPosition="5" endLine="54" endPosition="5" />
-    <nodeInfo nodeId="7545884443035896120" fileName="ReRunMergeFromBackup_Action.java" startLine="55" startPosition="92" endLine="58" endPosition="5" />
+    <nodeInfo nodeId="7545884443035896120" fileName="ReRunMergeFromBackup_Action.java" startLine="55" startPosition="104" endLine="58" endPosition="5" />
     <nodeInfo nodeId="7545884443035896341" fileName="ReRunMergeFromBackup_Action.java" startLine="109" startPosition="33" endLine="112" endPosition="11" />
     <nodeInfo nodeId="7545884443035896149" fileName="ReRunMergeFromBackup_Action.java" startLine="126" startPosition="129" endLine="129" endPosition="5" />
     <nodeInfo nodeId="7545884443035896295" fileName="ReRunMergeFromBackup_Action.java" startLine="99" startPosition="171" endLine="103" endPosition="0" />
@@ -167,7 +167,7 @@
     <scopeInfo nodeId="7545884443035896296" fileName="ReRunMergeFromBackup_Action.java" startLine="100" startPosition="45" endLine="101" endPosition="34" />
     <scopeInfo nodeId="7545884443035896341" fileName="ReRunMergeFromBackup_Action.java" startLine="110" startPosition="36" endLine="111" endPosition="28" />
     <scopeInfo nodeId="7545884443035896150" fileName="ReRunMergeFromBackup_Action.java" startLine="127" startPosition="28" endLine="128" endPosition="13" />
-    <scopeInfo nodeId="7545884443035896177" fileName="ReRunMergeFromBackup_Action.java" startLine="133" startPosition="35" endLine="134" endPosition="109" />
+    <scopeInfo nodeId="7545884443035896177" fileName="ReRunMergeFromBackup_Action.java" startLine="133" startPosition="35" endLine="134" endPosition="117" />
     <scopeInfo nodeId="7545884443035896201" fileName="ReRunMergeFromBackup_Action.java" startLine="142" startPosition="32" endLine="143" endPosition="94" />
     <scopeInfo nodeId="7545884443035896221" fileName="ReRunMergeFromBackup_Action.java" startLine="147" startPosition="127" endLine="148" endPosition="26" />
     <scopeInfo nodeId="7545884443035896261" fileName="ReRunMergeFromBackup_Action.java" startLine="154" startPosition="25" endLine="155" endPosition="20" />
@@ -243,8 +243,8 @@
     <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="135" startPosition="27" endLine="135" endPosition="27" />
     <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="138" startPosition="27" endLine="138" endPosition="27" />
     <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="141" startPosition="28" endLine="141" endPosition="28" />
-    <nodeInfo nodeId="7545884443035906931" fileName="VcsActionsHelper.java" startLine="43" startPosition="9" endLine="44" endPosition="117" />
-    <nodeInfo nodeId="7545884443035906943" fileName="VcsActionsHelper.java" startLine="44" startPosition="117" endLine="45" endPosition="84" />
+    <nodeInfo nodeId="7545884443035906931" fileName="VcsActionsHelper.java" startLine="43" startPosition="9" endLine="44" endPosition="129" />
+    <nodeInfo nodeId="7545884443035906943" fileName="VcsActionsHelper.java" startLine="44" startPosition="129" endLine="45" endPosition="84" />
     <nodeInfo nodeId="7545884443035906951" fileName="VcsActionsHelper.java" startLine="45" startPosition="84" endLine="46" endPosition="94" />
     <nodeInfo nodeId="7545884443035906960" fileName="VcsActionsHelper.java" startLine="46" startPosition="94" endLine="47" endPosition="94" />
     <nodeInfo nodeId="7545884443035906970" fileName="VcsActionsHelper.java" startLine="47" startPosition="94" endLine="48" endPosition="101" />
@@ -299,7 +299,7 @@
     <nodeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="147" startPosition="31" endLine="148" endPosition="29" />
     <nodeInfo nodeId="7545884443035907112" fileName="VcsActionsHelper.java" startLine="157" startPosition="101" endLine="158" endPosition="61" />
     <nodeInfo nodeId="7545884443035907120" fileName="VcsActionsHelper.java" startLine="158" startPosition="61" endLine="159" endPosition="93" />
-    <nodeInfo nodeId="7545884443035907127" fileName="VcsActionsHelper.java" startLine="159" startPosition="93" endLine="160" endPosition="78" />
+    <nodeInfo nodeId="7545884443035907127" fileName="VcsActionsHelper.java" startLine="159" startPosition="93" endLine="160" endPosition="95" />
     <nodeInfo nodeId="7545884443035907150" fileName="VcsActionsHelper.java" startLine="165" startPosition="57" endLine="166" endPosition="56" />
     <nodeInfo nodeId="7545884443035907162" fileName="VcsActionsHelper.java" startLine="38" startPosition="31" endLine="40" endPosition="3" />
     <nodeInfo nodeId="7545884443035906991" fileName="VcsActionsHelper.java" startLine="50" startPosition="59" endLine="54" endPosition="0" />
@@ -356,7 +356,7 @@
     <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="141" startPosition="28" endLine="143" endPosition="28" />
     <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="124" startPosition="27" endLine="127" endPosition="34" />
     <scopeInfo nodeId="7545884443035907078" fileName="VcsActionsHelper.java" startLine="128" startPosition="28" endLine="131" endPosition="34" />
-    <scopeInfo nodeId="7545884443035907111" fileName="VcsActionsHelper.java" startLine="157" startPosition="101" endLine="160" endPosition="78">
+    <scopeInfo nodeId="7545884443035907111" fileName="VcsActionsHelper.java" startLine="157" startPosition="101" endLine="160" endPosition="95">
       <varInfo nodeId="7545884443035907121" varName="statusProvider" />
       <varInfo nodeId="7545884443035907113" varName="moduleDir" />
     </scopeInfo>
@@ -421,25 +421,25 @@
     <unitInfo nodeId="7545884443035906924" fileName="VcsActionsHelper.java" startLine="38" startPosition="0" endLine="171" endPosition="0" unitName="jetbrains.mps.vcs.plugin.VcsActionsHelper" />
   </root>
   <root nodeId="7545884443035919781">
-    <nodeInfo nodeId="7545884443035919782" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="28" startPosition="0" endLine="29" endPosition="22" />
-    <nodeInfo nodeId="7545884443035919783" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="29" startPosition="22" endLine="30" endPosition="21" />
-    <nodeInfo nodeId="7545884443035919784" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="30" startPosition="21" endLine="31" endPosition="26" />
-    <nodeInfo nodeId="7545884443035919785" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="31" startPosition="26" endLine="32" endPosition="36" />
-    <nodeInfo nodeId="7545884443035919786" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="32" startPosition="36" endLine="33" endPosition="33" />
-    <nodeInfo nodeId="1596063027222135263" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="46" startPosition="52" endLine="47" endPosition="113" />
-    <nodeInfo nodeId="7545884443035919812" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="48" startPosition="103" endLine="49" endPosition="19" />
-    <nodeInfo nodeId="7545884443035919820" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="50" startPosition="5" endLine="51" endPosition="144" />
-    <nodeInfo nodeId="7545884443035919835" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="52" startPosition="198" endLine="53" endPosition="155" />
-    <nodeInfo nodeId="7545884443035919847" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="53" startPosition="155" endLine="54" endPosition="80" />
-    <nodeInfo nodeId="7545884443035919870" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="55" startPosition="5" endLine="56" endPosition="17" />
-    <nodeInfo nodeId="7545884443035919789" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="110" startPosition="9" endLine="111" endPosition="327" />
-    <nodeInfo nodeId="7545884443035919810" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="47" startPosition="113" endLine="50" endPosition="5" />
-    <nodeInfo nodeId="7545884443035919833" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="51" startPosition="144" endLine="55" endPosition="5" />
-    <scopeInfo nodeId="7545884443035919811" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="48" startPosition="103" endLine="49" endPosition="19" />
-    <scopeInfo nodeId="7545884443035919834" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="52" startPosition="198" endLine="54" endPosition="80">
+    <nodeInfo nodeId="7545884443035919782" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="29" startPosition="0" endLine="30" endPosition="22" />
+    <nodeInfo nodeId="7545884443035919783" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="30" startPosition="22" endLine="31" endPosition="21" />
+    <nodeInfo nodeId="7545884443035919784" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="31" startPosition="21" endLine="32" endPosition="26" />
+    <nodeInfo nodeId="7545884443035919785" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="32" startPosition="26" endLine="33" endPosition="36" />
+    <nodeInfo nodeId="7545884443035919786" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="33" startPosition="36" endLine="34" endPosition="33" />
+    <nodeInfo nodeId="1596063027222135263" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="47" startPosition="52" endLine="48" endPosition="113" />
+    <nodeInfo nodeId="7545884443035919812" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="49" startPosition="103" endLine="50" endPosition="19" />
+    <nodeInfo nodeId="7545884443035919820" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="51" startPosition="5" endLine="52" endPosition="161" />
+    <nodeInfo nodeId="7545884443035919835" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="53" startPosition="198" endLine="54" endPosition="155" />
+    <nodeInfo nodeId="7545884443035919847" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="54" startPosition="155" endLine="55" endPosition="80" />
+    <nodeInfo nodeId="7545884443035919870" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="56" startPosition="5" endLine="57" endPosition="17" />
+    <nodeInfo nodeId="7545884443035919789" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="111" startPosition="9" endLine="112" endPosition="327" />
+    <nodeInfo nodeId="7545884443035919810" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="48" startPosition="113" endLine="51" endPosition="5" />
+    <nodeInfo nodeId="7545884443035919833" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="52" startPosition="161" endLine="56" endPosition="5" />
+    <scopeInfo nodeId="7545884443035919811" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="49" startPosition="103" endLine="50" endPosition="19" />
+    <scopeInfo nodeId="7545884443035919834" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="53" startPosition="198" endLine="55" endPosition="80">
       <varInfo nodeId="7545884443035919836" varName="fileStatus" />
     </scopeInfo>
-    <scopeInfo nodeId="7545884443035919809" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="46" startPosition="52" endLine="56" endPosition="17">
+    <scopeInfo nodeId="7545884443035919809" fileName="ShowDiffererenesWithCurrentRevision_Action.java" startLine="47" startPosition="52" endLine="57" endPosition="17">
       <varInfo nodeId="7545884443035919821" varName="virtualFile" />
     </scopeInfo>
   </root>

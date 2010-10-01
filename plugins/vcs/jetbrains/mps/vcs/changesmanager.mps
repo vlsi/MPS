@@ -38,7 +38,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
   <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
   <languageAspect modelUID="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)" version="0" />
-  <maxImportIndex value="79" />
+  <maxImportIndex value="80" />
   <import index="1" modelUID="f:java_stub#com.intellij.openapi.components(com.intellij.openapi.components@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#com.intellij.openapi.project(com.intellij.openapi.project@java_stub)" version="-1" />
@@ -95,6 +95,7 @@
   <import index="77" modelUID="f:java_stub#jetbrains.mps.ide.tabbedEditor.tabs(jetbrains.mps.ide.tabbedEditor.tabs@java_stub)" version="-1" />
   <import index="78" modelUID="f:java_stub#jetbrains.mps.ide.tabbedEditor(jetbrains.mps.ide.tabbedEditor@java_stub)" version="-1" />
   <import index="79" modelUID="r:5ec7bf64-acd2-448b-8f9b-ce1b8d920038(jetbrains.mps.vcs.plugin)" version="-1" />
+  <import index="80" modelUID="f:java_stub#jetbrains.mps.ide.vfs(jetbrains.mps.ide.vfs@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="23553604208246606">
     <property name="name:3" value="ChangesManager" />
     <node role="staticInnerClassifiers:3" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5569581551640537985">
@@ -882,10 +883,10 @@
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="891158202133120890">
               <link role="classifier:3" targetNodeId="9.~IFile" resolveInfo="IFile" />
             </node>
-            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="891158202133120891">
-              <link role="baseMethodDeclaration:3" targetNodeId="9.~VFileSystem.toIFile(com.intellij.openapi.vfs.VirtualFile):jetbrains.mps.vfs.IFile" resolveInfo="toIFile" />
-              <link role="classConcept:3" targetNodeId="9.~VFileSystem" resolveInfo="VFileSystem" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="891158202133120892">
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="4354975180528378099">
+              <link role="baseMethodDeclaration:3" targetNodeId="80.~VirtualFileUtils.toIFile(com.intellij.openapi.vfs.VirtualFile):jetbrains.mps.vfs.IFile" resolveInfo="toIFile" />
+              <link role="classConcept:3" targetNodeId="80.~VirtualFileUtils" resolveInfo="VirtualFileUtils" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4354975180528378100">
                 <link role="variableDeclaration:3" targetNodeId="891158202133117057" resolveInfo="file" />
               </node>
             </node>
@@ -5626,12 +5627,11 @@
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1281598945698463492">
               <link role="classifier:3" targetNodeId="12.~VirtualFile" resolveInfo="VirtualFile" />
             </node>
-            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7789363376334146505">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1281598945698463494">
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="4354975180528380606">
+              <link role="baseMethodDeclaration:3" targetNodeId="80.~VirtualFileUtils.getVirtualFile(jetbrains.mps.vfs.IFile):com.intellij.openapi.vfs.VirtualFile" resolveInfo="getVirtualFile" />
+              <link role="classConcept:3" targetNodeId="80.~VirtualFileUtils" resolveInfo="VirtualFileUtils" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4354975180528380607">
                 <link role="variableDeclaration:3" targetNodeId="1281598945698463477" resolveInfo="modelFile" />
-              </node>
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7789363376334146509">
-                <link role="baseMethodDeclaration:3" targetNodeId="9.~IFile.toVirtualFile():com.intellij.openapi.vfs.VirtualFile" resolveInfo="toVirtualFile" />
               </node>
             </node>
           </node>

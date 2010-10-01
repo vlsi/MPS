@@ -15,14 +15,14 @@
  */
 package jetbrains.mps.project.validation;
 
-import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.StubModelsEntry;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.vfs.VFileSystem;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -59,16 +59,16 @@ public class BaseModuleValidator<T extends IModule> implements ModuleValidator {
 
     if (descriptor.getSourcePaths() != null && !myModule.isPackaged()) {
       for (String sourcePath : descriptor.getSourcePaths()) {
-        VirtualFile vfile = VFileSystem.getFile(sourcePath);
-        if (vfile == null || !vfile.exists()) {
+        IFile file = FileSystem.getInstance().getFileByPath(sourcePath);
+        if (file == null || !file.exists()) {
           errors.add("Can't find source path: " + sourcePath);
         }
       }
     }
     if (descriptor.getStubModelEntries() != null) {
       for (StubModelsEntry stubModelsEntry : descriptor.getStubModelEntries()) {
-        VirtualFile vfile = VFileSystem.getFile(stubModelsEntry.getPath());
-        if (vfile == null || !vfile.exists()) {
+        IFile file = FileSystem.getInstance().getFileByPath(stubModelsEntry.getPath());
+        if (file == null || !file.exists()) {
           errors.add("Can't find library: " + stubModelsEntry.getPath());
         }
       }

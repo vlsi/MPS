@@ -27,7 +27,7 @@ public class ModelRootUtil {
     for (IModule module : model.getModules()) {
       for (SModelRoot modelRoot : module.getSModelRoots()) {
         String modelFilePath = modelFile.getCanonicalPath();
-        String rootFilePath = FileSystem.getFile(modelRoot.getPath()).getCanonicalPath();
+        String rootFilePath = FileSystem.getInstance().getFileByPath(modelRoot.getPath()).getCanonicalPath();
 
         if (modelFilePath.startsWith(rootFilePath)) {
           result.add(modelRoot);

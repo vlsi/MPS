@@ -70,7 +70,7 @@ public class ClassPathTest extends BaseMPSTest {
     ProjectDescriptor projectDescriptor = new ProjectDescriptor();
     ProjectDescriptorPersistence.loadProjectDescriptor(projectDescriptor, new File(MPS_CORE_PROJECT));
     for (Path solutionPath : projectDescriptor.getSolutions()) {
-      IFile solutionFile = FileSystem.getFile(solutionPath.getPath());
+      IFile solutionFile = FileSystem.getInstance().getFileByPath(solutionPath.getPath());
       SolutionDescriptor solutionDescriptor = SolutionDescriptorPersistence.loadSolutionDescriptor(solutionFile);
       assertTrue("Solution " + solutionDescriptor.getNamespace() + " is contained by core project, but has \"Don't load classes\" disabled", solutionDescriptor.isDontLoadClasses());
     }

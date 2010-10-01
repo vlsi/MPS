@@ -305,7 +305,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent,
   //--solutions
 
   @NotNull
-  public Solution addProjectSolution(@NotNull File solutionDescriptionFile) {
+  public Solution addProjectSolution(@NotNull IFile solutionDescriptionFile) {
     ProjectDescriptor projectDescriptor = getProjectDescriptor();
     projectDescriptor.addSolution(solutionDescriptionFile.getAbsolutePath());
     setProjectDescriptor(projectDescriptor);
@@ -417,7 +417,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent,
     mySolutions = new LinkedList<ModuleReference>();
     for (Path solutionPath : myProjectDescriptor.getSolutions()) {
       String path = solutionPath.getPath();
-      IFile descriptorFile = FileSystem.getFile(path);
+      IFile descriptorFile = FileSystem.getInstance().getFileByPath(path);
       if (descriptorFile.exists()) {
         mySolutions.add(MPSModuleRepository.getInstance().registerSolution(descriptorFile, this).getModuleReference());
       } else {
@@ -429,7 +429,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent,
     myLanguages = new LinkedList<ModuleReference>();
     for (Path languagePath : myProjectDescriptor.getLanguages()) {
       String path = languagePath.getPath();
-      IFile descriptorFile = FileSystem.getFile(path);
+      IFile descriptorFile = FileSystem.getInstance().getFileByPath(path);
       if (descriptorFile.exists()) {
         myLanguages.add(MPSModuleRepository.getInstance().registerLanguage(descriptorFile, this).getModuleReference());
       } else {
@@ -441,7 +441,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent,
     myDevKits = new LinkedList<DevKit>();
     for (Path dk : myProjectDescriptor.getDevkits()) {
       String path = dk.getPath();
-      IFile devKit = FileSystem.getFile(path);
+      IFile devKit = FileSystem.getInstance().getFileByPath(path);
       if (devKit.exists()) {
         myDevKits.add(MPSModuleRepository.getInstance().registerDevKit(devKit, this));
       } else {

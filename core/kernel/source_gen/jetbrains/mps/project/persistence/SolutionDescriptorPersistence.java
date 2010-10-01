@@ -81,14 +81,14 @@ public class SolutionDescriptorPersistence {
     } catch (Exception e) {
       throw new ModuleReadException(e);
     }
-    ModuleDescriptorPersistence.setTimestamp(descriptor, file, false);
+    ModuleDescriptorPersistence.setTimestamp(descriptor, file);
     return descriptor;
   }
 
   public static void saveSolutionDescriptor(final IFile file, final SolutionDescriptor descriptor) {
     if (file.isReadOnly()) {
       if (log.isErrorEnabled()) {
-        log.error("Can't save " + file.getPath());
+        log.error("Can't save " + file.getAbsolutePath());
       }
       return;
     }
@@ -154,6 +154,6 @@ public class SolutionDescriptorPersistence {
       }
     }
 
-    ModuleDescriptorPersistence.setTimestamp(descriptor, file, true);
+    ModuleDescriptorPersistence.setTimestamp(descriptor, file);
   }
 }

@@ -28,7 +28,7 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.ManyToManyMap;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.MPSExtentions;
+import jetbrains.mps.project.MPSExtentions;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -200,16 +200,10 @@ public class MPSModuleRepository implements ApplicationComponent {
     return registerModule(file, owner, Solution.class);
   }
 
-  public IModule getModuleByFile(File file) {
+  public IModule getModuleByFile(IFile file) {
     assertCanRead();
 
-    return myFileToModuleMap.get(FileUtil.getCanonicalPath(file));
-  }
-
-  public IModule getModuleByPath(String path) {
-    assertCanRead();
-
-    return myFileToModuleMap.get(path);
+    return myFileToModuleMap.get(file.getCanonicalPath());
   }
 
   //todo rename to getByFqName
@@ -429,7 +423,7 @@ public class MPSModuleRepository implements ApplicationComponent {
 
     while (roots.hasNext()) {
       RootReference root = roots.next();
-      IFile moduleRoot = FileSystem.getFile(root.getPath());
+      IFile moduleRoot = FileSystem.getInstance().getFileByPath(root.getPath());
 
       if (moduleRoot.exists()) {
         readModuleDescriptors(moduleRoot, owner);
@@ -473,7 +467,7 @@ public class MPSModuleRepository implements ApplicationComponent {
       if (excludes.contains(childDir)) continue;
 
       if (childDir.getName().endsWith(MPSExtentions.MPS_ARCH)) {
-        IFile dirInJar = FileSystem.getFile(childDir.getAbsolutePath() + "!/" + AbstractModule.MODULE_DIR);
+        IFile dirInJar = FileSystem.getInstance().getFileByPath(childDir.getAbsolutePath() + "!/" + AbstractModule.MODULE_DIR);
         result.addAll(readModuleDescriptors(dirInJar, owner, excludes));
       }
 
@@ -500,7 +494,7 @@ public class MPSModuleRepository implements ApplicationComponent {
       module = (AbstractModule) registerModule(dir, owner, cls);
 
       for (String sourceDir : module.getSourcePaths()) {
-        excludes.add(FileSystem.getFile(sourceDir));
+        excludes.add(FileSystem.getInstance().getFileByPath(sourceDir));
       }
       if (module.getGeneratorOutputPath() != null) {
         excludes.add(BaseModelCache.getCachesDir(module, module.getGeneratorOutputPath()));
@@ -509,14 +503,14 @@ public class MPSModuleRepository implements ApplicationComponent {
         excludes.add(BaseModelCache.getCachesDir(module, module.getTestsGeneratorOutputPath()));
       }
       for (SModelRoot root : module.getSModelRoots()) {
-        excludes.add(FileSystem.getFile(root.getPath()));
+        excludes.add(FileSystem.getInstance().getFileByPath(root.getPath()));
       }
 
       if (module.getClassesGen() != null) {
         excludes.add(module.getClassesGen());
       }
       for (StubPath sp : module.getStubPaths()) {
-        excludes.add(FileSystem.getFile(sp.getPath()));
+        excludes.add(FileSystem.getInstance().getFileByPath(sp.getPath()));
       }
     } catch (Throwable t) {
       LOG.error("Fail to load module from descriptor " + dir.getAbsolutePath(), t);
@@ -620,10 +614,10 @@ public class MPSModuleRepository implements ApplicationComponent {
     return getAllModules(IModule.class);
   }
 
-  public List<IModule> getAllModulesInDirectory(File file) {
+  public List<IModule> getAllModulesInDirectory(IFile file) {
     assertCanRead();
 
-    String path = FileUtil.getCanonicalPath(file);
+    String path = file.getCanonicalPath();
     List<IModule> result = new ArrayList<IModule>();
     for (IModule m : getAllModules()) {
       IFile descriptorFile = m.getDescriptorFile();

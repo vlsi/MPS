@@ -15,8 +15,10 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 import java.util.ArrayList;
-import java.io.File;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.util.PathManager;
+import java.io.File;
 import jetbrains.mps.project.IModule;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -24,7 +26,7 @@ import java.util.HashSet;
 import jetbrains.mps.project.dependency.LanguageDepsManager;
 import jetbrains.mps.build.packaging.behavior.Module_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.vfs.MPSExtentions;
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.StubPath;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
@@ -68,7 +70,7 @@ public class MPSBuild_Behavior {
 
   public static Iterable<SNode> getClassPathModules_1238502072959(String prefix) {
     List<SNode> paths = new ArrayList<SNode>();
-    File dir = new File(PathManager.getHomePath() + File.separator + prefix.replace("/", File.separator));
+    IFile dir = FileSystem.getInstance().getFileByPath(PathManager.getHomePath() + File.separator + prefix.replace("/", File.separator));
     List<IModule> modulesList = MPSModuleRepository.getInstance().getAllModulesInDirectory(dir);
     Set<IModule> modulesInClasspath = SetSequence.fromSet(new HashSet<IModule>());
     for (IModule module : ListSequence.fromList(modulesList)) {

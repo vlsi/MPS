@@ -31,8 +31,8 @@ import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vcs.VcsMigrationUtil;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.JarFileEntryFile;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
@@ -176,23 +176,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
 
     if (getLoadingState() == ModelLoadingState.NOT_LOADED) return;
 
-    if (!ApplicationManager.getApplication().isDispatchThread()) {
-      /*
-      * This was added because of the line VFileSystem.refreshFileSynchronously(modelFile) few lines later.
-      * Calling save not from EDT may cause this sequence of events:
-      *
-      * VirtualFile.refresh calls Semaphore.down and since we are not in EDT
-      * call Semaphore.waitFor inside of invokeLater.
-      *
-      * At the same time somebody calls runReadAction in EDT and
-      * since method save works only in writeAction, this somebody has to wait.
-      * So we have EDT blocked and Semaphore.waitFor can not be called. Deadlock.
-      * */
-      IllegalStateException exception = new IllegalStateException("DefaultSModelDescriptor.Save should only be called from EDT.");
-      exception.printStackTrace();
-      throw exception;
-    }
-
     //we must be in command since model save might change model by adding model/language imports
     if (!mySModel.isLoading()) LOG.assertInCommand();
 
@@ -234,11 +217,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
 
     updateDiskTimestamp();
 
-    IFile modelFile = getModelFile();
-    if (modelFile != null && !modelFile.isReadOnly()) {
-      MPSFileSynchronizer.getInstance().requestSync(modelFile);
-    }
-
     fireModelSaved();
   }
 
@@ -248,7 +226,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   }
 
   public boolean isPackaged() {
-    return getModelFile() instanceof JarFileEntryFile;
+    return FileSystem.getInstance().isPackaged(getModelFile());
   }
 
   public void replaceModel(SModel newModel) {

@@ -307,7 +307,7 @@ public class IconManager {
   public static Icon loadIcon(String iconPath, boolean cache) {
     Icon icon = ourPathsToIcons.get(iconPath);
     if (icon == null) {
-      IFile file = FileSystem.getFile(iconPath);
+      IFile file = FileSystem.getInstance().getFileByPath(iconPath);
       icon = getIconFor(file);
       if (icon != null && cache) {
         ourPathsToIcons.put(iconPath, icon);

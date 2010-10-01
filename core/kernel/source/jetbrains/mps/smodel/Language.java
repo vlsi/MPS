@@ -43,7 +43,6 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.MPSExtentions;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -361,17 +360,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     LanguageDescriptor languageDescriptor = getModuleDescriptor();
     languageDescriptor.setNamespace(newNamespace);
     setLanguageDescriptor(languageDescriptor, false);
-  }
-
-  public File getSourceDir() {
-    File sourceDir = new File(myDescriptorFile.getParent().toFile(), "source_gen");
-    if (getModuleDescriptor().getGenPath() != null) {
-      sourceDir = new File(getModuleDescriptor().getGenPath());
-    }
-    if (!sourceDir.exists()) {
-      sourceDir.mkdirs();
-    }
-    return sourceDir;
   }
 
   public String getGeneratorOutputPath() {
@@ -714,7 +702,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       for (StubModelsEntry entry : getRuntimeModelsEntries()) {
         String s = entry.getPath();
         try {
-          IFile file = FileSystem.getFile(s);
+          IFile file = FileSystem.getInstance().getFileByPath(s);
           if (!file.exists()) {
             LOG.debug("Can't find " + s);
             continue;
@@ -742,7 +730,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       Set<StubModelsEntry> visited = new HashSet<StubModelsEntry>();
       List<StubModelsEntry> remove = new ArrayList<StubModelsEntry>();
       for (StubModelsEntry entry : myLanguageDescriptor.getRuntimeStubModels()) {
-        IFile cp = FileSystem.getFile(entry.getPath());
+        IFile cp = FileSystem.getInstance().getFileByPath(entry.getPath());
         if ((!cp.exists()) || cp.isDirectory() || visited.contains(entry)) {
           remove.add(entry);
         }
@@ -750,10 +738,10 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       }
       myLanguageDescriptor.getRuntimeStubModels().removeAll(remove);
 
-      File bundleParent = getBundleHome().getParentFile();
+      IFile bundleParent = getBundleHome().getParent();
       String jarName = getModuleFqName() + "." + MPSExtentions.RUNTIME_ARCH;
-      File jarFile = new File(bundleParent, jarName);
-      String path = jarFile.getPath();
+      IFile jarFile = bundleParent.child(jarName);
+      String path = jarFile.getAbsolutePath();
 
       StubModelsEntry tmp = new StubModelsEntry();
       tmp.setPath(path);
@@ -784,7 +772,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     languageDescriptor.setNamespace(languageNamespace);
     languageDescriptor.setUUID(UUID.randomUUID().toString());
 
-    File languageModels = new File(descriptorFile.getParent().toFile(), LANGUAGE_MODELS);
+    IFile languageModels = descriptorFile.getParent().child(LANGUAGE_MODELS);
     if (languageModels.exists()) {
       throw new IllegalStateException("Trying to create a language in an existing language's directory");
     }

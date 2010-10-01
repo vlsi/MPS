@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.vfs.VFileSystem;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
@@ -41,7 +41,7 @@ public class VcsActionsHelper {
 
   public static void showDiffrence(Frame frame, final IOperationContext context, SModel model, final SNode node, Project project) {
     try {
-      VirtualFile file = VFileSystem.getFile(((EditableSModelDescriptor) model.getModelDescriptor()).getModelFile());
+      VirtualFile file = VirtualFileUtils.getVirtualFile(((EditableSModelDescriptor) model.getModelDescriptor()).getModelFile());
       AbstractVcs vcs = ProjectLevelVcsManager.getInstance(project).getVcsFor(file);
       final VcsRevisionNumber revisionNumber = vcs.getDiffProvider().getCurrentRevision(file);
       ContentRevision content = vcs.getDiffProvider().createFileContent(revisionNumber, file);
@@ -157,7 +157,7 @@ __switch__:
   public static Iterable<VirtualFile> getUnversionedFilesForModule(Project project, IModule module) {
     IFile moduleDir = module.getDescriptorFile().getParent();
     VcsFileStatusProvider statusProvider = project.getComponent(VcsFileStatusProvider.class);
-    return collectUnversionedFiles(statusProvider, moduleDir.toVirtualFile());
+    return collectUnversionedFiles(statusProvider, VirtualFileUtils.getVirtualFile(moduleDir));
   }
 
   public static List<VirtualFile> getUnversionedFilesForModules(final Project project, List<IModule> module) {

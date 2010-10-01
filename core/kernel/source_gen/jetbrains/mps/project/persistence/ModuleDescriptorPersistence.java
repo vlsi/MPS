@@ -20,7 +20,6 @@ import jetbrains.mps.project.structure.modules.StubModelsEntry;
 import org.jdom.Document;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.vfs.VFileSystem;
 
 public class ModuleDescriptorPersistence {
   public static void loadDependencies(ModuleDescriptor descriptor, Element root) {
@@ -239,13 +238,10 @@ public class ModuleDescriptorPersistence {
     }
   }
 
-  public static void setTimestamp(final ModuleDescriptor descriptor, final IFile file, final boolean refreshFile) {
+  public static void setTimestamp(final ModuleDescriptor descriptor, final IFile file) {
     ModelAccess.instance().runCommandInEDT(new Runnable() {
       public void run() {
         descriptor.setTimestamp("" + file.lastModified());
-        if (refreshFile) {
-          VFileSystem.refreshFileAsynchronously(file);
-        }
       }
     });
   }

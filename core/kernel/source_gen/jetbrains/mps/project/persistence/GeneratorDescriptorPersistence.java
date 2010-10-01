@@ -84,7 +84,7 @@ public class GeneratorDescriptorPersistence {
         return result_wk2vdq_a0a0a0a;
       }
     }.invoke();
-    ModuleDescriptorPersistence.setTimestamp(descriptor, file, false);
+    ModuleDescriptorPersistence.setTimestamp(descriptor, file);
     return descriptor;
   }
 

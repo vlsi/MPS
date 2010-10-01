@@ -4,6 +4,7 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
@@ -12,7 +13,6 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.PersistenceVersionNotFoundException;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.MPSExtentions;
 
 import java.io.File;
 import java.util.*;
@@ -76,7 +76,7 @@ public class ModelsExtractor {
     List<IModule> tmpmodules;
     IModule moduleByFile = ModelAccess.instance().runReadAction(new Computable<IModule>() {
       public IModule compute() {
-        return MPSModuleRepository.getInstance().getModuleByFile(moduleFile);
+        return MPSModuleRepository.getInstance().getModuleByFile(FileSystem.getInstance().getFileByPath(moduleFile.getAbsolutePath()));
       }
     });
     if (moduleByFile != null) {
@@ -84,7 +84,7 @@ public class ModelsExtractor {
     } else {
       tmpmodules = ModelAccess.instance().runWriteAction(new Computable<List<IModule>>() {
         public List<IModule> compute() {
-          IFile file = FileSystem.getFile(moduleFile.getPath());
+          IFile file = FileSystem.getInstance().getFileByPath(moduleFile.getPath());
           return MPSModuleRepository.getInstance().readModuleDescriptors(file.isDirectory() ? file : file.getParent(), new MPSModuleOwner() {
           });
         }
@@ -113,7 +113,7 @@ public class ModelsExtractor {
   }
 
   private void processModelFile(Collection<SModelDescriptor> modelDescriptors, File f) {
-    final IFile ifile = FileSystem.getFile(f);
+    final IFile ifile = FileSystem.getInstance().getFileByPath(f.getAbsolutePath());
 
     // try to find if model is loaded
     SModelDescriptor model = SModelRepository.getInstance().findModel(ifile);

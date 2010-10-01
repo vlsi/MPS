@@ -41,6 +41,7 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.io.File;
 import jetbrains.mps.buildlanguage.plugin.AntScriptRunner;
+import jetbrains.mps.vfs.FileSystem;
 import com.intellij.execution.configurations.RunnerSettings;
 import com.intellij.execution.configurations.ConfigurationPerRunnerSettings;
 import com.intellij.openapi.util.JDOMExternalizable;
@@ -175,7 +176,7 @@ public class DefaultPackagingLanguageApplication_Configuration extends BaseRunCo
                   }
 
                   AntScriptRunner runner = new AntScriptRunner(javaRunParameters);
-                  Process process = runner.run(file);
+                  Process process = runner.run(FileSystem.getInstance().getFileByPath(file.getAbsolutePath()));
                   return new DefaultProcessHandler(consoleView_22042010, process, runner.getCommandString());
                 } catch (ExecutionException e) {
                   ex.value = e;

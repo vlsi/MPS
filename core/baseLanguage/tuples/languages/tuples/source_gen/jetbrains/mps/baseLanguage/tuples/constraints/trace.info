@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="NamedTupleComponentAccessOperation_Constraints.java" startLine="12" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleComponentAccessOperation_Constraints" />
+  <unitInfo fileName="NamedTupleDeclaration_resolveInfo_PropertyConstraint.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleDeclaration_resolveInfo_PropertyConstraint" />
+  <unitInfo fileName="NamedTupleComponentAccessOperation_alias_PropertyConstraint.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleComponentAccessOperation_alias_PropertyConstraint" />
+  <unitInfo fileName="NamedTupleComponentReference_componentDeclaration_ReferentConstraint.java" startLine="14" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleComponentReference_componentDeclaration_ReferentConstraint" />
+  <unitInfo fileName="NamedTupleComponentAccessOperation_component_ReferentConstraint.java" startLine="15" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleComponentAccessOperation_component_ReferentConstraint" />
+  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.constraints.ConstraintsDescriptor" />
+  <unitInfo fileName="NamedTupleDeclaration_DefaultSearchScope.java" startLine="18" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleDeclaration_DefaultSearchScope" />
+  <unitInfo fileName="NamedTupleType_tupleDeclaration_ReferentConstraint.java" startLine="20" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.constraints.NamedTupleType_tupleDeclaration_ReferentConstraint" />
   <root nodeId="1239537193957">
     <nodeInfo nodeId="1239555372956" fileName="NamedTupleDeclaration_resolveInfo_PropertyConstraint.java" startLine="24" startPosition="80" endLine="25" endPosition="73" />
     <nodeInfo nodeId="1239726276929" fileName="NamedTupleDeclaration_DefaultSearchScope.java" startLine="30" startPosition="132" endLine="31" endPosition="82" />

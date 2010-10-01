@@ -14,13 +14,14 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.dialogs.MoveFileDialog;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.vfs.VFileSystem;
+import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.ide.projectView.ProjectView;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.ide.projectPane.fileSystem.BaseDirectoryProjectView;
 import java.io.IOException;
 import javax.swing.JOptionPane;
 import jetbrains.mps.vfs.FileSystem;
+import java.io.File;
 
 public class MoveFileOrDirectory_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -93,7 +94,7 @@ public class MoveFileOrDirectory_Action extends GeneratedAction {
             if (MoveFileOrDirectory_Action.this.isNotValid(result)) {
               return;
             }
-            VirtualFile virtualFile = VFileSystem.getFile(result);
+            VirtualFile virtualFile = LocalFileSystem.getInstance().findFileByPath(result);
             MoveFileOrDirectory_Action.this.selectedFile.move(null, virtualFile);
             ProjectView.getInstance(MoveFileOrDirectory_Action.this.project).refresh();
             SwingUtilities.invokeLater(new Runnable() {
@@ -117,7 +118,7 @@ public class MoveFileOrDirectory_Action extends GeneratedAction {
       JOptionPane.showMessageDialog(MoveFileOrDirectory_Action.this.frame, "Enter valid name");
       return true;
     }
-    if (FileSystem.getFile(result).toVirtualFile().findChild(MoveFileOrDirectory_Action.this.selectedFile.getName()) != null) {
+    if (FileSystem.getInstance().getFileByPath(result + File.separator + MoveFileOrDirectory_Action.this.selectedFile.getName()).exists()) {
       JOptionPane.showMessageDialog(MoveFileOrDirectory_Action.this.frame, MoveFileOrDirectory_Action.this.selectedFile.getName() + " already exists");
       return true;
     }

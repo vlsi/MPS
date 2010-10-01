@@ -45,20 +45,20 @@ public class ModuleUtil {
     final List<String> result = ListSequence.fromList(new ArrayList<String>());
     final List<String> jdk = CommonPaths.getJDKPath();
     cpitem.accept(new EachClassPathItemVisitor() {
-      public void visit(FileClassPathItem p0) {
+      public void visit(FileClassPathItem item) {
         // filter out JDK 
-        if (jdk.contains(p0.getClassPath())) {
+        if (jdk.contains(item.getClassPath())) {
           return;
         }
-        ListSequence.fromList(result).addElement(p0.getClassPath());
+        ListSequence.fromList(result).addElement(item.getClassPath());
       }
 
-      public void visit(JarFileClassPathItem p0) {
+      public void visit(JarFileClassPathItem item) {
         // filter out JDK 
-        if (jdk.contains(p0.getIFile().getPath())) {
+        if (jdk.contains(item.getAbsolutePath())) {
           return;
         }
-        ListSequence.fromList(result).addElement(p0.getIFile().getPath());
+        ListSequence.fromList(result).addElement(item.getAbsolutePath());
       }
     });
     return result;

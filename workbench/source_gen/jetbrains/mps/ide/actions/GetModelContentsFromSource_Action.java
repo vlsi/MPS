@@ -21,7 +21,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.javaParser.JavaCompiler;
 import java.io.File;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.vfs.FileSystemFile;
+import jetbrains.mps.vfs.FileSystem;
 
 public class GetModelContentsFromSource_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -99,7 +99,7 @@ public class GetModelContentsFromSource_Action extends GeneratedAction {
       final SModel sModel = GetModelContentsFromSource_Action.this.model.getSModel();
       treeFileChooser.setFileFilter(new IFileFilter() {
         public boolean accept(IFile file) {
-          return JavaCompiler.checkBaseModelMatchesSourceDirectory(sModel, file.toFile());
+          return JavaCompiler.checkBaseModelMatchesSourceDirectory(sModel, new File(file.getAbsolutePath()));
         }
       });
       String generatorOutputPath = module.getGeneratorOutputPath();
@@ -120,11 +120,11 @@ public class GetModelContentsFromSource_Action extends GeneratedAction {
         }
       }
       if (initial != null) {
-        treeFileChooser.setInitialFile(new FileSystemFile(initial));
+        treeFileChooser.setInitialFile(FileSystem.getInstance().getFileByPath(initial.getAbsolutePath()));
       }
       IFile result = treeFileChooser.showDialog(GetModelContentsFromSource_Action.this.frame);
       if (result != null) {
-        JavaCompiler javaCompiler = new JavaCompiler(GetModelContentsFromSource_Action.this.context, module, result.toFile(), false, sModel);
+        JavaCompiler javaCompiler = new JavaCompiler(GetModelContentsFromSource_Action.this.context, module, new File(result.getAbsolutePath()), false, sModel);
         javaCompiler.compile();
       }
     } catch (Throwable t) {

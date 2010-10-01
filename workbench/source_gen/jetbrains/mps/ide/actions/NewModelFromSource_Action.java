@@ -27,7 +27,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.javaParser.JavaCompiler;
 import java.io.File;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.vfs.FileSystemFile;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.StereotypeProvider;
 
@@ -150,7 +150,7 @@ public class NewModelFromSource_Action extends GeneratedAction {
         final SModel sModel = result.getSModel();
         treeFileChooser.setFileFilter(new IFileFilter() {
           public boolean accept(IFile file) {
-            return JavaCompiler.checkBaseModelMatchesSourceDirectory(sModel, file.toFile());
+            return JavaCompiler.checkBaseModelMatchesSourceDirectory(sModel, new File(file.getAbsolutePath()));
           }
         });
         String generatorOutputPath = NewModelFromSource_Action.this.module.getGeneratorOutputPath();
@@ -171,11 +171,11 @@ public class NewModelFromSource_Action extends GeneratedAction {
           }
         }
         if (initial != null) {
-          treeFileChooser.setInitialFile(new FileSystemFile(initial));
+          treeFileChooser.setInitialFile(FileSystem.getInstance().getFileByPath(initial.getAbsolutePath()));
         }
         IFile resultFile = treeFileChooser.showDialog(NewModelFromSource_Action.this.frame);
         if (resultFile != null) {
-          JavaCompiler javaCompiler = new JavaCompiler(NewModelFromSource_Action.this.context, NewModelFromSource_Action.this.module, resultFile.toFile(), false, sModel);
+          JavaCompiler javaCompiler = new JavaCompiler(NewModelFromSource_Action.this.context, NewModelFromSource_Action.this.module, new File(resultFile.getAbsolutePath()), false, sModel);
           javaCompiler.compile();
         }
         SModelDescriptor modelDescriptor = result;

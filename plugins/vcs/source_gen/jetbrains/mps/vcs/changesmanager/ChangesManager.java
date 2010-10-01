@@ -24,7 +24,7 @@ import com.intellij.openapi.vcs.FileStatus;
 import jetbrains.mps.smodel.SModelStereotype;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.VFileSystem;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.smodel.ModelLoadingState;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModel;
@@ -104,7 +104,7 @@ public class ChangesManager extends AbstractProjectComponent {
     if (file == null) {
       return;
     }
-    IFile iFile = VFileSystem.toIFile(file);
+    IFile iFile = VirtualFileUtils.toIFile(file);
     if (iFile == null) {
       return;
     }

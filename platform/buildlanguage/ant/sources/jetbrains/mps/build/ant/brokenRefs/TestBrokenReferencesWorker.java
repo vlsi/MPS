@@ -37,14 +37,14 @@ import java.util.List;
 
 public class TestBrokenReferencesWorker extends MpsWorker {
   private final IBuildServerMessageFormat myBuildServerMessageFormat = TestBrokenReferencesWorker.getBuildServerMessageFormat();
-  private long usedHeap;
-  private long usedNonHeap;
+  private long myUsedHeap;
+  private long myUsedNonHeap;
 
   public TestBrokenReferencesWorker(WhatToDo whatToDo, LogLogger systemOutLogger) {
     super(whatToDo, systemOutLogger);
     MemoryMXBean mmbean = ManagementFactory.getMemoryMXBean();
-    this.usedHeap = mmbean.getHeapMemoryUsage().getUsed();
-    this.usedNonHeap = mmbean.getNonHeapMemoryUsage().getUsed();
+    this.myUsedHeap = mmbean.getHeapMemoryUsage().getUsed();
+    this.myUsedNonHeap = mmbean.getNonHeapMemoryUsage().getUsed();
   }
 
   public static void main(String[] args) {
@@ -146,7 +146,7 @@ public class TestBrokenReferencesWorker extends MpsWorker {
 
   protected void showStatistic() {
     MemoryMXBean mmbean = ManagementFactory.getMemoryMXBean();
-    output("Used heap: " + (mmbean.getHeapMemoryUsage().getUsed() - usedHeap));
-    output("Used non-heap: " + (mmbean.getNonHeapMemoryUsage().getUsed() - usedNonHeap));
+    output("Used heap: " + (mmbean.getHeapMemoryUsage().getUsed() - myUsedHeap));
+    output("Used non-heap: " + (mmbean.getNonHeapMemoryUsage().getUsed() - myUsedNonHeap));
   }
 }

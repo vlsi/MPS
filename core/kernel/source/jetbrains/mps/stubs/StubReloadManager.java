@@ -2,8 +2,10 @@ package jetbrains.mps.stubs;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.Processor;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.lang.stubs.structure.LibraryStubDescriptor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
@@ -16,7 +18,6 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.annotation.Hack;
-import jetbrains.mps.vfs.VFileSystem;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -396,15 +397,15 @@ public class StubReloadManager implements ApplicationComponent {
 
     private long getTimestamp() {
       //todo this can be rewritten using filesystem listeners
-      VirtualFile file = VFileSystem.getFile(myStubPath.getPath());
+      VirtualFile file = VirtualFileUtils.getVirtualFile(myStubPath.getPath());
       if (file == null) return 0L;
       final long[] timeStamp = {file.getTimeStamp()};
-      VFileSystem.processFilesRecursively(file, new Processor<VirtualFile>() {
-        public boolean process(VirtualFile virtualFile) {
-          timeStamp[0] = Math.max(timeStamp[0], virtualFile.getTimeStamp());
-          return true;
-        }
-      });
+      VfsUtil.processFilesRecursively(file, new Processor<VirtualFile>() {
+          public boolean process(VirtualFile virtualFile) {
+            timeStamp[0] = Math.max(timeStamp[0], virtualFile.getTimeStamp());
+            return true;
+          }
+        });
 
       return timeStamp[0];
     }

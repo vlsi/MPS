@@ -15,16 +15,16 @@
  */
 package jetbrains.mps.vcs.actions;
 
+import com.intellij.ide.projectView.ProjectView;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.actions.VcsContext;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.ide.projectView.ProjectView;
 import jetbrains.mps.ide.projectPane.fileSystem.BaseDirectoryProjectView;
 
 import java.util.Collections;
 import java.util.List;
 
-public class ShowInFileView extends AbstractShowInFileWiew {
+public class ShowInFileView extends AbstractShowInFileView {
 
   protected BaseDirectoryProjectView getView(Project project) {
     return (BaseDirectoryProjectView) ProjectView.getInstance(project).getProjectViewPaneById(BaseDirectoryProjectView.ID);

@@ -86,9 +86,9 @@
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="javax.swing.JList" />
+    <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.project.structure.project.Path" />
-    <classNode dependClassName="jetbrains.mps.vfs.VFileSystem" />
     <classNode extendsClassName="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.PathRenderer" />
   </dependency>
   <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.renderers.RuleOperandRenderer" file="RuleOperandRenderer.java">
