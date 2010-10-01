@@ -150,6 +150,7 @@
   <unitInfo fileName="GoToSolution_Action.java" startLine="13" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToSolution_Action" />
   <unitInfo fileName="GoToLanguage_Action.java" startLine="13" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToLanguage_Action" />
   <unitInfo fileName="GoToModel_Action.java" startLine="13" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToModel_Action" />
+  <unitInfo fileName="GoToNamedNode_Action.java" startLine="13" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToNamedNode_Action" />
   <unitInfo fileName="GoToRootNode_Action.java" startLine="13" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToRootNode_Action" />
   <unitInfo fileName="GoToAction_Action.java" startLine="13" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToAction_Action" />
   <unitInfo fileName="SelectInActionAdapter_Action.java" startLine="13" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.ide.actions.SelectInActionAdapter_Action" />
@@ -157,6 +158,7 @@
   <unitInfo fileName="MakeProject_Action.java" startLine="21" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.ide.actions.MakeProject_Action" />
   <unitInfo fileName="CleanAllModules_Action.java" startLine="24" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.ide.actions.CleanAllModules_Action" />
   <unitInfo fileName="GenerateProject_Action.java" startLine="13" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.actions.GenerateProject_Action" />
+  <unitInfo fileName="GenerateModulesInProject_Action.java" startLine="13" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.actions.GenerateModulesInProject_Action" />
   <unitInfo fileName="RegenerateProject_Action.java" startLine="13" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.actions.RegenerateProject_Action" />
   <unitInfo fileName="RegenerateModule_Action.java" startLine="13" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.actions.RegenerateModule_Action" />
   <unitInfo fileName="GenerateModule_Action.java" startLine="13" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.actions.GenerateModule_Action" />
@@ -4171,8 +4173,8 @@
     </scopeInfo>
     <scopeInfo nodeId="413582328332576432" fileName="InformationDialog.java" startLine="49" startPosition="0" endLine="60" endPosition="0" />
     <scopeInfo nodeId="413582328332537326" fileName="InformationDialog.java" startLine="67" startPosition="29" endLine="81" endPosition="7">
-      <varInfo nodeId="413582328332537328" varName="isCreated" />
       <varInfo nodeId="413582328332537336" varName="isRemoved" />
+      <varInfo nodeId="413582328332537328" varName="isCreated" />
     </scopeInfo>
     <scopeInfo nodeId="413582328332537591" fileName="InformationDialog.java" startLine="96" startPosition="47" endLine="111" endPosition="7">
       <varInfo nodeId="413582328332537593" varName="isDiff" />
@@ -5120,8 +5122,8 @@
       <varInfo nodeId="5286974591503450557" varName="context" />
     </scopeInfo>
     <scopeInfo nodeId="5573155209983904318" fileName="RefactoringPanel.java" startLine="46" startPosition="32" endLine="61" endPosition="52">
-      <varInfo nodeId="5573155209983945709" varName="modelName" />
       <varInfo nodeId="5573155209983905286" varName="modelNameLabel" />
+      <varInfo nodeId="5573155209983945709" varName="modelName" />
       <varInfo nodeId="5189407523588908771" varName="refactoringsContextList" />
       <varInfo nodeId="5573155209983945672" varName="mainPanel" />
       <varInfo nodeId="7235352240938997737" varName="gridBagConstraints" />
