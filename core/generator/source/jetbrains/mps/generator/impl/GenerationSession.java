@@ -111,6 +111,17 @@ public class GenerationSession {
       if(!filter.getRequiredRoots().isEmpty() || filter.requireConditionals()) {
         myLogger.info((!filter.requireConditionals() ? "" : "descriptors and ") + filter.getRequiredRoots().size() + " roots can be used from cache");
       }
+
+      if(myGenerationOptions.getTracingMode() != GenerationOptions.TRACE_OFF) {
+        myLogger.info("Processing:");
+        for(SNode node : myOriginalInputModel.getSModel().getRoots()) {
+          if(filter.getRequiredRoots().contains(node)) {
+            myLogger.info(node.getName() + " (cache)");
+          } else if(!filter.getIgnoredRoots().contains(node)) {
+            myLogger.info(node.getName());
+          }
+        }
+      }
     }
 
     boolean success = false;
@@ -311,9 +322,11 @@ public class GenerationSession {
       hasChanges = tg.apply(isPrimary);
     }
     if(myNewCache != null && (isPrimary || hasChanges)) {
+      ttrace.push("saving cache", false);
       TransientModelWithMetainfo modelWithMetaInfo = TransientModelWithMetainfo.create(currentOutputModel, myDependenciesBuilder);
       tg.getMappings().export(modelWithMetaInfo, myDependenciesBuilder);
       myNewCache.store(myMajorStep, myMinorStep, modelWithMetaInfo);
+      ttrace.pop();
     }
     return hasChanges;
   }

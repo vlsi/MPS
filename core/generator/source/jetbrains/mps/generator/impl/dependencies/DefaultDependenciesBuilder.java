@@ -3,8 +3,9 @@ package jetbrains.mps.generator.impl.dependencies;
 import jetbrains.mps.generator.ModelDigestHelper;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.GeneratorMappings;
+import jetbrains.mps.generator.impl.cache.BrokenCacheException;
 import jetbrains.mps.generator.impl.cache.IntermediateModelsCache;
-import jetbrains.mps.generator.impl.cache.PersistableMappings;
+import jetbrains.mps.generator.impl.cache.MappingsMemento;
 import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.IOperationContext;
@@ -187,14 +188,19 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
 
   /* working with cache */
 
-  private void loadCachedModel() throws GenerationFailureException {
+  private void loadCachedModel() throws BrokenCacheException {
     // TODO if(myMinorStep >= stepCount) copy from current input model
     int stepsCount = myCache.getMinorCount(myMajorStep);
     TransientModelWithMetainfo model = myCache.load(myMajorStep, myMinorStep >= stepsCount ? stepsCount - 1 : myMinorStep, currentOutputModel.getSModelReference());
     if (model == null) {
-      throw new GenerationFailureException("Cannot load required data from cache. Try to regenerate model.");
+      throw new BrokenCacheException(currentOutputModel);
     }
     myCachedModel = model;
+  }
+
+  @Override
+  public boolean isStepRequired() {
+    return myCache != null && myMinorStep < myCache.getMinorCount(myMajorStep);
   }
 
   @Override
@@ -207,7 +213,7 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
     loadCachedModel();
 
     List<SNode> toCopy = new ArrayList<SNode>(myRequiredSet.size()*2 + 16);
-    List<PersistableMappings> toImport = new ArrayList<PersistableMappings>(myRequiredSet.size()*2);
+    List<MappingsMemento> toImport = new ArrayList<MappingsMemento>(myRequiredSet.size()*2);
 
     for (SNode root : myCachedModel.getRoots()) {
       String originalId = myCachedModel.getOriginal(root);
@@ -218,7 +224,7 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
         }
         nextStepToOriginalMap.put(root, originalRoot);
         toCopy.add(root);
-        PersistableMappings val = myCachedModel.getMappings(originalId);
+        MappingsMemento val = myCachedModel.getMappingsMemento(originalId);
         if(val != null) {
           toImport.add(val);
         }
@@ -228,14 +234,14 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
     for (SNode node : toCopy) {
       currentOutputModel.addRoot(node);
     }
-    for (PersistableMappings val : toImport) {
+    for (MappingsMemento val : toImport) {
       mappings.importPersisted(val, currentInputModel, currentOutputModel);
     }
   }
 
   @Override
   public void updateUnchanged(TransientModelWithMetainfo model) throws GenerationFailureException {
-    if (myCache == null || myUnchangedSet.isEmpty()) {
+    if (myCache == null || myUnchangedSet.isEmpty() || currentOutputModel == null /* do not update after script */) {
       return;
     }
 
@@ -248,9 +254,9 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
       if(myUnchangedSet.containsKey(originalId)) {
         model.getRoots().add(root);
         model.setOriginal(root.getSNodeId(), originalId);
-        PersistableMappings mappings = myCachedModel.getMappings(originalId);
-        if(mappings != null) {
-          model.updateMappings(originalId, mappings);
+        MappingsMemento mappingsMemento = myCachedModel.getMappingsMemento(originalId);
+        if(mappingsMemento != null) {
+          model.updateMappings(originalId, mappingsMemento);
         }
       }
     }

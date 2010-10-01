@@ -19,19 +19,20 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
 
 /**
  * Evgeny Gryaznov, Sep 30, 2010
  */
-public class PersistableMappings {
+public class MappingsMemento {
 
   /* mapping,input -> output */
   private final Map<String, Map<SNodeId, Object>> myMappingNameAndInputNodeToOutputNodeMap = new HashMap<String, Map<SNodeId, Object>>();
+
+  /* input -> output */
+  private final Map<SNodeId, Object> myCopiedOutputNodeForInputNode = new HashMap<SNodeId, Object>();
+
 
   // add functions
 
@@ -53,10 +54,18 @@ public class PersistableMappings {
     }
   }
 
+  public void addOutputNodeByInputNode(SNodeId inputNode, SNodeId outputNode, boolean isUnique) {
+    myCopiedOutputNodeForInputNode.put(inputNode, isUnique ? outputNode : Collections.singletonList(outputNode));
+  }
+
   // getters
 
   public Map<String, Map<SNodeId, Object>> getMappingNameAndInputNodeToOutputNodeMap() {
     return myMappingNameAndInputNodeToOutputNodeMap;
+  }
+
+  public Map<SNodeId, Object> getCopiedOutputNodeForInputNode() {
+    return myCopiedOutputNodeForInputNode;
   }
 
   // serialization
@@ -84,12 +93,26 @@ public class PersistableMappings {
       }
     }
 
+    /* input -> output */
+    os.writeInt(myCopiedOutputNodeForInputNode.size());
+    for(Entry<SNodeId, Object> e : myCopiedOutputNodeForInputNode.entrySet()) {
+      os.writeNodeId(e.getKey());
+      Object val = e.getValue();
+      if(val instanceof SNodeId) {
+        os.writeNodeId((SNodeId)val);
+        os.writeBoolean(true);
+      } else {
+        os.writeNodeId(((List<SNodeId>)val).get(0));
+        os.writeBoolean(false);
+      }
+    }
+
     /* check */
     os.writeByte('!');
   }
 
-  public static PersistableMappings load(ModelInputStream is) throws IOException {
-    PersistableMappings mappings = new PersistableMappings();
+  public static MappingsMemento load(ModelInputStream is) throws IOException {
+    MappingsMemento mappingsMemento = new MappingsMemento();
 
     /* mapping,input -> output */
     for(int size = is.readInt(); size > 0; size--) {
@@ -109,14 +132,22 @@ public class PersistableMappings {
           innerMap.put(key,list);
         }
       }
-      mappings.myMappingNameAndInputNodeToOutputNodeMap.put(label, innerMap);
+      mappingsMemento.myMappingNameAndInputNodeToOutputNodeMap.put(label, innerMap);
+    }
+
+    /* input -> output */
+    for(int size = is.readInt(); size > 0; size--) {
+      SNodeId inputNode = is.readNodeId();
+      SNodeId outputNode = is.readNodeId();
+      boolean isUnique = is.readBoolean();
+      mappingsMemento.addOutputNodeByInputNode(inputNode, outputNode, isUnique);
     }
 
     /* check */
     if(is.readByte() != '!') {
       throw new IOException("inconsistent cache");
     }
-    return mappings;
+    return mappingsMemento;
   }
 
 

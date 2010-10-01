@@ -2,7 +2,8 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
-import jetbrains.mps.generator.impl.cache.PersistableMappings;
+import jetbrains.mps.generator.impl.cache.BrokenCacheException;
+import jetbrains.mps.generator.impl.cache.MappingsMemento;
 import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
 import jetbrains.mps.smodel.SModel;
@@ -79,12 +80,13 @@ public class GeneratorMappings {
       if (o == null) {
         myCopiedOutputNodeForInputNode.put(inputNode, outputNode);
       } else if (o instanceof List) {
-        ((List<SNode>) o).add(outputNode);
+        //((List<SNode>) o).add(outputNode);
       } else {
-        List<SNode> list = new ArrayList<SNode>(2);
-        list.add((SNode) o);
-        list.add(outputNode);
-        myCopiedOutputNodeForInputNode.put(inputNode, list);
+        //List<SNode> list = new ArrayList<SNode>(2);
+        //list.add((SNode) o);
+        //list.add(outputNode);
+        //myCopiedOutputNodeForInputNode.put(inputNode, list);
+        myCopiedOutputNodeForInputNode.put(inputNode, Collections.singletonList((SNode)o));
       }
     }
   }
@@ -168,13 +170,30 @@ public class GeneratorMappings {
       for(Entry<SNode, Object> i : o.getValue().entrySet()) {
         SNode inputNode = i.getKey();
         SNode originalRoot = inputNode == null ? null : builder.getOriginalForInput(inputNode.getTopmostAncestor());
-        PersistableMappings mappings = model.getMappings(originalRoot, true);
-        mappings.addOutputNodeByInputNodeAndMappingName(inputNode == null ? null : inputNode.getSNodeId(), label, i.getValue());
+        MappingsMemento mappingsMemento = model.getMappingsMemento(originalRoot, true);
+        mappingsMemento.addOutputNodeByInputNodeAndMappingName(inputNode == null ? null : inputNode.getSNodeId(), label, i.getValue());
+      }
+    }
+
+    for (Entry<SNode, Object> o : myCopiedOutputNodeForInputNode.entrySet()) {
+      SNode inputNode = o.getKey();
+      Object value = o.getValue();
+      if(value instanceof SNode) {
+        SNodeId targetId = ((SNode) value).getSNodeId();
+        if(inputNode.getSNodeId().equals(targetId)) {
+          continue; /* trivial */
+        }
+        MappingsMemento mappingsMemento = model.getMappingsMemento(builder.getOriginalForInput(inputNode.getTopmostAncestor()), true);
+        mappingsMemento.addOutputNodeByInputNode(inputNode.getSNodeId(), targetId, true);
+      } else if(value instanceof List) {
+        SNodeId targetId = ((List<SNode>) value).get(0).getSNodeId();
+        MappingsMemento mappingsMemento = model.getMappingsMemento(builder.getOriginalForInput(inputNode.getTopmostAncestor()), true);
+        mappingsMemento.addOutputNodeByInputNode(inputNode.getSNodeId(), targetId, false);
       }
     }
   }
 
-  public void importPersisted(PersistableMappings val, SModel inputModel, SModel outputModel) {
+  public void importPersisted(MappingsMemento val, SModel inputModel, SModel outputModel) throws BrokenCacheException {
 
     // labels
     for(Entry<String, Map<SNodeId, Object>> e : val.getMappingNameAndInputNodeToOutputNodeMap().entrySet()) {
@@ -186,24 +205,56 @@ public class GeneratorMappings {
       }
       for(Entry<SNodeId,Object> n : e.getValue().entrySet()) {
         SNodeId key = n.getKey();
-        SNode inputNode = key != null ? inputModel.getNodeById(key) : null;
+        SNode inputNode = null;
+        if(key != null) {
+          inputNode = inputModel.getNodeById(key);
+          if(inputNode == null) {
+            continue;
+          }
+        }
         Object value = n.getValue();
         if(value instanceof SNodeId) {
-          addOutputNode(currentMapping, inputNode, outputModel.getNodeById((SNodeId) value));
+          SNode outputNode = outputModel.getNodeById((SNodeId) value);
+          if(outputNode == null) {
+            continue;
+          }
+          addOutputNode(currentMapping, inputNode, outputNode);
         } else if(value instanceof List) {
           for(SNodeId id : (List<SNodeId>)value) {
-            addOutputNode(currentMapping, inputNode, outputModel.getNodeById(id));
+            SNode outputNode = outputModel.getNodeById(id);
+            if(outputNode == null) {
+              continue;
+            }
+            addOutputNode(currentMapping, inputNode, outputNode);
           }
         }
       }
     }
+
+    // output for input
+    for(Entry<SNodeId, Object> e : val.getCopiedOutputNodeForInputNode().entrySet()) {
+      SNode inputNode = inputModel.getNodeById(e.getKey());
+      if(inputNode == null) {
+        continue;
+      }
+      Object value = e.getValue();
+      if(value instanceof SNodeId) {
+        SNode outputNode = outputModel.getNodeById((SNodeId) value);
+        if(outputNode == null) {
+          continue;
+        }
+        myCopiedOutputNodeForInputNode.put(inputNode, outputNode);
+      } else if(value instanceof List) {
+        SNode outputNode = outputModel.getNodeById(((List<SNodeId>) value).get(0));
+        if(outputNode == null) {
+          continue;
+        }
+        myCopiedOutputNodeForInputNode.put(inputNode, Collections.singletonList(outputNode));
+      }
+    }
   }
 
-  private void addOutputNode(Map<SNode, Object> currentMapping, SNode inputNode, SNode outputNode) {
-    if(outputNode == null) {
-      // TODO report?
-      return;
-    }
+  private void addOutputNode(@NotNull Map<SNode, Object> currentMapping, SNode inputNode, @NotNull SNode outputNode) throws BrokenCacheException {
     Object o = currentMapping.get(inputNode);
     if (o == null) {
       currentMapping.put(inputNode, outputNode);

@@ -16,7 +16,6 @@
 package jetbrains.mps.generator.impl.cache;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
-import jetbrains.mps.generator.impl.GeneratorMappings;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
@@ -42,13 +41,13 @@ public class TransientModelWithMetainfo {
   private SModelReference myReference;
   private List<SNode> myRoots;
   private Map<SNodeId, SNodeId> myRootToOriginal;
-  private Map<SNodeId, PersistableMappings> myMappings;
+  private Map<SNodeId, MappingsMemento> myMappingsMemento;
 
   public TransientModelWithMetainfo(SModelReference reference, List<SNode> roots) {
     myReference = reference;
     myRoots = roots;
     myRootToOriginal = new HashMap<SNodeId, SNodeId>();
-    myMappings = new HashMap<SNodeId, PersistableMappings>();
+    myMappingsMemento = new HashMap<SNodeId, MappingsMemento>();
   }
 
   public TransientModelWithMetainfo(SModel model) {
@@ -59,22 +58,22 @@ public class TransientModelWithMetainfo {
     return myRoots;
   }
 
-  public PersistableMappings getMappings(String originalId) {
-    return myMappings.get(SNodeId.fromString(originalId));
+  public MappingsMemento getMappingsMemento(String originalId) {
+    return myMappingsMemento.get(SNodeId.fromString(originalId));
   }
 
-  public PersistableMappings getMappings(SNode originalRoot, boolean create) {
+  public MappingsMemento getMappingsMemento(SNode originalRoot, boolean create) {
     SNodeId key = originalRoot == null ? null : originalRoot.getSNodeId();
-    PersistableMappings persistableMappings = myMappings.get(key);
-    if(persistableMappings == null && create) {
-      persistableMappings = new PersistableMappings();
-      myMappings.put(key, persistableMappings);
+    MappingsMemento mappingsMemento = myMappingsMemento.get(key);
+    if(mappingsMemento == null && create) {
+      mappingsMemento = new MappingsMemento();
+      myMappingsMemento.put(key, mappingsMemento);
     }
-    return persistableMappings;
+    return mappingsMemento;
   }
 
-  public void updateMappings(String originalId, PersistableMappings mappings) {
-    myMappings.put(SNodeId.fromString(originalId), mappings);
+  public void updateMappings(String originalId, MappingsMemento mappingsMemento) {
+    myMappingsMemento.put(SNodeId.fromString(originalId), mappingsMemento);
   }
 
   public String getOriginal(SNode root) {
@@ -101,8 +100,8 @@ public class TransientModelWithMetainfo {
       os.writeNodeId(e.getValue());
     }
 
-    os.writeInt(myMappings.size());
-    for(Entry<SNodeId, PersistableMappings> e : myMappings.entrySet()) {
+    os.writeInt(myMappingsMemento.size());
+    for(Entry<SNodeId, MappingsMemento> e : myMappingsMemento.entrySet()) {
       os.writeNodeId(e.getKey());
       e.getValue().save(os);
     }
@@ -120,8 +119,8 @@ public class TransientModelWithMetainfo {
     size = is.readInt();
     for(; size > 0; size--) {
       SNodeId key = is.readNodeId();
-      PersistableMappings mappings = PersistableMappings.load(is);
-      myMappings.put(key, mappings);
+      MappingsMemento mappingsMemento = MappingsMemento.load(is);
+      myMappingsMemento.put(key, mappingsMemento);
     }
 
     if(is.readInt() != END_MARKER) {

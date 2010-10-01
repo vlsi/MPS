@@ -34,6 +34,8 @@ public interface DependenciesBuilder {
 
   void updateUnchanged(TransientModelWithMetainfo model) throws GenerationFailureException;
 
+  boolean isStepRequired();
+
   public static class NullDependenciesBuilder implements DependenciesBuilder {
 
     @Override
@@ -82,6 +84,11 @@ public interface DependenciesBuilder {
 
     @Override
     public void updateUnchanged(TransientModelWithMetainfo model) throws GenerationFailureException {
+    }
+
+    @Override
+    public boolean isStepRequired() {
+      return false;
     }
   }
 }

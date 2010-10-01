@@ -103,6 +103,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     ttrace.pop();
 
     myAreMappingsReady = true;
+    myChanged |= myDependenciesBuilder.isStepRequired(); // TODO optimize: if step is required, it should be the last step
 
     // optimization: no changes? quit
     if (!isPrimary && !myChanged && myDelayedChanges.isEmpty() && !myRuleManager.hasWeavings()) {
