@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="InternalThisExpression_Editor.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalThisExpression_Editor" />
+  <unitInfo fileName="InternalVariableReference_Editor.java" startLine="102" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalVariableReference_Editor$InternalVariableReference_name_postfixCellMenu_a0d0" />
+  <unitInfo fileName="StyleSheet_StyleSheet.java" startLine="12" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.StyleSheet_StyleSheet" />
+  <unitInfo fileName="ExtractStatementListInnerExpression_Editor.java" startLine="15" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.ExtractStatementListInnerExpression_Editor" />
+  <unitInfo fileName="InternalClassifierType_Editor.java" startLine="222" startPosition="0" endLine="254" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalClassifierType_Editor$_Inline_7zoim2_a3a0" />
+  <unitInfo fileName="InternalClassifierType_Editor.java" startLine="255" startPosition="0" endLine="287" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalClassifierType_Editor$_Inline_7zoim2_a3a0_0" />
+  <unitInfo fileName="ExtractStaticMethod_CallExpression_Editor.java" startLine="64" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.ExtractStaticMethod_CallExpression_Editor$_Inline_vnpzmb_a0a" />
+  <unitInfo fileName="InternalNewExpression_Editor.java" startLine="260" startPosition="0" endLine="297" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalNewExpression_Editor$parameterListHandler_svbh7s_g0" />
+  <unitInfo fileName="InternalClassifierType_Editor.java" startLine="288" startPosition="0" endLine="335" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalClassifierType_Editor$parameterListHandler_7zoim2_g0a" />
+  <unitInfo fileName="InternalClassExpression_Editor.java" startLine="21" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalClassExpression_Editor" />
+  <unitInfo fileName="InternalPartialInstanceMethodCall_Editor.java" startLine="164" startPosition="0" endLine="222" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalPartialInstanceMethodCall_Editor$actualArgumentListHandler_uv9f3e_h0" />
+  <unitInfo fileName="InternalStaticMethodCall_Editor.java" startLine="179" startPosition="0" endLine="237" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalStaticMethodCall_Editor$typeParameterListHandler_z2b22p_g0" />
+  <unitInfo fileName="InternalStaticFieldReference_Editor.java" startLine="16" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalStaticFieldReference_Editor" />
+  <unitInfo fileName="TypeHintExpression_Editor.java" startLine="17" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.TypeHintExpression_Editor" />
+  <unitInfo fileName="ExtractStaticMethod_CallExpression_Editor.java" startLine="23" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.ExtractStaticMethod_CallExpression_Editor" />
+  <unitInfo fileName="InternalVariableReference_Editor.java" startLine="29" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalVariableReference_Editor" />
+  <unitInfo fileName="ExtractStatementListExpression_Editor.java" startLine="22" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.ExtractStatementListExpression_Editor" />
+  <unitInfo fileName="ExtractToConstantExpression_Editor.java" startLine="20" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.ExtractToConstantExpression_Editor" />
+  <unitInfo fileName="ExtractStaticInnerClassExpression_Editor.java" startLine="22" startPosition="0" endLine="168" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.ExtractStaticInnerClassExpression_Editor" />
+  <unitInfo fileName="ExtractStaticMethodExpression_Editor.java" startLine="23" startPosition="0" endLine="170" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.ExtractStaticMethodExpression_Editor" />
+  <unitInfo fileName="InternalPartialFieldReference_Editor.java" startLine="24" startPosition="0" endLine="197" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalPartialFieldReference_Editor" />
+  <unitInfo fileName="InternalPartialInstanceMethodCall_Editor.java" startLine="31" startPosition="0" endLine="223" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalPartialInstanceMethodCall_Editor" />
+  <unitInfo fileName="InternalStaticMethodCall_Editor.java" startLine="32" startPosition="0" endLine="238" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalStaticMethodCall_Editor" />
+  <unitInfo fileName="InternalNewExpression_Editor.java" startLine="28" startPosition="0" endLine="298" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalNewExpression_Editor" />
+  <unitInfo fileName="InternalClassifierType_Editor.java" startLine="32" startPosition="0" endLine="336" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.editor.InternalClassifierType_Editor" />
   <root nodeId="1174914167958">
     <nodeInfo nodeId="1202148790550" fileName="InternalClassifierType_Editor.java" startLine="218" startPosition="110" endLine="219" endPosition="98" />
     <scopeInfo nodeId="1202148781769" fileName="InternalClassifierType_Editor.java" startLine="218" startPosition="110" endLine="219" endPosition="98" />

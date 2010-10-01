@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="QueriesGenerated.java" startLine="13" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement.QueriesGenerated" />
+  <root nodeId="1209150022679">
+    <nodeInfo nodeId="1209150621175" fileName="QueriesGenerated.java" startLine="14" startPosition="146" endLine="15" endPosition="253" />
+    <nodeInfo nodeId="1209150505329" fileName="QueriesGenerated.java" startLine="18" startPosition="146" endLine="19" endPosition="112" />
+    <scopeInfo nodeId="1209150617831" fileName="QueriesGenerated.java" startLine="14" startPosition="146" endLine="15" endPosition="253" />
+    <scopeInfo nodeId="1209150502312" fileName="QueriesGenerated.java" startLine="18" startPosition="146" endLine="19" endPosition="112" />
+  </root>
+  <root nodeId="1209150125542">
+    <nodeInfo nodeId="1209150220871" fileName="QueriesGenerated.java" startLine="22" startPosition="144" endLine="23" endPosition="80" />
+    <scopeInfo nodeId="1209150187922" fileName="QueriesGenerated.java" startLine="22" startPosition="144" endLine="23" endPosition="80" />
+  </root>
+</debugInfo>
+

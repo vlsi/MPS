@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
@@ -18,7 +19,7 @@ public class check_CellModel_RefCell_InferenceRule extends AbstractInferenceRule
   public check_CellModel_RefCell_InferenceRule() {
   }
 
-  public void applyRule(final SNode refCell, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode refCell, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(LinkDeclaration_Behavior.call_isSingular_1213877254557(SLinkOperations.getTarget(refCell, "relationDeclaration", false)))) {
       BaseIntentionProvider intentionProvider = null;
       IErrorTarget errorTarget = new NodeErrorTarget();
@@ -30,8 +31,11 @@ public class check_CellModel_RefCell_InferenceRule extends AbstractInferenceRule
     return "jetbrains.mps.lang.editor.structure.CellModel_RefCell";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

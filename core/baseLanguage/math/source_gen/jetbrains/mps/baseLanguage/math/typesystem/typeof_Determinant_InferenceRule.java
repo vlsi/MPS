@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
@@ -19,7 +20,7 @@ public class typeof_Determinant_InferenceRule extends AbstractInferenceRule_Runt
   public typeof_Determinant_InferenceRule() {
   }
 
-  public void applyRule(final SNode determinant, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode determinant, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       final SNode detmat = typeCheckingContext.typeOf(SLinkOperations.getTarget(determinant, "param", true), "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6955172009299969866", true);
       typeCheckingContext.whenConcrete(detmat, new Runnable() {
@@ -47,8 +48,11 @@ public class typeof_Determinant_InferenceRule extends AbstractInferenceRule_Runt
     return "jetbrains.mps.baseLanguage.math.structure.Determinant";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

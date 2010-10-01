@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -21,7 +22,7 @@ public class check_ConceptSubstitutePart_NonTypesystemRule extends AbstractNonTy
   public check_ConceptSubstitutePart_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode builder = SNodeOperations.getAncestor(nodeToCheck, "jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder", false, false);
     SNode substituteConcept = SLinkOperations.getTarget(builder, "applicableConcept", false);
     SNode conceptToAdd = SLinkOperations.getTarget(nodeToCheck, "concept", false);
@@ -38,8 +39,11 @@ public class check_ConceptSubstitutePart_NonTypesystemRule extends AbstractNonTy
     return "jetbrains.mps.lang.actions.structure.ConceptSubstitutePart";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

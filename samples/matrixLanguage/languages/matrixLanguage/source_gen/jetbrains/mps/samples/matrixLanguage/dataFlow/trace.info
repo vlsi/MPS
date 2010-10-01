@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="TransposeExpression_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.dataFlow.TransposeExpression_DataFlow" />
+  <unitInfo fileName="DeterminantExpression_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.dataFlow.DeterminantExpression_DataFlow" />
+  <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.dataFlow.DFABuilders" />
+  <unitInfo fileName="MatrixRow_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.dataFlow.MatrixRow_DataFlow" />
+  <unitInfo fileName="MatrixLiteral_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.dataFlow.MatrixLiteral_DataFlow" />
+  <unitInfo fileName="ForEachMatrixElement_DataFlow.java" startLine="11" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.dataFlow.ForEachMatrixElement_DataFlow" />
   <root nodeId="1210243746762">
     <nodeInfo nodeId="1210243807902" fileName="ForEachMatrixElement_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="103" />
     <nodeInfo nodeId="1210243813528" fileName="ForEachMatrixElement_DataFlow.java" startLine="16" startPosition="103" endLine="17" endPosition="45" />

@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -23,7 +24,7 @@ public class typeof_BinaryOperationMathContext_InferenceRule extends AbstractInf
   public typeof_BinaryOperationMathContext_InferenceRule() {
   }
 
-  public void applyRule(final SNode oper, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode oper, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final String S = "Operation only applicable to arguments of big decimal type";
     final SNode rightExpressionType_typevar_8613885519962201007 = typeCheckingContext.createNewRuntimeTypesVariable();
     final SNode leftExpressionType_typevar_8613885519962201008 = typeCheckingContext.createNewRuntimeTypesVariable();
@@ -139,8 +140,11 @@ public class typeof_BinaryOperationMathContext_InferenceRule extends AbstractInf
     return "jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

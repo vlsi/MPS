@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.baseLanguage.builders.behavior.Builder_Behavior;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -15,7 +16,7 @@ public class typeof_ResultExpression_InferenceRule extends AbstractInferenceRule
   public typeof_ResultExpression_InferenceRule() {
   }
 
-  public void applyRule(final SNode expression, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode expression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode contextBuilder = Builder_Behavior.getContextBuilder_7057666463730366732(expression);
     {
       SNode _nodeToCheck_1029348928467 = expression;
@@ -29,8 +30,11 @@ public class typeof_ResultExpression_InferenceRule extends AbstractInferenceRule
     return "jetbrains.mps.baseLanguage.builders.structure.ResultExpression";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

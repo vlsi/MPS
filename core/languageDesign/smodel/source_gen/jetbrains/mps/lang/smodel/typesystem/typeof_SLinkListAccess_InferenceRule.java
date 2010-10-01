@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -18,7 +19,7 @@ public class typeof_SLinkListAccess_InferenceRule extends AbstractInferenceRule_
   public typeof_SLinkListAccess_InferenceRule() {
   }
 
-  public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode linkDecl = SLinkOperations.getTarget(op, "link", false);
     if (linkDecl == null) {
       return;
@@ -35,8 +36,11 @@ public class typeof_SLinkListAccess_InferenceRule extends AbstractInferenceRule_
     return "jetbrains.mps.lang.smodel.structure.SLinkListAccess";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

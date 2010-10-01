@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="RelativePosition_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.dataFlow.RelativePosition_DataFlow" />
+  <unitInfo fileName="BaseEmitJumpStatement_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.dataFlow.BaseEmitJumpStatement_DataFlow" />
+  <unitInfo fileName="BaseEmitVariableStatement_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.dataFlow.BaseEmitVariableStatement_DataFlow" />
+  <unitInfo fileName="EmitMayBeUnreachable_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.dataFlow.EmitMayBeUnreachable_DataFlow" />
+  <unitInfo fileName="EmitCodeForStatement_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.dataFlow.EmitCodeForStatement_DataFlow" />
+  <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.dataFlow.DFABuilders" />
+  <root nodeId="1207048012942">
+    <nodeInfo nodeId="1207048017274" fileName="EmitCodeForStatement_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="104" />
+    <scopeInfo nodeId="1207048012944" fileName="EmitCodeForStatement_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="104" />
+  </root>
+  <root nodeId="1207048173150">
+    <nodeInfo nodeId="1207048174919" fileName="EmitMayBeUnreachable_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="110" />
+    <scopeInfo nodeId="1207048173152" fileName="EmitMayBeUnreachable_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="110" />
+  </root>
+  <root nodeId="1207048192521">
+    <nodeInfo nodeId="1207048194931" fileName="BaseEmitVariableStatement_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="105" />
+    <scopeInfo nodeId="1207048192523" fileName="BaseEmitVariableStatement_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="105" />
+  </root>
+  <root nodeId="1207048243596">
+    <nodeInfo nodeId="1207048246552" fileName="BaseEmitJumpStatement_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="103" />
+    <scopeInfo nodeId="1207048243598" fileName="BaseEmitJumpStatement_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="103" />
+  </root>
+  <root nodeId="1207048273258">
+    <nodeInfo nodeId="1207048275699" fileName="RelativePosition_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" />
+    <scopeInfo nodeId="1207048273260" fileName="RelativePosition_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" />
+  </root>
+</debugInfo>
+

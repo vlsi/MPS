@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="ChildFilterBlock.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.intentions.structure.ChildFilterBlock" />
+  <unitInfo fileName="Intentions_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.intentions.structure.Intentions_Language" />
+  <unitInfo fileName="SurroundWithIntentionDeclaration.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration" />
+  <unitInfo fileName="IntentionDeclaration.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" />
+  <unitInfo fileName="ExecuteUIBlock.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.intentions.structure.ExecuteUIBlock" />
+  <unitInfo fileName="ConceptFunctionParameter_childNode.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_childNode" />
+  <unitInfo fileName="IntentionParameter.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.intentions.structure.IntentionParameter" />
+  <unitInfo fileName="ConceptFunctionParameter_node.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" />
+  <unitInfo fileName="ExecuteBlock.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.intentions.structure.ExecuteBlock" />
+  <unitInfo fileName="IsApplicableBlock.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.intentions.structure.IsApplicableBlock" />
+  <unitInfo fileName="DescriptionBlock.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.intentions.structure.DescriptionBlock" />
+  <unitInfo fileName="ParameterizedIntentionDeclaration.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration" />
+  <unitInfo fileName="IntentionContextParamReference.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.intentions.structure.IntentionContextParamReference" />
+  <unitInfo fileName="QueryBlock.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.intentions.structure.QueryBlock" />
+  <unitInfo fileName="ChildFilterFunction.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.intentions.structure.ChildFilterFunction" />
+  <unitInfo fileName="GenerateIntentionDeclaration.java" startLine="12" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.lang.intentions.structure.GenerateIntentionDeclaration" />
+  <unitInfo fileName="IntentionContextParameterDeclaration.java" startLine="13" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.intentions.structure.IntentionContextParameterDeclaration" />
+  <unitInfo fileName="BaseIntentionDeclaration.java" startLine="15" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration" />
+</debugInfo>
+

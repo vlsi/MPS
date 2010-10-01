@@ -1,3 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo />
+<debugInfo>
+  <unitInfo fileName="IOnChangeEditorBlock.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.structure.IOnChangeEditorBlock" />
+  <unitInfo fileName="IJavaRunConfigurationParameter.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.structure.IJavaRunConfigurationParameter" />
+  <unitInfo fileName="RunConfigurations_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.structure.RunConfigurations_Language" />
+  <unitInfo fileName="ComponentInsideOfChangeListenerAnnotation_AnnotationLink.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.structure.ComponentInsideOfChangeListenerAnnotation_AnnotationLink" />
+  <unitInfo fileName="UserComponentReferenceAnnotation_AnnotationLink.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.structure.UserComponentReferenceAnnotation_AnnotationLink" />
+  <unitInfo fileName="IsApplicableBlock.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.structure.IsApplicableBlock" />
+  <unitInfo fileName="ComponentInsideOfChangeListenerAnnotation.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.structure.ComponentInsideOfChangeListenerAnnotation" />
+  <unitInfo fileName="UserComponentReferenceAnnotation.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.structure.UserComponentReferenceAnnotation" />
+  <unitInfo fileName="JavaCheckBlock.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.structure.JavaCheckBlock" />
+  <unitInfo fileName="JavaNodeConfigurationEditorDeclaration.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.structure.JavaNodeConfigurationEditorDeclaration" />
+  <unitInfo fileName="OnChangeNodeBlock.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.structure.OnChangeNodeBlock" />
+  <unitInfo fileName="Node_FunctionParameter.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.structure.Node_FunctionParameter" />
+  <unitInfo fileName="JavaConfigurationRunParameters_FunctionParameter.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.structure.JavaConfigurationRunParameters_FunctionParameter" />
+  <unitInfo fileName="JavaNodeRunConfiguration.java" startLine="11" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.structure.JavaNodeRunConfiguration" />
+  <unitInfo fileName="JavaRunConfiguration.java" startLine="12" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.structure.JavaRunConfiguration" />
+  <unitInfo fileName="NodeRunConfigPropertyInstance.java" startLine="13" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.runConfigurations.structure.NodeRunConfigPropertyInstance" />
+</debugInfo>
 

@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -19,7 +20,7 @@ public class matrix_element_must_be_number_NonTypesystemRule extends AbstractNon
   public matrix_element_must_be_number_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode mT, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode mT, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(mT, "elementType", true), SNodeOperations.copyNode(MathTypeUtil.qBigComplex)))) {
       {
         BaseIntentionProvider intentionProvider = null;
@@ -33,8 +34,11 @@ public class matrix_element_must_be_number_NonTypesystemRule extends AbstractNon
     return "jetbrains.mps.baseLanguage.math.structure.MatrixType";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

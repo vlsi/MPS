@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="InternalNewExpression_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.InternalNewExpression_Behavior" />
+  <unitInfo fileName="ExtractStatementListExpression_Behavior.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.ExtractStatementListExpression_Behavior" />
+  <unitInfo fileName="ExtractStaticMethod_CallExpression_Behavior.java" startLine="14" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.behavior.ExtractStaticMethod_CallExpression_Behavior" />
   <root nodeId="1230552150899">
     <scopeInfo nodeId="1230552150901" fileName="InternalNewExpression_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
   </root>

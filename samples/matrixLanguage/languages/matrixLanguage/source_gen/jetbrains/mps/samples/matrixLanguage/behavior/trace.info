@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="MatrixType_Behavior.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.behavior.MatrixType_Behavior" />
   <root nodeId="1215414020889">
     <nodeInfo nodeId="1215414028678" fileName="MatrixType_Behavior.java" startLine="12" startPosition="78" endLine="13" endPosition="75" />
     <nodeInfo nodeId="1215414028689" fileName="MatrixType_Behavior.java" startLine="14" startPosition="25" endLine="15" endPosition="23" />

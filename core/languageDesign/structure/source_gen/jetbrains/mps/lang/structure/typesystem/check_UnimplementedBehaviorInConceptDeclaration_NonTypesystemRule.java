@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.List;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.project.GlobalScope;
@@ -23,7 +24,7 @@ public class check_UnimplementedBehaviorInConceptDeclaration_NonTypesystemRule e
   public check_UnimplementedBehaviorInConceptDeclaration_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode conceptDeclaration, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode conceptDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> methodDeclarations = AbstractConceptDeclaration_Behavior.call_getNotImplementedConceptMethods_1213877394339(conceptDeclaration, GlobalScope.getInstance());
     if (SConceptPropertyOperations.getBoolean(conceptDeclaration, "abstract")) {
       return;
@@ -44,8 +45,11 @@ public class check_UnimplementedBehaviorInConceptDeclaration_NonTypesystemRule e
     return "jetbrains.mps.lang.structure.structure.ConceptDeclaration";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

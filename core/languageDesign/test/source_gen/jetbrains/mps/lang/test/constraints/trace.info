@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.test.constraints.ConstraintsDescriptor" />
+  <unitInfo fileName="TestNodeReference_declaration_ReferentConstraint.java" startLine="17" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.lang.test.constraints.TestNodeReference_declaration_ReferentConstraint" />
   <root nodeId="1213104844716">
     <nodeInfo nodeId="1228735143622" fileName="TestNodeReference_declaration_ReferentConstraint.java" startLine="30" startPosition="135" endLine="31" endPosition="36" />
     <nodeInfo nodeId="1213104844720" fileName="TestNodeReference_declaration_ReferentConstraint.java" startLine="32" startPosition="5" endLine="33" endPosition="222" />

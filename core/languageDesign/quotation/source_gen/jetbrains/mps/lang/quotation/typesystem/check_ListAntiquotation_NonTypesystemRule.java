@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -18,7 +19,7 @@ public class check_ListAntiquotation_NonTypesystemRule extends AbstractNonTypesy
   public check_ListAntiquotation_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode listAntiquotation, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode listAntiquotation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode annotatedNode = SNodeOperations.getParent(listAntiquotation);
     do {
       SNode matchedNode_5jb8fe_b0 = SNodeOperations.getParent(annotatedNode);
@@ -48,8 +49,11 @@ public class check_ListAntiquotation_NonTypesystemRule extends AbstractNonTypesy
     return "jetbrains.mps.lang.quotation.structure.ListAntiquotation";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

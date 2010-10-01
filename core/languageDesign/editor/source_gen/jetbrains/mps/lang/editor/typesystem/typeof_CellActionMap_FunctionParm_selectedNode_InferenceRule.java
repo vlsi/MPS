@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.behavior.AbstractComponent_Behavior;
@@ -20,7 +21,7 @@ public class typeof_CellActionMap_FunctionParm_selectedNode_InferenceRule extend
   public typeof_CellActionMap_FunctionParm_selectedNode_InferenceRule() {
   }
 
-  public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode applicableConcept = SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.lang.editor.structure.CellActionMapDeclaration", false, false), "applicableConcept", false);
     if (applicableConcept == null) {
       applicableConcept = AbstractComponent_Behavior.call_getConceptDeclaration_7055725856388417603(SNodeOperations.getAncestor(node, "jetbrains.mps.lang.editor.structure.BaseEditorComponent", false, false));
@@ -37,8 +38,11 @@ public class typeof_CellActionMap_FunctionParm_selectedNode_InferenceRule extend
     return "jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

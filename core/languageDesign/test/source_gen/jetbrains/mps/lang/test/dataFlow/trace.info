@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.test.dataFlow.DFABuilders" />
+  <unitInfo fileName="EditorOperation_DataFlow.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.test.dataFlow.EditorOperation_DataFlow" />
+  <unitInfo fileName="ExpressionContainer_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.test.dataFlow.ExpressionContainer_DataFlow" />
+  <unitInfo fileName="AssertMatch_DataFlow.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.test.dataFlow.AssertMatch_DataFlow" />
   <root nodeId="1215198781211">
     <nodeInfo nodeId="1215198839747" fileName="AssertMatch_DataFlow.java" startLine="16" startPosition="89" endLine="17" endPosition="50" />
     <nodeInfo nodeId="1215198848103" fileName="AssertMatch_DataFlow.java" startLine="19" startPosition="87" endLine="20" endPosition="49" />

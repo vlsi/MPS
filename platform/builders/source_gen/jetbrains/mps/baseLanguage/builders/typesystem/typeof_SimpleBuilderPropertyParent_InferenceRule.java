@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.baseLanguage.builders.behavior.BaseSimpleBuilderDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
@@ -17,7 +18,7 @@ public class typeof_SimpleBuilderPropertyParent_InferenceRule extends AbstractIn
   public typeof_SimpleBuilderPropertyParent_InferenceRule() {
   }
 
-  public void applyRule(final SNode simpleBuilderPropertyParent, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode simpleBuilderPropertyParent, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode builder = BaseSimpleBuilderDeclaration_Behavior.call_getContextDeclaration_6254726786820551255(SNodeOperations.getAncestor(simpleBuilderPropertyParent, "jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration", false, false));
     {
       SNode _nodeToCheck_1029348928467 = simpleBuilderPropertyParent;
@@ -31,8 +32,11 @@ public class typeof_SimpleBuilderPropertyParent_InferenceRule extends AbstractIn
     return "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyParent";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

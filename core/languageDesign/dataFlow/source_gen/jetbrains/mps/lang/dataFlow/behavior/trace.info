@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="LabelPosition_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.LabelPosition_Behavior" />
+  <unitInfo fileName="NodeParameter_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.NodeParameter_Behavior" />
+  <unitInfo fileName="EmitStatement_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.EmitStatement_Behavior" />
+  <unitInfo fileName="InstructionType_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.InstructionType_Behavior" />
+  <unitInfo fileName="BuilderBlock_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.BuilderBlock_Behavior" />
+  <unitInfo fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.DataFlowBuilderDeclaration_Behavior" />
+  <root nodeId="1213877268329">
+    <scopeInfo nodeId="1213877268331" fileName="EmitStatement_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+  </root>
+  <root nodeId="1213877408160">
+    <nodeInfo nodeId="1213877408163" fileName="BuilderBlock_Behavior.java" startLine="11" startPosition="103" endLine="12" endPosition="16" />
+    <scopeInfo nodeId="1213877408169" fileName="BuilderBlock_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="1213877408162" fileName="BuilderBlock_Behavior.java" startLine="11" startPosition="103" endLine="12" endPosition="16" />
+  </root>
+  <root nodeId="1213877418697">
+    <scopeInfo nodeId="1213877418699" fileName="NodeParameter_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+  </root>
+  <root nodeId="1213877439994">
+    <nodeInfo nodeId="8952337903384725416" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="17" startPosition="82" endLine="18" endPosition="76" />
+    <nodeInfo nodeId="6261424444345978720" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="21" startPosition="100" endLine="22" endPosition="82" />
+    <scopeInfo nodeId="1213877439996" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="8952337903384725406" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="17" startPosition="82" endLine="18" endPosition="76" />
+    <scopeInfo nodeId="6261424444345978711" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="21" startPosition="100" endLine="22" endPosition="82" />
+  </root>
+  <root nodeId="1213877480940">
+    <scopeInfo nodeId="1213877480942" fileName="LabelPosition_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+  </root>
+  <root nodeId="1823319949748055875">
+    <nodeInfo nodeId="1823319949748055885" fileName="InstructionType_Behavior.java" startLine="11" startPosition="78" endLine="12" endPosition="25" />
+    <scopeInfo nodeId="1823319949748055877" fileName="InstructionType_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="1823319949748055881" fileName="InstructionType_Behavior.java" startLine="11" startPosition="78" endLine="12" endPosition="25" />
+  </root>
+</debugInfo>
+

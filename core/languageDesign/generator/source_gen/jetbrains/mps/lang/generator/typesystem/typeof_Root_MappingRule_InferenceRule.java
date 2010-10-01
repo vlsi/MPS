@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -22,7 +23,7 @@ public class typeof_Root_MappingRule_InferenceRule extends AbstractInferenceRule
   public typeof_Root_MappingRule_InferenceRule() {
   }
 
-  public void applyRule(final SNode rule, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode rule, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode template = SLinkOperations.getTarget(rule, "template", false);
     if ((template != null)) {
       SNode attrib = SLinkOperations.getTarget(template, AttributesRolesUtil.childRoleFromAttributeRole("rootTemplateAnnotation"), true);
@@ -46,8 +47,11 @@ public class typeof_Root_MappingRule_InferenceRule extends AbstractInferenceRule
     return "jetbrains.mps.lang.generator.structure.Root_MappingRule";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

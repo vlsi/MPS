@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
@@ -21,7 +22,7 @@ public class check_LinkRefExpression_NonTypesystemRule extends AbstractNonTypesy
   public check_LinkRefExpression_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode expr, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode expr, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode concept = SLinkOperations.getTarget(expr, "conceptDeclaration", false);
     SNode link = SLinkOperations.getTarget(expr, "linkDeclaration", false);
     if (concept == null || link == null) {
@@ -39,8 +40,11 @@ public class check_LinkRefExpression_NonTypesystemRule extends AbstractNonTypesy
     return "jetbrains.mps.lang.smodel.structure.LinkRefExpression";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

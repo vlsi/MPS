@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="ChangeAbstract_Intention.java" startLine="11" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.intentions.ChangeAbstract_Intention" />
+  <unitInfo fileName="ChangeLeaf_Intention.java" startLine="11" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.intentions.ChangeLeaf_Intention" />
+  <unitInfo fileName="ChangeRoot_Intention.java" startLine="11" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.intentions.ChangeRoot_Intention" />
+  <unitInfo fileName="ConvertToBeanBuilder_Intention.java" startLine="14" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.intentions.ConvertToBeanBuilder_Intention" />
   <root nodeId="5219429592916136228">
     <nodeInfo nodeId="5219429592916229025" fileName="ConvertToBeanBuilder_Intention.java" startLine="34" startPosition="85" endLine="35" endPosition="37" />
     <nodeInfo nodeId="5219429592916229029" fileName="ConvertToBeanBuilder_Intention.java" startLine="38" startPosition="76" endLine="39" endPosition="123" />

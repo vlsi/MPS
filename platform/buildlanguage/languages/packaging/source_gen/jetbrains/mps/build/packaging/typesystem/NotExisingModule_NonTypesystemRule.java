@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.build.packaging.behavior.Module_Behavior;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
@@ -18,7 +19,7 @@ public class NotExisingModule_NonTypesystemRule extends AbstractNonTypesystemRul
   public NotExisingModule_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode module, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode module, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (Module_Behavior.call_getModule_1213877515148(module) == null) {
       {
         BaseIntentionProvider intentionProvider = null;
@@ -32,8 +33,11 @@ public class NotExisingModule_NonTypesystemRule extends AbstractNonTypesystemRul
     return "jetbrains.mps.build.packaging.structure.Module";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

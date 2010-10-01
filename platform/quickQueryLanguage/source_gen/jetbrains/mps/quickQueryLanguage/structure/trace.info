@@ -1,3 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo />
+<debugInfo>
+  <unitInfo fileName="QuickQueryLanguage_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.structure.QuickQueryLanguage_Language" />
+  <unitInfo fileName="QueryReplace.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.structure.QueryReplace" />
+  <unitInfo fileName="QueryCondition.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.structure.QueryCondition" />
+  <unitInfo fileName="ModelQuery.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.structure.ModelQuery" />
+  <unitInfo fileName="AbstractQueryFunction.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.structure.AbstractQueryFunction" />
+  <unitInfo fileName="Query_node_Parameter.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.structure.Query_node_Parameter" />
+  <unitInfo fileName="ReplaceModelQuery.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.structure.ReplaceModelQuery" />
+  <unitInfo fileName="BaseQuery.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.structure.BaseQuery" />
+</debugInfo>
 

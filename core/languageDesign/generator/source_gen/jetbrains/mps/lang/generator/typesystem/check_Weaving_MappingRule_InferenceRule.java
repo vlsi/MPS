@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
@@ -18,7 +19,7 @@ public class check_Weaving_MappingRule_InferenceRule extends AbstractInferenceRu
   public check_Weaving_MappingRule_InferenceRule() {
   }
 
-  public void applyRule(final SNode rule, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode rule, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(rule, "ruleConsequence", true), "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference")) {
       SNode template = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(rule, "ruleConsequence", true), "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference"), "template", false);
       boolean useRootTemplateFragment = false;
@@ -41,8 +42,11 @@ public class check_Weaving_MappingRule_InferenceRule extends AbstractInferenceRu
     return "jetbrains.mps.lang.generator.structure.Weaving_MappingRule";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

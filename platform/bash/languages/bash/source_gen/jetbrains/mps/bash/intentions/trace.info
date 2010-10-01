@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="CreateProperVariableReferance_Intention.java" startLine="13" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.bash.intentions.CreateProperVariableReferance_Intention" />
+  <unitInfo fileName="UncommentCommand_Intention.java" startLine="12" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.bash.intentions.UncommentCommand_Intention" />
+  <unitInfo fileName="CommentOutCommand_Intention.java" startLine="13" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.bash.intentions.CommentOutCommand_Intention" />
+  <unitInfo fileName="AsyncExecution_Intention.java" startLine="14" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.bash.intentions.AsyncExecution_Intention" />
+  <unitInfo fileName="AddCommentedText_Intention.java" startLine="12" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.bash.intentions.AddCommentedText_Intention" />
   <root nodeId="1109366303090554669">
     <nodeInfo nodeId="1109366303090554734" fileName="CommentOutCommand_Intention.java" startLine="33" startPosition="85" endLine="34" endPosition="35" />
     <nodeInfo nodeId="1109366303090554693" fileName="CommentOutCommand_Intention.java" startLine="44" startPosition="90" endLine="45" endPosition="228" />

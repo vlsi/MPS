@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="MoneyCreator_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.MoneyCreator_Behavior" />
+  <unitInfo fileName="MoneyGetCurrencyMethodCall_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.MoneyGetCurrencyMethodCall_Behavior" />
+  <unitInfo fileName="MoneyLiteral_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.MoneyLiteral_Behavior" />
+  <unitInfo fileName="MoneyType_Behavior.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.MoneyType_Behavior" />
   <root nodeId="1213877266178">
     <scopeInfo nodeId="1213877266180" fileName="MoneyLiteral_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
   </root>

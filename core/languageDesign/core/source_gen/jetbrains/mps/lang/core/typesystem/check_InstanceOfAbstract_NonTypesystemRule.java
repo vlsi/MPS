@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
@@ -19,7 +20,7 @@ public class check_InstanceOfAbstract_NonTypesystemRule extends AbstractNonTypes
   public check_InstanceOfAbstract_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode baseConcept, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode baseConcept, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode concept = SNodeOperations.getConceptDeclaration(baseConcept);
     if (SConceptPropertyOperations.getBoolean(concept, "abstract")) {
       {
@@ -34,8 +35,11 @@ public class check_InstanceOfAbstract_NonTypesystemRule extends AbstractNonTypes
     return "jetbrains.mps.lang.core.structure.BaseConcept";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

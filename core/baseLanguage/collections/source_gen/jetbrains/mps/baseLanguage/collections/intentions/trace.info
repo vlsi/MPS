@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="add_sequence_initializer_Intention.java" startLine="11" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.add_sequence_initializer_Intention" />
+  <unitInfo fileName="CreateInitializer_Intention.java" startLine="12" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.CreateInitializer_Intention" />
+  <unitInfo fileName="add_copy_from_Intention.java" startLine="13" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.add_copy_from_Intention" />
+  <unitInfo fileName="add_init_values_Intention.java" startLine="13" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.add_init_values_Intention" />
+  <unitInfo fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="16" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.ConvertForEachStatementToForeachStatement_Intention" />
+  <unitInfo fileName="Add_Comparator_Intention.java" startLine="61" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.Add_Comparator_Intention$QuotationClass_z9bmn4_a0a0a0h" />
+  <unitInfo fileName="Add_Comparator_Intention.java" startLine="18" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.intentions.Add_Comparator_Intention" />
   <root nodeId="1193396656620">
     <nodeInfo nodeId="1193396722872" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="36" startPosition="85" endLine="37" endPosition="51" />
     <nodeInfo nodeId="1193396714705" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="47" startPosition="90" endLine="48" endPosition="16" />

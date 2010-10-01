@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="CopyPasteHandlers_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.CopyPasteHandlers_Constraints" />
+  <unitInfo fileName="SubstituteMenuPart_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.SubstituteMenuPart_Constraints" />
+  <unitInfo fileName="SideTransformMenuPart_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.SideTransformMenuPart_Constraints" />
+  <unitInfo fileName="SideTransformHintSubstituteActions_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.SideTransformHintSubstituteActions_Constraints" />
+  <unitInfo fileName="PasteWrappers_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.PasteWrappers_Constraints" />
+  <unitInfo fileName="NodeSubstituteActions_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.NodeSubstituteActions_Constraints" />
+  <unitInfo fileName="NodeFactories_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.NodeFactories_Constraints" />
+  <unitInfo fileName="NodeFactory_alias_PropertyConstraint.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.NodeFactory_alias_PropertyConstraint" />
+  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.ConstraintsDescriptor" />
+  <unitInfo fileName="NodeFactory_applicableConcept_ReferentConstraint.java" startLine="15" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.NodeFactory_applicableConcept_ReferentConstraint" />
+  <unitInfo fileName="SmartActionParameterReference_smartActionParameter_ReferentConstraint.java" startLine="17" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.SmartActionParameterReference_smartActionParameter_ReferentConstraint" />
+  <unitInfo fileName="SideTransformVariableReference_rightTransformVariableDeclaration_ReferentConstraint.java" startLine="18" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.SideTransformVariableReference_rightTransformVariableDeclaration_ReferentConstraint" />
+  <unitInfo fileName="SubstituteNodeBuilderVariableReference_nodeBuilderVariableDeclaration_ReferentConstraint.java" startLine="18" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.actions.constraints.SubstituteNodeBuilderVariableReference_nodeBuilderVariableDeclaration_ReferentConstraint" />
   <root nodeId="1213104855837">
     <nodeInfo nodeId="1213104855841" fileName="SubstituteNodeBuilderVariableReference_nodeBuilderVariableDeclaration_ReferentConstraint.java" startLine="30" startPosition="132" endLine="31" endPosition="160" />
     <nodeInfo nodeId="1213104855849" fileName="SubstituteNodeBuilderVariableReference_nodeBuilderVariableDeclaration_ReferentConstraint.java" startLine="31" startPosition="160" endLine="32" endPosition="46" />

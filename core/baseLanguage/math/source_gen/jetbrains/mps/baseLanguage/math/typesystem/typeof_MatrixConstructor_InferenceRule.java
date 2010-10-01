@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -15,7 +16,7 @@ public class typeof_MatrixConstructor_InferenceRule extends AbstractInferenceRul
   public typeof_MatrixConstructor_InferenceRule() {
   }
 
-  public void applyRule(final SNode mc, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode mc, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     DimensionUtil.checkDim(typeCheckingContext, SLinkOperations.getTargets(mc, "components", true), 0, new ArrayList<SNode>(), !(SPropertyOperations.getBoolean(mc, "column")), mc);
   }
 
@@ -23,8 +24,11 @@ public class typeof_MatrixConstructor_InferenceRule extends AbstractInferenceRul
     return "jetbrains.mps.baseLanguage.math.structure.MatrixConstructor";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

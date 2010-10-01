@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="CreatePatternVariable_Intention.java" startLine="11" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.pattern.intentions.CreatePatternVariable_Intention" />
+  <unitInfo fileName="CreateActionAsPattern_Intention.java" startLine="13" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.pattern.intentions.CreateActionAsPattern_Intention" />
+  <unitInfo fileName="CreateAsPattern_Intention.java" startLine="13" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.pattern.intentions.CreateAsPattern_Intention" />
+  <unitInfo fileName="CreateWildcardPattern_Intention.java" startLine="13" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.pattern.intentions.CreateWildcardPattern_Intention" />
+  <unitInfo fileName="CreatePropertyPatternVariable_Intention.java" startLine="15" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.pattern.intentions.CreatePropertyPatternVariable_Intention" />
+  <unitInfo fileName="CreateOrPattern_Intention.java" startLine="14" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.pattern.intentions.CreateOrPattern_Intention" />
+  <unitInfo fileName="CreateListPattern_Intention.java" startLine="15" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.lang.pattern.intentions.CreateListPattern_Intention" />
   <root nodeId="3514655265371682052">
     <nodeInfo nodeId="3514655265371691619" fileName="CreatePatternVariable_Intention.java" startLine="31" startPosition="85" endLine="32" endPosition="37" />
     <nodeInfo nodeId="3514655265371691623" fileName="CreatePatternVariable_Intention.java" startLine="42" startPosition="90" endLine="43" endPosition="64" />

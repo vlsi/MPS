@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="TemplateArgumentPatternVarRefExpression_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.generator.constraints.TemplateArgumentPatternVarRefExpression_Constraints" />
+  <unitInfo fileName="TemplateArgumentQueryExpression_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.generator.constraints.TemplateArgumentQueryExpression_Constraints" />
+  <unitInfo fileName="ITemplateCall_Constraints.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.generator.constraints.ITemplateCall_Constraints" />
+  <unitInfo fileName="CreateRootRule_templateNode_ReferentConstraint.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.generator.constraints.CreateRootRule_templateNode_ReferentConstraint" />
+  <unitInfo fileName="Root_MappingRule_template_ReferentConstraint.java" startLine="12" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.generator.constraints.Root_MappingRule_template_ReferentConstraint" />
+  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.generator.constraints.ConstraintsDescriptor" />
+  <unitInfo fileName="TemplateArgumentLinkPatternRefExpression_patternVar_ReferentConstraint.java" startLine="18" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.generator.constraints.TemplateArgumentLinkPatternRefExpression_patternVar_ReferentConstraint" />
+  <unitInfo fileName="TemplateArgumentPropertyPatternRefExpression_propertyPattern_ReferentConstraint.java" startLine="18" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.generator.constraints.TemplateArgumentPropertyPatternRefExpression_propertyPattern_ReferentConstraint" />
+  <unitInfo fileName="TemplateArgumentPatternVarRefExpression_patternVarDecl_ReferentConstraint.java" startLine="18" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.lang.generator.constraints.TemplateArgumentPatternVarRefExpression_patternVarDecl_ReferentConstraint" />
+  <root nodeId="1213104837507">
+    <nodeInfo nodeId="1213104837922" fileName="Root_MappingRule_template_ReferentConstraint.java" startLine="24" startPosition="132" endLine="25" endPosition="100" />
+    <scopeInfo nodeId="1213104837921" fileName="Root_MappingRule_template_ReferentConstraint.java" startLine="24" startPosition="132" endLine="25" endPosition="100" />
+  </root>
+  <root nodeId="1213104840277">
+    <nodeInfo nodeId="1213104840281" fileName="CreateRootRule_templateNode_ReferentConstraint.java" startLine="24" startPosition="132" endLine="25" endPosition="100" />
+    <scopeInfo nodeId="1213104840280" fileName="CreateRootRule_templateNode_ReferentConstraint.java" startLine="24" startPosition="132" endLine="25" endPosition="100" />
+  </root>
+  <root nodeId="4035562641222622456">
+    <nodeInfo nodeId="4035562641222637893" fileName="ITemplateCall_Constraints.java" startLine="12" startPosition="142" endLine="13" endPosition="801" />
+    <nodeInfo nodeId="4035562641222637881" fileName="ITemplateCall_Constraints.java" startLine="14" startPosition="5" endLine="15" endPosition="17" />
+    <nodeInfo nodeId="4035562641222637872" fileName="ITemplateCall_Constraints.java" startLine="11" startPosition="116" endLine="14" endPosition="5" />
+    <scopeInfo nodeId="4035562641222637874" fileName="ITemplateCall_Constraints.java" startLine="12" startPosition="142" endLine="13" endPosition="801" />
+    <scopeInfo nodeId="4035562641222637871" fileName="ITemplateCall_Constraints.java" startLine="11" startPosition="116" endLine="15" endPosition="17" />
+  </root>
+  <root nodeId="4035562641222625939">
+    <nodeInfo nodeId="4035562641222635155" fileName="TemplateArgumentQueryExpression_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="122" />
+    <scopeInfo nodeId="4035562641222635154" fileName="TemplateArgumentQueryExpression_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="122" />
+  </root>
+  <root nodeId="4665309944889434722">
+    <nodeInfo nodeId="4665309944889460331" fileName="TemplateArgumentPatternVarRefExpression_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="122" />
+    <nodeInfo nodeId="4665309944889434727" fileName="TemplateArgumentPatternVarRefExpression_patternVarDecl_ReferentConstraint.java" startLine="30" startPosition="132" endLine="31" endPosition="48" />
+    <nodeInfo nodeId="4665309944889434733" fileName="TemplateArgumentPatternVarRefExpression_patternVarDecl_ReferentConstraint.java" startLine="31" startPosition="48" endLine="32" endPosition="159" />
+    <nodeInfo nodeId="4665309944889434752" fileName="TemplateArgumentPatternVarRefExpression_patternVarDecl_ReferentConstraint.java" startLine="33" startPosition="87" endLine="34" endPosition="243" />
+    <nodeInfo nodeId="4665309944889434763" fileName="TemplateArgumentPatternVarRefExpression_patternVarDecl_ReferentConstraint.java" startLine="35" startPosition="5" endLine="36" endPosition="18" />
+    <nodeInfo nodeId="4665309944889434741" fileName="TemplateArgumentPatternVarRefExpression_patternVarDecl_ReferentConstraint.java" startLine="32" startPosition="159" endLine="35" endPosition="5" />
+    <scopeInfo nodeId="4665309944889460330" fileName="TemplateArgumentPatternVarRefExpression_Constraints.java" startLine="10" startPosition="114" endLine="11" endPosition="122" />
+    <scopeInfo nodeId="4665309944889434751" fileName="TemplateArgumentPatternVarRefExpression_patternVarDecl_ReferentConstraint.java" startLine="33" startPosition="87" endLine="34" endPosition="243" />
+    <scopeInfo nodeId="4665309944889434726" fileName="TemplateArgumentPatternVarRefExpression_patternVarDecl_ReferentConstraint.java" startLine="30" startPosition="132" endLine="36" endPosition="18">
+      <varInfo nodeId="4665309944889434728" varName="result" />
+      <varInfo nodeId="4665309944889434734" varName="rule" />
+    </scopeInfo>
+  </root>
+  <root nodeId="4816349095291149808">
+    <nodeInfo nodeId="4816349095291149816" fileName="TemplateArgumentPropertyPatternRefExpression_propertyPattern_ReferentConstraint.java" startLine="30" startPosition="132" endLine="31" endPosition="48" />
+    <nodeInfo nodeId="4816349095291149822" fileName="TemplateArgumentPropertyPatternRefExpression_propertyPattern_ReferentConstraint.java" startLine="31" startPosition="48" endLine="32" endPosition="159" />
+    <nodeInfo nodeId="4816349095291149841" fileName="TemplateArgumentPropertyPatternRefExpression_propertyPattern_ReferentConstraint.java" startLine="33" startPosition="87" endLine="34" endPosition="251" />
+    <nodeInfo nodeId="4816349095291149852" fileName="TemplateArgumentPropertyPatternRefExpression_propertyPattern_ReferentConstraint.java" startLine="35" startPosition="5" endLine="36" endPosition="18" />
+    <nodeInfo nodeId="4816349095291149830" fileName="TemplateArgumentPropertyPatternRefExpression_propertyPattern_ReferentConstraint.java" startLine="32" startPosition="159" endLine="35" endPosition="5" />
+    <scopeInfo nodeId="4816349095291149840" fileName="TemplateArgumentPropertyPatternRefExpression_propertyPattern_ReferentConstraint.java" startLine="33" startPosition="87" endLine="34" endPosition="251" />
+    <scopeInfo nodeId="4816349095291149815" fileName="TemplateArgumentPropertyPatternRefExpression_propertyPattern_ReferentConstraint.java" startLine="30" startPosition="132" endLine="36" endPosition="18">
+      <varInfo nodeId="4816349095291149817" varName="result" />
+      <varInfo nodeId="4816349095291149823" varName="rule" />
+    </scopeInfo>
+  </root>
+  <root nodeId="4816349095291149869">
+    <nodeInfo nodeId="4816349095291149873" fileName="TemplateArgumentLinkPatternRefExpression_patternVar_ReferentConstraint.java" startLine="30" startPosition="132" endLine="31" endPosition="48" />
+    <nodeInfo nodeId="4816349095291149879" fileName="TemplateArgumentLinkPatternRefExpression_patternVar_ReferentConstraint.java" startLine="31" startPosition="48" endLine="32" endPosition="159" />
+    <nodeInfo nodeId="4816349095291149898" fileName="TemplateArgumentLinkPatternRefExpression_patternVar_ReferentConstraint.java" startLine="33" startPosition="87" endLine="34" endPosition="247" />
+    <nodeInfo nodeId="4816349095291149909" fileName="TemplateArgumentLinkPatternRefExpression_patternVar_ReferentConstraint.java" startLine="35" startPosition="5" endLine="36" endPosition="18" />
+    <nodeInfo nodeId="4816349095291149887" fileName="TemplateArgumentLinkPatternRefExpression_patternVar_ReferentConstraint.java" startLine="32" startPosition="159" endLine="35" endPosition="5" />
+    <scopeInfo nodeId="4816349095291149897" fileName="TemplateArgumentLinkPatternRefExpression_patternVar_ReferentConstraint.java" startLine="33" startPosition="87" endLine="34" endPosition="247" />
+    <scopeInfo nodeId="4816349095291149872" fileName="TemplateArgumentLinkPatternRefExpression_patternVar_ReferentConstraint.java" startLine="30" startPosition="132" endLine="36" endPosition="18">
+      <varInfo nodeId="4816349095291149874" varName="result" />
+      <varInfo nodeId="4816349095291149880" varName="rule" />
+    </scopeInfo>
+  </root>
+</debugInfo>
+

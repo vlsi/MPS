@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="AllConstant_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.AllConstant_Constraints" />
+  <unitInfo fileName="SmartClosureParameterDeclaration_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.SmartClosureParameterDeclaration_Constraints" />
+  <unitInfo fileName="AbstractMappingOperation_Constraints.java" startLine="12" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.AbstractMappingOperation_Constraints" />
+  <unitInfo fileName="SortedSetOperation_Constraints.java" startLine="12" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.SortedSetOperation_Constraints" />
+  <unitInfo fileName="SortedMapOperation_Constraints.java" startLine="12" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.SortedMapOperation_Constraints" />
+  <unitInfo fileName="RemoveOperation_Constraints.java" startLine="12" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.RemoveOperation_Constraints" />
+  <unitInfo fileName="AbstractEnumeratorOperation_Constraints.java" startLine="12" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.AbstractEnumeratorOperation_Constraints" />
+  <unitInfo fileName="AbstractIteratorOperation_Constraints.java" startLine="12" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.AbstractIteratorOperation_Constraints" />
+  <unitInfo fileName="AbstractSetOperation_Constraints.java" startLine="12" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.AbstractSetOperation_Constraints" />
+  <unitInfo fileName="MapOperation_Constraints.java" startLine="12" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.MapOperation_Constraints" />
+  <unitInfo fileName="TreeMapCreator_Constraints.java" startLine="12" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.TreeMapCreator_Constraints" />
+  <unitInfo fileName="HashMapCreator_Constraints.java" startLine="12" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.HashMapCreator_Constraints" />
+  <unitInfo fileName="JoinOperation_Constraints.java" startLine="13" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.JoinOperation_Constraints" />
+  <unitInfo fileName="AsSequenceOperation_Constraints.java" startLine="13" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.AsSequenceOperation_Constraints" />
+  <unitInfo fileName="CustomMapCreator_alias_PropertyConstraint.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.CustomMapCreator_alias_PropertyConstraint" />
+  <unitInfo fileName="CustomContainerCreator_alias_PropertyConstraint.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.CustomContainerCreator_alias_PropertyConstraint" />
+  <unitInfo fileName="CustomContainerDeclaration_name_PropertyConstraint.java" startLine="12" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.CustomContainerDeclaration_name_PropertyConstraint" />
+  <unitInfo fileName="ForEachVariableReference_variable_ReferentConstraint.java" startLine="16" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.ForEachVariableReference_variable_ReferentConstraint" />
+  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.ConstraintsDescriptor" />
+  <unitInfo fileName="CustomMapCreator_containerDeclaration_ReferentConstraint.java" startLine="18" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.CustomMapCreator_containerDeclaration_ReferentConstraint" />
+  <unitInfo fileName="CustomContainerCreator_containerDeclaration_ReferentConstraint.java" startLine="21" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.CustomContainerCreator_containerDeclaration_ReferentConstraint" />
+  <unitInfo fileName="AbstractContainerCreator_Constraints.java" startLine="20" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.AbstractContainerCreator_Constraints" />
+  <unitInfo fileName="SequenceOperation_Constraints.java" startLine="18" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.constraints.SequenceOperation_Constraints" />
   <root nodeId="1204071206995">
     <nodeInfo nodeId="1204071322847" fileName="SmartClosureParameterTypeUtil.java" startLine="18" startPosition="114" endLine="19" endPosition="324" />
     <nodeInfo nodeId="1206111352089" fileName="SmartClosureParameterTypeUtil.java" startLine="21" startPosition="7" endLine="22" endPosition="48" />

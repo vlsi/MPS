@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="OutputLang_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.structure.OutputLang_Language" />
+  <unitInfo fileName="OutputNode_forDontApplyReductionTwice_test.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.structure.OutputNode_forDontApplyReductionTwice_test" />
+  <unitInfo fileName="CustomRoot.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.structure.CustomRoot" />
+  <unitInfo fileName="TwoVarStatement.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.structure.TwoVarStatement" />
+  <unitInfo fileName="CustomStatementRef.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.structure.CustomStatementRef" />
+  <unitInfo fileName="OutputNode.java" startLine="13" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.structure.OutputNode" />
+  <unitInfo fileName="CustomStatement.java" startLine="13" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.structure.CustomStatement" />
+  <unitInfo fileName="OutputRoot.java" startLine="14" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.structure.OutputRoot" />
+</debugInfo>
+

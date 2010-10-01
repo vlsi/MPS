@@ -1,5 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="ForEachVariableReference_DataFlow.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.ForEachVariableReference_DataFlow" />
+  <unitInfo fileName="PushOperation_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.PushOperation_DataFlow" />
+  <unitInfo fileName="TailListOperation_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.TailListOperation_DataFlow" />
+  <unitInfo fileName="HeadListOperation_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.HeadListOperation_DataFlow" />
+  <unitInfo fileName="ContainsAllOperation_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.ContainsAllOperation_DataFlow" />
+  <unitInfo fileName="SortOperation_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.SortOperation_DataFlow" />
+  <unitInfo fileName="ComparatorSortOperation_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.ComparatorSortOperation_DataFlow" />
+  <unitInfo fileName="ChunkOperation_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.ChunkOperation_DataFlow" />
+  <unitInfo fileName="PutAllOperation_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.PutAllOperation_DataFlow" />
+  <unitInfo fileName="MapRemoveOperation_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.MapRemoveOperation_DataFlow" />
+  <unitInfo fileName="ContainsValueOperation_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.ContainsValueOperation_DataFlow" />
+  <unitInfo fileName="ContainsKeyOperation_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.ContainsKeyOperation_DataFlow" />
+  <unitInfo fileName="TailMapOperation_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.TailMapOperation_DataFlow" />
+  <unitInfo fileName="HeadMapOperation_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.HeadMapOperation_DataFlow" />
+  <unitInfo fileName="TailSetOperation_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.TailSetOperation_DataFlow" />
+  <unitInfo fileName="HeadSetOperation_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.HeadSetOperation_DataFlow" />
+  <unitInfo fileName="DowncastExpression_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.DowncastExpression_DataFlow" />
+  <unitInfo fileName="AddFirstElementOperation_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.AddFirstElementOperation_DataFlow" />
+  <unitInfo fileName="AddLastElementOperation_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.AddLastElementOperation_DataFlow" />
+  <unitInfo fileName="RemoveAtElementOperation_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.RemoveAtElementOperation_DataFlow" />
+  <unitInfo fileName="RemoveAllSetElementsOperation_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.RemoveAllSetElementsOperation_DataFlow" />
+  <unitInfo fileName="AddAllSetElementsOperation_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.AddAllSetElementsOperation_DataFlow" />
+  <unitInfo fileName="RemoveSetElementOperation_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.RemoveSetElementOperation_DataFlow" />
+  <unitInfo fileName="AddSetElementOperation_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.AddSetElementOperation_DataFlow" />
+  <unitInfo fileName="InternalSequenceOperation_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.InternalSequenceOperation_DataFlow" />
+  <unitInfo fileName="GetElementOperation_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.GetElementOperation_DataFlow" />
+  <unitInfo fileName="AddElementOperation_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.AddElementOperation_DataFlow" />
+  <unitInfo fileName="TakeOperation_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.TakeOperation_DataFlow" />
+  <unitInfo fileName="SkipOperation_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.SkipOperation_DataFlow" />
+  <unitInfo fileName="RemoveElementOperation_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.RemoveElementOperation_DataFlow" />
+  <unitInfo fileName="RemoveAllElementsOperation_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.RemoveAllElementsOperation_DataFlow" />
+  <unitInfo fileName="BinaryOperation_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.BinaryOperation_DataFlow" />
+  <unitInfo fileName="GetIndexOfOperation_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.GetIndexOfOperation_DataFlow" />
+  <unitInfo fileName="ContainsOperation_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.ContainsOperation_DataFlow" />
+  <unitInfo fileName="AddAllElementsOperation_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.AddAllElementsOperation_DataFlow" />
+  <unitInfo fileName="SetElementOperation_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.SetElementOperation_DataFlow" />
+  <unitInfo fileName="SubListOperation_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.SubListOperation_DataFlow" />
+  <unitInfo fileName="MapOperationExpression_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.MapOperationExpression_DataFlow" />
+  <unitInfo fileName="MapEntry_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.MapEntry_DataFlow" />
+  <unitInfo fileName="ListElementAccessExpression_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.ListElementAccessExpression_DataFlow" />
+  <unitInfo fileName="InsertElementOperation_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.InsertElementOperation_DataFlow" />
+  <unitInfo fileName="SubMapOperation_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.SubMapOperation_DataFlow" />
+  <unitInfo fileName="SubSetOperation_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.SubSetOperation_DataFlow" />
+  <unitInfo fileName="PageOperation_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.PageOperation_DataFlow" />
+  <unitInfo fileName="MapElement_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.MapElement_DataFlow" />
+  <unitInfo fileName="HashMapCreator_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.HashMapCreator_DataFlow" />
+  <unitInfo fileName="MapInitializer_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.MapInitializer_DataFlow" />
+  <unitInfo fileName="JoinOperation_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.JoinOperation_DataFlow" />
+  <unitInfo fileName="SingletonSequenceCreator_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.SingletonSequenceCreator_DataFlow" />
+  <unitInfo fileName="SequenceCreator_DataFlow.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.SequenceCreator_DataFlow" />
+  <unitInfo fileName="AbstractContainerCreator_DataFlow.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.AbstractContainerCreator_DataFlow" />
+  <unitInfo fileName="ForEachStatement_DataFlow.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.ForEachStatement_DataFlow" />
+  <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.dataFlow.DFABuilders" />
   <root nodeId="1207060282352">
     <nodeInfo nodeId="1207060299994" fileName="ForEachStatement_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="110" />
     <nodeInfo nodeId="1207323166495" fileName="ForEachStatement_DataFlow.java" startLine="16" startPosition="110" endLine="17" endPosition="49" />

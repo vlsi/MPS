@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="AddMockAnnotation_Intention.java" startLine="14" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddMockAnnotation_Intention" />
+  <unitInfo fileName="AddOperationsMark_Intention.java" startLine="14" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddOperationsMark_Intention" />
+  <unitInfo fileName="AddPropertiesMark_Intention.java" startLine="14" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddPropertiesMark_Intention" />
+  <unitInfo fileName="AddTestAnnotation_Intention.java" startLine="14" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddTestAnnotation_Intention" />
+  <unitInfo fileName="AddNodeHasErrorMark_Intention.java" startLine="14" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddNodeHasErrorMark_Intention" />
+  <unitInfo fileName="AddCellAnnotation_Intention.java" startLine="19" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddCellAnnotation_Intention" />
   <root nodeId="1210673906861">
     <nodeInfo nodeId="1210673948048" fileName="AddTestAnnotation_Intention.java" startLine="34" startPosition="85" endLine="35" endPosition="39" />
     <nodeInfo nodeId="1215604078224" fileName="AddTestAnnotation_Intention.java" startLine="45" startPosition="90" endLine="46" endPosition="76" />

@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -20,7 +21,7 @@ public class typeof_CompactInvokeFunctionExpression_InferenceRule extends Abstra
   public typeof_CompactInvokeFunctionExpression_InferenceRule() {
   }
 
-  public void applyRule(final SNode invoke, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode invoke, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final List<SNode> ptypes = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode p : SLinkOperations.getTargets(invoke, "parameter", true)) {
       final SNode T_typevar_7246115176735293270 = typeCheckingContext.createNewRuntimeTypesVariable();
@@ -89,8 +90,11 @@ public class typeof_CompactInvokeFunctionExpression_InferenceRule extends Abstra
     return "jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

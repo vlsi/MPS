@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="AsBuilderStatement_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.behavior.AsBuilderStatement_Behavior" />
+  <unitInfo fileName="BuilderCreator_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.behavior.BuilderCreator_Behavior" />
+  <unitInfo fileName="SimpleBuilderExtensionDeclaration_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilderExtensionDeclaration_Behavior" />
+  <unitInfo fileName="BuilderStatement_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.behavior.BuilderStatement_Behavior" />
+  <unitInfo fileName="BaseSimpleBuilderDeclaration_Behavior.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.behavior.BaseSimpleBuilderDeclaration_Behavior" />
+  <unitInfo fileName="BeanBuilder_Behavior.java" startLine="78" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.behavior.BeanBuilder_Behavior$QuotationClass_ef9w03_a0a0c" />
+  <unitInfo fileName="BuilderContainer_Behavior.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.behavior.BuilderContainer_Behavior" />
+  <unitInfo fileName="BeanBuilder_Behavior.java" startLine="47" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.behavior.BeanBuilder_Behavior$QuotationClass_ef9w03_a0a0b" />
+  <unitInfo fileName="AsTypeBuilder_Behavior.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.behavior.AsTypeBuilder_Behavior" />
+  <unitInfo fileName="SimpleBuilders_Behavior.java" startLine="14" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilders_Behavior" />
+  <unitInfo fileName="BeanPropertyBuilder_Behavior.java" startLine="77" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.behavior.BeanPropertyBuilder_Behavior$QuotationClass_ec1xrx_a0a0d" />
+  <unitInfo fileName="SimpleBuilderPropertyBuilder_Behavior.java" startLine="11" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilderPropertyBuilder_Behavior" />
+  <unitInfo fileName="SimpleBuilderDeclaration_Behavior.java" startLine="15" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilderDeclaration_Behavior" />
+  <unitInfo fileName="Builder_Behavior.java" startLine="13" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.behavior.Builder_Behavior" />
+  <unitInfo fileName="BeanBuilder_Behavior.java" startLine="16" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.behavior.BeanBuilder_Behavior" />
+  <unitInfo fileName="SimpleBuilder_Behavior.java" startLine="18" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilder_Behavior" />
+  <unitInfo fileName="BeanPropertyBuilder_Behavior.java" startLine="18" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.behavior.BeanPropertyBuilder_Behavior" />
   <root nodeId="2679357232284040708">
     <nodeInfo nodeId="2679357232284060733" fileName="BeanPropertyBuilder_Behavior.java" startLine="26" startPosition="81" endLine="27" endPosition="229" />
     <nodeInfo nodeId="4797501453850445971" fileName="BeanPropertyBuilder_Behavior.java" startLine="30" startPosition="105" endLine="31" endPosition="62" />

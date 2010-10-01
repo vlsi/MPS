@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="QueriesGenerated.java" startLine="92" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.generator.template.main.QueriesGenerated$QuotationClass_x583g4_a0a1a41" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="110" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.generator.template.main.QueriesGenerated$QuotationClass_x583g4_a0a0a51" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="128" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.generator.template.main.QueriesGenerated$QuotationClass_x583g4_a0a2a51" />
+  <unitInfo fileName="QueriesGenerated.java" startLine="21" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.baseLanguage.builders.generator.template.main.QueriesGenerated" />
   <root nodeId="1301175864894266972">
     <nodeInfo nodeId="1301175864894276288" fileName="QueriesGenerated.java" startLine="38" startPosition="151" endLine="39" endPosition="95" />
     <nodeInfo nodeId="1301175864894276295" fileName="QueriesGenerated.java" startLine="39" startPosition="95" endLine="40" endPosition="83" />

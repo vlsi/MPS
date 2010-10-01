@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -20,7 +21,7 @@ public class typeof_ComplexLiteral_InferenceRule extends AbstractInferenceRule_R
   public typeof_ComplexLiteral_InferenceRule() {
   }
 
-  public void applyRule(final SNode literal, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode literal, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode tR_typevar_1238420360404 = typeCheckingContext.createNewRuntimeTypesVariable();
     final SNode tI_typevar_1238420378223 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
@@ -100,8 +101,11 @@ public class typeof_ComplexLiteral_InferenceRule extends AbstractInferenceRule_R
     return "jetbrains.mps.baseLanguage.math.structure.ComplexLiteral";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

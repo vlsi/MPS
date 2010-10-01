@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -19,7 +20,7 @@ public class typeof_ConceptFunctionParameter_nodeToWrap_InferenceRule extends Ab
   public typeof_ConceptFunctionParameter_nodeToWrap_InferenceRule() {
   }
 
-  public void applyRule(final SNode nodeToWrap, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode nodeToWrap, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode menu = SNodeOperations.getAncestor(nodeToWrap, "jetbrains.mps.lang.actions.structure.WrapperSubstituteMenuPart", false, false);
     {
       SNode _nodeToCheck_1029348928467 = nodeToWrap;
@@ -33,8 +34,11 @@ public class typeof_ConceptFunctionParameter_nodeToWrap_InferenceRule extends Ab
     return "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToWrap";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="InternalThisExpression_TextGen.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.textGen.InternalThisExpression_TextGen" />
+  <unitInfo fileName="InternalVariableReference_TextGen.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.textGen.InternalVariableReference_TextGen" />
+  <unitInfo fileName="TypeHintExpression_TextGen.java" startLine="10" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.textGen.TypeHintExpression_TextGen" />
+  <unitInfo fileName="InternalStaticFieldReference_TextGen.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.textGen.InternalStaticFieldReference_TextGen" />
+  <unitInfo fileName="InternalPartialFieldReference_TextGen.java" startLine="12" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.textGen.InternalPartialFieldReference_TextGen" />
+  <unitInfo fileName="InternalClassifierType_TextGen.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.textGen.InternalClassifierType_TextGen" />
+  <unitInfo fileName="InternalClassExpression_TextGen.java" startLine="14" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.textGen.InternalClassExpression_TextGen" />
+  <unitInfo fileName="InternalNewExpression_TextGen.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.textGen.InternalNewExpression_TextGen" />
+  <unitInfo fileName="InternalStaticMethodCall_TextGen.java" startLine="13" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.textGen.InternalStaticMethodCall_TextGen" />
+  <unitInfo fileName="InternalPartialInstanceMethodCall_TextGen.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.textGen.InternalPartialInstanceMethodCall_TextGen" />
+  <unitInfo fileName="BaseLangInternal.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.textGen.BaseLangInternal" />
   <root nodeId="1236701327640">
     <nodeInfo nodeId="1997029474304170771" fileName="BaseLangInternal.java" startLine="11" startPosition="30" endLine="12" endPosition="27" />
     <nodeInfo nodeId="1997029474304170774" fileName="BaseLangInternal.java" startLine="12" startPosition="27" endLine="13" endPosition="28" />

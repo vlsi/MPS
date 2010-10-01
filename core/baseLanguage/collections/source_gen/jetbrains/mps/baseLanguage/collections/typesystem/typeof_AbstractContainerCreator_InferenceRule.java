@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
@@ -26,7 +27,7 @@ public class typeof_AbstractContainerCreator_InferenceRule extends AbstractInfer
   public typeof_AbstractContainerCreator_InferenceRule() {
   }
 
-  public void applyRule(final SNode creator, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode creator, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(!(ListSequence.fromList(SLinkOperations.getTargets(creator, "initValue", true)).count() > 0 && (SLinkOperations.getTarget(creator, "copyFrom", true) != null)))) {
       BaseIntentionProvider intentionProvider = null;
       IErrorTarget errorTarget = new NodeErrorTarget();
@@ -93,8 +94,11 @@ public class typeof_AbstractContainerCreator_InferenceRule extends AbstractInfer
     return "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.core.constraints.ConstraintsDescriptor" />
+  <unitInfo fileName="IResolveInfo_resolveInfo_PropertyConstraint.java" startLine="12" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.core.constraints.IResolveInfo_resolveInfo_PropertyConstraint" />
+  <unitInfo fileName="BaseConcept_virtualPackage_PropertyConstraint.java" startLine="14" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.core.constraints.BaseConcept_virtualPackage_PropertyConstraint" />
   <root nodeId="1213104856219">
     <nodeInfo nodeId="1213104856599" fileName="BaseConcept_virtualPackage_PropertyConstraint.java" startLine="28" startPosition="80" endLine="29" endPosition="49" />
     <nodeInfo nodeId="6895093993902376994" fileName="BaseConcept_virtualPackage_PropertyConstraint.java" startLine="32" startPosition="124" endLine="33" endPosition="90" />

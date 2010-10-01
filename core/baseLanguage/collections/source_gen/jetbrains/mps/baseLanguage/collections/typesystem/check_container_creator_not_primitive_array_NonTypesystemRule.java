@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -21,7 +22,7 @@ public class check_container_creator_not_primitive_array_NonTypesystemRule exten
   public check_container_creator_not_primitive_array_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode acc, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode acc, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       IMatchingPattern pattern_dxqe5i_a0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ArrayType");
       SNode coercedNode_dxqe5i_a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(acc, "copyFrom", true)), pattern_dxqe5i_a0, typeCheckingContext);
@@ -40,8 +41,11 @@ public class check_container_creator_not_primitive_array_NonTypesystemRule exten
     return "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

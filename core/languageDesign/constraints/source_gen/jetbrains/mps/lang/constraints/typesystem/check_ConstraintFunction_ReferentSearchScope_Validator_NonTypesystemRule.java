@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.constraints.behavior.ConstraintFunction_ReferentSearchScope_Validator_Behavior;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
@@ -18,7 +19,7 @@ public class check_ConstraintFunction_ReferentSearchScope_Validator_NonTypesyste
   public check_ConstraintFunction_ReferentSearchScope_Validator_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode validator, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode validator, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode factory = ConstraintFunction_ReferentSearchScope_Validator_Behavior.call_getSearchScopeFactory_2990203945683059022(validator);
     if ((factory == null)) {
       {
@@ -39,8 +40,11 @@ public class check_ConstraintFunction_ReferentSearchScope_Validator_NonTypesyste
     return "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Validator";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -22,7 +23,7 @@ public class typeof_RemoveWhereOperation_InferenceRule extends AbstractInference
   public typeof_RemoveWhereOperation_InferenceRule() {
   }
 
-  public void applyRule(final SNode rwo, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode rwo, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode PARAM_TYPE_typevar_3055999550620863371 = typeCheckingContext.createNewRuntimeTypesVariable();
     final SNode OPERAND_TYPE_typevar_3055999550620867612 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
@@ -57,8 +58,11 @@ public class typeof_RemoveWhereOperation_InferenceRule extends AbstractInference
     return "jetbrains.mps.baseLanguage.collections.structure.RemoveWhereOperation";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

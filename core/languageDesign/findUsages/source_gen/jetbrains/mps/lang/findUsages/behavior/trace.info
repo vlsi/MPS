@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="NodeStatement_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.findUsages.behavior.NodeStatement_Behavior" />
+  <unitInfo fileName="ResultStatement_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.findUsages.behavior.ResultStatement_Behavior" />
+  <unitInfo fileName="CheckCancelledStatusStatement_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.findUsages.behavior.CheckCancelledStatusStatement_Behavior" />
+  <unitInfo fileName="ExecuteFinderExpression_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.findUsages.behavior.ExecuteFinderExpression_Behavior" />
+  <unitInfo fileName="FinderDeclaration_Behavior.java" startLine="15" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.findUsages.behavior.FinderDeclaration_Behavior" />
   <root nodeId="1213877240100">
     <nodeInfo nodeId="1213877240104" fileName="FinderDeclaration_Behavior.java" startLine="22" startPosition="81" endLine="23" endPosition="99" />
     <nodeInfo nodeId="1213877240114" fileName="FinderDeclaration_Behavior.java" startLine="26" startPosition="74" endLine="27" endPosition="121" />

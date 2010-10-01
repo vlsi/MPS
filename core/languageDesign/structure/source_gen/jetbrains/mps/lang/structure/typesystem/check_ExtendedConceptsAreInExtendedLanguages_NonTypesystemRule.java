@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
@@ -23,7 +24,7 @@ public class check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule exte
   public check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode cd, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode cd, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     Language language = SModelUtil.getDeclaringLanguage(cd, GlobalScope.getInstance());
     if (language == null) {
       return;
@@ -50,8 +51,11 @@ public class check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule exte
     return "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

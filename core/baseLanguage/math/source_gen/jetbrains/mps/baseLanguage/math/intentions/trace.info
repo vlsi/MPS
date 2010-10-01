@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="DeleteMathContext_Intention.java" startLine="12" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.intentions.DeleteMathContext_Intention" />
+  <unitInfo fileName="SpecifyMathContext_Intention.java" startLine="12" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.intentions.SpecifyMathContext_Intention" />
+  <unitInfo fileName="DivExpressionDivToFraction_Intention.java" startLine="50" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.intentions.DivExpressionDivToFraction_Intention$QuotationClass_hz695l_a0a0a0f" />
+  <unitInfo fileName="DivExpressionFractionToDiv_Intention.java" startLine="50" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.intentions.DivExpressionFractionToDiv_Intention$QuotationClass_2snbjg_a0a0a0f" />
+  <unitInfo fileName="DivExpressionDivToFraction_Intention.java" startLine="18" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.intentions.DivExpressionDivToFraction_Intention" />
+  <unitInfo fileName="DivExpressionFractionToDiv_Intention.java" startLine="18" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.intentions.DivExpressionFractionToDiv_Intention" />
   <root nodeId="1237104496404">
     <nodeInfo nodeId="1237104536961" fileName="DivExpressionFractionToDiv_Intention.java" startLine="38" startPosition="85" endLine="39" endPosition="54" />
     <nodeInfo nodeId="1237104573699" fileName="DivExpressionFractionToDiv_Intention.java" startLine="42" startPosition="76" endLine="43" endPosition="236" />

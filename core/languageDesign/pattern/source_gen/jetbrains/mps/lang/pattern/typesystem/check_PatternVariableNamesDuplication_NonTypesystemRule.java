@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.List;
 import jetbrains.mps.lang.pattern.behavior.PatternExpression_Behavior;
 import java.util.Set;
@@ -21,7 +22,7 @@ public class check_PatternVariableNamesDuplication_NonTypesystemRule extends Abs
   public check_PatternVariableNamesDuplication_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode patternExpression, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode patternExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> variables = PatternExpression_Behavior.call_getVariables_4855904478357072957(patternExpression);
     Set<String> names = new HashSet();
     for (SNode var : variables) {
@@ -41,8 +42,11 @@ public class check_PatternVariableNamesDuplication_NonTypesystemRule extends Abs
     return "jetbrains.mps.lang.pattern.structure.PatternExpression";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

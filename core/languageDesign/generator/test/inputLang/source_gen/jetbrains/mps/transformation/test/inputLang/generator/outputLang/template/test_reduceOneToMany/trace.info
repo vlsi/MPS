@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="QueriesGenerated.java" startLine="14" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.QueriesGenerated" />
+  <root nodeId="3893401255414084744">
+    <nodeInfo nodeId="3893401255414132236" fileName="QueriesGenerated.java" startLine="15" startPosition="152" endLine="16" endPosition="224" />
+    <nodeInfo nodeId="3893401255414131864" fileName="QueriesGenerated.java" startLine="19" startPosition="152" endLine="20" endPosition="100" />
+    <scopeInfo nodeId="3893401255414132235" fileName="QueriesGenerated.java" startLine="15" startPosition="152" endLine="16" endPosition="224" />
+    <scopeInfo nodeId="3893401255414129778" fileName="QueriesGenerated.java" startLine="19" startPosition="152" endLine="20" endPosition="100" />
+  </root>
+  <root nodeId="3893401255414086886">
+    <nodeInfo nodeId="3893401255414100160" fileName="QueriesGenerated.java" startLine="23" startPosition="155" endLine="24" endPosition="59" />
+    <scopeInfo nodeId="3893401255414086895" fileName="QueriesGenerated.java" startLine="23" startPosition="155" endLine="24" endPosition="59" />
+  </root>
+  <root nodeId="3893401255414100167">
+    <nodeInfo nodeId="3893401255414163870" fileName="QueriesGenerated.java" startLine="27" startPosition="155" endLine="28" endPosition="105" />
+    <scopeInfo nodeId="3893401255414161784" fileName="QueriesGenerated.java" startLine="27" startPosition="155" endLine="28" endPosition="105" />
+  </root>
+</debugInfo>
+

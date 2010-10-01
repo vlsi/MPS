@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.List;
 import jetbrains.mps.baseLanguageInternal.behavior.ExtractStaticMethod_CallExpression_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -20,7 +21,7 @@ public class check_ExtractStaticMethodCall_NonTypesystemRule extends AbstractNon
   public check_ExtractStaticMethodCall_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode callStatic, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode callStatic, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> available = ExtractStaticMethod_CallExpression_Behavior.getMethods_5857910569715993654(callStatic);
     if (!(ListSequence.fromList(available).contains(SLinkOperations.getTarget(callStatic, "baseMethodDeclaration", false)))) {
       {
@@ -35,8 +36,11 @@ public class check_ExtractStaticMethodCall_NonTypesystemRule extends AbstractNon
     return "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

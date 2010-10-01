@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.samples.xmlLiterals.dataFlow.DFABuilders" />
+  <unitInfo fileName="XmlLiteral_DataFlow.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.samples.xmlLiterals.dataFlow.XmlLiteral_DataFlow" />
   <root nodeId="7417816926334781718">
     <nodeInfo nodeId="7417816926334782916" fileName="XmlLiteral_DataFlow.java" startLine="17" startPosition="102" endLine="18" endPosition="247" />
     <nodeInfo nodeId="7417816926334782966" fileName="XmlLiteral_DataFlow.java" startLine="20" startPosition="107" endLine="21" endPosition="179" />

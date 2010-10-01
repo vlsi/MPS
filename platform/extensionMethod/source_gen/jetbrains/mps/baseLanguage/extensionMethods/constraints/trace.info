@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="LocalExtendedMethodCall_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.constraints.LocalExtendedMethodCall_Constraints" />
+  <unitInfo fileName="ThisExtensionExpression_Constraints.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.constraints.ThisExtensionExpression_Constraints" />
+  <unitInfo fileName="ExtensionMethodDeclaration_Constraints.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.constraints.ExtensionMethodDeclaration_Constraints" />
+  <unitInfo fileName="TypeExtension_Constraints.java" startLine="12" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.constraints.TypeExtension_Constraints" />
+  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.constraints.ConstraintsDescriptor" />
+  <unitInfo fileName="ExtensionStaticFieldReference_staticFieldDeclaration_ReferentConstraint.java" startLine="15" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.constraints.ExtensionStaticFieldReference_staticFieldDeclaration_ReferentConstraint" />
+  <unitInfo fileName="LocalExtendedMethodCall_instanceMethodDeclaration_ReferentConstraint.java" startLine="24" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.constraints.LocalExtendedMethodCall_instanceMethodDeclaration_ReferentConstraint" />
+  <unitInfo fileName="ExtensionMethodCall_extension_ReferentConstraint.java" startLine="26" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.baseLanguage.extensionMethods.constraints.ExtensionMethodCall_extension_ReferentConstraint" />
   <root nodeId="1550313277221324861">
     <nodeInfo nodeId="6235310215814037883" fileName="ExtensionMethodCall_extension_ReferentConstraint.java" startLine="41" startPosition="56" endLine="42" endPosition="52" />
     <nodeInfo nodeId="6235310215814037889" fileName="ExtensionMethodCall_extension_ReferentConstraint.java" startLine="42" startPosition="52" endLine="43" endPosition="172" />

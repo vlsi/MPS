@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
@@ -16,7 +17,7 @@ public class typeof_RefactoringParameter_InferenceRule extends AbstractInference
   public typeof_RefactoringParameter_InferenceRule() {
   }
 
-  public void applyRule(final SNode parameter, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode parameter, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode chooser = SLinkOperations.getTarget(parameter, "chooser", true);
     if (SNodeOperations.isInstanceOf(chooser, "jetbrains.mps.lang.refactoring.structure.CustomParameterChooser")) {
       {
@@ -40,8 +41,11 @@ public class typeof_RefactoringParameter_InferenceRule extends AbstractInference
     return "jetbrains.mps.lang.refactoring.structure.RefactoringParameter";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

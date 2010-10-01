@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="Rename_newName_Settings.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.core.refactorings.Rename_newName_Settings" />
+  <unitInfo fileName="MoveNodes_Target.java" startLine="7" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.core.refactorings.MoveNodes_Target" />
+  <unitInfo fileName="Rename_Target.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.core.refactorings.Rename_Target" />
+  <unitInfo fileName="MoveNodes_target_Chooser.java" startLine="12" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.core.refactorings.MoveNodes_target_Chooser" />
+  <unitInfo fileName="Rename.java" startLine="23" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.core.refactorings.Rename" />
+  <unitInfo fileName="MoveNodes.java" startLine="32" startPosition="0" endLine="143" endPosition="0" unitName="jetbrains.mps.lang.core.refactorings.MoveNodes" />
   <root nodeId="1347577327951770664">
     <nodeInfo nodeId="1347577327951780461" fileName="Rename_newName_Settings.java" startLine="17" startPosition="35" endLine="18" endPosition="118" />
     <nodeInfo nodeId="1347577327951780471" fileName="Rename.java" startLine="40" startPosition="68" endLine="41" endPosition="61" />

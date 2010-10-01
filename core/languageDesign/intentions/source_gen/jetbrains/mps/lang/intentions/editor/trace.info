@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="QueryBlock_Editor.java" startLine="94" startPosition="40" endLine="118" endPosition="5" unitName="jetbrains.mps.lang.intentions.editor.QueryBlock_Editor$1" />
+  <unitInfo fileName="IntentionContextParamReference_Editor.java" startLine="48" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.intentions.editor.IntentionContextParamReference_Editor$_Inline_vks2hh_a0a" />
+  <unitInfo fileName="ParameterizedIntentionDeclaration_Editor.java" startLine="382" startPosition="0" endLine="415" endPosition="0" unitName="jetbrains.mps.lang.intentions.editor.ParameterizedIntentionDeclaration_Editor$_Inline_crf3gy_a4a0a" />
+  <unitInfo fileName="BaseIntentionDeclaration_Editor.java" startLine="391" startPosition="0" endLine="424" endPosition="0" unitName="jetbrains.mps.lang.intentions.editor.BaseIntentionDeclaration_Editor$_Inline_2ji0fa_a3a0a" />
+  <unitInfo fileName="GenerateIntentionDeclaration_Editor.java" startLine="445" startPosition="0" endLine="478" endPosition="0" unitName="jetbrains.mps.lang.intentions.editor.GenerateIntentionDeclaration_Editor$_Inline_l6fw9g_a3a0a" />
+  <unitInfo fileName="IntentionParameter_Editor.java" startLine="19" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.intentions.editor.IntentionParameter_Editor" />
+  <unitInfo fileName="GenerateIntentionDeclaration_Editor.java" startLine="479" startPosition="0" endLine="516" endPosition="0" unitName="jetbrains.mps.lang.intentions.editor.GenerateIntentionDeclaration_Editor$parameterListHandler_l6fw9g_b5b1a" />
+  <unitInfo fileName="IntentionContextParameterDeclaration_Editor.java" startLine="17" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.lang.intentions.editor.IntentionContextParameterDeclaration_Editor" />
+  <unitInfo fileName="IntentionContextParamReference_Editor.java" startLine="18" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.intentions.editor.IntentionContextParamReference_Editor" />
+  <unitInfo fileName="QueryBlock_Editor.java" startLine="28" startPosition="0" endLine="144" endPosition="0" unitName="jetbrains.mps.lang.intentions.editor.QueryBlock_Editor" />
+  <unitInfo fileName="ParameterizedIntentionDeclaration_Editor.java" startLine="28" startPosition="0" endLine="416" endPosition="0" unitName="jetbrains.mps.lang.intentions.editor.ParameterizedIntentionDeclaration_Editor" />
+  <unitInfo fileName="BaseIntentionDeclaration_Editor.java" startLine="29" startPosition="0" endLine="425" endPosition="0" unitName="jetbrains.mps.lang.intentions.editor.BaseIntentionDeclaration_Editor" />
+  <unitInfo fileName="GenerateIntentionDeclaration_Editor.java" startLine="37" startPosition="0" endLine="517" endPosition="0" unitName="jetbrains.mps.lang.intentions.editor.GenerateIntentionDeclaration_Editor" />
+  <root nodeId="1240319625734">
+    <nodeInfo nodeId="1240319640319" fileName="QueryBlock_Editor.java" startLine="97" startPosition="75" endLine="98" endPosition="105" />
+    <nodeInfo nodeId="1240319640325" fileName="QueryBlock_Editor.java" startLine="98" startPosition="105" endLine="99" endPosition="109" />
+    <nodeInfo nodeId="1240319640336" fileName="QueryBlock_Editor.java" startLine="100" startPosition="128" endLine="101" endPosition="188" />
+    <nodeInfo nodeId="1240319640356" fileName="QueryBlock_Editor.java" startLine="102" startPosition="13" endLine="103" endPosition="87" />
+    <nodeInfo nodeId="1240319640365" fileName="QueryBlock_Editor.java" startLine="103" startPosition="87" endLine="104" endPosition="102" />
+    <nodeInfo nodeId="1240319640376" fileName="QueryBlock_Editor.java" startLine="105" startPosition="95" endLine="106" endPosition="73" />
+    <nodeInfo nodeId="1240319640382" fileName="QueryBlock_Editor.java" startLine="106" startPosition="73" endLine="107" endPosition="90" />
+    <nodeInfo nodeId="1240319640390" fileName="QueryBlock_Editor.java" startLine="108" startPosition="40" endLine="109" endPosition="105" />
+    <nodeInfo nodeId="1240319640397" fileName="QueryBlock_Editor.java" startLine="110" startPosition="15" endLine="111" endPosition="118" />
+    <nodeInfo nodeId="1240319640409" fileName="QueryBlock_Editor.java" startLine="111" startPosition="118" endLine="112" endPosition="48" />
+    <nodeInfo nodeId="1240319640419" fileName="QueryBlock_Editor.java" startLine="113" startPosition="13" endLine="114" endPosition="30" />
+    <nodeInfo nodeId="1240319640334" fileName="QueryBlock_Editor.java" startLine="99" startPosition="109" endLine="102" endPosition="13" />
+    <nodeInfo nodeId="1240319640388" fileName="QueryBlock_Editor.java" startLine="107" startPosition="90" endLine="110" endPosition="15" />
+    <nodeInfo nodeId="1240319640374" fileName="QueryBlock_Editor.java" startLine="104" startPosition="102" endLine="113" endPosition="13" />
+    <nodeInfo nodeId="1240319640313" fileName="QueryBlock_Editor.java" startLine="96" startPosition="43" endLine="116" endPosition="0" />
+    <nodeInfo nodeId="1240319640308" fileName="QueryBlock_Editor.java" startLine="95" startPosition="44" endLine="116" endPosition="10" />
+    <scopeInfo nodeId="1240319640335" fileName="QueryBlock_Editor.java" startLine="100" startPosition="128" endLine="101" endPosition="188" />
+    <scopeInfo nodeId="1240319640389" fileName="QueryBlock_Editor.java" startLine="108" startPosition="40" endLine="109" endPosition="105" />
+    <scopeInfo nodeId="1240319640375" fileName="QueryBlock_Editor.java" startLine="105" startPosition="95" endLine="112" endPosition="48">
+      <varInfo nodeId="1240319640398" varName="message" />
+      <varInfo nodeId="1240319640377" varName="alias" />
+      <varInfo nodeId="1240319640383" varName="description" />
+    </scopeInfo>
+    <scopeInfo nodeId="1240319640374" fileName="QueryBlock_Editor.java" startLine="104" startPosition="102" endLine="113" endPosition="13">
+      <varInfo nodeId="1240319640417" varName="cfp" />
+    </scopeInfo>
+    <scopeInfo nodeId="1240319640318" fileName="QueryBlock_Editor.java" startLine="97" startPosition="75" endLine="114" endPosition="30">
+      <varInfo nodeId="1240319640320" varName="collection" />
+    </scopeInfo>
+    <scopeInfo nodeId="1240319640313" fileName="QueryBlock_Editor.java" startLine="96" startPosition="43" endLine="116" endPosition="0">
+      <varInfo nodeId="1240319640316" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1240319640307" fileName="QueryBlock_Editor.java" startLine="95" startPosition="44" endLine="116" endPosition="10" />
+    <unitInfo nodeId="1240319640311" fileName="QueryBlock_Editor.java" startLine="96" startPosition="19" endLine="116" endPosition="9" unitName="jetbrains.mps.lang.intentions.editor.QueryBlock_Editor$2" />
+  </root>
+  <root nodeId="5180116501957618331">
+    <nodeInfo nodeId="5180116501957618353" fileName="GenerateIntentionDeclaration_Editor.java" startLine="437" startPosition="114" endLine="438" endPosition="75" />
+    <scopeInfo nodeId="5180116501957618352" fileName="GenerateIntentionDeclaration_Editor.java" startLine="437" startPosition="114" endLine="438" endPosition="75" />
+  </root>
+  <root nodeId="6263518417926799610">
+    <nodeInfo nodeId="6263518417926799632" fileName="BaseIntentionDeclaration_Editor.java" startLine="383" startPosition="114" endLine="384" endPosition="75" />
+    <scopeInfo nodeId="6263518417926799631" fileName="BaseIntentionDeclaration_Editor.java" startLine="383" startPosition="114" endLine="384" endPosition="75" />
+  </root>
+</debugInfo>
+

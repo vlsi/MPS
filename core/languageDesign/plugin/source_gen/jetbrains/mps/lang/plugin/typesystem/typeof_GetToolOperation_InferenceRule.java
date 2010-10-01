@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_Behavior;
@@ -16,7 +17,7 @@ public class typeof_GetToolOperation_InferenceRule extends AbstractInferenceRule
   public typeof_GetToolOperation_InferenceRule() {
   }
 
-  public void applyRule(final SNode getToolOperation, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode getToolOperation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode _nodeToCheck_1029348928467 = getToolOperation;
       BaseIntentionProvider intentionProvider = null;
@@ -29,8 +30,11 @@ public class typeof_GetToolOperation_InferenceRule extends AbstractInferenceRule
     return "jetbrains.mps.lang.plugin.structure.GetToolOperation";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

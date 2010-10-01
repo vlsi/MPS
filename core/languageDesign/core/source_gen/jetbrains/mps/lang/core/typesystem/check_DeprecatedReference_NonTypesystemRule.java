@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
@@ -20,7 +21,7 @@ public class check_DeprecatedReference_NonTypesystemRule extends AbstractNonType
   public check_DeprecatedReference_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode baseConcept, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode baseConcept, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     for (SReference ref : baseConcept.getReferences()) {
       SNode node = ref.getTargetNode();
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.IDeprecatable") && IDeprecatable_Behavior.call_isDeprecated_1224609060727(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.IDeprecatable"))) {
@@ -38,8 +39,11 @@ public class check_DeprecatedReference_NonTypesystemRule extends AbstractNonType
     return "jetbrains.mps.lang.core.structure.BaseConcept";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

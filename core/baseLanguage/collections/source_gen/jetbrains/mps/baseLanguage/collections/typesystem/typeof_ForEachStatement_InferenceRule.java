@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -20,7 +21,7 @@ public class typeof_ForEachStatement_InferenceRule extends AbstractInferenceRule
   public typeof_ForEachStatement_InferenceRule() {
   }
 
-  public void applyRule(final SNode forEachStatement, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode forEachStatement, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode variable = SLinkOperations.getTarget(forEachStatement, "variable", true);
     SNode inputSequence = SLinkOperations.getTarget(forEachStatement, "inputSequence", true);
     if ((inputSequence != null) && (variable != null)) {
@@ -45,8 +46,11 @@ public class typeof_ForEachStatement_InferenceRule extends AbstractInferenceRule
     return "jetbrains.mps.baseLanguage.collections.structure.ForEachStatement";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

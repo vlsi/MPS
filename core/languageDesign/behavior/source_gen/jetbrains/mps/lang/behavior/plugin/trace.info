@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="Behavior_ProjectPlugin.java" startLine="7" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.lang.behavior.plugin.Behavior_ProjectPlugin" />
+  <unitInfo fileName="Behavior_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.behavior.plugin.Behavior_ApplicationPlugin" />
+  <unitInfo fileName="BehaviourPopup_ActionGroup.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.behavior.plugin.BehaviourPopup_ActionGroup" />
+  <root nodeId="1910641662758447420">
+    <nodeInfo nodeId="1910641662758482649" fileName="BehaviourPopup_ActionGroup.java" startLine="19" startPosition="9" endLine="20" endPosition="266" />
+  </root>
+</debugInfo>
+

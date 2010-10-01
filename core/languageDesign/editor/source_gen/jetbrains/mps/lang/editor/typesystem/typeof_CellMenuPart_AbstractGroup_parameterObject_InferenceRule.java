@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
@@ -16,7 +17,7 @@ public class typeof_CellMenuPart_AbstractGroup_parameterObject_InferenceRule ext
   public typeof_CellMenuPart_AbstractGroup_parameterObject_InferenceRule() {
   }
 
-  public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode ancestor = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup", false, false);
     SNode parameterObjectType = SLinkOperations.getTarget(ancestor, "parameterObjectType", true);
     {
@@ -31,8 +32,11 @@ public class typeof_CellMenuPart_AbstractGroup_parameterObject_InferenceRule ext
     return "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_parameterObject";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

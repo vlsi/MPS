@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="MatrixIndexVariableRefirence_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.constraints.MatrixIndexVariableRefirence_Behavior" />
+  <unitInfo fileName="MatrixElementVariableReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.constraints.MatrixElementVariableReference_Behavior" />
+  <unitInfo fileName="MatrixElementVariableDeclaration_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.constraints.MatrixElementVariableDeclaration_Behavior" />
+  <unitInfo fileName="MatrixType_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.constraints.MatrixType_Behavior" />
+  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.constraints.ConstraintsDescriptor" />
+  <unitInfo fileName="MatrixElementVariableReference_matrixElementDeclaration_ReferentConstraint.java" startLine="19" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.constraints.MatrixElementVariableReference_matrixElementDeclaration_ReferentConstraint" />
+  <unitInfo fileName="MatrixIndexVariableRefirence_DefaultSearchScope.java" startLine="18" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.samples.matrixLanguage.constraints.MatrixIndexVariableRefirence_DefaultSearchScope" />
   <root nodeId="1210172209680">
     <nodeInfo nodeId="1210172221167" fileName="MatrixType_Behavior.java" startLine="13" startPosition="78" endLine="14" endPosition="142" />
     <scopeInfo nodeId="1210172209682" fileName="MatrixType_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />

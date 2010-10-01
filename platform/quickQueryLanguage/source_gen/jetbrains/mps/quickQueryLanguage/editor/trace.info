@@ -1,3 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo />
+<debugInfo>
+  <unitInfo fileName="ModelQuery_Editor.java" startLine="145" startPosition="0" endLine="181" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.editor.ModelQuery_Editor$_Inline_1kyme_a1b0" />
+  <unitInfo fileName="ReplaceModelQuery_Editor.java" startLine="209" startPosition="0" endLine="245" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.editor.ReplaceModelQuery_Editor$_Inline_kwr3w_a1b0" />
+  <unitInfo fileName="ModelQuery_Editor.java" startLine="23" startPosition="0" endLine="182" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.editor.ModelQuery_Editor" />
+  <unitInfo fileName="ReplaceModelQuery_Editor.java" startLine="23" startPosition="0" endLine="246" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.editor.ReplaceModelQuery_Editor" />
+</debugInfo>
 

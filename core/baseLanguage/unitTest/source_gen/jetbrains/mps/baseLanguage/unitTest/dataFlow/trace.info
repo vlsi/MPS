@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="AssertInNotNull_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.dataFlow.AssertInNotNull_DataFlow" />
+  <unitInfo fileName="AssertIsNull_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.dataFlow.AssertIsNull_DataFlow" />
+  <unitInfo fileName="AssertFalse_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.dataFlow.AssertFalse_DataFlow" />
+  <unitInfo fileName="AssertTrue_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.dataFlow.AssertTrue_DataFlow" />
+  <unitInfo fileName="AssertEquals_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.dataFlow.AssertEquals_DataFlow" />
+  <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.dataFlow.DFABuilders" />
+  <unitInfo fileName="AssertSame_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.dataFlow.AssertSame_DataFlow" />
   <root nodeId="1207074074329">
     <nodeInfo nodeId="1207074081597" fileName="AssertTrue_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="106" />
     <scopeInfo nodeId="1207074074331" fileName="AssertTrue_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="106" />

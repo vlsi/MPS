@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="ShowGetNameUsages_MigrationScript.java" startLine="15" startPosition="28" endLine="38" endPosition="5" unitName="jetbrains.mps.lang.core.scripts.ShowGetNameUsages_MigrationScript$1" />
+  <unitInfo fileName="ShowGetNameUsages_MigrationScript.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.core.scripts.ShowGetNameUsages_MigrationScript" />
+  <unitInfo fileName="SafeDelete.java" startLine="21" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.core.scripts.SafeDelete" />
+  <unitInfo fileName="Rename.java" startLine="23" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.core.scripts.Rename" />
+  <unitInfo fileName="MoveNodes.java" startLine="36" startPosition="0" endLine="178" endPosition="0" unitName="jetbrains.mps.lang.core.scripts.MoveNodes" />
   <root nodeId="1198076144993">
     <nodeInfo nodeId="1198078072588" fileName="MoveNodes.java" startLine="60" startPosition="80" endLine="61" endPosition="88" />
     <nodeInfo nodeId="1198077941205" fileName="MoveNodes.java" startLine="61" startPosition="88" endLine="62" endPosition="72" />

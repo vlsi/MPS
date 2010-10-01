@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="MatrixIndexWildcard_Constraints.java" startLine="12" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.constraints.MatrixIndexWildcard_Constraints" />
+  <unitInfo fileName="ConstraintsDescriptor.java" startLine="11" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.constraints.ConstraintsDescriptor" />
+  <unitInfo fileName="MathSymbolIndexReference_indexRef_ReferentConstraint.java" startLine="16" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.constraints.MathSymbolIndexReference_indexRef_ReferentConstraint" />
+  <unitInfo fileName="MatrixInitializerIndexReference_index_ReferentConstraint.java" startLine="19" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.constraints.MatrixInitializerIndexReference_index_ReferentConstraint" />
   <root nodeId="1236430656078">
     <nodeInfo nodeId="1237828450002" fileName="MathSymbolIndexReference_indexRef_ReferentConstraint.java" startLine="28" startPosition="132" endLine="29" endPosition="141" />
     <nodeInfo nodeId="1237825752846" fileName="MathSymbolIndexReference_indexRef_ReferentConstraint.java" startLine="29" startPosition="141" endLine="30" endPosition="83" />

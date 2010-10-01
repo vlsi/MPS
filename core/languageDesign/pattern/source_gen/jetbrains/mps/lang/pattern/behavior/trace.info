@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="LinkPatternVariableDeclaration_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.LinkPatternVariableDeclaration_Behavior" />
+  <unitInfo fileName="PropertyPatternVariableDeclaration_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.PropertyPatternVariableDeclaration_Behavior" />
+  <unitInfo fileName="PatternVariableDeclaration_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.PatternVariableDeclaration_Behavior" />
+  <unitInfo fileName="ActionStatement_Behavior.java" startLine="8" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.ActionStatement_Behavior" />
+  <unitInfo fileName="PatternExpression_Behavior.java" startLine="15" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.pattern.behavior.PatternExpression_Behavior" />
   <root nodeId="111677556049506422">
     <nodeInfo nodeId="111677556049506446" fileName="ActionStatement_Behavior.java" startLine="13" startPosition="132" endLine="14" endPosition="127" />
     <nodeInfo nodeId="111677556049506457" fileName="ActionStatement_Behavior.java" startLine="15" startPosition="5" endLine="16" endPosition="16" />

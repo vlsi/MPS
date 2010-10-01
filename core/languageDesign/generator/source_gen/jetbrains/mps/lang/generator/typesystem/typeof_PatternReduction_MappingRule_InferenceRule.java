@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.generator.behavior.PatternReduction_MappingRule_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -24,7 +25,7 @@ public class typeof_PatternReduction_MappingRule_InferenceRule extends AbstractI
   public typeof_PatternReduction_MappingRule_InferenceRule() {
   }
 
-  public void applyRule(final SNode rule, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode rule, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode applicableConcept = PatternReduction_MappingRule_Behavior.call_getConcept_1805153994417064763(rule);
     if (SLinkOperations.getTarget(SLinkOperations.getTarget(rule, "labelDeclaration", false), "sourceConcept", false) != null && (applicableConcept != null)) {
       if (!(SConceptOperations.isSuperConceptOf(SLinkOperations.getTarget(SLinkOperations.getTarget(rule, "labelDeclaration", false), "sourceConcept", false), NameUtil.nodeFQName(applicableConcept)))) {
@@ -48,8 +49,11 @@ public class typeof_PatternReduction_MappingRule_InferenceRule extends AbstractI
     return "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {
