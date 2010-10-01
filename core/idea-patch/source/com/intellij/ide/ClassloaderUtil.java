@@ -25,6 +25,7 @@ import com.intellij.openapi.application.PathManager;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.util.ArrayUtil;
+import com.intellij.util.containers.ContainerUtil;
 import com.intellij.util.lang.UrlClassLoader;
 import com.intellij.util.text.StringTokenizer;
 import jetbrains.mps.util.annotation.Patch;
@@ -51,18 +52,41 @@ import java.util.regex.Pattern;
  */
 
 public class ClassloaderUtil {
-  @NonNls
-  static final String FILE_CACHE = "fileCache";
-  @NonNls
-  static final String URL_CACHE = "urlCache";// See http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4167874
-  @NonNls
-  public static final String PROPERTY_IGNORE_CLASSPATH = "ignore.classpath";
+  @Patch
+  private static void addLanguagesClassPath(List<URL> classPath) {
+    String homePath = PathManager.getHomePath();
+    try {
+      Class<Bootstrap> clazz = Bootstrap.class;
+      String selfRoot = PathManager.getResourceRoot(clazz, "/" + clazz.getName().replace('.', '/') + ".class");
+      URL selfRootUrl = new File(selfRoot).getAbsoluteFile().toURL();
+
+      File baseLanguageFolder = new File(homePath + File.separator + "core" + File.separator + "baseLanguage");
+      addLibraries(classPath, baseLanguageFolder, selfRootUrl);
+
+      File languageDesignFolder = new File(homePath + File.separator + "core" + File.separator + "languageDesign");
+      addLibraries(classPath, languageDesignFolder, selfRootUrl);
+    }
+    catch (MalformedURLException e) {
+      getLogger().error(e);
+    }
+  }
+
+
+
+
+
+
+
+
+
+  @NonNls static final String FILE_CACHE = "fileCache";
+  @NonNls static final String URL_CACHE = "urlCache";// See http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4167874
+  @NonNls public static final String PROPERTY_IGNORE_CLASSPATH = "ignore.classpath";
 
   @SuppressWarnings({"HardCodedStringLiteral"})
   private static final String ERROR = "Error";
 
-  private ClassloaderUtil() {
-  }
+  private ClassloaderUtil() {}
 
   public static void clearJarURLCache() {
     try {
@@ -101,10 +125,10 @@ public class ClassloaderUtil {
 
     try {
       addParentClasspath(classpathElements);
-      // MPS Patch Start
+      //mps patch begin
       addLanguagesClassPath(classpathElements);
-      addLibraries(classpathElements);
-      // MPS Patch End
+      //mps patch end
+      addIDEALibraries(classpathElements);
       addAdditionalClassPath(classpathElements);
     }
     catch (IllegalArgumentException e) {
@@ -155,30 +179,12 @@ public class ClassloaderUtil {
       Logger logger = getLogger();
       if (logger == null) {
         e.printStackTrace(System.err);
-      } else {
+      }
+      else {
         logger.error(e);
       }
     }
     return newClassLoader;
-  }
-
-  @Patch
-  private static void addLanguagesClassPath(List<URL> classPath) {
-    String homePath = PathManager.getHomePath();
-    try {
-      Class<Bootstrap> clazz = Bootstrap.class;
-      String selfRoot = PathManager.getResourceRoot(clazz, "/" + clazz.getName().replace('.', '/') + ".class");
-      URL selfRootUrl = new File(selfRoot).getAbsoluteFile().toURL();
-
-      File baseLanguageFolder = new File(homePath + File.separator + "core" + File.separator + "baseLanguage");
-      addLibraries(classPath, baseLanguageFolder, selfRootUrl);
-
-      File languageDesignFolder = new File(homePath + File.separator + "core" + File.separator + "languageDesign");
-      addLibraries(classPath, languageDesignFolder, selfRootUrl);
-    }
-    catch (MalformedURLException e) {
-      getLogger().error(e);
-    }
   }
 
   public static void filterClassPath(final List<URL> classpathElements) {
@@ -199,9 +205,10 @@ public class ClassloaderUtil {
   public static void addParentClasspath(List<URL> aClasspathElements) throws MalformedURLException {
     final ClassLoader loader = ClassloaderUtil.class.getClassLoader();
     if (loader instanceof URLClassLoader) {
-      URLClassLoader urlClassLoader = (URLClassLoader) loader;
-      aClasspathElements.addAll(Arrays.asList(urlClassLoader.getURLs()));
-    } else {
+      URLClassLoader urlClassLoader = (URLClassLoader)loader;
+      ContainerUtil.addAll(aClasspathElements, urlClassLoader.getURLs());
+    }
+    else {
       try {
         Class antClassLoaderClass = Class.forName("org.apache.tools.ant.AntClassLoader");
         if (antClassLoaderClass.isInstance(loader) ||
@@ -209,13 +216,14 @@ public class ClassloaderUtil {
           loader.getClass().getName().equals("org.apache.tools.ant.loader.AntClassLoader2")) {
           //noinspection HardCodedStringLiteral
           final String classpath =
-            (String) antClassLoaderClass.getDeclaredMethod("getClasspath", ArrayUtil.EMPTY_CLASS_ARRAY).invoke(loader, ArrayUtil.EMPTY_OBJECT_ARRAY);
+            (String)antClassLoaderClass.getDeclaredMethod("getClasspath", ArrayUtil.EMPTY_CLASS_ARRAY).invoke(loader, ArrayUtil.EMPTY_OBJECT_ARRAY);
           final StringTokenizer tokenizer = new StringTokenizer(classpath, File.separator, false);
           while (tokenizer.hasMoreTokens()) {
             final String token = tokenizer.nextToken();
-            aClasspathElements.add(new File(token).toURL());
+            aClasspathElements.add(new File(token).toURI().toURL());
           }
-        } else {
+        }
+        else {
           getLogger().warn("Unknown classloader: " + loader.getClass().getName());
         }
       }
@@ -237,36 +245,22 @@ public class ClassloaderUtil {
     }
   }
 
-  /**
-   * Patched by MPS.
-   * Was named addIDEALibraries
-   */
-  @Patch
-  public static void addLibraries(List<URL> classpathElements) {
+  public static void addIDEALibraries(List<URL> classpathElements) {
     final String ideaHomePath = PathManager.getHomePath();
     addAllFromLibFolder(ideaHomePath, classpathElements);
   }
 
-  @Patch
   @SuppressWarnings({"HardCodedStringLiteral"})
   public static void addAllFromLibFolder(final String aFolderPath, List<URL> classPath) {
     try {
-      // MPS Patch Start
-      // Well, lets assume that nobody would patch Bootstrap class
-      final Class<Bootstrap> aClass = Bootstrap.class;
-      // MPS Patch End
+      final Class<ClassloaderUtil> aClass = ClassloaderUtil.class;
       final String selfRoot = PathManager.getResourceRoot(aClass, "/" + aClass.getName().replace('.', '/') + ".class");
 
-      final URL selfRootUrl = new File(selfRoot).getAbsoluteFile().toURL();
+      final URL selfRootUrl = new File(selfRoot).getAbsoluteFile().toURI().toURL();
       classPath.add(selfRootUrl);
 
       final File libFolder = new File(aFolderPath + File.separator + "lib");
       addLibraries(classPath, libFolder, selfRootUrl);
-      // MPS Patch Start
-      for (File libSubFolder : libFolder.listFiles()) {
-        addLibraries(classPath, libSubFolder, selfRootUrl);
-      }
-      // MPS Patch End
 
       final File antLib = new File(new File(libFolder, "ant"), "lib");
       addLibraries(classPath, antLib, selfRootUrl);
@@ -283,7 +277,7 @@ public class ClassloaderUtil {
         if (!isJarOrZip(file)) {
           continue;
         }
-        final URL url = file.toURL();
+        final URL url = file.toURI().toURL();
         if (selfRootUrl.equals(url)) {
           continue;
         }
@@ -307,7 +301,7 @@ public class ClassloaderUtil {
       final StringTokenizer tokenizer = new StringTokenizer(System.getProperty("idea.additional.classpath", ""), File.pathSeparator, false);
       while (tokenizer.hasMoreTokens()) {
         String pathItem = tokenizer.nextToken();
-        classPath.add(new File(pathItem).toURL());
+        classPath.add(new File(pathItem).toURI().toURL());
       }
     }
     catch (MalformedURLException e) {
