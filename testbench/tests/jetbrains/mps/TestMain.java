@@ -440,7 +440,7 @@ public class TestMain {
     System.setProperty("idea.is.internal", mpsInternal == null ? "false" : mpsInternal);
     System.setProperty("idea.no.jre.check", "true");
     System.setProperty("idea.load.plugins", "false");
-    System.setProperty("idea.platform.prefix", "MPS");
+    System.setProperty("idea.platform.prefix", "Idea");
 
     try {
       IdeaTestApplication.getInstance(null);
