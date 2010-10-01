@@ -27,7 +27,7 @@ public class MPSLicenseManager extends LicenseeInfoProvider {
   }
 
   public String getLicenseRestrictionsMessage() {
-    return FileUtil.read(new File(PathManager.getHomePath() + File.separator + "license" + File.separator + "mps_license.txt"));
+    return "";//FileUtil.read(new File(PathManager.getHomePath() + File.separator + "license" + File.separator + "mps_license.txt"));
   }
 
   public boolean isEvaluationLicense() {
