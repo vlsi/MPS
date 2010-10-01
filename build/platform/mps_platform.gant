@@ -56,9 +56,10 @@ def layoutFull(String home, String targetDirectory) {
           module("bootstrap")
         }
         jar("resources.jar") {
-          module("resources")
+          module("resources"){
+            exclude(name: "**/IdeaPlugin.xml")
+          }
           module("platform-resources")
-          module("community-resources")
         }
         jar("resources_en.jar") {
           module("resources-en")
