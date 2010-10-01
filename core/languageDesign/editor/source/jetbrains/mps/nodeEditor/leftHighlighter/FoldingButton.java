@@ -51,7 +51,7 @@ class FoldingButton {
         myY2 = lastLeafCell != null ? collectionCell.getLastLeaf().getBaseline() : collectionCell.getBaseline();
       }
       // to avoid overlapping folding buttons
-      return myIsFolded || myY2 - myY1 >= 2 * HEIGHT;
+      return myIsHidden || myIsFolded || myY2 - myY1 >= 2 * HEIGHT;
     }
     return false;
   }
@@ -136,6 +136,9 @@ class FoldingButton {
   }
 
   boolean isInside(int x, int y) {
+    if (myIsHidden) {
+      return false;
+    }
     if (myIsFolded) {
       return Math.abs(x) <= HALF_WIDTH && isOnTopButton(y);
     } else {
