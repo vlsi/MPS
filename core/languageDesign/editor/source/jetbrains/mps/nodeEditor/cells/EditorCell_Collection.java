@@ -377,7 +377,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
   public EditorCell[] getContentCells() {
     if (usesBraces()) {
       EditorCell[] result = new EditorCell[getChildCount() - 2];
-      for (int i = 0; i < result.length - 1; i++) {
+      for (int i = 0; i < result.length; i++) {
         result[i] = getChildAt(i + 1);
       }
       return result;
