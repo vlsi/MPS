@@ -16,6 +16,14 @@
 package jetbrains.mps;
 
 import com.intellij.ide.Bootstrap;
+import com.intellij.ide.ClassloaderUtil;
+import com.intellij.openapi.application.PathManager;
+
+import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Launcher {
   public static void main(String[] args) {
@@ -24,6 +32,35 @@ public class Launcher {
     System.setProperty("idea.no.jre.check", "true");
     System.setProperty("idea.load.plugins", "true");
 
+
+    ArrayList<URL> paths = new ArrayList<URL>();
+    addLanguagesClassPath(paths);
+
+    StringBuilder cp = new StringBuilder(System.getProperty("idea.additional.classpath", ""));
+    for (URL p : paths) {
+      cp.append(File.pathSeparatorChar).append(p.getPath());
+    }
+    System.setProperty("idea.additional.classpath", cp.toString());
+
+
     Bootstrap.main(args, MPSMainImpl.class.getName(), "start");
+  }
+
+  private static void addLanguagesClassPath(List<URL> classPath) {
+    String homePath = PathManager.getHomePath();
+    try {
+      Class<Bootstrap> clazz = Bootstrap.class;
+      String selfRoot = PathManager.getResourceRoot(clazz, "/" + clazz.getName().replace('.', '/') + ".class");
+      URL selfRootUrl = new File(selfRoot).getAbsoluteFile().toURL();
+
+      File baseLanguageFolder = new File(homePath + File.separator + "core" + File.separator + "baseLanguage");
+      ClassloaderUtil.addLibraries(classPath, baseLanguageFolder, selfRootUrl);
+
+      File languageDesignFolder = new File(homePath + File.separator + "core" + File.separator + "languageDesign");
+      ClassloaderUtil.addLibraries(classPath, languageDesignFolder, selfRootUrl);
+    }
+    catch (MalformedURLException e) {
+
+    }
   }
 }
