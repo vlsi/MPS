@@ -85,6 +85,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
     GlobalSModelEventsManager.getInstance().removeGlobalCommandListener(myCommandListener);
   }
 
+  @NotNull
   @NonNls
   public String getProtocol() {
     return "mps";
@@ -229,7 +230,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
         updateModificationStamp(root);
       }
 
-      ModelAccess.instance().runWriteAction(new Runnable() {
+      ModelAccess.instance().runCommandInEDT(new Runnable() {
         public void run() {
           onModelReplaced(sm);
         }
@@ -250,7 +251,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
           String newName = node.getName();
           if (!oldName.equals(newName)) {
             fireBeforePropertyChange(this, file, VirtualFile.PROP_NAME, oldName, newName);
-            ((MPSNodeVirtualFile) file).updateFields();
+            file.updateFields();
             firePropertyChanged(this, file, VirtualFile.PROP_NAME, oldName, newName);
           }
         }
