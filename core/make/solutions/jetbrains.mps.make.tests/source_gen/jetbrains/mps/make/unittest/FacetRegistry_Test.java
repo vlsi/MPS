@@ -8,7 +8,6 @@ import jetbrains.mps.make.runtime.IFacet;
 import junit.framework.Assert;
 import jetbrains.mps.make.runtime.internal.FacetRegistry;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import org.jmock.integration.junit3.JUnit3Mockery;
 
 public class FacetRegistry_Test extends TestCase {
   private Mockery context;
@@ -29,12 +28,12 @@ public class FacetRegistry_Test extends TestCase {
   @Override
   protected void tearDown() throws Exception {
     super.tearDown();
+    context.assertIsSatisfied();
   }
 
   @Override
   protected void setUp() throws Exception {
     super.setUp();
-    this.context = new JUnit3Mockery();
-
+    this.context = new Mockery();
   }
 }

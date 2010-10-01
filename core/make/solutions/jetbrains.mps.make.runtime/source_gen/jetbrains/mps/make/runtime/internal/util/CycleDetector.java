@@ -11,7 +11,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import java.util.Comparator;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public abstract class CycleDetector<V> {
   private Map<V, CycleDetector.Data> dataMap = MapSequence.fromMap(new HashMap<V, CycleDetector.Data>());
@@ -24,46 +24,27 @@ public abstract class CycleDetector<V> {
   public abstract Iterable<V> backwardEdges(V v);
 
   public List<List<V>> findCycles(Iterable<V> vertices) {
+    this.init(vertices);
+    this.calcTimes(vertices);
+    return this.collectCycles(vertices);
+  }
+
+  private void init(Iterable<V> vertices) {
     MapSequence.fromMap(dataMap).clear();
     Sequence.fromIterable(vertices).visitAll(new IVisitor<V>() {
       public void visit(V v) {
         MapSequence.fromMap(dataMap).put(v, new CycleDetector.Data());
       }
     });
+  }
+
+  private void calcTimes(Iterable<V> vertices) {
     final Wrappers._int time = new Wrappers._int(0);
     Sequence.fromIterable(vertices).visitAll(new IVisitor<V>() {
       public void visit(V v) {
         if (CycleDetector.Color.WHITE == MapSequence.fromMap(dataMap).get(v).color) {
           time.value = visitForward(v, time.value);
         }
-      }
-    });
-    final List<List<V>> cycles = ListSequence.fromList(new ArrayList<List<V>>());
-    Sequence.fromIterable(vertices).sort(new Comparator<V>() {
-      public int compare(V a, V b) {
-        return MapSequence.fromMap(dataMap).get(b).endTime - MapSequence.fromMap(dataMap).get(a).endTime;
-      }
-    }, true).visitAll(new IVisitor<V>() {
-      public void visit(V v) {
-        if (CycleDetector.Color.BLACK == MapSequence.fromMap(dataMap).get(v).color) {
-          visitBackward(v);
-          if (ListSequence.fromList(MapSequence.fromMap(dataMap).get(v).successors).isNotEmpty()) {
-            List<V> cycle = ListSequence.fromListAndArray(new ArrayList<V>(), v);
-            addSuccessors(v, cycle);
-            ListSequence.fromList(cycles).addElement(cycle);
-          }
-        }
-      }
-    });
-    return cycles;
-  }
-
-  private void addSuccessors(V v, final List<V> list) {
-    List<V> successors = MapSequence.fromMap(dataMap).get(v).successors;
-    ListSequence.fromList(list).addSequence(ListSequence.fromList(successors));
-    ListSequence.fromList(successors).visitAll(new IVisitor<V>() {
-      public void visit(V succ) {
-        addSuccessors(succ, list);
       }
     });
   }
@@ -85,17 +66,48 @@ public abstract class CycleDetector<V> {
     return _time.value;
   }
 
+  private List<List<V>> collectCycles(Iterable<V> vertices) {
+    final List<List<V>> cycles = ListSequence.fromList(new ArrayList<List<V>>());
+    Sequence.fromIterable(vertices).sort(new ISelector<V, Comparable<?>>() {
+      public Comparable<?> select(V v) {
+        return MapSequence.fromMap(dataMap).get(v).endTime;
+      }
+    }, false).visitAll(new IVisitor<V>() {
+      public void visit(V v) {
+        if (CycleDetector.Color.BLACK == MapSequence.fromMap(dataMap).get(v).color) {
+          visitBackward(v);
+          if (ListSequence.fromList(MapSequence.fromMap(dataMap).get(v).successors).isNotEmpty()) {
+            List<V> cycle = ListSequence.fromListAndArray(new ArrayList<V>(), v);
+            collectSuccessors(v, cycle);
+            ListSequence.fromList(cycles).addElement(cycle);
+          }
+        }
+      }
+    });
+    return cycles;
+  }
+
+  private void collectSuccessors(V v, final List<V> list) {
+    ListSequence.fromList(MapSequence.fromMap(dataMap).get(v).successors).visitAll(new IVisitor<V>() {
+      public void visit(V succ) {
+        ListSequence.fromList(list).addElement(succ);
+        collectSuccessors(succ, list);
+      }
+    });
+
+  }
+
   private void visitBackward(final V v) {
     CycleDetector.Data data = MapSequence.fromMap(dataMap).get(v);
     data.color = CycleDetector.Color.GRAY;
-    Sequence.fromIterable(backwardEdges(v)).sort(new Comparator<V>() {
-      public int compare(V a, V b) {
-        return MapSequence.fromMap(dataMap).get(b).endTime - MapSequence.fromMap(dataMap).get(a).endTime;
+    Sequence.fromIterable(backwardEdges(v)).sort(new ISelector<V, Comparable<?>>() {
+      public Comparable<?> select(V prev) {
+        return MapSequence.fromMap(dataMap).get(prev).endTime;
       }
-    }, true).visitAll(new IVisitor<V>() {
+    }, false).visitAll(new IVisitor<V>() {
       public void visit(V prev) {
         if (CycleDetector.Color.BLACK == MapSequence.fromMap(dataMap).get(prev).color) {
-          MapSequence.fromMap(dataMap).get(v).addSuccessor(prev);
+          ListSequence.fromList(MapSequence.fromMap(dataMap).get(v).successors).addElement(prev);
           visitBackward(prev);
         }
       }
@@ -116,16 +128,9 @@ public abstract class CycleDetector<V> {
     private CycleDetector.Color color = CycleDetector.Color.WHITE;
     private int startTime = 0;
     private int endTime = 0;
-    private List<V> successors;
+    private List<V> successors = ListSequence.fromList(new ArrayList<V>());
 
     private Data() {
-    }
-
-    private void addSuccessor(V next) {
-      if (successors == null) {
-        this.successors = ListSequence.fromList(new ArrayList<V>());
-      }
-      ListSequence.fromList(successors).addElement(next);
     }
   }
 }

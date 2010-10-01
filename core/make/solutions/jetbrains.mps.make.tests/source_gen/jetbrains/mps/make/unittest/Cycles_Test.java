@@ -8,6 +8,8 @@ import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class Cycles_Test extends TestCase {
   public void test_primitive() throws Exception {
@@ -34,6 +36,19 @@ public class Cycles_Test extends TestCase {
     Assert.assertTrue(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), "B", "C", "D")).disjunction(ListSequence.fromList(ListSequence.fromList(cycles).getElement(0))).isEmpty());
   }
 
+  public void test_linear() throws Exception {
+    Graph<String> graph = new Graph<String>();
+    CycleDetector<String> cd = graph.getCycleDetector();
+    graph.addEdges("A", "B");
+    graph.addEdges("B", "C");
+    graph.addEdges("C", "D");
+    List<List<String>> cycles = cd.findCycles(Sequence.fromIterable(graph.getVertices()).sort(new ISelector<String, Comparable<?>>() {
+      public Comparable<?> select(String it) {
+        return it;
+      }
+    }, false));
+  }
+
   public void test_fourCycles() throws Exception {
     Graph<String> graph = new Graph<String>();
     CycleDetector<String> cd = graph.getCycleDetector();
@@ -43,9 +58,13 @@ public class Cycles_Test extends TestCase {
     graph.addEdges("D", "C", "H");
     graph.addEdges("E", "A", "F");
     graph.addEdges("F", "G");
-    graph.addEdges("G", "F", "H");
+    graph.addEdges("G", "F", "H", "I", "J");
+    graph.addEdges("H", "I");
+    graph.addEdges("I", "G", "K");
     List<List<String>> cycles = cd.findCycles(graph.getVertices());
     Assert.assertSame(3, ListSequence.fromList(cycles).count());
-    System.out.println("Cycles: " + cycles);
+    Assert.assertTrue(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), "A", "B", "E")).disjunction(ListSequence.fromList(ListSequence.fromList(cycles).getElement(0))).isEmpty());
+    Assert.assertTrue(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), "D", "C")).disjunction(ListSequence.fromList(ListSequence.fromList(cycles).getElement(1))).isEmpty());
+    Assert.assertTrue(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), "G", "I", "F", "H")).disjunction(ListSequence.fromList(ListSequence.fromList(cycles).getElement(2))).isEmpty());
   }
 }
