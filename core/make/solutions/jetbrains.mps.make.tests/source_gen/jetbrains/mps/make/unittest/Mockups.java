@@ -9,8 +9,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Map;
 import jetbrains.mps.make.runtime.ITarget;
 
-public class Mocks {
-  public Mocks() {
+public class Mockups {
+  public Mockups() {
   }
 
   public static IFacet facet(Mockery context, final String name) {

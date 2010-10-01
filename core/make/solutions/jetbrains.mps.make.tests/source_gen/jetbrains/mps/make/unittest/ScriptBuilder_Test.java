@@ -5,11 +5,11 @@ package jetbrains.mps.make.unittest;
 import junit.framework.TestCase;
 import org.jmock.Mockery;
 import jetbrains.mps.make.runtime.IFacet;
-import jetbrains.mps.make.runtime.internal.ScriptBuilder;
+import jetbrains.mps.make.runtime.script.ScriptBuilder;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.make.runtime.ITarget;
-import jetbrains.mps.make.runtime.internal.Script;
+import jetbrains.mps.make.runtime.script.Script;
 import junit.framework.Assert;
 import jetbrains.mps.make.runtime.internal.FacetRegistry;
 import org.jmock.Expectations;
@@ -44,11 +44,11 @@ public class ScriptBuilder_Test extends TestCase {
   protected void setUp() throws Exception {
     super.setUp();
     this.context = new Mockery();
-    final IFacet fmake = Mocks.facet(context, "Make");
-    final IFacet fgen = Mocks.facet(context, "Gen");
-    final ITarget tgen = Mocks.target(context, "gen");
-    final IFacet ftextgen = Mocks.facet(context, "Textgen");
-    final ITarget ttextgen = Mocks.target(context, "textgen");
+    final IFacet fmake = Mockups.facet(context, "Make");
+    final IFacet fgen = Mockups.facet(context, "Gen");
+    final ITarget tgen = Mockups.target(context, "gen");
+    final IFacet ftextgen = Mockups.facet(context, "Textgen");
+    final ITarget ttextgen = Mockups.target(context, "textgen");
     context.checking(new Expectations() {
       {
         atLeast(1).of(fgen).required();
@@ -64,9 +64,9 @@ public class ScriptBuilder_Test extends TestCase {
     FacetRegistry.getInstance().register(fmake);
     FacetRegistry.getInstance().register(fgen);
     FacetRegistry.getInstance().register(ftextgen);
-    Mocks.allowing(context, fmake);
-    Mocks.allowing(context, fgen);
-    Mocks.allowing(context, ftextgen);
+    Mockups.allowing(context, fmake);
+    Mockups.allowing(context, fgen);
+    Mockups.allowing(context, ftextgen);
     this.facets = new IFacet[]{fmake, fgen, ftextgen};
   }
 }

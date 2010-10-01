@@ -18,19 +18,27 @@
     <nodeInfo nodeId="4409813349651792933" fileName="ITarget.java" startLine="7" startPosition="26" endLine="8" endPosition="32" />
     <nodeInfo nodeId="6707053336947670216" fileName="ITarget.java" startLine="8" startPosition="32" endLine="9" endPosition="30" />
     <nodeInfo nodeId="6707053336947670223" fileName="ITarget.java" startLine="9" startPosition="30" endLine="10" endPosition="30" />
-    <nodeInfo nodeId="4409813349651792821" fileName="ITarget.java" startLine="10" startPosition="30" endLine="11" endPosition="33" />
-    <nodeInfo nodeId="3564492719942657639" fileName="ITarget.java" startLine="13" startPosition="30" endLine="14" endPosition="18" />
-    <nodeInfo nodeId="4409813349651792929" fileName="ITarget.java" startLine="12" startPosition="50" endLine="15" endPosition="5" />
+    <nodeInfo nodeId="3268327009384346243" fileName="ITarget.java" startLine="10" startPosition="30" endLine="11" endPosition="41" />
+    <nodeInfo nodeId="3268327009384346264" fileName="ITarget.java" startLine="11" startPosition="41" endLine="12" endPosition="44" />
+    <nodeInfo nodeId="3268327009384346253" fileName="ITarget.java" startLine="12" startPosition="44" endLine="13" endPosition="40" />
+    <nodeInfo nodeId="3268327009384346269" fileName="ITarget.java" startLine="13" startPosition="40" endLine="14" endPosition="43" />
+    <nodeInfo nodeId="4409813349651792821" fileName="ITarget.java" startLine="14" startPosition="43" endLine="15" endPosition="33" />
+    <nodeInfo nodeId="3564492719942657639" fileName="ITarget.java" startLine="17" startPosition="30" endLine="18" endPosition="18" />
+    <nodeInfo nodeId="4409813349651792929" fileName="ITarget.java" startLine="16" startPosition="50" endLine="19" endPosition="5" />
     <scopeInfo nodeId="4409813349651792933" fileName="ITarget.java" startLine="7" startPosition="26" endLine="8" endPosition="32" />
     <scopeInfo nodeId="6707053336947670216" fileName="ITarget.java" startLine="8" startPosition="32" endLine="9" endPosition="30" />
     <scopeInfo nodeId="6707053336947670223" fileName="ITarget.java" startLine="9" startPosition="30" endLine="10" endPosition="30" />
-    <scopeInfo nodeId="4409813349651792821" fileName="ITarget.java" startLine="10" startPosition="30" endLine="11" endPosition="33" />
-    <scopeInfo nodeId="4409813349651792932" fileName="ITarget.java" startLine="13" startPosition="30" endLine="14" endPosition="18" />
-    <scopeInfo nodeId="4409813349651792929" fileName="ITarget.java" startLine="12" startPosition="50" endLine="15" endPosition="5">
+    <scopeInfo nodeId="3268327009384346243" fileName="ITarget.java" startLine="10" startPosition="30" endLine="11" endPosition="41" />
+    <scopeInfo nodeId="3268327009384346264" fileName="ITarget.java" startLine="11" startPosition="41" endLine="12" endPosition="44" />
+    <scopeInfo nodeId="3268327009384346253" fileName="ITarget.java" startLine="12" startPosition="44" endLine="13" endPosition="40" />
+    <scopeInfo nodeId="3268327009384346269" fileName="ITarget.java" startLine="13" startPosition="40" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="4409813349651792821" fileName="ITarget.java" startLine="14" startPosition="43" endLine="15" endPosition="33" />
+    <scopeInfo nodeId="4409813349651792932" fileName="ITarget.java" startLine="17" startPosition="30" endLine="18" endPosition="18" />
+    <scopeInfo nodeId="4409813349651792929" fileName="ITarget.java" startLine="16" startPosition="50" endLine="19" endPosition="5">
       <varInfo nodeId="3564492719942657637" varName="name" />
     </scopeInfo>
-    <unitInfo nodeId="4409813349651792927" fileName="ITarget.java" startLine="12" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.make.runtime.ITarget$Name" />
-    <unitInfo nodeId="4409813349651792711" fileName="ITarget.java" startLine="7" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.make.runtime.ITarget" />
+    <unitInfo nodeId="4409813349651792927" fileName="ITarget.java" startLine="16" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.make.runtime.ITarget$Name" />
+    <unitInfo nodeId="4409813349651792711" fileName="ITarget.java" startLine="7" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.make.runtime.ITarget" />
   </root>
   <root nodeId="4409813349651792828">
     <unitInfo nodeId="4409813349651792828" fileName="ITask.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.make.runtime.ITask" />

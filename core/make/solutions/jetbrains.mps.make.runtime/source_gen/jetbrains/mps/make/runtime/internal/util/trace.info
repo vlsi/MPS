@@ -1,6 +1,151 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="_Replacer_a0a0c0c.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.make.runtime.internal.util._Replacer_a0a0c0c" />
+  <root nodeId="1936544640085949692">
+    <nodeInfo nodeId="1936544640085949751" fileName="CycleDetector.java" startLine="16" startPosition="40" endLine="17" endPosition="105" />
+    <nodeInfo nodeId="1936544640085949787" fileName="CycleDetector.java" startLine="26" startPosition="57" endLine="27" endPosition="41" />
+    <nodeInfo nodeId="1936544640085949805" fileName="CycleDetector.java" startLine="29" startPosition="30" endLine="30" endPosition="70" />
+    <nodeInfo nodeId="1936544640085949814" fileName="CycleDetector.java" startLine="32" startPosition="7" endLine="33" endPosition="52" />
+    <nodeInfo nodeId="1936544640085965245" fileName="CycleDetector.java" startLine="36" startPosition="85" endLine="37" endPosition="51" />
+    <nodeInfo nodeId="1936544640085949861" fileName="CycleDetector.java" startLine="40" startPosition="7" endLine="41" endPosition="81" />
+    <nodeInfo nodeId="1936544640085965142" fileName="CycleDetector.java" startLine="43" startPosition="36" endLine="44" endPosition="105" />
+    <nodeInfo nodeId="1936544640085965180" fileName="CycleDetector.java" startLine="48" startPosition="85" endLine="49" endPosition="27" />
+    <nodeInfo nodeId="1936544640085965192" fileName="CycleDetector.java" startLine="50" startPosition="99" endLine="51" endPosition="81" />
+    <nodeInfo nodeId="1936544640085965200" fileName="CycleDetector.java" startLine="51" startPosition="81" endLine="52" endPosition="36" />
+    <nodeInfo nodeId="1936544640085965204" fileName="CycleDetector.java" startLine="52" startPosition="36" endLine="53" endPosition="60" />
+    <nodeInfo nodeId="1936544640085949913" fileName="CycleDetector.java" startLine="57" startPosition="7" endLine="58" endPosition="18" />
+    <nodeInfo nodeId="1936544640085949924" fileName="CycleDetector.java" startLine="61" startPosition="55" endLine="62" endPosition="72" />
+    <nodeInfo nodeId="1936544640085963098" fileName="CycleDetector.java" startLine="62" startPosition="72" endLine="63" endPosition="79" />
+    <nodeInfo nodeId="1936544640085963119" fileName="CycleDetector.java" startLine="65" startPosition="33" endLine="66" endPosition="34" />
+    <nodeInfo nodeId="1936544640085949959" fileName="CycleDetector.java" startLine="71" startPosition="43" endLine="72" endPosition="56" />
+    <nodeInfo nodeId="1936544640085949960" fileName="CycleDetector.java" startLine="72" startPosition="56" endLine="73" endPosition="66" />
+    <nodeInfo nodeId="1936544640085949966" fileName="CycleDetector.java" startLine="73" startPosition="66" endLine="74" endPosition="42" />
+    <nodeInfo nodeId="1936544640085949972" fileName="CycleDetector.java" startLine="74" startPosition="42" endLine="75" endPosition="35" />
+    <nodeInfo nodeId="1936544640085965027" fileName="CycleDetector.java" startLine="78" startPosition="88" endLine="79" endPosition="56" />
+    <nodeInfo nodeId="1936544640085950000" fileName="CycleDetector.java" startLine="82" startPosition="7" endLine="83" endPosition="43" />
+    <nodeInfo nodeId="1936544640085950006" fileName="CycleDetector.java" startLine="83" startPosition="43" endLine="84" endPosition="33" />
+    <nodeInfo nodeId="1936544640085950013" fileName="CycleDetector.java" startLine="84" startPosition="33" endLine="85" endPosition="23" />
+    <nodeInfo nodeId="1936544640085950021" fileName="CycleDetector.java" startLine="88" startPosition="41" endLine="89" endPosition="66" />
+    <nodeInfo nodeId="1936544640085950027" fileName="CycleDetector.java" startLine="89" startPosition="66" endLine="90" endPosition="42" />
+    <nodeInfo nodeId="1936544640085965080" fileName="CycleDetector.java" startLine="92" startPosition="36" endLine="93" endPosition="105" />
+    <nodeInfo nodeId="1936544640085965110" fileName="CycleDetector.java" startLine="97" startPosition="88" endLine="98" endPosition="65" />
+    <nodeInfo nodeId="1936544640085965117" fileName="CycleDetector.java" startLine="98" startPosition="65" endLine="99" endPosition="30" />
+    <nodeInfo nodeId="1936544640085950089" fileName="CycleDetector.java" startLine="102" startPosition="7" endLine="103" endPosition="43" />
+    <nodeInfo nodeId="1936544640085949706" fileName="CycleDetector.java" startLine="115" startPosition="22" endLine="116" endPosition="66" />
+    <nodeInfo nodeId="1936544640085949710" fileName="CycleDetector.java" startLine="116" startPosition="66" endLine="117" endPosition="30" />
+    <nodeInfo nodeId="1936544640085949714" fileName="CycleDetector.java" startLine="117" startPosition="30" endLine="118" endPosition="28" />
+    <nodeInfo nodeId="1936544640085949718" fileName="CycleDetector.java" startLine="118" startPosition="28" endLine="119" endPosition="31" />
+    <nodeInfo nodeId="1936544640085949737" fileName="CycleDetector.java" startLine="125" startPosition="31" endLine="126" endPosition="68" />
+    <nodeInfo nodeId="1936544640085949745" fileName="CycleDetector.java" startLine="127" startPosition="7" endLine="128" endPosition="57" />
+    <nodeInfo nodeId="1936544640085949760" fileName="CycleDetector.java" startLine="18" startPosition="0" endLine="20" endPosition="3" />
+    <nodeInfo nodeId="1936544640085949764" fileName="CycleDetector.java" startLine="21" startPosition="0" endLine="23" endPosition="0" />
+    <nodeInfo nodeId="1936544640085949771" fileName="CycleDetector.java" startLine="23" startPosition="0" endLine="25" endPosition="0" />
+    <nodeInfo nodeId="1936544640085949700" fileName="CycleDetector.java" startLine="110" startPosition="0" endLine="112" endPosition="5" />
+    <nodeInfo nodeId="1936544640085949723" fileName="CycleDetector.java" startLine="120" startPosition="0" endLine="122" endPosition="5" />
+    <nodeInfo nodeId="1936544640085965236" fileName="CycleDetector.java" startLine="35" startPosition="30" endLine="38" endPosition="9" />
+    <nodeInfo nodeId="1936544640085965025" fileName="CycleDetector.java" startLine="77" startPosition="33" endLine="80" endPosition="9" />
+    <nodeInfo nodeId="1936544640085949732" fileName="CycleDetector.java" startLine="124" startPosition="39" endLine="127" endPosition="7" />
+    <nodeInfo nodeId="1936544640085949803" fileName="CycleDetector.java" startLine="28" startPosition="64" endLine="32" endPosition="0" />
+    <nodeInfo nodeId="1936544640085965140" fileName="CycleDetector.java" startLine="42" startPosition="62" endLine="46" endPosition="0" />
+    <nodeInfo nodeId="1936544640085963115" fileName="CycleDetector.java" startLine="64" startPosition="66" endLine="68" endPosition="0" />
+    <nodeInfo nodeId="1936544640085965078" fileName="CycleDetector.java" startLine="91" startPosition="70" endLine="95" endPosition="0" />
+    <nodeInfo nodeId="1936544640085965108" fileName="CycleDetector.java" startLine="96" startPosition="33" endLine="100" endPosition="9" />
+    <nodeInfo nodeId="1936544640085949799" fileName="CycleDetector.java" startLine="27" startPosition="41" endLine="32" endPosition="7" />
+    <nodeInfo nodeId="1936544640085965183" fileName="CycleDetector.java" startLine="49" startPosition="27" endLine="54" endPosition="11" />
+    <nodeInfo nodeId="1936544640085963108" fileName="CycleDetector.java" startLine="63" startPosition="79" endLine="68" endPosition="7" />
+    <nodeInfo nodeId="1936544640085965225" fileName="CycleDetector.java" startLine="34" startPosition="64" endLine="40" endPosition="0" />
+    <nodeInfo nodeId="1936544640085965021" fileName="CycleDetector.java" startLine="76" startPosition="71" endLine="82" endPosition="0" />
+    <nodeInfo nodeId="1936544640085965221" fileName="CycleDetector.java" startLine="33" startPosition="52" endLine="40" endPosition="7" />
+    <nodeInfo nodeId="1936544640085965013" fileName="CycleDetector.java" startLine="75" startPosition="35" endLine="82" endPosition="7" />
+    <nodeInfo nodeId="1936544640085965104" fileName="CycleDetector.java" startLine="95" startPosition="41" endLine="102" endPosition="0" />
+    <nodeInfo nodeId="1936544640085949727" fileName="CycleDetector.java" startLine="123" startPosition="0" endLine="130" endPosition="0" />
+    <nodeInfo nodeId="1936544640085965171" fileName="CycleDetector.java" startLine="47" startPosition="30" endLine="55" endPosition="9" />
+    <nodeInfo nodeId="1936544640085949915" fileName="CycleDetector.java" startLine="60" startPosition="0" endLine="70" endPosition="0" />
+    <nodeInfo nodeId="1936544640085965166" fileName="CycleDetector.java" startLine="46" startPosition="41" endLine="57" endPosition="0" />
+    <nodeInfo nodeId="1936544640085965073" fileName="CycleDetector.java" startLine="90" startPosition="42" endLine="102" endPosition="7" />
+    <nodeInfo nodeId="1936544640085965136" fileName="CycleDetector.java" startLine="41" startPosition="81" endLine="57" endPosition="7" />
+    <nodeInfo nodeId="1936544640085949952" fileName="CycleDetector.java" startLine="70" startPosition="0" endLine="87" endPosition="0" />
+    <nodeInfo nodeId="1936544640085950015" fileName="CycleDetector.java" startLine="87" startPosition="0" endLine="105" endPosition="0" />
+    <nodeInfo nodeId="1936544640085949778" fileName="CycleDetector.java" startLine="25" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="1936544640085949763" fileName="CycleDetector.java" startLine="19" startPosition="26" endLine="19" endPosition="26" />
+    <scopeInfo nodeId="1936544640085949703" fileName="CycleDetector.java" startLine="111" startPosition="13" endLine="111" endPosition="13" />
+    <scopeInfo nodeId="1936544640085949726" fileName="CycleDetector.java" startLine="121" startPosition="20" endLine="121" endPosition="20" />
+    <scopeInfo nodeId="1936544640085949804" fileName="CycleDetector.java" startLine="29" startPosition="30" endLine="30" endPosition="70" />
+    <scopeInfo nodeId="1936544640085965244" fileName="CycleDetector.java" startLine="36" startPosition="85" endLine="37" endPosition="51" />
+    <scopeInfo nodeId="1936544640085965141" fileName="CycleDetector.java" startLine="43" startPosition="36" endLine="44" endPosition="105" />
+    <scopeInfo nodeId="1936544640085963116" fileName="CycleDetector.java" startLine="65" startPosition="33" endLine="66" endPosition="34" />
+    <scopeInfo nodeId="1936544640085965026" fileName="CycleDetector.java" startLine="78" startPosition="88" endLine="79" endPosition="56" />
+    <scopeInfo nodeId="1936544640085965079" fileName="CycleDetector.java" startLine="92" startPosition="36" endLine="93" endPosition="105" />
+    <scopeInfo nodeId="1936544640085949736" fileName="CycleDetector.java" startLine="125" startPosition="31" endLine="126" endPosition="68" />
+    <scopeInfo nodeId="1936544640085949760" fileName="CycleDetector.java" startLine="18" startPosition="0" endLine="20" endPosition="3" />
+    <scopeInfo nodeId="1936544640085949764" fileName="CycleDetector.java" startLine="21" startPosition="0" endLine="23" endPosition="0">
+      <varInfo nodeId="1936544640085949768" varName="v" />
+    </scopeInfo>
+    <scopeInfo nodeId="1936544640085949771" fileName="CycleDetector.java" startLine="23" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1936544640085949775" varName="v" />
+    </scopeInfo>
+    <scopeInfo nodeId="1936544640085965109" fileName="CycleDetector.java" startLine="97" startPosition="88" endLine="99" endPosition="30" />
+    <scopeInfo nodeId="1936544640085949700" fileName="CycleDetector.java" startLine="110" startPosition="0" endLine="112" endPosition="5" />
+    <scopeInfo nodeId="1936544640085949723" fileName="CycleDetector.java" startLine="120" startPosition="0" endLine="122" endPosition="5" />
+    <scopeInfo nodeId="1936544640085965226" fileName="CycleDetector.java" startLine="35" startPosition="30" endLine="38" endPosition="9" />
+    <scopeInfo nodeId="1936544640085965191" fileName="CycleDetector.java" startLine="50" startPosition="99" endLine="53" endPosition="60">
+      <varInfo nodeId="1936544640085965193" varName="cycle" />
+    </scopeInfo>
+    <scopeInfo nodeId="1936544640085965022" fileName="CycleDetector.java" startLine="77" startPosition="33" endLine="80" endPosition="9" />
+    <scopeInfo nodeId="1936544640085949803" fileName="CycleDetector.java" startLine="28" startPosition="64" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="1936544640085965140" fileName="CycleDetector.java" startLine="42" startPosition="62" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="1936544640085963115" fileName="CycleDetector.java" startLine="64" startPosition="66" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="1936544640085965078" fileName="CycleDetector.java" startLine="91" startPosition="70" endLine="95" endPosition="0" />
+    <scopeInfo nodeId="1936544640085965105" fileName="CycleDetector.java" startLine="96" startPosition="33" endLine="100" endPosition="9" />
+    <scopeInfo nodeId="1936544640085949731" fileName="CycleDetector.java" startLine="124" startPosition="39" endLine="128" endPosition="57" />
+    <scopeInfo nodeId="1936544640085965225" fileName="CycleDetector.java" startLine="34" startPosition="64" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="1936544640085965179" fileName="CycleDetector.java" startLine="48" startPosition="85" endLine="54" endPosition="11" />
+    <scopeInfo nodeId="1936544640085965021" fileName="CycleDetector.java" startLine="76" startPosition="71" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="1936544640085949923" fileName="CycleDetector.java" startLine="61" startPosition="55" endLine="68" endPosition="7">
+      <varInfo nodeId="1936544640085949925" varName="successors" />
+    </scopeInfo>
+    <scopeInfo nodeId="1936544640085965104" fileName="CycleDetector.java" startLine="95" startPosition="41" endLine="102" endPosition="0" />
+    <scopeInfo nodeId="1936544640085949727" fileName="CycleDetector.java" startLine="123" startPosition="0" endLine="130" endPosition="0">
+      <varInfo nodeId="1936544640085949729" varName="next" />
+    </scopeInfo>
+    <scopeInfo nodeId="1936544640085965167" fileName="CycleDetector.java" startLine="47" startPosition="30" endLine="55" endPosition="9" />
+    <scopeInfo nodeId="1936544640085949915" fileName="CycleDetector.java" startLine="60" startPosition="0" endLine="70" endPosition="0">
+      <varInfo nodeId="1936544640085949918" varName="v" />
+      <varInfo nodeId="1936544640085949920" varName="list" />
+    </scopeInfo>
+    <scopeInfo nodeId="1936544640085965166" fileName="CycleDetector.java" startLine="46" startPosition="41" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="1936544640085949959" fileName="CycleDetector.java" startLine="71" startPosition="43" endLine="85" endPosition="23">
+      <varInfo nodeId="1936544640085949961" varName="data" />
+    </scopeInfo>
+    <scopeInfo nodeId="1936544640085950020" fileName="CycleDetector.java" startLine="88" startPosition="41" endLine="103" endPosition="43">
+      <varInfo nodeId="1936544640085950022" varName="data" />
+    </scopeInfo>
+    <scopeInfo nodeId="1936544640085949952" fileName="CycleDetector.java" startLine="70" startPosition="0" endLine="87" endPosition="0">
+      <varInfo nodeId="1936544640085949955" varName="v" />
+      <varInfo nodeId="1936544640085949957" varName="time" />
+    </scopeInfo>
+    <scopeInfo nodeId="1936544640085950015" fileName="CycleDetector.java" startLine="87" startPosition="0" endLine="105" endPosition="0">
+      <varInfo nodeId="1936544640085950018" varName="v" />
+    </scopeInfo>
+    <scopeInfo nodeId="1936544640085949786" fileName="CycleDetector.java" startLine="26" startPosition="57" endLine="58" endPosition="18">
+      <varInfo nodeId="1936544640085949862" varName="cycles" />
+      <varInfo nodeId="1936544640085949815" varName="time" />
+    </scopeInfo>
+    <scopeInfo nodeId="1936544640085949778" fileName="CycleDetector.java" startLine="25" startPosition="0" endLine="60" endPosition="0">
+      <varInfo nodeId="1936544640085949783" varName="vertices" />
+    </scopeInfo>
+    <unitInfo nodeId="1936544640085949803" fileName="CycleDetector.java" startLine="28" startPosition="49" endLine="32" endPosition="5" unitName="jetbrains.mps.make.runtime.internal.util.CycleDetector$1" />
+    <unitInfo nodeId="1936544640085965140" fileName="CycleDetector.java" startLine="42" startPosition="45" endLine="46" endPosition="5" unitName="jetbrains.mps.make.runtime.internal.util.CycleDetector$3" />
+    <unitInfo nodeId="1936544640085963115" fileName="CycleDetector.java" startLine="64" startPosition="51" endLine="68" endPosition="5" unitName="jetbrains.mps.make.runtime.internal.util.CycleDetector$5" />
+    <unitInfo nodeId="1936544640085965078" fileName="CycleDetector.java" startLine="91" startPosition="53" endLine="95" endPosition="5" unitName="jetbrains.mps.make.runtime.internal.util.CycleDetector$7" />
+    <unitInfo nodeId="1936544640085965225" fileName="CycleDetector.java" startLine="34" startPosition="49" endLine="40" endPosition="5" unitName="jetbrains.mps.make.runtime.internal.util.CycleDetector$2" />
+    <unitInfo nodeId="1936544640085965021" fileName="CycleDetector.java" startLine="76" startPosition="56" endLine="82" endPosition="5" unitName="jetbrains.mps.make.runtime.internal.util.CycleDetector$6" />
+    <unitInfo nodeId="1936544640085965104" fileName="CycleDetector.java" startLine="95" startPosition="26" endLine="102" endPosition="5" unitName="jetbrains.mps.make.runtime.internal.util.CycleDetector$8" />
+    <unitInfo nodeId="1936544640085949695" fileName="CycleDetector.java" startLine="106" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.make.runtime.internal.util.CycleDetector$Color" />
+    <unitInfo nodeId="1936544640085965166" fileName="CycleDetector.java" startLine="46" startPosition="26" endLine="57" endPosition="5" unitName="jetbrains.mps.make.runtime.internal.util.CycleDetector$4" />
+    <unitInfo nodeId="1936544640085949704" fileName="CycleDetector.java" startLine="115" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.make.runtime.internal.util.CycleDetector$Data" />
+    <unitInfo nodeId="1936544640085949692" fileName="CycleDetector.java" startLine="16" startPosition="0" endLine="132" endPosition="0" unitName="jetbrains.mps.make.runtime.internal.util.CycleDetector" />
+  </root>
   <root nodeId="5105453120349025843">
     <nodeInfo nodeId="8321680453184998988" fileName="SmartWrapper.java" startLine="11" startPosition="30" endLine="12" endPosition="105" />
     <nodeInfo nodeId="5105453120349025843" fileName="SmartWrapper.java" startLine="12" startPosition="105" endLine="13" endPosition="81" />

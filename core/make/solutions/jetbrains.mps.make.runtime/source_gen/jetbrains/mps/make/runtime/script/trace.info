@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="3268327009384345390">
+    <nodeInfo nodeId="3268327009384346061" fileName="Script.java" startLine="15" startPosition="40" endLine="16" endPosition="61" />
+    <nodeInfo nodeId="3268327009384345400" fileName="Script.java" startLine="17" startPosition="0" endLine="18" endPosition="32" />
+    <nodeInfo nodeId="3268327009384345403" fileName="Script.java" startLine="18" startPosition="32" endLine="19" endPosition="32" />
+    <nodeInfo nodeId="3268327009384345407" fileName="Script.java" startLine="19" startPosition="32" endLine="20" endPosition="52" />
+    <nodeInfo nodeId="3268327009384345515" fileName="Script.java" startLine="22" startPosition="67" endLine="23" endPosition="86" />
+    <nodeInfo nodeId="3268327009384345524" fileName="Script.java" startLine="23" startPosition="86" endLine="24" endPosition="39" />
+    <nodeInfo nodeId="3268327009384345415" fileName="Script.java" startLine="27" startPosition="40" endLine="28" endPosition="36" />
+    <nodeInfo nodeId="3268327009384345426" fileName="Script.java" startLine="31" startPosition="28" endLine="32" endPosition="39" />
+    <nodeInfo nodeId="3268327009384345440" fileName="Script.java" startLine="37" startPosition="40" endLine="38" endPosition="40" />
+    <nodeInfo nodeId="3268327009384345455" fileName="Script.java" startLine="43" startPosition="31" endLine="44" endPosition="25" />
+    <nodeInfo nodeId="3268327009384345461" fileName="Script.java" startLine="47" startPosition="41" endLine="48" endPosition="49" />
+    <nodeInfo nodeId="3268327009384345476" fileName="Script.java" startLine="52" startPosition="58" endLine="53" endPosition="59" />
+    <nodeInfo nodeId="3268327009384345487" fileName="Script.java" startLine="55" startPosition="23" endLine="56" endPosition="53" />
+    <nodeInfo nodeId="3268327009384345492" fileName="Script.java" startLine="56" startPosition="53" endLine="57" endPosition="56" />
+    <nodeInfo nodeId="3268327009384345498" fileName="Script.java" startLine="58" startPosition="5" endLine="59" endPosition="16" />
+    <nodeInfo nodeId="3268327009384345504" fileName="Script.java" startLine="62" startPosition="31" endLine="63" endPosition="38" />
+    <nodeInfo nodeId="3268327009384345396" fileName="Script.java" startLine="70" startPosition="0" endLine="72" endPosition="5" />
+    <nodeInfo nodeId="3268327009384345474" fileName="Script.java" startLine="51" startPosition="62" endLine="54" endPosition="5" />
+    <nodeInfo nodeId="3268327009384345511" fileName="Script.java" startLine="21" startPosition="0" endLine="25" endPosition="3" />
+    <nodeInfo nodeId="3268327009384345411" fileName="Script.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
+    <nodeInfo nodeId="3268327009384345423" fileName="Script.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <nodeInfo nodeId="3268327009384345438" fileName="Script.java" startLine="36" startPosition="81" endLine="40" endPosition="0" />
+    <nodeInfo nodeId="3268327009384345452" fileName="Script.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
+    <nodeInfo nodeId="3268327009384345458" fileName="Script.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
+    <nodeInfo nodeId="3268327009384345485" fileName="Script.java" startLine="54" startPosition="5" endLine="58" endPosition="5" />
+    <nodeInfo nodeId="3268327009384345500" fileName="Script.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
+    <nodeInfo nodeId="3268327009384345434" fileName="Script.java" startLine="35" startPosition="53" endLine="40" endPosition="7" />
+    <nodeInfo nodeId="3268327009384345431" fileName="Script.java" startLine="34" startPosition="0" endLine="42" endPosition="0" />
+    <nodeInfo nodeId="3268327009384345466" fileName="Script.java" startLine="50" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="3268327009384345399" fileName="Script.java" startLine="71" startPosition="13" endLine="71" endPosition="13" />
+    <scopeInfo nodeId="3268327009384345414" fileName="Script.java" startLine="27" startPosition="40" endLine="28" endPosition="36" />
+    <scopeInfo nodeId="3268327009384345425" fileName="Script.java" startLine="31" startPosition="28" endLine="32" endPosition="39" />
+    <scopeInfo nodeId="3268327009384345439" fileName="Script.java" startLine="37" startPosition="40" endLine="38" endPosition="40" />
+    <scopeInfo nodeId="3268327009384345454" fileName="Script.java" startLine="43" startPosition="31" endLine="44" endPosition="25" />
+    <scopeInfo nodeId="3268327009384345460" fileName="Script.java" startLine="47" startPosition="41" endLine="48" endPosition="49" />
+    <scopeInfo nodeId="3268327009384345475" fileName="Script.java" startLine="52" startPosition="58" endLine="53" endPosition="59" />
+    <scopeInfo nodeId="3268327009384345503" fileName="Script.java" startLine="62" startPosition="31" endLine="63" endPosition="38" />
+    <scopeInfo nodeId="3268327009384345514" fileName="Script.java" startLine="22" startPosition="67" endLine="24" endPosition="39" />
+    <scopeInfo nodeId="3268327009384345486" fileName="Script.java" startLine="55" startPosition="23" endLine="57" endPosition="56" />
+    <scopeInfo nodeId="3268327009384345396" fileName="Script.java" startLine="70" startPosition="0" endLine="72" endPosition="5" />
+    <scopeInfo nodeId="3268327009384345511" fileName="Script.java" startLine="21" startPosition="0" endLine="25" endPosition="3">
+      <varInfo nodeId="3268327009384345533" varName="defaultTarget" />
+      <varInfo nodeId="3268327009384345530" varName="targets" />
+    </scopeInfo>
+    <scopeInfo nodeId="3268327009384345411" fileName="Script.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="3268327009384345421" varName="monit" />
+    </scopeInfo>
+    <scopeInfo nodeId="3268327009384345423" fileName="Script.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="3268327009384345438" fileName="Script.java" startLine="36" startPosition="81" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="3268327009384345452" fileName="Script.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="3268327009384345458" fileName="Script.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="3268327009384345500" fileName="Script.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="3268327009384345433" fileName="Script.java" startLine="35" startPosition="53" endLine="40" endPosition="7" />
+    <scopeInfo nodeId="3268327009384345431" fileName="Script.java" startLine="34" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="3268327009384345450" varName="name" />
+    </scopeInfo>
+    <scopeInfo nodeId="3268327009384345473" fileName="Script.java" startLine="51" startPosition="62" endLine="59" endPosition="16" />
+    <scopeInfo nodeId="3268327009384345466" fileName="Script.java" startLine="50" startPosition="0" endLine="61" endPosition="0">
+      <varInfo nodeId="3268327009384345471" varName="monit" />
+      <varInfo nodeId="3268327009384345469" varName="trg" />
+    </scopeInfo>
+    <unitInfo nodeId="3268327009384345438" fileName="Script.java" startLine="36" startPosition="56" endLine="40" endPosition="5" unitName="jetbrains.mps.make.runtime.script.IWhereFilter$anonymous" />
+    <unitInfo nodeId="3268327009384345391" fileName="Script.java" startLine="66" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.make.runtime.script.Script$State" />
+    <unitInfo nodeId="3268327009384345390" fileName="Script.java" startLine="15" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.make.runtime.script.Script" />
+  </root>
+  <root nodeId="3268327009384345536">
+    <nodeInfo nodeId="3268327009384345537" fileName="ScriptBuilder.java" startLine="22" startPosition="28" endLine="23" endPosition="68" />
+    <nodeInfo nodeId="3268327009384345542" fileName="ScriptBuilder.java" startLine="24" startPosition="0" endLine="25" endPosition="104" />
+    <nodeInfo nodeId="3268327009384345551" fileName="ScriptBuilder.java" startLine="25" startPosition="104" endLine="26" endPosition="87" />
+    <nodeInfo nodeId="3268327009384345558" fileName="ScriptBuilder.java" startLine="26" startPosition="87" endLine="27" endPosition="37" />
+    <nodeInfo nodeId="3268327009384345561" fileName="ScriptBuilder.java" startLine="27" startPosition="37" endLine="28" endPosition="28" />
+    <nodeInfo nodeId="3268327009384345571" fileName="ScriptBuilder.java" startLine="34" startPosition="62" endLine="35" endPosition="58" />
+    <nodeInfo nodeId="3268327009384345580" fileName="ScriptBuilder.java" startLine="36" startPosition="24" endLine="37" endPosition="53" />
+    <nodeInfo nodeId="3268327009384345591" fileName="ScriptBuilder.java" startLine="38" startPosition="14" endLine="39" endPosition="44" />
+    <nodeInfo nodeId="3268327009384345598" fileName="ScriptBuilder.java" startLine="41" startPosition="5" endLine="42" endPosition="16" />
+    <nodeInfo nodeId="3268327009384345609" fileName="ScriptBuilder.java" startLine="45" startPosition="60" endLine="46" endPosition="56" />
+    <nodeInfo nodeId="3268327009384345614" fileName="ScriptBuilder.java" startLine="46" startPosition="56" endLine="47" endPosition="16" />
+    <nodeInfo nodeId="3268327009384345622" fileName="ScriptBuilder.java" startLine="50" startPosition="61" endLine="51" endPosition="56" />
+    <nodeInfo nodeId="3268327009384345627" fileName="ScriptBuilder.java" startLine="51" startPosition="56" endLine="52" endPosition="36" />
+    <nodeInfo nodeId="3268327009384345633" fileName="ScriptBuilder.java" startLine="52" startPosition="36" endLine="53" endPosition="16" />
+    <nodeInfo nodeId="3268327009384345639" fileName="ScriptBuilder.java" startLine="56" startPosition="60" endLine="57" endPosition="21" />
+    <nodeInfo nodeId="3268327009384345645" fileName="ScriptBuilder.java" startLine="57" startPosition="21" endLine="58" endPosition="16" />
+    <nodeInfo nodeId="3268327009384345653" fileName="ScriptBuilder.java" startLine="61" startPosition="28" endLine="62" endPosition="76" />
+    <nodeInfo nodeId="3268327009384345660" fileName="ScriptBuilder.java" startLine="62" startPosition="76" endLine="63" endPosition="108" />
+    <nodeInfo nodeId="3268327009384345669" fileName="ScriptBuilder.java" startLine="63" startPosition="108" endLine="64" endPosition="77" />
+    <nodeInfo nodeId="3268327009384345676" fileName="ScriptBuilder.java" startLine="64" startPosition="77" endLine="65" endPosition="96" />
+    <nodeInfo nodeId="3268327009384345685" fileName="ScriptBuilder.java" startLine="65" startPosition="96" endLine="66" endPosition="96" />
+    <nodeInfo nodeId="3268327009384345700" fileName="ScriptBuilder.java" startLine="67" startPosition="83" endLine="68" endPosition="53" />
+    <nodeInfo nodeId="3268327009384345708" fileName="ScriptBuilder.java" startLine="68" startPosition="53" endLine="69" endPosition="53" />
+    <nodeInfo nodeId="3268327009384345716" fileName="ScriptBuilder.java" startLine="69" startPosition="53" endLine="70" endPosition="53" />
+    <nodeInfo nodeId="3268327009384345733" fileName="ScriptBuilder.java" startLine="72" startPosition="79" endLine="73" endPosition="58" />
+    <nodeInfo nodeId="3268327009384345755" fileName="ScriptBuilder.java" startLine="74" startPosition="16" endLine="75" endPosition="72" />
+    <nodeInfo nodeId="3268327009384346242" fileName="ScriptBuilder.java" startLine="78" startPosition="5" endLine="79" endPosition="0" />
+    <nodeInfo nodeId="3268327009384345763" fileName="ScriptBuilder.java" startLine="79" startPosition="0" endLine="80" endPosition="89" />
+    <nodeInfo nodeId="3268327009384345785" fileName="ScriptBuilder.java" startLine="84" startPosition="59" endLine="85" endPosition="57" />
+    <nodeInfo nodeId="3268327009384345794" fileName="ScriptBuilder.java" startLine="86" startPosition="22" endLine="87" endPosition="54" />
+    <nodeInfo nodeId="3268327009384345806" fileName="ScriptBuilder.java" startLine="88" startPosition="14" endLine="89" endPosition="50" />
+    <nodeInfo nodeId="3268327009384345827" fileName="ScriptBuilder.java" startLine="95" startPosition="59" endLine="96" endPosition="57" />
+    <nodeInfo nodeId="3268327009384345836" fileName="ScriptBuilder.java" startLine="97" startPosition="22" endLine="98" endPosition="54" />
+    <nodeInfo nodeId="3268327009384345848" fileName="ScriptBuilder.java" startLine="99" startPosition="14" endLine="100" endPosition="50" />
+    <nodeInfo nodeId="3268327009384345856" fileName="ScriptBuilder.java" startLine="29" startPosition="0" endLine="31" endPosition="3" />
+    <nodeInfo nodeId="3268327009384345589" fileName="ScriptBuilder.java" startLine="38" startPosition="12" endLine="40" endPosition="7" />
+    <nodeInfo nodeId="3268327009384345748" fileName="ScriptBuilder.java" startLine="74" startPosition="14" endLine="76" endPosition="9" />
+    <nodeInfo nodeId="3268327009384345804" fileName="ScriptBuilder.java" startLine="88" startPosition="12" endLine="90" endPosition="7" />
+    <nodeInfo nodeId="3268327009384345846" fileName="ScriptBuilder.java" startLine="99" startPosition="12" endLine="101" endPosition="7" />
+    <nodeInfo nodeId="3268327009384345578" fileName="ScriptBuilder.java" startLine="35" startPosition="58" endLine="40" endPosition="7" />
+    <nodeInfo nodeId="3268327009384345604" fileName="ScriptBuilder.java" startLine="44" startPosition="0" endLine="49" endPosition="0" />
+    <nodeInfo nodeId="3268327009384345636" fileName="ScriptBuilder.java" startLine="55" startPosition="0" endLine="60" endPosition="0" />
+    <nodeInfo nodeId="3268327009384345731" fileName="ScriptBuilder.java" startLine="71" startPosition="69" endLine="76" endPosition="9" />
+    <nodeInfo nodeId="3268327009384345792" fileName="ScriptBuilder.java" startLine="85" startPosition="57" endLine="90" endPosition="7" />
+    <nodeInfo nodeId="3268327009384345834" fileName="ScriptBuilder.java" startLine="96" startPosition="57" endLine="101" endPosition="7" />
+    <nodeInfo nodeId="3268327009384345617" fileName="ScriptBuilder.java" startLine="49" startPosition="0" endLine="55" endPosition="0" />
+    <nodeInfo nodeId="3268327009384345724" fileName="ScriptBuilder.java" startLine="70" startPosition="53" endLine="77" endPosition="7" />
+    <nodeInfo nodeId="3268327009384345567" fileName="ScriptBuilder.java" startLine="33" startPosition="69" endLine="41" endPosition="5" />
+    <nodeInfo nodeId="3268327009384345782" fileName="ScriptBuilder.java" startLine="83" startPosition="97" endLine="91" endPosition="5" />
+    <nodeInfo nodeId="3268327009384345824" fileName="ScriptBuilder.java" startLine="94" startPosition="97" endLine="102" endPosition="5" />
+    <nodeInfo nodeId="3268327009384345771" fileName="ScriptBuilder.java" startLine="82" startPosition="0" endLine="93" endPosition="0" />
+    <nodeInfo nodeId="3268327009384345813" fileName="ScriptBuilder.java" startLine="93" startPosition="0" endLine="104" endPosition="0" />
+    <nodeInfo nodeId="3268327009384345564" fileName="ScriptBuilder.java" startLine="32" startPosition="0" endLine="44" endPosition="0" />
+    <nodeInfo nodeId="3268327009384345694" fileName="ScriptBuilder.java" startLine="66" startPosition="96" endLine="78" endPosition="5" />
+    <nodeInfo nodeId="3268327009384345650" fileName="ScriptBuilder.java" startLine="60" startPosition="0" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="3268327009384345859" fileName="ScriptBuilder.java" startLine="30" startPosition="26" endLine="30" endPosition="26" />
+    <scopeInfo nodeId="3268327009384345579" fileName="ScriptBuilder.java" startLine="36" startPosition="24" endLine="37" endPosition="53" />
+    <scopeInfo nodeId="3268327009384345590" fileName="ScriptBuilder.java" startLine="38" startPosition="14" endLine="39" endPosition="44" />
+    <scopeInfo nodeId="3268327009384345732" fileName="ScriptBuilder.java" startLine="72" startPosition="79" endLine="73" endPosition="58" />
+    <scopeInfo nodeId="3268327009384345749" fileName="ScriptBuilder.java" startLine="74" startPosition="16" endLine="75" endPosition="72" />
+    <scopeInfo nodeId="3268327009384345793" fileName="ScriptBuilder.java" startLine="86" startPosition="22" endLine="87" endPosition="54" />
+    <scopeInfo nodeId="3268327009384345805" fileName="ScriptBuilder.java" startLine="88" startPosition="14" endLine="89" endPosition="50" />
+    <scopeInfo nodeId="3268327009384345835" fileName="ScriptBuilder.java" startLine="97" startPosition="22" endLine="98" endPosition="54" />
+    <scopeInfo nodeId="3268327009384345847" fileName="ScriptBuilder.java" startLine="99" startPosition="14" endLine="100" endPosition="50" />
+    <scopeInfo nodeId="3268327009384345856" fileName="ScriptBuilder.java" startLine="29" startPosition="0" endLine="31" endPosition="3" />
+    <scopeInfo nodeId="3268327009384345608" fileName="ScriptBuilder.java" startLine="45" startPosition="60" endLine="47" endPosition="16" />
+    <scopeInfo nodeId="3268327009384345638" fileName="ScriptBuilder.java" startLine="56" startPosition="60" endLine="58" endPosition="16" />
+    <scopeInfo nodeId="3268327009384345621" fileName="ScriptBuilder.java" startLine="50" startPosition="61" endLine="53" endPosition="16" />
+    <scopeInfo nodeId="3268327009384345604" fileName="ScriptBuilder.java" startLine="44" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="3268327009384345605" varName="targetName" />
+    </scopeInfo>
+    <scopeInfo nodeId="3268327009384345636" fileName="ScriptBuilder.java" startLine="55" startPosition="0" endLine="60" endPosition="0">
+      <varInfo nodeId="3268327009384345648" varName="pool" />
+    </scopeInfo>
+    <scopeInfo nodeId="3268327009384345730" fileName="ScriptBuilder.java" startLine="71" startPosition="69" endLine="76" endPosition="9" />
+    <scopeInfo nodeId="3268327009384345570" fileName="ScriptBuilder.java" startLine="34" startPosition="62" endLine="40" endPosition="7">
+      <varInfo nodeId="3268327009384345572" varName="fct" />
+    </scopeInfo>
+    <scopeInfo nodeId="3268327009384345617" fileName="ScriptBuilder.java" startLine="49" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="3268327009384345618" varName="targetName" />
+    </scopeInfo>
+    <scopeInfo nodeId="3268327009384345784" fileName="ScriptBuilder.java" startLine="84" startPosition="59" endLine="90" endPosition="7">
+      <varInfo nodeId="3268327009384345786" varName="f" />
+    </scopeInfo>
+    <scopeInfo nodeId="3268327009384345826" fileName="ScriptBuilder.java" startLine="95" startPosition="59" endLine="101" endPosition="7">
+      <varInfo nodeId="3268327009384345828" varName="f" />
+    </scopeInfo>
+    <scopeInfo nodeId="3268327009384345724" fileName="ScriptBuilder.java" startLine="70" startPosition="53" endLine="77" endPosition="7" />
+    <scopeInfo nodeId="3268327009384345567" fileName="ScriptBuilder.java" startLine="33" startPosition="69" endLine="41" endPosition="5" />
+    <scopeInfo nodeId="3268327009384345781" fileName="ScriptBuilder.java" startLine="83" startPosition="97" endLine="91" endPosition="5" />
+    <scopeInfo nodeId="3268327009384345782" fileName="ScriptBuilder.java" startLine="83" startPosition="97" endLine="91" endPosition="5" />
+    <scopeInfo nodeId="3268327009384345823" fileName="ScriptBuilder.java" startLine="94" startPosition="97" endLine="102" endPosition="5" />
+    <scopeInfo nodeId="3268327009384345824" fileName="ScriptBuilder.java" startLine="94" startPosition="97" endLine="102" endPosition="5" />
+    <scopeInfo nodeId="3268327009384345566" fileName="ScriptBuilder.java" startLine="33" startPosition="69" endLine="42" endPosition="16" />
+    <scopeInfo nodeId="3268327009384345699" fileName="ScriptBuilder.java" startLine="67" startPosition="83" endLine="77" endPosition="7" />
+    <scopeInfo nodeId="3268327009384345771" fileName="ScriptBuilder.java" startLine="82" startPosition="0" endLine="93" endPosition="0">
+      <varInfo nodeId="3268327009384345774" varName="facets" />
+      <varInfo nodeId="3268327009384345777" varName="required" />
+    </scopeInfo>
+    <scopeInfo nodeId="3268327009384345813" fileName="ScriptBuilder.java" startLine="93" startPosition="0" endLine="104" endPosition="0">
+      <varInfo nodeId="3268327009384345819" varName="optional" />
+      <varInfo nodeId="3268327009384345816" varName="facets" />
+    </scopeInfo>
+    <scopeInfo nodeId="3268327009384345564" fileName="ScriptBuilder.java" startLine="32" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="3268327009384345600" varName="facetNames" />
+    </scopeInfo>
+    <scopeInfo nodeId="3268327009384345694" fileName="ScriptBuilder.java" startLine="66" startPosition="96" endLine="78" endPosition="5" />
+    <scopeInfo nodeId="3268327009384345652" fileName="ScriptBuilder.java" startLine="61" startPosition="28" endLine="80" endPosition="89">
+      <varInfo nodeId="3268327009384345670" varName="fview" />
+      <varInfo nodeId="3268327009384345686" varName="optional" />
+      <varInfo nodeId="3268327009384345661" varName="availableTargets" />
+      <varInfo nodeId="3268327009384345677" varName="required" />
+      <varInfo nodeId="3268327009384345654" varName="targets" />
+    </scopeInfo>
+    <scopeInfo nodeId="3268327009384345650" fileName="ScriptBuilder.java" startLine="60" startPosition="0" endLine="82" endPosition="0" />
+    <unitInfo nodeId="3268327009384345536" fileName="ScriptBuilder.java" startLine="22" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.make.runtime.script.ScriptBuilder" />
+  </root>
+</debugInfo>
+
