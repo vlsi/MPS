@@ -568,7 +568,6 @@
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.structure.ChildTypeRestriction" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.structure.Dependency" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />

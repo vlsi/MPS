@@ -8,12 +8,12 @@ import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.util.containers.ContainerUtil;
 import com.intellij.openapi.extensions.Extensions;
 import com.intellij.execution.configurations.ConfigurationType;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.plugins.pluginparts.runconfigs.MPSPsiElement;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.ConfigurationFactory;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -31,18 +31,20 @@ public class JUnitConfigFromClass extends BaseConfigCreator<SNode> implements Cl
   }
 
   private void createConfig(final SNode parameter) {
-    if (ListSequence.fromList(ITestCase_Behavior.call_getTestMethods_2148145109766218395(parameter)).isEmpty()) {
+    SNode testCase = SNodeOperations.getAncestor(parameter, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase", false, false);
+
+    if ((testCase == null) || ListSequence.fromList(ITestCase_Behavior.call_getTestMethods_2148145109766218395(testCase)).isEmpty()) {
       return;
     }
 
-    JUnitConfigFromClass.this.setSourceElement(new MPSPsiElement(parameter));
+    JUnitConfigFromClass.this.setSourceElement(new MPSPsiElement(testCase));
 
     {
       JUnit_ConfigurationType configType = ContainerUtil.findInstance(Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP), JUnit_ConfigurationType.class);
       DefaultJUnit_Configuration _config = new DefaultJUnit_Configuration(JUnitConfigFromClass.this.getContext().getProject(), findFactory(configType, "DefaultJUnit"), "NewConfig");
-      _config.setName(SPropertyOperations.getString(parameter, "name"));
+      _config.setName(SPropertyOperations.getString(testCase, "name"));
       _config.getStateObject().type = JUnitRunTypes.NODE;
-      _config.getStateObject().nodes = new ClonableList<String>(INamedConcept_Behavior.call_getFqName_1213877404258(parameter));
+      _config.getStateObject().nodes = new ClonableList<String>(INamedConcept_Behavior.call_getFqName_1213877404258(testCase));
       JUnitConfigFromClass.this.myConfig = _config;
     }
   }
@@ -53,7 +55,7 @@ public class JUnitConfigFromClass extends BaseConfigCreator<SNode> implements Cl
   }
 
   protected boolean isApplicable(final Object element) {
-    return element instanceof SNode && SNodeOperations.isInstanceOf(((SNode) element), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase");
+    return element instanceof SNode && SNodeOperations.isInstanceOf(((SNode) element), "jetbrains.mps.lang.core.structure.BaseConcept");
   }
 
   @Nullable

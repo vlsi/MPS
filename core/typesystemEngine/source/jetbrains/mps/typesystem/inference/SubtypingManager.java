@@ -19,6 +19,7 @@ import jetbrains.mps.lang.typesystem.runtime.*;
 import jetbrains.mps.lang.typesystem.structure.RuntimeErrorType;
 import jetbrains.mps.lang.typesystem.structure.MeetType;
 import jetbrains.mps.nodeEditor.NodeReadAccessCasterInEditor;
+import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.typesystem.inference.util.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
@@ -67,9 +68,9 @@ public class SubtypingManager {
   }
 
   boolean isSubtypeByReplacementRules(SNode subtype, SNode supertype) {
-    Set<InequationReplacementRule_Runtime> inequationReplacementRules = myTypeChecker.getRulesManager().getReplacementRules(subtype, supertype);
-    for (InequationReplacementRule_Runtime inequationReplacementRule : inequationReplacementRules) {
-      if (inequationReplacementRule.checkInequation(subtype, supertype, new EquationInfo(null, null))) {
+    Set<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>> inequationReplacementRules = myTypeChecker.getRulesManager().getReplacementRules(subtype, supertype);
+    for (Pair<InequationReplacementRule_Runtime, IsApplicable2Status> inequationReplacementRule : inequationReplacementRules) {
+      if (inequationReplacementRule.o1.checkInequation(subtype, supertype, new EquationInfo(null, null), inequationReplacementRule.o2)) {
         return true;
       }
     }
@@ -298,14 +299,14 @@ public class SubtypingManager {
     if (term == null) {
       return;
     }
-    Set<SubtypingRule_Runtime> subtypingRule_runtimes = myTypeChecker.getRulesManager().getSubtypingRules(term, isWeak);
+    Set<Pair<SubtypingRule_Runtime, IsApplicableStatus>> subtypingRule_runtimes = myTypeChecker.getRulesManager().getSubtypingRules(term, isWeak);
     boolean possiblyBlindAlley = false;
     if (supertypeConceptFQName != null && !(supertypeConceptFQName.equals(term.getConceptFqName()))) {
       possiblyBlindAlley = myTypeChecker.getRulesManager().subtypingRulesByNodeAreAllByConcept(term, isWeak);
     }
     if (subtypingRule_runtimes != null) {
-      for (final SubtypingRule_Runtime subtypingRule : subtypingRule_runtimes) {
-        if (possiblyBlindAlley && subtypingRule.surelyKeepsConcept()) {
+      for (final Pair<SubtypingRule_Runtime, IsApplicableStatus> subtypingRule : subtypingRule_runtimes) {
+        if (possiblyBlindAlley && subtypingRule.o1.surelyKeepsConcept()) {
           //skip a rule, it will give us nothing
           continue;
         }
@@ -315,7 +316,7 @@ public class SubtypingManager {
             return UndoHelper.getInstance().runNonUndoableAction(new Computable<List<SNode>>() {
               @Override
               public List<SNode> compute() {
-                return subtypingRule.getSubOrSuperTypes(term, tcContext);
+                return subtypingRule.o1.getSubOrSuperTypes(term, tcContext, subtypingRule.o2);
               }
             });
           }
@@ -342,10 +343,10 @@ public class SubtypingManager {
         return result;
       }
 
-      Set<SubtypingRule_Runtime> subtypingRule_runtimes = myTypeChecker.getRulesManager().getSubtypingRules(node, isWeak);
+      Set<Pair<SubtypingRule_Runtime, IsApplicableStatus>> subtypingRule_runtimes = myTypeChecker.getRulesManager().getSubtypingRules(node, isWeak);
       if (subtypingRule_runtimes != null) {
-        for (SubtypingRule_Runtime subtypingRule : subtypingRule_runtimes) {
-          List<SNode> supertypes = subtypingRule.getSubOrSuperTypes(node, null);    //todo should typeCheckingContext really be null?
+        for (Pair<SubtypingRule_Runtime, IsApplicableStatus> subtypingRule : subtypingRule_runtimes) {
+          List<SNode> supertypes = subtypingRule.o1.getSubOrSuperTypes(node, null, subtypingRule.o2);    //todo should typeCheckingContext really be null?
           if (supertypes != null) {
             result.addAll(toWrappers(new HashSet<SNode>(supertypes), null));
           }
@@ -359,7 +360,7 @@ public class SubtypingManager {
   public IWrapper leastCommonSupertype(Set<IWrapper> types, boolean isWeak, EquationManager equationManager) {
     Set<IWrapper> lcss = leastCommonSupertypesWrappers(types, isWeak);
     if (lcss.size() != 1) {
-      RuntimeErrorType type = RuntimeErrorType.newInstance(myTypeChecker.getRuntimeTypesModel());
+      RuntimeErrorType type = RuntimeErrorType.newInstance(AuxilaryRuntimeModel.getDescriptor().getSModel());
       type.setErrorText("uncomparable types");
       return NodeWrapper.createWrapperFromNode(BaseAdapter.fromAdapter(type), equationManager);
     }
@@ -639,24 +640,20 @@ System.out.println("alltypes = " + allTypes);*/
       return false;
     }
 
-    Set<ComparisonRule_Runtime> comparisonRule_runtimes = myTypeChecker.getRulesManager().getComparisonRules(term1, term2, isWeak);
+    Set<Pair<ComparisonRule_Runtime, IsApplicable2Status>> comparisonRule_runtimes = myTypeChecker.getRulesManager().getComparisonRules(term1, term2, isWeak);
     if (comparisonRule_runtimes != null) {
-      for (ComparisonRule_Runtime comparisonRule_runtime : comparisonRule_runtimes) {
-        if (comparisonRule_runtime.areComparable(term1, term2)) return true;
+      for (Pair<ComparisonRule_Runtime, IsApplicable2Status> comparisonRule_runtime : comparisonRule_runtimes) {
+        if (comparisonRule_runtime.o1.areComparable(term1, term2)) return true;
       }
     }
     comparisonRule_runtimes = myTypeChecker.getRulesManager().getComparisonRules(term2, term1, isWeak);
     if (comparisonRule_runtimes != null) {
-      for (ComparisonRule_Runtime comparisonRule_runtime : comparisonRule_runtimes) {
-        if (comparisonRule_runtime.areComparable(term2, term1)) return true;
+      for (Pair<ComparisonRule_Runtime, IsApplicable2Status> comparisonRule_runtime : comparisonRule_runtimes) {
+        if (comparisonRule_runtime.o1.areComparable(term2, term1)) return true;
       }
     }
 
     return false;
-  }
-
-  public SModel getRuntimeTypesModel() {
-    return getTypeChecker().getRuntimeTypesModel();
   }
 
   public SNode mostSpecificType(Set<SNode> nodes) {
@@ -665,7 +662,7 @@ System.out.println("alltypes = " + allTypes);*/
       return residualNodes.iterator().next();
     }
     if (residualNodes.size() > 1) {
-      MeetType meetType = MeetType.newInstance(getRuntimeTypesModel());
+      MeetType meetType = MeetType.newInstance(AuxilaryRuntimeModel.getDescriptor().getSModel());
       for (SNode node : residualNodes) {
         meetType.addArgument((BaseConcept) node.getAdapter());
       }

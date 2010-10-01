@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -28,7 +29,7 @@ public class check_CaughtWasThrown_NonTypesystemRule extends AbstractNonTypesyst
   public check_CaughtWasThrown_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode catchClause, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode catchClause, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode caughtType = SLinkOperations.getTarget(SLinkOperations.getTarget(catchClause, "throwable", true), "type", true);
     if (SNodeOperations.isInstanceOf(caughtType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
       SNode caughtClassifier = SLinkOperations.getTarget(SNodeOperations.cast(caughtType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false);
@@ -85,8 +86,11 @@ public class check_CaughtWasThrown_NonTypesystemRule extends AbstractNonTypesyst
     return "jetbrains.mps.baseLanguage.structure.CatchClause";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

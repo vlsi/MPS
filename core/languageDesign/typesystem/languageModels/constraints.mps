@@ -50,41 +50,6 @@
   <import index="23" modelUID="r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)" version="-1" />
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1213104837334">
     <link role="concept:8" targetNodeId="1.1212763614690:3" resolveInfo="ChildTypeRestrictionReference" />
-    <node role="referent:8" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint:8" id="1213104837335">
-      <link role="applicableLink:8" targetNodeId="1.1212763674348:3" />
-      <node role="searchScopeFactory:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory:8" id="1213104837336">
-        <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213104837337">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1213104837338">
-            <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1213104837339">
-              <property name="name:3" value="childTypeRestrictions" />
-              <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeListType:16" id="1213104837340">
-                <link role="elementConcept:16" targetNodeId="1.1212573344738:3" resolveInfo="ChildTypeRestriction" />
-              </node>
-              <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1213104837341">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1213104837342">
-                  <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode:8" id="1213104837343" />
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation:16" id="1213104837344">
-                    <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="1213104837345">
-                      <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="1213104837346">
-                        <link role="conceptDeclaration:16" targetNodeId="1.1174643105530:3" resolveInfo="InferenceRule" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="1213104837347">
-                  <link role="link:16" targetNodeId="1.1212574183907:3" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1213104837348">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1213104837350">
-              <link role="variableDeclaration:3" targetNodeId="1213104837339:17" resolveInfo="childTypeRestrictions" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1213104837475">
     <link role="concept:8" targetNodeId="1.1205762656241:3" resolveInfo="WhenConcreteVariableReference" />

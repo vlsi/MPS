@@ -41293,7 +41293,7 @@
                               </node>
                             </node>
                             <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="5161277940733353934">
-                              <property name="value:3" value=" overrides method from class " />
+                              <property name="value:3" value=" overrides method from " />
                             </node>
                           </node>
                           <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5161277940733353935">
@@ -41301,7 +41301,7 @@
                               <link role="property:16" targetNodeId="48.1169194664001:0" resolveInfo="name" />
                             </node>
                             <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="5161277940733353937">
-                              <link role="concept:16" targetNodeId="1.1068390468198:3" resolveInfo="ClassConcept" />
+                              <link role="concept:16" targetNodeId="1.1107461130800:3" resolveInfo="Classifier" />
                               <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5161277940733353938">
                                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5161277940733353939">
                                   <link role="variableDeclaration:3" targetNodeId="5161277940733353905" resolveInfo="baseMethod" />

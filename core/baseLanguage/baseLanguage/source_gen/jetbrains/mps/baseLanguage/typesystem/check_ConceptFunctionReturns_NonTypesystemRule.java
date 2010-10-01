@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -27,7 +28,7 @@ public class check_ConceptFunctionReturns_NonTypesystemRule extends AbstractNonT
   public check_ConceptFunctionReturns_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode func, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode func, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode expectedRetType = ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(func);
     boolean noReturnExpected = ((expectedRetType == null) || TypeChecker.getInstance().getSubtypingManager().isSubtype(expectedRetType, new check_ConceptFunctionReturns_NonTypesystemRule.QuotationClass_rs2pxi_a1a0a0a1a0().createNode(typeCheckingContext)));
     Iterable<SNode> returnStatements = RulesFunctions_BaseLanguage.collectReturnStatements(SLinkOperations.getTarget(func, "body", true));
@@ -69,8 +70,11 @@ public class check_ConceptFunctionReturns_NonTypesystemRule extends AbstractNonT
     return "jetbrains.mps.baseLanguage.structure.ConceptFunction";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

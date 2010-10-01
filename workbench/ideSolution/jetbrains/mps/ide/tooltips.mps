@@ -1423,6 +1423,47 @@
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="6543815770065587501" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="6543815770065587505" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6543815770065587503">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="3564103493663181523">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="3564103493663181524">
+            <property name="name:3" value="c" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3564103493663181525">
+              <link role="classifier:3" targetNodeId="2.~Component" resolveInfo="Component" />
+            </node>
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3564103493663181526">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3564103493663181527">
+                <link role="variableDeclaration:3" targetNodeId="6543815770065587506" resolveInfo="event" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3564103493663181528">
+                <link role="baseMethodDeclaration:3" targetNodeId="3.~ComponentEvent.getComponent():java.awt.Component" resolveInfo="getComponent" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="3564103493663142590">
+          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3564103493663142591">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="3564103493663181543" />
+          </node>
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="3564103493663181521">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="3564103493663181535">
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression:3" id="3564103493663181539">
+                <node role="classType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3564103493663181542">
+                  <link role="classifier:3" targetNodeId="3564103493663133593" resolveInfo="TooltipComponent" />
+                </node>
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3564103493663181538">
+                  <link role="variableDeclaration:3" targetNodeId="3564103493663181524" resolveInfo="c" />
+                </node>
+              </node>
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression:3" id="3564103493663181531">
+                <node role="classType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3564103493663181534">
+                  <link role="classifier:3" targetNodeId="1.~JComponent" resolveInfo="JComponent" />
+                </node>
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3564103493663181530">
+                  <link role="variableDeclaration:3" targetNodeId="3564103493663181524" resolveInfo="c" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="6543815770065605909">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="6543815770065605910">
             <property name="name:3" value="component" />
@@ -1430,13 +1471,8 @@
               <link role="classifier:3" targetNodeId="1.~JComponent" resolveInfo="JComponent" />
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="6543815770065605912">
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6543815770065605913">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="6543815770065605914">
-                  <link role="variableDeclaration:3" targetNodeId="6543815770065587506" resolveInfo="event" />
-                </node>
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6543815770065605915">
-                  <link role="baseMethodDeclaration:3" targetNodeId="3.~ComponentEvent.getComponent():java.awt.Component" resolveInfo="getComponent" />
-                </node>
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3564103493663181529">
+                <link role="variableDeclaration:3" targetNodeId="3564103493663181524" resolveInfo="c" />
               </node>
               <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6543815770065605916">
                 <link role="classifier:3" targetNodeId="1.~JComponent" resolveInfo="JComponent" />
@@ -1493,11 +1529,18 @@
             <property name="name:3" value="text" />
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="3100043705483489836" />
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6543815770065588429">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6543815770065605917">
-                <link role="variableDeclaration:3" targetNodeId="6543815770065605910" resolveInfo="component" />
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="3564103493663181544">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="3564103493663181545">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3564103493663181546">
+                    <link role="variableDeclaration:3" targetNodeId="6543815770065605910" resolveInfo="component" />
+                  </node>
+                  <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3564103493663181547">
+                    <link role="classifier:3" targetNodeId="3564103493663133593" resolveInfo="TooltipComponent" />
+                  </node>
+                </node>
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6543815770065588436">
-                <link role="baseMethodDeclaration:3" targetNodeId="1.~JComponent.getToolTipText(java.awt.event.MouseEvent):java.lang.String" resolveInfo="getToolTipText" />
+                <link role="baseMethodDeclaration:3" targetNodeId="3564103493663133595" resolveInfo="getMPSTooltipText" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="6543815770065588437">
                   <link role="variableDeclaration:3" targetNodeId="6543815770065587506" resolveInfo="event" />
                 </node>
@@ -2003,6 +2046,23 @@
         </node>
       </node>
     </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.Interface:3" id="3564103493663133593">
+    <property name="name:3" value="TooltipComponent" />
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3564103493663133595">
+      <property name="isAbstract:3" value="true" />
+      <property name="name:3" value="getMPSTooltipText" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="3564103493663181548" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3564103493663133597" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3564103493663133598" />
+      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="3564103493663142587">
+        <property name="name:3" value="mouseEvent" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3564103493663142588">
+          <link role="classifier:3" targetNodeId="3.~MouseEvent" resolveInfo="MouseEvent" />
+        </node>
+      </node>
+    </node>
+    <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3564103493663133594" />
   </node>
 </model>
 

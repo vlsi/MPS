@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.baseLanguage.behavior.ClassifierMember_Behavior;
 import jetbrains.mps.baseLanguage.behavior.ThisExpression_Behavior;
 import jetbrains.mps.intentions.BaseIntentionProvider;
@@ -18,7 +19,7 @@ public class check_ThisExpression_NonTypesystemRule extends AbstractNonTypesyste
   public check_ThisExpression_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode thisExpression, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode thisExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(!(ClassifierMember_Behavior.call_isStatic_8986964027630462944(ThisExpression_Behavior.call_getContextClassifierMember_6516287307421538194(thisExpression))))) {
       BaseIntentionProvider intentionProvider = null;
       IErrorTarget errorTarget = new NodeErrorTarget();
@@ -30,8 +31,11 @@ public class check_ThisExpression_NonTypesystemRule extends AbstractNonTypesyste
     return "jetbrains.mps.baseLanguage.structure.ThisExpression";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -20,7 +21,7 @@ public class typeof_GetIndexOfOperation_InferenceRule extends AbstractInferenceR
   public typeof_GetIndexOfOperation_InferenceRule() {
   }
 
-  public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode input = RulesFunctions_Collections.getInput(typeCheckingContext, op);
     final SNode elementType_typevar_1184856779488 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
@@ -49,8 +50,11 @@ public class typeof_GetIndexOfOperation_InferenceRule extends AbstractInferenceR
     return "jetbrains.mps.baseLanguage.collections.structure.GetIndexOfOperation";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

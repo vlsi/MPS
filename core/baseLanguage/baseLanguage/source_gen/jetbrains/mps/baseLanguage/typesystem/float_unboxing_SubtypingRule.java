@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -30,9 +31,13 @@ public class float_unboxing_SubtypingRule extends SubtypingRule_Runtime implemen
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
   }
 
-  public boolean isApplicable(SNode argument) {
-    this.myMatchingPattern = new float_unboxing_SubtypingRule.Pattern_4czxhf_a0a0a0a2();
-    return this.myMatchingPattern.match(argument);
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      GeneratedMatchingPattern pattern = new float_unboxing_SubtypingRule.Pattern_4czxhf_a0a0a0a2();
+      this.myMatchingPattern = pattern;
+      boolean b = pattern.match(argument);
+      return new IsApplicableStatus(b, pattern);
+    }
   }
 
   public boolean isWeak() {

@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -19,7 +20,7 @@ public class typeof_ConceptFunctionParameter_BlockingComputationNode_InferenceRu
   public typeof_ConceptFunctionParameter_BlockingComputationNode_InferenceRule() {
   }
 
-  public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode dependentComputationItem = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.typesystem.structure.DependentComputationItem", false, false);
     if ((dependentComputationItem != null)) {
       {
@@ -35,8 +36,11 @@ public class typeof_ConceptFunctionParameter_BlockingComputationNode_InferenceRu
     return "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_BlockingComputationNode";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

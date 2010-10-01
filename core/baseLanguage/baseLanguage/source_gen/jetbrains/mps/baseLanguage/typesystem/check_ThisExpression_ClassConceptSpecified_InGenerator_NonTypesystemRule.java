@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.IModule;
@@ -24,7 +25,7 @@ public class check_ThisExpression_ClassConceptSpecified_InGenerator_NonTypesyste
   public check_ThisExpression_ClassConceptSpecified_InGenerator_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode expression, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode expression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SModel model = SNodeOperations.getModel(expression);
     if (model == null) {
       return;
@@ -61,8 +62,11 @@ public class check_ThisExpression_ClassConceptSpecified_InGenerator_NonTypesyste
     return "jetbrains.mps.baseLanguage.structure.ThisExpression";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

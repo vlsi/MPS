@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.typesystem.inference;
 
+import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.LanguageHierarchyCache.CacheReadAccessListener;
 import jetbrains.mps.smodel.LanguageHierarchyCache.CacheChangeListener;
@@ -460,7 +461,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
   }
 
   private SNode expandTypeAndPutToContext(SNode term) {
-    SNode type = expandType(term, myNodesToTypesMap.get(term), myTypeChecker.getRuntimeTypesModel());
+    SNode type = expandType(term, myNodesToTypesMap.get(term), AuxilaryRuntimeModel.getDescriptor().getSModel());
     myNodesToTypesMap.put(term, type);
     return type;
   }
@@ -723,14 +724,14 @@ public class NodeTypesComponent implements EditorMessageOwner {
   }
 
   private boolean applyRulesToNode(SNode node) {
-    Set<InferenceRule_Runtime> newRules = myTypeChecker.getRulesManager().getInferenceRules(node);
+    Set<Pair<InferenceRule_Runtime, IsApplicableStatus>> newRules = myTypeChecker.getRulesManager().getInferenceRules(node);
     boolean result = false;
     if (newRules != null) {
       myCurrentTypeAffected = false;
       SNode oldCheckedNode = myCurrentCheckedNode;
       myCurrentCheckedNode = node;
-      for (InferenceRule_Runtime rule : newRules) {
-        applyRuleToNode(node, rule);
+      for (Pair<InferenceRule_Runtime, IsApplicableStatus> rule : newRules) {
+        applyRuleToNode(node, rule.o1, rule.o2);
       }
       myCurrentCheckedNode = oldCheckedNode;
       result = myCurrentTypeAffected;
@@ -767,10 +768,10 @@ public class NodeTypesComponent implements EditorMessageOwner {
   }
 
   private void applyNonTypesystemRulesToNode(SNode node) {
-    Set<NonTypesystemRule_Runtime> nonTypesystemRules = myTypeChecker.getRulesManager().getNonTypesystemRules(node);
+    Set<Pair<NonTypesystemRule_Runtime, IsApplicableStatus>> nonTypesystemRules = myTypeChecker.getRulesManager().getNonTypesystemRules(node);
     if (nonTypesystemRules != null) {
-      for (NonTypesystemRule_Runtime rule : nonTypesystemRules) {
-        Pair<SNode, NonTypesystemRule_Runtime> nodeAndRule = new Pair<SNode, NonTypesystemRule_Runtime>(node, rule);
+      for (Pair<NonTypesystemRule_Runtime, IsApplicableStatus> rule : nonTypesystemRules) {
+        Pair<SNode, NonTypesystemRule_Runtime> nodeAndRule = new Pair<SNode, NonTypesystemRule_Runtime>(node, rule.o1);
         MyTypesReadListener typesReadListener = new MyTypesReadListener();
         MyLanguageCachesReadListener languageCachesReadListener = new MyLanguageCachesReadListener();
         if (isIncrementalMode()) {
@@ -781,10 +782,10 @@ public class NodeTypesComponent implements EditorMessageOwner {
           NodeReadEventsCaster.setNodesReadListener(myNodesReadListener);
           TypeChecker.getInstance().addTypesReadListener(typesReadListener);
           LanguageHierarchyCache.getInstance().setReadAccessListener(languageCachesReadListener);
-          myNonTypesystemRuleAndNodeBeingChecked = new Pair<SNode, NonTypesystemRule_Runtime>(node, rule);
+          myNonTypesystemRuleAndNodeBeingChecked = new Pair<SNode, NonTypesystemRule_Runtime>(node, rule.o1);
         }
         try {
-          applyRuleToNode(node, rule);
+          applyRuleToNode(node, rule.o1, rule.o2);
         } finally {
           myNonTypesystemRuleAndNodeBeingChecked = null;
           if (isIncrementalMode()) {
@@ -797,18 +798,18 @@ public class NodeTypesComponent implements EditorMessageOwner {
         if (isIncrementalMode()) {
           synchronized (ACCESS_LOCK) {
             myNodesReadListener.setAccessReport(true);
-            addDepedentNodesNonTypesystem(node, rule, new HashSet<SNode>(myNodesReadListener.myAccessedNodes));
-            addDepedentPropertiesNonTypesystem(node, rule, new HashSet<Pair<SNode, String>>(myNodesReadListener.myAccessedProperties));
+            addDepedentNodesNonTypesystem(node, rule.o1, new HashSet<SNode>(myNodesReadListener.myAccessedNodes));
+            addDepedentPropertiesNonTypesystem(node, rule.o1, new HashSet<Pair<SNode, String>>(myNodesReadListener.myAccessedProperties));
             myNodesReadListener.setAccessReport(false);
 
             languageCachesReadListener.setAccessReport(true);
             if (languageCachesReadListener.myIsCacheAccessed) {
-              addCacheDependentNodesNonTypesystem(node, rule);
+              addCacheDependentNodesNonTypesystem(node, rule.o1);
             }
             languageCachesReadListener.setAccessReport(false);
 
             typesReadListener.setAccessReport(true);
-            addDepedentTypeTermsNonTypesystem(node, rule, new HashSet<SNode>(typesReadListener.myAccessedNodes));
+            addDepedentTypeTermsNonTypesystem(node, rule.o1, new HashSet<SNode>(typesReadListener.myAccessedNodes));
             typesReadListener.setAccessReport(false);
           }
           myNodesReadListener.clear();
@@ -818,15 +819,9 @@ public class NodeTypesComponent implements EditorMessageOwner {
     }
   }
 
-  private void applyRuleToNode(SNode node, ICheckingRule_Runtime rule) {
+  private void applyRuleToNode(SNode node, ICheckingRule_Runtime rule, IsApplicableStatus status) {
     try {
-      if (rule instanceof AbstractInferenceRule_Runtime) {
-        ((AbstractInferenceRule_Runtime) rule).applyRule(node, getTypeCheckingContext());
-      } else if (rule instanceof AbstractNonTypesystemRule_Runtime) {
-        ((AbstractNonTypesystemRule_Runtime) rule).applyRule(node, getTypeCheckingContext());
-      } else {
-        rule.applyRule(node);
-      }
+      rule.applyRule(node, getTypeCheckingContext(), status);
     } catch (Throwable t) {
       LOG.error("an error occurred while applying rule to node " + node, t, node);
     }

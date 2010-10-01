@@ -19,6 +19,7 @@ import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.typesystem.runtime.InequationReplacementRule_Runtime;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.lang.typesystem.structure.RuntimeErrorType;
 import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.logging.Logger;
@@ -319,9 +320,9 @@ public class EquationManager {
     if (subtypeRepresentator instanceof NodeWrapper && supertypeRepresentator instanceof NodeWrapper) {
       SNode node1 = subtypeRepresentator.getNode();
       SNode node2 = supertypeRepresentator.getNode();
-      Set<InequationReplacementRule_Runtime> inequationReplacementRules = myTypeChecker.getRulesManager().getReplacementRules(node1, node2);
-      for (InequationReplacementRule_Runtime inequationReplacementRule : inequationReplacementRules) {
-        processInequationWithReplacementRule(inequationReplacementRule, node1, node2, equationInfo, myTypeCheckingContext);
+      Set<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>> inequationReplacementRules = myTypeChecker.getRulesManager().getReplacementRules(node1, node2);
+      for (Pair<InequationReplacementRule_Runtime, IsApplicable2Status> inequationReplacementRule : inequationReplacementRules) {
+        processInequationWithReplacementRule(inequationReplacementRule.o1, node1, node2, equationInfo, myTypeCheckingContext, inequationReplacementRule.o2);
         return;
       }
     }
@@ -375,11 +376,16 @@ public class EquationManager {
     //  myTypeChecker.getSubtypingManager().isSubtype(subtypeRepresentator, supertypeRepresentator, this, equationInfo, isWeak);
   }
 
-  private static void processInequationWithReplacementRule(InequationReplacementRule_Runtime rule, SNode node1, SNode node2, EquationInfo equationInfo, TypeCheckingContext typeCheckingContext) {
+  private static void processInequationWithReplacementRule(InequationReplacementRule_Runtime rule,
+                                                           SNode node1,
+                                                           SNode node2,
+                                                           EquationInfo equationInfo,
+                                                           TypeCheckingContext typeCheckingContext,
+                                                           IsApplicable2Status status) {
     if (rule instanceof AbstractInequationReplacementRule_Runtime) {
       ((AbstractInequationReplacementRule_Runtime) rule).processInequation(node1, node2, equationInfo, typeCheckingContext);
     } else {
-      rule.processInequation(node1, node2, equationInfo);
+      rule.processInequation(node1, node2, equationInfo, status);
     }
   }
 

@@ -129,9 +129,9 @@ public class OrthogonalLayoutTestPanel extends JPanel {
   private void writeGraph(Graph graph) {
     List<Edge> edges = graph.getEdges();
     myTextArea.setText("");
-    myTextArea.append(graph.getNumNodes() + " " + ListSequence.fromList(edges).count() + "\n");
+    myTextArea.append(graph.getNumNodes() + " " + ListSequence.fromList(edges).count() + "  \n");
     for (Edge edge : ListSequence.fromList(graph.getEdges())) {
-      myTextArea.append(edge.getSource().getIndex() + " " + edge.getTarget().getIndex() + "\n");
+      myTextArea.append(edge.getSource().getIndex() + " " + edge.getTarget().getIndex() + "  \n");
     }
     myTextArea.append("\n\n 0 \n 0 \n");
   }
@@ -168,7 +168,7 @@ public class OrthogonalLayoutTestPanel extends JPanel {
     if (g != null) {
       for (Node node : ListSequence.fromList(g.getNodes())) {
         if (MapSequence.fromMap(nodeDimensions).get(node) == null) {
-          MapSequence.fromMap(nodeDimensions).put(node, new Dimension(DEFAULT_NODE_SIZE, DEFAULT_NODE_SIZE));
+          MapSequence.fromMap(nodeDimensions).put(node, new Dimension(DEFAULT_NODE_SIZE, DEFAULT_NODE_SIZE + 10));
         }
       }
       if (myLayoutChoice.isSetLabels()) {

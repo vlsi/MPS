@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.baseLanguage.typesystem.DataFlowUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -14,7 +15,7 @@ public class check_SubtypingRule_ExpectedReturns_NonTypesystemRule extends Abstr
   public check_SubtypingRule_ExpectedReturns_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode subtypingRule, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode subtypingRule, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     DataFlowUtil.checkReturns(typeCheckingContext, SLinkOperations.getTarget(subtypingRule, "body", true));
   }
 
@@ -22,8 +23,11 @@ public class check_SubtypingRule_ExpectedReturns_NonTypesystemRule extends Abstr
     return "jetbrains.mps.lang.typesystem.structure.SubtypingRule";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

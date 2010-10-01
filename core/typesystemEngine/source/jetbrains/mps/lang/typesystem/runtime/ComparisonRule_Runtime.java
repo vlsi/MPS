@@ -18,13 +18,38 @@ package jetbrains.mps.lang.typesystem.runtime;
 import jetbrains.mps.smodel.SNode;
 
 public abstract class ComparisonRule_Runtime implements IRuleWithTwoApplicableNodes {
+  @Deprecated
   public abstract boolean areComparable(SNode type1, SNode type2);
+
+  //todo generate this method
+  public boolean areComparable(SNode type1, SNode type2, IsApplicable2Status status) {
+    return areComparable(type1, type2);
+  }
 
   public boolean isWeak() {
     return false;
   }
 
+  @Deprecated
   public boolean isApplicable(SNode node1, SNode node2) {
     return isApplicable1(node1) && isApplicable2(node2);
+  }
+
+  public IsApplicable2Status isApplicableAndPatterns(SNode node1, SNode node2) {
+    IsApplicableStatus applicableStatus1 = isApplicableFirst(node1);
+    if (!applicableStatus1.isApplicable()) return IsApplicable2Status.FALSE_STATUS;
+    IsApplicableStatus applicableStatus2 = isApplicableSecond(node2);
+    if (!applicableStatus2.isApplicable()) return IsApplicable2Status.FALSE_STATUS;
+    return new IsApplicable2Status(true, applicableStatus1.getPattern(), applicableStatus2.getPattern());
+  }
+
+  //todo generate this method
+  public IsApplicableStatus isApplicableFirst(SNode node) {
+    return new IsApplicableStatus(isApplicable1(node), null);
+  }
+
+  //todo generate this method
+  public IsApplicableStatus isApplicableSecond(SNode node) {
+    return new IsApplicableStatus(isApplicable2(node), null);
   }
 }

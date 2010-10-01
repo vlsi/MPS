@@ -26,6 +26,7 @@ import com.intellij.util.ui.UIUtil;
 import gnu.trove.TIntObjectHashMap;
 import gnu.trove.TIntObjectProcedure;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
+import jetbrains.mps.ide.tooltips.TooltipComponent;
 import jetbrains.mps.nodeEditor.EditorComponent.RebuildListener;
 import jetbrains.mps.nodeEditor.EditorMessageIconRenderer.IconRendererType;
 import jetbrains.mps.nodeEditor.bookmark.BookmarkManager;
@@ -58,7 +59,7 @@ import java.util.List;
 /**
  * This class should be called in UI (EventDispatch) thread only
  */
-public class LeftEditorHighlighter extends JComponent {
+public class LeftEditorHighlighter extends JComponent implements TooltipComponent {
   public static final String ICON_AREA = "LeftEditorHighlighterIconArea";
 
   private static final int MIN_ICON_RENDERERS_WIDTH = 14;
@@ -516,8 +517,7 @@ public class LeftEditorHighlighter extends JComponent {
     return renderer.getAnchorCell(nodeCell);
   }
 
-  @Override
-  public String getToolTipText(MouseEvent e) {
+  public String getMPSTooltipText(MouseEvent e) {
     if (isInFoldingArea(e)) {
       for (AbstractFoldingAreaPainter painter : myFoldingAreaPainters) {
         if (painter.getToolTipText() != null) {

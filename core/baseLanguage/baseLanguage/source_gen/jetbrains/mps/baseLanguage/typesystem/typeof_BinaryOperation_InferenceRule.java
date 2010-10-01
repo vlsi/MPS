@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -18,7 +19,7 @@ public class typeof_BinaryOperation_InferenceRule extends AbstractInferenceRule_
   public typeof_BinaryOperation_InferenceRule() {
   }
 
-  public void applyRule(final SNode operation, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode operation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       final SNode leftType = typeCheckingContext.typeOf(SLinkOperations.getTarget(operation, "leftExpression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1387988544209571129", true);
       typeCheckingContext.whenConcrete(leftType, new Runnable() {
@@ -54,8 +55,11 @@ public class typeof_BinaryOperation_InferenceRule extends AbstractInferenceRule_
     return "jetbrains.mps.baseLanguage.structure.BinaryOperation";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

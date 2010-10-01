@@ -21040,7 +21040,7 @@
               <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="6543581031674035696">
                 <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6543581031674035697">
                   <link role="classConcept:3" targetNodeId="6543581031674033682" resolveInfo="ArrayUtils" />
-                  <link role="baseMethodDeclaration:3" targetNodeId="6543581031674033956" resolveInfo="newArrayInstance" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="6543581031674033969" resolveInfo="newArrayInstance" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="6543581031674035698">
                     <link role="variableDeclaration:3" targetNodeId="6543581031674034806" resolveInfo="runtimeClass" />
                   </node>
@@ -21545,7 +21545,7 @@
                   <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="6543581031674035858">
                     <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6543581031674035859">
                       <link role="classConcept:3" targetNodeId="6543581031674033682" resolveInfo="ArrayUtils" />
-                      <link role="baseMethodDeclaration:3" targetNodeId="6543581031674033956" resolveInfo="newArrayInstance" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="6543581031674033969" resolveInfo="newArrayInstance" />
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6543581031674035860">
                         <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6543581031674035861">
                           <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="6543581031674035862">

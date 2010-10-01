@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -20,7 +21,7 @@ public class check_UnusedStaticFields_NonTypesystemRule extends AbstractNonTypes
   public check_UnusedStaticFields_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode staticFieldDeclaration, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode staticFieldDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(staticFieldDeclaration, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility") && ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(staticFieldDeclaration, "jetbrains.mps.baseLanguage.structure.Classifier", false, false), "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SLinkOperations.getTarget(it, "variableDeclaration", false) == staticFieldDeclaration;
@@ -38,8 +39,11 @@ public class check_UnusedStaticFields_NonTypesystemRule extends AbstractNonTypes
     return "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

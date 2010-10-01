@@ -1439,17 +1439,6 @@
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8042441407353625195">
               <link role="classifier:3" targetNodeId="21.~TypeCheckingContext" resolveInfo="TypeCheckingContext" />
             </node>
-            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8042441407353625200">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8042441407353625197">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="8042441407353625198" />
-                <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation:23" id="8042441407353625199">
-                  <link role="member:23" targetNodeId="8042441407353625189" resolveInfo="editorComponent" />
-                </node>
-              </node>
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8042441407353625204">
-                <link role="baseMethodDeclaration:3" targetNodeId="10.~EditorComponent.getTypeCheckingContext():jetbrains.mps.typesystem.inference.TypeCheckingContext" resolveInfo="getTypeCheckingContext" />
-              </node>
-            </node>
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="7796696880649589051">
@@ -1463,6 +1452,24 @@
         <node role="statement:3" type="jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement:23" id="7796696880649589047">
           <node role="commandClosureLiteral:23" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral:23" id="7796696880649589048">
             <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7796696880649589049">
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7631678193867544221">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="7631678193867544223">
+                  <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7631678193867544222">
+                    <link role="variableDeclaration:3" targetNodeId="8042441407353625194" resolveInfo="typeCheckingContext" />
+                  </node>
+                  <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7631678193867544226">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7631678193867544227">
+                      <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="7631678193867544228" />
+                      <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation:23" id="7631678193867544229">
+                        <link role="member:23" targetNodeId="8042441407353625189" resolveInfo="editorComponent" />
+                      </node>
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7631678193867544230">
+                      <link role="baseMethodDeclaration:3" targetNodeId="10.~EditorComponent.getTypeCheckingContext():jetbrains.mps.typesystem.inference.TypeCheckingContext" resolveInfo="getTypeCheckingContext" />
+                    </node>
+                  </node>
+                </node>
+              </node>
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7796696880649589054">
                 <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="7796696880649589057">
                   <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7796696880649589065">

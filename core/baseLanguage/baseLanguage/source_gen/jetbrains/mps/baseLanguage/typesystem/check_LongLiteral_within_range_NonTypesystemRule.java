@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
@@ -17,7 +18,7 @@ public class check_LongLiteral_within_range_NonTypesystemRule extends AbstractNo
   public check_LongLiteral_within_range_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode longLiteral, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode longLiteral, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     try {
       Long.parseLong(SPropertyOperations.getString(longLiteral, "value").replaceFirst("(-?\\d+)(l|L)", "$1"));
     } catch (NumberFormatException e) {
@@ -33,8 +34,11 @@ public class check_LongLiteral_within_range_NonTypesystemRule extends AbstractNo
     return "jetbrains.mps.baseLanguage.structure.LongLiteral";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

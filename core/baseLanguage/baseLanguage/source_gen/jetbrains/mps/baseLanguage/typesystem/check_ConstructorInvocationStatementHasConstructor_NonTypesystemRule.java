@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
@@ -18,7 +19,7 @@ public class check_ConstructorInvocationStatementHasConstructor_NonTypesystemRul
   public check_ConstructorInvocationStatementHasConstructor_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode constructorInvocation, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode constructorInvocation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if ((SLinkOperations.getTarget(constructorInvocation, "baseMethodDeclaration", false) == null)) {
       SNode referent = constructorInvocation.getReferent("constructorDeclaration");
       if (SNodeOperations.isInstanceOf(referent, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")) {
@@ -44,8 +45,11 @@ public class check_ConstructorInvocationStatementHasConstructor_NonTypesystemRul
     return "jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

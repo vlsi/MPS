@@ -17,6 +17,16 @@
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="runConfigurations" />
     <orderEntry type="module" module-name="debug" />
+    <orderEntry type="module-library" exported="">
+      <library name="JMock">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/solutions/jetbrains.mps.baseLnaguage.unitTest.lib/lib/jmock-2.5.1" recursive="false" />
+      </library>
+    </orderEntry>
   </component>
 </module>
 

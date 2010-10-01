@@ -54,7 +54,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   private long myLastChange;
 
   private long myDiskTimestamp = -1;
-  private boolean myIsTestRefactoringMode = false;
 
   private IFile myModelFile;
   private boolean myIsChanged = false;
@@ -314,9 +313,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   }
 
   public void setVersion(int newVersion) {
-    if (myIsTestRefactoringMode) {
-      System.err.println("setting version for model " + this + ": " + newVersion);
-    }
     setAttribute(VERSION, "" + newVersion);
   }
 
@@ -395,10 +391,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     }
   }
 
-  public void setTestRefactoringMode(boolean isTestRefactoringMode) {
-    myIsTestRefactoringMode = isTestRefactoringMode;
-  }
-
   private void tryFixingVersion() {
     if (getVersion() != -1) return;
 
@@ -418,15 +410,9 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
   private boolean playUsedModelDescriptorsRefactoring(SModel model, EditableSModelDescriptor usedModelDescriptor) {
     int currentVersion = usedModelDescriptor.getVersion();
     int usedVersion = model.getUsedVersion(usedModelDescriptor.getSModelReference());
-    if (myIsTestRefactoringMode) {
-      System.err.println(this + ": current version of used model " + usedModelDescriptor.getLongName() + " is " + currentVersion + ", used version is " + usedVersion);
-    }
 
     if (currentVersion > usedVersion) {
       boolean result = false;
-      if (myIsTestRefactoringMode) {
-        System.err.println("updating a model " + this);
-      }
       RefactoringHistory refactoringHistory = usedModelDescriptor.getRefactoringHistory();
       for (RefactoringContext refactoringContext : refactoringHistory.getRefactoringContexts()) {
         if (refactoringContext.getModelVersion() <= usedVersion) continue;
@@ -475,10 +461,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     myMetadata = myModelRootManager.loadMetadata(this);
     myMetadataLoaded = true;
     return myMetadata;
-  }
-
-  public void setNameVersion(int newNameVersion) {
-    setAttribute(VERSION, "" + newNameVersion);
   }
 
   void changeSModelUID(SModelReference newModelReference) {

@@ -23,16 +23,24 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.behavior.CellModel_Collection_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
+import jetbrains.mps.smodel.SModel;
 
 public class CellModel_Collection_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -222,7 +230,12 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.addEditorCell(this.createConstant_cvgoyj_a2d0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_cvgoyj_b2d0(editorContext, node));
+    if (renderingCondition_cvgoyj_a1c3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createProperty_cvgoyj_b2d0(editorContext, node));
+    }
+    if (renderingCondition_cvgoyj_a2c3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createRefNode_cvgoyj_c2d0(editorContext, node));
+    }
     return editorCell;
   }
 
@@ -469,7 +482,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_usesFolding");
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new CellModel_Collection_Editor.CellModel_Collection_usesFolding_cellMenu_a0b2d0(), new CellModel_Collection_Editor.CellModel_Collection_generic_cellMenu_b0b2d0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -501,8 +514,25 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createRefNode_cvgoyj_c2d0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("usesFoldingCondition");
+    provider.setNoTargetText("<no usesFoldingCondition>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
   private static boolean renderingCondition_cvgoyj_a2a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "usesFolding");
+    return CellModel_Collection_Behavior.call_isFoldingEnabled_1822203275565710635(node);
   }
 
   private static boolean renderingCondition_cvgoyj_a0a0(SNode node, EditorContext editorContext, IScope scope) {
@@ -510,7 +540,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_cvgoyj_a2b0a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "usesFolding");
+    return CellModel_Collection_Behavior.call_isFoldingEnabled_1822203275565710635(node);
   }
 
   private static boolean renderingCondition_cvgoyj_a1a0(SNode node, EditorContext editorContext, IScope scope) {
@@ -522,7 +552,15 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_cvgoyj_a2a0(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "usesFolding");
+    return CellModel_Collection_Behavior.call_isFoldingEnabled_1822203275565710635(node);
+  }
+
+  private static boolean renderingCondition_cvgoyj_a1c3a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "usesFoldingCondition", true) == null);
+  }
+
+  private static boolean renderingCondition_cvgoyj_a2c3a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "usesFoldingCondition", true) != null);
   }
 
   private static Color _StyleParameter_QueryFunction_cvgoyj_a0d0a0(SNode node, EditorContext editorContext) {
@@ -652,6 +690,28 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
         }
       }
+    }
+  }
+
+  public static class CellModel_Collection_usesFolding_cellMenu_a0b2d0 extends AbstractCellMenuPart_PropertyValues {
+    public CellModel_Collection_usesFolding_cellMenu_a0b2d0() {
+    }
+
+    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
+      return ListSequence.fromListAndArray(new ArrayList<String>(), "true", "false");
+    }
+  }
+
+  public static class CellModel_Collection_generic_cellMenu_b0b2d0 extends AbstractCellMenuPart_Generic_Item {
+    public CellModel_Collection_generic_cellMenu_b0b2d0() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      SLinkOperations.setNewChild(node, "usesFoldingCondition", "jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition");
+    }
+
+    public String getMatchingText() {
+      return "query";
     }
   }
 }

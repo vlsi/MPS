@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.behavior.ParameterReference_Behavior;
@@ -19,7 +20,7 @@ public class NonFinalParametersInAnonymousClass_NonTypesystemRule extends Abstra
   public NonFinalParametersInAnonymousClass_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode parameterReference, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode parameterReference, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if ((SLinkOperations.getTarget(parameterReference, "variableDeclaration", false) != null) && !(SPropertyOperations.getBoolean(SLinkOperations.getTarget(parameterReference, "variableDeclaration", false), "isFinal"))) {
       if (!(ParameterReference_Behavior.call_isParameterOfThisMethod_1240394425603(parameterReference))) {
         {
@@ -35,8 +36,11 @@ public class NonFinalParametersInAnonymousClass_NonTypesystemRule extends Abstra
     return "jetbrains.mps.baseLanguage.structure.ParameterReference";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

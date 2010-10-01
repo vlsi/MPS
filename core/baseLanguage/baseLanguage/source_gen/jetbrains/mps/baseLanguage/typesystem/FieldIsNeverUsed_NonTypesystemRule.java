@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
@@ -21,7 +22,7 @@ public class FieldIsNeverUsed_NonTypesystemRule extends AbstractNonTypesystemRul
   public FieldIsNeverUsed_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode fieldDeclaration, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode fieldDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(fieldDeclaration, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
       if (SNodeOperations.isInstanceOf(fieldDeclaration, "jetbrains.mps.baseLanguage.classifiers.structure.IMember")) {
         final SNode member = SNodeOperations.cast(fieldDeclaration, "jetbrains.mps.baseLanguage.classifiers.structure.IMember");
@@ -66,8 +67,11 @@ public class FieldIsNeverUsed_NonTypesystemRule extends AbstractNonTypesystemRul
     return "jetbrains.mps.baseLanguage.structure.FieldDeclaration";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

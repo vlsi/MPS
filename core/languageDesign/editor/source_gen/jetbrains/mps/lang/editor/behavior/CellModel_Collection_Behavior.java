@@ -47,6 +47,10 @@ public class CellModel_Collection_Behavior {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Indent");
   }
 
+  public static boolean call_isFoldingEnabled_1822203275565710635(SNode thisNode) {
+    return SPropertyOperations.getBoolean(thisNode, "usesFolding") || (SLinkOperations.getTarget(thisNode, "usesFoldingCondition", true) != null);
+  }
+
   public static boolean call_isVerticalIndent_1237451001939(SNode thisNode) {
     if (!(CellModel_Collection_Behavior.call_isIndentLayout_1237380273398(thisNode))) {
       return false;

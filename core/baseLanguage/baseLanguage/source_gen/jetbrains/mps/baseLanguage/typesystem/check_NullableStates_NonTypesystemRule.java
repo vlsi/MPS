@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.analyzers.runtime.framework.CustomAnalyzerRunner;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.dataFlow.NullableState;
@@ -31,7 +32,7 @@ public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesyste
   public check_NullableStates_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode iMethodLike, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode iMethodLike, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     CustomAnalyzerRunner<Map<SNode, NullableState>> nullableRunner = new NullableAnalyzerRunner(iMethodLike);
     AnalysisResult<Map<SNode, NullableState>> result = nullableRunner.analyze();
     for (Instruction instruction : nullableRunner.getProgram().getInstructions()) {
@@ -117,8 +118,11 @@ public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesyste
     return "jetbrains.mps.baseLanguage.structure.IMethodLike";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

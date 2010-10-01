@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -19,7 +20,7 @@ public class check_SynchronizedStatement_NonFinalFields_NonTypesystemRule extend
   public check_SynchronizedStatement_NonFinalFields_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode synchronizedStatement, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode synchronizedStatement, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode expression = SLinkOperations.getTarget(synchronizedStatement, "expression", true);
     SNode field = null;
     if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.StaticFieldReference")) {
@@ -40,8 +41,11 @@ public class check_SynchronizedStatement_NonFinalFields_NonTypesystemRule extend
     return "jetbrains.mps.baseLanguage.structure.SynchronizedStatement";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

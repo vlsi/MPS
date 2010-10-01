@@ -104,11 +104,17 @@ public class BaseLanguageStyle_StyleSheet {
     return style;
   }
 
-  public static Style getParenthesis(final EditorCell cell) {
+  public static Style getAnyBracket(final EditorCell cell) {
     Style style = new Style(cell);
     style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
-    style.set(StyleAttributes.MATCHING_LABEL, "parenthesis");
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    return style;
+  }
+
+  public static Style getParenthesis(final EditorCell cell) {
+    Style style = new Style(cell);
+    style.putAll(BaseLanguageStyle_StyleSheet.getAnyBracket(null));
+    style.set(StyleAttributes.MATCHING_LABEL, "parenthesis");
     return style;
   }
 
@@ -135,9 +141,8 @@ public class BaseLanguageStyle_StyleSheet {
 
   public static Style getBrace(final EditorCell cell) {
     Style style = new Style(cell);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.putAll(BaseLanguageStyle_StyleSheet.getAnyBracket(null));
     style.set(StyleAttributes.MATCHING_LABEL, "brace");
-    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
     return style;
   }
 
@@ -155,8 +160,8 @@ public class BaseLanguageStyle_StyleSheet {
 
   public static Style getBracket(final EditorCell cell) {
     Style style = new Style(cell);
+    style.putAll(BaseLanguageStyle_StyleSheet.getAnyBracket(null));
     style.set(StyleAttributes.MATCHING_LABEL, "bracket");
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     return style;
   }
 
@@ -171,6 +176,28 @@ public class BaseLanguageStyle_StyleSheet {
     Style style = new Style(cell);
     style.putAll(BaseLanguageStyle_StyleSheet.getBracket(null));
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    return style;
+  }
+
+  public static Style getAngleBracket(final EditorCell cell) {
+    Style style = new Style(cell);
+    style.putAll(BaseLanguageStyle_StyleSheet.getAnyBracket(null));
+    style.set(StyleAttributes.MATCHING_LABEL, "angleBracket");
+    return style;
+  }
+
+  public static Style getLeftAngleBracket(final EditorCell cell) {
+    Style style = new Style(cell);
+    style.putAll(BaseLanguageStyle_StyleSheet.getAngleBracket(null));
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    return style;
+  }
+
+  public static Style getRightAngleBracket(final EditorCell cell) {
+    Style style = new Style(cell);
+    style.putAll(BaseLanguageStyle_StyleSheet.getAngleBracket(null));
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     return style;
   }
 

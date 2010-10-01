@@ -12,7 +12,6 @@ public class ConstraintsDescriptor implements IModelConstraints {
   private List<IModelConstraints> myConstraints = ListSequence.fromList(new ArrayList<IModelConstraints>());
 
   public ConstraintsDescriptor() {
-    ListSequence.fromList(this.myConstraints).addElement(new ChildTypeRestrictionReference_typeRestriction_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new WhenConcreteVariableReference_whenConcreteVar_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new ListVarReference_listVarDeclaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new PropertyPatternVariableReference_patternVarDecl_ReferentConstraint());

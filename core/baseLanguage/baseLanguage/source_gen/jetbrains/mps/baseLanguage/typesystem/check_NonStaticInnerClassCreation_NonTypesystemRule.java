@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.IMethodCall_Behavior;
@@ -19,7 +20,7 @@ public class check_NonStaticInnerClassCreation_NonTypesystemRule extends Abstrac
   public check_NonStaticInnerClassCreation_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode classCreator, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode classCreator, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(Classifier_Behavior.call_canInstantiateIn_6935810692634457550(SLinkOperations.getTarget(IMethodCall_Behavior.call_getInstanceType_8008512149545154471(classCreator), "classifier", false), classCreator))) {
       BaseIntentionProvider intentionProvider = null;
       IErrorTarget errorTarget = new NodeErrorTarget();
@@ -31,8 +32,11 @@ public class check_NonStaticInnerClassCreation_NonTypesystemRule extends Abstrac
     return "jetbrains.mps.baseLanguage.structure.ClassCreator";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

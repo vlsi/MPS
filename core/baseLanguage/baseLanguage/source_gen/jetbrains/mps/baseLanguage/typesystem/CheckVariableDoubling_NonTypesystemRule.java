@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.List;
 import jetbrains.mps.baseLanguage.search.ParameterScope;
 import jetbrains.mps.baseLanguage.search.LocalVariablesScope;
@@ -23,7 +24,7 @@ public class CheckVariableDoubling_NonTypesystemRule extends AbstractNonTypesyst
   public CheckVariableDoubling_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode iVariableDeclaration, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode iVariableDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> param = new ParameterScope(iVariableDeclaration).getNodes();
     List<SNode> vars = new LocalVariablesScope(iVariableDeclaration).getNodes();
     vars.addAll(param);
@@ -53,8 +54,11 @@ public class CheckVariableDoubling_NonTypesystemRule extends AbstractNonTypesyst
     return "jetbrains.mps.baseLanguage.structure.IVariableDeclaration";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

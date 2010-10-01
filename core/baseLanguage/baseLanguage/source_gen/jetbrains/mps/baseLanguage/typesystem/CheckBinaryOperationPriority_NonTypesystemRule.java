@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.plugin.ParenthesisUtil;
@@ -19,7 +20,7 @@ public class CheckBinaryOperationPriority_NonTypesystemRule extends AbstractNonT
   public CheckBinaryOperationPriority_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode binaryOperation, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode binaryOperation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SNodeOperations.getParent(binaryOperation) != null && SNodeOperations.isInstanceOf(SNodeOperations.getParent(binaryOperation), "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
       SNode parent = SNodeOperations.cast(SNodeOperations.getParent(binaryOperation), "jetbrains.mps.baseLanguage.structure.BinaryOperation");
       boolean isRigth = false;
@@ -45,8 +46,11 @@ public class CheckBinaryOperationPriority_NonTypesystemRule extends AbstractNonT
     return "jetbrains.mps.baseLanguage.structure.BinaryOperation";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

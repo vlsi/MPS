@@ -72,12 +72,16 @@ public class MPSToolTipManager implements ApplicationComponent {
   }
 
   private void mouseMoved(MouseEvent event, boolean rightAlined) {
-    JComponent component = (JComponent) event.getComponent();
+    Component c = event.getComponent();
+    if (!(c instanceof JComponent && c instanceof TooltipComponent)) {
+      return;
+    }
+    JComponent component = (JComponent) c;
     Point point = component.getToolTipLocation(event);
     if (point == null) {
       point = event.getPoint();
     }
-    String text = component.getToolTipText(event);
+    String text = ((TooltipComponent) component).getMPSTooltipText(event);
     if (text != null && text.length() > 0) {
       showToolTip(text, component, point, rightAlined);
     } else {

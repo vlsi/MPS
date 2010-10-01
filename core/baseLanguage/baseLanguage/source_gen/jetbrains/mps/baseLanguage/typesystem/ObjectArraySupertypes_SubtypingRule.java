@@ -10,6 +10,7 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -36,9 +37,13 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
     return "jetbrains.mps.baseLanguage.structure.ArrayType";
   }
 
-  public boolean isApplicable(SNode argument) {
-    this.myMatchingPattern = new ObjectArraySupertypes_SubtypingRule.Pattern_gqfgxi_a0a0a0a2();
-    return this.myMatchingPattern.match(argument);
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      GeneratedMatchingPattern pattern = new ObjectArraySupertypes_SubtypingRule.Pattern_gqfgxi_a0a0a0a2();
+      this.myMatchingPattern = pattern;
+      boolean b = pattern.match(argument);
+      return new IsApplicableStatus(b, pattern);
+    }
   }
 
   public boolean isWeak() {

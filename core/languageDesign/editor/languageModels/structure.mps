@@ -783,6 +783,11 @@
       <property name="metaClass:0" value="aggregation" />
       <link role="target:0" targetNodeId="1106270491082:32" resolveInfo="CellLayout" />
     </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="8709572687796959088">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="usesFoldingCondition" />
+      <link role="target:0" targetNodeId="1142886221719:32" resolveInfo="QueryFunction_NodeCondition" />
+    </node>
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1073389446425">
       <property name="name:0" value="vertical" />
       <property name="propertyType:0" value="boolean" />

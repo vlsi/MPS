@@ -130,7 +130,7 @@ public class ChangeMethodSignatureDialog extends BaseDialog {
       public void run() {
         baseMethod.value = BaseMethodDeclaration_Behavior.call_getBaseMethod_5014346297260519893(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
         if (baseMethod.value != null) {
-          message.value = "Method " + node.toString() + " overrides method from class " + SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(baseMethod.value), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "name") + ".\n";
+          message.value = "Method " + node.toString() + " overrides method from " + SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(baseMethod.value), "jetbrains.mps.baseLanguage.structure.Classifier"), "name") + ".\n";
           message.value += "Do you want to change signature of this method instead?";
         }
       }

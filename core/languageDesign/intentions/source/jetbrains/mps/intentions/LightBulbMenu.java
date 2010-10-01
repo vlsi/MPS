@@ -16,6 +16,7 @@
 package jetbrains.mps.intentions;
 
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
+import jetbrains.mps.ide.tooltips.TooltipComponent;
 import jetbrains.mps.intentions.icons.Icons;
 
 import javax.swing.JLabel;
@@ -26,14 +27,13 @@ import java.awt.Dimension;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public abstract class LightBulbMenu extends JLabel {
+public abstract class LightBulbMenu extends JLabel implements TooltipComponent {
   public LightBulbMenu() {
     super(Icons.INTENTION);
 
     setBorder(new EmptyBorder(0, 2, 1, 2));
     setBackground(Color.WHITE);
 
-    setToolTipText("Click or press Alt+Enter");
     ToolTipManager.sharedInstance().unregisterComponent(this);
     MPSToolTipManager.getInstance().registerComponent(this);        
 
@@ -45,6 +45,10 @@ public abstract class LightBulbMenu extends JLabel {
         activate();
       }
     });
+  }
+
+  public String getMPSTooltipText(MouseEvent event) {
+    return "Click or press Alt+Enter";
   }
 
   public int getWidth() {

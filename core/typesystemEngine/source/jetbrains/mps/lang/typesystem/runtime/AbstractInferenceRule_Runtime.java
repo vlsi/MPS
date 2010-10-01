@@ -15,14 +15,29 @@
  */
 package jetbrains.mps.lang.typesystem.runtime;
 
+import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.util.Pair;
 
 public abstract class AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-  public abstract void applyRule(SNode argument, TypeCheckingContext typeCheckingContext);
 
-  public void applyRule(SNode argument) {
-    applyRule(argument, null);
+  @Override
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    return new IsApplicableStatus(isApplicable(argument), null);
   }
 
+  @Override
+  public void applyRule(SNode argument, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    applyRule(argument, typeCheckingContext);
+  }
+
+  @Deprecated
+  public boolean isApplicable(SNode argument) {
+    return false;
+  }
+
+  @Deprecated
+  public void applyRule(SNode argument, TypeCheckingContext typeCheckingContext) {
+  }
 }

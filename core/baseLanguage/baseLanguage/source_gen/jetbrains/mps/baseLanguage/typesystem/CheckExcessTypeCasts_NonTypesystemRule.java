@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -20,7 +21,7 @@ public class CheckExcessTypeCasts_NonTypesystemRule extends AbstractNonTypesyste
   public CheckExcessTypeCasts_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode expr, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode expr, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(expr, "expression", true)), "jetbrains.mps.baseLanguage.structure.Type")) {
       if (Type_Behavior.call_isSupersetOf_1220438914705(SLinkOperations.getTarget(expr, "type", true), SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(expr, "expression", true)), "jetbrains.mps.baseLanguage.structure.Type"))) {
         {
@@ -38,8 +39,11 @@ public class CheckExcessTypeCasts_NonTypesystemRule extends AbstractNonTypesyste
     return "jetbrains.mps.baseLanguage.structure.CastExpression";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

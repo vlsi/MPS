@@ -1757,6 +1757,9 @@
     <nodeInfo nodeId="6543581031674029265" fileName="IterableUtils.java" startLine="64" startPosition="0" endLine="83" endPosition="0" />
     <scopeInfo nodeId="6543581031674029079" fileName="IterableUtils.java" startLine="11" startPosition="26" endLine="11" endPosition="26" />
     <scopeInfo nodeId="6543581031674029108" fileName="IterableUtils.java" startLine="16" startPosition="11" endLine="17" endPosition="34" />
+    <scopeInfo nodeId="6543581031674029103" fileName="IterableUtils.java" startLine="18" startPosition="0" endLine="19" endPosition="14">
+      <varInfo nodeId="6543581031674029106" varName="stop" />
+    </scopeInfo>
     <scopeInfo nodeId="6543581031674029104" fileName="IterableUtils.java" startLine="18" startPosition="45" endLine="19" endPosition="14" />
     <scopeInfo nodeId="6543581031674029125" fileName="IterableUtils.java" startLine="24" startPosition="60" endLine="25" endPosition="46" />
     <scopeInfo nodeId="6543581031674029165" fileName="IterableUtils.java" startLine="31" startPosition="43" endLine="32" endPosition="21" />

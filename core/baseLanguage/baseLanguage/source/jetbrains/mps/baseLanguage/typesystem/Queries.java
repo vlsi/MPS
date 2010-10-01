@@ -16,6 +16,7 @@
 package jetbrains.mps.baseLanguage.typesystem;
 
 import jetbrains.mps.baseLanguage.structure.*;
+import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
@@ -31,7 +32,7 @@ public class Queries {
   }
 
   public static SNode getBinaryOperationType(SNode leftType, SNode rightType, boolean mayBeString) {
-    SModel runtimeTypesModel = TypeChecker.getInstance().getRuntimeTypesModel();
+    SModel runtimeTypesModel = AuxilaryRuntimeModel.getDescriptor().getSModel();
     Set<SNode> types = CollectionUtil.set(leftType, rightType);
     Set<SNode> leastCommonSupertypes = TypeChecker.getInstance().getSubtypingManager().leastCommonSupertypes(types, true);
 

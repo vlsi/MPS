@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -18,7 +19,7 @@ public class typeOf_TernaryOperator_InferenceRule extends AbstractInferenceRule_
   public typeOf_TernaryOperator_InferenceRule() {
   }
 
-  public void applyRule(final SNode toe, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode toe, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(toe, "condition", true);
       BaseIntentionProvider intentionProvider = null;
@@ -46,8 +47,11 @@ public class typeOf_TernaryOperator_InferenceRule extends AbstractInferenceRule_
     return "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

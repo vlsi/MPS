@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.lang.typesystem.runtime;
 
+import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
@@ -22,9 +23,19 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import java.util.List;
 import java.util.ArrayList;
 
+import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 
 public abstract class AbstractSubtypingRule_Runtime implements ISubtypingRule_Runtime {
+
+  @Override
+  public List<SNode> getSubOrSuperTypes(SNode type, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    SNode subOrSuperType = getSubOrSuperType(type, typeCheckingContext, status);
+    if (subOrSuperType != null) {
+      return CollectionUtil.list(subOrSuperType);
+    }
+    return getSubOrSuperTypes(type, typeCheckingContext);
+  }
 
   public List<SNode> getSubOrSuperTypes(SNode type, @Nullable TypeCheckingContext typeCheckingContext) {
     SNode subOrSuperType = getSubOrSuperType(type, typeCheckingContext);
@@ -34,8 +45,13 @@ public abstract class AbstractSubtypingRule_Runtime implements ISubtypingRule_Ru
     return getSubOrSuperTypes(type);
   }
 
+  @Deprecated
   public SNode getSubOrSuperType(SNode type, TypeCheckingContext typeCheckingContext) {
     return getSubOrSuperType(type);
+  }
+
+  public SNode getSubOrSuperType(SNode type, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    return getSubOrSuperType(type, typeCheckingContext);
   }
 
   @Deprecated
@@ -53,6 +69,16 @@ public abstract class AbstractSubtypingRule_Runtime implements ISubtypingRule_Ru
   }
 
   public boolean isWeak() {
+    return false;
+  }
+
+  @Override
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    return new IsApplicableStatus(isApplicable(argument), null);
+  }
+
+  @Deprecated
+  public boolean isApplicable(SNode argument) {
     return false;
   }
 }

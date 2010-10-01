@@ -19,6 +19,7 @@ import jetbrains.mps.lang.typesystem.runtime.RuntimeSupport;
 import jetbrains.mps.lang.typesystem.runtime.performance.RuntimeSupport_Tracer;
 import jetbrains.mps.lang.typesystem.runtime.performance.SubtypingManager_Tracer;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.typesystem.inference.util.ConcurrentSubtypingCache;
@@ -46,7 +47,6 @@ public class TypeChecker implements ApplicationComponent {
   private static final ModelOwner RUNTIME_TYPES_MODEL_OWNER = new ModelOwner() {
   };
 
-  public final Object TYPECHECKING_LOCK = new Object();
   public final Object LISTENERS_LOCK = new Object();
 
   private SubtypingManager mySubtypingManager;
@@ -275,15 +275,7 @@ public class TypeChecker implements ApplicationComponent {
   }
 
   public SModel getRuntimeTypesModel() {
-    SModelFqName fqName = getRuntimeTypesModelUID();
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(fqName);
-
-    if (modelDescriptor == null) { // then create and register model descriptor
-      modelDescriptor = new RuntimeTypesModelDescriptor(fqName);
-      SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, RUNTIME_TYPES_MODEL_OWNER);
-    }
-
-    return modelDescriptor.getSModel();
+    return AuxilaryRuntimeModel.getDescriptor().getSModel();
   }
 
   public boolean isGlobalIncrementalMode() {

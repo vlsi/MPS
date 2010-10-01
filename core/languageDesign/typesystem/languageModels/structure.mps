@@ -483,12 +483,6 @@
       <property name="sourceCardinality:0" value="0..n" />
       <link role="target:0" targetNodeId="1193733698246:3" resolveInfo="Dependency" />
     </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1212574183907">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="sourceCardinality:0" value="0..n" />
-      <property name="role:0" value="childTypeRestriction" />
-      <link role="target:0" targetNodeId="1212573344738:3" resolveInfo="ChildTypeRestriction" />
-    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1174648085619">
     <property name="name:0" value="AbstractRule" />

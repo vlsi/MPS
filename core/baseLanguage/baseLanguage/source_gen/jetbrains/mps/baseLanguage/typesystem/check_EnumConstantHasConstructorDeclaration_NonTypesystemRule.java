@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -19,7 +20,7 @@ public class check_EnumConstantHasConstructorDeclaration_NonTypesystemRule exten
   public check_EnumConstantHasConstructorDeclaration_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode enumConstant, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode enumConstant, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode enumClass = SNodeOperations.getAncestor(enumConstant, "jetbrains.mps.baseLanguage.structure.EnumClass", false, false);
     if ((enumClass == null)) {
       return;
@@ -50,8 +51,11 @@ public class check_EnumConstantHasConstructorDeclaration_NonTypesystemRule exten
     return "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration";
   }
 
-  public boolean isApplicable(SNode argument) {
-    return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+  public IsApplicableStatus isApplicableAndPattern(SNode argument) {
+    {
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      return new IsApplicableStatus(b, null);
+    }
   }
 
   public boolean overrides() {

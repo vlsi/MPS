@@ -14,6 +14,7 @@
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.ide.tooltips.ToolTip" />
     <classNode dependClassName="jetbrains.mps.ide.tooltips.ToolTipData" />
+    <classNode dependClassName="jetbrains.mps.ide.tooltips.TooltipComponent" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
@@ -49,6 +50,10 @@
     <classNode dependClassName="javax.swing.JTextArea" />
     <classNode dependClassName="javax.swing.border.EmptyBorder" />
     <classNode dependClassName="jetbrains.mps.ide.tooltips.ToolTip" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.tooltips.TooltipComponent" file="TooltipComponent.java">
+    <classNode dependClassName="java.awt.event.MouseEvent" />
+    <classNode dependClassName="java.lang.String" />
   </dependency>
 </dependenciesRoot>
 
