@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="DisposeDialogExpression_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.behavior.DisposeDialogExpression_Behavior" />
+  <unitInfo fileName="IDEDialog_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.behavior.IDEDialog_Behavior" />
+  <unitInfo fileName="DialogExpression_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.behavior.DialogExpression_Behavior" />
+  <unitInfo fileName="ReportErrorExpression_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ide.uiLanguage.behavior.ReportErrorExpression_Behavior" />
   <root nodeId="1213877315073">
     <scopeInfo nodeId="1213877315075" fileName="ReportErrorExpression_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
   </root>
