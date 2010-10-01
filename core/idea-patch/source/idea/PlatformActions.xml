@@ -80,9 +80,9 @@
               class="com.intellij.openapi.editor.actions.PreviousWordWithSelectionAction"/>
       <action id="EditorDeleteToWordStart" class="com.intellij.openapi.editor.actions.DeleteToWordStartAction"/>
       <action id="EditorDeleteToWordEnd" class="com.intellij.openapi.editor.actions.DeleteToWordEndAction"/>
-<!--???No Such Class
-      <action id="EditorDeleteLine" class="com.intellij.openapi.editor.actions.DeleteLineAtCaretAction"/>
--->
+      <!--???No Such Class
+            <action id="EditorDeleteLine" class="com.intellij.openapi.editor.actions.DeleteLineAtCaretAction"/>
+      -->
       <action id="EditorDuplicate" class="com.intellij.openapi.editor.actions.DuplicateAction"/>
       <action id="EditorToggleInsertState" class="com.intellij.openapi.editor.actions.ToggleInsertStateAction"/>
       <action id="EditorToggleColumnMode" class="com.intellij.openapi.editor.actions.ToggleColumnModeAction"/>
@@ -273,9 +273,7 @@
         <action id="ToggleFloatingMode" class="com.intellij.ide.actions.ToggleFloatingModeAction"/>
         <action id="ToggleSideMode" class="com.intellij.ide.actions.ToggleSideModeAction"/>
         <action id="ToggleContentUiTypeMode" class="com.intellij.ide.actions.ToggleContentUiTypeAction"/>
-        <!-- MPS Patch Start
-          <action id="ShowContent" class="com.intellij.ide.actions.ShowContentAction"/>
-        MPS Patch End-->
+        <action id="ShowContent" class="com.intellij.ide.actions.ShowContentAction"/>
         <group id="ResizeToolWindowGroup" popup="true">
           <action id="ResizeToolWindowLeft" class="com.intellij.ide.actions.ResizeToolWindowAction$Left"/>
           <action id="ResizeToolWindowRight" class="com.intellij.ide.actions.ResizeToolWindowAction$Right"/>
@@ -526,7 +524,7 @@
     </group>
 
     <action id="Rerun" class="com.intellij.execution.runners.FakeRerunAction" text="Rerun"/>
-                                        
+
     <action id="IncrementWindowWidth" class="com.intellij.ide.actions.WindowAction$IncrementWidth"
             use-shortcut-of="ResizeToolWindowRight"/>
     <action id="DecrementWindowWidth" class="com.intellij.ide.actions.WindowAction$DecrementWidth"
