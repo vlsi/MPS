@@ -37,12 +37,16 @@
       </mapping-priorities>
     </generator>
   </generators>
-  <classPath>
-    <entry path="${mps_home}/lib/commons-logging/commons-logging-1.1.jar" include="false" />
-  </classPath>
-  <languageRuntimeClassPath>
-    <entry path="${mps_home}/lib/commons-logging/commons-logging-1.1.jar" />
-  </languageRuntimeClassPath>
+  <stubModelEntries>
+    <stubModelEntry path="${mps_home}/lib/commons-logging-1.1.jar" include="false">
+      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
+    </stubModelEntry>
+  </stubModelEntries>
+  <runtimeStubModels>
+    <stubModelEntry path="${mps_home}/lib/commons-logging-1.1.jar" include="false">
+      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
+    </stubModelEntry>
+  </runtimeStubModels>
   <sourcePath />
   <extendedLanguages>
     <extendedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</extendedLanguage>
