@@ -23,7 +23,6 @@ public class Launcher {
     System.setProperty("idea.is.internal", mpsInternal != null ? mpsInternal : "false");
     System.setProperty("idea.no.jre.check", "true");
     System.setProperty("idea.load.plugins", "true");
-    System.setProperty("idea.platform.prefix", "MPS");
 
     Bootstrap.main(args, MPSMainImpl.class.getName(), "start");
   }
