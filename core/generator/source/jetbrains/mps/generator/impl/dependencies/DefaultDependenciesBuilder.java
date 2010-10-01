@@ -4,6 +4,7 @@ import jetbrains.mps.generator.ModelDigestHelper;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.GeneratorMappings;
 import jetbrains.mps.generator.impl.cache.IntermediateModelsCache;
+import jetbrains.mps.generator.impl.cache.PersistableMappings;
 import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.IOperationContext;
@@ -155,6 +156,14 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
   }
 
   @Override
+  public SNode getOriginalForInput(SNode inputNode) {
+    if (currentToOriginalMap == null) {
+      return null;
+    }
+    return currentToOriginalMap.get(inputNode);
+  }
+
+  @Override
   public RootDependenciesBuilder getRootBuilder(SNode inputNode) {
     if (inputNode == null || !inputNode.isRegistered()) {
       return myConditionalsBuilder;
@@ -198,6 +207,8 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
     loadCachedModel();
 
     List<SNode> toCopy = new ArrayList<SNode>(myRequiredSet.size()*2 + 16);
+    List<PersistableMappings> toImport = new ArrayList<PersistableMappings>(myRequiredSet.size()*2);
+
     for (SNode root : myCachedModel.getRoots()) {
       String originalId = myCachedModel.getOriginal(root);
       if(myRequiredSet.containsKey(originalId)) {
@@ -207,11 +218,18 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
         }
         nextStepToOriginalMap.put(root, originalRoot);
         toCopy.add(root);
+        PersistableMappings val = myCachedModel.getMappings(originalId);
+        if(val != null) {
+          toImport.add(val);
+        }
       }
     }
 
     for (SNode node : toCopy) {
       currentOutputModel.addRoot(node);
+    }
+    for (PersistableMappings val : toImport) {
+      mappings.importPersisted(val, currentInputModel, currentOutputModel);
     }
   }
 
@@ -230,6 +248,10 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
       if(myUnchangedSet.containsKey(originalId)) {
         model.getRoots().add(root);
         model.setOriginal(root.getSNodeId(), originalId);
+        PersistableMappings mappings = myCachedModel.getMappings(originalId);
+        if(mappings != null) {
+          model.updateMappings(originalId, mappings);
+        }
       }
     }
   }

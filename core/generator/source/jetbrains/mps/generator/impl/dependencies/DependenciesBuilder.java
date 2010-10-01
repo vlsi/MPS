@@ -18,6 +18,8 @@ public interface DependenciesBuilder {
 
   void registerRoot(SNode outputRoot, SNode inputNode);
 
+  SNode getOriginalForInput(SNode inputRoot);
+
   SNode getOriginalForOutput(SNode outputRoot);
 
   void updateModel(SModel newInputModel);
@@ -45,6 +47,11 @@ public interface DependenciesBuilder {
 
     @Override
     public void registerRoot(SNode outputRoot, SNode inputNode) {
+    }
+
+    @Override
+    public SNode getOriginalForInput(SNode inputRoot) {
+      return null;
     }
 
     @Override

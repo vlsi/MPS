@@ -2,12 +2,17 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
+import jetbrains.mps.generator.impl.cache.PersistableMappings;
 import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
+import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
+import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
@@ -155,6 +160,56 @@ public class GeneratorMappings {
     return !(o instanceof List);
   }
 
-  public void serialize(TransientModelWithMetainfo to) {
+  // serialization
+
+  public void export(TransientModelWithMetainfo into, DependenciesBuilder builder) {
+    for (Entry<String, Map<SNode, Object>> o : myMappingNameAndInputNodeToOutputNodeMap.entrySet()) {
+      String label = o.getKey();
+      for(Entry<SNode, Object> i : o.getValue().entrySet()) {
+        SNode inputNode = i.getKey();
+        SNode originalRoot = inputNode == null ? null : builder.getOriginalForInput(inputNode.getTopmostAncestor());
+        into.addLabel(originalRoot, inputNode, label, i.getValue());
+      }
+    }
+  }
+
+  public void importPersisted(PersistableMappings val, SModel inputModel, SModel outputModel) {
+
+    // labels
+    for(Entry<String, Map<SNodeId, Object>> e : val.getMappingNameAndInputNodeToOutputNodeMap().entrySet()) {
+      String mappingName = e.getKey();
+      Map<SNode, Object> currentMapping = myMappingNameAndInputNodeToOutputNodeMap.get(mappingName);
+      if (currentMapping == null) {
+        myMappingNameAndInputNodeToOutputNodeMap.putIfAbsent(mappingName, new HashMap<SNode, Object>());
+        currentMapping = myMappingNameAndInputNodeToOutputNodeMap.get(mappingName);
+      }
+      for(Entry<SNodeId,Object> n : e.getValue().entrySet()) {
+        SNodeId key = n.getKey();
+        SNode inputNode = key != null ? inputModel.getNodeById(key) : null;
+        Object value = n.getValue();
+        if(value instanceof SNodeId) {
+          addOutputNode(currentMapping, inputNode, outputModel.getNodeById((SNodeId) value));
+        } else if(value instanceof List) {
+          for(SNodeId id : (List<SNodeId>)value) {
+            addOutputNode(currentMapping, inputNode, outputModel.getNodeById(id));
+          }
+        }
+      }
+
+    }
+  }
+
+  private void addOutputNode(Map<SNode, Object> currentMapping, SNode inputNode, SNode outputNode) {
+    Object o = currentMapping.get(inputNode);
+    if (o == null) {
+      currentMapping.put(inputNode, outputNode);
+    } else if (o instanceof List) {
+      ((List<SNode>) o).add(outputNode);
+    } else {
+      List<SNode> list = new ArrayList<SNode>(4);
+      list.add((SNode) o);
+      list.add(outputNode);
+      currentMapping.put(inputNode, list);
+    }
   }
 }

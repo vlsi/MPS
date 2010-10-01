@@ -35,16 +35,20 @@ import java.util.Map.Entry;
  */
 public class TransientModelWithMetainfo {
 
+  private static final int END_MARKER = '$' + ('M' << 24) + ('P' << 16) + ('S' << 8);
+
   public static final String CONDITIONALS_ID = "";
 
   private SModelReference myReference;
   private List<SNode> myRoots;
   private Map<SNodeId, SNodeId> myRootToOriginal;
+  private Map<SNodeId, PersistableMappings> myMappings;
 
   public TransientModelWithMetainfo(SModelReference reference, List<SNode> roots) {
     myReference = reference;
     myRoots = roots;
     myRootToOriginal = new HashMap<SNodeId, SNodeId>();
+    myMappings = new HashMap<SNodeId, PersistableMappings>();
   }
 
   public TransientModelWithMetainfo(SModel model) {
@@ -53,6 +57,14 @@ public class TransientModelWithMetainfo {
 
   public List<SNode> getRoots() {
     return myRoots;
+  }
+
+  public PersistableMappings getMappings(String originalId) {
+    return myMappings.get(SNodeId.fromString(originalId));
+  }
+
+  public void updateMappings(String originalId, PersistableMappings mappings) {
+    myMappings.put(SNodeId.fromString(originalId), mappings);
   }
 
   public String getOriginal(SNode root) {
@@ -78,6 +90,13 @@ public class TransientModelWithMetainfo {
       os.writeNodeId(e.getKey());
       os.writeNodeId(e.getValue());
     }
+
+    os.writeInt(myMappings.size());
+    for(Entry<SNodeId, PersistableMappings> e : myMappings.entrySet()) {
+      os.writeNodeId(e.getKey());
+      e.getValue().save(os);
+    }
+    os.writeInt(END_MARKER);
   }
 
   private void loadMetainfo(ModelInputStream is) throws ClassNotFoundException, IOException {
@@ -86,6 +105,17 @@ public class TransientModelWithMetainfo {
       SNodeId key = is.readNodeId();
       SNodeId value = is.readNodeId();
       myRootToOriginal.put(key, value);
+    }
+
+    size = is.readInt();
+    for(; size > 0; size--) {
+      SNodeId key = is.readNodeId();
+      PersistableMappings mappings = PersistableMappings.load(is);
+      myMappings.put(key, mappings);
+    }
+
+    if(is.readInt() != END_MARKER) {
+      throw new IOException("corrupted file");
     }
   }
 
@@ -110,9 +140,19 @@ public class TransientModelWithMetainfo {
       metainfo.myRootToOriginal.put(root.getSNodeId(), node == null ? null: node.getSNodeId());
     }
     if (mappings != null) {
-      mappings.serialize(metainfo);
+      mappings.export(metainfo, builder);
     }
     builder.updateUnchanged(metainfo);
     return metainfo;
+  }
+
+  public void addLabel(SNode originalRoot, SNode input, String label, Object value) {
+    SNodeId key = originalRoot == null ? null : originalRoot.getSNodeId();
+    PersistableMappings persistableMappings = myMappings.get(key);
+    if(persistableMappings == null) {
+      persistableMappings = new PersistableMappings();
+      myMappings.put(key, persistableMappings);
+    }
+    persistableMappings.addOutputNodeByInputNodeAndMappingName(input == null ? null : input.getSNodeId(), label, value);
   }
 }
