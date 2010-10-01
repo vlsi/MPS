@@ -148,7 +148,7 @@ public class CommonPaths {
     addIfExists(result, "/lib/commons-lang-2.4.jar");
     addIfExists(result, "/lib/picocontainer.jar");
     addIfExists(result, "/lib/jdom.jar");
-    addIfExists(result, "/lib/eclipse-compiler/ecj.jar");
+    addIfExists(result, "/lib/ecj.jar");
 
     return result;
   }
