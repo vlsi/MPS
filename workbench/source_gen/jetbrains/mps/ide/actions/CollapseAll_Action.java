@@ -12,12 +12,11 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.nodeEditor.cells.CellConditions;
 
 public class CollapseAll_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -79,8 +78,6 @@ public class CollapseAll_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      EditorCell selectedCell = CollapseAll_Action.this.editorContext.getSelectedCell();
-
       Queue<EditorCell_Collection> cellsToProcess = QueueSequence.fromQueueAndArray(new LinkedList<EditorCell_Collection>(), (EditorCell_Collection) CollapseAll_Action.this.editorComponent.getRootCell());
       while (QueueSequence.fromQueue(cellsToProcess).isNotEmpty()) {
         EditorCell_Collection collectionCell = QueueSequence.fromQueue(cellsToProcess).removeFirstElement();
@@ -96,32 +93,10 @@ public class CollapseAll_Action extends GeneratedAction {
           collectionCell.fold();
         }
       }
-
-      EditorCell_Collection collectionToSelect = CollapseAll_Action.this.getFoldedCollectionToSelect(selectedCell);
-      if (collectionToSelect != null) {
-        CollapseAll_Action.this.editorContext.getNodeEditorComponent().clearSelectionStack();
-        EditorCell editorCellToSelect = collectionToSelect.getFirstDescendant(CellConditions.SELECTABLE);
-        if (editorCellToSelect != null) {
-          CollapseAll_Action.this.editorContext.getNodeEditorComponent().changeSelection(editorCellToSelect);
-          editorCellToSelect.home();
-        }
-      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "CollapseAll", t);
       }
     }
-  }
-
-  /*package*/ EditorCell_Collection getFoldedCollectionToSelect(EditorCell selectedCell) {
-    EditorCell_Collection topMostFoldedCollection = null;
-    while (selectedCell != null) {
-      EditorCell_Collection parent = selectedCell.getParent();
-      if (parent != null && parent.isFolded()) {
-        topMostFoldedCollection = parent;
-      }
-      selectedCell = parent;
-    }
-    return topMostFoldedCollection;
   }
 }

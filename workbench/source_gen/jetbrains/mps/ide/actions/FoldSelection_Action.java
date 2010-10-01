@@ -12,7 +12,6 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.CellConditions;
 
 public class FoldSelection_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -74,22 +73,10 @@ public class FoldSelection_Action extends GeneratedAction {
       while (collectionCell != null) {
         if (collectionCell.isFolded()) {
           collectionCell.unfold();
-          FoldSelection_Action.this.editorContext.getNodeEditorComponent().clearSelectionStack();
-          EditorCell editorCellToSelect = collectionCell.getFirstDescendant(CellConditions.SELECTABLE);
-          if (editorCellToSelect != null) {
-            FoldSelection_Action.this.editorContext.getNodeEditorComponent().changeSelection(editorCellToSelect);
-            editorCellToSelect.home();
-          }
           return;
         }
         if (collectionCell.canBePossiblyFolded()) {
           collectionCell.fold();
-          FoldSelection_Action.this.editorContext.getNodeEditorComponent().clearSelectionStack();
-          EditorCell editorCellToSelect = collectionCell.getFirstDescendant(CellConditions.SELECTABLE);
-          if (editorCellToSelect != null) {
-            FoldSelection_Action.this.editorContext.getNodeEditorComponent().changeSelection(editorCellToSelect);
-            editorCellToSelect.home();
-          }
           return;
         }
         collectionCell = collectionCell.getParent();

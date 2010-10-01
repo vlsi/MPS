@@ -21,7 +21,6 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.cellLayout.*;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.smodel.SNode;
@@ -452,23 +451,33 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     setFolded(true);
 
     final EditorComponent editorComponent = getEditor();
-    if (isDescendantCellSelected(editorComponent)) {
-      editorComponent.clearSelectionStack();
-      editorComponent.pushSelection(getFoldedCell());
-    }
+    adjustSelectionToFoldingState(editorComponent);
     editorComponent.addMouseListener(myUnfoldCollectionMouseListener = new MouseAdapter() {
       public void mouseClicked(MouseEvent e) {
         if (getBounds().contains(e.getPoint())) {
           editorComponent.clearSelectionStack();
-          editorComponent.pushSelection(getFoldedCell());
+          editorComponent.changeSelection(getFoldedCell());
           unfold();
         }
       }
     });
     if (!programmaticaly) {
       getEditorContext().flushEvents();
-
       getEditor().relayout();
+    }
+  }
+
+  private void adjustSelectionToFoldingState(EditorComponent editorComponent) {
+    if (isDescendantCellSelected(editorComponent)) {
+      editorComponent.clearSelectionStack();
+      EditorCell editorCellToSelect = getFirstLeaf(CellConditions.SELECTABLE);
+      if (editorCellToSelect != null) {
+        editorComponent.changeSelection(editorCellToSelect);
+        editorCellToSelect.home();
+      } else {
+        editorComponent.changeSelection(this);
+        home();
+      }
     }
   }
 
@@ -510,11 +519,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
 
     EditorComponent editor = getEditor();
     editor.removeMouseListener(myUnfoldCollectionMouseListener);
-    if (isDescendantCellSelected(editor)) {
-      EditorCell deepestSelected = findChild(CellFinders.FIRST_SELECTABLE_LEAF);
-      editor.clearSelectionStack();
-      editor.pushSelection(deepestSelected);
-    }
+    adjustSelectionToFoldingState(editor);
 
     if (!programmaticaly) {
       getEditorContext().flushEvents();

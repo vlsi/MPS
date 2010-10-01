@@ -12,7 +12,6 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.CellConditions;
 
 public class Collapse_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -74,12 +73,6 @@ public class Collapse_Action extends GeneratedAction {
       while (collectionCell != null) {
         if (collectionCell.canBePossiblyFolded() && !(collectionCell.isFolded())) {
           collectionCell.fold();
-          Collapse_Action.this.editorContext.getNodeEditorComponent().clearSelectionStack();
-          EditorCell editorCellToSelect = collectionCell.getFirstDescendant(CellConditions.SELECTABLE);
-          if (editorCellToSelect != null) {
-            Collapse_Action.this.editorContext.getNodeEditorComponent().changeSelection(editorCellToSelect);
-            editorCellToSelect.home();
-          }
           return;
         }
         collectionCell = collectionCell.getParent();

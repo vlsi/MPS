@@ -17,7 +17,6 @@ import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.nodeEditor.cells.CellConditions;
 
 public class ExpandAll_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -79,8 +78,6 @@ public class ExpandAll_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      EditorCell_Collection foldedCollectionToSelect = ExpandAll_Action.this.getFoldedCollectionToSelect();
-
       Queue<EditorCell_Collection> cellsToProcess = QueueSequence.fromQueueAndArray(new LinkedList<EditorCell_Collection>(), (EditorCell_Collection) ExpandAll_Action.this.editorComponent.getRootCell());
       while (QueueSequence.fromQueue(cellsToProcess).isNotEmpty()) {
         EditorCell_Collection collectionCell = QueueSequence.fromQueue(cellsToProcess).removeFirstElement();
@@ -93,30 +90,10 @@ public class ExpandAll_Action extends GeneratedAction {
           }
         }
       }
-
-      if (foldedCollectionToSelect != null) {
-        ExpandAll_Action.this.editorContext.getNodeEditorComponent().clearSelectionStack();
-        EditorCell editorCellToSelect = foldedCollectionToSelect.getFirstDescendant(CellConditions.SELECTABLE);
-        if (editorCellToSelect != null) {
-          ExpandAll_Action.this.editorContext.getNodeEditorComponent().changeSelection(editorCellToSelect);
-          editorCellToSelect.home();
-        }
-      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ExpandAll", t);
       }
     }
-  }
-
-  /*package*/ EditorCell_Collection getFoldedCollectionToSelect() {
-    for (EditorCell currentCell = ExpandAll_Action.this.editorComponent.getSelectedCell(); currentCell != null;) {
-      EditorCell_Collection parent = currentCell.getParent();
-      if (parent != null && parent.isFolded()) {
-        return parent;
-      }
-      currentCell = parent;
-    }
-    return null;
   }
 }
