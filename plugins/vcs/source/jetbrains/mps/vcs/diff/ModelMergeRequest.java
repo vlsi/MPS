@@ -22,13 +22,11 @@ import com.intellij.openapi.diff.impl.mergeTool.MergeRequestImpl;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.vcs.ModelMergeRequestConstants;
 import jetbrains.mps.vcs.ModelUtils;
 import org.jetbrains.annotations.NotNull;
 
 public class ModelMergeRequest extends MergeRequestImpl {
-  public static final int CURRENT = 0;
-  public static final int ORIGINAL = 1;
-  public static final int LAST_REVISION = 2;
   private final VirtualFile myFile;
 
   ModelMergeRequest(String leftText, String rightText, String originalContent, @NotNull VirtualFile file, Project project, ActionButtonPresentation actionButtonPresentation) {
@@ -44,7 +42,7 @@ public class ModelMergeRequest extends MergeRequestImpl {
   }
 
   public void resolved(final byte[] result) {
-    ((SimpleContent) getContents()[ORIGINAL]).setBOM(result);
+    ((SimpleContent) getContents()[ModelMergeRequestConstants.ORIGINAL]).setBOM(result);
     setResult(DialogWrapper.OK_EXIT_CODE);
     ModelUtils.replaceWithNewModelFromBytes(myFile, result);
   }

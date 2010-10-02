@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.vcs.VCSSettingsHolder;
 import jetbrains.mps.vcs.ModelUtils;
 import jetbrains.mps.vcs.diff.ModelMergeRequest;
+import jetbrains.mps.vcs.ModelMergeRequestConstants;
 import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
 import jetbrains.mps.project.ModuleContext;
 
@@ -40,11 +41,11 @@ public class ModelMergeTool implements DiffTool {
 
     try {
       DiffContent[] contents = mrequest.getContents();
-      final SModel baseModel = ModelDiffTool.readModel(contents[ModelMergeRequest.ORIGINAL],
+      final SModel baseModel = ModelDiffTool.readModel(contents[ModelMergeRequestConstants.ORIGINAL],
         mrequest.getFile().getPath());
-      final SModel mineModel = ModelDiffTool.readModel(contents[ModelMergeRequest.CURRENT],
+      final SModel mineModel = ModelDiffTool.readModel(contents[ModelMergeRequestConstants.CURRENT],
         mrequest.getFile().getPath());
-      final SModel newModel = ModelDiffTool.readModel(contents[ModelMergeRequest.LAST_REVISION],
+      final SModel newModel = ModelDiffTool.readModel(contents[ModelMergeRequestConstants.LAST_REVISION],
         mrequest.getFile().getPath());
       final MergeModelsDialog dialog = ModelAccess.instance().runReadAction(new Computable<MergeModelsDialog>() {
         public MergeModelsDialog compute() {

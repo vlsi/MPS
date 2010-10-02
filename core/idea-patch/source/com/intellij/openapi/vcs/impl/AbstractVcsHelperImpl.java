@@ -84,6 +84,9 @@ import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.annotation.Patch;
+import jetbrains.mps.vcs.MPSVcsUtil;
+import jetbrains.mps.vcs.ModelMergeRequestConstants;
+import jetbrains.mps.vcs.VcsMergeVersion;
 import jetbrains.mps.vcs.VcsMigrationUtil;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
@@ -740,18 +743,17 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
 
   @Patch
   public static File zipModel(MergeData request, DiffContent[] contents, VirtualFile file) throws IOException {
-    /*File tmp = FileUtil.createTmpDir();
-    writeContentsToFile(contents[ModelMergeRequest.ORIGINAL], file, tmp, VcsMergeVersion.BASE.getSuffix());
-    writeContentsToFile(contents[ModelMergeRequest.CURRENT], file, tmp, VcsMergeVersion.MINE.getSuffix());
-    writeContentsToFile(contents[ModelMergeRequest.LAST_REVISION], file, tmp, VcsMergeVersion.REPOSITORY.getSuffix());
+    File tmp = FileUtil.createTmpDir();
+    writeContentsToFile(contents[ModelMergeRequestConstants.ORIGINAL], file, tmp, VcsMergeVersion.BASE.getSuffix());
+    writeContentsToFile(contents[ModelMergeRequestConstants.CURRENT], file, tmp, VcsMergeVersion.MINE.getSuffix());
+    writeContentsToFile(contents[ModelMergeRequestConstants.LAST_REVISION], file, tmp, VcsMergeVersion.REPOSITORY.getSuffix());
     writeMetaInformation(request, file, tmp);
-    File zipfile = ModelUtils.chooseZipFileNameForModelFile(file.getPath());
+    File zipfile = MPSVcsUtil.chooseZipFileNameForModelFile(file.getPath());
     FileUtil.zip(tmp, zipfile);
 
     FileUtil.delete(tmp);
 
-    return zipfile;*/
-    return null;
+    return zipfile;
   }
 
   @Patch

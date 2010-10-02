@@ -28,7 +28,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalOperationContext;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.vcs.ModelUtils.Version;
 import jetbrains.mps.vcs.diff.ui.MergeModelsDialog;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
 import jetbrains.mps.vfs.IFile;
@@ -96,7 +95,7 @@ public class VcsHelper {
     if (modelFile.exists()) {
       FileUtil.copy(new File(modelFile.getAbsolutePath()), new File(tmp.getAbsolutePath(), modelFile.getName() + "." + FsMemoryMergeVersion.FILE_SYSTEM.getSuffix()));
     }
-    File zipfile = ModelUtils.chooseZipFileNameForModelFile(modelFile.getAbsolutePath());
+    File zipfile = MPSVcsUtil.chooseZipFileNameForModelFile(modelFile.getAbsolutePath());
     jetbrains.mps.util.FileUtil.zip(tmp, zipfile);
 
     jetbrains.mps.util.FileUtil.delete(tmp);
@@ -189,19 +188,4 @@ public class VcsHelper {
     }
   }
 
-  public static enum VcsMergeVersion implements Version {
-    MINE("mine"),
-    REPOSITORY("repository"),
-    BASE("base");
-
-    private final String mySuffix;
-
-    VcsMergeVersion(String suffix) {
-      mySuffix = suffix;
-    }
-
-    public String getSuffix() {
-      return mySuffix;
-    }
-  }
 }

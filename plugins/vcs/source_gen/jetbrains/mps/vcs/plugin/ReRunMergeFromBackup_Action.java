@@ -4,6 +4,8 @@ package jetbrains.mps.vcs.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
+
+import jetbrains.mps.vcs.VcsMergeVersion;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -103,8 +105,8 @@ public class ReRunMergeFromBackup_Action extends GeneratedAction {
       }, false);
       for (File backupFile : Sequence.fromIterable(backupFiles)) {
         try {
-          SModel[] models = ModelUtils.loadZippedModels(backupFile, VcsHelper.VcsMergeVersion.values());
-          ReRunMergeFromBackup_Action.this.doMerge(models[VcsHelper.VcsMergeVersion.MINE.ordinal()], models[VcsHelper.VcsMergeVersion.BASE.ordinal()], models[VcsHelper.VcsMergeVersion.REPOSITORY.ordinal()]);
+          SModel[] models = ModelUtils.loadZippedModels(backupFile, VcsMergeVersion.values());
+          ReRunMergeFromBackup_Action.this.doMerge(models[VcsMergeVersion.MINE.ordinal()], models[VcsMergeVersion.BASE.ordinal()], models[VcsMergeVersion.REPOSITORY.ordinal()]);
           return;
         } catch (IOException e) {
           if (log.isWarnEnabled()) {
