@@ -111,7 +111,7 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
     if (files.isEmpty()) return Collections.emptyList();
     // MPS Patch Start
     // we create providerDecorator which does actual backup
-    MergeProvider providerDecorator = new MergeProviderDecorator(myProject, this, provider);
+    MergeProvider providerDecorator = new MergeProviderDecorator(myProject, provider);
 
     // recheck files status
     List<VirtualFile> toMerge = new ArrayList<VirtualFile>();

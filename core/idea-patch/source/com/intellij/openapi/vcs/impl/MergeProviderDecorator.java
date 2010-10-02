@@ -40,11 +40,9 @@ class MergeProviderDecorator implements MergeProvider {
   private File myBackup;
   private final MergeProvider myProvider;
   private Project myProject;
-  private AbstractVcsHelperImpl myAbstractVcsHelper;
 
-  public MergeProviderDecorator(Project project, AbstractVcsHelperImpl abstractVcsHelper, MergeProvider provider) {
+  public MergeProviderDecorator(Project project, MergeProvider provider) {
     myProject = project;
-    myAbstractVcsHelper = abstractVcsHelper;
     myProvider = provider;
     myBackup = null;
   }
