@@ -18,18 +18,20 @@ package jetbrains.mps.ide.messages;
 import com.intellij.ide.BrowserUtil;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.components.PersistentStateComponent;
+import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.wm.ToolWindowAnchor;
+import com.intellij.openapi.wm.ToolWindow;
+import com.intellij.openapi.wm.ToolWindowId;
+import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.openapi.wm.WindowManager;
 import com.intellij.ui.content.Content;
-import com.intellij.ui.content.ContentManager;
+import com.intellij.ui.content.ContentFactoryImpl;
 import com.intellij.ui.content.MessageView;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.MessageViewLoggingHandler;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.blame.dialog.BlameDialog;
 import jetbrains.mps.ide.blame.dialog.BlameDialogComponent;
 import jetbrains.mps.ide.blame.perform.Response;
@@ -37,7 +39,6 @@ import jetbrains.mps.ide.findusages.INavigateableTool;
 import jetbrains.mps.ide.findusages.INavigator;
 import jetbrains.mps.ide.findusages.UsagesViewTracker;
 import jetbrains.mps.ide.messages.MessagesViewTool.MyState;
-import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
@@ -45,8 +46,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.workbench.tools.BaseProjectTool;
 import org.apache.commons.lang.ObjectUtils;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
@@ -67,7 +68,7 @@ import java.util.concurrent.atomic.AtomicInteger;
     )
   }
 )
-public class MessagesViewTool extends BaseProjectTool implements PersistentStateComponent<MyState>, INavigateableTool, MessageView {
+public class MessagesViewTool implements ProjectComponent, PersistentStateComponent<MyState>, INavigateableTool {
   private static final Logger LOG = Logger.getLogger(MessagesViewTool.class);
   private static final int MAX_MESSAGES_SIZE = 30000;
 
@@ -101,12 +102,54 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
   private AtomicInteger myMessagesInProgress = new AtomicInteger();
   private MessageToolSearchPanel mySearchPanel = new MessageToolSearchPanel(myList, getProject());
 
+  private Project myProject;
+
   public MessagesViewTool(Project project) {
-    super(project, "MPS Messages", 0, Icons.MESSAGE_VIEW_ICON, ToolWindowAnchor.BOTTOM, true);
+    myProject = project;
+  }
+
+  public Project getProject() {
+    return myProject;
+  }
+
+  //------------COMPONENT STUFF---------------
+
+  @NotNull
+  public String getComponentName() {
+    return MessagesViewTool.class.getSimpleName();
   }
 
   public void initComponent() {
-    super.initComponent();
+    final MessageView service = MessageView.SERVICE.getInstance(myProject);
+    service.runWhenInitialized(new Runnable() {
+      public void run() {
+        initUI();
+        Content content = new ContentFactoryImpl().createContent(myComponent, "Messages", true);
+        content.setCloseable(false);
+        content.putUserData(ToolWindow.SHOW_CONTENT_ICON, Boolean.TRUE);
+        service.getContentManager().addContent(content);
+      }
+    });
+  }
+
+  public void disposeComponent() {
+
+  }
+
+  public void projectOpened() {
+    myLoggingHandler = new MessageViewLoggingHandler(this);
+    Logger.addLoggingHandler(myLoggingHandler);
+    UsagesViewTracker.register(this);
+  }
+
+  public void projectClosed() {
+    UsagesViewTracker.unregister(this);
+    Logger.removeLoggingHandler(myLoggingHandler);
+  }
+
+  //------------UI STUFF---------------
+
+  private void initUI() {
     myList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
     myComponent.setLayout(new BorderLayout());
 
@@ -119,12 +162,8 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
       myAutoscrollToSourceAction
     );
 
-    SwingUtilities.invokeLater(new Runnable() {
-      public void run() {
-        myToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false);
-        panel.add(myToolbar.getComponent(), BorderLayout.NORTH);
-      }
-    });
+    myToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false);
+    panel.add(myToolbar.getComponent(), BorderLayout.NORTH);
 
     myComponent.add(panel, BorderLayout.WEST);
     myComponent.add(mySearchPanel, BorderLayout.NORTH);
@@ -139,8 +178,6 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
 
 
     myList.setFixedCellHeight(Toolkit.getDefaultToolkit().getFontMetrics(myList.getFont()).getHeight() + 5);
-
-//    ToolTipManager.sharedInstance().registerComponent(myList);
 
     myList.registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
@@ -209,38 +246,6 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
         }
       }
     });
-  }
-
-  protected boolean isInitiallyAvailable() {
-    return true;
-  }
-
-  public void projectOpened() {
-    super.projectOpened();
-    myLoggingHandler = new MessageViewLoggingHandler(this);
-    Logger.addLoggingHandler(myLoggingHandler);
-  }
-
-  public void projectClosed() {
-    Logger.removeLoggingHandler(myLoggingHandler);
-    super.projectClosed();
-  }
-
-  //------------TOOL STUFF---------------
-
-  public void openToolLater(boolean setActive) {
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      public void run() {
-        if (myModel.getSize() > 0) {
-          myList.setSelectedValue(myModel.getElementAt(myModel.getSize() - 1), true);
-        }
-      }
-    });
-    super.openToolLater(setActive);
-  }
-
-  public JComponent getComponent() {
-    return myComponent;
   }
 
   //------------MESSAGES STUFF---------------
@@ -452,9 +457,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
   }
 
   public void add(final Message message) {
-    if (IdeMain.getTestMode() == TestMode.CORE_TEST) {
-      return;
-    }
+    if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
 
     myMessagesInProgress.incrementAndGet();
 
@@ -511,28 +514,26 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
   }
 
   private void updateHeader() {
-    if (getToolWindow() == null) return;
-    if (getContentManager() == null) return;
-    Content content = getContentManager().getSelectedContent();
-    if (content == null) return;
-    if (!ObjectUtils.equals(content.getComponent(), myComponent)) return;
+    ToolWindow window = getToolWindow();
+    if (window == null) return;
+
     if (hasErrors() || hasWarnings() || hasInfo()) {
-      getToolWindow().setTitle(NameUtil.formatNumericalString(myErrors, "error") + "/"
+      window.setTitle(NameUtil.formatNumericalString(myErrors, "error") + "/"
         + NameUtil.formatNumericalString(myWarnings, "warning") + "/"
         + NameUtil.formatNumericalString(myInfos, "info"));
     } else {
-      getToolWindow().setTitle("");
+      window.setTitle("");
     }
   }
 
   private void updateActions() {
+    if (myToolbar == null) return;
     myToolbar.updateActionsImmediately();
   }
 
   private int getMessageWidth(Message message) {
     Component renderer = myList.getCellRenderer().getListCellRendererComponent(myList, message, 0, false, false);
-    int width = renderer.getPreferredSize().width;
-    return width;
+    return renderer.getPreferredSize().width;
   }
 
   public MyState getState() {
@@ -545,16 +546,12 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
     myAutoscrollToSourceAction.setSelected(null, state.isAutoscrollToSource());
   }
 
-  protected void doRegister() {
-    UsagesViewTracker.register(this);
-  }
-
-  protected void doUnregister() {
-    UsagesViewTracker.unregister(this);
-  }
-
   public int getPriority() {
     return 1;
+  }
+
+  public ToolWindow getToolWindow() {
+    return ToolWindowManager.getInstance(myProject).getToolWindow(ToolWindowId.MESSAGES_WINDOW);
   }
 
   public INavigator getCurrentNavigateableView() {
@@ -586,15 +583,21 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
     };
   }
 
-  @Override
-  public ContentManager getContentManager() {
-    return super.getContentManager();
+  public void openToolLater(final boolean setActive) {
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        openTool(setActive);
+      }
+    });
   }
 
-  @Override
-  public void runWhenInitialized(Runnable runnable) {
-    runnable.run();
+  public void openTool(boolean setActive) {
+    ToolWindow window = getToolWindow();
+    if (!window.isAvailable()) window.setAvailable(true, null);
+    if (!window.isVisible()) window.show(null);
+    if (setActive) window.activate(null);
   }
+
 
   public static class MyState {
     private boolean myWarnings;
