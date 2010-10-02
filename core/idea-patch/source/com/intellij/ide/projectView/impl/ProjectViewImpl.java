@@ -133,12 +133,11 @@ public final class ProjectViewImpl extends ProjectView implements PersistentStat
         return false;
       }
 
-      @Patch
       public void collapseAll() {
         AbstractProjectViewPane pane = getCurrentProjectViewPane();
         JTree tree = pane.myTree;
         if (tree != null) {
-          TreeUtil.collapseAll(tree, 2);
+          TreeUtil.collapseAll(tree, -1);
         }
       }
 
