@@ -1283,12 +1283,12 @@
                     </node>
                     <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7545884443035896314">
                       <link role="classConcept:3" targetNodeId="20.~ModelUtils" resolveInfo="ModelUtils" />
-                      <link role="baseMethodDeclaration:3" targetNodeId="20.~ModelUtils.loadZippedModels(java.io.File,jetbrains.mps.vcs.ModelUtils$Version[]):jetbrains.mps.smodel.SModel[]" resolveInfo="loadZippedModels" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="20.~ModelUtils.loadZippedModels(java.io.File,jetbrains.mps.vcs.Version[]):jetbrains.mps.smodel.SModel[]" resolveInfo="loadZippedModels" />
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="7545884443035896315">
                         <link role="variable:7" targetNodeId="7545884443035896305" resolveInfo="backupFile" />
                       </node>
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.EnumValuesExpression:3" id="7545884443035896316">
-                        <link role="enumClass:3" targetNodeId="20.~VcsHelper$VcsMergeVersion" resolveInfo="VcsHelper.VcsMergeVersion" />
+                        <link role="enumClass:3" targetNodeId="20.~VcsMergeVersion" resolveInfo="VcsMergeVersion" />
                       </node>
                     </node>
                   </node>
@@ -1301,8 +1301,8 @@
                       <node role="actualArgument:0" type="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression:3" id="7545884443035896321">
                         <node role="index:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7545884443035896322">
                           <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="7545884443035896323">
-                            <link role="enumConstantDeclaration:3" targetNodeId="20.~VcsHelper$VcsMergeVersion.MINE" resolveInfo="MINE" />
-                            <link role="enumClass:3" targetNodeId="20.~VcsHelper$VcsMergeVersion" resolveInfo="VcsHelper.VcsMergeVersion" />
+                            <link role="enumClass:3" targetNodeId="20.~VcsMergeVersion" resolveInfo="VcsMergeVersion" />
+                            <link role="enumConstantDeclaration:3" targetNodeId="20.~VcsMergeVersion.MINE" resolveInfo="MINE" />
                           </node>
                           <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7545884443035896324">
                             <link role="baseMethodDeclaration:3" targetNodeId="29.~Enum.ordinal():int" resolveInfo="ordinal" />
@@ -1315,8 +1315,8 @@
                       <node role="actualArgument:0" type="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression:3" id="7545884443035896326">
                         <node role="index:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7545884443035896327">
                           <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="7545884443035896328">
-                            <link role="enumConstantDeclaration:3" targetNodeId="20.~VcsHelper$VcsMergeVersion.BASE" resolveInfo="BASE" />
-                            <link role="enumClass:3" targetNodeId="20.~VcsHelper$VcsMergeVersion" resolveInfo="VcsHelper.VcsMergeVersion" />
+                            <link role="enumClass:3" targetNodeId="20.~VcsMergeVersion" resolveInfo="VcsMergeVersion" />
+                            <link role="enumConstantDeclaration:3" targetNodeId="20.~VcsMergeVersion.BASE" resolveInfo="BASE" />
                           </node>
                           <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7545884443035896329">
                             <link role="baseMethodDeclaration:3" targetNodeId="29.~Enum.ordinal():int" resolveInfo="ordinal" />
@@ -1329,8 +1329,8 @@
                       <node role="actualArgument:0" type="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression:3" id="7545884443035896331">
                         <node role="index:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7545884443035896332">
                           <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="7545884443035896333">
-                            <link role="enumConstantDeclaration:3" targetNodeId="20.~VcsHelper$VcsMergeVersion.REPOSITORY" resolveInfo="REPOSITORY" />
-                            <link role="enumClass:3" targetNodeId="20.~VcsHelper$VcsMergeVersion" resolveInfo="VcsHelper.VcsMergeVersion" />
+                            <link role="enumClass:3" targetNodeId="20.~VcsMergeVersion" resolveInfo="VcsMergeVersion" />
+                            <link role="enumConstantDeclaration:3" targetNodeId="20.~VcsMergeVersion.REPOSITORY" resolveInfo="REPOSITORY" />
                           </node>
                           <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7545884443035896334">
                             <link role="baseMethodDeclaration:3" targetNodeId="29.~Enum.ordinal():int" resolveInfo="ordinal" />

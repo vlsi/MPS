@@ -20,7 +20,6 @@ import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.openapi.vcs.merge.MergeData;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.annotation.Patch;
 import jetbrains.mps.vcs.MPSVcsUtil;
 import jetbrains.mps.vcs.ModelMergeRequestConstants;
 import jetbrains.mps.vcs.VcsMergeVersion;

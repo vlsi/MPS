@@ -4,8 +4,6 @@ package jetbrains.mps.vcs.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
-
-import jetbrains.mps.vcs.VcsMergeVersion;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -22,9 +20,10 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.vcs.ModelUtils;
-import jetbrains.mps.vcs.VcsHelper;
+import jetbrains.mps.vcs.VcsMergeVersion;
 import java.io.IOException;
 import com.intellij.openapi.ui.Messages;
+import jetbrains.mps.vcs.VcsHelper;
 import jetbrains.mps.generator.ModelDigestHelper;
 import jetbrains.mps.vfs.IFile;
 
