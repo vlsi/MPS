@@ -21,6 +21,7 @@ import com.intellij.openapi.vcs.merge.MergeProvider;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.util.CollectionUtil;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -34,6 +35,7 @@ public class MPSVcsHelperImpl extends AbstractVcsHelperImpl {
     myProject = project;
   }
 
+  @NotNull
   public List<VirtualFile> showMergeDialog(List<VirtualFile> files, final MergeProvider provider) {
     if (files.isEmpty()) return Collections.emptyList();
     MergeProvider providerDecorator = new MergeProviderDecorator(myProject, provider);
