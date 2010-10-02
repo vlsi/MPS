@@ -15,6 +15,8 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class Mapper_Test extends Util_Test {
   public void test_mapMethod() throws Exception {
@@ -629,5 +631,52 @@ __switch__:
         };
       }
     }).iterator(), 1, 2, 3, 4);
+  }
+
+  public void test_selectManyAdvancesTooEarly() throws Exception {
+    final List<Integer> test = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5, 6, 7, 8, 9);
+    final List<Integer> plusten = ListSequence.fromList(new ArrayList<Integer>());
+    final Wrappers._int idx = new Wrappers._int(0);
+    ListSequence.fromList(test).translate(new ITranslator2<Integer, Integer>() {
+      public Iterable<Integer> translate(final Integer i) {
+        return new Iterable<Integer>() {
+          public Iterator<Integer> iterator() {
+            return new YieldingIterator<Integer>() {
+              private int __CP__ = 0;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 2:
+                      this.__CP__ = 1;
+                      this.yield(i);
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while (true);
+                return false;
+              }
+            };
+          }
+        };
+      }
+    }).visitAll(new IVisitor<Integer>() {
+      public void visit(Integer i) {
+        if (++idx.value < ListSequence.fromList(test).count()) {
+          ListSequence.fromList(test).setElement(idx.value, ListSequence.fromList(test).getElement(idx.value) - idx.value);
+        }
+        ListSequence.fromList(plusten).addElement(i + 10);
+      }
+    });
+    Assert.assertEquals(ListSequence.fromListAndArray(new ArrayList<Integer>(), 11, 11, 11, 11, 11, 11, 11, 11, 11), plusten);
   }
 }

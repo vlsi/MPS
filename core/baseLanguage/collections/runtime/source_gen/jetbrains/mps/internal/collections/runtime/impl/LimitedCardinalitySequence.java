@@ -29,11 +29,12 @@ public class LimitedCardinalitySequence<U> extends Sequence<U> {
     private HasNextState hasNext = HasNextState.UNKNOWN;
 
     public LimitedCardinalityIterator() {
-      this.inputIt = input.iterator();
-      this.cardMap = new CardinalityMap<U>();
     }
 
     public boolean hasNext() {
+      if (inputIt == null) {
+        init();
+      }
       if (hasNext.unknown()) {
         moveToNext();
       }
@@ -41,15 +42,16 @@ public class LimitedCardinalitySequence<U> extends Sequence<U> {
     }
 
     public U next() {
+      if (inputIt == null) {
+        init();
+      }
       if (hasNext.unknown()) {
         moveToNext();
       }
       if (!((hasNext.hasNext()))) {
         throw new NoSuchElementException();
       }
-      U tmp = next;
-      moveToNext();
-      return tmp;
+      return this.clearNext();
     }
 
     public void remove() {
@@ -68,6 +70,18 @@ public class LimitedCardinalitySequence<U> extends Sequence<U> {
         }
       }
       cardMap.clear();
+    }
+
+    private U clearNext() {
+      U tmp = next;
+      this.next = null;
+      this.hasNext = HasNextState.UNKNOWN;
+      return tmp;
+    }
+
+    private void init() {
+      this.inputIt = input.iterator();
+      this.cardMap = new CardinalityMap<U>();
     }
   }
 }

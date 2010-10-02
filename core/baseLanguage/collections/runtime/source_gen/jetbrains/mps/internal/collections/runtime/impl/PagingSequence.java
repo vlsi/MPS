@@ -49,24 +49,26 @@ public class PagingSequence<U> extends Sequence<U> implements Iterable<U> {
     }
 
     public boolean hasNext() {
-      if (hasNext.unknown()) {
+      if (inputIt == null) {
         init();
+      }
+      if (hasNext.unknown()) {
         moveToNext();
       }
       return hasNext.hasNext();
     }
 
     public U next() {
-      if (hasNext.unknown()) {
+      if (inputIt == null) {
         init();
+      }
+      if (hasNext.unknown()) {
         moveToNext();
       }
       if (!((hasNext.hasNext()))) {
         throw new NoSuchElementException();
       }
-      U tmp = next;
-      moveToNext();
-      return tmp;
+      return this.clearNext();
     }
 
     public void remove() {
@@ -142,6 +144,13 @@ skipping:
         default:
           break;
       }
+    }
+
+    private U clearNext() {
+      U tmp = next;
+      this.next = null;
+      this.hasNext = HasNextState.UNKNOWN;
+      return tmp;
     }
 
     private boolean skipNext() {

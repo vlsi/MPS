@@ -21,7 +21,7 @@ public class SelectingSequence<U, V> extends AbstractChainedSequence<U, V> imple
 
   private class SelectingIterator implements Iterator<V> {
     private Iterator<U> inputIterator = null;
-    private boolean hasNext;
+    private HasNextState hasNext = HasNextState.UNKNOWN;
     private V next;
 
     private SelectingIterator() {
@@ -30,22 +30,24 @@ public class SelectingSequence<U, V> extends AbstractChainedSequence<U, V> imple
     public boolean hasNext() {
       if (inputIterator == null) {
         init();
+      }
+      if (hasNext.unknown()) {
         moveToNext();
       }
-      return hasNext;
+      return hasNext.hasNext();
     }
 
     public V next() {
       if (inputIterator == null) {
         init();
+      }
+      if (hasNext.unknown()) {
         moveToNext();
       }
-      if (!(hasNext)) {
+      if (!(hasNext.hasNext())) {
         throw new NoSuchElementException();
       }
-      V tmp = next;
-      moveToNext();
-      return tmp;
+      return this.clearNext();
     }
 
     public void remove() {
@@ -57,7 +59,7 @@ public class SelectingSequence<U, V> extends AbstractChainedSequence<U, V> imple
     }
 
     private void moveToNext() {
-      this.hasNext = false;
+      this.hasNext = HasNextState.AT_END;
       this.next = null;
       while (inputIterator.hasNext()) {
         V tmp = selector.invoke(inputIterator.next());
@@ -66,10 +68,17 @@ public class SelectingSequence<U, V> extends AbstractChainedSequence<U, V> imple
             continue;
           }
         }
-        this.hasNext = true;
+        this.hasNext = HasNextState.HAS_NEXT;
         this.next = tmp;
         break;
       }
+    }
+
+    private V clearNext() {
+      V tmp = next;
+      this.next = null;
+      this.hasNext = HasNextState.UNKNOWN;
+      return tmp;
     }
   }
 }
