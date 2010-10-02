@@ -24,7 +24,6 @@ import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
-import com.intellij.openapi.application.PathManager;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.diff.*;
@@ -44,7 +43,6 @@ import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.util.Comparing;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.util.Getter;
-import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.openapi.vcs.*;
 import com.intellij.openapi.vcs.actions.AnnotateToggleAction;
 import com.intellij.openapi.vcs.annotate.AnnotationProvider;
@@ -55,7 +53,6 @@ import com.intellij.openapi.vcs.changes.committed.*;
 import com.intellij.openapi.vcs.changes.ui.*;
 import com.intellij.openapi.vcs.ex.ProjectLevelVcsManagerEx;
 import com.intellij.openapi.vcs.history.*;
-import com.intellij.openapi.vcs.merge.MergeData;
 import com.intellij.openapi.vcs.merge.MergeProvider;
 import com.intellij.openapi.vcs.merge.MultipleFileMergeDialog;
 import com.intellij.openapi.vcs.versionBrowser.ChangeBrowserSettings;
@@ -75,18 +72,12 @@ import com.intellij.util.AsynchConsumer;
 import com.intellij.util.BufferedListConsumer;
 import com.intellij.util.Consumer;
 import com.intellij.util.ContentsUtil;
-import com.intellij.util.io.ZipUtil;
 import com.intellij.util.ui.ConfirmationDialog;
 import com.intellij.util.ui.ErrorTreeView;
 import com.intellij.util.ui.MessageCategory;
-import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.annotation.Patch;
-import jetbrains.mps.vcs.MPSVcsUtil;
-import jetbrains.mps.vcs.ModelMergeRequestConstants;
-import jetbrains.mps.vcs.VcsMergeVersion;
 import jetbrains.mps.vcs.VcsMigrationUtil;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
@@ -94,7 +85,6 @@ import org.jetbrains.annotations.Nullable;
 
 import java.awt.Component;
 import java.io.*;
-import java.nio.ByteBuffer;
 import java.text.MessageFormat;
 import java.util.*;
 
@@ -112,13 +102,54 @@ import java.util.*;
  * everywhere in this file
  */
 public class AbstractVcsHelperImpl extends AbstractVcsHelper {
-  private static final Logger LOG = Logger.getInstance("#com.intellij.openapi.vcs.impl.AbstractVcsHelperImpl");
-  private static final jetbrains.mps.logging.Logger MPS_LOG = jetbrains.mps.logging.Logger.getLogger(AbstractVcsHelperImpl.class);
+/**
+   * Patch by MPS in order to backup model before conflict resolution
+   */
+  @Patch
+  @NotNull
+  public List<VirtualFile> showMergeDialog(List<VirtualFile> files, final MergeProvider provider) {
+    if (files.isEmpty()) return Collections.emptyList();
+    // MPS Patch Start
+    // we create providerDecorator which does actual backup
+    MergeProvider providerDecorator = new MergeProviderDecorator(myProject, this, provider);
 
-  private final Project myProject;
+    // recheck files status
+    List<VirtualFile> toMerge = new ArrayList<VirtualFile>();
+    List<VirtualFile> alreadyResolved = new ArrayList<VirtualFile>();
+    for (VirtualFile f : files) {
+      if (VcsMigrationUtil.getHandler().isInConflict(VirtualFileUtils.toIFile(f), true)) {
+        toMerge.add(f);
+      } else {
+        alreadyResolved.add(f);
+      }
+    }
+    if (toMerge.isEmpty()) {
+      return alreadyResolved;
+    }
+    // on the next line originally provider were passed instead of provider decorator
+    final MultipleFileMergeDialog fileMergeDialog = new MultipleFileMergeDialog(myProject, toMerge, providerDecorator);
+    fileMergeDialog.show();
+    return CollectionUtil.union(fileMergeDialog.getProcessedFiles(), alreadyResolved);
+  }
 
-  public AbstractVcsHelperImpl(Project project) {
-    myProject = project;
+  @Patch
+  protected void removeContents(Content notToRemove, final String tabDisplayName) {
+    // MPS Patch Start
+    MessageView messageView = myProject.getComponent(jetbrains.mps.ide.messages.MessagesViewTool.class);
+    // MPS Patch End
+    Content[] contents = messageView.getContentManager().getContents();
+    for (Content content : contents) {
+      LOG.assertTrue(content != null);
+      if (content.isPinned()) continue;
+      if (tabDisplayName.equals(content.getDisplayName()) && content != notToRemove) {
+        ErrorTreeView listErrorView = (ErrorTreeView) content.getComponent();
+        if (listErrorView != null) {
+          if (messageView.getContentManager().removeContent(content, true)) {
+            content.release();
+          }
+        }
+      }
+    }
   }
 
   @Patch
@@ -146,6 +177,26 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
         });
       }
     }, VcsBundle.message("command.name.open.error.message.view"), null);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  private static final Logger LOG = Logger.getInstance("#com.intellij.openapi.vcs.impl.AbstractVcsHelperImpl");
+
+  private final Project myProject;
+
+  public AbstractVcsHelperImpl(Project project) {
+    myProject = project;
   }
 
   public void showFileHistory(final VcsHistoryProvider vcsHistoryProvider, final FilePath path, final AbstractVcs vcs,
@@ -409,26 +460,6 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
     }
   }
 
-  @Patch
-  protected void removeContents(Content notToRemove, final String tabDisplayName) {
-    // MPS Patch Start
-    MessageView messageView = myProject.getComponent(jetbrains.mps.ide.messages.MessagesViewTool.class);
-    // MPS Patch End
-    Content[] contents = messageView.getContentManager().getContents();
-    for (Content content : contents) {
-      LOG.assertTrue(content != null);
-      if (content.isPinned()) continue;
-      if (tabDisplayName.equals(content.getDisplayName()) && content != notToRemove) {
-        ErrorTreeView listErrorView = (ErrorTreeView) content.getComponent();
-        if (listErrorView != null) {
-          if (messageView.getContentManager().removeContent(content, true)) {
-            content.release();
-          }
-        }
-      }
-    }
-  }
-
   public List<VcsException> runTransactionRunnable(AbstractVcs vcs, TransactionRunnable runnable, Object vcsParameters) {
     List<VcsException> exceptions = new ArrayList<VcsException>();
 
@@ -643,153 +674,6 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
     }
   }
 
-  /**
-   * Patch by MPS in order to backup model before conflict resolution
-   */
-  @Patch
-  @NotNull
-  public List<VirtualFile> showMergeDialog(List<VirtualFile> files, final MergeProvider provider) {
-    return showMergeDialog(files, provider, true);
-  }
-
-  /**
-   * Severely patched by MPS
-   */
-  public List<VirtualFile> showMergeDialog(List<VirtualFile> files, final MergeProvider provider, boolean doStatusRecheck) {
-    if (files.isEmpty()) return Collections.emptyList();
-    // MPS Patch Start
-    // we create providerDecorator which does actual backup
-    MergeProvider providerDecorator = new MergeProvider() {
-      private File myBackup = null;
-
-      @NotNull
-      public MergeData loadRevisions(VirtualFile file) throws VcsException {
-        MergeData mergeData = provider.loadRevisions(file);
-        if (file.getFileType().equals(MPSFileTypeFactory.MODEL_FILE_TYPE)) {
-          String leftText = decodeContent(file, mergeData.CURRENT);
-          String rightText = decodeContent(file, mergeData.LAST);
-          String originalText = decodeContent(file, mergeData.ORIGINAL);
-          DiffRequestFactory diffRequestFactory = DiffRequestFactory.getInstance();
-          MergeRequest request = diffRequestFactory.createMergeRequest(leftText, rightText, originalText, file, myProject, ActionButtonPresentation.createApplyButton());
-          try {
-            myBackup = zipModel(mergeData, request.getContents(), file);
-          } catch (IOException e) {
-            LOG.error(e);
-          }
-        }
-        return mergeData;
-      }
-
-      public void conflictResolvedForFile(VirtualFile file) {
-        provider.conflictResolvedForFile(file);
-        if (myBackup != null && myBackup.exists()) {
-          try {
-            File tmp = FileUtil.createTmpDir();
-            ZipUtil.extract(myBackup, tmp, null);
-
-            // copy merge result
-            FileUtil.copyFile(new File(file.getPath()), new File(tmp + File.separator + file.getName() + ".result"));
-
-            // copy logfiles
-            File logsDir = new File(PathManager.getLogPath());
-            File[] logfiles = logsDir.listFiles(new FilenameFilter() {
-              public boolean accept(File dir, String name) {
-                return name.matches("mpsvcs\\.log(\\.1)*") || name.matches("idea\\.log(\\.1)*");
-              }
-            });
-            File tmpLogDir = new File(tmp + File.separator + "logs");
-            tmpLogDir.mkdir();
-            for (File logfile : logfiles) {
-              FileUtil.copyFile(logfile, new File(tmpLogDir + File.separator + logfile.getName()));
-            }
-
-            FileUtil.zip(tmp, myBackup);
-            FileUtil.delete(tmp);
-          } catch (IOException e) {
-            LOG.error(e);
-          }
-        }
-      }
-
-      public boolean isBinary(VirtualFile file) {
-        return provider.isBinary(file);
-      }
-    };
-
-    // recheck files status
-    List<VirtualFile> toMerge = new ArrayList<VirtualFile>();
-    List<VirtualFile> alreadyResolved = new ArrayList<VirtualFile>();
-    for (VirtualFile f : files) {
-      if (!doStatusRecheck || VcsMigrationUtil.getHandler().isInConflict(VirtualFileUtils.toIFile(f), true)) {
-        toMerge.add(f);
-      } else {
-        alreadyResolved.add(f);
-      }
-    }
-    if (toMerge.isEmpty()) {
-      MPS_LOG.debug("It seems that all files were already resolved " + alreadyResolved);
-      return alreadyResolved;
-    }
-    MPS_LOG.debug("Showing merge for files " + toMerge);
-    // on the next line originally provider were passed instead of provider decorator
-    final MultipleFileMergeDialog fileMergeDialog = new MultipleFileMergeDialog(myProject, toMerge, providerDecorator);
-    fileMergeDialog.show();
-    List<VirtualFile> resolved = CollectionUtil.union(fileMergeDialog.getProcessedFiles(), alreadyResolved);
-    MPS_LOG.debug("Merge finished with resolved files " + resolved);
-    return resolved;
-  }
-
-  // MPS Patch Start: several new helper methods for our new showMergeDialog
-
-  @Patch
-  public static File zipModel(MergeData request, DiffContent[] contents, VirtualFile file) throws IOException {
-    File tmp = FileUtil.createTmpDir();
-    writeContentsToFile(contents[ModelMergeRequestConstants.ORIGINAL], file, tmp, VcsMergeVersion.BASE.getSuffix());
-    writeContentsToFile(contents[ModelMergeRequestConstants.CURRENT], file, tmp, VcsMergeVersion.MINE.getSuffix());
-    writeContentsToFile(contents[ModelMergeRequestConstants.LAST_REVISION], file, tmp, VcsMergeVersion.REPOSITORY.getSuffix());
-    writeMetaInformation(request, file, tmp);
-    File zipfile = MPSVcsUtil.chooseZipFileNameForModelFile(file.getPath());
-    FileUtil.zip(tmp, zipfile);
-
-    FileUtil.delete(tmp);
-
-    return zipfile;
-  }
-
-  @Patch
-  private static void writeMetaInformation(MergeData mergeData, VirtualFile file, File tmpDir) throws IOException {
-    File baseFile = new File(tmpDir.getAbsolutePath() + File.separator + "info.txt");
-    baseFile.createNewFile();
-    PrintWriter stream = new PrintWriter(new FileOutputStream(baseFile));
-    stream.print("File: ");
-    stream.println(file.getPath());
-    stream.print("Date: ");
-    stream.println(Calendar.getInstance().getTime());
-    stream.print("Last Revision: ");
-    stream.println(mergeData.LAST_REVISION_NUMBER);
-    stream.close();
-  }
-
-  @Patch
-  private static void writeContentsToFile(DiffContent contents, VirtualFile file, File tmpDir, String suffix) throws IOException {
-    writeContentsToFile(contents.getBytes(), file.getName(), tmpDir, suffix);
-  }
-
-  @Patch
-  public static void writeContentsToFile(byte[] contents, String name, File tmpDir, String suffix) throws IOException {
-    File baseFile = new File(tmpDir.getAbsolutePath() + File.separator + name + "." + suffix);
-    baseFile.createNewFile();
-    OutputStream stream = new FileOutputStream(baseFile);
-    stream.write(contents);
-    stream.close();
-  }
-
-
-  @Patch
-  private static String decodeContent(final VirtualFile file, final byte[] content) {
-    return StringUtil.convertLineSeparators(file.getCharset().decode(ByteBuffer.wrap(content)).toString());
-  }
-  // MPS Patch End
 
   @NotNull
   public List<VirtualFile> showMergeDialog(final List<VirtualFile> files) {
@@ -926,4 +810,5 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
       return myRevisionsReturned;
     }
   }
+
 }
