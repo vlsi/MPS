@@ -19,6 +19,7 @@
   <unitInfo fileName="BooleanStyleSheetItem_Editor.java" startLine="138" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.BooleanStyleSheetItem_Editor$BooleanStyleSheetItem_Editor_replaceWith_StyleClassItem_cellMenu_a0a0" />
   <unitInfo fileName="SideTransformAnchorTagStyleClassItem_Editor.java" startLine="168" startPosition="0" endLine="176" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.SideTransformAnchorTagStyleClassItem_Editor$SideTransformAnchorTagStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu_a0a0" />
   <unitInfo fileName="CellModel_Collection_Editor.java" startLine="696" startPosition="0" endLine="704" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Collection_Editor$CellModel_Collection_usesFolding_cellMenu_a0b2d0" />
+  <unitInfo fileName="CellModel_RefNodeList_Editor.java" startLine="1111" startPosition="0" endLine="1119" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_RefNodeList_Editor$CellModel_RefNodeList_usesFolding_cellMenu_a0a1e3a" />
   <unitInfo fileName="Styles_StyleSheet.java" startLine="19" startPosition="56" endLine="29" endPosition="5" unitName="jetbrains.mps.lang.editor.editor.Styles_StyleSheet$1" />
   <unitInfo fileName="Styles_StyleSheet.java" startLine="30" startPosition="58" endLine="40" endPosition="5" unitName="jetbrains.mps.lang.editor.editor.Styles_StyleSheet$2" />
   <unitInfo fileName="Styles_StyleSheet.java" startLine="41" startPosition="61" endLine="51" endPosition="5" unitName="jetbrains.mps.lang.editor.editor.Styles_StyleSheet$3" />
@@ -88,6 +89,7 @@
   <unitInfo fileName="ColorStyleClassItem_Editor.java" startLine="214" startPosition="0" endLine="226" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.ColorStyleClassItem_Editor$ColorStyleClassItem_generic_cellMenu_c0d0" />
   <unitInfo fileName="CellActionMapDeclaration_Editor.java" startLine="262" startPosition="0" endLine="274" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellActionMapDeclaration_Editor$CellActionMapDeclaration_name_cellMenu_a0b0a" />
   <unitInfo fileName="CellModel_Collection_Editor.java" startLine="705" startPosition="0" endLine="717" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Collection_Editor$CellModel_Collection_generic_cellMenu_b0b2d0" />
+  <unitInfo fileName="CellModel_RefNodeList_Editor.java" startLine="1190" startPosition="0" endLine="1202" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_RefNodeList_Editor$CellModel_RefNodeList_generic_cellMenu_b0a1e3a" />
   <unitInfo fileName="CellKeyMapDeclaration_Editor.java" startLine="312" startPosition="0" endLine="325" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellKeyMapDeclaration_Editor$CellKeyMapDeclaration_name_postfixCellMenu_a0b0a" />
   <unitInfo fileName="CellMenuPart_Abstract_Editor.java" startLine="14" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellMenuPart_Abstract_Editor" />
   <unitInfo fileName="StyleSheetClass_RT.java" startLine="17" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.StyleSheetClass_RT$StyleSheetClass_RT_RIGHT_TRANSFORM" />
@@ -103,7 +105,7 @@
   <unitInfo fileName="ReadOnlyModelAccessor_Editor.java" startLine="15" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.ReadOnlyModelAccessor_Editor" />
   <unitInfo fileName="CellModel_Collection_Actions.java" startLine="20" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Collection_Actions$CellModel_Collection_Actions_DELETE" />
   <unitInfo fileName="FontStyleStyleClassItem_Editor.java" startLine="135" startPosition="0" endLine="165" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.FontStyleStyleClassItem_Editor$FontStyleStyleClassItem_generic_cellMenu_a0c0" />
-  <unitInfo fileName="CellModel_RefNodeList_Editor.java" startLine="1091" startPosition="0" endLine="1121" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_RefNodeList_Editor$CellModel_RefNodeList_generic_cellMenu_a0b6d0" />
+  <unitInfo fileName="CellModel_RefNodeList_Editor.java" startLine="1120" startPosition="0" endLine="1150" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_RefNodeList_Editor$CellModel_RefNodeList_generic_cellMenu_a0b6d0" />
   <unitInfo fileName="StyleSheetClassReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.StyleSheetClassReference_Editor$_Inline_m5ahkl_a0a" />
   <unitInfo fileName="ParametersInformationStyleClassItem_Editor.java" startLine="77" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.ParametersInformationStyleClassItem_Editor$_Inline_foagvc_a2a" />
   <unitInfo fileName="NavigatableReferenceStyleClassItem_Editor.java" startLine="77" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.NavigatableReferenceStyleClassItem_Editor$_Inline_8msx3u_a2a" />
@@ -112,7 +114,7 @@
   <unitInfo fileName="Style_Component.java" startLine="139" startPosition="0" endLine="171" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.Style_Component$_Inline_zdjsuv_a0a1a" />
   <unitInfo fileName="ParametersInformationQuery_Editor.java" startLine="344" startPosition="0" endLine="376" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.ParametersInformationQuery_Editor$_Inline_p9c0o3_a4d0" />
   <unitInfo fileName="CellModel_RefCell_Editor.java" startLine="481" startPosition="0" endLine="513" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_RefCell_Editor$_Inline_lfsepz_a0a0b1d0" />
-  <unitInfo fileName="CellModel_RefNodeList_Editor.java" startLine="1058" startPosition="0" endLine="1090" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_RefNodeList_Editor$_Inline_2v2794_a1l3a" />
+  <unitInfo fileName="CellModel_RefNodeList_Editor.java" startLine="1078" startPosition="0" endLine="1110" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_RefNodeList_Editor$_Inline_2v2794_a1l3a" />
   <unitInfo fileName="EditorComponentDeclaration_Editor.java" startLine="246" startPosition="0" endLine="279" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.EditorComponentDeclaration_Editor$_Inline_qbcy69_a1b1b0" />
   <unitInfo fileName="CellModel_Collection_Actions.java" startLine="15" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Collection_Actions" />
   <unitInfo fileName="CellMenuComponentFeature_Link_Editor.java" startLine="50" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellMenuComponentFeature_Link_Editor$_Inline_5mhiie_a0a" />
@@ -133,9 +135,9 @@
   <unitInfo fileName="CellModel_URL_Editor.java" startLine="487" startPosition="0" endLine="523" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_URL_Editor$_Inline_wgj6gq_a2a" />
   <unitInfo fileName="CellModel_Property_Editor.java" startLine="512" startPosition="0" endLine="548" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Property_Editor$_Inline_adk1cf_a1a3a" />
   <unitInfo fileName="CellModel_URL_Editor.java" startLine="524" startPosition="0" endLine="560" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_URL_Editor$_Inline_wgj6gq_a1a3a" />
-  <unitInfo fileName="CellModel_RefNodeList_Editor.java" startLine="947" startPosition="0" endLine="983" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_RefNodeList_Editor$_Inline_2v2794_a1a0c0" />
-  <unitInfo fileName="CellModel_RefNodeList_Editor.java" startLine="984" startPosition="0" endLine="1020" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_RefNodeList_Editor$_Inline_2v2794_a1a1c0" />
-  <unitInfo fileName="CellModel_RefNodeList_Editor.java" startLine="1021" startPosition="0" endLine="1057" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_RefNodeList_Editor$_Inline_2v2794_a1a3a" />
+  <unitInfo fileName="CellModel_RefNodeList_Editor.java" startLine="967" startPosition="0" endLine="1003" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_RefNodeList_Editor$_Inline_2v2794_a1a0c0" />
+  <unitInfo fileName="CellModel_RefNodeList_Editor.java" startLine="1004" startPosition="0" endLine="1040" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_RefNodeList_Editor$_Inline_2v2794_a1a1c0" />
+  <unitInfo fileName="CellModel_RefNodeList_Editor.java" startLine="1041" startPosition="0" endLine="1077" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_RefNodeList_Editor$_Inline_2v2794_a1a3a" />
   <unitInfo fileName="CellModel_Component_KeyMap.java" startLine="23" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Component_KeyMap$CellModel_Component_KeyMap_Action0" />
   <unitInfo fileName="StyleSheet_Editor.java" startLine="126" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.StyleSheet_Editor$styleClassListHandler_9d9hlb_b1a" />
   <unitInfo fileName="InlineStyleDeclaration_Editor.java" startLine="148" startPosition="0" endLine="185" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.InlineStyleDeclaration_Editor$styleItemListHandler_tl5ft1_b1a" />
@@ -153,7 +155,7 @@
   <unitInfo fileName="CellModel_Collection_Editor.java" startLine="658" startPosition="0" endLine="695" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Collection_Editor$childCellModelListHandler_cvgoyj_b0a" />
   <unitInfo fileName="CellModel_RefCell_Editor.java" startLine="366" startPosition="0" endLine="404" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_RefCell_Editor$_Inline_lfsepz_a2a" />
   <unitInfo fileName="CellModel_RefCell_Editor.java" startLine="442" startPosition="0" endLine="480" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_RefCell_Editor$_Inline_lfsepz_a1b3a" />
-  <unitInfo fileName="CellModel_RefNodeList_Editor.java" startLine="1122" startPosition="0" endLine="1160" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_RefNodeList_Editor$CellModel_RefNodeList_generic_cellMenu_a0c6d0" />
+  <unitInfo fileName="CellModel_RefNodeList_Editor.java" startLine="1151" startPosition="0" endLine="1189" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_RefNodeList_Editor$CellModel_RefNodeList_generic_cellMenu_a0c6d0" />
   <unitInfo fileName="EditorCellModel_Editor.java" startLine="16" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.EditorCellModel_Editor" />
   <unitInfo fileName="_CellModel_Common.java" startLine="12" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.editor.editor._CellModel_Common" />
   <unitInfo fileName="InlineEditorComponent_Editor.java" startLine="18" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.InlineEditorComponent_Editor" />
@@ -255,7 +257,7 @@
   <unitInfo fileName="CellModel_Property_Editor.java" startLine="29" startPosition="0" endLine="549" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Property_Editor" />
   <unitInfo fileName="CellModel_URL_Editor.java" startLine="29" startPosition="0" endLine="561" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_URL_Editor" />
   <unitInfo fileName="CellModel_Collection_Editor.java" startLine="45" startPosition="0" endLine="718" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_Collection_Editor" />
-  <unitInfo fileName="CellModel_RefNodeList_Editor.java" startLine="37" startPosition="0" endLine="1161" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_RefNodeList_Editor" />
+  <unitInfo fileName="CellModel_RefNodeList_Editor.java" startLine="39" startPosition="0" endLine="1203" endPosition="0" unitName="jetbrains.mps.lang.editor.editor.CellModel_RefNodeList_Editor" />
   <root nodeId="1078250851485">
     <nodeInfo nodeId="1214396913644" fileName="CellModel_Error_Editor.java" startLine="189" startPosition="107" endLine="190" endPosition="49" />
     <scopeInfo nodeId="1214396913643" fileName="CellModel_Error_Editor.java" startLine="189" startPosition="107" endLine="190" endPosition="49" />
@@ -498,40 +500,46 @@
     </scopeInfo>
   </root>
   <root nodeId="1182191264561">
-    <nodeInfo nodeId="1218239030901" fileName="CellModel_RefNodeList_Editor.java" startLine="919" startPosition="111" endLine="920" endPosition="77" />
-    <nodeInfo nodeId="6046489571270847691" fileName="CellModel_RefNodeList_Editor.java" startLine="923" startPosition="114" endLine="924" endPosition="63" />
-    <nodeInfo nodeId="1182191264577" fileName="CellModel_RefNodeList_Editor.java" startLine="927" startPosition="112" endLine="928" endPosition="79" />
-    <nodeInfo nodeId="6046489571270847702" fileName="CellModel_RefNodeList_Editor.java" startLine="931" startPosition="114" endLine="932" endPosition="63" />
-    <nodeInfo nodeId="1182191264592" fileName="CellModel_RefNodeList_Editor.java" startLine="935" startPosition="112" endLine="936" endPosition="82" />
-    <nodeInfo nodeId="928328222692015058" fileName="CellModel_RefNodeList_Editor.java" startLine="939" startPosition="113" endLine="940" endPosition="79" />
-    <nodeInfo nodeId="928328222692015532" fileName="CellModel_RefNodeList_Editor.java" startLine="943" startPosition="113" endLine="944" endPosition="79" />
-    <nodeInfo nodeId="4231890441199684733" fileName="CellModel_RefNodeList_Editor.java" startLine="1095" startPosition="105" endLine="1096" endPosition="73" />
-    <nodeInfo nodeId="4231890441199704377" fileName="CellModel_RefNodeList_Editor.java" startLine="1096" startPosition="73" endLine="1097" endPosition="154" />
-    <nodeInfo nodeId="4231890441199639112" fileName="CellModel_RefNodeList_Editor.java" startLine="1097" startPosition="154" endLine="1098" endPosition="20" />
-    <nodeInfo nodeId="4231890441199637160" fileName="CellModel_RefNodeList_Editor.java" startLine="1105" startPosition="163" endLine="1106" endPosition="83" />
-    <nodeInfo nodeId="4231890441200219630" fileName="CellModel_RefNodeList_Editor.java" startLine="1117" startPosition="67" endLine="1118" endPosition="21" />
-    <nodeInfo nodeId="4231890441200483237" fileName="CellModel_RefNodeList_Editor.java" startLine="1126" startPosition="105" endLine="1127" endPosition="75" />
-    <nodeInfo nodeId="4231890441200483247" fileName="CellModel_RefNodeList_Editor.java" startLine="1127" startPosition="75" endLine="1128" endPosition="101" />
-    <nodeInfo nodeId="4231890441200483243" fileName="CellModel_RefNodeList_Editor.java" startLine="1128" startPosition="101" endLine="1129" endPosition="20" />
-    <nodeInfo nodeId="4231890441200483275" fileName="CellModel_RefNodeList_Editor.java" startLine="1136" startPosition="164" endLine="1137" endPosition="94" />
-    <nodeInfo nodeId="4231890441200747056" fileName="CellModel_RefNodeList_Editor.java" startLine="1148" startPosition="68" endLine="1149" endPosition="29" />
-    <nodeInfo nodeId="4231890441200483273" fileName="CellModel_RefNodeList_Editor.java" startLine="1156" startPosition="71" endLine="1157" endPosition="27" />
-    <scopeInfo nodeId="1182948746817" fileName="CellModel_RefNodeList_Editor.java" startLine="919" startPosition="111" endLine="920" endPosition="77" />
-    <scopeInfo nodeId="6046489571270834062" fileName="CellModel_RefNodeList_Editor.java" startLine="923" startPosition="114" endLine="924" endPosition="63" />
-    <scopeInfo nodeId="1182191264576" fileName="CellModel_RefNodeList_Editor.java" startLine="927" startPosition="112" endLine="928" endPosition="79" />
-    <scopeInfo nodeId="6046489571270847701" fileName="CellModel_RefNodeList_Editor.java" startLine="931" startPosition="114" endLine="932" endPosition="63" />
-    <scopeInfo nodeId="1182191264591" fileName="CellModel_RefNodeList_Editor.java" startLine="935" startPosition="112" endLine="936" endPosition="82" />
-    <scopeInfo nodeId="928328222691997954" fileName="CellModel_RefNodeList_Editor.java" startLine="939" startPosition="113" endLine="940" endPosition="79" />
-    <scopeInfo nodeId="928328222692015531" fileName="CellModel_RefNodeList_Editor.java" startLine="943" startPosition="113" endLine="944" endPosition="79" />
-    <scopeInfo nodeId="4231890441199624612" fileName="CellModel_RefNodeList_Editor.java" startLine="1105" startPosition="163" endLine="1106" endPosition="83" />
-    <scopeInfo nodeId="4231890441200207456" fileName="CellModel_RefNodeList_Editor.java" startLine="1117" startPosition="67" endLine="1118" endPosition="21" />
-    <scopeInfo nodeId="4231890441200471062" fileName="CellModel_RefNodeList_Editor.java" startLine="1136" startPosition="164" endLine="1137" endPosition="94" />
-    <scopeInfo nodeId="4231890441200740444" fileName="CellModel_RefNodeList_Editor.java" startLine="1148" startPosition="68" endLine="1149" endPosition="29" />
-    <scopeInfo nodeId="4231890441200483272" fileName="CellModel_RefNodeList_Editor.java" startLine="1156" startPosition="71" endLine="1157" endPosition="27" />
-    <scopeInfo nodeId="4231890441199624610" fileName="CellModel_RefNodeList_Editor.java" startLine="1095" startPosition="105" endLine="1098" endPosition="20">
+    <nodeInfo nodeId="1218239030901" fileName="CellModel_RefNodeList_Editor.java" startLine="935" startPosition="111" endLine="936" endPosition="77" />
+    <nodeInfo nodeId="6046489571270847691" fileName="CellModel_RefNodeList_Editor.java" startLine="939" startPosition="114" endLine="940" endPosition="63" />
+    <nodeInfo nodeId="1182191264577" fileName="CellModel_RefNodeList_Editor.java" startLine="943" startPosition="112" endLine="944" endPosition="79" />
+    <nodeInfo nodeId="6046489571270847702" fileName="CellModel_RefNodeList_Editor.java" startLine="947" startPosition="114" endLine="948" endPosition="63" />
+    <nodeInfo nodeId="1182191264592" fileName="CellModel_RefNodeList_Editor.java" startLine="951" startPosition="112" endLine="952" endPosition="82" />
+    <nodeInfo nodeId="4601216887035995275" fileName="CellModel_RefNodeList_Editor.java" startLine="955" startPosition="113" endLine="956" endPosition="83" />
+    <nodeInfo nodeId="928328222692015058" fileName="CellModel_RefNodeList_Editor.java" startLine="959" startPosition="113" endLine="960" endPosition="79" />
+    <nodeInfo nodeId="928328222692015532" fileName="CellModel_RefNodeList_Editor.java" startLine="963" startPosition="113" endLine="964" endPosition="79" />
+    <nodeInfo nodeId="4601216887035995293" fileName="CellModel_RefNodeList_Editor.java" startLine="1115" startPosition="105" endLine="1116" endPosition="85" />
+    <nodeInfo nodeId="4231890441199684733" fileName="CellModel_RefNodeList_Editor.java" startLine="1124" startPosition="105" endLine="1125" endPosition="73" />
+    <nodeInfo nodeId="4231890441199704377" fileName="CellModel_RefNodeList_Editor.java" startLine="1125" startPosition="73" endLine="1126" endPosition="154" />
+    <nodeInfo nodeId="4231890441199639112" fileName="CellModel_RefNodeList_Editor.java" startLine="1126" startPosition="154" endLine="1127" endPosition="20" />
+    <nodeInfo nodeId="4231890441199637160" fileName="CellModel_RefNodeList_Editor.java" startLine="1134" startPosition="163" endLine="1135" endPosition="83" />
+    <nodeInfo nodeId="4231890441200219630" fileName="CellModel_RefNodeList_Editor.java" startLine="1146" startPosition="67" endLine="1147" endPosition="21" />
+    <nodeInfo nodeId="4231890441200483237" fileName="CellModel_RefNodeList_Editor.java" startLine="1155" startPosition="105" endLine="1156" endPosition="75" />
+    <nodeInfo nodeId="4231890441200483247" fileName="CellModel_RefNodeList_Editor.java" startLine="1156" startPosition="75" endLine="1157" endPosition="101" />
+    <nodeInfo nodeId="4231890441200483243" fileName="CellModel_RefNodeList_Editor.java" startLine="1157" startPosition="101" endLine="1158" endPosition="20" />
+    <nodeInfo nodeId="4231890441200483275" fileName="CellModel_RefNodeList_Editor.java" startLine="1165" startPosition="164" endLine="1166" endPosition="94" />
+    <nodeInfo nodeId="4231890441200747056" fileName="CellModel_RefNodeList_Editor.java" startLine="1177" startPosition="68" endLine="1178" endPosition="29" />
+    <nodeInfo nodeId="4231890441200483273" fileName="CellModel_RefNodeList_Editor.java" startLine="1185" startPosition="71" endLine="1186" endPosition="27" />
+    <nodeInfo nodeId="4601216887035995302" fileName="CellModel_RefNodeList_Editor.java" startLine="1194" startPosition="106" endLine="1195" endPosition="131" />
+    <scopeInfo nodeId="1182948746817" fileName="CellModel_RefNodeList_Editor.java" startLine="935" startPosition="111" endLine="936" endPosition="77" />
+    <scopeInfo nodeId="6046489571270834062" fileName="CellModel_RefNodeList_Editor.java" startLine="939" startPosition="114" endLine="940" endPosition="63" />
+    <scopeInfo nodeId="1182191264576" fileName="CellModel_RefNodeList_Editor.java" startLine="943" startPosition="112" endLine="944" endPosition="79" />
+    <scopeInfo nodeId="6046489571270847701" fileName="CellModel_RefNodeList_Editor.java" startLine="947" startPosition="114" endLine="948" endPosition="63" />
+    <scopeInfo nodeId="1182191264591" fileName="CellModel_RefNodeList_Editor.java" startLine="951" startPosition="112" endLine="952" endPosition="82" />
+    <scopeInfo nodeId="4601216887035995272" fileName="CellModel_RefNodeList_Editor.java" startLine="955" startPosition="113" endLine="956" endPosition="83" />
+    <scopeInfo nodeId="928328222691997954" fileName="CellModel_RefNodeList_Editor.java" startLine="959" startPosition="113" endLine="960" endPosition="79" />
+    <scopeInfo nodeId="928328222692015531" fileName="CellModel_RefNodeList_Editor.java" startLine="963" startPosition="113" endLine="964" endPosition="79" />
+    <scopeInfo nodeId="4601216887035995292" fileName="CellModel_RefNodeList_Editor.java" startLine="1115" startPosition="105" endLine="1116" endPosition="85" />
+    <scopeInfo nodeId="4231890441199624612" fileName="CellModel_RefNodeList_Editor.java" startLine="1134" startPosition="163" endLine="1135" endPosition="83" />
+    <scopeInfo nodeId="4231890441200207456" fileName="CellModel_RefNodeList_Editor.java" startLine="1146" startPosition="67" endLine="1147" endPosition="21" />
+    <scopeInfo nodeId="4231890441200471062" fileName="CellModel_RefNodeList_Editor.java" startLine="1165" startPosition="164" endLine="1166" endPosition="94" />
+    <scopeInfo nodeId="4231890441200740444" fileName="CellModel_RefNodeList_Editor.java" startLine="1177" startPosition="68" endLine="1178" endPosition="29" />
+    <scopeInfo nodeId="4231890441200483272" fileName="CellModel_RefNodeList_Editor.java" startLine="1185" startPosition="71" endLine="1186" endPosition="27" />
+    <scopeInfo nodeId="4601216887035995301" fileName="CellModel_RefNodeList_Editor.java" startLine="1194" startPosition="106" endLine="1195" endPosition="131" />
+    <scopeInfo nodeId="4231890441199624610" fileName="CellModel_RefNodeList_Editor.java" startLine="1124" startPosition="105" endLine="1127" endPosition="20">
       <varInfo nodeId="4231890441199684734" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="4231890441200471060" fileName="CellModel_RefNodeList_Editor.java" startLine="1126" startPosition="105" endLine="1129" endPosition="20">
+    <scopeInfo nodeId="4231890441200471060" fileName="CellModel_RefNodeList_Editor.java" startLine="1155" startPosition="105" endLine="1158" endPosition="20">
       <varInfo nodeId="4231890441200483238" varName="result" />
     </scopeInfo>
   </root>

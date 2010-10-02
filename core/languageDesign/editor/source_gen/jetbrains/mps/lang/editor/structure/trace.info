@@ -230,8 +230,8 @@
   <unitInfo fileName="CellKeyMapItem.java" startLine="13" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.CellKeyMapItem" />
   <unitInfo fileName="CellModel_Collection.java" startLine="12" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.CellModel_Collection" />
   <unitInfo fileName="ParametersInformationQuery.java" startLine="18" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.ParametersInformationQuery" />
-  <unitInfo fileName="CellModel_ListWithRole.java" startLine="10" startPosition="0" endLine="134" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" />
   <unitInfo fileName="_Colors_Enum.java" startLine="9" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.lang.editor.structure._Colors_Enum" />
+  <unitInfo fileName="CellModel_ListWithRole.java" startLine="10" startPosition="0" endLine="143" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" />
   <unitInfo fileName="EditorCellModel.java" startLine="13" startPosition="0" endLine="149" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.EditorCellModel" />
 </debugInfo>
 

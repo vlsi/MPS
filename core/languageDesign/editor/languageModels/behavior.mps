@@ -5465,6 +5465,32 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1239873867758" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="4601216887035799532">
+      <property name="name" value="isFoldingEnabled" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4601216887035799533" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="4601216887035799534" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4601216887035799535">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4601216887035799536">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.OrExpression:3" id="4601216887035799537">
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4601216887035799538">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4601216887035799539">
+                <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="4601216887035799540" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="4601216887035947634">
+                  <link role="link:16" targetNodeId="1.4601216887035799527:32" />
+                </node>
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation:16" id="4601216887035799542" />
+            </node>
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4601216887035799543">
+              <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="4601216887035799544" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="4601216887035799545">
+                <link role="property:16" targetNodeId="1.1160590307797:32" resolveInfo="usesFolding" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1239873372472">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1239873372473" />
     </node>

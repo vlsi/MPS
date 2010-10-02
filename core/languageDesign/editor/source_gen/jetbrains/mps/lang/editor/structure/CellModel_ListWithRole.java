@@ -21,6 +21,7 @@ public class CellModel_ListWithRole extends CellModel_WithRole {
   public static final String CELL_LAYOUT = "cellLayout";
   public static final String SEPARATOR_STYLE = "separatorStyle";
   public static final String SEPARATOR_TEXT_QUERY = "separatorTextQuery";
+  public static final String USES_FOLDING_CONDITION = "usesFoldingCondition";
 
   public CellModel_ListWithRole(SNode node) {
     super(node);
@@ -121,6 +122,14 @@ public class CellModel_ListWithRole extends CellModel_WithRole {
 
   public void setSeparatorTextQuery(QueryFunction_SeparatorText node) {
     super.setChild(CellModel_ListWithRole.SEPARATOR_TEXT_QUERY, node);
+  }
+
+  public QueryFunction_NodeCondition getUsesFoldingCondition() {
+    return (QueryFunction_NodeCondition) this.getChild(QueryFunction_NodeCondition.class, CellModel_ListWithRole.USES_FOLDING_CONDITION);
+  }
+
+  public void setUsesFoldingCondition(QueryFunction_NodeCondition node) {
+    super.setChild(CellModel_ListWithRole.USES_FOLDING_CONDITION, node);
   }
 
   public static CellModel_ListWithRole newInstance(SModel sm, boolean init) {

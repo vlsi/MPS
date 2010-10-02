@@ -34,11 +34,11 @@
   <unitInfo fileName="CellModel_Alternation_Behavior.java" startLine="7" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_Alternation_Behavior" />
   <unitInfo fileName="CellModel_NonEmptyProperty_Behavior.java" startLine="7" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_NonEmptyProperty_Behavior" />
   <unitInfo fileName="StyleSheet_Behavior.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.StyleSheet_Behavior" />
-  <unitInfo fileName="CellModel_ListWithRole_Behavior.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_ListWithRole_Behavior" />
   <unitInfo fileName="CellMenuPart_ReplaceChild_Item_Create_Behavior.java" startLine="27" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceChild_Item_Create_Behavior$QuotationClass_jf8h0a_a0e0b" />
   <unitInfo fileName="CellMenuPart_ReplaceChild_Group_Create_Behavior.java" startLine="27" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceChild_Group_Create_Behavior$QuotationClass_tzpw84_a0e0b" />
   <unitInfo fileName="AbstractComponent_Behavior.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.AbstractComponent_Behavior" />
   <unitInfo fileName="CellMenuDescriptor_Behavior.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellMenuDescriptor_Behavior" />
+  <unitInfo fileName="CellModel_ListWithRole_Behavior.java" startLine="10" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_ListWithRole_Behavior" />
   <unitInfo fileName="CellModel_Component_Behavior.java" startLine="10" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_Component_Behavior" />
   <unitInfo fileName="CellModel_Property_Behavior.java" startLine="11" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellModel_Property_Behavior" />
   <unitInfo fileName="CellKeyMapKeystroke_Behavior.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.CellKeyMapKeystroke_Behavior" />
@@ -870,10 +870,12 @@
     <nodeInfo nodeId="1239873851199" fileName="CellModel_ListWithRole_Behavior.java" startLine="14" startPosition="71" endLine="15" endPosition="283" />
     <nodeInfo nodeId="1239873867715" fileName="CellModel_ListWithRole_Behavior.java" startLine="18" startPosition="75" endLine="19" endPosition="289" />
     <nodeInfo nodeId="1239873867739" fileName="CellModel_ListWithRole_Behavior.java" startLine="22" startPosition="73" endLine="23" endPosition="288" />
+    <nodeInfo nodeId="4601216887035799536" fileName="CellModel_ListWithRole_Behavior.java" startLine="26" startPosition="83" endLine="27" endPosition="146" />
     <scopeInfo nodeId="1239873372473" fileName="CellModel_ListWithRole_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
     <scopeInfo nodeId="1239873472751" fileName="CellModel_ListWithRole_Behavior.java" startLine="14" startPosition="71" endLine="15" endPosition="283" />
     <scopeInfo nodeId="1239873867714" fileName="CellModel_ListWithRole_Behavior.java" startLine="18" startPosition="75" endLine="19" endPosition="289" />
     <scopeInfo nodeId="1239873867738" fileName="CellModel_ListWithRole_Behavior.java" startLine="22" startPosition="73" endLine="23" endPosition="288" />
+    <scopeInfo nodeId="4601216887035799535" fileName="CellModel_ListWithRole_Behavior.java" startLine="26" startPosition="83" endLine="27" endPosition="146" />
   </root>
   <root nodeId="3696012239575646494">
     <nodeInfo nodeId="7838995302459026422" fileName="CellModel_URL_Behavior.java" startLine="18" startPosition="77" endLine="19" endPosition="116" />

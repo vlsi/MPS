@@ -875,6 +875,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.structure.CellModel_WithRole" />
     <classNode dependClassName="jetbrains.mps.lang.editor.structure.EditorCellModel" />
     <classNode dependClassName="jetbrains.mps.lang.editor.structure.InlineStyleDeclaration" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" />
     <classNode dependClassName="jetbrains.mps.lang.editor.structure.QueryFunction_NodeFactory" />
     <classNode dependClassName="jetbrains.mps.lang.editor.structure.QueryFunction_SeparatorText" />
     <classNode dependClassName="jetbrains.mps.lang.editor.structure._Layout_Constraints_Enum" />

@@ -1775,6 +1775,11 @@
       <property name="role:0" value="separatorTextQuery" />
       <link role="target:0" targetNodeId="709996738298806197:32" resolveInfo="QueryFunction_SeparatorText" />
     </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="4601216887035799527">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="usesFoldingCondition" />
+      <link role="target:0" targetNodeId="1142886221719:32" resolveInfo="QueryFunction_NodeCondition" />
+    </node>
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1140524450554">
       <property name="name:0" value="vertical" />
       <property name="propertyType:0" value="boolean" />
