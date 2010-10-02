@@ -47,6 +47,15 @@ public class Cycles_Test extends TestCase {
         return it;
       }
     }, false));
+    Assert.assertSame(0, ListSequence.fromList(cycles).count());
+    cycles = cd.findCycles(graph.getVertices());
+    Assert.assertSame(0, ListSequence.fromList(cycles).count());
+    cycles = cd.findCycles(Sequence.fromIterable(graph.getVertices()).sort(new ISelector<String, Comparable<?>>() {
+      public Comparable<?> select(String it) {
+        return ((Object) it).hashCode();
+      }
+    }, true));
+    Assert.assertSame(0, ListSequence.fromList(cycles).count());
   }
 
   public void test_fourCycles() throws Exception {

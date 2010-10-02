@@ -5,16 +5,37 @@ package jetbrains.mps.make.runtime.internal.util;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import java.util.List;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import java.util.List;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public abstract class CycleDetector<V> {
-  private Map<V, CycleDetector.Data> dataMap = MapSequence.fromMap(new HashMap<V, CycleDetector.Data>());
+  private Map<V, CycleDetector.Wrapper<V>> wrapMap = MapSequence.fromMap(new HashMap<V, CycleDetector.Wrapper<V>>());
+  private _FunctionTypes._return_P1_E0<? extends Iterable<CycleDetector.Wrapper<V>>, ? super CycleDetector.Wrapper<V>> forward = new _FunctionTypes._return_P1_E0<ISequence<CycleDetector.Wrapper<V>>, CycleDetector.Wrapper<V>>() {
+    public ISequence<CycleDetector.Wrapper<V>> invoke(CycleDetector.Wrapper<V> d) {
+      return Sequence.fromIterable(forwardEdges(d.vertex)).select(new ISelector<V, CycleDetector.Wrapper<V>>() {
+        public CycleDetector.Wrapper<V> select(V v) {
+          return MapSequence.fromMap(wrapMap).get(v);
+        }
+      });
+    }
+  };
+  private _FunctionTypes._return_P1_E0<? extends Iterable<CycleDetector.Wrapper<V>>, ? super CycleDetector.Wrapper<V>> backward = new _FunctionTypes._return_P1_E0<ISequence<CycleDetector.Wrapper<V>>, CycleDetector.Wrapper<V>>() {
+    public ISequence<CycleDetector.Wrapper<V>> invoke(CycleDetector.Wrapper<V> d) {
+      return Sequence.fromIterable(backwardEdges(d.vertex)).select(new ISelector<V, CycleDetector.Wrapper<V>>() {
+        public CycleDetector.Wrapper<V> select(V v) {
+          return MapSequence.fromMap(wrapMap).get(v);
+        }
+      });
+    }
+  };
 
   public CycleDetector() {
   }
@@ -24,113 +45,163 @@ public abstract class CycleDetector<V> {
   public abstract Iterable<V> backwardEdges(V v);
 
   public List<List<V>> findCycles(Iterable<V> vertices) {
-    this.init(vertices);
-    this.calcTimes(vertices);
-    return this.collectCycles(vertices);
+    Iterable<CycleDetector.Wrapper<V>> datas = this.init(vertices);
+    this.calcTimes(datas);
+    return this.collectCycles(datas);
   }
 
-  private void init(Iterable<V> vertices) {
-    MapSequence.fromMap(dataMap).clear();
-    Sequence.fromIterable(vertices).visitAll(new IVisitor<V>() {
-      public void visit(V v) {
-        MapSequence.fromMap(dataMap).put(v, new CycleDetector.Data());
+  private Iterable<CycleDetector.Wrapper<V>> init(Iterable<V> vertices) {
+    return Sequence.fromIterable(vertices).select(new ISelector<V, CycleDetector.Wrapper<V>>() {
+      public CycleDetector.Wrapper<V> select(V v) {
+        CycleDetector.Wrapper<V> data = new CycleDetector.Wrapper<V>(v);
+        MapSequence.fromMap(wrapMap).put(v, data);
+        return data;
       }
-    });
+    }).toListSequence();
   }
 
-  private void calcTimes(Iterable<V> vertices) {
+  private void calcTimes(Iterable<CycleDetector.Wrapper<V>> ws) {
     final Wrappers._int time = new Wrappers._int(0);
-    Sequence.fromIterable(vertices).visitAll(new IVisitor<V>() {
-      public void visit(V v) {
-        if (CycleDetector.Color.WHITE == MapSequence.fromMap(dataMap).get(v).color) {
-          time.value = visitForward(v, time.value);
-        }
+    Sequence.fromIterable(ws).where(new IWhereFilter<CycleDetector.Wrapper<V>>() {
+      public boolean accept(CycleDetector.Wrapper<V> w) {
+        return !(w.entered);
       }
-    });
-  }
-
-  private int visitForward(V v, int time) {
-    final Wrappers._int _time = new Wrappers._int(time);
-    CycleDetector.Data data = MapSequence.fromMap(dataMap).get(v);
-    data.color = CycleDetector.Color.GRAY;
-    data.startTime = ++_time.value;
-    Sequence.fromIterable(forwardEdges(v)).visitAll(new IVisitor<V>() {
-      public void visit(V next) {
-        if (CycleDetector.Color.WHITE == MapSequence.fromMap(dataMap).get(next).color) {
-          _time.value = visitForward(next, _time.value);
-        }
-      }
-    });
-    data.color = CycleDetector.Color.BLACK;
-    data.endTime = ++_time.value;
-    return _time.value;
-  }
-
-  private List<List<V>> collectCycles(Iterable<V> vertices) {
-    final List<List<V>> cycles = ListSequence.fromList(new ArrayList<List<V>>());
-    Sequence.fromIterable(vertices).sort(new ISelector<V, Comparable<?>>() {
-      public Comparable<?> select(V v) {
-        return MapSequence.fromMap(dataMap).get(v).endTime;
-      }
-    }, false).visitAll(new IVisitor<V>() {
-      public void visit(V v) {
-        if (CycleDetector.Color.BLACK == MapSequence.fromMap(dataMap).get(v).color) {
-          visitBackward(v);
-          if (ListSequence.fromList(MapSequence.fromMap(dataMap).get(v).successors).isNotEmpty()) {
-            List<V> cycle = ListSequence.fromListAndArray(new ArrayList<V>(), v);
-            collectSuccessors(v, cycle);
-            ListSequence.fromList(cycles).addElement(cycle);
+    }).visitAll(new IVisitor<CycleDetector.Wrapper<V>>() {
+      public void visit(CycleDetector.Wrapper<V> w) {
+        time.value = dfsVisitFold(w, time.value, new _FunctionTypes._return_P2_E0<Integer, CycleDetector.Wrapper<V>, Integer>() {
+          public Integer invoke(CycleDetector.Wrapper<V> ww, Integer t) {
+            return ww.setStartTime(++t);
           }
+        }, new _FunctionTypes._return_P2_E0<Integer, CycleDetector.Wrapper<V>, Integer>() {
+          public Integer invoke(CycleDetector.Wrapper<V> ww, Integer t) {
+            return ww.setEndTime(++t);
+          }
+        }, CycleDetector.this.forward);
+      }
+    });
+    Sequence.fromIterable(ws).visitAll(new IVisitor<CycleDetector.Wrapper<V>>() {
+      public void visit(CycleDetector.Wrapper<V> w) {
+        w.clear();
+      }
+    });
+  }
+
+  private <T> T dfsVisitFold(CycleDetector.Wrapper<V> w, T seed, final _FunctionTypes._return_P2_E0<? extends T, ? super CycleDetector.Wrapper<V>, ? super T> foldBefore, final _FunctionTypes._return_P2_E0<? extends T, ? super CycleDetector.Wrapper<V>, ? super T> foldAfter, final _FunctionTypes._return_P1_E0<? extends Iterable<CycleDetector.Wrapper<V>>, ? super CycleDetector.Wrapper<V>> edges) {
+    final Wrappers._T<T> _seed = new Wrappers._T<T>(seed);
+    w.enter();
+    _seed.value = foldBefore.invoke(w, _seed.value);
+    Sequence.fromIterable(edges.invoke(w)).where(new IWhereFilter<CycleDetector.Wrapper<V>>() {
+      public boolean accept(CycleDetector.Wrapper<V> ww) {
+        return !(ww.entered);
+      }
+    }).visitAll(new IVisitor<CycleDetector.Wrapper<V>>() {
+      public void visit(CycleDetector.Wrapper<V> ww) {
+        _seed.value = CycleDetector.this.<T>dfsVisitFold(ww, _seed.value, foldBefore, foldAfter, edges);
+      }
+    });
+    w.exit();
+    _seed.value = foldAfter.invoke(w, _seed.value);
+    return _seed.value;
+  }
+
+  private void dfsVisitProc(CycleDetector.Wrapper<V> w, final _FunctionTypes._void_P1_E0<? super CycleDetector.Wrapper<V>> procBefore, final _FunctionTypes._void_P1_E0<? super CycleDetector.Wrapper<V>> procAfter, final _FunctionTypes._return_P1_E0<? extends Iterable<CycleDetector.Wrapper<V>>, ? super CycleDetector.Wrapper<V>> edges) {
+    w.enter();
+    procBefore.invoke(w);
+    Sequence.fromIterable(edges.invoke(w)).where(new IWhereFilter<CycleDetector.Wrapper<V>>() {
+      public boolean accept(CycleDetector.Wrapper<V> ww) {
+        return !(ww.entered);
+      }
+    }).visitAll(new IVisitor<CycleDetector.Wrapper<V>>() {
+      public void visit(CycleDetector.Wrapper<V> ww) {
+        CycleDetector.this.dfsVisitProc(ww, procBefore, procAfter, edges);
+
+      }
+    });
+    w.exit();
+    procAfter.invoke(w);
+  }
+
+  private List<List<V>> collectCycles(Iterable<CycleDetector.Wrapper<V>> ws) {
+    final List<List<V>> cycles = ListSequence.fromList(new ArrayList<List<V>>());
+    Sequence.fromIterable(ws).sort(new ISelector<CycleDetector.Wrapper<V>, Comparable<?>>() {
+      public Comparable<?> select(CycleDetector.Wrapper<V> w) {
+        return w.endTime;
+      }
+    }, false).where(new IWhereFilter<CycleDetector.Wrapper<V>>() {
+      public boolean accept(CycleDetector.Wrapper<V> w) {
+        return !(w.entered);
+      }
+    }).visitAll(new IVisitor<CycleDetector.Wrapper<V>>() {
+      public void visit(final CycleDetector.Wrapper<V> w) {
+        dfsVisitProc(w, new _FunctionTypes._void_P1_E0<CycleDetector.Wrapper<V>>() {
+          public void invoke(CycleDetector.Wrapper<V> ww) {
+          }
+        }, new _FunctionTypes._void_P1_E0<CycleDetector.Wrapper<V>>() {
+          public void invoke(CycleDetector.Wrapper<V> ww) {
+            w.successor(ww);
+          }
+        }, backward);
+        if (ListSequence.fromList(w.successors).isNotEmpty()) {
+          List<V> cycle = ListSequence.fromListAndArray(new ArrayList<V>(), w.vertex);
+          collectSuccessors(w, cycle);
+          ListSequence.fromList(cycles).addElement(cycle);
         }
       }
     });
     return cycles;
   }
 
-  private void collectSuccessors(V v, final List<V> list) {
-    ListSequence.fromList(MapSequence.fromMap(dataMap).get(v).successors).visitAll(new IVisitor<V>() {
-      public void visit(V succ) {
-        ListSequence.fromList(list).addElement(succ);
-        collectSuccessors(succ, list);
+  private void collectSuccessors(CycleDetector.Wrapper<V> w, final List<V> list) {
+    ListSequence.fromList(w.successors).select(new ISelector<V, CycleDetector.Wrapper<V>>() {
+      public CycleDetector.Wrapper<V> select(V succ) {
+        return MapSequence.fromMap(wrapMap).get(succ);
+      }
+    }).visitAll(new IVisitor<CycleDetector.Wrapper<V>>() {
+      public void visit(CycleDetector.Wrapper<V> ww) {
+        ListSequence.fromList(list).addElement(ww.vertex);
+        collectSuccessors(ww, list);
       }
     });
 
   }
 
-  private void visitBackward(final V v) {
-    CycleDetector.Data data = MapSequence.fromMap(dataMap).get(v);
-    data.color = CycleDetector.Color.GRAY;
-    Sequence.fromIterable(backwardEdges(v)).sort(new ISelector<V, Comparable<?>>() {
-      public Comparable<?> select(V prev) {
-        return MapSequence.fromMap(dataMap).get(prev).endTime;
-      }
-    }, false).visitAll(new IVisitor<V>() {
-      public void visit(V prev) {
-        if (CycleDetector.Color.BLACK == MapSequence.fromMap(dataMap).get(prev).color) {
-          ListSequence.fromList(MapSequence.fromMap(dataMap).get(v).successors).addElement(prev);
-          visitBackward(prev);
-        }
-      }
-    });
-    data.color = CycleDetector.Color.WHITE;
-  }
-
-  private static   enum Color {
-    WHITE(),
-    GRAY(),
-    BLACK();
-
-    Color() {
-    }
-  }
-
-  private class Data {
-    private CycleDetector.Color color = CycleDetector.Color.WHITE;
+  private static class Wrapper<V> {
+    private V vertex;
     private int startTime = 0;
     private int endTime = 0;
+    private boolean entered = false;
+    private boolean exited = false;
     private List<V> successors = ListSequence.fromList(new ArrayList<V>());
 
-    private Data() {
+    private Wrapper(V v) {
+      this.vertex = v;
+    }
+
+    private int setStartTime(int t) {
+      return (this.startTime = t);
+    }
+
+    private int setEndTime(int t) {
+      return (this.endTime = t);
+    }
+
+    private void successor(CycleDetector.Wrapper<V> succ) {
+      if (this != succ) {
+        ListSequence.fromList(this.successors).addElement(succ.vertex);
+      }
+    }
+
+    private void enter() {
+      this.entered = true;
+    }
+
+    private void exit() {
+      this.exited = true;
+    }
+
+    private void clear() {
+      this.entered = false;
+      this.exited = false;
     }
   }
 }
