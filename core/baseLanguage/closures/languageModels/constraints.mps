@@ -275,14 +275,17 @@
                           </node>
                         </node>
                         <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="2978005800837019539">
-                          <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall:3" id="1222884493209">
-                            <link role="baseMethodDeclaration:3" targetNodeId="1201536134312:2" resolveInfo="getTypeCoercedToClassifierType" />
-                            <node role="actualArgument:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="1222884536642">
-                              <link role="concept:16" targetNodeId="6.1068431790189:3" resolveInfo="Type" />
-                              <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1222884497760">
-                                <link role="variableDeclaration:3" targetNodeId="1222884459490:2" resolveInfo="arg" />
+                          <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2611988743427282528">
+                            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall:3" id="1222884493209">
+                              <link role="baseMethodDeclaration:3" targetNodeId="1201536134312:2" resolveInfo="getTypeCoercedToClassifierType" />
+                              <node role="actualArgument:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="1222884536642">
+                                <link role="concept:16" targetNodeId="6.1068431790189:3" resolveInfo="Type" />
+                                <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1222884497760">
+                                  <link role="variableDeclaration:3" targetNodeId="1222884459490:2" resolveInfo="arg" />
+                                </node>
                               </node>
                             </node>
+                            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_CopyOperation:16" id="2611988743427317222" />
                           </node>
                         </node>
                       </node>

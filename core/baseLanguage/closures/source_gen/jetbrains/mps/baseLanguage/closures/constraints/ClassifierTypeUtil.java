@@ -45,7 +45,7 @@ public class ClassifierTypeUtil {
       SNode res = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.MeetType", null);
       for (SNode arg : SLinkOperations.getTargets(SNodeOperations.cast(purified, "jetbrains.mps.lang.typesystem.structure.MeetType"), "argument", true)) {
         if (SNodeOperations.isInstanceOf(arg, "jetbrains.mps.baseLanguage.structure.Type")) {
-          ListSequence.fromList(SLinkOperations.getTargets(res, "argument", true)).addElement(getTypeCoercedToClassifierType(SNodeOperations.cast(arg, "jetbrains.mps.baseLanguage.structure.Type")));
+          ListSequence.fromList(SLinkOperations.getTargets(res, "argument", true)).addElement(SNodeOperations.copyNode(getTypeCoercedToClassifierType(SNodeOperations.cast(arg, "jetbrains.mps.baseLanguage.structure.Type"))));
         } else {
           Logger.getLogger(ClassifierTypeUtil.class).warning("Argument of an instance of MEET type is not a subconcept of Type");
         }
