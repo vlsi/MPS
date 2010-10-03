@@ -469,6 +469,11 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.debug.api.integration.ui.breakpoint.BreakpointViewSettingsComponent</implementation-class>
+      <skipForDummyProject/>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.debug.api.DebugSessionManagerComponent</implementation-class>
       <skipForDummyProject/>
     </component>

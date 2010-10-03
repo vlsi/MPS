@@ -22,13 +22,13 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.CheckBoxNodeRenderer.NodeData;
 import jetbrains.mps.ide.ui.MPSTree;
+import jetbrains.mps.ide.ui.MPSTree.TreeState;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -39,7 +39,6 @@ import javax.swing.tree.TreePath;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
 public class BreakpointsTree extends BreakpointsView {
   private final IOperationContext myContext;
@@ -48,11 +47,16 @@ public class BreakpointsTree extends BreakpointsView {
   private final GroupKind myModelKind = new ModelGroupKind();
   private final GroupKind myRootKind = new RootGroupKind();
   private Collection<BreakpointNodeData> myData;
+  @NonNls
+  private static final String IS_VISIBLE = "_IS_VISIBLE";
+  @NonNls
+  private static final String BREAKPOINTS_TREE_STATE = "BREAKPOINTS_TREE_STATE";
 
   public BreakpointsTree(IOperationContext context, BreakpointManagerComponent breakpointsManager) {
     super(breakpointsManager);
     myContext = context;
     updateBreakpointsData();
+    updateView();
     myTree = new GroupedTree<BreakpointNodeData>(myContext) {
       protected BreakpointTreeNode createDataNode(IOperationContext operationContext, BreakpointNodeData data) {
         return new BreakpointTreeNode(operationContext, data);
@@ -69,16 +73,29 @@ public class BreakpointsTree extends BreakpointsView {
       }
     };
     myTree.setRootVisible(false);
+    myTree.setShowsRootHandles(true);
     myTree.rebuildLater();
-    ThreadUtils.runInUIThreadNoWait(new Runnable() {
-      @Override
-      public void run() {
-        myTree.expandAll();
-      }
-    });
+    TreeState treeState = BreakpointViewSettingsComponent.getInstance(myContext.getProject()).getTreeState();
+    if (treeState != null) {
+      myTree.loadState(treeState);
+    } else {
+      expandAll();
+    }
   }
 
-  private void updateBreakpointsData(){
+  @Override
+  public void saveState() {
+    super.saveState();
+    BreakpointViewSettingsComponent.getInstance(myContext.getProject()).setTreeState(myTree.saveState());
+  }
+
+  private void updateView() {
+    myModelKind.setVisible(BreakpointViewSettingsComponent.getInstance(myContext.getProject()).isGroupByModel());
+    myModuleKind.setVisible(BreakpointViewSettingsComponent.getInstance(myContext.getProject()).isGroupByModule());
+    myRootKind.setVisible(BreakpointViewSettingsComponent.getInstance(myContext.getProject()).isGroupByRoot());
+  }
+
+  private void updateBreakpointsData() {
     Collection<BreakpointNodeData> data = new ArrayList<BreakpointNodeData>();
     for (AbstractMPSBreakpoint bp : getBreakpointsList()) {
       data.add(new BreakpointNodeData(bp));
@@ -94,14 +111,17 @@ public class BreakpointsTree extends BreakpointsView {
   // todo: refactor
   public void toggleModuleGroup(boolean value) {
     myModuleKind.setVisible(value);
+    BreakpointViewSettingsComponent.getInstance(myContext.getProject()).setGroupByModule(value);
   }
 
   public void toggleRootGroup(boolean value) {
     myRootKind.setVisible(value);
+    BreakpointViewSettingsComponent.getInstance(myContext.getProject()).setGroupByRoot(value);
   }
 
   public void toggleModelGroup(boolean value) {
     myModelKind.setVisible(value);
+    BreakpointViewSettingsComponent.getInstance(myContext.getProject()).setGroupByModel(value);
   }
 
   public boolean isModuleGroupVisible() {
@@ -135,11 +155,31 @@ public class BreakpointsTree extends BreakpointsView {
     if (MPS_BREAKPOINT.is(dataId)) {
       if (node instanceof BreakpointTreeNode) {
         BreakpointTreeNode breakpointNode = (BreakpointTreeNode) node;
-        return ((BreakpointNodeData)breakpointNode.getUserObject()).myBreakpoint;
+        return ((BreakpointNodeData) breakpointNode.getUserObject()).myBreakpoint;
       }
       return null;
     }
     return null;
+  }
+
+  public void expandAll() {
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+      @Override
+      public void run() {
+        myTree.expandAll();
+      }
+    });
+  }
+
+  public void collapseAll() {
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+      @Override
+      public void run() {
+        for (int i = 0; i < myTree.getRootNode().getChildCount(); i++) {
+          myTree.collapseAll((MPSTreeNode) myTree.getRootNode().getChildAt(i));
+        }
+      }
+    });
   }
 
   private class AllGroupKind extends GroupKind<BreakpointNodeData, Object> {

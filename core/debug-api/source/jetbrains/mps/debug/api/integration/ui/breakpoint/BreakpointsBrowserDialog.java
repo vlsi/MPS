@@ -16,11 +16,12 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
-import java.awt.Component;
 import java.awt.event.*;
 
 public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider {
   private static final String COMMAND_SHOW_NODE = "COMMAND_SHOW_NODE";
+  @NonNls
+  private static final String BREAKPOINTS_TREE_VIEW = "BREAKPOINTS_TREE_VIEW";
 
   private final JPanel myMainPanel;
   private final IOperationContext myContext;
@@ -30,13 +31,14 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
   private AnAction myDeleteBreakpointAction;
   private final JScrollPane myBreakpointsScrollPane;
   private final BreakpointsView[] myViews;
-  private int myCurrentViewIndex = 0;
+  private int myCurrentViewIndex;
 
   public BreakpointsBrowserDialog(IOperationContext context) {
     super(context.getMainFrame(), "Breakpoints");
 
     myContext = context;
     myBreakpointsManager = myContext.getComponent(BreakpointManagerComponent.class);
+    myCurrentViewIndex = BreakpointViewSettingsComponent.getInstance(myContext.getProject()).getViewIndex();
     myViews = new BreakpointsView[]{new BreakpointsTable(myBreakpointsManager), new BreakpointsTree(myContext, myBreakpointsManager)};
 
     myMainPanel = new JPanel(new BorderLayout());
@@ -50,6 +52,15 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
 
     // register keyboard/mouse actions on all views
     registerActionsOnViews();
+
+    addWindowListener(new WindowAdapter() {
+      @Override
+      public void windowClosed(WindowEvent e) {
+        for (BreakpointsView view : myViews) {
+          view.saveState();
+        }
+      }
+    });
   }
 
   private ActionGroup createActions() {
@@ -188,8 +199,37 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
         tree.update();
       }
     });
-    // todo save the state of the dialog, tree, selection
-    // todo add expand/collape buttons
+    group.add(new AnAction("Expand All", "Expand All", jetbrains.mps.ide.findusages.view.icons.Icons.EXPAND_ICON){
+      @Override
+      public void update(AnActionEvent e) {
+        // todo refactor actions: each view should provide their own actions 
+        e.getPresentation().setEnabled(isTreeView());
+      }
+
+      @Override
+      public void actionPerformed(AnActionEvent e) {
+        if (!isTreeView()) {
+          return;
+        }
+        BreakpointsTree tree = (BreakpointsTree) myViews[myCurrentViewIndex];
+        tree.expandAll();
+      }
+    });
+    group.add(new AnAction("Collapse All", "Collapse All", jetbrains.mps.ide.findusages.view.icons.Icons.COLLAPSE_ICON){
+      @Override
+      public void update(AnActionEvent e) {
+        e.getPresentation().setEnabled(isTreeView());
+      }
+
+      @Override
+      public void actionPerformed(AnActionEvent e) {
+        if (!isTreeView()) {
+          return;
+        }
+        BreakpointsTree tree = (BreakpointsTree) myViews[myCurrentViewIndex];
+        tree.collapseAll();
+      }
+    });
     return group;
   }
 
@@ -203,6 +243,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
 
   private void switchView() {
     myCurrentViewIndex = 1 - myCurrentViewIndex;
+    BreakpointViewSettingsComponent.getInstance(myContext.getProject()).setViewIndex(myCurrentViewIndex);
     myBreakpointsScrollPane.setViewportView(myViews[myCurrentViewIndex].getMainComponent());
   }
 

@@ -58,6 +58,8 @@ public abstract class BreakpointsView implements DataProvider {
     update();
   }
 
+  public void saveState(){}
+  
   public abstract String getTitle();
   public abstract void update();
   public abstract JComponent getMainComponent();
