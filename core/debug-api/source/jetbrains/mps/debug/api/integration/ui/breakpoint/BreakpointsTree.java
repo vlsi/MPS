@@ -73,6 +73,7 @@ public class BreakpointsTree extends BreakpointsView {
       }
     };
     myTree.setRootVisible(false);
+    myTree.setShowsRootHandles(true);
     myTree.rebuildLater();
     TreeState treeState = BreakpointViewSettingsComponent.getInstance(myContext.getProject()).getTreeState();
     if (treeState != null) {
