@@ -40,6 +40,7 @@ public abstract class GroupedTree<D extends NodeData> extends MPSTree {
       protected NodeData createNodeData(boolean selected) {
         NodeData data = getObject();
         data.setSelected(selected);
+        repaint();
         return data;
       }
     });
