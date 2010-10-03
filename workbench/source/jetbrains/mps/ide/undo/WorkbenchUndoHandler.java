@@ -62,6 +62,8 @@ public class WorkbenchUndoHandler implements UndoHandler {
   }
 
   public void flushCommand() {
+    if (myActions.isEmpty()) return;
+
     Project project = CommandProcessor.getInstance().getCurrentCommandProject();
     if (project == null) return;
 
