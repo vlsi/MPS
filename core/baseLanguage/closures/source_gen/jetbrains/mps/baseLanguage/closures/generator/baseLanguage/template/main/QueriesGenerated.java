@@ -2300,6 +2300,9 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1207146647758(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "type", true), "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
+      return SLinkOperations.getTarget(_context.getNode(), "type", true);
+    }
     return TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(_context.getNode(), "type", true), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
   }
 
@@ -2308,6 +2311,9 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1219933878453(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "type", true), "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
+      return SLinkOperations.getTarget(_context.getNode(), "type", true);
+    }
     return TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(_context.getNode(), "type", true), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
   }
 

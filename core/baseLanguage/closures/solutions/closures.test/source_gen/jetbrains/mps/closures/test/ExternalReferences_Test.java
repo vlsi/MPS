@@ -152,4 +152,24 @@ __switch__:
     });
     Assert.assertEquals("fubar", res);
   }
+
+  public void test_mps10242() throws Exception {
+    int num = 0;
+    int res = mps10242_helper(num, new _FunctionTypes._return_P1_E0<Integer, Integer>() {
+      public Integer invoke(Integer i) {
+        return i + 42;
+      }
+    });
+    Assert.assertSame(42, res);
+  }
+
+  public <T> T mps10242_helper(T t, final _FunctionTypes._return_P1_E0<? extends T, ? super T> fun) {
+    final Wrappers._T<T> _t = new Wrappers._T<T>(t);
+    new _FunctionTypes._return_P0_E0<T>() {
+      public T invoke() {
+        return _t.value = fun.invoke(_t.value);
+      }
+    }.invoke();
+    return _t.value;
+  }
 }
