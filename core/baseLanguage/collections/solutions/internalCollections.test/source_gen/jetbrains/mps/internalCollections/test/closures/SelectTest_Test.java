@@ -14,6 +14,8 @@ import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import junit.framework.Assert;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class SelectTest_Test extends Util_Test {
   public void test_selectMethod() throws Exception {
@@ -132,5 +134,24 @@ __switch__:
         return i * 2;
       }
     }).iterator(), 2, 4, 6);
+  }
+
+  public void test_selectAdvancesTooEarly() throws Exception {
+    final List<Integer> test = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5, 6, 7, 8, 9);
+    final List<Integer> plusten = ListSequence.fromList(new ArrayList<Integer>());
+    final Wrappers._int idx = new Wrappers._int(0);
+    ListSequence.fromList(test).select(new ISelector<Integer, Integer>() {
+      public Integer select(Integer i) {
+        return i;
+      }
+    }).visitAll(new IVisitor<Integer>() {
+      public void visit(Integer i) {
+        if (++idx.value < ListSequence.fromList(test).count()) {
+          ListSequence.fromList(test).setElement(idx.value, ListSequence.fromList(test).getElement(idx.value) - idx.value);
+        }
+        ListSequence.fromList(plusten).addElement(i + 10);
+      }
+    });
+    Assert.assertEquals(ListSequence.fromListAndArray(new ArrayList<Integer>(), 11, 11, 11, 11, 11, 11, 11, 11, 11), plusten);
   }
 }

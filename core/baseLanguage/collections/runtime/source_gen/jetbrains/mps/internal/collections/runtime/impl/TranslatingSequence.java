@@ -33,24 +33,26 @@ public class TranslatingSequence<U, V> extends AbstractChainedSequence<U, V> imp
     }
 
     public boolean hasNext() {
-      if (hasNext.unknown()) {
+      if (inputIt == null) {
         init();
+      }
+      if (hasNext.unknown()) {
         moveToNext();
       }
       return hasNext.hasNext();
     }
 
     public V next() {
-      if (hasNext.unknown()) {
+      if (inputIt == null) {
         init();
+      }
+      if (hasNext.unknown()) {
         moveToNext();
       }
       if (!((hasNext.hasNext()))) {
         throw new NoSuchElementException();
       }
-      V tmp = next;
-      moveToNext();
-      return tmp;
+      return this.clearNext();
     }
 
     public void remove() {
@@ -96,6 +98,13 @@ public class TranslatingSequence<U, V> extends AbstractChainedSequence<U, V> imp
           break;
         }
       } while (true);
+    }
+
+    private V clearNext() {
+      V tmp = next;
+      this.next = null;
+      this.hasNext = HasNextState.UNKNOWN;
+      return tmp;
     }
   }
 }

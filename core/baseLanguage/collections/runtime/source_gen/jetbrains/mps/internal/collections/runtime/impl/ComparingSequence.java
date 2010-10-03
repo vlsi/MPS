@@ -49,27 +49,26 @@ public class ComparingSequence<U> extends Sequence<U> implements Iterable<U> {
     }
 
     public boolean hasNext() {
-      if (hasNext.unknown()) {
+      if (leftIt == null || rightIt == null) {
         init();
+      }
+      if (hasNext.unknown()) {
         moveToNext();
       }
       return hasNext.hasNext();
     }
 
     public U next() {
-      if (hasNext.unknown()) {
+      if (leftIt == null || rightIt == null) {
         init();
+      }
+      if (hasNext.unknown()) {
         moveToNext();
       }
       if (!((hasNext.hasNext()))) {
         throw new NoSuchElementException();
       }
-      U tmp = next;
-      moveToNext();
-      if (!((hasNext.hasNext()))) {
-        destroy();
-      }
-      return tmp;
+      return this.clearNext();
     }
 
     public void remove() {
@@ -177,6 +176,16 @@ loop:
             break;
         }
       } while (true);
+      if (!((hasNext.hasNext()))) {
+        destroy();
+      }
+    }
+
+    private U clearNext() {
+      U tmp = next;
+      this.next = null;
+      this.hasNext = HasNextState.UNKNOWN;
+      return tmp;
     }
 
     private void setNext(U tmp) {

@@ -12,6 +12,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import junit.framework.Assert;
 import java.util.NoSuchElementException;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class Where_Test extends Util_Test {
   public void test_whereMethod() throws Exception {
@@ -67,5 +69,24 @@ public class Where_Test extends Util_Test {
     } catch (NoSuchElementException e) {
       // expected exception 
     }
+  }
+
+  public void test_whereAdvancesTooEarly() throws Exception {
+    final List<Integer> test = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5, 6, 7, 8, 9);
+    final List<Integer> odd = ListSequence.fromList(new ArrayList<Integer>());
+    ListSequence.fromList(test).where(new IWhereFilter<Integer>() {
+      public boolean accept(Integer i) {
+        return i != 0;
+      }
+    }).visitAll(new IVisitor<Integer>() {
+      public void visit(Integer i) {
+        int idx = ListSequence.fromList(test).indexOf(i);
+        if (++idx < ListSequence.fromList(test).count()) {
+          ListSequence.fromList(test).setElement(idx, 0);
+        }
+        ListSequence.fromList(odd).addElement(i);
+      }
+    });
+    Assert.assertEquals(ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 3, 5, 7, 9), odd);
   }
 }
