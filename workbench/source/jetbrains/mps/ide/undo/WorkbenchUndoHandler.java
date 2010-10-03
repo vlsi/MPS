@@ -24,7 +24,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNodeUndoableAction;
-import jetbrains.mps.smodel.UndoHelper.UndoHandler;
+import jetbrains.mps.smodel.UndoHandler;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 
@@ -83,15 +83,17 @@ public class WorkbenchUndoHandler implements UndoHandler {
     return ourUndoBlocked;
   }
 
-  @Override
   public boolean needRegisterUndo(SModel model) {
     return !(model.isLoading()) && isInsideUndoableCommand();
   }
 
-  @Override
   public boolean isInsideUndoableCommand() {
     return ThreadUtils.isEventDispatchThread() && !isUndoBlocked() &&
       CommandProcessor.getInstance().getCurrentCommand() != null;
+  }
+
+  public void flushCommand() {
+    
   }
 
   private static class SNodeIdeaUndoableAction implements UndoableAction {

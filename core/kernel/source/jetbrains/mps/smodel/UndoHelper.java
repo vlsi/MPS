@@ -18,18 +18,21 @@ package jetbrains.mps.smodel;
 import com.intellij.openapi.util.Computable;
 
 public class UndoHelper {
-
-  private static UndoHandler DEFAULT = new DefaultUndoHandler();
-
   private static UndoHelper ourInstance = new UndoHelper();
-  private UndoHandler myHandler = DEFAULT;
 
   public static UndoHelper getInstance() {
     return ourInstance;
   }
 
   private UndoHelper() {
+
   }
+
+  //-----
+
+  private static UndoHandler DEFAULT = new DefaultUndoHandler();
+
+  private UndoHandler myHandler = DEFAULT;
 
   public void setUndoHandler(UndoHandler handler) {
     myHandler = handler;
@@ -37,6 +40,10 @@ public class UndoHelper {
 
   public void addUndoableAction(SNodeUndoableAction action) {
     myHandler.addUndoableAction(action);
+  }
+
+  public void flushCommand(){
+    myHandler.flushCommand();
   }
 
   public <T> T runNonUndoableAction(Computable<T> t) {
@@ -60,36 +67,5 @@ public class UndoHelper {
 
   boolean isInsideUndoableCommand() {
     return myHandler.isInsideUndoableCommand();
-  }
-
-  public interface UndoHandler {
-    public void addUndoableAction(SNodeUndoableAction action);
-
-    public <T> T runNonUndoableAction(Computable<T> t);
-
-    boolean needRegisterUndo(SModel model);
-
-    boolean isInsideUndoableCommand();
-  }
-
-  public static class DefaultUndoHandler implements UndoHandler {
-    @Override
-    public void addUndoableAction(SNodeUndoableAction action) {
-    }
-
-    @Override
-    public <T> T runNonUndoableAction(Computable<T> t) {
-      return t.compute();
-    }
-
-    @Override
-    public boolean needRegisterUndo(SModel model) {
-      return false;
-    }
-
-    @Override
-    public boolean isInsideUndoableCommand() {
-      return false;
-    }
   }
 }
