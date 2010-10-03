@@ -49,7 +49,7 @@ public class ComparingSequence<U> extends Sequence<U> implements Iterable<U> {
     }
 
     public boolean hasNext() {
-      if (leftIt == null || rightIt == null) {
+      if (leftIt == null && rightIt == null) {
         init();
       }
       if (hasNext.unknown()) {
@@ -59,7 +59,7 @@ public class ComparingSequence<U> extends Sequence<U> implements Iterable<U> {
     }
 
     public U next() {
-      if (leftIt == null || rightIt == null) {
+      if (leftIt == null && rightIt == null) {
         init();
       }
       if (hasNext.unknown()) {

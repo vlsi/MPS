@@ -5718,18 +5718,18 @@
                 </node>
               </node>
             </node>
-            <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.OrExpression:3" id="6401275180973221714">
-              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="6401275180973221718">
-                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="6401275180973221721" />
-                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="6401275180973221717">
-                  <link role="variableDeclaration:3" targetNodeId="6543581031674028423" resolveInfo="rightIt" />
-                </node>
-              </node>
-              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="6401275180973221710">
-                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="6401275180973221709">
+            <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="7859417434611490676">
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="7859417434611490677">
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="7859417434611490678">
                   <link role="variableDeclaration:3" targetNodeId="6543581031674028419" resolveInfo="leftIt" />
                 </node>
-                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="6401275180973221713" />
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="7859417434611490679" />
+              </node>
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="7859417434611490680">
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="7859417434611490681" />
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="7859417434611490682">
+                  <link role="variableDeclaration:3" targetNodeId="6543581031674028423" resolveInfo="rightIt" />
+                </node>
               </node>
             </node>
           </node>
@@ -5777,18 +5777,18 @@
                 </node>
               </node>
             </node>
-            <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.OrExpression:3" id="6401275180973221727">
-              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="6401275180973221728">
-                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="6401275180973221729" />
-                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="6401275180973221730">
-                  <link role="variableDeclaration:3" targetNodeId="6543581031674028423" resolveInfo="rightIt" />
-                </node>
-              </node>
-              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="6401275180973221731">
-                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="6401275180973221732">
+            <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="7859417434611490683">
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="7859417434611490684">
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="7859417434611490685">
                   <link role="variableDeclaration:3" targetNodeId="6543581031674028419" resolveInfo="leftIt" />
                 </node>
-                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="6401275180973221733" />
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="7859417434611490686" />
+              </node>
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="7859417434611490687">
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="7859417434611490688" />
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="7859417434611490689">
+                  <link role="variableDeclaration:3" targetNodeId="6543581031674028423" resolveInfo="rightIt" />
+                </node>
               </node>
             </node>
           </node>

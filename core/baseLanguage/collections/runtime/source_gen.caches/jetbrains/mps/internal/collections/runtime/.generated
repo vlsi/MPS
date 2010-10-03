@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="-4h2re432jmuya70izm14yqjyupnv398">
+  <dep model="f:java_stub#java.io(java.io@java_stub)" />
+  <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+  <dep model="f:java_stub#java.lang.reflect(java.lang.reflect@java_stub)" />
+  <dep model="f:java_stub#java.util(java.util@java_stub)" />
+  <dep model="f:java_stub#jetbrains.mps.baseLanguage.closures.runtime(jetbrains.mps.baseLanguage.closures.runtime@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="9ubnuov1kf43waig305o8fw1ay435a0" />
+  <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" hash="adsthcse6vq6jcsl0jm0ffmveqgzjbe" />
+  <dep model="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)" hash="a2rbv5bh635wphrpb6pojtb1jdb90cr" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-aw2culdpzxmm7q9xn76kkfde2ex42eu" />
+  <dep model="r:00000000-0000-4000-0000-011c895902dd(jetbrains.mps.baseLanguage.blTypes.structure)" hash="4347dbq9hlhtv4ku5bnushdfpegeznm" />
+  <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" hash="-9m043zztcohmco0o6rgqcg0cykcopbk" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="au0hub6lyj81d9t7fcb6iev4sbua7m6" />
+  <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" hash="-ea3iugzwj4phm5w5u0t13pfrlzbv2i5" />
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="ed7u3xp754s1byvupevu743h7egl0ft" />
+  <common hash="-616vzybyco3egl86giqsjch2auwpk79">
+    <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
+  </common>
+  <source id="6543581031674022768" name="DequeSequence" hash="74smnl7t9pvakvj6478rajtjvwkosds">
+    <dep model="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="DequeSequence.java" />
+  </source>
+  <source id="6543581031674023462" name="CompoundComparator" hash="-a2xyxrci9tty0ouibs6fkt107xo1dhi">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="CompoundComparator.java" />
+  </source>
+  <source id="6543581031674023524" name="Sequence" hash="4jwtt3z4b8jl69avhvfeb56f41wpl64">
+    <dep root="6543581031674024311" />
+    <dep root="6543581031674036073" />
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#java.util(java.util@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.baseLanguage.closures.runtime(jetbrains.mps.baseLanguage.closures.runtime@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902dd(jetbrains.mps.baseLanguage.blTypes.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" />
+    <file name="Sequence.java" />
+  </source>
+  <source id="6543581031674024311" name="ISequence" hash="4e0fm8oc3ojxlilneez4ohkcocdjzz3">
+    <dep model="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ISequence.java" />
+  </source>
+  <source id="6543581031674024612" name="StopIteratingException" hash="-50wwjca6wt3jn05o7dlp7bcl6vvgc74">
+    <file name="StopIteratingException.java" />
+  </source>
+  <source id="6543581031674024810" name="ILinkedListSequence" hash="9bqg4zn8mfivipjyy7dzix081ad550c">
+    <dep model="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ILinkedListSequence.java" />
+  </source>
+  <source id="6543581031674024899" name="IDequeSequence" hash="52weot4kk3m2v18bp0e95p55kfjqtbk">
+    <dep model="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="IDequeSequence.java" />
+  </source>
+  <source id="6543581031674024971" name="IEnumerator" hash="-a9ydhlpd83flfa1wnk8wrrvtmwho7na">
+    <file name="IEnumerator.java" />
+  </source>
+  <source id="6543581031674025209" name="ISortedMapSequence" hash="-6rw3sgky6nv0t45n8rc1h41nry5huag">
+    <file name="ISortedMapSequence.java" />
+  </source>
+  <source id="6543581031674025245" name="CaseInsensitiveStringComparison" hash="6opxs8menjhenmsuifau3sjwn2uldi5">
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="CaseInsensitiveStringComparison.java" />
+  </source>
+  <source id="6543581031674025363" name="SelectComparator" hash="-3jwv786gi3mesyyni2kwbnt642xvvrf">
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="SelectComparator.java" />
+  </source>
+  <source id="6543581031674025475" name="CollectionSequence" hash="9dq5gj2b4g7cunwm1rwp430d7242kk5">
+    <dep model="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="CollectionSequence.java" />
+  </source>
+  <source id="6543581031674025921" name="SortedMapSequence" hash="1ve437mdexup5gtuf9ijw5172dj6pmc">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="SortedMapSequence.java" />
+  </source>
+  <source id="6543581031674026272" name="ICollectionSequence" hash="75nv15hqq192qtpfp06vmehlyp84rbl">
+    <dep model="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ICollectionSequence.java" />
+  </source>
+  <source id="6543581031674027290" name="ILinkedList" hash="-6ndmyea68avvo904kwyjnsijn3ric5l">
+    <file name="ILinkedList.java" />
+  </source>
+  <source id="6543581031674027740" name="SortedSetSequence" hash="-5i3st7m7zjzefdkowt0vlsa5yeuk9fn">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="SortedSetSequence.java" />
+  </source>
+  <source id="6543581031674029074" name="IterableUtils" hash="-w6zess14ympurljwkf94k494r7wsa3">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="IterableUtils.java" />
+  </source>
+  <source id="6543581031674030017" name="IListSequence" hash="bsj1rg74vif0kl9bbsm7s8r9qttdiie">
+    <dep model="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="IListSequence.java" />
+  </source>
+  <source id="6543581031674030190" name="IMapping" hash="-22bdfkxlm6lne5eyjp1mg1fw6mrhro3">
+    <file name="IMapping.java" />
+  </source>
+  <source id="6543581031674030305" name="LinkedListSequence" hash="9ix33n3y7zrel16fhes6gf5i5dl6wak">
+    <dep model="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="LinkedListSequence.java" />
+  </source>
+  <source id="6543581031674031083" name="ListSequence" hash="-9bwfsyv9px200p925lztqiw4i83ndu3">
+    <dep root="6543581031674023524" />
+    <dep root="6543581031674024311" />
+    <dep root="6543581031674025475" />
+    <dep root="6543581031674026272" />
+    <dep root="6543581031674030017" />
+    <dep root="6543581031674036073" />
+    <dep model="f:java_stub#java.io(java.io@java_stub)" />
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#java.util(java.util@java_stub)" />
+    <dep model="f:java_stub#jetbrains.mps.baseLanguage.closures.runtime(jetbrains.mps.baseLanguage.closures.runtime@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
+    <file name="ListSequence.java" />
+  </source>
+  <source id="6543581031674032290" name="QueueSequence" hash="-9hnlet2954w3mf61eyy3xdt1lou7e5y">
+    <dep model="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="QueueSequence.java" />
+  </source>
+  <source id="6543581031674032858" name="SetSequence" hash="8dz5hz9bodvnk5g3cfyxvtagacmhdx6">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="SetSequence.java" />
+  </source>
+  <source id="6543581031674033682" name="ArrayUtils" hash="-d2fhlbpqe2bd5cy9r6xxlgiivjt9tu">
+    <dep root="6543581031674024311" />
+    <dep model="f:java_stub#java.lang(java.lang@java_stub)" />
+    <dep model="f:java_stub#java.lang.reflect(java.lang.reflect@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902dd(jetbrains.mps.baseLanguage.blTypes.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
+    <file name="ArrayUtils.java" />
+  </source>
+  <source id="6543581031674034565" name="ISequenceIterableAdapter" hash="33wwo57p115ey4klckorfx3ti3zflj7">
+    <file name="ISequenceIterableAdapter.java" />
+  </source>
+  <source id="6543581031674034640" name="MapSequence" hash="-98qp5jj3pclyssyrqjy37a6dy23g1nm">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="MapSequence.java" />
+  </source>
+  <source id="6543581031674036013" name="IQueueSequence" hash="-26sadqi4j1u9pjk8k5oideyak3jylc8">
+    <dep model="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="IQueueSequence.java" />
+  </source>
+  <source id="6543581031674036073" name="IEnumerable" hash="av57ewvl37pk6v1oyjpfasoz54k4hlc">
+    <file name="IEnumerable.java" />
+  </source>
+  <source id="6543581031674036081" name="ISetSequence" hash="alyhiygsh77or53f6hpw6oxky9b8z4k">
+    <file name="ISetSequence.java" />
+  </source>
+  <source id="6543581031674036653" name="IMapSequence" hash="ahurmw6intlw06ppavk1ymqb7vrg76s">
+    <file name="IMapSequence.java" />
+  </source>
+  <source id="6543581031674036880" name="ISortedSetSequence" hash="e6bfcgct4uirnn1im833oek9sa69ke7">
+    <file name="ISortedSetSequence.java" />
+  </source>
+  <source id="2411622665278543566" name="ILeftCombinator" hash="6m7885hcdpu2wpnky376gg3vnna4fby">
+    <dep model="f:java_stub#jetbrains.mps.baseLanguage.closures.runtime(jetbrains.mps.baseLanguage.closures.runtime@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
+    <file name="ILeftCombinator.java" />
+  </source>
+  <source id="2411622665278543851" name="IRightCombinator" hash="c5f77uvpl1bufoha0affmlz2ok29f6z">
+    <dep model="f:java_stub#jetbrains.mps.baseLanguage.closures.runtime(jetbrains.mps.baseLanguage.closures.runtime@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
+    <file name="IRightCombinator.java" />
+  </source>
+  <source id="2411622665278544142" name="ISelector" hash="-1jgrwaxizhlm9by88fjwcvkpf6fah25">
+    <dep model="f:java_stub#jetbrains.mps.baseLanguage.closures.runtime(jetbrains.mps.baseLanguage.closures.runtime@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
+    <file name="ISelector.java" />
+  </source>
+  <source id="3473971317150294575" name="ISequenceClosure" hash="avphln8e7xz81gv5x9oe82z03hei6s2">
+    <dep model="f:java_stub#jetbrains.mps.baseLanguage.closures.runtime(jetbrains.mps.baseLanguage.closures.runtime@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
+    <file name="ISequenceClosure.java" />
+  </source>
+  <source id="3473971317150294731" name="ITranslator" hash="6uw24krvbjgiye7pqih0s7oui4rg9r4">
+    <dep model="f:java_stub#jetbrains.mps.baseLanguage.closures.runtime(jetbrains.mps.baseLanguage.closures.runtime@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
+    <file name="ITranslator.java" />
+  </source>
+  <source id="3473971317150294883" name="ITranslator2" hash="3np2lyqrogiwlt6as64k0o7olnxudj9">
+    <dep model="f:java_stub#jetbrains.mps.baseLanguage.closures.runtime(jetbrains.mps.baseLanguage.closures.runtime@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
+    <file name="ITranslator2.java" />
+  </source>
+  <source id="3473971317150331482" name="IVisitor" hash="7z42iqraewmswdkzkrwqzpogigoeog5">
+    <dep model="f:java_stub#jetbrains.mps.baseLanguage.closures.runtime(jetbrains.mps.baseLanguage.closures.runtime@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
+    <file name="IVisitor.java" />
+  </source>
+  <source id="7730170264858257623" name="IWhereFilter" hash="cudukg88q8klkemkarinfk344pogl50">
+    <dep model="f:java_stub#jetbrains.mps.baseLanguage.closures.runtime(jetbrains.mps.baseLanguage.closures.runtime@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
+    <file name="IWhereFilter.java" />
+  </source>
+</dependencies>
+
