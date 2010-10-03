@@ -24,32 +24,48 @@ import jetbrains.mps.smodel.SNodeUndoableAction;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+
 class SNodeIdeaUndoableAction implements UndoableAction {
+  private boolean myIsGlobal;
   private DocumentReference[] myAffectedDocuments;
-  private MPSNodeVirtualFile myFile;
-  private long myModifcationStamp;
+  private Map<MPSNodeVirtualFile, Long> myChangedTimestamps = new HashMap<MPSNodeVirtualFile, Long>();
 
-  private SNodeUndoableAction wrapped;
+  private List<SNodeUndoableAction> myWrapped;
 
-  SNodeIdeaUndoableAction(SNodeUndoableAction wrapped) {
-    this.wrapped = wrapped;
-    if (wrapped.getRoot() == null) {
-      myAffectedDocuments = new DocumentReference[0];
-    } else {
-      myFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(wrapped.getRoot());
-      assert myFile.isValid() : "Invalid file was returned by VFS node is not available: " + myFile.getNode();
-      myAffectedDocuments = new DocumentReference[]{DocumentReferenceManager.getInstance().create(myFile)};
-      myModifcationStamp = myFile.getModificationStamp();
+  SNodeIdeaUndoableAction(List<SNodeUndoableAction> wrapped) {
+    myWrapped = wrapped;
+    List<DocumentReference> affected = new LinkedList<DocumentReference>();
+
+    myIsGlobal = wrapped.get(0).isGlobal();
+
+    for (SNodeUndoableAction a : wrapped) {
+      if (a.getRoot() != null) {
+        MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(a.getRoot());
+        assert file.isValid() : "Invalid file was returned by VFS node is not available: " + file.getNode();
+        affected.add(DocumentReferenceManager.getInstance().create(file));
+        myChangedTimestamps.put(file, file.getModificationStamp());
+      }
+
+      assert a.isGlobal() == myIsGlobal : "Global and non-global actions should not be mixed inside one command";
     }
+
+    myAffectedDocuments = affected.toArray(new DocumentReference[affected.size()]);
   }
 
   public final void undo() throws UnexpectedUndoException {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        if (myFile != null) {
-          myFile.setModificationStamp(myModifcationStamp);
+        for (Entry<MPSNodeVirtualFile, Long> e : myChangedTimestamps.entrySet()) {
+          e.getKey().setModificationStamp(e.getValue());
         }
-        wrapped.undo();
+        for (SNodeUndoableAction a : myWrapped) {
+          a.undo();
+        }
       }
     });
   }
@@ -57,7 +73,9 @@ class SNodeIdeaUndoableAction implements UndoableAction {
   public final void redo() throws UnexpectedUndoException {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        wrapped.redo();
+        for (SNodeUndoableAction a : myWrapped) {
+          a.redo();
+        }
       }
     });
   }
@@ -67,6 +85,6 @@ class SNodeIdeaUndoableAction implements UndoableAction {
   }
 
   public boolean isGlobal() {
-    return wrapped.isGlobal();
+    return myIsGlobal;
   }
 }

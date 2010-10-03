@@ -24,20 +24,21 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNodeUndoableAction;
 import jetbrains.mps.smodel.UndoHandler;
 
+import java.util.LinkedList;
+import java.util.List;
+
 /**
  * Evgeny Gryaznov, Sep 3, 2010
  */
 public class WorkbenchUndoHandler implements UndoHandler {
   private boolean ourUndoBlocked = false;
+  private List<SNodeUndoableAction> myActions = new LinkedList<SNodeUndoableAction>();
 
   public void addUndoableAction(SNodeUndoableAction action) {
     Project project = CommandProcessor.getInstance().getCurrentCommandProject();
     if (project == null) return;
 
-    UndoManager undoManager = UndoManager.getInstance(project);
-    if (undoManager.isUndoInProgress() || undoManager.isRedoInProgress()) return;
-
-    undoManager.undoableActionPerformed(new SNodeIdeaUndoableAction(action));
+    myActions.add(action);
   }
 
   public <T> T runNonUndoableAction(Computable<T> t) {
@@ -61,6 +62,13 @@ public class WorkbenchUndoHandler implements UndoHandler {
   }
 
   public void flushCommand() {
-    
+    Project project = CommandProcessor.getInstance().getCurrentCommandProject();
+    if (project == null) return;
+
+    UndoManager undoManager = UndoManager.getInstance(project);
+    if (undoManager.isUndoInProgress() || undoManager.isRedoInProgress()) return;
+
+    undoManager.undoableActionPerformed(new SNodeIdeaUndoableAction(myActions));
+    myActions = new LinkedList<SNodeUndoableAction>();
   }
 }
