@@ -19,6 +19,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.util.ui.AbstractTableCellEditor;
 import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
+import org.jetbrains.annotations.NonNls;
 
 import javax.swing.JComponent;
 import javax.swing.JLabel;
@@ -29,12 +30,12 @@ import javax.swing.table.TableCellRenderer;
 import java.awt.Component;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
-import java.util.*;
 
 public class BreakpointsTable extends BreakpointsView {
   private final JTable myBreakpointsTable;
   private final MyAbstractTableModel myBreakpointsTableModel;
 
+  // todo  do we really need table view? it is similar to tree view with unchecked everything
   public BreakpointsTable(BreakpointManagerComponent manager) {
     super(manager);
     myBreakpointsTable = new JTable();
@@ -46,6 +47,24 @@ public class BreakpointsTable extends BreakpointsView {
   @Override
   public JComponent getMainComponent() {
     return myBreakpointsTable;
+  }
+
+  @Override
+  public void breakpointDeleted(AbstractMPSBreakpoint breakpoint) {
+    // do not know why, but update does not work here
+    int row = getBreakpointsList().indexOf(breakpoint);
+    myBreakpointsTableModel.breakpointDeleted(row);
+  }
+
+  @Override
+  public String getTitle() {
+    return "Table View";
+  }
+
+  @Override
+  public void update() {
+    updateBreakpoints();
+    myBreakpointsTableModel.fireTableDataChanged();
   }
 
   private void createBreakpointsTable(MyAbstractTableModel model) {
@@ -102,16 +121,15 @@ public class BreakpointsTable extends BreakpointsView {
       return null;
     }
     model.getBreakpointAt(selectedRow);
-    AbstractMPSBreakpoint breakpoint = model.getBreakpointAt(myBreakpointsTable.getSelectedRow());
-    return breakpoint;
+    return model.getBreakpointAt(myBreakpointsTable.getSelectedRow());
   }
 
-  public void breakpointDeleted(int row) {
-    myBreakpointsTableModel.breakpointDeleted(row);      
-  }
-
-  public int getSelectedBreakpointIndex() {
-    return myBreakpointsTable.getSelectedRow();
+  @Override
+  public Object getData(@NonNls String dataId) {
+    if (MPS_BREAKPOINT.is(dataId)) {
+      return getSelectedBreakpoint();
+    }
+    return null;
   }
 
   private class MyAbstractTableModel extends AbstractTableModel {
@@ -155,6 +173,7 @@ public class BreakpointsTable extends BreakpointsView {
     public void setValueAt(Object value, int rowIndex, int columnIndex) {
       if (!(value instanceof Boolean)) return;
       if (columnIndex != 0) return;
+      if (rowIndex >= getBreakpointsList().size()) return;
       AbstractMPSBreakpoint breakpoint = getBreakpointsList().get(rowIndex);
       if (breakpoint.supportsDisable()) {
         breakpoint.setEnabled((Boolean) value);

@@ -16,11 +16,13 @@
 package jetbrains.mps.javaParser;
 
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.ui.CheckBoxNodeRenderer;
+import jetbrains.mps.ide.ui.CheckBoxNodeRenderer.CheckBoxNodeEditor;
+import jetbrains.mps.ide.ui.CheckBoxNodeRenderer.NodeData;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.PathManager;
 import org.jetbrains.annotations.Nullable;
 
@@ -29,8 +31,6 @@ import javax.swing.event.TreeExpansionEvent;
 import javax.swing.event.TreeWillExpandListener;
 import javax.swing.tree.*;
 import java.awt.*;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
@@ -52,7 +52,21 @@ public class ClasspathSelectionTree extends JTree {
     super();
     myClasspathObserver = classpathObserver;
     setCellRenderer(new CheckBoxNodeRenderer());
-    setCellEditor(new CheckBoxNodeEditor());
+    setCellEditor(new CheckBoxNodeEditor<FileData>() {
+      @Override
+      protected FileData createNodeData(boolean selected) {
+        FileData data = new FileData(getObject().getFile(), ClasspathSelectionTree.this);
+        data.setSelected(selected);
+        if (myClasspathObserver != null) {
+          if (selected) {
+            myClasspathObserver.classPathAdded(data.getClasspath());
+          } else {
+            myClasspathObserver.classPathRemoved(data.getClasspath());
+          }
+        }
+        return data;
+      }
+    });
     setEditable(true);
     setShowsRootHandles(true);
     setRootVisible(true);
@@ -60,128 +74,7 @@ public class ClasspathSelectionTree extends JTree {
     // if (isLeft) setShowsRootHandles(true);
   }
 
-  private class CheckBoxNodeRenderer implements TreeCellRenderer {
-    private JLabel myIconLabel = new JLabel();
-    private JPanelWithCheckBox myPanel = new JPanelWithCheckBox(new BorderLayout());
-
-    public CheckBoxNodeRenderer() {
-      Font font = UIManager.getFont("Tree.font");
-      if (font != null) {
-        myPanel.getCheckBox().setFont(font);
-      }
-      Boolean iconBorder = (Boolean) UIManager.get("Tree.drawsFocusBorderAroundIcon");
-      myPanel.setOpaque(false);
-      myPanel.getCheckBox().setFocusPainted((iconBorder != null) && iconBorder);
-      myPanel.add(myIconLabel, BorderLayout.WEST);
-      myPanel.add(myPanel.getCheckBox(), BorderLayout.CENTER);
-    }
-
-    public JCheckBox getCheckBox() {
-      return myPanel.getCheckBox();
-    }
-
-    public Component getTreeCellRendererComponent(JTree tree, Object value, boolean selected, final boolean expanded, boolean leaf, int row, boolean hasFocus) {
-      Color selectionForeground = UIManager.getColor("Tree.selectionForeground");
-      Color selectionBackground = UIManager.getColor("Tree.selectionBackground");
-      Color textForeground = UIManager.getColor("Tree.textForeground");
-      Color textBackground = UIManager.getColor("Tree.textBackground");
-
-      final JCheckBox checkBox = myPanel.getCheckBox();
-      checkBox.setEnabled(tree.isEnabled());
-      if (selected) {
-        checkBox.setForeground(selectionForeground);
-        checkBox.setBackground(selectionBackground);
-      } else {
-        checkBox.setForeground(textForeground);
-        checkBox.setBackground(textBackground);
-      }
-
-      final DefaultMutableTreeNode node = (DefaultMutableTreeNode) value;
-
-      final String text = tree.convertValueToText(value, selected, expanded, leaf, row, hasFocus);
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          if (node.getUserObject() instanceof FileData) {
-            FileData data = (FileData) node.getUserObject();
-            myIconLabel.setIcon(data.getIcon(expanded));
-            Color color = data.getColor();
-            if (color != null) {
-              checkBox.setForeground(color);
-            }
-            checkBox.setText(data.getText());
-            checkBox.setSelected(data.isSelected());
-          } else {
-            myIconLabel.setIcon(null);
-            checkBox.setText(text);
-            checkBox.setSelected(false);
-          }
-        }
-      });
-      return myPanel;
-    }
-  }
-
-  private static class JPanelWithCheckBox extends JPanel {
-    private JCheckBox myCheckBox = new JCheckBox();
-
-    public JPanelWithCheckBox() {
-
-    }
-
-    public JPanelWithCheckBox(LayoutManager layoutManager) {
-      super(layoutManager);
-    }
-
-    public JCheckBox getCheckBox() {
-      return myCheckBox;
-    }
-  }
-
-  private class CheckBoxNodeEditor extends AbstractCellEditor implements TreeCellEditor {
-    private CheckBoxNodeRenderer myRenderer = new CheckBoxNodeRenderer();
-
-    private FileData myObject;
-
-    public CheckBoxNodeEditor() {
-    }
-
-    public Object getCellEditorValue() {
-      JCheckBox checkbox = myRenderer.getCheckBox();
-      FileData data;
-      data = new FileData(myObject.getFile(), ClasspathSelectionTree.this);
-      boolean selected = checkbox.isSelected();
-      data.setSelected(selected);
-      if (myClasspathObserver != null) {
-        if (selected) {
-          myClasspathObserver.classPathAdded(data.getClasspath());
-        } else {
-          myClasspathObserver.classPathRemoved(data.getClasspath());
-        }
-      }
-      return data;
-    }
-
-    public Component getTreeCellEditorComponent(JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row) {
-      Component editor = myRenderer.getTreeCellRendererComponent(tree, value, true, expanded, leaf, row, true);
-
-      DefaultMutableTreeNode node = (DefaultMutableTreeNode) value;
-      myObject = (FileData) node.getUserObject();
-
-      ItemListener itemListener = new ItemListener() {
-        public void itemStateChanged(ItemEvent itemEvent) {
-          if (stopCellEditing()) {
-            fireEditingStopped();
-          }
-        }
-      };
-      if (editor instanceof JPanelWithCheckBox) {
-        ((JPanelWithCheckBox) editor).getCheckBox().addItemListener(itemListener);
-      }
-      return editor;
-    }
-  }
-
-  public static class FileData {
+  public static class FileData implements NodeData {
     private File myFile;
     private ClasspathSelectionTree myTree;
     private boolean mySelected;

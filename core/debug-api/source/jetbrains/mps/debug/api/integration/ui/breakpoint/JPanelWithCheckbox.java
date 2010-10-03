@@ -24,8 +24,7 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 
 public class JPanelWithCheckbox extends JPanel {
-  private JCheckBox myCheckBox;
-  private JLabel myIconLabel;
+  private final JCheckBox myCheckBox;
 
   public JPanelWithCheckbox(AbstractMPSBreakpoint breakpoint, boolean isSelected) {
     Color bg;
@@ -40,7 +39,7 @@ public class JPanelWithCheckbox extends JPanel {
     myCheckBox.setSelected(breakpoint.isEnabled());
     myCheckBox.setMargin(new Insets(0, 0, 0, 0));
     myCheckBox.setBackground(bg);
-    myIconLabel = new JLabel(breakpoint.getPresentation(), BreakpointIconRenderer.getIconFor(breakpoint), SwingConstants.LEFT);
+    JLabel iconLabel = new JLabel(breakpoint.getPresentation(), BreakpointIconRenderer.getIconFor(breakpoint), SwingConstants.LEFT);
 
     GridBagConstraints constraints = new GridBagConstraints();
     constraints.gridy = 0;
@@ -51,7 +50,7 @@ public class JPanelWithCheckbox extends JPanel {
     constraints.gridx = 1;
     constraints.weightx = 1;
     constraints.anchor = GridBagConstraints.WEST;
-    add(myIconLabel, constraints);
+    add(iconLabel, constraints);
   }
 
   public JCheckBox getCheckBox() {

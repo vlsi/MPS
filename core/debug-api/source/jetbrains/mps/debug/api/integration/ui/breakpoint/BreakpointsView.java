@@ -15,13 +15,16 @@
  */
 package jetbrains.mps.debug.api.integration.ui.breakpoint;
 
+import com.intellij.openapi.actionSystem.DataKey;
+import com.intellij.openapi.actionSystem.DataProvider;
 import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 
 import javax.swing.JComponent;
 import java.util.*;
 
-public abstract class BreakpointsView {
+public abstract class BreakpointsView implements DataProvider {
+  public static DataKey<AbstractMPSBreakpoint> MPS_BREAKPOINT = DataKey.create("MPS_Breakpoint");
   private List<AbstractMPSBreakpoint> myBreakpointsList;
   private final BreakpointManagerComponent myBreakpointsManager;
 
@@ -38,11 +41,6 @@ public abstract class BreakpointsView {
     return myBreakpointsList;
   }
 
-  public abstract void breakpointDeleted(int row);
-  public abstract int getSelectedBreakpointIndex();
-  public abstract AbstractMPSBreakpoint getSelectedBreakpoint();
-  public abstract JComponent getMainComponent();
-
   protected List<AbstractMPSBreakpoint> loadBreakpoints() {
     Set<AbstractMPSBreakpoint> mpsBreakpoints = myBreakpointsManager.getAllBreakpoints();
     final List<AbstractMPSBreakpoint> bpList = new ArrayList<AbstractMPSBreakpoint>(mpsBreakpoints);
@@ -55,4 +53,12 @@ public abstract class BreakpointsView {
     });
     return bpList;
   }
+
+  public void breakpointDeleted(AbstractMPSBreakpoint breakpoint){
+    update();
+  }
+
+  public abstract String getTitle();
+  public abstract void update();
+  public abstract JComponent getMainComponent();
 }
