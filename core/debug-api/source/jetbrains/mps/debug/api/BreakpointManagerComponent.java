@@ -69,12 +69,9 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
 
   private final EditorsProvider myEditorsProvider;
   private final Map<SNodePointer, Set<AbstractMPSBreakpoint>> myRootsToBreakpointsMap = new HashMap<SNodePointer, Set<AbstractMPSBreakpoint>>();
-
   private final Set<AbstractMPSBreakpoint> myBreakpoints = new HashSet<AbstractMPSBreakpoint>();
-
   // because DebugInfoInitializers may be loaded after this component
   private Set<FutureBreakpoint> myFutureBreakpoints = new HashSet<FutureBreakpoint>();
-
 
   private LeftMarginMouseListener myMouseListener = new LeftMarginMouseListener() {
     @Override
@@ -478,5 +475,4 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
   public static class MyState {
     public MyRootBreakpointInfo[] myRootBreakpointInfos = new MyRootBreakpointInfo[0];
   }
-
 }
