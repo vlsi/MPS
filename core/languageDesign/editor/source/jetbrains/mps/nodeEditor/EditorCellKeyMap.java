@@ -316,7 +316,7 @@ public class EditorCellKeyMap {
     return ourVirtualKeycodes;
   }
 
-  public static List<String> getModifiers() {
+  public static synchronized List<String> getModifiers() {
     if (ourModifiers == null) {
       ourModifiers = new LinkedList<String>();
       Field[] fields = EditorCellKeyMap.class.getFields();
