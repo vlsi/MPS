@@ -377,6 +377,9 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
 
     runRebuildAction(new Runnable() {
       public void run() {
+        setAnchorSelectionPath(null);
+        setLeadSelectionPath(null);
+
         MPSTreeNode root = rebuild();
         setRootNode(root);
       }
