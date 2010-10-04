@@ -27,6 +27,7 @@ import com.intellij.util.EventDispatcher;
 import com.intellij.util.NullableFunction;
 import com.intellij.util.containers.ContainerUtil;
 import com.intellij.util.containers.WeakHashMap;
+import jetbrains.mps.util.annotation.Patch;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -483,12 +484,15 @@ public class RunManagerImpl extends RunManagerEx implements JDOMExternalizable, 
     }
   }
 
+  @Patch
   private void clear() {
     final List<RunnerAndConfigurationSettings> configurations = new ArrayList<RunnerAndConfigurationSettings>(myConfigurations.values());
     myConfigurations.clear();
     myUnloadedElements = null;
     myConfigurationToBeforeTasksMap.clear();
     mySharedConfigurations.clear();
+    //the following line is a patch
+    myTemplateConfigurationsMap.clear();
     fireRunConfigurationsRemoved(configurations);
   }
 
