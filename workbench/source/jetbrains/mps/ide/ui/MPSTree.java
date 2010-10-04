@@ -32,28 +32,27 @@ import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.ColorAndGraphicsUtil;
-import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.*;
+import javax.swing.AbstractAction;
+import javax.swing.JPopupMenu;
+import javax.swing.KeyStroke;
+import javax.swing.ToolTipManager;
 import javax.swing.event.TreeExpansionEvent;
 import javax.swing.event.TreeExpansionListener;
 import javax.swing.event.TreeWillExpandListener;
-import javax.swing.plaf.basic.BasicGraphicsUtils;
-import javax.swing.tree.*;
-import java.awt.*;
+import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.ExpandVetoException;
+import javax.swing.tree.TreeNode;
+import javax.swing.tree.TreePath;
+import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.*;
-import java.util.List;
 
 public abstract class MPSTree extends DnDAwareTree implements Disposable {
-  public static final String MPS_TREE = "mps-tree";
   public static final String PATH = "path";
-  public static final String SELECTION = "selection";
-  public static final String EXPANSION = "expansion";
 
   protected static final Logger LOG = Logger.getLogger(MPSTree.class);
 
@@ -83,92 +82,12 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
 
     setCellRenderer(new NewMPSTreeCellRenderer());
 
-    addTreeWillExpandListener(new TreeWillExpandListener() {
-      public void treeWillExpand(TreeExpansionEvent event) throws ExpandVetoException {
-        TreePath path = event.getPath();
-        Object node = path.getLastPathComponent();
-        MPSTreeNode treeNode = (MPSTreeNode) node;
-        if (!treeNode.isInitialized()) {
-          doInit(treeNode);
-        }
-      }
+    addTreeWillExpandListener(new MyTreeWillExpandListener());
+    addTreeExpansionListener(new MyTreeExpansionListener());
+    addMouseListener(new MyMouseAdapter());
 
-      public void treeWillCollapse(TreeExpansionEvent event) throws ExpandVetoException {
-      }
-    });
-
-    addTreeExpansionListener(new TreeExpansionListener() {
-      public void treeExpanded(TreeExpansionEvent event) {
-        if (!myAutoExpandEnabled) return;
-
-        TreePath eventPath = event.getPath();
-        MPSTreeNode node = (MPSTreeNode) eventPath.getLastPathComponent();
-
-        if (node.getChildCount() == 1) {
-          List<MPSTreeNode> path = new ArrayList<MPSTreeNode>();
-          for (Object item : eventPath.getPath()) {
-            path.add((MPSTreeNode) item);
-          }
-          MPSTreeNode onlyChild = (MPSTreeNode) node.getChildAt(0);
-
-          if (onlyChild.isAutoExpandable()) {
-            path.add(onlyChild);
-            expandPath(new TreePath(path.toArray()));
-          }
-        }
-      }
-
-      public void treeCollapsed(TreeExpansionEvent event) {
-      }
-    });
-
-    addMouseListener(new MouseAdapter() {
-      public void mousePressed(MouseEvent e) {
-        //this is a workaround for handling context menu button
-        if (e.getButton() == 0) {
-          TreePath path = getSelectionPath();
-          if (path == null) return;
-          int rowNum = getRowForPath(path);
-          Rectangle r = getRowBounds(rowNum);
-          showPopup(r.x, r.y);
-        } else {
-          requestFocus();
-          myMousePressed(e);
-        }
-      }
-
-      public void mouseReleased(MouseEvent e) {
-        myMouseReleased(e);
-      }
-
-      public void mouseEntered(MouseEvent e) {
-        myTooltipManagerRecentInitialDelay = ToolTipManager.sharedInstance().getInitialDelay();
-        ToolTipManager.sharedInstance().setInitialDelay(10);
-      }
-
-      public void mouseExited(MouseEvent e) {
-        ToolTipManager.sharedInstance().setInitialDelay(myTooltipManagerRecentInitialDelay);
-      }
-    });
-
-    AbstractAction openNodeAction = new AbstractAction() {
-      public void actionPerformed(ActionEvent e) {
-        TreePath selPath = getSelectionPath();
-        if (selPath == null) return;
-        MPSTreeNode selNode = (MPSTreeNode) selPath.getLastPathComponent();
-        selNode.doubleClick();
-      }
-    };
-    registerKeyboardAction(openNodeAction, KeyStroke.getKeyStroke("F4"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-
-    AbstractAction refreshTreeAction = new AbstractAction() {
-      public void actionPerformed(ActionEvent e) {
-        long start = System.currentTimeMillis();
-        rebuildNow();
-        System.out.println("rebuilt in " + (System.currentTimeMillis() - start));
-      }
-    };
-    registerKeyboardAction(refreshTreeAction, KeyStroke.getKeyStroke("F5"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    registerKeyboardAction(new MyOpenNodeAction(), KeyStroke.getKeyStroke("F4"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    registerKeyboardAction(new MyRefreshAction(), KeyStroke.getKeyStroke("F5"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
   }
 
   protected void doInit(final MPSTreeNode node) {
@@ -443,20 +362,8 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     });
   }
 
-  public void rebuildTree(Runnable rebuildAction, boolean saveExpansion) {
-    runRebuildAction(rebuildAction, saveExpansion);
-  }
-
   public void rebuildLater() {
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
-      public void run() {
-        rebuildNow();
-      }
-    });
-  }
-
-  public void rebuildAndWait() {
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
         rebuildNow();
       }
@@ -634,48 +541,6 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     return result;
   }
 
-  public Element toXML() {
-    Element result = new Element(MPS_TREE);
-
-    Element selection = new Element(SELECTION);
-    for (String path : getSelectedPaths()) {
-      Element pathElement = new Element(PATH);
-      pathElement.setText(path);
-      selection.addContent(pathElement);
-    }
-    result.addContent(selection);
-
-    Element expansion = new Element(EXPANSION);
-    for (String path : getExpandedPaths()) {
-      Element pathElement = new Element(PATH);
-      pathElement.setText(path);
-      expansion.addContent(pathElement);
-    }
-    result.addContent(expansion);
-
-    return result;
-  }
-
-  public void fromXML(Element element) {
-    Element selectionElement = element.getChild(SELECTION);
-    if (selectionElement != null) {
-      List<String> selectionPaths = new ArrayList<String>();
-      for (Element path : (List<Element>) selectionElement.getChildren(PATH)) {
-        selectionPaths.add(path.getText());
-      }
-      selectPaths(selectionPaths);
-    }
-
-    Element expansionElement = element.getChild(EXPANSION);
-    if (expansionElement != null) {
-      List<String> expansionPaths = new ArrayList<String>();
-      for (Element path : (List<Element>) expansionElement.getChildren(PATH)) {
-        expansionPaths.add(path.getText());
-      }
-      expandPaths(expansionPaths);
-    }
-  }
-
   public TreeState saveState() {
     TreeState result = new TreeState();
     result.myExpansion.addAll(getExpandedPaths());
@@ -712,127 +577,6 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     myTreeNodeListeners.clear();
   }
 
-  protected static class NewMPSTreeCellRenderer extends JPanel implements TreeCellRenderer {
-    private JLabel myMainTextLabel = new JLabel();
-    private JLabel myAdditionalTextLabel = new JLabel();
-    private boolean mySelected;
-    private boolean myHasFocus;
-    private MPSTreeNode myNode;
-
-    public NewMPSTreeCellRenderer() {
-      setLayout(new BorderLayout());
-      setOpaque(false);
-      add(myMainTextLabel, BorderLayout.CENTER);
-      add(myAdditionalTextLabel, BorderLayout.EAST);
-    }
-
-    public Component getTreeCellRendererComponent(JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row, boolean hasFocus) {
-      Color foreground;
-      Color additionalForeground;
-      setOpaque(false);
-      if (selected) {
-        foreground = UIManager.getColor("Tree.selectionForeground");
-        additionalForeground = foreground;
-      } else {
-        foreground = UIManager.getColor("Tree.textForeground");
-        additionalForeground = Color.GRAY;
-      }
-      myMainTextLabel.setForeground(foreground);
-      myAdditionalTextLabel.setForeground(additionalForeground);
-
-      Icon icon = null;
-      String text = value.toString();
-      String additionalText = null;
-      if (value instanceof MPSTreeNode) {
-        MPSTreeNode treeNode = (MPSTreeNode) value;
-        icon = treeNode.getIcon(expanded);
-        text = treeNode.getText();
-        additionalText = treeNode.getAdditionalText();
-
-        Font newFont = tree.getFont().deriveFont(treeNode.getFontStyle());
-        myMainTextLabel.setFont(newFont);
-        myAdditionalTextLabel.setFont(tree.getFont());
-
-        if (!selected) {
-          myMainTextLabel.setForeground(treeNode.getColor());
-        }
-        myNode = treeNode;
-      } else {
-        myMainTextLabel.setFont(tree.getFont());
-        myAdditionalTextLabel.setFont(tree.getFont());
-        myNode = null;
-      }
-
-      myMainTextLabel.setText(text);
-      if (additionalText != null) {
-        myAdditionalTextLabel.setText(" (" + additionalText + ") ");
-      } else {
-        myAdditionalTextLabel.setText(" ");
-      }
-
-      if (icon == null) {
-        if (leaf) {
-          icon = UIManager.getIcon("Tree.leafIcon");
-        } else if (expanded) {
-          icon = UIManager.getIcon("Tree.openIcon");
-        } else {
-          icon = UIManager.getIcon("Tree.closedIcon");
-        }
-      }
-      myMainTextLabel.setIcon(icon);
-      mySelected = selected;
-      myHasFocus = hasFocus;
-
-      return this;
-    }
-
-    public void paint(Graphics g) {
-      Color background;
-      if (mySelected) {
-        background = UIManager.getColor("Tree.selectionBackground");
-      } else {
-        background = UIManager.getColor("Tree.textBackground");
-        if (background == null) {
-          background = getBackground();
-        }
-      }
-
-      int imageOffset;
-      Icon icon = myMainTextLabel.getIcon();
-      if (icon != null) {
-        imageOffset = icon.getIconWidth() + Math.max(0, myMainTextLabel.getIconTextGap() - 1);
-      } else {
-        imageOffset = 0;
-      }
-
-      if (background != null) {
-        g.setColor(background);
-        g.fillRect(imageOffset, 0, getWidth() - imageOffset, getHeight());
-      }
-
-      if (myHasFocus) {
-        Boolean drawDashedFocusIndicator = (Boolean) UIManager.get("Tree.drawDashedFocusIndicator");
-        if (drawDashedFocusIndicator != null && drawDashedFocusIndicator) {
-          BasicGraphicsUtils.drawDashedRect(g, imageOffset, 0, getWidth() - imageOffset - 1, getHeight() - 1);
-        } else {
-          g.setColor(UIManager.getColor("Tree.selectionBorderColor"));
-          g.drawRect(imageOffset, 0, getWidth() - imageOffset - 1, getHeight() - 1);
-        }
-      }
-
-      super.paint(g);
-
-      if (myNode != null && myNode.getAggregatedErrorState() != ErrorState.NONE) {
-        if (myNode.getAggregatedErrorState() == ErrorState.ERROR) {
-          g.setColor(Color.RED);
-        } else {
-          g.setColor(Color.YELLOW);
-        }
-        ColorAndGraphicsUtil.drawWave(g, imageOffset, getWidth(), getHeight() - ColorAndGraphicsUtil.WAVE_HEIGHT - 1);
-      }
-    }
-  }
-
   public static class TreeState {
     private List<String> myExpansion = new ArrayList<String>();
     private List<String> mySelection = new ArrayList<String>();
@@ -851,6 +595,91 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
 
     public void setSelection(List<String> selection) {
       mySelection = selection;
+    }
+  }
+
+  private class MyTreeWillExpandListener implements TreeWillExpandListener {
+    public void treeWillExpand(TreeExpansionEvent event) throws ExpandVetoException {
+      TreePath path = event.getPath();
+      Object node = path.getLastPathComponent();
+      MPSTreeNode treeNode = (MPSTreeNode) node;
+      if (!treeNode.isInitialized()) {
+        doInit(treeNode);
+      }
+    }
+
+    public void treeWillCollapse(TreeExpansionEvent event) throws ExpandVetoException {
+    }
+  }
+
+  private class MyTreeExpansionListener implements TreeExpansionListener {
+    public void treeExpanded(TreeExpansionEvent event) {
+      if (!myAutoExpandEnabled) return;
+
+      TreePath eventPath = event.getPath();
+      MPSTreeNode node = (MPSTreeNode) eventPath.getLastPathComponent();
+
+      if (node.getChildCount() == 1) {
+        List<MPSTreeNode> path = new ArrayList<MPSTreeNode>();
+        for (Object item : eventPath.getPath()) {
+          path.add((MPSTreeNode) item);
+        }
+        MPSTreeNode onlyChild = (MPSTreeNode) node.getChildAt(0);
+
+        if (onlyChild.isAutoExpandable()) {
+          path.add(onlyChild);
+          expandPath(new TreePath(path.toArray()));
+        }
+      }
+    }
+
+    public void treeCollapsed(TreeExpansionEvent event) {
+    }
+  }
+
+  private class MyMouseAdapter extends MouseAdapter {
+    public void mousePressed(MouseEvent e) {
+      //this is a workaround for handling context menu button
+      if (e.getButton() == 0) {
+        TreePath path = getSelectionPath();
+        if (path == null) return;
+        int rowNum = getRowForPath(path);
+        Rectangle r = getRowBounds(rowNum);
+        showPopup(r.x, r.y);
+      } else {
+        requestFocus();
+        myMousePressed(e);
+      }
+    }
+
+    public void mouseReleased(MouseEvent e) {
+      myMouseReleased(e);
+    }
+
+    public void mouseEntered(MouseEvent e) {
+      myTooltipManagerRecentInitialDelay = ToolTipManager.sharedInstance().getInitialDelay();
+      ToolTipManager.sharedInstance().setInitialDelay(10);
+    }
+
+    public void mouseExited(MouseEvent e) {
+      ToolTipManager.sharedInstance().setInitialDelay(myTooltipManagerRecentInitialDelay);
+    }
+  }
+
+  private class MyOpenNodeAction extends AbstractAction {
+    public void actionPerformed(ActionEvent e) {
+      TreePath selPath = getSelectionPath();
+      if (selPath == null) return;
+      MPSTreeNode selNode = (MPSTreeNode) selPath.getLastPathComponent();
+      selNode.doubleClick();
+    }
+  }
+
+  private class MyRefreshAction extends AbstractAction {
+    public void actionPerformed(ActionEvent e) {
+      long start = System.currentTimeMillis();
+      rebuildNow();
+      System.out.println("rebuilt in " + (System.currentTimeMillis() - start));
     }
   }
 }
