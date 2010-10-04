@@ -24,10 +24,7 @@ import jetbrains.mps.smodel.SNodeUndoableAction;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
 
 class SNodeIdeaUndoableAction implements UndoableAction {
@@ -58,7 +55,7 @@ class SNodeIdeaUndoableAction implements UndoableAction {
   }
 
   public final void undo() throws UnexpectedUndoException {
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    ModelAccess.instance().executeCommand(new Runnable() {
       public void run() {
         for (Entry<MPSNodeVirtualFile, Long> e : myChangedTimestamps.entrySet()) {
           e.getKey().setModificationStamp(e.getValue());
@@ -71,9 +68,12 @@ class SNodeIdeaUndoableAction implements UndoableAction {
   }
 
   public final void redo() throws UnexpectedUndoException {
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    ModelAccess.instance().executeCommand(new Runnable() {
       public void run() {
-        for (SNodeUndoableAction a : myWrapped) {
+        List<SNodeUndoableAction> rev = new LinkedList<SNodeUndoableAction>(myWrapped);
+        Collections.reverse(rev);
+
+        for (SNodeUndoableAction a : rev) {
           a.redo();
         }
       }

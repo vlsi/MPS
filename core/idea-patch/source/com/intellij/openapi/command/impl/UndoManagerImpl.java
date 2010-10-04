@@ -82,7 +82,23 @@ public class UndoManagerImpl extends UndoManager implements ProjectComponent, Ap
     return result;
   }
 
-  @Patch
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   private void undoOrRedo(final FileEditor editor) {
     final RuntimeException[] exception = new RuntimeException[1];
     Runnable executeUndoOrRedoAction = new Runnable() {
@@ -105,10 +121,8 @@ public class UndoManagerImpl extends UndoManager implements ProjectComponent, Ap
     };
 
     String name = getUndoOrRedoActionNameAndDescription(editor, isUndoInProgress()).second;
-
-    //patch
-    ModelAccess.instance().executeCommand(executeUndoOrRedoAction);
-
+    CommandProcessor.getInstance()
+      .executeCommand(myProject, executeUndoOrRedoAction, name, null, myMerger.getUndoConfirmationPolicy());
     if (exception[0] != null) throw exception[0];
   }
 

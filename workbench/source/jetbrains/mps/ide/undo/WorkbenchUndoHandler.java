@@ -38,6 +38,9 @@ public class WorkbenchUndoHandler implements UndoHandler {
     Project project = CommandProcessor.getInstance().getCurrentCommandProject();
     if (project == null) return;
 
+    UndoManager undoManager = UndoManager.getInstance(project);
+    if (undoManager.isUndoInProgress() || undoManager.isRedoInProgress()) return;
+
     myActions.add(action);
   }
 
@@ -66,9 +69,7 @@ public class WorkbenchUndoHandler implements UndoHandler {
 
     Project project = CommandProcessor.getInstance().getCurrentCommandProject();
     if (project == null) return;
-
     UndoManager undoManager = UndoManager.getInstance(project);
-    if (undoManager.isUndoInProgress() || undoManager.isRedoInProgress()) return;
 
     undoManager.undoableActionPerformed(new SNodeIdeaUndoableAction(myActions));
     myActions = new LinkedList<SNodeUndoableAction>();
