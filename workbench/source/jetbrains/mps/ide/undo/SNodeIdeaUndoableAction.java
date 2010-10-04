@@ -60,7 +60,10 @@ class SNodeIdeaUndoableAction implements UndoableAction {
         for (Entry<MPSNodeVirtualFile, Long> e : myChangedTimestamps.entrySet()) {
           e.getKey().setModificationStamp(e.getValue());
         }
-        for (SNodeUndoableAction a : myWrapped) {
+
+        List<SNodeUndoableAction> rev = new LinkedList<SNodeUndoableAction>(myWrapped);
+        Collections.reverse(rev);
+        for (SNodeUndoableAction a : rev) {
           a.undo();
         }
       }
@@ -70,10 +73,7 @@ class SNodeIdeaUndoableAction implements UndoableAction {
   public final void redo() throws UnexpectedUndoException {
     ModelAccess.instance().executeCommand(new Runnable() {
       public void run() {
-        List<SNodeUndoableAction> rev = new LinkedList<SNodeUndoableAction>(myWrapped);
-        Collections.reverse(rev);
-
-        for (SNodeUndoableAction a : rev) {
+        for (SNodeUndoableAction a : myWrapped) {
           a.redo();
         }
       }
