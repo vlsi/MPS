@@ -45,6 +45,7 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
   private List<CompilationResult> myResult;
 
   private final Map<String, String> mySources = new HashMap<String, String>();
+  private final Map<String, String> myFileGeneratorSources = new HashMap<String, String>();
   private final Set<String> myJavaSources = new HashSet<String>();
   private Set<IModule> myContextModules = new HashSet<IModule>();
 
@@ -144,7 +145,7 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
       if (additionalFiles != null) {
         for (File additionalFile : additionalFiles) {
           String additionalContents = FileUtil.read(additionalFile);
-          mySources.put(additionalFile.getName(), additionalContents);
+          myFileGeneratorSources.put(additionalFile.getName(), additionalContents);
         }
       }
     }
@@ -211,6 +212,10 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
 
   public Map<String, String> getSources() {
     return mySources;
+  }
+
+  public Map<String, String> getFileGeneratorSources() {
+    return myFileGeneratorSources;
   }
 
   public JavaCompiler getCompiler() {

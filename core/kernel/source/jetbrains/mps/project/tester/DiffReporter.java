@@ -72,7 +72,7 @@ public class DiffReporter {
           files.remove(outputFileName);
         }
       }
-      Map<String, String> sources = genHandler.getSources();
+      Map<String, String> sources = genHandler.getFileGeneratorSources();
       for (String fileName : files) {
         int dotPosition = fileName.indexOf(".");
         if (dotPosition == 0 || dotPosition == -1) {
