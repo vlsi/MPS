@@ -55,8 +55,6 @@ import org.jetbrains.annotations.TestOnly;
 import java.util.*;
 
 public class UndoManagerImpl extends UndoManager implements ProjectComponent, ApplicationComponent, Disposable {
-  @Patch
-  private UndoProvider[] myUndoProviders = new UndoProvider[0]; // fix NPE
 
   @Patch
   static Set<DocumentReference> getDocumentReferences(FileEditor editor) {
@@ -82,7 +80,6 @@ public class UndoManagerImpl extends UndoManager implements ProjectComponent, Ap
     return result;
   }
 
-  
 
 
 
@@ -98,6 +95,8 @@ public class UndoManagerImpl extends UndoManager implements ProjectComponent, Ap
 
 
 
+
+  private UndoProvider[] myUndoProviders;
 
   private void undoOrRedo(final FileEditor editor) {
     final RuntimeException[] exception = new RuntimeException[1];

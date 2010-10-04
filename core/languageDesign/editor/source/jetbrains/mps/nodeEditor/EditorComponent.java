@@ -167,7 +167,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     public void onAfterReload() {
       ThreadUtils.runInUIThreadNoWait(new Runnable() {
         public void run() {
-          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               if (isProjectDisposed() || isNodeDisposed()) return;
               rebuildEditorContent();
