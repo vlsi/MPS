@@ -24,7 +24,7 @@ public class MPSExtentions {
   public static final String SOLUTION = "msd";
   public static final String DEVKIT = "devkit";
   public static final String MODEL = "mps";
-  public static final String REFACTORINGS = "refactorings";
+  public static final String REFACTORINGS = "history";
   public static final String JAVAFILE = "java";
   public static final String CLASSFILE = "class";
   public static final String IDEA_PROJECT = "ipr";
