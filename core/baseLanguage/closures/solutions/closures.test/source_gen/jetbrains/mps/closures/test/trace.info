@@ -2790,7 +2790,7 @@
     <nodeInfo nodeId="1201778921557" fileName="AdvancedFunctionTypes_Test.java" startLine="63" startPosition="40" endLine="64" endPosition="32" />
     <nodeInfo nodeId="1201777947111" fileName="AdvancedFunctionTypes_Test.java" startLine="13" startPosition="60" endLine="17" endPosition="0" />
     <nodeInfo nodeId="1201778635410" fileName="AdvancedFunctionTypes_Test.java" startLine="24" startPosition="64" endLine="28" endPosition="0" />
-    <nodeInfo nodeId="1201778761112" fileName="AdvancedFunctionTypes_Test.java" startLine="42" startPosition="211" endLine="46" endPosition="0" />
+    <nodeInfo nodeId="1201778761112" fileName="AdvancedFunctionTypes_Test.java" startLine="42" startPosition="209" endLine="46" endPosition="0" />
     <nodeInfo nodeId="1201779035291" fileName="AdvancedFunctionTypes_Test.java" startLine="47" startPosition="155" endLine="51" endPosition="0" />
     <nodeInfo nodeId="1201779071592" fileName="AdvancedFunctionTypes_Test.java" startLine="52" startPosition="135" endLine="56" endPosition="0" />
     <nodeInfo nodeId="1201778902895" fileName="AdvancedFunctionTypes_Test.java" startLine="62" startPosition="65" endLine="66" endPosition="0" />
@@ -2817,7 +2817,7 @@
     <scopeInfo nodeId="1201778902896" fileName="AdvancedFunctionTypes_Test.java" startLine="63" startPosition="40" endLine="64" endPosition="32" />
     <scopeInfo nodeId="1201777947111" fileName="AdvancedFunctionTypes_Test.java" startLine="13" startPosition="60" endLine="17" endPosition="0" />
     <scopeInfo nodeId="1201778635410" fileName="AdvancedFunctionTypes_Test.java" startLine="24" startPosition="64" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="1201778761112" fileName="AdvancedFunctionTypes_Test.java" startLine="42" startPosition="211" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="1201778761112" fileName="AdvancedFunctionTypes_Test.java" startLine="42" startPosition="209" endLine="46" endPosition="0" />
     <scopeInfo nodeId="1201779035291" fileName="AdvancedFunctionTypes_Test.java" startLine="47" startPosition="155" endLine="51" endPosition="0" />
     <scopeInfo nodeId="1201779071592" fileName="AdvancedFunctionTypes_Test.java" startLine="52" startPosition="135" endLine="56" endPosition="0" />
     <scopeInfo nodeId="1201778902895" fileName="AdvancedFunctionTypes_Test.java" startLine="62" startPosition="65" endLine="66" endPosition="0" />
@@ -2848,7 +2848,7 @@
     <scopeInfo nodeId="1201777876283" fileName="AdvancedFunctionTypes_Test.java" startLine="9" startPosition="58" endLine="40" endPosition="0" />
     <unitInfo nodeId="1201777947111" fileName="AdvancedFunctionTypes_Test.java" startLine="13" startPosition="19" endLine="17" endPosition="9" unitName="jetbrains.mps.closures.test._FunctionTypes._return_P0_E0$anonymous" />
     <unitInfo nodeId="1201778635410" fileName="AdvancedFunctionTypes_Test.java" startLine="24" startPosition="23" endLine="28" endPosition="13" unitName="jetbrains.mps.closures.test._FunctionTypes._return_P0_E0$anonymous" />
-    <unitInfo nodeId="1201778761112" fileName="AdvancedFunctionTypes_Test.java" startLine="42" startPosition="121" endLine="46" endPosition="5" unitName="jetbrains.mps.closures.test.AdvancedFunctionTypes_Test$3" />
+    <unitInfo nodeId="1201778761112" fileName="AdvancedFunctionTypes_Test.java" startLine="42" startPosition="119" endLine="46" endPosition="5" unitName="jetbrains.mps.closures.test.AdvancedFunctionTypes_Test$3" />
     <unitInfo nodeId="1201779035291" fileName="AdvancedFunctionTypes_Test.java" startLine="47" startPosition="96" endLine="51" endPosition="5" unitName="jetbrains.mps.closures.test.AdvancedFunctionTypes_Test$4" />
     <unitInfo nodeId="1201779071592" fileName="AdvancedFunctionTypes_Test.java" startLine="52" startPosition="85" endLine="56" endPosition="5" unitName="jetbrains.mps.closures.test.AdvancedFunctionTypes_Test$5" />
     <unitInfo nodeId="1201778902895" fileName="AdvancedFunctionTypes_Test.java" startLine="62" startPosition="15" endLine="66" endPosition="5" unitName="jetbrains.mps.closures.test.AdvancedFunctionTypes_Test$6" />

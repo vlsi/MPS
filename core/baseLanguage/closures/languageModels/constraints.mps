@@ -1703,24 +1703,8 @@
                   </node>
                 </node>
               </node>
-              <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.OrExpression:3" id="294882658956820279">
-                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall:3" id="294882658956820280">
-                  <link role="baseMethodDeclaration:3" targetNodeId="1202775274717:2" resolveInfo="isFunctionTypeClassifier" />
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="294882658956820281">
-                    <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="294882658956820282">
-                      <link role="concept:16" targetNodeId="6.1107535904670:3" resolveInfo="ClassifierType" />
-                      <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="294882658956820283">
-                        <link role="variableDeclaration:3" targetNodeId="1202774154561:2" resolveInfo="type" />
-                      </node>
-                    </node>
-                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="294882658956820284">
-                      <link role="link:16" targetNodeId="6.1107535924139:3" />
-                    </node>
-                  </node>
-                </node>
-                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="294882658956820285">
-                  <link role="variableDeclaration:3" targetNodeId="1202774154563:2" resolveInfo="covariant" />
-                </node>
+              <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="294882658956820285">
+                <link role="variableDeclaration:3" targetNodeId="1202774154563:2" resolveInfo="covariant" />
               </node>
               <node role="ifFalseStatement:3" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="294882658956820286">
                 <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="294882658956820287">

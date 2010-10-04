@@ -39,7 +39,7 @@ public class AdvancedFunctionTypes_Test extends TestCase {
   }
 
   public void test_acceptsFunction() throws Exception {
-    _FunctionTypes._return_P1_E0<? extends Integer, ? extends _FunctionTypes._return_P0_E0<? extends Integer>> fun = new _FunctionTypes._return_P1_E0<Integer, _FunctionTypes._return_P0_E0<? extends Integer>>() {
+    _FunctionTypes._return_P1_E0<? extends Integer, ? super _FunctionTypes._return_P0_E0<? extends Integer>> fun = new _FunctionTypes._return_P1_E0<Integer, _FunctionTypes._return_P0_E0<? extends Integer>>() {
       public Integer invoke(_FunctionTypes._return_P0_E0<? extends Integer> f) {
         return f.invoke();
       }

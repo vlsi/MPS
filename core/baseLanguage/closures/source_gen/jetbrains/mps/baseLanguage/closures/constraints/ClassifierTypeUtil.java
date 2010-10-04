@@ -186,7 +186,7 @@ public class ClassifierTypeUtil {
         ));
         covariantParam = false;
       }
-      if (covariant || isFunctionTypeClassifier(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false))) {
+      if (covariant) {
         return (SNodeOperations.isInstanceOf(copy, "jetbrains.mps.baseLanguage.structure.UpperBoundType") ?
           copy :
           new ClassifierTypeUtil.QuotationClass_zgotlq_a0a0a4a0a8().createNode(copy)
