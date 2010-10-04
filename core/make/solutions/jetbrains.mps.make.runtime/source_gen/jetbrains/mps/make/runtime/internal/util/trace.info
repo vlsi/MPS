@@ -2,231 +2,249 @@
 <debugInfo>
   <unitInfo fileName="_Replacer_a0a0c0c.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.make.runtime.internal.util._Replacer_a0a0c0c" />
   <root nodeId="1936544640085949692">
-    <nodeInfo nodeId="1936544640085949751" fileName="CycleDetector.java" startLine="19" startPosition="40" endLine="20" endPosition="117" />
-    <nodeInfo nodeId="2611988743427260338" fileName="CycleDetector.java" startLine="24" startPosition="53" endLine="25" endPosition="53" />
-    <nodeInfo nodeId="6976901853022624212" fileName="CycleDetector.java" startLine="33" startPosition="53" endLine="34" endPosition="53" />
-    <nodeInfo nodeId="1682545549094398089" fileName="CycleDetector.java" startLine="47" startPosition="57" endLine="48" endPosition="67" />
-    <nodeInfo nodeId="706015266664522447" fileName="CycleDetector.java" startLine="48" startPosition="67" endLine="49" endPosition="26" />
-    <nodeInfo nodeId="706015266664522539" fileName="CycleDetector.java" startLine="49" startPosition="26" endLine="50" endPosition="37" />
-    <nodeInfo nodeId="1682545549094399575" fileName="CycleDetector.java" startLine="55" startPosition="51" endLine="56" endPosition="72" />
-    <nodeInfo nodeId="1682545549094399582" fileName="CycleDetector.java" startLine="56" startPosition="72" endLine="57" endPosition="50" />
-    <nodeInfo nodeId="1682545549094399593" fileName="CycleDetector.java" startLine="57" startPosition="50" endLine="58" endPosition="20" />
-    <nodeInfo nodeId="706015266664522422" fileName="CycleDetector.java" startLine="63" startPosition="65" endLine="64" endPosition="52" />
-    <nodeInfo nodeId="1150613940746737347" fileName="CycleDetector.java" startLine="66" startPosition="87" endLine="67" endPosition="50" />
-    <nodeInfo nodeId="1150613940746737362" fileName="CycleDetector.java" startLine="67" startPosition="50" endLine="68" endPosition="22" />
-    <nodeInfo nodeId="1150613940746737367" fileName="CycleDetector.java" startLine="68" startPosition="22" endLine="69" endPosition="48" />
-    <nodeInfo nodeId="2105022298825483328" fileName="CycleDetector.java" startLine="74" startPosition="78" endLine="75" endPosition="81" />
-    <nodeInfo nodeId="8382282457890483481" fileName="CycleDetector.java" startLine="77" startPosition="53" endLine="78" endPosition="18" />
-    <nodeInfo nodeId="8382282457890484469" fileName="CycleDetector.java" startLine="82" startPosition="63" endLine="83" endPosition="25" />
-    <nodeInfo nodeId="8382282457890483494" fileName="CycleDetector.java" startLine="86" startPosition="57" endLine="87" endPosition="28" />
-    <nodeInfo nodeId="8382282457890483523" fileName="CycleDetector.java" startLine="92" startPosition="92" endLine="93" endPosition="26" />
-    <nodeInfo nodeId="8382282457890483585" fileName="CycleDetector.java" startLine="93" startPosition="26" endLine="94" endPosition="28" />
-    <nodeInfo nodeId="8382282457890486097" fileName="CycleDetector.java" startLine="97" startPosition="63" endLine="98" endPosition="134" />
-    <nodeInfo nodeId="2105022298825483397" fileName="CycleDetector.java" startLine="101" startPosition="7" endLine="102" endPosition="18" />
-    <nodeInfo nodeId="706015266664531305" fileName="CycleDetector.java" startLine="107" startPosition="54" endLine="108" endPosition="58" />
-    <nodeInfo nodeId="706015266664531315" fileName="CycleDetector.java" startLine="108" startPosition="58" endLine="109" endPosition="36" />
-    <nodeInfo nodeId="8382282457890486094" fileName="CycleDetector.java" startLine="111" startPosition="7" endLine="112" endPosition="16" />
-    <nodeInfo nodeId="8382282457890483464" fileName="CycleDetector.java" startLine="117" startPosition="53" endLine="118" endPosition="18" />
-    <nodeInfo nodeId="1150613940746737205" fileName="CycleDetector.java" startLine="122" startPosition="57" endLine="123" endPosition="28" />
-    <nodeInfo nodeId="1150613940746737225" fileName="CycleDetector.java" startLine="126" startPosition="53" endLine="127" endPosition="36" />
-    <nodeInfo nodeId="1150613940746737122" fileName="CycleDetector.java" startLine="132" startPosition="292" endLine="133" endPosition="14" />
-    <nodeInfo nodeId="8382282457890465335" fileName="CycleDetector.java" startLine="137" startPosition="62" endLine="138" endPosition="33" />
-    <nodeInfo nodeId="8382282457890465345" fileName="CycleDetector.java" startLine="141" startPosition="58" endLine="142" endPosition="41" />
-    <nodeInfo nodeId="1150613940746737130" fileName="CycleDetector.java" startLine="146" startPosition="7" endLine="147" endPosition="13" />
-    <nodeInfo nodeId="1682545549094398055" fileName="CycleDetector.java" startLine="150" startPosition="35" endLine="151" endPosition="21" />
-    <nodeInfo nodeId="1936544640085949710" fileName="CycleDetector.java" startLine="151" startPosition="21" endLine="152" endPosition="30" />
-    <nodeInfo nodeId="1936544640085949714" fileName="CycleDetector.java" startLine="152" startPosition="30" endLine="153" endPosition="28" />
-    <nodeInfo nodeId="2611988743427260364" fileName="CycleDetector.java" startLine="153" startPosition="28" endLine="154" endPosition="36" />
-    <nodeInfo nodeId="2611988743427260370" fileName="CycleDetector.java" startLine="154" startPosition="36" endLine="155" endPosition="35" />
-    <nodeInfo nodeId="1936544640085949718" fileName="CycleDetector.java" startLine="155" startPosition="35" endLine="156" endPosition="121" />
-    <nodeInfo nodeId="1682545549094398077" fileName="CycleDetector.java" startLine="158" startPosition="26" endLine="159" endPosition="22" />
-    <nodeInfo nodeId="5717061624762469091" fileName="CycleDetector.java" startLine="162" startPosition="37" endLine="163" endPosition="34" />
-    <nodeInfo nodeId="5717061624762469135" fileName="CycleDetector.java" startLine="166" startPosition="35" endLine="167" endPosition="32" />
-    <nodeInfo nodeId="5717061624762460053" fileName="CycleDetector.java" startLine="171" startPosition="25" endLine="172" endPosition="64" />
-    <nodeInfo nodeId="2611988743427260376" fileName="CycleDetector.java" startLine="176" startPosition="26" endLine="177" endPosition="26" />
-    <nodeInfo nodeId="2611988743427260387" fileName="CycleDetector.java" startLine="180" startPosition="25" endLine="181" endPosition="25" />
-    <nodeInfo nodeId="2611988743427260398" fileName="CycleDetector.java" startLine="184" startPosition="26" endLine="185" endPosition="27" />
-    <nodeInfo nodeId="2611988743427260410" fileName="CycleDetector.java" startLine="185" startPosition="27" endLine="186" endPosition="26" />
-    <nodeInfo nodeId="1936544640085949760" fileName="CycleDetector.java" startLine="39" startPosition="0" endLine="41" endPosition="3" />
-    <nodeInfo nodeId="1936544640085949764" fileName="CycleDetector.java" startLine="42" startPosition="0" endLine="44" endPosition="0" />
-    <nodeInfo nodeId="1936544640085949771" fileName="CycleDetector.java" startLine="44" startPosition="0" endLine="46" endPosition="0" />
-    <nodeInfo nodeId="8382282457890483556" fileName="CycleDetector.java" startLine="96" startPosition="21" endLine="99" endPosition="9" />
-    <nodeInfo nodeId="1936544640085949723" fileName="CycleDetector.java" startLine="157" startPosition="0" endLine="160" endPosition="5" />
-    <nodeInfo nodeId="5717061624762460035" fileName="CycleDetector.java" startLine="170" startPosition="59" endLine="173" endPosition="7" />
-    <nodeInfo nodeId="2611988743427260336" fileName="CycleDetector.java" startLine="23" startPosition="112" endLine="27" endPosition="0" />
-    <nodeInfo nodeId="6976901853022624210" fileName="CycleDetector.java" startLine="32" startPosition="113" endLine="36" endPosition="0" />
-    <nodeInfo nodeId="8382282457890483479" fileName="CycleDetector.java" startLine="76" startPosition="81" endLine="80" endPosition="0" />
-    <nodeInfo nodeId="8382282457890484464" fileName="CycleDetector.java" startLine="81" startPosition="93" endLine="85" endPosition="0" />
-    <nodeInfo nodeId="8382282457890483492" fileName="CycleDetector.java" startLine="85" startPosition="66" endLine="89" endPosition="0" />
-    <nodeInfo nodeId="8382282457890483462" fileName="CycleDetector.java" startLine="116" startPosition="81" endLine="120" endPosition="0" />
-    <nodeInfo nodeId="1150613940746737201" fileName="CycleDetector.java" startLine="121" startPosition="82" endLine="125" endPosition="0" />
-    <nodeInfo nodeId="1150613940746737221" fileName="CycleDetector.java" startLine="125" startPosition="58" endLine="129" endPosition="0" />
-    <nodeInfo nodeId="8382282457890465333" fileName="CycleDetector.java" startLine="136" startPosition="99" endLine="140" endPosition="0" />
-    <nodeInfo nodeId="8382282457890465343" fileName="CycleDetector.java" startLine="140" startPosition="62" endLine="144" endPosition="0" />
-    <nodeInfo nodeId="5717061624762469081" fileName="CycleDetector.java" startLine="161" startPosition="0" endLine="165" endPosition="0" />
-    <nodeInfo nodeId="5717061624762469115" fileName="CycleDetector.java" startLine="165" startPosition="0" endLine="169" endPosition="0" />
-    <nodeInfo nodeId="2611988743427260352" fileName="CycleDetector.java" startLine="175" startPosition="0" endLine="179" endPosition="0" />
-    <nodeInfo nodeId="2611988743427260356" fileName="CycleDetector.java" startLine="179" startPosition="0" endLine="183" endPosition="0" />
-    <nodeInfo nodeId="2611988743427260329" fileName="CycleDetector.java" startLine="22" startPosition="83" endLine="27" endPosition="9" />
-    <nodeInfo nodeId="6976901853022624203" fileName="CycleDetector.java" startLine="31" startPosition="83" endLine="36" endPosition="9" />
-    <nodeInfo nodeId="8382282457890483475" fileName="CycleDetector.java" startLine="75" startPosition="81" endLine="80" endPosition="7" />
-    <nodeInfo nodeId="8382282457890483515" fileName="CycleDetector.java" startLine="91" startPosition="108" endLine="96" endPosition="0" />
-    <nodeInfo nodeId="706015266664531301" fileName="CycleDetector.java" startLine="106" startPosition="91" endLine="111" endPosition="0" />
-    <nodeInfo nodeId="8382282457890483458" fileName="CycleDetector.java" startLine="115" startPosition="292" endLine="120" endPosition="7" />
-    <nodeInfo nodeId="2611988743427260360" fileName="CycleDetector.java" startLine="183" startPosition="0" endLine="188" endPosition="0" />
-    <nodeInfo nodeId="1936544640085949778" fileName="CycleDetector.java" startLine="46" startPosition="0" endLine="52" endPosition="0" />
-    <nodeInfo nodeId="1682545549094398067" fileName="CycleDetector.java" startLine="54" startPosition="96" endLine="60" endPosition="0" />
-    <nodeInfo nodeId="1150613940746737333" fileName="CycleDetector.java" startLine="65" startPosition="100" endLine="71" endPosition="0" />
-    <nodeInfo nodeId="8382282457890483504" fileName="CycleDetector.java" startLine="90" startPosition="59" endLine="96" endPosition="21" />
-    <nodeInfo nodeId="706015266664531290" fileName="CycleDetector.java" startLine="105" startPosition="85" endLine="111" endPosition="7" />
-    <nodeInfo nodeId="5717061624762460027" fileName="CycleDetector.java" startLine="169" startPosition="0" endLine="175" endPosition="0" />
-    <nodeInfo nodeId="1682545549094398060" fileName="CycleDetector.java" startLine="53" startPosition="73" endLine="60" endPosition="24" />
-    <nodeInfo nodeId="1150613940746737329" fileName="CycleDetector.java" startLine="64" startPosition="52" endLine="71" endPosition="16" />
-    <nodeInfo nodeId="2611988743427260327" fileName="CycleDetector.java" startLine="21" startPosition="228" endLine="29" endPosition="0" />
-    <nodeInfo nodeId="6976901853022624201" fileName="CycleDetector.java" startLine="30" startPosition="229" endLine="38" endPosition="0" />
-    <nodeInfo nodeId="2611988743427260320" fileName="CycleDetector.java" startLine="20" startPosition="117" endLine="29" endPosition="4" />
-    <nodeInfo nodeId="6976901853022624193" fileName="CycleDetector.java" startLine="29" startPosition="4" endLine="38" endPosition="4" />
-    <nodeInfo nodeId="1150613940746737194" fileName="CycleDetector.java" startLine="120" startPosition="7" endLine="129" endPosition="7" />
-    <nodeInfo nodeId="8382282457890465326" fileName="CycleDetector.java" startLine="135" startPosition="28" endLine="144" endPosition="11" />
-    <nodeInfo nodeId="706015266664522384" fileName="CycleDetector.java" startLine="52" startPosition="0" endLine="62" endPosition="0" />
-    <nodeInfo nodeId="1936544640085949915" fileName="CycleDetector.java" startLine="104" startPosition="0" endLine="114" endPosition="0" />
-    <nodeInfo nodeId="706015266664522416" fileName="CycleDetector.java" startLine="62" startPosition="0" endLine="73" endPosition="0" />
-    <nodeInfo nodeId="8382282457890483502" fileName="CycleDetector.java" startLine="89" startPosition="58" endLine="101" endPosition="0" />
-    <nodeInfo nodeId="8382282457890465324" fileName="CycleDetector.java" startLine="134" startPosition="56" endLine="146" endPosition="0" />
-    <nodeInfo nodeId="1150613940746737138" fileName="CycleDetector.java" startLine="133" startPosition="14" endLine="146" endPosition="7" />
-    <nodeInfo nodeId="1150613940746731980" fileName="CycleDetector.java" startLine="114" startPosition="0" endLine="131" endPosition="0" />
-    <nodeInfo nodeId="1150613940746737101" fileName="CycleDetector.java" startLine="131" startPosition="0" endLine="149" endPosition="0" />
-    <nodeInfo nodeId="8382282457890483487" fileName="CycleDetector.java" startLine="80" startPosition="7" endLine="101" endPosition="7" />
-    <nodeInfo nodeId="2105022298825483318" fileName="CycleDetector.java" startLine="73" startPosition="0" endLine="104" endPosition="0" />
-    <scopeInfo nodeId="1936544640085949763" fileName="CycleDetector.java" startLine="40" startPosition="26" endLine="40" endPosition="26" />
-    <scopeInfo nodeId="2611988743427260337" fileName="CycleDetector.java" startLine="24" startPosition="53" endLine="25" endPosition="53" />
-    <scopeInfo nodeId="6976901853022624211" fileName="CycleDetector.java" startLine="33" startPosition="53" endLine="34" endPosition="53" />
-    <scopeInfo nodeId="8382282457890483480" fileName="CycleDetector.java" startLine="77" startPosition="53" endLine="78" endPosition="18" />
-    <scopeInfo nodeId="8382282457890484465" fileName="CycleDetector.java" startLine="82" startPosition="63" endLine="83" endPosition="25" />
-    <scopeInfo nodeId="8382282457890483493" fileName="CycleDetector.java" startLine="86" startPosition="57" endLine="87" endPosition="28" />
-    <scopeInfo nodeId="8382282457890483562" fileName="CycleDetector.java" startLine="97" startPosition="63" endLine="98" endPosition="134" />
-    <scopeInfo nodeId="8382282457890483463" fileName="CycleDetector.java" startLine="117" startPosition="53" endLine="118" endPosition="18" />
-    <scopeInfo nodeId="1150613940746737202" fileName="CycleDetector.java" startLine="122" startPosition="57" endLine="123" endPosition="28" />
-    <scopeInfo nodeId="1150613940746737222" fileName="CycleDetector.java" startLine="126" startPosition="53" endLine="127" endPosition="36" />
-    <scopeInfo nodeId="8382282457890465334" fileName="CycleDetector.java" startLine="137" startPosition="62" endLine="138" endPosition="33" />
-    <scopeInfo nodeId="8382282457890465344" fileName="CycleDetector.java" startLine="141" startPosition="58" endLine="142" endPosition="41" />
-    <scopeInfo nodeId="1936544640085949726" fileName="CycleDetector.java" startLine="158" startPosition="26" endLine="159" endPosition="22" />
-    <scopeInfo nodeId="5717061624762469084" fileName="CycleDetector.java" startLine="162" startPosition="37" endLine="163" endPosition="34" />
-    <scopeInfo nodeId="5717061624762469118" fileName="CycleDetector.java" startLine="166" startPosition="35" endLine="167" endPosition="32" />
-    <scopeInfo nodeId="5717061624762460037" fileName="CycleDetector.java" startLine="171" startPosition="25" endLine="172" endPosition="64" />
-    <scopeInfo nodeId="2611988743427260355" fileName="CycleDetector.java" startLine="176" startPosition="26" endLine="177" endPosition="26" />
-    <scopeInfo nodeId="2611988743427260359" fileName="CycleDetector.java" startLine="180" startPosition="25" endLine="181" endPosition="25" />
-    <scopeInfo nodeId="1936544640085949760" fileName="CycleDetector.java" startLine="39" startPosition="0" endLine="41" endPosition="3" />
-    <scopeInfo nodeId="1936544640085949764" fileName="CycleDetector.java" startLine="42" startPosition="0" endLine="44" endPosition="0">
+    <nodeInfo nodeId="1936544640085949751" fileName="GraphAnalyzer.java" startLine="20" startPosition="40" endLine="21" endPosition="117" />
+    <nodeInfo nodeId="2611988743427260338" fileName="GraphAnalyzer.java" startLine="25" startPosition="53" endLine="26" endPosition="53" />
+    <nodeInfo nodeId="6976901853022624212" fileName="GraphAnalyzer.java" startLine="34" startPosition="53" endLine="35" endPosition="53" />
+    <nodeInfo nodeId="1682545549094398089" fileName="GraphAnalyzer.java" startLine="48" startPosition="57" endLine="49" endPosition="64" />
+    <nodeInfo nodeId="706015266664522447" fileName="GraphAnalyzer.java" startLine="49" startPosition="64" endLine="50" endPosition="23" />
+    <nodeInfo nodeId="8315466408454508417" fileName="GraphAnalyzer.java" startLine="50" startPosition="23" endLine="51" endPosition="34" />
+    <nodeInfo nodeId="8315466408454508395" fileName="GraphAnalyzer.java" startLine="54" startPosition="60" endLine="55" endPosition="67" />
+    <nodeInfo nodeId="8315466408454508345" fileName="GraphAnalyzer.java" startLine="55" startPosition="67" endLine="56" endPosition="64" />
+    <nodeInfo nodeId="8315466408454508381" fileName="GraphAnalyzer.java" startLine="58" startPosition="87" endLine="59" endPosition="22" />
+    <nodeInfo nodeId="8315466408454508405" fileName="GraphAnalyzer.java" startLine="59" startPosition="22" endLine="60" endPosition="62" />
+    <nodeInfo nodeId="8315466408454508414" fileName="GraphAnalyzer.java" startLine="62" startPosition="16" endLine="63" endPosition="15" />
+    <nodeInfo nodeId="1682545549094399575" fileName="GraphAnalyzer.java" startLine="68" startPosition="51" endLine="69" endPosition="72" />
+    <nodeInfo nodeId="1682545549094399582" fileName="GraphAnalyzer.java" startLine="69" startPosition="72" endLine="70" endPosition="50" />
+    <nodeInfo nodeId="1682545549094399593" fileName="GraphAnalyzer.java" startLine="70" startPosition="50" endLine="71" endPosition="20" />
+    <nodeInfo nodeId="706015266664522422" fileName="GraphAnalyzer.java" startLine="76" startPosition="65" endLine="77" endPosition="52" />
+    <nodeInfo nodeId="1150613940746737347" fileName="GraphAnalyzer.java" startLine="79" startPosition="87" endLine="80" endPosition="50" />
+    <nodeInfo nodeId="1150613940746737362" fileName="GraphAnalyzer.java" startLine="80" startPosition="50" endLine="81" endPosition="22" />
+    <nodeInfo nodeId="1150613940746737367" fileName="GraphAnalyzer.java" startLine="81" startPosition="22" endLine="82" endPosition="48" />
+    <nodeInfo nodeId="2105022298825483328" fileName="GraphAnalyzer.java" startLine="87" startPosition="78" endLine="88" endPosition="81" />
+    <nodeInfo nodeId="8382282457890483481" fileName="GraphAnalyzer.java" startLine="90" startPosition="53" endLine="91" endPosition="18" />
+    <nodeInfo nodeId="8382282457890484469" fileName="GraphAnalyzer.java" startLine="95" startPosition="63" endLine="96" endPosition="25" />
+    <nodeInfo nodeId="8382282457890483494" fileName="GraphAnalyzer.java" startLine="99" startPosition="57" endLine="100" endPosition="28" />
+    <nodeInfo nodeId="8382282457890483523" fileName="GraphAnalyzer.java" startLine="105" startPosition="92" endLine="106" endPosition="26" />
+    <nodeInfo nodeId="8382282457890483585" fileName="GraphAnalyzer.java" startLine="106" startPosition="26" endLine="107" endPosition="28" />
+    <nodeInfo nodeId="8382282457890486097" fileName="GraphAnalyzer.java" startLine="110" startPosition="63" endLine="111" endPosition="134" />
+    <nodeInfo nodeId="2105022298825483397" fileName="GraphAnalyzer.java" startLine="114" startPosition="7" endLine="115" endPosition="18" />
+    <nodeInfo nodeId="706015266664531305" fileName="GraphAnalyzer.java" startLine="120" startPosition="54" endLine="121" endPosition="58" />
+    <nodeInfo nodeId="706015266664531315" fileName="GraphAnalyzer.java" startLine="121" startPosition="58" endLine="122" endPosition="36" />
+    <nodeInfo nodeId="8382282457890486094" fileName="GraphAnalyzer.java" startLine="124" startPosition="7" endLine="125" endPosition="16" />
+    <nodeInfo nodeId="8382282457890483464" fileName="GraphAnalyzer.java" startLine="130" startPosition="53" endLine="131" endPosition="18" />
+    <nodeInfo nodeId="1150613940746737205" fileName="GraphAnalyzer.java" startLine="135" startPosition="57" endLine="136" endPosition="28" />
+    <nodeInfo nodeId="1150613940746737225" fileName="GraphAnalyzer.java" startLine="139" startPosition="53" endLine="140" endPosition="36" />
+    <nodeInfo nodeId="1150613940746737122" fileName="GraphAnalyzer.java" startLine="145" startPosition="292" endLine="146" endPosition="14" />
+    <nodeInfo nodeId="8382282457890465335" fileName="GraphAnalyzer.java" startLine="150" startPosition="62" endLine="151" endPosition="33" />
+    <nodeInfo nodeId="8382282457890465345" fileName="GraphAnalyzer.java" startLine="154" startPosition="58" endLine="155" endPosition="41" />
+    <nodeInfo nodeId="1150613940746737130" fileName="GraphAnalyzer.java" startLine="159" startPosition="7" endLine="160" endPosition="13" />
+    <nodeInfo nodeId="1682545549094398055" fileName="GraphAnalyzer.java" startLine="163" startPosition="35" endLine="164" endPosition="21" />
+    <nodeInfo nodeId="1936544640085949710" fileName="GraphAnalyzer.java" startLine="164" startPosition="21" endLine="165" endPosition="30" />
+    <nodeInfo nodeId="1936544640085949714" fileName="GraphAnalyzer.java" startLine="165" startPosition="30" endLine="166" endPosition="28" />
+    <nodeInfo nodeId="2611988743427260364" fileName="GraphAnalyzer.java" startLine="166" startPosition="28" endLine="167" endPosition="36" />
+    <nodeInfo nodeId="2611988743427260370" fileName="GraphAnalyzer.java" startLine="167" startPosition="36" endLine="168" endPosition="35" />
+    <nodeInfo nodeId="1936544640085949718" fileName="GraphAnalyzer.java" startLine="168" startPosition="35" endLine="169" endPosition="121" />
+    <nodeInfo nodeId="1682545549094398077" fileName="GraphAnalyzer.java" startLine="171" startPosition="26" endLine="172" endPosition="22" />
+    <nodeInfo nodeId="5717061624762469091" fileName="GraphAnalyzer.java" startLine="175" startPosition="37" endLine="176" endPosition="34" />
+    <nodeInfo nodeId="5717061624762469135" fileName="GraphAnalyzer.java" startLine="179" startPosition="35" endLine="180" endPosition="32" />
+    <nodeInfo nodeId="5717061624762460053" fileName="GraphAnalyzer.java" startLine="184" startPosition="25" endLine="185" endPosition="64" />
+    <nodeInfo nodeId="2611988743427260376" fileName="GraphAnalyzer.java" startLine="189" startPosition="26" endLine="190" endPosition="26" />
+    <nodeInfo nodeId="2611988743427260387" fileName="GraphAnalyzer.java" startLine="193" startPosition="25" endLine="194" endPosition="25" />
+    <nodeInfo nodeId="2611988743427260398" fileName="GraphAnalyzer.java" startLine="197" startPosition="26" endLine="198" endPosition="27" />
+    <nodeInfo nodeId="2611988743427260410" fileName="GraphAnalyzer.java" startLine="198" startPosition="27" endLine="199" endPosition="26" />
+    <nodeInfo nodeId="1936544640085949760" fileName="GraphAnalyzer.java" startLine="40" startPosition="0" endLine="42" endPosition="3" />
+    <nodeInfo nodeId="1936544640085949764" fileName="GraphAnalyzer.java" startLine="43" startPosition="0" endLine="45" endPosition="0" />
+    <nodeInfo nodeId="1936544640085949771" fileName="GraphAnalyzer.java" startLine="45" startPosition="0" endLine="47" endPosition="0" />
+    <nodeInfo nodeId="8382282457890483556" fileName="GraphAnalyzer.java" startLine="109" startPosition="21" endLine="112" endPosition="9" />
+    <nodeInfo nodeId="1936544640085949723" fileName="GraphAnalyzer.java" startLine="170" startPosition="0" endLine="173" endPosition="5" />
+    <nodeInfo nodeId="5717061624762460035" fileName="GraphAnalyzer.java" startLine="183" startPosition="59" endLine="186" endPosition="7" />
+    <nodeInfo nodeId="2611988743427260336" fileName="GraphAnalyzer.java" startLine="24" startPosition="112" endLine="28" endPosition="0" />
+    <nodeInfo nodeId="6976901853022624210" fileName="GraphAnalyzer.java" startLine="33" startPosition="113" endLine="37" endPosition="0" />
+    <nodeInfo nodeId="8382282457890483479" fileName="GraphAnalyzer.java" startLine="89" startPosition="81" endLine="93" endPosition="0" />
+    <nodeInfo nodeId="8382282457890484464" fileName="GraphAnalyzer.java" startLine="94" startPosition="93" endLine="98" endPosition="0" />
+    <nodeInfo nodeId="8382282457890483492" fileName="GraphAnalyzer.java" startLine="98" startPosition="66" endLine="102" endPosition="0" />
+    <nodeInfo nodeId="8382282457890483462" fileName="GraphAnalyzer.java" startLine="129" startPosition="81" endLine="133" endPosition="0" />
+    <nodeInfo nodeId="1150613940746737201" fileName="GraphAnalyzer.java" startLine="134" startPosition="82" endLine="138" endPosition="0" />
+    <nodeInfo nodeId="1150613940746737221" fileName="GraphAnalyzer.java" startLine="138" startPosition="58" endLine="142" endPosition="0" />
+    <nodeInfo nodeId="8382282457890465333" fileName="GraphAnalyzer.java" startLine="149" startPosition="99" endLine="153" endPosition="0" />
+    <nodeInfo nodeId="8382282457890465343" fileName="GraphAnalyzer.java" startLine="153" startPosition="62" endLine="157" endPosition="0" />
+    <nodeInfo nodeId="5717061624762469081" fileName="GraphAnalyzer.java" startLine="174" startPosition="0" endLine="178" endPosition="0" />
+    <nodeInfo nodeId="5717061624762469115" fileName="GraphAnalyzer.java" startLine="178" startPosition="0" endLine="182" endPosition="0" />
+    <nodeInfo nodeId="2611988743427260352" fileName="GraphAnalyzer.java" startLine="188" startPosition="0" endLine="192" endPosition="0" />
+    <nodeInfo nodeId="2611988743427260356" fileName="GraphAnalyzer.java" startLine="192" startPosition="0" endLine="196" endPosition="0" />
+    <nodeInfo nodeId="2611988743427260329" fileName="GraphAnalyzer.java" startLine="23" startPosition="83" endLine="28" endPosition="9" />
+    <nodeInfo nodeId="6976901853022624203" fileName="GraphAnalyzer.java" startLine="32" startPosition="83" endLine="37" endPosition="9" />
+    <nodeInfo nodeId="8315466408454508365" fileName="GraphAnalyzer.java" startLine="57" startPosition="100" endLine="62" endPosition="0" />
+    <nodeInfo nodeId="8382282457890483475" fileName="GraphAnalyzer.java" startLine="88" startPosition="81" endLine="93" endPosition="7" />
+    <nodeInfo nodeId="8382282457890483515" fileName="GraphAnalyzer.java" startLine="104" startPosition="108" endLine="109" endPosition="0" />
+    <nodeInfo nodeId="706015266664531301" fileName="GraphAnalyzer.java" startLine="119" startPosition="91" endLine="124" endPosition="0" />
+    <nodeInfo nodeId="8382282457890483458" fileName="GraphAnalyzer.java" startLine="128" startPosition="292" endLine="133" endPosition="7" />
+    <nodeInfo nodeId="2611988743427260360" fileName="GraphAnalyzer.java" startLine="196" startPosition="0" endLine="201" endPosition="0" />
+    <nodeInfo nodeId="1936544640085949778" fileName="GraphAnalyzer.java" startLine="47" startPosition="0" endLine="53" endPosition="0" />
+    <nodeInfo nodeId="8315466408454508362" fileName="GraphAnalyzer.java" startLine="56" startPosition="64" endLine="62" endPosition="16" />
+    <nodeInfo nodeId="1682545549094398067" fileName="GraphAnalyzer.java" startLine="67" startPosition="96" endLine="73" endPosition="0" />
+    <nodeInfo nodeId="1150613940746737333" fileName="GraphAnalyzer.java" startLine="78" startPosition="100" endLine="84" endPosition="0" />
+    <nodeInfo nodeId="8382282457890483504" fileName="GraphAnalyzer.java" startLine="103" startPosition="59" endLine="109" endPosition="21" />
+    <nodeInfo nodeId="706015266664531290" fileName="GraphAnalyzer.java" startLine="118" startPosition="85" endLine="124" endPosition="7" />
+    <nodeInfo nodeId="5717061624762460027" fileName="GraphAnalyzer.java" startLine="182" startPosition="0" endLine="188" endPosition="0" />
+    <nodeInfo nodeId="1682545549094398060" fileName="GraphAnalyzer.java" startLine="66" startPosition="73" endLine="73" endPosition="24" />
+    <nodeInfo nodeId="1150613940746737329" fileName="GraphAnalyzer.java" startLine="77" startPosition="52" endLine="84" endPosition="16" />
+    <nodeInfo nodeId="2611988743427260327" fileName="GraphAnalyzer.java" startLine="22" startPosition="228" endLine="30" endPosition="0" />
+    <nodeInfo nodeId="6976901853022624201" fileName="GraphAnalyzer.java" startLine="31" startPosition="229" endLine="39" endPosition="0" />
+    <nodeInfo nodeId="2611988743427260320" fileName="GraphAnalyzer.java" startLine="21" startPosition="117" endLine="30" endPosition="4" />
+    <nodeInfo nodeId="6976901853022624193" fileName="GraphAnalyzer.java" startLine="30" startPosition="4" endLine="39" endPosition="4" />
+    <nodeInfo nodeId="1150613940746737194" fileName="GraphAnalyzer.java" startLine="133" startPosition="7" endLine="142" endPosition="7" />
+    <nodeInfo nodeId="8382282457890465326" fileName="GraphAnalyzer.java" startLine="148" startPosition="28" endLine="157" endPosition="11" />
+    <nodeInfo nodeId="706015266664522384" fileName="GraphAnalyzer.java" startLine="65" startPosition="0" endLine="75" endPosition="0" />
+    <nodeInfo nodeId="1936544640085949915" fileName="GraphAnalyzer.java" startLine="117" startPosition="0" endLine="127" endPosition="0" />
+    <nodeInfo nodeId="706015266664522416" fileName="GraphAnalyzer.java" startLine="75" startPosition="0" endLine="86" endPosition="0" />
+    <nodeInfo nodeId="8315466408454508326" fileName="GraphAnalyzer.java" startLine="53" startPosition="0" endLine="65" endPosition="0" />
+    <nodeInfo nodeId="8382282457890483502" fileName="GraphAnalyzer.java" startLine="102" startPosition="58" endLine="114" endPosition="0" />
+    <nodeInfo nodeId="8382282457890465324" fileName="GraphAnalyzer.java" startLine="147" startPosition="56" endLine="159" endPosition="0" />
+    <nodeInfo nodeId="1150613940746737138" fileName="GraphAnalyzer.java" startLine="146" startPosition="14" endLine="159" endPosition="7" />
+    <nodeInfo nodeId="1150613940746731980" fileName="GraphAnalyzer.java" startLine="127" startPosition="0" endLine="144" endPosition="0" />
+    <nodeInfo nodeId="1150613940746737101" fileName="GraphAnalyzer.java" startLine="144" startPosition="0" endLine="162" endPosition="0" />
+    <nodeInfo nodeId="8382282457890483487" fileName="GraphAnalyzer.java" startLine="93" startPosition="7" endLine="114" endPosition="7" />
+    <nodeInfo nodeId="2105022298825483318" fileName="GraphAnalyzer.java" startLine="86" startPosition="0" endLine="117" endPosition="0" />
+    <scopeInfo nodeId="1936544640085949763" fileName="GraphAnalyzer.java" startLine="41" startPosition="26" endLine="41" endPosition="26" />
+    <scopeInfo nodeId="2611988743427260337" fileName="GraphAnalyzer.java" startLine="25" startPosition="53" endLine="26" endPosition="53" />
+    <scopeInfo nodeId="6976901853022624211" fileName="GraphAnalyzer.java" startLine="34" startPosition="53" endLine="35" endPosition="53" />
+    <scopeInfo nodeId="8382282457890483480" fileName="GraphAnalyzer.java" startLine="90" startPosition="53" endLine="91" endPosition="18" />
+    <scopeInfo nodeId="8382282457890484465" fileName="GraphAnalyzer.java" startLine="95" startPosition="63" endLine="96" endPosition="25" />
+    <scopeInfo nodeId="8382282457890483493" fileName="GraphAnalyzer.java" startLine="99" startPosition="57" endLine="100" endPosition="28" />
+    <scopeInfo nodeId="8382282457890483562" fileName="GraphAnalyzer.java" startLine="110" startPosition="63" endLine="111" endPosition="134" />
+    <scopeInfo nodeId="8382282457890483463" fileName="GraphAnalyzer.java" startLine="130" startPosition="53" endLine="131" endPosition="18" />
+    <scopeInfo nodeId="1150613940746737202" fileName="GraphAnalyzer.java" startLine="135" startPosition="57" endLine="136" endPosition="28" />
+    <scopeInfo nodeId="1150613940746737222" fileName="GraphAnalyzer.java" startLine="139" startPosition="53" endLine="140" endPosition="36" />
+    <scopeInfo nodeId="8382282457890465334" fileName="GraphAnalyzer.java" startLine="150" startPosition="62" endLine="151" endPosition="33" />
+    <scopeInfo nodeId="8382282457890465344" fileName="GraphAnalyzer.java" startLine="154" startPosition="58" endLine="155" endPosition="41" />
+    <scopeInfo nodeId="1936544640085949726" fileName="GraphAnalyzer.java" startLine="171" startPosition="26" endLine="172" endPosition="22" />
+    <scopeInfo nodeId="5717061624762469084" fileName="GraphAnalyzer.java" startLine="175" startPosition="37" endLine="176" endPosition="34" />
+    <scopeInfo nodeId="5717061624762469118" fileName="GraphAnalyzer.java" startLine="179" startPosition="35" endLine="180" endPosition="32" />
+    <scopeInfo nodeId="5717061624762460037" fileName="GraphAnalyzer.java" startLine="184" startPosition="25" endLine="185" endPosition="64" />
+    <scopeInfo nodeId="2611988743427260355" fileName="GraphAnalyzer.java" startLine="189" startPosition="26" endLine="190" endPosition="26" />
+    <scopeInfo nodeId="2611988743427260359" fileName="GraphAnalyzer.java" startLine="193" startPosition="25" endLine="194" endPosition="25" />
+    <scopeInfo nodeId="1936544640085949760" fileName="GraphAnalyzer.java" startLine="40" startPosition="0" endLine="42" endPosition="3" />
+    <scopeInfo nodeId="1936544640085949764" fileName="GraphAnalyzer.java" startLine="43" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="1936544640085949768" varName="v" />
     </scopeInfo>
-    <scopeInfo nodeId="1936544640085949771" fileName="CycleDetector.java" startLine="44" startPosition="0" endLine="46" endPosition="0">
+    <scopeInfo nodeId="1936544640085949771" fileName="GraphAnalyzer.java" startLine="45" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="1936544640085949775" varName="v" />
     </scopeInfo>
-    <scopeInfo nodeId="8382282457890483522" fileName="CycleDetector.java" startLine="92" startPosition="92" endLine="94" endPosition="28" />
-    <scopeInfo nodeId="706015266664531302" fileName="CycleDetector.java" startLine="107" startPosition="54" endLine="109" endPosition="36" />
-    <scopeInfo nodeId="2611988743427260363" fileName="CycleDetector.java" startLine="184" startPosition="26" endLine="186" endPosition="26" />
-    <scopeInfo nodeId="1936544640085949786" fileName="CycleDetector.java" startLine="47" startPosition="57" endLine="50" endPosition="37">
-      <varInfo nodeId="1682545549094398090" varName="datas" />
+    <scopeInfo nodeId="8315466408454508372" fileName="GraphAnalyzer.java" startLine="58" startPosition="87" endLine="60" endPosition="62" />
+    <scopeInfo nodeId="8382282457890483522" fileName="GraphAnalyzer.java" startLine="105" startPosition="92" endLine="107" endPosition="28" />
+    <scopeInfo nodeId="706015266664531302" fileName="GraphAnalyzer.java" startLine="120" startPosition="54" endLine="122" endPosition="36" />
+    <scopeInfo nodeId="2611988743427260363" fileName="GraphAnalyzer.java" startLine="197" startPosition="26" endLine="199" endPosition="26" />
+    <scopeInfo nodeId="1936544640085949786" fileName="GraphAnalyzer.java" startLine="48" startPosition="57" endLine="51" endPosition="34">
+      <varInfo nodeId="1682545549094398090" varName="ws" />
     </scopeInfo>
-    <scopeInfo nodeId="1682545549094398068" fileName="CycleDetector.java" startLine="55" startPosition="51" endLine="58" endPosition="20">
+    <scopeInfo nodeId="1682545549094398068" fileName="GraphAnalyzer.java" startLine="68" startPosition="51" endLine="71" endPosition="20">
       <varInfo nodeId="1682545549094399576" varName="data" />
     </scopeInfo>
-    <scopeInfo nodeId="1150613940746737334" fileName="CycleDetector.java" startLine="66" startPosition="87" endLine="69" endPosition="48" />
-    <scopeInfo nodeId="1936544640085949723" fileName="CycleDetector.java" startLine="157" startPosition="0" endLine="160" endPosition="5">
+    <scopeInfo nodeId="1150613940746737334" fileName="GraphAnalyzer.java" startLine="79" startPosition="87" endLine="82" endPosition="48" />
+    <scopeInfo nodeId="1936544640085949723" fileName="GraphAnalyzer.java" startLine="170" startPosition="0" endLine="173" endPosition="5">
       <varInfo nodeId="1682545549094398075" varName="v" />
     </scopeInfo>
-    <scopeInfo nodeId="5717061624762460030" fileName="CycleDetector.java" startLine="170" startPosition="59" endLine="173" endPosition="7" />
-    <scopeInfo nodeId="2611988743427260336" fileName="CycleDetector.java" startLine="23" startPosition="112" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="6976901853022624210" fileName="CycleDetector.java" startLine="32" startPosition="113" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="8382282457890483479" fileName="CycleDetector.java" startLine="76" startPosition="81" endLine="80" endPosition="0" />
-    <scopeInfo nodeId="8382282457890484464" fileName="CycleDetector.java" startLine="81" startPosition="93" endLine="85" endPosition="0" />
-    <scopeInfo nodeId="8382282457890483492" fileName="CycleDetector.java" startLine="85" startPosition="66" endLine="89" endPosition="0" />
-    <scopeInfo nodeId="8382282457890483462" fileName="CycleDetector.java" startLine="116" startPosition="81" endLine="120" endPosition="0" />
-    <scopeInfo nodeId="1150613940746737201" fileName="CycleDetector.java" startLine="121" startPosition="82" endLine="125" endPosition="0" />
-    <scopeInfo nodeId="1150613940746737221" fileName="CycleDetector.java" startLine="125" startPosition="58" endLine="129" endPosition="0" />
-    <scopeInfo nodeId="8382282457890465333" fileName="CycleDetector.java" startLine="136" startPosition="99" endLine="140" endPosition="0" />
-    <scopeInfo nodeId="8382282457890465343" fileName="CycleDetector.java" startLine="140" startPosition="62" endLine="144" endPosition="0" />
-    <scopeInfo nodeId="5717061624762469081" fileName="CycleDetector.java" startLine="161" startPosition="0" endLine="165" endPosition="0">
+    <scopeInfo nodeId="5717061624762460030" fileName="GraphAnalyzer.java" startLine="183" startPosition="59" endLine="186" endPosition="7" />
+    <scopeInfo nodeId="2611988743427260336" fileName="GraphAnalyzer.java" startLine="24" startPosition="112" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="6976901853022624210" fileName="GraphAnalyzer.java" startLine="33" startPosition="113" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="8382282457890483479" fileName="GraphAnalyzer.java" startLine="89" startPosition="81" endLine="93" endPosition="0" />
+    <scopeInfo nodeId="8382282457890484464" fileName="GraphAnalyzer.java" startLine="94" startPosition="93" endLine="98" endPosition="0" />
+    <scopeInfo nodeId="8382282457890483492" fileName="GraphAnalyzer.java" startLine="98" startPosition="66" endLine="102" endPosition="0" />
+    <scopeInfo nodeId="8382282457890483462" fileName="GraphAnalyzer.java" startLine="129" startPosition="81" endLine="133" endPosition="0" />
+    <scopeInfo nodeId="1150613940746737201" fileName="GraphAnalyzer.java" startLine="134" startPosition="82" endLine="138" endPosition="0" />
+    <scopeInfo nodeId="1150613940746737221" fileName="GraphAnalyzer.java" startLine="138" startPosition="58" endLine="142" endPosition="0" />
+    <scopeInfo nodeId="8382282457890465333" fileName="GraphAnalyzer.java" startLine="149" startPosition="99" endLine="153" endPosition="0" />
+    <scopeInfo nodeId="8382282457890465343" fileName="GraphAnalyzer.java" startLine="153" startPosition="62" endLine="157" endPosition="0" />
+    <scopeInfo nodeId="5717061624762469081" fileName="GraphAnalyzer.java" startLine="174" startPosition="0" endLine="178" endPosition="0">
       <varInfo nodeId="5717061624762469113" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="5717061624762469115" fileName="CycleDetector.java" startLine="165" startPosition="0" endLine="169" endPosition="0">
+    <scopeInfo nodeId="5717061624762469115" fileName="GraphAnalyzer.java" startLine="178" startPosition="0" endLine="182" endPosition="0">
       <varInfo nodeId="5717061624762469147" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="2611988743427260352" fileName="CycleDetector.java" startLine="175" startPosition="0" endLine="179" endPosition="0" />
-    <scopeInfo nodeId="2611988743427260356" fileName="CycleDetector.java" startLine="179" startPosition="0" endLine="183" endPosition="0" />
-    <scopeInfo nodeId="2611988743427260328" fileName="CycleDetector.java" startLine="22" startPosition="83" endLine="27" endPosition="9" />
-    <scopeInfo nodeId="6976901853022624202" fileName="CycleDetector.java" startLine="31" startPosition="83" endLine="36" endPosition="9" />
-    <scopeInfo nodeId="8382282457890483515" fileName="CycleDetector.java" startLine="91" startPosition="108" endLine="96" endPosition="0" />
-    <scopeInfo nodeId="706015266664531301" fileName="CycleDetector.java" startLine="106" startPosition="91" endLine="111" endPosition="0" />
-    <scopeInfo nodeId="2611988743427260360" fileName="CycleDetector.java" startLine="183" startPosition="0" endLine="188" endPosition="0" />
-    <scopeInfo nodeId="1936544640085949778" fileName="CycleDetector.java" startLine="46" startPosition="0" endLine="52" endPosition="0">
+    <scopeInfo nodeId="2611988743427260352" fileName="GraphAnalyzer.java" startLine="188" startPosition="0" endLine="192" endPosition="0" />
+    <scopeInfo nodeId="2611988743427260356" fileName="GraphAnalyzer.java" startLine="192" startPosition="0" endLine="196" endPosition="0" />
+    <scopeInfo nodeId="2611988743427260328" fileName="GraphAnalyzer.java" startLine="23" startPosition="83" endLine="28" endPosition="9" />
+    <scopeInfo nodeId="6976901853022624202" fileName="GraphAnalyzer.java" startLine="32" startPosition="83" endLine="37" endPosition="9" />
+    <scopeInfo nodeId="8315466408454508365" fileName="GraphAnalyzer.java" startLine="57" startPosition="100" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="8382282457890483515" fileName="GraphAnalyzer.java" startLine="104" startPosition="108" endLine="109" endPosition="0" />
+    <scopeInfo nodeId="706015266664531301" fileName="GraphAnalyzer.java" startLine="119" startPosition="91" endLine="124" endPosition="0" />
+    <scopeInfo nodeId="2611988743427260360" fileName="GraphAnalyzer.java" startLine="196" startPosition="0" endLine="201" endPosition="0" />
+    <scopeInfo nodeId="1936544640085949778" fileName="GraphAnalyzer.java" startLine="47" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="1936544640085949783" varName="vertices" />
     </scopeInfo>
-    <scopeInfo nodeId="1682545549094398067" fileName="CycleDetector.java" startLine="54" startPosition="96" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="1150613940746737333" fileName="CycleDetector.java" startLine="65" startPosition="100" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="5717061624762460027" fileName="CycleDetector.java" startLine="169" startPosition="0" endLine="175" endPosition="0">
+    <scopeInfo nodeId="1682545549094398067" fileName="GraphAnalyzer.java" startLine="67" startPosition="96" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="1150613940746737333" fileName="GraphAnalyzer.java" startLine="78" startPosition="100" endLine="84" endPosition="0" />
+    <scopeInfo nodeId="5717061624762460027" fileName="GraphAnalyzer.java" startLine="182" startPosition="0" endLine="188" endPosition="0">
       <varInfo nodeId="5717061624762460031" varName="succ" />
     </scopeInfo>
-    <scopeInfo nodeId="706015266664522389" fileName="CycleDetector.java" startLine="53" startPosition="73" endLine="60" endPosition="24" />
-    <scopeInfo nodeId="1936544640085949923" fileName="CycleDetector.java" startLine="105" startPosition="85" endLine="112" endPosition="16" />
-    <scopeInfo nodeId="2611988743427260327" fileName="CycleDetector.java" startLine="21" startPosition="228" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="6976901853022624201" fileName="CycleDetector.java" startLine="30" startPosition="229" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="706015266664522421" fileName="CycleDetector.java" startLine="63" startPosition="65" endLine="71" endPosition="16">
+    <scopeInfo nodeId="706015266664522389" fileName="GraphAnalyzer.java" startLine="66" startPosition="73" endLine="73" endPosition="24" />
+    <scopeInfo nodeId="1936544640085949923" fileName="GraphAnalyzer.java" startLine="118" startPosition="85" endLine="125" endPosition="16" />
+    <scopeInfo nodeId="2611988743427260327" fileName="GraphAnalyzer.java" startLine="22" startPosition="228" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="6976901853022624201" fileName="GraphAnalyzer.java" startLine="31" startPosition="229" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="706015266664522421" fileName="GraphAnalyzer.java" startLine="76" startPosition="65" endLine="84" endPosition="16">
       <varInfo nodeId="706015266664522414" varName="time" />
     </scopeInfo>
-    <scopeInfo nodeId="8382282457890483503" fileName="CycleDetector.java" startLine="90" startPosition="59" endLine="99" endPosition="9" />
-    <scopeInfo nodeId="8382282457890465325" fileName="CycleDetector.java" startLine="135" startPosition="28" endLine="144" endPosition="11" />
-    <scopeInfo nodeId="706015266664522384" fileName="CycleDetector.java" startLine="52" startPosition="0" endLine="62" endPosition="0">
+    <scopeInfo nodeId="8315466408454508329" fileName="GraphAnalyzer.java" startLine="54" startPosition="60" endLine="63" endPosition="15">
+      <varInfo nodeId="8315466408454508396" varName="res" />
+      <varInfo nodeId="8315466408454508346" varName="ws" />
+    </scopeInfo>
+    <scopeInfo nodeId="8382282457890483503" fileName="GraphAnalyzer.java" startLine="103" startPosition="59" endLine="112" endPosition="9" />
+    <scopeInfo nodeId="8382282457890465325" fileName="GraphAnalyzer.java" startLine="148" startPosition="28" endLine="157" endPosition="11" />
+    <scopeInfo nodeId="706015266664522384" fileName="GraphAnalyzer.java" startLine="65" startPosition="0" endLine="75" endPosition="0">
       <varInfo nodeId="706015266664522383" varName="vertices" />
     </scopeInfo>
-    <scopeInfo nodeId="1936544640085949915" fileName="CycleDetector.java" startLine="104" startPosition="0" endLine="114" endPosition="0">
+    <scopeInfo nodeId="1936544640085949915" fileName="GraphAnalyzer.java" startLine="117" startPosition="0" endLine="127" endPosition="0">
       <varInfo nodeId="1936544640085949918" varName="w" />
       <varInfo nodeId="1936544640085949920" varName="list" />
     </scopeInfo>
-    <scopeInfo nodeId="706015266664522416" fileName="CycleDetector.java" startLine="62" startPosition="0" endLine="73" endPosition="0">
+    <scopeInfo nodeId="706015266664522416" fileName="GraphAnalyzer.java" startLine="75" startPosition="0" endLine="86" endPosition="0">
       <varInfo nodeId="706015266664522415" varName="ws" />
     </scopeInfo>
-    <scopeInfo nodeId="8382282457890483502" fileName="CycleDetector.java" startLine="89" startPosition="58" endLine="101" endPosition="0" />
-    <scopeInfo nodeId="8382282457890465324" fileName="CycleDetector.java" startLine="134" startPosition="56" endLine="146" endPosition="0" />
-    <scopeInfo nodeId="1150613940746731983" fileName="CycleDetector.java" startLine="115" startPosition="292" endLine="129" endPosition="7" />
-    <scopeInfo nodeId="1150613940746737104" fileName="CycleDetector.java" startLine="132" startPosition="292" endLine="147" endPosition="13" />
-    <scopeInfo nodeId="1150613940746731980" fileName="CycleDetector.java" startLine="114" startPosition="0" endLine="131" endPosition="0">
+    <scopeInfo nodeId="8315466408454508326" fileName="GraphAnalyzer.java" startLine="53" startPosition="0" endLine="65" endPosition="0">
+      <varInfo nodeId="8315466408454508338" varName="vertices" />
+    </scopeInfo>
+    <scopeInfo nodeId="8382282457890483502" fileName="GraphAnalyzer.java" startLine="102" startPosition="58" endLine="114" endPosition="0" />
+    <scopeInfo nodeId="8382282457890465324" fileName="GraphAnalyzer.java" startLine="147" startPosition="56" endLine="159" endPosition="0" />
+    <scopeInfo nodeId="1150613940746731983" fileName="GraphAnalyzer.java" startLine="128" startPosition="292" endLine="142" endPosition="7" />
+    <scopeInfo nodeId="1150613940746737104" fileName="GraphAnalyzer.java" startLine="145" startPosition="292" endLine="160" endPosition="13" />
+    <scopeInfo nodeId="1150613940746731980" fileName="GraphAnalyzer.java" startLine="127" startPosition="0" endLine="144" endPosition="0">
       <varInfo nodeId="1150613940746732000" varName="edges" />
       <varInfo nodeId="1150613940746731984" varName="ws" />
       <varInfo nodeId="1150613940746731991" varName="visitor" />
     </scopeInfo>
-    <scopeInfo nodeId="1150613940746737101" fileName="CycleDetector.java" startLine="131" startPosition="0" endLine="149" endPosition="0">
+    <scopeInfo nodeId="1150613940746737101" fileName="GraphAnalyzer.java" startLine="144" startPosition="0" endLine="162" endPosition="0">
       <varInfo nodeId="1150613940746737107" varName="w" />
       <varInfo nodeId="1150613940746737115" varName="edges" />
       <varInfo nodeId="1150613940746737110" varName="visitor" />
     </scopeInfo>
-    <scopeInfo nodeId="2105022298825483327" fileName="CycleDetector.java" startLine="74" startPosition="78" endLine="102" endPosition="18">
+    <scopeInfo nodeId="2105022298825483327" fileName="GraphAnalyzer.java" startLine="87" startPosition="78" endLine="115" endPosition="18">
       <varInfo nodeId="2105022298825483329" varName="cycles" />
     </scopeInfo>
-    <scopeInfo nodeId="2105022298825483318" fileName="CycleDetector.java" startLine="73" startPosition="0" endLine="104" endPosition="0">
+    <scopeInfo nodeId="2105022298825483318" fileName="GraphAnalyzer.java" startLine="86" startPosition="0" endLine="117" endPosition="0">
       <varInfo nodeId="2105022298825483323" varName="ws" />
     </scopeInfo>
-    <unitInfo nodeId="2611988743427260336" fileName="CycleDetector.java" startLine="23" startPosition="70" endLine="27" endPosition="7" unitName="jetbrains.mps.make.runtime.internal.util.ISelector$anonymous" />
-    <unitInfo nodeId="6976901853022624210" fileName="CycleDetector.java" startLine="32" startPosition="71" endLine="36" endPosition="7" unitName="jetbrains.mps.make.runtime.internal.util.ISelector$anonymous" />
-    <unitInfo nodeId="8382282457890483479" fileName="CycleDetector.java" startLine="76" startPosition="43" endLine="80" endPosition="5" unitName="jetbrains.mps.make.runtime.internal.util.CycleDetector$3" />
-    <unitInfo nodeId="8382282457890484464" fileName="CycleDetector.java" startLine="81" startPosition="39" endLine="85" endPosition="5" unitName="jetbrains.mps.make.runtime.internal.util.CycleDetector$4" />
-    <unitInfo nodeId="8382282457890483492" fileName="CycleDetector.java" startLine="85" startPosition="24" endLine="89" endPosition="5" unitName="jetbrains.mps.make.runtime.internal.util.CycleDetector$5" />
-    <unitInfo nodeId="8382282457890483462" fileName="CycleDetector.java" startLine="116" startPosition="43" endLine="120" endPosition="5" unitName="jetbrains.mps.make.runtime.internal.util.CycleDetector$8" />
-    <unitInfo nodeId="1150613940746737201" fileName="CycleDetector.java" startLine="121" startPosition="40" endLine="125" endPosition="5" unitName="jetbrains.mps.make.runtime.internal.util.CycleDetector$9" />
-    <unitInfo nodeId="1150613940746737221" fileName="CycleDetector.java" startLine="125" startPosition="20" endLine="129" endPosition="5" unitName="jetbrains.mps.make.runtime.internal.util.CycleDetector$10" />
-    <unitInfo nodeId="8382282457890465333" fileName="CycleDetector.java" startLine="136" startPosition="57" endLine="140" endPosition="9" unitName="jetbrains.mps.make.runtime.internal.util.CycleDetector$12" />
-    <unitInfo nodeId="8382282457890465343" fileName="CycleDetector.java" startLine="140" startPosition="24" endLine="144" endPosition="9" unitName="jetbrains.mps.make.runtime.internal.util.CycleDetector$12" />
-    <unitInfo nodeId="8382282457890483515" fileName="CycleDetector.java" startLine="91" startPosition="24" endLine="96" endPosition="9" unitName="jetbrains.mps.make.runtime.internal.util.CycleDetector$7" />
-    <unitInfo nodeId="706015266664531301" fileName="CycleDetector.java" startLine="106" startPosition="53" endLine="111" endPosition="5" unitName="jetbrains.mps.make.runtime.internal.util.CycleDetector$7" />
-    <unitInfo nodeId="1682545549094398067" fileName="CycleDetector.java" startLine="54" startPosition="54" endLine="60" endPosition="5" unitName="jetbrains.mps.make.runtime.internal.util.ISelector$anonymous" />
-    <unitInfo nodeId="1150613940746737333" fileName="CycleDetector.java" startLine="65" startPosition="16" endLine="71" endPosition="5" unitName="jetbrains.mps.make.runtime.internal.util.CycleDetector$2" />
-    <unitInfo nodeId="2611988743427260327" fileName="CycleDetector.java" startLine="21" startPosition="133" endLine="29" endPosition="3" unitName="jetbrains.mps.make.runtime.internal.util.CycleDetector$12" />
-    <unitInfo nodeId="6976901853022624201" fileName="CycleDetector.java" startLine="30" startPosition="134" endLine="38" endPosition="3" unitName="jetbrains.mps.make.runtime.internal.util.CycleDetector$13" />
-    <unitInfo nodeId="8382282457890483502" fileName="CycleDetector.java" startLine="89" startPosition="20" endLine="101" endPosition="5" unitName="jetbrains.mps.make.runtime.internal.util.CycleDetector$6" />
-    <unitInfo nodeId="8382282457890465324" fileName="CycleDetector.java" startLine="134" startPosition="26" endLine="146" endPosition="5" unitName="jetbrains.mps.make.runtime.internal.util.CycleDetector$11" />
-    <unitInfo nodeId="1936544640085949704" fileName="CycleDetector.java" startLine="150" startPosition="0" endLine="189" endPosition="0" unitName="jetbrains.mps.make.runtime.internal.util.CycleDetector$Wrapper" />
-    <unitInfo nodeId="1936544640085949692" fileName="CycleDetector.java" startLine="19" startPosition="0" endLine="190" endPosition="0" unitName="jetbrains.mps.make.runtime.internal.util.CycleDetector" />
+    <unitInfo nodeId="2611988743427260336" fileName="GraphAnalyzer.java" startLine="24" startPosition="70" endLine="28" endPosition="7" unitName="jetbrains.mps.make.runtime.internal.util.ISelector$anonymous" />
+    <unitInfo nodeId="6976901853022624210" fileName="GraphAnalyzer.java" startLine="33" startPosition="71" endLine="37" endPosition="7" unitName="jetbrains.mps.make.runtime.internal.util.ISelector$anonymous" />
+    <unitInfo nodeId="8382282457890483479" fileName="GraphAnalyzer.java" startLine="89" startPosition="43" endLine="93" endPosition="5" unitName="jetbrains.mps.make.runtime.internal.util.GraphAnalyzer$4" />
+    <unitInfo nodeId="8382282457890484464" fileName="GraphAnalyzer.java" startLine="94" startPosition="39" endLine="98" endPosition="5" unitName="jetbrains.mps.make.runtime.internal.util.GraphAnalyzer$5" />
+    <unitInfo nodeId="8382282457890483492" fileName="GraphAnalyzer.java" startLine="98" startPosition="24" endLine="102" endPosition="5" unitName="jetbrains.mps.make.runtime.internal.util.GraphAnalyzer$6" />
+    <unitInfo nodeId="8382282457890483462" fileName="GraphAnalyzer.java" startLine="129" startPosition="43" endLine="133" endPosition="5" unitName="jetbrains.mps.make.runtime.internal.util.GraphAnalyzer$9" />
+    <unitInfo nodeId="1150613940746737201" fileName="GraphAnalyzer.java" startLine="134" startPosition="40" endLine="138" endPosition="5" unitName="jetbrains.mps.make.runtime.internal.util.GraphAnalyzer$10" />
+    <unitInfo nodeId="1150613940746737221" fileName="GraphAnalyzer.java" startLine="138" startPosition="20" endLine="142" endPosition="5" unitName="jetbrains.mps.make.runtime.internal.util.GraphAnalyzer$11" />
+    <unitInfo nodeId="8382282457890465333" fileName="GraphAnalyzer.java" startLine="149" startPosition="57" endLine="153" endPosition="9" unitName="jetbrains.mps.make.runtime.internal.util.GraphAnalyzer$13" />
+    <unitInfo nodeId="8382282457890465343" fileName="GraphAnalyzer.java" startLine="153" startPosition="24" endLine="157" endPosition="9" unitName="jetbrains.mps.make.runtime.internal.util.GraphAnalyzer$13" />
+    <unitInfo nodeId="8315466408454508365" fileName="GraphAnalyzer.java" startLine="57" startPosition="16" endLine="62" endPosition="5" unitName="jetbrains.mps.make.runtime.internal.util.GraphAnalyzer$1" />
+    <unitInfo nodeId="8382282457890483515" fileName="GraphAnalyzer.java" startLine="104" startPosition="24" endLine="109" endPosition="9" unitName="jetbrains.mps.make.runtime.internal.util.GraphAnalyzer$8" />
+    <unitInfo nodeId="706015266664531301" fileName="GraphAnalyzer.java" startLine="119" startPosition="53" endLine="124" endPosition="5" unitName="jetbrains.mps.make.runtime.internal.util.GraphAnalyzer$8" />
+    <unitInfo nodeId="1682545549094398067" fileName="GraphAnalyzer.java" startLine="67" startPosition="54" endLine="73" endPosition="5" unitName="jetbrains.mps.make.runtime.internal.util.ISelector$anonymous" />
+    <unitInfo nodeId="1150613940746737333" fileName="GraphAnalyzer.java" startLine="78" startPosition="16" endLine="84" endPosition="5" unitName="jetbrains.mps.make.runtime.internal.util.GraphAnalyzer$3" />
+    <unitInfo nodeId="2611988743427260327" fileName="GraphAnalyzer.java" startLine="22" startPosition="133" endLine="30" endPosition="3" unitName="jetbrains.mps.make.runtime.internal.util.GraphAnalyzer$13" />
+    <unitInfo nodeId="6976901853022624201" fileName="GraphAnalyzer.java" startLine="31" startPosition="134" endLine="39" endPosition="3" unitName="jetbrains.mps.make.runtime.internal.util.GraphAnalyzer$14" />
+    <unitInfo nodeId="8382282457890483502" fileName="GraphAnalyzer.java" startLine="102" startPosition="20" endLine="114" endPosition="5" unitName="jetbrains.mps.make.runtime.internal.util.GraphAnalyzer$7" />
+    <unitInfo nodeId="8382282457890465324" fileName="GraphAnalyzer.java" startLine="147" startPosition="26" endLine="159" endPosition="5" unitName="jetbrains.mps.make.runtime.internal.util.GraphAnalyzer$12" />
+    <unitInfo nodeId="1936544640085949704" fileName="GraphAnalyzer.java" startLine="163" startPosition="0" endLine="202" endPosition="0" unitName="jetbrains.mps.make.runtime.internal.util.GraphAnalyzer$Wrapper" />
+    <unitInfo nodeId="1936544640085949692" fileName="GraphAnalyzer.java" startLine="20" startPosition="0" endLine="203" endPosition="0" unitName="jetbrains.mps.make.runtime.internal.util.GraphAnalyzer" />
   </root>
   <root nodeId="5105453120349025843">
     <nodeInfo nodeId="8321680453184998988" fileName="SmartWrapper.java" startLine="11" startPosition="30" endLine="12" endPosition="105" />

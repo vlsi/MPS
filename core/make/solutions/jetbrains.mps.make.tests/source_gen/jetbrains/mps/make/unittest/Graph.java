@@ -11,7 +11,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.make.runtime.internal.util.CycleDetector;
+import jetbrains.mps.make.runtime.internal.util.GraphAnalyzer;
 
 public class Graph<V> {
   private Set<V> vertices = SetSequence.fromSet(new HashSet<V>());
@@ -44,8 +44,8 @@ public class Graph<V> {
     return vertices;
   }
 
-  public CycleDetector<V> getCycleDetector() {
-    return new CycleDetector<V>() {
+  public GraphAnalyzer<V> getCycleDetector() {
+    return new GraphAnalyzer<V>() {
       @Override
       public Iterable<V> forwardEdges(V v) {
         return MapSequence.fromMap(fwEdges).get(v);
