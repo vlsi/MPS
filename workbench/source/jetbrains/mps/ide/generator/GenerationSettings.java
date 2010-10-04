@@ -270,7 +270,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     private boolean myShowWarnings = true;
     private boolean myKeepModelsWithWarnings = true;
     private boolean myIncremental = false;
-    private boolean myIncrementalUseCache = true;
+    private boolean myIncrementalUseCache = false;
 
     public int getNumberOfModelsToKeep() {
       return myNumberOfModelsToKeep;
