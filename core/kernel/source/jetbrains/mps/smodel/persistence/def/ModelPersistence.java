@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.persistence.def;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.util.text.CharArrayUtil;
 import com.intellij.util.text.CharSequenceReader;
+import jetbrains.mps.InternalFlag;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
@@ -151,7 +152,13 @@ public class ModelPersistence {
   private static int getCurrentPersistenceVersion() {
     int persistenceVersion = getPersistenceSettings().getUserSelectedPersistenceVersion();
     if (persistenceVersion == PersistenceSettings.VERSION_UNDEFINED) {
-      return currentApplicationPersistenceVersion;
+
+      // TODO "return currentApplicationPersistenceVersion;"
+      // TEMPORARY: 2.0 milestone builds should be "backward compatible" with 1.5
+      // (new models are created in persistence version 4)
+      // internally we use the latest persistence
+
+      return InternalFlag.isInternalMode() ? currentApplicationPersistenceVersion : 4;
     } else if (persistenceVersion == PersistenceSettings.VERSION_UPDATE_TO_THE_LATEST) {
       return currentApplicationPersistenceVersion;
     }
