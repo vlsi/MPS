@@ -43,6 +43,10 @@ public class GenerateTaskTest extends BuildFileTest {
     executeTarget("testComplexLanguageProject");
   }
 
+  public void testComplexLanguageProjectNoFork() {
+    executeTarget("testComplexLanguageProjectNoFork");
+  }
+
   public void testBuildLanguage() {
     executeTarget("testBuildLanguage");
   }

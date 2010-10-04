@@ -10,6 +10,8 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.JavaNameUtil;
+import jetbrains.mps.generator.fileGenerator.FileGenerationManager;
+import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil.TextGenerationResult;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
@@ -20,10 +22,13 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.textGen.TextGenManager;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.Pair;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 
+import java.io.File;
 import java.rmi.RemoteException;
 import java.util.*;
 
@@ -106,24 +111,45 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
     return totalJob;
   }
 
+  private String getFileName(SNode outputRootNode) {
+    String extension = TextGenManager.instance().getExtension(outputRootNode);
+    return (extension == null) ? outputRootNode.getName() : outputRootNode.getName() + "." + extension;
+  }
+
   protected boolean collectSources(IModule module, SModelDescriptor inputModel, IOperationContext context, SModel outputModel) {
     boolean wereErrors = false;
 
+    File tmpDir = FileUtil.createTmpDir();
+
     myContextModules.add(context.getModule());
     for (SNode root : outputModel.getRoots()) {
-      if(root.getName() == null) {
+      if (root.getName() == null) {
         continue;
       }
       INodeAdapter outputNode = BaseAdapter.fromNode(root);
       TextGenerationResult genResult = TextGenerationUtil.generateText(context, root);
       wereErrors |= genResult.hasErrors();
       String key = getKey(outputModel.getSModelReference(), root);
-      mySources.put(key, genResult.getText());
+      String text = genResult.getText();
+      mySources.put(key, text);
       if (isJavaSource(outputNode)) {
         myJavaSources.add(key);
       }
+
+      // call users generation listeners
+      File tmpFile = new File(FileGenerationUtil.getDefaultOutputDir(inputModel, tmpDir), getFileName(root));
+      tmpFile.getParentFile().mkdirs();
+      FileUtil.write(tmpFile, text);
+      Set<File> additionalFiles = FileGenerationManager.getInstance().fireFileGenerated(tmpFile);
+      if (additionalFiles != null) {
+        for (File additionalFile : additionalFiles) {
+          String additionalContents = FileUtil.read(additionalFile);
+          mySources.put(additionalFile.getName(), additionalContents);
+        }
+      }
     }
 
+    FileUtil.delete(tmpDir);
     return !wereErrors;
   }
 

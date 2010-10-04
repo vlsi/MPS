@@ -1,5 +1,7 @@
 package jetbrains.mps.build.ant.generation;
 
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.TestMain;
@@ -22,6 +24,7 @@ import jetbrains.mps.ide.genconf.GenParameters;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.library.Library;
+import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
 import jetbrains.mps.project.tester.DiffReporter;
@@ -81,6 +84,7 @@ public class TestGenerationWorker extends GeneratorWorker {
 
   public TestGenerationWorker(WhatToDo whatToDo, ProjectComponent component) {
     super(whatToDo, component);
+    myBuildServerMessageFormat = getBuildServerMessageFormat();
   }
 
   public TestGenerationWorker(WhatToDo whatToDo, AntLogger logger) {
@@ -99,6 +103,13 @@ public class TestGenerationWorker extends GeneratorWorker {
       final MPSProject p = TestMain.loadProject(file);
       info("Loaded project " + p);
 
+      ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+        @Override
+        public void run() {
+          // plugin reloader reloads plugins asynchronously and we need to be sure
+          p.getComponent(ProjectPluginManager.class).loadPlugins();
+        }
+      }, ModalityState.NON_MODAL);
       executeTask(p, new ObjectsToProcess(Collections.singleton(p), new java.util.HashSet<IModule>(), new java.util.HashSet<SModelDescriptor>()));
 
       disposeProject(p);

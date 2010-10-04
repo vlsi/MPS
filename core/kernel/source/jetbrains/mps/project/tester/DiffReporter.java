@@ -17,15 +17,14 @@ package jetbrains.mps.project.tester;
 
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.project.tester.TesterGenerationHandler;
 
-import java.util.List;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.io.File;
+import java.util.List;
+import java.util.Map;
 
 public class DiffReporter {
 
@@ -63,39 +62,54 @@ public class DiffReporter {
       }
       files.addAll(Arrays.asList(dir.list()));
       for (String outputRoot : genHandler.getRoots(outputModel)) {
-        String filename = genHandler.getName(outputRoot, outputModel);
-        if (filename == null) {
+        String outputFileName = genHandler.getName(outputRoot, outputModel);
+        if (outputFileName == null) {
           continue;
         }
 
-        final String filePath = genHandler.getOutputDir(outputModel) + File.separator + filename;
-        final File testFile = new File(filePath);
-        String oldContent = null;
         String newContent = genHandler.getSourceByNode(outputRoot, outputModel);
-        if (testFile.exists() && testFile.canRead()) {
-          oldContent = FileUtil.read(testFile);
-          files.remove(filename);
+        if (addDiffReport(genHandler, outputModel, outputRoot, outputFileName, newContent, result)) {
+          files.remove(outputFileName);
         }
-        final boolean created = oldContent == null && newContent != null;
-        final String title = getDiffReportTitle(outputRoot, filePath, created, false);
-        String[] oldTest = getContentAsArray(oldContent, "\n");
-        String[] newTest = getContentAsArray(newContent, System.getProperty("line.separator"));
-        addDiffReport(new TestComparator(oldTest, newTest), result, title);
       }
+      Map<String, String> sources = genHandler.getSources();
       for (String fileName : files) {
         int dotPosition = fileName.indexOf(".");
         if (dotPosition == 0 || dotPosition == -1) {
           continue;
         }
-        String title = getDiffReportTitle((SNode) null, fileName, false, true);
-        File file = new File(genHandler.getOutputDir(outputModel) + File.separator + fileName);
-        if (!file.exists() || !file.canRead() || !file.isFile()) {
-          continue;
+        String newContent = sources.get(fileName);
+
+        if (newContent != null) {
+          addDiffReport(genHandler, outputModel, null, fileName, newContent, result);
+        } else {
+          String title = getDiffReportTitle((SNode) null, fileName, false, true);
+          File file = new File(genHandler.getOutputDir(outputModel) + File.separator + fileName);
+          if (!file.exists() || !file.canRead() || !file.isFile()) {
+            continue;
+          }
+          String[] test = FileUtil.read(file).split("\n");
+          addDiffReport(new TestComparator(test, new String[0]), result, title);
         }
-        String[] test = FileUtil.read(file).split("\n");
-        addDiffReport(new TestComparator(test, new String[0]), result, title);
       }
     }
     return result;
+  }
+
+  private static boolean addDiffReport(TesterGenerationHandler genHandler, SModelReference outputModel, String outputName, String outputFileName, String newContent, List<String> result) {
+    boolean found = false;
+    final String filePath = genHandler.getOutputDir(outputModel) + File.separator + outputFileName;
+    final File testFile = new File(filePath);
+    String oldContent = null;
+    if (testFile.exists() && testFile.canRead()) {
+      oldContent = FileUtil.read(testFile);
+      found = true;
+    }
+    final boolean created = oldContent == null && newContent != null;
+    final String title = getDiffReportTitle(outputName, filePath, created, false);
+    String[] oldTest = getContentAsArray(oldContent, "\n");
+    String[] newTest = getContentAsArray(newContent, System.getProperty("line.separator"));
+    addDiffReport(new TestComparator(oldTest, newTest), result, title);
+    return found;
   }
 }
