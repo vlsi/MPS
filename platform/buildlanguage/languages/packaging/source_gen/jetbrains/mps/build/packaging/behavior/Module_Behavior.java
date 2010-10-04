@@ -79,7 +79,11 @@ public class Module_Behavior {
   }
 
   public static String call_getProjectBasedir_1213877514893(SNode thisNode) {
-    return Module_Behavior.call_findMPSProjectFile_1213877514840(thisNode, Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile().getParent()).getAbsolutePath();
+    IFile file = Module_Behavior.call_findMPSProjectFile_1213877514840(thisNode, Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile().getParent());
+    if (file == null) {
+      return null;
+    }
+    return file.getAbsolutePath();
   }
 
   public static String call_getChildrenTargetDir_1213877514970(SNode thisNode) {
