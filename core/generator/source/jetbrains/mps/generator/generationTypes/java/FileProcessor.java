@@ -16,8 +16,11 @@
 package jetbrains.mps.generator.generationTypes.java;
 
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.IFile;
@@ -73,10 +76,10 @@ class FileProcessor {
   }
 
   public void invoke() {
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
+    ModelAccess.instance().runReadInWriteAction(new Computable<Object>() {
       @Override
-      public void run() {
-        ApplicationManager.getApplication().runWriteAction(new Runnable() {
+      public Object compute() {
+        ApplicationManager.getApplication().invokeAndWait(new Runnable() {
           @Override
           public void run() {
             for (FileAndContent filesAndContent : myFilesAndContents) {
@@ -89,7 +92,8 @@ class FileProcessor {
 
             ModelGenerationStatusManager.getInstance().invalidateData(myModels);
           }
-        });
+        }, ModalityState.defaultModalityState());
+        return null;
       }
     });
   }

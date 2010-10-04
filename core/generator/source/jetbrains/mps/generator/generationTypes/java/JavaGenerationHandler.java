@@ -112,6 +112,8 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
   public boolean compile(IOperationContext operationContext, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws IOException, GenerationCanceledException {
     boolean compiledSuccessfully = generationOK;
 
+    writeFiles();
+
     if (generationOK) {
       long compilationStart = System.currentTimeMillis();
       boolean needToReload = false;
@@ -203,12 +205,16 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
     return totalJob;
   }
 
-  @Override
-  public void generationCompleted() {
+  protected void writeFiles() {
     if(myProcessor != null) {
       myProcessor.invoke();
       myProcessor = null;
     }
+  }
+
+  @Override
+  public void generationCompleted() {
+    writeFiles();
   }
 
   @Override
