@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.generator;
 
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 
 /**
  * Evgeny Gryaznov, Sep 21, 2010
@@ -41,4 +41,114 @@ public interface GenerationCacheContainer {
 
     void revert();
   }
+
+  public static class FileBasedGenerationCacheContainer implements GenerationCacheContainer {
+
+    File myGeneratorCaches;
+
+    public FileBasedGenerationCacheContainer(File generatorCaches) {
+      this.myGeneratorCaches = generatorCaches;
+    }
+
+    @Override
+    public ModelCacheContainer getCache(@NotNull SModelDescriptor descriptor, String hash, boolean create) {
+      if(myGeneratorCaches == null) {
+        return null;
+      }
+
+      String modelId = descriptor.getSModelReference().getSModelId().toString();
+      if(modelId == null || modelId.isEmpty()) {
+        return null;
+      }
+
+      File modelCacheDir = new File(myGeneratorCaches, modelId);
+      if(!modelCacheDir.exists()) {
+        if(!create) {
+          return null;
+        }
+        if(!modelCacheDir.mkdirs()) {
+          return null;
+        }
+      }
+
+      File hashDir = new File(modelCacheDir, create ? hash + ".gen" : hash);
+      if(!hashDir.exists()) {
+        if(!create) {
+          return null;
+        }
+        if(!hashDir.mkdirs()) {
+          return null;
+        }
+      }
+      if(create) {
+        for(File file : hashDir.listFiles()) {
+          file.delete();
+        }
+      }
+      return new FileBasedModelCacheContainer(modelCacheDir, hashDir, hash, !create);
+    }
+  }
+
+  public static class FileBasedModelCacheContainer implements ModelCacheContainer {
+
+    private static final Logger LOG = Logger.getLogger(FileBasedModelCacheContainer.class);
+
+    private final File myFolder;
+    private final File myHashDir;
+    private final String myHash;
+    private final boolean myReadOnly;
+
+    private FileBasedModelCacheContainer(File folder, File hashDir, String hash, boolean readOnly) {
+      myFolder = folder;
+      myHashDir = hashDir;
+      myHash = hash;
+      myReadOnly = readOnly;
+    }
+
+    @Override
+    @NotNull
+    public InputStream openStream(String name) throws IOException {
+      return new FileInputStream(new File(myHashDir, name));
+    }
+
+    @Override
+    @NotNull
+    public OutputStream createStream(String name) throws IOException {
+      if(myReadOnly) {
+        throw new IOException("cannot create stream in read-only cache");
+      }
+      return new FileOutputStream(new File(myHashDir, name));
+    }
+
+    @Override
+    public void commit() {
+      if(myReadOnly) {
+        return;
+      }
+      try {
+        for (File child : myFolder.listFiles()) {
+          if(!myHashDir.getName().equals(child.getName())) {
+            FileUtil.delete(child);
+          }
+        }
+
+        myHashDir.renameTo(new File(myFolder, myHash));
+      } catch(SecurityException ex) {
+        LOG.error(ex);
+      }
+    }
+
+    @Override
+    public void revert() {
+      if(myReadOnly) {
+        return;
+      }
+      try {
+        FileUtil.delete(myHashDir);
+      } catch(SecurityException ex) {
+        LOG.error(ex);
+      }
+    }
+  }
+
 }

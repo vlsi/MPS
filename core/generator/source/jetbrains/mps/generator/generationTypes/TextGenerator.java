@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.generator.generationTypes.java;
+package jetbrains.mps.generator.generationTypes;
 
 import jetbrains.mps.baseLanguage.textGen.BLDependenciesCache;
 import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
@@ -23,7 +23,6 @@ import jetbrains.mps.traceInfo.*;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.generator.cache.CacheGenerator;
-import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.generator.fileGenerator.TextGenerationUtil;
 import jetbrains.mps.generator.fileGenerator.TextGenerationUtil.TextGenerationResult;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
@@ -39,13 +38,13 @@ import jetbrains.mps.util.NameUtil;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-class JavaFileGenerator {
-  private static final Logger LOG = Logger.getLogger(JavaFileGenerator.class);
+public class TextGenerator {
+  private static final Logger LOG = Logger.getLogger(TextGenerator.class);
 
   private final StreamHandler myStreamHandler;
   private CacheGenerator[] myCacheGenerators;
 
-  public JavaFileGenerator(StreamHandler streamHandler, CacheGenerator ...generators) {
+  public TextGenerator(StreamHandler streamHandler, CacheGenerator ...generators) {
     myStreamHandler = streamHandler;
     myCacheGenerators = generators;
   }
@@ -74,7 +73,7 @@ class JavaFileGenerator {
         try {
           TextGenerationResult result = TextGenerationUtil.generateText(context, outputNode);
           String fileName = outputNode.getName() + "." + TextGenManager.instance().getExtension(outputNode);
-          fillDebugInfo(info, outputNode, fileName, result);
+          fillDebugInfo(info, fileName, result);
           fillDependencies(dependRoot, outputNode, fileName, result);
 
           hasErrors |= result.hasErrors();
@@ -87,7 +86,7 @@ class JavaFileGenerator {
     return !hasErrors;
   }
 
-  private void fillDebugInfo(DebugInfo info, SNode outputNode, String fileName, TextGenerationResult result) {
+  private void fillDebugInfo(DebugInfo info, String fileName, TextGenerationResult result) {
     Map<SNode, PositionInfo> positions = result.getPositions();
     Map<SNode, ScopePositionInfo> scopePositions = result.getScopePositions();
     Map<SNode, UnitPositionInfo> unitPositions = result.getUnitPositions();

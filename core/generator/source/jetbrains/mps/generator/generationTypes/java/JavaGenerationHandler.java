@@ -18,13 +18,14 @@ package jetbrains.mps.generator.generationTypes.java;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.baseLanguage.textGen.BLDependenciesCache;
-import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.generator.generationTypes.GenerationHandlerBase;
+import jetbrains.mps.generator.generationTypes.TextGenerator;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
+import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.make.CompilationResult;
@@ -77,7 +78,7 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
     if (status.isOk()) {
       JavaStreamHandler javaStreamHandler = new JavaStreamHandler(inputModel, targetDir, myProcessor);
       try {
-        result = new JavaFileGenerator(javaStreamHandler,
+        result = new TextGenerator(javaStreamHandler,
           ModelGenerationStatusManager.getInstance().getCacheGenerator(),
           BLDependenciesCache.getInstance().getGenerator(),
           TraceInfoCache.getInstance().getGenerator(),
