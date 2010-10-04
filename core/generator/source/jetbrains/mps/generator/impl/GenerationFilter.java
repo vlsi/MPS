@@ -78,7 +78,7 @@ public class GenerationFilter {
   }
 
   public IntermediateModelsCache createNewCache() {
-    if (!myGenerationOptions.isIncremental()) {
+    if (!myGenerationOptions.isIncremental() || myGenerationHashes == null) {
       return null;
     }
 
