@@ -152,7 +152,7 @@ public class ProjectTestHelper {
   private void init() {
     BasicConfigurator.configure();
     Logger.getRootLogger().setLevel(Level.INFO);
-    jetbrains.mps.logging.Logger.addLoggingHandler(new Testbench.LoggingHandlerAdapter());
+    Testbench.initLogging();
 
     IdeMain.setTestMode(TestMode.CORE_TEST);
     TestMain.configureMPS();

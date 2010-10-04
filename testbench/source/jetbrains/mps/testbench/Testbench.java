@@ -66,7 +66,11 @@ public class Testbench {
     });
   }
 
-  static class LoggingHandlerAdapter implements ILoggingHandler {
+  public static void initLogging() {
+    jetbrains.mps.logging.Logger.addLoggingHandler(new LoggingHandlerAdapter());
+  }
+
+  private static class LoggingHandlerAdapter implements ILoggingHandler {
 
     public void info(LogEntry e) {
      LOG.info(e.getMessage());

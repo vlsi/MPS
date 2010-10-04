@@ -13,7 +13,6 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.testbench.Testbench.LoggingHandlerAdapter;
 import jetbrains.mps.util.FileUtil;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
@@ -68,7 +67,7 @@ public class BrokenReferencesTestHelper {
   public Token init(String[][] macros) {
     BasicConfigurator.configure();
     Logger.getRootLogger().setLevel(Level.INFO);
-    jetbrains.mps.logging.Logger.addLoggingHandler(new LoggingHandlerAdapter());
+    Testbench.initLogging();
 
     IdeMain.setTestMode(TestMode.CORE_TEST);
     TestMain.configureMPS();
