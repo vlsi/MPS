@@ -25,9 +25,9 @@ public class Post_ThisSavingClassConceptSet_Test extends BaseTransformationTest 
     public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("222793074662099172", "222793074662099207");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl C"));
+      BaseEditorTestBody.invokeAction(editorComponent, "$Copy");
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl V"));
+      BaseEditorTestBody.invokeAction(editorComponent, "$Paste");
     }
   }
 }

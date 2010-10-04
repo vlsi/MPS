@@ -25,7 +25,7 @@ public class Post_StaticFieldToLocalStaticFieldReference_Test extends BaseTransf
     public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("8350369201053315003", "8350369201053334918");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl C"));
+      BaseEditorTestBody.invokeAction(editorComponent, "$Copy");
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " DOWN"));
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " DOWN"));
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " DOWN"));
@@ -40,7 +40,7 @@ public class Post_StaticFieldToLocalStaticFieldReference_Test extends BaseTransf
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " DOWN"));
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " DOWN"));
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " DOWN"));
-      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl V"));
+      BaseEditorTestBody.invokeAction(editorComponent, "$Paste");
     }
   }
 }

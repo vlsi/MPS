@@ -6115,10 +6115,9 @@
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7704251192656103002" />
     </node>
     <node role="code:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7704251192656123745">
-      <node role="statement:3" type="jetbrains.mps.lang.test.structure.PressKeyStatement:4" id="7704251192656123746">
-        <node role="keyStrokes:4" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke:23" id="7704251192656123747">
-          <property name="modifiers:23" value="ctrl" />
-          <property name="keycode:23" value="C" />
+      <node role="statement:3" type="jetbrains.mps.lang.test.structure.InvokeActionStatement:4" id="3837470425931687115">
+        <node role="actionReference:4" type="jetbrains.mps.lang.test.structure.BootstrapActionReference:4" id="3837470425931687116">
+          <property name="actionId:4" value="$Copy" />
         </node>
       </node>
       <node role="statement:3" type="jetbrains.mps.lang.test.structure.PressKeyStatement:4" id="7704251192656123749">
@@ -6132,10 +6131,9 @@
           <property name="keycode:23" value="VK_DOWN" />
         </node>
       </node>
-      <node role="statement:3" type="jetbrains.mps.lang.test.structure.PressKeyStatement:4" id="7704251192656123754">
-        <node role="keyStrokes:4" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke:23" id="7704251192656123755">
-          <property name="modifiers:23" value="ctrl" />
-          <property name="keycode:23" value="V" />
+      <node role="statement:3" type="jetbrains.mps.lang.test.structure.InvokeActionStatement:4" id="3837470425931687118">
+        <node role="actionReference:4" type="jetbrains.mps.lang.test.structure.BootstrapActionReference:4" id="3837470425931687119">
+          <property name="actionId:4" value="$Paste" />
         </node>
       </node>
     </node>
@@ -6196,10 +6194,9 @@
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="654795966042500704" />
     </node>
     <node role="code:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="654795966042575121">
-      <node role="statement:3" type="jetbrains.mps.lang.test.structure.PressKeyStatement:4" id="654795966042575124">
-        <node role="keyStrokes:4" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke:23" id="654795966042575125">
-          <property name="keycode:23" value="VK_C" />
-          <property name="modifiers:23" value="ctrl" />
+      <node role="statement:3" type="jetbrains.mps.lang.test.structure.InvokeActionStatement:4" id="3837470425931687103">
+        <node role="actionReference:4" type="jetbrains.mps.lang.test.structure.BootstrapActionReference:4" id="3837470425931687104">
+          <property name="actionId:4" value="$Copy" />
         </node>
       </node>
       <node role="statement:3" type="jetbrains.mps.lang.test.structure.PressKeyStatement:4" id="654795966042575127">
@@ -6217,10 +6214,9 @@
           <property name="keycode:23" value="VK_DOWN" />
         </node>
       </node>
-      <node role="statement:3" type="jetbrains.mps.lang.test.structure.PressKeyStatement:4" id="654795966042582140">
-        <node role="keyStrokes:4" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke:23" id="654795966042582141">
-          <property name="keycode:23" value="VK_V" />
-          <property name="modifiers:23" value="ctrl" />
+      <node role="statement:3" type="jetbrains.mps.lang.test.structure.InvokeActionStatement:4" id="3837470425931687106">
+        <node role="actionReference:4" type="jetbrains.mps.lang.test.structure.BootstrapActionReference:4" id="3837470425931687107">
+          <property name="actionId:4" value="$Paste" />
         </node>
       </node>
     </node>
@@ -6415,10 +6411,9 @@
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="222793074662099230" />
     </node>
     <node role="code:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="222793074662099232">
-      <node role="statement:3" type="jetbrains.mps.lang.test.structure.PressKeyStatement:4" id="222793074662099233">
-        <node role="keyStrokes:4" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke:23" id="222793074662099234">
-          <property name="keycode:23" value="VK_C" />
-          <property name="modifiers:23" value="ctrl" />
+      <node role="statement:3" type="jetbrains.mps.lang.test.structure.InvokeActionStatement:4" id="7504064136823144968">
+        <node role="actionReference:4" type="jetbrains.mps.lang.test.structure.BootstrapActionReference:4" id="7504064136823144969">
+          <property name="actionId:4" value="$Copy" />
         </node>
       </node>
       <node role="statement:3" type="jetbrains.mps.lang.test.structure.PressKeyStatement:4" id="222793074662099235">
@@ -6426,10 +6421,9 @@
           <property name="keycode:23" value="VK_ENTER" />
         </node>
       </node>
-      <node role="statement:3" type="jetbrains.mps.lang.test.structure.PressKeyStatement:4" id="222793074662099241">
-        <node role="keyStrokes:4" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke:23" id="222793074662099242">
-          <property name="keycode:23" value="VK_V" />
-          <property name="modifiers:23" value="ctrl" />
+      <node role="statement:3" type="jetbrains.mps.lang.test.structure.InvokeActionStatement:4" id="7504064136823144972">
+        <node role="actionReference:4" type="jetbrains.mps.lang.test.structure.BootstrapActionReference:4" id="7504064136823144973">
+          <property name="actionId:4" value="$Paste" />
         </node>
       </node>
     </node>
@@ -6514,10 +6508,9 @@
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="222793074662091881" />
     </node>
     <node role="code:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="222793074662091890">
-      <node role="statement:3" type="jetbrains.mps.lang.test.structure.PressKeyStatement:4" id="222793074662091891">
-        <node role="keyStrokes:4" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke:23" id="222793074662091892">
-          <property name="keycode:23" value="VK_C" />
-          <property name="modifiers:23" value="ctrl" />
+      <node role="statement:3" type="jetbrains.mps.lang.test.structure.InvokeActionStatement:4" id="3837470425931687097">
+        <node role="actionReference:4" type="jetbrains.mps.lang.test.structure.BootstrapActionReference:4" id="3837470425931687098">
+          <property name="actionId:4" value="$Copy" />
         </node>
       </node>
       <node role="statement:3" type="jetbrains.mps.lang.test.structure.PressKeyStatement:4" id="222793074662091893">
@@ -6525,10 +6518,9 @@
           <property name="keycode:23" value="VK_ENTER" />
         </node>
       </node>
-      <node role="statement:3" type="jetbrains.mps.lang.test.structure.PressKeyStatement:4" id="222793074662091899">
-        <node role="keyStrokes:4" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke:23" id="222793074662091900">
-          <property name="keycode:23" value="VK_V" />
-          <property name="modifiers:23" value="ctrl" />
+      <node role="statement:3" type="jetbrains.mps.lang.test.structure.InvokeActionStatement:4" id="3837470425931687100">
+        <node role="actionReference:4" type="jetbrains.mps.lang.test.structure.BootstrapActionReference:4" id="3837470425931687101">
+          <property name="actionId:4" value="$Paste" />
         </node>
       </node>
     </node>
@@ -6657,10 +6649,9 @@
       </node>
     </node>
     <node role="code:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2671731496587878969">
-      <node role="statement:3" type="jetbrains.mps.lang.test.structure.PressKeyStatement:4" id="2671731496587878970">
-        <node role="keyStrokes:4" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke:23" id="2671731496587878971">
-          <property name="keycode:23" value="VK_C" />
-          <property name="modifiers:23" value="ctrl" />
+      <node role="statement:3" type="jetbrains.mps.lang.test.structure.InvokeActionStatement:4" id="3837470425931687091">
+        <node role="actionReference:4" type="jetbrains.mps.lang.test.structure.BootstrapActionReference:4" id="3837470425931687092">
+          <property name="actionId:4" value="$Copy" />
         </node>
       </node>
       <node role="statement:3" type="jetbrains.mps.lang.test.structure.PressKeyStatement:4" id="2671731496587878972">
@@ -6683,10 +6674,9 @@
           <property name="keycode:23" value="VK_ENTER" />
         </node>
       </node>
-      <node role="statement:3" type="jetbrains.mps.lang.test.structure.PressKeyStatement:4" id="2671731496587878978">
-        <node role="keyStrokes:4" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke:23" id="2671731496587878979">
-          <property name="keycode:23" value="VK_V" />
-          <property name="modifiers:23" value="ctrl" />
+      <node role="statement:3" type="jetbrains.mps.lang.test.structure.InvokeActionStatement:4" id="3837470425931687094">
+        <node role="actionReference:4" type="jetbrains.mps.lang.test.structure.BootstrapActionReference:4" id="3837470425931687095">
+          <property name="actionId:4" value="$Paste" />
         </node>
       </node>
     </node>
@@ -6810,10 +6800,9 @@
       </node>
     </node>
     <node role="code:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6769498721974638240">
-      <node role="statement:3" type="jetbrains.mps.lang.test.structure.PressKeyStatement:4" id="6769498721974638241">
-        <node role="keyStrokes:4" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke:23" id="6769498721974638242">
-          <property name="keycode:23" value="VK_C" />
-          <property name="modifiers:23" value="ctrl" />
+      <node role="statement:3" type="jetbrains.mps.lang.test.structure.InvokeActionStatement:4" id="3837470425931687109">
+        <node role="actionReference:4" type="jetbrains.mps.lang.test.structure.BootstrapActionReference:4" id="3837470425931687110">
+          <property name="actionId:4" value="$Copy" />
         </node>
       </node>
       <node role="statement:3" type="jetbrains.mps.lang.test.structure.PressKeyStatement:4" id="6769498721974638243">
@@ -6876,10 +6865,9 @@
           <property name="keycode:23" value="VK_DOWN" />
         </node>
       </node>
-      <node role="statement:3" type="jetbrains.mps.lang.test.structure.PressKeyStatement:4" id="6769498721974638249">
-        <node role="keyStrokes:4" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke:23" id="6769498721974638250">
-          <property name="keycode:23" value="VK_V" />
-          <property name="modifiers:23" value="ctrl" />
+      <node role="statement:3" type="jetbrains.mps.lang.test.structure.InvokeActionStatement:4" id="3837470425931687112">
+        <node role="actionReference:4" type="jetbrains.mps.lang.test.structure.BootstrapActionReference:4" id="3837470425931687113">
+          <property name="actionId:4" value="$Paste" />
         </node>
       </node>
     </node>
@@ -6991,10 +6979,9 @@
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8350369201053334941" />
     </node>
     <node role="code:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8350369201053334948">
-      <node role="statement:3" type="jetbrains.mps.lang.test.structure.PressKeyStatement:4" id="8350369201053334949">
-        <node role="keyStrokes:4" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke:23" id="8350369201053334950">
-          <property name="keycode:23" value="VK_C" />
-          <property name="modifiers:23" value="ctrl" />
+      <node role="statement:3" type="jetbrains.mps.lang.test.structure.InvokeActionStatement:4" id="3837470425931687085">
+        <node role="actionReference:4" type="jetbrains.mps.lang.test.structure.BootstrapActionReference:4" id="3837470425931687086">
+          <property name="actionId:4" value="$Copy" />
         </node>
       </node>
       <node role="statement:3" type="jetbrains.mps.lang.test.structure.PressKeyStatement:4" id="8350369201053334951">
@@ -7067,10 +7054,9 @@
           <property name="keycode:23" value="VK_DOWN" />
         </node>
       </node>
-      <node role="statement:3" type="jetbrains.mps.lang.test.structure.PressKeyStatement:4" id="8350369201053334975">
-        <node role="keyStrokes:4" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke:23" id="8350369201053334976">
-          <property name="keycode:23" value="VK_V" />
-          <property name="modifiers:23" value="ctrl" />
+      <node role="statement:3" type="jetbrains.mps.lang.test.structure.InvokeActionStatement:4" id="3837470425931687088">
+        <node role="actionReference:4" type="jetbrains.mps.lang.test.structure.BootstrapActionReference:4" id="3837470425931687089">
+          <property name="actionId:4" value="$Paste" />
         </node>
       </node>
     </node>

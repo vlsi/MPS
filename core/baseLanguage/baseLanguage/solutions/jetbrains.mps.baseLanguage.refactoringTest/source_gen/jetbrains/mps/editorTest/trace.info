@@ -479,14 +479,14 @@
     <nodeInfo nodeId="1989240834983537746" fileName="SurroundExpressionWithParenthesis_Test.java" startLine="29" startPosition="122" endLine="30" endPosition="118" />
   </root>
   <root nodeId="222793074662091829">
-    <nodeInfo nodeId="222793074662091891" fileName="Post_ThisSavingClassConceptUnset_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="118" />
-    <nodeInfo nodeId="222793074662091893" fileName="Post_ThisSavingClassConceptUnset_Test.java" startLine="28" startPosition="118" endLine="29" endPosition="118" />
-    <nodeInfo nodeId="222793074662091899" fileName="Post_ThisSavingClassConceptUnset_Test.java" startLine="29" startPosition="118" endLine="30" endPosition="118" />
+    <nodeInfo nodeId="3837470425931687097" fileName="Post_ThisSavingClassConceptUnset_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="64" />
+    <nodeInfo nodeId="222793074662091893" fileName="Post_ThisSavingClassConceptUnset_Test.java" startLine="28" startPosition="64" endLine="29" endPosition="118" />
+    <nodeInfo nodeId="3837470425931687100" fileName="Post_ThisSavingClassConceptUnset_Test.java" startLine="29" startPosition="118" endLine="30" endPosition="65" />
   </root>
   <root nodeId="222793074662099169">
-    <nodeInfo nodeId="222793074662099233" fileName="Post_ThisSavingClassConceptSet_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="118" />
-    <nodeInfo nodeId="222793074662099235" fileName="Post_ThisSavingClassConceptSet_Test.java" startLine="28" startPosition="118" endLine="29" endPosition="118" />
-    <nodeInfo nodeId="222793074662099241" fileName="Post_ThisSavingClassConceptSet_Test.java" startLine="29" startPosition="118" endLine="30" endPosition="118" />
+    <nodeInfo nodeId="7504064136823144968" fileName="Post_ThisSavingClassConceptSet_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="64" />
+    <nodeInfo nodeId="222793074662099235" fileName="Post_ThisSavingClassConceptSet_Test.java" startLine="28" startPosition="64" endLine="29" endPosition="118" />
+    <nodeInfo nodeId="7504064136823144972" fileName="Post_ThisSavingClassConceptSet_Test.java" startLine="29" startPosition="118" endLine="30" endPosition="65" />
   </root>
   <root nodeId="2322823743453985855">
     <nodeInfo nodeId="2322823743453986729" fileName="WrappingCellShouldntBeSelectable_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="130" />
@@ -506,12 +506,12 @@
     <unitInfo nodeId="297555905489768628" fileName="SmartReferenseUpdateOnChange_Test.java" startLine="35" startPosition="47" endLine="41" endPosition="7" unitName="jetbrains.mps.editorTest.SmartReferenseUpdateOnChange_Test$1" />
   </root>
   <root nodeId="2671731496587878888">
-    <nodeInfo nodeId="2671731496587878970" fileName="Post_ThisRemovingClassConcept_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="118" />
-    <nodeInfo nodeId="2671731496587878972" fileName="Post_ThisRemovingClassConcept_Test.java" startLine="28" startPosition="118" endLine="29" endPosition="115" />
+    <nodeInfo nodeId="3837470425931687091" fileName="Post_ThisRemovingClassConcept_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="64" />
+    <nodeInfo nodeId="2671731496587878972" fileName="Post_ThisRemovingClassConcept_Test.java" startLine="28" startPosition="64" endLine="29" endPosition="115" />
     <nodeInfo nodeId="2671731496587878974" fileName="Post_ThisRemovingClassConcept_Test.java" startLine="29" startPosition="115" endLine="30" endPosition="115" />
     <nodeInfo nodeId="2671731496587878976" fileName="Post_ThisRemovingClassConcept_Test.java" startLine="30" startPosition="115" endLine="31" endPosition="117" />
     <nodeInfo nodeId="2671731496587878981" fileName="Post_ThisRemovingClassConcept_Test.java" startLine="31" startPosition="117" endLine="32" endPosition="118" />
-    <nodeInfo nodeId="2671731496587878978" fileName="Post_ThisRemovingClassConcept_Test.java" startLine="32" startPosition="118" endLine="33" endPosition="118" />
+    <nodeInfo nodeId="3837470425931687094" fileName="Post_ThisRemovingClassConcept_Test.java" startLine="32" startPosition="118" endLine="33" endPosition="65" />
   </root>
   <root nodeId="2707740038604155061">
     <nodeInfo nodeId="2707740038604206777" fileName="DeleteIfPossibleMethod_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="138" />
@@ -716,19 +716,19 @@
     <nodeInfo nodeId="6386137884199290167" fileName="LT_ListElementAccess_with_PlusOperation_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="59" />
   </root>
   <root nodeId="654795966042457025">
-    <nodeInfo nodeId="654795966042575124" fileName="Post_ThisSettingClassConcept_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="118" />
-    <nodeInfo nodeId="654795966042575127" fileName="Post_ThisSettingClassConcept_Test.java" startLine="28" startPosition="118" endLine="29" endPosition="117" />
+    <nodeInfo nodeId="3837470425931687103" fileName="Post_ThisSettingClassConcept_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="64" />
+    <nodeInfo nodeId="654795966042575127" fileName="Post_ThisSettingClassConcept_Test.java" startLine="28" startPosition="64" endLine="29" endPosition="117" />
     <nodeInfo nodeId="654795966042575130" fileName="Post_ThisSettingClassConcept_Test.java" startLine="29" startPosition="117" endLine="30" endPosition="117" />
     <nodeInfo nodeId="654795966042575133" fileName="Post_ThisSettingClassConcept_Test.java" startLine="30" startPosition="117" endLine="31" endPosition="117" />
-    <nodeInfo nodeId="654795966042582140" fileName="Post_ThisSettingClassConcept_Test.java" startLine="31" startPosition="117" endLine="32" endPosition="118" />
+    <nodeInfo nodeId="3837470425931687106" fileName="Post_ThisSettingClassConcept_Test.java" startLine="31" startPosition="117" endLine="32" endPosition="65" />
   </root>
   <root nodeId="6615429292103589151">
     <nodeInfo nodeId="6615429292103628166" fileName="RestoringSThintCell_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="58" />
     <nodeInfo nodeId="5995251966313996626" fileName="RestoringSThintCell_Test.java" startLine="28" startPosition="58" endLine="29" endPosition="138" />
   </root>
   <root nodeId="6769498721974583566">
-    <nodeInfo nodeId="6769498721974638241" fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="118" />
-    <nodeInfo nodeId="6769498721974638243" fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="28" startPosition="118" endLine="29" endPosition="117" />
+    <nodeInfo nodeId="3837470425931687109" fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="64" />
+    <nodeInfo nodeId="6769498721974638243" fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="28" startPosition="64" endLine="29" endPosition="117" />
     <nodeInfo nodeId="6769498721974638245" fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="29" startPosition="117" endLine="30" endPosition="117" />
     <nodeInfo nodeId="6769498721974638247" fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="30" startPosition="117" endLine="31" endPosition="117" />
     <nodeInfo nodeId="6769498721974638252" fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="31" startPosition="117" endLine="32" endPosition="117" />
@@ -740,7 +740,7 @@
     <nodeInfo nodeId="6769498721974638270" fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="37" startPosition="117" endLine="38" endPosition="117" />
     <nodeInfo nodeId="6769498721974638273" fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="38" startPosition="117" endLine="39" endPosition="117" />
     <nodeInfo nodeId="6769498721974638276" fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="39" startPosition="117" endLine="40" endPosition="117" />
-    <nodeInfo nodeId="6769498721974638249" fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="40" startPosition="117" endLine="41" endPosition="118" />
+    <nodeInfo nodeId="3837470425931687112" fileName="Pre_LocalStaicFieldToStaticFieldReference_Test.java" startLine="40" startPosition="117" endLine="41" endPosition="65" />
   </root>
   <root nodeId="6778605776625957377">
     <nodeInfo nodeId="6778605776625985226" fileName="PriorityProblem_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="67" />
@@ -785,9 +785,9 @@
     <nodeInfo nodeId="2340678293597547557" fileName="SelectionOfWrappedCell_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="62" />
   </root>
   <root nodeId="7704251192656077259">
-    <nodeInfo nodeId="7704251192656123746" fileName="TestAutoresolve_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="118" />
-    <nodeInfo nodeId="7704251192656123749" fileName="TestAutoresolve_Test.java" startLine="28" startPosition="118" endLine="29" endPosition="135" />
-    <nodeInfo nodeId="7704251192656123754" fileName="TestAutoresolve_Test.java" startLine="29" startPosition="135" endLine="30" endPosition="118" />
+    <nodeInfo nodeId="3837470425931687115" fileName="TestAutoresolve_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="64" />
+    <nodeInfo nodeId="7704251192656123749" fileName="TestAutoresolve_Test.java" startLine="28" startPosition="64" endLine="29" endPosition="135" />
+    <nodeInfo nodeId="3837470425931687118" fileName="TestAutoresolve_Test.java" startLine="29" startPosition="135" endLine="30" endPosition="65" />
   </root>
   <root nodeId="8221415467041264294">
     <nodeInfo nodeId="8221415467041374129" fileName="RT_addTypeVariable_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="58" />
@@ -796,8 +796,8 @@
     <nodeInfo nodeId="8221415467041384679" fileName="RT_toArray_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="58" />
   </root>
   <root nodeId="8350369201053315001">
-    <nodeInfo nodeId="8350369201053334949" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="118" />
-    <nodeInfo nodeId="8350369201053334951" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="28" startPosition="118" endLine="29" endPosition="117" />
+    <nodeInfo nodeId="3837470425931687085" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="27" startPosition="75" endLine="28" endPosition="64" />
+    <nodeInfo nodeId="8350369201053334951" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="28" startPosition="64" endLine="29" endPosition="117" />
     <nodeInfo nodeId="8350369201053334953" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="29" startPosition="117" endLine="30" endPosition="117" />
     <nodeInfo nodeId="8350369201053334955" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="30" startPosition="117" endLine="31" endPosition="117" />
     <nodeInfo nodeId="8350369201053334957" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="31" startPosition="117" endLine="32" endPosition="117" />
@@ -811,7 +811,7 @@
     <nodeInfo nodeId="8350369201053334973" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="39" startPosition="117" endLine="40" endPosition="117" />
     <nodeInfo nodeId="8350369201053334978" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="40" startPosition="117" endLine="41" endPosition="117" />
     <nodeInfo nodeId="8350369201053334981" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="41" startPosition="117" endLine="42" endPosition="117" />
-    <nodeInfo nodeId="8350369201053334975" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="42" startPosition="117" endLine="43" endPosition="118" />
+    <nodeInfo nodeId="3837470425931687088" fileName="Post_StaticFieldToLocalStaticFieldReference_Test.java" startLine="42" startPosition="117" endLine="43" endPosition="65" />
   </root>
   <root nodeId="8547191361977403062">
     <nodeInfo nodeId="8547191361977426913" fileName="ReturnFollowerByVarName_Test.java" startLine="25" startPosition="75" endLine="26" endPosition="60" />
