@@ -4,6 +4,8 @@ package jetbrains.mps.make.runtime;
 
 
 public interface IScript {
+  public void validate();
+  public boolean isValid();
   public Iterable<ITarget> allTargets();
   public IScript.Result execute(ITarget trg, IMonitor monit);
   public class Result {

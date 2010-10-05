@@ -8,9 +8,9 @@ import jetbrains.mps.make.runtime.ITarget;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.make.runtime.IMonitor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Collections;
+import jetbrains.mps.make.runtime.IMonitor;
 
 public class Script implements IScript {
   private static Logger LOG = Logger.getLogger(Script.class);
@@ -18,14 +18,15 @@ public class Script implements IScript {
   private ITarget defaultTarget;
   private List<ITarget> targets;
   private Script.State state = Script.State.UNKNOWN;
+  private TargetRange targetRange;
 
-  public Script(Iterable<ITarget> targets, ITarget defaultTarget) {
+  public Script(TargetRange targetRange, Iterable<ITarget> targets, ITarget defaultTarget) {
+    this.targetRange = targetRange;
     this.targets = ListSequence.fromListWithValues(new ArrayList<ITarget>(), targets);
     this.defaultTarget = defaultTarget;
   }
 
-  public void validate(IMonitor monit) {
-    this.state = Script.State.VALID;
+  public void validate() {
   }
 
   public boolean isValid() {

@@ -39,18 +39,20 @@ public abstract class GraphAnalyzer<V> {
   public GraphAnalyzer() {
   }
 
+  public abstract Iterable<V> vertices();
+
   public abstract Iterable<V> forwardEdges(V v);
 
   public abstract Iterable<V> backwardEdges(V v);
 
-  public List<List<V>> findCycles(Iterable<V> vertices) {
-    Iterable<GraphAnalyzer.Wrapper<V>> ws = this.init(vertices);
+  public List<List<V>> findCycles() {
+    Iterable<GraphAnalyzer.Wrapper<V>> ws = this.init(vertices());
     this.topoSort(ws);
     return this.collectCycles(this.topoSort(ws));
   }
 
-  public Iterable<V> topologicalSort(Iterable<V> vertices) {
-    Iterable<GraphAnalyzer.Wrapper<V>> ws = this.init(vertices);
+  public Iterable<V> topologicalSort() {
+    Iterable<GraphAnalyzer.Wrapper<V>> ws = this.init(vertices());
     return Sequence.fromIterable(this.topoSort(ws)).select(new ISelector<GraphAnalyzer.Wrapper<V>, V>() {
       public V select(GraphAnalyzer.Wrapper<V> w) {
         return w.vertex;
@@ -68,7 +70,7 @@ public abstract class GraphAnalyzer<V> {
     }).toListSequence();
   }
 
-  public Iterable<GraphAnalyzer.Wrapper<V>> topoSort(Iterable<GraphAnalyzer.Wrapper<V>> ws) {
+  private Iterable<GraphAnalyzer.Wrapper<V>> topoSort(Iterable<GraphAnalyzer.Wrapper<V>> ws) {
     final List<GraphAnalyzer.Wrapper<V>> res = ListSequence.fromList(new ArrayList<GraphAnalyzer.Wrapper<V>>());
     dfs(ws, new _FunctionTypes._void_P2_E0<GraphAnalyzer.Wrapper<V>, _FunctionTypes._void_P0_E0>() {
       public void invoke(GraphAnalyzer.Wrapper<V> w, _FunctionTypes._void_P0_E0 cont) {

@@ -9,7 +9,7 @@ import jetbrains.mps.make.runtime.script.ScriptBuilder;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.make.runtime.ITarget;
-import jetbrains.mps.make.runtime.script.Script;
+import jetbrains.mps.make.runtime.IScript;
 import junit.framework.Assert;
 import jetbrains.mps.make.runtime.internal.FacetRegistry;
 import org.jmock.Expectations;
@@ -27,7 +27,7 @@ public class ScriptBuilder_Test extends TestCase {
       }
     }));
     scb.withTarget(new ITarget.Name("make"));
-    Script sc = scb.toScript();
+    IScript sc = scb.toScript();
     Assert.assertNotNull(sc);
   }
 

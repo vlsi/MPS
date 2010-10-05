@@ -13,22 +13,22 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class Cycles_Test extends TestCase {
   public void test_primitive() throws Exception {
     Graph<String> graph = new Graph<String>();
     GraphAnalyzer<String> cd = graph.getCycleDetector();
     graph.addEdges("A", "B");
-    Assert.assertTrue(ListSequence.fromList(cd.findCycles(graph.getVertices())).isEmpty());
+    Assert.assertTrue(ListSequence.fromList(cd.findCycles()).isEmpty());
     final Queue<String> q = QueueSequence.fromQueueAndArray(new LinkedList<String>(), "A", "B");
-    Sequence.fromIterable(cd.topologicalSort(graph.getVertices())).visitAll(new IVisitor<String>() {
+    Sequence.fromIterable(cd.topologicalSort()).visitAll(new IVisitor<String>() {
       public void visit(String v) {
         Assert.assertEquals(QueueSequence.fromQueue(q).removeFirstElement(), v);
       }
     });
     graph.addEdges("B", "A");
-    List<List<String>> cycles = cd.findCycles(graph.getVertices());
+    List<List<String>> cycles = cd.findCycles();
     Assert.assertSame(1, ListSequence.fromList(cycles).count());
     Assert.assertEquals(ListSequence.fromListAndArray(new ArrayList<String>(), "A", "B"), ListSequence.fromList(cycles).getElement(0));
   }
@@ -40,7 +40,7 @@ public class Cycles_Test extends TestCase {
     graph.addEdges("B", "D", "E");
     graph.addEdges("D", "C");
     graph.addEdges("C", "B", "E");
-    List<List<String>> cycles = cd.findCycles(graph.getVertices());
+    List<List<String>> cycles = cd.findCycles();
     Assert.assertSame(1, ListSequence.fromList(cycles).count());
     Assert.assertSame(3, ListSequence.fromList(ListSequence.fromList(cycles).getElement(0)).count());
     Assert.assertTrue(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), "B", "C", "D")).disjunction(ListSequence.fromList(ListSequence.fromList(cycles).getElement(0))).isEmpty());
@@ -52,19 +52,21 @@ public class Cycles_Test extends TestCase {
     graph.addEdges("A", "B");
     graph.addEdges("B", "C");
     graph.addEdges("C", "D");
-    List<List<String>> cycles = cd.findCycles(Sequence.fromIterable(graph.getVertices()).sort(new ISelector<String, Comparable<?>>() {
-      public Comparable<?> select(String it) {
-        return it;
+    graph.sort(new _FunctionTypes._return_P1_E0<String, String>() {
+      public String invoke(String s) {
+        return s;
       }
-    }, false));
+    }, false);
+    List<List<String>> cycles = cd.findCycles();
     Assert.assertSame(0, ListSequence.fromList(cycles).count());
-    cycles = cd.findCycles(graph.getVertices());
+    cycles = cd.findCycles();
     Assert.assertSame(0, ListSequence.fromList(cycles).count());
-    cycles = cd.findCycles(Sequence.fromIterable(graph.getVertices()).sort(new ISelector<String, Comparable<?>>() {
-      public Comparable<?> select(String it) {
-        return ((Object) it).hashCode();
+    graph.sort(new _FunctionTypes._return_P1_E0<Integer, String>() {
+      public Integer invoke(String s) {
+        return ((Object) s).hashCode();
       }
-    }, true));
+    }, true);
+    cycles = cd.findCycles();
     Assert.assertSame(0, ListSequence.fromList(cycles).count());
   }
 
@@ -80,7 +82,7 @@ public class Cycles_Test extends TestCase {
     graph.addEdges("G", "F", "H", "I", "J");
     graph.addEdges("H", "I");
     graph.addEdges("I", "G", "K");
-    List<List<String>> cycles = cd.findCycles(graph.getVertices());
+    List<List<String>> cycles = cd.findCycles();
     Assert.assertSame(3, ListSequence.fromList(cycles).count());
     Assert.assertTrue(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), "A", "B", "E")).disjunction(ListSequence.fromList(ListSequence.fromList(cycles).getElement(0))).isEmpty());
     Assert.assertTrue(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), "D", "C")).disjunction(ListSequence.fromList(ListSequence.fromList(cycles).getElement(1))).isEmpty());
@@ -99,20 +101,21 @@ public class Cycles_Test extends TestCase {
     graph.addEdges("G", "H", "I", "J");
     graph.addEdges("H", "I");
     graph.addEdges("I", "K", "J");
-    List<List<String>> cycles = cd.findCycles(graph.getVertices());
+    List<List<String>> cycles = cd.findCycles();
     Assert.assertSame(0, ListSequence.fromList(cycles).count());
     final Queue<String> q = QueueSequence.fromQueueAndArray(new LinkedList<String>(), "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K");
-    Sequence.fromIterable(cd.topologicalSort(graph.getVertices())).visitAll(new IVisitor<String>() {
+    Sequence.fromIterable(cd.topologicalSort()).visitAll(new IVisitor<String>() {
       public void visit(String v) {
         Assert.assertEquals(QueueSequence.fromQueue(q).removeFirstElement(), v);
       }
     });
     final Queue<String> qq = QueueSequence.fromQueueAndArray(new LinkedList<String>(), "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K");
-    Sequence.fromIterable(cd.topologicalSort(Sequence.fromIterable(graph.getVertices()).sort(new ISelector<String, Comparable<?>>() {
-      public Comparable<?> select(String v) {
-        return v;
+    graph.sort(new _FunctionTypes._return_P1_E0<String, String>() {
+      public String invoke(String s) {
+        return s;
       }
-    }, false))).visitAll(new IVisitor<String>() {
+    }, false);
+    Sequence.fromIterable(cd.topologicalSort()).visitAll(new IVisitor<String>() {
       public void visit(String v) {
         Assert.assertEquals(QueueSequence.fromQueue(qq).removeFirstElement(), v);
       }

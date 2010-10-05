@@ -9,6 +9,7 @@ import java.util.Map;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.make.runtime.internal.util.GraphAnalyzer;
@@ -17,6 +18,8 @@ public class Graph<V> {
   private Set<V> vertices = SetSequence.fromSet(new HashSet<V>());
   private Map<V, List<V>> fwEdges = MapSequence.fromMap(new HashMap<V, List<V>>());
   private Map<V, List<V>> bkEdges = MapSequence.fromMap(new HashMap<V, List<V>>());
+  private _FunctionTypes._return_P1_E0<? extends Comparable<?>, ? super V> sorter;
+  private boolean asc;
 
   public Graph() {
   }
@@ -40,8 +43,16 @@ public class Graph<V> {
     }
   }
 
+  public void sort(_FunctionTypes._return_P1_E0<? extends Comparable<?>, ? super V> sorter, boolean asc) {
+    this.sorter = sorter;
+    this.asc = asc;
+  }
+
   public Iterable<V> getVertices() {
-    return vertices;
+    return (sorter != null ?
+      SetSequence.fromSet(vertices).sort(sorter, asc) :
+      vertices
+    );
   }
 
   public GraphAnalyzer<V> getCycleDetector() {
@@ -49,6 +60,11 @@ public class Graph<V> {
       @Override
       public Iterable<V> forwardEdges(V v) {
         return MapSequence.fromMap(fwEdges).get(v);
+      }
+
+      @Override
+      public Iterable<V> vertices() {
+        return getVertices();
       }
 
       @Override
