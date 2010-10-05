@@ -34,6 +34,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
+  private static final byte[] CONTENTS = new byte[0];
+
   private SNodePointer myNode;
   private String myPath;
   private String myName;
@@ -102,7 +104,7 @@ public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
 
   @NotNull
   public byte[] contentsToByteArray() throws IOException {
-    throw new UnsupportedOperationException();
+    return CONTENTS;
   }
 
   @Nullable

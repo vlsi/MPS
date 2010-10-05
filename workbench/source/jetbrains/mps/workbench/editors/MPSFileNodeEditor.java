@@ -19,8 +19,6 @@ import com.intellij.codeHighlighting.BackgroundEditorHighlighter;
 import com.intellij.ide.structureView.StructureViewBuilder;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import com.intellij.openapi.command.impl.DocumentReferenceManagerImpl;
-import com.intellij.openapi.command.undo.DocumentReference;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.fileEditor.*;
 import com.intellij.openapi.project.Project;
@@ -28,12 +26,11 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.UserDataHolderBase;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.NodeEditor;
-import jetbrains.mps.logging.Logger;
+import jetbrains.mps.ide.undo.MPSUndoUtil;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -42,11 +39,10 @@ import javax.swing.JComponent;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import java.beans.PropertyChangeListener;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
-public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor {
-  private static final Logger LOG = Logger.getLogger(MPSFileNodeEditor.class);
+public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor, DocumentsEditor {
 
   private IEditor myNodeEditor;
   private JPanel myComponent = new MPSFileNodeEditorComponent();
@@ -73,29 +69,6 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor 
         recreateEditor();
       }
     });
-  }
-
-  public DocumentReference[] getDocumentReferences() {
-    final List<DocumentReference> docRefs = new ArrayList<DocumentReference>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        for (SNode node : myNodeEditor.getEditedNodes()) {
-          MPSNodeVirtualFile virtualFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(node);
-          if (!virtualFile.isValid()) {
-            /*
-             * From time to time returned vistualFile is not valid (corresponding node is already
-             * unregistered from the model) so skipping such files.
-             *
-             * See http://youtrack.jetbrains.net/issue/MPS-7743
-             */
-            continue;
-          }
-          docRefs.add(DocumentReferenceManagerImpl.getInstance().create(virtualFile));
-        }
-      }
-    });
-    return docRefs.toArray(new DocumentReference[docRefs.size()]);
   }
 
   @NotNull
@@ -240,6 +213,18 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor 
     IOperationContext result = new ModuleContext(sm.getModule(), myProject);
     assert result.getModule() == sm.getModule() : "Different modules: " + result.getModule() + "/" + sm.getModule();
     return result;
+  }
+
+  public Document[] getDocuments() {
+    final List<Document> result = new LinkedList<Document>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        for (SNode node:myNodeEditor.getEditedNodes()){
+          result.add(MPSUndoUtil.getDoc(new SNodePointer(node)));
+        }
+      }
+    });
+    return result.toArray(new Document[result.size()]);
   }
 
   private class MPSFileNodeEditorComponent extends JPanel implements DataProvider {

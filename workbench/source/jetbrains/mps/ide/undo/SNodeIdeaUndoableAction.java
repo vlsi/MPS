@@ -16,7 +16,6 @@
 package jetbrains.mps.ide.undo;
 
 import com.intellij.openapi.command.undo.DocumentReference;
-import com.intellij.openapi.command.undo.DocumentReferenceManager;
 import com.intellij.openapi.command.undo.UndoableAction;
 import com.intellij.openapi.command.undo.UnexpectedUndoException;
 import jetbrains.mps.smodel.ModelAccess;
@@ -44,8 +43,9 @@ class SNodeIdeaUndoableAction implements UndoableAction {
       if (a.getRoot() != null) {
         MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(a.getRoot());
         assert file.isValid() : "Invalid file was returned by VFS node is not available: " + file.getNode();
-        affected.add(DocumentReferenceManager.getInstance().create(file));
         myChangedTimestamps.put(file, file.getModificationStamp());
+
+        affected.add(MPSUndoUtil.getRefForDoc(MPSUndoUtil.getDoc(file)));
       }
 
       assert a.isGlobal() == myIsGlobal : "Global and non-global actions should not be mixed inside one command";

@@ -44,7 +44,7 @@ public class MPSFileType implements FileType, FileTypeIdentifiableByVirtualFile 
   }
 
   public boolean isBinary() {
-    return true;
+    return false;
   }
 
   public boolean isReadOnly() {
