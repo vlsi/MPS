@@ -13,11 +13,12 @@ import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
-import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.refactoring.framework.StructureModificationData;
 import java.awt.GridBagLayout;
 import javax.swing.border.TitledBorder;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -49,14 +50,14 @@ public class RefactoringPanel {
     String modelName = "<html><b>" + myModel.getLongName() + "</b></html>";
     JLabel modelNameLabel = new JLabel(modelName, modelIcon, SwingConstants.LEADING);
     myComponent.add(modelNameLabel, BorderLayout.PAGE_START);
-    List<RefactoringContext> refactoringsContextList = myModel.getRefactoringHistory().getRefactoringContexts();
+    List<StructureModificationData> dataList = myModel.getRefactoringHistory().getDataList();
     JPanel mainPanel = new JPanel(new GridBagLayout());
     mainPanel.setBorder(new TitledBorder("actions"));
     GridBagConstraints gridBagConstraints = new GridBagConstraints(0, 0, 1, 1, 1, 1, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(4, 8, 4, 8), 0, 0);
     gridBagConstraints.weighty = 0;
     gridBagConstraints.gridy = GridBagConstraints.RELATIVE;
-    for (RefactoringContext refactoringContext : refactoringsContextList) {
-      addRefactoringItem(refactoringContext, mainPanel, gridBagConstraints);
+    for (StructureModificationData data : dataList) {
+      addRefactoringItem(new RefactoringContext(data), mainPanel, gridBagConstraints);
     }
     myComponent.add(mainPanel, BorderLayout.CENTER);
   }
@@ -69,7 +70,7 @@ public class RefactoringPanel {
     return new ActionListener() {
       public void actionPerformed(ActionEvent event) {
         BaseDialog dialog;
-        if (context.isEmptyMaps()) {
+        if (context.getStructureModificationData().isEmptyMaps()) {
           dialog = new InformationDialog(myContext, context);
         } else {
           dialog = new InformationDialogWithEditor(myContext, context);
@@ -116,7 +117,7 @@ public class RefactoringPanel {
     JLabel refactoringName = new JLabel(name);
     SNode refactoringNode = findRefactoringNode(name);
     itemPanel.add(refactoringName);
-    if (refactoringContext.hasInformation()) {
+    if (refactoringContext.getStructureModificationData().hasInformation()) {
       JButton infoButton = new JButton("Information");
       infoButton.addActionListener(getGoToInformationListener(refactoringContext));
       itemPanel.add(infoButton);

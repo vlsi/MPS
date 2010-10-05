@@ -165,7 +165,7 @@ public class RefactoringFacade extends RefactoringProcessor {
             try {
               refactoring.refactor(refactoringContext);
               if (refactoring instanceof ILoggableRefactoring) {
-                updateModels(modelDescriptor, refactoringContext, ((ILoggableRefactoring) refactoring), initialModelReference);
+                updateModels(modelDescriptor, refactoringContext, initialModelReference);
               }
             } catch (Throwable t) {
               LOG.error("An exception occured while trying to execute refactoring " + refactoring.getUserFriendlyName() + ". Models could have been corrupted.", t);

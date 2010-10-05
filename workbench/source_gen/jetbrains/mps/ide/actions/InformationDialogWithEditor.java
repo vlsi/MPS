@@ -84,8 +84,8 @@ public class InformationDialogWithEditor extends InformationDialog {
   protected JComponent getMainComponent() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        Map<SNode, Set<SNode>> movedNodes = getRefactoringContext().getMovedNodes();
-        Map<SNode, Set<SNode>> sourceNodes = getRefactoringContext().getSourceNodes();
+        Map<SNode, Set<SNode>> movedNodes = getRefactoringContext().getStructureModificationData().getMovedNodes();
+        Map<SNode, Set<SNode>> sourceNodes = getRefactoringContext().getStructureModificationData().getSourceNodes();
         if (movedNodes.isEmpty()) {
           myChangedPanel = null;
         } else {
@@ -96,7 +96,7 @@ public class InformationDialogWithEditor extends InformationDialog {
         } else {
           collectInformation(sourceNodes, "Source Nodes", mySourcePanel);
         }
-        collectInformation(getRefactoringContext().getConceptFeatures());
+        collectInformation(getRefactoringContext().getStructureModificationData().getConceptFeatures());
         if (!(movedNodes.isEmpty())) {
           myFirstValidNode = (SNode) movedNodes.keySet().toArray()[0];
           myFirstValidNodeChilds = movedNodes.get(myFirstValidNode);

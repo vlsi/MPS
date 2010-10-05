@@ -101,7 +101,7 @@ public class MoveLinkUp extends BaseGeneratedRefactoring {
   }
 
   public void updateModel(SModel model, final RefactoringContext refactoringContext) {
-    refactoringContext.updateModelWithMaps(model);
+    refactoringContext.updateByDefault(model);
   }
 
   public boolean doesUpdateModel() {

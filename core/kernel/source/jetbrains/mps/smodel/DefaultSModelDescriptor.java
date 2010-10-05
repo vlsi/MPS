@@ -18,8 +18,8 @@ package jetbrains.mps.smodel;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
+import jetbrains.mps.refactoring.framework.StructureModificationData;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.EventUtil;
 import jetbrains.mps.smodel.event.SModelCommandListener;
@@ -371,8 +371,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     if (getVersion() != -1) return;
 
     int maxVersion = -1;
-    for (RefactoringContext context : getRefactoringHistory().getRefactoringContexts()) {
-      maxVersion = Math.max(maxVersion, context.getModelVersion());
+    for (StructureModificationData data : getRefactoringHistory().getDataList()) {
+      maxVersion = Math.max(maxVersion, data.getModelVersion());
     }
 
     if (maxVersion != -1) {

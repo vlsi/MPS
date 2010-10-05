@@ -18,10 +18,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.findUsages.UsagesList;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.refactoring.PlayRefactoringsFlag;
-import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
-import jetbrains.mps.refactoring.framework.IRefactoring;
-import jetbrains.mps.refactoring.framework.RefactoringContext;
-import jetbrains.mps.refactoring.framework.RefactoringHistory;
+import jetbrains.mps.refactoring.framework.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 
@@ -43,13 +40,13 @@ public class RefactoringProcessor {
     }
   }
 
-  protected static void updateModels(SModelDescriptor modelDescriptor, RefactoringContext refactoringContext, ILoggableRefactoring refactoring, SModelReference initialModelReference) {
+  protected static void updateModels(SModelDescriptor modelDescriptor, RefactoringContext refactoringContext, SModelReference initialModelReference) {
     assert refactoringContext.getRefactoring() instanceof ILoggableRefactoring;
 
-    refactoringContext.computeCaches();
-
     if (!refactoringContext.isLocal()) {
-      writeIntoLog((EditableSModelDescriptor) modelDescriptor, refactoringContext);
+//      writeIntoLog((EditableSModelDescriptor) modelDescriptor, refactoringContext);
+      refactoringContext.getStructureModificationData().addDependencyModel((EditableSModelDescriptor) modelDescriptor);
+      updateRefactoringHistory(refactoringContext);
       updateLoadedModels(initialModelReference, (EditableSModelDescriptor) modelDescriptor, refactoringContext);
     } else {
       UsagesList usages = refactoringContext.getUsages();
@@ -79,21 +76,37 @@ public class RefactoringProcessor {
     });
   }
 
+/*
   public static void writeIntoLog(EditableSModelDescriptor model, RefactoringContext refactoringContext) {
     assert !refactoringContext.isLocal();
     assert refactoringContext.getRefactoring() instanceof ILoggableRefactoring;
 
     model.getSModel(); // ensure model is loaded
     RefactoringHistory refactoringHistory = model.getRefactoringHistory();
-    refactoringHistory.addRefactoringContext(refactoringContext);
+    refactoringHistory.addStructureModificationData(refactoringContext.getStructureModificationData());
     model.setVersion(model.getVersion() + 1);
-    refactoringContext.setModelVersion(model.getVersion());
+    refactoringContext.setModelVersion(model.getVersion()); // should be a copy of context
     SModelRepository.getInstance().markChanged(model, true);
     model.saveRefactoringHistory();
   }
+*/
+
+  public static void updateRefactoringHistory(RefactoringContext context) {
+    assert !context.isLocal();
+
+    for (StructureModificationData.Dependency d : context.getStructureModificationData().getDependencies()) {
+      EditableSModelDescriptor model = (EditableSModelDescriptor) context.getCurrentScope().getModelDescriptor(d.getModelReference());
+      model.getSModel(); // ensure model is loaded
+      model.getRefactoringHistory().addStructureModificationData(context.getStructureModificationData());
+      model.setVersion(model.getVersion() + 1);
+      context.getStructureModificationData().setModelVersion(model.getVersion());
+      SModelRepository.getInstance().markChanged(model, true);
+      model.saveRefactoringHistory();
+    }
+  }
 
   /**
-   * Silently update model with "loggable" refactorings from other models without loading other models
+   * Silently update model with structure refactorings from other models (without loading other models)
    * @param model - model to update
    * @return true if model was updated with refactoring
    */
@@ -113,7 +126,7 @@ public class RefactoringProcessor {
         played = false;
         for (SModelDescriptor usedModelDescriptor : model.getDependenciesModels()) {
           if (!(usedModelDescriptor instanceof EditableSModelDescriptor)) continue;
-          if (playUsedModelDescriptorsRefactoring(/*descriptor,*/ model, (EditableSModelDescriptor) usedModelDescriptor)) {
+          if (playUsedModelDescriptorsRefactoring(model, (EditableSModelDescriptor) usedModelDescriptor)) {
             result = played = true;
           }
         }
@@ -132,10 +145,10 @@ public class RefactoringProcessor {
     if (currentVersion > usedVersion) {
       boolean played = false;
       RefactoringHistory refactoringHistory = usedModelDescriptor.getRefactoringHistory();
-      for (RefactoringContext refactoringContext : refactoringHistory.getRefactoringContexts()) {
-        if (refactoringContext.getModelVersion() <= usedVersion) continue;
+      for (StructureModificationData data : refactoringHistory.getDataList()) {
+        if (data.getModelVersion() <= usedVersion) continue;
 
-        playRefactoring(model, refactoringContext);
+        playRefactoring(model, data);
         played = true;
 /*
         IRefactoring refactoring = refactoringContext.getRefactoring();
@@ -166,8 +179,8 @@ public class RefactoringProcessor {
     return false;
   }
 
-  private static boolean playRefactoring(@NotNull SModel model, @NotNull RefactoringContext context) {
-    context.updateModelWithMaps(model);
+  private static boolean playRefactoring(@NotNull SModel model, @NotNull StructureModificationData data) {
+    data.updateModelWithMaps(model);
     return true;    // todo: rewrite previous call to return real status of update
   }
 }

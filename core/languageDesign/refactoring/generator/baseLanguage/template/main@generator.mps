@@ -2810,7 +2810,7 @@
               <link role="variableDeclaration:3" targetNodeId="1197382763121" resolveInfo="refactoringContext" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1216934743160">
-              <link role="baseMethodDeclaration:3" targetNodeId="3.~RefactoringContext.updateModelWithMaps(jetbrains.mps.smodel.SModel):void" resolveInfo="updateModelWithMaps" />
+              <link role="baseMethodDeclaration:3" targetNodeId="3.~RefactoringContext.updateByDefault(jetbrains.mps.smodel.SModel):void" resolveInfo="updateByDefault" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1197382780426">
                 <link role="variableDeclaration:3" targetNodeId="1197382761104" resolveInfo="model" />
               </node>
@@ -2919,13 +2919,17 @@
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1198577765524">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="1198577805222">
           <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1198577805223">
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1198577810261">
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1216934743390">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1198577810262">
-                  <link role="variableDeclaration:3" targetNodeId="1198577784560" resolveInfo="refactoringContext" />
-                </node>
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1216934743391">
-                  <link role="baseMethodDeclaration:3" targetNodeId="3.~RefactoringContext.computeCaches():void" resolveInfo="computeCaches" />
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="1884841801773906954">
+              <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.StatementCommentPart:3" id="1884841801773906955">
+                <node role="commentedStatement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1198577810261">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1216934743390">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1198577810262">
+                      <link role="variableDeclaration:3" targetNodeId="1198577784560" resolveInfo="refactoringContext" />
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1216934743391">
+                      <link role="baseMethodDeclaration:3" targetNodeId="3.~RefactoringContext.computeCaches():void" resolveInfo="computeCaches" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
@@ -2935,7 +2939,7 @@
                   <link role="variableDeclaration:3" targetNodeId="1198577784560" resolveInfo="refactoringContext" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1216934743530">
-                  <link role="baseMethodDeclaration:3" targetNodeId="3.~RefactoringContext.updateModelWithMaps(jetbrains.mps.smodel.SModel):void" resolveInfo="updateModelWithMaps" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="3.~RefactoringContext.updateByDefault(jetbrains.mps.smodel.SModel):void" resolveInfo="updateByDefault" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1198577823847">
                     <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="1198577826554">
                       <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="1198577826555">

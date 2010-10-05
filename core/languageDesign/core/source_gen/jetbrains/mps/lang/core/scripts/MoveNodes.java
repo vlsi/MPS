@@ -143,7 +143,7 @@ public class MoveNodes extends BaseGeneratedRefactoring {
   }
 
   public void updateModel(SModel model, final RefactoringContext refactoringContext) {
-    refactoringContext.updateModelWithMaps(model);
+    refactoringContext.updateByDefault(model);
   }
 
   public List<SNode> getNodesToOpen(final RefactoringContext refactoringContext) {

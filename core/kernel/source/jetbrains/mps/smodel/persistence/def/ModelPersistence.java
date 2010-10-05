@@ -269,7 +269,7 @@ public class ModelPersistence {
       if (version == 5) {
         //noinspection deprecation
         refactorings = model.getRefactoringHistory();
-        if (refactorings != null && refactorings.getRefactoringContexts().isEmpty()) {
+        if (refactorings != null && refactorings.getDataList().isEmpty()) {
           refactorings = null;
         }
       }

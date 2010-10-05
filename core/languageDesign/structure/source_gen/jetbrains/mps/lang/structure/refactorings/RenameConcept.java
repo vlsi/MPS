@@ -74,7 +74,7 @@ public class RenameConcept extends BaseLoggableRefactoring {
   }
 
   public void updateModel(final SModel model, final RefactoringContext refactoringContext) {
-    refactoringContext.updateModelWithMaps(model);
+    refactoringContext.updateByDefault(model);
   }
 
   public static String getKeyStroke_static() {

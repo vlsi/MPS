@@ -19,7 +19,7 @@ import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.JDomReader;
 import com.thoughtworks.xstream.io.xml.JDomWriter;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.refactoring.framework.RefactoringContext.FullNodeId;
+import jetbrains.mps.refactoring.framework.StructureModificationData.FullNodeId;
 import jetbrains.mps.smodel.*;
 import org.jdom.Element;
 

@@ -50,7 +50,7 @@ public class InformationDialog extends BaseDialog {
   protected JComponent getMainComponent() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        collectInformation(getRefactoringContext().getConceptFeatures());
+        collectInformation(getRefactoringContext().getStructureModificationData().getConceptFeatures());
       }
     });
     JPanel mainPanel = new JPanel(new BorderLayout());

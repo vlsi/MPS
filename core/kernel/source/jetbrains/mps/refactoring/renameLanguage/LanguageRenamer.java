@@ -70,7 +70,7 @@ public class LanguageRenamer {
     for (AbstractConceptDeclaration concept : structure.getSModel().allAdapters(AbstractConceptDeclaration.class)) {
       myContext.changeFeatureName(concept.getNode(), myNewName + ".structure." + concept.getName(), concept.getName());
     }
-    myContext.computeCaches();
+//    myContext.computeCaches();
 
     for (SModelDescriptor sm : myLanguage.getOwnModelDescriptors()) {
       if (!SModelStereotype.isUserModel(sm)) continue;
@@ -86,7 +86,9 @@ public class LanguageRenamer {
     myLanguage.setLanguageDescriptor(descriptor, false);
     myLanguage.save();
 
-    myProcessor.writeIntoLog(structure, myContext);
+//    myProcessor.writeIntoLog(structure, myContext);
+    myContext.getStructureModificationData().addDependencyModel((EditableSModelDescriptor) structure);
+    RefactoringProcessor.updateRefactoringHistory(myContext);
     SModelRepository.getInstance().saveAll();
   }
 
@@ -134,7 +136,7 @@ public class LanguageRenamer {
     }
 
     public void updateModel(SModel model, RefactoringContext refactoringContext) {
-      refactoringContext.updateModelWithMaps(model);
+      refactoringContext.updateByDefault(model);
     }
   }
 }
