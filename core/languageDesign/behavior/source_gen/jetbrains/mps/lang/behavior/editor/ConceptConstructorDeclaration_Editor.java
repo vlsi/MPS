@@ -7,10 +7,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.baseLanguage.editor.ConceptFunction_Folded_Component;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -27,9 +29,28 @@ public class ConceptConstructorDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_6lfqqa_a");
     editorCell.addEditorCell(this.createConstant_6lfqqa_a0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6lfqqa_b0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_6lfqqa_c0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6lfqqa_d0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_6lfqqa_b0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_6lfqqa_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_6lfqqa_b0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
+    editorCell.setCanBeFolded(true);
+    editorCell.setFoldedCell(this.createComponent_6lfqqa_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6lfqqa_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_6lfqqa_b1a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6lfqqa_c1a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createComponent_6lfqqa_a1a(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new ConceptFunction_Folded_Component(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
@@ -45,9 +66,9 @@ public class ConceptConstructorDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6lfqqa_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6lfqqa_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_6lfqqa_b0");
+    editorCell.setCellId("Constant_6lfqqa_a1a");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -57,19 +78,15 @@ public class ConceptConstructorDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6lfqqa_d0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6lfqqa_c1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_6lfqqa_d0");
+    editorCell.setCellId("Constant_6lfqqa_c1a");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_6lfqqa_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_6lfqqa_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("body");
     provider.setNoTargetText("<no body>");

@@ -11363,34 +11363,41 @@
           <property name="color:32" value="DARK_BLUE" />
         </node>
       </node>
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1214568090084">
-        <property name="text:32" value="{" />
-        <link role="styleClass:32" targetNodeId="1215091279307" resolveInfo="LeftBrace" />
-        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="1237647619012">
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="916904233595666871">
+        <property name="usesFolding:32" value="true" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="916904233595789724">
           <property name="flag:32" value="true" />
         </node>
-        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem:32" id="8765984606563369611">
-          <property name="color:32" value="DARK_BLUE" />
+        <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="916904233595666872" />
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1214568090084">
+          <property name="text:32" value="{" />
+          <link role="styleClass:32" targetNodeId="1215091279307" resolveInfo="LeftBrace" />
+          <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="1237647619012">
+            <property name="flag:32" value="true" />
+          </node>
+          <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem:32" id="8765984606563369611">
+            <property name="color:32" value="DARK_BLUE" />
+          </node>
         </node>
-      </node>
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="1214568090087">
-        <property name="attractsFocus:32" value="2" />
-        <link role="relationDeclaration:32" targetNodeId="17.1137022507850:3" />
-        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem:32" id="1237647619014">
-          <property name="flag:32" value="true" />
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="1214568090087">
+          <property name="attractsFocus:32" value="2" />
+          <link role="relationDeclaration:32" targetNodeId="17.1137022507850:3" />
+          <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem:32" id="1237647619014">
+            <property name="flag:32" value="true" />
+          </node>
+          <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="1237647619015">
+            <property name="flag:32" value="true" />
+          </node>
         </node>
-        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="1237647619015">
-          <property name="flag:32" value="true" />
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1214568090089">
+          <property name="text:32" value="}" />
+          <link role="styleClass:32" targetNodeId="1215091331565" resolveInfo="RightBrace" />
+          <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem:32" id="8765984606563369613">
+            <property name="color:32" value="DARK_BLUE" />
+          </node>
         </node>
-      </node>
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1214568090089">
-        <property name="text:32" value="}" />
-        <link role="styleClass:32" targetNodeId="1215091331565" resolveInfo="RightBrace" />
-        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="1237647619016">
-          <property name="flag:32" value="true" />
-        </node>
-        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem:32" id="8765984606563369613">
-          <property name="color:32" value="DARK_BLUE" />
+        <node role="foldedCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Component:32" id="916904233595886824">
+          <link role="editorComponent:32" targetNodeId="916904233595886821" resolveInfo="ConceptFunction_Folded_Component{...}" />
         </node>
       </node>
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="1237647621788" />
@@ -17196,6 +17203,15 @@
     <property name="name:32" value="GenericDeclaration_FoldedCodeBlock_Component" />
     <link role="conceptDeclaration:32" targetNodeId="17.1109279851642:3" resolveInfo="GenericDeclaration" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="8709572687796750358">
+      <property name="text:32" value="{...}" />
+      <link role="styleClass:32" targetNodeId="5179638159363031272" resolveInfo="FoldedCell" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.EditorComponentDeclaration:32" id="916904233595886821">
+    <property name="package:32" value="conceptFunction" />
+    <property name="name:32" value="ConceptFunction_Folded_Component" />
+    <link role="conceptDeclaration:32" targetNodeId="17.1137021947720:3" resolveInfo="ConceptFunction" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="916904233595886823">
       <property name="text:32" value="{...}" />
       <link role="styleClass:32" targetNodeId="5179638159363031272" resolveInfo="FoldedCell" />
     </node>
