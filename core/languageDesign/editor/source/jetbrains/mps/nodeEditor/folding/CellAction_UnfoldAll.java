@@ -16,11 +16,13 @@
 package jetbrains.mps.nodeEditor.folding;
 
 import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Condition;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class CellAction_UnfoldAll extends EditorCellAction {
 
@@ -30,10 +32,24 @@ public class CellAction_UnfoldAll extends EditorCellAction {
   }
 
   public void execute(EditorContext context) {
-    for (EditorCell cell : ((EditorCell_Collection)context.getNodeEditorComponent().getRootCell()).dfsCells()) {
-      if (cell.isFolded()) {
-        ((EditorCell_Collection) cell).unfold();
+    EditorComponent component = context.getNodeEditorComponent();
+    Queue<EditorCell_Collection> cellsToProcess = new LinkedList<EditorCell_Collection>();
+    cellsToProcess.add((EditorCell_Collection) component.getRootCell());
+    while (!cellsToProcess.isEmpty()) {
+      EditorCell_Collection nextCollection = cellsToProcess.poll();
+      if (nextCollection.isFolded()) {
+        nextCollection.unfold();
+      }
+      for (EditorCell childCell : nextCollection.getCells()) {
+        if (childCell instanceof EditorCell_Collection) {
+          cellsToProcess.add((EditorCell_Collection) childCell);
+        }
       }
     }
+  }
+
+  @Override
+  public boolean executeInCommand() {
+    return true;
   }
 }

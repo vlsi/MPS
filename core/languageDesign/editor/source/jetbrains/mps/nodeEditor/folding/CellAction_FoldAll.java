@@ -15,33 +15,39 @@
  */
 package jetbrains.mps.nodeEditor.folding;
 
-import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Condition;
+
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class CellAction_FoldAll extends EditorCellAction {
-   public boolean canExecute(EditorContext context) {
+  public boolean canExecute(EditorContext context) {
     return context.getNodeEditorComponent().getRootCell() instanceof EditorCell_Collection;
   }
 
   public void execute(EditorContext context) {
     EditorComponent component = context.getNodeEditorComponent();
-    for (EditorCell cell : ((EditorCell_Collection) component.getRootCell()).dfsCells()) {
-      if (cell.canBePossiblyFolded() && !cell.isFolded()) {
-        ((EditorCell_Collection) cell).fold();
+    Queue<EditorCell_Collection> cellsToProcess = new LinkedList<EditorCell_Collection>();
+    cellsToProcess.add((EditorCell_Collection) component.getRootCell());
+    while (!cellsToProcess.isEmpty()) {
+      EditorCell_Collection nextCollection = cellsToProcess.poll();
+      for (EditorCell childCell : nextCollection.getCells()) {
+        if (childCell instanceof EditorCell_Collection) {
+          cellsToProcess.add((EditorCell_Collection) childCell);
+        }
+      }
+      if (nextCollection.canBePossiblyFolded() && !nextCollection.isFolded()) {
+        nextCollection.fold();
       }
     }
-    EditorCell selectedCell = component.getSelectedCell();
-    if (selectedCell.isUnderFolded()) {
-      EditorCell cell = selectedCell;
-      EditorCell prevCell = null;
-      while (cell != null) {
-        prevCell = cell;
-        cell = cell.getFoldedAbove();
-      }
-      component.changeSelection(prevCell);
-    }
+  }
+
+  @Override
+  public boolean executeInCommand() {
+    return true;
   }
 }

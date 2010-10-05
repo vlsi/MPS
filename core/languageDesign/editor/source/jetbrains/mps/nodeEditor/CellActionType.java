@@ -60,6 +60,7 @@ public enum CellActionType {
   UNFOLD,
   FOLD_ALL,
   UNFOLD_ALL,
+  TOGGLE_FOLDING,
 
   SHOW_MESSAGE  
 }

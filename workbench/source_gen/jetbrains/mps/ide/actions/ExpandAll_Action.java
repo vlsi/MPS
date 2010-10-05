@@ -6,24 +6,20 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.EditorContext;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.workbench.MPSDataKeys;
-import java.util.Queue;
-import jetbrains.mps.internal.collections.runtime.QueueSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.nodeEditor.CellActionType;
 
 public class ExpandAll_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(ExpandAll_Action.class);
 
-  private EditorContext editorContext;
   private EditorComponent editorComponent;
+  private EditorContext editorContext;
 
   public ExpandAll_Action() {
     super("Expand All", "", ICON);
@@ -38,7 +34,7 @@ public class ExpandAll_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return ExpandAll_Action.this.editorComponent.getRootCell() instanceof EditorCell_Collection;
+    return ExpandAll_Action.this.getAction() != null;
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
@@ -59,12 +55,12 @@ public class ExpandAll_Action extends GeneratedAction {
     if (!(super.collectActionData(event))) {
       return false;
     }
-    this.editorContext = event.getData(MPSDataKeys.EDITOR_CONTEXT);
-    if (this.editorContext == null) {
-      return false;
-    }
     this.editorComponent = event.getData(MPSDataKeys.EDITOR_COMPONENT);
     if (this.editorComponent == null) {
+      return false;
+    }
+    this.editorContext = event.getData(MPSDataKeys.EDITOR_CONTEXT);
+    if (this.editorContext == null) {
       return false;
     }
     return true;
@@ -72,28 +68,21 @@ public class ExpandAll_Action extends GeneratedAction {
 
   protected void cleanup() {
     super.cleanup();
-    this.editorContext = null;
     this.editorComponent = null;
+    this.editorContext = null;
   }
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      Queue<EditorCell_Collection> cellsToProcess = QueueSequence.fromQueueAndArray(new LinkedList<EditorCell_Collection>(), (EditorCell_Collection) ExpandAll_Action.this.editorComponent.getRootCell());
-      while (QueueSequence.fromQueue(cellsToProcess).isNotEmpty()) {
-        EditorCell_Collection collectionCell = QueueSequence.fromQueue(cellsToProcess).removeFirstElement();
-        if (collectionCell.isFolded()) {
-          collectionCell.unfold();
-        }
-        for (EditorCell childCell : Sequence.fromIterable(collectionCell)) {
-          if (childCell instanceof EditorCell_Collection) {
-            QueueSequence.fromQueue(cellsToProcess).addLastElement((EditorCell_Collection) childCell);
-          }
-        }
-      }
+      ExpandAll_Action.this.getAction().execute(ExpandAll_Action.this.editorContext);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ExpandAll", t);
       }
     }
+  }
+
+  /*package*/ EditorCellAction getAction() {
+    return ExpandAll_Action.this.editorComponent.getComponentAction(CellActionType.UNFOLD_ALL);
   }
 }

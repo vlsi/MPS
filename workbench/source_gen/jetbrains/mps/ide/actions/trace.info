@@ -183,9 +183,11 @@
   <unitInfo fileName="CopyNodeReference_Action.java" startLine="19" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.ide.actions.CopyNodeReference_Action" />
   <unitInfo fileName="InstallIDEAPlugin_Action.java" startLine="20" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.ide.actions.InstallIDEAPlugin_Action" />
   <unitInfo fileName="QuickCreate_Action.java" startLine="24" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.ide.actions.QuickCreate_Action" />
-  <unitInfo fileName="Expand_Action.java" startLine="16" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.ide.actions.Expand_Action" />
-  <unitInfo fileName="Collapse_Action.java" startLine="16" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.ide.actions.Collapse_Action" />
   <unitInfo fileName="ShowModelChecker_Action.java" startLine="17" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowModelChecker_Action" />
+  <unitInfo fileName="FoldSelection_Action.java" startLine="17" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.ide.actions.FoldSelection_Action" />
+  <unitInfo fileName="CollapseAll_Action.java" startLine="17" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.ide.actions.CollapseAll_Action" />
+  <unitInfo fileName="ExpandAll_Action.java" startLine="17" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.ide.actions.ExpandAll_Action" />
+  <unitInfo fileName="Collapse_Action.java" startLine="17" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.ide.actions.Collapse_Action" />
   <unitInfo fileName="LanguageHierarchy_Action.java" startLine="21" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.ide.actions.LanguageHierarchy_Action" />
   <unitInfo fileName="RenameLanguage_Action.java" startLine="18" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.ide.actions.RenameLanguage_Action" />
   <unitInfo fileName="AddLanguageImport_Action.java" startLine="18" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.ide.actions.AddLanguageImport_Action" />
@@ -195,7 +197,6 @@
   <unitInfo fileName="SolutionProperties_Action.java" startLine="22" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.ide.actions.SolutionProperties_Action" />
   <unitInfo fileName="LanguageProperties_Action.java" startLine="22" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.ide.actions.LanguageProperties_Action" />
   <unitInfo fileName="DevkitProperties_Action.java" startLine="22" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.ide.actions.DevkitProperties_Action" />
-  <unitInfo fileName="FoldSelection_Action.java" startLine="16" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.ide.actions.FoldSelection_Action" />
   <unitInfo fileName="EditNodeExplicit_Action.java" startLine="19" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.ide.actions.EditNodeExplicit_Action" />
   <unitInfo fileName="NewDevKit_Action.java" startLine="19" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.ide.actions.NewDevKit_Action" />
   <unitInfo fileName="EditNode_Action.java" startLine="19" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.ide.actions.EditNode_Action" />
@@ -204,6 +205,7 @@
   <unitInfo fileName="SelectLocalEnd_Action.java" startLine="20" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.ide.actions.SelectLocalEnd_Action" />
   <unitInfo fileName="CopyNode_Action.java" startLine="21" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.ide.actions.CopyNode_Action" />
   <unitInfo fileName="HighlightCellDependencies_Action.java" startLine="21" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.ide.actions.HighlightCellDependencies_Action" />
+  <unitInfo fileName="Expand_Action.java" startLine="18" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.ide.actions.Expand_Action" />
   <unitInfo fileName="RemoveFromFavorites_Action.java" startLine="20" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.ide.actions.RemoveFromFavorites_Action" />
   <unitInfo fileName="GetModuleContentsFromSource_Action.java" startLine="21" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.ide.actions.GetModuleContentsFromSource_Action" />
   <unitInfo fileName="CleanModule_Action.java" startLine="22" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.ide.actions.CleanModule_Action" />
@@ -211,7 +213,6 @@
   <unitInfo fileName="FixVirtualPackges_Action.java" startLine="23" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.ide.actions.FixVirtualPackges_Action" />
   <unitInfo fileName="ShowMappingsPartitioning_Action.java" startLine="19" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowMappingsPartitioning_Action" />
   <unitInfo fileName="ModelProperties_Action.java" startLine="19" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.ide.actions.ModelProperties_Action" />
-  <unitInfo fileName="ExpandAll_Action.java" startLine="21" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.ide.actions.ExpandAll_Action" />
   <unitInfo fileName="ShowReferencesToMissingStuff_Action.java" startLine="22" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowReferencesToMissingStuff_Action" />
   <unitInfo fileName="GenerateFiles_Action.java" startLine="23" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.ide.actions.GenerateFiles_Action" />
   <unitInfo fileName="CleanProject_Action.java" startLine="26" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.ide.actions.CleanProject_Action" />
@@ -219,7 +220,6 @@
   <unitInfo fileName="OptimizeModuleImports_Action.java" startLine="25" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.ide.actions.OptimizeModuleImports_Action" />
   <unitInfo fileName="ShowNodeInfo_Action.java" startLine="20" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.ide.actions.ShowNodeInfo_Action" />
   <unitInfo fileName="CheckModel_Action.java" startLine="20" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.ide.actions.CheckModel_Action" />
-  <unitInfo fileName="CollapseAll_Action.java" startLine="21" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.ide.actions.CollapseAll_Action" />
   <unitInfo fileName="GoToNodeById_Action.java" startLine="21" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.ide.actions.GoToNodeById_Action" />
   <unitInfo fileName="GoByReference_ActionGroup.java" startLine="26" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.ide.actions.GoByReference_ActionGroup" />
   <unitInfo fileName="OptimizeProjectImports_Action.java" startLine="26" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.ide.actions.OptimizeProjectImports_Action" />
@@ -4651,16 +4651,16 @@
     <nodeInfo nodeId="5246419582055649805" fileName="End_Action.java" startLine="60" startPosition="9" endLine="61" endPosition="67" />
   </root>
   <root nodeId="5354546887831012886">
-    <nodeInfo nodeId="5354546887831057043" fileName="Expand_Action.java" startLine="19" startPosition="0" endLine="20" endPosition="32" />
-    <nodeInfo nodeId="8240243036592871619" fileName="Expand_Action.java" startLine="20" startPosition="32" endLine="21" endPosition="38" />
-    <nodeInfo nodeId="5354546887831057074" fileName="Expand_Action.java" startLine="74" startPosition="40" endLine="75" endPosition="34" />
-    <nodeInfo nodeId="5354546887831057078" fileName="Expand_Action.java" startLine="75" startPosition="34" endLine="76" endPosition="17" />
-    <nodeInfo nodeId="5354546887831057079" fileName="Expand_Action.java" startLine="77" startPosition="9" endLine="78" endPosition="52" />
-    <nodeInfo nodeId="5354546887831057045" fileName="Expand_Action.java" startLine="68" startPosition="9" endLine="72" endPosition="8" />
-    <nodeInfo nodeId="5354546887831057069" fileName="Expand_Action.java" startLine="73" startPosition="38" endLine="77" endPosition="9" />
-    <nodeInfo nodeId="5354546887831057064" fileName="Expand_Action.java" startLine="72" startPosition="8" endLine="79" endPosition="7" />
-    <scopeInfo nodeId="5354546887831057073" fileName="Expand_Action.java" startLine="74" startPosition="40" endLine="76" endPosition="17" />
-    <scopeInfo nodeId="5354546887831057068" fileName="Expand_Action.java" startLine="73" startPosition="38" endLine="78" endPosition="52" />
+    <nodeInfo nodeId="5354546887831057043" fileName="Expand_Action.java" startLine="21" startPosition="0" endLine="22" endPosition="32" />
+    <nodeInfo nodeId="8240243036592871619" fileName="Expand_Action.java" startLine="22" startPosition="32" endLine="23" endPosition="38" />
+    <nodeInfo nodeId="6659061594281163449" fileName="Expand_Action.java" startLine="23" startPosition="38" endLine="24" endPosition="42" />
+    <nodeInfo nodeId="6659061594281163453" fileName="Expand_Action.java" startLine="38" startPosition="52" endLine="39" endPosition="50" />
+    <nodeInfo nodeId="6659061594281163460" fileName="Expand_Action.java" startLine="83" startPosition="9" endLine="84" endPosition="79" />
+    <nodeInfo nodeId="6659061594281163441" fileName="Expand_Action.java" startLine="92" startPosition="44" endLine="93" endPosition="88" />
+    <nodeInfo nodeId="6659061594281163438" fileName="Expand_Action.java" startLine="91" startPosition="0" endLine="95" endPosition="0" />
+    <scopeInfo nodeId="6659061594281163452" fileName="Expand_Action.java" startLine="38" startPosition="52" endLine="39" endPosition="50" />
+    <scopeInfo nodeId="6659061594281163440" fileName="Expand_Action.java" startLine="92" startPosition="44" endLine="93" endPosition="88" />
+    <scopeInfo nodeId="6659061594281163438" fileName="Expand_Action.java" startLine="91" startPosition="0" endLine="95" endPosition="0" />
   </root>
   <root nodeId="5357294907628536183">
     <nodeInfo nodeId="5357294907628538964" fileName="GoByCurrentReference_Action.java" startLine="37" startPosition="0" endLine="38" endPosition="42" />
@@ -5890,16 +5890,15 @@
     <nodeInfo nodeId="7820349104032193292" fileName="Folding_ActionGroup.java" startLine="23" startPosition="46" endLine="24" endPosition="112" />
   </root>
   <root nodeId="5980126212935093787">
-    <nodeInfo nodeId="5980126212935212382" fileName="Collapse_Action.java" startLine="19" startPosition="0" endLine="20" endPosition="32" />
-    <nodeInfo nodeId="8240243036592842294" fileName="Collapse_Action.java" startLine="20" startPosition="32" endLine="21" endPosition="38" />
-    <nodeInfo nodeId="5980126212935238357" fileName="Collapse_Action.java" startLine="74" startPosition="83" endLine="75" endPosition="32" />
-    <nodeInfo nodeId="5980126212935238365" fileName="Collapse_Action.java" startLine="75" startPosition="32" endLine="76" endPosition="17" />
-    <nodeInfo nodeId="5980126212935238346" fileName="Collapse_Action.java" startLine="77" startPosition="9" endLine="78" endPosition="52" />
-    <nodeInfo nodeId="5980126212935212547" fileName="Collapse_Action.java" startLine="68" startPosition="9" endLine="72" endPosition="8" />
-    <nodeInfo nodeId="5980126212935238336" fileName="Collapse_Action.java" startLine="73" startPosition="38" endLine="77" endPosition="9" />
-    <nodeInfo nodeId="5980126212935238328" fileName="Collapse_Action.java" startLine="72" startPosition="8" endLine="79" endPosition="7" />
-    <scopeInfo nodeId="5980126212935238338" fileName="Collapse_Action.java" startLine="74" startPosition="83" endLine="76" endPosition="17" />
-    <scopeInfo nodeId="5980126212935238330" fileName="Collapse_Action.java" startLine="73" startPosition="38" endLine="78" endPosition="52" />
+    <nodeInfo nodeId="8240243036592842294" fileName="Collapse_Action.java" startLine="20" startPosition="0" endLine="21" endPosition="38" />
+    <nodeInfo nodeId="6659061594281163415" fileName="Collapse_Action.java" startLine="21" startPosition="38" endLine="22" endPosition="42" />
+    <nodeInfo nodeId="6659061594281163241" fileName="Collapse_Action.java" startLine="36" startPosition="52" endLine="37" endPosition="52" />
+    <nodeInfo nodeId="6659061594281163426" fileName="Collapse_Action.java" startLine="76" startPosition="9" endLine="77" endPosition="83" />
+    <nodeInfo nodeId="6659061594281163407" fileName="Collapse_Action.java" startLine="85" startPosition="44" endLine="86" endPosition="88" />
+    <nodeInfo nodeId="6659061594281163404" fileName="Collapse_Action.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="6659061594281067497" fileName="Collapse_Action.java" startLine="36" startPosition="52" endLine="37" endPosition="52" />
+    <scopeInfo nodeId="6659061594281163406" fileName="Collapse_Action.java" startLine="85" startPosition="44" endLine="86" endPosition="88" />
+    <scopeInfo nodeId="6659061594281163404" fileName="Collapse_Action.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
   </root>
   <root nodeId="5999020322563339950">
     <nodeInfo nodeId="5999020322563339951" fileName="NewAccessoryModel_Action.java" startLine="28" startPosition="0" endLine="29" endPosition="22" />
@@ -7416,65 +7415,37 @@
     </scopeInfo>
   </root>
   <root nodeId="7820349104032193277">
-    <nodeInfo nodeId="7820349104032193294" fileName="ExpandAll_Action.java" startLine="24" startPosition="0" endLine="25" endPosition="38" />
-    <nodeInfo nodeId="7820349104032193370" fileName="ExpandAll_Action.java" startLine="25" startPosition="38" endLine="26" endPosition="42" />
-    <nodeInfo nodeId="7820349104032202284" fileName="ExpandAll_Action.java" startLine="40" startPosition="52" endLine="41" endPosition="96" />
-    <nodeInfo nodeId="7820349104032227444" fileName="ExpandAll_Action.java" startLine="80" startPosition="9" endLine="81" endPosition="202" />
-    <nodeInfo nodeId="7820349104032228239" fileName="ExpandAll_Action.java" startLine="82" startPosition="68" endLine="83" endPosition="108" />
-    <nodeInfo nodeId="7820349104032228253" fileName="ExpandAll_Action.java" startLine="84" startPosition="40" endLine="85" endPosition="34" />
-    <nodeInfo nodeId="7820349104032228269" fileName="ExpandAll_Action.java" startLine="88" startPosition="59" endLine="89" endPosition="102" />
-    <nodeInfo nodeId="7820349104032228251" fileName="ExpandAll_Action.java" startLine="83" startPosition="108" endLine="86" endPosition="9" />
-    <nodeInfo nodeId="7820349104032228264" fileName="ExpandAll_Action.java" startLine="87" startPosition="76" endLine="90" endPosition="11" />
-    <nodeInfo nodeId="7820349104032228260" fileName="ExpandAll_Action.java" startLine="86" startPosition="9" endLine="91" endPosition="9" />
-    <nodeInfo nodeId="7820349104032228228" fileName="ExpandAll_Action.java" startLine="81" startPosition="202" endLine="92" endPosition="7" />
-    <scopeInfo nodeId="7820349104032202283" fileName="ExpandAll_Action.java" startLine="40" startPosition="52" endLine="41" endPosition="96" />
-    <scopeInfo nodeId="7820349104032228252" fileName="ExpandAll_Action.java" startLine="84" startPosition="40" endLine="85" endPosition="34" />
-    <scopeInfo nodeId="7820349104032228268" fileName="ExpandAll_Action.java" startLine="88" startPosition="59" endLine="89" endPosition="102" />
-    <scopeInfo nodeId="7820349104032228263" fileName="ExpandAll_Action.java" startLine="87" startPosition="76" endLine="90" endPosition="11" />
-    <scopeInfo nodeId="7820349104032228260" fileName="ExpandAll_Action.java" startLine="86" startPosition="9" endLine="91" endPosition="9" />
-    <scopeInfo nodeId="7820349104032228230" fileName="ExpandAll_Action.java" startLine="82" startPosition="68" endLine="91" endPosition="9">
-      <varInfo nodeId="7820349104032228240" varName="collectionCell" />
-    </scopeInfo>
+    <nodeInfo nodeId="7820349104032193370" fileName="ExpandAll_Action.java" startLine="20" startPosition="0" endLine="21" endPosition="42" />
+    <nodeInfo nodeId="3695688568708871964" fileName="ExpandAll_Action.java" startLine="21" startPosition="42" endLine="22" endPosition="38" />
+    <nodeInfo nodeId="9183261373160591110" fileName="ExpandAll_Action.java" startLine="36" startPosition="52" endLine="37" endPosition="53" />
+    <nodeInfo nodeId="3695688568708871954" fileName="ExpandAll_Action.java" startLine="76" startPosition="9" endLine="77" endPosition="85" />
+    <nodeInfo nodeId="3695688568708871941" fileName="ExpandAll_Action.java" startLine="85" startPosition="44" endLine="86" endPosition="95" />
+    <nodeInfo nodeId="3695688568708871938" fileName="ExpandAll_Action.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="7820349104032202283" fileName="ExpandAll_Action.java" startLine="36" startPosition="52" endLine="37" endPosition="53" />
+    <scopeInfo nodeId="3695688568708871940" fileName="ExpandAll_Action.java" startLine="85" startPosition="44" endLine="86" endPosition="95" />
+    <scopeInfo nodeId="3695688568708871938" fileName="ExpandAll_Action.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
   </root>
   <root nodeId="7820349104032193280">
-    <nodeInfo nodeId="7820349104032193296" fileName="CollapseAll_Action.java" startLine="24" startPosition="0" endLine="25" endPosition="38" />
-    <nodeInfo nodeId="7820349104032315239" fileName="CollapseAll_Action.java" startLine="25" startPosition="38" endLine="26" endPosition="42" />
-    <nodeInfo nodeId="7820349104032315242" fileName="CollapseAll_Action.java" startLine="40" startPosition="52" endLine="41" endPosition="98" />
-    <nodeInfo nodeId="7820349104032315262" fileName="CollapseAll_Action.java" startLine="80" startPosition="9" endLine="81" endPosition="204" />
-    <nodeInfo nodeId="7820349104032315281" fileName="CollapseAll_Action.java" startLine="82" startPosition="68" endLine="83" endPosition="108" />
-    <nodeInfo nodeId="7820349104032315434" fileName="CollapseAll_Action.java" startLine="84" startPosition="40" endLine="85" endPosition="19" />
-    <nodeInfo nodeId="7820349104032315305" fileName="CollapseAll_Action.java" startLine="88" startPosition="59" endLine="89" endPosition="102" />
-    <nodeInfo nodeId="7820349104032315378" fileName="CollapseAll_Action.java" startLine="92" startPosition="51" endLine="93" endPosition="32" />
-    <nodeInfo nodeId="7820349104032315424" fileName="CollapseAll_Action.java" startLine="83" startPosition="108" endLine="86" endPosition="9" />
-    <nodeInfo nodeId="7820349104032315300" fileName="CollapseAll_Action.java" startLine="87" startPosition="76" endLine="90" endPosition="11" />
-    <nodeInfo nodeId="7820349104032315376" fileName="CollapseAll_Action.java" startLine="91" startPosition="9" endLine="94" endPosition="9" />
-    <nodeInfo nodeId="7820349104032315296" fileName="CollapseAll_Action.java" startLine="86" startPosition="9" endLine="91" endPosition="9" />
-    <nodeInfo nodeId="7820349104032315276" fileName="CollapseAll_Action.java" startLine="81" startPosition="204" endLine="95" endPosition="7" />
-    <scopeInfo nodeId="7820349104032315241" fileName="CollapseAll_Action.java" startLine="40" startPosition="52" endLine="41" endPosition="98" />
-    <scopeInfo nodeId="7820349104032315425" fileName="CollapseAll_Action.java" startLine="84" startPosition="40" endLine="85" endPosition="19" />
-    <scopeInfo nodeId="7820349104032315304" fileName="CollapseAll_Action.java" startLine="88" startPosition="59" endLine="89" endPosition="102" />
-    <scopeInfo nodeId="7820349104032315377" fileName="CollapseAll_Action.java" startLine="92" startPosition="51" endLine="93" endPosition="32" />
-    <scopeInfo nodeId="7820349104032315299" fileName="CollapseAll_Action.java" startLine="87" startPosition="76" endLine="90" endPosition="11" />
-    <scopeInfo nodeId="7820349104032315296" fileName="CollapseAll_Action.java" startLine="86" startPosition="9" endLine="91" endPosition="9" />
-    <scopeInfo nodeId="7820349104032315280" fileName="CollapseAll_Action.java" startLine="82" startPosition="68" endLine="94" endPosition="9">
-      <varInfo nodeId="7820349104032315282" varName="collectionCell" />
-    </scopeInfo>
+    <nodeInfo nodeId="7820349104032315239" fileName="CollapseAll_Action.java" startLine="20" startPosition="0" endLine="21" endPosition="42" />
+    <nodeInfo nodeId="3695688568708871931" fileName="CollapseAll_Action.java" startLine="21" startPosition="42" endLine="22" endPosition="38" />
+    <nodeInfo nodeId="6400810847788248562" fileName="CollapseAll_Action.java" startLine="36" startPosition="52" endLine="37" endPosition="55" />
+    <nodeInfo nodeId="6400810847788248673" fileName="CollapseAll_Action.java" startLine="76" startPosition="9" endLine="77" endPosition="89" />
+    <nodeInfo nodeId="3695688568708871855" fileName="CollapseAll_Action.java" startLine="85" startPosition="44" endLine="86" endPosition="95" />
+    <nodeInfo nodeId="3695688568708719049" fileName="CollapseAll_Action.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="7820349104032315241" fileName="CollapseAll_Action.java" startLine="36" startPosition="52" endLine="37" endPosition="55" />
+    <scopeInfo nodeId="3695688568708719051" fileName="CollapseAll_Action.java" startLine="85" startPosition="44" endLine="86" endPosition="95" />
+    <scopeInfo nodeId="3695688568708719049" fileName="CollapseAll_Action.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
   </root>
   <root nodeId="7820349104032193286">
-    <nodeInfo nodeId="7820349104032193297" fileName="FoldSelection_Action.java" startLine="19" startPosition="0" endLine="20" endPosition="32" />
-    <nodeInfo nodeId="7820349104032193298" fileName="FoldSelection_Action.java" startLine="20" startPosition="32" endLine="21" endPosition="38" />
-    <nodeInfo nodeId="7820349104032315565" fileName="FoldSelection_Action.java" startLine="74" startPosition="40" endLine="75" endPosition="34" />
-    <nodeInfo nodeId="7820349104032315602" fileName="FoldSelection_Action.java" startLine="75" startPosition="34" endLine="76" endPosition="17" />
-    <nodeInfo nodeId="7820349104032315624" fileName="FoldSelection_Action.java" startLine="78" startPosition="51" endLine="79" endPosition="32" />
-    <nodeInfo nodeId="7820349104032315661" fileName="FoldSelection_Action.java" startLine="79" startPosition="32" endLine="80" endPosition="17" />
-    <nodeInfo nodeId="7820349104032315603" fileName="FoldSelection_Action.java" startLine="81" startPosition="9" endLine="82" endPosition="52" />
-    <nodeInfo nodeId="7820349104032315536" fileName="FoldSelection_Action.java" startLine="68" startPosition="9" endLine="72" endPosition="8" />
-    <nodeInfo nodeId="7820349104032315560" fileName="FoldSelection_Action.java" startLine="73" startPosition="38" endLine="77" endPosition="9" />
-    <nodeInfo nodeId="7820349104032315610" fileName="FoldSelection_Action.java" startLine="77" startPosition="9" endLine="81" endPosition="9" />
-    <nodeInfo nodeId="7820349104032315555" fileName="FoldSelection_Action.java" startLine="72" startPosition="8" endLine="83" endPosition="7" />
-    <scopeInfo nodeId="7820349104032315564" fileName="FoldSelection_Action.java" startLine="74" startPosition="40" endLine="76" endPosition="17" />
-    <scopeInfo nodeId="7820349104032315611" fileName="FoldSelection_Action.java" startLine="78" startPosition="51" endLine="80" endPosition="17" />
-    <scopeInfo nodeId="7820349104032315559" fileName="FoldSelection_Action.java" startLine="73" startPosition="38" endLine="82" endPosition="52" />
+    <nodeInfo nodeId="7820349104032193298" fileName="FoldSelection_Action.java" startLine="20" startPosition="0" endLine="21" endPosition="38" />
+    <nodeInfo nodeId="314042019270128305" fileName="FoldSelection_Action.java" startLine="21" startPosition="38" endLine="22" endPosition="42" />
+    <nodeInfo nodeId="314042019270128309" fileName="FoldSelection_Action.java" startLine="36" startPosition="52" endLine="37" endPosition="57" />
+    <nodeInfo nodeId="314042019270128316" fileName="FoldSelection_Action.java" startLine="76" startPosition="9" endLine="77" endPosition="93" />
+    <nodeInfo nodeId="314042019269983287" fileName="FoldSelection_Action.java" startLine="85" startPosition="44" endLine="86" endPosition="103" />
+    <nodeInfo nodeId="314042019269983284" fileName="FoldSelection_Action.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="314042019270128308" fileName="FoldSelection_Action.java" startLine="36" startPosition="52" endLine="37" endPosition="57" />
+    <scopeInfo nodeId="314042019269983286" fileName="FoldSelection_Action.java" startLine="85" startPosition="44" endLine="86" endPosition="103" />
+    <scopeInfo nodeId="314042019269983284" fileName="FoldSelection_Action.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
   </root>
   <root nodeId="7824118464175996831">
     <nodeInfo nodeId="7824118464175996921" fileName="BaseAddMethodDialog.java" startLine="45" startPosition="62" endLine="46" endPosition="34" />

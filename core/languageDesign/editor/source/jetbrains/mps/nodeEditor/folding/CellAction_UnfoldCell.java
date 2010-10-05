@@ -19,18 +19,32 @@ import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.util.Condition;
 
 public class CellAction_UnfoldCell extends EditorCellAction {
 
   public boolean canExecute(EditorContext context) {
     EditorCell selectedCell = context.getNodeEditorComponent().getSelectedCell();
     if (selectedCell == null) return false;
-    return selectedCell.isFolded();
+    return findCell(selectedCell) != null;
   }
-
 
   public void execute(EditorContext context) {
     EditorCell selectedCell = context.getNodeEditorComponent().getSelectedCell();
-    ((EditorCell_Collection)selectedCell).unfold();
+    EditorCell_Collection targetCell = findCell(selectedCell);
+    targetCell.unfold();
+  }
+
+  @Override
+  public boolean executeInCommand() {
+    return false;
+  }
+
+  private static EditorCell_Collection findCell(EditorCell editorCell) {
+    return editorCell.findParent(new Condition<EditorCell_Collection>() {
+      public boolean met(EditorCell_Collection object) {
+        return object.isFolded();
+      }
+    });
   }
 }

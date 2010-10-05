@@ -49,10 +49,7 @@ import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.cells.*;
-import jetbrains.mps.nodeEditor.folding.CellAction_FoldAll;
-import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
-import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldAll;
-import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
+import jetbrains.mps.nodeEditor.folding.*;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.plugins.PluginUtil;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -344,6 +341,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myActionMap.put(CellActionType.UNFOLD, new CellAction_UnfoldCell());
     myActionMap.put(CellActionType.FOLD_ALL, new CellAction_FoldAll());
     myActionMap.put(CellActionType.UNFOLD_ALL, new CellAction_UnfoldAll());
+    myActionMap.put(CellActionType.TOGGLE_FOLDING, new CallAction_ToggleCellFolding());
 
     myActionMap.put(CellActionType.RIGHT_TRANSFORM, new CellAction_SideTransform(CellSide.RIGHT));
     myActionMap.put(CellActionType.LEFT_TRANSFORM, new CellAction_SideTransform(CellSide.LEFT));
@@ -1359,21 +1357,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           (label.getAction(CellActionType.DELETE) != null || label.getContainingBigCell().getLastLeaf(CellConditions.SELECTABLE) == label))) {
           return CellActionType.DELETE;
         }
-      }
-    }
-
-    if (keyEvent.getKeyCode() == KeyEvent.VK_ADD) {
-      if (ctrlShiftDown(keyEvent)) {
-        return CellActionType.UNFOLD_ALL;
-      } else if (ctrlDown(keyEvent)) {
-        return CellActionType.UNFOLD;
-      }
-    }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_SUBTRACT) {
-      if (ctrlShiftDown(keyEvent)) {
-        return CellActionType.FOLD_ALL;
-      } else if (ctrlDown(keyEvent)) {
-        return CellActionType.FOLD;
       }
     }
 

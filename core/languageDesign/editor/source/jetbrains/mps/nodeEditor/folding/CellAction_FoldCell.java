@@ -15,7 +15,9 @@
  */
 package jetbrains.mps.nodeEditor.folding;
 
-import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.util.Condition;
@@ -28,13 +30,16 @@ public class CellAction_FoldCell extends EditorCellAction {
     return findCell(editorCell) != null;
   }
 
+  @Override
+  public boolean executeInCommand() {
+    return false;
+  }
 
   public void execute(EditorContext context) {
     EditorComponent component = context.getNodeEditorComponent();
     EditorCell editorCell = component.getSelectedCell();
     EditorCell_Collection targetCell = findCell(editorCell);
     targetCell.fold();
-    component.changeSelection(targetCell);
   }
 
   private static EditorCell_Collection findCell(EditorCell editorCell) {
