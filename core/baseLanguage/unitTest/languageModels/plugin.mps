@@ -19978,6 +19978,9 @@
         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1969840607716869339">
           <link role="classifier:3" targetNodeId="8.~IModule" resolveInfo="IModule" />
         </node>
+        <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="3059599595977063827">
+          <link role="annotation:3" targetNodeId="79.~NotNull" resolveInfo="NotNull" />
+        </node>
       </node>
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType:7" id="893858845583020481">
         <node role="elementType:7" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="893858845583020483">
@@ -20025,6 +20028,25 @@
                   <link role="variableDeclaration:3" targetNodeId="8761302831112878949:0" resolveInfo="moduleName" />
                 </node>
               </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="3059599595977068080">
+          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3059599595977068081">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="3059599595977079161">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3059599595977079163">
+                <node role="creator:3" type="jetbrains.mps.baseLanguage.collections.structure.SequenceCreator:7" id="3059599595977079164">
+                  <node role="elementType:7" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="3059599595977174194">
+                    <link role="concept:16" targetNodeId="1.1216130694486" resolveInfo="ITestCase" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="3059599595977068085">
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="3059599595977068088" />
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3059599595977068084">
+              <link role="variableDeclaration:3" targetNodeId="668662359570049920:0" resolveInfo="module" />
             </node>
           </node>
         </node>

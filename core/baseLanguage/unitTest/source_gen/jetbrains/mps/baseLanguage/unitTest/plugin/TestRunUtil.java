@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.SModelReference;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -92,7 +93,7 @@ public class TestRunUtil {
     });
   }
 
-  public static Iterable<SNode> getModuleTests(final IModule module) {
+  public static Iterable<SNode> getModuleTests(@NotNull final IModule module) {
     return Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<SModelDescriptor>() {
       public Iterable<SModelDescriptor> iterable() {
         return module.getOwnModelDescriptors();
@@ -109,6 +110,9 @@ public class TestRunUtil {
       return Sequence.fromIterable(Collections.<SNode>emptyList());
     }
     IModule module = MPSModuleRepository.getInstance().getModuleByUID(moduleName);
+    if (module == null) {
+      return Sequence.fromIterable(Collections.<SNode>emptyList());
+    }
     return excludeAbstract(TestRunUtil.getModuleTests(module));
   }
 
