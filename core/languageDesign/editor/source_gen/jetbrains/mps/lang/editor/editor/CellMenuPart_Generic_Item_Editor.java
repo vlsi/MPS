@@ -62,7 +62,6 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
     }
     editorCell.setGridLayout(true);
     editorCell.setCanBeFolded(true);
-    editorCell.setCanBeFolded(true);
     editorCell.addEditorCell(this.createCollection_9wjygj_a1b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_9wjygj_b1b0(editorContext, node));
     return editorCell;
