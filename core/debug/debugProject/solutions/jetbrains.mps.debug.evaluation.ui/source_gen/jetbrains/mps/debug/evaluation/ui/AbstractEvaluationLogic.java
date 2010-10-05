@@ -160,7 +160,7 @@ public abstract class AbstractEvaluationLogic {
         IClassPathItem item = language.getClassPathItem();
         classpaths.add(item);
       }
-      String path = PathManager.getHomePath() + NameUtil.pathFromNamespace(".lib.tools.") + "tools.jar";
+      String path = PathManager.getHomePath() + NameUtil.pathFromNamespace(".lib.") + "tools.jar";
       classpaths.add(ClassPathFactory.getInstance().createFromPath(path));
 
       Project project = myContext.getProject();

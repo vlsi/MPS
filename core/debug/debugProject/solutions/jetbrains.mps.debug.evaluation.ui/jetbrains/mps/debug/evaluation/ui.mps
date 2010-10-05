@@ -4379,7 +4379,7 @@
                       <link role="classConcept:3" targetNodeId="29.~NameUtil" resolveInfo="NameUtil" />
                       <link role="baseMethodDeclaration:3" targetNodeId="29.~NameUtil.pathFromNamespace(java.lang.String):java.lang.String" resolveInfo="pathFromNamespace" />
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="6185141366360305764">
-                        <property name="value:3" value=".lib.tools." />
+                        <property name="value:3" value=".lib." />
                       </node>
                     </node>
                   </node>
@@ -4893,7 +4893,7 @@
       <property name="name:3" value="IS_DEVELOPER_MODE" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="672360099287494395" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="672360099287494396" />
-      <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="2051223608077819424">
+      <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="4474382671355563623">
         <property name="value:3" value="false" />
       </node>
     </node>
