@@ -323,12 +323,6 @@ public class WorkbenchModelAccess extends ModelAccess {
   }
 
   @Override
-  @Deprecated
-  public void runWriteActionInCommandAsync(final Runnable r) {
-    runWriteActionInCommandAsync(r, CurrentProjectAccessUtil.getProjectFromUI());
-  }
-
-  @Override
   public void runWriteActionInCommandAsync(final Runnable r, final Project project) {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {

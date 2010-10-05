@@ -81,12 +81,6 @@ public interface ModelCommandExecutor {
 
   void runWriteActionInCommand(Runnable r, String name, UndoConfirmationPolicy policy, Project project);
 
-  /**
-   * use runWriteActionInCommandAsync(final Runnable r, final Project project)
-   */
-  @Deprecated
-  void runWriteActionInCommandAsync(Runnable r);
-
   void runWriteActionInCommandAsync(Runnable r, Project project);
 
   void runIndexing(Runnable r);

@@ -184,12 +184,6 @@ public class DefaultModelAccess extends ModelAccess {
   }
 
   @Override
-  @Deprecated
-  public void runWriteActionInCommandAsync(final Runnable r) {
-    throw new UnsupportedOperationException();
-  }
-
-  @Override
   public void runWriteActionInCommandAsync(final Runnable r, final Project project) {
     throw new UnsupportedOperationException();
   }
