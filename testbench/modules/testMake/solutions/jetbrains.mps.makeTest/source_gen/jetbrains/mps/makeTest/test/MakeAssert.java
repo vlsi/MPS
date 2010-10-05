@@ -5,7 +5,7 @@ package jetbrains.mps.makeTest.test;
 import com.intellij.openapi.project.Project;
 import junit.framework.Assert;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
-import jetbrains.mps.project.tester.TesterGenerationHandler;
+import jetbrains.mps.generator.generationTypes.DiffGenerationHandler;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
@@ -46,7 +46,7 @@ public class MakeAssert {
     final ChangeModelProcessor changeModelProcessor = new ChangeModelProcessor(project, modelName, changer);
     final IGenerationHandler filesGenHandler = getFilesGenHandler();
     changeModelProcessor.changeStep(filesGenHandler);
-    final TesterGenerationHandler genHandler = new TesterGenerationHandler(true);
+    final DiffGenerationHandler genHandler = new DiffGenerationHandler(true);
     changeModelProcessor.generateTestModel(genHandler);
     changeModelProcessor.generateModelToChange(genHandler);
     final Boolean[] returnValue = new Boolean[]{null};

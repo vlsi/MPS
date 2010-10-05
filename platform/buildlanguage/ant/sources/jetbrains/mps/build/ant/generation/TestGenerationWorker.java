@@ -37,7 +37,7 @@ import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
 import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
-import jetbrains.mps.project.tester.TesterGenerationHandler;
+import jetbrains.mps.generator.generationTypes.DiffGenerationHandler;
 import jetbrains.mps.reloading.EachClassPathItemVisitor;
 import jetbrains.mps.reloading.FileClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
@@ -72,7 +72,7 @@ public class TestGenerationWorker extends GeneratorWorker {
   private IBuildServerMessageFormat myBuildServerMessageFormat;
   private final Map<SModelDescriptor, Long> myPerfomanceMap = new HashMap<SModelDescriptor, Long>();
 
-  private final TesterGenerationHandler myGenerationHandler = new TesterGenerationHandler(false, true) {
+  private final DiffGenerationHandler myGenerationHandler = new DiffGenerationHandler(false, true) {
     protected JavaCompiler createJavaCompiler() {
       return new JavaCompiler() {
         public ClassLoader getClassLoader(ClassLoader parent) {
@@ -310,7 +310,7 @@ public class TestGenerationWorker extends GeneratorWorker {
     return Boolean.parseBoolean(myWhatToDo.getProperty(TestGenerationOnTeamcity.SAVE_ON_DISK));
   }
 
-  private void runTests(List<File> moduleClassPath, TesterGenerationHandler handler, List<SModel> outputModels) {
+  private void runTests(List<File> moduleClassPath, DiffGenerationHandler handler, List<SModel> outputModels) {
     List<String> testClassesNames = getTestClassesNames(handler, outputModels, createClassLoader(moduleClassPath));
     if (testClassesNames.isEmpty()) return;
 
@@ -360,7 +360,7 @@ public class TestGenerationWorker extends GeneratorWorker {
     return new URLClassLoader(classPath.toArray(new URL[classPath.size()]));
   }
 
-  private List<String> getTestClassesNames(TesterGenerationHandler generationHandler, List<SModel> outputModels, ClassLoader baseClassLoader) {
+  private List<String> getTestClassesNames(DiffGenerationHandler generationHandler, List<SModel> outputModels, ClassLoader baseClassLoader) {
     List<String> testClasses = new ArrayList<String>();
 
     for (final SModel model : outputModels) {

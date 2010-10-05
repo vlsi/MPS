@@ -50,7 +50,7 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.StubModelsEntry;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
 import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
-import jetbrains.mps.project.tester.TesterGenerationHandler;
+import jetbrains.mps.generator.generationTypes.DiffGenerationHandler;
 import jetbrains.mps.refactoring.framework.tests.IRefactoringTester;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
@@ -582,7 +582,7 @@ public class TestMain {
       try {
         Logger.addLoggingHandler(loggingHandler);
 
-        final TesterGenerationHandler generationHandler = new TesterGenerationHandler(true);
+        final DiffGenerationHandler generationHandler = new DiffGenerationHandler(true);
 
         ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {

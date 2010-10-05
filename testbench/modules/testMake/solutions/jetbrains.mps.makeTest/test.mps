@@ -33,7 +33,6 @@
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="7" modelUID="f:java_stub#jetbrains.mps.compiler(jetbrains.mps.compiler@java_stub)" version="-1" />
   <import index="8" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
-  <import index="9" modelUID="f:java_stub#jetbrains.mps.project.tester(jetbrains.mps.project.tester@java_stub)" version="-1" />
   <import index="10" modelUID="f:java_stub#jetbrains.mps.ide.messages(jetbrains.mps.ide.messages@java_stub)" version="-1" />
   <import index="11" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="12" modelUID="f:java_stub#jetbrains.mps.generator(jetbrains.mps.generator@java_stub)" version="-1" />
@@ -488,12 +487,12 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="6016914837743474509">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="6016914837743474510">
             <property name="name:3" value="genHandler" />
-            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5311359939641098679">
-              <link role="classifier:3" targetNodeId="9.~TesterGenerationHandler" resolveInfo="TesterGenerationHandler" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4784689510948571738">
+              <link role="classifier:3" targetNodeId="14.~DiffGenerationHandler" resolveInfo="DiffGenerationHandler" />
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6016914837743474516">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="6016914837743493709">
-                <link role="baseMethodDeclaration:3" targetNodeId="9.~TesterGenerationHandler.&lt;init&gt;(boolean)" resolveInfo="TesterGenerationHandler" />
+                <link role="baseMethodDeclaration:3" targetNodeId="14.~DiffGenerationHandler.&lt;init&gt;(boolean)" resolveInfo="DiffGenerationHandler" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="6016914837743493713">
                   <property name="value:3" value="true" />
                 </node>

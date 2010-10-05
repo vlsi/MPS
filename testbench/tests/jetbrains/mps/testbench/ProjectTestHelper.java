@@ -14,7 +14,7 @@ import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.tester.TesterGenerationHandler;
+import jetbrains.mps.generator.generationTypes.DiffGenerationHandler;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.testbench.GenerationCycle.Cycle;
 import jetbrains.mps.util.AbstractClassLoader;
@@ -136,7 +136,7 @@ public class ProjectTestHelper {
 
   private final MyMessageHandler myMessageHandler = new MyMessageHandler();
   private final List<CompilationResult> myCompilationResult = new ArrayList<CompilationResult>();;
-  private final TesterGenerationHandler myGenerationHandler = new TesterGenerationHandler(false, true) {
+  private final DiffGenerationHandler myGenerationHandler = new DiffGenerationHandler(false, true) {
     protected JavaCompiler createJavaCompiler() {
       return new JavaCompiler() {
         public ClassLoader getClassLoader(ClassLoader parent) {

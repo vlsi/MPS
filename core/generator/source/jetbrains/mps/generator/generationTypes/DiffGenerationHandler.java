@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project.tester;
+package jetbrains.mps.generator.generationTypes;
 
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
-import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
+import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
@@ -34,19 +34,19 @@ import java.io.File;
 import java.util.*;
 
 /**
- * In-memory generation with ability to reference on-disk resources.
+ * In-memory generation. Compares generated sources with on-disk state.
  */
-public class TesterGenerationHandler extends InMemoryJavaGenerationHandler {
+public class DiffGenerationHandler extends InMemoryJavaGenerationHandler {
   private File myLastOutputDir;
   private Map<SModel, String> myOutputModelToPath = new HashMap<SModel, String>();
   private Map<SModelReference, String> myOutputModelRefToPath = new HashMap<SModelReference, String>();
   private Map<SModelReference, List<String>> myOutputModelRefToRoots = new HashMap<SModelReference, List<String>>();
 
-  public TesterGenerationHandler(boolean reloadClasses) {
+  public DiffGenerationHandler(boolean reloadClasses) {
     super(reloadClasses);
   }
 
-  public TesterGenerationHandler(boolean reloadClasses, boolean keepSources) {
+  public DiffGenerationHandler(boolean reloadClasses, boolean keepSources) {
     super(reloadClasses, keepSources);
   }
 
@@ -190,8 +190,7 @@ public class TesterGenerationHandler extends InMemoryJavaGenerationHandler {
         continue;
       }
       files.addAll(Arrays.asList(dir.list()));
-      // TODO extract j.m.project.tester -> tests
-      files.remove("trace.info");
+      files.remove(TraceInfoCache.TRACE_FILE_NAME);
       for (String outputRoot : this.getRoots(outputModel)) {
         String filename = this.getName(outputRoot, outputModel);
         if (filename == null) {
