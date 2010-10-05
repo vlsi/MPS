@@ -28,6 +28,9 @@ import org.jetbrains.annotations.NotNull;
 public class ModelsSaver implements ApplicationComponent {
   private MessageBusConnection myMessageBusConnection;
 
+  public ModelsSaver(SModelRepository dependsOn) {
+  }
+
   @NotNull
   public String getComponentName() {
     return "VCS Project Helper";
