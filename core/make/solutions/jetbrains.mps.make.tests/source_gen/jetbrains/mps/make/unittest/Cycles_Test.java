@@ -6,9 +6,13 @@ import junit.framework.TestCase;
 import jetbrains.mps.make.runtime.internal.util.GraphAnalyzer;
 import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Queue;
+import jetbrains.mps.internal.collections.runtime.QueueSequence;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import java.util.List;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class Cycles_Test extends TestCase {
@@ -17,7 +21,12 @@ public class Cycles_Test extends TestCase {
     GraphAnalyzer<String> cd = graph.getCycleDetector();
     graph.addEdges("A", "B");
     Assert.assertTrue(ListSequence.fromList(cd.findCycles(graph.getVertices())).isEmpty());
-    Assert.assertEquals(ListSequence.fromListAndArray(new ArrayList<String>(), "A", "B"), cd.topologicalSort(graph.getVertices()));
+    final Queue<String> q = QueueSequence.fromQueueAndArray(new LinkedList<String>(), "A", "B");
+    Sequence.fromIterable(cd.topologicalSort(graph.getVertices())).visitAll(new IVisitor<String>() {
+      public void visit(String v) {
+        Assert.assertEquals(QueueSequence.fromQueue(q).removeFirstElement(), v);
+      }
+    });
     graph.addEdges("B", "A");
     List<List<String>> cycles = cd.findCycles(graph.getVertices());
     Assert.assertSame(1, ListSequence.fromList(cycles).count());
@@ -92,12 +101,21 @@ public class Cycles_Test extends TestCase {
     graph.addEdges("I", "K", "J");
     List<List<String>> cycles = cd.findCycles(graph.getVertices());
     Assert.assertSame(0, ListSequence.fromList(cycles).count());
-    Assert.assertEquals(ListSequence.fromListAndArray(new ArrayList<String>(), "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K"), cd.topologicalSort(graph.getVertices()));
-    Assert.assertEquals(ListSequence.fromListAndArray(new ArrayList<String>(), "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K"), cd.topologicalSort(Sequence.fromIterable(graph.getVertices()).sort(new ISelector<String, Comparable<?>>() {
+    final Queue<String> q = QueueSequence.fromQueueAndArray(new LinkedList<String>(), "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K");
+    Sequence.fromIterable(cd.topologicalSort(graph.getVertices())).visitAll(new IVisitor<String>() {
+      public void visit(String v) {
+        Assert.assertEquals(QueueSequence.fromQueue(q).removeFirstElement(), v);
+      }
+    });
+    final Queue<String> qq = QueueSequence.fromQueueAndArray(new LinkedList<String>(), "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K");
+    Sequence.fromIterable(cd.topologicalSort(Sequence.fromIterable(graph.getVertices()).sort(new ISelector<String, Comparable<?>>() {
       public Comparable<?> select(String v) {
         return v;
       }
-    }, false)));
-
+    }, false))).visitAll(new IVisitor<String>() {
+      public void visit(String v) {
+        Assert.assertEquals(QueueSequence.fromQueue(qq).removeFirstElement(), v);
+      }
+    });
   }
 }

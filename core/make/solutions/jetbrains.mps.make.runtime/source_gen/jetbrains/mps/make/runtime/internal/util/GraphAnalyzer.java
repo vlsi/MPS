@@ -11,8 +11,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -47,20 +45,17 @@ public abstract class GraphAnalyzer<V> {
 
   public List<List<V>> findCycles(Iterable<V> vertices) {
     Iterable<GraphAnalyzer.Wrapper<V>> ws = this.init(vertices);
-    this.calcTimes(ws);
-    return this.collectCycles(ws);
+    this.topoSort(ws);
+    return this.collectCycles(this.topoSort(ws));
   }
 
   public Iterable<V> topologicalSort(Iterable<V> vertices) {
-    final List<V> res = ListSequence.fromList(new LinkedList<V>());
     Iterable<GraphAnalyzer.Wrapper<V>> ws = this.init(vertices);
-    dfs(ws, new _FunctionTypes._void_P2_E0<GraphAnalyzer.Wrapper<V>, _FunctionTypes._void_P0_E0>() {
-      public void invoke(GraphAnalyzer.Wrapper<V> w, _FunctionTypes._void_P0_E0 cont) {
-        cont.invoke();
-        ListSequence.fromList(res).insertElement(0, w.vertex);
+    return Sequence.fromIterable(this.topoSort(ws)).select(new ISelector<GraphAnalyzer.Wrapper<V>, V>() {
+      public V select(GraphAnalyzer.Wrapper<V> w) {
+        return w.vertex;
       }
-    }, forward);
-    return res;
+    });
   }
 
   private Iterable<GraphAnalyzer.Wrapper<V>> init(Iterable<V> vertices) {
@@ -73,15 +68,15 @@ public abstract class GraphAnalyzer<V> {
     }).toListSequence();
   }
 
-  private void calcTimes(Iterable<GraphAnalyzer.Wrapper<V>> ws) {
-    final Wrappers._int time = new Wrappers._int(0);
+  public Iterable<GraphAnalyzer.Wrapper<V>> topoSort(Iterable<GraphAnalyzer.Wrapper<V>> ws) {
+    final List<GraphAnalyzer.Wrapper<V>> res = ListSequence.fromList(new ArrayList<GraphAnalyzer.Wrapper<V>>());
     dfs(ws, new _FunctionTypes._void_P2_E0<GraphAnalyzer.Wrapper<V>, _FunctionTypes._void_P0_E0>() {
       public void invoke(GraphAnalyzer.Wrapper<V> w, _FunctionTypes._void_P0_E0 cont) {
-        time.value = w.setStartTime(++time.value);
         cont.invoke();
-        time.value = w.setEndTime(++time.value);
+        ListSequence.fromList(res).addElement(w);
       }
     }, forward);
+    return ListSequence.fromList(res).reversedList();
   }
 
   private List<List<V>> collectCycles(Iterable<GraphAnalyzer.Wrapper<V>> ws) {
@@ -91,11 +86,7 @@ public abstract class GraphAnalyzer<V> {
         w.clear();
       }
     });
-    Sequence.fromIterable(ws).sort(new ISelector<GraphAnalyzer.Wrapper<V>, Comparable<?>>() {
-      public Comparable<?> select(GraphAnalyzer.Wrapper<V> w) {
-        return w.endTime;
-      }
-    }, false).where(new IWhereFilter<GraphAnalyzer.Wrapper<V>>() {
+    Sequence.fromIterable(ws).where(new IWhereFilter<GraphAnalyzer.Wrapper<V>>() {
       public boolean accept(GraphAnalyzer.Wrapper<V> w) {
         return !(w.entered);
       }
@@ -162,22 +153,12 @@ public abstract class GraphAnalyzer<V> {
 
   private static class Wrapper<V> {
     private V vertex;
-    private int startTime = 0;
-    private int endTime = 0;
     private boolean entered = false;
     private boolean exited = false;
     private List<GraphAnalyzer.Wrapper<V>> successors = ListSequence.fromList(new ArrayList<GraphAnalyzer.Wrapper<V>>());
 
     private Wrapper(V v) {
       this.vertex = v;
-    }
-
-    private int setStartTime(int t) {
-      return (this.startTime = t);
-    }
-
-    private int setEndTime(int t) {
-      return (this.endTime = t);
     }
 
     private void successor(GraphAnalyzer.Wrapper<V> succ) {
