@@ -142,7 +142,7 @@ public class ShowImplementations_Action extends GeneratedAction {
           component.getPrefferedFocusableComponent().setRequestFocusEnabled(true);
           component.setPopup(popup);
         }
-      }, project);
+      }, ShowImplementations_Action.this.project);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ShowImplementations", t);

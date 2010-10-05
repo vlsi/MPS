@@ -754,6 +754,9 @@
               </node>
             </node>
           </node>
+          <node role="project:23" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="61892349587457259">
+            <link role="variableDeclaration:3" targetNodeId="5154621356648268576" resolveInfo="project" />
+          </node>
         </node>
       </node>
     </node>

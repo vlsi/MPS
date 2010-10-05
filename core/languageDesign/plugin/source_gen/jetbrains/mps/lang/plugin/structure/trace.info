@@ -35,7 +35,6 @@
   <unitInfo fileName="ExecuteLightweightCommandStatement.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement" />
   <unitInfo fileName="ExecuteEDTCommandStatement.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ExecuteEDTCommandStatement" />
   <unitInfo fileName="ExecuteCommandStatement.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ExecuteCommandStatement" />
-  <unitInfo fileName="ExecuteCommandInEDTStatement.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ExecuteCommandInEDTStatement" />
   <unitInfo fileName="IsApplicableBlock.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.IsApplicableBlock" />
   <unitInfo fileName="ConceptFunctionParameter_IModule.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_IModule" />
   <unitInfo fileName="ConceptFunctionParameter_node.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node" />
@@ -138,6 +137,7 @@
   <unitInfo fileName="RunConfigType.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.RunConfigType" />
   <unitInfo fileName="ShortcutChange.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ShortcutChange" />
   <unitInfo fileName="AddStatement.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.AddStatement" />
+  <unitInfo fileName="ExecuteCommandInEDTStatement.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ExecuteCommandInEDTStatement" />
   <unitInfo fileName="BaseExecuteCommandStatement.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.BaseExecuteCommandStatement" />
   <unitInfo fileName="FileGeneratorType.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.FileGeneratorType" />
   <unitInfo fileName="ApplicationPluginType.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.plugin.structure.ApplicationPluginType" />

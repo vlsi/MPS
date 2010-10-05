@@ -2401,6 +2401,11 @@
     <property name="package:0" value="Command" />
     <property name="name:0" value="ExecuteCommandInEDTStatement" />
     <link role="extends:0" targetNodeId="1225441160166:23" resolveInfo="BaseExecuteCommandStatement" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="8319207097755373179">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="project" />
+      <link role="target:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
+    </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1225441257565">
       <property name="value:0" value="execute command in EDT" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473891462:0" resolveInfo="alias" />
