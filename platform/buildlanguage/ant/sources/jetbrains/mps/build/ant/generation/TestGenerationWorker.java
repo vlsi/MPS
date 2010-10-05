@@ -37,7 +37,6 @@ import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
 import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
-import jetbrains.mps.project.tester.DiffReporter;
 import jetbrains.mps.project.tester.TesterGenerationHandler;
 import jetbrains.mps.reloading.EachClassPathItemVisitor;
 import jetbrains.mps.reloading.FileClassPathItem;
@@ -251,7 +250,7 @@ public class TestGenerationWorker extends GeneratorWorker {
       Boolean.parseBoolean(myWhatToDo.getProperty(TestGenerationOnTeamcity.SHOW_DIFF))) {
       diffReports = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
         public List<String> compute() {
-          return DiffReporter.createDiffReports(myGenerationHandler);
+          return myGenerationHandler.createDiffReports();
         }
       });
     } else {

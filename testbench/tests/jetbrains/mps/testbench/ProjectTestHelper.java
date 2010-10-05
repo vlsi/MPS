@@ -14,7 +14,6 @@ import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.tester.DiffReporter;
 import jetbrains.mps.project.tester.TesterGenerationHandler;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.testbench.GenerationCycle.Cycle;
@@ -202,7 +201,7 @@ public class ProjectTestHelper {
     List<String> diffReports;
     diffReports = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
       public List<String> compute() {
-        return DiffReporter.createDiffReports(myGenerationHandler);
+        return myGenerationHandler.createDiffReports();
       }
     });
     return diffReports;

@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JavaNameUtil;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -176,6 +177,78 @@ public class TesterGenerationHandler extends InMemoryJavaGenerationHandler {
       for (String f : files) {
         new File(f).delete();
       }
+    }
+  }
+
+  public List<String> createDiffReports() {
+    List<String> result = new ArrayList<String>();
+    for (SModelReference outputModel : this.getOutputModelRefs()) {
+      List<String> files = new ArrayList<String>();
+      File dir = this.getOutputDir(outputModel);
+      if (dir == null || !dir.exists() || !dir.canRead()) {
+        continue;
+      }
+      files.addAll(Arrays.asList(dir.list()));
+      // TODO extract j.m.project.tester -> tests
+      files.remove("trace.info");
+      for (String outputRoot : this.getRoots(outputModel)) {
+        String filename = this.getName(outputRoot, outputModel);
+        if (filename == null) {
+          continue;
+        }
+
+        final String filePath = this.getOutputDir(outputModel) + File.separator + filename;
+        final File testFile = new File(filePath);
+        String oldContent = null;
+        String newContent = this.getSourceByNode(outputRoot, outputModel);
+        if (testFile.exists() && testFile.canRead()) {
+          oldContent = FileUtil.read(testFile);
+          files.remove(filename);
+        }
+        final boolean created = oldContent == null && newContent != null;
+        final String title = getDiffReportTitle(outputRoot, filePath, created, false);
+        String[] oldTest = getContentAsArray(oldContent, "\n");
+        String[] newTest = getContentAsArray(newContent, System.getProperty("line.separator"));
+        addDiffReport(new TestComparator(oldTest, newTest), result, title);
+      }
+      for (String fileName : files) {
+        int dotPosition = fileName.indexOf(".");
+        if (dotPosition == 0 || dotPosition == -1) {
+          continue;
+        }
+        String title = getDiffReportTitle((SNode) null, fileName, false, true);
+        File file = new File(this.getOutputDir(outputModel) + File.separator + fileName);
+        if (!file.exists() || !file.canRead() || !file.isFile()) {
+          continue;
+        }
+        String[] test = FileUtil.read(file).split("\n");
+        addDiffReport(new TestComparator(test, new String[0]), result, title);
+      }
+    }
+    return result;
+  }
+
+  private static String getDiffReportTitle(SNode node, String fileName, boolean added, boolean deleted) {
+    String nodeFQName = NameUtil.nodeFQName(node);
+    return getDiffReportTitle(nodeFQName, fileName, added, deleted);
+  }
+
+  private static String getDiffReportTitle(String nodeFQName, String fileName,
+                                           boolean added, boolean deleted) {
+    return nodeFQName + ((added) ? " (created)" : ((deleted) ? " (deleted)" : "")) + "\n"
+      + "  (file: " + fileName + ")";
+  }
+
+  private static String[] getContentAsArray(String content, String separator) {
+    return (content != null) ? content.split(separator) : new String[0];
+  }
+
+  private static void addDiffReport(TestComparator comparator, List<String> reports, String title) {
+    DiffReport diffReport = comparator.compare();
+    if (diffReport.hasDifference()) {
+      reports.add(title);
+      reports.addAll(diffReport.getReportsAsList());
+      reports.add("");
     }
   }
 }

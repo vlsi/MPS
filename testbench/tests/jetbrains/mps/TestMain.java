@@ -50,7 +50,6 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.StubModelsEntry;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
 import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
-import jetbrains.mps.project.tester.DiffReporter;
 import jetbrains.mps.project.tester.TesterGenerationHandler;
 import jetbrains.mps.refactoring.framework.tests.IRefactoringTester;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -629,7 +628,7 @@ public class TestMain {
               );
 
               if (myIsRunnable) {
-                diffReports.addAll(DiffReporter.createDiffReports(generationHandler));
+                diffReports.addAll(generationHandler.createDiffReports());
               }
               List<SModel> outputModels = new ArrayList<SModel>();
               outputModels.addAll(generationHandler.getOutputModels());
