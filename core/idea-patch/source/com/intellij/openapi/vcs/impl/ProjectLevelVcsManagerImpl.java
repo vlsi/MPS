@@ -105,7 +105,7 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
 
 
 
-  
+
   @Patch
   public void startBackgroundVcsOperation() {
     myBackgroundOperationCounter++;
@@ -113,6 +113,7 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
     fireBackgroundOperationStarted();
     // MPS Patch ends
   }
+
 
   @Patch
   public void stopBackgroundVcsOperation() {
@@ -165,7 +166,7 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
   //Patched by MPS
   @Patch
   private final Set<IBackgroundVcsOperationsListener> myBackgroundOperationListeners = new LinkedHashSet<IBackgroundVcsOperationsListener>();
-  
+
   /*
   Method added by MPS
    */
@@ -302,6 +303,46 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
         onProjectClosing();
       }
     });
+  }
+
+  public void readDirectoryMappings(final Element element) {
+    myMappings.clear();
+
+    final List<VcsDirectoryMapping> mappingsList = new ArrayList<VcsDirectoryMapping>();
+    final List list = element.getChildren(ELEMENT_MAPPING);
+    boolean haveNonEmptyMappings = false;
+    for(Object childObj: list) {
+      Element child = (Element) childObj;
+      final String vcs = child.getAttributeValue(ATTRIBUTE_VCS);
+      if (vcs != null && vcs.length() > 0) {
+        haveNonEmptyMappings = true;
+      }
+      VcsDirectoryMapping mapping = new VcsDirectoryMapping(child.getAttributeValue(ATTRIBUTE_DIRECTORY), vcs);
+      mappingsList.add(mapping);
+
+      Element rootSettingsElement = child.getChild(ELEMENT_ROOT_SETTINGS);
+      if (rootSettingsElement != null) {
+        String className = rootSettingsElement.getAttributeValue(ATTRIBUTE_CLASS);
+        AbstractVcs vcsInstance = findVcsByName(mapping.getVcs());
+        if (vcsInstance != null && className != null) {
+          final VcsRootSettings rootSettings = vcsInstance.createEmptyVcsRootSettings();
+          if (rootSettings != null) {
+            try {
+              rootSettings.readExternal(rootSettingsElement);
+              mapping.setRootSettings(rootSettings);
+            } catch (InvalidDataException e) {
+              LOG.error("Failed to load VCS root settings class "+ className + " for VCS " + vcsInstance.getClass().getName(), e);
+            }
+          }
+        }
+      }
+    }
+    boolean defaultProject = Boolean.TRUE.toString().equals(element.getAttributeValue(ATTRIBUTE_DEFAULT_PROJECT));
+    // run autodetection if there's no VCS in default project and
+    if (haveNonEmptyMappings || !defaultProject) {
+      myMappingsLoaded = true;
+    }
+    myMappings.setDirectoryMappings(mappingsList);
   }
 
   @Nullable
