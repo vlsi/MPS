@@ -95,7 +95,8 @@ public class RefactoringProcessor {
     assert !context.isLocal();
 
     for (StructureModificationData.Dependency d : context.getStructureModificationData().getDependencies()) {
-      EditableSModelDescriptor model = (EditableSModelDescriptor) context.getCurrentScope().getModelDescriptor(d.getModelReference());
+//      EditableSModelDescriptor model = (EditableSModelDescriptor) context.getCurrentScope().getModelDescriptor(d.getModelReference());
+      EditableSModelDescriptor model = (EditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(d.getModelReference());
       model.getSModel(); // ensure model is loaded
       model.getRefactoringHistory().addStructureModificationData(context.getStructureModificationData());
       model.setVersion(model.getVersion() + 1);

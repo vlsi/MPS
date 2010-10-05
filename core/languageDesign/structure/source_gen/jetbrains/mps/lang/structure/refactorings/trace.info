@@ -18,7 +18,7 @@
   <unitInfo fileName="RenameLink.java" startLine="27" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.RenameLink" />
   <unitInfo fileName="MovePropertyUp.java" startLine="30" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.MovePropertyUp" />
   <unitInfo fileName="MoveLinkUp.java" startLine="30" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.MoveLinkUp" />
-  <unitInfo fileName="MoveConcepts.java" startLine="33" startPosition="0" endLine="217" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.MoveConcepts" />
+  <unitInfo fileName="MoveConcepts.java" startLine="33" startPosition="0" endLine="209" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.MoveConcepts" />
   <root nodeId="1347577327951781517">
     <nodeInfo nodeId="1347577327951781527" fileName="RenameConcept_newName_Settings.java" startLine="17" startPosition="35" endLine="18" endPosition="125" />
     <nodeInfo nodeId="8292108433549550607" fileName="RenameConcept.java" startLine="45" startPosition="68" endLine="46" endPosition="87" />
@@ -32,7 +32,7 @@
     <nodeInfo nodeId="1347577327951781590" fileName="RenameConcept.java" startLine="65" startPosition="180" endLine="66" endPosition="80" />
     <nodeInfo nodeId="1347577327951781605" fileName="RenameConcept.java" startLine="68" startPosition="5" endLine="69" endPosition="18" />
     <nodeInfo nodeId="1347577327951781619" fileName="RenameConcept.java" startLine="72" startPosition="86" endLine="73" endPosition="275" />
-    <nodeInfo nodeId="1347577327951781628" fileName="RenameConcept.java" startLine="76" startPosition="92" endLine="77" endPosition="50" />
+    <nodeInfo nodeId="1347577327951781628" fileName="RenameConcept.java" startLine="76" startPosition="92" endLine="77" endPosition="46" />
     <nodeInfo nodeId="8292108433549550611" fileName="RenameConcept.java" startLine="47" startPosition="74" endLine="50" endPosition="7" />
     <nodeInfo nodeId="1347577327951781587" fileName="RenameConcept.java" startLine="64" startPosition="33" endLine="67" endPosition="7" />
     <nodeInfo nodeId="1347577327951781585" fileName="RenameConcept.java" startLine="63" startPosition="139" endLine="68" endPosition="5" />
@@ -41,7 +41,7 @@
     <scopeInfo nodeId="8292108433549550612" fileName="RenameConcept.java" startLine="48" startPosition="184" endLine="49" endPosition="21" />
     <scopeInfo nodeId="1347577327951781589" fileName="RenameConcept.java" startLine="65" startPosition="180" endLine="66" endPosition="80" />
     <scopeInfo nodeId="1347577327951781618" fileName="RenameConcept.java" startLine="72" startPosition="86" endLine="73" endPosition="275" />
-    <scopeInfo nodeId="1347577327951781627" fileName="RenameConcept.java" startLine="76" startPosition="92" endLine="77" endPosition="50" />
+    <scopeInfo nodeId="1347577327951781627" fileName="RenameConcept.java" startLine="76" startPosition="92" endLine="77" endPosition="46" />
     <scopeInfo nodeId="1347577327951781520" fileName="RenameConcept.java" startLine="56" startPosition="69" endLine="58" endPosition="152">
       <varInfo nodeId="1347577327951781540" varName="newConceptName" />
     </scopeInfo>
@@ -70,7 +70,7 @@
     <nodeInfo nodeId="1347577327951781735" fileName="RenameLink.java" startLine="73" startPosition="77" endLine="74" endPosition="82" />
     <nodeInfo nodeId="1347577327951781743" fileName="RenameLink.java" startLine="75" startPosition="5" endLine="76" endPosition="18" />
     <nodeInfo nodeId="1347577327951781757" fileName="RenameLink.java" startLine="79" startPosition="86" endLine="80" endPosition="272" />
-    <nodeInfo nodeId="1347577327951781763" fileName="RenameLink.java" startLine="83" startPosition="92" endLine="84" endPosition="50" />
+    <nodeInfo nodeId="1347577327951781763" fileName="RenameLink.java" startLine="83" startPosition="92" endLine="84" endPosition="46" />
     <nodeInfo nodeId="8292108433549528142" fileName="RenameLink.java" startLine="51" startPosition="74" endLine="54" endPosition="7" />
     <nodeInfo nodeId="1347577327951781714" fileName="RenameLink.java" startLine="68" startPosition="93" endLine="71" endPosition="5" />
     <nodeInfo nodeId="1347577327951781732" fileName="RenameLink.java" startLine="72" startPosition="156" endLine="75" endPosition="5" />
@@ -80,7 +80,7 @@
     <scopeInfo nodeId="1347577327951781715" fileName="RenameLink.java" startLine="69" startPosition="33" endLine="70" endPosition="20" />
     <scopeInfo nodeId="1347577327951781734" fileName="RenameLink.java" startLine="73" startPosition="77" endLine="74" endPosition="82" />
     <scopeInfo nodeId="1347577327951781756" fileName="RenameLink.java" startLine="79" startPosition="86" endLine="80" endPosition="272" />
-    <scopeInfo nodeId="1347577327951781762" fileName="RenameLink.java" startLine="83" startPosition="92" endLine="84" endPosition="50" />
+    <scopeInfo nodeId="1347577327951781762" fileName="RenameLink.java" startLine="83" startPosition="92" endLine="84" endPosition="46" />
     <scopeInfo nodeId="1347577327951781641" fileName="RenameLink.java" startLine="60" startPosition="69" endLine="63" endPosition="149">
       <varInfo nodeId="1347577327951781662" varName="concept" />
       <varInfo nodeId="1347577327951781672" varName="newLinkName" />
@@ -110,7 +110,7 @@
     <nodeInfo nodeId="1347577327951781863" fileName="RenameProperty.java" startLine="67" startPosition="0" endLine="68" endPosition="157" />
     <nodeInfo nodeId="1347577327951781876" fileName="RenameProperty.java" startLine="69" startPosition="55" endLine="70" endPosition="82" />
     <nodeInfo nodeId="1347577327951781887" fileName="RenameProperty.java" startLine="71" startPosition="5" endLine="72" endPosition="18" />
-    <nodeInfo nodeId="1347577327951781902" fileName="RenameProperty.java" startLine="75" startPosition="92" endLine="76" endPosition="50" />
+    <nodeInfo nodeId="1347577327951781902" fileName="RenameProperty.java" startLine="75" startPosition="92" endLine="76" endPosition="46" />
     <nodeInfo nodeId="7845864677499819201" fileName="RenameProperty.java" startLine="46" startPosition="74" endLine="49" endPosition="7" />
     <nodeInfo nodeId="1347577327951781855" fileName="RenameProperty.java" startLine="63" startPosition="139" endLine="66" endPosition="5" />
     <nodeInfo nodeId="1347577327951781874" fileName="RenameProperty.java" startLine="68" startPosition="157" endLine="71" endPosition="5" />
@@ -119,7 +119,7 @@
     <scopeInfo nodeId="7845864677499819202" fileName="RenameProperty.java" startLine="47" startPosition="186" endLine="48" endPosition="21" />
     <scopeInfo nodeId="1347577327951781856" fileName="RenameProperty.java" startLine="64" startPosition="33" endLine="65" endPosition="20" />
     <scopeInfo nodeId="1347577327951781875" fileName="RenameProperty.java" startLine="69" startPosition="55" endLine="70" endPosition="82" />
-    <scopeInfo nodeId="1347577327951781901" fileName="RenameProperty.java" startLine="75" startPosition="92" endLine="76" endPosition="50" />
+    <scopeInfo nodeId="1347577327951781901" fileName="RenameProperty.java" startLine="75" startPosition="92" endLine="76" endPosition="46" />
     <scopeInfo nodeId="1347577327951781767" fileName="RenameProperty.java" startLine="55" startPosition="69" endLine="58" endPosition="149">
       <varInfo nodeId="1347577327951781798" varName="concept" />
       <varInfo nodeId="1347577327951781808" varName="newPropName" />
@@ -170,62 +170,46 @@
     <nodeInfo nodeId="3068114543317979140" fileName="MoveConcepts.java" startLine="122" startPosition="5" endLine="123" endPosition="26" />
     <nodeInfo nodeId="3068114543317979446" fileName="MoveConcepts.java" startLine="124" startPosition="62" endLine="125" endPosition="265" />
     <nodeInfo nodeId="3068114543317979163" fileName="MoveConcepts.java" startLine="126" startPosition="5" endLine="127" endPosition="160" />
-    <nodeInfo nodeId="3068114543317979171" fileName="MoveConcepts.java" startLine="128" startPosition="54" endLine="129" endPosition="41" />
-    <nodeInfo nodeId="3068114543317979171" fileName="MoveConcepts.java" startLine="129" startPosition="41" endLine="130" endPosition="80" />
-    <nodeInfo nodeId="3068114543317979175" fileName="MoveConcepts.java" startLine="130" startPosition="80" endLine="131" endPosition="95" />
-    <nodeInfo nodeId="3068114543317979183" fileName="MoveConcepts.java" startLine="132" startPosition="48" endLine="133" endPosition="86" />
-    <nodeInfo nodeId="3068114543317979193" fileName="MoveConcepts.java" startLine="134" startPosition="7" endLine="135" endPosition="67" />
-    <nodeInfo nodeId="3068114543317979199" fileName="MoveConcepts.java" startLine="135" startPosition="67" endLine="136" endPosition="64" />
-    <nodeInfo nodeId="3068114543317979203" fileName="MoveConcepts.java" startLine="136" startPosition="64" endLine="137" endPosition="41" />
-    <nodeInfo nodeId="3068114543317979203" fileName="MoveConcepts.java" startLine="137" startPosition="41" endLine="138" endPosition="58" />
-    <nodeInfo nodeId="3068114543317979210" fileName="MoveConcepts.java" startLine="140" startPosition="56" endLine="141" endPosition="41" />
-    <nodeInfo nodeId="3068114543317979210" fileName="MoveConcepts.java" startLine="141" startPosition="41" endLine="142" endPosition="82" />
-    <nodeInfo nodeId="3068114543317979214" fileName="MoveConcepts.java" startLine="142" startPosition="82" endLine="143" endPosition="99" />
-    <nodeInfo nodeId="3068114543317979222" fileName="MoveConcepts.java" startLine="144" startPosition="50" endLine="145" endPosition="90" />
-    <nodeInfo nodeId="3068114543317979232" fileName="MoveConcepts.java" startLine="146" startPosition="7" endLine="147" endPosition="71" />
-    <nodeInfo nodeId="3068114543317979238" fileName="MoveConcepts.java" startLine="147" startPosition="71" endLine="148" endPosition="68" />
-    <nodeInfo nodeId="3068114543317979242" fileName="MoveConcepts.java" startLine="148" startPosition="68" endLine="149" endPosition="41" />
-    <nodeInfo nodeId="3068114543317979242" fileName="MoveConcepts.java" startLine="149" startPosition="41" endLine="150" endPosition="60" />
-    <nodeInfo nodeId="3068114543317979249" fileName="MoveConcepts.java" startLine="152" startPosition="58" endLine="153" endPosition="41" />
-    <nodeInfo nodeId="3068114543317979249" fileName="MoveConcepts.java" startLine="153" startPosition="41" endLine="154" endPosition="85" />
-    <nodeInfo nodeId="3068114543317979253" fileName="MoveConcepts.java" startLine="154" startPosition="85" endLine="155" endPosition="105" />
-    <nodeInfo nodeId="3068114543317979261" fileName="MoveConcepts.java" startLine="156" startPosition="53" endLine="157" endPosition="96" />
-    <nodeInfo nodeId="3068114543317979271" fileName="MoveConcepts.java" startLine="158" startPosition="7" endLine="159" endPosition="77" />
-    <nodeInfo nodeId="3068114543317979277" fileName="MoveConcepts.java" startLine="159" startPosition="77" endLine="160" endPosition="73" />
-    <nodeInfo nodeId="3068114543317979281" fileName="MoveConcepts.java" startLine="160" startPosition="73" endLine="161" endPosition="41" />
-    <nodeInfo nodeId="3068114543317979281" fileName="MoveConcepts.java" startLine="161" startPosition="41" endLine="162" endPosition="63" />
-    <nodeInfo nodeId="3068114543317979288" fileName="MoveConcepts.java" startLine="164" startPosition="56" endLine="165" endPosition="41" />
-    <nodeInfo nodeId="3068114543317979288" fileName="MoveConcepts.java" startLine="165" startPosition="41" endLine="166" endPosition="82" />
-    <nodeInfo nodeId="3068114543317979292" fileName="MoveConcepts.java" startLine="166" startPosition="82" endLine="167" endPosition="99" />
-    <nodeInfo nodeId="3068114543317979300" fileName="MoveConcepts.java" startLine="168" startPosition="50" endLine="169" endPosition="91" />
-    <nodeInfo nodeId="3068114543317979310" fileName="MoveConcepts.java" startLine="170" startPosition="7" endLine="171" endPosition="71" />
-    <nodeInfo nodeId="3068114543317979316" fileName="MoveConcepts.java" startLine="171" startPosition="71" endLine="172" endPosition="68" />
-    <nodeInfo nodeId="3068114543317979320" fileName="MoveConcepts.java" startLine="172" startPosition="68" endLine="173" endPosition="41" />
-    <nodeInfo nodeId="3068114543317979320" fileName="MoveConcepts.java" startLine="173" startPosition="41" endLine="174" endPosition="60" />
-    <nodeInfo nodeId="3068114543317979325" fileName="MoveConcepts.java" startLine="175" startPosition="5" endLine="176" endPosition="53" />
-    <nodeInfo nodeId="3068114543317979332" fileName="MoveConcepts.java" startLine="179" startPosition="88" endLine="180" endPosition="73" />
-    <nodeInfo nodeId="3068114543317980421" fileName="MoveConcepts.java" startLine="180" startPosition="73" endLine="181" endPosition="0" />
-    <nodeInfo nodeId="3068114543317980413" fileName="MoveConcepts.java" startLine="181" startPosition="0" endLine="182" endPosition="62" />
-    <nodeInfo nodeId="3068114543317979343" fileName="MoveConcepts.java" startLine="182" startPosition="62" endLine="183" endPosition="123" />
-    <nodeInfo nodeId="3068114543317979772" fileName="MoveConcepts.java" startLine="184" startPosition="33" endLine="185" endPosition="124" />
-    <nodeInfo nodeId="3068114543317979864" fileName="MoveConcepts.java" startLine="186" startPosition="72" endLine="187" endPosition="94" />
-    <nodeInfo nodeId="3068114543317979360" fileName="MoveConcepts.java" startLine="189" startPosition="5" endLine="190" endPosition="123" />
-    <nodeInfo nodeId="3068114543317979842" fileName="MoveConcepts.java" startLine="191" startPosition="33" endLine="192" endPosition="124" />
-    <nodeInfo nodeId="3068114543317979879" fileName="MoveConcepts.java" startLine="193" startPosition="72" endLine="194" endPosition="94" />
-    <nodeInfo nodeId="3068114543317980423" fileName="MoveConcepts.java" startLine="196" startPosition="5" endLine="197" endPosition="0" />
-    <nodeInfo nodeId="3068114543317979377" fileName="MoveConcepts.java" startLine="197" startPosition="0" endLine="198" endPosition="18" />
-    <nodeInfo nodeId="3068114543317978887" fileName="MoveConcepts.java" startLine="201" startPosition="86" endLine="202" endPosition="54" />
-    <nodeInfo nodeId="3068114543317978895" fileName="MoveConcepts.java" startLine="203" startPosition="88" endLine="204" endPosition="263" />
-    <nodeInfo nodeId="3068114543317978904" fileName="MoveConcepts.java" startLine="205" startPosition="5" endLine="206" endPosition="25" />
-    <nodeInfo nodeId="3068114543317979381" fileName="MoveConcepts.java" startLine="209" startPosition="92" endLine="210" endPosition="50" />
-    <nodeInfo nodeId="3068114543317979171" fileName="MoveConcepts.java" startLine="128" startPosition="54" endLine="130" endPosition="80" />
-    <nodeInfo nodeId="3068114543317979203" fileName="MoveConcepts.java" startLine="136" startPosition="64" endLine="138" endPosition="58" />
-    <nodeInfo nodeId="3068114543317979210" fileName="MoveConcepts.java" startLine="140" startPosition="56" endLine="142" endPosition="82" />
-    <nodeInfo nodeId="3068114543317979242" fileName="MoveConcepts.java" startLine="148" startPosition="68" endLine="150" endPosition="60" />
-    <nodeInfo nodeId="3068114543317979249" fileName="MoveConcepts.java" startLine="152" startPosition="58" endLine="154" endPosition="85" />
-    <nodeInfo nodeId="3068114543317979281" fileName="MoveConcepts.java" startLine="160" startPosition="73" endLine="162" endPosition="63" />
-    <nodeInfo nodeId="3068114543317979288" fileName="MoveConcepts.java" startLine="164" startPosition="56" endLine="166" endPosition="82" />
-    <nodeInfo nodeId="3068114543317979320" fileName="MoveConcepts.java" startLine="172" startPosition="68" endLine="174" endPosition="60" />
+    <nodeInfo nodeId="3068114543317979171" fileName="MoveConcepts.java" startLine="128" startPosition="54" endLine="129" endPosition="76" />
+    <nodeInfo nodeId="3068114543317979175" fileName="MoveConcepts.java" startLine="129" startPosition="76" endLine="130" endPosition="95" />
+    <nodeInfo nodeId="3068114543317979183" fileName="MoveConcepts.java" startLine="131" startPosition="48" endLine="132" endPosition="86" />
+    <nodeInfo nodeId="3068114543317979193" fileName="MoveConcepts.java" startLine="133" startPosition="7" endLine="134" endPosition="67" />
+    <nodeInfo nodeId="3068114543317979199" fileName="MoveConcepts.java" startLine="134" startPosition="67" endLine="135" endPosition="64" />
+    <nodeInfo nodeId="3068114543317979203" fileName="MoveConcepts.java" startLine="135" startPosition="64" endLine="136" endPosition="54" />
+    <nodeInfo nodeId="3068114543317979210" fileName="MoveConcepts.java" startLine="138" startPosition="56" endLine="139" endPosition="78" />
+    <nodeInfo nodeId="3068114543317979214" fileName="MoveConcepts.java" startLine="139" startPosition="78" endLine="140" endPosition="99" />
+    <nodeInfo nodeId="3068114543317979222" fileName="MoveConcepts.java" startLine="141" startPosition="50" endLine="142" endPosition="90" />
+    <nodeInfo nodeId="3068114543317979232" fileName="MoveConcepts.java" startLine="143" startPosition="7" endLine="144" endPosition="71" />
+    <nodeInfo nodeId="3068114543317979238" fileName="MoveConcepts.java" startLine="144" startPosition="71" endLine="145" endPosition="68" />
+    <nodeInfo nodeId="3068114543317979242" fileName="MoveConcepts.java" startLine="145" startPosition="68" endLine="146" endPosition="56" />
+    <nodeInfo nodeId="3068114543317979249" fileName="MoveConcepts.java" startLine="148" startPosition="58" endLine="149" endPosition="81" />
+    <nodeInfo nodeId="3068114543317979253" fileName="MoveConcepts.java" startLine="149" startPosition="81" endLine="150" endPosition="105" />
+    <nodeInfo nodeId="3068114543317979261" fileName="MoveConcepts.java" startLine="151" startPosition="53" endLine="152" endPosition="96" />
+    <nodeInfo nodeId="3068114543317979271" fileName="MoveConcepts.java" startLine="153" startPosition="7" endLine="154" endPosition="77" />
+    <nodeInfo nodeId="3068114543317979277" fileName="MoveConcepts.java" startLine="154" startPosition="77" endLine="155" endPosition="73" />
+    <nodeInfo nodeId="3068114543317979281" fileName="MoveConcepts.java" startLine="155" startPosition="73" endLine="156" endPosition="59" />
+    <nodeInfo nodeId="3068114543317979288" fileName="MoveConcepts.java" startLine="158" startPosition="56" endLine="159" endPosition="78" />
+    <nodeInfo nodeId="3068114543317979292" fileName="MoveConcepts.java" startLine="159" startPosition="78" endLine="160" endPosition="99" />
+    <nodeInfo nodeId="3068114543317979300" fileName="MoveConcepts.java" startLine="161" startPosition="50" endLine="162" endPosition="91" />
+    <nodeInfo nodeId="3068114543317979310" fileName="MoveConcepts.java" startLine="163" startPosition="7" endLine="164" endPosition="71" />
+    <nodeInfo nodeId="3068114543317979316" fileName="MoveConcepts.java" startLine="164" startPosition="71" endLine="165" endPosition="68" />
+    <nodeInfo nodeId="3068114543317979320" fileName="MoveConcepts.java" startLine="165" startPosition="68" endLine="166" endPosition="56" />
+    <nodeInfo nodeId="3068114543317979325" fileName="MoveConcepts.java" startLine="167" startPosition="5" endLine="168" endPosition="53" />
+    <nodeInfo nodeId="3068114543317979332" fileName="MoveConcepts.java" startLine="171" startPosition="88" endLine="172" endPosition="73" />
+    <nodeInfo nodeId="3068114543317980421" fileName="MoveConcepts.java" startLine="172" startPosition="73" endLine="173" endPosition="0" />
+    <nodeInfo nodeId="3068114543317980413" fileName="MoveConcepts.java" startLine="173" startPosition="0" endLine="174" endPosition="62" />
+    <nodeInfo nodeId="3068114543317979343" fileName="MoveConcepts.java" startLine="174" startPosition="62" endLine="175" endPosition="123" />
+    <nodeInfo nodeId="3068114543317979772" fileName="MoveConcepts.java" startLine="176" startPosition="33" endLine="177" endPosition="124" />
+    <nodeInfo nodeId="3068114543317979864" fileName="MoveConcepts.java" startLine="178" startPosition="72" endLine="179" endPosition="94" />
+    <nodeInfo nodeId="3068114543317979360" fileName="MoveConcepts.java" startLine="181" startPosition="5" endLine="182" endPosition="123" />
+    <nodeInfo nodeId="3068114543317979842" fileName="MoveConcepts.java" startLine="183" startPosition="33" endLine="184" endPosition="124" />
+    <nodeInfo nodeId="3068114543317979879" fileName="MoveConcepts.java" startLine="185" startPosition="72" endLine="186" endPosition="94" />
+    <nodeInfo nodeId="3068114543317980423" fileName="MoveConcepts.java" startLine="188" startPosition="5" endLine="189" endPosition="0" />
+    <nodeInfo nodeId="3068114543317979377" fileName="MoveConcepts.java" startLine="189" startPosition="0" endLine="190" endPosition="18" />
+    <nodeInfo nodeId="3068114543317978887" fileName="MoveConcepts.java" startLine="193" startPosition="86" endLine="194" endPosition="54" />
+    <nodeInfo nodeId="3068114543317978895" fileName="MoveConcepts.java" startLine="195" startPosition="88" endLine="196" endPosition="263" />
+    <nodeInfo nodeId="3068114543317978904" fileName="MoveConcepts.java" startLine="197" startPosition="5" endLine="198" endPosition="25" />
+    <nodeInfo nodeId="3068114543317979381" fileName="MoveConcepts.java" startLine="201" startPosition="92" endLine="202" endPosition="46" />
     <nodeInfo nodeId="3068114543317978801" fileName="MoveConcepts.java" startLine="55" startPosition="68" endLine="58" endPosition="5" />
     <nodeInfo nodeId="3068114543317978852" fileName="MoveConcepts.java" startLine="64" startPosition="66" endLine="67" endPosition="11" />
     <nodeInfo nodeId="3068114543317979012" fileName="MoveConcepts.java" startLine="87" startPosition="153" endLine="90" endPosition="9" />
@@ -233,30 +217,30 @@
     <nodeInfo nodeId="3068114543317979087" fileName="MoveConcepts.java" startLine="107" startPosition="237" endLine="110" endPosition="9" />
     <nodeInfo nodeId="3068114543317979124" fileName="MoveConcepts.java" startLine="117" startPosition="157" endLine="120" endPosition="9" />
     <nodeInfo nodeId="3068114543317979142" fileName="MoveConcepts.java" startLine="123" startPosition="26" endLine="126" endPosition="5" />
-    <nodeInfo nodeId="3068114543317979181" fileName="MoveConcepts.java" startLine="131" startPosition="95" endLine="134" endPosition="7" />
-    <nodeInfo nodeId="3068114543317979220" fileName="MoveConcepts.java" startLine="143" startPosition="99" endLine="146" endPosition="7" />
-    <nodeInfo nodeId="3068114543317979259" fileName="MoveConcepts.java" startLine="155" startPosition="105" endLine="158" endPosition="7" />
-    <nodeInfo nodeId="3068114543317979298" fileName="MoveConcepts.java" startLine="167" startPosition="99" endLine="170" endPosition="7" />
-    <nodeInfo nodeId="3068114543317979858" fileName="MoveConcepts.java" startLine="185" startPosition="124" endLine="188" endPosition="7" />
-    <nodeInfo nodeId="3068114543317979873" fileName="MoveConcepts.java" startLine="192" startPosition="124" endLine="195" endPosition="7" />
-    <nodeInfo nodeId="3068114543317978892" fileName="MoveConcepts.java" startLine="202" startPosition="54" endLine="205" endPosition="5" />
+    <nodeInfo nodeId="3068114543317979181" fileName="MoveConcepts.java" startLine="130" startPosition="95" endLine="133" endPosition="7" />
+    <nodeInfo nodeId="3068114543317979220" fileName="MoveConcepts.java" startLine="140" startPosition="99" endLine="143" endPosition="7" />
+    <nodeInfo nodeId="3068114543317979259" fileName="MoveConcepts.java" startLine="150" startPosition="105" endLine="153" endPosition="7" />
+    <nodeInfo nodeId="3068114543317979298" fileName="MoveConcepts.java" startLine="160" startPosition="99" endLine="163" endPosition="7" />
+    <nodeInfo nodeId="3068114543317979858" fileName="MoveConcepts.java" startLine="177" startPosition="124" endLine="180" endPosition="7" />
+    <nodeInfo nodeId="3068114543317979873" fileName="MoveConcepts.java" startLine="184" startPosition="124" endLine="187" endPosition="7" />
+    <nodeInfo nodeId="3068114543317978892" fileName="MoveConcepts.java" startLine="194" startPosition="54" endLine="197" endPosition="5" />
     <nodeInfo nodeId="3068114543317978841" fileName="MoveConcepts.java" startLine="63" startPosition="118" endLine="68" endPosition="9" />
     <nodeInfo nodeId="3068114543317979001" fileName="MoveConcepts.java" startLine="85" startPosition="40" endLine="91" endPosition="7" />
     <nodeInfo nodeId="3068114543317979038" fileName="MoveConcepts.java" startLine="95" startPosition="42" endLine="101" endPosition="7" />
     <nodeInfo nodeId="3068114543317979075" fileName="MoveConcepts.java" startLine="105" startPosition="45" endLine="111" endPosition="7" />
     <nodeInfo nodeId="3068114543317979113" fileName="MoveConcepts.java" startLine="115" startPosition="42" endLine="121" endPosition="7" />
-    <nodeInfo nodeId="3068114543317979348" fileName="MoveConcepts.java" startLine="183" startPosition="123" endLine="189" endPosition="5" />
-    <nodeInfo nodeId="3068114543317979365" fileName="MoveConcepts.java" startLine="190" startPosition="123" endLine="196" endPosition="5" />
+    <nodeInfo nodeId="3068114543317979348" fileName="MoveConcepts.java" startLine="175" startPosition="123" endLine="181" endPosition="5" />
+    <nodeInfo nodeId="3068114543317979365" fileName="MoveConcepts.java" startLine="182" startPosition="123" endLine="188" endPosition="5" />
     <nodeInfo nodeId="3068114543317978999" fileName="MoveConcepts.java" startLine="84" startPosition="87" endLine="92" endPosition="5" />
     <nodeInfo nodeId="3068114543317979036" fileName="MoveConcepts.java" startLine="94" startPosition="91" endLine="102" endPosition="5" />
     <nodeInfo nodeId="3068114543317979073" fileName="MoveConcepts.java" startLine="104" startPosition="97" endLine="112" endPosition="5" />
     <nodeInfo nodeId="3068114543317979111" fileName="MoveConcepts.java" startLine="114" startPosition="91" endLine="122" endPosition="5" />
     <nodeInfo nodeId="3068114543317978821" fileName="MoveConcepts.java" startLine="61" startPosition="57" endLine="71" endPosition="0" />
+    <nodeInfo nodeId="3068114543317979169" fileName="MoveConcepts.java" startLine="127" startPosition="160" endLine="137" endPosition="5" />
+    <nodeInfo nodeId="3068114543317979208" fileName="MoveConcepts.java" startLine="137" startPosition="5" endLine="147" endPosition="5" />
+    <nodeInfo nodeId="3068114543317979247" fileName="MoveConcepts.java" startLine="147" startPosition="5" endLine="157" endPosition="5" />
+    <nodeInfo nodeId="3068114543317979286" fileName="MoveConcepts.java" startLine="157" startPosition="5" endLine="167" endPosition="5" />
     <nodeInfo nodeId="3068114543317978820" fileName="MoveConcepts.java" startLine="60" startPosition="66" endLine="71" endPosition="7" />
-    <nodeInfo nodeId="3068114543317979169" fileName="MoveConcepts.java" startLine="127" startPosition="160" endLine="139" endPosition="5" />
-    <nodeInfo nodeId="3068114543317979208" fileName="MoveConcepts.java" startLine="139" startPosition="5" endLine="151" endPosition="5" />
-    <nodeInfo nodeId="3068114543317979247" fileName="MoveConcepts.java" startLine="151" startPosition="5" endLine="163" endPosition="5" />
-    <nodeInfo nodeId="3068114543317979286" fileName="MoveConcepts.java" startLine="163" startPosition="5" endLine="175" endPosition="5" />
     <scopeInfo nodeId="3068114543317961958" fileName="MoveConcepts_targetModel_Settings.java" startLine="19" startPosition="53" endLine="20" endPosition="71" />
     <scopeInfo nodeId="3068114543317978802" fileName="MoveConcepts.java" startLine="56" startPosition="187" endLine="57" endPosition="19" />
     <scopeInfo nodeId="3068114543317978853" fileName="MoveConcepts.java" startLine="65" startPosition="56" endLine="66" endPosition="19" />
@@ -265,29 +249,29 @@
     <scopeInfo nodeId="3068114543317979088" fileName="MoveConcepts.java" startLine="108" startPosition="33" endLine="109" endPosition="68" />
     <scopeInfo nodeId="3068114543317979125" fileName="MoveConcepts.java" startLine="118" startPosition="31" endLine="119" endPosition="64" />
     <scopeInfo nodeId="3068114543317979143" fileName="MoveConcepts.java" startLine="124" startPosition="62" endLine="125" endPosition="265" />
-    <scopeInfo nodeId="3068114543317979182" fileName="MoveConcepts.java" startLine="132" startPosition="48" endLine="133" endPosition="86" />
-    <scopeInfo nodeId="3068114543317979221" fileName="MoveConcepts.java" startLine="144" startPosition="50" endLine="145" endPosition="90" />
-    <scopeInfo nodeId="3068114543317979260" fileName="MoveConcepts.java" startLine="156" startPosition="53" endLine="157" endPosition="96" />
-    <scopeInfo nodeId="3068114543317979299" fileName="MoveConcepts.java" startLine="168" startPosition="50" endLine="169" endPosition="91" />
-    <scopeInfo nodeId="3068114543317979863" fileName="MoveConcepts.java" startLine="186" startPosition="72" endLine="187" endPosition="94" />
-    <scopeInfo nodeId="3068114543317979878" fileName="MoveConcepts.java" startLine="193" startPosition="72" endLine="194" endPosition="94" />
-    <scopeInfo nodeId="3068114543317978894" fileName="MoveConcepts.java" startLine="203" startPosition="88" endLine="204" endPosition="263" />
-    <scopeInfo nodeId="3068114543317979380" fileName="MoveConcepts.java" startLine="209" startPosition="92" endLine="210" endPosition="50" />
-    <scopeInfo nodeId="3068114543317979171" fileName="MoveConcepts.java" startLine="128" startPosition="54" endLine="130" endPosition="80" />
-    <scopeInfo nodeId="3068114543317979203" fileName="MoveConcepts.java" startLine="136" startPosition="64" endLine="138" endPosition="58" />
-    <scopeInfo nodeId="3068114543317979210" fileName="MoveConcepts.java" startLine="140" startPosition="56" endLine="142" endPosition="82" />
-    <scopeInfo nodeId="3068114543317979242" fileName="MoveConcepts.java" startLine="148" startPosition="68" endLine="150" endPosition="60" />
-    <scopeInfo nodeId="3068114543317979249" fileName="MoveConcepts.java" startLine="152" startPosition="58" endLine="154" endPosition="85" />
-    <scopeInfo nodeId="3068114543317979281" fileName="MoveConcepts.java" startLine="160" startPosition="73" endLine="162" endPosition="63" />
-    <scopeInfo nodeId="3068114543317979288" fileName="MoveConcepts.java" startLine="164" startPosition="56" endLine="166" endPosition="82" />
-    <scopeInfo nodeId="3068114543317979320" fileName="MoveConcepts.java" startLine="172" startPosition="68" endLine="174" endPosition="60" />
+    <scopeInfo nodeId="3068114543317979171" fileName="MoveConcepts.java" startLine="128" startPosition="54" endLine="129" endPosition="76" />
+    <scopeInfo nodeId="3068114543317979182" fileName="MoveConcepts.java" startLine="131" startPosition="48" endLine="132" endPosition="86" />
+    <scopeInfo nodeId="3068114543317979203" fileName="MoveConcepts.java" startLine="135" startPosition="64" endLine="136" endPosition="54" />
+    <scopeInfo nodeId="3068114543317979210" fileName="MoveConcepts.java" startLine="138" startPosition="56" endLine="139" endPosition="78" />
+    <scopeInfo nodeId="3068114543317979221" fileName="MoveConcepts.java" startLine="141" startPosition="50" endLine="142" endPosition="90" />
+    <scopeInfo nodeId="3068114543317979242" fileName="MoveConcepts.java" startLine="145" startPosition="68" endLine="146" endPosition="56" />
+    <scopeInfo nodeId="3068114543317979249" fileName="MoveConcepts.java" startLine="148" startPosition="58" endLine="149" endPosition="81" />
+    <scopeInfo nodeId="3068114543317979260" fileName="MoveConcepts.java" startLine="151" startPosition="53" endLine="152" endPosition="96" />
+    <scopeInfo nodeId="3068114543317979281" fileName="MoveConcepts.java" startLine="155" startPosition="73" endLine="156" endPosition="59" />
+    <scopeInfo nodeId="3068114543317979288" fileName="MoveConcepts.java" startLine="158" startPosition="56" endLine="159" endPosition="78" />
+    <scopeInfo nodeId="3068114543317979299" fileName="MoveConcepts.java" startLine="161" startPosition="50" endLine="162" endPosition="91" />
+    <scopeInfo nodeId="3068114543317979320" fileName="MoveConcepts.java" startLine="165" startPosition="68" endLine="166" endPosition="56" />
+    <scopeInfo nodeId="3068114543317979863" fileName="MoveConcepts.java" startLine="178" startPosition="72" endLine="179" endPosition="94" />
+    <scopeInfo nodeId="3068114543317979878" fileName="MoveConcepts.java" startLine="185" startPosition="72" endLine="186" endPosition="94" />
+    <scopeInfo nodeId="3068114543317978894" fileName="MoveConcepts.java" startLine="195" startPosition="88" endLine="196" endPosition="263" />
+    <scopeInfo nodeId="3068114543317979380" fileName="MoveConcepts.java" startLine="201" startPosition="92" endLine="202" endPosition="46" />
     <scopeInfo nodeId="3068114543317978842" fileName="MoveConcepts.java" startLine="64" startPosition="66" endLine="67" endPosition="11" />
     <scopeInfo nodeId="3068114543317979142" fileName="MoveConcepts.java" startLine="123" startPosition="26" endLine="126" endPosition="5">
       <varInfo nodeId="3068114543317979161" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3068114543317979858" fileName="MoveConcepts.java" startLine="185" startPosition="124" endLine="188" endPosition="7" />
-    <scopeInfo nodeId="3068114543317979873" fileName="MoveConcepts.java" startLine="192" startPosition="124" endLine="195" endPosition="7" />
-    <scopeInfo nodeId="3068114543317978892" fileName="MoveConcepts.java" startLine="202" startPosition="54" endLine="205" endPosition="5" />
+    <scopeInfo nodeId="3068114543317979858" fileName="MoveConcepts.java" startLine="177" startPosition="124" endLine="180" endPosition="7" />
+    <scopeInfo nodeId="3068114543317979873" fileName="MoveConcepts.java" startLine="184" startPosition="124" endLine="187" endPosition="7" />
+    <scopeInfo nodeId="3068114543317978892" fileName="MoveConcepts.java" startLine="194" startPosition="54" endLine="197" endPosition="5" />
     <scopeInfo nodeId="3068114543317979002" fileName="MoveConcepts.java" startLine="86" startPosition="64" endLine="90" endPosition="9">
       <varInfo nodeId="3068114543317979004" varName="editor" />
     </scopeInfo>
@@ -300,16 +284,16 @@
     <scopeInfo nodeId="3068114543317979114" fileName="MoveConcepts.java" startLine="116" startPosition="64" endLine="120" endPosition="9">
       <varInfo nodeId="3068114543317979116" varName="dataFlow" />
     </scopeInfo>
-    <scopeInfo nodeId="3068114543317979349" fileName="MoveConcepts.java" startLine="184" startPosition="33" endLine="188" endPosition="7">
+    <scopeInfo nodeId="3068114543317979349" fileName="MoveConcepts.java" startLine="176" startPosition="33" endLine="180" endPosition="7">
       <varInfo nodeId="3068114543317979773" varName="models" />
     </scopeInfo>
-    <scopeInfo nodeId="3068114543317979366" fileName="MoveConcepts.java" startLine="191" startPosition="33" endLine="195" endPosition="7">
+    <scopeInfo nodeId="3068114543317979366" fileName="MoveConcepts.java" startLine="183" startPosition="33" endLine="187" endPosition="7">
       <varInfo nodeId="3068114543317979843" varName="models" />
     </scopeInfo>
     <scopeInfo nodeId="3068114543317978841" fileName="MoveConcepts.java" startLine="63" startPosition="118" endLine="68" endPosition="9">
       <varInfo nodeId="3068114543317978862" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3068114543317978886" fileName="MoveConcepts.java" startLine="201" startPosition="86" endLine="206" endPosition="25">
+    <scopeInfo nodeId="3068114543317978886" fileName="MoveConcepts.java" startLine="193" startPosition="86" endLine="198" endPosition="25">
       <varInfo nodeId="3068114543317978888" varName="searchResults" />
     </scopeInfo>
     <scopeInfo nodeId="3068114543317979000" fileName="MoveConcepts.java" startLine="85" startPosition="40" endLine="91" endPosition="7" />
@@ -331,33 +315,33 @@
     <scopeInfo nodeId="3068114543317978822" fileName="MoveConcepts.java" startLine="62" startPosition="25" endLine="69" endPosition="28">
       <varInfo nodeId="3068114543317978832" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="3068114543317978821" fileName="MoveConcepts.java" startLine="61" startPosition="57" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="3068114543317979170" fileName="MoveConcepts.java" startLine="128" startPosition="54" endLine="138" endPosition="58">
+    <scopeInfo nodeId="3068114543317979170" fileName="MoveConcepts.java" startLine="128" startPosition="54" endLine="136" endPosition="54">
       <varInfo nodeId="3068114543317979176" varName="targetEditorModelDescriptor" />
       <varInfo nodeId="3068114543317979194" varName="editorModel" />
     </scopeInfo>
-    <scopeInfo nodeId="3068114543317979209" fileName="MoveConcepts.java" startLine="140" startPosition="56" endLine="150" endPosition="60">
+    <scopeInfo nodeId="3068114543317979209" fileName="MoveConcepts.java" startLine="138" startPosition="56" endLine="146" endPosition="56">
       <varInfo nodeId="3068114543317979215" varName="targetBehaviorModelDescriptor" />
       <varInfo nodeId="3068114543317979233" varName="behaviorModel" />
     </scopeInfo>
-    <scopeInfo nodeId="3068114543317979248" fileName="MoveConcepts.java" startLine="152" startPosition="58" endLine="162" endPosition="63">
+    <scopeInfo nodeId="3068114543317979248" fileName="MoveConcepts.java" startLine="148" startPosition="58" endLine="156" endPosition="59">
       <varInfo nodeId="3068114543317979254" varName="targetConstraintsModelDescriptor" />
       <varInfo nodeId="3068114543317979272" varName="constraintsModel" />
     </scopeInfo>
-    <scopeInfo nodeId="3068114543317979287" fileName="MoveConcepts.java" startLine="164" startPosition="56" endLine="174" endPosition="60">
+    <scopeInfo nodeId="3068114543317979287" fileName="MoveConcepts.java" startLine="158" startPosition="56" endLine="166" endPosition="56">
       <varInfo nodeId="3068114543317979311" varName="dataFlowModel" />
       <varInfo nodeId="3068114543317979293" varName="targetDataFlowModelDescriptor" />
     </scopeInfo>
+    <scopeInfo nodeId="3068114543317978821" fileName="MoveConcepts.java" startLine="61" startPosition="57" endLine="71" endPosition="0" />
     <scopeInfo nodeId="3068114543317978761" fileName="MoveConcepts.java" startLine="55" startPosition="68" endLine="72" endPosition="24">
       <varInfo nodeId="3068114543317978825" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="3068114543317979331" fileName="MoveConcepts.java" startLine="179" startPosition="88" endLine="198" endPosition="18">
+    <scopeInfo nodeId="3068114543317979331" fileName="MoveConcepts.java" startLine="171" startPosition="88" endLine="190" endPosition="18">
       <varInfo nodeId="3068114543317979344" varName="sourceLanguage" />
       <varInfo nodeId="3068114543317980414" varName="project" />
       <varInfo nodeId="3068114543317979333" varName="result" />
       <varInfo nodeId="3068114543317979361" varName="targetLanguage" />
     </scopeInfo>
-    <scopeInfo nodeId="3068114543317961457" fileName="MoveConcepts.java" startLine="75" startPosition="69" endLine="176" endPosition="53">
+    <scopeInfo nodeId="3068114543317961457" fileName="MoveConcepts.java" startLine="75" startPosition="69" endLine="168" endPosition="53">
       <varInfo nodeId="3068114543317978958" varName="sourceLanguage" />
       <varInfo nodeId="3068114543317978986" varName="dataFlows" />
       <varInfo nodeId="3068114543317979031" varName="behaviorModelDescriptor" />
@@ -402,7 +386,7 @@
     <nodeInfo nodeId="3068114543317980411" fileName="MoveLinkUp.java" startLine="111" startPosition="5" endLine="112" endPosition="0" />
     <nodeInfo nodeId="3068114543317980368" fileName="MoveLinkUp.java" startLine="112" startPosition="0" endLine="113" endPosition="18" />
     <nodeInfo nodeId="3068114543317979975" fileName="MoveLinkUp.java" startLine="116" startPosition="86" endLine="117" endPosition="208" />
-    <nodeInfo nodeId="3068114543317979980" fileName="MoveLinkUp.java" startLine="120" startPosition="92" endLine="121" endPosition="50" />
+    <nodeInfo nodeId="3068114543317979980" fileName="MoveLinkUp.java" startLine="120" startPosition="92" endLine="121" endPosition="46" />
     <nodeInfo nodeId="3068114543317979938" fileName="MoveLinkUp.java" startLine="89" startPosition="10" endLine="91" endPosition="5" />
     <nodeInfo nodeId="6188135140808824125" fileName="MoveLinkUp_targetConcept_Chooser.java" startLine="34" startPosition="101" endLine="37" endPosition="5" />
     <nodeInfo nodeId="3068114543317980126" fileName="MoveLinkUp.java" startLine="59" startPosition="7" endLine="62" endPosition="5" />
@@ -432,7 +416,7 @@
     <scopeInfo nodeId="3068114543317980320" fileName="MoveLinkUp.java" startLine="101" startPosition="72" endLine="102" endPosition="94" />
     <scopeInfo nodeId="3068114543317980356" fileName="MoveLinkUp.java" startLine="108" startPosition="72" endLine="109" endPosition="94" />
     <scopeInfo nodeId="3068114543317979974" fileName="MoveLinkUp.java" startLine="116" startPosition="86" endLine="117" endPosition="208" />
-    <scopeInfo nodeId="3068114543317979979" fileName="MoveLinkUp.java" startLine="120" startPosition="92" endLine="121" endPosition="50" />
+    <scopeInfo nodeId="3068114543317979979" fileName="MoveLinkUp.java" startLine="120" startPosition="92" endLine="121" endPosition="46" />
     <scopeInfo nodeId="3068114543317980315" fileName="MoveLinkUp.java" startLine="100" startPosition="124" endLine="103" endPosition="7" />
     <scopeInfo nodeId="3068114543317980351" fileName="MoveLinkUp.java" startLine="107" startPosition="124" endLine="110" endPosition="7" />
     <scopeInfo nodeId="3068114543317980093" fileName="MoveLinkUp.java" startLine="55" startPosition="57" endLine="59" endPosition="0" />
@@ -489,7 +473,7 @@
     <nodeInfo nodeId="3068114543317980656" fileName="MovePropertyUp.java" startLine="96" startPosition="5" endLine="97" endPosition="0" />
     <nodeInfo nodeId="3068114543317980657" fileName="MovePropertyUp.java" startLine="97" startPosition="0" endLine="98" endPosition="18" />
     <nodeInfo nodeId="3068114543317980554" fileName="MovePropertyUp.java" startLine="101" startPosition="86" endLine="102" endPosition="208" />
-    <nodeInfo nodeId="3068114543317980559" fileName="MovePropertyUp.java" startLine="105" startPosition="92" endLine="106" endPosition="50" />
+    <nodeInfo nodeId="3068114543317980559" fileName="MovePropertyUp.java" startLine="105" startPosition="92" endLine="106" endPosition="46" />
     <nodeInfo nodeId="3068114543317980475" fileName="MovePropertyUp.java" startLine="71" startPosition="12" endLine="73" endPosition="7" />
     <nodeInfo nodeId="6188135140808824153" fileName="MovePropertyUp_targetConcept_Chooser.java" startLine="34" startPosition="105" endLine="37" endPosition="5" />
     <nodeInfo nodeId="3068114543317980541" fileName="MovePropertyUp.java" startLine="57" startPosition="7" endLine="60" endPosition="5" />
@@ -509,7 +493,7 @@
     <scopeInfo nodeId="3068114543317980606" fileName="MovePropertyUp.java" startLine="86" startPosition="72" endLine="87" endPosition="94" />
     <scopeInfo nodeId="3068114543317980644" fileName="MovePropertyUp.java" startLine="93" startPosition="72" endLine="94" endPosition="94" />
     <scopeInfo nodeId="3068114543317980553" fileName="MovePropertyUp.java" startLine="101" startPosition="86" endLine="102" endPosition="208" />
-    <scopeInfo nodeId="3068114543317980558" fileName="MovePropertyUp.java" startLine="105" startPosition="92" endLine="106" endPosition="50" />
+    <scopeInfo nodeId="3068114543317980558" fileName="MovePropertyUp.java" startLine="105" startPosition="92" endLine="106" endPosition="46" />
     <scopeInfo nodeId="3068114543317980601" fileName="MovePropertyUp.java" startLine="85" startPosition="124" endLine="88" endPosition="7" />
     <scopeInfo nodeId="3068114543317980639" fileName="MovePropertyUp.java" startLine="92" startPosition="124" endLine="95" endPosition="7" />
     <scopeInfo nodeId="3068114543317980529" fileName="MovePropertyUp.java" startLine="53" startPosition="57" endLine="57" endPosition="0" />
