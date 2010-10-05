@@ -233,7 +233,7 @@ public class WorkbenchModelAccess extends ModelAccess {
     }
     getWriteLock().unlock();
 
-    return ApplicationManager.getApplication().runReadAction(new Computable<Boolean>() {
+    Computable<Boolean> computable = new Computable<Boolean>() {
       public Boolean compute() {
         if (getWriteLock().tryLock()) {
           try {
@@ -246,7 +246,13 @@ public class WorkbenchModelAccess extends ModelAccess {
           return false;
         }
       }
-    });
+    };
+
+    if (ThreadUtils.isEventDispatchThread()) {
+      return ApplicationManager.getApplication().runWriteAction(computable);
+    } else {
+      return ApplicationManager.getApplication().runReadAction(computable);
+    }
   }
 
   @Override

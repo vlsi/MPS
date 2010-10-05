@@ -334,7 +334,6 @@ public class SModelRepository implements ApplicationComponent {
   }
 
   public void saveAll() {
-    LOG.assertInCommand();
     ModelAccess.assertLegalWrite();
 
     for (SModelDescriptor md : myModelDescriptors) {

@@ -743,7 +743,7 @@
               <link role="baseMethodDeclaration:3" targetNodeId="2.~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolveInfo="instance" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4293145514664643832">
-              <link role="baseMethodDeclaration:3" targetNodeId="2.~ModelCommandExecutor.runCommandInEDT(java.lang.Runnable):void" resolveInfo="runCommandInEDT" />
+              <link role="baseMethodDeclaration:3" targetNodeId="2.~ModelCommandExecutor.runWriteInEDT(java.lang.Runnable):void" resolveInfo="runWriteInEDT" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral:3" id="4293145514664643833">
                 <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4293145514664643834">
                   <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="4293145514664643835">

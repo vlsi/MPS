@@ -4723,7 +4723,7 @@
     <nodeInfo nodeId="8625430239852275559" fileName="GoByCurrentReference_Action.java" startLine="176" startPosition="80" endLine="181" endPosition="9" />
     <nodeInfo nodeId="8625430239852275595" fileName="GoByCurrentReference_Action.java" startLine="185" startPosition="116" endLine="190" endPosition="7" />
     <nodeInfo nodeId="8625430239852275629" fileName="GoByCurrentReference_Action.java" startLine="192" startPosition="98" endLine="197" endPosition="7" />
-    <nodeInfo nodeId="6906006820130795044" fileName="GoByCurrentReference_Action.java" startLine="136" startPosition="67" endLine="142" endPosition="0" />
+    <nodeInfo nodeId="6906006820130795044" fileName="GoByCurrentReference_Action.java" startLine="136" startPosition="65" endLine="142" endPosition="0" />
     <nodeInfo nodeId="6105093990493768785" fileName="GoByCurrentReference_Action.java" startLine="201" startPosition="0" endLine="207" endPosition="0" />
     <nodeInfo nodeId="5648737274373533971" fileName="GoByCurrentReference_Action.java" startLine="123" startPosition="51" endLine="130" endPosition="9" />
     <nodeInfo nodeId="6906006820130794721" fileName="GoByCurrentReference_Action.java" startLine="135" startPosition="108" endLine="142" endPosition="15" />
@@ -4770,7 +4770,7 @@
     <scopeInfo nodeId="8625430239852275629" fileName="GoByCurrentReference_Action.java" startLine="192" startPosition="98" endLine="197" endPosition="7">
       <varInfo nodeId="8625430239852275630" varName="np" />
     </scopeInfo>
-    <scopeInfo nodeId="6906006820130795044" fileName="GoByCurrentReference_Action.java" startLine="136" startPosition="67" endLine="142" endPosition="0" />
+    <scopeInfo nodeId="6906006820130795044" fileName="GoByCurrentReference_Action.java" startLine="136" startPosition="65" endLine="142" endPosition="0" />
     <scopeInfo nodeId="8625430239852275504" fileName="GoByCurrentReference_Action.java" startLine="166" startPosition="23" endLine="172" endPosition="7">
       <varInfo nodeId="8625430239852275506" varName="fqName" />
     </scopeInfo>
@@ -4815,7 +4815,7 @@
       <varInfo nodeId="5357294907628574088" varName="targetNode" />
       <varInfo nodeId="1686314534853253655" varName="projectPath" />
     </scopeInfo>
-    <unitInfo nodeId="6906006820130795044" fileName="GoByCurrentReference_Action.java" startLine="136" startPosition="55" endLine="142" endPosition="13" unitName="jetbrains.mps.ide.actions.GoByCurrentReference_Action$2" />
+    <unitInfo nodeId="6906006820130795044" fileName="GoByCurrentReference_Action.java" startLine="136" startPosition="53" endLine="142" endPosition="13" unitName="jetbrains.mps.ide.actions.GoByCurrentReference_Action$2" />
     <unitInfo nodeId="5735282328623448762" fileName="GoByCurrentReference_Action.java" startLine="133" startPosition="12" endLine="144" endPosition="9" unitName="jetbrains.mps.ide.actions.GoByCurrentReference_Action$1" />
   </root>
   <root nodeId="5408201126509038596">

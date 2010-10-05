@@ -177,7 +177,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
     if (getLoadingState() == ModelLoadingState.NOT_LOADED) return;
 
     //we must be in command since model save might change model by adding model/language imports
-    if (!mySModel.isLoading()) LOG.assertInCommand();
+    //if (!mySModel.isLoading()) LOG.assertInCommand();
 
     LOG.info("Saving model " + mySModel.getSModelFqName());
 
