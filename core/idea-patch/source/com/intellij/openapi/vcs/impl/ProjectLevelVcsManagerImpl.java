@@ -73,11 +73,6 @@ import java.awt.BorderLayout;
 import java.util.*;
 
 public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx implements ProjectComponent, JDOMExternalizable {
-  //Patched by MPS
-  @Patch
-  private final Set<IBackgroundVcsOperationsListener> myBackgroundOperationListeners = new LinkedHashSet<IBackgroundVcsOperationsListener>();
-
-
   @Nullable
   @Patch
   public AbstractVcs getVcsFor(@NotNull VirtualFile file) {
@@ -98,33 +93,19 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
     return AllVcses.getInstance(myProject).getByName(vcsName);
   }
 
-  @Nullable
-  @Patch
-  public AbstractVcs getVcsFor(final FilePath file) {
-    return ApplicationManager.getApplication().runReadAction(new Computable<AbstractVcs>() {
-      @Nullable
-      public AbstractVcs compute() {
-        if ((!ApplicationManager.getApplication().isUnitTestMode()) && (!myProject.isInitialized())) return null;
-        if (myProject.isDisposed()) throw new ProcessCanceledException();
-        VirtualFile vFile = ChangesUtil.findValidParent(file);
-        if (vFile != null) {
-          // the original code was return getVcsFor(vFile);
-          // I changed it in order to fix MPS-6333 Exception after integrating change into branch
-          // File can be outside of any mappings but we still want to commit it so we have to find vcs anyway
-          // MPS Patch begin:
-          AbstractVcs vcsFor = getVcsFor(vFile);
-          if (vcsFor != null) {
-            return vcsFor;
-          } else {
-            return findVersioningVcs(vFile.getParent());
-          }
-          // MPS Patch end
-        }
-        return null;
-      }
-    });
-  }
 
+
+
+
+
+
+
+
+
+
+
+
+  
   @Patch
   public void startBackgroundVcsOperation() {
     myBackgroundOperationCounter++;
@@ -197,6 +178,45 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
     // MPS Patch ends
   }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //Patched by MPS
+  @Patch
+  private final Set<IBackgroundVcsOperationsListener> myBackgroundOperationListeners = new LinkedHashSet<IBackgroundVcsOperationsListener>();
+  
   /*
   Method added by MPS
    */
@@ -240,6 +260,34 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
 
     public void allBackgroundOperationsStopped();
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -303,6 +351,22 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
       @Override
       public void projectClosing(Project project) {
         onProjectClosing();
+      }
+    });
+  }
+
+  @Nullable
+  public AbstractVcs getVcsFor(final FilePath file) {
+    return ApplicationManager.getApplication().runReadAction(new Computable<AbstractVcs>() {
+      @Nullable
+      public AbstractVcs compute() {
+        if ((!ApplicationManager.getApplication().isUnitTestMode()) && (!myProject.isInitialized())) return null;
+        if (myProject.isDisposed()) throw new ProcessCanceledException();
+        VirtualFile vFile = ChangesUtil.findValidParent(file);
+        if (vFile != null) {
+          return getVcsFor(vFile);
+        }
+        return null;
       }
     });
   }
