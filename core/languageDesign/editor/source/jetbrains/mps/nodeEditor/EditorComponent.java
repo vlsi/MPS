@@ -55,7 +55,6 @@ import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.plugins.PluginUtil;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
@@ -2262,14 +2261,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         case SELECT_DOWN:
         case SELECT_HOME:
         case SELECT_END:
-        case SELECT_LOCAL_HOME:
-        case SELECT_LOCAL_END:
-        case LOCAL_HOME:
-        case LOCAL_END:
-        case HOME:
-        case END:
-        case ROOT_HOME:
-        case ROOT_END:
         case PAGE_UP:
         case PAGE_DOWN:
         case NEXT:
