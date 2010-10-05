@@ -67,29 +67,17 @@ public interface ModelCommandExecutor {
   @Deprecated
   <T> T runWriteActionInCommand(Computable<T> c);
 
-  <T> T runWriteActionInCommand(Computable<T> c, Project project);
-
-  /**
-   * use runWriteActionInCommand(final Computable<T> c, final String name, final UndoConfirmationPolicy policy, Project project)
-   */
-  @Deprecated
-  <T> T runWriteActionInCommand(Computable<T> c, String name, UndoConfirmationPolicy policy);
-
-  <T> T runWriteActionInCommand(Computable<T> c, String name, UndoConfirmationPolicy policy, Project project);
-
   /**
    * use runWriteActionInCommand(Runnable r, Project project)
    */
   @Deprecated
   void runWriteActionInCommand(Runnable r);
 
-  void runWriteActionInCommand(Runnable r, Project project);
+  <T> T runWriteActionInCommand(Computable<T> c, Project project);
 
-  /**
-   * use runWriteActionInCommand(Runnable r, String name, UndoConfirmationPolicy policy, Project project)
-   */
-  @Deprecated
-  void runWriteActionInCommand(Runnable r, String name, UndoConfirmationPolicy policy);
+  <T> T runWriteActionInCommand(Computable<T> c, String name, UndoConfirmationPolicy policy, Project project);
+
+  void runWriteActionInCommand(Runnable r, Project project);
 
   void runWriteActionInCommand(Runnable r, String name, UndoConfirmationPolicy policy, Project project);
 

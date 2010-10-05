@@ -296,12 +296,6 @@ public class WorkbenchModelAccess extends ModelAccess {
   }
 
   @Override
-  @Deprecated
-  public <T> T runWriteActionInCommand(Computable<T> c, String name, UndoConfirmationPolicy policy) {
-    return runWriteActionInCommand(c, name, policy, CurrentProjectAccessUtil.getProjectFromUI());
-  }
-
-  @Override
   public <T> T runWriteActionInCommand(final Computable<T> c, final String name, final UndoConfirmationPolicy policy, Project project) {
     final Object[] result = new Object[1];
     CommandProcessor.getInstance().executeCommand(project, new Runnable() {
@@ -321,12 +315,6 @@ public class WorkbenchModelAccess extends ModelAccess {
   @Override
   public void runWriteActionInCommand(Runnable r, Project project) {
     runWriteActionInCommand(r, null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION, project);
-  }
-
-  @Override
-  @Deprecated
-  public void runWriteActionInCommand(Runnable r, String name, UndoConfirmationPolicy policy) {
-    runWriteActionInCommand(r, name, policy, CurrentProjectAccessUtil.getProjectFromUI());
   }
 
   @Override

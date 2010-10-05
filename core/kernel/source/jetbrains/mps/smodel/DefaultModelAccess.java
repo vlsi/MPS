@@ -163,12 +163,6 @@ public class DefaultModelAccess extends ModelAccess {
   }
 
   @Override
-  @Deprecated
-  public <T> T runWriteActionInCommand(Computable<T> c, String name, UndoConfirmationPolicy policy) {
-    return runWriteAction(c);
-  }
-
-  @Override
   public <T> T runWriteActionInCommand(final Computable<T> c, final String name, final UndoConfirmationPolicy policy, Project project) {
     return runWriteAction(c);
   }
@@ -181,12 +175,6 @@ public class DefaultModelAccess extends ModelAccess {
 
   @Override
   public void runWriteActionInCommand(Runnable r, Project project) {
-    runWriteAction(r);
-  }
-
-  @Override
-  @Deprecated
-  public void runWriteActionInCommand(Runnable r, String name, UndoConfirmationPolicy policy) {
     runWriteAction(r);
   }
 
