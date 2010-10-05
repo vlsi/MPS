@@ -115,57 +115,6 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
   }
 
   @Patch
-  public void readDirectoryMappings(final Element element) {
-    myMappings.clear();
-
-    final List<VcsDirectoryMapping> mappingsList = new ArrayList<VcsDirectoryMapping>();
-    final List list = element.getChildren(ELEMENT_MAPPING);
-    boolean haveNonEmptyMappings = false;
-    for (Object childObj : list) {
-      Element child = (Element) childObj;
-      final String vcs = child.getAttributeValue(ATTRIBUTE_VCS);
-      if (vcs != null && vcs.length() > 0) {
-        haveNonEmptyMappings = true;
-      }
-      VcsDirectoryMapping mapping = new VcsDirectoryMapping(child.getAttributeValue(ATTRIBUTE_DIRECTORY), vcs);
-      mappingsList.add(mapping);
-
-      Element rootSettingsElement = child.getChild(ELEMENT_ROOT_SETTINGS);
-      if (rootSettingsElement != null) {
-        String className = rootSettingsElement.getAttributeValue(ATTRIBUTE_CLASS);
-        AbstractVcs vcsInstance = findVcsByName(mapping.getVcs());
-        if (vcsInstance != null && className != null) {
-          final VcsRootSettings rootSettings = vcsInstance.createEmptyVcsRootSettings();
-          if (rootSettings != null) {
-            try {
-              rootSettings.readExternal(rootSettingsElement);
-              mapping.setRootSettings(rootSettings);
-            } catch (InvalidDataException e) {
-              LOG.error("Failed to load VCS root settings class " + className + " for VCS " + vcsInstance.getClass().getName(), e);
-            }
-          }
-        }
-      }
-    }
-    boolean defaultProject = Boolean.TRUE.toString().equals(element.getAttributeValue(ATTRIBUTE_DEFAULT_PROJECT));
-    // run autodetection if there's no VCS in default project and
-    if (haveNonEmptyMappings || !defaultProject) {
-      myMappingsLoaded = true;
-    }
-    // MPS Patch Start:
-    // condition was added
-    // do not register activity if we are in unit test mode
-    if (!ApplicationManager.getApplication().isUnitTestMode()) {
-      StartupManager.getInstance(myProject).runWhenProjectIsInitialized(new Runnable() {
-        public void run() {
-          myMappings.setDirectoryMappings(CollectionUtil.union(mappingsList, myMappings.getDirectoryMappings()));
-        }
-      });
-    }
-    // MPS Patch End
-  }
-
-  @Patch
   public void stopBackgroundVcsOperation() {
     // in fact, the condition is "should not be called under ApplicationManager.invokeLater() and similiar"
     assert !ApplicationManager.getApplication().isDispatchThread();
