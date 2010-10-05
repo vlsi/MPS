@@ -37,7 +37,7 @@ class SNodeIdeaUndoableAction implements UndoableAction {
     myWrapped = wrapped;
     List<DocumentReference> affected = new LinkedList<DocumentReference>();
 
-    myIsGlobal = wrapped.get(0).isGlobal();
+    myIsGlobal = false;
 
     for (SNodeUndoableAction a : wrapped) {
       if (a.getRoot() != null) {
@@ -48,7 +48,7 @@ class SNodeIdeaUndoableAction implements UndoableAction {
         affected.add(MPSUndoUtil.getRefForDoc(MPSUndoUtil.getDoc(file)));
       }
 
-      assert a.isGlobal() == myIsGlobal : "Global and non-global actions should not be mixed inside one command";
+      myIsGlobal |= a.isGlobal();
     }
 
     myAffectedDocuments = affected.toArray(new DocumentReference[affected.size()]);
