@@ -156,5 +156,7 @@
       <add-to-group group-id="MainMenu" anchor="after" relative-to-action="EditMenu"/>
     </group>
 
+    <group id="ConsoleView.PopupMenu"/>
+
   </actions>
 </component>
