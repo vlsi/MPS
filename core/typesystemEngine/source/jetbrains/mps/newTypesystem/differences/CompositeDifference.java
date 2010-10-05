@@ -16,8 +16,6 @@
 package jetbrains.mps.newTypesystem.differences;
 
 
-import jetbrains.mps.newTypesystem.states.State;
-
 import java.util.LinkedList;
 import java.util.List;
 
@@ -32,9 +30,9 @@ public class CompositeDifference extends Difference {
   List<Difference> myDifferenceList = new LinkedList<Difference>();
 
   @Override
-  public void rollBack(State state) {
+  public void rollBack() {
     for (Difference difference : myDifferenceList) {
-      difference.rollBack(state);
+      difference.rollBack();
     }
   }
 }

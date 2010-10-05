@@ -37,10 +37,10 @@ public class NonConcreteMapPair extends MapPair<IWrapper> {
   public void performActions(IWrapper var, IWrapper value, IWrapper type, IWrapper info, boolean reversed) {
     if (reversed) {
       myState.addDifference(new NonConcreteRemoved(var, value, this));
-      myState.addNonConcrete(type, value, isShallow);
+      myState.addNonConcrete(type, value);
     } else {
       myState.addDifference(new NonConcreteRemoved(value, var, this));
-      myState.addNonConcrete(value, type, isShallow);
+      myState.addNonConcrete(value, type);
     }
   }
 

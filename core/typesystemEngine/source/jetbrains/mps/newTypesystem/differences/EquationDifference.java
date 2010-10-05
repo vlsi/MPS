@@ -16,7 +16,6 @@
 package jetbrains.mps.newTypesystem.differences;
 
 import jetbrains.mps.newTypesystem.states.Equations;
-import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.typesystem.inference.IWrapper;
 
 /**
@@ -36,7 +35,7 @@ public class EquationDifference extends Difference {
   }
 
   @Override
-  public void rollBack(State state) {
+  public void rollBack() {
     myEquations.rollBack(this);
   }
 

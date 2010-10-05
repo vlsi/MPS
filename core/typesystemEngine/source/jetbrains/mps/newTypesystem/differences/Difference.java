@@ -26,7 +26,7 @@ import jetbrains.mps.newTypesystem.states.State;
  */
 public abstract class Difference {
 
-  public abstract void rollBack(State state);
+  public abstract void rollBack();
 
   public String getPresentation() {
     return "";

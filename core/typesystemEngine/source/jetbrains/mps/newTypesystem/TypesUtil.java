@@ -13,27 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.differences;
+package jetbrains.mps.newTypesystem;
 
-import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.IWrapper;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Sep 15, 2010
- * Time: 1:04:39 PM
+ * Date: Sep 24, 2010
+ * Time: 12:42:45 PM
  * To change this template use File | Settings | File Templates.
  */
-public class NodeToTypeDifference extends Difference{
-  private SNode myNode;
+public class TypesUtil {
+  public SNode leastCommonSuperType(SNode left, SNode right) {
+    //left.isInstanceOfConcept()
+    //if ()
 
-  public NodeToTypeDifference(SNode node) {
-     myNode = node;
+    return left;
   }
 
-  @Override
-  public void rollBack(State state) {
-    state.getNodeMaps().rollBackType(myNode);
-  }
 }

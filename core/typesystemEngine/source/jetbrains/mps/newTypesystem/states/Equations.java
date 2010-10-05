@@ -49,7 +49,7 @@ public class Equations {
         path.add(current);
         current = parent;
         parent = myRepresentatives.get(parent);
-      }   /*
+      }   /*  
       if (path.size() > 1) {
         for (IWrapper elem : path) {
           myRepresentatives.put(elem, current);

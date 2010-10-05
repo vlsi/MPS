@@ -38,11 +38,10 @@ public class State {
 
   public State(TypeCheckingContextNew tcc) {
     myTypeCheckingContext = tcc;
-
     myEquations = new Equations(this);
     myInequalities = new Inequalities(this);
     myNonConcrete = new NonConcrete(this);
-    myNodeMaps = new NodeMaps();
+    myNodeMaps = new NodeMaps(this);
   }
 
   public Equations getEquations() {
@@ -53,13 +52,12 @@ public class State {
     myEquations.addEquation(left, right, info);
   }
 
-  public void addInequality(IWrapper subType, IWrapper superType, boolean isWeak, boolean check, EquationInfo info) {
-    
-    myInequalities.addSubTyping(subType, superType, isWeak, check, info);
+  public void addInequality(IWrapper subType, IWrapper superType, boolean isWeak, boolean check, EquationInfo info) { 
+    myInequalities.addInequality(subType, superType, isWeak, check, info);
   }
 
-  public void addNonConcrete(IWrapper left, IWrapper right, boolean isShallow) {
-    myNonConcrete.addNonConcrete(left, right, isShallow);
+  public void addNonConcrete(IWrapper left, IWrapper right) {
+    myNonConcrete.addNonConcrete(left, right);
   }
 
   public NodeMaps getNodeMaps() {

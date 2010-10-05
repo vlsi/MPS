@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.newTypesystem.states;
 
+import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.newTypesystem.differences.mapPair.NonConcreteAdded;
-import jetbrains.mps.newTypesystem.differences.mapPair.SubTypingAdded;
-import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.IWrapper;
+import jetbrains.mps.typesystem.inference.NodeWrapper;
 
 /**
  * Created by IntelliJ IDEA.
@@ -29,39 +29,52 @@ import jetbrains.mps.typesystem.inference.IWrapper;
  */
 public class NonConcrete {
   private State myState;
-  private NonConcreteMapPair myShallow;
-  private NonConcreteMapPair myDeep;
+  private Equations myEquations;
+  private NonConcreteMapPair myNonConcrete;
 
   public NonConcrete(State state) {
     myState = state;
-    myShallow = new NonConcreteMapPair(myState, true);
-    myDeep = new NonConcreteMapPair(myState, false);
+    myEquations = myState.getEquations();
+    myNonConcrete = new NonConcreteMapPair(myState, true);
   }
 
   public void substitute(IWrapper var, IWrapper type) {
-    myShallow.substitute(var, type);
-    myDeep.substitute(var, type);
+    myNonConcrete.substitute(var, type);
   }
 
-  public void check(IWrapper wrapper) {
-    //if ()
-  }
-
-  public void addNonConcrete(IWrapper left, IWrapper right, boolean isShallow) {
+  public void addNonConcrete(IWrapper left, IWrapper right) {
     if (right.isConcrete()) {
-      check(left);
       return;
     }
-    NonConcreteMapPair nonConcrete = isShallow ? myShallow : myDeep;
+    NonConcreteMapPair nonConcrete = myNonConcrete;
     if (!nonConcrete.contains(left, right)) {
       nonConcrete.add(left, right);
       myState.addDifference(new NonConcreteAdded(left, right, nonConcrete));
     }
   }
 
+  public boolean isConcrete(IWrapper wrapper) {
+    wrapper = myEquations.getRepresentative(wrapper);
+    if (wrapper == null || !(wrapper instanceof NodeWrapper)) return false;
+    if (!wrapper.isConcrete()) {
+      return false;
+    }
+    if (isVariable(wrapper)) {
+      return false;
+    }
+
+
+
+
+    return true;
+  }
+
+  public boolean isVariable(IWrapper wrapper) {
+    return wrapper.getNode().getConceptFqName().equals(RuntimeTypeVariable.concept);
+  }
+
   //----------------DEBUG
   void print() {
-    myShallow.print("<---", "--->");
-    myDeep.print("<---", "--->");
+    myNonConcrete.print("<---", "--->");
   }
 }

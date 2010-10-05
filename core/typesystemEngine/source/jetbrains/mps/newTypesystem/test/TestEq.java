@@ -38,9 +38,9 @@ public class TestEq extends TestCase{
     IWrapper w2 = new TestWrapper("b");
     IWrapper w3 = new TestWrapper("c");
     IWrapper w4 = new TestWrapper("d");    
-    tcc.createNonConcrete(w2,w4, true);
-    tcc.createNonConcrete(w1,w4, true);
-    tcc.createNonConcrete(w3,w1, true);
+    tcc.createNonConcrete(w2,w4);
+    tcc.createNonConcrete(w1,w4);
+    tcc.createNonConcrete(w3,w1);
 
     tcc.createInequality(w3, w2, new EquationInfo(null, ""));
     tcc.createInequality(w1, w4, new EquationInfo(null, ""));

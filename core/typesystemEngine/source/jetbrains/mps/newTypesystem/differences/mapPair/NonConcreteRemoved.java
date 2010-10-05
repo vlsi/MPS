@@ -16,7 +16,6 @@
 package jetbrains.mps.newTypesystem.differences.mapPair;
 
 import jetbrains.mps.newTypesystem.states.NonConcreteMapPair;
-import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.typesystem.inference.IWrapper;
 
 /**
@@ -32,7 +31,7 @@ public class NonConcreteRemoved extends MapPairDifference {
   }
 
   @Override
-  public void rollBack(State state) {
+  public void rollBack() {
     ((NonConcreteMapPair)myMapPair).add(myKeyType, myValueType);
   }
 

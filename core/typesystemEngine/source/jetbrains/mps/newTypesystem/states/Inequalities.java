@@ -49,6 +49,17 @@ public class Inequalities {
     myStrongCheckInequalities.substitute(var, type);
   }
 
+  public void addInequality(IWrapper subType, IWrapper superType, boolean isWeak, boolean check, EquationInfo info) {
+    Equations equations = myState.getEquations();
+    subType = equations.getRepresentative(subType);
+    superType = equations.getRepresentative(superType);
+    if (subType == null || superType == null || subType.getNode() == superType.getNode()) {
+      return;
+    }
+    
+    addSubTyping(subType, superType, isWeak, check, info);
+  }
+
   public void addSubTyping(IWrapper subType, IWrapper superType, boolean isWeak, boolean check, EquationInfo info) {
     InequalityMapPair inequality;
     if (isWeak) {

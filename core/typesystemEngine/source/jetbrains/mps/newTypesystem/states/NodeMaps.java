@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.newTypesystem.states;
 
+import jetbrains.mps.newTypesystem.differences.NodeMapDifference;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.smodel.SNode;
 
@@ -32,13 +33,20 @@ import java.util.Map;
 public class NodeMaps {
   private Map<SNode, SNode> myNodeToTypes = new HashMap<SNode, SNode>();
   private Map<SNode, List<IErrorReporter>> myNodesToErrors = new HashMap<SNode, List<IErrorReporter>>();
+  private State myState;
 
-  public void rollBackType(SNode node) {
-    myNodeToTypes.remove(node);
+  public NodeMaps(State state) {
+    myState = state;
   }
 
-  public void rollBackError(SNode node) {
-    myNodesToErrors.remove(node);
+  public void addNodeToType(SNode node, SNode type) {
+    myNodeToTypes.put(node, type);
+    myState.addDifference(new NodeMapDifference(node, myNodeToTypes));
+  }
+
+  public void addNodeToError(SNode node, List<IErrorReporter> error) {
+    myNodesToErrors.put(node, error);
+    myState.addDifference(new NodeMapDifference(node, myNodesToErrors));
   }
 
   public Map<SNode, List<IErrorReporter>> getNodesToErrors() {

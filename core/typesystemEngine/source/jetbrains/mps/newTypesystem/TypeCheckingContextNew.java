@@ -48,7 +48,7 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     }
     Difference diff = myDifferenceStack.pop();
     System.out.println("Rolled back (" + diff.getPresentation()+")");
-    diff.rollBack(myState);
+    diff.rollBack();
   }
 
   @Override
@@ -60,8 +60,8 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
     myState.addInequality(left, right, true, true, equationInfo);
   }
 
-  public void createNonConcrete(IWrapper left, IWrapper right, boolean isShallow) {
-    myState.addNonConcrete(left, right, isShallow);
+  public void createNonConcrete(IWrapper left, IWrapper right) {
+    myState.addNonConcrete(left, right);
   }
 
   @Override

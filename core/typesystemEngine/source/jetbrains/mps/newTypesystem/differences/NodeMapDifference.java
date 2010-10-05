@@ -13,26 +13,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.test;
+package jetbrains.mps.newTypesystem.differences;
 
-import jetbrains.mps.typesystem.inference.ConceptWrapper;
-import jetbrains.mps.typesystem.inference.IWrapper;
-import junit.framework.TestCase;
+import jetbrains.mps.smodel.SNode;
+
+import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Ilya.Lintsbakh
- * Date: Sep 13, 2010
- * Time: 7:35:24 PM
+ * Date: Sep 15, 2010
+ * Time: 1:04:39 PM
  * To change this template use File | Settings | File Templates.
  */
-public class InequalityMapPair_Test extends TestCase {
-  void testSubstitute() {
-   
-    IWrapper var1 = new ConceptWrapper("a");
-    IWrapper var2 = new ConceptWrapper("b");
-    IWrapper var3 = new ConceptWrapper("c");
+public class NodeMapDifference extends Difference{
+  private SNode myNode;
+  private Map myMap;
 
-    
+  public NodeMapDifference(SNode node, Map map) {
+    myNode = node;
+    myMap = map;
+  }
+
+  @Override
+  public void rollBack() {
+    myMap.remove(myNode);
   }
 }

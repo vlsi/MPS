@@ -16,7 +16,6 @@
 package jetbrains.mps.newTypesystem.differences.mapPair;
 
 import jetbrains.mps.newTypesystem.states.InequalityMapPair;
-import jetbrains.mps.newTypesystem.states.State;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.IWrapper;
 
@@ -36,7 +35,7 @@ public class SubTypingRemoved extends MapPairDifference {
   }
 
   @Override
-  public void rollBack(State state) {
+  public void rollBack() {
     ((InequalityMapPair)myMapPair).add(myKeyType, myValueType, myInfo);
   }
 
