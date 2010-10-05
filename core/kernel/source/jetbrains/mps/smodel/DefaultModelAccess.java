@@ -118,7 +118,12 @@ public class DefaultModelAccess extends ModelAccess {
   }
 
   @Override
-  public void runCommandInEDT(Runnable r) {
+  public void runWriteInEDT(Runnable r) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public void runCommandInEDT(Runnable r, @NotNull Project p) {
     throw new UnsupportedOperationException();
   }
 

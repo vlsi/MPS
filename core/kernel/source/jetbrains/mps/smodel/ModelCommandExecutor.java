@@ -40,8 +40,6 @@ public interface ModelCommandExecutor {
 
   <T> T runReadAction(Computable<T> c);
 
-  void runReadInEDT(Runnable r);
-
   void runWriteAction(Runnable r);
 
   void runWriteActionWithProgressSynchronously(@NotNull Progressive process, String progressTitle, boolean canBeCanceled,
@@ -51,7 +49,11 @@ public interface ModelCommandExecutor {
 
   <T> T runReadInWriteAction(Computable<T> c);
 
-  void runCommandInEDT(Runnable r);
+  void runReadInEDT(Runnable r);
+
+  void runWriteInEDT(Runnable r);
+
+  void runCommandInEDT(Runnable r, @NotNull Project p);
 
   /**
    * use executeCommand(Runnable r, Project project)

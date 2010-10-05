@@ -239,7 +239,7 @@ public class ModuleDescriptorPersistence {
   }
 
   public static void setTimestamp(final ModuleDescriptor descriptor, final IFile file) {
-    ModelAccess.instance().runCommandInEDT(new Runnable() {
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
       public void run() {
         descriptor.setTimestamp("" + file.lastModified());
       }

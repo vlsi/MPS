@@ -2883,11 +2883,16 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
 
   private void commitAll() {
+    Project project = getOperationContext().getProject();
+    if(project == null) {
+      return;
+    }
+
     ModelAccess.instance().runCommandInEDT(new Runnable() {
       public void run() {
         doCommitAll(getRootCell());
       }
-    });
+    }, project);
   }
 
   private void doCommitAll(EditorCell current) {

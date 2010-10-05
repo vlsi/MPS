@@ -208,7 +208,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
         final SNodePointer pointer = new SNodePointer(root);
         final VirtualFile vf = myVirtualFiles.get(pointer);
         if (vf == null) continue;
-        ModelAccess.instance().runCommandInEDT(new Runnable() {
+        ModelAccess.instance().runWriteInEDT(new Runnable() {
           public void run() {
             fireBeforeFileDeletion(this, vf);
             fireFileDeleted(this, vf, vf.getName(), null);
@@ -230,7 +230,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
         updateModificationStamp(root);
       }
 
-      ModelAccess.instance().runCommandInEDT(new Runnable() {
+      ModelAccess.instance().runWriteInEDT(new Runnable() {
         public void run() {
           onModelReplaced(sm);
         }

@@ -41,7 +41,7 @@ public class LanguageAspectCreationListener extends ModelCreationListener {
     if (ThreadUtils.isEventDispatchThread()) {
       emd.save();
     } else {
-      ModelAccess.instance().runCommandInEDT(new Runnable() {
+      ModelAccess.instance().runWriteInEDT(new Runnable() {
         public void run() {
           emd.save();
         }

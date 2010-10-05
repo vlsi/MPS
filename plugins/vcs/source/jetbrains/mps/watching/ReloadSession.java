@@ -134,7 +134,7 @@ class ReloadSession {
     boolean isUpdated = false;
     progressIndicator.setText("Reloading updated modules... Please wait.");
     for (final IModule module : myChangedModules) {
-      ModelAccess.instance().runCommandInEDT(new Runnable() {
+      ModelAccess.instance().runWriteInEDT(new Runnable() {
         public void run() {
           String text = "Reloading " + module.getModuleFqName();
           LOG.info(text);

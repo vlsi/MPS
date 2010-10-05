@@ -55,7 +55,7 @@ public class BrokenReferencesTestTest extends TestCase {
     };
     worker.work();
 
-    ModelAccess.instance().runCommandInEDT(new Runnable() {
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
         SModelRepository.getInstance().saveAll();

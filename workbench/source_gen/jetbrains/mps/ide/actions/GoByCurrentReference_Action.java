@@ -133,7 +133,7 @@ public class GoByCurrentReference_Action extends GeneratedAction {
         new Thread() {
           public void run() {
             // todo command here is a must for read action. Without it, openNode will be deadlocked for now 
-            ModelAccess.instance().runCommandInEDT(new Runnable() {
+            ModelAccess.instance().runWriteInEDT(new Runnable() {
               public void run() {
                 if (!(GoByCurrentReference_Action.this.navigateToJavaStub(modulePath, targetNode))) {
                   GoByCurrentReference_Action.this.open(targetNode);

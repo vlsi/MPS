@@ -179,8 +179,8 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
 
     myTimer = new Timer(DELAY, new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        //why command? see http://youtrack.jetbrains.net/issue/MPS-8411 for details; IDEA can acquire write lock under that code
-        ModelAccess.instance().runCommandInEDT(new Runnable() {
+        //why write? see http://youtrack.jetbrains.net/issue/MPS-8411 for details; IDEA can acquire write lock under that code
+        ModelAccess.instance().runWriteInEDT(new Runnable() {
           public void run() {
             getTree().rebuildNow();
           }

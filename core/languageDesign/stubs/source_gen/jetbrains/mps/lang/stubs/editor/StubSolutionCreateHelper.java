@@ -44,7 +44,7 @@ public class StubSolutionCreateHelper {
 
     SModelRepository.getInstance().saveAll();
 
-    ModelAccess.instance().runCommandInEDT(new Runnable() {
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
       public void run() {
         LanguageDescriptor descriptor = language.getModuleDescriptor();
         descriptor.getStubSolutions().add(stubSolution);

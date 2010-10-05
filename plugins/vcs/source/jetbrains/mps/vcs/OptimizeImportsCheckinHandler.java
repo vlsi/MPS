@@ -97,14 +97,17 @@ public class OptimizeImportsCheckinHandler extends CheckinHandler {
       final IOperationContext operationContext = ProjectOperationContext.get(myProject);
       ThreadUtils.assertLogIsEDT();
       try {
-        ModelAccess.instance().runCommandInEDT(new Runnable() {
-          public void run() {
-            new OptimizeImportsHelper(operationContext).optimizeModelsImports(affectedModels);
-            for (SModelDescriptor affectedModel : affectedModels) {
-              ((EditableSModelDescriptor) affectedModel).save();
+        Project project = operationContext.getProject();
+        if(project != null) {
+          ModelAccess.instance().runCommandInEDT(new Runnable() {
+            public void run() {
+              new OptimizeImportsHelper(operationContext).optimizeModelsImports(affectedModels);
+              for (SModelDescriptor affectedModel : affectedModels) {
+                ((EditableSModelDescriptor) affectedModel).save();
+              }
             }
-          }
-        });
+          }, project);
+        }
       } catch (Throwable e) {
         LOG.error("Couldn't optimize imports before commit", e);
       }

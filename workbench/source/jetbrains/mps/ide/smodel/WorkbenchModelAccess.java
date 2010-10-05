@@ -196,8 +196,13 @@ public class WorkbenchModelAccess extends ModelAccess {
   }
 
   @Override
-  public void runCommandInEDT(Runnable r) {
-    myEDTExecutor.invokeCommandInEDT(r);
+  public void runWriteInEDT(Runnable r) {
+    myEDTExecutor.invokeWriteInEDT(r);
+  }
+
+  @Override
+  public void runCommandInEDT(Runnable r, @NotNull Project p) {
+    myEDTExecutor.invokeCommandInEDT(r, p);
   }
 
   @Override
@@ -222,6 +227,28 @@ public class WorkbenchModelAccess extends ModelAccess {
     });
   }
 
+  public boolean tryWrite(final Runnable r) {
+    if (!getWriteLock().tryLock()) {
+      return false;
+    }
+    getWriteLock().unlock();
+
+    return ApplicationManager.getApplication().runReadAction(new Computable<Boolean>() {
+      public Boolean compute() {
+        if (getWriteLock().tryLock()) {
+          try {
+            r.run();
+          } finally {
+            getWriteLock().unlock();
+          }
+          return true;
+        } else {
+          return false;
+        }
+      }
+    });
+  }
+
   @Override
   public <T> T tryRead(final Computable<T> c) {
     return ApplicationManager.getApplication().runReadAction(new Computable<T>() {
@@ -237,11 +264,6 @@ public class WorkbenchModelAccess extends ModelAccess {
         }
       }
     });
-  }
-
-  @Deprecated
-  public boolean tryWriteInCommand(final Runnable r) {
-    return tryWriteInCommand(r, CurrentProjectAccessUtil.getProjectFromUI());
   }
 
   public boolean tryWriteInCommand(final Runnable r, Project project) {

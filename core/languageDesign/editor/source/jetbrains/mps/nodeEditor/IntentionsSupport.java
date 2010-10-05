@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor;
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.application.RuntimeInterruptedException;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.ui.popup.ListPopup;
@@ -233,11 +234,16 @@ public class IntentionsSupport {
 
       @Override
       public void actionPerformed(AnActionEvent e) {
+        Project project = myEditor.getOperationContext().getProject();
+        if(project == null) {
+          return;
+        }
+
         ModelAccess.instance().runCommandInEDT(new Runnable() {
           public void run() {
             intention.execute(node, myEditor.getEditorContext());
           }
-        });
+        }, project);
       }
     };
 
