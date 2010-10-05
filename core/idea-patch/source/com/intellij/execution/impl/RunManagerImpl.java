@@ -76,6 +76,20 @@ public class RunManagerImpl extends RunManagerEx implements JDOMExternalizable, 
 
   private final EventDispatcher<RunManagerListener> myDispatcher = EventDispatcher.create(RunManagerListener.class);
 
+  @Patch
+  public void clear() {
+    final List<RunnerAndConfigurationSettings> configurations = new ArrayList<RunnerAndConfigurationSettings>(myConfigurations.values());
+    myConfigurations.clear();
+    myUnloadedElements = null;
+    myConfigurationToBeforeTasksMap.clear();
+    mySharedConfigurations.clear();
+    //patch start
+    myTemplateConfigurationsMap.clear();
+    mySelectedConfiguration = null;
+    //patch end
+    fireRunConfigurationsRemoved(configurations);
+  }
+
   public RunManagerImpl(final Project project,
                         PropertiesComponent propertiesComponent) {
     myConfig = new RunManagerConfig(propertiesComponent, this);
@@ -484,17 +498,6 @@ public class RunManagerImpl extends RunManagerEx implements JDOMExternalizable, 
     }
   }
 
-  @Patch
-  private void clear() {
-    final List<RunnerAndConfigurationSettings> configurations = new ArrayList<RunnerAndConfigurationSettings>(myConfigurations.values());
-    myConfigurations.clear();
-    myUnloadedElements = null;
-    myConfigurationToBeforeTasksMap.clear();
-    mySharedConfigurations.clear();
-    //the following line is a patch
-    myTemplateConfigurationsMap.clear();
-    fireRunConfigurationsRemoved(configurations);
-  }
 
   @Nullable
   public RunnerAndConfigurationSettings loadConfiguration(final Element element, boolean isShared) throws InvalidDataException {

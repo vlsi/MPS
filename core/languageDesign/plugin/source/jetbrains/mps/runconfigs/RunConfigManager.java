@@ -95,7 +95,15 @@ public class RunConfigManager implements ProjectComponent {
     final ConfigurationType[] configurationTypes = getConfigurationTypes();
     getRunManager().initializeConfigurationTypes(configurationTypes);
 
-    reinitRunManager();
+    Element newState = new Element("root");
+    try {
+      getRunManager().writeExternal(newState);
+      getRunManager().readExternal(newState);
+    } catch (WriteExternalException e1) {
+      LOG.error(e1);
+    } catch (InvalidDataException e11) {
+      LOG.error(e11);
+    }
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -169,6 +177,9 @@ public class RunConfigManager implements ProjectComponent {
       } catch (WriteExternalException e) {
         LOG.error(e);
       }
+
+      getRunManager().clear();
+      getRunManager().initializeConfigurationTypes(new ConfigurationType[0]);
 
       final ExtensionPoint<ConfigurationType> epConfigType = Extensions.getArea(null).getExtensionPoint(ConfigurationType.CONFIGURATION_TYPE_EP);
       ModelAccess.instance().runReadAction(new Runnable() {
