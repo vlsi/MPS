@@ -23,7 +23,6 @@ import jetbrains.mps.generator.generationTypes.GenerationHandlerBase;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.generator.generationTypes.TextGenerator;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
-import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
@@ -38,7 +37,9 @@ import org.jdom.Document;
 import org.jdom.Element;
 import org.junit.Assert;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.StringWriter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -72,7 +73,7 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
         boolean result = new TextGenerator(streamHandler,
           //ModelGenerationStatusManager.getInstance().getCacheGenerator(),
           BLDependenciesCache.getInstance().getGenerator(),
-          TraceInfoCache.getInstance().getGenerator(),
+          //TraceInfoCache.getInstance().getGenerator(),
           GenerationDependenciesCache.getInstance().getGenerator()
         ).handleOutput(invocationContext, status);
         Assert.assertTrue(result);
@@ -118,21 +119,7 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
     @Override
     public void saveStream(String name, String content, boolean isCache) {
       if (isCache) {
-        File file = new File(myCachesDir.child(name).getAbsolutePath());
-        OutputStreamWriter writer = null;
-        try {
-          writer = new OutputStreamWriter(new BufferedOutputStream(new FileOutputStream(file)));
-          writer.write(content);
-        } catch (IOException e) {
-          Assert.fail(e.toString());
-        } finally {
-          if (writer != null) {
-            try {
-              writer.close();
-            } catch (IOException ignored) {
-            }
-          }
-        }
+        /* ignore */
       } else {
         String existing = myFileContent.get(name);
         Assert.assertNotNull("Non-existing file generated: " + name, existing);
@@ -142,18 +129,16 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
 
     @Override
     public void saveStream(String name, Element content, boolean isCache) {
-      try {
-        if (isCache) {
-          File file = new File(myCachesDir.child(name).getAbsolutePath());
-          JDOMUtil.writeDocument(new Document(content), file);
-        } else {
-          if(name.equals("trace.info")) return;
+      if (isCache) {
+        /* ignore */
+      } else {
+        try {
           StringWriter writer = new StringWriter();
           JDOMUtil.writeDocument(new Document(content), writer);
           saveStream(name, writer.toString(), isCache);
+        } catch (IOException e) {
+          Assert.fail(e.toString());
         }
-      } catch (IOException e) {
-        Assert.fail(e.toString());
       }
     }
 

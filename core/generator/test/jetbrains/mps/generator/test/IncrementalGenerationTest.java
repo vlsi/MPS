@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.test;
 
+import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.generator.GenerationCacheContainer.FileBasedGenerationCacheContainer;
@@ -22,12 +23,14 @@ import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.testbench.Testbench;
@@ -54,6 +57,7 @@ public class IncrementalGenerationTest {
     Testbench.initLogging();
 
     IdeMain.setTestMode(TestMode.CORE_TEST);
+    System.setProperty("mps.vfs.useIoFile", "true");
     TestMain.configureMPS();
 
     Testbench.initLibs();
@@ -80,7 +84,7 @@ public class IncrementalGenerationTest {
 
   @Test
   public void testIncrementalGen() throws IOException {
-    MPSProject p = TestMain.loadProject(new File(System.getProperty("user.dir")+ "/workbench/workbench.mpr"));
+    final MPSProject p = TestMain.loadProject(new File(System.getProperty("user.dir")+ "/workbench/workbench.mpr"));
     SModelDescriptor descr = findModel(p, "jetbrains.mps.ide.actions");
     GeneratorManager gm = p.getProject().getComponent(GeneratorManager.class);
 
@@ -93,6 +97,16 @@ public class IncrementalGenerationTest {
       Collections.singletonList(descr), ModuleContext.create(descr, p.getProject()),
       new IncrementalTestGenerationHandler(),
       new EmptyProgressIndicator(), new TestMessageHandler(), options);
+
+    ModelAccess.instance().flushEventQueue();
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
+        p.dispose(false);
+        IdeEventQueue.getInstance().flushQueue();
+        System.gc();
+      }
+    });
+
   }
 
   private static class TestMessageHandler implements IMessageHandler {
