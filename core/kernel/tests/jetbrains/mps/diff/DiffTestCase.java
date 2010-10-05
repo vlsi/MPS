@@ -15,11 +15,9 @@
  */
 package jetbrains.mps.diff;
 
-import jetbrains.mps.diff.BaseDiffTestCase;
-
-import java.util.List;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
 public class DiffTestCase extends BaseDiffTestCase {
   public void testContentDeleted() {

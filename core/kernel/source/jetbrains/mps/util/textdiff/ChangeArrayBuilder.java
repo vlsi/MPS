@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project.tester;
+package jetbrains.mps.util.textdiff;
 
 
-import jetbrains.mps.project.tester.TestComparator.ChangeArrayManager;
+import jetbrains.mps.util.textdiff.TextDiffBuilder.ChangeArrayManager;
 
 import java.util.ArrayList;
 import java.util.Collections;

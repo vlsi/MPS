@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project.tester;
+package jetbrains.mps.util.textdiff;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class DiffReport {
+class DiffReport {
   private static final String SEPARATOR = "*****************";
   private static final String OLD_CONTENT_SYMBOL = "****";
   private static final String NEW_CONTENT_SYMBOL = "----";

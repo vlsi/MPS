@@ -25,6 +25,7 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.textdiff.TextDiffBuilder;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nullable;
@@ -209,7 +210,7 @@ public class TesterGenerationHandler extends InMemoryJavaGenerationHandler {
         final String title = getDiffReportTitle(outputRoot, filePath, created, false);
         String[] oldTest = getContentAsArray(oldContent, "\n");
         String[] newTest = getContentAsArray(newContent, System.getProperty("line.separator"));
-        addDiffReport(new TestComparator(oldTest, newTest), result, title);
+        addDiffReport(oldTest, newTest, result, title);
       }
       for (String fileName : files) {
         int dotPosition = fileName.indexOf(".");
@@ -222,7 +223,7 @@ public class TesterGenerationHandler extends InMemoryJavaGenerationHandler {
           continue;
         }
         String[] test = FileUtil.read(file).split("\n");
-        addDiffReport(new TestComparator(test, new String[0]), result, title);
+        addDiffReport(test, new String[0], result, title);
       }
     }
     return result;
@@ -243,11 +244,12 @@ public class TesterGenerationHandler extends InMemoryJavaGenerationHandler {
     return (content != null) ? content.split(separator) : new String[0];
   }
 
-  private static void addDiffReport(TestComparator comparator, List<String> reports, String title) {
-    DiffReport diffReport = comparator.compare();
-    if (diffReport.hasDifference()) {
+  private static void addDiffReport(String[] old, String[] new_, List<String> reports, String title) {
+    TextDiffBuilder tc = new TextDiffBuilder(old, new_);
+    tc.compare();
+    if(tc.hasDifference()) {
       reports.add(title);
-      reports.addAll(diffReport.getReportsAsList());
+      reports.addAll(tc.getResult());
       reports.add("");
     }
   }

@@ -13,14 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project.tester;
+package jetbrains.mps.util.textdiff;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-public class TestComparator {
+public class TextDiffBuilder {
   private Integer[] myUniqueOld, myUniqueNew;
   private List<Integer> myIndexesOld, myIndexesNew;
   private int mySizeOld, mySizeNew;
@@ -33,7 +33,7 @@ public class TestComparator {
   private HashMap<String, Integer> myStuff;
   private int myNextNumber = 1;
 
-  public TestComparator(String[] contentOld, String[] contentNew) {
+  public TextDiffBuilder(String[] contentOld, String[] contentNew) {
     myReport = new DiffReport(contentOld, contentNew);
     if (contentOld.length == 0 && contentNew.length == 0) {
       myHasLCS = false;
@@ -58,12 +58,19 @@ public class TestComparator {
     myFinishes = new int[myUniqueOld.length + myUniqueNew.length + 1];
   }
 
-  public DiffReport compare() {
+  public void compare() {
     if (myHasLCS) {
       initChangeArray();
       initChanges();
     }
-    return myReport;
+  }
+
+  public boolean hasDifference() {
+    return myReport.hasDifference();
+  }
+
+  public List<String> getResult() {
+    return myReport.getReportsAsList();
   }
 
   private int[] getIndexes(String[] values) {
@@ -238,12 +245,12 @@ public class TestComparator {
     private int myIndex1 = 0;
     private int myIndex2 = 0;
 
-    public void inc(int length) {
+    void inc(int length) {
       myIndex1 += length;
       myIndex2 += length;
     }
 
-    public void addChange(int oldDelta, int newDelta) {
+    void addChange(int oldDelta, int newDelta) {
       myReport.addChange(new Change(myIndex1, myIndex2, oldDelta, newDelta));
       myIndex1 += oldDelta;
       myIndex2 += newDelta;
@@ -271,22 +278,22 @@ public class TestComparator {
       return oldTo;
     }
 
-    public boolean[] getOldChangeArray() {
+    boolean[] getOldChangeArray() {
       return myChanges1;
     }
 
-    public boolean[] getNewChangeArray() {
+    boolean[] getNewChangeArray() {
       return myChanges2;
     }
 
-    public void addChangeItem(int first, int second) {
+    void addChangeItem(int first, int second) {
       myOld -= first;
       myNew -= second;
       myOldLength = getOldLength(myChanges1, myOldLength, myIndexesOld, myOld);
       myNewLength = getOldLength(myChanges2, myNewLength, myIndexesNew, myNew);
     }
 
-    public void dec(int length) {
+    void dec(int length) {
       for (int i = length; i > 0; i--) {
         myOldLength = getOldLength(myChanges1, myOldLength, myIndexesOld, myOld);
         myNewLength = getOldLength(myChanges2, myNewLength, myIndexesNew, myNew);

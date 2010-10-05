@@ -15,13 +15,12 @@
  */
 package jetbrains.mps.diff;
 
-import java.util.List;
-import java.io.File;
-
-import junit.framework.TestCase;
+import jetbrains.mps.util.textdiff.TextDiffBuilder;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.diff.DiffTestCase;
-import jetbrains.mps.project.tester.TestComparator;
+import junit.framework.TestCase;
+
+import java.io.File;
+import java.util.List;
 
 public abstract class BaseDiffTestCase extends TestCase {
   final String[] myContent = {"diff", "test", "case", "content"};
@@ -84,7 +83,9 @@ public abstract class BaseDiffTestCase extends TestCase {
   }
 
   String[] getResult(String[] s1, String[] s2) {
-    List<String> strings = new TestComparator(s1, s2).compare().getReportsAsList();
+    TextDiffBuilder textDiffBuilder = new TextDiffBuilder(s1, s2);
+    textDiffBuilder.compare();
+    List<String> strings = textDiffBuilder.getResult();
     return strings.toArray(new String[strings.size()]);
   }
 
