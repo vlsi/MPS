@@ -200,7 +200,7 @@ public class CreateRootNodeGroup extends BaseGroup {
           myModelDescriptor.getSModel().addRoot(result);
           return result;
         }
-      });
+      }, myProject);
 
       if (!trySelectInCurrentPane(node)) {
         ProjectPane pane = ProjectPane.getInstance(myProject);

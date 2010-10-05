@@ -285,7 +285,7 @@ public class NewLanguageDialogContentPane extends JPanel {
           }
         }
       }
-    });
+    }, myProject != null ? myProject.getProject() : null);
   }
 
   /*package*/ void onCancel() {

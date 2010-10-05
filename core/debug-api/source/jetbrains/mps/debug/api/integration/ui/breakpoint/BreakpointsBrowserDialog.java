@@ -299,7 +299,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
         assert opener != null;
         opener.openNode(breakpoint.getSNode(), myContext, focus, select);
       }
-    });
+    }, project);
   }
 
   @Override

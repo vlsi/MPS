@@ -168,6 +168,9 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
     final IModule module = operationContext.getModule();
     assert module != null;
 
+    Project project = getOperationContext().getProject();
+    assert project != null;
+
     for (SModelDescriptor model : module.getOwnModelDescriptors()) {
       if (model.getLongName().equals(modelName)) {
         setErrorText("Model with the same name already exists. Please choose another name");
@@ -181,8 +184,7 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
         public SModelDescriptor compute() {
           return module.createModel(new SModelFqName(modelName, stereotype), modelRoot);
         }
-      }
-    );
+      }, project);
     if (modelDescriptor == null) {
       setErrorText("You can't create a model in the model root that you specified");
       return false;
@@ -217,8 +219,6 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
       }
     });
 
-    Project project = getOperationContext().getProject();
-    assert project != null;
     final ProjectPane pane = ProjectPane.getInstance(project);
     assert pane != null;
     SwingUtilities.invokeLater(new Runnable() {

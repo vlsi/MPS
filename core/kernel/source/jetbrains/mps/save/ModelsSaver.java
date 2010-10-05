@@ -19,7 +19,6 @@ package jetbrains.mps.save;
 import com.intellij.AppTopics;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.fileEditor.FileDocumentManagerAdapter;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.smodel.ModelAccess;

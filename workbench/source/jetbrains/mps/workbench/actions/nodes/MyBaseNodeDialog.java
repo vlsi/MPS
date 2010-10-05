@@ -77,7 +77,7 @@ public class
   }
 
   private static String getTitle(final SNode node) {
-    return ModelAccess.instance().runWriteActionInCommand(new Computable<String>() {
+    return ModelAccess.instance().runReadAction(new Computable<String>() {
       public String compute() {
         return "Type For Node " + node;
       }

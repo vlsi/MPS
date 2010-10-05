@@ -161,7 +161,7 @@ public class NewModelDialog extends BaseDialog {
 
         return myModule.createModel(modelUID, wrapper.getModelRoot());
       }
-    });
+    }, myContext.getProject());
 
     if (myResult == null) {
       return;

@@ -279,7 +279,7 @@ public class JavaCompiler {
     addSource(myBaseModelToAddSource.getLongName() + "." + wrapper.getShortClassName(), wrapper.getWrappedSource());
     myPackageFQNamesToModels.put(myBaseModelToAddSource.getLongName(), myBaseModelToAddSource);
     compileOnce();
-    List<Classifier> classifierList = ModelAccess.instance().runWriteActionInCommand(new Computable<List<Classifier>>() {
+    List<Classifier> classifierList = ModelAccess.instance().runWriteAction(new Computable<List<Classifier>>() {
       @Override
       public List<Classifier> compute() {
         return buildAST(true);

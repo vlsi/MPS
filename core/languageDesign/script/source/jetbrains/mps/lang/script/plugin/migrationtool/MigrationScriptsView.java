@@ -62,8 +62,10 @@ public abstract class MigrationScriptsView {
   private JPanel myControlsPanel;
   private JPanel myStatusPanel;
   private JButton myApplyButton;
+  private final Project myProject;
 
   public MigrationScriptsView(MigrationScriptFinder finder, IResultProvider provider, SearchQuery query, MigrationScriptsTool tool, Project project) {
+    myProject = project;
     if (!ThreadUtils.isEventDispatchThread()) {
       throw new IllegalStateException("Can't use this outside of EDT");
     }
@@ -160,7 +162,7 @@ public abstract class MigrationScriptsView {
             // ----
             checkMigrationResults();
           }
-        }, "migration refactoring", UndoConfirmationPolicy.REQUEST_CONFIRMATION);
+        }, "migration refactoring", UndoConfirmationPolicy.REQUEST_CONFIRMATION, myProject);
       }
     });
   }
