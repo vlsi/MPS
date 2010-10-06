@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.test;
 
 import com.intellij.ide.IdeEventQueue;
+import com.intellij.openapi.application.PathManager;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.generator.GenerationCacheContainer.FileBasedGenerationCacheContainer;
@@ -31,8 +32,10 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.testbench.Testbench;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.util.textdiff.TextDiffBuilder;
+import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -41,13 +44,15 @@ import org.junit.BeforeClass;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.*;
 
 /**
  * Evgeny Gryaznov, Oct 6, 2010
  */
 public class IncrementalGenerationTestBase {
-  private static boolean DEBUG = true;
+  private static boolean DEBUG = false;
 
   @BeforeClass
   public static void init() throws Exception {
@@ -67,13 +72,19 @@ public class IncrementalGenerationTestBase {
   protected void doTestIncrementalGeneration(final MPSProject p, final SModelDescriptor descr, final Runnable ...changeModel) throws IOException {
     GeneratorManager gm = p.getProject().getComponent(GeneratorManager.class);
 
-    File tmpFile = File.createTempFile("mps-generator-caches", "tmp");
-    tmpFile.deleteOnExit();
+    File generatorCaches = new File(PathManager.getSystemPath(), "mps-generator-test");
+    if(generatorCaches.exists()) {
+      Assert.assertTrue(FileUtil.delete(generatorCaches));
+    }
+    Assert.assertTrue(generatorCaches.mkdir());
+
+    // Stage 0. Save model content.
+    byte[] content = readContent(((EditableSModelDescriptor)descr).getModelFile());
 
     // Stage 1. Regenerate
 
     GenerationOptions options = GenerationOptions.getDefaults()
-      .rebuildAll(true).strictMode(true).reporting(true, true, false, 2).incremental(true, new FileBasedGenerationCacheContainer(tmpFile)).create();
+      .rebuildAll(true).strictMode(true).reporting(true, true, false, 2).incremental(true, new FileBasedGenerationCacheContainer(generatorCaches)).create();
     IncrementalTestGenerationHandler generationHandler = new IncrementalTestGenerationHandler();
     gm.generateModels(
       Collections.singletonList(descr), ModuleContext.create(descr, p.getProject()),
@@ -82,23 +93,46 @@ public class IncrementalGenerationTestBase {
 
     assertNoDiff(generationHandler.getExistingContent(), generationHandler.getGeneratedContent());
 
-    // Stage 2. Modify model
-    Map<String, String> incrementalGenerationResults = null;
-    List<Long> time = new ArrayList<Long>();
-    Assert.assertTrue(changeModel.length > 0);
-    for(final Runnable r : changeModel) {
+    try {
+      // Stage 2. Modify model
+      Map<String, String> incrementalGenerationResults = null;
+      List<Long> time = new ArrayList<Long>();
+      Assert.assertTrue(changeModel.length > 0);
+      for(final Runnable r : changeModel) {
 
-      ThreadUtils.runInUIThreadAndWait(new Runnable(){
-        @Override
-        public void run() {
-          ModelAccess.instance().runWriteActionInCommand(r, p.getProject());
-        }
-      });
+        ThreadUtils.runInUIThreadAndWait(new Runnable(){
+          @Override
+          public void run() {
+            ModelAccess.instance().runWriteActionInCommand(r, p.getProject());
+            ModelAccess.instance().runWriteAction(new Runnable(){
+              @Override
+              public void run() {
+                ((EditableSModelDescriptor)descr).save();
+              }
+            });
+          }
+        });
 
-      // Stage 3. Generate incrementally
+        // Stage 3. Generate incrementally
+
+        options = GenerationOptions.getDefaults()
+          .rebuildAll(false).strictMode(true).reporting(true, true, false, 2).incremental(true, new FileBasedGenerationCacheContainer(generatorCaches)).create();
+        generationHandler = new IncrementalTestGenerationHandler(incrementalGenerationResults);
+        long start = System.nanoTime();
+        gm.generateModels(
+          Collections.singletonList(descr), ModuleContext.create(descr, p.getProject()),
+          generationHandler,
+          new EmptyProgressIndicator(), generationHandler.getMessageHandler(), options);
+        time.add(System.nanoTime() - start);
+
+        incrementalGenerationResults = generationHandler.getGeneratedContent();
+        assertDiff(generationHandler.getExistingContent(), incrementalGenerationResults, 1);
+      }
+
+      // Stage 4. Regenerate. Check incremental results.
 
       options = GenerationOptions.getDefaults()
-        .rebuildAll(false).strictMode(true).reporting(true, true, false, 2).incremental(true, new FileBasedGenerationCacheContainer(tmpFile)).create();
+        .rebuildAll(true).strictMode(true).reporting(true, true, false, 2).incremental(true, new FileBasedGenerationCacheContainer(generatorCaches)).create();
       generationHandler = new IncrementalTestGenerationHandler(incrementalGenerationResults);
       long start = System.nanoTime();
       gm.generateModels(
@@ -107,43 +141,30 @@ public class IncrementalGenerationTestBase {
         new EmptyProgressIndicator(), generationHandler.getMessageHandler(), options);
       time.add(System.nanoTime() - start);
 
-      incrementalGenerationResults = generationHandler.getGeneratedContent();
-      assertDiff(generationHandler.getExistingContent(), incrementalGenerationResults, 1);
-    }
+      assertNoDiff(generationHandler.getGeneratedContent(), incrementalGenerationResults);
 
-    // Stage 4. Regenerate. Check incremental results.
-
-    options = GenerationOptions.getDefaults()
-      .rebuildAll(true).strictMode(true).reporting(true, true, false, 2).incremental(true, new FileBasedGenerationCacheContainer(tmpFile)).create();
-    generationHandler = new IncrementalTestGenerationHandler(incrementalGenerationResults);
-    long start = System.nanoTime();
-    gm.generateModels(
-      Collections.singletonList(descr), ModuleContext.create(descr, p.getProject()),
-      generationHandler,
-      new EmptyProgressIndicator(), generationHandler.getMessageHandler(), options);
-    time.add(System.nanoTime() - start);
-
-    assertNoDiff(generationHandler.getGeneratedContent(), incrementalGenerationResults);
-
-    ThreadUtils.runInUIThreadAndWait(new Runnable(){
-      @Override
-      public void run() {
-        ModelAccess.instance().runWriteAction(new Runnable() {
-          @Override
-          public void run() {
-            ((EditableSModelDescriptor)descr).reloadFromDisk();
-          }
-        });
+      if(DEBUG) {
+        long regen = time.remove(time.size() - 1);
+        System.out.print("Full cycle: " + regen/1000000/1000.);
+        for(long l : time) {
+          System.out.print(", incremental: " + l/1000000/1000.);
+        }
+        System.out.println();
       }
-    });
+    } finally {
+      writeContent(((EditableSModelDescriptor)descr).getModelFile(), content);
 
-    if(DEBUG) {
-      long regen = time.remove(time.size() - 1);
-      System.out.print("Full cycle: " + regen/1000000/1000.);
-      for(long l : time) {
-        System.out.print(", incremental: " + l/1000000/1000.);
-      }
-      System.out.println();
+      ThreadUtils.runInUIThreadAndWait(new Runnable(){
+        @Override
+        public void run() {
+          ModelAccess.instance().runWriteAction(new Runnable() {
+            @Override
+            public void run() {
+              ((EditableSModelDescriptor)descr).reloadFromDisk();
+            }
+          });
+        }
+      });
     }
   }
 
@@ -238,5 +259,27 @@ public class IncrementalGenerationTestBase {
       }
     }
     Assert.assertTrue("At least " + numberOfChanges + " are required (have " + changes + ")", changes >= numberOfChanges);
+  }
+
+  private static void writeContent(IFile modelFile, byte[] content) {
+    try {
+      OutputStream outputStream = modelFile.openOutputStream();
+      outputStream.write(content);
+      outputStream.close();
+    } catch (IOException e) {
+      Assert.fail(e.getMessage());
+    }
+  }
+
+  private static byte[] readContent(IFile file) {
+    byte[] b = new byte[(int) file.length()];
+    try {
+      InputStream inputStream = file.openInputStream();
+      Assert.assertEquals(inputStream.read(b), b.length);
+      return b;
+    } catch (IOException e) {
+      Assert.fail(e.getMessage());
+      return null;
+    }
   }
 }

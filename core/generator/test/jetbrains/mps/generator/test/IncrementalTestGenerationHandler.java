@@ -41,9 +41,7 @@ import org.jdom.Document;
 import org.jdom.Element;
 import org.junit.Assert;
 
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.StringWriter;
+import java.io.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -115,8 +113,9 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
 
     if (status.isOk()) {
       myFilesDir = FileGenerationUtil.getDefaultOutputDir(inputModel, targetDir);
+      IFile cachesDir = FileGenerationUtil.getDefaultOutputDir(inputModel, FileGenerationUtil.getCachesDir(targetDir));
 
-      StreamHandler streamHandler = new CollectingStreamHandler();
+      StreamHandler streamHandler = new CollectingStreamHandler(cachesDir);
       try {
         boolean result = new TextGenerator(streamHandler,
           //ModelGenerationStatusManager.getInstance().getCacheGenerator(),
@@ -144,6 +143,12 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
 
   public class CollectingStreamHandler implements StreamHandler {
 
+    private final IFile myCaches;
+
+    public CollectingStreamHandler(IFile caches) {
+      myCaches = caches;
+    }
+
     @Override
     public void saveStream(String name, String content, boolean isCache) {
       if(!isCache) {
@@ -158,6 +163,12 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
           StringWriter writer = new StringWriter();
           JDOMUtil.writeDocument(new Document(content), writer);
           saveStream(name, writer.toString(), isCache);
+        } catch (IOException e) {
+          Assert.fail(e.toString());
+        }
+      } else if(name.equals(".generated")) {
+        try {
+          JDOMUtil.writeDocument(new Document(content), myCaches.child(name));
         } catch (IOException e) {
           Assert.fail(e.toString());
         }
