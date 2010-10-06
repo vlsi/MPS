@@ -33,14 +33,12 @@ public class LanguageRenamer {
   private Project myProject;
   private Language myLanguage;
   private String myNewName;
-  private RefactoringProcessor myProcessor;
   private RefactoringContext myContext = new RefactoringContext(OldRefactoringAdapter.createAdapterFor(new MyRefactoring()));
 
   public LanguageRenamer(Project project, Language language, String newName) {
     myProject = project;
     myLanguage = language;
     myNewName = newName;
-    myProcessor = new RefactoringProcessor();
   }
 
   public void rename(boolean deleteOldFiles) {
@@ -86,9 +84,8 @@ public class LanguageRenamer {
     myLanguage.setLanguageDescriptor(descriptor, false);
     myLanguage.save();
 
-//    myProcessor.writeIntoLog(structure, myContext);
-    myContext.getStructureModificationData().addDependencyModel((EditableSModelDescriptor) structure);
-    RefactoringProcessor.updateRefactoringHistory(myContext);
+    myContext.getStructureModificationData().addDependencyModel(structure);
+    StructureModificationProcessor.updateRefactoringHistory(myContext);
     SModelRepository.getInstance().saveAll();
   }
 
@@ -114,7 +111,7 @@ public class LanguageRenamer {
   public void update() {
     updateReferences();
     EditableSModelDescriptor structure = myLanguage.getStructureModelDescriptor();
-    myProcessor.updateLoadedModels(structure.getSModelReference(), structure, myContext);
+    StructureModificationProcessor.updateLoadedModels(structure.getSModelReference(), structure, myContext);
   }
 
   private void updateReferences() {

@@ -39,7 +39,7 @@ import java.util.List;
 /**
  * Evgeny Gryaznov, Aug 25, 2010
  */
-public class RefactoringFacade extends RefactoringProcessor {
+public class RefactoringFacade extends StructureModificationProcessor {
 
   public void execute(final IRefactoring refactoring, final RefactoringContext refactoringContext) {
     refactoringContext.setRefactoring(refactoring);

@@ -330,7 +330,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor implements Edi
 
   protected SModel loadModel() {
     SModel result = myModelRootManager.loadModel(this);
-    if (RefactoringProcessor.updateModelOnLoad(result)) {
+    if (StructureModificationProcessor.updateModelOnLoad(result)) {
       IFile modelFile = getModelFile();
       if (modelFile != null && !modelFile.isReadOnly()) {
         SModelRepository.getInstance().markChanged(this, true);

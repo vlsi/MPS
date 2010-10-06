@@ -24,8 +24,8 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Set;
 
-public class RefactoringProcessor {
-  protected static final Logger LOG = Logger.getLogger(RefactoringProcessor.class);
+public class StructureModificationProcessor {
+  protected static final Logger LOG = Logger.getLogger(StructureModificationProcessor.class);
 
   public static void updateLoadedModels(SModelReference initialModelReference, EditableSModelDescriptor model, RefactoringContext refactoringContext) {
     for (SModelDescriptor anotherDescriptor : SModelRepository.getInstance().getModelDescriptors()) {
@@ -95,7 +95,6 @@ public class RefactoringProcessor {
     assert !context.isLocal();
 
     for (StructureModificationData.Dependency d : context.getStructureModificationData().getDependencies()) {
-//      EditableSModelDescriptor model = (EditableSModelDescriptor) context.getCurrentScope().getModelDescriptor(d.getModelReference());
       EditableSModelDescriptor model = (EditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(d.getModelReference());
       model.getSModel(); // ensure model is loaded
       model.getRefactoringHistory().addStructureModificationData(context.getStructureModificationData());
@@ -148,21 +147,9 @@ public class RefactoringProcessor {
       RefactoringHistory refactoringHistory = usedModelDescriptor.getRefactoringHistory();
       for (StructureModificationData data : refactoringHistory.getDataList()) {
         if (data.getModelVersion() <= usedVersion) continue;
-
-        playRefactoring(model, data);
-        played = true;
-/*
-        IRefactoring refactoring = refactoringContext.getRefactoring();
-        if (!(refactoring instanceof ILoggableRefactoring)) {
-          LOG.error("Non-loggable refactoring was logged: " + refactoring.getClass().getName());
-        } else {
-          try {
-            ((ILoggableRefactoring) refactoring).updateModel(model, refactoringContext);
-          } catch (Throwable t) {
-            LOG.error("An exception was thrown by refactoring " + refactoring.getUserFriendlyName() + " while updating model " + model.getLongName() + ". Models could have been corrupted.", t);
-          }
+        if (playRefactoring(model, data)) {
+          played = true;
         }
-*/
       }
       model.updateImportedModelUsedVersion(usedModelDescriptor.getSModelReference(), currentVersion);
       return played;
