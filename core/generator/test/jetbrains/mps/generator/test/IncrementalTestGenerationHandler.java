@@ -189,7 +189,7 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
           break;
 
         case INFORMATION:
-          System.out.println(msg.getText());
+          //System.out.println(msg.getText());
           break;
       }
     }
