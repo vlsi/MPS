@@ -1243,8 +1243,8 @@
           </node>
           <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1239643276798">
             <link role="attributeDeclaration:22" targetNodeId="2v.353793545802813314" resolveInfo="eof" />
-            <node role="value:22" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239643282310">
-              <property name="value:21" value="add" />
+            <node role="value:22" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="3947325699953674190">
+              <property name="value:21" value="asis" />
             </node>
           </node>
         </node>
@@ -1264,8 +1264,8 @@
           </node>
           <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1239643284952">
             <link role="attributeDeclaration:22" targetNodeId="2v.353793545802813314" resolveInfo="eof" />
-            <node role="value:22" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239643284953">
-              <property name="value:21" value="add" />
+            <node role="value:22" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="3947325699953674191">
+              <property name="value:21" value="asis" />
             </node>
           </node>
           <node role="nodeMacro$attribute:22" type="jetbrains.mps.lang.generator.structure.IfMacro:2" id="1239643296241">
@@ -4051,8 +4051,8 @@
           </node>
           <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1239642274930">
             <link role="attributeDeclaration:22" targetNodeId="2v.353793545802813314" resolveInfo="eof" />
-            <node role="value:22" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="9063727853129536103">
-              <property name="value:21" value="add" />
+            <node role="value:22" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="3947325699953674187">
+              <property name="value:21" value="asis" />
             </node>
           </node>
           <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1239642297101">
@@ -8702,8 +8702,8 @@
           </node>
           <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1241440614771">
             <link role="attributeDeclaration:22" targetNodeId="2v.353793545802813314" resolveInfo="eof" />
-            <node role="value:22" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1241440614772">
-              <property name="value:21" value="asis" />
+            <node role="value:22" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="3947325699953674189">
+              <property name="value:21" value="remove" />
             </node>
           </node>
           <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1241440614773">
