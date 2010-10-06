@@ -16,7 +16,9 @@
 package jetbrains.mps.newTypesystem.states;
 
 import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
+import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.differences.mapPair.NonConcreteAdded;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.IWrapper;
 import jetbrains.mps.typesystem.inference.NodeWrapper;
 
@@ -59,7 +61,7 @@ public class NonConcrete {
     if (!wrapper.isConcrete()) {
       return false;
     }
-    if (isVariable(wrapper)) {
+    if (TypesUtil.isVariable(wrapper)) {
       return false;
     }
 
@@ -69,8 +71,10 @@ public class NonConcrete {
     return true;
   }
 
-  public boolean isVariable(IWrapper wrapper) {
-    return wrapper.getNode().getConceptFqName().equals(RuntimeTypeVariable.concept);
+
+
+  public void fillVariableDependencies(SNode node) {
+    
   }
 
   //----------------DEBUG

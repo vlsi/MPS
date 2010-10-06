@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.newTypesystem;
 
+import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.IWrapper;
 
@@ -31,6 +32,14 @@ public class TypesUtil {
     //if ()
 
     return left;
+  }
+
+  public static boolean isVariable(IWrapper wrapper) {
+    return RuntimeTypeVariable.concept.equals(wrapper.getNode().getConceptFqName());
+  }
+
+  public static boolean isType(IWrapper wrapper) {
+    return !isVariable(wrapper);
   }
 
 }

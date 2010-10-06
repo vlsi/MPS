@@ -20,6 +20,7 @@ import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.smodel.SNode;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -44,8 +45,13 @@ public class NodeMaps {
     myState.addDifference(new NodeMapDifference(node, myNodeToTypes));
   }
 
-  public void addNodeToError(SNode node, List<IErrorReporter> error) {
-    myNodesToErrors.put(node, error);
+  public void addNodeToError(SNode node, IErrorReporter error) {
+    List<IErrorReporter> errors = myNodesToErrors.get(node);
+    if (errors == null) {
+      errors = new LinkedList<IErrorReporter>();
+      myNodesToErrors.put(node, errors);
+    }
+    errors.add(error);
     myState.addDifference(new NodeMapDifference(node, myNodesToErrors));
   }
 

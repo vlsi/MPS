@@ -18,6 +18,8 @@ package jetbrains.mps.newTypesystem.states;
 
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.newTypesystem.differences.Difference;
+import jetbrains.mps.nodeEditor.IErrorReporter;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.IWrapper;
 
@@ -76,6 +78,14 @@ public class State {
     if (difference != null) {
       myTypeCheckingContext.addDifference(difference);
     }
+  }
+
+  public boolean isConcrete(IWrapper wrapper) {
+    return myNonConcrete.isConcrete(wrapper);
+  }
+
+  public void addError(SNode node, IErrorReporter error) {
+    myNodeMaps.addNodeToError(node, error);
   }
 
 

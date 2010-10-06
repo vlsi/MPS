@@ -56,8 +56,10 @@ public class Inequalities {
     if (subType == null || superType == null || subType.getNode() == superType.getNode()) {
       return;
     }
+    if (!myState.isConcrete(subType) || !myState.isConcrete(superType)) {
+      addSubTyping(subType, superType, isWeak, check, info);
+    }
     
-    addSubTyping(subType, superType, isWeak, check, info);
   }
 
   public void addSubTyping(IWrapper subType, IWrapper superType, boolean isWeak, boolean check, EquationInfo info) {
