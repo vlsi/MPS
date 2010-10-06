@@ -29,11 +29,20 @@ import java.io.IOException;
 public class ParallelGenerationMeasuringTest extends GenerationTestBase {
 
   @Test
+  public void testParallelEditor() throws IOException {
+    final MPSProject p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/core/baseLanguage/baseLanguage/baseLanguage.mpr"));
+    final SModelDescriptor descr = findModel(p, "jetbrains.mps.baseLanguage.editor");
+
+    doMeasureParallelGeneration(p, descr, 4);
+    cleanup(p);
+  }
+
+  @Test
   public void testParallelIdeActions() throws IOException {
     final MPSProject p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/workbench/workbench.mpr"));
     final SModelDescriptor descr = findModel(p, "jetbrains.mps.ide.actions");
 
-    doMeasureParallelGeneration(p, descr, 1);
+    doMeasureParallelGeneration(p, descr, 4);
     cleanup(p);
   }
 }
