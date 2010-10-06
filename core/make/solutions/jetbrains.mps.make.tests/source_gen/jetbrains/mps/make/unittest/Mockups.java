@@ -6,7 +6,6 @@ import jetbrains.mps.make.runtime.IFacet;
 import org.jmock.Mockery;
 import org.jmock.Expectations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import java.util.Map;
 import jetbrains.mps.make.runtime.ITarget;
 
 public class Mockups {
@@ -33,7 +32,7 @@ public class Mockups {
         this.will(returnValue(Sequence.fromArray(new IFacet.Name[]{})));
         this.allowing(fct).optional();
         this.will(returnValue(Sequence.fromArray(new IFacet.Name[]{})));
-        this.allowing(fct).targets(this.with(aNonNull(Map.class)));
+        this.allowing(fct).targets();
         this.will(returnValue(Sequence.fromArray(new ITarget[]{})));
       }
     });

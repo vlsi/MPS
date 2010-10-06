@@ -47,7 +47,6 @@ public abstract class GraphAnalyzer<V> {
 
   public List<List<V>> findCycles() {
     Iterable<GraphAnalyzer.Wrapper<V>> ws = this.init(vertices());
-    this.topoSort(ws);
     return this.collectCycles(this.topoSort(ws));
   }
 
@@ -97,7 +96,9 @@ public abstract class GraphAnalyzer<V> {
         dfsVisit(w, new _FunctionTypes._void_P2_E0<GraphAnalyzer.Wrapper<V>, _FunctionTypes._void_P0_E0>() {
           public void invoke(GraphAnalyzer.Wrapper<V> ww, _FunctionTypes._void_P0_E0 cont) {
             cont.invoke();
-            w.successor(ww);
+            if (w != ww || Sequence.fromIterable(backward.invoke(ww)).contains(ww)) {
+              w.successor(ww);
+            }
           }
         }, backward);
         if (ListSequence.fromList(w.successors).isNotEmpty()) {
@@ -108,11 +109,13 @@ public abstract class GraphAnalyzer<V> {
     return cycles;
   }
 
-  private List<V> collectSuccessors(GraphAnalyzer.Wrapper<V> w, final List<V> list) {
+  private List<V> collectSuccessors(final GraphAnalyzer.Wrapper<V> w, final List<V> list) {
     ListSequence.fromList(w.successors).visitAll(new IVisitor<GraphAnalyzer.Wrapper<V>>() {
       public void visit(GraphAnalyzer.Wrapper<V> ww) {
-        ListSequence.fromList(list).addElement(ww.vertex);
-        collectSuccessors(ww, list);
+        if (w != ww) {
+          ListSequence.fromList(list).addElement(ww.vertex);
+          collectSuccessors(ww, list);
+        }
       }
     });
     return list;
@@ -164,9 +167,7 @@ public abstract class GraphAnalyzer<V> {
     }
 
     private void successor(GraphAnalyzer.Wrapper<V> succ) {
-      if (this != succ) {
-        ListSequence.fromList(this.successors).addElement(succ);
-      }
+      ListSequence.fromList(this.successors).addElement(succ);
     }
 
     private void enter() {

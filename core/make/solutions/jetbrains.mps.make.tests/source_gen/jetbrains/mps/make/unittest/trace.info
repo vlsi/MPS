@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="FacetRegistry_Test.java" startLine="12" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.make.unittest.FacetRegistry_Test" />
-  <unitInfo fileName="ScriptBuilder_Test.java" startLine="18" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.make.unittest.ScriptBuilder_Test" />
-  <unitInfo fileName="Cycles_Test.java" startLine="18" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.make.unittest.Cycles_Test" />
+  <unitInfo fileName="ScriptBuilder_Test.java" startLine="17" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.make.unittest.ScriptBuilder_Test" />
+  <unitInfo fileName="Cycles_Test.java" startLine="18" startPosition="0" endLine="140" endPosition="0" unitName="jetbrains.mps.make.unittest.Cycles_Test" />
   <root nodeId="1936544640085954009">
     <nodeInfo nodeId="1936544640085961475" fileName="Cycles_Test.java" startLine="19" startPosition="49" endLine="20" endPosition="46" />
     <nodeInfo nodeId="1936544640085961482" fileName="Cycles_Test.java" startLine="20" startPosition="46" endLine="21" endPosition="56" />
@@ -14,131 +14,151 @@
     <nodeInfo nodeId="1936544640085961512" fileName="Cycles_Test.java" startLine="30" startPosition="29" endLine="31" endPosition="48" />
     <nodeInfo nodeId="1936544640085961577" fileName="Cycles_Test.java" startLine="31" startPosition="48" endLine="32" endPosition="64" />
     <nodeInfo nodeId="1936544640085961588" fileName="Cycles_Test.java" startLine="32" startPosition="64" endLine="33" endPosition="135" />
-    <nodeInfo nodeId="1936544640085961721" fileName="Cycles_Test.java" startLine="36" startPosition="48" endLine="37" endPosition="46" />
-    <nodeInfo nodeId="1936544640085961728" fileName="Cycles_Test.java" startLine="37" startPosition="46" endLine="38" endPosition="56" />
-    <nodeInfo nodeId="1936544640085961735" fileName="Cycles_Test.java" startLine="38" startPosition="56" endLine="39" endPosition="34" />
-    <nodeInfo nodeId="1936544640085961742" fileName="Cycles_Test.java" startLine="39" startPosition="34" endLine="40" endPosition="34" />
-    <nodeInfo nodeId="1936544640085961749" fileName="Cycles_Test.java" startLine="40" startPosition="34" endLine="41" endPosition="29" />
-    <nodeInfo nodeId="1936544640085961755" fileName="Cycles_Test.java" startLine="41" startPosition="29" endLine="42" endPosition="34" />
-    <nodeInfo nodeId="1936544640085961762" fileName="Cycles_Test.java" startLine="42" startPosition="34" endLine="43" endPosition="48" />
-    <nodeInfo nodeId="1936544640085961816" fileName="Cycles_Test.java" startLine="43" startPosition="48" endLine="44" endPosition="64" />
-    <nodeInfo nodeId="1936544640085961827" fileName="Cycles_Test.java" startLine="44" startPosition="64" endLine="45" endPosition="101" />
-    <nodeInfo nodeId="1936544640085961845" fileName="Cycles_Test.java" startLine="45" startPosition="101" endLine="46" endPosition="206" />
-    <nodeInfo nodeId="706015266664522555" fileName="Cycles_Test.java" startLine="49" startPosition="46" endLine="50" endPosition="46" />
-    <nodeInfo nodeId="706015266664522562" fileName="Cycles_Test.java" startLine="50" startPosition="46" endLine="51" endPosition="56" />
-    <nodeInfo nodeId="706015266664522569" fileName="Cycles_Test.java" startLine="51" startPosition="56" endLine="52" endPosition="29" />
-    <nodeInfo nodeId="706015266664522576" fileName="Cycles_Test.java" startLine="52" startPosition="29" endLine="53" endPosition="29" />
-    <nodeInfo nodeId="706015266664522583" fileName="Cycles_Test.java" startLine="53" startPosition="29" endLine="54" endPosition="29" />
-    <nodeInfo nodeId="5772228662489724248" fileName="Cycles_Test.java" startLine="56" startPosition="38" endLine="57" endPosition="17" />
-    <nodeInfo nodeId="706015266664522596" fileName="Cycles_Test.java" startLine="59" startPosition="14" endLine="60" endPosition="48" />
-    <nodeInfo nodeId="2611988743427252931" fileName="Cycles_Test.java" startLine="60" startPosition="48" endLine="61" endPosition="64" />
-    <nodeInfo nodeId="2611988743427252942" fileName="Cycles_Test.java" startLine="61" startPosition="64" endLine="62" endPosition="29" />
-    <nodeInfo nodeId="2611988743427252960" fileName="Cycles_Test.java" startLine="62" startPosition="29" endLine="63" endPosition="64" />
-    <nodeInfo nodeId="5772228662489724265" fileName="Cycles_Test.java" startLine="65" startPosition="39" endLine="66" endPosition="39" />
-    <nodeInfo nodeId="2611988743427252971" fileName="Cycles_Test.java" startLine="68" startPosition="13" endLine="69" endPosition="29" />
-    <nodeInfo nodeId="2611988743427252965" fileName="Cycles_Test.java" startLine="69" startPosition="29" endLine="70" endPosition="64" />
-    <nodeInfo nodeId="1936544640085961881" fileName="Cycles_Test.java" startLine="73" startPosition="50" endLine="74" endPosition="46" />
-    <nodeInfo nodeId="1936544640085961888" fileName="Cycles_Test.java" startLine="74" startPosition="46" endLine="75" endPosition="56" />
-    <nodeInfo nodeId="1936544640085961895" fileName="Cycles_Test.java" startLine="75" startPosition="56" endLine="76" endPosition="29" />
-    <nodeInfo nodeId="1936544640085961901" fileName="Cycles_Test.java" startLine="76" startPosition="29" endLine="77" endPosition="39" />
-    <nodeInfo nodeId="1936544640085961909" fileName="Cycles_Test.java" startLine="77" startPosition="39" endLine="78" endPosition="34" />
-    <nodeInfo nodeId="1936544640085961916" fileName="Cycles_Test.java" startLine="78" startPosition="34" endLine="79" endPosition="34" />
-    <nodeInfo nodeId="1936544640085961923" fileName="Cycles_Test.java" startLine="79" startPosition="34" endLine="80" endPosition="34" />
-    <nodeInfo nodeId="1936544640085961930" fileName="Cycles_Test.java" startLine="80" startPosition="34" endLine="81" endPosition="29" />
-    <nodeInfo nodeId="1936544640085961936" fileName="Cycles_Test.java" startLine="81" startPosition="29" endLine="82" endPosition="44" />
-    <nodeInfo nodeId="706015266664521857" fileName="Cycles_Test.java" startLine="82" startPosition="44" endLine="83" endPosition="29" />
-    <nodeInfo nodeId="706015266664521865" fileName="Cycles_Test.java" startLine="83" startPosition="29" endLine="84" endPosition="34" />
-    <nodeInfo nodeId="1936544640085961943" fileName="Cycles_Test.java" startLine="84" startPosition="34" endLine="85" endPosition="48" />
-    <nodeInfo nodeId="1936544640085961972" fileName="Cycles_Test.java" startLine="85" startPosition="48" endLine="86" endPosition="64" />
-    <nodeInfo nodeId="706015266664522124" fileName="Cycles_Test.java" startLine="86" startPosition="64" endLine="87" endPosition="206" />
-    <nodeInfo nodeId="706015266664522149" fileName="Cycles_Test.java" startLine="87" startPosition="206" endLine="88" endPosition="201" />
-    <nodeInfo nodeId="706015266664522163" fileName="Cycles_Test.java" startLine="88" startPosition="201" endLine="89" endPosition="211" />
-    <nodeInfo nodeId="8315466408454521903" fileName="Cycles_Test.java" startLine="92" startPosition="48" endLine="93" endPosition="46" />
-    <nodeInfo nodeId="8315466408454521910" fileName="Cycles_Test.java" startLine="93" startPosition="46" endLine="94" endPosition="56" />
-    <nodeInfo nodeId="8315466408454521917" fileName="Cycles_Test.java" startLine="94" startPosition="56" endLine="95" endPosition="44" />
-    <nodeInfo nodeId="8315466408454521923" fileName="Cycles_Test.java" startLine="95" startPosition="44" endLine="96" endPosition="44" />
-    <nodeInfo nodeId="8315466408454521931" fileName="Cycles_Test.java" startLine="96" startPosition="44" endLine="97" endPosition="39" />
-    <nodeInfo nodeId="8315466408454521938" fileName="Cycles_Test.java" startLine="97" startPosition="39" endLine="98" endPosition="34" />
-    <nodeInfo nodeId="8315466408454521945" fileName="Cycles_Test.java" startLine="98" startPosition="34" endLine="99" endPosition="29" />
-    <nodeInfo nodeId="8315466408454521952" fileName="Cycles_Test.java" startLine="99" startPosition="29" endLine="100" endPosition="29" />
-    <nodeInfo nodeId="8315466408454521958" fileName="Cycles_Test.java" startLine="100" startPosition="29" endLine="101" endPosition="39" />
-    <nodeInfo nodeId="8315466408454521967" fileName="Cycles_Test.java" startLine="101" startPosition="39" endLine="102" endPosition="29" />
-    <nodeInfo nodeId="8315466408454521973" fileName="Cycles_Test.java" startLine="102" startPosition="29" endLine="103" endPosition="34" />
-    <nodeInfo nodeId="8315466408454521984" fileName="Cycles_Test.java" startLine="103" startPosition="34" endLine="104" endPosition="48" />
-    <nodeInfo nodeId="8315466408454521995" fileName="Cycles_Test.java" startLine="104" startPosition="48" endLine="105" endPosition="64" />
-    <nodeInfo nodeId="4141757805202325644" fileName="Cycles_Test.java" startLine="105" startPosition="64" endLine="106" endPosition="141" />
-    <nodeInfo nodeId="4141757805202325664" fileName="Cycles_Test.java" startLine="108" startPosition="35" endLine="109" endPosition="80" />
-    <nodeInfo nodeId="4141757805202325685" fileName="Cycles_Test.java" startLine="111" startPosition="7" endLine="112" endPosition="142" />
-    <nodeInfo nodeId="5772228662489724291" fileName="Cycles_Test.java" startLine="114" startPosition="38" endLine="115" endPosition="17" />
-    <nodeInfo nodeId="4141757805202325714" fileName="Cycles_Test.java" startLine="119" startPosition="35" endLine="120" endPosition="81" />
+    <nodeInfo nodeId="5079576194953063259" fileName="Cycles_Test.java" startLine="36" startPosition="44" endLine="37" endPosition="46" />
+    <nodeInfo nodeId="5079576194953063266" fileName="Cycles_Test.java" startLine="37" startPosition="46" endLine="38" endPosition="56" />
+    <nodeInfo nodeId="5079576194953063273" fileName="Cycles_Test.java" startLine="38" startPosition="56" endLine="39" endPosition="29" />
+    <nodeInfo nodeId="5079576194953063315" fileName="Cycles_Test.java" startLine="39" startPosition="29" endLine="40" endPosition="48" />
+    <nodeInfo nodeId="5079576194953063323" fileName="Cycles_Test.java" startLine="40" startPosition="48" endLine="41" endPosition="64" />
+    <nodeInfo nodeId="5079576194953063328" fileName="Cycles_Test.java" startLine="41" startPosition="64" endLine="42" endPosition="130" />
+    <nodeInfo nodeId="5079576194953075020" fileName="Cycles_Test.java" startLine="42" startPosition="130" endLine="43" endPosition="29" />
+    <nodeInfo nodeId="5079576194953075026" fileName="Cycles_Test.java" startLine="43" startPosition="29" endLine="44" endPosition="49" />
+    <nodeInfo nodeId="5079576194953075034" fileName="Cycles_Test.java" startLine="44" startPosition="49" endLine="45" endPosition="65" />
+    <nodeInfo nodeId="5079576194953075529" fileName="Cycles_Test.java" startLine="45" startPosition="65" endLine="46" endPosition="0" />
+    <nodeInfo nodeId="5079576194953075524" fileName="Cycles_Test.java" startLine="46" startPosition="0" endLine="47" endPosition="269" />
+    <nodeInfo nodeId="5079576194953075019" fileName="Cycles_Test.java" startLine="47" startPosition="269" endLine="48" endPosition="0" />
+    <nodeInfo nodeId="1936544640085961721" fileName="Cycles_Test.java" startLine="51" startPosition="48" endLine="52" endPosition="46" />
+    <nodeInfo nodeId="1936544640085961728" fileName="Cycles_Test.java" startLine="52" startPosition="46" endLine="53" endPosition="56" />
+    <nodeInfo nodeId="1936544640085961735" fileName="Cycles_Test.java" startLine="53" startPosition="56" endLine="54" endPosition="34" />
+    <nodeInfo nodeId="1936544640085961742" fileName="Cycles_Test.java" startLine="54" startPosition="34" endLine="55" endPosition="34" />
+    <nodeInfo nodeId="1936544640085961749" fileName="Cycles_Test.java" startLine="55" startPosition="34" endLine="56" endPosition="29" />
+    <nodeInfo nodeId="1936544640085961755" fileName="Cycles_Test.java" startLine="56" startPosition="29" endLine="57" endPosition="34" />
+    <nodeInfo nodeId="1936544640085961762" fileName="Cycles_Test.java" startLine="57" startPosition="34" endLine="58" endPosition="48" />
+    <nodeInfo nodeId="1936544640085961816" fileName="Cycles_Test.java" startLine="58" startPosition="48" endLine="59" endPosition="64" />
+    <nodeInfo nodeId="1936544640085961827" fileName="Cycles_Test.java" startLine="59" startPosition="64" endLine="60" endPosition="101" />
+    <nodeInfo nodeId="1936544640085961845" fileName="Cycles_Test.java" startLine="60" startPosition="101" endLine="61" endPosition="206" />
+    <nodeInfo nodeId="706015266664522555" fileName="Cycles_Test.java" startLine="64" startPosition="46" endLine="65" endPosition="46" />
+    <nodeInfo nodeId="706015266664522562" fileName="Cycles_Test.java" startLine="65" startPosition="46" endLine="66" endPosition="56" />
+    <nodeInfo nodeId="706015266664522569" fileName="Cycles_Test.java" startLine="66" startPosition="56" endLine="67" endPosition="29" />
+    <nodeInfo nodeId="706015266664522576" fileName="Cycles_Test.java" startLine="67" startPosition="29" endLine="68" endPosition="29" />
+    <nodeInfo nodeId="706015266664522583" fileName="Cycles_Test.java" startLine="68" startPosition="29" endLine="69" endPosition="29" />
+    <nodeInfo nodeId="5772228662489724248" fileName="Cycles_Test.java" startLine="71" startPosition="38" endLine="72" endPosition="17" />
+    <nodeInfo nodeId="706015266664522596" fileName="Cycles_Test.java" startLine="74" startPosition="14" endLine="75" endPosition="48" />
+    <nodeInfo nodeId="2611988743427252931" fileName="Cycles_Test.java" startLine="75" startPosition="48" endLine="76" endPosition="64" />
+    <nodeInfo nodeId="2611988743427252942" fileName="Cycles_Test.java" startLine="76" startPosition="64" endLine="77" endPosition="29" />
+    <nodeInfo nodeId="2611988743427252960" fileName="Cycles_Test.java" startLine="77" startPosition="29" endLine="78" endPosition="64" />
+    <nodeInfo nodeId="5772228662489724265" fileName="Cycles_Test.java" startLine="80" startPosition="39" endLine="81" endPosition="39" />
+    <nodeInfo nodeId="2611988743427252971" fileName="Cycles_Test.java" startLine="83" startPosition="13" endLine="84" endPosition="29" />
+    <nodeInfo nodeId="2611988743427252965" fileName="Cycles_Test.java" startLine="84" startPosition="29" endLine="85" endPosition="64" />
+    <nodeInfo nodeId="1936544640085961881" fileName="Cycles_Test.java" startLine="88" startPosition="50" endLine="89" endPosition="46" />
+    <nodeInfo nodeId="1936544640085961888" fileName="Cycles_Test.java" startLine="89" startPosition="46" endLine="90" endPosition="56" />
+    <nodeInfo nodeId="1936544640085961895" fileName="Cycles_Test.java" startLine="90" startPosition="56" endLine="91" endPosition="29" />
+    <nodeInfo nodeId="1936544640085961901" fileName="Cycles_Test.java" startLine="91" startPosition="29" endLine="92" endPosition="39" />
+    <nodeInfo nodeId="1936544640085961909" fileName="Cycles_Test.java" startLine="92" startPosition="39" endLine="93" endPosition="34" />
+    <nodeInfo nodeId="1936544640085961916" fileName="Cycles_Test.java" startLine="93" startPosition="34" endLine="94" endPosition="34" />
+    <nodeInfo nodeId="1936544640085961923" fileName="Cycles_Test.java" startLine="94" startPosition="34" endLine="95" endPosition="34" />
+    <nodeInfo nodeId="1936544640085961930" fileName="Cycles_Test.java" startLine="95" startPosition="34" endLine="96" endPosition="29" />
+    <nodeInfo nodeId="1936544640085961936" fileName="Cycles_Test.java" startLine="96" startPosition="29" endLine="97" endPosition="44" />
+    <nodeInfo nodeId="706015266664521857" fileName="Cycles_Test.java" startLine="97" startPosition="44" endLine="98" endPosition="29" />
+    <nodeInfo nodeId="706015266664521865" fileName="Cycles_Test.java" startLine="98" startPosition="29" endLine="99" endPosition="34" />
+    <nodeInfo nodeId="1936544640085961943" fileName="Cycles_Test.java" startLine="99" startPosition="34" endLine="100" endPosition="48" />
+    <nodeInfo nodeId="1936544640085961972" fileName="Cycles_Test.java" startLine="100" startPosition="48" endLine="101" endPosition="64" />
+    <nodeInfo nodeId="706015266664522124" fileName="Cycles_Test.java" startLine="101" startPosition="64" endLine="102" endPosition="206" />
+    <nodeInfo nodeId="706015266664522149" fileName="Cycles_Test.java" startLine="102" startPosition="206" endLine="103" endPosition="201" />
+    <nodeInfo nodeId="706015266664522163" fileName="Cycles_Test.java" startLine="103" startPosition="201" endLine="104" endPosition="211" />
+    <nodeInfo nodeId="8315466408454521903" fileName="Cycles_Test.java" startLine="107" startPosition="48" endLine="108" endPosition="46" />
+    <nodeInfo nodeId="8315466408454521910" fileName="Cycles_Test.java" startLine="108" startPosition="46" endLine="109" endPosition="56" />
+    <nodeInfo nodeId="8315466408454521917" fileName="Cycles_Test.java" startLine="109" startPosition="56" endLine="110" endPosition="44" />
+    <nodeInfo nodeId="8315466408454521923" fileName="Cycles_Test.java" startLine="110" startPosition="44" endLine="111" endPosition="44" />
+    <nodeInfo nodeId="8315466408454521931" fileName="Cycles_Test.java" startLine="111" startPosition="44" endLine="112" endPosition="39" />
+    <nodeInfo nodeId="8315466408454521938" fileName="Cycles_Test.java" startLine="112" startPosition="39" endLine="113" endPosition="34" />
+    <nodeInfo nodeId="8315466408454521945" fileName="Cycles_Test.java" startLine="113" startPosition="34" endLine="114" endPosition="29" />
+    <nodeInfo nodeId="8315466408454521952" fileName="Cycles_Test.java" startLine="114" startPosition="29" endLine="115" endPosition="29" />
+    <nodeInfo nodeId="8315466408454521958" fileName="Cycles_Test.java" startLine="115" startPosition="29" endLine="116" endPosition="39" />
+    <nodeInfo nodeId="8315466408454521967" fileName="Cycles_Test.java" startLine="116" startPosition="39" endLine="117" endPosition="29" />
+    <nodeInfo nodeId="8315466408454521973" fileName="Cycles_Test.java" startLine="117" startPosition="29" endLine="118" endPosition="34" />
+    <nodeInfo nodeId="8315466408454521984" fileName="Cycles_Test.java" startLine="118" startPosition="34" endLine="119" endPosition="48" />
+    <nodeInfo nodeId="8315466408454521995" fileName="Cycles_Test.java" startLine="119" startPosition="48" endLine="120" endPosition="64" />
+    <nodeInfo nodeId="4141757805202325644" fileName="Cycles_Test.java" startLine="120" startPosition="64" endLine="121" endPosition="141" />
+    <nodeInfo nodeId="4141757805202325664" fileName="Cycles_Test.java" startLine="123" startPosition="35" endLine="124" endPosition="80" />
+    <nodeInfo nodeId="4141757805202325685" fileName="Cycles_Test.java" startLine="126" startPosition="7" endLine="127" endPosition="142" />
+    <nodeInfo nodeId="5772228662489724291" fileName="Cycles_Test.java" startLine="129" startPosition="38" endLine="130" endPosition="17" />
+    <nodeInfo nodeId="4141757805202325714" fileName="Cycles_Test.java" startLine="134" startPosition="35" endLine="135" endPosition="81" />
     <nodeInfo nodeId="4141757805202323343" fileName="Cycles_Test.java" startLine="25" startPosition="81" endLine="29" endPosition="0" />
-    <nodeInfo nodeId="5772228662489724243" fileName="Cycles_Test.java" startLine="55" startPosition="67" endLine="59" endPosition="0" />
-    <nodeInfo nodeId="5772228662489724258" fileName="Cycles_Test.java" startLine="64" startPosition="68" endLine="68" endPosition="0" />
-    <nodeInfo nodeId="4141757805202325662" fileName="Cycles_Test.java" startLine="107" startPosition="81" endLine="111" endPosition="0" />
-    <nodeInfo nodeId="5772228662489724287" fileName="Cycles_Test.java" startLine="113" startPosition="67" endLine="117" endPosition="0" />
-    <nodeInfo nodeId="4141757805202325712" fileName="Cycles_Test.java" startLine="118" startPosition="81" endLine="122" endPosition="0" />
+    <nodeInfo nodeId="5772228662489724243" fileName="Cycles_Test.java" startLine="70" startPosition="67" endLine="74" endPosition="0" />
+    <nodeInfo nodeId="5772228662489724258" fileName="Cycles_Test.java" startLine="79" startPosition="68" endLine="83" endPosition="0" />
+    <nodeInfo nodeId="4141757805202325662" fileName="Cycles_Test.java" startLine="122" startPosition="81" endLine="126" endPosition="0" />
+    <nodeInfo nodeId="5772228662489724287" fileName="Cycles_Test.java" startLine="128" startPosition="67" endLine="132" endPosition="0" />
+    <nodeInfo nodeId="4141757805202325712" fileName="Cycles_Test.java" startLine="133" startPosition="81" endLine="137" endPosition="0" />
     <nodeInfo nodeId="4141757805202323331" fileName="Cycles_Test.java" startLine="24" startPosition="96" endLine="29" endPosition="7" />
-    <nodeInfo nodeId="5772228662489724236" fileName="Cycles_Test.java" startLine="54" startPosition="29" endLine="59" endPosition="14" />
-    <nodeInfo nodeId="5772228662489724254" fileName="Cycles_Test.java" startLine="63" startPosition="64" endLine="68" endPosition="13" />
-    <nodeInfo nodeId="4141757805202325653" fileName="Cycles_Test.java" startLine="106" startPosition="141" endLine="111" endPosition="7" />
-    <nodeInfo nodeId="5772228662489724283" fileName="Cycles_Test.java" startLine="112" startPosition="142" endLine="117" endPosition="14" />
-    <nodeInfo nodeId="4141757805202325703" fileName="Cycles_Test.java" startLine="117" startPosition="14" endLine="122" endPosition="7" />
-    <nodeInfo nodeId="1936544640085961717" fileName="Cycles_Test.java" startLine="35" startPosition="0" endLine="48" endPosition="0" />
+    <nodeInfo nodeId="5772228662489724236" fileName="Cycles_Test.java" startLine="69" startPosition="29" endLine="74" endPosition="14" />
+    <nodeInfo nodeId="5772228662489724254" fileName="Cycles_Test.java" startLine="78" startPosition="64" endLine="83" endPosition="13" />
+    <nodeInfo nodeId="4141757805202325653" fileName="Cycles_Test.java" startLine="121" startPosition="141" endLine="126" endPosition="7" />
+    <nodeInfo nodeId="5772228662489724283" fileName="Cycles_Test.java" startLine="127" startPosition="142" endLine="132" endPosition="14" />
+    <nodeInfo nodeId="4141757805202325703" fileName="Cycles_Test.java" startLine="132" startPosition="14" endLine="137" endPosition="7" />
+    <nodeInfo nodeId="1936544640085961717" fileName="Cycles_Test.java" startLine="50" startPosition="0" endLine="63" endPosition="0" />
+    <nodeInfo nodeId="5079576194953063250" fileName="Cycles_Test.java" startLine="35" startPosition="0" endLine="50" endPosition="0" />
     <nodeInfo nodeId="1936544640085961468" fileName="Cycles_Test.java" startLine="18" startPosition="43" endLine="35" endPosition="0" />
-    <nodeInfo nodeId="1936544640085961877" fileName="Cycles_Test.java" startLine="72" startPosition="0" endLine="91" endPosition="0" />
-    <nodeInfo nodeId="706015266664522551" fileName="Cycles_Test.java" startLine="48" startPosition="0" endLine="72" endPosition="0" />
-    <nodeInfo nodeId="8315466408454521898" fileName="Cycles_Test.java" startLine="91" startPosition="0" endLine="124" endPosition="0" />
+    <nodeInfo nodeId="1936544640085961877" fileName="Cycles_Test.java" startLine="87" startPosition="0" endLine="106" endPosition="0" />
+    <nodeInfo nodeId="706015266664522551" fileName="Cycles_Test.java" startLine="63" startPosition="0" endLine="87" endPosition="0" />
+    <nodeInfo nodeId="8315466408454521898" fileName="Cycles_Test.java" startLine="106" startPosition="0" endLine="139" endPosition="0" />
     <scopeInfo nodeId="4141757805202323344" fileName="Cycles_Test.java" startLine="26" startPosition="35" endLine="27" endPosition="80" />
-    <scopeInfo nodeId="5772228662489724244" fileName="Cycles_Test.java" startLine="56" startPosition="38" endLine="57" endPosition="17" />
-    <scopeInfo nodeId="5772228662489724261" fileName="Cycles_Test.java" startLine="65" startPosition="39" endLine="66" endPosition="39" />
-    <scopeInfo nodeId="4141757805202325663" fileName="Cycles_Test.java" startLine="108" startPosition="35" endLine="109" endPosition="80" />
-    <scopeInfo nodeId="5772228662489724290" fileName="Cycles_Test.java" startLine="114" startPosition="38" endLine="115" endPosition="17" />
-    <scopeInfo nodeId="4141757805202325713" fileName="Cycles_Test.java" startLine="119" startPosition="35" endLine="120" endPosition="81" />
+    <scopeInfo nodeId="5772228662489724244" fileName="Cycles_Test.java" startLine="71" startPosition="38" endLine="72" endPosition="17" />
+    <scopeInfo nodeId="5772228662489724261" fileName="Cycles_Test.java" startLine="80" startPosition="39" endLine="81" endPosition="39" />
+    <scopeInfo nodeId="4141757805202325663" fileName="Cycles_Test.java" startLine="123" startPosition="35" endLine="124" endPosition="80" />
+    <scopeInfo nodeId="5772228662489724290" fileName="Cycles_Test.java" startLine="129" startPosition="38" endLine="130" endPosition="17" />
+    <scopeInfo nodeId="4141757805202325713" fileName="Cycles_Test.java" startLine="134" startPosition="35" endLine="135" endPosition="81" />
     <scopeInfo nodeId="4141757805202323343" fileName="Cycles_Test.java" startLine="25" startPosition="81" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="5772228662489724243" fileName="Cycles_Test.java" startLine="55" startPosition="67" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="5772228662489724258" fileName="Cycles_Test.java" startLine="64" startPosition="68" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="4141757805202325662" fileName="Cycles_Test.java" startLine="107" startPosition="81" endLine="111" endPosition="0" />
-    <scopeInfo nodeId="5772228662489724287" fileName="Cycles_Test.java" startLine="113" startPosition="67" endLine="117" endPosition="0" />
-    <scopeInfo nodeId="4141757805202325712" fileName="Cycles_Test.java" startLine="118" startPosition="81" endLine="122" endPosition="0" />
-    <scopeInfo nodeId="1936544640085961720" fileName="Cycles_Test.java" startLine="36" startPosition="48" endLine="46" endPosition="206">
+    <scopeInfo nodeId="5772228662489724243" fileName="Cycles_Test.java" startLine="70" startPosition="67" endLine="74" endPosition="0" />
+    <scopeInfo nodeId="5772228662489724258" fileName="Cycles_Test.java" startLine="79" startPosition="68" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="4141757805202325662" fileName="Cycles_Test.java" startLine="122" startPosition="81" endLine="126" endPosition="0" />
+    <scopeInfo nodeId="5772228662489724287" fileName="Cycles_Test.java" startLine="128" startPosition="67" endLine="132" endPosition="0" />
+    <scopeInfo nodeId="4141757805202325712" fileName="Cycles_Test.java" startLine="133" startPosition="81" endLine="137" endPosition="0" />
+    <scopeInfo nodeId="1936544640085961720" fileName="Cycles_Test.java" startLine="51" startPosition="48" endLine="61" endPosition="206">
       <varInfo nodeId="1936544640085961763" varName="cycles" />
       <varInfo nodeId="1936544640085961722" varName="graph" />
       <varInfo nodeId="1936544640085961729" varName="cd" />
     </scopeInfo>
-    <scopeInfo nodeId="1936544640085961717" fileName="Cycles_Test.java" startLine="35" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="5079576194953063253" fileName="Cycles_Test.java" startLine="36" startPosition="44" endLine="48" endPosition="0">
+      <varInfo nodeId="5079576194953063316" varName="cycles" />
+      <varInfo nodeId="5079576194953063260" varName="graph" />
+      <varInfo nodeId="5079576194953075027" varName="cycles2" />
+      <varInfo nodeId="5079576194953063267" varName="cd" />
+    </scopeInfo>
+    <scopeInfo nodeId="1936544640085961717" fileName="Cycles_Test.java" startLine="50" startPosition="0" endLine="63" endPosition="0" />
     <scopeInfo nodeId="1936544640085961471" fileName="Cycles_Test.java" startLine="19" startPosition="49" endLine="33" endPosition="135">
       <varInfo nodeId="1936544640085961513" varName="cycles" />
       <varInfo nodeId="1936544640085961476" varName="graph" />
       <varInfo nodeId="4141757805202324110" varName="q" />
       <varInfo nodeId="1936544640085961483" varName="cd" />
     </scopeInfo>
-    <scopeInfo nodeId="1936544640085961880" fileName="Cycles_Test.java" startLine="73" startPosition="50" endLine="89" endPosition="211">
+    <scopeInfo nodeId="5079576194953063250" fileName="Cycles_Test.java" startLine="35" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="1936544640085961880" fileName="Cycles_Test.java" startLine="88" startPosition="50" endLine="104" endPosition="211">
       <varInfo nodeId="1936544640085961944" varName="cycles" />
       <varInfo nodeId="1936544640085961882" varName="graph" />
       <varInfo nodeId="1936544640085961889" varName="cd" />
     </scopeInfo>
     <scopeInfo nodeId="1936544640085961468" fileName="Cycles_Test.java" startLine="18" startPosition="43" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="1936544640085961877" fileName="Cycles_Test.java" startLine="72" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="706015266664522554" fileName="Cycles_Test.java" startLine="49" startPosition="46" endLine="70" endPosition="64">
+    <scopeInfo nodeId="1936544640085961877" fileName="Cycles_Test.java" startLine="87" startPosition="0" endLine="106" endPosition="0" />
+    <scopeInfo nodeId="706015266664522554" fileName="Cycles_Test.java" startLine="64" startPosition="46" endLine="85" endPosition="64">
       <varInfo nodeId="706015266664522597" varName="cycles" />
       <varInfo nodeId="706015266664522556" varName="graph" />
       <varInfo nodeId="706015266664522563" varName="cd" />
     </scopeInfo>
-    <scopeInfo nodeId="706015266664522551" fileName="Cycles_Test.java" startLine="48" startPosition="0" endLine="72" endPosition="0" />
-    <scopeInfo nodeId="8315466408454521901" fileName="Cycles_Test.java" startLine="92" startPosition="48" endLine="122" endPosition="7">
+    <scopeInfo nodeId="706015266664522551" fileName="Cycles_Test.java" startLine="63" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="8315466408454521901" fileName="Cycles_Test.java" startLine="107" startPosition="48" endLine="137" endPosition="7">
       <varInfo nodeId="8315466408454521985" varName="cycles" />
       <varInfo nodeId="8315466408454521904" varName="graph" />
       <varInfo nodeId="4141757805202325645" varName="q" />
       <varInfo nodeId="4141757805202325686" varName="qq" />
       <varInfo nodeId="8315466408454521911" varName="cd" />
     </scopeInfo>
-    <scopeInfo nodeId="8315466408454521898" fileName="Cycles_Test.java" startLine="91" startPosition="0" endLine="124" endPosition="0" />
+    <scopeInfo nodeId="8315466408454521898" fileName="Cycles_Test.java" startLine="106" startPosition="0" endLine="139" endPosition="0" />
     <unitInfo nodeId="4141757805202323343" fileName="Cycles_Test.java" startLine="25" startPosition="61" endLine="29" endPosition="5" unitName="jetbrains.mps.make.unittest.Cycles_Test$1" />
-    <unitInfo nodeId="5772228662489724243" fileName="Cycles_Test.java" startLine="55" startPosition="19" endLine="59" endPosition="5" unitName="jetbrains.mps.make.unittest.Cycles_Test$2" />
-    <unitInfo nodeId="5772228662489724258" fileName="Cycles_Test.java" startLine="64" startPosition="19" endLine="68" endPosition="5" unitName="jetbrains.mps.make.unittest.Cycles_Test$3" />
-    <unitInfo nodeId="4141757805202325662" fileName="Cycles_Test.java" startLine="107" startPosition="61" endLine="111" endPosition="5" unitName="jetbrains.mps.make.unittest.Cycles_Test$4" />
-    <unitInfo nodeId="5772228662489724287" fileName="Cycles_Test.java" startLine="113" startPosition="19" endLine="117" endPosition="5" unitName="jetbrains.mps.make.unittest.Cycles_Test$5" />
-    <unitInfo nodeId="4141757805202325712" fileName="Cycles_Test.java" startLine="118" startPosition="61" endLine="122" endPosition="5" unitName="jetbrains.mps.make.unittest.Cycles_Test$6" />
+    <unitInfo nodeId="5772228662489724243" fileName="Cycles_Test.java" startLine="70" startPosition="19" endLine="74" endPosition="5" unitName="jetbrains.mps.make.unittest.Cycles_Test$2" />
+    <unitInfo nodeId="5772228662489724258" fileName="Cycles_Test.java" startLine="79" startPosition="19" endLine="83" endPosition="5" unitName="jetbrains.mps.make.unittest.Cycles_Test$3" />
+    <unitInfo nodeId="4141757805202325662" fileName="Cycles_Test.java" startLine="122" startPosition="61" endLine="126" endPosition="5" unitName="jetbrains.mps.make.unittest.Cycles_Test$4" />
+    <unitInfo nodeId="5772228662489724287" fileName="Cycles_Test.java" startLine="128" startPosition="19" endLine="132" endPosition="5" unitName="jetbrains.mps.make.unittest.Cycles_Test$5" />
+    <unitInfo nodeId="4141757805202325712" fileName="Cycles_Test.java" startLine="133" startPosition="61" endLine="137" endPosition="5" unitName="jetbrains.mps.make.unittest.Cycles_Test$6" />
   </root>
   <root nodeId="1936544640085955976">
     <nodeInfo nodeId="1936544640085955982" fileName="Graph.java" startLine="17" startPosition="23" endLine="18" endPosition="66" />
@@ -214,120 +234,120 @@
     <unitInfo nodeId="1936544640085955976" fileName="Graph.java" startLine="17" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.make.unittest.Graph" />
   </root>
   <root nodeId="3564492719942580100">
-    <nodeInfo nodeId="3564492719942580128" fileName="Mockups.java" startLine="16" startPosition="66" endLine="17" endPosition="56" />
-    <nodeInfo nodeId="3564492719942657245" fileName="Mockups.java" startLine="19" startPosition="7" endLine="20" endPosition="42" />
-    <nodeInfo nodeId="3564492719942657266" fileName="Mockups.java" startLine="20" startPosition="42" endLine="21" endPosition="54" />
-    <nodeInfo nodeId="3564492719942657278" fileName="Mockups.java" startLine="23" startPosition="7" endLine="24" endPosition="15" />
-    <nodeInfo nodeId="8895562589601122852" fileName="Mockups.java" startLine="29" startPosition="7" endLine="30" endPosition="38" />
-    <nodeInfo nodeId="8895562589601122988" fileName="Mockups.java" startLine="30" startPosition="38" endLine="31" endPosition="72" />
-    <nodeInfo nodeId="8895562589601122889" fileName="Mockups.java" startLine="31" startPosition="72" endLine="32" endPosition="38" />
-    <nodeInfo nodeId="8895562589601123004" fileName="Mockups.java" startLine="32" startPosition="38" endLine="33" endPosition="72" />
-    <nodeInfo nodeId="8895562589601122875" fileName="Mockups.java" startLine="33" startPosition="72" endLine="34" endPosition="38" />
-    <nodeInfo nodeId="8895562589601123014" fileName="Mockups.java" startLine="34" startPosition="38" endLine="35" endPosition="72" />
-    <nodeInfo nodeId="8895562589601123333" fileName="Mockups.java" startLine="35" startPosition="72" endLine="36" endPosition="67" />
-    <nodeInfo nodeId="8895562589601123351" fileName="Mockups.java" startLine="36" startPosition="67" endLine="37" endPosition="68" />
-    <nodeInfo nodeId="8963054271157683901" fileName="Mockups.java" startLine="42" startPosition="68" endLine="43" endPosition="58" />
-    <nodeInfo nodeId="8963054271157683919" fileName="Mockups.java" startLine="45" startPosition="7" endLine="46" endPosition="42" />
-    <nodeInfo nodeId="8963054271157683929" fileName="Mockups.java" startLine="46" startPosition="42" endLine="47" endPosition="55" />
-    <nodeInfo nodeId="8963054271157683937" fileName="Mockups.java" startLine="49" startPosition="7" endLine="50" endPosition="15" />
-    <nodeInfo nodeId="3564492719942580102" fileName="Mockups.java" startLine="12" startPosition="22" endLine="14" endPosition="3" />
-    <nodeInfo nodeId="3564492719942580137" fileName="Mockups.java" startLine="17" startPosition="56" endLine="23" endPosition="7" />
-    <nodeInfo nodeId="8963054271157683909" fileName="Mockups.java" startLine="43" startPosition="58" endLine="49" endPosition="7" />
-    <nodeInfo nodeId="3564492719942580106" fileName="Mockups.java" startLine="15" startPosition="0" endLine="26" endPosition="0" />
-    <nodeInfo nodeId="8963054271157683898" fileName="Mockups.java" startLine="41" startPosition="0" endLine="52" endPosition="0" />
-    <nodeInfo nodeId="8895562589601105630" fileName="Mockups.java" startLine="27" startPosition="66" endLine="39" endPosition="7" />
-    <nodeInfo nodeId="8895562589601101840" fileName="Mockups.java" startLine="26" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="3564492719942580105" fileName="Mockups.java" startLine="13" startPosition="20" endLine="13" endPosition="20" />
-    <scopeInfo nodeId="3564492719942580102" fileName="Mockups.java" startLine="12" startPosition="22" endLine="14" endPosition="3" />
-    <scopeInfo nodeId="3564492719942580357" fileName="Mockups.java" startLine="19" startPosition="7" endLine="21" endPosition="54" />
-    <scopeInfo nodeId="8963054271157683918" fileName="Mockups.java" startLine="45" startPosition="7" endLine="47" endPosition="55" />
-    <scopeInfo nodeId="3564492719942580109" fileName="Mockups.java" startLine="16" startPosition="66" endLine="24" endPosition="15">
+    <nodeInfo nodeId="3564492719942580128" fileName="Mockups.java" startLine="15" startPosition="66" endLine="16" endPosition="56" />
+    <nodeInfo nodeId="3564492719942657245" fileName="Mockups.java" startLine="18" startPosition="7" endLine="19" endPosition="42" />
+    <nodeInfo nodeId="3564492719942657266" fileName="Mockups.java" startLine="19" startPosition="42" endLine="20" endPosition="54" />
+    <nodeInfo nodeId="3564492719942657278" fileName="Mockups.java" startLine="22" startPosition="7" endLine="23" endPosition="15" />
+    <nodeInfo nodeId="8895562589601122852" fileName="Mockups.java" startLine="28" startPosition="7" endLine="29" endPosition="38" />
+    <nodeInfo nodeId="8895562589601122988" fileName="Mockups.java" startLine="29" startPosition="38" endLine="30" endPosition="72" />
+    <nodeInfo nodeId="8895562589601122889" fileName="Mockups.java" startLine="30" startPosition="72" endLine="31" endPosition="38" />
+    <nodeInfo nodeId="8895562589601123004" fileName="Mockups.java" startLine="31" startPosition="38" endLine="32" endPosition="72" />
+    <nodeInfo nodeId="8895562589601122875" fileName="Mockups.java" startLine="32" startPosition="72" endLine="33" endPosition="38" />
+    <nodeInfo nodeId="8895562589601123014" fileName="Mockups.java" startLine="33" startPosition="38" endLine="34" endPosition="72" />
+    <nodeInfo nodeId="8895562589601123333" fileName="Mockups.java" startLine="34" startPosition="72" endLine="35" endPosition="37" />
+    <nodeInfo nodeId="8895562589601123351" fileName="Mockups.java" startLine="35" startPosition="37" endLine="36" endPosition="68" />
+    <nodeInfo nodeId="8963054271157683901" fileName="Mockups.java" startLine="41" startPosition="68" endLine="42" endPosition="58" />
+    <nodeInfo nodeId="8963054271157683919" fileName="Mockups.java" startLine="44" startPosition="7" endLine="45" endPosition="42" />
+    <nodeInfo nodeId="8963054271157683929" fileName="Mockups.java" startLine="45" startPosition="42" endLine="46" endPosition="55" />
+    <nodeInfo nodeId="8963054271157683937" fileName="Mockups.java" startLine="48" startPosition="7" endLine="49" endPosition="15" />
+    <nodeInfo nodeId="3564492719942580102" fileName="Mockups.java" startLine="11" startPosition="22" endLine="13" endPosition="3" />
+    <nodeInfo nodeId="3564492719942580137" fileName="Mockups.java" startLine="16" startPosition="56" endLine="22" endPosition="7" />
+    <nodeInfo nodeId="8963054271157683909" fileName="Mockups.java" startLine="42" startPosition="58" endLine="48" endPosition="7" />
+    <nodeInfo nodeId="3564492719942580106" fileName="Mockups.java" startLine="14" startPosition="0" endLine="25" endPosition="0" />
+    <nodeInfo nodeId="8963054271157683898" fileName="Mockups.java" startLine="40" startPosition="0" endLine="51" endPosition="0" />
+    <nodeInfo nodeId="8895562589601105630" fileName="Mockups.java" startLine="26" startPosition="66" endLine="38" endPosition="7" />
+    <nodeInfo nodeId="8895562589601101840" fileName="Mockups.java" startLine="25" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="3564492719942580105" fileName="Mockups.java" startLine="12" startPosition="20" endLine="12" endPosition="20" />
+    <scopeInfo nodeId="3564492719942580102" fileName="Mockups.java" startLine="11" startPosition="22" endLine="13" endPosition="3" />
+    <scopeInfo nodeId="3564492719942580357" fileName="Mockups.java" startLine="18" startPosition="7" endLine="20" endPosition="54" />
+    <scopeInfo nodeId="8963054271157683918" fileName="Mockups.java" startLine="44" startPosition="7" endLine="46" endPosition="55" />
+    <scopeInfo nodeId="3564492719942580109" fileName="Mockups.java" startLine="15" startPosition="66" endLine="23" endPosition="15">
       <varInfo nodeId="3564492719942580129" varName="fct" />
     </scopeInfo>
-    <scopeInfo nodeId="8895562589601115948" fileName="Mockups.java" startLine="29" startPosition="7" endLine="37" endPosition="68" />
-    <scopeInfo nodeId="8963054271157683900" fileName="Mockups.java" startLine="42" startPosition="68" endLine="50" endPosition="15">
+    <scopeInfo nodeId="8895562589601115948" fileName="Mockups.java" startLine="28" startPosition="7" endLine="36" endPosition="68" />
+    <scopeInfo nodeId="8963054271157683900" fileName="Mockups.java" startLine="41" startPosition="68" endLine="49" endPosition="15">
       <varInfo nodeId="8963054271157683902" varName="trg" />
     </scopeInfo>
-    <scopeInfo nodeId="3564492719942580106" fileName="Mockups.java" startLine="15" startPosition="0" endLine="26" endPosition="0">
+    <scopeInfo nodeId="3564492719942580106" fileName="Mockups.java" startLine="14" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="3564492719942580113" varName="name" />
       <varInfo nodeId="3564492719942580111" varName="context" />
     </scopeInfo>
-    <scopeInfo nodeId="8963054271157683898" fileName="Mockups.java" startLine="41" startPosition="0" endLine="52" endPosition="0">
+    <scopeInfo nodeId="8963054271157683898" fileName="Mockups.java" startLine="40" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="8963054271157683942" varName="name" />
       <varInfo nodeId="8963054271157683940" varName="context" />
     </scopeInfo>
-    <scopeInfo nodeId="8895562589601101843" fileName="Mockups.java" startLine="27" startPosition="66" endLine="39" endPosition="7" />
-    <scopeInfo nodeId="8895562589601101840" fileName="Mockups.java" startLine="26" startPosition="0" endLine="41" endPosition="0">
+    <scopeInfo nodeId="8895562589601101843" fileName="Mockups.java" startLine="26" startPosition="66" endLine="38" endPosition="7" />
+    <scopeInfo nodeId="8895562589601101840" fileName="Mockups.java" startLine="25" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="8895562589601105625" varName="context" />
       <varInfo nodeId="8895562589601105627" varName="fct" />
     </scopeInfo>
-    <unitInfo nodeId="3564492719942580354" fileName="Mockups.java" startLine="18" startPosition="25" endLine="23" endPosition="5" unitName="jetbrains.mps.make.unittest.Mockups$1" />
-    <unitInfo nodeId="8963054271157683915" fileName="Mockups.java" startLine="44" startPosition="25" endLine="49" endPosition="5" unitName="jetbrains.mps.make.unittest.Mockups$3" />
-    <unitInfo nodeId="8895562589601115945" fileName="Mockups.java" startLine="28" startPosition="25" endLine="39" endPosition="5" unitName="jetbrains.mps.make.unittest.Mockups$2" />
-    <unitInfo nodeId="3564492719942580100" fileName="Mockups.java" startLine="12" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.make.unittest.Mockups" />
+    <unitInfo nodeId="3564492719942580354" fileName="Mockups.java" startLine="17" startPosition="25" endLine="22" endPosition="5" unitName="jetbrains.mps.make.unittest.Mockups$1" />
+    <unitInfo nodeId="8963054271157683915" fileName="Mockups.java" startLine="43" startPosition="25" endLine="48" endPosition="5" unitName="jetbrains.mps.make.unittest.Mockups$3" />
+    <unitInfo nodeId="8895562589601115945" fileName="Mockups.java" startLine="27" startPosition="25" endLine="38" endPosition="5" unitName="jetbrains.mps.make.unittest.Mockups$2" />
+    <unitInfo nodeId="3564492719942580100" fileName="Mockups.java" startLine="11" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.make.unittest.Mockups" />
   </root>
   <root nodeId="8963054271157682179">
-    <nodeInfo nodeId="8963054271157683437" fileName="ScriptBuilder_Test.java" startLine="18" startPosition="50" endLine="19" endPosition="26" />
-    <nodeInfo nodeId="8963054271157683440" fileName="ScriptBuilder_Test.java" startLine="19" startPosition="26" endLine="20" endPosition="26" />
-    <nodeInfo nodeId="8963054271157683564" fileName="ScriptBuilder_Test.java" startLine="22" startPosition="51" endLine="23" endPosition="44" />
-    <nodeInfo nodeId="1103977116241830513" fileName="ScriptBuilder_Test.java" startLine="25" startPosition="43" endLine="26" endPosition="27" />
-    <nodeInfo nodeId="8963054271157683576" fileName="ScriptBuilder_Test.java" startLine="28" startPosition="8" endLine="29" endPosition="45" />
-    <nodeInfo nodeId="8963054271157683583" fileName="ScriptBuilder_Test.java" startLine="29" startPosition="45" endLine="30" endPosition="32" />
-    <nodeInfo nodeId="8963054271157683589" fileName="ScriptBuilder_Test.java" startLine="30" startPosition="32" endLine="31" endPosition="29" />
-    <nodeInfo nodeId="1103977116241830492" fileName="ScriptBuilder_Test.java" startLine="36" startPosition="73" endLine="37" endPosition="49" />
-    <nodeInfo nodeId="8963054271157683445" fileName="ScriptBuilder_Test.java" startLine="38" startPosition="5" endLine="39" endPosition="32" />
-    <nodeInfo nodeId="8963054271157683432" fileName="ScriptBuilder_Test.java" startLine="39" startPosition="32" endLine="40" endPosition="21" />
-    <nodeInfo nodeId="8963054271157683435" fileName="ScriptBuilder_Test.java" startLine="44" startPosition="43" endLine="45" endPosition="18" />
-    <nodeInfo nodeId="8963054271157683456" fileName="ScriptBuilder_Test.java" startLine="45" startPosition="18" endLine="46" endPosition="33" />
-    <nodeInfo nodeId="8963054271157683463" fileName="ScriptBuilder_Test.java" startLine="46" startPosition="33" endLine="47" endPosition="56" />
-    <nodeInfo nodeId="8963054271157683469" fileName="ScriptBuilder_Test.java" startLine="47" startPosition="56" endLine="48" endPosition="54" />
-    <nodeInfo nodeId="8963054271157684038" fileName="ScriptBuilder_Test.java" startLine="48" startPosition="54" endLine="49" endPosition="56" />
-    <nodeInfo nodeId="8963054271157683475" fileName="ScriptBuilder_Test.java" startLine="49" startPosition="56" endLine="50" endPosition="62" />
-    <nodeInfo nodeId="8963054271157684044" fileName="ScriptBuilder_Test.java" startLine="50" startPosition="62" endLine="51" endPosition="64" />
-    <nodeInfo nodeId="8963054271157683491" fileName="ScriptBuilder_Test.java" startLine="53" startPosition="7" endLine="54" endPosition="39" />
-    <nodeInfo nodeId="8963054271157683499" fileName="ScriptBuilder_Test.java" startLine="54" startPosition="39" endLine="55" endPosition="82" />
-    <nodeInfo nodeId="8963054271157684051" fileName="ScriptBuilder_Test.java" startLine="55" startPosition="82" endLine="56" endPosition="63" />
-    <nodeInfo nodeId="8963054271157684075" fileName="ScriptBuilder_Test.java" startLine="56" startPosition="63" endLine="57" endPosition="67" />
-    <nodeInfo nodeId="8963054271157683508" fileName="ScriptBuilder_Test.java" startLine="57" startPosition="67" endLine="58" endPosition="43" />
-    <nodeInfo nodeId="8963054271157683516" fileName="ScriptBuilder_Test.java" startLine="58" startPosition="43" endLine="59" endPosition="98" />
-    <nodeInfo nodeId="8963054271157684093" fileName="ScriptBuilder_Test.java" startLine="59" startPosition="98" endLine="60" endPosition="67" />
-    <nodeInfo nodeId="8963054271157684104" fileName="ScriptBuilder_Test.java" startLine="60" startPosition="67" endLine="61" endPosition="71" />
-    <nodeInfo nodeId="8963054271157683526" fileName="ScriptBuilder_Test.java" startLine="63" startPosition="7" endLine="64" endPosition="48" />
-    <nodeInfo nodeId="8963054271157683531" fileName="ScriptBuilder_Test.java" startLine="64" startPosition="48" endLine="65" endPosition="47" />
-    <nodeInfo nodeId="8963054271157683536" fileName="ScriptBuilder_Test.java" startLine="65" startPosition="47" endLine="66" endPosition="51" />
-    <nodeInfo nodeId="8895562589601122903" fileName="ScriptBuilder_Test.java" startLine="66" startPosition="51" endLine="67" endPosition="37" />
-    <nodeInfo nodeId="8895562589601122910" fileName="ScriptBuilder_Test.java" startLine="67" startPosition="37" endLine="68" endPosition="36" />
-    <nodeInfo nodeId="8895562589601122914" fileName="ScriptBuilder_Test.java" startLine="68" startPosition="36" endLine="69" endPosition="40" />
-    <nodeInfo nodeId="8963054271157683541" fileName="ScriptBuilder_Test.java" startLine="69" startPosition="40" endLine="70" endPosition="54" />
-    <nodeInfo nodeId="1103977116241830482" fileName="ScriptBuilder_Test.java" startLine="35" startPosition="46" endLine="38" endPosition="5" />
-    <nodeInfo nodeId="1103977116241830509" fileName="ScriptBuilder_Test.java" startLine="24" startPosition="114" endLine="28" endPosition="0" />
-    <nodeInfo nodeId="8963054271157683569" fileName="ScriptBuilder_Test.java" startLine="23" startPosition="44" endLine="28" endPosition="8" />
-    <nodeInfo nodeId="8963054271157683421" fileName="ScriptBuilder_Test.java" startLine="33" startPosition="0" endLine="42" endPosition="0" />
-    <nodeInfo nodeId="8963054271157683558" fileName="ScriptBuilder_Test.java" startLine="21" startPosition="0" endLine="33" endPosition="0" />
-    <nodeInfo nodeId="8963054271157683481" fileName="ScriptBuilder_Test.java" startLine="51" startPosition="64" endLine="63" endPosition="7" />
-    <nodeInfo nodeId="8963054271157683426" fileName="ScriptBuilder_Test.java" startLine="42" startPosition="0" endLine="72" endPosition="0" />
-    <scopeInfo nodeId="1103977116241830510" fileName="ScriptBuilder_Test.java" startLine="25" startPosition="43" endLine="26" endPosition="27" />
-    <scopeInfo nodeId="1103977116241830485" fileName="ScriptBuilder_Test.java" startLine="36" startPosition="73" endLine="37" endPosition="49" />
-    <scopeInfo nodeId="1103977116241830482" fileName="ScriptBuilder_Test.java" startLine="35" startPosition="46" endLine="38" endPosition="5" />
-    <scopeInfo nodeId="1103977116241830509" fileName="ScriptBuilder_Test.java" startLine="24" startPosition="114" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="8963054271157683425" fileName="ScriptBuilder_Test.java" startLine="35" startPosition="46" endLine="40" endPosition="21" />
-    <scopeInfo nodeId="8963054271157683490" fileName="ScriptBuilder_Test.java" startLine="53" startPosition="7" endLine="61" endPosition="71" />
-    <scopeInfo nodeId="8963054271157683561" fileName="ScriptBuilder_Test.java" startLine="22" startPosition="51" endLine="31" endPosition="29">
+    <nodeInfo nodeId="8963054271157683437" fileName="ScriptBuilder_Test.java" startLine="17" startPosition="50" endLine="18" endPosition="26" />
+    <nodeInfo nodeId="8963054271157683440" fileName="ScriptBuilder_Test.java" startLine="18" startPosition="26" endLine="19" endPosition="26" />
+    <nodeInfo nodeId="8963054271157683564" fileName="ScriptBuilder_Test.java" startLine="21" startPosition="51" endLine="22" endPosition="44" />
+    <nodeInfo nodeId="1103977116241830513" fileName="ScriptBuilder_Test.java" startLine="24" startPosition="43" endLine="25" endPosition="27" />
+    <nodeInfo nodeId="8963054271157683576" fileName="ScriptBuilder_Test.java" startLine="27" startPosition="8" endLine="28" endPosition="45" />
+    <nodeInfo nodeId="8963054271157683583" fileName="ScriptBuilder_Test.java" startLine="28" startPosition="45" endLine="29" endPosition="32" />
+    <nodeInfo nodeId="8963054271157683589" fileName="ScriptBuilder_Test.java" startLine="29" startPosition="32" endLine="30" endPosition="29" />
+    <nodeInfo nodeId="1103977116241830492" fileName="ScriptBuilder_Test.java" startLine="35" startPosition="73" endLine="36" endPosition="49" />
+    <nodeInfo nodeId="8963054271157683445" fileName="ScriptBuilder_Test.java" startLine="37" startPosition="5" endLine="38" endPosition="32" />
+    <nodeInfo nodeId="8963054271157683432" fileName="ScriptBuilder_Test.java" startLine="38" startPosition="32" endLine="39" endPosition="21" />
+    <nodeInfo nodeId="8963054271157683435" fileName="ScriptBuilder_Test.java" startLine="43" startPosition="43" endLine="44" endPosition="18" />
+    <nodeInfo nodeId="8963054271157683456" fileName="ScriptBuilder_Test.java" startLine="44" startPosition="18" endLine="45" endPosition="33" />
+    <nodeInfo nodeId="8963054271157683463" fileName="ScriptBuilder_Test.java" startLine="45" startPosition="33" endLine="46" endPosition="56" />
+    <nodeInfo nodeId="8963054271157683469" fileName="ScriptBuilder_Test.java" startLine="46" startPosition="56" endLine="47" endPosition="54" />
+    <nodeInfo nodeId="8963054271157684038" fileName="ScriptBuilder_Test.java" startLine="47" startPosition="54" endLine="48" endPosition="56" />
+    <nodeInfo nodeId="8963054271157683475" fileName="ScriptBuilder_Test.java" startLine="48" startPosition="56" endLine="49" endPosition="62" />
+    <nodeInfo nodeId="8963054271157684044" fileName="ScriptBuilder_Test.java" startLine="49" startPosition="62" endLine="50" endPosition="64" />
+    <nodeInfo nodeId="8963054271157683491" fileName="ScriptBuilder_Test.java" startLine="52" startPosition="7" endLine="53" endPosition="39" />
+    <nodeInfo nodeId="8963054271157683499" fileName="ScriptBuilder_Test.java" startLine="53" startPosition="39" endLine="54" endPosition="82" />
+    <nodeInfo nodeId="8963054271157684051" fileName="ScriptBuilder_Test.java" startLine="54" startPosition="82" endLine="55" endPosition="38" />
+    <nodeInfo nodeId="8963054271157684075" fileName="ScriptBuilder_Test.java" startLine="55" startPosition="38" endLine="56" endPosition="67" />
+    <nodeInfo nodeId="8963054271157683508" fileName="ScriptBuilder_Test.java" startLine="56" startPosition="67" endLine="57" endPosition="43" />
+    <nodeInfo nodeId="8963054271157683516" fileName="ScriptBuilder_Test.java" startLine="57" startPosition="43" endLine="58" endPosition="98" />
+    <nodeInfo nodeId="8963054271157684093" fileName="ScriptBuilder_Test.java" startLine="58" startPosition="98" endLine="59" endPosition="42" />
+    <nodeInfo nodeId="8963054271157684104" fileName="ScriptBuilder_Test.java" startLine="59" startPosition="42" endLine="60" endPosition="71" />
+    <nodeInfo nodeId="8963054271157683526" fileName="ScriptBuilder_Test.java" startLine="62" startPosition="7" endLine="63" endPosition="48" />
+    <nodeInfo nodeId="8963054271157683531" fileName="ScriptBuilder_Test.java" startLine="63" startPosition="48" endLine="64" endPosition="47" />
+    <nodeInfo nodeId="8963054271157683536" fileName="ScriptBuilder_Test.java" startLine="64" startPosition="47" endLine="65" endPosition="51" />
+    <nodeInfo nodeId="8895562589601122903" fileName="ScriptBuilder_Test.java" startLine="65" startPosition="51" endLine="66" endPosition="37" />
+    <nodeInfo nodeId="8895562589601122910" fileName="ScriptBuilder_Test.java" startLine="66" startPosition="37" endLine="67" endPosition="36" />
+    <nodeInfo nodeId="8895562589601122914" fileName="ScriptBuilder_Test.java" startLine="67" startPosition="36" endLine="68" endPosition="40" />
+    <nodeInfo nodeId="8963054271157683541" fileName="ScriptBuilder_Test.java" startLine="68" startPosition="40" endLine="69" endPosition="54" />
+    <nodeInfo nodeId="1103977116241830482" fileName="ScriptBuilder_Test.java" startLine="34" startPosition="46" endLine="37" endPosition="5" />
+    <nodeInfo nodeId="1103977116241830509" fileName="ScriptBuilder_Test.java" startLine="23" startPosition="114" endLine="27" endPosition="0" />
+    <nodeInfo nodeId="8963054271157683569" fileName="ScriptBuilder_Test.java" startLine="22" startPosition="44" endLine="27" endPosition="8" />
+    <nodeInfo nodeId="8963054271157683421" fileName="ScriptBuilder_Test.java" startLine="32" startPosition="0" endLine="41" endPosition="0" />
+    <nodeInfo nodeId="8963054271157683558" fileName="ScriptBuilder_Test.java" startLine="20" startPosition="0" endLine="32" endPosition="0" />
+    <nodeInfo nodeId="8963054271157683481" fileName="ScriptBuilder_Test.java" startLine="50" startPosition="64" endLine="62" endPosition="7" />
+    <nodeInfo nodeId="8963054271157683426" fileName="ScriptBuilder_Test.java" startLine="41" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="1103977116241830510" fileName="ScriptBuilder_Test.java" startLine="24" startPosition="43" endLine="25" endPosition="27" />
+    <scopeInfo nodeId="1103977116241830485" fileName="ScriptBuilder_Test.java" startLine="35" startPosition="73" endLine="36" endPosition="49" />
+    <scopeInfo nodeId="1103977116241830482" fileName="ScriptBuilder_Test.java" startLine="34" startPosition="46" endLine="37" endPosition="5" />
+    <scopeInfo nodeId="1103977116241830509" fileName="ScriptBuilder_Test.java" startLine="23" startPosition="114" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="8963054271157683425" fileName="ScriptBuilder_Test.java" startLine="34" startPosition="46" endLine="39" endPosition="21" />
+    <scopeInfo nodeId="8963054271157683490" fileName="ScriptBuilder_Test.java" startLine="52" startPosition="7" endLine="60" endPosition="71" />
+    <scopeInfo nodeId="8963054271157683561" fileName="ScriptBuilder_Test.java" startLine="21" startPosition="51" endLine="30" endPosition="29">
       <varInfo nodeId="8963054271157683565" varName="scb" />
       <varInfo nodeId="8963054271157683584" varName="sc" />
     </scopeInfo>
-    <scopeInfo nodeId="8963054271157683421" fileName="ScriptBuilder_Test.java" startLine="33" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="8963054271157683558" fileName="ScriptBuilder_Test.java" startLine="21" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="8963054271157683430" fileName="ScriptBuilder_Test.java" startLine="44" startPosition="43" endLine="70" endPosition="54">
+    <scopeInfo nodeId="8963054271157683421" fileName="ScriptBuilder_Test.java" startLine="32" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="8963054271157683558" fileName="ScriptBuilder_Test.java" startLine="20" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="8963054271157683430" fileName="ScriptBuilder_Test.java" startLine="43" startPosition="43" endLine="69" endPosition="54">
       <varInfo nodeId="8963054271157683464" varName="fmake" />
       <varInfo nodeId="8963054271157683470" varName="fgen" />
       <varInfo nodeId="8963054271157683476" varName="ftextgen" />
       <varInfo nodeId="8963054271157684039" varName="tgen" />
       <varInfo nodeId="8963054271157684045" varName="ttextgen" />
     </scopeInfo>
-    <scopeInfo nodeId="8963054271157683426" fileName="ScriptBuilder_Test.java" startLine="42" startPosition="0" endLine="72" endPosition="0" />
-    <unitInfo nodeId="1103977116241830509" fileName="ScriptBuilder_Test.java" startLine="24" startPosition="80" endLine="28" endPosition="5" unitName="jetbrains.mps.make.unittest.ScriptBuilder_Test$1" />
-    <unitInfo nodeId="8963054271157683487" fileName="ScriptBuilder_Test.java" startLine="52" startPosition="25" endLine="63" endPosition="5" unitName="jetbrains.mps.make.unittest.ScriptBuilder_Test$2" />
+    <scopeInfo nodeId="8963054271157683426" fileName="ScriptBuilder_Test.java" startLine="41" startPosition="0" endLine="71" endPosition="0" />
+    <unitInfo nodeId="1103977116241830509" fileName="ScriptBuilder_Test.java" startLine="23" startPosition="80" endLine="27" endPosition="5" unitName="jetbrains.mps.make.unittest.ScriptBuilder_Test$1" />
+    <unitInfo nodeId="8963054271157683487" fileName="ScriptBuilder_Test.java" startLine="51" startPosition="25" endLine="62" endPosition="5" unitName="jetbrains.mps.make.unittest.ScriptBuilder_Test$2" />
   </root>
   <root nodeId="8963054271157683627">
     <nodeInfo nodeId="8963054271157683651" fileName="FacetRegistry_Test.java" startLine="12" startPosition="50" endLine="13" endPosition="26" />

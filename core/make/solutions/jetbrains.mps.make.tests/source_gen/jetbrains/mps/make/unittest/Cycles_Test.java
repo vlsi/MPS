@@ -33,6 +33,21 @@ public class Cycles_Test extends TestCase {
     Assert.assertEquals(ListSequence.fromListAndArray(new ArrayList<String>(), "A", "B"), ListSequence.fromList(cycles).getElement(0));
   }
 
+  public void test_self() throws Exception {
+    Graph<String> graph = new Graph<String>();
+    GraphAnalyzer<String> cd = graph.getCycleDetector();
+    graph.addEdges("A", "A");
+    List<List<String>> cycles = cd.findCycles();
+    Assert.assertSame(1, ListSequence.fromList(cycles).count());
+    Assert.assertEquals(ListSequence.fromListAndArray(new ArrayList<String>(), "A"), ListSequence.fromList(cycles).getElement(0));
+    graph.addEdges("B", "B");
+    List<List<String>> cycles2 = cd.findCycles();
+    Assert.assertSame(2, ListSequence.fromList(cycles2).count());
+
+    Assert.assertTrue(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList(), ListSequence.fromListAndArray(new ArrayList<String>(), "A"), ListSequence.fromListAndArray(new ArrayList<String>(), "B"))).disjunction(ListSequence.fromList(cycles2)).isEmpty());
+
+  }
+
   public void test_oneCycle() throws Exception {
     Graph<String> graph = new Graph<String>();
     GraphAnalyzer<String> cd = graph.getCycleDetector();

@@ -13,7 +13,6 @@ import jetbrains.mps.make.runtime.IScript;
 import junit.framework.Assert;
 import jetbrains.mps.make.runtime.internal.FacetRegistry;
 import org.jmock.Expectations;
-import java.util.Map;
 
 public class ScriptBuilder_Test extends TestCase {
   private Mockery context;
@@ -53,11 +52,11 @@ public class ScriptBuilder_Test extends TestCase {
       {
         atLeast(1).of(fgen).required();
         will(returnValue(Sequence.fromArray(new IFacet.Name[]{fmake.getName()})));
-        atLeast(1).of(fgen).targets(with(aNonNull(Map.class)));
+        atLeast(1).of(fgen).targets();
         will(returnValue(Sequence.fromArray(new ITarget[]{tgen})));
         atLeast(1).of(ftextgen).required();
         will(returnValue(Sequence.fromArray(new IFacet.Name[]{fmake.getName(), fgen.getName()})));
-        atLeast(1).of(ftextgen).targets(with(aNonNull(Map.class)));
+        atLeast(1).of(ftextgen).targets();
         will(returnValue(Sequence.fromArray(new ITarget[]{ttextgen})));
       }
     });
