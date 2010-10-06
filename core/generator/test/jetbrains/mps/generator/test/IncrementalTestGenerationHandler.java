@@ -23,6 +23,7 @@ import jetbrains.mps.generator.generationTypes.GenerationHandlerBase;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.generator.generationTypes.TextGenerator;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
+import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
@@ -45,9 +46,49 @@ import java.util.List;
 import java.util.Map;
 
 /**
+ * Records generation results as Map<String,String>
+ *
  * Evgeny Gryaznov, Oct 4, 2010
  */
 public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
+
+  private Map<String,String> generatedContent = new HashMap<String,String>();
+  private Map<String,String> existingContent;
+  private IFile myFilesDir;
+  private int timesCalled = 0;
+
+  public IncrementalTestGenerationHandler() {
+  }
+
+  public IncrementalTestGenerationHandler(Map<String,String> existingContent) {
+    this.existingContent = existingContent;
+  }
+
+  public Map<String, String> getGeneratedContent() {
+    return generatedContent;
+  }
+
+  public Map<String, String> getExistingContent() {
+    if(existingContent == null) {
+      existingContent = new HashMap<String,String>();
+      collectExistingContent(existingContent);
+    }
+    return existingContent;
+  }
+
+  private void collectExistingContent(Map<String, String> existingContent) {
+    if(myFilesDir != null) {
+      for (IFile f : myFilesDir.list()) {
+        try {
+          String s = FileUtil.read(new InputStreamReader(f.openInputStream()));
+          existingContent.put(f.getName(), s);
+        } catch (IOException e) {
+          throw new RuntimeException(e);
+        }
+      }
+      existingContent.remove(TraceInfoCache.TRACE_FILE_NAME);
+    }
+  }
 
   @Override
   public boolean canHandle(SModelDescriptor inputModel) {
@@ -63,12 +104,12 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
     IFile targetDir = FileSystem.getInstance().getFileByPath(module.getOutputFor(inputModel));
 
     Assert.assertTrue(status.isOk());
+    Assert.assertTrue("should be called once", timesCalled++ == 0);
 
     if (status.isOk()) {
-      IFile cachesDir = FileGenerationUtil.getDefaultOutputDir(inputModel, FileGenerationUtil.getCachesDir(targetDir));
-      IFile filesDir = FileGenerationUtil.getDefaultOutputDir(inputModel, targetDir);
+      myFilesDir = FileGenerationUtil.getDefaultOutputDir(inputModel, targetDir);
 
-      ComparingStreamHandler streamHandler = new ComparingStreamHandler(filesDir, cachesDir);
+      StreamHandler streamHandler = new CollectingStreamHandler();
       try {
         boolean result = new TextGenerator(streamHandler,
           //ModelGenerationStatusManager.getInstance().getCacheGenerator(),
@@ -94,44 +135,18 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
     return true;
   }
 
-  private static class ComparingStreamHandler implements StreamHandler {
-
-    private final IFile myFilesDir;
-    private final IFile myCachesDir;
-
-    private final Map<String, String> myFileContent;
-
-    public ComparingStreamHandler(IFile filesDir, IFile cachesDir) {
-      myFilesDir = filesDir;
-      myCachesDir = cachesDir;
-
-      myFileContent = new HashMap<String, String>();
-      for (IFile f : myFilesDir.list()) {
-        try {
-          String s = FileUtil.read(new InputStreamReader(f.openInputStream()));
-          myFileContent.put(f.getName(), s);
-        } catch (IOException e) {
-          throw new RuntimeException(e);
-        }
-      }
-    }
+  public class CollectingStreamHandler implements StreamHandler {
 
     @Override
     public void saveStream(String name, String content, boolean isCache) {
-      if (isCache) {
-        /* ignore */
-      } else {
-        String existing = myFileContent.get(name);
-        Assert.assertNotNull("Non-existing file generated: " + name, existing);
-        Assert.assertEquals("Content differs:", existing, content);
+      if(!isCache) {
+        generatedContent.put(name, content);
       }
     }
 
     @Override
     public void saveStream(String name, Element content, boolean isCache) {
-      if (isCache) {
-        /* ignore */
-      } else {
+      if (!isCache) {
         try {
           StringWriter writer = new StringWriter();
           JDOMUtil.writeDocument(new Document(content), writer);
@@ -145,7 +160,9 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
     @Override
     public boolean touch(String name, boolean isCache) {
       Assert.assertFalse(isCache);
-      Assert.assertNotNull("Non-existing file touched: " + name, myFileContent.remove(name));
+      String value = getExistingContent().get(name);
+      Assert.assertNotNull("non-existing file touched: " + value);
+      generatedContent.put(name, value);
       return true;
     }
 

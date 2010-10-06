@@ -45,7 +45,9 @@ class SNodeIdeaUndoableAction implements UndoableAction {
         assert file.isValid() : "Invalid file was returned by VFS node is not available: " + file.getNode();
         myChangedTimestamps.put(file, file.getModificationStamp());
 
-        affected.add(MPSUndoUtil.getRefForDoc(MPSUndoUtil.getDoc(file)));
+        if(MPSUndoUtil.getDoc(file) != null) {
+          affected.add(MPSUndoUtil.getRefForDoc(MPSUndoUtil.getDoc(file)));
+        }
       }
 
       myIsGlobal |= a.isGlobal();
