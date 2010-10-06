@@ -21058,6 +21058,7 @@
                     <link role="conceptDeclaration:16" targetNodeId="1.1216130694486" resolveInfo="ITestCase" />
                   </node>
                 </node>
+                <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion:16" id="5757377098739309809" />
               </node>
             </node>
           </node>

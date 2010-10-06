@@ -31,7 +31,7 @@ public class JUnitConfigFromClass extends BaseConfigCreator<SNode> implements Cl
   }
 
   private void createConfig(final SNode parameter) {
-    SNode testCase = SNodeOperations.getAncestor(parameter, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase", false, false);
+    SNode testCase = SNodeOperations.getAncestor(parameter, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase", true, false);
 
     if ((testCase == null) || ListSequence.fromList(ITestCase_Behavior.call_getTestMethods_2148145109766218395(testCase)).isEmpty()) {
       return;

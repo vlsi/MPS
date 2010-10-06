@@ -4487,8 +4487,8 @@
     <unitInfo nodeId="8640331875045019917" fileName="TestTreeIconAnimator.java" startLine="13" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.plugin.TestTreeIconAnimator" />
   </root>
   <root nodeId="8857400326959395379">
-    <nodeInfo nodeId="7134866590449457738" fileName="JUnitConfigFromClass.java" startLine="33" startPosition="52" endLine="34" endPosition="133" />
-    <nodeInfo nodeId="7134866590449457746" fileName="JUnitConfigFromClass.java" startLine="34" startPosition="133" endLine="35" endPosition="0" />
+    <nodeInfo nodeId="7134866590449457738" fileName="JUnitConfigFromClass.java" startLine="33" startPosition="52" endLine="34" endPosition="132" />
+    <nodeInfo nodeId="7134866590449457746" fileName="JUnitConfigFromClass.java" startLine="34" startPosition="132" endLine="35" endPosition="0" />
     <nodeInfo nodeId="421400203262550783" fileName="JUnitConfigFromClass.java" startLine="36" startPosition="134" endLine="37" endPosition="13" />
     <nodeInfo nodeId="421400203262550766" fileName="JUnitConfigFromClass.java" startLine="38" startPosition="5" endLine="39" endPosition="0" />
     <nodeInfo nodeId="8857400326959457743" fileName="JUnitConfigFromClass.java" startLine="39" startPosition="0" endLine="40" endPosition="76" />
