@@ -40,10 +40,10 @@
   <unitInfo fileName="UnusedVariableDeclaration_Test.java" startLine="13" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.UnusedVariableDeclaration_Test" />
   <unitInfo fileName="ReadAction_Test.java" startLine="13" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.ReadAction_Test" />
   <unitInfo fileName="IfStatementWrongUnreachable_Test.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.IfStatementWrongUnreachable_Test" />
-  <unitInfo fileName="NullableAnalyzer_Test.java" startLine="45" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody" />
   <unitInfo fileName="TypesTest_BL_Test.java" startLine="45" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.TypesTest_BL_Test$TestBody" />
-  <unitInfo fileName="NullableAnalyzer_Test.java" startLine="13" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test" />
+  <unitInfo fileName="NullableAnalyzer_Test.java" startLine="51" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test$TestBody" />
   <unitInfo fileName="TypesTest_BL_Test.java" startLine="13" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.TypesTest_BL_Test" />
+  <unitInfo fileName="NullableAnalyzer_Test.java" startLine="13" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.NullableAnalyzer_Test" />
   <unitInfo fileName="TestSafeEquals_Test.java" startLine="8" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.TestSafeEquals_Test" />
   <root nodeId="1217271585523">
     <nodeInfo nodeId="1225979304340" fileName="ForLoop_Test.java" startLine="22" startPosition="49" endLine="23" endPosition="40" />
