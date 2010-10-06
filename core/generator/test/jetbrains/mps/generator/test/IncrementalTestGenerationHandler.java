@@ -22,6 +22,7 @@ import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.generationTypes.GenerationHandlerBase;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.generator.generationTypes.TextGenerator;
+import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
@@ -57,12 +58,17 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
   private Map<String,String> existingContent;
   private IFile myFilesDir;
   private int timesCalled = 0;
+  private boolean myCheckIncremental = false;
 
   public IncrementalTestGenerationHandler() {
   }
 
   public IncrementalTestGenerationHandler(Map<String,String> existingContent) {
     this.existingContent = existingContent;
+  }
+
+  public void checkIncremental() {
+    myCheckIncremental = true;
   }
 
   public Map<String, String> getGeneratedContent() {
@@ -110,6 +116,11 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
 
     Assert.assertTrue(status.isOk());
     Assert.assertTrue("should be called once", timesCalled++ == 0);
+
+    if(myCheckIncremental) {
+      GenerationDependencies dep = status.getDependencies();
+      Assert.assertTrue("was not optimized", dep.getFromCacheCount() + dep.getSkippedCount() > 0);
+    }
 
     if (status.isOk()) {
       myFilesDir = FileGenerationUtil.getDefaultOutputDir(inputModel, targetDir);

@@ -31,9 +31,13 @@ public class GenerationDependencies {
   private final Map<String, String> myUsedModelsHashes;
 
   private /* transient */ final List<GenerationRootDependencies> myUnchanged;
+  private /* transient */ final int mySkippedCount;
+  private /* transient */ final int myFromCacheCount;
 
-  private GenerationDependencies(List<GenerationRootDependencies> data, String modelHash, Map<String, String> externalHashes, List<GenerationRootDependencies> unchanged) {
+  private GenerationDependencies(List<GenerationRootDependencies> data, String modelHash, Map<String, String> externalHashes, List<GenerationRootDependencies> unchanged, int skippedCount, int fromCacheCount) {
     this.myRootDependencies = data;
+    this.mySkippedCount = skippedCount;
+    this.myFromCacheCount = fromCacheCount;
     this.myRootDependenciesMap = new HashMap<String, GenerationRootDependencies>(data.size());
     this.myModelHash = modelHash;
     this.myUnchanged = unchanged;
@@ -46,6 +50,14 @@ public class GenerationDependencies {
 
   public String getModelHash() {
     return myModelHash;
+  }
+
+  public int getSkippedCount() {
+    return mySkippedCount;
+  }
+
+  public int getFromCacheCount() {
+    return myFromCacheCount;
   }
 
   public GenerationRootDependencies getDependenciesFor(String rootId) {
@@ -113,7 +125,7 @@ public class GenerationDependencies {
       data.add(GenerationRootDependencies.fromXml(e, false));
     }
     String modelHash = GenerationRootDependencies.getValue(root, ATTR_MODEL_HASH);
-    return new GenerationDependencies(data, modelHash, externalHashes, Collections.<GenerationRootDependencies>emptyList());
+    return new GenerationDependencies(data, modelHash, externalHashes, Collections.<GenerationRootDependencies>emptyList(), 0, 0);
   }
 
   public static String getFileName(SNode outputRootNode) {
@@ -122,7 +134,7 @@ public class GenerationDependencies {
     return (extension == null) ? outputRootNode.getName() : outputRootNode.getName() + "." + extension;
   }
 
-  public static GenerationDependencies fromData(Map<SNode, SNode> currentToOriginalMap, RootDependenciesBuilder[] roots, String modelHash, IOperationContext operationContext) {
+  public static GenerationDependencies fromData(Map<SNode, SNode> currentToOriginalMap, RootDependenciesBuilder[] roots, String modelHash, IOperationContext operationContext, int skippedCount, int fromCacheCount) {
     Map<String, List<String>> generatedFiles = new HashMap<String, List<String>>();
     Map<String, String> externalHashes = new HashMap<String, String>();
 
@@ -165,7 +177,7 @@ public class GenerationDependencies {
         }
       }
     }
-    return new GenerationDependencies(rootDependencies, modelHash, externalHashes, unchanged == null ? Collections.<GenerationRootDependencies>emptyList() : unchanged);
+    return new GenerationDependencies(rootDependencies, modelHash, externalHashes, unchanged == null ? Collections.<GenerationRootDependencies>emptyList() : unchanged, skippedCount, fromCacheCount);
   }
 
 }

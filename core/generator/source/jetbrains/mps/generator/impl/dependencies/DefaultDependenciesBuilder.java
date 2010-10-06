@@ -183,7 +183,7 @@ public class DefaultDependenciesBuilder implements DependenciesBuilder {
 
   @Override
   public GenerationDependencies getResult(IOperationContext operationContext) {
-    return GenerationDependencies.fromData(currentToOriginalMap, myAllBuilders, myModelHash, operationContext);
+    return GenerationDependencies.fromData(currentToOriginalMap, myAllBuilders, myModelHash, operationContext, myUnchangedSet.size(), myRequiredSet.size());
   }
 
   /* working with cache */

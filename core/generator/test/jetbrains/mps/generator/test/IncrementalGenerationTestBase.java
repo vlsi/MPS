@@ -118,6 +118,7 @@ public class IncrementalGenerationTestBase {
         options = GenerationOptions.getDefaults()
           .rebuildAll(false).strictMode(true).reporting(true, true, false, 2).incremental(true, new FileBasedGenerationCacheContainer(generatorCaches)).create();
         generationHandler = new IncrementalTestGenerationHandler(incrementalGenerationResults);
+        generationHandler.checkIncremental();
         long start = System.nanoTime();
         gm.generateModels(
           Collections.singletonList(descr), ModuleContext.create(descr, p.getProject()),
